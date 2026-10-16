@@ -1782,7 +1782,7 @@ release attachment, announcement, or promotion.
 | `pdf/reading-plans/narrative-spine-story-king-james-version.pdf` | `44bed15d567d424ac5cf0ad13ff8ef9e3a39714ce7f566c539afd178cf7b39f4` |
 | `release/public-alpha/404.md` | `3813d3e1a7a03dd6ce7b397e19364fa9679cde8561dca28626cf0fa374e4db81` |
 | `release/public-alpha/assets/icon.png` | `ef1315d47930179e71319cebba58bd284756b9306a40d376ab7ca6e6d3c15ad5` |
-| `release/public-alpha/assets/site.css` | `a456caf21041256a1047560c0cee8638a99f7df819e6249ee3345e550b6b4060` |
+| `release/public-alpha/assets/site.css` | `8a3460fab0e19d71795265fbf07e13cf349f8d64a8613024653fa998c4cea6b9` |
 | `release/public-alpha/assets/social-card.png` | `d0adf2056a5aa7d6e4fd240a324d76a654a904547908f77ad9d8f7fc8abc7278` |
 | `release/public-alpha/layout.html` | `6687546feca2e378e57917fa44ed908c5abfa49f4499731c95316f1d34b3d9eb` |
 | `requirements-public-alpha.txt` | `59bd4c5252324612c6ce5a27f4a4ba4e62aa4cc76bc3d974a29b45491c97c762` |

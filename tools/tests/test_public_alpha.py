@@ -1286,6 +1286,12 @@ class PublicAlphaTest(unittest.TestCase):
         because a Markdown table cannot carry a class. A dossier heading
         rendered with any other id, or at another level, would fall back to
         the scrolling table without a word, so this refuses one.
+
+        GPT editions open the section as a historical appendix and give the
+        heading the explicit id `historical-appendix`, which their page
+        references cite, so the rule names that id too. A three-column
+        dossier (Passage, Occurrence and place, Date) shares the grid; its
+        date spans the second line rather than sitting beside an empty cell.
         """
         css = (
             REPOSITORY_ROOT / "release/public-alpha/assets/site.css"
@@ -1294,11 +1300,12 @@ class PublicAlphaTest(unittest.TestCase):
             "sec:date-location",
             "scriptural-date-and-location",
             "appendix-scriptural-date-and-location",
+            "historical-appendix",
         }
         # Every dossier rule needs both its opening heading and its next-h2
         # boundary; adding an id to just one rule leaves part of the layout out.
         selectors = re.findall(r"^[ \t]*\.page-shell\.reading :is\(h2.*?\{", css, flags=re.M)
-        self.assertEqual(len(selectors), 10)
+        self.assertEqual(len(selectors), 11)
         for selector in selectors:
             with self.subTest(selector=selector):
                 opening, ending = selector.split(" ~ table:not(", 1)
@@ -1307,7 +1314,12 @@ class PublicAlphaTest(unittest.TestCase):
                 self.assertIn(" ~ h2 ~ table)", ending)
         narrow = css[css.index("@media (max-width: 760px)"):]
         self.assertRegex(narrow, r"~ h2 ~ table\) tr \{[^}]*display: grid;")
-        heading_text = r"(?:Appendix:\s+)?Scriptural Date and Location"
+        self.assertRegex(
+            narrow,
+            r"~ h2 ~ table\):not\(:has\(tr > :nth-child\(4\)\)\) :is\(th, td\):nth-child\(3\) \{"
+            r"[^}]*grid-column: 1 / -1;",
+        )
+        heading_text = r"(?:(?:Historical\s+)?Appendix:\s+)?Scriptural Date and Location"
         rendered_heading = (
             r"<(h\d)\b[^>]*?(?:\sid=\"([^\"]*)\")?[^>]*>\s*"
             + heading_text + r"\s*</\1>"
@@ -1316,6 +1328,10 @@ class PublicAlphaTest(unittest.TestCase):
             ("Scriptural Date and Location {#sec:date-location}", "sec:date-location"),
             ("Scriptural Date and Location", "scriptural-date-and-location"),
             ("Appendix: Scriptural Date and Location", "appendix-scriptural-date-and-location"),
+            (
+                "Historical appendix: Scriptural Date and Location {#historical-appendix}",
+                "historical-appendix",
+            ),
         ):
             with self.subTest(title=title):
                 rendered = self.tool.render_markdown(f"## {title}\n", REPOSITORY_ROOT)
