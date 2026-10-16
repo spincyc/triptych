@@ -224,10 +224,24 @@ reader-facing sections and refuses the forms of this defect that are lexically
 marked: retrieval mechanics and checksums in the body, the guide's own pages
 and apparatus as a grammatical subject, the source library or this repository
 as one, a count labelled rather than stated, and the harmonisation and
-evidence-class disclaimers this section names. It masks what the rule protects
-— `References`, `Appendix: Scope and Qualifications`, the page-2 sheet, and the
-exploratory notice and limit fields of the proposals — because a screen that
-refuses those would be enforcing the opposite of the rule.
+evidence-class disclaimers this section names. Since 16 October 2026 it also
+refuses the forms the Claude postconciliar Twenty-ninth Sunday study review
+found and the screen then passed:
+- the editor's synthesis labelled in the body ("the join is the editor's",
+  "the editor joins them");
+- the reading as the subject of its own restraint ("the interpretation does
+  not…");
+- a negative result told as its search ("No commentary on it was found",
+  "consulted for this study");
+- a claim disclaimed rather than left unmade ("nothing is claimed here", a
+  compiler's intention disclaimed).
+
+A negative stated with the evidence's own verb ("No commentary on the Collect
+survives") is the result, and stands. The screen masks what the rule protects —
+`References`, `Appendix: Scope and Qualifications`, the page-2 sheet, the
+homily's terminal note on sources and delivery, and the exploratory notice and
+limit fields of the proposals — because a screen that refuses those would be
+enforcing the opposite of the rule.
 
 Two things follow, and the second matters more.
 

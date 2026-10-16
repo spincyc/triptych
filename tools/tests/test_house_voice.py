@@ -246,6 +246,99 @@ class TheDefectIsRefused(unittest.TestCase):
                               refused(text))
 
 
+class TheSelfNarrationOfOneStudyIsRefused(unittest.TestCase):
+    """The forms STU-001 found that the screen passed, 2026-10-16.
+
+    Proper-study run 4d16b5e19d25dad9's expansive study passed this screen
+    with about forty-five sentences narrating its own caution, and its cold
+    reviewer quoted their shapes: "the join is the editor's", "that link to
+    the coin is the editor's", "The analogy is the editor's, not
+    Aquinas's", "the editor joins them", "the interpretation does not merge
+    them", "uses none of those sentences", "the studies say so wherever an
+    argument rests on it", "No commentary on it was found", "nothing is
+    claimed here about ... why it stands in this week", "no claim is made
+    about the route", "No source consulted for this study says that any of
+    these recurrences was designed". Iteration 0's text was not committed, so
+    each case here is one of those quoted shapes in a sentence of this
+    corpus's kind; the prose these rules must not touch is in
+    `LegitimateProseSurvives` and `ProtectedRegionsAreNotRead`.
+    """
+
+    def test_the_editors_synthesis_labelled_in_the_body(self):
+        for text in (
+                "Neither speaks of the Gospel, and the join is the editor's.",
+                "Augustine names the coin's image, and that link to the coin "
+                "is the editor's.",
+                "The analogy is the editor's, not Aquinas's.",
+                "Both joinings are the editor's.",
+                "The second reading enters this interpretation only by the "
+                "editor's own joining."):
+            with self.subTest(text=text[:40]):
+                self.assertIn("the editor's synthesis is labelled in the "
+                              "body", refused(text))
+
+    def test_the_editor_as_the_subject_of_the_join(self):
+        self.assertIn(
+            "the editor is the subject",
+            refused("Hilary speaks of the image and Jerome of the tribute; "
+                    "the editor joins them."))
+
+    def test_the_reading_narrating_its_own_restraint(self):
+        for text in (
+                "Augustine and Chrysostom read the coin differently, and the "
+                "interpretation does not merge them.",
+                "The interpretation uses none of those sentences.",
+                "Each Father is credited only with his own passage; the "
+                "studies say so wherever an argument rests on it."):
+            with self.subTest(text=text[:40]):
+                self.assertIn("the reading narrates its own restraint",
+                              refused(text))
+
+    def test_a_search_narrated_where_its_result_belongs(self):
+        for text in (
+                "No commentary on it was found.",
+                "No patristic commentary on this oration's wording was "
+                "located; composed Roman collects carry no such tradition.",
+                "No source consulted for this study says that the psalm was "
+                "sung at the dedication."):
+            with self.subTest(text=text[:40]):
+                self.assertIn(
+                    "a search is narrated instead of its result stated",
+                    refused(text))
+
+    def test_a_claim_disclaimed_instead_of_left_unmade(self):
+        # The 1962 profile: a guide "that has not established a compiler's
+        # intention simply does not claim one; it does not tell the reader
+        # that its observation does not prove a compiler's intention".
+        for text in (
+                "The Collect asks for a single heart, and nothing is claimed "
+                "here about how it came into the Missal of 1970 or why it "
+                "stands in this week.",
+                "The prayer reaches the Missal from the Veronense; no claim "
+                "is made about the route.",
+                "The words recur across the readings, not as evidence that "
+                "any text was chosen for another.",
+                "No source says that any of these recurrences was designed.",
+                "These are authoritative receptions of the axiom, not "
+                "evidence for the compiler's intention."):
+            with self.subTest(text=text[:40]):
+                self.assertIn(
+                    "a claim is disclaimed instead of left unmade",
+                    refused(text))
+
+    def test_the_whole_paragraph_the_reviewer_quoted(self):
+        """One sentence, three forms, and each is named."""
+        saw = refused(
+            "No commentary on this prayer was found, and nothing is claimed "
+            "here about how it came into the Missal of 1970. No source "
+            "consulted for this study says that any of these recurrences "
+            "was designed.")
+        for label in ("a search is narrated instead of its result stated",
+                      "a claim is disclaimed instead of left unmade"):
+            with self.subTest(label=label):
+                self.assertIn(label, saw)
+
+
 class RelativeClausesAreNotSubjects(unittest.TestCase):
     """The subject of a relative clause is not the subject of the sentence.
 
@@ -475,6 +568,61 @@ class LegitimateProseSurvives(unittest.TestCase):
                         "appointed bounds} --- and a third independent "
                         "Father setting the same limit."))
 
+    def test_a_negative_result_stated_as_the_evidence(self):
+        """The line the 2026-10-16 search rule draws, from its other side.
+
+        A negative whose verb is the evidence's states the result, which
+        `guidance/editorial.md` asks for ("state the negative result"); only a
+        negative whose verb is the search's -- found, located, consulted for
+        this study -- narrates the process that produced it.
+        """
+        for text in (
+                "No commentary on the Collect survives from before the ninth "
+                "century.",
+                "No Father comments on the Prayer over the Offerings.",
+                "No witness cited expounds this Mass as a whole.",
+                "Composed Roman collects of this type carry no ancient "
+                "commentary tradition comparable to the Scriptures'."):
+            with self.subTest(text=text[:40]):
+                self.assertEqual([], refused(text))
+
+    def test_a_sources_editor_is_not_this_guides(self):
+        """The corpus prints the editors of its editions, and so it should.
+
+        Every sentence here stands in a published leaf, and each is a fact
+        about an edition: what its editor supplied, noted or bracketed.
+        """
+        for text in (
+                "The editor supplies Greek-catena text for a missing Syriac "
+                "folio at this point.",
+                "The editor's comment is not a second statement by "
+                "Chrysostom.",
+                "It is printed among the Chalcedonian documents with the "
+                "editor's note that it is spurious.",
+                "Jerome, on 18:21--25, PL 25, 180; the bracketed word is the "
+                "editor's.",
+                "Lyra reads the city as heavenly, whereas the editor defends "
+                "a locative reading."):
+            with self.subTest(text=text[:40]):
+                self.assertEqual([], refused(text))
+
+    def test_a_reading_stated_and_a_source_that_disclaims(self):
+        """The reading may be the subject of what it says, not of its caution.
+
+        "The interpretation carries Augustine's inference through the whole
+        Mass" stands in the published concise study of the very run whose
+        self-narration the rules were written from.
+        """
+        for text in (
+                "The interpretation carries Augustine's inference through the "
+                "whole Mass.",
+                "Jerome's interpretation does not survive in Greek.",
+                "Jerome makes no claim about the date of the prophecy.",
+                "The Collect was not composed for this Sunday; the Gelasian "
+                "sets it in Lent."):
+            with self.subTest(text=text[:40]):
+                self.assertEqual([], refused(text))
+
     def test_a_comment_is_not_reader_facing(self):
         self.assertEqual(
             [], refused("% An earlier form of this leaf printed sect.~LXIX;\n"
@@ -528,7 +676,7 @@ class MaskingDoesNotManufactureMatches(unittest.TestCase):
 
 
 class ProtectedRegionsAreNotRead(unittest.TestCase):
-    """Four regions the guidance requires to carry exactly this register."""
+    """Five regions the guidance requires to carry exactly this register."""
 
     def test_the_terminal_appendix_and_the_references(self):
         for heading in ("Appendix: Scope and Qualifications", "References"):
@@ -540,6 +688,25 @@ class ProtectedRegionsAreNotRead(unittest.TestCase):
                     "is bounded to the corpora named. The scan's bytes were "
                     "hash-matched to the registered digest before a page was "
                     "opened."))
+
+    def test_the_homilys_terminal_note(self):
+        """The homily's terminal apparatus, under both headings it is given.
+
+        It is where `guidance/liturgy/propers-three-documents.md` puts what
+        the speech must not carry, so saying there that the reading of the
+        whole formulary is the editor's is the rule kept, not broken.
+        """
+        sentence = ("Chrysostom joins the two halves of the Gospel; the "
+                    "reading of the whole formulary that follows from that "
+                    "join is the editor's, not a Father's.")
+        for heading in ("Note on Sources and Delivery",
+                        "Source and delivery note",
+                        "Source and Delivery Note"):
+            with self.subTest(section=heading):
+                self.assertEqual(
+                    [], refused(f"\\section*{{{heading}}}\n{sentence}"))
+        self.assertIn("the editor's synthesis is labelled in the body",
+                      refused(f"\\section*{{Commentary}}\n{sentence}"))
 
     def test_a_heading_without_its_star_still_heads_a_section(self):
         """One published leaf writes `\\section{Appendix: ...}`.

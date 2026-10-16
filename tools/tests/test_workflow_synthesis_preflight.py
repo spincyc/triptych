@@ -684,13 +684,17 @@ class EditionScopeTests(unittest.TestCase):
 
         The 2026-09-24 audit repaired every leaf the gate refused, so over the
         published tree this reads no refusal at all. It is held there, and
-        over the two prose checks on the audited tree, where 19 refusal lines
-        across six leaves name a leaf file.
+        over the two prose checks on the audited tree, where 22 refusal lines
+        name a leaf file: 19 until 2026-10-16, when the house-voice rules
+        added for STU-001 of run 4d16b5e19d25dad9 found three disclaimers in
+        the same tree ("without claiming a recovered compiler's intention",
+        "is not claimed here", "no claim is made"), each in a file the
+        companion prints.
         """
         live = self.named_files(ROOT, GATE_CHECKS)
         audited = self.named_files(self.audited,
                                    ("house-voice", "proposal-fields"))
-        self.assertEqual(len(audited), 19,
+        self.assertEqual(len(audited), 22,
                          "a loop over no refusals checks nothing")
         for leaf, check, where, printed in live + audited:
             with self.subTest(leaf=leaf, check=check, file=where):
@@ -811,7 +815,7 @@ class CorpusTests(unittest.TestCase):
         return sites
 
     def test_the_companion_only_prose_the_gate_was_built_for(self):
-        """The three leaves whose companion-owned files carried the class.
+        """The leaves whose companion-owned files carried the class.
 
         Measured over the files only the companion prints, and taken from the
         `\\input` graph rather than from a directory name. That is the whole
@@ -826,13 +830,18 @@ class CorpusTests(unittest.TestCase):
 
         Measured over the published tree until the 2026-09-24 audit repaired
         all nine sites; over the tree as the audit found it now, where the
-        eighteen leaves are the same eighteen.
+        eighteen leaves are the same eighteen. Since 2026-10-16 the rules
+        added for STU-001 find two more sites there, both a claim disclaimed
+        instead of left unmade: "is not claimed here" in the twelfth Sunday's
+        integrated commentary and "no claim is made" in the other provider's
+        thirteenth, whose companion files carried none of the older forms.
         """
         self.assertEqual(len(manifest_leaves(self.audited)), 18)
         self.assertEqual(self.companion_only_sites(self.audited),
                          {"claude/51-eleventh-after-pentecost": 4,
-                          "claude/52-twelfth-after-pentecost": 3,
-                          "claude/53-thirteenth-after-pentecost": 2})
+                          "claude/52-twelfth-after-pentecost": 4,
+                          "claude/53-thirteenth-after-pentecost": 2,
+                          "gpt/53-thirteenth-after-pentecost": 1})
 
     def test_no_published_companion_carries_the_class(self):
         """None of the eighteen, since the 2026-09-24 audit.

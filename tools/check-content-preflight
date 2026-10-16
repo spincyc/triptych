@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import bisect
 import functools
 import re
 import subprocess
@@ -561,18 +562,541 @@ def weak_anchors(item: str) -> bool:
         for name in names)
 
 
+# --- The loci a References entry names -------------------------------------
+#
+# A work cited in the body is not every passage of it cited there. Proper-study
+# run 4d16b5e19d25dad9 (Claude, postconciliar Twenty-ninth Sunday) carried
+# four loci from the expansive study into the concise study's References that
+# the concise never used -- Douay-Rheims Ps 145:2; Augustine, *Enarrationes in
+# Psalmos* 95.5 and on Ps 118 under Schin; Aquinas's *Postilla* on Psalm 16 --
+# and this check passed all four, because "Augustine", "Enarrationes" and
+# "Postilla" stood elsewhere in that body. The cold reviewer found them by hand
+# (SYN-001). The rule is the same at both levels: References carries only
+# sources actually used, "with exact loci sufficient to verify their claims",
+# so a locus nothing in the body cites is an unused lead.
+#
+# What the check cannot see is a locus the prose relies on without citing it:
+# "Augustine counts first the vows common to all Christians" uses his
+# exposition of the Communion's psalm and prints no number. The published
+# leaves do that constantly, and a refusal goes to a reviser who deletes what
+# it names, so the test is built to miss a defect rather than to refuse such
+# prose:
+#
+# - Only five shapes are read as a locus, each one this corpus prints:
+#   chapter:verse (`145:2`, `Is 45:1, 4`, `8:28--9:9`), a chapter in a Bible
+#   list (`Ps 32; 75`, `Dan 9`, `Eph 1--4`), a dotted division whose first
+#   level is arabic (`95.2--3, 5, 8--9`, `70.1--2`), a psalm a commentary is
+#   named on (`Postilla super Psalmos 16 and 32`, `in Psalmos 109`, `on Ps
+#   95`), and a Hebrew-letter division of Psalm 118 (`under Schin`, `Aleph
+#   5`). Pages, columns, volumes, series (`NPNF I.10`), `nos.`, `nn.`, `c.`,
+#   `lect.`, `s.`, years, dates, version numbers and anything in parentheses
+#   are edition locators, not loci, and are never read; nor is a bare number
+#   after any other title (`Homilies on Matthew 71`, `Sermo 90`), which the
+#   corpus cites in too many forms (`Sermon XL` for `Sermo 90`) to refuse on,
+#   nor a division whose first level is a roman book number (`Rationale
+#   VI.131`), whose chapters a body uses by subject far more often than by
+#   number.
+# - A locus in a Bible list -- an edition's own list of the verses it was read
+#   at, led by a book abbreviation -- and a Hebrew letter are always judged,
+#   and matched anywhere in the body: a Bible edition is not named where its
+#   verses are cited. A verse is matched by any chapter:verse or
+#   chapter.verse citation whose range overlaps it, or by its chapter cited
+#   whole; a psalm's chapter also by the neighbouring number, because a
+#   postconciliar body prints the Lectionary's Hebrew numbering beside a
+#   Vulgate-numbered Bible (`Ps 33:18` for Douay `32:18`).
+# - Every other locus -- a commentary's division, the psalm it is named on,
+#   a verse it is keyed to (`Bellarmine, on Ps 32:18`) -- is judged only where
+#   the body shows it cites that very entry by locus: a word of the entry's
+#   title followed at once by a number (`\work{Postilla super Psalmos} 32`,
+#   `\work{Enarrationes in Psalmos} 4.8`), in a mention that can be no other
+#   entry's. Where the body never does that, it uses the work without numbers
+#   and the check cannot tell a used locus from an unused one, so it says
+#   nothing; nor does it judge an entry that gives one such locus alone, which
+#   is the place the body is using if it uses the work at all. Otherwise each
+#   locus must be cited: a division in its dotted form anywhere (`95.5`) or in
+#   a looser form (`95:5`, `95, 5`, `95, s. 5`, `95, section 5`, `95 (5)`,
+#   `95 \S 5`, inside a list such as `95.2--3, 5`) as this entry's citation;
+#   a psalm by its number, arabic or roman, as this entry's citation; a keyed
+#   verse anywhere. A number is an entry's citation when, of the entries that
+#   name that number at all, this one was mentioned last before it, within
+#   `LOCUS_REACH` characters: "St Augustine ... (95, 9)" is his although "Ps
+#   95:8-9" stands two lines above, and the Twenty-ninth Sunday's Douay-Rheims
+#   Ps 95:5 and Ps 16:6, and Augustine's 16.8, do not stand in for Augustine's
+#   section 95.5 or the *Postilla* on Psalm 16. A mention is a run of anchor
+#   words and belongs to the entries that own every word in it, so
+#   "Enarrationes in Psalmos" is Augustine's alone where "Psalmos" is the
+#   *Postilla*'s too.
+# - Loci are judged in the expansive and concise studies of a three-document
+#   (schema 2) leaf, the two documents whose prose cites by locus and the
+#   pair between which SYN-001 happened, and nowhere else. The homily is
+#   spoken prose that names no chapter or section by design, so every locus
+#   its References gives would be refused. The `leaf` scope reads every
+#   document's References against every document's body, where a locus one
+#   document cites makes another's entry look used, so it proves nothing per
+#   document and stays what it was. A schema-1 leaf's References follow the
+#   older profile's prose-heavy entries; measured on 2026-10-16, the same
+#   test would refuse nine published schema-1 editions (eight concise, one
+#   canonical), most on Bible-list verses, and widening it to them is a
+#   decision left to the maintainer.
+#   Everywhere else the work-level test still holds.
+#
+# An entry with no locus in those shapes keeps exactly the work-level test.
+LOCUS_EDITIONS = (RESEARCH_EDITION, CANONICAL_EDITION, SYNTHESIS_EDITION)
+# How far after the last mention of an entry a psalm number, or a division in
+# a form a Bible verse also takes, may stand and still be that entry's
+# citation: about a paragraph, which is as far as "St Augustine ... (95, 9)"
+# reaches in the published studies.
+LOCUS_REACH = 600
+# Two anchor words this close together are one mention ("Enarrationes in
+# Psalmos", "Augustine, Enarrationes").
+MENTION_GAP = 30
+# How far after a title word its number may stand and still be its citation:
+# `\work{Enarrationes in Psalmos} 118, s.~15` and `Rationale VI.135`.
+FORMAL = re.compile(
+    r"[\s,;:(]{0,4}(?:(?:on|in|super|ad)\s+)?(?:pss?\.?\s*|psalm\w*\s+)?"
+    r"(?:[ivxlc]+[.,]\s*)?\d")
+WORD_REST = re.compile(r"\w*")
+WORK_MARK = "\x01"
+WORK_TITLE = re.compile(r"\\work\s*\{([^{}]*)\}")
+NUMERAL_DASH = re.compile(
+    r"(?<=[\dIVXLC])[ \t]*(?:-{1,3}|[\u2010-\u2015\u2212])[ \t]*(?=[\dIVXLC])")
+PARENTHETICAL = re.compile(r"\([^()]*\)")
+CONTROL_SPACE = re.compile(r"\\[ ,;:!/]")
+# Bible books as this corpus abbreviates or names them, Douay and modern
+# forms both. Read only before a number; `Is`, `Am`, `Mark` and `John` are
+# English or names elsewhere, and a following digit is what makes them books.
+BIBLE_BOOK = (
+    r"(?:Gn|Gen|Genesis|Ex|Exod|Exodus|Lv|Lev|Leviticus|Nm|Num|Numbers|Dt"
+    r"|Deut|Deuteronomy|Jos|Josh|Joshua|Jgs|Judg|Judges|Ru|Ruth|Sm|Sam"
+    r"|Samuel|Kgs|Kings|Par|Paralipomenon|Chr|Chron|Chronicles|Esd|Ezr|Ezra"
+    r"|Neh|Nehemiah|Tb|Tob|Tobit|Tobias|Jdt|Judith|Est|Esth|Esther|Jb|Job"
+    r"|Ps|Pss|Psalm|Psalms|Prv|Prov|Proverbs|Eccl|Eccles|Ecclesiastes|Qoh"
+    r"|Cant|Song|Wis|Wisdom|Sir|Sirach|Ecclus|Ecclesiasticus|Is|Isa|Isaiah"
+    r"|Isaias|Jer|Jeremiah|Jeremias|Lam|Lamentations|Bar|Baruch|Ez|Ezek"
+    r"|Ezekiel|Ezechiel|Dn|Dan|Daniel|Hos|Os|Osee|Hosea|Jl|Joel|Am|Amos|Ob"
+    r"|Abd|Obadiah|Jon|Jonah|Jonas|Mi|Mic|Mich|Micah|Nah|Nahum|Hab|Habakkuk"
+    r"|Zep|Zeph|Soph|Zephaniah|Hg|Hag|Agg|Haggai|Zec|Zech|Zach|Zechariah|Mal"
+    r"|Malachi|Mac|Macc|Maccabees|Mt|Matt|Matthew|Mk|Mark|Lk|Luke|Jn|John"
+    r"|Acts|Rom|Romans|Cor|Corinthians|Gal|Galatians|Eph|Ephesians|Phil"
+    r"|Philippians|Col|Colossians|Thes|Thess|Thessalonians|Tim|Timothy|Ti|Tit"
+    r"|Titus|Phlm|Philem|Philemon|Heb|Hebrews|Jas|James|Pt|Pet|Peter|Jude"
+    r"|Apoc|Apocalypse|Rev|Revelation)")
+PSALM_BOOK = re.compile(r"\APs(?:s|alms?)?\Z")
+# A book name after these is the subject of a commentary's title ("Homilies on
+# Matthew 71", "Epistle to the Ephesians", "Bellarmine, on Ps 32:18"), and
+# what follows is that commentary's locus, not an entry in a Bible list.
+TITLE_SUBJECT = re.compile(r"\b(?:on|in|super|ad|to|of)\s+(?:the\s+)?\Z",
+                           re.I)
+BOOK_START = re.compile(r"(?<![\w.])(?:[1-4]\s+)?(" + BIBLE_BOOK
+                        + r")\.?\s+(?=\d)")
+PSALM_WORD = r"(?:Pss?\.?|Psalms?|Psalmos|Psalmum|Psalmi)"
+PSALM_HEAD = re.compile(r"\b(?:on|in|super|ad|In)\s+(?:the\s+)?" + PSALM_WORD
+                        + r"\s+(?=\d)")
+BARE = re.compile(
+    r"(\d+)(?:-(\d+))?(?![\w]|[.:]\d)(?!\s+(?!and\b)[A-Za-z])")
+AND_BARE = re.compile(r"\s+and\s+(\d+)(?:-(\d+))?(?![\w]|[.:]\d)")
+VERSE = re.compile(r"(?<![\w.:])(\d+)[:](\d+)(?:-(?:(\d+):)?(\d+))?(?![\d:])")
+# A range that crosses a level (`III.3.3--6.8`) is not read: which sections
+# it covers depends on the edition.
+DIVISION = re.compile(
+    r"(?<![\w.:-])((?:\d+|[IVXLC]+)(?:\.(?:\d+|[IVXLC]+))*)\.(\d+)"
+    r"(?:-(\d+))?(?!\d|[.:]\d|-\d+[.:]\d)")
+# What a number standing straight after one of these is: a volume, a series,
+# a page, a column, a version. Never a locus.
+LOCATOR = re.compile(
+    r"\b(?:NPNF\d?|ANF|PL|PG|CSEL|CCSL|CCL|SC|FC|ACW|LF|vol|vols|version|v"
+    r"|ed|edn|no|nos|n|nn|p|pp|col|cols|ser|series|fol|ff|sess|cap|c|lect"
+    r"|art|q|s|sect|sects)\.?\s*\Z", re.I)
+# A further item of the same list, `16.2, 8` or `Is 45:1, 4`: a bare number
+# that is not itself a new chapter:verse and does not begin a new citation
+# (`, 1 Cor 15:49`).
+CONTINUED = re.compile(
+    r"\s*,\s*(\d+)(?:-(\d+))?(?![\w]|[.:]\d)(?!\s+[A-Za-z])")
+HEBREW_LETTER = re.compile(
+    r"\b(Aleph|Beth|Gimel|Daleth|Heth|Teth|Jod|Yod|Caph|Kaph|Lamed|Mem|Nun"
+    r"|Samech|Ain|Ayin|Phe|Sade|Tsade|Coph|Koph|Res|Resh|Sin|Schin|Shin|Tau"
+    r"|Vau|Zain)\b")
+PSALM_118 = re.compile(r"(?<![\d.:])11[89](?!\d)")
+# Which loci are judged always and which only where the body cites the entry
+# by locus; see the head of this section.
+LISTED, KEYED = "listed", "keyed"
+
+
+def _locus_text(text: str) -> str:
+    """TeX reduced to the words and numerals a locus is written in."""
+    text = CONTROL_SPACE.sub(" ", text)
+    text = prose(text).replace("~", " ").replace("\u00a0", " ")
+    return NUMERAL_DASH.sub("-", text)
+
+
+def _span(low: str, high: str | None) -> tuple[int, int]:
+    first = int(low)
+    last = int(high) if high else first
+    return (first, last) if first <= last else (first, first)
+
+
+def _list_after(text: str, at: int) -> list[tuple[int, int]]:
+    """The further comma items of a list, starting at `at`."""
+    items = []
+    while True:
+        more = CONTINUED.match(text, at)
+        if more is None:
+            return items
+        items.append(_span(more.group(1), more.group(2)))
+        at = more.end()
+
+
+def _groups_from(text: str, at: int) -> list[tuple[int, str]]:
+    """The `;`-separated groups from `at` to the end of the current work."""
+    stop = text.find(WORK_MARK, at)
+    stop = len(text) if stop < 0 else stop
+    groups, start = [], at
+    for part in text[at:stop].split(";"):
+        groups.append((start, part))
+        start += len(part) + 1
+    return groups
+
+
+def _range_label(low: int, high: int) -> str:
+    return f"{low}" + (f"-{high}" if high != low else "")
+
+
+def title_words(item: str) -> set[str]:
+    """The entry's anchors that stand in one of its `\\work{...}` titles."""
+    titled = set()
+    for title in WORK_TITLE.findall(item):
+        titled |= {fold(word) for word in NAME.findall(prose(title))}
+    return titled & anchors(item)
+
+
+def entry_loci(item: str) -> list[tuple[str, str, str, tuple]]:
+    """Every locus a References entry names, as `(family, kind, label, key)`.
+
+    The shapes read, and why only these, are set out at the head of this
+    section.
+    """
+    text = re.sub(r"\\work\s*\{", WORK_MARK + "{", item)
+    text = _locus_text(text)
+    while True:
+        shorter = PARENTHETICAL.sub(" ", text)
+        if shorter == text:
+            break
+        text = shorter
+    found: dict[tuple, tuple[str, str, str, tuple]] = {}
+    listed: set[int] = set()
+
+    def add(family: str, kind: str, label: str, key: tuple) -> None:
+        if 0 in [part for part in key if type(part) is int]:
+            return
+        found.setdefault((kind, key), (family, kind, label, key))
+
+    def verses_in(start: int, stop: int, family: str, psalm: bool) -> None:
+        for hit in VERSE.finditer(text, start, stop):
+            if hit.start() in listed and family == KEYED:
+                continue
+            if LOCATOR.search(text[:hit.start()]):
+                # `PG 13:29--32` is a volume and its columns.
+                continue
+            listed.add(hit.start())
+            chapter, verse = int(hit.group(1)), int(hit.group(2))
+            end_chapter = int(hit.group(3)) if hit.group(3) else chapter
+            end_verse = int(hit.group(4)) if hit.group(4) else verse
+            add(family, "verse", hit.group(0),
+                (chapter, verse, end_chapter, end_verse, psalm))
+            for low, high in _list_after(text, hit.end()):
+                add(family, "verse", f"{end_chapter}:{_range_label(low, high)}",
+                    (end_chapter, low, end_chapter, high, psalm))
+
+    # Bible lists first, so that a verse they hold is not read again as a
+    # commentary's.
+    for hit in BOOK_START.finditer(text):
+        if TITLE_SUBJECT.search(text[:hit.start()]):
+            continue
+        psalm = bool(PSALM_BOOK.match(hit.group(1)))
+        for index, (start, group) in enumerate(_groups_from(text, hit.end())):
+            stripped = group.lstrip()
+            if index and BOOK_START.match(stripped):
+                break
+            offset = start + len(group) - len(stripped)
+            first = BARE.match(stripped)
+            if first is None and not (VERSE.match(stripped)
+                                      or DIVISION.match(stripped)):
+                break
+            verses_in(offset, start + len(group), LISTED, psalm)
+            for division in DIVISION.finditer(text, offset,
+                                              start + len(group)):
+                if division.group(1).isdigit():
+                    listed.add(division.start())
+                    chapter = int(division.group(1))
+                    for low, high in [_span(division.group(2),
+                                            division.group(3))] + \
+                            _list_after(text, division.end()):
+                        add(LISTED, "verse",
+                            f"{chapter}.{_range_label(low, high)}",
+                            (chapter, low, chapter, high, psalm))
+            if first is None or re.match(r"\s*,\s*\d",
+                                         stripped[first.end():]):
+                # `Ps 77, 2` is a psalm and a section or two psalms; it is
+                # not refused on either reading.
+                continue
+            low, high = _span(first.group(1), first.group(2))
+            add(LISTED, "chapter", stripped[:first.end()], (low, high, psalm))
+    for hit in VERSE.finditer(text):
+        if hit.start() in listed:
+            continue
+        group = text[:hit.start()].rsplit(";", 1)[-1]
+        psalm = bool(re.search(r"\b" + PSALM_WORD + r"\s*\Z", group))
+        verses_in(hit.start(), hit.end(), KEYED, psalm)
+    for hit in DIVISION.finditer(text):
+        if hit.start() in listed or not hit.group(1).split(".")[0].isdigit():
+            continue
+        if LOCATOR.search(text[:hit.start()]):
+            continue
+        prefix = tuple(hit.group(1).split("."))
+        for low, high in [_span(hit.group(2), hit.group(3))] + \
+                _list_after(text, hit.end()):
+            add(KEYED, "division",
+                ".".join(prefix) + "." + _range_label(low, high),
+                (prefix, low, high))
+    for hit in PSALM_HEAD.finditer(text):
+        for index, (start, group) in enumerate(_groups_from(text, hit.end())):
+            stripped = group.lstrip()
+            if index:
+                stripped = re.sub(r"\A(?:(?:on|in)\s+)?(?:" + PSALM_WORD
+                                  + r"\s+)?", "", stripped)
+            first = BARE.match(stripped)
+            if first is None:
+                if VERSE.match(stripped) or DIVISION.match(stripped):
+                    continue
+                break
+            heads = [first]
+            after = AND_BARE.match(stripped, first.end())
+            if after is not None:
+                heads.append(after)
+            for head in heads:
+                low, high = _span(head.group(1), head.group(2))
+                add(KEYED, "psalm", "Ps " + _range_label(low, high),
+                    (low, high))
+    if PSALM_118.search(text):
+        for hit in HEBREW_LETTER.finditer(text):
+            add(KEYED, "letter", hit.group(1), (hit.group(1),))
+    return list(found.values())
+
+
+BODY_VERSE = re.compile(
+    r"(?<![\w.:])(\d+)[:.](\d+)(?:-(?:(\d+)[:.])?(\d+))?(?!\d|[.:]\d)")
+BODY_CHAPTER = re.compile(
+    r"(?<![\w.])(?:[1-4]\s+)?" + BIBLE_BOOK
+    + r"\.?\s+(\d+)(?:-(\d+))?(?!\d|[.:]\d)", re.I)
+# `Pss 56 and 59`, `Psalms 32, 75 and 101`: each a chapter cited whole.
+BODY_CHAPTER_MORE = re.compile(
+    r"\s*(?:,|and|&)\s*(\d+)(?:-(\d+))?(?!\d|[.:]\d)", re.I)
+BODY_VERSE_WORD = re.compile(
+    r"(?<![\w.:])(\d+),?\s+(?:vv?\.|verses?)\s*(\d+)(?:-(\d+))?", re.I)
+DIVISION_LIST = r"(\d+(?:-\d+)?(?:\s*,\s*\d+(?:-\d+)?(?!\d|[.:]\d))*)"
+LOOSE_SEPARATOR = (
+    r"(?::\s*|\s*,\s*(?:(?:s|sect|section|sermo|serm|n|no|par|para)\.?\s*)?"
+    r"|\s*\(\s*(?:(?:s|sect|section)\.?\s*)?|\s*\u00a7\s*"
+    r"|\s+(?:(?:s|sect|section|sermo)\.?\s*)?)")
+
+
+def _covers(listed: str, low: int, high: int) -> bool:
+    for part in listed.split(","):
+        bounds = [int(n) for n in re.findall(r"\d+", part)]
+        if bounds and bounds[0] <= high and bounds[-1] >= low:
+            return True
+    return False
+
+
+def _roman(number: int) -> str:
+    out = ""
+    for value, letters in ((100, "c"), (90, "xc"), (50, "l"), (40, "xl"),
+                           (10, "x"), (9, "ix"), (5, "v"), (4, "iv"),
+                           (1, "i")):
+        while number >= value:
+            out += letters
+            number -= value
+    return out
+
+
+class CitedLoci:
+    """The body of one edition, read once for every locus of every entry."""
+
+    def __init__(self, body: str, items: list[str]):
+        self.text = _locus_text(body)
+        self.folded = fold(self.text)
+        self.verses: list[tuple[int, int, int, int]] = []
+        for hit in BODY_VERSE.finditer(self.folded):
+            chapter, verse = int(hit.group(1)), int(hit.group(2))
+            end_chapter = int(hit.group(3)) if hit.group(3) else chapter
+            end_verse = int(hit.group(4)) if hit.group(4) else verse
+            self.verses.append((chapter, verse, end_chapter, end_verse))
+            for low, high in _list_after(self.folded, hit.end()):
+                self.verses.append((end_chapter, low, end_chapter, high))
+        for hit in BODY_VERSE_WORD.finditer(self.folded):
+            chapter = int(hit.group(1))
+            low, high = _span(hit.group(2), hit.group(3))
+            self.verses.append((chapter, low, chapter, high))
+        self.chapters: list[tuple[int, int]] = []
+        for hit in BODY_CHAPTER.finditer(self.folded):
+            self.chapters.append(_span(hit.group(1), hit.group(2)))
+            at = hit.end()
+            while more := BODY_CHAPTER_MORE.match(self.folded, at):
+                self.chapters.append(_span(more.group(1), more.group(2)))
+                at = more.end()
+        # Which entries name each number at all, in any shape: the rivals a
+        # number in the body could be the citation of.
+        self.naming: dict[int, set[int]] = {}
+        for index, item in enumerate(items):
+            for _family, kind, _label, key in entry_loci(item):
+                if kind in ("verse", "chapter", "psalm"):
+                    numbers = range(key[0], key[2 if kind == "verse" else 1]
+                                    + 1)
+                elif kind == "division" and key[0][0].isdigit():
+                    numbers = (int(key[0][0]),)
+                else:
+                    continue
+                for number in numbers:
+                    self.naming.setdefault(number, set()).add(index)
+        self.mentions, self.formal = self._mentions(items)
+        self.starts = [start for start, _tail, _owners in self.mentions]
+
+    def _mentions(self, items: list[str]
+                  ) -> tuple[list[tuple[int, int, set[int]]], list[bool]]:
+        """Every mention of an entry, and whether each is ever cited by locus.
+
+        Words of an entry whose anchors are all common words are left out:
+        "Missal" or "Archive" in running prose names no source, and as the
+        nearest mention it would take a number from the source that did.
+        """
+        owners: dict[str, set[int]] = {}
+        for index, item in enumerate(items):
+            if weak_anchors(item):
+                continue
+            for name in anchors(item):
+                owners.setdefault(name, set()).add(index)
+        titled = [title_words(item) for item in items]
+        words = sorted(
+            (hit.start(), hit.end(), name)
+            for name in owners
+            for hit in re.finditer(r"\b" + re.escape(name), self.folded))
+        mentions: list[tuple[int, int, set[int]]] = []
+        formal = [False for _ in items]
+        run: list[tuple[int, int, str]] = []
+        sentinel = (len(self.folded) + 2 * MENTION_GAP + 1,) * 2 + ("",)
+        for word in words + [sentinel]:
+            if run and word[0] - run[-1][1] > MENTION_GAP:
+                sets = [owners[name] for _s, _e, name in run]
+                common = set.intersection(*sets) or set.union(*sets)
+                start, end = run[0][0], run[-1][1]
+                # The number a title word is followed by is read after the
+                # whole word, not after the anchor's prefix of it.
+                tail = WORD_REST.match(self.folded, end).end()
+                cites = bool(FORMAL.match(self.folded, tail))
+                mentions.append((start, tail, common))
+                # Only a mention that can be no other entry's shows how this
+                # one is cited: "in Psalmos 101" alone could be anyone's.
+                if cites and len(common) == 1:
+                    index = next(iter(common))
+                    if run[-1][2] in titled[index]:
+                        formal[index] = True
+                run = []
+            if word[2]:
+                run.append(word)
+        return mentions, formal
+
+    def _near(self, index: int, at: int, number: int) -> bool:
+        """Whether the number at `at` is this entry's citation.
+
+        It is when the nearest mention before it, within `LOCUS_REACH`, of any
+        entry that names this number at all is a mention of this one: "St
+        Augustine ... (95, 9)" is Augustine's even though "Ps 95:8-9" stood
+        two lines up, and "\\work{Enarrationes in Psalmos} 16.8" is not the
+        *Postilla*'s although the *Postilla* names Psalm 16 too.
+        """
+        rivals = self.naming.get(number, set()) | {index}
+        position = bisect.bisect_right(self.starts, at)
+        while position:
+            position -= 1
+            start, tail, owners = self.mentions[position]
+            if at - tail > LOCUS_REACH:
+                return False
+            if owners & rivals:
+                return index in owners
+        return False
+
+    def judged(self, index: int, family: str, keyed: int) -> bool:
+        """Whether this entry's loci of this family are held to the body.
+
+        `keyed` is how many keyed loci the entry names. One alone is not
+        judged: an entry that gives a single place in a work the body uses
+        has nothing in it the body could be using instead.
+        """
+        return family == LISTED or (self.formal[index] and keyed > 1)
+
+    def _chapters(self, chapter: int, psalm: bool) -> set[int]:
+        return {chapter - 1, chapter, chapter + 1} if psalm else {chapter}
+
+    def cited(self, index: int, kind: str, key: tuple) -> bool:
+        if kind == "verse":
+            chapter, low, end_chapter, high, psalm = key
+            if chapter != end_chapter:
+                return any(chapter <= c <= end_chapter for c, _l, _e, _h
+                           in self.verses) or any(
+                    a <= end_chapter and b >= chapter
+                    for a, b in self.chapters)
+            near = self._chapters(chapter, psalm)
+            return any(c in near and l <= high and h >= low
+                       for c, l, e, h in self.verses if c == e) or any(
+                c <= chapter <= e for c, _l, e, _h in self.verses
+                if c != e) or any(a <= max(near) and b >= min(near)
+                                  for a, b in self.chapters)
+        if kind == "chapter":
+            low, high, psalm = key
+            if psalm:
+                low, high = low - 1, high + 1
+            return any(c <= high and e >= low
+                       for c, _l, e, _h in self.verses) or any(
+                a <= high and b >= low for a, b in self.chapters)
+        if kind == "letter":
+            return bool(re.search(r"\b" + key[0] + r"\b", self.text))
+        if kind == "psalm":
+            low, high = key
+            for number in range(low, high + 1):
+                for pattern in (rf"(?<![\w.:-]){number}(?!\d)",
+                                rf"\b{_roman(number)}\b"):
+                    if any(self._near(index, hit.start(), number)
+                           for hit in re.finditer(pattern, self.folded)):
+                        return True
+            return False
+        prefix, low, high = key
+        levels = [re.escape(level.lower()) for level in prefix]
+        strict = re.compile(r"(?<![\w.:])" + r"\.".join(levels) + r"\."
+                            + DIVISION_LIST)
+        if any(_covers(hit.group(1), low, high)
+               for hit in strict.finditer(self.folded)):
+            return True
+        loose = re.compile(r"(?<![\w.:])" + r"[.,]\s*".join(levels)
+                           + LOOSE_SEPARATOR + DIVISION_LIST)
+        head = int(prefix[0]) if prefix[0].isdigit() else -1
+        return any(_covers(hit.group(1), low, high)
+                   and self._near(index, hit.start(), head)
+                   for hit in loose.finditer(self.folded))
+
+
 # --- The checks ------------------------------------------------------------
 
 def check_references_used(leaf: Path, root: Path,
                          edition: str = LEAF_EDITION
                          ) -> tuple[list[str], str]:
-    """Every References entry is cited somewhere in the body.
+    """Every References entry is cited in the body, and every locus it names.
 
     The profile is explicit: References carries only sources actually used,
     and no unused lead or source used only by deleted material. That is a
     rule about the whole document, so reading either half alone cannot
     settle it, and a five-lane evaluation has twice spent its judgment
-    discovering entries the body never touches.
+    discovering entries the body never touches. The loci an entry names are
+    held to the same rule; `entry_loci` says which and why.
     """
     references, body = split_leaf(leaf, edition)
     if not references:
@@ -580,16 +1104,39 @@ def check_references_used(leaf: Path, root: Path,
     used = fold(prose(body))
     unused = []
     items = reference_items(references)
-    for item in items:
+    judge_loci = (edition in LOCUS_EDITIONS and three_document_study(leaf))
+    cited = CitedLoci(body, items) if judge_loci else None
+    loci = 0
+    for index, item in enumerate(items):
         names = anchors(item)
         if not names:
             continue
         hits = [bool(re.search(r"\b" + re.escape(name), used))
                 for name in names]
+        excerpt = " ".join(prose(item).split())[:120]
         if not (all(hits) if weak_anchors(item) else any(hits)):
             unused.append("References entry is cited nowhere in the body: "
-                          + " ".join(prose(item).split())[:120])
-    return unused, (f"{len(items)} entries, every one used in the body")
+                          + excerpt)
+            continue
+        if not judge_loci:
+            continue
+        every = entry_loci(item)
+        keyed = sum(family == KEYED for family, *_rest in every)
+        named = [(kind, label, key) for family, kind, label, key in every
+                 if cited.judged(index, family, keyed)]
+        loci += len(named)
+        missing = [label for kind, label, key in named
+                   if not cited.cited(index, kind, key)]
+        if missing:
+            unused.append(
+                f"References entry names "
+                f"{'a locus' if len(missing) == 1 else 'loci'} the body "
+                f"never cites ({', '.join(missing)}); cite each where the "
+                f"prose relies on it, or take it out of the entry: {excerpt}")
+    summary = f"{len(items)} entries, every one used in the body"
+    if loci:
+        summary += f", and the {loci} loci held to it every one cited there"
+    return unused, summary
 
 
 IDENTIFIER = re.compile(
@@ -2237,7 +2784,8 @@ def _orientation_tables(printed, found, leaf, *, required):
             text = text[:start] + place + text[end:]
         cleaned[path] = text
     if required and tables_seen != 1:
-        problems.append("orientation-v1 requires exactly one complete orientation table on page two")
+        problems.append("orientation-v1 and orientation-v2 require exactly one complete "
+                        "orientation table on page two")
     return problems, cleaned, seen
 
 
@@ -2322,7 +2870,8 @@ def check_chronology_claims_supported(leaf: Path, root: Path,
         if macros and any(r"\chronodate" in text for text in printed.values()):
             orientation_problems.append("orientation page two uses generated rows, not element-wide date cells")
     elif any(r"\chronologyorientationrow" in text for text in printed.values()):
-        orientation_problems.append("orientation rows require chronology_presentation = 'orientation-v1'")
+        orientation_problems.append("orientation rows require chronology_presentation = "
+                                    "'orientation-v1' or 'orientation-v2'")
     # `claims` is the complete per-locus audit union. Only
     # `publication_claims` is the exact assertion-identity intersection across
     # every locus an element appoints, and therefore safe to print once as the

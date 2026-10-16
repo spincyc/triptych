@@ -996,15 +996,34 @@ class ProseCheckTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn("no sentence taking the guide", result.stdout)
 
+    # The published 1962 leaves the house-voice rules added on 2026-10-16
+    # refuse, each for a form `guidance/editorial.md` sends to the terminal
+    # apparatus: claude/49, /51 and /52 narrate a search ("No patristic
+    # commentary on this oration's wording was located"), and claude/60
+    # labels the editor's synthesis in the body twice ("the join is the
+    # editor's"). The rules were written from STU-001 of proper-study run
+    # 4d16b5e19d25dad9; no leaf was edited with them, because repairing
+    # published prose is a content pass and not a tool change. The set may
+    # only shrink: a repaired leaf leaves it without touching this test, and
+    # a leaf that takes either habit up is a failure here as it always was.
+    UNREPAIRED_2026_10_16 = {
+        "claude/49-ninth-after-pentecost",
+        "claude/51-eleventh-after-pentecost",
+        "claude/52-twelfth-after-pentecost",
+        "claude/60-twentieth-after-pentecost",
+    }
+
     def test_neither_prose_check_refuses_a_published_leaf(self):
-        """Which published leaves carry either habit: none, since 2026-09-24.
+        """Which published leaves carry either habit: none, since 2026-09-24,
+        beyond the four the 2026-10-16 rules found and no pass has repaired.
 
         The house-voice count fell as leaves were repaired -- eight over
         claude/54, gpt/54 and the specimen of the day, then six -- and the
         2026-09-24 audit repaired the last six, and gpt/52's five proposals
         that stated no "what the element-by-element reading misses" field
         (e11d8b618). The list is held empty rather than dropped, so a leaf that
-        takes either habit up again is a failure here and not a new count.
+        takes either habit up again is a failure here and not a new count;
+        `UNREPAIRED_2026_10_16` is the one exception, and it can only shrink.
         """
         leaves = list(self.leaves())
         self.assertTrue(leaves, "found no published leaf: checked nothing")
@@ -1016,30 +1035,38 @@ class ProseCheckTests(unittest.TestCase):
             if result.returncode:
                 refused[check].append(
                     f"{provider}/{document.rsplit('/', 1)[-1]}")
-        self.assertEqual(refused, {check: [] for check in PROSE_CHECKS})
+        self.assertLessEqual(set(refused["house-voice"]),
+                             self.UNREPAIRED_2026_10_16, refused)
+        self.assertEqual(refused["proposal-fields"], [])
 
     def test_house_voice_refuses_the_corpus_it_was_written_against(self):
         """Which leaves carried it when the audit began, recorded.
 
         A check written from one leaf's defects could be measuring that leaf.
-        Five of the six leaves refused here are not the specimen and two are
-        in the other provider, and every refusal is a form the guidance names,
-        so the habit was the corpus's and not the specimen's. Measured over
-        the published tree until the 2026-09-24 audit repaired all six; over
-        the audited tree now, so that the finding stays a test rather than a
-        claim in a docstring.
+        Seven of the eight leaves refused here are not the specimen and four
+        are in the other provider, and every refusal is a form the guidance
+        names, so the habit was the corpus's and not the specimen's. Measured
+        over the published tree until the 2026-09-24 audit repaired the six it
+        then refused; over the audited tree now, so that the finding stays a
+        test rather than a claim in a docstring.
         """
         refused = sorted(
             f"{provider}/{document.rsplit('/', 1)[-1]}"
             for provider, document in self.leaves(self.audited)
             if self.run_check(provider, document, "house-voice",
                               self.audited).returncode)
-        self.assertEqual(len(refused), 6, refused)
+        # Six until 2026-10-16, when the rules added for STU-001 found two
+        # more in the same tree: gpt/50 disclaims "the compiler's intention"
+        # twice and gpt/53 says "no claim is made", forms the 1962 profile
+        # names and the 2026-09-24 audit had already repaired.
+        self.assertEqual(len(refused), 8, refused)
         self.assertIn("claude/52-twelfth-after-pentecost", refused)
         self.assertEqual(
             [one for one in refused if one.startswith("gpt/")],
             ["gpt/49-ninth-after-pentecost",
-             "gpt/51-eleventh-after-pentecost"])
+             "gpt/50-tenth-after-pentecost",
+             "gpt/51-eleventh-after-pentecost",
+             "gpt/53-thirteenth-after-pentecost"])
 
     def test_house_voice_names_the_file_and_the_line_and_the_repair(self):
         """The refusal a reviser is handed, over a leaf that carries it."""
@@ -1048,7 +1075,10 @@ class ProseCheckTests(unittest.TestCase):
         lines = [line for line in result.stderr.splitlines()
                  if line.startswith(f"{ERROR}house-voice: ")
                  and "not screened:" not in line]
-        self.assertEqual(len(lines), 20)
+        # Twenty until 2026-10-16; the twenty-first is "No patristic or
+        # early-medieval commentary on the wording of these three orations
+        # was found", a search narrated where its result belongs.
+        self.assertEqual(len(lines), 21)
         self.assertTrue(
             any("sections/05-appointed-text.tex:37" in line
                 and "the guide's own apparatus is the subject" in line
@@ -1085,7 +1115,7 @@ class ProseCheckTests(unittest.TestCase):
             with self.subTest(locus=where):
                 self.assertIn(quotation, source)
             quoted += 1
-        self.assertEqual(quoted, 20, "a loop over no refusals checks nothing")
+        self.assertEqual(quoted, 21, "a loop over no refusals checks nothing")
 
     def test_house_voice_says_which_sections_it_could_not_read(self):
         """Six of the twelve leaves drop the field markup entirely.

@@ -116,8 +116,19 @@ SECTIONING = re.compile(r"\\section\*?\Z")
 # terminal appendix are qualification by design; the page-2 sheet is where the
 # profile *requires* the principal modern critical horizon to stand, and the
 # lane that found the 22 loci rested none of them on it.
+#
+# The homily's terminal note is the fourth, and was added on 2026-10-16 with
+# the rules on the editor's synthesis. It is the homily's terminal apparatus
+# (`guidance/liturgy/propers-three-documents.md`: "each homily
+# terminal-apparatus component exactly once after it"), which every published
+# homily heads "Note on Sources and Delivery" or "Source and delivery note"
+# and whose leaves describe it as "everything the speech itself must not
+# carry" -- the relation to the studies' readings, and that the reading of
+# the whole formulary is the editor's, among it. That is where the guidance
+# sends such a statement, so the screen must not refuse it there.
 EXEMPT_SECTION = re.compile(
-    r"\A(?:References|Appendix\b.*|Scriptural Date and Location)\Z")
+    r"\A(?:References|Appendix\b.*|Scriptural Date and Location"
+    r"|Note on Sources and Delivery|Source and [Dd]elivery [Nn]ote)\Z")
 INTERPRETIVE = "The Propers: Interpretive Possibilities"
 PROPOSAL = re.compile(r"\\begin\{proposal\}")
 PFIELD = re.compile(r"\\pfield\{([^{}]*)\}\s*\{")
@@ -418,6 +429,105 @@ RULES: tuple[tuple[str, re.Pattern, bool], ...] = (
      _pattern(r"\b(?:reported|cited|attributed|treated|restated|published"
               r"|stands|stand|stood)\b[^.]{0,60}?"
               r"\bnever (?:as|restated as|treated as)\b"), False),
+    # The rules below were added on 2026-10-16 for STU-001 of proper-study
+    # run 4d16b5e19d25dad9, whose expansive study passed this screen with
+    # about forty-five sentences narrating its own caution. They hold the same
+    # line as everything above -- the form, never the topic -- and the line is
+    # drawn from three sentences of the guidance: the subject test of
+    # `guidance/editorial.md` ("The same sentence is the defect when its
+    # subject is the guide, the reading, or an evidence class"), its list of
+    # what belongs in the terminal apparatus and not the body ("method, search
+    # bounds, evidence classes, corpora checked, negative results, and the
+    # reasoning that produced an editorial judgement"), and
+    # `guidance/liturgy/propers-three-documents.md`: "`research/
+    # interpretations.md` labels cross-element connections as editorial
+    # synthesis ... Reader-facing prose does not disclaim a compiler's
+    # intention".
+    #
+    # The editor's synthesis labelled in the body: "the join is the
+    # editor's", "that link to the coin is the editor's", "by the editor's
+    # own joining". The label belongs to `research/interpretations.md`; the
+    # body states the connection in the reading's own voice and credits each
+    # Father only with what he says. Only a word for a connection fires,
+    # because the corpus also prints a *source's* editor -- "The editor's
+    # comment is not a second statement by Chrysostom", "printed with the
+    # editor's note", "the bracketed word is the editor's" -- and those
+    # are facts about an edition.
+    ("the editor's synthesis is labelled in the body",
+     _pattern(r"\b(?:join|joins|joining|joinings|link|links|linking"
+              r"|connection|connections|relation|relations|placing|pairing"
+              r"|pairings|analogy|analogies|contrast|application|synthesis"
+              r"|juxtaposition|bridge|parallel|likeness|interpretation"
+              r"|reading of the whole)\b[^.;:]{0,60}?\b(?:is|are|was|were"
+              r"|remains|remain) (?:the|this) editor['’]s\b"
+              r"|\bthe editor['’]s (?:own )?(?:join|joins|joining"
+              r"|joinings|link|links|linking|verbal link|connection|placing"
+              r"|pairing|analogy|contrast|application|synthesis"
+              r"|juxtaposition|bridge|proposal)\b"), False),
+    # The editor as the subject of the act of joining: "the editor joins
+    # them". A source's editor supplies, emends, prints and defends readings
+    # in this corpus ("The editor supplies Greek-catena text for a missing
+    # Syriac folio"), so only the verbs of synthesis fire, and only where the
+    # name opens a clause.
+    ("the editor is the subject",
+     _pattern(r"\bthe editor (?:joins|joined|links|linked|connects"
+              r"|connected|pairs|paired|sets|set|puts|put|draws|drew"
+              r"|applies|applied|brings|brought|proposes|proposed|extends"
+              r"|extended|places|placed|hears|heard)\b"), True),
+    # The guide's own reading as the subject of its restraint: "the
+    # interpretation does not merge them", "the interpretation uses none of
+    # those sentences", "the studies say so wherever an argument rests on
+    # it". `interpretation` fires only before a negative or a restraint,
+    # because the published concise studies say "The interpretation carries
+    # Augustine's inference through the whole Mass", which is a reading
+    # stated, not a reading describing itself; and only where it opens a
+    # clause, so that "Jerome's interpretation does not survive in Greek" and
+    # "the interpretation of Hilary" are a source's.
+    ("the reading narrates its own restraint",
+     _pattern(r"\b(?:the|this) (?:interpretation|reading of the whole)"
+              r" (?:does|do|did) not\b"
+              r"|\b(?:the|this) (?:interpretation|reading of the whole)"
+              r" (?:never|makes no|claims no|claims nothing|asserts no"
+              r"|draws no|builds no|builds nothing|rests nothing|uses none"
+              r"|uses no|takes no|presses no|credits no|is not built"
+              r"|tells its history)\b"
+              r"|\bthe studies (?:say|said|note|state|mark) so\b"), True),
+    # A negative result told as the search that produced it: "No commentary
+    # on this prayer was found", "No source consulted for this study says".
+    # The line: a negative whose verb is the search's (`found`, `located`,
+    # `traced`, consulted *for this study*) narrates the process and belongs
+    # with the corpora checked in the terminal apparatus; a negative whose
+    # verb is the evidence's -- "No commentary on the Collect survives", "No
+    # Father comments on the Collect", "None of the three orations stands in
+    # the Veronense" -- states the result, and `guidance/editorial.md` says
+    # to state it.
+    ("a search is narrated instead of its result stated",
+     _pattern(r"\bno (?:commentary|comment|commentator|witness|source"
+              r"|father|exposition|sermon|homily|reading|evidence|trace"
+              r"|parallel|discussion|patristic \w+|ancient \w+"
+              r"|medieval \w+)\b[^.;]{0,80}?\b(?:was|were|has been"
+              r"|have been|could be|can be|is) (?:found|located|traced"
+              r"|identified)\b"
+              r"|\b(?:consulted|read|searched|checked|examined) (?:for|by)"
+              r" (?:this|the) (?:study|studies|guide)\b"), False),
+    # A claim disclaimed instead of left unmade: "nothing is claimed here
+    # about how it came into the Missal", "no claim is made about the
+    # route", disclaimers that a text was designed. The 1962 profile: a
+    # guide "that has not established a compiler's intention simply does not
+    # claim one; it does not tell the reader that its observation does not
+    # prove a compiler's intention". Only the agentless passive fires, in
+    # which the guide is the hidden subject: "Jerome makes no claim about
+    # the date" is a fact about Jerome.
+    ("a claim is disclaimed instead of left unmade",
+     _pattern(r"\bnothing is (?:claimed|asserted|inferred|argued|proposed)"
+              r"\b|\bno claim is (?:made|advanced|offered)\b"
+              r"|\b(?:is|are) not claimed here\b"
+              r"|\bthat any (?:of (?:these|the|them) )?(?:\w+ ){0,2}"
+              r"(?:was|were) (?:designed|chosen|intended|planned|arranged)\b"
+              r"|\b(?:not|no|nothing|nor|never|without)\b[^.;]{0,80}?"
+              r"(?:\bby design\b|\bcompilers?['’]s? (?:intention|intent"
+              r"|design|purpose)\b|\bintention of the compilers?\b)"),
+     False),
 )
 
 # A bold run-in label that counts the guide's own bounds. The profile: "A
