@@ -26,10 +26,31 @@ exact scope opening. The GPT leaf for the same identity is published; this is
 an independent Claude production under its own edition tree and borrows
 nothing from it.
 
-**In progress.** Authorization and acceptance criteria are recorded; the run
-has not yet been seeded. Work is committed on `feature/propers/claude`, the
-workspace's required branch, and reaches `main` by fast-forward after the
-local deploy gates pass.
+**Accepted and committed; the push to `main` is next.** Run
+`4d16b5e19d25dad9` (`proper-study` v11) reached ACCEPTED at its publication
+gates with no escalation: 33 packets, 33 accepted results, one intervention.
+Every agent stage ran as a fresh `claude-opus-5-5[1m]` subagent at its
+packet's declared effort, and every review was a fresh worker. Cold reviews
+found four cycles of real defects, and the next stage repaired each one:
+- Research, twice. First, a Communion in Schuster and Fromage left unread, a
+  chronology row from a shared-tool prefix match on the acclamation key, an
+  invented patristic disagreement and unresearched place phrases. Second,
+  Mt 22:15 misread.
+- The study once: self-narrating caution, Augustine's psalter given the NPNF
+  translator's word, and four Fathers credited with the editor's link.
+- The concise once: four unused References loci.
+
+The homily, visual and web reviews passed at their first round. The installed
+family is a 37-page expansive study, an 11-page concise study, a four-page
+homily (1,466 spoken words) and the canonical web edition. The run is
+archived in the leaf under
+`evaluations/proper-study-results/4d16b5e19d25dad9/`. The driver's account of
+every cycle, the 22 standing findings and what is left for other owners is
+[CYCLES.md](workflows/reviews/claude-pc-s55-production-2026-10-16/CYCLES.md). After acceptance, on the maintainer's explicit
+confirmation, the Claude publication inventory was refreshed with this leaf's
+classification row, and the source-family ledger's catalog snapshot was
+re-pinned. `make check-sources`, `check-publication-inventories`,
+`check-release-bindings`, `check-web-editions-current` and `tmt check` pass.
 
 ## Claude 1962 Twenty-first Sunday three documents, 2026-10-15
 

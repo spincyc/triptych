@@ -1,0 +1,94 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "accepted_because": "It is a complete paragraph ending a major part before a part that properly starts on a fresh page, the short final page normal at a chapter end; nothing is split, hidden or misread, and moving it would change study pagination and re-run every downstream review for no gain to the reader.",
+      "id": "VIS-001",
+      "location": "Expansive study, physical page 28 (end of The Three Interpretations Compared, sections/50-comparison.tex; forced page break before sections/80-date-location.tex)",
+      "problem": "The comparison's closing paragraph (seven lines: the first and third can be preached together; each interpretation's principal difficulty) stands alone at the top of page 28, about 14% of the text block, and the rest of the page is empty because the Scriptural Date and Location appendix begins on a fresh page 29.",
+      "required_result": "If the study is repaginated for another reason, end The Three Interpretations Compared on page 27, or follow it on the same page with the next section, without padding, type reduction or cutting the paragraph.",
+      "severity": "accepted"
+    },
+    {
+      "id": "VIS-002",
+      "location": "Expansive study, physical page 29, Scriptural Date and Location table (sections/80-date-location.tex)",
+      "problem": "Unlike the concise page-2 table, the study's table has no space between rows within a book group, so where the Passage cell is the tallest in its row, adjacent rows' Passage cells run together at the ordinary line pitch: the first two psalm rows form one unbroken ten-line block, and the two 'Responsorial Psalm: Psalm 96:1, 3, ...' rows form one six-line block of identical labels. A row boundary is visible only from where the Occurrence and Date cells start.",
+      "required_result": "Row boundaries visible in the Passage column as on concise page 2 (for example the same inter-row spacing the concise component uses), with the table still on page 29 and its type size unchanged.",
+      "severity": "advisory"
+    },
+    {
+      "id": "VIS-003",
+      "location": "Expansive study, physical page 7, first line (The Appointed Texts, Douay-Rheims Phil 2:15-16 block; sections/05-appointed-texts.tex, the \\notread after 'word of life')",
+      "problem": "The marked unappointed words print as 'the word of life[ to my glory in the day of Christ: ...]': the word space falls inside the bracket and none precedes it, which reads as a typesetting slip beside the other bracketed omissions on pages 5-8.",
+      "required_result": "The bracket set as 'the word of life [to my glory in the day of Christ: because I have not run in vain, nor laboured in vain.]', with the space before the opening bracket.",
+      "severity": "advisory"
+    },
+    {
+      "id": "VIS-004",
+      "location": "Homily, physical page 1, left column, the movement break after 'and he calls them hypocrites.' (sections/homily/10-homily.tex inside the shared properhomily environment)",
+      "problem": "The two-column environment sets flush-bottom columns, and the left column's only stretchable glue is this \\bigskip, so the break opens to about 0.8 in (158 px at 200 dpi) where every other movement break in the speech measures about 0.28-0.30 in (55-60 px). On the homily's first page it reads as a hole rather than one of the uniform breaks a speaker uses to find his place.",
+      "required_result": "Every movement break in the speech of the same height on every page, without changing the spoken text; the general remedy is ragged-bottom columns in the shared homily environment, a maintainer-level shared change beyond this leaf.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "observations": [
+    {
+      "location": "Concise page 2 and study page 29, Passage column of the generated orientation rows (refs from research/chronology-inputs.toml)",
+      "note": "The generator prints the input ref strings verbatim, so verse ranges show ASCII hyphens (Psalm 32:18-19, Isaiah 45:1, 4-6, Matthew 22:15-21, 1 Thessalonians 1:1-5b) beside the en-dash ranges of the page-1 map and the notes; other leaves' inputs use the same ASCII form, so this looks like a missing display-normalization rule at the generator rather than a leaf defect."
+    }
+  ],
+  "review_inputs": {
+    "artifacts": {
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+      "pagination_evidence": {
+        "build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.aux": "dca2714c3aeb2ddef3de3e67d66cf5abde7c0627c201c3f1174946d6bb68aeae",
+        "build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.aux": "e11e99f372bddd8f3824d0a2a1a608fdbc5a1f35b821e37e2a03d493afff4a41"
+      },
+      "pdfs": {
+        "build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily.pdf": "2543cc5187959b2baa9a8afd34c4105d45072a681e2b41586a12f2037953d1d3",
+        "build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.pdf": "5eb21cde1e38c507b9622084d11763b11db6182dce8e148968a292f5cdf507c2",
+        "build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.pdf": "bdb08313a4398333871e7a6b67d1484a6330bbfdc9dcdb05ff5e936b2c8d0782"
+      },
+      "provider": "claude",
+      "render_inputs": {
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/format.tex": "eeaf0327164d86b3e1294ccd6798be86513bb5471c89fd0009f9f455ec6985a2",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/generation-metadata.tex": "1d80a4a8ff1aad022ace012fc6de711def82e1a41b281d081580ba8e96bc774e",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/homily.tex": "39d86f97961cf68493311c946b44e30c7733f0e5c149ebccca95e62e331264c1",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/main.tex": "75da8b30216b4a40e9a078239f6a4ad1409ada817337a67fe1293c17f843ba3d",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/proper-components.toml": "716a08d49f4034297cb4765f3c65b754ce0eec28710a1300006250faf37cf4d2",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/chronology-annotations.tex": "fa49215c27960e194d54ca43993a79232de14c93fbf6c41ffb656294beecc771",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/00-opening.tex": "b190f928fafc93a88dcdd539a5bc0a71074d706609c08e2c5cb133e9c22786dd",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/05-appointed-texts.tex": "539b8fb4a0419883e6eee33abfcba7061c49978f5b1392144de3f91b1138e0c1",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/10-each-element.tex": "afc555e0db68cc69ea041813e40619285743e3b788e8af2c6d4ff18abc3f83ef",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/20-image-and-inscription.tex": "0529279d869815d602b6ba2b973c7630a1c047ef274e3b617d07e015b2c476c3",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/30-cyrus-and-caesar.tex": "8bb44e0738e2b56262f9383e3cf4d5547dae4f332040e4fb70f6303e6b083653",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/40-sincere-heart.tex": "4419833c744082154ca2596ddc9468b2eb50bbdf50f915786d5b4298381ebb0f",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/50-comparison.tex": "a7ecda73d1fe4f31fe682be1b1fe5d7d14039b39e3f0e16c09f175e511a25aff",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/80-date-location.tex": "b11fea5191255719c1dc14f5d6ba256cdd20d59d968e462c948111db40fd9671",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/85-liturgical-resolution.tex": "bfa194e112723c5c016523fda72b3b7f4a6fe95fe587c18ac9cc87fd8e8bdfbc",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/90-apparatus.tex": "a98af97a1d4cf1eb6c0ae493a3266ce07f1266276b906fa11d27a7309d6521a7",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/concise/01-inventory.tex": "881575204fcda13d5691d3ea5bf3adb66a550bbe20bc0a39576436f50124b81c",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/concise/02-overview.tex": "964a7f8009bcf5b9a3946d8d63a62edd543c12bbb406c9c603ce42e4215ceb02",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/concise/03-date-location.tex": "eff8c5d2825db5e0fdddb05a7e3fc9bb94463fb014881ac0b8658a8865eb6379",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/concise/04-themes.tex": "29bd89df7970cbf2747e618c6ae7e53d1f63c19c344bb507e92b2c7bb35ce42f",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/concise/10-commentary.tex": "5a7d4b86062bfb3652fe99e0b678ff66a81e6ea5228b11c71bef2ce937ebccc4",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/concise/90-apparatus.tex": "243f9f5ee81a2bca12611a21fdad42e280f36b3ccfdb303aafa65af5ff5e8d79",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/homily/10-homily.tex": "9ee27eeb61a37d2b61dce96013496d91d44ae66ad6ecabc62b9fc9a5955f587e",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/homily/90-note.tex": "79b1831299133216b0c7057408feeacba4a2a32e86ec7a157a790a36d36ee6e8",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/synthesis.tex": "2255e5c9dca614a904c9b832c2c1446c05a32ac8678a85b9dd79b5389e0923e6",
+        "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+        "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+        "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b"
+      },
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+    "files": {},
+    "provider": "claude",
+    "review": "visual",
+    "schema": 1
+  },
+  "stage": "visual-review",
+  "summary": "Cold visual review of all three sealed PDFs of claude liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a, every page inspected at full raster size (build-artifacts-0 rasters, 1700x2200, whose review-cache pdf_sha256 values equal the sealed receipts), with full-resolution crops where scale mattered. Artifacts and coverage: expansive study bdb08313a4398333871e7a6b67d1484a6330bbfdc9dcdb05ff5e936b2c8d0782, 37 physical pages, pages 1-37 inspected; concise study (-synthesis) 5eb21cde1e38c507b9622084d11763b11db6182dce8e148968a292f5cdf507c2, 11 pages, pages 1-11 inspected; homily (-homily) 2543cc5187959b2baa9a8afd34c4105d45072a681e2b41586a12f2037953d1d3, 4 pages, pages 1-4 inspected. All 33 sealed receipts (3 PDFs, 2 aux, 28 render inputs) re-hashed and match REVIEW_INPUTS. Checked: logs carry no warning, overfull/underfull box or undefined reference; every font embedded subset Latin Modern Type 1; 11pt article, 0.75in margins (measured 150 px at 200 dpi), letter; zero colour saturation on all 52 rasters (monochrome); running heads and folios consistent, title pages plain, the compact rights colophon on each final page beside the revision timestamp, never alone; no footnotes are used and no table is clipped or overlapping (longtable heads repeat on pp. 4, 27, 33). Neither study has columns; the homily has a full-width title, a two-column speech of two pages with no inline apparatus, and a separate full-width Note on Sources and Delivery with References after the page break. Extents: 37 pages (20-50) and 11 pages (10-12). Concise opening, read against the settled aux zref markers: page 1 holds the complete eleven-row map in liturgical order with both Communion antiphons marked as options and exactly four sense rows; page 2 holds Scriptural Date and Location alone; pages 3-4 carry substantive Themes and Movement prose; developed interleaved commentary begins on page 5, each unit setting the three interpretations' answers beside one another. Lookup at normal reading size on concise page 2: Gospel, Matthew 22:15-21 -> 'Event. Jesus answers the tribute question while teaching in the temple at Jerusalem.' -> 'Date unresolved', and on the next row its Composition (Matthew writes for Jewish readers; place not fixed) -> 'Disputed: c. A.D. 38-45; ...'; First Reading, Isaiah 45:1, 4-6 -> traditional attribution, Isaias at Jerusalem -> 'B.C. 740-701', and prophecy of Isaiah 40-55, unnamed prophet bidding the exiles leave Babylon -> 'Toward the end of the Babylonian exile'. Each pairing reads straight across a top-aligned row separated by white space; outcome: pass. Limits: the pdf/ mirrors are not yet installed, so build-to-install byte identity belongs to the installation gate; this is a new production, not a formatting migration, so substantive-text preservation does not apply. Four non-blocking findings are recorded (one accepted, three advisory). Independence: no file of the GPT pc-s55 leaf, its outputs or its review directory was opened; one repository listing printed file names under workflows/reviews/gpt-pc-s55-production-2026-10-13/ and nothing from it was used. Verdict: PASS."
+}

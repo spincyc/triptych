@@ -49,13 +49,13 @@ provider = "claude"
 run_id = "4d16b5e19d25dad9"
 workflow = "proper-study"
 workflow_version = 11
-stage = "homily-review"
+stage = "web-review"
 iteration = 0
 disposition = "PASS"
 standing = 0
-accepted_count = 1
-advisory_count = 10
-observation_count = 4
+accepted_count = 3
+advisory_count = 13
+observation_count = 6
 
 [[stages]]
 stage = "homily-review"
@@ -105,6 +105,30 @@ accepted_count = 0
 advisory_count = 2
 observation_count = 0
 
+[[stages]]
+stage = "visual-review"
+iteration = 0
+disposition = "PASS"
+run_id = "4d16b5e19d25dad9"
+workflow = "proper-study"
+workflow_version = 11
+standing = 0
+accepted_count = 1
+advisory_count = 3
+observation_count = 1
+
+[[stages]]
+stage = "web-review"
+iteration = 0
+disposition = "PASS"
+run_id = "4d16b5e19d25dad9"
+workflow = "proper-study"
+workflow_version = 11
+standing = 0
+accepted_count = 1
+advisory_count = 0
+observation_count = 1
+
 [[accepted]]
 stage = "study-review"
 id = "STU-004"
@@ -113,6 +137,24 @@ location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-editi
 problem = "The research record still says that Augustine's v. 7 reads 'worship and honour'. His Latin at En. in Ps. 95.8 reads 'afferte Domino gloriam et honorem' (latin-migne-corpus-corporum-wikisource enarrationes-part-10.txt line 118); 'worship and honour' is the NPNF English. The study no longer reproduces the claim (STU-002 repaired), and research/production-review.md records the defect for the research owner."
 required_result = "Whenever the research records are next reopened by their owner, the parenthesis says that the NPNF English renders v. 7 'worship and honour' while Augustine's Latin reads gloriam et honorem."
 accepted_because = "The defect sits only in a reviewed, non-reader-facing audit record. Repairing it now would reopen the settled research owner and rerun the whole chain for one parenthesis, and no reader-facing text carries it."
+
+[[accepted]]
+stage = "visual-review"
+id = "VIS-001"
+severity = "accepted"
+location = "Expansive study, physical page 28 (end of The Three Interpretations Compared, sections/50-comparison.tex; forced page break before sections/80-date-location.tex)"
+problem = "The comparison's closing paragraph (seven lines: the first and third can be preached together; each interpretation's principal difficulty) stands alone at the top of page 28, about 14% of the text block, and the rest of the page is empty because the Scriptural Date and Location appendix begins on a fresh page 29."
+required_result = "If the study is repaginated for another reason, end The Three Interpretations Compared on page 27, or follow it on the same page with the next section, without padding, type reduction or cutting the paragraph."
+accepted_because = "It is a complete paragraph ending a major part before a part that properly starts on a fresh page, the short final page normal at a chapter end; nothing is split, hidden or misread, and moving it would change study pagination and re-run every downstream review for no gain to the reader."
+
+[[accepted]]
+stage = "web-review"
+id = "WEB-001"
+severity = "accepted"
+location = "build/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.md line 600 (Appendix: Scope and Qualifications, 'Text control.' paragraph, last sentence); source src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/90-apparatus.tex lines 33-36"
+problem = "Reader-facing text names a production stage. The sentence says the branch rows rest on the United States General Instruction 'as read, in its official chapter pages, at the stage that resolved this Sunday's context; a later attempt to read the same pages again was refused by the publisher's site'. 'The stage that resolved this Sunday's context' is workflow-process language that a reader cannot interpret. The research PDF carries the same words, and the conversion reproduces them faithfully, so this is a study-writing defect, not a conversion defect."
+required_result = "If sections/90-apparatus.tex is reopened for another reason, identify the reading by its date instead of a production stage, for example: 'as read in its official chapter pages on 16 October 2026; a later attempt that day to read them again was refused by the publisher's site'. Then regenerate the web edition."
+accepted_because = "The sentence states the evidence and its limit correctly, and no reader is misled about what was read. Repairing one clause would reopen the reviewed study owner and rerun the study, concise, homily, build, visual and web reviews."
 
 [[advisories]]
 stage = "homily-review"
@@ -194,6 +236,30 @@ location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-editi
 problem = "The record undercounts what the repair changed. A fifth phrase outside SYN-002's list also lost its Latin to an English rendering: Jerome's 'Prima virtus est respondentis, interrogantium mentem cognoscere' is now 'the first virtue of one who answers is to know the mind of those who ask' (10-commentary.tex lines 220-221), and the record does not mention it. The production audit is meant to state the revision exactly."
 required_result = "The next author to update the production record corrects the bullet to five further phrases and names Jerome's 'the first virtue of one who answers'. Nothing else needs to change."
 
+[[advisories]]
+stage = "visual-review"
+id = "VIS-002"
+severity = "advisory"
+location = "Expansive study, physical page 29, Scriptural Date and Location table (sections/80-date-location.tex)"
+problem = "Unlike the concise page-2 table, the study's table has no space between rows within a book group, so where the Passage cell is the tallest in its row, adjacent rows' Passage cells run together at the ordinary line pitch: the first two psalm rows form one unbroken ten-line block, and the two 'Responsorial Psalm: Psalm 96:1, 3, ...' rows form one six-line block of identical labels. A row boundary is visible only from where the Occurrence and Date cells start."
+required_result = "Row boundaries visible in the Passage column as on concise page 2 (for example the same inter-row spacing the concise component uses), with the table still on page 29 and its type size unchanged."
+
+[[advisories]]
+stage = "visual-review"
+id = "VIS-003"
+severity = "advisory"
+location = "Expansive study, physical page 7, first line (The Appointed Texts, Douay-Rheims Phil 2:15-16 block; sections/05-appointed-texts.tex, the \\notread after 'word of life')"
+problem = "The marked unappointed words print as 'the word of life[ to my glory in the day of Christ: ...]': the word space falls inside the bracket and none precedes it, which reads as a typesetting slip beside the other bracketed omissions on pages 5-8."
+required_result = "The bracket set as 'the word of life [to my glory in the day of Christ: because I have not run in vain, nor laboured in vain.]', with the space before the opening bracket."
+
+[[advisories]]
+stage = "visual-review"
+id = "VIS-004"
+severity = "advisory"
+location = "Homily, physical page 1, left column, the movement break after 'and he calls them hypocrites.' (sections/homily/10-homily.tex inside the shared properhomily environment)"
+problem = "The two-column environment sets flush-bottom columns, and the left column's only stretchable glue is this \\bigskip, so the break opens to about 0.8 in (158 px at 200 dpi) where every other movement break in the speech measures about 0.28-0.30 in (55-60 px). On the homily's first page it reads as a hole rather than one of the uniform breaks a speaker uses to find his place."
+required_result = "Every movement break in the speech of the same height on every page, without changing the spoken text; the general remedy is ragged-bottom columns in the shared homily environment, a maintainer-level shared change beyond this leaf."
+
 [[observations]]
 stage = "research-review"
 location = "scripts/_proper_chronology.py, orientation builder line 1465 (element.key.startswith(\"gospel\")) against the detailed-annotation path line 1292 (element.key == \"gospel\")"
@@ -213,3 +279,13 @@ note = "Still present: the generated Passage cells print the antiphons' psalms i
 stage = "study-review"
 location = "tools/tpt check-content-preflight --check house-voice (study-preflight 0000 log: 'no sentence taking the guide, its apparatus or the repository as its subject', exit 0)"
 note = "The screen passed the iteration-0 text, which still had sentences of the forms 'the editor joins', 'the interpretation does not' and 'No commentary on' that STU-001 later removed. These forms appear to be a missing lexical criterion of that screen."
+
+[[observations]]
+stage = "visual-review"
+location = "Concise page 2 and study page 29, Passage column of the generated orientation rows (refs from research/chronology-inputs.toml)"
+note = "The generator prints the input ref strings verbatim, so verse ranges show ASCII hyphens (Psalm 32:18-19, Isaiah 45:1, 4-6, Matthew 22:15-21, 1 Thessalonians 1:1-5b) beside the en-dash ranges of the page-1 map and the notes; other leaves' inputs use the same ASCII form, so this looks like a missing display-normalization rule at the generator rather than a leaf defect."
+
+[[observations]]
+stage = "web-review"
+location = "release/public-alpha/assets/site.css lines 596-627 (the 760px rules for the Scriptural Date and Location dossier), applied to the orientation-v1 table at build/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.md lines 526-539, rendered at 390 px"
+note = "At phone width the dossier rules set this three-column orientation-v1 table on a two-column grid: Passage and Occurrence on one line, Date beneath, with an empty cell beside 'Date' in the header block and beside each date. The stylesheet's comment and rules describe only the four-column dossier. Every row still pairs passage, occurrence and date legibly, so nothing is lost here, but no rule fits the three-column orientation shape the newer propers now publish."

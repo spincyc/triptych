@@ -1,0 +1,271 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "HOM-001",
+      "location": "sections/homily/10-homily.tex, fourth movement (the worn coin restamped), the sentence beginning \"In Saint Mark's words, which one of the two Communion antiphons today takes up\"",
+      "problem": "The relative clause \"which one of the two Communion antiphons today takes up\" puts liturgical apparatus inside the speech. It refers to a Missal option that an assembly rarely hears as such, because a hymn often replaces the antiphon. It also holds a ten-word aside between \"In Saint Mark's words\" and the quotation, which makes this the hardest sentence in the speech to follow by ear. The argument does not need it: Mark 10:45 carries the point as Scripture, and the terminal note already records the branch and the antiphon relation.",
+      "required_result": "Introduce Mark 10:45 directly as Scripture without the embedded antiphon clause, for example \"In Saint Mark's Gospel the Son of man came ...\". If the link to the Communion antiphon is kept, give it a short sentence of its own after the quotation, one that stays true whichever antiphon or substitute is sung. Keep the terminal note's branch statement consistent with whatever the speech then says.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-002",
+      "location": "research/scope.md section 2, textual-observations paragraph (\"in v. 8, bring sacrifices (*tollite hostias*, not sung)\"), on which the sentence \"The psalm told us how to come: 'Bring up sacrifices, and come into his courts.'\" in the seventh movement of sections/homily/10-homily.tex depends",
+      "problem": "Scope section 2's parenthetical says that v. 8's \"bring sacrifices\" is not sung. That contradicts three other statements in the records: the Ordo and US locator 7-8, given as whole verses in propers/verified.md (unit 4) and research/context.md (row 4); context.md's list of what is not sung (v. 2, v. 6 and the middle clause of v. 10 only); and scope.md's own section-2 table row for Psalm 95, which marks v. 8 without \"not sung\". The homily's claim that the psalm told the assembly to come into his courts with sacrifices holds only if v. 8b is sung. The bound locator supports the homily, so the defect is the research record's inconsistent parenthetical and not the speech. A later reader of scope.md would still find the homily's sentence contradicted there.",
+      "required_result": "Make the research records agree that v. 8 is sung whole by correcting the scope.md section 2 parenthetical when the research owner next touches that file. Alternatively, if a reading of the printed Lectionary shows v. 8b omitted, revise the homily's sentence so that it no longer says the psalm told the assembly to bring sacrifices into his courts.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-homily.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "homily-body"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "homily-note",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-note.tex",
+          "references": [
+            "propers/verified.md",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+      "element_keys": [
+        "entrance-antiphon",
+        "collect",
+        "first-reading",
+        "responsorial-psalm",
+        "second-reading",
+        "acclamation",
+        "gospel",
+        "prayer-over-offerings",
+        "communion-antiphon-a",
+        "communion-antiphon-b",
+        "prayer-after-communion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Ambrose of Milan",
+            "Hilary of Poitiers",
+            "Thomas Aquinas",
+            "Jerome",
+            "John Chrysostom",
+            "Bede"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Ambrose of Milan",
+            "Hilary of Poitiers",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "image-and-inscription"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "image-and-inscription",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Jerome",
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Hilary of Poitiers",
+            "Ambrose of Milan",
+            "Bede",
+            "Robert Bellarmine"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Jerome",
+            "Augustine of Hippo",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "cyrus-and-caesar"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "cyrus-and-caesar",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Jerome",
+            "Thomas Aquinas",
+            "Augustine of Hippo",
+            "Hilary of Poitiers",
+            "Robert Bellarmine",
+            "Bede"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Jerome",
+            "Thomas Aquinas",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "sincere-heart"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "sincere-heart",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+    "files": {
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/format.tex": "eeaf0327164d86b3e1294ccd6798be86513bb5471c89fd0009f9f455ec6985a2",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/homily.tex": "39d86f97961cf68493311c946b44e30c7733f0e5c149ebccca95e62e331264c1",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/propers/verified.md": "38519ffba2456743064ab1e894ddee8786cb537784ecfd1398e586cb5883e6d5",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/interpretations.md": "e86a05853cdde34662c84c485f7daf10b9993a1d7c8ac781205b3ab87bc864f2",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/scope.md": "d3a70de90dc51049422ab5de602132d4da51ec07fd35a6593a7fd40223f070c2",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/homily/10-homily.tex": "9ee27eeb61a37d2b61dce96013496d91d44ae66ad6ecabc62b9fc9a5955f587e",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/homily/90-note.tex": "79b1831299133216b0c7057408feeacba4a2a32e86ec7a157a790a36d36ee6e8",
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "11",
+            "17f12ad495885888db9045416b60df5bc828dccdf9f1eab5a1edb648cc280964",
+            "4d16b5e19d25dad9",
+            "fd99f7289aeb120b0a598e053dd292593a2f6576",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Cold review of the homily homily.tex with its spoken body sections/homily/10-homily.tex and its note sections/homily/90-note.tex. All sealed input hashes matched REVIEW_INPUTS. The body was read through continuously as a listener would hear it, then checked against research/interpretations.md, research/scope.md, propers/verified.md and the expansive study's treatment. The homily makes one clear exegetical argument: the coin bears Caesar's image, so the person who bears God's image (Gn 1:26, Augustine Tract. 40.9) is owed to God, and a self can be given only with the heart, which is why men who speak true words are called hypocrites (Chrysostom Hom. 70.1, Aquinas). The decisive turns come from the text: the change from give to render (Mt 22:17/21) and the true praise followed by the charge of hypocrisy (22:16/18). The argument would not survive replacing the readings. It uses the first reading (Cyrus and the limit on Caesar's claim), the psalm (v. 8), the second reading (1 Thess 1:3, through Chrysostom), the acclamation's sentence (Phil 2:15 simplices), Communion antiphon B (Mk 10:45) and all three orations. The orations are described from the Latin; none reconstructs approved English. The speech closes with a concrete response and with the hope of 1 Jn 3:2. Every quotation and report was checked at its locus in the tracked text. Chrysostom Hom. Matt. 70.1-2 and Hom. 1 Thess. 1, Augustine Tract. 40.9 and En. Ps. 4.8, 57.8, 95.9 and 124.7 (NPNF) were read in the tracked text. Ambrose Exp. Luc. IX.35-36 was read in the tracked Latin. Jerome (PL 26 col. 163) and Aquinas Super Phil. c. 2 lect. 4 (Dessain p. 383) were read on page images, and Aquinas Super Matt. c. 22 (Venice p. 283) in the facsimile's text layer. All eight Douay-Rheims quotations were checked against the tracked verse files. Each matches, and each Father is credited only with what he says. No Nostra aetate-excluded sentence is used, and the vice is applied to the assembly. The spoken word count was recomputed at 1,466, and the note's pace arithmetic (11.3, 11.7 and 12.2 minutes at 130, 125 and 120 wpm) is correct. The mean sentence length is 13.8 words, with a maximum of 31. The body has no stage directions, no footnote dependence, no invented anecdote, no clerical identity and no composed prayer. Limits: this review verifies pace by arithmetic only, and no timed or spoken delivery was performed. The note's report of a silent read-through cannot be independently checked. The printed US Lectionary and the dated USCCB page were not read by this reviewer, so the inclusion of Ps 96:8b rests on the bound Ordo locator (7-8) recorded in propers/verified.md. The GPT leaf was not opened, and no search printed any line from it. Verdict: PASS with two advisories."
+}

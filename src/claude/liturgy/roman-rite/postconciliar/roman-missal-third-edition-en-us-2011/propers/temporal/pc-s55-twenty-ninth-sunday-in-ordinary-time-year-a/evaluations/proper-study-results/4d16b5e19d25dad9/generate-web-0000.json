@@ -1,0 +1,14 @@
+{
+  "artifact_path": "build/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.md",
+  "disposition": "PASS",
+  "iteration": 0,
+  "notes": [
+    "Upstream source observation (not a conversion defect, not changed): sections/05-appointed-texts.tex sets \\notread{ to my glory ...} with a leading space inside the bracket, so both PDF and web read 'word of life[ to my glory ...]'; the 1 Thes bracket by contrast opens '[, as you know'. Reported for the study owner/reviewer.",
+    "Layout adaptation only: the chronology table's \\midrule row groups have no Markdown equivalent and are not shown as separators; row order and content are intact.",
+    "Generated chronology passage labels use hyphens (e.g. Psalm 32:18-19) and mixed Vulgate/Hebrew psalm numbers exactly as the generated annotations and PDF do.",
+    "Pre-existing uncommitted driver changes (evaluations/blocking-findings-v1.toml, research/production-review.md, research/artifacts.json) were left untouched; this stage added only research/web-artifact.json and the build/web output.",
+    "Independence: the GPT leaf, its outputs and the GPT review directory were not opened; no repository-wide search printed any line from them."
+  ],
+  "stage": "generate-web",
+  "summary": "Converted only the canonical study with tools/tpt web-edition (exit 0, converter audits passed; check-web-edition: declaration valid, eligible) and recorded research/web-artifact.json via snapshot-web (sha256 f7b4a0795ab4df5f70ac1985c76a856788d6f504bf8b3a27b0527086f19c2a40). Rendered with the site's locked renderer (Markdown 3.10.3): 11 H2 sections in source order with TOC at the \\tableofcontents position, all 11 proper-* anchors, 8 quotations as 8 blockquotes, three lanes each with its own Literal/Allegorical/Moral/Anagogical definition list, comparison, 12-row chronology table with every place phrase, branch table, References, URLs, timestamp and rights colophon; a paragraph-level n-gram comparison found no source paragraph missing. No conversion or declaration change was needed; no synthesis or homily web leaf, install, release record or catalog edit made."
+}
