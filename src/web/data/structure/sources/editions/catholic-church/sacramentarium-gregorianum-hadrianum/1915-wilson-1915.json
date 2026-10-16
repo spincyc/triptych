@@ -2,6 +2,21 @@
  "artifacts": [
   {
    "artifact_type": "normalized-text",
+   "byte_size": 263,
+   "edition_owned": true,
+   "id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-hanc-igitur-checked-latin-b46e0e89",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Main text of R mediated by Wilson. Starts Hanc and ends dominum nostrum; exclude following Quam and footnotes. Preserve spacing around printed points as retained OCR, with source lines joined. This is a normalized printed-edition transcription, not diplomatic manuscript text. The exact facsimile controls typography and punctuation not represented by the normalization.",
+   "page_count": null,
+   "retrieved": "2026-10-16",
+   "rights": "public-domain",
+   "rights_basis": "The identified historical critical edition was published before 1931 and is public domain in the United States by expiration of its publication term, as recorded for the existing source artifacts. This bounded faithful transcription of its Latin text contributes no new authorship and is excluded from Triptych's CC BY 4.0 license. Modern wrappers and modern translations are not reproduced.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "normalized-text",
    "byte_size": 302,
    "edition_owned": true,
    "id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-memento-checked-latin-784ee4c8",
@@ -11,6 +26,21 @@
    "retrieved": "2026-10-16",
    "rights": "public-domain",
    "rights_basis": "The identified Wilson 1915 printing is public domain in the United States by expiration of its publication term, as recorded for the parent facsimile and OCR artifacts. This bounded faithful transcription of its Latin main text adds no new authorship. It does not reproduce a modern critical edition or translation and is excluded from Triptych's CC BY 4.0 license.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "normalized-text",
+   "byte_size": 207,
+   "edition_owned": true,
+   "id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-quam-oblationem-checked-latin-94b63de8",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Complete Quam prayer, excluding the intervening page2apparatus and page3heading, superscript notes1-3 and folio-boundary slash. R maintext retains dei; note3 assigns its omission to O. Ut remains capitalized. This is a normalized printed-edition transcription, not diplomatic manuscript text. The exact facsimile controls typography and punctuation not represented by the normalization.",
+   "page_count": null,
+   "retrieved": "2026-10-16",
+   "rights": "public-domain",
+   "rights_basis": "The identified historical critical edition was published before 1931 and is public domain in the United States by expiration of its publication term, as recorded for the existing source artifacts. This bounded faithful transcription of its Latin text contributes no new authorship and is excluded from Triptych's CC BY 4.0 license. Modern wrappers and modern translations are not reproduced.",
    "rights_jurisdiction": "United States",
    "source_url": null,
    "storage": "tracked"
@@ -184,6 +214,58 @@
    "storage": "tracked",
    "verified_on": null,
    "withheld": "no-transcription"
+  },
+  {
+   "artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-hanc-igitur-checked-latin-b46e0e89",
+   "artifact_type": "normalized-text",
+   "context": "R, Vatican Reginae 337, as mediated by Wilson's 1915 critical edition; no new manuscript collation. Main text of R mediated by Wilson. Starts Hanc and ends dominum nostrum; exclude following Quam and footnotes. Preserve spacing around printed points as retained OCR, with source lines joined.",
+   "id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-hanc-igitur",
+   "locus": "canon-hanc-igitur; printed p. 2; source PDF page(s) 60",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Two independent reviewers checked this complete bounded prayer against its historical printed page image(s) on 2026-10-16. This establishes the normalized edition text and its stated extent, not an act of revision, a borrowing direction, a manuscript date or the wording of the rest of the book. See owning artifact for every transformation and the original page evidence.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The identified historical critical edition was published before 1931 and is public domain in the United States by expiration of its publication term, as recorded for the existing source artifacts. This bounded faithful transcription of its Latin text contributes no new authorship and is excluded from Triptych's CC BY 4.0 license. Modern wrappers and modern translations are not reproduced.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-hanc-igitur.json",
+   "verified_on": "2026-10-16",
+   "words": 38
+  },
+  {
+   "artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-quam-oblationem-checked-latin-94b63de8",
+   "artifact_type": "normalized-text",
+   "context": "R, Vatican Reginae 337, as mediated by Wilson's 1915 critical edition; no new manuscript collation. Complete Quam prayer, excluding the intervening page2apparatus and page3heading, superscript notes1-3 and folio-boundary slash. R maintext retains dei; note3 assigns its omission to O. Ut remains capitalized.",
+   "id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-quam-oblationem",
+   "locus": "canon-quam-oblationem; printed p. 2-3; source PDF page(s) 60, 61",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Two independent reviewers checked this complete bounded prayer against its historical printed page image(s) on 2026-10-16. This establishes the normalized edition text and its stated extent, not an act of revision, a borrowing direction, a manuscript date or the wording of the rest of the book. See owning artifact for every transformation and the original page evidence.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The identified historical critical edition was published before 1931 and is public domain in the United States by expiration of its publication term, as recorded for the existing source artifacts. This bounded faithful transcription of its Latin text contributes no new authorship and is excluded from Triptych's CC BY 4.0 license. Modern wrappers and modern translations are not reproduced.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-quam-oblationem.json",
+   "verified_on": "2026-10-16",
+   "words": 29
   },
   {
    "artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7",

@@ -43,6 +43,18 @@ state = "in_progress"
   evidence = ["src/sources/inventories/catholic-eucharistic-history-v1.toml", "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/canon-memento-domine.toml", "scripts/_eucharistic_history.py", "tools/tests/test_eucharistic_history.py"]
 
   [[deliverables.requirements]]
+  id = "typed-sharing-evidence"
+  criterion = "Reviewed research relationships distinguish borrowing, reception, shared text, common ancestry and edition succession, preserve exact endpoints and source limitations, keep unidentified donor traditions undated, and grant neither Git ancestry nor text inheritance."
+  status = "pass"
+  evidence = ["src/sources/inventories/eucharistic-book-relationships-v1.toml", "scripts/_eucharistic_history.py", "tools/tests/test_eucharistic_history.py", "PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "expanded-latin-greek-comparisons"
+  criterion = "Independently page-checked Latin and Greek selections support explicit, source-hashed comparisons at exact edition endpoints; same-prayer witnesses and parallel liturgical functions remain distinct, with variants and apparatus visible and no inferred borrowing direction."
+  status = "pass"
+  evidence = ["src/sources/inventories/catholic-eucharistic-history-v1.toml", "src/sources/works/frank-edward-brightman/liturgies-eastern-and-western", "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/passages", "scripts/_eucharistic_texts.py", "tools/tests/test_eucharistic_texts.py", "src/web/data/structure/act-history/comparisons"]
+
+  [[deliverables.requirements]]
   id = "historical-catalogue"
   criterion = "A reviewed, source-cited inventory covers the agreed historical boundary and every Catholic rite and materially distinct recension or edition, with explicit distinctness criteria, dating uncertainty, witness identities, and documented parentage; unresolved coverage is enumerated without a false completeness claim."
   status = "open"

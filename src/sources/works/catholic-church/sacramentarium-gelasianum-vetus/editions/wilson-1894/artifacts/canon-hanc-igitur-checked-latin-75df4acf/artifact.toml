@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-hanc-igitur-checked-latin-75df4acf"
+edition_id = "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The identified historical critical edition was published before 1931 and is public domain in the United States by expiration of its publication term, as recorded for the existing source artifacts. This bounded faithful transcription of its Latin text contributes no new authorship and is excluded from Triptych's CC BY 4.0 license. Modern wrappers and modern translations are not reproduced."
+provenance = "Existing canonical work/edition identities, alias and artifact records were inspected before creation; the existing retained OCR and facsimile were reused, without a new edition or replacement witness. Exact bytes were mechanically extracted from the pinned OCR with an explicit correction ledger. The complete bounded body was read against the cited rendered historical page(s), then independently checked word by word by a second reviewer on 2026-10-16. Vatican Reg. lat. 316 as mediated by Wilson's 1894 critical edition; no new manuscript collation. Verification evidence: artifact.anonymous.gelasian-sacramentary.wilson-clarendon-1894.printed-p235-image-d98c2326."
+retrieved = "2026-10-16"
+sha256 = "75df4acff246918a08cf9d2d7c8089c6bb560e76e0f76e3a79669c9bb07e762c"
+byte_size = 266
+path = "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/canon-hanc-igitur-checked-latin-75df4acf/text.txt"
+encoding = "utf-8"
+indexable = true
+derived_from = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.historical-book-ocr-e4500b54"
+transformation = "Source UTF-8 bytes SHA-256 e4500b548776621c720a0c7cb313f9de041969531da3814b7a4ef6444038a4e9. Use LF-delimited physical line ranges [[21668, 21678]]. Select only the named complete prayer bounded by its incipit and next prayer; join whitespace to one space, excluding running heads/apparatus between disjoint ranges. Apply these exact page-verified replacements in order: [{\"from\": \" igitur\", \"to\": \"Hanc igitur\", \"count\": 1}, {\"from\": \"tuae^^\", \"to\": \"tuae\", \"count\": 1}, {\"from\": \"ut^\", \"to\": \"ut\", \"count\": 1}, {\"from\": \"accipias^\", \"to\": \"accipias\", \"count\": 1}, {\"from\": \"disponas*^\", \"to\": \"disponas\", \"count\": 1}, {\"from\": \"eripi^\", \"to\": \"eripi\", \"count\": 1}, {\"from\": \"dectorum\", \"to\": \"electorum\", \"count\": 1}, {\"from\": \"gr^e\", \"to\": \"grege\", \"count\": 1}]. Append one LF. Complete Hanc prayer as printed in Wilson1894 bookIIIsectionXVI, excluding preceding Communicantes conclusion and following Quam. Remove superscript apparatus notes24-28, not prayer wording."
+notes = "Complete Hanc prayer as printed in Wilson1894 bookIIIsectionXVI, excluding preceding Communicantes conclusion and following Quam. Remove superscript apparatus notes24-28, not prayer wording. This is a normalized printed-edition transcription, not diplomatic manuscript text. The exact facsimile controls typography and punctuation not represented by the normalization."

@@ -1,0 +1,12 @@
+schema = 2
+record_type = "passage"
+id = "passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.basil-anamnesis-oblation"
+edition_id = "edition.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1"
+artifact_id = "artifact.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.basil-anamnesis-oblation-checked-greek-e123ebb5"
+artifact_sha256 = "e123ebb5346fadee0375a7deb13a49e1c048a1846283efe989c0bb36efb3c24e"
+locus = "Brightman 1896, Basil; printed pp. 405; printed lines 18–24; PDF pages 511 (one-based)."
+states = ["cataloged", "acquired", "inspected", "verified"]
+physical_line_ranges = [[1, 1]]
+context = "Complete priestly anamnesis and its concluding offering formula; excludes the intervening mode-of-delivery rubric and following choir response. The preceding institution command beginning Τοῦτο ποιεῖτε forms a preceding paragraph and is excluded. Modern Greek Basil prayers as printed in Brightman 1896, from the Venice 1869 Euchologion according to the printed p. 308 source note. Not the separate Barberini/Grottaferrata section. Shared wording is a textual observation; this selection does not establish Catholic reception, a historical borrowing act, direction of dependence, a reconstructed common ancestor, or the entire anaphora."
+notes = "On 2026-10-16 two AI readers checked these bounded original page images and the final serialized text, including accents, case, punctuation, source typography and boundaries. The independent review reported no remaining glyph or word discrepancy. It confirmed 2 recoverable priestly speech block(s). This is an explicitly normalized comparison transcription, not a facsimile or a complete liturgical service. Speech-block metadata, using zero-based half-open Unicode codepoint ranges in the NFC body excluding final LF: [{\"source_printed_lines\":\"405.18–22\",\"codepoint_range\":[0,256],\"incipit\":\"Μεμνημένοι οὖν δέσποτα καὶ\"},{\"source_printed_lines\":\"405.24\",\"codepoint_range\":[257,314],\"incipit\":\"τὰ σὰ ἐκ τῶν\"}]. Single separating spaces between blocks are derivative layout, not added punctuation."
+verified_on = "2026-10-16"

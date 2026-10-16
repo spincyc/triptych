@@ -3,6 +3,32 @@
 ## Conclusion
 The current tree supplies substantial partial 1962 Proper content, a structured 1861 lay-missal Ordinary, and historical OCR acquisition inputs. It cannot currently reconstruct any complete, verified, fully structured historical Missal witness. Importing the modern calendar projection into earlier act commits would create unsupported edition attribution. Counts below are derived snapshots, not new canonical census claims.
 
+## Subsequent checked-passage expansion
+
+The initial audit below is retained as the recovery baseline. Subsequent work
+registered complete historical scan deliveries and added fourteen checked prayer
+units: Wilson's Gregorian *Memento*, seven further Latin selections from Wilson's
+Gregorian/Gelasian editions and Warner's Stowe edition, and six original Greek
+selections from Brightman's 1896 Basil, Chrysostom and James texts. The Greek
+selections retain speech-block boundaries and source typography; all new bodies
+have independent page-image review. Exact manifests and passage records own the
+hashes, transformations, rights and printed loci.
+
+The [history routing inventory](catholic-eucharistic-history-v1.toml) declares
+twenty comparisons: fourteen same-prayer Latin comparisons and six Greek
+comparisons of parallel liturgical functions. A shared formula does not make
+the complete Greek anaphoras one composition. The
+[relationship inventory](eucharistic-book-relationships-v1.toml) links these
+comparisons to their exact printed-edition records, separately from historical
+claims about manuscripts or donor traditions. Stowe additions and Brightman's
+apparatus are retained as limits on interpretation. No date of introduction or
+borrowing direction is inferred from the textual diffs.
+
+The current corpus export therefore contains 1,194 units on nine isolated
+reconstruction branches. This remains partial coverage: no complete historical
+missal, whole-book denominator or supported temporal parent/child text revision
+has been established by these additions.
+
 ## Verification
 The existing `tools/complete-missal --json` report records valid=true, resolved=false, 39 unresolved dimension cells. Every family's expected whole-book celebration/text-slot universe remains undefined. Ran tools/mass-propers census --json and tools/check-calendar-masses --calendar roman-1962 successfully. These are mechanical checks, not new page collation. Hashed all 15 retained missal OCR artifacts discovered by artifact_type=ocr-text, storage=tracked and missal/missale edition identity: all match manifests, representing 14 edition identities and 33,215,268 bytes. [the holdings check](missal-timeline-holdings-v1.toml) gives exact paths, edition IDs, titles, dates, hashes, sizes and lines. No source text was copied and no external or legal re-verification was performed.
 

@@ -6,10 +6,234 @@ holdings_inventory = "src/sources/inventories/missal-timeline-holdings-v1.toml"
 # Routing only. Historical assertions, witness identities, rights and texts
 # remain with the referenced owners; discovery does not admit an act or edge.
 
+# Reader-facing groups reconcile aliases across the source inventories. They
+# are navigation categories, not a census of rites, Churches or textual states.
+[[presentation_groups]]
+id = "alexandrian"
+label = "Alexandrian: Coptic and Ethiopian books"
+families = ["Alexandrian", "Alexandrian/Coptic", "Alexandrian/Ge'ez"]
+
+[[presentation_groups]]
+id = "armenian"
+label = "Armenian liturgy"
+families = ["Armenian"]
+
+[[presentation_groups]]
+id = "byzantine"
+label = "Byzantine: Greek and Slavonic books"
+families = ["Byzantine"]
+
+[[presentation_groups]]
+id = "east-syriac"
+label = "East Syriac and Chaldean books"
+families = ["East Syriac", "East Syriac/Chaldean"]
+
+[[presentation_groups]]
+id = "syro-malabar"
+label = "Syro-Malabar liturgy"
+families = ["East Syriac/Syro-Malabar"]
+
+[[presentation_groups]]
+id = "west-syriac"
+label = "West Syriac liturgy"
+families = ["West Syriac", "West Syriac/Syriac"]
+
+[[presentation_groups]]
+id = "maronite"
+label = "Maronite liturgy"
+families = ["West Syriac/Maronite"]
+
+[[presentation_groups]]
+id = "syro-malankara"
+label = "Syro-Malankara liturgy"
+families = ["West Syriac/Syro-Malankara"]
+
+[[presentation_groups]]
+id = "syriac-unresolved"
+label = "Syriac books: branch unresolved"
+families = ["Syriac branch unresolved"]
+
+[[presentation_groups]]
+id = "western-sacramentaries"
+label = "Early Western sacramentaries"
+families = ["western-sacramentary-context"]
+
+[[presentation_groups]]
+id = "roman-frankish"
+label = "Roman and Frankish sacramentaries"
+families = ["roman-frankish-sacramentary-context", "Roman-Frankish / later Gelasian", "Roman-Frankish / supplemented Gregorian", "Roman-Frankish / Gelasian"]
+
+[[presentation_groups]]
+id = "gallican"
+label = "Gallican and mixed Gallican–Roman books"
+families = ["gallican-sacramentary-context", "gallican-roman-sacramentary-context"]
+
+[[presentation_groups]]
+id = "insular"
+label = "Insular Eucharistic books"
+families = ["insular-eucharistic-context"]
+
+[[presentation_groups]]
+id = "roman-curial"
+label = "Roman curia and Franciscan books"
+families = ["roman-franciscan-curial", "romana-curia", "roman-curial"]
+
+[[presentation_groups]]
+id = "roman"
+label = "Roman Missal: editions and reforms"
+families = ["roman", "typica", "roman-latin-lay-book-witness", "Roman"]
+
+[[presentation_groups]]
+id = "roman-1962-use"
+label = "Use of the 1962 Roman Missal"
+families = ["usus-antiquior"]
+note = "Regulation of use, not successive versions of the book."
+
+[[presentation_groups]]
+id = "protected-uses"
+label = "Protection of existing uses in 1570"
+families = ["exempt-uses"]
+note = "The legal exception is not the origin of the protected traditions."
+
+[[presentation_groups]]
+id = "ambrosian"
+label = "Ambrosian rite of Milan"
+families = ["ambrosian", "ambrosianum"]
+
+[[presentation_groups]]
+id = "hispano-mozarabic"
+label = "Old Hispanic and Hispano-Mozarabic books"
+families = ["old-hispanic", "hispano-mozarabic", "mozarabicum"]
+
+[[presentation_groups]]
+id = "braga"
+label = "Rite of Braga"
+families = ["braga", "bracarense"]
+
+[[presentation_groups]]
+id = "lyon"
+label = "Use of Lyon"
+families = ["historic-lyon-use", "lugdunense"]
+
+[[presentation_groups]]
+id = "aquileia"
+label = "Use of Aquileia"
+families = ["aquileiense"]
+
+[[presentation_groups]]
+id = "sarum"
+label = "Use of Sarum (Salisbury)"
+families = ["historic-sarum-use", "sarum"]
+
+[[presentation_groups]]
+id = "york"
+label = "Use of York"
+families = ["historic-york-use", "eboracensis"]
+
+[[presentation_groups]]
+id = "hereford"
+label = "Use of Hereford"
+families = ["historic-hereford-use"]
+
+[[presentation_groups]]
+id = "paris"
+label = "Use of Paris"
+families = ["historic-paris-use"]
+
+[[presentation_groups]]
+id = "rouen"
+label = "Use of Rouen"
+families = ["historic-rouen-use"]
+
+[[presentation_groups]]
+id = "mainz"
+label = "Use of Mainz"
+families = ["historic-mainz-use"]
+
+[[presentation_groups]]
+id = "esztergom"
+label = "Use of Esztergom"
+families = ["historic-esztergom-use"]
+
+[[presentation_groups]]
+id = "prague"
+label = "Use of Prague"
+families = ["historic-prague-use"]
+
+[[presentation_groups]]
+id = "zagreb"
+label = "Use of Zagreb"
+families = ["historic-zagreb-use"]
+
+[[presentation_groups]]
+id = "nidaros"
+label = "Use of Nidaros"
+families = ["historic-nidaros-use"]
+
+[[presentation_groups]]
+id = "dominican"
+label = "Dominican rite"
+families = ["dominican", "praedicatorum"]
+
+[[presentation_groups]]
+id = "carmelite"
+label = "Carmelite rite"
+families = ["carmelite", "carmelitarum"]
+
+[[presentation_groups]]
+id = "carthusian"
+label = "Carthusian rite"
+families = ["carthusian", "cartusiense"]
+
+[[presentation_groups]]
+id = "premonstratensian"
+label = "Premonstratensian rite"
+families = ["premonstratensian", "praemonstratense"]
+
+[[presentation_groups]]
+id = "cistercian"
+label = "Cistercian books"
+families = ["cistercian"]
+
+[[presentation_groups]]
+id = "cluniac"
+label = "Cluniac books"
+families = ["cluniac"]
+
+[[presentation_groups]]
+id = "benedictine"
+label = "Benedictine monastic books"
+families = ["monasticum"]
+
+[[presentation_groups]]
+id = "roman-glagolitic"
+label = "Roman rite in Church Slavonic (Glagolitic)"
+families = ["slavonico"]
+
+[[presentation_groups]]
+id = "divine-worship"
+label = "Divine Worship: Anglican patrimony"
+families = ["roman-ordinariate-adaptation"]
+
+[[presentation_groups]]
+id = "zaire"
+label = "Roman Missal: Zaire adaptation"
+families = ["roman-zaire-adaptation"]
+
 [[catalogues]]
 id = "eastern"
 path = "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml"
 table = "records"
+
+[[relationship_sets]]
+id = "eucharistic-books"
+path = "src/sources/inventories/eucharistic-book-relationships-v1.toml"
+
+[[presentation_groups]]
+id = "anglican-patrimony"
+label = "Anglican Prayer Book sources"
+families = ["Anglican prayer-book patrimony"]
+note = "Source traditions for Catholic reception; not an additional Catholic rite."
 
 [[catalogues]]
 id = "western"
@@ -41,10 +265,12 @@ apparatus_caveat = "Wilson page 2 note 6 already reports pro quibus tibi offerim
 source_refs = ["artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7", "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la"]
 
 [comparisons.left]
+record_id = "western:gregorian-wilson-1915-critical-edition"
 text_set = "wilson-1915-gregorian-canon-memento"
 unit_ids = ["unit.wilson-1915.gregorian.canon-missae.memento-vivorum"]
 
 [comparisons.right]
+record_id = "western:cummiskey-1861-latin-ordinary"
 text_set = "cummiskey-1861-latin-ordinary"
 unit_ids = ["unit.cummiskey-1861.canon-missae.memento-domine", "unit.cummiskey-1861.canon-missae.et-omnium-circumstantium"]
 
@@ -171,3 +397,439 @@ substantive_status = "substantive-established"
 source_ref = "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-24-(1988)/Notitiae-264-1988.pdf"
 basis = "Primary decree p.457 approves French adapted ritual structure with calendar and proper Masses; selected rubrics demonstrate changed order. No complete printed-book identification or later revision census."
 inventory_source_ids = ["zaire-primary-1988"]
+
+# Explicitly aligned, independently page-checked Latin prayer witnesses.
+[[text_sets]]
+id = "wilson-1915-gregorian-canon-prayers"
+adapter = "wilson-1915-gregorian-canon-prayers"
+
+[[text_sets]]
+id = "wilson-1894-gelasian-canon-prayers"
+adapter = "wilson-1894-gelasian-canon-prayers"
+
+[[text_sets]]
+id = "warner-1915-stowe-mass-prayers"
+adapter = "warner-1915-stowe-mass-prayers"
+
+[[comparisons]]
+id = "roman-hanc-igitur-gregorian-and-gelasian"
+kind = "same-prayer-witness-comparison"
+membership_status = "established"
+basis = "Complete hanc-igitur units selected by their incipit, bounded ending and liturgical position. Each body was checked against the identified printed page; the alignment is explicit same-prayer witness membership, not a text ancestry edge."
+apparatus_caveat = "The witnesses are mediated by their identified printed editions. Printed edition dates do not date introduction, borrowing or a common ancestor. Native words, spelling, accents and case remain in each normalized source; typographic or punctuation normalization is declared per owning artifact."
+source_refs = ["passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-hanc-igitur", "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-hanc-igitur"]
+[comparisons.left]
+text_set = "wilson-1915-gregorian-canon-prayers"
+unit_ids = ["unit.wilson-1915.gregorian.canon-missae.hanc-igitur"]
+record_id = "western:gregorian-wilson-1915-critical-edition"
+[comparisons.right]
+text_set = "wilson-1894-gelasian-canon-prayers"
+unit_ids = ["unit.wilson-1894.gelasian.canon-missae.hanc-igitur"]
+record_id = "western:gelasian-wilson-1894-critical-edition"
+
+[[comparisons]]
+id = "roman-hanc-igitur-gregorian-and-stowe"
+kind = "same-prayer-witness-comparison"
+membership_status = "established"
+basis = "Complete hanc-igitur units selected by their incipit, bounded ending and liturgical position. Each body was checked against the identified printed page; the alignment is explicit same-prayer witness membership, not a text ancestry edge."
+apparatus_caveat = "The witnesses are mediated by their identified printed editions. Printed edition dates do not date introduction, borrowing or a common ancestor. Native words, spelling, accents and case remain in each normalized source; typographic or punctuation normalization is declared per owning artifact. Warner's italic expansion type is flattened and ligature sorts expanded; specified compound punctuation is represented by colons. The facsimile, not that editorial encoding, controls diplomatic punctuation. Stowe's complete Hanc includes dedication/conversion clauses and its Dies quoque continuation; Warner p.12 notes4 and7 explicitly compare the additional clauses with Gelasian/Gallican texts. No direction of borrowing is inferred."
+source_refs = ["passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-hanc-igitur", "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-hanc-igitur"]
+[comparisons.left]
+text_set = "wilson-1915-gregorian-canon-prayers"
+unit_ids = ["unit.wilson-1915.gregorian.canon-missae.hanc-igitur"]
+record_id = "western:gregorian-wilson-1915-critical-edition"
+[comparisons.right]
+text_set = "warner-1915-stowe-mass-prayers"
+unit_ids = ["unit.warner-1915.stowe.canon-missae.hanc-igitur"]
+record_id = "western:stowe-warner-1915-vol2"
+
+[[comparisons]]
+id = "roman-hanc-igitur-gregorian-and-cummiskey-1861"
+kind = "same-prayer-witness-comparison"
+membership_status = "established"
+basis = "Complete hanc-igitur units selected by their incipit, bounded ending and liturgical position. Each body was checked against the identified printed page; the alignment is explicit same-prayer witness membership, not a text ancestry edge."
+apparatus_caveat = "The witnesses are mediated by their identified printed editions. Printed edition dates do not date introduction, borrowing or a common ancestor. Native words, spelling, accents and case remain in each normalized source; typographic or punctuation normalization is declared per owning artifact."
+source_refs = ["passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-hanc-igitur", "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la"]
+[comparisons.left]
+text_set = "wilson-1915-gregorian-canon-prayers"
+unit_ids = ["unit.wilson-1915.gregorian.canon-missae.hanc-igitur"]
+record_id = "western:gregorian-wilson-1915-critical-edition"
+[comparisons.right]
+text_set = "cummiskey-1861-latin-ordinary"
+unit_ids = ["unit.cummiskey-1861.canon-missae.hanc-igitur"]
+record_id = "western:cummiskey-1861-latin-ordinary"
+
+[[comparisons]]
+id = "roman-hanc-igitur-gelasian-and-stowe"
+kind = "same-prayer-witness-comparison"
+membership_status = "established"
+basis = "Complete hanc-igitur units selected by their incipit, bounded ending and liturgical position. Each body was checked against the identified printed page; the alignment is explicit same-prayer witness membership, not a text ancestry edge."
+apparatus_caveat = "The witnesses are mediated by their identified printed editions. Printed edition dates do not date introduction, borrowing or a common ancestor. Native words, spelling, accents and case remain in each normalized source; typographic or punctuation normalization is declared per owning artifact. Warner's italic expansion type is flattened and ligature sorts expanded; specified compound punctuation is represented by colons. The facsimile, not that editorial encoding, controls diplomatic punctuation. Stowe's complete Hanc includes dedication/conversion clauses and its Dies quoque continuation; Warner p.12 notes4 and7 explicitly compare the additional clauses with Gelasian/Gallican texts. No direction of borrowing is inferred."
+source_refs = ["passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-hanc-igitur", "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-hanc-igitur"]
+[comparisons.left]
+text_set = "wilson-1894-gelasian-canon-prayers"
+unit_ids = ["unit.wilson-1894.gelasian.canon-missae.hanc-igitur"]
+record_id = "western:gelasian-wilson-1894-critical-edition"
+[comparisons.right]
+text_set = "warner-1915-stowe-mass-prayers"
+unit_ids = ["unit.warner-1915.stowe.canon-missae.hanc-igitur"]
+record_id = "western:stowe-warner-1915-vol2"
+
+[[comparisons]]
+id = "roman-hanc-igitur-gelasian-and-cummiskey-1861"
+kind = "same-prayer-witness-comparison"
+membership_status = "established"
+basis = "Complete hanc-igitur units selected by their incipit, bounded ending and liturgical position. Each body was checked against the identified printed page; the alignment is explicit same-prayer witness membership, not a text ancestry edge."
+apparatus_caveat = "The witnesses are mediated by their identified printed editions. Printed edition dates do not date introduction, borrowing or a common ancestor. Native words, spelling, accents and case remain in each normalized source; typographic or punctuation normalization is declared per owning artifact."
+source_refs = ["passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-hanc-igitur", "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la"]
+[comparisons.left]
+text_set = "wilson-1894-gelasian-canon-prayers"
+unit_ids = ["unit.wilson-1894.gelasian.canon-missae.hanc-igitur"]
+record_id = "western:gelasian-wilson-1894-critical-edition"
+[comparisons.right]
+text_set = "cummiskey-1861-latin-ordinary"
+unit_ids = ["unit.cummiskey-1861.canon-missae.hanc-igitur"]
+record_id = "western:cummiskey-1861-latin-ordinary"
+
+[[comparisons]]
+id = "roman-hanc-igitur-stowe-and-cummiskey-1861"
+kind = "same-prayer-witness-comparison"
+membership_status = "established"
+basis = "Complete hanc-igitur units selected by their incipit, bounded ending and liturgical position. Each body was checked against the identified printed page; the alignment is explicit same-prayer witness membership, not a text ancestry edge."
+apparatus_caveat = "The witnesses are mediated by their identified printed editions. Printed edition dates do not date introduction, borrowing or a common ancestor. Native words, spelling, accents and case remain in each normalized source; typographic or punctuation normalization is declared per owning artifact. Warner's italic expansion type is flattened and ligature sorts expanded; specified compound punctuation is represented by colons. The facsimile, not that editorial encoding, controls diplomatic punctuation. Stowe's complete Hanc includes dedication/conversion clauses and its Dies quoque continuation; Warner p.12 notes4 and7 explicitly compare the additional clauses with Gelasian/Gallican texts. No direction of borrowing is inferred."
+source_refs = ["passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-hanc-igitur", "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la"]
+[comparisons.left]
+text_set = "warner-1915-stowe-mass-prayers"
+unit_ids = ["unit.warner-1915.stowe.canon-missae.hanc-igitur"]
+record_id = "western:stowe-warner-1915-vol2"
+[comparisons.right]
+text_set = "cummiskey-1861-latin-ordinary"
+unit_ids = ["unit.cummiskey-1861.canon-missae.hanc-igitur"]
+record_id = "western:cummiskey-1861-latin-ordinary"
+
+[[comparisons]]
+id = "roman-quam-oblationem-gregorian-and-gelasian"
+kind = "same-prayer-witness-comparison"
+membership_status = "established"
+basis = "Complete quam-oblationem units selected by their incipit, bounded ending and liturgical position. Each body was checked against the identified printed page; the alignment is explicit same-prayer witness membership, not a text ancestry edge."
+apparatus_caveat = "The witnesses are mediated by their identified printed editions. Printed edition dates do not date introduction, borrowing or a common ancestor. Native words, spelling, accents and case remain in each normalized source; typographic or punctuation normalization is declared per owning artifact. The selected unit ends before Qui pridie; no following institution narrative is included. Gregorian p.3 note3 assigns omission of dei to O, so the displayed manuscript traditions cannot be ordered by that variant."
+source_refs = ["passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-quam-oblationem", "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-quam-oblationem"]
+[comparisons.left]
+text_set = "wilson-1915-gregorian-canon-prayers"
+unit_ids = ["unit.wilson-1915.gregorian.canon-missae.quam-oblationem"]
+record_id = "western:gregorian-wilson-1915-critical-edition"
+[comparisons.right]
+text_set = "wilson-1894-gelasian-canon-prayers"
+unit_ids = ["unit.wilson-1894.gelasian.canon-missae.quam-oblationem"]
+record_id = "western:gelasian-wilson-1894-critical-edition"
+
+[[comparisons]]
+id = "roman-quam-oblationem-gregorian-and-stowe"
+kind = "same-prayer-witness-comparison"
+membership_status = "established"
+basis = "Complete quam-oblationem units selected by their incipit, bounded ending and liturgical position. Each body was checked against the identified printed page; the alignment is explicit same-prayer witness membership, not a text ancestry edge."
+apparatus_caveat = "The witnesses are mediated by their identified printed editions. Printed edition dates do not date introduction, borrowing or a common ancestor. Native words, spelling, accents and case remain in each normalized source; typographic or punctuation normalization is declared per owning artifact. Warner's italic expansion type is flattened and ligature sorts expanded; specified compound punctuation is represented by colons. The facsimile, not that editorial encoding, controls diplomatic punctuation. The selected unit ends before Qui pridie; no following institution narrative is included. Gregorian p.3 note3 assigns omission of dei to O, so the displayed manuscript traditions cannot be ordered by that variant."
+source_refs = ["passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-quam-oblationem", "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-quam-oblationem"]
+[comparisons.left]
+text_set = "wilson-1915-gregorian-canon-prayers"
+unit_ids = ["unit.wilson-1915.gregorian.canon-missae.quam-oblationem"]
+record_id = "western:gregorian-wilson-1915-critical-edition"
+[comparisons.right]
+text_set = "warner-1915-stowe-mass-prayers"
+unit_ids = ["unit.warner-1915.stowe.canon-missae.quam-oblationem"]
+record_id = "western:stowe-warner-1915-vol2"
+
+[[comparisons]]
+id = "roman-quam-oblationem-gregorian-and-cummiskey-1861"
+kind = "same-prayer-witness-comparison"
+membership_status = "established"
+basis = "Complete quam-oblationem units selected by their incipit, bounded ending and liturgical position. Each body was checked against the identified printed page; the alignment is explicit same-prayer witness membership, not a text ancestry edge."
+apparatus_caveat = "The witnesses are mediated by their identified printed editions. Printed edition dates do not date introduction, borrowing or a common ancestor. Native words, spelling, accents and case remain in each normalized source; typographic or punctuation normalization is declared per owning artifact. The selected unit ends before Qui pridie; no following institution narrative is included. Gregorian p.3 note3 assigns omission of dei to O, so the displayed manuscript traditions cannot be ordered by that variant."
+source_refs = ["passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-quam-oblationem", "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la"]
+[comparisons.left]
+text_set = "wilson-1915-gregorian-canon-prayers"
+unit_ids = ["unit.wilson-1915.gregorian.canon-missae.quam-oblationem"]
+record_id = "western:gregorian-wilson-1915-critical-edition"
+[comparisons.right]
+text_set = "cummiskey-1861-latin-ordinary"
+unit_ids = ["unit.cummiskey-1861.canon-missae.quam-oblationem"]
+record_id = "western:cummiskey-1861-latin-ordinary"
+
+[[comparisons]]
+id = "roman-quam-oblationem-gelasian-and-stowe"
+kind = "same-prayer-witness-comparison"
+membership_status = "established"
+basis = "Complete quam-oblationem units selected by their incipit, bounded ending and liturgical position. Each body was checked against the identified printed page; the alignment is explicit same-prayer witness membership, not a text ancestry edge."
+apparatus_caveat = "The witnesses are mediated by their identified printed editions. Printed edition dates do not date introduction, borrowing or a common ancestor. Native words, spelling, accents and case remain in each normalized source; typographic or punctuation normalization is declared per owning artifact. Warner's italic expansion type is flattened and ligature sorts expanded; specified compound punctuation is represented by colons. The facsimile, not that editorial encoding, controls diplomatic punctuation. The selected unit ends before Qui pridie; no following institution narrative is included. Gregorian p.3 note3 assigns omission of dei to O, so the displayed manuscript traditions cannot be ordered by that variant."
+source_refs = ["passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-quam-oblationem", "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-quam-oblationem"]
+[comparisons.left]
+text_set = "wilson-1894-gelasian-canon-prayers"
+unit_ids = ["unit.wilson-1894.gelasian.canon-missae.quam-oblationem"]
+record_id = "western:gelasian-wilson-1894-critical-edition"
+[comparisons.right]
+text_set = "warner-1915-stowe-mass-prayers"
+unit_ids = ["unit.warner-1915.stowe.canon-missae.quam-oblationem"]
+record_id = "western:stowe-warner-1915-vol2"
+
+[[comparisons]]
+id = "roman-quam-oblationem-gelasian-and-cummiskey-1861"
+kind = "same-prayer-witness-comparison"
+membership_status = "established"
+basis = "Complete quam-oblationem units selected by their incipit, bounded ending and liturgical position. Each body was checked against the identified printed page; the alignment is explicit same-prayer witness membership, not a text ancestry edge."
+apparatus_caveat = "The witnesses are mediated by their identified printed editions. Printed edition dates do not date introduction, borrowing or a common ancestor. Native words, spelling, accents and case remain in each normalized source; typographic or punctuation normalization is declared per owning artifact. The selected unit ends before Qui pridie; no following institution narrative is included. Gregorian p.3 note3 assigns omission of dei to O, so the displayed manuscript traditions cannot be ordered by that variant."
+source_refs = ["passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-quam-oblationem", "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la"]
+[comparisons.left]
+text_set = "wilson-1894-gelasian-canon-prayers"
+unit_ids = ["unit.wilson-1894.gelasian.canon-missae.quam-oblationem"]
+record_id = "western:gelasian-wilson-1894-critical-edition"
+[comparisons.right]
+text_set = "cummiskey-1861-latin-ordinary"
+unit_ids = ["unit.cummiskey-1861.canon-missae.quam-oblationem"]
+record_id = "western:cummiskey-1861-latin-ordinary"
+
+[[comparisons]]
+id = "roman-quam-oblationem-stowe-and-cummiskey-1861"
+kind = "same-prayer-witness-comparison"
+membership_status = "established"
+basis = "Complete quam-oblationem units selected by their incipit, bounded ending and liturgical position. Each body was checked against the identified printed page; the alignment is explicit same-prayer witness membership, not a text ancestry edge."
+apparatus_caveat = "The witnesses are mediated by their identified printed editions. Printed edition dates do not date introduction, borrowing or a common ancestor. Native words, spelling, accents and case remain in each normalized source; typographic or punctuation normalization is declared per owning artifact. Warner's italic expansion type is flattened and ligature sorts expanded; specified compound punctuation is represented by colons. The facsimile, not that editorial encoding, controls diplomatic punctuation. The selected unit ends before Qui pridie; no following institution narrative is included. Gregorian p.3 note3 assigns omission of dei to O, so the displayed manuscript traditions cannot be ordered by that variant."
+source_refs = ["passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-quam-oblationem", "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la"]
+[comparisons.left]
+text_set = "warner-1915-stowe-mass-prayers"
+unit_ids = ["unit.warner-1915.stowe.canon-missae.quam-oblationem"]
+record_id = "western:stowe-warner-1915-vol2"
+[comparisons.right]
+text_set = "cummiskey-1861-latin-ordinary"
+unit_ids = ["unit.cummiskey-1861.canon-missae.quam-oblationem"]
+record_id = "western:cummiskey-1861-latin-ordinary"
+
+[[comparisons]]
+id = "roman-sanctus-stowe-and-cummiskey-1861"
+kind = "same-prayer-witness-comparison"
+membership_status = "established"
+basis = "Complete sanctus units selected by their incipit, bounded ending and liturgical position. Each body was checked against the identified printed page; the alignment is explicit same-prayer witness membership, not a text ancestry edge."
+apparatus_caveat = "The witnesses are mediated by their identified printed editions. Printed edition dates do not date introduction, borrowing or a common ancestor. Native words, spelling, accents and case remain in each normalized source; typographic or punctuation normalization is declared per owning artifact. Warner's italic expansion type is flattened and ligature sorts expanded; specified compound punctuation is represented by colons. The facsimile, not that editorial encoding, controls diplomatic punctuation. Stowe includes its printed Christological continuation through per dominum and begins with two Sanctus acclamations. Cummiskey's unit is its complete printed Sanctus. The comparison preserves the difference in extent rather than trimming the continuation to inflate similarity."
+source_refs = ["passage.catholic-church.stowe-missal.warner-1915-vol-2.sanctus", "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-la"]
+[comparisons.left]
+text_set = "warner-1915-stowe-mass-prayers"
+unit_ids = ["unit.warner-1915.stowe.praefatio.sanctus"]
+record_id = "western:stowe-warner-1915-vol2"
+[comparisons.right]
+text_set = "cummiskey-1861-latin-ordinary"
+unit_ids = ["unit.cummiskey-1861.praefationes.sanctus"]
+record_id = "western:cummiskey-1861-latin-ordinary"
+
+
+[[classifications]]
+id = "eastern:byz-ruthenian-chrysostom-1940"
+substantive_status = "substantive-established"
+source_ref = "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml#raes-slavonic-books1947"
+basis = "Raes pp.85–86 gives specific pre-epiclesis and episcopal-discretion rubric policies; PLC circular explains revision principles."
+source_urls = ["https://librinostri.catholica.cz/download/ActAcadVele18-r.pdf"]
+
+[[classifications]]
+id = "eastern:byz-vulgata-chrysostom-1940"
+substantive_status = "substantive-established"
+source_ref = "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml#raes-slavonic-books1947"
+basis = "Raes pp.85–86 identifies changed commemoration and specific rubrical policy; not merely a printing date."
+source_urls = ["https://librinostri.catholica.cz/download/ActAcadVele18-r.pdf"]
+
+[[classifications]]
+id = "eastern:byz-univ1733-read-liturgy"
+substantive_status = "substantive-established"
+source_ref = "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml#plc-ruthenian-circular1941"
+basis = "Circular I §3 retrospectively identifies expanded Eucharistic rubrics; exact witness not acquired."
+source_urls = ["https://plc-ugcc.blogspot.com/2016/10/recensio-ruthena.html"]
+
+[[classifications]]
+id = "eastern:byz-vulgata-1953"
+substantive_status = "substantive-established"
+source_ref = "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml#vulgata-calendar2021"
+basis = "Primary book comparison pp.382–383 identifies newly appended All Saints of Rus propers, second pagination47–48."
+source_urls = ["https://slovene.ru/2021_1_Semenenko-Basin_Caprio.pdf"]
+
+[[classifications]]
+id = "eastern:alex-geez-1945"
+substantive_status = "substantive-established"
+source_ref = "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml#fritsch-anaphoras-2011"
+basis = "Fritsch summary pp.1–2 explicitly reports changes to institution wording and reuse of the Apostles narrative in the 1945 edition. Attributed scholarly report; exact source-book pages uncollated."
+source_urls = ["https://www.liturgia.it/content/addaicongress/interventi/Fritsch.pdf"]
+
+[[classifications]]
+id = "eastern:malabar-1774"
+substantive_status = "substantive-established"
+source_ref = "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml#malabar-catechesis-2015"
+basis = "Official commission retrospective §21, physical PDF6, identifies three Maronite prayers and Latin-derived additions in the 1774 Taksa. Original book and exact donor editions uncollated."
+source_urls = ["https://www.syromalabarmission.com/assets/uploads/events/Translated_mystagogical_catechesis_(1)_English.pdf"]
+
+[[classifications]]
+id = "western:roman-1501-liechtenstein-burchard"
+substantive_status = "substantive-established"
+source_ref = "src/sources/inventories/western-eucharistic-books-timeline-v1.toml#legg-tracts-1904"
+basis = "Distinct shorter ceremonial source state established by critical comparison with1502, pp.xxvi/126/132–137/167; claim is component-level, not wholemissal or universal normative state."
+source_urls = ["https://archive.org/stream/tractsonmass00leggrich/tractsonmass00leggrich_djvu.txt"]
+
+[[classifications]]
+id = "western:burchard-ordo-1502"
+substantive_status = "substantive-established"
+source_ref = "src/sources/inventories/western-eucharistic-books-timeline-v1.toml#legg-tracts-1904"
+basis = "Expanded ceremonial relative to1501V with additional/expanded rubrics; criticaleditionpp.xxvi/126/132–137/167. No blanket universal force inferred from printing privilege."
+source_urls = ["https://archive.org/stream/tractsonmass00leggrich/tractsonmass00leggrich_djvu.txt"]
+
+[[presentation_groups]]
+id = "cosenza"
+label = "Use of Cosenza"
+families = ["cosenza-local"]
+
+[[presentation_groups]]
+id = "langres"
+label = "Use of Langres"
+families = ["langres-local"]
+
+[[presentation_groups]]
+id = "uzes"
+label = "Use of Uzès"
+families = ["uzes-local"]
+
+[[presentation_groups]]
+id = "western-slavonic-contact"
+label = "Early Latin–Slavonic contacts"
+families = ["western-slavonic-and-sinai-contact"]
+
+[[presentation_groups]]
+id = "holy-sepulchre"
+label = "Latin Holy Sepulchre tradition"
+families = ["Latin Holy Sepulchre / Carmelite"]
+note = "Contextual source tradition for Carmelite reception; not an additional surviving book."
+
+[[presentation_groups]]
+id = "early-prayers"
+label = "Early Christian prayer sources"
+families = ["Early Christian prayers"]
+note = "Contextual prayer sources; not an additional rite."
+
+[[presentation_groups]]
+id = "devotional-prayers"
+label = "Devotional prayers received into service books"
+families = ["Devotional prayer tradition, identified by Latin incipits"]
+note = "Source prayers, not an additional rite or missal."
+
+[[text_sets]]
+id = "brightman-1896-greek-basil"
+adapter = "brightman-1896-greek-basil"
+
+[[text_sets]]
+id = "brightman-1896-greek-chrysostom"
+adapter = "brightman-1896-greek-chrysostom"
+
+[[text_sets]]
+id = "brightman-1896-greek-james"
+adapter = "brightman-1896-greek-james"
+
+[[comparisons]]
+id = "brightman-1896-greek-basil-chrysostom-anamnesis-oblation"
+kind = "parallel-liturgical-unit-comparison"
+membership_status = "established"
+basis = "The complete bounded priestly anamnesis with its offering continuation in the Basil and Chrysostom liturgies, as actually printed in Brightman 1896. The original Greek texts were independently checked against the exact retained pages. The paired liturgical functions and explicit prayer boundaries establish comparison membership; shared wording and variants do not establish borrowing direction or a common ancestor."
+apparatus_caveat = "The witnesses are mediated by the 1896 editorial collection. Modern Basil and Chrysostom derive from the source-described Venice 1869 text; Greek James is attributed to Paris gr. 2509, with its stated date corrected to the fifteenth century in the edition’s corrigenda. Source typography marks scriptural quotations, and speech-block/rubric normalization is explicitly recorded. No Catholic reception, original composition date or date of textual introduction follows from this comparison."
+source_refs = ["artifact.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.ia-pdf-254f7d21", "passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.basil-anamnesis-oblation", "passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.chrysostom-anamnesis-oblation"]
+
+[comparisons.left]
+text_set = "brightman-1896-greek-basil"
+unit_ids = ["unit.brightman-1896.greek-basil.anaphora.anamnesis-oblation"]
+record_id = "eastern:byz-brightman1896-basil"
+
+[comparisons.right]
+text_set = "brightman-1896-greek-chrysostom"
+unit_ids = ["unit.brightman-1896.greek-chrysostom.anaphora.anamnesis-oblation"]
+record_id = "eastern:byz-brightman1896-chrysostom"
+
+[[comparisons]]
+id = "brightman-1896-greek-basil-chrysostom-invocation-gifts"
+kind = "parallel-liturgical-unit-comparison"
+membership_status = "established"
+basis = "The complete bounded priestly invocation over the gifts in the Basil and Chrysostom liturgies, as actually printed in Brightman 1896. The original Greek texts were independently checked against the exact retained pages. The paired liturgical functions and explicit prayer boundaries establish comparison membership; shared wording and variants do not establish borrowing direction or a common ancestor."
+apparatus_caveat = "The witnesses are mediated by the 1896 editorial collection. Modern Basil and Chrysostom derive from the source-described Venice 1869 text; Greek James is attributed to Paris gr. 2509, with its stated date corrected to the fifteenth century in the edition’s corrigenda. Source typography marks scriptural quotations, and speech-block/rubric normalization is explicitly recorded. No Catholic reception, original composition date or date of textual introduction follows from this comparison. Brightman p. 406 footnote a separately characterizes Μεταβαλὼν τῷ Πνεύματί σου τῷ Ἁγίῳ as wording copied from Chrysostom into Basil, which it treats as an addition by an unnamed person and syntactically inappropriate there; it refers to Nicodemus’s Pedalion note on canon 19 of Laodicea. That apparatus wording is not in Brightman’s printed Basil prayer, whereas the clause is in his Chrysostom prayer at p. 387. The note identifies no receiving edition or introduction date; the cited Pedalion itself was not inspected, and this editorial testimony is not converted into a directed book relationship."
+source_refs = ["artifact.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.ia-pdf-254f7d21", "passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.basil-invocation-gifts", "passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.chrysostom-invocation-gifts", "passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.basil-metabalon-apparatus-note"]
+
+[comparisons.left]
+text_set = "brightman-1896-greek-basil"
+unit_ids = ["unit.brightman-1896.greek-basil.anaphora.invocation-gifts"]
+record_id = "eastern:byz-brightman1896-basil"
+
+[comparisons.right]
+text_set = "brightman-1896-greek-chrysostom"
+unit_ids = ["unit.brightman-1896.greek-chrysostom.anaphora.invocation-gifts"]
+record_id = "eastern:byz-brightman1896-chrysostom"
+
+[[comparisons]]
+id = "brightman-1896-greek-basil-james-anamnesis-oblation"
+kind = "parallel-liturgical-unit-comparison"
+membership_status = "established"
+basis = "The complete bounded priestly anamnesis with its offering continuation in the Basil and James liturgies, as actually printed in Brightman 1896. The original Greek texts were independently checked against the exact retained pages. The paired liturgical functions and explicit prayer boundaries establish comparison membership; shared wording and variants do not establish borrowing direction or a common ancestor."
+apparatus_caveat = "The witnesses are mediated by the 1896 editorial collection. Modern Basil and Chrysostom derive from the source-described Venice 1869 text; Greek James is attributed to Paris gr. 2509, with its stated date corrected to the fifteenth century in the edition’s corrigenda. Source typography marks scriptural quotations, and speech-block/rubric normalization is explicitly recorded. No Catholic reception, original composition date or date of textual introduction follows from this comparison."
+source_refs = ["artifact.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.ia-pdf-254f7d21", "passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.basil-anamnesis-oblation", "passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.james-anamnesis-oblation"]
+
+[comparisons.left]
+text_set = "brightman-1896-greek-basil"
+unit_ids = ["unit.brightman-1896.greek-basil.anaphora.anamnesis-oblation"]
+record_id = "eastern:byz-brightman1896-basil"
+
+[comparisons.right]
+text_set = "brightman-1896-greek-james"
+unit_ids = ["unit.brightman-1896.greek-james.anaphora.anamnesis-oblation"]
+record_id = "eastern:syr-brightman1896-greek-james"
+
+[[comparisons]]
+id = "brightman-1896-greek-basil-james-invocation-gifts"
+kind = "parallel-liturgical-unit-comparison"
+membership_status = "established"
+basis = "The complete bounded priestly invocation over the gifts in the Basil and James liturgies, as actually printed in Brightman 1896. The original Greek texts were independently checked against the exact retained pages. The paired liturgical functions and explicit prayer boundaries establish comparison membership; shared wording and variants do not establish borrowing direction or a common ancestor."
+apparatus_caveat = "The witnesses are mediated by the 1896 editorial collection. Modern Basil and Chrysostom derive from the source-described Venice 1869 text; Greek James is attributed to Paris gr. 2509, with its stated date corrected to the fifteenth century in the edition’s corrigenda. Source typography marks scriptural quotations, and speech-block/rubric normalization is explicitly recorded. No Catholic reception, original composition date or date of textual introduction follows from this comparison."
+source_refs = ["artifact.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.ia-pdf-254f7d21", "passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.basil-invocation-gifts", "passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.james-invocation-gifts"]
+
+[comparisons.left]
+text_set = "brightman-1896-greek-basil"
+unit_ids = ["unit.brightman-1896.greek-basil.anaphora.invocation-gifts"]
+record_id = "eastern:byz-brightman1896-basil"
+
+[comparisons.right]
+text_set = "brightman-1896-greek-james"
+unit_ids = ["unit.brightman-1896.greek-james.anaphora.invocation-gifts"]
+record_id = "eastern:syr-brightman1896-greek-james"
+
+[[comparisons]]
+id = "brightman-1896-greek-chrysostom-james-anamnesis-oblation"
+kind = "parallel-liturgical-unit-comparison"
+membership_status = "established"
+basis = "The complete bounded priestly anamnesis with its offering continuation in the Chrysostom and James liturgies, as actually printed in Brightman 1896. The original Greek texts were independently checked against the exact retained pages. The paired liturgical functions and explicit prayer boundaries establish comparison membership; shared wording and variants do not establish borrowing direction or a common ancestor."
+apparatus_caveat = "The witnesses are mediated by the 1896 editorial collection. Modern Basil and Chrysostom derive from the source-described Venice 1869 text; Greek James is attributed to Paris gr. 2509, with its stated date corrected to the fifteenth century in the edition’s corrigenda. Source typography marks scriptural quotations, and speech-block/rubric normalization is explicitly recorded. No Catholic reception, original composition date or date of textual introduction follows from this comparison."
+source_refs = ["artifact.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.ia-pdf-254f7d21", "passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.chrysostom-anamnesis-oblation", "passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.james-anamnesis-oblation"]
+
+[comparisons.left]
+text_set = "brightman-1896-greek-chrysostom"
+unit_ids = ["unit.brightman-1896.greek-chrysostom.anaphora.anamnesis-oblation"]
+record_id = "eastern:byz-brightman1896-chrysostom"
+
+[comparisons.right]
+text_set = "brightman-1896-greek-james"
+unit_ids = ["unit.brightman-1896.greek-james.anaphora.anamnesis-oblation"]
+record_id = "eastern:syr-brightman1896-greek-james"
+
+[[comparisons]]
+id = "brightman-1896-greek-chrysostom-james-invocation-gifts"
+kind = "parallel-liturgical-unit-comparison"
+membership_status = "established"
+basis = "The complete bounded priestly invocation over the gifts in the Chrysostom and James liturgies, as actually printed in Brightman 1896. The original Greek texts were independently checked against the exact retained pages. The paired liturgical functions and explicit prayer boundaries establish comparison membership; shared wording and variants do not establish borrowing direction or a common ancestor."
+apparatus_caveat = "The witnesses are mediated by the 1896 editorial collection. Modern Basil and Chrysostom derive from the source-described Venice 1869 text; Greek James is attributed to Paris gr. 2509, with its stated date corrected to the fifteenth century in the edition’s corrigenda. Source typography marks scriptural quotations, and speech-block/rubric normalization is explicitly recorded. No Catholic reception, original composition date or date of textual introduction follows from this comparison."
+source_refs = ["artifact.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.ia-pdf-254f7d21", "passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.chrysostom-invocation-gifts", "passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.james-invocation-gifts"]
+
+[comparisons.left]
+text_set = "brightman-1896-greek-chrysostom"
+unit_ids = ["unit.brightman-1896.greek-chrysostom.anaphora.invocation-gifts"]
+record_id = "eastern:byz-brightman1896-chrysostom"
+
+[comparisons.right]
+text_set = "brightman-1896-greek-james"
+unit_ids = ["unit.brightman-1896.greek-james.anaphora.invocation-gifts"]
+record_id = "eastern:syr-brightman1896-greek-james"

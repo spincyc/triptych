@@ -1,0 +1,12 @@
+schema = 2
+record_type = "passage"
+id = "passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.basil-invocation-gifts-facsimile"
+edition_id = "edition.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1"
+artifact_id = "artifact.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.ia-pdf-254f7d21"
+artifact_sha256 = "254f7d21b44436bdbac565b6f932d9e38d6ef8a062d9a8d944957e1a5d607ef0"
+locus = "Brightman 1896, Basil; printed pp. 405–406; printed lines 405.29–33; 406.1–10; PDF pages 511,512 (one-based)."
+states = ["cataloged", "acquired", "inspected", "verified"]
+artifact_page_ranges = [[511, 512]]
+context = "Complete priestly invocation over the gifts, from Διὰ τοῦτο through καὶ σωτηρίας, ending before the triple Amen and before the prayer for communicants beginning Ἡμᾶς δὲ πάντας. Excludes the apparatus superscript and footnote a; that note discusses Μεταβαλὼν in relation to Basil and Chrysostom, and is not part of the printed Basil prayer. Modern Greek Basil prayers as printed in Brightman 1896, from the Venice 1869 Euchologion according to the printed p. 308 source note. Not the separate Barberini/Grottaferrata section. Shared wording is a textual observation; this selection does not establish Catholic reception, a historical borrowing act, direction of dependence, a reconstructed common ancestor, or the entire anaphora."
+notes = "The artifact-page range retains the whole controlling pages; verification concerns only the printed line locus and declared priestly prayer scope. The paired normalized-text passage has the same identifier without -facsimile. On 2026-10-16 two AI readers checked these bounded original page images and the final serialized text, including accents, case, punctuation, source typography and boundaries. The independent review reported no remaining glyph or word discrepancy. It confirmed 1 recoverable priestly speech block(s). This is an explicitly normalized comparison transcription, not a facsimile or a complete liturgical service. Speech-block metadata, using zero-based half-open Unicode codepoint ranges in the NFC body excluding final LF: [{\"source_printed_lines\":\"405.29–33;406.1–10\",\"codepoint_range\":[0,812],\"incipit\":\"Διὰ τοῦτο δέσποτα πανάγιε\"}]. Single separating spaces between blocks are derivative layout, not added punctuation."
+verified_on = "2026-10-16"

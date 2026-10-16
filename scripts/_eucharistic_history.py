@@ -21,6 +21,11 @@ from urllib.parse import quote, urlsplit
 SCHEMA = "triptych-eucharistic-history/v1"
 CORPUS_SCHEMA = "triptych-eucharistic-corpus/v1"
 COMPARISON_SCHEMA = "triptych-eucharistic-witness-comparison/v1"
+COMPARISON_KINDS = {"same-prayer-witness-comparison": "same-prayer-witnesses",
+                    "parallel-liturgical-unit-comparison": "parallel-function-not-same-composition"}
+RELATIONSHIP_SCHEMA = "eucharistic-history-relationships"
+RELATIONSHIP_KINDS = {"borrowing": True, "reception": True, "shared-text": False,
+                      "common-ancestry": False, "edition-succession": True}
 MARKER = ".triptych-act-history-corpus.json"
 DEFAULT_SOURCE = "src/sources/inventories/catholic-eucharistic-history-v1.toml"
 SLUG = re.compile(r"[a-z0-9][a-z0-9-]*\Z")
@@ -78,7 +83,7 @@ def route(source: Path, root: Path) -> tuple[dict, dict]:
         raise HistoryError("expected schema_version=1, record_type=catholic-eucharistic-history")
     if not isinstance(data.get("scope_ref"), str) or not data["scope_ref"]:
         raise HistoryError("history routing requires scope_ref")
-    for table in ("catalogues", "act_slices", "text_sets", "comparisons"):
+    for table in ("catalogues", "act_slices", "text_sets", "comparisons", "relationship_sets", "presentation_groups"):
         rows = data.get(table, [])
         if not isinstance(rows, list) or any(not isinstance(row, dict) for row in rows):
             raise HistoryError(f"{table} must be an array of tables")
@@ -88,12 +93,188 @@ def route(source: Path, root: Path) -> tuple[dict, dict]:
         if len(identifiers) != len(set(identifiers)):
             raise HistoryError(f"duplicate id in {table}")
         fields = {"text_sets": ("adapter",), "catalogues": ("path", "table"),
-                  "act_slices": ("path",), "comparisons": ("kind",)}[table]
+                  "act_slices": ("path",), "comparisons": ("kind",), "relationship_sets": ("path",),
+                  "presentation_groups": ("label",)}[table]
         for row in rows:
             for field in fields:
                 if not isinstance(row.get(field), str) or not row[field]:
                     raise HistoryError(f"{table} {row['id']}: missing {field}")
     return data, inputs
+
+
+def required_string(row: dict, key: str, context: str) -> str:
+    value = row.get(key)
+    if not isinstance(value, str) or not value.strip():
+        raise HistoryError(f"{context}: {key} must be a nonempty string")
+    return value
+
+
+def comparison_identity(row: dict) -> str:
+    kind = row.get("kind")
+    if not isinstance(kind, str) or kind not in COMPARISON_KINDS:
+        raise HistoryError("unsupported comparison kind")
+    return COMPARISON_KINDS[kind]
+
+
+def relationship_evidence(row: dict, sources: dict, identifier: str, *, inspected: bool) -> list[dict]:
+    evidence = row.get("evidence")
+    if not isinstance(evidence, list) or not evidence:
+        raise HistoryError(f"{identifier}: evidence must name sources and loci")
+    result, seen = [], set()
+    for citation in evidence:
+        if not isinstance(citation, dict) or set(citation) != {"source_id", "locus"}:
+            raise HistoryError(f"{identifier}: evidence requires source_id and locus only")
+        source_id = required_string(citation, "source_id", identifier)
+        locus = required_string(citation, "locus", identifier)
+        if source_id not in sources:
+            raise HistoryError(f"{identifier}: unresolved evidence source {source_id}")
+        if (source_id, locus) in seen:
+            raise HistoryError(f"{identifier}: duplicate evidence source and locus")
+        seen.add((source_id, locus))
+        if inspected and sources[source_id]["inspection_status"] != "inspected":
+            raise HistoryError(f"{identifier}: sourced relationship or entity requires inspected evidence")
+        result.append({**citation, "source": sources[source_id]})
+    return result
+
+
+def relationships(data: dict, root: Path, entries: dict, comparisons: dict, inputs: dict) -> tuple[list[dict], list[dict]]:
+    """Evidence links are never passed to act parents or corpus inheritance."""
+    result, entities, held = [], {}, []
+    allowed = {"id", "kind", "label", "from", "to", "certainty", "scope", "basis", "limitations",
+               "evidence", "comparison_ids", "date_label", "chronology", "ancestor_ref",
+               "git_ancestry", "text_inheritance"}
+    for owner in data.get("relationship_sets", []):
+        path = inside(root, owner["path"])
+        inventory = read_toml(root, path, inputs)
+        if inventory.get("schema_version") != 1 or inventory.get("record_type") != RELATIONSHIP_SCHEMA:
+            raise HistoryError(f"{owner['id']}: expected schema_version=1, record_type={RELATIONSHIP_SCHEMA}")
+        sources = {}
+        source_rows = inventory.get("sources", [])
+        if not isinstance(source_rows, list):
+            raise HistoryError(f"{owner['id']}: sources must be an array of tables")
+        for source in source_rows:
+            if not isinstance(source, dict):
+                raise HistoryError(f"{owner['id']}: source must be a table")
+            key = required_string(source, "id", owner["id"])
+            if key in sources:
+                raise HistoryError(f"{owner['id']}: duplicate relationship source {key}")
+            for field in ("title", "inspection"):
+                required_string(source, field, key)
+            if source.get("inspection_status") not in ("inspected", "not-inspected"):
+                raise HistoryError(f"{key}: source requires explicit inspection_status")
+            if "url" in source and safe_url(source["url"]) is None:
+                raise HistoryError(f"{key}: source URL must be an HTTP(S) source route")
+            sources[key] = {**source, "url": source.get("url")}
+        entity_rows = inventory.get("entities", [])
+        if not isinstance(entity_rows, list) or any(not isinstance(row, dict) for row in entity_rows):
+            raise HistoryError(f"{owner['id']}: entities must be an array of tables")
+        for row in entity_rows:
+            key = required_string(row, "id", owner["id"])
+            identifier = owner["id"] + ":entity:" + key
+            if not SLUG.fullmatch(key) or identifier in entities or identifier in entries:
+                raise HistoryError(f"{owner['id']}: duplicate or unsafe entity id {key}")
+            fields = {"id", "label", "kind", "family", "scope", "basis", "limitations", "evidence"}
+            if set(row) - fields or row.get("kind") != "textual-tradition":
+                raise HistoryError(f"{identifier}: entity is an undated textual-tradition, not an edition or act")
+            for field in ("label", "family", "scope", "basis", "limitations"):
+                required_string(row, field, identifier)
+            entities[identifier] = {**row, "id": identifier, "chronology": None, "relationship_ids": [],
+                                    "evidence": relationship_evidence(row, sources, identifier, inspected=True),
+                                    "origin": {"inventory": path.relative_to(root).as_posix(), "table": "entities", "id": key}}
+        held.append((owner, path, inventory, sources))
+    endpoints = entries.keys() | entities.keys()
+    for owner, path, inventory, sources in held:
+        rows = inventory.get("relationships")
+        if not isinstance(rows, list) or any(not isinstance(row, dict) for row in rows):
+            raise HistoryError(f"{owner['id']}: relationships must be an array of tables")
+        seen = set()
+        for row in rows:
+            key = required_string(row, "id", owner["id"])
+            if not SLUG.fullmatch(key) or key in seen:
+                raise HistoryError(f"{owner['id']}: duplicate or unsafe relationship id {key}")
+            seen.add(key)
+            identifier = owner["id"] + ":" + key
+            if set(row) - allowed:
+                raise HistoryError(f"{identifier}: unsupported relationship fields: {', '.join(sorted(set(row) - allowed))}")
+            for field in ("git_ancestry", "text_inheritance"):
+                if field in row and row[field] is not False:
+                    raise HistoryError(f"{identifier}: relationships cannot grant {field}")
+            kind = row.get("kind")
+            if not isinstance(kind, str) or kind not in RELATIONSHIP_KINDS:
+                raise HistoryError(f"{identifier}: unsupported relationship kind")
+            for field in ("from", "to"):
+                endpoint = required_string(row, field, identifier)
+                if endpoint not in endpoints:
+                    raise HistoryError(f"{identifier}: unresolved {field} endpoint {endpoint}")
+            if row["from"] == row["to"]:
+                raise HistoryError(f"{identifier}: relationship endpoints must be distinct")
+            if row.get("certainty") not in ("sourced", "attributed", "disputed", "unresolved"):
+                raise HistoryError(f"{identifier}: unsupported relationship certainty")
+            for field in ("scope", "basis", "limitations"):
+                required_string(row, field, identifier)
+            for field in ("label", "date_label"):
+                if field in row:
+                    required_string(row, field, identifier)
+            ancestor = row.get("ancestor_ref")
+            if ancestor is not None and (kind != "common-ancestry" or not isinstance(ancestor, str)
+                                         or ancestor not in endpoints or ancestor in (row["from"], row["to"])):
+                raise HistoryError(f"{identifier}: ancestor_ref must identify a separate recorded common ancestor")
+            projected_evidence = relationship_evidence(row, sources, identifier, inspected=row["certainty"] == "sourced")
+            comparison_ids = row.get("comparison_ids", [])
+            if (not isinstance(comparison_ids, list) or any(not isinstance(item, str) for item in comparison_ids)
+                    or len(comparison_ids) != len(set(comparison_ids))):
+                raise HistoryError(f"{identifier}: comparison_ids must be distinct comparison IDs")
+            comparison_links = []
+            for comparison_id in comparison_ids:
+                if comparison_id not in comparisons:
+                    raise HistoryError(f"{identifier}: unresolved comparison {comparison_id}")
+                comparison = comparisons[comparison_id]
+                linked = {comparison.get(side, {}).get("record_id") for side in ("left", "right")}
+                if linked != {row["from"], row["to"]}:
+                    raise HistoryError(f"{identifier}: comparison record_id endpoints do not match relationship")
+                comparison_links.append({"id": comparison_id, "projection_path": comparison["projection_path"]})
+            result.append({**row, "id": identifier, "label": row.get("label", kind),
+                           "directed": RELATIONSHIP_KINDS[kind], "date_label": row.get("date_label"),
+                           "chronology": chronology(row), "ancestor_ref": ancestor,
+                           "evidence": projected_evidence, "comparison_ids": comparison_ids,
+                           "comparison_links": comparison_links,
+                           "origin": {"inventory": path.relative_to(root).as_posix(), "table": "relationships", "id": key},
+                           "git_ancestry": False, "text_inheritance": False})
+    return sorted(result, key=lambda row: row["id"]), sorted(entities.values(), key=lambda row: row["id"])
+
+
+def presentation_groups(data: dict, entries: list[dict], entities: list[dict]) -> list[dict]:
+    """Source-owned labels group aliases without changing historical identity."""
+    aliases, groups = {}, {}
+    for row in data.get("presentation_groups", []):
+        identifier = row["id"]
+        label = required_string(row, "label", identifier)
+        if "note" in row:
+            required_string(row, "note", identifier)
+        families = row.get("families")
+        if (not isinstance(families, list) or not families
+                or any(not isinstance(key, str) or not key.strip() for key in families)
+                or len(families) != len(set(families))):
+            raise HistoryError(f"{identifier}: families must be distinct nonempty aliases")
+        for family in families:
+            if family in aliases:
+                raise HistoryError(f"{identifier}: family alias {family!r} belongs to two presentation groups")
+            aliases[family] = identifier
+        groups[identifier] = {"id": identifier, "label": label, "status": "declared",
+                              "families": families, "note": row.get("note"), "count": 0, "entity_count": 0}
+    for entry in [*entries, *entities]:
+        family = entry["family"]
+        if not isinstance(family, str) or not family.strip():
+            raise HistoryError(f"{entry['id']}: family must be a nonempty string")
+        identifier = aliases.get(family, "unmapped:" + family)
+        if identifier not in groups:
+            groups[identifier] = {"id": identifier, "label": family + " (unmapped)", "status": "unmapped",
+                                  "families": [family], "note": "No presentation group has been declared for this source family.",
+                                  "count": 0, "entity_count": 0}
+        group = groups[identifier]
+        group["entity_count" if entry.get("kind") == "textual-tradition" else "count"] += 1
+        entry["presentation_group"] = {key: group[key] for key in ("id", "label", "status")}
+    return sorted(groups.values(), key=lambda row: row["id"])
 
 
 def safe_url(value: object) -> str | None:
@@ -132,6 +313,8 @@ def chronology(row: dict) -> dict | None:
             or not isinstance(value["end"], int) or isinstance(value["end"], bool)
             or value["start"] > value["end"]):
         raise HistoryError(f"{row.get('id')}: chronology bounds must be ordered integer years")
+    for key in ("kind", "certainty"):
+        required_string(value, key, str(row.get("id")))
     return {key: value[key] for key in ("start", "end", "kind", "certainty")}
 
 
@@ -229,19 +412,45 @@ def catalogue(source: Path, root: Path, *, act_loader) -> dict:
                     "artifacts": held.get("artifacts", []),
                     "status": "recorded-acquisition-audit-not-reverified"}
     text_sets = [{**row, "status": "configured-not-generated"} for row in data.get("text_sets", [])]
+    comparisons = [{**row, "status": "configured-not-generated", "historical_ancestry_claimed": False,
+                    "identity_claim": comparison_identity(row),
+                    "projection_path": f"comparisons/{row['id']}.json", "relationship_ids": []}
+                   for row in data.get("comparisons", [])]
+    for comparison in comparisons:
+        for side in ("left", "right"):
+            declaration = comparison.get(side, {})
+            if not isinstance(declaration, dict):
+                raise HistoryError(f"{comparison['id']}: {side} must be a table")
+            if "record_id" in declaration and (not isinstance(declaration["record_id"], str)
+                                                or declaration["record_id"] not in by_id):
+                raise HistoryError(f"{comparison['id']}: unresolved {side} record_id")
+    comparisons_by_id = {row["id"]: row for row in comparisons}
+    relations, entities = relationships(data, root, by_id, comparisons_by_id, inputs)
+    endpoints = {**by_id, **{row["id"]: row for row in entities}}
+    for entry in entries:
+        entry["relationship_ids"] = []
+    for relation in relations:
+        for endpoint in (relation["from"], relation["to"]):
+            endpoints[endpoint]["relationship_ids"].append(relation["id"])
+        for comparison_id in relation["comparison_ids"]:
+            comparisons_by_id[comparison_id]["relationship_ids"].append(relation["id"])
+    groups = presentation_groups(data, entries, entities)
     entries.sort(key=lambda row: row["id"])
     return {"schema": SCHEMA, "scope_ref": data["scope_ref"], "entries": entries,
             "counts": {"entries": len(entries), "substantive_established": sum(e["substantive_status"] == "substantive-established" for e in entries),
                        "witnesses": sum(e["record_kind"] in ("printed-witness", "manuscript-witness") for e in entries),
-                       "candidates": sum(e["evidence_status"] == "candidate" for e in entries), "text_sets": len(text_sets)},
+                       "candidates": sum(e["evidence_status"] == "candidate" for e in entries), "text_sets": len(text_sets),
+                       "relationships": len(relations), "relationship_entities": len(entities), "presentation_groups": len(groups),
+                       "unmapped_families": sum(group["status"] == "unmapped" for group in groups)},
             "text_sets": text_sets,
-            "comparisons": [{**row, "status": "configured-not-generated", "historical_ancestry_claimed": False,
-                             "projection_path": f"comparisons/{row['id']}.json"}
-                            for row in data.get("comparisons", [])],
+            "comparisons": comparisons, "relationships": relations, "relationship_entities": entities, "presentation_groups": groups,
             "holdings": holdings, "inputs": sorted(inputs.values(), key=lambda row: row["path"]),
             "limitations": ["Research records are candidates, not accepted normative stations or text ancestry.",
                             "Recorded printings and acts are not a census of proven substantive liturgical versions.",
                             "Unknown acquisition or unrecorded text is not historical absence.",
+                            "Relationship types and their uncertainty do not grant Git ancestry or textual inheritance.",
+                            "A missing research relationship is not evidence that traditions were historically unrelated.",
+                            "Presentation groups label source-family aliases; their count is not a census of rites or Churches.",
                             "No complete-book claim or all-tradition completeness claim is made.",
                             "Legacy promulgated act chains retain recorded-unit inheritance; departure-effect status is not a text-continuity audit."]}
 
@@ -486,7 +695,7 @@ def _member_container(unit: dict) -> tuple | None:
 
 
 def compare(source: Path, root: Path, identifier: str, *, ventilator,
-            adapter_loader=None, supported_adapters=None) -> dict:
+            adapter_loader=None, supported_adapters=None, act_loader=None) -> dict:
     """Compare explicit witness membership without creating textual ancestry."""
     root = root.resolve()
     data, inputs = route(source, root)
@@ -494,8 +703,7 @@ def compare(source: Path, root: Path, identifier: str, *, ventilator,
     if identifier not in declarations:
         raise HistoryError(f"unknown comparison: {identifier!r}")
     declaration = declarations[identifier]
-    if declaration.get("kind") != "same-prayer-witness-comparison":
-        raise HistoryError("unsupported comparison kind; only same-prayer-witness-comparison is supported")
+    identity_claim = comparison_identity(declaration)
     if declaration.get("membership_status") != "established":
         raise HistoryError("comparison membership must be explicitly established")
     for field in ("basis", "apparatus_caveat"):
@@ -518,6 +726,17 @@ def compare(source: Path, root: Path, identifier: str, *, ventilator,
             if name in target and json_bytes(target[name]) != json_bytes(row):
                 raise HistoryError(f"comparison inputs disagree for {name}")
             target[name] = row
+
+    related = []
+    for side in ("left", "right"):
+        if not isinstance(declaration.get(side), dict):
+            raise HistoryError(f"comparison {side} must name a configured text_set")
+    if data.get("relationship_sets") or any("record_id" in declaration.get(side, {}) for side in ("left", "right")):
+        if data.get("act_slices") and act_loader is None:
+            raise HistoryError("linked comparison requires the owning act loader to validate catalogue records")
+        context = catalogue(source, root, act_loader=act_loader)
+        related = [row for row in context["relationships"] if identifier in row["comparison_ids"]]
+        collect(context["inputs"], inputs, "path")
 
     for side in ("left", "right"):
         selected = declaration.get(side)
@@ -559,6 +778,7 @@ def compare(source: Path, root: Path, identifier: str, *, ventilator,
         joined = " ".join(unit["text"] for unit in members)
         body = serialized_text(joined, identifier + ":" + side, ventilator=ventilator)
         sides[side] = {"text_set": owner["id"], "adapter": adapter, "title": payload.get("title"),
+                       "record_id": selected.get("record_id"),
                        "target_date": payload.get("target_date"), "witness_date": payload.get("witness_date"),
                        "reviewed_on": payload.get("reviewed_on"), "scope": payload.get("scope"),
                        "members": output_members, "join_rule": "insert-one-space-between-exact-source-bodies",
@@ -583,11 +803,12 @@ def compare(source: Path, root: Path, identifier: str, *, ventilator,
         sides["right"]["serialized_text"].splitlines(keepends=True),
         fromfile="left/" + sides["left"]["text_set"], tofile="right/" + sides["right"]["text_set"],
     ))
-    return {"schema": COMPARISON_SCHEMA, "id": identifier, "kind": declaration["kind"],
+    return {"schema": COMPARISON_SCHEMA, "id": identifier, "kind": declaration["kind"], "identity_claim": identity_claim,
             "membership_status": declaration["membership_status"], "basis": declaration["basis"],
             "apparatus_caveat": declaration["apparatus_caveat"], "source_refs": references,
             "historical_ancestry_claimed": False, "historical_act_claimed": False,
             "introduction_date_inferred": False, "text_serialization": TEXT_SERIALIZATION,
+            "relationship_ids": [row["id"] for row in related], "relationships": related,
             **sides, "unified_diff": unified, "identical_serialized_text": not unified,
             "inputs": sorted(inputs.values(), key=lambda row: row["path"]),
             "tool_inputs": sorted(tool_inputs.values(), key=lambda row: row["path"]),

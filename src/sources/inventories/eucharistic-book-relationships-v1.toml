@@ -1,0 +1,1388 @@
+schema_version = 1
+record_type = "eucharistic-history-relationships"
+
+# Sourced claims about bounded relationships. No row creates a historical act,
+# Git parent or permission to carry text. Context entities are not book editions.
+
+[[sources]]
+id = "maronite-official-introduction"
+title = "Maronite Qurbono: General Introduction and Explanation"
+url = "https://www.stmaron.org/qurbono"
+inspection_status = "inspected"
+inspection = "Reopened rendered official eparchy reproduction. Read historical-edition paragraphs and Vesting section; not a new inspection of the 1592/1716 physical books."
+checked_on = "2026-10-16"
+
+[[sources]]
+id = "ordinariate-official-missal"
+title = "Divine Worship: The Missal — official Ordinariate explanation"
+url = "https://www.ordinariate.net/divine-worship-missal"
+inspection_status = "inspected"
+inspection = "Reopened rendered official publication notice and interview with a drafting-commission member; not the full missal or original signed decree."
+checked_on = "2026-10-16"
+
+[[entities]]
+id = "roman-mass-anaphora"
+kind = "textual-tradition"
+label = "Roman Mass anaphora / Canon tradition"
+scope = "Donor textual tradition named by retrospective account; no particular Roman printing or date identified."
+evidence = [{source_id = "maronite-official-introduction", locus = "First Edition; Succeeding Editions"}]
+family = "roman"
+basis = "The cited account explicitly names this textual context."
+limitations = "Contextual entity only: no exact donor or receiving edition and no introduction date are inferred."
+
+[[entities]]
+id = "roman-missal-third-edition"
+kind = "textual-tradition"
+label = "Roman Missal third-edition textual state"
+scope = "Edition-state context; exact 2002/2008 printing not identified by this source."
+evidence = [{source_id = "ordinariate-official-missal", locus = "Opening publication notice, paragraph beginning Drawn from various Anglican sources"}]
+family = "roman"
+basis = "The cited account explicitly names this textual context."
+limitations = "Contextual entity only: no exact donor or receiving edition and no introduction date are inferred."
+
+[[entities]]
+id = "anglican-prayer-book-patrimony"
+kind = "textual-tradition"
+label = "Anglican Prayer Book patrimony"
+scope = "Plural national Prayer Book traditions; not a single 1549 text or direct descent from every named edition."
+evidence = [{source_id = "ordinariate-official-missal", locus = "How did the commission assemble the new missal?"}]
+family = "Anglican prayer-book patrimony"
+basis = "The cited account explicitly names this textual context."
+limitations = "Contextual entity only: no exact donor or receiving edition and no introduction date are inferred."
+
+[[entities]]
+id = "western-syriac-orthodox-prayer"
+kind = "textual-tradition"
+label = "Western Syriac Orthodox prayer tradition"
+scope = "Donor tradition for the specifically identified preparatory prayer; exact source witness and borrowing date unknown."
+evidence = [{source_id = "maronite-official-introduction", locus = "Particulars / The Vesting, final paragraph"}]
+family = "West Syriac"
+basis = "The cited account explicitly names this textual context."
+limitations = "Contextual entity only: no exact donor or receiving edition and no introduction date are inferred."
+
+[[entities]]
+id = "maronite-preparatory-prayer"
+kind = "textual-tradition"
+label = "Maronite preparatory-prayer practice"
+scope = "Receiving practice described in 1992 introduction; no unsupported assertion that 1992 first introduced it."
+evidence = [{source_id = "maronite-official-introduction", locus = "Particulars / The Vesting, final paragraph"}]
+family = "West Syriac/Maronite"
+basis = "The cited account explicitly names this textual context."
+limitations = "Contextual entity only: no exact donor or receiving edition and no introduction date are inferred."
+
+[[relationships]]
+id = "roman-institution-to-maronite-first-print"
+kind = "borrowing"
+label = "Latin institution wording received"
+from = "eucharistic-books:entity:roman-mass-anaphora"
+to = "eastern:mar-1592-94"
+certainty = "sourced"
+scope = "Consecration wording only."
+basis = "Official introduction reports Latin-to-Syriac replacement in the first printing."
+limitations = "No exact donor printing; publication, initial rejection and 1596 temporary acceptance are distinct events."
+evidence = [{source_id = "maronite-official-introduction", locus = "First Edition of the Book of the Maronite Qurbono, second paragraph"}]
+comparison_ids = []
+
+[[relationships]]
+id = "roman-anaphora-to-maronite-1716"
+kind = "borrowing"
+label = "Roman anaphora inserted"
+from = "eucharistic-books:entity:roman-mass-anaphora"
+to = "eastern:mar-1716"
+certainty = "sourced"
+scope = "Translated anaphora, not the whole service book."
+basis = "Official introduction reports insertion in Syriac and Arabic and removal of Sharar."
+limitations = "Exact donor printing and detailed word alignment unestablished."
+evidence = [{source_id = "maronite-official-introduction", locus = "The Succeeding Editions, first paragraph"}]
+comparison_ids = []
+
+[[relationships]]
+id = "maronite-1716-to-1763"
+kind = "edition-succession"
+label = "Anaphora repertoire reduced"
+from = "eastern:mar-1716"
+to = "eastern:mar-1763"
+certainty = "sourced"
+scope = "Anaphora selection."
+basis = "Official account describes the successor with eight rather than fourteen anaphoras."
+limitations = "No full textual collation; cannot assert byte-identical remainder."
+evidence = [{source_id = "maronite-official-introduction", locus = "The Succeeding Editions, second paragraph"}]
+comparison_ids = []
+
+[[relationships]]
+id = "western-syriac-preparatory-prayer-to-maronite"
+kind = "borrowing"
+label = "Preparatory prayer borrowed"
+from = "eucharistic-books:entity:western-syriac-orthodox-prayer"
+to = "eucharistic-books:entity:maronite-preparatory-prayer"
+certainty = "sourced"
+scope = "Named prayer at foot of altar."
+basis = "The official introduction explicitly identifies a borrowed preparatory prayer."
+limitations = "No donor edition, first receiving edition or introduction date established."
+evidence = [{source_id = "maronite-official-introduction", locus = "Particulars / The Vesting, final paragraph"}]
+comparison_ids = []
+
+[[relationships]]
+id = "roman-third-state-to-divine-worship"
+kind = "reception"
+label = "Roman third-edition adaptation"
+from = "eucharistic-books:entity:roman-missal-third-edition"
+to = "western:divine-worship-2015"
+certainty = "sourced"
+scope = "Adaptation drawing on the Roman third edition."
+basis = "Official publication notice identifies this edition-state among the inputs."
+limitations = "Not a direct copy or proof of a particular 2002/2008 impression."
+evidence = [{source_id = "ordinariate-official-missal", locus = "Opening publication notice, paragraph beginning Drawn from various Anglican sources"}]
+comparison_ids = []
+
+[[relationships]]
+id = "anglican-patrimony-to-divine-worship"
+kind = "reception"
+label = "Anglican patrimony incorporated"
+from = "eucharistic-books:entity:anglican-prayer-book-patrimony"
+to = "western:divine-worship-2015"
+certainty = "sourced"
+scope = "Selected texts from plural Prayer Book traditions."
+basis = "Official account describes commission selection and adaptation."
+limitations = "No single Prayer Book supplies the whole missal; English is source material of this adaptation."
+evidence = [{source_id = "ordinariate-official-missal", locus = "How did the commission assemble the new missal?; Will the faithful readily recognize the language?"}]
+comparison_ids = []
+
+[[relationships]]
+id = "book-divine-worship-to-divine-worship"
+kind = "edition-succession"
+label = "Eucharistic provision replaced"
+from = "western:book-divine-worship-predecessor"
+to = "western:divine-worship-2015"
+certainty = "sourced"
+scope = "Eucharistic texts, not all predecessor contents."
+basis = "Official notice announces replacement for use from 29 November 2015."
+limitations = "Replacement is not proof that every predecessor prayer was changed or copied."
+evidence = [{source_id = "ordinariate-official-missal", locus = "Can Ordinariate communities use the Roman Missal instead?, final paragraph; opening notice"}]
+comparison_ids = []
+
+[[sources]]
+id = "plc-ruthenian-circular1941"
+title = "Circular I, 10 September 1941, Prot.1219/28; opening, §§1–6 and final norms"
+url = "https://plc-ugcc.blogspot.com/2016/10/recensio-ruthena.html"
+inspection_status = "inspected"
+inspection = "Full displayed Ukrainian reproduction inspected; Italian original and signed copy not inspected"
+
+[[sources]]
+id = "raes-slavonic-books1947"
+title = "Alphonsus Raes, Libri liturgici in lingua Slavica a Sancta Sede editi, Acta Academiae Velehradensis18(1947), printed pp.85–88; PDF pp.91–94"
+url = "https://librinostri.catholica.cz/download/ActAcadVele18-r.pdf"
+inspection_status = "inspected"
+inspection = "Article text layer inspected; separate service-book title leaves not inspected"
+
+[[sources]]
+id = "vulgata-calendar2021"
+title = "Semenenko-Basin and Caprio, Slověne10/1(2021), pp.369,373,375–376,382–383,389"
+url = "https://slovene.ru/2021_1_Semenenko-Basin_Caprio.pdf"
+inspection_status = "inspected"
+inspection = "Selected article pages inspected; authors report de visu comparison of1950/1953books; project has not independently collated those books"
+
+[[sources]]
+id = "miklas-sinai-liturgiarium"
+title = "Heinz Miklas, Excavating the Palimpsests in the Glagolitic Manuscripts from Sinai, pp.219,222–223, especially notes17,51–54"
+url = "https://austriaca.at/0xc1aa5572%200x003e8cb3.pdf"
+inspection_status = "inspected"
+inspection = "Selected PDF pages inspected; manuscript images and full reconstructed text not acquired"
+
+[[relationships]]
+id = "greek1754-ruthenian1940-rubrics"
+kind = "borrowing"
+label = "Greek rubrics guide the Roman Ruthenian revision"
+from = "eastern:byz-greek-1754"
+to = "eastern:byz-ruthenian-chrysostom-1940"
+certainty = "sourced"
+scope = "Selected rubrics; not wholesale textual descent"
+basis = "Circular §4 names the 1754 Roman Greek Euchologion as a guide, while §1 retains older Ruthenian readings."
+limitations = "Inspected Ukrainian reproduction, not the original Italian act. The 1941 circular describes the already issued revision; Raes dates its larger Chrysostom issue to 1940."
+evidence = [{source_id = "plc-ruthenian-circular1941", locus = "Circular I, §§1 and 4; opening publication statement"}]
+comparison_ids = []
+
+[[relationships]]
+id = "vilnius1692-univ1733-read-rubrics"
+kind = "borrowing"
+label = "Expanded read-liturgy rubrics"
+from = "eastern:byz-vilnius-suprasl1692-95"
+to = "eastern:byz-univ1733-read-liturgy"
+certainty = "attributed"
+scope = "Rubrics attributed to the Vilnius 1692 component"
+basis = "The 1941 circular identifies Vilnius 1692 rubrics as expanded in the Univ 1733 read-liturgy order."
+limitations = "Retrospective authority account; donor endpoint includes a 1692–1695 publication interval. Later bound additions are excluded. No exact Latin donor book identified."
+evidence = [{source_id = "plc-ruthenian-circular1941", locus = "Circular I, §3"}]
+comparison_ids = []
+
+[[relationships]]
+id = "ruthenian1940-full1942"
+kind = "edition-succession"
+label = "Single liturgy to complete Liturgikon"
+from = "eastern:byz-ruthenian-chrysostom-1940"
+to = "eastern:byz-ruthenian-1942"
+certainty = "sourced"
+scope = "Publication sequence within the same Roman Ruthenian project"
+basis = "Raes lists the 1940 Chrysostom issue, smaller 1941 excerpts, and complete 1942 Liturgikon."
+limitations = "A component-to-complete-book sequence, not proof every line was unchanged. Format differences alone are not substantive versions."
+evidence = [{source_id = "raes-slavonic-books1947", locus = "Printed pp.85–86, numbered items 2,6,12"}]
+comparison_ids = []
+
+[[relationships]]
+id = "vulgata1940-full1942"
+kind = "edition-succession"
+label = "Single liturgy to complete Sluzhebnik"
+from = "eastern:byz-vulgata-chrysostom-1940"
+to = "eastern:byz-vulgata-1942"
+certainty = "sourced"
+scope = "Publication sequence within the Roman Russian-use series"
+basis = "Raes identifies the 1940 Chrysostom issue and the complete 1942 Sluzhebnik."
+limitations = "No inference of complete textual identity; the full book also contains calendar and supplementary services."
+evidence = [{source_id = "raes-slavonic-books1947", locus = "Printed pp.85–87, numbered items 1,5,11"}]
+comparison_ids = []
+
+[[relationships]]
+id = "vulgata1942-supplement1953"
+kind = "edition-succession"
+label = "All Saints of Rus propers added"
+from = "eastern:byz-vulgata-1942"
+to = "eastern:byz-vulgata-1953"
+certainty = "sourced"
+scope = "1953 appendix to the 1942 service-book line"
+basis = "The authors identify the 1953 re-edition and new All Saints of Rus appendix, with Eucharistic propers."
+limitations = "This establishes one substantive addition; project has not collated the books or established that every other part is unchanged."
+evidence = [{source_id = "vulgata-calendar2021", locus = "Printed pp.382–383; cited book second pagination pp.47–48"}]
+comparison_ids = []
+
+[[relationships]]
+id = "roman-slavonic1942-shared-core"
+kind = "shared-text"
+label = "Shared supplementary rites and calendar framework"
+from = "eastern:byz-ruthenian-1942"
+to = "eastern:byz-vulgata-1942"
+certainty = "sourced"
+scope = "Enumerated supplementary blessings and rites: colyba, departed, palms, Paschal bread and Exaltation litany; associated calendar propers, with explicit exceptions"
+basis = "Raes’s comparison follows the supplementary-rite and calendar list, distinguishing Russian saints and appendices from Ruthenian feasts."
+limitations = "This is not evidence that the Chrysostom, Basil or Presanctified liturgies are textually identical; Raes elsewhere specifies rubrical differences. No direct-copying direction or uniform regional adoption established."
+evidence = [{source_id = "raes-slavonic-books1947", locus = "Printed pp.86–87, items11–12"}]
+comparison_ids = []
+
+[[relationships]]
+id = "paduense-sinai-clement"
+kind = "shared-text"
+label = "Clement formulary across Latin and Slavonic witnesses"
+from = "western:gregorian-paduense-d47"
+to = "eastern:byz-sinai-slav-nf5"
+certainty = "attributed"
+scope = "Mass of Saint Clement; Sinai NF5 f.36r"
+basis = "Miklas identifies the Paduense/Kiev formulary connection extending to the Sinaitic Liturgiarium."
+limitations = "Scholarly text parallel only; no direct-copying direction, whole-book descent or exact Latin exemplar established."
+evidence = [{source_id = "miklas-sinai-liturgiarium", locus = "Printed p.223 n.54; Sinai NF5 f.36r"}]
+comparison_ids = []
+
+[[sources]]
+id = "western-legg-tracts-1904"
+title = "J. Wickham Legg, Tracts on the Mass (HBS 27, 1904)"
+url = "https://archive.org/stream/tractsonmass00leggrich/tractsonmass00leggrich_djvu.txt"
+inspection_status = "inspected"
+inspection = "J. Wickham Legg, Tracts on the Mass (HBS27,1904): inspected web-rendered OCR, introduction pp.xxiv–xxx, edited texts pp.113–117,121–194,195–215, comparative notes pp.248–250. No page images or fresh full collation; OCR is unverified. Modern incunable catalogues supersede its claim that the first standalone Burchard appeared in1502."
+checked_on = "2026-10-16"
+
+[[sources]]
+id = "western-ocarroll-1979-pericopes"
+title = "Maura O’Carroll, Dominican and Franciscan Temporal lectionaries (AFP 49, 1979), pp. 79–103"
+url = "https://heyjoe.fbk.eu/index.php/afp/article/download/8504/8505/8506"
+inspection_status = "inspected"
+inspection = "Maura O’Carroll, AFP49(1979)79–103, inspected rendered PDF pp.80–84 and comparison tables. Dates BLAdd23935 to1255–1263; compares its Temporal pericopes with SantaSabinaXIVL1 and critically edited Franciscan Ordines. Wrapper is two pages; scholarly conclusions remain attributed, not a fresh manuscript collation."
+checked_on = "2026-10-16"
+
+[[sources]]
+id = "western-palecki-carthusian-2015"
+title = "Waldemar Pałęcki, Carthusian Eucharistic books after Trent (Roczniki Teologiczne 62/8, 2015), pp. 109–130"
+url = "https://repozytorium.kul.pl/bitstreams/1781a58a-e2ce-4358-bc6f-fc4d9ff9f2c2/download"
+inspection_status = "inspected"
+inspection = "Waldemar Pałęcki, Roczniki Teologiczne62/8(2015)109–130, DOI10.18290/rt.2015.62.8-8. Rendered pp.109–115,120–123 and bibliography inspected:1582 Ordinarium,1603 missal and Roman1570 comparison. Historical overview has a Guigo identification error and is not adopted as authority for early Carthusian origins."
+checked_on = "2026-10-16"
+
+[[sources]]
+id = "western-boyce-carmelite-2004"
+title = "James Boyce, Carmelite choir books of Krakow (Studia Musicologica 45, 2004), pp. 17–34"
+url = "https://real.mtak.hu/65294/1/smus.45.2004.1-2.2.pdf"
+inspection_status = "inspected"
+inspection = "James Boyce, Studia Musicologica45(2004)17–34: rendered pp.18–20,28–29 inspected. Distinguishes Sibert1312 Mass/Office incipits from musical practice; Table1 identifies Krakow Mass books. Most detailed later comparisons concern Office, not Mass."
+checked_on = "2026-10-16"
+
+[[sources]]
+id = "western-ambrosian-latin-approval-1974"
+title = "Congregation for Divine Worship, decree Prot. 2347/74 (30 November 1974), Notitiae 102 (1975), p. 45"
+url = "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-11-(1975)/Notitiae-102-1975.pdf"
+inspection_status = "inspected"
+inspection = "Web-rendered Notitiae 11 (1975), p.45, PDF zero-based p.18: complete Latin decree, Prot.2347/74, 30 November 1974. Approves Latin text and explicitly describes enrichment with Roman material and newly composed texts. No complete missal or image collation."
+checked_on = "2026-10-16"
+
+[[sources]]
+id = "western-early-warner1915-shared-prayers"
+title = "George F. Warner, The Stowe Missal, volume II (1915), edited text and notes"
+url = "https://archive.org/download/publications32henruoft/publications32henruoft.pdf"
+inspection_status = "inspected"
+inspection = "Early Western research lane inspection: Image checked PDF90,95,96=printed4,9,10; edition annotations identify parallel prayers and distinguish inserted Moelcaich quire. No new diplomatic transcription."
+checked_on = "2026-10-16"
+
+[[sources]]
+id = "western-early-bobbio1917-name-key"
+title = "E. A. Lowe, The Bobbio Missal, volume I: facsimile (1917), prefatory identification"
+url = "https://archive.org/download/bobbiomissalgall01cath/bobbiomissalgall01cath.pdf"
+inspection_status = "inspected"
+inspection = "Early Western research lane inspection: Mechanical PDF text inspected: Bobbio also called Sacramentarium Gallicanum; identifies Neale/Forbes printed text beginningp 205. Actual Bobbio prayer folios not collated here."
+checked_on = "2026-10-16"
+
+[[sources]]
+id = "western-early-wilson1894-comparison"
+title = "H. A. Wilson, The Gelasian Sacramentary (1894), introduction and edited text"
+url = "https://archive.org/download/gelasiansacrame00wilsgoog/gelasiansacrame00wilsgoog.pdf"
+inspection_status = "inspected"
+inspection = "Early Western research lane inspection: Held historical-book raw OCR inspected. Abbreviation table image at PDF88 identifies R=Rheinau30, S=St Gall 348, V=Reg 316. Intro conclusions not a modern consensus."
+checked_on = "2026-10-16"
+
+[[sources]]
+id = "western-early-wilson1915-hucusque"
+title = "H. A. Wilson, The Gregorian Sacramentary under Charles the Great (1915), introduction and Hucusque preface"
+url = "https://archive.org/download/gregoriansacrame00cath/gregoriansacrame00cath.pdf"
+inspection_status = "inspected"
+inspection = "Early Western research lane inspection: Image checked PDF28–29=ppxviii–xix and PDF 203=p 145. Latin Hucusque preface explicitly distinguishes prior Gregorian book from additions. Editor attributes author to Alcuin; contested."
+checked_on = "2026-10-16"
+
+[[sources]]
+id = "western-early-westwell2024-ch1"
+title = "Arthur Westwell, The Carolingian Sacramentaries of Saint-Amand (2024), chapter 1"
+url = "https://epub.uni-regensburg.de/59552/1/10.1515_9781501517563-1.pdf"
+inspection_status = "inspected"
+inspection = "Early Western research lane inspection: Mechanically acquired complete published PDF from author university repository; local text read; sample images pp53,61,69–70,81–82 checked. Manuscripts themselves not collated. Inventory integrator independently reopened scholarly PDF and checked key loci: Westwellpp53–54,70–71,192–194; Miklaspp222–223."
+checked_on = "2026-10-16"
+
+[[sources]]
+id = "western-early-westwell2024-ch3"
+title = "Arthur Westwell, The Carolingian Sacramentaries of Saint-Amand (2024), chapter 3"
+url = "https://epub.uni-regensburg.de/59552/1/10.1515_9781501517563-1.pdf"
+inspection_status = "inspected"
+inspection = "Early Western research lane inspection: Local mechanically extracted text read; exact manuscript folios and edition formula numbers recorded. Modern author analysis, not medieval promulgation. Inventory integrator independently reopened scholarly PDF and checked key loci: Westwellpp53–54,70–71,192–194; Miklaspp222–223."
+checked_on = "2026-10-16"
+
+[[sources]]
+id = "western-early-miklas-sinai"
+title = "Heinz Miklas, Excavating the Palimpsests in the Glagolitic Manuscripts from Sinai, pp. 222–223"
+url = "https://austriaca.at/0xc1aa5572%200x003e8cb3.pdf"
+inspection_status = "inspected"
+inspection = "Early Western research lane inspection: Browser full PDF text inspected. Precise shared-text and translation claims; author cautions connections need further review. Inventory integrator independently reopened scholarly PDF and checked key loci: Westwellpp53–54,70–71,192–194; Miklaspp222–223."
+checked_on = "2026-10-16"
+
+[[entities]]
+id = "holy-sepulchre-latin-liturgical-tradition"
+kind = "textual-tradition"
+label = "Latin Holy Sepulchre tradition"
+family = "Latin Holy Sepulchre / Carmelite"
+scope = "Liturgical tradition received and adapted by the Carmelites, including the framework represented in Sibert’s Mass and Office ordinal."
+basis = "Boyce identifies Holy Sepulchre reception and the London chapter’s 1312 promulgation of Sibert’s ordinal."
+limitations = "A family-level source context, not an identified surviving Jerusalem exemplar or single archetype. Most detailed later comparisons in Boyce concern Office rather than Mass."
+evidence = [{source_id = "western-boyce-carmelite-2004", locus = "p. 18 and nn. 3–6; p. 19"}]
+
+[[entities]]
+id = "postconciliar-roman-missal-prayer-repertory"
+kind = "textual-tradition"
+label = "Reformed Roman prayer repertory"
+family = "Roman"
+scope = "Prayer material of the new Roman Missal named in the 1974 decree confirming the Latin Ambrosian revision."
+basis = "The primary decree explicitly includes material taken from the new Roman Missal among the confirmed Latin Ambrosian contents."
+limitations = "The decree does not identify an exact Roman printing or enumerate every borrowed prayer. This is a source repertory, not an invented edition."
+evidence = [{source_id = "western-ambrosian-latin-approval-1974", locus = "Notitiae 102 (1975), p. 45; Prot. 2347/74, 30 November 1974"}]
+
+[[entities]]
+id = "later-gelasian-prayer-repertory"
+kind = "textual-tradition"
+label = "Later Gelasian prayer repertory"
+family = "Roman-Frankish / later Gelasian"
+scope = "Prayers, prefaces and Mass formularies in the later Gelasian tradition, represented by Rheinau and St Gall witnesses."
+basis = "Wilson’s historical comparison attributes material in Gregorian supplements to later Gelasian sources."
+limitations = "Historical scholarly attribution, not a demonstrated direct copy from surviving Rheinau 30 or St Gall 348. Relationship to the unsupplemented Hadrianum and exact transmission stages remain unresolved."
+evidence = [{source_id = "western-early-wilson1894-comparison", locus = "Introduction p. lxxvi, point 7"}, {source_id = "western-early-wilson1915-hucusque", locus = "Introduction pp. xviii–xix; edited Hucusque preface p. 145"}]
+
+[[entities]]
+id = "hucusque-supplement-material"
+kind = "textual-tradition"
+label = "Hucusque supplementary material"
+family = "Roman-Frankish / supplemented Gregorian"
+scope = "Supplementary formularies and rites transmitted alongside Gregorian material in varying manuscript states."
+basis = "The edited Hucusque preface distinguishes additions; Westwell documents multiple stages and their reorganization in Morgan G.57."
+limitations = "No single author, single-stage recension or surviving Ottob. lat. 313 direct exemplar is asserted. Reg. lat. 337 lacks the Hucusque preface and differs in the content and arrangement of its supplement."
+evidence = [{source_id = "western-early-wilson1915-hucusque", locus = "pp. xviii–xix and 145–146"}, {source_id = "western-early-westwell2024-ch1", locus = "pp. 70–74"}, {source_id = "western-early-westwell2024-ch3", locus = "pp. 191–192; Morgan G.57 ff. 39v–48v and 58r–59r"}]
+
+[[entities]]
+id = "gellone-type-benedict-formulary"
+kind = "textual-tradition"
+label = "Gellone-type Benedict formulary"
+family = "Roman-Frankish / Gelasian"
+scope = "July 11 Benedict Mass and its proper preface, represented in Gellone, BnF lat. 12048, f. 96r (Gel 1237–1240)."
+basis = "Westwell identifies a developed form of this Mass and its preface in Morgan G.57 and infers access to the specific Gellone textual tradition."
+limitations = "The surviving Gellone codex is a representative witness, not the established direct exemplar. Tours parallels adapt the Mass to March 21 and use a different preface; full transmission remains unresolved."
+evidence = [{source_id = "western-early-westwell2024-ch3", locus = "pp. 192–194; BnF lat. 12048 f. 96r, Gel 1237–1240; Morgan G.57 ff. 67v–68r, De 173*–176*"}]
+
+[[relationships]]
+id = "burchard-short-long-ceremonial"
+kind = "edition-succession"
+label = "Burchard ceremonial expanded"
+from = "western:roman-1501-liechtenstein-burchard"
+to = "western:burchard-ordo-1502"
+certainty = "attributed"
+scope = "Short and expanded Burchard ceremonial recensions; component-level revision."
+basis = "Legg’s critical edition identifies the 1501 shorter recension and substantive expansions in the 1502 ceremonial."
+limitations = "Component-level revision only. The 1501 witness is the de Frankford / Liechtenstein–Herzog printing, not Giunta. Its publication date is not the composition date; identity with the 1496 text is unestablished."
+evidence = [{source_id = "western-legg-tracts-1904", locus = "pp.xxvi,126,132–137,167"}]
+comparison_ids = []
+
+[[relationships]]
+id = "burchard-roman1541-reception"
+kind = "reception"
+label = "Burchard ceremonial included"
+from = "western:burchard-ordo-1502"
+to = "western:roman-1541-liechtenstein-burchard"
+certainty = "attributed"
+scope = "Burchard ceremonial included in Roman missal."
+basis = "Legg’s bibliography identifies the Burchard ceremonial in the Venice 1541 Liechtenstein Roman Missal."
+limitations = "Critical-editor identification, not proof of complete missal identity or direct copying from the surviving 1502 copy."
+evidence = [{source_id = "western-legg-tracts-1904", locus = "pp.xxvii–xxviii, table Roman Missals"}]
+comparison_ids = []
+
+[[relationships]]
+id = "burchard-cosenza1549-reception"
+kind = "reception"
+label = "Burchard received at Cosenza"
+from = "western:burchard-ordo-1502"
+to = "western:cosenza-1549-burchard"
+certainty = "attributed"
+scope = "Burchard ceremonial received in identified Cosenza local missal."
+basis = "Legg identifies the ceremonial in the September 1549 Cosenza missal printed by Liechtenstein and de Jardano."
+limitations = "No direct copying from the surviving 1502 copy is asserted. Gallicorum in the local title does not establish descent from ancient Gallican sacramentaries."
+evidence = [{source_id = "western-legg-tracts-1904", locus = "p.xxviii, Local Missals"}]
+comparison_ids = []
+
+[[relationships]]
+id = "burchard-pian-ritus-correspondences"
+kind = "shared-text"
+label = "Pian ceremonial correspondences"
+from = "western:burchard-ordo-1502"
+to = "western:roman-1571-varisco-ritus"
+certainty = "attributed"
+scope = "Specified prayer and rubric correspondences with rewritten preparation/entry/confession, stronger similarity later in the Mass."
+basis = "Legg compares Burchard with the actual Venice 1571 Varisco Pian witness, documenting both correspondences and extensive rewriting."
+limitations = "Legg considers direct borrowing probable, rejects near-verbatim identity, and documents substantial rewriting and omissions. This undirected relation does not substitute the 1570 first printing for his 1571 comparator."
+evidence = [{source_id = "western-legg-tracts-1904", locus = "pp.249–250; actual Pian comparison is Venice1571Varisco"}]
+comparison_ids = []
+
+[[relationships]]
+id = "langres-roman-preparatio"
+kind = "shared-text"
+label = "Shared priestly preparation"
+from = "western:langres-c1492-preparatio"
+to = "western:roman-1493-preparatio"
+certainty = "attributed"
+scope = "Shared priestly preparation portion with Langres variants."
+basis = "Legg identifies a portion of the preparation text in both the Langres and Roman witnesses, with specified Langres variants."
+limitations = "Langres is dated circa 1492. Earlier attestation does not establish borrowing direction; only the specified preparation portion is linked."
+evidence = [{source_id = "western-legg-tracts-1904", locus = "p. xxiv n. 3; edited pp. 113–114, excluding final eight lines; variants p. 248"}]
+comparison_ids = []
+
+[[relationships]]
+id = "uzes-roman-indutus"
+kind = "shared-text"
+label = "Related Indutus ceremonies"
+from = "western:uzes-1495-ordo"
+to = "western:roman-lyon-1507-indutus"
+certainty = "attributed"
+scope = "Related shorter Uzès and longer Lyon printed Mass ceremonial."
+basis = "Legg edits and relates the shorter Uzès ceremonial and the longer Indutus text in the Lyon Roman Missal."
+limitations = "An earlier developmental stage is Legg’s hypothesis. The common incipit does not prove identity with Haymo’s medieval text or actual papal-court usage."
+evidence = [{source_id = "western-legg-tracts-1904", locus = "pp.xxviii–xxix; edited pp.179–194"}]
+comparison_ids = []
+
+[[relationships]]
+id = "ciconiolanus-roman1563-reception"
+kind = "reception"
+label = "Mass directory extracts received"
+from = "western:ciconiolanus-directorium-1539"
+to = "western:roman-1563-giunta-opus-aureum"
+certainty = "attributed"
+scope = "Mass directory extracts received as Opus aureum, with limited textual adjustments."
+basis = "Legg identifies and collates the Mass extracts from Ciconiolanus’s directory incorporated in the 1563 Giunta Roman Missal."
+limitations = "Only the extracted Mass rubrics are linked. Legg’s separate 1556 Spinelli sighting was brief, not his detailed collation."
+evidence = [{source_id = "western-legg-tracts-1904", locus = "p. xxx; edited pp. 195–215; target double-cross gathering, leaves i–ii following calendar"}]
+comparison_ids = []
+
+[[relationships]]
+id = "dominican-prototype-portable-pericopes"
+kind = "shared-text"
+label = "Prototype readings reproduced"
+from = "western:dominican-correctorium-1256"
+to = "western:dominican-master-exemplar-add23935"
+certainty = "attributed"
+scope = "Temporal Mass pericopes only; Santa Sabina XIV L.1 is represented by the existing prototype-context endpoint."
+basis = "O’Carroll reports exact agreement of the compared Temporal Mass pericopes in Santa Sabina XIV L.1 and Add MS 23935."
+limitations = "The 1256 endpoint represents Ordinary/prototype context. Agreement is restricted to the compared Temporal pericopes, not every component of the codex or later additions."
+evidence = [{source_id = "western-ocarroll-1979-pericopes", locus = "O’Carroll pp. 81–82; Santa Sabina XIV L.1 ff. 9–11v; Add MS 23935, Epistles ff. 526ff and Gospels ff. 545ff"}]
+comparison_ids = []
+
+[[relationships]]
+id = "dominican-franciscan-temporal-pericopes"
+kind = "shared-text"
+label = "Shared seasonal readings"
+from = "western:haymo-curial-ordinal"
+to = "western:dominican-master-exemplar-add23935"
+certainty = "attributed"
+scope = "Seasonal Mass reading assignments from Septuagesima to Pentecost, except the second Sunday of Lent."
+basis = "O’Carroll compares the Haymo-associated Franciscan Ordinal with Dominican Add MS 23935 and identifies the bounded seasonal agreement."
+limitations = "Agreement concerns pericope selection, not every Latin word. Advent and post-Pentecost differences remain; neither order is established as the other’s direct ancestor."
+evidence = [{source_id = "western-ocarroll-1979-pericopes", locus = "p.83 n16 and comparison tables pp.85–103"}]
+comparison_ids = []
+
+[[relationships]]
+id = "roman-carthusian-canon-comparison"
+kind = "shared-text"
+label = "Canon shared with variants"
+from = "western:roman-1570-rome-faletti-varisco"
+to = "western:carthusian-missale-1603"
+certainty = "attributed"
+scope = "Canon prayer material, with Carthusian king commemoration and different word order in Unde et memores."
+basis = "Pałęcki compares the Canon in the specifically identified Rome 1570 Faletti/Varisco and Paris 1603 Carthusian missals."
+limitations = "The comparator is the Rome 1570 printed book, not Quo primum or Venice 1571. Earlier common inheritance is not converted into borrowing from 1570; ritual and textual differences remain."
+evidence = [{source_id = "western-palecki-carthusian-2015", locus = "pp. 120–122; Carthusian 1603 ff. 93r–95r; Roman 1570 pp. 283–285; exact Roman imprint at p. 114 n. 22"}]
+comparison_ids = []
+
+[[relationships]]
+id = "holy-sepulchre-carmelite-reception"
+kind = "reception"
+label = "Holy Sepulchre tradition adapted"
+from = "eucharistic-books:entity:holy-sepulchre-latin-liturgical-tradition"
+to = "western:carmelite-sibert-ordinal"
+certainty = "attributed"
+scope = "Family-level liturgical reception; Sibert’s ordinal specifies Mass and Office incipits."
+basis = "Boyce describes Carmelite reception and adaptation of Holy Sepulchre tradition, culminating in Sibert’s Mass and Office incipits."
+limitations = "No surviving Jerusalem codex is identified as direct exemplar. Detailed later comparisons in Boyce are predominantly Office; they do not establish every Mass-text transfer."
+evidence = [{source_id = "western-boyce-carmelite-2004", locus = "p.18 and critical-edition references nn3–6"}]
+comparison_ids = []
+
+[[relationships]]
+id = "postconciliar-roman-ambrosian-prayers"
+kind = "borrowing"
+label = "Roman prayer material incorporated"
+from = "eucharistic-books:entity:postconciliar-roman-missal-prayer-repertory"
+to = "western:ambrosian-1974-latin-reform"
+certainty = "sourced"
+scope = "Latin Ambrosian revision includes material taken from the new Roman Missal."
+basis = "The 1974 confirmation decree explicitly names material taken from the new Roman Missal among the Latin Ambrosian contents."
+limitations = "The decree establishes incorporation but does not identify an exact Roman printing or enumerate all borrowed prayers."
+evidence = [{source_id = "western-ambrosian-latin-approval-1974", locus = "Notitiae 102 (1975), p. 45; decree Prot. 2347/74, 30 November 1974"}]
+comparison_ids = []
+
+[[relationships]]
+id = "early-stowe-gelasian-peter"
+kind = "shared-text"
+label = "Shared Peter collect"
+from = "western:old-gelasian-reg-lat-316"
+to = "western:stowe-ria-dii3"
+certainty = "attributed"
+scope = "Peter collect with variants."
+basis = "Warner’s note identifies the Peter collect’s Gelasian parallel, preserving the existence of textual variants."
+limitations = "Editor-attributed prayer parallel with variants. No direct copying, complete wording identity, or new manuscript collation is asserted."
+evidence = [{source_id = "western-early-warner1915-shared-prayers", locus = "Warnerp4n10/MSf13v; Wilson1894p 181"}]
+comparison_ids = []
+
+[[relationships]]
+id = "early-stowe-bobbio-peter"
+kind = "shared-text"
+label = "Shared Peter collect"
+from = "western:bobbio-bnf13246"
+to = "western:stowe-ria-dii3"
+certainty = "attributed"
+scope = "Peter collect in Bobbio daily Roman Mass and Stowe."
+basis = "Warner identifies the parallel in the Bobbio daily Roman Mass; Lowe’s prefatory identification resolves the older Sacramentarium Gallicanum reference."
+limitations = "The Bobbio prayer folio and complete edited prayer were not newly collated in this lane. Older edition names are identified through the facsimile’s prefatory note, not mistaken for a new direct manuscript comparison."
+evidence = [{source_id = "western-early-warner1915-shared-prayers", locus = "p. 4 n. 10; references Muratori II col. 776 and Neale/Forbes p. 206"}, {source_id = "western-early-bobbio1917-name-key", locus = "Unnumbered prefatory note, PDF page 9; Sacramentarium Gallicanum identification"}]
+comparison_ids = []
+
+[[relationships]]
+id = "early-gelasian-stowe-canon"
+kind = "shared-text"
+label = "Shared Canon sequence"
+from = "western:old-gelasian-reg-lat-316"
+to = "western:stowe-ria-dii3"
+certainty = "attributed"
+scope = "Roman Canon sequence with Stowe expansions and replaced leaves."
+basis = "Warner identifies the Roman Canon sequence and notes Stowe’s additions and replacement leaves against Gelasian parallels."
+limitations = "Stowe contains expansions and replacement leaves. Original and Moelcaich strata must remain distinct; no complete Canon identity or checked comparison attachment follows automatically."
+evidence = [{source_id = "western-early-warner1915-shared-prayers", locus = "Warnerpp9–12; Gelasian Canonp234ff; Stoweff22v–27v"}]
+comparison_ids = []
+
+[[relationships]]
+id = "early-later-gelasian-supplement"
+kind = "borrowing"
+label = "Gelasian material incorporated"
+from = "eucharistic-books:entity:later-gelasian-prayer-repertory"
+to = "western:gregorian-ottob-lat313"
+certainty = "attributed"
+scope = "Later Gelasian prayer, preface and Mass material received in the Gregorian supplement tradition represented by Ottob. lat. 313."
+basis = "Wilson attributes prayers, prefaces and Mass material in Gregorian supplements to later Gelasian sources."
+limitations = "No extant Rheinau or St Gall codex is established as direct exemplar. Wilson leaves the exact relation to unsupplemented Hadrianum unresolved; Westwell disputes a single-author or single-stage supplement model."
+evidence = [{source_id = "western-early-wilson1894-comparison", locus = "Introduction p. lxxvi, point 7"}, {source_id = "western-early-wilson1915-hucusque", locus = "pp. xviii–xix; edited preface p. 145"}, {source_id = "western-early-westwell2024-ch1", locus = "pp. 70–74: limits of single-author and single-stage models"}]
+comparison_ids = []
+
+[[relationships]]
+id = "early-reg337-ottob313-supplements"
+kind = "shared-text"
+label = "Recurring proper-preface material"
+from = "western:gregorian-reg-lat337"
+to = "western:gregorian-ottob-lat313"
+certainty = "attributed"
+scope = "Recurring proper-preface material only, differently formed and formulated; not identity of the complete supplements."
+basis = "Westwell reports that many proper prefaces recur between the Reg. lat. 337 collection and the full Hucusque supplement tradition represented by Ottob. lat. 313, but differ in form and wording."
+limitations = "Reg. lat. 337 lacks the Hucusque preface and minor-order additions and has differently arranged or formulated prefaces. No whole-supplement identity, direct copying or definitive Alcuin/Benedict attribution is claimed."
+evidence = [{source_id = "western-early-westwell2024-ch1", locus = "pp. 70–71: recurring proper prefaces, different formulation and prototype/full-supplement distinction"}]
+comparison_ids = []
+
+[[relationships]]
+id = "early-gellone-chelles-benedict"
+kind = "borrowing"
+label = "Benedict formulary incorporated"
+from = "eucharistic-books:entity:gellone-type-benedict-formulary"
+to = "western:gregorian-chelles-morgan-g57"
+certainty = "attributed"
+scope = "July 11 Benedict Mass and its proper preface in Morgan G.57, ff. 67v–68r."
+basis = "Westwell identifies a developed Gellone-type July 11 Benedict Mass and its preface in Morgan G.57 and infers consultation of that textual tradition."
+limitations = "The donor is a textual-context entity, not surviving BnF lat. 12048 as an identified exemplar. Consultation is Westwell’s inference. Tours parallels adapt the Mass to March 21 and use a different preface."
+evidence = [{source_id = "western-early-westwell2024-ch3", locus = "pp 192–194: Gellonef96r, Gel 1237–1240; G57ff67v–68r, De 173*–176*"}]
+comparison_ids = []
+
+[[relationships]]
+id = "early-hucusque-chelles-order"
+kind = "borrowing"
+label = "Supplementary rites reordered"
+from = "eucharistic-books:entity:hucusque-supplement-material"
+to = "western:gregorian-chelles-morgan-g57"
+certainty = "attributed"
+scope = "Supplementary Exultet and baptismal material integrated into Holy Saturday; seven-reading supplementary provision replaces Gregorian Pentecost-vigil prayers."
+basis = "Westwell identifies Hucusque-type material inserted into Holy Saturday and the replacement of Gregorian Pentecost-vigil prayers with the seven-reading supplementary provision in Morgan G.57."
+limitations = "The donor is supplementary material, not an asserted direct copy of Ottob. lat. 313. Formula identifiers distinguish the compared provisions; no full Latin collation or universal Gregorian reform is implied."
+evidence = [{source_id = "western-early-westwell2024-ch3", locus = "pp. 191–192; Morgan G.57 ff. 39v–48v and 58r–59r; De 507–515 versus De 1023–1037"}, {source_id = "western-early-wilson1915-hucusque", locus = "Edited Hucusque preface, pp. 145–146; distinction of supplementary material"}]
+comparison_ids = []
+
+[[relationships]]
+id = "early-kiev-paduense"
+kind = "shared-text"
+label = "Latin–Slavonic textual parallels"
+from = "western:gregorian-paduense-d47"
+to = "western:kiev-folia-nbu301-328"
+certainty = "attributed"
+scope = "Latin-sacramentary parallels; no demonstrated direct copy."
+basis = "Miklas identifies the Latin sacramentary tradition represented by Paduanus D.47 as the closest available parallel to the translated Kyiv Folia."
+limitations = "Translated textual parallels do not establish copying from surviving D.47. Individual prayer alignment and translation intermediaries remain unresolved; provenance hypotheses remain attributed."
+evidence = [{source_id = "western-early-miklas-sinai", locus = "p222n43; p223n54"}]
+comparison_ids = []
+
+[[relationships]]
+id = "early-kiev-sinai-clement"
+kind = "shared-text"
+label = "Shared Clement Mass"
+from = "western:kiev-folia-nbu301-328"
+to = "eastern:byz-sinai-slav-nf5"
+certainty = "attributed"
+scope = "Attributed Clement Mass correspondence; Sinai slav. NF 5, f. 36r."
+basis = "Miklas connects the Kyiv/Paduense parallels with the Sinai Liturgiarium through its Mass of St Clement."
+limitations = "Exact Kyiv and Paduense folia are not specified in the inspected note. No direct copying, complete text identity or single origin for the mixed Sinai book is inferred."
+evidence = [{source_id = "western-early-miklas-sinai", locus = "p223n54; Sinaislav NF5f36r"}]
+comparison_ids = []
+
+[[sources]]
+id = "alex-winkler-armenian-anaphoras-2014"
+title = "Gabriele Winkler, Some of the New Findings Concerning the Armenian Anaphoras and Their Significance — Banber Matenadarani 21 (2014), 35–48"
+url = "https://banber.matenadaran.am/ftp/data/Banber21/4.G.Winkler.pdf"
+inspection_status = "inspected"
+inspection = "Full PDF acquired; relevant printed pp.42–45 inspected as page images because text extraction is partly garbled. Critical editions of Basil (2005), Sahak (2011), James (2013) cited by author were not acquired."
+checked_on = "2026-10-16"
+
+[[sources]]
+id = "alex-bausi-aksumite-2020"
+title = "Alessandro Bausi et al., The Aksumite Collection or Codex Σ (Sinodos of Qǝfrǝyā, MS C3-IV-71/C3-IV-73, Ethio-SPaRe UM-039): Codicological and Palaeographical Observations. With a Note on Material Analysis of Inks — COMSt Bulletin 6/2 (2020), 127–171"
+url = "https://www.fdr.uni-hamburg.de/record/17921"
+inspection_status = "inspected"
+inspection = "Full PDF acquired; pp.127–130,139,151 inspected. Describes codex and collection, not a complete edition of its Euchologion."
+checked_on = "2026-10-16"
+
+[[sources]]
+id = "alex-mihalyko-panegyres-papyri-2024"
+title = "Ágnes T. Mihálykó and Konstantine Panegyres, Two Liturgical Papyri from the Bodleian Library — Archiv für Papyrusforschung 70/2 (2024), 317–370"
+url = "https://www.researchgate.net/publication/387118639_Two_Liturgical_Papyri_from_the_Bodleian_Library"
+inspection_status = "inspected"
+inspection = "Publisher full text displayed through ResearchGate inspected, especially pp.317–325 and epiclesis commentary p.345. No valid PDF acquired. Local publisher PDF fetch returned zero bytes; never treat that request as acquisition."
+checked_on = "2026-10-16"
+
+[[sources]]
+id = "alex-fritsch-anaphoras-2011"
+title = "Emmanuel Fritsch, The Anaphoras of the Ethiopian Church: A Challenging Orthodoxy — 2011 Addai and Mari congress: two-page summary plus four-page bio-bibliographical profile"
+url = "https://www.liturgia.it/content/addaicongress/interventi/Fritsch.pdf"
+inspection_status = "inspected"
+inspection = "All six PDF pages read; claims in summary pp.1–2; committee roles in profile p.3. No source-language 1945 missal pages supplied; author interpretation remains attributed."
+checked_on = "2026-10-16"
+
+[[sources]]
+id = "alex-coptic-or6877-edition"
+title = "Ágnes T. Mihálykó, A New Coptic Anaphora Fragment with Quotations from Didache 9 (London, British Library, Or. 6877) — Eastern Theological Journal 11/2 (2025), 271–303"
+url = "https://ojs.mtak.hu/index.php/etj/article/download/21535/17798"
+inspection_status = "inspected"
+inspection = "Full PDF acquired; edition and translation pp.275–281, introduction pp.273–274 and dating pp.275–276 inspected. Edition includes manuscript images; do not assume their reproduction permission from article availability."
+checked_on = "2026-10-16"
+
+[[sources]]
+id = "alex-cody-cyril-1991"
+title = "Aelred Cody, Anaphora of Saint Cyril — The Coptic Encyclopedia (1991), 123b–124a"
+url = "https://ccdl.claremont.edu/digital/api/collection/cce/id/126/download"
+inspection_status = "inspected"
+inspection = "Complete short specialist entry inspected in web tool. Older reference alone is insufficient for a precise manuscript genealogy."
+checked_on = "2026-10-16"
+
+[[sources]]
+id = "alex-armenia-1823"
+title = "Library of Congress, Armenian Missal Published in Venice, object 011.00.00"
+url = "https://www.loc.gov/exhibits/armenian-literary-tradition/exhibition-items.html#obj10"
+inspection_status = "inspected"
+inspection = "Heading, caption, Armenian title, translated title and imprint inspected. Caption's Roman Catholic rite terminology must not override title's Armenian Church rite; exact Rome 1677 component unresolved."
+checked_on = "2026-10-16"
+
+[[entities]]
+id = "syriac-james"
+kind = "textual-tradition"
+label = "Syriac Anaphora of James"
+family = "West Syriac"
+scope = "Recension unspecified for the epiclesis vocabulary discussed on Winkler p.43."
+basis = "Winkler identifies Syriac James vocabulary as the source of an interpolation in the epiclesis of armBas I."
+limitations = "The exact Syriac recension and donor manuscript are unspecified for this particular claim; no introduction date is established."
+evidence = [{source_id = "alex-winkler-armenian-anaphoras-2014", locus = "Printed p.43, epiclesis discussion; page image inspected"}]
+
+[[entities]]
+id = "syriac-james-short"
+kind = "textual-tradition"
+label = "Short Syriac recension of the Anaphora of James"
+family = "West Syriac"
+scope = "One short recension identified by Winkler as Armenian James source; not generic long Syriac James."
+basis = "Winkler identifies one short Syriac recension among the sources used by the Armenian James compiler."
+limitations = "This is not every short Syriac witness or the long Syriac recension. Lexical strata do not date the act of reception."
+evidence = [{source_id = "alex-winkler-armenian-anaphoras-2014", locus = "Printed pp.44–45, especially p.45 conclusion (3); page images inspected"}]
+
+[[entities]]
+id = "armenian-basil-i"
+kind = "textual-tradition"
+label = "Older Armenian Anaphora of Basil (armBas I)"
+family = "Armenian"
+scope = "Textual recension, not Basil II or any specific modern Catholic missal."
+basis = "Winkler distinguishes the older Armenian Basil recension, armBas I, and identifies it in both the epiclesis and Armenian James comparisons."
+limitations = "Do not identify armBas I with armBas II, generic Byzantine Basil, or a particular modern Armenian Catholic book."
+evidence = [{source_id = "alex-winkler-armenian-anaphoras-2014", locus = "Printed pp.43–45; page images inspected"}]
+
+[[entities]]
+id = "armenian-james"
+kind = "textual-tradition"
+label = "Armenian Liturgy of James"
+family = "Armenian"
+scope = "The Armenian James textual recension studied and edited by Winkler, including Lyon Cod. arm.17; no manuscript date is assigned here."
+basis = "Winkler identifies the Armenian James text as drawing on a short Syriac James recension and older Armenian Basil."
+limitations = "The underlying 2013 critical edition was not acquired. The context is a named textual recension, not a dated modern Catholic edition."
+evidence = [{source_id = "alex-winkler-armenian-anaphoras-2014", locus = "Printed p.45 conclusion (3), with edition reference on p.43 n.26"}]
+
+[[entities]]
+id = "alexandrian-mark-tradition"
+kind = "textual-tradition"
+label = "Alexandrian anaphora tradition of Mark"
+family = "Alexandrian"
+scope = "The named Alexandrian Mark textual tradition, including its Greek source branch and later Greek, Coptic, Arabic and Ge'ez recensions."
+basis = "Mihálykó and Panegyres identify a multirecension Mark tradition in five languages; Cody identifies a common older Egyptian recension behind Greek Mark and Bohairic Cyril."
+limitations = "This is a textual tradition, not a reconstructed dated codex. Greek-to-Ge'ez reception concerns its Greek branch; no single surviving Greek witness is established as donor."
+evidence = [{source_id = "alex-mihalyko-panegyres-papyri-2024", locus = "Printed pp.322–324, especially p.323 n.19 and p.324 n.26"}, {source_id = "alex-cody-cyril-1991", locus = "Complete entry, printed 123b–124a, common older Egyptian recension and uncertain translation route"}]
+
+[[entities]]
+id = "alexandrian-mark-greek-melkite"
+kind = "textual-tradition"
+label = "Medieval Greek Melkite recension of Mark"
+family = "Alexandrian"
+scope = "One branch of the Mark tradition; no direct translation route to Bohairic asserted."
+basis = "Mihálykó and Panegyres distinguish the medieval Greek Melkite recension among the Mark witnesses."
+limitations = "The family relationship does not establish that surviving Greek Melkite manuscripts were translated into the surviving Bohairic Cyril recension."
+evidence = [{source_id = "alex-mihalyko-panegyres-papyri-2024", locus = "Printed p.324 and n.24"}]
+
+[[entities]]
+id = "alexandrian-cyril-bohairic"
+kind = "textual-tradition"
+label = "Bohairic Anaphora of Cyril (Mark)"
+family = "Alexandrian"
+scope = "Received recension represented in Salib’s 1902 Euchologion, pp.573–656."
+basis = "The critical editors identify the received Bohairic Mark/Cyril text in Salib's 1902 Euchologion, pp.573–656."
+limitations = "The exact translation route and manuscript stemma are unresolved. Identification of an Orthodox comparison witness does not establish Catholic reception."
+evidence = [{source_id = "alex-mihalyko-panegyres-papyri-2024", locus = "Printed p.324 n.26"}]
+
+[[entities]]
+id = "didache-9"
+kind = "textual-tradition"
+label = "Didache 9.2–4 eucharistic prayers"
+family = "Early Christian prayers"
+scope = "The bread, gathering and chalice prayers in Didache 9.2–4."
+basis = "Mihálykó identifies Didache 9.3, 9.4 and 9.2 as the source of quotations in Or.6877."
+limitations = "No composition date is assigned to this context, and the copy date of Or.6877 does not date the borrowing event."
+evidence = [{source_id = "alex-coptic-or6877-edition", locus = "Printed pp.273–274; edition and translation pp.277–281"}]
+
+[[entities]]
+id = "geez-apostles"
+kind = "textual-tradition"
+label = "Ge'ez Anaphora of the Apostles"
+family = "Alexandrian"
+scope = "Institution narrative source named by Fritsch; no exact exemplar supplied."
+basis = "Fritsch names the Apostles' institution narrative as material used in two components of the Vatican 1945 missal."
+limitations = "The precise donor manuscript or edition is unspecified. The claim concerns institution narratives, not whole-book descent."
+evidence = [{source_id = "alex-fritsch-anaphoras-2011", locus = "Summary p.1(b) and p.2(c)"}]
+
+[[entities]]
+id = "geez-lord-1945"
+kind = "textual-tradition"
+label = "Anaphora of the Lord in the Vatican 1945 missal"
+family = "Alexandrian"
+scope = "The Lord anaphora’s institution narrative in the Vatican 1945 missal, as described by Fritsch."
+basis = "Fritsch explicitly identifies a revision of the Lord anaphora's institution narrative in the Vatican 1945 missal."
+limitations = "A version-specific component context, not an independently inspected book witness. No claim is made that the 2025 missal retains this form."
+evidence = [{source_id = "alex-fritsch-anaphoras-2011", locus = "Summary p.1(b)"}]
+
+[[entities]]
+id = "geez-james-sarug-1945"
+kind = "textual-tradition"
+label = "Anaphora of James of Sarug in the Vatican 1945 missal"
+family = "Alexandrian"
+scope = "Version-specific component; distinguish James of Sarug from James the Lord's brother."
+basis = "Fritsch identifies an institution-narrative interpolation in James of Sarug in the Vatican 1945 missal."
+limitations = "Distinguish James of Sarug from James the Lord's brother. Original 1945 book pages and the 2025 successor were not collated."
+evidence = [{source_id = "alex-fritsch-anaphoras-2011", locus = "Summary p.2(c)"}]
+
+[[entities]]
+id = "geez-james-sarug"
+kind = "textual-tradition"
+label = "Ge'ez Anaphora of James of Sarug"
+family = "Alexandrian"
+scope = "Earlier textual tradition; no composition date assigned."
+basis = "Fritsch identifies the Ge'ez James of Sarug anaphora as built on a specific Coptic fraction-prayer proemion."
+limitations = "The composition date and intermediate manuscripts are unspecified; this is not the 1945 interpolation itself."
+evidence = [{source_id = "alex-fritsch-anaphoras-2011", locus = "Summary p.2(c)"}]
+
+[[entities]]
+id = "coptic-gregory-fraction-proemion"
+kind = "textual-tradition"
+label = "Proemion of the fraction prayer of Coptic Gregory Nazianzen"
+family = "Alexandrian"
+scope = "The introductory section of the fraction prayer associated with the Coptic Anaphora of Gregory Nazianzen."
+basis = "Fritsch names the proemion of the fraction prayer of Coptic Gregory Nazianzen as the basis of Ge'ez James of Sarug."
+limitations = "The donor component is the fraction-prayer proemion, not the whole Gregory anaphora; exact source witness and date are unresolved."
+evidence = [{source_id = "alex-fritsch-anaphoras-2011", locus = "Summary p.2(c)"}]
+
+[[entities]]
+id = "armenian-rome1677-missal"
+kind = "textual-tradition"
+label = "Armenian missal edition published Rome 1677"
+family = "Armenian"
+scope = "The Rome 1677 edition named in the title of the Armenian missal published at Venice in 1823; exact bound component unresolved."
+basis = "The Library of Congress transcribes the 1823 title's express conformity to an Armenian missal printed at Rome in 1677."
+limitations = "The reference has not been resolved between the separately bound 1677 Liturgia and Ministerium records; this context must not substitute for that identification."
+evidence = [{source_id = "alex-armenia-1823", locus = "Armenian Missal Published in Venice, object 011.00.00; Armenian title, translated title and imprint"}]
+
+[[relationships]]
+id = "arm-syrjames-basili-epiclesis"
+kind = "borrowing"
+label = "James vocabulary in Basil's epiclesis"
+from = "eucharistic-books:entity:syriac-james"
+to = "eucharistic-books:entity:armenian-basil-i"
+certainty = "attributed"
+scope = "Epiclesis vocabulary in the older Armenian Basil recension only."
+basis = "Winkler identifies interpolation from Syriac James into armBas I epiclesis."
+limitations = "No date or exact Syriac exemplar is established. The claim does not concern all of Armenian Basil or a modern Catholic book."
+evidence = [{source_id = "alex-winkler-armenian-anaphoras-2014", locus = "p.43; page image inspected"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "arm-shortjames-james"
+kind = "reception"
+label = "Short Syriac James received in Armenian"
+from = "eucharistic-books:entity:syriac-james-short"
+to = "eucharistic-books:entity:armenian-james"
+certainty = "attributed"
+scope = "The short Syriac James recension identified among the sources of Armenian James."
+basis = "Winkler identifies one short Syriac recension as a source for Armenian James."
+limitations = "No borrowing date or single manuscript exemplar is established. Fifth- and sixth-century lexical observations do not date the reception event."
+evidence = [{source_id = "alex-winkler-armenian-anaphoras-2014", locus = "pp.44–45, especially p.45 conclusion (3); page images inspected"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "arm-basili-james"
+kind = "borrowing"
+label = "Older Armenian Basil reused in James"
+from = "eucharistic-books:entity:armenian-basil-i"
+to = "eucharistic-books:entity:armenian-james"
+certainty = "attributed"
+scope = "Material from older Armenian Basil reused across Armenian James."
+basis = "Winkler describes substantial dependence, with verbatim passages across the liturgy."
+limitations = "Exact copied loci require the unacquired 2013 critical edition; no modern-book adoption date is established."
+evidence = [{source_id = "alex-winkler-armenian-anaphoras-2014", locus = "p.45 conclusion (3); page image inspected"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "didache-or6877"
+kind = "borrowing"
+label = "Didache prayers reused in Sahidic anaphora"
+from = "eucharistic-books:entity:didache-9"
+to = "eastern:alex-sahidic-or6877"
+certainty = "attributed"
+scope = "Quotations of Didache 9.3, 9.4 and 9.2 in the Sahidic anaphora fragment."
+basis = "Didache 9.3, 9.4, 9.2 appear in bread, gathering, chalice order."
+limitations = "The receiving manuscript's probable sixth-/seventh-century copy range does not date the borrowing. This does not establish direct Didache descent for every Egyptian gathering prayer."
+evidence = [{source_id = "alex-coptic-or6877-edition", locus = "pp.273–274; edition and translation pp.277–281"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "mark-greek-aksumite"
+kind = "reception"
+label = "Greek Mark received in Ge'ez"
+from = "eucharistic-books:entity:alexandrian-mark-tradition"
+to = "eastern:alex-geez-aksumite-um039"
+certainty = "attributed"
+scope = "St Mark in the Euchologion of the Aksumite Collection, ff.54rb–56va."
+basis = "The Aksumite collection preserves St Mark in direct Greek-to-Ge'ez translation."
+limitations = "No Greek exemplar or exact translation date is established. The collection's ancient translations and the surviving medieval codex have different dates; no wholesale descent of a modern Ge'ez missal is inferred."
+evidence = [{source_id = "alex-mihalyko-panegyres-papyri-2024", locus = "p.323 n.19; Bausi 2020 p.127 corroborates collection translation"}, {source_id = "alex-bausi-aksumite-2020", locus = "Printed p.127: Greek-to-Ge'ez translation history, distinguished from manuscript date; p.139: Euchologion section"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "mark-cyril-shared-tradition"
+kind = "common-ancestry"
+label = "Greek Mark and Bohairic Cyril share Alexandrian tradition"
+from = "eucharistic-books:entity:alexandrian-mark-greek-melkite"
+to = "eucharistic-books:entity:alexandrian-cyril-bohairic"
+certainty = "attributed"
+scope = "Related Greek Melkite Mark and Bohairic Cyril recensions within the Alexandrian Mark tradition."
+basis = "Both are identified as recensions of Mark; direction between surviving recensions remains unresolved."
+limitations = "No direct Greek-Melkite-to-Bohairic translation arrow is established. Sahidic mediation and the exact manuscript stemma remain unresolved."
+evidence = [{source_id = "alex-mihalyko-panegyres-papyri-2024", locus = "pp.322–324, especially p.324 n.26"}, {source_id = "alex-cody-cyril-1991", locus = "Complete entry, printed 123b–124a: shared older Egyptian recension; translation route unresolved"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+ancestor_ref = "eucharistic-books:entity:alexandrian-mark-tradition"
+
+[[relationships]]
+id = "geez-apostles-lord1945"
+kind = "borrowing"
+label = "Apostles narrative used in Lord anaphora"
+from = "eucharistic-books:entity:geez-apostles"
+to = "eucharistic-books:entity:geez-lord-1945"
+certainty = "attributed"
+scope = "Institution narrative of the Anaphora of the Lord in the Vatican 1945 missal only."
+basis = "Fritsch reports the 1945 redaction follows the Apostles' institution narrative."
+limitations = "This is Fritsch's report, not a promulgation act. Original Ge'ez pages were not collated, and no claim is made that the 2025 missal retains the revision."
+evidence = [{source_id = "alex-fritsch-anaphoras-2011", locus = "summary p.1(b)"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "geez-apostles-jamessarug1945"
+kind = "borrowing"
+label = "Apostles narrative inserted into James of Sarug"
+from = "eucharistic-books:entity:geez-apostles"
+to = "eucharistic-books:entity:geez-james-sarug-1945"
+certainty = "attributed"
+scope = "Institution narrative inserted into James of Sarug in the Vatican 1945 missal only."
+basis = "Fritsch reports interpolation of the Apostles' institution narrative in 1945."
+limitations = "This is James of Sarug, not James the Lord's brother. Original Ge'ez pages were not collated; no retention in the 2025 missal is asserted."
+evidence = [{source_id = "alex-fritsch-anaphoras-2011", locus = "summary p.2(c)"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "coptic-gregory-geez-jamessarug"
+kind = "reception"
+label = "Coptic fraction prayer underlies Ge'ez James of Sarug"
+from = "eucharistic-books:entity:coptic-gregory-fraction-proemion"
+to = "eucharistic-books:entity:geez-james-sarug"
+certainty = "attributed"
+scope = "The Coptic Gregory fraction-prayer proemion as a basis for Ge'ez James of Sarug."
+basis = "Fritsch identifies the proemion as the basis of this Ge'ez anaphora."
+limitations = "Specific proemion only, not the entire Coptic anaphora. The reception date and intermediate manuscripts are unspecified."
+evidence = [{source_id = "alex-fritsch-anaphoras-2011", locus = "summary p.2(c)"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "arm1677-arm1823"
+kind = "edition-succession"
+label = "1823 title follows Rome 1677 edition"
+from = "eucharistic-books:entity:armenian-rome1677-missal"
+to = "eastern:arm-1823"
+certainty = "sourced"
+scope = "The 1823 publication's stated conformity to the Rome 1677 Armenian missal edition."
+basis = "The Library of Congress records the 1823 title's express conformity claim."
+limitations = "The precise 1677 Liturgia versus Ministerium endpoint remains unresolved. Stated conformity does not prove line-by-line identity or establish a substantive revision."
+evidence = [{source_id = "alex-armenia-1823", locus = "Armenian Missal Published in Venice, object 011.00.00"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+# Append-only Syriac/Malabar relationship fragment; no schema header.
+# Dates are omitted: edition years do not establish transfer dates.
+# Attributed retrospective/critical claims are not direct inspection of the early receiving books.
+
+[[sources]]
+id = "syr-malabar-1906-frontmatter-relations"
+title = "Ordo chaldaicus, Puttenpalli 1906: permission leaves"
+url = "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3724391"
+inspection_status = "inspected"
+inspection = "Direct full-size images of held original PDF 508–510 and 6; no full textual collation. Exact original SHA-256 4c93c36dcc7527b8099d24f102235fe9c45bc40871eff550eebe0fe319c9fd6f."
+checked_on = "2026-10-16"
+
+[[sources]]
+id = "syr-malabar-1898-translations"
+title = "Preparation for Qurbana, Mannanam 1898: examination letter"
+url = "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/6834153"
+inspection_status = "inspected"
+inspection = "Direct full-size image PDF 233; companion imprimatur PDF 232 inspected earlier. Syriac prayer bodies not collated."
+checked_on = "2026-10-16"
+
+[[sources]]
+id = "syr-malabar-catechesis-2015"
+title = "Liturgical Catechesis, Syro-Malabar Major Archiepiscopal Commissions for Liturgy and Catechesis, 2015"
+url = "https://www.syromalabarmission.com/assets/uploads/events/Translated_mystagogical_catechesis_(1)_English.pdf"
+inspection_status = "inspected"
+inspection = "Read official-hosted English retrospective §§18–25,54–55 from PDF text layer. Translation phrasing sometimes awkward; not contemporary instruments or checked Malayalam."
+checked_on = "2026-10-16"
+
+[[sources]]
+id = "syr-malabar-source-bibliography"
+title = "General Characteristics and Sources of the Liturgy of the Saint Thomas Christians"
+url = "https://www.syromalabarliturgy.org/assets/uploads/pdfs/General_Characteristics_and_Sources_of_the_Liturgy_of_the_Saint_Thomas_Christians.pdf"
+inspection_status = "inspected"
+inspection = "Commission-hosted scholarly essay; bibliography and source discussion read in PDF text layer. Original listed books not examined."
+checked_on = "2026-10-16"
+
+[[sources]]
+id = "syr-connolly-malabar-1914-ii"
+title = "R. H. Connolly, The Work of Menezes on the Malabar Liturgy, II, JTS 15 (1914), 569–589"
+url = "https://biblicalstudies.gospelstudies.org.uk/pdf/jts/015_569.pdf"
+inspection_status = "inspected"
+inspection = "Complete 22-page supplied PDF fetched; bounded text-layer research and page-image inspection of printed 588/PDF 21, with opening/conclusions located. Primary scholarly comparison, not our independent collation."
+checked_on = "2026-10-16"
+
+[[entities]]
+id = "latin-devotional-prayers-anima-christi-benedictus"
+label = "Anima Christi and Benedictus est Deus prayer tradition"
+kind = "textual-tradition"
+family = "Devotional prayer tradition, identified by Latin incipits"
+scope = "Two named prayer units"
+basis = "The 1893 examiner explicitly names two translated prayers not previously printed."
+limitations = "The letter names Latin incipits and reports translated Syriac prayers; it does not identify the donor book, translator, translation date, or explicitly state the source language. No whole Roman Missal ancestry."
+evidence = [{source_id = "syr-malabar-1898-translations", locus = "PDF 233"}]
+
+[[entities]]
+id = "maronite-eucharistic-prayer-tradition"
+label = "Maronite Eucharistic prayer tradition"
+kind = "textual-tradition"
+family = "West Syriac/Maronite"
+scope = "Three prayers received into the 1774 Malabar Taksa"
+basis = "Commission history §21 identifies the Maronite donor tradition, including the altar-farewell prayer."
+limitations = "Exact donor printing unnamed."
+evidence = [{source_id = "syr-malabar-catechesis-2015", locus = "§21, PDF 6"}]
+
+[[entities]]
+id = "east-syriac-addai-mari"
+label = "East Syriac Addai and Mari textual tradition"
+kind = "textual-tradition"
+family = "East Syriac"
+scope = "Anaphora/order tradition used in critical comparison"
+basis = "Connolly compares Malabar witness with Addai and Mari."
+limitations = "Undated context; no claim that one modern Catholic book descends directly from another."
+evidence = [{source_id = "syr-connolly-malabar-1914-ii", locus = "Printed 569, 587–588; physical PDF 2, 20–21"}]
+
+[[entities]]
+id = "roman-liturgical-prayers"
+label = "Roman liturgical prayer tradition"
+kind = "textual-tradition"
+family = "Roman"
+scope = "Creed, institution wording, Te igitur response and later translated ritual prayers"
+basis = "Connolly identifies specific Roman verbal reception; the official commission history reports later Latin-to-Syriac prayer additions."
+limitations = "No exact donor printing or whole-rite replacement asserted."
+evidence = [{source_id = "syr-connolly-malabar-1914-ii", locus = "Printed 588, conclusions 3, 6; physical PDF 21"}, {source_id = "syr-malabar-catechesis-2015", locus = "§21, physical PDF 6"}]
+
+[[relationships]]
+id = "latin-devotions-to-malabar-1898"
+label = "Translated preparation and thanksgiving prayers"
+kind = "borrowing"
+from = "eucharistic-books:entity:latin-devotional-prayers-anima-christi-benedictus"
+to = "eastern:malabar-1898"
+certainty = "attributed"
+scope = "Two named translated Syriac prayers in preparation/thanksgiving collection"
+basis = "Examiner reports previous translation but first printing sought."
+limitations = "The translated prayer identities are explicit; attribution to the Latin devotional tradition follows their incipits. The source language is not expressly stated in the letter. Syriac bodies and donor book remain uncollated."
+evidence = [{source_id = "syr-malabar-1898-translations", locus = "PDF 233, 16 November 1893"}]
+git_ancestry = false
+text_inheritance = false
+comparison_ids = []
+
+[[relationships]]
+id = "maronite-prayers-to-malabar-1774"
+label = "Maronite prayers in the Malabar Taksa"
+kind = "borrowing"
+from = "eucharistic-books:entity:maronite-eucharistic-prayer-tradition"
+to = "eastern:malabar-1774"
+certainty = "attributed"
+scope = "Three prayers, including altar-farewell"
+basis = "Commission retrospective identifies Maronite source."
+limitations = "Not a connection to an identified Maronite printing; exact Syriac parallel uncollated."
+evidence = [{source_id = "syr-malabar-catechesis-2015", locus = "§21, PDF 6"}]
+git_ancestry = false
+text_inheritance = false
+comparison_ids = []
+
+[[relationships]]
+id = "roman-prayers-to-malabar-1774"
+label = "Roman prayers in the Malabar Taksa"
+kind = "borrowing"
+from = "eucharistic-books:entity:roman-liturgical-prayers"
+to = "eastern:malabar-1774"
+certainty = "attributed"
+scope = "Vesting and specified Holy Week prayers"
+basis = "The official commission retrospective reports Latin-to-Syriac additions."
+limitations = "Donor printing and full prayer loci unverified; not whole book descent."
+evidence = [{source_id = "syr-malabar-catechesis-2015", locus = "§21, PDF 6"}]
+git_ancestry = false
+text_inheritance = false
+comparison_ids = []
+
+[[relationships]]
+id = "roman-wording-to-malabar-diamper-witness"
+label = "Roman wording in the Diamper witness"
+kind = "borrowing"
+from = "eucharistic-books:entity:roman-liturgical-prayers"
+to = "eastern:malabar-gouvea-1606"
+certainty = "attributed"
+scope = "Creed, institution formula, and people’s response containing Te igitur words"
+basis = "Connolly’s critical comparison identifies these as Roman verbal insertions at Diamper."
+limitations = "His limited claim concerns text examined; distinguish later printing/calendar reforms. The original 1599 act and 1606 book not independently collated."
+evidence = [{source_id = "syr-connolly-malabar-1914-ii", locus = "Printed 588, conclusions 3, 6; physical PDF 21"}]
+git_ancestry = false
+text_inheritance = false
+comparison_ids = []
+
+[[relationships]]
+id = "addai-mari-malabar-shared-tradition"
+label = "Shared Addai and Mari material"
+kind = "shared-text"
+from = "eucharistic-books:entity:east-syriac-addai-mari"
+to = "eastern:malabar-gouvea-1606"
+certainty = "attributed"
+scope = "Common textual substance of Malabar order and Addai and Mari"
+basis = "Connolly’s comparison identifies essential agreement with explicit differences."
+limitations = "Undirected common text tradition; no modern book descent or identical whole texts."
+evidence = [{source_id = "syr-connolly-malabar-1914-ii", locus = "Printed 569, 587–588, conclusion 1; physical PDF 2, 20–21"}]
+git_ancestry = false
+text_inheritance = false
+comparison_ids = []
+
+[[relationships]]
+id = "propaganda-1845-to-malabar-1906"
+label = "1845 exemplar named for the 1906 book"
+kind = "edition-succession"
+from = "eastern:malabar-1845-reported-exemplar"
+to = "eastern:malabar-1906"
+certainty = "sourced"
+scope = "Named printing exemplar and reordered ordinary/readings"
+basis = "Permission directs printing after the 1775 and 1845 Propaganda exemplar, with stated rearrangements."
+limitations = "The exact 1845 bibliographic identity remains unresolved; no line-by-line collation or proof of every printed change."
+evidence = [{source_id = "syr-malabar-1906-frontmatter-relations", locus = "PDF 508; 10 June 1904 permission"}]
+git_ancestry = false
+text_inheritance = false
+comparison_ids = []
+
+[[relationships]]
+id = "propaganda-1775-to-malabar-1906"
+label = "1775 exemplar named for the 1906 book"
+kind = "edition-succession"
+from = "eastern:malabar-1775-rituum"
+to = "eastern:malabar-1906"
+certainty = "attributed"
+scope = "Earlier Roman exemplar named by year"
+basis = "The 1904 permission names the 1775 Propaganda missal; the listed 1775 rituum/lectionum matches the 1906 title."
+limitations = "Title match is bibliographic inference; the 1774 ordinary, 1775 lection book, and ritual must remain distinct."
+evidence = [{source_id = "syr-malabar-1906-frontmatter-relations", locus = "Physical PDF 508, permission of 10 June 1904 naming Propaganda printings of 1775 and 1845"}, {source_id = "syr-malabar-source-bibliography", locus = "Physical PDF 11, bibliography distinguishing the 1774 ordinary from the 1775 rituum et lectionum and sacramental ritual"}]
+git_ancestry = false
+text_inheritance = false
+comparison_ids = []
+
+[[sources]]
+id = "checked-wilson-gregorian"
+title = "Wilson, The Gregorian Sacramentary (1915), selected Canon prayers"
+url = "https://archive.org/details/gregoriansacrame00cath"
+inspection_status = "inspected"
+inspection = "Printed pp. 2–3, PDF pp. 60–61; independently checked retained page images. Canon main text follows R (Reginae 337), with variants in the apparatus."
+
+[[sources]]
+id = "checked-wilson-gelasian"
+title = "Wilson, The Gelasian Sacramentary (1894), selected Canon prayers"
+url = "https://archive.org/details/gelasiansacrame00wilsgoog"
+inspection_status = "inspected"
+inspection = "Printed p. 235, PDF p. 328; independently checked retained page image. Critical edition mediates the manuscript; marginal apparatus excluded from the selected prayer bodies."
+
+[[sources]]
+id = "checked-warner-stowe"
+title = "Warner, The Stowe Missal, volume II (1915), selected Mass prayers"
+url = "https://archive.org/details/publications32henruoft"
+inspection_status = "inspected"
+inspection = "Printed pp. 10, 12, PDF pp. 96, 98; independently checked retained page images, including native spelling, expansions and selected punctuation normalization declared by the artifacts."
+
+[[sources]]
+id = "checked-cummiskey-latin"
+title = "Cummiskey, Roman Missal for the laity (1861), original Latin Ordinary columns"
+url = "https://archive.org/details/romanmissaltran00churgoog"
+inspection_status = "inspected"
+inspection = "Existing checked Latin-column transcription, whose artifact records visual page-image inspection and source-leaf coordinates; the English translation is excluded from these comparisons."
+
+[[relationships]]
+id = "checked-latin-prayers-1"
+kind = "shared-text"
+label = "Shared hanc igitur, quam oblationem wording"
+from = "western:gregorian-wilson-1915-critical-edition"
+to = "western:gelasian-wilson-1894-critical-edition"
+certainty = "sourced"
+scope = "Selected hanc igitur, quam oblationem units only; variants remain in the comparisons."
+basis = "Explicit same-prayer identity from incipit, liturgical position and bounded ending, with directly inspectable shared wording in both normalized source bodies. Native spelling, case, accents and declared typography differences remain in the full comparisons. An exact illustrative shared phrase is: et in electorum tuorum iubeas grege numerari."
+limitations = "Critical editions mediate early witnesses; printed publication dates do not date the shared formula. The displayed phrase is an exact illustrative shared run, not a claim that all wording or punctuation matches. Stowe has substantial additions and variants; its punctuation encoding is declared by its owning artifacts."
+evidence = [{source_id = "checked-wilson-gregorian", locus = "Printed pp. 2–3, PDF pp. 60–61; independently checked retained page images. Canon main text follows R (Reginae 337), with variants in the apparatus."}, {source_id = "checked-wilson-gelasian", locus = "Printed p. 235, PDF p. 328; independently checked retained page image. Critical edition mediates the manuscript; marginal apparatus excluded from the selected prayer bodies."}]
+comparison_ids = ["roman-hanc-igitur-gregorian-and-gelasian", "roman-quam-oblationem-gregorian-and-gelasian"]
+
+[[relationships]]
+id = "checked-latin-prayers-2"
+kind = "shared-text"
+label = "Shared hanc igitur, quam oblationem wording"
+from = "western:gregorian-wilson-1915-critical-edition"
+to = "western:stowe-warner-1915-vol2"
+certainty = "sourced"
+scope = "Selected hanc igitur, quam oblationem units only; variants remain in the comparisons."
+basis = "Explicit same-prayer identity from incipit, liturgical position and bounded ending, with directly inspectable shared wording in both normalized source bodies. Native spelling, case, accents and declared typography differences remain in the full comparisons. An exact illustrative shared phrase is: Hanc igitur oblationem seruitutis nostrae sed et cunctae familiae tuae."
+limitations = "Critical editions mediate early witnesses; printed publication dates do not date the shared formula. The displayed phrase is an exact illustrative shared run, not a claim that all wording or punctuation matches. Stowe has substantial additions and variants; its punctuation encoding is declared by its owning artifacts."
+evidence = [{source_id = "checked-wilson-gregorian", locus = "Printed pp. 2–3, PDF pp. 60–61; independently checked retained page images. Canon main text follows R (Reginae 337), with variants in the apparatus."}, {source_id = "checked-warner-stowe", locus = "Printed pp. 10, 12, PDF pp. 96, 98; independently checked retained page images, including native spelling, expansions and selected punctuation normalization declared by the artifacts."}]
+comparison_ids = ["roman-hanc-igitur-gregorian-and-stowe", "roman-quam-oblationem-gregorian-and-stowe"]
+
+[[relationships]]
+id = "checked-latin-prayers-3"
+kind = "shared-text"
+label = "Shared hanc igitur, quam oblationem, memento domine wording"
+from = "western:gregorian-wilson-1915-critical-edition"
+to = "western:cummiskey-1861-latin-ordinary"
+certainty = "sourced"
+scope = "Selected hanc igitur, quam oblationem, memento domine units only; variants remain in the comparisons."
+basis = "Explicit same-prayer identity from incipit, liturgical position and bounded ending, with directly inspectable shared wording in both normalized source bodies. Native spelling, case, accents and declared typography differences remain in the full comparisons. An exact illustrative shared phrase is: diesque nostros in tua pace disponas."
+limitations = "Critical editions mediate early witnesses; printed publication dates do not date the shared formula. The displayed phrase is an exact illustrative shared run, not a claim that all wording or punctuation matches. Stowe has substantial additions and variants; its punctuation encoding is declared by its owning artifacts."
+evidence = [{source_id = "checked-wilson-gregorian", locus = "Printed pp. 2–3, PDF pp. 60–61; independently checked retained page images. Canon main text follows R (Reginae 337), with variants in the apparatus."}, {source_id = "checked-cummiskey-latin", locus = "Existing checked Latin-column transcription, whose artifact records visual page-image inspection and source-leaf coordinates; the English translation is excluded from these comparisons."}]
+comparison_ids = ["roman-hanc-igitur-gregorian-and-cummiskey-1861", "roman-quam-oblationem-gregorian-and-cummiskey-1861", "roman-canon-memento-wilson-r-and-cummiskey-1861"]
+
+[[relationships]]
+id = "checked-latin-prayers-4"
+kind = "shared-text"
+label = "Shared hanc igitur, quam oblationem wording"
+from = "western:gelasian-wilson-1894-critical-edition"
+to = "western:stowe-warner-1915-vol2"
+certainty = "sourced"
+scope = "Selected hanc igitur, quam oblationem units only; variants remain in the comparisons."
+basis = "Explicit same-prayer identity from incipit, liturgical position and bounded ending, with directly inspectable shared wording in both normalized source bodies. Native spelling, case, accents and declared typography differences remain in the full comparisons. An exact illustrative shared phrase is: et in electorum tuorum iubeas grege numerari."
+limitations = "Critical editions mediate early witnesses; printed publication dates do not date the shared formula. The displayed phrase is an exact illustrative shared run, not a claim that all wording or punctuation matches. Stowe has substantial additions and variants; its punctuation encoding is declared by its owning artifacts."
+evidence = [{source_id = "checked-wilson-gelasian", locus = "Printed p. 235, PDF p. 328; independently checked retained page image. Critical edition mediates the manuscript; marginal apparatus excluded from the selected prayer bodies."}, {source_id = "checked-warner-stowe", locus = "Printed pp. 10, 12, PDF pp. 96, 98; independently checked retained page images, including native spelling, expansions and selected punctuation normalization declared by the artifacts."}]
+comparison_ids = ["roman-hanc-igitur-gelasian-and-stowe", "roman-quam-oblationem-gelasian-and-stowe"]
+
+[[relationships]]
+id = "checked-latin-prayers-5"
+kind = "shared-text"
+label = "Shared hanc igitur, quam oblationem wording"
+from = "western:gelasian-wilson-1894-critical-edition"
+to = "western:cummiskey-1861-latin-ordinary"
+certainty = "sourced"
+scope = "Selected hanc igitur, quam oblationem units only; variants remain in the comparisons."
+basis = "Explicit same-prayer identity from incipit, liturgical position and bounded ending, with directly inspectable shared wording in both normalized source bodies. Native spelling, case, accents and declared typography differences remain in the full comparisons. An exact illustrative shared phrase is: benedictam, adscriptam, ratam, rationabilem, acceptabilemque facere digneris."
+limitations = "Critical editions mediate early witnesses; printed publication dates do not date the shared formula. The displayed phrase is an exact illustrative shared run, not a claim that all wording or punctuation matches. Stowe has substantial additions and variants; its punctuation encoding is declared by its owning artifacts."
+evidence = [{source_id = "checked-wilson-gelasian", locus = "Printed p. 235, PDF p. 328; independently checked retained page image. Critical edition mediates the manuscript; marginal apparatus excluded from the selected prayer bodies."}, {source_id = "checked-cummiskey-latin", locus = "Existing checked Latin-column transcription, whose artifact records visual page-image inspection and source-leaf coordinates; the English translation is excluded from these comparisons."}]
+comparison_ids = ["roman-hanc-igitur-gelasian-and-cummiskey-1861", "roman-quam-oblationem-gelasian-and-cummiskey-1861"]
+
+[[relationships]]
+id = "checked-latin-prayers-6"
+kind = "shared-text"
+label = "Shared hanc igitur, quam oblationem, sanctus wording"
+from = "western:stowe-warner-1915-vol2"
+to = "western:cummiskey-1861-latin-ordinary"
+certainty = "sourced"
+scope = "Selected hanc igitur, quam oblationem, sanctus units only; variants remain in the comparisons."
+basis = "Explicit same-prayer identity from incipit, liturgical position and bounded ending, with directly inspectable shared wording in both normalized source bodies. Native spelling, case, accents and declared typography differences remain in the full comparisons. An exact illustrative shared phrase is: nostros in tua pace disponas."
+limitations = "Critical editions mediate early witnesses; printed publication dates do not date the shared formula. The displayed phrase is an exact illustrative shared run, not a claim that all wording or punctuation matches. Stowe has substantial additions and variants; its punctuation encoding is declared by its owning artifacts."
+evidence = [{source_id = "checked-warner-stowe", locus = "Printed pp. 10, 12, PDF pp. 96, 98; independently checked retained page images, including native spelling, expansions and selected punctuation normalization declared by the artifacts."}, {source_id = "checked-cummiskey-latin", locus = "Existing checked Latin-column transcription, whose artifact records visual page-image inspection and source-leaf coordinates; the English translation is excluded from these comparisons."}]
+comparison_ids = ["roman-hanc-igitur-stowe-and-cummiskey-1861", "roman-quam-oblationem-stowe-and-cummiskey-1861", "roman-sanctus-stowe-and-cummiskey-1861"]
+
+[[sources]]
+id = "brightman-1896-greek-prayers"
+title = "Brightman, Liturgies Eastern and Western I (1896), selected original Greek prayers"
+url = "https://archive.org/details/b29353233"
+inspection_status = "inspected"
+inspection = "The complete identified scan is retained. All six selected prayer bodies were independently checked against page images; main prayer text, speaker blocks, scriptural typography and editorial apparatus are separately recorded. Printed pp. 52–54, 386–387, 405–406; PDF pp. 158–160, 492–493, 511–512."
+
+[[relationships]]
+id = "brightman-1896-greek-basil-chrysostom-shared-prayer-content"
+kind = "shared-text"
+label = "Offering and Spirit petitions"
+from = "eastern:byz-brightman1896-basil"
+to = "eastern:byz-brightman1896-chrysostom"
+certainty = "sourced"
+scope = "Two bounded original-Greek priestly prayer units: anamnesis/oblation and invocation over gifts."
+basis = "Two independently checked full bounded prayer comparisons in the same identified source edition show the actual common wording and the differences. The invocation contains the shared formula ἐφ’ ἡμᾶς καὶ ἐπὶ τὰ προκείμενα δῶρα ταῦτα; its surrounding petitions differ. The offering formula also has the same Greek words with different source typography."
+limitations = "Symmetric textual comparison, not historical borrowing direction or lineage. Edition-mediated witnesses; no Catholic reception or original composition dates established. These are parallel liturgical functions, not a claim that the complete units are the same composition."
+evidence = [{source_id = "brightman-1896-greek-prayers", locus = "Basil pp. 405–406 (PDF 511–512); Chrysostom pp. 386–387 (PDF 492–493)"}]
+comparison_ids = ["brightman-1896-greek-basil-chrysostom-anamnesis-oblation", "brightman-1896-greek-basil-chrysostom-invocation-gifts"]
+
+[[relationships]]
+id = "brightman-1896-greek-basil-james-shared-prayer-content"
+kind = "shared-text"
+label = "Remembrance and Spirit petitions"
+from = "eastern:byz-brightman1896-basil"
+to = "eastern:syr-brightman1896-greek-james"
+certainty = "sourced"
+scope = "Two bounded original-Greek priestly prayer units: anamnesis/oblation and invocation over gifts."
+basis = "Two independently checked full bounded prayer comparisons in the same identified source edition show the actual common wording and the differences. The invocation contains the shared formula ἐφ’ ἡμᾶς καὶ ἐπὶ τὰ προκείμενα δῶρα ταῦτα; its surrounding petitions differ."
+limitations = "Symmetric textual comparison, not historical borrowing direction or lineage. Edition-mediated witnesses; no Catholic reception or original composition dates established. These are parallel liturgical functions, not a claim that the complete units are the same composition."
+evidence = [{source_id = "brightman-1896-greek-prayers", locus = "Basil pp. 405–406 (PDF 511–512); James pp. 52–54 (PDF 158–160)"}]
+comparison_ids = ["brightman-1896-greek-basil-james-anamnesis-oblation", "brightman-1896-greek-basil-james-invocation-gifts"]
+
+[[relationships]]
+id = "brightman-1896-greek-chrysostom-james-shared-prayer-content"
+kind = "shared-text"
+label = "Spirit petition; parallel remembrance"
+from = "eastern:byz-brightman1896-chrysostom"
+to = "eastern:syr-brightman1896-greek-james"
+certainty = "sourced"
+scope = "Shared Spirit-and-gifts petition within the invocation; the companion anamnesis comparison shows a parallel remembrance sequence with shorter common spans and real wording differences."
+basis = "Two independently checked full bounded prayer comparisons in the same identified source edition show the actual common wording and the differences. The invocation contains the shared formula ἐφ’ ἡμᾶς καὶ ἐπὶ τὰ προκείμενα δῶρα ταῦτα; its surrounding petitions differ."
+limitations = "Symmetric textual comparison, not historical borrowing direction or lineage. Edition-mediated witnesses; no Catholic reception or original composition dates established. These are parallel liturgical functions, not a claim that the complete units are the same composition."
+evidence = [{source_id = "brightman-1896-greek-prayers", locus = "Chrysostom pp. 386–387 (PDF 492–493); James pp. 52–54 (PDF 158–160)"}]
+comparison_ids = ["brightman-1896-greek-chrysostom-james-anamnesis-oblation", "brightman-1896-greek-chrysostom-james-invocation-gifts"]

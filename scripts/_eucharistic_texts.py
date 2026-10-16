@@ -30,6 +30,300 @@ WILSON_EDITION = "edition.catholic-church.sacramentarium-gregorianum-hadrianum.w
 WILSON_MEMENTO_PASSAGE = "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-memento-domine"
 WILSON_MEMENTO_ARTIFACT = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-memento-checked-latin-784ee4c8"
 WILSON_MEMENTO_TEXT_SHA256 = "4fc270656e69b4c24537399483253c6d0311f1b56d734744753fc701dd3ccf87"
+# Trusted selections identify reviewed source bodies; they contain no copied
+# liturgical text. New witnesses use this same loader rather than a new parser.
+CHECKED_PASSAGE_SETS: dict[str, dict] = {'brightman-1896-greek-basil': {'edition_id': 'edition.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1',
+                                'scope': {'omitted_book_divisions': ['The rest of the anaphora and liturgy',
+                                                                     'Rubrics, speaker cues, '
+                                                                     'diaconal/congregational responses and '
+                                                                     'apparatus',
+                                                                     'Other constituent liturgies in the '
+                                                                     'volume'],
+                                          'represented_witness': 'Modern Greek Basil prayers as printed in '
+                                                                 'Brightman 1896, from the Venice 1869 '
+                                                                 'Euchologion according to the printed p. '
+                                                                 '308 source note. Not the separate '
+                                                                 'Barberini/Grottaferrata section.',
+                                          'status': 'bounded-checked-greek-prayer-selection',
+                                          'text_identity': 'Original Greek wording of two bounded prayer '
+                                                           'units in the identified 1896 edition; explicit '
+                                                           'typography and speech-block normalization, not a '
+                                                           'reconstruction of earlier use.'},
+                                'title': 'Brightman 1896: Greek Basil remembrance, offering and invocation',
+                                'units': [{'artifact_id': 'artifact.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.basil-anamnesis-oblation-checked-greek-e123ebb5',
+                                           'division': 'anaphora',
+                                           'element_key': 'anamnesis-oblation',
+                                           'evidence_source_ids': ['artifact.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.ia-pdf-254f7d21',
+                                                                   'passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.basil-anamnesis-oblation-facsimile',
+                                                                   'passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.editorial-typography',
+                                                                   'passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.byzantine-modern-text-sources'],
+                                           'facsimile_pdf_page': '511',
+                                           'language': 'grc',
+                                           'passage_id': 'passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.basil-anamnesis-oblation',
+                                           'printed_page': '405',
+                                           'source_order': 1,
+                                           'text_sha256': '17f334010b240830b279e79d4ffe66b9bd7f21ec498986763b910a5aa7893759',
+                                           'unit_id': 'unit.brightman-1896.greek-basil.anaphora.anamnesis-oblation'},
+                                          {'artifact_id': 'artifact.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.basil-invocation-gifts-checked-greek-e4935cb8',
+                                           'division': 'anaphora',
+                                           'element_key': 'invocation-gifts',
+                                           'evidence_source_ids': ['artifact.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.ia-pdf-254f7d21',
+                                                                   'passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.basil-invocation-gifts-facsimile',
+                                                                   'passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.basil-metabalon-apparatus-note',
+                                                                   'passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.editorial-typography',
+                                                                   'passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.byzantine-modern-text-sources'],
+                                           'facsimile_pdf_page': '511,512',
+                                           'language': 'grc',
+                                           'passage_id': 'passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.basil-invocation-gifts',
+                                           'printed_page': '405–406',
+                                           'source_order': 2,
+                                           'text_sha256': 'f78e45e409869baffc1350ebda80d88dcaa56ccfb072908096c9bdb420234b43',
+                                           'unit_id': 'unit.brightman-1896.greek-basil.anaphora.invocation-gifts'}],
+                                'witness_date': '1896 printed edition; modern text attributed by Brightman '
+                                                'to Venice 1869'},
+ 'brightman-1896-greek-chrysostom': {'edition_id': 'edition.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1',
+                                     'scope': {'omitted_book_divisions': ['The rest of the anaphora and '
+                                                                          'liturgy',
+                                                                          'Rubrics, speaker cues, '
+                                                                          'diaconal/congregational responses '
+                                                                          'and apparatus',
+                                                                          'Other constituent liturgies in '
+                                                                          'the volume'],
+                                               'represented_witness': 'Modern Greek Chrysostom text as '
+                                                                      'printed in Brightman 1896, attributed '
+                                                                      'on printed p. 308 to the Venice 1869 '
+                                                                      'Euchologion with Athens 1890 reader '
+                                                                      'material. Not the separate Barberini '
+                                                                      'manuscript section.',
+                                               'status': 'bounded-checked-greek-prayer-selection',
+                                               'text_identity': 'Original Greek wording of two bounded '
+                                                                'prayer units in the identified 1896 '
+                                                                'edition; explicit typography and '
+                                                                'speech-block normalization, not a '
+                                                                'reconstruction of earlier use.'},
+                                     'title': 'Brightman 1896: Greek Chrysostom remembrance, offering and '
+                                              'invocation',
+                                     'units': [{'artifact_id': 'artifact.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.chrysostom-anamnesis-oblation-checked-greek-3c396481',
+                                                'division': 'anaphora',
+                                                'element_key': 'anamnesis-oblation',
+                                                'evidence_source_ids': ['artifact.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.ia-pdf-254f7d21',
+                                                                        'passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.chrysostom-anamnesis-oblation-facsimile',
+                                                                        'passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.editorial-typography',
+                                                                        'passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.byzantine-modern-text-sources'],
+                                                'facsimile_pdf_page': '492',
+                                                'language': 'grc',
+                                                'passage_id': 'passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.chrysostom-anamnesis-oblation',
+                                                'printed_page': '386',
+                                                'source_order': 1,
+                                                'text_sha256': 'd423124934d7134070c446092e42ed7cb4a9a22b34371a40effe2ca791c02885',
+                                                'unit_id': 'unit.brightman-1896.greek-chrysostom.anaphora.anamnesis-oblation'},
+                                               {'artifact_id': 'artifact.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.chrysostom-invocation-gifts-checked-greek-68a9876c',
+                                                'division': 'anaphora',
+                                                'element_key': 'invocation-gifts',
+                                                'evidence_source_ids': ['artifact.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.ia-pdf-254f7d21',
+                                                                        'passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.chrysostom-invocation-gifts-facsimile',
+                                                                        'passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.editorial-typography',
+                                                                        'passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.byzantine-modern-text-sources'],
+                                                'facsimile_pdf_page': '492,493',
+                                                'language': 'grc',
+                                                'passage_id': 'passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.chrysostom-invocation-gifts',
+                                                'printed_page': '386–387',
+                                                'source_order': 2,
+                                                'text_sha256': '5479fe984a2db7f9da1ba3a74356e286ad47ba777f811c3169fdf76a1617a98a',
+                                                'unit_id': 'unit.brightman-1896.greek-chrysostom.anaphora.invocation-gifts'}],
+                                     'witness_date': '1896 printed edition; modern text attributed by '
+                                                     'Brightman to Venice 1869'},
+ 'brightman-1896-greek-james': {'edition_id': 'edition.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1',
+                                'scope': {'omitted_book_divisions': ['The rest of the anaphora and liturgy',
+                                                                     'Rubrics, speaker cues, '
+                                                                     'diaconal/congregational responses and '
+                                                                     'apparatus',
+                                                                     'Other constituent liturgies in the '
+                                                                     'volume'],
+                                          'represented_witness': 'Greek James as printed in Brightman 1896 '
+                                                                 'from Paris Bibliothèque nationale MS '
+                                                                 'graec. 2509, ff. 194–210, according to '
+                                                                 'printed p. 2. Its manuscript date is '
+                                                                 'source-stated fifteenth century after the '
+                                                                 'printed p. cii correction; the manuscript '
+                                                                 'itself was not inspected. This is not the '
+                                                                 'separately printed Syriac James text.',
+                                          'status': 'bounded-checked-greek-prayer-selection',
+                                          'text_identity': 'Original Greek wording of two bounded prayer '
+                                                           'units in the identified 1896 edition; explicit '
+                                                           'typography and speech-block normalization, not a '
+                                                           'reconstruction of earlier use.'},
+                                'title': 'Brightman 1896: Greek James remembrance, offering and invocation',
+                                'units': [{'artifact_id': 'artifact.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.james-anamnesis-oblation-checked-greek-9e6745c8',
+                                           'division': 'anaphora',
+                                           'element_key': 'anamnesis-oblation',
+                                           'evidence_source_ids': ['artifact.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.ia-pdf-254f7d21',
+                                                                   'passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.james-anamnesis-oblation-facsimile',
+                                                                   'passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.editorial-typography',
+                                                                   'passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.greek-james-source-and-corrigendum'],
+                                           'facsimile_pdf_page': '158,159',
+                                           'language': 'grc',
+                                           'passage_id': 'passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.james-anamnesis-oblation',
+                                           'printed_page': '52–53',
+                                           'source_order': 1,
+                                           'text_sha256': '99360800128e40b9fe59723cebc4cd0513db05a7aec892c98f5adaef67d7f37a',
+                                           'unit_id': 'unit.brightman-1896.greek-james.anaphora.anamnesis-oblation'},
+                                          {'artifact_id': 'artifact.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.james-invocation-gifts-checked-greek-0844d792',
+                                           'division': 'anaphora',
+                                           'element_key': 'invocation-gifts',
+                                           'evidence_source_ids': ['artifact.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.ia-pdf-254f7d21',
+                                                                   'passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.james-invocation-gifts-facsimile',
+                                                                   'passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.editorial-typography',
+                                                                   'passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.greek-james-source-and-corrigendum'],
+                                           'facsimile_pdf_page': '159,160',
+                                           'language': 'grc',
+                                           'passage_id': 'passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.james-invocation-gifts',
+                                           'printed_page': '53–54',
+                                           'source_order': 2,
+                                           'text_sha256': 'eff48580f671663ab9e2c9fc71f0ddef0a8d622e7698ed3bfaaf346d92bbab52',
+                                           'unit_id': 'unit.brightman-1896.greek-james.anaphora.invocation-gifts'}],
+                                'witness_date': '1896 printed edition; source-stated fifteenth-century Paris '
+                                                'gr. 2509, after Brightman’s corrigendum'},
+ 'warner-1915-stowe-mass-prayers': {'edition_id': 'edition.catholic-church.stowe-missal.warner-1915-vol-2',
+                                    'scope': {'date_roles': 'target_date identifies the historical printed '
+                                                            'edition; this adapter assigns no exact '
+                                                            'manuscript date',
+                                              'omitted_book_divisions': ['all prayers outside the explicitly '
+                                                                         'selected units',
+                                                                         'critical apparatus and editorial '
+                                                                         'introduction',
+                                                                         'all other ritual, rubrical and '
+                                                                         'supplemental material'],
+                                              'represented_witness': 'Royal Irish Academy MS D. II. 3 as '
+                                                                     "mediated by Warner's 1915 printed "
+                                                                     'text; layers, expansions and apparatus '
+                                                                     'are those of the critical edition',
+                                              'status': 'selected-complete-prayers',
+                                              'text_identity': 'Bounded normalized native-language text from '
+                                                               'the identified critical edition; apparatus '
+                                                               'and uncollected units excluded'},
+                                    'title': 'Warner 1915 Stowe Missal: Sanctus and two Canon prayers',
+                                    'units': [{'artifact_id': 'artifact.catholic-church.stowe-missal.warner-1915-vol-2.sanctus-checked-latin-27b79875',
+                                               'division': 'praefatio',
+                                               'element_key': 'sanctus',
+                                               'evidence_source_ids': ['artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-scan-27c6070e'],
+                                               'facsimile_pdf_page': 96,
+                                               'language': 'la',
+                                               'passage_id': 'passage.catholic-church.stowe-missal.warner-1915-vol-2.sanctus',
+                                               'printed_page': '10',
+                                               'source_order': 1,
+                                               'text_sha256': '3796eb71df0487f317f1039e1bea4a32126c189068d5d11b83e05524fa10b798',
+                                               'unit_id': 'unit.warner-1915.stowe.praefatio.sanctus'},
+                                              {'artifact_id': 'artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-hanc-igitur-checked-latin-7465da67',
+                                               'division': 'canon-missae',
+                                               'element_key': 'hanc-igitur',
+                                               'evidence_source_ids': ['artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-scan-27c6070e'],
+                                               'facsimile_pdf_page': 98,
+                                               'language': 'la',
+                                               'passage_id': 'passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-hanc-igitur',
+                                               'printed_page': '12',
+                                               'source_order': 2,
+                                               'text_sha256': '30ad19b30cef8ad7a6df62c56a7ff2cdea94fe88eb1626d0254ef979ef4e1252',
+                                               'unit_id': 'unit.warner-1915.stowe.canon-missae.hanc-igitur'},
+                                              {'artifact_id': 'artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-quam-oblationem-checked-latin-e404c122',
+                                               'division': 'canon-missae',
+                                               'element_key': 'quam-oblationem',
+                                               'evidence_source_ids': ['artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-scan-27c6070e'],
+                                               'facsimile_pdf_page': 98,
+                                               'language': 'la',
+                                               'passage_id': 'passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-quam-oblationem',
+                                               'printed_page': '12',
+                                               'source_order': 3,
+                                               'text_sha256': '18096be7fc73c46fb41307756342c0e85a2f9c2b24454d6d7a2f703d8a424378',
+                                               'unit_id': 'unit.warner-1915.stowe.canon-missae.quam-oblationem'}],
+                                    'witness_date': None},
+ 'wilson-1894-gelasian-canon-prayers': {'edition_id': 'edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894',
+                                        'scope': {'date_roles': 'target_date identifies the historical '
+                                                                'printed edition; this adapter assigns no '
+                                                                'exact manuscript date',
+                                                  'omitted_book_divisions': ['all prayers outside the '
+                                                                             'explicitly selected units',
+                                                                             'critical apparatus and '
+                                                                             'editorial introduction',
+                                                                             'all other ritual, rubrical and '
+                                                                             'supplemental material'],
+                                                  'represented_witness': 'Vatican Reg. lat. 316 as mediated '
+                                                                         "by Wilson's 1894 critical edition; "
+                                                                         'no new manuscript collation',
+                                                  'status': 'selected-complete-prayers',
+                                                  'text_identity': 'Bounded normalized native-language text '
+                                                                   'from the identified critical edition; '
+                                                                   'apparatus and uncollected units '
+                                                                   'excluded'},
+                                        'title': 'Wilson 1894 Gelasian Canon: Hanc igitur and Quam '
+                                                 'oblationem',
+                                        'units': [{'artifact_id': 'artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-hanc-igitur-checked-latin-75df4acf',
+                                                   'division': 'canon-missae',
+                                                   'element_key': 'hanc-igitur',
+                                                   'evidence_source_ids': ['artifact.anonymous.gelasian-sacramentary.wilson-clarendon-1894.printed-p235-image-d98c2326'],
+                                                   'facsimile_pdf_page': 328,
+                                                   'language': 'la',
+                                                   'passage_id': 'passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-hanc-igitur',
+                                                   'printed_page': '235',
+                                                   'source_order': 1,
+                                                   'text_sha256': '91d5e24ad22d131ba8086f2d394c6e1d0ddbaa2795087c89fed5a2260a483bfb',
+                                                   'unit_id': 'unit.wilson-1894.gelasian.canon-missae.hanc-igitur'},
+                                                  {'artifact_id': 'artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-quam-oblationem-checked-latin-e01e1083',
+                                                   'division': 'canon-missae',
+                                                   'element_key': 'quam-oblationem',
+                                                   'evidence_source_ids': ['artifact.anonymous.gelasian-sacramentary.wilson-clarendon-1894.printed-p235-image-d98c2326'],
+                                                   'facsimile_pdf_page': 328,
+                                                   'language': 'la',
+                                                   'passage_id': 'passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-quam-oblationem',
+                                                   'printed_page': '235',
+                                                   'source_order': 2,
+                                                   'text_sha256': 'ebe2f0b6c0222d064ce2da46220e62306228bc3f7f83fd5ffbe08284eee36683',
+                                                   'unit_id': 'unit.wilson-1894.gelasian.canon-missae.quam-oblationem'}],
+                                        'witness_date': None},
+ 'wilson-1915-gregorian-canon-prayers': {'edition_id': 'edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915',
+                                         'scope': {'date_roles': 'target_date identifies the historical '
+                                                                 'printed edition; this adapter assigns no '
+                                                                 'exact manuscript date',
+                                                   'omitted_book_divisions': ['all prayers outside the '
+                                                                              'explicitly selected units',
+                                                                              'critical apparatus and '
+                                                                              'editorial introduction',
+                                                                              'all other ritual, rubrical '
+                                                                              'and supplemental material'],
+                                                   'represented_witness': 'R, Vatican Reginae 337, as '
+                                                                          "mediated by Wilson's 1915 "
+                                                                          'critical edition; no new '
+                                                                          'manuscript collation',
+                                                   'status': 'selected-complete-prayers',
+                                                   'text_identity': 'Bounded normalized native-language text '
+                                                                    'from the identified critical edition; '
+                                                                    'apparatus and uncollected units '
+                                                                    'excluded'},
+                                         'title': 'Wilson 1915 Gregorian Canon: Hanc igitur and Quam '
+                                                  'oblationem',
+                                         'units': [{'artifact_id': 'artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-hanc-igitur-checked-latin-b46e0e89',
+                                                    'division': 'canon-missae',
+                                                    'element_key': 'hanc-igitur',
+                                                    'evidence_source_ids': ['artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7'],
+                                                    'facsimile_pdf_page': 60,
+                                                    'language': 'la',
+                                                    'passage_id': 'passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-hanc-igitur',
+                                                    'printed_page': '2',
+                                                    'source_order': 1,
+                                                    'text_sha256': 'fd9e64a913ca9147428be52dc932c3fac0a48723bd9afb04182963632a8b732b',
+                                                    'unit_id': 'unit.wilson-1915.gregorian.canon-missae.hanc-igitur'},
+                                                   {'artifact_id': 'artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-quam-oblationem-checked-latin-94b63de8',
+                                                    'division': 'canon-missae',
+                                                    'element_key': 'quam-oblationem',
+                                                    'evidence_source_ids': ['artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7'],
+                                                    'facsimile_pdf_page': [60, 61],
+                                                    'language': 'la',
+                                                    'passage_id': 'passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-quam-oblationem',
+                                                    'printed_page': '2-3',
+                                                    'source_order': 2,
+                                                    'text_sha256': '19287cda6b3f4d8a027e0cbcc63d4c2399a22827ab75668e1294e596f796d734',
+                                                    'unit_id': 'unit.wilson-1915.gregorian.canon-missae.quam-oblationem'}],
+                                         'witness_date': None}}
 ORDINARY_DIVISIONS = (
     "ordinarium-praeparatio", "ordinarium-oblatio", "praefationes", "canon-missae",
     "ordinarium-communio", "ordinarium-conclusio",
@@ -48,7 +342,8 @@ class AdapterError(ValueError):
 
 
 def adapter_ids() -> tuple[str, ...]:
-    return ("roman-1962-propers", "cummiskey-1861-latin-ordinary", "wilson-1915-gregorian-canon-memento")
+    return ("roman-1962-propers", "cummiskey-1861-latin-ordinary", "wilson-1915-gregorian-canon-memento",
+            *sorted(CHECKED_PASSAGE_SETS))
 
 
 def _sha(data: bytes) -> str:
@@ -354,6 +649,59 @@ def _wilson_memento(sources: _Sources) -> dict:
     }
 
 
+def _checked_passages(sources: _Sources, selection: dict) -> dict:
+    """Load bounded, verified native-language units from their canonical owners."""
+    edition_id = selection["edition_id"]
+    edition = sources.use(edition_id)
+    units = []
+    for chosen in selection["units"]:
+        passage = sources.use(chosen["passage_id"])
+        artifact = sources.use(chosen["artifact_id"])
+        if (passage.get("edition_id") != edition_id or artifact.get("edition_id") != edition_id
+                or passage.get("artifact_id") != chosen["artifact_id"]):
+            raise AdapterError(f"Checked passage identity mismatch: {chosen['passage_id']}")
+        if "verified" not in passage.get("states", []) or not passage.get("verified_on"):
+            raise AdapterError(f"Checked passage is not verified: {chosen['passage_id']}")
+        if (artifact.get("rights_status") != "public-domain" or not artifact.get("rights_basis")
+                or artifact.get("rights_jurisdiction") != "United States"):
+            raise AdapterError(f"Checked passage lacks public-domain publication basis: {chosen['artifact_id']}")
+        if (artifact.get("artifact_type") != "normalized-text" or passage.get("physical_line_ranges") != [[1, 1]]
+                or passage.get("artifact_sha256") != artifact.get("sha256")):
+            raise AdapterError(f"Checked passage extent/hash mismatch: {chosen['passage_id']}")
+        blob = sources.payload(artifact)
+        if not blob.endswith(b"\n") or blob.count(b"\n") != 1 or b"\r" in blob:
+            raise AdapterError(f"Checked passage must have one complete text line: {chosen['passage_id']}")
+        text = blob[:-1].decode("utf-8")
+        if not text or _sha(text.encode("utf-8")) != chosen["text_sha256"]:
+            raise AdapterError(f"Checked passage differs from reviewed wording: {chosen['passage_id']}")
+        for source_id in chosen.get("evidence_source_ids", []):
+            sources.use(source_id)
+        units.append({
+            **{key: chosen[key] for key in ("unit_id", "language", "division", "element_key", "source_order")},
+            **{key: chosen[key] for key in ("printed_page", "facsimile_pdf_page") if key in chosen},
+            "content_id": "sha256:" + chosen["text_sha256"], "text": text, "text_sha256": chosen["text_sha256"],
+            "text_edition_id": edition_id, "target_edition_id": edition_id,
+            "transcription_kind": "witness-normalized-transcription", "diplomatic": False,
+            "source_id": chosen["passage_id"], "source_artifact_id": chosen["artifact_id"],
+            "source_artifact_sha256": artifact["sha256"], "source_physical_line": 1,
+            "provenance": {"status": "verified-bounded-printed-edition-transcription",
+                "reviewed_on": passage["verified_on"], "source_locator": passage["locus"],
+                "normalization": artifact["transformation"], "scope": passage.get("context", ""),
+                "review_limits": passage.get("notes", ""),
+                "evidence_source_ids": chosen.get("evidence_source_ids", [])},
+            "publication": {"status": "permitted", "basis": "public-domain", "jurisdiction": "United States",
+                "basis_source_id": chosen["artifact_id"], "surfaces": ["public-git", "corpus-data"]},
+        })
+    reviewed = {unit["provenance"]["reviewed_on"] for unit in units}
+    return {"title": selection["title"], "edition_id": edition_id,
+            "target_date": edition["date"], "witness_date": selection.get("witness_date"),
+            "reviewed_on": next(iter(reviewed)) if len(reviewed) == 1 else None,
+            "units": units, "scope": {**selection["scope"], "whole_book_complete": False,
+                                      "no_historical_backprojection": True, "not_direct_manuscript_transcription": True},
+            "counts": {"units": len(units), "whitespace_tokens": sum(len(u["text"].split()) for u in units),
+                       "languages": dict(Counter(u["language"] for u in units))}}
+
+
 def load_adapter(adapter_id: str, root: Path = ROOT) -> dict:
     """Return a deterministic JSON-compatible snapshot; write no export files.
 
@@ -368,7 +716,8 @@ def load_adapter(adapter_id: str, root: Path = ROOT) -> dict:
     try:
         loaders = {"roman-1962-propers": _proper_units, "cummiskey-1861-latin-ordinary": _ordinary_units,
                    "wilson-1915-gregorian-canon-memento": _wilson_memento}
-        result = loaders[adapter_id](sources)
+        result = (_checked_passages(sources, CHECKED_PASSAGE_SETS[adapter_id])
+                  if adapter_id in CHECKED_PASSAGE_SETS else loaders[adapter_id](sources))
         unit_ids = [unit["unit_id"] for unit in result["units"]]
         if len(set(unit_ids)) != len(unit_ids):
             raise AdapterError("Export repeats a stable unit identity")

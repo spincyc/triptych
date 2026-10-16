@@ -288,6 +288,212 @@ source_ids=["library"]
         history.git(repo, "fsck", "--strict")
 
 
+class RelationshipTests(unittest.TestCase):
+    catalogue = EucharisticHistoryTests.catalogue
+    emit = EucharisticHistoryTests.emit
+
+    @classmethod
+    def setUpClass(cls):
+        cls.ventilator = staticmethod(owning_ventilator())
+
+    def setUp(self):
+        EucharisticHistoryTests.setUp(self)
+        with (self.root / "research.toml").open("a") as output:
+            output.write('''
+[[records]]
+id="later"
+family="test-alias"
+book_label="Later constructed witness"
+date="1300"
+chronology_start=1300
+chronology_end=1300
+chronology_kind="printed-witness"
+chronology_certainty="stated"
+''')
+        with self.source.open("a") as output:
+            output.write('''
+[[relationship_sets]]
+id="links"
+path="relationships.toml"
+''')
+        self.relations = self.root / "relationships.toml"
+        self.relations.write_text('''schema_version=1
+record_type="eucharistic-history-relationships"
+[[sources]]
+id="inspected"
+title="Constructed source, not historical evidence"
+url="https://example.org/source"
+inspection_status="inspected"
+inspection="The bounded fixture paragraph was inspected."
+[[relationships]]
+id="bounded-claim"
+kind="shared-text"
+from="research:manuscript"
+to="research:later"
+certainty="sourced"
+scope="One bounded fixture prayer."
+basis="The constructed source identifies this shared prayer."
+limitations="No direct borrowing or introduction date is established."
+evidence=[{source_id="inspected",locus="Page 2, paragraph 3"}]
+''')
+
+    def test_typed_links_preserve_exact_endpoints_and_never_grant_inheritance(self):
+        baseline = self.relations.read_text()
+        for kind, directed in history.RELATIONSHIP_KINDS.items():
+            with self.subTest(kind=kind):
+                self.relations.write_text(baseline.replace('kind="shared-text"', f'kind="{kind}"'))
+                payload = self.catalogue()
+                relation = payload["relationships"][0]
+                self.assertEqual(directed, relation["directed"])
+                self.assertEqual("research:manuscript", relation["from"])
+                self.assertEqual("research:later", relation["to"])
+                self.assertFalse(relation["git_ancestry"])
+                self.assertFalse(relation["text_inheritance"])
+                self.assertEqual("Page 2, paragraph 3", relation["evidence"][0]["locus"])
+                self.assertEqual("inspected", relation["evidence"][0]["source"]["inspection_status"])
+                self.assertEqual(2, payload["counts"]["entries"])
+                self.assertTrue(all(e["relationship_ids"] == ["links:bounded-claim"] for e in payload["entries"]))
+        emitted = self.emit()
+        for commit in emitted["branches"].values():
+            self.assertEqual(b"\n", history.git(self.root / "corpus", "show", "-s", "--format=%P", commit))
+
+    def test_relationship_date_is_not_inferred_from_witness_dates(self):
+        relation = self.catalogue()["relationships"][0]
+        self.assertIsNone(relation["chronology"])
+        self.assertIsNone(relation["date_label"])
+        with self.relations.open("a") as output:
+            output.write('date_label="Uncertain interval, independently sourced"\nchronology={start=1200,end=1250,kind="relationship-bound",certainty="approximate"}\n')
+        relation = self.catalogue()["relationships"][0]
+        self.assertEqual(1250, relation["chronology"]["end"])
+        self.assertEqual("Uncertain interval, independently sourced", relation["date_label"])
+
+    def test_unresolved_records_and_unsupported_claims_fail_closed(self):
+        baseline = self.relations.read_text()
+        changes = [
+            ('from="research:manuscript"', 'from="research:missing"'),
+            ('to="research:later"', 'to="research:manuscript"'),
+            ('kind="shared-text"', 'kind="similar-title"'),
+            ('certainty="sourced"', 'certainty="certain-from-dates"'),
+            ('source_id="inspected"', 'source_id="missing"'),
+            ('locus="Page 2, paragraph 3"', 'locus=" "'),
+            ('scope="One bounded fixture prayer."', 'scope=""'),
+        ]
+        for before, after in changes:
+            with self.subTest(after=after):
+                self.relations.write_text(baseline.replace(before, after))
+                with self.assertRaises(history.HistoryError):
+                    self.catalogue()
+        for extra in ('git_ancestry=true', 'text_inheritance=true', 'parents=["research:manuscript"]',
+                      'comparison_ids=["missing"]', 'chronology={start=1250,end=1200,kind="bound",certainty="approximate"}'):
+            with self.subTest(extra=extra):
+                self.relations.write_text(baseline + extra + "\n")
+                with self.assertRaises(history.HistoryError):
+                    self.catalogue()
+
+    def test_url_is_not_source_inspection_and_uncertainty_is_retained(self):
+        baseline = self.relations.read_text()
+        self.relations.write_text(baseline.replace('inspection_status="inspected"', 'inspection_status="not-inspected"'))
+        with self.assertRaisesRegex(history.HistoryError, "requires inspected evidence"):
+            self.catalogue()
+        self.relations.write_text(self.relations.read_text().replace('certainty="sourced"', 'certainty="unresolved"'))
+        self.assertEqual("unresolved", self.catalogue()["relationships"][0]["certainty"])
+        self.relations.write_text(baseline.replace('inspection="The bounded fixture paragraph was inspected."', 'inspection=" "'))
+        with self.assertRaisesRegex(history.HistoryError, "inspection"):
+            self.catalogue()
+
+    def test_evidence_mutation_changes_projection_and_is_fingerprinted(self):
+        before = self.catalogue()
+        out = self.root / "catalogue.json"
+        history.write_catalogue(before, out)
+        self.relations.write_text(self.relations.read_text().replace("Page 2, paragraph 3", "Page 3, paragraph 1"))
+        after = self.catalogue()
+        self.assertNotEqual(before["inputs"], after["inputs"])
+        with self.assertRaisesRegex(history.HistoryError, "differs"):
+            history.write_catalogue(after, out, check=True)
+
+    def test_alias_groups_preserve_family_and_expose_unmapped_groups(self):
+        before = self.catalogue()
+        self.assertEqual(2, before["counts"]["unmapped_families"])
+        with self.source.open("a") as output:
+            output.write('''
+[[presentation_groups]]
+id="named-tradition"
+label="Named tradition"
+families=["test-family","test-alias"]
+''')
+        after = self.catalogue()
+        self.assertEqual(1, after["counts"]["presentation_groups"])
+        self.assertEqual(0, after["counts"]["unmapped_families"])
+        self.assertEqual(2, after["presentation_groups"][0]["count"])
+        self.assertEqual({"test-family", "test-alias"}, {entry["family"] for entry in after["entries"]})
+        self.assertTrue(all(entry["presentation_group"]["label"] == "Named tradition" for entry in after["entries"]))
+        with self.source.open("a") as output:
+            output.write('''
+[[presentation_groups]]
+id="overlapping"
+label="Overlapping group"
+families=["test-alias"]
+''')
+        with self.assertRaisesRegex(history.HistoryError, "two presentation groups"):
+            self.catalogue()
+
+    def test_contextual_donor_is_cited_undated_and_excluded_from_version_counts(self):
+        self.relations.write_text(self.relations.read_text().replace('from="research:manuscript"', 'from="links:entity:donor"') + '''
+[[entities]]
+id="donor"
+label="Named donor textual tradition"
+kind="textual-tradition"
+family="test-family"
+scope="The prayer tradition only."
+basis="The source names a tradition but no exact donor edition."
+limitations="Exact exemplar unresolved."
+evidence=[{source_id="inspected",locus="Page 2, paragraph 3"}]
+''')
+        payload = self.catalogue()
+        self.assertEqual(2, payload["counts"]["entries"])
+        self.assertEqual(1, payload["counts"]["relationship_entities"])
+        entity = payload["relationship_entities"][0]
+        self.assertIsNone(entity["chronology"])
+        self.assertEqual(["links:bounded-claim"], entity["relationship_ids"])
+        self.assertEqual(2, sum(group["count"] for group in payload["presentation_groups"]))
+        self.assertEqual(1, sum(group["entity_count"] for group in payload["presentation_groups"]))
+        with self.relations.open("a") as output:
+            output.write('chronology={start=1000,end=1000,kind="invented",certainty="invented"}\n')
+        with self.assertRaisesRegex(history.HistoryError, "undated textual-tradition"):
+            self.catalogue()
+
+    def test_duplicate_relationships_sources_and_aliases_are_refused(self):
+        baseline = self.relations.read_text()
+        relation = baseline[baseline.index("[[relationships]]"):]
+        source = baseline[baseline.index("[[sources]]"):baseline.index("[[relationships]]")]
+        for duplicate in (relation, source):
+            self.relations.write_text(baseline + duplicate)
+            with self.assertRaisesRegex(history.HistoryError, "duplicate"):
+                self.catalogue()
+        self.relations.write_text(baseline)
+        with self.source.open("a") as output:
+            output.write('\n[[presentation_groups]]\nid="group"\nlabel="Group"\nfamilies=["test-family","test-family"]\n')
+        with self.assertRaisesRegex(history.HistoryError, "distinct nonempty aliases"):
+            self.catalogue()
+
+    def test_common_ancestry_reference_requires_separate_existing_record(self):
+        with (self.root / "research.toml").open("a") as output:
+            output.write('\n[[records]]\nid="earlier"\nbook_label="Earlier identified witness"\n')
+        baseline = self.relations.read_text().replace('kind="shared-text"', 'kind="common-ancestry"')
+        self.relations.write_text(baseline + 'ancestor_ref="research:earlier"\n')
+        relation = self.catalogue()["relationships"][0]
+        self.assertEqual("research:earlier", relation["ancestor_ref"])
+        self.assertFalse(relation["directed"])
+        self.assertFalse(relation["git_ancestry"])
+        for ancestor in ("research:missing", "research:later"):
+            self.relations.write_text(baseline + f'ancestor_ref="{ancestor}"\n')
+            with self.assertRaisesRegex(history.HistoryError, "separate recorded common ancestor"):
+                self.catalogue()
+        self.relations.write_text(baseline.replace('kind="common-ancestry"', 'kind="borrowing"') + 'ancestor_ref="research:earlier"\n')
+        with self.assertRaisesRegex(history.HistoryError, "separate recorded common ancestor"):
+            self.catalogue()
+
+
 class WitnessComparisonTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -356,6 +562,67 @@ unit_ids=["unit.fixture.collect","unit.fixture.second"]
         out = self.root / "comparison.json"
         history.write_comparison(first, out)
         self.assertEqual(history.json_bytes(first), out.read_bytes())
+
+    def test_parallel_function_comparison_does_not_claim_same_composition(self):
+        same = self.compare()
+        self.assertEqual("same-prayer-witnesses", same["identity_claim"])
+        self.source.write_text(self.source.read_text().replace(
+            'kind="same-prayer-witness-comparison"', 'kind="parallel-liturgical-unit-comparison"'))
+        parallel = self.compare()
+        self.assertEqual("parallel-function-not-same-composition", parallel["identity_claim"])
+        self.assertEqual(same["left"], parallel["left"])
+        self.assertEqual(same["right"], parallel["right"])
+        self.assertFalse(parallel["historical_ancestry_claimed"])
+        catalogue = history.catalogue(self.source, self.root, act_loader=lambda path: {})
+        self.assertEqual(parallel["identity_claim"], catalogue["comparisons"][0]["identity_claim"])
+        self.payload["units"][0]["text_sha256"] = "0" * 64
+        with self.assertRaisesRegex(history.HistoryError, "hash mismatch"):
+            self.compare()
+
+    def test_comparison_relationship_requires_matching_catalogue_members(self):
+        with (self.root / "research.toml").open("a") as output:
+            output.write('\n[[records]]\nid="second"\nbook_label="Second witness"\n')
+        self.source.write_text(self.source.read_text().replace(
+            '[comparisons.left]\n', '[comparisons.left]\nrecord_id="research:manuscript"\n').replace(
+            '[comparisons.right]\n', '[comparisons.right]\nrecord_id="research:second"\n') + '''
+[[relationship_sets]]
+id="links"
+path="relationships.toml"
+''')
+        relation_path = self.root / "relationships.toml"
+        relation_path.write_text('''schema_version=1
+record_type="eucharistic-history-relationships"
+[[sources]]
+id="source"
+title="Constructed source"
+inspection_status="inspected"
+inspection="The exact fixture comparison was inspected."
+[[relationships]]
+id="sharing"
+kind="shared-text"
+from="research:manuscript"
+to="research:second"
+certainty="sourced"
+scope="A bounded prayer."
+basis="Constructed test alignment."
+limitations="No ancestry or introduction date."
+evidence=[{source_id="source",locus="Fixture paragraph"}]
+comparison_ids=["constructed-pair"]
+''')
+        payload = self.compare()
+        self.assertEqual(["links:sharing"], payload["relationship_ids"])
+        self.assertEqual("research:manuscript", payload["left"]["record_id"])
+        self.assertFalse(payload["relationships"][0]["directed"])
+        self.assertIn("relationships.toml", {row["path"] for row in payload["inputs"]})
+        catalogue = history.catalogue(self.source, self.root, act_loader=lambda path: {})
+        self.assertEqual(["links:sharing"], catalogue["comparisons"][0]["relationship_ids"])
+        self.assertEqual("comparisons/constructed-pair.json", catalogue["relationships"][0]["comparison_links"][0]["projection_path"])
+        self.source.write_text(self.source.read_text().replace('record_id="research:second"', 'record_id="research:manuscript"'))
+        with self.assertRaisesRegex(history.HistoryError, "endpoints do not match"):
+            self.compare()
+        self.source.write_text(self.source.read_text().replace('record_id="research:manuscript"', 'record_id="research:absent"'))
+        with self.assertRaisesRegex(history.HistoryError, "unresolved .* record_id"):
+            self.compare()
 
     def test_missing_duplicate_or_reversed_membership_is_refused(self):
         original = self.source.read_text()

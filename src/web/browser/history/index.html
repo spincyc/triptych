@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How the Missal Changed</title>
+<title>Eucharistic Books Through History</title>
 <!-- The shared machinery first, then this section's colour. Both are local;
      the page makes no external request of any kind. -->
 <link rel="stylesheet" href="../shared/browser-core.css">
@@ -13,21 +13,21 @@
 <a class="skip-link" href="#reading">Skip to the history</a>
 
 <header class="page-header">
-  <h1><span class="page-mark" aria-hidden="true">→</span>How the Missal Changed</h1>
+  <h1><span class="page-mark" aria-hidden="true">→</span>Eucharistic Books Through History</h1>
   <p class="lede">
-    Explore the acts and surviving printings recorded in this project’s missal
-    history. Open a station to inspect its evidence and the changes recorded
-    there. Separate lines preserve distinct traditions; a connection is drawn
-    only where the record supplies one.
+    Explore liturgical traditions, surviving books, and their documented
+    connections. Follow a route to its source evidence and available text
+    comparisons, or choose a tradition to read its books in date order.
   </p>
-  <p class="panel-note">Text coverage is partial. Stations and unit counts describe
-    this local record, not complete missals or every Catholic rite. Some units
+  <p class="panel-note">Text coverage is partial. Counts describe locally recorded
+    source material, not complete books or every Catholic rite. Some units
     carry only a heading or incipit; unread and withheld text remain explicit.</p>
   <p class="tally" id="tally"></p>
 </header>
 
 <nav class="history-views" aria-label="History views">
-  <a id="history-map-link" href="?view=map" aria-current="page">Historical map</a>
+  <a id="history-overview-link" href="?view=overview">Traditions &amp; connections</a>
+  <a id="history-map-link" href="?view=map" aria-current="page">Recorded historical lines</a>
   <a id="history-catalogue-link" href="?view=catalogue">Source catalogue</a>
 </nav>
 <div id="banner" class="banner" role="status" hidden></div>
@@ -42,9 +42,43 @@
     translation histories are deferred. A source record is not proof of a distinct
     version or a complete transcribed book.</p>
   <p class="panel-note">Dates order the records below; they do not establish
-    descent. No ancestry connections are drawn in this catalogue. A substantive
+    descent. Research connections retain their own type, evidence, and uncertainty. A substantive
     version requires evidence of changes to prayers, rubrics, calendar, or order;
     a reprint, rescan, or OCR difference alone does not qualify.</p>
+  <form id="catalogue-filter" class="catalogue-filter" role="search" aria-label="Filter source catalogue">
+    <label for="catalogue-family">Record group
+      <select id="catalogue-family" disabled><option value="">All record groups</option></select>
+    </label>
+    <label for="catalogue-query">Search source records
+      <input id="catalogue-query" type="search" maxlength="200" disabled>
+    </label>
+    <button id="catalogue-search" type="submit" disabled>Search</button>
+  </form>
+  <section id="history-overview" hidden aria-labelledby="overview-heading">
+    <h3 id="overview-heading">Traditions, books, and their recorded connections</h3>
+    <p>Follow a connection to its cited evidence or open a named book in the source
+      catalogue. Choose a group on the map to read its books and candidates in date order.
+      The filter above focuses connections and source records.
+      The historical line panels show recorded editions and reforms separately.
+      Other records remain visible in the coverage index below.</p>
+    <div class="relationship-key" aria-label="Research relationship legend">
+      <p><span class="key-arrow" aria-hidden="true">→</span> <strong>Borrowing / reception:</strong> a directed claim; its stated scope matters.</p>
+      <p><span class="key-double" aria-hidden="true">↔</span> <strong>Shared wording:</strong> a bounded comparison, not a claim of descent or introduction date.</p>
+      <p><span class="key-dotted" aria-hidden="true">⋯</span> <strong>Common ancestry:</strong> the cited attribution and uncertainty remain explicit.</p>
+      <p><span class="key-arrow" aria-hidden="true">→</span> <strong>Edition succession:</strong> a source-declared sequence, not automatic textual inheritance.</p>
+      <p>A dashed endpoint names a textual reference without inventing a dated donor edition.
+        Relationship numbers lead to evidence. Missing connections mean not yet investigated
+        or established here, never proof of isolation.</p>
+    </div>
+    <div id="overview-network"></div>
+    <h3>Books, relationships, and evidence</h3>
+    <div id="overview-connections"></div>
+    <h3>Coverage index</h3>
+    <p class="panel-note">These source-defined groups aid navigation; they are not
+      a census of Churches, rites, or distinct versions. Book records, scan acquisition,
+      transcription, and collation are separate findings.</p>
+    <ul id="overview-groups" class="overview-groups"></ul>
+  </section>
   <section id="catalogue-comparisons" class="catalogue-comparisons" aria-labelledby="catalogue-comparisons-heading" hidden>
     <h3 id="catalogue-comparisons-heading">Read a bounded witness comparison</h3>
     <p class="panel-note">Open a comparison to fetch the identified passages.
@@ -52,15 +86,6 @@
       A printed edition’s date does not date the introduction of a reading.</p>
     <div id="catalogue-comparison-list"></div>
   </section>
-  <form id="catalogue-filter" class="catalogue-filter" role="search" aria-label="Filter source catalogue">
-    <label for="catalogue-family">Tradition or use
-      <select id="catalogue-family" disabled><option value="">All traditions and uses</option></select>
-    </label>
-    <label for="catalogue-query">Search source records
-      <input id="catalogue-query" type="search" maxlength="200" disabled>
-    </label>
-    <button id="catalogue-search" type="submit" disabled>Search</button>
-  </form>
   <p id="catalogue-status" role="status" aria-live="polite"></p>
   <div id="catalogue-results" aria-busy="true"><p>Loading the source catalogue…</p></div>
   <section id="catalogue-detail" class="panel" aria-label="Selected source record" tabindex="-1" hidden></section>
@@ -71,11 +96,14 @@
 </section>
 
 <section id="historical-map" aria-label="Historical map">
+<p class="map-scope" id="map-scope">This view shows one accepted historical slice. For wider Catholic
+  traditions, earlier witnesses, and sourced cross-pollination, open
+  <a href="?view=overview" id="map-overview-link">Traditions &amp; connections</a>.</p>
+<p class="legend" id="legend"></p>
 <div id="map" class="map" tabindex="-1" aria-busy="true">
   <p class="placeholder">Loading the line…</p>
 </div>
 
-<p class="legend" id="legend"></p>
 
 <!-- Not a live region. Replacing it would read a whole station's diff aloud on
      every click; the one-line spoken summary says what changed instead. -->

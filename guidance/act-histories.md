@@ -1510,6 +1510,70 @@ The catalogue output is JSON only. Discovery never adds a normative station,
 historical parent or text-carry permission. The record counts are derived by
 these commands and are not maintained again in this guidance.
 
+### Typed relationships and named display groups
+
+The routing inventory's `[[relationship_sets]]` rows name an `id` and `path`.
+Each source inventory declares `schema_version = 1` and
+`record_type = "eucharistic-history-relationships"`, with `sources` and
+`relationships` tables. Each relationship requires a stable `id`, `kind`, exact
+`from` and `to` catalogue IDs, `certainty`, bounded `scope`, evidence `basis`,
+`limitations`, and `evidence = [{source_id = "...", locus = "..."}]`.
+An optional short `label` names the particular content, rather than requiring
+readers to interpret the type alone. Sources identify their title, optional
+HTTP(S) route, explicit `inspection_status` (`inspected` or `not-inspected`),
+and a nonempty account of what was inspected. A URL alone is not an inspection.
+
+The supported relationship kinds distinguish five claims:
+
+| Kind | Direction | Bounded claim |
+| --- | --- | --- |
+| `borrowing` | donor → recipient | Identified material was taken from the named source. |
+| `reception` | received source → recipient | The evidence documents receipt in the named setting. |
+| `shared-text` | symmetric | Both endpoints attest the identified material; no direction is inferred. |
+| `common-ancestry` | symmetric | The source attributes shared ancestry; an optional `ancestor_ref` resolves an independently recorded endpoint. |
+| `edition-succession` | earlier → successor | The source establishes the named edition sequence, not automatic whole-text inheritance. |
+
+Certainty remains the source author's explicit `sourced`, `attributed`,
+`disputed`, or `unresolved` classification. `sourced` requires inspected evidence;
+the checker does not infer historical certainty or primary-source strength from
+a URL or these flags. The cited locus, inspection account, scope and limitations
+remain visible for review. A separately evidenced `date_label` and structured
+`chronology` may date the relationship. Endpoint publication years never date
+the borrowing or shared wording. Missing bounds remain null.
+
+Where a source names a textual tradition but no exact donor edition, a cited
+`[[entities]]` row may identify that contextual endpoint. It has `id`, `label`,
+`kind = "textual-tradition"`, `family`, `scope`, `basis`, `limitations`, and
+inspected `evidence`. It accepts no date or chronology. Its generated ID is
+`<relationship-set>:entity:<id>` and it lives in `relationship_entities`, never
+among catalogue versions or historical stations. This avoids selecting an
+arbitrary printed edition as the donor. It does not manufacture a missing
+historical book or supply an ancestral date.
+
+The catalogue projects `relationships`, their original inventory/table/ID,
+resolved sources and comparison routes, plus `relationship_ids` on endpoint
+records. Related comparisons declare exact `record_id` values on both sides;
+the relationship's optional `comparison_ids` must resolve to those same two
+endpoints. The full comparison retains the relationship evidence and input
+fingerprints. A comparison of two particular editions cannot silently substitute
+for a source's broader tradition-level donor claim.
+
+All these links explicitly carry `git_ancestry = false` and
+`text_inheritance = false`. They are contextual evidence on the map, not act
+parents, merge instructions, normative admission, or permission to copy text.
+The existing reception and inheritance guards below continue to govern those
+separate claims. Missing research links do not establish that historical
+traditions were unrelated.
+
+Named presentation groups are source-owned routing rows:
+`[[presentation_groups]]` with stable `id`, reader-facing `label`, exact raw
+`families` aliases, and an optional `note`. Each alias belongs to at most one
+group. Entries retain their original `family` and add `presentation_group`;
+unmapped families remain visibly `unmapped`, without heuristic identity merging.
+Group `count` counts catalogue entries, while `entity_count` counts contextual
+entities separately. These are display groups, not a census of rites, Churches,
+recensions, or distinct liturgical versions.
+
 ### Ancestry does not automatically carry text
 
 `text_parents()` now separates textual inheritance from own-line ancestry.
@@ -1540,7 +1604,7 @@ proves that printing succession no longer carries newly introduced wording.
 act-only commit contract above: these commits declare `Record-kind:
 reconstruction` and `Historical-act-claimed: no`, receive no `act/` tags, and
 have no parents. They do not backfill the normative graph or infer descent
-between witnesses. The initially configured adapters are:
+between witnesses. The configured adapter families are:
 
 - `roman-1962-propers`: direct Latin proper bodies from the existing calendar
   owner, admitted only by its exact text hash, target-verification provenance
@@ -1554,6 +1618,16 @@ between witnesses. The initially configured adapters are:
   Reginae 337, as mediated by that edition. The printed edition date and the
   qualified represented witness date are separate; this is not a newly
   inspected manuscript or a complete Gregorian Canon.
+- Checked-passage adapters for Wilson's Gregorian and Gelasian *Hanc igitur*
+  and *Quam oblationem*, and Warner's Stowe versions of those prayers and the
+  *Sanctus*. These retain the named critical edition, its variants and the
+  declared treatment of typography and apparatus.
+- Three Brightman 1896 Greek adapters, for Basil, Chrysostom and James. Each
+  contains the selected priestly anamnesis/oblation and invocation over gifts;
+  intervening speaker labels and rubrics have explicit source offsets. These
+  are edition-mediated comparison witnesses, not Catholic promulgations or
+  complete anaphoras. James's manuscript attribution follows the edition's
+  fifteenth-century corrigendum.
 
 All adapters retain explicit omitted coverage. No supported temporal
 parent/child revision pair is claimed. A removed or quarantined proper body has no wording
@@ -1609,7 +1683,13 @@ repository; §18 still governs that separate action.
 ### Explicit witness comparison without historical descent
 
 `compare` reads a named `[[comparisons]]` declaration from the same routing
-inventory. The supported kind is `same-prayer-witness-comparison`. The record
+inventory. `same-prayer-witness-comparison` explicitly aligns witnesses of the
+same prayer and emits `identity_claim = "same-prayer-witnesses"`.
+`parallel-liturgical-unit-comparison` instead aligns a declared liturgical
+function, such as an epiclesis in different anaphoras, and emits
+`identity_claim = "parallel-function-not-same-composition"`. It does not assert
+that different compositions are one prayer or that one descends from another.
+Both kinds use the same membership, evidence and source-hash gates. The record
 must explicitly establish its membership, give an evidence basis and apparatus
 caveat, and cite canonical source IDs present in its checked adapters. Each
 `left` and `right` side names a configured `text_set` and an ordered `unit_ids`
@@ -1661,8 +1741,12 @@ are not automatically classified as substantive historical revisions.
 `plate --preview` adds `scripts/_act_history_preview.py` to the existing DOT
 route. It reads geometry from the actual browser implementation and produces
 SVG, PDF and PNG review artifacts plus a station-evidence catalogue PDF. The
-audit records the renderer, source hashes and retained graph identities. It
-does not draw candidate research records as accepted act stations.
+audit records the renderer, source hashes and retained graph identities.
+For liturgical slices the command also passes the current validated catalogue
+to the helper's separately labelled all-tradition overview; contextual entities
+remain undated, and research relationships never become detailed act parents.
+Other domains' previews retain their own scope. It does not draw candidate
+research records as accepted act stations.
 
 ```sh
 tools/act-history plate \

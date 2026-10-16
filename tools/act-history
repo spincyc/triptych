@@ -385,7 +385,7 @@ EXAMPLES = {
         Example(
             "tools/act-history catalogue --out .scratch/history-engine-expansion/example-catalogue.json",
             (
-                "wrote: 192 catalogue records",
+                "wrote: 243 catalogue records",
                 "  -> .scratch/history-engine-expansion/example-catalogue.json",
             ),
             note="Derived discovery records; no new normative station or ancestry is admitted.",
@@ -395,7 +395,7 @@ EXAMPLES = {
         Example(
             "tools/act-history corpus --out .scratch/history-engine-expansion/example-corpus",
             (
-                "wrote 1181 text units on 3 isolated reconstruction branches to .scratch/history-engine-expansion/example-corpus",
+                "wrote 1194 text units on 9 isolated reconstruction branches to .scratch/history-engine-expansion/example-corpus",
             ),
             note="Writes a disposable bare repository with isolated, bounded reconstructions; no historical ancestry is asserted.",
         ),
@@ -404,7 +404,7 @@ EXAMPLES = {
         Example(
             "tools/act-history structure --check",
             (
-                "current: 507 files for 3 slices, 118 stations on 23 lines",
+                "current: 526 files for 3 slices, 118 stations on 23 lines",
                 "  -> <repo>/src/web/data/structure/act-history",
             ),
             note=(
@@ -3844,7 +3844,7 @@ def build_structure_projection(sources: tuple[Path, ...], out: Path) -> dict:
         eucharistic_history.write_catalogue(catalogue, root / "catalogue.json")
         for declaration in catalogue["comparisons"]:
             comparison = eucharistic_history.compare(
-                routing, ROOT, declaration["id"], ventilator=ventilate,
+                routing, ROOT, declaration["id"], ventilator=ventilate, act_loader=load,
             )
             eucharistic_history.write_comparison(
                 comparison, root / declaration["projection_path"],
@@ -5162,7 +5162,7 @@ def main(argv: list[str] | None = None) -> int:
             if arguments.command == "corpus":
                 return eucharistic_history.corpus(source, ROOT, arguments.out, ventilator=ventilate)
             if arguments.command == "compare":
-                payload = eucharistic_history.compare(source, ROOT, arguments.comparison, ventilator=ventilate)
+                payload = eucharistic_history.compare(source, ROOT, arguments.comparison, ventilator=ventilate, act_loader=load)
                 if arguments.out is not None:
                     return eucharistic_history.write_comparison(payload, arguments.out)
                 return payload
@@ -5193,9 +5193,15 @@ def main(argv: list[str] | None = None) -> int:
                 from _act_history_preview import render_preview
                 projected = structure(data, arguments.out / ".preview-data")
                 spine = json.loads(Path(projected["written"]).read_text())
+                coverage = None
+                if data.get("record_type") == "liturgical-act-history":
+                    coverage = eucharistic_history.catalogue(
+                        ROOT / eucharistic_history.DEFAULT_SOURCE, ROOT, act_loader=load,
+                    )
                 payload["preview"] = render_preview(
                     plate_path=Path(payload["written"]), spine=spine, out_dir=arguments.out,
                     browser_source=ROOT / "src/web/browser/history/history.js",
+                    catalogue=coverage,
                 )
             return payload
         if arguments.command == "commonality":

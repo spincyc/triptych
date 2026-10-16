@@ -138,6 +138,196 @@
       return at;
     }
 
+    // A readable reflow of the existing graph tracks, not a second ancestry
+    // computation. Dates order labels within each line; distance is not time.
+    // Print consumes this exact model. Browser-measured label heights may expand
+    // a row, but never change its identity, order, track, or parent links.
+    function wrapLabel(value, width) {
+      const result = [];
+      String(value || '').split(/\s+/).forEach(function (word) {
+        const last = result.length - 1;
+        if (last < 0 || result[last].length + word.length + 1 > width) result.push(word);
+        else result[last] += ' ' + word;
+      });
+      return result;
+    }
+
+    function panelLayout(stations, lines, heights) {
+      const at = layout(stations);
+      const index = new Map(stations.map(function (s, i) { return [s.id, i]; }));
+      const stationById = new Map(stations.map(function (s) { return [s.id, s]; }));
+      const order = Array.from(new Set(stations.map(function (s) { return s.line; })));
+      const panels = order.map(function (line, i) {
+        const definition = (lines || []).find(function (row) { return row.id === line; });
+        const members = stations.filter(function (s) { return s.line === line; })
+          .sort(function (a, b) { return a.date.localeCompare(b.date) || index.get(a.id) - index.get(b.id); });
+        const tracks = Array.from(new Set(members.map(function (s) { return at.get(s.id).row; }))).sort(function (a,b) { return a-b; });
+        let top = 12;
+        const nodes = members.map(function (s) {
+          const height = Math.max(104, (heights && heights[s.id]) || 104);
+          const node = {id: s.id, x: 40 + tracks.indexOf(at.get(s.id).row) * 28,
+            y: top + 52, top: top, height: height, date: s.date, title: s.title,
+            titleLines: wrapLabel(s.title, 80), track: tracks.indexOf(at.get(s.id).row)};
+          top += height;
+          return node;
+        });
+        return {id: 'line-' + line, line: line, label: definition ? definition.label : line,
+          number: i + 1, width: 1000, textX: Math.max(130, 68 + tracks.length * 28),
+          height: top + 12, tracks: tracks.length, nodes: nodes, edges: []};
+      });
+      const panelByStation = new Map();
+      panels.forEach(function (p) { p.nodes.forEach(function (n) { panelByStation.set(n.id, p); }); });
+      panels.forEach(function (panel) {
+        const local = new Map(panel.nodes.map(function (n) { return [n.id,n]; }));
+        panel.nodes.forEach(function (to) {
+          const station = stationById.get(to.id);
+          (station.parents || []).forEach(function (parent) {
+            const origin = panelByStation.get(parent);
+            if (!origin) return;
+            const external = origin !== panel;
+            const from = external ? {x: to.x + 28, y: to.y - 32} : local.get(parent);
+            const bend = Math.min(28, Math.abs(to.y - from.y) / 2);
+            const path = from.x === to.x
+              ? 'M ' + from.x + ' ' + from.y + ' L ' + to.x + ' ' + to.y
+              : from.x < to.x
+                ? 'M ' + from.x + ' ' + from.y + ' L ' + to.x + ' ' + (from.y + bend) +
+                  ' L ' + to.x + ' ' + to.y
+                : 'M ' + from.x + ' ' + from.y + ' L ' + from.x + ' ' + (to.y - bend) +
+                  ' L ' + to.x + ' ' + to.y;
+            panel.edges.push({from: parent, to: to.id, path: path, external: external,
+              fromPanel: origin.number, toPanel: panel.number,
+              fromTitle: stationById.get(parent).title, toTitle: station.title,
+              reception: (station.receptions || []).some(function (r) { return r.from === parent; })});
+          });
+        });
+      });
+      return panels;
+    }
+
+    // Presentation groups are declared by the source owner. No UI alias table
+    // turns similar names into a new historical claim or a census of rites.
+    function overviewModel(data) {
+      const groups = new Map();
+      (data.presentation_groups || []).forEach(function (g) {
+        groups.set(g.id, {id:g.id, label:g.label, note:g.note || '', entries:[], entities:[]});
+      });
+      const endpoints = new Map();
+      (data.entries || []).concat(data.relationship_entities || []).forEach(function (row) {
+        const declared = row.presentation_group;
+        const group = declared || {id:'unmapped:' + row.family, label:row.family + ' (unmapped)'};
+        if (!groups.has(group.id)) groups.set(group.id, {id:group.id, label:group.label, note:'', entries:[], entities:[]});
+        const entity = row.kind === 'textual-tradition';
+        groups.get(group.id)[entity ? 'entities' : 'entries'].push(row);
+        endpoints.set(row.id, {id:row.id, title:row.title || row.label,
+          group:group.label, groupId:group.id, entity:entity,
+          date:entity ? 'Context entity; no dated witness plotted' : row.date_label,
+          chronology:entity ? null : row.chronology, record:row});
+      });
+      const relations = (data.relationships || []).map(function (row, i) {
+        return {id:row.id, number:i+1, label:row.label || row.kind, kind:row.kind,
+          from:endpoints.get(row.from), to:endpoints.get(row.to), record:row};
+      });
+      return {groups:Array.from(groups.values()).filter(function (g) { return g.entries.length || g.entities.length; })
+        .sort(function (a,b) { return a.label.localeCompare(b.label); }), relations:relations};
+    }
+
+    // A conventional radial network of declared presentation groups. Position
+    // encodes connectivity only, never time, ancestry, or admission as an act.
+    // Browser and print share this geometry and its complete relationship keys.
+    function networkStyle(kind) {
+      return {
+        borrowing:{color:'#a4482d',dash:'',label:'Borrowing',width:6},
+        reception:{color:'#176c79',dash:'16 5',label:'Reception',width:6},
+        'shared-text':{color:'#715091',dash:'3 6',label:'Shared wording',width:6},
+        'common-ancestry':{color:'#65742c',dash:'14 5 3 5',label:'Common ancestry',width:6},
+        'edition-succession':{color:'#3c5f91',dash:'',label:'Edition succession',width:3}
+      }[kind];
+    }
+
+    function networkLayout(data) {
+      const model = overviewModel(data);
+      const byGroup = new Map(model.groups.map(function (g) { return [g.id,g]; }));
+      const adjacent = new Map();
+      model.relations.forEach(function (r) {
+        [r.from.groupId,r.to.groupId].forEach(function (id) { if (!adjacent.has(id)) adjacent.set(id,new Set()); });
+        adjacent.get(r.from.groupId).add(r.to.groupId);
+        adjacent.get(r.to.groupId).add(r.from.groupId);
+      });
+      const components = [], seen = new Set();
+      Array.from(adjacent.keys()).sort().forEach(function (id) {
+        if (seen.has(id)) return;
+        const members = [], queue = [id]; seen.add(id);
+        while (queue.length) {
+          const next = queue.shift(); members.push(next);
+          adjacent.get(next).forEach(function (other) { if (!seen.has(other)) { seen.add(other); queue.push(other); } });
+        }
+        components.push(members);
+      });
+      components.sort(function (a,b) { return b.length-a.length || a[0].localeCompare(b[0]); });
+      return components.map(function (members, componentIndex) {
+        members.sort(function (a,b) { return adjacent.get(b).size-adjacent.get(a).size || byGroup.get(a).label.localeCompare(byGroup.get(b).label); });
+        const small = members.length <= 3;
+        const width = small ? 1000 : 1800, height = small ? 480 : Math.max(1500,Math.ceil((members.length-1)/2)*126+180);
+        const cx = width/2, cy = height/2, radius = Math.min(490,cy-180);
+        const nodes = members.map(function (id,i) {
+          const group = byGroup.get(id), angle = -Math.PI/2 + (i-1)*2*Math.PI/(members.length-1 || 1);
+          const x = small ? members.length === 3 ? [500,220,780][i] : width*(i+1)/(members.length+1) : i === 0 ? cx : cx+radius*Math.cos(angle);
+          const y = small ? members.length === 3 ? [70,290,290][i] : 170 : i === 0 ? cy : cy+radius*Math.sin(angle);
+          return {id:id,label:group.label,x:x,y:y,labelX:x,labelY:y+50,anchor:'middle',
+            labelLines:wrapLabel(group.label,small ? 20 : 25),hub:!small && i === 0,
+            recordCount:group.entries.length,contextCount:group.entities.length,
+            within:model.relations.filter(function (r) { return r.from.groupId === id && r.to.groupId === id; }).map(function (r) { return r.number; })};
+        });
+        nodes.forEach(function (node) {
+          node.caption = node.recordCount ? node.recordCount+' record'+(node.recordCount === 1 ? '' : 's')
+            : node.contextCount+' textual reference'+(node.contextCount === 1 ? '' : 's');
+          if (node.within.length) node.caption += ' · '+node.within.length+' within-group link'+(node.within.length === 1 ? '' : 's');
+        });
+        if (!small) {
+          [-1,1].forEach(function (side) {
+            const sideNodes = nodes.slice(1).filter(function (n) { return (n.x < cx ? -1 : 1) === side; }).sort(function (a,b) { return a.y-b.y; });
+            sideNodes.forEach(function (n,i) {
+              n.labelX = side < 0 ? 30 : width-30;
+              n.labelY = 80 + i*(height-280)/Math.max(1,sideNodes.length-1);
+              n.anchor = side < 0 ? 'start' : 'end';
+              const endX = side < 0 ? 365 : width-365;
+              n.leader = 'M '+n.x+' '+n.y+' L '+endX+' '+n.labelY;
+            });
+          });
+          nodes[0].labelY = cy-75;
+        }
+        const local = new Map(nodes.map(function (n) { return [n.id,n]; })), bundles = new Map();
+        const relations = model.relations.filter(function (r) { return local.has(r.from.groupId); });
+        relations.forEach(function (r) {
+          if (r.from.groupId === r.to.groupId) return;
+          let from = r.from.groupId, to = r.to.groupId;
+          if (!r.record.directed && from > to) { const swap = from; from = to; to = swap; }
+          const key = [from,to,r.kind,r.record.certainty].join('|');
+          if (!bundles.has(key)) bundles.set(key,{from:from,to:to,kind:r.kind,certainty:r.record.certainty,directed:r.record.directed,numbers:[],ids:[]});
+          bundles.get(key).numbers.push(r.number); bundles.get(key).ids.push(r.id);
+        });
+        const edges = Array.from(bundles.values());
+        edges.forEach(function (e) {
+          const a = local.get(e.from), b = local.get(e.to);
+          const siblings = edges.filter(function (other) { return [other.from,other.to].sort().join('|') === [e.from,e.to].sort().join('|'); });
+          const offset = (siblings.indexOf(e)-(siblings.length-1)/2)*34;
+          const dx = b.x-a.x, dy = b.y-a.y, length = Math.hypot(dx,dy)||1;
+          const ax = a.x+dx/length*16, ay = a.y+dy/length*16, bx = b.x-dx/length*20, by = b.y-dy/length*20;
+          const orientation = e.from < e.to ? 1 : -1;
+          let mx = (ax+bx)/2-dy/length*offset*orientation, my = (ay+by)/2+dx/length*offset*orientation;
+          // Peripheral routes must not appear to stop at the central group.
+          if (!small && !a.hub && !b.hub && Math.hypot(mx-cx,my-cy) < 180) {
+            const distance = Math.hypot(mx-cx,my-cy);
+            if (distance > 10) { mx += (mx-cx)/distance*300; my += (my-cy)/distance*300; }
+            else { mx += -dy/length*300; my += dx/length*300; }
+          }
+          e.path = 'M '+ax+' '+ay+' Q '+mx+' '+my+' '+bx+' '+by;
+          e.label = a.label+(e.directed ? ' → ' : ' ↔ ')+b.label+' · '+e.kind+' · '+e.certainty+' · '+e.numbers.map(function (n) { return 'R'+String(n).padStart(2,'0'); }).join(', ');
+        });
+        return {number:componentIndex+1,width:width,height:height,nodes:nodes,edges:edges,relations:relations.map(function (r) { return r.number; })};
+      });
+    }
+
     function extent(at) {
       let cols = 0;
       let rows = 0;
@@ -227,6 +417,11 @@
         kindsAreStated: kindsAreStated,
         kindOf: kindOf,
         layout: layout,
+        panelLayout: panelLayout,
+        overviewModel: overviewModel,
+        networkLayout: networkLayout,
+        networkStyle: networkStyle,
+        wrapLabel: wrapLabel,
         extent: extent,
         afterBase: afterBase,
         shortName: shortName,
@@ -425,113 +620,124 @@
 
   function draw() {
     const stations = spine.stations || [];
+    T.clear(map);
     if (!stations.length) {
-      T.clear(map);
-      map.setAttribute('aria-busy', 'false');
       map.appendChild(T.el('p', 'placeholder', 'This slice records no stations.'));
+      map.setAttribute('aria-busy', 'false');
       return;
     }
-    const at = M.layout(stations);
-    const size = M.extent(at);
-    const width = PAD * 2 + Math.max(size.cols - 1, 0) * COL;
-    const height = PAD * 2 + Math.max(size.rows - 1, 0) * ROW + 46;
-
-    const canvas = svg('svg', {
-      viewBox: '0 0 ' + width + ' ' + height,
-      width: width,
-      height: height,
-      // A group preserves the station buttons in the accessibility tree.
-      role: 'group',
-      'aria-describedby': 'legend',
-      'aria-label': 'The acts this record carries, drawn as a line with ' +
-        stations.length + ' stations on ' + size.rows + ' tracks'
+    const panels = M.panelLayout(stations, spine.lines);
+    map.setAttribute('aria-label', 'The acts this record carries: ' + stations.length + ' stations in dated line panels');
+    map.appendChild(T.el('h2', null, 'Recorded historical lines'));
+    map.appendChild(T.el('p', 'panel-note',
+      'Read dates downward within each line. Spacing separates recorded stations, not elapsed years. ' +
+      'Separate starting points mark the limits of this record, not independent historical origins. ' +
+      'An ending here does not establish suppression or extinction.'));
+    const contents = T.el('nav', 'line-index');
+    contents.setAttribute('aria-label', 'Recorded line index');
+    panels.forEach(function (panel) {
+      const link = T.el('a', null, panel.number + '. ' + panel.label);
+      link.href = '#' + panel.id;
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        document.getElementById(panel.id).scrollIntoView({block:'start'});
+        document.getElementById(panel.id).focus();
+      });
+      contents.appendChild(link);
     });
-
-    // Connectors first, so a station always sits above its own track.
-    stations.forEach(function (station) {
-      const kind = M.kindOf(station, kindsStated);
-      (station.parents || []).forEach(function (parent) {
-        if (!at.has(parent)) return;
-        const reception = receptionsOf(station).find(function (row) { return row.from === parent; });
-        const classes = ['track', 'track-to-' + kind];
-        if (reception) classes.push('track-reception');
-        // The record says the descent crosses an edition it does not hold, so
-        // the connector says so rather than joining the ends.
-        if ((station.via_unrepresented || []).length) classes.push('track-gap');
-        const path = svg('path', {
-          d: connector(at.get(parent), at.get(station.id)),
-          class: classes.join(' '),
-          fill: 'none',
-          'data-from': parent,
-          'data-to': station.id,
-          role: 'img',
-          'aria-label': (reception ? 'Documented reception' : 'Recorded parent link') +
-            ' from ' + nameOf(byId.get(parent)) + ' to ' + nameOf(station) +
-            (reception ? ': ' + (RECEPTION_WORDS[reception.kind] || reception.kind)
-              : station.parent_kind ? ': ' + station.parent_kind : '')
+    map.appendChild(contents);
+    panels.forEach(function (panel) {
+      const section = T.el('section', 'route-panel');
+      section.id = panel.id;
+      section.tabIndex = -1;
+      section.appendChild(T.el('h3', null, panel.number + '. ' + panel.label));
+      section.appendChild(T.el('p', 'panel-note', panel.nodes.length + ' recorded stations · ' +
+        panel.nodes[0].date + ' – ' + panel.nodes[panel.nodes.length-1].date + ' · dates increase ↓'));
+      const body = T.el('div', 'route-body');
+      const canvas = svg('svg', {class:'route-geometry', width:panel.textX, height:panel.height,
+        viewBox:'0 0 ' + panel.textX + ' ' + panel.height, 'aria-hidden':'true',
+        'aria-label':'The acts this record carries: ' + stations.length + ' stations across the map; this panel is ' + panel.label});
+      const labels = T.el('ol', 'route-labels');
+      labels.style.marginLeft = panel.textX + 'px';
+      panel.nodes.forEach(function (node) {
+        const station = byId.get(node.id);
+        const item = T.el('li', 'route-stop');
+        item.setAttribute('data-label-for', node.id);
+        item.appendChild(T.el('p', 'route-date', station.date + ' · ' + M.kindOf(station, kindsStated)));
+        const button = T.el('button', 'station route-title' +
+          (receptionsOf(station).length ? ' station-interchange' : ''));
+        button.appendChild(T.el('span', 'route-title-text', station.title));
+        const moved = magnitude(station);
+        const count = M.kindOf(station, kindsStated) === M.PROMULGATED
+          ? (moved ? moved + ' changed' : 'nothing changed')
+          : (moved ? moved + ' differ' : 'nothing differs');
+        const caption = T.el('span', 'route-count-caption', 'Recorded units: ');
+        caption.appendChild(T.el('span', 'station-count', count));
+        button.appendChild(caption);
+        button.type = 'button';
+        button.setAttribute('data-station', node.id);
+        button.setAttribute('aria-label', station.title + ', ' + station.date + ', ' +
+          M.kindOf(station, kindsStated) + ', ' + changeSummary(station) +
+          (receptionsOf(station).length ? ', documented reception from ' +
+          receptionsOf(station).map(function (r) { return byId.get(r.from).title; }).join('; ') : ''));
+        button.addEventListener('click', function () { open(node.id); revealDetail(); });
+        item.appendChild(button);
+        const incoming = panel.edges.filter(function (edge) { return edge.to === node.id && edge.external; });
+        incoming.forEach(function (edge) {
+          const ref = T.el('a', 'route-reference',
+            (edge.reception ? 'Reception from ' : 'Parent link from ') + edge.fromTitle + ' · line ' + edge.fromPanel);
+          ref.href = '#station=' + encodeURIComponent(edge.from);
+          ref.addEventListener('click', function (event) { event.preventDefault(); open(edge.from); revealDetail(); });
+          item.appendChild(ref);
         });
-        canvas.appendChild(path);
-        // A hollow band distinguishes reception without borrowing the broken
-        // stroke that already means an unrepresented edition.
-        if (reception) canvas.appendChild(svg('path', {
-          d: path.getAttribute('d'),
-          class: 'track-reception-core' + (classes.includes('track-gap') ? ' track-gap' : ''),
-          'aria-hidden': 'true'
-        }));
+        panels.forEach(function (other) {
+          other.edges.filter(function (edge) { return edge.external && edge.from === node.id; }).forEach(function (edge) {
+            const ref = T.el('a', 'route-reference', 'Linked to ' + edge.toTitle + ' · line ' + edge.toPanel);
+            ref.href = '#station=' + encodeURIComponent(edge.to);
+            ref.addEventListener('click', function (event) { event.preventDefault(); open(edge.to); revealDetail(); });
+            item.appendChild(ref);
+          });
+        });
+        if (station.parent_kind === 'use-continuity' || station.parent_kind === 'line-order') item.appendChild(
+          T.el('p', 'route-reference', 'Sequence in this record; textual descent is not established by this link.'));
+        if ((station.via_unrepresented || []).length) item.appendChild(T.el('p', 'route-reference',
+          'Broken link: intervening edition or act not represented here.'));
+        labels.appendChild(item);
       });
+      body.appendChild(canvas);
+      body.appendChild(labels);
+      section.appendChild(body);
+      map.appendChild(section);
+      function paint() {
+        const heights = {};
+        Array.from(labels.children).forEach(function (item, i) {
+          heights[panel.nodes[i].id] = item.getBoundingClientRect().height;
+        });
+        const measured = M.panelLayout(stations, spine.lines, heights).find(function (p) { return p.line === panel.line; });
+        T.clear(canvas);
+        canvas.setAttribute('height', measured.height);
+        canvas.setAttribute('viewBox', '0 0 ' + measured.textX + ' ' + measured.height);
+        measured.edges.forEach(function (edge) {
+          const station = byId.get(edge.to);
+          const classes = 'track track-evidence-' + (station.parent_kind || 'unstated') + (edge.reception ? ' track-reception' : '') +
+            ((station.via_unrepresented || []).length ? ' track-gap' : '');
+          const path = svg('path', {d:edge.path, class:classes, 'data-from':edge.from, 'data-to':edge.to,
+            'aria-label': (edge.reception ? 'Documented reception' : 'Recorded parent link') +
+              ' from ' + edge.fromTitle + ' to ' + edge.toTitle});
+          canvas.appendChild(path);
+          if (edge.reception) canvas.appendChild(svg('path', {d:edge.path, class:'track-reception-core'}));
+        });
+        measured.nodes.forEach(function (node) {
+          const station = byId.get(node.id);
+          const group = svg('g', {class:'kind-' + M.kindOf(station, kindsStated)});
+          if (receptionsOf(station).length) group.appendChild(svg('circle', {cx:node.x,cy:node.y,r:14,class:'station-interchange-ring'}));
+          group.appendChild(svg('circle', {cx:node.x,cy:node.y,r:8,class:'station-mark'}));
+          canvas.appendChild(group);
+        });
+      }
+      paint();
+      if (typeof ResizeObserver !== 'undefined') new ResizeObserver(paint).observe(labels);
     });
-
-    stations.forEach(function (station) {
-      const where = at.get(station.id);
-      const x = PAD + where.col * COL;
-      const y = PAD + where.row * ROW;
-      const kind = M.kindOf(station, kindsStated);
-      const received = receptionsOf(station);
-      const group = svg('g', {
-        class: 'station line-' + station.line + ' kind-' + kind +
-          (received.length ? ' station-interchange' : ''),
-        tabindex: '0',
-        role: 'button',
-        'data-station': station.id,
-        'aria-label': nameOf(station) + ', ' + station.date + ', ' + kind +
-          ', ' + changeSummary(station) +
-          (received.length ? ', documented reception from ' + received.map(function (row) {
-            return nameOf(byId.get(row.from));
-          }).join('; ') : '')
-      });
-      if (received.length) group.appendChild(svg('circle', {
-        cx: x, cy: y, r: 16, class: 'station-interchange-ring', 'aria-hidden': 'true'
-      }));
-      group.appendChild(svg('circle', { cx: x, cy: y, r: 9, class: 'station-mark' }));
-      const name = svg('text', { x: x, y: y - 24, class: 'station-name' });
-      name.textContent = M.shortName(station.id);
-      const when = svg('text', { x: x, y: y + 32, class: 'station-year' });
-      when.textContent = M.year(station.date);
-      const count = svg('text', { x: x, y: y + 48, class: 'station-count' });
-      const moved = magnitude(station);
-      count.textContent = kind === M.PROMULGATED
-        ? (moved ? moved + ' changed' : 'nothing changed')
-        : (moved ? moved + ' differ' : 'nothing differs');
-      group.appendChild(name);
-      group.appendChild(when);
-      group.appendChild(count);
-      group.addEventListener('click', function () { open(station.id); });
-      group.addEventListener('keydown', function (event) {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          open(station.id);
-        }
-      });
-      canvas.appendChild(group);
-    });
-
-    T.clear(map);
-    const scroller = T.el('div', 'map-scroll');
-    scroller.tabIndex = 0;
-    scroller.setAttribute('role', 'region');
-    scroller.setAttribute('aria-label', 'History map; scroll horizontally to reach further stations');
-    scroller.appendChild(canvas);
-    map.appendChild(scroller);
     map.setAttribute('aria-busy', 'false');
   }
 
@@ -1001,6 +1207,12 @@
     T.statusLine('This record carries no station with the id ' + id + '.');
   }
 
+  function revealDetail() {
+    detail.tabIndex = -1;
+    detail.scrollIntoView({block:'start'});
+    detail.focus();
+  }
+
   function open(id) {
     const station = byId.get(id);
     if (!station) return;
@@ -1011,6 +1223,15 @@
 
     T.clear(detail);
     detail.hidden = false;
+    const returnToMap = T.el('button', 'link-button', 'Back to this station on the map');
+    returnToMap.type = 'button';
+    returnToMap.addEventListener('click', function () {
+      const button = Array.from(document.querySelectorAll('.route-title')).find(function (node) {
+        return node.getAttribute('data-station') === id;
+      });
+      if (button) { button.scrollIntoView({block:'center'}); button.focus(); }
+    });
+    detail.appendChild(returnToMap);
     detail.appendChild(T.el('h2', 'detail-title', nameOf(station)));
     detail.appendChild(facts(station));
     const received = receptionsOf(station);
@@ -1244,28 +1465,26 @@
         'This record holds one line, so there is no pair to compare.'));
       return;
     }
-    pairs.forEach(function (pair) {
+    const unconnected = pairs.filter(function (pair) { return !(pair.shared_base || []).length; });
+    if (unconnected.length) {
+      const fold = T.el('details', 'unconnected-pairs');
+      fold.appendChild(T.el('summary', null, unconnected.length + ' line pairs have no shared act recorded'));
+      fold.appendChild(T.el('p', 'panel-note', 'Earlier ancestry and shared wording are not established by this graph. ' +
+        'These are gaps in the encoded evidence, not proof of isolation. The traditions and connections overview ' +
+        'carries separate source-cited research claims and bounded text comparisons.'));
+      const list = T.el('ul', null);
+      unconnected.forEach(function (pair) {
+        list.appendChild(T.el('li', null, lineLabel(pair.a) + ' / ' + lineLabel(pair.b)));
+      });
+      fold.appendChild(list);
+      linesView.appendChild(fold);
+    }
+    pairs.filter(function (pair) { return (pair.shared_base || []).length; }).forEach(function (pair) {
       const card = T.el('article', 'junction');
       card.appendChild(T.el('h3', 'junction-head',
         lineLabel(pair.a) + ' and ' + lineLabel(pair.b)));
 
       const bases = pair.shared_base || [];
-      if (!bases.length) {
-        // The commonest answer in liturgical history, and a finding rather than
-        // a failure: two rites with no act in common in this record.
-        card.appendChild(T.el('p', 'detail-weak',
-          'No act in this record stands behind both lines, so they share no ' +
-          'station here. That is a finding and not a gap: an edge drawn ' +
-          'between them would be an invention. They may still hold the same ' +
-          'prayer word for word — inheritance older than anything this record ' +
-          'carries — and that comparison is made by the generator against the ' +
-          'repository it emits, not here.'));
-        card.appendChild(sideOfJunction(null, pair.a));
-        card.appendChild(sideOfJunction(null, pair.b));
-        linesView.appendChild(card);
-        return;
-      }
-
       const parted = pair.diverged_at || bases[bases.length - 1];
       const base = T.el('p', 'junction-base');
       base.appendChild(document.createTextNode(
@@ -1339,6 +1558,14 @@
     legend.appendChild(T.el('span', 'legend-item',
       'A crossing without a station marker asserts no connection. Parent links ' +
       'follow the recorded evidence; order alone does not establish textual descent.'));
+    [['stated', 'Wider line: an act or book states the parent link'],
+      ['attributed', 'Medium line: a cited scholarly attribution'],
+      ['sequence', 'Narrower line: recorded sequence; textual descent not established']].forEach(function (entry) {
+      const item = T.el('span', 'legend-item legend-' + entry[0]);
+      item.appendChild(T.el('span', 'legend-mark'));
+      item.appendChild(document.createTextNode(entry[1]));
+      legend.appendChild(item);
+    });
     const broken = stations.filter(function (station) {
       return (station.via_unrepresented || []).length;
     }).length;
@@ -1360,6 +1587,8 @@
   function start(data) {
     spine = data;
     readVocabulary(data);
+    const scope = document.getElementById('map-scope');
+    if (scope) scope.hidden = data.vocabulary !== 'liturgy';
     const stations = data.stations || [];
     byId = new Map(stations.map(function (station) { return [station.id, station]; }));
     kindsStated = M.kindsAreStated(stations);
@@ -1371,8 +1600,8 @@
       return !(station.parents || []).length;
     }).length;
     tally.textContent = stations.length + ' stations on ' + (data.lines || []).length +
-      ' lines, from ' + roots + (roots === 1 ? ' origin' : ' separate origins') +
-      (lines.length ? ' — ' + lines.join('; ') : '');
+      ' recorded lines; ' + roots + ' unconnected starting points in this record. ' +
+      'This is the selected historical slice, not a comprehensive history.';
 
     fillUnits();
     renderJunctions();
@@ -1425,6 +1654,7 @@
    * Its chronology and source states come from the generator. In particular,
    * sorting records never supplies a parent edge or admits a new station. */
   const CATALOGUE = 'structure/act-history/catalogue.json';
+  let catalogueData = null;
 
   function catalogueValid(data) {
     const object = function (value) { return value && typeof value === 'object' && !Array.isArray(value); };
@@ -1433,7 +1663,7 @@
     if (!object(data) || data.schema !== 'triptych-eucharistic-history/v1' ||
         !Array.isArray(data.entries) || !Array.isArray(data.limitations) ||
         !data.limitations.every(string) || !Array.isArray(data.text_sets)) return false;
-    return data.entries.every(function (row) {
+    const entriesValid = data.entries.every(function (row) {
       if (!object(row) || !row.id || ids.has(row.id)) return false;
       ids.add(row.id);
       if (!['id', 'family', 'title', 'date_label', 'record_kind', 'evidence_status',
@@ -1449,6 +1679,35 @@
           !/^[a-z0-9][a-z0-9-]*$/.test(row.act_ref.station_id || ''))) return false;
       return true;
     }) && data.text_sets.every(object);
+    if (!entriesValid) return false;
+    if (data.presentation_groups !== undefined && (!Array.isArray(data.presentation_groups) ||
+        !data.presentation_groups.every(function (g) { return object(g) && string(g.id) && string(g.label); }))) return false;
+    for (const entity of data.relationship_entities || []) {
+      if (!object(entity) || !string(entity.id) || ids.has(entity.id) ||
+          entity.kind !== 'textual-tradition' || entity.chronology !== null ||
+          !string(entity.label) || !string(entity.family) || !Array.isArray(entity.evidence)) return false;
+      ids.add(entity.id);
+    }
+    if (data.relationships === undefined) return true;
+    if (!Array.isArray(data.relationships)) return false;
+    const relationshipIds = new Set();
+    return data.relationships.every(function (row) {
+      if (!object(row) || !string(row.id) || relationshipIds.has(row.id)) return false;
+      relationshipIds.add(row.id);
+      return ids.has(row.from) && ids.has(row.to) && row.from !== row.to &&
+        ['borrowing','reception','shared-text','common-ancestry','edition-succession'].includes(row.kind) &&
+        ['sourced','attributed','disputed','unresolved'].includes(row.certainty) &&
+        row.directed === ['borrowing','reception','edition-succession'].includes(row.kind) && row.git_ancestry === false && row.text_inheritance === false &&
+        ['scope','basis','limitations'].every(function (key) { return string(row[key]) && row[key].trim(); }) &&
+        Array.isArray(row.evidence) && row.evidence.length > 0 && row.evidence.every(function (e) {
+          return object(e) && string(e.source_id) && string(e.locus) && object(e.source) &&
+            string(e.source.title) && ['inspected','not-inspected'].includes(e.source.inspection_status) &&
+            (row.certainty !== 'sourced' || e.source.inspection_status === 'inspected');
+        }) && Array.isArray(row.comparison_links) && row.comparison_links.every(function (c) {
+          return object(c) && /^[a-z0-9][a-z0-9-]*$/.test(c.id || '') &&
+            c.projection_path === 'comparisons/' + c.id + '.json';
+        });
+    });
   }
 
   function catalogueText(value) {
@@ -1507,7 +1766,8 @@
       fields.appendChild(T.el('dt', null, label));
       fields.appendChild(T.el('dd', null, catalogueText(value)));
     };
-    add('Tradition or use', row.family);
+    add('Record group', row.presentation_group ? row.presentation_group.label : row.family);
+    add('Family in source inventory', row.family);
     add('Language as recorded', row.source_record.language || row.source_record.languages);
     if (row.source_record.language_scope || row.source_record.inclusion_status) {
       add('Language scope', row.source_record.language_scope || row.source_record.inclusion_status);
@@ -1535,6 +1795,7 @@
       target.appendChild(paragraph);
     } else target.appendChild(T.el('p', 'panel-note',
       'No accepted act-history station is linked to this record.'));
+    appendRecordRelations(row, target);
     target.appendChild(T.el('h4', null, 'Sources and access'));
     const sources = T.el('ul', 'catalogue-sources');
     row.sources.forEach(function (source) {
@@ -1559,9 +1820,255 @@
     target.appendChild(original);
   }
 
+  const RELATION_WORDS = {
+    borrowing:'Borrowing', reception:'Reception', 'shared-text':'Shared wording',
+    'common-ancestry':'Common ancestry', 'edition-succession':'Edition succession'
+  };
+
+  function endpointLink(endpoint) {
+    if (endpoint.entity) return T.el('span', 'relation-entity', endpoint.title);
+    const link = T.el('a', null, endpoint.title);
+    link.href = historyURL('catalogue', null, catalogueHash('', '', endpoint.id));
+    return link;
+  }
+
+  function relationshipEvidence(relation, target, data) {
+    const row = relation.record;
+    target.appendChild(T.el('p', 'relation-claim', row.basis));
+    target.appendChild(T.el('p', 'panel-note', 'Scope: ' + row.scope));
+    target.appendChild(T.el('p', 'detail-weak', row.limitations));
+    target.appendChild(T.el('p', 'panel-note',
+      'This research relationship does not create a historical station, a Git parent, or inherited text.'));
+    const citations = T.el('ul', 'catalogue-sources');
+    row.evidence.forEach(function (evidence) {
+      const item = T.el('li', null);
+      item.appendChild(catalogueLink(evidence.source.url, evidence.source.title));
+      item.appendChild(T.el('p', null, evidence.locus));
+      item.appendChild(T.el('p', 'panel-note', 'Source inspection: ' + evidence.source.inspection_status +
+        ' · ' + catalogueText(evidence.source.inspection)));
+      citations.appendChild(item);
+    });
+    target.appendChild(citations);
+    (row.comparison_links || []).forEach(function (link) {
+      const declaration = (data.comparisons || []).find(function (c) { return c.id === link.id; });
+      if (!declaration) return;
+      const fold = lazyBlock('Read linked text comparison: ' + (declaration.label || declaration.title || declaration.id),
+        'structure/act-history/' + link.projection_path, function (host,payload) {
+          renderComparison(host,payload,declaration);
+        });
+      fold.classList.add('comparison-fold');
+      target.appendChild(fold);
+    });
+    target.appendChild(T.el('p', 'panel-note', 'Relationship ID: ' + row.id));
+  }
+
+  function relationDiagram(relation, data, overviewAnchor) {
+    const row = relation.record;
+    const article = T.el('article', 'research-connection relation-' + row.kind);
+    article.setAttribute('data-relationship', row.id);
+    if (overviewAnchor) article.id = 'research-R' + String(relation.number).padStart(2,'0');
+    const caption = T.el('h4', null, 'R' + String(relation.number).padStart(2,'0') + ' · ' +
+      RELATION_WORDS[row.kind] + ' · ' + row.certainty);
+    article.appendChild(caption);
+    if (row.label && row.label !== row.kind) article.appendChild(T.el('p', 'relation-subtitle', row.label));
+    const diagram = T.el('div', 'relationship-diagram');
+    [relation.from,relation.to].forEach(function (endpoint,i) {
+      if (i) {
+        const bridge = T.el('span', 'relationship-bridge' + (row.directed ? ' directed' : ''));
+        bridge.setAttribute('aria-label', row.directed ? 'directed relationship' : 'symmetric relationship');
+        bridge.appendChild(T.el('span', null, row.directed ? '→' : '↔'));
+        diagram.appendChild(bridge);
+      }
+      const stop = T.el('div', 'relationship-endpoint' + (endpoint.entity ? ' conceptual-endpoint' : ''));
+      stop.appendChild(T.el('p', 'endpoint-group', endpoint.group));
+      stop.appendChild(endpointLink(endpoint));
+      stop.appendChild(T.el('p', 'panel-note', endpoint.date));
+      if (endpoint.entity) {
+        const qualification = T.el('details', 'entity-evidence');
+        qualification.appendChild(T.el('summary', null, 'Why this textual tradition is named'));
+        ['scope','basis','limitations'].forEach(function (key) {
+          if (endpoint.record[key]) qualification.appendChild(T.el('p', 'panel-note', endpoint.record[key]));
+        });
+        (endpoint.record.evidence || []).forEach(function (evidence) {
+          if (!evidence.source) return;
+          const source = T.el('p', 'panel-note');
+          source.appendChild(catalogueLink(evidence.source.url, evidence.source.title));
+          source.appendChild(T.el('span', null, ' · ' + evidence.locus + ' · ' + evidence.source.inspection_status));
+          qualification.appendChild(source);
+        });
+        stop.appendChild(qualification);
+      }
+      stop.appendChild(T.el('p', 'endpoint-status', endpoint.entity
+        ? 'Textual reference, shown without a date axis'
+        : endpoint.record.act_ref ? 'Recorded edition or reform'
+          : 'Historical book candidate'));
+      if (!endpoint.entity) stop.appendChild(T.el('p', 'panel-note',
+        endpoint.record.record_kind + ' · Evidence: ' + endpoint.record.evidence_status));
+      diagram.appendChild(stop);
+    });
+    article.appendChild(diagram);
+    const evidence = T.el('details', 'relation-evidence');
+    evidence.appendChild(T.el('summary', null, 'Evidence, scope, and limits' +
+      (row.comparison_links.length ? ' · linked text comparison' : '')));
+    relationshipEvidence(relation,evidence,data);
+    article.appendChild(evidence);
+    return article;
+  }
+
+  function appendRecordRelations(row, target) {
+    if (!catalogueData) return;
+    const relations = M.overviewModel(catalogueData).relations.filter(function (r) {
+      return r.from.id === row.id || r.to.id === row.id;
+    });
+    target.appendChild(T.el('h4', null, 'Recorded research connections'));
+    if (!relations.length) target.appendChild(T.el('p', 'panel-note',
+      'Connections for this record have not yet been investigated or established here. This does not establish historical isolation.'));
+    relations.forEach(function (r) { target.appendChild(relationDiagram(r,catalogueData)); });
+  }
+
+  function renderNetwork(data, selectedFamily) {
+    const host = document.getElementById('overview-network');
+    if (!host) return;
+    T.clear(host);
+    const panels = M.networkLayout(data);
+    host.appendChild(T.el('h3', null, 'Traditions and documented connections'));
+    host.appendChild(T.el('p', 'panel-note',
+      'Follow the colored routes between named groups, then open an R reference for the exact books, evidence, and text comparisons. ' +
+      'Positions show connections, not dates or historical origins. A crossing without a circle is not a connection. ' +
+      'Groups without a recorded relationship remain in the coverage index; their connections have not yet been investigated or established here.'));
+    const legend = T.el('ul', 'network-legend');
+    ['borrowing','reception','shared-text','common-ancestry','edition-succession'].forEach(function (kind) {
+      const style = M.networkStyle(kind), item = T.el('li');
+      const sample = svg('svg',{viewBox:'0 0 64 14',width:64,height:14,'aria-hidden':'true'});
+      sample.appendChild(svg('path',{d:'M 2 7 L 62 7',stroke:style.color,'stroke-width':style.width,'stroke-dasharray':style.dash,fill:'none'}));
+      item.appendChild(sample); item.appendChild(T.el('span',null,style.label)); legend.appendChild(item);
+    });
+    host.appendChild(legend);
+    host.appendChild(T.el('p','panel-note',
+      'Arrowheads mark direction of borrowing, reception, or edition succession. Shared wording and common ancestry have no arrow. ' +
+      'Each route lists its evidence qualification: sourced, attributed, disputed, or unresolved. Within-group references describe relationships inside one named group.'));
+    panels.forEach(function (panel) {
+      const section = T.el('section','network-component');
+      section.appendChild(T.el('h4',null,'Network ' + panel.number + ' · ' + panel.nodes.length + ' connected groups · ' + panel.relations.length + ' relationships'));
+      const viewport = T.el('div','network-viewport');
+      viewport.setAttribute('tabindex','0');
+      viewport.setAttribute('aria-label','Connected traditions map; scroll horizontally on a narrow screen. Full route references follow the diagram.');
+      const drawing = svg('svg',{viewBox:'0 0 '+panel.width+' '+panel.height,'class':'tradition-network',role:'group','aria-label':'Connected traditions; positions do not represent dates'});
+      const defs = svg('defs',{});
+      ['borrowing','reception','edition-succession'].forEach(function (kind) {
+        const marker = svg('marker',{id:'network-arrow-'+panel.number+'-'+kind,viewBox:'0 0 10 10',refX:9,refY:5,markerWidth:6,markerHeight:6,orient:'auto-start-reverse'});
+        marker.appendChild(svg('path',{d:'M 0 0 L 10 5 L 0 10 z',fill:M.networkStyle(kind).color})); defs.appendChild(marker);
+      });
+      drawing.appendChild(defs);
+      panel.nodes.forEach(function (node) { if (node.leader) drawing.appendChild(svg('path',{d:node.leader,stroke:'#a6a19a','stroke-width':2,fill:'none'})); });
+      const focusRelation = function (number,event) {
+        event.preventDefault();
+        const key = 'research-R'+String(number).padStart(2,'0');
+        let target = document.getElementById(key);
+        if (!target) {
+          const relation = M.overviewModel(data).relations.find(function (r) { return r.number === number; });
+          if (relation) {
+            target = relationDiagram(relation,data,true);
+            document.getElementById('overview-connections').appendChild(target);
+          }
+        }
+        if (target) { target.setAttribute('tabindex','-1'); target.scrollIntoView({block:'start'}); target.focus({preventScroll:true}); }
+      };
+      panel.edges.forEach(function (edge) {
+        const style = M.networkStyle(edge.kind), link = svg('a',{'href':'#research-R'+String(edge.numbers[0]).padStart(2,'0'),'aria-label':edge.label});
+        const path = svg('path',{d:edge.path,stroke:style.color,'stroke-width':style.width,'stroke-dasharray':style.dash,fill:'none','data-relationships':edge.ids.join(' ')});
+        if (edge.directed) path.setAttribute('marker-end','url(#network-arrow-'+panel.number+'-'+edge.kind+')');
+        const title = svg('title',{}); title.textContent=edge.label; path.appendChild(title); link.appendChild(path);
+        link.addEventListener('click',function (event) { focusRelation(edge.numbers[0],event); }); drawing.appendChild(link);
+      });
+      panel.nodes.forEach(function (node) {
+        const link = svg('a',{href:historyURL('catalogue',null,catalogueHash('group:'+node.id,'','')),'aria-label':node.label+'; '+node.caption});
+        link.appendChild(svg('circle',{cx:node.x,cy:node.y,r:13,fill:'#fffdf8',stroke:'#34302c','stroke-width':4}));
+        node.labelLines.forEach(function (line,i) {
+          const text = svg('text',{x:node.labelX,y:node.labelY+i*31,'text-anchor':node.anchor,'font-size':26,'font-weight':600,'class':'network-node-label'});
+          text.textContent=line; link.appendChild(text);
+        });
+        const caption = svg('text',{x:node.labelX,y:node.labelY+node.labelLines.length*31,'text-anchor':node.anchor,'font-size':20,'class':'network-node-label'});
+        caption.textContent=node.caption; link.appendChild(caption);
+        drawing.appendChild(link);
+      });
+      viewport.appendChild(drawing); section.appendChild(viewport);
+      const references = T.el('details','network-references');
+      references.appendChild(T.el('summary',null,'Route references and evidence qualifications ('+panel.edges.length+' routes)'));
+      const list = T.el('ul');
+      panel.edges.forEach(function (edge) {
+        const item = T.el('li'), link = T.el('a',null,edge.label);
+        link.href='#research-R'+String(edge.numbers[0]).padStart(2,'0');
+        link.addEventListener('click',function (event) { focusRelation(edge.numbers[0],event); }); item.appendChild(link); list.appendChild(item);
+      });
+      panel.nodes.filter(function (node) { return node.within.length; }).forEach(function (node) {
+        const item = T.el('li',null,node.label+' · within group: ');
+        node.within.forEach(function (number) {
+          const link = T.el('a',null,' R'+String(number).padStart(2,'0'));
+          link.href='#research-R'+String(number).padStart(2,'0');
+          link.addEventListener('click',function (event) { focusRelation(number,event); }); item.appendChild(link);
+        }); list.appendChild(item);
+      });
+      references.appendChild(list); section.appendChild(references); host.appendChild(section);
+    });
+    if (selectedFamily) host.appendChild(T.el('p','panel-note','The network retains the full context. The evidence diagrams below follow your selected group.'));
+  }
+
+  function renderOverview(data, selectedFamily) {
+    const host = document.getElementById('history-overview');
+    if (!host) return;
+    host.hidden = !overviewMode;
+    if (!overviewMode) return;
+    const model = M.overviewModel(data);
+    renderNetwork(data,selectedFamily);
+    const connections = document.getElementById('overview-connections');
+    T.clear(connections);
+    const matches = function (endpoint) {
+      return !selectedFamily || 'group:' + endpoint.groupId === selectedFamily || endpoint.record.family === selectedFamily;
+    };
+    const relations = model.relations.filter(function (r) { return matches(r.from) || matches(r.to); });
+    if (!relations.length) connections.appendChild(T.el('p', 'panel-note',
+      'Cross-tradition relationships have not yet been investigated or established in this projection.'));
+    relations.forEach(function (relation) { connections.appendChild(relationDiagram(relation,data,true)); });
+    const groups = document.getElementById('overview-groups');
+    T.clear(groups);
+    model.groups.filter(function (group) {
+      return !selectedFamily || 'group:' + group.id === selectedFamily || group.entries.some(function (r) { return r.family === selectedFamily; });
+    }).forEach(function (group) {
+      const item = T.el('li', 'overview-group');
+      const link = T.el('a', 'overview-group-title', group.label);
+      link.href = historyURL('catalogue', null, catalogueHash('group:' + group.id, '', ''));
+      item.appendChild(link);
+      const linked = model.relations.filter(function (r) { return r.from.groupId === group.id || r.to.groupId === group.id; });
+      item.appendChild(T.el('p', 'panel-note', group.entries.length + ' catalogue records' +
+        (group.entities.length ? ' · ' + group.entities.length + ' undated textual-tradition references' : '')));
+      const dated = group.entries.filter(function (row) { return row.chronology; });
+      if (dated.length) item.appendChild(T.el('p', 'panel-note', 'Recorded date bounds: ' +
+        Math.min.apply(null,dated.map(function (r) { return r.chronology.start; })) + '–' +
+        Math.max.apply(null,dated.map(function (r) { return r.chronology.end; })) +
+        '; ' + (group.entries.length-dated.length) + ' undated or unresolved. Coverage dates, not a historical lifespan.'));
+      else item.appendChild(T.el('p', 'panel-note', 'No catalogue dates are positioned in this group.'));
+      const accepted = group.entries.filter(function (r) { return r.act_ref; }).length;
+      item.appendChild(T.el('p', 'panel-note', accepted + ' linked to historical stations · ' +
+        (group.entries.length-accepted) + ' research records without an accepted station link'));
+      ['acquisition_status','text_status'].forEach(function (key) {
+        const statuses = new Map();
+        group.entries.forEach(function (row) { const value = row[key] || 'not recorded'; statuses.set(value,(statuses.get(value)||0)+1); });
+        item.appendChild(T.el('p', 'panel-note', (key === 'text_status' ? 'Text: ' : 'Acquisition: ') +
+          Array.from(statuses.entries()).map(function (pair) { return pair[1] + ' ' + pair[0]; }).join('; ')));
+      });
+      item.appendChild(T.el('p', 'panel-note', linked.length
+        ? 'Connections: ' + linked.map(function (r) { return 'R' + String(r.number).padStart(2,'0'); }).join(', ')
+        : 'Connections not yet investigated or established here.'));
+      if (group.note) item.appendChild(T.el('p', 'panel-note', group.note));
+      groups.appendChild(item);
+    });
+  }
+
   function comparisonValid(payload, declared) {
     if (!payload || payload.schema !== 'triptych-eucharistic-witness-comparison/v1' ||
-        payload.id !== declared.id || payload.kind !== 'same-prayer-witness-comparison' ||
+        payload.id !== declared.id || (declared.kind && payload.kind !== declared.kind) || !['same-prayer-witness-comparison','parallel-liturgical-unit-comparison'].includes(payload.kind) ||
+        (payload.kind === 'parallel-liturgical-unit-comparison' && payload.identity_claim !== 'parallel-function-not-same-composition') ||
         payload.membership_status !== 'established' || payload.historical_ancestry_claimed !== false ||
         payload.historical_act_claimed !== false || payload.introduction_date_inferred !== false ||
         typeof payload.basis !== 'string' || !payload.basis.trim() ||
@@ -1587,6 +2094,9 @@
   function renderComparison(host, payload, declared) {
     if (!comparisonValid(payload, declared)) throw new Error('The witness comparison is malformed or does not match its declared source members.');
     T.clear(host);
+    host.appendChild(T.el('p', 'comparison-identity', payload.kind === 'parallel-liturgical-unit-comparison'
+      ? 'Parallel liturgical function; different compositions. This is not a same-prayer revision comparison.'
+      : 'Witnesses of the same prayer; differences do not establish an act of revision.'));
     host.appendChild(T.el('p', 'comparison-basis', payload.basis));
     host.appendChild(T.el('p', 'detail-weak comparison-caveat', payload.apparatus_caveat));
     const pair = T.el('div', 'comparison-pair');
@@ -1681,16 +2191,18 @@
       const data = await T.loadJSON(CATALOGUE);
       if (!catalogueValid(data)) throw new Error('The source catalogue has an unsupported or malformed record.');
       T.doneBootstrapping();
+      catalogueData = data;
       catalogueComparisons(data);
-      const families = Array.from(new Set(data.entries.map(function (row) { return row.family; }))).sort();
-      families.forEach(function (name) {
-        const option = T.el('option', null, name);
-        option.value = name;
+      const groups = M.overviewModel(data).groups;
+      const families = groups.map(function (g) { return 'group:' + g.id; });
+      groups.forEach(function (group) {
+        const option = T.el('option', null, group.label);
+        option.value = 'group:' + group.id;
         family.appendChild(option);
       });
       family.disabled = query.disabled = document.getElementById('catalogue-search').disabled = false;
       tally.textContent = data.entries.length + ' source records across ' + families.length +
-        ' traditions and uses. This is research coverage, not a count of complete missals.';
+        ' source-defined record groups. These are navigation groups, not a census of rites and not a count of complete books.';
       const limits = document.getElementById('catalogue-limits');
       data.limitations.forEach(function (limit) { limits.appendChild(T.el('p', null, limit)); });
       limits.appendChild(T.el('h3', null, 'Configured text sets'));
@@ -1706,6 +2218,7 @@
 
       function render(params, focusRecord) {
         const selectedFamily = params.get('family') || '';
+        renderOverview(data, selectedFamily);
         const search = (params.get('q') || '').slice(0, 200);
         const record = params.get('record');
         // Preserve unknown filters visibly, rather than silently broadening a
@@ -1713,7 +2226,8 @@
         let unknown = document.getElementById('catalogue-unknown-family');
         if (unknown) unknown.remove();
         if (selectedFamily && families.indexOf(selectedFamily) === -1) {
-          unknown = T.el('option', null, selectedFamily + ' (not in this catalogue)');
+          const legacy = data.entries.some(function (row) { return row.family === selectedFamily; });
+          unknown = T.el('option', null, selectedFamily + (legacy ? ' (source family)' : ' (not in this catalogue)'));
           unknown.id = 'catalogue-unknown-family';
           unknown.value = selectedFamily;
           family.appendChild(unknown);
@@ -1722,22 +2236,26 @@
         query.value = search;
         const terms = search.toLocaleLowerCase().split(/\s+/).filter(Boolean);
         const rows = data.entries.filter(function (row) {
-          const haystack = [row.title, row.family, row.date_label, row.id,
+          const haystack = [row.title, row.family, row.presentation_group && row.presentation_group.label, row.date_label, row.id,
             JSON.stringify(row.source_record)].join(' ').toLocaleLowerCase();
-          return (!selectedFamily || row.family === selectedFamily) &&
+          return (!selectedFamily || row.family === selectedFamily ||
+            'group:' + (row.presentation_group ? row.presentation_group.id : 'unmapped:' + row.family) === selectedFamily) &&
             terms.every(function (term) { return haystack.indexOf(term) !== -1; });
         });
         T.clear(results);
         status.textContent = rows.length + ' of ' + data.entries.length + ' source records shown.';
         if (!rows.length) results.appendChild(T.el('p', null, 'No records match these filters. Clear the search or choose another tradition.'));
         const sections = [
-          { title: 'Dated records', rows: rows.filter(function (row) { return row.chronology; })
+          { title: 'Chronological books and reforms', rows: rows.filter(function (row) { return row.chronology; })
             .sort(function (a, b) { return a.chronology.start - b.chronology.start || a.title.localeCompare(b.title); }) },
           { title: 'Undated or unresolved', rows: rows.filter(function (row) { return !row.chronology; }) }
         ];
         sections.forEach(function (section) {
           if (!section.rows.length) return;
           results.appendChild(T.el('h3', 'catalogue-period', section.title + ' (' + section.rows.length + ')'));
+          if (section.title === 'Chronological books and reforms') results.appendChild(T.el('p','panel-note',
+            'Read from earlier to later recorded dates. ○ marks a historical book candidate; ● marks an edition or reform linked to a historical line. ' +
+            'Date ranges retain their source qualifications. Adjacent entries do not imply descent.'));
           const list = T.el('ul', 'catalogue-list');
           section.rows.forEach(function (row) {
             const item = T.el('li', 'catalogue-entry');
@@ -1758,8 +2276,11 @@
               panel.focus();
             });
             body.appendChild(link);
-            body.appendChild(T.el('p', 'catalogue-entry-meta', row.family + ' · ' + row.record_kind));
-            body.appendChild(T.el('p', 'catalogue-entry-meta', 'Evidence: ' + row.evidence_status +
+            body.appendChild(T.el('p','catalogue-entry-meta',row.act_ref ? '● Recorded edition or reform' : '○ Historical book candidate'));
+            if (row.chronology) body.appendChild(T.el('p','catalogue-entry-meta',
+              'Date basis: '+[row.chronology.kind,row.chronology.certainty].filter(Boolean).join(' · ')));
+            body.appendChild(T.el('p', 'catalogue-entry-meta', (row.presentation_group ? row.presentation_group.label : row.family) + ' · ' + row.record_kind));
+            body.appendChild(T.el('p', 'catalogue-entry-meta', 'Evidence: ' + row.evidence_status + ' · Acquisition: '+(row.acquisition_status || 'not recorded')+
               ' · Text: ' + row.text_status + ' · Version: ' + row.substantive_status));
             item.appendChild(body);
             list.appendChild(item);
@@ -1802,6 +2323,7 @@
   }
 
   const catalogueMode = new URLSearchParams(window.location.search).get('view') === 'catalogue';
+  const overviewMode = new URLSearchParams(window.location.search).get('view') === 'overview';
   const mapLink = document.getElementById('history-map-link');
   const catalogueNav = document.getElementById('history-catalogue-link');
   if (mapLink && catalogueNav) {
@@ -1810,7 +2332,17 @@
     (catalogueMode ? catalogueNav : mapLink).setAttribute('aria-current', 'page');
     (catalogueMode ? mapLink : catalogueNav).removeAttribute('aria-current');
   }
-  if (catalogueMode) {
+  const overviewNav = document.getElementById('history-overview-link');
+  const overviewScope = document.getElementById('map-overview-link');
+  if (overviewScope) overviewScope.href = historyURL('overview');
+  if (overviewNav) {
+    overviewNav.href = historyURL('overview');
+    if (overviewMode) {
+      overviewNav.setAttribute('aria-current','page');
+      mapLink.removeAttribute('aria-current');
+    }
+  }
+  if (catalogueMode || overviewMode) {
     document.getElementById('historical-map').hidden = true;
     document.getElementById('catalogue').hidden = false;
     T.setInlineNotice('The source catalogue could not be reached. Serve this page over HTTP with its generated data.');

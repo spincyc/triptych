@@ -1,0 +1,12 @@
+schema = 2
+record_type = "passage"
+id = "passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.chrysostom-invocation-gifts"
+edition_id = "edition.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1"
+artifact_id = "artifact.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.chrysostom-invocation-gifts-checked-greek-68a9876c"
+artifact_sha256 = "68a9876c01c7ed9bbb6a5b007a784533e1f84fb7b9dabd3e65a7aa330bd158f3"
+locus = "Brightman 1896, Chrysostom; printed pp. 386–387; printed lines 386.24–27; 387.5,11,17; PDF pages 492,493 (one-based)."
+states = ["cataloged", "acquired", "inspected", "verified"]
+physical_line_ranges = [[1, 1]]
+context = "Complete priestly invocation over the gifts, from Ἔτι προσφέρομέν through Μεταβαλὼν τῷ Πνεύματί σου τῷ Ἁγίῳ. Four priestly speech blocks retain printed initial capitals; intervening rubrics, diaconal commands, Amen responses and the following prayer for the effects of communion are excluded. Modern Greek Chrysostom text as printed in Brightman 1896, attributed on printed p. 308 to the Venice 1869 Euchologion with Athens 1890 reader material. Not the separate Barberini manuscript section. Shared wording is a textual observation; this selection does not establish Catholic reception, a historical borrowing act, direction of dependence, a reconstructed common ancestor, or the entire anaphora."
+notes = "On 2026-10-16 two AI readers checked these bounded original page images and the final serialized text, including accents, case, punctuation, source typography and boundaries. The independent review reported no remaining glyph or word discrepancy. It confirmed 4 recoverable priestly speech block(s). This is an explicitly normalized comparison transcription, not a facsimile or a complete liturgical service. Speech-block metadata, using zero-based half-open Unicode codepoint ranges in the NFC body excluding final LF: [{\"source_printed_lines\":\"386.24–27\",\"codepoint_range\":[0,185],\"incipit\":\"Ἔτι προσφέρομέν σοι τὴν\"},{\"source_printed_lines\":\"387.5\",\"codepoint_range\":[186,246],\"incipit\":\"Καὶ ποίησον τὸν μὲν\"},{\"source_printed_lines\":\"387.11\",\"codepoint_range\":[247,300],\"incipit\":\"Τὸ δὲ ἐν τῷ\"},{\"source_printed_lines\":\"387.17\",\"codepoint_range\":[301,334],\"incipit\":\"Μεταβαλὼν τῷ Πνεύματί σου\"}]. Single separating spaces between blocks are derivative layout, not added punctuation."
+verified_on = "2026-10-16"

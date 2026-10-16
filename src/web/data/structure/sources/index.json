@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 2993,
-  "editions": 1094,
-  "passages": 5285,
-  "readable": 3088,
-  "works": 954
+  "artifacts": 3009,
+  "editions": 1095,
+  "passages": 5309,
+  "readable": 3101,
+  "works": 955
  },
  "facets": {
   "authors": [
@@ -687,6 +687,10 @@
    },
    {
     "id": "Frank Edward Brightman",
+    "works": 1
+   },
+   {
+    "id": "Frank Edward Brightman, on the basis of the former work by Charles Edward Hammond",
     "works": 1
    },
    {
@@ -2388,6 +2392,10 @@
     "works": 2
    },
    {
+    "id": "liturgical-source-collection",
+    "works": 2
+   },
+   {
     "id": "newspaper",
     "works": 2
    },
@@ -2992,10 +3000,6 @@
     "works": 1
    },
    {
-    "id": "liturgical-source-collection",
-    "works": 1
-   },
-   {
     "id": "liturgical-synopsis",
     "works": 1
    },
@@ -3474,7 +3478,7 @@
   ],
   "languages": [
    {
-    "editions": 591,
+    "editions": 592,
     "id": "en"
    },
    {
@@ -3604,7 +3608,7 @@
     "label": "18th century"
    },
    {
-    "editions": 205,
+    "editions": 206,
     "id": "1800",
     "label": "19th century"
    },
@@ -3621,8 +3625,8 @@
   ],
   "rights": [
    {
-    "artifacts": 1686,
-    "editions": 408,
+    "artifacts": 1702,
+    "editions": 409,
     "id": "public-domain"
    },
    {
@@ -9055,8 +9059,8 @@
      "file": "1894-wilson-1894.json",
      "id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
      "language": "la",
-     "passages": 1,
-     "readable": 0,
+     "passages": 3,
+     "readable": 2,
      "rights": [
       "public-domain",
       "unresolved"
@@ -9544,8 +9548,8 @@
      "file": "1915-wilson-1915.json",
      "id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
      "language": "la",
-     "passages": 6,
-     "readable": 1,
+     "passages": 8,
+     "readable": 3,
      "rights": [
       "public-domain",
       "unresolved"
@@ -12831,8 +12835,8 @@
      "file": "1915-1915-warner-vol-2.json",
      "id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
      "language": "la",
-     "passages": 0,
-     "readable": 0,
+     "passages": 3,
+     "readable": 3,
      "rights": [
       "public-domain"
      ],
@@ -14127,6 +14131,36 @@
     "en"
    ],
    "title": "The English Rite: being a synopsis of the sources and revisions of the Book of Common Prayer"
+  },
+  {
+   "alternate_titles": [
+    "Liturgies, Eastern and Western",
+    "Brightman, Eastern Liturgies"
+   ],
+   "author": "Frank Edward Brightman, on the basis of the former work by Charles Edward Hammond",
+   "category": "liturgical-source-collection",
+   "directory": "editions/frank-edward-brightman/liturgies-eastern-and-western/",
+   "editions": [
+    {
+     "date": "1896",
+     "file": "1896-1896-oxford-clarendon-volume-1.json",
+     "id": "edition.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1",
+     "language": "en",
+     "passages": 17,
+     "readable": 6,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Liturgies Eastern and Western, volume I: Eastern Liturgies (Oxford, 1896)",
+     "year": 1896
+    }
+   ],
+   "id": "work.frank-edward-brightman.liturgies-eastern-and-western",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "title": "Liturgies Eastern and Western: being the texts original or translated of the principal liturgies of the Church"
   },
   {
    "alternate_titles": [],

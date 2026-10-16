@@ -1,0 +1,865 @@
+{
+  "apparatus_caveat": "The witnesses are mediated by their identified printed editions. Printed edition dates do not date introduction, borrowing or a common ancestor. Native words, spelling, accents and case remain in each normalized source; typographic or punctuation normalization is declared per owning artifact. Warner's italic expansion type is flattened and ligature sorts expanded; specified compound punctuation is represented by colons. The facsimile, not that editorial encoding, controls diplomatic punctuation. Stowe's complete Hanc includes dedication/conversion clauses and its Dies quoque continuation; Warner p.12 notes4 and7 explicitly compare the additional clauses with Gelasian/Gallican texts. No direction of borrowing is inferred.",
+  "basis": "Complete hanc-igitur units selected by their incipit, bounded ending and liturgical position. Each body was checked against the identified printed page; the alignment is explicit same-prayer witness membership, not a text ancestry edge.",
+  "historical_act_claimed": false,
+  "historical_ancestry_claimed": false,
+  "id": "roman-hanc-igitur-gelasian-and-stowe",
+  "identical_serialized_text": false,
+  "identity_claim": "same-prayer-witnesses",
+  "inputs": [
+    {
+      "byte_size": 55362,
+      "path": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
+      "sha256": "177dd42f9fa51826f1e62de2d4ff689893c313c0cfa7728d3627373f65510987"
+    },
+    {
+      "byte_size": 241695,
+      "path": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
+      "sha256": "372bfc0ff5693af9adb81e87318341cc9f3ca1b852db74de3f81ce8c414d121d"
+    },
+    {
+      "byte_size": 89758,
+      "path": "src/sources/inventories/eucharistic-book-relationships-v1.toml",
+      "sha256": "d43fb733824f87fa46c4c5c1b81417683cbe496b140a97ea6139f1952830a91e"
+    },
+    {
+      "byte_size": 183499,
+      "path": "src/sources/inventories/latin-missal-acts-v1.toml",
+      "sha256": "7e8db6a985303a0da62c535ca536dec8f9e3d792155d1b9b74c785282892d328"
+    },
+    {
+      "byte_size": 9311,
+      "path": "src/sources/inventories/missal-timeline-holdings-v1.toml",
+      "sha256": "43d18228b997f149a6aab5605ee0397713348cc1d2f1458c49940fa89f147c8e"
+    },
+    {
+      "byte_size": 82303,
+      "path": "src/sources/inventories/roman-holy-week-acts-v1.toml",
+      "sha256": "cfbc951ec40071d5eb78c55d9453811ee194647b57893b7aa3b4768abadea9bb"
+    },
+    {
+      "byte_size": 221307,
+      "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+      "sha256": "2ca0794f773beb974b67f67d7a51fd2884b490e7fea3829eac082c9c7ce1e620"
+    },
+    {
+      "byte_size": 1240,
+      "path": "src/sources/works/anonymous/gelasian-sacramentary/editions/wilson-clarendon-1894/artifacts/internet-archive-google-books-pdf/artifact.toml",
+      "sha256": "3ce32dd3ea67cb455016ef9174ee4ba557412e8aadcdd9541d92dd7f4893be3e"
+    },
+    {
+      "byte_size": 2507,
+      "path": "src/sources/works/anonymous/gelasian-sacramentary/editions/wilson-clarendon-1894/artifacts/printed-p235-image-d98c2326/artifact.toml",
+      "sha256": "b2ac1c37cce650834545c4442c29184d0d0e63c69602c65aeda362642df317c1"
+    },
+    {
+      "byte_size": 239722,
+      "path": "src/sources/works/anonymous/gelasian-sacramentary/editions/wilson-clarendon-1894/artifacts/printed-p235-image-d98c2326/page.png",
+      "sha256": "d98c23264281d39b37686d691eae71dca5e1c9d506d399e546c48bb88725dc57"
+    },
+    {
+      "byte_size": 683,
+      "path": "src/sources/works/anonymous/gelasian-sacramentary/editions/wilson-clarendon-1894/edition.toml",
+      "sha256": "45b414e9f0f740cadd5660a72ff299e63b9943a6e7e9a6fc75ec5b1ced56ce63"
+    },
+    {
+      "byte_size": 666,
+      "path": "src/sources/works/anonymous/gelasian-sacramentary/work.toml",
+      "sha256": "a41c01cc8c194696663fab1631d3c4f96828ab0ab07be883df92d243805690e3"
+    },
+    {
+      "byte_size": 3368,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/canon-hanc-igitur-checked-latin-75df4acf/artifact.toml",
+      "sha256": "c54e950ef7d41a606dd52ad8ed7c643797cff230746541febd5cff64fc0413df"
+    },
+    {
+      "byte_size": 266,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/canon-hanc-igitur-checked-latin-75df4acf/text.txt",
+      "sha256": "75df4acff246918a08cf9d2d7c8089c6bb560e76e0f76e3a79669c9bb07e762c"
+    },
+    {
+      "byte_size": 3346,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/canon-quam-oblationem-checked-latin-e01e1083/artifact.toml",
+      "sha256": "4eb2870bba4c0165af5e179a9e9949d0ca889afdd46dfe81562082c25302a844"
+    },
+    {
+      "byte_size": 214,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/canon-quam-oblationem-checked-latin-e01e1083/text.txt",
+      "sha256": "e01e1083c750fdc4a7c74a7e37c092e8989a9d3427292b5c6fba29f36698b327"
+    },
+    {
+      "byte_size": 3309,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/historical-book-ocr-e4500b54/artifact.toml",
+      "sha256": "544f418b08e643b657cd97c51f731ab5d5b9ad59d0a7ed798a4fee05af29cca3"
+    },
+    {
+      "byte_size": 1095058,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/historical-book-ocr-e4500b54/source.txt",
+      "sha256": "e4500b548776621c720a0c7cb313f9de041969531da3814b7a4ef6444038a4e9"
+    },
+    {
+      "byte_size": 1715,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/ia-djvu-ocr-gelasiansacrame00wilsgoog/artifact.toml",
+      "sha256": "da4c10d7a94d948537ce637b1edc7d6d15f36118e8a65aa2cfca4a52539901e3"
+    },
+    {
+      "byte_size": 898,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/edition.toml",
+      "sha256": "7bb097f4c19699a224a5bf589d039b7b39a3aad66d9db0e3d70845f353df5670"
+    },
+    {
+      "byte_size": 1293,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/canon-hanc-igitur.toml",
+      "sha256": "84faaaec950d643e9bba8bedbd3f9f21313a8abcca10be692697b8a58ca42666"
+    },
+    {
+      "byte_size": 1272,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/canon-quam-oblationem.toml",
+      "sha256": "3a92c4358e4ab1f4b123d4dd688d8efcb1e11506dabd2bf40bca301cfa593d76"
+    },
+    {
+      "byte_size": 754,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/work.toml",
+      "sha256": "034be9e2898ee8994a5aa64c1d4316d18271274e68532d1e37b0ba576071a618"
+    },
+    {
+      "byte_size": 5704,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/canon-hanc-igitur-checked-latin-7465da67/artifact.toml",
+      "sha256": "efb5793e19c63af780d5e068a4ae94a15ca68ad6f4ef4dd36df8e5c8f027b23e"
+    },
+    {
+      "byte_size": 554,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/canon-hanc-igitur-checked-latin-7465da67/text.txt",
+      "sha256": "7465da67befc59c3576681e5001d1bb33a03b3f72f80a2d513c3b165a5b9dd67"
+    },
+    {
+      "byte_size": 3914,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/canon-quam-oblationem-checked-latin-e404c122/artifact.toml",
+      "sha256": "e4b640f7fac6fe6914822283d139ee69bc8ee96a23e21fb8f7e06bab59ac3204"
+    },
+    {
+      "byte_size": 199,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/canon-quam-oblationem-checked-latin-e404c122/text.txt",
+      "sha256": "e404c122389466c12f7c79304c991aae3a05d8b13297c37ed45bf221cc01727c"
+    },
+    {
+      "byte_size": 2379,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/ia-raw-ocr-3d11ad59/artifact.toml",
+      "sha256": "a3e765dc305b074c76805870a35f9ccb076bf9393814fd0f4f3538ce3be7c722"
+    },
+    {
+      "byte_size": 277250,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/ia-raw-ocr-3d11ad59/source.txt",
+      "sha256": "3d11ad59b8968e9c0e2c816676d0b5a26142896a9af1a13dbf29aa8c6bd69cc4"
+    },
+    {
+      "byte_size": 2401,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/ia-scan-27c6070e/artifact.toml",
+      "sha256": "fd42f74c38fdd1e222acb09c1cd49289e33900f8b6b5b3094d98338e5169b42c"
+    },
+    {
+      "byte_size": 6181209,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/ia-scan-27c6070e/source.pdf",
+      "sha256": "27c6070e673622fc3f976a016aff8dccd69e70a90d17ac52aa658104f20cfbcf"
+    },
+    {
+      "byte_size": 4125,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/sanctus-checked-latin-27b79875/artifact.toml",
+      "sha256": "659ac33b9824120c7b4725d96b2bffa1163459c9f28211e9712a506150d9e8b6"
+    },
+    {
+      "byte_size": 355,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/sanctus-checked-latin-27b79875/text.txt",
+      "sha256": "27b798758bef32f11d5fa4bd1dbe2608c74a6efa14e6f5ad68b9c1ebe66e726a"
+    },
+    {
+      "byte_size": 1013,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/edition.toml",
+      "sha256": "52ab6eb25940dc5471028a7caf3ef8e401c7f636f231ade9b3fd318426916e56"
+    },
+    {
+      "byte_size": 1728,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/passages/canon-hanc-igitur.toml",
+      "sha256": "cac0d3d95fc9c244179bbfbd0c56fc2a1b96861a48ca09e4560d72a68bab432b"
+    },
+    {
+      "byte_size": 1458,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/passages/canon-quam-oblationem.toml",
+      "sha256": "96ffefbc1220d34fdbeeb11ed5879e03a6a42a9f92808c958cb5ed42d2e0c61f"
+    },
+    {
+      "byte_size": 1542,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/passages/sanctus.toml",
+      "sha256": "17dc84481a077051ca7ea9af26a2e6fbdea181bb7587c2b5c31310d1f1824786"
+    },
+    {
+      "byte_size": 846,
+      "path": "src/sources/works/catholic-church/stowe-missal/work.toml",
+      "sha256": "51ae2664ee5b8806a428a670b7aede9778b9bf194b15d2dec9764b2f63e3d11c"
+    }
+  ],
+  "introduction_date_inferred": false,
+  "kind": "same-prayer-witness-comparison",
+  "left": {
+    "adapter": "wilson-1894-gelasian-canon-prayers",
+    "join_rule": "insert-one-space-between-exact-source-bodies",
+    "joined_source_text": "Hanc igitur oblationem servitutis nostrae, sed et cunctae familiae tuae, quaesumus, Domine, ut placatus accipias, diesque nostros in tua pace disponas, atque ab aeterna damnatione nos eripi et in electorum tuorum iubeas grege numerari. Per Christum Dominum nostrum.",
+    "joined_source_text_sha256": "91d5e24ad22d131ba8086f2d394c6e1d0ddbaa2795087c89fed5a2260a483bfb",
+    "members": [
+      {
+        "comparison_order": 1,
+        "content_id": "sha256:91d5e24ad22d131ba8086f2d394c6e1d0ddbaa2795087c89fed5a2260a483bfb",
+        "diplomatic": false,
+        "division": "canon-missae",
+        "element_key": "hanc-igitur",
+        "facsimile_pdf_page": 328,
+        "language": "la",
+        "printed_page": "235",
+        "provenance": {
+          "evidence_source_ids": [
+            "artifact.anonymous.gelasian-sacramentary.wilson-clarendon-1894.printed-p235-image-d98c2326"
+          ],
+          "normalization": "Source UTF-8 bytes SHA-256 e4500b548776621c720a0c7cb313f9de041969531da3814b7a4ef6444038a4e9. Use LF-delimited physical line ranges [[21668, 21678]]. Select only the named complete prayer bounded by its incipit and next prayer; join whitespace to one space, excluding running heads/apparatus between disjoint ranges. Apply these exact page-verified replacements in order: [{\"from\": \" igitur\", \"to\": \"Hanc igitur\", \"count\": 1}, {\"from\": \"tuae^^\", \"to\": \"tuae\", \"count\": 1}, {\"from\": \"ut^\", \"to\": \"ut\", \"count\": 1}, {\"from\": \"accipias^\", \"to\": \"accipias\", \"count\": 1}, {\"from\": \"disponas*^\", \"to\": \"disponas\", \"count\": 1}, {\"from\": \"eripi^\", \"to\": \"eripi\", \"count\": 1}, {\"from\": \"dectorum\", \"to\": \"electorum\", \"count\": 1}, {\"from\": \"gr^e\", \"to\": \"grege\", \"count\": 1}]. Append one LF. Complete Hanc prayer as printed in Wilson1894 bookIIIsectionXVI, excluding preceding Communicantes conclusion and following Quam. Remove superscript apparatus notes24-28, not prayer wording.",
+          "review_limits": "Two independent reviewers checked this complete bounded prayer against its historical printed page image(s) on 2026-10-16. This establishes the normalized edition text and its stated extent, not an act of revision, a borrowing direction, a manuscript date or the wording of the rest of the book. See owning artifact for every transformation and the original page evidence.",
+          "reviewed_on": "2026-10-16",
+          "scope": "Vatican Reg. lat. 316 as mediated by Wilson's 1894 critical edition; no new manuscript collation. Complete Hanc prayer as printed in Wilson1894 bookIIIsectionXVI, excluding preceding Communicantes conclusion and following Quam. Remove superscript apparatus notes24-28, not prayer wording.",
+          "source_locator": "canon-hanc-igitur; printed p. 235; source PDF page(s) 328",
+          "status": "verified-bounded-printed-edition-transcription"
+        },
+        "publication": {
+          "basis": "public-domain",
+          "basis_source_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-hanc-igitur-checked-latin-75df4acf",
+          "jurisdiction": "United States",
+          "status": "permitted",
+          "surfaces": [
+            "public-git",
+            "corpus-data"
+          ]
+        },
+        "serialized_text": "Hanc igitur oblationem servitutis nostrae, sed et cunctae familiae tuae, quaesumus, Domine, ut placatus accipias, diesque nostros in tua pace disponas, atque ab aeterna damnatione nos eripi et in electorum tuorum iubeas grege numerari.\nPer Christum Dominum nostrum.\n",
+        "serialized_text_sha256": "a64200adf98d2fbd99d9ea30e8e1aa58d4791714cdc4aaffcbe42df44802a74a",
+        "source_artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-hanc-igitur-checked-latin-75df4acf",
+        "source_artifact_sha256": "75df4acff246918a08cf9d2d7c8089c6bb560e76e0f76e3a79669c9bb07e762c",
+        "source_id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-hanc-igitur",
+        "source_order": 1,
+        "source_physical_line": 1,
+        "source_text": "Hanc igitur oblationem servitutis nostrae, sed et cunctae familiae tuae, quaesumus, Domine, ut placatus accipias, diesque nostros in tua pace disponas, atque ab aeterna damnatione nos eripi et in electorum tuorum iubeas grege numerari. Per Christum Dominum nostrum.",
+        "target_edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+        "text_edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+        "text_path": "text/ordinary/canon-missae/hanc-igitur.txt",
+        "text_sha256": "91d5e24ad22d131ba8086f2d394c6e1d0ddbaa2795087c89fed5a2260a483bfb",
+        "transcription_kind": "witness-normalized-transcription",
+        "unit_id": "unit.wilson-1894.gelasian.canon-missae.hanc-igitur"
+      }
+    ],
+    "record_id": "western:gelasian-wilson-1894-critical-edition",
+    "reviewed_on": "2026-10-16",
+    "scope": {
+      "date_roles": "target_date identifies the historical printed edition; this adapter assigns no exact manuscript date",
+      "no_historical_backprojection": true,
+      "not_direct_manuscript_transcription": true,
+      "omitted_book_divisions": [
+        "all prayers outside the explicitly selected units",
+        "critical apparatus and editorial introduction",
+        "all other ritual, rubrical and supplemental material"
+      ],
+      "represented_witness": "Vatican Reg. lat. 316 as mediated by Wilson's 1894 critical edition; no new manuscript collation",
+      "status": "selected-complete-prayers",
+      "text_identity": "Bounded normalized native-language text from the identified critical edition; apparatus and uncollected units excluded",
+      "whole_book_complete": false
+    },
+    "serialized_text": "Hanc igitur oblationem servitutis nostrae, sed et cunctae familiae tuae, quaesumus, Domine, ut placatus accipias, diesque nostros in tua pace disponas, atque ab aeterna damnatione nos eripi et in electorum tuorum iubeas grege numerari.\nPer Christum Dominum nostrum.\n",
+    "serialized_text_sha256": "a64200adf98d2fbd99d9ea30e8e1aa58d4791714cdc4aaffcbe42df44802a74a",
+    "target_date": "1894",
+    "text_set": "wilson-1894-gelasian-canon-prayers",
+    "title": "Wilson 1894 Gelasian Canon: Hanc igitur and Quam oblationem",
+    "witness_date": null
+  },
+  "limitations": [
+    "This is an explicitly aligned witness comparison, not an asserted historical revision or parent relationship.",
+    "Orthography, spacing, capitalization and punctuation remain visible; a textual diff does not classify their historical significance.",
+    "The apparatus caveat must accompany any historical interpretation of this bounded passage."
+  ],
+  "membership_status": "established",
+  "relationship_ids": [
+    "eucharistic-books:checked-latin-prayers-4"
+  ],
+  "relationships": [
+    {
+      "ancestor_ref": null,
+      "basis": "Explicit same-prayer identity from incipit, liturgical position and bounded ending, with directly inspectable shared wording in both normalized source bodies. Native spelling, case, accents and declared typography differences remain in the full comparisons. An exact illustrative shared phrase is: et in electorum tuorum iubeas grege numerari.",
+      "certainty": "sourced",
+      "chronology": null,
+      "comparison_ids": [
+        "roman-hanc-igitur-gelasian-and-stowe",
+        "roman-quam-oblationem-gelasian-and-stowe"
+      ],
+      "comparison_links": [
+        {
+          "id": "roman-hanc-igitur-gelasian-and-stowe",
+          "projection_path": "comparisons/roman-hanc-igitur-gelasian-and-stowe.json"
+        },
+        {
+          "id": "roman-quam-oblationem-gelasian-and-stowe",
+          "projection_path": "comparisons/roman-quam-oblationem-gelasian-and-stowe.json"
+        }
+      ],
+      "date_label": null,
+      "directed": false,
+      "evidence": [
+        {
+          "locus": "Printed p. 235, PDF p. 328; independently checked retained page image. Critical edition mediates the manuscript; marginal apparatus excluded from the selected prayer bodies.",
+          "source": {
+            "id": "checked-wilson-gelasian",
+            "inspection": "Printed p. 235, PDF p. 328; independently checked retained page image. Critical edition mediates the manuscript; marginal apparatus excluded from the selected prayer bodies.",
+            "inspection_status": "inspected",
+            "title": "Wilson, The Gelasian Sacramentary (1894), selected Canon prayers",
+            "url": "https://archive.org/details/gelasiansacrame00wilsgoog"
+          },
+          "source_id": "checked-wilson-gelasian"
+        },
+        {
+          "locus": "Printed pp. 10, 12, PDF pp. 96, 98; independently checked retained page images, including native spelling, expansions and selected punctuation normalization declared by the artifacts.",
+          "source": {
+            "id": "checked-warner-stowe",
+            "inspection": "Printed pp. 10, 12, PDF pp. 96, 98; independently checked retained page images, including native spelling, expansions and selected punctuation normalization declared by the artifacts.",
+            "inspection_status": "inspected",
+            "title": "Warner, The Stowe Missal, volume II (1915), selected Mass prayers",
+            "url": "https://archive.org/details/publications32henruoft"
+          },
+          "source_id": "checked-warner-stowe"
+        }
+      ],
+      "from": "western:gelasian-wilson-1894-critical-edition",
+      "git_ancestry": false,
+      "id": "eucharistic-books:checked-latin-prayers-4",
+      "kind": "shared-text",
+      "label": "Shared hanc igitur, quam oblationem wording",
+      "limitations": "Critical editions mediate early witnesses; printed publication dates do not date the shared formula. The displayed phrase is an exact illustrative shared run, not a claim that all wording or punctuation matches. Stowe has substantial additions and variants; its punctuation encoding is declared by its owning artifacts.",
+      "origin": {
+        "id": "checked-latin-prayers-4",
+        "inventory": "src/sources/inventories/eucharistic-book-relationships-v1.toml",
+        "table": "relationships"
+      },
+      "scope": "Selected hanc igitur, quam oblationem units only; variants remain in the comparisons.",
+      "text_inheritance": false,
+      "to": "western:stowe-warner-1915-vol2"
+    }
+  ],
+  "right": {
+    "adapter": "warner-1915-stowe-mass-prayers",
+    "join_rule": "insert-one-space-between-exact-source-bodies",
+    "joined_source_text": "Hanc igitur oblationem seruitutis nostrae sed et cunctae familiae tuae quam tibi offerimus in honorem domini nostri iesu christi et in commemorationem beatorum martirum tuorum in hac aeclesiae quam famulus tuus ad honorem nominis gloriae tuae aedificauit : Quessumus domine ut placatus suscipias Eumque adque omnem populum ab idulorum cultura eripias et ad té deum uerum patrem omnipotentem conuertas : Dies quoque nostros in tua pace disponas atque ab aeterna damnatione nos eripias et in electorum tuorum iubeas grege numerari : per dominum nostrum :",
+    "joined_source_text_sha256": "30ad19b30cef8ad7a6df62c56a7ff2cdea94fe88eb1626d0254ef979ef4e1252",
+    "members": [
+      {
+        "comparison_order": 1,
+        "content_id": "sha256:30ad19b30cef8ad7a6df62c56a7ff2cdea94fe88eb1626d0254ef979ef4e1252",
+        "diplomatic": false,
+        "division": "canon-missae",
+        "element_key": "hanc-igitur",
+        "facsimile_pdf_page": 98,
+        "language": "la",
+        "printed_page": "12",
+        "provenance": {
+          "evidence_source_ids": [
+            "artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-scan-27c6070e"
+          ],
+          "normalization": "Source UTF-8 bytes SHA-256 3d11ad59b8968e9c0e2c816676d0b5a26142896a9af1a13dbf29aa8c6bd69cc4. Use LF-delimited physical line ranges [[3540, 3550]]. Select only the named complete prayer bounded by its incipit and next prayer; join whitespace to one space, excluding running heads/apparatus between disjoint ranges. Apply these exact page-verified replacements in order: [{\"from\": \"nostras\", \"to\": \"nostrae\", \"count\": 1}, {\"from\": \"tibi*\", \"to\": \"tibi\", \"count\": 1}, {\"from\": \"offeximus\", \"to\": \"offerimus\", \"count\": 1}, {\"from\": \"honorem5\", \"to\": \"honorem\", \"count\": 1}, {\"from\": \"ie.ru\", \"to\": \"iesu\", \"count\": 1}, {\"from\": \"chxisti\", \"to\": \"christi\", \"count\": 1}, {\"from\": \"co/;/memoratione;;/\", \"to\": \"commemorationem\", \"count\": 1}, {\"from\": \"beaton/;;/\", \"to\": \"beatorum\", \"count\": 1}, {\"from\": \"martin/;;/\", \"to\": \"martirum\", \"count\": 1}, {\"from\": \"tuoxum\", \"to\": \"tuorum\", \"count\": 2}, {\"from\": \"aeclesiae6\", \"to\": \"aeclesiae\", \"count\": 1}, {\"from\": \"qua;;z\", \"to\": \"quam\", \"count\": 1}, {\"from\": \":•\", \"to\": \":\", \"count\": 1}, {\"from\": \"Ouessum;/^\", \"to\": \"Quessumus\", \"count\": 1}, {\"from\": \"placate\", \"to\": \"placatus\", \"count\": 1}, {\"from\": \"[fo. 2jv.\", \"to\": \"\", \"count\": 1}, {\"from\": \"Eumqz/£r\", \"to\": \"Eumque\", \"count\": 1}, {\"from\": \"populu/;/\", \"to\": \"populum\", \"count\": 1}, {\"from\": \"idulon/;;/\", \"to\": \"idulorum\", \"count\": 1}, {\"from\": \"te deum\", \"to\": \"té deum\", \"count\": 1}, {\"from\": \"xxenxm\", \"to\": \"uerum\", \"count\": 1}, {\"from\": \"patre;;/\", \"to\": \"patrem\", \"count\": 1}, {\"from\": \"om;/ipotentem\", \"to\": \"omnipotentem\", \"count\": 1}, {\"from\": \"conuertas8\", \"to\": \"conuertas\", \"count\": 1}, {\"from\": \":~\", \"to\": \":\", \"count\": 2}, {\"from\": \"a.tque*\", \"to\": \"atque\", \"count\": 1}, {\"from\": \"aetema\", \"to\": \"aeterna\", \"count\": 1}, {\"from\": \"da;;matione\", \"to\": \"damnatione\", \"count\": 1}, {\"from\": \"eripias10\", \"to\": \"eripias\", \"count\": 1}, {\"from\": \"i?i\", \"to\": \"in\", \"count\": 1}, {\"from\": \"electoruw\", \"to\": \"electorum\", \"count\": 1}, {\"from\": \":2\", \"to\": \":\", \"count\": 1}, {\"from\": \"  \", \"to\": \" \", \"count\": 1}]. Append one LF. Complete Hanc prayer including dedication/conversion clauses and Dies quoque continuation through per dominum nostrum, fol27-27v. Flatten roman/italic typography, expand ae ligatures, retain native Quessumus, aeclesiae, idulorum, eripias and accented té. Remove apparatus4-10 and foliotag. By explicit editorial encoding, diagonal separator after aedificauit, compound wave marks after conuertas/nostrum, and curved compound after numerari are all represented as colons; no claim of exact punctuation transcription. The apparatus compares omitted clauses to other books; the text itself does not date their introduction.",
+          "review_limits": "Two independent reviewers checked this complete bounded prayer against its historical printed page image(s) on 2026-10-16. This establishes the normalized edition text and its stated extent, not an act of revision, a borrowing direction, a manuscript date or the wording of the rest of the book. See owning artifact for every transformation and the original page evidence.",
+          "reviewed_on": "2026-10-16",
+          "scope": "Royal Irish Academy MS D. II. 3 as mediated by Warner's 1915 printed text; layers, expansions and apparatus are those of the critical edition. Complete Hanc prayer including dedication/conversion clauses and Dies quoque continuation through per dominum nostrum, fol27-27v. Flatten roman/italic typography, expand ae ligatures, retain native Quessumus, aeclesiae, idulorum, eripias and accented té. Remove apparatus4-10 and foliotag. By explicit editorial encoding, diagonal separator after aedificauit, compound wave marks after conuertas/nostrum, and curved compound after numerari are all represented as colons; no claim of exact punctuation transcription. The apparatus compares omitted clauses to other books; the text itself does not date their introduction.",
+          "source_locator": "canon-hanc-igitur; printed p. 12; source PDF page(s) 98",
+          "status": "verified-bounded-printed-edition-transcription"
+        },
+        "publication": {
+          "basis": "public-domain",
+          "basis_source_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-hanc-igitur-checked-latin-7465da67",
+          "jurisdiction": "United States",
+          "status": "permitted",
+          "surfaces": [
+            "public-git",
+            "corpus-data"
+          ]
+        },
+        "serialized_text": "Hanc igitur oblationem seruitutis nostrae sed et cunctae familiae tuae quam tibi offerimus in honorem domini nostri iesu christi et in commemorationem beatorum martirum tuorum in hac aeclesiae quam famulus tuus ad honorem nominis gloriae tuae aedificauit :\nQuessumus domine ut placatus suscipias Eumque adque omnem populum ab idulorum cultura eripias et ad té deum uerum patrem omnipotentem conuertas :\nDies quoque nostros in tua pace disponas atque ab aeterna damnatione nos eripias et in electorum tuorum iubeas grege numerari :\nper dominum nostrum :\n",
+        "serialized_text_sha256": "c7ac487342e5dc6b1f6927865cd20851c780ca752d198c0c5764f9cf23f18352",
+        "source_artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-hanc-igitur-checked-latin-7465da67",
+        "source_artifact_sha256": "7465da67befc59c3576681e5001d1bb33a03b3f72f80a2d513c3b165a5b9dd67",
+        "source_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-hanc-igitur",
+        "source_order": 2,
+        "source_physical_line": 1,
+        "source_text": "Hanc igitur oblationem seruitutis nostrae sed et cunctae familiae tuae quam tibi offerimus in honorem domini nostri iesu christi et in commemorationem beatorum martirum tuorum in hac aeclesiae quam famulus tuus ad honorem nominis gloriae tuae aedificauit : Quessumus domine ut placatus suscipias Eumque adque omnem populum ab idulorum cultura eripias et ad té deum uerum patrem omnipotentem conuertas : Dies quoque nostros in tua pace disponas atque ab aeterna damnatione nos eripias et in electorum tuorum iubeas grege numerari : per dominum nostrum :",
+        "target_edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+        "text_edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+        "text_path": "text/ordinary/canon-missae/hanc-igitur.txt",
+        "text_sha256": "30ad19b30cef8ad7a6df62c56a7ff2cdea94fe88eb1626d0254ef979ef4e1252",
+        "transcription_kind": "witness-normalized-transcription",
+        "unit_id": "unit.warner-1915.stowe.canon-missae.hanc-igitur"
+      }
+    ],
+    "record_id": "western:stowe-warner-1915-vol2",
+    "reviewed_on": "2026-10-16",
+    "scope": {
+      "date_roles": "target_date identifies the historical printed edition; this adapter assigns no exact manuscript date",
+      "no_historical_backprojection": true,
+      "not_direct_manuscript_transcription": true,
+      "omitted_book_divisions": [
+        "all prayers outside the explicitly selected units",
+        "critical apparatus and editorial introduction",
+        "all other ritual, rubrical and supplemental material"
+      ],
+      "represented_witness": "Royal Irish Academy MS D. II. 3 as mediated by Warner's 1915 printed text; layers, expansions and apparatus are those of the critical edition",
+      "status": "selected-complete-prayers",
+      "text_identity": "Bounded normalized native-language text from the identified critical edition; apparatus and uncollected units excluded",
+      "whole_book_complete": false
+    },
+    "serialized_text": "Hanc igitur oblationem seruitutis nostrae sed et cunctae familiae tuae quam tibi offerimus in honorem domini nostri iesu christi et in commemorationem beatorum martirum tuorum in hac aeclesiae quam famulus tuus ad honorem nominis gloriae tuae aedificauit :\nQuessumus domine ut placatus suscipias Eumque adque omnem populum ab idulorum cultura eripias et ad té deum uerum patrem omnipotentem conuertas :\nDies quoque nostros in tua pace disponas atque ab aeterna damnatione nos eripias et in electorum tuorum iubeas grege numerari :\nper dominum nostrum :\n",
+    "serialized_text_sha256": "c7ac487342e5dc6b1f6927865cd20851c780ca752d198c0c5764f9cf23f18352",
+    "target_date": "1915",
+    "text_set": "warner-1915-stowe-mass-prayers",
+    "title": "Warner 1915 Stowe Missal: Sanctus and two Canon prayers",
+    "witness_date": null
+  },
+  "schema": "triptych-eucharistic-witness-comparison/v1",
+  "source_refs": [
+    "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-hanc-igitur",
+    "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-hanc-igitur"
+  ],
+  "sources": [
+    {
+      "artifact_type": "scan",
+      "byte_size": 14980268,
+      "edition_id": "edition.anonymous.gelasian-sacramentary.wilson-clarendon-1894",
+      "id": "artifact.anonymous.gelasian-sacramentary.wilson-clarendon-1894.internet-archive-google-books-pdf",
+      "manifest_path": "src/sources/works/anonymous/gelasian-sacramentary/editions/wilson-clarendon-1894/artifacts/internet-archive-google-books-pdf/artifact.toml",
+      "manifest_sha256": "3ce32dd3ea67cb455016ef9174ee4ba557412e8aadcdd9541d92dd7f4893be3e",
+      "media_type": "application/pdf",
+      "provenance": "Internet Archive item gelasiansacrame00wilsgoog, Google Books scan.",
+      "record_type": "artifact",
+      "retrieved": "2026-07-27",
+      "rights_basis": "The 1894 Clarendon Press edition is public domain in the United States. The artifact is a Google Books scan delivered by Internet Archive; no scan bytes are redistributed by Triptych.",
+      "rights_jurisdiction": "US",
+      "rights_status": "public-domain",
+      "sha256": "404f7df5d06059676cacccaca05f997ca59407d0bff74b6a867c509eeefac72b",
+      "source_url": "https://archive.org/download/gelasiansacrame00wilsgoog/gelasiansacrame00wilsgoog.pdf",
+      "storage": "remote"
+    },
+    {
+      "artifact_type": "page-scan-image",
+      "byte_size": 239722,
+      "derived_from": "artifact.anonymous.gelasian-sacramentary.wilson-clarendon-1894.internet-archive-google-books-pdf",
+      "edition_id": "edition.anonymous.gelasian-sacramentary.wilson-clarendon-1894",
+      "id": "artifact.anonymous.gelasian-sacramentary.wilson-clarendon-1894.printed-p235-image-d98c2326",
+      "manifest_path": "src/sources/works/anonymous/gelasian-sacramentary/editions/wilson-clarendon-1894/artifacts/printed-p235-image-d98c2326/artifact.toml",
+      "manifest_sha256": "b2ac1c37cce650834545c4442c29184d0d0e63c69602c65aeda362642df317c1",
+      "media_type": "image/png",
+      "path": "src/sources/works/anonymous/gelasian-sacramentary/editions/wilson-clarendon-1894/artifacts/printed-p235-image-d98c2326/page.png",
+      "provenance": "Existing Gregorian/Gelasian/Wilson canonical owners and aliases were checked before registration. The complete exact PDF already acquired by the Western-witness lane was used locally; no new download or duplicate complete PDF was retained. Its SHA-256 was independently replayed before rendering. Printed page number and Canon Actionis heading were visually checked on this image. The parent PDF remains separately registered under its pre-existing anonymous owner; this derivative preserves that ownership rather than inventing a cross-edition derived_from relation.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "This is a mechanical rendering of one historical page of the 1894 Clarendon Press printing, public domain in the United States by publication date. It contains no modern Google wrapper, library borrower notice or added commentary. The whole-delivery metadata does not license a modern wrapper; this bounded derivative has its own historical-page basis.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "d98c23264281d39b37686d691eae71dca5e1c9d506d399e546c48bb88725dc57",
+      "storage": "tracked",
+      "transformation": "From exact parent PDF SHA-256 404f7df5d06059676cacccaca05f997ca59407d0bff74b6a867c509eeefac72b: Poppler pdftoppm 26.08.0, -f 328 -l 328 -r 200 -png -singlefile. Retain the complete rendered historical printed page 235; no crop, rescaling after render, enhancement or OCR correction. The other 496 PDF pages, including all modern wrapper matter, are excluded."
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 266,
+      "derived_from": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.historical-book-ocr-e4500b54",
+      "edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+      "id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-hanc-igitur-checked-latin-75df4acf",
+      "manifest_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/canon-hanc-igitur-checked-latin-75df4acf/artifact.toml",
+      "manifest_sha256": "c54e950ef7d41a606dd52ad8ed7c643797cff230746541febd5cff64fc0413df",
+      "media_type": "text/plain; charset=utf-8",
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/canon-hanc-igitur-checked-latin-75df4acf/text.txt",
+      "provenance": "Existing canonical work/edition identities, alias and artifact records were inspected before creation; the existing retained OCR and facsimile were reused, without a new edition or replacement witness. Exact bytes were mechanically extracted from the pinned OCR with an explicit correction ledger. The complete bounded body was read against the cited rendered historical page(s), then independently checked word by word by a second reviewer on 2026-10-16. Vatican Reg. lat. 316 as mediated by Wilson's 1894 critical edition; no new manuscript collation. Verification evidence: artifact.anonymous.gelasian-sacramentary.wilson-clarendon-1894.printed-p235-image-d98c2326.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The identified historical critical edition was published before 1931 and is public domain in the United States by expiration of its publication term, as recorded for the existing source artifacts. This bounded faithful transcription of its Latin text contributes no new authorship and is excluded from Triptych's CC BY 4.0 license. Modern wrappers and modern translations are not reproduced.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "75df4acff246918a08cf9d2d7c8089c6bb560e76e0f76e3a79669c9bb07e762c",
+      "storage": "tracked",
+      "transformation": "Source UTF-8 bytes SHA-256 e4500b548776621c720a0c7cb313f9de041969531da3814b7a4ef6444038a4e9. Use LF-delimited physical line ranges [[21668, 21678]]. Select only the named complete prayer bounded by its incipit and next prayer; join whitespace to one space, excluding running heads/apparatus between disjoint ranges. Apply these exact page-verified replacements in order: [{\"from\": \" igitur\", \"to\": \"Hanc igitur\", \"count\": 1}, {\"from\": \"tuae^^\", \"to\": \"tuae\", \"count\": 1}, {\"from\": \"ut^\", \"to\": \"ut\", \"count\": 1}, {\"from\": \"accipias^\", \"to\": \"accipias\", \"count\": 1}, {\"from\": \"disponas*^\", \"to\": \"disponas\", \"count\": 1}, {\"from\": \"eripi^\", \"to\": \"eripi\", \"count\": 1}, {\"from\": \"dectorum\", \"to\": \"electorum\", \"count\": 1}, {\"from\": \"gr^e\", \"to\": \"grege\", \"count\": 1}]. Append one LF. Complete Hanc prayer as printed in Wilson1894 bookIIIsectionXVI, excluding preceding Communicantes conclusion and following Quam. Remove superscript apparatus notes24-28, not prayer wording."
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 214,
+      "derived_from": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.historical-book-ocr-e4500b54",
+      "edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+      "id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-quam-oblationem-checked-latin-e01e1083",
+      "manifest_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/canon-quam-oblationem-checked-latin-e01e1083/artifact.toml",
+      "manifest_sha256": "4eb2870bba4c0165af5e179a9e9949d0ca889afdd46dfe81562082c25302a844",
+      "media_type": "text/plain; charset=utf-8",
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/canon-quam-oblationem-checked-latin-e01e1083/text.txt",
+      "provenance": "Existing canonical work/edition identities, alias and artifact records were inspected before creation; the existing retained OCR and facsimile were reused, without a new edition or replacement witness. Exact bytes were mechanically extracted from the pinned OCR with an explicit correction ledger. The complete bounded body was read against the cited rendered historical page(s), then independently checked word by word by a second reviewer on 2026-10-16. Vatican Reg. lat. 316 as mediated by Wilson's 1894 critical edition; no new manuscript collation. Verification evidence: artifact.anonymous.gelasian-sacramentary.wilson-clarendon-1894.printed-p235-image-d98c2326.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The identified historical critical edition was published before 1931 and is public domain in the United States by expiration of its publication term, as recorded for the existing source artifacts. This bounded faithful transcription of its Latin text contributes no new authorship and is excluded from Triptych's CC BY 4.0 license. Modern wrappers and modern translations are not reproduced.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "e01e1083c750fdc4a7c74a7e37c092e8989a9d3427292b5c6fba29f36698b327",
+      "storage": "tracked",
+      "transformation": "Source UTF-8 bytes SHA-256 e4500b548776621c720a0c7cb313f9de041969531da3814b7a4ef6444038a4e9. Use LF-delimited physical line ranges [[21678, 21684]]. Select only the named complete prayer bounded by its incipit and next prayer; join whitespace to one space, excluding running heads/apparatus between disjoint ranges. Apply these exact page-verified replacements in order: [{\"from\": \" oblationem\", \"to\": \"Quam oblationem\", \"count\": 1}, {\"from\": \"oblationem ^\", \"to\": \"oblationem\", \"count\": 1}, {\"from\": \"quae- sumus\", \"to\": \"quaesumus\", \"count\": 1}, {\"from\": \"ratam^\", \"to\": \"ratam,\", \"count\": 1}, {\"from\": \"accep- tabilemque\", \"to\": \"acceptabilemque\", \"count\": 1}, {\"from\": \"ut'^\", \"to\": \"ut\", \"count\": 1}, {\"from\": \"nostri '^\", \"to\": \"nostri\", \"count\": 1}, {\"from\": \"lesu\", \"to\": \"Iesu\", \"count\": 1}]. Append one LF. Complete Quam prayer, removing notes29-31 and joining compositor line breaks. Retain Domini Dei and native punctuation/case; next Qui pridie prayer excluded."
+    },
+    {
+      "artifact_type": "ocr-text",
+      "byte_size": 1095058,
+      "derived_from": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ia-djvu-ocr-gelasiansacrame00wilsgoog",
+      "edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+      "id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.historical-book-ocr-e4500b54",
+      "manifest_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/historical-book-ocr-e4500b54/artifact.toml",
+      "manifest_sha256": "544f418b08e643b657cd97c51f731ab5d5b9ad59d0a7ed798a4fee05af29cca3",
+      "media_type": "text/plain; charset=utf-8",
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/historical-book-ocr-e4500b54/source.txt",
+      "provenance": "Aliases Gelasian, Sacramentarium Gelasianum and Wilson checked against both existing canonical owners before retrieval. Complete PDF and DjVuTXT fetched directly with curl -L; size and SHA-1 matched the host inventory, and SHA-256 matched both pre-existing parent records. The exact host OCR remains remote under its existing unresolved-wrapper record; this separately identified derivative retains the historical publication on its own public-domain basis.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The identified historical printing was published before 1931 and is public domain in the United States by expiration of its publication term. Cornell University Library, Copyright Term and the Public Domain, updated 1 January 2026, https://guides.library.cornell.edu/copyright/publicdomain, checked 16 October 2026, gives that rule for foreign publications. Faithful mechanical reproduction and automated OCR add no new human-authored text. This record covers this historical witness and stated mechanical artifact, not a modern critical edition or translation. The retained source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "e4500b548776621c720a0c7cb313f9de041969531da3814b7a4ef6444038a4e9",
+      "storage": "tracked",
+      "transformation": "Byte-preserving slice of the exact UTF-8 IA DjVuTXT parent: split on LF while retaining terminators; concatenate 1-based inclusive raw physical lines 100–37063. The retained start is THE preceding GELASIAN SACRAMENTARY; the end is THE END. No other lines or characters changed. Omit original lines 1–99 (modern Google wrapper and library preliminaries) and 37064–37086 (trailing blanks, barcode and library borrower notice)."
+    },
+    {
+      "artifact_type": "ocr-text",
+      "byte_size": 1098845,
+      "edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+      "id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ia-djvu-ocr-gelasiansacrame00wilsgoog",
+      "manifest_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/ia-djvu-ocr-gelasiansacrame00wilsgoog/artifact.toml",
+      "manifest_sha256": "da4c10d7a94d948537ce637b1edc7d6d15f36118e8a65aa2cfca4a52539901e3",
+      "media_type": "text/plain; charset=utf-8",
+      "provenance": "Internet Archive DjVuTXT derivative of item gelasiansacrame00wilsgoog. Fetched whole over HTTPS with curl on 2026-08-01, its length checked against the length the item's own metadata declares, and hashed before use. Nothing in the retrieval path passed through a model.",
+      "record_type": "artifact",
+      "retrieved": "2026-08-01",
+      "rights_basis": "The underlying printing is in the public domain in the United States by publication date. The exact bytes registered here are an Internet Archive DjVuTXT optical-character-recognition derivative of that printing, and no distribution grant was established for the derivative itself or for the digitiser's own front matter where the file carries it. Triptych therefore records the exact remote bytes and their digest, retains no payload, and quotes from the underlying edition only what a locus needs.",
+      "rights_status": "unresolved",
+      "sha256": "039123ca029bf1684b2e8b0dec014cc3fa9057ecb30da3494f7165cb89684d84",
+      "source_url": "https://archive.org/download/gelasiansacrame00wilsgoog/gelasiansacrame00wilsgoog_djvu.txt",
+      "storage": "remote"
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 554,
+      "derived_from": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-raw-ocr-3d11ad59",
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-hanc-igitur-checked-latin-7465da67",
+      "manifest_path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/canon-hanc-igitur-checked-latin-7465da67/artifact.toml",
+      "manifest_sha256": "efb5793e19c63af780d5e068a4ae94a15ca68ad6f4ef4dd36df8e5c8f027b23e",
+      "media_type": "text/plain; charset=utf-8",
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/canon-hanc-igitur-checked-latin-7465da67/text.txt",
+      "provenance": "Existing canonical work/edition identities, alias and artifact records were inspected before creation; the existing retained OCR and facsimile were reused, without a new edition or replacement witness. Exact bytes were mechanically extracted from the pinned OCR with an explicit correction ledger. The complete bounded body was read against the cited rendered historical page(s), then independently checked word by word by a second reviewer on 2026-10-16. Royal Irish Academy MS D. II. 3 as mediated by Warner's 1915 printed text; layers, expansions and apparatus are those of the critical edition. Verification evidence: artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-scan-27c6070e.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The identified historical critical edition was published before 1931 and is public domain in the United States by expiration of its publication term, as recorded for the existing source artifacts. This bounded faithful transcription of its Latin text contributes no new authorship and is excluded from Triptych's CC BY 4.0 license. Modern wrappers and modern translations are not reproduced.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "7465da67befc59c3576681e5001d1bb33a03b3f72f80a2d513c3b165a5b9dd67",
+      "storage": "tracked",
+      "transformation": "Source UTF-8 bytes SHA-256 3d11ad59b8968e9c0e2c816676d0b5a26142896a9af1a13dbf29aa8c6bd69cc4. Use LF-delimited physical line ranges [[3540, 3550]]. Select only the named complete prayer bounded by its incipit and next prayer; join whitespace to one space, excluding running heads/apparatus between disjoint ranges. Apply these exact page-verified replacements in order: [{\"from\": \"nostras\", \"to\": \"nostrae\", \"count\": 1}, {\"from\": \"tibi*\", \"to\": \"tibi\", \"count\": 1}, {\"from\": \"offeximus\", \"to\": \"offerimus\", \"count\": 1}, {\"from\": \"honorem5\", \"to\": \"honorem\", \"count\": 1}, {\"from\": \"ie.ru\", \"to\": \"iesu\", \"count\": 1}, {\"from\": \"chxisti\", \"to\": \"christi\", \"count\": 1}, {\"from\": \"co/;/memoratione;;/\", \"to\": \"commemorationem\", \"count\": 1}, {\"from\": \"beaton/;;/\", \"to\": \"beatorum\", \"count\": 1}, {\"from\": \"martin/;;/\", \"to\": \"martirum\", \"count\": 1}, {\"from\": \"tuoxum\", \"to\": \"tuorum\", \"count\": 2}, {\"from\": \"aeclesiae6\", \"to\": \"aeclesiae\", \"count\": 1}, {\"from\": \"qua;;z\", \"to\": \"quam\", \"count\": 1}, {\"from\": \":•\", \"to\": \":\", \"count\": 1}, {\"from\": \"Ouessum;/^\", \"to\": \"Quessumus\", \"count\": 1}, {\"from\": \"placate\", \"to\": \"placatus\", \"count\": 1}, {\"from\": \"[fo. 2jv.\", \"to\": \"\", \"count\": 1}, {\"from\": \"Eumqz/£r\", \"to\": \"Eumque\", \"count\": 1}, {\"from\": \"populu/;/\", \"to\": \"populum\", \"count\": 1}, {\"from\": \"idulon/;;/\", \"to\": \"idulorum\", \"count\": 1}, {\"from\": \"te deum\", \"to\": \"té deum\", \"count\": 1}, {\"from\": \"xxenxm\", \"to\": \"uerum\", \"count\": 1}, {\"from\": \"patre;;/\", \"to\": \"patrem\", \"count\": 1}, {\"from\": \"om;/ipotentem\", \"to\": \"omnipotentem\", \"count\": 1}, {\"from\": \"conuertas8\", \"to\": \"conuertas\", \"count\": 1}, {\"from\": \":~\", \"to\": \":\", \"count\": 2}, {\"from\": \"a.tque*\", \"to\": \"atque\", \"count\": 1}, {\"from\": \"aetema\", \"to\": \"aeterna\", \"count\": 1}, {\"from\": \"da;;matione\", \"to\": \"damnatione\", \"count\": 1}, {\"from\": \"eripias10\", \"to\": \"eripias\", \"count\": 1}, {\"from\": \"i?i\", \"to\": \"in\", \"count\": 1}, {\"from\": \"electoruw\", \"to\": \"electorum\", \"count\": 1}, {\"from\": \":2\", \"to\": \":\", \"count\": 1}, {\"from\": \"  \", \"to\": \" \", \"count\": 1}]. Append one LF. Complete Hanc prayer including dedication/conversion clauses and Dies quoque continuation through per dominum nostrum, fol27-27v. Flatten roman/italic typography, expand ae ligatures, retain native Quessumus, aeclesiae, idulorum, eripias and accented té. Remove apparatus4-10 and foliotag. By explicit editorial encoding, diagonal separator after aedificauit, compound wave marks after conuertas/nostrum, and curved compound after numerari are all represented as colons; no claim of exact punctuation transcription. The apparatus compares omitted clauses to other books; the text itself does not date their introduction."
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 199,
+      "derived_from": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-raw-ocr-3d11ad59",
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-quam-oblationem-checked-latin-e404c122",
+      "manifest_path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/canon-quam-oblationem-checked-latin-e404c122/artifact.toml",
+      "manifest_sha256": "e4b640f7fac6fe6914822283d139ee69bc8ee96a23e21fb8f7e06bab59ac3204",
+      "media_type": "text/plain; charset=utf-8",
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/canon-quam-oblationem-checked-latin-e404c122/text.txt",
+      "provenance": "Existing canonical work/edition identities, alias and artifact records were inspected before creation; the existing retained OCR and facsimile were reused, without a new edition or replacement witness. Exact bytes were mechanically extracted from the pinned OCR with an explicit correction ledger. The complete bounded body was read against the cited rendered historical page(s), then independently checked word by word by a second reviewer on 2026-10-16. Royal Irish Academy MS D. II. 3 as mediated by Warner's 1915 printed text; layers, expansions and apparatus are those of the critical edition. Verification evidence: artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-scan-27c6070e.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The identified historical critical edition was published before 1931 and is public domain in the United States by expiration of its publication term, as recorded for the existing source artifacts. This bounded faithful transcription of its Latin text contributes no new authorship and is excluded from Triptych's CC BY 4.0 license. Modern wrappers and modern translations are not reproduced.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "e404c122389466c12f7c79304c991aae3a05d8b13297c37ed45bf221cc01727c",
+      "storage": "tracked",
+      "transformation": "Source UTF-8 bytes SHA-256 3d11ad59b8968e9c0e2c816676d0b5a26142896a9af1a13dbf29aa8c6bd69cc4. Use LF-delimited physical line ranges [[3552, 3555]]. Select only the named complete prayer bounded by its incipit and next prayer; join whitespace to one space, excluding running heads/apparatus between disjoint ranges. Apply these exact page-verified replacements in order: [{\"from\": \"t6u\", \"to\": \"té\", \"count\": 1}, {\"from\": \"de?is\", \"to\": \"deus\", \"count\": 1}, {\"from\": \"omnib;^\", \"to\": \"omnibus\", \"count\": 1}, {\"from\": \"quesumw-s-\", \"to\": \"quesumus\", \"count\": 1}, {\"from\": \"benedicta;;/\", \"to\": \"benedictam\", \"count\": 1}, {\"from\": \"ascripta;;/\", \"to\": \"ascriptam\", \"count\": 1}, {\"from\": \"rata;;/\", \"to\": \"ratam\", \"count\": 1}, {\"from\": \"acceptabilemq?/£\", \"to\": \"acceptabilemque\", \"count\": 1}, {\"from\": \"dig- naxeque12\", \"to\": \"dignareque\", \"count\": 1}, {\"from\": \"coxpus\", \"to\": \"corpus\", \"count\": 1}, {\"from\": \"domini13\", \"to\": \"domini\", \"count\": 1}, {\"from\": \"chxisti\", \"to\": \"christi\", \"count\": 1}]. Append one LF. Complete Quam prayer bounded before following qui pridie in same paragraph. Preserve té (not tu), quesumus, ascriptam, dignareque, fili and printed cross as +; no final full stop is supplied. Remove superscript notes11-13, flatten italic expansion type, and join printed line break. Footnote corrections from other books are not imported."
+    },
+    {
+      "artifact_type": "ocr-text",
+      "byte_size": 277250,
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-raw-ocr-3d11ad59",
+      "manifest_path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/ia-raw-ocr-3d11ad59/artifact.toml",
+      "manifest_sha256": "a3e765dc305b074c76805870a35f9ccb076bf9393814fd0f4f3538ce3be7c722",
+      "media_type": "text/plain; charset=utf-8",
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/ia-raw-ocr-3d11ad59/source.txt",
+      "provenance": "Aliases Stowe, Missale Stowense, Royal Irish Academy D. II. 3 checked against canonical work manifests before acquisition; no existing Stowe owner found. The catalogue handoff supplied Internet Archive item publications32henruoft. Complete PDF and DjVuTXT responses downloaded directly with curl -L; complete byte counts and SHA-1 matched the item metadata file inventory. Source bytes never passed through a model. Edition identity checked against the title, series and contents page images.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The identified historical printing was published before 1931 and is public domain in the United States by expiration of its publication term. Cornell University Library, Copyright Term and the Public Domain, updated 1 January 2026, https://guides.library.cornell.edu/copyright/publicdomain, checked 16 October 2026, gives that rule for foreign publications. Faithful mechanical reproduction and automated OCR add no new human-authored text. This record covers this historical witness and stated mechanical artifact, not a modern critical edition or translation. The retained source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "3d11ad59b8968e9c0e2c816676d0b5a26142896a9af1a13dbf29aa8c6bd69cc4",
+      "source_url": "https://archive.org/download/publications32henruoft/publications32henruoft_djvu.txt",
+      "storage": "tracked"
+    },
+    {
+      "artifact_type": "scan",
+      "byte_size": 6181209,
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-scan-27c6070e",
+      "manifest_path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/ia-scan-27c6070e/artifact.toml",
+      "manifest_sha256": "fd42f74c38fdd1e222acb09c1cd49289e33900f8b6b5b3094d98338e5169b42c",
+      "media_type": "application/pdf",
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/ia-scan-27c6070e/source.pdf",
+      "provenance": "Aliases Stowe, Missale Stowense, Royal Irish Academy D. II. 3 checked against canonical work manifests before acquisition; no existing Stowe owner found. The catalogue handoff supplied Internet Archive item publications32henruoft. Complete PDF and DjVuTXT responses downloaded directly with curl -L; complete byte counts and SHA-1 matched the item metadata file inventory. Source bytes never passed through a model. Edition identity checked against the title, series and contents page images.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The identified historical printing was published before 1931 and is public domain in the United States by expiration of its publication term. Cornell University Library, Copyright Term and the Public Domain, updated 1 January 2026, https://guides.library.cornell.edu/copyright/publicdomain, checked 16 October 2026, gives that rule for foreign publications. Faithful mechanical reproduction and automated OCR add no new human-authored text. This record covers this historical witness and stated mechanical artifact, not a modern critical edition or translation. The retained source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "27c6070e673622fc3f976a016aff8dccd69e70a90d17ac52aa658104f20cfbcf",
+      "source_url": "https://archive.org/download/publications32henruoft/publications32henruoft.pdf",
+      "storage": "tracked"
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 355,
+      "derived_from": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-raw-ocr-3d11ad59",
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.sanctus-checked-latin-27b79875",
+      "manifest_path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/sanctus-checked-latin-27b79875/artifact.toml",
+      "manifest_sha256": "659ac33b9824120c7b4725d96b2bffa1163459c9f28211e9712a506150d9e8b6",
+      "media_type": "text/plain; charset=utf-8",
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/sanctus-checked-latin-27b79875/text.txt",
+      "provenance": "Existing canonical work/edition identities, alias and artifact records were inspected before creation; the existing retained OCR and facsimile were reused, without a new edition or replacement witness. Exact bytes were mechanically extracted from the pinned OCR with an explicit correction ledger. The complete bounded body was read against the cited rendered historical page(s), then independently checked word by word by a second reviewer on 2026-10-16. Royal Irish Academy MS D. II. 3 as mediated by Warner's 1915 printed text; layers, expansions and apparatus are those of the critical edition. Verification evidence: artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-scan-27c6070e.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The identified historical critical edition was published before 1931 and is public domain in the United States by expiration of its publication term, as recorded for the existing source artifacts. This bounded faithful transcription of its Latin text contributes no new authorship and is excluded from Triptych's CC BY 4.0 license. Modern wrappers and modern translations are not reproduced.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "27b798758bef32f11d5fa4bd1dbe2608c74a6efa14e6f5ad68b9c1ebe66e726a",
+      "storage": "tracked",
+      "transformation": "Source UTF-8 bytes SHA-256 3d11ad59b8968e9c0e2c816676d0b5a26142896a9af1a13dbf29aa8c6bd69cc4. Use LF-delimited physical line ranges [[3395, 3400]]. Select only the named complete prayer bounded by its incipit and next prayer; join whitespace to one space, excluding running heads/apparatus between disjoint ranges. Apply these exact page-verified replacements in order: [{\"from\": \"sabaoth\", \"to\": \"sabaóth\", \"count\": 1}, {\"from\": \"terra,\", \"to\": \"terra\", \"count\": 1}, {\"from\": \"•\", \"to\": \"·\", \"count\": 1}, {\"from\": \"excelsis6\", \"to\": \"excelsís\", \"count\": 1}, {\"from\": \"excelsis\", \"to\": \"excelsís\", \"count\": 1}, {\"from\": \"cell's\", \"to\": \"celís\", \"count\": 1}, {\"from\": \"conuer- saretur\", \"to\": \"conuersaretur\", \"count\": 1}, {\"from\": \"tern's\", \"to\": \"terrís\", \"count\": 1}, {\"from\": \"passion em\", \"to\": \"passionem\", \"count\": 1}, {\"from\": \"aetemam\", \"to\": \"aeternam\", \"count\": 1}, {\"from\": \"daret:~\", \"to\": \"daret :\", \"count\": 1}, {\"from\": \"domi- num.\", \"to\": \"dominum\", \"count\": 1}]. Append one LF. Complete printed Sanctus and its Christological continuation through per dominum, fol23v. Two Sanctus words exactly as printed; do not add a third. Flatten roman/italic typography and expand ligature sorts to digraphs; retain accents and native dilicta. Superscript6 excluded. The compound separator after daret is normalized to a colon, not asserted as a diplomatic character; retained page is the punctuation evidence. No final full stop is printed after dominum."
+    },
+    {
+      "date": "1894",
+      "id": "edition.anonymous.gelasian-sacramentary.wilson-clarendon-1894",
+      "language": "la",
+      "manifest_path": "src/sources/works/anonymous/gelasian-sacramentary/editions/wilson-clarendon-1894/edition.toml",
+      "manifest_sha256": "45b414e9f0f740cadd5660a72ff299e63b9943a6e7e9a6fc75ec5b1ced56ce63",
+      "publication": "Edited by H. A. Wilson, Oxford: Clarendon Press, 1894",
+      "record_type": "edition",
+      "title": "The Gelasian Sacramentary: Liber Sacramentorum Romanae Ecclesiae",
+      "work_id": "work.anonymous.gelasian-sacramentary"
+    },
+    {
+      "date": "1894",
+      "id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+      "language": "la",
+      "manifest_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/edition.toml",
+      "manifest_sha256": "7bb097f4c19699a224a5bf589d039b7b39a3aad66d9db0e3d70845f353df5670",
+      "publication": "Oxford: at the Clarendon Press, 1894. Edited by Henry Austin Wilson from Vatican, Reg. lat. 316, with the readings of the eighth-century Gelasians in the margins and apparatus.",
+      "record_type": "edition",
+      "title": "The Gelasian Sacramentary: Liber sacramentorum Romanae ecclesiae, edited with introduction, critical notes and appendix by H. A. Wilson",
+      "work_id": "work.catholic-church.sacramentarium-gelasianum-vetus"
+    },
+    {
+      "date": "1915",
+      "id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "language": "la",
+      "manifest_path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/edition.toml",
+      "manifest_sha256": "52ab6eb25940dc5471028a7caf3ef8e401c7f636f231ade9b3fd318426916e56",
+      "publication": "London: Henry Bradshaw Society, vol. XXXII; Harrison and Sons, 1915.",
+      "record_type": "edition",
+      "title": "The Stowe Missal, MS. D. II. 3 in the Library of the Royal Irish Academy, Dublin. Vol. II: Printed Text",
+      "work_id": "work.catholic-church.stowe-missal"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-hanc-igitur-checked-latin-75df4acf",
+      "artifact_sha256": "75df4acff246918a08cf9d2d7c8089c6bb560e76e0f76e3a79669c9bb07e762c",
+      "edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+      "id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-hanc-igitur",
+      "locus": "canon-hanc-igitur; printed p. 235; source PDF page(s) 328",
+      "manifest_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/canon-hanc-igitur.toml",
+      "manifest_sha256": "84faaaec950d643e9bba8bedbd3f9f21313a8abcca10be692697b8a58ca42666",
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-quam-oblationem-checked-latin-e01e1083",
+      "artifact_sha256": "e01e1083c750fdc4a7c74a7e37c092e8989a9d3427292b5c6fba29f36698b327",
+      "edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+      "id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-quam-oblationem",
+      "locus": "canon-quam-oblationem; printed p. 235; source PDF page(s) 328",
+      "manifest_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/canon-quam-oblationem.toml",
+      "manifest_sha256": "3a92c4358e4ab1f4b123d4dd688d8efcb1e11506dabd2bf40bca301cfa593d76",
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-hanc-igitur-checked-latin-7465da67",
+      "artifact_sha256": "7465da67befc59c3576681e5001d1bb33a03b3f72f80a2d513c3b165a5b9dd67",
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-hanc-igitur",
+      "locus": "canon-hanc-igitur; printed p. 12; source PDF page(s) 98",
+      "manifest_path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/passages/canon-hanc-igitur.toml",
+      "manifest_sha256": "cac0d3d95fc9c244179bbfbd0c56fc2a1b96861a48ca09e4560d72a68bab432b",
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-quam-oblationem-checked-latin-e404c122",
+      "artifact_sha256": "e404c122389466c12f7c79304c991aae3a05d8b13297c37ed45bf221cc01727c",
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-quam-oblationem",
+      "locus": "canon-quam-oblationem; printed p. 12; source PDF page(s) 98",
+      "manifest_path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/passages/canon-quam-oblationem.toml",
+      "manifest_sha256": "96ffefbc1220d34fdbeeb11ed5879e03a6a42a9f92808c958cb5ed42d2e0c61f",
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.sanctus-checked-latin-27b79875",
+      "artifact_sha256": "27b798758bef32f11d5fa4bd1dbe2608c74a6efa14e6f5ad68b9c1ebe66e726a",
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.sanctus",
+      "locus": "sanctus; printed p. 10; source PDF page(s) 96",
+      "manifest_path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/passages/sanctus.toml",
+      "manifest_sha256": "17dc84481a077051ca7ea9af26a2e6fbdea181bb7587c2b5c31310d1f1824786",
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "id": "work.anonymous.gelasian-sacramentary",
+      "manifest_path": "src/sources/works/anonymous/gelasian-sacramentary/work.toml",
+      "manifest_sha256": "a41c01cc8c194696663fab1631d3c4f96828ab0ab07be883df92d243805690e3",
+      "record_type": "work",
+      "title": "Liber sacramentorum Romanae ecclesiae"
+    },
+    {
+      "id": "work.catholic-church.sacramentarium-gelasianum-vetus",
+      "manifest_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/work.toml",
+      "manifest_sha256": "034be9e2898ee8994a5aa64c1d4316d18271274e68532d1e37b0ba576071a618",
+      "record_type": "work",
+      "title": "Liber sacramentorum Romanae aeclesiae ordinis anni circuli"
+    },
+    {
+      "id": "work.catholic-church.stowe-missal",
+      "manifest_path": "src/sources/works/catholic-church/stowe-missal/work.toml",
+      "manifest_sha256": "51ae2664ee5b8806a428a670b7aede9778b9bf194b15d2dec9764b2f63e3d11c",
+      "record_type": "work",
+      "title": "The Stowe Missal"
+    }
+  ],
+  "text_serialization": {
+    "encoding": "UTF-8",
+    "final_newline": true,
+    "id": "act-history-ventilate/v1",
+    "line_ending": "LF",
+    "output_hash_field": "serialized_text_sha256",
+    "owner": "tools/act-history:ventilate",
+    "source_hash_field": "text_sha256"
+  },
+  "tool_inputs": [
+    {
+      "byte_size": 67556,
+      "path": "guidance/liturgical-text-publication-policy.md",
+      "sha256": "3a035f6e50c06da9597ea99020efb0fa93939d6ef88f6204ed83ffbdf9aae32f"
+    },
+    {
+      "byte_size": 90723,
+      "path": "scripts/_calendars.py",
+      "sha256": "9961359f38a3e390b5de4103a5222149e40b906362bba4b5620590f5ee1fed8e"
+    },
+    {
+      "byte_size": 49955,
+      "path": "scripts/_eucharistic_history.py",
+      "sha256": "8a6287252b3c50270464fca462ec2eac5680fbc0d21c7670482fd41b8bb555ee"
+    },
+    {
+      "byte_size": 60025,
+      "path": "scripts/_eucharistic_texts.py",
+      "sha256": "cd92077fd685310b7aaf7f14bfb1ff83f23bc1417cc8ebe9687ca9a554016799"
+    },
+    {
+      "byte_size": 48920,
+      "path": "scripts/_proper_latin.py",
+      "sha256": "b24579434c8887a3b8527776790689b3b9f3262ee686eca745ec950845699bd7"
+    },
+    {
+      "byte_size": 33120,
+      "path": "scripts/_tooling.py",
+      "sha256": "86c302fcb7be450dec4dc1d45c4f529b000e79d5c548fae2b22212f7246e0afe"
+    },
+    {
+      "byte_size": 252547,
+      "path": "tools/act-history",
+      "sha256": "f5c2926da1d093b3f84d010a9ade154d79b0637661532c30f9a83c6412154edc"
+    },
+    {
+      "byte_size": 117989,
+      "path": "tools/source-library",
+      "sha256": "7a85be155005821a197b5ee6f3b423424669c074c827898cdf2be39e8388aa2f"
+    }
+  ],
+  "unified_diff": "--- left/wilson-1894-gelasian-canon-prayers\n+++ right/warner-1915-stowe-mass-prayers\n@@ -1,2 +1,4 @@\n-Hanc igitur oblationem servitutis nostrae, sed et cunctae familiae tuae, quaesumus, Domine, ut placatus accipias, diesque nostros in tua pace disponas, atque ab aeterna damnatione nos eripi et in electorum tuorum iubeas grege numerari.\n-Per Christum Dominum nostrum.\n+Hanc igitur oblationem seruitutis nostrae sed et cunctae familiae tuae quam tibi offerimus in honorem domini nostri iesu christi et in commemorationem beatorum martirum tuorum in hac aeclesiae quam famulus tuus ad honorem nominis gloriae tuae aedificauit :\n+Quessumus domine ut placatus suscipias Eumque adque omnem populum ab idulorum cultura eripias et ad té deum uerum patrem omnipotentem conuertas :\n+Dies quoque nostros in tua pace disponas atque ab aeterna damnatione nos eripias et in electorum tuorum iubeas grege numerari :\n+per dominum nostrum :\n"
+}
