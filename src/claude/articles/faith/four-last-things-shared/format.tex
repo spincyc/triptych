@@ -1,0 +1,70 @@
+% Claude Four Last Things only; load after common/preamble and titlesec.
+% A reading measure of about seventy-five characters, indented paragraphs,
+% one title-page frame, and one sibling line for the four volumes.
+\geometry{letterpaper,left=1.3in,right=1.3in,top=1in,bottom=1.05in}
+\linespread{1.07}
+\setlength{\parindent}{1.2em}
+\setlength{\parskip}{0.2em plus 0.1em}
+\setlength{\emergencystretch}{2em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+\def\TriptychPrintEdition{}
+
+\titleformat{\section}{\large\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.6em}{}
+\titlespacing*{\section}{0pt}{1.6em plus 0.4em}{0.7em}
+\titlespacing*{\subsection}{0pt}{1.1em plus 0.3em}{0.4em}
+
+\ifdefined\TriptychPrintEdition
+\newcommand{\FourLastThingsLink}[2]{\href{#1.pdf}{#2}}
+\else
+\newcommand{\FourLastThingsLink}[2]{\href{#1.html}{#2}}
+\fi
+
+\newcommand{\FourLastThingsSiblings}{%
+  \FourLastThingsLink{four-last-things-01-death}{I.\ Death}%
+  \enspace·\enspace
+  \FourLastThingsLink{four-last-things-02-judgment}{II.\ Judgment}%
+  \enspace·\enspace
+  \FourLastThingsLink{four-last-things-03-hell}{III.\ Hell}%
+  \enspace·\enspace
+  \FourLastThingsLink{four-last-things-04-heaven}{IV.\ Heaven}%
+}
+
+% #1 numeral, #2 title, #3 subtitle, #4 epigraph, #5 epigraph source.
+\newcommand{\FourLastThingsTitlePage}[5]{%
+  \begin{titlepage}
+  \thispagestyle{empty}
+  \centering
+  \vspace*{0.15\textheight}
+  {\small\scshape The Four Last Things\enspace·\enspace #1\par}
+  \vspace{1.8em}
+  {\Huge\bfseries #2\par}
+  \vspace{0.9em}
+  {\Large\itshape #3\par}
+  \vspace{3.2em}
+  \begin{minipage}{0.74\textwidth}
+  \centering\itshape #4\par
+  \vspace{0.5em}
+  {\upshape\small #5\par}
+  \end{minipage}
+  \vfill
+  \end{titlepage}
+}
+
+\newcommand{\FourLastThingsNavigation}{%
+  \par\begingroup\small\centering
+  \FourLastThingsSiblings
+  \par\endgroup
+  \ifdefined\TriptychPrintEdition
+  \vspace{1.2em}
+  \begingroup
+  \small
+  \setlength{\parskip}{0pt}
+  \tableofcontents
+  \endgroup
+  \clearpage
+  \else
+  \fi
+}

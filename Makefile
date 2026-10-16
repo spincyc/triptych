@@ -1241,7 +1241,8 @@ $(BUILD_ROOT)/$(1).pdf: $(shell find $(SOURCE_ROOT)/$(1) -type f \( \
 endef
 $(foreach document,$(CANONICAL_DOCUMENTS),$(eval $(call REGISTER_DOCUMENT_SOURCES,$(document))))
 
-ifeq ($(PROVIDER),gpt)
+# Each provider's Four Last Things series imports its own shared format.
+ifneq ($(filter $(PROVIDER),gpt claude),)
 FOUR_LAST_THINGS_DOCUMENTS := $(addprefix articles/faith/four-last-things-,01-death 02-judgment 03-hell 04-heaven)
 $(addprefix $(BUILD_ROOT)/,$(addsuffix .pdf,$(FOUR_LAST_THINGS_DOCUMENTS))): \
 	$(SOURCE_ROOT)/articles/faith/four-last-things-shared/format.tex

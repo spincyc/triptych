@@ -19,27 +19,30 @@ TOOL = ROOT / "tools/source-inventory"
 
 
 class SourceInventoryTests(unittest.TestCase):
-    def test_four_last_things_shared_owner_is_confined_to_gpt(self) -> None:
+    def test_four_last_things_shared_owner_serves_each_provider(self) -> None:
+        # Each provider keeps its own series format under its own tree; the
+        # owner is materialized per provider and never crosses providers.
         tool = runpy.run_path(str(TOOL))
         document = "articles/faith/four-last-things-01-death"
         shared = "articles/faith/four-last-things-shared/format.tex"
         owner = "owner.articles.faith.four-last-things"
         for provider in ("gpt", "claude"):
             self.write(f"src/{provider}/{document}/main.tex", "Essay\n")
-        self.write(f"src/gpt/{shared}", "Series format\n")
+            self.write(f"src/{provider}/{shared}", "Series format\n")
 
-        gpt = tool["_bootstrap_data"](self.root, "2026-10-12", "gpt")
-        claude = tool["_bootstrap_data"](self.root, "2026-10-12", "claude")
-        self.assertIn(owner, [row["id"] for row in gpt["owners"]])
-        self.assertNotIn(owner, [row["id"] for row in claude["owners"]])
-        shared_row = next(row for row in gpt["files"] if row["path"] == f"src/gpt/{shared}")
-        self.assertEqual(shared_row["owners"], [owner])
-        for inventory, expected in ((gpt, True), (claude, False)):
-            row = next(row for row in inventory["documents"] if row["id"] == document)
-            self.assertEqual(
-                {"id": owner, "relationship": "render-import"} in row["record_owners"],
-                expected,
+        for provider in ("gpt", "claude"):
+            inventory = tool["_bootstrap_data"](self.root, "2026-10-16", provider)
+            self.assertIn(owner, [row["id"] for row in inventory["owners"]])
+            shared_row = next(
+                row for row in inventory["files"] if row["path"] == f"src/{provider}/{shared}"
             )
+            self.assertEqual(shared_row["owners"], [owner])
+            owner_row = next(row for row in inventory["owners"] if row["id"] == owner)
+            self.assertEqual(
+                owner_row["roots"], [f"src/{provider}/articles/faith/four-last-things-shared"]
+            )
+            row = next(row for row in inventory["documents"] if row["id"] == document)
+            self.assertIn({"id": owner, "relationship": "render-import"}, row["record_owners"])
 
     def setUp(self) -> None:
         self.temporary_directory = tempfile.TemporaryDirectory()

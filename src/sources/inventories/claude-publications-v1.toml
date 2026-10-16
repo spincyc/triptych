@@ -1,11 +1,16 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "claude"
-audited_on = "2026-10-15"
+audited_on = "2026-10-16"
 discovery_rule = "src/claude/**/main.tex"
 publication_count = 61
-source_surface_file_count = 1846
-snapshot = "sha256:5f939fecc7fd5cefb34425d4ebe8a82912521c3cb6ede1df58d90b44ab204ec1"
+source_surface_file_count = 1848
+snapshot = "sha256:491b17b81dfb5893925011578a69b3fda52dbadb1bb8202ba6aac8910f63db3c"
+
+[[owners]]
+id = "owner.articles.faith.four-last-things"
+kind = "shared-render-owner"
+roots = ["src/claude/articles/faith/four-last-things-shared"]
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -97,6 +102,9 @@ source_categories = ["liturgical", "magisterial", "scholastic", "scripture"]
 [[documents.record_owners]]
 id = "articles/faith/four-last-things-01-death"
 relationship = "local"
+[[documents.record_owners]]
+id = "owner.articles.faith.four-last-things"
+relationship = "render-import"
 
 [[documents]]
 id = "articles/faith/four-last-things-02-judgment"
@@ -108,6 +116,9 @@ source_categories = ["magisterial", "scholastic", "scripture"]
 [[documents.record_owners]]
 id = "articles/faith/four-last-things-02-judgment"
 relationship = "local"
+[[documents.record_owners]]
+id = "owner.articles.faith.four-last-things"
+relationship = "render-import"
 
 [[documents]]
 id = "articles/faith/four-last-things-03-hell"
@@ -119,6 +130,9 @@ source_categories = ["magisterial", "scholastic", "scripture"]
 [[documents.record_owners]]
 id = "articles/faith/four-last-things-03-hell"
 relationship = "local"
+[[documents.record_owners]]
+id = "owner.articles.faith.four-last-things"
+relationship = "render-import"
 
 [[documents]]
 id = "articles/faith/four-last-things-04-heaven"
@@ -130,6 +144,9 @@ source_categories = ["magisterial", "scholastic", "scripture"]
 [[documents.record_owners]]
 id = "articles/faith/four-last-things-04-heaven"
 relationship = "local"
+[[documents.record_owners]]
+id = "owner.articles.faith.four-last-things"
+relationship = "render-import"
 
 [[documents]]
 id = "articles/faith/freemasonry-and-the-catholic-church"
@@ -1755,6 +1772,18 @@ path = "src/claude/articles/faith/four-last-things-04-heaven/web-edition.toml"
 sha256 = "79afeea65fb52b25ba643b28636971277eab5da684bcf7e3713e00eaebde0b34"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-04-heaven"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-shared/cold-review-2026-10-16.md"
+sha256 = "3f047f67d62eb807f134394e1cb31414b117b4c925359b221bc9c74f2b8e00ee"
+kind = "rendered-content"
+owners = ["owner.articles.faith.four-last-things"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-shared/format.tex"
+sha256 = "93f739c266e0d623b02e977cbcbd02375aac514fad5033d6bc7b07e5ba2ad122"
+kind = "rendered-content"
+owners = ["owner.articles.faith.four-last-things"]
 
 [[files]]
 path = "src/claude/articles/faith/freemasonry-and-the-catholic-church/main.tex"
