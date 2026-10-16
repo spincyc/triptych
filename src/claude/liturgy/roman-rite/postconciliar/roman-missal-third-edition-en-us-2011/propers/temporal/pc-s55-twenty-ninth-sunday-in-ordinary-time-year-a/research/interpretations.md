@@ -1,7 +1,12 @@
 # Proposed interpretations — `PC-S55-A`
 
 Research stage of `proper-study` v11, run `4d16b5e19d25dad9`, 16 October 2026;
-revised at the research stage's second and third passes the same day. Evidence, loci, reading forms and bounds are in [`scope.md`](scope.md);
+revised at the research stage's second and third passes the same day, and
+by the research stage of the `proper-study` v12 revision (run
+`821c824684b0c7a7`, also 16 October 2026), which changed no reading, author
+or difficulty and made the corrections its standing findings and sources
+required (Reading 1, psalm row; Reading 2, Collect row; Reading 3, the
+strongest difficulty; the commentators' rows, now read on page images). Evidence, loci, reading forms and bounds are in [`scope.md`](scope.md);
 text control in [`../propers/verified.md`](../propers/verified.md) and the
 [Week XXIX owner](../../shared/ordinary-time/weeks/29/propers/verified.md).
 
@@ -126,7 +131,7 @@ that they need not compete.
 | Thomas Aquinas (Doctor) | *Super Matth.* c. 22 (Venice t. III p. 284, page image) | The literal and mystical senses held together; "Nos habemus animam quae est ad imaginem Dei, ideo eam Deo reddere debemus" | carrying |
 | Jerome (Father) | *Comm. in Matt.* III (PL 26 col. 163, page image) | The literal alternative: tithes, first-fruits, oblations, victims; Christ rendered by doing the Father's will | the strongest alternative, preserved |
 | Cyril of Alexandria (no row) | *Comm. in Luc.* 135 (Payne Smith, English) | God asks nothing corruptible but "willing obedience and submission; faith and love; and the sweet savour of good works" | supporting only |
-| Schuster (Blessed) | *The Sacramentary* III, pp. 183–184 (OCR) | "man belongs before all things to God" | supporting only, commentator on the Gospel as his Mass gave it; not cited for any join of the Gospel to another element |
+| Schuster (Blessed) | *The Sacramentary* III, pp. 183–184 (page image, retained excerpt) | "man belongs before all things to God" | supporting only, commentator on the Gospel as his Mass gave it; not cited for any join of the Gospel to another element |
 
 ### Element contributions (this leaf's synthesis)
 
@@ -135,7 +140,7 @@ that they need not compete.
 | Entrance antiphon (Psalm 16:6, 8) | The one who prays asks to be kept "as the apple of the eye", the small part of the eye by which, Augustine says, "the light is distinguished from the darkness"; Aquinas reports the Gloss that the pupil is Christ who discerns. The petitioner presents himself to God whole, under the shadow of his wings | Augustine *En. in Ps.* 16 §8; Aquinas *Postilla* 16; the link to the coin's image is the leaf's |
 | Collect | Asks that we always bear a devoted will toward God and serve his majesty with a sincere heart: the will that Hilary names among the things owed to God | Missal text (owner); Hilary 23.2; the join is the leaf's |
 | First reading (Isaiah 45:1, 4–6) | The Lord calls Cyrus by name and, in the Clementine, "made a likeness" of him (*assimilavi te*); Jerome reads Cyrus as going before "in typum et imaginem" of Christ. A likeness given by God and a name given by God frame the Gospel's image and inscription | Jerome *Comm. in Isa.* XII; the frame is the leaf's. The *Nova Vulgata* and the Lectionary's English do not read "likeness" (`propers/verified.md` finding 1), and Aquinas does not read a typology: the element contributes only with that qualification |
-| Responsorial psalm (Psalm 96:1, 3, 4–5, 7–8, 9–10a, 10c) | The families of the nations are told to bring the Lord glory and to bring gifts into his courts: what is rendered to God. Augustine: "Ascribe them not unto yourselves"; the gift that enters his courts is "a humble heart" | Augustine *En. in Ps.* 95 §§8–9 (his v. 7 reads "worship and honour"; the Lectionary's response names glory and honour, `propers/verified.md` finding 2) |
+| Responsorial psalm (Psalm 96:1, 3, 4–5, 7–8, 9–10a, 10c) | The families of the nations are told to bring the Lord glory and to bring gifts into his courts: what is rendered to God. Augustine: "Ascribe them not unto yourselves"; the gift that enters his courts is "a humble heart" | Augustine *En. in Ps.* 95 §§8–9 (the NPNF English renders his v. 7 "worship and honour"; Augustine's Latin reads *afferte Domino gloriam et honorem*, Migne's text, tracked Corpus Corporum file part 10, line 118; the Lectionary's response names glory and honour, `propers/verified.md` finding 2) |
 | Second reading (1 Thessalonians 1:1–5b) | A church that exists "in God the Father and the Lord Jesus Christ"; Chrysostom: "If any one walks not according to God, he cannot be said to be 'in God'". Belonging to God described as a way of life | Chrysostom *Hom. in 1 Thess.* 1; semi-continuous strand, joined by the leaf |
 | Alleluia verse (Philippians 2:15d, 16a) | The faithful shine as lights; Aquinas: "sunt lux inquantum habent aliquid lucis illius qui erat lux hominum" — a borrowed light, as an image is a borrowed likeness | Aquinas *Super Phil.* c. 2 lect. 4; the analogy is the leaf's |
 | Gospel (Matthew 22:15–21) | The coin, its image and inscription, and the two debts | Section 3.1 of `scope.md` |
@@ -266,14 +271,14 @@ reading speaks of rulers and powers, never of a people (`scope.md` section
 | Hilary, Ambrose (Fathers) | *Comm. in Matt.* 23.2; *Exp. Luc.* IX.35–36 | The obligation tied to possession of the world's goods | the preserved disagreement |
 | Justin Martyr (no row) | *1 Apol.* 17 | Taxes paid "as we have been taught by Him"; worship to God alone; prayer for rulers | supporting only |
 | Cyprian (no row); Novatian, *Barnabas* | *Testimonia* I.21; *De Trin.* 26; *Barn.* 12 | The "Christ my Lord" reading | witnesses to the variant only |
-| Fromage (ecclesiastical writer) | *The Liturgical Year* XI, pp. 480–481 (OCR) | The saying "contains the first principle of all governments on earth", with Acts 5:29 and Romans 13 | supporting only, commentator on the Gospel as his Mass gave it, after page-image collation; his own argument on civil authority (pp. 481–483) is not used, and he is cited for no join |
+| Fromage (ecclesiastical writer) | *The Liturgical Year* XI, pp. 480–481 (page image, retained excerpt) | The saying "contains the first principle of all governments on earth", with Acts 5:29 and Romans 13 | supporting only, commentator on the Gospel as his Mass gave it, after page-image collation; his own argument on civil authority (pp. 481–483) is not used, and he is cited for no join |
 
 ### Element contributions (this leaf's synthesis)
 
 | Element | Contribution | Basis |
 | --- | --- | --- |
 | Entrance antiphon (Psalm 16:6, 8) | The one who calls on God because God hears asks shelter under God's wings; in the psalm's context, against "them that resist thy right hand". The protection of God, not of a ruler | Augustine *En. in Ps.* 16 §§6, 8 ("the defence of Thy love and mercy"); the join is the leaf's |
-| Collect | Asks to serve God's *maiestas* with a sincere heart; the majesty served first is God's | Missal text (owner); the join is the leaf's. Any claim that Roman usage also gave *maiestas* to the emperor is unverified (no lexical or historical source was read, `scope.md` section 3.9), and the studies may not assert it |
+| Collect | Asks to serve God's *maiestas* with a sincere heart; the majesty served first is God's | Missal text (owner); the join is the leaf's. Lexical fact, now checked: Lewis and Short, s.v. *majestas* (p. 1101), gives the word "of the gods", of men in high station and of the Roman people, and "as a title of honor of the Roman emperors". A study may state that lexical fact with that citation; that the Collect's *maiestati tuae servire* echoes the imperial title is the leaf's observation, which no source read makes, and must be labelled so (`scope.md` section 3.9) |
 | First reading | The Lord's anointing, grasping and naming of a gentile king who does not know him, so that all may know there is none besides the Lord. The official correlation with the Gospel: the tituli name Cyrus and Caesar | Jerome, Aquinas, Chrysostom (*Hom.* 6); *Ordo* tituli (`officially correlated`) |
 | Responsorial psalm | The gods of the nations are nothing (or, in the Latin and Greek, demons); "Say among the nations: the Lord reigns"; he will judge the peoples with equity (10c) | Augustine *En. in Ps.* 95 §§2, 6, 11; Bellarmine (`responsorial` to the first reading) |
 | Second reading | A church founded in a city of the empire, whose labour of love, Chrysostom says, endured Jason's being dragged before the city's rulers (Acts 17:5–6); in Acts the charge was acting "contrary to the decrees of Caesar, saying that there is another king, Jesus" (17:7, not appointed) | Chrysostom *Hom. in 1 Thess.* 1; Acts as narrative context; the join to the Gospel is the leaf's; `semi-continuous` |
@@ -378,10 +383,12 @@ Fathers against another on it (`scope.md` section 7).
 
 **The strongest difficulty, and how the witnesses meet it.** Is Christ's
 reading of their heart a sign of who he is, or only the discernment any wise
-respondent should have? Matthew says only that the Pharisees went and took
-counsel how to ensnare him in his speech (22:15; Clementine *consilium
-inierunt ut caperent eum in sermone*, Douay "consulted among themselves");
-the text does not say whether their purpose was known. The objection draws
+respondent should have? The words that raise it are Matthew 22:18: "But Jesus knowing their
+wickedness" (Douay; Clementine *Cognita autem Jesus nequitia eorum*), the
+lemma under which Jerome and Aquinas write. Matthew says that Jesus knew
+their purpose; he does not say whether anyone else knew it beforehand (22:15
+tells only that the Pharisees "consulted among themselves", Clementine
+*consilium inierunt*). The objection draws
 first on Jerome, who states the discernment as a rule for every answerer:
 "Prima virtus est respondentis, interrogantium mentem cognoscere, et non
 discipulos, sed tentatores vocare" (PL 26 col. 163), drawing no conclusion
@@ -431,7 +438,7 @@ section 3.10).
 
 | Element | Contribution | Basis |
 | --- | --- | --- |
-| Entrance antiphon (Psalm 16:6, 8) | The prayer of one who calls because God hears; in its psalm, a prayer "which proceedeth not from deceitful lips" from a heart God has proved (vv. 1, 3, context, not sung). Schuster, on v. 6 as the Communion of another Mass: humility draws God, who "does not disdain to incline his ear to the prayer of the sinner" | Augustine *En. in Ps.* 16 §§1–2, 6; Bellarmine 16; Schuster p. 185 (OCR; supporting only, cited for v. 6 alone and for no join to the Gospel, `scope.md` sections 3.6 and 3.11) |
+| Entrance antiphon (Psalm 16:6, 8) | The prayer of one who calls because God hears; in its psalm, a prayer "which proceedeth not from deceitful lips" from a heart God has proved (vv. 1, 3, context, not sung). Schuster, on v. 6 as the Communion of another Mass: humility draws God, who "does not disdain to incline his ear to the prayer of the sinner" | Augustine *En. in Ps.* 16 §§1–2, 6; Bellarmine 16; Schuster p. 185 (page image; supporting only, cited for v. 6 alone and for no join to the Gospel, `scope.md` sections 3.6 and 3.11) |
 | Collect | *sincero corde*: the precise contrary of the hypocrite's divided heart, and a will devoted *semper*, always | Missal text (owner); the contrast is the leaf's |
 | First reading | Cyrus does not know the Lord yet serves his purpose; the questioners say "we know" yet tempt. Jerome: Cyrus's not knowing is that he "simulacra coluisti"; Aquinas: the fruit God required of his power was the knowledge of God. Knowing God is shown in deeds, not words | Jerome, Aquinas on 45:4–5; the contrast with Matthew 22:16 is the leaf's (and the reading makes no claim that Cyrus was sincere) |
 | Responsorial psalm | Worship in his courts with a gift; Augustine: the gift is "a humble heart", and the whited wall is hypocrisy; the Lord judges the peoples with equity | Augustine *En. in Ps.* 95 §§3, 9, 11 (the whited wall without its anti-Donatist application) |

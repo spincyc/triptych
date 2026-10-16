@@ -2,7 +2,7 @@
 
 **Full publication slug:** `pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a`
 **Provider:** Anthropic Claude
-**As of:** 2026-10-16
+**As of:** 2026-10-16 (revised the same day for the `proper-study` v12 revision, run `821c824684b0c7a7`)
 
 This is the authoritative identity and resolution record of the leaf. The
 witnesses behind each resolution, with their hashes and page locators, are in
@@ -28,7 +28,7 @@ formulary's evidence is in the canonical owner and is not restated here.
 | --- | --- |
 | Missal | *Roman Missal, Third Edition, for Use in the Dioceses of the United States of America* (2011); Latin base *Missale Romanum*, editio typica tertia (2002), *reimpressio emendata* (2008) |
 | Lectionary | *Lectionary for Mass for Use in the Dioceses of the United States of America*, second typical edition, Volume I, no. 145; based on the *Ordo lectionum Missae*, editio typica altera (1981) |
-| General Instruction | United States English edition of 2011 with the 2021 emendations, which governs. Read at the context-resolution stage of this run on 2026-10-16 in three hash-identified states of the official chapter pages (chapter II at nos. 48, 51, 53, 61–63, 68, 74 and 87; chapter VII at nos. 363–365; chapter VIII at nos. 368–376), registered at the research stage and bound in `research/source-bindings.toml`. The research stage's own requests for the same pages met an HTTP 403 challenge page on 2026-10-16 and did not re-read them. The branch rows of `research/context.md` follow that text |
+| General Instruction | United States English edition of 2011 with the 2021 emendations, which governs. Chapter II: the official chapter page, re-read directly on 16 October 2026 and byte-identical to its registered state, at nos. 48, 51, 53, 61, 62, 63, 66, 68, 74 and 87. Chapters VII and VIII: the publisher's site refused direct requests that day, so they were read whole in Internet Archive captures of the official pages made on 13 and 18 June 2026 (chapter VII at nos. 363–365; chapter VIII at nos. 372–374), registered and bound in `research/source-bindings.toml`; the captures show the official text as of those dates. The branch rows of `research/context.md` follow that text and, where they exist, the Latin typical rules of the 2002 Missal |
 | Calendar | *Universal Norms on the Liturgical Year and the Calendar* and the *Calendarium Romanum generale*, in the Latin printed in the 2002 Missal; USCCB *Liturgical Calendar for the Dioceses of the United States of America*, 2026 |
 | Territory and language | Dioceses of the United States of America; English. No diocesan, religious, parish, titular, dedication or patronal calendar is resolved |
 
@@ -38,7 +38,7 @@ formulary's evidence is in the canonical owner and is not restated here.
 | --- | --- |
 | Celebration and rank | Twenty-ninth Sunday in Ordinary Time; Sunday in Ordinary Time, place 6 of the table of liturgical days; green |
 | Sunday cycle | Year A, 30 November 2025 through 22 November 2026. The weekday cycle (II) governs no Sunday |
-| Occurrence | Sunday 18 October 2026, Psalter Week I. The Feast of Saint Luke, Evangelist, inscribed on 18 October in the *Calendarium Romanum generale* with the rank of feast (place 7), is omitted under Universal Norms 60 and supplies no text. A church of which Saint Luke is the titular is the separate `local-proper-calendar` case |
+| Occurrence | Sunday 18 October 2026, Psalter Week I. The Feast of Saint Luke, Evangelist, inscribed on 18 October in the *Calendarium Romanum generale* with the rank of feast (place 7), is omitted under Universal Norms 60 and supplies no text. A church of which Saint Luke is the titular is the separate `local-proper-calendar` case. The same Sunday is the 100th World Mission Day (Holy See message dated to 18 October 2026; in the United States, World Mission Sunday with its collection): an observance of prayer and support with no rank, colour, formulary or text, which displaces nothing; its one liturgical bearing is the conditional branch `mass-for-evangelization-of-peoples` below |
 | Form | The single Sunday form. An anticipated Saturday-evening Mass uses it; there is no Vigil form and no key for one |
 | Homily audience | Adult parish assembly |
 
@@ -74,4 +74,9 @@ inferred. Both Communion antiphons are studied in full, and a claim resting on
 one of them is marked with that antiphon. The three whole-Mass branches
 (`mass-for-evangelization-of-peoples`, `ritual-or-various-needs-mass`,
 `local-proper-calendar`) would replace this formulary entirely; nothing in this
-leaf holds for a celebration that uses one of them.
+leaf holds for a celebration that uses one of them. On 18 October 2026 the
+condition of the Missal's rubric for the Mass *Pro evangelizatione populorum*
+(a particular celebration for the work of the missions) can be met, because
+the date is World Mission Day; the rubric permits that Mass and appoints it to
+no Sunday, so the branch stays `conditional` and unselected
+(`research/context.md`, World Mission Day on 18 October 2026).

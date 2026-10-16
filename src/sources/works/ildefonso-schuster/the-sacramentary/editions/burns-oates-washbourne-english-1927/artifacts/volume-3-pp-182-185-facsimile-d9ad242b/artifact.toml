@@ -1,0 +1,21 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927.volume-3-pp-182-185-facsimile-d9ad242b"
+edition_id = "edition.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927"
+artifact_type = "facsimile-excerpt"
+media_type = "application/pdf"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The London edition was published in 1927 and is in the United States public domain by publication date (first published abroad before 1931, as derived for calendar year 2026 under guidance/missals.md), as the parent scan's record states. These pages are an unaltered page selection from that mechanical scan and add no authorship; no modern editorial text is added."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/LiberSacramentorum/The%20Sacramentary%20%28Liber%20Sacramentorum%29%3A%20Historical%20%26%20Liturgical%20Notes%20on%20the%20Roman%20Missal%20%28vol.%203%29.pdf"
+provenance = "Mechanical page extraction made on 2026-10-16 by the research stage of the Claude PC-S55-A proper-study revision from the registered parent scan of volume III, fetched whole over verified HTTPS that day and matched to its SHA-256 410f6d11... and 158,333,284 bytes before any page was read. The pages were read on images rendered at 60 dpi, which are legible for this typeface."
+retrieved = "2026-10-16"
+sha256 = "d9ad242bfcc33c9c23851741ff97cb000ada9a98bc6918e952a9118ce16c6dbd"
+byte_size = 1565223
+page_count = 4
+indexable = false
+derived_from = "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927.ia-scan-volume-3-410f6d11"
+transformation = "pdfseparate (poppler 26.08.0) for parent PDF pages 198, 199, 200 and 201, then pdfunite of those pages in that order; no raster editing, cropping, textual rewriting or OCR correction. pdfunite does not write identical bytes on every run, so these bytes are identified by their own digest and a re-extraction will match in content, not in hash."
+path = "src/sources/works/ildefonso-schuster/the-sacramentary/editions/burns-oates-washbourne-english-1927/artifacts/volume-3-pp-182-185-facsimile-d9ad242b/schuster-1927-vol3-pp182-185.pdf"
+notes = "4 pages only: parent PDF pages 198-201, printed pp. 182-185 of volume III, the whole chapter on the Twenty-second Sunday after Pentecost (Septima post natale Sancti Cypriani): Introit Psalm 129 and Collect (p. 182); Epistle Philippians 1:6-11 with Paul 'detained in prison at Rome', Gradual Psalm 132, Alleluia Psalm 113 and the opening of the Gospel comment on Matthew 22:15-21 (p. 183); its continuation, the Offertory from Esther 14 and the Secret (p. 184); the Communion from Psalm 16, its former use on the Friday after the Third Sunday in Lent, humility and the Incarnation, and the Postcommunion (p. 185). Page rule: PDF page = printed page + 16. All other parent pages are omitted."

@@ -10,7 +10,9 @@
 #   six bounded findings to it (passage records; the Collect's, the Prayer
 #   over the Offerings' and the Prayer after Communion's early witnesses; the
 #   antiphons against the Nova Vulgata; the Year B form of Mark 10:45 in the
-#   Ordo). It is fingerprinted into research/chronology.toml.
+#   Ordo). The revision of 16 October 2026 (run 821c824684b0c7a7) corrected
+#   additions 2-4 to the registered page images of the Gelasian and Verona
+#   sacramentaries. It is fingerprinted into research/chronology.toml.
 # - The edition registry directory holds the index, the formula dispositions
 #   (row PC-S55-A, which names the owner) and the 2026 occurrence record (row
 #   PC-S55-A, which now links the instance manifest). The first two are
@@ -55,10 +57,17 @@
 #   read its study-text boundaries.
 # - The liturgical authorities (national calendar, Missal, Universal Norms,
 #   General Calendar, 2008 variation list, Antiphonary, Ordo lectionum Missae,
-#   dated readings page, the governing United States English GIRM in its three
-#   chapter states, Nostra aetate) are not declared here because each is bound
-#   by source ID in research/source-bindings.toml, which seals its record and
-#   ancestry.
+#   dated readings page in its registered state and its Internet Archive
+#   capture, the governing United States English GIRM in its chapter states
+#   and the Internet Archive captures of chapters VII and VIII, Nostra aetate),
+#   the dated World Mission Day witnesses (the Holy See's message and video
+#   message, the Pontifical Mission Societies page), the Old Gelasian and
+#   Verona page images, the commentators' page-image excerpts and the Lewis
+#   and Short excerpt are not declared here because each is bound by source ID
+#   in research/source-bindings.toml, which seals its record and ancestry.
+# - research/chronology-annotations.tex is generated under the orientation-v2
+#   presentation that proper-components.toml declares; that manifest is a
+#   presentation input, not a source owner.
 paths = [
   "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/29",
   "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry",

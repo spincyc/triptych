@@ -3,35 +3,43 @@ record_type = "bindings"
 document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"
 
 # Publication-local record of how this leaf's research used the reusable source
-# library on 2026-10-16, in the context-resolution and research stages of run
-# 4d16b5e19d25dad9. It supplements propers/verified.md (text control),
-# research/scope.md (reception matrix, bounds, negatives) and
-# research/interpretations.md.
+# library. First written on 2026-10-16 in the context-resolution and research
+# stages of run 4d16b5e19d25dad9; revised on 2026-10-16 by the research stage
+# of the revision run 821c824684b0c7a7 (proper-study v12). It supplements
+# propers/verified.md (text control), research/scope.md (reception matrix,
+# bounds, negatives) and research/interpretations.md.
 #
-# States say what the research of this run did, not what a record could
-# support. `inspected` means a stage of this run read the stated loci itself,
-# in the language and form each binding's context states; where that stage was
-# the context-resolution stage and not this research stage, the context says
-# so. Nothing here is `verified`: no reception witness was collated against a
-# modern critical edition. Remote and restricted artifacts bound as inspected
-# were fetched whole over verified TLS on 2026-10-16 and matched to their
-# registered SHA-256 before any page was read, except the three United States
-# GIRM chapter states, which this stage could not re-fetch (HTTP 403).
+# States say what research did, not what a record could support. `inspected`
+# means a research or context stage of one of those runs read the stated loci
+# itself, in the language and form each binding's context states; where the
+# reading was the first run's and was not repeated in the revision, the context
+# says so. Nothing here is `verified`: no reception witness was collated
+# against a modern critical edition. Remote and restricted artifacts bound as
+# inspected were fetched whole over verified TLS on 2026-10-16 and matched to
+# their registered SHA-256 before any page was read.
 #
-# Registered at this stage (src/sources/works): facsimile excerpts of Migne
-# PL 9 (col. 1045-1046), PL 26 (cols. 163-164) and PL 24 (cols. 455-458), of
-# the Venice Aquinas tomus III (pp. 283-284) and of the Parma Aquinas vol. 14
-# (pp. 538-539), each derived from its registered parent scan; passage records
-# for the Week XXIX formulary at 2002 artifact pp. 291-292, the ICEL excerpt's
-# Twenty-ninth Sunday, 18 October in the 2026 calendar and no. 145 of the 1981
-# Ordo; the dated readings page in its state of 2026-10-16; and the three US
-# GIRM chapter states read by the context stage on 2026-10-16.
+# Registered by the first research (src/sources/works): facsimile excerpts of
+# Migne PL 9, 26 and 24, of the Venice Aquinas tomus III and of the Parma
+# Aquinas vol. 14; passage records for the Week XXIX formulary, the ICEL
+# excerpt, 18 October in the 2026 calendar and no. 145 of the 1981 Ordo; the
+# readings page in its state of 2026-10-16; and three US GIRM chapter states
+# registered from the context stage's recorded hashes.
 #
-# Read from public deliveries the library does not register, and therefore
-# unbound: the Nova Vulgata books, the SBL 1 Thessalonians and Philippians
-# files, the Internet Archive PDFs of Wilson's Gelasian and Feltoe's Verona
-# sacramentaries, and the current NABRE Isaiah introduction; their retrieval
-# dates, sizes and SHA-256 values are in research/scope.md section 5.
+# Registered by the revision's research (handoff items 1-7): Internet Archive
+# captures of the official US GIRM chapters VII and VIII and of the readings
+# page, read whole; the NABRE Psalms and Isaiah introductions in the states
+# read; the Holy See's message and video message for the 100th World Mission
+# Day and the Pontifical Mission Societies (USA) page for World Mission Sunday
+# 2026; Feltoe's Verona sacramentary (complete scan, tracked) and Wilson's Old
+# Gelasian (parent scan with three tracked page extractions); page-image
+# excerpts of Schuster, The Sacramentary III, pp. 182-185 and of The
+# Liturgical Year XI, pp. 472-485; and the Lewis and Short Latin Dictionary
+# (Harper issue) with a tracked excerpt of its title leaf and p. 1101.
+#
+# Still read from public deliveries the library does not register, and
+# therefore unbound: the Nova Vulgata books and the SBL 1 Thessalonians and
+# Philippians files; their retrieval dates, sizes and SHA-256 values are in
+# research/scope.md section 5.
 
 
 # ---- Scripture read at the research stage, in the tracked verse files and tracked Greek, Septuagint and Hebrew-based controls.
@@ -329,6 +337,20 @@ source_fingerprint = "sha256:61d32cbdc73612979b4d54ad625ccd5cadc3bea425f30e976e8
 context = "The dated readings page for 18 October 2026 in the state fetched and registered at this stage: heading, Lectionary 145, every citation, the psalm's locator 9-10 against its printed strophe of 10a and 10c, the response locator (7b) and its refrain, the acclamation without Cf. and phrased as an exhortation, the copyright notice attributing the refrain to ICEL. Described, never transcribed (propers/verified.md findings 1-3)."
 
 [[bindings]]
+source_id = "artifact.united-states-conference-of-catholic-bishops.daily-readings.2026-10-18-web-2026-03-15.wayback-html-f20f2e3c"
+loci = [
+  "Reading 1",
+  "Responsorial Psalm",
+  "Reading 2",
+  "Alleluia",
+  "Gospel",
+]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:105e8cd808f7d726dd79dcf63c2d2a13a9a4b0dbbc3526d4841e25f927528b60"
+context = "The readings page for 18 October 2026 in the Internet Archive capture of 2026-03-15, fetched whole twice byte-identically on 2026-10-16 and read by the revision's research, because direct requests that day met the HTTP 403 challenge page and the registered state of 2026-10-16 could not be re-read: Lectionary 145, every locator, the psalm locator 9-10 against a fourth strophe of 10a and 10c, the third strophe ending with the whole of v. 8, the response locator (7b), the acclamation without Cf., the copyright notice. Corroborated in every citation by the national calendar and in every boundary by the 1981 Ordo. Described, never transcribed."
+
+[[bindings]]
 source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xxix-per-annum-291-292"
 role = "textual-control"
 states = ["cataloged", "acquired", "inspected"]
@@ -350,12 +372,13 @@ loci = [
   "physical pp. 291-292",
   "physical pp. 370, 379",
   "physical pp. 569-570",
+  "physical p. 667",
   "physical p. 695",
 ]
 role = "official-control"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:ad2776806b4cd5618c059051d9d0d232d9534f29b3b99542bb206786c503942a"
-context = "The 2002 Missal artifact at the loci read by the context-resolution stage of this run on 2026-10-16 and not registered as passages: the Benedictiones sollemnes and Orationes super populum opening rubrics (physical pp. 370 and 379), the Mass Pro evangelizatione populorum and its rubric (p. 695), the Common of Pastors antiphon (pp. 569-570), the Entrance antiphon of Tuesday of Lent III (p. 144) and Week IX (p. 275). Re-fetched and hash-matched at this stage; pp. 291-292 re-read."
+context = "The 2002 Missal artifact at loci not registered as passages: the Benedictiones sollemnes and Orationes super populum opening rubrics (physical pp. 370 and 379), the Common of Pastors antiphon (pp. 569-570), the Entrance antiphon of Tuesday of Lent III (p. 144) and Week IX (p. 275), read by the first run's context stage; the introduction to the Masses for Various Needs, no. 2 (p. 667: in graver need, by mandate or permission of the local Ordinary, any day except solemnities, the Sundays of Advent, Lent and Easter and the days listed), and Mass no. 18 Pro evangelizatione populorum with its rubric admitting it on Sundays per annum when particular celebrations for the work of the missions are held (p. 695), re-read in the text layer by the revision's research on 2026-10-16 from a fresh copy matched to the registered hash. Pp. 291-292 re-read by the first research."
 
 [[bindings]]
 source_id = "passage.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-missale-romanum-typica-tertia-2002.complete-text"
@@ -425,21 +448,45 @@ source_id = "artifact.catholic-church.institutio-generalis-missalis-romani.engli
 role = "official-control"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:1d9eef3eb801b832898555fb4329f477ff5ec874df34dc43bae41f813f462181"
-context = "The governing United States English GIRM, chapter II, in the state read by the context-resolution stage of this run on 2026-10-16 at nos. 48, 51, 53, 61-63, 68, 74 and 87, registered at this stage from that stage's recorded SHA-256 and size. This stage's own requests met an HTTP 403 challenge page and did not re-read it. The branch rows of research/context.md rest on it."
+context = "The governing United States English GIRM, chapter II. Registered by the first research from the first context stage's recorded SHA-256 and size; the revision's context stage re-fetched the official page directly on 2026-10-16 (HTTP 200) and found it byte-identical to this state, and read it at nos. 48, 51, 53, 61, 62, 63, 66, 68, 74 and 87 (research/context.md, General Instruction states read). The revision's research stage met only the HTTP 403 challenge page and relies on that re-read. The branch rows of research/context.md that cite chapter II rest on it."
 
 [[bindings]]
 source_id = "artifact.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.usccb-chapter-vii-html-2026-10-16-e803093d"
 role = "official-control"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:efb1e22dcf53acc72ffb19fa88ad07e50ae5be2fd78da5e715eb14aefea32ae4"
-context = "The governing United States English GIRM, chapter VII, in the state read by the context-resolution stage of this run on 2026-10-16 at nos. 363-365, registered at this stage from that stage's recorded SHA-256 and size. This stage's own requests met an HTTP 403 challenge page and did not re-read it. The branch rows of research/context.md rest on it."
+context = "The governing United States English GIRM, chapter VII, in the state the first context stage read on 2026-10-16 at nos. 363-365, registered by the first research from that stage's recorded SHA-256 and size. No later stage could re-read this state (HTTP 403 challenge page). Superseded as the controlling witness by the Internet Archive capture of 2026-06-13 bound below, which the revision read whole; kept as a catalogued record of what the first run relied on."
 
 [[bindings]]
 source_id = "artifact.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.usccb-chapter-viii-html-2026-10-16-273fc7cb"
 role = "official-control"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:2d7dedefa465626f39e31c82182c1f095a1bed14c58cfb782f07a2e065452cd1"
-context = "The governing United States English GIRM, chapter VIII, in the state read by the context-resolution stage of this run on 2026-10-16 at nos. 368-376, registered at this stage from that stage's recorded SHA-256 and size. This stage's own requests met an HTTP 403 challenge page and did not re-read it. The branch rows of research/context.md rest on it."
+context = "The governing United States English GIRM, chapter VIII, in the state the first context stage read on 2026-10-16 at nos. 368-376, registered by the first research from that stage's recorded SHA-256 and size. No later stage could re-read this state (HTTP 403 challenge page). Superseded as the controlling witness by the Internet Archive capture of 2026-06-18 bound below, which the revision read whole; kept as a catalogued record of what the first run relied on."
+
+[[bindings]]
+source_id = "artifact.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.usccb-chapter-vii-wayback-2026-06-13-e973bb8f"
+loci = [
+  "363",
+  "364",
+  "365",
+]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:d11e83592cd09bff2a5201e07275bfc8c7c6f983c6d0ed7525ac9d15659a9ab6"
+context = "The governing United States English GIRM, chapter VII, in the Internet Archive capture of the official page made 2026-06-13, fetched whole twice byte-identically on 2026-10-16 and read by the revision's research at nos. 357-367: no. 363 (orations), no. 364 (Prefaces), no. 365 a-d (Prayer I especially suited to Sundays unless III is preferred for pastoral reasons; III preferred on Sundays and festive days; IV with its invariable Preface usable when a Mass has no Preface of its own and on Sundays in Ordinary Time). The rows of research/context.md citing chapter VII rest on this capture and on the Latin Tempus per annum rubric 5; it shows what the official page said on 13 June 2026, not on the date of reading."
+
+[[bindings]]
+source_id = "artifact.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.usccb-chapter-viii-wayback-2026-06-18-dbdf98d9"
+loci = [
+  "372",
+  "373",
+  "374",
+]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:6a1dbfe7a21b7cc79cf19d3847735f71b56961fbcdb866daf707244a835b8a0b"
+context = "The governing United States English GIRM, chapter VIII, in the Internet Archive capture of the official page made 2026-06-18, fetched whole twice byte-identically on 2026-10-16 and read by the revision's research at nos. 368-378: no. 372 (Ritual Masses prohibited only on the days listed, which exclude Sundays in Ordinary Time), no. 373 with its United States paragraphs (no mission day designated), no. 374 (graver need or pastoral advantage, at the Diocesan Bishop's direction or permission, any day except those listed). The rows of research/context.md citing chapter VIII, including the mission branch, rest on this capture and on the Latin introduction to the Masses for Various Needs, no. 2."
 
 [[bindings]]
 source_id = "passage.second-vatican-council.nostra-aetate.english-vatican-web-2026-07-24.4"
@@ -470,7 +517,7 @@ loci = [
 role = "context"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:3d1c40b7d5662cffc15803213fc39de9992caa698604bc65bcb2f4ffc7d49f4d"
-context = "Wilson's Old Gelasian (1894), registered OCR fetched whole and hash-matched: the Collect at physical lines 17460-17463 (I.lxi, Quinta Dominica post clausum Paschae, printed p. 105) and 29276-29279 (III.ix, printed p. 229). The first was read also on a page image of an unregistered Internet Archive PDF of the same edition (research/scope.md section 5)."
+context = "Wilson's Old Gelasian (1894), registered OCR fetched whole and hash-matched: the Collect at physical lines 17460-17463 (I.lxi, Quinta Dominica post clausum Paschae, printed p. 105) and 29276-29279 (III.ix, printed p. 229). Both, and the adapted form of III.xvi, were read on page images of the Internet Archive PDF of the same edition by the revision's research; the extracted pages are bound below."
 
 [[bindings]]
 source_id = "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ia-djvu-ocr-sacramentariumle00cath"
@@ -482,7 +529,41 @@ loci = [
 role = "context"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:0141699efaeccd0efa1e387773fbeee1a2eb2ad30124ab0dfbc4d49186fabd40"
-context = "Feltoe's Verona sacramentary (1896), registered OCR fetched whole and hash-matched: the Prayer over the Offerings at physical lines 1788-1790 (April, XXXVIII Item alia, printed p. 17); the related Tribue quaesumus prayer at 1283-1285 (April, printed p. 8, lead); the Prayer after Communion's antecedent at 8145-8147 (September, XXVIIII In natale episcoporum, Mass III, printed p. 126). Pp. 17 and 126 were read also on page images of an unregistered Internet Archive PDF of the same edition."
+context = "Feltoe's Verona sacramentary (1896), registered OCR fetched whole and hash-matched: the Prayer over the Offerings at physical lines 1788-1790 (April, XXXVIII Item alia, printed p. 17); the related Tribue quaesumus prayer at 1283-1285 (April, printed p. 8, lead); the Prayer after Communion's antecedent at 8145-8147 (September, XXVIIII In natale episcoporum, Mass III, printed p. 126). Pp. 17 and 126 were read also on page images of the Internet Archive PDF of the same edition, registered by the revision's research and bound below."
+
+[[bindings]]
+source_id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.page-105-facsimile-5bcc2151"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:6366ed9a5c760c0a7a666ce757d39cc8ee0e1150ef2467dd14be07ab7236a2f5"
+context = "Wilson's Old Gelasian, printed p. 105 on the retained page image: Book I, LXI, Quinta Dominica post clausum Paschae, first prayer, the Collect word for word (Omnipotens sempiterne Deus, fac nos tibi semper et devotam gerere voluntatem, et maiestati tuae sincero corde servire); margin 'III. ix infra'; apparatus note 2, nobis Pam. (owner addition 2)."
+
+[[bindings]]
+source_id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.page-229-facsimile-2d527203"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:1262adea0bff0012d8009c783e8cdba835df8c9a70bb7675e296cc6556adfb53"
+context = "Wilson's Old Gelasian, printed p. 229 on the retained page image: Book III, IX, Item alia Missa, second prayer, the Collect in Wilson's text; his apparatus note 2 records that the Vatican manuscript reads maiestatem tuam at this place (R. S. Gerb. and V. at I. lxi as his text). The recurrence is word for word in Wilson's text, not in the manuscript's own reading here (owner addition 2; research/scope.md section 3.9)."
+
+[[bindings]]
+source_id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.page-237-facsimile-b12b37cd"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:0578659355745b9b15facd8b8c55017915bbdde6f26ddcd37d727d448b94e123"
+context = "Wilson's Old Gelasian, printed p. 237 on the retained page image: Book III, XVI, the adapted form Omnipotens Deus, fac nos tibi semper devotam gerere voluntatem, [et] maiestati tuae sincero corde famulari (owner addition 2)."
+
+[[bindings]]
+source_id = "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13"
+loci = [
+  "p. 17",
+  "p. 123",
+  "p. 125",
+  "p. 126",
+]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:9474850b229927bfaed058d442ae76fcde5552b4accb329d2f963549b1a63fa7"
+context = "Feltoe's Verona sacramentary, complete scan retained, read on page images: printed p. 17 (PDF p. 41), April, XXXVIII Item alia, Tribue nos Dne quaesumus donis tuis libera mente servire ut purificante nos gratia tua iisdem quibus famulamur mysteriis emundemur (note 2: Mur. and Ball. emendemur); pp. 123 and 125 (PDF pp. 147, 149), XXVIIII In natale episcoporum and its Mass III Item alia; p. 126 (PDF p. 150), that Mass's last prayer, Gaudeat Dne quaesumus populus tua semper benedictione confisus et caelestium rerum frequentatione proficiat ut et temporalibus beneficiis adiuvetur et erudiatur aeternis (owner additions 3-4)."
 
 
 # ---- Reception witnesses read at the research stage (research/scope.md section 3).
@@ -774,7 +855,7 @@ loci = [
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:04f9c86491a663faa60eb325af91ca9056441e83aadb4608fbb0d8b87136a32f"
-context = "Schuster, The Sacramentary vol. 3, Twenty-second Sunday after Pentecost, pp. 182-185, OCR (lines 11338-11585): his heading and every element compared with this formulary (research/scope.md section 3.11). Shares two texts: the Gospel Matthew 22:15-21 in the same position (remarks pp. 183-184) and Psalm 16:6 as his Communion, the first half of this formulary's Entrance antiphon (p. 185: its former use on the Friday after the Third Sunday of Lent; humility, the Incarnation, God inclining his ear). He joins neither to the other. His p. 183 remark that Paul wrote Philippians while detained at Rome supports the planned place phrase of research/scope.md section 8.3. Commentator; Blessed; supporting only; not collated on the registered page images."
+context = "Schuster, The Sacramentary vol. 3, Twenty-second Sunday after Pentecost, pp. 182-185, OCR (lines 11338-11585): his heading and every element compared with this formulary (research/scope.md section 3.11). Shares two texts: the Gospel Matthew 22:15-21 in the same position (remarks pp. 183-184) and Psalm 16:6 as his Communion, the first half of this formulary's Entrance antiphon (p. 185: its former use on the Friday after the Third Sunday of Lent; humility, the Incarnation, God inclining his ear). He joins neither to the other. His p. 183 remark that Paul wrote Philippians while detained at Rome supports the planned place phrase of research/scope.md section 8.3. Commentator; Blessed; supporting only. Every locus named here was checked by the revision's research on the registered page images (excerpt bound below) and found as the OCR gives it."
 
 [[bindings]]
 source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-djvu-text-95cdb0fc"
@@ -794,7 +875,7 @@ loci = [
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:5704de4921a1ed8c6da6c88bc1235f8aa14d39ef3973edc2061508aaf727c16d"
-context = "The Liturgical Year, Time after Pentecost II (Fromage's continuation, English 1883), The Twenty-second Sunday after Pentecost, the whole chapter pp. 472-485 in the OCR (lines 28335-29110), every element compared with this formulary (research/scope.md section 3.11): the Gospel Matthew 22:15-21 in the same position (pp. 478-483; remarks pp. 480-481; his Holy Week dating of the scene, p. 480 note, not used); Psalm 16:6, Ego clamavi, as his Communion, the first half of this formulary's Entrance antiphon (p. 484); his Epistle comment extending to Philippians 2:15-16 (pp. 477-478); his report of Honorius of Autun (p. 472), followed as a lead. He joins neither shared text to the other. Not collated on a page image; ecclesiastical writer; supporting only."
+context = "The Liturgical Year, Time after Pentecost II (Fromage's continuation, English 1883), The Twenty-second Sunday after Pentecost, the whole chapter pp. 472-485 in the OCR (lines 28335-29110), every element compared with this formulary (research/scope.md section 3.11): the Gospel Matthew 22:15-21 in the same position (pp. 478-483; remarks pp. 480-481; his Holy Week dating of the scene, p. 480 note, not used); Psalm 16:6, Ego clamavi, as his Communion, the first half of this formulary's Entrance antiphon (p. 484); his Epistle comment extending to Philippians 2:15-16 (pp. 477-478); his report of Honorius of Autun (p. 472), followed as a lead. He joins neither shared text to the other. Ecclesiastical writer; supporting only. Every locus named here was checked by the revision's research on the page images of the registered PDF (excerpt bound below) and found as the OCR gives it."
 
 
 [[bindings]]
@@ -808,7 +889,34 @@ loci = [
 role = "lead"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:472c828bf45f8c1c1d4e99c11211b27a8834e420d9bc76cf99a1d51833bfdffb"
-context = "Honorius Augustodunensis, Gemma animae, uncorrected OCR of Migne PL 172 (Garnier 1895), columns interleaved: IV.49 (physical lines 55662-55705), Ego clamavi as the Communion of the Third Sunday after Pentecost; IV.92-94 (lines 57209-57345), the Twenty-second Sunday Si iniquitates with the Gospel of Matthew 18 and its reference to the times of Antichrist, which Fromage reports, and the tribute Gospel on the following Sunday without proper chant. Followed from Fromage's note as a lead (research/scope.md sections 3.6 and 3.11); ecclesiastical writer by the author-standing registry (honorius-augustodunensis); nothing used. No page image was read."
+context = "Honorius Augustodunensis, Gemma animae, uncorrected OCR of Migne PL 172 (Garnier 1895), columns interleaved: IV.49 (physical lines 55662-55705), Ego clamavi as the Communion of the Third Sunday after Pentecost; IV.92-94 (lines 57209-57345), the Twenty-second Sunday Si iniquitates with the Gospel of Matthew 18 and its reference to the times of Antichrist, which Fromage reports, and the tribute Gospel on the following Sunday without proper chant. Followed from Fromage's note as a lead (research/scope.md sections 3.6 and 3.11); ecclesiastical writer by the author-standing registry (honorius-augustodunensis); nothing used. The revision's research checked these loci on page images of the 1854 Migne printing (binding below)."
+
+[[bindings]]
+source_id = "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927.volume-3-pp-182-185-facsimile-d9ad242b"
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:a469155436e6c3b9b90ba9ad9d9edfcc187a613b3db0941386d9e0e73d3957a2"
+context = "Schuster, The Sacramentary III, pp. 182-185, read on the page images of the retained excerpt (parent scan fetched whole and hash-matched on 2026-10-16): heading Septima post natale Sancti Cypriani, Introit Psalm 129 and Collect (p. 182); Paul 'detained in prison at Rome', Gradual Psalm 132, Alleluia Psalm 113, and on the Gospel 'raises the political question to an entirely spiritual plane by laying down as a general maxim that we should certainly give to man that which belongs to him, but should first render to God that which is his alone' (p. 183); 'there is not any divergence between the social duty of man towards his country and his religious duty towards God' and 'man belongs before all things to God', Offertory Esther 14, Secret (p. 184); the Communion from Psalm 16 and its former use, 'Humility has power to draw God to itself', the Incarnation, God 'who does not disdain to incline his ear to the prayer of the sinner', Postcommunion Sumpsimus (p. 185). Blessed; commentator; supporting only (research/scope.md sections 3.6 and 3.11)."
+
+[[bindings]]
+source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.pp-472-485-facsimile-fa10ddc7"
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:2ee39a2308c13a5b95f72d9ebdc1169b4eb08a473ccb03df454577c57daf7e61"
+context = "The Liturgical Year XI (Fromage's continuation, English 1883), pp. 472-485, read on the page images of the retained excerpt (parent PDF fetched whole and hash-matched on 2026-10-16): the Honorius and Rupert notes (p. 472), Collect Deus, refugium nostrum and the Berno note (p. 473), the Durandus note (p. 475), 'prize the word of life' and 'in the midst of a wicked and perverse generation, as stars of the firmament do in the night', with notes to Chrysostom, in Phil. hom. viii and Augustine, Enarr. in Ps. xciii (pp. 477-478), Gradual and Alleluia (p. 478), 'Tuesday in Holy Week' (p. 480 note), 'for it contains the first principle of all governments on earth', Acts 5:29 and Romans 13 (pp. 480-481), the Communion Ego clamavi and 'The Communion-Anthem shows us with what perseverance and earnestness, the Church prays to her divine Lord. We must imitate her.' (p. 484), Postcommunion Sumpsimus (p. 485). Ecclesiastical writer; supporting only (research/scope.md sections 3.5, 3.6 and 3.11)."
+
+[[bindings]]
+source_id = "artifact.honorius-augustodunensis.gemma-animae.1854-migne-pl-172.migne-facsimile-pdf-906be8c5"
+loci = [
+  "IV.49",
+  "IV.92",
+  "IV.93",
+  "IV.94",
+]
+role = "lead"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:874a719c08a9888ab068e34d623af6e59b7b6af5e5f169b19c7c9f1d13a40384"
+context = "Honorius, Gemma animae, Migne PL 172 (1854) in the registered restricted facsimile, fetched whole and hash-matched on 2026-10-16 and read on page images: PDF p. 84 (cols. 707-708), IV.49, the Communion Ego clamavi (Psal. xvi, 6) for which David 'grates solvit, quod remisso peccato communionem fidelium promeruit'; PDF p. 93 (cols. 725-726), IV.92 Dominica vicesima secunda Si iniquitates (Epistle Philippians 1, Gradual Ecce quam bonum, Alleluia Lauda anima mea, Gospel Matthew 18, Communion dico vobis from Luke 15), IV.93 'hoc officium ad tempora Antichristi refertur', IV.94 Dominica vacat, the Sunday without chant whose Gospel is the census to Caesar (Matthew 22), read of the people under Alexander the Great and of the time of Antichrist. The host reserves rights in its file, so no excerpt is retained. A lead only; nothing used."
 
 # ---- Literal searches (research/scope.md section 6). Zero-result queries bound as negative-search; queries with hits as searched leads whose hits were read.
 
@@ -976,12 +1084,14 @@ context = "Catholic Encyclopedia, Souvay, 'Isaias': the exact New Advent deliver
 source_id = "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08179b-d4ee13fd-article-text"
 loci = [
   "line 7",
+  "line 9",
+  "line 11",
   "sentence 'since no prophecies appear to be later than 701 B.C.'",
 ]
 role = "context"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:f4d698ee3bc68e9257a7106cb2a663c8b5a4d2c78d05e3b3ad9cc535e938c5c8"
-context = "Catholic Encyclopedia, Souvay, 'Isaias', tracked article-text extraction, read at the sentence carrying the label: the first reading's traditional attribution (the ministry from the closing year of Ozias; no prophecies later than 701 B.C.); and line 7, Isaias 'a citizen, perhaps a native, of Jerusalem', for the planned place phrase of research/scope.md section 8.3. No printed page was seen."
+context = "Catholic Encyclopedia, Souvay, 'Isaias', tracked article-text extraction, read at the sentences carrying the label: line 9, the ministry 'from the closing year of Ozias, King of Juda', with the sketch's '740, death of Azarias'; line 11, the year 740 B.C. of chapter vi and 'since no prophecies appear to be later than 701 B.C.' (re-read by the revision's research); and line 7, Isaias 'a citizen, perhaps a native, of Jerusalem', for the planned place phrase of research/scope.md section 8.3. No printed page was seen."
 
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14499a-82b12b6e"
@@ -1181,13 +1291,27 @@ context = "Corbett's verified passage record for David's reign in the usual chro
 source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-21.isaiah-introduction"
 role = "context"
 states = ["cataloged"]
-context = "The NABRE introduction to Isaiah in the registered state the corpus cites for 'toward the end of the Babylonian exile'. That state was not obtained; the current delivery (64,142 bytes, another SHA-256) was read at the sentence (research/scope.md sections 5 and 8.2); it names no place for the prophet of chapters 40-55 (section 8.3)."
+context = "The NABRE introduction to Isaiah in the registered state the corpus cites for 'toward the end of the Babylonian exile'. That state was not obtained. The state read (64,142 bytes, SHA-256 03dac54e..., delivered twice on 2026-10-16) is registered and bound below."
 
 [[bindings]]
 source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"
 role = "context"
 states = ["cataloged"]
-context = "The NABRE introduction to the Psalms in the registered state the corpus cites for the Psalter's bound. That state was not obtained. The current delivery answered HTTP 403 at the second pass; at the third pass on 2026-10-16 a current delivery of 74,093 bytes, not the registered 74,094-byte state, was read at the dating sentence, which supports the label in substance, not in wording (research/scope.md sections 5 and 8.2)."
+context = "The NABRE introduction to the Psalms in the registered state the corpus cites for the Psalter's bound. That state was not obtained. The state read (74,093 bytes, SHA-256 03234893..., delivered twice on 2026-10-16) is registered and bound below; it supports the label in substance, not in wording (research/scope.md section 8.2)."
+
+[[bindings]]
+source_id = "artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-21.isaiah-intro-2026-10-16-03dac54e"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:cb0eefbe6122110463da8228982f53b99d577e346cba27d3bebbe86edce2fadc"
+context = "The NABRE introduction to Isaiah in the state read on 2026-10-16 (registered by the revision's research; the same bytes the first research read): chapters 40-55 'generally attributed to an anonymous poet who prophesied toward the end of the Babylonian exile', the corpus label's words; no place is named for that prophet (research/scope.md sections 8.2-8.3). Protected; described."
+
+[[bindings]]
+source_id = "artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-intro-2026-10-16-03234893"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:a36638c20b0c04d693d46301af1a43c1cc36f1357de9fd5595872ef8a2287040"
+context = "The NABRE introduction to the Psalms in the state read on 2026-10-16 (registered by the revision's research; the same bytes the first research read at its third pass): 'no sure way of dating any Psalm', some preexilic and some postexilic 'but not as late as the Maccabean period (ca. 165)'; it places no psalm's composition (research/scope.md sections 8.2-8.3). Protected; described."
 
 [[bindings]]
 source_id = "passage.pontifical-biblical-commission.de-auctore-tempore-et-veritate-evangeliorum-marci-et-lucae.latin-aas-4-1912.responsa-i-ix"
@@ -1195,3 +1319,53 @@ role = "context"
 states = ["cataloged"]
 context = "The Pontifical Biblical Commission's 1912 responsa I-IX, the verified passage record the corpus cites for Mark 'after Matthew, and not as late as the destruction of Jerusalem'. The record was read; its page images were not re-opened."
 
+
+# ---- Added by the revision's research: the dated World Mission Day witnesses (research/context.md) and the Latin lexicon for the maiestas observation (research/scope.md section 3.9).
+
+[[bindings]]
+source_id = "artifact.leo-xiv.message-world-mission-day-2026.english-vatican-web-2026-10-16.official-html-6b7809d9"
+loci = [
+  "intro",
+  "3",
+]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:ce3f930061fe18e7d5576518408cc58816bcea434dc0eb0febc8248accf93bc4"
+context = "Leo XIV's Message for the 100th World Mission Day, read whole: its heading dates the day to 18 October 2026, the opening names the centenary of Pius XI's celebration, section 3 appeals for prayer and practical support on the day. No liturgical text is prescribed. The observance is a fact about the date, not part of the formulary (research/context.md, World Mission Day)."
+
+[[bindings]]
+source_id = "artifact.leo-xiv.video-message-world-mission-sunday-2026.english-vatican-web-2026-10-16.official-html-5a4cc2ee"
+loci = [
+  "1",
+]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:9eab278baa468b85c956ca4699829fb7c2188b98f1e105fb9a6077641ad2824f"
+context = "Leo XIV's video message for the 100th World Mission Sunday, read whole: headed 18 ottobre 2026; an annual celebration established by Pius XI a hundred years ago. No liturgical text is prescribed."
+
+[[bindings]]
+source_id = "artifact.pontifical-mission-societies-united-states.world-mission-sunday-2026-page.web-2026-10-16.web-page-4904919b"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:d78994e5f9cf78abad74fe116e489a4c4e85f3c390254eec8a818bd82e021c11"
+context = "The Pontifical Mission Societies in the United States, World Mission Sunday 2026 page, read whole: World Mission Sunday on October 18, 2026, and its collection. A witness to the United States observance, not a liturgical norm; it prescribes no Mass or text."
+
+[[bindings]]
+source_id = "artifact.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.title-and-page-1101-facsimile-f50066a7"
+loci = [
+  "majestas",
+]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:5061184bec53094001931b28bd8debde94f8a1697d211aed66d1936152c81d4a"
+context = "Lewis and Short (Harper issue, copyright 1879), s.v. majestas, printed p. 1101, read on the retained page images: 'Lit., of the gods; also the condition of men in high station, as kings, consuls, senators, knights, etc., and, in republican states, esp. freq. of the people'; the sovereignty of the Roman people and crimen majestatis; 'As a title of honor of the Roman emperors, majesty'. Supports only the lexical fact that the word was used of the gods and as a title of the emperors; that the Collect's maiestati tuae servire echoes the imperial title is this leaf's observation and no source read says it (research/scope.md section 3.9)."
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-part-10-latin-text"
+loci = [
+  "95.8",
+]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:9cf8f08b364472a4336d8267bb0af12398fa23462763db8e1167b221263dfc1d"
+context = "Augustine, En. in Ps. 95.8, Migne's Latin in the tracked Corpus Corporum file, physical line 118, re-read by the revision's research for standing finding STU-004: on v. 7 Augustine reads 'afferte Domino gloriam et honorem', which the NPNF English renders 'worship and honour' (research/interpretations.md, Reading 1, psalm row). Electronic text, not collated on a printed column."

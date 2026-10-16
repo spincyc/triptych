@@ -46,16 +46,16 @@ standing_findings_schema = 4
 record_type = "standing-blocking-findings"
 document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"
 provider = "claude"
-run_id = "4d16b5e19d25dad9"
+run_id = "821c824684b0c7a7"
 workflow = "proper-study"
-workflow_version = 11
-stage = "web-review"
+workflow_version = 12
+stage = "research-review"
 iteration = 0
 disposition = "PASS"
 standing = 0
 accepted_count = 3
-advisory_count = 13
-observation_count = 6
+advisory_count = 17
+observation_count = 8
 
 [[stages]]
 stage = "homily-review"
@@ -71,15 +71,15 @@ observation_count = 0
 
 [[stages]]
 stage = "research-review"
-iteration = 2
+iteration = 0
 disposition = "PASS"
-run_id = "4d16b5e19d25dad9"
+run_id = "821c824684b0c7a7"
 workflow = "proper-study"
-workflow_version = 11
+workflow_version = 12
 standing = 0
 accepted_count = 0
-advisory_count = 2
-observation_count = 2
+advisory_count = 6
+observation_count = 4
 
 [[stages]]
 stage = "study-review"
@@ -174,19 +174,51 @@ required_result = "Make the research records agree that v. 8 is sung whole by co
 
 [[advisories]]
 stage = "research-review"
-id = "RES-014"
+id = "RES-016"
 severity = "advisory"
-location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/scope.md section 8.3, row 'Composition of the Psalms (`row-6e9c8175463dbd35`)', Source and locus cell ('which this stage could not re-read (section 8.2)'); src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/scope.md section 10, lead 8 ('and its current state'); src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/source-bindings.toml, binding of artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08179b-d4ee13fd-article-text (loci 'line 7' and the 701 sentence)"
-problem = "The third pass re-read the NABRE Psalms introduction. Section 5 records the delivery (74,093 bytes, SHA-256 03234893...); this review re-fetched it byte-identically and found the dating sentence; section 8.2 now relies on it. But section 8.3 still calls it a source 'which this stage could not re-read (section 8.2)', and section 10 lead 8 still lists 'its current state' as outstanding. Likewise, section 8.2 now reports reading Souvay at lines 9 and 11, while the Souvay article-text binding's loci name only line 7 and the 701 sentence. Nothing the studies may print changes, since the planned phrase stays 'Place of composition unknown', but the record contradicts itself about what this research read."
-required_result = "Section 8.3's row says that the label's source was read at the third pass in a current delivery (section 8.2) and names no place of composition. Lead 8 keeps only the registered state of 28 July 2026 as outstanding. The Souvay article-text binding's loci name line 9 and line 11 beside line 7."
+location = "research/interpretations.md, Reading 3, 'The strongest difficulty, and how the witnesses meet it', second sentence ('Clementine *Cognita autem Jesus nequitia eorum*), the lemma under which Jerome and Aquinas write')"
+problem = "Jerome's lemma does read nequitia (PL 26 col. 163, page image: 'Cognita autem Jesus nequitia eorum, ait'). Aquinas's printed lemma at the same verse reads 'Cognita autem Iesus malitia eorum, ait' (Venice t. III p. 283, page image, right column, before 'Et primo respondet ad mentem eorum'). The sentence presents the Clementine's nequitia as the wording under which both write. A study following it could quote nequitia as Aquinas's lemma."
+required_result = "Name each lemma as printed: Jerome's 'Cognita autem Jesus nequitia eorum' with the Clementine, and Aquinas's 'Cognita autem Iesus malitia eorum' (Venice p. 283). Say that both comment on Matthew 22:18. The rest of the RES-015 repair stands."
 
 [[advisories]]
 stage = "research-review"
-id = "RES-015"
+id = "RES-017"
 severity = "advisory"
-location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/interpretations.md, Reading 3, 'The strongest difficulty, and how the witnesses meet it', second sentence ('Matthew says only that the Pharisees went and took counsel how to ensnare him in his speech (22:15 ...); the text does not say whether their purpose was known')"
-problem = "Matthew 22:18 says that Jesus knew their wickedness: Douay 'But Jesus knowing their wickedness' (47-matthew.tsv line 746); Clementine 'Cognita autem Jesus nequitia eorum'. Those are the words that prompt this difficulty. Jerome's 'Prima virtus est respondentis ...' (PL 26 col. 163, page image) and Aquinas's 'Et primo respondet ad mentem eorum ... Dei autem respondere ad mentem' (Venice p. 283, page image) are each written under that lemma. The paragraph instead anchors the question in 22:15 and says that 'the text does not say whether their purpose was known'. That means known to others beforehand, but read plainly it contradicts v. 18. A study following it could write that Matthew is silent on whether their purpose was known."
-required_result = "The paragraph anchors the question in 22:18 ('knowing their wickedness', cognita ... nequitia eorum), the lemma under which Jerome and Aquinas write. It says only that the text does not say whether anyone else knew their purpose beforehand. The rest of the RES-009 repair stays as it stands."
+location = "research/scope.md section 3.6, Robert Bellarmine row (Psalm 16), 'What he argues' cell: 'the apple of the eye, \"frail and delicate\", and the shadow of the wings (8)'"
+problem = "Bellarmine (O'Sullivan, tracked text line 535) calls the apple of the eye 'a most delicate, though valuable article'. He then says 'such are we, frail and delicate': the words describe those who pray, not the pupil. The research row attaches 'frail and delicate' to the apple of the eye. That is the misdescription standing finding STU-010(a) found in the study, and the study took it from this record."
+required_result = "The row gives each phrase its own referent. The apple of the eye is 'a most delicate, though valuable article' and those who pray are 'frail and delicate' (line 535)."
+
+[[advisories]]
+stage = "research-review"
+id = "RES-018"
+severity = "advisory"
+location = "research/scope.md section 3.1, rows for John Chrysostom, Hom. in Rom. 23, and Augustine, En. in Ps. 118 (Schin) and 124 secs. 7-8; section 3.1 paragraph 'Is Caesar's claim a duty or a concession'; section 7, row 'On what ground is tribute owed?'; research/interpretations.md Reading 2, 'The strongest difficulties', item (3)"
+problem = "The records state that Chrysostom and Augustine make tribute a debt that holds for every Christian, against Hilary's and Ambrose's condition of possession. That disagreement is real, but the record quotes none of the sentences that carry it. The sentences quoted ('not to give but to render', 'this subjection is not subversive of religion', the soldiers of Julian) do not show that the debt binds one who keeps nothing. The decisive sentences stand at the loci already cited. Chrysostom: 'to show that these regulations are for all, even for priests, and monks, and not for men of secular occupations only ... if thou be an Apostle even, or an Evangelist, or a Prophet, or anything whatsoever' (NPNF 11, tracked lines 46231-46236). Augustine: 'thus hath God ordained His Church, that every power ordained in the world may have honour, and sometimes from those who are better than those in power' (NPNF 8, tracked lines 61102-61103). Standing finding STU-011 shows that the study, working from this record, asserted the difference without showing it."
+required_result = "Quote these sentences, or equivalent ones at the same loci, in the section 3.1 rows and in Reading 2's difficulty (3), as the ground on Chrysostom's and Augustine's side. Otherwise narrow the stated difference in sections 3.1 and 7 and in Reading 2 to what the quoted words show."
+
+[[advisories]]
+stage = "research-review"
+id = "RES-019"
+severity = "advisory"
+location = "research/context.md, 'World Mission Day on 18 October 2026' ('none is registered in the source library'), 'Sources read for this revision' ('None of the new states ... is registered') and 'Remaining verification for research'; research/chronology-inputs.toml header comment on the acclamation key; shared/ordinary-time/weeks/29/propers/verified.md, 'Witnesses actually inspected', General Instruction row"
+problem = "Several statements that were true when written are now false. context.md says the World Mission witnesses and the three Internet Archive captures are unregistered, and it lists as outstanding the work the research has since done. The research registered and bound them, and scope.md section 11 records this. The chronology-inputs header still says that the orientation projection gives every key beginning with 'gospel' a narrated-event row, which v2 no longer does. The owner's GIRM row says that neither the chapter II state (d10afff3) nor the chapter VII state (e803093d) matches a registered artifact. Both are now registered. That row also rests nos. 363-365 on the chapter VII state, which no later stage could re-read, without naming the June 2026 capture that the leaf now relies on."
+required_result = "Each place carries a short dated note of its current state, and the context stage's historical record is not rewritten. In context.md, point to scope.md section 11 and the bindings. In the input header, note the v2 behaviour. In the owner's GIRM row, name the registered states and the chapter VII capture of 13 June 2026 (e973bb8f) read at nos. 363-365."
+
+[[advisories]]
+stage = "research-review"
+id = "RES-020"
+severity = "advisory"
+location = "shared/ordinary-time/weeks/29/propers/verified.md, research addition 6 (and addition 5, 'the antiphon's omission of the clause of service is the Missal's'); research/context.md, 'One cross-cycle fact bearing on rubric 6'; propers/verified.md finding 8"
+problem = "The records note that the Ordo at no. 146 gives Mark 10:45 as the Year B Alleluia verse with the clause of service. They do not note the Year B Gospel's titulus on the same page (Ordo 1981, printed p. 79, artifact p. 133, page image): 'Filius hominis venit ut daret animam suam redemptionem pro multis'. That titulus is word for word the shortened form of Communion antiphon B. So the records omit the one edition-controlled witness that already has the antiphon's form without the clause of service. That fact bears on how the adapted antiphon is described and on the rubric 6 question."
+required_result = "Record the no. 146 Gospel titulus beside addition 6 and the context's cross-cycle fact as an edition fact. Make no inference about why the antiphon was chosen or which text depends on which."
+
+[[advisories]]
+stage = "research-review"
+id = "RES-021"
+severity = "advisory"
+location = "research/scope.md section 2, Psalm 95 (Hebrew 96) row; section 3.3, 'The title'; section 8.1 and section 8.3 row row-b6be5603e767096a"
+problem = "The psalm's text stands, with small differences, in 1 Paralipomenon 16:23-33, within the praise David committed to Asaph on the day the ark was set in his tent (tracked Douay 1Par 16:1, 7, 23-33). The NPNF editor's note to Augustine's sermon, which the research read, points to it (note 4415, '1 Chron. xvi. 23, etc.', tracked line 48218). The records give only the Greek and Latin title's second-Temple setting and say that the Hebrew psalm has no title. The chronology corpus has no binding for this scriptural occasion, so no date may be supplied. Unrecorded, the title's setting can still read in the expansive study's historical appendix as the psalm's only attested setting."
+required_result = "Record the 1 Paralipomenon 16 parallel in section 2 and section 3.3 as scriptural context, and in section 8 as a chronology-corpus lead for its owner. Supply no date, and leave the generated row unchanged."
 
 [[advisories]]
 stage = "study-review"
@@ -262,13 +294,23 @@ required_result = "Every movement break in the speech of the same height on ever
 
 [[observations]]
 stage = "research-review"
-location = "scripts/_proper_chronology.py, orientation builder line 1465 (element.key.startswith(\"gospel\")) against the detailed-annotation path line 1292 (element.key == \"gospel\")"
-note = "Still present. Any postconciliar orientation-v1 leaf that keys its acclamation 'gospel-acclamation' gets a narrated-event row for that element; this leaf avoided it only by re-keying (scope.md 8.1). The defect is in a shared tool that no stage of this run may repair, and no generator test criterion covers it."
+location = "src/sources/chronology/bindings.yaml, traditional-attribution bindings for Psalms (scope [{book: Ps, chapter: 32}] and others)"
+note = "Psalm 32 carries a Davidic traditional-attribution binding from its Douay and Clementine title. Psalm 16, headed 'Oratio David' in the Clementine and 'The prayer of David' in the Douay, has none, and neither has Psalm 95 ('Canticum ipsi David'). Psalm 95 also has no binding for its 1 Paralipomenon 16 setting. The page-2 table therefore attributes only the Communion psalm to David. This is a corpus coverage question for its owner; the research recorded the asymmetry (scope.md 8.1) and may not alter the corpus."
 
 [[observations]]
 stage = "research-review"
-location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/context.md, branch row mass-for-evangelization-of-peoples (line 294) and the closing note at line 425"
-note = "The branch stays conditional and not supplied, and no dated witness was sought for a mission observance on 18 October 2026. Line 425 rightly requires one before any study mentions such an observance. Recorded again so that the standing record keeps the sighting the earlier rounds made."
+location = "research/chronology-annotations.tex orientation rows row-6e9c8175463dbd35, row-b6be5603e767096a and row-7a3e8d424af7908c (generated by scripts/_proper_chronology.py, orientation-v2 Passage cell)"
+note = "The responsorial psalm's response citation (input kind 'response', Psalm 96:7b) prints as an unlabelled second citation after '9-10a, 10c', although v. 7 is already in the verse list. The cause appears to be a missing v2 display rule for response citations, not a leaf defect."
+
+[[observations]]
+stage = "research-review"
+location = "src/claude/.../pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/proper-components.toml, chronology_presentation"
+note = "The research stage changed the declaration from orientation-v1 to orientation-v2, which the tool required before it would generate v2 rows. The file lies outside the research records and outside this review's input seal, so the study preflight's --require-orientation-v2 check is what covers it."
+
+[[observations]]
+stage = "research-review"
+location = "src/sources/works/leo-xiv/*/editions/2026-english-vatican-web-2026-10-16/artifacts/*/artifact.toml"
+note = "The Holy See pages return bytes of the same size but a different hash on different deliveries. A fresh fetch during this review gave c1b518a0... for the message (registered 6b7809d9...) and 89dd1465... for the video message (registered 5a4cc2ee...). A later re-verification can therefore confirm content but not the registered hash, as the video message's edition note already says."
 
 [[observations]]
 stage = "study-review"

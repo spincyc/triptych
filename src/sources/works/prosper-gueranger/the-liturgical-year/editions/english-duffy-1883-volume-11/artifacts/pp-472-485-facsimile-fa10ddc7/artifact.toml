@@ -1,0 +1,21 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.pp-472-485-facsimile-fa10ddc7"
+edition_id = "edition.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11"
+artifact_type = "facsimile-excerpt"
+media_type = "application/pdf"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Public domain in the United States by publication date (Dublin, 1883: first published abroad before 1931, as derived for calendar year 2026 under guidance/missals.md), as the parent PDF's record and the front-matter excerpt beside it establish. These pages are an unaltered page selection from that mechanical facsimile and add no authorship; no modern editorial text is added."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/liturgicalyear11gu/liturgicalyear11gu.pdf"
+provenance = "Mechanical page extraction made on 2026-10-16 by the research stage of the Claude PC-S55-A proper-study revision from the registered parent PDF, fetched whole over verified HTTPS that day and matched to its SHA-256 f1893738... and 35,074,623 bytes before any page was read. The pages were read on images rendered at 65 dpi."
+retrieved = "2026-10-16"
+sha256 = "fa10ddc701e574ae308b2d9314910b5b59ff62eb85643148f778e472a264321d"
+byte_size = 1941601
+page_count = 14
+indexable = false
+derived_from = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-pdf-f1893738"
+transformation = "pdfseparate (poppler 26.08.0) for parent PDF pages 498 to 511, then pdfunite of those pages in that order; no raster editing, cropping, textual rewriting or OCR correction. pdfunite does not write identical bytes on every run, so these bytes are identified by their own digest and a re-extraction will match in content, not in hash."
+path = "src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1883-volume-11/artifacts/pp-472-485-facsimile-fa10ddc7/liturgical-year-xi-1883-pp472-485.pdf"
+notes = "14 pages only: parent PDF pages 498-511, printed pp. 472-485, the whole chapter The Twenty-second Sunday after Pentecost (Mass) and the head of its Vespers: the note on Honorius (p. 472, note 1, Gemm. an. iv. 93) and on Rupert (note 4, De div. off. xii. 22); Collect Deus, refugium nostrum (p. 473; note 1, Berno); the note on Durandus, Rat. vi. 139 (p. 475, note 6); the comment extending the Epistle to Philippians 2:15-16, with notes citing Chrysostom, in Phil. hom. viii. 4, and Augustine, Enarr. in Ps. xciii. 5, 6 (pp. 477-478); Gradual Ecce quam bonum, Alleluia Qui timent Dominum and the Gospel Matthew 22:15-21 (p. 478); the Gospel comment, 'Tuesday in Holy Week' (p. 480, note 1), 'for it contains the first principle of all governments on earth' (p. 481); Offertory, Secret and the Communion Ego clamavi with 'The Communion-Anthem shows us with what perseverance and earnestness, the Church prays to her divine Lord. We must imitate her.' (p. 484); Postcommunion Sumpsimus and the Magnificat antiphon Reddite ergo (p. 485). Page rule: PDF page = printed page + 26. All other parent pages are omitted."

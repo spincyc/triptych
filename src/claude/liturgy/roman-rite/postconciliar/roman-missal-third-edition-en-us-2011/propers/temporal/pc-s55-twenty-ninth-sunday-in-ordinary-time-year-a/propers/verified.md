@@ -3,7 +3,7 @@
 **Formula:** `PC-S55-A`, Twenty-ninth Sunday in Ordinary Time, Year A
 **Canonical Missal owner:** [Ordinary Time Week XXIX](../../shared/ordinary-time/weeks/29/propers/verified.md)
 **Identity record:** [`instance/manifest.md`](../instance/manifest.md)
-**Collated:** 2026-10-16
+**Collated:** 2026-10-16; revised the same day for the `proper-study` v12 revision (run `821c824684b0c7a7`), whose changes are marked *Revision*
 **Provider:** Anthropic Claude
 
 This record verifies the composition of the target: which units make up this
@@ -18,10 +18,10 @@ research stage itself re-checked.
 
 | Matter | Basis |
 | --- | --- |
-| Sunday, cycle, occurrence, Lectionary no. 145 and every reading boundary | Re-collated at the research stage from bytes fetched whole over verified TLS on 2026-10-16 and matched to their registered hashes before reading: the USCCB 2026 calendar at printed pp. 5 and 41 (artifact pp. 7 and 43), and the *Ordo lectionum Missae* 1981 no. 145 on a page image of printed p. 79 (artifact p. 133) rendered at 200 dpi. The dated readings page for 18 October 2026 was fetched again (58,047 bytes, SHA-256 `369f06fd…`); its bytes differ from both the context stage's copy and the state registered on 2026-10-13, so this state was registered and read: heading, Lectionary no. 145, every locator, the response locator (7b) and the five units agree with `research/context.md`. All are bound in `research/source-bindings.toml` |
+| Sunday, cycle, occurrence, Lectionary no. 145 and every reading boundary | Re-collated at the research stage from bytes fetched whole over verified TLS on 2026-10-16 and matched to their registered hashes before reading: the USCCB 2026 calendar at printed pp. 5 and 41 (artifact pp. 7 and 43), and the *Ordo lectionum Missae* 1981 no. 145 on a page image of printed p. 79 (artifact p. 133) rendered at 200 dpi. The dated readings page for 18 October 2026 was fetched again (58,047 bytes, SHA-256 `369f06fd…`); its bytes differ from both the context stage's copy and the state registered on 2026-10-13, so this state was registered and read: heading, Lectionary no. 145, every locator, the response locator (7b) and the five units agree with `research/context.md`. All are bound in `research/source-bindings.toml`. *Revision:* the official readings page refused every direct request of 16 October 2026 (HTTP 403 challenge page), so the revision read it whole in the Internet Archive capture of 15 March 2026 (60,138 bytes, `f20f2e3c…`), now registered and bound; heading, Lectionary 145, every locator, the response locator, the four strophes (v. 8 whole; v. 10 first and last clauses) and the copyright notice agree with the state above and with the *Ordo* |
 | Missal elements, order, *Vel:* structure, absent units, conclusions | The Week XXIX owner. Re-read at the research stage in the 2002 Latin at physical PDF pp. 291–292 (text layer) and in the ICEL excerpt at printed p. 81 (artifact p. 89, text layer); nothing differs from the owner's table. The owner's additions of this date record the passage records, the oration antecedents and the antiphons' comparison with the *Nova Vulgata* |
 | Precedence and the omitted feast | `research/context.md`, whose loci in the 2002 artifact (*Normae universales* nos. 58–60, pp. 70–71; the *Calendarium Romanum generale*, p. 79) are bound to it. Not re-read at this stage |
-| Chant and branch rubrics | The governing United States English GIRM, read by the context-resolution stage of this run on 2026-10-16 in three hash-identified chapter pages (chapter II at nos. 48, 51, 53, 61–63, 68, 74 and 87; chapter VII at nos. 363–365; chapter VIII at nos. 368–376). Those three states matched no registered artifact; they are registered at this stage from the hashes and sizes that stage recorded and bound in `research/source-bindings.toml`. This stage's own requests for the same pages on 2026-10-16 were answered with an HTTP 403 challenge page (15,748 bytes), with and without browser request headers, so the research stage did not itself re-read the General Instruction; the branch rows of `research/context.md` stand on the context stage's reading |
+| Chant and branch rubrics | The governing United States English GIRM. *Revision:* chapter II was re-read directly by the revision's context stage on 16 October 2026 and is byte-identical to its registered state (nos. 48, 51, 53, 61, 62, 63, 66, 68, 74 and 87). Chapters VII and VIII refused direct requests that day; the revision's research read them whole in Internet Archive captures of the official pages of 13 and 18 June 2026 (chapter VII nos. 357–367, relied on at 363–365; chapter VIII nos. 368–378, relied on at 372–374), registered and bound in `research/source-bindings.toml`. The states the first context stage read on 16 October could not be re-read by any later stage and are kept only as catalogued records. The Latin typical rules read in the 2002 Missal (*Tempus per annum* rubrics 3–6; Masses for Various Needs, introduction no. 2 and no. 18, physical pp. 667 and 695, re-read by the revision's research) carry the same branch rows where they exist |
 | Study-text boundaries | Re-read at this stage in the tracked Douay–Rheims (Challoner) and Clementine Vulgate at Isaiah 44:24–45:13; Psalm 95 whole; Psalm 16 whole; Psalm 32:12–22; 1 Thessalonians 1:1–10; Philippians 2:14–16; Matthew 21:23, 21:45–46 and 22:15–23; Mark 10:42–45; and Acts 17:1–10 |
 | Lectionary Latin | The *Nova Vulgata* as published on the Holy See's site, read at Isaiah 44:24–45:13, Psalms 17 (16), 33 (32) and 96 (95), Matthew 22:14–23, Mark 10:42–46, Philippians 2:12–18 and 1 Thessalonians 1:1–10, in web states fetched whole on 2026-10-16, not registered and not retained (sizes and SHA-256 values in `research/scope.md` section 5) |
 | Greek and Hebrew controls | The SBL Greek New Testament text and apparatus of Matthew and Mark, fetched whole and matched to their registered hashes, read at Matthew 22:15–21 and Mark 10:45; the same edition's 1 Thessalonians and Philippians files, fetched from the same commit and not registered, at 1 Thessalonians 1:1–5 and Philippians 2:15–16; Swete's Septuagint Psalms (tracked digitisation) at Psalm 95:1, 5, 7 and 10; Brenton's English Septuagint (tracked) at Isaiah 45:1–6; the King James Version (tracked) for the Hebrew-based reading at Isaiah 45:1, 4–5 and Psalms 17:6–8 and 96:5, 7, 10. No Hebrew or Greek text of Isaiah was read in the original language |
@@ -176,7 +176,13 @@ the owner's addition 5).
 
 ## Branches
 
-The twelve branch IDs of `instance/manifest.md` apply unchanged. Statuses,
+The twelve branch IDs of `instance/manifest.md` apply unchanged. *Revision:*
+`mass-for-evangelization-of-peoples` remains `conditional` and unselected. Its
+rubric's condition can be met on 18 October 2026, the 100th World Mission Day
+(Holy See message and video message; the Pontifical Mission Societies in the
+United States for World Mission Sunday and its collection, all registered and
+bound), but the rubric permits that Mass and no witness appoints it; the
+observance adds no unit, branch or relationship to this target. Statuses,
 authorities and resolutions are those tabulated in `research/context.md`; no
 selection was supplied and none is inferred. For the Communion pair, every
 claim resting on one antiphon only is marked with that antiphon. A claim
@@ -189,6 +195,7 @@ The printed United States Lectionary at the psalm response (finding 2) and at
 the whole of no. 145, which was not inspected; the *Nova Vulgata* of 1979 at
 Isaiah 45:1 (finding 1); the Hebrew and Greek of Isaiah 45 in the original
 languages; manuscript evidence for Matthew 22:15–21 beyond the editions'
-apparatus; a re-reading of the United States English GIRM chapters by this
-stage, which the publisher's challenge page prevented; independent review of
-this audit.
+apparatus; a direct official delivery of GIRM chapters VII and VIII and of the
+readings page on or after 16 October 2026, which the publisher's challenge
+page prevented (the archived captures of June and March 2026 stand in for
+them); independent review of this audit.

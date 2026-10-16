@@ -83,12 +83,18 @@ finding above.
    first prayer of Book I, LXI, *Quinta Dominica post clausum Paschae*
    (printed p. 105), read on a rendered page image of the Internet Archive PDF
    of that edition (item `LiberSacramentorumRomanaeEcclesiae`, 13,625,474
-   bytes, SHA-256 `006a38a3…`, fetched whole on 2026-10-16, not registered and
-   not retained); Wilson's margin gives the concordant witnesses and "III. ix
-   infra". It stands again, word for word, as the second prayer of Book III,
-   IX, *Item alia Missa* (printed p. 229, text layer of the same PDF), and in
-   an adapted form (*[et] ea maiestati tuae sincero corde famulari*) in Book
-   III, XVI (text layer only). The registered OCR of the same edition
+   bytes, SHA-256 `006a38a3…`, fetched whole on 2026-10-16); Wilson's margin
+   gives the concordant witnesses and "III. ix infra". It stands again, in
+   Wilson's text word for word, as the second prayer of Book III, IX, *Item
+   alia Missa* (printed p. 229), where his apparatus (note 2) records that the
+   Vatican manuscript itself reads *maiestatem tuam* at that place; and in an
+   adapted form (*Omnipotens Deus, fac nos tibi semper devotam gerere
+   voluntatem, [et] maiestati tuae sincero corde famulari*) in Book III, XVI
+   (printed p. 237). The revision of 2026-10-16 (run `821c824684b0c7a7`) read
+   all three pages on page images and registered the PDF
+   (`artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3`)
+   with tracked extractions of the three pages (`…wilson-1894.page-105-facsimile-5bcc2151`,
+   `…page-229-facsimile-2d527203`, `…page-237-facsimile-b12b37cd`). The registered OCR of the same edition
    (`artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ia-djvu-ocr-libersacramentorum`,
    fetched whole and hash-matched) carries the first two at physical lines
    17460–17463 and 29276–29279. The translations inventory's lead of a
@@ -99,7 +105,8 @@ finding above.
    section, Mass XXXVIII *Item alia* (printed p. 17), read on a rendered page
    image of the Internet Archive PDF of that edition (item
    `sacramentariumle00cath`, 19,868,448 bytes, SHA-256 `3b991b13…`, fetched
-   whole on 2026-10-16, not registered and not retained): *Tribue nos Dñe
+   whole on 2026-10-16; registered and retained whole by the revision as
+   `artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13`): *Tribue nos Dñe
    quaesumus donis tuis libera mente servire ut purificante nos gratia tua
    iisdem quibus famulamur mysteriis emundemur per.* The Missal's clause order
    *tua purificante nos gratia* differs from Feltoe's *purificante nos gratia
@@ -116,7 +123,8 @@ finding above.
 4. **Prayer after Communion: early witness read, not a lead of the
    inventories.** The Verona sacramentary (Feltoe), September section,
    XXVIIII *In natale episcoporum*, Mass III *Item alia* (printed p. 126),
-   read on a rendered page image of the same PDF, ends with *Gaudeat Dñe
+   read on a rendered page image of the same PDF (with pp. 123 and 125,
+   which carry the heading and the opening of Mass III), ends with *Gaudeat Dñe
    quaesumus populus tua semper benedictione confisus et caelestium rerum
    frequentatione proficiat ut et temporalibus beneficiis adiuvetur et
    erudiatur aeternis per.* From *caelestium rerum frequentatione* to
@@ -149,8 +157,7 @@ finding above.
 
 **Outstanding after these additions.** Direct inspection of 2008 reprint page
 images; a named United States altar book; the *Graduale Romanum* pages the
-excerpt points to; a registered page-image witness of the Gelasian and Verona
-sacramentaries (the PDFs read here are not registered); the history of the
+excerpt points to; the history of the
 Entrance antiphon's repetition and of the Week IX shared clause; work-specific
 rights review; liturgical-text permission; and independent review of this
 audit.

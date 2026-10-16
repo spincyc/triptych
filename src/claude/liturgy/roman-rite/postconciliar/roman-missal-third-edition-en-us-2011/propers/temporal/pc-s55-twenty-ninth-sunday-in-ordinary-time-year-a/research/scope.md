@@ -9,6 +9,16 @@ and Chrysostom's reasoning in section 3.1; Honorius's standing; the
 *maiestas* observation; and this stage's own reading of the Psalter and
 Isaiah labels in section 8.2).
 
+Revised the same day by the research stage of the `proper-study` v12 revision
+(run `821c824684b0c7a7`), which reopened every owner of the published leaf.
+It answered the seven sourcing items of the research handoff
+(`workflows/reviews/claude-pc-s55-revision-2026-10-16/HANDOFF.md`, read as
+leads and verified independently) and the standing findings the research
+records own, and regenerated the chronology under `orientation-v2`. Section 11
+lists what it did and where; the sections it touched say *Revision* where the
+change is not self-evident. It changed no reading, author, witness role or
+difficulty.
+
 This record states what was read, at what locus, in what language and form;
 what role each witness may play; where witnesses differ; what was searched and
 not found; and what was not searched at all. It is an audit of evidence, not
@@ -67,12 +77,15 @@ Matthew 22:15–21 (finding 5); the antecedents of the three orations (owner
 additions 2–4); the antiphons against the *Nova Vulgata* (owner addition 5);
 the owner's passage records (owner addition 1); and the binding of the dated
 page and the three GIRM chapter states (`source-bindings.toml`). The United
-States English GIRM could not be re-read at this stage: every request of
-2026-10-16 to the three chapter pages, with and without browser request
-headers and over HTTP/1.1 and HTTP/2, returned a 15,748-byte HTTP 403
-challenge page. The branch rows of `context.md` rest on the context stage's
-reading of those pages that day, in states now registered from the hashes it
-recorded.
+States English GIRM could not be re-read at the first research stage: every
+request of 2026-10-16 to the three chapter pages returned a 15,748-byte HTTP
+403 challenge page. *Revision:* the revision's context stage re-read chapter
+II directly (byte-identical to its registered state), and the revision's
+research read chapters VII and VIII whole in Internet Archive captures of the
+official pages (13 and 18 June 2026), registered and bound; the branch rows of
+`context.md` now rest on those states (`propers/verified.md`, What this stage
+checked). The readings page was likewise refused directly at the revision and
+read in the Internet Archive capture of 15 March 2026, registered and bound.
 
 ## 2. Biblical contexts read
 
@@ -100,7 +113,8 @@ Offerings asks to serve God's gifts with a free mind (*libera mente
 servire*) and to be cleansed by the mysteries we serve (*famulamur*); the
 Gospel commands rendering (*reddite*, ἀπόδοτε); the psalm bids the families
 of the nations bring (*afferte*) glory to the Lord and, in v. 8, bring
-sacrifices (*tollite hostias*, not sung); Mark 10:45, in its context,
+sacrifices (*tollite hostias*) and enter his courts (v. 8 is sung whole: the
+*Ordo*'s `7-8` and the readings page's third strophe, `context.md`); Mark 10:45, in its context,
 contrasts being served with serving (the antiphon omits the contrast).
 *Image, likeness and inscription*: the coin's image and inscription (Matthew
 22:20); in the Clementine of Isaiah 45:4 the Lord has "made a likeness of"
@@ -132,10 +146,11 @@ is cited only as the narrative context of the second reading's church.
 `interpretations.md` was read on a page image of the printed edition named,
 except Aquinas's commentary on 1 Thessalonians and his *Postilla* on Psalms 16
 and 32 (Corpus Thomisticum electronic texts, registered restricted states),
-Ambrose's *Expositio* on Luke (tracked electronic Latin of Migne PL 15),
-Cassiodorus (tracked electronic Latin), and the few Latin words of Fromage's
-printed Communion and of Honorius's *Gemma animae* (uncorrected OCR, sections
-3.6 and 3.11, leads and supporting only), which are marked so. Every English
+Ambrose's *Expositio* on Luke (tracked electronic Latin of Migne PL 15) and
+Cassiodorus (tracked electronic Latin), which are marked so. *Revision:* the
+Latin of Fromage's printed Communion and of Honorius's *Gemma animae*, first
+read in OCR, was checked on page images by the revision (sections 3.6 and
+3.11), and so were the Old Gelasian and Verona prayers (section 3.9). Every English
 sentence was read in the tracked translation named. Where a witness was read
 in OCR or in an English translation only, its row says so and nothing is
 quoted in Latin from it. The Latin quoted is normalized only in these ways: *i*
@@ -334,7 +349,7 @@ Lombard, Lyra, Denis, Estius, a Lapide. See section 4.
 | --- | --- | --- | --- | --- |
 | A | John Chrysostom, *Hom. in Phil.* 8 | NPNF English, tracked (physical lines 19953–20262) | direct | On murmuring: "Why does he murmur who acts of free-will, and not by constraint?" On the crooked generation: "For the stars too give light in the night, they shine in the dark, and receive no blemish to their own beauty, yea they even shine the brighter … Thus thou too dost appear with the greater lustre, whilst thou holdest straight in the midst of the crooked". On the word of life: "Lights [i.e. luminaries], he says, retain the principle of light; so do ye the principle of life … having in yourselves the seed of life". The NPNF lemma reads "holding forth", its comment "holding fast" |
 | L | Thomas Aquinas, *Super ad Philippenses* c. 2 lect. 4 | Latin (Paris: Vivès, ed. Dessain, vol. 2, 1857), printed p. 383 (artifact p. 387), page image; tracked facsimile | direct, Doctor | "Simplices, etc. Filius enim est similis patri, Deus autem simplex est: unde simplices simus sicut filii Dei; quod est, quando intentio est ad unum. (Iac. 1.) Vir duplex animo inconstans est in omnibus viis suis" (on 15b, context of the verse). On 15d: "Quia qualitercumque mundus varietur, luminaria caeli clara manent"; "Lucens non quantum ad essentiam, quia sic tantum Deus lux est … Sed sunt lux inquantum habent aliquid lucis illius qui erat lux hominum, scilicet verbi Dei irradiantis nobis. Et ideo dicit: Verbum vitae continentes, scilicet verbum Christi" |
-| L (supporting) | Fromage, *The Liturgical Year* XI (English, 1883), Twenty-second Sunday after Pentecost, on that Mass's Epistle (Philippians 1:6–11), pp. 477–478 | OCR only (physical lines 28626–28690), not collated on a page image | commentator | Extending his Epistle into the same letter's second chapter, he bids "the children of light" to "prize the word of life" (2:16) and to fulfil their duties "in the midst of a wicked and perverse generation, as stars of the firmament do in the night" (2:15), quoting Chrysostom, *Hom. in Phil.* 8 (the passage of the row above) and Augustine, *Enarr. in Ps.* 93 on the stars that keep their course. Ecclesiastical writer; supporting only. His Mass did not appoint these verses; they are his commentary on another passage of the letter (section 3.11) |
+| L (supporting) | Fromage, *The Liturgical Year* XI (English, 1883), Twenty-second Sunday after Pentecost, on that Mass's Epistle (Philippians 1:6–11), pp. 477–478 | OCR (physical lines 28626–28690); *Revision:* checked on the page images of the registered PDF, retained excerpt pp. 472–485 | commentator | Extending his Epistle into the same letter's second chapter, he bids "the children of light" to "prize the word of life" (2:16) and to fulfil their duties "in the midst of a wicked and perverse generation, as stars of the firmament do in the night" (2:15), quoting Chrysostom, *Hom. in Phil.* 8 (the passage of the row above) and Augustine, *Enarr. in Ps.* 93 on the stars that keep their course. Ecclesiastical writer; supporting only. His Mass did not appoint these verses; they are his commentary on another passage of the letter (section 3.11) |
 
 ### 3.6 Entrance antiphon — Psalm 16 (Hebrew 17):6, 8, adapted
 
@@ -343,9 +358,9 @@ Lombard, Lyra, Denis, Estius, a Lapide. See section 4.
 | A | Augustine, *En. in Ps.* 16 (NPNF "Psalm XVII") §§1–8 | NPNF English, tracked (physical lines 5451–5510) | direct | "This prayer must be assigned to the Person of the Lord, with the addition of the Church, which is His body" (1); "not going forth to Thee in deceitful lips" (2). On v. 6: "With a free and strong effort have I directed My prayers unto Thee: for that I might have this power, Thou hast heard Me when praying more weakly". On v. 8: the apple of the eye "seems very little and minute: yet by it is the sight of the eye directed, whereby the light is distinguished from the darkness; as by Christ's humanity, the divinity of the Judgment distinguishing between the righteous and sinners"; the wings are "the defence of Thy love and mercy". Section 3.10 records the polemic of §11 |
 | L | Robert Bellarmine, *Explanatio in Psalmos*, Psalm 16 | English (O'Sullivan), tracked | direct, Doctor | The prayer "that does not proceed from deceitful lips, but is based on justice" (1); "you have proved my sincerity … there are many wicked persons, to all appearance with a fair exterior" (3); "those who observe God's commandments from human motives do so exteriorly" (4); "I have cried with confidence to thee, for on all occasions you have heard me" (6); the apple of the eye, "frail and delicate", and the shadow of the wings (8) |
 | L | Thomas Aquinas, *Postilla super Psalmos* 16 | Latin, Corpus Thomisticum electronic text (registered restricted state cps11) | direct, Doctor | "Pupilla oculi cum diligentia custoditur, quia nihil quod laedere possit permittitur appropinquare"; "Vel secundum Glossam, pupilla oculi dicitur Christus dirigens … Christus discernit fideles ab infidelibus"; "Vel custodi me, ut pupillam oculi, idest ut Christum"; "Vel duae alae sunt duo brachia Christi extenta in cruce" |
-| L (supporting) | Schuster, *The Sacramentary* III (English, 1927), Twenty-second Sunday after Pentecost, p. 185 | OCR only (physical lines 11520–11548); the volume's page images are a remote registered scan, not opened | commentator, on Psalm 16:6 as the Communion of his Mass | "The Communion is from Psalm xvi, and was formerly used on the Friday after the Third Sunday in Lent, before, that is, the passage from St John with the words of our Lord to the Samaritan woman was assigned to that day. 'I have cried, for thou, O God, hast heard me: oh, incline thine ear unto me, and hear my words.'" Then: "Humility has power to draw God to itself from the height of his glory even to the abyss of our nothingness"; humility, belonging formally to the creature, "shines with the greatest effulgence in God, who, in the Incarnation, came down from heaven to earth"; God "does not disdain to incline his ear to the prayer of the sinner". Blessed; supporting only |
-| L (supporting) | Fromage, *The Liturgical Year* XI (English, 1883), Twenty-second Sunday after Pentecost, p. 484 | OCR only (physical lines 29063–29075), not collated on a page image | commentator, on Psalm 16:6 as the Communion of his Mass | Prints *Ego clamavi quoniam exaudisti me, Deus: inclina aurem tuam, et exaudi verba mea* and says only: "The Communion-Anthem shows us with what perseverance and earnestness, the Church prays to her divine Lord. We must imitate her." Ecclesiastical writer; supporting only |
-| L (lead) | Honorius Augustodunensis, *Gemma animae* IV.49 | Uncorrected OCR of Migne PL 172 (Paris: Garnier, 1895), tracked, physical lines 55662–55705; columns interleaved; no page image | lead, not relied on | In his order *Ego clamavi* (Psalm xvi, 6) is the Communion of the Third Sunday after Pentecost, read in his historical sense as David's thanks "quod remisso peccato communionem fidelium promeruit". Ecclesiastical writer by `author-standing-v1.toml` (row `honorius-augustodunensis`, basis Catholic Encyclopedia, "Honorius of Autun"); a lead, not relied on, and not cited in the studies |
+| L (supporting) | Schuster, *The Sacramentary* III (English, 1927), Twenty-second Sunday after Pentecost, p. 185 | OCR (physical lines 11520–11548); *Revision:* checked on the page images of the registered scan, retained excerpt pp. 182–185 | commentator, on Psalm 16:6 as the Communion of his Mass | "The Communion is from Psalm xvi, and was formerly used on the Friday after the Third Sunday in Lent, before, that is, the passage from St John with the words of our Lord to the Samaritan woman was assigned to that day. 'I have cried, for thou, O God, hast heard me: oh, incline thine ear unto me, and hear my words.'" Then: "Humility has power to draw God to itself from the height of his glory even to the abyss of our nothingness"; humility, belonging formally to the creature, "shines with the greatest effulgence in God, who, in the Incarnation, came down from heaven to earth"; God "does not disdain to incline his ear to the prayer of the sinner". Blessed; supporting only |
+| L (supporting) | Fromage, *The Liturgical Year* XI (English, 1883), Twenty-second Sunday after Pentecost, p. 484 | OCR (physical lines 29063–29075); *Revision:* checked on the page image, retained excerpt pp. 472–485 | commentator, on Psalm 16:6 as the Communion of his Mass | Prints *Ego clamavi quoniam exaudisti me, Deus: inclina aurem tuam, et exaudi verba mea* and says only: "The Communion-Anthem shows us with what perseverance and earnestness, the Church prays to her divine Lord. We must imitate her." Ecclesiastical writer; supporting only |
+| L (lead) | Honorius Augustodunensis, *Gemma animae* IV.49 | Uncorrected OCR of Migne PL 172 (Paris: Garnier, 1895), tracked, physical lines 55662–55705; *Revision:* checked on the page image of the 1854 Migne printing (registered restricted facsimile, PDF p. 84, col. 707) | lead, not relied on | In his order *Ego clamavi* (Psalm xvi, 6) is the Communion of the Third Sunday after Pentecost, read in his historical sense as David's thanks "quod remisso peccato communionem fidelium promeruit". Ecclesiastical writer by `author-standing-v1.toml` (row `honorius-augustodunensis`, basis Catholic Encyclopedia, "Honorius of Autun"); a lead, not relied on, and not cited in the studies |
 
 The Missal's antiphon begins at v. 6; v. 1 ("not from deceitful lips") and
 v. 3 ("thou hast proved my heart") are context and not sung.
@@ -389,9 +404,9 @@ recorded and not generalized.
 
 | Element | Evidence | Role |
 | --- | --- | --- |
-| Collect *Omnipotens sempiterne Deus, fac nos tibi semper* | The Old Gelasian sacramentary (Wilson 1894), word for word, as the first prayer of I.lxi *Quinta Dominica post clausum Paschae* (printed p. 105, page image) and the second of III.ix *Item alia Missa* (printed p. 229, text layer); an adapted form in III.xvi (text layer). Owner addition 2 | history |
-| Prayer over the Offerings *Tribue nos, Domine, quaesumus, donis tuis* | The Verona sacramentary (Feltoe 1896), April section, Mass XXXVIII *Item alia*, printed p. 17, page image, with *purificante nos gratia tua* for the Missal's *tua purificante nos gratia*; an April Mass of martyrs. Owner addition 3 | history |
-| Prayer after Communion *Fac nos, quaesumus, Domine, caelestium rerum* | The Verona sacramentary, September section, XXVIIII *In natale episcoporum*, Mass III, printed p. 126, page image: *Gaudeat Dñe … caelestium rerum frequentatione proficiat ut et temporalibus beneficiis adiuvetur et erudiatur aeternis*; the Missal's opening is not in it. Owner addition 4 | history |
+| Collect *Omnipotens sempiterne Deus, fac nos tibi semper* | The Old Gelasian sacramentary (Wilson 1894), word for word, as the first prayer of I.lxi *Quinta Dominica post clausum Paschae* (printed p. 105) and, in Wilson's text, the second of III.ix *Item alia Missa* (printed p. 229), where his apparatus (note 2) records that the Vatican manuscript there reads *maiestatem tuam*; an adapted form in III.xvi (printed p. 237: *Omnipotens Deus, fac nos tibi semper devotam gerere voluntatem, [et] maiestati tuae sincero corde famulari*). *Revision:* all three pages read on page images and retained as registered extractions (owner addition 2, corrected: the first record's *ea* in the III.xvi form is not on the page) | history |
+| Prayer over the Offerings *Tribue nos, Domine, quaesumus, donis tuis* | The Verona sacramentary (Feltoe 1896), April section, Mass XXXVIII *Item alia*, printed p. 17, page image, with *purificante nos gratia tua* for the Missal's *tua purificante nos gratia*; an April Mass of martyrs. Owner addition 3. *Revision:* the complete scan is registered and retained | history |
+| Prayer after Communion *Fac nos, quaesumus, Domine, caelestium rerum* | The Verona sacramentary, September section, XXVIIII *In natale episcoporum* (printed p. 123), Mass III (from p. 125), last prayer, printed p. 126, page image: *Gaudeat Dñe … caelestium rerum frequentatione proficiat ut et temporalibus beneficiis adiuvetur et erudiatur aeternis*; the Missal's opening is not in it. Owner addition 4 | history |
 | All three | Hilary, *Comm. in Matt.* 23.2 (section 3.1): God is owed "corpus, animam, voluntatem", and the answer frees "devotas Deo mentes" from human cares; Jerome on 22:21: "quae sunt Dei Deo, decimas primitias, et oblationes, ac victimas"; Aquinas on 22:21: natural riches such as bread and wine to God. None of them cites an oration | doctrinal illumination of the leaf's synthesis, not reception of the prayers |
 
 No commentary on any of the three prayers was sought beyond these; the
@@ -400,13 +415,24 @@ connects any oration to any reading of this Mass. Linking the Collect's
 devoted will and sincere heart to Hilary's will and Jerome's hypocrite, the
 Prayer over the Offerings' free mind and gifts to Hilary's freed minds and
 Jerome's oblations, or the Prayer after Communion's temporal and eternal
-goods to the two debts of the Gospel, is this leaf's synthesis. That Roman
-usage also gave *maiestas* to the emperor, so that the Collect's *maiestati
-tuae servire* would echo an imperial word, is a lexical-historical claim, not
-an observation of the appointed text. No lexicon or historical source for it
-was read or bound; the library holds no Latin lexicon. The claim is
-**unverified**: no study may assert it, and the Collect contributes to
-Reading 2 only as the petition to serve God's majesty.
+goods to the two debts of the Gospel, is this leaf's synthesis.
+
+*Revision.* **The *maiestas* observation (handoff item 7, RES-013).** The
+lexical fact is now verified in a public-domain lexicon registered for it:
+Lewis and Short, *A Latin Dictionary* (Harper issue, copyright 1879), s.v.
+*majestas*, printed p. 1101, read on the page images of the retained excerpt.
+Its first sense is "Lit., of the gods; also the condition of men in high
+station, as kings, consuls, senators, knights, etc., and, in republican
+states, esp. freq. of the people"; it gives the *majestas* of the Roman people
+and the *crimen majestatis*, and "As a title of honor of the Roman emperors,
+majesty", citing Phaedrus and Symmachus. So the word served both for the gods
+and as an imperial title, and a study may say so with that citation. What
+remains the leaf's own observation, made by no source read, is that the
+Collect's *maiestati tuae servire*, said to God, sets the word's divine sense
+beside the Gospel's Caesar; it must be labelled as the leaf's and may not be
+presented as the prayer's intent or as the Fathers'. The Oxford impression of
+1984 of the same dictionary was read first and is not cited: its imprint
+reserves all rights (section 5).
 
 ### 3.10 A magisterial bound on presenting the questioners
 
@@ -448,8 +474,12 @@ Schuster OCR (vol. 3) and of the held English *Liturgical Year* volume XI
 found the Gospel under the Twenty-second Sunday after Pentecost in each. Each
 commentator's whole chapter on that Sunday was then read in the OCR, element
 by element: Schuster pp. 182–185 (physical lines 11338–11585), Fromage pp.
-472–485 (physical lines 28335–29110). Neither text was collated on a page
-image.
+472–485 (physical lines 28335–29110). *Revision:* both chapters were then
+read whole on page images of the registered scans (Schuster volume III, PDF
+pp. 198–201; *The Liturgical Year* XI, PDF pp. 498–511), each fetched whole
+and matched to its registered hash, and retained as registered excerpts.
+Every locus, heading, element and quotation in this section and in sections
+3.5 and 3.6 was found on the page as the OCR gives it.
 
 **Element comparison.** "Same" means the same text in the same ritual
 position; "shared text" the same scriptural text in another position.
@@ -482,8 +512,8 @@ the first half of this formulary's Entrance antiphon.
 only for what he says of a text this formulary shares, at the locus above:
 the Gospel (Schuster pp. 183–184; Fromage pp. 480–481), Psalm 16:6 (Schuster
 p. 185; Fromage p. 484), and, for Fromage, Philippians 2:15–16 (pp.
-477–478). Both support only; Fromage is quoted only after collation on a page
-image. (2) Their Mass set Psalm 16:6 and Matthew 22:15–21 in one formulary,
+477–478). Both support only; both are now collated on page images (above),
+so either may be quoted at these loci. (2) Their Mass set Psalm 16:6 and Matthew 22:15–21 in one formulary,
 but neither commentator connects the two, and no source read says that the
 1970 Missal's Entrance antiphon descends from that Communion or that either
 text was chosen for the other. No study may cite either commentator, or the
@@ -509,10 +539,11 @@ concerns a Friday, a Communion and an older Roman order, and does not answer
 the question. (b) Fromage p. 472 reports Honorius of Autun's reading that the
 Mass "has reference to the days of Antichrist" (his note: *Gemma animae* IV.
 93). In the held uncorrected OCR of Migne PL 172 (physical lines 57209–57345,
-columns interleaved, no page image), Honorius's Twenty-second Sunday *Si
-iniquitates* (IV.92–93) has the Gospel of the king's reckoning with his
-servants (Matthew 18) and a Communion from Luke 15, not Matthew 22 or
-*Ego clamavi*, as Fromage's own remark that the previous Sunday's Gospel was
+columns interleaved), and, at the revision, on the page image of the 1854
+Migne printing (registered restricted facsimile, PDF p. 93, cols. 725–726),
+Honorius's Twenty-second Sunday *Si iniquitates* (IV.92–93) has the Gospel
+of the king's reckoning with his servants (Matthew 18), the Alleluia *Lauda,
+anima mea* and a Communion from Luke 15, not Matthew 22 or *Ego clamavi*, as Fromage's own remark that the previous Sunday's Gospel was
 formerly this Sunday's (p. 472) leads one to expect; the Gospel of the
 tribute stands in Honorius's following chapter (IV.94) on a Sunday without
 proper chant, read of the census exacted under Alexander the Great and of the
@@ -561,12 +592,24 @@ first gave it.
 | *Nova Vulgata*, Philippians, vatican.va | 2026-10-16 | 16,582 | `3ffa8bf1a2710d3fb91f5e2aaa0c25af38ddb5471024dba53cc113f1d5f4b4b9` | unregistered, unretained. Read at 2:12–18 |
 | *Nova Vulgata*, 1 Thessalonians, vatican.va | 2026-10-16 | 15,408 | `b0f615752cee4a2e217e82185346a52d166008b08aa4e833ed915fc76a9109dc` | unregistered, unretained. Read at 1:1–10 |
 | SBL Greek New Testament, 1 Thessalonians text and apparatus, and Philippians text and apparatus, from the commit of the registered Matthew and Mark files (`736fdc76…`) | 2026-10-16 | 19,334; 3,636; 20,729; 3,925 | `58b57d9b…`; `c766daa7…`; `c99e25ea…`; `7b784ba0…` | unregistered, unretained. Read at 1 Thessalonians 1:1–5 and 1:10, Philippians 2:15–16 |
-| Wilson, *The Gelasian Sacramentary* (Oxford, 1894), Internet Archive PDF `LiberSacramentorumRomanaeEcclesiae` | 2026-10-16 | 13,625,474 | `006a38a39250d39c9745acfb4f4a098374027e719dc7ad7e32972fa6a82489bc` | unregistered, unretained. Page image of printed p. 105; text layer at pp. 229 and 237 (owner addition 2) |
-| Feltoe, *Sacramentarium Leonianum* (Cambridge, 1896), Internet Archive PDF `sacramentariumle00cath` | 2026-10-16 | 19,868,448 | `3b991b133889bbd4803831455bb4f49de30ecb4d8386534cee1f80f79541967a` | unregistered, unretained. Page images of printed pp. 17, 123 and 126 (owner additions 3–4) |
-| NABRE, introduction to Isaiah, bible.usccb.org `/bible/isaiah/0` | 2026-10-16 | 64,142 | `03dac54e1cae9f02679597a4e809eb0961444c4b3660ac38a91be01bac9e9292` | unregistered, unretained; protected text. Differs from the registered state the chronology corpus cites (64,130 bytes, `51aea566…`). Read for section 8 |
+| Wilson, *The Gelasian Sacramentary* (Oxford, 1894), Internet Archive PDF `LiberSacramentorumRomanaeEcclesiae` | 2026-10-16 | 13,625,474 | `006a38a39250d39c9745acfb4f4a098374027e719dc7ad7e32972fa6a82489bc` | *Revision:* fetched again, same hash; registered (remote: its first page is Google's digitisation notice, which carries no grant), with tracked page extractions of printed pp. 105, 229 and 237, all read on page images |
+| Feltoe, *Sacramentarium Leonianum* (Cambridge, 1896), Internet Archive PDF `sacramentariumle00cath` | 2026-10-16 | 19,868,448 | `3b991b133889bbd4803831455bb4f49de30ecb4d8386534cee1f80f79541967a` | *Revision:* fetched again, same hash; registered and retained whole (tracked). Page images of printed pp. 17, 123, 125 and 126 (owner additions 3–4) |
+| NABRE, introduction to Isaiah, bible.usccb.org `/bible/isaiah/0` | 2026-10-16 | 64,142 | `03dac54e1cae9f02679597a4e809eb0961444c4b3660ac38a91be01bac9e9292` | *Revision:* delivered again with the same hash and registered (restricted, not retained); protected text. Differs from the registered state the chronology corpus cites (64,130 bytes, `51aea566…`). Read for section 8 |
 | NABRE, introduction to the Psalms, bible.usccb.org `/bible/psalms/0` | 2026-10-16 | 15,748 | `cef5ca2937c3a8b6b0d24ed6dca697da1d3e74dc7f60619687eefc59cee1beef` | HTTP 403 challenge page, not the text; not read (second pass) |
-| NABRE, introduction to the Psalms, bible.usccb.org `/bible/psalms/0`, fetched again at the third pass | 2026-10-16 | 74,093 | `03234893537af845656f986b2114df8de0c6c1f39d12fc419fc75eab7f090c03` | HTTP 200, the text; unregistered, unretained; protected text. Not byte-identical to the registered state the corpus cites (74,094 bytes, `edaba4b4…`), which was not obtained. Read at the dating sentence for section 8.2 |
-| United States GIRM, chapters II, VII and VIII, usccb.org | 2026-10-16 | 15,748 each | — | HTTP 403 challenge page at every request of this stage; the states read by the context stage are registered and bound |
+| NABRE, introduction to the Psalms, bible.usccb.org `/bible/psalms/0`, fetched again at the third pass | 2026-10-16 | 74,093 | `03234893537af845656f986b2114df8de0c6c1f39d12fc419fc75eab7f090c03` | HTTP 200, the text; protected text. Not byte-identical to the registered state the corpus cites (74,094 bytes, `edaba4b4…`), which was not obtained. Read at the dating sentence for section 8.2. *Revision:* delivered again with the same hash and registered (restricted, not retained) |
+| United States GIRM, chapters II, VII and VIII, usccb.org | 2026-10-16 | 15,748 each | — | HTTP 403 challenge page at every request of the first research stage and of the revision's research (one revision request to chapter VII answered 200 with 58,214 bytes that were not saved; every later request met the challenge, which was not circumvented) |
+| *Revision:* United States GIRM chapter VII, Internet Archive capture `20260613160611` of the official URL, raw (`id_`) | 2026-10-16 | 58,095 decoded (16,104 gzip) | `e973bb8ffe42f31b3eb4addba2acff9d7b9ef38406536a6667b8692b60d77631` (gzip `87f33dba…`) | fetched twice byte-identically; registered (restricted); read at nos. 357–367 |
+| *Revision:* United States GIRM chapter VIII, Internet Archive capture `20260618180311` | 2026-10-16 | 53,258 decoded (14,128 gzip) | `dbdf98d997624444d08d4d3533fa085138de5dafb357e79a70cd82e32dce32aa` (gzip `dd244a19…`) | fetched twice byte-identically; registered (restricted); read at nos. 368–378 |
+| *Revision:* USCCB readings page for 18 October 2026, direct | 2026-10-16 | 15,748 each | — | HTTP 403 challenge page at four requests |
+| *Revision:* USCCB readings page, Internet Archive capture `20260315050321` | 2026-10-16 | 60,138 | `f20f2e3c8fa1d8eeede12438f37f897f73e424bf70cb0fe06bf105390d7800fe` | fetched twice byte-identically; registered (restricted); read at every unit |
+| *Revision:* Holy See, Message for the 100th World Mission Day; video message; index of messages | 2026-10-16 | 49,817; 37,249; 37,038 | `6b7809d9…`; `5a4cc2ee…`; `7f80a67d…` | each fetched twice byte-identically; message and video message registered (restricted) and read whole; the index (whose bytes differ from the context stage's delivery) only led to the message |
+| *Revision:* Pontifical Mission Societies (USA), `pontificalmissions.org/wms-2026` | 2026-10-16 | 57,017 | `4904919b…` | fetched twice byte-identically; registered (restricted); read whole |
+| *Revision:* 2002 *Missale Romanum*, registered secondary PDF | 2026-10-16 | 3,333,382 | `0b458944…` (matched) | read in the text layer at physical pp. 268, 667 and 695 |
+| *Revision:* Schuster, *The Sacramentary* III, registered scan | 2026-10-16 | 158,333,284 | `410f6d11…` (matched) | page images of PDF pp. 198–201 read and retained as a registered excerpt |
+| *Revision:* *The Liturgical Year* XI (1883), registered PDF | 2026-10-16 | 35,074,623 | `f1893738…` (matched) | page images of PDF pp. 498–511 read and retained as a registered excerpt |
+| *Revision:* Honorius, *Gemma animae*, Migne PL 172 (1854), registered restricted facsimile (Documenta Catholica Omnia) | 2026-10-16 | 10,347,580 | `906be8c5…` (matched) | page images of PDF pp. 84 and 93 read; host reserves rights, so nothing retained |
+| *Revision:* Lewis and Short, Oxford impression of 1984 (Internet Archive `latindictionaryf00andr`) | 2026-10-16 | 384,090,767 | `8b62b445e7be84bc969bab98df052349e8b7b736e567c229d999e79a4b84d8bf` | read at p. 1101 and the imprint; not registered, because its imprint reserves all rights |
+| *Revision:* *Harpers' Latin Dictionary* (Lewis and Short), Library of Congress copy (Internet Archive `harperslatindict02lewi`) | 2026-10-16 | 380,362,196 | `4558fe9cbf113373ca86e252dce5b0557b220354ed11889a2e37c244eefcff00` | registered (remote, for its size); title leaf and p. 1101 retained as a registered excerpt |
 | USCCB daily readings page for 18 October 2026 | 2026-10-16 | 58,047 | `369f06fdeb84f9bfa7d69be17c773f07d3d7440e9fc305c960e3906428de930c` | matched no registered state; registered as `…daily-readings.2026-10-18-web-2026-10-16.lectionary145-html-369f06fd`; read; protected text not retained |
 
 Every registered remote or restricted artifact bound as inspected by this
@@ -591,7 +634,7 @@ registered parents (`source-bindings.toml` header).
 | A held English patristic comment naming Cyrus | Casefolded literal search with `tools/tpt source-library search` for "Cyrus" in NPNF series 1 vols. 6, 7, 8 (Augustine on the Psalms), 10, 11 and 13, NPNF series 2 vols. 10 and 12, and ANF vols. 1 and 5 | Zero lines in NPNF series 1 vols. 7, 8, 11 and 13. Hits in the others, every one read: NPNF 1/10 line 4142 (Chrysostom, *Hom. in Matt.* 6, used in section 3.2) and two index lines; NPNF 1/6 line 3470 (Xenophon's praise of Cyrus, not on Isaiah); NPNF 2/10 line 41565 (Ambrose on Cyrus's death, not on Isaiah); NPNF 2/12, seven lines, all the see or bishop of Cyrus; ANF 1 line 12898 (the editor's note to *Barnabas* 12, used) and line 44350 (Irenaeus, *Adv. haer.* IV.5, on Daniel before Cyrus, not on Isaiah 45); ANF 5, five lines, of which line 63593 is the editor's note to Novatian (used) and the others Hippolytus on Daniel and a philosopher | Synonyms and Latin forms; works not held; the Latin and Greek texts. It does not find Cyprian's *Testimonia* I.21, whose English reads "Christ my Lord" and not "Cyrus": the search's blindness to the variant is itself the finding of section 3.2 |
 | A comment on Philippians 2:15–16 outside Chrysostom and Aquinas | Reading of the held commentaries named in section 3.5 only | None sought | Every corpus of section 4 |
 | Commentary on the three orations | Library holdings and the formulary-loci file | None found or sought beyond the doctrinal illumination in section 3.9 | Commentaries on the Mass not opened |
-| A liturgical commentator connecting Psalm 16:6 (his Communion, this formulary's Entrance antiphon) with Matthew 22:15–21 | Reading of the whole chapter on the Twenty-second Sunday after Pentecost in Schuster (pp. 182–185) and Fromage (pp. 472–485), OCR | None: each comments on the two texts separately (section 3.11) | Other liturgical commentators, not held or not opened (Honorius, Rupert, Durandus); page-image collation |
+| A liturgical commentator connecting Psalm 16:6 (his Communion, this formulary's Entrance antiphon) with Matthew 22:15–21 | Reading of the whole chapter on the Twenty-second Sunday after Pentecost in Schuster (pp. 182–185) and Fromage (pp. 472–485), OCR and, at the revision, page images | None: each comments on the two texts separately (section 3.11) | Other liturgical commentators, not held or not opened (Rupert, Durandus; Honorius read only at IV.49 and IV.92–94) |
 | Any witness read connecting his passage to another unit of this Mass | Reading of every locus in section 3 | Augustine joins the tribute saying to Psalm 4:7 and to 1 John 3:2 (*Tract.* 40.9); Bellarmine joins Psalm 95:8 to the Eucharistic sacrifice offered "from the rising of the sun", which is Malachi's phrase, not Isaiah 45:6's citation; Chrysostom joins 1 Thessalonians 1:3 to Acts 17:5–6; Aquinas joins the tribute question to Psalm 27:3 and to Baruch 1; Bede and Chrysostom read the Mark saying against the rulers of the Gentiles in its own context. Otherwise every cross-element link is this leaf's | — |
 
 No negative result is claimed for any corpus in section 4: those were not
@@ -625,7 +668,12 @@ Vulgate numbering, the acclamation as appointed partial-verse wording, and the
 responsorial psalm in the United States Hebrew numbering. `tools/tpt
 proper-chronology` accepted it, converted Hebrew Psalm 96 to canonical Psalm
 95, and wrote `chronology.toml` and, with `--presentation orientation-v1`,
-`chronology-annotations.tex`. The queries are whole verses: the psalm's 10a
+`chronology-annotations.tex`. *Revision:* `proper-components.toml` now
+declares `chronology_presentation = "orientation-v2"` (the tool refuses a
+presentation that disagrees with the declaration), and the record and
+annotations were regenerated with `--presentation orientation-v2` after every
+input file of this revision was final. The inputs, the record's answers and
+all twelve row keys are unchanged; v2 changes the Passage cells only (below). The queries are whole verses: the psalm's 10a
 and 10c are a whole-verse envelope of v. 10, the second reading's 5b of v. 5,
 and the acclamation's 15d and 16a of vv. 15–16. The record answers:
 
@@ -662,7 +710,20 @@ regenerated: the acclamation has only its composition row
 (`row-11f6d60f0fa3c25e`), and the event gap row (`row-a180ccaa931e671d`)
 covers Matthew 22:15–21 alone. The generator's prefix test is a shared-tool
 defect for its maintainer: any other postconciliar leaf that keys its
-acclamation `gospel-acclamation` will print an event row for it. The psalm's setting
+acclamation `gospel-acclamation` will print an event row for it.
+*Revision:* `orientation-v2` gives the event row to `gospel`, `gospel-long`
+and `gospel-short` only (`guidance/scripture-chronology.md` §14.1). The leaf
+keeps the published key `acclamation` (the decision of `context.md`, which
+keeps the web anchor `proper-acclamation`), and the regenerated table
+confirms that the acclamation has only its composition row and the event row
+covers Matthew 22:15–21 alone. v2 also prints the ranges with the en dash and
+names each psalm citation's numbering, and each note agrees with its
+controlling witness: the Entrance antiphon "Cf. Psalm 16:6, 8 (Vulgate
+numbering; Hebrew 17)" and Communion antiphon A "Cf. Psalm 32:18–19 (Vulgate
+numbering; Hebrew 33)", as the 2002 Missal prints them in Vulgate numbering;
+the responsorial psalm "Psalm 96:1, 3, 4–5, 7–8, 9–10a, 10c, Psalm 96:7b
+(Hebrew numbering; Vulgate 95)", as the United States readings page prints it
+in Hebrew numbering (the *Ordo*'s Latin prints Ps 95). The psalm's setting
 answer dates the house-building that its Vulgate and Septuagint title names,
 not the psalm's writing; the Hebrew psalm has no such title (`propers/verified.md`
 finding 2). The Nativity rows record the Catholic Encyclopedia's statement
@@ -700,8 +761,8 @@ says so.
 | Element | Corpus label | Source and sentence | Does the label stand? |
 | --- | --- | --- | --- |
 | First reading | "from the closing year of Ozias, King of Juda (740 B.C.); no prophecies appear to be later than 701 B.C." | Souvay, "Isaias" (vol. 8), tracked extraction, read at this pass: line 9, "The prophetical ministry of Isaias lasted wellnigh half a century, from the closing year of Ozias, King of Juda, possibly up to that of Manasses", whose chronological sketch has "740, death of Azarias" (Ozias); line 11, Jerome's reading that ch. vi begins "in the year of the death of that prince (740 B.C.)", and "since no prophecies appear to be later than 701 B.C., it is doubtful if Isaias saw the reign of Manasses at all" | Yes, as a composite: the label joins the opening clause of line 9 to the year 740 (line 9's sketch; line 11) and to the 701 sentence of line 11. Each phrase is the article's; the join is the corpus's. Line 11 itself reports that commentators differ on when Isaias was called |
-| First reading | "toward the end of the Babylonian exile" | NABRE introduction to Isaiah, current delivery of 2026-10-16 (section 5): chapters 40–55 "are generally attributed to an anonymous poet who prophesied toward the end of the Babylonian exile" | Yes, verbatim in the current delivery, which differs in bytes from the registered state the corpus cites; that state was not obtained |
-| Psalms (all three) | "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely" | NABRE introduction to the Psalms, current delivery fetched at the third pass (section 5; 74,093 bytes, `03234893…`): "there is no sure way of dating any Psalm. Some are preexilic (before 587), and others are postexilic (after 539), but not as late as the Maccabean period (ca. 165)" | Yes in substance, not in wording: "no sure way of dating any Psalm" grounds "no individual psalm can be dated securely", and "not as late as the Maccabean period (ca. 165)" grounds the bound. Read in a delivery that differs in bytes from the registered state the corpus cites; that state was not obtained |
+| First reading | "toward the end of the Babylonian exile" | NABRE introduction to Isaiah, delivery of 2026-10-16, delivered again at the revision and registered (section 5): chapters 40–55 "are generally attributed to an anonymous poet who prophesied toward the end of the Babylonian exile" | Yes, verbatim in the current delivery, which differs in bytes from the registered state the corpus cites; that state was not obtained |
+| Psalms (all three) | "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely" | NABRE introduction to the Psalms, delivery fetched at the third pass and again at the revision, registered (section 5; 74,093 bytes, `03234893…`): "there is no sure way of dating any Psalm. Some are preexilic (before 587), and others are postexilic (after 539), but not as late as the Maccabean period (ca. 165)" | Yes in substance, not in wording: "no sure way of dating any Psalm" grounds "no individual psalm can be dated securely", and "not as late as the Maccabean period (ca. 165)" grounds the bound. Read in a delivery that differs in bytes from the registered state the corpus cites; that state was not obtained |
 | Responsorial psalm | "(537 B.C.)" | Meistermann, "Temple of Jerusalem" (vol. 14), tracked extraction, line 3: "After the return from captivity Zorobabel raised it again from its ruins (537 B.C.)" | Yes, verbatim |
 | Responsorial psalm | "the year of Rome 750 which he styles 3 B.C." | Gerard, "General Chronology" (vol. 3), tracked extraction, line 33, reporting that "It is supposed by many" that Dionysius placed the birth three years too late | Yes, as the article's report of a common supposition |
 | Responsorial psalm | "probably the year 7 B.C." | Howlett, "Biblical Chronology" (vol. 3), tracked extraction, line 191: "probably the year 7 B.C. will not be found to be much astray" | Yes; the corpus marks the two disputed |
@@ -741,7 +802,7 @@ their tracked article-text extractions, by physical line.
 | Row subject (current key) | Passage(s) the generator prints | Planned phrase | Source and locus | Kept distinct |
 | --- | --- | --- | --- | --- |
 | Historical setting, occasion unresolved (`row-29cbe0d234a47aa8`) | Entrance antiphon (Psalm 16:6, 8); Communion antiphon A (Psalm 32:18–19) | Occasion and place unknown; the psalms' titles name none | Clementine and Douay titles: Psalm 16:1 *Oratio David*, Psalm 32:1 *Psalmus David*; Swete's title of Psalm 32, Τῷ Δαυείδ. No source read names an occasion or place for either psalm | The titles' ascription to David belongs to the attribution row, not to an occasion |
-| Composition of the Psalms (`row-6e9c8175463dbd35`) | Psalms 16, 95 and 32 in the three elements | Place of composition unknown | The corpus label is a dating bound from the NABRE Psalms introduction, which this stage could not re-read (section 8.2); no source read places the writing of any of the three psalms | Not the place of the titles' settings or of David's reign |
+| Composition of the Psalms (`row-6e9c8175463dbd35`) | Psalms 16, 95 and 32 in the three elements | Place of composition unknown | The corpus label is a dating bound from the NABRE Psalms introduction, which was read at the third pass in a current delivery and again at the revision (section 8.2; registered state `03234893…`); it names no place of composition, and no source read places the writing of any of the three psalms | Not the place of the titles' settings or of David's reign |
 | Traditional attribution, David's reign (`row-d7a88409f6dff8dd`) | Communion antiphon A (Psalm 32:18–19) | Ascribed to David by its Latin and Greek title; David reigns at Hebron, then at Jerusalem | Clementine Psalm 32:1 *Psalmus David*; Swete Τῷ Δαυείδ; Corbett, "David" (Catholic Encyclopedia 4), line 13 (David "went up to Hebron to claim the kingly power") and line 15 (Jerusalem made "the capital of his kingdom") | The attribution's geographic frame, not a place where the psalm was written; Psalm 16, also titled for David in the Vulgate, has no attribution row and receives none |
 | Superscription setting, the second Temple (`row-b6be5603e767096a`) | Responsorial psalm (Psalm 96, Vulgate 95) | The house rebuilt after the captivity, named in the psalm's Latin and Greek title: the Temple at Jerusalem | Clementine and Douay Psalm 95:1, *quando domus aedificabatur post captivitatem*; Swete's title, as digitised, Ὄτε ὁ οἶκὸς οἰκοδομεῖται μετὰ τὴν αἰχμαλωσίαν· ᾠδὴ τῷ Δαυείδ; Meistermann, "Temple of Jerusalem" (Catholic Encyclopedia 14), line 3, "the sanctuary of Jerusalem", which "Zorobabel raised … again from its ruins". The *Nova Vulgata* and the Hebrew-based Lectionary psalm print no title (`propers/verified.md` finding 2) | The place of the setting the title names, not of the psalm's composition; the phrase must name the title as its witness |
 | Prophetic referent, the Nativity (`row-7a3e8d424af7908c`) | Responsorial psalm | The Messiah's coming that the Fathers read in this psalm, taken as the Nativity at Bethlehem | Drum, "Psalms" (Catholic Encyclopedia 12), line 303 (the coming of the Messias predicted in Psalms xcv–xcvii, Vulgate); the corpus binding's own step from "coming" to the Nativity (section 8.2); Matthew 2:1, "born in Bethlehem of Juda" | The referent's place, not the psalm's; it must not read as a place or date of writing |
@@ -757,6 +818,9 @@ Every phrase rests on a source bound in `source-bindings.toml` at the locus
 given. None of them was verified against a modern critical work, and the
 places of composition are the cited articles' judgments, kept with the
 alternatives those articles report.
+
+**Revision.** The regenerated table has the same twelve rows and keys, so
+every phrase above still matches its row by key as well as by subject.
 
 ## 9. Rights
 
@@ -776,8 +840,11 @@ No approved English of the Missal or the Lectionary is reproduced; the dated
 USCCB page is described, never transcribed, and its psalm refrain is ICEL's.
 The *Ordo*'s tituli, incipits and acclamation verse are short Latin phrases
 quoted as evidence. NPNF and ANF English, Payne Smith's Cyril (1859),
-O'Sullivan's Bellarmine (1866), Fromage (1883) and Schuster's English (1927
-OCR) are quoted from their tracked records. Jerome (Migne 1845 and 1865),
+O'Sullivan's Bellarmine (1866), Fromage (1883) and Schuster's English (1927)
+are quoted from their tracked records; Fromage's and Schuster's pages are now
+retained as page-image excerpts of public-domain printings (*Revision*), as
+are Wilson's three Old Gelasian pages and Feltoe's whole Verona volume, and
+the Lewis and Short entry (Harper issue, United States, copyright 1879). Jerome (Migne 1845 and 1865),
 Hilary (Migne 1844), Bede (Migne 1862) and Aquinas (Venice 1745; Parma 1863;
 Dessain 1857) are quoted from public-domain printings whose pages are
 retained in the library. Ambrose's and Cassiodorus's Latin are tracked
@@ -796,8 +863,10 @@ display labels, not this prose.
    of no. 145 (`propers/verified.md` finding 2).
 2. The *Nova Vulgata* of 1979 at Isaiah 45:1 (`meo` or `suo`; finding 1); the
    Hebrew and Greek of Isaiah 45 in the original languages.
-3. A re-reading of the United States English GIRM chapters II, VII and VIII by
-   a stage that is not refused by the publisher's challenge page.
+3. A direct official delivery of the United States English GIRM chapters VII
+   and VIII, and of the readings page, on or after 16 October 2026 (the
+   revision read them in archived captures of June and March 2026; chapter II
+   was re-read directly by the revision's context stage).
 4. Origen on Matthew 22 (Book XVII, not held); Rabanus Maurus (PL 107, held);
    the other Matthew commentaries of section 4.
 5. Tertullian, *De idololatria* 15 and *Adversus Marcionem* IV, which the
@@ -807,11 +876,11 @@ display labels, not this prose.
 6. Augustine's Latin of the tractates, *Enarrationes* and *De sermone Domini*
    read in NPNF English; Chrysostom's Greek; Ambrose's printed column.
 7. Cyril of Alexandria, Eusebius and Theodoret on Isaiah 45 (not held).
-8. The NABRE Psalms introduction in its registered state of 28 July 2026 and
-   its current state; the NABRE Isaiah introduction in its registered state.
-9. Fromage's pp. 477–478, 480–481 and 484 and Schuster's pp. 183–185 on
-   page images before any quotation in the studies (both were read in OCR
-   only; section 3.11).
+8. The NABRE Psalms introduction in its registered state of 28 July 2026;
+   the NABRE Isaiah introduction in its registered state (`51aea566…`). The
+   states actually read are registered (section 5).
+9. Closed at the revision: Fromage's pp. 472–485 and Schuster's pp. 182–185
+   were read on page images and retained (section 3.11).
 10. A standing row for Cyril of Alexandria, Cyprian and Justin Martyr in
     `author-standing-v1.toml`, which this research does not alter; all three
     support only.
@@ -823,6 +892,39 @@ display labels, not this prose.
     Communion of the Third Sunday after Pentecost; and the Week IX Communion
     antiphon A, Psalm 16:6 alone (owner finding 1). None of them was traced
     to the 1970 Missal (section 3.11).
-12. Honorius, *Gemma animae* IV.92–94 on a page image, and Rupert of Deutz,
-    *De divinis officiis* XII.22 (PL 170 OCR held), Berno of Reichenau and
-    Durandus, *Rationale* VI.139, which Fromage cites (section 3.11).
+12. Rupert of Deutz, *De divinis officiis* XII.22 (PL 170 OCR held), Berno
+    of Reichenau and Durandus, *Rationale* VI.139, which Fromage cites
+    (section 3.11). Honorius IV.49 and IV.92–94 were read on page images at the
+    revision.
+
+## 11. The revision of 16 October 2026 (run `821c824684b0c7a7`)
+
+What the revision's research did with each sourcing item of the handoff and
+each standing finding owned by these records. Hashes and sizes are in section
+5; bindings in `source-bindings.toml`.
+
+| Item | What was done | Where recorded |
+| --- | --- | --- |
+| 1. GIRM II, VII, VIII | Direct requests refused (HTTP 403). Chapter II re-read directly by the revision's context stage, byte-identical to its registered state. Chapters VII and VIII read whole in Internet Archive captures of the official pages (13 and 18 June 2026), fetched twice byte-identically, registered and bound; every paragraph relied on (363–365; 372–374) found at its locus. The first run's unreadable states of 16 October stay registered as catalogued records | `context.md` (General Instruction states read); `propers/verified.md`; `instance/manifest.md`; bindings |
+| 2. Readings page | Direct requests refused. Read whole in the Internet Archive capture of 15 March 2026, registered and bound: locators, response, the four strophes (v. 8 sung whole; v. 10a and 10c) as `context.md` states. The handoff's statement that the registered state of 16 October came from the context hash is not borne out: that state records a direct acquisition (`context.md`) | section 5; `propers/verified.md`; bindings |
+| 3. NABRE Psalms introduction | The state read at the first run's third pass (74,093 bytes, `03234893…`) was delivered again and is registered and bound; the label rests on it. The Isaiah introduction's state read (`03dac54e…`) likewise | sections 5 and 8.2–8.3; bindings |
+| 4. Gelasian and Verona | Both Internet Archive PDFs fetched again (same hashes) and registered: Feltoe retained whole; Wilson remote with tracked extractions of pp. 105, 229, 237. All loci read on page images. New fact: at p. 229 Wilson's apparatus records the Vatican manuscript's *maiestatem tuam*, so the III.ix recurrence is word for word in Wilson's text, not in the manuscript there. The owner's III.xvi quotation is corrected (*ea* is not on the page) | section 3.9; owner addition 2–4; bindings |
+| 5. Schuster, Fromage, Honorius | Every locus checked on page images of the registered scans (Schuster III pp. 182–185; *The Liturgical Year* XI pp. 472–485; Honorius in the 1854 Migne facsimile at IV.49 and IV.92–94); all found as the OCR gave them. Schuster and Fromage pages retained as registered excerpts; Honorius's host reserves rights, so nothing retained | sections 3.5, 3.6, 3.11, 10; bindings |
+| 6. World Mission Sunday | Resolved by the revision's context stage; the revision's research re-read the Holy See message, the video message and the Pontifical Mission Societies page (the video message in a delivery of another hash than the context stage's), registered and bound them, and re-read the 2002 Missal's pp. 667 and 695. The branch stays `conditional` and unselected; the observance supplies nothing to the formulary | `context.md`; `instance/manifest.md`; `propers/verified.md`; bindings |
+| 7. *maiestas* (RES-013) | Verified lexically in Lewis and Short (Harper issue, 1879), p. 1101, registered with a retained excerpt; the echo remains the leaf's observation | section 3.9; `interpretations.md` Reading 2 |
+| STU-004 | The psalm row of Reading 1 now says that the NPNF English renders v. 7 "worship and honour" and that Augustine's Latin reads *afferte Domino gloriam et honorem* (Migne text, tracked file part 10, line 118, re-read) | `interpretations.md` Reading 1 |
+| HOM-002 | Section 2's parenthetical now says v. 8 is sung whole, agreeing with `context.md` and the *Ordo*; the readings-page capture confirms the third strophe ends with v. 8b | section 2 |
+| RES-014 | Section 8.3's psalm-composition row and lead 8 corrected; the Souvay binding's loci name lines 7, 9 and 11, re-read | sections 8.3, 10; bindings |
+| RES-015 | Reading 3's difficulty is anchored in Matthew 22:18 (*Cognita … nequitia eorum*, Douay "knowing their wickedness"), the lemma of Jerome and Aquinas; it says only that the text does not say whether anyone else knew their purpose beforehand | `interpretations.md` Reading 3 |
+| Chronology | Declared and regenerated under `orientation-v2`; keys unchanged; numbering notes checked against their witnesses | section 8.1 |
+
+**For the authors (not research repairs).** The expansive study's sentence
+that the Collect "recurs, again word for word, in a later book of the same
+sacramentary" (`sections/10-each-element.tex`) is true of Wilson's printed
+text but not of the Vatican manuscript at III.ix, whose reading Wilson
+records as *maiestatem tuam* (section 3.9). The study's scope appendix says
+that Schuster and Fromage "were read in a text layer only and are not cited";
+both are now read on page images, and that sentence is no longer true. The
+standing findings STU-010 to STU-013, SYN-004, SYN-005, VIS-001 to VIS-004,
+WEB-001 and HOM-001 concern the study, concise study, homily and their
+rendering, and are not research repairs.
