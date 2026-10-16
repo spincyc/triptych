@@ -4,8 +4,7 @@
 
 Part IV, the closing volume, of the Claude series *The Four Last Things*,
 rewritten in place under the maintainer's decisions of 16 October 2026
-(`.scratch/flt-rewrite/brief.md`; `four-last-things-shared/cold-review-2026-10-16.md`,
-"Decisions taken"). It is Catholic spiritual reading for the close of the
+(`four-last-things-shared/cold-review-2026-10-16.md`, "Decisions taken"). It is Catholic spiritual reading for the close of the
 liturgical year and the annual preparation for death: the hope of the vision of
 God, carried by Scripture, the liturgy, the Fathers, the Doctors and the saints,
 moving from teaching to desire, resolution and received prayer. It is written

@@ -5,9 +5,8 @@ Every quotation printed in the body was read by the authoring agent on
 (every quoted string and block quotation in `sections/00`–`80`, split at
 ellipses, matched against the normalised text of the witnesses listed below)
 was run on 2026-10-16; its residual non-matches were each resolved by eye and
-are explained in the "OCR and typography" section. Downloaded copies used for
-reading are in the lane scratch directory
-(`.scratch/flt-rewrite/author-04-heaven/dl/`), which is not tracked.
+are explained in the "OCR and typography" section. Downloaded working copies
+used for reading were not retained in the repository.
 
 Rights classes: **PD** = public domain (US, by publication date, unless stated);
 **Official ©** = the Holy See's copyrighted English, quoted briefly with

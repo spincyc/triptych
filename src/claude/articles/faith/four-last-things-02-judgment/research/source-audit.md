@@ -11,8 +11,7 @@ markers omitted; stress accents in the liturgical Latin omitted; the ligature
 inside his English); line-end hyphenation closed up. No wording was altered.
 Omissions are marked with ellipses.
 
-Working copies (not tracked) are in
-`.scratch/flt-rewrite/author-02-judgment/dl/` and `txt/`.
+Working copies used for reading were not retained in the repository.
 
 ## Scripture
 
