@@ -1510,6 +1510,41 @@ The catalogue output is JSON only. Discovery never adds a normative station,
 historical parent or text-carry permission. The record counts are derived by
 these commands and are not maintained again in this guidance.
 
+### Dated book states and concrete transitions
+
+The chronology extension is owned by JSON dossiers under
+`src/sources/inventories/eucharistic-stages/`, validated by
+`scripts/_eucharistic_stages.py` and projected as `catalogue.stage_history`.
+Each dossier declares traditions, inspected sources or leads, dated states,
+explicit transitions and research gaps. IDs remain stable and exact catalogue
+witness IDs link the bibliography to the state it supports. A critical edition
+can witness an earlier state without moving that state to its publication year.
+
+`start_year` and `end_year` bound uncertainty in one dated event. They never
+describe the years during which a book was used. `date_kind` distinguishes
+attestation, publication, approval, effectiveness and reconstruction. Undated
+states remain unpositioned. A documented state means that its limited scope is
+attested, not that its whole text is reconstructed. Transcription coverage is
+reported separately, and the present validator refuses `complete` until a
+coordinated text binding and defined extent support that assertion.
+
+Revision, recension branch, reception and witness succession are distinct
+transition kinds. Documented revisions and recension branches require concrete
+component-level before/after claims with cited loci. Evidence levels distinguish
+checked text, primary descriptions, scholarly descriptions and bibliography.
+Mixed claims cannot borrow a stronger evidence level from one checked passage.
+Comparison links must match the two stages' exact catalogue witnesses. Historical
+parentage is declared separately; every projected transition explicitly grants
+neither Git ancestry nor text inheritance. Sorting dates never supplies an edge.
+
+The directory is read deterministically and its files enter catalogue input
+fingerprints. Missing dossiers represent unfinished research. Counts distinguish
+documented states, substantive transitions and mere witness succession. The
+routing inventory can choose the initial recension with
+`stage_history_default_tradition`; this is a reading preference, not a historical
+ranking. The existing catalogue and relationship views remain available beside
+the primary chronology.
+
 ### Typed relationships and named display groups
 
 The routing inventory's `[[relationship_sets]]` rows name an `id` and `path`.
@@ -1742,11 +1777,14 @@ are not automatically classified as substantive historical revisions.
 route. It reads geometry from the actual browser implementation and produces
 SVG, PDF and PNG review artifacts plus a station-evidence catalogue PDF. The
 audit records the renderer, source hashes and retained graph identities.
-For liturgical slices the command also passes the current validated catalogue
-to the helper's separately labelled all-tradition overview; contextual entities
-remain undated, and research relationships never become detailed act parents.
-Other domains' previews retain their own scope. It does not draw candidate
-research records as accepted act stations.
+For liturgical slices the command also passes the current validated catalogue.
+When book-state dossiers are present, the default preview follows their dated
+chronology and supplies a separate evidence appendix. Long sequences use labelled
+date windows and continuation pages; every axis retains real year coordinates.
+The same browser layout model owns positions and explicit connections. A
+separately requested legacy preview preserves the earlier relationship atlas and
+act routes. Other domains' previews retain their own scope. Neither presentation
+turns research states into normative acts or historical Git parents.
 
 ```sh
 tools/act-history plate \

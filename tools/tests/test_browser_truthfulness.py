@@ -393,7 +393,7 @@ class UnavailableCorpusTests(unittest.TestCase):
         seen = drive({
             "blocked": ["*/structure/act-history/index.json"],
             "acts": [
-                {"do": "navigate", "url": page("history")},
+                {"do": "navigate", "url": page("history", "view=map")},
                 {"do": "wait", "until": "document.getElementById('map').textContent.includes('could not be loaded')"},
                 {"do": "eval", "name": "notice", "expression":
                  "document.getElementById('banner').textContent"},

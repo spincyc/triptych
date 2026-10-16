@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.order-of-preachers.missale.1604-rome-xavierre.suscepimus-collect-checked-latin-72fc670a"
+edition_id = "edition.order-of-preachers.missale.1604-rome-xavierre"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Faithful bounded Latin transcription of the identified 1604 historical print, public domain in the United States by expired publication term, with the exact source digital copy marked Public Domain Mark 1.0. No modern translation or critical reconstruction is introduced. The source text is excluded from Triptych’s CC BY 4.0 license."
+provenance = "Independent second AI reviewer checked the exact normalized body against the original retained image on 2026-10-16, including punctuation, abbreviation scope and boundaries; this is not human specialist certification. Reviewed body SHA-256 excluding final LF: 8861302457a0775f9710d82ad21c88492d80915de577db7419a796bd4d660c57. Review receipt SHA-256: 7713be2c3ebc0992389deb7a5b4286c3be0b5c2e5b29ae0c4690ce5cd85b6071."
+retrieved = "2026-10-16"
+sha256 = "72fc670a8b9f1688878529f80d9288ae502e4eef878cbcb675b788dc6e60e437"
+byte_size = 181
+path = "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/artifacts/suscepimus-collect-checked-latin-72fc670a/text.txt"
+encoding = "utf-8"
+indexable = true
+derived_from = "artifact.order-of-preachers.missale.1604-rome-xavierre.pdf-page-314-image-b5893d5a"
+transformation = "Transcribe only the complete printed collect entry, starting with its decorative initial and ending with its printed shortened conclusion. Expand scribal contraction marks, normalize long s to s, u/v by lexical value, ae ligature/e-caudata to ae, and ampersand or Tironian et to et. Join line-break word divisions and line wraps, omit the Oratio heading and page furniture, and regularize interword spaces; retain source punctuation and capital/lowercase distinctions. Preserve the shortened printed conclusion without supplying a doxology. Write one NFC UTF-8 line plus one LF. One continuous priestly collect speech block, zero-based half-open Unicode codepoint range [0,180) in the NFC body excluding final LF; source locus: p. 238, right column, Oratio under Dominica sexta / Suscepimus Deus."
+notes = "One collect of the Suscepimus Deus formulary. The pairing is anchored by that named formulary: 1550 Dominica octava after Trinity versus 1604 Dominica sexta after the octave of Trinity. The selected collect is complete as printed but the full spoken conclusion is abbreviated by the source. Other formulary items, rubrics, the ordinary, sanctoral and remaining book are excluded. No immediate ancestry or local reception is inferred. One continuous priestly collect speech block, zero-based half-open Unicode codepoint range [0,180) in the NFC body excluding final LF; source locus: p. 238, right column, Oratio under Dominica sexta / Suscepimus Deus. Independent second AI reviewer checked the exact normalized body against the original retained image on 2026-10-16, including punctuation, abbreviation scope and boundaries; this is not human specialist certification. Reviewed body SHA-256 excluding final LF: 8861302457a0775f9710d82ad21c88492d80915de577db7419a796bd4d660c57. Review receipt SHA-256: 7713be2c3ebc0992389deb7a5b4286c3be0b5c2e5b29ae0c4690ce5cd85b6071."

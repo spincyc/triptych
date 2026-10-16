@@ -328,6 +328,173 @@
       });
     }
 
+    function stageStyle(level, status) {
+      const styles = {
+        'text-collated':{dash:'',width:3,label:'Text collated'},
+        'primary-description':{dash:'',width:2,label:'Primary description'},
+        'scholarly-description':{dash:'8 5',width:2,label:'Scholarly description'},
+        'bibliographic-only':{dash:'2 5',width:2,label:'Bibliographic succession only'}
+      };
+      const style = styles[level] || styles['bibliographic-only'];
+      return {dash:status === 'provisional' ? '2 7' : style.dash,width:style.width,
+        label:style.label+(status === 'provisional' ? ' · provisional' : '')};
+    }
+
+    // A dated chart, not an ancestry layout: equal years share x coordinates.
+    // Vertical subrows only prevent label collisions. Only source transitions
+    // supply connecting paths; sorting never supplies a historical parent.
+    function stageLayout(history, options) {
+      options = options || {};
+      const stages = history.stages || [], transitions = history.transitions || [];
+      const stageKeys = new Map(stages.map(function (s,i) { return [s.id,'S'+String(i+1).padStart(3,'0')]; }));
+      const transitionKeys = new Map(transitions.map(function (t,i) { return [t.id,'T'+String(i+1).padStart(3,'0')]; }));
+      const byId = new Map(stages.map(function (s) { return [s.id,s]; }));
+      const sourceKeys=new Map((history.sources || []).map(function (s,i) { return [s.id,'C'+String(i+1).padStart(3,'0')]; }));
+      const selected = options.traditions || (options.tradition ? [options.tradition] : null);
+      const traditions = (history.traditions || []).filter(function (t) { return !selected || selected.includes(t.id); });
+      const traditionIds = new Set(traditions.map(function (t) { return t.id; }));
+      const inLanes = stages.filter(function (s) { return traditionIds.has(s.tradition_id); });
+      const eligible = inLanes.filter(function (s) { return options.includeProvisional || s.status === 'documented'; });
+      const dated = eligible.filter(function (s) { return Number.isFinite(s.start_year) && Number.isFinite(s.end_year); });
+      const allDated = stages.filter(function (s) { return Number.isFinite(s.start_year) && Number.isFinite(s.end_year) && (options.includeProvisional || s.status === 'documented'); });
+      const min = allDated.length ? Math.min.apply(null,allDated.map(function (s) { return s.start_year; })) : null;
+      const max = allDated.length ? Math.max.apply(null,allDated.map(function (s) { return s.end_year; })) : null;
+      const start = Number.isFinite(options.start) ? options.start : min === null ? null : Math.floor(min/50)*50;
+      let end = Number.isFinite(options.end) ? options.end : max === null ? null : Math.ceil(max/50)*50;
+      if (end !== null && start !== null && end <= start) end = start+50;
+      const width = Math.max(1000,options.width || 1600), x0 = 360, x1 = width-35;
+      const x = function (year) { return x0+(year-start)/(end-start)*(x1-x0); };
+      const clamp = function (value) { return Math.max(x0,Math.min(x1,value)); };
+      const inWindow = start === null ? [] : dated.filter(function (s) { return s.end_year >= start && s.start_year <= end; });
+      const visible = inWindow.filter(function (s) { return !options.stageIds || options.stageIds.includes(s.id); });
+      const visibleIds=new Set(visible.map(function (s) { return s.id; }));
+      const nodeById = new Map(), cardWidth = 260, leading = 20;
+      let top = 90;
+      const lanes = traditions.map(function (tradition,laneIndex) {
+        const rows = [];
+        const nodes = visible.filter(function (s) { return s.tradition_id === tradition.id; })
+          .sort(function (a,b) { return a.start_year-b.start_year || a.end_year-b.end_year || stages.indexOf(a)-stages.indexOf(b); })
+          .map(function (stage) {
+            const incoming = transitions.filter(function (t) { return t.to_stage === stage.id && (options.includeProvisional || t.status === 'documented'); })
+              .map(function (t) { return {key:transitionKeys.get(t.id),transition:t}; });
+            const year = (stage.start_year+stage.end_year)/2;
+            const labelX = Math.max(x0,Math.min(x1-cardWidth,clamp(x(year))-20));
+            const labelLines = wrapLabel(stage.label,26);
+            const dateLines = wrapLabel(stage.date_label+' · '+stage.date_kind,34).concat(
+              stage.start_year<start || stage.end_year>end ? ['Bounds continue beyond this window'] : []);
+            const fullScopeLines = wrapLabel('Parts: '+(stage.components || []).join(', '),34);
+            const scopeLines=options.compact && !options.inlineSummary ? [] : fullScopeLines;
+            const coverageLines = wrapLabel((stage.status === 'provisional' ? 'Provisional lead' : 'Documented state')+' · text: '+stage.text_coverage,34);
+            const fullChangeLines = incoming.flatMap(function (entry) {
+              const transition=entry.transition;
+              const origin=byId.get(transition.from_stage);
+              const fromLines=origin ? wrapLabel('From '+stageKeys.get(origin.id)+' · '+
+                (Number.isFinite(origin.start_year) ? origin.date_label : 'unpositioned')+' · '+origin.label,34) : [];
+              const change=(transition.changes || [])[0];
+              const excerpt=function (label,text) {
+                const clipped=text.length>220;
+                return wrapLabel(label+(clipped ? ' (excerpt)' : '')+': '+(clipped ? text.slice(0,217)+'…' : text),34);
+              };
+              const details=change ? excerpt('Before',change.before).concat(excerpt('After',change.after)) : [];
+              if ((transition.changes || []).length>1) details.push('More components in transition detail.');
+              const evidence=(transition.evidence || []).concat(change ? change.evidence || [] : []);
+              const refs=Array.from(new Set(evidence.map(function (e) { return (sourceKeys.get(e.source_id) || e.source_id)+' · '+e.locus; })));
+              return fromLines.concat(wrapLabel(entry.key+' · '+transition.kind.replace(/-/g,' ')+' · '+
+                transition.evidence_level.replace(/-/g,' ')+(transition.status==='provisional' ? ' · provisional' : ''),34))
+                .concat(wrapLabel(transition.summary,34),details,wrapLabel('Evidence: '+refs.join('; '),34));
+            });
+            const changeLines=options.compact
+              ? (options.inlineSummary ? incoming.flatMap(function (entry) {
+                const summary=entry.transition.summary;
+                return wrapLabel(entry.key+' · '+(summary.length>180 ? summary.slice(0,177)+'… (excerpt)' : summary),34);
+              }) : []) : fullChangeLines;
+            const lineCount = labelLines.length+dateLines.length+scopeLines.length+coverageLines.length+changeLines.length;
+            const cardHeight = 20+lineCount*leading+Math.max(0,incoming.length)*5;
+            const left = Math.min(labelX,clamp(x(stage.start_year))), right = Math.max(labelX+cardWidth,clamp(x(stage.end_year)));
+            let row = rows.findIndex(function (r) { return r.right+22 < left; });
+            if (row < 0) { row=rows.length; rows.push({right:-Infinity,height:0,portClearance:0}); }
+            rows[row].right=right; rows[row].height=Math.max(rows[row].height,cardHeight+55);
+            const external=transitions.some(function (t) {
+              return (options.includeProvisional || t.status==='documented') &&
+                ((t.to_stage===stage.id && !visibleIds.has(t.from_stage)) || (t.from_stage===stage.id && !visibleIds.has(t.to_stage)));
+            });
+            if (external) rows[row].portClearance=45;
+            return {id:stage.id,key:stageKeys.get(stage.id),stage:stage,row:row,x:clamp(x(year)),
+              xStart:clamp(x(stage.start_year)),xEnd:clamp(x(stage.end_year)),
+              clippedStart:stage.start_year<start,clippedEnd:stage.end_year>end,
+              labelX:labelX,labelLines:labelLines,dateLines:dateLines,scopeLines:scopeLines,
+              coverageLines:coverageLines,changeLines:changeLines,fullScopeLines:fullScopeLines,fullChangeLines:fullChangeLines,incoming:incoming,
+              cardWidth:cardWidth,cardHeight:cardHeight,leading:leading};
+          });
+        const offsets=[]; let cursor=top+50;
+        rows.forEach(function (r) { cursor+=r.portClearance; offsets.push(cursor); cursor+=r.height; });
+        nodes.forEach(function (node) {
+          node.y=offsets[node.row]; node.labelY=node.y+30; nodeById.set(node.id,node);
+        });
+        const height = Math.max(120,cursor-top+15);
+        const lane = {id:tradition.id,label:tradition.label,tradition:tradition,index:(history.traditions || []).indexOf(tradition),
+          top:top,height:height,nodes:nodes,labelLines:wrapLabel(tradition.label,27),
+          visibleCount:nodes.length,totalCount:inLanes.filter(function (s) { return s.tradition_id===tradition.id; }).length};
+        top+=height; return lane;
+      });
+      const edges = [], corridors=[];
+      transitions.forEach(function (transition) {
+        if (!options.includeProvisional && transition.status !== 'documented') return;
+        const fromNode=nodeById.get(transition.from_stage),toNode=nodeById.get(transition.to_stage);
+        if (!fromNode && !toNode) return;
+        const fromStage=byId.get(transition.from_stage),toStage=byId.get(transition.to_stage);
+        if (!fromStage || !toStage) return;
+        const port = function (stage,other) {
+          const before = Number.isFinite(stage.end_year) && stage.end_year<start;
+          const after = Number.isFinite(stage.start_year) && stage.start_year>end;
+          const year=Number.isFinite(stage.start_year) && Number.isFinite(stage.end_year) ? (stage.start_year+stage.end_year)/2 : null;
+          return {x:before ? x0 : after ? x1 : year===null ? other.x : clamp(x(year)),y:other.y-30};
+        };
+        const from=fromNode || port(fromStage,toNode),to=toNode || port(toStage,fromNode);
+        const low=Math.min(from.y,to.y)-45,high=Math.max(from.y,to.y);
+        let track=corridors.findIndex(function (ranges) { return ranges.every(function (r) { return high<r.low || low>r.high; }); });
+        if (track<0) { track=corridors.length; corridors.push([]); }
+        corridors[track].push({low:low,high:high});
+        const gutter=x0-18-track*11;
+        const clearance=22+(track%5)*5;
+        const lift=Math.min(from.y,to.y)-28;
+        const hasCorridor=fromNode && toNode && from.y!==to.y;
+        const keyLabel=hasCorridor ? {x:gutter-5,y:(from.y+to.y)/2} : {x:(from.x+to.x)/2,y:fromNode && toNode && from.y===to.y ? from.y-3 : lift-5};
+        if (hasCorridor) {
+          const middle=keyLabel.y;
+          const available=function (y) { return y>Math.min(from.y,to.y)+18 && y<Math.max(from.y,to.y)-18 &&
+            edges.every(function (e) { return Math.abs(e.keyLabel.x-keyLabel.x)>=60 || Math.abs(e.keyLabel.y-y)>=24; }); };
+          for (let offset=0;offset<Math.abs(from.y-to.y);offset+=24) {
+            if (available(middle+offset)) { keyLabel.y=middle+offset; break; }
+            if (available(middle-offset)) { keyLabel.y=middle-offset; break; }
+          }
+        }
+        edges.push({id:transition.id,key:transitionKeys.get(transition.id),transition:transition,
+          from:transition.from_stage,to:transition.to_stage,fromKey:stageKeys.get(transition.from_stage),toKey:stageKeys.get(transition.to_stage),
+          fromStage:fromStage,toStage:toStage,fromPoint:{x:from.x,y:from.y},toPoint:{x:to.x,y:to.y},fromOutside:!fromNode,toOutside:!toNode,external:!fromNode || !toNode,
+          keyLabel:keyLabel,
+          path:fromNode && toNode && from.y!==to.y
+            ? 'M '+from.x+' '+from.y+' V '+(from.y-clearance)+' H '+gutter+' V '+(to.y-clearance)+' H '+to.x+' V '+to.y
+            : (!fromNode || !toNode) && from.x===to.x
+              ? 'M '+from.x+' '+from.y+' L '+to.x+' '+to.y
+              : 'M '+from.x+' '+from.y+' C '+from.x+' '+lift+' '+to.x+' '+lift+' '+to.x+' '+to.y,
+          style:stageStyle(transition.evidence_level,transition.status)});
+      });
+      const ticks=[];
+      if (start !== null) {
+        const step=[1,5,10,25,50,100,200,500,1000,2000].find(function (s) { return (end-start)/s<=10; }) || 5000;
+        for(let year=Math.ceil(start/step)*step;year<=end;year+=step) ticks.push({year:year,x:x(year)});
+      }
+      return {start:start,end:end,width:width,height:top+20,axis:{x0:x0,x1:x1,y:48,ticks:ticks},lanes:lanes,edges:edges,
+        stageKeys:Object.fromEntries(stageKeys),transitionKeys:Object.fromEntries(transitionKeys),
+        sourceKeys:Object.fromEntries((history.sources || []).map(function (s,i) { return [s.id,'C'+String(i+1).padStart(3,'0')]; })),
+        unpositioned:eligible.filter(function (s) { return !Number.isFinite(s.start_year) || !Number.isFinite(s.end_year); }),
+        provisional:inLanes.filter(function (s) { return s.status==='provisional'; }),
+        counts:{visible:visible.length,dated:dated.length,outsideWindow:dated.length-inWindow.length,omittedFromPanel:inWindow.length-visible.length,
+          documented:inLanes.filter(function (s) { return s.status==='documented'; }).length,
+          provisional:inLanes.filter(function (s) { return s.status==='provisional'; }).length}};
+    }
+
     function extent(at) {
       let cols = 0;
       let rows = 0;
@@ -421,6 +588,8 @@
         overviewModel: overviewModel,
         networkLayout: networkLayout,
         networkStyle: networkStyle,
+        stageLayout: stageLayout,
+        stageStyle: stageStyle,
         wrapLabel: wrapLabel,
         extent: extent,
         afterBase: afterBase,
@@ -2322,8 +2491,370 @@
     }
   }
 
+  function stageHistoryValid(history) {
+    if (!history || history.schema !== 'triptych-eucharistic-stages/v1' ||
+        !['traditions','sources','stages','transitions','gaps'].every(function (key) { return Array.isArray(history[key]); })) return false;
+    const unique = function (rows) { return rows.every(function (r) { return r && typeof r.id==='string'; }) && new Set(rows.map(function (r) { return r.id; })).size===rows.length; };
+    if (!['traditions','sources','stages','transitions','gaps'].every(function (key) { return unique(history[key]); })) return false;
+    const traditions=new Set(history.traditions.map(function (t) { return t.id; }));
+    const sources=new Set(history.sources.map(function (s) { return s.id; }));
+    const stages=new Set(history.stages.map(function (s) { return s.id; }));
+    const evidence=function (items) { return Array.isArray(items) && items.length>0 && items.every(function (e) {
+      return e && sources.has(e.source_id) && typeof e.locus==='string' && typeof e.claim==='string';
+    }); };
+    return history.traditions.every(function (t) { return typeof t.label==='string' && typeof t.scope==='string'; }) &&
+      history.sources.every(function (s) { return typeof s.title==='string' && typeof s.inspection==='string' && ['inspected','lead'].includes(s.status); }) &&
+      history.stages.every(function (s) {
+        return traditions.has(s.tradition_id) && ['documented','provisional'].includes(s.status) &&
+          ['attestation','publication','approval','effective','reconstruction'].includes(s.date_kind) &&
+          ['not-transcribed','partial','complete'].includes(s.text_coverage) &&
+          ['label','date_label','scope','summary','witness_label','limitations','reception'].every(function (key) { return typeof s[key]==='string'; }) &&
+          Array.isArray(s.components) && Array.isArray(s.witness_ids) && evidence(s.evidence) &&
+          ((s.start_year===null && s.end_year===null) || (Number.isInteger(s.start_year) && Number.isInteger(s.end_year) && s.end_year>=s.start_year));
+      }) && history.transitions.every(function (t) {
+        return stages.has(t.from_stage) && stages.has(t.to_stage) && t.from_stage!==t.to_stage &&
+          ['revision','recension-branch','reception','witness-succession'].includes(t.kind) &&
+          ['documented','provisional'].includes(t.status) &&
+          ['text-collated','primary-description','scholarly-description','bibliographic-only'].includes(t.evidence_level) &&
+          ['established','attributed','unestablished'].includes(t.historical_parentage) &&
+          t.git_ancestry===false && t.text_inheritance===false && typeof t.summary==='string' &&
+          typeof t.limitations==='string' && Array.isArray(t.components) && Array.isArray(t.comparison_ids) && evidence(t.evidence) &&
+          Array.isArray(t.changes) && t.changes.every(function (c) {
+            return c && ['component','before','after','locus_before','locus_after'].every(function (key) { return typeof c[key]==='string'; }) && evidence(c.evidence);
+          });
+      }) && history.gaps.every(function (g) { return traditions.has(g.tradition_id) && ['period','missing','next_source','consequence'].every(function (key) { return typeof g[key]==='string'; }); });
+  }
+
+  function timelineState(params) {
+    const number=function (raw) { return raw !== null && /^-?\d+$/.test(raw) ? Number(raw) : null; };
+    return {tradition:params.get('tradition'),start:number(params.get('start')),end:number(params.get('end')),
+      stage:params.get('stage'),transition:params.get('transition'),leads:params.get('leads')==='1'};
+  }
+
+  function timelinePairs(state) {
+    return [['tradition',state.tradition],['start',state.start===null ? '' : String(state.start)],
+      ['end',state.end===null ? '' : String(state.end)],['leads',state.leads ? '1' : ''],
+      ['stage',state.stage],['transition',state.transition]];
+  }
+
+  async function startTimeline() {
+    const chart=document.getElementById('timeline-chart'), list=document.getElementById('timeline-list');
+    const status=document.getElementById('timeline-status'), detail=document.getElementById('timeline-detail');
+    const traditionControl=document.getElementById('timeline-tradition');
+    const startControl=document.getElementById('timeline-start'),endControl=document.getElementById('timeline-end');
+    const leadControl=document.getElementById('timeline-leads'),presentation=document.getElementById('timeline-presentation');
+    let data,history,current,model;
+    try {
+      data=await T.loadJSON(CATALOGUE); T.doneBootstrapping();
+      if (!catalogueValid(data) || !stageHistoryValid(data.stage_history)) throw Error('The historical stage projection is missing or malformed.');
+      history=data.stage_history;
+      if (!history.stages.length) {
+        status.textContent='No historical book stages have yet been established in this projection.';
+        T.clear(chart); chart.setAttribute('aria-busy','false'); return;
+      }
+      const byStage=new Map(history.stages.map(function (s) { return [s.id,s]; }));
+      const byTransition=new Map(history.transitions.map(function (t) { return [t.id,t]; }));
+      const bySource=new Map(history.sources.map(function (s) { return [s.id,s]; }));
+      const words=function (value) { return String(value || '').replace(/-/g,' '); };
+      const keys=M.stageLayout(history);
+      const allOption=T.el('option',null,'All traditions on a shared year axis'); allOption.value='all'; traditionControl.appendChild(allOption);
+      history.traditions.forEach(function (t) { const o=T.el('option',null,t.label); o.value=t.id; traditionControl.appendChild(o); });
+      ['timeline-tradition','timeline-start','timeline-end','timeline-leads','timeline-apply','timeline-all-years','timeline-local-years','timeline-earlier','timeline-later','timeline-zoom-in','timeline-zoom-out']
+        .forEach(function (id) { document.getElementById(id).disabled=false; });
+      presentation.value=window.matchMedia && window.matchMedia('(max-width: 800px)').matches ? 'list' : 'chart';
+
+      function citation(items,target) {
+        const citations=T.el('ul','stage-citations');
+        (items || []).forEach(function (e) {
+          const source=bySource.get(e.source_id), item=T.el('li');
+          if (!source) return;
+          item.appendChild(catalogueLink(source.url,source.title));
+          item.appendChild(T.el('p',null,e.locus+' — '+e.claim));
+          item.appendChild(T.el('p','panel-note',words(source.kind)+' · '+source.status+' · '+source.inspection));
+          if (source.limitations) item.appendChild(T.el('p','panel-note',source.limitations));
+          citations.appendChild(item);
+        });
+        target.appendChild(citations);
+      }
+
+      function select(kind,id) {
+        current={...current,stage:kind==='stage' ? id : null,transition:kind==='transition' ? id : null};
+        if (kind==='stage') {
+          const selected=byStage.get(id);
+          if (selected) {
+            const anotherLane=current.tradition!=='all' && current.tradition!==selected.tradition_id;
+            const outside=Number.isFinite(selected.start_year) && (selected.end_year<current.start || selected.start_year>current.end);
+            if (anotherLane || outside) current={...current,tradition:anotherLane ? selected.tradition_id : current.tradition,start:null,end:null};
+          }
+        }
+        render(current); T.writeHash(timelinePairs(current));
+        detail.scrollIntoView({block:'nearest'}); detail.focus({preventScroll:true});
+      }
+
+      function stageButton(stage,label) {
+        const button=T.el('button','stage-select',label || stage.label);
+        button.type='button'; button.setAttribute('data-stage',stage.id);
+        button.addEventListener('click',function () { select('stage',stage.id); }); return button;
+      }
+
+      function transitionContent(transition,target) {
+        const from=byStage.get(transition.from_stage),to=byStage.get(transition.to_stage);
+        target.appendChild(T.el('h4',null,keys.transitionKeys[transition.id]+' · '+words(transition.kind)));
+        target.appendChild(T.el('p','stage-transition-summary',transition.summary));
+        target.appendChild(T.el('p','panel-note',words(transition.evidence_level)+' · '+transition.status+
+          ' · historical parentage: '+transition.historical_parentage));
+        const endpoints=T.el('p','stage-endpoints');
+        endpoints.appendChild(stageButton(from,from.date_label+' · '+from.label));
+        endpoints.appendChild(T.el('span',null,' → '));
+        endpoints.appendChild(stageButton(to,to.date_label+' · '+to.label)); target.appendChild(endpoints);
+        (transition.changes || []).forEach(function (change) {
+          const part=T.el('section','stage-change');
+          part.appendChild(T.el('h5',null,words(change.component)));
+          part.appendChild(T.el('p',null,'Before: '+change.before));
+          part.appendChild(T.el('p','panel-note','Before locus: '+change.locus_before));
+          part.appendChild(T.el('p',null,'After: '+change.after));
+          part.appendChild(T.el('p','panel-note','After locus: '+change.locus_after));
+          citation(change.evidence,part); target.appendChild(part);
+        });
+        if (!transition.changes.length) target.appendChild(T.el('p','panel-note','No component-level before/after collation is recorded for this transition.'));
+        target.appendChild(T.el('p','detail-weak',transition.limitations));
+        citation(transition.evidence,target);
+        (transition.comparison_ids || []).forEach(function (id) {
+          const declaration=(data.comparisons || []).find(function (c) { return c.id===id; });
+          if (!declaration) return;
+          const fold=lazyBlock('Read linked source-text comparison: '+(declaration.label || declaration.title || id),
+            'structure/act-history/'+declaration.projection_path,function (host,payload) { renderComparison(host,payload,declaration); });
+          fold.classList.add('comparison-fold'); target.appendChild(fold);
+        });
+      }
+
+      function showDetail() {
+        T.clear(detail); detail.hidden=!current.stage && !current.transition;
+        if (detail.hidden) return;
+        const back=T.el('button','link-button','Back to the timeline'); back.type='button';
+        back.addEventListener('click',function () {
+          const target=presentation.value==='list' ? list : chart;
+          target.setAttribute('tabindex','-1'); target.focus(); target.scrollIntoView({block:'nearest'});
+        }); detail.appendChild(back);
+        if (current.transition) {
+          const transition=byTransition.get(current.transition);
+          if (!transition) { detail.appendChild(T.el('p',null,'This transition is not in the current record: '+current.transition)); return; }
+          transitionContent(transition,detail); return;
+        }
+        const stage=byStage.get(current.stage);
+        if (!stage) { detail.appendChild(T.el('p',null,'This stage is not in the current record: '+current.stage)); return; }
+        detail.appendChild(T.el('h3',null,keys.stageKeys[stage.id]+' · '+stage.label));
+        detail.appendChild(T.el('p',null,stage.date_label+' · '+stage.date_kind+' · '+stage.status));
+        detail.appendChild(T.el('p','panel-note',stage.start_year===null ? 'No year is positioned for this state.'
+          : 'Date bounds: '+stage.start_year+'–'+stage.end_year+'. These date this attestation; they are not a period of validity.'));
+        detail.appendChild(T.el('p','stage-coverage','Text coverage: '+words(stage.text_coverage)+'. This is independent of historical evidence.'));
+        detail.appendChild(T.el('p',null,stage.summary));
+        detail.appendChild(T.el('p',null,'Scope: '+stage.scope));
+        detail.appendChild(T.el('p',null,'Parts represented: '+stage.components.map(words).join(', ')));
+        detail.appendChild(T.el('p',null,'Identified witness: '+stage.witness_label));
+        detail.appendChild(T.el('p',null,'Community reception: '+stage.reception));
+        detail.appendChild(T.el('p','detail-weak',stage.limitations));
+        citation(stage.evidence,detail);
+        const witnessLinks=T.el('ul','stage-witness-links');
+        stage.witness_ids.forEach(function (id) {
+          const row=data.entries.find(function (entry) { return entry.id===id; });
+          const item=T.el('li');
+          if (row) {
+            const link=T.el('a',null,row.title+' · '+row.date_label); link.href=historyURL('catalogue',null,catalogueHash('','',id)); item.appendChild(link);
+            if (row.act_ref) { const act=T.el('a',null,' Recorded act and text state'); act.href=historyURL('map',row.act_ref.slice,'#'+new URLSearchParams([['station',row.act_ref.station_id]])); item.appendChild(act); }
+          } else item.appendChild(T.el('span',null,'Witness reference not available in this catalogue: '+id));
+          witnessLinks.appendChild(item);
+        });
+        if (witnessLinks.childNodes.length) detail.appendChild(witnessLinks);
+        const incoming=history.transitions.filter(function (t) { return t.to_stage===stage.id; });
+        detail.appendChild(T.el('h3',null,'What changed into this state'));
+        if (!incoming.length) detail.appendChild(T.el('p','panel-note','No transition into this state has been established here. Its position in date order does not supply a parent.'));
+        incoming.forEach(function (transition) { transitionContent(transition,detail); });
+        const outgoing=history.transitions.filter(function (t) { return t.from_stage===stage.id; });
+        detail.appendChild(T.el('h3',null,'What follows from this state'));
+        if (!outgoing.length) detail.appendChild(T.el('p','panel-note','No onward transition is established here. This does not establish an end to its use.'));
+        outgoing.forEach(function (transition) { transitionContent(transition,detail); });
+        if (!model.lanes.some(function (lane) { return lane.nodes.some(function (node) { return node.id===stage.id; }); }) && Number.isFinite(stage.start_year)) {
+          detail.appendChild(stageButton(stage,'Show this state on its timeline'));
+        }
+      }
+
+      function readingCard(stage) {
+        const article=T.el('article','timeline-list-card'); article.setAttribute('data-stage',stage.id);
+        article.appendChild(stageButton(stage,keys.stageKeys[stage.id]+' · '+stage.label));
+        article.appendChild(T.el('p','stage-date',stage.date_label+' · '+stage.date_kind));
+        article.appendChild(T.el('p','panel-note',stage.status+' · Parts: '+stage.components.map(words).join(', ')+' · Text: '+words(stage.text_coverage)));
+        article.appendChild(T.el('p',null,stage.scope));
+        history.transitions.filter(function (t) { return t.to_stage===stage.id && (current.leads || t.status==='documented'); }).forEach(function (transition) {
+          const summary=T.el('button','timeline-change-link',keys.transitionKeys[transition.id]+' · '+words(transition.kind)+' · '+transition.summary);
+          summary.type='button'; summary.setAttribute('data-transition',transition.id);
+          summary.addEventListener('click',function () { select('transition',transition.id); }); article.appendChild(summary);
+          article.appendChild(T.el('p','panel-note',words(transition.evidence_level)+' · '+transition.status+' · parentage '+transition.historical_parentage));
+        }); return article;
+      }
+
+      function dateBounds(tradition,global) {
+        const dated=history.stages.filter(function (s) { return (s.status==='documented' || (current && current.leads)) && Number.isFinite(s.start_year) && (global || tradition==='all' || s.tradition_id===tradition); });
+        if (!dated.length) return {start:keys.start,end:keys.end};
+        const first=Math.min.apply(null,dated.map(function (s) { return s.start_year; }));
+        const last=Math.max.apply(null,dated.map(function (s) { return s.end_year; }));
+        return {start:Math.floor(first/50)*50,end:Math.max(Math.floor(first/50)*50+50,Math.ceil(last/50)*50)};
+      }
+
+      function update(state) { current=state; T.writeHash(timelinePairs(state)); render(state); }
+
+      function render(state) {
+        current={...state};
+        if (!current.tradition) {
+          const selectedTransition=byTransition.get(current.transition);
+          const selected=byStage.get(current.stage) || (selectedTransition && byStage.get(selectedTransition.to_stage));
+          current.tradition=selected ? selected.tradition_id : history.default_tradition_id ||
+            (history.traditions.find(function (t) { return history.stages.some(function (s) { return s.tradition_id===t.id && s.status==='documented'; }); }) || history.traditions[0]).id;
+        }
+        if (current.start===null || current.end===null) {
+          const bounds=dateBounds(current.tradition,false); current.start=bounds.start; current.end=bounds.end;
+          if (current.tradition!=='all' && current.end-current.start>600) {
+            current.start=current.end-600;
+            const selected=byStage.get(current.stage);
+            if (selected && Number.isFinite(selected.start_year) && selected.end_year<current.start) {
+              current.start=Math.floor(selected.start_year/50)*50;
+              current.end=Math.max(current.start+600,Math.ceil(selected.end_year/50)*50);
+            }
+          }
+        }
+        if ((current.start!==null || current.end!==null) && (!Number.isFinite(current.start) || !Number.isFinite(current.end) || current.end<=current.start)) {
+          status.textContent='Choose an ending year later than the starting year.'; return;
+        }
+        const options={start:current.start,end:current.end,includeProvisional:current.leads,width:1600,compact:true,inlineSummary:true};
+        if (current.tradition!=='all') options.tradition=current.tradition;
+        model=M.stageLayout(history,options);
+        ['timeline-start','timeline-end','timeline-apply','timeline-all-years','timeline-local-years','timeline-earlier','timeline-later','timeline-zoom-in','timeline-zoom-out'].forEach(function (id) {
+          document.getElementById(id).disabled=model.start===null;
+        });
+        traditionControl.value=current.tradition; startControl.value=current.start===null ? '' : String(current.start); endControl.value=current.end===null ? '' : String(current.end); leadControl.checked=current.leads;
+        T.clear(chart); T.clear(list);
+        const inScope=function (s) { return current.tradition==='all' || s.tradition_id===current.tradition; };
+        const scopedIds=new Set(history.stages.filter(inScope).map(function (s) { return s.id; }));
+        const documented=history.transitions.filter(function (t) { return t.status==='documented' && scopedIds.has(t.to_stage); });
+        const substantive=documented.filter(function (t) { return t.kind!=='witness-succession'; }).length;
+        tally.textContent=model.counts.documented+' documented states · '+substantive+' documented revisions, branches or receptions · '+
+          (documented.length-substantive)+' witness successions · '+model.counts.provisional+' provisional leads in the selected history.';
+        status.textContent=(current.start===null ? 'No dated states; see unpositioned records below. ' : 'Showing '+current.start+'–'+current.end+': ')+model.counts.visible+' dated states; '+model.counts.outsideWindow+' dated states outside this window. '+
+          'Date brackets are uncertainty bounds, not lifespans.';
+        if (!model.lanes.length) status.textContent='This tradition is not in the current stage record: '+current.tradition;
+        const drawing=svg('svg',{viewBox:'0 0 '+model.width+' '+model.height,width:model.width,height:model.height,'class':'stage-timeline',role:'group','aria-label':'Book states on a proportional year axis'});
+        const defs=svg('defs',{}),marker=svg('marker',{id:'stage-arrow',viewBox:'0 0 12 12',refX:21,refY:6,markerWidth:12,markerHeight:12,markerUnits:'userSpaceOnUse',orient:'auto'});
+        marker.appendChild(svg('path',{d:'M 0 0 L 12 6 L 0 12 z',fill:'#666'})); defs.appendChild(marker); drawing.appendChild(defs);
+        model.axis.ticks.forEach(function (tick) {
+          drawing.appendChild(svg('path',{d:'M '+tick.x+' 60 V '+model.height,stroke:'#ddd','stroke-width':1}));
+          const label=svg('text',{x:tick.x,y:40,'text-anchor':'middle','font-size':18}); label.textContent=String(tick.year); drawing.appendChild(label);
+        });
+        const axisTitle=svg('text',{x:24,y:40,'font-size':18}); axisTitle.textContent='Year · same scale in every lane'; drawing.appendChild(axisTitle);
+        model.lanes.forEach(function (lane) {
+          drawing.appendChild(svg('path',{d:'M 15 '+lane.top+' H '+(model.width-15),stroke:'#aaa','stroke-width':1}));
+          lane.labelLines.forEach(function (line,i) { const label=svg('text',{x:18,y:lane.top+28+i*22,'font-size':18,'font-weight':600}); label.textContent=line; drawing.appendChild(label); });
+          const count=svg('text',{x:18,y:lane.top+40+lane.labelLines.length*22,'font-size':14}); count.textContent=lane.visibleCount+' dated states in this window'; drawing.appendChild(count);
+          const section=T.el('section','timeline-list-lane'); section.appendChild(T.el('h3',null,lane.label));
+          section.appendChild(T.el('p','panel-note',lane.tradition.scope));
+          if (lane.tradition.coverage_note) section.appendChild(T.el('p','panel-note',lane.tradition.coverage_note));
+          lane.nodes.forEach(function (node) { section.appendChild(readingCard(node.stage)); }); list.appendChild(section);
+        });
+        const transitionKeys=svg('g',{'data-layer':'transition-keys'});
+        model.edges.forEach(function (edge) {
+          const linkAttrs={href:'#'+new URLSearchParams(timelinePairs({...current,stage:null,transition:edge.id}).filter(function (p) { return p[1]; })),
+            'aria-label':edge.key+' '+words(edge.transition.kind)+': '+edge.transition.summary+'; '+edge.style.label};
+          const link=svg('a',linkAttrs);
+          link.addEventListener('click',function (event) { event.preventDefault(); select('transition',edge.id); });
+          link.appendChild(svg('path',{d:edge.path,fill:'none',stroke:'#666','stroke-width':edge.style.width,'stroke-dasharray':edge.style.dash,'marker-end':'url(#stage-arrow)','data-transition':edge.id}));
+          const title=svg('title',{}); title.textContent=edge.key+' · '+edge.transition.summary+' · '+edge.style.label; link.appendChild(title);
+          const keyLink=svg('a',linkAttrs);
+          keyLink.addEventListener('click',function (event) { event.preventDefault(); select('transition',edge.id); });
+          keyLink.appendChild(svg('rect',{x:edge.keyLabel.x-34,y:edge.keyLabel.y-13,width:38,height:17,fill:'#fffdf8'}));
+          const key=svg('text',{x:edge.keyLabel.x,y:edge.keyLabel.y,'text-anchor':'end','font-size':12,fill:'#444','data-transition-key':edge.id}); key.textContent=edge.key; keyLink.appendChild(key);
+          transitionKeys.appendChild(keyLink);
+          [['from',edge.fromOutside,edge.fromPoint,edge.fromStage,edge.fromKey],['to',edge.toOutside,edge.toPoint,edge.toStage,edge.toKey]].forEach(function (end) {
+            if (!end[1]) return;
+            const point=end[2],stage=end[3],left=point.x+230>model.width;
+            const year=stage.start_year===null ? 'undated' : stage.start_year===stage.end_year ? String(stage.start_year) : stage.start_year+'–'+stage.end_year;
+            link.appendChild(svg('circle',{cx:point.x,cy:point.y,r:4,fill:'#fffdf8',stroke:'#666','data-continuation':stage.id}));
+            const label=svg('text',{x:point.x+(left ? -8 : 8),y:point.y-10,'font-size':12,'text-anchor':left ? 'end' : 'start'});
+            label.textContent=(end[0]==='from' ? 'From ' : 'To ')+end[4]+' · '+year+' · outside this view'; link.appendChild(label);
+          });
+          drawing.appendChild(link);
+        });
+        drawing.appendChild(transitionKeys);
+        model.lanes.forEach(function (lane) { lane.nodes.forEach(function (node) {
+          const stage=node.stage,link=svg('a',{href:'#'+new URLSearchParams(timelinePairs({...current,stage:stage.id,transition:null}).filter(function (p) { return p[1]; })),
+            'data-stage':stage.id,'aria-label':stage.label+'; '+stage.date_label+'; '+stage.status+'; text '+stage.text_coverage});
+          link.addEventListener('click',function (event) { event.preventDefault(); select('stage',stage.id); });
+          link.appendChild(svg('rect',{x:node.labelX-7,y:node.labelY-17,width:node.cardWidth+14,height:node.cardHeight,rx:4,fill:'#fffdf8',stroke:'#ded8cb'}));
+          if (stage.start_year!==stage.end_year) link.appendChild(svg('path',{
+            d:(node.clippedStart ? 'M '+(node.xStart+4)+' '+(node.y-5)+' l -4 5 4 5' : 'M '+node.xStart+' '+(node.y-6)+' V '+(node.y+6))+
+              ' M '+node.xStart+' '+node.y+' H '+node.xEnd+
+              (node.clippedEnd ? ' M '+(node.xEnd-4)+' '+(node.y-5)+' l 4 5 -4 5' : ' M '+node.xEnd+' '+(node.y-6)+' V '+(node.y+6)),
+            fill:'none',stroke:'#7a5230','stroke-width':2,'stroke-dasharray':'4 3','data-date-range':'date-uncertainty','data-date-clipped':(node.clippedStart ? 'start ' : '')+(node.clippedEnd ? 'end' : '')}));
+          link.appendChild(svg(stage.status==='provisional' ? 'path' : 'circle',stage.status==='provisional'
+            ? {d:'M '+node.x+' '+(node.y-7)+' l 7 7 -7 7 -7 -7 z',fill:'#fff',stroke:'#7a5230','stroke-width':2}
+            : {cx:node.x,cy:node.y,r:6,fill:'#7a5230'}));
+          const keyLeft=node.x+48>model.width;
+          const key=svg('text',{x:node.x+(keyLeft ? -14 : 14),y:node.y-10,'text-anchor':keyLeft ? 'end' : 'start','font-size':12}); key.textContent=node.key; link.appendChild(key);
+          let y=node.labelY;
+          [node.labelLines,node.dateLines,node.scopeLines,node.coverageLines,node.changeLines].forEach(function (lines,group) {
+            lines.forEach(function (line) { const text=svg('text',{x:node.labelX,y:y,'font-size':group===0 ? 16 : 14,'font-weight':group===0 ? 600 : 400}); text.textContent=line; link.appendChild(text); y+=node.leading; });
+          });
+          drawing.appendChild(link);
+        }); });
+        chart.appendChild(drawing); chart.setAttribute('aria-busy','false');
+        chart.hidden=presentation.value==='list'; list.hidden=presentation.value!=='list';
+        [['timeline-unpositioned-list',model.unpositioned],['timeline-provisional-list',model.provisional]].forEach(function (pair) {
+          const host=document.getElementById(pair[0]); T.clear(host);
+          if (!pair[1].length) host.appendChild(T.el('p','panel-note','None recorded in this selection.'));
+          pair[1].forEach(function (stage) { host.appendChild(readingCard(stage)); });
+        });
+        const gaps=document.getElementById('timeline-gaps'); T.clear(gaps); gaps.appendChild(T.el('h3',null,'What this history does not yet establish'));
+        const selectedGaps=history.gaps.filter(function (g) { return current.tradition==='all' || g.tradition_id===current.tradition; });
+        selectedGaps.forEach(function (gap) {
+          const section=T.el('section','timeline-gap'); section.appendChild(T.el('h4',null,gap.period));
+          section.appendChild(T.el('p',null,gap.missing)); section.appendChild(T.el('p',null,gap.consequence));
+          section.appendChild(T.el('p','panel-note','Next source to examine: '+gap.next_source)); gaps.appendChild(section);
+        });
+        if (!selectedGaps.length) gaps.appendChild(T.el('p','panel-note','No specific gap is listed for this selection. This does not establish complete coverage.'));
+        showDetail();
+      }
+
+      document.getElementById('timeline-filter').addEventListener('submit',function (event) {
+        event.preventDefault();
+        const first=Number(startControl.value),last=Number(endControl.value);
+        if (!startControl.value || !endControl.value || !Number.isInteger(first) || !Number.isInteger(last) || last<=first) { status.textContent='Enter whole years, with the ending year later than the starting year.'; return; }
+        update({...current,tradition:traditionControl.value,start:first,end:last,leads:leadControl.checked});
+      });
+      traditionControl.addEventListener('change',function () { update({...current,tradition:traditionControl.value,start:null,end:null,stage:null,transition:null}); });
+      leadControl.addEventListener('change',function () { update({...current,leads:leadControl.checked}); });
+      presentation.addEventListener('change',function () { chart.hidden=presentation.value==='list'; list.hidden=presentation.value!=='list'; });
+      document.getElementById('timeline-all-years').addEventListener('click',function () { update({...current,...dateBounds(current.tradition,true)}); });
+      document.getElementById('timeline-local-years').addEventListener('click',function () { update({...current,...dateBounds(current.tradition,false)}); });
+      [['timeline-earlier',-1],['timeline-later',1]].forEach(function (pair) { document.getElementById(pair[0]).addEventListener('click',function () {
+        const step=Math.max(1,Math.round((current.end-current.start)/2))*pair[1]; update({...current,start:current.start+step,end:current.end+step});
+      }); });
+      [['timeline-zoom-in',0.5],['timeline-zoom-out',2]].forEach(function (pair) { document.getElementById(pair[0]).addEventListener('click',function () {
+        const span=Math.max(10,Math.round((current.end-current.start)*pair[1])),center=(current.end+current.start)/2;
+        update({...current,start:Math.floor(center-span/2),end:Math.ceil(center+span/2)});
+      }); });
+      T.onHashChange(function (params) { render(timelineState(params)); });
+      render(timelineState(T.readHash()));
+    } catch(error) {
+      T.doneBootstrapping(); T.clear(chart); chart.setAttribute('aria-busy','false');
+      status.textContent='Historical timeline unavailable: '+String(error.message || error);
+    }
+  }
+
   const catalogueMode = new URLSearchParams(window.location.search).get('view') === 'catalogue';
   const overviewMode = new URLSearchParams(window.location.search).get('view') === 'overview';
+  const requestedView = new URLSearchParams(window.location.search).get('view');
+  const legacyMapAddress = new URLSearchParams(window.location.search).has('slice') || T.readHash().has('station') || T.readHash().has('unit');
+  const timelineMode = requestedView==='timeline' || (!requestedView && !legacyMapAddress);
+  const timelineNav=document.getElementById('history-timeline-link');
+  if (timelineNav) timelineNav.href=historyURL('timeline');
   const mapLink = document.getElementById('history-map-link');
   const catalogueNav = document.getElementById('history-catalogue-link');
   if (mapLink && catalogueNav) {
@@ -2349,7 +2880,18 @@
     startCatalogue();
     return;
   }
+  if (timelineMode) {
+    document.getElementById('historical-map').hidden=true;
+    document.getElementById('catalogue').hidden=true;
+    document.getElementById('timeline').hidden=false;
+    if (timelineNav) timelineNav.setAttribute('aria-current','page');
+    if (mapLink) mapLink.removeAttribute('aria-current');
+    T.setInlineNotice('The historical timeline could not be reached. Serve this page with its generated source data.');
+    startTimeline();
+    return;
+  }
 
+  document.getElementById('history-act-note').hidden=false;
   T.setInlineNotice(
     'The act history could not be reached, so this page has nothing to show. ' +
     'Serve the pages over HTTP with the data at "' + T.dataRoot + '".'

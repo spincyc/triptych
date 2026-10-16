@@ -1,0 +1,12 @@
+schema = 2
+record_type = "passage"
+edition_id = "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657"
+locus = "Cistercian missal 1657, printed p. 169, right column; FIDES file 0231."
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-16"
+context = "Complete priest’s Confiteor only; subsequent minister’s confession, absolution responses and surrounding prayers are outside this selection. This is the identified printing’s original Latin; no later Roman book supplies missing words or resolves a variant. No introduction date, direct copying act or complete historical parent relationship is inferred."
+notes = "Independently collated against the exact page images by a second AI reader on 2026-10-16; final body and artifact hashes pin the approved text. Accepted normalization includes sentence-case merging of display initials and nasal-bar expansion. The 1657 Confiteor preserves the independently corrected acute in omnipoténti. This bounded review is not a human specialist certification or a collation of the whole edition. Independent review receipt SHA-256 60925d8f5af82def604ede1a4a491cd5f6d372bd7007b295170d1ac37b98a882; reviewed multiline text SHA-256 29f922326cfa06d28bf797bbb0a2f0e37bf648ef9e2b96192e38242ded70fe5d. Spoken block metadata (zero-based half-open Unicode codepoint ranges in the NFC body, excluding terminal LF): [{\"block\":1,\"codepoint_range\":[0,223],\"speaker\":\"priest\",\"incipit\":\"Confíteor Deo omnipoténti, B.\"},{\"block\":2,\"codepoint_range\":[224,471],\"speaker\":\"priest\",\"incipit\":\"mea culpa, mea culpa,\"}]. Separate source rubric context: Before mea culpa: Percutit sibi pectus ter, dicens: Rubric words and positions checked independently; English labels are editorial wrappers. Typography and punctuation of context remain accessible in the retained source image. The red chest-striking instruction occurs between spoken blocks 1 and 2, before the first mea culpa."
+id = "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.confiteor-facsimile"
+artifact_id = "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0231-jpeg-ef6deece"
+artifact_sha256 = "ef6deece1dc053e1ad63e1f0a9c814919b0813f1eb845aab5eb598ef25b3cdc8"
+artifact_page_ranges = [[1, 1]]

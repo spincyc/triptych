@@ -61,6 +61,18 @@ state = "in_progress"
   evidence = ["PROJECT-WORK.md", "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml", "src/sources/inventories/western-eucharistic-books-timeline-v1.toml"]
 
   [[deliverables.requirements]]
+  id = "evidenced-book-stages"
+  criterion = "Source-owned dossiers distinguish dated book states from witness succession and substantive revisions, record exact component changes and inspected evidence, enumerate historical gaps, and project deterministically without granting Git ancestry or claiming complete texts."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "guidance/time-machine.md", "src/sources/inventories/eucharistic-stages", "src/sources/inventories/eucharistic-stage-coverage-v1.json", "scripts/_eucharistic_stages.py", "tools/tests/test_eucharistic_stages.py"]
+
+  [[deliverables.requirements]]
+  id = "chronological-reader-revision"
+  criterion = "The primary interactive and printable views let a reader follow one named recension on a common year axis, understand concrete changes and their evidence locally, distinguish uncertain dates from duration and coexistence from descent, and reach exact witness and text records; functional and reader review cover those tasks."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "guidance/time-machine.md"]
+
+  [[deliverables.requirements]]
   id = "witnesses-and-texts"
   criterion = "Each temporal version has organized source witnesses and complete structured contents checked against those witnesses, with acquisition, transcription, collation, rights, and missing-book states recorded separately; metadata-only stations are never presented as complete missals."
   status = "open"

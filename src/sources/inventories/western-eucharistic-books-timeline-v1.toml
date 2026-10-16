@@ -3,7 +3,7 @@ schema = "western-eucharistic-books-research-inventory/v1"
 researched_on = "2026-10-16"
 scope = "Non-exhaustive Western Eucharistic service-book research census: current Catholic traditions, shared historical ancestors and extinct local uses. Original liturgical-language books have priority. Witnesses and revision candidates are distinguished; metadata only."
 evidence_limit = "Catalogue/official metadata research is supplemented by registered acquisitions from the Western acquisition lane. Five new artifacts across four historical edition witnesses are linked; the already retained Gregorian scan is also linked. Registration manifests and all six linked payload hashes/byte sizes were checked here. Image inspection was bounded and reported by the acquisition lane; no complete manuscript/prayer collation or corrected transcription is claimed. Continuity research adds metadata and attributed scholarly comparisons, plus six hash-verified preexisting Cummiskey Latin transcription links. No new complete source book or verified transcription acquired in this pass."
-further_leads_not_researched = ["Verona LXXXV(80): obtain holding-library manuscript description and cleared old full edition; distinguish collected Roman libelli from a complete annual sacramentary.", "Additional early Gallican and Roman-Frankish witnesses, Mone Masses, Gregorian supplements and Old Gelasian layers: manuscript-wide census and textual relationships remain open.", "Medieval Ambrosian sacramentaries, 1582/1588 reforms and subsequent Latin typical editions: direct witnesses and reform instruments still needed.", "Old Hispanic manuscripts beyond BL Add MS 30846; distinguish Liber misticus, Liber missarum, Liber ordinum and Liber commicus by actual Eucharistic contents.", "Roman-curial/Haymo manuscript succession and full missal revisions remain incomplete. Burchard1501/1502 ceremonial states and specified reception are now documented, with partial comparison limits.", "Roman experimental Easter Vigil stages, 1969 separate Ordo Missae and later amendments: coordinate with existing Roman and Holy Week inventories instead of duplicating acts.", "Slavonic/Glagolitic Roman books: distinguish source-recension changes from permissions and translations; original historical source status and publication rights need review.", "Order trajectories still lacking a revision census: Benedictine houses/Cassinese, Teutonic, Paulines, Gilbertines, Windesheim, Camaldolese, Augustinian, Humiliati, Trinitarian, Minims and Discalced Carmelite.", "Iberian diocesan catalogue coverage is particularly incomplete because Usuarium origin-index offset 200 was unavailable; Toledo Roman use must not be merged with Old Hispanic.", "Book of Divine Worship edition history, later Divine Worship corrections, Zaire source-language edition and approved regional adaptations beyond it need primary front matter.", "Post-medieval diocesan missals require comparison of prayers, rubrics, calendar and order. A long dated printing series is not a revision series."]
+further_leads_not_researched = ["Verona LXXXV(80): obtain holding-library manuscript description and cleared old full edition; distinguish collected Roman libelli from a complete annual sacramentary.", "Additional early Gallican and Roman-Frankish witnesses, Mone Masses, Gregorian supplements and Old Gelasian layers: manuscript-wide census and textual relationships remain open.", "Medieval Ambrosian sacramentaries, 1582/1588 reforms and subsequent Latin typical editions: direct witnesses and reform instruments still needed.", "Old Hispanic manuscripts beyond BL Add MS 30846; distinguish Liber misticus, Liber missarum, Liber ordinum and Liber commicus by actual Eucharistic contents.", "Roman-curial/Haymo manuscript succession and full missal revisions remain incomplete. Burchard1501/1502 ceremonial states and specified reception are now documented, with partial comparison limits.", "Roman experimental Easter Vigil stages, 1969 separate Ordo Missae and later amendments: coordinate with existing Roman and Holy Week inventories instead of duplicating acts.", "Slavonic/Glagolitic Roman books: distinguish source-recension changes from permissions and translations; original historical source status and publication rights need review.", "Order trajectories still lacking a revision census: Benedictine houses/Cassinese, Teutonic, Paulines, Gilbertines, Windesheim, Camaldolese, Augustinian, Humiliati, Trinitarian, Minims and Discalced Carmelite.", "Four Iberian local-use catalogue witnesses are now identified (Barcelona, Salamanca, Seville, Toledo Roman); the broader census and original-book comparisons remain incomplete. Toledo Roman must remain separate from Old Hispanic.", "Book of Divine Worship edition history, later Divine Worship corrections, Zaire source-language edition and approved regional adaptations beyond it need primary front matter.", "Post-medieval diocesan missals require comparison of prayers, rubrics, calendar and order. A long dated printing series is not a revision series."]
 research_scope = "agreed-current-Catholic-traditions-shared-ancestors-and-extinct-local-uses"
 exhaustive = false
 new_complete_source_books_acquired = 2
@@ -17,7 +17,7 @@ language_priority = "Original source books first, including books originally com
 chronology_policy = "Dates from inspected official records, catalogues and identified critical or original scholarly studies receive integer coordinates. chronology_kind distinguishes redaction, copying, approval and publication. Attributed or approximate dates remain explicit; witness dates do not become normative acts."
 usuarium_attribution = "Data retrieved from USUARIUM (Eötvös Loránd University, Budapest), built by Miklós István Földváry and colleagues, Research Group of Liturgical History, 2015 onwards; https://usuarium.elte.hu. This inventory paraphrases selected bibliographic facts and links the underlying records."
 usuarium_census_limit = "Seven origin-index pages inspected (offsets 0,100,300,400,500,600,700); offset 200 could not be fetched. Cached pages overlap and reflect different crawl dates. No stable total or exhaustive use count is asserted. Origins mix Mass, Office and other ritual books; an origin association alone does not establish the age or normative use of a religious-order rite."
-record_count_note = "108 candidates, 54 coverage trajectories and 102 source records are research objects, not distinct-version counts. Twelve exact artifact links include six preexisting Cummiskey native-Latin transcriptions; acquisition routes remain unchanged."
+record_count_note = "113 candidates, 54 coverage trajectories and 108 source records are research objects, not distinct-version counts. Exact artifact links and acquisition routes retain their own counts; the four added Iberian records are catalogue-only."
 initial_catalogue_pass_complete_books_acquired = 0
 acquisition_update_registered_witnesses = 4
 acquisition_update_new_artifacts = 5
@@ -1237,9 +1237,9 @@ family = "cistercian"
 title = "Missale cisterciense juxta romani recogniti correctionem"
 date = "1657"
 kind = "revised-order-missal-candidate"
-status = "checked-digitized-book-metadata"
+status = "registered-bounded-original-latin-image-collation"
 sources = ["cistercian-1657-google", "cistercian-1657-fides"]
-qualification = "Entire order family missing from existing 17-line history. Title explicitly refers to Roman correction; exact chapter authority and departure content await inspection."
+qualification = "Identified Paris Sebastian/Gabriel Cramoisy 1657 printing, Krzeszów Benedictine abbey copy, FIDES edition 3755. Title file 0005, Vaussin mandate 0007–0008 dated 3 July 1655, Monitum 0009 and selected Ordinary pages 169,172–174 inspected. Three complete selected prayer bodies on pp. 169 and 174 independently collated and registered; pp. 172–173 retain offering-placement context. The Monitum describes further Roman conformity while retaining gradual differences. Printed mandate date, edition publication and individual textual introductions are distinct. FIDES marks the digital object public domain/unrestricted; only selected page files and decoding dependencies are retained, not the whole indirect DjVu book."
 date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
 chronology_start = 1657
 chronology_end = 1657
@@ -1247,6 +1247,15 @@ chronology_kind = "publication"
 chronology_certainty = "reported-in-inspected-source"
 version_status = "witness-or-revision-candidate-see-qualification"
 scope_disposition = "in-scope-original-book-or-historical-witness"
+source_library_work_id = "work.cistercian-order.missale-cisterciense"
+source_library_edition_id = "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657"
+source_library_artifact_ids = ["artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.confiteor-checked-latin-b2321dac", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.djvu-shared-annotation-af707c77", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0005-djvu-add1dd8a", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0005-jpeg-62bdeb90", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0007-djvu-ca6fa120", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0007-jpeg-d111ceaa", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0008-djvu-6e67574b", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0008-jpeg-35e26c7c", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0009-djvu-2d265622", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0009-jpeg-9f894b68", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0231-djvu-f8ff8572", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0231-jpeg-ef6deece", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0234-djvu-f743e6b3", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0234-jpeg-ae2266c7", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0235-djvu-a76ca681", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0235-jpeg-f64508f8", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0236-djvu-32b17621", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0236-jpeg-f461bff9", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.orate-response-checked-latin-a362cf3f", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.suscipe-trinitas-checked-latin-6da6f1b5"]
+source_library_evidence_relation = "Eight exact selected DjVu page files, eight complete-page JPEG renderings, one shared annotation dependency and three checked Latin text artifacts; source-page and derivation hashes are explicit."
+acquisition_status = "selected-pages-and-dependencies-retained-and-hash-verified"
+transcription_status = "three-complete-selected-original-latin-units-independently-collated"
+collation_status = "bounded-confiteor-suscipe-trinitas-orate-dialogue; not-whole-book"
+source_library_checked_text_artifact_ids = ["artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.confiteor-checked-latin-b2321dac", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.suscipe-trinitas-checked-latin-6da6f1b5", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.orate-response-checked-latin-a362cf3f"]
+source_library_passage_ids = ["passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.confiteor", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.suscipe-trinitas", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.orate-response"]
 
 [[candidates]]
 id = "hereford-1502"
@@ -2991,7 +3000,7 @@ id = "cistercian"
 title = "Cistercian trajectory"
 status = "selected-witness-census-documented"
 sources = ["cistercian-usuarium"]
-candidate_ids = ["cistercian-medieval", "cistercian-early-prints", "cistercian-1657"]
+candidate_ids = ["cistercian-medieval", "cistercian-early-prints", "cistercian-1606", "cistercian-1657"]
 remaining_work = "Deduplicate catalogue records,extend witness census,acquire cleared complete witnesses and compare prayers,rubrics,calendar and order before promoting distinct versions."
 scope = "western-original-source-trajectory"
 
@@ -3236,10 +3245,10 @@ scope = "western-original-source-trajectory"
 [[coverage]]
 id = "iberian-index-gap"
 title = "Iberian diocesan uses beyond Braga and Old Hispanic"
-status = "explicit-coverage-gap"
-sources = []
-candidate_ids = []
-remaining_work = "Usuarium offset200 fetch failed. Establish Toledo Roman,Seville,Barcelona,Salamanca and other uses from their own catalogues before dating. These are research targets,not claims of distinct books already inspected."
+status = "selected-catalogue-witnesses; stage-sequences-unresearched"
+sources = ["coverage-usuarium-progress", "coverage-barcelona-1498", "coverage-salamanca-1533", "coverage-seville-1565", "coverage-toledo-roman-1551"]
+candidate_ids = ["barcelona-1498", "salamanca-1533", "seville-1565", "toledo-roman-1551"]
+remaining_work = "Original Barcelona1498 (fragment), Salamanca1533, Seville1565 and Toledo Roman1551 copies, approval leaves and predecessor/successor comparisons remain uninspected. Broader Iberian census incomplete. Toledo Roman is distinct from Hispano-Mozarabic."
 scope = "western-original-source-trajectory"
 
 [[coverage]]
@@ -3668,3 +3677,178 @@ acquisition_status = "preexisting-retained-payload-hash-verified"
 transcription_status = "existing-project-checked-transcription-not-recollated-here"
 collation_status = "no-new-full-image-collation-in-this-lane"
 inspection_limit = "Read canonical manifest and checked payload hash/length. Its recorded page-image transcription provenance remains controlling; no source-image reacquisition."
+
+# Exact printing separated from the earlier multi-witness discovery cluster.
+[[sources]]
+id = "cistercian-1606-bsb-primary"
+url = "https://www.digitale-sammlungen.de/en/view/bsb10496382"
+type = "primary-book-page-images"
+inspection = "Title canvas 1; Annotanda canvases 27–28; Ordinary printed pp. 180–181, canvases 234–235, directly inspected. Three selected prayer units independently collated; full-book collation remains open."
+
+[[candidates]]
+id = "cistercian-1606"
+family = "cistercian"
+title = "Missale ad usum Sacri Ordinis Cisterciensis (Paris, 1606)"
+date = "1606"
+kind = "identified-order-missal"
+status = "registered-bounded-original-latin-image-collation"
+sources = ["cistercian-1606-bsb-primary", "cistercian-usuarium"]
+qualification = "Identified Paris Marnef/Cavellat 1606 printing, BSB 2 Liturg. 205 a, bsb10496382. Title canvas 1 and Annotanda canvases 27–28 inspected; the latter already describes Romanizing decisions of the 1601 and 1605 chapters, so this is not an untouched medieval baseline. Three complete selected Ordinary prayer bodies, printed pp. 180–181 (canvases 234–235), independently collated and registered. BSB image-specific NoC-NC permission remains distinct from the public-domain historical Latin. No full-book acquisition or collation is claimed."
+date_role = "publication"
+chronology_start = 1606
+chronology_end = 1606
+chronology_kind = "publication"
+chronology_certainty = "direct-title-page-inspection"
+version_status = "bounded-substantive-revision-evidence; see book-stage dossier"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+acquisition_status = "selected-pages-and-dependencies-retained-and-hash-verified"
+transcription_status = "three-complete-selected-original-latin-units-independently-collated"
+collation_status = "bounded-confiteor-suscipe-trinitas-orate-dialogue; not-whole-book"
+source_library_work_id = "work.cistercian-order.missale-cisterciense"
+source_library_edition_id = "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606"
+source_library_artifact_ids = ["artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00001-44b8ddf4", "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00027-5ffde528", "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00028-e9916c53", "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00234-7c8474ea", "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00235-2646b0f5", "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.confiteor-checked-latin-60e1426e", "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.orate-response-checked-latin-2bab0892", "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.suscipe-trinitas-checked-latin-0c61e53d"]
+source_library_evidence_relation = "Five exact BSB IIIF page images and three checked Latin text artifacts; independent review is bounded to the selected statements and prayers."
+source_library_checked_text_artifact_ids = ["artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.confiteor-checked-latin-60e1426e", "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.suscipe-trinitas-checked-latin-0c61e53d", "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.orate-response-checked-latin-2bab0892"]
+source_library_passage_ids = ["passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.confiteor", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.suscipe-trinitas", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.orate-response"]
+
+[[sources]]
+id = "coverage-usuarium-progress"
+url = "https://usuarium.elte.hu/news"
+type = "official-retrospective"
+title = "Usuarium: Missalia project reports"
+checked_on = "2026-10-16"
+inspection = "Read the 11 December 2025 report and 20 February 2023 Iberian report, including links to Barcelona, Salamanca, Seville and Toledo records."
+limitations = "The project's own account of coverage; its books, institutions and uses are not interchangeable counts. No independent full census performed."
+status = "inspected"
+
+[[sources]]
+id = "coverage-barcelona-1498"
+url = "https://usuarium.elte.hu/book/48/view"
+type = "institutional-catalogue"
+title = "Usuarium 48: Missale Barcinonense"
+checked_on = "2026-10-16"
+inspection = "Read bibliographic fields, fragment warning and contents index. Catalogue gives 1498, Didacus de Gumiel, Biblioteca de Catalunya Inc. 46-Fol.; surviving span begins at Holy Saturday and ends at 25 January."
+limitations = "Catalogue metadata only. Original page images not inspected. Holding-platform link failed with cache miss."
+status = "inspected"
+
+[[sources]]
+id = "coverage-salamanca-1533"
+url = "https://usuarium.elte.hu/book/55/view"
+type = "institutional-catalogue"
+title = "Usuarium 55: Missale Salmanticense"
+checked_on = "2026-10-16"
+inspection = "Read bibliographic fields and contents index: 1533, Ioannes Junta, BU Salamanca BG/18686; title page at catalogue image 5, decree/calendar at 7 and colophon at 609. Also read the beginning of the linked conspectus, without verifying against images."
+limitations = "Original page images and decree not inspected. Holding-platform handle failed with cache miss. No revision established."
+status = "inspected"
+
+[[sources]]
+id = "coverage-seville-1565"
+url = "https://usuarium.elte.hu/book/57/view"
+type = "institutional-catalogue"
+title = "Usuarium 57: Missale Hispalense"
+checked_on = "2026-10-16"
+inspection = "Read bibliographic fields and contents index: 1565, Ioannes Gutiérrez, BU Sevilla A Res. 10/1/06; title at catalogue image 14, preface/decree at 16, colophon at 682 (328v)."
+limitations = "Original images uninspected; linked Spanish heritage record returned HTTP 429. The catalogue's decree label is not an independent authentication of a normative act."
+status = "inspected"
+
+[[sources]]
+id = "coverage-toledo-roman-1551"
+url = "https://usuarium.elte.hu/book/60/view"
+type = "institutional-catalogue"
+title = "Usuarium 60: Missale Toletanum"
+checked_on = "2026-10-16"
+inspection = "Read bibliographic fields, explicit Roman-use classification and contents index: 1551, Bartholomaeus Fraenus, BM Lyon SJ L 013/14. Catalogue locates title/decree at images 5–6 and final colophon at 679; linked Google Books landing page was accessible."
+limitations = "Original pages not inspected. Keep distinct from the Mozarabic Missale mixtum despite similar titles. A 1551 witness does not itself establish a substantive revision."
+status = "inspected"
+
+[[candidates]]
+id = "barcelona-1498"
+family = "historic-barcelona-use"
+title = "Missale Barcinonense"
+date = "1498"
+kind = "historic-local-use-witness"
+status = "checked-research-catalogue"
+sources = ["coverage-barcelona-1498"]
+route = "https://mdc.csuc.cat/digital/collection/incunableBC/id/14914"
+holding = "Biblioteca de Catalunya, Inc. 46-Fol."
+catalogue_id = "Usuarium 48; Weale–Bohatta 150"
+qualification = "Fragmentary surviving copy. Establish exact title/colophon and missing extent before comparing earlier/later books. Original pages uninspected; catalogue identity does not establish a new revision or normative effective date."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "catalogue-witness-only; substantive-difference-not-established"
+date_role = "publication-year-reported-by-catalogue"
+chronology_start = 1498
+chronology_end = 1498
+chronology_kind = "publication-witness-date"
+chronology_certainty = "inspected-catalogue-metadata; original-imprint-uninspected"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+
+[[candidates]]
+id = "salamanca-1533"
+family = "historic-salamanca-use"
+title = "Missale Salmanticense"
+date = "1533"
+kind = "historic-local-use-witness"
+status = "checked-research-catalogue"
+sources = ["coverage-salamanca-1533"]
+route = "https://hdl.handle.net/10366/19485"
+holding = "Biblioteca Universitaria de Salamanca, BG/18686"
+catalogue_id = "Usuarium 55; Amiet 1377 B"
+qualification = "Inspect title, episcopal front matter, colophon and predecessor witnesses; a new printing is not sufficient evidence of reform. Original pages uninspected; catalogue identity does not establish a new revision or normative effective date."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "catalogue-witness-only; substantive-difference-not-established"
+date_role = "publication-year-reported-by-catalogue"
+chronology_start = 1533
+chronology_end = 1533
+chronology_kind = "publication-witness-date"
+chronology_certainty = "inspected-catalogue-metadata; original-imprint-uninspected"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+
+[[candidates]]
+id = "seville-1565"
+family = "historic-seville-use"
+title = "Missale Hispalense"
+date = "1565"
+kind = "historic-local-use-witness"
+status = "checked-research-catalogue"
+sources = ["coverage-seville-1565"]
+route = "https://bvpb.mcu.es/es/consulta/registro.cmd?id=451904"
+holding = "Biblioteca Universitaria de Sevilla, A Res. 10/1/06"
+catalogue_id = "Usuarium 57; Weale–Bohatta 455"
+qualification = "Inspect original front matter and colophon, then identify earlier local books and later reception. No revision or effective date inferred. Original pages uninspected; catalogue identity does not establish a new revision or normative effective date."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "catalogue-witness-only; substantive-difference-not-established"
+date_role = "publication-year-reported-by-catalogue"
+chronology_start = 1565
+chronology_end = 1565
+chronology_kind = "publication-witness-date"
+chronology_certainty = "inspected-catalogue-metadata; original-imprint-uninspected"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+
+[[candidates]]
+id = "toledo-roman-1551"
+family = "historic-toledo-roman-use"
+title = "Missale Toletanum"
+date = "1551"
+kind = "historic-local-use-witness"
+status = "checked-research-catalogue"
+sources = ["coverage-toledo-roman-1551"]
+route = "https://books.google.hu/books?hl=hu&id=hrsbdnfW1NIC&pg=PT668"
+holding = "Bibliothèque municipale de Lyon, SJ L 013/14"
+catalogue_id = "Usuarium 60; Weale–Bohatta 1537"
+qualification = "Catalogue explicitly identifies Roman use. Inspect title and authority front matter; compare older/later Toledo Roman books independently of the Hispanic tradition. Original pages uninspected; catalogue identity does not establish a new revision or normative effective date."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "catalogue-witness-only; substantive-difference-not-established"
+date_role = "publication-year-reported-by-catalogue"
+chronology_start = 1551
+chronology_end = 1551
+chronology_kind = "publication-witness-date"
+chronology_certainty = "inspected-catalogue-metadata; original-imprint-uninspected"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"

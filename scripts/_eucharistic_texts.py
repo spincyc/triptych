@@ -324,6 +324,269 @@ CHECKED_PASSAGE_SETS: dict[str, dict] = {'brightman-1896-greek-basil': {'edition
                                                     'text_sha256': '19287cda6b3f4d8a027e0cbcc63d4c2399a22827ab75668e1294e596f796d734',
                                                     'unit_id': 'unit.wilson-1915.gregorian.canon-missae.quam-oblationem'}],
                                          'witness_date': None}}
+CHECKED_PASSAGE_SETS.update({'cistercian-1606-latin-ordinary': {'title': 'Cistercian missal 1606: three selected Ordinary prayers',
+                                    'edition_id': 'edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606',
+                                    'witness_date': '1606 printed edition; dates earlier cited acts '
+                                                    'separately',
+                                    'scope': {'status': 'bounded-checked-latin-ordinary-selection',
+                                              'represented_witness': 'The identified Paris 1606 Cistercian '
+                                                                     'missal, original Latin printed '
+                                                                     'wording.',
+                                              'text_identity': 'Confiteor, Suscipe Trinitas and Orate '
+                                                               'dialogue; normalized spelling presentation '
+                                                               'and recoverable spoken blocks, independently '
+                                                               'checked against retained page images.',
+                                              'omitted_book_divisions': ['All other Ordinary prayers',
+                                                                         'Propers, calendar and rites '
+                                                                         'elsewhere in the volume',
+                                                                         'Red rubrics and response cue '
+                                                                         'glyphs from the spoken comparison '
+                                                                         'body; their selected context '
+                                                                         'remains in provenance']},
+                                    'units': [{'unit_id': 'unit.cistercian-1606.ordinary.confiteor',
+                                               'passage_id': 'passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.confiteor',
+                                               'artifact_id': 'artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.confiteor-checked-latin-60e1426e',
+                                               'text_sha256': 'ae1ed27ae22ae246c788fc249b3908304672177145da2d8b12702108912030f5',
+                                               'language': 'la',
+                                               'division': 'ordinary',
+                                               'part': 'preparatory-prayers',
+                                               'kind': 'prayer',
+                                               'element_key': 'confiteor',
+                                               'source_order': 1,
+                                               'printed_page': '180',
+                                               'evidence_source_ids': ['artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00234-7c8474ea',
+                                                                       'passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.confiteor-facsimile',
+                                                                       'passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.title-and-imprint']},
+                                              {'unit_id': 'unit.cistercian-1606.ordinary.suscipe-trinitas',
+                                               'passage_id': 'passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.suscipe-trinitas',
+                                               'artifact_id': 'artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.suscipe-trinitas-checked-latin-0c61e53d',
+                                               'text_sha256': 'f4ef4201b6fd2a2d3b81da889d8706d698d73f6c14e36d2e7f73b291820b76ac',
+                                               'language': 'la',
+                                               'division': 'ordinary',
+                                               'part': 'offertory',
+                                               'kind': 'prayer',
+                                               'element_key': 'suscipe-trinitas',
+                                               'source_order': 2,
+                                               'printed_page': '181',
+                                               'evidence_source_ids': ['artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00235-2646b0f5',
+                                                                       'passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.suscipe-trinitas-facsimile',
+                                                                       'passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.title-and-imprint']},
+                                              {'unit_id': 'unit.cistercian-1606.ordinary.orate-response',
+                                               'passage_id': 'passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.orate-response',
+                                               'artifact_id': 'artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.orate-response-checked-latin-2bab0892',
+                                               'text_sha256': '4a26e65f009e5e81bd72c1e051311bda55ab919198e23ead1c53f21c3fb5f516',
+                                               'language': 'la',
+                                               'division': 'ordinary',
+                                               'part': 'offertory',
+                                               'kind': 'dialogue',
+                                               'element_key': 'orate-response',
+                                               'source_order': 3,
+                                               'printed_page': '181',
+                                               'evidence_source_ids': ['artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00235-2646b0f5',
+                                                                       'passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.orate-response-facsimile',
+                                                                       'passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.title-and-imprint']}]},
+ 'cistercian-1657-latin-ordinary': {'title': 'Cistercian missal 1657: three selected Ordinary prayers',
+                                    'edition_id': 'edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657',
+                                    'witness_date': '1657 printed edition; dates earlier cited acts '
+                                                    'separately',
+                                    'scope': {'status': 'bounded-checked-latin-ordinary-selection',
+                                              'represented_witness': 'The identified Paris 1657 Cistercian '
+                                                                     'missal, original Latin printed '
+                                                                     'wording.',
+                                              'text_identity': 'Confiteor, Suscipe Trinitas and Orate '
+                                                               'dialogue; normalized spelling presentation '
+                                                               'and recoverable spoken blocks, independently '
+                                                               'checked against retained page images.',
+                                              'omitted_book_divisions': ['All other Ordinary prayers',
+                                                                         'Propers, calendar and rites '
+                                                                         'elsewhere in the volume',
+                                                                         'Red rubrics and response cue '
+                                                                         'glyphs from the spoken comparison '
+                                                                         'body; their selected context '
+                                                                         'remains in provenance']},
+                                    'units': [{'unit_id': 'unit.cistercian-1657.ordinary.confiteor',
+                                               'passage_id': 'passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.confiteor',
+                                               'artifact_id': 'artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.confiteor-checked-latin-b2321dac',
+                                               'text_sha256': '29f922326cfa06d28bf797bbb0a2f0e37bf648ef9e2b96192e38242ded70fe5d',
+                                               'language': 'la',
+                                               'division': 'ordinary',
+                                               'part': 'preparatory-prayers',
+                                               'kind': 'prayer',
+                                               'element_key': 'confiteor',
+                                               'source_order': 1,
+                                               'printed_page': '169',
+                                               'evidence_source_ids': ['artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0231-jpeg-ef6deece',
+                                                                       'passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.confiteor-facsimile',
+                                                                       'passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.title-and-imprint']},
+                                              {'unit_id': 'unit.cistercian-1657.ordinary.suscipe-trinitas',
+                                               'passage_id': 'passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.suscipe-trinitas',
+                                               'artifact_id': 'artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.suscipe-trinitas-checked-latin-6da6f1b5',
+                                               'text_sha256': '3088e7f4905afabe0f2e384ed69a33c58342b21de8a79c7e431c655a174a07de',
+                                               'language': 'la',
+                                               'division': 'ordinary',
+                                               'part': 'offertory',
+                                               'kind': 'prayer',
+                                               'element_key': 'suscipe-trinitas',
+                                               'source_order': 2,
+                                               'printed_page': '174',
+                                               'evidence_source_ids': ['artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0236-jpeg-f461bff9',
+                                                                       'passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.suscipe-trinitas-facsimile',
+                                                                       'passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.title-and-imprint',
+                                                                       'passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-placement-host',
+                                                                       'passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-placement-chalice']},
+                                              {'unit_id': 'unit.cistercian-1657.ordinary.orate-response',
+                                               'passage_id': 'passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.orate-response',
+                                               'artifact_id': 'artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.orate-response-checked-latin-a362cf3f',
+                                               'text_sha256': '27c6a6fe46613aef99abc25c7ef2602fa8b9ac52a57e9af2f54cad3c30b62e4f',
+                                               'language': 'la',
+                                               'division': 'ordinary',
+                                               'part': 'offertory',
+                                               'kind': 'dialogue',
+                                               'element_key': 'orate-response',
+                                               'source_order': 3,
+                                               'printed_page': '174',
+                                               'evidence_source_ids': ['artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0236-jpeg-f461bff9',
+                                                                       'passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.orate-response-facsimile',
+                                                                       'passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.title-and-imprint']}]}})
+CHECKED_PASSAGE_SETS.update({'dominican-1550-suscepimus': {'edition_id': 'edition.order-of-preachers.missale.1550-venice',
+                               'title': 'Dominican 1550: Suscepimus Deus collect',
+                               'witness_date': '1550 printed edition',
+                               'scope': {'status': 'bounded-checked-latin-collect-selection',
+                                         'represented_witness': 'Missale ad usum fratrum Praedicatorum '
+                                                                'Sancti Dominici; Venice, 1550',
+                                         'text_identity': 'One collect of the Suscepimus Deus formulary. The '
+                                                          'pairing is anchored by that named formulary: 1550 '
+                                                          'Dominica octava after Trinity versus 1604 '
+                                                          'Dominica sexta after the octave of Trinity. The '
+                                                          'selected collect is complete as printed but the '
+                                                          'full spoken conclusion is abbreviated by the '
+                                                          'source. Other formulary items, rubrics, the '
+                                                          'ordinary, sanctoral and remaining book are '
+                                                          'excluded. No immediate ancestry or local '
+                                                          'reception is inferred.',
+                                         'omitted_book_divisions': ['Other Suscepimus formulary elements and '
+                                                                    'rubrics',
+                                                                    'Ordinary, remaining temporale, '
+                                                                    'sanctoral and other book divisions']},
+                               'units': [{'unit_id': 'unit.dominican-1550-suscepimus.suscepimus-collect',
+                                          'passage_id': 'passage.order-of-preachers.missale.1550-venice.suscepimus-collect',
+                                          'artifact_id': 'artifact.order-of-preachers.missale.1550-venice.suscepimus-collect-checked-latin-d5fb591c',
+                                          'text_sha256': '70806af820909d2ed1493cf677a2f40c4aec8f99c421d4d9143aa34ce4a8fd5e',
+                                          'language': 'la',
+                                          'division': 'temporale',
+                                          'element_key': 'suscepimus-collect',
+                                          'source_order': 1,
+                                          'printed_page': '125r',
+                                          'facsimile_pdf_page': '289',
+                                          'evidence_source_ids': ['artifact.order-of-preachers.missale.1550-venice.pdf-page-289-image-1a0d3a7a',
+                                                                  'passage.order-of-preachers.missale.1550-venice.suscepimus-folio-125r',
+                                                                  'passage.order-of-preachers.missale.1550-venice.title'],
+                                          'kind': 'prayer',
+                                          'part': 'collect'}]},
+ 'dominican-1604-suscepimus': {'edition_id': 'edition.order-of-preachers.missale.1604-rome-xavierre',
+                               'title': 'Dominican 1604: Suscepimus Deus collect',
+                               'witness_date': '1604 printed edition',
+                               'scope': {'status': 'bounded-checked-latin-collect-selection',
+                                         'represented_witness': 'Missale juxta ritum sacri ordinis '
+                                                                'Praedicatorum S. P. N. Dominici; Rome: ex '
+                                                                'typographia Alfonsi Ciacconi, apud Carolum '
+                                                                'Vulliettum, 1604',
+                                         'text_identity': 'One collect of the Suscepimus Deus formulary. The '
+                                                          'pairing is anchored by that named formulary: 1550 '
+                                                          'Dominica octava after Trinity versus 1604 '
+                                                          'Dominica sexta after the octave of Trinity. The '
+                                                          'selected collect is complete as printed but the '
+                                                          'full spoken conclusion is abbreviated by the '
+                                                          'source. Other formulary items, rubrics, the '
+                                                          'ordinary, sanctoral and remaining book are '
+                                                          'excluded. No immediate ancestry or local '
+                                                          'reception is inferred.',
+                                         'omitted_book_divisions': ['Other Suscepimus formulary elements and '
+                                                                    'rubrics',
+                                                                    'Ordinary, remaining temporale, '
+                                                                    'sanctoral and other book divisions']},
+                               'units': [{'unit_id': 'unit.dominican-1604-suscepimus.suscepimus-collect',
+                                          'passage_id': 'passage.order-of-preachers.missale.1604-rome-xavierre.suscepimus-collect',
+                                          'artifact_id': 'artifact.order-of-preachers.missale.1604-rome-xavierre.suscepimus-collect-checked-latin-72fc670a',
+                                          'text_sha256': '8861302457a0775f9710d82ad21c88492d80915de577db7419a796bd4d660c57',
+                                          'language': 'la',
+                                          'division': 'temporale',
+                                          'element_key': 'suscepimus-collect',
+                                          'source_order': 1,
+                                          'printed_page': '238',
+                                          'facsimile_pdf_page': '314',
+                                          'evidence_source_ids': ['artifact.order-of-preachers.missale.1604-rome-xavierre.pdf-page-314-image-b5893d5a',
+                                                                  'passage.order-of-preachers.missale.1604-rome-xavierre.suscepimus-page-238',
+                                                                  'passage.order-of-preachers.missale.1604-rome-xavierre.title'],
+                                          'kind': 'prayer',
+                                          'part': 'collect'}]},
+ 'carmelite-1574-october-calendar': {'edition_id': 'edition.carmelite-order.missale.1574-venice-giunta',
+                                     'title': 'Carmelite 1574: October 5 calendar entry',
+                                     'witness_date': '1574 printed edition',
+                                     'scope': {'status': 'bounded-checked-latin-calendar-row',
+                                               'represented_witness': 'Missale antique professionis '
+                                                                      'Regularium beatissime Dei genitricis '
+                                                                      'semperque virginis Marie de Monte '
+                                                                      'Carmelo; Venice: apud Iuntas, 1574',
+                                               'text_identity': 'Bounded October 5 calendar row, not a Mass '
+                                                                'prayer. An empty feast cell in 1574 is not '
+                                                                'a claim that Teresa or a devotion is absent '
+                                                                'throughout the book. The 1621 printed date '
+                                                                'is October 5; no date correction to October '
+                                                                '15 is made. No introduction date or '
+                                                                'immediate ancestry is established.',
+                                               'omitted_book_divisions': ['Other calendar rows and '
+                                                                          'computistical columns',
+                                                                          'Ordinary, propers, readings and '
+                                                                          'rubrics']},
+                                     'units': [{'unit_id': 'unit.carmelite-1574-october-calendar.october-05-calendar-entry',
+                                                'passage_id': 'passage.carmelite-order.missale.1574-venice-giunta.october-05-calendar-entry',
+                                                'artifact_id': 'artifact.carmelite-order.missale.1574-venice-giunta.october-05-calendar-entry-checked-latin-f0b5c2c2',
+                                                'text_sha256': 'ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d',
+                                                'language': 'la',
+                                                'division': 'calendar',
+                                                'element_key': 'calendar-october-05',
+                                                'source_order': 1,
+                                                'printed_page': 'unnumbered October calendar',
+                                                'facsimile_pdf_page': '20',
+                                                'evidence_source_ids': ['artifact.carmelite-order.missale.1574-venice-giunta.pdf-page-20-image-e1380012',
+                                                                        'passage.carmelite-order.missale.1574-venice-giunta.october-calendar',
+                                                                        'passage.carmelite-order.missale.1574-venice-giunta.title'],
+                                                'kind': 'calendar-entry',
+                                                'part': 'calendar'}]},
+ 'carmelite-1621-october-calendar': {'edition_id': 'edition.carmelite-order.missale.1621-venice-giunta',
+                                     'title': 'Carmelite 1621: October 5 calendar entry',
+                                     'witness_date': '1621 printed edition',
+                                     'scope': {'status': 'bounded-checked-latin-calendar-row',
+                                               'represented_witness': 'Missale fratrum Carmelitarum Ordinis '
+                                                                      'Beatae Dei Genitricis Mariae; Venice: '
+                                                                      'apud Iuntas, 1621',
+                                               'text_identity': 'Bounded October 5 calendar row, not a Mass '
+                                                                'prayer. An empty feast cell in 1574 is not '
+                                                                'a claim that Teresa or a devotion is absent '
+                                                                'throughout the book. The 1621 printed date '
+                                                                'is October 5; no date correction to October '
+                                                                '15 is made. No introduction date or '
+                                                                'immediate ancestry is established.',
+                                               'omitted_book_divisions': ['Other calendar rows and '
+                                                                          'computistical columns',
+                                                                          'Ordinary, propers, readings and '
+                                                                          'rubrics']},
+                                     'units': [{'unit_id': 'unit.carmelite-1621-october-calendar.october-05-calendar-entry',
+                                                'passage_id': 'passage.carmelite-order.missale.1621-venice-giunta.october-05-calendar-entry',
+                                                'artifact_id': 'artifact.carmelite-order.missale.1621-venice-giunta.october-05-calendar-entry-checked-latin-3033d681',
+                                                'text_sha256': 'c33b45602d801fdd84527fbba77701b560c80bd425b983e259d0a5b4b7a26515',
+                                                'language': 'la',
+                                                'division': 'calendar',
+                                                'element_key': 'calendar-october-05',
+                                                'source_order': 1,
+                                                'printed_page': 'unnumbered October calendar',
+                                                'facsimile_pdf_page': '22',
+                                                'evidence_source_ids': ['artifact.carmelite-order.missale.1621-venice-giunta.pdf-page-22-image-87dc3360',
+                                                                        'passage.carmelite-order.missale.1621-venice-giunta.october-calendar',
+                                                                        'passage.carmelite-order.missale.1621-venice-giunta.title'],
+                                                'kind': 'calendar-entry',
+                                                'part': 'calendar'}]}})
 ORDINARY_DIVISIONS = (
     "ordinarium-praeparatio", "ordinarium-oblatio", "praefationes", "canon-missae",
     "ordinarium-communio", "ordinarium-conclusio",
@@ -333,7 +596,7 @@ SOURCE_FIELDS = frozenset({
     "work_id", "edition_id", "artifact_id", "segment_id", "artifact_sha256", "physical_line_ranges",
     "artifact_page_ranges", "locus", "states", "verified_on", "source_url", "provenance", "retrieved",
     "artifact_type", "media_type", "storage", "rights_status", "rights_basis", "rights_jurisdiction",
-    "sha256", "byte_size", "path", "derived_from", "projected_from", "transformation",
+    "sha256", "byte_size", "path", "derived_from", "projected_from", "transformation", "support_artifacts", "page_count",
 })
 
 
@@ -410,6 +673,8 @@ class _Sources:
                 self.use(parent)
         for parent in data.get("projected_from", []):
             self.use(parent)
+        for support in data.get("support_artifacts", []):
+            self.use(support["artifact_id"])
         if data.get("storage") == "tracked" and data.get("path"):
             self.payload(data)
         return data
@@ -678,7 +943,7 @@ def _checked_passages(sources: _Sources, selection: dict) -> dict:
             sources.use(source_id)
         units.append({
             **{key: chosen[key] for key in ("unit_id", "language", "division", "element_key", "source_order")},
-            **{key: chosen[key] for key in ("printed_page", "facsimile_pdf_page") if key in chosen},
+            **{key: chosen[key] for key in ("printed_page", "facsimile_pdf_page", "kind", "part") if key in chosen},
             "content_id": "sha256:" + chosen["text_sha256"], "text": text, "text_sha256": chosen["text_sha256"],
             "text_edition_id": edition_id, "target_edition_id": edition_id,
             "transcription_kind": "witness-normalized-transcription", "diplomatic": False,

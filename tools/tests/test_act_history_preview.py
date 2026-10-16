@@ -14,9 +14,49 @@ from tools.tests import test_act_history_reception as reception
 
 
 ROOT = Path(__file__).resolve().parents[2]
-SCRATCH = ROOT / ".scratch/map-readability-revision/print-panels"
+SCRATCH = ROOT / ".scratch/stages-print"
 BROWSER = ROOT / "src/web/browser/history/history.js"
 NS = {"s": preview.NS}
+
+
+def stage_fixture():
+    """Constructed claims exercise presentation without pretending to be history."""
+    evidence = [{"source_id": "fixture-source", "locus": "constructed pages 1–2",
+                 "claim": "This fixture supports no historical claim."}]
+    stages = []
+    for identifier, label, start, end, status in (
+        ("state-a", "First constructed book state", 1500, 1500, "documented"),
+        ("state-b", "A bounded constructed revision", 1550, 1550, "documented"),
+        ("state-c", "An uncertain attestation date", 1590, 1610, "documented"),
+        ("state-undated", "An unpositioned state", None, None, "documented"),
+        ("state-lead", "A provisional state remains a lead", 1650, 1650, "provisional"),
+    ):
+        stages.append({"id": identifier, "tradition_id": "fixture-tradition", "label": label,
+                       "date_label": "unknown" if start is None else str(start) if start == end else f"{start}–{end}",
+                       "start_year": start, "end_year": end, "date_kind": "attestation", "status": status,
+                       "scope": "Only one constructed rubric.", "components": ["rubrics"],
+                       "witness_ids": [], "witness_label": "Constructed witness; not a real book",
+                       "summary": "A short rubric in a constructed state.", "text_coverage": "not-transcribed",
+                       "evidence": evidence, "limitations": "This is test data, not evidence.",
+                       "reception": "No community reception asserted."})
+    return {"schema": "triptych-eucharistic-stages/v1", "traditions": [
+        {"id": "fixture-tradition", "label": "Constructed tradition", "family": "fixture",
+         "scope": "One test tradition.", "coverage_note": "Deliberately incomplete."}],
+        "sources": [{"id": "fixture-source", "title": "Constructed primary description",
+                     "url": "https://example.org/constructed", "kind": "primary-act", "status": "inspected",
+                     "inspection": "A synthetic source used only in tests.", "checked_on": "2026-10-16",
+                     "limitations": "No real source was inspected."}], "stages": stages,
+        "transitions": [{"id": "change-ab", "from_stage": "state-a", "to_stage": "state-b",
+                         "kind": "revision", "status": "documented", "evidence_level": "primary-description",
+                         "summary": "The rubric adds a second bow after the prayer.", "components": ["rubrics"],
+                         "changes": [{"component": "rubrics", "before": "One bow before the prayer.",
+                                      "after": "A second bow after the prayer.", "locus_before": "first rubric",
+                                      "locus_after": "revised rubric", "evidence": evidence}], "evidence": evidence,
+                         "limitations": "Source-described, not text-collated.", "comparison_ids": [],
+                         "historical_parentage": "established", "git_ancestry": False, "text_inheritance": False}],
+        "gaps": [{"id": "fixture-gap", "tradition_id": "fixture-tradition", "period": "1550–1590",
+                  "missing": "No established link to the uncertain witness.", "next_source": "A missing constructed folio.",
+                  "consequence": "No connector is drawn across this gap."}], "limitations": []}
 
 
 class ActHistoryPreviewTests(unittest.TestCase):
@@ -211,6 +251,126 @@ class ActHistoryPreviewTests(unittest.TestCase):
         self.assertIn("A constructed decree of the receiving conference", evidence)
         self.assertIn("which is not a source", evidence)
         self.assertEqual(audit["reception_count"], 1)
+
+    def test_stage_appendix_preserves_change_evidence_and_unpositioned_limits(self):
+        history = stage_fixture()
+        parts = self.root / "stage-evidence"
+        parts.mkdir()
+        paths = preview._stage_evidence(history, parts, "fixture", {"state-a": ["H001"]},
+                                        "https://example.org/history?view=catalogue")
+        words = " ".join(" ".join(ET.parse(path).getroot().itertext()) for path in paths)
+        for phrase in ("One bow before the prayer.", "A second bow after the prayer.",
+                       "constructed pages 1–2", "primary-description", "Source-described, not text-collated.",
+                       "Historical parentage: established", "No Git ancestry or automatic text inheritance.",
+                       "No dated position is asserted.", "Status: provisional", "Text coverage: not-transcribed",
+                       "1590–1610 (not a duration of use)", "No connector is drawn across this gap.",
+                       "S001", "T001", "C001", "G001", "https://example.org/constructed"):
+            self.assertIn(phrase, words)
+        self.assertNotIn("text-collated revision", words)
+
+    def test_stage_evidence_missing_source_is_refused(self):
+        history = stage_fixture()
+        history["sources"] = []
+        with self.assertRaisesRegex(preview.PreviewError, "missing source"):
+            preview._stage_evidence(history, self.root, "fixture", {}, "")
+
+    def test_stage_keys_stay_in_source_order_and_dates_do_not_become_durations(self):
+        history = stage_fixture()
+        history["stages"].reverse()
+        keys = preview._stage_keys(history)
+        self.assertEqual(keys["stages"]["state-lead"], "S001")
+        self.assertEqual(keys["stages"]["state-a"], "S005")
+        options = preview._stage_requests(history)[0]
+        self.assertEqual(options["tradition"], "fixture-tradition")
+        self.assertLess(options["start"], 1500)
+        self.assertGreater(options["end"], 1650)
+
+    def test_chronology_is_default_and_draws_only_recorded_transitions(self):
+        history = stage_fixture()
+        output = self.root / "chronology-preview"
+        audit = preview.render_preview(plate_path=self.plate, spine=self.spine, out_dir=output,
+                                       browser_source=BROWSER, catalogue={"stage_history": history})
+        svg = ET.parse(output / "latin-missal-preview.svg").getroot()
+        self.assertEqual(audit["presentation"], "chronological-book-stages")
+        self.assertFalse(svg.findall('.//s:g[@data-network-group]', NS))
+        self.assertFalse(svg.findall('.//s:g[@data-station]', NS))
+        marks = svg.findall('.//s:g[@data-stage]', NS)
+        self.assertEqual({mark.get("data-stage") for mark in marks},
+                         {row["id"] for row in history["stages"] if row["start_year"] is not None})
+        for mark in marks:
+            circle = mark.find('s:circle', NS)
+            key_label = next(node for node in mark.findall('s:text', NS)
+                             if node.text == mark.get("data-stage-key"))
+            self.assertGreaterEqual(abs(float(key_label.get("x")) - float(circle.get("cx"))), 14)
+        unpositioned = svg.findall('.//s:g[@data-unpositioned-stage]', NS)
+        self.assertEqual([mark.get("data-unpositioned-stage") for mark in unpositioned], ["state-undated"])
+        transitions = svg.findall('.//s:path[@data-transition]', NS)
+        self.assertEqual([edge.get("data-transition") for edge in transitions], ["change-ab"])
+        self.assertEqual(len(svg.findall('.//s:path[@data-date-bounds="uncertainty-not-duration"]', NS)), 1)
+        words = " ".join(svg.itertext())
+        for phrase in ("years increase left to right", "The rubric adds a second bow after", "Provisional lead",
+                       "not duration of use", "not-transcribed", "primary description"):
+            self.assertIn(phrase, words)
+        details = svg.findall('.//s:g[@data-change-detail="change-ab"]', NS)
+        self.assertEqual(len(details), 1)
+        local_change = " ".join(details[0].itertext())
+        for phrase in ("Before: One bow before the prayer.", "After: A second bow after the prayer.",
+                       "C001", "first rubric"):
+            self.assertIn(phrase, local_change)
+        self.assertEqual(len(svg.findall('.//s:g[@data-stage-scope]', NS)), len(marks))
+        geometry = json.loads((output / "latin-missal-preview-parts/browser-geometry.json").read_text())
+        first_sheet = ET.parse(output / "latin-missal-preview-parts/chronology-001.svg").getroot()
+        self.assertIn("Traditions and dated sheets", " ".join(first_sheet.itertext()))
+        for path in (output / "latin-missal-preview-parts").glob("chronology-*.svg"):
+            page = ET.parse(path).getroot()
+            if page.findall('.//s:g[@data-stage]', NS):
+                self.assertEqual(page.get("width"), "420mm")
+                self.assertIn(page.get("height"), ("297mm", "594mm"))
+        model = geometry["chronology"][0]
+        by_id = {node["id"]: node for lane in model["lanes"] for node in lane["nodes"]}
+        self.assertEqual(by_id["state-b"]["changeLines"], [])
+        self.assertTrue(by_id["state-b"]["fullChangeLines"])
+        unit = (model["axis"]["x1"] - model["axis"]["x0"]) / (model["end"] - model["start"])
+        self.assertAlmostEqual(by_id["state-b"]["x"] - by_id["state-a"]["x"], 50 * unit)
+        self.assertAlmostEqual(by_id["state-c"]["xEnd"] - by_id["state-c"]["xStart"], 20 * unit)
+        self.assertEqual(audit["stage_count"], 5)
+        self.assertEqual(audit["documented_stages"], 4)
+        self.assertEqual(audit["provisional_stages"], 1)
+
+    def test_arabic_citations_keep_adjacent_latin_dates_and_numeric_ranges(self):
+        value = "C055 · عنوان عربي 2014–2020 / English title (27 August 2025)"
+        node = preview.text(ET.Element("g"), 0, 0, value)
+        self.assertIn("\u2069 / English title (27 August 2025)", node.text)
+        self.assertIn("\u20662014–2020\u2069", node.text)
+        self.assertEqual(node.text.translate(dict.fromkeys(map(ord, "\u2066\u2067\u2069"))), value)
+
+    def test_print_keeps_default_family_in_authored_recension_order(self):
+        history = stage_fixture()
+        history["traditions"] = [
+            {"id": "other", "family": "Other"},
+            {"id": "early", "family": "Primary"},
+            {"id": "fixture-tradition", "family": "Primary"},
+            {"id": "later", "family": "Primary"},
+        ]
+        history["default_tradition_id"] = "fixture-tradition"
+        self.assertEqual([row["tradition"] for row in preview._stage_requests(history)],
+                         ["early", "fixture-tradition", "later", "other"])
+
+    def test_long_chronology_uses_windows_without_duplicating_uncertain_states(self):
+        history = stage_fixture()
+        early = copy.deepcopy(history["stages"][0])
+        early.update(id="early", label="A genuinely early attestation", date_label="700–750",
+                     start_year=700, end_year=750)
+        history["stages"].insert(0, early)
+        windows = preview._stage_requests(history, {"fixture-tradition"})
+        self.assertGreater(len(windows), 1)
+        geometry = preview.browser_geometry(self.spine, BROWSER, {"stage_history": history}, windows)
+        nodes = [node for model in geometry["chronology"] for lane in model["lanes"] for node in lane["nodes"]]
+        self.assertEqual(len(nodes), len({node["id"] for node in nodes}))
+        uncertain = next(node for node in nodes if node["id"] == "state-c")
+        self.assertFalse(uncertain["clippedStart"])
+        self.assertFalse(uncertain["clippedEnd"])
+        self.assertLess(windows[0]["end"], windows[1]["start"])
 
 
 if __name__ == "__main__":

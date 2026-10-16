@@ -3589,3 +3589,34 @@ title = "Liturgy of St Basil (modern Greek section)"
 locator = "1896 volume I, section printed pp. 400–411 according to source note p. 308/PDF 414. Checked anamnesis/oblation: printed 405.18–22,24, PDF 511. Checked invocation over gifts: printed 405.29–33 and 406.1–10, PDF 511–512."
 extent_unresolved = "The complete modern section has not been collated. Checked textual coverage comprises the two specified priestly prayer units; rubrics, interventions, apparatus and the remaining liturgy are outside the transcriptions. The p. 406 Metabalon footnote is separately registered as apparatus, not included in the prayer, and the earlier Barberini/Grottaferrata section is not included here."
 basis = "Registered passage byzantine-modern-text-sources and the paired basil-anamnesis-oblation / basil-invocation-gifts text and facsimile passages under edition.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1. The inspected source note identifies the Venice 1869 Euchologion, pp. 80–97, as the source for these modern Basil prayers."
+
+[[containers]]
+id = "work.armenian-church.armenian-eucharistic-books-bound-volume"
+manifest_sha256 = "a9072fb2ee12720a609fc06801144fed450a672aa3abfeeed057dc71d1139238"
+status = "partial"
+basis = "The retained 96-page provider sequence contains separate Latin Codex, Armenian Lyturgia and Ministerium title sections. Registered source segments bind their exact page ranges; title and boundary leaves were inspected, and all 96 provider images are preserved with hashes."
+unresolved = "Physical-volume completeness is unverified. Inner prayer, Office and hymn-correction constituents have not been exhaustively enumerated or transcribed. Complementary components and a Latin expression do not represent successive reforms."
+
+[[containers.constituents]]
+author = "Armenian Church liturgical tradition; Latin expression printed by Propaganda Fide"
+title = "Codex mysterii missae Armenorum"
+work_id = "work.armenian-church.lyturgia-armena"
+locator = "1677 bound-volume PDF pages 1–40; segment.armenian-church.lyturgia-armena.1677-rome-propaganda-latin.bound-volume-pages-1-40"
+extent_unresolved = "The printed Latin portion is bounded; exact equivalence to the Armenian expression is not established by title or binding."
+basis = "Latin title and final printed p. 37, followed by a blank separating leaf; provider sequence preserved."
+
+[[containers.constituents]]
+author = "Armenian Church liturgical tradition"
+title = "Lyturgia Armena, Armenian expression"
+work_id = "work.armenian-church.lyturgia-armena"
+locator = "1677 bound-volume PDF pages 41–66; segment.armenian-church.lyturgia-armena.1677-rome-propaganda-armenian.bound-volume-pages-41-66"
+extent_unresolved = "Identified celebrant book; no complete transcription or unchanged continuity to 1823 is claimed."
+basis = "Native title RA1-PP3 and the separately titled Ministerium beginning at the next segment."
+
+[[containers.constituents]]
+author = "Armenian Church liturgical tradition"
+title = "Ministerium Missae"
+work_id = "work.armenian-church.ministerium-missae"
+locator = "1677 bound-volume PDF pages 67–96; segment.armenian-church.ministerium-missae.1677-rome-propaganda-armenian.bound-volume-pages-67-96"
+extent_unresolved = "Clerical directions and appended Office/hymn corrections remain untranscribed; their internal constituent census is open."
+basis = "Separate native title at RA1-PA1; provider sequence reaches RA1-PA30."

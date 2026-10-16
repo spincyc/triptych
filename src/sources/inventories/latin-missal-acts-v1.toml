@@ -2543,9 +2543,14 @@ The 1550 Venice printing, 608 images. A second Internet Archive item of the SAME
 """
 citation = "See the witness record 1550-missale-praedicatorum-giunta for the imprint, the extent and the repository."
 attested_in = ["1550-missale-praedicatorum-giunta"]
-read_from = "not-read"
-effect = "No departure. No unit of this use has been read, so this station changes nothing in the tree."
+read_from = "page-image"
+effect = "No text departure is installed in this recovered act tree. A bounded selected collect is now independently transcribed and compared in the separate book-stage and text-corpus projections."
 effect_established = false
+source_library_work_id = "work.order-of-preachers.missale"
+source_library_edition_id = "edition.order-of-preachers.missale.1550-venice"
+source_library_passage_ids = ["passage.order-of-preachers.missale.1550-venice.suscepimus-collect"]
+source_library_checked_text_artifact_ids = ["artifact.order-of-preachers.missale.1550-venice.suscepimus-collect-checked-latin-d5fb591c"]
+locus = "Title and bounded selected source pages independently inspected; exact loci, hashes and normalization are retained by passage.order-of-preachers.missale.1550-venice.suscepimus-collect. This is not complete-book collation."
 
 [[acts]]
 id = "carmelitarum-venetiis-1574"
@@ -2565,9 +2570,14 @@ The 1574 Venice printing by the Giunta press, 653 images. Distinct in press and 
 """
 citation = "See the witness record 1574-missale-carmelitarum-venetiis for the imprint, the extent and the repository."
 attested_in = ["1574-missale-carmelitarum-venetiis"]
-read_from = "not-read"
-effect = "No departure. No unit of this use has been read, so this station changes nothing in the tree."
+read_from = "page-image"
+effect = "No text departure is installed in this recovered act tree. A bounded selected calendar row is now independently transcribed and compared in the separate book-stage and text-corpus projections."
 effect_established = false
+source_library_work_id = "work.carmelite-order.missale"
+source_library_edition_id = "edition.carmelite-order.missale.1574-venice-giunta"
+source_library_passage_ids = ["passage.carmelite-order.missale.1574-venice-giunta.october-05-calendar-entry"]
+source_library_checked_text_artifact_ids = ["artifact.carmelite-order.missale.1574-venice-giunta.october-05-calendar-entry-checked-latin-f0b5c2c2"]
+locus = "Title and bounded selected source pages independently inspected; exact loci, hashes and normalization are retained by passage.carmelite-order.missale.1574-venice-giunta.october-05-calendar-entry. This is not complete-book collation."
 
 [[acts]]
 id = "cartusiense-spirae-1496"
@@ -2778,23 +2788,20 @@ recognitum & emendatum, & auctoritate Apostolica approbatum & confirmatum`
 [verified].
 """
 attested_in = ["1604-missale-praedicatorum-xavierre"]
-read_from = "not-read"
-locus = "The title page as transcribed in the Internet Archive metadata record, fetched here. The book itself was not opened."
+read_from = "page-image"
+locus = "Title and bounded selected source pages independently inspected; exact loci, hashes and normalization are retained by passage.order-of-preachers.missale.1604-rome-xavierre.suscepimus-collect. This is not complete-book collation."
 date_note = """
 The year is the printing's, 1604, and the precision is `year`. The instrument
 carries no date of its own on the title page, and no day or month is invented to
 make it sort.
 """
-effect = "No departure. No unit of this use has been read."
+effect = "No text departure is installed in this recovered act tree. A bounded selected collect is now independently transcribed and compared in the separate book-stage and text-corpus projections."
 effect_established = false
-effect_note = """
-`effect_established = false` on a station whose instrument IS legible, which is
-worth saying plainly. The act certainly did something -- it says so, in the words
-`recognitum & emendatum` -- and this file has read no unit of the Dominican rite
-on either side of it, so what it did is unestablished here. An act that is
-citable and whose effect is unknown is a different state from an act that
-changed nothing, and the two fields keep them apart.
-"""
+effect_note = "The 1604 printed witness supports a bounded Suscepimus formulary comparison with 1550. Its reprinted authorization and the witness publication are distinct events; no complete act-level reconstruction or new inheritance permission is established here."
+source_library_work_id = "work.order-of-preachers.missale"
+source_library_edition_id = "edition.order-of-preachers.missale.1604-rome-xavierre"
+source_library_passage_ids = ["passage.order-of-preachers.missale.1604-rome-xavierre.suscepimus-collect"]
+source_library_checked_text_artifact_ids = ["artifact.order-of-preachers.missale.1604-rome-xavierre.suscepimus-collect-checked-latin-72fc670a"]
 
 [[acts]]
 id = "carmelitarum-capitulum-1621"
@@ -2817,11 +2824,15 @@ restitutum. Et reuerendissimi prioris generalis magistri Sebastiani Fantoni
 Romani iussu` [verified].
 """
 attested_in = ["1621-missale-carmelitarum-venetiis"]
-read_from = "not-read"
-locus = "The title page as transcribed in the Internet Archive metadata record, fetched here."
+read_from = "page-image"
+locus = "Title and bounded selected source pages independently inspected; exact loci, hashes and normalization are retained by passage.carmelite-order.missale.1621-venice-giunta.october-05-calendar-entry. This is not complete-book collation."
 date_note = "The year is the printing's, 1621, and the precision is `year`: the chapter's own date is not on the title page and is not invented."
-effect = "No departure. No unit of this use has been read."
+effect = "No text departure is installed in this recovered act tree. A bounded selected calendar row is now independently transcribed and compared in the separate book-stage and text-corpus projections."
 effect_established = false
+source_library_work_id = "work.carmelite-order.missale"
+source_library_edition_id = "edition.carmelite-order.missale.1621-venice-giunta"
+source_library_passage_ids = ["passage.carmelite-order.missale.1621-venice-giunta.october-05-calendar-entry"]
+source_library_checked_text_artifact_ids = ["artifact.carmelite-order.missale.1621-venice-giunta.october-05-calendar-entry-checked-latin-3033d681"]
 
 [[acts]]
 id = "cartusiense-capitulum-1679"

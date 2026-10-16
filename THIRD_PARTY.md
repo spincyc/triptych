@@ -368,7 +368,7 @@ No contemporary prayer translation is reproduced in the study.
 ## Historical Eastern service-book facsimiles
 
 The missal-history collection retains ULB Bonn digitizations of six historical
-books: the Syriac Catholic missal (1881), Malabar preparation for Qurbana (1898),
+books: the Syriac Catholic auxiliary Mass service (diaconicon, 1881), Malabar preparation for Qurbana (1898),
 Chaldean missal and proper Masses (1901), Malabar *Ordo Chaldaicus* (1906), and
 Maronite *Qurbono* (1908). Their exact editions, download locations, hashes,
 bounded inspection and rights evidence are recorded under
@@ -435,6 +435,38 @@ These font programs likewise retain their own license rather than CC BY 4.0.
 The PDFs embed subsetted font programs. TeX packages and other build
 dependencies are external software governed by their own licenses; they are
 not vendored merely because the build invokes them.
+
+## Additional missal chronology witnesses
+
+The chronology research retains the exact Sharfeh 1922 Syriac Catholic
+celebrant missal PDF from ULB Bonn and the Medici Maronite printing completed
+in 1594, whose native title bears 1592, from Internet Archive's Google-origin
+copy. Their edition and artifact manifests record title inspection, exact
+bytes, page counts, source notices and U.S. public-domain bases. The 1922 book
+is separate from the auxiliary Mosul 1881 diaconicon. Acquiring either complete
+provider PDF does not establish a complete checked transcription.
+
+Armenian 1642, 1677 and 1823 witnesses are retained as exact provider-image ZIP
+masters and lossless viewing PDFs. All 332 offered page IDs are accounted for;
+physical-volume completeness remains unverified. The 1677 bound volume contains
+Latin and Armenian expressions of the celebrant book and a complementary
+*Ministerium*. Each constituent has a separate source identity and page range.
+Artifact manifests state the mechanical-facsimile and historical U.S.
+public-domain bases, preserve Google marks and notices, and distinguish them
+from project packaging. They do not assert a general Google redistribution
+licence or place Google's material under CC BY 4.0.
+
+Bounded Cistercian, Dominican and Carmelite comparisons retain selected primary
+page images and independently checked historical Latin selections. These are
+partial units, not complete missals. The BSB images of the Cistercian 1606 book
+retain the provider's stated noncommercial condition and attribution; their
+artifact records use permission status rather than claiming unrestricted
+public-domain images. The underlying historical Latin transcriptions have
+their own recorded public-domain basis. FIDES and Internet Archive source
+notices, exact image hashes, normalization and transcription scope are recorded
+per artifact. All these third-party images and historical texts remain excluded
+from Triptych's CC BY 4.0 licence. Modern research PDFs and protected modern
+service-book bodies used during research are not imported by these registrations.
 
 ## Reuse and Contributions
 

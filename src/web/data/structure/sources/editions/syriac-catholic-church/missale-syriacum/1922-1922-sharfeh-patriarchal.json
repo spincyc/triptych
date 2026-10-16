@@ -1,0 +1,94 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "scan-pdf",
+   "byte_size": 69819552,
+   "edition_owned": true,
+   "id": "artifact.syriac-catholic-church.missale-syriacum.1922-sharfeh-patriarchal.bonn-scan-pdf-40a6d45f",
+   "media_type": "application/pdf",
+   "notes": "Complete provider PDF retained byte-for-byte; possession of all 343 PDF pages does not establish that every original leaf survives or that the whole book has been read. Registration inspection is bounded to PDF pages 6, 8–9, 17–20 and 339, using page rasters. Latin title/imprint, patriarchal prescription and the editorial revision account were read directly; the native title leaf was visually inspected without a complete diplomatic transcription. The PDF's page order is the provider's order and differs from printed pagination and right-to-left reading order. No checked liturgical transcription or complete collation is registered by this acquisition.",
+   "page_count": 343,
+   "retrieved": "2026-10-16",
+   "rights": "public-domain",
+   "rights_basis": "Historical 1922 printing, public domain in the United States by expired publication term. ULB Bonn identifies this exact digitized item with Public Domain Mark 1.0 at https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3097402 (License/Rightsstatement, checked 2026-10-16), linking https://creativecommons.org/publicdomain/mark/1.0/. The mark records a public-domain assessment, not a new copyright licence. The retained artifact is the library's mechanical reproduction of the historical pages, including its identification cover. No modern critical edition or translation is imported. These source bytes are not offered under Triptych's CC BY 4.0 licence.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3097402",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": "Ignatius Ephrem II Rahmani, Patriarch of Antioch of the Syrians, addresses the patriarchate at printed pp. 3–4 (PDF pages 8–9). His decree, dated Beirut, 8 December 1922, prescribes this edition alone as authentic throughout his patriarchate and wherever its rite is observed. This is a historical prescription, not a claim of present-day authorization.",
+  "date": "1922",
+  "editors": [],
+  "id": "edition.syriac-catholic-church.missale-syriacum.1922-sharfeh-patriarchal",
+  "jurisdiction": "Syriac Catholic Church",
+  "language": "syr",
+  "publication": "Typis Patriarchalibus in Seminario Sciarfensi de Monte Libano, 1922.",
+  "title": "Missale iuxta ritum Ecclesiae Apostolicae Antiochenae Syrorum auctoritate recognitum",
+  "translators": [],
+  "year": 1922
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.syriac-catholic-church.missale-syriacum.1922-sharfeh-patriarchal.bonn-scan-pdf-40a6d45f",
+   "artifact_type": "scan-pdf",
+   "id": "passage.syriac-catholic-church.missale-syriacum.1922-sharfeh-patriarchal.revision-description",
+   "locus": "Latin editorial account, printed pp. 12–15, PDF pages 17–20",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "This passage records neither a transcription nor line bounds, so the corpus identifies where it is without holding its words.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3097402",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-16",
+   "withheld": "no-transcription"
+  },
+  {
+   "artifact_id": "artifact.syriac-catholic-church.missale-syriacum.1922-sharfeh-patriarchal.bonn-scan-pdf-40a6d45f",
+   "artifact_type": "scan-pdf",
+   "id": "passage.syriac-catholic-church.missale-syriacum.1922-sharfeh-patriarchal.title-and-patriarchal-prescription",
+   "locus": "Latin title and imprint, PDF page 6; patriarchal address and prescription, printed pp. 3–4, PDF pages 8–9",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "This passage records neither a transcription nor line bounds, so the corpus identifies where it is without holding its words.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3097402",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-16",
+   "withheld": "no-transcription"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Ketābā de-taksā de-qūrrābā",
+   "Syriac Catholic altar missal"
+  ],
+  "author": "Syriac Catholic Church liturgical tradition",
+  "category": "liturgical-book",
+  "description": "The Syriac Catholic celebrant's Eucharistic book, represented here by the patriarchal Sharfeh edition of 1922. It is a separate intellectual book from the auxiliary diaconicon represented by the Mosul 1881 witness registered under the stable legacy work ID work.syriac-catholic-church.missale.",
+  "id": "work.syriac-catholic-church.missale-syriacum",
+  "languages": [
+   "syr",
+   "ar",
+   "la"
+  ],
+  "title": "Missale iuxta ritum Ecclesiae Apostolicae Antiochenae Syrorum"
+ }
+}

@@ -1,0 +1,681 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-stages",
+  "dossier_id": "hispano-mozarabic",
+  "title": "Hispano-Mozarabic manuscript witnesses, printed transmission and modern critical reform",
+  "traditions": [
+    {
+      "id": "hispanic-manuscripts-unassigned",
+      "label": "Old Hispanic manuscript witnesses; recension unassigned",
+      "family": "Hispanic / Mozarabic",
+      "scope": "Identified medieval witnesses whose exact A/B classification has not been established in this dossier.",
+      "coverage_note": "The British Library witness is fragmentary and composite. Its geographic origin does not by itself establish a recension or ancestry for the printed missal."
+    },
+    {
+      "id": "hispanic-tradition-a",
+      "label": "Hispanic manuscript tradition A",
+      "family": "Hispanic / Mozarabic",
+      "scope": "The manuscript tradition represented, in the 1988 Praenotanda, by most northern witnesses and the Santa Eulalia scriptorium at Toledo.",
+      "coverage_note": "Distinct from B, especially in reading arrangements and parts of the Mass structure. No individually collated A manuscript stage is yet admitted here. The Praenotanda attribution to Julian of Toledo is an historical hypothesis, not an independently dated stage."
+    },
+    {
+      "id": "hispanic-tradition-b-print",
+      "label": "Tradition B and its Toledan printed transmission",
+      "family": "Hispanic / Mozarabic",
+      "scope": "The Saints Justa and Rufina manuscript tradition as represented through the 1500 printed compilation and its later editions.",
+      "coverage_note": "B is not a corrupt form of A. The 1500 compilation transmits B through editorial work and Roman devotional additions; many manuscript exemplars used by its editors are lost. The print is not an intact seventh-century missal."
+    },
+    {
+      "id": "hispano-mozarabic-critical",
+      "label": "Modern Hispano-Mozarabic critical corpus",
+      "family": "Hispanic / Mozarabic",
+      "scope": "Modern missal and complementary lectionary assembled from both manuscript traditions for Catholic Hispano-Mozarabic worship.",
+      "coverage_note": "The 1991 Temporal and 1994 complementary volume form one missal corpus. Approval dates, separate Order volumes and Liber Commicus publications do not create successive replacements of the whole missal."
+    }
+  ],
+  "sources": [
+    {
+      "id": "hispano-mozarabic-bl30846",
+      "title": "British Library, Add MS 30846: two incomplete copies of the Liber misticus",
+      "url": "https://searcharchives.bl.uk/catalog/040-002022567",
+      "kind": "institutional-catalogue",
+      "inspection": "Read complete institutional description, dates, contents, interleaved folio groups, provenance and bibliography. No manuscript images or complete transcription acquired.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Catalogue establishes a composite witness and approximate date, not textual collation or an A/B classification."
+    },
+    {
+      "id": "hispano-mozarabic-1755-book",
+      "title": "Missale mixtum secundum regulam beati Isidori dictum Mozarabes; Alexander Lesley, Rome 1755",
+      "url": "https://archive.org/details/bub_gb_hAJaQabODUYC",
+      "kind": "primary-book",
+      "inspection": "Acquired complete 761-page Florence/Google PDF. Image-inspected title (PDF 8), Advent IV pp 15–16 (PDF 134–135), Benedictio panis p 471 (PDF 591), reprinted 1500 colophon (PDF 592), Appendix prima p 621 (PDF 739). Other pages searched only as OCR leads.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Complete file acquisition is not complete transcription or complete page review. Scan resolution and OCR are poor. The original 1500 colophon is mediated through this reprint; NYPL 408-image copy is incomplete and was not substituted for this copy."
+    },
+    {
+      "id": "hispano-mozarabic-1804-book",
+      "title": "Missale Gothicum, Rome: Fulgonius, 1804; BSB Res/2 Liturg. 222 m",
+      "url": "https://www.digitale-sammlungen.de/en/view/bsb10869679",
+      "kind": "primary-book",
+      "inspection": "Inspected BSB IIIF manifest (854 canvases), title canvas 7; water blessing p XV and bread blessing p XVI (canvases 21–22); Temporal cols 1–2 (canvas 23), Advent IV cols 39–40 (canvas 42); Arévalo Illustratio cols 1145–1146 and Lesley dissertation cols 1147–1148 (canvases 667–668).",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Complete-book download service was attempted first and timed out after 60 seconds with incomplete HTML; only listed IIIF page images were acquired. No claim of complete collation. IIIF manifest records NoC-NC/1.0; do not treat hosted scan as unrestricted public-domain payload."
+    },
+    {
+      "id": "hispano-mozarabic-1988",
+      "title": "Jordi Pinell, Missale Hispano-Mozarabicum, decree and Praenotanda; Notitiae 24 (1988), 670–727",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-24-%281988%29/Notitiae-267-1988.pdf",
+      "kind": "primary-act",
+      "inspection": "Acquired entire official issue. Image-inspected pp 670–672, 678–679, 710–711, 721–724 and 729: editorial introduction, signed interim confirmation, manuscript traditions, order of Creed/fraction, composition and changes, decree summary.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Descriptions are authoritative contemporary reform evidence, not a collation of the final 1991/1994 Latin books. Header p 670 gives Prot 203/88 while decree summary p 729 gives 203/86; retain discrepancy rather than normalize silently. Historical origin hypotheses in §§ 15–16 require independent scholarship."
+    },
+    {
+      "id": "hispano-mozarabic-2014",
+      "title": "Gabriel Ramis Miquel, La liturgia Hispano-Mozárabe. Situación actual, Notitiae 50 (2014), 503–512",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/2010/notitiae-50-%282014%29/Notitiae-577-578-2014.pdf",
+      "kind": "official-retrospective",
+      "inspection": "Acquired complete official issue; image-inspected pp 506–507, including account of commission work, Ordo reconstruction, virgin formularies, omitted needs formularies and confirmation.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Commission account does not list each altered formula or omitted Mass. Its broad 1991–1994 publication span for both sets conflicts with the precise 1995 saints-lectionary imprint recorded in 1996; use the precise record for that volume. Breviary revision explicitly lay outside this work."
+    },
+    {
+      "id": "hispano-mozarabic-1995-bibliography",
+      "title": "Notitiae 31 (1995), 342: Missale Hispano-Mozarabicum bibliographical notice",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1990/notitiae-31-%281995%29/Notitiae-347-1995.pdf",
+      "kind": "primary-act",
+      "inspection": "Image-inspected entire p 342 in acquired official issue: Latin missal, CEE/Toledo/Coeditores litúrgicos, Barcelona 1994; confirmed 23 January 1994, Prot 203/86 and CD 763/92.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Notice identifies a published book and confirmation, but prints neither full 1994 decree nor table of contents; no commencement date inferred."
+    },
+    {
+      "id": "hispano-mozarabic-1996-bibliography",
+      "title": "Notitiae 32 (1996), 765: Liber Commicus, Proprium de Sanctis",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1990/notitiae-32-%281996%29/Notitiae-363-1996.pdf",
+      "kind": "primary-act",
+      "inspection": "Image-inspected entire p 765 in acquired issue: Latin Liber Commicus (Missale Hispano-Mozarabicum), Proprium de Sanctis, CEE/Toledo 1995; confirmation 23 January 1994, Prot 203/86 and CD 763/92.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Saints-volume identity and year only; full lectionary content and exact Temporal-volume imprint not directly inspected."
+    },
+    {
+      "id": "hispano-mozarabic-2010-interview",
+      "title": "Marta Lago interviews Félix María Arocena, Quei 2584 modi per celebrare Dio; L’Osservatore Romano, 16 May 2010",
+      "url": "https://www.vatican.va/news_services/or/or_quo/interviste/2010/111q04b1.html",
+      "kind": "official-retrospective",
+      "inspection": "Read complete official HTML interview, especially paragraph beginning Ancora disponibile solo in latino, naming first tome 1991 and second 1994.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Specialist retrospective corroborates volume years; does not reproduce title leaves or detailed contents. Concordance corrections are scholarly apparatus, not another promulgated missal version."
+    },
+    {
+      "id": "hispano-mozarabic-2019-lorenzana",
+      "title": "Juan Manuel Sierra López, El Cardenal Lorenzana y el Rito Hispano-Mozárabe; Crónica Mozárabe 98 (May 2019)",
+      "url": "https://www.mozarabesdetoledo.es/Cr%C3%B3nicaMoz%C3%A1rabe_98.pdf",
+      "kind": "scholarship",
+      "inspection": "Acquired complete bulletin; image-inspected pp 18–19: posthumous 1804 publication, typographical corrections, example col 40 versus 1500 f XVIra, relocation of Benedictio panis, dependency on Lesley.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "The cited 1500 rubric was not directly acquired. Do not claim a 1500→1804 textual collation; the corresponding 1755 p 16 rubric already agrees with 1804 col 40. The bread blessing relocation was independently checked in 1755 and 1804."
+    },
+    {
+      "id": "hispano-mozarabic-1500-lead",
+      "title": "BnF Gallica, Missale mixtum 1500, Arsenal FOL-T-742; ISTC im 00732000",
+      "url": "https://gallica.bnf.fr/ark:/12148/bpt6k8728875t",
+      "kind": "institutional-catalogue",
+      "inspection": "Attempted Gallica IIIF manifest; HTTP 403. ISTC URL returned bot challenge. Existing repository identity retained, but fresh direct 1500 page inspection not achieved.",
+      "checked_on": "2026-10-16",
+      "status": "lead",
+      "limitations": "Lead only; do not use current blocked access as an inspected source or full-text acquisition."
+    }
+  ],
+  "stages": [
+    {
+      "id": "hispano-mozarabic-manuscript-bl30846",
+      "tradition_id": "hispanic-manuscripts-unassigned",
+      "label": "Fragmentary Old Hispanic Mass and Office books",
+      "date_label": "c. 1000; catalogue bounds 975–1025",
+      "start_year": 975,
+      "end_year": 1025,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Two interleaved incomplete Libri mistici, Easter through Pentecost; not a complete annual missal.",
+      "components": [
+        "propers",
+        "lectionary",
+        "chant"
+      ],
+      "witness_ids": [
+        "western:old-hispanic-bl30846"
+      ],
+      "witness_label": "British Library Add MS 30846",
+      "summary": "The two-column manuscript occupies ff 1–6, 25–56, 75–87; the single-column manuscript ff 7–24, 57–74, 88–175. The catalogue records numerous gaps, a reused passionary fragment at f 173 and an incomplete later addition of northern Visigothic neumes.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "hispano-mozarabic-bl30846",
+          "locus": "Date; Contents; Decoration; Origin",
+          "claim": "Identifies two incomplete Mass/Office manuscripts, c 1000, and their present interleaving."
+        }
+      ],
+      "limitations": "Catalogue-based state; no exact A/B assignment, full reading cycle reconstruction, chant realization or descendant claim. The bounds date the manuscripts rather than the duration of rite use.",
+      "reception": "Historical Old Hispanic liturgical witness associated with the Burgos/Silos region; neither its survival nor provenance establishes a modern Catholic reception decree."
+    },
+    {
+      "id": "hispano-mozarabic-1500",
+      "tradition_id": "hispanic-tradition-b-print",
+      "label": "Cisneros’s printed Toledan missal",
+      "date_label": "9 January 1500: printed-colophon date",
+      "start_year": 1500,
+      "end_year": 1500,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Latin printed Mass book compiling the Toledan B tradition under Alfonso Ortiz; whole-book identity, with order evidence supplied by official retrospectives.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "rubrics",
+        "calendar",
+        "lectionary",
+        "chant"
+      ],
+      "witness_ids": [
+        "western:mozarabic-1500"
+      ],
+      "witness_label": "Missale mixtum secundum regulam beati Isidori dictum Mozarabes; Toledo 1500",
+      "summary": "The print consolidates B-based materials used by the Saints Justa and Rufina community. Its Order retains Creed before fraction and Lord’s Prayer, while adding Roman devotional material to Hispanic formulas. The printed compilation is an editorial state with partly lost manuscript exemplars.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "hispano-mozarabic-1988",
+          "locus": "pp 678–679 §§ 15–19; pp 710–711 § 117",
+          "claim": "Distinguishes A/B; attributes printed books to B; names the 1500 missal and its retained Creed/fraction sequence."
+        },
+        {
+          "source_id": "hispano-mozarabic-1755-book",
+          "locus": "Unnumbered reprinted colophon after p 471, PDF 592",
+          "claim": "Reprints the completion date 9 January 1500, Toledo printer and Ortiz’s role."
+        },
+        {
+          "source_id": "hispano-mozarabic-2014",
+          "locus": "p 506",
+          "claim": "Describes the 1500 Ordo as Hispanic formulas adapted to a Roman Toledan order with priestly apologies."
+        }
+      ],
+      "limitations": "Exact day is currently inspected through 1755’s reprinted colophon, not the 1500 original. This dossier has no full 1500 text and no quantified inventory of additions. The Roman-source dating differs in emphasis between 1988 (thirteenth-century copies) and 2014 (fifteenth-century usage); no false reconciliation.",
+      "reception": "Cisneros established the Corpus Christi chapel for daily Mass and Office; the 1988 account also notes earlier parish use. No claim that every manuscript or parish followed this printed recension."
+    },
+    {
+      "id": "hispano-mozarabic-1755",
+      "tradition_id": "hispanic-tradition-b-print",
+      "label": "Lesley’s annotated republication",
+      "date_label": "1755: Rome imprint",
+      "start_year": 1755,
+      "end_year": 1755,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Republication with extensive historical preface, explanatory notes and appendices; representative liturgical pages and terminal blessing checked.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "rubrics",
+        "calendar",
+        "lectionary",
+        "chant"
+      ],
+      "witness_ids": [
+        "latin-missal:mozarabicum-lesley-1755"
+      ],
+      "witness_label": "Missale mixtum, Alexander Lesley; Rome, Monaldini / typis Joannis Generosi Salomoni, 1755",
+      "summary": "Lesley gives the inherited printed missal a scholarly apparatus. The inspected body includes Advent IV’s variable euchology and blessing; Benedictio panis stands at p 471 before the original colophon and later notes. Appendix prima prints a Mass attributed to St Pelagius from Sandoval; an appendix is not automatically part of the prescribed liturgical body.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "hispano-mozarabic-1755-book",
+          "locus": "Title PDF 8; pp 15–16; 471; 621",
+          "claim": "Identifies edition, sampled Mass body, terminal bread blessing and scholarly appendix."
+        },
+        {
+          "source_id": "hispano-mozarabic-1988",
+          "locus": "p 679 § 19",
+          "claim": "Calls 1755 a re-edition with Lesley’s presentation and explanatory notes; identifies PL 85 as a reproduction of it."
+        }
+      ],
+      "limitations": "No whole-body 1500/1755 collation and no established substantive ritual revision are claimed. Florence PDF acquired in full; text_coverage remains not-transcribed because no new checked canonical text has been bound to the stage.",
+      "reception": "A scholarly republication of the Toledan printed tradition. Its publication alone does not demonstrate substitution in every celebrating community."
+    },
+    {
+      "id": "hispano-mozarabic-1804",
+      "tradition_id": "hispanic-tradition-b-print",
+      "label": "Lorenzana–Arévalo corrected missal",
+      "date_label": "1804: Rome imprint",
+      "start_year": 1804,
+      "end_year": 1804,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Corrected edition of the inherited printed missal, with relocated blessing and reused/augmented scholarly apparatus.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "rubrics",
+        "calendar",
+        "lectionary",
+        "chant"
+      ],
+      "witness_ids": [
+        "western:mozarabic-1804"
+      ],
+      "witness_label": "Missale Gothicum secundum regulam beati Isidori hispalensis episcopi; Rome, Fulgonius 1804; BSB bsb 10869679",
+      "summary": "Arévalo completed Lorenzana’s posthumous edition. The title calls it recognized and reprinted; Arévalo explains his reuse of Lesley’s dissertation and notes, addition of his own notes and attempted correction of faulty or obscure readings, with further manuscript collation left to readers who had access. Benedictio panis now precedes the Temporal at p XVI.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "hispano-mozarabic-1804-book",
+          "locus": "Title canvas 7; p XVI canvas 22; cols 1145–1148 canvases 667–668",
+          "claim": "Directly establishes imprint, moved blessing and editor’s account of relation to 1755."
+        },
+        {
+          "source_id": "hispano-mozarabic-1988",
+          "locus": "pp 670; 679 § 19",
+          "claim": "Calls 1804 a corrected edition and reports it as the book then in use for daily Toledo chapel celebration."
+        }
+      ],
+      "limitations": "Selected pages checked after complete-download failure; no full-lineage or exhaustive text-change count. Do not confuse it with PL 85’s 1862 reprint of 1755.",
+      "reception": "Contemporary 1988 reform introduction reports daily use of the 1804 book in Toledo’s Mozarabic chapel. This attests use in 1988; it does not establish a universal 1804 effective date or uninterrupted use everywhere."
+    },
+    {
+      "id": "hispano-mozarabic-1991-1994",
+      "tradition_id": "hispano-mozarabic-critical",
+      "label": "Critical missal incorporating both traditions",
+      "date_label": "1991 first tome; 1994 complementary second tome",
+      "start_year": 1994,
+      "end_year": 1994,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Completed complementary Latin missal corpus, positioned at the second tome’s 1994 publication; first tome published in 1991. Calendar, revised Order, Temporal, saints’ Proper/Common, deceased and votive Masses; readings and chants drawn from both traditions.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "rubrics",
+        "calendar",
+        "lectionary",
+        "chant"
+      ],
+      "witness_ids": [
+        "western:hispano-mozarabic-1991-1994"
+      ],
+      "witness_label": "Missale Hispano-Mozarabicum, CEE / Archdiocese of Toledo, 1991 and 1994",
+      "summary": "The reform retains B’s Creed–fraction–Lord’s Prayer order but reconstructs the Order with A evidence, removes inherited Roman devotional additions and supplies optional quiet prayers from the Hispanic Liber ordinum. Both traditions expand the readings, chant texts and euchology; selected celebrations have Year I/II variants, sometimes including Triduum structure. Latin readings use the Neovulgate.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "hispano-mozarabic-1988",
+          "locus": "pp 721–724 §§ 143–156",
+          "claim": "Defines the corpus and concrete reform operations."
+        },
+        {
+          "source_id": "hispano-mozarabic-1988",
+          "locus": "p 672 decree; p 729 summary",
+          "claim": "17 July 1988 is interim confirmation of Praenotanda, Order and Temporal pending remaining parts; not a complete-missal publication date."
+        },
+        {
+          "source_id": "hispano-mozarabic-1995-bibliography",
+          "locus": "p 342 Hispania notice",
+          "claim": "Records 1994 missal and 23 January 1994 confirmation, Prot 203/86 and CD 763/92."
+        },
+        {
+          "source_id": "hispano-mozarabic-2010-interview",
+          "locus": "Paragraph beginning Ancora disponibile solo in latino",
+          "claim": "Explicitly identifies first volume 1991 and second 1994."
+        },
+        {
+          "source_id": "hispano-mozarabic-2014",
+          "locus": "pp 506–507",
+          "claim": "Describes commission changes and final confirmation."
+        }
+      ],
+      "limitations": "No protected modern full book was acquired or transcribed. Change evidence is primary-description, not line-by-line collation. The 1988 design envisaged a separate Order volume; exact final binding and every volume table of contents remain uninspected. The two publication years are not two replacement editions.",
+      "reception": "Prepared for living Catholic Hispano-Mozarabic communities. The 1988 introduction names Toledo chapel/parish context; no present-day universal permission or precise effective date is inferred from bibliographical notices."
+    },
+    {
+      "id": "hispano-mozarabic-commicus-1994-1995",
+      "tradition_id": "hispano-mozarabic-critical",
+      "label": "Complementary saints readings volume",
+      "date_label": "1995: saints-volume imprint",
+      "start_year": 1995,
+      "end_year": 1995,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "The saints-volume witness of the Liber Commicus companion to the reformed missal; part of a two-volume reading corpus, not a successor missal.",
+      "components": [
+        "lectionary"
+      ],
+      "witness_ids": [
+        "western:mozarabic-liber-commicus-1994-1995"
+      ],
+      "witness_label": "Liber Commicus (Missale Hispano-Mozarabicum); Proprium de Sanctis, Toledo 1995",
+      "summary": "The separately published lectionary supplies the reading component of the same reform. This stage dates the directly verified 1995 Latin saints-volume witness; the official 1996 notice reports 23 January 1994 confirmation.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "hispano-mozarabic-1996-bibliography",
+          "locus": "p 765 Hispania notice",
+          "claim": "Names the 1995 Proprium de Sanctis companion and confirmation date."
+        },
+        {
+          "source_id": "hispano-mozarabic-2014",
+          "locus": "p 507",
+          "claim": "Identifies Missale and Liber Commicus as paired products of the commission, each in two volumes."
+        }
+      ],
+      "limitations": "Only 1995 saints-volume imprint is directly verified here. The existing catalogue’s 1994 Temporal year awaits its own title-page check; 2014’s broad 1991–1994 summary must not erase the specific 1995 record. No full modern text acquired.",
+      "reception": "Companion book of the Catholic Hispano-Mozarabic reform. Separate publication and shared confirmation do not establish a new whole-missal revision or autonomous rite."
+    }
+  ],
+  "transitions": [
+    {
+      "id": "hispano-mozarabic-1500-to-1755",
+      "from_stage": "hispano-mozarabic-1500",
+      "to_stage": "hispano-mozarabic-1755",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "The 1500 printed missal is republished with Lesley’s historical introduction, explanatory notes and appendices. No substantive rewriting of its liturgical body is established by this dossier.",
+      "components": [
+        "rubrics",
+        "propers"
+      ],
+      "changes": [
+        {
+          "component": "propers",
+          "before": "The 1500 printed corpus as identified by the later edition and official account.",
+          "after": "A later witness presents the inherited corpus with explanatory apparatus and an explicitly separate Appendix prima containing a St Pelagius Mass; appendix status is preserved.",
+          "locus_before": "1500 edition identified in 1755 reprinted colophon",
+          "locus_after": "1755 title; p 621 Appendix prima",
+          "evidence": [
+            {
+              "source_id": "hispano-mozarabic-1755-book",
+              "locus": "Title; colophon after p 471; p 621",
+              "claim": "The book identifies its relation to the earlier print and visibly distinguishes apparatus/appendix from liturgical body."
+            },
+            {
+              "source_id": "hispano-mozarabic-1988",
+              "locus": "p 679 § 19",
+              "claim": "Describes 1755 as re-edition plus preface and explanatory notes."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "hispano-mozarabic-1988",
+          "locus": "p 679 § 19",
+          "claim": "Explicit relationship of 1500 and 1755 editions."
+        }
+      ],
+      "limitations": "This is a transmission/apparatus edge, not evidence of a new liturgical recension. No full 1500/1755 collation, no new mandatory formulary inferred from scholarly appendices.",
+      "comparison_ids": [],
+      "historical_parentage": "established"
+    },
+    {
+      "id": "hispano-mozarabic-1755-to-1804",
+      "from_stage": "hispano-mozarabic-1755",
+      "to_stage": "hispano-mozarabic-1804",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "text-collated",
+      "summary": "The bread blessing is relocated from the end of the liturgical body to the preliminaries before the Temporal. The sampled blessing remains recognizably the same rite; Arévalo separately describes reusing and correcting Lesley’s apparatus.",
+      "components": [
+        "rubrics"
+      ],
+      "changes": [
+        {
+          "component": "rubrics",
+          "before": "Benedictio panis concludes the body at p 471, followed by the original 1500 colophon and explanatory material.",
+          "after": "Benedictio panis appears on p XVI after the water blessing, immediately before the Temporal opens at cols 1–2. The invocation, blessing prayer, Trinitarian blessing and sprinkling rubric remain present.",
+          "locus_before": "1755 p 471, PDF 591 and following colophon PDF 592",
+          "locus_after": "1804 p XVI, canvas 22; cols 1–2, canvas 23",
+          "evidence": [
+            {
+              "source_id": "hispano-mozarabic-1755-book",
+              "locus": "p 471; following colophon",
+              "claim": "Direct page reading establishes terminal placement and the full blessing sequence."
+            },
+            {
+              "source_id": "hispano-mozarabic-1804-book",
+              "locus": "p XVI and cols 1–2",
+              "claim": "Direct page reading establishes relocation to preliminaries and retained sequence."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "hispano-mozarabic-1804-book",
+          "locus": "cols 1145–1146",
+          "claim": "Arévalo describes dependence on Lesley, addition of notes and corrections, while further manuscript collation is left to readers with access."
+        },
+        {
+          "source_id": "hispano-mozarabic-2019-lorenzana",
+          "locus": "pp 18–19",
+          "claim": "Independent study identifies modest corrections and bread-blessing relocation."
+        }
+      ],
+      "limitations": "The text-collated claim is bounded to this blessing and placement, not a complete-edition collation or substantial ritual reform. The cited Advent IV rubric at 1804 col 40 already matches 1755 p 16; it cannot establish a 1755→1804 rubric innovation. No exact count of corrections.",
+      "comparison_ids": [],
+      "historical_parentage": "established"
+    },
+    {
+      "id": "hispano-mozarabic-1804-to-critical",
+      "from_stage": "hispano-mozarabic-1804",
+      "to_stage": "hispano-mozarabic-1991-1994",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "The inherited B-based printed missal is critically reconstructed using both Hispanic traditions: the Order’s devotional layer is revised, proper readings and chants expand into selected biennial cycles, Latin readings adopt the Neovulgate, and some formularies are adapted or omitted for contemporary use.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "rubrics",
+        "calendar",
+        "lectionary",
+        "chant"
+      ],
+      "changes": [
+        {
+          "component": "ordinary",
+          "before": "The inherited printed Order combines B-based Hispanic formulas with Roman devotional additions introduced in the 1500 compilation.",
+          "after": "B remains the structural base while elements from A are incorporated and the Roman devotional additions are removed. Creed before fraction before Lord’s Prayer is expressly retained.",
+          "locus_before": "1500 compilation continued by 1755/1804; described 1988 § 146 and 2014 p 506",
+          "locus_after": "1988 § 146; § 117; 1991–1994 Order as described by its reform documents",
+          "evidence": [
+            {
+              "source_id": "hispano-mozarabic-1988",
+              "locus": "p 722 § 146; pp 710–711 § 117",
+              "claim": "States both the reconstruction and the specific B-order continuity."
+            },
+            {
+              "source_id": "hispano-mozarabic-2014",
+              "locus": "p 506",
+              "claim": "Explains the inherited hybrid Order and need for reconstruction."
+            }
+          ]
+        },
+        {
+          "component": "rubrics",
+          "before": "The inherited Order included devotional priestly prayers of Roman provenance.",
+          "after": "Three optional moments of quiet private prayer are permitted: opening, offertory and before Communion; texts are drawn from Hispanic votive Masses in the Liber ordinum.",
+          "locus_before": "Inherited devotional layer as described 1988 § 146",
+          "locus_after": "1988 § 147",
+          "evidence": [
+            {
+              "source_id": "hispano-mozarabic-1988",
+              "locus": "p 722 §§ 146–147",
+              "claim": "Identifies removal, optional replacement source, three positions and low-voice condition."
+            }
+          ]
+        },
+        {
+          "component": "lectionary",
+          "before": "The received printed missal principally transmitted the B tradition; A and B had distinct reading distributions.",
+          "after": "Selected Advent/Paschal Sundays and major feasts receive Year I/II reading cycles drawn from both traditions. Every Lenten Sunday and feria is assigned proper readings; all Latin readings adopt the Neovulgate.",
+          "locus_before": "Printed B recension described 1988 § 18; divergence § 15",
+          "locus_after": "1988 §§ 149–151, 155–156",
+          "evidence": [
+            {
+              "source_id": "hispano-mozarabic-1988",
+              "locus": "pp 678–679 §§ 15, 18; pp 722–724 §§ 149–151, 155–156",
+              "claim": "Gives inherited scope, new biennial design, Lenten provision and adopted Latin version."
+            }
+          ]
+        },
+        {
+          "component": "chant",
+          "before": "The older printed repertory represents B rather than the complete recovered A/B material.",
+          "after": "The reformed compilation gathers chant texts from both traditions; ordinary Year I/II variation runs from Praelegendum through Sacrificium. This does not reconstruct lost medieval melodies.",
+          "locus_before": "Printed B recension described 1988 § 18",
+          "locus_after": "1988 § 149",
+          "evidence": [
+            {
+              "source_id": "hispano-mozarabic-1988",
+              "locus": "p 722 § 149",
+              "claim": "Explicitly includes cantos in the expanded collection and defines normal scope of biennial variation."
+            }
+          ]
+        },
+        {
+          "component": "anaphoras",
+          "before": "The received print offered the inherited B euchological repertory.",
+          "after": "Euchological material is gathered from both traditions. Normally Year I/II use the same prayers from Oratio Admonitionis onward, so the biennial cycle must not be represented as two universally different anaphoras.",
+          "locus_before": "Printed B recension described 1988 § 18",
+          "locus_after": "1988 § 149",
+          "evidence": [
+            {
+              "source_id": "hispano-mozarabic-1988",
+              "locus": "p 722 § 149",
+              "claim": "Defines expanded source repertory and continuity of the euchology after Oratio Admonitionis."
+            }
+          ]
+        },
+        {
+          "component": "rubrics",
+          "before": "Parallel A/B forms of the Triduum were not both represented by the received B-based printed line.",
+          "after": "The two-year Triduum can preserve structural differences as well as different readings and chants; it is more than a substitution of lections.",
+          "locus_before": "A/B parallel traditions as characterized 1988 § 156",
+          "locus_after": "1988 § 156",
+          "evidence": [
+            {
+              "source_id": "hispano-mozarabic-1988",
+              "locus": "p 724 § 156",
+              "claim": "Explicitly distinguishes structural variation in Holy Thursday, Good Friday and the Easter Vigil from ordinary biennial text variation."
+            }
+          ]
+        },
+        {
+          "component": "calendar",
+          "before": "Old calendars sometimes commemorated saints for whom no corresponding proper Mass survived.",
+          "after": "The calendar is critically compared across Mozarabic/post-Mozarabic witnesses and offices/Mass lists; saints lacking a proper Mass use the Common.",
+          "locus_before": "Earlier calendars described 1988 § 145",
+          "locus_after": "1988 § 145",
+          "evidence": [
+            {
+              "source_id": "hispano-mozarabic-1988",
+              "locus": "p 721 § 145",
+              "claim": "Describes critical-calendar method and the explicit response to missing propers."
+            }
+          ]
+        },
+        {
+          "component": "propers",
+          "before": "The inherited Common’s virgin formularies also referred to martyrdom; some needs formularies no longer suited the commission’s intended contemporary use.",
+          "after": "Virgin-only formularies were adapted by removing martyr references; some obsolete needs formularies were omitted. Individual formulae and omissions are not enumerated in the inspected account.",
+          "locus_before": "Source repertory described by commission account 2014 p 507",
+          "locus_after": "Revised Common/needs repertory described 2014 p 507",
+          "evidence": [
+            {
+              "source_id": "hispano-mozarabic-2014",
+              "locus": "p 507",
+              "claim": "Reports these concrete adaptation and omission operations."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "hispano-mozarabic-1988",
+          "locus": "pp 670–672; pp 721–724 §§ 143–156",
+          "claim": "Contemporary reform introduction distinguishes new all-source reconstruction from simple revision of 1804 and gives bounded changes."
+        },
+        {
+          "source_id": "hispano-mozarabic-2014",
+          "locus": "pp 506–507",
+          "claim": "Retrospective commission account corroborates Order reconstruction and formulary adaptation."
+        }
+      ],
+      "limitations": "Primary-description establishes operations, not a full before/after transcription. No exact old/new formula text, exhaustive omission list, manuscript stemma, new chant melody or complete 1960s-to 1990s promulgation history is inferred. Approval 17 July 1988 was partial; 1991/1994 volumes are complementary. Preservation of B Creed/fraction order is continuity, not an innovation.",
+      "comparison_ids": [],
+      "historical_parentage": "established"
+    }
+  ],
+  "gaps": [
+    {
+      "id": "hispano-mozarabic-gap-a-manuscripts",
+      "tradition_id": "hispanic-tradition-a",
+      "period": "Medieval manuscript period before 1500",
+      "missing": "An individually identified A manuscript with checked eucharistic contents, date and exact contribution to the modern repertory; no common ancestor or A→B evolution demonstrated.",
+      "next_source": "Marius Férotin, Le Liber Mozarabicus Sacramentorum (1912), manuscript inventory and apparatus; follow its shelfmarks to complete institutional manuscript images, then compare with 1988 Praenotanda §§ 15–16.",
+      "consequence": "A remains a distinct source tradition and documented reform input, without an invented dated stage or linear parent edge."
+    },
+    {
+      "id": "hispano-mozarabic-gap-b-exemplars",
+      "tradition_id": "hispanic-tradition-b-print",
+      "period": "Manuscripts used in the 1500 compilation",
+      "missing": "The editors’ individual manuscript dependencies and the recoverable scope of lost exemplars.",
+      "next_source": "José Janini, El “Ordo missae” del Misal mozárabe de Cisneros, Anales Valentinos 10 (1984), 333–344; surviving Toledo Cathedral manuscripts, including Toledo 35.6 as named in 1988 Praenotanda § 90.",
+      "consequence": "B affiliation is supported by official critical description; no exact manuscript-to-print stemma or complete medieval Order is invented."
+    },
+    {
+      "id": "hispano-mozarabic-gap-1500-collation",
+      "tradition_id": "hispanic-tradition-b-print",
+      "period": "1500→1755",
+      "missing": "Fresh complete 1500 acquisition and page-level collation against the complete 1755 witness.",
+      "next_source": "BnF Arsenal FOL-T-742, Gallica ark:/12148/bpt 6 k 8728875 t; ISTC im 00732000; compare original colophon and Advent IV f XVIra with 1755 p 16.",
+      "consequence": "Exact 1500 day is mediated through reprinted colophon. 1755 is a witness/apparatus state; no substantive ritual revision is established."
+    },
+    {
+      "id": "hispano-mozarabic-gap-1804-complete",
+      "tradition_id": "hispanic-tradition-b-print",
+      "period": "1755→1804",
+      "missing": "Complete 1804 payload and exhaustive distinction between typographic corrections, apparatus changes and liturgical changes.",
+      "next_source": "BSB bsb 10869679, 854-canvas IIIF manifest and complete download service; Arévalo cols 1145–1146 gives editorial method; compare Lesley full body against each corrected locus.",
+      "consequence": "Only bounded bread-blessing relocation is text-collated. General correction claims remain the editor’s description."
+    },
+    {
+      "id": "hispano-mozarabic-gap-modern-formulas",
+      "tradition_id": "hispano-mozarabic-critical",
+      "period": "1982–1994 reform",
+      "missing": "Authorized complete final missal comparison, exact manuscript attribution of additions, individual virgin-text edits and omitted needs Masses.",
+      "next_source": "Lawfully consulted Missale Hispano-Mozarabicum 1991/1994 title leaves, contents and changed loci; Pinell, El Misal Hispano-Mozárabe, nueva edición revisada, Phase 32 (1992), 367–380; commission 37 study documents referenced by Ramis 2014 p 507.",
+      "consequence": "Concrete source-described reforms are documented, but no full modern text, exhaustive diff or authorization to retain protected books is claimed."
+    },
+    {
+      "id": "hispano-mozarabic-gap-modern-dates",
+      "tradition_id": "hispano-mozarabic-critical",
+      "period": "1988 approval and 1991–1995 publication",
+      "missing": "Original 23 January 1994 decree; resolution of 203/88 versus 203/86 in 1988 issue; directly inspected Temporal Liber Commicus imprint and final missal binding contents.",
+      "next_source": "Notitiae 1988 pp 671–672 versus 729; confirmation CD 763/92; title/decree leaves of 1991/1994 Missale and 1994/1995 Liber Commicus. 1996 Notitiae p 765 specifically verifies 1995 saints volume.",
+      "consequence": "Publication, confirmation and use are kept distinct; no fabricated effective date or successive replacement edge between complementary volumes."
+    }
+  ]
+}

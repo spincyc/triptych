@@ -1,0 +1,499 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-stages",
+  "dossier_id": "alexandrian-stages",
+  "title": "Coptic and Ge’ez: documented Catholic states and bounded transitions",
+  "traditions": [
+    {
+      "id": "coptic-bohairic-manuscripts",
+      "label": "Bohairic Coptic manuscript tradition",
+      "family": "Alexandrian",
+      "scope": "Medieval Coptic witnesses to the three-anaphora Euchologion.",
+      "coverage_note": "Ancestral/comparative evidence, kept distinct from demonstrably Catholic printings."
+    },
+    {
+      "id": "coptic-catholic",
+      "label": "Coptic Catholic Euchologion",
+      "family": "Alexandrian",
+      "scope": "Coptic and received Arabic Catholic liturgical books; 1736 and 1898 attested states.",
+      "coverage_note": "Exact medieval exemplar and post 1898 received-state sequence remain incomplete. Orthodox 1902 is not a Catholic successor."
+    },
+    {
+      "id": "geez-aksumite-euchologion",
+      "label": "Ge’ez Aksumite Euchologion witness",
+      "family": "Alexandrian",
+      "scope": "Canonical-liturgical collection UM-039 and its eucharistic texts.",
+      "coverage_note": "Historical source tradition; no demonstrated modern Catholic reception or linear succession to 1945."
+    },
+    {
+      "id": "geez-catholic",
+      "label": "Ge’ez Catholic missal",
+      "family": "Alexandrian",
+      "scope": "Vatican 1945 book and 2025 missal intended for Ethiopian and Eritrean Catholic Churches.",
+      "coverage_note": "Exact books and intermediate received editions are missing; Ethiopian/Eritrean implementation dates are not equated with presentation."
+    }
+  ],
+  "sources": [
+    {
+      "id": "alexandrian-stages-brightman1896",
+      "title": "F. E. Brightman, Liturgies Eastern and Western I (Oxford, 1896)",
+      "url": "https://archive.org/details/b29353233",
+      "kind": "critical-edition",
+      "inspection": "Printed lxvii and lxx inspected as page images (PDF pages 69 and 72); lxviii and lxxii–lxxiii text inspected.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Critical publication and translations do not establish a particular medieval codex as Tuki’s direct exemplar; the dated edition is not a medieval event."
+    },
+    {
+      "id": "alexandrian-stages-tuki1736",
+      "title": "Raphael Tuki, Missale copto arabicum, Rome 1736; ULB Bonn digital copy",
+      "url": "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/253288",
+      "kind": "primary-book",
+      "inspection": "Holding record inspected; images 253291 title leaf, 253295 opening evening-incense prayer, 253379 morning-incense opening and 253583 internal Euchologion title inspected. IIIF manifest downloaded.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Only selected leaves inspected. No Creed, diptychs or intercession text collated. Publisher/date supplied by holding record; not independently read from an imprint leaf."
+    },
+    {
+      "id": "alexandrian-stages-lietzmann1926",
+      "title": "Hans Lietzmann, Messe und Herrenmahl (Bonn, 1926), p. 12",
+      "url": "https://archive.org/details/MesseUndHerrenmahlEineStudieZurGeschichteDerLiturgie",
+      "kind": "scholarship",
+      "inspection": "Printed p. 12 inspected as page image (PDF page 26), in I Die Quellen; preceding p. 11 read for Mark/Cyril context.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Lietzmann describes the two editions and changed intercession placement; he does not provide the 1898 text here or prove its immediate descent from 1736."
+    },
+    {
+      "id": "alexandrian-stages-hammerschmidt1957",
+      "title": "Ernst Hammerschmidt, Die koptische Gregoriosanaphora (Berlin, 1957), pp. 3–4",
+      "url": "https://api.pageplace.de/preview/DT0400.9783112470480_A46374007/preview-9783112470480_A46374007.pdf",
+      "kind": "scholarship",
+      "inspection": "Publisher preview: title/copyright and pp. 3–4 read; p. 4 inspected as page image (preview PDF page 16).",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Bibliographic list identifies Catholic versus Orthodox printings; it does not establish a 1934 removal of Cyril or any change in Catholic law/use. Protected publisher preview: research copy only."
+    },
+    {
+      "id": "alexandrian-stages-vat17",
+      "title": "Biblioteca Apostolica Vaticana, Vat.copt.17 digital manuscript",
+      "url": "https://digi.vatlib.it/mss/detail/Vat.copt.17",
+      "kind": "institutional-catalogue",
+      "inspection": "IIIF manifest metadata and 133 canvases inspected; shelfmark confirmed. Manuscript text itself has not been inspected in this pass.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Date and contents in this dossier come from Brightman, not the sparse manifest. Image attribution reserves Vatican Library copyright; no manuscript image payload acquired."
+    },
+    {
+      "id": "alexandrian-stages-bausi2020",
+      "title": "Alessandro Bausi et al., The Aksumite Collection or Codex Σ, COMSt Bulletin 6/2 (2020), 127–172",
+      "url": "https://www.fdr.uni-hamburg.de/record/17921",
+      "kind": "scholarship",
+      "inspection": "Complete acquired article read in earlier lane; relevant pp. 127, 139, 151 and associated witness description inspected.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Translation date and extant-copy date are different. No inference that this codex was received by modern Ethiopian or Eritrean Catholics."
+    },
+    {
+      "id": "alexandrian-stages-fritsch2011",
+      "title": "Emmanuel Fritsch, The Anaphoras of the Ethiopian Church: A Challenging Orthodoxy (2011 congress summary)",
+      "url": "https://www.liturgia.it/content/addaicongress/interventi/Fritsch.pdf",
+      "kind": "scholarship",
+      "inspection": "Six-page author summary read; pp. 1–2 inspected as page images.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Explicit scholarly description, not 1945 book-page collation. Exact title page, decree, predecessor witness and institution-narrative page numbers remain uninspected."
+    },
+    {
+      "id": "alexandrian-stages-vatican2025en",
+      "title": "Devin Watkins, New Ge‘ez Missal to serve unity among Ethiopian, Eritrean Catholics, Vatican News, 27 May 2025",
+      "url": "https://www.vaticannews.va/en/vatican-city/news/2025-05/ethiopia-eritrea-catholic-missal-geez-language-gugerotti.html",
+      "kind": "official-retrospective",
+      "inspection": "Entire report read, especially paragraph beginning For the first time and interviews with Bishops Tesfasellassie Medhin and Kidane Yebio.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Official presentation report, not approval decree, effective-date notice or complete text. Only chant annotations are expressly described as first inclusion; fresh leavened bread is an instruction, not a demonstrated new change."
+    },
+    {
+      "id": "alexandrian-stages-vatican2025it",
+      "title": "Isabella H. de Carvalho, Un nuovo Messale in lingua ge’ez…, Vatican News, 27 May 2025",
+      "url": "https://www.vaticannews.va/it/vaticano/news/2025-05/messale-gheez-etiopia-eritrea-dicastero-chiese-orientali.html",
+      "kind": "official-retrospective",
+      "inspection": "Opening presentation account and section Il lavoro frutto di due commissioni, especially paragraphs on ancient sources and Vatican II/CCEO updating.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "No particular revised prayer, rubric, canon, approval act or immediate predecessor is identified."
+    },
+    {
+      "id": "alexandrian-stages-giraudo2011",
+      "title": "Cesare Giraudo, Addai Congress bibliography before 1966 (21 June 2011), p. 2 entries 27–29",
+      "url": "https://www.liturgia.it/content/addaicongress/en/bib/biblio1_en.pdf",
+      "kind": "scholarship",
+      "inspection": "Printed p. 2 inspected as page image: 1940 Documenti relativi al Rito Etiopico, 1940 Notationes atque animadversiones and 1944 Liturgia-Etiopi Allegati I–II.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Bibliography only; the cited Congregation documents have not been acquired or inspected."
+    },
+    {
+      "id": "alexandrian-stages-chaine1912",
+      "title": "Marius Chaîne, La consécration et l’épiclèse dans le missel copte, Revue de l’Orient chrétien 17 (1912), 225–243",
+      "url": "https://archive.org/details/revue-de-orient-chretien_1912_17",
+      "kind": "critical-edition",
+      "inspection": "Printed pp. 228–229 and 232 inspected as page images (PDF pages 232–233 and 236); pp. 230–235 text read. P. 229 identifies the 1898 Catholic book as the base text for the following critical edition.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "A firsthand scholarly comparison and edited text, not the original 1898 printing. Its reconstructed text and variants must not be imported as an unchecked transcription of that book. P. 228 names no shelfmark for Tuki’s thirteenth-century Vatican exemplar; the same bibliographical note mistakenly calls Renaudot 1716 a translation of Tuki, so its broad dependency statements require care."
+    }
+  ],
+  "stages": [
+    {
+      "id": "alexandrian-stages-coptic1288",
+      "tradition_id": "coptic-bohairic-manuscripts",
+      "label": "Medieval three-anaphora witness",
+      "date_label": "1288: manuscript attestation",
+      "start_year": 1288,
+      "end_year": 1288,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Basil, Gregory and Cyril anaphoras in Vat.copt.17.",
+      "components": [
+        "anaphoras"
+      ],
+      "witness_ids": [
+        "eastern:alex-coptic-vat17"
+      ],
+      "witness_label": "Biblioteca Apostolica Vaticana, Vat.copt.17",
+      "summary": "A dated medieval witness to the three named anaphoras; it supplies historical context for the later printed repertoire.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "alexandrian-stages-brightman1896",
+          "locus": "Printed lxx, ii. Manuscripts (1)",
+          "claim": "Lists Vat.Copt.xvii with 1288 date among manuscripts containing Basil, Gregory and Cyril."
+        },
+        {
+          "source_id": "alexandrian-stages-vat17",
+          "locus": "IIIF manifest metadata",
+          "claim": "Holding-library shelfmark confirmed."
+        }
+      ],
+      "limitations": "No claim that this manuscript is Tuki’s direct exemplar, a Catholic book, or a complete reconstruction of thirteenth-century practice. Original folios not yet inspected.",
+      "reception": "Medieval Coptic witness; Catholic reception not established."
+    },
+    {
+      "id": "alexandrian-stages-coptic1736",
+      "tradition_id": "coptic-catholic",
+      "label": "Tuki’s Catholic printed state",
+      "date_label": "1736: publication",
+      "start_year": 1736,
+      "end_year": 1736,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Coptic/Arabic Euchologion: evening and morning incense, common order, three anaphoras and other prayers.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:alex-coptic-1736"
+      ],
+      "witness_label": "Raphael Tuki, Missale copto arabicum, [Rome] 1736",
+      "summary": "Contains Basil, Gregory and Cyril. Brightman describes Catholic adjustments: Filioque in the Creed, revised commemorations including Chalcedon, and additional Arabic rubrics.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "alexandrian-stages-tuki1736",
+          "locus": "Title leaf 253291; incense openings 253295 and 253379; holding annotation",
+          "claim": "Book identity, three anaphoras and incense offices confirmed."
+        },
+        {
+          "source_id": "alexandrian-stages-brightman1896",
+          "locus": "Printed lxvii, Coptic Liturgies / Ordo communis",
+          "claim": "Explicitly characterizes Tuki’s Catholic rite and the changes listed."
+        },
+        {
+          "source_id": "alexandrian-stages-chaine1912",
+          "locus": "p. 228 n. 2",
+          "claim": "Attributes Tuki’s text to a thirteenth-century Vatican manuscript, without identifying its shelfmark."
+        }
+      ],
+      "limitations": "Changes are source-described, not newly collated. Chaîne p. 228 n. 2 reports a thirteenth-century Vatican exemplar without a shelfmark; no particular codex is established as parent. The specific removed names and addition of the pope are not expanded beyond Brightman’s checked wording.",
+      "reception": "Brightman expressly identifies Tuki and derivatives as the Coptic Catholic modified rite; no parish adoption date established."
+    },
+    {
+      "id": "alexandrian-stages-coptic1898",
+      "tradition_id": "coptic-catholic",
+      "label": "Catholic edition with intercession moved forward",
+      "date_label": "1898: publication",
+      "start_year": 1898,
+      "end_year": 1898,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Coptic-Arabic Euchologion and placement of the intercession relative to its anaphoras.",
+      "components": [
+        "ordinary",
+        "anaphoras"
+      ],
+      "witness_ids": [
+        "eastern:alex-coptic-1898"
+      ],
+      "witness_label": "Hūlāǧī’l-kanīsat al-iskandariyya / Euchologion of the Alexandrian Church, Cairo 1898",
+      "summary": "Lietzmann identifies the 1898 book and reports that the entire intercession, with multiple alterations, precedes all anaphoras.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "alexandrian-stages-lietzmann1926",
+          "locus": "Printed p. 12, opening paragraph",
+          "claim": "Describes the 1898 intercession arrangement in discussion of Mark/Cyril and Tuki 1736."
+        },
+        {
+          "source_id": "alexandrian-stages-hammerschmidt1957",
+          "locus": "Printed p. 4, Ausgaben der unierten Kopten, item 2",
+          "claim": "Identifies the 1898 edition as Catholic."
+        },
+        {
+          "source_id": "alexandrian-stages-chaine1912",
+          "locus": "Printed p. 229, opening paragraph",
+          "claim": "Identifies Catholic Patriarchate publication in 1898 and a modified re-edition of Tuki’s 1736 text."
+        }
+      ],
+      "limitations": "Original 1898 title, pagination and revised prayer wording not yet inspected. 1898 is an attested publication state, not necessarily when relocation first occurred.",
+      "reception": "Chaîne identifies the Catholic Patriarchate as publisher; Hammerschmidt independently lists this as a Catholic edition. Dates of actual local adoption are not established."
+    },
+    {
+      "id": "alexandrian-stages-geezum039",
+      "tradition_id": "geez-aksumite-euchologion",
+      "label": "Aksumite collection’s preserved Eucharistic order",
+      "date_label": "Extant codex: thirteenth century or earlier; exact range unresolved",
+      "start_year": null,
+      "end_year": null,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Euchologion ff. 46r–62v; Mark anaphora ff. 54rb–56va within UM-039.",
+      "components": [
+        "ordinary",
+        "anaphoras"
+      ],
+      "witness_ids": [
+        "eastern:alex-geez-aksumite-um039"
+      ],
+      "witness_label": "Sinodos of Qǝfrǝyā, C3-IV-71/C3-IV-73, Ethio-SPaRe UM-039",
+      "summary": "Preserves an archaic Ge’ez Eucharistic collection with Mark. The source distinguishes an early translation layer from the substantially later surviving codex.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "alexandrian-stages-bausi2020",
+          "locus": "p. 127; contents pp. 139, 151",
+          "claim": "Codex dated thirteenth century or earlier; translations assigned to fifth–sixth, latest seventh century; Euchologion and Mark loci identified."
+        }
+      ],
+      "limitations": "Unpositioned because the copy’s lower dating bound is unresolved. Fifth–seventh century is translation dating, not the manuscript date. No direct path to 1945 demonstrated.",
+      "reception": "Ancestral Ethiopian witness; neither modern Catholic adoption nor whole missal use demonstrated."
+    },
+    {
+      "id": "alexandrian-stages-geez1945",
+      "tradition_id": "geez-catholic",
+      "label": "Vatican missal with revised institution narratives",
+      "date_label": "1945: publication reported by Fritsch",
+      "start_year": 1945,
+      "end_year": 1945,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Ge’ez Catholic missal, especially institution narratives in the Lord and James of Sarug anaphoras.",
+      "components": [
+        "anaphoras"
+      ],
+      "witness_ids": [
+        "eastern:alex-geez-1945"
+      ],
+      "witness_label": "Vatican Ge’ez missal of 1945; exact title page not inspected",
+      "summary": "Fritsch reports 17 anaphoras; removal of the bread noun from institution wording, adaptation of the Apostles narrative for the Lord anaphora, and its insertion in James of Sarug. The cup noun remains in some anaphoras.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "alexandrian-stages-fritsch2011",
+          "locus": "p. 1 introduction and sections (a)–(b); p. 2 section (c)",
+          "claim": "Explicitly attributes these bounded revisions to the 1945 Vatican edition."
+        }
+      ],
+      "limitations": "Exact predecessor and 1945 page loci are missing. No invented baseline stage or assumption that all institution texts were uniformly rewritten. Modern Eritrean reception chronology is not supplied.",
+      "reception": "A Catholic revision per Fritsch. Intended/use history should be distinguished from later Eritrean ecclesial organization."
+    },
+    {
+      "id": "alexandrian-stages-geez2025",
+      "tradition_id": "geez-catholic",
+      "label": "Joint Catholic edition with chant annotations",
+      "date_label": "Presented 27 May 2025; publication attested",
+      "start_year": 2025,
+      "end_year": 2025,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Ge’ez missal with annotated chant and freshly baked leavened bread instruction.",
+      "components": [
+        "ordinary",
+        "rubrics",
+        "chant"
+      ],
+      "witness_ids": [
+        "eastern:alex-geez-2025"
+      ],
+      "witness_label": "Nuovo messale del rito ge’ez / new Ge’ez-language Missal presented at Pontifical Ethiopian College, 27 May 2025",
+      "summary": "Official reporting identifies the first inclusion of chant annotations, fresh leavened bread instructions, and preparation by commissions from both Catholic Churches.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "alexandrian-stages-vatican2025en",
+          "locus": "Paragraph beginning For the first time; bishop interviews",
+          "claim": "Reports chant novelty and the bread instruction; describes intended shared Catholic use."
+        },
+        {
+          "source_id": "alexandrian-stages-vatican2025it",
+          "locus": "Il lavoro frutto di due commissioni",
+          "claim": "Reports work on ancient sources and updating in relation to Vatican II and CCEO."
+        }
+      ],
+      "limitations": "No book text, table of contents, decree or effective date inspected. The bread instruction is not proved new. No claim that 1945 institution narrative edits were retained or reversed.",
+      "reception": "Intended for the Ethiopian and Eritrean Catholic Churches; bishops express hope for common implementation. Actual implementation dates and universal adoption not established."
+    }
+  ],
+  "transitions": [
+    {
+      "id": "alexandrian-stages-coptic1736-1898-intercession",
+      "from_stage": "alexandrian-stages-coptic1736",
+      "to_stage": "alexandrian-stages-coptic1898",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "Lietzmann’s comparison identifies a later printed arrangement in which the entire intercession is placed before all anaphoras, with alterations to its text.",
+      "components": [
+        "ordinary",
+        "anaphoras"
+      ],
+      "changes": [
+        {
+          "component": "anaphoras",
+          "before": "Intercession discussed within the Mark/Cyril textual tradition represented by Tuki; this dossier has not independently checked its 1736 page locus.",
+          "after": "Entire intercession, with several alterations, placed before all the anaphoras in Cairo 1898.",
+          "locus_before": "Tuki 1736: exact page not yet verified; comparison described in Lietzmann p. 12.",
+          "locus_after": "Cairo 1898: exact page not yet verified; arrangement described in Lietzmann p. 12.",
+          "evidence": [
+            {
+              "source_id": "alexandrian-stages-lietzmann1926",
+              "locus": "Printed p. 12, opening paragraph",
+              "claim": "Explicitly describes 1898 relocation and multiple changes."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "alexandrian-stages-lietzmann1926",
+          "locus": "Printed p. 12",
+          "claim": "Source-described change between named textual/printed states."
+        },
+        {
+          "source_id": "alexandrian-stages-hammerschmidt1957",
+          "locus": "Printed p. 4 Catholic edition list",
+          "claim": "Both 1736 and 1898 are Catholic editions."
+        },
+        {
+          "source_id": "alexandrian-stages-chaine1912",
+          "locus": "Printed p. 229, opening paragraph",
+          "claim": "Author who used the 1898 text explicitly describes it as a modified re-edition of Tuki 1736."
+        }
+      ],
+      "limitations": "The 1898 re-edition’s dependence on Tuki is attributed to Chaîne’s firsthand scholarly description. This is not a new page-by-page collation. The date when intercession relocation first entered the line and the precise altered words remain unproved.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed"
+    },
+    {
+      "id": "alexandrian-stages-geez1945-2025-chant-provisional",
+      "from_stage": "alexandrian-stages-geez1945",
+      "to_stage": "alexandrian-stages-geez2025",
+      "kind": "revision",
+      "status": "provisional",
+      "evidence_level": "primary-description",
+      "summary": "The 2025 report calls chant annotations a first inclusion. Connecting that novelty specifically to the 1945 book as its immediate predecessor remains provisional.",
+      "components": [
+        "chant"
+      ],
+      "changes": [
+        {
+          "component": "chant",
+          "before": "Earlier Ge’ez missals implied by official report to lack these annotations; 1945 book not independently checked.",
+          "after": "Chant annotations included in 2025 edition.",
+          "locus_before": "No 1945 page locus available; earlier state implicit in official first-inclusion description.",
+          "locus_after": "2025 book page locus unavailable; Vatican News 27 May 2025 paragraph beginning For the first time.",
+          "evidence": [
+            {
+              "source_id": "alexandrian-stages-vatican2025en",
+              "locus": "For the first time paragraph",
+              "claim": "Chant annotations expressly identified as new."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "alexandrian-stages-vatican2025en",
+          "locus": "For the first time paragraph; Yebio interview",
+          "claim": "Novelty documented; previous missals unnamed."
+        }
+      ],
+      "limitations": "Novelty is documented; the bridge from 1945 and direct parentage are not. No claimed bread-rubric change, 1945 institution text continuity, approval date or effective date.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished"
+    }
+  ],
+  "gaps": [
+    {
+      "id": "alexandrian-stages-gap-coptic-exemplar",
+      "tradition_id": "coptic-catholic",
+      "period": "Medieval manuscripts→1736",
+      "missing": "Tuki’s exact exemplar and original page comparison for Creed/commemorations/rubrics.",
+      "next_source": "Tuki 1736 Bonn copy and relevant Propaganda Fide editorial records; Chaîne 1912 p. 228 n. 2 describes a thirteenth-century Vatican exemplar without shelfmark. Compare Vat.copt.17 at https://digi.vatlib.it/mss/detail/Vat.copt.17 only after identifying the exemplar.",
+      "consequence": "Do not draw Vat.copt.17→Tuki as established ancestry; 1736 revision facts remain scholarly description."
+    },
+    {
+      "id": "alexandrian-stages-gap-coptic1898",
+      "tradition_id": "coptic-catholic",
+      "period": "1736–1898",
+      "missing": "Original 1898 book images, authorizing act, precise intercession loci and particular textual alterations.",
+      "next_source": "Cairo 1898 Hūlāǧī’l-kanīsat al-iskandariyya, WorldCat 560963690 (catalogue lead not inspected); holding copy required.",
+      "consequence": "The relocation is documented by Lietzmann and dependence on Tuki is attributed by Chaîne; the actual prayer comparison and date of introduction remain open."
+    },
+    {
+      "id": "alexandrian-stages-gap-coptic1934-modern",
+      "tradition_id": "coptic-catholic",
+      "period": "1898–present",
+      "missing": "The 1934 book and the subsequent Catholic received-state sequence, including native Coptic and received Arabic revisions with their acts.",
+      "next_source": "Hammerschmidt 1957 p. 4 lists Euchologium Ecclesiae Alexandrinae continens liturgias S. Basilii et S. Gregorii, Cairo 1934. Pursue Coptic Catholic Patriarchate and Vatican/PIO holdings.",
+      "consequence": "1934 title alone does not prove Cyril’s liturgical suppression. Orthodox 1902, 1927 and 1936 must not fill this gap."
+    },
+    {
+      "id": "alexandrian-stages-gap-geez-ancient-reception",
+      "tradition_id": "geez-catholic",
+      "period": "Aksumite witness→Catholic printings",
+      "missing": "The manuscript or recension chain used by Catholic editors; no evidence that UM-039 was a received Catholic book.",
+      "next_source": "Compare UM-039 Euchologion (ff. 46r–62v) with identified Catholic editorial dossiers. Brightman lxxii identifies an earlier print lead: the Rome 1548 New Testament with Missal, ff. 158–167.",
+      "consequence": "No linear UM-039 to 1945 succession or conversion of translation date to surviving-copy date."
+    },
+    {
+      "id": "alexandrian-stages-gap-geez1945",
+      "tradition_id": "geez-catholic",
+      "period": "Before 1945 /1945 revision",
+      "missing": "The exact predecessor book; the 1945 title, imprint, index, approval act and pages for the three reported revisions.",
+      "next_source": "Congregatio Orientalis: Documenti relativi al Rito Etiopico, Fascicoli I–II (1940); Notationes atque animadversiones de Anaphoris Ritus Aethiopici (1940); Liturgia-Etiopi. Revisione e ristampa del Messale Etiopico, Allegati I–II (1944); and the Vatican 1945 book. Giraudo 2011 p. 2, entries 27–29 identifies the working documents.",
+      "consequence": "Fritsch documents substantive revision, but actual book comparisons and an exact preceding stage are not yet possible."
+    },
+    {
+      "id": "alexandrian-stages-gap-geez-1945-2025",
+      "tradition_id": "geez-catholic",
+      "period": "1945–2025",
+      "missing": "Intervening Catholic editions; the 2025 title, index and approval/implementation acts; treatment of the 1945 institution narratives in the 2025 book.",
+      "next_source": "The 2025 printed book through the Dicastery for the Eastern Churches, Pontifical Ethiopian College and joint liturgical commission. Obtain specific institution, chant and bread-rubric pages from it and its actual predecessor.",
+      "consequence": "Chant novelty and intended shared use are attested; direct succession from 1945 and further changes remain unproved."
+    }
+  ]
+}
