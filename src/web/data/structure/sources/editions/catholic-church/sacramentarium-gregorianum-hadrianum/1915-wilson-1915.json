@@ -1,6 +1,21 @@
 {
  "artifacts": [
   {
+   "artifact_type": "normalized-text",
+   "byte_size": 302,
+   "edition_owned": true,
+   "id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-memento-checked-latin-784ee4c8",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Complete Memento for the living, 46 words, one text line; excludes surrounding Te igitur and Communicantes and the page apparatus. Preserve circum adstantium, incolomitatis, tibi reddunt, uota and uiuo. The main text lacks the clause reported by apparatus note 6 in manuscript O; that omission is not an assertion about when the clause was introduced. Wilson identifies R (Vatican Reginae 337) as his main-text basis in the introduction printed p. xliv/PDF p. 54. The 1915 date belongs to this printed critical edition; no 811/812 date for Cambrai C is assigned to R.",
+   "page_count": null,
+   "retrieved": "2026-10-16",
+   "rights": "public-domain",
+   "rights_basis": "The identified Wilson 1915 printing is public domain in the United States by expiration of its publication term, as recorded for the parent facsimile and OCR artifacts. This bounded faithful transcription of its Latin main text adds no new authorship. It does not reproduce a modern critical edition or translation and is excluded from Triptych's CC BY 4.0 license.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
    "artifact_type": "ocr-text",
    "byte_size": 979250,
    "edition_owned": true,
@@ -102,6 +117,32 @@
   "year": 1915
  },
  "passages": [
+  {
+   "artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-memento-checked-latin-784ee4c8",
+   "artifact_type": "normalized-text",
+   "context": "The whole Memento prayer in Wilson's main text, mediated from R = Vatican Reginae 337. Apparatus note 6 separately assigns pro quibus tibi offerimus vel to O = Vatican Ottobonianus 313. A comparison with the checked Cummiskey 1861 Roman Canon is a same-prayer witness comparison, not an inferred ancestor edge or an act of insertion.",
+   "id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-memento-domine",
+   "locus": "Canon Missae, Memento for the living; Wilson printed p. 2, PDF p. 60, R fol. 4; complete main-text prayer from Memento through uero immediately before Communicantes",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Read against the retained facsimile printed p. 2/PDF p. 60 on 2026-10-16. Two independent reviewers checked the complete 46-word body and the apparatus boundary. The second reviewer also identified the small printed baseline point after tuarum; both reviewers confirmed it and the normalized payload restores that OCR omission. Orthography and maintext/apparatus separation are preserved as described by the owning artifact. This verifies the bounded printed-edition text, not the underlying manuscript or the entire critical edition.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The identified Wilson 1915 printing is public domain in the United States by expiration of its publication term, as recorded for the parent facsimile and OCR artifacts. This bounded faithful transcription of its Latin main text adds no new authorship. It does not reproduce a modern critical edition or translation and is excluded from Triptych's CC BY 4.0 license.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-memento-domine.json",
+   "verified_on": "2026-10-16",
+   "words": 46
+  },
   {
    "artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7",
    "artifact_type": "scan",

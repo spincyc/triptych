@@ -2386,13 +2386,14 @@ printing = "1862-liturgia-mozarabica-migne"
 parents = ["mozarabicum-lesley-1755"]
 parent_kind = "book-states-it"
 parent_basis = """
-Both books declare the same use, and this is their order. The edge asserts that
-and nothing else: it does not claim the later printing was set from the earlier,
-and no colophon read here says so.
+The later printing's title identifies the Missale mixtum with Alexander
+Lesley's preface, notes and appendices, as recorded in this printing's witness
+attests_basis. That stated reprint relationship is the basis of this edge;
+it is not a word-for-word collation or permission to inherit unexamined text.
 """
 use_declared = """
-Read from the two books' catalogued titles at the metadata records fetched here
-[verified]. Each names its use; neither names the other.
+Both titles identify the Mozarabic use. The later title also identifies
+Lesley's contribution, as the existing witness attests_basis records.
 """
 act_citation = "none-claimed"
 distinct_edition_basis = """

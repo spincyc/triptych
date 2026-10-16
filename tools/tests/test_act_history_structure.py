@@ -72,12 +72,22 @@ class ActHistoryStructureTests(unittest.TestCase):
     def test_the_tracked_projection_is_a_fresh_complete_derivation(self) -> None:
         checked = run("structure", "--check")
         self.assertEqual(checked.returncode, 0, checked.stdout + checked.stderr)
-        self.assertIn("current: 505 files for 3 slices", checked.stdout)
+        self.assertIn("current: 507 files for 3 slices", checked.stdout)
+        self.assertTrue((TRACKED / "catalogue.json").is_file())
+        catalogue = json.loads((TRACKED / "catalogue.json").read_text())
+        for declaration in catalogue["comparisons"]:
+            comparison = json.loads((TRACKED / declaration["projection_path"]).read_text())
+            self.assertEqual(comparison["id"], declaration["id"])
+            self.assertFalse(comparison["historical_ancestry_claimed"])
+            self.assertTrue(comparison["left"]["members"])
+            self.assertTrue(comparison["right"]["members"])
 
     def test_check_refuses_changed_missing_and_orphaned_files_without_writing(self) -> None:
         cases = (
             "changed",
             "missing",
+            "changed-comparison",
+            "missing-comparison",
             "orphan",
             "symlink",
             "directory-symlink",
@@ -94,6 +104,13 @@ class ActHistoryStructureTests(unittest.TestCase):
                 elif kind == "missing":
                     name = "roman-holy-week/units.json"
                     (projection / name).unlink()
+                elif kind in ("changed-comparison", "missing-comparison"):
+                    catalogue = json.loads((projection / "catalogue.json").read_text())
+                    name = catalogue["comparisons"][0]["projection_path"]
+                    if kind == "missing-comparison":
+                        (projection / name).unlink()
+                    else:
+                        (projection / name).write_text('{"stale":true}\n', encoding="utf-8")
                 elif kind == "orphan":
                     name = "latin-missal/unit/retired-prayer.json"
                     orphan = projection / name
@@ -195,7 +212,7 @@ class ActHistoryStructureTests(unittest.TestCase):
 
         self.assertEqual(before, files(projection))
         checked = tool.structure_all(out, check_only=True)
-        self.assertEqual(505, checked["files"])
+        self.assertEqual(507, checked["files"])
 
         (projection / "index.json").write_text('{"stale":true}\n', encoding="utf-8")
         refreshed = tool.structure_all(out, check_only=False)
@@ -240,7 +257,7 @@ class ActHistoryStructureTests(unittest.TestCase):
                 retained.rename(replacement)
 
         checked = tool.structure_all(out, check_only=True)
-        self.assertEqual(505, checked["files"])
+        self.assertEqual(507, checked["files"])
 
     def test_projection_root_exchange_is_rejected_before_traversal(self) -> None:
         tool = load_tool()
@@ -280,7 +297,7 @@ class ActHistoryStructureTests(unittest.TestCase):
                 retained.rename(projection)
 
         checked = tool.structure_all(out, check_only=True)
-        self.assertEqual(505, checked["files"])
+        self.assertEqual(507, checked["files"])
 
     def test_scoped_manifest_discovery_refuses_a_symlinked_map(self) -> None:
         tool = load_tool()
@@ -411,7 +428,7 @@ class ActHistoryStructureTests(unittest.TestCase):
             ):
                 result = tool.structure_all(out, check_only=False)
 
-            self.assertEqual(505, result["files"])
+            self.assertEqual(507, result["files"])
             self.assertEqual("outside\n", sentinel.read_text(encoding="utf-8"))
 
     def test_staging_swap_cannot_redirect_writer_writes_or_install_symlink(self) -> None:

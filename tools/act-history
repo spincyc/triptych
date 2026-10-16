@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build a slice's act-keyed history as a Git repository.
 
-Usage: act-history {check,graph,structure,plate,commonality,emit} [--source PATH]
+Usage: act-history {check,graph,structure,plate,commonality,emit,catalogue,corpus,compare} [--source PATH]
 
 `structure` without `--source` owns the complete tracked browser projection:
 it derives every `*-acts-v1.toml` slice into an empty tree, then replaces the
@@ -96,6 +96,9 @@ from _tooling import (
     run_verb_cli,
     with_examples,
 )
+import _eucharistic_history as eucharistic_history
+from _eucharistic_texts import AdapterError
+from _act_history_preview import PreviewError
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SOURCE = ROOT / "src/sources/inventories/roman-holy-week-acts-v1.toml"
@@ -369,11 +372,39 @@ YEAR_SHIFT = 10000
 
 # Captured transcripts, never composed; see scripts/_tooling.py.
 EXAMPLES = {
+    "compare": (
+        Example(
+            "tools/act-history compare --comparison roman-canon-memento-wilson-r-and-cummiskey-1861 --out .scratch/history-engine-expansion/memento-comparison.json",
+            (
+                "{\"historical_ancestry_claimed\":false,\"id\":\"roman-canon-memento-wilson-r-and-cummiskey-1861\",\"identical_serialized_text\":false,\"left_units\":1,\"right_units\":2,\"schema\":\"triptych-eucharistic-witness-comparison/v1\",\"v\":1,\"written\":\".scratch/history-engine-expansion/memento-comparison.json\"}",
+            ),
+            note="Writes a bounded witness comparison with ordered source members and an apparatus caveat; asserts no ancestry or introduction date.",
+        ),
+    ),
+    "catalogue": (
+        Example(
+            "tools/act-history catalogue --out .scratch/history-engine-expansion/example-catalogue.json",
+            (
+                "wrote: 192 catalogue records",
+                "  -> .scratch/history-engine-expansion/example-catalogue.json",
+            ),
+            note="Derived discovery records; no new normative station or ancestry is admitted.",
+        ),
+    ),
+    "corpus": (
+        Example(
+            "tools/act-history corpus --out .scratch/history-engine-expansion/example-corpus",
+            (
+                "wrote 1181 text units on 3 isolated reconstruction branches to .scratch/history-engine-expansion/example-corpus",
+            ),
+            note="Writes a disposable bare repository with isolated, bounded reconstructions; no historical ancestry is asserted.",
+        ),
+    ),
     "structure": (
         Example(
             "tools/act-history structure --check",
             (
-                "current: 505 files for 3 slices, 118 stations on 23 lines",
+                "current: 507 files for 3 slices, 118 stations on 23 lines",
                 "  -> <repo>/src/web/data/structure/act-history",
             ),
             note=(
@@ -1096,7 +1127,7 @@ def received_parents(act: dict) -> set[str]:
 
 
 def carried_parents(act: dict) -> list[str]:
-    """The parents whose STATE this act inherits: every parent but a received one.
+    """The own-line ancestry parents: every parent but a received one.
 
     A RECEIVED PARENT CONTRIBUTES ITS ANCESTRY AND NOT ITS TEXT, and that is the
     substance of the model rather than an implementation convenience.
@@ -1117,6 +1148,33 @@ def carried_parents(act: dict) -> list[str]:
     """
     received = received_parents(act)
     return [parent for parent in act.get("parents", []) if parent not in received]
+
+
+def text_parents(act: dict) -> list[str]:
+    """Text permissions, separately from ancestry and departure-effect evidence.
+
+    The legacy promulgated chains retain their recorded-unit interpretation;
+    `effect_established` describes a departure, not a permission to carry text.
+    Printing succession and declared use alone never establish textual identity.
+    An explicit permission is scoped to the recorded units, not the whole book.
+    """
+    parents = carried_parents(act)
+    permission = act.get("text_inheritance")
+    if permission is not None:
+        if not isinstance(permission, dict):
+            raise Problem(f"{act.get('id')}: text_inheritance must be a table")
+        selected = permission.get("parents")
+        if (not isinstance(selected, list) or any(not isinstance(p, str) for p in selected)
+                or len(selected) != len(set(selected)) or any(p not in parents for p in selected)):
+            raise Problem(f"{act.get('id')}: text_inheritance must select distinct own-line parents")
+        if permission.get("scope") != "recorded-units" or not str(permission.get("basis", "")).strip():
+            raise Problem(f"{act.get('id')}: text_inheritance needs recorded-units scope and evidence basis")
+        if selected and act.get("parent_kind") == "use-continuity":
+            raise Problem(f"{act.get('id')}: use-continuity cannot authorize text inheritance")
+        return selected
+    if act.get("parent_kind") == "use-continuity" or act.get("station_kind") == "printed":
+        return []
+    return parents
 
 
 def precedes(earlier: str, later: str) -> bool:
@@ -1486,7 +1544,8 @@ def merge(parents: list[State], ancestor: State, act_id: str) -> State:
     return merged
 
 
-def common_ancestor(parents: list[str], acts: dict[str, dict], states: dict[str, State], vocab: Vocabulary) -> State:
+def common_ancestor(parents: list[str], acts: dict[str, dict], states: dict[str, State], vocab: Vocabulary,
+                    *, metadata: bool = False) -> State:
     """The state the given parents all inherit from.
 
     Walks each parent's ancestry and takes the latest act all of them reach. A
@@ -1508,7 +1567,7 @@ def common_ancestor(parents: list[str], acts: dict[str, dict], states: dict[str,
             if current in seen:
                 continue
             seen.add(current)
-            pending.extend(acts[current].get("parents", []))
+            pending.extend(carried_parents(acts[current]) if metadata else text_parents(acts[current]))
         reach.append(seen)
     shared = set.intersection(*reach) if reach else set()
     if not shared:
@@ -1524,12 +1583,29 @@ def inherit(act_id: str, acts: dict[str, dict], states: dict[str, State], vocab:
     `inherited` where the map's detail panel needs the same "before". Two
     implementations of one merge would be two answers to what an act changed.
     """
-    parents = carried_parents(acts[act_id])
-    return merge(
-        [states[parent] for parent in parents],
-        common_ancestor(parents, acts, states, vocab),
-        act_id,
-    )
+    act = acts[act_id]
+    parents = text_parents(act)
+    state = merge([states[parent] for parent in parents],
+                  common_ancestor(parents, acts, states, vocab), act_id)
+    # Evidence records remain discoverable along ancestry even when no words
+    # may cross that edge. Merge metadata alone: it cannot reintroduce units.
+    ancestry = carried_parents(act)
+    metadata_states = []
+    for parent in ancestry:
+        metadata = State(vocab)
+        metadata.files = states[parent].files.copy()
+        metadata_states.append(metadata)
+    base = State(vocab)
+    base.files = common_ancestor(ancestry, acts, states, vocab, metadata=True).files.copy()
+    state.files = merge(metadata_states, base, act_id).files
+    blocked = [parent for parent in ancestry if parent not in parents and states[parent].units]
+    if blocked:
+        state.files[f"unestablished/text-inheritance-{act_id}.txt"] = (
+            "Text inheritance is not established across these ancestry edges:\n"
+            + "".join(f"  - {parent}\n" for parent in blocked)
+            + "\nUnits not carried here are unestablished, not historically abolished.\n"
+        )
+    return state
 
 
 # --- Applying an act's departures --------------------------------------------
@@ -3760,6 +3836,19 @@ def build_structure_projection(sources: tuple[Path, ...], out: Path) -> dict:
         slice_ids.append(str(data.get("slice")))
         summaries.append(structure(data, out))
     root = out / STRUCTURE_RELATIVE
+    # The complete projection owns the catalogue too. A separate write would
+    # otherwise be an orphan under the exact structure drift check.
+    routing = ROOT / eucharistic_history.DEFAULT_SOURCE
+    if routing.is_file():
+        catalogue = eucharistic_history.catalogue(routing, ROOT, act_loader=load)
+        eucharistic_history.write_catalogue(catalogue, root / "catalogue.json")
+        for declaration in catalogue["comparisons"]:
+            comparison = eucharistic_history.compare(
+                routing, ROOT, declaration["id"], ventilator=ventilate,
+            )
+            eucharistic_history.write_comparison(
+                comparison, root / declaration["projection_path"],
+            )
     with _open_directory_path(root, create=False) as (root_fd, safe_root):
         files = structure_files(root_fd, safe_root)
     return {
@@ -4905,7 +4994,17 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
         print_json(payload)
         return 0
     verb = arguments.command
-    if verb == "check":
+    if verb == "compare":
+        print_json(payload)
+    elif verb == "catalogue":
+        if "entries" in payload:
+            print_json(payload)
+        else:
+            print(f"{'current' if 'current' in payload else 'wrote'}: {payload['counts']['entries']} catalogue records")
+            print(f"  -> {payload.get('current') or payload['written']}")
+    elif verb == "corpus":
+        print(f"wrote {payload['units']} text units on {payload['commits']} isolated reconstruction branches to {payload['out']}")
+    elif verb == "check":
         kinds = payload["departure_kinds"]
         print(
             f"ok: {payload['acts']} acts, {payload['lines']} lines, {payload['witnesses']} witnesses, "
@@ -4980,6 +5079,10 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
         print("  apparatus: " + ", ".join(payload["apparatus"]))
         print(f"  -> {payload['written']}")
         print(f"  octilinearise: {payload['octilinearise']}")
+        if payload.get("preview"):
+            print("  review preview: existing browser geometry; not the accepted LOOM plate")
+            for artifact in payload["preview"].get("artifacts", []):
+                print(f"  -> {artifact}")
     elif verb == "commonality":
         for row in payload["pairs"]:
             base = ", ".join(row["shared_base"]) if row["shared_base"] else "NONE: no act stands behind both"
@@ -5007,10 +5110,6 @@ def main(argv: list[str] | None = None) -> int:
         "tools/act-history",
     )
     shared = argparse.ArgumentParser(add_help=False)
-    shared.add_argument(
-        "--source", type=Path,
-        help="one slice source (default: the Holy Week slice; structure: every tracked slice)",
-    )
     shared.add_argument("--json", action="store_true")
     subparsers = parser.add_subparsers(dest="command")
     for verb, help_text in (
@@ -5020,10 +5119,26 @@ def main(argv: list[str] | None = None) -> int:
         ("plate", "write the printed map's DOT, for octi to octilinearise"),
         ("commonality", "report what two lines share, by git merge-base"),
         ("emit", "write the Git repository"),
+        ("catalogue", "project source-aware coverage without admitting historical stations"),
+        ("corpus", "emit isolated, publication-checked text reconstruction branches"),
+        ("compare", "compare explicitly aligned witness passages without asserting ancestry"),
     ):
         sub = subparsers.add_parser(verb, help=help_text, parents=[shared])
+        source_help = ("history routing inventory (default: src/sources/inventories/catholic-eucharistic-history-v1.toml)"
+                       if verb in ("catalogue", "corpus", "compare") else
+                       "one act slice; omit for the complete tracked projection" if verb == "structure" else
+                       "one act slice (default: the Roman Holy Week slice)")
+        sub.add_argument("--source", type=Path, help=source_help)
         if verb == "emit":
             sub.add_argument("--out", type=Path, default=DEFAULT_OUT)
+        if verb == "catalogue":
+            sub.add_argument("--out", type=Path, help="JSON projection file; omit to print the catalogue")
+            sub.add_argument("--check", action="store_true", help="regenerate and compare --out without writing")
+        if verb == "corpus":
+            sub.add_argument("--out", type=Path, required=True, help="disposable bare repository; replace only this tool's marked output")
+        if verb == "compare":
+            sub.add_argument("--comparison", required=True, help="explicit comparison id in the routing inventory")
+            sub.add_argument("--out", type=Path, help="write the complete comparison JSON here; omit to print it")
         if verb == "structure":
             sub.add_argument("--out", type=Path, default=DEFAULT_DATA)
             sub.add_argument(
@@ -5033,14 +5148,30 @@ def main(argv: list[str] | None = None) -> int:
             )
         if verb == "plate":
             sub.add_argument("--out", type=Path, default=DEFAULT_PLATE)
+            sub.add_argument("--preview", action="store_true", help="also render a review SVG/PDF with the existing browser geometry; not the accepted LOOM plate")
         if verb == "commonality":
             sub.add_argument("lines", nargs="*", metavar="LINE",
                              help="two line ids; omit for every pair")
             sub.add_argument("--repo", type=Path, default=DEFAULT_OUT,
                              help="an emitted repository; written if it is not there")
-        with_examples(sub, EXAMPLES[verb])
+        with_examples(sub, EXAMPLES.get(verb, ()))
 
     def run(arguments: argparse.Namespace) -> object:
+        if arguments.command in ("catalogue", "corpus", "compare"):
+            source = arguments.source or ROOT / eucharistic_history.DEFAULT_SOURCE
+            if arguments.command == "corpus":
+                return eucharistic_history.corpus(source, ROOT, arguments.out, ventilator=ventilate)
+            if arguments.command == "compare":
+                payload = eucharistic_history.compare(source, ROOT, arguments.comparison, ventilator=ventilate)
+                if arguments.out is not None:
+                    return eucharistic_history.write_comparison(payload, arguments.out)
+                return payload
+            if arguments.check and arguments.out is None:
+                raise Problem("catalogue --check requires --out")
+            payload = eucharistic_history.catalogue(source, ROOT, act_loader=load)
+            if arguments.out is not None:
+                return eucharistic_history.write_catalogue(payload, arguments.out, check=arguments.check)
+            return payload
         if arguments.command == "structure" and arguments.source is None:
             return structure_all(arguments.out, check_only=arguments.check)
         if arguments.command == "structure" and arguments.check:
@@ -5057,7 +5188,16 @@ def main(argv: list[str] | None = None) -> int:
         if arguments.command == "structure":
             return structure(data, arguments.out)
         if arguments.command == "plate":
-            return plate(data, arguments.out)
+            payload = plate(data, arguments.out)
+            if arguments.preview:
+                from _act_history_preview import render_preview
+                projected = structure(data, arguments.out / ".preview-data")
+                spine = json.loads(Path(projected["written"]).read_text())
+                payload["preview"] = render_preview(
+                    plate_path=Path(payload["written"]), spine=spine, out_dir=arguments.out,
+                    browser_source=ROOT / "src/web/browser/history/history.js",
+                )
+            return payload
         if arguments.command == "commonality":
             wanted = getattr(arguments, "lines", []) or []
             if len(wanted) not in (0, 2):
@@ -5067,12 +5207,12 @@ def main(argv: list[str] | None = None) -> int:
 
     return run_verb_cli(
         parser=parser,
-        handlers={verb: run for verb in ("check", "graph", "structure", "plate", "commonality", "emit")},
+        handlers={verb: run for verb in ("check", "graph", "structure", "plate", "commonality", "emit", "catalogue", "corpus", "compare")},
         renderer=render,
         prefix="act-history",
         argv=argv,
         default_verb="check",
-        mapped_errors={Problem: ("invalid-history", 1)},
+        mapped_errors={Problem: ("invalid-history", 1), eucharistic_history.HistoryError: ("invalid-history", 1), AdapterError: ("invalid-history", 1), PreviewError: ("preview-unavailable", 1)},
     )
 
 

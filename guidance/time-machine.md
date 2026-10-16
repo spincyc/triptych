@@ -578,3 +578,42 @@ What the map hides, stated so it can be compensated: duration, since Beck is
 topological; everything an act did not touch; and OCR uncertainty. Rule 1 keeps
 the scanner off the *map*, but does nothing for the *reading* surface, which must
 carry the review state of every text it shows.
+
+---
+
+## 11. Historical and language scope, agreed 2026-10-16
+
+The all-rite expansion covers today's Catholic traditions, their earlier shared
+ancestry, and extinct local uses, including Sarum. Communion at the date of a
+witness is a historical fact to record; it is not a filter that erases shared
+ancestry before reunion. Inclusion does not assert that a historical use is
+currently authorized or that a book from a related Church was received by a
+Catholic Church. Evidence must establish those relationships separately.
+
+The first corpus follows original liturgical-language service books. Approved
+vernacular translations and historical lay translations remain identifiable
+witnesses, but their independent histories are deferred. A book originally
+composed in a modern language is still an original-language book. Preserve each
+tradition's native book divisions and complementary volumes; do not force every
+Eucharistic service into the physical shape of a Roman altar missal.
+Established historical liturgical languages, including Church Slavonic, remain
+in scope even where their texts originated through translation. The deferred
+work is independent vernacular and lay translation histories, not the removal
+of a tradition's received service-book language. One evidenced recension may
+serve several Churches; a census of Churches is not a count of different books.
+
+“Sufficiently distinct” means a substantive change to prayers, rubrics, calendar,
+or liturgical order. A printer, year, reprint, rescan, orthographic convention,
+or OCR difference alone does not establish a version. Record witnesses needed
+to establish a textual state without multiplying stations for them. The act
+and distinct-edition requirements of §1 still govern admission to the historical
+graph, and §2 still governs descent and reception. Manuscript candidates remain
+source witnesses until their identity, historical relation, and graph admission
+basis have been established; a catalogue date must not become a fabricated act.
+
+Coverage is assessed by tradition and historical use, with unresolved stretches
+named explicitly. A catalogue record, an acquired source, a transcribed text,
+a collated text, and a reconstructed complete book are separate states. Empty
+or partial contents never constitute proof that the historical book lacked a
+prayer, rubric, or division. The inventory, generated Git history, and map must
+preserve these distinctions.

@@ -1,21 +1,27 @@
-# Project-created bibliographic research metadata; source titles remain identifiers.
-# No liturgical text, source delivery, or redistribution grant is carried here.
+# Project-created research metadata only; no source liturgical text.
+# Coverage slots, witnesses, substantive versions, translations and acquisition are distinct.
 audit_schema = 1
 record_type = "eastern-eucharistic-books-timeline-research"
 recorded_on = "2026-10-16"
-research_scope = "pending-ancestry-clarification"
-completeness = "bounded-seed-only"
-text_acquisition = "not-acquired"
+research_scope = "agreed-current-traditions-shared-ancestry-extinct-local-uses"
+completeness = "systematic-coverage-census-with-incomplete-edition-chronologies"
+text_acquisition = "six-complete-scans-acquired; remaining-records-metadata-only"
 source_schema_manifest = false
 station_assignments = "not-made"
-scope = "Selected Eucharistic service-book witnesses and reforms in Eastern Catholic traditions; not exhaustive"
-evidence_ceiling = "Web-rendered catalogue, official report, or decree inspection only. No source bytes acquired or hashed; no full-book collation; no redistribution permission inferred."
-scope_pending = "Present-day Catholic traditions traced through shared ancestry is provisional; neither the manuscript horizon nor the full edition universe has been settled."
+scope = "Eastern coverage census for present-day Catholic traditions, shared ancestry and extinct local uses; original liturgical-language service books first; not a complete edition catalogue"
+evidence_ceiling = "Catalogue, institutional history, official acts and selected manuscript research inspected. Six historical provider-marked public-domain scans acquired and registered by the source lane: 2,024 PDF pages. Bounded title/approval leaves inspected; no complete transcription or book-to-book collation. Two further Bonn candidates have catalogue and access-route evidence only."
 identity_model = "Church, rite family, recension, anaphora, translation, edition, printing, artifact and promulgating act are separate objects. These candidate IDs identify research rows, not canonical source works or history stations."
-coverage_definition_proposal = "Catalogue materially distinct normative texts, approved translations, abridgments, and witnessed printings for each present-day Catholic tradition; relate shared ancestors only through independently evidenced textual/history relationships. Retain complete book-set dependencies where the Eucharistic service spans multiple volumes."
-rights = "This file contains original paraphrase and bibliographic identifiers only. No rights finding is made for underlying books or source websites. Acquisition and publication remain separate later decisions."
+rights = "Project-created metadata and paraphrase only. Specific provider notices are recorded for acquisition candidates; they do not authorize publication of unrelated sources or modern editorial layers."
 currentness_limit = "Checked on the recorded date; this is not a declaration that a book is currently obligatory in every territory or that no later edition exists."
 governing_guidance = ["guidance/sources.md", "guidance/missals.md", "guidance/liturgical-text-publication-policy.md", "guidance/editorial.md", "guidance/repository.md"]
+scope_status = "agreed"
+chronology_policy = "Integer bounds represent only the explicitly identified event or witness date in chronology_kind, never the lifetime of a rite or inferred duration of use. Approximate centuries use stated calendar bounds and preserve the original wording; unknown dates have no numeric bounds."
+coverage_link_policy = "Church candidate_ids identify checked relevant Catholic book/reform candidates; a common book may cover multiple Churches when reception evidence supports the mapping; ancestry_candidate_ids identify comparison witnesses, not proven lineal ancestors or approved Catholic editions. Empty candidate_ids are an explicit gap, not proof that no book exists."
+version_count = "not-established; record count includes witnesses, printings, translations and acts-linked candidates, not a count of materially distinct versions"
+recension_policy = "Recension designations require textual or authoritative evidence. The separate recension_research table distinguishes an explicitly named recension from a project research target; a Church or language alone does not establish one."
+scope_questions_remaining = "Scope agreed. Exact manuscript transmission paths, extinct-use boundaries and exhaustive substantive-edition sequences remain research questions."
+coverage_definition = "A version requires evidence of substantive changes to prayers, rubrics, calendar or order. A manuscript witness, printing date, script change, Church union, or institutional erection alone is not a new version. Keep historical liturgical-language books first; approved vernacular and lay translations form later independent work. Modern-language original composition remains in scope and must be distinguished from translation."
+source_library_manifest_limit = "This inventory links canonical source-library identities; it is not itself a source artifact manifest. Scan acquisition does not establish checked transcription, complete structured contents, a substantive version boundary or edition-to-edition descent."
 
 [[sources]]
 id = "mci-liturgikon"
@@ -204,6 +210,454 @@ text_acquisition = "not-acquired"
 hash_state = "not-computed"
 full_contents_examined = false
 
+[[sources]]
+id = "census-sico-2007"
+url = "https://www.vatican.va/roman_curia/congregations/orientchurch/sico/SICO_PDF/SICO%202007.pdf"
+checked_on = "2026-10-16"
+evidence_type = "dicastery-periodical"
+inspection = "web-rendered-description-or-stated-locus"
+locus = "Printed p.187 / PDF p.186, footnote 9: 22 named Churches and five traditions before Eritrean establishment"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "census-vatican-news-2025"
+url = "https://www.vaticannews.va/en/church/news/2025-05/rome-hosts-jubilee-of-eastern-churches-may.html"
+checked_on = "2026-10-16"
+evidence_type = "official-news-report"
+inspection = "web-rendered-description-or-stated-locus"
+locus = "The Eastern Catholic Churches section: count 23; does not enumerate all names"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "census-parenti-2022"
+url = "https://www.ppoomm.va/content/dam/ppoomm/documentazioni/pubblicazioni/pubblicazioni-pum/libri/the-mission-of-the-universal-church-an-oriental-perspective/The-Mission-of-the-Universal-Church-An-Oriental-PerspectiveUUP.pdf"
+checked_on = "2026-10-16"
+evidence_type = "official-hosted-scholarly-publication"
+inspection = "web-rendered-description-or-stated-locus"
+locus = "Stefano Parenti, pp.122-124: 22 named Churches, five categories, Annuario Pontificio 2022 pp.1126-1129 cited; Albanian absent; Ethiopian and Maronite genealogical cautions"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "eritrea-2015-act"
+url = "https://www.vatican.va/content/francesco/la/apost_constitutions/documents/papa-francesco_costituzione-ap_20150119_ecclesia-metropolitana-asmarensis.html"
+checked_on = "2026-10-16"
+evidence_type = "official-apostolic-constitution"
+inspection = "web-rendered-description-or-stated-locus"
+locus = "Operative constitution and closing date 19 January 2015; AAS 107(2015)p 246. Web heading has 2105 typo; body and AAS reference establish 2015."
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "oriental-publications-profile"
+url = "https://www.vatican.va/roman_curia/congregations/orientchurch/profilo/rc_con_corient_pro_20000724_profile_it.html"
+checked_on = "2026-10-16"
+evidence_type = "official-institutional-history"
+inspection = "web-rendered-description-or-stated-locus"
+locus = "Liturgical commission paragraph: 37 books 1930-1960 in Greek, Church Slavonic, Romanian, Syriac, Coptic and Geez; not all Eucharistic books"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "byz-1754-act"
+url = "https://www.vatican.va/content/benedictus-xiv/es/documents/enciclica--i-ex-quo-primum--i---1-marzo-1756--il-pontefice-invit.html"
+checked_on = "2026-10-16"
+evidence_type = "official-encyclical-translation"
+inspection = "web-rendered-description-or-stated-locus"
+locus = "Ex quo primum, dated 1 March 1756; sections 5-9 and 75 identify 1754 Greek Euchologion and revision process; Italian body despite Spanish URL"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "byz-1873-dli"
+url = "https://dli.institute/dlibib/dlibibkatwp.php?Bestand=c&Kat=OB%3B0%3B0&NurGanze=0&Sortierung=Jahr&ausgabe=5"
+checked_on = "2026-10-16"
+evidence_type = "holding-library-catalogue"
+inspection = "web-rendered-description-or-stated-locus"
+locus = "Euchologion, Rome 1873 list entry; adjacent Rome 1872 entry is unresolved; full-record click failed"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "barberini-pinakes"
+url = "https://pinakes.irht.cnrs.fr/notices/cote/64879/"
+checked_on = "2026-10-16"
+evidence_type = "research-manuscript-catalogue"
+inspection = "direct-html-fetch-and-metadata-inspection"
+locus = "Diktyon 64879; content unit dated s.08(2/2), Calabria; Basil ff.1-22 v, Chrysostom ff.23-43 v; catalogue HTML fetched directly after web open failed"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "barberini-vatlib"
+url = "https://digi.vatlib.it/view/MSS_Barb.gr.336"
+checked_on = "2026-10-16"
+evidence_type = "holding-library-viewer"
+inspection = "web-rendered-description-or-stated-locus"
+locus = "Shelfmark and viewer rights: personal study allowed; printed/online publication requires permission; images not acquired"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "striatyn-1604"
+url = "https://omeka.nibu.kyiv.ua/s/nibu/item/5754"
+checked_on = "2026-10-16"
+evidence_type = "holding-library-catalogue-search-result"
+inspection = "search-result-only"
+locus = "Catalogue ID 5754; title, Church Slavonic language, Striatyn 1604 and 574 p; direct web open failed, indexed record inspected"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "blaj-cluj"
+url = "https://documente.bcucluj.ro/carti.html"
+checked_on = "2026-10-16"
+evidence_type = "holding-library-digital-index"
+inspection = "web-rendered-description-or-stated-locus"
+locus = "Transilvanica entries 15 and 37: Blaj liturgies 1756 and 1775; direct HTML download also inspected for viewer links"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "coptic-1902-bonn"
+url = "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/1703331"
+checked_on = "2026-10-16"
+evidence_type = "holding-library-catalogue"
+inspection = "web-rendered-description-or-stated-locus"
+locus = "Title/editor, Cairo 1618[=1902],778 p, Coptic/Arabic; confessional affiliation not stated in inspected metadata"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "coptic-or6877-edition"
+url = "https://ojs.mtak.hu/index.php/etj/article/download/21535/17798"
+checked_on = "2026-10-16"
+evidence_type = "primary-manuscript-research-edition"
+inspection = "web-rendered-description-or-stated-locus"
+locus = "Agnes T. Mihalyko, Eastern Theological Journal 11/2(2025), pp 271-303; introduction, description and abstract: Sahidic anaphora fragment Or 6877, sixth/seventh-century manuscript; proposed fourth/fifth-century composition is separate"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "geez-eap385"
+url = "https://searcharchives.bl.uk/catalog/040-002902125"
+checked_on = "2026-10-16"
+evidence_type = "holding-library-catalogue-search-result"
+inspection = "search-result-only"
+locus = "EAP 286/1/1/385;1779-1796 missal, Geez,131 images; named-ruler/patriarch dating; direct open failed"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "armenian-eap1686"
+url = "https://searcharchives.bl.uk/catalog/040-002717298"
+checked_on = "2026-10-16"
+evidence_type = "holding-library-catalogue-search-result"
+inspection = "search-result-only"
+locus = "EAP 180/1/1/20, Khorhrdatetr 1686, Armenian,22 TIFF images, FSL Yerevan HOVH/324; direct open failed"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "syriac-wright-extract"
+url = "https://syriac-anaphoras.org/catalogue/html/katalog_britmus_1.html"
+checked_on = "2026-10-16"
+evidence_type = "research-catalogue-extract"
+inspection = "web-rendered-description-or-stated-locus"
+locus = "Extract of Wright 1870 vol 1 pp 204-208: Add 14669 ff 20-21, Add 14523 ff 1-7, Add 14690; original catalogue and manuscript images not inspected"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "syriac-anaphoras-project"
+url = "https://syriac-anaphoras.org/"
+checked_on = "2026-10-16"
+evidence_type = "research-project-scope-statement"
+inspection = "web-rendered-description-or-stated-locus"
+locus = "Introduction and limitations: unstable attributions, reused prayer units, inaccessible/lost manuscripts; precise total of extant anaphoras not fixed"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "bonn-syr1881"
+url = "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/310934"
+checked_on = "2026-10-16"
+evidence_type = "holding-library-catalogue"
+inspection = "direct-html-fetch-and-metadata-inspection"
+locus = "Title/imprint/extent/annotations and rights notice inspected in directly fetched HTML; PDF and IIIF links extracted"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "bonn-mal1898"
+url = "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/6834153"
+checked_on = "2026-10-16"
+evidence_type = "holding-library-catalogue"
+inspection = "direct-html-fetch-and-metadata-inspection"
+locus = "Title/imprint/extent/annotations and rights notice inspected in directly fetched HTML; PDF and IIIF links extracted"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "bonn-mal1906"
+url = "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3724391"
+checked_on = "2026-10-16"
+evidence_type = "holding-library-catalogue"
+inspection = "direct-html-fetch-and-metadata-inspection"
+locus = "Title/imprint/extent/annotations and rights notice inspected in directly fetched HTML; PDF and IIIF links extracted"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "bonn-chaldproper1901"
+url = "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3054856"
+checked_on = "2026-10-16"
+evidence_type = "holding-library-catalogue"
+inspection = "direct-html-fetch-and-metadata-inspection"
+locus = "Title/imprint/extent/annotations and rights notice inspected in directly fetched HTML; PDF and IIIF links extracted"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "bonn-mar1908"
+url = "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3088113"
+checked_on = "2026-10-16"
+evidence_type = "holding-library-catalogue"
+inspection = "direct-html-fetch-and-metadata-inspection"
+locus = "Title/imprint/extent/annotations and rights notice inspected in directly fetched HTML; PDF and IIIF links extracted"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "bonn-urmia1876"
+url = "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/310760"
+checked_on = "2026-10-16"
+evidence_type = "holding-library-catalogue"
+inspection = "direct-html-fetch-and-metadata-inspection"
+locus = "Title/imprint/extent/annotations and rights notice inspected in directly fetched HTML; PDF and IIIF links extracted"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "book-chald-1901"
+url = "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3058397"
+checked_on = "2026-10-16"
+evidence_type = "primary-book-scan-front-matter"
+inspection = "bounded-direct-page-image-inspection-by-source-acquisition-lane"
+locus = "PDF pages 102: imprimatur 1901-10-22"
+text_acquisition = "complete-provider-pdf-acquired-and-registered"
+hash_state = "sha256-computed"
+sha256 = "dbc2a822e960ec581479e864968f6a4441dcf7ccf78fddd3fa28e89ef6a8abca"
+byte_count = 25095094
+pdf_pages = 107
+full_contents_examined = false
+source_library_edition_id = "edition.chaldean-catholic-church.missale.1901-mosul-dominican"
+source_artifact_id = "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.bonn-scan-pdf-dbc2a822"
+
+[[sources]]
+id = "book-syr-mosul-1881"
+url = "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/310934"
+checked_on = "2026-10-16"
+evidence_type = "primary-book-scan-front-matter"
+inspection = "bounded-direct-page-image-inspection-by-source-acquisition-lane"
+locus = "PDF pages 383,384: approval 1880-09-08"
+text_acquisition = "complete-provider-pdf-acquired-and-registered"
+hash_state = "sha256-computed"
+sha256 = "1089aee7ced25a8ed3c091ce31b063f5772d05becf0e44778de5599704b3e773"
+byte_count = 39383271
+pdf_pages = 391
+full_contents_examined = false
+source_library_edition_id = "edition.syriac-catholic-church.missale.1881-mosul-dominican-nouvelle-edition"
+source_artifact_id = "artifact.syriac-catholic-church.missale.1881-mosul-dominican-nouvelle-edition.bonn-scan-pdf-1089aee7"
+
+[[sources]]
+id = "book-malabar-1898"
+url = "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/6834153"
+checked_on = "2026-10-16"
+evidence_type = "primary-book-scan-front-matter"
+inspection = "bounded-direct-page-image-inspection-by-source-acquisition-lane"
+locus = "PDF pages 232,233: imprimatur 1893-11-16"
+text_acquisition = "complete-provider-pdf-acquired-and-registered"
+hash_state = "sha256-computed"
+sha256 = "d6c4eb2c7f065edd288469138162b205ad43615da6bb4420d41c05750e23edff"
+byte_count = 38650015
+pdf_pages = 239
+full_contents_examined = false
+source_library_edition_id = "edition.syro-malabar-catholic-church.preparation-for-qurbana.1898-mannanam-mar-yusuf"
+source_artifact_id = "artifact.syro-malabar-catholic-church.preparation-for-qurbana.1898-mannanam-mar-yusuf.bonn-scan-pdf-d6c4eb2c"
+
+[[sources]]
+id = "book-malabar-1906"
+url = "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3724391"
+checked_on = "2026-10-16"
+evidence_type = "primary-book-scan-front-matter"
+inspection = "bounded-direct-page-image-inspection-by-source-acquisition-lane"
+locus = "PDF pages 6: approval 1905-10-15; PDF pages 6: reported-prior-approval 1905-07-31"
+text_acquisition = "complete-provider-pdf-acquired-and-registered"
+hash_state = "sha256-computed"
+sha256 = "4c93c36dcc7527b8099d24f102235fe9c45bc40871eff550eebe0fe319c9fd6f"
+byte_count = 125993214
+pdf_pages = 515
+full_contents_examined = false
+source_library_edition_id = "edition.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha"
+source_artifact_id = "artifact.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.bonn-scan-pdf-4c93c36d"
+
+[[sources]]
+id = "book-chald-proper-1901"
+url = "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3054856"
+checked_on = "2026-10-16"
+evidence_type = "primary-book-scan-front-matter"
+inspection = "bounded-direct-page-image-inspection-by-source-acquisition-lane"
+locus = "PDF pages 320: imprimatur 1901-10-22"
+text_acquisition = "complete-provider-pdf-acquired-and-registered"
+hash_state = "sha256-computed"
+sha256 = "5d7986a9d501029d8bc189d904025529ca566373c5d7530d39536f0e4e317a22"
+byte_count = 81237265
+pdf_pages = 325
+full_contents_examined = false
+source_library_edition_id = "edition.chaldean-catholic-church.proprium-missarum.1901-mosul-dominican"
+source_artifact_id = "artifact.chaldean-catholic-church.proprium-missarum.1901-mosul-dominican.bonn-scan-pdf-5d7986a9"
+
+[[sources]]
+id = "book-mar-dibs-1908"
+url = "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3088113"
+checked_on = "2026-10-16"
+evidence_type = "primary-book-scan-front-matter"
+inspection = "bounded-direct-page-image-inspection-by-source-acquisition-lane"
+locus = "Bounded title and front-matter inspection; no substantive predecessor collation"
+text_acquisition = "complete-provider-pdf-acquired-and-registered"
+hash_state = "sha256-computed"
+sha256 = "8dc5d7fd921fa75e14423328a0b1db95f152eda97b9cf7593e180ebfb4fd9ed1"
+byte_count = 112477135
+pdf_pages = 447
+full_contents_examined = false
+source_library_edition_id = "edition.maronite-church.qurbono.1908-beirut-maronite-press-second-printing"
+source_artifact_id = "artifact.maronite-church.qurbono.1908-beirut-maronite-press-second-printing.bonn-scan-pdf-8dc5d7fd"
+
+[[sources]]
+id = "hungarian-collection-1646"
+url = "https://real.mtak.hu/123139/1/terdik_katalogustetelek.pdf"
+checked_on = "2026-10-16"
+evidence_type = "institutional-repository-collection-catalogue"
+inspection = "web-rendered-text-or-pdf-text-layer"
+locus = "PDF page 7, printed page 71, catalogue II.16; catalogue prose and bibliographic description inspected"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "nbuv-vilnius-suprasl"
+url = "https://irbis-nbuv.gov.ua/cgi-bin/irbis_vsd/cgiirbis_64.exe?2_S21P03=K%3D&2_S21STR=%D0%84%D0%A1%D0%A2&C21COM=S&I21DBN=VKD&P21DBN=VKD&S21CNR=20&S21FMT=fullwebr&S21REF=10&S21STN=1&Z21ID="
+checked_on = "2026-10-16"
+evidence_type = "holding-library-catalogue"
+inspection = "web-rendered-text-or-pdf-text-layer"
+locus = "Result 17, 1692–1695 Vilnius/Supraśl; holding Кир.1269п among listed copies; result 13 independently lists Lviv 1646"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "nbuv-josaphat-study"
+url = "https://www.journals.vu.lt/lietuvos-istorijos-studijos/en/article/download/45657/41847/132477"
+checked_on = "2026-10-16"
+evidence_type = "holding-library-research-by-collection-staff"
+inspection = "web-rendered-text-or-pdf-text-layer"
+locus = "Bondar and Zabolotna, 2025, printed pages 367–371 (PDF pages 2–6); holdings and transmission discussion inspected"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "bogataj-slovenian-source"
+url = "https://www.teof.uni-lj.si/uploads/File/Edinost/77/02/Bogataj1.pdf"
+checked_on = "2026-10-16"
+evidence_type = "firsthand-translator-publication-in-university-journal"
+inspection = "web-rendered-text-or-pdf-text-layer"
+locus = "Jan Dominik Bogataj, O novem slovenskem prevodu Božje liturgije, 2022, printed pages 259–260 and bibliography page 263"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "presov-liturgical-history"
+url = "https://www.unipo.sk/public/media/36923/Podte_poklonme_sa..._Uvod_do_liturgickej_teologie_Mojzes_M.pdf"
+checked_on = "2026-10-16"
+evidence_type = "university-publication-with-archival-reference"
+inspection = "web-rendered-text-or-pdf-text-layer"
+locus = "Marcel Mojzeš, Poďte, pokloňme sa a padnime pred Kristom, 2013, printed pages 67–68 and note 190"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "slovak-mission-books"
+url = "https://www.mnichov.grkatke.sk/2022"
+checked_on = "2026-10-16"
+evidence_type = "official-church-mission-report"
+inspection = "web-rendered-text-or-pdf-text-layer"
+locus = "19 June 2022 entry Posvätenie liturgických kníh; languages named but no imprint identified"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "bulgarian-burgas-publications"
+url = "https://www.kae-bg.org/?act=content&rec=41"
+checked_on = "2026-10-16"
+evidence_type = "official-parish-publication-list"
+inspection = "web-rendered-text-or-pdf-text-layer"
+locus = "Издания section, 2005 composite book; title and publication description inspected"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "russian-parish-tradition"
+url = "https://www.russiancatholic.org/our-liturgical-tradition"
+checked_on = "2026-10-16"
+evidence_type = "official-parish-account"
+inspection = "web-rendered-text-or-pdf-text-layer"
+locus = "Our Liturgical Tradition, Situating section; Russian tradition described, no exact service-book imprint"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "malabar-aas-1985-decree"
+url = "https://www.vatican.va/archive/aas/documents/AAS-78-1986-ocr.pdf"
+checked_on = "2026-10-16"
+evidence_type = "official-published-authority-act"
+inspection = "web-rendered-text-or-pdf-text-layer"
+locus = "Acta Apostolicae Sedis 78 (1986), pages 588–589, protocol 955/65, decree dated 19 December 1985; text layer inspected, page-image requests failed"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
 [[records]]
 id = "byz-lviv-1905"
 family = "Byzantine"
@@ -219,6 +673,16 @@ source_urls = ["https://mci.archpitt.org/liturgy/Liturgikon.html"]
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
 text_acquisition = "not-acquired"
 full_contents_examined = false
+research_priority = "source-language"
+version_status = "substantive-difference-not-established"
+chronology_start = 1905
+chronology_end = 1905
+chronology_kind = "publication-or-edition-year-reported"
+chronology_certainty = "year-explicit-in-cited-record-or-retrospective; not-independent-collation"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
 
 [[records]]
 id = "byz-ruthenian-1942"
@@ -229,12 +693,23 @@ date = "1942"
 language = "Church Slavonic"
 kind = "recension-edition"
 evidence = "official-institutional-history-inspected"
-source_ids = ["mci-liturgikon", "mci-text"]
+source_ids = ["mci-liturgikon", "mci-text", "bogataj-slovenian-source"]
 note = "MCI identifies Rome publication as a reform and the Slavonic basis of later English books. Referenced scan URL returns 404; no scan inspected."
-source_urls = ["https://mci.archpitt.org/liturgy/Liturgikon.html", "https://mci.archpitt.org/NewServiceBooks2.html"]
+source_urls = ["https://mci.archpitt.org/liturgy/Liturgikon.html", "https://mci.archpitt.org/NewServiceBooks2.html", "https://www.teof.uni-lj.si/uploads/File/Edinost/77/02/Bogataj1.pdf"]
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
 text_acquisition = "not-acquired"
 full_contents_examined = false
+research_priority = "source-language"
+version_status = "substantive-revision-reported; exact-textual-difference-unverified"
+chronology_start = 1942
+chronology_end = 1942
+chronology_kind = "publication-or-edition-year-reported"
+chronology_certainty = "year-explicit-in-cited-record-or-retrospective; not-independent-collation"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
+reception_evidence = "The Slovenian translator identifies the 1942 Church Slavonic book as his source and reports the Križevci bishop’s confirmation request (3 June 2022, 92/2022) and dicastery approval (30 November 2022, 152/2022). This documents one approved translation source; original letters and general adoption remain unverified."
 
 [[records]]
 id = "byz-pittsburgh-1964-65"
@@ -251,6 +726,17 @@ source_urls = ["https://mci.archpitt.org/liturgy/Liturgikon.html", "https://mci.
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
 text_acquisition = "not-acquired"
 full_contents_examined = false
+research_priority = "deferred-translation-lane"
+version_status = "substantive-difference-not-established"
+scope_note = "Retained prior research; independent vernacular/lay translation work is deferred. Rubrical or original-composition evidence may later justify a separately sourced version claim."
+chronology_start = 1964
+chronology_end = 1965
+chronology_kind = "unresolved-publication-versus-promulgation"
+chronology_certainty = "reported-event-dates; see-date-basis-and-evidence-type"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
 
 [[records]]
 id = "byz-pittsburgh-2006-07"
@@ -268,6 +754,18 @@ source_urls = ["https://mci.archpitt.org/NewServiceBooks.html", "https://mci.arc
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
 text_acquisition = "not-acquired"
 full_contents_examined = false
+research_priority = "deferred-translation-lane"
+version_status = "substantive-difference-not-established"
+scope_note = "Retained prior research; independent vernacular/lay translation work is deferred. Rubrical or original-composition evidence may later justify a separately sourced version claim."
+chronology_start = 2006
+chronology_end = 2007
+chronology_kind = "publication-through-promulgation"
+chronology_certainty = "reported-event-dates; see-date-basis-and-evidence-type"
+authority_act_ids = ["pittsburgh-promulgation-2007"]
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
 
 [[records]]
 id = "byz-pittsburgh-2010-presanctified"
@@ -284,6 +782,17 @@ source_urls = ["https://www.mci.archpitt.org/NewPresanctifiedBooks.html"]
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
 text_acquisition = "not-acquired"
 full_contents_examined = false
+research_priority = "deferred-translation-lane"
+version_status = "substantive-difference-not-established"
+scope_note = "Retained prior research; independent vernacular/lay translation work is deferred. Rubrical or original-composition evidence may later justify a separately sourced version claim."
+chronology_start = 2010
+chronology_end = 2010
+chronology_kind = "publication-or-edition-year-reported"
+chronology_certainty = "indexed-announcement-only; direct-access-failed"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
 
 [[records]]
 id = "byz-ugcc-2024"
@@ -300,6 +809,18 @@ source_urls = ["https://docs.ugcc.ua/1718/"]
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
 text_acquisition = "not-acquired"
 full_contents_examined = false
+research_priority = "deferred-translation-lane"
+version_status = "substantive-difference-not-established"
+scope_note = "Retained prior research; independent vernacular/lay translation work is deferred. Rubrical or original-composition evidence may later justify a separately sourced version claim."
+chronology_start = 2024
+chronology_end = 2024
+chronology_kind = "promulgation-and-effective-year"
+chronology_certainty = "reported-event-dates; see-date-basis-and-evidence-type"
+authority_act_ids = ["ugcc-ba24-027"]
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
 
 [[records]]
 id = "byz-melkite-pdf-lead"
@@ -317,6 +838,12 @@ source_urls = ["https://bcs.edu/library-liturgikon/"]
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
 text_acquisition = "not-acquired"
 full_contents_examined = false
+research_priority = "source-language"
+version_status = "substantive-difference-not-established"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
 
 [[records]]
 id = "alex-coptic-1736"
@@ -333,6 +860,16 @@ source_urls = ["https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/25
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
 text_acquisition = "not-acquired"
 full_contents_examined = false
+research_priority = "source-language"
+version_status = "substantive-difference-not-established"
+chronology_start = 1736
+chronology_end = 1736
+chronology_kind = "publication-or-edition-year-reported"
+chronology_certainty = "year-explicit-in-cited-record-or-retrospective; not-independent-collation"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
 
 [[records]]
 id = "alex-geez-2025"
@@ -349,6 +886,16 @@ source_urls = ["https://www.osservatoreromano.va/en/news/2025-06/ing-006/new-edi
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
 text_acquisition = "not-acquired"
 full_contents_examined = false
+research_priority = "source-language"
+version_status = "substantive-revision-reported; exact-textual-difference-unverified"
+chronology_start = 2025
+chronology_end = 2025
+chronology_kind = "presentation-year"
+chronology_certainty = "reported-event-dates; see-date-basis-and-evidence-type"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
 
 [[records]]
 id = "arm-1677-liturgia"
@@ -365,6 +912,16 @@ source_urls = ["https://melikiancollection.com/artwork/lyturgia-armena-and-minis
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
 text_acquisition = "not-acquired"
 full_contents_examined = false
+research_priority = "source-language"
+version_status = "substantive-difference-not-established"
+chronology_start = 1677
+chronology_end = 1677
+chronology_kind = "publication-or-edition-year-reported"
+chronology_certainty = "year-explicit-in-cited-record-or-retrospective; not-independent-collation"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
 
 [[records]]
 id = "arm-1677-ministerium"
@@ -381,6 +938,16 @@ source_urls = ["https://melikiancollection.com/artwork/lyturgia-armena-and-minis
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
 text_acquisition = "not-acquired"
 full_contents_examined = false
+research_priority = "source-language"
+version_status = "substantive-difference-not-established"
+chronology_start = 1677
+chronology_end = 1677
+chronology_kind = "publication-or-edition-year-reported"
+chronology_certainty = "year-explicit-in-cited-record-or-retrospective; not-independent-collation"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
 
 [[records]]
 id = "arm-1823"
@@ -397,6 +964,16 @@ source_urls = ["https://www.loc.gov/exhibits/armenian-literary-tradition/exhibit
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
 text_acquisition = "not-acquired"
 full_contents_examined = false
+research_priority = "source-language"
+version_status = "dependent-printing; not-separate-version-unless-collation-proves-change"
+chronology_start = 1823
+chronology_end = 1823
+chronology_kind = "publication-or-edition-year-reported"
+chronology_certainty = "year-explicit-in-cited-record-or-retrospective; not-independent-collation"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
 
 [[records]]
 id = "mar-1592-94"
@@ -413,6 +990,16 @@ source_urls = ["https://www.stmaron.org/qurbono"]
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
 text_acquisition = "not-acquired"
 full_contents_examined = false
+research_priority = "source-language"
+version_status = "substantive-difference-not-established"
+chronology_start = 1592
+chronology_end = 1594
+chronology_kind = "reported-publication-range"
+chronology_certainty = "reported-event-dates; see-date-basis-and-evidence-type"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
 
 [[records]]
 id = "mar-1716"
@@ -429,6 +1016,16 @@ source_urls = ["https://www.stmaron.org/qurbono"]
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
 text_acquisition = "not-acquired"
 full_contents_examined = false
+research_priority = "source-language"
+version_status = "substantive-revision-reported; exact-textual-difference-unverified"
+chronology_start = 1716
+chronology_end = 1716
+chronology_kind = "publication-or-edition-year-reported"
+chronology_certainty = "year-explicit-in-cited-record-or-retrospective; not-independent-collation"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
 
 [[records]]
 id = "mar-1763"
@@ -445,6 +1042,16 @@ source_urls = ["https://www.stmaron.org/qurbono"]
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
 text_acquisition = "not-acquired"
 full_contents_examined = false
+research_priority = "source-language"
+version_status = "substantive-revision-reported; exact-textual-difference-unverified"
+chronology_start = 1763
+chronology_end = 1763
+chronology_kind = "publication-or-edition-year-reported"
+chronology_certainty = "year-explicit-in-cited-record-or-retrospective; not-independent-collation"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
 
 [[records]]
 id = "mar-dibs-1888"
@@ -461,22 +1068,52 @@ source_urls = ["https://www.stmaron.org/qurbono"]
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
 text_acquisition = "not-acquired"
 full_contents_examined = false
+research_priority = "source-language"
+version_status = "substantive-difference-not-established"
+chronology_start = 1888
+chronology_end = 1888
+chronology_kind = "publication-or-edition-year-reported"
+chronology_certainty = "year-explicit-in-cited-record-or-retrospective; not-independent-collation"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
 
 [[records]]
 id = "mar-dibs-1908"
 family = "West Syriac/Maronite"
 church_scope = "Maronite"
-book_label = "Qurbono, Dibs editions"
+book_label = "Ketābā de-qurbānā āk 'eyādā de-'idtā d-Antiukiyā de-Mārūnāye : .Tubi'a tāniyatan"
 date = "1908"
 language = "not separately checked"
 kind = "historical-edition-candidate"
-evidence = "official-retrospective-inspected"
-source_ids = ["maronite"]
+evidence = "official-retrospective-inspected; primary-book-scan-front-matter (bounded image inspection by acquisition lane)"
+source_ids = ["maronite", "bonn-mar1908", "book-mar-dibs-1908"]
 note = "Beirut; introduction attributes anaphora reordering and wording revision to Dibs editions collectively. Changes between these two impressions remain unchecked."
-source_urls = ["https://www.stmaron.org/qurbono"]
+source_urls = ["https://www.stmaron.org/qurbono", "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3088113", "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3088113"]
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
-text_acquisition = "not-acquired"
+text_acquisition = "complete-provider-pdf-acquired-and-registered"
 full_contents_examined = false
+research_priority = "source-language"
+version_status = "substantive-difference-not-established"
+chronology_start = 1908
+chronology_end = 1908
+chronology_kind = "publication-or-edition-year-reported"
+chronology_certainty = "year-explicit-in-cited-record-or-retrospective; not-independent-collation"
+witness_note = "Bonn confirms Beirut 1908, Dibs,60+376 p, second-printing label. Prior retrospective reports reform history; no direct 1888/1908 comparison yet."
+acquisition_status = "scan-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Holding catalogue romanization retained; native-script title not transcribed in this research record"
+source_library_work_id = "work.maronite-church.qurbono"
+source_library_edition_id = "edition.maronite-church.qurbono.1908-beirut-maronite-press-second-printing"
+source_artifact_ids = ["artifact.maronite-church.qurbono.1908-beirut-maronite-press-second-printing.bonn-scan-pdf-8dc5d7fd", "artifact.maronite-church.qurbono.1908-beirut-maronite-press-second-printing.pages-0001-0223-07f785ad", "artifact.maronite-church.qurbono.1908-beirut-maronite-press-second-printing.pages-0224-0447-5b0fbb00"]
+original_scan_artifact_id = "artifact.maronite-church.qurbono.1908-beirut-maronite-press-second-printing.bonn-scan-pdf-8dc5d7fd"
+acquisition_sha256 = "8dc5d7fd921fa75e14423328a0b1db95f152eda97b9cf7593e180ebfb4fd9ed1"
+acquisition_byte_count = 112477135
+acquisition_pdf_pages = 447
+retained_scan_payloads = ["src/sources/works/maronite-church/qurbono/editions/1908-beirut-maronite-press-second-printing/artifacts/pages-0001-0223-07f785ad/pages-0001-0223.pdf", "src/sources/works/maronite-church/qurbono/editions/1908-beirut-maronite-press-second-printing/artifacts/pages-0224-0447-5b0fbb00/pages-0224-0447.pdf"]
+scan_storage_note = "Exact provider parent and all page content retained; see source-library artifact records for whole-PDF versus split-part storage"
 
 [[records]]
 id = "mar-1959"
@@ -493,6 +1130,17 @@ source_urls = ["https://www.stmaron.org/qurbono"]
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
 text_acquisition = "not-acquired"
 full_contents_examined = false
+research_priority = "reform-evidence-retained-original-composition-review"
+version_status = "script-change-only-established; substantive-version-unproven"
+scope_note = "Retain institutional reform chronology; determine which material was newly composed in this language and which translates an older liturgical-language text before promoting source-book coverage."
+chronology_start = 1959
+chronology_end = 1959
+chronology_kind = "publication-or-edition-year-reported"
+chronology_certainty = "year-explicit-in-cited-record-or-retrospective; not-independent-collation"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
 
 [[records]]
 id = "mar-1973"
@@ -509,6 +1157,17 @@ source_urls = ["https://www.stmaron.org/qurbono"]
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
 text_acquisition = "not-acquired"
 full_contents_examined = false
+research_priority = "reform-evidence-retained-original-composition-review"
+version_status = "substantive-revision-reported; exact-textual-difference-unverified"
+scope_note = "Retain institutional reform chronology; determine which material was newly composed in this language and which translates an older liturgical-language text before promoting source-book coverage."
+chronology_start = 1973
+chronology_end = 1973
+chronology_kind = "publication-or-edition-year-reported"
+chronology_certainty = "year-explicit-in-cited-record-or-retrospective; not-independent-collation"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
 
 [[records]]
 id = "mar-1992"
@@ -525,6 +1184,17 @@ source_urls = ["https://www.stmaron.org/qurbono"]
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
 text_acquisition = "not-acquired"
 full_contents_examined = false
+research_priority = "reform-evidence-retained-original-composition-review"
+version_status = "substantive-revision-reported; exact-textual-difference-unverified"
+scope_note = "Retain institutional reform chronology; determine which material was newly composed in this language and which translates an older liturgical-language text before promoting source-book coverage."
+chronology_start = 1992
+chronology_end = 1992
+chronology_kind = "publication-or-edition-year-reported"
+chronology_certainty = "year-explicit-in-cited-record-or-retrospective; not-independent-collation"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
 
 [[records]]
 id = "syr-1922"
@@ -541,6 +1211,16 @@ source_urls = ["https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/30
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
 text_acquisition = "not-acquired"
 full_contents_examined = false
+research_priority = "source-language"
+version_status = "substantive-difference-not-established"
+chronology_start = 1922
+chronology_end = 1922
+chronology_kind = "publication-or-edition-year-reported"
+chronology_certainty = "year-explicit-in-cited-record-or-retrospective; not-independent-collation"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
 
 [[records]]
 id = "malankara-2012-takso"
@@ -557,6 +1237,17 @@ source_urls = ["https://www.mccna.org/sites/default/files/epl/EPL-3-2012-web.pdf
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
 text_acquisition = "not-acquired"
 full_contents_examined = false
+research_priority = "deferred-translation-lane"
+version_status = "substantive-difference-not-established"
+scope_note = "Retained prior research; independent vernacular/lay translation work is deferred. Rubrical or original-composition evidence may later justify a separately sourced version claim."
+chronology_start = 2012
+chronology_end = 2012
+chronology_kind = "reported-release-year"
+chronology_certainty = "reported-event-dates; see-date-basis-and-evidence-type"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
 
 [[records]]
 id = "malankara-2012-people"
@@ -573,6 +1264,17 @@ source_urls = ["https://www.mccna.org/sites/default/files/epl/EPL-3-2012-web.pdf
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
 text_acquisition = "not-acquired"
 full_contents_examined = false
+research_priority = "deferred-translation-lane"
+version_status = "substantive-difference-not-established"
+scope_note = "Retained prior research; independent vernacular/lay translation work is deferred. Rubrical or original-composition evidence may later justify a separately sourced version claim."
+chronology_start = 2012
+chronology_end = 2012
+chronology_kind = "reported-release-year"
+chronology_certainty = "reported-event-dates; see-date-basis-and-evidence-type"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
 
 [[records]]
 id = "chald-1901"
@@ -582,13 +1284,33 @@ book_label = "Missale juxta ritum Ecclesiae Syrorum Orientalium, id est Chaldaeo
 date = "1901"
 language = "Syriac script"
 kind = "printed-witness"
-evidence = "library-catalogue-inspected"
-source_ids = ["chaldean-1901"]
+evidence = "library-catalogue-inspected; primary-book-scan-front-matter (bounded image inspection by acquisition lane)"
+source_ids = ["chaldean-1901", "book-chald-1901"]
 note = "Mosul, Dominican press, 96 pages. Separate 1900 lection books and 1901 Proprium are catalogue leads; this volume alone is not the complete yearly Eucharistic book set."
-source_urls = ["https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3058397"]
+source_urls = ["https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3058397", "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3058397"]
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
-text_acquisition = "not-acquired"
+text_acquisition = "complete-provider-pdf-acquired-and-registered"
 full_contents_examined = false
+research_priority = "source-language"
+version_status = "substantive-difference-not-established"
+chronology_start = 1901
+chronology_end = 1901
+chronology_kind = "publication-or-edition-year-reported"
+chronology_certainty = "year-explicit-in-cited-record-or-retrospective; not-independent-collation"
+acquisition_sha256 = "dbc2a822e960ec581479e864968f6a4441dcf7ccf78fddd3fa28e89ef6a8abca"
+acquisition_status = "scan-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
+source_library_work_id = "work.chaldean-catholic-church.missale"
+source_library_edition_id = "edition.chaldean-catholic-church.missale.1901-mosul-dominican"
+source_artifact_ids = ["artifact.chaldean-catholic-church.missale.1901-mosul-dominican.bonn-scan-pdf-dbc2a822"]
+original_scan_artifact_id = "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.bonn-scan-pdf-dbc2a822"
+acquisition_byte_count = 25095094
+acquisition_pdf_pages = 107
+retained_scan_payloads = ["src/sources/works/chaldean-catholic-church/missale/editions/1901-mosul-dominican/artifacts/bonn-scan-pdf-dbc2a822/scan.pdf"]
+scan_storage_note = "Exact provider parent and all page content retained; see source-library artifact records for whole-PDF versus split-part storage"
+authority_act_ids = ["chald-1901-imprimatur-1901-10-22"]
 
 [[records]]
 id = "chald-arabic-by-2022"
@@ -605,6 +1327,13 @@ source_urls = ["https://www.fides.org/en/news/71516"]
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
 text_acquisition = "not-acquired"
 full_contents_examined = false
+research_priority = "deferred-translation-lane"
+version_status = "substantive-difference-not-established"
+scope_note = "Retained prior research; independent vernacular/lay translation work is deferred. Rubrical or original-composition evidence may later justify a separately sourced version claim."
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
 
 [[records]]
 id = "malabar-1962"
@@ -615,12 +1344,23 @@ date = "1962"
 language = "Malayalam; English distinction needs exact books"
 kind = "historical-reform-candidate"
 evidence = "official-commission-retrospective-inspected"
-source_ids = ["malabar-history"]
-note = "Commission history reports Malayalam publication; exact imprint and relation to Syriac book require inspection."
-source_urls = ["https://www.syromalabarliturgy.org/news"]
+source_ids = ["malabar-history", "malabar-aas-1985-decree"]
+note = "Commission reports Malayalam publication. The 1985 decree separately reports introduction of a Syriac missal on 20 January 1962. Exact imprints and their relationship remain unresolved; these are not silently merged into one witness."
+source_urls = ["https://www.syromalabarliturgy.org/news", "https://www.vatican.va/archive/aas/documents/AAS-78-1986-ocr.pdf"]
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
 text_acquisition = "not-acquired"
 full_contents_examined = false
+research_priority = "reform-evidence-retained-original-composition-review"
+version_status = "substantive-difference-not-established"
+scope_note = "Retain institutional reform chronology; determine which material was newly composed in this language and which translates an older liturgical-language text before promoting source-book coverage."
+chronology_start = 1962
+chronology_end = 1962
+chronology_kind = "publication-or-edition-year-reported"
+chronology_certainty = "year-explicit-in-cited-record-or-retrospective; not-independent-collation"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
 
 [[records]]
 id = "malabar-1968"
@@ -631,12 +1371,23 @@ date = "1968"
 language = "Malayalam; English distinction needs exact books"
 kind = "historical-reform-candidate"
 evidence = "official-commission-retrospective-inspected"
-source_ids = ["malabar-history"]
-note = "Commission history reports permission for experimental use after amendments; exact book and decree not inspected."
-source_urls = ["https://www.syromalabarliturgy.org/news"]
+source_ids = ["malabar-history", "malabar-aas-1985-decree"]
+note = "The 1985 decree reports experimental permission for a partly revised Malayalam text on 15 August 1968. Original permission instrument, edition identity and affected passages remain unlocated; translation alone is not the proposed version boundary."
+source_urls = ["https://www.syromalabarliturgy.org/news", "https://www.vatican.va/archive/aas/documents/AAS-78-1986-ocr.pdf"]
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
 text_acquisition = "not-acquired"
 full_contents_examined = false
+research_priority = "reform-evidence-retained-original-composition-review"
+version_status = "substantive-revision-reported-in-later-act; exact-changes-unmapped"
+scope_note = "Retain institutional reform chronology; determine which material was newly composed in this language and which translates an older liturgical-language text before promoting source-book coverage."
+chronology_start = 1968
+chronology_end = 1968
+chronology_kind = "publication-or-edition-year-reported"
+chronology_certainty = "year-explicit-in-cited-record-or-retrospective; not-independent-collation"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
 
 [[records]]
 id = "malabar-1985-86"
@@ -647,12 +1398,24 @@ date = "1985-12-19 approval; 1986-02-08 inauguration"
 language = "Malayalam; English distinction needs exact books"
 kind = "historical-reform-candidate"
 evidence = "official-commission-retrospective-inspected"
-source_ids = ["malabar-history"]
-note = "Commission history distinguishes approval from inauguration. Exact printing year not established."
-source_urls = ["https://www.syromalabarliturgy.org/news"]
+source_ids = ["malabar-history", "malabar-aas-1985-decree"]
+note = "Published decree verifies approval on 19 December 1985 and orders publication; the corrected text was annexed but is absent from these AAS pages. Commission dates inauguration to 8 February 1986; exact printing year and changed passages remain unestablished."
+source_urls = ["https://www.syromalabarliturgy.org/news", "https://www.vatican.va/archive/aas/documents/AAS-78-1986-ocr.pdf"]
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
 text_acquisition = "not-acquired"
 full_contents_examined = false
+research_priority = "reform-evidence-retained-original-composition-review"
+version_status = "substantive-difference-not-established"
+scope_note = "Retain institutional reform chronology; determine which material was newly composed in this language and which translates an older liturgical-language text before promoting source-book coverage."
+chronology_start = 1985
+chronology_end = 1986
+chronology_kind = "approval-through-inauguration"
+chronology_certainty = "reported-event-dates; see-date-basis-and-evidence-type"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
+authority_act_ids = ["malabar-955-65-1985-12-19"]
 
 [[records]]
 id = "malabar-1989"
@@ -669,6 +1432,17 @@ source_urls = ["https://www.syromalabarliturgy.org/news"]
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
 text_acquisition = "not-acquired"
 full_contents_examined = false
+research_priority = "reform-evidence-retained-original-composition-review"
+version_status = "substantive-difference-not-established"
+scope_note = "Retain institutional reform chronology; determine which material was newly composed in this language and which translates an older liturgical-language text before promoting source-book coverage."
+chronology_start = 1989
+chronology_end = 1989
+chronology_kind = "approval-year"
+chronology_certainty = "reported-event-dates; see-date-basis-and-evidence-type"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
 
 [[records]]
 id = "malabar-2021"
@@ -685,6 +1459,609 @@ source_urls = ["https://www.syromalabarliturgy.org/assets/uploads/pdfs/a337c-syr
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
 text_acquisition = "not-acquired"
 full_contents_examined = false
+research_priority = "reform-evidence-retained-original-composition-review"
+version_status = "substantive-revision-reported; exact-textual-difference-unverified"
+scope_note = "Retain institutional reform chronology; determine which material was newly composed in this language and which translates an older liturgical-language text before promoting source-book coverage."
+chronology_start = 2021
+chronology_end = 2021
+chronology_kind = "recognitio-promulgation-effective-year"
+chronology_certainty = "reported-event-dates; see-date-basis-and-evidence-type"
+authority_act_ids = ["malabar-recognitio-248-2004", "malabar-decree-0775-2021"]
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
+
+[[records]]
+id = "byz-greek-1754"
+family = "Byzantine"
+church_scope = "Greek-rite Catholics addressed by Ex quo primum; exact territorial reception requires study"
+book_label = "Greek Euchologion, Roman revision"
+date = "1754 publication;1756-03-01 encyclical"
+language = "Greek"
+kind = "revised-edition"
+evidence = "official-encyclical-translation"
+source_ids = ["byz-1754-act"]
+source_urls = ["https://www.vatican.va/content/benedictus-xiv/es/documents/enciclica--i-ex-quo-primum--i---1-marzo-1756--il-pontefice-invit.html"]
+note = "The act describes correction and publication, including commemorations and rubrical instructions. Its 1756 date must not replace the book year. Exact copy/native title and revision collation remain open."
+date_basis = "See cited source locus; dates do not establish a substantive version unless explicitly stated"
+text_acquisition = "not-acquired"
+full_contents_examined = false
+research_priority = "source-language"
+version_status = "substantive-revision-reported; exact-textual-difference-unverified"
+recension_candidate = "roman-greek"
+chronology_start = 1754
+chronology_end = 1754
+chronology_kind = "book-publication-reported-in-act"
+chronology_certainty = "explicit-official-act"
+authority_act_ids = ["greek-euchologion-ex-quo-primum"]
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
+version_boundary_basis = "Ex quo primum §§8–9 identifies four prefatory monita added to the new book, including directions for commemorations. This establishes a rubrical addition at book level; §17 describes earlier obligations, so the underlying commemoration practice is not dated to 1754. No full textual collation."
+
+[[records]]
+id = "byz-greek-1873"
+family = "Byzantine"
+church_scope = "Greek Roman-edition reception unresolved"
+book_label = "Euchologion"
+date = "1873"
+language = "Greek language identification to confirm on copy"
+kind = "printing-candidate"
+evidence = "holding-library-catalogue"
+source_ids = ["byz-1873-dli"]
+source_urls = ["https://dli.institute/dlibib/dlibibkatwp.php?Bestand=c&Kat=OB%3B0%3B0&NurGanze=0&Sortierung=Jahr&ausgabe=5"]
+note = "Holding catalogue lists Rome 1873. Do not promote to a new revision; compare 1754 and nearby 1872 entry. No exact scan acquired."
+date_basis = "See cited source locus; dates do not establish a substantive version unless explicitly stated"
+text_acquisition = "not-acquired"
+full_contents_examined = false
+research_priority = "source-language"
+version_status = "substantive-difference-not-established"
+recension_candidate = "roman-greek"
+chronology_start = 1873
+chronology_end = 1873
+chronology_kind = "publication-year"
+chronology_certainty = "catalogue-reported"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
+
+[[records]]
+id = "byz-barberini336"
+family = "Byzantine"
+church_scope = "Shared Greek and southern Italian historical witness; not a modern Church-specific edition"
+book_label = "Euchologe Barberini; BAV Barb. gr.336"
+date = "s.08(2/2), catalogue dating"
+language = "Greek"
+kind = "manuscript-witness"
+evidence = "research-manuscript-catalogue; holding-library-viewer"
+source_ids = ["barberini-pinakes", "barberini-vatlib"]
+source_urls = ["https://pinakes.irht.cnrs.fr/notices/cote/64879/", "https://digi.vatlib.it/view/MSS_Barb.gr.336"]
+note = "Catalogue places copying in Calabria and identifies Basil and Chrysostom liturgies. This is a witness, not a dated reform or the archetype of every Byzantine book. Second half-century bounds only."
+date_basis = "See cited source locus; dates do not establish a substantive version unless explicitly stated"
+text_acquisition = "not-acquired"
+full_contents_examined = false
+research_priority = "source-language"
+version_status = "substantive-difference-not-established"
+ancestry_status = "shared-witness; direct-descent-not-proven"
+book_route = "https://digi.vatlib.it/view/MSS_Barb.gr.336"
+chronology_start = 751
+chronology_end = 800
+chronology_kind = "manuscript-copying-approximate-range"
+chronology_certainty = "catalogue-palaeographic-range"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Project identification by shelfmark; not an asserted manuscript title or authorial attribution"
+
+[[records]]
+id = "byz-striatyn1604"
+family = "Byzantine"
+church_scope = "Shared Ruthenian/Slavonic comparison witness; Catholic use not established by catalogue"
+book_label = "Служебник"
+date = "[1604]"
+language = "Church Slavonic"
+kind = "printed-witness"
+evidence = "holding-library-catalogue-search-result"
+source_ids = ["striatyn-1604"]
+source_urls = ["https://omeka.nibu.kyiv.ua/s/nibu/item/5754"]
+note = "Balaban press, Striatyn. Exact recension and downstream Catholic adoption need evidence; the holding record alone does not establish either. Provider limits use to educational/noncommercial research and disallows further reproduction of full texts."
+date_basis = "See cited source locus; dates do not establish a substantive version unless explicitly stated"
+text_acquisition = "not-acquired"
+full_contents_examined = false
+research_priority = "source-language"
+version_status = "substantive-difference-not-established"
+ancestry_status = "comparison-witness; reception-unresolved"
+chronology_start = 1604
+chronology_end = 1604
+chronology_kind = "publication-year"
+chronology_certainty = "catalogue-date-in-brackets; search-result-only"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
+
+[[records]]
+id = "byz-blaj1756"
+family = "Byzantine"
+church_scope = "Romanian Greek Catholic historical book-line candidate; reception to verify"
+book_label = "Dumnezeeştile Liturghii a celor dintru Sfinţi Părinţilor noştri Ioan Zlatoust, Vasilie cel Mare şi a Prejdesfeştenei"
+date = "1756"
+language = "Romanian; original-composition versus translation status not established"
+kind = "historical-liturgical-language-printing"
+evidence = "holding-library-digital-index"
+source_ids = ["blaj-cluj"]
+source_urls = ["https://documente.bcucluj.ro/carti.html"]
+note = "Blaj holding-library record. First/second printing wording identifies an imprint sequence, not independently proved prayer/rubric changes. Examine preface and original-language source relations before priority assignment."
+date_basis = "See cited source locus; dates do not establish a substantive version unless explicitly stated"
+text_acquisition = "not-acquired"
+full_contents_examined = false
+research_priority = "source-language-historical"
+version_status = "substantive-difference-not-established"
+book_route = "https://www.bcucluj.ro/public-view/vpdf.php?htsbt=dsf4RFdsfRT|BCUCLUJ_FCS_BRV300.pdf"
+chronology_start = 1756
+chronology_end = 1756
+chronology_kind = "publication-year"
+chronology_certainty = "catalogue-reported"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
+
+[[records]]
+id = "byz-blaj1775"
+family = "Byzantine"
+church_scope = "Romanian Greek Catholic historical book-line candidate; reception to verify"
+book_label = "Dumnezeeştile Liturghii a celor dintru Sfinţi Părinţilor noştri Ioan Zlatoust, Vasilie cel Mare şi a Prejdesfeştenei"
+date = "1775"
+language = "Romanian; original-composition versus translation status not established"
+kind = "historical-liturgical-language-printing"
+evidence = "holding-library-digital-index"
+source_ids = ["blaj-cluj"]
+source_urls = ["https://documente.bcucluj.ro/carti.html"]
+note = "Blaj holding-library record. First/second printing wording identifies an imprint sequence, not independently proved prayer/rubric changes. Examine preface and original-language source relations before priority assignment."
+date_basis = "See cited source locus; dates do not establish a substantive version unless explicitly stated"
+text_acquisition = "not-acquired"
+full_contents_examined = false
+research_priority = "source-language-historical"
+version_status = "substantive-difference-not-established"
+book_route = "https://www.bcucluj.ro/public-view/vpdf.php?htsbt=dsf4RFdsfRT|BCUCLUJ_FCS_BRV391.pdf"
+chronology_start = 1775
+chronology_end = 1775
+chronology_kind = "publication-year"
+chronology_certainty = "catalogue-reported"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
+
+[[records]]
+id = "alex-coptic1902-comparison"
+family = "Alexandrian"
+church_scope = "Coptic comparison witness; Catholic reception not established"
+book_label = "Pi-ǧōm nte pieukhologion ethouab"
+date = "1618 [=1902] as catalogued"
+language = "Coptic; Arabic"
+kind = "printed-comparison-witness"
+evidence = "holding-library-catalogue"
+source_ids = ["coptic-1902-bonn"]
+source_urls = ["https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/1703331"]
+note = "Cairo 778 p, edited by Abd-al-Masih Salib al-Masudi al-Baramusi. Calendar equivalence is supplied by catalogue, not recalculated here. Do not label Catholic from a shared title."
+date_basis = "See cited source locus; dates do not establish a substantive version unless explicitly stated"
+text_acquisition = "not-acquired"
+full_contents_examined = false
+research_priority = "source-language"
+version_status = "substantive-difference-not-established"
+ancestry_status = "collateral-comparison; no-Catholic-adoption-claim"
+chronology_start = 1902
+chronology_end = 1902
+chronology_kind = "publication-year"
+chronology_certainty = "catalogue-converted-date"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Holding catalogue romanization retained; native-script title not transcribed in this research record"
+
+[[records]]
+id = "alex-sahidic-or6877"
+family = "Alexandrian"
+church_scope = "Historical Egyptian/Sahidic local formulary; no demonstrated lineal relation to modern Catholic missal"
+book_label = "London British Library Or.6877: fragmentary Sahidic anaphora"
+date = "sixth or seventh century manuscript; proposed fourth/fifth-century composition kept separate"
+language = "Sahidic Coptic"
+kind = "fragmentary-manuscript-witness"
+evidence = "primary-manuscript-research-edition"
+source_ids = ["coptic-or6877-edition"]
+source_urls = ["https://ojs.mtak.hu/index.php/etj/article/download/21535/17798"]
+note = "Two parchment bifolia preserve part of a Eucharistic formulary. Dating is palaeographic; the editor argues for older composition. A fragment cannot supply an entire service or an exact abolition date for this local form."
+date_basis = "See cited source locus; dates do not establish a substantive version unless explicitly stated"
+text_acquisition = "not-acquired"
+full_contents_examined = false
+research_priority = "source-language"
+version_status = "substantive-difference-not-established"
+ancestry_status = "historical-local-form-comparison; survival-and-direct-descent-unproven"
+chronology_start = 501
+chronology_end = 700
+chronology_kind = "manuscript-copying-approximate-range"
+chronology_certainty = "research-editor-palaeographic-range"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Project identification by shelfmark; not an asserted manuscript title or authorial attribution"
+
+[[records]]
+id = "alex-geez-eap385"
+family = "Alexandrian"
+church_scope = "Ethiopian Orthodox witness for shared Geez comparison; not Catholic normative edition"
+book_label = "መጽሐፍ፡ ቅዳሴ፡ — Missal, EAP286/1/1/385"
+date = "1779–1796"
+language = "Geez"
+kind = "manuscript-witness"
+evidence = "holding-library-catalogue-search-result"
+source_ids = ["geez-eap385"]
+source_urls = ["https://searcharchives.bl.uk/catalog/040-002902125"]
+note = "Institute of Ethiopian Studies manuscript. Catalogue dates named commemorations; this is copying evidence, not composition/reform dating.131 TIFF images listed; EAP viewer requires browser verification."
+date_basis = "See cited source locus; dates do not establish a substantive version unless explicitly stated"
+text_acquisition = "not-acquired"
+full_contents_examined = false
+research_priority = "source-language"
+version_status = "substantive-difference-not-established"
+ancestry_status = "collateral-comparison; Catholic-reception-not-established"
+book_route = "https://eap.bl.uk/archive-file/EAP286-1-1-385"
+chronology_start = 1779
+chronology_end = 1796
+chronology_kind = "manuscript-copying-range"
+chronology_certainty = "holding-catalogue-reported; search-result-only"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
+
+[[records]]
+id = "arm-khorhrdatetr1686"
+family = "Armenian"
+church_scope = "Armenian comparison printing; Catholic affiliation unresolved"
+book_label = "Խորհրդատետր [Khorhrdatetr]"
+date = "1686"
+language = "Armenian"
+kind = "printed-witness"
+evidence = "holding-library-catalogue-search-result"
+source_ids = ["armenian-eap1686"]
+source_urls = ["https://searcharchives.bl.uk/catalog/040-002717298"]
+note = "FSL Yerevan HOVH/324;22 TIFF images. Catalogue lacks enough imprint/approbation detail to attach to 1677 Roman line or an Armenian Apostolic recension."
+date_basis = "See cited source locus; dates do not establish a substantive version unless explicitly stated"
+text_acquisition = "not-acquired"
+full_contents_examined = false
+research_priority = "source-language"
+version_status = "substantive-difference-not-established"
+ancestry_status = "comparison-only-until-affiliation-and-text-checked"
+book_route = "https://eap.bl.uk/archive-file/EAP180-1-1-20"
+chronology_start = 1686
+chronology_end = 1686
+chronology_kind = "publication-year"
+chronology_certainty = "holding-catalogue-reported; search-result-only"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
+
+[[records]]
+id = "syr-add14669-fragments"
+family = "Syriac branch unresolved"
+church_scope = "Shared Syriac research; exact East/West placement requires manuscript scholarship"
+book_label = "British Library Add.14669 ff.20–21: anaphora fragments"
+date = "sixth century"
+language = "Syriac"
+kind = "fragmentary-manuscript-witness"
+evidence = "research-catalogue-extract"
+source_ids = ["syriac-wright-extract"]
+source_urls = ["https://syriac-anaphoras.org/catalogue/html/katalog_britmus_1.html"]
+note = "Wright catalogue extract identifies one or perhaps two anaphoras. Their identity and family are not resolved by this description; do not turn this into a complete service book or a named Catholic ancestor."
+date_basis = "See cited source locus; dates do not establish a substantive version unless explicitly stated"
+text_acquisition = "not-acquired"
+full_contents_examined = false
+research_priority = "source-language"
+version_status = "substantive-difference-not-established"
+ancestry_status = "unassigned-fragment; descent-unproven"
+chronology_start = 501
+chronology_end = 600
+chronology_kind = "manuscript-copying-approximate-range"
+chronology_certainty = "historical-catalogue-via-research-extract"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Project identification by shelfmark; not an asserted manuscript title or authorial attribution"
+
+[[records]]
+id = "syr-add14523-james"
+family = "West Syriac"
+church_scope = "Shared Syriac James tradition; later Catholic dependencies uncollated"
+book_label = "British Library Add.14523 ff.1–7: James liturgy fragments"
+date = "eighth or ninth century"
+language = "Syriac"
+kind = "fragmentary-manuscript-witness"
+evidence = "research-catalogue-extract"
+source_ids = ["syriac-wright-extract"]
+source_urls = ["https://syriac-anaphoras.org/catalogue/html/katalog_britmus_1.html"]
+note = "Dating applies only to ff.1–7. Same shelfmark has separately dated fragments; never assign one date to the whole composite volume."
+date_basis = "See cited source locus; dates do not establish a substantive version unless explicitly stated"
+text_acquisition = "not-acquired"
+full_contents_examined = false
+research_priority = "source-language"
+version_status = "substantive-difference-not-established"
+ancestry_status = "shared-witness; direct-descent-not-proven"
+chronology_start = 701
+chronology_end = 900
+chronology_kind = "manuscript-copying-approximate-range"
+chronology_certainty = "historical-catalogue-via-research-extract"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Project identification by shelfmark; not an asserted manuscript title or authorial attribution"
+
+[[records]]
+id = "syr-add14690-anaphoras"
+family = "West Syriac"
+church_scope = "Shared Syriac anaphora collection; Catholic reception unresolved"
+book_label = "British Library Add.14690: collection of anaphoras"
+date = "1182; later additions separately dated"
+language = "Syriac"
+kind = "manuscript-collection"
+evidence = "research-catalogue-extract"
+source_ids = ["syriac-wright-extract"]
+source_urls = ["https://syriac-anaphoras.org/catalogue/html/katalog_britmus_1.html"]
+note = "Catalogue extract lists 15 anaphoras in the main collection. Later prayer and 1512 note are not the main copying date; attributions are labels requiring critical comparison."
+date_basis = "See cited source locus; dates do not establish a substantive version unless explicitly stated"
+text_acquisition = "not-acquired"
+full_contents_examined = false
+research_priority = "source-language"
+version_status = "substantive-difference-not-established"
+ancestry_status = "shared-collection; direct-descent-not-proven"
+chronology_start = 1182
+chronology_end = 1182
+chronology_kind = "main-manuscript-copying-date"
+chronology_certainty = "historical-catalogue-via-research-extract"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Project identification by shelfmark; not an asserted manuscript title or authorial attribution"
+
+[[records]]
+id = "syr-mosul-1881"
+family = "West Syriac"
+church_scope = "Syriac Catholic Church; affiliation verified in Arabic approbation"
+book_label = "Ketābā de-tešmeštā de-qurābā be-kullkēn dīlējātā le-fut teksā de-'ēdtā qaddīštā de-Surjājē"
+date = "1881"
+language = "Syriac; Arabic; French title; Latin imprimatur"
+kind = "printed-witness"
+evidence = "holding-library-catalogue; primary-book-scan-front-matter (bounded image inspection by acquisition lane)"
+source_ids = ["bonn-syr1881", "book-syr-mosul-1881"]
+source_urls = ["https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/310934", "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/310934"]
+note = "Mosul Dominican press, 384 printed pages. Arabic approbation dated 8 September 1880 identifies the Syriac Catholic community; French title at PDF page 388 labels a new edition. Its relationship to the 1922 Sharfeh book remains uncollated."
+date_basis = "See cited source locus; dates do not establish a substantive version unless explicitly stated"
+text_acquisition = "complete-provider-pdf-acquired-and-registered"
+full_contents_examined = false
+research_priority = "source-language"
+version_status = "substantive-difference-not-established"
+chronology_start = 1881
+chronology_end = 1881
+chronology_kind = "publication-year"
+chronology_certainty = "catalogue-reported"
+acquisition_sha256 = "1089aee7ced25a8ed3c091ce31b063f5772d05becf0e44778de5599704b3e773"
+acquisition_status = "scan-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Catalogue romanization retained; acquisition lane inspected Syriac/Arabic title at PDF page 386, French title at 388 and approval leaves at 383–384"
+source_library_work_id = "work.syriac-catholic-church.missale"
+source_library_edition_id = "edition.syriac-catholic-church.missale.1881-mosul-dominican-nouvelle-edition"
+source_artifact_ids = ["artifact.syriac-catholic-church.missale.1881-mosul-dominican-nouvelle-edition.bonn-scan-pdf-1089aee7"]
+original_scan_artifact_id = "artifact.syriac-catholic-church.missale.1881-mosul-dominican-nouvelle-edition.bonn-scan-pdf-1089aee7"
+acquisition_byte_count = 39383271
+acquisition_pdf_pages = 391
+retained_scan_payloads = ["src/sources/works/syriac-catholic-church/missale/editions/1881-mosul-dominican-nouvelle-edition/artifacts/bonn-scan-pdf-1089aee7/scan.pdf"]
+scan_storage_note = "Exact provider parent and all page content retained; see source-library artifact records for whole-PDF versus split-part storage"
+authority_act_ids = ["syr-mosul-1881-approval-1880-09-08"]
+title_aliases = ["Service de la Messe selon le rit syrien avec les prières qui se disent pour les morts"]
+
+[[records]]
+id = "east-urmia-1876"
+family = "East Syriac"
+church_scope = "Urmia Catholic Lazarist mission imprint; Eucharistic contents and reception require inspection"
+book_label = "ketābā de-taksā de-rāzā wa- de-tešmešātā de- 'edtā"
+date = "1876"
+language = "Syriac title; full language distribution uncollated"
+kind = "ritual-book-boundary-candidate"
+evidence = "holding-library-catalogue"
+source_ids = ["bonn-urmia1876"]
+source_urls = ["https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/310760"]
+note = "127 p. Catalogue classifies as Rituale rather than Missale; retain as book-set lead until actual Eucharistic contents are verified. Do not count as a proved missal version."
+date_basis = "See cited source locus; dates do not establish a substantive version unless explicitly stated"
+text_acquisition = "not-acquired"
+full_contents_examined = false
+research_priority = "source-language"
+version_status = "substantive-difference-not-established"
+version_boundary = "possible-associated-ritual; Eucharistic-content-unverified"
+chronology_start = 1876
+chronology_end = 1876
+chronology_kind = "publication-year"
+chronology_certainty = "catalogue-reported"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Holding catalogue romanization retained; native-script title not transcribed in this research record"
+
+[[records]]
+id = "malabar-1898"
+family = "East Syriac"
+church_scope = "Syro-Malabar Catholic Church"
+book_label = "Ketābā de-ṭūyābā le-qūrāb qūrbānā"
+date = "1898"
+language = "Syriac"
+kind = "printed-witness"
+evidence = "holding-library-catalogue; primary-book-scan-front-matter (bounded image inspection by acquisition lane)"
+source_ids = ["bonn-mal1898", "book-malabar-1898"]
+source_urls = ["https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/6834153", "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/6834153"]
+note = "Mannanam Mar Yusuf press; 144+82 printed pages. Book approval and examination letter at PDF pages 232–233 are dated 16 November 1893, distinct from the catalogue printing year 1898. The letter describes selected Syriac prayers and two previously unprinted translations; Eucharistic contents and predecessor comparison remain uncollated."
+date_basis = "See cited source locus; dates do not establish a substantive version unless explicitly stated"
+text_acquisition = "complete-provider-pdf-acquired-and-registered"
+full_contents_examined = false
+research_priority = "source-language"
+version_status = "first-publication-of-some-selected-material-reported-in-book; full-version-boundary-unresolved"
+chronology_start = 1898
+chronology_end = 1898
+chronology_kind = "publication-year"
+chronology_certainty = "catalogue-reported"
+acquisition_sha256 = "d6c4eb2c7f065edd288469138162b205ad43615da6bb4420d41c05750e23edff"
+acquisition_status = "scan-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Holding catalogue romanization retained; native-script title not transcribed in this research record"
+source_library_work_id = "work.syro-malabar-catholic-church.preparation-for-qurbana"
+source_library_edition_id = "edition.syro-malabar-catholic-church.preparation-for-qurbana.1898-mannanam-mar-yusuf"
+source_artifact_ids = ["artifact.syro-malabar-catholic-church.preparation-for-qurbana.1898-mannanam-mar-yusuf.bonn-scan-pdf-d6c4eb2c"]
+original_scan_artifact_id = "artifact.syro-malabar-catholic-church.preparation-for-qurbana.1898-mannanam-mar-yusuf.bonn-scan-pdf-d6c4eb2c"
+acquisition_byte_count = 38650015
+acquisition_pdf_pages = 239
+retained_scan_payloads = ["src/sources/works/syro-malabar-catholic-church/preparation-for-qurbana/editions/1898-mannanam-mar-yusuf/artifacts/bonn-scan-pdf-d6c4eb2c/scan.pdf"]
+scan_storage_note = "Exact provider parent and all page content retained; see source-library artifact records for whole-PDF versus split-part storage"
+authority_act_ids = ["malabar-1898-imprimatur-1893-11-16"]
+
+[[records]]
+id = "malabar-1906"
+family = "East Syriac"
+church_scope = "Syro-Malabar Catholic Church"
+book_label = "Ketābā de-ṭūkāsē wa-de-qerjānē da-ḥedattā wa-de-ʿattīqtā … ak ṭeksā kaldājā de-Malabar; Ordo chaldaicus rituum et lectionum juxta morem ecclesiae malabaricae"
+date = "1906"
+language = "Syriac"
+kind = "lectionary-and-liturgy-composite"
+evidence = "holding-library-catalogue; primary-book-scan-front-matter (bounded image inspection by acquisition lane)"
+source_ids = ["bonn-mal1906", "book-malabar-1906"]
+source_urls = ["https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3724391", "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3724391"]
+note = "Andreas Qalapura, Puttenpalli Mar Toma Shliha. Catalogue identifies a Catholic Malabar travel missal with lections and Apostles liturgy. Approval at PDF page 6 is dated 15 October 1905 and reports newly appended Masses approved on 31 July 1905; individual additions and predecessor text remain uncollated."
+date_basis = "1906 is the catalogue imprint year. The primary approval leaf carries 15 October 1905, cites earlier permission of 10 June 1904, and reports approval of added Masses on 31 July 1905; these act dates are separate from publication."
+text_acquisition = "complete-provider-pdf-acquired-and-registered"
+full_contents_examined = false
+research_priority = "source-language"
+version_status = "substantive-addition-reported-in-primary-book; exact-added-Masses-unmapped"
+chronology_start = 1906
+chronology_end = 1906
+chronology_kind = "publication-year"
+chronology_certainty = "catalogue-reported"
+acquisition_status = "scan-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Holding catalogue romanization retained; native-script title not transcribed in this research record"
+source_library_work_id = "work.syro-malabar-catholic-church.ordo-chaldaicus"
+source_library_edition_id = "edition.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha"
+source_artifact_ids = ["artifact.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.bonn-scan-pdf-4c93c36d", "artifact.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.pages-0001-0257-51510073", "artifact.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.pages-0258-0515-37dfbc58"]
+original_scan_artifact_id = "artifact.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.bonn-scan-pdf-4c93c36d"
+acquisition_sha256 = "4c93c36dcc7527b8099d24f102235fe9c45bc40871eff550eebe0fe319c9fd6f"
+acquisition_byte_count = 125993214
+acquisition_pdf_pages = 515
+retained_scan_payloads = ["src/sources/works/syro-malabar-catholic-church/ordo-chaldaicus/editions/1906-puttenpalli-mar-thoma-shliha/artifacts/pages-0001-0257-51510073/pages-0001-0257.pdf", "src/sources/works/syro-malabar-catholic-church/ordo-chaldaicus/editions/1906-puttenpalli-mar-thoma-shliha/artifacts/pages-0258-0515-37dfbc58/pages-0258-0515.pdf"]
+scan_storage_note = "Exact provider parent and all page content retained; see source-library artifact records for whole-PDF versus split-part storage"
+authority_act_ids = ["malabar-1906-approval-1905-10-15", "malabar-1906-reported-prior-approval-1905-07-31"]
+
+[[records]]
+id = "chald-proper-1901"
+family = "East Syriac"
+church_scope = "Chaldean Catholic book-line candidate"
+book_label = "Proprium missarum de tempore et de sanctis juxta ritum Ecclesiae Syrorum Orientalium, id est Chaldaeorum; Neqfājāt de-rāzē"
+date = "1901"
+language = "Syriac"
+kind = "proper-volume"
+evidence = "holding-library-catalogue; primary-book-scan-front-matter (bounded image inspection by acquisition lane)"
+source_ids = ["bonn-chaldproper1901", "book-chald-proper-1901"]
+source_urls = ["https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3054856", "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3054856"]
+note = "Mosul Dominican press 310 p. Separate volume associated by title/imprint with the 1901 ordinary; exact set relationship and calendar changes need collation."
+date_basis = "See cited source locus; dates do not establish a substantive version unless explicitly stated"
+text_acquisition = "complete-provider-pdf-acquired-and-registered"
+full_contents_examined = false
+research_priority = "source-language"
+version_status = "substantive-difference-not-established"
+related_candidate_ids = ["chald-1901"]
+chronology_start = 1901
+chronology_end = 1901
+chronology_kind = "publication-year"
+chronology_certainty = "catalogue-reported"
+acquisition_status = "scan-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
+source_library_work_id = "work.chaldean-catholic-church.proprium-missarum"
+source_library_edition_id = "edition.chaldean-catholic-church.proprium-missarum.1901-mosul-dominican"
+source_artifact_ids = ["artifact.chaldean-catholic-church.proprium-missarum.1901-mosul-dominican.bonn-scan-pdf-5d7986a9"]
+original_scan_artifact_id = "artifact.chaldean-catholic-church.proprium-missarum.1901-mosul-dominican.bonn-scan-pdf-5d7986a9"
+acquisition_sha256 = "5d7986a9d501029d8bc189d904025529ca566373c5d7530d39536f0e4e317a22"
+acquisition_byte_count = 81237265
+acquisition_pdf_pages = 325
+retained_scan_payloads = ["src/sources/works/chaldean-catholic-church/proprium-missarum/editions/1901-mosul-dominican/artifacts/bonn-scan-pdf-5d7986a9/scan.pdf"]
+scan_storage_note = "Exact provider parent and all page content retained; see source-library artifact records for whole-PDF versus split-part storage"
+authority_act_ids = ["chald-proper-1901-imprimatur-1901-10-22"]
+
+[[records]]
+id = "byz-lviv1646-nyirderzs"
+family = "Byzantine"
+church_scope = "Historical Slavonic witness from Nyírderzs, now in a Hungarian Greek Catholic college collection; original Lviv imprint not designated Catholic"
+book_label = "Leïturgïarïon, si estʹ Služebnikʺ …"
+date = "1646-08-23"
+language = "Church Slavonic"
+kind = "historical-print-witness"
+evidence = "holding-or-collection-catalogue-inspected"
+source_ids = ["hungarian-collection-1646"]
+source_urls = ["https://real.mtak.hu/123139/1/terdik_katalogustetelek.pdf"]
+note = "Catalogue identifies the incomplete copy by its engravings and reports transfer from Nyírderzs in 2010. Collection provenance establishes historical relevance, not the dates or legal scope of liturgical use."
+date_basis = "Publication date supplied by the cited holding or collection catalogue; no independently inspected title leaf."
+text_acquisition = "not-acquired"
+full_contents_examined = false
+research_priority = "source-language"
+version_status = "substantive-difference-not-established"
+chronology_start = 1646
+chronology_end = 1646
+chronology_kind = "catalogue-publication-date"
+chronology_certainty = "catalogue-explicit; title-page-not-independently-inspected"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Catalogue title retained; not a fresh title-page transcription"
+holding = "Nyíregyháza, Szent Atanáz Görögkatolikus Hittudományi Főiskola"
+shelfmark = "M–920 (Ant 10467)"
+imprint = "Lviv, Mihail Sliozka"
+extent = "Edition: [6], 308, [2] folios; this copy: folios 12–279"
+witness_limit = "Incomplete copy; no full-book scan route or reproduction rights established"
+
+[[records]]
+id = "byz-vilnius-suprasl1692-95"
+family = "Byzantine"
+church_scope = "Shared historical Kyivan Uniate book, including Belarusian lands; not a separate modern Belarusian recension"
+book_label = "Служебник = Леітургікон, си єст Служебник …"
+date = "1692–1695"
+language = "Church Slavonic"
+kind = "historical-print-witness"
+evidence = "holding-or-collection-catalogue-inspected"
+source_ids = ["nbuv-vilnius-suprasl", "nbuv-josaphat-study"]
+source_urls = ["https://irbis-nbuv.gov.ua/cgi-bin/irbis_vsd/cgiirbis_64.exe?2_S21P03=K%3D&2_S21STR=%D0%84%D0%A1%D0%A2&C21COM=S&I21DBN=VKD&P21DBN=VKD&S21CNR=20&S21FMT=fullwebr&S21REF=10&S21STN=1&Z21ID=", "https://www.journals.vu.lt/lietuvos-istorijos-studijos/en/article/download/45657/41847/132477"]
+note = "Library catalogue gives the multi-year imprint. Collection staff describe printing begun in Vilnius and completed in Supraśl and historical dissemination in Belarusian regions. One bound copy contains later added booklets; their dates do not redetermine the base edition."
+date_basis = "Publication date supplied by the cited holding or collection catalogue; no independently inspected title leaf."
+text_acquisition = "not-acquired"
+full_contents_examined = false
+research_priority = "source-language"
+version_status = "substantive-difference-not-established"
+chronology_start = 1692
+chronology_end = 1695
+chronology_kind = "catalogue-publication-date"
+chronology_certainty = "catalogue-explicit; title-page-not-independently-inspected"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Catalogue title retained; not a fresh title-page transcription"
+holding = "Vernadsky National Library of Ukraine"
+shelfmark = "Кир.1269п (one of several catalogued copies)"
+imprint = "Vilnius; Supraśl, [s.n.]"
+extent = "Catalogue: [16], 259, 64 с., 65–86 арк."
+witness_limit = "1692–1695 is one catalogued imprint interval, not four established versions; exact copy contents and image access require inspection"
 
 [[additional_leads]]
 family = "Alexandrian/Ge'ez"
@@ -725,6 +2102,38 @@ status = "coverage-gap"
 note = "No manuscript genealogies established in this pass. A shared ancestor requires textual/history evidence, not a present-day Church label or union date."
 text_acquisition = "not-acquired"
 
+[[additional_leads]]
+family = "Byzantine"
+label = "Burgas 2005: ДОЙДОХМЕ, ЗА ДА МУ СЕ ПОКЛОНИМ — служебник, часослов, молитвеник"
+status = "official-publication-identified; language-and-source-role-unverified"
+route = "https://www.kae-bg.org/?act=content&rec=41"
+note = "Out-of-print parish composite; do not count a new source recension from its publication date."
+text_acquisition = "not-acquired"
+
+[[additional_leads]]
+family = "West Syriac"
+label = "Reported Pampakuda Catholic missal, 1934"
+status = "secondary-lead-only; exact-title-and-holding-unverified"
+route = "https://www.malankaralibrary.com/catalog-index"
+note = "Legacy PDF returned 404; current catalogue shell did not expose a matching record. Language, approval and anaphoras need direct evidence."
+text_acquisition = "not-acquired"
+
+[[additional_leads]]
+family = "Byzantine"
+label = "Slovak mission Slavonic liturgikons blessed 19 June 2022"
+status = "official-use-report; edition-unidentified"
+route = "https://www.mnichov.grkatke.sk/2022"
+note = "Publication year cannot be inferred from blessing date; inspect exact copy."
+text_acquisition = "not-acquired"
+
+[[additional_leads]]
+family = "Byzantine"
+label = "Supraśl 1727–1732 Služebnik comparison"
+status = "holding-library-study-lead; exact-edition-division-unresolved"
+route = "https://www.journals.vu.lt/lietuvos-istorijos-studijos/en/article/download/45657/41847/132477"
+note = "Staff study reports a changed Josaphat kontakion relative to 1692–1695. Locate exact books and distinguish imprint intervals before adding version nodes."
+text_acquisition = "not-acquired"
+
 [[access_failures]]
 url = "https://catalog.etoncollege.com/B43905"
 result = "web open Internal Error; search-result catalogue text available; LOC used for 1823 instead"
@@ -755,13 +2164,796 @@ url = "https://www.mci.archpitt.org/NewPresanctifiedBooks.html"
 result = "Indexed source description available; direct open returned Internal Error"
 checked_on = "2026-10-16"
 
+[[access_failures]]
+url = "https://pinakes.irht.cnrs.fr/notices/cote/64879/"
+failure = "web open InternalError"
+disposition = "resolved by directcurlHTML; catalogue content inspected"
+
+[[access_failures]]
+url = "https://eap.bl.uk/archive-file/EAP286-1-1-385"
+failure = "JavaScript robot-verification gate"
+disposition = "no bypass; library catalogue indexed metadata only"
+
+[[access_failures]]
+url = "https://eap.bl.uk/archive-file/EAP180-1-1-20"
+failure = "JavaScript robot-verification gate"
+disposition = "no bypass; library catalogue indexed metadata only"
+
+[[access_failures]]
+url = "https://www.loc.gov/item/2021667204/"
+failure = "web403Forbidden"
+disposition = "Greek/Arabic1682Euchologion remains outside checked records"
+
+[[access_failures]]
+url = "https://www.orientchurch.va/images/ESTRATTO_LIBRO_DCO_GIUBILEO_ITA__19122024.pdf"
+failure = "web500UnknownError"
+disposition = "not used to claim a current named Church census"
+
+[[access_failures]]
+url = "https://omeka.nibu.kyiv.ua/s/nibu/item/5754"
+failure = "directwebInternalError"
+disposition = "search-result-only witness, rights restrictions retained"
+
+[[access_failures]]
+url = "https://malankaralibrary.com/ImageUpload/941aa59363ca9cc33413017f91e6a7ca.pdf"
+result = "404 on direct open; indexed historical-introduction snippet is insufficient book evidence"
+checked_on = "2026-10-16"
+
+[[access_failures]]
+url = "https://www.vatican.va/archive/aas/documents/AAS-78-1986-ocr.pdf"
+result = "Screenshot requests for zero-based pages 587 and 588 failed with cache miss; official PDF text layer was readable and used, not visual inspection"
+checked_on = "2026-10-16"
+
 [coverage_limits]
 book_set_limit = "Primary celebrant books are the focus. Epistle, Gospel, calendar, chant, proper and pontifical volumes are not exhaustively enumerated."
-byzantine = "Only selected Ruthenian/Pittsburgh, Ukrainian and Melkite records. Greek, Italo-Albanian, Romanian, Russian, Belarusian, Bulgarian, Serbian/Croatian, Slovak, Hungarian and other Byzantine Catholic edition lines remain open; named examples do not constitute a Church census."
-alexandrian = "Coptic 1736 catalogue and joint Ge'ez 2025 publication report are inspected. Coptic 1898 and modern reform chain, Ge'ez 1945 and earlier printing history need exact witnesses."
-armenian = "1677 works and 1823 dependent printing only. Earlier manuscripts, 1642 Ordo, later patriarchal/low-mass editions, modern Armenian Catholic books and translation lines are open."
-west_syriac = "Maronite history is one official retrospective, not an independently collated full series. Qozhaya reprints, modern translations, Syriac Catholic predecessor/successor books and Syro-Malankara Malayalam chain remain open."
-east_syriac = "Chaldean 1767 and subsequent historical and modern reform editions require direct acts/book records. Malabar 1774/1775 and earlier shared East Syriac witnesses remain leads."
-ancestry = "No manuscript transmission graph, pre-confessional provenance, universal first edition, Church-count claim, or complete anaphora inventory established."
+byzantine = "Historical Lviv 1646 and Vilnius–Supraśl 1692–1695 witnesses and limited Križevci 1942 source reception added. Six of 23 census slots still lack an identified source-language edition; all edition chains remain incomplete."
+alexandrian = "Coptic 1736 and 1902 comparison, Or 6877 fragment, Geez 2025 andhistorical manuscript lead;1945 Roman Geez and 1898 Coptic exact witnesses remain open."
+armenian = "1677/1823 Catholic line plus 1686 unassigned comparison; no complete medieval-to-modern series."
+west_syriac = "1881 Mosul and early Syriac manuscript candidates added; Maronite 1908 holding catalogue verified. Malankara original Syriac lineage remains unfilled."
+east_syriac = "Chaldean 1901 ordinary/proper, Malabar 1898/1906 andUrmia 1876 ritual boundary lead identified. Earlier and modern source-language editions remain incomplete."
+ancestry = "Shared or collateral witnesses are labelled explicitly. No manuscript transmission graph, universal first edition, exact extinction chronology, or complete anaphora census established."
 negative_claim_boundary = "Open means not settled by this bounded English/native-title web search and the particular institutional/catalogue pages cited, not unavailable worldwide."
-next_steps = ["Confirm present-day versus all historical Catholic rites and the shared-ancestry horizon", "Identify Church and recension mappings separately from edition records", "Acquire lawful whole catalogue/act deliveries and exact books where permitted; hash and register them under sources.md", "Inspect title pages, approbations, colophons and contents before classifying material differences", "Split the book set into celebrant, deacon, people, lectionary, proper, chant and pontifical witnesses", "Trace predecessors and successors in each currently uncovered tradition without treating union dates as book versions", "Record text rights and surface permissions only for exact acquired artifacts"]
+next_steps = ["Obtain current Annuario Pontificio named Church enumeration and resolve Albanian slot discrepancy", "Collate source-language title pages, approbations, contents, calendars and rubrics before assigning substantive-version status", "Complete each Church coverage gap; do not fill missing source-book history with translation dates", "Trace exact shared manuscript relationships and extinct local uses without assuming a linear five-family genealogy", "Register acquired complete artifacts through owning source lane with hashes and exact rights layers", "Map ordinary, proper, lectionary, gospel, chant and pontifical dependencies", "Keep approved vernacular and lay translation chronology as later independent work"]
+followup_boundary = "Nine previously empty slots investigated; three gained bounded historical or local links. Albanian, Bulgarian, Macedonian, Russian, Slovak and Syro-Malankara still require exact source-language editions. A linked witness is not a complete Church history."
+
+[[acquisition_candidates]]
+candidate_id = "chald-1901"
+catalogue_url = "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3058397"
+rights_label = "Public Domain Mark 1.0"
+rights_url = "https://creativecommons.org/publicdomain/mark/1.0/deed.de"
+rights_locus = "Catalogue Lizenz-/Rechtehinweis"
+routes = ["https://digitale-sammlungen.ulb.uni-bonn.de/i3f/v20/3058397/manifest", "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3058397"]
+text_acquisition = "complete-provider-pdf-acquired-and-registered"
+full_contents_examined = false
+registration = "registered-in-source-library"
+sha256 = "dbc2a822e960ec581479e864968f6a4441dcf7ccf78fddd3fa28e89ef6a8abca"
+byte_count = 25095094
+pdf_pages = 107
+scratch_filename = "chaldean-missale-1901.pdf"
+acquisition_status = "scan-acquired"
+source_library_edition_id = "edition.chaldean-catholic-church.missale.1901-mosul-dominican"
+source_artifact_ids = ["artifact.chaldean-catholic-church.missale.1901-mosul-dominican.bonn-scan-pdf-dbc2a822"]
+original_scan_artifact_id = "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.bonn-scan-pdf-dbc2a822"
+retained_scan_payloads = ["src/sources/works/chaldean-catholic-church/missale/editions/1901-mosul-dominican/artifacts/bonn-scan-pdf-dbc2a822/scan.pdf"]
+
+[[acquisition_candidates]]
+candidate_id = "syr-mosul-1881"
+catalogue_url = "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/310934"
+rights_label = "Public Domain Mark 1.0"
+rights_url = "https://creativecommons.org/publicdomain/mark/1.0/deed.de"
+rights_locus = "Catalogue Lizenz-/Rechtehinweis"
+routes = ["https://digitale-sammlungen.ulb.uni-bonn.de/i3f/v20/310934/manifest", "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/310934"]
+text_acquisition = "complete-provider-pdf-acquired-and-registered"
+full_contents_examined = false
+registration = "registered-in-source-library"
+sha256 = "1089aee7ced25a8ed3c091ce31b063f5772d05becf0e44778de5599704b3e773"
+byte_count = 39383271
+pdf_pages = 391
+scratch_filename = "syriac-missale-1881.pdf"
+acquisition_status = "scan-acquired"
+source_library_edition_id = "edition.syriac-catholic-church.missale.1881-mosul-dominican-nouvelle-edition"
+source_artifact_ids = ["artifact.syriac-catholic-church.missale.1881-mosul-dominican-nouvelle-edition.bonn-scan-pdf-1089aee7"]
+original_scan_artifact_id = "artifact.syriac-catholic-church.missale.1881-mosul-dominican-nouvelle-edition.bonn-scan-pdf-1089aee7"
+retained_scan_payloads = ["src/sources/works/syriac-catholic-church/missale/editions/1881-mosul-dominican-nouvelle-edition/artifacts/bonn-scan-pdf-1089aee7/scan.pdf"]
+
+[[acquisition_candidates]]
+candidate_id = "malabar-1898"
+catalogue_url = "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/6834153"
+rights_label = "Public Domain Mark 1.0"
+rights_url = "https://creativecommons.org/publicdomain/mark/1.0/deed.de"
+rights_locus = "Catalogue Lizenz-/Rechtehinweis"
+routes = ["https://digitale-sammlungen.ulb.uni-bonn.de/i3f/v20/6834153/manifest", "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/6834153"]
+text_acquisition = "complete-provider-pdf-acquired-and-registered"
+full_contents_examined = false
+registration = "registered-in-source-library"
+sha256 = "d6c4eb2c7f065edd288469138162b205ad43615da6bb4420d41c05750e23edff"
+byte_count = 38650015
+pdf_pages = 239
+scratch_filename = "malabar-1898.pdf"
+acquisition_status = "scan-acquired"
+source_library_edition_id = "edition.syro-malabar-catholic-church.preparation-for-qurbana.1898-mannanam-mar-yusuf"
+source_artifact_ids = ["artifact.syro-malabar-catholic-church.preparation-for-qurbana.1898-mannanam-mar-yusuf.bonn-scan-pdf-d6c4eb2c"]
+original_scan_artifact_id = "artifact.syro-malabar-catholic-church.preparation-for-qurbana.1898-mannanam-mar-yusuf.bonn-scan-pdf-d6c4eb2c"
+retained_scan_payloads = ["src/sources/works/syro-malabar-catholic-church/preparation-for-qurbana/editions/1898-mannanam-mar-yusuf/artifacts/bonn-scan-pdf-d6c4eb2c/scan.pdf"]
+
+[[acquisition_candidates]]
+candidate_id = "malabar-1906"
+catalogue_url = "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3724391"
+rights_label = "Public Domain Mark 1.0"
+rights_url = "https://creativecommons.org/publicdomain/mark/1.0/deed.de"
+rights_locus = "Catalogue Lizenz-/Rechtehinweis"
+routes = ["https://digitale-sammlungen.ulb.uni-bonn.de/i3f/v20/3724391/manifest", "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3724391"]
+text_acquisition = "complete-provider-pdf-acquired-and-registered"
+full_contents_examined = false
+registration = "registered-in-source-library"
+acquisition_status = "scan-acquired"
+source_library_edition_id = "edition.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha"
+source_artifact_ids = ["artifact.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.bonn-scan-pdf-4c93c36d", "artifact.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.pages-0001-0257-51510073", "artifact.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.pages-0258-0515-37dfbc58"]
+original_scan_artifact_id = "artifact.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.bonn-scan-pdf-4c93c36d"
+sha256 = "4c93c36dcc7527b8099d24f102235fe9c45bc40871eff550eebe0fe319c9fd6f"
+byte_count = 125993214
+pdf_pages = 515
+retained_scan_payloads = ["src/sources/works/syro-malabar-catholic-church/ordo-chaldaicus/editions/1906-puttenpalli-mar-thoma-shliha/artifacts/pages-0001-0257-51510073/pages-0001-0257.pdf", "src/sources/works/syro-malabar-catholic-church/ordo-chaldaicus/editions/1906-puttenpalli-mar-thoma-shliha/artifacts/pages-0258-0515-37dfbc58/pages-0258-0515.pdf"]
+
+[[acquisition_candidates]]
+candidate_id = "chald-proper-1901"
+catalogue_url = "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3054856"
+rights_label = "Public Domain Mark 1.0"
+rights_url = "https://creativecommons.org/publicdomain/mark/1.0/deed.de"
+rights_locus = "Catalogue Lizenz-/Rechtehinweis"
+routes = ["https://digitale-sammlungen.ulb.uni-bonn.de/i3f/v20/3054856/manifest", "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3054856"]
+text_acquisition = "complete-provider-pdf-acquired-and-registered"
+full_contents_examined = false
+registration = "registered-in-source-library"
+acquisition_status = "scan-acquired"
+source_library_edition_id = "edition.chaldean-catholic-church.proprium-missarum.1901-mosul-dominican"
+source_artifact_ids = ["artifact.chaldean-catholic-church.proprium-missarum.1901-mosul-dominican.bonn-scan-pdf-5d7986a9"]
+original_scan_artifact_id = "artifact.chaldean-catholic-church.proprium-missarum.1901-mosul-dominican.bonn-scan-pdf-5d7986a9"
+sha256 = "5d7986a9d501029d8bc189d904025529ca566373c5d7530d39536f0e4e317a22"
+byte_count = 81237265
+pdf_pages = 325
+retained_scan_payloads = ["src/sources/works/chaldean-catholic-church/proprium-missarum/editions/1901-mosul-dominican/artifacts/bonn-scan-pdf-5d7986a9/scan.pdf"]
+
+[[acquisition_candidates]]
+candidate_id = "mar-dibs-1908"
+catalogue_url = "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3088113"
+rights_label = "Public Domain Mark 1.0"
+rights_url = "https://creativecommons.org/publicdomain/mark/1.0/deed.de"
+rights_locus = "Catalogue Lizenz-/Rechtehinweis"
+routes = ["https://digitale-sammlungen.ulb.uni-bonn.de/i3f/v20/3088113/manifest", "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3088113"]
+text_acquisition = "complete-provider-pdf-acquired-and-registered"
+full_contents_examined = false
+registration = "registered-in-source-library"
+acquisition_status = "scan-acquired"
+source_library_edition_id = "edition.maronite-church.qurbono.1908-beirut-maronite-press-second-printing"
+source_artifact_ids = ["artifact.maronite-church.qurbono.1908-beirut-maronite-press-second-printing.bonn-scan-pdf-8dc5d7fd", "artifact.maronite-church.qurbono.1908-beirut-maronite-press-second-printing.pages-0001-0223-07f785ad", "artifact.maronite-church.qurbono.1908-beirut-maronite-press-second-printing.pages-0224-0447-5b0fbb00"]
+original_scan_artifact_id = "artifact.maronite-church.qurbono.1908-beirut-maronite-press-second-printing.bonn-scan-pdf-8dc5d7fd"
+sha256 = "8dc5d7fd921fa75e14423328a0b1db95f152eda97b9cf7593e180ebfb4fd9ed1"
+byte_count = 112477135
+pdf_pages = 447
+retained_scan_payloads = ["src/sources/works/maronite-church/qurbono/editions/1908-beirut-maronite-press-second-printing/artifacts/pages-0001-0223-07f785ad/pages-0001-0223.pdf", "src/sources/works/maronite-church/qurbono/editions/1908-beirut-maronite-press-second-printing/artifacts/pages-0224-0447-5b0fbb00/pages-0224-0447.pdf"]
+
+[[acquisition_candidates]]
+candidate_id = "east-urmia-1876"
+catalogue_url = "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/310760"
+rights_label = "Public Domain Mark 1.0"
+rights_url = "https://creativecommons.org/publicdomain/mark/1.0/deed.de"
+rights_locus = "Catalogue Lizenz-/Rechtehinweis"
+routes = ["https://digitale-sammlungen.ulb.uni-bonn.de/i3f/v20/310760/manifest", "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/310760"]
+text_acquisition = "not-acquired"
+full_contents_examined = false
+registration = "not-made-by-research-lane; see owning integration lane"
+
+[[acquisition_candidates]]
+candidate_id = "alex-coptic-1736"
+catalogue_url = "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/253288"
+rights_label = "Public Domain Mark 1.0"
+rights_url = "https://creativecommons.org/publicdomain/mark/1.0/deed.de"
+rights_locus = "Catalogue Lizenz-/Rechtehinweis"
+routes = ["https://digitale-sammlungen.ulb.uni-bonn.de/i3f/v20/253288/manifest"]
+text_acquisition = "not-acquired"
+full_contents_examined = false
+registration = "not-made-by-research-lane; see owning integration lane"
+
+[[acquisition_candidates]]
+candidate_id = "byz-lviv1646-nyirderzs"
+catalogue_url = "https://real.mtak.hu/123139/1/terdik_katalogustetelek.pdf"
+rights_label = "Book dated 1646; provider reproduction terms and usable scan rights not established"
+rights_locus = "No scan-rights notice inspected"
+routes = []
+text_acquisition = "not-acquired"
+full_contents_examined = false
+registration = "not-registered"
+acquisition_status = "not-acquired"
+next_action = "Find holding-library digital surrogate or request copy identification; surviving copy is incomplete"
+
+[[acquisition_candidates]]
+candidate_id = "byz-vilnius-suprasl1692-95"
+catalogue_url = "https://irbis-nbuv.gov.ua/cgi-bin/irbis_vsd/cgiirbis_64.exe?2_S21P03=K%3D&2_S21STR=%D0%84%D0%A1%D0%A2&C21COM=S&I21DBN=VKD&P21DBN=VKD&S21CNR=20&S21FMT=fullwebr&S21REF=10&S21STN=1&Z21ID="
+rights_label = "Book dated 1692–1695; no scan-specific rights statement inspected"
+rights_locus = "No scan-rights notice inspected"
+routes = []
+text_acquisition = "not-acquired"
+full_contents_examined = false
+registration = "not-registered"
+acquisition_status = "not-acquired"
+next_action = "Resolve exact Кир.1269п surrogate and separate base edition from appended booklets"
+
+[census]
+coverage_slots = 23
+status = "named-coverage-census-with-enumeration-discrepancy"
+source_ids = ["census-sico-2007", "census-vatican-news-2025", "census-parenti-2022", "eritrea-2015-act"]
+source_urls = ["https://www.vatican.va/roman_curia/congregations/orientchurch/sico/SICO_PDF/SICO%202007.pdf", "https://www.vaticannews.va/en/church/news/2025-05/rome-hosts-jubilee-of-eastern-churches-may.html", "https://www.ppoomm.va/content/dam/ppoomm/documentazioni/pubblicazioni/pubblicazioni-pum/libri/the-mission-of-the-universal-church-an-oriental-perspective/The-Mission-of-the-Universal-Church-An-Oriental-PerspectiveUUP.pdf", "https://www.vatican.va/content/francesco/la/apost_constitutions/documents/papa-francesco_costituzione-ap_20150119_ecclesia-metropolitana-asmarensis.html"]
+method = "Use the 22 named coverage slots in SICO 2007 plus the Eritrean Church established in 2015; Vatican News in 2025 reports 23. The official-hosted 2022 scholarly chapter instead enumerates 22 and omits Albanian. Retain the Albanian slot with unresolved current classification. This reconciliation is not a directly inspected current Annuario Pontificio named list."
+five_families = "Alexandrian; Antiochene/West Syriac; Armenian; Chaldean/East Syriac; Constantinopolitan/Byzantine. These are broad ecclesial categories, not a demonstrated five-node textual stemma."
+genealogical_caution = "The 2022 chapter challenges a simple Alexandrian derivation for the Ethiopian tradition and treats Maronite origins separately. These category labels do not establish manuscript descent."
+non_version_act = "The 2015 Eritrean establishment supplies Church identity evidence only; it is not a missal revision."
+
+[[church_coverage]]
+id = "albanian"
+name = "Albanian Greek Catholic tradition"
+family = "Byzantine"
+census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025"]
+candidate_ids = []
+ancestry_candidate_ids = ["byz-barberini336"]
+deferred_or_origin_review_candidate_ids = []
+coverage_status = "no-specific-book-witness; census-status-unresolved"
+missing_chronology = "Obtain an Albanian community library inventory or title and approbation leaves; resolve the census classification separately."
+relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
+followup_source_ids = []
+followup_note = "Targeted searches did not identify an original-language celebrant edition. Albanian and Italo-Albanian traditions must remain distinct."
+next_evidence_target = "Obtain an Albanian community library inventory or title and approbation leaves; resolve the census classification separately."
+research_followup_status = "exact-source-language-edition-still-unresolved"
+
+[[church_coverage]]
+id = "belarusian"
+name = "Belarusian Greek Catholic Church"
+family = "Byzantine"
+census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025"]
+candidate_ids = ["byz-vilnius-suprasl1692-95"]
+ancestry_candidate_ids = ["byz-barberini336", "byz-striatyn1604"]
+deferred_or_origin_review_candidate_ids = []
+coverage_status = "historical-or-local-candidate; chronology-incomplete"
+missing_chronology = "Inspect Кир.1269п base volume and appended booklets separately; trace later Slavonic revisions and local receipt."
+relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
+followup_source_ids = ["nbuv-vilnius-suprasl", "nbuv-josaphat-study"]
+followup_note = "Historical common Kyivan book identified; this is not evidence of a separate modern Belarusian recension or current obligation."
+next_evidence_target = "Inspect Кир.1269п base volume and appended booklets separately; trace later Slavonic revisions and local receipt."
+research_followup_status = "historical-or-local-witness-linked; chronology-incomplete"
+
+[[church_coverage]]
+id = "bulgarian"
+name = "Bulgarian Greek Catholic Church"
+family = "Byzantine"
+census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025"]
+candidate_ids = []
+ancestry_candidate_ids = ["byz-barberini336"]
+deferred_or_origin_review_candidate_ids = []
+coverage_status = "incomplete"
+missing_chronology = "Inspect 2005 title, contents and approval/source statement; locate exact earlier Slavonic celebrant books."
+relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
+followup_source_ids = ["bulgarian-burgas-publications"]
+followup_note = "Official Burgas list identifies a 2005 composite book, but its language, celebrant function and source basis are unverified. It cannot yet fill the source-language gap."
+next_evidence_target = "Inspect 2005 title, contents and approval/source statement; locate exact earlier Slavonic celebrant books."
+research_followup_status = "exact-source-language-edition-still-unresolved"
+
+[[church_coverage]]
+id = "croatia-serbia"
+name = "Byzantine Catholic Church of Croatia and Serbia (historical SICO label: Križevci)"
+family = "Byzantine"
+census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025"]
+candidate_ids = ["byz-ruthenian-1942"]
+ancestry_candidate_ids = ["byz-barberini336"]
+deferred_or_origin_review_candidate_ids = []
+coverage_status = "historical-or-local-candidate; chronology-incomplete"
+missing_chronology = "Obtain the cited 2022 approval letters and exact 1942 witness; identify earlier and other jurisdictional Slavonic books."
+relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
+followup_source_ids = ["bogataj-slovenian-source"]
+followup_note = "The 1942 source is documented for an approved Slovenian translation within Križevci. This limited reception link does not establish use throughout Croatia and Serbia."
+next_evidence_target = "Obtain the cited 2022 approval letters and exact 1942 witness; identify earlier and other jurisdictional Slavonic books."
+research_followup_status = "historical-or-local-witness-linked; chronology-incomplete"
+
+[[church_coverage]]
+id = "greek"
+name = "Greek Byzantine Catholic Church"
+family = "Byzantine"
+census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025"]
+candidate_ids = ["byz-greek-1754", "byz-greek-1873"]
+ancestry_candidate_ids = ["byz-barberini336"]
+deferred_or_origin_review_candidate_ids = []
+coverage_status = "incomplete"
+missing_chronology = "Exact reception of Roman Greek books, later Greek editions, local rubrics and calendar changes remain unverified."
+relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
+
+[[church_coverage]]
+id = "melkite"
+name = "Melkite Greek Catholic Church"
+family = "Byzantine"
+census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025"]
+candidate_ids = ["byz-melkite-pdf-lead"]
+ancestry_candidate_ids = ["byz-barberini336"]
+deferred_or_origin_review_candidate_ids = []
+coverage_status = "incomplete"
+missing_chronology = "No original-language historical Liturgikon sequence secured. Need Greek/Arabic witness identities, original Arabic compositions versus translations, patriarchal revisions and calendar dependencies."
+relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
+
+[[church_coverage]]
+id = "italo-albanian"
+name = "Byzantine Catholic Church in Italy / Italo-Albanian"
+family = "Byzantine"
+census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025"]
+candidate_ids = ["byz-greek-1754", "byz-greek-1873"]
+ancestry_candidate_ids = ["byz-barberini336"]
+deferred_or_origin_review_candidate_ids = []
+coverage_status = "incomplete"
+missing_chronology = "Separate Grottaferrata, Lungro and Piana reception; locate older Italo-Greek local euchologia and normative Greek printing chain. The 1754 act is broad Greek-rite evidence, not proof of identical local use."
+relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
+
+[[church_coverage]]
+id = "macedonian"
+name = "Macedonian Greek Catholic Church"
+family = "Byzantine"
+census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025"]
+candidate_ids = []
+ancestry_candidate_ids = ["byz-barberini336"]
+deferred_or_origin_review_candidate_ids = []
+coverage_status = "incomplete"
+missing_chronology = "Obtain a Strumica-Skopje celebrant-book title and approval leaf, then identify predecessor and calendar changes."
+relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
+followup_source_ids = []
+followup_note = "Targeted Church and local-title searches yielded no verified source-language celebrant imprint; no absence claim beyond this search."
+next_evidence_target = "Obtain a Strumica-Skopje celebrant-book title and approval leaf, then identify predecessor and calendar changes."
+research_followup_status = "exact-source-language-edition-still-unresolved"
+
+[[church_coverage]]
+id = "romanian"
+name = "Romanian Greek Catholic Church"
+family = "Byzantine"
+census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025"]
+candidate_ids = ["byz-blaj1756", "byz-blaj1775"]
+ancestry_candidate_ids = ["byz-barberini336"]
+deferred_or_origin_review_candidate_ids = []
+coverage_status = "incomplete"
+missing_chronology = "Establish Slavonic/Greek predecessors, original composition versus translation in historical Romanian books, later Blaj revisions and twentieth-century normative sequence."
+relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
+
+[[church_coverage]]
+id = "russian"
+name = "Russian Greek Catholic Church"
+family = "Byzantine"
+census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025"]
+candidate_ids = []
+ancestry_candidate_ids = ["byz-barberini336", "byz-striatyn1604"]
+deferred_or_origin_review_candidate_ids = []
+coverage_status = "incomplete"
+missing_chronology = "Locate holding records/title leaves for Roman Slavonic 1940/1941 books and distinguish them from Ruthenian 1942; document Old Rite use separately."
+relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
+followup_source_ids = ["russian-parish-tradition"]
+followup_note = "Official parish description confirms Russian liturgical tradition but identifies no edition; generic rite adherence does not resolve Roman vulgata chronology."
+next_evidence_target = "Locate holding records/title leaves for Roman Slavonic 1940/1941 books and distinguish them from Ruthenian 1942; document Old Rite use separately."
+research_followup_status = "exact-source-language-edition-still-unresolved"
+
+[[church_coverage]]
+id = "ruthenian"
+name = "Ruthenian Greek Catholic tradition"
+family = "Byzantine"
+census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025"]
+candidate_ids = ["byz-lviv-1905", "byz-ruthenian-1942"]
+ancestry_candidate_ids = ["byz-barberini336", "byz-striatyn1604"]
+deferred_or_origin_review_candidate_ids = ["byz-pittsburgh-1964-65", "byz-pittsburgh-2006-07", "byz-pittsburgh-2010-presanctified"]
+coverage_status = "incomplete"
+missing_chronology = "Expand pre-1905 Slavonic books,1940 single-liturgy issues and 1944 Ordo; establish regional reception and supplements. A shared recension is not identical with Pittsburgh or every Ruthenian jurisdiction."
+relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
+
+[[church_coverage]]
+id = "slovak"
+name = "Slovak Greek Catholic Church"
+family = "Byzantine"
+census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025"]
+candidate_ids = []
+ancestry_candidate_ids = ["byz-barberini336"]
+deferred_or_origin_review_candidate_ids = []
+coverage_status = "incomplete"
+missing_chronology = "Inspect Munich mission Slavonic title/approval leaves and Prešov archive Prezidiálne spisy, inv. 63, 1928, sign. 1; establish actual book receipt."
+relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
+followup_source_ids = ["presov-liturgical-history", "slovak-mission-books"]
+followup_note = "Prešov participation in the revision commission and present Slavonic liturgikon use are documented separately; neither source identifies the currently used edition or proves formal 1942 adoption."
+next_evidence_target = "Inspect Munich mission Slavonic title/approval leaves and Prešov archive Prezidiálne spisy, inv. 63, 1928, sign. 1; establish actual book receipt."
+research_followup_status = "exact-source-language-edition-still-unresolved"
+
+[[church_coverage]]
+id = "ukrainian"
+name = "Ukrainian Greek Catholic Church"
+family = "Byzantine"
+census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025"]
+candidate_ids = ["byz-lviv-1905", "byz-ruthenian-1942"]
+ancestry_candidate_ids = ["byz-barberini336", "byz-striatyn1604"]
+deferred_or_origin_review_candidate_ids = ["byz-ugcc-2024"]
+coverage_status = "incomplete"
+missing_chronology = "Need earlier Catholic Slavonic prints, relation to shared Ruthenian witnesses, synodal rubrics and original-language successors;2024 Ukrainian translation is deferred as its own line."
+relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
+
+[[church_coverage]]
+id = "hungarian"
+name = "Hungarian Greek Catholic Church"
+family = "Byzantine"
+census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025"]
+candidate_ids = ["byz-lviv1646-nyirderzs"]
+ancestry_candidate_ids = ["byz-barberini336"]
+deferred_or_origin_review_candidate_ids = []
+coverage_status = "historical-or-local-candidate; chronology-incomplete"
+missing_chronology = "Obtain title/colophon identification images or a fuller 1646 copy, and dated Nyírderzs ownership/use evidence; later sequence remains open."
+relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
+followup_source_ids = ["hungarian-collection-1646"]
+followup_note = "A specific historical source-language copy has local provenance. Its original printing was not Catholic; possession does not establish continuous liturgical use."
+next_evidence_target = "Obtain title/colophon identification images or a fuller 1646 copy, and dated Nyírderzs ownership/use evidence; later sequence remains open."
+research_followup_status = "historical-or-local-witness-linked; chronology-incomplete"
+
+[[church_coverage]]
+id = "coptic"
+name = "Coptic Catholic Church"
+family = "Alexandrian"
+census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025"]
+candidate_ids = ["alex-coptic-1736"]
+ancestry_candidate_ids = ["alex-sahidic-or6877", "alex-coptic1902-comparison"]
+deferred_or_origin_review_candidate_ids = []
+coverage_status = "incomplete"
+missing_chronology = "Need exact 1898 Cairo witness,1930-1960 Roman publications and later Coptic/Arabic reforms; establish dependencies on older Egyptian witnesses rather than importing Orthodox books as Catholic editions."
+relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
+
+[[church_coverage]]
+id = "ethiopian"
+name = "Ethiopian Catholic Church"
+family = "Alexandrian"
+census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025"]
+candidate_ids = ["alex-geez-2025"]
+ancestry_candidate_ids = ["alex-geez-eap385"]
+deferred_or_origin_review_candidate_ids = []
+coverage_status = "incomplete"
+missing_chronology = "Verify 1945 Roman Geez missal directly; earlier manuscripts/printing, approved successors, calendar/chant changes and exact 2025 imprint/promulgation remain open."
+relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
+
+[[church_coverage]]
+id = "eritrean"
+name = "Eritrean Catholic Church"
+family = "Alexandrian"
+census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025", "eritrea-2015-act"]
+candidate_ids = ["alex-geez-2025"]
+ancestry_candidate_ids = ["alex-geez-eap385"]
+deferred_or_origin_review_candidate_ids = []
+coverage_status = "incomplete"
+missing_chronology = "Shared 2025 publication does not fill earlier Geez chronology. Need 1945 witness, pre-2015 territorial use, local printing/revision sequence and 2025 authority front matter."
+relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
+
+[[church_coverage]]
+id = "armenian"
+name = "Armenian Catholic Church"
+family = "Armenian"
+census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025"]
+candidate_ids = ["arm-1677-liturgia", "arm-1677-ministerium", "arm-1823"]
+ancestry_candidate_ids = ["arm-khorhrdatetr1686"]
+deferred_or_origin_review_candidate_ids = []
+coverage_status = "incomplete"
+missing_chronology = "Need medieval Armenian witnesses,1642 Ordo identity, substantive 1677 versus 1823 comparison, later altar books and modern original-language recension. Distinguish Armenian-rite books from Roman-rite translations into Armenian."
+relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
+
+[[church_coverage]]
+id = "maronite"
+name = "Maronite Church"
+family = "West Syriac"
+census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025"]
+candidate_ids = ["mar-1592-94", "mar-1716", "mar-1763", "mar-dibs-1888", "mar-dibs-1908"]
+ancestry_candidate_ids = ["syr-add14523-james", "syr-add14690-anaphoras"]
+deferred_or_origin_review_candidate_ids = ["mar-1959", "mar-1973", "mar-1992"]
+coverage_status = "incomplete"
+missing_chronology = "Independently verify early imprints and manuscripts, Qozhaya reprints and anaphora selection; resolve Syriac/Garshuni/Arabic original composition in 1959/1973/1992 books. No complete series collation."
+relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
+
+[[church_coverage]]
+id = "syriac"
+name = "Syriac Catholic Church"
+family = "West Syriac"
+census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025"]
+candidate_ids = ["syr-mosul-1881", "syr-1922"]
+ancestry_candidate_ids = ["syr-add14523-james", "syr-add14690-anaphoras"]
+deferred_or_origin_review_candidate_ids = []
+coverage_status = "incomplete"
+missing_chronology = "The 1881 Catholic affiliation is now verified in its approval leaf. Locate earlier and later Syriac books, verify the 1922 approbation and compare common order and anaphora selection. Shared manuscript attributions are not proof of direct lineage."
+relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
+
+[[church_coverage]]
+id = "syro-malankara"
+name = "Syro-Malankara Catholic Church"
+family = "West Syriac"
+census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025"]
+candidate_ids = []
+ancestry_candidate_ids = ["syr-add14523-james", "syr-add14690-anaphoras"]
+deferred_or_origin_review_candidate_ids = ["malankara-2012-takso", "malankara-2012-people"]
+coverage_status = "incomplete"
+missing_chronology = "Recover the exact 1934 imprint, Syriac/Malayalam language distribution, anaphora contents and approval leaf; verify rather than assume identity with Antiochene books."
+relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
+followup_source_ids = []
+followup_note = "A reported 1934 Pampakuda Catholic missal remains a secondary lead without an inspected holding record or title leaf. The legacy library PDF route failed."
+next_evidence_target = "Recover the exact 1934 imprint, Syriac/Malayalam language distribution, anaphora contents and approval leaf; verify rather than assume identity with Antiochene books."
+research_followup_status = "exact-source-language-edition-still-unresolved"
+
+[[church_coverage]]
+id = "chaldean"
+name = "Chaldean Catholic Church"
+family = "East Syriac"
+census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025"]
+candidate_ids = ["chald-1901", "chald-proper-1901", "east-urmia-1876"]
+ancestry_candidate_ids = ["syr-add14669-fragments"]
+deferred_or_origin_review_candidate_ids = ["chald-arabic-by-2022"]
+coverage_status = "incomplete"
+missing_chronology = "Need 1767 and otherRoman/Mosul editions, lectionary/gospel set dependencies, modern Syriac reforms and pre-confessional anaphora witnesses. Urmia 1876 is an unverified ritual boundary candidate."
+relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
+
+[[church_coverage]]
+id = "syro-malabar"
+name = "Syro-Malabar Catholic Church"
+family = "East Syriac"
+census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025"]
+candidate_ids = ["malabar-1898", "malabar-1906"]
+ancestry_candidate_ids = ["syr-add14669-fragments"]
+deferred_or_origin_review_candidate_ids = ["malabar-1962", "malabar-1968", "malabar-1985-86", "malabar-1989", "malabar-2021"]
+coverage_status = "incomplete"
+missing_chronology = "Need pre-Diamper Syriac manuscripts, 1774/1775 books and exact restored Syriac sources underlying later reforms. Inspect the 1898 compilation and identify the Masses added in the 1906 book; authority leaves establish activity without supplying a complete revision history."
+relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
+
+[[family_coverage]]
+family = "Byzantine"
+research_subdivisions = ["Greek/Roman", "Italo-Greek local", "Ruthenian Slavonic", "Russian/vulgata Slavonic", "historic Romanian"]
+classification_status = "research-bins-not-canonical-recensions"
+missing = "Greek, Slavonic and regional service-book chains incomplete; no shared ancestor stemma established"
+source_ids = ["census-sico-2007", "census-parenti-2022"]
+
+[[family_coverage]]
+family = "Alexandrian"
+research_subdivisions = ["Coptic Bohairic/Arabic", "historical Egyptian Sahidic local forms", "Geez Ethiopian/Eritrean"]
+classification_status = "research-bins-not-canonical-recensions"
+missing = "Do not collapse Geez and Coptic into one textual recension; older calendars/anaphoras/chant books missing"
+source_ids = ["census-sico-2007", "census-parenti-2022"]
+
+[[family_coverage]]
+family = "Armenian"
+research_subdivisions = ["Armenian shared manuscript/print heritage", "Roman Catholic Armenian revisions"]
+classification_status = "research-bins-not-canonical-recensions"
+missing = "Armenian-rite identity versus Latin-rite Armenian translation must be established for each witness"
+source_ids = ["census-sico-2007", "census-parenti-2022"]
+
+[[family_coverage]]
+family = "West Syriac"
+research_subdivisions = ["Maronite", "Syriac Catholic", "Malankara", "shared Syriac James/anaphora collections"]
+classification_status = "research-bins-not-canonical-recensions"
+missing = "Common order, multiple anaphoras and Syriac/Garshuni/Arabic/Malayalam boundaries require separate records"
+source_ids = ["census-sico-2007", "census-parenti-2022"]
+
+[[family_coverage]]
+family = "East Syriac"
+research_subdivisions = ["Chaldean", "Malabar", "shared East Syriac anaphora heritage"]
+classification_status = "research-bins-not-canonical-recensions"
+missing = "Ordinary, proper, lectionary and three-anaphora histories are not one edition sequence"
+source_ids = ["census-sico-2007", "census-parenti-2022"]
+
+[[authority_acts]]
+id = "greek-euchologion-ex-quo-primum"
+date = "1756-03-01"
+kind = "encyclical-describing-and-directing-use-of-book"
+candidate_ids = ["byz-greek-1754"]
+source_ids = ["byz-1754-act"]
+source_urls = ["https://www.vatican.va/content/benedictus-xiv/es/documents/enciclica--i-ex-quo-primum--i---1-marzo-1756--il-pontefice-invit.html"]
+evidence_note = "The encyclical identifies the book publication as 1754; its own date is a separate act event."
+full_act_text_acquired = false
+
+[[authority_acts]]
+id = "pittsburgh-promulgation-2007"
+date = "2007-01-06; mandatory-use date 2007-06-29"
+kind = "promulgation-reported-by-issuing-institution"
+candidate_ids = ["byz-pittsburgh-2006-07"]
+source_ids = ["mci-2007"]
+source_urls = ["https://mci.archpitt.org/NewServiceBooks.html"]
+evidence_note = "Official publication announcement inspected; signed original act not acquired."
+full_act_text_acquired = false
+
+[[authority_acts]]
+id = "ugcc-ba24-027"
+date = "2024-01-25; effective 2024-03-25"
+kind = "official-promulgation-decree"
+candidate_ids = ["byz-ugcc-2024"]
+source_ids = ["ugcc-act"]
+source_urls = ["https://docs.ugcc.ua/1718/"]
+evidence_note = "New Ukrainian translation; notification to Apostolic See is not described as a recognitio."
+full_act_text_acquired = false
+
+[[authority_acts]]
+id = "malabar-recognitio-248-2004"
+date = "2021-06-09"
+kind = "recognitio"
+candidate_ids = ["malabar-2021"]
+source_ids = ["malabar-2021"]
+source_urls = ["https://www.syromalabarliturgy.org/assets/uploads/pdfs/a337c-syro-malabar-raza-qurbana-taksa.pdf"]
+evidence_note = "Letter reproduced in official Taksa PDF front matter, PDF page 5; not the printing date."
+full_act_text_acquired = false
+
+[[authority_acts]]
+id = "malabar-decree-0775-2021"
+date = "2021-09-08; effective 2021-11-28"
+kind = "promulgation-decree"
+candidate_ids = ["malabar-2021"]
+source_ids = ["malabar-2021"]
+source_urls = ["https://www.syromalabarliturgy.org/assets/uploads/pdfs/a337c-syro-malabar-raza-qurbana-taksa.pdf"]
+evidence_note = "Decree reproduced in official Taksa PDF front matter, PDF page 7; applies to stated Malayalam forms."
+full_act_text_acquired = false
+
+[[authority_acts]]
+id = "chald-1901-imprimatur-1901-10-22"
+date = "1901-10-22"
+kind = "imprimatur"
+candidate_ids = ["chald-1901"]
+source_ids = ["book-chald-1901"]
+source_urls = ["https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3058397"]
+source_artifact_id = "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.bonn-scan-pdf-dbc2a822"
+pdf_pages = [102]
+authority = "Henricus Altmayer S.O.P., Archiepiscopus Babylonensis, Delegatus Apostolicus"
+evidence_note = "Latin imprimatur; no substantive edition revision established"
+inspection = "bounded-direct-page-image-inspection-by-source-acquisition-lane"
+full_act_text_acquired = false
+act_delivery_limit = "Book leaf acquired as part of complete scan; separate original instrument not independently acquired or transcribed"
+
+[[authority_acts]]
+id = "syr-mosul-1881-approval-1880-09-08"
+date = "1880-09-08"
+kind = "approval"
+candidate_ids = ["syr-mosul-1881"]
+source_ids = ["book-syr-mosul-1881"]
+source_urls = ["https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/310934"]
+source_artifact_id = "artifact.syriac-catholic-church.missale.1881-mosul-dominican-nouvelle-edition.bonn-scan-pdf-1089aee7"
+pdf_pages = [383, 384]
+authority = "Archbishop of Mosul over the Syriac Catholics; Latin imprimatur below by Fr. Eug. Ludovicus-Maria Lion, Archiep. Dam. Del. Ap."
+evidence_note = "Arabic approval expressly identifies Syriac Catholics; date is approval date, separate from 1881 imprint"
+inspection = "bounded-direct-page-image-inspection-by-source-acquisition-lane"
+full_act_text_acquired = false
+act_delivery_limit = "Book leaf acquired as part of complete scan; separate original instrument not independently acquired or transcribed"
+
+[[authority_acts]]
+id = "malabar-1898-imprimatur-1893-11-16"
+date = "1893-11-16"
+kind = "imprimatur"
+candidate_ids = ["malabar-1898"]
+source_ids = ["book-malabar-1898"]
+source_urls = ["https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/6834153"]
+source_artifact_id = "artifact.syro-malabar-catholic-church.preparation-for-qurbana.1898-mannanam-mar-yusuf.bonn-scan-pdf-d6c4eb2c"
+pdf_pages = [232, 233]
+authority = "Carolus Lavigne S.J., Vic. Apos. Kottayamensis; examination letter by Aloysius Pareparambil"
+evidence_note = "Permission dated Changanacherry 16 November 1893, distinct from 1898 catalogue printing date. Examination letter describes selection of Syriac prayers by P. Cherubim and two previously unprinted translations"
+inspection = "bounded-direct-page-image-inspection-by-source-acquisition-lane"
+full_act_text_acquired = false
+act_delivery_limit = "Book leaf acquired as part of complete scan; separate original instrument not independently acquired or transcribed"
+
+[[authority_acts]]
+id = "malabar-1906-approval-1905-10-15"
+date = "1905-10-15"
+kind = "approval"
+candidate_ids = ["malabar-1906"]
+source_ids = ["book-malabar-1906"]
+source_urls = ["https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3724391"]
+source_artifact_id = "artifact.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.bonn-scan-pdf-4c93c36d"
+pdf_pages = [6]
+authority = "Aloysius Pareparambil, Bishop of Tiana and Vicar Apostolic of Ernakulam"
+evidence_note = "Approves this printing after comparison with its original, cites permission 10 June 1904 and appended new Masses approved and granted by Sacred Congregation of Rites 31 July 1905; individual added Masses uncollated"
+inspection = "bounded-direct-page-image-inspection-by-source-acquisition-lane"
+full_act_text_acquired = false
+act_delivery_limit = "Book leaf acquired as part of complete scan; separate original instrument not independently acquired or transcribed"
+
+[[authority_acts]]
+id = "malabar-1906-reported-prior-approval-1905-07-31"
+date = "1905-07-31"
+kind = "reported-prior-approval"
+candidate_ids = ["malabar-1906"]
+source_ids = ["book-malabar-1906"]
+source_urls = ["https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3724391"]
+source_artifact_id = "artifact.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.bonn-scan-pdf-4c93c36d"
+pdf_pages = [6]
+authority = "Sacred Congregation of Rites, as reported by the 15 October approval"
+evidence_note = "Existence/date of approval of appended new Masses reported in the examined book; original Congregation instrument not independently inspected"
+inspection = "bounded-direct-page-image-inspection-by-source-acquisition-lane"
+full_act_text_acquired = false
+act_delivery_limit = "Book leaf acquired as part of complete scan; separate original instrument not independently acquired or transcribed"
+
+[[authority_acts]]
+id = "chald-proper-1901-imprimatur-1901-10-22"
+date = "1901-10-22"
+kind = "imprimatur"
+candidate_ids = ["chald-proper-1901"]
+source_ids = ["book-chald-proper-1901"]
+source_urls = ["https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3054856"]
+source_artifact_id = "artifact.chaldean-catholic-church.proprium-missarum.1901-mosul-dominican.bonn-scan-pdf-5d7986a9"
+pdf_pages = [320]
+authority = "Henricus Altmayer S.O.P., Archiepiscopus Babylonensis, Delegatus Apostolicus"
+evidence_note = "Latin imprimatur on separately printed Proprium missarum; no substantive edition revision established"
+inspection = "bounded-direct-page-image-inspection-by-source-acquisition-lane"
+full_act_text_acquired = false
+act_delivery_limit = "Book leaf acquired as part of complete scan; separate original instrument not independently acquired or transcribed"
+
+[[authority_acts]]
+id = "malabar-955-65-1985-12-19"
+date = "1985-12-19"
+kind = "approval-and-publication-decree"
+candidate_ids = ["malabar-1985-86"]
+source_ids = ["malabar-aas-1985-decree"]
+source_urls = ["https://www.vatican.va/archive/aas/documents/AAS-78-1986-ocr.pdf"]
+evidence_note = "AAS 78 (1986), 588–589, protocol 955/65. Approves corrected text and orders publication; annexed missal text is not supplied here. Also retrospectively reports 1962 Syriac introduction and 1968 experimental permission."
+full_act_text_acquired = false
+
+[[recension_research]]
+id = "byzantine-ruthenian-roman"
+family = "Byzantine"
+designation = "Ruthenian recension, Roman service-book revision"
+designation_status = "explicitly-named-by-institutional-source"
+candidate_ids = ["byz-ruthenian-1942"]
+source_ids = ["mci-liturgikon"]
+missing = "Establish the complete original-language set, predecessor relations, and adoption in each Church or jurisdiction; do not equate the recension with a single modern Church."
+
+[[recension_research]]
+id = "byzantine-roman-greek"
+family = "Byzantine"
+designation = "Roman Greek Euchologion revision"
+designation_status = "edition-line-research-label; not-a-universal-Greek-recension-claim"
+candidate_ids = ["byz-greek-1754", "byz-greek-1873"]
+source_ids = ["byz-1754-act", "byz-1873-dli"]
+missing = "Collate the two printings, identify local Italian and other Greek reception, and separate shared Greek manuscripts from normative Roman editions."
+
+[[recension_research]]
+id = "byzantine-slavonic-vulgata"
+family = "Byzantine"
+designation = "Roman Slavonic vulgata / Russian-use research target"
+designation_status = "unresolved-target; exact-book-identity-not-verified"
+candidate_ids = []
+source_ids = ["oriental-publications-profile"]
+missing = "The official profile confirms a substantial Slavonic publishing programme but does not identify each recension or date. Verify exact book title pages, distinct 1940s issues, and their relation to the Ruthenian recension before assigning records."
+
+[[recension_research]]
+id = "alexandrian-coptic-lines"
+family = "Alexandrian"
+designation = "Coptic Catholic and collateral Egyptian book lines"
+designation_status = "research-targets; not-one-established-recension"
+candidate_ids = ["alex-coptic-1736", "alex-coptic1902-comparison", "alex-sahidic-or6877"]
+source_ids = ["coptic-1736", "coptic-1902-bonn", "coptic-or6877-edition"]
+missing = "Distinguish Catholic Roman editorial interventions, collateral Coptic books and Sahidic local forms; do not infer one continuous text from their family label."
+
+[[recension_research]]
+id = "alexandrian-geez-lines"
+family = "Alexandrian"
+designation = "Geez Catholic and shared manuscript book lines"
+designation_status = "research-targets; not-one-established-recension"
+candidate_ids = ["alex-geez-2025", "alex-geez-eap385"]
+source_ids = ["geez-2025", "geez-eap385"]
+missing = "Identify exact Catholic editions and their manuscript sources; a collateral Orthodox witness does not establish the ancestors of the new joint book."
+
+[[recension_research]]
+id = "armenian-roman-line"
+family = "Armenian"
+designation = "Armenian Catholic Roman printing line"
+designation_status = "documented-dependent-printing; recension-differences-unverified"
+candidate_ids = ["arm-1677-liturgia", "arm-1677-ministerium", "arm-1823"]
+source_ids = ["armenia-1677", "armenia-1823"]
+missing = "Separate the two 1677 works, the 1823 conformity statement, earlier Armenian witnesses and any Latin-rite Armenian translations."
+
+[[recension_research]]
+id = "west-syriac-lines"
+family = "West Syriac"
+designation = "Maronite, Syriac Catholic and Malankara comparison targets"
+designation_status = "distinct-research-targets; not-one-established-recension"
+candidate_ids = ["mar-1592-94", "mar-1716", "mar-1763", "mar-dibs-1908", "syr-mosul-1881", "syr-1922", "syr-add14523-james", "syr-add14690-anaphoras"]
+source_ids = ["maronite", "bonn-mar1908", "bonn-syr1881", "syriac-1922", "syriac-wright-extract", "syriac-anaphoras-project"]
+missing = "Catalogue common orders and anaphora selections separately, resolve unstable author attributions and borrowed prayer units, and establish Malankara source-language witnesses. The research project itself states that an exact extant anaphora total is unresolved."
+
+[[recension_research]]
+id = "east-syriac-lines"
+family = "East Syriac"
+designation = "Chaldean, Urmia and Malabar book-line research targets"
+designation_status = "distinct-research-targets; not-one-established-recension"
+candidate_ids = ["chald-1901", "chald-proper-1901", "east-urmia-1876", "malabar-1898", "malabar-1906"]
+source_ids = ["chaldean-1901", "bonn-chaldproper1901", "bonn-urmia1876", "bonn-mal1898", "bonn-mal1906"]
+missing = "Establish older Syriac anaphora sources, prayer and calendar differences, and book-set dependencies; a city or publisher does not establish a recension."

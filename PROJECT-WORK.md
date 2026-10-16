@@ -28,38 +28,104 @@ characters. This is a functioning historical tracer, not complete missals.
 The predecessor's source metadata and file hashes are retained without
 importing its raw OCR, inaccurate edition labels or distribution assertions.
 
+The maintainer agreed on 2026-10-16 to the historical and language boundary now
+recorded in [the time-machine scope](guidance/time-machine.md#11-historical-and-language-scope-agreed-2026-10-16).
 The [Eastern](src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml)
 and [Western](src/sources/inventories/western-eucharistic-books-timeline-v1.toml)
-research inventories add 30 and 33 candidate records respectively. Neither
-is exhaustive; candidate rows are not distinct-recension counts or accepted
-graph stations. No new complete books were acquired or collated. The
-[existing-text audit](src/sources/inventories/missal-timeline-text-reuse-2026-10-16.md)
-identifies 1,068 usable 1962 Latin proper projections and verifies 15 retained
-OCR artifact hashes; neither these nor the antecedent Ordinary reconstructs
-a complete historical witness. No backward fill by calendar inheritance is
-authorized by their existence.
+research inventories now provide a systematic coverage checklist and sourced
+candidate catalogue: 50 Eastern and 83 Western records, alongside the 59 recovered
+stations. Seven candidate version boundaries have an explicit source-based
+substantive classification. The Eastern census has 23 Church slots, of which
+17 have bounded historical or local book links; six still lack an identified
+source-language edition. These are Albanian, Bulgarian, Macedonian, Russian,
+Slovak and Syro-Malankara. Their exact missing title/approval/access evidence is
+recorded in the inventory. The record counts include manuscripts, printed witnesses,
+complementary volumes, translations and reform candidates; they are not counts
+of distinct liturgical versions. Exact edition sequences and textual parentage
+remain open where the inventories say so.
 
-The comparison tool now counts liturgical units separately from structural
-files; 61 focused tests and the shell smoke gate pass, and generated history
-IDs remain unchanged. The browser candidate distinguishes explicit reception
-and exposes its evidence while identifying partial text coverage. Eighteen
-static/browser-source checks and 22 reception-generator tests pass. Three
-browser tests are blocked before assertions by denied socket operations;
-desktop/mobile/accessibility appearance remains unverified. The printed-map
-DOT reproduces, but its renderer is unavailable. No new hosted repository,
-force-push, release binding or website deployment has occurred.
+Six Eastern books now have complete scan delivery registered: Syriac Catholic
+1881, Malabar preparation 1898, Chaldean Missal and proper Masses 1901, Malabar
+Ordo 1906, and Maronite Qurbono 1908 (2,024 PDF pages). Two oversized originals
+are represented by lossless page-range derivatives with verified image sequences
+and page geometry, retaining their original hashes and identities. Four Western
+witnesses gained access artifacts: Warner's **1915 volume II** of the Stowe
+Missal, Lowe's 1917 **facsimile volume** of Bobbio, a text extraction of the
+existing Wilson 1915 Gregorian scan, and Wilson 1894 Gelasian historical-book
+OCR excluding the modern wrapper. The 13 new retained payloads total 510,356,553
+bytes; each is below the single-object hosting limit. Source-library manifests
+own exact hashes, edition identity, rights and transformations. Bounded identity
+inspection and acquisition do not constitute checked full transcription or
+book-to-book collation.
 
-`make check-sources`, `tmt check` and `git diff --check` pass. The full
-promised-deliverables check reports the same 32 missing installed-PDF findings
-as the checkout baseline, with no new findings from this work.
+The existing `tools/act-history` now owns a source-aware catalogue and a separate
+`corpus` export. The existing history browser exposes the catalogue at
+`/history/?view=catalogue`, with search, tradition filters, dated and undated
+records, source routes, and separate acquisition, text and collation states.
+Its comparison panel fetches the checked witness texts only when opened, shows
+the generated diff and ordered members, and retains the manuscript-variant caveat.
+Research rows do not become historical stations or parent edges. The routing
+owner is
+`src/sources/inventories/catholic-eucharistic-history-v1.toml`; implementation and
+reproduction commands are in [act-histories §20](guidance/act-histories.md#20-discovery-coverage-and-bounded-text-reconstructions).
 
-The ancestry boundary is under clarification. The provisional research scope
-traces today's Catholic traditions through their earlier shared history;
-historic local uses remain recoverable evidence without implying that they
-are all currently used. A catalogue entry, an acquired scan, and a collated
-complete text are separate completion states. Eastern service books must retain
-their native book divisions rather than being forced into a Roman missal shape.
-No all-rite or full-text completeness is claimed.
+The corpus export emits 1,068 target-verified Latin proper projections
+for 1962 and 112 Ordinary blocks from the identified Cummiskey 1861 lay witness,
+including three Greek blocks in Latin script. These are isolated typed
+reconstructions; neither is a complete missal. A third reconstruction contains
+the 46-word Memento from Wilson's 1915 Gregorian edition, corrected mechanically
+from the held extraction and independently checked against printed page 2. Its
+main text follows R (Reginae 337), not Cambrai 164. The comparison declaration
+aligns that prayer with two ordered Cummiskey blocks while preserving both
+source identities. Wilson's apparatus already reports the longer reading in O,
+so this is a witness comparison, not a dated introduction claim or established
+parent-child relationship.
+Stable liturgical paths and mechanically broken clause lines keep textual diffs
+small; provenance separately retains exact source and serialized-text hashes.
+Input hashes, publication decisions, true date roles, omitted coverage and tool
+fingerprints accompany the text. Synthetic Git dates are labelled as such and
+never substitute for historical dates. Repeated real exports produce identical
+refs; all emitted units retain the source token sequence, and Git integrity
+and maintenance checks pass.
+
+Text inheritance now distinguishes a map relationship from permission to carry
+wording. Use continuity does not carry text, and printed transitions need an
+explicit evidenced permission. Comparing the previous and guarded builders on
+the same current inventories preserved all 118 state trees; regression cases
+prove newly supplied text cannot leak across those weaker
+edges. Legacy promulgated-chain continuity is an explicit remaining review
+limit. The existing Mozarabic 1862 parent description was corrected to agree
+with its already-recorded Lesley relationship without claiming full collation.
+
+`plate --preview` now renders the actual browser geometry as SVG, PNG and PDF,
+with a separate 14-page station-evidence catalogue. The map preserves all 59
+stations, 45 edges and 17 recorded lines, including the four isolated stations.
+The preview and all catalogue pages were visually inspected; IDs and citations
+are readable, and catalogue fonts are embedded. This is a labelled review
+preview, not an accepted LOOM production plate. A pinned LOOM build was tried;
+its raw output dropped the isolated stations and was rejected. Real interactive
+browser and accessibility acceptance remain unavailable in this session because
+socket operations and Chromium startup are denied before assertions.
+
+The integrated engine, adapter, browser-controller, URL-contract and preview
+suite ran 196 tests: 195 passed and the unavailable real-browser test was
+skipped. Both generated repositories passed strict Git integrity checks; two
+fresh text-corpus exports produced identical refs. The regenerated preview and
+all 14 catalogue pages match the visually reviewed rasters and extracted text.
+`make check-sources`, `tmt check` and `git diff --check` pass for the acquisition
+and implementation state. The full promised-deliverables check has the same
+32 missing installed-PDF findings as the checkout baseline, with no new ledger
+findings. Independent review repaired source/tool provenance and Git-template
+isolation defects before verifying the real outputs.
+
+**Remaining work:** complete the version census and substantive classifications;
+acquire remaining witnesses; transcribe and collate complete books with their
+native divisions; establish historical comparisons and only evidenced parentage;
+and obtain real-browser and final map acceptance. Restricted modern full text
+also needs a settled public-versus-private export boundary and appropriate source
+access. No all-rite or full-text completeness is claimed. Work is retained on
+`feature/missal-timeline`; no new hosted corpus repository or website deployment
+has occurred.
 
 ## GPT Christ the King three documents, 2026-10-19
 

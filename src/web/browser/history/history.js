@@ -1421,6 +1421,403 @@
     return (slices.length && slices[0] && slices[0].id) || '';
   }
 
+  /* The catalogue is a second view of the research, not another act graph.
+   * Its chronology and source states come from the generator. In particular,
+   * sorting records never supplies a parent edge or admits a new station. */
+  const CATALOGUE = 'structure/act-history/catalogue.json';
+
+  function catalogueValid(data) {
+    const object = function (value) { return value && typeof value === 'object' && !Array.isArray(value); };
+    const string = function (value) { return typeof value === 'string'; };
+    const ids = new Set();
+    if (!object(data) || data.schema !== 'triptych-eucharistic-history/v1' ||
+        !Array.isArray(data.entries) || !Array.isArray(data.limitations) ||
+        !data.limitations.every(string) || !Array.isArray(data.text_sets)) return false;
+    return data.entries.every(function (row) {
+      if (!object(row) || !row.id || ids.has(row.id)) return false;
+      ids.add(row.id);
+      if (!['id', 'family', 'title', 'date_label', 'record_kind', 'evidence_status',
+        'text_status', 'substantive_status'].every(function (key) { return string(row[key]); })) return false;
+      if (!object(row.origin) || !object(row.source_record) || !Array.isArray(row.sources) ||
+          !Array.isArray(row.links)) return false;
+      if (!row.sources.every(object) || !row.links.every(object)) return false;
+      if (row.chronology !== null && (!object(row.chronology) ||
+          !Number.isFinite(row.chronology.start) || !Number.isFinite(row.chronology.end) ||
+          row.chronology.end < row.chronology.start)) return false;
+      if (row.act_ref !== null && (!object(row.act_ref) ||
+          !/^[a-z0-9][a-z0-9-]*$/.test(row.act_ref.slice || '') ||
+          !/^[a-z0-9][a-z0-9-]*$/.test(row.act_ref.station_id || ''))) return false;
+      return true;
+    }) && data.text_sets.every(object);
+  }
+
+  function catalogueText(value) {
+    if (value === null || value === undefined || value === '') return 'Not recorded';
+    return typeof value === 'object' ? JSON.stringify(value, null, 2) : String(value);
+  }
+
+  function catalogueURL(value) {
+    // Source-controlled URLs still cross a trust boundary. Reject executable
+    // schemes, credentials, local file paths, and protocol-relative URLs.
+    if (typeof value !== 'string' || !/^https?:\/\//i.test(value)) return null;
+    try {
+      const url = new URL(value);
+      return !url.username && !url.password ? url.href : null;
+    } catch (_) { return null; }
+  }
+
+  function catalogueLink(url, label) {
+    const safe = catalogueURL(url);
+    if (!safe) return T.el('span', null, catalogueText(label) + ' — link unavailable');
+    const link = T.el('a', null, catalogueText(label));
+    link.href = safe;
+    link.rel = 'noopener noreferrer';
+    return link;
+  }
+
+  function historyURL(view, slice, hash) {
+    const query = new URLSearchParams(window.location.search);
+    query.set('view', view);
+    if (slice) query.set('slice', slice);
+    // Relative to this route, including under a project-path deployment.
+    return '?' + query.toString() + (hash || '');
+  }
+
+  function catalogueHash(family, query, record) {
+    const params = new URLSearchParams();
+    if (family) params.set('family', family);
+    if (query) params.set('q', query);
+    if (record) params.set('record', record);
+    return '#' + params.toString();
+  }
+
+  function catalogueRecord(row, target) {
+    T.clear(target);
+    target.hidden = false;
+    const back = T.el('button', 'link-button', 'Back to source results');
+    back.type = 'button';
+    back.addEventListener('click', function () {
+      const previous = document.getElementById('catalogue-entry-' + row.id);
+      (previous || document.getElementById('catalogue-family')).focus();
+    });
+    target.appendChild(back);
+    target.appendChild(T.el('h3', 'panel-title', row.title));
+    const fields = T.el('dl', 'catalogue-facts');
+    const add = function (label, value) {
+      fields.appendChild(T.el('dt', null, label));
+      fields.appendChild(T.el('dd', null, catalogueText(value)));
+    };
+    add('Tradition or use', row.family);
+    add('Language as recorded', row.source_record.language || row.source_record.languages);
+    if (row.source_record.language_scope || row.source_record.inclusion_status) {
+      add('Language scope', row.source_record.language_scope || row.source_record.inclusion_status);
+    }
+    add('Date as recorded', row.date_label);
+    if (row.chronology) {
+      add('Date interpretation', [row.chronology.kind, row.chronology.certainty].filter(Boolean).join(' · '));
+    } else add('Chronology', 'Undated or unresolved; no year has been inferred.');
+    add('Record kind', row.record_kind);
+    add('Evidence status', row.evidence_status);
+    add('Source acquisition', row.acquisition_status);
+    add('Text status', row.text_status);
+    add('Substantive-version status', row.substantive_status);
+    target.appendChild(fields);
+    target.appendChild(T.el('p', 'detail-weak',
+      'The statuses above are separate findings. A catalogue identification or a held scan does not ' +
+      'establish a substantive version, a collated text, or a complete book. The original record below ' +
+      'preserves the stated basis and unresolved work.'));
+    if (row.act_ref) {
+      const paragraph = T.el('p', null);
+      const link = T.el('a', null, 'Open the recorded station in the historical map');
+      link.href = historyURL('map', row.act_ref.slice,
+        '#station=' + encodeURIComponent(row.act_ref.station_id));
+      paragraph.appendChild(link);
+      target.appendChild(paragraph);
+    } else target.appendChild(T.el('p', 'panel-note',
+      'No accepted act-history station is linked to this record.'));
+    target.appendChild(T.el('h4', null, 'Sources and access'));
+    const sources = T.el('ul', 'catalogue-sources');
+    row.sources.forEach(function (source) {
+      const item = T.el('li', null);
+      item.appendChild(catalogueLink(source.url, source.label || source.id || source.url));
+      item.appendChild(T.el('p', 'panel-note', 'Inspection: ' + catalogueText(source.inspection)));
+      sources.appendChild(item);
+    });
+    row.links.forEach(function (link) {
+      if (row.sources.some(function (source) { return source.url === link.url; })) return;
+      const item = T.el('li', null);
+      item.appendChild(catalogueLink(link.url, link.label || link.kind || link.url));
+      sources.appendChild(item);
+    });
+    if (!sources.childNodes.length) sources.appendChild(T.el('li', null, 'No source access link is recorded.'));
+    target.appendChild(sources);
+    const original = T.el('details', 'catalogue-original');
+    original.appendChild(T.el('summary', null, 'Original inventory metadata'));
+    original.appendChild(T.el('p', 'panel-note', [row.origin.inventory, row.origin.table, row.origin.id]
+      .map(catalogueText).join(' · ')));
+    original.appendChild(T.el('pre', null, JSON.stringify(row.source_record, null, 2)));
+    target.appendChild(original);
+  }
+
+  function comparisonValid(payload, declared) {
+    if (!payload || payload.schema !== 'triptych-eucharistic-witness-comparison/v1' ||
+        payload.id !== declared.id || payload.kind !== 'same-prayer-witness-comparison' ||
+        payload.membership_status !== 'established' || payload.historical_ancestry_claimed !== false ||
+        payload.historical_act_claimed !== false || payload.introduction_date_inferred !== false ||
+        typeof payload.basis !== 'string' || !payload.basis.trim() ||
+        typeof payload.apparatus_caveat !== 'string' || !payload.apparatus_caveat.trim() ||
+        typeof payload.unified_diff !== 'string' || !Array.isArray(payload.sources) ||
+        !Array.isArray(payload.limitations) || !payload.limitations.every(function (text) { return typeof text === 'string'; })) return false;
+    return ['left', 'right'].every(function (name) {
+      const side = payload[name];
+      const selection = declared[name];
+      return side && selection && side.text_set === selection.text_set &&
+        typeof side.title === 'string' && typeof side.joined_source_text === 'string' &&
+        side.join_rule === 'insert-one-space-between-exact-source-bodies' &&
+        Array.isArray(side.members) && side.members.length > 0 && Array.isArray(selection.unit_ids) &&
+        side.members.length === selection.unit_ids.length && side.members.every(function (member, index) {
+          return member && member.unit_id === selection.unit_ids[index] &&
+            typeof member.source_text === 'string' && typeof member.source_id === 'string' &&
+            typeof member.text_edition_id === 'string' &&
+            typeof member.language === 'string' && member.publication && member.publication.status === 'permitted';
+        });
+    });
+  }
+
+  function renderComparison(host, payload, declared) {
+    if (!comparisonValid(payload, declared)) throw new Error('The witness comparison is malformed or does not match its declared source members.');
+    T.clear(host);
+    host.appendChild(T.el('p', 'comparison-basis', payload.basis));
+    host.appendChild(T.el('p', 'detail-weak comparison-caveat', payload.apparatus_caveat));
+    const pair = T.el('div', 'comparison-pair');
+    ['left', 'right'].forEach(function (name) {
+      const side = payload[name];
+      const column = T.el('section', 'comparison-witness');
+      const heading = T.el('h4', null, (name === 'left' ? 'Left witness: ' : 'Right witness: ') + side.title);
+      heading.id = 'comparison-' + payload.id + '-' + name;
+      column.setAttribute('aria-labelledby', heading.id);
+      column.appendChild(heading);
+      column.appendChild(T.el('p', 'panel-note', 'Printed edition / target date: ' + catalogueText(side.target_date) +
+        '. Represented witness date: ' + catalogueText(side.witness_date) + '.'));
+      const text = T.el('p', 'held-text comparison-text', side.joined_source_text);
+      const languages = Array.from(new Set(side.members.map(function (member) { return member.language; })));
+      if (languages.length === 1) text.lang = languages[0];
+      column.appendChild(text);
+      column.appendChild(T.el('p', 'panel-note', side.members.length === 1
+        ? 'One source unit; exact stored wording.'
+        : side.members.length + ' source units in their declared order, joined with one space. Source wording is unchanged.'));
+      const members = T.el('ol', 'comparison-members');
+      side.members.forEach(function (member) {
+        const item = T.el('li', null);
+        item.appendChild(T.el('p', 'panel-note', 'Source: ' + member.source_id +
+          ' · Edition: ' + member.text_edition_id + ' · Artifact: ' + catalogueText(member.source_artifact_id ||
+            (member.provenance && member.provenance.artifact_provenance_source_id))));
+        if (member.printed_page) item.appendChild(T.el('p', 'panel-note', 'Printed page: ' + member.printed_page));
+        item.appendChild(T.el('p', 'panel-note', 'Transcription: ' + catalogueText(member.provenance && member.provenance.status) +
+          ' · Publication basis: ' + catalogueText(member.publication.basis)));
+        const evidence = T.el('details', 'catalogue-original');
+        evidence.appendChild(T.el('summary', null, 'Unit identity, wording, and provenance'));
+        evidence.appendChild(T.el('pre', null, JSON.stringify(member, null, 2)));
+        item.appendChild(evidence);
+        members.appendChild(item);
+      });
+      column.appendChild(members);
+      pair.appendChild(column);
+    });
+    host.appendChild(pair);
+    const diff = T.el('details', 'catalogue-original comparison-diff');
+    diff.appendChild(T.el('summary', null, 'Show the generated unified text diff'));
+    diff.appendChild(T.el('p', 'panel-note',
+      'Minus marks the left witness; plus marks the right. Lines follow the generator’s mechanical clause breaks. ' +
+      'These marks compare wording, spelling, and punctuation; they do not establish historical additions or deletions.'));
+    diff.appendChild(T.el('pre', null, payload.unified_diff || 'The serialized texts are identical.'));
+    host.appendChild(diff);
+    payload.limitations.forEach(function (limit) { host.appendChild(T.el('p', 'panel-note', limit)); });
+    const sources = T.el('details', 'catalogue-original');
+    sources.appendChild(T.el('summary', null, 'Source records and access'));
+    payload.sources.forEach(function (source) {
+      if (!source || typeof source !== 'object') return;
+      if (source.source_url) {
+        const item = T.el('p', null);
+        item.appendChild(catalogueLink(source.source_url, source.title || source.id));
+        sources.appendChild(item);
+      }
+    });
+    sources.appendChild(T.el('pre', null, JSON.stringify(payload.sources, null, 2)));
+    host.appendChild(sources);
+  }
+
+  function catalogueComparisons(data) {
+    const rows = data.comparisons;
+    if (!Array.isArray(rows) || !rows.length) return;
+    const container = document.getElementById('catalogue-comparisons');
+    const list = document.getElementById('catalogue-comparison-list');
+    container.hidden = false;
+    rows.forEach(function (row) {
+      if (!row || !/^[a-z0-9][a-z0-9-]*$/.test(row.id || '') ||
+          !row.left || !row.right || typeof row.apparatus_caveat !== 'string' ||
+          row.projection_path !== 'comparisons/' + row.id + '.json') {
+        list.appendChild(T.el('p', 'error', 'A configured witness comparison has invalid metadata and cannot be opened.'));
+        return;
+      }
+      const title = row.title || row.label || row.id.replace(/-/g, ' ');
+      const path = 'structure/act-history/' + row.projection_path;
+      const fold = lazyBlock('Read comparison: ' + title, path, function (host, payload) {
+        renderComparison(host, payload, row);
+      });
+      fold.classList.add('comparison-fold');
+      list.appendChild(fold);
+      list.appendChild(T.el('p', 'panel-note', row.apparatus_caveat));
+    });
+  }
+
+  async function startCatalogue() {
+    const results = document.getElementById('catalogue-results');
+    const status = document.getElementById('catalogue-status');
+    const family = document.getElementById('catalogue-family');
+    const query = document.getElementById('catalogue-query');
+    const panel = document.getElementById('catalogue-detail');
+    try {
+      const data = await T.loadJSON(CATALOGUE);
+      if (!catalogueValid(data)) throw new Error('The source catalogue has an unsupported or malformed record.');
+      T.doneBootstrapping();
+      catalogueComparisons(data);
+      const families = Array.from(new Set(data.entries.map(function (row) { return row.family; }))).sort();
+      families.forEach(function (name) {
+        const option = T.el('option', null, name);
+        option.value = name;
+        family.appendChild(option);
+      });
+      family.disabled = query.disabled = document.getElementById('catalogue-search').disabled = false;
+      tally.textContent = data.entries.length + ' source records across ' + families.length +
+        ' traditions and uses. This is research coverage, not a count of complete missals.';
+      const limits = document.getElementById('catalogue-limits');
+      data.limitations.forEach(function (limit) { limits.appendChild(T.el('p', null, limit)); });
+      limits.appendChild(T.el('h3', null, 'Configured text sets'));
+      limits.appendChild(T.el('p', null, 'Configuration does not mean that a text set has been generated or verified.'));
+      const sets = T.el('ul', null);
+      data.text_sets.forEach(function (set) {
+        sets.appendChild(T.el('li', null, catalogueText(set.id) + ' · ' + catalogueText(set.adapter) +
+          ' · ' + catalogueText(set.status)));
+      });
+      if (!data.text_sets.length) sets.appendChild(T.el('li', null, 'No text sets are configured.'));
+      limits.appendChild(sets);
+      document.getElementById('catalogue-coverage').hidden = false;
+
+      function render(params, focusRecord) {
+        const selectedFamily = params.get('family') || '';
+        const search = (params.get('q') || '').slice(0, 200);
+        const record = params.get('record');
+        // Preserve unknown filters visibly, rather than silently broadening a
+        // shared URL to all traditions.
+        let unknown = document.getElementById('catalogue-unknown-family');
+        if (unknown) unknown.remove();
+        if (selectedFamily && families.indexOf(selectedFamily) === -1) {
+          unknown = T.el('option', null, selectedFamily + ' (not in this catalogue)');
+          unknown.id = 'catalogue-unknown-family';
+          unknown.value = selectedFamily;
+          family.appendChild(unknown);
+        }
+        family.value = selectedFamily;
+        query.value = search;
+        const terms = search.toLocaleLowerCase().split(/\s+/).filter(Boolean);
+        const rows = data.entries.filter(function (row) {
+          const haystack = [row.title, row.family, row.date_label, row.id,
+            JSON.stringify(row.source_record)].join(' ').toLocaleLowerCase();
+          return (!selectedFamily || row.family === selectedFamily) &&
+            terms.every(function (term) { return haystack.indexOf(term) !== -1; });
+        });
+        T.clear(results);
+        status.textContent = rows.length + ' of ' + data.entries.length + ' source records shown.';
+        if (!rows.length) results.appendChild(T.el('p', null, 'No records match these filters. Clear the search or choose another tradition.'));
+        const sections = [
+          { title: 'Dated records', rows: rows.filter(function (row) { return row.chronology; })
+            .sort(function (a, b) { return a.chronology.start - b.chronology.start || a.title.localeCompare(b.title); }) },
+          { title: 'Undated or unresolved', rows: rows.filter(function (row) { return !row.chronology; }) }
+        ];
+        sections.forEach(function (section) {
+          if (!section.rows.length) return;
+          results.appendChild(T.el('h3', 'catalogue-period', section.title + ' (' + section.rows.length + ')'));
+          const list = T.el('ul', 'catalogue-list');
+          section.rows.forEach(function (row) {
+            const item = T.el('li', 'catalogue-entry');
+            item.appendChild(T.el('span', 'catalogue-date', row.date_label || 'Date unresolved'));
+            const body = T.el('div', 'catalogue-entry-body');
+            const link = T.el('a', 'catalogue-title', row.title);
+            link.id = 'catalogue-entry-' + row.id;
+            link.href = catalogueHash(selectedFamily, search, row.id);
+            if (record === row.id) link.setAttribute('aria-current', 'true');
+            link.addEventListener('click', function (event) {
+              if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button) return;
+              event.preventDefault();
+              T.writeHash([['family', selectedFamily], ['q', search], ['record', row.id]]);
+              // Keep the list's DOM and keyboard focus intact on selection.
+              catalogueRecord(row, panel);
+              results.querySelectorAll('[aria-current]').forEach(function (node) { node.removeAttribute('aria-current'); });
+              link.setAttribute('aria-current', 'true');
+              panel.focus();
+            });
+            body.appendChild(link);
+            body.appendChild(T.el('p', 'catalogue-entry-meta', row.family + ' · ' + row.record_kind));
+            body.appendChild(T.el('p', 'catalogue-entry-meta', 'Evidence: ' + row.evidence_status +
+              ' · Text: ' + row.text_status + ' · Version: ' + row.substantive_status));
+            item.appendChild(body);
+            list.appendChild(item);
+          });
+          results.appendChild(list);
+        });
+        const selectedRow = data.entries.find(function (row) { return row.id === record; });
+        T.clear(panel);
+        panel.hidden = !record;
+        if (selectedRow) {
+          catalogueRecord(selectedRow, panel);
+          if (!rows.some(function (row) { return row.id === record; })) {
+            panel.appendChild(T.el('p', 'detail-weak', 'This linked record is outside the current filters.'));
+          }
+          if (focusRecord) panel.focus();
+        } else if (record) panel.appendChild(T.el('p', null, 'This source record is not in the catalogue: ' + record));
+      }
+
+      function filter(event) {
+        event.preventDefault();
+        T.writeHash([['family', family.value], ['q', query.value.trim()]]);
+        render(T.readHash(), false);
+      }
+      document.getElementById('catalogue-filter').addEventListener('submit', filter);
+      family.addEventListener('change', filter);
+      T.onHashChange(function (params) { render(params, false); });
+      render(T.readHash(), false);
+    } catch (error) {
+      T.doneBootstrapping();
+      T.clear(results);
+      status.textContent = 'Source catalogue unavailable.';
+      results.appendChild(T.el('p', null, 'The source catalogue could not be loaded: ' + String(error.message || error)));
+      const retry = T.el('a', null, 'Reload the source catalogue');
+      retry.href = historyURL('catalogue', null, window.location.hash);
+      results.appendChild(retry);
+      tally.textContent = 'Catalogue coverage could not be read; no completeness claim is available.';
+    } finally {
+      results.setAttribute('aria-busy', 'false');
+    }
+  }
+
+  const catalogueMode = new URLSearchParams(window.location.search).get('view') === 'catalogue';
+  const mapLink = document.getElementById('history-map-link');
+  const catalogueNav = document.getElementById('history-catalogue-link');
+  if (mapLink && catalogueNav) {
+    mapLink.href = historyURL('map');
+    catalogueNav.href = historyURL('catalogue');
+    (catalogueMode ? catalogueNav : mapLink).setAttribute('aria-current', 'page');
+    (catalogueMode ? mapLink : catalogueNav).removeAttribute('aria-current');
+  }
+  if (catalogueMode) {
+    document.getElementById('historical-map').hidden = true;
+    document.getElementById('catalogue').hidden = false;
+    T.setInlineNotice('The source catalogue could not be reached. Serve this page over HTTP with its generated data.');
+    startCatalogue();
+    return;
+  }
+
   T.setInlineNotice(
     'The act history could not be reached, so this page has nothing to show. ' +
     'Serve the pages over HTTP with the data at "' + T.dataRoot + '".'

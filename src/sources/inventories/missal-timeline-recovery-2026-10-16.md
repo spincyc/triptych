@@ -2,6 +2,11 @@
 
 Checked 2026-10-16. Paths prefixed `lt-hist:` refer to the independently retained predecessor corpus; other source paths are relative to Triptych. This report records filesystem inspection, existing project audit dispositions, and verified current Triptych commit identities. It does not revalidate historical or legal claims. No predecessor scripts or Git commands were run, and no source text was copied.
 
+This is the recovery checkpoint, before the agreed-scope expansion on the same
+date. Its measured counts and renderer limits describe that checkpoint. The
+current catalogue, acquired witnesses, corpus export and rendered preview are
+recorded in [the work register](../../../PROJECT-WORK.md#all-rite-missal-timeline-recovery-and-expansion-2026-10-16).
+
 ## What survives and how the two attempts relate
 
 The predecessor `lt-hist` remains on disk. Its top level has no `.git` directory; `lt-hist:build/roman-liturgy-history/.git` exists as the generated research artifact. Its README, importer scripts, version metadata and section bodies were inspected. The original approach makes a linear, one-commit-per-version history, replacing each language tree or applying an explicit partial overlay. It shifts Git dates +10,000 years. Its outputs distinguish liturgy trees, source-text companions, and promulgation-only notes.
@@ -182,6 +187,6 @@ tracer, but none supplies a complete verified structured missal. They must not
 be backfilled into earlier historical states by calendar inheritance.
 
 Complete source authentication, the full historical inventory and normalized
-full-text reconstruction remain outstanding. The ancestry boundary and whether
-approved vernacular and historical lay translations receive independent
-histories remain under clarification.
+full-text reconstruction remain outstanding. After this recovery checkpoint,
+the maintainer agreed to the historical and language boundary recorded in
+[time-machine §11](../../../guidance/time-machine.md#11-historical-and-language-scope-agreed-2026-10-16).

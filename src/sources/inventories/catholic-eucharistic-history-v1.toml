@@ -1,0 +1,173 @@
+schema_version = 1
+record_type = "catholic-eucharistic-history"
+scope_ref = "guidance/time-machine.md#11-historical-and-language-scope-agreed-2026-10-16"
+holdings_inventory = "src/sources/inventories/missal-timeline-holdings-v1.toml"
+
+# Routing only. Historical assertions, witness identities, rights and texts
+# remain with the referenced owners; discovery does not admit an act or edge.
+
+[[catalogues]]
+id = "eastern"
+path = "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml"
+table = "records"
+
+[[catalogues]]
+id = "western"
+path = "src/sources/inventories/western-eucharistic-books-timeline-v1.toml"
+table = "candidates"
+
+[[act_slices]]
+id = "latin-missal"
+path = "src/sources/inventories/latin-missal-acts-v1.toml"
+
+[[text_sets]]
+id = "roman-1962-proper-projection"
+adapter = "roman-1962-propers"
+
+[[text_sets]]
+id = "cummiskey-1861-latin-ordinary"
+adapter = "cummiskey-1861-latin-ordinary"
+
+[[text_sets]]
+id = "wilson-1915-gregorian-canon-memento"
+adapter = "wilson-1915-gregorian-canon-memento"
+
+[[comparisons]]
+id = "roman-canon-memento-wilson-r-and-cummiskey-1861"
+kind = "same-prayer-witness-comparison"
+membership_status = "established"
+basis = "The complete Memento for the living in Wilson's 1915 Gregorian main text, printed page 2, is aligned with the ordered Memento and Et omnium blocks of Cummiskey's 1861 Canon. The latter's intervening English-only rubric is not part of the Latin prayer. Joining those two maintained blocks with one space is a comparison operation, not a change to their source identities. Wilson follows R (Reginae 337), with other manuscript readings in the apparatus; this is comparison through a critical edition, not direct manuscript collation or asserted descent."
+apparatus_caveat = "Wilson page 2 note 6 already reports pro quibus tibi offerimus vel in O (Ottobonianus 313). Its presence in Cummiskey and absence from Wilson's main text do not establish a nineteenth-century introduction. Printed edition dates, represented manuscript dates and the unknown date of a textual change remain separate. Orthographic and punctuation differences are preserved, not counted automatically as substantive revisions."
+source_refs = ["artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7", "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la"]
+
+[comparisons.left]
+text_set = "wilson-1915-gregorian-canon-memento"
+unit_ids = ["unit.wilson-1915.gregorian.canon-missae.memento-vivorum"]
+
+[comparisons.right]
+text_set = "cummiskey-1861-latin-ordinary"
+unit_ids = ["unit.cummiskey-1861.canon-missae.memento-domine", "unit.cummiskey-1861.canon-missae.et-omnium-circumstantium"]
+
+[[classifications]]
+id = "eastern:byz-greek-1754"
+substantive_status = "substantive-established"
+source_ref = "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml#byz-greek-1754"
+basis = "Ex quo primum §§8–9 identifies four prefatory monita added to the new book, including directions for commemorations. This establishes a rubrical addition at book level; §17 describes earlier obligations, so the underlying commemoration practice is not dated to 1754. No full textual collation."
+source_urls = ["https://www.vatican.va/content/benedictus-xiv/es/documents/enciclica--i-ex-quo-primum--i---1-marzo-1756--il-pontefice-invit.html"]
+locus = "Ex quo primum §§8–9; compare §17"
+
+[[classifications]]
+id = "eastern:malabar-1906"
+substantive_status = "substantive-established"
+source_ref = "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml#malabar-1906"
+basis = "Primary approval leaf explicitly reports newly appended Masses approved on 31 July 1905. This is evidence of an addition, not merely a reprint label; identity and wording of individual Masses remain uncollated."
+source_urls = ["https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3724391", "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3724391"]
+locus = "Acquired provider PDF page 6, approval dated 15 October 1905"
+source_library_edition_id = "edition.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha"
+source_artifact_ids = ["artifact.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.bonn-scan-pdf-4c93c36d", "artifact.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.pages-0001-0257-51510073", "artifact.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.pages-0258-0515-37dfbc58"]
+
+[[classifications]]
+id = "western:ambrosian-1974-latin-reform"
+substantive_status = "substantive-established"
+source_ref = "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-11-(1975)/Notitiae-102-1975.pdf"
+basis = "Primary decree p.45 approves Latin reform and explicitly describes new prayer composition;1974 is approval, not book printing."
+inventory_source_ids = ["ambrosian-latin-approval-1974"]
+
+[[classifications]]
+id = "western:ambrosian-1976"
+substantive_status = "unestablished"
+source_ref = "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-12-(1976)/Notitiae-117-1976.pdf"
+basis = "Explicit Italian translation confirmation; deferred translation history. Exact underlying Latin state and identity with1974 approval remain uncollated, particularly separate1975 prayer confirmation; neither a new source version nor exact same-state assertion follows alone."
+additional_source_refs = ["https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-11-(1975)/Notitiae-111-112-1975.pdf"]
+inventory_source_ids = ["ambrosian-italian-confirmation-1976", "ambrosian-prayers-confirmation-1975"]
+
+[[classifications]]
+id = "western:ambrosian-1981-latin"
+substantive_status = "unestablished"
+source_ref = "https://www.itl-libri.com/prodotto/missale-ambrosianum"
+basis = "1981 first Latin publication positively established by publisher retrospect; complete front matter and relation to1974/1975 source states unexamined."
+additional_source_refs = ["https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-11-(1975)/Notitiae-102-1975.pdf"]
+inventory_source_ids = ["ambrosian-latin-publisher-2026", "ambrosian-latin-approval-1974"]
+
+[[classifications]]
+id = "western:ambrosian-1990"
+substantive_status = "unestablished"
+source_ref = "https://www.itl-libri.com/wp-content/uploads/2024/02/MESSALE-AMBROSIANO-2024.pdf"
+basis = "Retrospective update/companion publication documented; exact original-language textual changes, authority and relation to translation remain unresolved. Do not infer sameness from absent comparison."
+inventory_source_ids = ["milan-publisher-2024"]
+
+[[classifications]]
+id = "western:ambrosian-2008-lectionary"
+substantive_status = "unestablished"
+source_ref = "https://www.itl-libri.com/wp-content/uploads/2024/02/MESSALE-AMBROSIANO-2024.pdf"
+basis = "Retrospective update/companion publication documented; exact original-language textual changes, authority and relation to translation remain unresolved. Do not infer sameness from absent comparison."
+inventory_source_ids = ["milan-publisher-2024"]
+
+[[classifications]]
+id = "western:ambrosian-2020-ordo"
+substantive_status = "unestablished"
+source_ref = "https://www.itl-libri.com/wp-content/uploads/2024/02/MESSALE-AMBROSIANO-2024.pdf"
+basis = "Retrospective update/companion publication documented; exact original-language textual changes, authority and relation to translation remain unresolved. Do not infer sameness from absent comparison."
+inventory_source_ids = ["milan-publisher-2024"]
+
+[[classifications]]
+id = "western:ambrosian-2024"
+substantive_status = "substantive-established"
+source_ref = "https://www.chiesadiconcorezzo.it/nuovo-messale-ambrosiano/"
+basis = "Promulgation excerpt specifies calendar, order and prayer changes;2023 official index identifies Latin second typical source plus Italian translation.2024 is effective use/Italian publication, not Latin printing."
+additional_source_refs = ["https://www.cultodivino.va/content/dam/cultodivino/documenti/Index-decretorum-anni-MMXXIII.pdf"]
+inventory_source_ids = ["ambrosian-promulgation-excerpt-2024", "ambrosian-second-approval-2023"]
+
+[[classifications]]
+id = "western:ambrosian-2026-latin"
+substantive_status = "unestablished"
+source_ref = "https://www.itl-libri.com/prodotto/missale-ambrosianum"
+basis = "Positive association with second recension approved2023/effective2024; publication date2026 is not independent reform evidence. Publisher says principal2024 changes incorporated, not that every detail is identical; exact same-state classification awaits front matter/content."
+additional_source_refs = ["https://www.cultodivino.va/content/dam/cultodivino/documenti/Index-decretorum-anni-MMXXIII.pdf"]
+inventory_source_ids = ["ambrosian-latin-publisher-2026", "ambrosian-second-approval-2023"]
+
+[[classifications]]
+id = "western:book-divine-worship-predecessor"
+substantive_status = "unestablished"
+source_ref = "https://www.usccb.org/resources/newsletter-2015-10.pdf"
+basis = "2003 publication date established by official notices; exact source state, original authorization and revisions need book inspection."
+additional_source_refs = ["https://files.ecatholic.com/3059/documents/2015/10/151027_DW_FAQs.pdf?t=1445973898000"]
+inventory_source_ids = ["dwm-usccb-2015", "dwm-official-faq-2015"]
+
+[[classifications]]
+id = "western:divine-worship-2015"
+substantive_status = "substantive-established"
+source_ref = "https://www.usccb.org/resources/newsletter-2015-10.pdf"
+basis = "Official descriptions establish distinctive calendar, order and prayers relative to Roman parent. This does not claim pairwise substantive differences from every2003 predecessor provision."
+additional_source_refs = ["https://files.ecatholic.com/3059/documents/2015/10/151027_DW_FAQs.pdf?t=1445973898000", "https://www.ordinariate.net/divine-worship-missal"]
+inventory_source_ids = ["dwm-usccb-2015", "dwm-official-faq-2015", "ordinariate-dwm"]
+
+[[classifications]]
+id = "western:divine-worship-updated-sanctoral"
+substantive_status = "unestablished"
+source_ref = "https://www.ctsbooks.org/product/divine-worship-the-ordinariate-missal/"
+basis = "Positive current publisher update claims, but revised imprint/date/approval/extent unresolved. Earlier product dates do not date current text updates; exact source comparison still needed."
+additional_source_refs = ["https://www.ctsbooks.org/product/ordinariate-study-missal/"]
+inventory_source_ids = ["dwm-publisher-current", "dwm-study-publisher-current"]
+
+[[classifications]]
+id = "western:hispano-mozarabic-1991-1994"
+substantive_status = "substantive-established"
+source_ref = "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-24-(1988)/Notitiae-267-1988.pdf"
+basis = "Official1988 commission account pp.670-671 describes expanded manuscript repertory and revised Order versus1804. Partial approval covers specified parts only.1991/1994 complementary volumes represent reformed corpus, not successive complete editions."
+additional_source_refs = ["https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1990/notitiae-31-(1995)/Notitiae-347-1995.pdf"]
+inventory_source_ids = ["mozarabic-primary-1988", "mozarabic-publication-1994"]
+
+[[classifications]]
+id = "western:mozarabic-liber-commicus-1994-1995"
+substantive_status = "unestablished"
+source_ref = "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1990/notitiae-32-(1996)/Notitiae-363-1996.pdf"
+basis = "Companion Latin lectionary Proprium de Sanctis1995 established; first volume date unresolved and no independent source revision demonstrated."
+inventory_source_ids = ["mozarabic-lectionary-1995"]
+
+[[classifications]]
+id = "western:roman-zaire-1988"
+substantive_status = "substantive-established"
+source_ref = "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-24-(1988)/Notitiae-264-1988.pdf"
+basis = "Primary decree p.457 approves French adapted ritual structure with calendar and proper Masses; selected rubrics demonstrate changed order. No complete printed-book identification or later revision census."
+inventory_source_ids = ["zaire-primary-1988"]
