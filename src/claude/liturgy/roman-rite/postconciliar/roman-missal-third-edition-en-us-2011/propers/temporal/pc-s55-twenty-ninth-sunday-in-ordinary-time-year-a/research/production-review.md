@@ -425,9 +425,13 @@ added.
   never made and has been corrected to Augustine 124.7.
 - SYN-002 (advisory). Every Latin witness phrase the finding lists now has an
   English rendering, taken from the expansive study's own renderings, and so do
-  four further unglossed phrases (Aquinas's "as if he said", his "to Christ,
+  five further phrases (Aquinas's "as if he said", his "to Christ,
   that is, to the king", "because it belongs to man to answer words", and
-  "inasmuch as they have something of the light"). To keep the page budget,
+  "inasmuch as they have something of the light", and Jerome's *Prima virtus
+  est respondentis, interrogantium mentem cognoscere*, now "the first virtue of
+  one who answers is to know the mind of those who ask"). *Corrected by the
+  author-study stage of run `821c824684b0c7a7` under advisory SYN-005, which
+  found that this bullet had counted four phrases and omitted Jerome's.* To keep the page budget,
   the Latin was trimmed rather than the type enlarged: the English stands alone
   where it carries the witness's sense, and the Latin is kept beside the English
   for Aquinas's definition of the hypocrite and for *simplices … intentio est
@@ -957,3 +961,99 @@ leaf's three outputs and is not a deployment verification. No file of the
 other provider's leaf for this identity, its PDFs or web edition, or its
 production reviews was opened at this stage. The catalog row's existing
 ChatGPT cell was read only to locate the row, and was left unchanged.
+
+## Author-study of the revision, iteration 0 (16 October 2026)
+
+`proper-study` v12, run `821c824684b0c7a7`, seeded at commit
+`d5abae0272089a418653fe675220d45f81313871`, revising the published study
+after the revision's research stage and its review (PASS at iteration 0, with
+advisories RES-016 to RES-021). The stage ran as a Claude Code harness
+subagent, `claude-opus-5-5[1m]`, dispatched at reasoning effort `high`. No
+blocking, carried or advisory finding was forwarded in the packet; the
+standing findings of run `4d16b5e19d25dad9` that the study owns, carried by the
+research handoff, and the research review's advisories that bear on the study
+were addressed as below. No research evidence record, chronology input or
+generated annotation was changed; the component manifest is unchanged.
+
+### Revisions
+
+- STU-010 (a): Bellarmine's "a most delicate, though valuable article" is given
+  to the apple of the eye and "frail and delicate" to those who pray (O'Sullivan,
+  tracked text line 535, re-read); RES-017 notes the same misreading in
+  `research/scope.md` section 3.6, which this stage does not own.
+  (b): the words "From them that resist thy right hand" are placed at the
+  opening of Psalm 16:8, not after it.
+- STU-011 and RES-018: the disagreement section of the second interpretation
+  now quotes Chrysostom, *Hom. in Rom.* 23 ("to show that these regulations are
+  for all, even for priests, and monks ... if thou be an Apostle even ...",
+  NPNF 1/11, tracked lines 46231–46236) and Augustine, *En. in Ps.* 124.7 ("thus
+  hath God ordained His Church, that every power ordained in the world may have
+  honour, and sometimes from those who are better than those in power", NPNF
+  1/8, tracked lines 61102–61103), both re-read; the stated difference and the
+  comparison's row and closing paragraph are narrowed to whether one who keeps
+  nothing of the world's goods still owes Caesar.
+- STU-012: the whited wall has its own paragraph in the Scope appendix, naming
+  Augustine's application to the Donatist party at *En. in Ps.* 95.3.
+- WEB-001: the Scope appendix dates each reading of the General Instruction
+  (chapter II in its official page on 16 October 2026; chapters VII and VIII in
+  Internet Archive captures of 13 and 18 June 2026) and of the readings page
+  (capture of 15 March 2026) instead of naming a production stage; the
+  References say the same.
+- VIS-002: the rows within each book group of the Scriptural Date and Location
+  table are separated by `\addlinespace`, as on the concise page 2. The
+  orientation-v2 Passage cells, which now name each psalm citation's numbering,
+  make the table taller than one page with its heading and introduction; it
+  breaks between the Gospel and Mark groups, with the header repeated. The
+  preflight admits no authored page break inside the table.
+- VIS-003: the bracket after "the word of life" now follows a word space.
+- VIS-001: the comparison now ends about two-thirds down page 28, followed by
+  the Scriptural Date and Location appendix on a fresh page 29.
+- SYN-005: the derive-synthesis iteration-1 bullet above is corrected to five
+  phrases, naming Jerome's. STU-013 was already answered in the iteration-1
+  proof entry.
+- Research facts for authors (`research/scope.md` section 11): the Collect's
+  recurrence at III.ix is word for word in Wilson's text only, and Wilson's
+  apparatus records the Vatican manuscript's *maiestatem tuam* there (page 229
+  re-read in the retained extraction's text layer); Schuster and Fromage are
+  described as read on page images. RES-016: the lemma at Matthew 22:18 is
+  named as the Clementine's, with Jerome's lemma (*nequitia*, PL 26 col. 163)
+  and Aquinas's printed lemma (*malitia*, Venice p. 283), both read on the
+  retained page images at this stage.
+- Handoff item 6: World Mission Day is recorded in the Liturgical Resolution
+  appendix as a dated observance of 18 October 2026 without rank, formulary or
+  text, from the Holy See's message and the Pontifical Mission Societies'
+  page, and the `mass-for-evangelization-of-peoples` branch row says that the
+  day can meet the rubric's condition, which permits and does not prescribe;
+  the branch stays conditional and unselected. Nothing of the observance enters
+  the interpretations or senses.
+- Handoff item 7: the second interpretation's Collect paragraph gives the
+  lexical range of *maiestas* from Lewis and Short (Harper issue, 1879), p.
+  1101, read on the retained page image, and sets the Collect's word beside the
+  Gospel's Caesar as that interpretation's own reading.
+- Not taken up: RES-020 (the Year B Gospel's titulus) concerns another cycle's
+  Mass and stays in the research records; RES-021 (the 1 Paralipomenon 16
+  parallel of Psalm 95) is not yet recorded by the research owner and is not
+  asserted. HOM-001 and VIS-004 belong to the homily and the shared homily
+  environment.
+
+### Proof
+
+- Author proof built with `make doc … PROVIDER=claude` at revision timestamp
+  2026-10-16T22:22:49Z: 37 physical pages, SHA-256
+  `1722f0bc74522058c97bc38d5ce9200e302fbac679ea9bf3076e72193bc91680`; no
+  warnings, undefined references, overfull or underfull boxes in the log; every
+  page rendered and inspected at reduced resolution, the edited pages at
+  reading resolution.
+- `tools/check-proper-components --phase artifacts --edition research`: valid.
+- `scripts/_proper_study.py check --phase content` with the v12 requirements,
+  and every `tools/tpt check-content-preflight` check of the study preflight,
+  including `references-used` (39 entries, 64 loci), `house-voice` and
+  `provenance-matches-run`: pass.
+- `tools/tpt web-edition` probe with pandoc 3.11 and Markdown 3.10.3:
+  converted; each of the eleven `proper-*` anchors present once.
+- Substantive words (opening, element section, three interpretations and
+  comparison, Latin included): about 15,800; about 23,000 with the appointed
+  texts, appendices and References.
+
+No search, listing or file of the other provider's leaf for this identity, its
+PDFs or web edition, or its production reviews was opened at this stage.
