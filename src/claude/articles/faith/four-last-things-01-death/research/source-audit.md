@@ -1,90 +1,122 @@
-# Source Audit — The Debt of Nature (Claude edition, Volume One of *The Four Last Things*)
+# Source audit — *The Debt of Nature* (Claude, Four Last Things I), rewrite of 2026-10-16
 
-Every witness below was read by the authoring agent on 2026-07-26 (UTC calendar day) unless stated otherwise. "Verified" means the quoted or relied-on wording was read at the identified witness on that date; it never claims collation against a printed critical edition unless stated. The Augustinian quotations were verified against the source library's tracked transcription of the Dods 1871 printing at recorded artifact lines; the *Craft of Dying* quotations against a tracked OCR artifact registered with this revision. No verification event recorded here is inferred or invented; each corresponds to an actual retrieval and reading.
+Every quotation printed in the essay was read by the authoring agent on
+2026-10-16 (UTC) at the locus and witness named below. "Library" means a tracked
+artifact in `src/sources/`; "fetched" means a fresh download made that day into
+the lane's scratch directory (not retained in the repository). Wording inside
+quotation marks was copied from the witness; OCR damage was resolved only where
+the printed reading is certain (dropped ornamental initials, a hyphen across a
+line break, a stray OCR mark), and each such case is noted.
 
-## Core claim-to-source matrix
+Rights: **PD** = public domain (United States at least); **OFF** = official
+copyrighted text of the Holy See, quoted briefly with attribution.
 
-| Consequential claim or quotation | Exact source locus | Witness read 2026-07-26 | State |
+## Scripture (Douay–Rheims, Challoner; Vulgate numbering) — PD
+
+Read in `src/sources/bibles/douay-rheims/chapters/<Book>/<n>.json` (edition
+`challoner-gutenberg-1581`).
+
+| Locus | Use |
+| --- | --- |
+| Ecclus 7:37–40 | The counsel at the bedside; the three verses before 7:40 are 7:37, 7:38, 7:39 (cold-review D7 corrected). Latin 7:40 read in `bibles/clementine-vulgate/chapters/Ecclus/7.json`. |
+| Gen 3:19; Job 7:16; Job 19:25–26 | Sentence on Adam; Office of the Dead lessons I and VIII. |
+| Matt 24:15, 30, 35; 24:42–44; 25:13 | Last Sunday after Pentecost; the hidden hour. |
+| Luke 21:25, 32, 34, 36; 23:46 | Advent I; "Into thy hands". |
+| Wis 1:13; 4:7; 9:15; Ps 115:15; 141:8 | God made not death; the just man prevented by death; the body a load; precious death; "Bring my soul out of prison". |
+| Rom 6:23; 1 Cor 15:26; 2 Cor 5:1; Phil 1:21–23; 1 Thess 4:12–13; Heb 2:14–15; James 5:14–15 | As quoted. |
+
+## The Fathers — PD
+
+| Quotation (incipit) | Witness and locus | How checked |
+| --- | --- | --- |
+| "As regards bodily death … jarring horridly on nature so long as it continues"; "when it is piously and faithfully borne …" | Augustine, *De civ.* XIII.6, Dods 1871 | Library `dods-1871/pg45304-body-lf`, lines 20949–20966 |
+| "for this reason, that if the immortality …"; "by the greater and more admirable grace …"; "For then death was incurred …"; "Not that death, which was before an evil …" | *De civ.* XIII.4, Dods | Same artifact, lines 20871–20914 |
+| "die well, though death is an evil" | *De civ.* XIII.5, Dods | Same artifact, line 20944 |
+| "For no sooner do we begin …"; "so that our whole life is nothing but a race towards death …" | *De civ.* XIII.10, Dods | Same artifact, lines 21075–21087 |
+| Ostia: "As the day now approached …"; "We were seeking …"; "and while we were thus speaking …"; "to the noise of our own mouth …"; "Enter thou into the joy of Thy Lord"; "Son, for myself …"; "Here … shall you bury your mother"; "Lay this body anywhere …"; "Nothing is far to God …"; "was that religious and devout soul set free from the body"; "she neither died unhappy …"; "and it was pleasant to me to weep …"; "for my mother during so small a part of an hour …" | Augustine, *Confessions* IX.10.23–IX.12.33, trans. J. G. Pilkington, NPNF 1/1 | Library NPNF 1/1 CCEL text, lines 12856–13108; translator confirmed at line 203 |
+| "Not all weeping proceeds … I will weep for thee in all, my brother" | Ambrose, *De excessu fratris* I.10, trans. H. de Romestin, NPNF 2/10 | Library NPNF 2/10 CCEL text, lines 17263–17273; translator at lines 55–70 |
+| "because thou hast hearkened …"; "In sweat shalt thou eat thy bread …"; "Death is given for a remedy … course of this life" | Ambrose, *De excessu fratris* II.38 | Same artifact, lines 18676–18685; Book II setting ("on the seventh day … we return to the grave") at 18242–18245 |
+| "that our brethren … white raiment there" | Cyprian, *De mortalitate* 20, trans. R. E. Wallis, ANF 5 | Library ANF 5 CCEL text, lines 47081–47090 |
+| "That in the meantime we die … Who would not hasten to better things?" | *De mortalitate* 22 | Same, lines 47117–47121 |
+| "We should consider … paradise and the kingdom"; "There a great number of our dear ones … still solicitous for our salvation" | *De mortalitate* 26 | Same, lines 47191–47203 |
+| "All the pleasures of the world … ends of the earth"; "Him I seek … for our sake"; "do not hinder me from living …" | Ignatius, *Romans* 6 (shorter recension, first of the two parallel paragraphs), ANF 1 | Library ANF 1 CCEL text, lines 7062–7071 |
+| "Eighty and six years …" | *Martyrdom of Polycarp* 9, ANF 1 | Same, lines 3831–3833 |
+| "I give Thee thanks … both of soul and body" | *Mart. Pol.* 14 | Same, lines 3947–3951 (footnote marker [456] omitted) |
+| "as being more precious than the most exquisite jewels"; note "Literally, 'the birth-day.'" | *Mart. Pol.* 18 and note 470 | Same, lines 4052–4065 |
+
+## Doctors and spiritual writers
+
+| Quotation | Witness and locus | How checked | Rights |
 | --- | --- | --- | --- |
-| "In all thy works remember thy last end, and thou shalt never sin"; and the surrounding 7:37--39 on the dead, the mourners, and the sick. | Ecclesiasticus 7:37--40, Douay--Rheims | Tracked verse text `verse-text-26-ecclesiasticus` of the registered Challoner Gutenberg edition. | Verified (quotation). |
-| Latin `In omnibus operibus tuis memorare novissima tua, et in aeternum non peccabis`. | Ecclesiasticus 7:40, Clementine Vulgate | SacredBible.org transcribed Latin ("vulgate1914" presentation), registered with this revision as a distinct edition. | Verified (quotation, transcription witness). |
-| Denys the Carthusian (1402--1471) wrote among his theological treatises `De quatuor novissimis`. | *Catholic Encyclopedia* vol. 4, s.v. "Denys the Carthusian" | newadvent.org/cathen/04734a.htm. | Checked (bibliographic; the page prints "De quatuor Novissimus", recorded as a discrepancy). |
-| The Catechism's Article 12 has six headings (particular judgment; heaven; purgatory; hell; last judgment; hope of the new heaven and earth), and death is treated under Article 11 in a section headed "Dying in Christ Jesus". | CCC Part One, Sec. Two, Ch. Three, Articles 11--12 | vatican.va archive index and content pages `__P2G` through `__P2R`. | Verified (structural observation against the text's own headings). |
-| "In that 'departure' which is death the soul is separated from the body." | CCC 1005 | vatican.va `__P2I.HTM`. | Verified (quotation). |
-| "By death the soul is separated from the body, but in the resurrection God will give incorruptible life to our body". | CCC 1016 | vatican.va `__P2J.HTM`. | Verified (quotation). |
-| "In a sense bodily death is natural, but for faith it is in fact 'the wages of sin.'"; "Even though man's nature is mortal God had destined him not to die"; "Bodily death, from which man would have been immune had he not sinned". | CCC 1006, 1008 | vatican.va `__P2I.HTM`. | Verified (quotation). |
-| CCC 1007 (Eccl 12:1,7), 1009--1011 (death transformed; Phil 1:21, 2 Tim 2:11, Ignatius *Ad Rom.* 6), 1013 (no reincarnation, quoting LG 48 and Heb 9:27), 1014 (preparation; the litany petition; Imitation I.23; Francis's Canticle). | CCC 1007, 1009--1011, 1013--1014 | vatican.va `__P2I.HTM`. | Verified (quotation). |
-| CCC 1018, 1021--1022 with their footnoted authorities; the John of the Cross sentence. | CCC 1018, 1021--1022 | vatican.va `__P2J.HTM`, `__P2L.HTM`. | Verified (quotation). |
-| CCC 1020 with the Prayer of Commendation from the Order of Christian Funerals ("Go forth, Christian soul, from this world\ldots May you see your Redeemer face to face"). | CCC 1020 | vatican.va `__P2K.HTM`. | Verified (quotation; official English of the ritual as the Catechism prints it, ellipses as in the Catechism and this article). |
-| CCC 1023 quoting the *Benedictus Deus* definition in official English. | CCC 1023 | vatican.va `__P2M.HTM`. | Verified (quotation). |
-| CCC 362--368: soul and body a single nature (365, citing Vienne); the soul created immediately by God and immortal (366). | CCC 362--368 | vatican.va `__P1B.HTM`. | Verified (quotation). |
-| CCC 992 ("God revealed the resurrection of the dead to his people progressively"). | CCC 992 | vatican.va `__P2H.HTM`. | Verified (quotation). |
-| CCC 1517 (the Eucharist "should always be the last sacrament of the earthly journey"), 1520--1523, 1524--1525, 1528--1529. | CCC 1517--1529 | vatican.va `__P4M.HTM`, `__P4N.HTM`, `__P4O.HTM`, `__P4P.HTM`. | Verified (quotation). |
-| Augustine's three deaths: "The death, then, of the soul takes place when God forsakes it, as the death of the body when the soul forsakes it. Therefore the death of both---that is, of the whole man---occurs when the soul, forsaken by God, forsakes the body." | *De civitate Dei* XIII.2, Dods 1871 | Tracked artifact `pg45304-body-lf` (Dods 1871 vol. I), chapter body at lines 20768--20812; quoted words at 20776--20781. Passage `13.2` registered with this revision. | Verified (quotation; tracked artifact witness). |
-| "as regards bodily death, that is, the separation of the soul from the body, it is good unto none while it is being endured\ldots the very violence with which body and soul are wrenched asunder\ldots jarring horridly on nature"; the forestalling by a sudden stroke; that piety increases merit but does not remove the name of punishment. | *De civitate Dei* XIII.6, Dods 1871 | Same artifact, chapter read in full at lines c. 20949--20970. | Verified (quotation; tracked artifact witness). |
-| "if the immortality of the body followed immediately upon the sacrament of regeneration, faith itself would be thereby enervated"; the martyrs' conflict; "Then it was proclaimed to man, 'If thou sinnest, thou shalt die;' now it is said to the martyr, 'Die, that thou sin not.'"; "Not that death, which was before an evil, has become something good\ldots". | *De civitate Dei* XIII.4, Dods 1871 | Same artifact, chapter read in full. | Verified (quotation; tracked artifact witness). |
-| "the law is indeed good, because it is prohibition of sin, and death is evil because it is the wages of sin; but as wicked men make an evil use not only of evil, but also of good things, so the righteous make a good use not only of good, but also of evil things." | *De civitate Dei* XIII.5, Dods 1871 | Same artifact. | Verified (quotation; tracked artifact witness). |
-| "it is diverted to such useful purposes, not by any virtue of its own, but by the divine interference." | *De civitate Dei* XIII.7, Dods 1871 | Same artifact. | Verified (quotation; tracked artifact witness). |
-| The aporia: the three times and three states; "Between these two states the dying condition finds no place\ldots Never, then, is he dying"; "you try to lay your finger on the present, and cannot find it"; "Must we then conclude that there is thus no death of the body at all?"; the decision to keep the customary usage on the warrant of Ps 6:6. | *De civitate Dei* XIII.9, XIII.11, Dods 1871 | Same artifact, chapter 11 body at lines 21111--21195; quoted words at 21128--21133. Passage `13.11` registered with this revision. | Verified (quotation; tracked artifact witness). |
-| "our whole life is nothing but a race towards death, in which no one is allowed to stand still\ldots It is one thing to make a longer journey, and another to walk more slowly." | *De civitate Dei* XIII.10, Dods 1871 | Same artifact. | Verified (quotation; tracked artifact witness). |
-| "it disturbs some that this mortality is common to us with others"; "So long as we are here in the world, we are associated with the human race in fleshly equality, but are separated in spirit"; the shipwreck "common without exception to all that sail in her"; "he must suffer more than others in the world". | Cyprian, *De mortalitate* 8--9, ANF V (Wallis) | newadvent.org/fathers/050707.htm, Treatise 7; sections 1--10 read. | Verified (quotation at the web transcription; not collated against the printed volume or the Latin). |
-| "it is clear that man is not a soul only, but something composed of soul and body." | ST I, q. 75, a. 4, corpus | newadvent.org/summa/1075.htm. | Verified (quotation). |
-| The human soul incorruptible because subsistent. | ST I, q. 75, a. 6, corpus | Same page. | Checked characterization (not quoted). |
-| "it is as natural for the soul to understand by turning to the phantasms as it is for it to be joined to the body; but to be separated from the body is not in accordance with its nature". | ST I, q. 89, a. 1, corpus | newadvent.org/summa/1089.htm. | Verified (quotation). |
-| "by displacing a pillar a man moves accidentally the stone resting thereon. In this way the sin of our first parent is the cause of death\ldots in so far as by the sin of our first parent original justice was taken away." | ST I-II, q. 85, a. 5, corpus | newadvent.org/summa/2085.htm. | Verified (quotation). |
-| Reply 1 (nature left to itself; unequal defects from equal original sin) and reply 2 (why the baptized still die). | ST I-II, q. 85, a. 5, ad 1--2 | Same page. | Checked characterization. |
-| "as regards his form, incorruption is more natural to man\ldots man is naturally corruptible as regards the nature of his matter left to itself, but not as regards the nature of his form"; the knife and the rust; "God\ldots supplied the defect of nature, and by the gift of original justice, gave the body a certain incorruptibility\ldots It is in this sense that it is said that 'God made not death'". Latin `homo est naturaliter corruptibilis secundum naturam materiae sibi relictae, sed non secundum naturam formae`; `supplevit defectum naturae, et dono iustitiae originalis dedit corpori incorruptibilitatem quandam`. | ST I-II, q. 85, a. 6, corpus | English: same page. Latin: corpusthomisticum.org/sth2085.html. | Verified (quotation, both languages). |
-| "death is both natural on account of a condition attaching to matter, and penal on account of the loss of the Divine favor preserving man from death." | ST II-II, q. 164, a. 1, ad 1 | newadvent.org/summa/3164.htm. | Verified (quotation). |
-| The Godhead not separated from Christ's flesh at death ("What is bestowed through God's grace is never withdrawn except through fault"), with the *sed contra* from the Creed's "was buried"; and the parallel denial for the soul. | ST III, q. 50, aa. 2--3 | newadvent.org/summa/4050.htm. | Verified (quotation for a. 2; checked characterization for a. 3). |
-| `anima autem cum sit pars corporis hominis, non est totus homo, et anima mea non est ego`; `separatur autem ab eo contra suam naturam, et per accidens; unde anima exuta a corpore, quamdiu est sine corpore, est imperfecta`; `in alia vita nulla sunt opera meritoria`. | *Super I Cor.*, cap. 15, lect. 2 | corpusthomisticum.org/c1v.html, the page the site labels *reportatio vulgata*, capita 11--16. | Verified (quotation, Latin; the transmission state is recorded and the article states it). |
-| Vienne: `quod anima rationalis seu intellectiva non sit forma corporis humani per se et essentialiter, tamquam haereticus sit censendus`, with `definientes`. | DS 902 | patristica.net Latin Enchiridion presentation. | Verified (quotation, Latin; working gloss labelled). |
-| Lateran V: `damnamus et reprobamus omnes asserentes animam intellectivam mortalem esse, aut unicam in cunctis hominibus\ldots verum et immortalis, et pro corporum quibus infunditur multitudine singulariter multiplicabilis`; and DS 1441 on the double-truth evasion. | DS 1440--1441 | Same page. | Verified (quotation, Latin; working gloss labelled). |
-| John XXII, *Ne super his*: `vident Deum de communi lege ac divinam essentiam facie ad faciem clare, in quantum status et condicio compatitur animae separatae`, with the bull's own description of the disputed question. | DS 990--991 | Same page. | Verified (quotation, Latin; working gloss labelled). |
-| *Benedictus Deus*: `mox post mortem suam\ldots etiam ante resumptionem suorum corporum et iudicium generale\ldots viderunt et vident divinam essentiam visione intuitiva et etiam faciali, nulla mediante creatura\ldots`; and `animae decedentium in actuali peccato mortali mox post mortem suam ad inferna descendunt`. | DS 1000--1002 | Same page. | Verified (quotation, Latin; the central clause quoted in English as CCC 1023 gives it). |
-| Trent session V canon 1 in English and Latin (`incurrisseque per offensam praevaricationis huiusmodi iram et indignationem Dei, atque ideo mortem, quam antea illi comminatus fuerat Deus`; "the entire Adam\ldots was changed, in body and soul, for the worse"); canon 2 and its presupposition. | Trent, sess. V, canons 1--2 | Whole-volume OCR of the Waterworth printing (IA `cu31924029369760`) and of the Tauchnitz 1887 Latin (IA `canonesetdecreta00coun_0`), both registered as remote artifacts with this revision. | Verified (quotation, both languages, at the OCR of the identified printings). |
-| Trent session XIV, doctrine on extreme unction, ch. II (the effect) and ch. III ("this unction is to be applied to the sick, but to those especially who lie in such danger as to seem to be about to depart this life: whence also it is called the sacrament of the departing"; and the provision for recovery and a second anointing). Latin `esse hanc unctionem infirmis adhibendam, illis vero praesertim, qui tam periculose decumbunt, ut in exitu vitae constituti videantur, unde et sacramentum exeuntium nuncupatur`. | Trent, sess. XIV, extreme unction, chs. I--III | Same two OCR artifacts. | Verified (quotation, both languages). |
-| Trent session XIV, canons 1--4 on extreme unction. | Trent, sess. XIV, canons 1--4 | Waterworth OCR. | Verified (quotation). |
-| Trent session XIII, ch. VI and canon 7 (reserving the Eucharist and carrying it to the sick). | Trent, sess. XIII, ch. VI, canon 7 | Waterworth OCR. | Verified (quotation). |
-| GS 18 ("It is in the face of death that the riddle a human existence grows most acute"; "that bodily death from which man would have been immune had he not sinned") and GS 14 ("Though made of body and soul, man is one"). | *Gaudium et spes* 14, 18 | vatican.va English web text of the constitution. | Verified (quotation; the English page's "riddle a human existence" is quoted as printed). |
-| LG 48 ("the single course of our earthly life", as quoted by CCC 1013); LG 49 (exiles, purified, in glory beholding "clearly God Himself triune and one, as He is"); LG 50 (memory of the dead, suffrages, 2 Macc 12:46). | *Lumen gentium* 48--50 | vatican.va English web text. | Verified (quotation). |
-| SC 73 ("is not a sacrament for those only who are at the point of death") and SC 74 (the continuous rite: confession, anointing, viaticum). | *Sacrosanctum concilium* 73--74 | vatican.va English web text. | Verified (quotation). |
-| CDF 1979 nn. 3 (a spiritual element survives and subsists, endowed with consciousness and will, so that the "human self" subsists; the Church uses the word "soul"), 4 (prayers, funeral rites, and religious acts for the dead are in substance *loci theologici*), 5 (the glorious manifestation "distinct and deferred with respect to the situation of people immediately after death"); and the caution against "arbitrary imaginative representations". | *Recentiores episcoporum Synodi*, nn. 3--5 | vatican.va English web text; whole letter read. | Verified (quotation). |
-| CIC 1983 cann. 1004 §§1--2, 1005 ("This sacrament is to be administered in a case of doubt whether the sick person has attained the use of reason, is dangerously ill, or is dead"), 921 §1, 922 ("while fully conscious"). | CIC 1983, cann. 921--922, 1004--1005 | vatican.va English web text, canon-range pages for cann. 879--958 and 998--1165. | Verified (quotation). |
-| *Craft of Dying*: the prologue's six chapters and its address to "lewd men" (Comper's gloss: laymen); ch. 1's commendation, the two psalm verses, and the catalogue "a going out of prison\ldots a discharging of an heavy burden, that is the body\ldots paying of the debt of natural duty"; ch. 2's five temptations, "such as they never had before in all their life", the aside that men rarely die of age, and the complacence temptation; ch. 3's seven interrogations on Anselm's authority and "put all thy trust in His passion and in His death only"; ch. 4's five acts of Christ on the cross; ch. 5's "right seldom\ldots dispose themselves to death betimes", the decretal charging the physician, and the Chancellor of Paris on "vain and\ldots false cheering"; and "to exhort him, by a priest, or for need by another". | Comper 1917, pp. 3--4, 5--8, 9--20, 22--23, 27--28, 32--33, 85 | Tracked OCR artifact of the 1917 printing (IA `bookofcraftofdyi00caxtiala`), registered with this revision. | Verified (quotation at the tracked OCR of Comper's modernized-spelling text; not a manuscript or Latin witness). |
-| Comper's editorial findings: the Latin original's author unknown; Gerson's *Opusculum tripartitum* is shorter and lacks anything answering the Craft's first two chapters; the Craft cites "the great clerk, the Chancellor of Paris" in chs. III and V; at least three distinct books under the *Ars moriendi* title; the block-books' eleven illustrations; Caxton's abridgment from an untraced French source. | Comper 1917, pp. 48--51 | Same artifact. | Verified (quotation and checked characterization of the editor's own notes). |
-| Every scriptural verse quoted in the article. | Douay--Rheims (Challoner Gutenberg), Vulgate numbering | Tracked per-book verse-text artifacts of the registered edition. | Verified (quotation). |
+| "thus it is stated in *Phys.* viii … original justice was taken away" | Aquinas, *ST* I-II q.85 a.5 corpus, English Dominican | Library `pg17897-body`, lines 36891–36896 | PD |
+| *Imitation* I.23.1, 2, 4, 9 (four passages) | Thomas à Kempis, trans. William Benham, Project Gutenberg #1653 | Fetched 2026-10-16 (gutenberg.org/cache/epub/1653/pg1653.txt), ch. XXIII of Book I | PD; **needs registration** |
+| "suppose yourself to be on your deathbed …"; "One day your soul will quit this body …"; "husband, wife and child …"; "when it quits the body …"; "Gather a bouquet of myrrh."; "I will prepare for the hour of death …" | Francis de Sales, *Introduction* I.13, Rivingtons 1876 | Library `historical-ocr-8159693d`, lines 2642–2762 | PD |
+| "to consider, as if I were at the point of death, the form and measure which I would then want to have kept" | Ignatius, *Spiritual Exercises*, Second Week, second way of election, third rule, Mullan 1914 | Library `historical-ocr-fe256c5b`, lines 4396–4399 | PD |
+| "Consider that you are dust …"; "Imagine that you behold …"; "in the very room …"; "Lord, I thank you …" | Alphonsus, *Preparation for Death* Consid. I, Duffy 1843 | Library `historical-ocr-d25bba22`, lines 2068–2196 | PD |
+| "Considered according to the senses …"; Bernard's "as the end of labours …" (as quoted by Alphonsus, citing *Trans. Malach.*); "at death he recommends them …"; "and feels consoled in uniting …" | Consid. VIII | Same artifact, lines 4964–5065 | PD |
+| Protestation of Death (incipit and four phrases); "Prayer to be said every day for a good death" (printed whole) | Duffy 1843, pp. 461–464 | Same artifact, lines 18615–18733 | PD (received prayer, exact) |
+| Leonard of Port Maurice, monthly retreat (twelve phrases) | "On the great value … a day's retreat each month," appended to Duffy 1843, pp. 464–474 | Same artifact, lines 18741–18990; OCR "gregt" read "great", "my:" read "my" | PD |
+| "the general rule, 'that he who lives well, will die well,' …"; "True, therefore, is the sentence …" | Bellarmine, *The Art of Dying Well* I.1, trans. John Dalton (1847) | Fetched 2026-10-16: archive.org item `the-art-of-dying-well-by-saint-robert-bellarmine` (djvu text). This item is a modern digital transcription of Dalton's translation, not a facsimile; sense corroborated against the text layer of the 1622 English facsimile (item `TheArtOfDyingWell`, "be who liuetb wel, doth dye well") | PD; **needs registration** |
+| "I am about to go before God … I do but enter into Life"; last words "Ah, very well then … My God, I … love … Thee!" | Thérèse, *The Story of a Soul*, trans. T. N. Taylor (1912), letter of 14 Aug 1897 and the account of her death | Fetched 2026-10-16: Project Gutenberg #16772, lines 11141–11148, 7549–7561 | PD (1912); **needs registration** |
+| Prologue; ch. 1 commendation (incl. "a going [out] of prison … paying of [the] debt of natural duty"); "To die well is to die gladly and wilfully"; ch. 2 temptations; "may compel no man …"; "is true, and will not suffer you …"; ch. 3 interrogations (printed whole); "Lord, I put the death …"; ch. 5 "right seldom (that) …" and "as the great Clerk …"; "before all other things"; "the Chancellor of Paris"; Comper's note ("in almost every European language") | *The Book of the Craft of Dying*, ed. F. M. M. Comper (1917), pp. 3–33, 48–50 | Library Comper OCR artifact, lines 1515–2760, 3290–3400; brackets reproduced as printed; the decretal and Anselm attributions are the tract's own | PD (US) |
 
-## Source classes and rights
+## Liturgy
 
-- **Public domain:** Douay--Rheims (Challoner) in the registered electronic state; Dods 1871 *City of God*; ANF V (Wallis); the English Dominican *Summa* translation; Waterworth's Trent and the Tauchnitz 1887 Latin; the conciliar and papal Latin acts themselves (1312, 1334, 1336, 1513, 1546, 1551); Comper's 1917 *Book of the Craft of Dying* (United States); the *Catholic Encyclopedia* volume 4 (1908).
-- **Copyrighted, quoted briefly with attribution:** the official Vatican English texts of the Catechism, the Second Vatican Council's constitutions, the 1979 letter, and the Code of Canon Law; the Order of Christian Funerals prayer as the Catechism prints it. Corpus Thomisticum's site edition and patristica.net's Enchiridion presentation retain their stated rights and are used as checked witnesses by link, with no bulk text incorporated. SacredBible.org's transcription is used for one verse.
-- **Project content:** every formulation not attributed above, including the images and the labelled syntheses.
+| Text | Witness | How checked | Rights |
+| --- | --- | --- | --- |
+| *Proficiscere* (Latin and English, printed whole as the closing prayer); *Commendo te* (English, long extract, and "the terror of darkness …", "give way", "flee away …", "Mayest thou behold …"); rubric "Then while the soul …" | *A Manual of Prayers* (Baltimore III, 1889), pp. 514–518 | Fetched IA `manualofprayersf00wood` djvu text; **every quoted line checked against the page images** (leaves n521–n526) | PD (US; copyright 1888 expired) |
+| Last-agony ejaculations; *Subvenite* with versicles (English) | Same, pp. 531–532 | Page images n538–n539 | PD |
+| "O God, who hast doomed all men to die …" (printed whole); "Jesus, Mary, and Joseph …" (three lines) | Same, Devotions for the Sick, pp. 469–470 | Page images n476–n477 | PD |
+| Viaticum *Accipe, frater* (English); anointing form at the mouth (English, partial) | Same, pp. 478, 488 | Page images n485, n495 | PD |
+| Hail Mary (Latin and English); litany "From sudden and unlooked-for death" | Same, pp. 34, 260 | Page images n41, n267 | PD |
+| Latin of *Accipe, frater (vel soror) …*; *indulgeat tibi Dominus quidquid per gustum et locutionem deliquisti*; *Proficiscere* (wording agrees with the Manual; punctuation differs); *Commendo te* (*humanitatis debitum*); *Subvenite*; *A subitanea et improvisa morte*; Office of the Dead *Lectio I* (Job 7, *Parce mihi*) and *Lectio VIII* (Job 19, *Scio enim, quod Redemptor meus vivit …*) | *Rituale Romanum* (Ratisbon: Pustet, 1872) | Fetched IA `ritualeromanumpa00cath_0` djvu text, lines 4455–4462, 4799–4802, 5679, 6900–6960, 7797–7800, 9785, 10918–10930 | PD |
+| Ash Wednesday *Memento, homo …* / "Remember, O man, that thou art dust …"; Preface for the Dead (English, through "is obtained") | Lasance, *New Roman Missal* (1945) | Library `new-roman-missal-text-80b34759`, lines 19866–19883, 86881–86903 (dropped initials M, R, I restored) | PD (US, non-renewal) |
+| *Tuis enim fidelibus … habitatio comparatur* | *Missale Romanum* 1920, Praefatio Defunctorum | Fetched IA `MissaleRomanumBenedettoXV` text (sha256 aa646196… matches artifact record), lines 49225–49235; 1919 matter | PD in that matter |
+| *Mortem cotidie ante oculos suspectam habere* | Rule of Benedict 4.47, Latin | Library `regula-latin-text`, line 26; English given as a labelled gloss (no PD English of ch. 4 held: Henderson 1910 omits it, checked at en.wikisource 2026-10-16) | PD |
 
-## Consequential negative results and boundaries
+## Magisterium and law
 
-- No Greek or Hebrew witness was examined at any locus. The article therefore asserts nothing about the construction behind the Vulgate's `in quo omnes peccaverunt` at Rom 5:12 or about the punctuation of Luke 23:43, and flags both where they arise.
-- Each of the thirty-one quoted scriptural loci was checked against the registered `american-edition-divergences` table for the Challoner Gutenberg edition. None of them diverges from the American 1899 reading. This is a bounded negative result over that table only.
-- The phrase *iudicium particulare*, or an equivalent, does not appear in DS 990--991 or DS 1000--1002 as read on 2026-07-26. No wider magisterial search was run; the article states the bound and asserts nothing about where the term first appears officially.
-- Trent's session V canon 1 was read in both languages, and it does not define the constitution of Adam's body. The conciliar acts, schemata, and debates were not examined, and the article's synthesis names that gap as a defeating finding.
-- DS 857--858, 1304--1306, and 1820, which CCC 1022 cites for the purification, were not read at their own loci. The article reports the Catechism's citation and asserts nothing about their contents.
-- John XXII's Avignon sermons were not examined. The report that he proposed the contrary opinion rests on the description of the disputed question in his own *Ne super his* and on the Catechism's citation of that act.
-- The *Super I Cor.* passages are transmitted in the *reportatio vulgata*, not in a text from Thomas's hand. The article states this wherever it quotes them, and classifies `anima mea non est ego` as evidence of the school rather than of Thomas's wording.
-- The Comper text is a modernized-spelling edition of Bodleian MS 423 and is itself a translation of a lost Latin original; no manuscript and no Latin witness was consulted. The tract's own attributions to Anselm, Scotus, Isidore, and an unnamed decretal were not verified against those authors and are reported as the tract's claims.
-- The Cyprian material was read in a web transcription of ANF V and not collated against the printed volume or the Latin; the article uses it for a pastoral point only.
-- The article takes no position on medical criteria for the determination of death, and says so expressly at the point where a reader would expect it to.
-- The twentieth-century debates over a final option at death, and the scholastic accounts of the fixity of the separated will, were not researched; the article records that boundary rather than crossing it.
-- The parity-consulted GPT scope record was used for topic parity only; the GPT edition's sections, main file, and PDF were not read.
-- Canonical fingerprint pinning of the exact-witness bindings was not performed because the shared library's fingerprint query validates the whole tree and was blocked by unrelated in-flight source records elsewhere in the repository at the time of this revision. Every record and binding owned by this leaf validates.
-- No claim of ecclesiastical approval or independent review is made.
+| Text | Witness | How checked | Rights |
+| --- | --- | --- | --- |
+| Vienne (soul the form of the body), DS 902; Lateran V, DS 1440; *Benedictus Deus*, DS 1000 (*etiam ante resumptionem suorum corporum*); Trent V can. 1, DS 1511; Trent XIV can. 1, DS 1716; Trent XXV, DS 1821 (*Sanctos, una cum Christo regnantes, orationes suas pro hominibus Deo offerre*) | Denzinger, patristica.net Latin | Fetched 2026-10-16 and read at each number | PD (Latin acts) |
+| CCC 956 (with the Dominic and Thérèse sayings and footnotes 493–495), 1005, 1006, 1009, 1013, 1014, 1016, 1021, 1053, 1517, 1524, 1525, 365 | Vatican archive pages `__P1B`, `__P2B`, `__P2I`, `__P2J`, `__P2K`, `__P2L`, `__P2R`, `__P4M`, `__P4O` | Fetched 2026-10-16 | OFF, brief |
+| Can. 921, 922, 1004 | vatican.va Code, Book IV pages | Fetched 2026-10-16 | OFF, brief |
 
-## Retrieval and verification event log (all 2026-07-26 UTC)
+## Claims resolved against the cold review
 
-1. Tracked source-library artifacts read locally: the Challoner Gutenberg per-book verse texts for all thirty-one scriptural loci and the `american-edition-divergences` table; the Dods 1871 *City of God* volume I transcription at lines 20744--21195 (Book XIII chapters 1--11) with the chapter boundaries confirmed at 20812/20815 and 21195/21198.
-2. Internet Archive whole-volume OCR texts acquired over HTTPS and read: `cu31924029369760` (Waterworth Trent), `canonesetdecreta00coun_0` (Tauchnitz Latin Trent), `bookofcraftofdyi00caxtiala` (Comper 1917). Hashes and byte sizes recorded in the artifact manifests registered with this revision.
-3. newadvent.org Summa pages 1075, 1089, 2085, 3164, 4050 fetched and read; page 5069 (Supplement q. 69) was read for context and the Supplement is not quoted in the article. Page 1076 was fetched and not used.
-4. corpusthomisticum.org pages `sth2085` (I-II qq. 85--89 Latin) and `c1v` (Super I Cor., *reportatio vulgata*, capita 11--16) fetched and read; the opera index was used to identify which page carries chapter 15 and which transmission state it represents.
-5. patristica.net Latin Enchiridion page fetched raw and read at DS 900--904, 990--991, 1000--1002, and 1440--1441.
-6. vatican.va pages fetched raw and read: the Catechism archive index and content pages `__P1B`, `__P2G`--`__P2N`, `__P4M`--`__P4P`; *Gaudium et spes*; *Lumen gentium*; *Sacrosanctum concilium*; the CDF letter of 17 May 1979; and the Code of Canon Law English pages for cann. 879--958 and 998--1165.
-7. SacredBible.org's Vulgate index and Ecclesiasticus page fetched and read for Ecclus 7:37--40 and 41:1--6.
-8. newadvent.org/fathers/050707.htm (Cyprian, Treatise 7) and newadvent.org/cathen/04734a.htm (Denys the Carthusian) fetched and read.
-9. Negative and route notes: a probe for a Corpus Thomisticum page carrying 1 Corinthians chapters 14--16 in Reginald of Piperno's *reportatio* returned no such page, and the opera index confirms that only the *reportatio vulgata* covers chapter 15; this is why the article's caveat is stated as it is. No witness substitution occurred anywhere in the research.
+- **D5:** no sales or popularity superlatives; the *Craft*'s diffusion is
+  stated only in Comper's words ("in almost every European language").
+- **D6:** every bracket and parenthesis inside a quotation is reproduced as
+  printed (Comper's "[out]", "[the]", "[death and His]", "(that)", "[vain
+  and a]").
+- **D7:** Ecclus 7:37–39 are the three verses before 7:40.
+- **D3/D4:** *Lumen gentium* 49 is not quoted; survival of the self is graded
+  Defined from DS 1440 and DS 1000.
+- **Death 50:67:** the saints' intercession and solicitude are affirmed (DS
+  1821; CCC 956, 1053; Cyprian 26).
+- **"Plato, not Vienne":** withdrawn; the *Craft*'s images are set beside Ps
+  141:8, Wis 9:15, 2 Cor 5:1.
+
+## Removed or paraphrased for want of a verified witness
+
+- Benedict 4.47 has no PD English held; Latin plus gloss.
+- Trent's canons (V can. 1; XIV can. 1) are stated in the essay's words; no
+  Waterworth English was read this session.
+- St Joseph's death "in the arms of Jesus and Mary" was drafted and removed
+  (no witness read).
+- Francis of Assisi's "Sister Death" (CCC 1014) was not used.
+
+## Additions after review (2026-10-16)
+
+| Item | Witness and locus | How checked |
+| --- | --- | --- |
+| "Death is the end of man's earthly pilgrimage … to decide his ultimate destiny" | CCC 1013 (with 1021 and Heb 9:27 cited) | Vatican archive `__P2I`, `__P2L`, fetched 2026-10-16; OFF, brief |
+| *Diem iudicii timere. Gehennam expavescere. Vitam æternam … desiderare. Mortem cotidie …* (Latin; English labelled gloss) | Rule of Benedict 4.44–47 | Library `regula-latin-text`, line 26 |
+| "by very contrition and confession" | *Craft of Dying* ch. 5, Comper pp. 33–34 | Library Comper OCR, line 2760 |
+| Order of the commendation: *Proficiscere*, then *Deus misericors*, then *Commendo te* | Rituale 1872 pp. 115–116; *Manual* pp. 514–516 | Rituale text layer lines 6907, 6933, 6948; *Manual* page images n521–n523 |
+| Speaker at *Craft* ch. 3: "If He say: Thou hast deserved damnation" is God | Comper p. 23 | Library Comper OCR, line 2306 |
+| *eosque orationes Deo pro nobis offerre* | Tridentine Profession of Faith, DS 1867 | patristica.net Latin, fetched 2026-10-16 |
+| Man naturally corruptible as to matter; God supplied the defect of nature (cited in Appendix A) | Aquinas, *ST* I-II q.85 a.6, English Dominican | Library `pg17897-body`, lines 37000–37040 |
+| Thérèse citation | *Soeur Thérèse of Lisieux*, ed. T. N. Taylor (1912), as described in the Project Gutenberg #16772 note to the electronic edition; the letter date is Taylor's | Fetched text, lines 40–60 |
+| Bellarmine: the year 1847 is the Internet Archive uploader's date, not shown in the witness; removed from the citation | archive.org metadata | Checked 2026-10-16 |
+| Preface for the Dead now located in the Roman Missal of 1920; Ash Wednesday's last-Sunday and Advent references now name the 1962 Missal; the anointing of the senses is stated as the older Ritual's form | — | Editorial correction |

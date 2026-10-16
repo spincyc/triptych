@@ -68,3 +68,14 @@
   \else
   \fi
 }
+
+% The graded appendix reads Teaching | Grade | Principal witnesses: the teaching
+% is the long cell and the grade the short one, so the series widens the first
+% column and narrows the second for these four essays only.
+\renewenvironment{threestable}[3]
+{\small\begin{longtable}{>{\raggedright\arraybackslash}p{0.40\linewidth}>{\raggedright\arraybackslash}p{0.17\linewidth}>{\raggedright\arraybackslash}p{0.35\linewidth}}
+\toprule
+\textbf{#1} & \textbf{#2} & \textbf{#3}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}

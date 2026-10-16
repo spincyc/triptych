@@ -3,220 +3,245 @@ record_type = "bindings"
 document = "articles/faith/four-last-things-04-heaven"
 
 [[bindings]]
-source_id = "edition.benedict-xii.benedictus-deus.latin-denzinger"
-loci = ["complete-text"]
+source_id = "edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581"
+loci = ["Ex.33.18-23", "Ps.26.8", "Ps.35.10", "Ps.41.2-3", "Ps.83.2-5", "Ecclus.24.29", "Matt.5.8", "Matt.13.43", "Matt.24.30", "Matt.25.21-23", "Matt.25.34", "Luke.16.20-22", "Luke.21.28", "John.14.3", "John.17.24", "1Cor.13.12", "1Cor.15.41-44", "1Cor.15.53-55", "Phil.3.20-21", "1Thess.4.16-17", "1Tim.6.16", "Heb.12.14", "Heb.12.22-23", "1John.3.1-3", "Apoc.7.9", "Apoc.19.9", "Apoc.21.1-27", "Apoc.22.3-5"]
 role = "direct-witness"
 states = ["cataloged"]
-context = "The article's central definition. The authoring agent read the Latin of DS 1000-1002 on 2026-07-26 at the registered patristica.net presentation of the Latin Enchiridion symbolorum and quotes the doctrinal core verbatim, construing it phrase by phrase (secundum communem Dei ordinationem; etiam ante resumptionem suorum corporum et iudicium generale; post Domini Jesu Christi passionem et mortem; viderunt et vident divinam essentiam; visione intuitiva et etiam faciali; nulla mediante creatura in ratione obiecti visi se habente; sunt vere beatae et habent vitam et requiem aeternam), together with DS 1001 on the voiding of faith and hope and the uninterrupted continuance of the vision. DS 1002 is noted and left to the companion volumes. The official English of the central clause is taken from CCC 1023. No printed Denzinger edition was collated and the web presentation does not identify its printing; that is the publication-local verification ceiling."
+context = "Every scriptural quotation, read 2026-10-16 in the source library's per-chapter verse projection of this edition (src/sources/bibles/douay-rheims), at the Vulgate numbering the edition keeps (Ps 41, 1 Thess 4:16-17)."
 
 [[bindings]]
-source_id = "edition.john-xxii.ne-super-his.latin-denzinger"
-loci = ["complete-text"]
+source_id = "edition.catholic-church.missale-romanum.vatican-typica-1962"
+loci = ["In festo Omnium Sanctorum: Evangelium, Communio", "Dominica XXIV et ultima post Pentecosten: Evangelium", "Dominica I Adventus: Evangelium"]
 role = "direct-witness"
 states = ["cataloged"]
-context = "Quoted in Latin at DS 990-991 for the clause Fatemur siquidem et credimus... in quantum status et condicio compatitur animae separatae, which the article treats as the immediate antecedent of the 1336 definition and reads with attention to the qualifying clause. Read 2026-07-26 at the registered patristica.net Latin presentation; same ceiling as above. The article makes no judgment about the person of John XXII and treats the document as a declaration and submission, not a definition."
+context = "Seasonal anchors: the All Saints Gospel (Matt 5:1-12) and Communion (Matt 5:8-10), the Last Sunday after Pentecost (Matt 24:15-35) and Advent I (Luke 21:25-33). Citations read 2026-10-16 in the 1962 propers record (src/sources/calendars/roman-1962/propers.yaml), which records the controlling edition's printed citations."
 
 [[bindings]]
-source_id = "edition.council-of-florence.laetentur-caeli.latin-denzinger"
-loci = ["complete-text"]
+source_id = "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981"
+loci = ["n. 667 (All Saints)", "Dominica XXXIII per annum, Year A", "Domini nostri Iesu Christi universorum Regis, Year A"]
 role = "direct-witness"
 states = ["cataloged"]
-context = "Quoted in Latin for intueri clare ipsum Deum trinum et unum, sicuti est, pro meritorum tamen diversitate alium alio perfectius, which supplies the article's two additions to the 1336 definition: the sicuti est of 1 Jn 3:2 and the defined inequality of the vision according to merits. Read 2026-07-26 at the registered patristica.net Latin presentation. The bull's repudiation at Constantinople is noted in the article and is outside its scope; no claim is made about the Greek text of the bull."
+context = "Postconciliar readings named in the text: All Saints (Apoc 7; 1 John 3:1-3; Matt 5:1-12a), the 33rd Sunday Year A (Matt 25:14-30) and Christ the King Year A (Matt 25:31-46). Citations read 2026-10-16 in the postconciliar propers record (src/sources/calendars/postconciliar/propers.yaml)."
 
 [[bindings]]
-source_id = "edition.fourth-lateran-council.firmiter-credimus.latin-denzinger"
-loci = ["complete-text"]
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+loci = ["Absolution of the Corpse, p. 1524"]
 role = "direct-witness"
 states = ["cataloged"]
-context = "Quoted in Latin for qui omnes cum suis propriis resurgent corporibus, quae nunc gestant, which the article treats as the whole of the defined content of the resurrection and uses to bound the speculative material that follows. Read 2026-07-26 at the registered patristica.net Latin presentation. The Catechism's quotation of the same clause at CCC 999 is checked separately."
+context = "English of the closing antiphon ('May the angels lead thee into Paradise ...'), read 2026-10-16 on the page image (Internet Archive fr-lasance-missal-1937, leaf n1544, printed p. 1524), outside the excluded pp. 1298a-n and 1302a-d. Public domain in the United States under src/sources/inventories/lasance-new-roman-missal-rights-v1.toml."
+
+[[bindings]]
+source_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.new-roman-missal-text-80b34759"
+loci = ["p. 1524"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Tracked OCR text used to locate the antiphon; wording confirmed against the page image."
+source_fingerprint = "sha256:244feaa4640a598b268f6a3c82130d020246340db5f96e6b147ce2ba800e4c88"
+
+[[bindings]]
+source_id = "edition.denzinger.enchiridion-symbolorum.latin-patristica-web-2026-07-25"
+loci = ["801", "895", "1000-1001", "1305", "1582", "1821", "1867"]
+role = "textual-control"
+states = ["cataloged"]
+context = "Delivery witness for every conciliar and papal Latin quoted, re-read 2026-10-16 at the patristica.net page: Lateran IV (801), Vienne Ad nostrum error 5 (895), Benedictus Deus (1000-1001), Florence (1305), Trent session VI canon 32 (1582), Trent session XXV on the invocation of saints (1821), Tridentine Profession of Faith (1867)."
 
 [[bindings]]
 source_id = "edition.council-of-vienne.ad-nostrum-qui.latin-denzinger"
 loci = ["complete-text"]
 role = "direct-witness"
 states = ["cataloged"]
-context = "Quoted in Latin for the fifth listed error (quaelibet intellectualis natura in se ipsa naturaliter est beata, quodque anima non indiget lumine gloriae) and for the censure at DS 899. The article states explicitly that the condemned proposition is a compound and that condemning an error is not defining a particular explanation of the truth it violates. Read 2026-07-26 at the registered patristica.net Latin presentation."
+context = "Error 5 condemned: anima non indiget lumine gloriae, ipsam elevante ad Deum videndum (DS 895), with the censure at DS 899; read 2026-10-16."
 
 [[bindings]]
-source_id = "edition.council-of-trent.canones-et-decreta.latin-tauchnitz-1887"
-loci = ["sessio-6-canon-32"]
+source_id = "edition.benedict-xii.benedictus-deus.latin-denzinger"
+loci = ["complete-text"]
 role = "direct-witness"
 states = ["cataloged"]
-context = "The article quotes session VI, canon 32 for gloriae augmentum, the defined datum that an increase of glory is truly merited by works done through grace. The Latin was read on 2026-07-26 in the received text at DS 1582 in the registered patristica.net presentation of the Enchiridion symbolorum, not in this edition's registered leaf images; the binding names the Tridentine edition as the work-and-edition identity of the canon while recording that the wording actually consulted was the Denzinger transmission. No collation of the two was performed, and that is the publication-local ceiling."
+context = "Read phrase by phrase in brief for the vision: visione intuitiva et etiam faciali; nulla mediante creatura in ratione obiecti visi se habente; sed divina essentia immediate se nude, clare et aperte eis ostendente; vere beatae. Immediacy and the general judgment are referred to What Death Does Not Finish."
 
 [[bindings]]
-source_id = "edition.denzinger.enchiridion-symbolorum.latin-patristica-web-2026-07-25"
-loci = ["801", "895", "899", "990-991", "1000-1002", "1305", "1582"]
-role = "textual-control"
-states = ["cataloged"]
-context = "The delivery witness through which every Latin conciliar and papal wording quoted in this article was actually read, on 2026-07-26. The registered edition is the 2026-07-25 dated web state; the page fetched a day later showed no material difference at the loci cited, and no separate edition has been registered for the later fetch. The presentation does not identify the printed Denzinger it transcribes and reproduces editorial parenthetical variants (for example intercisione (intermissione) at DS 1001), which the article reproduces rather than resolving. The English Deferrari presentation on the same site was read as a finding aid only and is not quoted."
-
-[[bindings]]
-source_id = "work.thomas-aquinas.summa-theologiae"
-loci = [
-  "I.12.1.objection-1",
-  "I.12.1.corpus",
-  "I.12.1.reply-1",
-  "I.12.2.corpus",
-  "I.12.3.corpus",
-  "I.12.3.reply-1",
-  "I.12.3.reply-2",
-  "I.12.3.reply-3",
-  "I.12.4.corpus",
-  "I.12.5.corpus",
-  "I.12.5.reply-1",
-  "I.12.5.reply-2",
-  "I.12.5.reply-3",
-  "I.12.6.objection-3",
-  "I.12.6.sed-contra",
-  "I.12.6.corpus",
-  "I.12.6.reply-3",
-  "I.12.7.corpus",
-  "I.12.8.corpus",
-  "I-II.4.5.corpus",
-  "I-II.4.5.reply-4",
-  "I-II.4.5.reply-5",
-  "I-II.4.6.corpus",
-  "I-II.4.8.corpus",
-  "I-II.4.8.reply-3",
-  "II-II.26.13.corpus",
-  "Supplementum.84.3.corpus",
-  "Supplementum.85.1.corpus",
-  "Supplementum.96.1.corpus",
-]
-role = "textual-control"
-states = ["cataloged"]
-context = "These loci govern the article's Latin framework: the vision of the divine essence and its two arguments (I.12.1, with the Chrysostom objection and the comprehension reply); the exclusion of any created likeness (12.2); the impossibility of a bodily vision, with the Job reply and the judgment that Augustine speaks conditionally (12.3); the insufficiency of natural power (12.4); the light of glory as a supernatural disposition and a medium quo, not in quo (12.5 with all three replies); the degrees and their measure in charity, with the same object presented to all (12.6); non-comprehension (12.7); the limits of the blessed's knowledge (12.8); the body and happiness, with the increase in extent and not intensity (I-II.4.5-6); the fellowship of friends as concomitant and not essential (I-II.4.8, the article's stated strongest counterargument); the order of charity in heaven (II-II.26.13); and, from the Supplement, glorified motion (84.3), clarity as overflow (85.1), and the aurea/aureola distinction (96.1). The authoring agent read the English Dominican translation at New Advent for every locus on 2026-07-26 and the Corpus Thomisticum Latin for I.12.1, 2, 4, 5, 6, and 7. The Supplement is identified at every use as compiled after Aquinas's death from his commentary on the Sentences. Aquinas's own Augustinian citations at I.12.7 and I-II.4.8 were not checked at their loci and are reported as he gives them. This binding remains at the work level; no collation against a printed edition or registered artifact is claimed, and the publication-local check is the verification ceiling asserted here."
-
-[[bindings]]
-source_id = "edition.augustine.de-civitate-dei.dods-1871"
-loci = ["22.15", "22.16", "22.17", "22.19", "22.20", "22.21", "22.29", "22.30"]
+source_id = "edition.council-of-florence.laetentur-caeli.latin-denzinger"
+loci = ["complete-text"]
 role = "direct-witness"
 states = ["cataloged"]
-context = "The article's principal patristic witness for the risen body, for the degrees of glory, and for the tentativeness of the tradition's own best authority. The authoring agent read the chapters on 2026-07-26 in this edition's tracked transcription artifact (pg45305-body-lf) at lines 20263-21600, locating the Book XXII chapter headings by scanning the artifact and reading chapter 29 complete at lines 21214-21426. Quoted: the age of the prime and the concession that follows it (22.15-16); that both sexes rise and that the Lord denied marriages and not women (22.17); the removal of blemishes and the restoration of what was lost (22.19-21); the disclaimer at 22.21 (rash to pronounce, no experience); at 22.29 the whole apparatus of the beatific-vision chapter, including 'I do not say what I see, but I say what I believe', the gloss on 'the face' of God, and the decisive concession that Scripture does not definitely pronounce; and at 22.30 the degrees of honour with the further gift of contentment and the finger-and-eye image. Chapter 22.30 already carries a registered passage record created by another publication; this article did not modify it and reads the chapter in the same artifact. No fingerprint replay is claimed; the publication-local reading is the ceiling asserted here."
+context = "sicuti est and pro meritorum tamen diversitate alium alio perfectius: the vision unequal according to the diversity of merits (the defined measure; charity is presented as Aquinas's explanation)."
 
 [[bindings]]
-source_id = "edition.gregory-palamas.triads.english-gendle-1983"
-loci = ["III.i.29", "III.i.33", "III.i.34", "III.ii.5", "III.ii.8", "III.ii.9", "III.ii.10", "III.iii.9"]
+source_id = "edition.fourth-lateran-council.firmiter-credimus.latin-denzinger"
+loci = ["complete-text"]
 role = "direct-witness"
 states = ["cataloged"]
-context = "The article states the Eastern essence-and-energies doctrine at full strength in Palamas's own words and quotes short clauses from these sections. The authoring agent read them on 2026-07-26 in an optical-character transcription of a scanned copy of the 1983 Paulist Press printing hosted at the Internet Archive, locating the printed section markers within the transcription. The Greek was not consulted; no printed copy was collated; the transcription contains visible uncorrected scanning errors elsewhere in the file. This is a copyrighted translation: only short clauses are quoted, always with attribution, and no bulk text is incorporated in the publication. A public-domain English witness for Palamas was sought and not found; two hosted PDFs of the same translation proved to be image-only scans and a portal hosting a different modern translation was blocked. Meyendorff's introduction to the same volume is separately relied on, at a secondary-witness ceiling, for the reception history of the councils of 1341, 1347, and 1351; the acts of those councils were not reached in any edition, and the article's judgment about formal contradiction is held at low confidence for that reason."
+context = "cum suis propriis resurgent corporibus, quae nunc gestant."
 
 [[bindings]]
-source_id = "edition.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895"
-loci = ["Basil of Caesarea, Letter 234.1-3"]
+source_id = "edition.pius-xii.munificentissimus-deus.english-vatican-web-2026-07-25"
+loci = ["44"]
 role = "direct-witness"
 states = ["cataloged"]
-context = "Read 2026-07-26 in the New Advent transcription of this volume, not in a registered artifact of the printing; catalog-level binding. Quoted for the locus classicus of the operations-and-essence distinction ('The operations are various, and the essence simple... His operations come down to us, but His essence remains beyond our reach') and for 234.2 on knowledge of the divine essence as perception of its incomprehensibility. The article notes that Jackson's 'operations' renders the same Greek term that later translations of Palamas render 'energies'."
+context = "The definition of the Assumption, quoted briefly from the official English, read 2026-10-16 at vatican.va."
 
 [[bindings]]
-source_id = "edition.nicene-and-post-nicene-fathers.series-1-volume-14.new-york-1889"
-loci = ["John Chrysostom, Homilies on the Gospel of St. John 15"]
+source_id = "edition.paul-vi.solemni-hac-liturgia.english-vatican-web-2026-07-25"
+loci = ["15", "29"]
 role = "direct-witness"
 states = ["cataloged"]
-context = "Read 2026-07-26 in the New Advent transcription; catalog-level binding. Quoted for the theophanies as condescension rather than the vision of the unveiled essence, for the extension of the denial to angels and archangels, and for 'How can any created nature even see the Uncreated?'. The article uses the homily twice: as the pressure the Latin account must answer, and as the text Aquinas puts first among his objections at ST I, q. 12, a. 1. Inline scriptural references in the New Advent presentation are omitted from the quotations and nothing else is altered."
+context = "n. 15 (Mary 'likened to her risen Son in anticipation of the future lot of all the just') quoted briefly; n. 29 cited through CCC 1053. Read 2026-10-16 at vatican.va."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["1023", "1024", "1027", "1028", "1045", "1053", "1054"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Official English quoted briefly; pages __P2M, __P2N, __P2Q, __P2R re-read 2026-10-16. The delivery's spaced hyphens are set as dashes in 1024."
+
+[[bindings]]
+source_id = "edition.benedict-xvi.spe-salvi.english-vatican-web-2026-07-25"
+loci = ["12"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Three short phrases on eternity, quoted briefly from the official English, read 2026-10-16 at vatican.va."
+
+[[bindings]]
+source_id = "edition.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887"
+loci = ["4.20.5-7"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Irenaeus on seeing God by his gift and living by the sight: 'the glory of God is a living man; and the life of man consists in beholding God'. Wording read in the ANF 1 CCEL text artifact below."
+
+[[bindings]]
+source_id = "artifact.ante-nicene-fathers.volume-1.ccel-web-2026-10-13.ccel-text-ee9c7f0a"
+loci = ["Against Heresies IV.20.5-7"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Read whole 2026-10-16 at the IV.20 section of the tracked text."
+source_fingerprint = "sha256:55185d261b4711561d2908f7ad9d4398cd02feb77eac70722120ef8090518990"
+
+[[bindings]]
+source_id = "edition.cyprian.de-mortalitate.ccel-web-2026-10-13"
+loci = ["26"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The dear ones awaiting us, still solicitous for our salvation; the larger rewards to the greater desires. Wording read in the ANF 5 artifact below."
+
+[[bindings]]
+source_id = "artifact.ante-nicene-fathers.volume-5.ccel-web-2026-10-13.ccel-text-a02b61c3"
+loci = ["On the Mortality 26"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Read whole 2026-10-16."
+source_fingerprint = "sha256:2734f36495223970e22cee6bcc810142a01d0e91785405ceebecc202c3a92e46"
+
+[[bindings]]
+source_id = "edition.augustine-of-hippo.confessiones.ccel-web-2026-10-13"
+loci = ["1.1.1", "9.10.23", "9.10.24", "9.10.25", "9.11.27"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The restless heart (I.1) and the vision at Ostia (IX.10.23-25), Pilkington translation; IX.11.27 for the timing of Monica's illness. Wording read in the NPNF 1/1 artifact below."
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-1.ccel-web-2026-10-13.ccel-text-21000696"
+loci = ["Confessions I.1", "Confessions IX.10-11"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Read 2026-10-16."
+source_fingerprint = "sha256:8107c8312db683f3a6bfab04fe1f0992df14d62972def172358894ca9f8ac889"
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45305-body-lf"
+loci = ["22.29", "22.30"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "XXII.29 (the face of God as his manifestation; God seen in one another) and XXII.30 complete (degrees without envy; the members praising; the caution on the motion of risen bodies; seen without end, loved without cloy, praised without weariness; rest and see, see and love, love and praise). Read 2026-10-16."
+source_fingerprint = "sha256:6bd16ca34656e4a17b7967a6b8ce070ebb4fdffa9b8c855088ab3e08e30bf996"
 
 [[bindings]]
 source_id = "edition.nicene-and-post-nicene-fathers.series-2-volume-5.new-york-1893"
 loci = ["Gregory of Nyssa, On the Soul and the Resurrection"]
 role = "direct-witness"
 states = ["cataloged"]
-context = "Read 2026-07-26 in the New Advent transcription; catalog-level binding. Quoted for the souls as vessels enlarged by what fills them, and for 'he never stops enlarging', which the article uses both for the Eastern account of eternity and as an alternative way of holding the defined inequality of the vision. The conventional label epektasis is applied in the article as a label and is not Gregory's own term in this text."
+context = "The soul as a vessel that 'never stops enlarging', read 2026-10-16 in the New Advent presentation (fathers/2915.htm) of Moore's translation."
 
 [[bindings]]
-source_id = "edition.nicene-and-post-nicene-fathers.series-2-volume-9.new-york-1899"
-loci = ["John of Damascus, An Exact Exposition of the Orthodox Faith I.4"]
+source_id = "work.gregory-the-great.dialogi"
+loci = ["IV.33"]
 role = "direct-witness"
 states = ["cataloged"]
-context = "Read 2026-07-26 in the New Advent transcription; catalog-level binding. Quoted for 'what He is in His essence and nature is absolutely incomprehensible and unknowable' and for 'all that is comprehensible about Him is His infinity and incomprehensibility', used as the standard dogmatic statement of the Eastern position on the divine essence."
+context = "The good know the good, and rejoice more in those they loved; 'unspeakable brightness (common to all)'. Read 2026-10-16 in the 1911 Gardner re-edition of the 1608 English (tertullian.org transcription); that edition is not yet registered and is listed for registration."
 
 [[bindings]]
-source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
-loci = ["992-1004", "1023-1029", "1042-1050"]
-role = "textual-control"
-states = ["cataloged"]
-context = "The article quotes CCC 999 (Lateran IV's clause), 1000 (the 'how' accessible only to faith), 1023 (with its quotation of the Benedictus Deus definition), 1024 (heaven as communion), 1025 (identity and name), 1026 (the blessed community), 1027 (Scripture speaks of it in images), 1028 (the beatific vision), 1029, 1045 (the vision as well-spring of mutual communion), and 1048 (quoting Gaudium et spes 39 on our ignorance of the manner). The authoring agent fetched the official Vatican English archive pages __P2H, __P2M, and __P2Q publication-locally on 2026-07-26; the registered edition is the 2026-07-23 dated web state, and no material difference was observed at the cited paragraphs. IntraText delivery artifacts (spaced hyphens for dashes; lowercased sentence-initial words) are recorded here and do not affect any quoted wording. Brief excerpts of a copyrighted official text, quoted with attribution. No central artifact fingerprint is claimed."
+source_id = "artifact.bernard-of-clairvaux.de-diligendo-deo.patmore-1884.ia-ocr-8a4037c2"
+loci = ["XI"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Chapter XI read whole 2026-10-16: greater gain when the soul rejoins the body; the body a faithful companion; satiety never satisfied."
+source_fingerprint = "sha256:33a7ba7759553b251f15cb3e4acdb0e8fde063c56105412f5717b695fc9c1080"
 
 [[bindings]]
-source_id = "edition.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23"
-loci = ["48-51"]
-role = "textual-control"
-states = ["cataloged"]
-context = "The article quotes LG 49 for the three states of the Church in one charity, for the union with the blessed as strengthened rather than interrupted, for their intercession, and for the constitution's own quotation of the Florence definition; and LG 50-51 for the cult of the saints and for the boundary that communion with the saints must not weaken the latreutic worship given to God. Fetched publication-locally on 2026-07-26; the registered edition is the 2026-07-23 dated web state and no material difference was observed at the cited paragraphs. Brief excerpts of a copyrighted official text, quoted with attribution."
+source_id = "artifact.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-prima.pg17611-body-9c99a67a"
+loci = ["I.12.1.corpus", "I.12.4.corpus", "I.12.5.sed-contra", "I.12.5.corpus", "I.12.5.reply-2", "I.12.5.reply-3", "I.12.6.corpus", "I.12.6.objection-3", "I.12.6.reply-3", "I.12.7.corpus"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The bat and the sun; God unites himself to the created intellect; the light of glory as medium quo; charity measuring the light; non-comprehension. Read 2026-10-16; the English is the English Dominican translation as printed in this artifact."
+source_fingerprint = "sha256:c17b98dc58cabd0086fc556359882738be070d90f21f2dbaebe7f8676128b3e7"
 
 [[bindings]]
-source_id = "edition.second-vatican-council.unitatis-redintegratio.english-vatican-web-2026-07-24"
-loci = ["17"]
-role = "textual-control"
-states = ["cataloged"]
-context = "The article quotes UR 17 for the statement that Eastern and Western theological expressions are 'to be considered often as mutually complementary rather than conflicting', and deliberately puts it in the mouth of the counterargument against its own synthesis, with the qualification 'often' preserved and with the note that the paragraph concerns theological expression and not the suspension of defined doctrine. Fetched publication-locally on 2026-07-26; the registered edition is the 2026-07-24 dated web state and no material difference was observed."
+source_id = "artifact.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-prima-secundae.pg17897-body-6d5b93fb"
+loci = ["I-II.4.5.reply-4", "I-II.4.5.reply-5"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Happiness increases not in intensity but in extent. Read 2026-10-16."
+source_fingerprint = "sha256:39b84965a4aebbff649efc5be968feb872603af6927030d15a340fb50545e9d5"
 
 [[bindings]]
-source_id = "edition.catholic-encyclopedia.volume-8.new-york-1910"
-loci = ["Pope John XXII"]
-role = "context"
-states = ["cataloged"]
-context = "Read 2026-07-26 in the New Advent transcription; catalog-level binding. Used only as a public-domain historical witness for the sequence of the beatific-vision controversy: John XXII's pre-election work and his sermons, the charge of heresy, the Paris decision of December 1333, his November 1333 letter on the freedom of theologians, the consistory of 3 January 1334, and the withdrawal before his death. The article states expressly that the reference work is not a doctrinal authority and quotes the acts themselves for every doctrinal claim."
+source_id = "artifact.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-secunda-secundae.pg18755-body-13b14d17"
+loci = ["II-II.26.13.corpus", "II-II.28.3.corpus", "II-II.28.3.reply-2"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The bonds of love remain in heaven; man enters into the joy; each one's joy full. Read 2026-10-16."
+source_fingerprint = "sha256:a85980f155106dc475c0a698619c509a12e9ec9f175ff42dd4f11734323234e9"
 
 [[bindings]]
-source_id = "edition.catholic-encyclopedia.volume-2.new-york-1907"
-loci = ["Benedict XII"]
-role = "context"
-states = ["cataloged"]
-context = "Read 2026-07-26 in the New Advent transcription; catalog-level binding. Used for Jacques Fournier's Cistercian formation and Paris doctorate, his election on 20 December 1334, and the account that he heard the defenders of the deferred vision and spent four months with a commission of theologians in patristic research before promulgating the constitution on 29 January 1336. Historical witness only."
+source_id = "artifact.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006.pg19950-body-4597132e"
+loci = ["III.28.2.reply-3"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The gifts of the glorified body result from an overflow of the soul's glory. Read 2026-10-16."
+source_fingerprint = "sha256:44bb2918bacdd01a424eae980d78ad285fcea31c85426a00800aafd120952178"
 
 [[bindings]]
-source_id = "edition.catholic-encyclopedia.volume-14.new-york-1912"
-loci = ["Summa Theologiae"]
-role = "context"
-states = ["cataloged"]
-context = "Read 2026-07-26 in the New Advent transcription; catalog-level binding. Used for the composition dates of the Summa and for the account of the Supplement as compiled after Aquinas's death from his other writings, with the attributions to Peter of Auvergne and Henry of Gorkum rejected by the Leonine editors and Mandonnet's 'very probable opinion' of Reginald de Piperno. The article reproduces the probability as a probability and does not settle the question."
-
-[[bindings]]
-source_id = "edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581"
-loci = [
-  "Ex.33.18-23",
-  "Job.19.25-27",
-  "Ps.115.10",
-  "Dan.12.2-3",
-  "Matt.5.8",
-  "Matt.8.11",
-  "Matt.13.43",
-  "Matt.16.19",
-  "Matt.22.29-32",
-  "Matt.23.37",
-  "Luke.13.34",
-  "Luke.16.19-31",
-  "Luke.20.34-38",
-  "John.1.18",
-  "John.14.2-3",
-  "Rom.8.18-23",
-  "1Cor.2.9",
-  "1Cor.13.9-12",
-  "1Cor.15.35-58",
-  "2Cor.12.2-4",
-  "Phil.3.20-21",
-  "1Thess.4.13-17",
-  "1Tim.6.15-16",
-  "2Tim.4.8",
-  "Heb.12.22-24",
-  "James.1.12",
-  "1Pet.5.4",
-  "2Pet.1.4",
-  "2Pet.3.13",
-  "1John.3.1-2",
-  "Apoc.2.10",
-  "Apoc.4.8",
-  "Apoc.5.8",
-  "Apoc.7.9-17",
-  "Apoc.9.9",
-  "Apoc.11.12",
-  "Apoc.12.14",
-  "Apoc.14.2-3",
-  "Apoc.15.2",
-  "Apoc.21.1-27",
-  "Apoc.22.1-5",
-]
+source_id = "edition.anonymous-supplement-compiler.supplementum-tertiae-partis.english-newadvent-web-2026-07-25"
+loci = ["82.1.corpus", "85.1.corpus"]
 role = "direct-witness"
 states = ["cataloged"]
-context = "Every scriptural quotation in the article was read on 2026-07-26 directly in this edition's tracked per-verse text artifacts, at the Vulgate chapter-and-verse numbering the edition preserves; the article says so wherever the numbering differs from a modern Bible's, most consequentially at 1 Thess 4:16. The edition's registered american-edition-divergences table was filtered for every book and chapter quoted; two quoted verses appear in it (Job 19:26 and Apoc 22:2) and both divergences are disclosed at the point of quotation without affecting any claim. Five bounded literal searches over the same artifacts support the article's audit of devotional imagery: 'wings' over the twenty-seven New Testament books (five hits, none of a human being), 'harp' over the Apocalypse artifact run with scripts/source-library search (three hits plus substring false positives from 'sharp', which corrected the article's claim to acknowledge Apoc 15:2), 'cloud'/'clouds' over the New Testament books (two human associations, both transits), 'halo' over all seventy-three books (seven proper-name substrings only), and the divergence filter above. Each search is a literal English string match within single verse lines of one electronic edition and is reported in the article as a bounded absence, never as a demonstration of falsity."
+context = "The four gifts named; the body perfectly subject to the soul; clarity seen as through crystal. Read 2026-10-16 at newadvent.org/summa/5082.htm and 5085.htm."
+
+[[bindings]]
+source_id = "work.dante-alighieri.divina-commedia"
+loci = ["Paradiso III.51, 70-72, 85-90, 106-107"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Longfellow's translation (1867) read 2026-10-16 in Project Gutenberg eBook 1004; no edition registered, listed for registration."
+
+[[bindings]]
+source_id = "artifact.francis-de-sales.introduction-a-la-vie-devote.rivingtons-1876.historical-ocr-8159693d"
+loci = ["I.16"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The eighth meditation, on Paradise, read whole 2026-10-16."
+source_fingerprint = "sha256:21e2850feaa938628c58af791f6032ab2dd8db3450e4a3d55cd1051803d5d5f2"
+
+[[bindings]]
+source_id = "artifact.alphonsus-liguori.apparecchio-alla-morte.duffy-1843.historical-ocr-d25bba22"
+loci = ["Consideration XXIX"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Consideration XXIX read whole 2026-10-16; every quoted sentence confirmed on the page images (pp. 350-351, 354, 360-362) of the Internet Archive scan."
+source_fingerprint = "sha256:f8f14339e6eebf3147ed446047f190ca9edb57ddcae274ff41a9c1e401dcd120"
+
+[[bindings]]
+source_id = "artifact.john-henry-newman.parochial-and-plain-sermons.rivingtons-1869-volume-1.ia-ocr-9947fafd"
+loci = ["Sermon I"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "'Holiness Necessary for Future Blessedness' (Heb 12:14), read 2026-10-16: heaven like a church; heaven would be hell to an irreligious man; fire and straw; outward acts and inward habits."
+source_fingerprint = "sha256:05231598a5ab47866ad2d1bb8e9dca4ea2fe9ee2957406aba923533a9d6dcc0a"

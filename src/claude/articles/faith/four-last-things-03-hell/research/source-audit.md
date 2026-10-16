@@ -1,180 +1,163 @@
 # Hell — Source Audit (Claude edition)
 
-Publication: `articles/faith/four-last-things-03-hell` (provider `claude`).
-All web witnesses checked 2026-07-25. Machine-readable bindings are in
-`source-bindings.toml`; this file carries the roles, loci, ceilings, and
-consequential negative results that the binding schema does not express.
+Publication: `articles/faith/four-last-things-03-hell` (provider `claude`),
+*The Fire That Is Not Extinguished*. Rewritten 16 October 2026. This record
+replaces the audit of the July 2026 essay, whose sections were removed.
 
-## 1. Scripture
+Every quotation printed in the essay was read by the author lane on
+**2026-10-16** at the locus given below, in the witness named. Wording inside
+quotation marks reproduces that witness exactly; editorial footnote markers,
+page breaks and OCR line-end hyphens are not wording and were dropped. Machine
+bindings are in `source-bindings.toml`; this file records what the binding
+schema does not: the claim, the exact locus, how it was checked, and rights.
 
-### 1.1 English — Douay–Rheims (Challoner), tracked
+Abbreviations: **W** = `src/sources/works/`; **DR** = W
+`english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-*`;
+**ANF1** = W `ante-nicene-fathers/volume-1/editions/2026-10-13-ccel-web-2026-10-13/artifacts/ccel-text-ee9c7f0a/source.txt`;
+**LAS** = W `francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/new-roman-missal-text-80b34759/new-roman-missal-text.txt`;
+**ALPH** = W `alphonsus-liguori/apparecchio-alla-morte/editions/1843-duffy-1843/artifacts/historical-ocr-d25bba22/source.txt`.
+"Online" means a dated web delivery fetched on 2026-10-16 and read in a local
+copy; such witnesses carry an access date in the endnotes.
 
-Role: **direct witness** for every English scriptural quotation in the article.
-Edition `edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581`.
-Read at exact loci in the tracked per-book verse-text derivatives (one LF line
-per verse) on 2026-07-25:
+## 1. Scripture (Douay–Rheims, Challoner; public domain)
 
-| Book artifact | Loci read |
+Read at each exact locus in the tracked per-book verse text (Vulgate numbering):
+Matt 7:13–14; 8:12; 10:28; 11:28; 18:8; 22:13–14; 24:35 (with 24:15–35);
+25:30–46; 26:24; 26:75; 27:4. Mark 3:29; 9:42–47 (refrain at 43, 45, 47).
+Luke 13:23–25; 16:24; 21:25–28 (with 21:25–36); 23:42–43. John 3:17; 6:37;
+17:12. Apoc 14:11; 20:9–10 (the DR verse division falls inside the sentence:
+20:9 ends "where both the beast", 20:10 begins "And the false prophet"; the
+essay joins them with a lower-case "and" and says so in the note). Is 66:24.
+2 Thess 1:8–9. Wis 5:6–9, 14. Ezech 33:11. 2 Pet 3:9. Phil 2:12. 1 Cor 10:12.
+2 Cor 6:2. 1 John 4:18. Job 10:22; 17:13. Ps 110:10. 2 Pet 3:9 is quoted
+with an ellipsis after "The Lord".
+
+## 2. Councils, popes, and the Holy See
+
+| Claim or quotation | Witness | Locus | Check | Rights |
+| --- | --- | --- | --- | --- |
+| *Quicumque*: "At whose coming all men shall rise again … into everlasting fire." | *Catholic Encyclopedia* vol. 2 (1907), "Athanasian Creed", New Advent; Latin DS 76 at patristica.net | DS 76, vv. 40–41 | Online, both read | Public domain (1907) |
+| Lateran IV, *cum suis propriis resurgent corporibus, quae nunc gestant*; *illi cum diabolo poenam perpetuam …* | Denzinger Latin, patristica.net | DS 801 | Online | Latin text; English given as gloss outside quotation marks |
+| Lyons II, *mox in infernum descendere, poenis tamen disparibus puniendas* | patristica.net | DS 858 (Florence DS 1306 repeats) | Online | — |
+| *Benedictus Deus*, *ubi poenis infernalibus cruciantur* (one clause; cross-reference to *What Death Does Not Finish*) | patristica.net | DS 1002 | Online | — |
+| 543, canon 9: "says or thinks that the punishment of demons and of impious men is only temporary, and will one day have an end" | H. R. Percival, *The Seven Ecumenical Councils*, NPNF 2/14 (1900), "The Anathematisms of the Emperor Justinian against Origen", IX; Latin DS 411 | IX; DS 411 (heading: "publié dans le Synode de Constantinople en 543") | Online: Internet Archive djvu text `sevenecumenicalc00perc`, lines 31715–31723; patristica.net | Public domain |
+| Orange II, *non solum non credimus … cum omni detestatione illis anathema dicimus* | patristica.net | DS 397 | Online | English gloss outside quotation marks |
+| Trent VI can. 17 (cited, not quoted) | patristica.net | DS 1567 | Online | — |
+| Trent XIV ch. 4: "either from the consideration of the turpitude of sin, or from the fear of hell and of punishment"; "not only does not make a man a hypocrite … prepares a way for himself unto justice"; the Ninevites | Waterworth, *Canons and Decrees* (Burns and Oates reprint of 1848 tr.); Latin DS 1678 | sess. XIV, ch. 4 | Online: IA djvu text `cu31924029369760`, lines 16049–16063; DS 1678 at patristica.net | Public domain |
+| Trent XIV can. 5: "pondering on the grievousness … the purpose of a better life" | Waterworth; DS 1705 | sess. XIV, can. 5 | Online: same text, lines 16556–16564 | Public domain |
+| Paul VI, *Credo* 12: "those who have responded … the fire that is not extinguished"; "make a profession of faith … repeats in substance" (paraphrased) | vatican.va English | n. 12; preamble | Online | Official text, quoted briefly |
+| CCC 1033, 1035, 1036, 1037 (incl. Roman Canon "Grant us your peace … chosen"), 1861 | vatican.va `ENG0015/__P2O.HTM`, `__P6C.HTM` | as cited | Online | Official text (LEV), quoted briefly |
+| John Paul II, audience 28 July 1999: "a real possibility"; "Damnation remains a real possibility … effectively involved in it"; "The thought of hell … 'Abba, Father!'"; "Rather than a place, hell indicates the state"; "must be correctly interpreted" | vatican.va English | nn. 3–4 | Online, whole address read | Official text, quoted briefly |
+| CDF, *The Message of Fatima* (2000): Lúcia's Third Memoir (31 Aug 1941): "Our Lady showed us a great sea of fire which seemed to be under the earth"; "so kindly and so sadly"; "You have seen hell … there will be peace"; vision "lasted but an instant"; third part, "Penance, Penance, Penance!"; private revelation's status (Dhanis as cited in the theological commentary: nothing contrary to faith or morals, lawful to publish, faithful authorized to accept with prudence) | vatican.va English | first and third parts of the secret; theological commentary | Online | Official text and a modern translation of Lúcia, quoted briefly |
+| Fatima declared worthy of belief by the Bishop of Leiria, 1930 | Library record `work.diocese-of-leiria.carta-pastoral-fatima-1930` (description of the DCF Seleção, doc. 133) | — | Repository record only; the letter was **not** read in this revision | Fact, not quotation |
+
+## 3. Liturgy
+
+| Claim or quotation | Witness | Locus | Check | Rights |
+| --- | --- | --- | --- | --- |
+| Christ the King, Year A: Matt 25:31–46; 1962: Monday of Lent I | `src/sources/calendars/postconciliar/propers.yaml` (christ-the-king, Gospel cycles A/B/C); `roman-1962/propers.yaml` (lent-1-monday) | 38831–38840; 3797 | Repository data read | — |
+| 33rd Sunday, Year A: parable of the talents (Matt 25:14–30) | `postconciliar/propers.yaml` (ot-33, Gospel cycle A) | 21061, 21230 | Repository data read | — |
+| 1962 Last Sunday after Pentecost: Matt 24:15–35 | `roman-1962/propers.yaml` (last-sunday-after-pentecost) | 15910, 15981 | Repository data | — |
+| Advent I: 1962 Luke 21:25–33; Postconciliar Year C Luke 21:25–28, 34–36 | `roman-1962/propers.yaml` (advent-1, l. 663); `postconciliar/propers.yaml` (advent-1 Gospel cycles) | as cited | Repository data | — |
+| Holy Thursday collect Latin *Deus, a quo et Judas …* | `roman-1962/propers.yaml` | 8523 (Holy Thursday), 8798 (Good Friday) | Repository data; also present in the 1604 Missal OCR (W `catholic-church/missale-romanum/editions/vatican-typica-1604/…`, l. 26460), supporting "for centuries" | Latin liturgical text |
+| English: "O God, from Whom Judas received the punishment of his crime and the thief the reward of his confession, … the grace of His resurrection." | LAS, Good Friday (Mass of the Presanctified), "the Prayer, which is that of yesterday's Mass" | LAS 48741–48770 (Holy Thursday printing 45883–45899 has a comma after "crime") | Read | Public domain in the US (`src/sources/inventories/lasance-new-roman-missal-rights-v1.toml`) |
+| *Hanc igitur* Latin *diesque nostros … jubeas grege numerari* | Cummiskey, *Roman Missal … for the Use of the Laity* (Philadelphia 1861), canon Latin TSV | W `eugene-cummiskey/…/canon-missae-la`, row hanc-igitur | Read | Public domain |
+| *Hanc igitur* English "Grant us your peace … chosen" | CCC 1037 quoting the Roman Missal | — | Online | Official, quoted briefly |
+| Bede: "he added three phrases … through Christ our Lord." | Bede, *Eccl. Hist.* II.1 (London: Dent; New York: Dutton, 1910; translator not named, the Sourcebook suggests L. C. Jane's 1903 version), Internet Medieval Sourcebook | II.1 | Online | Public domain by date; translator identity uncertain |
+| All Souls Offertory English "O Lord Jesus Christ … Abraham and his seed"; Latin *libera eas de ore leonis, ne absorbeat eas tartarus, ne cadant in obscurum* | LAS, Nov. 2, All Souls' Day | 137846–137880 | Read | Public domain (US) |
+| *Libera me* English "Deliver me, O Lord, from eternal death … judge the world by fire." | LAS, The Absolution | 164330–164345 (a later printing in LAS, 164413, reads "everlasting death"; the essay quotes 164330) | Read | Public domain (US) |
+| Litany: "From all evil, O Lord, deliver us. / From all sin, / From everlasting death," | LAS, Holy Saturday | 55880–55900 | Read; the response is quoted only where the witness prints it | Public domain (US) |
+| *Dies irae* *Confutatis maledictis, / Flammis acribus addictis, / Voca me cum benedictis* | LAS, Masses for the Dead (accents dropped) | 163890–163895 | Read | Latin liturgical text |
+| Irons: "While the wicked are confounded, / Doom'd to flames of woe unbounded, / Call me with Thy Saints surrounded." | *Hymns Ancient and Modern* (1890), no. 398, st. 8, ll. 4–6 | W `hymns-ancient-and-modern-proprietors/…/dies-irae-irons-en` | Read | Public domain |
+| Secret *Deus, cui soli cognitus est numerus electorum in superna felicitate locandus*; English "God, to Whom alone is known the number of the elect who shall attain the happiness of heaven" | LAS, Additional Prayers, "For the Living and the Dead", Secret | 87920–87945 (OCR "Gop" is the drop-capital G + "OD"; the Latin's OCR "felicitóte" is confirmed as *felicitate* by the 1570 Missal, W `catholic-church/missale-romanum/editions/venice-1570/…`, l. 19538–19540) | Read | Public domain (US) |
+| Office of the Dead, Matins III, lesson VII (Job 17): *infernus domus mea est, et in tenebris stravi lectulum meum*; responsory *Peccantem me quotidie, et non me poenitentem, timor mortis conturbat me: Quia in inferno nulla est redemptio, miserere mei, Deus, et salva me* | *Rituale Romanum* (Ratisbon: Pustet, 1872), Internet Archive `ritualeromanumpa00cath_0` | pp. 171–172 (PDF pp. 185–186) | Page images read | Public domain. No PD English found; the sense is given in prose, not as a translation |
+
+## 4. Fathers
+
+| Quotation | Witness | Locus | Check | Rights |
+| --- | --- | --- | --- | --- |
+| Irenaeus, "And to as many as continue … brought calamity upon them." (with the printed "[however]") | ANF1 | *AH* V.27.2; ANF1 53382–53404 | Read | Public domain |
+| Ignatius, "Do not err … every one that hearkens unto him." (shorter recension, with "[in this way]") | ANF1 | *Eph.* 16; 5186–5193 | Read | Public domain |
+| *Martyrdom of Polycarp* 2 ("despised all the torments … never shall be quenched"), 9 ("Eighty and six years …"), 11 ("Thou threatenest me …") | ANF1 | 3628–3654; 3831–3832; 3862–3874 | Read | Public domain |
+| Justin, *1 Apol.* 8 ("in the same bodies … a thousand years"); *2 Apol.* 9 ("And that no one may say … neither virtue nor vice is anything") | ANF1 | 14253–14262; 16913–16921 | Read | Public domain |
+| 2 Clement 7 (seal; Isa 66:24), 8 (potter) | ANF 9 (Keith), as revised for New Advent, `newadvent.org/fathers/1011.htm` | chs. 7, 8 | Online | Public domain translation; New Advent revision noted |
+| Tertullian, *De paen.* 12 ("If you shrink back …"; "Why do you desert …") | ANF 3 (Thelwall), as revised for New Advent, `0320.htm` | ch. 12 | Online | As above |
+| Minucius Felix, *Octavius* 35 ("Nor is there either measure … nourishes them.") | ANF 4 (Wallis), New Advent `0410.htm` | ch. 35 | Online | As above |
+| Cyprian, *Ad Demetrianum* 24 ("Souls with their bodies …"; "The pain of punishment … eternal life."), 25 ("Provide … apprehend the truth."); editor's argument naming Demetrianus | ANF 5 (Wallis), CCEL text W `ante-nicene-fathers/volume-5/…/ccel-text-a02b61c3` | 46149–46200; argument 45598–45605 | Read | Public domain |
+| Cyril, *Cat.* 18.19 ("We shall be raised … fruits of the past."), 18.20 ("Therefore, brethren …") | NPNF 2/7 (Gifford), CCEL text | 19866–19880 | Read | Public domain |
+| Gregory Nazianzen, *Or.* 16.9 ("after which there is no appeal … wasting away in the flame"; "the others among other torments … no limit") | NPNF 2/7 (Browne and Swallow) | 27937–27963 | Read | Public domain |
+| Gregory of Nyssa, *Great Catechism* 26 (named in one clause; restoration of those lying in sin; "healing even the introducer of evil himself") | NPNF 2/5, CCEL `npnf205.xi.ii.xxviii.html` | ch. 26 | Online | Not quoted |
+| Chrysostom, *Hom. Matt.* 23.7 ("Few there be that find it"; "instructed His hearers … make it their choice"; "not regard the many … emulate the few"); 23.9 (two punishments; ten thousand hells; "But may this never be our case …"; "Even here He shows His love …"); preface: delivered at Antioch | NPNF 1/10 (Prevost, rev. Riddle), CCEL text | 15331–15402; 15499–15604; preface l. 166 | Read. "careless ness" (so in CCEL and New Advent) is paraphrased, not quoted | Public domain |
+| Chrysostom, *Hom. Acts* 24 ("Many more in number … however few it contain."; "It is disagreeable … I question it.") | NPNF 1/11, CCEL text | 15473–15491 | Read. The Greek parenthesis "(tous sozomenous)" falls outside the quoted span | Public domain |
+| Chrysostom, *Hom. 1 Cor.* 9.1–2 ("For this is God's own command … on compulsion"; "The argument is irksome … lest we fall into hell.") | NPNF 1/12 (Oxford tr., rev. Chambers), CCEL text | 4398–4472 | Read; "(narkate)" and the bracketed scripture note fall outside or within the marked ellipsis | Public domain |
+| Augustine, *City of God* I.17 (Judas, "by despairing of God's mercy …") | Dods 1871, vol. 1, Gutenberg text | W `augustine/de-civitate-dei/editions/dods-1871/artifacts/pg45304-body-lf/city-of-god-volume-1.txt` 1465–1490 | Read | Public domain |
+| Augustine, XXI.9 (threefold repetition; "easier to understand both …"; "Let each man, then, choose …" — concerning the **worm** only; "only, this we believe … pained by the fire"; "it is necessarily understood … fruitless repentance"; "those persons whom a man loves …"), XXI.10 ("But that hell … the truth has declared."), XXI.12 ("many more are left under punishment …"), XXI.23 ("Then what a fond fancy …"; "they who desire to be rid … divine commands.") | Dods 1871, vol. 2 | `city-of-god-volume-2.txt` 17321–17448; 17511–17538; 17958–18013 | Read whole chapters | Public domain |
+| Augustine, *Enchiridion* 112 ("to be lost out of the kingdom of God … compared with it.") | NPNF 1/3 (Shaw), New Advent `1302.htm` | ch. 112 | Online | Public domain |
+| Gregory the Great, *Dialogues* IV.29, 42, 43, 44, 45 (1911 chapter numbering) | P.W. (1608), re-ed. E. G. Gardner (London: Philip Lee Warner, 1911), tertullian.org `gregory_04_dialogues_book4.htm` | as cited; quoted: IV.29 "for the soul by seeing …"; IV.42 "I dare not rashly define anything"; IV.43 whole answer; IV.44 three passages, "for willingly they would …", "They pray for their enemies …"; IV.45 Peter's question | Online | Public domain |
+| Gregory, *Morals* IX.65.98 (one hell, one sun), IX.66.100 ("Here the flame …"; "Therefore there is done upon the wretches …"), 101 (light for torment, paraphrased) | Library of the Fathers (Oxford, 1844), W `gregory-the-great/moralia-in-iob/…/complete-text-d9f9ed86` | 16518–16600 | Read | Public domain |
+| Gregory, *Hom. in Evang.* 19.5 (*quis sciat quam pauci …*), 38.14 (*Quia vocati sumus, novimus; si sumus electi, nescimus*) | Latin, Wikisource (W `gregory-the-great/homiliae-in-evangelia/…`) | gregory-whole.txt 225, 544–546 | Read; no PD English, sense given in prose | Latin text |
+
+## 5. Doctors and saints
+
+| Quotation | Witness | Locus | Check | Rights |
+| --- | --- | --- | --- | --- |
+| Aquinas I q. 23 a. 7 corpus ("It is, however, better to say … eternal happiness"), ad 3 ("those who are saved are in the minority …") — **E1 corrected** | English Dominicans, Gutenberg 17611 | W `…/2006-english-dominicans-gutenberg-prima/…/source.txt` 12506–12620 | Read whole article | Public domain |
+| Aquinas I-II q. 87 a. 3 corpus (block quote, ellipsis after "by art"), ad 1, ad 2; a. 4 corpus ("pain of loss … pain of sense"), sed contra ("the punishments of all mortal sins would be equal; because one infinite is not greater than another") | Gutenberg 17897 | 37352–37500 | Read whole articles | Public domain |
+| Supplement q. 97 a. 2 (worm), a. 4 (darkness), a. 5 (corporeal fire; Damascene objection and reply), a. 6 ("of the same species as the fire we have …"; "certain properties differing …") — **V3 corrected** | English Dominicans, 1922 printing, W `anonymous-supplement-compiler/…/ia-ocr-21251eee` | 7690–8200 | Read aa. 1–6; quoted spans free of OCR damage | Public domain |
+| Bernard, *De consideratione* V.12.25–26 ("This is 'the worm that dieth not' … this dying life."; "This is the second death …"; "These former things …") | George Lewis tr. (Oxford, 1908), IA `bernarddeclirvau00bernuoft` djvu | 5980–6020; pp. 161–162 | Online; quoted spans free of OCR damage | Public domain |
+| Catherine, *Dialogue*, "Of the four principal torments of the damned" (first and second torments) | Thorold, new and abridged ed. (1907), CCEL `dialog.txt` | 2478–2525 | Online | Public domain |
+| *Imitation* I.24.4 ("An hour's pain … solace of friends."), I.24.7 ("Nevertheless it is a good thing …"; "he who loveth God …") | Benham tr., Gutenberg 1653 | ch. XXIV | Online | Public domain |
+| Ignatius, Fifth Exercise: two preludes, five points, colloquy (Mullan 1914, pp. 45–46) | W `ignatius-of-loyola/…/historical-ocr-fe256c5b` 2449–2525; page images from IA `TheSpiritualExercisesOfStIgnatius` PDF pp. 70–71 | First Week, Fifth Exercise | OCR damage ("die length", "£temal", "bum", "’Sulphur") resolved from the page images | Public domain |
+| Teresa, *Life* 32 §§1, 4–6, 8–10 | Lewis, 3rd ed. (1904), W `teresa-of-avila/…/ia-ocr-3b63bc87` | 15268–15460 | Read §§1–12 | Public domain |
+| de Sales, *Introduction* I.15 (dark city; "in every sense and every member …"; "whether you can bear …"; "Resolve henceforth …"; "Give thanks, offer yourself, pray.") | Rivingtons 1876, W `francis-de-sales/…/historical-ocr-8159693d` | 2884–2955, pp. 41–42 | Read; the 1876 translation omits the name Philothea, so the essay does not use it | Public domain |
+| Alphonsus, XVII first point (p. 208, "Were God to bear …"); XXVI (pp. 314–327: "his principal torment …"; "But all these torments …"; "has lost God, who is an infinite good"; "because they live in the midst of darkness …"; Ignatius's saying; "The entire, then, …"; "I weep because …"; "They shall have an abyss of fire …"); XXVII (pp. 328–332); XXVIII (pp. 340–347) | Duffy 1843, ALPH; cross-checked against the Google text layer of IA `preparation_for_death_1893-st_alphonsus_m_liguori` PDF (printed p. = PDF p. − 17) | ALPH 8996–9000; 13008–14310 | Two independent OCR layers agree on every quoted span | Public domain |
+| **Closing prayer**: XXVI, third point, Affections and Prayers, "Ah my God! you then are my supreme and infinite good … pray to Jesus for me." | Duffy 1843, pp. 326–327 | PDF pp. 343–344 | **Checked word for word against the page images**; reproduced whole and unaltered (italic *I love you, I love you, I love you* as printed) | Public domain received prayer (exact identified human translation) |
+
+## 6. Cold-review errors: disposition
+
+| Code | Disposition |
 | --- | --- |
-| Matthew | 5:22, 29–30; 7:13–14; 10:28; 13:41–42, 49–50; 18:8–9; 25:31–46 (whole); 26:24 |
-| Mark | 9:42–49 (Vulgate numbering; whole passage) |
-| Luke | 13:23–28; 16:19–31 (whole) |
-| John | 17:12 |
-| Acts | 1:25; 3:19–21 |
-| Romans | 5:18–19; 11:32 |
-| 1 Corinthians | 15:22–28 |
-| Colossians | 1:19–20 |
-| 2 Thessalonians | 1:6–10 |
-| 1 Timothy | 2:1–6 |
-| Jude | 1:6–7, 13 |
-| Apocalypse | 14:9–11; 20:9–15; 21:8 |
-| Isaias | 66:24 |
-| Ezechiel | 18:23, 32; 33:11 |
-| Wisdom | 11:24–27 |
-| 2 Peter | 3:9 |
-| 1 John | 4:18 |
-| Philippians | 2:9–11 (read, not quoted) |
+| E1 | Aquinas I q. 23 a. 7 ad 3 quoted: "those who are saved are in the minority." |
+| E2 | The Holy Thursday/Good Friday collect quoted in Latin (1962) and English (Lasance); no "no rite" claim. |
+| E3 | Mark 3:29, Matt 18:8, Matt 26:24, Apoc 20:9–10 and 14:11, 2 Thess 1:9 set beside Matt 25:46. |
+| E4 | Gregory of Nyssa named once, without title. |
+| V1 | Augustine's choice is stated as concerning the worm only; the fire bodily (XXI.9 end; XXI.10). |
+| V2 | No Latin of the Supplement or *Scriptum* is printed. |
+| V3 | Suppl. q. 97 a. 6: "of the same species as the fire we have". |
+| V4 | Refrain at Mark 9:43, 45, 47 (DR). |
+| V5, V7, D1–D5 | Not in scope (Florence's *Cantate Domino* and the vision of God are not used; *Benedictus Deus* in one clause with no *nihilominus* claim). |
+| V8 | No English of the essay's own is attributed to any translation; Latin without PD English is glossed in prose outside quotation marks. |
+| D6 | Every quotation re-read against its witness; see the tables. |
 
-Ceiling: the Gutenberg/Challoner edition record lists 1859 verses in which this
-electronic state preserves an older Challoner reading against the settled
-reading of the 1899/1914 American edition. **No verse used here was checked
-against that divergence table.** The translation is an identified working
-witness, not a critical edition, and no wording-critical argument in the
-article rests on a single English word.
+## 7. Removed or reshaped after checking
 
-Numbering: Vulgate throughout. Two divergences were material and are stated in
-the article at the point of use — Mark 9:42–47 here is 9:43–48 in Greek
-editions, and Apocalypse 20:9–10 is divided differently, so that the Douay
-sentence about the beast and the false prophet breaks across the verse boundary.
+- The July essay's Florence, Origen/Rufinus, Nyssa, Aristotle, Greek lexical and *Scriptum* material: removed by decision.
+- Lactantius VII.21 (read): not used, because the same chapter denies an immediate judgment of souls, against *Benedictus Deus*.
+- Damascene: read only as cited in Suppl. q. 97 a. 5; presented as "as the Supplement cites him".
+- Leonard of Port Maurice, Bellarmine, Hippolytus, Bede's Drythelm: not used (weak provenance or unnecessary).
+- "Gregory the Great … a master of the last things", "the greater part of [the Fathers]", "every retreatant", "Philothea", Polycarp's age, Teresa's reform as founded "in the salvation of others", the Litany "on her great days of supplication", "Everyman's Library": drafted, then narrowed to what the witnesses support.
+- Chrysostom's "careless ness" and the Greek parentheses in NPNF are paraphrased rather than quoted.
 
-### 1.2 Greek — Robinson–Pierpont Byzantine Textform, tracked
+## 8. Unchecked or lightly checked statements (consequential negatives)
 
-Role: **textual control** for the eternity argument and the lexical objections.
-Edition `edition.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv`.
-Loci read 2026-07-25: Matt 7:13–14; 10:28; 25:41, 46. Mark 9:43–49. Luke
-13:23–24; 16:23–26. 2 Thess 1:8–9. Jude 6–7. Apoc 14:10–11; 20:10, 14–15.
+- The 1930 Leiria declaration rests on the library's work record (description), not on the letter.
+- Bede's English translator is unidentified on the delivery used.
+- Lúcia's memoir is quoted in the Holy See's 2000 English; no other translation was compared.
 
-Three artifacts were **registered with this revision** from the same pinned
-repository state (`27a45ff1b7be6c17ccbfeac414f3f55732ae8e28`) as the existing
-Matthew, Luke, John, Acts, Galatians, Jude, 1 Peter, and 2 Peter files:
+## 9. Corrections after review (16 October 2026)
 
-- `ccat-csv-mar-b58af87a` (Mark, 196,848 bytes)
-- `ccat-csv-2th-232a58b8` (2 Thessalonians, 11,821 bytes)
-- `ccat-csv-rev-ddfbc25d` (Revelation, 155,423 bytes)
+| Claim or quotation | Witness | Locus | Check | Rights |
+| --- | --- | --- | --- | --- |
+| Fatima: "Penance, Penance, Penance!" opens the third part of the secret | CDF, *The Message of Fatima* (2000) | third part | Online, re-read | Official, brief |
+| de Sales's question opens the Affections and Resolutions | Rivingtons 1876, p. 42 | I.15 | Re-read | Public domain |
+| Teresa passes from the vision to the foundation of St Joseph's (§13 begins the plan) | Lewis 1904 | ch. 32 §§11–13; OCR 15505–15521 | Re-read | Public domain |
+| Alphonsus XXVIII, first point, Affections, pp. 341–342 | Duffy 1843 | — | Google text layer (p. 342 header falls inside the prayer) | Public domain |
+| ANF vol. 9 ed. Allan Menzies | New Advent source line for 2 Clement | — | Online | — |
+| CCC 982 ("There is no offense, however serious, that the Church cannot forgive"), 1864 ("anyone who deliberately refuses to accept his mercy by repenting, rejects the forgiveness of his sins"); Matt 12:31–32 (DR) | vatican.va `ENG0015/__P2F.HTM`, `__P6C.HTM`; DR Matthew verse text | as cited | Online; tracked verse text | Official, cited only |
+| Appendix A: Benedict XVI, *Spe salvi* 46, "the great majority of people", "an ultimate interior openness to truth, to love, to God" | vatican.va English | n. 46 | Online | Official, brief |
+| Appendix A: Benedict XVI, General Audience of 18 October 2006, "the mystery around his eternal fate" | vatican.va English | — | Online (not registered in the library) | Official, brief |
+| Appendix A: Lambertini (Benedict XIV), approved revelations owed "an assent of human faith … probable and credible to piety" | as cited in CDF, *The Message of Fatima*, theological commentary | — | Online | Official, brief |
+| Teresa canonized 1622 (Gregory XV) | *Catholic Encyclopedia* vol. 14 (1912), "St. Teresa of Avila", New Advent `cathen/14515b.htm` | — | Online | Public domain |
+| Teresa proclaimed Doctor, 27 September 1970 | Paul VI, homily of 27 September 1970, vatican.va (Italian) | — | Online | Official, not quoted |
 
-Ceiling: this is an edition of the Byzantine textform, not a critical edition.
-Its inline `{NA ...}` and `{Byz ...}` braces are a divergence note, not an
-apparatus. The article reports that Nestle–Aland omits Mark 9:44 and 9:46 on
-the strength of those braces and expressly declines to adjudicate the text.
-Robinson's official CCAT files, from which the CSVs were generated, were not
-acquired. Greek is quoted only in transliteration because the typeface used
-carries no Greek; every transliteration is the authoring agent's and each is
-accompanied by the registered edition and exact locus.
-
-Negative result worth recording: the tracked corpus does not include 1 John, so
-the claim about the semantic range of *kolasis* at 1 John 4:18 is stated in the
-article only as far as the Latin and English witnesses carry it, and the
-article says so and declines to rest its conclusion on the point.
-
-## 2. Magisterial acts
-
-### 2.1 Denzinger — the route for every pre-modern act
-
-Editions `edition.denzinger.enchiridion-symbolorum.latin-patristica-web-2026-07-25`
-(Latin, revised and older numbering in parallel) and
-`edition.denzinger.enchiridion-symbolorum.english-deferrari-patristica-web-2026-07-25`
-(older numbering, English).
-
-Loci read 2026-07-25, each in its surrounding context: DS 76 (*Quicumque*
-vv. 29–42); DS 397 (Orange II conclusion, with the preceding paragraphs on
-grace); DS 403–411 (nine canons against Origen, whole set); DS 433
-(Constantinople II canon 11, with canons 1–14 skimmed and 9–12 read); DS 801
-(Lateran IV *Firmiter*, chapter read whole) with DS 802; DS 858 with DS 857 and
-859; DS 926 (John XXII to the Armenians); DS 1000–1002 (*Benedictus Deus*); DS
-1304–1306 (Florence *Laetentur caeli*); DS 1351 (Florence *Cantate Domino*,
-with the surrounding decree paragraphs); DS 1541 (Trent 6, ch. 13); DS 1567
-(Trent 6, can. 17); DS 1575 (Trent 6, can. 25, with cann. 26–27); DS 1705
-(Trent 14, can. 5); DS 1997 (Paul V, 1607).
-
-**Ceiling, stated in the article and in the references:** Denzinger is a
-compilation and a finding aid to its underlying documents, not a substitute
-witness. The registered edition is a dated web transcription that does not
-identify its printed exemplar and that reproduces editorial query marks
-(e.g. the `(-!)` at *Quicumque* v. 41) rather than resolving them. **No printed
-Denzinger, no conciliar critical edition, no Mansi volume, and no papal
-register was collated for this article.** Every claim resting on these acts is
-bounded by that.
-
-**Consequential negative result (misattribution).** The nine canons against
-Origen are printed by Denzinger under the heading "published in the Synod of
-Constantinople in 543; Anathematisms against Origen," under Pope Vigilius, and
-*before* the acts of Constantinople II. The council's own canon 11 (DS 433)
-names Origen in a list of heretics without stating which of his propositions is
-meant. The article reports exactly this and declines to adjudicate the long
-scholarly question about the fifteen anathemas circulating under the council's
-name, because the conciliar acts were not reached.
-
-**Consequential textual observation.** *Benedictus Deus* defines the immediacy
-and reality of the descent to hell (`mox post mortem suam ad inferna descendunt,
-ubi poenis infernalibus cruciantur`) without any word for eternity, four lines
-after using `usque in sempiternum` of the beatific vision. Checked in the Latin
-at DS 1000–1002. The article reports it as an observation about that act and
-states in the same paragraph that the doctrine does not depend on it.
-
-**Consequential weighting observation.** DS 1575 (Trent 6, can. 25) is cited by
-CCC 1035 but treats eternal punishment as a shared premise of a dispute about
-the good works of the justified rather than as the thing defined. The article
-reports it as evidentially weaker than the rest of the file.
-
-### 2.2 Vatican web texts
-
-- *Catechism of the Catholic Church*, edition `edition.catholic-church.catechism.english-vatican-web-2026-07-25`. Pages read 2026-07-25: `__P2N.HTM` (1030–1032), `__P2O.HTM` (1033–1037 with note 615), `__P2R.HTM` (1051–1060), `__P3M.HTM` (1261), `__P6C.HTM` (1854–1864). Role: direct witness and, for CCC 1035 n. 615, the article's organizing document. Ceiling: quoted briefly with attribution; the Latin typical edition was not collated, and IntraText delivery artifacts (lowercased sentence-initial articles, spaced hyphens) are present in the delivery and do not affect quoted wording.
-- *Lumen gentium* 14 and 16, English Vatican web text, read whole. Role: authoritative interpretation of the condition in *Cantate Domino*. Ceiling: the Latin and the AAS text were not consulted.
-- Paul VI, *Solemni hac liturgia* n. 12, English Vatican web text, complete document read. Ceiling: the AAS Latin was not consulted; no claim turns on the Latin wording.
-- John Paul II, general audience of 28 July 1999, nn. 1–4, English Vatican web text, complete address read. Role: the article's principal warrant for the negative claim about the census, and for the boundary between the doctrine and its imagery. Ceiling: delivered in Italian; the Italian was not collated. Weight: ordinary papal magisterium in its least solemn form, stated as such in the article.
-- Benedict XVI, *Spe salvi* nn. 45–48, English Vatican web text. Ceiling: the AAS Latin was not consulted.
-
-## 3. Patristic witnesses
-
-| Witness | Loci read | Route | Role and ceiling |
-| --- | --- | --- | --- |
-| Justin Martyr, *2 Apol.* | 7–9 (whole) | New Advent delivery of ANF 1; cross-read in the tracked ANF 1 OCR | Earliest witness both to the doctrine and to the objection that it is a bugbear. Chapter numbering varies between editions; Greek not consulted. |
-| Irenaeus, *Adv. haer.* | V.27.2 (whole section, chapter heading read) | Tracked ANF 1 OCR at artifact lines 72024–72062, **registered as a passage with this revision**; independently cross-checked at New Advent | Earliest sustained account of hell as self-chosen separation. The OCR is a locator aid, not textual control; the surviving text is a Latin translation of a lost Greek; no critical edition collated. |
-| Origen, *De principiis* | I.6.1–2 (whole chapter); II.10.2–6 | New Advent delivery of Crombie/ANF 4 | Direct witness for the exploratory genre disclaimer and for the conscience-fire and medicinal readings. **The treatise survives complete only in Rufinus's Latin.** |
-| Rufinus, Prologue to *De principiis* | Whole prologue, printed p. 237 | CCEL delivery of ANF 4 (**registered as a second edition of the work with this revision**, because New Advent's delivery omits the front matter) | Direct witness for the translator's own editorial rule. This is the article's evidence for the transmission problem, and without it the claim would have been unsourced. |
-| Gregory of Nyssa, *Oratio catechetica magna* | XXVI (whole chapter, with the editors' footnotes) | CCEL delivery of NPNF 2/5 | Direct witness that a canonized Father taught the healing of the author of evil. Greek not consulted; the Krabinger marginal note is reported at second hand from the editors' footnote and was not inspected. |
-| Chrysostom, *Hom. in Matt.* | 23, §9 (and §§7–10 read) | New Advent delivery of NPNF 1/10 | Direct witness for the two-punishment ranking. Section divisions editorial; Greek not consulted. |
-| Augustine, *De civitate Dei* | XXI.9, 11, 12, 17, 23 (each chapter read whole); XXI.1–3, 10, 13, 18, 24 read for context | Tracked Dods 1871 transcription; **five passages registered with this revision** with exact artifact line ranges | Direct witness for the correlativity argument, the proportionality reply, the *misericordes*, the proportion claim, and the explicit release of the reader on the mode of the fire. Nineteenth-century translation, not a critical edition; Latin not collated. |
-
-Registered Augustine passages: `21.9` (17321–17392), `21.11` (17451–17508),
-`21.12` (17511–17538), `21.17` (17748–17782), `21.23` (17958–18013).
-
-## 4. Thomistic and philosophical sources
-
-- *Summa theologiae*, English of the Fathers of the English Dominican Province at New Advent. Questions read whole on 2026-07-25: I q. 19 (a. 6 with all replies), I q. 23 (a. 3 with replies), I q. 64 (a. 2), I-II q. 87 (all eight articles), Suppl. q. 94, q. 97, q. 98, q. 99. Role: the tradition's principal analysis. Ceiling: **work-level binding**; no Latin of the *Summa* was collated for this article, and no printed or Leonine edition was consulted.
-- *Scriptum super libros Sententiarum* IV, d. 46, q. 1, a. 3 and q. 2, a. 1, Latin at Corpus Thomisticum page `snp4045`, paragraphs 21988–22024, read 2026-07-25. Role: **textual control on the status of the Supplement.** The comparison with Suppl. q. 99 a. 1 was made article by article on structure and content — same title question, same six objections, same three *sed contra* arguments, same corpus with one principal reason and four *rationes a sanctis assignatae*, same six replies — and confirms the derivation. Ceiling: the Latin of the Supplement was **not** consulted, so this is a structural and substantive comparison and not a collation; the article says so.
-- Aristotle, *Rhetoric* I.10.17, Greek (Ross 1959) and English (Freese 1926) as delivered by the Perseus Digital Library, read 2026-07-25. Role: the locus for the *kolasis*/*timoria* distinction on which a standard lexical objection rests, read at its own place rather than through a secondary report. Ceiling: no printed edition collated; Perseus states its markup is CC BY-SA 3.0 US; Freese's rendering is identified in the article as a translator's choice.
-
-## 5. Rights
-
-Douay–Rheims (Challoner) and the Robinson–Pierpont CSVs are public domain and
-tracked with recorded distribution bases. All patristic translations used are
-public-domain nineteenth-century work; the hosts delivering them (New Advent,
-CCEL) hold rights in their own markup and revisions, which are not reproduced.
-Freese's 1926 translation is out of United States copyright by publication
-date. Denzinger's Latin compilation as delivered is used as a finding aid; the
-underlying acts are public domain, and printed Denzinger editions retain their
-own editorial rights. Vatican texts remain the property of the Libreria
-Editrice Vaticana and are quoted briefly with attribution. Nothing quoted in
-the article is project-created expression except the prose, tables, and
-organization, which are covered by the repository's CC BY 4.0 grant.
-
-## 6. Outstanding
-
-- Mansi and the conciliar critical editions for the 543 canons and Constantinople II.
-- A printed Denzinger for every DS number used.
-- The Latin of the *Summa* and of the Supplement.
-- The Greek of Gregory of Nyssa, Chrysostom, and Justin.
-- The Latin of *Lumen gentium*, the *Credo*, and *Spe salvi* in the AAS.
-- The 1899/1914 American Douay–Rheims divergence table for the verses quoted.
-- The modern literature on the hope for universal salvation, deliberately excluded from scope.
+Grades changed by the coordinator's ruling: "The saved are fewer than the lost" is graded theological opinion, common among the Fathers and Doctors (the Church has proposed no number); the body's statement of the witness is unchanged. The row on Gregory's addition to the Canon was dropped as a historical attribution, not a teaching; the body keeps Bede's report.
