@@ -1,6 +1,42 @@
 schema_version = 1
 
 [[deliverables]]
+id = "all-rite-missal-timeline-2026-10-16"
+owner = "guidance/time-machine.md"
+promise = "Recover the prior missal-history implementation, establish a sourced historical timeline of sufficiently distinct Eucharistic books for every Catholic rite, organize their temporal witnesses and complete structured texts, and deliver a generated Git history and subway-map visualizer with meaningful textual diffs."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "recovery"
+  criterion = "Identify and verify the surviving prior source inventories, generator, generated Git history, interactive map, and printed map, with exact provenance and measured scope."
+  status = "pass"
+  evidence = ["src/sources/inventories/missal-timeline-recovery-2026-10-16.md", "src/sources/inventories/missal-timeline-recovery-files-v1.toml", "tools/act-history", "src/web/browser/history/index.html"]
+
+  [[deliverables.requirements]]
+  id = "historical-catalogue"
+  criterion = "A reviewed, source-cited inventory covers the agreed historical boundary and every Catholic rite and materially distinct recension or edition, with explicit distinctness criteria, dating uncertainty, witness identities, and documented parentage; unresolved coverage is enumerated without a false completeness claim."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml", "src/sources/inventories/western-eucharistic-books-timeline-v1.toml"]
+
+  [[deliverables.requirements]]
+  id = "witnesses-and-texts"
+  criterion = "Each temporal version has organized source witnesses and complete structured contents checked against those witnesses, with acquisition, transcription, collation, rights, and missing-book states recorded separately; metadata-only stations are never presented as complete missals."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "src/sources/inventories/missal-timeline-text-reuse-2026-10-16.md", "src/sources/inventories/missal-timeline-holdings-v1.toml"]
+
+  [[deliverables.requirements]]
+  id = "git-history"
+  criterion = "The generated repository reconstructs the sourced contents of each version with deterministic commits, stable liturgical unit identities, true dates, evidence-backed parentage, and verified minimal honest diffs across representative changes in each covered tradition."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "map"
+  criterion = "The interactive subway map and printable counterpart derive from the same catalogue and text history, distinguish coexistence from reception and evidence gaps from absent texts, expose source and text comparisons, and pass functional and visual review."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "claude-1962-twenty-first-three-documents-2026-10-15"
 owner = "PROJECT-WORK.md"
 promise = "Drive the proper-study workflow for provider claude on the 1962 Twenty-first Sunday after Pentecost for Sunday 2026-10-18 through terminal acceptance: expansive study, concise study, standalone homily and canonical web edition with fresh cold reviews, every workflow cycle and host intervention documented, every contributing model declared exactly, the delivered work committed on feature/propers/claude and fast-forwarded to origin/main with its Pages deployment verified."

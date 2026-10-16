@@ -1,0 +1,155 @@
+audit_schema = 1
+record_type = "missal-timeline-existing-holdings-check"
+checked_on = "2026-10-16"
+source_commit = "c842e33ed5bd3a59d7dad8b4991d198f20472a2e"
+scope = "Rehash of existing tracked OCR only. No new source acquisition, source-text collation, or legal determination."
+
+[[artifacts]]
+manifest = "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/artifacts/missale-ambrosianum-1712-text-a1319e20/artifact.toml"
+edition_id = "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712"
+path = "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/artifacts/missale-ambrosianum-1712-text-a1319e20/missale-ambrosianum-1712-text.txt"
+sha256 = "a1319e208d2c36298721b6dd62ea6e6020bcc85fa80ea3f14249442d2b8948b5"
+byte_size = 1868008
+lines = 77003
+hash_matches = true
+structured_liturgical_units = false
+
+[[artifacts]]
+manifest = "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-pachel-1499/artifacts/missale-ambrosianum-1499-text-3c876a13/artifact.toml"
+edition_id = "edition.archdiocese-of-milan.missale-ambrosianum.milan-pachel-1499"
+path = "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-pachel-1499/artifacts/missale-ambrosianum-1499-text-3c876a13/missale-ambrosianum-1499-text.txt"
+sha256 = "3c876a132c1957e786183c3f3d967b313d524a58c1a341fe1411fa640cf83665"
+byte_size = 1277898
+lines = 56062
+hash_matches = true
+structured_liturgical_units = false
+
+[[artifacts]]
+manifest = "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-sirturi-1640/artifacts/missale-ambrosianum-1640-text-cc5dcff6/artifact.toml"
+edition_id = "edition.archdiocese-of-milan.missale-ambrosianum.milan-sirturi-1640"
+path = "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-sirturi-1640/artifacts/missale-ambrosianum-1640-text-cc5dcff6/missale-ambrosianum-1640-text.txt"
+sha256 = "cc5dcff6b3fdd154a800b6c72d2fa772f600c373dd6c2750be40c610aa0a1427"
+byte_size = 1948375
+lines = 59670
+hash_matches = true
+structured_liturgical_units = false
+
+[[artifacts]]
+manifest = "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/paris-migne-1862/artifacts/liturgia-mozarabica-1862-text-769ccd75/artifact.toml"
+edition_id = "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.paris-migne-1862"
+path = "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/paris-migne-1862/artifacts/liturgia-mozarabica-1862-text-769ccd75/liturgia-mozarabica-1862-text.txt"
+sha256 = "769ccd75e6534b3cbe38d91e9e47444fc709edadfc308764315f9f225ef6ddcb"
+byte_size = 4622815
+lines = 114783
+hash_matches = true
+structured_liturgical_units = false
+
+[[artifacts]]
+manifest = "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/missale-mixtum-1755-florence-text-c52ac184/artifact.toml"
+edition_id = "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755"
+path = "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/missale-mixtum-1755-florence-text-c52ac184/missale-mixtum-1755-florence-text.txt"
+sha256 = "c52ac184379b81e2f4924d565f4c1ced344ad7d25405c8c57b2b1b13784f1f51"
+byte_size = 794299
+lines = 20253
+hash_matches = true
+structured_liturgical_units = false
+
+[[artifacts]]
+manifest = "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/missale-mixtum-1755-nypl-text-ed70e3ae/artifact.toml"
+edition_id = "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755"
+path = "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/missale-mixtum-1755-nypl-text-ed70e3ae/missale-mixtum-1755-nypl-text.txt"
+sha256 = "ed70e3ae6806845acfad9c0028ab4096a1dec4c2e3c34175c0022dfc3b1f0d15"
+byte_size = 1491426
+lines = 53824
+hash_matches = true
+structured_liturgical_units = false
+
+[[artifacts]]
+manifest = "src/sources/works/catholic-church/missale-romanum/editions/1889-tournai-desclee-leo-xiii-recognitum/artifacts/ia-djvu-ocr-715f57fd/artifact.toml"
+edition_id = "edition.catholic-church.missale-romanum.1889-tournai-desclee-leo-xiii-recognitum"
+path = "src/sources/works/catholic-church/missale-romanum/editions/1889-tournai-desclee-leo-xiii-recognitum/artifacts/ia-djvu-ocr-715f57fd/missaleromanumex1889cath_djvu.txt"
+sha256 = "715f57fd58abd4e3ca46794e137cf1fa703d5da5250f1842767da73ecc6b1692"
+byte_size = 2849045
+lines = 116637
+hash_matches = true
+structured_liturgical_units = false
+
+[[artifacts]]
+manifest = "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/missale-romanum-1862-text-f34bc7cf/artifact.toml"
+edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+path = "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/missale-romanum-1862-text-f34bc7cf/missale-romanum-1862-text.txt"
+sha256 = "f34bc7cf9293ffb353159e94118f4316bb4cc0a60230b315904dc77ba2502162"
+byte_size = 2503914
+lines = 108905
+hash_matches = true
+structured_liturgical_units = false
+
+[[artifacts]]
+manifest = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/artifacts/missale-romanum-1604-text-6d12feef/artifact.toml"
+edition_id = "edition.catholic-church.missale-romanum.vatican-typica-1604"
+path = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/artifacts/missale-romanum-1604-text-6d12feef/missale-romanum-1604-text.txt"
+sha256 = "6d12feef4fe19166d274ecf3129d91a2a2945fb9f5b801b602a0f10e203fa838"
+byte_size = 2025007
+lines = 63204
+hash_matches = true
+structured_liturgical_units = false
+
+[[artifacts]]
+manifest = "src/sources/works/catholic-church/missale-romanum/editions/venice-1570/artifacts/missale-romanum-1570-text-563f4dd2/artifact.toml"
+edition_id = "edition.catholic-church.missale-romanum.venice-1570"
+path = "src/sources/works/catholic-church/missale-romanum/editions/venice-1570/artifacts/missale-romanum-1570-text-563f4dd2/missale-romanum-1570-text.txt"
+sha256 = "563f4dd2c8c8c2fea9d3041475d7b8adf96e76843c0d67330e24ce3782d9aaec"
+byte_size = 1636559
+lines = 84442
+hash_matches = true
+structured_liturgical_units = false
+
+[[artifacts]]
+manifest = "src/sources/works/diocese-of-salisbury/missale-ad-usum-sarum/editions/1861-1883-burntisland-dickinson/artifacts/ia-djvu-ocr-685c74b2/artifact.toml"
+edition_id = "edition.diocese-of-salisbury.missale-ad-usum-sarum.1861-1883-burntisland-dickinson"
+path = "src/sources/works/diocese-of-salisbury/missale-ad-usum-sarum/editions/1861-1883-burntisland-dickinson/artifacts/ia-djvu-ocr-685c74b2/dusumins00cath_djvu.txt"
+sha256 = "685c74b2325ae3bca9a7ac0f1394ad0c3e5f80e65d0ee697cd88d3ee4df5c20f"
+byte_size = 2856803
+lines = 117046
+hash_matches = true
+structured_liturgical_units = false
+
+[[artifacts]]
+manifest = "src/sources/works/diocese-of-salisbury/missale-ad-usum-sarum/editions/1916-oxford-clarendon-legg/artifacts/ia-djvu-ocr-68839565/artifact.toml"
+edition_id = "edition.diocese-of-salisbury.missale-ad-usum-sarum.1916-oxford-clarendon-legg"
+path = "src/sources/works/diocese-of-salisbury/missale-ad-usum-sarum/editions/1916-oxford-clarendon-legg/artifacts/ia-djvu-ocr-68839565/sarummissaledite00cathrich_djvu.txt"
+sha256 = "688395658a6457240730136e5662ce9764a923e10e20e9a384830f595dbdcd82"
+byte_size = 1806008
+lines = 57092
+hash_matches = true
+structured_liturgical_units = false
+
+[[artifacts]]
+manifest = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1843/artifacts/roman-missal-1843-text-6949d12f/artifact.toml"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1843"
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1843/artifacts/roman-missal-1843-text-6949d12f/roman-missal-1843-text.txt"
+sha256 = "6949d12fd2c18584a308f420b470ec3a238cfa9542511798f708eab25f191825"
+byte_size = 1721622
+lines = 46030
+hash_matches = true
+structured_liturgical_units = false
+
+[[artifacts]]
+manifest = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/new-roman-missal-text-80b34759/artifact.toml"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/new-roman-missal-text-80b34759/new-roman-missal-text.txt"
+sha256 = "80b34759fb18ec60f6205460c2ac24dc9e4a861938a94ef1f8e04a08a398ac9a"
+byte_size = 4349573
+lines = 197573
+hash_matches = true
+structured_liturgical_units = false
+
+[[artifacts]]
+manifest = "src/sources/works/p-keating/roman-missal-for-the-use-of-the-laity/editions/london-1806/artifacts/roman-missal-laity-1806-text-e9f54379/artifact.toml"
+edition_id = "edition.p-keating.roman-missal-for-the-use-of-the-laity.london-1806"
+path = "src/sources/works/p-keating/roman-missal-for-the-use-of-the-laity/editions/london-1806/artifacts/roman-missal-laity-1806-text-e9f54379/roman-missal-laity-1806-text.txt"
+sha256 = "e9f543799784249c0f54b20eeda66f68c66344b23f232e49786798b8f8cf91fa"
+byte_size = 1463916
+lines = 36485
+hash_matches = true
+structured_liturgical_units = false

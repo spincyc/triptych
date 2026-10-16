@@ -1,0 +1,523 @@
+# Metadata-only research inventory. See evidence_limit and distinctness_rules.
+schema = "western-eucharistic-books-research-inventory/v1"
+researched_on = "2026-10-16"
+scope = "Non-exhaustive Western Catholic Eucharistic book candidates and historical witnesses, compared with latin-missal-acts-v1.toml and missal-acquisition-audit-v1.toml. Metadata only; no liturgical text."
+evidence_limit = "Web-tool rendered catalogue/official-page/PDF text inspected as specified. No complete book newly acquired, no prayer collated, no modern edition cleared for republication. Shell retrieval failed DNS; PDF screenshots failed cache fetch. Checked metadata is not source-text verification under repository policy."
+further_leads_not_researched = ["Verona sacramentary manuscript LXXXV(80), Roman prayer libelli; no simple complete universal missal ancestor", "Gallican Missale Gothicum and Missale Gallicanum Vetus: Vatican Reg.lat.317 and Pal.lat.493 identities/date need catalogue verification; viewer alone did not establish content", "Stowe and Bobbio missals, Old Hispanic Liber misticus/Liber missarum and Liber mozarabicus sacramentorum manuscripts; medieval Ambrosian sacramentaries", "Franciscan-curial manuscript reforms and Haymo of Faversham; manuscript evidence before 1474", "Ambrosian 1582/1588 reforms and subsequent 1902 typical edition: source them directly before timeline promotion", "Cistercian early printed missals, Dominican 1256 prototype, Carmelite medieval ordinal and twentieth-century revisions, Premonstratensian 1936: existing witnesses or leads need revision-level work", "Neo-Gallican diocesan missals, Paris/Lyon reforms; Esztergom, Cologne, Rouen, Nidaros and other historic diocesan uses: catalogue-driven selection required", "Roman 1951 experimental Easter Vigil and 1952 iteration; 1969 Ordo Missae separate from 1970 complete missal; post 2008 formularies/rubrical amendments separately", "Slavonic Roman missal line beyond existing 1893 witness; ritual-language permission and translation are distinct from source recension", "Book of Divine Worship editions, Divine Worship later corrected printings; exact publication and approval records needed"]
+research_scope = "provisional-current-Catholic-ancestry-pending-user-clarification"
+exhaustive = false
+new_complete_source_books_acquired = 0
+new_complete_texts_collated = 0
+publication_class = "Project-created bibliographic metadata; no third-party liturgical source text retained."
+integration_status = "Research inventory only; not the frozen source-library schema, a source-text manifest, or a set of accepted act-history stations. Existing records and generated ancestry remain unchanged."
+existing_inventories = ["src/sources/inventories/latin-missal-acts-v1.toml", "src/sources/inventories/roman-holy-week-acts-v1.toml", "src/sources/inventories/missal-acquisition-audit-v1.toml"]
+coverage_note = "This pass concentrates on gaps in the existing Latin inventories. Already catalogued Roman editions, local-use printings and order witnesses are not duplicated here. Candidate clusters are not counts of distinct recensions. Historic local uses and sacramentaries are contextual witnesses; ancestry edges require separate evidence."
+distinctness_rules = ["A new normative source state needs an approving instrument or demonstrated material textual or rubrical change; a different printer, year or scanner alone does not establish one.", "Distinguish complete books, partial Orders, supplements, lectionaries, calendar amendments and legislation about permission to use a book.", "Keep translations and other language expressions separate from underlying source recensions; an approval applies only to its stated textual extent.", "Complementary volumes belong to one edition unless evidence establishes a later revision; their publication dates do not form a succession of recensions.", "Critical editions and reprints witness earlier texts; editorial apparatus alone does not demonstrate a normative liturgical reform.", "Keep composition, manuscript copying, approval, publication, effective use and reprinting dates distinct. Approximate or disputed dates remain explicit.", "Chronological continuity within a use does not prove textual descent. Do not infer a universal Western trunk or direct parentage by sorting dates.", "A bibliographic record or partial text is not a complete missal. Missing acquired content does not demonstrate ritual absence."]
+
+[[sources]]
+id = "milan-publisher-2024"
+url = "https://www.itl-libri.com/wp-content/uploads/2024/02/MESSALE-AMBROSIANO-2024.pdf"
+type = "official-publisher-announcement"
+inspection = "Web-rendered six-page publisher PDF, pages 2, 3 and 5 (zero-based 1, 2, 4). Publication chronology and revisions inspected; screenshots failed. No source-text collation."
+
+[[sources]]
+id = "milan-current-landing"
+url = "https://www.chiesadimilano.it/messale-ambrosiano"
+type = "diocesan-publication-page"
+inspection = "Search-index rendering states second edition, effective 17 November 2024, PDF consultation route. Direct web open returned 403. Existing acquisition inventory supplies earlier inspected reservation and twelve-PDF extent; not freshly verified."
+
+[[sources]]
+id = "toledo-mozarabic-retrospect"
+url = "https://www.cardenaldonmarcelo.es/index.php/docs/el-misal-hispano-mozarabe/"
+type = "cardinal-document-repository"
+inspection = "Web-rendered prose around lines 1040-1046. Identifies Missale volumes I 1991 and II 1994, Liber commicus I 1994 and II 1995, Liber Offerentium 1991; describes separate Spanish translation. Hosting authority/authentication of reproduced original requires further confirmation."
+
+[[sources]]
+id = "cee-spanish-ordo-1992"
+url = "https://www.conferenciaepiscopal.es/wp-content/uploads/boletin/BOCEE035.pdf"
+type = "official-episcopal-bulletin"
+inspection = "Web-rendered PDF artifact page 76 (zero-based 75), printed p.207. CDWDS Prot. CD 931/92 dated 29 May 1992 confirms Spanish translation of Hispano-Mozarabic Ordo Missae. Screenshot attempt failed; no complete decree-byte acquisition."
+
+[[sources]]
+id = "upsa-mozarabic-1991"
+url = "https://catalogo.upsa.es/cgi-bin/koha/opac-detail.pl?biblionumber=94589&shelfbrowse_itemnumber=130406"
+type = "university-library-catalogue"
+inspection = "Search-index metadata only; direct open failed. Barcelona, Coeditores liturgicos, 1991, 708 pages, ISBN 8471294133."
+
+[[sources]]
+id = "ordinariate-dwm"
+url = "https://www.ordinariate.net/divine-worship-missal"
+type = "official-ordinariate-publication-notice"
+inspection = "Opened web rendering, especially lines 148-181. Authoritative Roman adaptation, effective 29 November 2015; derives from Roman Missal third edition and Anglican patrimony; replaces Eucharistic texts of Book of Divine Worship."
+
+[[sources]]
+id = "zaire-official-retrospect"
+url = "https://www.vatican.va/roman_curia/pontifical_councils/cultr/documents/rc_pc_cultr_01051995_doc_ii-1995-stu_en.html"
+type = "holy-see-periodical"
+inspection = "Opened rendered HTML; names Missel romain pour les dioceses du Zaire and approval by Zairensium Dioecesium, 30 April 1988. This is retrospective publication evidence, not inspection of the decree or missal."
+
+[[sources]]
+id = "notitiae-book-bibliography-1985"
+url = "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-21-(1985)/Notitiae-228-229-1985.pdf"
+type = "official-periodical-documentary-bibliography"
+inspection = "Armando Cuva, I nuovi libri liturgici. Rassegna documentaria. Web-rendered printed pp.396-397, artifact pages 44-45 (zero-based 43-44). Identifies 1965 Ordo/Ritus/De defectibus, 1965 Holy Week changes, 1965 concelebration/Communion book, 1967 Variationes, 1968 Preces eucharisticae. Screenshot failed. Dates from this bibliography await original-decree collation."
+
+[[sources]]
+id = "carthusians-official"
+url = "https://chartreux.org/moines/ressources/textes/"
+type = "official-order-site"
+inspection = "Opened rendering, lines 20-28: private-use notice and assertion that the Carthusian missal, unlike other reformed liturgical books linked there, has received Roman recognition. Page does not establish the missal's publication year."
+
+[[sources]]
+id = "carthusian-bibliography"
+url = "https://www.cartusiana.org/sites/default/files/NBC%201.pdf"
+type = "specialist-bibliography"
+inspection = "Search-index excerpt at printed p.162 identifies 1981 Latin Missale Cartusiense, 1982 English Carthusian Missal and other translations. Direct open failed. Lead only, not primary edition inspection."
+
+[[sources]]
+id = "dominican-order-archives"
+url = "https://archives.opcentral.org/repositories/2/archival_objects/665"
+type = "official-order-archive-catalogue"
+inspection = "Opened metadata: Missale S.O.P, 1933-1965; Latin copies dated 1933,1939,1965. Catalogue extent says 26 volumes while parenthetic counts sum to 27; do not reproduce total uncritically. No distinct-recension claim established."
+
+[[sources]]
+id = "cistercian-1657-google"
+url = "https://books.google.de/books?id=a8329mzqJMUC"
+type = "digitized-library-book-catalogue"
+inspection = "Opened catalogue title, publisher and provenance: Missale cisterciense juxta romani recogniti correctionem. Primo editum. Authoritate superiorum; Sebastiani Cramoisy, 1657; Lyon Public Library copy. PDF route displayed, not acquired; title-page image not inspected."
+
+[[sources]]
+id = "cistercian-1657-fides"
+url = "https://digital.fides.org.pl/dlibra/publication/3978/edition/3755/content"
+type = "ecclesiastical-library-digital-catalogue"
+inspection = "Opened landing page title identifying Missale Cisterciense 1657; content itself not downloaded or collated."
+
+[[sources]]
+id = "hereford-usuarium"
+url = "https://usuarium.elte.hu/origin/304/view"
+type = "university-research-catalogue"
+inspection = "Opened use catalogue: 1502 Missale Herfordense IDs 89 and 6358; 1300-1400 manuscript BL Add.39675 ID297. Two 1502 IDs must be investigated for duplicate witness versus distinct printing."
+
+[[sources]]
+id = "gelasian-vatican"
+url = "https://digi.vatlib.it/view/MSS_Reg.lat.316/0017"
+type = "holding-library-digitization"
+inspection = "Search-index metadata identifies Sacramentarium Gelasianum, shelfmark Reg.lat.316, date Sec. VIII in.; opened viewer returns shell, not manuscript text. IIIF manifest not parsed by web tool and shell curl failed DNS. Catalogue date not silently reconciled to other scholarly datings."
+
+[[sources]]
+id = "gregorian-usuarium"
+url = "https://usuarium.elte.hu/book/2219/view"
+type = "university-research-catalogue"
+inspection = "Opened catalogue: Hadrianum tradition, Cambrai MS164(159); 790-800 refers to supposed Aachen master-copy arrival, while note dates actual codex 812-813; links 1921 Lietzmann critical edition and catalogue. These are different dates and objects."
+
+[[sources]]
+id = "gregorian-hamburg"
+url = "https://coenotur.fruehmittelalterprojekte.uni-hamburg.de/handschrift/cambrai_bm_164_desc.xml"
+type = "university-manuscript-catalogue"
+inspection = "Search-index excerpt only; direct open cache miss. Reports Bischoff 811/812 versus Rand second quarter ninth century; later additions fols206-240. Useful disagreement to preserve, not a verified manuscript dating."
+
+[[candidates]]
+id = "roman-1474"
+family = "roman"
+title = "Missale Romanum, Milan 1474"
+date = "1474"
+kind = "early-printed-witness"
+status = "recorded-existing-acquisition-audit"
+existing_record = "missale-romanum-mediolani-1474-lippe"
+route = "https://archive.org/details/missaleromanumme01cath"
+qualification = "Lippe 1899/1907 critical edition witnesses 1474; do not date liturgical recension to critical-edition publication. Not yet a station in latin-missal-acts-v1."
+existing_inventory = "src/sources/inventories/missal-acquisition-audit-v1.toml"
+date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
+
+[[candidates]]
+id = "roman-1884"
+family = "roman"
+title = "Leo XIII Roman Missal revision, alleged 1884 typical edition"
+date = "1884"
+kind = "edition-lead"
+status = "unresolved-existing-audit"
+existing_record = "editio-typica-1884"
+qualification = "Existing audit explicitly has not established instrument/date. Do not silently promote the conventional year."
+existing_inventory = "src/sources/inventories/missal-acquisition-audit-v1.toml"
+date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
+
+[[candidates]]
+id = "roman-1900"
+family = "roman"
+title = "Missale Romanum, typical edition 1900"
+date = "1900"
+kind = "typical-edition"
+status = "recorded-existing-audit"
+existing_record = "editio-typica-1900"
+qualification = "Existing audit attests edition through 1920 decree; own instrument and exact scan remain open. Candidate to close via_unrepresented gap, not newly verified."
+existing_inventory = "src/sources/inventories/missal-acquisition-audit-v1.toml"
+date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
+
+[[candidates]]
+id = "roman-ordo-1965"
+family = "roman"
+title = "Ordo Missae, Ritus servandus in celebratione Missae et De defectibus"
+date = "1965"
+kind = "partial-typical-edition"
+status = "checked-official-bibliography"
+sources = ["notitiae-book-bibliography-1985"]
+qualification = "70-page TPV typical edition; decree listed as 27 January 1965, AAS 57 pp. 408-409. A partial Order/rubric book, not a newly complete Missale Romanum."
+date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
+
+[[candidates]]
+id = "roman-holy-week-1965"
+family = "roman"
+title = "Variationes in Ordinem Hebdomadae sanctae inducendae"
+date = "1965"
+kind = "amendment-booklet"
+status = "checked-official-bibliography"
+sources = ["notitiae-book-bibliography-1985"]
+qualification = "24-page TPV typical edition; decree 7 March 1965. Distinct from 1955 reform and its 1956 book; not an entire missal."
+date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
+
+[[candidates]]
+id = "roman-concelebration-1965"
+family = "roman"
+title = "Ritus servandus in concelebratione Missae et Ritus Communionis sub utraque specie"
+date = "1965"
+kind = "supplementary-typical-edition"
+status = "checked-official-bibliography"
+sources = ["notitiae-book-bibliography-1985"]
+qualification = "104-page TPV book; 7 March 1965 decree in bibliography. Eucharistic service supplement, not entire missal."
+date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
+
+[[candidates]]
+id = "roman-variationes-1967"
+family = "roman"
+title = "Variationes in Ordinem Missae inducendae"
+date = "1967"
+kind = "amendment-booklet"
+status = "checked-official-bibliography"
+sources = ["notitiae-book-bibliography-1985"]
+qualification = "40-page TPV booklet implementing instruction of 4 May 1967. Track revision event and book separately."
+date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
+
+[[candidates]]
+id = "roman-preces-1968"
+family = "roman"
+title = "Preces eucharisticae et praefationes"
+date = "1968"
+kind = "supplementary-eucharistic-book"
+status = "checked-official-bibliography"
+sources = ["notitiae-book-bibliography-1985"]
+qualification = "54-page TPV publication, decree 23 May 1968; precedes 1969/1970 full reform."
+date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
+
+[[candidates]]
+id = "roman-zaire-1988"
+family = "roman-zaire-adaptation"
+title = "Missel romain pour les dioceses du Zaire"
+date = "1988"
+kind = "authorized-adaptation"
+status = "checked-official-retrospective-notice"
+sources = ["zaire-official-retrospect"]
+qualification = "Approval dated 30 April 1988. Not simply a French translation; exact book, edition history, promulgation and current state require further work."
+date_role = "approval year; exact book publication not established here"
+
+[[candidates]]
+id = "divine-worship-2015"
+family = "roman-ordinariate-adaptation"
+title = "Divine Worship: The Missal"
+date = "2015"
+effective_from = "2015-11-29"
+kind = "authorized-adaptation"
+status = "checked-official-publication-notice"
+sources = ["ordinariate-dwm"]
+qualification = "Substantive Roman adaptation with Anglican patrimony. Record as current Catholic book, with Anglican sources as contextual influences, not a separate sui iuris Church or translation of one Roman edition."
+date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
+
+[[candidates]]
+id = "book-divine-worship-predecessor"
+family = "roman-ordinariate-adaptation"
+title = "Book of Divine Worship, Eucharistic provision"
+kind = "predecessor-book"
+status = "checked-existence-year-unresolved"
+sources = ["ordinariate-dwm"]
+qualification = "2015 notice confirms replacement of predecessor Eucharistic texts; its original dates/editions not established in this pass."
+date_status = "unresolved"
+date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
+
+[[candidates]]
+id = "ambrosian-1475"
+family = "ambrosian"
+title = "Missale Ambrosianum, editio princeps"
+date = "1475-03-23"
+kind = "early-printed-witness"
+status = "recorded-existing-audit"
+route = "https://digi.vatlib.it/view/Inc.III.420"
+qualification = "Existing audit reports Vatican Inc.III.420, ISTC im00644100. Original not inspected in this pass; distinctness from later 1499 witness requires content-aware study."
+existing_record = "missale-ambrosianum"
+existing_inventory = "src/sources/inventories/missal-acquisition-audit-v1.toml"
+date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
+
+[[candidates]]
+id = "ambrosian-1751-1902"
+family = "ambrosian"
+title = "Pozzobonelli 1751 and typical 1902 states"
+date = "1751/1902"
+kind = "two-recension-candidates"
+status = "recorded-existing-audit"
+route = "https://gallica.bnf.fr/ark:/12148/bpt6k15031331"
+qualification = "1913 Ratti/Magistretti Missale Ambrosianum duplex collates these states for Proprium de tempore. 1913 is critical-publication date, not a third liturgical recension. Split into individual records after examination."
+existing_record = "missale-ambrosianum"
+existing_inventory = "src/sources/inventories/missal-acquisition-audit-v1.toml"
+date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
+
+[[candidates]]
+id = "ambrosian-1976"
+family = "ambrosian"
+title = "Messale Ambrosiano, first postconciliar Italian edition"
+date = "1976"
+kind = "reformed-edition"
+status = "checked-official-publisher-notice"
+sources = ["milan-publisher-2024"]
+qualification = "Publisher identifies first Italian edition. Earlier approval dates in the acquisition audit were not checked here."
+date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
+
+[[candidates]]
+id = "ambrosian-1981-latin"
+family = "ambrosian"
+title = "Missale Ambrosianum, Latin publication"
+date = "1981"
+kind = "language-expression"
+status = "recorded-existing-audit"
+qualification = "Existing inventory reports Latin publication and Martini decree. Must not automatically treat its later print date as a new recension replacing Italian 1976. Do not use unofficial IA upload as text exemplar."
+existing_record = "missale-ambrosianum"
+existing_inventory = "src/sources/inventories/missal-acquisition-audit-v1.toml"
+date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
+
+[[candidates]]
+id = "ambrosian-1990"
+family = "ambrosian"
+title = "Messale Ambrosiano, updated printing"
+date = "1990"
+kind = "emended-edition-candidate"
+status = "checked-official-publisher-notice"
+sources = ["milan-publisher-2024"]
+qualification = "Publisher identifies an update. Material changes and normative status need examination."
+date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
+
+[[candidates]]
+id = "ambrosian-2008-lectionary"
+family = "ambrosian"
+title = "Lezionario Ambrosiano"
+date = "2008"
+kind = "lectionary-reform"
+status = "checked-official-publisher-retrospect"
+sources = ["milan-publisher-2024"]
+qualification = "Separate companion book; its arrangement affects the later missal. Not a 2008 missal edition."
+date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
+
+[[candidates]]
+id = "ambrosian-2020-ordo"
+family = "ambrosian"
+title = "Updated Rito della Messa"
+date = "2020"
+kind = "partial-rite-update"
+status = "checked-official-publisher-retrospect"
+sources = ["milan-publisher-2024"]
+qualification = "Order changes previously appeared separately and enter the 2024 edition. Exact supplement identity remains open."
+date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
+
+[[candidates]]
+id = "ambrosian-2024"
+family = "ambrosian"
+title = "Messale Ambrosiano, seconda edizione italiana"
+date = "2024"
+effective_from = "2024-11-17"
+kind = "revised-edition"
+status = "checked-official-publisher-notice"
+sources = ["milan-publisher-2024", "milan-current-landing"]
+qualification = "Substantial revision; ISBN 9788868946821, 1608 pages. Existing acquisition audit records consultation PDFs with an explicit publisher reservation; no permission to republish their text is inferred."
+date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
+existing_inventory = "src/sources/inventories/missal-acquisition-audit-v1.toml"
+existing_record = "missale-ambrosianum"
+
+[[candidates]]
+id = "mozarabic-1500"
+family = "hispano-mozarabic"
+title = "Missale mixtum, Cisneros/Ortiz edition"
+date = "1500-01-09"
+kind = "early-printed-edition"
+status = "recorded-existing-audit"
+route = "https://gallica.bnf.fr/ark:/12148/bpt6k8728875t"
+qualification = "Existing audit identifies editio princeps and checked catalogue/IIIF. Missing from act-line stations despite acquisition record; no new verification here."
+existing_record = "missale-mozarabicum"
+existing_inventory = "src/sources/inventories/missal-acquisition-audit-v1.toml"
+date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
+
+[[candidates]]
+id = "mozarabic-1804"
+family = "hispano-mozarabic"
+title = "Missale Gothicum in usum Mozarabum, Lorenzana"
+date = "1804"
+kind = "edition-candidate"
+status = "recorded-lead"
+route = "https://www.digitale-sammlungen.de/en/view/bsb10869679"
+qualification = "Existing audit reports BSB identifier. Exact publication role and material differences from Cisneros/Lesley not established; do not treat editorial apparatus alone as liturgical reform."
+existing_record = "missale-mozarabicum"
+existing_inventory = "src/sources/inventories/missal-acquisition-audit-v1.toml"
+date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
+route_status = "locator inferred from existing BSB identifier; not opened in this pass"
+
+[[candidates]]
+id = "hispano-mozarabic-1991-1994"
+family = "hispano-mozarabic"
+title = "Missale Hispano-Mozarabicum I-II"
+date = "1991/1994"
+kind = "reformed-two-volume-edition"
+status = "checked-retrospective-publication-account"
+sources = ["toledo-mozarabic-retrospect", "upsa-mozarabic-1991"]
+qualification = "I = liturgical year (1991); II = saints and Masses for circumstances (1994). Complementary volumes, not a 1994 replacement for the 1991 recension. Exact decree witnesses still needed."
+date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
+
+[[candidates]]
+id = "mozarabic-liber-commicus-1994-1995"
+family = "hispano-mozarabic"
+title = "Liber commicus I-II"
+date = "1994/1995"
+kind = "lectionary-companion"
+status = "checked-retrospective-account-with-date-leads-conflicting"
+sources = ["toledo-mozarabic-retrospect"]
+qualification = "Cardinal document site gives these years; other search leads give 1991/1996. Carry conflict until title pages checked. Not another missal recension."
+date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
+
+[[candidates]]
+id = "mozarabic-spanish-ordo-1992"
+family = "hispano-mozarabic"
+title = "Spanish Ordo Missae confirmation"
+date = "1992-05-29"
+kind = "translation-approval"
+status = "checked-official-bulletin-rendering"
+sources = ["cee-spanish-ordo-1992"]
+qualification = "Confirmed Spanish Order of Mass only; not entire Spanish missal, not a new Latin recension. Do not conflate with 1991 Liber Offerentium mention."
+date_role = "translation confirmation date; not book publication"
+
+[[candidates]]
+id = "braga-1498"
+family = "braga"
+title = "Missale Bracarense, earliest printing candidate"
+date = "1498-06-20"
+kind = "early-printed-witness"
+status = "recorded-lead"
+qualification = "Existing audit reports Lisbon, ISTC im00652000, four copies and no facsimile located in its search. Not searched freshly here."
+existing_record = "missale-bracarense"
+existing_inventory = "src/sources/inventories/missal-acquisition-audit-v1.toml"
+date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
+
+[[candidates]]
+id = "braga-1538"
+family = "braga"
+title = "Missale Bracarense, Lisbon, Germao Galharde"
+date = "1538"
+kind = "printed-witness-candidate"
+status = "recorded-lead-access-rechecked-blocked"
+route = "https://purl.pt/14877"
+qualification = "BNP RES-1633-A in existing audit; direct web open returned 403. No change to evidence ceiling."
+existing_record = "missale-bracarense"
+existing_inventory = "src/sources/inventories/missal-acquisition-audit-v1.toml"
+date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
+
+[[candidates]]
+id = "braga-1558"
+family = "braga"
+title = "Missale juxta usum et ordinem Almae Bracarensis Ecclesiae"
+date = "1558"
+kind = "printed-witness-candidate"
+status = "recorded-existing-audit"
+route = "https://gallica.bnf.fr/ark:/12148/bpt6k993722f"
+qualification = "Existing audit/act-history verification notes identify title and Limpo preface. Distinct liturgical recension beyond 1924 comparison remains unestablished."
+existing_record = "missale-bracarense"
+existing_inventory = "src/sources/inventories/missal-acquisition-audit-v1.toml"
+date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
+
+[[candidates]]
+id = "dominican-1933-1939-1965"
+family = "dominican"
+title = "Missale S.O.P., 1933/1939/1965 witnesses"
+date = "1933/1939/1965"
+kind = "edition-candidate-cluster"
+status = "checked-order-archive-catalogue"
+sources = ["dominican-order-archives"]
+qualification = "Archive confirms dated holdings; changes among three dates not verified. Split only after edition and revision checks; do not count three automatic recensions."
+date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
+
+[[candidates]]
+id = "carthusian-1981"
+family = "carthusian"
+title = "Missale Cartusiense"
+date = "1981"
+kind = "reformed-edition-candidate"
+status = "mixed-official-recognition-bibliographic-date-lead"
+sources = ["carthusians-official", "carthusian-bibliography"]
+qualification = "Official order confirms recognized missal, bibliography supplies 1981 identity. Join is provisional pending edition front matter. 1982 English and other language books should be expressions, not automatic Latin reforms."
+date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
+
+[[candidates]]
+id = "cistercian-1657"
+family = "cistercian"
+title = "Missale cisterciense juxta romani recogniti correctionem"
+date = "1657"
+kind = "revised-order-missal-candidate"
+status = "checked-digitized-book-metadata"
+sources = ["cistercian-1657-google", "cistercian-1657-fides"]
+qualification = "Entire order family missing from existing 17-line history. Title explicitly refers to Roman correction; exact chapter authority and departure content await inspection."
+date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
+
+[[candidates]]
+id = "hereford-1502"
+family = "historic-hereford-use"
+title = "Missale Herfordense"
+date = "1502"
+kind = "historic-local-use-witness"
+status = "checked-research-catalogue"
+sources = ["hereford-usuarium"]
+qualification = "Historical ancestry/context, not current independent Catholic rite. Two same-year database records not evidence for two recensions."
+date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
+
+[[candidates]]
+id = "old-gelasian-reg-lat-316"
+family = "western-sacramentary-context"
+title = "Sacramentarium Gelasianum, Vatican Reg.lat.316"
+date = "eighth-century (catalogue)"
+kind = "manuscript-witness"
+status = "catalogue-lead-viewer-opened"
+sources = ["gelasian-vatican"]
+qualification = "Sacramentary, not plenary missal. Manuscript dating separate from composition/strata; no papal authorship or linear ancestor relationship asserted."
+date_role = "manuscript dating; not composition date"
+
+[[candidates]]
+id = "gregorian-hadrianum-cambrai164"
+family = "roman-frankish-sacramentary-context"
+title = "Gregorian Hadrianum tradition, Cambrai MS164(159)"
+date = "early-ninth-century witness; precise dating disputed"
+kind = "manuscript-tradition-witness"
+status = "checked-research-catalogue"
+sources = ["gregorian-usuarium", "gregorian-hamburg"]
+qualification = "Do not identify 790-800 master-copy conjecture with codex date; catalogue disagreement 811/812 versus 812/813 versus later paleographic dating. Critical edition 1921 is separate witness apparatus. No direct descent into every Western rite asserted."
+date_role = "manuscript dating; not composition date"
+
+[[existing_history_review_flags]]
+issue = "Existing text calls Migne a reprint of Lesley while making it a printed station. New catalogue should classify it as witness/critical republication unless material liturgical revision is shown; preserve underlying existing record rather than silently changing it."
+record_or_topic = "mozarabicum-migne-1862"
+inventory = "src/sources/inventories/latin-missal-acts-v1.toml"
+
+[[existing_history_review_flags]]
+issue = "Chronological/use continuity is not textual descent. Early same-use printings may be bibliographically distinct without materially different liturgy."
+record_or_topic = "all-use-continuity-edges"
+inventory = "src/sources/inventories/latin-missal-acts-v1.toml"
+
+[[existing_history_review_flags]]
+issue = "Council directives, permission legislation, calendar changes and full missal editions are different event types. Do not derive book-version counts from act count."
+record_or_topic = "typica-act-line"
+inventory = "src/sources/inventories/latin-missal-acts-v1.toml"
+
+[[existing_history_review_flags]]
+issue = "Promulgation in 2000 and book publication in 2002 need separate dates/objects; 1971 and 2008 emended reprints deserve revision-level assessment, not automatic new typical-edition ordinals."
+record_or_topic = "2000-third-typical-edition"
+inventory = "src/sources/inventories/latin-missal-acts-v1.toml"
