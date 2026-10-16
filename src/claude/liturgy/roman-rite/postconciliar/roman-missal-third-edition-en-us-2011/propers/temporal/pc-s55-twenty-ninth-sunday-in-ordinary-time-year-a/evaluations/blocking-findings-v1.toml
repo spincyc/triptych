@@ -1,0 +1,96 @@
+# Blocking findings standing against this publication, the
+# verdicts its evaluation lanes reached, and the observations
+# they recorded outside their own criteria. Written by tpt after
+# each evaluation of this leaf.
+#
+# One record, several stages. Every entry names the stage that
+# raised it, [[stages]] says what each stage last said, and an
+# evaluation replaces its own stage's entries and leaves every
+# other stage's alone -- so what the content evaluation found
+# still stands here after the synthesis evaluation has spoken. A
+# stage that looked and found nothing leaves an empty list
+# rather than no entry: "evaluated, nothing stands" and
+# "nobody has looked" are different facts, per stage.
+#
+# The keys directly below these comments describe the write that
+# last touched this file, and count every stage's entries
+# together. They are its summary line. What a given stage found
+# is in that stage's [[stages]] entry and in the entries naming
+# it -- reading the top-level stage as the record's one stage is
+# the mistake this schema exists to stop.
+#
+# It exists because a run's own results live under build/, which
+# is ignored, which `make clean` and `wt tidy` delete without
+# asking, and which nothing preserves between productions.
+#
+# Nothing reads this back into a run. Carrying findings from one
+# production into the next wants doing where the run's identity
+# can cover it -- a committed record, or this file's hash in the
+# run id and the acceptance audit -- and until then this is a
+# record for people.
+#
+# Escalations -- defects in artifacts no stage of the run may
+# write: guidance, the source library, the tools, the workflow --
+# are written here too, from the run's whole ledger, so that the
+# decision they ask of a maintainer outlives the run directory.
+#
+# Accepted findings are true defects a lane judged not worth a
+# repair round, with the reason it judged so. Advisories are
+# defects that did not merit blocking. Both are here because a
+# verdict that dies with the run is met again by the next cold
+# read as though nobody had ever weighed it, and weighed again --
+# which is how a document in good shape spends a whole iteration
+# budget. A later evaluation reads these before it raises.
+
+standing_findings_schema = 4
+record_type = "standing-blocking-findings"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"
+provider = "claude"
+run_id = "4d16b5e19d25dad9"
+workflow = "proper-study"
+workflow_version = 11
+stage = "research-review"
+iteration = 2
+disposition = "PASS"
+standing = 0
+accepted_count = 0
+advisory_count = 2
+observation_count = 2
+
+[[stages]]
+stage = "research-review"
+iteration = 2
+disposition = "PASS"
+run_id = "4d16b5e19d25dad9"
+workflow = "proper-study"
+workflow_version = 11
+standing = 0
+accepted_count = 0
+advisory_count = 2
+observation_count = 2
+
+[[advisories]]
+stage = "research-review"
+id = "RES-014"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/scope.md section 8.3, row 'Composition of the Psalms (`row-6e9c8175463dbd35`)', Source and locus cell ('which this stage could not re-read (section 8.2)'); src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/scope.md section 10, lead 8 ('and its current state'); src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/source-bindings.toml, binding of artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08179b-d4ee13fd-article-text (loci 'line 7' and the 701 sentence)"
+problem = "The third pass re-read the NABRE Psalms introduction. Section 5 records the delivery (74,093 bytes, SHA-256 03234893...); this review re-fetched it byte-identically and found the dating sentence; section 8.2 now relies on it. But section 8.3 still calls it a source 'which this stage could not re-read (section 8.2)', and section 10 lead 8 still lists 'its current state' as outstanding. Likewise, section 8.2 now reports reading Souvay at lines 9 and 11, while the Souvay article-text binding's loci name only line 7 and the 701 sentence. Nothing the studies may print changes, since the planned phrase stays 'Place of composition unknown', but the record contradicts itself about what this research read."
+required_result = "Section 8.3's row says that the label's source was read at the third pass in a current delivery (section 8.2) and names no place of composition. Lead 8 keeps only the registered state of 28 July 2026 as outstanding. The Souvay article-text binding's loci name line 9 and line 11 beside line 7."
+
+[[advisories]]
+stage = "research-review"
+id = "RES-015"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/interpretations.md, Reading 3, 'The strongest difficulty, and how the witnesses meet it', second sentence ('Matthew says only that the Pharisees went and took counsel how to ensnare him in his speech (22:15 ...); the text does not say whether their purpose was known')"
+problem = "Matthew 22:18 says that Jesus knew their wickedness: Douay 'But Jesus knowing their wickedness' (47-matthew.tsv line 746); Clementine 'Cognita autem Jesus nequitia eorum'. Those are the words that prompt this difficulty. Jerome's 'Prima virtus est respondentis ...' (PL 26 col. 163, page image) and Aquinas's 'Et primo respondet ad mentem eorum ... Dei autem respondere ad mentem' (Venice p. 283, page image) are each written under that lemma. The paragraph instead anchors the question in 22:15 and says that 'the text does not say whether their purpose was known'. That means known to others beforehand, but read plainly it contradicts v. 18. A study following it could write that Matthew is silent on whether their purpose was known."
+required_result = "The paragraph anchors the question in 22:18 ('knowing their wickedness', cognita ... nequitia eorum), the lemma under which Jerome and Aquinas write. It says only that the text does not say whether anyone else knew their purpose beforehand. The rest of the RES-009 repair stays as it stands."
+
+[[observations]]
+stage = "research-review"
+location = "scripts/_proper_chronology.py, orientation builder line 1465 (element.key.startswith(\"gospel\")) against the detailed-annotation path line 1292 (element.key == \"gospel\")"
+note = "Still present. Any postconciliar orientation-v1 leaf that keys its acclamation 'gospel-acclamation' gets a narrated-event row for that element; this leaf avoided it only by re-keying (scope.md 8.1). The defect is in a shared tool that no stage of this run may repair, and no generator test criterion covers it."
+
+[[observations]]
+stage = "research-review"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/context.md, branch row mass-for-evangelization-of-peoples (line 294) and the closing note at line 425"
+note = "The branch stays conditional and not supplied, and no dated witness was sought for a mission observance on 18 October 2026. Line 425 rightly requires one before any study mentions such an observance. Recorded again so that the standing record keeps the sighting the earlier rounds made."

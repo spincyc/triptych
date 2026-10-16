@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.usccb-chapter-ii-html-2026-10-16-d10afff3"
+edition_id = "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021"
+artifact_type = "official-html-chapter"
+media_type = "text/html"
+storage = "restricted"
+rights_status = "restricted"
+rights_basis = "Official USCCB presentation identifies protected ICEL text and USCCB adaptations; no permission for repository redistribution established. Exact bytes identified, no tracked payload."
+source_url = "https://www.usccb.org/prayer-and-worship/the-mass/general-instruction-of-the-roman-missal/girm-chapter-2"
+provenance = "Complete HTML acquired directly over verified HTTPS with browser request headers on 2026-10-16 by the context-resolution stage of the Claude PC-S55-A proper-study production, after a bare request had answered HTTP 403, and hashed locally; no model mediated the retrieved bytes. The bytes matched no registered Chapter II state. Registered on the same date by that production's research stage from the SHA-256 and byte size the context stage recorded; the research stage's own requests for this page that day were answered with an HTTP 403 challenge page of 15,748 bytes, so it holds no copy and did not re-read this state."
+retrieved = "2026-10-16"
+sha256 = "d10afff3888adfe8a0f397a792f5d07d941043f4d031fd89a492917facb580f1"
+byte_size = 109916
+indexable = false
+notes = "Chapter II. Numbered rubric loci 48, 51, 53, 61-63, 68, 74 and 87 inspected by the context-resolution stage of the Claude PC-S55-A production for its branch audit; no full-chapter image collation claimed. The protected English is described in that leaf's records, not retained."
