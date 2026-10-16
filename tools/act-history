@@ -123,7 +123,8 @@ MAP_SCHEMA = "triptych-act-map/v1"
 # The manifest naming the slices that are there, beside the files it names.
 MAP_MANIFEST = "index.json"
 
-# The slice the history page opens on, DECLARED rather than fallen into.
+# The default slice within the legacy act-network view, explicitly declared.
+# The page's chronological book-stage view has its own source-owned default.
 #
 # Sorted order would land a reader on `code-of-canon-law`, and alphabetical luck
 # is not a reason. The reason is that `latin-missal` is the only slice held here
@@ -138,12 +139,12 @@ MAP_MANIFEST = "index.json"
 # other slice here uses.
 #
 # `roman-holy-week` is deeper in text per act and shows a reader a straight
-# track: twelve stations, two lines, one fork, one merge. A reader who opens the
-# page on it learns that this is a timeline, which is the one thing it is not.
+# track: twelve stations, two lines, one fork, one merge. Its compact act network
+# does not represent the separate chronological book-stage history.
 #
 # Revisable here and nowhere else. The page reads the name out of the manifest
-# and never infers it from row order, so changing this line moves the landing
-# slice and changing the order of the rows does not.
+# and never infers it from row order, so changing this line moves the legacy
+# view's default slice and changing the order of the rows does not.
 LANDING_SLICE = "latin-missal"
 
 # guidance/recensions.md section 3. A departure that is not one of these is a
@@ -385,7 +386,7 @@ EXAMPLES = {
         Example(
             "tools/act-history catalogue --out .scratch/history-engine-expansion/example-catalogue.json",
             (
-                "wrote: 243 catalogue records",
+                "wrote: 259 catalogue records",
                 "  -> .scratch/history-engine-expansion/example-catalogue.json",
             ),
             note="Derived discovery records; no new normative station or ancestry is admitted.",
@@ -395,7 +396,7 @@ EXAMPLES = {
         Example(
             "tools/act-history corpus --out .scratch/history-engine-expansion/example-corpus",
             (
-                "wrote 1194 text units on 9 isolated reconstruction branches to .scratch/history-engine-expansion/example-corpus",
+                "wrote 1204 text units on 15 isolated reconstruction branches to .scratch/history-engine-expansion/example-corpus",
             ),
             note="Writes a disposable bare repository with isolated, bounded reconstructions; no historical ancestry is asserted.",
         ),
@@ -404,7 +405,7 @@ EXAMPLES = {
         Example(
             "tools/act-history structure --check",
             (
-                "current: 526 files for 3 slices, 118 stations on 23 lines",
+                "current: 531 files for 3 slices, 118 stations on 23 lines",
                 "  -> <repo>/src/web/data/structure/act-history",
             ),
             note=(

@@ -1,0 +1,21 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.google-pdf-9faf9690"
+edition_id = "edition.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda"
+artifact_type = "facsimile-pdf-derivative"
+media_type = "application/pdf"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "United States: the 1642,1677 and 1823 printings are public domain by their publication dates; their historical text and typography are not offered under Triptych's CC BY 4.0. These are mechanical facsimile page images, with no modern edition or authored annotation added. U.S. Copyright Office Compendium §313.4(A), Chapter 300 pp 26–27 (https://www.copyright.gov/comp3/chap300/ch300-copyrightable-authorship.pdf, checked 2026-10-16), treats scanning a literary work as a mere copy without new copyright. Google Books Terms of Service §2 (https://books.google.com/intl/en/googlebooks/tos.html, checked 2026-10-16) preserves uses permitted under the U.S. Copyright Act. All Google stamps and source marks remain unchanged; any Google notice is treated under src/sources/inventories/google-usage-guidelines-rights-v 1.toml and is not historical book text. No claim is made for other jurisdictions or for a Google-granted general redistribution license."
+rights_jurisdiction = "United States"
+source_url = "https://books.google.com/books?id=ct5lAAAAcAAJ"
+provenance = "Exact public Google Books page-image deliveries acquired 2026-10-16. Repository alias check covered Ordo divinae missae Armenorum, Liturgia/Lyturgia Armena, Codex mysterii missae Armenorum, Ministerium Missae and Armenian titles across work/edition/artifact records; only the unrelated 1905 Rituale Armenorum existed. Image IDs and hashes are enumerated in the retained ZIP sequence.json; both artifacts preserve the same provider order."
+retrieved = "2026-10-16"
+sha256 = "9faf9690874ce2797d0cf1e7344711dbf2e76da33082488e0685e881e2d5a8bc"
+byte_size = 13691171
+path = "src/sources/works/armenian-church/ordo-divinae-missae-armenorum/editions/1642-rome-propaganda/artifacts/google-pdf-9faf9690/1642-google-pages.pdf"
+indexable = false
+notes = "148 of 148 pages in the provider roster: PP 1–PP 12, PA 1–PA 132, PT 1–PT 4. Provider PA 77–PA 80 precede PA 73–PA 76. No missing or failed roster IDs. Physical-volume completeness is unverified. Title and stated boundary images were inspected; acquisition and structural integrity do not imply full textual reading. No OCR or transcription is included. Original .jpg filenames may contain PNG bytes, identified explicitly in sequence.json. Google digitizer attribution is retained on the image feet; no additional Google front-matter page is inserted or counted as part of the historical work. All 332 retained source images passed declared byte-size and SHA-256 verification. Independent Poppler extraction recovered 251 JPEG streams byte-identically and 81 PNG images with decoded pixels identical to their exact originals across the three PDF derivatives; artifact page counts matched 148,96 and 88."
+page_count = 148
+derived_from = "artifact.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.google-images-e1392a80"
+transformation = "Read images in sequence.json order from the exact parent ZIP. Embed JPEG bytes unchanged in PDF DCTDecode image streams. For noninterlaced 8-bit grayscale/RGB PNG images, concatenate original IDAT chunks unchanged into PDF FlateDecode image streams with PNG predictor 15; retain image dimensions/color channels and all visible marks. One image fills one PDF page, page dimensions in points equal source pixel dimensions. No cropping, scaling, color conversion, resampling, OCR, reordering or textual alteration. PNG wrappers and all exact original files remain in the parent ZIP; PDF is a pixel-lossless derivative, not an exact provider PDF."

@@ -1,0 +1,1366 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-stages",
+  "dossier_id": "roman-stages",
+  "title": "Roman missal states: bounded book and component revisions",
+  "traditions": [
+    {
+      "id": "roman-stages-curial",
+      "label": "Roman-curial missal and ceremonial witnesses",
+      "family": "Roman",
+      "scope": "Latin curial books and bounded ceremonial components before the 1570 Roman Missal revision.",
+      "coverage_note": "An attested printed witness does not establish a direct ancestor of the 1570 recension."
+    },
+    {
+      "id": "roman-stages-pian",
+      "label": "Roman Missal: 1570–1962 editions and later supplements",
+      "family": "Roman",
+      "scope": "The 1570 recension and its later revisions, including complementary Holy Week books and the 1962 Canon amendment. The 2020 optional-preface supplement is separately bounded.",
+      "coverage_note": "Intervening calendar, rubrical and printed states are incomplete; no century-long identical text is inferred."
+    },
+    {
+      "id": "roman-stages-postconciliar",
+      "label": "Postconciliar Latin Roman Missal",
+      "family": "Roman",
+      "scope": "Original Latin reform and typical-edition states, with companion lectionary distinguished from the altar book.",
+      "coverage_note": "Independent vernacular histories are deferred. 1969 legislation, 1970 complete book and 2000 approval/2002 printing retain separate roles."
+    }
+  ],
+  "sources": [
+    {
+      "id": "roman-stages-source-lippe",
+      "title": "Lippe, Missale Romanum Mediolani 1474, volume I (1899)",
+      "url": "https://archive.org/download/missaleromanumme01cath/missaleromanumme01cath.pdf",
+      "kind": "critical-edition",
+      "inspection": "Read rendered PDF 11 (preface), 15 (introduction ix), 35 (edited opening p 1); inspected explanatory text PDF 13–15.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "A critical edition, not direct examination of the 1474 copy; editorial additions and supplied lacunae are distinguishable."
+    },
+    {
+      "id": "roman-stages-source-legg",
+      "title": "Legg, Tracts on the Mass (1904)",
+      "url": "https://archive.org/download/tractsonmass00leggrich/tractsonmass00leggrich.pdf",
+      "kind": "critical-edition",
+      "inspection": "Read page images of printed xxvi–xxvii, PDF 34–35, identifying 1501 and 1502 recensions and concrete expansion; earlier review read comparative notes 249–250.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Scholarly comparison, not new full collation. Do not repeat the outdated claim that 1502 was the first standalone edition."
+    },
+    {
+      "id": "roman-stages-source-ocarroll",
+      "title": "Maura O’Carroll, Dominican Liturgy in the Thirteenth Century (1979)",
+      "url": "https://heyjoe.fbk.eu/index.php/afp/article/download/8504/8505/8506",
+      "kind": "scholarship",
+      "inspection": "Previously inspected rendered article pp 80–84 and pericope comparisons in this research lane; cites Haymo presentation 1243 and critical editions.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Exact Haymo manuscript-state and implementation remain unestablished here."
+    },
+    {
+      "id": "roman-stages-source-pian-witness",
+      "title": "Pałęcki, Carthusian Mass comparison (2015)",
+      "url": "https://repozytorium.kul.pl/bitstreams/1781a58a-e2ce-4358-bc6f-fc4d9ff9f2c2/download",
+      "kind": "scholarship",
+      "inspection": "Previously inspected printed 114 n 22 and 120–122; exact Rome 1570 Faletti/Varisco comparator and bounded Canon differences.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Original 1570 Rome copy not independently acquired; no full Roman/medieval collation."
+    },
+    {
+      "id": "roman-stages-source-1604",
+      "title": "Missale Romanum, Rome: Typographia Vaticana 1604",
+      "url": "https://archive.org/download/bub_gb_aaPpAuHRY9IC/bub_gb_aaPpAuHRY9IC.pdf",
+      "kind": "primary-book",
+      "inspection": "Downloaded original scan for research; page images PDF 5 title and 9 Cum sanctissimum read.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Google digitization research-only; no new retained-publication permission inferred. Constitution describes correction policy, not an exhaustive before/after apparatus."
+    },
+    {
+      "id": "roman-stages-source-1634",
+      "title": "Urban VIII, Si quid est (1634), reprinted in 1962 missal",
+      "url": "https://media.churchmusicassociation.org/pdf/missale62.pdf",
+      "kind": "primary-act",
+      "inspection": "Read page image PDF 6: revision description and 2 September 1634 dateline.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Later facsimile witness of the act; original 1634 book not examined."
+    },
+    {
+      "id": "roman-stages-source-1920",
+      "title": "Decretum approbationis editionis typicae Vaticanae (1920), in 2004 reprint",
+      "url": "https://archive.org/download/MissaleRomanum1920/MissaleRomanum1920.pdf",
+      "kind": "primary-act",
+      "inspection": "Read rendered PDF 3, printed 3*, including 1900 baseline, appendix and 25 July 1920 dateline.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "This is the identified 2004 Bonn Aedibus Palmarum reimpressio, not an original 1920 printing. Its bibliographic identity is canonical; no proof all body readings equal 1920."
+    },
+    {
+      "id": "roman-stages-source-1955",
+      "title": "Maxima redemptionis nostrae mysteria, AAS 47 (1955) 838–841",
+      "url": "https://www.vatican.va/archive/aas/documents/AAS-47-1955-ocr.pdf",
+      "kind": "primary-act",
+      "inspection": "Downloaded official PDF and read page images 838–841, including §§ 1–2 and 6–9.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Describes prescribed Holy Week state and effective date; complete 1956 service book not transcribed or page-collated here."
+    },
+    {
+      "id": "roman-stages-source-1960",
+      "title": "John XXIII, Rubricarum instructum (25 July 1960)",
+      "url": "https://www.vatican.va/content/john-xxiii/la/motu_proprio/documents/hf_j-xxiii_motu-proprio_19600725_rubricarum-instructum.html",
+      "kind": "primary-act",
+      "inspection": "Read official Latin HTML, especially numbered 1–6 and dateline.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Approves/replaces rubrical corpus; individual rubrical differences require code comparison."
+    },
+    {
+      "id": "roman-stages-source-1962",
+      "title": "Missale Romanum 1962: June decree and later amended Canon in the available Vatican facsimile",
+      "url": "https://media.churchmusicassociation.org/pdf/missale62.pdf",
+      "kind": "primary-book",
+      "inspection": "Read decree image PDF 2 and front-matter headings via text locator; source identity is existing canonical Vatican facsimile, not Benziger. Rendered printed p. 302/PDF 383 also inspected: the Communicantes already includes Joseph.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Decree itself prints 23 July 1960 when referring to Rubricarum instructum; official act is 25 July. No silent correction. June book and later Canon amendment separated. This digital witness’s Canon is consequently not an unchanged June 1962 body; its retained June decree attests that earlier approval, while its body witnesses the subsequent amendment. Exact impression date remains unestablished."
+    },
+    {
+      "id": "roman-stages-source-joseph",
+      "title": "SCR, De S.Ioseph nomine Canoni Missae inserendo, AAS 54 (1962) 873",
+      "url": "https://www.vatican.va/archive/aas/documents/AAS-54-1962-ocr.pdf",
+      "kind": "primary-act",
+      "inspection": "Read original official page image 873: 13 November decree, 8 December effective date, insertion and proper Communicantes rule.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Amendment to a book state, not a separate complete missal printing."
+    },
+    {
+      "id": "roman-stages-source-1969",
+      "title": "Paul VI, Missale Romanum (3 April 1969)",
+      "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html",
+      "kind": "primary-act",
+      "inspection": "Read official constitution, new Eucharistic Prayers, Order, readings, propers and 30 November 1969 effective clause.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "English official translation used for description of Latin reform, not copied as prayer text; no territorial implementation inference."
+    },
+    {
+      "id": "roman-stages-source-1970-2002",
+      "title": "Missale Romanum, editio typica tertia 2002, constituent decrees",
+      "url": "https://media.musicasacra.com/books/latin_missal2002.pdf",
+      "kind": "primary-book",
+      "inspection": "Downloaded existing identified secondary digitally typeset witness; page images PDF 2–3 read for 1975 and third-edition decrees; title/publication list and 1970 decree read in PDF text. Also inspected rendered PDF 370, Ordo Missae § 144, for the existing dismissal formula.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Secondary reproduction, not original printed page scan. 2000 approval/decree and stated effective clause are not 2002 publication; no full modern body import."
+    },
+    {
+      "id": "roman-stages-source-2008",
+      "title": "Notitiae 44 (2008) 503–504, reprint notice and variations",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/2000/notitiae-44-(2008)/Notitiae-503-504-2008.pdf",
+      "kind": "official-retrospective",
+      "inspection": "Downloaded official PDF; read page images 49–50, printed 367–368, for status and bounded changes.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Official contemporaneous notice/list, not complete 2008 altar book. Only named changes, no exhaustive text collation."
+    },
+    {
+      "id": "roman-stages-source-2013",
+      "title": "Paternas vices: Latin decree dated 1 May 2013, published 19 June 2013",
+      "url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2013/06/19/0399/00921.html",
+      "kind": "primary-act",
+      "inspection": "Read original Latin section, especially Exinde and Circa textus paragraphs, dateline and bulletin publication header.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Describes exact amendment; no complete 2013 altar-book impression examined."
+    },
+    {
+      "id": "roman-stages-source-2020-prefaces",
+      "title": "Quo magis: Latin decree and seven-preface annex",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20200222_decreto-quo-magis_la.html",
+      "kind": "primary-act",
+      "inspection": "Read Latin decree and all seven annex sections, including their use rubrics; official HTML.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Supplementary texts, not a new complete missal; no modern prayer bodies imported."
+    },
+    {
+      "id": "roman-stages-source-2020-prefaces-note",
+      "title": "Official explanatory note on the seven additional prefaces",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20200222_nota-decreto-quomagis_en.html",
+      "kind": "official-retrospective",
+      "inspection": "Read paragraphs on optional use, four postconciliar sources, three formerly local prefaces, and retained earlier concessions.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Official explanation of repertoire and scope; no exact donor-edition collation or claim of newly composed prayers."
+    }
+  ],
+  "stages": [
+    {
+      "id": "roman-stages-haymo",
+      "tradition_id": "roman-stages-curial",
+      "label": "Haymo-associated missal ordinal",
+      "date_label": "1243 presentation reported",
+      "start_year": 1243,
+      "end_year": 1243,
+      "date_kind": "attestation",
+      "status": "provisional",
+      "scope": "Ordinal redaction, not a whole surviving uniform missal.",
+      "components": [
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:haymo-curial-ordinal"
+      ],
+      "witness_label": "Ordo Missalis associated with Haymo; critical editions cited by O’Carroll",
+      "summary": "Reported chapter presentation of the Franciscan-curial ordinal.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-ocarroll",
+          "locus": "pp 82–84",
+          "claim": "1243 presentation and critical-edition identification."
+        }
+      ],
+      "limitations": "Exact component redaction, authorship and community implementation require further witness study.",
+      "reception": "Latin Roman use; no claim that every local church used this exact printing."
+    },
+    {
+      "id": "roman-stages-1474",
+      "tradition_id": "roman-stages-curial",
+      "label": "Printed Roman-curial missal",
+      "date_label": "1474",
+      "start_year": 1474,
+      "end_year": 1474,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Identified 1474 printed witness mediated by critical edition.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "rubrics",
+        "calendar",
+        "lectionary"
+      ],
+      "witness_ids": [
+        "western:roman-1474"
+      ],
+      "witness_label": "Milan 1474, Ambrosiana S.Q.N.III.14 as described in Lippe 1899",
+      "summary": "Opening expressly names Roman-curial use; contains Mass propers and Canon.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-lippe",
+          "locus": "preface; introduction ix; edited p 1",
+          "claim": "Identifies 1474 copy and Roman-curial opening."
+        }
+      ],
+      "limitations": "Not Ambrosian rite. Critical publication 1899 is not state date; supplied lacunae and expanded abbreviations are editorial. No direct Haymo → 1474 or 1474 → 1570 parent asserted.",
+      "reception": "Latin Roman use; no claim that every local church used this exact printing."
+    },
+    {
+      "id": "roman-stages-1501",
+      "tradition_id": "roman-stages-curial",
+      "label": "Short Burchard ceremonial",
+      "date_label": "1501",
+      "start_year": 1501,
+      "end_year": 1501,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Bounded introductory ceremonial.",
+      "components": [
+        "ordinary",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:roman-1501-liechtenstein-burchard"
+      ],
+      "witness_label": "Venice 1501, de Frankford/Liechtenstein–Herzog, BM 3365.a.22",
+      "summary": "Shorter Ordo Missae recension within a Roman missal.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-legg",
+          "locus": "xxvi; PDF 34",
+          "claim": "Exact printer/copy and shorter recension identified."
+        }
+      ],
+      "limitations": "Separate from 1501 Giunta; no claim of a universally promulgated whole-missal revision.",
+      "reception": "Latin Roman use; no claim that every local church used this exact printing."
+    },
+    {
+      "id": "roman-stages-1502",
+      "tradition_id": "roman-stages-curial",
+      "label": "Expanded Burchard ceremonial",
+      "date_label": "1502",
+      "start_year": 1502,
+      "end_year": 1502,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Standalone ceremonial component.",
+      "components": [
+        "ordinary",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:burchard-ordo-1502"
+      ],
+      "witness_label": "Rome 1502 Johann Besicken; BM C.52.d.14",
+      "summary": "Expanded Ordo Missae with substantial added directions.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-legg",
+          "locus": "xxvi–xxvii; PDF 34–35",
+          "claim": "1502 text expanded relative to 1501; explicit examples."
+        }
+      ],
+      "limitations": "Not a complete missal; not claimed first standalone Burchard edition; not proven sole parent of Pian Ritus.",
+      "reception": "Latin Roman use; no claim that every local church used this exact printing."
+    },
+    {
+      "id": "roman-stages-1570",
+      "tradition_id": "roman-stages-pian",
+      "label": "Roman Missal revised under Pius V",
+      "date_label": "1570",
+      "start_year": 1570,
+      "end_year": 1570,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "The promulgated Roman recension, anchored to an identified early printing.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "rubrics",
+        "calendar",
+        "lectionary"
+      ],
+      "witness_ids": [
+        "western:roman-1570-rome-faletti-varisco"
+      ],
+      "witness_label": "Rome 1570, heirs of Bartolomeo Faletti, Joannes Variscus and associates",
+      "summary": "Roman Missal revised under Pius V with ordered ceremonial and Roman Canon.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-pian-witness",
+          "locus": "114 n 22; 120–122",
+          "claim": "Identified 1570 book and Canon comparator."
+        },
+        {
+          "source_id": "roman-stages-source-1604",
+          "locus": "Cum sanctissimum, PDF 9 opening",
+          "claim": "Recites the Pian missal as the book being revised."
+        }
+      ],
+      "limitations": "14 July 1570 Quo primum is an act date, not claimed exact printing day; no full textual delta from 1474 proven. Exempt older uses are not silently incorporated.",
+      "reception": "Roman use subject to Quo primum and its exemptions; no assertion that every Latin use was replaced."
+    },
+    {
+      "id": "roman-stages-1604",
+      "tradition_id": "roman-stages-pian",
+      "label": "Clementine corrected missal",
+      "date_label": "1604",
+      "start_year": 1604,
+      "end_year": 1604,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Vatican recension documented by its actual title and prefatory explanation.",
+      "components": [
+        "propers",
+        "lectionary",
+        "rubrics"
+      ],
+      "witness_ids": [],
+      "witness_label": "Rome, Ex Typographia Vaticana, MDCIIII",
+      "summary": "Corrected textual transmission and fuller, clearer ritual rules.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-1604",
+          "locus": "PDF 5 title; PDF 9 constitution",
+          "claim": "Book identity and emendation rationale."
+        }
+      ],
+      "limitations": "7 July 1604 approval distinct from imprint year. Corrections described by the act, not enumerated here line by line; do not say all liturgical quotations were newly conformed to Vulgate.",
+      "reception": "Latin Roman use; no claim that every local church used this exact printing."
+    },
+    {
+      "id": "roman-stages-1634",
+      "tradition_id": "roman-stages-pian",
+      "label": "Urbanian corrected missal",
+      "date_label": "1634",
+      "start_year": 1634,
+      "end_year": 1634,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Book recension described in its issuing constitution.",
+      "components": [
+        "rubrics",
+        "lectionary",
+        "propers"
+      ],
+      "witness_ids": [],
+      "witness_label": "Missale Romanum ordered for publication under Urban VIII; original 1634 copy not inspected",
+      "summary": "Clarified/restored rubrics and correction of scriptural divergences against Vulgate.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-1634",
+          "locus": "PDF 6 left column and dateline",
+          "claim": "Names prior revisions and describes corrections."
+        }
+      ],
+      "limitations": "2 September 1634 is approval/instrument date. Later reprint witnesses the description, not every 1634 reading; no original 1634 title-page check.",
+      "reception": "Latin Roman use; no claim that every local church used this exact printing."
+    },
+    {
+      "id": "roman-stages-1920",
+      "tradition_id": "roman-stages-pian",
+      "label": "Missal revised under Pius X and Benedict XV",
+      "date_label": "1920",
+      "start_year": 1920,
+      "end_year": 1920,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Identifiable typical-book state; exact original printing not acquired.",
+      "components": [
+        "rubrics",
+        "propers",
+        "calendar"
+      ],
+      "witness_ids": [],
+      "witness_label": "Vatican typical edition 1920, described by decree reproduced in 2004 Bonn reprint",
+      "summary": "1900 baseline adapted to recent prescriptions and Breviary revisions; appendix of approved local Masses.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-1920",
+          "locus": "printed 3*; PDF 3",
+          "claim": "1900 baseline and specific appendix described; 25 July 1920 approval."
+        }
+      ],
+      "limitations": "Neither later composite nor 2004 reprint is an original 1920 impression. 1634 → 1920 is not a proven single transition; intervening editions and prescriptions remain gaps.",
+      "reception": "Latin Roman use; no claim that every local church used this exact printing."
+    },
+    {
+      "id": "roman-stages-1956-holyweek",
+      "tradition_id": "roman-stages-pian",
+      "label": "Reformed Holy Week component",
+      "date_label": "25 March 1956 effective (approved 1955)",
+      "start_year": 1956,
+      "end_year": 1956,
+      "date_kind": "effective",
+      "status": "documented",
+      "scope": "Complementary Ordo Hebdomadae Sanctae Instauratus replacing Holy Week order within Roman usage.",
+      "components": [
+        "ordinary",
+        "rubrics",
+        "propers"
+      ],
+      "witness_ids": [],
+      "witness_label": "Vatican typical restored Holy Week order specified by Maxima redemptionis",
+      "summary": "Triduum moved from morning observance to prescribed evening/afternoon/night times.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-1955",
+          "locus": "838–841; §§ 1–2, 6–9",
+          "claim": "Prescribes revised Ordo and 25 March 1956 commencement."
+        }
+      ],
+      "limitations": "Approval 16 November 1955; effective 25 March 1956. Not an entire 1955/1956 Missale Romanum. Exact service-book printing and full prayer changes need inspection.",
+      "reception": "Roman rite follows revised Ordo; other Latin rites bound by celebration times only, per § 1."
+    },
+    {
+      "id": "roman-stages-1962-june",
+      "tradition_id": "roman-stages-pian",
+      "label": "Typical missal with new rubrical code",
+      "date_label": "23 June 1962 typical declaration",
+      "start_year": 1962,
+      "end_year": 1962,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Whole missal accommodating 1960 code; Holy Week reform is a component.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "rubrics",
+        "calendar",
+        "lectionary"
+      ],
+      "witness_ids": [],
+      "witness_label": "June 1962 typical-book state attested by its decree, retained in the available later-amended Vatican facsimile",
+      "summary": "New general and missal rubrics replace older front-matter code and additions.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-1962",
+          "locus": "PDF 2",
+          "claim": "New edition explicitly accommodated to new code."
+        },
+        {
+          "source_id": "roman-stages-source-1960",
+          "locus": "§§ 1–2, 4–6",
+          "claim": "Code effective 1 January 1961; new editions replace old rubric sections."
+        }
+      ],
+      "limitations": "The June state is not automatically the later December Canon state. Holy Week incorporation is not a fresh full-book collation. Code approval on 25 July 1960 differs from the mistyped 23 July reference in the 1962 decree. No existing target-1962 text projection is bound to this specifically June state. The available facsimile already includes Joseph at printed p. 302/PDF 383, so it does not supply an unchanged June Canon witness.",
+      "reception": "Latin Roman use; no claim that every local church used this exact printing."
+    },
+    {
+      "id": "roman-stages-1962-december",
+      "tradition_id": "roman-stages-pian",
+      "label": "Canon with St Joseph inserted",
+      "date_label": "8 December 1962 effective",
+      "start_year": 1962,
+      "end_year": 1962,
+      "date_kind": "effective",
+      "status": "documented",
+      "scope": "Single amendment to 1962 Canon, including proper Communicantes forms.",
+      "components": [
+        "anaphoras"
+      ],
+      "witness_ids": [],
+      "witness_label": "1962 Missal amended by De S.Ioseph nomine Canoni Missae inserendo",
+      "summary": "St Joseph is named after the Blessed Virgin before the Apostles in Communicantes.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-joseph",
+          "locus": "AAS 54 (1962) 873",
+          "claim": "Exact insertion, extension and 8 December effective date."
+        },
+        {
+          "source_id": "roman-stages-source-1962",
+          "locus": "Printed p. 302/PDF 383, Communicantes",
+          "claim": "The inspected facsimile body contains Joseph at the location prescribed by the November decree; its exact impression date is not established."
+        }
+      ],
+      "limitations": "Decree 13 November 1962, effective 8 December 1962. Not a separately identified complete printing; no new full Canon transcription. The inspected facsimile confirms the amended reading, but is not dated precisely enough to establish when that particular impression appeared.",
+      "reception": "Latin Roman use; no claim that every local church used this exact printing."
+    },
+    {
+      "id": "roman-stages-1969-1970",
+      "tradition_id": "roman-stages-postconciliar",
+      "label": "Reformed Order and first complete typical missal",
+      "date_label": "1970 complete typical missal; 1969 Order and reform separately dated",
+      "start_year": 1970,
+      "end_year": 1970,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Complete 1970 altar-book state, incorporating the 1969 Order and reform; the complementary reading system remains distinguished.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "rubrics",
+        "calendar",
+        "lectionary"
+      ],
+      "witness_ids": [],
+      "witness_label": "Ordo Missae 1969 and Missale Romanum editio typica 1970; complementary publications in one reform state",
+      "summary": "Revised Order, expanded Eucharistic Prayer repertoire and seasonal propers; multi-year readings in companion system.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-1969",
+          "locus": "new-composition paragraphs; final effective clause",
+          "claim": "Describes concrete reform; 30 November 1969 effective."
+        },
+        {
+          "source_id": "roman-stages-source-1970-2002",
+          "locus": "PDF 1 title/publication list and Celebrationis eucharisticae",
+          "claim": "1970 complete typical edition; 26 March 1970 decree."
+        }
+      ],
+      "limitations": "Approval on 3 April 1969 and the reform’s effective date of 30 November 1969 are distinct from publication of the complete book in 1970. The 1965, 1967 and 1968 intermediate changes remain unrepresented; this is a cumulative state, not a claim that every innovation first appeared in 1970. Native Latin scope; no English translation history.",
+      "reception": "Latin Roman use; no claim that every local church used this exact printing."
+    },
+    {
+      "id": "roman-stages-1975",
+      "tradition_id": "roman-stages-postconciliar",
+      "label": "Second typical missal with revised ministries and propers",
+      "date_label": "1975",
+      "start_year": 1975,
+      "end_year": 1975,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Second complete Latin typical edition as described by its issuing decree.",
+      "components": [
+        "rubrics",
+        "propers"
+      ],
+      "witness_ids": [],
+      "witness_label": "Missale Romanum editio typica altera 1975",
+      "summary": "Revises ministry descriptions and supplements ritual/votive formularies.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-1970-2002",
+          "locus": "De editione typica altera, PDF 2",
+          "claim": "Enumerated revisions; decree 27 March 1975."
+        }
+      ],
+      "limitations": "Complete 1975 altar-book witness not acquired; decree reprinted in 2002 proves bounded changes, not whole-book collation.",
+      "reception": "Latin Roman use; no claim that every local church used this exact printing."
+    },
+    {
+      "id": "roman-stages-2002",
+      "tradition_id": "roman-stages-postconciliar",
+      "label": "Third typical missal with expanded prayers and instruction",
+      "date_label": "2002",
+      "start_year": 2002,
+      "end_year": 2002,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Original Latin third typical edition.",
+      "components": [
+        "ordinary",
+        "rubrics",
+        "propers",
+        "anaphoras",
+        "calendar"
+      ],
+      "witness_ids": [],
+      "witness_label": "Missale Romanum, editio typica tertia, Typis Vaticanis 2002",
+      "summary": "Expanded General Instruction, new formularies and daily Lenten prayers over the people.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-1970-2002",
+          "locus": "title/publication list; third-edition decree PDF 2–3",
+          "claim": "Approval 10 April 2000; decree 20 April 2000; 2002 publication; listed changes."
+        },
+        {
+          "source_id": "roman-stages-source-1970-2002",
+          "locus": "PDF 370, Ordo Missae § 144",
+          "claim": "The inspected Order of Mass includes the Ite, missa est dismissal before the additional options described in the 2008 notice."
+        }
+      ],
+      "limitations": "Retain printed decree’s 2000 effective-date statement separately; do not infer complete book availability in 2000. Secondary digital witness; no full modern corpus import.",
+      "reception": "Latin Roman use; no claim that every local church used this exact printing."
+    },
+    {
+      "id": "roman-stages-2008",
+      "tradition_id": "roman-stages-postconciliar",
+      "label": "Emended third-edition reprint",
+      "date_label": "2008",
+      "start_year": 2008,
+      "end_year": 2008,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Bounded emendations to 2002 book, not a fourth typical edition.",
+      "components": [
+        "ordinary",
+        "rubrics",
+        "anaphoras",
+        "propers"
+      ],
+      "witness_ids": [],
+      "witness_label": "Missale Romanum, reimpressio emendata 2008, evidenced by official notice/list",
+      "summary": "Omits children’s Eucharistic Prayers from Latin volume; allows dismissal alternatives and amends rubrics.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-2008",
+          "locus": "printed 367–368; PDF 49–50",
+          "claim": "Contemporaneous explicit reprint status and named substantive amendments."
+        }
+      ],
+      "limitations": "Complete 2008 altar book not acquired. Notice cites 8 June 2008 approval for selected changes; no exact printing day established. Typographic corrections are not all substantive.",
+      "reception": "Latin Roman use; no claim that every local church used this exact printing."
+    },
+    {
+      "id": "roman-stages-2013-joseph",
+      "tradition_id": "roman-stages-postconciliar",
+      "label": "Joseph added to Eucharistic Prayers II–IV",
+      "date_label": "1 May 2013 decree; published 19 June 2013",
+      "start_year": 2013,
+      "end_year": 2013,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Latin Eucharistic Prayers II, III and IV of the third typical edition only.",
+      "components": [
+        "anaphoras"
+      ],
+      "witness_ids": [],
+      "witness_label": "Third-edition Latin prayer amendment in Paternas vices",
+      "summary": "Adds Joseph after Mary in the saints’ commemorations.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-2013",
+          "locus": "Latin Exinde and Circa textus paragraphs; dateline",
+          "claim": "Joseph is inserted after Mary in Eucharistic Prayers II, III and IV; these Latin formulas become typical."
+        }
+      ],
+      "limitations": "A component amendment, not a newly identified complete printing. The decree says henceforth; no separate exact effective day is inferred from its publication date.",
+      "reception": "Latin Roman text; vernacular approval histories remain separate."
+    },
+    {
+      "id": "roman-stages-2020-prefaces",
+      "tradition_id": "roman-stages-pian",
+      "label": "Seven optional prefaces supplement the 1962 missal",
+      "date_label": "19 March 2020 effective; decree 22 February 2020",
+      "start_year": 2020,
+      "end_year": 2020,
+      "date_kind": "effective",
+      "status": "documented",
+      "scope": "Supplemental preface repertoire: Angels, John the Baptist, Martyrs, All Saints and Patrons, Blessed Sacrament, Church Dedication, and Marriage.",
+      "components": [
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [],
+      "witness_label": "Quo magis Latin seven-preface annex, 2020",
+      "summary": "Seven occasion-specific prefaces with use rubrics become generally available as options in the 1962 use.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-2020-prefaces",
+          "locus": "Decree operative paragraph and annex headings/rubrics",
+          "claim": "The annex supplies seven prefaces with specified occasions; effective 19 March 2020."
+        },
+        {
+          "source_id": "roman-stages-source-2020-prefaces-note",
+          "locus": "Paragraphs beginning Four of the newly approved texts and As indicated",
+          "claim": "Four texts derive from the postconciliar missal; three previously had local French/Belgian authorization. Use remains optional."
+        }
+      ],
+      "limitations": "Papal approval dated 5 December 2019 is distinct from the 2020 decree and effective date. Not a whole-missal printing, mandatory replacement, or seven newly composed texts.",
+      "reception": "Describes the 2020 supplement for the 1962 use; no present-day permission judgment or universal actual uptake claimed."
+    }
+  ],
+  "transitions": [
+    {
+      "id": "roman-stages-expand-burchard",
+      "from_stage": "roman-stages-1501",
+      "to_stage": "roman-stages-1502",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "Short ceremonial expanded with substantial added directions.",
+      "components": [
+        "rubrics"
+      ],
+      "changes": [
+        {
+          "component": "rubrics",
+          "before": "Short paragraphs or absent material in V.",
+          "after": "Expansion into longer directions; examples in edited pp 126, 132–134, 137, 167.",
+          "locus_before": "1501 V apparatus as described by Legg xxvi",
+          "locus_after": "1502 critical text at listed pages",
+          "evidence": [
+            {
+              "source_id": "roman-stages-source-legg",
+              "locus": "xxvi; PDF 34",
+              "claim": "Editor expressly describes expansion and omissions."
+            }
+          ]
+        },
+        {
+          "component": "rubrics",
+          "before": "The 1501 witness uses sacerdos as the recurring minister designation.",
+          "after": "The longer 1502 text systematically substitutes celebrans according to the critical editor.",
+          "locus_before": "Legg p. xxvi, description of V (1501)",
+          "locus_after": "Legg p. xxvi, description of the longer 1502 text",
+          "evidence": [
+            {
+              "source_id": "roman-stages-source-legg",
+              "locus": "p. xxvi; PDF 34",
+              "claim": "Editor explicitly describes this systematic terminology change."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-legg",
+          "locus": "xxvi–xxvii",
+          "claim": "Two named recensions compared."
+        }
+      ],
+      "limitations": "Source-described bounded changes, not a fresh diplomatic collation. Legg notes that some nearly synonymous variants were not reproduced exactly; no unchecked text inheritance or complete book collation is implied.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed"
+    },
+    {
+      "id": "roman-stages-clementine-correction",
+      "from_stage": "roman-stages-1570",
+      "to_stage": "roman-stages-1604",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "Restores corrupted text transmission and clarifies rules.",
+      "components": [
+        "rubrics"
+      ],
+      "changes": [
+        {
+          "component": "rubrics",
+          "before": "Earlier directions judged insufficiently explicit.",
+          "after": "Rules expressed more fully and clearly.",
+          "locus_before": "Pian rules as characterized in 1604 constitution",
+          "locus_after": "1604 constitution PDF 9",
+          "evidence": [
+            {
+              "source_id": "roman-stages-source-1604",
+              "locus": "middle of Cum sanctissimum",
+              "claim": "States fuller, clearer rubrics derived from earlier principles."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-1604",
+          "locus": "PDF 9",
+          "claim": "Identifies Pius V’s book as revised baseline."
+        }
+      ],
+      "limitations": "Does not prove exact passage-level differences; condemnations of printers’ Vulgate substitutions are not authorization to describe 1604 as wholesale Vulgate replacement.",
+      "comparison_ids": [],
+      "historical_parentage": "established"
+    },
+    {
+      "id": "roman-stages-urbanian-correction",
+      "from_stage": "roman-stages-1604",
+      "to_stage": "roman-stages-1634",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "Clarifies rubrics and corrects scriptural divergences.",
+      "components": [
+        "rubrics",
+        "lectionary"
+      ],
+      "changes": [
+        {
+          "component": "rubrics",
+          "before": "Unclear or corrupted rubrics described by the issuing act.",
+          "after": "Clarified and restored rubrics.",
+          "locus_before": "Prior books as characterized in Si quid est",
+          "locus_after": "1634 state described in Si quid est",
+          "evidence": [
+            {
+              "source_id": "roman-stages-source-1634",
+              "locus": "PDF 6 left column",
+              "claim": "Explicit before/after categories."
+            }
+          ]
+        },
+        {
+          "component": "lectionary",
+          "before": "Scriptural divergences in received missal transmission.",
+          "after": "Corrections against Vulgate reference.",
+          "locus_before": "Si quid est retrospective description",
+          "locus_after": "Si quid est correction policy",
+          "evidence": [
+            {
+              "source_id": "roman-stages-source-1634",
+              "locus": "PDF 6 left column",
+              "claim": "Names comparison against Vulgate."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-1634",
+          "locus": "PDF 6",
+          "claim": "Names Pius V and Clement VIII as predecessors."
+        }
+      ],
+      "limitations": "No original 1634 book examined; extent and individual readings remain uncollated.",
+      "comparison_ids": [],
+      "historical_parentage": "established"
+    },
+    {
+      "id": "roman-stages-restore-holyweek",
+      "from_stage": "roman-stages-1920",
+      "to_stage": "roman-stages-1956-holyweek",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "Changes Holy Week celebration times and prescribes the restored order.",
+      "components": [
+        "rubrics"
+      ],
+      "changes": [
+        {
+          "component": "rubrics",
+          "before": "Morning celebrations described as prevailing before restoration.",
+          "after": "Evening Thursday Mass, afternoon Friday action, nocturnal Easter Vigil.",
+          "locus_before": "AAS 47 p 838–839 historical account",
+          "locus_after": "AAS 47 p 841 §§ 7–9",
+          "evidence": [
+            {
+              "source_id": "roman-stages-source-1955",
+              "locus": "838–841",
+              "claim": "Before practice and prescribed times explicitly contrasted."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-1955",
+          "locus": "840 §§ 1–2",
+          "claim": "Restored component required from 25 March 1956."
+        }
+      ],
+      "limitations": "1920 stage supplies earlier missal context only: no exact 1920 page collation. 1951 experimental Vigil intervenes; 1955 March simplification separate. Partial Holy Week successor, not replacement of whole missal.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed"
+    },
+    {
+      "id": "roman-stages-new-rubrics",
+      "from_stage": "roman-stages-1920",
+      "to_stage": "roman-stages-1962-june",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "Replaces the older missal’s general rubrics and Pius X additions with the new general and missal rubrical code.",
+      "components": [
+        "rubrics"
+      ],
+      "changes": [
+        {
+          "component": "rubrics",
+          "before": "Older general rubrics and Pius X additions printed separately.",
+          "after": "New general and missal rubrics replace prior front matter.",
+          "locus_before": "Rubricarum instructum § 2 names superseded texts",
+          "locus_after": "Rubricarum instructum § 5; 1962 decree PDF 2",
+          "evidence": [
+            {
+              "source_id": "roman-stages-source-1960",
+              "locus": "§§ 2, 5",
+              "claim": "Names replacement of old code and additions."
+            },
+            {
+              "source_id": "roman-stages-source-1962",
+              "locus": "PDF 2",
+              "claim": "Book accommodated to new code."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-1962",
+          "locus": "PDF 2",
+          "claim": "Whole-book state attested."
+        }
+      ],
+      "limitations": "Cumulative replacement of the earlier whole-missal rubrical framework, not immediate succession from the 1920 printing: the intervening 1955 simplification and other changes are not fully reconstructed. The separately represented 1956 Holy Week book is a complementary component, not the predecessor of the general rubrics. The new code became operative on 1 January 1961, before the 1962 typical printing.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed"
+    },
+    {
+      "id": "roman-stages-insert-joseph",
+      "from_stage": "roman-stages-1962-june",
+      "to_stage": "roman-stages-1962-december",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "Adds St Joseph to ordinary and proper Communicantes.",
+      "components": [
+        "anaphoras"
+      ],
+      "changes": [
+        {
+          "component": "anaphoras",
+          "before": "Communicantes moves from Christ/Blessed Virgin commemoration to Apostles.",
+          "after": "An explicit St Joseph clause is inserted between them, including proper forms.",
+          "locus_before": "Decree 873 specifies insertion anchors",
+          "locus_after": "Decree 873 operative clause",
+          "evidence": [
+            {
+              "source_id": "roman-stages-source-joseph",
+              "locus": "AAS 54 p 873",
+              "claim": "Exact before/after insertion anchors and special-form extension."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-joseph",
+          "locus": "AAS 54 p 873",
+          "claim": "13 November 1962 decree; 8 December effect."
+        }
+      ],
+      "limitations": "Primary amendment-description, not a fresh comparison of two physical missal impressions. The available facsimile already has the amended Canon; an independently inspected pre-amendment June body is still absent, so this remains primary-description rather than text-collated.",
+      "comparison_ids": [],
+      "historical_parentage": "established"
+    },
+    {
+      "id": "roman-stages-postconciliar-reform",
+      "from_stage": "roman-stages-1962-june",
+      "to_stage": "roman-stages-1969-1970",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "Reforms Order, Eucharistic Prayer repertoire and reading arrangement.",
+      "components": [
+        "anaphoras",
+        "lectionary"
+      ],
+      "changes": [
+        {
+          "component": "anaphoras",
+          "before": "Single Roman Canon as earlier repertoire.",
+          "after": "Three further Eucharistic Prayers and additional prefaces; institution words standardized.",
+          "locus_before": "Constitution’s earlier-Canon description",
+          "locus_after": "Missale Romanum 1969, new-composition paragraphs",
+          "evidence": [
+            {
+              "source_id": "roman-stages-source-1969",
+              "locus": "Eucharistic Prayer paragraphs",
+              "claim": "Explicit expanded repertoire."
+            }
+          ]
+        },
+        {
+          "component": "lectionary",
+          "before": "Earlier missal reading arrangement.",
+          "after": "Sunday three-year reading cycle with additional reading.",
+          "locus_before": "Earlier arrangement contrasted by constitution",
+          "locus_after": "Missale Romanum 1969, reading paragraphs",
+          "evidence": [
+            {
+              "source_id": "roman-stages-source-1969",
+              "locus": "reading reform paragraph",
+              "claim": "New multi-year scheme described."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-1969",
+          "locus": "whole reform description",
+          "claim": "Revised Latin book design promulgated."
+        }
+      ],
+      "limitations": "Cumulative comparison with the earlier whole-missal state, not an assertion of immediate succession. The December 1962 Joseph insertion and the 1965, 1967 and 1968 intermediate books remain distinct; the 1969 calendar and lectionary require detailed stages. Does not date every change to 1970 or treat the lectionary as entirely bound into the altar volume.",
+      "comparison_ids": [],
+      "historical_parentage": "established"
+    },
+    {
+      "id": "roman-stages-second-typical",
+      "from_stage": "roman-stages-1969-1970",
+      "to_stage": "roman-stages-1975",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "Updates ministry directions and ritual/votive formularies.",
+      "components": [
+        "rubrics",
+        "propers"
+      ],
+      "changes": [
+        {
+          "component": "rubrics",
+          "before": "GIRM 142–152 treats subdeacon functions.",
+          "after": "Descriptions of acolyte and lector functions replace them.",
+          "locus_before": "1975 decree’s explicit retrospective clause",
+          "locus_after": "1975 decree PDF 2",
+          "evidence": [
+            {
+              "source_id": "roman-stages-source-1970-2002",
+              "locus": "1975 decree paragraph 2",
+              "claim": "Names replaced and new ministries."
+            }
+          ]
+        },
+        {
+          "component": "propers",
+          "before": "Some ritual/various-need formularies lack entrance/communion antiphons; named Masses absent.",
+          "after": "Antiphons completed; dedication, reconciliation and two Marian formularies added.",
+          "locus_before": "1975 decree’s stated deficits",
+          "locus_after": "1975 decree PDF 2",
+          "evidence": [
+            {
+              "source_id": "roman-stages-source-1970-2002",
+              "locus": "1975 decree paragraph 3",
+              "claim": "Lists concrete additions."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-1970-2002",
+          "locus": "PDF 2",
+          "claim": "Decree states changes since 1970."
+        }
+      ],
+      "limitations": "1971 emended reprint intervenes; original 1975 book unavailable, changes established from decree, not full collation.",
+      "comparison_ids": [],
+      "historical_parentage": "established"
+    },
+    {
+      "id": "roman-stages-third-typical",
+      "from_stage": "roman-stages-1975",
+      "to_stage": "roman-stages-2002",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "Adds pastoral instruction and formularies including daily Lenten prayers over the people.",
+      "components": [
+        "rubrics",
+        "propers"
+      ],
+      "changes": [
+        {
+          "component": "rubrics",
+          "before": "Earlier General Instruction lacks the newly composed chapter IX.",
+          "after": "New chapter IX and clearer Communion-under-both-kinds provisions.",
+          "locus_before": "Third-edition decree retrospective description",
+          "locus_after": "Third-edition decree PDF 2–3",
+          "evidence": [
+            {
+              "source_id": "roman-stages-source-1970-2002",
+              "locus": "third-edition decree opening",
+              "claim": "Explicit new chapter and clarification."
+            }
+          ]
+        },
+        {
+          "component": "propers",
+          "before": "Earlier book lacks daily Lenten prayers over the people described as insertion.",
+          "after": "A prayer over the people supplied for every Lenten day.",
+          "locus_before": "Third-edition decree baseline",
+          "locus_after": "Third-edition decree PDF 3",
+          "evidence": [
+            {
+              "source_id": "roman-stages-source-1970-2002",
+              "locus": "third-edition decree middle",
+              "claim": "Explicit addition for each Lenten day."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-1970-2002",
+          "locus": "PDF 2–3",
+          "claim": "Describes third-edition changes."
+        }
+      ],
+      "limitations": "2000 approval/decree, 2002 publication. Intervening additions are not assigned first composition dates by this transition.",
+      "comparison_ids": [],
+      "historical_parentage": "established"
+    },
+    {
+      "id": "roman-stages-third-emended",
+      "from_stage": "roman-stages-2002",
+      "to_stage": "roman-stages-2008",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "Changes Latin-volume contents and dismissal options within the third edition.",
+      "components": [
+        "anaphoras",
+        "ordinary"
+      ],
+      "changes": [
+        {
+          "component": "anaphoras",
+          "before": "Latin volume includes Eucharistic Prayers for Masses with Children.",
+          "after": "Those prayers omitted from this Latin reprint.",
+          "locus_before": "Official notice 367 retrospective",
+          "locus_after": "Official notice 367",
+          "evidence": [
+            {
+              "source_id": "roman-stages-source-2008",
+              "locus": "367",
+              "claim": "Explicit omission."
+            }
+          ]
+        },
+        {
+          "component": "ordinary",
+          "before": "The inspected 2002 Order of Mass § 144 gives the Ite, missa est dismissal.",
+          "after": "Alternative concluding dismissal formulas permitted.",
+          "locus_before": "2002 digital witness PDF 370, Ordo Missae § 144",
+          "locus_after": "Official notice 367",
+          "evidence": [
+            {
+              "source_id": "roman-stages-source-1970-2002",
+              "locus": "PDF 370, Ordo Missae § 144",
+              "claim": "Existing dismissal formula directly inspected in this digital witness."
+            },
+            {
+              "source_id": "roman-stages-source-2008",
+              "locus": "367",
+              "claim": "Explicit new options."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-2008",
+          "locus": "367–368",
+          "claim": "Emended reprint, not a new typical edition."
+        }
+      ],
+      "limitations": "No inference that omission universally abolishes authorized vernacular children’s prayers. Not every typographic adjustment counts as a substantive state change.",
+      "comparison_ids": [],
+      "historical_parentage": "established"
+    },
+    {
+      "id": "roman-stages-third-joseph",
+      "from_stage": "roman-stages-2008",
+      "to_stage": "roman-stages-2013-joseph",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "Adds Joseph to three Eucharistic Prayers.",
+      "components": [
+        "anaphoras"
+      ],
+      "changes": [
+        {
+          "component": "anaphoras",
+          "before": "The third-edition formulas at these loci had no Joseph insertion.",
+          "after": "Joseph is named after Mary and before the Apostles in each of the three prayers.",
+          "locus_before": "Earlier third-edition formulas identified by the decree’s instruction to add the name",
+          "locus_after": "Paternas vices, Latin Exinde paragraph, formulas II–IV",
+          "evidence": [
+            {
+              "source_id": "roman-stages-source-2013",
+              "locus": "Latin Exinde and Circa textus paragraphs; dateline",
+              "claim": "Joseph is inserted after Mary in Eucharistic Prayers II, III and IV; these Latin formulas become typical."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-2013",
+          "locus": "Latin Exinde and Circa textus paragraphs; dateline",
+          "claim": "Joseph is inserted after Mary in Eucharistic Prayers II, III and IV; these Latin formulas become typical."
+        }
+      ],
+      "limitations": "No fresh before/after book collation; the Roman Canon amendment of 1962 is distinct.",
+      "comparison_ids": [],
+      "historical_parentage": "established"
+    },
+    {
+      "id": "roman-stages-additional-prefaces",
+      "from_stage": "roman-stages-1962-june",
+      "to_stage": "roman-stages-2020-prefaces",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "Expands the optional preface repertoire for specified occasions.",
+      "components": [
+        "anaphoras"
+      ],
+      "changes": [
+        {
+          "component": "anaphoras",
+          "before": "The common 1962 repertoire did not universally include these seven options; three already had local concessions.",
+          "after": "The annex supplies all seven for optional use under its stated rubrics.",
+          "locus_before": "Official explanatory note, earlier local concessions and preface repertoire",
+          "locus_after": "Quo magis Latin annex, seven headed sections",
+          "evidence": [
+            {
+              "source_id": "roman-stages-source-2020-prefaces",
+              "locus": "Decree operative paragraph and annex headings/rubrics",
+              "claim": "The annex supplies seven prefaces with specified occasions; effective 19 March 2020."
+            },
+            {
+              "source_id": "roman-stages-source-2020-prefaces-note",
+              "locus": "Paragraphs beginning Four of the newly approved texts and As indicated",
+              "claim": "Four texts derive from the postconciliar missal; three previously had local French/Belgian authorization. Use remains optional."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-2020-prefaces",
+          "locus": "Decree operative paragraph and annex headings/rubrics",
+          "claim": "The annex supplies seven prefaces with specified occasions; effective 19 March 2020."
+        },
+        {
+          "source_id": "roman-stages-source-2020-prefaces-note",
+          "locus": "Paragraphs beginning Four of the newly approved texts and As indicated",
+          "claim": "Four texts derive from the postconciliar missal; three previously had local French/Belgian authorization. Use remains optional."
+        }
+      ],
+      "limitations": "A bounded repertoire addition to the 1962 framework, not immediate whole-book succession from June 1962. Earlier local concessions remain valid in the decree’s own historical account; no fresh donor-text collation.",
+      "comparison_ids": [],
+      "historical_parentage": "established"
+    }
+  ],
+  "gaps": [
+    {
+      "id": "roman-stages-curial-descent",
+      "tradition_id": "roman-stages-curial",
+      "period": "1243–1570",
+      "missing": "Exact manuscript redactions and connected before/after missal evidence.",
+      "next_source": "van Dijk Sources II 105–331 and HBS 85; Lippe vol II 1907; identified incunable copies.",
+      "consequence": "Haymo provisional; 1474 not automatically parent of Pian state."
+    },
+    {
+      "id": "roman-stages-pre-pian-delta",
+      "tradition_id": "roman-stages-curial",
+      "period": "1502–1570",
+      "missing": "Exact full ritual comparison establishing direction, not merely shared rules.",
+      "next_source": "Legg 249–250 and identified 1571 Varisco copy; 1474/1570 section collation.",
+      "consequence": "No direct Burchard → 1570 whole-book revision edge."
+    },
+    {
+      "id": "roman-stages-urbanian-to-pian-reform",
+      "tradition_id": "roman-stages-pian",
+      "period": "1634–1920",
+      "missing": "Original 1634, 1900 and 1920 books; calendar/rubric revisions between them.",
+      "next_source": "Vatican typical prints and SCR decreta authentica; 1920 approval explicitly names 1900.",
+      "consequence": "No 1634 → 1920 single jump pretending unchanged interval."
+    },
+    {
+      "id": "roman-stages-holyweek-components",
+      "tradition_id": "roman-stages-pian",
+      "period": "1951–1962",
+      "missing": "Exact 1951 experimental Vigil, 1955 March rubrics and 1956 Holy Week book full content checks.",
+      "next_source": "AAS 43 (1951) 128 ff; AAS 47 (1955) 218 ff; Vatican Ordo Hebdomadae Sanctae Instauratus 1956.",
+      "consequence": "Recorded Holy Week times do not exhaust prayer/reading/rubric changes."
+    },
+    {
+      "id": "roman-stages-transitional-books",
+      "tradition_id": "roman-stages-postconciliar",
+      "period": "1965–1969",
+      "missing": "Component changes in 1965 Ordo, Ritus/De Defectibus, Holy Week/concelebration; 1967 Variationes; 1968 Preces.",
+      "next_source": "Notitiae 228–229 (1985) 396–397 bibliography then each exact typical book/decree.",
+      "consequence": "1962 → 1970 edge is cumulative, not immediate; three EP addition precedes complete 1970 book."
+    },
+    {
+      "id": "roman-stages-later-books",
+      "tradition_id": "roman-stages-postconciliar",
+      "period": "1971–2008",
+      "missing": "1971 corrections, full 1975 altar book and complete 2008 reprint verification.",
+      "next_source": "Original Vatican printings; Notitiae 2008 official list 367–387.",
+      "consequence": "Bounded primary descriptions establish selected deltas, not full text coverage."
+    },
+    {
+      "id": "roman-stages-gap-2020-saints",
+      "tradition_id": "roman-stages-pian",
+      "period": "2020 saints and subsequent supplementary texts",
+      "missing": "Exact approved proper-text supplement and its complete relation to Cum sanctissima have not been inspected in this dossier.",
+      "next_source": "CDF Cum sanctissima, 22 February 2020, and the corresponding approved Supplementum; locate exact Latin formularies before reconstructing their repertoire.",
+      "consequence": "No complete 2020 missal state or automatic insertion of every newer saint’s formulary is inferred from permission alone."
+    }
+  ]
+}

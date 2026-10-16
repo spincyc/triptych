@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0008-djvu-6e67574b"
+edition_id = "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657"
+artifact_type = "facsimile-djvu"
+media_type = "image/vnd.djvu"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The title page identifies a Paris 1657 publication, whose United States publication term has expired. These are mechanical page scans or mechanical renderings of that historical edition. The holding provider explicitly marks FIDES edition 3755 Domena publiczna (Public domain) and access Dla wszystkich bez ograniczeń at https://digital.fides.org.pl/dlibra/publication/3978/edition/3755/content . The identified holding is Opactwo Benedyktynek w Krzeszowie, OSB Missale_Cisterciense_1657. Rights do not follow from download availability alone. Third-party source material is excluded from Triptych’s CC BY 4.0 license."
+source_url = "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0008.djvu"
+provenance = "Exact retrieved page bytes supplied by the acquisition reader on 2026-10-16; SHA-256 and byte size rechecked at canonical registration. The edition identity and bounded prayer pages were checked visually; no OCR layer controls the transcription."
+retrieved = "2026-10-16"
+sha256 = "6e67574b08db96028fbf4ffdda8af84c6f607af674c37ebec19160097760451a"
+byte_size = 679868
+path = "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0008-djvu-6e67574b/1657-page-0008.djvu"
+page_count = 1
+indexable = false
+notes = "One selected complete page delivery. Acquisition and visual review are bounded; other pages of the volume are not represented by this artifact."
+support_artifacts = [{artifact_id = "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.djvu-shared-annotation-af707c77", embedded_reference = "shared_anno.iff"}]

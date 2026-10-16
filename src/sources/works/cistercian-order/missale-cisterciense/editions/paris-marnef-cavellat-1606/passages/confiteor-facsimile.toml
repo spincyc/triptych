@@ -1,0 +1,12 @@
+schema = 2
+record_type = "passage"
+edition_id = "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606"
+locus = "Cistercian missal 1606, printed p. 180, left column; BSB canvas 00234."
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-16"
+context = "Complete priest’s Confiteor only; subsequent minister’s confession, absolution responses and surrounding prayers are outside this selection. This is the identified printing’s original Latin; no later Roman book supplies missing words or resolves a variant. No introduction date, direct copying act or complete historical parent relationship is inferred."
+notes = "Independently collated against the exact page images by a second AI reader on 2026-10-16; final body and artifact hashes pin the approved text. Accepted normalization includes sentence-case merging of display initials and nasal-bar expansion. The 1657 Confiteor preserves the independently corrected acute in omnipoténti. This bounded review is not a human specialist certification or a collation of the whole edition. Independent review receipt SHA-256 60925d8f5af82def604ede1a4a491cd5f6d372bd7007b295170d1ac37b98a882; reviewed multiline text SHA-256 ae1ed27ae22ae246c788fc249b3908304672177145da2d8b12702108912030f5. Spoken block metadata (zero-based half-open Unicode codepoint ranges in the NFC body, excluding terminal LF): [{\"block\":1,\"codepoint_range\":[0,161],\"speaker\":\"priest\",\"incipit\":\"Confíteor Deo, & beátæ\"}]. "
+id = "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.confiteor-facsimile"
+artifact_id = "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00234-7c8474ea"
+artifact_sha256 = "7c8474ea19ffe54abf9a7296f04485d4eec2ff4fbaec2b22c07397e30246dbcc"
+artifact_page_ranges = [[1, 1]]

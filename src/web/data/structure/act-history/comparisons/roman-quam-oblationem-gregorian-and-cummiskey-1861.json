@@ -8,14 +8,14 @@
   "identity_claim": "same-prayer-witnesses",
   "inputs": [
     {
-      "byte_size": 55362,
+      "byte_size": 65568,
       "path": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
-      "sha256": "177dd42f9fa51826f1e62de2d4ff689893c313c0cfa7728d3627373f65510987"
+      "sha256": "6174951e3825999abac44335f5e23c348674827816e1815107eb333f704417a6"
     },
     {
-      "byte_size": 241695,
+      "byte_size": 292531,
       "path": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
-      "sha256": "372bfc0ff5693af9adb81e87318341cc9f3ca1b852db74de3f81ce8c414d121d"
+      "sha256": "56d1041e2733208bff1a7fbcd273cf0675b1cb29ca76820683818993604c6671"
     },
     {
       "byte_size": 89758,
@@ -23,9 +23,69 @@
       "sha256": "d43fb733824f87fa46c4c5c1b81417683cbe496b140a97ea6139f1952830a91e"
     },
     {
-      "byte_size": 183499,
+      "byte_size": 28509,
+      "path": "src/sources/inventories/eucharistic-stages/alexandrian.json",
+      "sha256": "8d42d7c2aff4a46d7b42f62536d1a358cfad479321fe918c498dbc8cb3cb1af7"
+    },
+    {
+      "byte_size": 31070,
+      "path": "src/sources/inventories/eucharistic-stages/ambrosian.json",
+      "sha256": "46616b871de98a741858f5b54e9b72e7b9f2607aee3aa93574eb21e05cadddb4"
+    },
+    {
+      "byte_size": 36101,
+      "path": "src/sources/inventories/eucharistic-stages/armenian.json",
+      "sha256": "5cbfeea1830f38329ee7e43fd0fd79db4b6245f4ef2a20cbc0206fc5827bffdb"
+    },
+    {
+      "byte_size": 37366,
+      "path": "src/sources/inventories/eucharistic-stages/byzantine.json",
+      "sha256": "db4316ec417c52fcd46025152a663a0e0a02a073a6a9acf6393c72e6b1d516e9"
+    },
+    {
+      "byte_size": 42261,
+      "path": "src/sources/inventories/eucharistic-stages/chaldean.json",
+      "sha256": "545531688b5bbee45ba265c02e2656947a66b1d30897c439485f621fb4b2068b"
+    },
+    {
+      "byte_size": 18309,
+      "path": "src/sources/inventories/eucharistic-stages/cistercian.json",
+      "sha256": "8ed49ffd176ce63de75389a78669fe49d42f7734f355740f7e5b62eadda8f490"
+    },
+    {
+      "byte_size": 34163,
+      "path": "src/sources/inventories/eucharistic-stages/latin-uses.json",
+      "sha256": "14c033848c4b8a9a63a56f7418b781c8097fbf945511bccd13f1fe6b05f6b738"
+    },
+    {
+      "byte_size": 38353,
+      "path": "src/sources/inventories/eucharistic-stages/malabar.json",
+      "sha256": "62f7b28aa8d16add38d429d73f08e0c2b632a0bd2ae882acb2d8873d7027832d"
+    },
+    {
+      "byte_size": 40829,
+      "path": "src/sources/inventories/eucharistic-stages/maronite.json",
+      "sha256": "ac8e944addb232a75bffd3a7663c183b23b59cfa6346ae30ebc96131b771c546"
+    },
+    {
+      "byte_size": 41527,
+      "path": "src/sources/inventories/eucharistic-stages/mozarabic.json",
+      "sha256": "35812331e200d6bdbfed825c53687056b399e5cd9b6399070b70c558e0b14c82"
+    },
+    {
+      "byte_size": 62579,
+      "path": "src/sources/inventories/eucharistic-stages/roman.json",
+      "sha256": "01102b86d8b595e7b7d654857e88a16e108518e6c70f797ee649545d3b849a7e"
+    },
+    {
+      "byte_size": 31240,
+      "path": "src/sources/inventories/eucharistic-stages/west-syriac.json",
+      "sha256": "14a7f4235930568c1f2162c41226471aab03f5d3233900be0b5534369722d293"
+    },
+    {
+      "byte_size": 186074,
       "path": "src/sources/inventories/latin-missal-acts-v1.toml",
-      "sha256": "7e8db6a985303a0da62c535ca536dec8f9e3d792155d1b9b74c785282892d328"
+      "sha256": "14a1321e559e4edf4141285686a808acb40d77e330783f24b2c29d3446e9233d"
     },
     {
       "byte_size": 9311,
@@ -38,9 +98,9 @@
       "sha256": "cfbc951ec40071d5eb78c55d9453811ee194647b57893b7aa3b4768abadea9bb"
     },
     {
-      "byte_size": 221307,
+      "byte_size": 236924,
       "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
-      "sha256": "2ca0794f773beb974b67f67d7a51fd2884b490e7fea3829eac082c9c7ce1e620"
+      "sha256": "83a22e7ec81089a8c6e25a0d43bd9a83aa90193026bf602ea1595976f2720024"
     },
     {
       "byte_size": 2975,
@@ -295,6 +355,16 @@
         "unit_id": "unit.wilson-1915.gregorian.canon-missae.quam-oblationem"
       }
     ],
+    "record_binding": {
+      "checked_fields": [
+        "source_library_edition_id"
+      ],
+      "declarations": {
+        "source_library_edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915"
+      },
+      "limitation": "Only explicit source-owner identities are checked; no manuscript identity, historical date or ancestry is inferred.",
+      "status": "checked-declared-identities"
+    },
     "record_id": "western:gregorian-wilson-1915-critical-edition",
     "reviewed_on": "2026-10-16",
     "scope": {
@@ -447,6 +517,16 @@
         "unit_id": "unit.cummiskey-1861.canon-missae.quam-oblationem"
       }
     ],
+    "record_binding": {
+      "checked_fields": [
+        "source_library_edition_id"
+      ],
+      "declarations": {
+        "source_library_edition_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+      },
+      "limitation": "Only explicit source-owner identities are checked; no manuscript identity, historical date or ancestry is inferred.",
+      "status": "checked-declared-identities"
+    },
     "record_id": "western:cummiskey-1861-latin-ordinary",
     "reviewed_on": null,
     "scope": {
@@ -533,6 +613,7 @@
       "manifest_path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/ia-pdf-96fd93c7/artifact.toml",
       "manifest_sha256": "13f26a56084ef752aed19acc46d4ac74dce893174409b24a85646c9805bb2cd6",
       "media_type": "application/pdf",
+      "page_count": 432,
       "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/ia-pdf-96fd93c7/source.pdf",
       "provenance": "Whole response acquired directly by a research lane on 2026-09-05 and handed to source registration with URL, digest, byte size and extent. Registration independently ran sha256sum and checked the byte size. No source URL was reconstructed and no new source was fetched. Existing work aliases and sibling artifact provenance/transformation were checked before registration. Additional independently recorded acquisition, preserved during 2026-09-06 metadata reconciliation from artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915-facsimile-web-2026-09-05.ia-gregorian-pdf-96fd93c7: Exact complete response acquired directly by the liturgical-history research sweep on 2026-09-05, retained as bytes and hashed before registration. The recorded URL, size and SHA-256 were replayed against the saved file with sha256sum. Identity reconciliation used source-reader catalog queries Gregorian, followed by inspection of the matching works, editions and aliases; existing artifact transformations and provenance were checked before adding this artifact. This records acquisition, not whole-work inspection or image collation. Additional GPT55 acquisition receipt: Retrieved directly by the liturgical-history research lane on 2026-09-05; receipt(s) LIT-008, LIT-009 in run 9bf9d40d825f419f. Registration re-read the complete receipt, verified every supplied path against its SHA-256 and byte size, resolved catalog aliases before assigning the work, and checked existing editions for superseding derivations. No source was fetched by registration.",
       "record_type": "artifact",
@@ -609,6 +690,7 @@
       "manifest_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ia-scan-pdf/artifact.toml",
       "manifest_sha256": "92f2c4d89f3576a89dbb54b3cf0622240d5201df6ed1fe1898d706a97ac953e4",
       "media_type": "application/pdf",
+      "page_count": 801,
       "provenance": "801-page image PDF acquired over HTTPS from Internet Archive item romanmissaltran00churgoog and hashed before use.",
       "record_type": "artifact",
       "retrieved": "2026-07-26",
@@ -907,14 +989,19 @@
       "sha256": "9961359f38a3e390b5de4103a5222149e40b906362bba4b5620590f5ee1fed8e"
     },
     {
-      "byte_size": 49955,
+      "byte_size": 53238,
       "path": "scripts/_eucharistic_history.py",
-      "sha256": "8a6287252b3c50270464fca462ec2eac5680fbc0d21c7670482fd41b8bb555ee"
+      "sha256": "fc414ea64fa3ed738cd57aa7d19d3cf158144aa1980e85febed620e831abaf47"
     },
     {
-      "byte_size": 60025,
+      "byte_size": 18101,
+      "path": "scripts/_eucharistic_stages.py",
+      "sha256": "e0b4f1b5acfad0d16cbcbf1eda6ff4a1794b30e3eaa492a8b2b19a5e3dc4278c"
+    },
+    {
+      "byte_size": 87820,
       "path": "scripts/_eucharistic_texts.py",
-      "sha256": "cd92077fd685310b7aaf7f14bfb1ff83f23bc1417cc8ebe9687ca9a554016799"
+      "sha256": "bc12a7da107bd63bf2a6c51e55b8389f088f560e882a5485405389e9750a9e5a"
     },
     {
       "byte_size": 48920,
@@ -927,14 +1014,14 @@
       "sha256": "86c302fcb7be450dec4dc1d45c4f529b000e79d5c548fae2b22212f7246e0afe"
     },
     {
-      "byte_size": 252547,
+      "byte_size": 252633,
       "path": "tools/act-history",
-      "sha256": "f5c2926da1d093b3f84d010a9ade154d79b0637661532c30f9a83c6412154edc"
+      "sha256": "b0502f14dcce6a54c4dfb33ce980e004941e8ae1d727f12a5fa8253c73eae06e"
     },
     {
-      "byte_size": 117989,
+      "byte_size": 120266,
       "path": "tools/source-library",
-      "sha256": "7a85be155005821a197b5ee6f3b423424669c074c827898cdf2be39e8388aa2f"
+      "sha256": "c4d2065026a7cb0c94049e572251b2f3c3af615a4f9531793a1818d185327efc"
     }
   ],
   "unified_diff": "--- left/wilson-1915-gregorian-canon-prayers\n+++ right/cummiskey-1861-latin-ordinary\n@@ -1,2 +1,2 @@\n-Quam oblationem tu deus in omnibus .\n-quaesumus benedictam adscriptam ratam rationabilem acceptabilemque facere digneris Ut nobis corpus et sanguis fiat dilectissimi filii tui domini dei nostri iesu christi.\n+Quam oblationem tu Deus in omnibus, quæsumus benedictam, adscriptam, ratam, rationabilem, acceptabilemque facere digneris;\n+ut nobis Corpus et Sanguis fiat dilectissimi Filii tui Domini nostri Jesu Christi.\n"

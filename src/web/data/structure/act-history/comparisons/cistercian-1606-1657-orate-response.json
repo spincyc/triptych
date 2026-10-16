@@ -1,0 +1,1511 @@
+{
+  "apparatus_caveat": "Only these complete bounded prayer selections have been collated; this is not a full Ordinary or full missal diff. Printed 1606 and 1657 dates are witness dates, not proof of each variant’s introduction. The 1655 mandate and cited general chapters are separate contextual evidence. Long s, display initials, nasal abbreviations and line wraps are normalized as declared in the owning artifacts; source accents, u/v, ligatures, abbreviations and short endings otherwise remain. Spoken blocks and rubric positions remain recoverable; the 1657 (vel meis) is a printed alternative, not simultaneous speech. No immediate predecessor relationship, complete Romanization, or modern liturgical authorization is inferred.",
+  "basis": "The complete Orate invitation and response dialogue in each identified edition share the invitation to pray for acceptance of the sacrifice. The 1606 Dominus sit in corde tuo response differs from the 1657 Suscipiat Dominus; the later printed alternative and final priestly Amen remain explicit. This is alignment of the same liturgical function, not a claim that the two response compositions are identical.",
+  "historical_act_claimed": false,
+  "historical_ancestry_claimed": false,
+  "id": "cistercian-1606-1657-orate-response",
+  "identical_serialized_text": false,
+  "identity_claim": "parallel-function-not-same-composition",
+  "inputs": [
+    {
+      "byte_size": 65568,
+      "path": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
+      "sha256": "6174951e3825999abac44335f5e23c348674827816e1815107eb333f704417a6"
+    },
+    {
+      "byte_size": 292531,
+      "path": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
+      "sha256": "56d1041e2733208bff1a7fbcd273cf0675b1cb29ca76820683818993604c6671"
+    },
+    {
+      "byte_size": 89758,
+      "path": "src/sources/inventories/eucharistic-book-relationships-v1.toml",
+      "sha256": "d43fb733824f87fa46c4c5c1b81417683cbe496b140a97ea6139f1952830a91e"
+    },
+    {
+      "byte_size": 28509,
+      "path": "src/sources/inventories/eucharistic-stages/alexandrian.json",
+      "sha256": "8d42d7c2aff4a46d7b42f62536d1a358cfad479321fe918c498dbc8cb3cb1af7"
+    },
+    {
+      "byte_size": 31070,
+      "path": "src/sources/inventories/eucharistic-stages/ambrosian.json",
+      "sha256": "46616b871de98a741858f5b54e9b72e7b9f2607aee3aa93574eb21e05cadddb4"
+    },
+    {
+      "byte_size": 36101,
+      "path": "src/sources/inventories/eucharistic-stages/armenian.json",
+      "sha256": "5cbfeea1830f38329ee7e43fd0fd79db4b6245f4ef2a20cbc0206fc5827bffdb"
+    },
+    {
+      "byte_size": 37366,
+      "path": "src/sources/inventories/eucharistic-stages/byzantine.json",
+      "sha256": "db4316ec417c52fcd46025152a663a0e0a02a073a6a9acf6393c72e6b1d516e9"
+    },
+    {
+      "byte_size": 42261,
+      "path": "src/sources/inventories/eucharistic-stages/chaldean.json",
+      "sha256": "545531688b5bbee45ba265c02e2656947a66b1d30897c439485f621fb4b2068b"
+    },
+    {
+      "byte_size": 18309,
+      "path": "src/sources/inventories/eucharistic-stages/cistercian.json",
+      "sha256": "8ed49ffd176ce63de75389a78669fe49d42f7734f355740f7e5b62eadda8f490"
+    },
+    {
+      "byte_size": 34163,
+      "path": "src/sources/inventories/eucharistic-stages/latin-uses.json",
+      "sha256": "14c033848c4b8a9a63a56f7418b781c8097fbf945511bccd13f1fe6b05f6b738"
+    },
+    {
+      "byte_size": 38353,
+      "path": "src/sources/inventories/eucharistic-stages/malabar.json",
+      "sha256": "62f7b28aa8d16add38d429d73f08e0c2b632a0bd2ae882acb2d8873d7027832d"
+    },
+    {
+      "byte_size": 40829,
+      "path": "src/sources/inventories/eucharistic-stages/maronite.json",
+      "sha256": "ac8e944addb232a75bffd3a7663c183b23b59cfa6346ae30ebc96131b771c546"
+    },
+    {
+      "byte_size": 41527,
+      "path": "src/sources/inventories/eucharistic-stages/mozarabic.json",
+      "sha256": "35812331e200d6bdbfed825c53687056b399e5cd9b6399070b70c558e0b14c82"
+    },
+    {
+      "byte_size": 62579,
+      "path": "src/sources/inventories/eucharistic-stages/roman.json",
+      "sha256": "01102b86d8b595e7b7d654857e88a16e108518e6c70f797ee649545d3b849a7e"
+    },
+    {
+      "byte_size": 31240,
+      "path": "src/sources/inventories/eucharistic-stages/west-syriac.json",
+      "sha256": "14a7f4235930568c1f2162c41226471aab03f5d3233900be0b5534369722d293"
+    },
+    {
+      "byte_size": 186074,
+      "path": "src/sources/inventories/latin-missal-acts-v1.toml",
+      "sha256": "14a1321e559e4edf4141285686a808acb40d77e330783f24b2c29d3446e9233d"
+    },
+    {
+      "byte_size": 9311,
+      "path": "src/sources/inventories/missal-timeline-holdings-v1.toml",
+      "sha256": "43d18228b997f149a6aab5605ee0397713348cc1d2f1458c49940fa89f147c8e"
+    },
+    {
+      "byte_size": 82303,
+      "path": "src/sources/inventories/roman-holy-week-acts-v1.toml",
+      "sha256": "cfbc951ec40071d5eb78c55d9453811ee194647b57893b7aa3b4768abadea9bb"
+    },
+    {
+      "byte_size": 236924,
+      "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+      "sha256": "83a22e7ec81089a8c6e25a0d43bd9a83aa90193026bf602ea1595976f2720024"
+    },
+    {
+      "byte_size": 4735,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/confiteor-checked-latin-b2321dac/artifact.toml",
+      "sha256": "04c6eb709c89cbe9f8174019c5ea928c002ed43430e86c944d2800eb39dd2007"
+    },
+    {
+      "byte_size": 501,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/confiteor-checked-latin-b2321dac/text.txt",
+      "sha256": "b2321dacd6474a64480fe0cdfeb18fc5c51c7a12e34fb72c3834a00f2e48790f"
+    },
+    {
+      "byte_size": 1664,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/djvu-shared-annotation-af707c77/artifact.toml",
+      "sha256": "acec4760e4ec47064972404005959b4e4d7bb548fdbaa1f99253e6132f8af4ba"
+    },
+    {
+      "byte_size": 83,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/djvu-shared-annotation-af707c77/shared_anno.iff",
+      "sha256": "af707c77503377397fabd114a5775918b8a83962045aa2cb7a19bc6b9bd5cd7d"
+    },
+    {
+      "byte_size": 1105948,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0005-djvu-add1dd8a/1657-page-0005.djvu",
+      "sha256": "add1dd8aef836a88b13415fa836dad310d2dfe1c2b91c9554c0eb59d16a33f98"
+    },
+    {
+      "byte_size": 2030,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0005-djvu-add1dd8a/artifact.toml",
+      "sha256": "c40f38a530f5ea3d9c4353f210e2f983d20dbc2e88d38903f922de3a58d3e340"
+    },
+    {
+      "byte_size": 1156854,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0005-jpeg-62bdeb90/1657-page-0005.djvu.review.jpg",
+      "sha256": "62bdeb90dfab9f6aac673f1abd36aa0b4fe9cbdfd900476a0076ac8525e37cfd"
+    },
+    {
+      "byte_size": 2386,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0005-jpeg-62bdeb90/artifact.toml",
+      "sha256": "c420412ecf142f25f90190661fcf837027c9a8700a9df382d3d2dae978b94684"
+    },
+    {
+      "byte_size": 1017058,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0231-djvu-f8ff8572/1657-page-0231.djvu",
+      "sha256": "f8ff8572046f654b62540694fea15a8f5a6ef2f51febfd253596f083dce05229"
+    },
+    {
+      "byte_size": 2030,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0231-djvu-f8ff8572/artifact.toml",
+      "sha256": "e13c6deb86584a3851aa3b9d0467512fe3b303fad3f8ca4c3d459b8d05edd51c"
+    },
+    {
+      "byte_size": 1354176,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0231-jpeg-ef6deece/1657-page-0231.djvu.review.jpg",
+      "sha256": "ef6deece1dc053e1ad63e1f0a9c814919b0813f1eb845aab5eb598ef25b3cdc8"
+    },
+    {
+      "byte_size": 2386,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0231-jpeg-ef6deece/artifact.toml",
+      "sha256": "9827980d9ad722b651ec045993e674fbccb9d2a23e5d2013fa6c6c01f2277aa1"
+    },
+    {
+      "byte_size": 927062,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0234-djvu-f743e6b3/1657-page-0234.djvu",
+      "sha256": "f743e6b3d9248a9bfbd984f0bec8b0c52e5885b60c7578eaa3d0613f73382305"
+    },
+    {
+      "byte_size": 2029,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0234-djvu-f743e6b3/artifact.toml",
+      "sha256": "6faa7bcf9fe9dbfbe9fa86a06ae556f62aea3c9167c35d8ecb15c6212063c41e"
+    },
+    {
+      "byte_size": 1289246,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0234-jpeg-ae2266c7/1657-page-0234.djvu.review.jpg",
+      "sha256": "ae2266c770aa36d936172ee327593a7f772eeccf5b994b0a62437f739c236798"
+    },
+    {
+      "byte_size": 2386,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0234-jpeg-ae2266c7/artifact.toml",
+      "sha256": "212872273efe7a7cc690882ed2eb0b9dd23ab77c21cac9fcf84a0d28bb1e062a"
+    },
+    {
+      "byte_size": 952080,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0235-djvu-a76ca681/1657-page-0235.djvu",
+      "sha256": "a76ca681c57e62d740067360e395dc97981c1466b6bdbdd6f22733443737a937"
+    },
+    {
+      "byte_size": 2029,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0235-djvu-a76ca681/artifact.toml",
+      "sha256": "25553f1fe50bde05222b87005fa1491312da217303c48ba256530f6314ae9807"
+    },
+    {
+      "byte_size": 1304027,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0235-jpeg-f64508f8/1657-page-0235.djvu.review.jpg",
+      "sha256": "f64508f8e681f364e766483608820a1f0710cdd2025cb58335239afbb594dd6e"
+    },
+    {
+      "byte_size": 2386,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0235-jpeg-f64508f8/artifact.toml",
+      "sha256": "f514391cf9fc2c8b12b74d6b675a5cb671487a5e57b84e18d8c1c09333097cf8"
+    },
+    {
+      "byte_size": 894204,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0236-djvu-32b17621/1657-page-0236.djvu",
+      "sha256": "32b17621cd542459396ce113a9169c42b1fe9875ba6756ea397bd3c59227bd47"
+    },
+    {
+      "byte_size": 2029,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0236-djvu-32b17621/artifact.toml",
+      "sha256": "f59bb536db56dc3acad6eca76bf64249c13c4d7608e83f10a86500e4080a4466"
+    },
+    {
+      "byte_size": 1282098,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0236-jpeg-f461bff9/1657-page-0236.djvu.review.jpg",
+      "sha256": "f461bff997cdf0397ea643fce154f44f066ac142960a520dd031166ea6957e1d"
+    },
+    {
+      "byte_size": 2386,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0236-jpeg-f461bff9/artifact.toml",
+      "sha256": "9e7fede40f441ae349a4d102d59452f2eaeb7e0fe04f599456b2e911d2c67d4c"
+    },
+    {
+      "byte_size": 5434,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/orate-response-checked-latin-a362cf3f/artifact.toml",
+      "sha256": "ced15b2dc2d9fcfdf5e7d2dc5bedc1b4605218eb7445517b5e7c4bdc58da3f67"
+    },
+    {
+      "byte_size": 267,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/orate-response-checked-latin-a362cf3f/text.txt",
+      "sha256": "a362cf3fe48e850d3503d560e34c4daeb88726f271f7308cacd720f5ce93a796"
+    },
+    {
+      "byte_size": 4619,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/suscipe-trinitas-checked-latin-6da6f1b5/artifact.toml",
+      "sha256": "cd231d945510d099cb6309679dfb7a76f7f07274168643fe1a24deb973dd26e8"
+    },
+    {
+      "byte_size": 495,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/suscipe-trinitas-checked-latin-6da6f1b5/text.txt",
+      "sha256": "6da6f1b5e8b8d559d239ab61d991a45be84dbd50ef3060e95ece5f18884c4d5e"
+    },
+    {
+      "byte_size": 1169,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/edition.toml",
+      "sha256": "5d3fa02e48cf6b49e0dce36e5affcb1e324611e8635b1131c0c107ce71804cef"
+    },
+    {
+      "byte_size": 2299,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/confiteor-facsimile.toml",
+      "sha256": "9361c8be63e6ed05164f04a30409188fcfa16f5a91bdedf3316d401f0d54dfe4"
+    },
+    {
+      "byte_size": 2292,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/confiteor.toml",
+      "sha256": "a547c43d612ef3835d98135d6d9cbdec7bd657b5a02a5380357bf74b1b7e69b9"
+    },
+    {
+      "byte_size": 1064,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/offertory-placement-chalice.toml",
+      "sha256": "eebf685e1edd0cb601fcf3d5707fb13976ef931a2d6da8b5e9b1b9d9794a27b6"
+    },
+    {
+      "byte_size": 1060,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/offertory-placement-host.toml",
+      "sha256": "4c09651adebb415f98a3c9735e1a0d23842fb9db01b40a55887678f66e432fa1"
+    },
+    {
+      "byte_size": 2757,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/orate-response-facsimile.toml",
+      "sha256": "7b1a553acaafc1fa2ff2d66dbf2d7b885d631aa90679cef7b0913dd43971d7d4"
+    },
+    {
+      "byte_size": 2755,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/orate-response.toml",
+      "sha256": "8162f6e22cab1ec474c109f56730d999cf2a6bc84db9848263c20ea40fc8bbab"
+    },
+    {
+      "byte_size": 2340,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/suscipe-trinitas-facsimile.toml",
+      "sha256": "cae7ac9907d3f94e4dff8f4b8da34704417dfa2c1649aee6e7a18acd79f8cb0d"
+    },
+    {
+      "byte_size": 2340,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/suscipe-trinitas.toml",
+      "sha256": "83e12bc22e1e4744c67e4998de531ba5b525cd7d40ff40262e8b5d19ec03dd3b"
+    },
+    {
+      "byte_size": 948,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/title-and-imprint.toml",
+      "sha256": "e4d3865fc81a69798092b8dc6a9a22e69dbbddf3de4a78b01d2fbff22958a165"
+    },
+    {
+      "byte_size": 617354,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/bsb-canvas-00001-44b8ddf4/1606-page-1.jpg",
+      "sha256": "44b8ddf44781e3c23c318ae95cf2bfd3eb75c891ac269e67719fef483808cd30"
+    },
+    {
+      "byte_size": 2228,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/bsb-canvas-00001-44b8ddf4/artifact.toml",
+      "sha256": "3aaa8f0ba26f824cd95f1e02f2d34fa828ad39b1cac2acfe75e7d6db76c0ec16"
+    },
+    {
+      "byte_size": 675137,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/bsb-canvas-00234-7c8474ea/1606-page-234.jpg",
+      "sha256": "7c8474ea19ffe54abf9a7296f04485d4eec2ff4fbaec2b22c07397e30246dbcc"
+    },
+    {
+      "byte_size": 2232,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/bsb-canvas-00234-7c8474ea/artifact.toml",
+      "sha256": "f88174878a6c8a5fd618e867fe826e2d4dfb2ed0c1751f6ef56303febce00295"
+    },
+    {
+      "byte_size": 655093,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/bsb-canvas-00235-2646b0f5/1606-page-235.jpg",
+      "sha256": "2646b0f5aa0a2bb55fd1042680a673e6adb99ec66913f754a8ceeac0f14830d7"
+    },
+    {
+      "byte_size": 2232,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/bsb-canvas-00235-2646b0f5/artifact.toml",
+      "sha256": "d29df1be3dc722944feab576a18e14dc456acb4c5d2181ae372abf61108a502d"
+    },
+    {
+      "byte_size": 3805,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/confiteor-checked-latin-60e1426e/artifact.toml",
+      "sha256": "7669e24d7ed4309a975f3eac6968169330aa5b4a8b211ae7bd8549415480735c"
+    },
+    {
+      "byte_size": 173,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/confiteor-checked-latin-60e1426e/text.txt",
+      "sha256": "60e1426e08a9e75ef042f2e9a70103e74a6edea9a66c1a6f59a6e07b51735cd7"
+    },
+    {
+      "byte_size": 4841,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/orate-response-checked-latin-2bab0892/artifact.toml",
+      "sha256": "b908e6501e0dbec0d11ea216ed9681691ba987dc88eaa813eb499930b6ad7d4c"
+    },
+    {
+      "byte_size": 311,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/orate-response-checked-latin-2bab0892/text.txt",
+      "sha256": "2bab089289b6bbbdd52fdfdc62149db24d1f0135dc1f94164430e236cbc9a195"
+    },
+    {
+      "byte_size": 4461,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/suscipe-trinitas-checked-latin-0c61e53d/artifact.toml",
+      "sha256": "6255b1e2b535879ecc2cdadcd0a89cdbbca29267c9a234793667be7f08122979"
+    },
+    {
+      "byte_size": 479,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/suscipe-trinitas-checked-latin-0c61e53d/text.txt",
+      "sha256": "0c61e53dbefbeac73599036df993c0330a28920f3cea81e23c0ca2d62ec3a849"
+    },
+    {
+      "byte_size": 1123,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/edition.toml",
+      "sha256": "fb474c80a7d91801fcec163231ebbca13c96310adf4410722137f56a1d149580"
+    },
+    {
+      "byte_size": 1846,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/confiteor-facsimile.toml",
+      "sha256": "ffbda8929cdf310c51a21a31a12aa25d3cb7ed3121d93b0a9817299ab4698b3c"
+    },
+    {
+      "byte_size": 1843,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/confiteor.toml",
+      "sha256": "a0acfc1529e2a28ec26898c0fc591ab7c89de258ba9f93513e58f9ecc18cdaf2"
+    },
+    {
+      "byte_size": 2473,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/orate-response-facsimile.toml",
+      "sha256": "b7ec1dd157f5ef0c18e1c4b52fd9e13da1467841fd526dc32c97d6f649f10a94"
+    },
+    {
+      "byte_size": 2475,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/orate-response.toml",
+      "sha256": "6e02bab643d2921d9e590659193a1ef5e0305b7a018a4ef4e073953d859e4024"
+    },
+    {
+      "byte_size": 2212,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/suscipe-trinitas-facsimile.toml",
+      "sha256": "0b3fc5426119204363c67e2e8ca4096baea4d48bc4624048e449e9ff49bdd1d5"
+    },
+    {
+      "byte_size": 2216,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/suscipe-trinitas.toml",
+      "sha256": "ab3ea877fbc40fea9048160a31a8042eba732afde9f928fd51ef5b1b54e5168b"
+    },
+    {
+      "byte_size": 1005,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/title-and-imprint.toml",
+      "sha256": "c2ad4286672e48d90e71cf7bdaf54195ebc9e30dd1afb8e3cad3ce13407d0817"
+    },
+    {
+      "byte_size": 476,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/work.toml",
+      "sha256": "0a20612dcc68b398e30947dd780fca1072e9fb84e01b0fda56798a473449ea1a"
+    }
+  ],
+  "introduction_date_inferred": false,
+  "kind": "parallel-liturgical-unit-comparison",
+  "left": {
+    "adapter": "cistercian-1606-latin-ordinary",
+    "join_rule": "insert-one-space-between-exact-source-bodies",
+    "joined_source_text": "Oráte, fratres, pro me peccatóre: vt meum páriter ac vestrum in conspéctu Dómini acceptábile fiat sacrifícium. Dóminus sit in corde tuo & in lábiis tuis, suscipiátque de mánibus tuis sacrifícium istud: & oratiónes tuæ ascéndant in memóriam ante Deum pro nostra, & totíus pópuli salúte. Amen.",
+    "joined_source_text_sha256": "4a26e65f009e5e81bd72c1e051311bda55ab919198e23ead1c53f21c3fb5f516",
+    "members": [
+      {
+        "comparison_order": 1,
+        "content_id": "sha256:4a26e65f009e5e81bd72c1e051311bda55ab919198e23ead1c53f21c3fb5f516",
+        "diplomatic": false,
+        "division": "ordinary",
+        "element_key": "orate-response",
+        "kind": "dialogue",
+        "language": "la",
+        "part": "offertory",
+        "printed_page": "181",
+        "provenance": {
+          "evidence_source_ids": [
+            "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00235-2646b0f5",
+            "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.orate-response-facsimile",
+            "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.title-and-imprint"
+          ],
+          "normalization": "Manual transcription of the exact retained image SHA-256 2646b0f5aa0a2bb55fd1042680a673e6adb99ec66913f754a8ceeac0f14830d7 at Cistercian missal 1606, printed p. 181, right column; BSB canvas 00235. Normalize long s to s; merge display initials with the following letters in sentence case; remove line wraps and line-end word division; expand printed nasal suspension bars; retain printed u/v, æ/œ, accents, B. abbreviations, punctuation and the 1657 (vel meis) alternative. Separate standalone and intervening red rubrics from the spoken body, recording their source positions below; omit response cue glyphs from spoken text. Preserve the 1657 inline alternative (vel meis), including its red vel, as printed textual evidence. Join spoken blocks with one space. Preserve the source’s actual short endings rather than expanding them from other editions. Write one NFC UTF-8 line followed by one LF. These disclosed reading conventions make this a normalized transcription, not a diplomatic reproduction. Spoken block metadata (zero-based half-open Unicode codepoint ranges in the NFC body, excluding terminal LF): [{\"block\":1,\"codepoint_range\":[0,110],\"speaker\":\"priest invitation\",\"incipit\":\"Oráte, fratres, pro me\"},{\"block\":2,\"codepoint_range\":[111,291],\"speaker\":\"response marked by the printed response cue\",\"incipit\":\"Dóminus sit in corde\"}]. Separate source rubric context: Postea erectus vertat se versus chorum dicens. Rubric words and positions checked independently; English labels are editorial wrappers. Typography and punctuation of context remain accessible in the retained source image.",
+          "review_limits": "Independently collated against the exact page images by a second AI reader on 2026-10-16; final body and artifact hashes pin the approved text. Accepted normalization includes sentence-case merging of display initials and nasal-bar expansion. The 1657 Confiteor preserves the independently corrected acute in omnipoténti. This bounded review is not a human specialist certification or a collation of the whole edition. Independent review receipt SHA-256 60925d8f5af82def604ede1a4a491cd5f6d372bd7007b295170d1ac37b98a882; reviewed multiline text SHA-256 896c5b54638f88dcf2f54227e298f11b8ed7b74c676b8cc39b63415c324ad28f. Spoken block metadata (zero-based half-open Unicode codepoint ranges in the NFC body, excluding terminal LF): [{\"block\":1,\"codepoint_range\":[0,110],\"speaker\":\"priest invitation\",\"incipit\":\"Oráte, fratres, pro me\"},{\"block\":2,\"codepoint_range\":[111,291],\"speaker\":\"response marked by the printed response cue\",\"incipit\":\"Dóminus sit in corde\"}]. Separate source rubric context: Postea erectus vertat se versus chorum dicens. Rubric words and positions checked independently; English labels are editorial wrappers. Typography and punctuation of context remain accessible in the retained source image.",
+          "reviewed_on": "2026-10-16",
+          "scope": "Complete invitation and printed response dialogue; the 1657 final priestly Amen remains a separate recoverable block. Standalone red instructions and the 1606 response cue are recorded as context. The retained 1657 parenthetical (vel meis), with vel printed red, is an alternative in the printed response, not an instruction to utter both alternatives together. This is the identified printing’s original Latin; no later Roman book supplies missing words or resolves a variant. No introduction date, direct copying act or complete historical parent relationship is inferred.",
+          "source_locator": "Cistercian missal 1606, printed p. 181, right column; BSB canvas 00235.",
+          "status": "verified-bounded-printed-edition-transcription"
+        },
+        "publication": {
+          "basis": "public-domain",
+          "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.orate-response-checked-latin-2bab0892",
+          "jurisdiction": "United States",
+          "status": "permitted",
+          "surfaces": [
+            "public-git",
+            "corpus-data"
+          ]
+        },
+        "serialized_text": "Oráte, fratres, pro me peccatóre:\nvt meum páriter ac vestrum in conspéctu Dómini acceptábile fiat sacrifícium.\nDóminus sit in corde tuo & in lábiis tuis, suscipiátque de mánibus tuis sacrifícium istud:\n& oratiónes tuæ ascéndant in memóriam ante Deum pro nostra, & totíus pópuli salúte.\nAmen.\n",
+        "serialized_text_sha256": "c11083cb2518de30d8afaa2efa4aa4e6543b6f55456e11e5819b1a5ede402f25",
+        "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.orate-response-checked-latin-2bab0892",
+        "source_artifact_sha256": "2bab089289b6bbbdd52fdfdc62149db24d1f0135dc1f94164430e236cbc9a195",
+        "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.orate-response",
+        "source_order": 3,
+        "source_physical_line": 1,
+        "source_text": "Oráte, fratres, pro me peccatóre: vt meum páriter ac vestrum in conspéctu Dómini acceptábile fiat sacrifícium. Dóminus sit in corde tuo & in lábiis tuis, suscipiátque de mánibus tuis sacrifícium istud: & oratiónes tuæ ascéndant in memóriam ante Deum pro nostra, & totíus pópuli salúte. Amen.",
+        "target_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+        "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+        "text_path": "text/ordinary/ordinary/orate-response.txt",
+        "text_sha256": "4a26e65f009e5e81bd72c1e051311bda55ab919198e23ead1c53f21c3fb5f516",
+        "transcription_kind": "witness-normalized-transcription",
+        "unit_id": "unit.cistercian-1606.ordinary.orate-response"
+      }
+    ],
+    "record_binding": {
+      "checked_fields": [
+        "source_library_edition_id",
+        "source_library_passage_ids",
+        "source_library_checked_text_artifact_ids"
+      ],
+      "declarations": {
+        "source_library_checked_text_artifact_ids": [
+          "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.confiteor-checked-latin-60e1426e",
+          "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.suscipe-trinitas-checked-latin-0c61e53d",
+          "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.orate-response-checked-latin-2bab0892"
+        ],
+        "source_library_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+        "source_library_passage_ids": [
+          "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.confiteor",
+          "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.suscipe-trinitas",
+          "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.orate-response"
+        ]
+      },
+      "limitation": "Only explicit source-owner identities are checked; no manuscript identity, historical date or ancestry is inferred.",
+      "status": "checked-declared-identities"
+    },
+    "record_id": "western:cistercian-1606",
+    "reviewed_on": "2026-10-16",
+    "scope": {
+      "no_historical_backprojection": true,
+      "not_direct_manuscript_transcription": true,
+      "omitted_book_divisions": [
+        "All other Ordinary prayers",
+        "Propers, calendar and rites elsewhere in the volume",
+        "Red rubrics and response cue glyphs from the spoken comparison body; their selected context remains in provenance"
+      ],
+      "represented_witness": "The identified Paris 1606 Cistercian missal, original Latin printed wording.",
+      "status": "bounded-checked-latin-ordinary-selection",
+      "text_identity": "Confiteor, Suscipe Trinitas and Orate dialogue; normalized spelling presentation and recoverable spoken blocks, independently checked against retained page images.",
+      "whole_book_complete": false
+    },
+    "serialized_text": "Oráte, fratres, pro me peccatóre:\nvt meum páriter ac vestrum in conspéctu Dómini acceptábile fiat sacrifícium.\nDóminus sit in corde tuo & in lábiis tuis, suscipiátque de mánibus tuis sacrifícium istud:\n& oratiónes tuæ ascéndant in memóriam ante Deum pro nostra, & totíus pópuli salúte.\nAmen.\n",
+    "serialized_text_sha256": "c11083cb2518de30d8afaa2efa4aa4e6543b6f55456e11e5819b1a5ede402f25",
+    "target_date": "1606",
+    "text_set": "cistercian-1606-latin-ordinary",
+    "title": "Cistercian missal 1606: three selected Ordinary prayers",
+    "witness_date": "1606 printed edition; dates earlier cited acts separately"
+  },
+  "limitations": [
+    "This is an explicitly aligned witness comparison, not an asserted historical revision or parent relationship.",
+    "Orthography, spacing, capitalization and punctuation remain visible; a textual diff does not classify their historical significance.",
+    "The apparatus caveat must accompany any historical interpretation of this bounded passage."
+  ],
+  "membership_status": "established",
+  "relationship_ids": [],
+  "relationships": [],
+  "right": {
+    "adapter": "cistercian-1657-latin-ordinary",
+    "join_rule": "insert-one-space-between-exact-source-bodies",
+    "joined_source_text": "Oráte fratres, vt meum ac vestrum sacrifícium acceptábile fiat apud Deum patrem omnipoténtem. Suscípiat Dóminus sacrifícium de mánibus tuis (vel meis) ad laudem & glóriam nóminis sui, ad vtilitátem quoque nostram, totiúsque Ecclésiæ suæ sanctæ. Amen.",
+    "joined_source_text_sha256": "27c6a6fe46613aef99abc25c7ef2602fa8b9ac52a57e9af2f54cad3c30b62e4f",
+    "members": [
+      {
+        "comparison_order": 1,
+        "content_id": "sha256:27c6a6fe46613aef99abc25c7ef2602fa8b9ac52a57e9af2f54cad3c30b62e4f",
+        "diplomatic": false,
+        "division": "ordinary",
+        "element_key": "orate-response",
+        "kind": "dialogue",
+        "language": "la",
+        "part": "offertory",
+        "printed_page": "174",
+        "provenance": {
+          "evidence_source_ids": [
+            "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0236-jpeg-f461bff9",
+            "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.orate-response-facsimile",
+            "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.title-and-imprint"
+          ],
+          "normalization": "Manual transcription of the exact retained image SHA-256 f461bff997cdf0397ea643fce154f44f066ac142960a520dd031166ea6957e1d at Cistercian missal 1657, printed p. 174, right column; FIDES file 0236. Normalize long s to s; merge display initials with the following letters in sentence case; remove line wraps and line-end word division; expand printed nasal suspension bars; retain printed u/v, æ/œ, accents, B. abbreviations, punctuation and the 1657 (vel meis) alternative. Separate standalone and intervening red rubrics from the spoken body, recording their source positions below; omit response cue glyphs from spoken text. Preserve the 1657 inline alternative (vel meis), including its red vel, as printed textual evidence. Join spoken blocks with one space. Preserve the source’s actual short endings rather than expanding them from other editions. Write one NFC UTF-8 line followed by one LF. These disclosed reading conventions make this a normalized transcription, not a diplomatic reproduction. Spoken block metadata (zero-based half-open Unicode codepoint ranges in the NFC body, excluding terminal LF): [{\"block\":1,\"codepoint_range\":[0,93],\"speaker\":\"priest invitation\",\"incipit\":\"Oráte fratres, vt meum\"},{\"block\":2,\"codepoint_range\":[94,244],\"speaker\":\"minister or bystanders; priest himself if necessary\",\"incipit\":\"Suscípiat Dóminus sacrifícium de\"},{\"block\":3,\"codepoint_range\":[245,250],\"speaker\":\"priest, in a low voice\",\"incipit\":\"Amen.\"}]. Separate source rubric context: Posteà osculatur Altare, & versus ad populum, extendens & iungens manus, voce paululùm eleuata dicat. Response: Minister, seu circumstantes respondent: alioquin ipsemet Sacerdos. Before Amen: Sacerdos submissa voce dicit, Rubric words and positions checked independently; English labels are editorial wrappers. Typography and punctuation of context remain accessible in the retained source image.",
+          "review_limits": "Independently collated against the exact page images by a second AI reader on 2026-10-16; final body and artifact hashes pin the approved text. Accepted normalization includes sentence-case merging of display initials and nasal-bar expansion. The 1657 Confiteor preserves the independently corrected acute in omnipoténti. This bounded review is not a human specialist certification or a collation of the whole edition. Independent review receipt SHA-256 60925d8f5af82def604ede1a4a491cd5f6d372bd7007b295170d1ac37b98a882; reviewed multiline text SHA-256 3d9257e75bba4db69933eb369f49aefcc38b6a4a383593141f496e512ace4f34. Spoken block metadata (zero-based half-open Unicode codepoint ranges in the NFC body, excluding terminal LF): [{\"block\":1,\"codepoint_range\":[0,93],\"speaker\":\"priest invitation\",\"incipit\":\"Oráte fratres, vt meum\"},{\"block\":2,\"codepoint_range\":[94,244],\"speaker\":\"minister or bystanders; priest himself if necessary\",\"incipit\":\"Suscípiat Dóminus sacrifícium de\"},{\"block\":3,\"codepoint_range\":[245,250],\"speaker\":\"priest, in a low voice\",\"incipit\":\"Amen.\"}]. Separate source rubric context: Posteà osculatur Altare, & versus ad populum, extendens & iungens manus, voce paululùm eleuata dicat. Response: Minister, seu circumstantes respondent: alioquin ipsemet Sacerdos. Before Amen: Sacerdos submissa voce dicit, Rubric words and positions checked independently; English labels are editorial wrappers. Typography and punctuation of context remain accessible in the retained source image.",
+          "reviewed_on": "2026-10-16",
+          "scope": "Complete invitation and printed response dialogue; the 1657 final priestly Amen remains a separate recoverable block. Standalone red instructions and the 1606 response cue are recorded as context. The retained 1657 parenthetical (vel meis), with vel printed red, is an alternative in the printed response, not an instruction to utter both alternatives together. This is the identified printing’s original Latin; no later Roman book supplies missing words or resolves a variant. No introduction date, direct copying act or complete historical parent relationship is inferred.",
+          "source_locator": "Cistercian missal 1657, printed p. 174, right column; FIDES file 0236.",
+          "status": "verified-bounded-printed-edition-transcription"
+        },
+        "publication": {
+          "basis": "public-domain",
+          "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.orate-response-checked-latin-a362cf3f",
+          "jurisdiction": "United States",
+          "status": "permitted",
+          "surfaces": [
+            "public-git",
+            "corpus-data"
+          ]
+        },
+        "serialized_text": "Oráte fratres, vt meum ac vestrum sacrifícium acceptábile fiat apud Deum patrem omnipoténtem.\nSuscípiat Dóminus sacrifícium de mánibus tuis (vel meis) ad laudem & glóriam nóminis sui, ad vtilitátem quoque nostram, totiúsque Ecclésiæ suæ sanctæ.\nAmen.\n",
+        "serialized_text_sha256": "00bb224ffd9346f62a93aa85a918d1d59c1ad36861c8140e9f333d03b5312374",
+        "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.orate-response-checked-latin-a362cf3f",
+        "source_artifact_sha256": "a362cf3fe48e850d3503d560e34c4daeb88726f271f7308cacd720f5ce93a796",
+        "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.orate-response",
+        "source_order": 3,
+        "source_physical_line": 1,
+        "source_text": "Oráte fratres, vt meum ac vestrum sacrifícium acceptábile fiat apud Deum patrem omnipoténtem. Suscípiat Dóminus sacrifícium de mánibus tuis (vel meis) ad laudem & glóriam nóminis sui, ad vtilitátem quoque nostram, totiúsque Ecclésiæ suæ sanctæ. Amen.",
+        "target_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+        "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+        "text_path": "text/ordinary/ordinary/orate-response.txt",
+        "text_sha256": "27c6a6fe46613aef99abc25c7ef2602fa8b9ac52a57e9af2f54cad3c30b62e4f",
+        "transcription_kind": "witness-normalized-transcription",
+        "unit_id": "unit.cistercian-1657.ordinary.orate-response"
+      }
+    ],
+    "record_binding": {
+      "checked_fields": [
+        "source_library_edition_id",
+        "source_library_passage_ids",
+        "source_library_checked_text_artifact_ids"
+      ],
+      "declarations": {
+        "source_library_checked_text_artifact_ids": [
+          "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.confiteor-checked-latin-b2321dac",
+          "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.suscipe-trinitas-checked-latin-6da6f1b5",
+          "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.orate-response-checked-latin-a362cf3f"
+        ],
+        "source_library_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+        "source_library_passage_ids": [
+          "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.confiteor",
+          "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.suscipe-trinitas",
+          "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.orate-response"
+        ]
+      },
+      "limitation": "Only explicit source-owner identities are checked; no manuscript identity, historical date or ancestry is inferred.",
+      "status": "checked-declared-identities"
+    },
+    "record_id": "western:cistercian-1657",
+    "reviewed_on": "2026-10-16",
+    "scope": {
+      "no_historical_backprojection": true,
+      "not_direct_manuscript_transcription": true,
+      "omitted_book_divisions": [
+        "All other Ordinary prayers",
+        "Propers, calendar and rites elsewhere in the volume",
+        "Red rubrics and response cue glyphs from the spoken comparison body; their selected context remains in provenance"
+      ],
+      "represented_witness": "The identified Paris 1657 Cistercian missal, original Latin printed wording.",
+      "status": "bounded-checked-latin-ordinary-selection",
+      "text_identity": "Confiteor, Suscipe Trinitas and Orate dialogue; normalized spelling presentation and recoverable spoken blocks, independently checked against retained page images.",
+      "whole_book_complete": false
+    },
+    "serialized_text": "Oráte fratres, vt meum ac vestrum sacrifícium acceptábile fiat apud Deum patrem omnipoténtem.\nSuscípiat Dóminus sacrifícium de mánibus tuis (vel meis) ad laudem & glóriam nóminis sui, ad vtilitátem quoque nostram, totiúsque Ecclésiæ suæ sanctæ.\nAmen.\n",
+    "serialized_text_sha256": "00bb224ffd9346f62a93aa85a918d1d59c1ad36861c8140e9f333d03b5312374",
+    "target_date": "1657",
+    "text_set": "cistercian-1657-latin-ordinary",
+    "title": "Cistercian missal 1657: three selected Ordinary prayers",
+    "witness_date": "1657 printed edition; dates earlier cited acts separately"
+  },
+  "schema": "triptych-eucharistic-witness-comparison/v1",
+  "source_refs": [
+    "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.orate-response",
+    "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.orate-response"
+  ],
+  "sources": [
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 501,
+      "derived_from": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0231-jpeg-ef6deece",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.confiteor-checked-latin-b2321dac",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/confiteor-checked-latin-b2321dac/artifact.toml",
+      "manifest_sha256": "04c6eb709c89cbe9f8174019c5ea928c002ed43430e86c944d2800eb39dd2007",
+      "media_type": "text/plain; charset=utf-8",
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/confiteor-checked-latin-b2321dac/text.txt",
+      "provenance": "Independently collated against the exact page images by a second AI reader on 2026-10-16; final body and artifact hashes pin the approved text. Accepted normalization includes sentence-case merging of display initials and nasal-bar expansion. The 1657 Confiteor preserves the independently corrected acute in omnipoténti. This bounded review is not a human specialist certification or a collation of the whole edition. Independent review receipt SHA-256 60925d8f5af82def604ede1a4a491cd5f6d372bd7007b295170d1ac37b98a882; reviewed multiline text SHA-256 29f922326cfa06d28bf797bbb0a2f0e37bf648ef9e2b96192e38242ded70fe5d. Spoken block metadata (zero-based half-open Unicode codepoint ranges in the NFC body, excluding terminal LF): [{\"block\":1,\"codepoint_range\":[0,223],\"speaker\":\"priest\",\"incipit\":\"Confíteor Deo omnipoténti, B.\"},{\"block\":2,\"codepoint_range\":[224,471],\"speaker\":\"priest\",\"incipit\":\"mea culpa, mea culpa,\"}]. Separate source rubric context: Before mea culpa: Percutit sibi pectus ter, dicens: Rubric words and positions checked independently; English labels are editorial wrappers. Typography and punctuation of context remain accessible in the retained source image. The red chest-striking instruction occurs between spoken blocks 1 and 2, before the first mea culpa.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "Faithful bounded transcription of original Latin from the identified Paris 1657 printing, whose United States publication term has expired. This contains no modern translation or new critical reconstruction. The historical text is separate from the provider’s particular image rights; FIDES explicitly marks the source object public domain with unrestricted access. Third-party text is excluded from Triptych’s CC BY 4.0 license. Scholarly availability does not authorize contemporary liturgical use.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "b2321dacd6474a64480fe0cdfeb18fc5c51c7a12e34fb72c3834a00f2e48790f",
+      "storage": "tracked",
+      "transformation": "Manual transcription of the exact retained image SHA-256 ef6deece1dc053e1ad63e1f0a9c814919b0813f1eb845aab5eb598ef25b3cdc8 at Cistercian missal 1657, printed p. 169, right column; FIDES file 0231. Normalize long s to s; merge display initials with the following letters in sentence case; remove line wraps and line-end word division; expand printed nasal suspension bars; retain printed u/v, æ/œ, accents, B. abbreviations, punctuation and the 1657 (vel meis) alternative. Separate standalone and intervening red rubrics from the spoken body, recording their source positions below; omit response cue glyphs from spoken text. Preserve the 1657 inline alternative (vel meis), including its red vel, as printed textual evidence. Join spoken blocks with one space. Preserve the source’s actual short endings rather than expanding them from other editions. Write one NFC UTF-8 line followed by one LF. These disclosed reading conventions make this a normalized transcription, not a diplomatic reproduction. Spoken block metadata (zero-based half-open Unicode codepoint ranges in the NFC body, excluding terminal LF): [{\"block\":1,\"codepoint_range\":[0,223],\"speaker\":\"priest\",\"incipit\":\"Confíteor Deo omnipoténti, B.\"},{\"block\":2,\"codepoint_range\":[224,471],\"speaker\":\"priest\",\"incipit\":\"mea culpa, mea culpa,\"}]. Separate source rubric context: Before mea culpa: Percutit sibi pectus ter, dicens: Rubric words and positions checked independently; English labels are editorial wrappers. Typography and punctuation of context remain accessible in the retained source image. The red chest-striking instruction occurs between spoken blocks 1 and 2, before the first mea culpa."
+    },
+    {
+      "artifact_type": "djvu-support",
+      "byte_size": 83,
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.djvu-shared-annotation-af707c77",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/djvu-shared-annotation-af707c77/artifact.toml",
+      "manifest_sha256": "acec4760e4ec47064972404005959b4e4d7bb548fdbaa1f99253e6132f8af4ba",
+      "media_type": "application/octet-stream",
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/djvu-shared-annotation-af707c77/shared_anno.iff",
+      "provenance": "Exact 83-byte shared annotation dependency acquired from the same FIDES historical DjVu object. The literal shared_anno.iff reference is present in each retained parent page.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The title page identifies a Paris 1657 publication, whose United States publication term has expired. These are mechanical page scans or mechanical renderings of that historical edition. The holding provider explicitly marks FIDES edition 3755 Domena publiczna (Public domain) and access Dla wszystkich bez ograniczeń at https://digital.fides.org.pl/dlibra/publication/3978/edition/3755/content . The identified holding is Opactwo Benedyktynek w Krzeszowie, OSB Missale_Cisterciense_1657. Rights do not follow from download availability alone. Third-party source material is excluded from Triptych’s CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "af707c77503377397fabd114a5775918b8a83962045aa2cb7a19bc6b9bd5cd7d",
+      "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/shared_anno.iff",
+      "storage": "tracked"
+    },
+    {
+      "artifact_type": "facsimile-djvu",
+      "byte_size": 1105948,
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0005-djvu-add1dd8a",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0005-djvu-add1dd8a/artifact.toml",
+      "manifest_sha256": "c40f38a530f5ea3d9c4353f210e2f983d20dbc2e88d38903f922de3a58d3e340",
+      "media_type": "image/vnd.djvu",
+      "page_count": 1,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0005-djvu-add1dd8a/1657-page-0005.djvu",
+      "provenance": "Exact retrieved page bytes supplied by the acquisition reader on 2026-10-16; SHA-256 and byte size rechecked at canonical registration. The edition identity and bounded prayer pages were checked visually; no OCR layer controls the transcription.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The title page identifies a Paris 1657 publication, whose United States publication term has expired. These are mechanical page scans or mechanical renderings of that historical edition. The holding provider explicitly marks FIDES edition 3755 Domena publiczna (Public domain) and access Dla wszystkich bez ograniczeń at https://digital.fides.org.pl/dlibra/publication/3978/edition/3755/content . The identified holding is Opactwo Benedyktynek w Krzeszowie, OSB Missale_Cisterciense_1657. Rights do not follow from download availability alone. Third-party source material is excluded from Triptych’s CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "add1dd8aef836a88b13415fa836dad310d2dfe1c2b91c9554c0eb59d16a33f98",
+      "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0005.djvu",
+      "storage": "tracked",
+      "support_artifacts": [
+        {
+          "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.djvu-shared-annotation-af707c77",
+          "embedded_reference": "shared_anno.iff"
+        }
+      ]
+    },
+    {
+      "artifact_type": "facsimile-image",
+      "byte_size": 1156854,
+      "derived_from": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0005-djvu-add1dd8a",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0005-jpeg-62bdeb90",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0005-jpeg-62bdeb90/artifact.toml",
+      "manifest_sha256": "c420412ecf142f25f90190661fcf837027c9a8700a9df382d3d2dae978b94684",
+      "media_type": "image/jpeg",
+      "page_count": 1,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0005-jpeg-62bdeb90/1657-page-0005.djvu.review.jpg",
+      "provenance": "Exact retrieved page bytes supplied by the acquisition reader on 2026-10-16; SHA-256 and byte size rechecked at canonical registration. The edition identity and bounded prayer pages were checked visually; no OCR layer controls the transcription.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The title page identifies a Paris 1657 publication, whose United States publication term has expired. These are mechanical page scans or mechanical renderings of that historical edition. The holding provider explicitly marks FIDES edition 3755 Domena publiczna (Public domain) and access Dla wszystkich bez ograniczeń at https://digital.fides.org.pl/dlibra/publication/3978/edition/3755/content . The identified holding is Opactwo Benedyktynek w Krzeszowie, OSB Missale_Cisterciense_1657. Rights do not follow from download availability alone. Third-party source material is excluded from Triptych’s CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "62bdeb90dfab9f6aac673f1abd36aa0b4fe9cbdfd900476a0076ac8525e37cfd",
+      "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0005.djvu",
+      "storage": "tracked",
+      "transformation": "DjVu.js 0.5.4 createPngObjectUrl; ImageMagick -resize 1500x; complete page, no crop. Exact parent SHA-256 add1dd8aef836a88b13415fa836dad310d2dfe1c2b91c9554c0eb59d16a33f98. Decoder DjVu.js 0.5.4 SHA-256 10a831d62cc7ced39c30c7350a11410402d082a0f0a5b073a88d3d7ca662add3; the raw source page and its shared annotation dependency are retained separately. No textual correction, crop or replacement."
+    },
+    {
+      "artifact_type": "facsimile-djvu",
+      "byte_size": 1017058,
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0231-djvu-f8ff8572",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0231-djvu-f8ff8572/artifact.toml",
+      "manifest_sha256": "e13c6deb86584a3851aa3b9d0467512fe3b303fad3f8ca4c3d459b8d05edd51c",
+      "media_type": "image/vnd.djvu",
+      "page_count": 1,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0231-djvu-f8ff8572/1657-page-0231.djvu",
+      "provenance": "Exact retrieved page bytes supplied by the acquisition reader on 2026-10-16; SHA-256 and byte size rechecked at canonical registration. The edition identity and bounded prayer pages were checked visually; no OCR layer controls the transcription.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The title page identifies a Paris 1657 publication, whose United States publication term has expired. These are mechanical page scans or mechanical renderings of that historical edition. The holding provider explicitly marks FIDES edition 3755 Domena publiczna (Public domain) and access Dla wszystkich bez ograniczeń at https://digital.fides.org.pl/dlibra/publication/3978/edition/3755/content . The identified holding is Opactwo Benedyktynek w Krzeszowie, OSB Missale_Cisterciense_1657. Rights do not follow from download availability alone. Third-party source material is excluded from Triptych’s CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "f8ff8572046f654b62540694fea15a8f5a6ef2f51febfd253596f083dce05229",
+      "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0231.djvu",
+      "storage": "tracked",
+      "support_artifacts": [
+        {
+          "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.djvu-shared-annotation-af707c77",
+          "embedded_reference": "shared_anno.iff"
+        }
+      ]
+    },
+    {
+      "artifact_type": "facsimile-image",
+      "byte_size": 1354176,
+      "derived_from": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0231-djvu-f8ff8572",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0231-jpeg-ef6deece",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0231-jpeg-ef6deece/artifact.toml",
+      "manifest_sha256": "9827980d9ad722b651ec045993e674fbccb9d2a23e5d2013fa6c6c01f2277aa1",
+      "media_type": "image/jpeg",
+      "page_count": 1,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0231-jpeg-ef6deece/1657-page-0231.djvu.review.jpg",
+      "provenance": "Exact retrieved page bytes supplied by the acquisition reader on 2026-10-16; SHA-256 and byte size rechecked at canonical registration. The edition identity and bounded prayer pages were checked visually; no OCR layer controls the transcription.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The title page identifies a Paris 1657 publication, whose United States publication term has expired. These are mechanical page scans or mechanical renderings of that historical edition. The holding provider explicitly marks FIDES edition 3755 Domena publiczna (Public domain) and access Dla wszystkich bez ograniczeń at https://digital.fides.org.pl/dlibra/publication/3978/edition/3755/content . The identified holding is Opactwo Benedyktynek w Krzeszowie, OSB Missale_Cisterciense_1657. Rights do not follow from download availability alone. Third-party source material is excluded from Triptych’s CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "ef6deece1dc053e1ad63e1f0a9c814919b0813f1eb845aab5eb598ef25b3cdc8",
+      "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0231.djvu",
+      "storage": "tracked",
+      "transformation": "DjVu.js 0.5.4 createPngObjectUrl; ImageMagick -resize 1500x; complete page, no crop. Exact parent SHA-256 f8ff8572046f654b62540694fea15a8f5a6ef2f51febfd253596f083dce05229. Decoder DjVu.js 0.5.4 SHA-256 10a831d62cc7ced39c30c7350a11410402d082a0f0a5b073a88d3d7ca662add3; the raw source page and its shared annotation dependency are retained separately. No textual correction, crop or replacement."
+    },
+    {
+      "artifact_type": "facsimile-djvu",
+      "byte_size": 927062,
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0234-djvu-f743e6b3",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0234-djvu-f743e6b3/artifact.toml",
+      "manifest_sha256": "6faa7bcf9fe9dbfbe9fa86a06ae556f62aea3c9167c35d8ecb15c6212063c41e",
+      "media_type": "image/vnd.djvu",
+      "page_count": 1,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0234-djvu-f743e6b3/1657-page-0234.djvu",
+      "provenance": "Exact retrieved page bytes supplied by the acquisition reader on 2026-10-16; SHA-256 and byte size rechecked at canonical registration. The edition identity and bounded prayer pages were checked visually; no OCR layer controls the transcription.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The title page identifies a Paris 1657 publication, whose United States publication term has expired. These are mechanical page scans or mechanical renderings of that historical edition. The holding provider explicitly marks FIDES edition 3755 Domena publiczna (Public domain) and access Dla wszystkich bez ograniczeń at https://digital.fides.org.pl/dlibra/publication/3978/edition/3755/content . The identified holding is Opactwo Benedyktynek w Krzeszowie, OSB Missale_Cisterciense_1657. Rights do not follow from download availability alone. Third-party source material is excluded from Triptych’s CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "f743e6b3d9248a9bfbd984f0bec8b0c52e5885b60c7578eaa3d0613f73382305",
+      "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0234.djvu",
+      "storage": "tracked",
+      "support_artifacts": [
+        {
+          "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.djvu-shared-annotation-af707c77",
+          "embedded_reference": "shared_anno.iff"
+        }
+      ]
+    },
+    {
+      "artifact_type": "facsimile-image",
+      "byte_size": 1289246,
+      "derived_from": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0234-djvu-f743e6b3",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0234-jpeg-ae2266c7",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0234-jpeg-ae2266c7/artifact.toml",
+      "manifest_sha256": "212872273efe7a7cc690882ed2eb0b9dd23ab77c21cac9fcf84a0d28bb1e062a",
+      "media_type": "image/jpeg",
+      "page_count": 1,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0234-jpeg-ae2266c7/1657-page-0234.djvu.review.jpg",
+      "provenance": "Exact retrieved page bytes supplied by the acquisition reader on 2026-10-16; SHA-256 and byte size rechecked at canonical registration. The edition identity and bounded prayer pages were checked visually; no OCR layer controls the transcription.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The title page identifies a Paris 1657 publication, whose United States publication term has expired. These are mechanical page scans or mechanical renderings of that historical edition. The holding provider explicitly marks FIDES edition 3755 Domena publiczna (Public domain) and access Dla wszystkich bez ograniczeń at https://digital.fides.org.pl/dlibra/publication/3978/edition/3755/content . The identified holding is Opactwo Benedyktynek w Krzeszowie, OSB Missale_Cisterciense_1657. Rights do not follow from download availability alone. Third-party source material is excluded from Triptych’s CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "ae2266c770aa36d936172ee327593a7f772eeccf5b994b0a62437f739c236798",
+      "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0234.djvu",
+      "storage": "tracked",
+      "transformation": "DjVu.js 0.5.4 createPngObjectUrl; ImageMagick -resize 1500x; complete page, no crop. Exact parent SHA-256 f743e6b3d9248a9bfbd984f0bec8b0c52e5885b60c7578eaa3d0613f73382305. Decoder DjVu.js 0.5.4 SHA-256 10a831d62cc7ced39c30c7350a11410402d082a0f0a5b073a88d3d7ca662add3; the raw source page and its shared annotation dependency are retained separately. No textual correction, crop or replacement."
+    },
+    {
+      "artifact_type": "facsimile-djvu",
+      "byte_size": 952080,
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0235-djvu-a76ca681",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0235-djvu-a76ca681/artifact.toml",
+      "manifest_sha256": "25553f1fe50bde05222b87005fa1491312da217303c48ba256530f6314ae9807",
+      "media_type": "image/vnd.djvu",
+      "page_count": 1,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0235-djvu-a76ca681/1657-page-0235.djvu",
+      "provenance": "Exact retrieved page bytes supplied by the acquisition reader on 2026-10-16; SHA-256 and byte size rechecked at canonical registration. The edition identity and bounded prayer pages were checked visually; no OCR layer controls the transcription.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The title page identifies a Paris 1657 publication, whose United States publication term has expired. These are mechanical page scans or mechanical renderings of that historical edition. The holding provider explicitly marks FIDES edition 3755 Domena publiczna (Public domain) and access Dla wszystkich bez ograniczeń at https://digital.fides.org.pl/dlibra/publication/3978/edition/3755/content . The identified holding is Opactwo Benedyktynek w Krzeszowie, OSB Missale_Cisterciense_1657. Rights do not follow from download availability alone. Third-party source material is excluded from Triptych’s CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "a76ca681c57e62d740067360e395dc97981c1466b6bdbdd6f22733443737a937",
+      "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0235.djvu",
+      "storage": "tracked",
+      "support_artifacts": [
+        {
+          "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.djvu-shared-annotation-af707c77",
+          "embedded_reference": "shared_anno.iff"
+        }
+      ]
+    },
+    {
+      "artifact_type": "facsimile-image",
+      "byte_size": 1304027,
+      "derived_from": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0235-djvu-a76ca681",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0235-jpeg-f64508f8",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0235-jpeg-f64508f8/artifact.toml",
+      "manifest_sha256": "f514391cf9fc2c8b12b74d6b675a5cb671487a5e57b84e18d8c1c09333097cf8",
+      "media_type": "image/jpeg",
+      "page_count": 1,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0235-jpeg-f64508f8/1657-page-0235.djvu.review.jpg",
+      "provenance": "Exact retrieved page bytes supplied by the acquisition reader on 2026-10-16; SHA-256 and byte size rechecked at canonical registration. The edition identity and bounded prayer pages were checked visually; no OCR layer controls the transcription.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The title page identifies a Paris 1657 publication, whose United States publication term has expired. These are mechanical page scans or mechanical renderings of that historical edition. The holding provider explicitly marks FIDES edition 3755 Domena publiczna (Public domain) and access Dla wszystkich bez ograniczeń at https://digital.fides.org.pl/dlibra/publication/3978/edition/3755/content . The identified holding is Opactwo Benedyktynek w Krzeszowie, OSB Missale_Cisterciense_1657. Rights do not follow from download availability alone. Third-party source material is excluded from Triptych’s CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "f64508f8e681f364e766483608820a1f0710cdd2025cb58335239afbb594dd6e",
+      "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0235.djvu",
+      "storage": "tracked",
+      "transformation": "DjVu.js 0.5.4 createPngObjectUrl; ImageMagick -resize 1500x; complete page, no crop. Exact parent SHA-256 a76ca681c57e62d740067360e395dc97981c1466b6bdbdd6f22733443737a937. Decoder DjVu.js 0.5.4 SHA-256 10a831d62cc7ced39c30c7350a11410402d082a0f0a5b073a88d3d7ca662add3; the raw source page and its shared annotation dependency are retained separately. No textual correction, crop or replacement."
+    },
+    {
+      "artifact_type": "facsimile-djvu",
+      "byte_size": 894204,
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0236-djvu-32b17621",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0236-djvu-32b17621/artifact.toml",
+      "manifest_sha256": "f59bb536db56dc3acad6eca76bf64249c13c4d7608e83f10a86500e4080a4466",
+      "media_type": "image/vnd.djvu",
+      "page_count": 1,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0236-djvu-32b17621/1657-page-0236.djvu",
+      "provenance": "Exact retrieved page bytes supplied by the acquisition reader on 2026-10-16; SHA-256 and byte size rechecked at canonical registration. The edition identity and bounded prayer pages were checked visually; no OCR layer controls the transcription.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The title page identifies a Paris 1657 publication, whose United States publication term has expired. These are mechanical page scans or mechanical renderings of that historical edition. The holding provider explicitly marks FIDES edition 3755 Domena publiczna (Public domain) and access Dla wszystkich bez ograniczeń at https://digital.fides.org.pl/dlibra/publication/3978/edition/3755/content . The identified holding is Opactwo Benedyktynek w Krzeszowie, OSB Missale_Cisterciense_1657. Rights do not follow from download availability alone. Third-party source material is excluded from Triptych’s CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "32b17621cd542459396ce113a9169c42b1fe9875ba6756ea397bd3c59227bd47",
+      "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0236.djvu",
+      "storage": "tracked",
+      "support_artifacts": [
+        {
+          "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.djvu-shared-annotation-af707c77",
+          "embedded_reference": "shared_anno.iff"
+        }
+      ]
+    },
+    {
+      "artifact_type": "facsimile-image",
+      "byte_size": 1282098,
+      "derived_from": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0236-djvu-32b17621",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0236-jpeg-f461bff9",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0236-jpeg-f461bff9/artifact.toml",
+      "manifest_sha256": "9e7fede40f441ae349a4d102d59452f2eaeb7e0fe04f599456b2e911d2c67d4c",
+      "media_type": "image/jpeg",
+      "page_count": 1,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0236-jpeg-f461bff9/1657-page-0236.djvu.review.jpg",
+      "provenance": "Exact retrieved page bytes supplied by the acquisition reader on 2026-10-16; SHA-256 and byte size rechecked at canonical registration. The edition identity and bounded prayer pages were checked visually; no OCR layer controls the transcription.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The title page identifies a Paris 1657 publication, whose United States publication term has expired. These are mechanical page scans or mechanical renderings of that historical edition. The holding provider explicitly marks FIDES edition 3755 Domena publiczna (Public domain) and access Dla wszystkich bez ograniczeń at https://digital.fides.org.pl/dlibra/publication/3978/edition/3755/content . The identified holding is Opactwo Benedyktynek w Krzeszowie, OSB Missale_Cisterciense_1657. Rights do not follow from download availability alone. Third-party source material is excluded from Triptych’s CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "f461bff997cdf0397ea643fce154f44f066ac142960a520dd031166ea6957e1d",
+      "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0236.djvu",
+      "storage": "tracked",
+      "transformation": "DjVu.js 0.5.4 createPngObjectUrl; ImageMagick -resize 1500x; complete page, no crop. Exact parent SHA-256 32b17621cd542459396ce113a9169c42b1fe9875ba6756ea397bd3c59227bd47. Decoder DjVu.js 0.5.4 SHA-256 10a831d62cc7ced39c30c7350a11410402d082a0f0a5b073a88d3d7ca662add3; the raw source page and its shared annotation dependency are retained separately. No textual correction, crop or replacement."
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 267,
+      "derived_from": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0236-jpeg-f461bff9",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.orate-response-checked-latin-a362cf3f",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/orate-response-checked-latin-a362cf3f/artifact.toml",
+      "manifest_sha256": "ced15b2dc2d9fcfdf5e7d2dc5bedc1b4605218eb7445517b5e7c4bdc58da3f67",
+      "media_type": "text/plain; charset=utf-8",
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/orate-response-checked-latin-a362cf3f/text.txt",
+      "provenance": "Independently collated against the exact page images by a second AI reader on 2026-10-16; final body and artifact hashes pin the approved text. Accepted normalization includes sentence-case merging of display initials and nasal-bar expansion. The 1657 Confiteor preserves the independently corrected acute in omnipoténti. This bounded review is not a human specialist certification or a collation of the whole edition. Independent review receipt SHA-256 60925d8f5af82def604ede1a4a491cd5f6d372bd7007b295170d1ac37b98a882; reviewed multiline text SHA-256 3d9257e75bba4db69933eb369f49aefcc38b6a4a383593141f496e512ace4f34. Spoken block metadata (zero-based half-open Unicode codepoint ranges in the NFC body, excluding terminal LF): [{\"block\":1,\"codepoint_range\":[0,93],\"speaker\":\"priest invitation\",\"incipit\":\"Oráte fratres, vt meum\"},{\"block\":2,\"codepoint_range\":[94,244],\"speaker\":\"minister or bystanders; priest himself if necessary\",\"incipit\":\"Suscípiat Dóminus sacrifícium de\"},{\"block\":3,\"codepoint_range\":[245,250],\"speaker\":\"priest, in a low voice\",\"incipit\":\"Amen.\"}]. Separate source rubric context: Posteà osculatur Altare, & versus ad populum, extendens & iungens manus, voce paululùm eleuata dicat. Response: Minister, seu circumstantes respondent: alioquin ipsemet Sacerdos. Before Amen: Sacerdos submissa voce dicit, Rubric words and positions checked independently; English labels are editorial wrappers. Typography and punctuation of context remain accessible in the retained source image.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "Faithful bounded transcription of original Latin from the identified Paris 1657 printing, whose United States publication term has expired. This contains no modern translation or new critical reconstruction. The historical text is separate from the provider’s particular image rights; FIDES explicitly marks the source object public domain with unrestricted access. Third-party text is excluded from Triptych’s CC BY 4.0 license. Scholarly availability does not authorize contemporary liturgical use.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "a362cf3fe48e850d3503d560e34c4daeb88726f271f7308cacd720f5ce93a796",
+      "storage": "tracked",
+      "transformation": "Manual transcription of the exact retained image SHA-256 f461bff997cdf0397ea643fce154f44f066ac142960a520dd031166ea6957e1d at Cistercian missal 1657, printed p. 174, right column; FIDES file 0236. Normalize long s to s; merge display initials with the following letters in sentence case; remove line wraps and line-end word division; expand printed nasal suspension bars; retain printed u/v, æ/œ, accents, B. abbreviations, punctuation and the 1657 (vel meis) alternative. Separate standalone and intervening red rubrics from the spoken body, recording their source positions below; omit response cue glyphs from spoken text. Preserve the 1657 inline alternative (vel meis), including its red vel, as printed textual evidence. Join spoken blocks with one space. Preserve the source’s actual short endings rather than expanding them from other editions. Write one NFC UTF-8 line followed by one LF. These disclosed reading conventions make this a normalized transcription, not a diplomatic reproduction. Spoken block metadata (zero-based half-open Unicode codepoint ranges in the NFC body, excluding terminal LF): [{\"block\":1,\"codepoint_range\":[0,93],\"speaker\":\"priest invitation\",\"incipit\":\"Oráte fratres, vt meum\"},{\"block\":2,\"codepoint_range\":[94,244],\"speaker\":\"minister or bystanders; priest himself if necessary\",\"incipit\":\"Suscípiat Dóminus sacrifícium de\"},{\"block\":3,\"codepoint_range\":[245,250],\"speaker\":\"priest, in a low voice\",\"incipit\":\"Amen.\"}]. Separate source rubric context: Posteà osculatur Altare, & versus ad populum, extendens & iungens manus, voce paululùm eleuata dicat. Response: Minister, seu circumstantes respondent: alioquin ipsemet Sacerdos. Before Amen: Sacerdos submissa voce dicit, Rubric words and positions checked independently; English labels are editorial wrappers. Typography and punctuation of context remain accessible in the retained source image."
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 495,
+      "derived_from": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0236-jpeg-f461bff9",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.suscipe-trinitas-checked-latin-6da6f1b5",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/suscipe-trinitas-checked-latin-6da6f1b5/artifact.toml",
+      "manifest_sha256": "cd231d945510d099cb6309679dfb7a76f7f07274168643fe1a24deb973dd26e8",
+      "media_type": "text/plain; charset=utf-8",
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/suscipe-trinitas-checked-latin-6da6f1b5/text.txt",
+      "provenance": "Independently collated against the exact page images by a second AI reader on 2026-10-16; final body and artifact hashes pin the approved text. Accepted normalization includes sentence-case merging of display initials and nasal-bar expansion. The 1657 Confiteor preserves the independently corrected acute in omnipoténti. This bounded review is not a human specialist certification or a collation of the whole edition. Independent review receipt SHA-256 60925d8f5af82def604ede1a4a491cd5f6d372bd7007b295170d1ac37b98a882; reviewed multiline text SHA-256 3088e7f4905afabe0f2e384ed69a33c58342b21de8a79c7e431c655a174a07de. Spoken block metadata (zero-based half-open Unicode codepoint ranges in the NFC body, excluding terminal LF): [{\"block\":1,\"codepoint_range\":[0,460],\"speaker\":\"priest\",\"incipit\":\"Súscipe sancta Trínitas, hanc\"}]. Separate source rubric context: After Lavabo: Deinde aliquantum inclinatus in medio Altaris, iunctis manibus super eo, dicit: Rubric words and positions checked independently; English labels are editorial wrappers. Typography and punctuation of context remain accessible in the retained source image.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "Faithful bounded transcription of original Latin from the identified Paris 1657 printing, whose United States publication term has expired. This contains no modern translation or new critical reconstruction. The historical text is separate from the provider’s particular image rights; FIDES explicitly marks the source object public domain with unrestricted access. Third-party text is excluded from Triptych’s CC BY 4.0 license. Scholarly availability does not authorize contemporary liturgical use.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "6da6f1b5e8b8d559d239ab61d991a45be84dbd50ef3060e95ece5f18884c4d5e",
+      "storage": "tracked",
+      "transformation": "Manual transcription of the exact retained image SHA-256 f461bff997cdf0397ea643fce154f44f066ac142960a520dd031166ea6957e1d at Cistercian missal 1657, printed p. 174, left bottom continuing right top column; FIDES file 0236. Normalize long s to s; merge display initials with the following letters in sentence case; remove line wraps and line-end word division; expand printed nasal suspension bars; retain printed u/v, æ/œ, accents, B. abbreviations, punctuation and the 1657 (vel meis) alternative. Separate standalone and intervening red rubrics from the spoken body, recording their source positions below; omit response cue glyphs from spoken text. Preserve the 1657 inline alternative (vel meis), including its red vel, as printed textual evidence. Join spoken blocks with one space. Preserve the source’s actual short endings rather than expanding them from other editions. Write one NFC UTF-8 line followed by one LF. These disclosed reading conventions make this a normalized transcription, not a diplomatic reproduction. Spoken block metadata (zero-based half-open Unicode codepoint ranges in the NFC body, excluding terminal LF): [{\"block\":1,\"codepoint_range\":[0,460],\"speaker\":\"priest\",\"incipit\":\"Súscipe sancta Trínitas, hanc\"}]. Separate source rubric context: After Lavabo: Deinde aliquantum inclinatus in medio Altaris, iunctis manibus super eo, dicit: Rubric words and positions checked independently; English labels are editorial wrappers. Typography and punctuation of context remain accessible in the retained source image."
+    },
+    {
+      "artifact_type": "facsimile-image",
+      "byte_size": 617354,
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00001-44b8ddf4",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/bsb-canvas-00001-44b8ddf4/artifact.toml",
+      "manifest_sha256": "3aaa8f0ba26f824cd95f1e02f2d34fa828ad39b1cac2acfe75e7d6db76c0ec16",
+      "media_type": "image/jpeg",
+      "page_count": 1,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/bsb-canvas-00001-44b8ddf4/1606-page-1.jpg",
+      "provenance": "Exact retrieved page bytes supplied by the acquisition reader on 2026-10-16; SHA-256 and byte size rechecked at canonical registration. The edition identity and bounded prayer pages were checked visually; no OCR layer controls the transcription. Exact BSB IIIF image delivery at full/1500,/0/default.jpg; no local image alteration. Canvas 1. Rights and attribution fields inspected in the provider IIIF manifest, SHA-256 5026f4bcbcc205348f384859d9646fe99fe9798dca5fbdb8ba31ecca7cabfb2b.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The identified 1606 printed text is public domain by expiration of its publication term. This particular Bayerische Staatsbibliothek digital image is supplied under No Copyright - Non-Commercial Use Only 1.0, https://rightsstatements.org/vocab/NoC-NC/1.0/ ; this is a rights statement, not a Creative Commons license. The provider notice permits noncommercial copying and redistribution subject to its noncommercial condition. Retained here for noncommercial scholarly source comparison with attribution: München, Bayerische Staatsbibliothek, 2 Liturg. 205 a, bsb10496382. Image restrictions are not attributed to the underlying historical Latin text. These source images are excluded from Triptych’s CC BY 4.0 license; no unrestricted image reuse is asserted.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "permission",
+      "sha256": "44b8ddf44781e3c23c318ae95cf2bfd3eb75c891ac269e67719fef483808cd30",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10496382_00001/full/1500,/0/default.jpg",
+      "storage": "tracked"
+    },
+    {
+      "artifact_type": "facsimile-image",
+      "byte_size": 675137,
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00234-7c8474ea",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/bsb-canvas-00234-7c8474ea/artifact.toml",
+      "manifest_sha256": "f88174878a6c8a5fd618e867fe826e2d4dfb2ed0c1751f6ef56303febce00295",
+      "media_type": "image/jpeg",
+      "page_count": 1,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/bsb-canvas-00234-7c8474ea/1606-page-234.jpg",
+      "provenance": "Exact retrieved page bytes supplied by the acquisition reader on 2026-10-16; SHA-256 and byte size rechecked at canonical registration. The edition identity and bounded prayer pages were checked visually; no OCR layer controls the transcription. Exact BSB IIIF image delivery at full/1500,/0/default.jpg; no local image alteration. Canvas 234. Rights and attribution fields inspected in the provider IIIF manifest, SHA-256 5026f4bcbcc205348f384859d9646fe99fe9798dca5fbdb8ba31ecca7cabfb2b.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The identified 1606 printed text is public domain by expiration of its publication term. This particular Bayerische Staatsbibliothek digital image is supplied under No Copyright - Non-Commercial Use Only 1.0, https://rightsstatements.org/vocab/NoC-NC/1.0/ ; this is a rights statement, not a Creative Commons license. The provider notice permits noncommercial copying and redistribution subject to its noncommercial condition. Retained here for noncommercial scholarly source comparison with attribution: München, Bayerische Staatsbibliothek, 2 Liturg. 205 a, bsb10496382. Image restrictions are not attributed to the underlying historical Latin text. These source images are excluded from Triptych’s CC BY 4.0 license; no unrestricted image reuse is asserted.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "permission",
+      "sha256": "7c8474ea19ffe54abf9a7296f04485d4eec2ff4fbaec2b22c07397e30246dbcc",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10496382_00234/full/1500,/0/default.jpg",
+      "storage": "tracked"
+    },
+    {
+      "artifact_type": "facsimile-image",
+      "byte_size": 655093,
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00235-2646b0f5",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/bsb-canvas-00235-2646b0f5/artifact.toml",
+      "manifest_sha256": "d29df1be3dc722944feab576a18e14dc456acb4c5d2181ae372abf61108a502d",
+      "media_type": "image/jpeg",
+      "page_count": 1,
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/bsb-canvas-00235-2646b0f5/1606-page-235.jpg",
+      "provenance": "Exact retrieved page bytes supplied by the acquisition reader on 2026-10-16; SHA-256 and byte size rechecked at canonical registration. The edition identity and bounded prayer pages were checked visually; no OCR layer controls the transcription. Exact BSB IIIF image delivery at full/1500,/0/default.jpg; no local image alteration. Canvas 235. Rights and attribution fields inspected in the provider IIIF manifest, SHA-256 5026f4bcbcc205348f384859d9646fe99fe9798dca5fbdb8ba31ecca7cabfb2b.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The identified 1606 printed text is public domain by expiration of its publication term. This particular Bayerische Staatsbibliothek digital image is supplied under No Copyright - Non-Commercial Use Only 1.0, https://rightsstatements.org/vocab/NoC-NC/1.0/ ; this is a rights statement, not a Creative Commons license. The provider notice permits noncommercial copying and redistribution subject to its noncommercial condition. Retained here for noncommercial scholarly source comparison with attribution: München, Bayerische Staatsbibliothek, 2 Liturg. 205 a, bsb10496382. Image restrictions are not attributed to the underlying historical Latin text. These source images are excluded from Triptych’s CC BY 4.0 license; no unrestricted image reuse is asserted.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "permission",
+      "sha256": "2646b0f5aa0a2bb55fd1042680a673e6adb99ec66913f754a8ceeac0f14830d7",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10496382_00235/full/1500,/0/default.jpg",
+      "storage": "tracked"
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 173,
+      "derived_from": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00234-7c8474ea",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.confiteor-checked-latin-60e1426e",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/confiteor-checked-latin-60e1426e/artifact.toml",
+      "manifest_sha256": "7669e24d7ed4309a975f3eac6968169330aa5b4a8b211ae7bd8549415480735c",
+      "media_type": "text/plain; charset=utf-8",
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/confiteor-checked-latin-60e1426e/text.txt",
+      "provenance": "Independently collated against the exact page images by a second AI reader on 2026-10-16; final body and artifact hashes pin the approved text. Accepted normalization includes sentence-case merging of display initials and nasal-bar expansion. The 1657 Confiteor preserves the independently corrected acute in omnipoténti. This bounded review is not a human specialist certification or a collation of the whole edition. Independent review receipt SHA-256 60925d8f5af82def604ede1a4a491cd5f6d372bd7007b295170d1ac37b98a882; reviewed multiline text SHA-256 ae1ed27ae22ae246c788fc249b3908304672177145da2d8b12702108912030f5. Spoken block metadata (zero-based half-open Unicode codepoint ranges in the NFC body, excluding terminal LF): [{\"block\":1,\"codepoint_range\":[0,161],\"speaker\":\"priest\",\"incipit\":\"Confíteor Deo, & beátæ\"}]. ",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "Faithful bounded transcription of original Latin from the identified Paris 1606 printing, whose United States publication term has expired. This contains no modern translation or new critical reconstruction. The historical text is separate from the provider’s particular image rights; the BSB source image retains its NoC-NC condition and attribution. Third-party text is excluded from Triptych’s CC BY 4.0 license. Scholarly availability does not authorize contemporary liturgical use.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "60e1426e08a9e75ef042f2e9a70103e74a6edea9a66c1a6f59a6e07b51735cd7",
+      "storage": "tracked",
+      "transformation": "Manual transcription of the exact retained image SHA-256 7c8474ea19ffe54abf9a7296f04485d4eec2ff4fbaec2b22c07397e30246dbcc at Cistercian missal 1606, printed p. 180, left column; BSB canvas 00234. Normalize long s to s; merge display initials with the following letters in sentence case; remove line wraps and line-end word division; expand printed nasal suspension bars; retain printed u/v, æ/œ, accents, B. abbreviations, punctuation and the 1657 (vel meis) alternative. Separate standalone and intervening red rubrics from the spoken body, recording their source positions below; omit response cue glyphs from spoken text. Preserve the 1657 inline alternative (vel meis), including its red vel, as printed textual evidence. Join spoken blocks with one space. Preserve the source’s actual short endings rather than expanding them from other editions. Write one NFC UTF-8 line followed by one LF. These disclosed reading conventions make this a normalized transcription, not a diplomatic reproduction. Spoken block metadata (zero-based half-open Unicode codepoint ranges in the NFC body, excluding terminal LF): [{\"block\":1,\"codepoint_range\":[0,161],\"speaker\":\"priest\",\"incipit\":\"Confíteor Deo, & beátæ\"}]. "
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 311,
+      "derived_from": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00235-2646b0f5",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.orate-response-checked-latin-2bab0892",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/orate-response-checked-latin-2bab0892/artifact.toml",
+      "manifest_sha256": "b908e6501e0dbec0d11ea216ed9681691ba987dc88eaa813eb499930b6ad7d4c",
+      "media_type": "text/plain; charset=utf-8",
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/orate-response-checked-latin-2bab0892/text.txt",
+      "provenance": "Independently collated against the exact page images by a second AI reader on 2026-10-16; final body and artifact hashes pin the approved text. Accepted normalization includes sentence-case merging of display initials and nasal-bar expansion. The 1657 Confiteor preserves the independently corrected acute in omnipoténti. This bounded review is not a human specialist certification or a collation of the whole edition. Independent review receipt SHA-256 60925d8f5af82def604ede1a4a491cd5f6d372bd7007b295170d1ac37b98a882; reviewed multiline text SHA-256 896c5b54638f88dcf2f54227e298f11b8ed7b74c676b8cc39b63415c324ad28f. Spoken block metadata (zero-based half-open Unicode codepoint ranges in the NFC body, excluding terminal LF): [{\"block\":1,\"codepoint_range\":[0,110],\"speaker\":\"priest invitation\",\"incipit\":\"Oráte, fratres, pro me\"},{\"block\":2,\"codepoint_range\":[111,291],\"speaker\":\"response marked by the printed response cue\",\"incipit\":\"Dóminus sit in corde\"}]. Separate source rubric context: Postea erectus vertat se versus chorum dicens. Rubric words and positions checked independently; English labels are editorial wrappers. Typography and punctuation of context remain accessible in the retained source image.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "Faithful bounded transcription of original Latin from the identified Paris 1606 printing, whose United States publication term has expired. This contains no modern translation or new critical reconstruction. The historical text is separate from the provider’s particular image rights; the BSB source image retains its NoC-NC condition and attribution. Third-party text is excluded from Triptych’s CC BY 4.0 license. Scholarly availability does not authorize contemporary liturgical use.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "2bab089289b6bbbdd52fdfdc62149db24d1f0135dc1f94164430e236cbc9a195",
+      "storage": "tracked",
+      "transformation": "Manual transcription of the exact retained image SHA-256 2646b0f5aa0a2bb55fd1042680a673e6adb99ec66913f754a8ceeac0f14830d7 at Cistercian missal 1606, printed p. 181, right column; BSB canvas 00235. Normalize long s to s; merge display initials with the following letters in sentence case; remove line wraps and line-end word division; expand printed nasal suspension bars; retain printed u/v, æ/œ, accents, B. abbreviations, punctuation and the 1657 (vel meis) alternative. Separate standalone and intervening red rubrics from the spoken body, recording their source positions below; omit response cue glyphs from spoken text. Preserve the 1657 inline alternative (vel meis), including its red vel, as printed textual evidence. Join spoken blocks with one space. Preserve the source’s actual short endings rather than expanding them from other editions. Write one NFC UTF-8 line followed by one LF. These disclosed reading conventions make this a normalized transcription, not a diplomatic reproduction. Spoken block metadata (zero-based half-open Unicode codepoint ranges in the NFC body, excluding terminal LF): [{\"block\":1,\"codepoint_range\":[0,110],\"speaker\":\"priest invitation\",\"incipit\":\"Oráte, fratres, pro me\"},{\"block\":2,\"codepoint_range\":[111,291],\"speaker\":\"response marked by the printed response cue\",\"incipit\":\"Dóminus sit in corde\"}]. Separate source rubric context: Postea erectus vertat se versus chorum dicens. Rubric words and positions checked independently; English labels are editorial wrappers. Typography and punctuation of context remain accessible in the retained source image."
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 479,
+      "derived_from": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00235-2646b0f5",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.suscipe-trinitas-checked-latin-0c61e53d",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/suscipe-trinitas-checked-latin-0c61e53d/artifact.toml",
+      "manifest_sha256": "6255b1e2b535879ecc2cdadcd0a89cdbbca29267c9a234793667be7f08122979",
+      "media_type": "text/plain; charset=utf-8",
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/suscipe-trinitas-checked-latin-0c61e53d/text.txt",
+      "provenance": "Independently collated against the exact page images by a second AI reader on 2026-10-16; final body and artifact hashes pin the approved text. Accepted normalization includes sentence-case merging of display initials and nasal-bar expansion. The 1657 Confiteor preserves the independently corrected acute in omnipoténti. This bounded review is not a human specialist certification or a collation of the whole edition. Independent review receipt SHA-256 60925d8f5af82def604ede1a4a491cd5f6d372bd7007b295170d1ac37b98a882; reviewed multiline text SHA-256 f4ef4201b6fd2a2d3b81da889d8706d698d73f6c14e36d2e7f73b291820b76ac. Spoken block metadata (zero-based half-open Unicode codepoint ranges in the NFC body, excluding terminal LF): [{\"block\":1,\"codepoint_range\":[0,440],\"speaker\":\"priest\",\"incipit\":\"Súscipe Sancta Trínitas vnus\"}]. Separate source rubric context: Offertorio dicto, eleuatis patena cum pane, & calice, & genufle. dicat. Rubric words and positions checked independently; English labels are editorial wrappers. Typography and punctuation of context remain accessible in the retained source image.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "Faithful bounded transcription of original Latin from the identified Paris 1606 printing, whose United States publication term has expired. This contains no modern translation or new critical reconstruction. The historical text is separate from the provider’s particular image rights; the BSB source image retains its NoC-NC condition and attribution. Third-party text is excluded from Triptych’s CC BY 4.0 license. Scholarly availability does not authorize contemporary liturgical use.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "0c61e53dbefbeac73599036df993c0330a28920f3cea81e23c0ca2d62ec3a849",
+      "storage": "tracked",
+      "transformation": "Manual transcription of the exact retained image SHA-256 2646b0f5aa0a2bb55fd1042680a673e6adb99ec66913f754a8ceeac0f14830d7 at Cistercian missal 1606, printed p. 181, right column; BSB canvas 00235. Normalize long s to s; merge display initials with the following letters in sentence case; remove line wraps and line-end word division; expand printed nasal suspension bars; retain printed u/v, æ/œ, accents, B. abbreviations, punctuation and the 1657 (vel meis) alternative. Separate standalone and intervening red rubrics from the spoken body, recording their source positions below; omit response cue glyphs from spoken text. Preserve the 1657 inline alternative (vel meis), including its red vel, as printed textual evidence. Join spoken blocks with one space. Preserve the source’s actual short endings rather than expanding them from other editions. Write one NFC UTF-8 line followed by one LF. These disclosed reading conventions make this a normalized transcription, not a diplomatic reproduction. Spoken block metadata (zero-based half-open Unicode codepoint ranges in the NFC body, excluding terminal LF): [{\"block\":1,\"codepoint_range\":[0,440],\"speaker\":\"priest\",\"incipit\":\"Súscipe Sancta Trínitas vnus\"}]. Separate source rubric context: Offertorio dicto, eleuatis patena cum pane, & calice, & genufle. dicat. Rubric words and positions checked independently; English labels are editorial wrappers. Typography and punctuation of context remain accessible in the retained source image."
+    },
+    {
+      "authority": "Cistercian Order",
+      "date": "1657",
+      "id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "language": "la",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/edition.toml",
+      "manifest_sha256": "5d3fa02e48cf6b49e0dce36e5affcb1e324611e8635b1131c0c107ce71804cef",
+      "publication": "Parisiis, Sumptibus Sebastiani Cramoisy et Gabrielis Cramoisy, 1657",
+      "record_type": "edition",
+      "title": "Missale Cisterciense iuxta Romani recogniti correctionem. Primo editum. Authoritate Superiorum",
+      "work_id": "work.cistercian-order.missale-cisterciense"
+    },
+    {
+      "authority": "Cistercian Order",
+      "date": "1606",
+      "id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "language": "la",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/edition.toml",
+      "manifest_sha256": "fb474c80a7d91801fcec163231ebbca13c96310adf4410722137f56a1d149580",
+      "publication": "Parisiis, In Officina H. de Marnef, apud Dionysiam Cauellat, 1606",
+      "record_type": "edition",
+      "title": "Missale ad vsum sacri Ordinis Cisterciensis. Iuxta decreta Capituli Generalis dicti ordinis, Romano conformius redditum, primo accentibus ornatum & auctum",
+      "work_id": "work.cistercian-order.missale-cisterciense"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.confiteor-checked-latin-b2321dac",
+      "artifact_sha256": "b2321dacd6474a64480fe0cdfeb18fc5c51c7a12e34fb72c3834a00f2e48790f",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.confiteor",
+      "locus": "Cistercian missal 1657, printed p. 169, right column; FIDES file 0231.",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/confiteor.toml",
+      "manifest_sha256": "a547c43d612ef3835d98135d6d9cbdec7bd657b5a02a5380357bf74b1b7e69b9",
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0231-jpeg-ef6deece",
+      "artifact_page_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "artifact_sha256": "ef6deece1dc053e1ad63e1f0a9c814919b0813f1eb845aab5eb598ef25b3cdc8",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.confiteor-facsimile",
+      "locus": "Cistercian missal 1657, printed p. 169, right column; FIDES file 0231.",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/confiteor-facsimile.toml",
+      "manifest_sha256": "9361c8be63e6ed05164f04a30409188fcfa16f5a91bdedf3316d401f0d54dfe4",
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0235-jpeg-f64508f8",
+      "artifact_page_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "artifact_sha256": "f64508f8e681f364e766483608820a1f0710cdd2025cb58335239afbb594dd6e",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-placement-chalice",
+      "locus": "Printed p. 173, left column; FIDES file 0235",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/offertory-placement-chalice.toml",
+      "manifest_sha256": "eebf685e1edd0cb601fcf3d5707fb13976ef931a2d6da8b5e9b1b9d9794a27b6",
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0234-jpeg-ae2266c7",
+      "artifact_page_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "artifact_sha256": "ae2266c770aa36d936172ee327593a7f772eeccf5b994b0a62437f739c236798",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-placement-host",
+      "locus": "Printed p. 172, lower right column; FIDES file 0234",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/offertory-placement-host.toml",
+      "manifest_sha256": "4c09651adebb415f98a3c9735e1a0d23842fb9db01b40a55887678f66e432fa1",
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.orate-response-checked-latin-a362cf3f",
+      "artifact_sha256": "a362cf3fe48e850d3503d560e34c4daeb88726f271f7308cacd720f5ce93a796",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.orate-response",
+      "locus": "Cistercian missal 1657, printed p. 174, right column; FIDES file 0236.",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/orate-response.toml",
+      "manifest_sha256": "8162f6e22cab1ec474c109f56730d999cf2a6bc84db9848263c20ea40fc8bbab",
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0236-jpeg-f461bff9",
+      "artifact_page_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "artifact_sha256": "f461bff997cdf0397ea643fce154f44f066ac142960a520dd031166ea6957e1d",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.orate-response-facsimile",
+      "locus": "Cistercian missal 1657, printed p. 174, right column; FIDES file 0236.",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/orate-response-facsimile.toml",
+      "manifest_sha256": "7b1a553acaafc1fa2ff2d66dbf2d7b885d631aa90679cef7b0913dd43971d7d4",
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.suscipe-trinitas-checked-latin-6da6f1b5",
+      "artifact_sha256": "6da6f1b5e8b8d559d239ab61d991a45be84dbd50ef3060e95ece5f18884c4d5e",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.suscipe-trinitas",
+      "locus": "Cistercian missal 1657, printed p. 174, left bottom continuing right top column; FIDES file 0236.",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/suscipe-trinitas.toml",
+      "manifest_sha256": "83e12bc22e1e4744c67e4998de531ba5b525cd7d40ff40262e8b5d19ec03dd3b",
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0236-jpeg-f461bff9",
+      "artifact_page_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "artifact_sha256": "f461bff997cdf0397ea643fce154f44f066ac142960a520dd031166ea6957e1d",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.suscipe-trinitas-facsimile",
+      "locus": "Cistercian missal 1657, printed p. 174, left bottom continuing right top column; FIDES file 0236.",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/suscipe-trinitas-facsimile.toml",
+      "manifest_sha256": "cae7ac9907d3f94e4dff8f4b8da34704417dfa2c1649aee6e7a18acd79f8cb0d",
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0005-jpeg-62bdeb90",
+      "artifact_page_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "artifact_sha256": "62bdeb90dfab9f6aac673f1abd36aa0b4fe9cbdfd900476a0076ac8525e37cfd",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.title-and-imprint",
+      "locus": "Unnumbered title, FIDES file 0005",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/title-and-imprint.toml",
+      "manifest_sha256": "e4d3865fc81a69798092b8dc6a9a22e69dbbddf3de4a78b01d2fbff22958a165",
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.confiteor-checked-latin-60e1426e",
+      "artifact_sha256": "60e1426e08a9e75ef042f2e9a70103e74a6edea9a66c1a6f59a6e07b51735cd7",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.confiteor",
+      "locus": "Cistercian missal 1606, printed p. 180, left column; BSB canvas 00234.",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/confiteor.toml",
+      "manifest_sha256": "a0acfc1529e2a28ec26898c0fc591ab7c89de258ba9f93513e58f9ecc18cdaf2",
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00234-7c8474ea",
+      "artifact_page_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "artifact_sha256": "7c8474ea19ffe54abf9a7296f04485d4eec2ff4fbaec2b22c07397e30246dbcc",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.confiteor-facsimile",
+      "locus": "Cistercian missal 1606, printed p. 180, left column; BSB canvas 00234.",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/confiteor-facsimile.toml",
+      "manifest_sha256": "ffbda8929cdf310c51a21a31a12aa25d3cb7ed3121d93b0a9817299ab4698b3c",
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.orate-response-checked-latin-2bab0892",
+      "artifact_sha256": "2bab089289b6bbbdd52fdfdc62149db24d1f0135dc1f94164430e236cbc9a195",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.orate-response",
+      "locus": "Cistercian missal 1606, printed p. 181, right column; BSB canvas 00235.",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/orate-response.toml",
+      "manifest_sha256": "6e02bab643d2921d9e590659193a1ef5e0305b7a018a4ef4e073953d859e4024",
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00235-2646b0f5",
+      "artifact_page_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "artifact_sha256": "2646b0f5aa0a2bb55fd1042680a673e6adb99ec66913f754a8ceeac0f14830d7",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.orate-response-facsimile",
+      "locus": "Cistercian missal 1606, printed p. 181, right column; BSB canvas 00235.",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/orate-response-facsimile.toml",
+      "manifest_sha256": "b7ec1dd157f5ef0c18e1c4b52fd9e13da1467841fd526dc32c97d6f649f10a94",
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.suscipe-trinitas-checked-latin-0c61e53d",
+      "artifact_sha256": "0c61e53dbefbeac73599036df993c0330a28920f3cea81e23c0ca2d62ec3a849",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.suscipe-trinitas",
+      "locus": "Cistercian missal 1606, printed p. 181, right column; BSB canvas 00235.",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/suscipe-trinitas.toml",
+      "manifest_sha256": "ab3ea877fbc40fea9048160a31a8042eba732afde9f928fd51ef5b1b54e5168b",
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00235-2646b0f5",
+      "artifact_page_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "artifact_sha256": "2646b0f5aa0a2bb55fd1042680a673e6adb99ec66913f754a8ceeac0f14830d7",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.suscipe-trinitas-facsimile",
+      "locus": "Cistercian missal 1606, printed p. 181, right column; BSB canvas 00235.",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/suscipe-trinitas-facsimile.toml",
+      "manifest_sha256": "0b3fc5426119204363c67e2e8ca4096baea4d48bc4624048e449e9ff49bdd1d5",
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00001-44b8ddf4",
+      "artifact_page_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "artifact_sha256": "44b8ddf44781e3c23c318ae95cf2bfd3eb75c891ac269e67719fef483808cd30",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.title-and-imprint",
+      "locus": "Unnumbered title page, BSB canvas 1",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/title-and-imprint.toml",
+      "manifest_sha256": "c2ad4286672e48d90e71cf7bdaf54195ebc9e30dd1afb8e3cad3ce13407d0817",
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "id": "work.cistercian-order.missale-cisterciense",
+      "manifest_path": "src/sources/works/cistercian-order/missale-cisterciense/work.toml",
+      "manifest_sha256": "0a20612dcc68b398e30947dd780fca1072e9fb84e01b0fda56798a473449ea1a",
+      "record_type": "work",
+      "title": "Missale Cisterciense"
+    }
+  ],
+  "text_serialization": {
+    "encoding": "UTF-8",
+    "final_newline": true,
+    "id": "act-history-ventilate/v1",
+    "line_ending": "LF",
+    "output_hash_field": "serialized_text_sha256",
+    "owner": "tools/act-history:ventilate",
+    "source_hash_field": "text_sha256"
+  },
+  "tool_inputs": [
+    {
+      "byte_size": 67556,
+      "path": "guidance/liturgical-text-publication-policy.md",
+      "sha256": "3a035f6e50c06da9597ea99020efb0fa93939d6ef88f6204ed83ffbdf9aae32f"
+    },
+    {
+      "byte_size": 90723,
+      "path": "scripts/_calendars.py",
+      "sha256": "9961359f38a3e390b5de4103a5222149e40b906362bba4b5620590f5ee1fed8e"
+    },
+    {
+      "byte_size": 53238,
+      "path": "scripts/_eucharistic_history.py",
+      "sha256": "fc414ea64fa3ed738cd57aa7d19d3cf158144aa1980e85febed620e831abaf47"
+    },
+    {
+      "byte_size": 18101,
+      "path": "scripts/_eucharistic_stages.py",
+      "sha256": "e0b4f1b5acfad0d16cbcbf1eda6ff4a1794b30e3eaa492a8b2b19a5e3dc4278c"
+    },
+    {
+      "byte_size": 87820,
+      "path": "scripts/_eucharistic_texts.py",
+      "sha256": "bc12a7da107bd63bf2a6c51e55b8389f088f560e882a5485405389e9750a9e5a"
+    },
+    {
+      "byte_size": 48920,
+      "path": "scripts/_proper_latin.py",
+      "sha256": "b24579434c8887a3b8527776790689b3b9f3262ee686eca745ec950845699bd7"
+    },
+    {
+      "byte_size": 33120,
+      "path": "scripts/_tooling.py",
+      "sha256": "86c302fcb7be450dec4dc1d45c4f529b000e79d5c548fae2b22212f7246e0afe"
+    },
+    {
+      "byte_size": 252633,
+      "path": "tools/act-history",
+      "sha256": "b0502f14dcce6a54c4dfb33ce980e004941e8ae1d727f12a5fa8253c73eae06e"
+    },
+    {
+      "byte_size": 120266,
+      "path": "tools/source-library",
+      "sha256": "c4d2065026a7cb0c94049e572251b2f3c3af615a4f9531793a1818d185327efc"
+    }
+  ],
+  "unified_diff": "--- left/cistercian-1606-latin-ordinary\n+++ right/cistercian-1657-latin-ordinary\n@@ -1,5 +1,3 @@\n-Oráte, fratres, pro me peccatóre:\n-vt meum páriter ac vestrum in conspéctu Dómini acceptábile fiat sacrifícium.\n-Dóminus sit in corde tuo & in lábiis tuis, suscipiátque de mánibus tuis sacrifícium istud:\n-& oratiónes tuæ ascéndant in memóriam ante Deum pro nostra, & totíus pópuli salúte.\n+Oráte fratres, vt meum ac vestrum sacrifícium acceptábile fiat apud Deum patrem omnipoténtem.\n+Suscípiat Dóminus sacrifícium de mánibus tuis (vel meis) ad laudem & glóriam nóminis sui, ad vtilitátem quoque nostram, totiúsque Ecclésiæ suæ sanctæ.\n Amen.\n"
+}

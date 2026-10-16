@@ -59,6 +59,7 @@ NODE = shutil.which("node")
 HISTORY_VIEW_HASH_KEYS = {
   "map": ["station", "unit"],
   "catalogue": ["family", "q", "record"],
+  "timeline": ["tradition", "start", "end", "stage", "transition", "leads"],
 }
 
 RECOGNISED_HASH_KEYS = {
@@ -98,6 +99,7 @@ WRITTEN_HASH_KEYS = {
 }
 
 COMPUTED_HASH_WRITERS = {
+  "history/history.js": ["timelinePairs(current)", "timelinePairs(state)"],
   "liturgy/day.js": ["pairs"],
   "scripture/track.js": ["hashPairs()"],
   # texts.js moved its literal into `const pairs` when the mainline
@@ -755,6 +757,29 @@ class HistoryViewURLTest(unittest.TestCase):
         self.assertEqual(answer["hash"], "#station=quo-primum-1570&unit=canon%2Fmemento")
         self.assertEqual(answer["search"], "?data=fixture&slice=latin-missal")
 
+  def test_timeline_hash_pairs_round_trip_through_real_router_without_legacy_selection(self):
+    state=dict(tradition="Roman / recension",start=1450,end=2050,leads=True,stage="roman:1962",transition=None)
+    answer=probe(probe="replay",file="history/history.js",extract=["timelinePairs"],call="timelinePairs",args=[state])
+    self.assertEqual([p[0] for p in answer["returned"]],["tradition","start","end","leads","stage","transition"])
+    routed=probe(probe="core",hash="#station=old&unit=old",search="?view=timeline&data=fixture",writes=[answer["returned"]])
+    self.assertEqual(routed["read"],dict(tradition="Roman / recension",start="1450",end="2050",leads="1",stage="roman:1962"))
+    self.assertEqual(routed["search"],"?view=timeline&data=fixture")
+
+  def test_timeline_controller_restores_decoded_window_and_ignores_old_map_keys(self):
+    from tools.tests.test_history_catalogue import TimelineControllerTests
+    got=TimelineControllerTests().drive(hash="#tradition=parallel-line&start=1200&end=1300&stage=parallel&station=old&unit=old")
+    self.assertEqual(got["timelineSelection"],dict(tradition="parallel-line",start="1200",end="1300"))
+    self.assertIn("Book state parallel",got["timeline-detail"]["text"])
+    self.assertNotIn("Book state first",got["timeline-chart"]["text"])
+
+  def test_timeline_navigation_preserves_dataset_and_explicit_legacy_slice(self):
+    answer=probe(probe="replay",file="history/history.js",extract=["historyURL"],call="historyURL",
+                 search="?data=fixture&slice=latin-missal",args=["timeline",None,"#stage=roman%3A1962"])
+    self.assertIn("view=timeline",answer["returned"])
+    self.assertIn("data=fixture",answer["returned"])
+    self.assertIn("slice=latin-missal",answer["returned"])
+    self.assertTrue(answer["returned"].endswith("#stage=roman%3A1962"))
+
   def test_catalogue_links_round_trip_encoded_filters_and_record_without_map_keys(self):
     answer = probe(
       probe="replay", file="history/history.js", extract=["catalogueHash"], call="catalogueHash",
@@ -795,7 +820,7 @@ class HistoryViewURLTest(unittest.TestCase):
     no_record = runner.drive(hash="#station=example&unit=example")
     self.assertTrue(no_record["catalogue-detail"]["hidden"])
 
-  def test_view_selection_is_explicit_and_existing_empty_and_slice_urls_still_choose_map(self):
+  def test_catalogue_view_selection_is_explicit_and_does_not_capture_other_routes(self):
     for search, expected in (("", False), ("?slice=latin-missal", False),
                              ("?view=map", False), ("?view=unknown", False),
                              ("?view=catalogue", True)):

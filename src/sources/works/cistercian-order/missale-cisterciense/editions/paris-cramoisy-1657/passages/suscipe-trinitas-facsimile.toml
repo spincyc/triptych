@@ -1,0 +1,12 @@
+schema = 2
+record_type = "passage"
+edition_id = "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657"
+locus = "Cistercian missal 1657, printed p. 174, left bottom continuing right top column; FIDES file 0236."
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-16"
+context = "Complete Suscipe Trinitas wording as printed in this edition; surrounding prayers and red rubrics are outside the comparison body. This 1657 prayer follows the separate host and chalice offerings and the Lavabo. Its placement differs from 1606; the related earlier offering prayers are not collapsed into this unit. This is the identified printing’s original Latin; no later Roman book supplies missing words or resolves a variant. No introduction date, direct copying act or complete historical parent relationship is inferred."
+notes = "Independently collated against the exact page images by a second AI reader on 2026-10-16; final body and artifact hashes pin the approved text. Accepted normalization includes sentence-case merging of display initials and nasal-bar expansion. The 1657 Confiteor preserves the independently corrected acute in omnipoténti. This bounded review is not a human specialist certification or a collation of the whole edition. Independent review receipt SHA-256 60925d8f5af82def604ede1a4a491cd5f6d372bd7007b295170d1ac37b98a882; reviewed multiline text SHA-256 3088e7f4905afabe0f2e384ed69a33c58342b21de8a79c7e431c655a174a07de. Spoken block metadata (zero-based half-open Unicode codepoint ranges in the NFC body, excluding terminal LF): [{\"block\":1,\"codepoint_range\":[0,460],\"speaker\":\"priest\",\"incipit\":\"Súscipe sancta Trínitas, hanc\"}]. Separate source rubric context: After Lavabo: Deinde aliquantum inclinatus in medio Altaris, iunctis manibus super eo, dicit: Rubric words and positions checked independently; English labels are editorial wrappers. Typography and punctuation of context remain accessible in the retained source image."
+id = "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.suscipe-trinitas-facsimile"
+artifact_id = "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0236-jpeg-f461bff9"
+artifact_sha256 = "f461bff997cdf0397ea643fce154f44f066ac142960a520dd031166ea6957e1d"
+artifact_page_ranges = [[1, 1]]

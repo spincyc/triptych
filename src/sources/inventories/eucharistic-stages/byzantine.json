@@ -1,0 +1,851 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-stages",
+  "dossier_id": "byzantine-stages",
+  "title": "Bounded Byzantine book states: Greek, Ruthenian, Vulgata and early Slavonic witnesses",
+  "traditions": [
+    {
+      "id": "byzantine-greek-manuscript-witnesses",
+      "label": "Early Greek euchologion witnesses",
+      "family": "Byzantine",
+      "scope": "Greek manuscript states relevant to later Byzantine history",
+      "coverage_note": "One catalogue-identified witness; no continuous stemma to Roman Greek editions."
+    },
+    {
+      "id": "byzantine-roman-greek",
+      "label": "Roman Greek Euchologion",
+      "family": "Byzantine",
+      "scope": "Greek books corrected and issued under Roman authority",
+      "coverage_note": "1754 state described by its governing act; original scan and later edition collation missing."
+    },
+    {
+      "id": "byzantine-early-slavonic-mixed",
+      "label": "Sinai Slavonic mixed liturgical collection",
+      "family": "Byzantine",
+      "scope": "The Sinaitic Liturgiarium with Greek-derived and Latin-derived material",
+      "coverage_note": "Not a declared ancestor of Ruthenian or Vulgata books. Separate copying and later additions."
+    },
+    {
+      "id": "byzantine-ruthenian",
+      "label": "Ruthenian Slavonic books and Roman revision",
+      "family": "Byzantine",
+      "scope": "Eucharistic rubrics and complementary books, with regional reception limits",
+      "coverage_note": "1692/1733 and 1905/1940–1942 clusters; gaps between them are not silently connected."
+    },
+    {
+      "id": "byzantine-vulgata",
+      "label": "Roman Slavonic Vulgata (Russian-use series)",
+      "family": "Byzantine",
+      "scope": "Russian-use Chrysostom book, full Sluzhebnik and calendar supplement",
+      "coverage_note": "Parallel to Ruthenian series; not its successor or derivative. Intended audience is not proof of universal reception."
+    }
+  ],
+  "sources": [
+    {
+      "id": "byzantine-stages:pinakes",
+      "title": "Pinakes, Diktyon 64879: Vatican Barberini gr. 336",
+      "url": "https://pinakes.irht.cnrs.fr/notices/cote/64879/",
+      "kind": "institutional-catalogue",
+      "inspection": "Directly fetched HTML; contents/date/provenance and Basil/Chrysostom folio entries read.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Catalogue inspection, not manuscript text collation."
+    },
+    {
+      "id": "byzantine-stages:miklas",
+      "title": "Heinz Miklas, Excavating the Palimpsests in the Glagolitic Manuscripts from Sinai, pp. 217–230",
+      "url": "https://austriaca.at/0xc1aa5572%200x003e8cb3.pdf",
+      "kind": "scholarship",
+      "inspection": "PDF fetched; page images 219, 222–223 inspected, especially notes 17, 52, 57–58.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Author reconstruction; original multispectral manuscript images not inspected. Dates of overtext and later additions must remain separate."
+    },
+    {
+      "id": "byzantine-stages:ex-quo",
+      "title": "Benedict XIV, Ex quo primum, 1 March 1756",
+      "url": "https://www.vatican.va/content/benedictus-xiv/es/documents/enciclica--i-ex-quo-primum--i---1-marzo-1756--il-pontefice-invit.html",
+      "kind": "primary-act",
+      "inspection": "Vatican HTML Italian body read, especially §§ 5–9 and § 17; saved exact HTML.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Official translated delivery, despite Spanish URL. Greek 1754 book leaves not acquired. Historical claims inside the act are attributed to it."
+    },
+    {
+      "id": "byzantine-stages:circular-i",
+      "title": "Congregation for the Eastern Church, circular I, Prot. 1219/28, 10 September 1941",
+      "url": "https://plc-ugcc.blogspot.com/2016/10/recensio-ruthena.html",
+      "kind": "primary-act",
+      "inspection": "Complete displayed Ukrainian translated reproduction read, especially §§ 1–6 and final norms. Exact HTML saved.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Later web reproduction labelled Ukrainian translation sent from Rome; original signed Italian instrument not inspected."
+    },
+    {
+      "id": "byzantine-stages:circular-ii",
+      "title": "Congregation for the Eastern Church, circular II, Prot. 1219/28, 10 September 1941",
+      "url": "https://plc-ugcc.blogspot.com/2016/10/blog-post_12.html",
+      "kind": "primary-act",
+      "inspection": "Direct HTML fetched after web cache failure; entire Ukrainian reproduction read, particularly section I, numbered points 1–8, and section II.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Original Italian and 1905/1940 book pages not inspected. This is primary-description through a translated reproduction, never text-collated evidence."
+    },
+    {
+      "id": "byzantine-stages:raes",
+      "title": "Alphonsus Raes, Libri liturgici in lingua Slavica a Sancta Sede editi, 1947, pp. 85–88",
+      "url": "https://librinostri.catholica.cz/download/ActAcadVele18-r.pdf",
+      "kind": "scholarship",
+      "inspection": "Downloaded journal; directly inspected printed pp. 85–88, physical PDF 91–94 as page images.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Contemporary scholarly account; separate service-book pages not inspected. PDF container includes other material. Rights for redistribution not established."
+    },
+    {
+      "id": "byzantine-stages:calendar",
+      "title": "Ilya Semenenko-Basin and Stefano Caprio, Russian Liturgical Memories in the Slavic Byzantine-Catholic Menologion, Slověne 2021/1",
+      "url": "https://slovene.ru/2021_1_Semenenko-Basin_Caprio.pdf",
+      "kind": "scholarship",
+      "inspection": "Downloaded PDF, text-layer search; directly inspected pp. 382–383, physical PDF 15–16, for 1942/1953 comparison.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Authors’ book comparison, not this project’s collation; their 1953 source locator is second pagination pp. 47–48."
+    },
+    {
+      "id": "byzantine-stages:mci",
+      "title": "Metropolitan Cantor Institute, The Liturgikon, or Služebnik",
+      "url": "https://mci.archpitt.org/liturgy/Liturgikon.html",
+      "kind": "official-retrospective",
+      "inspection": "Contents and Church Slavonic sections read; exact HTML retained and original online-book URL extracted.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Undated institutional overview; its English-book currentness claims were not used. Historical scan link now returns 404."
+    },
+    {
+      "id": "byzantine-stages:1754-google",
+      "title": "Google Books full-view record, Euchologion neosti meta typothen, 1754",
+      "url": "https://books.google.com/books?id=B9BRAAAAcAAJ&printsec=frontcover",
+      "kind": "institutional-catalogue",
+      "inspection": "HTML fetched; title/date, fullview flag, page map and offered PDF route inspected. Pontifical Gregorian catalogue 51106BIB independently links this same ID.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "No book page image inspected. Download failed HTTP 429; no source-book payload acquired. Metadata establishes an acquisition target, not contents."
+    }
+  ],
+  "stages": [
+    {
+      "id": "byzantine-stages:barberini",
+      "tradition_id": "byzantine-greek-manuscript-witnesses",
+      "label": "Basil and Chrysostom in an early Greek euchologion",
+      "date_label": "second half of eighth century",
+      "start_year": 751,
+      "end_year": 800,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Identified manuscript contents, not a reconstructed complete medieval rite",
+      "components": [
+        "anaphoras"
+      ],
+      "witness_ids": [
+        "eastern:byz-barberini336"
+      ],
+      "witness_label": "Vatican, Barberini gr. 336",
+      "summary": "Basil ff. 1–22v and Chrysostom ff. 23–43v; Basil has a catalogued lacuna.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "byzantine-stages:pinakes",
+          "locus": "Contents unit 0; witnesses CPG 2905 and 4686",
+          "claim": "Dated s.08(2/2), copied in Calabria; identified Eucharistic sections."
+        }
+      ],
+      "limitations": "Copy date does not date composition. No predecessor/successor asserted.",
+      "reception": "Historical Greek witness; later Catholic reception of this exact text not established."
+    },
+    {
+      "id": "byzantine-stages:greek1754",
+      "tradition_id": "byzantine-roman-greek",
+      "label": "Greek Euchologion with four prefatory instructions",
+      "date_label": "1754 publication, described in 1756 act",
+      "start_year": 1754,
+      "end_year": 1754,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Prefatory Eucharistic rubrics and editorial policy",
+      "components": [
+        "rubrics",
+        "ordinary"
+      ],
+      "witness_ids": [
+        "eastern:byz-greek-1754"
+      ],
+      "witness_label": "Εὐχολόγιον, Rome, Propaganda Fide, 1754",
+      "summary": "Four introductory instructions; first directs papal and Catholic-hierarchy commemoration, with a marginal liturgical cross-reference.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "byzantine-stages:ex-quo",
+          "locus": "§§ 7–9",
+          "claim": "Names 1754 publication and the instructions; § 9 traces the commemoration provision to a confirmed 1746 decision."
+        }
+      ],
+      "limitations": "No claim that papal commemoration originated in 1754 (§ 17 discusses prior obligations); no before/after book collation.",
+      "reception": "Act addresses clergy of Greek rite in communion with Rome; actual territorial uptake not established."
+    },
+    {
+      "id": "byzantine-stages:sinai-original",
+      "tradition_id": "byzantine-early-slavonic-mixed",
+      "label": "Sinai collection before Demetrius’s additions",
+      "date_label": "second quarter of eleventh century",
+      "start_year": 1026,
+      "end_year": 1050,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Main overtext and identified component liturgies",
+      "components": [
+        "ordinary",
+        "anaphoras"
+      ],
+      "witness_ids": [
+        "eastern:byz-sinai-slav-nf5"
+      ],
+      "witness_label": "Sinai, Sin. slav. NF 5, with Petersburg fragments BRAN 24.4.8 and RNB glag. 2",
+      "summary": "Contains Greek-derived Basil, Chrysostom and James material alongside a mixed Apollinaris liturgy.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "byzantine-stages:miklas",
+          "locus": "p. 219 and n. 17; p. 222 n. 52",
+          "claim": "Dates overtext and identifies the formerly separated Petersburg portion and mixed contents."
+        }
+      ],
+      "limitations": "No direct manuscript collation; source describes a damaged, composite witness.",
+      "reception": "Sinai collection; no reception into a named modern Catholic recension asserted."
+    },
+    {
+      "id": "byzantine-stages:sinai-demetrius",
+      "tradition_id": "byzantine-early-slavonic-mixed",
+      "label": "Demetrius adds diptych material",
+      "date_label": "last quarter of eleventh century",
+      "start_year": 1076,
+      "end_year": 1100,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Later additions within the same physical collection",
+      "components": [
+        "ordinary"
+      ],
+      "witness_ids": [
+        "eastern:byz-sinai-slav-nf5"
+      ],
+      "witness_label": "Sinaitic Liturgiarium: Demetrius’s additions, especially RNB glag. 2",
+      "summary": "Later diptych includes Western names absent from the relevant main-text passage.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "byzantine-stages:miklas",
+          "locus": "p. 222, final Textology paragraph; p. 223 and nn. 57–58",
+          "claim": "Dates Demetrius’s entries; identifies added diptych and omitted passage at main-part f. 17v."
+        }
+      ],
+      "limitations": "Proposed motive for the addition is the scholar’s inference. This is not a new whole-book edition.",
+      "reception": "Same composite Sinai witness; subsequent use and descent unestablished."
+    },
+    {
+      "id": "byzantine-stages:vilnius1692",
+      "tradition_id": "byzantine-ruthenian",
+      "label": "Eucharistic rubrics codified at Vilnius",
+      "date_label": "1692",
+      "start_year": 1692,
+      "end_year": 1692,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Rubrical layer retrospectively identified by the 1941 circular",
+      "components": [
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byz-vilnius-suprasl1692-95"
+      ],
+      "witness_label": "Cyprian Żochowski’s Vilnius Liturgikon, 1692 component",
+      "summary": "Codified rubrics later expanded in the read-Liturgy order.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "byzantine-stages:circular-i",
+          "locus": "§ 3",
+          "claim": "Explicitly identifies the 1692 Vilnius codification."
+        }
+      ],
+      "limitations": "Existing catalogue row spans 1692–1695; this stage concerns only the named 1692 component. Exact book uninspected.",
+      "reception": "Circular reports unequal regional acceptance; no universal Ruthenian adoption claimed."
+    },
+    {
+      "id": "byzantine-stages:univ1733",
+      "tradition_id": "byzantine-ruthenian",
+      "label": "Expanded order for the read Liturgy",
+      "date_label": "1733",
+      "start_year": 1733,
+      "end_year": 1733,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Inserted order of celebration, not an entirely new anaphora",
+      "components": [
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byz-univ1733-read-liturgy"
+      ],
+      "witness_label": "Univ Sluzhebnik, 1733, order for the read Liturgy",
+      "summary": "Expanded the earlier Eucharistic rubrics through a distinct inserted order.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "byzantine-stages:circular-i",
+          "locus": "§ 3",
+          "claim": "Names first insertion at Univ in 1733 and subsequent eighteenth-century reprinting."
+        }
+      ],
+      "limitations": "Individual source-book rubrics not collated; cannot assign every later practice to 1733.",
+      "reception": "Regional reception differed; nineteenth-century Galician omission and ceremonial survival are reported, not fully mapped."
+    },
+    {
+      "id": "byzantine-stages:lviv1905",
+      "tradition_id": "byzantine-ruthenian",
+      "label": "Lviv’s eight provisions for private celebration",
+      "date_label": "1905",
+      "start_year": 1905,
+      "end_year": 1905,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Private/read-Liturgy provisions only",
+      "components": [
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byz-lviv-1905"
+      ],
+      "witness_label": "Full Lviv Sluzhebnik, 1905",
+      "summary": "Eight provisions are the explicit object of the later circular’s corrections.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "byzantine-stages:circular-ii",
+          "locus": "I, introduction to points 1–8",
+          "claim": "Identifies full Lviv 1905 Sluzhebnik and its eight provisions."
+        },
+        {
+          "source_id": "byzantine-stages:mci",
+          "locus": "The Liturgikon in Church Slavonic",
+          "claim": "Identifies the 1905 book as widely used before Roman revision."
+        }
+      ],
+      "limitations": "Book’s own pages not acquired; no direct descent from Univ 1733 established.",
+      "reception": "Institution reports use in Europe and America; extent and uniformity not quantified."
+    },
+    {
+      "id": "byzantine-stages:ruth1940-41",
+      "tradition_id": "byzantine-ruthenian",
+      "label": "Revised Ruthenian Chrysostom book and implementation rules",
+      "date_label": "Attested by 10 September 1941 circulars; underlying Chrysostom book published 1940",
+      "start_year": 1941,
+      "end_year": 1941,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Chrysostom text/rubrics, with separate implementing circulars",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byz-ruthenian-chrysostom-1940"
+      ],
+      "witness_label": "Sancta et divina Liturgia S. Joannis Chrysostomi, Rome, 1940; circulars I–II, 1941",
+      "summary": "Pre-epiclesis troparia omitted; private celebration follows common ceremonies with specified accommodations.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "byzantine-stages:raes",
+          "locus": "p. 86 § 2",
+          "claim": "Records omission and other qualified rubrics."
+        },
+        {
+          "source_id": "byzantine-stages:circular-ii",
+          "locus": "I.1–8",
+          "claim": "Explains changes from Lviv 1905."
+        }
+      ],
+      "limitations": "1941 clarifications are not a separately asserted new printing. Whole book uncollated. The positioned date is the attestation of implementing rules, not a new 1941 printing or the start of universal use.",
+      "reception": "Circular I preserves territorial rules and older clergy’s private customary use; formation houses directed to new books."
+    },
+    {
+      "id": "byzantine-stages:ruth1942",
+      "tradition_id": "byzantine-ruthenian",
+      "label": "Full Ruthenian Liturgikon assembled",
+      "date_label": "1942",
+      "start_year": 1942,
+      "end_year": 1942,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Complementary liturgies, daily offices and calendar material",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics",
+        "calendar",
+        "propers"
+      ],
+      "witness_ids": [
+        "eastern:byz-ruthenian-1942"
+      ],
+      "witness_label": "Liturgikon, Rome 1942, 678 pages (Raes)",
+      "summary": "Full volume gathers the previously issued components and supplementary/calendar material.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "byzantine-stages:raes",
+          "locus": "pp. 86–87 §§ 11–12",
+          "claim": "Names the full volume and distinguishes Ruthenian feasts from Russian material."
+        }
+      ],
+      "limitations": "Assembly is not proof of changed Chrysostom wording; no 1940→1942 textual revision asserted.",
+      "reception": "Ruthenian recension; particular Churches’ actual adoption remains separately evidenced."
+    },
+    {
+      "id": "byzantine-stages:vulgata1940",
+      "tradition_id": "byzantine-vulgata",
+      "label": "Russian-use Chrysostom book",
+      "date_label": "1940",
+      "start_year": 1940,
+      "end_year": 1940,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Commemorations and pre-epiclesis rubric policy",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byz-vulgata-chrysostom-1940"
+      ],
+      "witness_label": "Divina Liturgia S. Joannis Chrysostomi, Rome 1940, 112 pages (Raes)",
+      "summary": "Papal commemoration replaces the Synod reference; pre-epiclesis troparia retained with optional omission.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "byzantine-stages:raes",
+          "locus": "pp. 85–86 § 1",
+          "claim": "Explicitly contrasts Russian-use policy with Ruthenian § 2."
+        }
+      ],
+      "limitations": "Russian precursor printing unidentified; do not manufacture a Russian-Synodal predecessor node.",
+      "reception": "Prepared for Catholic clergy following Russian usage; not a Ruthenian successor."
+    },
+    {
+      "id": "byzantine-stages:vulgata1942",
+      "tradition_id": "byzantine-vulgata",
+      "label": "Full Russian-use Sluzhebnik assembled",
+      "date_label": "1942",
+      "start_year": 1942,
+      "end_year": 1942,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Full service book with calendar and appendices",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics",
+        "calendar",
+        "propers"
+      ],
+      "witness_ids": [
+        "eastern:byz-vulgata-1942"
+      ],
+      "witness_label": "Služebnik, Rome 1942, 691+49 pages (Raes)",
+      "summary": "Complete volume with differentiated calendar and supplementary material.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "byzantine-stages:raes",
+          "locus": "pp. 86–87 §§ 11–12",
+          "claim": "Identifies complete book and Russian commemorations."
+        },
+        {
+          "source_id": "byzantine-stages:calendar",
+          "locus": "p. 382, final paragraph",
+          "claim": "Distinguishes the later addition from this calendar state."
+        }
+      ],
+      "limitations": "Assembly does not establish another revision of 1940 prayers.",
+      "reception": "Russian-use Catholic recension; Bulgarian/Serbian local receipt not shown here."
+    },
+    {
+      "id": "byzantine-stages:vulgata1953",
+      "tradition_id": "byzantine-vulgata",
+      "label": "All Saints of Rus added to calendar supplement",
+      "date_label": "1953",
+      "start_year": 1953,
+      "end_year": 1953,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Named movable commemoration and its liturgical propers",
+      "components": [
+        "calendar",
+        "propers"
+      ],
+      "witness_ids": [
+        "eastern:byz-vulgata-1953"
+      ],
+      "witness_label": "Služebnik, Rome 1953; second pagination pp. 47–48",
+      "summary": "Adds All Saints of Rus on the second Sunday after Pentecost with specified proper chants.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "byzantine-stages:calendar",
+          "locus": "pp. 382–383",
+          "claim": "Identifies addition and source-book locator."
+        }
+      ],
+      "limitations": "Exact 1953 pages not inspected; no claim of a complete edition diff.",
+      "reception": "Addition within the Catholic Vulgata publication; use frequency not established."
+    }
+  ],
+  "transitions": [
+    {
+      "id": "byzantine-stages:sinai-diptych-addition",
+      "from_stage": "byzantine-stages:sinai-original",
+      "to_stage": "byzantine-stages:sinai-demetrius",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "Later hand supplements the collection’s diptych.",
+      "components": [
+        "ordinary"
+      ],
+      "changes": [
+        {
+          "component": "ordinary",
+          "before": "Main Apollinaris copy omits the relevant passage.",
+          "after": "Demetrius adds a diptych including Mastal, Petrunia and Romald.",
+          "locus_before": "Sin. slav. NF5 f. 17v, as identified by Miklas",
+          "locus_after": "RNB glag.2; Miklas p. 223 n. 57",
+          "evidence": [
+            {
+              "source_id": "byzantine-stages:miklas",
+              "locus": "p. 223 and nn. 57–58",
+              "claim": "Addition and main-copy omission identified."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "byzantine-stages:miklas",
+          "locus": "pp. 222–223",
+          "claim": "Distinguishes copying from later entries."
+        }
+      ],
+      "limitations": "No direct folio collation; reason for addition and name identifications remain attributed.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed"
+    },
+    {
+      "id": "byzantine-stages:vilnius-to-univ",
+      "from_stage": "byzantine-stages:vilnius1692",
+      "to_stage": "byzantine-stages:univ1733",
+      "kind": "revision",
+      "status": "provisional",
+      "evidence_level": "primary-description",
+      "summary": "The inserted read-Liturgy order expands the earlier codified rubrics.",
+      "components": [
+        "rubrics"
+      ],
+      "changes": [
+        {
+          "component": "rubrics",
+          "before": "1692 codification.",
+          "after": "1733 expanded read-Liturgy order.",
+          "locus_before": "Vilnius 1692; circular I § 3",
+          "locus_after": "Univ 1733; circular I § 3",
+          "evidence": [
+            {
+              "source_id": "byzantine-stages:circular-i",
+              "locus": "§ 3",
+              "claim": "States codification followed by considerable expansion."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "byzantine-stages:circular-i",
+          "locus": "§ 3",
+          "claim": "Retrospective authoritative sequence."
+        }
+      ],
+      "limitations": "The circular reports expansion, but no named new prayer or rubric has been inspected. This is a revision proposal, not an established substantive transition; direct exemplar copying also remains unestablished.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed"
+    },
+    {
+      "id": "byzantine-stages:lviv-to-roman-rubrics",
+      "from_stage": "byzantine-stages:lviv1905",
+      "to_stage": "byzantine-stages:ruth1940-41",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "Roman clarification replaces selected private-celebration provisions and retains others.",
+      "components": [
+        "rubrics"
+      ],
+      "changes": [
+        {
+          "component": "rubrics",
+          "before": "Proskomedia in sacristy under the first 1905 provision.",
+          "after": "Prothesis table and transfer to altar; constrained-altar accommodations.",
+          "locus_before": "Lviv 1905 point 1, quoted in circular II I.1",
+          "locus_after": "Circular II I.1",
+          "evidence": [
+            {
+              "source_id": "byzantine-stages:circular-ii",
+              "locus": "I.1",
+              "claim": "Explicitly abolishes first provision."
+            }
+          ]
+        },
+        {
+          "component": "rubrics",
+          "before": "Separate private/read-Liturgy provisions.",
+          "after": "Common ceremonies: entrances, Gospel facing people, and ambon prayer outside Royal Doors, with accommodations.",
+          "locus_before": "Lviv 1905 points 4, 6–8, mediated by circular",
+          "locus_after": "Circular II I.4, 6–8",
+          "evidence": [
+            {
+              "source_id": "byzantine-stages:circular-ii",
+              "locus": "I opening and I.4, 6–8",
+              "claim": "Specifies implementation rather than only announcing a new book."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "byzantine-stages:circular-ii",
+          "locus": "I.1–8",
+          "claim": "Direct numbered treatment of predecessor provisions."
+        }
+      ],
+      "limitations": "Not a line-by-line source-book collation. Do not generalize the private-celebration concessions to every solemn celebration. Continuity control: circular II I.5 expressly retains omission of the high-place ceremony in this context; it is not a change.",
+      "comparison_ids": [],
+      "historical_parentage": "established"
+    },
+    {
+      "id": "byzantine-stages:greek-rubrics-received",
+      "from_stage": "byzantine-stages:greek1754",
+      "to_stage": "byzantine-stages:ruth1940-41",
+      "kind": "reception",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "Roman Greek rubrics supply a norm while older Ruthenian readings are preserved.",
+      "components": [
+        "rubrics"
+      ],
+      "changes": [
+        {
+          "component": "rubrics",
+          "before": "Greek normative rubric source.",
+          "after": "Ruthenian revision uses it with local textual/rubrical qualifications.",
+          "locus_before": "1754 Euchologion as named in circular I § 4",
+          "locus_after": "1941 circular II opening",
+          "evidence": [
+            {
+              "source_id": "byzantine-stages:circular-i",
+              "locus": "§§ 1, 4",
+              "claim": "Greek norm qualified by older Ruthenian evidence."
+            },
+            {
+              "source_id": "byzantine-stages:circular-ii",
+              "locus": "Opening paragraphs",
+              "claim": "Affirms rubric relationship and preserved Ruthenian tradition."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "byzantine-stages:circular-i",
+          "locus": "§ 4",
+          "claim": "Names Benedict XIV’s Greek book."
+        }
+      ],
+      "limitations": "Reception of a stated norm, not whole-book translation or proof of identical wording. Older Ruthenian readings are not dated here.",
+      "comparison_ids": [],
+      "historical_parentage": "established"
+    },
+    {
+      "id": "byzantine-stages:ruth-components-to-volume",
+      "from_stage": "byzantine-stages:ruth1940-41",
+      "to_stage": "byzantine-stages:ruth1942",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "Component publication followed by assembled service volume; no new anaphora state inferred.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics",
+        "calendar"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "byzantine-stages:raes",
+          "locus": "p. 86 §§ 3–12",
+          "claim": "Separate components precede complete 1942 volume."
+        }
+      ],
+      "limitations": "A packaging/completeness relationship, not a substantive revision edge. The 1941 intermediate components remain within this set rather than artificial successive versions.",
+      "comparison_ids": [],
+      "historical_parentage": "established"
+    },
+    {
+      "id": "byzantine-stages:vulgata-components-to-volume",
+      "from_stage": "byzantine-stages:vulgata1940",
+      "to_stage": "byzantine-stages:vulgata1942",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "Component publication followed by assembled service volume; no new anaphora state inferred.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics",
+        "calendar"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "byzantine-stages:raes",
+          "locus": "p. 86 §§ 3–12",
+          "claim": "Separate components precede complete 1942 volume."
+        }
+      ],
+      "limitations": "A packaging/completeness relationship, not a substantive revision edge. The 1941 intermediate components remain within this set rather than artificial successive versions.",
+      "comparison_ids": [],
+      "historical_parentage": "established"
+    },
+    {
+      "id": "byzantine-stages:vulgata-calendar-addition",
+      "from_stage": "byzantine-stages:vulgata1942",
+      "to_stage": "byzantine-stages:vulgata1953",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "A movable commemoration and its proper chants enter the supplement.",
+      "components": [
+        "calendar",
+        "propers"
+      ],
+      "changes": [
+        {
+          "component": "calendar",
+          "before": "All Saints of Rus absent from the 1942 RVM.",
+          "after": "Second Sunday after Pentecost gains the commemoration.",
+          "locus_before": "1942 RVM, absence reported by authors",
+          "locus_after": "1953 second pagination pp. 47–48",
+          "evidence": [
+            {
+              "source_id": "byzantine-stages:calendar",
+              "locus": "p. 382 final paragraph–p. 383 opening",
+              "claim": "Explicit before/after statement."
+            }
+          ]
+        },
+        {
+          "component": "propers",
+          "before": "No corresponding entry.",
+          "after": "Matins/liturgy prokeimena, alleluia and communion verse; no individual saints list.",
+          "locus_before": "Same reported 1942 absence",
+          "locus_after": "1953 second pagination pp. 47–48",
+          "evidence": [
+            {
+              "source_id": "byzantine-stages:calendar",
+              "locus": "p. 383 opening",
+              "claim": "Specifies supplied items."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "byzantine-stages:calendar",
+          "locus": "pp. 382–383",
+          "claim": "Identifies reissued volume and added supplement."
+        }
+      ],
+      "limitations": "Scholarly-described comparison, not independently text-collated. The article’s explanation of the changed Russian adjective is interpretive and is not promoted here.",
+      "comparison_ids": [],
+      "historical_parentage": "established"
+    }
+  ],
+  "gaps": [
+    {
+      "id": "byzantine-stages:greek-medieval",
+      "tradition_id": "byzantine-greek-manuscript-witnesses",
+      "period": "eighth century to early print",
+      "missing": "Selected dated medieval witnesses and a critical account connecting changes to identified loci.",
+      "next_source": "Parenti–Velkovska Barberini edition; Arranz, L’Eucologio costantinopolitano agli inizi del secolo XI (1996); library-held original witnesses.",
+      "consequence": "Barberini must remain an isolated attested state, not a direct parent of 1754."
+    },
+    {
+      "id": "byzantine-stages:greek-original",
+      "tradition_id": "byzantine-roman-greek",
+      "period": "1754 and later Roman editions",
+      "missing": "Original 1754 monita/marginal rubric images, predecessor identity, and 1873 comparison.",
+      "next_source": "Google Books B9BRAAAAcAAJ (full-view record; download failed 429); Gregorian University Ris.23 G8, catalogue 51106BIB; 1873 S.L.23 G4.",
+      "consequence": "Only act-described 1754 contents established; no claimed 1754→1873 revision."
+    },
+    {
+      "id": "byzantine-stages:sinai-followers",
+      "tradition_id": "byzantine-early-slavonic-mixed",
+      "period": "eleventh century onward",
+      "missing": "Direct images of main and added diptychs; later transmission into identified books.",
+      "next_source": "Sinai Palimpsests site item 82; Sin.slav.NF5 f. 17v; RNB glag.2; Miklas p. 223 nn. 57–58.",
+      "consequence": "Cannot turn mixed Sinai witness into a Ruthenian/Vulgata ancestor."
+    },
+    {
+      "id": "byzantine-stages:ruth-long-gap",
+      "tradition_id": "byzantine-ruthenian",
+      "period": "1733–1905",
+      "missing": "Exact intervening prayer/rubric states, including local uptake and survival.",
+      "next_source": "Original Vilnius 1692, Univ 1733 and Lviv 1905 Sluzhebnik; Raes, Le Liturgicon ruthène depuis l’Union de Brest, OCP 8 (1942), 95–143.",
+      "consequence": "No automatic chain across the unexamined centuries; no blanket Latinization/de-Latinization label."
+    },
+    {
+      "id": "byzantine-stages:ruth-original-acts",
+      "tradition_id": "byzantine-ruthenian",
+      "period": "1905–1944",
+      "missing": "Source-language before/after leaves and original Italian circulars; exact 1944 Ordo departures.",
+      "next_source": "OCP 8 (1942), printed 138–143 for circulars (search-discovered lead, not inspected); 1905 eight private-Liturgy points; Roman 1940/1942 books; Ordo 1944.",
+      "consequence": "Changes are primary-described through translation, not text-collated. Ordo 1944 is not made a new whole-book stage."
+    },
+    {
+      "id": "byzantine-stages:vulgata-exemplar",
+      "tradition_id": "byzantine-vulgata",
+      "period": "before 1940 and 1942–1953",
+      "missing": "Exact Russian Synodal exemplar, original 1940/1942 pages, and 1953 added propers.",
+      "next_source": "Roman Vulgata 1940 Chrysostom, 1942 Sluzhebnik; 1953 Sluzhebnik second pagination 47–48.",
+      "consequence": "Specific policy and calendar addition established from descriptions; complete revision scope remains unknown."
+    },
+    {
+      "id": "byzantine-stages:reception",
+      "tradition_id": "byzantine-ruthenian",
+      "period": "1941 onward",
+      "missing": "Local decrees/implementation accounts per Church and jurisdiction.",
+      "next_source": "1941 circular I final norms; diocesan/synodal archives; dated reception letters.",
+      "consequence": "A common recension does not mean simultaneous universal replacement; old custom concessions must remain visible."
+    }
+  ]
+}

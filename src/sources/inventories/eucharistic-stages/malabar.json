@@ -1,0 +1,787 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-stages",
+  "dossier_id": "stages-malabar",
+  "title": "Syro-Malabar book states, editorial changes and restoration reception",
+  "traditions": [
+    {
+      "id": "stages-malabar-tradition",
+      "label": "Syro-Malabar Eucharistic books",
+      "family": "Syro-Malabar / East Syriac",
+      "scope": "Native Syriac Eucharistic tradition, Latin restoration instruments and bounded reception; independent vernacular translation history deferred.",
+      "coverage_note": "1774/1775 complementary books, a named 1845 exemplar, 1906 and 1946 editorial states, and the 1955–1962 restoration are distinguished. No continuous textual stemma is claimed."
+    }
+  ],
+  "sources": [
+    {
+      "id": "stages-malabar-1906",
+      "title": "Ordo chaldaicus rituum et lectionum, Puttenpalli 1906",
+      "url": "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3724391",
+      "kind": "primary-book",
+      "inspection": "Reopened full-size original physical PDF 508 (1904 permission) and 6 (1905 approval and 1906 imprint); title PDF 510 inspected in prior acquisition.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Complete original scan held and registered; Syriac body and specific newly appended Masses not collated. Bonn physical page order is reversed for this RTL book."
+    },
+    {
+      "id": "stages-malabar-1946",
+      "title": "Matthaeus Vadakel, Ordo chaldaicus rituum et lectionum, Alwaye 1946: preliminary leaves",
+      "url": "https://thecmsindia.org/StaticFiles/docs/pdf/Ordo-Chaldaicus-Rituum-Et-Lectionum-001.pdf",
+      "kind": "primary-book",
+      "inspection": "Six-page public excerpt acquired. Full-size PDF 2 Latin title, 3 English foreword dated 13 May 1946, 4 contents, 5 approval note inspected; contact sheet of all pages.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Only preliminary leaves, not complete 478-page catalogue extent. The catalogue says 1945 for approval, but the foreword clearly reads 1946. Roman exemplar year not identified."
+    },
+    {
+      "id": "stages-malabar-2003",
+      "title": "Order of the Mysteries, Editio Typica, Rome 2003: title leaves",
+      "url": "https://www.thecmsindia.in/StaticFiles/docs/pdf/Suriyani-Qurbana-Thaksa-2003-printed-in-Rome.pdf",
+      "kind": "primary-book",
+      "inspection": "Six-page public excerpt acquired; full-size English title PDF 3 and contact sheet of PDF 1–6 inspected. PDF 4 Syriac title and PDF 5 Syriac rubric page located.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "No complete book, decree or revision preface. Syriac rubric wording not independently translated. Publication identity is established; substantive revision boundary is not."
+    },
+    {
+      "id": "stages-malabar-catechesis",
+      "title": "Syro-Malabar Commissions for Liturgy and Catechesis, Liturgical Catechesis (2015), English version",
+      "url": "https://www.syromalabarmission.com/assets/uploads/events/Translated_mystagogical_catechesis_(1)_English.pdf",
+      "kind": "official-retrospective",
+      "inspection": "Full-size PDF 6–7, §§ 21–25, read after text-layer location; distinction between Eucharistic books and 1775/1845 sacramental ritual checked.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Retrospective English translation has awkward wording and an apparent calendar mistranslation; those details are not adopted. No direct early-book collation."
+    },
+    {
+      "id": "stages-malabar-bibliography",
+      "title": "General Characteristics and Sources of the Liturgy of the Saint Thomas Christians",
+      "url": "https://www.syromalabarliturgy.org/assets/uploads/pdfs/General_Characteristics_and_Sources_of_the_Liturgy_of_the_Saint_Thomas_Christians.pdf",
+      "kind": "scholarship",
+      "inspection": "Full-size physical PDF 11 bibliography inspected, including separate 1774/1775 titles, 1955/1959/1960/1962 publications and 2003 title.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Commission-hosted bibliography; listed books were not thereby inspected."
+    },
+    {
+      "id": "stages-malabar-pallath-2023",
+      "title": "Paul Pallath, The Liturgical Identity of the Syro-Malabar Church and Fidelity to the Patrimony of the Eastern Churches, Eastern Legal Thought 2023",
+      "url": "https://pvpkottayam.in/wp-content/uploads/2024/03/Eastern-Legal-Thought-2023-October.pdf",
+      "kind": "scholarship",
+      "inspection": "Text-layer research in §§ 2.1–2.2; full-size physical=printed pages 24–27 inspected, including archival references and precise book component/page descriptions.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Original archival scholarship, not our inspection of its archival acts or the 1955/1960 books. Author advocates restoration strongly; evaluative language is not adopted."
+    },
+    {
+      "id": "stages-malabar-1998-translation",
+      "title": "Jacob Kattoor, Malayalam translation of Ordo celebrationis Quddasa, HIRS India, 14 February 1998: excerpt",
+      "url": "https://thecmsindia.org/StaticFiles/docs/pdf/ORDO-CELEBRATIONIS-QUDDASA-Rome-1959.pdf",
+      "kind": "primary-book",
+      "inspection": "Fourteen-page excerpt contact sheet inspected; full-size PDF 3 gives translator, 1998 publication and reproduces 1959 imprint/imprimatur information.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Despite the filename and catalogue label, this is not the original Latin 1959 book. Malayalam body not translated; it cannot support direct Latin rubric collation."
+    },
+    {
+      "id": "stages-malabar-1962-catalogue",
+      "title": "CMSIndia RR-122/JT, SyroMalabar Sabhayude QurbanaKramam",
+      "url": "https://thecmsindia.org/resources/resources-for-researchers/no-150-to-101/syromalabar-subhayude-qurbanakramam",
+      "kind": "institutional-catalogue",
+      "inspection": "Read catalogue description of bilingual 1962 edition, seven approving bishops and instruction to contact library for complete copy.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Catalogue account only; reported 67-page extent differs from other edition descriptions and requires copy-level identification. No contact was sent."
+    }
+  ],
+  "stages": [
+    {
+      "id": "stages-malabar-roman-set-1774-1775",
+      "tradition_id": "stages-malabar-tradition",
+      "label": "First Roman printed ordinary and lection collection",
+      "date_label": "1775; complementary volumes published 1774–1775",
+      "start_year": 1775,
+      "end_year": 1775,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Complementary Eucharistic volumes; the sacramental ritual is excluded.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics",
+        "calendar",
+        "lectionary"
+      ],
+      "witness_ids": [
+        "eastern:malabar-1774",
+        "eastern:malabar-1775-rituum"
+      ],
+      "witness_label": "Ordo Chaldaicus Missae Beatorum Apostolorum (1774); Ordo Chaldaicus rituum et lectionum (1775)",
+      "summary": "The official retrospective reports received Maronite prayers, Latin-derived vesting and Holy Week material, and altered calendar/readings.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "stages-malabar-bibliography",
+          "locus": "Physical PDF 11, first paragraph",
+          "claim": "Lists separate 1774 ordinary, 1775 sacramental ritual and 1775 rites-and-lections titles."
+        },
+        {
+          "source_id": "stages-malabar-catechesis",
+          "locus": "§ 21, physical PDF 6",
+          "claim": "Describes prayer, ritual and calendar additions associated with the first printed Taksa."
+        }
+      ],
+      "limitations": "No original 1774/1775 page comparison. The two Eucharistic books are not two successive revisions. The retrospective does not securely assign every item to an individual volume.",
+      "reception": "Prepared for Malabar Catholic worship; no claim that every reported addition originated in 1774."
+    },
+    {
+      "id": "stages-malabar-reported-exemplar-1845",
+      "tradition_id": "stages-malabar-tradition",
+      "label": "Propaganda exemplar named as 1845",
+      "date_label": "1845, as stated in the 1904 permission",
+      "start_year": 1845,
+      "end_year": 1845,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Bounded earlier arrangement and absence of the later-approved appended Masses, as described in the 1904/1905 permissions.",
+      "components": [
+        "ordinary",
+        "lectionary",
+        "propers"
+      ],
+      "witness_ids": [
+        "eastern:malabar-1845-reported-exemplar"
+      ],
+      "witness_label": "Missale Syro-Chaldaeo-Malabaricum, Propaganda printing dated 1845 by the 1904 permission",
+      "summary": "The permission describes an exemplar with dispersed ordinary material and Rogation readings in a supplement.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "stages-malabar-1906",
+          "locus": "Physical PDF 508, permission of 10 June 1904",
+          "claim": "Explicitly names Propaganda printings of 1775 and 1845 and describes the earlier arrangement."
+        },
+        {
+          "source_id": "stages-malabar-1906",
+          "locus": "Physical PDF 6, approval of 15 October 1905",
+          "claim": "Calls the Masses approved on 31 July 1905 newly appended after comparison with the exemplar; only their prior absence is inferred."
+        }
+      ],
+      "limitations": "Propers scope is limited to the reported absence of the newly appended 1905 Masses, not a complete proper inventory. Documented as a named exemplar, not an independently identified physical edition or a proven substantive revision of 1775. Do not equate it with the separately reported 1844 lection book or 1845 sacramental ritual.",
+      "reception": "An authorized editorial exemplar for the 1906 Malabar book; its actual historical use is not reconstructed."
+    },
+    {
+      "id": "stages-malabar-puttenpalli-1906",
+      "tradition_id": "stages-malabar-tradition",
+      "label": "Reorganized travel missal with appended Masses",
+      "date_label": "1906",
+      "start_year": 1906,
+      "end_year": 1906,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Andreas Kalapura edition: arrangement and additions explicitly described in its permissions.",
+      "components": [
+        "ordinary",
+        "lectionary",
+        "propers"
+      ],
+      "witness_ids": [
+        "eastern:malabar-1906"
+      ],
+      "witness_label": "Ordo chaldaicus rituum et lectionum, Puttenpalli, Mar Thoma Sliha Press, 1906",
+      "summary": "Collects the ordinary; moves the three pre-Septuagesima Rogation readings into place; adds Masses approved in 1905.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "stages-malabar-1906",
+          "locus": "Physical PDF 508, 10 June 1904 permission",
+          "claim": "Directs collection of the ordinary and relocation of Rogation readings."
+        },
+        {
+          "source_id": "stages-malabar-1906",
+          "locus": "Physical PDF 6, 15 October 1905 approval and 1906 imprint",
+          "claim": "Reports comparison with the exemplar and newly appended Masses approved by the Congregation of Rites on 31 July 1905."
+        }
+      ],
+      "limitations": "The censor’s report is primary evidence of additions, not our collation. Names and precise Syriac loci of the appended Masses remain unverified.",
+      "reception": "Printing authorized by Aloysius Pareparambil for Malabar Catholic use; no wider normative replacement is inferred."
+    },
+    {
+      "id": "stages-malabar-vadakel-roman-exemplar",
+      "tradition_id": "stages-malabar-tradition",
+      "label": "Roman exemplar described by the 1946 editor",
+      "date_label": "Undated exemplar, described in 1946",
+      "start_year": null,
+      "end_year": null,
+      "date_kind": "reconstruction",
+      "status": "documented",
+      "scope": "Only features explicitly contrasted by the 1946 foreword.",
+      "components": [
+        "ordinary",
+        "rubrics",
+        "propers",
+        "lectionary"
+      ],
+      "witness_ids": [],
+      "witness_label": "Unidentified Roman edition named in Augustine Kandathil’s foreword to Vadakel 1946",
+      "summary": "Prayers/rubrics were dispersed; some feasts appeared only in the calendar; server prayers were merely indicated; Marian Huthama was absent.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "stages-malabar-1946",
+          "locus": "Physical PDF 3, foreword paragraphs 1–2",
+          "claim": "Describes the edition against which Vadakel’s changes are stated."
+        }
+      ],
+      "limitations": "No date or exact Roman printing is named. This contextual state cannot be merged with the 1845 exemplar without further evidence.",
+      "reception": "Malabar liturgical exemplar, not the Latin Roman Missal; the phrase Roman Edition indicates printing context here."
+    },
+    {
+      "id": "stages-malabar-alwaye-1946",
+      "tradition_id": "stages-malabar-tradition",
+      "label": "Vadakel’s corrected and expanded arrangement",
+      "date_label": "1946",
+      "start_year": 1946,
+      "end_year": 1946,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Editorial arrangement and specified additions verified in original preliminary leaves.",
+      "components": [
+        "ordinary",
+        "rubrics",
+        "propers",
+        "lectionary"
+      ],
+      "witness_ids": [
+        "eastern:malabar-1946"
+      ],
+      "witness_label": "Ordo Chaldaicus rituum et lectionum, reditus a P. Matthaeo Vadakel, Mar Thoma Sleeha, Alwaye, 1946",
+      "summary": "Regroups and brackets transferred material, supplies proper and server texts, and preserves a Nineveh appendix with Marian Huthama.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "stages-malabar-1946",
+          "locus": "Physical PDF 2–4, title, foreword and contents",
+          "claim": "Dates the printing and explicitly describes the changed content and arrangement."
+        },
+        {
+          "source_id": "stages-malabar-1946",
+          "locus": "Physical PDF 5, approval note",
+          "claim": "Names Holy See letter Prot. 2521/28 of 3 September 1930 for double-asterisk feasts and the Immaculate Conception Gospel."
+        }
+      ],
+      "limitations": "Bodies of the ordinary, propers and appendix are absent from the excerpt. No direct descent from the 1906 book is asserted. The 1930 act is reported in the book, not independently inspected.",
+      "reception": "Approved by Augustine Kandathil in the foreword dated 13 May 1946; catalogue’s 1945 date is not followed."
+    },
+    {
+      "id": "stages-malabar-restoration-study-1955",
+      "tradition_id": "stages-malabar-tradition",
+      "label": "Latin study text for restoration",
+      "date_label": "1955",
+      "start_year": 1955,
+      "end_year": 1955,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Consultative formulation of the original reform, not a lay translation lineage.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics",
+        "calendar"
+      ],
+      "witness_ids": [
+        "eastern:malabar-1955-study"
+      ],
+      "witness_label": "Liturgia Siro-Malabaresi: Revisione e Ristampa del Messale Siro-Malabarese, Rome 1955, Prot. 947/48",
+      "summary": "Contains the common order, three anaphoras and forms of celebration for episcopal consultation.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "stages-malabar-pallath-2023",
+          "locus": "Printed/physical 24, § 2.1 and note 39",
+          "claim": "Identifies the Latin consultative text and its component page ranges."
+        }
+      ],
+      "limitations": "Book not acquired. Publication in 1955 is distinct from approval on 26 June 1957 and reception in 1962.",
+      "reception": "Roman commission study text; not asserted to have been used as a Latin-language altar missal."
+    },
+    {
+      "id": "stages-malabar-restoration-publications-1959-1960",
+      "tradition_id": "stages-malabar-tradition",
+      "label": "Restoration issued in complementary books",
+      "date_label": "1960; complementary books published 1959–1960",
+      "start_year": 1960,
+      "end_year": 1960,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Rubrics/calendar, propers and a restricted Syriac ordinary issued separately.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "rubrics",
+        "calendar",
+        "lectionary",
+        "chant"
+      ],
+      "witness_ids": [
+        "eastern:malabar-1959-ordo",
+        "eastern:malabar-1960-supplementum",
+        "eastern:malabar-1960-taksa"
+      ],
+      "witness_label": "Ordo celebrationis Quddasa (Rome 1959); Supplementum Mysteriorum (Rome 1960); Taksa d’Quddasa (Alwaye 1960)",
+      "summary": "The three books supply different components; the Syriac ordinary includes only Addai and Mari in the simple form.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "stages-malabar-pallath-2023",
+          "locus": "Printed/physical 25–27, § 2.2",
+          "claim": "Distinguishes the approved three-anaphora programme, companion books, and narrower 12 May 1960 Syriac printing."
+        },
+        {
+          "source_id": "stages-malabar-catechesis",
+          "locus": "§ 23, physical PDF 7",
+          "claim": "Lists the three books as publications of the restoration."
+        }
+      ],
+      "limitations": "No original Latin 1959 or Syriac 1960 pages acquired. The CMS file labelled 1959 is a 1998 translation. Companion volumes must not become sequential whole-missal revisions.",
+      "reception": "Programme approved by Pius XII in 1957; its complete contents were not all introduced in worship in 1962."
+    },
+    {
+      "id": "stages-malabar-reception-1962",
+      "tradition_id": "stages-malabar-tradition",
+      "label": "Partial restoration introduced in worship",
+      "date_label": "3 July 1962 reception; instruction 20 January",
+      "start_year": 1962,
+      "end_year": 1962,
+      "date_kind": "effective",
+      "status": "documented",
+      "scope": "Community reception of a restricted restored order; independent Malayalam translation history deferred.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:malabar-1962"
+      ],
+      "witness_label": "The Order of Qurbana of the Syro-Malabar Church, Alwaye 1962, Syriac and Malayalam",
+      "summary": "The bishops introduced the bilingual order on 3 July; several approved restored components remained unimplemented.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "stages-malabar-pallath-2023",
+          "locus": "Printed/physical 27, § 2.2 and notes 46–47",
+          "claim": "Separates 20 January promulgation from 3 July introduction and identifies omitted components."
+        },
+        {
+          "source_id": "stages-malabar-1962-catalogue",
+          "locus": "RR-122/JT description, paragraphs on Syriac prayers and promulgation",
+          "claim": "Identifies bilingual publication and continuing Syriac passages."
+        }
+      ],
+      "limitations": "A reception stage, not a new original-language revision inferred from translation. Original instruction and complete book not inspected.",
+      "reception": "Syro-Malabar episcopal introduction; not proof of uniform practice in every parish."
+    },
+    {
+      "id": "stages-malabar-typica-2003",
+      "tradition_id": "stages-malabar-tradition",
+      "label": "2003 Syriac typical-edition witness",
+      "date_label": "2003",
+      "start_year": 2003,
+      "end_year": 2003,
+      "date_kind": "publication",
+      "status": "provisional",
+      "scope": "Confirmed printing; substantive state and predecessor comparison unresolved.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:malabar-2003"
+      ],
+      "witness_label": "Order of the Mysteries with the First Hallowing of Mar Addai and Mar Mari, Editio Typica, Rome 2003",
+      "summary": "Title identifies the Malabar use and Addai–Mari anaphora; native Syriac leaves are visible.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "stages-malabar-2003",
+          "locus": "Physical PDF 3–5, English/Syriac title leaves and first rubric leaf",
+          "claim": "Confirms year, typical-edition designation and native Syriac content."
+        }
+      ],
+      "limitations": "Do not count as an established substantive new stage solely from the title. No full book, approval decree or changed-text statement obtained.",
+      "reception": "Title says use of the Church of the East Syrians of Malabar; Catholic bibliographic context corroborated by commission-hosted source list."
+    }
+  ],
+  "transitions": [
+    {
+      "id": "stages-malabar-1775-to-reported-1845",
+      "from_stage": "stages-malabar-roman-set-1774-1775",
+      "to_stage": "stages-malabar-reported-exemplar-1845",
+      "kind": "witness-succession",
+      "status": "provisional",
+      "evidence_level": "primary-description",
+      "summary": "The permission reports a later Propaganda printing; its content delta is unknown.",
+      "components": [
+        "ordinary",
+        "lectionary"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "stages-malabar-1906",
+          "locus": "Physical PDF 508",
+          "claim": "Names 1775 and again 1845 as printings of the exemplar."
+        }
+      ],
+      "limitations": "No substantive revision established. The first stage includes a complementary 1774 ordinary, while the permission explicitly names 1775.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed"
+    },
+    {
+      "id": "stages-malabar-exemplar-to-1906",
+      "from_stage": "stages-malabar-reported-exemplar-1845",
+      "to_stage": "stages-malabar-puttenpalli-1906",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "Ordinary and readings were reorganized, and new approved Masses were appended.",
+      "components": [
+        "ordinary",
+        "lectionary",
+        "propers"
+      ],
+      "changes": [
+        {
+          "component": "ordinary",
+          "before": "Material dispersed in the exemplar.",
+          "after": "Entire ordinary collected in one location.",
+          "locus_before": "Earlier arrangement described in 1906 PDF 508; original exemplar uninspected.",
+          "locus_after": "1906 PDF 508, 10 June 1904 direction.",
+          "evidence": [
+            {
+              "source_id": "stages-malabar-1906",
+              "locus": "Physical PDF 508",
+              "claim": "Prescribes a changed arrangement relative to the named exemplar."
+            }
+          ]
+        },
+        {
+          "component": "lectionary",
+          "before": "Three pre-Septuagesima Rogation days’ readings in a supplement.",
+          "after": "Readings and Gospels inserted in their proper places.",
+          "locus_before": "Earlier arrangement described in 1906 PDF 508.",
+          "locus_after": "1906 PDF 508; printed Syriac loci not collated.",
+          "evidence": [
+            {
+              "source_id": "stages-malabar-1906",
+              "locus": "Physical PDF 508",
+              "claim": "Prescribes a changed arrangement relative to the named exemplar."
+            }
+          ]
+        },
+        {
+          "component": "propers",
+          "before": "Newly approved Masses not included in the named earlier exemplar.",
+          "after": "Masses approved 31 July 1905 appended.",
+          "locus_before": "Absence inferred only from the censor’s explicit description as newly added.",
+          "locus_after": "1906 PDF 6, 15 October 1905 approval.",
+          "evidence": [
+            {
+              "source_id": "stages-malabar-1906",
+              "locus": "Physical PDF 6",
+              "claim": "Reports newly appended Masses approved on 31 July 1905."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "stages-malabar-1906",
+          "locus": "Physical PDF 508",
+          "claim": "Prescribes a changed arrangement relative to the named exemplar."
+        },
+        {
+          "source_id": "stages-malabar-1906",
+          "locus": "Physical PDF 6",
+          "claim": "Reports newly appended Masses approved on 31 July 1905."
+        }
+      ],
+      "limitations": "This records the book’s explicit description. It is not a claim of project-completed textual collation, nor an identification of each new Mass.",
+      "comparison_ids": [],
+      "historical_parentage": "established"
+    },
+    {
+      "id": "stages-malabar-roman-exemplar-to-1946",
+      "from_stage": "stages-malabar-vadakel-roman-exemplar",
+      "to_stage": "stages-malabar-alwaye-1946",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "Vadakel regrouped material, expanded proper/server entries and supplied specified appendices.",
+      "components": [
+        "ordinary",
+        "rubrics",
+        "propers",
+        "lectionary"
+      ],
+      "changes": [
+        {
+          "component": "ordinary",
+          "before": "Prayers and rubrics occurred at different places.",
+          "after": "Transferred material collected in the Mass and bracketed.",
+          "locus_before": "Roman exemplar as described in foreword PDF 3.",
+          "locus_after": "Foreword PDF 3; contents PDF 4 locates ordinary 211–257.",
+          "evidence": [
+            {
+              "source_id": "stages-malabar-1946",
+              "locus": "Physical PDF 3, foreword",
+              "claim": "Explicitly contrasts the Roman edition with Vadakel’s revised arrangement."
+            }
+          ]
+        },
+        {
+          "component": "propers",
+          "before": "Some feasts mentioned only in the calendar.",
+          "after": "These feasts also entered into the Proper of Saints.",
+          "locus_before": "Foreword PDF 3.",
+          "locus_after": "Foreword PDF 3; contents locates Proper 330–436.",
+          "evidence": [
+            {
+              "source_id": "stages-malabar-1946",
+              "locus": "Physical PDF 3, foreword",
+              "claim": "Explicitly contrasts the Roman edition with Vadakel’s revised arrangement."
+            }
+          ]
+        },
+        {
+          "component": "ordinary",
+          "before": "Server prayers merely indicated.",
+          "after": "Server prayers printed in full at appropriate locations or end.",
+          "locus_before": "Foreword PDF 3.",
+          "locus_after": "Foreword PDF 3; contents locates server section 264–266.",
+          "evidence": [
+            {
+              "source_id": "stages-malabar-1946",
+              "locus": "Physical PDF 3, foreword",
+              "claim": "Explicitly contrasts the Roman edition with Vadakel’s revised arrangement."
+            }
+          ]
+        },
+        {
+          "component": "lectionary",
+          "before": "Nineveh readings transmitted in an appendix added at Coonemavu in 1879 to the Roman edition.",
+          "after": "Those readings reproduced in the 1946 appendix.",
+          "locus_before": "Foreword PDF 3 explicitly identifies the 1879 source.",
+          "locus_after": "Foreword PDF 3; contents PDF 4 identifies appendix from p. 449.",
+          "evidence": [
+            {
+              "source_id": "stages-malabar-1946",
+              "locus": "Physical PDF 3, foreword",
+              "claim": "Explicitly contrasts the Roman edition with Vadakel’s revised arrangement."
+            },
+            {
+              "source_id": "stages-malabar-1946",
+              "locus": "Physical PDF 4, contents",
+              "claim": "Locates the ordinary at 211–257, server section at 264–266 and appendix at 449."
+            }
+          ]
+        },
+        {
+          "component": "ordinary",
+          "before": "Marian Huthama absent from the Roman edition.",
+          "after": "The locally used Marian closing prayer supplied in the appendix.",
+          "locus_before": "Foreword PDF 3 explicitly states absence.",
+          "locus_after": "Foreword PDF 3; contents PDF 4 lists Huthama from p. 449.",
+          "evidence": [
+            {
+              "source_id": "stages-malabar-1946",
+              "locus": "Physical PDF 3, foreword",
+              "claim": "Explicitly contrasts the Roman edition with Vadakel’s revised arrangement."
+            },
+            {
+              "source_id": "stages-malabar-1946",
+              "locus": "Physical PDF 4, contents",
+              "claim": "Locates the ordinary at 211–257, server section at 264–266 and appendix at 449."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "stages-malabar-1946",
+          "locus": "Physical PDF 3, foreword",
+          "claim": "Explicitly contrasts the Roman edition with Vadakel’s revised arrangement."
+        },
+        {
+          "source_id": "stages-malabar-1946",
+          "locus": "Physical PDF 4, contents",
+          "claim": "Locates the ordinary at 211–257, server section at 264–266 and appendix at 449."
+        }
+      ],
+      "limitations": "The Roman edition is unidentified. No 1906→1946 direct descent is claimed; the 1906 direction places Rogation readings in situ, whereas this book reports an appendix.",
+      "comparison_ids": [],
+      "historical_parentage": "established"
+    },
+    {
+      "id": "stages-malabar-study-to-restoration-publications",
+      "from_stage": "stages-malabar-restoration-study-1955",
+      "to_stage": "stages-malabar-restoration-publications-1959-1960",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "Rubrical material was revised and separately issued; the printed Syriac ordinary implemented a narrower selection.",
+      "components": [
+        "rubrics",
+        "anaphoras"
+      ],
+      "changes": [
+        {
+          "component": "rubrics",
+          "before": "1955 consultation text contained celebration directions at pp. 70–91.",
+          "after": "1959 separate Ordo revised them after consultation and added an introductory section on churches, vestments and additional rubrics.",
+          "locus_before": "Pallath p. 24 reports 1955 loci.",
+          "locus_after": "Pallath p. 26 reports 1959 pp. 3–7 and 8–70.",
+          "evidence": [
+            {
+              "source_id": "stages-malabar-pallath-2023",
+              "locus": "Printed/physical 24–27, §§ 2.1–2.2",
+              "claim": "Describes the 1955 contents and changed 1959 rubric publication and 1960 ordinary scope."
+            }
+          ]
+        },
+        {
+          "component": "anaphoras",
+          "before": "Three anaphoras in the 1955 study text and 1957 approved programme.",
+          "after": "1960 Syriac ordinary printed only Addai and Mari in simple form.",
+          "locus_before": "Pallath pp. 24–25.",
+          "locus_after": "Pallath pp. 26–27.",
+          "evidence": [
+            {
+              "source_id": "stages-malabar-pallath-2023",
+              "locus": "Printed/physical 24–27, §§ 2.1–2.2",
+              "claim": "Describes the 1955 contents and changed 1959 rubric publication and 1960 ordinary scope."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "stages-malabar-pallath-2023",
+          "locus": "Printed/physical 24–27, §§ 2.1–2.2",
+          "claim": "Describes the 1955 contents and changed 1959 rubric publication and 1960 ordinary scope."
+        }
+      ],
+      "limitations": "Descriptive scholarship rather than original page comparison. Omission from the Syriac book does not rescind approval of the other two anaphoras; companion books are not serial revisions.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed"
+    },
+    {
+      "id": "stages-malabar-restoration-to-reception",
+      "from_stage": "stages-malabar-restoration-publications-1959-1960",
+      "to_stage": "stages-malabar-reception-1962",
+      "kind": "reception",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "The restored ordinary entered worship while other approved components remained unimplemented.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "lectionary"
+      ],
+      "changes": [
+        {
+          "component": "ordinary",
+          "before": "Restored books published; programme not yet introduced by common episcopal decision.",
+          "after": "Bilingual order introduced 3 July 1962.",
+          "locus_before": "Pallath pp. 26–27.",
+          "locus_after": "Pallath p. 27.",
+          "evidence": [
+            {
+              "source_id": "stages-malabar-pallath-2023",
+              "locus": "Printed/physical 27, § 2.2",
+              "claim": "Reports the 1962 introduction and components not then received."
+            }
+          ]
+        },
+        {
+          "component": "anaphoras",
+          "before": "Broader approved restoration included three anaphoras.",
+          "after": "Second and third anaphoras were not introduced at this reception.",
+          "locus_before": "Pallath p. 25.",
+          "locus_after": "Pallath p. 27.",
+          "evidence": [
+            {
+              "source_id": "stages-malabar-pallath-2023",
+              "locus": "Printed/physical 27, § 2.2",
+              "claim": "Reports the 1962 introduction and components not then received."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "stages-malabar-pallath-2023",
+          "locus": "Printed/physical 27, § 2.2",
+          "claim": "Reports the 1962 introduction and components not then received."
+        }
+      ],
+      "limitations": "No independent translation lineage or fresh substantive revision is inferred from the language shift. Primary instruction remains to be inspected.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed"
+    }
+  ],
+  "gaps": [
+    {
+      "id": "stages-malabar-early-exemplars",
+      "tradition_id": "stages-malabar-tradition",
+      "period": "1774–1845",
+      "missing": "Original 1774 ordinary, 1775 rites/lections and exact 1845-named exemplar not acquired; 1844/1845 identity remains unresolved.",
+      "next_source": "Propaganda editions named in 1906 PDF 508; inspect their title/colophon and ordinary/lection joins. Distinguish sacramental ritual of 1845.",
+      "consequence": "No complete early collation or additional substantive 1840s revision can be counted."
+    },
+    {
+      "id": "stages-malabar-new-masses",
+      "tradition_id": "stages-malabar-tradition",
+      "period": "1905–1906",
+      "missing": "Names and complete Syriac loci of newly appended Masses, and the original 31 July 1905 approval.",
+      "next_source": "Held 1906 Bonn PDF, rear proper material preceding physical PDF 6; Congregation of Rites act dated 31 July 1905 cited there.",
+      "consequence": "Addition is primary-described, not text-collated or individually enumerated."
+    },
+    {
+      "id": "stages-malabar-1946-comparison",
+      "tradition_id": "stages-malabar-tradition",
+      "period": "1879–1946",
+      "missing": "Full 1946 ordinary/propers/appendix and identity of its Roman exemplar.",
+      "next_source": "CMSIndia RR-105/JT, request route printed on excerpt PDF 6; original 1946 pp. 211–257, 264–266, 330–436, 449 onward; Coonemavu appendix 1879.",
+      "consequence": "No 1906→1946 direct lineage, prayer-body comparison or independent 1879 stage established."
+    },
+    {
+      "id": "stages-malabar-restoration-originals",
+      "tradition_id": "stages-malabar-tradition",
+      "period": "1955–1962",
+      "missing": "Original Latin 1955/1959 and Syriac 1960 full books and original 1962 instruction.",
+      "next_source": "1955 Prot. 947/48; Ordo 1959 OCLC 34188577; Pallath Restoration and Reform (2018), pp. 387–389 original instruction; Vatican Eastern Dicastery archive Prot. 955/65, fascicolo I.",
+      "consequence": "Restoration transitions remain scholarly-described; CMS 1959-labelled file is a 1998 Malayalam translation."
+    },
+    {
+      "id": "stages-malabar-1962-copy",
+      "tradition_id": "stages-malabar-tradition",
+      "period": "1962",
+      "missing": "Exact copy-level extent and Syriac appendix of bilingual implementation book.",
+      "next_source": "CMSIndia RR-122/JT states 67 pages and contact required; Pallath p. 27 note 47 describes Malayalam pp. 1–58 followed by complete Syriac text.",
+      "consequence": "Do not merge differing extent descriptions or count translation as original reform."
+    },
+    {
+      "id": "stages-malabar-2003-revision",
+      "tradition_id": "stages-malabar-tradition",
+      "period": "1985–2003",
+      "missing": "Full 2003 book, approval/decree and source-preface explaining relation to 1985/1989 forms.",
+      "next_source": "CMSIndia RR-042 public title excerpt; full title Rome 2003 Editio Typica; inspect its preface and anaphora against earlier Syriac state.",
+      "consequence": "Printing identity confirmed but no substantive revision or predecessor link established."
+    }
+  ]
+}

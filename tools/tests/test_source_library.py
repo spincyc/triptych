@@ -1581,6 +1581,56 @@ class SourceLibraryTests(unittest.TestCase):
         self.assertNotIn("projection.tsv", joined)
         self.assertIn(f"{rogue}: file is outside the source-library schema", joined)
 
+    def test_exact_history_json_inventory_owners_are_not_source_artifacts(self) -> None:
+        self.add_valid_vertical_fixture()
+        before = SOURCE_LIBRARY.load_library(self.root)
+        dossier = {"schema_version": 1, "record_type": "eucharistic-book-stages", "dossier_id": "fixture",
+                   "title": "Constructed research inventory", "traditions": [], "sources": [],
+                   "stages": [], "transitions": [], "gaps": []}
+        audit = {"schema_version": 1, "record_type": "eucharistic-book-stage-coverage-audit", "audit_id": "fixture",
+                 "title": "Constructed coverage audit", "inputs": [], "sources": []}
+        self.write("src/sources/inventories/eucharistic-stages/fixture.json", json.dumps(dossier))
+        self.write("src/sources/inventories/eucharistic-stage-coverage-v1.json", json.dumps(audit))
+        after = SOURCE_LIBRARY.load_library(self.root)
+        self.assertEqual([], after.errors)
+        self.assertEqual(set(before.records), set(after.records))
+        self.assertEqual(before.payload_paths, after.payload_paths)
+
+    def test_history_inventory_ownership_does_not_exempt_nearby_json_or_payloads(self) -> None:
+        self.add_valid_vertical_fixture()
+        dossier = {"schema_version": 1, "record_type": "eucharistic-book-stages", "dossier_id": "fixture",
+                   "title": "Constructed research inventory", "traditions": [], "sources": [],
+                   "stages": [], "transitions": [], "gaps": []}
+        rogue_paths = ("src/sources/inventories/rogue.json",
+                       "src/sources/inventories/eucharistic-stages/nested/fixture.json",
+                       "src/sources/inventories/eucharistic-stages/book.pdf",
+                       "src/sources/inventories/eucharistic-stage-coverage-copy.json")
+        for path in rogue_paths:
+            self.write(path, json.dumps(dossier))
+        joined = "\n".join(SOURCE_LIBRARY.load_library(self.root).errors)
+        for path in rogue_paths:
+            self.assertIn(f"{path}: file is outside the source-library schema", joined)
+
+    def test_history_inventory_path_requires_valid_exact_format_envelope(self) -> None:
+        self.add_valid_vertical_fixture()
+        cases = {
+            "wrong-type": {"schema_version": 1, "record_type": "artifact"},
+            "wrong-version": {"schema_version": 2, "record_type": "eucharistic-book-stages"},
+            "boolean-version": {"schema_version": True, "record_type": "eucharistic-book-stages"},
+            "missing-tables": {"schema_version": 1, "record_type": "eucharistic-book-stages", "dossier_id": "fixture", "title": "Missing evidence tables"},
+        }
+        for name, data in cases.items():
+            self.write(f"src/sources/inventories/eucharistic-stages/{name}.json", json.dumps(data))
+        self.write("src/sources/inventories/eucharistic-stages/malformed.json", "not JSON")
+        self.write("src/sources/inventories/eucharistic-stages/duplicate.json", '{"schema_version":1,"schema_version":1}')
+        self.write("src/sources/inventories/eucharistic-stage-coverage-v1.json", json.dumps({"schema_version": 1, "record_type": "eucharistic-book-stages"}))
+        joined = "\n".join(SOURCE_LIBRARY.load_library(self.root).errors)
+        for name in cases:
+            self.assertIn(f"eucharistic-stages/{name}.json: expected schema_version=1 eucharistic-book-stages ownership envelope", joined)
+        self.assertIn("malformed.json: owned history inventory must be valid JSON", joined)
+        self.assertIn("duplicate.json: owned history inventory must be valid JSON", joined)
+        self.assertIn("eucharistic-stage-coverage-v1.json: expected schema_version=1 eucharistic-book-stage-coverage-audit ownership envelope", joined)
+
     def test_invalid_and_duplicate_ids_are_rejected_deterministically(self) -> None:
         work = '''
             schema = 1

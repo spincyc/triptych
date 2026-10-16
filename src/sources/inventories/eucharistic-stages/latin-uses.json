@@ -1,0 +1,699 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-stages",
+  "dossier_id": "latin-uses",
+  "title": "Bounded Dominican, Carmelite and Braga book states",
+  "traditions": [
+    {
+      "id": "dominican",
+      "label": "Dominican use",
+      "family": "latin",
+      "scope": "Latin missals of the Order of Preachers; the selected original Latin printings, not a translation history.",
+      "coverage_note": "Two page-collated states bracket intervening revisions; the 1604 printing witnesses a reform already described in 1602 and 1603."
+    },
+    {
+      "id": "carmelite",
+      "label": "Carmelite use",
+      "family": "latin",
+      "scope": "Latin missals of the ancient observance of the Order of Carmel; not the Discalced Carmelites’ separate Roman-use books.",
+      "coverage_note": "Two printings establish a bounded October calendar change. The precise intervening act is not yet identified."
+    },
+    {
+      "id": "braga",
+      "label": "Rite of Braga",
+      "family": "latin",
+      "scope": "Bracarense Latin missals, kept distinct from Roman, Carmelite and Dominican uses.",
+      "coverage_note": "1538–1558 change is established through original scholarship. The 1924 approved state has direct prefatory evidence; its precise body revision remains open."
+    }
+  ],
+  "sources": [
+    {
+      "id": "latin-uses:dom1550",
+      "title": "Missale ad usum fratrum Praedicatorum Sancti Dominici (Venice, 1550)",
+      "url": "https://archive.org/details/bub_gb_FqVWqqFkUDsC",
+      "kind": "primary-book",
+      "inspection": "Page images inspected: title (PDF 5); fols 125r–125v (PDF 289–290), Suscepimus Deus formulary and beginning of the following Mass.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Only the identified formulary and title were collated; whole-book continuity and precise intermediate ancestry are not inferred."
+    },
+    {
+      "id": "latin-uses:dom1604",
+      "title": "Missale juxta ritum sacri ordinis Praedicatorum S. P. N. Dominici (Rome, 1604)",
+      "url": "https://archive.org/details/bub_gb_lefoIUlq2sgC",
+      "kind": "primary-book",
+      "inspection": "Page images inspected: title (PDF 3), Clement VIII brief (PDF 5–6), Xavierre letter (PDF 7), pp. 238–239 (PDF 314–315).",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Title year is the printing date. The reprinted brief is dated 2 April 1602 and the letter 17 February 1603. Limited formulary comparison, not a complete transcription."
+    },
+    {
+      "id": "latin-uses:bonniwell",
+      "title": "William R. Bonniwell, A History of the Dominican Liturgy, second edition (1945)",
+      "url": "https://media.churchmusicassociation.org/dominican/Texts/bonniwell-history.pdf",
+      "kind": "scholarship",
+      "inspection": "Printed pp. 320–321 read as page image (PDF 167); pp. 308–311 and 322–325 located in extracted text as contextual leads.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Modern copyrighted scholarship retained only in scratch; no full-text import. Page-image-confirmed reform account is distinguished from OCR-only leads. Author’s judgments about reform are not adopted."
+    },
+    {
+      "id": "latin-uses:carm1574",
+      "title": "Missale antique professionis Regularium beatissime Dei genitricis semperque virginis Marie de Monte Carmelo (Venice: Giunta, 1574)",
+      "url": "https://archive.org/details/ARes10417",
+      "kind": "primary-book",
+      "inspection": "Page images inspected: title (PDF 7) and October calendar (PDF 20).",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Limited calendar sample, not complete sanctoral or Mass ordinary collation."
+    },
+    {
+      "id": "latin-uses:carm1621",
+      "title": "Missale fratrum Carmelitarum Ordinis Beatae Dei Genitricis Mariae de monte Carmelo (Venice: Giunta, 1621)",
+      "url": "https://archive.org/details/bub_gb_PUEgJFAvalgC",
+      "kind": "primary-book",
+      "inspection": "Page images inspected: title (PDF 3), Gregory XIII brief dated 26 September 1584 (PDF 5), October calendar (PDF 22), sanctoral p. 409 (PDF 462).",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "The copy has handwritten changes, including the title and the Teresa sanctoral margin; only printed text supports the proposed stages. The 1584 instrument is reprinted, not a new act of 1621."
+    },
+    {
+      "id": "latin-uses:carvalho",
+      "title": "Joaquim Félix de Carvalho, “A Liturgia em Braga”, Didaskalia 37 (2007), no. 2, pp. 139–184",
+      "url": "https://ciencia.ucp.pt/ws/files/43665339/1852_article_3991_1_10_20191019.pdf",
+      "kind": "scholarship",
+      "inspection": "Page images inspected: printed pp. 162–165 (PDF 24–27), including 1538 colophon and 1558 pastoral excerpts, Ordo description and Palm Sunday comparison. Printed p. 176 consulted in extracted text only.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Modern scholarship, not a primary-book collation by this researcher. Palm Sunday comparison reports Joaquim Bragança’s comparison in note 141. No full-text import; 1924 dependence noted on p. 176 remains an OCR-only lead."
+    },
+    {
+      "id": "latin-uses:usuarium1538",
+      "title": "USUARIUM book 9: Braga 1538, BNP RES-1633-A",
+      "url": "https://usuarium.elte.hu/book/9/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Catalogue identity, digital source link and contents locators inspected; PDF endpoint returned HTTP 401.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Catalogue establishes a specific witness and locators, not textual differences. Data retrieved from USUARIUM: A Digital Library and Database for the Study of Latin Liturgical History in the Middle Ages and Early Modern Period, built by Miklós István Földváry et al., Eötvös Loránd University, Research Group of Liturgical History, from 2015 onwards."
+    },
+    {
+      "id": "latin-uses:usuarium1558",
+      "title": "USUARIUM book 5767: Braga 1558, BnF B-1478",
+      "url": "https://usuarium.elte.hu/book/5767/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Catalogue identity and section locators inspected; PDF endpoint returned HTTP 401.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "No primary leaf inspected. The direct Gallica PDF returned HTTP 403. USUARIUM attribution as in the book 9 source."
+    },
+    {
+      "id": "latin-uses:braga1924",
+      "title": "Missale Bracarense (Rome: Typis Polyglottis Vaticanis, 1924), digitized working copy with later additions",
+      "url": "https://archive.org/details/missale-bracarense-1924",
+      "kind": "primary-book",
+      "inspection": "Page images inspected: title (PDF 1), bull continuation and dateline (PDF 4–5, printed VIII–IX), decree (PDF 6, printed X).",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "The volume contains later supplements. Existing repository rights record requires a leaf map before publishing text from this file. These are metadata and paraphrase observations of dated 1924 prefatory leaves; no full text or unrestricted scan publication is proposed."
+    },
+    {
+      "id": "latin-uses:pinheiro",
+      "title": "Sérgio Miguel Mota Pinheiro, Obra litúrgica de Frei António de Santa Maria, OFM: a reforma das últimas edições do Breviário (1920–1922) e do Missal (1924) Bracarenses (2019)",
+      "url": "https://repositorio.ucp.pt/handle/10400.14/29449",
+      "kind": "scholarship",
+      "inspection": "Repository title/abstract lead located; thesis download returned an anti-bot HTML page, not a PDF.",
+      "checked_on": "2026-10-16",
+      "status": "lead",
+      "limitations": "Full study not inspected; its advertised comparison of Braga 1924 with Braga 1558 and Roman 1886/1921 must be acquired before specific revision claims."
+    }
+  ],
+  "stages": [
+    {
+      "id": "latin-uses:dominican-1550",
+      "tradition_id": "dominican",
+      "label": "Venice witness before the Xavierre revision",
+      "date_label": "1550",
+      "start_year": 1550,
+      "end_year": 1550,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Suscepimus Deus formulary within the temporale.",
+      "components": [
+        "propers",
+        "lectionary",
+        "calendar"
+      ],
+      "witness_ids": [
+        "latin-missal:praedicatorum-venetiis-1550"
+      ],
+      "witness_label": "Missale ad usum fratrum Praedicatorum Sancti Dominici, Venice, 1550",
+      "summary": "Suscepimus Deus appears under Dominica octava, with Deus cuius providentia as collect and Attendite a falsis prophetis as Gospel.",
+      "text_coverage": "partial",
+      "evidence": [
+        {
+          "source_id": "latin-uses:dom1550",
+          "locus": "Title, PDF 5",
+          "claim": "Venice 1550 is printed on the title."
+        },
+        {
+          "source_id": "latin-uses:dom1550",
+          "locus": "1550 fols 125r–125v (PDF 289–290), Suscepimus Deus",
+          "claim": "The named formulary and texts are visible on the identified folios."
+        }
+      ],
+      "limitations": "This does not reconstruct the full 1550 missal, identify its immediate exemplar, or establish how long each house used it.",
+      "reception": "The title identifies the Dominican use. A printed intended-use statement does not prove reception in every province."
+    },
+    {
+      "id": "latin-uses:dominican-1604",
+      "tradition_id": "dominican",
+      "label": "Xavierre revision witnessed in the Rome printing",
+      "date_label": "1604",
+      "start_year": 1604,
+      "end_year": 1604,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "A revised temporale formulary and the revision’s reprinted authorizing documents.",
+      "components": [
+        "propers",
+        "lectionary",
+        "calendar",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "latin-missal:praedicatorum-xavierre-1604"
+      ],
+      "witness_label": "Missale juxta ritum sacri ordinis Praedicatorum S. P. N. Dominici, Rome, ex typographia Alfonsi Ciacconi, apud Carolum Vulliettum, 1604",
+      "summary": "Suscepimus Deus now has Largire nobis as collect and the unjust-steward Gospel, with its heading moved to Dominica sexta after the octave of Trinity.",
+      "text_coverage": "partial",
+      "evidence": [
+        {
+          "source_id": "latin-uses:dom1604",
+          "locus": "Title, PDF 3",
+          "claim": "Printing dated 1604, under Hieronymus Xavierre."
+        },
+        {
+          "source_id": "latin-uses:dom1604",
+          "locus": "Xavierre letter, PDF 7, dated 17 February 1603",
+          "claim": "The editor explicitly describes conformity of Epistles and Gospels to Roman use."
+        },
+        {
+          "source_id": "latin-uses:dom1604",
+          "locus": "1604 pp. 238–239 (PDF 314–315), Suscepimus Deus",
+          "claim": "The revised combination is directly visible."
+        }
+      ],
+      "limitations": "The original intervention predates this printing; 1604 is not assigned as the first promulgation or first revised edition. Only the selected formulary is text-collated.",
+      "reception": "Clement VIII’s brief dated 2 April 1602 preserves the Order’s rite while authorizing conformity in specified matters. Its adoption windows depend on place and availability of copies; actual local uptake is not established."
+    },
+    {
+      "id": "latin-uses:carmelite-1574",
+      "tradition_id": "carmelite",
+      "label": "Carmelite October calendar before the later additions",
+      "date_label": "1574",
+      "start_year": 1574,
+      "end_year": 1574,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Printed October calendar.",
+      "components": [
+        "calendar"
+      ],
+      "witness_ids": [
+        "latin-missal:carmelitarum-venetiis-1574"
+      ],
+      "witness_label": "Missale antique professionis Regularium beatissime Dei genitricis semperque virginis Marie de Monte Carmelo, Venice: Giunta, 1574",
+      "summary": "October 5 has no printed feast. October 6 includes Abraham, Isaac and Jacob with three lessons and the octave of Michael; October 8 includes Simeon the prophet.",
+      "text_coverage": "partial",
+      "evidence": [
+        {
+          "source_id": "latin-uses:carm1574",
+          "locus": "Title, PDF 7",
+          "claim": "Imprint is Venice, Giunta, 1574; the book identifies the Carmelite observance and custom of Jerusalem."
+        },
+        {
+          "source_id": "latin-uses:carm1574",
+          "locus": "October calendar, PDF 20",
+          "claim": "These printed entries are directly visible."
+        }
+      ],
+      "limitations": "Calendar absence on one date is not proof that a saint or devotion is absent from every section of the volume.",
+      "reception": "This is the Carmelite Latin book identified by its own title. The title’s Jerusalem claim is recorded without constructing a genealogy from it."
+    },
+    {
+      "id": "latin-uses:carmelite-1621",
+      "tradition_id": "carmelite",
+      "label": "Carmelite calendar with Teresa of Jesus",
+      "date_label": "1621",
+      "start_year": 1621,
+      "end_year": 1621,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Printed October calendar and Teresa’s printed common-Mass reference.",
+      "components": [
+        "calendar",
+        "propers"
+      ],
+      "witness_ids": [
+        "latin-missal:carmelitarum-capitulum-1621"
+      ],
+      "witness_label": "Missale fratrum Carmelitarum Ordinis Beatae Dei Genitricis Mariae de monte Carmelo, Venice: Giunta, 1621",
+      "summary": "October 5 prints Teresa as duplex minus with a commemoration of Placidus and companions. Teresa’s sanctoral entry directs the reader to the common Dilexisti iustitiam Mass.",
+      "text_coverage": "partial",
+      "evidence": [
+        {
+          "source_id": "latin-uses:carm1621",
+          "locus": "Title, PDF 3",
+          "claim": "The 1621 printing is described as printed again, with chapter and Prior General authority."
+        },
+        {
+          "source_id": "latin-uses:carm1621",
+          "locus": "October calendar, PDF 22; p. 409, PDF 462",
+          "claim": "Teresa’s feast and common-Mass reference are printed, distinct from marginal handwriting."
+        },
+        {
+          "source_id": "latin-uses:carm1621",
+          "locus": "Gregory XIII brief, PDF 5",
+          "claim": "The instrument is dated 26 September 1584, not 1621."
+        }
+      ],
+      "limitations": "Neither the exact introduction date of Teresa’s feast nor the date of the chapter decree is established. Manuscript corrections in this copy are excluded.",
+      "reception": "The printed book belongs to the Carmelite ancient-observance sequence. A handwritten direction to a Discalced missal on p. 409 is not treated as the printed rite’s prescription."
+    },
+    {
+      "id": "latin-uses:braga-1538",
+      "tradition_id": "braga",
+      "label": "Braga state preceding Limpo’s revision",
+      "date_label": "1538",
+      "start_year": 1538,
+      "end_year": 1538,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Identified edition, represented through critical discussion of its Ordo and Palm Sunday.",
+      "components": [
+        "ordinary",
+        "propers",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:braga-1538"
+      ],
+      "witness_label": "Missale Bracarense, Lisbon: Germão Galharde, 1538; BNP RES-1633-A",
+      "summary": "The pre-Limpo witness used in the reported comparison.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "latin-uses:usuarium1538",
+          "locus": "Book identity",
+          "claim": "Identifies the 1538 witness."
+        },
+        {
+          "source_id": "latin-uses:carvalho",
+          "locus": "p. 162, note 135; p. 164, note 141",
+          "claim": "Colophon and comparison identify this state."
+        }
+      ],
+      "limitations": "Primary pages remain uninspected; catalogue colophon locator f. 184v differs from article f. 183v and needs reconciliation.",
+      "reception": "A book of the church of Braga; surviving print identification does not establish continuous archdiocesan use until 1558."
+    },
+    {
+      "id": "latin-uses:braga-1558",
+      "tradition_id": "braga",
+      "label": "Limpo’s revised Braga missal",
+      "date_label": "1558",
+      "start_year": 1558,
+      "end_year": 1558,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Reported changes to the Ordo and Palm Sunday blessing.",
+      "components": [
+        "ordinary",
+        "propers",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:braga-1558"
+      ],
+      "witness_label": "Missale juxta usum et ordinem Almae Bracarensis Ecclesiae, Lyon: Petrus Fradin, 1558; BnF B-1478",
+      "summary": "Limpo’s revision changes the Ordo and Palm Sunday blessing.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "latin-uses:usuarium1558",
+          "locus": "Book identity",
+          "claim": "Identifies the 1558 witness."
+        },
+        {
+          "source_id": "latin-uses:carvalho",
+          "locus": "pp. 163–165; especially p. 164 and note 141",
+          "claim": "Describes concrete revisions."
+        }
+      ],
+      "limitations": "Primary leaves were not reached; no word-for-word collation is claimed.",
+      "reception": "Revision for Braga. Limpo’s Carmelite membership does not establish derivation from a Carmelite missal; Carvalho rejects direct dependence on the Carmelite 1551 and Lyon 1556 books he compared."
+    },
+    {
+      "id": "latin-uses:braga-1924",
+      "tradition_id": "braga",
+      "label": "Braga typical edition approved in December 1924",
+      "date_label": "1924",
+      "start_year": 1924,
+      "end_year": 1924,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "The title edition and its binding approval/conformity rules; no complete body reconstruction.",
+      "components": [
+        "rubrics",
+        "calendar"
+      ],
+      "witness_ids": [
+        "latin-missal:inter-multiplices-gravesque-curas-1924",
+        "latin-missal:decretum-missalis-bracarensis-1924"
+      ],
+      "witness_label": "Missale Bracarense, Rome: Typis Polyglottis Vaticanis, 1924; title edition distinct from the digitized copy’s later supplements",
+      "summary": "Approved 8 December and declared typical 9 December 1924. Future Holy See changes to Masses already contained in it must be applied; newly imposed universal feasts must enter the Braga calendar.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "latin-uses:braga1924",
+          "locus": "Title, PDF 1",
+          "claim": "Identifies the revised 1924 Vatican printing."
+        },
+        {
+          "source_id": "latin-uses:braga1924",
+          "locus": "Bull, printed IX, PDF 5",
+          "claim": "The dateline is 8 December 1924; it directs the archdiocese’s priests to this missal."
+        },
+        {
+          "source_id": "latin-uses:braga1924",
+          "locus": "Decree, printed X, PDF 6",
+          "claim": "The decree dated 9 December 1924 declares the edition typical and sets the future conformity and feast-insertion rules."
+        }
+      ],
+      "limitations": "These rules describe the 1924 state; their absence from 1558 has not been established. Later inserted feasts in this copy must not be assigned to 1924.",
+      "reception": "The bull requires this missal for priests of the Archdiocese of Braga. This establishes the contemporary prescription, not universal subsequent observance or present law."
+    }
+  ],
+  "transitions": [
+    {
+      "id": "latin-uses:dominican-suscepimus-recombination",
+      "from_stage": "latin-uses:dominican-1550",
+      "to_stage": "latin-uses:dominican-1604",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "text-collated",
+      "summary": "The Suscepimus Deus formulary has a changed collect and Gospel and a different position in the printed Sunday sequence.",
+      "components": [
+        "propers",
+        "lectionary",
+        "calendar"
+      ],
+      "changes": [
+        {
+          "component": "propers",
+          "before": "Collect: Deus cuius providentia.",
+          "after": "Collect: Largire nobis.",
+          "locus_before": "1550 fols 125r–125v (PDF 289–290), Suscepimus Deus",
+          "locus_after": "1604 pp. 238–239 (PDF 314–315), Suscepimus Deus",
+          "evidence": [
+            {
+              "source_id": "latin-uses:dom1550",
+              "locus": "1550 fols 125r–125v (PDF 289–290), Suscepimus Deus",
+              "claim": "The earlier Suscepimus formulary is inspected directly."
+            },
+            {
+              "source_id": "latin-uses:dom1604",
+              "locus": "1604 pp. 238–239 (PDF 314–315), Suscepimus Deus",
+              "claim": "The later Suscepimus formulary is inspected directly."
+            }
+          ]
+        },
+        {
+          "component": "lectionary",
+          "before": "Gospel: Attendite a falsis prophetis, Matthew 7.",
+          "after": "Gospel: Homo quidam erat dives qui habebat villicum, Luke 16.",
+          "locus_before": "1550 fols 125r–125v (PDF 289–290), Suscepimus Deus",
+          "locus_after": "1604 pp. 238–239 (PDF 314–315), Suscepimus Deus",
+          "evidence": [
+            {
+              "source_id": "latin-uses:dom1550",
+              "locus": "1550 fols 125r–125v (PDF 289–290), Suscepimus Deus",
+              "claim": "The earlier Suscepimus formulary is inspected directly."
+            },
+            {
+              "source_id": "latin-uses:dom1604",
+              "locus": "1604 pp. 238–239 (PDF 314–315), Suscepimus Deus",
+              "claim": "The later Suscepimus formulary is inspected directly."
+            }
+          ]
+        },
+        {
+          "component": "calendar",
+          "before": "Heading: Dominica octava in the sequence after Trinity.",
+          "after": "Heading: Dominica sexta in the sequence after the octave of Trinity.",
+          "locus_before": "1550 fols 125r–125v (PDF 289–290), Suscepimus Deus",
+          "locus_after": "1604 pp. 238–239 (PDF 314–315), Suscepimus Deus",
+          "evidence": [
+            {
+              "source_id": "latin-uses:dom1550",
+              "locus": "1550 fols 125r–125v (PDF 289–290), Suscepimus Deus",
+              "claim": "The earlier Suscepimus formulary is inspected directly."
+            },
+            {
+              "source_id": "latin-uses:dom1604",
+              "locus": "1604 pp. 238–239 (PDF 314–315), Suscepimus Deus",
+              "claim": "The later Suscepimus formulary is inspected directly."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "latin-uses:dom1550",
+          "locus": "1550 fols 125r–125v (PDF 289–290), Suscepimus Deus",
+          "claim": "The earlier Suscepimus formulary is inspected directly."
+        },
+        {
+          "source_id": "latin-uses:dom1604",
+          "locus": "1604 pp. 238–239 (PDF 314–315), Suscepimus Deus",
+          "claim": "The later Suscepimus formulary is inspected directly."
+        },
+        {
+          "source_id": "latin-uses:dom1604",
+          "locus": "Brief PDF 5–6 and Xavierre letter PDF 7",
+          "claim": "The instruments authorize and describe aligning Epistles and Gospels with Roman use while retaining the Order’s ancient rite."
+        },
+        {
+          "source_id": "latin-uses:bonniwell",
+          "locus": "pp. 320–321, PDF 167",
+          "claim": "Explains the recombination of the Sunday Masses and the retained chant elements."
+        }
+      ],
+      "limitations": "This pairs the Suscepimus formulary, not an asserted identical modern Sunday. Introit, Debitores sumus epistle, Esto mihi gradual, Populum humilem offertory and Gustate communion persist in the inspected pair; secret and postcommunion also differ but are not encoded here. Intermediate Bettini and Castrucci revisions prevent an unsupported immediate 1550→1604 printing genealogy.",
+      "comparison_ids": [
+        "dominican-1550-1604-suscepimus-collect"
+      ],
+      "historical_parentage": "unestablished"
+    },
+    {
+      "id": "latin-uses:carmelite-october-calendar",
+      "from_stage": "latin-uses:carmelite-1574",
+      "to_stage": "latin-uses:carmelite-1621",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "text-collated",
+      "summary": "Teresa appears on October 5; the October 6 and 8 entries seen in 1574 are absent from those dates in 1621.",
+      "components": [
+        "calendar"
+      ],
+      "changes": [
+        {
+          "component": "calendar",
+          "before": "October 5 blank.",
+          "after": "October 5: Teresa, duplex minus, with Placidus and companions commemorated.",
+          "locus_before": "1574 calendar, PDF 20",
+          "locus_after": "1621 calendar, PDF 22",
+          "evidence": [
+            {
+              "source_id": "latin-uses:carm1574",
+              "locus": "October calendar, PDF 20",
+              "claim": "Printed October entries inspected."
+            },
+            {
+              "source_id": "latin-uses:carm1621",
+              "locus": "October calendar, PDF 22",
+              "claim": "Printed October entries inspected."
+            }
+          ]
+        },
+        {
+          "component": "calendar",
+          "before": "October 6: Michael’s octave plus Abraham, Isaac and Jacob; October 8: Simeon the prophet.",
+          "after": "October 6 and October 8 are blank in the printed calendar.",
+          "locus_before": "1574 calendar, PDF 20",
+          "locus_after": "1621 calendar, PDF 22",
+          "evidence": [
+            {
+              "source_id": "latin-uses:carm1574",
+              "locus": "October calendar, PDF 20",
+              "claim": "Printed October entries inspected."
+            },
+            {
+              "source_id": "latin-uses:carm1621",
+              "locus": "October calendar, PDF 22",
+              "claim": "Printed October entries inspected."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "latin-uses:carm1574",
+          "locus": "October calendar, PDF 20",
+          "claim": "Printed October entries inspected."
+        },
+        {
+          "source_id": "latin-uses:carm1621",
+          "locus": "October calendar, PDF 22",
+          "claim": "Printed October entries inspected."
+        },
+        {
+          "source_id": "latin-uses:carm1621",
+          "locus": "p. 409, PDF 462",
+          "claim": "The printed Teresa entry supplies an associated common-Mass reference."
+        }
+      ],
+      "limitations": "The result is a bounded calendar comparison. Blank dates do not prove complete suppression elsewhere. No causal connection to a particular chapter act is established; 1621 is the witness date, and the 1584 reprinted brief predates it.",
+      "comparison_ids": [
+        "carmelite-1574-1621-october-05-calendar"
+      ],
+      "historical_parentage": "unestablished"
+    },
+    {
+      "id": "latin-uses:braga-limpo-ordo",
+      "from_stage": "latin-uses:braga-1538",
+      "to_stage": "latin-uses:braga-1558",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "The 1558 revision changes the Ordo and reorganizes Palm Sunday.",
+      "components": [
+        "ordinary",
+        "propers",
+        "rubrics"
+      ],
+      "changes": [
+        {
+          "component": "ordinary",
+          "before": "Earlier Ordo.",
+          "after": "Fixed opening prayers with Ave Maria; offertory prayers added; Salve Regina at the end.",
+          "locus_before": "Earlier editions as compared in Carvalho p. 164",
+          "locus_after": "1558 Ordo as described in Carvalho p. 164",
+          "evidence": [
+            {
+              "source_id": "latin-uses:carvalho",
+              "locus": "p. 164",
+              "claim": "Reports these additions."
+            }
+          ]
+        },
+        {
+          "component": "rubrics",
+          "before": "Palm blessing: seven prayers and a preface.",
+          "after": "Six prayers and a preface; four older prayers retained in a new order.",
+          "locus_before": "1538 and earlier editions: Carvalho p. 164 n. 141",
+          "locus_after": "1558: Carvalho p. 164 n. 141",
+          "evidence": [
+            {
+              "source_id": "latin-uses:carvalho",
+              "locus": "p. 164, note 141",
+              "claim": "Reports Bragança’s comparison."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "latin-uses:carvalho",
+          "locus": "pp. 163–165",
+          "claim": "Describes Limpo’s revision and its comparison."
+        }
+      ],
+      "limitations": "Scholarly description only; exact source-text ancestry remains unestablished. No direct dependence on a Carmelite missal is asserted.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished"
+    },
+    {
+      "id": "latin-uses:braga-1558-1924-succession",
+      "from_stage": "latin-uses:braga-1558",
+      "to_stage": "latin-uses:braga-1924",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "bibliographic-only",
+      "summary": "The 1924 typical edition succeeds the identified 1558 witness; a specific body-text revision between them is still unestablished.",
+      "components": [
+        "rubrics",
+        "calendar"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "latin-uses:usuarium1558",
+          "locus": "Book identity",
+          "claim": "The earlier witness is identified."
+        },
+        {
+          "source_id": "latin-uses:braga1924",
+          "locus": "Title, PDF 1; decree, PDF 6",
+          "claim": "The later edition and its typical status are directly attested."
+        }
+      ],
+      "limitations": "This edge records chronology only. The 1924 future-adaptation rule is described in its stage; no unsupported before/after rule change is inferred.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished"
+    }
+  ],
+  "gaps": [
+    {
+      "id": "latin-uses:dominican-intermediates",
+      "tradition_id": "dominican",
+      "period": "1550–1604",
+      "missing": "The immediate printed intermediates and dates at which each selected formulary element changed.",
+      "next_source": "Bettini’s revised missal of 1576; Castrucci edition titled 1596 and its 1600 successor; Bonniwell pp. 308–325 as acquisition leads.",
+      "consequence": "The established endpoint difference cannot be collapsed into a single 1604 event or an immediate parent-child relationship."
+    },
+    {
+      "id": "latin-uses:carmelite-interventions",
+      "tradition_id": "carmelite",
+      "period": "1574–1621",
+      "missing": "The chapter acts or intermediate printings introducing Teresa and changing the October patriarch entries; full sanctoral coverage.",
+      "next_source": "Gregory XIII brief of 26 September 1584 as reprinted in 1621 PDF 5; intervening Carmelite missals and chapter acts; collate calendars and sanctoral in original Latin.",
+      "consequence": "Calendar difference is established, but date and mechanism of each intervention remain open. The surviving copy’s handwritten additions need a separate reception study."
+    },
+    {
+      "id": "latin-uses:braga-primary-pairs",
+      "tradition_id": "braga",
+      "period": "1538–1558",
+      "missing": "Primary-page collation of the Ordo and Palm Sunday blessings described by Carvalho.",
+      "next_source": "BNP RES-1633-A, https://purl.pt/14877 (1538); BnF B-1478, https://gallica.bnf.fr/ark:/12148/bpt6k993722f (1558). USUARIUM locators: 1538 Palm Sunday PDF 95/f. 41r, ordinary PDF 230/f. 108v and PDF 240/f. 114v; 1558 Ordo PDF 23/f. 1r, Palm Sunday PDF 165/f. 72r, colophon PDF 522/f. 250v. Original comparison cited by Carvalho: J. O. Bragança, “A reforma litúrgica de D. Frei Baltasar Limpo”, Actas do III Congresso Histórico de Guimarães, II (Guimarães, 2004), p. 197.",
+      "consequence": "Transition stays scholarly-description until actual page pairs are inspected; colophon foliation discrepancy must be reconciled."
+    },
+    {
+      "id": "latin-uses:braga-1924-reform",
+      "tradition_id": "braga",
+      "period": "1558–1924",
+      "missing": "Specific ordinary, proper, lectionary or rubric changes made by the 1924 revisers.",
+      "next_source": "Pinheiro 2019 thesis, repository handle 10400.14/29449; advertised comparisons with MB1558, MR-S1886 and MR1921. Download route yielded anti-bot HTML, not the thesis. Compare primary 1558 book with dated 1924 leaves after leaf mapping.",
+      "consequence": "The 1558→1924 edge remains witness-succession rather than a proved substantive revision."
+    },
+    {
+      "id": "latin-uses:braga-layer-map",
+      "tradition_id": "braga",
+      "period": "1924 edition and post-1924 inserted supplements",
+      "missing": "A reviewed page-to-edition leaf map for the exact acquired scan.",
+      "next_source": "src/sources/inventories/missale-bracarense-rights-v1.toml and acquired PDF sha256 2be6474d75f495f79a74eac962355aa880d08b326915c3a3547ae7be82930841; map separately the title, 1924 prefatory acts and later supplement gatherings.",
+      "consequence": "No scan or text payload from the mixed file is approved for repository publication by this dossier."
+    }
+  ]
+}

@@ -1,0 +1,820 @@
+{
+  "apparatus_caveat": "Only the selected collect entries have been transcribed and independently checked, not the entire formularies or books. Each is one continuous priestly block. Printed shortened conclusions Per. and Per Dominum nostrum. are retained without supplying a doxology. Abbreviations, long s, u/v, ae ligatures and line layout are normalized as declared in the artifacts. The separate retained pages establish the changed Gospel and Sunday heading; those observations are not represented as full Gospel transcriptions. Printing dates do not date the introduction of the changes; intervening editions and immediate ancestry remain unestablished.",
+  "basis": "The complete printed collect entries in two Suscepimus Deus formularies perform the same liturgical function but are different compositions: Deus cuius providentia in 1550 and Largire nobis in 1604. The named formulary supplies the pairing anchor. The earlier heading is Dominica octava after Trinity; the later heading is Dominica sexta after the octave of Trinity. No identical numbered Sunday is assumed.",
+  "historical_act_claimed": false,
+  "historical_ancestry_claimed": false,
+  "id": "dominican-1550-1604-suscepimus-collect",
+  "identical_serialized_text": false,
+  "identity_claim": "parallel-function-not-same-composition",
+  "inputs": [
+    {
+      "byte_size": 65568,
+      "path": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
+      "sha256": "6174951e3825999abac44335f5e23c348674827816e1815107eb333f704417a6"
+    },
+    {
+      "byte_size": 292531,
+      "path": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
+      "sha256": "56d1041e2733208bff1a7fbcd273cf0675b1cb29ca76820683818993604c6671"
+    },
+    {
+      "byte_size": 89758,
+      "path": "src/sources/inventories/eucharistic-book-relationships-v1.toml",
+      "sha256": "d43fb733824f87fa46c4c5c1b81417683cbe496b140a97ea6139f1952830a91e"
+    },
+    {
+      "byte_size": 28509,
+      "path": "src/sources/inventories/eucharistic-stages/alexandrian.json",
+      "sha256": "8d42d7c2aff4a46d7b42f62536d1a358cfad479321fe918c498dbc8cb3cb1af7"
+    },
+    {
+      "byte_size": 31070,
+      "path": "src/sources/inventories/eucharistic-stages/ambrosian.json",
+      "sha256": "46616b871de98a741858f5b54e9b72e7b9f2607aee3aa93574eb21e05cadddb4"
+    },
+    {
+      "byte_size": 36101,
+      "path": "src/sources/inventories/eucharistic-stages/armenian.json",
+      "sha256": "5cbfeea1830f38329ee7e43fd0fd79db4b6245f4ef2a20cbc0206fc5827bffdb"
+    },
+    {
+      "byte_size": 37366,
+      "path": "src/sources/inventories/eucharistic-stages/byzantine.json",
+      "sha256": "db4316ec417c52fcd46025152a663a0e0a02a073a6a9acf6393c72e6b1d516e9"
+    },
+    {
+      "byte_size": 42261,
+      "path": "src/sources/inventories/eucharistic-stages/chaldean.json",
+      "sha256": "545531688b5bbee45ba265c02e2656947a66b1d30897c439485f621fb4b2068b"
+    },
+    {
+      "byte_size": 18309,
+      "path": "src/sources/inventories/eucharistic-stages/cistercian.json",
+      "sha256": "8ed49ffd176ce63de75389a78669fe49d42f7734f355740f7e5b62eadda8f490"
+    },
+    {
+      "byte_size": 34163,
+      "path": "src/sources/inventories/eucharistic-stages/latin-uses.json",
+      "sha256": "14c033848c4b8a9a63a56f7418b781c8097fbf945511bccd13f1fe6b05f6b738"
+    },
+    {
+      "byte_size": 38353,
+      "path": "src/sources/inventories/eucharistic-stages/malabar.json",
+      "sha256": "62f7b28aa8d16add38d429d73f08e0c2b632a0bd2ae882acb2d8873d7027832d"
+    },
+    {
+      "byte_size": 40829,
+      "path": "src/sources/inventories/eucharistic-stages/maronite.json",
+      "sha256": "ac8e944addb232a75bffd3a7663c183b23b59cfa6346ae30ebc96131b771c546"
+    },
+    {
+      "byte_size": 41527,
+      "path": "src/sources/inventories/eucharistic-stages/mozarabic.json",
+      "sha256": "35812331e200d6bdbfed825c53687056b399e5cd9b6399070b70c558e0b14c82"
+    },
+    {
+      "byte_size": 62579,
+      "path": "src/sources/inventories/eucharistic-stages/roman.json",
+      "sha256": "01102b86d8b595e7b7d654857e88a16e108518e6c70f797ee649545d3b849a7e"
+    },
+    {
+      "byte_size": 31240,
+      "path": "src/sources/inventories/eucharistic-stages/west-syriac.json",
+      "sha256": "14a7f4235930568c1f2162c41226471aab03f5d3233900be0b5534369722d293"
+    },
+    {
+      "byte_size": 186074,
+      "path": "src/sources/inventories/latin-missal-acts-v1.toml",
+      "sha256": "14a1321e559e4edf4141285686a808acb40d77e330783f24b2c29d3446e9233d"
+    },
+    {
+      "byte_size": 9311,
+      "path": "src/sources/inventories/missal-timeline-holdings-v1.toml",
+      "sha256": "43d18228b997f149a6aab5605ee0397713348cc1d2f1458c49940fa89f147c8e"
+    },
+    {
+      "byte_size": 82303,
+      "path": "src/sources/inventories/roman-holy-week-acts-v1.toml",
+      "sha256": "cfbc951ec40071d5eb78c55d9453811ee194647b57893b7aa3b4768abadea9bb"
+    },
+    {
+      "byte_size": 236924,
+      "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+      "sha256": "83a22e7ec81089a8c6e25a0d43bd9a83aa90193026bf602ea1595976f2720024"
+    },
+    {
+      "byte_size": 2472,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/artifacts/ia-complete-pdf-7754c4c5/artifact.toml",
+      "sha256": "58155341aa405621c9ac4b832c941a7ae51ac6b2f21b32fe677fcf990508678a"
+    },
+    {
+      "byte_size": 2752,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/artifacts/pdf-page-289-image-1a0d3a7a/artifact.toml",
+      "sha256": "2c7f003b8e27a7f0239211fd9efd1bf111792901a6f45abd3c97df43314003c8"
+    },
+    {
+      "byte_size": 1286012,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/artifacts/pdf-page-289-image-1a0d3a7a/page.png",
+      "sha256": "1a0d3a7a861b68859a96b5d7bb8b25a9125a55dc2702fd564995a3fa4f42aab4"
+    },
+    {
+      "byte_size": 2709,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/artifacts/pdf-page-5-image-2db9d0ae/artifact.toml",
+      "sha256": "697ab65766a8bc129a322544934f402f8a05cc367f24b418cdf70346ac424dfd"
+    },
+    {
+      "byte_size": 2592403,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/artifacts/pdf-page-5-image-2db9d0ae/page.png",
+      "sha256": "2db9d0aef8743747806ab4537f3d9811253dd9bddc82fc31c129553d9e6fda2d"
+    },
+    {
+      "byte_size": 3429,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/artifacts/suscepimus-collect-checked-latin-d5fb591c/artifact.toml",
+      "sha256": "8a229c333f180c6b0f43f7d6e21075c0bc0b7f6ca1b08218a8b1014b1d4d09a5"
+    },
+    {
+      "byte_size": 147,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/artifacts/suscepimus-collect-checked-latin-d5fb591c/text.txt",
+      "sha256": "d5fb591c1e67891577853a284c1e12dd4117e36f6fb03e0f1a359275cfe6d77c"
+    },
+    {
+      "byte_size": 553,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/edition.toml",
+      "sha256": "9915215f493f5de7520c1ed2504d1e4a4d2479192b49aab985a09bbd20b9904d"
+    },
+    {
+      "byte_size": 1656,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/passages/suscepimus-collect.toml",
+      "sha256": "a287a390b2af32d76fb43ccd7b28f0bc22ecb3616ee7c06acb9cbbb83f3ef9c0"
+    },
+    {
+      "byte_size": 1152,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/passages/suscepimus-folio-125r.toml",
+      "sha256": "3847d9d42e975499243a42e5168a26849278fa57cb74b8915e7a1209280857dd"
+    },
+    {
+      "byte_size": 1103,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/passages/title.toml",
+      "sha256": "13e92b9eae41dad36be359595519d9471c878f5dcbc6dfd0ee8b1d2bad382f43"
+    },
+    {
+      "byte_size": 2512,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/artifacts/ia-complete-pdf-7e7d61db/artifact.toml",
+      "sha256": "75e1a9810fc9034a24b8e6a066874d0c4a9dab8b6cd040e11294007c0644ae02"
+    },
+    {
+      "byte_size": 2680,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/artifacts/pdf-page-3-image-45984dff/artifact.toml",
+      "sha256": "2083fea4a291370966399a1a35f283c16f08152517ff50fbe7dcda754b73309c"
+    },
+    {
+      "byte_size": 845851,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/artifacts/pdf-page-3-image-45984dff/page.png",
+      "sha256": "45984dff778900d37665eec7252aca7020615faa6f2f4f542fa8ffb4251c2eed"
+    },
+    {
+      "byte_size": 2783,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/artifacts/pdf-page-314-image-b5893d5a/artifact.toml",
+      "sha256": "44bc4c4471edce80acc3027b6f86e0eb7da2085ae23dacf5dc369386f8679799"
+    },
+    {
+      "byte_size": 1223198,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/artifacts/pdf-page-314-image-b5893d5a/page.png",
+      "sha256": "b5893d5a33aec6f80ff113ffdc01b36ce994fe28af962f25011065239f8915ec"
+    },
+    {
+      "byte_size": 3449,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/artifacts/suscepimus-collect-checked-latin-72fc670a/artifact.toml",
+      "sha256": "cd1ef7bb0ab01b96884904989c38a9cc0ee79eb0bd2ea9f5ec5e59750fc36f52"
+    },
+    {
+      "byte_size": 181,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/artifacts/suscepimus-collect-checked-latin-72fc670a/text.txt",
+      "sha256": "72fc670a8b9f1688878529f80d9288ae502e4eef878cbcb675b788dc6e60e437"
+    },
+    {
+      "byte_size": 583,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/edition.toml",
+      "sha256": "e87c4ae6c93d4aa9117a84a040cdb6afbd0b8c18c1510e2572e518ee96c00c7b"
+    },
+    {
+      "byte_size": 1669,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/passages/suscepimus-collect.toml",
+      "sha256": "4659775723cadfbf4a1fc02b923a6460f058b7b718bda6ff3f08a254a1fbd58f"
+    },
+    {
+      "byte_size": 1157,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/passages/suscepimus-page-238.toml",
+      "sha256": "e92e5eb4a95ca7955bc7780dc8a3bc2601558728900aca1bc40a585995b7f968"
+    },
+    {
+      "byte_size": 1051,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/passages/title.toml",
+      "sha256": "e0bc40aeac537f19f6b9c8a62247a438a25661c5979c6bd0fc788eff02120f36"
+    },
+    {
+      "byte_size": 625,
+      "path": "src/sources/works/order-of-preachers/missale/work.toml",
+      "sha256": "6e93270abf09b2db8c94184d6406d56a1ae79533310c36357896062aeff5beee"
+    }
+  ],
+  "introduction_date_inferred": false,
+  "kind": "parallel-liturgical-unit-comparison",
+  "left": {
+    "adapter": "dominican-1550-suscepimus",
+    "join_rule": "insert-one-space-between-exact-source-bodies",
+    "joined_source_text": "Deus cuius providentia in sui dispositione non fallitur: te supplices exoramus: ut noxia cuncta submoveas: et omnia nobis profutura concedas. Per.",
+    "joined_source_text_sha256": "70806af820909d2ed1493cf677a2f40c4aec8f99c421d4d9143aa34ce4a8fd5e",
+    "members": [
+      {
+        "comparison_order": 1,
+        "content_id": "sha256:70806af820909d2ed1493cf677a2f40c4aec8f99c421d4d9143aa34ce4a8fd5e",
+        "diplomatic": false,
+        "division": "temporale",
+        "element_key": "suscepimus-collect",
+        "facsimile_pdf_page": "289",
+        "kind": "prayer",
+        "language": "la",
+        "part": "collect",
+        "printed_page": "125r",
+        "provenance": {
+          "evidence_source_ids": [
+            "artifact.order-of-preachers.missale.1550-venice.pdf-page-289-image-1a0d3a7a",
+            "passage.order-of-preachers.missale.1550-venice.suscepimus-folio-125r",
+            "passage.order-of-preachers.missale.1550-venice.title"
+          ],
+          "normalization": "Transcribe only the complete printed collect entry, starting with its decorative initial and ending with its printed shortened conclusion. Expand scribal contraction marks, normalize long s to s, u/v by lexical value, ae ligature/e-caudata to ae, and ampersand or Tironian et to et. Join line-break word divisions and line wraps, omit the Oratio heading and page furniture, and regularize interword spaces; retain source punctuation and capital/lowercase distinctions. Preserve the shortened printed conclusion without supplying a doxology. Write one NFC UTF-8 line plus one LF. One continuous priestly collect speech block, zero-based half-open Unicode codepoint range [0,146) in the NFC body excluding final LF; source locus: fol. 125r, right column, Oratio under Dominica octava / Suscepimus Deus.",
+          "review_limits": "One continuous priestly collect speech block, zero-based half-open Unicode codepoint range [0,146) in the NFC body excluding final LF; source locus: fol. 125r, right column, Oratio under Dominica octava / Suscepimus Deus. Independent second AI reviewer checked the exact normalized body against the original retained image on 2026-10-16, including punctuation, abbreviation scope and boundaries; this is not human specialist certification. Reviewed body SHA-256 excluding final LF: 70806af820909d2ed1493cf677a2f40c4aec8f99c421d4d9143aa34ce4a8fd5e. Review receipt SHA-256: 7713be2c3ebc0992389deb7a5b4286c3be0b5c2e5b29ae0c4690ce5cd85b6071.",
+          "reviewed_on": "2026-10-16",
+          "scope": "One collect of the Suscepimus Deus formulary. The pairing is anchored by that named formulary: 1550 Dominica octava after Trinity versus 1604 Dominica sexta after the octave of Trinity. The selected collect is complete as printed but the full spoken conclusion is abbreviated by the source. Other formulary items, rubrics, the ordinary, sanctoral and remaining book are excluded. No immediate ancestry or local reception is inferred.",
+          "source_locator": "fol. 125r, right column, Oratio under Dominica octava / Suscepimus Deus",
+          "status": "verified-bounded-printed-edition-transcription"
+        },
+        "publication": {
+          "basis": "public-domain",
+          "basis_source_id": "artifact.order-of-preachers.missale.1550-venice.suscepimus-collect-checked-latin-d5fb591c",
+          "jurisdiction": "United States",
+          "status": "permitted",
+          "surfaces": [
+            "public-git",
+            "corpus-data"
+          ]
+        },
+        "serialized_text": "Deus cuius providentia in sui dispositione non fallitur:\nte supplices exoramus:\nut noxia cuncta submoveas:\net omnia nobis profutura concedas.\nPer.\n",
+        "serialized_text_sha256": "4bb4646613f4d396fc142e151337cfeef18ad977e2c23f6c8dbbd8ed1326cf64",
+        "source_artifact_id": "artifact.order-of-preachers.missale.1550-venice.suscepimus-collect-checked-latin-d5fb591c",
+        "source_artifact_sha256": "d5fb591c1e67891577853a284c1e12dd4117e36f6fb03e0f1a359275cfe6d77c",
+        "source_id": "passage.order-of-preachers.missale.1550-venice.suscepimus-collect",
+        "source_order": 1,
+        "source_physical_line": 1,
+        "source_text": "Deus cuius providentia in sui dispositione non fallitur: te supplices exoramus: ut noxia cuncta submoveas: et omnia nobis profutura concedas. Per.",
+        "target_edition_id": "edition.order-of-preachers.missale.1550-venice",
+        "text_edition_id": "edition.order-of-preachers.missale.1550-venice",
+        "text_path": "text/ordinary/temporale/suscepimus-collect.txt",
+        "text_sha256": "70806af820909d2ed1493cf677a2f40c4aec8f99c421d4d9143aa34ce4a8fd5e",
+        "transcription_kind": "witness-normalized-transcription",
+        "unit_id": "unit.dominican-1550-suscepimus.suscepimus-collect"
+      }
+    ],
+    "record_binding": {
+      "checked_fields": [
+        "source_library_edition_id",
+        "source_library_passage_ids",
+        "source_library_checked_text_artifact_ids"
+      ],
+      "declarations": {
+        "source_library_checked_text_artifact_ids": [
+          "artifact.order-of-preachers.missale.1550-venice.suscepimus-collect-checked-latin-d5fb591c"
+        ],
+        "source_library_edition_id": "edition.order-of-preachers.missale.1550-venice",
+        "source_library_passage_ids": [
+          "passage.order-of-preachers.missale.1550-venice.suscepimus-collect"
+        ]
+      },
+      "limitation": "Only explicit source-owner identities are checked; no manuscript identity, historical date or ancestry is inferred.",
+      "status": "checked-declared-identities"
+    },
+    "record_id": "latin-missal:praedicatorum-venetiis-1550",
+    "reviewed_on": "2026-10-16",
+    "scope": {
+      "no_historical_backprojection": true,
+      "not_direct_manuscript_transcription": true,
+      "omitted_book_divisions": [
+        "Other Suscepimus formulary elements and rubrics",
+        "Ordinary, remaining temporale, sanctoral and other book divisions"
+      ],
+      "represented_witness": "Missale ad usum fratrum Praedicatorum Sancti Dominici; Venice, 1550",
+      "status": "bounded-checked-latin-collect-selection",
+      "text_identity": "One collect of the Suscepimus Deus formulary. The pairing is anchored by that named formulary: 1550 Dominica octava after Trinity versus 1604 Dominica sexta after the octave of Trinity. The selected collect is complete as printed but the full spoken conclusion is abbreviated by the source. Other formulary items, rubrics, the ordinary, sanctoral and remaining book are excluded. No immediate ancestry or local reception is inferred.",
+      "whole_book_complete": false
+    },
+    "serialized_text": "Deus cuius providentia in sui dispositione non fallitur:\nte supplices exoramus:\nut noxia cuncta submoveas:\net omnia nobis profutura concedas.\nPer.\n",
+    "serialized_text_sha256": "4bb4646613f4d396fc142e151337cfeef18ad977e2c23f6c8dbbd8ed1326cf64",
+    "target_date": "1550",
+    "text_set": "dominican-1550-suscepimus",
+    "title": "Dominican 1550: Suscepimus Deus collect",
+    "witness_date": "1550 printed edition"
+  },
+  "limitations": [
+    "This is an explicitly aligned witness comparison, not an asserted historical revision or parent relationship.",
+    "Orthography, spacing, capitalization and punctuation remain visible; a textual diff does not classify their historical significance.",
+    "The apparatus caveat must accompany any historical interpretation of this bounded passage."
+  ],
+  "membership_status": "established",
+  "relationship_ids": [],
+  "relationships": [],
+  "right": {
+    "adapter": "dominican-1604-suscepimus",
+    "join_rule": "insert-one-space-between-exact-source-bodies",
+    "joined_source_text": "Largire nobis, quaesumus Domine, semper spiritum cogitandi quae recta sunt, propitius et agendi: ut qui sine te esse non possumus, secundum te vivere valeamus. Per Dominum nostrum.",
+    "joined_source_text_sha256": "8861302457a0775f9710d82ad21c88492d80915de577db7419a796bd4d660c57",
+    "members": [
+      {
+        "comparison_order": 1,
+        "content_id": "sha256:8861302457a0775f9710d82ad21c88492d80915de577db7419a796bd4d660c57",
+        "diplomatic": false,
+        "division": "temporale",
+        "element_key": "suscepimus-collect",
+        "facsimile_pdf_page": "314",
+        "kind": "prayer",
+        "language": "la",
+        "part": "collect",
+        "printed_page": "238",
+        "provenance": {
+          "evidence_source_ids": [
+            "artifact.order-of-preachers.missale.1604-rome-xavierre.pdf-page-314-image-b5893d5a",
+            "passage.order-of-preachers.missale.1604-rome-xavierre.suscepimus-page-238",
+            "passage.order-of-preachers.missale.1604-rome-xavierre.title"
+          ],
+          "normalization": "Transcribe only the complete printed collect entry, starting with its decorative initial and ending with its printed shortened conclusion. Expand scribal contraction marks, normalize long s to s, u/v by lexical value, ae ligature/e-caudata to ae, and ampersand or Tironian et to et. Join line-break word divisions and line wraps, omit the Oratio heading and page furniture, and regularize interword spaces; retain source punctuation and capital/lowercase distinctions. Preserve the shortened printed conclusion without supplying a doxology. Write one NFC UTF-8 line plus one LF. One continuous priestly collect speech block, zero-based half-open Unicode codepoint range [0,180) in the NFC body excluding final LF; source locus: p. 238, right column, Oratio under Dominica sexta / Suscepimus Deus.",
+          "review_limits": "One continuous priestly collect speech block, zero-based half-open Unicode codepoint range [0,180) in the NFC body excluding final LF; source locus: p. 238, right column, Oratio under Dominica sexta / Suscepimus Deus. Independent second AI reviewer checked the exact normalized body against the original retained image on 2026-10-16, including punctuation, abbreviation scope and boundaries; this is not human specialist certification. Reviewed body SHA-256 excluding final LF: 8861302457a0775f9710d82ad21c88492d80915de577db7419a796bd4d660c57. Review receipt SHA-256: 7713be2c3ebc0992389deb7a5b4286c3be0b5c2e5b29ae0c4690ce5cd85b6071.",
+          "reviewed_on": "2026-10-16",
+          "scope": "One collect of the Suscepimus Deus formulary. The pairing is anchored by that named formulary: 1550 Dominica octava after Trinity versus 1604 Dominica sexta after the octave of Trinity. The selected collect is complete as printed but the full spoken conclusion is abbreviated by the source. Other formulary items, rubrics, the ordinary, sanctoral and remaining book are excluded. No immediate ancestry or local reception is inferred.",
+          "source_locator": "p. 238, right column, Oratio under Dominica sexta / Suscepimus Deus",
+          "status": "verified-bounded-printed-edition-transcription"
+        },
+        "publication": {
+          "basis": "public-domain",
+          "basis_source_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.suscepimus-collect-checked-latin-72fc670a",
+          "jurisdiction": "United States",
+          "status": "permitted",
+          "surfaces": [
+            "public-git",
+            "corpus-data"
+          ]
+        },
+        "serialized_text": "Largire nobis, quaesumus Domine, semper spiritum cogitandi quae recta sunt, propitius et agendi:\nut qui sine te esse non possumus, secundum te vivere valeamus.\nPer Dominum nostrum.\n",
+        "serialized_text_sha256": "d56aa5eb2424d3afc80be6aad833b39ea7be5b520f976bd6438fd1beacb52038",
+        "source_artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.suscepimus-collect-checked-latin-72fc670a",
+        "source_artifact_sha256": "72fc670a8b9f1688878529f80d9288ae502e4eef878cbcb675b788dc6e60e437",
+        "source_id": "passage.order-of-preachers.missale.1604-rome-xavierre.suscepimus-collect",
+        "source_order": 1,
+        "source_physical_line": 1,
+        "source_text": "Largire nobis, quaesumus Domine, semper spiritum cogitandi quae recta sunt, propitius et agendi: ut qui sine te esse non possumus, secundum te vivere valeamus. Per Dominum nostrum.",
+        "target_edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+        "text_edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+        "text_path": "text/ordinary/temporale/suscepimus-collect.txt",
+        "text_sha256": "8861302457a0775f9710d82ad21c88492d80915de577db7419a796bd4d660c57",
+        "transcription_kind": "witness-normalized-transcription",
+        "unit_id": "unit.dominican-1604-suscepimus.suscepimus-collect"
+      }
+    ],
+    "record_binding": {
+      "checked_fields": [
+        "source_library_edition_id",
+        "source_library_passage_ids",
+        "source_library_checked_text_artifact_ids"
+      ],
+      "declarations": {
+        "source_library_checked_text_artifact_ids": [
+          "artifact.order-of-preachers.missale.1604-rome-xavierre.suscepimus-collect-checked-latin-72fc670a"
+        ],
+        "source_library_edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+        "source_library_passage_ids": [
+          "passage.order-of-preachers.missale.1604-rome-xavierre.suscepimus-collect"
+        ]
+      },
+      "limitation": "Only explicit source-owner identities are checked; no manuscript identity, historical date or ancestry is inferred.",
+      "status": "checked-declared-identities"
+    },
+    "record_id": "latin-missal:praedicatorum-xavierre-1604",
+    "reviewed_on": "2026-10-16",
+    "scope": {
+      "no_historical_backprojection": true,
+      "not_direct_manuscript_transcription": true,
+      "omitted_book_divisions": [
+        "Other Suscepimus formulary elements and rubrics",
+        "Ordinary, remaining temporale, sanctoral and other book divisions"
+      ],
+      "represented_witness": "Missale juxta ritum sacri ordinis Praedicatorum S. P. N. Dominici; Rome: ex typographia Alfonsi Ciacconi, apud Carolum Vulliettum, 1604",
+      "status": "bounded-checked-latin-collect-selection",
+      "text_identity": "One collect of the Suscepimus Deus formulary. The pairing is anchored by that named formulary: 1550 Dominica octava after Trinity versus 1604 Dominica sexta after the octave of Trinity. The selected collect is complete as printed but the full spoken conclusion is abbreviated by the source. Other formulary items, rubrics, the ordinary, sanctoral and remaining book are excluded. No immediate ancestry or local reception is inferred.",
+      "whole_book_complete": false
+    },
+    "serialized_text": "Largire nobis, quaesumus Domine, semper spiritum cogitandi quae recta sunt, propitius et agendi:\nut qui sine te esse non possumus, secundum te vivere valeamus.\nPer Dominum nostrum.\n",
+    "serialized_text_sha256": "d56aa5eb2424d3afc80be6aad833b39ea7be5b520f976bd6438fd1beacb52038",
+    "target_date": "1604",
+    "text_set": "dominican-1604-suscepimus",
+    "title": "Dominican 1604: Suscepimus Deus collect",
+    "witness_date": "1604 printed edition"
+  },
+  "schema": "triptych-eucharistic-witness-comparison/v1",
+  "source_refs": [
+    "passage.order-of-preachers.missale.1550-venice.suscepimus-collect",
+    "passage.order-of-preachers.missale.1604-rome-xavierre.suscepimus-collect",
+    "passage.order-of-preachers.missale.1550-venice.suscepimus-folio-125r",
+    "passage.order-of-preachers.missale.1604-rome-xavierre.suscepimus-page-238"
+  ],
+  "sources": [
+    {
+      "artifact_type": "facsimile-pdf",
+      "byte_size": 49352442,
+      "edition_id": "edition.order-of-preachers.missale.1550-venice",
+      "id": "artifact.order-of-preachers.missale.1550-venice.ia-complete-pdf-7754c4c5",
+      "manifest_path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/artifacts/ia-complete-pdf-7754c4c5/artifact.toml",
+      "manifest_sha256": "58155341aa405621c9ac4b832c941a7ae51ac6b2f21b32fe677fcf990508678a",
+      "media_type": "application/pdf",
+      "page_count": 607,
+      "provenance": "Before registration, canonical work and edition records were searched for missale with Praedicatorum/Predicatorum/Carmelitarum/Carmelit aliases and for Xavierre, Vulliet, ARes10417, FqVWqqFkUDsC, lefoIUlq2sgC and PUEgJFAvalgC. Only unrelated works were found; no target missal owner existed. Complete exact PDF acquired directly as bytes by the research lane; local SHA-256 replay confirmed the acquisition handoff. Selected page images were visually inspected; extracted OCR served only as a finding aid.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The original 1550 printing is public domain in the United States by expiration of its publication term. The exact Internet Archive item bub_gb_FqVWqqFkUDsC, contributed by National Library of Naples, explicitly records Public Domain Mark 1.0 (http://creativecommons.org/publicdomain/mark/1.0/) in https://archive.org/metadata/bub_gb_FqVWqqFkUDsC; acquired metadata SHA-256 3b998dc9d63ead7f93aa696da0c346e42ca4cc62c7e69ed9b1ea176f7ec59685. This is a mechanical scan of historical pages, not a modern critical edition or translation. Visible scan marks and historical handwriting are preserved in image derivatives, but handwriting is excluded from printed-text claims. This third-party source is excluded from Triptych’s CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "7754c4c5e9affe0fcb631d058da7d807652e15248676af4aca35b6d10855055e",
+      "source_url": "https://archive.org/download/bub_gb_FqVWqqFkUDsC/bub_gb_FqVWqqFkUDsC.pdf",
+      "storage": "remote"
+    },
+    {
+      "artifact_type": "page-scan-image",
+      "byte_size": 1286012,
+      "derived_from": "artifact.order-of-preachers.missale.1550-venice.ia-complete-pdf-7754c4c5",
+      "edition_id": "edition.order-of-preachers.missale.1550-venice",
+      "id": "artifact.order-of-preachers.missale.1550-venice.pdf-page-289-image-1a0d3a7a",
+      "manifest_path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/artifacts/pdf-page-289-image-1a0d3a7a/artifact.toml",
+      "manifest_sha256": "2c7f003b8e27a7f0239211fd9efd1bf111792901a6f45abd3c97df43314003c8",
+      "media_type": "image/png",
+      "page_count": 1,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/artifacts/pdf-page-289-image-1a0d3a7a/page.png",
+      "provenance": "Exact supplied page-image bytes retained unchanged after visual inspection. Source is the complete mechanically acquired PDF identified by the parent artifact; PDF and image SHA-256 hashes were independently measured before registration. Review scope is the passage context, not every word on the page.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The original 1550 printing is public domain in the United States by expiration of its publication term. The exact Internet Archive item bub_gb_FqVWqqFkUDsC, contributed by National Library of Naples, explicitly records Public Domain Mark 1.0 (http://creativecommons.org/publicdomain/mark/1.0/) in https://archive.org/metadata/bub_gb_FqVWqqFkUDsC; acquired metadata SHA-256 3b998dc9d63ead7f93aa696da0c346e42ca4cc62c7e69ed9b1ea176f7ec59685. This is a mechanical scan of historical pages, not a modern critical edition or translation. Visible scan marks and historical handwriting are preserved in image derivatives, but handwriting is excluded from printed-text claims. This third-party source is excluded from Triptych’s CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "1a0d3a7a861b68859a96b5d7bb8b25a9125a55dc2702fd564995a3fa4f42aab4",
+      "source_url": "https://archive.org/download/bub_gb_FqVWqqFkUDsC/bub_gb_FqVWqqFkUDsC.pdf#page=289",
+      "storage": "tracked",
+      "transformation": "From exact complete parent PDF SHA-256 7754c4c5e9affe0fcb631d058da7d807652e15248676af4aca35b6d10855055e, select one-based PDF page 289. Byte-for-byte replay with Poppler pdftoppm 26.08.0: -f 289 -l 289 -scale-to 1800 -png -singlefile; dimensions 1302 by 1800 pixels. Replay reproduces exactly these PNG bytes; no crop or postprocessing. Derivation receipt SHA-256 bbec613dc4e2eb94f345aa377aea8b60d46ff5fb9a0ded896180198d38361a3f. The derivative retains this complete rendered page; all other 606 PDF pages are excluded. No transcription, OCR correction or wording alteration is applied to image bytes."
+    },
+    {
+      "artifact_type": "page-scan-image",
+      "byte_size": 2592403,
+      "derived_from": "artifact.order-of-preachers.missale.1550-venice.ia-complete-pdf-7754c4c5",
+      "edition_id": "edition.order-of-preachers.missale.1550-venice",
+      "id": "artifact.order-of-preachers.missale.1550-venice.pdf-page-5-image-2db9d0ae",
+      "manifest_path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/artifacts/pdf-page-5-image-2db9d0ae/artifact.toml",
+      "manifest_sha256": "697ab65766a8bc129a322544934f402f8a05cc367f24b418cdf70346ac424dfd",
+      "media_type": "image/png",
+      "page_count": 1,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/artifacts/pdf-page-5-image-2db9d0ae/page.png",
+      "provenance": "Exact supplied page-image bytes retained unchanged after visual inspection. Source is the complete mechanically acquired PDF identified by the parent artifact; PDF and image SHA-256 hashes were independently measured before registration. Review scope is the passage context, not every word on the page.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The original 1550 printing is public domain in the United States by expiration of its publication term. The exact Internet Archive item bub_gb_FqVWqqFkUDsC, contributed by National Library of Naples, explicitly records Public Domain Mark 1.0 (http://creativecommons.org/publicdomain/mark/1.0/) in https://archive.org/metadata/bub_gb_FqVWqqFkUDsC; acquired metadata SHA-256 3b998dc9d63ead7f93aa696da0c346e42ca4cc62c7e69ed9b1ea176f7ec59685. This is a mechanical scan of historical pages, not a modern critical edition or translation. Visible scan marks and historical handwriting are preserved in image derivatives, but handwriting is excluded from printed-text claims. This third-party source is excluded from Triptych’s CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "2db9d0aef8743747806ab4537f3d9811253dd9bddc82fc31c129553d9e6fda2d",
+      "source_url": "https://archive.org/download/bub_gb_FqVWqqFkUDsC/bub_gb_FqVWqqFkUDsC.pdf#page=5",
+      "storage": "tracked",
+      "transformation": "From exact complete parent PDF SHA-256 7754c4c5e9affe0fcb631d058da7d807652e15248676af4aca35b6d10855055e, select one-based PDF page 5. Byte-for-byte replay with Poppler pdftoppm 26.08.0: -f 5 -l 5 -scale-to 1600 -png -singlefile; dimensions 1166 by 1600 pixels. Replay reproduces exactly these PNG bytes; no crop or postprocessing. Derivation receipt SHA-256 bbec613dc4e2eb94f345aa377aea8b60d46ff5fb9a0ded896180198d38361a3f. The derivative retains this complete rendered page; all other 606 PDF pages are excluded. No transcription, OCR correction or wording alteration is applied to image bytes."
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 147,
+      "derived_from": "artifact.order-of-preachers.missale.1550-venice.pdf-page-289-image-1a0d3a7a",
+      "edition_id": "edition.order-of-preachers.missale.1550-venice",
+      "id": "artifact.order-of-preachers.missale.1550-venice.suscepimus-collect-checked-latin-d5fb591c",
+      "manifest_path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/artifacts/suscepimus-collect-checked-latin-d5fb591c/artifact.toml",
+      "manifest_sha256": "8a229c333f180c6b0f43f7d6e21075c0bc0b7f6ca1b08218a8b1014b1d4d09a5",
+      "media_type": "text/plain; charset=utf-8",
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/artifacts/suscepimus-collect-checked-latin-d5fb591c/text.txt",
+      "provenance": "Independent second AI reviewer checked the exact normalized body against the original retained image on 2026-10-16, including punctuation, abbreviation scope and boundaries; this is not human specialist certification. Reviewed body SHA-256 excluding final LF: 70806af820909d2ed1493cf677a2f40c4aec8f99c421d4d9143aa34ce4a8fd5e. Review receipt SHA-256: 7713be2c3ebc0992389deb7a5b4286c3be0b5c2e5b29ae0c4690ce5cd85b6071.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "Faithful bounded Latin transcription of the identified 1550 historical print, public domain in the United States by expired publication term, with the exact source digital copy marked Public Domain Mark 1.0. No modern translation or critical reconstruction is introduced. The source text is excluded from Triptych’s CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "d5fb591c1e67891577853a284c1e12dd4117e36f6fb03e0f1a359275cfe6d77c",
+      "storage": "tracked",
+      "transformation": "Transcribe only the complete printed collect entry, starting with its decorative initial and ending with its printed shortened conclusion. Expand scribal contraction marks, normalize long s to s, u/v by lexical value, ae ligature/e-caudata to ae, and ampersand or Tironian et to et. Join line-break word divisions and line wraps, omit the Oratio heading and page furniture, and regularize interword spaces; retain source punctuation and capital/lowercase distinctions. Preserve the shortened printed conclusion without supplying a doxology. Write one NFC UTF-8 line plus one LF. One continuous priestly collect speech block, zero-based half-open Unicode codepoint range [0,146) in the NFC body excluding final LF; source locus: fol. 125r, right column, Oratio under Dominica octava / Suscepimus Deus."
+    },
+    {
+      "artifact_type": "facsimile-pdf",
+      "byte_size": 66629552,
+      "edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "id": "artifact.order-of-preachers.missale.1604-rome-xavierre.ia-complete-pdf-7e7d61db",
+      "manifest_path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/artifacts/ia-complete-pdf-7e7d61db/artifact.toml",
+      "manifest_sha256": "75e1a9810fc9034a24b8e6a066874d0c4a9dab8b6cd040e11294007c0644ae02",
+      "media_type": "application/pdf",
+      "page_count": 622,
+      "provenance": "Before registration, canonical work and edition records were searched for missale with Praedicatorum/Predicatorum/Carmelitarum/Carmelit aliases and for Xavierre, Vulliet, ARes10417, FqVWqqFkUDsC, lefoIUlq2sgC and PUEgJFAvalgC. Only unrelated works were found; no target missal owner existed. Complete exact PDF acquired directly as bytes by the research lane; local SHA-256 replay confirmed the acquisition handoff. Selected page images were visually inspected; extracted OCR served only as a finding aid.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The original 1604 printing is public domain in the United States by expiration of its publication term. The exact Internet Archive item bub_gb_lefoIUlq2sgC, contributed by National Central Library of Rome, explicitly records Public Domain Mark 1.0 (http://creativecommons.org/publicdomain/mark/1.0/) in https://archive.org/metadata/bub_gb_lefoIUlq2sgC; acquired metadata SHA-256 8a5dfc63e214d8f34d608816a8648a7d7196d986b980916edd7723cab9ebf0b9. This is a mechanical scan of historical pages, not a modern critical edition or translation. Visible scan marks and historical handwriting are preserved in image derivatives, but handwriting is excluded from printed-text claims. This third-party source is excluded from Triptych’s CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "7e7d61dbc7b45a53d7c16cd1e86d3a8f301dba8158e0c8441b00e69a5ff01eaf",
+      "source_url": "https://archive.org/download/bub_gb_lefoIUlq2sgC/bub_gb_lefoIUlq2sgC.pdf?download=1",
+      "storage": "remote"
+    },
+    {
+      "artifact_type": "page-scan-image",
+      "byte_size": 845851,
+      "derived_from": "artifact.order-of-preachers.missale.1604-rome-xavierre.ia-complete-pdf-7e7d61db",
+      "edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "id": "artifact.order-of-preachers.missale.1604-rome-xavierre.pdf-page-3-image-45984dff",
+      "manifest_path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/artifacts/pdf-page-3-image-45984dff/artifact.toml",
+      "manifest_sha256": "2083fea4a291370966399a1a35f283c16f08152517ff50fbe7dcda754b73309c",
+      "media_type": "image/png",
+      "page_count": 1,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/artifacts/pdf-page-3-image-45984dff/page.png",
+      "provenance": "Exact supplied page-image bytes retained unchanged after visual inspection. Source is the complete mechanically acquired PDF identified by the parent artifact; PDF and image SHA-256 hashes were independently measured before registration. Review scope is the passage context, not every word on the page.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The original 1604 printing is public domain in the United States by expiration of its publication term. The exact Internet Archive item bub_gb_lefoIUlq2sgC, contributed by National Central Library of Rome, explicitly records Public Domain Mark 1.0 (http://creativecommons.org/publicdomain/mark/1.0/) in https://archive.org/metadata/bub_gb_lefoIUlq2sgC; acquired metadata SHA-256 8a5dfc63e214d8f34d608816a8648a7d7196d986b980916edd7723cab9ebf0b9. This is a mechanical scan of historical pages, not a modern critical edition or translation. Visible scan marks and historical handwriting are preserved in image derivatives, but handwriting is excluded from printed-text claims. This third-party source is excluded from Triptych’s CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "45984dff778900d37665eec7252aca7020615faa6f2f4f542fa8ffb4251c2eed",
+      "source_url": "https://archive.org/download/bub_gb_lefoIUlq2sgC/bub_gb_lefoIUlq2sgC.pdf?download=1#page=3",
+      "storage": "tracked",
+      "transformation": "From exact complete parent PDF SHA-256 7e7d61dbc7b45a53d7c16cd1e86d3a8f301dba8158e0c8441b00e69a5ff01eaf, select one-based PDF page 3. Byte-for-byte replay with Poppler pdftoppm 26.08.0: -f 3 -l 3 -scale-to 1600 -png -singlefile; dimensions 1186 by 1600 pixels. Replay reproduces exactly these PNG bytes; no crop or postprocessing. Derivation receipt SHA-256 bbec613dc4e2eb94f345aa377aea8b60d46ff5fb9a0ded896180198d38361a3f. The derivative retains this complete rendered page; all other 621 PDF pages are excluded. No transcription, OCR correction or wording alteration is applied to image bytes."
+    },
+    {
+      "artifact_type": "page-scan-image",
+      "byte_size": 1223198,
+      "derived_from": "artifact.order-of-preachers.missale.1604-rome-xavierre.ia-complete-pdf-7e7d61db",
+      "edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "id": "artifact.order-of-preachers.missale.1604-rome-xavierre.pdf-page-314-image-b5893d5a",
+      "manifest_path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/artifacts/pdf-page-314-image-b5893d5a/artifact.toml",
+      "manifest_sha256": "44bc4c4471edce80acc3027b6f86e0eb7da2085ae23dacf5dc369386f8679799",
+      "media_type": "image/png",
+      "page_count": 1,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/artifacts/pdf-page-314-image-b5893d5a/page.png",
+      "provenance": "Exact supplied page-image bytes retained unchanged after visual inspection. Source is the complete mechanically acquired PDF identified by the parent artifact; PDF and image SHA-256 hashes were independently measured before registration. Review scope is the passage context, not every word on the page.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The original 1604 printing is public domain in the United States by expiration of its publication term. The exact Internet Archive item bub_gb_lefoIUlq2sgC, contributed by National Central Library of Rome, explicitly records Public Domain Mark 1.0 (http://creativecommons.org/publicdomain/mark/1.0/) in https://archive.org/metadata/bub_gb_lefoIUlq2sgC; acquired metadata SHA-256 8a5dfc63e214d8f34d608816a8648a7d7196d986b980916edd7723cab9ebf0b9. This is a mechanical scan of historical pages, not a modern critical edition or translation. Visible scan marks and historical handwriting are preserved in image derivatives, but handwriting is excluded from printed-text claims. This third-party source is excluded from Triptych’s CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "b5893d5a33aec6f80ff113ffdc01b36ce994fe28af962f25011065239f8915ec",
+      "source_url": "https://archive.org/download/bub_gb_lefoIUlq2sgC/bub_gb_lefoIUlq2sgC.pdf?download=1#page=314",
+      "storage": "tracked",
+      "transformation": "From exact complete parent PDF SHA-256 7e7d61dbc7b45a53d7c16cd1e86d3a8f301dba8158e0c8441b00e69a5ff01eaf, select one-based PDF page 314. Byte-for-byte replay with Poppler pdftoppm 26.08.0: -f 314 -l 314 -scale-to 1800 -png -singlefile; dimensions 1268 by 1800 pixels. Replay reproduces exactly these PNG bytes; no crop or postprocessing. Derivation receipt SHA-256 bbec613dc4e2eb94f345aa377aea8b60d46ff5fb9a0ded896180198d38361a3f. The derivative retains this complete rendered page; all other 621 PDF pages are excluded. No transcription, OCR correction or wording alteration is applied to image bytes."
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 181,
+      "derived_from": "artifact.order-of-preachers.missale.1604-rome-xavierre.pdf-page-314-image-b5893d5a",
+      "edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "id": "artifact.order-of-preachers.missale.1604-rome-xavierre.suscepimus-collect-checked-latin-72fc670a",
+      "manifest_path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/artifacts/suscepimus-collect-checked-latin-72fc670a/artifact.toml",
+      "manifest_sha256": "cd1ef7bb0ab01b96884904989c38a9cc0ee79eb0bd2ea9f5ec5e59750fc36f52",
+      "media_type": "text/plain; charset=utf-8",
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/artifacts/suscepimus-collect-checked-latin-72fc670a/text.txt",
+      "provenance": "Independent second AI reviewer checked the exact normalized body against the original retained image on 2026-10-16, including punctuation, abbreviation scope and boundaries; this is not human specialist certification. Reviewed body SHA-256 excluding final LF: 8861302457a0775f9710d82ad21c88492d80915de577db7419a796bd4d660c57. Review receipt SHA-256: 7713be2c3ebc0992389deb7a5b4286c3be0b5c2e5b29ae0c4690ce5cd85b6071.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "Faithful bounded Latin transcription of the identified 1604 historical print, public domain in the United States by expired publication term, with the exact source digital copy marked Public Domain Mark 1.0. No modern translation or critical reconstruction is introduced. The source text is excluded from Triptych’s CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "72fc670a8b9f1688878529f80d9288ae502e4eef878cbcb675b788dc6e60e437",
+      "storage": "tracked",
+      "transformation": "Transcribe only the complete printed collect entry, starting with its decorative initial and ending with its printed shortened conclusion. Expand scribal contraction marks, normalize long s to s, u/v by lexical value, ae ligature/e-caudata to ae, and ampersand or Tironian et to et. Join line-break word divisions and line wraps, omit the Oratio heading and page furniture, and regularize interword spaces; retain source punctuation and capital/lowercase distinctions. Preserve the shortened printed conclusion without supplying a doxology. Write one NFC UTF-8 line plus one LF. One continuous priestly collect speech block, zero-based half-open Unicode codepoint range [0,180) in the NFC body excluding final LF; source locus: p. 238, right column, Oratio under Dominica sexta / Suscepimus Deus."
+    },
+    {
+      "date": "1550",
+      "id": "edition.order-of-preachers.missale.1550-venice",
+      "language": "la",
+      "manifest_path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/edition.toml",
+      "manifest_sha256": "9915215f493f5de7520c1ed2504d1e4a4d2479192b49aab985a09bbd20b9904d",
+      "publication": "Venice, 1550",
+      "record_type": "edition",
+      "title": "Missale ad usum fratrum Praedicatorum Sancti Dominici",
+      "work_id": "work.order-of-preachers.missale"
+    },
+    {
+      "date": "1604",
+      "id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "language": "la",
+      "manifest_path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/edition.toml",
+      "manifest_sha256": "e87c4ae6c93d4aa9117a84a040cdb6afbd0b8c18c1510e2572e518ee96c00c7b",
+      "publication": "Rome: ex typographia Alfonsi Ciacconi, apud Carolum Vulliettum, 1604",
+      "record_type": "edition",
+      "title": "Missale juxta ritum sacri ordinis Praedicatorum S. P. N. Dominici",
+      "work_id": "work.order-of-preachers.missale"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1550-venice.suscepimus-collect-checked-latin-d5fb591c",
+      "artifact_sha256": "d5fb591c1e67891577853a284c1e12dd4117e36f6fb03e0f1a359275cfe6d77c",
+      "edition_id": "edition.order-of-preachers.missale.1550-venice",
+      "id": "passage.order-of-preachers.missale.1550-venice.suscepimus-collect",
+      "locus": "fol. 125r, right column, Oratio under Dominica octava / Suscepimus Deus",
+      "manifest_path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/passages/suscepimus-collect.toml",
+      "manifest_sha256": "a287a390b2af32d76fb43ccd7b28f0bc22ecb3616ee7c06acb9cbbb83f3ef9c0",
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1550-venice.pdf-page-289-image-1a0d3a7a",
+      "artifact_page_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "artifact_sha256": "1a0d3a7a861b68859a96b5d7bb8b25a9125a55dc2702fd564995a3fa4f42aab4",
+      "edition_id": "edition.order-of-preachers.missale.1550-venice",
+      "id": "passage.order-of-preachers.missale.1550-venice.suscepimus-folio-125r",
+      "locus": "fol. 125r; PDF page 289",
+      "manifest_path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/passages/suscepimus-folio-125r.toml",
+      "manifest_sha256": "3847d9d42e975499243a42e5168a26849278fa57cb74b8915e7a1209280857dd",
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1550-venice.pdf-page-5-image-2db9d0ae",
+      "artifact_page_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "artifact_sha256": "2db9d0aef8743747806ab4537f3d9811253dd9bddc82fc31c129553d9e6fda2d",
+      "edition_id": "edition.order-of-preachers.missale.1550-venice",
+      "id": "passage.order-of-preachers.missale.1550-venice.title",
+      "locus": "Title page; PDF page 5",
+      "manifest_path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/passages/title.toml",
+      "manifest_sha256": "13e92b9eae41dad36be359595519d9471c878f5dcbc6dfd0ee8b1d2bad382f43",
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.suscepimus-collect-checked-latin-72fc670a",
+      "artifact_sha256": "72fc670a8b9f1688878529f80d9288ae502e4eef878cbcb675b788dc6e60e437",
+      "edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "id": "passage.order-of-preachers.missale.1604-rome-xavierre.suscepimus-collect",
+      "locus": "p. 238, right column, Oratio under Dominica sexta / Suscepimus Deus",
+      "manifest_path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/passages/suscepimus-collect.toml",
+      "manifest_sha256": "4659775723cadfbf4a1fc02b923a6460f058b7b718bda6ff3f08a254a1fbd58f",
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.pdf-page-314-image-b5893d5a",
+      "artifact_page_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "artifact_sha256": "b5893d5a33aec6f80ff113ffdc01b36ce994fe28af962f25011065239f8915ec",
+      "edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "id": "passage.order-of-preachers.missale.1604-rome-xavierre.suscepimus-page-238",
+      "locus": "p. 238; PDF page 314",
+      "manifest_path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/passages/suscepimus-page-238.toml",
+      "manifest_sha256": "e92e5eb4a95ca7955bc7780dc8a3bc2601558728900aca1bc40a585995b7f968",
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.pdf-page-3-image-45984dff",
+      "artifact_page_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "artifact_sha256": "45984dff778900d37665eec7252aca7020615faa6f2f4f542fa8ffb4251c2eed",
+      "edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "id": "passage.order-of-preachers.missale.1604-rome-xavierre.title",
+      "locus": "Title page; PDF page 3",
+      "manifest_path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/passages/title.toml",
+      "manifest_sha256": "e0bc40aeac537f19f6b9c8a62247a438a25661c5979c6bd0fc788eff02120f36",
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "id": "work.order-of-preachers.missale",
+      "manifest_path": "src/sources/works/order-of-preachers/missale/work.toml",
+      "manifest_sha256": "6e93270abf09b2db8c94184d6406d56a1ae79533310c36357896062aeff5beee",
+      "record_type": "work",
+      "title": "Missale Ordinis Praedicatorum"
+    }
+  ],
+  "text_serialization": {
+    "encoding": "UTF-8",
+    "final_newline": true,
+    "id": "act-history-ventilate/v1",
+    "line_ending": "LF",
+    "output_hash_field": "serialized_text_sha256",
+    "owner": "tools/act-history:ventilate",
+    "source_hash_field": "text_sha256"
+  },
+  "tool_inputs": [
+    {
+      "byte_size": 67556,
+      "path": "guidance/liturgical-text-publication-policy.md",
+      "sha256": "3a035f6e50c06da9597ea99020efb0fa93939d6ef88f6204ed83ffbdf9aae32f"
+    },
+    {
+      "byte_size": 90723,
+      "path": "scripts/_calendars.py",
+      "sha256": "9961359f38a3e390b5de4103a5222149e40b906362bba4b5620590f5ee1fed8e"
+    },
+    {
+      "byte_size": 53238,
+      "path": "scripts/_eucharistic_history.py",
+      "sha256": "fc414ea64fa3ed738cd57aa7d19d3cf158144aa1980e85febed620e831abaf47"
+    },
+    {
+      "byte_size": 18101,
+      "path": "scripts/_eucharistic_stages.py",
+      "sha256": "e0b4f1b5acfad0d16cbcbf1eda6ff4a1794b30e3eaa492a8b2b19a5e3dc4278c"
+    },
+    {
+      "byte_size": 87820,
+      "path": "scripts/_eucharistic_texts.py",
+      "sha256": "bc12a7da107bd63bf2a6c51e55b8389f088f560e882a5485405389e9750a9e5a"
+    },
+    {
+      "byte_size": 48920,
+      "path": "scripts/_proper_latin.py",
+      "sha256": "b24579434c8887a3b8527776790689b3b9f3262ee686eca745ec950845699bd7"
+    },
+    {
+      "byte_size": 33120,
+      "path": "scripts/_tooling.py",
+      "sha256": "86c302fcb7be450dec4dc1d45c4f529b000e79d5c548fae2b22212f7246e0afe"
+    },
+    {
+      "byte_size": 252633,
+      "path": "tools/act-history",
+      "sha256": "b0502f14dcce6a54c4dfb33ce980e004941e8ae1d727f12a5fa8253c73eae06e"
+    },
+    {
+      "byte_size": 120266,
+      "path": "tools/source-library",
+      "sha256": "c4d2065026a7cb0c94049e572251b2f3c3af615a4f9531793a1818d185327efc"
+    }
+  ],
+  "unified_diff": "--- left/dominican-1550-suscepimus\n+++ right/dominican-1604-suscepimus\n@@ -1,5 +1,3 @@\n-Deus cuius providentia in sui dispositione non fallitur:\n-te supplices exoramus:\n-ut noxia cuncta submoveas:\n-et omnia nobis profutura concedas.\n-Per.\n+Largire nobis, quaesumus Domine, semper spiritum cogitandi quae recta sunt, propitius et agendi:\n+ut qui sine te esse non possumus, secundum te vivere valeamus.\n+Per Dominum nostrum.\n"
+}

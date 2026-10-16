@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.maronite-church.qurbono.1594-rome-medici.ia-scan-pdf-dbab3b5b"
+edition_id = "edition.maronite-church.qurbono.1594-rome-medici"
+artifact_type = "scan-pdf"
+media_type = "application/pdf"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Historical 1594 printing, public domain in the United States by expired publication term. Internet Archive item bub_gb_5Eqy8WGF9aQC identifies the delivery with Public Domain Mark 1.0 (item and metadata checked 2026-10-16), https://creativecommons.org/publicdomain/mark/1.0/. This provider assessment is recorded separately from the historical printing's publication-term basis. The exact mechanical scan is retained without alteration; any provider marks remain in the bytes. The repository's treatment of incidental Google matter is recorded in src/sources/inventories/google-usage-guidelines-rights-v1.toml. No modern critical edition or scholarly commentary is imported. These source bytes are not offered under Triptych's CC BY 4.0 licence."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/bub_gb_5Eqy8WGF9aQC/bub_gb_5Eqy8WGF9aQC.pdf"
+provenance = "Identified through the Internet Archive advancedsearch query title:(missale) AND (maronitarum OR chaldaicum OR syriacum), with output=json and rows=50. The three returned items included this 1594 witness and two Chaldean 1767 books, which were not conflated with the Maronite title. The item metadata and complete PDF were then fetched mechanically over HTTPS on 2026-10-16. Metadata names Google Books ID 5Eqy8WGF9aQC and the National Central Library of Rome as the contributing collection. Metadata SHA-256 a866fd60984d14d47dd4f9119b5eb9911e49faf6eaddf31906d3f6de3a156763. The PDF's exact hash, byte size and page count were independently recomputed; no model was in the source-byte retrieval path."
+retrieved = "2026-10-16"
+sha256 = "dbab3b5b32f51018a1b6bcaf2674e1ffe4958ac151ed12fe746c44b1184d83b1"
+byte_size = 16323194
+page_count = 300
+indexable = false
+notes = "Complete provider PDF retained byte-for-byte. Registration inspection is bounded to PDF pages 1–5, 9 and 296–300, with title and colophon read in page images. The outer pages are historical covers and flyleaves; no separate Google usage-guidelines page was observed in those inspected bounds. Provider marks, if present elsewhere, remain unaltered and are not counted as historical book text. The embedded optical text is not a checked transcription and is not registered for raw-line search. Possession of 300 PDF pages does not establish every original leaf's survival, complete text coverage or full-book collation."
+path = "src/sources/works/maronite-church/qurbono/editions/1594-rome-medici/artifacts/ia-scan-pdf-dbab3b5b/scan.pdf"

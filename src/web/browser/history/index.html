@@ -15,9 +15,9 @@
 <header class="page-header">
   <h1><span class="page-mark" aria-hidden="true">→</span>Eucharistic Books Through History</h1>
   <p class="lede">
-    Explore liturgical traditions, surviving books, and their documented
-    connections. Follow a route to its source evidence and available text
-    comparisons, or choose a tradition to read its books in date order.
+    Follow the history of liturgical books: what each recorded state contains,
+    what changed, and what evidence supports the change. Choose a named tradition
+    or recension, then read its books against actual years.
   </p>
   <p class="panel-note">Text coverage is partial. Counts describe locally recorded
     source material, not complete books or every Catholic rite. Some units
@@ -26,6 +26,7 @@
 </header>
 
 <nav class="history-views" aria-label="History views">
+  <a id="history-timeline-link" href="?view=timeline">Books through time</a>
   <a id="history-overview-link" href="?view=overview">Traditions &amp; connections</a>
   <a id="history-map-link" href="?view=map" aria-current="page">Recorded historical lines</a>
   <a id="history-catalogue-link" href="?view=catalogue">Source catalogue</a>
@@ -35,6 +36,60 @@
 <main id="reading" tabindex="-1">
 <noscript><p>The interactive history requires JavaScript. The source inventories
   and their evidence remain available in the project’s Git repository.</p></noscript>
+<section id="timeline" aria-labelledby="timeline-heading" hidden>
+  <h2 id="timeline-heading">Books through time</h2>
+  <p>Each lane names one tradition or recension. A marker dates an attested book
+    state; a bracket gives the uncertainty in that date, <strong>not how long
+    the book was in use</strong>. Only explicitly recorded transitions connect
+    states. Contemporary books can coexist without descending from each other.</p>
+  <form id="timeline-filter" class="timeline-filter" role="search" aria-label="Choose historical timeline">
+    <label for="timeline-tradition">Tradition or recension
+      <select id="timeline-tradition" disabled></select>
+    </label>
+    <label for="timeline-start">From year <input id="timeline-start" type="number" step="1" disabled></label>
+    <label for="timeline-end">Through year <input id="timeline-end" type="number" step="1" disabled></label>
+    <button id="timeline-apply" type="submit" disabled>Show these years</button>
+    <label class="timeline-leads"><input id="timeline-leads" type="checkbox" disabled> Include provisional leads</label>
+  </form>
+  <div class="timeline-tools" role="group" aria-label="Timeline window">
+    <button id="timeline-all-years" type="button" disabled>All recorded years</button>
+    <button id="timeline-local-years" type="button" disabled>This tradition’s full history</button>
+    <button id="timeline-earlier" type="button" disabled>Earlier years</button>
+    <button id="timeline-later" type="button" disabled>Later years</button>
+    <button id="timeline-zoom-in" type="button" disabled>Zoom in</button>
+    <button id="timeline-zoom-out" type="button" disabled>Zoom out</button>
+    <label for="timeline-presentation">Read as
+      <select id="timeline-presentation"><option value="chart">Year-axis map</option><option value="list">Chronological reading list</option></select>
+    </label>
+  </div>
+  <p id="timeline-status" role="status" aria-live="polite"></p>
+  <p class="panel-note">Wide charts scroll within the map. Use the year controls to focus a period, or choose the chronological reading list.</p>
+  <div class="timeline-key" aria-label="Timeline legend">
+    <p><strong>● Documented state · ◇ Provisional lead · ├──┤ Date uncertainty.</strong>
+      A small hollow endpoint labels a continuation outside this view.
+      Brackets and date labels describe attestation, publication, approval,
+      effective date, or reconstruction as explicitly stated.</p>
+    <p>Transition evidence: <strong>solid</strong> = primary description or text
+      collation; <strong>dashed</strong> = scholarly description;
+      <strong>dotted</strong> = bibliographic succession or provisional lead.
+      Arrowheads point to the receiving state. Bends keep links clear of labels;
+      they do not add intermediate stages. Each transition states its kind and
+      evidence level. A successor printing
+      alone does not establish a substantive revision.</p>
+    <p>Historical evidence and transcription coverage are independent.
+      “Documented” does not mean the full text is available here.</p>
+  </div>
+  <div class="timeline-reading">
+    <div class="timeline-main">
+      <div id="timeline-chart" class="timeline-chart" tabindex="0" role="region" aria-label="Historical timeline; scroll to read the year axis and lanes" aria-busy="true"></div>
+      <div id="timeline-list" hidden></div>
+      <details id="timeline-unpositioned"><summary>States without a positioned date</summary><div id="timeline-unpositioned-list"></div></details>
+      <details id="timeline-provisional"><summary>Provisional leads, separate from documented states</summary><div id="timeline-provisional-list"></div></details>
+      <section id="timeline-gaps" aria-label="Specific gaps in this history"></section>
+    </div>
+    <section id="timeline-detail" class="timeline-detail" tabindex="-1" aria-label="Selected state or transition evidence" hidden></section>
+  </div>
+</section>
 <section id="catalogue" aria-labelledby="catalogue-heading" hidden>
   <h2 id="catalogue-heading">Eucharistic books and historical uses</h2>
   <p>Browse research coverage of Catholic traditions, shared ancestry, and extinct
@@ -134,6 +189,8 @@
 </main>
 
 <footer class="page-footer">
+  <p>Dates and recorded transitions describe the available evidence. They do not establish uninterrupted use or complete text coverage.</p>
+  <div id="history-act-note" hidden>
   <p>
     A station is normally the act — a constitution, a decree, an instruction, or
     a documented exemption — and never a book, because two printings of one
@@ -153,6 +210,7 @@
     consequence is worth knowing: your browser’s own find-in-page reaches only
     what you have opened.
   </p>
+  </div>
   <p>
     <a href="../liturgy/day.html">Today’s Missal</a> ·
     <a href="../liturgy/">The propers of the Mass</a> ·

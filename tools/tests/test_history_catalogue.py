@@ -42,6 +42,7 @@ class Element {
   addEventListener(k, fn) { this.events[k] = fn; }
   remove() { this.parent.children = this.parent.children.filter(n => n !== this); nodes.delete(this.id); }
   focus() { document.activeElement = this; }
+  scrollIntoView() {}
   querySelectorAll(selector) {
     const all = this.children.flatMap(n => [n, ...n.querySelectorAll(selector)]);
     return all.filter(n => selector === '[aria-current]' && n.attrs['aria-current']);
@@ -50,7 +51,7 @@ class Element {
 const html = fs.readFileSync(input.page, 'utf8');
 for (const id of html.matchAll(/id="([^"]+)"/g)) { const e = new Element('div'); e.id = id[1]; }
 const document = {getElementById: id => nodes.get(id), createElementNS: (_,tag) => new Element(tag), activeElement: null};
-const location = {search: input.search || '?view=catalogue&data=../../../data', hash: input.hash || ''};
+const location = {search: input.search === undefined ? '?view=catalogue&data=../../../data' : input.search, hash: input.hash || ''};
 const calls = [];
 let hashHandler;
 const Triptych = {
@@ -70,12 +71,26 @@ const Triptych = {
   onHashChange(fn) { hashHandler = fn; }
 };
 vm.runInNewContext(fs.readFileSync(input.script, 'utf8'), {
-  window: {Triptych, location}, document, URL, URLSearchParams, console
+  window: {Triptych, location, matchMedia: () => ({matches:!!input.mobile})}, document, URL, URLSearchParams, console
 });
 function all(node) { return [node, ...node.children.flatMap(all)]; }
 setImmediate(async () => {
   for (const action of input.actions || []) {
-    if (action.do === 'filter') {
+    if (action.do === 'stage' || action.do === 'transition') {
+      const attr='data-'+action.do;
+      const element=[...all(nodes.get('timeline-chart')),...all(nodes.get('timeline-list')),...all(nodes.get('timeline-detail'))].find(n=>n.attrs[attr]===action.id && n.events.click);
+      const target=element || all(nodes.get('timeline-chart')).find(n=>n.attrs[attr]===action.id).parent;
+      target.events.click({preventDefault(){}});
+    } else if (action.do === 'timeline-control') {
+      const node=nodes.get(action.id);
+      if (action.value !== undefined) node.value=action.value;
+      if (action.checked !== undefined) node.checked=action.checked;
+      node.events[action.event || 'click']({preventDefault(){}});
+    } else if (action.do === 'years') {
+      nodes.get('timeline-start').value=action.start;
+      nodes.get('timeline-end').value=action.end;
+      nodes.get('timeline-filter').events.submit({preventDefault(){}});
+    } else if (action.do === 'filter') {
       nodes.get('catalogue-family').value = action.family || '';
       nodes.get('catalogue-query').value = action.q || '';
       nodes.get('catalogue-filter').events.submit({preventDefault() {}});
@@ -88,22 +103,26 @@ setImmediate(async () => {
     } else if (action.do === 'back') {
       const button = all(nodes.get('catalogue-detail')).find(n => n.tagName === 'button');
       button.events.click();
-    } else if (action.do === 'comparison' || action.do === 'relationship-comparison') {
-      const fold = all(nodes.get(action.do === 'comparison' ? 'catalogue-comparison-list' : 'overview-connections')).find(n => (n.className || '').includes('comparison-fold'));
+    } else if (action.do === 'comparison' || action.do === 'relationship-comparison' || action.do === 'stage-comparison') {
+      const host=action.do === 'comparison' ? 'catalogue-comparison-list' : action.do === 'stage-comparison' ? 'timeline-detail' : 'overview-connections';
+      const fold = all(nodes.get(host)).filter(n => (n.className || '').includes('comparison-fold'))[action.index || 0];
       fold.open = true;
       fold.events.toggle();
       await new Promise(resolve => setImmediate(resolve));
     }
   }
   const result = {};
-  for (const id of ['catalogue-results', 'catalogue-status', 'catalogue-detail', 'tally', 'catalogue-limits', 'catalogue-comparison-list', 'history-overview', 'overview-network', 'overview-connections', 'overview-groups']) {
+  for (const id of ['catalogue-results', 'catalogue-status', 'catalogue-detail', 'tally', 'catalogue-limits', 'catalogue-comparison-list', 'history-overview', 'overview-network', 'overview-connections', 'overview-groups', 'timeline-chart', 'timeline-list', 'timeline-detail', 'timeline-status', 'timeline-unpositioned-list', 'timeline-provisional-list', 'timeline-gaps']) {
     const node = nodes.get(id);
     result[id] = {text: node.textContent, hidden: node.hidden, attrs: node.attrs,
       links: all(node).filter(n => n.tagName === 'a').map(n => ({text: n.textContent, href: n.href, attrs: n.attrs})),
       tags: all(node).map(n => n.tagName)};
     result[id].texts = all(node).filter(n => n.className === 'held-text comparison-text').map(n => n.textContent);
+    result[id].elements = all(node).map(n=>({tag:n.tagName,attrs:n.attrs,text:n._text}));
     result[id].ids = all(node).map(n => n.id).filter(Boolean);
   }
+  result.timelineHidden=nodes.get('timeline').hidden;
+  result.timelineSelection={tradition:nodes.get('timeline-tradition').value,start:nodes.get('timeline-start').value,end:nodes.get('timeline-end').value};
   result.calls = calls;
   result.hash = location.hash;
   result.focus = document.activeElement && document.activeElement.id;
@@ -233,6 +252,57 @@ def catalogue():
                 limitations=["The record is incomplete."])
 
 
+
+def stage_fixture():
+    """Constructed states exercise chronology, not historical claims."""
+    evidence=[dict(source_id="fixture-source",locus="pp. 2–3",claim="The two actions are distinguished.")]
+    def stage(identifier, year, **extra):
+        result=dict(id=identifier,tradition_id="fixture-line",label="Book state "+identifier,
+            date_label="Unresolved date" if year is None else str(year),start_year=year,end_year=year,
+            date_kind="attestation",status="documented",scope="Ordinary rubrics only; not a whole book.",
+            components=["rubrics"],witness_ids=["example"],witness_label="Identified example witness",
+            summary="A bounded rubric state.",text_coverage="not-transcribed",evidence=evidence,
+            limitations="No complete reconstruction.",reception="Community use is unestablished.")
+        result.update(extra)
+        return result
+    transition=dict(id="change",from_stage="first",to_stage="second",kind="revision",status="documented",
+        evidence_level="primary-description",summary="The standing rubric is replaced by kneeling.",
+        components=["rubrics"],changes=[dict(component="rubrics",before="Stand during the prayer.",
+        after="Kneel during the prayer.",locus_before="first p. 2",locus_after="second p. 3",evidence=evidence)],
+        evidence=evidence,limitations="Source description; no full text collation.",comparison_ids=[],
+        historical_parentage="attributed",git_ancestry=False,text_inheritance=False)
+    return dict(schema="triptych-eucharistic-stages/v1",default_tradition_id="fixture-line",
+        traditions=[dict(id="fixture-line",label="Constructed principal recension",scope="Only named rubric states",coverage_note="Incomplete."),
+                    dict(id="parallel-line",label="Constructed parallel recension",scope="A contemporary book",coverage_note="Incomplete.")],
+        sources=[dict(id="fixture-source",title="Constructed witness source",url="https://example.org/book",
+                      kind="primary-book",inspection="Named pages inspected.",status="inspected",limitations="Excerpt only.")],
+        stages=[stage("first",1200,end_year=1220,date_label="1200–1220"),
+                stage("second",1210,end_year=1230,date_label="1210–1230",text_coverage="partial"),
+                stage("companion",1250,components=["chants"],scope="Complementary chant volume."),
+                stage("parallel",1210,end_year=1230,tradition_id="parallel-line"),
+                stage("undated",None),stage("lead",1240,status="provisional")],
+        transitions=[transition,dict(transition,id="succession",from_stage="second",to_stage="companion",
+                    kind="witness-succession",evidence_level="bibliographic-only",changes=[],
+                    historical_parentage="unestablished",summary="A later complementary witness is catalogued; no revision is established.")],
+        gaps=[dict(id="gap",tradition_id="fixture-line",period="Before 1200",missing="Earlier rubric evidence missing.",
+                   next_source="An earlier identified witness.",consequence="No earlier parent is inferred.")])
+
+
+def stage_geometry(history, **options):
+    script = r"""
+const fs=require('node:fs'),vm=require('node:vm');
+const input=JSON.parse(fs.readFileSync(0,'utf8')),source=fs.readFileSync(input.script,'utf8');
+const start=source.indexOf('  const M = (function () {');
+const end=source.indexOf('\n  }());',start)+'\n  }());'.length;
+const context={T:{stationKind:{}},history:input.history,options:input.options}; vm.createContext(context);
+vm.runInContext(source.slice(start,end),context);
+process.stdout.write(JSON.stringify(vm.runInContext('M.stageLayout(history,options)',context)));
+"""
+    run=subprocess.run([NODE,"-e",script],input=json.dumps(dict(script=str(SCRIPT),history=history,options=options)),
+                       text=True,capture_output=True,check=True)
+    return json.loads(run.stdout)
+
+
 def network_geometry(data):
     script = r"""
 const fs=require('node:fs'),vm=require('node:vm');
@@ -271,6 +341,256 @@ def comparison_fixture():
     data = catalogue()
     data["comparisons"] = [declared]
     return data, {"structure/act-history/" + declared["projection_path"]: payload}
+
+
+@unittest.skipIf(NODE is None, "node is unavailable")
+class TimelineControllerTests(unittest.TestCase):
+    def drive(self, history=None, **options):
+        data=catalogue(); data["stage_history"]=stage_fixture() if history is None else history
+        request=dict(data=data,page=str(PAGE),script=str(SCRIPT),search="?view=timeline&data=fixture"); request.update(options)
+        run=subprocess.run([NODE,"-e",HARNESS],input=json.dumps(request),text=True,capture_output=True,cwd=ROOT,timeout=20)
+        self.assertEqual(run.returncode,0,run.stderr)
+        return json.loads(run.stdout)
+
+    def test_default_entry_uses_timeline_and_keeps_optional_views_accessible(self):
+        got=self.drive(search="")
+        self.assertFalse(got["timelineHidden"])
+        self.assertTrue(got["mapHidden"])
+        self.assertEqual(got["calls"],["structure/act-history/catalogue.json"])
+        self.assertEqual(got["timelineSelection"]["tradition"],"fixture-line")
+        self.assertIn("standing rubric is replaced",got["timeline-chart"]["text"])
+        self.assertIn("view=map",got["navigation"])
+        self.assertIn("view=overview",got["overviewNavigation"])
+        marker=next(e["attrs"] for e in got["timeline-chart"]["elements"] if e["tag"]=="marker")
+        radius=max(float(e["attrs"]["r"]) for e in got["timeline-chart"]["elements"] if e["tag"]=="circle")
+        self.assertEqual(marker["markerUnits"],"userSpaceOnUse")
+        self.assertGreater(float(marker["refX"])-float(marker["viewBox"].split()[2]),radius)
+        key=next(e["attrs"] for e in got["timeline-chart"]["elements"] if e["tag"]=="text" and e["text"]=="S001")
+        point=next(e["attrs"] for e in got["timeline-chart"]["elements"] if e["tag"]=="circle" and e["attrs"]["r"]=="6")
+        self.assertGreater(abs(float(key["x"])-float(point["cx"])),radius)
+
+    def test_geometry_has_true_shared_year_axis_uncertainty_and_no_sorted_ancestry(self):
+        model=stage_geometry(stage_fixture(),start=1200,end=1300)
+        nodes={n["id"]:n for lane in model["lanes"] for n in lane["nodes"]}
+        self.assertEqual(nodes["second"]["x"],nodes["parallel"]["x"])
+        span=model["axis"]["x1"]-model["axis"]["x0"]
+        self.assertAlmostEqual(nodes["first"]["xEnd"]-nodes["first"]["xStart"],span*.2)
+        self.assertAlmostEqual(nodes["companion"]["x"]-nodes["second"]["x"],span*.3)
+        self.assertEqual({e["id"] for e in model["edges"]},{"change","succession"})
+        self.assertEqual([s["id"] for s in model["unpositioned"]],["undated"])
+        self.assertNotIn("lead",nodes)
+        self.assertNotEqual(nodes["first"]["row"],nodes["second"]["row"])
+        self.assertEqual(model["edges"][0]["style"]["dash"],"")
+        self.assertNotEqual(model["edges"][1]["style"]["dash"],"")
+        self.assertNotEqual(model["edges"][0]["path"].split(" H ")[1],model["edges"][1]["path"].split(" H ")[1])
+
+    def test_undated_external_arrows_follow_source_to_target_without_doubling_back(self):
+        for source, target, upward in [("first", "undated", True), ("undated", "first", False)]:
+            with self.subTest(source=source, target=target):
+                history=stage_fixture()
+                transition=dict(history["transitions"][0], from_stage=source, to_stage=target)
+                history["transitions"]=[transition]
+                model=stage_geometry(history, tradition="fixture-line", compact=True)
+                edge=model["edges"][0]
+                start,end=edge["fromPoint"],edge["toPoint"]
+                self.assertTrue(edge["external"])
+                self.assertEqual(start["x"],end["x"])
+                self.assertEqual(edge["path"],f'M {start["x"]} {start["y"]} L {end["x"]} {end["y"]}')
+                self.assertEqual(start["y"]>end["y"],upward)
+                self.assertEqual(abs(start["y"]-end["y"]),30)
+                self.assertEqual(edge["fromOutside"],source=="undated")
+                self.assertEqual(edge["toOutside"],target=="undated")
+
+    def test_same_row_transition_key_follows_own_arc_and_is_drawn_above_all_routes(self):
+        history=stage_fixture()
+        history["stages"]=history["stages"][:2]
+        history["stages"][0].update(start_year=1200,end_year=1200)
+        history["stages"][1].update(start_year=1300,end_year=1300)
+        history["transitions"]=history["transitions"][:1]
+        model=stage_geometry(history,tradition="fixture-line",compact=True,start=1200,end=1300)
+        edge=model["edges"][0]
+        self.assertEqual(edge["fromPoint"]["y"],edge["toPoint"]["y"])
+        self.assertEqual(edge["keyLabel"]["y"],edge["fromPoint"]["y"]-3)
+        self.assertEqual(edge["keyLabel"]["x"],(edge["fromPoint"]["x"]+edge["toPoint"]["x"])/2)
+        got=self.drive()
+        elements=got["timeline-chart"]["elements"]
+        paths=[i for i,e in enumerate(elements) if e["attrs"].get("data-transition")]
+        keys=[i for i,e in enumerate(elements) if e["attrs"].get("data-transition-key")]
+        self.assertEqual(len(paths),len(keys))
+        self.assertGreater(min(keys),max(paths))
+
+    def test_selecting_state_reveals_change_loci_witness_and_independent_text_status(self):
+        got=self.drive(actions=[dict(do="stage",id="second")])
+        detail=got["timeline-detail"]["text"]
+        for text in ["Before: Stand during the prayer.","After: Kneel during the prayer.","first p. 2","second p. 3",
+                     "primary description","parentage: attributed","Text coverage: partial","Ordinary rubrics only","pp. 2–3"]:
+            self.assertIn(text,detail)
+        self.assertEqual(got["focus"],"timeline-detail")
+        self.assertIn("stage=second",got["hash"])
+        self.assertTrue(any("view=catalogue" in link["href"] and "record=example" in link["href"] for link in got["timeline-detail"]["links"]))
+
+    def test_window_controls_keep_explicit_boundary_connection_and_shareable_state(self):
+        got=self.drive(actions=[dict(do="years",start="1230",end="1260")])
+        self.assertIn("start=1230&end=1260",got["hash"])
+        self.assertIn("1 dated states outside",got["timeline-status"]["text"])
+        model=stage_geometry(stage_fixture(),tradition="fixture-line",start=1230,end=1260)
+        edge=next(e for e in model["edges"] if e["id"]=="change")
+        self.assertTrue(edge["fromOutside"])
+        self.assertEqual(edge["fromStage"]["date_label"],"1200–1220")
+        self.assertIn("Bounds continue beyond this window",got["timeline-chart"]["text"])
+        self.assertTrue(any("start" in e["attrs"].get("data-date-clipped","") for e in got["timeline-chart"]["elements"]))
+        self.assertIn("From S001 · 1200–1220 · outside this view",got["timeline-chart"]["text"])
+        self.assertTrue(any(e["attrs"].get("data-continuation")=="first" for e in got["timeline-chart"]["elements"]))
+        got=self.drive(actions=[dict(do="years",start="1230",end="1260"),dict(do="timeline-control",id="timeline-local-years")])
+        self.assertEqual(got["timelineSelection"]["start"],"1200")
+        self.assertEqual(got["timelineSelection"]["end"],"1250")
+
+    def test_mobile_list_and_provisional_controls_keep_evidence_visible(self):
+        got=self.drive(mobile=True,actions=[dict(do="timeline-control",id="timeline-leads",event="change",checked=True)])
+        self.assertTrue(got["timeline-chart"]["hidden"])
+        self.assertFalse(got["timeline-list"]["hidden"])
+        self.assertIn("Book state lead",got["timeline-list"]["text"])
+        self.assertIn("provisional",got["timeline-list"]["text"])
+        self.assertIn("standing rubric is replaced",got["timeline-list"]["text"])
+        self.assertIn("Earlier rubric evidence missing",got["timeline-gaps"]["text"])
+        self.assertIn("leads=1",got["hash"])
+
+    def test_transition_selection_distinguishes_bibliographic_succession(self):
+        got=self.drive(actions=[dict(do="transition",id="succession")])
+        detail=got["timeline-detail"]["text"]
+        self.assertIn("bibliographic only",detail)
+        self.assertIn("parentage: unestablished",detail)
+        self.assertIn("No component-level before/after collation",detail)
+        self.assertIn("transition=succession",got["hash"])
+
+    def test_undated_only_history_does_not_invent_axis_and_unknown_selection_does_not_broaden(self):
+        history=stage_fixture(); history["stages"]=[history["stages"][4]]; history["transitions"]=[]
+        got=self.drive(history)
+        self.assertIn("No dated states",got["timeline-status"]["text"])
+        self.assertIn("Book state undated",got["timeline-unpositioned-list"]["text"])
+        self.assertEqual(stage_geometry(history)["axis"]["ticks"],[])
+        got=self.drive(hash="#tradition=unknown&stage=missing")
+        self.assertIn("not in the current stage record",got["timeline-status"]["text"])
+        self.assertIn("not in the current record",got["timeline-detail"]["text"])
+
+    def test_outgoing_cross_recension_navigation_moves_lane_and_window(self):
+        history=stage_fixture()
+        history["stages"][3].update(start_year=1500,end_year=1500,date_label="1500")
+        history["transitions"].append(dict(history["transitions"][0],id="cross-recension",from_stage="companion",to_stage="parallel",kind="recension-branch"))
+        got=self.drive(history,hash="#stage=companion",actions=[dict(do="stage",id="parallel")])
+        self.assertEqual(got["timelineSelection"]["tradition"],"parallel-line")
+        self.assertEqual(got["timelineSelection"]["start"],"1500")
+        self.assertIn("stage=parallel",got["hash"])
+        self.assertIn("Book state parallel",got["timeline-chart"]["text"])
+        self.assertIn("Before: Stand",got["timeline-detail"]["text"])
+        first=self.drive(history,hash="#stage=companion")
+        self.assertIn("What follows from this state",first["timeline-detail"]["text"])
+        self.assertIn("1500 · Book state parallel",first["timeline-detail"]["text"])
+
+    def test_roman_1962_to_1970_source_transition_is_followable_across_named_recensions(self):
+        dossier=json.loads((ROOT / "src/sources/inventories/eucharistic-stages/roman.json").read_text())
+        # Retain source-owned rows; these two projection-only safety flags add
+        # no historical claim. Backend tests validate the actual projection.
+        history={key:dossier[key] for key in ("traditions","sources","stages","transitions","gaps")}
+        history.update(schema="triptych-eucharistic-stages/v1",default_tradition_id="roman-stages-pian")
+        history["transitions"]=[dict(t,git_ancestry=False,text_inheritance=False) for t in history["transitions"]]
+        start="#tradition=roman-stages-pian&stage=roman-stages-1962-june"
+        opened=self.drive(history,hash=start)
+        target=next(s for s in history["stages"] if s["id"]=="roman-stages-1969-1970")
+        self.assertIn(target["label"],opened["timeline-detail"]["text"])
+        followed=self.drive(history,hash=start,actions=[dict(do="stage",id=target["id"])])
+        self.assertEqual(followed["timelineSelection"]["tradition"],target["tradition_id"])
+        self.assertTrue(any(target["label"] in e["attrs"].get("aria-label","") for e in followed["timeline-chart"]["elements"]))
+        self.assertIn(target["label"],followed["timeline-detail"]["text"])
+
+    def test_shared_origin_transition_keys_are_distinct_and_external_ports_clear_prior_cards(self):
+        history=stage_fixture()
+        history["transitions"][1]["from_stage"]="first"
+        history["stages"][2].update(start_year=1231,end_year=1231,date_label="1231")
+        model=stage_geometry(history,start=1200,end=1300,compact=True)
+        self.assertNotEqual(model["edges"][0]["keyLabel"],model["edges"][1]["keyLabel"])
+        paginated=stage_geometry(history,start=1200,end=1300,compact=True,stageIds=["second","companion"])
+        nodes={n["id"]:n for lane in paginated["lanes"] for n in lane["nodes"]}
+        edge=next(e for e in paginated["edges"] if e["to"]=="companion")
+        self.assertLess(nodes["second"]["row"],nodes["companion"]["row"])
+        prior_bottom=nodes["second"]["labelY"]-17+nodes["second"]["cardHeight"]
+        self.assertGreater(edge["keyLabel"]["y"]-14,prior_bottom)
+
+    def test_adjacent_corridors_have_nonoverlapping_transition_key_boxes(self):
+        history=stage_fixture()
+        history["stages"][2].update(start_year=1211,end_year=1229,date_label="1211–1229")
+        history["transitions"][1].update(from_stage="parallel",to_stage="companion")
+        history["transitions"].append(dict(history["transitions"][0],id="another",from_stage="first",to_stage="companion"))
+        model=stage_geometry(history,start=1200,end=1300,compact=True)
+        for i,first in enumerate(model["edges"]):
+            for second in model["edges"][i+1:]:
+                a,b=first["keyLabel"],second["keyLabel"]
+                self.assertTrue(abs(a["x"]-b["x"])>=60 or abs(a["y"]-b["y"])>=24)
+
+    def test_compact_model_reduces_cards_without_changing_dates_connections_or_evidence(self):
+        full=stage_geometry(stage_fixture(),start=1200,end=1300)
+        compact=stage_geometry(stage_fixture(),start=1200,end=1300,compact=True)
+        self.assertLess(compact["height"],full["height"])
+        self.assertEqual([(e["from"],e["to"],e["transition"]) for e in compact["edges"]],
+                         [(e["from"],e["to"],e["transition"]) for e in full["edges"]])
+        full_nodes={n["id"]:n for lane in full["lanes"] for n in lane["nodes"]}
+        for lane in compact["lanes"]:
+            for node in lane["nodes"]:
+                original=full_nodes[node["id"]]
+                self.assertEqual((node["x"],node["xStart"],node["xEnd"]),(original["x"],original["xStart"],original["xEnd"]))
+                self.assertEqual(node["fullChangeLines"],original["changeLines"])
+                self.assertEqual(node["stage"],original["stage"])
+                self.assertEqual(node["changeLines"],[])
+
+    def test_paginated_model_keeps_source_port_at_true_year_and_delta_citations_inline(self):
+        model=stage_geometry(stage_fixture(),start=1200,end=1300,stageIds=["second"])
+        edge=next(e for e in model["edges"] if e["id"]=="change")
+        expected=model["axis"]["x0"]+.1*(model["axis"]["x1"]-model["axis"]["x0"])
+        self.assertAlmostEqual(float(edge["path"].split()[1]),expected)
+        self.assertTrue(edge["fromOutside"])
+        self.assertEqual(model["counts"]["outsideWindow"],0)
+        node=model["lanes"][0]["nodes"][0]
+        self.assertIn("Before: Stand during the prayer."," ".join(node["changeLines"]))
+        self.assertIn("After: Kneel during the prayer."," ".join(node["changeLines"]))
+        self.assertIn("C001 · pp. 2–3"," ".join(node["changeLines"]))
+
+    def test_projected_stage_comparisons_load_actual_source_payloads_only_when_opened(self):
+        path=ROOT / "src/web/data/structure/act-history/catalogue.json"
+        data=json.loads(path.read_text())
+        history=data.get("stage_history")
+        if not history:
+            self.skipTest("stage projection has not been generated")
+        comparisons={c["id"]:c for c in data["comparisons"]}
+        exercised=[]
+        for transition in history["transitions"]:
+            for index,identifier in enumerate(transition["comparison_ids"]):
+                with self.subTest(transition=transition["id"],comparison=identifier):
+                    row=comparisons[identifier]
+                    payload=json.loads((path.parent / row["projection_path"]).read_text())
+                    fragment="structure/act-history/"+row["projection_path"]
+                    options=dict(data=data,hash="#transition="+transition["id"],fragments={fragment:payload})
+                    closed=self.drive(history,**options)
+                    self.assertEqual(closed["calls"],["structure/act-history/catalogue.json"])
+                    opened=self.drive(history,**options,actions=[dict(do="stage-comparison",index=index)])
+                    self.assertEqual(opened["calls"],["structure/act-history/catalogue.json",fragment])
+                    self.assertEqual(opened["timeline-detail"]["texts"],
+                                     [payload["left"]["joined_source_text"],payload["right"]["joined_source_text"]])
+                    self.assertIn(payload["unified_diff"],opened["timeline-detail"]["text"])
+                    exercised.append(identifier)
+        self.assertTrue(exercised,"final stage history must retain its declared source-text comparisons")
+
+    def test_initial_timeline_transport_failure_claims_no_fallback(self):
+        got=self.drive(missing=True)
+        self.assertIn("Historical timeline unavailable",got["timeline-status"]["text"])
+        self.assertNotIn("fallback",got["timeline-status"]["text"])
+        self.assertEqual(got["timeline-chart"]["attrs"]["aria-busy"],"false")
+        self.assertEqual(got["timeline-chart"]["text"],"")
+
+    def test_malformed_evidence_and_dates_fail_closed(self):
+        for mutation in (lambda h:h["stages"][0].update(end_year=1199),
+                         lambda h:h["stages"][0]["evidence"][0].update(source_id="missing")):
+            history=stage_fixture(); mutation(history)
+            self.assertIn("unavailable",self.drive(history)["timeline-status"]["text"])
 
 
 @unittest.skipIf(NODE is None, "node is unavailable")

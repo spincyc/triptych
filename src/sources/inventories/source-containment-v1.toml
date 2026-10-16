@@ -3603,3 +3603,34 @@ title = "Commentarius in Apocalypsin"
 scripture = ["Revelation 1:1", "Revelation 1:4-1:7", "Revelation 5:1-5:9", "Revelation 19:11"]
 locator = "CCEL ANF VII, artifact ccel-text-b69327af: From the First Chapter, comments on 1 and 4–7; From the Fifth Chapter; From the Nineteenth Chapter, comment on 11; accompanying Elucidations"
 basis = "Actual received English commentary inspected, not inferred from the anthology title. Chapter 5's argument supplies context for Revelation 5:12, but its printed comments do not separately expound verse 12; chapter 19's inspected comment is on 11, not 16. The listed author/title are the commentary index's traditional identity, retained with the anthology's attribution caution."
+
+[[containers]]
+id = "work.armenian-church.armenian-eucharistic-books-bound-volume"
+manifest_sha256 = "a9072fb2ee12720a609fc06801144fed450a672aa3abfeeed057dc71d1139238"
+status = "partial"
+basis = "The retained 96-page provider sequence contains separate Latin Codex, Armenian Lyturgia and Ministerium title sections. Registered source segments bind their exact page ranges; title and boundary leaves were inspected, and all 96 provider images are preserved with hashes."
+unresolved = "Physical-volume completeness is unverified. Inner prayer, Office and hymn-correction constituents have not been exhaustively enumerated or transcribed. Complementary components and a Latin expression do not represent successive reforms."
+
+[[containers.constituents]]
+author = "Armenian Church liturgical tradition; Latin expression printed by Propaganda Fide"
+title = "Codex mysterii missae Armenorum"
+work_id = "work.armenian-church.lyturgia-armena"
+locator = "1677 bound-volume PDF pages 1–40; segment.armenian-church.lyturgia-armena.1677-rome-propaganda-latin.bound-volume-pages-1-40"
+extent_unresolved = "The printed Latin portion is bounded; exact equivalence to the Armenian expression is not established by title or binding."
+basis = "Latin title and final printed p. 37, followed by a blank separating leaf; provider sequence preserved."
+
+[[containers.constituents]]
+author = "Armenian Church liturgical tradition"
+title = "Lyturgia Armena, Armenian expression"
+work_id = "work.armenian-church.lyturgia-armena"
+locator = "1677 bound-volume PDF pages 41–66; segment.armenian-church.lyturgia-armena.1677-rome-propaganda-armenian.bound-volume-pages-41-66"
+extent_unresolved = "Identified celebrant book; no complete transcription or unchanged continuity to 1823 is claimed."
+basis = "Native title RA1-PP3 and the separately titled Ministerium beginning at the next segment."
+
+[[containers.constituents]]
+author = "Armenian Church liturgical tradition"
+title = "Ministerium Missae"
+work_id = "work.armenian-church.ministerium-missae"
+locator = "1677 bound-volume PDF pages 67–96; segment.armenian-church.ministerium-missae.1677-rome-propaganda-armenian.bound-volume-pages-67-96"
+extent_unresolved = "Clerical directions and appended Office/hymn corrections remain untranscribed; their internal constituent census is open."
+basis = "Separate native title at RA1-PA1; provider sequence reaches RA1-PA30."

@@ -1,0 +1,21 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.carmelite-order.missale.1621-venice-giunta.pdf-page-462-image-eb5a4e17"
+edition_id = "edition.carmelite-order.missale.1621-venice-giunta"
+artifact_type = "page-scan-image"
+media_type = "image/png"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The original 1621 printing is public domain in the United States by expiration of its publication term. The exact Internet Archive item bub_gb_PUEgJFAvalgC, contributed by National Central Library of Rome, explicitly records Public Domain Mark 1.0 (http://creativecommons.org/publicdomain/mark/1.0/) in https://archive.org/metadata/bub_gb_PUEgJFAvalgC; acquired metadata SHA-256 46d975a129b7b582e8fe26e1cc589b24327231ba46cd03242b7901ccaa5168e3. This is a mechanical scan of historical pages, not a modern critical edition or translation. Visible scan marks and historical handwriting are preserved in image derivatives, but handwriting is excluded from printed-text claims. This third-party source is excluded from Triptych’s CC BY 4.0 license."
+source_url = "https://archive.org/download/bub_gb_PUEgJFAvalgC/bub_gb_PUEgJFAvalgC.pdf#page=462"
+provenance = "Exact supplied page-image bytes retained unchanged after visual inspection. Source is the complete mechanically acquired PDF identified by the parent artifact; PDF and image SHA-256 hashes were independently measured before registration. Review scope is the passage context, not every word on the page."
+retrieved = "2026-10-16"
+sha256 = "eb5a4e173bda0162ae11c5d8be5511bbf7c3eb36e1f5cdf3f846829c76b4ea60"
+byte_size = 1917621
+path = "src/sources/works/carmelite-order/missale/editions/1621-venice-giunta/artifacts/pdf-page-462-image-eb5a4e17/page.png"
+page_count = 1
+indexable = false
+derived_from = "artifact.carmelite-order.missale.1621-venice-giunta.ia-complete-pdf-9cca5de5"
+transformation = "From exact complete parent PDF SHA-256 9cca5de5e8e8f2e2c49210cc878ee79b518472dfa9caa0bd60295cbcbcffccac, select one-based PDF page 462. Byte-for-byte replay with Poppler pdftoppm 26.08.0: -f 462 -l 462 -scale-to 2000 -png -singlefile; dimensions 1406 by 2000 pixels. Replay reproduces exactly these PNG bytes; no crop or postprocessing. Derivation receipt SHA-256 bbec613dc4e2eb94f345aa377aea8b60d46ff5fb9a0ded896180198d38361a3f. The derivative retains this complete rendered page; all other 627 PDF pages are excluded. No transcription, OCR correction or wording alteration is applied to image bytes."
+notes = "p. 409, lower right; PDF page 462. Printed Teresa virgin entry refers to Dilexisti iustitiam in the common of one virgin not a martyr, p. 22. Adjacent handwritten instructions and alterations are excluded from this printed-stage claim; no handwritten direction is treated as a printed Discalced-use policy."

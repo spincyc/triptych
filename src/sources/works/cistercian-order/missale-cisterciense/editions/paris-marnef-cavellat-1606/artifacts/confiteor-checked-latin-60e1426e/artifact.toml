@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.confiteor-checked-latin-60e1426e"
+edition_id = "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Faithful bounded transcription of original Latin from the identified Paris 1606 printing, whose United States publication term has expired. This contains no modern translation or new critical reconstruction. The historical text is separate from the provider’s particular image rights; the BSB source image retains its NoC-NC condition and attribution. Third-party text is excluded from Triptych’s CC BY 4.0 license. Scholarly availability does not authorize contemporary liturgical use."
+provenance = "Independently collated against the exact page images by a second AI reader on 2026-10-16; final body and artifact hashes pin the approved text. Accepted normalization includes sentence-case merging of display initials and nasal-bar expansion. The 1657 Confiteor preserves the independently corrected acute in omnipoténti. This bounded review is not a human specialist certification or a collation of the whole edition. Independent review receipt SHA-256 60925d8f5af82def604ede1a4a491cd5f6d372bd7007b295170d1ac37b98a882; reviewed multiline text SHA-256 ae1ed27ae22ae246c788fc249b3908304672177145da2d8b12702108912030f5. Spoken block metadata (zero-based half-open Unicode codepoint ranges in the NFC body, excluding terminal LF): [{\"block\":1,\"codepoint_range\":[0,161],\"speaker\":\"priest\",\"incipit\":\"Confíteor Deo, & beátæ\"}]. "
+retrieved = "2026-10-16"
+sha256 = "60e1426e08a9e75ef042f2e9a70103e74a6edea9a66c1a6f59a6e07b51735cd7"
+byte_size = 173
+path = "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/confiteor-checked-latin-60e1426e/text.txt"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00234-7c8474ea"
+transformation = "Manual transcription of the exact retained image SHA-256 7c8474ea19ffe54abf9a7296f04485d4eec2ff4fbaec2b22c07397e30246dbcc at Cistercian missal 1606, printed p. 180, left column; BSB canvas 00234. Normalize long s to s; merge display initials with the following letters in sentence case; remove line wraps and line-end word division; expand printed nasal suspension bars; retain printed u/v, æ/œ, accents, B. abbreviations, punctuation and the 1657 (vel meis) alternative. Separate standalone and intervening red rubrics from the spoken body, recording their source positions below; omit response cue glyphs from spoken text. Preserve the 1657 inline alternative (vel meis), including its red vel, as printed textual evidence. Join spoken blocks with one space. Preserve the source’s actual short endings rather than expanding them from other editions. Write one NFC UTF-8 line followed by one LF. These disclosed reading conventions make this a normalized transcription, not a diplomatic reproduction. Spoken block metadata (zero-based half-open Unicode codepoint ranges in the NFC body, excluding terminal LF): [{\"block\":1,\"codepoint_range\":[0,161],\"speaker\":\"priest\",\"incipit\":\"Confíteor Deo, & beátæ\"}]. "
+notes = "Complete priest’s Confiteor only; subsequent minister’s confession, absolution responses and surrounding prayers are outside this selection. This is the identified printing’s original Latin; no later Roman book supplies missing words or resolves a variant. No introduction date, direct copying act or complete historical parent relationship is inferred."

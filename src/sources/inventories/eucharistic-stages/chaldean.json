@@ -1,0 +1,727 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-stages",
+  "dossier_id": "chaldean-east-syriac",
+  "title": "Chaldean Catholic book states and earlier East Syriac anaphoral witnesses",
+  "traditions": [
+    {
+      "id": "east-syriac-ancestral",
+      "label": "Earlier Church of the East manuscript witnesses",
+      "family": "East Syriac",
+      "scope": "Shared ancestral anaphoral witnesses; not projected as medieval Catholic books.",
+      "coverage_note": "Written states and critical apparatus only; local variation and manuscript layers remain explicit."
+    },
+    {
+      "id": "chaldean-catholic",
+      "label": "Chaldean Catholic recension",
+      "family": "East Syriac",
+      "scope": "Chaldean Catholic native book line; Syro-Malabar is owned separately.",
+      "coverage_note": "Bounded states in 1767, 1901, 2007, 2014 and 2020. The 1971 revision and early Catholic manuscripts remain acquisition gaps. The 2025 reprint is not counted as a revision."
+    }
+  ],
+  "sources": [
+    {
+      "id": "chaldean-east-syriac:macomber1966",
+      "title": "William F. Macomber, The Oldest Known Text of the Anaphora of the Apostles Addai and Mari, OCP 32 (1966), 335–371",
+      "url": "https://www.liturgia.it/content/addaicongress/studi/1Macomber.pdf",
+      "kind": "critical-edition",
+      "inspection": "Page images inspected: pp. 335–357, 362–363, 366–367, 370–371; especially manuscript dates pp. 340–341, contents pp. 342–344, kushshaphe pp. 344–347, sigla pp. 354–357, post-Sanctus pp. 362–363, intercession pp. 366–367.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Modern critical edition and collation, not direct inspection of the medieval codices. Its paleographic dates and qualified conclusions remain attributed. A complete acquired PDF does not mean a complete transcription."
+    },
+    {
+      "id": "chaldean-east-syriac:rome1767-rsl",
+      "title": "Missale Chaldaicum ex decreto Sacrae Congregationis de Propaganda Fide editum (Rome, 1767), Russian State Library copy",
+      "url": "https://kp.rusneb.ru/item/material/missale-chaldaicum-ex-decreto-sacrae-congregationis-de-propaganda-fide-editum",
+      "kind": "institutional-catalogue",
+      "inspection": "Catalogue title, Rome/Propaganda imprint, 1767 date, languages, extent [620] pages, complete-copy description, shelfmark ЗВ 10-8/10, and 2024 digitization information.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Catalogue inspected; reader JavaScript did not expose a usable image/PDF acquisition path. Native book pages not independently inspected."
+    },
+    {
+      "id": "chaldean-east-syriac:rome1767-hmml",
+      "title": "HMML Reading Room: APSTCH EMAP07 00002, printed Missale Chaldaicum (1767)",
+      "url": "https://www.vhmml.org/readingRoom/view/882047",
+      "kind": "institutional-catalogue",
+      "inspection": "Record identifies 311 leaves, Rome 1767, title at f. 2r, text ff. 1v–310r, errata f. 310r, Syriac and Arabic/Garshuni.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Images require registered access; no login or image inspection undertaken."
+    },
+    {
+      "id": "chaldean-east-syriac:source-mosul1901",
+      "title": "Missale juxta ritum Ecclesiae Syrorum Orientalium, id est Chaldaeorum (Mosul, Dominican press, 1901)",
+      "url": "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3058397",
+      "kind": "primary-book",
+      "inspection": "Retained full scan; images inspected at PDF 93–100, 102 and 77–78. Native opening printed pp. 4–7 = PDF 97–94, especially expanded Lord’s Prayer printed p. 5 = PDF 96; Latin imprimatur PDF 102 dated 22 October 1901. Anaphora beginning printed pp. 23–24 = PDF 78–77.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Full book not transcribed or collated. Critical-edition loci, rather than these opening pages, establish the specific institution-narrative and intercession variants."
+    },
+    {
+      "id": "chaldean-east-syriac:mosul1901-propers",
+      "title": "Proprium missarum de tempore et de sanctis juxta ritum Ecclesiae Syrorum Orientalium, id est Chaldaeorum (Mosul, 1901)",
+      "url": "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3054856",
+      "kind": "institutional-catalogue",
+      "inspection": "Bonn title/imprint and 310-page proper-volume identity; existing repository record and registered complete scan checked.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Complementary temporal/sanctoral volume, not a successive recension. Proper texts and calendar changes not independently collated in this lane."
+    },
+    {
+      "id": "chaldean-east-syriac:jammo2006",
+      "title": "Bishop Sarhad Yawsip Jammo, The Chaldean Liturgical Reform: Time Ripe for Implementation (5 December 2006; mirrored 28 December)",
+      "url": "https://byzcath.org/index.php/news-mainmenu-49/50-the-chaldean-liturgical-reform-time-ripe-for-implementation",
+      "kind": "official-retrospective",
+      "inspection": "Full article read from acquired HTML, especially Acts of the Holy Synod, Recognitio of the Holy See, and Final Decision of the Holy Synod.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Firsthand committee-member account on a secondary mirror of kaldu.org. The original 2006 letter and Najm Al-Mashriq statement are cited by the author but were not independently acquired. Later Sako account disputes the reception and conformity of the printed text."
+    },
+    {
+      "id": "chaldean-east-syriac:royel2014",
+      "title": "Mar Awa Royel, The Pearl of Great Price: The Anaphora of the Apostles Mar Addai & Mar Mari as an Ecclesial and Cultural Identifier of the Assyrian Church of the East, OCP 80 (2014), 5–22",
+      "url": "https://news.assyrianchurch.org/wp-content/uploads/2020/04/The_Pearl_of_Great_Price_the_Assyrian_An.pdf",
+      "kind": "scholarship",
+      "inspection": "PDF printed pp. 20–21, notes 48 and 50, image inspected; title/publication metadata also read.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "An Assyrian hierarch’s scholarly assessment of the Chaldean reform, with explicit criticism. Descriptive change claims are attributed; his theological evaluation is not adopted. Not a Catholic promulgation act."
+    },
+    {
+      "id": "chaldean-east-syriac:taksa2014",
+      "title": "رتبة القداس بحسب الطقس الكلداني / The Order of the Mass: The Liturgy of the Blessed Apostles (Baghdad, 2014)",
+      "url": "https://thecmsindia.org/StaticFiles/docs/pdf/Chaldean-catholic-holy-mass-text-with-arabic-and-syriac.pdf",
+      "kind": "primary-book",
+      "inspection": "Title and page images pp. 1–8 and 25 inspected; original Italian recognitio p. 2, Arabic version p. 3, Sako preface p. 4 dated 27 October 2014, rubrics pp. 5–6, Syriac/Arabic beginning p. 8, anaphoral memorial and epiclesis p. 25.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Institutional CMSIndia copy (RR 065). Despite English title, the body inspected is Syriac/Arabic. Not an independent English translation stage. Modern copyrighted text: metadata and bounded analysis only."
+    },
+    {
+      "id": "chaldean-east-syriac:recognitio2014",
+      "title": "Congregatio pro Ecclesiis Orientalibus, Prot. N.57/2003, recognitio ad quinquennium, 20 October 2014",
+      "url": "https://thecmsindia.org/StaticFiles/docs/pdf/Chaldean-catholic-holy-mass-text-with-arabic-and-syriac.pdf",
+      "kind": "primary-act",
+      "inspection": "Original Italian letter reproduced on book p. 2, signature block Sandri/Vasil, date 20 October 2014; Arabic translation p. 3.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Recognitio of proposed modifications for five years, not a claim that every parish implemented the same text or that trial expiry itself created a new recension."
+    },
+    {
+      "id": "chaldean-east-syriac:sako2025",
+      "title": "Louis Raphaël Sako, القداس الأول لأدّاي وماري: الأصالة والتجديد (27 August 2025)",
+      "url": "https://chaldeanpatriarchate.com/2025/08/27/القداس-الأول-لأدّاي-وماري-الأصالة-وال/",
+      "kind": "official-retrospective",
+      "inspection": "Full article read, particularly طبعات الرتبة; تجديد2005; تجديد2014–2020; and صلاة التقدمة.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Participant retrospective, not the original synodal minutes. Some historical dates are typographically suspect; do not use its early-origin assertions to date manuscript composition. Its precise 20 November 2019 confirmation differs from the looser 2020 wording in the November 2025 reprint notice."
+    },
+    {
+      "id": "chaldean-east-syriac:lord-prayer2025",
+      "title": "Chaldean Patriarchate, سؤال وجواب عن تلاوة أبانا الذي في القداس (10 August 2025)",
+      "url": "https://chaldeanpatriarchate.com/2025/08/10/سؤال-وجواب/",
+      "kind": "official-retrospective",
+      "inspection": "Question and answer paragraphs concerning beginning/end repetitions and the synodal decisions 2014–2019.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Reports a reform interval, not a precise individual decree date. Its attribution of the expanded prayer to Timothy I is not used as a separately established eighth-century book stage."
+    },
+    {
+      "id": "chaldean-east-syriac:taksa2025",
+      "title": "رُتب القداس بحسب الطقس الكلداني / Chaldean Catholic Missal (Baghdad, 2025 reprint)",
+      "url": "https://media.chaldeanpatriarchate.com/2025/11/%D9%83%D8%AA%D8%A7%D8%A8-%D8%A7%D9%84%D9%82%D8%AF%D8%A7%D8%B3-%D8%B7%D8%A8%D8%B9%D8%A9-%D8%AA1-2025.pdf",
+      "kind": "primary-book",
+      "inspection": "Title PDF 3; preface/rubrics printed iii–iv (PDF 5–6); Sunday order title PDF 7; preparation printed 3 (PDF 9); intercessions/anamnesis/epiclesis printed 24–27 (PDF 30–33); Thomas opening printed 81 (PDF 87); contents PDF 173.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Complete 176-page PDF acquired temporarily; only listed pages inspected. Reprint of 2020 collection according to publisher, with typographic/linguistic corrections. It cannot by itself prove every 2025 wording was present in 2020. No protected full-text import."
+    },
+    {
+      "id": "chaldean-east-syriac:reprint2025",
+      "title": "Chaldean Patriarchate, إعادة طبع رُتَب القدّاس بحسب الطقس الكلداني (9 November 2025)",
+      "url": "https://chaldeanpatriarchate.com/2025/11/09/إعادة-طبع-رُتَب-القدّاس-بحسب-الطقس-ال/",
+      "kind": "official-retrospective",
+      "inspection": "Full notice read: exhausted 2020 missal and 2023 faithful’s book, reprinting after typographic/linguistic correction, 2014–2020 synodal study, confirmation and uniform use.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Not an independent substantive reform. Permission for overseas parishes to print for use is not a general repository redistribution licence. Confirmation year stated broadly as 2020; original act still needed."
+    }
+  ],
+  "stages": [
+    {
+      "id": "chaldean-east-syriac:mar-eshaya",
+      "tradition_id": "east-syriac-ancestral",
+      "label": "Mar Eshaya: anaphora without written private prayers",
+      "date_label": "tenth–eleventh century original manuscript portion",
+      "start_year": 901,
+      "end_year": 1100,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Original anaphoral portion of a Hudra that also preserves Theodore and Nestorius; not a reconstructed complete missal.",
+      "components": [
+        "anaphoras"
+      ],
+      "witness_ids": [],
+      "witness_label": "Mosul, Mar Eshaya Hudra, Apostles anaphora manuscript pp. 463–466",
+      "summary": "Addai and Mari is written without the kushshaphe and without an institution narrative. The Hudra places Theodore at Christmas, Nestorius at Epiphany, and the Apostles after Easter baptism.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "chaldean-east-syriac:macomber1966",
+          "locus": "pp. 340–347, 352, 358–371",
+          "claim": "Paleographic date, arrangement and edited Syriac anaphora distinguish the original portion from thirteenth-century additions."
+        }
+      ],
+      "limitations": "The date is approximate; later additions cannot be backdated. Absence from a Hudra does not alone prove a prayer was never said. No second/third-century composition date inferred.",
+      "reception": "Church of the East manuscript heritage; no claim of medieval Chaldean Catholic reception."
+    },
+    {
+      "id": "chaldean-east-syriac:diarbekir-hudra",
+      "tradition_id": "east-syriac-ancestral",
+      "label": "Diarbekir: private prayers written with the anaphora",
+      "date_label": "twelfth century",
+      "start_year": 1101,
+      "end_year": 1200,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Apostles anaphora in one volume of a formerly three-volume Hudra.",
+      "components": [
+        "anaphoras"
+      ],
+      "witness_ids": [],
+      "witness_label": "Diarbekir Hudra, surviving second volume, Macomber siglum B",
+      "summary": "This witness includes the private celebrant prayers normally preceding the ghanta, unlike the Mar Eshaya text.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "chaldean-east-syriac:macomber1966",
+          "locus": "pp. 340–345, 354",
+          "claim": "Identifies and dates the witness and explicitly reports its kushshaphe."
+        }
+      ],
+      "limitations": "The surviving volume covers entry into Lent to the end of Easter week. Missing Christmas/Epiphany sections are a volume-survival issue, not suppression of their anaphoras. No universal introduction date established.",
+      "reception": "Historical Church of the East witness; modern Catholic ownership/location would not establish original Catholic use."
+    },
+    {
+      "id": "chaldean-east-syriac:mardin22",
+      "tradition_id": "east-syriac-ancestral",
+      "label": "Mardin 22: older form still written without private prayers",
+      "date_label": "1287 manuscript",
+      "start_year": 1287,
+      "end_year": 1287,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Anaphoral text within a surviving second Hudra volume.",
+      "components": [
+        "anaphoras"
+      ],
+      "witness_ids": [],
+      "witness_label": "Mardin 22, Hudra, Macomber siglum C",
+      "summary": "The kushshaphe are absent in this dated later witness, showing that manuscript forms cannot be arranged as a simple universal progression.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "chaldean-east-syriac:macomber1966",
+          "locus": "pp. 340–347, 354",
+          "claim": "Date 1287 and omission; possible older exemplar or local nonrecognition discussed."
+        }
+      ],
+      "limitations": "Macomber treats abbreviated Hudra copying and local nonrecognition as alternatives requiring care. This does not establish a 1287 reform removing prayers.",
+      "reception": "Church of the East heritage, not evidence that the Catholic recension existed in 1287."
+    },
+    {
+      "id": "chaldean-east-syriac:rome1767",
+      "tradition_id": "chaldean-catholic",
+      "label": "Rome: Catholic Propaganda missal recension",
+      "date_label": "1767 printing",
+      "start_year": 1767,
+      "end_year": 1767,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Catholic printed witness; bounded Addai and Mari readings established through the critical apparatus, full ordinary not yet inspected.",
+      "components": [
+        "ordinary",
+        "anaphoras"
+      ],
+      "witness_ids": [
+        "eastern:chald-1767"
+      ],
+      "witness_label": "Missale Chaldaicum ex decreto Sacrae Congregationis de Propaganda Fide editum (Rome, 1767)",
+      "summary": "Macomber’s Cr witness supplies an identifiable Catholic printed state. Its intercession omits the phrase about the life-giving Gospel that is present in the ancient witness and modern Mosul editions.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "chaldean-east-syriac:rome1767-rsl",
+          "locus": "Title, imprint and shelfmark",
+          "claim": "Identifies the complete 1767 Catholic Propaganda edition."
+        },
+        {
+          "source_id": "chaldean-east-syriac:macomber1966",
+          "locus": "p. 357 siglum Cr; p. 366 line 53 apparatus; p. 345 note 2",
+          "claim": "Identifies Cr as 1767 pp. 280–286 and distinguishes the older printed omission from the later Mosul reading."
+        }
+      ],
+      "limitations": "The full 1767 book is not page-collated. No claim of first Catholic printing or a complete list of Latin/Maronite additions. Institution placement at the fraction remains an acquisition gap.",
+      "reception": "Publication by the Roman Propaganda Congregation identifies a Catholic book; breadth and continuity of local adoption not independently established."
+    },
+    {
+      "id": "chaldean-east-syriac:mosul1901",
+      "tradition_id": "chaldean-catholic",
+      "label": "Mosul: ordinary and complementary propers",
+      "date_label": "1901 printing",
+      "start_year": 1901,
+      "end_year": 1901,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "One publication state represented by complementary ordinary/anaphoral and temporal-sanctoral proper volumes.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:chald-1901",
+        "eastern:chald-proper-1901"
+      ],
+      "witness_label": "Missale juxta ritum Ecclesiae Syrorum Orientalium, id est Chaldaeorum; companion Proprium missarum de tempore et de sanctis (Mosul, Dominican press, 1901)",
+      "summary": "The ordinary prints the expanded Lord’s Prayer near the beginning. In Addai and Mari, Macomber locates the institution narrative at the opening of the post-Sanctus prayer and records the life-giving Gospel phrase in the intercession.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "chaldean-east-syriac:source-mosul1901",
+          "locus": "Printed pp. 4–5/PDF 97–96; PDF 102",
+          "claim": "Native beginning and 1901 imprimatur inspected."
+        },
+        {
+          "source_id": "chaldean-east-syriac:mosul1901-propers",
+          "locus": "Title and imprint",
+          "claim": "Complementary proper volume shares the 1901 Mosul Dominican imprint."
+        },
+        {
+          "source_id": "chaldean-east-syriac:macomber1966",
+          "locus": "p. 357 Cm 01; p. 363 note 10; p. 366 line 53 apparatus",
+          "claim": "Specifies 1901 pp. 24–36 as Cm 01 and records the relevant anaphoral readings."
+        }
+      ],
+      "limitations": "The companion volume is not a second stage. 1901 attests these readings; it does not date their introduction. Macomber also finds the post-Sanctus insertion in a late nineteenth-century Mar Ya‘qob ritual.",
+      "reception": "Catholic imprimatur from Henricus Altmayer, Apostolic Delegate, 22 October 1901. It authorizes printing; it does not establish universal use or an independent complete reform."
+    },
+    {
+      "id": "chaldean-east-syriac:reform2007",
+      "tradition_id": "chaldean-catholic",
+      "label": "Reformed Taksa associated with Jammo",
+      "date_label": "2007 announced implementation",
+      "start_year": 2007,
+      "end_year": 2007,
+      "date_kind": "effective",
+      "status": "documented",
+      "scope": "Identifiable reform described by its compiler and scholarly observer; text identity and reception distinguished.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [],
+      "witness_label": "Reformed Takhsa d-Raze, approved 2005/recognized 2006 according to Jammo; original Syriac edition still to acquire",
+      "summary": "The reform places the institution narrative after the intercessions, before the epiclesis/anamnesis sequence, and directs audible anaphoral recitation. Royel also describes removal of diaconal exhortations around the Pax.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "chaldean-east-syriac:jammo2006",
+          "locus": "Recognitio and Final Decision paragraphs",
+          "claim": "Reports 2005 synod, 18 February 2006 recognitio, and 6 January 2007 implementation date."
+        },
+        {
+          "source_id": "chaldean-east-syriac:royel2014",
+          "locus": "p. 20 note 48; p. 21 note 50",
+          "claim": "Describes rearrangement, litanies and audible recitation."
+        },
+        {
+          "source_id": "chaldean-east-syriac:sako2025",
+          "locus": "تجديد2005, concluding paragraph",
+          "claim": "Sako disputes broad reception of the printed reform and whether it incorporated the synod’s corrections."
+        }
+      ],
+      "limitations": "No original Syriac 2007 edition acquired. Two Internet Archive English aids were found; neither is silently substituted for a native text. The effective date is the reported synodal decision, not proof of universal implementation.",
+      "reception": "Jammo states St Peter’s diocese would implement. Sako later disputes wider acceptance and whether the printed text included synodal corrections; these accounts are not collapsed into universal reception."
+    },
+    {
+      "id": "chaldean-east-syriac:baghdad2014",
+      "tradition_id": "chaldean-catholic",
+      "label": "Baghdad: five-year trial order of the Apostles",
+      "date_label": "2014 publication; recognitio 20 October 2014",
+      "start_year": 2014,
+      "end_year": 2014,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Printed Addai and Mari order with official letter, patriarchal introduction and new practical rubrics.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:chald-2014"
+      ],
+      "witness_label": "رتبة القداس بحسب الطقس الكلداني / The Order of the Mass: The Liturgy of the Blessed Apostles (Baghdad, 2014), Syriac/Arabic",
+      "summary": "The native opening omits the expanded Lord’s Prayer; its Gloria and conditional psalmody lead to the opening prayer. Rubrics require audible prayer and distinguish the priest’s initial orientation from the offertory facing the people.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "chaldean-east-syriac:taksa2014",
+          "locus": "pp. 1–8; p. 25",
+          "claim": "Title, opening and rubrics image checked."
+        },
+        {
+          "source_id": "chaldean-east-syriac:recognitio2014",
+          "locus": "p. 2",
+          "claim": "The Congregation exceptionally grants the proposed modifications recognitio ad quinquennium on 20 October 2014."
+        }
+      ],
+      "limitations": "The 35-page institutional PDF is not a full annual missal set. No complete transcription. Its 2015 PDF metadata does not replace the 2014 book date.",
+      "reception": "Patriarchal preface 27 October 2014 presents the trial order for the Chaldean Church. Authoritative direction and actual parish compliance remain distinct."
+    },
+    {
+      "id": "chaldean-east-syriac:baghdad2020",
+      "tradition_id": "chaldean-catholic",
+      "label": "Baghdad: revised collection with new Thomas order",
+      "date_label": "2020 collection; approval reported 20 November 2019",
+      "start_year": 2020,
+      "end_year": 2020,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Collection of Sunday/feast and weekday Apostles orders, Thomas order, and second anaphora; 2025 reprint used only as a later witness.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:chald-2020",
+        "eastern:chald-2025-reprint"
+      ],
+      "witness_label": "رُتب القداس بحسب الطقس الكلداني (Baghdad, 2020), witnessed by the official 2025 reprint Chaldean Catholic Missal",
+      "summary": "The collection incorporates a newly composed order named for Thomas alongside revised existing orders. The 2025 contents visibly separates Sunday/feast, weekday, Thomas, and second anaphora sections.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "chaldean-east-syriac:sako2025",
+          "locus": "تجديد2014–2020, paragraphs on the second anaphora and Thomas",
+          "claim": "Reports revision of Theodore, new Thomas order reviewed in 2019, confirmation 20 November 2019 and 2020 publication."
+        },
+        {
+          "source_id": "chaldean-east-syriac:taksa2025",
+          "locus": "Contents PDF 173; Thomas printed p. 81/PDF 87; preface iii–iv",
+          "claim": "Confirms contents and native Syriac/Arabic presentation of the later reprint."
+        },
+        {
+          "source_id": "chaldean-east-syriac:reprint2025",
+          "locus": "Opening notice",
+          "claim": "Identifies 2025 as reprint of the exhausted 2020 collection."
+        }
+      ],
+      "limitations": "Original 2020 impression and approval act not acquired. November 2025 notice loosely calls confirmation 2020; keep exact 2019 date attributed to Sako pending act inspection. 2025 typographic/linguistic corrections are not a separately proved reform.",
+      "reception": "Official patriarchal collection; publisher prescribes common use. Actual use in every eparchy is not established by publication. Arabic/Sureth/English translation histories remain separate."
+    }
+  ],
+  "transitions": [
+    {
+      "id": "chaldean-east-syriac:written-kushshaphe",
+      "from_stage": "chaldean-east-syriac:mar-eshaya",
+      "to_stage": "chaldean-east-syriac:diarbekir-hudra",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "The later Hudra writes private celebrant prayers absent from the earlier witness.",
+      "components": [
+        "anaphoras"
+      ],
+      "changes": [
+        {
+          "component": "anaphoras",
+          "before": "Kushshaphe not written in the Mar Eshaya anaphora.",
+          "after": "Kushshaphe are written in the twelfth-century Diarbekir Hudra.",
+          "locus_before": "Mar Eshaya anaphora, manuscript pp. 463–466",
+          "locus_after": "Diarbekir Hudra, Apostles anaphora",
+          "evidence": [
+            {
+              "source_id": "chaldean-east-syriac:macomber1966",
+              "locus": "pp. 344–347",
+              "claim": "Explicit comparison of the witnesses and caution about oral use versus written absence."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "chaldean-east-syriac:macomber1966",
+          "locus": "pp. 344–347",
+          "claim": "Source describes the difference and competing explanations."
+        }
+      ],
+      "limitations": "This is a witnessed textual difference, not a demonstrated direct revision or universal introduction. Mardin 22 (1287) continues to lack the prayers; no linear chronology of adoption is implied.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished"
+    },
+    {
+      "id": "chaldean-east-syriac:life-giving-gospel",
+      "from_stage": "chaldean-east-syriac:rome1767",
+      "to_stage": "chaldean-east-syriac:mosul1901",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "The Mosul intercession contains the life-giving Gospel phrase omitted in the Roman 1767 reading.",
+      "components": [
+        "anaphoras"
+      ],
+      "changes": [
+        {
+          "component": "anaphoras",
+          "before": "The words corresponding to through his life-giving Gospel are absent from Cr.",
+          "after": "The phrase is present in Cm; it also appears in the older manuscript text.",
+          "locus_before": "1767 Addai and Mari intercession, Cr in Macomber p. 366 line 53",
+          "locus_after": "1901 Addai and Mari intercession, Cm in the same apparatus",
+          "evidence": [
+            {
+              "source_id": "chaldean-east-syriac:macomber1966",
+              "locus": "p. 345 note 2; p. 366 line 53; p. 357 sigla",
+              "claim": "Cr is included among omissions; Cm is not. Author explains that recent Chaldean editions preserve the older reading here."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "chaldean-east-syriac:macomber1966",
+          "locus": "pp. 345, 357, 366",
+          "claim": "Bounded intercession variant, not a complete edition collation."
+        }
+      ],
+      "limitations": "Exact introduction date and direct 1767-to-1901 editorial dependence are unproved. The critical apparatus supports this one locus; original 1767 page images remain unavailable.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished"
+    },
+    {
+      "id": "chaldean-east-syriac:institution-repositioned",
+      "from_stage": "chaldean-east-syriac:mosul1901",
+      "to_stage": "chaldean-east-syriac:reform2007",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "The institution narrative moves from the opening post-Sanctus position to after the intercessions.",
+      "components": [
+        "anaphoras"
+      ],
+      "changes": [
+        {
+          "component": "anaphoras",
+          "before": "Institution narrative inserted after the opening thanks of the post-Sanctus prayer.",
+          "after": "Narrative placed after the intercessions, immediately before the epiclesis/anamnesis sequence described by Royel.",
+          "locus_before": "Mosul Cm, Macomber p. 363 note 10",
+          "locus_after": "Reformed anaphora described in Royel p. 20 note 48",
+          "evidence": [
+            {
+              "source_id": "chaldean-east-syriac:macomber1966",
+              "locus": "p. 363 note 10",
+              "claim": "Locates the Mosul insertion."
+            },
+            {
+              "source_id": "chaldean-east-syriac:royel2014",
+              "locus": "p. 20 note 48",
+              "claim": "Locates the reformed insertion after the intercessions."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "chaldean-east-syriac:jammo2006",
+          "locus": "Recognitio and Final Decision paragraphs",
+          "claim": "Identifies the reform’s approval and announced implementation chronology."
+        }
+      ],
+      "limitations": "No full native 2007 book collated. Intermediate 1936/1971 states remain uncollated; this comparison does not assert that every change occurred at once or that 2007 replaced 1901 everywhere.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished"
+    },
+    {
+      "id": "chaldean-east-syriac:opening-lord-prayer-removed",
+      "from_stage": "chaldean-east-syriac:mosul1901",
+      "to_stage": "chaldean-east-syriac:baghdad2014",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "text-collated",
+      "summary": "The 2014 Syriac opening omits the expanded Lord’s Prayer printed after the Gloria in 1901.",
+      "components": [
+        "ordinary"
+      ],
+      "changes": [
+        {
+          "component": "ordinary",
+          "before": "Gloria followed by the expanded Abun d-bashmayya, including the triple Holy interpolation and doxological repetition.",
+          "after": "The opening sequence, including a printed provision for Psalm 35, reaches Peace be with us and the opening prayer without the expanded Abun sequence.",
+          "locus_before": "1901 printed pp. 4–5, PDF 97–96",
+          "locus_after": "2014 printed p. 8, following preparation p. 7",
+          "evidence": [
+            {
+              "source_id": "chaldean-east-syriac:source-mosul1901",
+              "locus": "Printed pp. 4–5/PDF 97–96",
+              "claim": "Opening sequence read on the native page images."
+            },
+            {
+              "source_id": "chaldean-east-syriac:taksa2014",
+              "locus": "Printed p. 8",
+              "claim": "Native opening read on the page image."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "chaldean-east-syriac:lord-prayer2025",
+          "locus": "Question and answer on beginning/end repetitions",
+          "claim": "Official explanation dates the synodal deletion process to 2014–2019 and retains the pre-Communion position."
+        }
+      ],
+      "limitations": "This is a bounded comparison of two native openings, not full-book collation or proof of direct descent. Later official account supplies reform context. The closing deletion and retained Communion prayer were source-described, not independently collated here. No claim that deletion first occurred everywhere on the book’s publication date.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished"
+    },
+    {
+      "id": "chaldean-east-syriac:expanded-collection2020",
+      "from_stage": "chaldean-east-syriac:baghdad2014",
+      "to_stage": "chaldean-east-syriac:baghdad2020",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "The Apostles trial order is followed by a collection that revises Theodore and adds a newly composed Thomas order.",
+      "components": [
+        "anaphoras",
+        "ordinary"
+      ],
+      "changes": [
+        {
+          "component": "anaphoras",
+          "before": "The identified 2014 trial book contains the Apostles order.",
+          "after": "The subsequent collection includes a revised second anaphora and new Thomas order.",
+          "locus_before": "2014 title and 35-page identified book",
+          "locus_after": "2020 collection described by Sako; 2025 reprint contents and Thomas p. 81",
+          "evidence": [
+            {
+              "source_id": "chaldean-east-syriac:taksa2014",
+              "locus": "Title p. 1",
+              "claim": "Identifies the Apostles order."
+            },
+            {
+              "source_id": "chaldean-east-syriac:sako2025",
+              "locus": "تجديد2014–2020",
+              "claim": "Author describes the new Thomas composition and work on Theodore."
+            },
+            {
+              "source_id": "chaldean-east-syriac:taksa2025",
+              "locus": "Contents PDF 173; printed p. 81/PDF 87",
+              "claim": "Later printed witness has separate Thomas and second-anaphora sections."
+            }
+          ]
+        },
+        {
+          "component": "ordinary",
+          "before": "Apostles order presented as one trial booklet.",
+          "after": "Sunday/feast and weekday orders are printed as separate sections of the collection.",
+          "locus_before": "2014 book title",
+          "locus_after": "2025 contents: Sunday p. 5, weekday p. 45",
+          "evidence": [
+            {
+              "source_id": "chaldean-east-syriac:taksa2014",
+              "locus": "Title p. 1",
+              "claim": "Identifies the scope of the earlier book."
+            },
+            {
+              "source_id": "chaldean-east-syriac:taksa2025",
+              "locus": "Contents PDF 173",
+              "claim": "Separates Sunday and weekday sections."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "chaldean-east-syriac:sako2025",
+          "locus": "تجديد2014–2020",
+          "claim": "Describes collection development and 2020 printing."
+        },
+        {
+          "source_id": "chaldean-east-syriac:reprint2025",
+          "locus": "Opening notice",
+          "claim": "Identifies the later book as reprint of 2020."
+        }
+      ],
+      "limitations": "Evidence level applies to substantive original reform as described by its author; no complete 2014/2020 native-text collation. Do not treat Theodore’s absence from the 2014 Apostles booklet as its abolition, nor the new Thomas title as ancient apostolic authorship. Arabic wording changes alone are not native Syriac changes.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed"
+    }
+  ],
+  "gaps": [
+    {
+      "id": "chaldean-east-syriac:gap-early-codices",
+      "tradition_id": "east-syriac-ancestral",
+      "period": "tenth–thirteenth centuries",
+      "missing": "Direct manuscript images and current repository identifiers for Mar Eshaya, Diarbekir Hudra and Mardin 22; precise layer separation.",
+      "next_source": "Macomber 1966 pp. 340–354; Centre numérique des manuscrits orientaux/Ankawa and HMML catalogues. Sako 2025 reports an electronic Mar Eshaya copy from the Ankawa manuscript centre.",
+      "consequence": "Critical-edition evidence establishes bounded written states; no manuscript-level transcription or complete stemma is claimed."
+    },
+    {
+      "id": "chaldean-east-syriac:gap-early-catholic",
+      "tradition_id": "chaldean-catholic",
+      "period": "sixteenth–eighteenth centuries",
+      "missing": "Catholic manuscript revisions before 1767, including the Joseph I 1697 witness and original 1767 institution/fraction pages.",
+      "next_source": "Renaudot, Liturgiarum orientalium collectio II, p. 593 for the reported Joseph I 1697 witness; Russian State Library ЗВ 10-8/10 complete 1767 digitization; HMML APSTCH EMAP07 00002.",
+      "consequence": "No invented 1552/1697 complete-missal stage; Catholic reception and institution-placement claims await direct or critical verification."
+    },
+    {
+      "id": "chaldean-east-syriac:gap-1767-acquisition",
+      "tradition_id": "chaldean-catholic",
+      "period": "1767",
+      "missing": "Full native page access, including title, Addai and Mari pp. 280–286, fraction, and borrowed prayers.",
+      "next_source": "Russian State Library reader: https://kp.rusneb.ru/item/reader/missale-chaldaicum-ex-decreto-sacrae-congregationis-de-propaganda-fide-editum ; HMML Reading Room 882047.",
+      "consequence": "Only critical-apparatus variants and institutional identity are established; no full 1767/1901 collation."
+    },
+    {
+      "id": "chaldean-east-syriac:gap-1890-1971",
+      "tradition_id": "chaldean-catholic",
+      "period": "1890–1971",
+      "missing": "Identity and text of the Urmia 1890 book cited by Sako, the 1936 Mosul reprint, and the 1971 synodal revision copied by Toma Hanuna; exact removed prayers.",
+      "next_source": "Sako, 27 August 2025, طبعات الرتبة; original Urmia 1890 title image linked there; Macomber’s Cr/Cm01/Cm36 apparatus; Vincent Van Vossel, The Chaldean Mass Over 50 Years (Baghdad, 2025), cited by Sako.",
+      "consequence": "Urmia 1876 remains a collateral ritual, not a Catholic Mass stage. Macomber’s 1890 Anglican witness must not automatically be equated with Sako’s Paul Bedjan reference. The 1971 revision is a specific acquisition lead, without a fabricated changed locus."
+    },
+    {
+      "id": "chaldean-east-syriac:gap-2007-book-reception",
+      "tradition_id": "chaldean-catholic",
+      "period": "2005–2007 and implementation",
+      "missing": "Approved native Syriac Taksa, original recognitio of 18 February 2006, synodal statement and local adoption evidence; reconciliation of Jammo and Sako’s accounts.",
+      "next_source": "Najm Al-Mashriq 46 (2006), pp. 161–163; Congregation letter of 18 February 2006; St Peter Chaldean Eparchy’s original Taksa and publication archive.",
+      "consequence": "The 2007 stage is described by sources with qualified reception; downloaded English aids do not satisfy native source acquisition."
+    },
+    {
+      "id": "chaldean-east-syriac:gap-2020-act",
+      "tradition_id": "chaldean-catholic",
+      "period": "2019–2020",
+      "missing": "Original 2020 impression and confirmation act; exact approval date and changes between the 2014 trial, 2020 collection and 2025 reprint.",
+      "next_source": "Chaldean Patriarchate’s original Baghdad 2020 رُتب القداس; Holy See letter reported as 20 November 2019; complete 2025 official reprint already downloaded.",
+      "consequence": "The author describes the new Thomas order, witnessed in the later reprint. Exact 2020 wording cannot simply be copied back from 2025. The conflicting 2019/2020 confirmation dating remains attributed."
+    },
+    {
+      "id": "chaldean-east-syriac:gap-translations",
+      "tradition_id": "chaldean-catholic",
+      "period": "1936–present",
+      "missing": "Independent history of Arabic, Sureth, English and French translations, including the earlier 1936 Arabic booklet and exact identity of the 2022 Fides lead.",
+      "next_source": "Sako 2025 names Suleiman Sayegh’s 1936 Arabic booklet and the 1982 Yashuran French edition. Compare the original 2020 collection with Fides71516 before merging catalogue records.",
+      "consequence": "Translation is not counted as original Syriac reform. The apparent 2020 addition of apostolic transmission is excluded: the same Syriac clause appears in 2014 p. 25 and 2025 p. 26 while the Arabic wording changes."
+    }
+  ]
+}

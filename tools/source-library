@@ -39,7 +39,7 @@ EXAMPLES = {
         Example(
             "tools/source-library validate",
             (
-                "source-library valid: artifact=2963 corpus=5 edition=1078 passage=5283 segment=99 work=942 bindi... [+8 chars]",
+                "source-library valid: artifact=3068 corpus=5 edition=1109 passage=5352 segment=103 work=963 bind... [+9 chars]",
             ),
         ),
         Example(
@@ -1924,6 +1924,50 @@ def _validate_passage_locators(library: Library) -> None:
             library.error(record.path, "transcription_segments do not reproduce text exactly after whitespace joining")
 
 
+def _owned_history_inventory(library: Library, entry: Path, relative: Path) -> bool:
+    """Recognize two exact editorial JSON owners, never a general JSON exemption.
+
+    This checks ownership envelopes only. The history command owns the dossier
+    evidence and reference checks; this tool owns neither historical assertions
+    nor a second copy of that validator. These are not external artifacts.
+    """
+    # tools/act-history is the independent semantic owner, not an invoked
+    # dependency: its text adapters already depend on this source validator.
+    if (len(relative.parts) == 3 and relative.parts[:2] == ("inventories", "eucharistic-stages")
+            and entry.suffix == ".json" and KEBAB_PATTERN.fullmatch(entry.stem)):
+        record_type, identity = "eucharistic-book-stages", "dossier_id"
+        arrays = ("traditions", "sources", "stages", "transitions", "gaps")
+    elif relative == Path("inventories/eucharistic-stage-coverage-v1.json"):
+        record_type, identity = "eucharistic-book-stage-coverage-audit", "audit_id"
+        arrays = ("inputs", "sources")
+    else:
+        return False
+
+    def object_unique(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise ValueError(f"duplicate JSON key {key!r}")
+            result[key] = value
+        return result
+
+    def invalid_constant(value):
+        raise ValueError(f"invalid JSON number {value}")
+
+    try:
+        data = json.loads(entry.read_text(encoding="utf-8"), object_pairs_hook=object_unique,
+                          parse_constant=invalid_constant)
+    except (OSError, ValueError) as error:
+        library.error(entry, f"owned history inventory must be valid JSON: {error}")
+        return True
+    if (not isinstance(data, dict) or type(data.get("schema_version")) is not int
+            or data["schema_version"] != 1 or data.get("record_type") != record_type
+            or not _is_string(data.get(identity)) or not _is_string(data.get("title"))
+            or any(not isinstance(data.get(key), list) for key in arrays)):
+        library.error(entry, f"expected schema_version=1 {record_type} ownership envelope")
+    return True
+
+
 def _validate_source_tree(library: Library) -> None:
     """Reject files that evade a manifest, schema, or inventory owner."""
 
@@ -1952,6 +1996,8 @@ def _validate_source_tree(library: Library) -> None:
         if relative.parts[0] == "schema" and entry.suffix in {".json", ".md", ".toml"}:
             continue
         if relative.parts[0] == "inventories" and entry.suffix in {".md", ".toml"}:
+            continue
+        if _owned_history_inventory(library, entry, relative):
             continue
         # Bible, calendar and commentary records are tracked sources with their
         # own validators (index-bible, check-calendar-masses, citations); the

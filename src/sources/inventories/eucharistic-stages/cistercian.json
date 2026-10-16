@@ -1,0 +1,282 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-stages",
+  "dossier_id": "cistercian-1606-1657",
+  "title": "Cistercian further Roman correction: 1606 and 1657 paired witnesses",
+  "traditions": [
+    {
+      "id": "cistercian",
+      "label": "Cistercian",
+      "family": "Latin religious-order uses",
+      "scope": "Printed missals of the Cistercian Order",
+      "coverage_note": "Two early modern revised states; three complete Ordinary prayer pairs. Their prefaces describe the broader reforms."
+    }
+  ],
+  "sources": [
+    {
+      "id": "cistercian-1606-1657-1606-book",
+      "title": "Missale ad usum Sacri Ordinis Cisterciensis (Paris, 1606)",
+      "url": "https://www.digitale-sammlungen.de/en/view/bsb10496382",
+      "kind": "primary-book",
+      "inspection": "BSB 2 Liturg. 205 a, bsb10496382: title canvas 1; Annotanda canvases 27–28; printed pp. 180–181, canvases 234–235; Good Friday p. 107, canvas 157; Easter p. 117, canvas 169. Holy Saturday printed pp. 114–115, canvases 166–167.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Selected pages inspected; no complete-book collation."
+    },
+    {
+      "id": "cistercian-1606-1657-1657-book",
+      "title": "Missale Cisterciense iuxta Romani recogniti correctionem (Paris, 1657)",
+      "url": "https://digital.fides.org.pl/dlibra/publication/3978/edition/3755/content",
+      "kind": "primary-book",
+      "inspection": "FIDES 3755: page-file 0005 title; 0007–0008 Vaussin mandate; 0009 Monitum; 0045 Ritus celebrandi; 0231 printed p. 169; 0234–0236 printed pp. 172–174; 0230 Holy Saturday p. 168; 0350 printed p. 284. Holy Saturday p. 168 specifically compared against 1606 p. 115.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Selected pages inspected; no complete-book collation."
+    },
+    {
+      "id": "cistercian-1606-1657-1606-catalogue",
+      "title": "USUARIUM Missale Cisterciense 422",
+      "url": "https://usuarium.elte.hu/book/422/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Title, date 1606, shelfmark BSB 2 Liturg. 205 a, and contents; direct BSB identity matched to the title image.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "USUARIUM page numbers do not reliably equal BSB canvas indices; cite the BSB canvas and printed page together. The catalogue printer shorthand Marnef is clarified by the actual title: office H. de Marnef, Dionysia Cavellat."
+    },
+    {
+      "id": "cistercian-1606-1657-1657-metadata",
+      "title": "FIDES Missale Cisterciense 1657 object record",
+      "url": "https://digital.fides.org.pl/dlibra/publication/3978/edition/3755/content",
+      "kind": "institutional-catalogue",
+      "inspection": "Date 1657; Latin; old print; Krzeszów Benedictine abbey; shelfmark OSB Missale_Cisterciense_1657; public domain; unrestricted access.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "The rights metadata applies to the object; selected DjVu pages are retained, not the whole book."
+    }
+  ],
+  "stages": [
+    {
+      "tradition_id": "cistercian",
+      "date_kind": "publication",
+      "status": "documented",
+      "text_coverage": "partial",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "rubrics",
+        "calendar",
+        "lectionary",
+        "chant"
+      ],
+      "id": "cistercian-1606-1657-1606",
+      "label": "1606 Romanizing Cistercian missal",
+      "date_label": "1606",
+      "start_year": 1606,
+      "end_year": 1606,
+      "scope": "Printed order missal implementing Roman conformity in the Canon while retaining Cistercian usages elsewhere.",
+      "witness_ids": [
+        "western:cistercian-1606"
+      ],
+      "witness_label": "Missale ad usum Sacri Ordinis Cisterciensis, Paris, Dionysia Cavellat, 1606; BSB 2 Liturg. 205 a",
+      "summary": "The 1606 Annotanda attributes full Roman conformity in the Canon to the 1601 and 1605 general chapters, and conformity elsewhere only as proper Cistercian use allows. The printed Ordinary still has a short Confiteor, a combined Suscipe Trinitas offering, and Orate/Dominus sit response.",
+      "evidence": [
+        {
+          "source_id": "cistercian-1606-1657-1606-book",
+          "locus": "Annotanda opening, canvas 27",
+          "claim": "Explicit reforms of the 1601 and 1605 chapters; full conformity in the Canon, limited conformity elsewhere."
+        },
+        {
+          "source_id": "cistercian-1606-1657-1606-book",
+          "locus": "Printed 180–181, canvases 234–235",
+          "claim": "Three bounded prayer units directly transcribed from page images."
+        }
+      ],
+      "limitations": "This is already a revised state, not a proxy for all medieval Cistercian practice. The exact 1606 witness has now been split from the earlier broad printed-witness cluster. No claim that every decree of 1601 or 1605 was fully received locally.",
+      "reception": "The book identifies itself as for the Cistercian Order and invokes chapter authority; no monastery-by-monastery reception census has been made."
+    },
+    {
+      "tradition_id": "cistercian",
+      "date_kind": "publication",
+      "status": "documented",
+      "text_coverage": "partial",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "rubrics",
+        "calendar",
+        "lectionary",
+        "chant"
+      ],
+      "id": "cistercian-1606-1657-1657",
+      "label": "1657 further Roman correction",
+      "date_label": "1657",
+      "start_year": 1657,
+      "end_year": 1657,
+      "scope": "Printed Cistercian missal following the 1651 commission; a substantially Romanized Ordinary while retaining order-specific material.",
+      "witness_ids": [
+        "western:cistercian-1657"
+      ],
+      "witness_label": "Missale Cisterciense iuxta Romani recogniti correctionem, Paris, Sebastianus and Gabriel Cramoisy, 1657; Krzeszów copy, FIDES 3755",
+      "summary": "The Ordinary enlarges the Confiteor with named saints including Bernard and triple culpa; replaces the old Orate and response; prints separate host and chalice offerings and a revised Suscipe Trinitas after Lavabo. The Monitum reports reordered Pentecost-to-Advent Sunday Masses and Roman rubrics, but expressly retains differences in the graduals.",
+      "evidence": [
+        {
+          "source_id": "cistercian-1606-1657-1657-book",
+          "locus": "Mandate, page-files 0007–0008; signed Paris, 3 July 1655",
+          "claim": "The general chapter held in May 1651 authorized three learned men to correct the books; the 1655 mandate extends the printing privilege."
+        },
+        {
+          "source_id": "cistercian-1606-1657-1657-book",
+          "locus": "Monitum, page-file 0009",
+          "claim": "Primary description of the new revision; retained graduals prevent complete Roman imitation."
+        },
+        {
+          "source_id": "cistercian-1606-1657-1657-book",
+          "locus": "Printed pp. 169, 172–174; page-files 0231, 0234–0236",
+          "claim": "Three complete paired prayers and their position in the offertory read from images."
+        }
+      ],
+      "limitations": "The 1651 commission, 1655 mandate, and 1657 publication are distinct dates. The inspected 1655 instrument is not a universal effective-date decree. The Monitum historical catalogue of earlier defects must not all be assigned specifically to 1606.",
+      "reception": "The Cistercian superior authorizes the edition and printing monopoly; this is evidence of intended order use, not uniform local implementation."
+    }
+  ],
+  "transitions": [
+    {
+      "id": "cistercian-1606-1657-revision",
+      "from_stage": "cistercian-1606-1657-1606",
+      "to_stage": "cistercian-1606-1657-1657",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "text-collated",
+      "summary": "Further Romanization changes three complete Ordinary prayer units and the printed Holy Saturday ending: expanded Confiteor, replaced Orate and response, revised and relocated Suscipe Trinitas, and relocation of Spiritum nobis from a Postcommunio heading to the integrated Vespers sequence.",
+      "components": [
+        "ordinary",
+        "rubrics"
+      ],
+      "changes": [
+        {
+          "component": "ordinary",
+          "before": "Confíteor Deo, & beátæ Maríæ, & ómnibus Sanctis, & vobis, fratres: quia peccáui nimis, cogitatióne, locutióne & ópere, mea culpa. Ideo, precor vos, oráte pro me.",
+          "after": "Confíteor Deo omnipoténti, B. Maríæ semper vírgini, B. Michaéli Archángelo, B. Ioánni Baptístæ, sanctis Apóstolis Petro & Paulo, B. Bernárdo, ómnibus sanctis, & vobis fratres: quia peccáui nimis cogitatióne, verbo, & ópere. mea culpa, mea culpa, mea máxima culpa. Ideò precor B. Maríam semper vírginem, B. Michaélem Archángelum, B. Ioánnem Baptístam, sanctos Apóstolos Petrum & Paulum, beátum Bernárdum, omnes sanctos, & vos fratres, oráre pro me ad Dóminum Deum nostrum.",
+          "locus_before": "1606 printed 180, left column; 1606-page-234.jpg",
+          "locus_after": "1657 printed 169, right column; 1657-page-0231.djvu.review.jpg",
+          "evidence": [
+            {
+              "source_id": "cistercian-1606-1657-1606-book",
+              "locus": "printed 180",
+              "claim": "Invocation expands to named saints including Bernard; locutione becomes verbo; single mea culpa becomes threefold with chest-striking rubric; appeal expands to saints and brethren."
+            },
+            {
+              "source_id": "cistercian-1606-1657-1657-book",
+              "locus": "printed 169",
+              "claim": "Invocation expands to named saints including Bernard; locutione becomes verbo; single mea culpa becomes threefold with chest-striking rubric; appeal expands to saints and brethren."
+            }
+          ]
+        },
+        {
+          "component": "ordinary",
+          "before": "Oráte, fratres, pro me peccatóre: vt meum páriter ac vestrum in conspéctu Dómini acceptábile fiat sacrifícium.\nDóminus sit in corde tuo & in lábiis tuis, suscipiátque de mánibus tuis sacrifícium istud: & oratiónes tuæ ascéndant in memóriam ante Deum pro nostra, & totíus pópuli salúte. Amen.",
+          "after": "Oráte fratres, vt meum ac vestrum sacrifícium acceptábile fiat apud Deum patrem omnipoténtem.\nSuscípiat Dóminus sacrifícium de mánibus tuis (vel meis) ad laudem & glóriam nóminis sui, ad vtilitátem quoque nostram, totiúsque Ecclésiæ suæ sanctæ.\nAmen.",
+          "locus_before": "1606 printed 181, right column; 1606-page-235.jpg",
+          "locus_after": "1657 printed 174, right column; 1657-page-0236.djvu.review.jpg",
+          "evidence": [
+            {
+              "source_id": "cistercian-1606-1657-1606-book",
+              "locus": "printed 181",
+              "claim": "Invitation drops pro me peccatore, pariter and in conspectu Domini; response Dominus sit in corde tuo is replaced by Suscipiat Dominus; 1657 provides minister/self-response alternatives."
+            },
+            {
+              "source_id": "cistercian-1606-1657-1657-book",
+              "locus": "printed 174",
+              "claim": "Invitation drops pro me peccatore, pariter and in conspectu Domini; response Dominus sit in corde tuo is replaced by Suscipiat Dominus; 1657 provides minister/self-response alternatives."
+            }
+          ]
+        },
+        {
+          "component": "ordinary",
+          "before": "Súscipe Sancta Trínitas vnus Deus hanc oblatiónem: quam tibi offérimus in memóriam beátæ passiónis, resurrectiónis, & ascensiónis Dómini nostri Iésu Christi, & in honórem beátæ Maríæ semper Vírginis genitrícis eiúsdem Dómini nostri, & ómnium Sanctórum & Sanctárum, cœléstium virtútum, & viuíficæ Crucis: vt eam acceptáre dignéris pro nobis peccatóribus, & pro animábus ómnium fidélium defunctórum. Qui viuis & regnas Deus. Per ómnia sǽcula.",
+          "after": "Súscipe sancta Trínitas, hanc oblatiónem, quam tibi offérimus ob memóriam passiónis, resurrectiónis, & ascensiónis Iesu Christi Dómini nostri: & in honóre beátæ Maríæ semper vírginis, & beáti Ioánnis Baptístæ, & sanctórum Apostolórum Petri & Pauli, & istórum, & ómnium Sanctórum: vt illis profíciat ad honórem, nobis autem ad salútem: & illi pro nobis intercédere dignéntur in cælis, quorum memóriam ágimus in terris. Per eúmdem Christum Dóminum nostrum. Amen.",
+          "locus_before": "1606 printed 181, right column; 1606-page-235.jpg",
+          "locus_after": "1657 printed 174, left bottom continuing right top column; 1657-page-0236.djvu.review.jpg",
+          "evidence": [
+            {
+              "source_id": "cistercian-1606-1657-1606-book",
+              "locus": "printed 181",
+              "claim": "Combined paten/chalice offering prayer is replaced in placement and wording: 1657 prayer follows separate host/chalice offerings and Lavabo; omits unus Deus, female saints/heavenly powers/Cross and explicit departed petition, adds named saints and intercession ending."
+            },
+            {
+              "source_id": "cistercian-1606-1657-1657-book",
+              "locus": "printed 174",
+              "claim": "Combined paten/chalice offering prayer is replaced in placement and wording: 1657 prayer follows separate host/chalice offerings and Lavabo; omits unus Deus, female saints/heavenly powers/Cross and explicit departed petition, adds named saints and intercession ending."
+            }
+          ]
+        },
+        {
+          "component": "rubrics",
+          "before": "Pax Dómini. dicitur sed non Agnus Dei. Postcommunio. Spíritum nobis, Dómine, tuæ charitátis infúnde …",
+          "after": "Dicitur, Pax Dómini sit semper vobíscum. sed pacis osculum non datur. Agnus Dei, non dicitur, nec Postcommun. dicuntur tamen tres consuetæ Orationes ante Communionem. [After the Vespers psalm and Magnificat:] Spíritum nobis, Dómine, tuæ caritátis infúnde …",
+          "locus_before": "1606 printed p. 115, right column; BSB canvas 167",
+          "locus_after": "1657 printed p. 168, both columns; FIDES page-file 0230",
+          "evidence": [
+            {
+              "source_id": "cistercian-1606-1657-1606-book",
+              "locus": "In vigilia Paschae, p. 115",
+              "claim": "The Holy Saturday ending changes presentation and rubrics: the 1606 book labels Spiritum nobis as Postcommunio; the 1657 book explicitly omits Postcommunio and supplies the same prayer after integrated Vespers. This is not proof that Cistercians omitted Vespers in 1606."
+            },
+            {
+              "source_id": "cistercian-1606-1657-1657-book",
+              "locus": "Sabbato Sancto, p. 168",
+              "claim": "The Holy Saturday ending changes presentation and rubrics: the 1606 book labels Spiritum nobis as Postcommunio; the 1657 book explicitly omits Postcommunio and supplies the same prayer after integrated Vespers. This is not proof that Cistercians omitted Vespers in 1606."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "cistercian-1606-1657-1606-book",
+          "locus": "Annotanda, canvas 27–28",
+          "claim": "The earlier state already implements Roman conformity under the chapters of 1601 and 1605."
+        },
+        {
+          "source_id": "cistercian-1606-1657-1657-book",
+          "locus": "Monitum, page-file0009",
+          "claim": "The 1651 chapter ordered renewed revision; the editor claims a closer Roman form but retains differences in the graduals."
+        }
+      ],
+      "limitations": "Text-collated applies to three complete prayer units, their local rubrics, and the Holy Saturday ending on the identified pages. The Holy Saturday quotations are bounded excerpts, not complete service transcriptions. Wider calendar, lectionary, and chant changes have primary-description evidence and have not been exhaustively collated. This is an institutional Cistercian revision relation, not proof that the 1657 typesetter directly copied this particular 1606 edition. All six complete prayer bodies have passed independent image review; one printed accent was corrected. The Holy Saturday rubrics remain a separate bounded review.",
+      "comparison_ids": [
+        "cistercian-1606-1657-confiteor",
+        "cistercian-1606-1657-suscipe-trinitas",
+        "cistercian-1606-1657-orate-response"
+      ],
+      "historical_parentage": "attributed"
+    }
+  ],
+  "gaps": [
+    {
+      "id": "cistercian-1606-1657-pre1606",
+      "tradition_id": "cistercian",
+      "period": "Before 1606",
+      "missing": "Complete paired medieval or 1486–1487 Ordinary against 1606, and original chapter acts of 1601 and 1605.",
+      "next_source": "USUARIUM 423 early printed missal; editions of the chapter acts for 1601 and 1605; BL Add. 46203 and Fribourg L158.",
+      "consequence": "Cannot treat 1606 as an unchanged medieval baseline or date the first introduction of every Romanizing element."
+    },
+    {
+      "id": "cistercian-1606-1657-wide-revision",
+      "tradition_id": "cistercian",
+      "period": "1606–1657",
+      "missing": "Complete collation of Pentecost-to-Advent readings, new feasts, exceptions in the graduals, and the Holy Week sequence.",
+      "next_source": "1606 BSB bsb10496382 temporale and calendar; 1657 FIDES 3755 Monitum and the complete corresponding sections.",
+      "consequence": "The Monitum supports claims labelled primary-description; three complete Ordinary prayer pairs and the bounded Holy Saturday ending have direct paired image inspection."
+    },
+    {
+      "id": "cistercian-1606-1657-reception",
+      "tradition_id": "cistercian",
+      "period": "1651–later seventeenth century",
+      "missing": "Local reception chronology and binding effective-date instruments.",
+      "next_source": "Cistercian general chapter acts from 1651 onward, house book inventories, and correction orders.",
+      "consequence": "Publication does not prove instant uniform replacement throughout the Order."
+    }
+  ]
+}

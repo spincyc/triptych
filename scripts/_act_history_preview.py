@@ -1,8 +1,9 @@
-"""A printable review preview of the existing browser's act-history geometry.
+"""Printable review previews of the shared history browser models.
 
 This is not the accepted LOOM production plate. The canonical DOT owns graph
-facts and monochrome styles; the structure projection owns station evidence;
-history.js owns layout and connector geometry. No layout is copied here.
+facts and monochrome styles for legacy act routes. Source projections own
+station and chronological stage evidence; history.js owns year positions and
+connector geometry. No layout is copied here.
 """
 from __future__ import annotations
 
@@ -26,6 +27,7 @@ NS = "http://www.w3.org/2000/svg"
 ET.register_namespace("", NS)
 ATTR = re.compile(r'(\w+)=("(?:[^"\\]|\\.)*")')
 ROW = re.compile(r'^  ("(?:[^"\\]|\\.)*")(?: -- ("(?:[^"\\]|\\.)*"))? \[(.*)\];$')
+RTL_RUN = re.compile(r'[\u0590-\u08ff][\u0590-\u08ff\s0-9–—,:;./-]*')
 BROWSER_GEOMETRY = r"""
 const fs = require('node:fs');
 const vm = require('node:vm');
@@ -48,7 +50,8 @@ const context = vm.createContext({T:{stationKind:{}}});
 vm.runInContext(model + '\n' + sizes + '\n' + connector +
   '\nglobalThis.layout=M.layout; globalThis.extent=M.extent;' +
   'globalThis.connector=connector; globalThis.sizes={COL,ROW,PAD};' +
-  'globalThis.panels=M.panelLayout; globalThis.overview=M.overviewModel; globalThis.network=M.networkLayout; globalThis.networkStyle=M.networkStyle;', context);
+  'globalThis.panels=M.panelLayout; globalThis.overview=M.overviewModel; globalThis.network=M.networkLayout; globalThis.networkStyle=M.networkStyle;' +
+  'globalThis.stageLayout=M.stageLayout; globalThis.stageStyle=M.stageStyle;', context);
 const positions = context.layout(input.stations);
 const {COL,ROW,PAD} = context.sizes;
 const nodes = input.stations.map(s => {
@@ -64,7 +67,10 @@ const overview = input.catalogue ? context.overview(input.catalogue) : {groups:[
 if (input.catalogue && typeof context.network !== 'function') throw Error('Browser network layout extraction contract changed');
 const network = input.catalogue ? context.network(input.catalogue) : [];
 const network_styles = Object.fromEntries(overview.relations.map(r => [r.kind,context.networkStyle(r.kind)]));
-process.stdout.write(JSON.stringify({nodes,edges,panels,overview,network,network_styles,extent:context.extent(positions),sizes:context.sizes}));
+const history = input.catalogue && input.catalogue.stage_history;
+if (history && typeof context.stageLayout !== 'function') throw Error('Browser stage layout extraction contract changed');
+const chronology = history ? (input.stage_options || [{}]).map(options => context.stageLayout(history, options)) : [];
+process.stdout.write(JSON.stringify({nodes,edges,panels,overview,network,network_styles,chronology,extent:context.extent(positions),sizes:context.sizes}));
 """
 
 
@@ -107,10 +113,12 @@ def plate_records(source: str) -> tuple[list[dict], list[dict]]:
     return nodes, edges
 
 
-def browser_geometry(spine: dict, browser_source: Path, catalogue: dict | None = None) -> dict:
+def browser_geometry(spine: dict, browser_source: Path, catalogue: dict | None = None,
+                     stage_options: list[dict] | None = None) -> dict:
     source = browser_source.read_text(encoding="utf-8")
     result = run([executable("node"), "-e", BROWSER_GEOMETRY],
-                 input=json.dumps({"source": source, "stations": spine["stations"], "lines": spine.get("lines", []), "catalogue": catalogue}))
+                 input=json.dumps({"source": source, "stations": spine["stations"], "lines": spine.get("lines", []),
+                                   "catalogue": catalogue, "stage_options": stage_options}))
     geometry = json.loads(result.stdout)
     geometry["browser_sha256"] = hashlib.sha256(source.encode()).hexdigest()
     return geometry
@@ -126,7 +134,16 @@ def element(parent, name, value=None, **attrs):
 
 def text(parent, x, y, value, size=27, weight="normal", anchor="start",
          family="DejaVu Sans"):
-    return element(parent, "text", value, x=x, y=y, font_size=size,
+    # Isolate a source-language title from adjacent English date punctuation.
+    # Numeric ranges remain left-to-right inside an otherwise RTL quotation.
+    def isolate(match):
+        run = match.group(0)
+        body = run.rstrip(" \t\n–—,:;./-")
+        tail = run[len(body):]
+        body = re.sub(r'[0-9]+(?:[–—/-][0-9]+)*', lambda number: '\u2066' + number.group(0) + '\u2069', body)
+        return '\u2067' + body + '\u2069' + tail
+    display = RTL_RUN.sub(isolate, value)
+    return element(parent, "text", display, x=x, y=y, font_size=size,
                    font_family=family, font_weight=weight, text_anchor=anchor, fill="#171717")
 
 
@@ -143,12 +160,17 @@ def write_svg(svg, path):
 
 
 def render_preview(*, plate_path: Path, spine: dict, out_dir: Path,
-                   browser_source: Path, catalogue: dict | None = None) -> dict:
+                   browser_source: Path, catalogue: dict | None = None, view: str = "auto") -> dict:
     """Render accepted routes and a separately labelled research overview.
 
     Catalogue relationships never become act parents or station identities.
     The browser owns panel topology; this helper only paginates and labels it.
     """
+    if view not in ("auto", "chronology", "legacy"):
+        raise PreviewError("preview view must be auto, chronology or legacy")
+    history = (catalogue or {}).get("stage_history") if view != "legacy" else None
+    if view == "chronology" and history is None:
+        raise PreviewError("chronological preview needs stage_history")
     renderer, joiner = executable("rsvg-convert"), executable("pdfunite")
     slice_id = str(spine.get("slice", ""))
     if not re.fullmatch(r"[a-z0-9][a-z0-9-]*", slice_id):
@@ -173,7 +195,18 @@ def render_preview(*, plate_path: Path, spine: dict, out_dir: Path,
         for reception in station.get("receptions", []):
             if reception.get("from") not in station.get("parents", []):
                 raise PreviewError("reception does not name a recorded parent")
-    geometry = browser_geometry(spine, browser_source, catalogue)
+    stage_requests = _stage_requests(history) if history else None
+    geometry = browser_geometry(spine, browser_source, catalogue, stage_requests)
+    if history:
+        dense = {lane["id"] for model in geometry["chronology"] for lane in model["lanes"]
+                 if lane["height"] > 860
+                 or len(lane["nodes"]) >= 4 and model["end"] - model["start"] > 500}
+        if dense:
+            stage_requests = _stage_requests(history, dense)
+            geometry = browser_geometry(spine, browser_source, catalogue, stage_requests)
+        page_requests = _stage_page_requests(history, geometry["chronology"], stage_requests)
+        if page_requests != stage_requests:
+            geometry = browser_geometry(spine, browser_source, catalogue, page_requests)
     position = {n["id"]: n for n in geometry["nodes"]}
     actual = {(e["from"], e["to"]) for e in geometry["edges"]}
     if (set(position) != set(stations) or len(position) != len(geometry["nodes"])
@@ -206,6 +239,9 @@ def render_preview(*, plate_path: Path, spine: dict, out_dir: Path,
     graph_fields = {key: json.loads(value) for key, value in ATTR.findall(graph_row)}
     twin = urlsplit(graph_fields.get("url", "").split(" ")[0])
     catalogue_url = urlunsplit((twin.scheme, twin.netloc, twin.path, "view=catalogue", ""))
+    if history is not None:
+        return _render_chronology(history, geometry, spine, catalogue, out_dir, parts, plate_hash,
+                                  catalogue_url, renderer, joiner, isolated_count)
     detail_pages, station_sheets, panel_sheets = _detail_pages(panels, stations, numbers, edges, styles, slice_id)
     overview_pages = _overview_pages(geometry["overview"], panels, panel_sheets, styles, slice_id,
                                      len(stations), len(edges), isolated_count, reception_count, plate_hash, catalogue_url)
@@ -288,7 +324,7 @@ def _page(title, key, slice_id, subtitle):
     wrapped(page, 45, 73, subtitle, width=108, size=11, leading=15)
     element(page, "line", x1=45, y1=1048, x2=749, y2=1048, stroke="#b3b7bb")
     text(page, 45, 1073, "REVIEW PREVIEW · " + slice_id + " · " + key, 11, "bold")
-    text(page, 45, 1094, "Source and geometry shared with the browser. Not an accepted LOOM production plate.", 10)
+    text(page, 45, 1094, "Read each source's scope and limitations before treating a connection as established.", 10)
     return page
 
 
@@ -841,6 +877,549 @@ def _catalogue(spine, numbers, edges, parts, title, station_sheets=None, station
     paths = []
     for i, page in enumerate(pages, 1):
         path = parts / f"catalogue-{i:02d}.svg"
+        write_svg(page, path)
+        paths.append(path)
+    return paths
+
+
+def _stage_keys(history):
+    """Keys are source-order references, never chronological ranks."""
+    return {table: {row["id"]: f"{prefix}{i:03d}" for i, row in enumerate(history.get(table, []), 1)}
+            for table, prefix in (("stages", "S"), ("transitions", "T"), ("sources", "C"), ("gaps", "G"))}
+
+
+def _stage_requests(history, dense_traditions=None):
+    """Use explicit dated windows, split only between disjoint date bounds."""
+    requests = []
+    traditions = history.get("traditions", [])
+    default_id = history.get("default_tradition_id")
+    default_family = next((row.get("family") for row in traditions if row["id"] == default_id), None)
+    if default_family is not None:
+        traditions = ([row for row in traditions if row.get("family") == default_family]
+                      + [row for row in traditions if row.get("family") != default_family])
+    for tradition in traditions:
+        dated = sorted((row for row in history.get("stages", []) if row["tradition_id"] == tradition["id"]
+                        and row.get("start_year") is not None and row.get("end_year") is not None),
+                       key=lambda row: (row["start_year"], row["end_year"]))
+        options = {"tradition": tradition["id"], "includeProvisional": True, "width": 1600, "compact": True}
+        if not dated:
+            requests.append(options)
+            continue
+        if tradition["id"] not in (dense_traditions or set()):
+            start, end = min(row["start_year"] for row in dated), max(row["end_year"] for row in dated)
+            padding = max(5, round((end - start) * .04))
+            requests.append({**options, "start": start - padding, "end": end + padding})
+            continue
+        # Overlapping uncertainty intervals cannot be split across sheets as
+        # though they were known dates. Connected intervals stay together.
+        blocks = []
+        for row in dated:
+            if not blocks or row["start_year"] > blocks[-1]["end"]:
+                blocks.append({"start": row["start_year"], "end": row["end_year"], "count": 1})
+            else:
+                blocks[-1]["end"] = max(blocks[-1]["end"], row["end_year"])
+                blocks[-1]["count"] += 1
+        windows = []
+        for block in blocks:
+            if (not windows or block["end"] - windows[-1]["start"] > 500
+                    or windows[-1]["start"] < 1800 <= block["start"]
+                    or windows[-1]["start"] >= 1800 and block["end"] - windows[-1]["start"] > 200
+                    or windows[-1]["count"] >= 6):
+                windows.append(dict(block))
+            else:
+                windows[-1]["end"] = block["end"]
+                windows[-1]["count"] += block["count"]
+        for index, window in enumerate(windows):
+            padding = max(5, round((window["end"] - window["start"]) * .04))
+            start = max(window["start"] - padding, windows[index - 1]["end"] + 1) if index else window["start"] - padding
+            end = min(window["end"] + padding, windows[index + 1]["start"] - 1) if index + 1 < len(windows) else window["end"] + padding
+            requests.append({**options, "start": start, "end": end})
+    return requests or [{"width": 1600, "includeProvisional": True, "compact": True}]
+
+
+def _stage_detail_blocks(history, members, edges):
+    """Same-page source-derived explanations, independent of chart geometry."""
+    keys = _stage_keys(history)
+    stages = {row["id"]: row for row in history.get("stages", [])}
+    member_ids = {node["id"] for node in members}
+    blocks = []
+
+    def refs(evidence):
+        return "; ".join(dict.fromkeys(keys["sources"][row["source_id"]] + " · " + row["locus"] for row in evidence))
+
+    def excerpt(label, value):
+        return label + (" (excerpt)" if len(value) > 220 else "") + ": " + (value[:217] + "…" if len(value) > 220 else value)
+
+    def block(identifier, heading, values, kind):
+        rows = [(line, 16, "bold", 21) for line in textwrap.wrap(heading, 155, break_on_hyphens=False)]
+        rows += [(line, 14, "normal", 19) for value in values
+                 for line in textwrap.wrap(value, 180, break_on_hyphens=False)]
+        blocks.append({"id": identifier, "kind": kind, "rows": rows,
+                       "height": sum(row[3] for row in rows) + 15})
+
+    for node in sorted(members, key=lambda node: (node["stage"]["start_year"], node["stage"]["end_year"], node["key"])):
+        row = node["stage"]
+        block(row["id"], node["key"] + " · " + ", ".join(row.get("components", [])),
+              [excerpt("Scope", row["scope"]), "State evidence: " + refs(row.get("evidence", []))], "stage-scope")
+    for edge in edges:
+        owner = edge["to"] if stages[edge["to"]].get("start_year") is not None else edge["from"]
+        if owner not in member_ids:
+            continue
+        row = edge["transition"]
+        heading = (edge["key"] + " · " + edge["fromKey"] + " → " + edge["toKey"] + " · "
+                   + row["kind"].replace("-", " ") + " · " + row["evidence_level"].replace("-", " ")
+                   + (" · provisional" if row["status"] == "provisional" else ""))
+        values = [edge["fromKey"] + " · " + stages[edge["from"]]["date_label"] + " · " + stages[edge["from"]]["label"]
+                  + " → " + edge["toKey"] + " · " + stages[edge["to"]]["date_label"] + " · " + stages[edge["to"]]["label"],
+                  row["summary"]]
+        change = next(iter(row.get("changes", [])), None)
+        if change:
+            values += [excerpt("Before", change["before"]), excerpt("After", change["after"])]
+            values.append("Compared loci: " + change["locus_before"] + " → " + change["locus_after"])
+        if len(row.get("changes", [])) > 1:
+            values.append("First component shown; further recorded changes appear under " + edge["key"] + " in the companion.")
+        values.append("Evidence: " + refs(row.get("evidence", []) + (change.get("evidence", []) if change else [])))
+        block(row["id"], heading, values, "change-detail")
+    return blocks
+
+
+def _stage_map_pages(history, models, slice_id):
+    """Paginate shared label rows; neither dates nor transition paths are rerouted."""
+    keys = _stage_keys(history)
+    stages = {row["id"]: row for row in history.get("stages", [])}
+    traditions = {row["id"]: row for row in history.get("traditions", [])}
+    placements, stage_sheets, pages = [], {}, []
+    for model in models:
+        nodes = [node for lane in model["lanes"] for node in lane["nodes"]]
+        rows = []
+        for y in sorted({node["y"] for node in nodes}):
+            members = [node for node in nodes if node["y"] == y]
+            rows.append({"top": y - 80, "bottom": max(node["y"] + 20 + node["cardHeight"] for node in members),
+                         "nodes": members})
+        bands = []
+        for row in rows:
+            if not bands:
+                bands.append([])
+            bands[-1].append(row)
+        for part, band in enumerate(bands, 1):
+            key = f"H{len(placements) + 1:03d}"
+            members = [node for row in band for node in row["nodes"]]
+            placements.append({"key": key, "model": model, "nodes": members, "top": band[0]["top"],
+                               "bottom": band[-1]["bottom"], "part": part, "parts": len(bands)})
+            for node in members:
+                stage_sheets.setdefault(node["id"], []).append(key)
+    windows = {}
+    for place in placements:
+        model = place["model"]
+        window = (tuple(lane["id"] for lane in model["lanes"]), model["start"], model["end"])
+        windows.setdefault(window, []).append(place)
+    for window in windows.values():
+        for index, place in enumerate(window, 1):
+            place.update(part=index, parts=len(window))
+    for place in placements:
+        model, members, key = place["model"], place["nodes"], place["key"]
+        member_ids = {node["id"] for node in members}
+        continued = []
+        for edge in model["edges"]:
+            owner = edge["to"] if stages[edge["to"]].get("start_year") is not None else edge["from"]
+            if owner not in member_ids:
+                continue
+            for endpoint in (edge["from"], edge["to"]):
+                if endpoint not in member_ids:
+                    continued.append(f"{edge['key']}: {keys['stages'][endpoint]} on "
+                                     + "/".join(stage_sheets.get(endpoint, ["undated register"])))
+        continuation_lines = textwrap.wrap("Off-sheet endpoints — " + "; ".join(continued), 180) if continued else []
+        extra_footer = max(0, len(continuation_lines) - 1) * 18
+        detail_blocks = _stage_detail_blocks(history, members, model["edges"])
+        chart_height = max(300, place["bottom"] - place["top"])
+        detail_top = 175 + chart_height + 35
+        required_height = detail_top + sum(block["height"] for block in detail_blocks) + 175 + extra_footer
+        height = (297 if required_height <= 297 * 1600 / 420 else 594) * 1600 / 420
+        if required_height > height:
+            raise PreviewError("chronology panel exceeds native A2 page; split its shared label rows")
+        page = sheet(1600, height, "420mm", f"{height * 420 / 1600:g}mm", "Book states through time — " + key)
+        pages.append(page)
+        text(page, 42, 48, "Book states through time", 30, "bold")
+        text(page, 42, 82, f"{key} · {model['start']}–{model['end']} · years increase left to right · local year scale", 17)
+        text(page, 42, 111, "Labels use extra rows for space. Only recorded transitions connect states; empty space asserts no ancestry.", 15)
+        lane = next(lane for lane in model["lanes"] if lane["nodes"])
+        title_y = wrapped(page, 42, 193, lane["label"], width=18, size=22, leading=28, weight="bold")
+        title_y = wrapped(page, 42, title_y + 12, f"Panel {place['part']} of {place['parts']} in this dated window.",
+                          width=27, size=14, leading=20)
+        gaps = [row for row in history.get("gaps", []) if row["tradition_id"] == lane["id"]]
+        if gaps:
+            title_y = wrapped(page, 42, title_y + 20,
+                              "Recorded gaps: " + ", ".join(keys["gaps"][row["id"]] for row in gaps)
+                              + ". Full coverage and missing witnesses: evidence companion.",
+                              width=27, size=13, leading=19)
+        axis_y, top, bottom = 153, 175, 175 + chart_height
+        for tick in model["axis"]["ticks"]:
+            element(page, "line", x1=tick["x"], y1=axis_y + 8, x2=tick["x"], y2=bottom,
+                    stroke="#dfe5e9", stroke_width=1)
+            text(page, tick["x"], axis_y, str(tick["year"]), 16, anchor="middle")
+        element(page, "line", x1=model["axis"]["x0"], y1=axis_y + 8,
+                x2=model["axis"]["x1"], y2=axis_y + 8, stroke="#596571", stroke_width=1)
+        defs = element(page, "defs")
+        clip = element(defs, "clipPath", id="stage-band-" + key)
+        element(clip, "rect", x=225, y=top, width=1365, height=bottom - top)
+        marker = element(defs, "marker", id="stage-arrow-" + key, markerWidth=12, markerHeight=12,
+                         viewBox="0 0 12 12", refX=21, refY=6, orient="auto", markerUnits="userSpaceOnUse")
+        element(marker, "path", d="M 0 0 L 12 6 L 0 12 Z", fill="#3a5266")
+        clip_group = element(page, "g", clip_path="url(#stage-band-" + key + ")")
+        chart = element(clip_group, "g", transform=f"translate(0,{top - place['top']:g})")
+        edge_key_labels = []
+        for edge in model["edges"]:
+            # Each transition is drawn on its target sheet, or its dated source
+            # sheet if the target itself cannot be positioned.
+            target = stages[edge["to"]]
+            owner = edge["to"] if target.get("start_year") is not None else edge["from"]
+            if owner not in member_ids:
+                continue
+            style = edge["style"]
+            path = element(chart, "path", d=edge["path"], fill="none", stroke="#3a5266",
+                           stroke_width=style["width"], marker_end="url(#stage-arrow-" + key + ")",
+                           data_transition=edge["id"], data_from_stage=edge["from"], data_to_stage=edge["to"],
+                           data_evidence_level=edge["transition"]["evidence_level"],
+                           data_transition_kind=edge["transition"]["kind"])
+            if style["dash"]:
+                path.set("stroke-dasharray", style["dash"])
+            if edge.get("keyLabel"):
+                edge_key_labels.append((edge["keyLabel"], edge["key"]))
+            for endpoint, outside, point in (("from", "fromOutside", "fromPoint"), ("to", "toOutside", "toPoint")):
+                if not edge[outside] or not edge.get(point):
+                    continue
+                at, stage_id = edge[point], edge[endpoint]
+                element(chart, "circle", cx=at["x"], cy=at["y"], r=4, fill="white", stroke="#3a5266", stroke_width=1)
+                source_stage = stages[stage_id]
+                bounds = ("unpositioned" if source_stage.get("start_year") is None else
+                          str(source_stage["start_year"]) if source_stage["start_year"] == source_stage["end_year"] else
+                          f"{source_stage['start_year']}–{source_stage['end_year']} date bounds")
+                if source_stage.get("start_year") is not None and (source_stage["end_year"] < model["start"] or source_stage["start_year"] > model["end"]):
+                    bounds += " outside window"
+                label = keys["stages"][stage_id] + " · " + bounds
+                label += " · " + "/".join(stage_sheets.get(stage_id, ["undated register"]))
+                lines = textwrap.wrap(label, 45)
+                label_x = at["x"]
+                anchor = "middle" if 500 < label_x < 1400 else "start" if label_x <= 500 else "end"
+                label_width = max(map(len, lines)) * 6
+                label_top, label_bottom = at["y"] - 35 - (len(lines) - 1) * 15, at["y"] - 22
+                for other in model["edges"]:
+                    key_at = other.get("keyLabel")
+                    if not key_at or key_at["y"] < label_top or key_at["y"] - 13 > label_bottom:
+                        continue
+                    left = label_x - (label_width if anchor == "end" else label_width / 2 if anchor == "middle" else 0)
+                    if left <= key_at["x"] + 3 and left + label_width >= key_at["x"] - 43:
+                        if anchor == "end":
+                            label_x = min(label_x, key_at["x"] - 55)
+                        else:
+                            anchor, label_x = "start", max(label_x, key_at["x"] + 12)
+                for line_index, line in enumerate(lines):
+                    text(chart, label_x, at["y"] - 24 - (len(lines) - line_index - 1) * 15,
+                         line, 11, "normal", anchor)
+        for label, transition_key in edge_key_labels:
+            element(chart, "rect", x=label["x"] - 43, y=label["y"] - 13,
+                    width=46, height=16, fill="white")
+            text(chart, label["x"], label["y"], transition_key, 12, "bold", "end")
+        for node in members:
+            stage = node["stage"]
+            group = element(chart, "g", data_stage=node["id"], data_stage_key=node["key"],
+                            data_start_year=stage["start_year"], data_end_year=stage["end_year"],
+                            data_status=stage["status"])
+            if node["xStart"] != node["xEnd"]:
+                element(group, "path", d=f"M {node['xStart']} {node['y']-7} V {node['y']+7} M {node['xStart']} {node['y']} H {node['xEnd']} M {node['xEnd']} {node['y']-7} V {node['y']+7}",
+                        fill="none", stroke="#253d50", stroke_width=2, data_date_bounds="uncertainty-not-duration")
+            mark = element(group, "circle", cx=node["x"], cy=node["y"], r=7,
+                           fill="white" if stage["status"] == "provisional" else "#253d50",
+                           stroke="#253d50", stroke_width=2)
+            if stage["status"] == "provisional":
+                mark.set("stroke-dasharray", "2 2")
+            key_on_left = node["x"] > 1500
+            text(group, node["x"] + (-14 if key_on_left else 14), node["y"] - 10,
+                 node["key"], 14, "bold", "end" if key_on_left else "start")
+            element(group, "rect", x=node["labelX"] - 5, y=node["labelY"] - 17,
+                    width=node["cardWidth"] + 10, height=node["cardHeight"], fill="white", fill_opacity=".96")
+            y = node["labelY"]
+            for field, weight, size in (("labelLines", "bold", 16), ("dateLines", "normal", 14),
+                                       ("scopeLines", "normal", 14), ("coverageLines", "normal", 14),
+                                       ("changeLines", "normal", 14)):
+                for line in node.get(field, []):
+                    label = text(group, node["labelX"], y, line, size, weight)
+                    label.set("data-stage-label", node["id"])
+                    y += node["leading"]
+        y = detail_top
+        element(page, "line", x1=42, y1=y - 20, x2=1558, y2=y - 20, stroke="#a9b5be")
+        for block in detail_blocks:
+            group = element(page, "g", **{"data_" + block["kind"].replace("-", "_"): block["id"]})
+            for line, size, weight, leading in block["rows"]:
+                text(group, 42, y, line, size, weight)
+                y += leading
+            y += 15
+        legend_y = height - 115
+        for index, line in enumerate(continuation_lines):
+            text(page, 42, legend_y - 42 - extra_footer + index * 18, line, 13, "bold")
+        element(page, "line", x1=42, y1=legend_y - 20, x2=1558, y2=legend_y - 20, stroke="#9ca6af")
+        text(page, 42, legend_y, "● Documented state     ○ Provisional lead     |—●—| Date bounds = uncertainty, not duration of use", 15)
+        text(page, 42, legend_y + 26,
+             "Transition evidence: solid thick = text collated; solid thin = primary description; dashed = scholarly; dotted = bibliographic or provisional.", 14)
+        text(page, 42, legend_y + 52,
+             "Arrowheads point to recorded targets. Witness succession proves no revision or continuous use. Full evidence: S/T keys in the companion.", 14)
+        text(page, 42, height - 24, f"{key} · REVIEW PREVIEW · Contents at front · Print at native A3/A2 size · No transition grants Git ancestry or text inheritance.", 12)
+
+    # Undated material is readable without inventing a horizontal position.
+    unpositioned = [row for row in history.get("stages", []) if row.get("start_year") is None or row.get("end_year") is None]
+    page, y = None, 120
+    for row in unpositioned:
+        blocks = [f"{keys['stages'][row['id']]} · {row['label']}",
+                  f"{traditions[row['tradition_id']]['label']} · {row['status']} · text: {row['text_coverage']}",
+                  "Date: " + row["date_label"] + ". No dated position asserted.", row["summary"], row["limitations"]]
+        rows = [textwrap.wrap(" ".join(value.split()), 92) or [""] for value in blocks]
+        required = sum(len(lines) * 17 for lines in rows) + 24
+        if page is None or y + required > 1015:
+            key = f"H{len(pages) + 1:03d}"
+            page = _page("States without a dated position", key, slice_id,
+                         "These records have no invented year. Their absence from the year axis is not an assertion of historical isolation.")
+            pages.append(page)
+            y = 120
+        group = element(page, "g", data_unpositioned_stage=row["id"])
+        for index, lines in enumerate(rows):
+            for line in lines:
+                text(group, 45, y, line, 12, "bold" if index == 0 else "normal")
+                y += 17
+        y += 24
+        stage_sheets[row["id"]] = [key]
+    if not pages:
+        pages.append(_page("Book states through time", "H001", slice_id,
+                           "No stage records are positioned by this dataset. This is a research gap, not a claim that no historical states existed."))
+    index_pages, index_page, y = [], None, 120
+    indexed_traditions = sorted(history.get("traditions", []), key=lambda tradition: min(
+        (key for row in history.get("stages", []) if row["tradition_id"] == tradition["id"]
+         for key in stage_sheets.get(row["id"], [])), default="ZZZ"))
+    for tradition in indexed_traditions:
+        members = [row for row in history.get("stages", []) if row["tradition_id"] == tradition["id"]]
+        sheets = list(dict.fromkeys(key for row in members for key in stage_sheets.get(row["id"], [])))
+        blocks = [tradition["label"], "Sheets: " + (", ".join(sheets) or "No recorded stage"),
+                  f"States: {sum(row['status'] == 'documented' for row in members)} documented; "
+                  f"{sum(row['status'] == 'provisional' for row in members)} provisional leads."]
+        height_needed = sum(len(textwrap.wrap(value, 90)) * 17 for value in blocks) + 24
+        if index_page is None or y + height_needed > 1020:
+            index_page = _page("Traditions and dated sheets", f"I{len(index_pages) + 1:03d}", slice_id,
+                               "Map sheets use native A3 landscape or A2 portrait; do not shrink them to A4. Each window has its own true-year scale. S/T keys locate full evidence in the A4 companion. Counts describe scoped attestations, not complete reconstructed books.")
+            index_pages.append(index_page)
+            y = 120
+        for index, value in enumerate(blocks):
+            y = wrapped(index_page, 45, y, value, width=90, size=12, leading=17,
+                        weight="bold" if index == 0 else "normal")
+        y += 24
+    return index_pages + pages, stage_sheets
+
+
+def _stage_page_requests(history, models, requests):
+    """Ask the shared model to retain true-year ports on paginated panels."""
+    result = []
+    for model, request in zip(models, requests):
+        nodes = [node for lane in model["lanes"] for node in lane["nodes"]]
+        bands = []
+        for y in sorted({node["y"] for node in nodes}):
+            members = [node for node in nodes if node["y"] == y]
+            bottom = max(node["y"] + 20 + node["cardHeight"] for node in members)
+            candidate = (bands[-1]["nodes"] if bands else []) + members
+            details = _stage_detail_blocks(history, candidate, model["edges"])
+            combined_height = max(300, bottom - (bands[-1]["top"] if bands else y - 80)) + sum(block["height"] for block in details)
+            if not bands or combined_height > 1835:
+                bands.append({"top": y - 80, "ids": [], "nodes": []})
+            bands[-1]["ids"].extend(node["id"] for node in members)
+            bands[-1]["nodes"].extend(members)
+        if len(bands) > 1:
+            result.extend({**request, "stageIds": band["ids"]} for band in bands)
+        else:
+            result.append(request)
+    return result
+
+
+def _render_chronology(history, geometry, spine, catalogue, out_dir, parts, plate_hash,
+                       catalogue_url, renderer, joiner, isolated_count):
+    slice_id = spine["slice"]
+    map_pages, stage_sheets = _stage_map_pages(history, geometry["chronology"], "eucharistic book states")
+    expected = {row["id"] for row in history.get("stages", [])}
+    visible = [node.get("data-stage") or node.get("data-unpositioned-stage") for page in map_pages
+               for node in page.iter() if node.get("data-stage") or node.get("data-unpositioned-stage")]
+    if set(visible) != expected or len(visible) != len(expected):
+        raise PreviewError("chronological sheets lost or duplicated stage records")
+    expected_transitions = {row["id"] for row in history.get("transitions", [])
+                            if any(stage["id"] in (row["from_stage"], row["to_stage"])
+                                   and stage.get("start_year") is not None for stage in history.get("stages", []))}
+    drawn_transitions = [node.get("data-transition") for page in map_pages for node in page.iter() if node.get("data-transition")]
+    if set(drawn_transitions) != expected_transitions or len(drawn_transitions) != len(expected_transitions):
+        raise PreviewError("chronological sheets lost or duplicated positioned transition records")
+    dimensions = [tuple(float(value) for value in page.get("viewBox").split()) for page in map_pages]
+    width, height = max(size[2] for size in dimensions), sum(size[3] for size in dimensions)
+    master = sheet(width, height, f"{width * 420 / 1600:g}mm", f"{height * 420 / 1600:g}mm", "Book states through time")
+    top, pdfs = 0, []
+    for index, page in enumerate(map_pages, 1):
+        path = parts / f"chronology-{index:03d}.svg"
+        write_svg(page, path)
+        run([renderer, "--format", "pdf", "-o", str(path.with_suffix('.pdf')), str(path)])
+        pdfs.append(str(path.with_suffix(".pdf")))
+        group = element(master, "g", transform=f"translate(0,{top:g})", data_sheet=index)
+        for child in page:
+            group.append(copy.deepcopy(child))
+        top += dimensions[index - 1][3]
+    master_path = out_dir / f"{slice_id}-preview.svg"
+    write_svg(master, master_path)
+    run([joiner, *pdfs, str(master_path.with_suffix(".pdf"))])
+    run([renderer, "--background-color", "white", "-w", "1600", "-o", str(master_path.with_suffix(".png")),
+         str(parts / "chronology-001.svg")])
+    evidence = _stage_evidence(history, parts, "eucharistic book states", stage_sheets, catalogue_url)
+    evidence_pdfs = []
+    for path in evidence:
+        pdf = path.with_suffix(".pdf")
+        run([renderer, "--format", "pdf", "-o", str(pdf), str(path)])
+        evidence_pdfs.append(str(pdf))
+    catalogue_path = out_dir / f"{slice_id}-catalogue.pdf"
+    run([joiner, *evidence_pdfs, str(catalogue_path)])
+    (parts / "browser-geometry.json").write_text(json.dumps(geometry, indent=2) + "\n")
+    audit = {"schema": "triptych-act-preview/v1", "status": "review-preview", "renderer": "existing-browser-geometry",
+             "presentation": "chronological-book-stages", "map_pages": len(map_pages), "catalogue_pages": len(evidence),
+             "paper_sizes": sorted({page.get("width") + " × " + page.get("height") for page in map_pages}),
+             "printing": "Native A3 landscape/A2 portrait map sheets; A4 index and evidence. Do not shrink map sheets to A4.",
+             "main_change_text_points": round(14 * 420 / 1600 * 72 / 25.4, 2),
+             "stage_count": len(expected), "transition_count": len(history.get("transitions", [])),
+             "drawn_transition_count": len(drawn_transitions), "tradition_count": len(history.get("traditions", [])),
+             "documented_stages": sum(row["status"] == "documented" for row in history.get("stages", [])),
+             "provisional_stages": sum(row["status"] == "provisional" for row in history.get("stages", [])),
+             "unpositioned_stages": sum(row.get("start_year") is None for row in history.get("stages", [])),
+             "stage_sheets": stage_sheets, "stage_ids_preserved": True, "explicit_transitions_preserved": True,
+             "canonical_station_ids_preserved": True, "canonical_parent_pairs_preserved": True,
+             "legacy_routes": "Available separately with render_preview(view='legacy'); not stage ancestry.",
+             "station_count": len(spine["stations"]), "edge_count": sum(len(s.get("parents", [])) for s in spine["stations"]),
+             "isolated_count": isolated_count, "plate_sha256": plate_hash, "browser_sha256": geometry["browser_sha256"],
+             "structure_sha256": hashlib.sha256(json.dumps(spine, sort_keys=True).encode()).hexdigest(),
+             "catalogue_sha256": hashlib.sha256(json.dumps(catalogue, sort_keys=True).encode()).hexdigest(),
+             "stage_history_sha256": hashlib.sha256(json.dumps(history, sort_keys=True).encode()).hexdigest(),
+             "artifacts": [master_path.name, master_path.with_suffix(".pdf").name, master_path.with_suffix(".png").name, catalogue_path.name]}
+    (out_dir / f"{slice_id}-preview-audit.json").write_text(json.dumps(audit, indent=2) + "\n")
+    return audit
+
+
+def _stage_evidence(history, parts, slice_id, stage_sheets, catalogue_url):
+    """Print full recorded claims, with shared citations rather than raw JSON."""
+    keys = _stage_keys(history)
+    stages = {row["id"]: row for row in history.get("stages", [])}
+    traditions = {row["id"]: row for row in history.get("traditions", [])}
+    sources = {row["id"]: row for row in history.get("sources", [])}
+    pages, page, y = [], None, 120
+
+    def lines(value, width=94):
+        return textwrap.wrap(" ".join(str(value).split()), width, break_on_hyphens=False) or [""]
+
+    def new_page():
+        nonlocal page, y
+        page = _page("Book states and changes: evidence", f"E{len(pages) + 1:03d}", slice_id,
+                     "S = stage · T = transition · C = source · G = research gap. Source descriptions are not text collations.")
+        pages.append(page)
+        y = 120
+
+    def record(heading, blocks):
+        nonlocal y
+        heading_rows = lines(heading, 83)
+        rows = [(value, True) for value in heading_rows]
+        rows += [(line, False) for value in blocks for line in lines(value)]
+        if page is None or (y > 120 and y + len(rows) * 16 + 20 > 1025):
+            new_page()
+        for line, bold in rows:
+            if y > 1020:
+                new_page()
+                for continuation in lines(heading + " — continued", 83):
+                    text(page, 45, y, continuation, 12, "bold")
+                    y += 16
+                y += 8
+            text(page, 45, y, line, 12 if bold else 11, "bold" if bold else "normal")
+            y += 16
+        y += 22
+
+    def evidence(rows):
+        blocks = []
+        for row in rows:
+            source_id = row["source_id"]
+            if source_id not in sources:
+                raise PreviewError("stage evidence refers to a missing source: " + source_id)
+            source = sources[source_id]
+            blocks.append(f"Evidence {keys['sources'][source_id]}: {source['title']}; {row.get('locus', '')}.")
+            if row.get("claim"):
+                blocks.append("Claim supported: " + row["claim"])
+        return blocks
+
+    def field(row, name, label=None):
+        value = row.get(name)
+        if value is None or value == [] or value == "":
+            return []
+        return [(label or name.replace("_", " ").capitalize()) + ": "
+                + (", ".join(str(item) for item in value) if isinstance(value, list) else str(value))]
+
+    record("How to read this evidence companion", [
+        "A stage records an identifiable state of a book or complementary book set. Documented does not mean fully transcribed. "
+        "Provisional stages remain research leads and do not count as established states.",
+        "Start and end years bound the stage's attestation, publication, approval, effective date or reconstruction. "
+        "They never assert how long a rite or book remained in use. Unknown dates remain unpositioned.",
+        "Only the transitions explicitly recorded below are drawn. Revision, recension branch, reception and witness succession "
+        "are distinct. Witness succession alone does not establish revision, continuous use or historical parentage.",
+        "Evidence level is recorded separately from historical parentage. No transition grants Git ancestry or inherits unchecked text.",
+        *history.get("limitations", []),
+    ])
+    for tradition in history.get("traditions", []):
+        blocks = field(tradition, "scope") + field(tradition, "coverage_note", "Coverage and limits")
+        blocks += ["Stages: " + ", ".join(keys["stages"][row["id"]] for row in history.get("stages", [])
+                                         if row["tradition_id"] == tradition["id"])]
+        blocks.append("Tradition record: " + tradition["id"])
+        record(tradition["label"], blocks)
+    for row in history.get("stages", []):
+        key = keys["stages"][row["id"]]
+        tradition = traditions.get(row["tradition_id"], {})
+        blocks = [f"Tradition: {tradition.get('label', row['tradition_id'])}. Chronology sheet: "
+                  + ", ".join(stage_sheets.get(row["id"], ["unpositioned"])),
+                  f"Date: {row['date_label']}. Date basis: {row['date_kind']}. "
+                  + (f"Date bounds: {row['start_year']}–{row['end_year']} (not a duration of use)."
+                     if row.get("start_year") is not None else "No dated position is asserted."),
+                  f"Status: {row['status']}. Text coverage: {row['text_coverage']}."]
+        for name in ("witness_label", "scope", "summary", "components", "reception", "limitations"):
+            blocks += field(row, name)
+        for witness_id in row.get("witness_ids", []):
+            blocks.append("Catalogue witness: " + catalogue_url + "#record=" + quote(witness_id, safe=""))
+        blocks += evidence(row.get("evidence", []))
+        blocks.append("Stage record: " + row["id"])
+        record(key + " · " + row["label"], blocks)
+    for row in history.get("transitions", []):
+        for endpoint in ("from_stage", "to_stage"):
+            if row[endpoint] not in stages:
+                raise PreviewError("transition refers to a missing stage: " + row[endpoint])
+        from_id, to_id = row["from_stage"], row["to_stage"]
+        blocks = [f"From {keys['stages'][from_id]}: {stages[from_id]['label']}. "
+                  f"To {keys['stages'][to_id]}: {stages[to_id]['label']}.",
+                  f"Kind: {row['kind']}. Status: {row['status']}. Evidence level: {row['evidence_level']}.",
+                  "Historical parentage: " + row["historical_parentage"] + ". No Git ancestry or automatic text inheritance."]
+        blocks += field(row, "summary", "What changed") + field(row, "components")
+        for change in row.get("changes", []):
+            blocks.append("Component: " + change["component"])
+            blocks += field(change, "before") + field(change, "locus_before", "Before locus")
+            blocks += field(change, "after") + field(change, "locus_after", "After locus")
+            blocks += evidence(change.get("evidence", []))
+        blocks += evidence(row.get("evidence", []))
+        blocks += field(row, "limitations") + field(row, "comparison_ids", "Existing comparisons")
+        blocks.append("Transition record: " + row["id"])
+        record(keys["transitions"][row["id"]] + " · " + row["kind"].replace("-", " "), blocks)
+    for row in history.get("gaps", []):
+        blocks = field(row, "period") + field(row, "missing", "Missing evidence")
+        blocks += field(row, "next_source", "Next source to inspect") + field(row, "consequence")
+        record(keys["gaps"][row["id"]] + " · " + traditions.get(row["tradition_id"], {}).get("label", row["tradition_id"]), blocks)
+    for row in history.get("sources", []):
+        blocks = []
+        for name in ("url", "kind", "status", "inspection", "checked_on", "limitations"):
+            blocks += field(row, name)
+        blocks.append("Source record: " + row["id"])
+        record(keys["sources"][row["id"]] + " · " + row["title"], blocks)
+    paths = []
+    for index, page in enumerate(pages, 1):
+        path = parts / f"stage-evidence-{index:03d}.svg"
         write_svg(page, path)
         paths.append(path)
     return paths

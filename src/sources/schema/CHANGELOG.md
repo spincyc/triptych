@@ -1,5 +1,18 @@
 # Source Schema Changelog
 
+## Eucharistic stage inventory ownership — added 2026-10-16
+
+The source-tree validator recognizes immediate
+`inventories/eucharistic-stages/<slug>.json` dossiers with the
+`eucharistic-book-stages` version 1 envelope, and the exact
+`inventories/eucharistic-stage-coverage-v1.json` audit with the
+`eucharistic-book-stage-coverage-audit` version 1 envelope. These are
+project-authored research inventories, not external artifacts or new source
+record types. Invalid JSON, wrong envelopes, nested payloads and unrelated JSON
+remain rejected. `act-history` retains ownership of stage evidence, scope and
+reference validation. No source manifest, binding, rights rule, fingerprint or
+search-receipt meaning changes.
+
 ## Optional work composition date — added 2026-08-01
 
 A `work` record may now carry `composed` and `composed_basis`, and stating one

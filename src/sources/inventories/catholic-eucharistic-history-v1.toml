@@ -2,6 +2,7 @@ schema_version = 1
 record_type = "catholic-eucharistic-history"
 scope_ref = "guidance/time-machine.md#11-historical-and-language-scope-agreed-2026-10-16"
 holdings_inventory = "src/sources/inventories/missal-timeline-holdings-v1.toml"
+stage_history_default_tradition = "roman-stages-pian"
 
 # Routing only. Historical assertions, witness identities, rights and texts
 # remain with the referenced owners; discovery does not admit an act or edge.
@@ -833,3 +834,129 @@ record_id = "eastern:byz-brightman1896-chrysostom"
 text_set = "brightman-1896-greek-james"
 unit_ids = ["unit.brightman-1896.greek-james.anaphora.invocation-gifts"]
 record_id = "eastern:syr-brightman1896-greek-james"
+
+# Independently collated Cistercian prayer selections; no whole-book ancestry.
+[[text_sets]]
+id = "cistercian-1606-latin-ordinary"
+adapter = "cistercian-1606-latin-ordinary"
+
+[[text_sets]]
+id = "cistercian-1657-latin-ordinary"
+adapter = "cistercian-1657-latin-ordinary"
+
+[[comparisons]]
+id = "cistercian-1606-1657-confiteor"
+kind = "same-prayer-witness-comparison"
+membership_status = "established"
+basis = "Complete priestly Confiteor in each identified Cistercian printing, selected by its incipit, confession formula and preparatory position. The 1657 text adds named saints including Bernard, expands the intercession and gives three culpa clauses with an intervening chest-striking rubric."
+apparatus_caveat = "Only these complete bounded prayer selections have been collated; this is not a full Ordinary or full missal diff. Printed 1606 and 1657 dates are witness dates, not proof of each variant’s introduction. The 1655 mandate and cited general chapters are separate contextual evidence. Long s, display initials, nasal abbreviations and line wraps are normalized as declared in the owning artifacts; source accents, u/v, ligatures, abbreviations and short endings otherwise remain. Spoken blocks and rubric positions remain recoverable; the 1657 (vel meis) is a printed alternative, not simultaneous speech. No immediate predecessor relationship, complete Romanization, or modern liturgical authorization is inferred."
+source_refs = ["passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.confiteor", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.confiteor"]
+[comparisons.left]
+text_set = "cistercian-1606-latin-ordinary"
+unit_ids = ["unit.cistercian-1606.ordinary.confiteor"]
+record_id = "western:cistercian-1606"
+[comparisons.right]
+text_set = "cistercian-1657-latin-ordinary"
+unit_ids = ["unit.cistercian-1657.ordinary.confiteor"]
+record_id = "western:cistercian-1657"
+
+[[comparisons]]
+id = "cistercian-1606-1657-suscipe-trinitas"
+kind = "parallel-liturgical-unit-comparison"
+membership_status = "established"
+basis = "Complete Suscipe Trinitas selections share the offering/remembrance formula but occupy different offertory positions and have substantial different petitions. The 1606 selection accompanies raising paten and chalice; the 1657 selection follows separate host/chalice offerings and Lavabo. Alignment names this bounded comparable prayer function, not an independently established copying act."
+apparatus_caveat = "Only these complete bounded prayer selections have been collated; this is not a full Ordinary or full missal diff. Printed 1606 and 1657 dates are witness dates, not proof of each variant’s introduction. The 1655 mandate and cited general chapters are separate contextual evidence. Long s, display initials, nasal abbreviations and line wraps are normalized as declared in the owning artifacts; source accents, u/v, ligatures, abbreviations and short endings otherwise remain. Spoken blocks and rubric positions remain recoverable; the 1657 (vel meis) is a printed alternative, not simultaneous speech. No immediate predecessor relationship, complete Romanization, or modern liturgical authorization is inferred."
+source_refs = ["passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.suscipe-trinitas", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.suscipe-trinitas"]
+[comparisons.left]
+text_set = "cistercian-1606-latin-ordinary"
+unit_ids = ["unit.cistercian-1606.ordinary.suscipe-trinitas"]
+record_id = "western:cistercian-1606"
+[comparisons.right]
+text_set = "cistercian-1657-latin-ordinary"
+unit_ids = ["unit.cistercian-1657.ordinary.suscipe-trinitas"]
+record_id = "western:cistercian-1657"
+
+[[comparisons]]
+id = "cistercian-1606-1657-orate-response"
+kind = "parallel-liturgical-unit-comparison"
+membership_status = "established"
+basis = "The complete Orate invitation and response dialogue in each identified edition share the invitation to pray for acceptance of the sacrifice. The 1606 Dominus sit in corde tuo response differs from the 1657 Suscipiat Dominus; the later printed alternative and final priestly Amen remain explicit. This is alignment of the same liturgical function, not a claim that the two response compositions are identical."
+apparatus_caveat = "Only these complete bounded prayer selections have been collated; this is not a full Ordinary or full missal diff. Printed 1606 and 1657 dates are witness dates, not proof of each variant’s introduction. The 1655 mandate and cited general chapters are separate contextual evidence. Long s, display initials, nasal abbreviations and line wraps are normalized as declared in the owning artifacts; source accents, u/v, ligatures, abbreviations and short endings otherwise remain. Spoken blocks and rubric positions remain recoverable; the 1657 (vel meis) is a printed alternative, not simultaneous speech. No immediate predecessor relationship, complete Romanization, or modern liturgical authorization is inferred."
+source_refs = ["passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.orate-response", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.orate-response"]
+[comparisons.left]
+text_set = "cistercian-1606-latin-ordinary"
+unit_ids = ["unit.cistercian-1606.ordinary.orate-response"]
+record_id = "western:cistercian-1606"
+[comparisons.right]
+text_set = "cistercian-1657-latin-ordinary"
+unit_ids = ["unit.cistercian-1657.ordinary.orate-response"]
+record_id = "western:cistercian-1657"
+
+[[presentation_groups]]
+id = "barcelona"
+label = "Use of Barcelona"
+families = ["historic-barcelona-use"]
+
+[[presentation_groups]]
+id = "salamanca"
+label = "Use of Salamanca"
+families = ["historic-salamanca-use"]
+
+[[presentation_groups]]
+id = "seville"
+label = "Use of Seville"
+families = ["historic-seville-use"]
+
+[[presentation_groups]]
+id = "toledo-roman"
+label = "Roman use of Toledo"
+families = ["historic-toledo-roman-use"]
+
+# Bounded collect and calendar comparisons in exact Dominican/Carmelite witnesses.
+[[text_sets]]
+id = "dominican-1550-suscepimus"
+adapter = "dominican-1550-suscepimus"
+
+[[text_sets]]
+id = "dominican-1604-suscepimus"
+adapter = "dominican-1604-suscepimus"
+
+[[text_sets]]
+id = "carmelite-1574-october-calendar"
+adapter = "carmelite-1574-october-calendar"
+
+[[text_sets]]
+id = "carmelite-1621-october-calendar"
+adapter = "carmelite-1621-october-calendar"
+
+[[comparisons]]
+id = "dominican-1550-1604-suscepimus-collect"
+kind = "parallel-liturgical-unit-comparison"
+membership_status = "established"
+basis = "The complete printed collect entries in two Suscepimus Deus formularies perform the same liturgical function but are different compositions: Deus cuius providentia in 1550 and Largire nobis in 1604. The named formulary supplies the pairing anchor. The earlier heading is Dominica octava after Trinity; the later heading is Dominica sexta after the octave of Trinity. No identical numbered Sunday is assumed."
+apparatus_caveat = "Only the selected collect entries have been transcribed and independently checked, not the entire formularies or books. Each is one continuous priestly block. Printed shortened conclusions Per. and Per Dominum nostrum. are retained without supplying a doxology. Abbreviations, long s, u/v, ae ligatures and line layout are normalized as declared in the artifacts. The separate retained pages establish the changed Gospel and Sunday heading; those observations are not represented as full Gospel transcriptions. Printing dates do not date the introduction of the changes; intervening editions and immediate ancestry remain unestablished."
+source_refs = ["passage.order-of-preachers.missale.1550-venice.suscepimus-collect", "passage.order-of-preachers.missale.1604-rome-xavierre.suscepimus-collect", "passage.order-of-preachers.missale.1550-venice.suscepimus-folio-125r", "passage.order-of-preachers.missale.1604-rome-xavierre.suscepimus-page-238"]
+[comparisons.left]
+text_set = "dominican-1550-suscepimus"
+unit_ids = ["unit.dominican-1550-suscepimus.suscepimus-collect"]
+record_id = "latin-missal:praedicatorum-venetiis-1550"
+[comparisons.right]
+text_set = "dominican-1604-suscepimus"
+unit_ids = ["unit.dominican-1604-suscepimus.suscepimus-collect"]
+record_id = "latin-missal:praedicatorum-xavierre-1604"
+
+[[comparisons]]
+id = "carmelite-1574-1621-october-05-calendar"
+kind = "parallel-liturgical-unit-comparison"
+membership_status = "established"
+basis = "The same bounded printed October 5 calendar row is compared in two Carmelite missals. In 1574 the date numeral is present and its feast cell is empty; the normalized body is therefore only 5. In 1621 the cell names Teresa, duplex minus, with Placidus and companions commemorated and page reference 409. Calendar entries are explicitly typed as calendar rows, not spoken prayers."
+apparatus_caveat = "This is one dated calendar cell, not a claim that Teresa is absent from every part of the 1574 missal or that the whole calendar has been collated. Other computistical columns are omitted. The 1621 printed date remains October 5 and is not modernized to October 15. Abbreviations, ampersands and the cōm. macron are preserved; e-caudata/ligature and long s are normalized as declared. The printed common-Mass reference at p.409 is separately retained, with manuscript alterations excluded. Exact introduction date, chapter intervention and immediate textual ancestry remain unestablished."
+source_refs = ["passage.carmelite-order.missale.1574-venice-giunta.october-05-calendar-entry", "passage.carmelite-order.missale.1621-venice-giunta.october-05-calendar-entry", "passage.carmelite-order.missale.1574-venice-giunta.october-calendar", "passage.carmelite-order.missale.1621-venice-giunta.october-calendar"]
+[comparisons.left]
+text_set = "carmelite-1574-october-calendar"
+unit_ids = ["unit.carmelite-1574-october-calendar.october-05-calendar-entry"]
+record_id = "latin-missal:carmelitarum-venetiis-1574"
+[comparisons.right]
+text_set = "carmelite-1621-october-calendar"
+unit_ids = ["unit.carmelite-1621-october-calendar.october-05-calendar-entry"]
+record_id = "latin-missal:carmelitarum-capitulum-1621"

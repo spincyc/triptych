@@ -1,0 +1,843 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-stages",
+  "dossier_id": "maronite",
+  "title": "Maronite Qurbono: bounded manuscript and printed-book stages",
+  "traditions": [
+    {
+      "id": "maronite-antiochene",
+      "label": "Maronite Antiochene Qurbono",
+      "family": "West Syriac / Maronite",
+      "scope": "Maronite Eucharistic books in Syriac and native Syriac/Arabic composition; independent vernacular translation history excluded.",
+      "coverage_note": "First printing through 1992 with a bounded manuscript precursor. Dates mark attestation/publication, not continuous use. Later 2005 edition remains a named gap."
+    }
+  ],
+  "sources": [
+    {
+      "id": "maronite-1594-book",
+      "title": "Missale Chaldaicum iuxta ritum Ecclesiae nationis Maronitarum (Rome, Medici, 1592/1594)",
+      "url": "https://archive.org/details/bub_gb_5Eqy8WGF9aQC",
+      "kind": "primary-book",
+      "inspection": "Whole 300-page PDF acquired. Page images inspected: PDF 5 Latin title; PDF 7–8 dedication; PDF 9 Syriac title and Latin 1592 imprint; PDF 10–14 opening liturgical body; PDF 295 final Syriac page; PDF 296 Latin colophon and examiner statement.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Identity and Latin paratext checked visually. Syriac body not transcribed, repertoire not independently enumerated, and possible in-sheet variants not collated. No 1608 Du Perron preface found in inspected preliminaries. Filename ending 1594-1608 is a precautionary scratch filename, not a bibliographic conclusion."
+    },
+    {
+      "id": "maronite-jabbour2020",
+      "title": "Pierre Jabbour, L’identité religieuse des Maronites du Mont-Liban au XVIe siècle au prisme du premier missel maronite imprimé à Rome, Proche-Orient Chrétien 70 (2020), 59–87",
+      "url": "https://www.researchgate.net/publication/351617405_L'identite_religieuse_des_Maronites_du_Mont-Liban_au_XVIe_siecle_au_prisme_du_premier_missel_maronite_imprime_a_Rome",
+      "kind": "scholarship",
+      "inspection": "Author-uploaded rendered full text read: pp 59–65 identity and divided manuscripts; pp 70–75 institution and epiclesis alterations; pp 76–78 variant 1608 copies. Journal abstract checked at https://journals.usj.edu.lb/poc/article/view/1200 ; DOI10.3917/poc.701.0059.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Rendered author text has damaged character mapping. PDF page-image download was unavailable; quoted Syriac not used as checked transcription. Manuscripts and variant 1608 copies not independently inspected. This is original research describing its own collation, not a collation performed here."
+    },
+    {
+      "id": "maronite-bnf1608",
+      "title": "BnF catalogue: Missale Chaldaicum, Romae 1594[-1608], RES M-B-3",
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb36826514h",
+      "kind": "institutional-catalogue",
+      "inspection": "Full catalogue notice read: publication, extent, notes on reimpression, changed text and Du Perron Latin/Syriac preface dated 1608.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Catalogue only; specific copy not scanned here. Syriac title retaining 1592 does not make this an unmodified 1592 witness."
+    },
+    {
+      "id": "maronite-dib1928",
+      "title": "Pierre Dib, Maronite (Église), Dictionnaire de théologie catholique 10.1 (1928), columns 129–130",
+      "url": "https://fr.wikisource.org/wiki/Page:Alfred_Vacant_-_Dictionnaire_de_th%C3%A9ologie_catholique,_1908,_Tome_10.1.djvu/72",
+      "kind": "scholarship",
+      "inspection": "Both columns 129–130 read on the scanned page image, especially the missal paragraphs. Publication/authorship corroborated by Raymond Janin’s 1928 review metadata at https://www.persee.fr/doc/rebyz_1146-9447_1928_num_27_151_4685_t1_0376_0000_3 .",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Historical synthesis, not inspected 1716 or 1763 book. Wikimedia filename 1908 is not this volume’s publication year. Gives nine anaphoras for 1762–63, conflicting with official 1992 introduction’s eight. Describes later Gospel additions without a fully verified first-edition locus."
+    },
+    {
+      "id": "maronite-beggiani1998",
+      "title": "Seely J. Beggiani, The Divine Liturgy of the Maronite Church: History and Commentary, second revised edition (Saint Maron Publications, 1998)",
+      "url": "https://thehiddenpearl.org/wp-content/uploads/2022/08/The-Divine-Liturgy-of-the-Maronite-Church-History-and-Commentary-Chorbishop-Seely-J-Beggiani.pdf",
+      "kind": "scholarship",
+      "inspection": "PDF images checked: PDF 1–3 title, edition, copyright/imprimatur; printed 18–21 (PDF 24–27), section The Maronite Missal. ISBN1-885589-07-7.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Modern copyrighted scholarship downloaded for scratch research only; no text or scan proposed for repository retention. Historical summary rather than direct 1716/1763/1888/1973 collation. Identifies distinct 1972 and 1973 experiments, unlike the compressed official retrospective."
+    },
+    {
+      "id": "maronite-beggiani-history",
+      "title": "Seely J. Beggiani, Aspects of Maronite History, Part Eight",
+      "url": "https://eparchy.squarespace.com/marhist/part08",
+      "kind": "scholarship",
+      "inspection": "Sections Liturgical Developments and The Mysteries read, including 1716 changes and 1736/1755–56 norms.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Online historical essay. Its statement that no edition followed 1736 before 1816 omits 1763; not used to establish publication sequence. No primary page or exact rubrical wording supplied for the relocation of ablutions."
+    },
+    {
+      "id": "maronite-1908-book",
+      "title": "Ketābā de-qurbānā āk ʿeyādā de-ʿidtā d-Antiukiyā de-Mārūnāye, Beirut 1908, second printing",
+      "url": "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3088113",
+      "kind": "primary-book",
+      "inspection": "Bonn bibliographic record read. Existing retained PDF images checked: whole-file PDF 441 title, PDF 436–440 front matter, PDF 8 calendar/computus table. PDF 441 = retained second part local 218.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Title and preface images examined; no checked Syriac/Garshuni transcription or translation. Repertoire/order claims below come from named scholarship, not this visual inspection. The file called 1908-contents.png is a calendar table, not an anaphora contents list."
+    },
+    {
+      "id": "maronite-1992-intro",
+      "title": "Boutros Gemayel, Qurbono: General Introduction and Explanation, Bkerke 31 July 1992, official English translation by Stephen Hector Doueihi",
+      "url": "https://www.stmaron.org/qurbono",
+      "kind": "official-retrospective",
+      "inspection": "Complete introductory account read, especially First Edition, Succeeding Editions, Current Project, Liturgical Year, Scripture Readings, Western Syriac Anaphora, Eastern Syriac Anaphora of Sharar, and Six Anaphoras of the New Text; dated signature read.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Contemporary primary reform explanation for 1992, retrospective for older books. English translation inspected, not 1992 Syriac/Arabic book or its decree. No protected liturgical text imported. The 1992 book is not asserted to be the latest edition."
+    },
+    {
+      "id": "maronite-1716-catalogue-lead",
+      "title": "Braidense catalogue MILE040858, Missale Syriacum, Rome Propaganda Fide 1716, GERLI.0740",
+      "url": "https://opac.sbn.it/bid/MILE040858",
+      "kind": "institutional-catalogue",
+      "inspection": "Search-index catalogue text located: title, 1716, [84],[500]p, Syriac/Latin, GERLI.0740. Direct dynamic Braidense result redirected to another record.",
+      "checked_on": "2026-10-16",
+      "status": "lead",
+      "limitations": "Lead only. Search-index detail not promoted to an inspected stable catalogue or primary book."
+    }
+  ],
+  "stages": [
+    {
+      "id": "maronite-ms1566",
+      "tradition_id": "maronite-antiochene",
+      "label": "Manuscript O before Roman editing",
+      "date_label": "1566 manuscript; reconstructed from surviving parts",
+      "start_year": 1566,
+      "end_year": 1566,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Source manuscript identified by Jabbour, including the pre-editing institution and epiclesis layers; not all precursors of the print.",
+      "components": [
+        "ordinary",
+        "anaphoras"
+      ],
+      "witness_ids": [],
+      "witness_label": "Mikhail al-Rizzi’s manuscript O: Florence BNCF Cl.III.79 and Cl.III.74, with Vatican Vat.sir.431; colophon BNCF Cl.III.74 f 154r–v.",
+      "summary": "A divided 1566 missal used in preparing the first print; supplements also contributed.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "maronite-jabbour2020",
+          "locus": "pp 62–65, reconstruction table p 65",
+          "claim": "Reassembles gatherings of O across the three shelfmarks; the print also uses other material."
+        }
+      ],
+      "limitations": "Reconstruction attributed to Jabbour; surviving manuscripts and colophon not inspected. It is not a complete uncontested single-parent genealogy.",
+      "reception": "Maronite manuscript provenance; date of its dispatch to Rome is disputed. The later printed uniform formula must not be projected back over all manuscript layers."
+    },
+    {
+      "id": "maronite-rome1592-1594",
+      "tradition_id": "maronite-antiochene",
+      "label": "First print with revised institution and epicleses",
+      "date_label": "1594 completed publication (Syriac title 1592)",
+      "start_year": 1594,
+      "end_year": 1594,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Roman first printing, bounded by checked paratext and source-described liturgical revision.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:mar-1592-94"
+      ],
+      "witness_label": "Missale Chaldaicum iuxta ritum Ecclesiae nationis Maronitarum, Romae in Typographia Medicea; IA bub_gb_5Eqy8WGF9aQC.",
+      "summary": "Fourteen anaphoras; Sixtus first and Sharar included. Institution wording standardized; epiclesis petitions altered.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "maronite-1594-book",
+          "locus": "PDF 5, 7–9, 296",
+          "claim": "Latin 1594 and Syriac 1592 dates coexist in this physical witness; 1594 dedication and examiner colophon are visible."
+        },
+        {
+          "source_id": "maronite-dib1928",
+          "locus": "col 129",
+          "claim": "Describes fourteen anaphoras and alteration of institution and epiclesis."
+        },
+        {
+          "source_id": "maronite-beggiani1998",
+          "locus": "pp 18–19",
+          "claim": "Identifies Sixtus first and the inclusion of Sharar."
+        }
+      ],
+      "limitations": "Liturgical body not transcribed or collated. Dual title dates do not establish two successive textual states.",
+      "reception": "Dib reports introduction at the 1596 synod with Dandini. Beggiani records initial prohibition and later permission while manuscript formulas continued locally; neither account proves universal immediate replacement."
+    },
+    {
+      "id": "maronite-rome1608-beta",
+      "tradition_id": "maronite-antiochene",
+      "label": "Reprint variant replacing commemorated names",
+      "date_label": "1608, beta group of surviving copies",
+      "start_year": 1608,
+      "end_year": 1608,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Specific diptych/commemoration revision in Jabbour’s beta group; not every 1608 copy.",
+      "components": [
+        "anaphoras"
+      ],
+      "witness_ids": [],
+      "witness_label": "Missale Chaldaicum 1608 reimpressions, beta group in Jabbour’s comparison; BnF RES M-B-3 is a separately identified 1608 reissue, not assigned here to beta.",
+      "summary": "One 1608 group substitutes Maron, Antony, Jacob and Ephrem for earlier commemorated names.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "maronite-jabbour2020",
+          "locus": "pp 76–78",
+          "claim": "Distinguishes alpha copies marking names from beta copies substituting them."
+        },
+        {
+          "source_id": "maronite-bnf1608",
+          "locus": "Notes",
+          "claim": "Confirms a 1608 reimpression with textual changes and new Du Perron preface."
+        }
+      ],
+      "limitations": "No 1608 copy independently collated. Jabbour warns that editions may be impressions; alpha/beta is his analytical grouping, not a new universal liturgical edition.",
+      "reception": "Presence in surviving copies establishes a printed variant; no community-wide reception date established."
+    },
+    {
+      "id": "maronite-rome1716",
+      "tradition_id": "maronite-antiochene",
+      "label": "Roman-derived anaphora and Good Friday adaptation",
+      "date_label": "1716",
+      "start_year": 1716,
+      "end_year": 1716,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Second Roman missal revision described in multiple histories.",
+      "components": [
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:mar-1716"
+      ],
+      "witness_label": "Missale Syriacum iuxta ritum Ecclesiae Antiochenae nationis Maronitarum, Rome, Propaganda Fide 1716.",
+      "summary": "Fourteen anaphoras remain, but the roster changes: Roman Church added; Sharar removed as an anaphora and adapted for Good Friday.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "maronite-dib1928",
+          "locus": "col 129",
+          "claim": "Reports altered roster, fourteen total, Roman Church and Sharar-derived Good Friday order."
+        },
+        {
+          "source_id": "maronite-beggiani1998",
+          "locus": "p 19",
+          "claim": "Explains adaptation of Roman Canon material to the structure of Twelve Apostles."
+        }
+      ],
+      "limitations": "No 1716 page images or complete roster inspected. The Roman Church anaphora should not be described merely as an unchanged translation of the Roman Canon.",
+      "reception": "Publication and later reception are distinct. Synodal debates about institution wording do not independently identify a new missal state."
+    },
+    {
+      "id": "maronite-rome1762-1763",
+      "tradition_id": "maronite-antiochene",
+      "label": "Reduced anaphora repertoire",
+      "date_label": "1762–1763 in Dib/Beggiani; 1763 in official introduction",
+      "start_year": 1762,
+      "end_year": 1763,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Third Roman edition with smaller repertoire; disputed exact count retained.",
+      "components": [
+        "anaphoras"
+      ],
+      "witness_ids": [
+        "eastern:mar-1763"
+      ],
+      "witness_label": "Third Roman Maronite missal, 1762–1763, primary title and colophon not inspected.",
+      "summary": "Repertoire reduced from fourteen; Dib and Beggiani count nine, while the 1992 introduction counts eight. Beggiani places Second Peter first.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "maronite-dib1928",
+          "locus": "col 129",
+          "claim": "Dates third edition 1762–63 and counts nine."
+        },
+        {
+          "source_id": "maronite-beggiani1998",
+          "locus": "p 19",
+          "claim": "Counts nine and identifies first anaphora as Second Peter."
+        },
+        {
+          "source_id": "maronite-1992-intro",
+          "locus": "Succeeding Editions",
+          "claim": "Reports eight for 1763."
+        }
+      ],
+      "limitations": "Count disagreement unresolved; no invented explanation that one source counted Good Friday separately. Removed titles and exact title/colophon dates require the book.",
+      "reception": "Subsequent Lebanese printings are reported; continuity of every wording or rubric has not been collated."
+    },
+    {
+      "id": "maronite-dibs1888",
+      "tradition_id": "maronite-antiochene",
+      "label": "Dibs order with Roman Church first",
+      "date_label": "1888 revision; 1908 second-printing witness",
+      "start_year": 1888,
+      "end_year": 1888,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Dibs’s reorder, witnessed bibliographically by 1888 and 1908; no separate 1908 revision established.",
+      "components": [
+        "anaphoras"
+      ],
+      "witness_ids": [
+        "eastern:mar-dibs-1888",
+        "eastern:mar-dibs-1908"
+      ],
+      "witness_label": "Yusuf al-Dibs, Beirut missal 1888; Ketābā de-qurbānā, al-Maṭbaʿa al-Mārūnīya 1908, second printing.",
+      "summary": "Roman Church replaces Second Peter at the head of the anaphora sequence.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "maronite-beggiani1998",
+          "locus": "pp 19–20",
+          "claim": "Second Peter leads the preceding edition; Debs 1888 places Roman Church first."
+        },
+        {
+          "source_id": "maronite-1908-book",
+          "locus": "Bonn title record; whole-file PDF 441",
+          "claim": "Identifies the 1908 second printing and its retained title page."
+        }
+      ],
+      "limitations": "1888/1908 differences uncollated; source-described reordering not verified by an independent reading of 1908 contents. 1888 date is revision attestation, not the duration of use.",
+      "reception": "The 1908 printing is a witness to the Dibs line; it is not counted as a separately proved reform."
+    },
+    {
+      "id": "maronite-experiment1972",
+      "tradition_id": "maronite-antiochene",
+      "label": "Roman experimental proposal",
+      "date_label": "1972 proposal",
+      "start_year": 1972,
+      "end_year": 1972,
+      "date_kind": "attestation",
+      "status": "provisional",
+      "scope": "A proposal described by Beggiani, requiring identification of its exact text and enactment.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [],
+      "witness_label": "Experimental text proposed by the Congregation for the Eastern Churches; exact 1972 book identity not inspected.",
+      "summary": "One-year experiment containing Twelve Apostles alone.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "maronite-beggiani1998",
+          "locus": "p 20",
+          "claim": "Separates 1972 Roman proposal from the 1973 patriarchal experiment."
+        }
+      ],
+      "limitations": "Book and authorization document missing. Deliberately provisional; cannot be merged automatically with 1973.",
+      "reception": "Proposal and authorized local adoption require separate evidence."
+    },
+    {
+      "id": "maronite-simple1973",
+      "tradition_id": "maronite-antiochene",
+      "label": "Patriarchal experimental simple rite",
+      "date_label": "1973",
+      "start_year": 1973,
+      "end_year": 1973,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Experimental simple rite; full institution text and relation to 1972 remain unchecked.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:mar-1973"
+      ],
+      "witness_label": "Simple Rite issued by the Maronite Patriarchate in 1973, described by the 1992 introduction.",
+      "summary": "A restricted experimental book; the official introduction reports one anaphora.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "maronite-1992-intro",
+          "locus": "Succeeding Editions",
+          "claim": "Identifies 1973 Simple Rite as a one-anaphora experiment."
+        },
+        {
+          "source_id": "maronite-beggiani1998",
+          "locus": "p 20",
+          "claim": "Identifies a distinct 1973 patriarchal text retaining Roman institution wording."
+        }
+      ],
+      "limitations": "No original 1973 book inspected. Exact identity of the single anaphora is not safely supplied from Beggiani’s description of 1972.",
+      "reception": "Experimental permission is not perpetual universal promulgation. Neither source establishes identical local reception everywhere."
+    },
+    {
+      "id": "maronite-bkerke1992",
+      "tradition_id": "maronite-antiochene",
+      "label": "Reformed six-anaphora Qurbono",
+      "date_label": "1992; introduction dated 31 July",
+      "start_year": 1992,
+      "end_year": 1992,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Syriac/Arabic reform represented by the contemporary commission introduction and later commentary.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:mar-1992"
+      ],
+      "witness_label": "Book of Offering according to the Tradition of the Antiochene Syriac Maronite Church, Bkerke 1992.",
+      "summary": "Six anaphoras: Twelve Apostles, Peter, James, John, Mark, Sixtus; expanded annual services.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "maronite-1992-intro",
+          "locus": "Western Syriac Anaphora; Six Anaphoras; Liturgical Year",
+          "claim": "Describes revised structure, shared institution wording and expanded services."
+        },
+        {
+          "source_id": "maronite-beggiani1998",
+          "locus": "pp 20–21",
+          "claim": "Confirms six names, Twelve Apostles first, and patriarchal promulgation."
+        }
+      ],
+      "limitations": "Primary reform explanation, not a full transcription. Comprehensive Old/New Testament lectionary was still being prepared; later complementary Gospel/Epistle books are not successive missal versions.",
+      "reception": "Intro reports synodal/Congregation approval and patriarchal signature. 31 July dates the introduction, not independently the decree or universal effective date. A later 2005 edition is reported by Jabbour; 1992 is not labelled current."
+    }
+  ],
+  "transitions": [
+    {
+      "id": "maronite-edit1594",
+      "from_stage": "maronite-ms1566",
+      "to_stage": "maronite-rome1592-1594",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "Roman preparation standardized institution wording and changed epiclesis petitions.",
+      "components": [
+        "anaphoras"
+      ],
+      "changes": [
+        {
+          "component": "anaphoras",
+          "before": "Variable manuscript institution texts.",
+          "after": "Shared Roman-derived institution wording.",
+          "locus_before": "Manuscript O and its correction layers; not independently collated.",
+          "locus_after": "Printed anaphoras; complete loci not checked.",
+          "evidence": [
+            {
+              "source_id": "maronite-jabbour2020",
+              "locus": "pp 70–72",
+              "claim": "Studies successive manuscript corrections and printed uniformization."
+            }
+          ]
+        },
+        {
+          "component": "anaphoras",
+          "before": "Petitions concerning the gifts’ sanctification/transformation.",
+          "after": "Revised petitions concerning sacramental benefit to communicants.",
+          "locus_before": "O, including Vat.sir.431 f 45r, as analyzed by Jabbour.",
+          "locus_after": "1592–94 epicleses; source-described.",
+          "evidence": [
+            {
+              "source_id": "maronite-jabbour2020",
+              "locus": "pp 73–75",
+              "claim": "Examines crossed-out layers and edited epicleses."
+            },
+            {
+              "source_id": "maronite-dib1928",
+              "locus": "col 129",
+              "claim": "Describes the changed object of the epiclesis and residual older wording."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "maronite-jabbour2020",
+          "locus": "pp 62–65, 70–75",
+          "claim": "Supplies a manuscript reconstruction and bounded examples of editing."
+        }
+      ],
+      "limitations": "Manuscript ancestry remains a scholarly reconstruction with supplementary sources. No direct before/after Syriac collation was performed. Do not attribute all changes solely to an editor on the strength of the approval colophon.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed"
+    },
+    {
+      "id": "maronite-commemorations1608",
+      "from_stage": "maronite-rome1592-1594",
+      "to_stage": "maronite-rome1608-beta",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "A 1608 variant replaces selected commemorated names.",
+      "components": [
+        "anaphoras"
+      ],
+      "changes": [
+        {
+          "component": "anaphoras",
+          "before": "Philoxenus, Patra, Anthymus and Jacob in the earlier set.",
+          "after": "Maron, Antony, Jacob and Ephrem in the beta set.",
+          "locus_before": "Earlier printed commemoration, Jabbour pp 76–78.",
+          "locus_after": "1608 beta-group commemoration; physical-copy locus not verified here.",
+          "evidence": [
+            {
+              "source_id": "maronite-jabbour2020",
+              "locus": "pp 76–78",
+              "claim": "Distinguishes substitution in beta from marking in alpha."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "maronite-bnf1608",
+          "locus": "Notes",
+          "claim": "A modified 1608 reimpression is independently catalogued."
+        }
+      ],
+      "limitations": "Specific impression/copy relationship is attributed, not proven by our scan. Do not generalize beta readings to all 1608 copies or assert BnF RES M-B-3 is beta.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed"
+    },
+    {
+      "id": "maronite-roster1716",
+      "from_stage": "maronite-rome1592-1594",
+      "to_stage": "maronite-rome1716",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "The roster changes while retaining fourteen: Roman Church enters and Sharar becomes a Good Friday adaptation.",
+      "components": [
+        "anaphoras",
+        "rubrics"
+      ],
+      "changes": [
+        {
+          "component": "anaphoras",
+          "before": "Sharar remains a eucharistic anaphora.",
+          "after": "Sharar omitted as an anaphora; Roman Church added.",
+          "locus_before": "1592–94 repertoire; Dib col 129.",
+          "locus_after": "1716 repertoire; Dib col 129.",
+          "evidence": [
+            {
+              "source_id": "maronite-dib1928",
+              "locus": "col 129",
+              "claim": "Describes replacements, insertion and unchanged total."
+            }
+          ]
+        },
+        {
+          "component": "rubrics",
+          "before": "Sharar anaphora in the first printed missal.",
+          "after": "Its prayers adapted to a Good Friday presanctified order.",
+          "locus_before": "1592–94 Sharar; original page not independently checked.",
+          "locus_after": "1716 Good Friday order; original page not independently checked.",
+          "evidence": [
+            {
+              "source_id": "maronite-dib1928",
+              "locus": "col 129",
+              "claim": "Explains adaptation rather than recovery of the older Lenten presanctified service."
+            }
+          ]
+        },
+        {
+          "component": "rubrics",
+          "before": "Ablutions after the final blessing.",
+          "after": "Ablutions before thanksgiving.",
+          "locus_before": "Earlier order reported by Beggiani.",
+          "locus_after": "1716 order reported by Beggiani.",
+          "evidence": [
+            {
+              "source_id": "maronite-beggiani-history",
+              "locus": "Liturgical Developments",
+              "claim": "Attributes the relocation to 1716."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "maronite-dib1928",
+          "locus": "col 129",
+          "claim": "Explicit comparison of the first and second printed editions."
+        }
+      ],
+      "limitations": "Exact 1716 text and full roster not inspected. Edge compares documented states; intermediate 1608 variants are not silently treated as its exclusive parent.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed"
+    },
+    {
+      "id": "maronite-reduction1763",
+      "from_stage": "maronite-rome1716",
+      "to_stage": "maronite-rome1762-1763",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "The anaphora repertoire contracts; exact resulting count is disputed.",
+      "components": [
+        "anaphoras"
+      ],
+      "changes": [
+        {
+          "component": "anaphoras",
+          "before": "Fourteen anaphoras.",
+          "after": "A smaller selection: nine in Dib/Beggiani, eight in the official introduction.",
+          "locus_before": "1716 roster reported by Dib col 129.",
+          "locus_after": "1762–63 roster not independently read.",
+          "evidence": [
+            {
+              "source_id": "maronite-dib1928",
+              "locus": "col 129",
+              "claim": "Reports fourteen to nine."
+            },
+            {
+              "source_id": "maronite-1992-intro",
+              "locus": "Succeeding Editions",
+              "claim": "Reports fourteen to eight."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "maronite-beggiani1998",
+          "locus": "p 19",
+          "claim": "Independently reports nine."
+        }
+      ],
+      "limitations": "Reduction is documented despite unresolved count. No list of deletions is invented. 1762/1763 are source-reported date bounds, not an inferred period of validity.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed"
+    },
+    {
+      "id": "maronite-reorder1888",
+      "from_stage": "maronite-rome1762-1763",
+      "to_stage": "maronite-dibs1888",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "Dibs moves Roman Church to the first position.",
+      "components": [
+        "anaphoras"
+      ],
+      "changes": [
+        {
+          "component": "anaphoras",
+          "before": "Second Peter first.",
+          "after": "Roman Church first.",
+          "locus_before": "Pre-Dibs sequence described in Beggiani p 19.",
+          "locus_after": "1888 Dibs sequence described in Beggiani p 20.",
+          "evidence": [
+            {
+              "source_id": "maronite-beggiani1998",
+              "locus": "pp 19–20",
+              "claim": "Explicitly identifies the first anaphora before and after."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "maronite-beggiani1998",
+          "locus": "pp 19–20",
+          "claim": "Identifies the named reorder."
+        }
+      ],
+      "limitations": "Intervening Qozhaya printings 1816, 1838, 1855, 1872 are acknowledged witnesses; none was collated. A broad claim of identical wording across them is not adopted.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed"
+    },
+    {
+      "id": "maronite-simple1973-repertoire",
+      "from_stage": "maronite-dibs1888",
+      "to_stage": "maronite-simple1973",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "The experimental simple rite limits the book to one anaphora.",
+      "components": [
+        "anaphoras"
+      ],
+      "changes": [
+        {
+          "component": "anaphoras",
+          "before": "Several anaphoras in the Dibs line.",
+          "after": "One anaphora in the 1973 Simple Rite.",
+          "locus_before": "Dibs repertoire described by Dib/Beggiani.",
+          "locus_after": "1973 Simple Rite described by the 1992 introduction.",
+          "evidence": [
+            {
+              "source_id": "maronite-1992-intro",
+              "locus": "Succeeding Editions",
+              "claim": "Attributes one-anaphora scope to 1973."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "maronite-1992-intro",
+          "locus": "Succeeding Editions",
+          "claim": "Explicitly distinguishes the experiment from earlier editions."
+        }
+      ],
+      "limitations": "Source-described comparison, not a claim of direct textual parentage. 1972 Roman proposal and 1973 patriarchal text must still be compared.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished"
+    },
+    {
+      "id": "maronite-reform1992",
+      "from_stage": "maronite-dibs1888",
+      "to_stage": "maronite-bkerke1992",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "The 1992 reform revises the anaphora structure and selects six anaphoras.",
+      "components": [
+        "anaphoras"
+      ],
+      "changes": [
+        {
+          "component": "anaphoras",
+          "before": "Repeated Eastern prayers within the Western structure.",
+          "after": "Duplications removed.",
+          "locus_before": "Earlier editions collectively described in 1992 introduction.",
+          "locus_after": "1992 order described by its commission chairman.",
+          "evidence": [
+            {
+              "source_id": "maronite-1992-intro",
+              "locus": "Western Syriac Anaphora",
+              "claim": "Identifies removal of duplicated Eastern material."
+            }
+          ]
+        },
+        {
+          "component": "anaphoras",
+          "before": "Roman Church first; earlier Roman-derived institution formula.",
+          "after": "Twelve Apostles first; shared institution wording based on that anaphora.",
+          "locus_before": "Dibs order; earlier formula described by Beggiani/Dib.",
+          "locus_after": "1992 Six Anaphoras of the New Text.",
+          "evidence": [
+            {
+              "source_id": "maronite-1992-intro",
+              "locus": "Six Anaphoras of the New Text",
+              "claim": "Explains the new common formula."
+            },
+            {
+              "source_id": "maronite-beggiani1998",
+              "locus": "pp 20–21",
+              "claim": "Confirms changed order and six-name selection."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "maronite-1992-intro",
+          "locus": "Western Syriac Anaphora; Six Anaphoras; Liturgical Year",
+          "claim": "Contemporary account explains the reform’s contents."
+        }
+      ],
+      "limitations": "The 1992 side is a contemporary primary description; the earlier side is a scholarly retrospective. The edge uses their lowest shared evidence level. No paired textual collation was performed. Sharar restoration and a twenty-four-anaphora collection were future projects, not accomplished 1992 contents.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished"
+    }
+  ],
+  "gaps": [
+    {
+      "id": "maronite-preprint",
+      "tradition_id": "maronite-antiochene",
+      "period": "Before 1592",
+      "missing": "Oldest 1454 witness and alleged twelfth-century leaves not independently inspected; no whole twelfth-century Qurbono state established.",
+      "next_source": "Vatican Vat.sir.309; BnF syr.73 (1509), Vat.sir.434 (1541), BnF syr.78 (1573), and Jabbour’s cited folios.",
+      "consequence": "No invented uninterrupted medieval stemma or wholesale pre-Latinization text."
+    },
+    {
+      "id": "maronite-ms-parentage",
+      "tradition_id": "maronite-antiochene",
+      "period": "1566–1594",
+      "missing": "Direct folio verification of O and the supplementary blessing material.",
+      "next_source": "BNCF Cl.III.74 f 154r–v, Cl.III.79, Cl.III.75; Vatican Vat.sir.431; Jabbour pp 62–65.",
+      "consequence": "The 1566→print edge remains attributed; it is not a sole-parent assertion."
+    },
+    {
+      "id": "maronite-1608-copies",
+      "tradition_id": "maronite-antiochene",
+      "period": "1608",
+      "missing": "Physical copy identification for alpha/beta readings and original folio/page locators.",
+      "next_source": "BnF RES M-B-3, notice cb36826514h; Jabbour pp 76–78 and his examined copies.",
+      "consequence": "Do not classify every 1608 reprint as one uniform revision."
+    },
+    {
+      "id": "maronite-1716-primary",
+      "tradition_id": "maronite-antiochene",
+      "period": "1716",
+      "missing": "Primary contents, Roman Church text, Good Friday order and relocated ablution rubric.",
+      "next_source": "Rome 1716 Missale Syriacum; Braidense GERLI.0740, SBN MILE040858.",
+      "consequence": "Strong source-described change remains unavailable for direct text comparison; dynamic catalogue redirect was not treated as inspected evidence."
+    },
+    {
+      "id": "maronite-1763-count",
+      "tradition_id": "maronite-antiochene",
+      "period": "1762–1763",
+      "missing": "Exact title/colophon dates and eight-versus-nine repertoire discrepancy.",
+      "next_source": "Original third Roman missal: title, anaphora headings, contents and Good Friday section; compare Dib col 129 with 1992 introduction.",
+      "consequence": "Do not publish a settled numeric count or explain the discrepancy without checking the book."
+    },
+    {
+      "id": "maronite-lebanese-printings",
+      "tradition_id": "maronite-antiochene",
+      "period": "1816–1908",
+      "missing": "Gospel expansion described by Dib; full Qozhaya and Dibs contents and wording comparison.",
+      "next_source": "Qozhaya 1816, 1838, 1855, 1872; Dibs 1888 and retained 1908 Bonn scan, especially native prefaces and anaphora headings.",
+      "consequence": "Printings do not become independent reform stages solely by date. Expanded Gospel provision may be a separate substantive stage once dated to a checked witness."
+    },
+    {
+      "id": "maronite-script1959",
+      "tradition_id": "maronite-antiochene",
+      "period": "1959",
+      "missing": "Whether the conversion of Garshuni passages to Arabic script involved substantive revision.",
+      "next_source": "Jounieh Lebanese Missionaries Qurbono 1959; Beggiani p 20.",
+      "consequence": "Keep existing mar-1959 as script-edition evidence, not an independently established whole-missal reform."
+    },
+    {
+      "id": "maronite-experiments",
+      "tradition_id": "maronite-antiochene",
+      "period": "1972–1973",
+      "missing": "Exact native books, one-year permissions and relation of Roman 1972 to patriarchal 1973.",
+      "next_source": "Congregation experimental 1972 text; patriarchal Simple Rite 1973; Beggiani p 20; 1992 official introduction.",
+      "consequence": "1972 remains provisional; no unsupported equation of the single anaphora or effective dates."
+    },
+    {
+      "id": "maronite-1992-primary",
+      "tradition_id": "maronite-antiochene",
+      "period": "1992",
+      "missing": "Native title/decree pages, full rubrics, six anaphoras and annual-service inventory.",
+      "next_source": "Bkerke Syriac/Arabic Qurbono 1992 and promulgation decree; complementary Gospel/Epistle books.",
+      "consequence": "Source-described reform is established, complete text/reception dates are not; protected text is not imported."
+    },
+    {
+      "id": "maronite-later2005",
+      "tradition_id": "maronite-antiochene",
+      "period": "After 1992",
+      "missing": "Content and legal status of the 2005 edition reported by Jabbour p 59.",
+      "next_source": "Native 2005 Qurbono, title, preface and decree; Jabbour 2020 opening paragraph.",
+      "consequence": "1992 is not described as the latest or presently normative state."
+    }
+  ]
+}

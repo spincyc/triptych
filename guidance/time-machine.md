@@ -611,6 +611,17 @@ graph, and §2 still governs descent and reception. Manuscript candidates remain
 source witnesses until their identity, historical relation, and graph admission
 basis have been established; a catalogue date must not become a fabricated act.
 
+The subsequent chronology revision adds a separate book-state layer. An
+identifiable manuscript or edition may attest a state without a promulgation
+act. Its date records attestation, publication, approval, effectiveness or
+reconstruction explicitly. A modern critical edition's publication date is not
+the date of the historical state it describes. Date bounds express uncertainty
+in that event, never a duration of use. Documenting a state neither admits an
+act-history station nor establishes a complete reconstructed text. Substantive
+transitions require concrete changes to named components and inspected evidence;
+bibliographic succession is counted separately. Historical parentage, comparison
+links and permission to inherit text remain separate assertions.
+
 Coverage is assessed by tradition and historical use, with unresolved stretches
 named explicitly. A catalogue record, an acquired source, a transcribed text,
 a collated text, and a reconstructed complete book are separate states. Empty
@@ -641,8 +652,9 @@ Technical IDs remain stable for citations, but do not serve as the only labels.
 Presentation groups reconcile aliases without claiming to count rites or Churches.
 Station titles and dates must be readable on the map itself. Branches of one
 sequence must not appear as unrelated identically named lanes. Put the chronology
-rule beside the drawing; equal positions across panels must not imply equal dates,
-and topological spacing must not imply elapsed time.
+rule beside the drawing. The primary chronology now uses a common year axis;
+the separate relationship view remains topological and must say that its spacing
+does not express elapsed time.
 
 An all-tradition overview and linked detailed panels are permitted where a single
 sheet defeats reading. Both derive from the same source-owned records and typed
@@ -650,3 +662,29 @@ relationships, with indexed evidence and comparison routes. Missing research or
 unestablished relations must remain distinguishable from historical absence.
 Reader review must exercise finding a named book, following a supported connection,
 identifying its evidence and limits, and reaching the corresponding text comparison.
+
+The maintainer's subsequent review rejected the revised map as still difficult
+to follow historically. Chronology therefore becomes the default view, with
+named recension lanes, readable dated book states, concrete before/after change
+summaries and evidence within reach of the selected sequence. A focused tradition
+view may open first, with an explicit all-tradition option, time-window controls
+and a readable chronological list for narrow screens and keyboard navigation.
+No connection may be inferred merely from date order. Coexisting books, reception,
+witness succession, substantive revision and unresolved relations must remain
+visually and verbally distinct. Undated records stay off the year axis.
+
+Research dossiers must identify the witness and component scope of each state,
+separate inspected sources from leads, state the evidence level of each change,
+and name missing periods and concrete next sources. Complementary volumes form
+one corpus when appropriate; reprints and permissions do not manufacture new
+textual states. A documented state may have no checked transcription. Full-text
+coverage requires its own binding and defined extent; neither stage counts nor
+partial comparisons can establish complete books. The evidence level of a mixed
+transition must not overstate its least-supported change.
+
+The next reader review must follow a named recension through time, explain a
+specific change from the local before/after evidence, identify the nature of its
+parentage claim, distinguish uncertain dates from duration, and inspect the
+independent text-coverage status. Print and interactive views derive from the
+same chronology records and layout model. Static page checks do not substitute
+for interactive or accessibility acceptance.

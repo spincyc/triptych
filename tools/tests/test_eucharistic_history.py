@@ -563,6 +563,52 @@ unit_ids=["unit.fixture.collect","unit.fixture.second"]
         history.write_comparison(first, out)
         self.assertEqual(history.json_bytes(first), out.read_bytes())
 
+    def test_comparison_record_binding_checks_actual_source_edition_not_target(self):
+        research = self.root / "research.toml"
+        research.write_text(research.read_text() + '\nsource_library_edition_id="edition.claimed"\n')
+        self.source.write_text(self.source.read_text().replace(
+            '[comparisons.left]\n', '[comparisons.left]\nrecord_id="research:manuscript"\n'))
+        unit = self.payload["units"][0]
+        unit.update(text_edition_id="edition.unrelated", target_edition_id="edition.claimed")
+        with self.assertRaisesRegex(history.HistoryError, "text edition does not match"):
+            self.compare()
+        unit["text_edition_id"] = "edition.claimed"
+        binding = self.compare()["left"]["record_binding"]
+        self.assertEqual("checked-declared-identities", binding["status"])
+        self.assertEqual(["source_library_edition_id"], binding["checked_fields"])
+        del unit["text_edition_id"]
+        with self.assertRaisesRegex(history.HistoryError, "text edition does not match"):
+            self.compare()
+
+    def test_same_edition_cannot_substitute_another_explicitly_bound_passage(self):
+        research = self.root / "research.toml"
+        research.write_text(research.read_text() + '''
+source_library_edition_id="edition.anthology"
+source_library_passage_ids=["passage.selected"]
+source_library_checked_text_artifact_ids=["artifact.selected"]
+''')
+        self.source.write_text(self.source.read_text().replace(
+            '[comparisons.right]\n', '[comparisons.right]\nrecord_id="research:manuscript"\n'))
+        for unit in self.payload["units"]:
+            unit.update(text_edition_id="edition.anthology", source_id="passage.selected",
+                        source_artifact_id="artifact.selected")
+        self.assertEqual(3, len(self.compare()["right"]["record_binding"]["checked_fields"]))
+        self.payload["units"][1]["source_id"] = "passage.another-liturgy"
+        with self.assertRaisesRegex(history.HistoryError, "member source_id does not match"):
+            self.compare()
+        self.payload["units"][1]["source_id"] = "passage.selected"
+        self.payload["units"][1]["source_artifact_id"] = "artifact.another-liturgy"
+        with self.assertRaisesRegex(history.HistoryError, "member source_artifact_id does not match"):
+            self.compare()
+
+    def test_unmapped_record_does_not_claim_canonical_witness_binding(self):
+        self.source.write_text(self.source.read_text().replace(
+            '[comparisons.left]\n', '[comparisons.left]\nrecord_id="research:manuscript"\n'))
+        result = self.compare()
+        self.assertEqual("unestablished-no-canonical-binding", result["left"]["record_binding"]["status"])
+        self.assertEqual([], result["left"]["record_binding"]["checked_fields"])
+        self.assertEqual("no-catalogue-record", result["right"]["record_binding"]["status"])
+
     def test_parallel_function_comparison_does_not_claim_same_composition(self):
         same = self.compare()
         self.assertEqual("same-prayer-witnesses", same["identity_claim"])

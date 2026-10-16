@@ -1,0 +1,630 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-stages",
+  "dossier_id": "ambrosian",
+  "title": "Ambrosian book states: bounded calendar and prayer revisions",
+  "traditions": [
+    {
+      "id": "ambrosian-milan",
+      "label": "Ambrosian Missal",
+      "family": "ambrosian",
+      "scope": "Historical and reformed Latin source states of Milan; independent translation history deferred.",
+      "coverage_note": "Selective, non-exhaustive; dates attest publication/approval/effectiveness, never duration of validity. 1913 critical edition and 2026 publication do not become extra reforms. Research handoff for independent review: documented denotes source-described attestation, not checked transcription. Independent histories of the 1990 Italian update and 2008 lectionary are not represented as replacement missals; translation-only 2020 changes remain excluded."
+    }
+  ],
+  "sources": [
+    {
+      "id": "ambrosian-bnf-duplex",
+      "title": "BnF FRBNF36814098: Missale ambrosianum duplex",
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb368140989",
+      "kind": "institutional-catalogue",
+      "inspection": "Read title, 1913 Milan/Ghirlanda publication, XXIV + 475 pages, Temporal scope and digital holding NUMM-1503133.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Catalogue establishes the critical edition, not any individual textual delta."
+    },
+    {
+      "id": "ambrosian-duplex-1913",
+      "title": "Ratti and Magistretti, Missale ambrosianum duplex (1913)",
+      "url": "https://gallica.bnf.fr/ark:/12148/bpt6k15031331",
+      "kind": "critical-edition",
+      "inspection": "Book not read. Gallica item, texteBrut, page/PDF and IIIF routes failed; shell curl failed DNS.",
+      "checked_on": "2026-10-16",
+      "status": "lead",
+      "limitations": "No page, OCR, hash or collation acquired. 1913 is critical publication, never a liturgical revision date."
+    },
+    {
+      "id": "ambrosian-calloni",
+      "title": "Jacopo Maria Calloni, La tradizione manoscritta del messale ambrosiano",
+      "url": "https://iris.unive.it/retrieve/4e9c1eb0-fc5c-4f11-b523-9668f91a101b/956189-1197788.pdf",
+      "kind": "scholarship",
+      "inspection": "Read rendered title page and p. 142: 1751 / 1902 comparison, Ceriani revision project, 1877 permission and manuscript consultation. Screenshot failed.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Doctoral research; historical overview is not direct inspection of 1751 / 1902 books or the 1877 act. Quoted dates and general account remain source-described."
+    },
+    {
+      "id": "ambrosian-lang-2017",
+      "title": "Uwe Michael Lang, Votive Masses of the Holy Face of Christ in Early Printed Diocesan Missals, Mediaeval Studies 79 (2017), 165–203",
+      "url": "https://pims.ca/wp-content/uploads/2021/02/MS79-165.pdf",
+      "kind": "scholarship",
+      "inspection": "Read rendered p. 169 and notes 12–13 identifying 1475/1499 formularies and the 1594 witness. Screenshot unavailable.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Original comparative research, read in PDF text rendering; not independently checked against book images. Rationale for removal is expressly probable."
+    },
+    {
+      "id": "ambrosian-ward-1996",
+      "title": "Anthony Ward, Modern Ambrosian Prefaces of Saints: Points of Contact with the Roman Missal, Notitiae 32 (1996), 238–267",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1990/notitiae-32-(1996)/Notitiae-357-1996.pdf",
+      "kind": "scholarship",
+      "inspection": "Read pp. 239–244, 266–267 in rendered PDF; attempted images 62, 63, 87 failed.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Exact Latin wording unverified; source-described changes only. Original altar books not collated. Publication in an official periodical does not turn scholarship into a decree. The present dossier was prepared from web-rendered text; no source text was acquired through the model or transcribed into this dossier."
+    },
+    {
+      "id": "ambrosian-approval-1974",
+      "title": "Decretum quo Missale Ambrosianum instauratum confirmatur, Prot. 2347/74",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-11-(1975)/Notitiae-102-1975.pdf",
+      "kind": "primary-act",
+      "inspection": "Read complete rendered decree, Notitiae 11 (1975), p. 45, PDF page 19: 30 November 1974 approval of Latin reform.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "No attached approved exemplar; PDF wording not image-collated. General revision description does not date each individual prayer change."
+    },
+    {
+      "id": "ambrosian-approval-2023",
+      "title": "Dicastery for Divine Worship, Index decretorum anni MMXXIII",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/documenti/Index-decretorum-anni-MMXXIII.pdf",
+      "kind": "primary-act",
+      "inspection": "Read p. 19 entry 7 December 2023, Prot. 183/22, approving second Latin typical text and Italian translation.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Official summary, not full signed decree or attached exemplars."
+    },
+    {
+      "id": "ambrosian-promulgation-2024",
+      "title": "Mario Delpini, excerpt of decree promulgating the second Ambrosian Missal",
+      "url": "https://www.chiesadiconcorezzo.it/nuovo-messale-ambrosiano/",
+      "kind": "primary-act",
+      "inspection": "Read parish-hosted HTML excerpt, section 2 and final promulgation paragraph.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Excerpt explicitly identified as such. Full signed decree and its dateline not inspected; says 32 former Ordinary Time Sundays, whereas publisher says 34. Do not normalize this discrepancy."
+    },
+    {
+      "id": "ambrosian-publisher-2024",
+      "title": "ITL Libri, Nuovo Messale Ambrosiano 2024 publication announcement",
+      "url": "https://www.itl-libri.com/wp-content/uploads/2024/02/MESSALE-AMBROSIANO-2024.pdf",
+      "kind": "official-retrospective",
+      "inspection": "Read rendered PDF pages 2–3, 5: chronology, named new compositions, calendar and translation changes.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Publisher account describes Italian publication; check Latin counterparts before attributing individual wording. Page 3 says 34 former Ordinary Time Sundays, conflicting with decree excerpt 32."
+    },
+    {
+      "id": "ambrosian-publisher-2026",
+      "title": "ITL Libri, Missale Ambrosianum, editio altera",
+      "url": "https://www.itl-libri.com/prodotto/missale-ambrosianum",
+      "kind": "official-retrospective",
+      "inspection": "Read HTML description, 2026 publication, 904 pages, ISBN 9788868948627, replacement of 1981 and shared structural changes.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Publisher identifies source-recension publication association; no book front matter, complete contents or exact-state identity inspected."
+    },
+    {
+      "id": "ambrosian-frontmatter-2024",
+      "title": "Messale Ambrosiano 2024, Premesse/Praenotanda consultation PDF",
+      "url": "https://www.chiesadimilano.it/wp-content/uploads/sites/83/2024/11/Premesse_praenotanda_portale.pdf",
+      "kind": "primary-book",
+      "inspection": "Exact route reopened; HTTP 403, no PDF content read.",
+      "checked_on": "2026-10-16",
+      "status": "lead",
+      "limitations": "Official consultation reservation; no protected full-book import or permission request."
+    },
+    {
+      "id": "ambrosian-vatican-1475",
+      "title": "Missale Ambrosianum 1475, Vatican Inc. III. 420",
+      "url": "https://digi.vatlib.it/view/Inc.III.420",
+      "kind": "primary-book",
+      "inspection": "Existing Western inventory locator; book not opened in this lane.",
+      "checked_on": "2026-10-16",
+      "status": "lead",
+      "limitations": "Do not transfer British Library foliation to Vatican copy without checking."
+    },
+    {
+      "id": "ambrosian-usuarium-1594",
+      "title": "USUARIUM 6041, Missale Ambrosianum 1594",
+      "url": "https://usuarium.elte.hu/book/6041/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Read Gaspar Visconti title, 1594 date, Alessandrina Roma shelfmark Y g 5, Amiet 0040.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Different holding from Lang British Library Legg 137; printing equivalence not established. Data attribution: Miklós István Földváry et al., Eötvös Loránd University, USUARIUM, 2015–."
+    }
+  ],
+  "stages": [
+    {
+      "id": "ambrosian-1475",
+      "tradition_id": "ambrosian-milan",
+      "label": "Early printed Sanctoral",
+      "date_label": "1475",
+      "start_year": 1475,
+      "end_year": 1475,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Selected Sanctoral attestation; not a reconstruction of the entire book.",
+      "components": [
+        "calendar",
+        "propers"
+      ],
+      "witness_ids": [
+        "western:ambrosian-1475"
+      ],
+      "witness_label": "Missale Ambrosianum, Milan, Antonio Zarotto, 1475; British Library IB. 25954; compare Vatican Inc. III. 420.",
+      "summary": "February 4 Veronica feast and Mass attested.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "ambrosian-lang-2017",
+          "locus": "p. 169 nn. 12–13; 1475 ff. 35r–36r",
+          "claim": "Identifies the early printed formulary."
+        }
+      ],
+      "limitations": "No direct scan reading; 1499 witness corroborates this item, not whole-book identity.",
+      "reception": "Historical Latin Ambrosian use of the Milanese Church; no claim of universal Roman reception or continuous unchanged use."
+    },
+    {
+      "id": "ambrosian-1594",
+      "tradition_id": "ambrosian-milan",
+      "label": "Post-Tridentine Sanctoral",
+      "date_label": "1594",
+      "start_year": 1594,
+      "end_year": 1594,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Veronica removal only; other revision contents remain unexamined.",
+      "components": [
+        "calendar",
+        "propers"
+      ],
+      "witness_ids": [],
+      "witness_label": "Missale Ambrosianum, Milan, 1594; British Library Legg 137, described by Lang as Pacifico Da Ponte.",
+      "summary": "Veronica feast removed in the cited witness.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "ambrosian-lang-2017",
+          "locus": "p. 169 n. 13",
+          "claim": "Names the 1594 comparator for removal."
+        }
+      ],
+      "limitations": "Printer differs from Sabbio-labelled catalogue leads; use exact shelfmark and resolve before acquisition. No claim 1594 was the first effective removal.",
+      "reception": "Historical Latin Ambrosian use of the Milanese Church; no claim of universal Roman reception or continuous unchanged use."
+    },
+    {
+      "id": "ambrosian-1751",
+      "tradition_id": "ambrosian-milan",
+      "label": "Pozzobonelli Temporal",
+      "date_label": "1751",
+      "start_year": 1751,
+      "end_year": 1751,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Proprium de tempore represented in the 1913 parallel critical edition.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:ambrosian-1751-1902"
+      ],
+      "witness_label": "Pozzobonelli 1751 edition, mediated by Ratti/Magistretti 1913.",
+      "summary": "Identified older Temporal state awaiting direct comparison.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "ambrosian-bnf-duplex",
+          "locus": "title",
+          "claim": "Names 1751 / 1902 comparanda."
+        },
+        {
+          "source_id": "ambrosian-calloni",
+          "locus": "p. 142",
+          "claim": "Explains the paired critical edition."
+        }
+      ],
+      "limitations": "Not a transcription; original 1751 title page and liturgical approval unread.",
+      "reception": "Historical Latin Ambrosian use of the Milanese Church; no claim of universal Roman reception or continuous unchanged use."
+    },
+    {
+      "id": "ambrosian-1902",
+      "tradition_id": "ambrosian-milan",
+      "label": "Ceriani–Ferrari revised missal",
+      "date_label": "1902",
+      "start_year": 1902,
+      "end_year": 1902,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Identified typical edition; Temporal and selected Sanctoral preface evidence.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:ambrosian-1751-1902"
+      ],
+      "witness_label": "Missale Ambrosianum, editio typica, Milan, Agnelli, 1902; Ferrari authority.",
+      "summary": "Revised state associated with Ceriani manuscript research.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "ambrosian-calloni",
+          "locus": "p. 142",
+          "claim": "Describes revision using older manuscripts."
+        },
+        {
+          "source_id": "ambrosian-ward-1996",
+          "locus": "p. 243 n. 12",
+          "claim": "Identifies 1902 pp. 401–402."
+        }
+      ],
+      "limitations": "Full book not read. 1751 → 1902 textual deltas remain uncollated. No 1974 predecessor identity inferred from chronological adjacency.",
+      "reception": "Historical Latin Ambrosian use of the Milanese Church; no claim of universal Roman reception or continuous unchanged use."
+    },
+    {
+      "id": "ambrosian-1974-approved",
+      "tradition_id": "ambrosian-milan",
+      "label": "Approved postconciliar source",
+      "date_label": "1974",
+      "start_year": 1974,
+      "end_year": 1974,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Reformed Latin texts approved 30 November 1974; attached exemplar unavailable.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:ambrosian-1974-latin-reform"
+      ],
+      "witness_label": "Approved Latin Missale Ambrosianum, Prot. 2347/74.",
+      "summary": "Reform includes Roman-source and newly composed prayers.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "ambrosian-approval-1974",
+          "locus": "Notitiae 11 (1975), p. 45",
+          "claim": "Approves reformed Latin source and describes enrichment."
+        }
+      ],
+      "limitations": "Approval is not a 1974 printed book or proof of word-for-word identity with 1981.",
+      "reception": "Historical Latin Ambrosian use of the Milanese Church; no claim of universal Roman reception or continuous unchanged use."
+    },
+    {
+      "id": "ambrosian-1981-latin",
+      "tradition_id": "ambrosian-milan",
+      "label": "First postconciliar Latin book",
+      "date_label": "1981",
+      "start_year": 1981,
+      "end_year": 1981,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Published Latin source: selected Sanctoral prefaces described by Ward; calendar organization represented only through the official Latin publisher’s retrospective replacement-and-reorganization account, not a reconstructed calendar.",
+      "components": [
+        "propers",
+        "calendar"
+      ],
+      "witness_ids": [
+        "western:ambrosian-1981-latin"
+      ],
+      "witness_label": "Missale Ambrosianum, Mediolani 1981, promulgated under Giovanni Colombo; Ward MA.",
+      "summary": "Printed first-reform witness.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "ambrosian-ward-1996",
+          "locus": "pp. 239–240 n. 5",
+          "claim": "Identifies 1981 publication and prior 1974 approval."
+        },
+        {
+          "source_id": "ambrosian-publisher-2026",
+          "locus": "description",
+          "claim": "Identifies 1981 as preceding Latin edition."
+        },
+        {
+          "source_id": "ambrosian-publisher-2026",
+          "locus": "Description: paragraph beginning La pubblicazione della II edizione latina and following principal-changes list, especially La riorganizzazione dell’anno liturgico",
+          "claim": "Identifies the first Latin edition of 1981 as the book replaced and describes the successor’s reorganization into seasons after Epiphany and Pentecost. This supplies a retrospective predecessor-calendar scope, without individual 1981 assignments."
+        }
+      ],
+      "limitations": "Complete book unavailable in this lane. 1974 approved exemplar and 1975 confirmations not collated; no separate 1981 reform asserted. This publication and the 1974 approval must not be counted as two independently established substantive recensions. Calendar evidence is retrospective and structural only: no 1981 calendar page, feast assignment, Sunday count or precise intermediate source state has been inspected. The evidence does not transfer the Italian 1976/1990 calendar’s exact contents into the Latin 1981 book.",
+      "reception": "Historical Latin Ambrosian use of the Milanese Church; no claim of universal Roman reception or continuous unchanged use."
+    },
+    {
+      "id": "ambrosian-2024-second",
+      "tradition_id": "ambrosian-milan",
+      "label": "Second reformed source recension",
+      "date_label": "2024",
+      "start_year": 2024,
+      "end_year": 2024,
+      "date_kind": "effective",
+      "status": "documented",
+      "scope": "Second Latin typical source and Italian expression; effective 17 November 2024.",
+      "components": [
+        "calendar",
+        "propers",
+        "ordinary",
+        "chant"
+      ],
+      "witness_ids": [
+        "western:ambrosian-2024",
+        "western:ambrosian-2026-latin"
+      ],
+      "witness_label": "Latin second typical text approved 7 December 2023; Italian 2024 ISBN 9788868946821; Latin 2026 ISBN 9788868948627.",
+      "summary": "Reorganized year, updated saints and expanded prayer repertory.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "ambrosian-approval-2023",
+          "locus": "p. 19, Prot. 183/22",
+          "claim": "Approves Latin source and Italian translation."
+        },
+        {
+          "source_id": "ambrosian-promulgation-2024",
+          "locus": "final paragraph",
+          "claim": "Promulgates both texts; effective 17 November 2024."
+        },
+        {
+          "source_id": "ambrosian-publisher-2026",
+          "locus": "description",
+          "claim": "Associates 2026 Latin publication with second recension."
+        }
+      ],
+      "limitations": "2026 is a publication witness, not a third source reform. Italian-only wording changes are excluded. No complete Latin 1981/2026 collation.",
+      "reception": "Historical Latin Ambrosian use of the Milanese Church; no claim of universal Roman reception or continuous unchanged use."
+    }
+  ],
+  "transitions": [
+    {
+      "id": "ambrosian-veronica-removal",
+      "from_stage": "ambrosian-1475",
+      "to_stage": "ambrosian-1594",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "Veronica feast and proper Mass disappear.",
+      "components": [
+        "calendar",
+        "propers"
+      ],
+      "changes": [
+        {
+          "component": "propers",
+          "before": "Veronica Mass with Mark 5:21–43.",
+          "after": "Formulary removed.",
+          "locus_before": "1475 ff. 35r–36r; 1499 f. 35r–v",
+          "locus_after": "1594 British Library Legg 137; exact page not supplied",
+          "evidence": [
+            {
+              "source_id": "ambrosian-lang-2017",
+              "locus": "p. 169 nn. 12–13",
+              "claim": "Comparative description of removal."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "ambrosian-lang-2017",
+          "locus": "p. 169",
+          "claim": "Reports feast excision."
+        }
+      ],
+      "limitations": "Source-described, not independent negative search or collation. Intervening editions unreviewed; not an immediate-successor edge. Proposed motivation remains Lang’s probable explanation.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed"
+    },
+    {
+      "id": "ambrosian-1751-to-1902",
+      "from_stage": "ambrosian-1751",
+      "to_stage": "ambrosian-1902",
+      "kind": "revision",
+      "status": "provisional",
+      "evidence_level": "scholarly-description",
+      "summary": "Older readings were sought through manuscript comparison; exact changed units remain unidentified here.",
+      "components": [
+        "propers"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "ambrosian-calloni",
+          "locus": "p. 142",
+          "claim": "Reports Ceriani restoration project and 1913 synopsis."
+        },
+        {
+          "source_id": "ambrosian-bnf-duplex",
+          "locus": "title",
+          "claim": "Identifies the paired Temporal."
+        }
+      ],
+      "limitations": "Revision project established, but dossier lacks a checked before/after unit. Do not count this proposal as a demonstrated unit-level transition. 1877 permission is not a complete textual stage; 1913 is not a reform.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed"
+    },
+    {
+      "id": "ambrosian-nativity-preface-revision",
+      "from_stage": "ambrosian-1902",
+      "to_stage": "ambrosian-1981-latin",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "Nativity of John preface shortened and reordered.",
+      "components": [
+        "propers"
+      ],
+      "changes": [
+        {
+          "component": "propers",
+          "before": "Prenatal joy, parental healing and prophetic witness precede naming and sanctification.",
+          "after": "Moves naming and sanctification first; omits parental-healing clauses.",
+          "locus_before": "1902 pp. 401–402; 1954 predecessor quoted by Ward",
+          "locus_after": "1981 p. 329 n. 6",
+          "evidence": [
+            {
+              "source_id": "ambrosian-ward-1996",
+              "locus": "pp. 242–244",
+              "claim": "Displays predecessor and successor; describes abbreviation and reordering."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "ambrosian-ward-1996",
+          "locus": "p. 243 n. 12",
+          "claim": "Notes 1902/1954 variant; not exact identity."
+        }
+      ],
+      "limitations": "Only this preface; no complete-book inheritance or immediate 1902 → 1981 succession. Date of first introduction within postconciliar reform unresolved. Rendered article read; page images failed.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed"
+    },
+    {
+      "id": "ambrosian-approval-to-publication",
+      "from_stage": "ambrosian-1974-approved",
+      "to_stage": "ambrosian-1981-latin",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "Publication witnesses the approved reform; exact intervening changes unresolved.",
+      "components": [
+        "propers"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "ambrosian-ward-1996",
+          "locus": "p. 240 n. 5",
+          "claim": "Links earlier approval with 1981 Latin publication."
+        }
+      ],
+      "limitations": "No new substantive 1981 revision claimed and no exact identity certified. 1975 Eucharistic-prayer confirmation needs separate examination.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed"
+    },
+    {
+      "id": "ambrosian-second-recension",
+      "from_stage": "ambrosian-1981-latin",
+      "to_stage": "ambrosian-2024-second",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "Liturgical-year organization and prayer repertory revised.",
+      "components": [
+        "calendar",
+        "propers"
+      ],
+      "changes": [
+        {
+          "component": "calendar",
+          "before": "Predecessor calendar organization, known here only from the official Latin publisher’s retrospective replacement-and-reorganization account.",
+          "after": "Seasons after Epiphany and Pentecost.",
+          "locus_before": "ITL Latin 2026 description identifies the 1981 predecessor; its individual calendar pages remain uninspected.",
+          "locus_after": "2024 decree excerpt § 2.1",
+          "evidence": [
+            {
+              "source_id": "ambrosian-promulgation-2024",
+              "locus": "§ 2.1",
+              "claim": "Describes reorganization."
+            },
+            {
+              "source_id": "ambrosian-publisher-2026",
+              "locus": "Description, replacement of the Latin 1981 edition and principal changes, first item",
+              "claim": "Connects the reorganized year to the Latin successor of the 1981 edition; does not enumerate the predecessor’s calendar."
+            }
+          ]
+        },
+        {
+          "component": "propers",
+          "before": "Earlier repertory.",
+          "after": "Expanded Latin prayer repertory; individual added Latin formularies remain uncollated.",
+          "locus_before": "Earlier edition; individual negative loci not inspected",
+          "locus_after": "ITL description of the 2026 Latin publication associated with the second recension.",
+          "evidence": [
+            {
+              "source_id": "ambrosian-publisher-2026",
+              "locus": "description, list of principal changes",
+              "claim": "Reports expansion of Latin eucology."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "ambrosian-publisher-2026",
+          "locus": "description",
+          "claim": "Latin successor replaces 1981 and receives structural/repertory changes."
+        },
+        {
+          "source_id": "ambrosian-promulgation-2024",
+          "locus": "§ 2, final paragraph",
+          "claim": "Promulgates substantive second recension."
+        }
+      ],
+      "limitations": "Non-immediate comparison: 1990 update, 2008 lectionary, 2010 calendar and 2020 supplement require component histories. New-composition examples described for 2024 publication; Latin loci unverified. No translation-only Gloria/Pater Noster changes counted. Former Sunday count disputed 32/34. The calendar change is documented only at the structural level of this retrospective official account; no exact Latin 1981 calendar assignments or Sunday total are claimed.",
+      "comparison_ids": [],
+      "historical_parentage": "established"
+    }
+  ],
+  "gaps": [
+    {
+      "id": "ambrosian-gap-duplex",
+      "tradition_id": "ambrosian-milan",
+      "period": "1751–1902",
+      "missing": "Actual 1913 parallel pages and apparatus; exact original editions and substantive departures.",
+      "next_source": "BnF cb368140989; Gallica bpt6k15031331; entire XXIV + 475-page critical edition, then original 1751 / 1902 witnesses.",
+      "consequence": "1751 / 1902 remain identified states with only provisional transition; no fictitious 1913 stage."
+    },
+    {
+      "id": "ambrosian-gap-1594",
+      "tradition_id": "ambrosian-milan",
+      "period": "1475–1751",
+      "missing": "Independent verification of Veronica removal, intervening revision stages and 1594 imprint discrepancy.",
+      "next_source": "BL IB. 25954 ff. 35r–36r; BL Legg 137; Alessandrina Y g 5 (Usuarium 6041); BnF 1594 Sabbio record.",
+      "consequence": "Removal is a scoped scholarly claim, not a complete 1475 → 1594 → 1751 chain."
+    },
+    {
+      "id": "ambrosian-gap-first-reform",
+      "tradition_id": "ambrosian-milan",
+      "period": "1902–1981",
+      "missing": "1954 book, intervening rubrical supplements, 1974 approved exemplar, 1975 prayer confirmations and 1981 front matter.",
+      "next_source": "Ward 1996 pp. 239–244 n. 5; Notitiae 11 (1975), p. 45 and p. 346; original Latin 1981 public institutional copy if located.",
+      "consequence": "Cannot date each alteration to 1974 or treat 1981 publication as a separate reform."
+    },
+    {
+      "id": "ambrosian-gap-second",
+      "tradition_id": "ambrosian-milan",
+      "period": "1981–2026",
+      "missing": "Exact Latin before/after units; full 2023 decree; 2024 front matter; 1990/2010/2020 source-state effects. The Italian 2024 publisher names a Joseph commemoration Mass (16 December), a second Trinity preface and a Mass for the Church from the nations as new compositions; their exact Latin source counterparts and loci remain unverified.",
+      "next_source": "Official 2024 consultation front matter PDF; Latin 2026 ISBN 9788868948627; existing Latin 1981 institutional access. Compare those examples with ITL 2024 announcement p. 3, item 4 (ambrosian-publisher-2024); do not transfer the Italian examples directly into verified Latin additions.",
+      "consequence": "Second recension established at description level; translation changes and original source revisions not comprehensively separated."
+    },
+    {
+      "id": "ambrosian-gap-images",
+      "tradition_id": "ambrosian-milan",
+      "period": "All sampled transitions",
+      "missing": "Page-image verification for scholarly excerpts.",
+      "next_source": "Ward 1996 PDF pages 62–66 and 88–89; Lang 2017 PDF page 5; Calloni PDF page 143.",
+      "consequence": "No text-collated transition, checked transcription, exact comparison payload or inherited liturgical text delivered."
+    },
+    {
+      "id": "ambrosian-gap-additional-prefaces",
+      "tradition_id": "ambrosian-milan",
+      "period": "Postconciliar reform, attested in the 1981 Latin book",
+      "missing": "Original-book and image verification of the additional Passion-of-John and Sebastian comparison leads.",
+      "next_source": "Anthony Ward, Notitiae 32 (1996), pp. 241–242 and 266–267; source ambrosian-ward-1996. The Passion-of-John preface adapts Roman 1970 material. Two distinct Sebastian-related operations require comparison: replacement of the older Sebastian preface (1902 p. 330; 1954 p. 465) at MA 248/6, and recasting related material through the postconciliar Roman preface into the Common of Martyrs collect at MA 483/2. The Common collect is not the replacement Sebastian preface.",
+      "consequence": "Potential additional bounded comparisons within an existing transition, not additional stages or completed collations."
+    }
+  ]
+}

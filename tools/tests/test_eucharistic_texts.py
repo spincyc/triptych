@@ -293,6 +293,26 @@ sections:
             with self.assertRaisesRegex(texts.AdapterError, "differs from reviewed wording"):
                 self.load("synthetic-checked-prayer")
 
+    def test_generic_checked_calendar_selection_keeps_blank_feast_cell_scope(self):
+        selection = self.checked_selection()
+        body = "5"
+        artifact = self.records[texts.WILSON_MEMENTO_ARTIFACT].data
+        passage = self.records[texts.WILSON_MEMENTO_PASSAGE].data
+        (self.root / artifact["path"]).write_text(body + "\n", encoding="utf-8")
+        artifact.update(sha256=sha(body + "\n"), byte_size=len((body + "\n").encode("utf-8")))
+        passage.update(artifact_sha256=artifact["sha256"],
+                       context="October 5 row: printed day retained; feast cell empty. Computistical columns omitted.")
+        selection["scope"]["status"] = "one-calendar-row"
+        selection["units"][0].update(text_sha256=sha(body), kind="calendar-entry", part="calendar",
+                                     division="calendar", element_key="october-05")
+        with patch.dict(texts.CHECKED_PASSAGE_SETS, {"synthetic-checked-calendar": selection}):
+            result = self.load("synthetic-checked-calendar")
+        unit = result["units"][0]
+        self.assertEqual("5", unit["text"])
+        self.assertEqual(("calendar-entry", "calendar"), (unit["kind"], unit["part"]))
+        self.assertEqual(passage["context"], unit["provenance"]["scope"])
+        self.assertFalse(result["scope"]["whole_book_complete"])
+
     def test_generic_checked_selection_preserves_greek_codepoints_and_speech_boundaries(self):
         selection = self.checked_selection()
         # Deliberately decomposed accent, lunate sigma and final sigma: neither
@@ -312,6 +332,22 @@ sections:
         self.assertEqual(sha(body), unit["text_sha256"])
         self.assertEqual(passage["notes"], unit["provenance"]["review_limits"])
         self.assertEqual({"grc": 1}, result["counts"]["languages"])
+
+    def test_checked_selection_pins_source_decoding_dependencies(self):
+        selection = self.checked_selection()
+        support_id = "artifact.synthetic.shared-annotation"
+        support = self.artifact(support_id, "Synthetic decoding dependency.\n", rights_status="public-domain")
+        dependency = {"artifact_id": support_id, "embedded_reference": "shared_anno.iff"}
+        self.records[texts.WILSON_MEMENTO_ARTIFACT].data["support_artifacts"] = [dependency]
+        with patch.dict(texts.CHECKED_PASSAGE_SETS, {"synthetic-checked-prayer": selection}):
+            result = self.load("synthetic-checked-prayer")
+            records = {record["id"]: record for record in result["sources"]}
+            self.assertIn(support_id, records)
+            self.assertEqual([dependency], records[texts.WILSON_MEMENTO_ARTIFACT]["support_artifacts"])
+            self.assertIn(support["path"], {item["path"] for item in result["inputs"]})
+            (self.root / support["path"]).write_text("Changed decoding dependency.\n")
+            with self.assertRaisesRegex(texts.AdapterError, "Artifact hash mismatch"):
+                self.load("synthetic-checked-prayer")
 
     def test_generic_checked_selection_requires_exact_controller_review_and_rights(self):
         selection = self.checked_selection()

@@ -1,0 +1,21 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.order-of-preachers.missale.1550-venice.pdf-page-5-image-2db9d0ae"
+edition_id = "edition.order-of-preachers.missale.1550-venice"
+artifact_type = "page-scan-image"
+media_type = "image/png"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The original 1550 printing is public domain in the United States by expiration of its publication term. The exact Internet Archive item bub_gb_FqVWqqFkUDsC, contributed by National Library of Naples, explicitly records Public Domain Mark 1.0 (http://creativecommons.org/publicdomain/mark/1.0/) in https://archive.org/metadata/bub_gb_FqVWqqFkUDsC; acquired metadata SHA-256 3b998dc9d63ead7f93aa696da0c346e42ca4cc62c7e69ed9b1ea176f7ec59685. This is a mechanical scan of historical pages, not a modern critical edition or translation. Visible scan marks and historical handwriting are preserved in image derivatives, but handwriting is excluded from printed-text claims. This third-party source is excluded from Triptych’s CC BY 4.0 license."
+source_url = "https://archive.org/download/bub_gb_FqVWqqFkUDsC/bub_gb_FqVWqqFkUDsC.pdf#page=5"
+provenance = "Exact supplied page-image bytes retained unchanged after visual inspection. Source is the complete mechanically acquired PDF identified by the parent artifact; PDF and image SHA-256 hashes were independently measured before registration. Review scope is the passage context, not every word on the page."
+retrieved = "2026-10-16"
+sha256 = "2db9d0aef8743747806ab4537f3d9811253dd9bddc82fc31c129553d9e6fda2d"
+byte_size = 2592403
+path = "src/sources/works/order-of-preachers/missale/editions/1550-venice/artifacts/pdf-page-5-image-2db9d0ae/page.png"
+page_count = 1
+indexable = false
+derived_from = "artifact.order-of-preachers.missale.1550-venice.ia-complete-pdf-7754c4c5"
+transformation = "From exact complete parent PDF SHA-256 7754c4c5e9affe0fcb631d058da7d807652e15248676af4aca35b6d10855055e, select one-based PDF page 5. Byte-for-byte replay with Poppler pdftoppm 26.08.0: -f 5 -l 5 -scale-to 1600 -png -singlefile; dimensions 1166 by 1600 pixels. Replay reproduces exactly these PNG bytes; no crop or postprocessing. Derivation receipt SHA-256 bbec613dc4e2eb94f345aa377aea8b60d46ff5fb9a0ded896180198d38361a3f. The derivative retains this complete rendered page; all other 606 PDF pages are excluded. No transcription, OCR correction or wording alteration is applied to image bytes."
+notes = "Title page; PDF page 5. Printed title identifies Dominican use and Venice 1550. The title describes revision and the addition of a Rosary Mass approved by Paul III; this is a title-page claim, not a whole-book collation."

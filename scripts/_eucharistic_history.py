@@ -435,6 +435,15 @@ def catalogue(source: Path, root: Path, *, act_loader) -> dict:
         for comparison_id in relation["comparison_ids"]:
             comparisons_by_id[comparison_id]["relationship_ids"].append(relation["id"])
     groups = presentation_groups(data, entries, entities)
+    from _eucharistic_stages import load as load_stages, StageError
+    try:
+        stage_history = load_stages(root, catalogue_ids=set(by_id), comparisons=comparisons_by_id,
+                                    fingerprint=fingerprint,
+                                    default_tradition_id=data.get("stage_history_default_tradition"))
+    except StageError as error:
+        raise HistoryError(f"stage history: {error}") from error
+    for stamp in stage_history["inputs"]:
+        inputs[stamp["path"]] = stamp
     entries.sort(key=lambda row: row["id"])
     return {"schema": SCHEMA, "scope_ref": data["scope_ref"], "entries": entries,
             "counts": {"entries": len(entries), "substantive_established": sum(e["substantive_status"] == "substantive-established" for e in entries),
@@ -444,6 +453,7 @@ def catalogue(source: Path, root: Path, *, act_loader) -> dict:
                        "unmapped_families": sum(group["status"] == "unmapped" for group in groups)},
             "text_sets": text_sets,
             "comparisons": comparisons, "relationships": relations, "relationship_entities": entities, "presentation_groups": groups,
+            "stage_history": stage_history,
             "holdings": holdings, "inputs": sorted(inputs.values(), key=lambda row: row["path"]),
             "limitations": ["Research records are candidates, not accepted normative stations or text ancestry.",
                             "Recorded printings and acts are not a census of proven substantive liturgical versions.",
@@ -694,6 +704,38 @@ def _member_container(unit: dict) -> tuple | None:
     return None
 
 
+def _comparison_record_binding(record: dict | None, members: list[dict]) -> dict:
+    """Check declared canonical identities, never infer a manuscript mapping."""
+    if record is None:
+        return {"status": "no-catalogue-record", "checked_fields": []}
+    declared = record["source_record"]
+    checked = {}
+    edition = declared.get("source_library_edition_id")
+    if "source_library_edition_id" in declared:
+        if not isinstance(edition, str) or not edition.strip():
+            raise HistoryError(f"{record['id']}: invalid canonical edition binding")
+        if any(unit.get("text_edition_id") != edition for unit in members):
+            raise HistoryError(f"{record['id']}: comparison member text edition does not match catalogue binding")
+        checked["source_library_edition_id"] = edition
+    # A critical edition can contain several different liturgies. Its edition
+    # identity alone cannot substitute for an explicitly bounded passage owner.
+    for field, unit_field in (("source_library_passage_ids", "source_id"),
+                              ("source_library_checked_text_artifact_ids", "source_artifact_id")):
+        if field not in declared:
+            continue
+        allowed = declared[field]
+        if (not isinstance(allowed, list) or not allowed
+                or any(not isinstance(value, str) or not value.strip() for value in allowed)
+                or len(allowed) != len(set(allowed))):
+            raise HistoryError(f"{record['id']}: invalid canonical {field} binding")
+        if any(unit.get(unit_field) not in allowed for unit in members):
+            raise HistoryError(f"{record['id']}: comparison member {unit_field} does not match catalogue binding")
+        checked[field] = list(allowed)
+    return {"status": "checked-declared-identities" if checked else "unestablished-no-canonical-binding",
+            "checked_fields": list(checked), "declarations": checked,
+            "limitation": "Only explicit source-owner identities are checked; no manuscript identity, historical date or ancestry is inferred."}
+
+
 def compare(source: Path, root: Path, identifier: str, *, ventilator,
             adapter_loader=None, supported_adapters=None, act_loader=None) -> dict:
     """Compare explicit witness membership without creating textual ancestry."""
@@ -728,6 +770,8 @@ def compare(source: Path, root: Path, identifier: str, *, ventilator,
             target[name] = row
 
     related = []
+    records = {}
+    stage_inputs = None
     for side in ("left", "right"):
         if not isinstance(declaration.get(side), dict):
             raise HistoryError(f"comparison {side} must name a configured text_set")
@@ -735,8 +779,10 @@ def compare(source: Path, root: Path, identifier: str, *, ventilator,
         if data.get("act_slices") and act_loader is None:
             raise HistoryError("linked comparison requires the owning act loader to validate catalogue records")
         context = catalogue(source, root, act_loader=act_loader)
+        records = {row["id"]: row for row in context["entries"]}
         related = [row for row in context["relationships"] if identifier in row["comparison_ids"]]
         collect(context["inputs"], inputs, "path")
+        stage_inputs = context["stage_history"]["inputs"]
 
     for side in ("left", "right"):
         selected = declaration.get(side)
@@ -761,6 +807,7 @@ def compare(source: Path, root: Path, identifier: str, *, ventilator,
         if missing:
             raise HistoryError(f"comparison {side} names missing unit IDs: {', '.join(missing)}")
         members = [units[key] for key in ids]
+        record_binding = _comparison_record_binding(records.get(selected.get("record_id")), members)
         if len(members) > 1:
             containers = [_member_container(unit) for unit in members]
             order = [unit.get("source_order") for unit in members]
@@ -778,7 +825,7 @@ def compare(source: Path, root: Path, identifier: str, *, ventilator,
         joined = " ".join(unit["text"] for unit in members)
         body = serialized_text(joined, identifier + ":" + side, ventilator=ventilator)
         sides[side] = {"text_set": owner["id"], "adapter": adapter, "title": payload.get("title"),
-                       "record_id": selected.get("record_id"),
+                       "record_id": selected.get("record_id"), "record_binding": record_binding,
                        "target_date": payload.get("target_date"), "witness_date": payload.get("witness_date"),
                        "reviewed_on": payload.get("reviewed_on"), "scope": payload.get("scope"),
                        "members": output_members, "join_rule": "insert-one-space-between-exact-source-bodies",
@@ -796,7 +843,13 @@ def compare(source: Path, root: Path, identifier: str, *, ventilator,
     for expected in inputs.values():
         if fingerprint(root, inside(root, expected["path"]))["sha256"] != expected["sha256"]:
             raise HistoryError(f"comparison input changed: {expected['path']}")
-    for relative in ("scripts/_eucharistic_history.py", "tools/act-history"):
+    if stage_inputs is not None:
+        from _eucharistic_stages import verify_inputs as verify_stage_inputs, StageError
+        try:
+            verify_stage_inputs(root, stage_inputs, fingerprint=fingerprint)
+        except StageError as error:
+            raise HistoryError(f"stage history: {error}") from error
+    for relative in ("scripts/_eucharistic_history.py", "scripts/_eucharistic_stages.py", "tools/act-history"):
         tool_inputs[relative] = fingerprint(TOOL_ROOT, TOOL_ROOT / relative)
     unified = "".join(difflib.unified_diff(
         sides["left"]["serialized_text"].splitlines(keepends=True),

@@ -1,0 +1,613 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-stages",
+  "dossier_id": "armenian-eucharistic-stages",
+  "title": "Armenian Eucharistic book states: ancestral witnesses, Roman editions and Catholic reception",
+  "traditions": [
+    {
+      "id": "armenian-eucharistic-stages:ancestral",
+      "label": "Armenian ancestral witnesses",
+      "family": "armenian",
+      "scope": "Earlier Armenian anaphora and printed service-book witnesses.",
+      "coverage_note": "Antecedents and comparanda; these are not retrospectively labelled received Armenian Catholic books."
+    },
+    {
+      "id": "armenian-eucharistic-stages:catholic",
+      "label": "Armenian Catholic book states",
+      "family": "armenian",
+      "scope": "Roman Armenian editions and later Armenian Catholic reception and reform.",
+      "coverage_note": "Rite identity remains Armenian. Publication in Rome, Latin parallel text and Western additions do not turn the complete book into a Latin-rite Roman Missal."
+    },
+    {
+      "id": "armenian-eucharistic-stages:lviv",
+      "label": "Lviv Armenian manuscript reception",
+      "family": "armenian",
+      "scope": "One composite manuscript, its base copying and subsequent corrections.",
+      "coverage_note": "Local reception evidenced by the San Lazzaro catalogue; no universal Armenian use or precise date of correction inferred."
+    },
+    {
+      "id": "armenian-eucharistic-stages:apostolic",
+      "label": "Armenian Apostolic textual witnesses",
+      "family": "armenian",
+      "scope": "Seventeenth-century printing described as preserving Apostolic textual tradition.",
+      "coverage_note": "Printer affiliation is distinct from the text and its Roman reception."
+    }
+  ],
+  "sources": [
+    {
+      "id": "armenian-eucharistic-stages:bibliography1988",
+      "title": "Ninel Voskanian et al., Հայ գիրքը 1512–1800 թվականներին (Yerevan, 1988)",
+      "url": "https://arar.sci.am/Content/263047/matenaget%2040.pdf",
+      "kind": "institutional-catalogue",
+      "inspection": "Complete PDF acquired; page images read: printed p. 3/PDF 59, entry 2; p. 25/PDF 81, entry 34; p. 79/PDF 135, entries 103–104, including entry 103 continuation at top right.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Bibliographical descriptions, not a diplomatic edition. Entry 104 carries a warning that its 1677 imprint may conceal later production. Full protected catalogue retained only as research scratch."
+    },
+    {
+      "id": "armenian-eucharistic-stages:rsl1642",
+      "title": "Russian State Library / National Electronic Library, Ordo divinae missae armenorum (1642), ЗВ 59-5/86",
+      "url": "https://kp.rusneb.ru/item/material/ordo-divinae-missae-armenorum-io-giouanni-molino-interprete",
+      "kind": "institutional-catalogue",
+      "inspection": "Full item description, title, languages, collation, imprint, shelfmark and digital-copy link read.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "RSL reader returned a client application, not inspected page images. The separate Google copy supplies the primary-page check."
+    },
+    {
+      "id": "armenian-eucharistic-stages:ordo1642",
+      "title": "Կարգեալ սուրբ խորհուրդ պատարագի հայոց / Ordo divinae missae Armenorum (Rome: Propaganda Fide, 1642)",
+      "url": "https://books.google.com/books?id=ct5lAAAAcAAJ",
+      "kind": "primary-book",
+      "inspection": "All 148 available page IDs acquired as images. Visually read title PP5 and Creed sequence PA46–PA49, both Armenian and facing Latin. PA46 image has printed numeral 49 and PA49 image numeral 46; PA47 and PA48 have matching numerals. Read the transition from Creed Amen directly to the doxology on printed p. 48.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Whole book acquired but not wholly read or transcribed. Google page IDs and printed pagination must both be retained. The work is an Armenian liturgy edited in Rome, not thereby a Roman-rite missal."
+    },
+    {
+      "id": "armenian-eucharistic-stages:rome1677",
+      "title": "Խորհրդատետր պատարագին հայոց / Lyturgia Armena; Սպասաւորութիւն պատարագի / Ministerium Missae (Rome, 1677), Biblioteca Angelica copy",
+      "url": "https://books.google.com/books?id=ZYYB9ymm0iAC",
+      "kind": "primary-book",
+      "inspection": "All 96 available image IDs acquired. This bound digital object starts with Latin Codex mysterii missae Armenorum, then native Armenian Lyturgia and Ministerium. Visually read native title RA1-PP3; native Lyturgia pp. 6–9 = RA1-PP12–15, especially Creed/anathema/doxology p. 8; Ministerium title RA1-PA1. Parallel Melikian photographs independently checked title leaves and Ministerium pp. 21 and 25.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Google describes the first Latin part as a 37-page book; its page manifest includes the Armenian books too. Do not misclassify native pages as Latin translation. Only specified pages collated; no complete transcription."
+    },
+    {
+      "id": "armenian-eucharistic-stages:venice1823",
+      "title": "Խորհրդատետր սրբոյ Պատարագին ըստ արարողութեան Հայաստանեայց եկեղեցւոյ համեմատ օրինակին տպելոյ ի Հռովմ 1677 (Venice: San Lazzaro, 1823), University of Michigan copy",
+      "url": "https://books.google.com/books?id=r7gzAAAAMAAJ",
+      "kind": "primary-book",
+      "inspection": "All 88 available page IDs acquired; title PA1 visually read, including Armenian-Church rite, explicit Rome 1677 exemplar, San Lazzaro imprint and 1823 date.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "This 80-page Michigan witness is not automatically the same format or copy as the LOC exhibition witness. Declared conformity is checked; identity of every prayer and rubric is not."
+    },
+    {
+      "id": "armenian-eucharistic-stages:eton1677latin",
+      "title": "Eton College B44637, Codex mysterij missae Armenorum, seu Lyturgia armena (1677)",
+      "url": "https://catalog.etoncollege.com/B44637",
+      "kind": "institutional-catalogue",
+      "inspection": "Full catalogue HTML read: language, collation, contents, copy notes and possible issue with Armenian Lyturgia.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Catalogue identifies the Latin translation, [2], 37, [1] pages; it is distinct from the native Armenian 20+30-page set. Not an independent Armenian recension."
+    },
+    {
+      "id": "armenian-eucharistic-stages:ohanjanyan2020",
+      "title": "Anna Ohanjanyan, Creedal Controversies among Armenians in the Seventeenth-Century Ottoman Empire, JSAS 27 (2020), 7–69, DOI 10.1163/26670038-12342708",
+      "url": "https://societyforarmenianstudies.com/wp-content/uploads/2025/05/JSAS-Vol-27-1.pdf",
+      "kind": "scholarship",
+      "inspection": "Article pp. 15–16 and 39, including notes 25–26 and 119–121, read in extracted text and checked against PDF page images 19, 20, 43. Full issue acquired for research.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "P. 39/n. 121 dates the early Ordo to 1646. The inspected 1642 title and Creed independently establish the before-state used here; the article date is not silently corrected. The 1686 reception account depends on Djemdjemian 1989, pp. 154–155, 173–179."
+    },
+    {
+      "id": "armenian-eucharistic-stages:lvivcatalogue",
+      "title": "San Lazzaro manuscript catalogue, no. 669 (old 1178), ԺՈՂՈՎԱԾՈՅ ԽԱ",
+      "url": "https://www.catalog.mechitar.org/notices/eec2c940-4059-4b21-b9e0-ed9e62067f50",
+      "kind": "institutional-catalogue",
+      "inspection": "Complete native Armenian HTML record read: colophons, 1636 date, inferred Lviv origin, contents item 22/Mass fol. 263, lectionary additions fols. 476b2–478a1, and description of corrections conforming to Rome 1677.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "No manuscript images supplied or read. HTML has damaged folio notation (2631) and other typographical defects. Catalogue attributes Lviv use; it does not date the correcting hands. Acquisition by San Lazzaro before 1791 is not a proven terminus for every annotation."
+    },
+    {
+      "id": "armenian-eucharistic-stages:loc",
+      "title": "Library of Congress, Armenian Literary Tradition exhibition, items 010–012",
+      "url": "https://www.loc.gov/exhibits/armenian-literary-tradition/exhibition-items.html#obj9",
+      "kind": "institutional-catalogue",
+      "inspection": "Native titles and English descriptions read for 1722 manuscript, 1823 print and 1887 Bianchini chant manuscript; 1823 opening spread image viewed.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "The loose English caption Roman Catholic rite is read with the native title identifying the Armenian Church. Display images are selected openings, not complete books. No Catholic reception established for the 1722 manuscript."
+    },
+    {
+      "id": "armenian-eucharistic-stages:findikyan",
+      "title": "Michael Daniel Findikyan, Armenian Liturgy, New Catholic Encyclopedia",
+      "url": "https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/armenian-liturgy",
+      "kind": "scholarship",
+      "inspection": "Full article read; especially Divine Liturgy paragraphs on Xosrov, medieval anaphoras and late introduction/conclusion, plus bibliography (b).",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Expert synthesis identifies the commentary witness; manuscript and critical edition remain uninspected. Its broad developmental claims do not supply a continuous dated book genealogy."
+    },
+    {
+      "id": "armenian-eucharistic-stages:tonanian54",
+      "title": "Movses Tonanian, Հայ եկեղեցւոյ ծէսը և ծիսակարգը, broadcast 54 (Vatican News, 25 June 2021)",
+      "url": "https://www.vaticannews.va/hy/church/news/2021-06/hy-rubrica-liturgia-armena-54.html",
+      "kind": "official-retrospective",
+      "inspection": "Entire native Armenian article read, especially paragraphs identifying Vienna 1879, synods 1967/1968, May 1987 celebration, 1992 study and Pentecost 1994 implementation; final paragraph cites Աւետիք 1994 p. 365.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Authorial retrospective on the Vatican communications site, not the decree or edition itself. Its earlier 1676 date conflicts with inspected 1677 imprints. No modern full text imported and no exact modern textual delta inferred."
+    },
+    {
+      "id": "armenian-eucharistic-stages:handes1906lead",
+      "title": "Handēs Amsōreay 1906, no. 8: discussion of 1 John 5:7 and Hassunian books of 1879/1904",
+      "url": "https://tert.nla.am/archive/NLA%20AMSAGIR/Handesamsorya/1906/8_ocr.pdf",
+      "kind": "scholarship",
+      "inspection": "Search-index lead only; PDF retrieval returned HTTP 403. No page image read.",
+      "checked_on": "2026-10-16",
+      "status": "lead",
+      "limitations": "Do not use the snippet as established evidence for a lectionary interpolation. It identifies a concrete follow-up comparison at the fourth day of Epiphany, 1 John 5:4–10."
+    }
+  ],
+  "stages": [
+    {
+      "id": "armenian-eucharistic-stages:xosrov-tenth",
+      "tradition_id": "armenian-eucharistic-stages:ancestral",
+      "label": "Athanasius anaphora in Xosrov’s commentary",
+      "date_label": "Tenth-century commentary",
+      "start_year": 900,
+      "end_year": 999,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "The commentary supplies an early textual witness to the Athanasius anaphora.",
+      "components": [
+        "anaphoras"
+      ],
+      "witness_ids": [],
+      "witness_label": "Xosrov Anjewac‘i, Commentary on the Divine Liturgy (author died c. 963)",
+      "summary": "The commentary supplies an early textual witness to the Athanasius anaphora.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "armenian-eucharistic-stages:findikyan",
+          "locus": "Divine Liturgy, paragraph beginning The two most important commentaries",
+          "claim": "Identifies Xosrov’s phrase-by-phrase commentary as the earliest extant text of the Athanasius anaphora."
+        }
+      ],
+      "limitations": "Century placement follows the source, not a dated surviving codex. Earliest manuscript shelfmarks, textual recension and full native text must be established from the critical edition.",
+      "reception": "Ancestral Armenian witness; Catholic reception is not asserted."
+    },
+    {
+      "id": "armenian-eucharistic-stages:meghapart1513",
+      "tradition_id": "armenian-eucharistic-stages:ancestral",
+      "label": "First printed Armenian service-book witness",
+      "date_label": "Venice, 1513",
+      "start_year": 1513,
+      "end_year": 1513,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "An early printed Armenian Eucharistic service book, preceding the Roman Catholic editions.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [],
+      "witness_label": "Պատարագատետր (Խորհրդատետր), Venice, Hakob Meghapart, 1513; Armenian bibliography entry 2",
+      "summary": "An early printed Armenian Eucharistic service book, preceding the Roman Catholic editions.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "armenian-eucharistic-stages:bibliography1988",
+          "locus": "Printed p. 3, entry 2",
+          "claim": "Identifies the title, colophon, 44-leaf collation and Eucharistic contents."
+        }
+      ],
+      "limitations": "Bibliography inspected, book text not collated. Some scholarship debates conversion of the Armenian colophon year; 1513 is the national catalogue’s date. This row records the witness, not a proven new recension.",
+      "reception": "No specific Catholic reception inferred."
+    },
+    {
+      "id": "armenian-eucharistic-stages:lviv1636",
+      "tradition_id": "armenian-eucharistic-stages:lviv",
+      "label": "Lviv composite service-book base",
+      "date_label": "Copying attested in 1636",
+      "start_year": 1636,
+      "end_year": 1636,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Composite service book includes calendar, office, hymns, Mass, lectionary and Gospels; its Mass is attributed to Athanasius.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "calendar",
+        "lectionary",
+        "chant",
+        "rubrics"
+      ],
+      "witness_ids": [],
+      "witness_label": "San Lazzaro MS 669 (old 1178), ԺՈՂՈՎԱԾՈՅ ԽԱ; colophon of Anton, 1 June 1636",
+      "summary": "Composite service book includes calendar, office, hymns, Mass, lectionary and Gospels; its Mass is attributed to Athanasius.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "armenian-eucharistic-stages:lvivcatalogue",
+          "locus": "Colophons, fol. 396a2; contents item 22, fol. 263; lectionary additions fols. 476b2–478a1",
+          "claim": "Identifies dated copying and components later bearing corrections."
+        }
+      ],
+      "limitations": "1636 dates a colophon in the composite, not every component or addition; another section bears 1662. Uncorrected readings have not been reconstructed from page images.",
+      "reception": "Catalogue attributes official daily use to the Lviv Armenian cathedral; location is the cataloguer’s inference."
+    },
+    {
+      "id": "armenian-eucharistic-stages:ordo1642-state",
+      "tradition_id": "armenian-eucharistic-stages:catholic",
+      "label": "Roman edition with Western-form Creed",
+      "date_label": "Rome, 1642",
+      "start_year": 1642,
+      "end_year": 1642,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Armenian liturgy in Armenian and Latin columns. Its Creed follows the Western form and passes directly to the doxology without the Nicene anathema.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:arm-1642-ordo"
+      ],
+      "witness_label": "Կարգեալ սուրբ խորհուրդ պատարագի հայոց / Ordo divinae missae Armenorum, Rome 1642",
+      "summary": "Armenian liturgy in Armenian and Latin columns. Its Creed follows the Western form and passes directly to the doxology without the Nicene anathema.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "armenian-eucharistic-stages:ordo1642",
+          "locus": "Title PP5; PA46–PA49, especially printed p. 48",
+          "claim": "The 1642 imprint and Creed-to-doxology sequence are directly visible."
+        },
+        {
+          "source_id": "armenian-eucharistic-stages:rsl1642",
+          "locus": "Language and collation fields",
+          "claim": "Identifies bilingual Armenian/Latin edition, [4], 132, [2] pages."
+        }
+      ],
+      "limitations": "Bounded Creed comparison only. Neither a complete diplomatic transcription nor proof of every relationship to earlier Armenian manuscripts.",
+      "reception": "Published by the Catholic Propaganda Fide for Armenian liturgical use; the extent of local adoption is not established here."
+    },
+    {
+      "id": "armenian-eucharistic-stages:rome1677-state",
+      "tradition_id": "armenian-eucharistic-stages:catholic",
+      "label": "Complementary Roman Armenian service books",
+      "date_label": "Rome, 1677",
+      "start_year": 1677,
+      "end_year": 1677,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "One complementary set: celebrant’s liturgy and ministers’ directions. The liturgy prints Armenian-form Creed, Nicene anathema and doxology. Ministerium appends corrections to Office and hymns.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics",
+        "chant"
+      ],
+      "witness_ids": [
+        "eastern:arm-1677-liturgia",
+        "eastern:arm-1677-ministerium",
+        "eastern:arm-1823"
+      ],
+      "witness_label": "Խորհրդատետր պատարագին հայոց / Lyturgia Armena (20 pp.) + Սպասաւորութիւն պատարագի / Ministerium Missae (30 pp.); later claimed-conforming witness: San Lazzaro 1823",
+      "summary": "One complementary set: celebrant’s liturgy and ministers’ directions. The liturgy prints Armenian-form Creed, Nicene anathema and doxology. Ministerium appends corrections to Office and hymns.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "armenian-eucharistic-stages:rome1677",
+          "locus": "RA1-PP3 title; RA1-PP14 = Lyturgia p. 8; RA1-PA1 title",
+          "claim": "Establishes the native titles, imprint and Creed sequence."
+        },
+        {
+          "source_id": "armenian-eucharistic-stages:bibliography1988",
+          "locus": "p. 79, entry 103",
+          "claim": "Describes the 20+30-page complementary set; corrections target Office 1667 and hymnal 1664."
+        },
+        {
+          "source_id": "armenian-eucharistic-stages:venice1823",
+          "locus": "PA1 title",
+          "claim": "The later San Lazzaro witness explicitly claims conformity to the Rome 1677 exemplar."
+        }
+      ],
+      "limitations": "The two works are not successive versions. Office/hymnal appendices do not establish revision of the entire Eucharistic chant corpus. Entry 104 is another impression of both titles, possibly later despite its 1677 imprint. 1823 is grouped as declared reception, not a newly proven recension.",
+      "reception": "Catholic Armenian Roman edition, later explicitly followed by a Mkhitarist Armenian-Church book in 1823; universal use is not inferred."
+    },
+    {
+      "id": "armenian-eucharistic-stages:venice1686-state",
+      "tradition_id": "armenian-eucharistic-stages:apostolic",
+      "label": "Venice print preserving Apostolic tradition",
+      "date_label": "Venice, 1686",
+      "start_year": 1686,
+      "end_year": 1686,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "A separate Armenian missal witness described by scholarship as preserving Armenian Apostolic textual tradition.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:arm-khorhrdatetr1686"
+      ],
+      "witness_label": "Խորհրդատետր (Xorhrdatetr), Venice, T‘adēos Hamazaspean and Xoǰa Gaspar Sarhadean, 1686",
+      "summary": "A separate Armenian missal witness described by scholarship as preserving Armenian Apostolic textual tradition.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "armenian-eucharistic-stages:ohanjanyan2020",
+          "locus": "pp. 15–16, notes 25–26",
+          "claim": "Identifies printing, mixed confessional setting and reported 1691 Roman rejection of the missal’s Apostolic text."
+        }
+      ],
+      "limitations": "The critical source describes reception; specific prayers have not been collated here. Its companion lectionary is not automatically part of the existing missal witness ID.",
+      "reception": "Publisher’s Catholic connections do not establish Roman approval or Armenian Catholic normative reception."
+    },
+    {
+      "id": "armenian-eucharistic-stages:lviv-corrected",
+      "tradition_id": "armenian-eucharistic-stages:lviv",
+      "label": "Lviv manuscript adjusted toward Roman practice",
+      "date_label": "Undated later corrections; Mass correction target is Rome 1677",
+      "start_year": null,
+      "end_year": null,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "The manuscript bears corrections toward the Roman 1677 Mass and an erased April 7 Annunciation date replaced by March 25.",
+      "components": [
+        "ordinary",
+        "calendar",
+        "lectionary"
+      ],
+      "witness_ids": [],
+      "witness_label": "San Lazzaro MS 669 (old 1178), corrected Mass section and altered Annunciation date",
+      "summary": "The manuscript bears corrections toward the Roman 1677 Mass and an erased April 7 Annunciation date replaced by March 25.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "armenian-eucharistic-stages:lvivcatalogue",
+          "locus": "Item 22/Mass fol. 263; lectionary additions fols. 476b2–478a1",
+          "claim": "Cataloguer explicitly describes Mass corrections and the overwritten feast date."
+        }
+      ],
+      "limitations": "Hands and dates are not identified. The calendar change and Mass corrections need not be contemporary. No manuscript folio images have been collated.",
+      "reception": "Evidence for a local manuscript’s correction and reception; no general Roman decree or universal Armenian change follows."
+    },
+    {
+      "id": "armenian-eucharistic-stages:vienna1879",
+      "tradition_id": "armenian-eucharistic-stages:catholic",
+      "label": "Patriarchal Armenian Catholic service book",
+      "date_label": "Vienna, 1879",
+      "start_year": 1879,
+      "end_year": 1879,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Patriarchal book identified as using the developed Lambron–Metsop textual family.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [],
+      "witness_label": "Armenian Catholic Patriarchate Pataragamadoyc‘, Vienna 1879 (exact title-page transcription pending)",
+      "summary": "Patriarchal book identified as using the developed Lambron–Metsop textual family.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "armenian-eucharistic-stages:tonanian54",
+          "locus": "Paragraph beginning 1879-ին, Վիեննայի մէջ",
+          "claim": "Identifies publication, patriarchal affiliation and textual family."
+        }
+      ],
+      "limitations": "Retrospective identification; title page, approval and individual textual changes remain uninspected. No 1677-to-1879 revision edge is asserted.",
+      "reception": "Explicitly identified as Armenian Catholic patriarchal publication."
+    },
+    {
+      "id": "armenian-eucharistic-stages:revised1994",
+      "tradition_id": "armenian-eucharistic-stages:catholic",
+      "label": "Revised Armenian Catholic order prescribed",
+      "date_label": "Effective from Pentecost 1994",
+      "start_year": 1994,
+      "end_year": 1994,
+      "date_kind": "effective",
+      "status": "documented",
+      "scope": "A revised order, following manuscript comparison, was prescribed for Armenian Catholic churches from Pentecost 1994.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [],
+      "witness_label": "Revised Armenian Catholic Pataragamadoyc‘ prescribed by Catholicos-Patriarch John Peter XVIII in 1994; decree cited in Աւետիք 1994, p. 365",
+      "summary": "A revised order, following manuscript comparison, was prescribed for Armenian Catholic churches from Pentecost 1994.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "armenian-eucharistic-stages:tonanian54",
+          "locus": "Final paragraphs on 1992 study and 1994 decree",
+          "claim": "Reports the revised order and effective reception date, with a precise primary-publication locator."
+        }
+      ],
+      "limitations": "Primary decree and definitive book not acquired. Changes to particular prayers and rubrics remain unproved; 1987 demonstration is not treated as a separate edition.",
+      "reception": "The retrospective reports prescription for all Armenian Catholic churches; implementation beyond the decree is not independently measured."
+    }
+  ],
+  "transitions": [
+    {
+      "id": "armenian-eucharistic-stages:creed1642-1677",
+      "from_stage": "armenian-eucharistic-stages:ordo1642-state",
+      "to_stage": "armenian-eucharistic-stages:rome1677-state",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "text-collated",
+      "summary": "The Roman Armenian books differ at the Creed: the 1642 Western-form sequence without the Nicene anathema becomes Armenian-form Creed with that anathema in 1677; the doxology remains.",
+      "components": [
+        "ordinary"
+      ],
+      "changes": [
+        {
+          "component": "ordinary",
+          "before": "Western-form Creed, followed immediately by the doxology after its final Amen.",
+          "after": "Armenian-form Creed followed by the Nicene anathema before the doxology.",
+          "locus_before": "Ordo 1642, Google PA46–PA49; Creed continuation and immediate doxology on printed p. 48.",
+          "locus_after": "Lyturgia Armena 1677, native p. 8, Google RA1-PP14, left column Creed continuing at top right; anathema then doxology in right column.",
+          "evidence": [
+            {
+              "source_id": "armenian-eucharistic-stages:ordo1642",
+              "locus": "Printed p. 48",
+              "claim": "No intervening anathema appears between the Creed’s ending and the doxology."
+            },
+            {
+              "source_id": "armenian-eucharistic-stages:rome1677",
+              "locus": "Native p. 8",
+              "claim": "The paragraph beginning Իսկ որք ասեն stands between Creed and doxology."
+            },
+            {
+              "source_id": "armenian-eucharistic-stages:ohanjanyan2020",
+              "locus": "p. 39, nn. 119–121",
+              "claim": "Independent scholarly comparison identifies the same structural distinction, although its early-edition date is 1646."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "armenian-eucharistic-stages:ordo1642",
+          "locus": "PP5 title and Creed leaves",
+          "claim": "Directly fixes the inspected before-state to 1642."
+        },
+        {
+          "source_id": "armenian-eucharistic-stages:rome1677",
+          "locus": "RA1-PP3 title and RA1-PP14",
+          "claim": "Directly fixes the inspected after-state to the native 1677 book."
+        }
+      ],
+      "limitations": "This is a bounded comparison of published states. It does not prove that the entire 1677 edition was revised directly from the 1642 printing. Ohanjanyan’s 1646 citation remains a bibliographic discrepancy but is no longer the sole basis for the 1642 reading. Exact complete Creed transcription and normalization remain undone.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished"
+    },
+    {
+      "id": "armenian-eucharistic-stages:lviv-reception",
+      "from_stage": "armenian-eucharistic-stages:lviv1636",
+      "to_stage": "armenian-eucharistic-stages:lviv-corrected",
+      "kind": "reception",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "A Lviv Armenian manuscript was altered toward Roman exemplars: its Annunciation heading changed from April 7 to March 25, and its Mass received corrections described as conforming to Rome 1677.",
+      "components": [
+        "calendar",
+        "lectionary",
+        "ordinary"
+      ],
+      "changes": [
+        {
+          "component": "calendar",
+          "before": "Annunciation heading dated April 7.",
+          "after": "April 7 erased; March 25 entered.",
+          "locus_before": "MS 669/1178, lectionary additions fols. 476b2–478a1, Annunciation heading.",
+          "locus_after": "Same heading, replacement date.",
+          "evidence": [
+            {
+              "source_id": "armenian-eucharistic-stages:lvivcatalogue",
+              "locus": "Lectionary additions after item 29",
+              "claim": "Catalogue explicitly describes the erasure and replacement."
+            }
+          ]
+        },
+        {
+          "component": "ordinary",
+          "before": "Passages of the manuscript Mass differed from the Roman 1677 exemplar.",
+          "after": "Correcting hands altered those passages to agree with that exemplar.",
+          "locus_before": "MS 669/1178, Mass section beginning fol. 263 (individual correction sites not enumerated).",
+          "locus_after": "Same section, later corrections.",
+          "evidence": [
+            {
+              "source_id": "armenian-eucharistic-stages:lvivcatalogue",
+              "locus": "Item 22, Խորհրդատետր",
+              "claim": "Explicit catalogue description of corrections toward the 1677 Roman text."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "armenian-eucharistic-stages:lvivcatalogue",
+          "locus": "Contents items 22 and 29",
+          "claim": "Records both material alterations in the same manuscript."
+        }
+      ],
+      "limitations": "Not directly collated from manuscript images. The 1636 date belongs to the composite copy, not the correction event; calendar and Mass hands may differ. The calendar alteration is not attributed to the 1677 book. Exact Mass readings are missing.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed"
+    }
+  ],
+  "gaps": [
+    {
+      "id": "armenian-eucharistic-stages:gap-medieval",
+      "tradition_id": "armenian-eucharistic-stages:ancestral",
+      "period": "Tenth to fifteenth centuries",
+      "missing": "Manuscript-level witnesses and exact changes from the Xosrov commentary to later Lambron–Metsop orders; no continuous genealogy established.",
+      "next_source": "S. Peter Cowe, Commentary on the Divine Liturgy by Xosrov Anjewac‘i (1991); Y. Gat‘rčean / Y. Tašean, Պատարագամատոյցք Հայոց (Vienna, 1897), especially native texts and apparatus.",
+      "consequence": "Only the identified early anaphora attestation is positioned; broad medieval development is not converted into invented editions."
+    },
+    {
+      "id": "armenian-eucharistic-stages:gap-1642-ancestry",
+      "tradition_id": "armenian-eucharistic-stages:catholic",
+      "period": "1630s–1677",
+      "missing": "Full revision dossiers and direct exemplar genealogy; reason for Ohanjanyan’s 1646 date.",
+      "next_source": "1642 approvals and Italian colophon now acquired; Propaganda Fide editorial records; compare the complete 1642 and 1677 scans and Ohanjanyan n. 121.",
+      "consequence": "Bounded Creed difference is established; whole-book direct parentage remains unestablished."
+    },
+    {
+      "id": "armenian-eucharistic-stages:gap-lviv",
+      "tradition_id": "armenian-eucharistic-stages:lviv",
+      "period": "1636 and undated later corrections",
+      "missing": "Images and palaeographic dates of correcting hands, original and overwritten Mass passages.",
+      "next_source": "San Lazzaro MS 669, old 1178, Mass fol. 263 onward; lectionary fols. 476b2–478a1.",
+      "consequence": "Calendar and Mass corrections remain catalogue-described; do not assign a fabricated year or join the hands."
+    },
+    {
+      "id": "armenian-eucharistic-stages:gap-1823",
+      "tradition_id": "armenian-eucharistic-stages:catholic",
+      "period": "1677–1823",
+      "missing": "Complete comparison testing the 1823 title’s conformity claim and identifying differences among 1823 formats.",
+      "next_source": "Acquired 1677 native Lyturgia and 1823 Michigan 80-page witness; LOC 1823 exhibition copy; Armenian bibliography 1801–1850 entries 422–423.",
+      "consequence": "1823 is a declared-conforming witness within the 1677 state, not a separate reform."
+    },
+    {
+      "id": "armenian-eucharistic-stages:gap-1722",
+      "tradition_id": "armenian-eucharistic-stages:ancestral",
+      "period": "1722",
+      "missing": "Full LOC manuscript identity, text and reception; the exhibition does not connect it to a Catholic recension.",
+      "next_source": "LOC Near East Section item 010, T‘akhtayghalēn/Sebastia missal copied 1722, and its second 1722 missal.",
+      "consequence": "Catalogued as acquisition leads; not inserted into Catholic succession merely because of proximity to the 1823 exhibit."
+    },
+    {
+      "id": "armenian-eucharistic-stages:gap-1879",
+      "tradition_id": "armenian-eucharistic-stages:catholic",
+      "period": "1879–1904",
+      "missing": "Exact patriarchal edition, approval and component deltas; reported 1 John reading not yet page-checked.",
+      "next_source": "Vienna 1879 patriarchal Khorhrdatetr; Vienna 1904 editions (one lectionary, one ordinary); Handēs Amsōreay 1906 no. 8, fourth day of Epiphany, 1 John 5:4–10; Google 1904 id jJIwAQAAMAAJ.",
+      "consequence": "Identified 1879 state has no speculative textual transition; the possible lectionary change remains a lead."
+    },
+    {
+      "id": "armenian-eucharistic-stages:gap-1994",
+      "tradition_id": "armenian-eucharistic-stages:catholic",
+      "period": "1967–1994 and later",
+      "missing": "Primary promulgation and definitive revised book, with exact restored or omitted prayers and rubrics.",
+      "next_source": "Աւետիք (official monthly of the Armenian Catholic Patriarchate), 1994 p. 365; patriarchal/Sacred See liturgical commission documents concluded 1992; revised Pataragamadoyc‘ effective Pentecost 1994.",
+      "consequence": "Effective book state is documented by official retrospective; exact modern revision edge and present edition are not inferred."
+    }
+  ]
+}

@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 3009,
-  "editions": 1095,
-  "passages": 5309,
-  "readable": 3101,
-  "works": 955
+  "artifacts": 3068,
+  "editions": 1109,
+  "passages": 5352,
+  "readable": 3111,
+  "works": 963
  },
  "facets": {
   "authors": [
@@ -203,6 +203,14 @@
    },
    {
     "id": "Armenian Church manuscript tradition; Frederick Cornwallis Conybeare, editor and translator",
+    "works": 1
+   },
+   {
+    "id": "Armenian liturgical tradition; Sacred Congregation de Propaganda Fide, publisher",
+    "works": 2
+   },
+   {
+    "id": "Armenian liturgical tradition; edition-specific publishers named below",
     "works": 1
    },
    {
@@ -411,6 +419,10 @@
    },
    {
     "id": "Church of Smyrna",
+    "works": 1
+   },
+   {
+    "id": "Cistercian Order",
     "works": 1
    },
    {
@@ -1302,6 +1314,14 @@
     "works": 1
    },
    {
+    "id": "Order of Preachers",
+    "works": 1
+   },
+   {
+    "id": "Order of the Brothers of the Blessed Virgin Mary of Mount Carmel",
+    "works": 1
+   },
+   {
     "id": "Origen",
     "works": 5
    },
@@ -1594,6 +1614,10 @@
     "works": 1
    },
    {
+    "id": "Sacred Congregation de Propaganda Fide, publisher; historical bound collection",
+    "works": 1
+   },
+   {
     "id": "Sacred Congregation for Divine Worship",
     "works": 3
    },
@@ -1727,7 +1751,7 @@
    },
    {
     "id": "Syriac Catholic Church liturgical tradition",
-    "works": 1
+    "works": 2
    },
    {
     "id": "Syro-Malabar Catholic Church liturgical tradition",
@@ -1985,7 +2009,7 @@
    },
    {
     "id": "liturgical-book",
-    "works": 28
+    "works": 35
    },
    {
     "id": "patristic-translation-anthology",
@@ -2533,6 +2557,10 @@
    },
    {
     "id": "biblical-version",
+    "works": 1
+   },
+   {
+    "id": "bound-volume",
     "works": 1
    },
    {
@@ -3482,7 +3510,7 @@
     "id": "en"
    },
    {
-    "editions": 320,
+    "editions": 327,
     "id": "la"
    },
    {
@@ -3510,7 +3538,7 @@
     "id": "he"
    },
    {
-    "editions": 7,
+    "editions": 9,
     "id": "syr"
    },
    {
@@ -3528,6 +3556,10 @@
    {
     "editions": 3,
     "id": "grc-la"
+   },
+   {
+    "editions": 3,
+    "id": "hy"
    },
    {
     "editions": 2,
@@ -3552,6 +3584,14 @@
    {
     "editions": 1,
     "id": "hr"
+   },
+   {
+    "editions": 1,
+    "id": "hy-la"
+   },
+   {
+    "editions": 1,
+    "id": "la-hy"
    },
    {
     "editions": 1,
@@ -3593,12 +3633,12 @@
     "label": "15th century"
    },
    {
-    "editions": 5,
+    "editions": 8,
     "id": "1500",
     "label": "16th century"
    },
    {
-    "editions": 16,
+    "editions": 25,
     "id": "1600",
     "label": "17th century"
    },
@@ -3608,12 +3648,12 @@
     "label": "18th century"
    },
    {
-    "editions": 206,
+    "editions": 207,
     "id": "1800",
     "label": "19th century"
    },
    {
-    "editions": 240,
+    "editions": 241,
     "id": "1900",
     "label": "20th century"
    },
@@ -3625,8 +3665,8 @@
   ],
   "rights": [
    {
-    "artifacts": 1702,
-    "editions": 409,
+    "artifacts": 1756,
+    "editions": 420,
     "id": "public-domain"
    },
    {
@@ -3650,8 +3690,8 @@
     "id": "project-created"
    },
    {
-    "artifacts": 1,
-    "editions": 1,
+    "artifacts": 6,
+    "editions": 2,
     "id": "permission"
    }
   ]
@@ -6200,6 +6240,115 @@
     "syr"
    ],
    "title": "Rituale Armenorum"
+  },
+  {
+   "alternate_titles": [
+    "Սպասաւորութիւն Պատարագի"
+   ],
+   "author": "Armenian liturgical tradition; Sacred Congregation de Propaganda Fide, publisher",
+   "category": "liturgical-book",
+   "directory": "editions/armenian-church/ministerium-missae/",
+   "editions": [
+    {
+     "date": "1677",
+     "file": "1677-1677-rome-propaganda-armenian.json",
+     "id": "edition.armenian-church.ministerium-missae.1677-rome-propaganda-armenian",
+     "language": "hy",
+     "passages": 0,
+     "readable": 0,
+     "rights": [],
+     "title": "Ministerium Missae / Սպասաւորութիւն Պատարագի",
+     "year": 1677
+    }
+   ],
+   "id": "work.armenian-church.ministerium-missae",
+   "languages": [
+    "hy",
+    "la"
+   ],
+   "title": "Ministerium Missae"
+  },
+  {
+   "alternate_titles": [
+    "Ordo divinae missae Armenorum (armenice et latine)"
+   ],
+   "author": "Armenian liturgical tradition; Sacred Congregation de Propaganda Fide, publisher",
+   "category": "liturgical-book",
+   "directory": "editions/armenian-church/ordo-divinae-missae-armenorum/",
+   "editions": [
+    {
+     "date": "1642",
+     "file": "1642-1642-rome-propaganda.json",
+     "id": "edition.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda",
+     "language": "hy-la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Ordo divinae missae Armenorum",
+     "year": 1642
+    }
+   ],
+   "id": "work.armenian-church.ordo-divinae-missae-armenorum",
+   "languages": [
+    "hy",
+    "la"
+   ],
+   "title": "Ordo divinae missae Armenorum"
+  },
+  {
+   "alternate_titles": [
+    "Liturgia Armena",
+    "Codex mysterii missae Armenorum, seu Lyturgia Armena",
+    "Խորհրդատետր սրբոյ Պատարագին"
+   ],
+   "author": "Armenian liturgical tradition; edition-specific publishers named below",
+   "category": "liturgical-book",
+   "directory": "editions/armenian-church/lyturgia-armena/",
+   "editions": [
+    {
+     "date": "1677",
+     "file": "1677-1677-rome-propaganda-armenian.json",
+     "id": "edition.armenian-church.lyturgia-armena.1677-rome-propaganda-armenian",
+     "language": "hy",
+     "passages": 0,
+     "readable": 0,
+     "rights": [],
+     "title": "Lyturgia Armena / Խորհրդատետր Պատարագին Հայոց",
+     "year": 1677
+    },
+    {
+     "date": "1677",
+     "file": "1677-1677-rome-propaganda-latin.json",
+     "id": "edition.armenian-church.lyturgia-armena.1677-rome-propaganda-latin",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [],
+     "title": "Codex mysterii missae Armenorum, seu Lyturgia Armena",
+     "year": 1677
+    },
+    {
+     "date": "1823",
+     "file": "1823-1823-venice-san-lazzaro.json",
+     "id": "edition.armenian-church.lyturgia-armena.1823-venice-san-lazzaro",
+     "language": "hy",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Խորհրդատետր սրբոյ Պատարագին ըստ արարողութեան Հայաստանեայց եկեղեցւոյ համեմատ օրինակին տպելոյ ի Հռովմ 1677",
+     "year": 1823
+    }
+   ],
+   "id": "work.armenian-church.lyturgia-armena",
+   "languages": [
+    "hy",
+    "la"
+   ],
+   "title": "Lyturgia Armena"
   },
   {
    "alternate_titles": [
@@ -10922,6 +11071,48 @@
     "grc"
    ],
    "title": "Martyrium Polycarpi"
+  },
+  {
+   "alternate_titles": [
+    "Missale ad vsum sacri Ordinis Cisterciensis"
+   ],
+   "author": "Cistercian Order",
+   "category": "liturgical-book",
+   "directory": "editions/cistercian-order/missale-cisterciense/",
+   "editions": [
+    {
+     "date": "1606",
+     "file": "1606-paris-marnef-cavellat-1606.json",
+     "id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+     "language": "la",
+     "passages": 9,
+     "readable": 3,
+     "rights": [
+      "permission",
+      "public-domain"
+     ],
+     "title": "Missale ad vsum sacri Ordinis Cisterciensis. Iuxta decreta Capituli Generalis dicti ordinis, Romano conformius redditum, primo accentibus ornatum & auctum",
+     "year": 1606
+    },
+    {
+     "date": "1657",
+     "file": "1657-paris-cramoisy-1657.json",
+     "id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+     "language": "la",
+     "passages": 12,
+     "readable": 3,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Missale Cisterciense iuxta Romani recogniti correctionem. Primo editum. Authoritate Superiorum",
+     "year": 1657
+    }
+   ],
+   "id": "work.cistercian-order.missale-cisterciense",
+   "languages": [
+    "la"
+   ],
+   "title": "Missale Cisterciense"
   },
   {
    "alternate_titles": [
@@ -20154,6 +20345,19 @@
    "directory": "editions/maronite-church/qurbono/",
    "editions": [
     {
+     "date": "1594",
+     "file": "1594-1594-rome-medici.json",
+     "id": "edition.maronite-church.qurbono.1594-rome-medici",
+     "language": "syr",
+     "passages": 1,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Missale Chaldaicum iuxta ritum Ecclesiae nationis Maronitarum",
+     "year": 1594
+    },
+    {
      "date": "1908",
      "file": "1908-1908-beirut-maronite-press-second-printing.json",
      "id": "edition.maronite-church.qurbono.1908-beirut-maronite-press-second-printing",
@@ -21296,6 +21500,92 @@
     "en"
    ],
    "title": "Extinguisher"
+  },
+  {
+   "alternate_titles": [
+    "Dominican Missal",
+    "Missale ad usum fratrum Praedicatorum Sancti Dominici",
+    "Missale juxta ritum sacri ordinis Praedicatorum S. P. N. Dominici"
+   ],
+   "author": "Order of Preachers",
+   "category": "liturgical-book",
+   "directory": "editions/order-of-preachers/missale/",
+   "editions": [
+    {
+     "date": "1550",
+     "file": "1550-1550-venice.json",
+     "id": "edition.order-of-preachers.missale.1550-venice",
+     "language": "la",
+     "passages": 4,
+     "readable": 1,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Missale ad usum fratrum Praedicatorum Sancti Dominici",
+     "year": 1550
+    },
+    {
+     "date": "1604",
+     "file": "1604-1604-rome-xavierre.json",
+     "id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+     "language": "la",
+     "passages": 7,
+     "readable": 1,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Missale juxta ritum sacri ordinis Praedicatorum S. P. N. Dominici",
+     "year": 1604
+    }
+   ],
+   "id": "work.order-of-preachers.missale",
+   "languages": [
+    "la"
+   ],
+   "title": "Missale Ordinis Praedicatorum"
+  },
+  {
+   "alternate_titles": [
+    "Carmelite Missal",
+    "Missale antique professionis Regularium beatissime Dei genitricis semperque virginis Marie de Monte Carmelo",
+    "Missale fratrum Carmelitarum Ordinis Beatae Dei Genitricis Mariae"
+   ],
+   "author": "Order of the Brothers of the Blessed Virgin Mary of Mount Carmel",
+   "category": "liturgical-book",
+   "directory": "editions/carmelite-order/missale/",
+   "editions": [
+    {
+     "date": "1574",
+     "file": "1574-1574-venice-giunta.json",
+     "id": "edition.carmelite-order.missale.1574-venice-giunta",
+     "language": "la",
+     "passages": 3,
+     "readable": 1,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Missale antique professionis Regularium beatissime Dei genitricis semperque virginis Marie de Monte Carmelo",
+     "year": 1574
+    },
+    {
+     "date": "1621",
+     "file": "1621-1621-venice-giunta.json",
+     "id": "edition.carmelite-order.missale.1621-venice-giunta",
+     "language": "la",
+     "passages": 5,
+     "readable": 1,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Missale fratrum Carmelitarum Ordinis Beatae Dei Genitricis Mariae",
+     "year": 1621
+    }
+   ],
+   "id": "work.carmelite-order.missale",
+   "languages": [
+    "la"
+   ],
+   "title": "Missale Carmelitarum"
   },
   {
    "alternate_titles": [
@@ -26143,6 +26433,33 @@
    "title": "Decretum Portus Aloisii: rescript on images and cult of the Blessed Virgin under the titles of Lourdes, La Salette, and the Immaculate Conception"
   },
   {
+   "alternate_titles": [],
+   "author": "Sacred Congregation de Propaganda Fide, publisher; historical bound collection",
+   "category": "bound-volume",
+   "directory": "editions/armenian-church/armenian-eucharistic-books-bound-volume/",
+   "editions": [
+    {
+     "date": "1677",
+     "file": "1677-1677-rome-propaganda-bound-copy.json",
+     "id": "edition.armenian-church.armenian-eucharistic-books-bound-volume.1677-rome-propaganda-bound-copy",
+     "language": "la-hy",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Codex mysterii missae Armenorum, Lyturgia Armena, and Ministerium Missae: bound copy",
+     "year": 1677
+    }
+   ],
+   "id": "work.armenian-church.armenian-eucharistic-books-bound-volume",
+   "languages": [
+    "hy",
+    "la"
+   ],
+   "title": "Codex mysterii missae Armenorum, Lyturgia Armena, and Ministerium Missae: bound volume"
+  },
+  {
    "alternate_titles": [
     "Notice-decree declaring the second typical edition of the postconciliar Roman Missal"
    ],
@@ -28397,6 +28714,37 @@
     "la"
    ],
    "title": "Ketābā de-tešmeštā de-qurābā be-kullkēn dīlējātā le-fut teksā de-'ēdtā qaddīštā de-Surjājē"
+  },
+  {
+   "alternate_titles": [
+    "Ketābā de-taksā de-qūrrābā",
+    "Syriac Catholic altar missal"
+   ],
+   "author": "Syriac Catholic Church liturgical tradition",
+   "category": "liturgical-book",
+   "directory": "editions/syriac-catholic-church/missale-syriacum/",
+   "editions": [
+    {
+     "date": "1922",
+     "file": "1922-1922-sharfeh-patriarchal.json",
+     "id": "edition.syriac-catholic-church.missale-syriacum.1922-sharfeh-patriarchal",
+     "language": "syr",
+     "passages": 2,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Missale iuxta ritum Ecclesiae Apostolicae Antiochenae Syrorum auctoritate recognitum",
+     "year": 1922
+    }
+   ],
+   "id": "work.syriac-catholic-church.missale-syriacum",
+   "languages": [
+    "syr",
+    "ar",
+    "la"
+   ],
+   "title": "Missale iuxta ritum Ecclesiae Apostolicae Antiochenae Syrorum"
   },
   {
    "alternate_titles": [],

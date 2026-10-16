@@ -1,0 +1,820 @@
+{
+  "apparatus_caveat": "This is one dated calendar cell, not a claim that Teresa is absent from every part of the 1574 missal or that the whole calendar has been collated. Other computistical columns are omitted. The 1621 printed date remains October 5 and is not modernized to October 15. Abbreviations, ampersands and the cōm. macron are preserved; e-caudata/ligature and long s are normalized as declared. The printed common-Mass reference at p.409 is separately retained, with manuscript alterations excluded. Exact introduction date, chapter intervention and immediate textual ancestry remain unestablished.",
+  "basis": "The same bounded printed October 5 calendar row is compared in two Carmelite missals. In 1574 the date numeral is present and its feast cell is empty; the normalized body is therefore only 5. In 1621 the cell names Teresa, duplex minus, with Placidus and companions commemorated and page reference 409. Calendar entries are explicitly typed as calendar rows, not spoken prayers.",
+  "historical_act_claimed": false,
+  "historical_ancestry_claimed": false,
+  "id": "carmelite-1574-1621-october-05-calendar",
+  "identical_serialized_text": false,
+  "identity_claim": "parallel-function-not-same-composition",
+  "inputs": [
+    {
+      "byte_size": 65568,
+      "path": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
+      "sha256": "6174951e3825999abac44335f5e23c348674827816e1815107eb333f704417a6"
+    },
+    {
+      "byte_size": 292531,
+      "path": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
+      "sha256": "56d1041e2733208bff1a7fbcd273cf0675b1cb29ca76820683818993604c6671"
+    },
+    {
+      "byte_size": 89758,
+      "path": "src/sources/inventories/eucharistic-book-relationships-v1.toml",
+      "sha256": "d43fb733824f87fa46c4c5c1b81417683cbe496b140a97ea6139f1952830a91e"
+    },
+    {
+      "byte_size": 28509,
+      "path": "src/sources/inventories/eucharistic-stages/alexandrian.json",
+      "sha256": "8d42d7c2aff4a46d7b42f62536d1a358cfad479321fe918c498dbc8cb3cb1af7"
+    },
+    {
+      "byte_size": 31070,
+      "path": "src/sources/inventories/eucharistic-stages/ambrosian.json",
+      "sha256": "46616b871de98a741858f5b54e9b72e7b9f2607aee3aa93574eb21e05cadddb4"
+    },
+    {
+      "byte_size": 36101,
+      "path": "src/sources/inventories/eucharistic-stages/armenian.json",
+      "sha256": "5cbfeea1830f38329ee7e43fd0fd79db4b6245f4ef2a20cbc0206fc5827bffdb"
+    },
+    {
+      "byte_size": 37366,
+      "path": "src/sources/inventories/eucharistic-stages/byzantine.json",
+      "sha256": "db4316ec417c52fcd46025152a663a0e0a02a073a6a9acf6393c72e6b1d516e9"
+    },
+    {
+      "byte_size": 42261,
+      "path": "src/sources/inventories/eucharistic-stages/chaldean.json",
+      "sha256": "545531688b5bbee45ba265c02e2656947a66b1d30897c439485f621fb4b2068b"
+    },
+    {
+      "byte_size": 18309,
+      "path": "src/sources/inventories/eucharistic-stages/cistercian.json",
+      "sha256": "8ed49ffd176ce63de75389a78669fe49d42f7734f355740f7e5b62eadda8f490"
+    },
+    {
+      "byte_size": 34163,
+      "path": "src/sources/inventories/eucharistic-stages/latin-uses.json",
+      "sha256": "14c033848c4b8a9a63a56f7418b781c8097fbf945511bccd13f1fe6b05f6b738"
+    },
+    {
+      "byte_size": 38353,
+      "path": "src/sources/inventories/eucharistic-stages/malabar.json",
+      "sha256": "62f7b28aa8d16add38d429d73f08e0c2b632a0bd2ae882acb2d8873d7027832d"
+    },
+    {
+      "byte_size": 40829,
+      "path": "src/sources/inventories/eucharistic-stages/maronite.json",
+      "sha256": "ac8e944addb232a75bffd3a7663c183b23b59cfa6346ae30ebc96131b771c546"
+    },
+    {
+      "byte_size": 41527,
+      "path": "src/sources/inventories/eucharistic-stages/mozarabic.json",
+      "sha256": "35812331e200d6bdbfed825c53687056b399e5cd9b6399070b70c558e0b14c82"
+    },
+    {
+      "byte_size": 62579,
+      "path": "src/sources/inventories/eucharistic-stages/roman.json",
+      "sha256": "01102b86d8b595e7b7d654857e88a16e108518e6c70f797ee649545d3b849a7e"
+    },
+    {
+      "byte_size": 31240,
+      "path": "src/sources/inventories/eucharistic-stages/west-syriac.json",
+      "sha256": "14a7f4235930568c1f2162c41226471aab03f5d3233900be0b5534369722d293"
+    },
+    {
+      "byte_size": 186074,
+      "path": "src/sources/inventories/latin-missal-acts-v1.toml",
+      "sha256": "14a1321e559e4edf4141285686a808acb40d77e330783f24b2c29d3446e9233d"
+    },
+    {
+      "byte_size": 9311,
+      "path": "src/sources/inventories/missal-timeline-holdings-v1.toml",
+      "sha256": "43d18228b997f149a6aab5605ee0397713348cc1d2f1458c49940fa89f147c8e"
+    },
+    {
+      "byte_size": 82303,
+      "path": "src/sources/inventories/roman-holy-week-acts-v1.toml",
+      "sha256": "cfbc951ec40071d5eb78c55d9453811ee194647b57893b7aa3b4768abadea9bb"
+    },
+    {
+      "byte_size": 236924,
+      "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+      "sha256": "83a22e7ec81089a8c6e25a0d43bd9a83aa90193026bf602ea1595976f2720024"
+    },
+    {
+      "byte_size": 2448,
+      "path": "src/sources/works/carmelite-order/missale/editions/1574-venice-giunta/artifacts/ia-complete-pdf-285e4857/artifact.toml",
+      "sha256": "040b6c88449f621172acdc3e36d87801b930505737a63f7c3c0e29cb938d5210"
+    },
+    {
+      "byte_size": 3349,
+      "path": "src/sources/works/carmelite-order/missale/editions/1574-venice-giunta/artifacts/october-05-calendar-entry-checked-latin-f0b5c2c2/artifact.toml",
+      "sha256": "4a24831e89f87f18a5b30cf2be56eefcf0373698fdb662014638f2b2ada0abc0"
+    },
+    {
+      "byte_size": 2,
+      "path": "src/sources/works/carmelite-order/missale/editions/1574-venice-giunta/artifacts/october-05-calendar-entry-checked-latin-f0b5c2c2/text.txt",
+      "sha256": "f0b5c2c2211c8d67ed15e75e656c7862d086e9245420892a7de62cd9ec582a06"
+    },
+    {
+      "byte_size": 2783,
+      "path": "src/sources/works/carmelite-order/missale/editions/1574-venice-giunta/artifacts/pdf-page-20-image-e1380012/artifact.toml",
+      "sha256": "1d726d39aa6c05570824718717ac06c046b18eb210e6445e431b0006ea3f6c78"
+    },
+    {
+      "byte_size": 1949596,
+      "path": "src/sources/works/carmelite-order/missale/editions/1574-venice-giunta/artifacts/pdf-page-20-image-e1380012/page.png",
+      "sha256": "e1380012bf32d0c2f84f0a2dd60364df73bf84bb41984ca09547c0ee6a1ef24c"
+    },
+    {
+      "byte_size": 2672,
+      "path": "src/sources/works/carmelite-order/missale/editions/1574-venice-giunta/artifacts/pdf-page-7-image-a13f0f27/artifact.toml",
+      "sha256": "a829e17f9b9cc91e0f42aad510aee215599c501bdc41eb9dab9e3746f2a385ab"
+    },
+    {
+      "byte_size": 2422259,
+      "path": "src/sources/works/carmelite-order/missale/editions/1574-venice-giunta/artifacts/pdf-page-7-image-a13f0f27/page.png",
+      "sha256": "a13f0f27e05a26e6c9252f231f529be6becd448938c6e66bbc16c0fef067aa84"
+    },
+    {
+      "byte_size": 597,
+      "path": "src/sources/works/carmelite-order/missale/editions/1574-venice-giunta/edition.toml",
+      "sha256": "6da8296b5624f41eec7dd049daacf2876f4b705fe058c94e9f7c8767a14e155b"
+    },
+    {
+      "byte_size": 1591,
+      "path": "src/sources/works/carmelite-order/missale/editions/1574-venice-giunta/passages/october-05-calendar-entry.toml",
+      "sha256": "1ec898bb7dbd33518f33e6e192f2feedc04d36ee44f2f09fe84d6c9bfee4af6c"
+    },
+    {
+      "byte_size": 1205,
+      "path": "src/sources/works/carmelite-order/missale/editions/1574-venice-giunta/passages/october-calendar.toml",
+      "sha256": "20ee69e68e7f3541a57861c4908ea0a953f918f8f157b3143ff2def40f812879"
+    },
+    {
+      "byte_size": 1088,
+      "path": "src/sources/works/carmelite-order/missale/editions/1574-venice-giunta/passages/title.toml",
+      "sha256": "947d7d2a9217ff316d7170063c9ba87825adcec96e2a4d3d4a38f48fc9ecd0be"
+    },
+    {
+      "byte_size": 2488,
+      "path": "src/sources/works/carmelite-order/missale/editions/1621-venice-giunta/artifacts/ia-complete-pdf-9cca5de5/artifact.toml",
+      "sha256": "54b03bee9eb62998c76f2e3fb8504d74155d83db0e8a9a324206cecf9d75c009"
+    },
+    {
+      "byte_size": 3372,
+      "path": "src/sources/works/carmelite-order/missale/editions/1621-venice-giunta/artifacts/october-05-calendar-entry-checked-latin-3033d681/artifact.toml",
+      "sha256": "4c58b4f7faac44501d8e9307d7a35376a76758efd51085b908646317d0d1d2e1"
+    },
+    {
+      "byte_size": 60,
+      "path": "src/sources/works/carmelite-order/missale/editions/1621-venice-giunta/artifacts/october-05-calendar-entry-checked-latin-3033d681/text.txt",
+      "sha256": "3033d68160b4daab7e8bac6786064538cf353db0a4467235575753b069b7a020"
+    },
+    {
+      "byte_size": 2800,
+      "path": "src/sources/works/carmelite-order/missale/editions/1621-venice-giunta/artifacts/pdf-page-22-image-87dc3360/artifact.toml",
+      "sha256": "36b38dc9dbf167040c941bd10e30857387cd92f048166329246723422ca46220"
+    },
+    {
+      "byte_size": 549680,
+      "path": "src/sources/works/carmelite-order/missale/editions/1621-venice-giunta/artifacts/pdf-page-22-image-87dc3360/page.png",
+      "sha256": "87dc3360cfb91571aea9619cc815b1a4cd9ab7fa790736573ee067fc622c166c"
+    },
+    {
+      "byte_size": 2738,
+      "path": "src/sources/works/carmelite-order/missale/editions/1621-venice-giunta/artifacts/pdf-page-3-image-6d116dbb/artifact.toml",
+      "sha256": "80082f640ca815a7d2023c7c7ea8190deb4fcd4292daff9a93c2e43b20bf88ac"
+    },
+    {
+      "byte_size": 2228186,
+      "path": "src/sources/works/carmelite-order/missale/editions/1621-venice-giunta/artifacts/pdf-page-3-image-6d116dbb/page.png",
+      "sha256": "6d116dbb1b5ca851bf164643878b02390d27c6a55769ebd8d800152c1649e030"
+    },
+    {
+      "byte_size": 617,
+      "path": "src/sources/works/carmelite-order/missale/editions/1621-venice-giunta/edition.toml",
+      "sha256": "b075d80369fee732f324acef45a84c403c15f4b439a1668380bab72b994b600c"
+    },
+    {
+      "byte_size": 1612,
+      "path": "src/sources/works/carmelite-order/missale/editions/1621-venice-giunta/passages/october-05-calendar-entry.toml",
+      "sha256": "3a819fed5778a777dfac24295e6556c708cce853b2da6f0f312ff14fc5cec715"
+    },
+    {
+      "byte_size": 1191,
+      "path": "src/sources/works/carmelite-order/missale/editions/1621-venice-giunta/passages/october-calendar.toml",
+      "sha256": "35d9ba2192dd7e77e2899b48a24c23aad935f7c171f5d46a6fdd0e6f240a3016"
+    },
+    {
+      "byte_size": 1122,
+      "path": "src/sources/works/carmelite-order/missale/editions/1621-venice-giunta/passages/title.toml",
+      "sha256": "792256fbed3c12b53ca245a6cb0128042e411721abc1859d4c5fb602ec696477"
+    },
+    {
+      "byte_size": 735,
+      "path": "src/sources/works/carmelite-order/missale/work.toml",
+      "sha256": "2d722c728e8b3164a5c7821c6c6663221c524782f9f681420d4aa4d162f54f72"
+    }
+  ],
+  "introduction_date_inferred": false,
+  "kind": "parallel-liturgical-unit-comparison",
+  "left": {
+    "adapter": "carmelite-1574-october-calendar",
+    "join_rule": "insert-one-space-between-exact-source-bodies",
+    "joined_source_text": "5",
+    "joined_source_text_sha256": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
+    "members": [
+      {
+        "comparison_order": 1,
+        "content_id": "sha256:ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
+        "diplomatic": false,
+        "division": "calendar",
+        "element_key": "calendar-october-05",
+        "facsimile_pdf_page": "20",
+        "kind": "calendar-entry",
+        "language": "la",
+        "part": "calendar",
+        "printed_page": "unnumbered October calendar",
+        "provenance": {
+          "evidence_source_ids": [
+            "artifact.carmelite-order.missale.1574-venice-giunta.pdf-page-20-image-e1380012",
+            "passage.carmelite-order.missale.1574-venice-giunta.october-calendar",
+            "passage.carmelite-order.missale.1574-venice-giunta.title"
+          ],
+          "normalization": "Transcribe the printed day numeral and its feast cell, including the final printed page reference where present. Omit the other computistical columns, vertical rules, month heading and neighboring rows. Normalize long s to s and e-caudata/ae ligature to ae; regularize spaces between abbreviated words and before the page number. Preserve abbreviation periods, the macron in cōm., ampersands, case and wording. The 1574 feast cell is empty: its derivative contains only the printed date numeral 5, without invented placeholder text. Write one NFC UTF-8 line plus one LF. One row block, not a prayer or speech, zero-based half-open Unicode codepoint range [0,1) in the NFC body excluding final LF; source locus: October calendar, day 5: printed date numeral and empty feast cell; other computistical columns omitted.",
+          "review_limits": "One row block, not a prayer or speech, zero-based half-open Unicode codepoint range [0,1) in the NFC body excluding final LF; source locus: October calendar, day 5: printed date numeral and empty feast cell; other computistical columns omitted. Independent second AI reviewer checked the exact normalized body against the original retained image on 2026-10-16, including punctuation, abbreviation scope and boundaries; this is not human specialist certification. Reviewed body SHA-256 excluding final LF: ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d. Review receipt SHA-256: 7713be2c3ebc0992389deb7a5b4286c3be0b5c2e5b29ae0c4690ce5cd85b6071.",
+          "reviewed_on": "2026-10-16",
+          "scope": "Bounded October 5 calendar row, not a Mass prayer. An empty feast cell in 1574 is not a claim that Teresa or a devotion is absent throughout the book. The 1621 printed date is October 5; no date correction to October 15 is made. No introduction date or immediate ancestry is established.",
+          "source_locator": "October calendar, day 5: printed date numeral and empty feast cell; other computistical columns omitted",
+          "status": "verified-bounded-printed-edition-transcription"
+        },
+        "publication": {
+          "basis": "public-domain",
+          "basis_source_id": "artifact.carmelite-order.missale.1574-venice-giunta.october-05-calendar-entry-checked-latin-f0b5c2c2",
+          "jurisdiction": "United States",
+          "status": "permitted",
+          "surfaces": [
+            "public-git",
+            "corpus-data"
+          ]
+        },
+        "serialized_text": "5\n",
+        "serialized_text_sha256": "f0b5c2c2211c8d67ed15e75e656c7862d086e9245420892a7de62cd9ec582a06",
+        "source_artifact_id": "artifact.carmelite-order.missale.1574-venice-giunta.october-05-calendar-entry-checked-latin-f0b5c2c2",
+        "source_artifact_sha256": "f0b5c2c2211c8d67ed15e75e656c7862d086e9245420892a7de62cd9ec582a06",
+        "source_id": "passage.carmelite-order.missale.1574-venice-giunta.october-05-calendar-entry",
+        "source_order": 1,
+        "source_physical_line": 1,
+        "source_text": "5",
+        "target_edition_id": "edition.carmelite-order.missale.1574-venice-giunta",
+        "text_edition_id": "edition.carmelite-order.missale.1574-venice-giunta",
+        "text_path": "text/ordinary/calendar/calendar-october-05.txt",
+        "text_sha256": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
+        "transcription_kind": "witness-normalized-transcription",
+        "unit_id": "unit.carmelite-1574-october-calendar.october-05-calendar-entry"
+      }
+    ],
+    "record_binding": {
+      "checked_fields": [
+        "source_library_edition_id",
+        "source_library_passage_ids",
+        "source_library_checked_text_artifact_ids"
+      ],
+      "declarations": {
+        "source_library_checked_text_artifact_ids": [
+          "artifact.carmelite-order.missale.1574-venice-giunta.october-05-calendar-entry-checked-latin-f0b5c2c2"
+        ],
+        "source_library_edition_id": "edition.carmelite-order.missale.1574-venice-giunta",
+        "source_library_passage_ids": [
+          "passage.carmelite-order.missale.1574-venice-giunta.october-05-calendar-entry"
+        ]
+      },
+      "limitation": "Only explicit source-owner identities are checked; no manuscript identity, historical date or ancestry is inferred.",
+      "status": "checked-declared-identities"
+    },
+    "record_id": "latin-missal:carmelitarum-venetiis-1574",
+    "reviewed_on": "2026-10-16",
+    "scope": {
+      "no_historical_backprojection": true,
+      "not_direct_manuscript_transcription": true,
+      "omitted_book_divisions": [
+        "Other calendar rows and computistical columns",
+        "Ordinary, propers, readings and rubrics"
+      ],
+      "represented_witness": "Missale antique professionis Regularium beatissime Dei genitricis semperque virginis Marie de Monte Carmelo; Venice: apud Iuntas, 1574",
+      "status": "bounded-checked-latin-calendar-row",
+      "text_identity": "Bounded October 5 calendar row, not a Mass prayer. An empty feast cell in 1574 is not a claim that Teresa or a devotion is absent throughout the book. The 1621 printed date is October 5; no date correction to October 15 is made. No introduction date or immediate ancestry is established.",
+      "whole_book_complete": false
+    },
+    "serialized_text": "5\n",
+    "serialized_text_sha256": "f0b5c2c2211c8d67ed15e75e656c7862d086e9245420892a7de62cd9ec582a06",
+    "target_date": "1574",
+    "text_set": "carmelite-1574-october-calendar",
+    "title": "Carmelite 1574: October 5 calendar entry",
+    "witness_date": "1574 printed edition"
+  },
+  "limitations": [
+    "This is an explicitly aligned witness comparison, not an asserted historical revision or parent relationship.",
+    "Orthography, spacing, capitalization and punctuation remain visible; a textual diff does not classify their historical significance.",
+    "The apparatus caveat must accompany any historical interpretation of this bounded passage."
+  ],
+  "membership_status": "established",
+  "relationship_ids": [],
+  "relationships": [],
+  "right": {
+    "adapter": "carmelite-1621-october-calendar",
+    "join_rule": "insert-one-space-between-exact-source-bodies",
+    "joined_source_text": "5 Theresiae virg. dupl. min. & cōm. SS. Placidi & soc. 409",
+    "joined_source_text_sha256": "c33b45602d801fdd84527fbba77701b560c80bd425b983e259d0a5b4b7a26515",
+    "members": [
+      {
+        "comparison_order": 1,
+        "content_id": "sha256:c33b45602d801fdd84527fbba77701b560c80bd425b983e259d0a5b4b7a26515",
+        "diplomatic": false,
+        "division": "calendar",
+        "element_key": "calendar-october-05",
+        "facsimile_pdf_page": "22",
+        "kind": "calendar-entry",
+        "language": "la",
+        "part": "calendar",
+        "printed_page": "unnumbered October calendar",
+        "provenance": {
+          "evidence_source_ids": [
+            "artifact.carmelite-order.missale.1621-venice-giunta.pdf-page-22-image-87dc3360",
+            "passage.carmelite-order.missale.1621-venice-giunta.october-calendar",
+            "passage.carmelite-order.missale.1621-venice-giunta.title"
+          ],
+          "normalization": "Transcribe the printed day numeral and its feast cell, including the final printed page reference where present. Omit the other computistical columns, vertical rules, month heading and neighboring rows. Normalize long s to s and e-caudata/ae ligature to ae; regularize spaces between abbreviated words and before the page number. Preserve abbreviation periods, the macron in cōm., ampersands, case and wording. The 1574 feast cell is empty: its derivative contains only the printed date numeral 5, without invented placeholder text. Write one NFC UTF-8 line plus one LF. One row block, not a prayer or speech, zero-based half-open Unicode codepoint range [0,58) in the NFC body excluding final LF; source locus: October calendar, day 5: printed date numeral, feast cell and page reference; other computistical columns omitted.",
+          "review_limits": "One row block, not a prayer or speech, zero-based half-open Unicode codepoint range [0,58) in the NFC body excluding final LF; source locus: October calendar, day 5: printed date numeral, feast cell and page reference; other computistical columns omitted. Independent second AI reviewer checked the exact normalized body against the original retained image on 2026-10-16, including punctuation, abbreviation scope and boundaries; this is not human specialist certification. Reviewed body SHA-256 excluding final LF: c33b45602d801fdd84527fbba77701b560c80bd425b983e259d0a5b4b7a26515. Review receipt SHA-256: 7713be2c3ebc0992389deb7a5b4286c3be0b5c2e5b29ae0c4690ce5cd85b6071.",
+          "reviewed_on": "2026-10-16",
+          "scope": "Bounded October 5 calendar row, not a Mass prayer. An empty feast cell in 1574 is not a claim that Teresa or a devotion is absent throughout the book. The 1621 printed date is October 5; no date correction to October 15 is made. No introduction date or immediate ancestry is established.",
+          "source_locator": "October calendar, day 5: printed date numeral, feast cell and page reference; other computistical columns omitted",
+          "status": "verified-bounded-printed-edition-transcription"
+        },
+        "publication": {
+          "basis": "public-domain",
+          "basis_source_id": "artifact.carmelite-order.missale.1621-venice-giunta.october-05-calendar-entry-checked-latin-3033d681",
+          "jurisdiction": "United States",
+          "status": "permitted",
+          "surfaces": [
+            "public-git",
+            "corpus-data"
+          ]
+        },
+        "serialized_text": "5 Theresiae virg.\ndupl.\nmin.\n& cōm.\nSS.\nPlacidi & soc.\n409\n",
+        "serialized_text_sha256": "28b0de112ca022ec650fa72fda717dee1abdd17ec7031bc5174db78594214575",
+        "source_artifact_id": "artifact.carmelite-order.missale.1621-venice-giunta.october-05-calendar-entry-checked-latin-3033d681",
+        "source_artifact_sha256": "3033d68160b4daab7e8bac6786064538cf353db0a4467235575753b069b7a020",
+        "source_id": "passage.carmelite-order.missale.1621-venice-giunta.october-05-calendar-entry",
+        "source_order": 1,
+        "source_physical_line": 1,
+        "source_text": "5 Theresiae virg. dupl. min. & cōm. SS. Placidi & soc. 409",
+        "target_edition_id": "edition.carmelite-order.missale.1621-venice-giunta",
+        "text_edition_id": "edition.carmelite-order.missale.1621-venice-giunta",
+        "text_path": "text/ordinary/calendar/calendar-october-05.txt",
+        "text_sha256": "c33b45602d801fdd84527fbba77701b560c80bd425b983e259d0a5b4b7a26515",
+        "transcription_kind": "witness-normalized-transcription",
+        "unit_id": "unit.carmelite-1621-october-calendar.october-05-calendar-entry"
+      }
+    ],
+    "record_binding": {
+      "checked_fields": [
+        "source_library_edition_id",
+        "source_library_passage_ids",
+        "source_library_checked_text_artifact_ids"
+      ],
+      "declarations": {
+        "source_library_checked_text_artifact_ids": [
+          "artifact.carmelite-order.missale.1621-venice-giunta.october-05-calendar-entry-checked-latin-3033d681"
+        ],
+        "source_library_edition_id": "edition.carmelite-order.missale.1621-venice-giunta",
+        "source_library_passage_ids": [
+          "passage.carmelite-order.missale.1621-venice-giunta.october-05-calendar-entry"
+        ]
+      },
+      "limitation": "Only explicit source-owner identities are checked; no manuscript identity, historical date or ancestry is inferred.",
+      "status": "checked-declared-identities"
+    },
+    "record_id": "latin-missal:carmelitarum-capitulum-1621",
+    "reviewed_on": "2026-10-16",
+    "scope": {
+      "no_historical_backprojection": true,
+      "not_direct_manuscript_transcription": true,
+      "omitted_book_divisions": [
+        "Other calendar rows and computistical columns",
+        "Ordinary, propers, readings and rubrics"
+      ],
+      "represented_witness": "Missale fratrum Carmelitarum Ordinis Beatae Dei Genitricis Mariae; Venice: apud Iuntas, 1621",
+      "status": "bounded-checked-latin-calendar-row",
+      "text_identity": "Bounded October 5 calendar row, not a Mass prayer. An empty feast cell in 1574 is not a claim that Teresa or a devotion is absent throughout the book. The 1621 printed date is October 5; no date correction to October 15 is made. No introduction date or immediate ancestry is established.",
+      "whole_book_complete": false
+    },
+    "serialized_text": "5 Theresiae virg.\ndupl.\nmin.\n& cōm.\nSS.\nPlacidi & soc.\n409\n",
+    "serialized_text_sha256": "28b0de112ca022ec650fa72fda717dee1abdd17ec7031bc5174db78594214575",
+    "target_date": "1621",
+    "text_set": "carmelite-1621-october-calendar",
+    "title": "Carmelite 1621: October 5 calendar entry",
+    "witness_date": "1621 printed edition"
+  },
+  "schema": "triptych-eucharistic-witness-comparison/v1",
+  "source_refs": [
+    "passage.carmelite-order.missale.1574-venice-giunta.october-05-calendar-entry",
+    "passage.carmelite-order.missale.1621-venice-giunta.october-05-calendar-entry",
+    "passage.carmelite-order.missale.1574-venice-giunta.october-calendar",
+    "passage.carmelite-order.missale.1621-venice-giunta.october-calendar"
+  ],
+  "sources": [
+    {
+      "artifact_type": "facsimile-pdf",
+      "byte_size": 82736407,
+      "edition_id": "edition.carmelite-order.missale.1574-venice-giunta",
+      "id": "artifact.carmelite-order.missale.1574-venice-giunta.ia-complete-pdf-285e4857",
+      "manifest_path": "src/sources/works/carmelite-order/missale/editions/1574-venice-giunta/artifacts/ia-complete-pdf-285e4857/artifact.toml",
+      "manifest_sha256": "040b6c88449f621172acdc3e36d87801b930505737a63f7c3c0e29cb938d5210",
+      "media_type": "application/pdf",
+      "page_count": 653,
+      "provenance": "Before registration, canonical work and edition records were searched for missale with Praedicatorum/Predicatorum/Carmelitarum/Carmelit aliases and for Xavierre, Vulliet, ARes10417, FqVWqqFkUDsC, lefoIUlq2sgC and PUEgJFAvalgC. Only unrelated works were found; no target missal owner existed. Complete exact PDF acquired directly as bytes by the research lane; local SHA-256 replay confirmed the acquisition handoff. Selected page images were visually inspected; extracted OCR served only as a finding aid.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The original 1574 printing is public domain in the United States by expiration of its publication term. The exact Internet Archive item ARes10417, contributed by Biblioteca de la Universidad de Sevilla, explicitly records Public Domain Mark 1.0 (https://creativecommons.org/publicdomain/mark/1.0/) in https://archive.org/metadata/ARes10417; acquired metadata SHA-256 a3c1832167499a528ef1aa9109fff48c84de4451c6afc8b10262021b4b9bf5cd. This is a mechanical scan of historical pages, not a modern critical edition or translation. Visible scan marks and historical handwriting are preserved in image derivatives, but handwriting is excluded from printed-text claims. This third-party source is excluded from Triptych’s CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "285e485761ac716d3eb93dedbea8652d2328a6c1dc29d37bb78b0837919b33c3",
+      "source_url": "https://archive.org/download/ARes10417/ARes10417.pdf",
+      "storage": "remote"
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 2,
+      "derived_from": "artifact.carmelite-order.missale.1574-venice-giunta.pdf-page-20-image-e1380012",
+      "edition_id": "edition.carmelite-order.missale.1574-venice-giunta",
+      "id": "artifact.carmelite-order.missale.1574-venice-giunta.october-05-calendar-entry-checked-latin-f0b5c2c2",
+      "manifest_path": "src/sources/works/carmelite-order/missale/editions/1574-venice-giunta/artifacts/october-05-calendar-entry-checked-latin-f0b5c2c2/artifact.toml",
+      "manifest_sha256": "4a24831e89f87f18a5b30cf2be56eefcf0373698fdb662014638f2b2ada0abc0",
+      "media_type": "text/plain; charset=utf-8",
+      "path": "src/sources/works/carmelite-order/missale/editions/1574-venice-giunta/artifacts/october-05-calendar-entry-checked-latin-f0b5c2c2/text.txt",
+      "provenance": "Independent second AI reviewer checked the exact normalized body against the original retained image on 2026-10-16, including punctuation, abbreviation scope and boundaries; this is not human specialist certification. Reviewed body SHA-256 excluding final LF: ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d. Review receipt SHA-256: 7713be2c3ebc0992389deb7a5b4286c3be0b5c2e5b29ae0c4690ce5cd85b6071.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "Faithful bounded Latin transcription of the identified 1574 historical print, public domain in the United States by expired publication term, with the exact source digital copy marked Public Domain Mark 1.0. No modern translation or critical reconstruction is introduced. The source text is excluded from Triptych’s CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "f0b5c2c2211c8d67ed15e75e656c7862d086e9245420892a7de62cd9ec582a06",
+      "storage": "tracked",
+      "transformation": "Transcribe the printed day numeral and its feast cell, including the final printed page reference where present. Omit the other computistical columns, vertical rules, month heading and neighboring rows. Normalize long s to s and e-caudata/ae ligature to ae; regularize spaces between abbreviated words and before the page number. Preserve abbreviation periods, the macron in cōm., ampersands, case and wording. The 1574 feast cell is empty: its derivative contains only the printed date numeral 5, without invented placeholder text. Write one NFC UTF-8 line plus one LF. One row block, not a prayer or speech, zero-based half-open Unicode codepoint range [0,1) in the NFC body excluding final LF; source locus: October calendar, day 5: printed date numeral and empty feast cell; other computistical columns omitted."
+    },
+    {
+      "artifact_type": "page-scan-image",
+      "byte_size": 1949596,
+      "derived_from": "artifact.carmelite-order.missale.1574-venice-giunta.ia-complete-pdf-285e4857",
+      "edition_id": "edition.carmelite-order.missale.1574-venice-giunta",
+      "id": "artifact.carmelite-order.missale.1574-venice-giunta.pdf-page-20-image-e1380012",
+      "manifest_path": "src/sources/works/carmelite-order/missale/editions/1574-venice-giunta/artifacts/pdf-page-20-image-e1380012/artifact.toml",
+      "manifest_sha256": "1d726d39aa6c05570824718717ac06c046b18eb210e6445e431b0006ea3f6c78",
+      "media_type": "image/png",
+      "page_count": 1,
+      "path": "src/sources/works/carmelite-order/missale/editions/1574-venice-giunta/artifacts/pdf-page-20-image-e1380012/page.png",
+      "provenance": "Exact supplied page-image bytes retained unchanged after visual inspection. Source is the complete mechanically acquired PDF identified by the parent artifact; PDF and image SHA-256 hashes were independently measured before registration. Review scope is the passage context, not every word on the page.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The original 1574 printing is public domain in the United States by expiration of its publication term. The exact Internet Archive item ARes10417, contributed by Biblioteca de la Universidad de Sevilla, explicitly records Public Domain Mark 1.0 (https://creativecommons.org/publicdomain/mark/1.0/) in https://archive.org/metadata/ARes10417; acquired metadata SHA-256 a3c1832167499a528ef1aa9109fff48c84de4451c6afc8b10262021b4b9bf5cd. This is a mechanical scan of historical pages, not a modern critical edition or translation. Visible scan marks and historical handwriting are preserved in image derivatives, but handwriting is excluded from printed-text claims. This third-party source is excluded from Triptych’s CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "e1380012bf32d0c2f84f0a2dd60364df73bf84bb41984ca09547c0ee6a1ef24c",
+      "source_url": "https://archive.org/download/ARes10417/ARes10417.pdf#page=20",
+      "storage": "tracked",
+      "transformation": "From exact complete parent PDF SHA-256 285e485761ac716d3eb93dedbea8652d2328a6c1dc29d37bb78b0837919b33c3, select one-based PDF page 20. Byte-for-byte replay with Poppler pdftoppm 26.08.0: -f 20 -l 20 -scale-to 2000 -png -singlefile; dimensions 1480 by 2000 pixels. Replay reproduces exactly these PNG bytes; no crop or postprocessing. Derivation receipt SHA-256 bbec613dc4e2eb94f345aa377aea8b60d46ff5fb9a0ded896180198d38361a3f. The derivative retains this complete rendered page; all other 652 PDF pages are excluded. No transcription, OCR correction or wording alteration is applied to image bytes."
+    },
+    {
+      "artifact_type": "page-scan-image",
+      "byte_size": 2422259,
+      "derived_from": "artifact.carmelite-order.missale.1574-venice-giunta.ia-complete-pdf-285e4857",
+      "edition_id": "edition.carmelite-order.missale.1574-venice-giunta",
+      "id": "artifact.carmelite-order.missale.1574-venice-giunta.pdf-page-7-image-a13f0f27",
+      "manifest_path": "src/sources/works/carmelite-order/missale/editions/1574-venice-giunta/artifacts/pdf-page-7-image-a13f0f27/artifact.toml",
+      "manifest_sha256": "a829e17f9b9cc91e0f42aad510aee215599c501bdc41eb9dab9e3746f2a385ab",
+      "media_type": "image/png",
+      "page_count": 1,
+      "path": "src/sources/works/carmelite-order/missale/editions/1574-venice-giunta/artifacts/pdf-page-7-image-a13f0f27/page.png",
+      "provenance": "Exact supplied page-image bytes retained unchanged after visual inspection. Source is the complete mechanically acquired PDF identified by the parent artifact; PDF and image SHA-256 hashes were independently measured before registration. Review scope is the passage context, not every word on the page.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The original 1574 printing is public domain in the United States by expiration of its publication term. The exact Internet Archive item ARes10417, contributed by Biblioteca de la Universidad de Sevilla, explicitly records Public Domain Mark 1.0 (https://creativecommons.org/publicdomain/mark/1.0/) in https://archive.org/metadata/ARes10417; acquired metadata SHA-256 a3c1832167499a528ef1aa9109fff48c84de4451c6afc8b10262021b4b9bf5cd. This is a mechanical scan of historical pages, not a modern critical edition or translation. Visible scan marks and historical handwriting are preserved in image derivatives, but handwriting is excluded from printed-text claims. This third-party source is excluded from Triptych’s CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "a13f0f27e05a26e6c9252f231f529be6becd448938c6e66bbc16c0fef067aa84",
+      "source_url": "https://archive.org/download/ARes10417/ARes10417.pdf#page=7",
+      "storage": "tracked",
+      "transformation": "From exact complete parent PDF SHA-256 285e485761ac716d3eb93dedbea8652d2328a6c1dc29d37bb78b0837919b33c3, select one-based PDF page 7. Byte-for-byte replay with Poppler pdftoppm 26.08.0: -f 7 -l 7 -scale-to 1600 -png -singlefile; dimensions 1142 by 1600 pixels. Replay reproduces exactly these PNG bytes; no crop or postprocessing. Derivation receipt SHA-256 bbec613dc4e2eb94f345aa377aea8b60d46ff5fb9a0ded896180198d38361a3f. The derivative retains this complete rendered page; all other 652 PDF pages are excluded. No transcription, OCR correction or wording alteration is applied to image bytes."
+    },
+    {
+      "artifact_type": "facsimile-pdf",
+      "byte_size": 69366657,
+      "edition_id": "edition.carmelite-order.missale.1621-venice-giunta",
+      "id": "artifact.carmelite-order.missale.1621-venice-giunta.ia-complete-pdf-9cca5de5",
+      "manifest_path": "src/sources/works/carmelite-order/missale/editions/1621-venice-giunta/artifacts/ia-complete-pdf-9cca5de5/artifact.toml",
+      "manifest_sha256": "54b03bee9eb62998c76f2e3fb8504d74155d83db0e8a9a324206cecf9d75c009",
+      "media_type": "application/pdf",
+      "page_count": 628,
+      "provenance": "Before registration, canonical work and edition records were searched for missale with Praedicatorum/Predicatorum/Carmelitarum/Carmelit aliases and for Xavierre, Vulliet, ARes10417, FqVWqqFkUDsC, lefoIUlq2sgC and PUEgJFAvalgC. Only unrelated works were found; no target missal owner existed. Complete exact PDF acquired directly as bytes by the research lane; local SHA-256 replay confirmed the acquisition handoff. Selected page images were visually inspected; extracted OCR served only as a finding aid.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The original 1621 printing is public domain in the United States by expiration of its publication term. The exact Internet Archive item bub_gb_PUEgJFAvalgC, contributed by National Central Library of Rome, explicitly records Public Domain Mark 1.0 (http://creativecommons.org/publicdomain/mark/1.0/) in https://archive.org/metadata/bub_gb_PUEgJFAvalgC; acquired metadata SHA-256 46d975a129b7b582e8fe26e1cc589b24327231ba46cd03242b7901ccaa5168e3. This is a mechanical scan of historical pages, not a modern critical edition or translation. Visible scan marks and historical handwriting are preserved in image derivatives, but handwriting is excluded from printed-text claims. This third-party source is excluded from Triptych’s CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "9cca5de5e8e8f2e2c49210cc878ee79b518472dfa9caa0bd60295cbcbcffccac",
+      "source_url": "https://archive.org/download/bub_gb_PUEgJFAvalgC/bub_gb_PUEgJFAvalgC.pdf",
+      "storage": "remote"
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 60,
+      "derived_from": "artifact.carmelite-order.missale.1621-venice-giunta.pdf-page-22-image-87dc3360",
+      "edition_id": "edition.carmelite-order.missale.1621-venice-giunta",
+      "id": "artifact.carmelite-order.missale.1621-venice-giunta.october-05-calendar-entry-checked-latin-3033d681",
+      "manifest_path": "src/sources/works/carmelite-order/missale/editions/1621-venice-giunta/artifacts/october-05-calendar-entry-checked-latin-3033d681/artifact.toml",
+      "manifest_sha256": "4c58b4f7faac44501d8e9307d7a35376a76758efd51085b908646317d0d1d2e1",
+      "media_type": "text/plain; charset=utf-8",
+      "path": "src/sources/works/carmelite-order/missale/editions/1621-venice-giunta/artifacts/october-05-calendar-entry-checked-latin-3033d681/text.txt",
+      "provenance": "Independent second AI reviewer checked the exact normalized body against the original retained image on 2026-10-16, including punctuation, abbreviation scope and boundaries; this is not human specialist certification. Reviewed body SHA-256 excluding final LF: c33b45602d801fdd84527fbba77701b560c80bd425b983e259d0a5b4b7a26515. Review receipt SHA-256: 7713be2c3ebc0992389deb7a5b4286c3be0b5c2e5b29ae0c4690ce5cd85b6071.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "Faithful bounded Latin transcription of the identified 1621 historical print, public domain in the United States by expired publication term, with the exact source digital copy marked Public Domain Mark 1.0. No modern translation or critical reconstruction is introduced. The source text is excluded from Triptych’s CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "3033d68160b4daab7e8bac6786064538cf353db0a4467235575753b069b7a020",
+      "storage": "tracked",
+      "transformation": "Transcribe the printed day numeral and its feast cell, including the final printed page reference where present. Omit the other computistical columns, vertical rules, month heading and neighboring rows. Normalize long s to s and e-caudata/ae ligature to ae; regularize spaces between abbreviated words and before the page number. Preserve abbreviation periods, the macron in cōm., ampersands, case and wording. The 1574 feast cell is empty: its derivative contains only the printed date numeral 5, without invented placeholder text. Write one NFC UTF-8 line plus one LF. One row block, not a prayer or speech, zero-based half-open Unicode codepoint range [0,58) in the NFC body excluding final LF; source locus: October calendar, day 5: printed date numeral, feast cell and page reference; other computistical columns omitted."
+    },
+    {
+      "artifact_type": "page-scan-image",
+      "byte_size": 549680,
+      "derived_from": "artifact.carmelite-order.missale.1621-venice-giunta.ia-complete-pdf-9cca5de5",
+      "edition_id": "edition.carmelite-order.missale.1621-venice-giunta",
+      "id": "artifact.carmelite-order.missale.1621-venice-giunta.pdf-page-22-image-87dc3360",
+      "manifest_path": "src/sources/works/carmelite-order/missale/editions/1621-venice-giunta/artifacts/pdf-page-22-image-87dc3360/artifact.toml",
+      "manifest_sha256": "36b38dc9dbf167040c941bd10e30857387cd92f048166329246723422ca46220",
+      "media_type": "image/png",
+      "page_count": 1,
+      "path": "src/sources/works/carmelite-order/missale/editions/1621-venice-giunta/artifacts/pdf-page-22-image-87dc3360/page.png",
+      "provenance": "Exact supplied page-image bytes retained unchanged after visual inspection. Source is the complete mechanically acquired PDF identified by the parent artifact; PDF and image SHA-256 hashes were independently measured before registration. Review scope is the passage context, not every word on the page.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The original 1621 printing is public domain in the United States by expiration of its publication term. The exact Internet Archive item bub_gb_PUEgJFAvalgC, contributed by National Central Library of Rome, explicitly records Public Domain Mark 1.0 (http://creativecommons.org/publicdomain/mark/1.0/) in https://archive.org/metadata/bub_gb_PUEgJFAvalgC; acquired metadata SHA-256 46d975a129b7b582e8fe26e1cc589b24327231ba46cd03242b7901ccaa5168e3. This is a mechanical scan of historical pages, not a modern critical edition or translation. Visible scan marks and historical handwriting are preserved in image derivatives, but handwriting is excluded from printed-text claims. This third-party source is excluded from Triptych’s CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "87dc3360cfb91571aea9619cc815b1a4cd9ab7fa790736573ee067fc622c166c",
+      "source_url": "https://archive.org/download/bub_gb_PUEgJFAvalgC/bub_gb_PUEgJFAvalgC.pdf#page=22",
+      "storage": "tracked",
+      "transformation": "From exact complete parent PDF SHA-256 9cca5de5e8e8f2e2c49210cc878ee79b518472dfa9caa0bd60295cbcbcffccac, select one-based PDF page 22. Byte-for-byte replay with Poppler pdftoppm 26.08.0: -f 22 -l 22 -scale-to 1800 -png -singlefile; dimensions 1274 by 1800 pixels. Replay reproduces exactly these PNG bytes; no crop or postprocessing. Derivation receipt SHA-256 bbec613dc4e2eb94f345aa377aea8b60d46ff5fb9a0ded896180198d38361a3f. The derivative retains this complete rendered page; all other 627 PDF pages are excluded. No transcription, OCR correction or wording alteration is applied to image bytes."
+    },
+    {
+      "artifact_type": "page-scan-image",
+      "byte_size": 2228186,
+      "derived_from": "artifact.carmelite-order.missale.1621-venice-giunta.ia-complete-pdf-9cca5de5",
+      "edition_id": "edition.carmelite-order.missale.1621-venice-giunta",
+      "id": "artifact.carmelite-order.missale.1621-venice-giunta.pdf-page-3-image-6d116dbb",
+      "manifest_path": "src/sources/works/carmelite-order/missale/editions/1621-venice-giunta/artifacts/pdf-page-3-image-6d116dbb/artifact.toml",
+      "manifest_sha256": "80082f640ca815a7d2023c7c7ea8190deb4fcd4292daff9a93c2e43b20bf88ac",
+      "media_type": "image/png",
+      "page_count": 1,
+      "path": "src/sources/works/carmelite-order/missale/editions/1621-venice-giunta/artifacts/pdf-page-3-image-6d116dbb/page.png",
+      "provenance": "Exact supplied page-image bytes retained unchanged after visual inspection. Source is the complete mechanically acquired PDF identified by the parent artifact; PDF and image SHA-256 hashes were independently measured before registration. Review scope is the passage context, not every word on the page.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The original 1621 printing is public domain in the United States by expiration of its publication term. The exact Internet Archive item bub_gb_PUEgJFAvalgC, contributed by National Central Library of Rome, explicitly records Public Domain Mark 1.0 (http://creativecommons.org/publicdomain/mark/1.0/) in https://archive.org/metadata/bub_gb_PUEgJFAvalgC; acquired metadata SHA-256 46d975a129b7b582e8fe26e1cc589b24327231ba46cd03242b7901ccaa5168e3. This is a mechanical scan of historical pages, not a modern critical edition or translation. Visible scan marks and historical handwriting are preserved in image derivatives, but handwriting is excluded from printed-text claims. This third-party source is excluded from Triptych’s CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "6d116dbb1b5ca851bf164643878b02390d27c6a55769ebd8d800152c1649e030",
+      "source_url": "https://archive.org/download/bub_gb_PUEgJFAvalgC/bub_gb_PUEgJFAvalgC.pdf#page=3",
+      "storage": "tracked",
+      "transformation": "From exact complete parent PDF SHA-256 9cca5de5e8e8f2e2c49210cc878ee79b518472dfa9caa0bd60295cbcbcffccac, select one-based PDF page 3. Byte-for-byte replay with Poppler pdftoppm 26.08.0: -f 3 -l 3 -scale-to 1600 -png -singlefile; dimensions 1152 by 1600 pixels. Replay reproduces exactly these PNG bytes; no crop or postprocessing. Derivation receipt SHA-256 bbec613dc4e2eb94f345aa377aea8b60d46ff5fb9a0ded896180198d38361a3f. The derivative retains this complete rendered page; all other 627 PDF pages are excluded. No transcription, OCR correction or wording alteration is applied to image bytes."
+    },
+    {
+      "date": "1574",
+      "id": "edition.carmelite-order.missale.1574-venice-giunta",
+      "language": "la",
+      "manifest_path": "src/sources/works/carmelite-order/missale/editions/1574-venice-giunta/edition.toml",
+      "manifest_sha256": "6da8296b5624f41eec7dd049daacf2876f4b705fe058c94e9f7c8767a14e155b",
+      "publication": "Venice: apud Iuntas, 1574",
+      "record_type": "edition",
+      "title": "Missale antique professionis Regularium beatissime Dei genitricis semperque virginis Marie de Monte Carmelo",
+      "work_id": "work.carmelite-order.missale"
+    },
+    {
+      "date": "1621",
+      "id": "edition.carmelite-order.missale.1621-venice-giunta",
+      "language": "la",
+      "manifest_path": "src/sources/works/carmelite-order/missale/editions/1621-venice-giunta/edition.toml",
+      "manifest_sha256": "b075d80369fee732f324acef45a84c403c15f4b439a1668380bab72b994b600c",
+      "publication": "Venice: apud Iuntas, 1621",
+      "record_type": "edition",
+      "title": "Missale fratrum Carmelitarum Ordinis Beatae Dei Genitricis Mariae",
+      "work_id": "work.carmelite-order.missale"
+    },
+    {
+      "artifact_id": "artifact.carmelite-order.missale.1574-venice-giunta.october-05-calendar-entry-checked-latin-f0b5c2c2",
+      "artifact_sha256": "f0b5c2c2211c8d67ed15e75e656c7862d086e9245420892a7de62cd9ec582a06",
+      "edition_id": "edition.carmelite-order.missale.1574-venice-giunta",
+      "id": "passage.carmelite-order.missale.1574-venice-giunta.october-05-calendar-entry",
+      "locus": "October calendar, day 5: printed date numeral and empty feast cell; other computistical columns omitted",
+      "manifest_path": "src/sources/works/carmelite-order/missale/editions/1574-venice-giunta/passages/october-05-calendar-entry.toml",
+      "manifest_sha256": "1ec898bb7dbd33518f33e6e192f2feedc04d36ee44f2f09fe84d6c9bfee4af6c",
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.carmelite-order.missale.1574-venice-giunta.pdf-page-20-image-e1380012",
+      "artifact_page_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "artifact_sha256": "e1380012bf32d0c2f84f0a2dd60364df73bf84bb41984ca09547c0ee6a1ef24c",
+      "edition_id": "edition.carmelite-order.missale.1574-venice-giunta",
+      "id": "passage.carmelite-order.missale.1574-venice-giunta.october-calendar",
+      "locus": "October calendar; PDF page 20",
+      "manifest_path": "src/sources/works/carmelite-order/missale/editions/1574-venice-giunta/passages/october-calendar.toml",
+      "manifest_sha256": "20ee69e68e7f3541a57861c4908ea0a953f918f8f157b3143ff2def40f812879",
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.carmelite-order.missale.1574-venice-giunta.pdf-page-7-image-a13f0f27",
+      "artifact_page_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "artifact_sha256": "a13f0f27e05a26e6c9252f231f529be6becd448938c6e66bbc16c0fef067aa84",
+      "edition_id": "edition.carmelite-order.missale.1574-venice-giunta",
+      "id": "passage.carmelite-order.missale.1574-venice-giunta.title",
+      "locus": "Title page; PDF page 7",
+      "manifest_path": "src/sources/works/carmelite-order/missale/editions/1574-venice-giunta/passages/title.toml",
+      "manifest_sha256": "947d7d2a9217ff316d7170063c9ba87825adcec96e2a4d3d4a38f48fc9ecd0be",
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.carmelite-order.missale.1621-venice-giunta.october-05-calendar-entry-checked-latin-3033d681",
+      "artifact_sha256": "3033d68160b4daab7e8bac6786064538cf353db0a4467235575753b069b7a020",
+      "edition_id": "edition.carmelite-order.missale.1621-venice-giunta",
+      "id": "passage.carmelite-order.missale.1621-venice-giunta.october-05-calendar-entry",
+      "locus": "October calendar, day 5: printed date numeral, feast cell and page reference; other computistical columns omitted",
+      "manifest_path": "src/sources/works/carmelite-order/missale/editions/1621-venice-giunta/passages/october-05-calendar-entry.toml",
+      "manifest_sha256": "3a819fed5778a777dfac24295e6556c708cce853b2da6f0f312ff14fc5cec715",
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.carmelite-order.missale.1621-venice-giunta.pdf-page-22-image-87dc3360",
+      "artifact_page_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "artifact_sha256": "87dc3360cfb91571aea9619cc815b1a4cd9ab7fa790736573ee067fc622c166c",
+      "edition_id": "edition.carmelite-order.missale.1621-venice-giunta",
+      "id": "passage.carmelite-order.missale.1621-venice-giunta.october-calendar",
+      "locus": "October calendar; PDF page 22",
+      "manifest_path": "src/sources/works/carmelite-order/missale/editions/1621-venice-giunta/passages/october-calendar.toml",
+      "manifest_sha256": "35d9ba2192dd7e77e2899b48a24c23aad935f7c171f5d46a6fdd0e6f240a3016",
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.carmelite-order.missale.1621-venice-giunta.pdf-page-3-image-6d116dbb",
+      "artifact_page_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "artifact_sha256": "6d116dbb1b5ca851bf164643878b02390d27c6a55769ebd8d800152c1649e030",
+      "edition_id": "edition.carmelite-order.missale.1621-venice-giunta",
+      "id": "passage.carmelite-order.missale.1621-venice-giunta.title",
+      "locus": "Title page; PDF page 3",
+      "manifest_path": "src/sources/works/carmelite-order/missale/editions/1621-venice-giunta/passages/title.toml",
+      "manifest_sha256": "792256fbed3c12b53ca245a6cb0128042e411721abc1859d4c5fb602ec696477",
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "id": "work.carmelite-order.missale",
+      "manifest_path": "src/sources/works/carmelite-order/missale/work.toml",
+      "manifest_sha256": "2d722c728e8b3164a5c7821c6c6663221c524782f9f681420d4aa4d162f54f72",
+      "record_type": "work",
+      "title": "Missale Carmelitarum"
+    }
+  ],
+  "text_serialization": {
+    "encoding": "UTF-8",
+    "final_newline": true,
+    "id": "act-history-ventilate/v1",
+    "line_ending": "LF",
+    "output_hash_field": "serialized_text_sha256",
+    "owner": "tools/act-history:ventilate",
+    "source_hash_field": "text_sha256"
+  },
+  "tool_inputs": [
+    {
+      "byte_size": 67556,
+      "path": "guidance/liturgical-text-publication-policy.md",
+      "sha256": "3a035f6e50c06da9597ea99020efb0fa93939d6ef88f6204ed83ffbdf9aae32f"
+    },
+    {
+      "byte_size": 90723,
+      "path": "scripts/_calendars.py",
+      "sha256": "9961359f38a3e390b5de4103a5222149e40b906362bba4b5620590f5ee1fed8e"
+    },
+    {
+      "byte_size": 53238,
+      "path": "scripts/_eucharistic_history.py",
+      "sha256": "fc414ea64fa3ed738cd57aa7d19d3cf158144aa1980e85febed620e831abaf47"
+    },
+    {
+      "byte_size": 18101,
+      "path": "scripts/_eucharistic_stages.py",
+      "sha256": "e0b4f1b5acfad0d16cbcbf1eda6ff4a1794b30e3eaa492a8b2b19a5e3dc4278c"
+    },
+    {
+      "byte_size": 87820,
+      "path": "scripts/_eucharistic_texts.py",
+      "sha256": "bc12a7da107bd63bf2a6c51e55b8389f088f560e882a5485405389e9750a9e5a"
+    },
+    {
+      "byte_size": 48920,
+      "path": "scripts/_proper_latin.py",
+      "sha256": "b24579434c8887a3b8527776790689b3b9f3262ee686eca745ec950845699bd7"
+    },
+    {
+      "byte_size": 33120,
+      "path": "scripts/_tooling.py",
+      "sha256": "86c302fcb7be450dec4dc1d45c4f529b000e79d5c548fae2b22212f7246e0afe"
+    },
+    {
+      "byte_size": 252633,
+      "path": "tools/act-history",
+      "sha256": "b0502f14dcce6a54c4dfb33ce980e004941e8ae1d727f12a5fa8253c73eae06e"
+    },
+    {
+      "byte_size": 120266,
+      "path": "tools/source-library",
+      "sha256": "c4d2065026a7cb0c94049e572251b2f3c3af615a4f9531793a1818d185327efc"
+    }
+  ],
+  "unified_diff": "--- left/carmelite-1574-october-calendar\n+++ right/carmelite-1621-october-calendar\n@@ -1 +1,7 @@\n-5\n+5 Theresiae virg.\n+dupl.\n+min.\n+& cōm.\n+SS.\n+Placidi & soc.\n+409\n"
+}
