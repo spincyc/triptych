@@ -49,13 +49,13 @@ provider = "claude"
 run_id = "4d16b5e19d25dad9"
 workflow = "proper-study"
 workflow_version = 11
-stage = "research-review"
-iteration = 2
+stage = "study-review"
+iteration = 1
 disposition = "PASS"
 standing = 0
-accepted_count = 0
-advisory_count = 2
-observation_count = 2
+accepted_count = 1
+advisory_count = 6
+observation_count = 4
 
 [[stages]]
 stage = "research-review"
@@ -68,6 +68,27 @@ standing = 0
 accepted_count = 0
 advisory_count = 2
 observation_count = 2
+
+[[stages]]
+stage = "study-review"
+iteration = 1
+disposition = "PASS"
+run_id = "4d16b5e19d25dad9"
+workflow = "proper-study"
+workflow_version = 11
+standing = 0
+accepted_count = 1
+advisory_count = 4
+observation_count = 2
+
+[[accepted]]
+stage = "study-review"
+id = "STU-004"
+severity = "accepted"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/interpretations.md, Reading 1, 'Element contributions' table, Responsorial psalm row, Basis cell: \"(his v. 7 reads \\\"worship and honour\\\"; ...)\""
+problem = "The research record still says that Augustine's v. 7 reads 'worship and honour'. His Latin at En. in Ps. 95.8 reads 'afferte Domino gloriam et honorem' (latin-migne-corpus-corporum-wikisource enarrationes-part-10.txt line 118); 'worship and honour' is the NPNF English. The study no longer reproduces the claim (STU-002 repaired), and research/production-review.md records the defect for the research owner."
+required_result = "Whenever the research records are next reopened by their owner, the parenthesis says that the NPNF English renders v. 7 'worship and honour' while Augustine's Latin reads gloriam et honorem."
+accepted_because = "The defect sits only in a reviewed, non-reader-facing audit record. Repairing it now would reopen the settled research owner and rerun the whole chain for one parenthesis, and no reader-facing text carries it."
 
 [[advisories]]
 stage = "research-review"
@@ -85,6 +106,38 @@ location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-editi
 problem = "Matthew 22:18 says that Jesus knew their wickedness: Douay 'But Jesus knowing their wickedness' (47-matthew.tsv line 746); Clementine 'Cognita autem Jesus nequitia eorum'. Those are the words that prompt this difficulty. Jerome's 'Prima virtus est respondentis ...' (PL 26 col. 163, page image) and Aquinas's 'Et primo respondet ad mentem eorum ... Dei autem respondere ad mentem' (Venice p. 283, page image) are each written under that lemma. The paragraph instead anchors the question in 22:15 and says that 'the text does not say whether their purpose was known'. That means known to others beforehand, but read plainly it contradicts v. 18. A study following it could write that Matthew is silent on whether their purpose was known."
 required_result = "The paragraph anchors the question in 22:18 ('knowing their wickedness', cognita ... nequitia eorum), the lemma under which Jerome and Aquinas write. It says only that the text does not say whether anyone else knew their purpose beforehand. The rest of the RES-009 repair stays as it stands."
 
+[[advisories]]
+stage = "study-review"
+id = "STU-010"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/10-each-element.tex lines 230-231 ('Bellarmine calls the pupil ``frail and delicate''.'); src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/30-cyrus-and-caesar.tex lines 229-231 ('In the psalm the verse continues by asking protection from those who resist God's right hand')"
+problem = "Two small misdescriptions at Psalm 16 (17):8. (a) Bellarmine (O'Sullivan, tracked text line 535) calls the apple of the eye 'a most delicate, though valuable article', then says 'such are we, frail and delicate'. The quoted words describe the petitioners, not the pupil. (b) In the Clementine and the Douay-Rheims, 'From them that resist thy right hand' opens v. 8, before 'keep me', as the study itself prints at 05-appointed-texts.tex lines 33-34 and 44. The verse does not 'continue' with it."
+required_result = "(a) attributes the quoted words to their own referent, for example 'Bellarmine calls the pupil \"a most delicate, though valuable article\", and those who pray \"frail and delicate\"'. (b) says that the same verse opens by asking protection from those who resist God's right hand, words the antiphon leaves out."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-011"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/30-cyrus-and-caesar.tex lines 190-196 ('For Chrysostom and Augustine the debt is one of justice that binds every Christian ... They disagree about why Caesar is owed anything at all'); src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/50-comparison.tex lines 33-34 and 76-78"
+problem = "The preserved disagreement over the ground of the debt is fully evidenced for Hilary and Ambrose, by quotation, but only asserted for Chrysostom and Augustine. The only Chrysostom ground the reader is shown is the coin's image and superscription (lines 107-112). That is close to Hilary's 'si rebus illius incubamus', so the summary 'They disagree about why Caesar is owed anything at all' is not made intelligible by the evidence on the page. The sentences that show the other ground stand at loci the study already cites: Augustine En. in Ps. 124.7, 'thus hath God ordained His Church, that every power ordained in the world may have honour, and sometimes from those who are better than those in power' (NPNF tracked line 61102-61103); and Chrysostom Hom. in Rom. 23, 'if thou be an Apostle even, or an Evangelist, or a Prophet, or anything whatsoever, inasmuch as this subjection is not subversive of religion' (tracked lines 46234-46236), whose last clause the study already quotes."
+required_result = "The disagreement section shows the Chrysostom and Augustine ground in their own words at the loci already cited. Otherwise the section and the comparison narrow the stated difference to what the quoted words show: whether one who keeps nothing of the world's goods still owes Caesar."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-012"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/90-apparatus.tex lines 101-109 ('The questioners' paragraph, last sentence: 'Augustine's definition of the whited wall is used without the application he gives it in its section.')"
+problem = "The sentence closes a paragraph about Fathers who pass from the questioners to the Jewish people, and about Nostra aetate 4. Placed there, it implies that Augustine's whited-wall application at En. in Ps. 95.3 is anti-Jewish. In that section the application is to the Donatist party ('Getulia, Numidia, Mauritania, Byzacium'; NPNF tracked lines 47915-47940), as research/scope.md section 3.10 and research/production-review.md record."
+required_result = "The appendix names the application as Augustine's charge against the Donatist party, or moves the sentence out of the paragraph about the questioners, so that no reader takes it for anti-Jewish polemic."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-013"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/production-review.md, 'Author-study, iteration 1', 'Proof' list (lines 227-239)"
+problem = "The iteration-1 proof entry gives the page count but not the SHA-256 of the checked PDF, which the iteration-0 entry did give. The three-document profile asks the production record to carry checked artifacts and hashes. The reviewed build is 84e8166a38f5af6ae622412a962e5b4b67bde847af65f44814084176c6756db8 (37 pages), byte-identical to the author's iteration-1 proof."
+required_result = "The next author that updates the production record adds the iteration-1 proof's SHA-256 beside its page count."
+
 [[observations]]
 stage = "research-review"
 location = "scripts/_proper_chronology.py, orientation builder line 1465 (element.key.startswith(\"gospel\")) against the detailed-annotation path line 1292 (element.key == \"gospel\")"
@@ -94,3 +147,13 @@ note = "Still present. Any postconciliar orientation-v1 leaf that keys its accla
 stage = "research-review"
 location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/context.md, branch row mass-for-evangelization-of-peoples (line 294) and the closing note at line 425"
 note = "The branch stays conditional and not supplied, and no dated witness was sought for a mission observance on 18 October 2026. Line 425 rightly requires one before any study mentions such an observance. Recorded again so that the standing record keeps the sighting the earlier rounds made."
+
+[[observations]]
+stage = "study-review"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/80-date-location.tex orientation table (rendered p. 29) and src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/chronology-annotations.tex orientation rows"
+note = "Still present: the generated Passage cells print the antiphons' psalms in Vulgate numbering ('Cf. Psalm 16:6, 8', 'Cf. Psalm 32:18-19') and the responsorial psalm in Hebrew numbering ('Psalm 96:1, 3 ...') with no numbering marker. Only the notes beneath reconcile them. This is generator output, and its likely cause is a missing orientation-row criterion."
+
+[[observations]]
+stage = "study-review"
+location = "tools/tpt check-content-preflight --check house-voice (study-preflight 0000 log: 'no sentence taking the guide, its apparatus or the repository as its subject', exit 0)"
+note = "The screen passed the iteration-0 text, which still had sentences of the forms 'the editor joins', 'the interpretation does not' and 'No commentary on' that STU-001 later removed. These forms appear to be a missing lexical criterion of that screen."
