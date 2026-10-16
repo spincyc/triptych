@@ -5,7 +5,31 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-10-15.
+Last reconciled: 2026-10-16.
+
+## Claude Four Last Things rewrite as Catholic spiritual reading, 2026-10-16
+
+<!-- promised-deliverable: claude-four-last-things-rewrite-2026-10-16 -->
+
+At the end of the liturgical year the maintainer asked for a cold review of the
+Four Last Things. The standard set is: unapologetically Catholic, not addressed
+to a skeptical secular reader, and a sober account of hell for contemplation
+carried by what the Fathers and saints have said. The review covers all four
+Claude essays. It is recorded in
+`src/claude/articles/faith/four-last-things-shared/cold-review-2026-10-16.md`.
+It found the July Claude series to be accurate doctrinal audits that are unfit
+for that purpose. It also confirmed source-claim errors, most of them in Hell,
+including Aquinas on the number of the saved, the Holy Thursday collect on
+Judas, Augustine on the fire, and Florence on the general judgment.
+
+The maintainer's decisions are recorded in the same file: rewrite the four
+essays in place; set no page target; include approved private revelation,
+labelled as such; state the few/many witness plainly; reduce the doctrinal
+audit to a short graded appendix; promote the 30 September voice rule to the
+universal editorial standard; and publish to `main` after review, aiming for
+before All Saints. GPT publications are excluded.
+
+**State:** the review and decisions are recorded. The rewrite has not begun.
 
 ## Claude 1962 Twenty-first Sunday three documents, 2026-10-15
 

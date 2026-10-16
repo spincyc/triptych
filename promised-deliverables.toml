@@ -1,6 +1,45 @@
 schema_version = 1
 
 [[deliverables]]
+id = "claude-four-last-things-rewrite-2026-10-16"
+owner = "PROJECT-WORK.md"
+promise = "Rewrite the four Claude Four Last Things essays as unapologetically Catholic spiritual reading for the close of the liturgical year, with hell set out soberly through the Fathers, Doctors, saints and liturgy; correct the review's confirmed errors; promote the 30 September voice rule to the universal editorial standard; publish the reviewed result to main and verify the deployment, leaving GPT publications unchanged."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "claude-flt-cold-review"
+  criterion = "A cold review of all four Claude essays against the maintainer's standard is recorded, with confirmed errors, the tradition gap analysis, the encapsulation analysis and the maintainer's decisions."
+  status = "pass"
+  evidence = ["src/claude/articles/faith/four-last-things-shared/cold-review-2026-10-16.md"]
+  check = "contains"
+  path = "src/claude/articles/faith/four-last-things-shared/cold-review-2026-10-16.md"
+  needle = "## Decisions taken, 16 October 2026"
+
+  [[deliverables.requirements]]
+  id = "claude-flt-voice-rule"
+  criterion = "The 30 September voice rule (declare each teaching at its degree; no sentences about what the Church has not decided; Fathers and saints speak at length; devotional tradition as the Church receives it) is stated once in guidance/editorial.md, and guidance/theology/angelology.md cross-references it rather than restating it."
+  status = "open"
+  evidence = ["guidance/editorial.md", "guidance/theology/angelology.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-flt-content"
+  criterion = "Each of the four essays speaks from within the faith to a Catholic reader, without skeptical or audit framing. The Fathers, Doctors and saints speak at length in identified public-domain texts. Hell sets out loss, sense, the worm, eternity, the risen body and Christ's warnings plainly, with the few/many witness and labelled private revelation. Each essay closes in received prayer. The confirmed errors E1-E4, V1-V10 and D1-D8 of the cold review are corrected or removed. Each essay carries a short graded appendix. An independent review accepts all four."
+  status = "open"
+  evidence = ["src/claude/articles/faith/four-last-things-01-death/main.tex", "src/claude/articles/faith/four-last-things-02-judgment/main.tex", "src/claude/articles/faith/four-last-things-03-hell/main.tex", "src/claude/articles/faith/four-last-things-04-heaven/main.tex", "src/claude/articles/faith/four-last-things-shared/cold-review-2026-10-16.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-flt-production"
+  criterion = "All four PDFs are rebuilt with settled references and every page is inspected. Faithful web editions are generated and reviewed. Research records, source bindings, inventories, the catalogue and release records are current. GPT publication files are unchanged."
+  status = "open"
+  evidence = ["pdf/claude/articles/faith/four-last-things-01-death.pdf", "pdf/claude/articles/faith/four-last-things-02-judgment.pdf", "pdf/claude/articles/faith/four-last-things-03-hell.pdf", "pdf/claude/articles/faith/four-last-things-04-heaven.pdf", "library/faith.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-flt-publication"
+  criterion = "The reviewed revision reaches origin/main through an ordinary push after the deployment gates pass. The automatic Pages workflow succeeds, and the affected live routes match the verified local build."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "release/public-alpha.json"]
+
+[[deliverables]]
 id = "claude-1962-twenty-first-three-documents-2026-10-15"
 owner = "PROJECT-WORK.md"
 promise = "Drive the proper-study workflow for provider claude on the 1962 Twenty-first Sunday after Pentecost for Sunday 2026-10-18 through terminal acceptance: expansive study, concise study, standalone homily and canonical web edition with fresh cold reviews, every workflow cycle and host intervention documented, every contributing model declared exactly, the delivered work committed on feature/propers/claude and fast-forwarded to origin/main with its Pages deployment verified."
