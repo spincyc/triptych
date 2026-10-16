@@ -27,14 +27,20 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "claude-flt-content"
   criterion = "Each of the four essays speaks from within the faith to a Catholic reader, without skeptical or audit framing. The Fathers, Doctors and saints speak at length in identified public-domain texts. Hell sets out loss, sense, the worm, eternity, the risen body and Christ's warnings plainly, with the few/many witness and labelled private revelation. Each essay closes in received prayer. The confirmed errors E1-E4, V1-V10 and D1-D8 of the cold review are corrected or removed. Each essay carries a short graded appendix. An independent review accepts all four."
-  status = "open"
-  evidence = ["src/claude/articles/faith/four-last-things-01-death/main.tex", "src/claude/articles/faith/four-last-things-02-judgment/main.tex", "src/claude/articles/faith/four-last-things-03-hell/main.tex", "src/claude/articles/faith/four-last-things-04-heaven/main.tex", "src/claude/articles/faith/four-last-things-shared/cold-review-2026-10-16.md"]
+  status = "pass"
+  evidence = ["src/claude/articles/faith/four-last-things-shared/rewrite-review.md", "src/claude/articles/faith/four-last-things-01-death/research/source-audit.md", "src/claude/articles/faith/four-last-things-02-judgment/research/source-audit.md", "src/claude/articles/faith/four-last-things-03-hell/research/source-audit.md", "src/claude/articles/faith/four-last-things-04-heaven/research/source-audit.md"]
+  check = "contains"
+  path = "src/claude/articles/faith/four-last-things-shared/rewrite-review.md"
+  needle = "## Reviews"
 
   [[deliverables.requirements]]
   id = "claude-flt-production"
   criterion = "All four PDFs are rebuilt with settled references and every page is inspected. Faithful web editions are generated and reviewed. Research records, source bindings, inventories, the catalogue and release records are current. GPT publication files are unchanged."
-  status = "open"
-  evidence = ["pdf/claude/articles/faith/four-last-things-01-death.pdf", "pdf/claude/articles/faith/four-last-things-02-judgment.pdf", "pdf/claude/articles/faith/four-last-things-03-hell.pdf", "pdf/claude/articles/faith/four-last-things-04-heaven.pdf", "library/faith.md"]
+  status = "pass"
+  evidence = ["src/claude/articles/faith/four-last-things-shared/rewrite-review.md", "web/claude/articles/faith/four-last-things-01-death.md", "web/claude/articles/faith/four-last-things-02-judgment.md", "web/claude/articles/faith/four-last-things-03-hell.md", "web/claude/articles/faith/four-last-things-04-heaven.md", "library/faith.md", "release/public-alpha.json"]
+  check = "contains"
+  path = "src/claude/articles/faith/four-last-things-shared/rewrite-review.md"
+  needle = "## Accepted artifacts"
 
   [[deliverables.requirements]]
   id = "claude-flt-publication"

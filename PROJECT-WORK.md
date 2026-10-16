@@ -29,7 +29,29 @@ audit to a short graded appendix; promote the 30 September voice rule to the
 universal editorial standard; and publish to `main` after review, aiming for
 before All Saints. GPT publications are excluded.
 
-**State:** the review and decisions are recorded. The rewrite has not begun.
+**State: rewritten, reviewed and installed locally. Publication to main is pending.**
+
+The four essays are rewritten in place under one shared series format.
+`src/claude/articles/faith/four-last-things-shared/rewrite-review.md`
+records:
+
+- the new titles and the closing received prayers;
+- how every confirmed cold-review error was resolved;
+- the independent content and quotation reviews of each essay, every
+  correction they required, and the coordinator's grade rulings;
+- the final review of all 128 rendered pages;
+- the accepted source, PDF and web hashes (revision `2026-10-16T17:56:47Z`).
+
+The page counts are 29, 33, 37 and 29.
+
+The universal voice rule now lives in `guidance/editorial.md`. The shared
+Four Last Things owner now serves both providers. The Claude source
+inventory, its classification review, the document catalogue and the
+release bindings are refreshed. The GPT publications are unchanged.
+
+Several new witnesses are cited by edition and stable URL, without
+source-library registration. Their list in the rewrite record is a
+follow-up for library work.
 
 ## Claude 1962 Twenty-first Sunday three documents, 2026-10-15
 
