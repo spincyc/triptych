@@ -7,6 +7,60 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-10-20.
 
+## All-rite missal timeline recovery and expansion, 2026-10-16
+
+<!-- promised-deliverable: all-rite-missal-timeline-2026-10-16 -->
+
+The requested outcome is recovery of the earlier missal-history work, a sourced
+historical inventory of sufficiently distinct Eucharistic service-book versions
+for every rite in communion with Rome, organized witnesses and structured texts,
+a generated Git repository whose commits expose the actual textual changes,
+and a subway-map visualizer over the same evidence. The workspace target is
+`feature/missal-timeline`; this does not authorize changing the default branch.
+
+**Recovery verified; the full corpus remains in progress.** The
+[recovery record](src/sources/inventories/missal-timeline-recovery-2026-10-16.md)
+identifies both surviving attempts: the predecessor's 25 version directories
+and 140 raw OCR sections, and Triptych's act-keyed successor. The latter
+reproduces 59 commits across 17 branches and its exact browser projection.
+Its 53 base units contain only two nonempty body fields, totaling 414
+characters. This is a functioning historical tracer, not complete missals.
+The predecessor's source metadata and file hashes are retained without
+importing its raw OCR, inaccurate edition labels or distribution assertions.
+
+The [Eastern](src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml)
+and [Western](src/sources/inventories/western-eucharistic-books-timeline-v1.toml)
+research inventories add 30 and 33 candidate records respectively. Neither
+is exhaustive; candidate rows are not distinct-recension counts or accepted
+graph stations. No new complete books were acquired or collated. The
+[existing-text audit](src/sources/inventories/missal-timeline-text-reuse-2026-10-16.md)
+identifies 1,068 usable 1962 Latin proper projections and verifies 15 retained
+OCR artifact hashes; neither these nor the antecedent Ordinary reconstructs
+a complete historical witness. No backward fill by calendar inheritance is
+authorized by their existence.
+
+The comparison tool now counts liturgical units separately from structural
+files; 61 focused tests and the shell smoke gate pass, and generated history
+IDs remain unchanged. The browser candidate distinguishes explicit reception
+and exposes its evidence while identifying partial text coverage. Eighteen
+static/browser-source checks and 22 reception-generator tests pass. Three
+browser tests are blocked before assertions by denied socket operations;
+desktop/mobile/accessibility appearance remains unverified. The printed-map
+DOT reproduces, but its renderer is unavailable. No new hosted repository,
+force-push, release binding or website deployment has occurred.
+
+`make check-sources`, `tmt check` and `git diff --check` pass. The full
+promised-deliverables check reports the same 32 missing installed-PDF findings
+as the checkout baseline, with no new findings from this work.
+
+The ancestry boundary is under clarification. The provisional research scope
+traces today's Catholic traditions through their earlier shared history;
+historic local uses remain recoverable evidence without implying that they
+are all currently used. A catalogue entry, an acquired scan, and a collated
+complete text are separate completion states. Eastern service books must retain
+their native book divisions rather than being forced into a Roman missal shape.
+No all-rite or full-text completeness is claimed.
+
 ## GPT Christ the King three documents, 2026-10-19
 
 <!-- promised-deliverable: gpt-1962-christ-the-king-2026-10-19 -->

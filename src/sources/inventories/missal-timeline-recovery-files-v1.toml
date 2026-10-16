@@ -1,0 +1,915 @@
+recovery_schema = 1
+record_type = "predecessor-missal-metadata-inventory"
+checked_on = "2026-10-16"
+corpus = "lt-hist"
+scope = "Metadata and byte hashes only; no source text or inherited rights assertions are adopted."
+owning_audit = "src/sources/inventories/lt-hist-rights-audit-v1.toml"
+owning_audit_sha256 = "3847b2a0de0acfd6a730aaf6257038a5d54896186079c7b357a61969f5d3533c"
+
+[counts]
+versions = 25
+sections = 140
+section_bytes = 31044234
+downloads = 28
+download_bytes = 40454037
+source_manifest_entries = 31
+
+[[versions]]
+id = "1570-missale-romanum-latin"
+section_files = 8
+section_bytes = 1637533
+audit_verdict = "admissible"
+source_urls = ["https://archive.org/details/messale-tridentino-di-san-pio-v-1570", "https://archive.org/download/messale-tridentino-di-san-pio-v-1570/Messale%20Tridentino%20di%20San%20Pio%20V%201570_djvu.txt"]
+metadata_sha256 = "7a2c90a3e0b74fd8281ffca7621257208a30faeb63903a9b97951ac3632c6a70"
+
+[[versions.sections]]
+path = "versions/1570-missale-romanum-latin/sections/apparatus/900-ocr-part-01.md"
+bytes = 260803
+sha256 = "60b990b888f961125d3ac3e6f7a5a5709f7c772e325d2932c1929a9e542b0e81"
+
+[[versions.sections]]
+path = "versions/1570-missale-romanum-latin/sections/apparatus/910-ocr-part-02.md"
+bytes = 218693
+sha256 = "b5dfb9dcf1bd7e63c9de349699cf990f2db138cebe300df329c79921b3efff65"
+
+[[versions.sections]]
+path = "versions/1570-missale-romanum-latin/sections/common/010-commune-sanctorum.md"
+bytes = 212129
+sha256 = "119eb2340693eda78d5470b3118444f52e7d30e81a7ddb00d0335b3e91b45d24"
+
+[[versions.sections]]
+path = "versions/1570-missale-romanum-latin/sections/ordinary/010-ordo-missae.md"
+bytes = 94407
+sha256 = "4fc3d27b9bb9ae7877853cf58e9571bc6815733eb53500e8c5c6237d86b31051"
+
+[[versions.sections]]
+path = "versions/1570-missale-romanum-latin/sections/ordinary/020-canon-missae.md"
+bytes = 157324
+sha256 = "f38955096a330690a213d760f1509410e221b3e32992a73ba5dd6ef693234513"
+
+[[versions.sections]]
+path = "versions/1570-missale-romanum-latin/sections/proper/010-proprium-de-tempore.md"
+bytes = 214886
+sha256 = "c398c3628b9848b8ab2c53437d0c0f7890e8d3e303321cb64f3c9068e670c5c9"
+
+[[versions.sections]]
+path = "versions/1570-missale-romanum-latin/sections/proper/020-proprium-sanctorum.md"
+bytes = 390097
+sha256 = "ffdf4aaeeedc9e24be62ce586a9dc8cd3b1ef6856c19acf20a0506a0f0e18288"
+
+[[versions.sections]]
+path = "versions/1570-missale-romanum-latin/sections/supplements/900-endmatter-ocr.md"
+bytes = 89194
+sha256 = "9fa13f695dd0975ddcbdbb4314039ecb92d51820dd0c9571c7b79ad21a701e9a"
+
+[[versions]]
+id = "1604-missale-romanum-latin"
+section_files = 3
+section_bytes = 2025476
+audit_verdict = "admissible"
+source_urls = ["https://archive.org/details/bub_gb_aaPpAuHRY9IC", "https://archive.org/download/bub_gb_aaPpAuHRY9IC/bub_gb_aaPpAuHRY9IC_djvu.txt"]
+metadata_sha256 = "4e10533227cb29ad248df36f4d70cc4572ece9e5d4c18bbfca97b89f421059b0"
+
+[[versions.sections]]
+path = "versions/1604-missale-romanum-latin/sections/apparatus/000-front-matter-calendar-and-rubrics.md"
+bytes = 956400
+sha256 = "fbda0ce940f47eb7409c37ad3adac555be0c73111a93c02f01ec910c39ca42ba"
+
+[[versions.sections]]
+path = "versions/1604-missale-romanum-latin/sections/common/010-commune-sanctorum.md"
+bytes = 298824
+sha256 = "a5f6b50dd4b75d10a146fb688b2654863e97e56bb09dfdffdc9ae2c250481e7d"
+
+[[versions.sections]]
+path = "versions/1604-missale-romanum-latin/sections/ordinary/010-ordo-missae.md"
+bytes = 770252
+sha256 = "f7fc6e3ce4ceef032fe3be2291fdb47162b4e0b7efa2d59a8f6f81f104d54174"
+
+[[versions]]
+id = "1806-roman-missal-english"
+section_files = 6
+section_bytes = 1470732
+audit_verdict = "admissible"
+source_urls = ["https://archive.org/details/a550137400unknuoft", "https://archive.org/download/a550137400unknuoft/a550137400unknuoft_djvu.txt"]
+metadata_sha256 = "08d00bc041b8af1029cf1a9dcb13600be8c203add98464fcec4aa770e7e17fc7"
+
+[[versions.sections]]
+path = "versions/1806-roman-missal-english/sections/apparatus/000-front-matter.md"
+bytes = 25253
+sha256 = "8ec0ba2f1d36ea476593ac89be665ed797cd075c5673fae3ddf1ec9c880906a7"
+
+[[versions.sections]]
+path = "versions/1806-roman-missal-english/sections/common/010-common-masses-and-masses-for-the-dead.md"
+bytes = 126886
+sha256 = "4d01ca835a564eeb56bef55b51de70de4d3fb8c44d4ee5a05009c8356295474b"
+
+[[versions.sections]]
+path = "versions/1806-roman-missal-english/sections/ordinary/010-ordinary-and-canon-of-the-mass.md"
+bytes = 60215
+sha256 = "0168714f3c42acc737dd884ef3c9b5121e5335ca976df5957781e3036194ee13"
+
+[[versions.sections]]
+path = "versions/1806-roman-missal-english/sections/proper/010-proper-masses-for-sundays-and-seasons.md"
+bytes = 859424
+sha256 = "1d790c2ebb23e98394407b82ab9b7b6a063f43151d75f1df7bf3723b8b6dcc48"
+
+[[versions.sections]]
+path = "versions/1806-roman-missal-english/sections/proper/020-proper-of-saints.md"
+bytes = 350284
+sha256 = "c60b34feccb2d3d9d92eb3222053a7221cd82b3c9dfa5a094e3b0a8fa89fc2fe"
+
+[[versions.sections]]
+path = "versions/1806-roman-missal-english/sections/supplements/010-votive-and-occasional-masses.md"
+bytes = 48670
+sha256 = "cc362d123c8d445930bc914e208ee5f6b642d7138b7bcb38b1e98cb4f6834487"
+
+[[versions]]
+id = "1843-roman-missal-english"
+section_files = 8
+section_bytes = 1722800
+audit_verdict = "admissible"
+source_urls = ["https://archive.org/details/TheRomanMissal1843", "https://archive.org/download/TheRomanMissal1843/TheRomanMissal1843_djvu.txt"]
+metadata_sha256 = "21576ee4ce95f4da5348b552a0e86cd1ba05e0e586e0e8ca1f70e9890a104082"
+
+[[versions.sections]]
+path = "versions/1843-roman-missal-english/sections/apparatus/000-front-matter.md"
+bytes = 8856
+sha256 = "d7462519f71c88aa46804a1c88e76f3c9576a2c57c2fb00e13b5cdd10a048b45"
+
+[[versions.sections]]
+path = "versions/1843-roman-missal-english/sections/apparatus/030-historical-explanation-of-the-mass.md"
+bytes = 227334
+sha256 = "e575000238b368e206cd7ed6653cef9870b18b671c2a69fa8469124192f7d6b8"
+
+[[versions.sections]]
+path = "versions/1843-roman-missal-english/sections/apparatus/040-table-and-directions.md"
+bytes = 32104
+sha256 = "87037f77a39403a772b724e9ac474ac3626559390f11f0b1cdeafe56a3e1d24e"
+
+[[versions.sections]]
+path = "versions/1843-roman-missal-english/sections/common/010-common-masses-and-masses-for-the-dead.md"
+bytes = 124960
+sha256 = "6487647a4f53797ef154f9d37d150608ab7b8dcd860e16b105ea064c87dc2f14"
+
+[[versions.sections]]
+path = "versions/1843-roman-missal-english/sections/ordinary/010-ordinary-and-canon-of-the-mass.md"
+bytes = 66881
+sha256 = "ae3aa5ae39f38bcbaf1c8c2731d9aa1b2f2d7b2afb53fdd004ec35841942f4a3"
+
+[[versions.sections]]
+path = "versions/1843-roman-missal-english/sections/proper/010-proper-masses-for-sundays-and-seasons.md"
+bytes = 865348
+sha256 = "a124c2d870a5019abd80ebeee545a3454194dcd9bff42b4d73428ad1fdf72d58"
+
+[[versions.sections]]
+path = "versions/1843-roman-missal-english/sections/proper/020-proper-of-saints.md"
+bytes = 364610
+sha256 = "1e81c20a97a7c907bc88dee4385124ed4ff150de1ea914a5f7fabce80fad3215"
+
+[[versions.sections]]
+path = "versions/1843-roman-missal-english/sections/supplements/010-votive-and-occasional-masses.md"
+bytes = 32707
+sha256 = "d4b4739191bd575284c5f4fc8ab93b784a9aeaf3ae9aea9896f440e3c0cf5675"
+
+[[versions]]
+id = "1862-missale-romanum-latin"
+section_files = 8
+section_bytes = 2505130
+audit_verdict = "admissible"
+source_urls = ["https://archive.org/details/bub_gb_E7sPAAAAIAAJ", "https://archive.org/download/bub_gb_E7sPAAAAIAAJ/bub_gb_E7sPAAAAIAAJ_djvu.txt"]
+metadata_sha256 = "a1a08a140745ad5781721c873820a00622d012fa855923d28e91a52e50d711bc"
+
+[[versions.sections]]
+path = "versions/1862-missale-romanum-latin/sections/apparatus/000-front-matter-calendar-and-rubrics.md"
+bytes = 151255
+sha256 = "2b591d6ac3dc234412a20087ea93d98fbb9ba927121efb8db5dd83a9243e779a"
+
+[[versions.sections]]
+path = "versions/1862-missale-romanum-latin/sections/apparatus/010-ritus-servandus.md"
+bytes = 217186
+sha256 = "40a181bb016afec40e7282549843c1f8784a498f735db0ec1e29f8bee8a21c35"
+
+[[versions.sections]]
+path = "versions/1862-missale-romanum-latin/sections/common/010-commune-sanctorum.md"
+bytes = 508314
+sha256 = "2b988aab7383c3c0d3b54e3b43a59b43595ac77684a954cee71e96a6b534f247"
+
+[[versions.sections]]
+path = "versions/1862-missale-romanum-latin/sections/ordinary/010-canon-missae.md"
+bytes = 29928
+sha256 = "1afc0eb77b0e05619397f39f876b384ef8c16bfdae6a638cbd5b70defec5e929"
+
+[[versions.sections]]
+path = "versions/1862-missale-romanum-latin/sections/proper/010-proprium-de-tempore-before-ordinary.md"
+bytes = 590498
+sha256 = "72f875b7e22b1547769ec733e0174b196b6c21e831dbfc37f6d7c30266305c86"
+
+[[versions.sections]]
+path = "versions/1862-missale-romanum-latin/sections/proper/011-proprium-de-tempore-after-ordinary.md"
+bytes = 353889
+sha256 = "133310e029ef8fa2181efdeff70dd2b9772cb09395ee2150c21a0872074f76ba"
+
+[[versions.sections]]
+path = "versions/1862-missale-romanum-latin/sections/proper/020-proprium-sanctorum.md"
+bytes = 493234
+sha256 = "32147e7beb684ff0f5887bc5a502928c406a1b3d24970d5e07df9de057623211"
+
+[[versions.sections]]
+path = "versions/1862-missale-romanum-latin/sections/supplements/010-appendices-and-local-masses.md"
+bytes = 160826
+sha256 = "6d609831c4942fa8e252edaf6d758869d6104bb85fdb7bdb35debcd8325ececc"
+
+[[versions]]
+id = "1920-missale-romanum-latin"
+section_files = 12
+section_bytes = 2919877
+audit_verdict = "withdrawn"
+source_urls = ["https://archive.org/details/MissaleRomanumBenedettoXV", "https://archive.org/download/MissaleRomanumBenedettoXV/Missale%20Romanum%20Benedetto%20XV_djvu.txt"]
+metadata_sha256 = "0153a3d974e436e22b14ec2b0eee28d54bac9f02d0cea0c154f7dee2418e56ba"
+
+[[versions.sections]]
+path = "versions/1920-missale-romanum-latin/sections/apparatus/000-front-matter-and-calendar.md"
+bytes = 104783
+sha256 = "b483ec2172f0c3a96d27184f691bc45f32089a99620e0e821edd0ed94c367d2c"
+
+[[versions.sections]]
+path = "versions/1920-missale-romanum-latin/sections/apparatus/010-rubricae-generales.md"
+bytes = 99769
+sha256 = "4d890b7651613b4d5e0712c6467d70d4506bd8fde8578115f61a6ec8647eca31"
+
+[[versions.sections]]
+path = "versions/1920-missale-romanum-latin/sections/apparatus/020-ritus-servandus.md"
+bytes = 146880
+sha256 = "11fcdde8e9a2a55f173db336a997edc1c198f542eacafad23e98cfb768e2a4cb"
+
+[[versions.sections]]
+path = "versions/1920-missale-romanum-latin/sections/common/010-commune-sanctorum.md"
+bytes = 143614
+sha256 = "b4402068c0c1b0615d1fcc96c11d9a74cb5fe9052a7d0aeaca06d74a09db02cf"
+
+[[versions.sections]]
+path = "versions/1920-missale-romanum-latin/sections/ordinary/010-ordo-missae.md"
+bytes = 111955
+sha256 = "85ec76fad1ec03e5b2600e5cc4ad3bccb65b9ca55a3266295fcab3381c0396d5"
+
+[[versions.sections]]
+path = "versions/1920-missale-romanum-latin/sections/ordinary/020-canon-missae.md"
+bytes = 25150
+sha256 = "b5498837bf14e5b8dd845ca5ddae77264f082605a7f0a766e8b9e993c61277a0"
+
+[[versions.sections]]
+path = "versions/1920-missale-romanum-latin/sections/proper/010-proprium-de-tempore-before-ordinary.md"
+bytes = 629669
+sha256 = "0cc99c72aaffc0dffda5fbf74a7ffd75188a67978348488841f0383b70429512"
+
+[[versions.sections]]
+path = "versions/1920-missale-romanum-latin/sections/proper/011-proprium-de-tempore-after-ordinary.md"
+bytes = 298113
+sha256 = "f0a3c2d8fb2e95da14ed893dc115f8de1d444db16d964e77be6ead7cacc1e5c8"
+
+[[versions.sections]]
+path = "versions/1920-missale-romanum-latin/sections/proper/020-proprium-sanctorum.md"
+bytes = 888338
+sha256 = "a7c366d363f5161f1dc1046e7aabb6317bccdbaaa6fd6d644f4d61c02e159831"
+
+[[versions.sections]]
+path = "versions/1920-missale-romanum-latin/sections/supplements/010-missae-votivae.md"
+bytes = 159966
+sha256 = "db1bfe6d0c7b3bd87d41bd148c8174070403d922873c46bc9dd4e96029b49c7a"
+
+[[versions.sections]]
+path = "versions/1920-missale-romanum-latin/sections/supplements/020-missae-defunctorum.md"
+bytes = 284595
+sha256 = "27ac8c4e456c0848ef5f49514b7798acf2a5b7b1984b1b35024b93ea62ba4f18"
+
+[[versions.sections]]
+path = "versions/1920-missale-romanum-latin/sections/supplements/030-appendices.md"
+bytes = 27045
+sha256 = "9f33ffdd21111570a9aaabb2c76619e4dde3675e97d2ec628b267d2a948df894"
+
+[[versions]]
+id = "1937-lasance-new-roman-missal-english"
+section_files = 11
+section_bytes = 4387635
+audit_verdict = "admissible"
+source_urls = ["https://archive.org/details/fr-lasance-missal-1937", "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937_djvu.txt"]
+metadata_sha256 = "e5ccab14114967a915a9e31706554c63e2c8b6d427cd237c75221aec66ac6ca7"
+
+[[versions.sections]]
+path = "versions/1937-lasance-new-roman-missal-english/sections/apparatus/000-front-matter-and-introduction.md"
+bytes = 240783
+sha256 = "4f26dceed8ceedccf9333a05838395f87518fd998db4bad779dabe537dd3c6ab"
+
+[[versions.sections]]
+path = "versions/1937-lasance-new-roman-missal-english/sections/apparatus/010-ecclesiastical-year-and-calendar.md"
+bytes = 594710
+sha256 = "f0e5f8237a37135e5de76c73e5d0667a5ba77d7a48c9c2ba3869d951508c78f7"
+
+[[versions.sections]]
+path = "versions/1937-lasance-new-roman-missal-english/sections/apparatus/020-index.md"
+bytes = 22097
+sha256 = "d2ffb5c48629d5654ea0ae996fdad48cfabc5f65f9bb093308aac68e51d50cc7"
+
+[[versions.sections]]
+path = "versions/1937-lasance-new-roman-missal-english/sections/common/010-common-of-saints.md"
+bytes = 497519
+sha256 = "cb95acffc0497e3f85fce7a3b23107056edbddca3ff332b6a6c2f8017c9e746d"
+
+[[versions.sections]]
+path = "versions/1937-lasance-new-roman-missal-english/sections/common/020-masses-for-the-dead.md"
+bytes = 77032
+sha256 = "92d8d2201424838da249b2b453294b7cafcb0d277e24630f4dc4a50bd69c4df6"
+
+[[versions.sections]]
+path = "versions/1937-lasance-new-roman-missal-english/sections/ordinary/010-ordinary-and-canon-of-the-mass.md"
+bytes = 158892
+sha256 = "1d9a1620ff5c7f24a178c5a33380a927d057af6f14931771db500a8fbd7e1a4d"
+
+[[versions.sections]]
+path = "versions/1937-lasance-new-roman-missal-english/sections/proper/010-proper-masses-for-sundays-and-seasons.md"
+bytes = 1580803
+sha256 = "f3ff5965ab6d46c8ec6d73b3e38c36272efcc91064fc4cc644467bd6c5726a01"
+
+[[versions.sections]]
+path = "versions/1937-lasance-new-roman-missal-english/sections/proper/020-proper-of-saints.md"
+bytes = 785928
+sha256 = "5f654efe40492e3acdb2d58d60edf74e8141971cabecb6dcc26b9666068b1a57"
+
+[[versions.sections]]
+path = "versions/1937-lasance-new-roman-missal-english/sections/proper/030-proper-masses-for-united-states.md"
+bytes = 102752
+sha256 = "0c53de854ac6e074698649c4ec7a0f0cb358623454f5e1c7fb987b04726bd009"
+
+[[versions.sections]]
+path = "versions/1937-lasance-new-roman-missal-english/sections/supplements/010-votive-and-occasional-masses.md"
+bytes = 217036
+sha256 = "d38673a1a0a6d477b946f36c8d238c875b81b5fc10993c08374897b73a279901"
+
+[[versions.sections]]
+path = "versions/1937-lasance-new-roman-missal-english/sections/supplements/020-forty-hours-and-religious-orders.md"
+bytes = 110083
+sha256 = "a02e80a87a9688729d2281518e914a1630b6e5ac77077dfb0c15b0fdac7820ef"
+
+[[versions]]
+id = "1955-holy-week-reform-source-needed"
+section_files = 2
+section_bytes = 44831
+audit_verdict = "undecided"
+source_urls = ["https://archive.org/details/AAS-47-1955", "https://archive.org/download/AAS-47-1955/AAS-47-1955_djvu.txt", "https://archive.org/details/ordohebdomadaesa0000cath"]
+metadata_sha256 = "fe28e85cdf807e37af9e0a613a37974f108c34785217f787cc00ec15053d59b9"
+
+[[versions.sections]]
+path = "versions/1955-holy-week-reform-source-needed/sections/apparatus/010-decretum-generale-maxima-redemptionis.md"
+bytes = 9425
+sha256 = "d3ecbba9a4e536fcea5f9f1bb3d02abbe21f2d178329b1fd1d289d127d2b45f5"
+
+[[versions.sections]]
+path = "versions/1955-holy-week-reform-source-needed/sections/apparatus/020-instructio-de-ordine-hebdomadae-sanctae.md"
+bytes = 35406
+sha256 = "1131cab79e3118fc04ccad0425d8e0544fb19f8a572c48ef0a47c4c66802cd82"
+
+[[versions]]
+id = "1962-missale-romanum-latin"
+section_files = 15
+section_bytes = 2791264
+audit_verdict = "undecided"
+source_urls = ["https://archive.org/details/MissaleRomanum1962RomanMissalColorLatin", "https://archive.org/download/MissaleRomanum1962RomanMissalColorLatin/Missale-Romanum-1962-Roman-Missal-color-latin_djvu.txt"]
+metadata_sha256 = "c39c05fd57d09190be4fcfffb6058b0a5213be5e595d19fb0f3fe1e523ebbf7d"
+
+[[versions.sections]]
+path = "versions/1962-missale-romanum-latin/sections/apparatus/000-front-matter-and-calendar.md"
+bytes = 78144
+sha256 = "675c9a05f95c39a1709559347e442271e63a490d57589a487e50bf204c405689"
+
+[[versions.sections]]
+path = "versions/1962-missale-romanum-latin/sections/apparatus/010-rubricae-generales.md"
+bytes = 147545
+sha256 = "6a3e164d26c2a37982ebeca43d313f5e3925fbf2173b1d5a9fc8e6db5b3ffe0f"
+
+[[versions.sections]]
+path = "versions/1962-missale-romanum-latin/sections/apparatus/020-ritus-servandus.md"
+bytes = 119513
+sha256 = "ac4d87545c094c1f22f79d70967a0db3918a4fe088e4084414f23f9461d66ec3"
+
+[[versions.sections]]
+path = "versions/1962-missale-romanum-latin/sections/common/010-commune-sanctorum.md"
+bytes = 130690
+sha256 = "13ef4f9adf85f3d499bbb5b6227b60061d054da482914e1f91dc8aefe1732e1e"
+
+[[versions.sections]]
+path = "versions/1962-missale-romanum-latin/sections/ordinary/010-ordo-missae.md"
+bytes = 83314
+sha256 = "e037409ea885400dae7d02f7ee4c14b22252fffd4719efec845633dc3fc61fdb"
+
+[[versions.sections]]
+path = "versions/1962-missale-romanum-latin/sections/ordinary/020-canon-missae-vigilia-paschalis.md"
+bytes = 7525
+sha256 = "17797d95516c1a720fbbc2f2979a62c6355cf75050bff951f3fbe4533a9c3915"
+
+[[versions.sections]]
+path = "versions/1962-missale-romanum-latin/sections/ordinary/020-canon-missae.md"
+bytes = 23196
+sha256 = "290d07474247d6a0f3ab390e59c22f80e53f542900e942acdd208969ef721f90"
+
+[[versions.sections]]
+path = "versions/1962-missale-romanum-latin/sections/proper/010-proprium-de-tempore-before-ordinary.md"
+bytes = 534666
+sha256 = "4a185fe5d8aa39d78b62eb272d5d6f2c8c272911b7826904715082174d60d6ea"
+
+[[versions.sections]]
+path = "versions/1962-missale-romanum-latin/sections/proper/011-proprium-de-tempore-after-ordinary.md"
+bytes = 268063
+sha256 = "331deb3746997a393239a8ac79b463b2a91f42272e7dcbb0d79ab4bb33fd3dcb"
+
+[[versions.sections]]
+path = "versions/1962-missale-romanum-latin/sections/proper/020-proprium-sanctorum.md"
+bytes = 800511
+sha256 = "3d02fbeaeb536af68ead3cc8462309b084df203aa9ad770266278a0cf343ea7f"
+
+[[versions.sections]]
+path = "versions/1962-missale-romanum-latin/sections/supplements/010-missae-votivae.md"
+bytes = 181983
+sha256 = "1a46ee6fb55e01d6f821f91967773c95827a22c28fc6e3c4bc9c9ec74159e1f6"
+
+[[versions.sections]]
+path = "versions/1962-missale-romanum-latin/sections/supplements/020-missae-defunctorum.md"
+bytes = 45284
+sha256 = "524ac33a09c039f5c61b6c3a3d3bb6a6dbd5ca84ba76a84900a9448f74e97300"
+
+[[versions.sections]]
+path = "versions/1962-missale-romanum-latin/sections/supplements/030-proprium-sanctorum-supplement.md"
+bytes = 238199
+sha256 = "d90545d6b846a65165579853b97d4173758b474a95657912f414ed0450a72264"
+
+[[versions.sections]]
+path = "versions/1962-missale-romanum-latin/sections/supplements/040-commune-sanctorum-supplement.md"
+bytes = 32031
+sha256 = "27a946bbdd0a1c7b7383ee73f297e4737701516191ea1dc3f686a505cbf3a0fa"
+
+[[versions.sections]]
+path = "versions/1962-missale-romanum-latin/sections/supplements/050-appendices.md"
+bytes = 100600
+sha256 = "83adc338b1184e90e0608ea086d624e4a7b885e1fecc429ada6b3ea187e6fe26"
+
+[[versions]]
+id = "1963-sacrosanctum-concilium"
+section_files = 1
+section_bytes = 276
+audit_verdict = "undecided"
+source_urls = ["https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"]
+metadata_sha256 = "af993d181791d2679eababaca75562ca8bcbb6500ad20a79c00943cbc7495c04"
+
+[[versions.sections]]
+path = "versions/1963-sacrosanctum-concilium/sections/000-reform-mandate.md"
+bytes = 276
+sha256 = "aa6547e2d14689906b9479b24c124817ad5d67898744f7fbe033af3b30d51feb"
+
+[[versions]]
+id = "1969-missale-romanum"
+section_files = 1
+section_bytes = 357
+audit_verdict = "undecided"
+source_urls = ["https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"]
+metadata_sha256 = "565cef5d491ca224cb5c07f05cddde3b008d7a599e3c0062af45fe761e65ac8a"
+
+[[versions.sections]]
+path = "versions/1969-missale-romanum/sections/000-promulgation.md"
+bytes = 357
+sha256 = "f4461989621637335812998bc3d7414763dd9ff344662953186bafdbf1e8c5aa"
+
+[[versions]]
+id = "1969-ordo-lectionum-missae-latin"
+section_files = 5
+section_bytes = 638559
+audit_verdict = "excluded"
+source_urls = ["https://archive.org/details/OLM1969", "https://archive.org/download/OLM1969/Ordo%20lectionum%20Missae%20-%20Ordo%20Lectionum%20Missae_djvu.txt"]
+metadata_sha256 = "5f549a2bcf08155fef842930dffa26473fc90316668098a6f288529f101e4678"
+
+[[versions.sections]]
+path = "versions/1969-ordo-lectionum-missae-latin/sections/apparatus/000-front-matter-and-decree.md"
+bytes = 4267
+sha256 = "f47f2e34b48d4cf2b3040116d7e6edd447ac779e86d272463f74b8a7ea4e8138"
+
+[[versions.sections]]
+path = "versions/1969-ordo-lectionum-missae-latin/sections/apparatus/010-praenotanda.md"
+bytes = 44421
+sha256 = "d0e73c5e1cf54b1f3aaa0626aa12b63f5817abecff3c7dc9dc2cd5e3bcf9904c"
+
+[[versions.sections]]
+path = "versions/1969-ordo-lectionum-missae-latin/sections/common/010-communia.md"
+bytes = 182271
+sha256 = "3f1bd95c6be0c2cfef1f6d2ecefffbf9a49c4993dc78e14bf7949ec1eb2df84b"
+
+[[versions.sections]]
+path = "versions/1969-ordo-lectionum-missae-latin/sections/proper/010-proprium-de-tempore.md"
+bytes = 379621
+sha256 = "54822a1abe75f6869e606d757a7da64939c780a6dddee4217490bba802beca68"
+
+[[versions.sections]]
+path = "versions/1969-ordo-lectionum-missae-latin/sections/supplements/010-proprium-de-sanctis-communia-and-indices.md"
+bytes = 27979
+sha256 = "85d2c0b89f4497a4d501e03c8ebed206968928d266d6537a6b62bde46ba58e0c"
+
+[[versions]]
+id = "1970-general-instruction-order-of-mass-english"
+section_files = 3
+section_bytes = 147587
+audit_verdict = "excluded"
+source_urls = ["https://archive.org/details/girm-1970", "https://archive.org/download/girm-1970/GIRM%201970_djvu.txt"]
+metadata_sha256 = "1381be30f881956ce4f974aa76ea534adc75191b26e332034fbeb53aaf715e30"
+
+[[versions.sections]]
+path = "versions/1970-general-instruction-order-of-mass-english/sections/apparatus/000-front-matter-decree-constitution.md"
+bytes = 13034
+sha256 = "d901e877b61571b55491072882f81a815cfca3c35e11feb93fd6623b70c413be"
+
+[[versions.sections]]
+path = "versions/1970-general-instruction-order-of-mass-english/sections/apparatus/010-general-instruction.md"
+bytes = 117222
+sha256 = "bcf0a6d27efaca690d60050211bbacda0cb602bfb90914b354b0e0dc504b5bad"
+
+[[versions.sections]]
+path = "versions/1970-general-instruction-order-of-mass-english/sections/supplements/010-notes-and-litany.md"
+bytes = 17331
+sha256 = "b4ed5fb9bc1cc3b97deae7a746e21c36b94495b0ab80c79066b2af2936e1bbbb"
+
+[[versions]]
+id = "1970-missale-romanum-source-located"
+section_files = 11
+section_bytes = 1134095
+audit_verdict = "excluded"
+source_urls = ["https://archive.org/details/missale-romanum-pauli-pp-vi-1970-concilii-vaticno-ii", "https://archive.org/download/missale-romanum-pauli-pp-vi-1970-concilii-vaticno-ii/Missale%20Romanum%20Pauli%20PP%20VI%201970%20Concilii%20Vaticno%20II_djvu.txt"]
+metadata_sha256 = "e43e6d801fff1797706113f7ccbab17f89837d074490bede1b4a9d6aec0b3986"
+
+[[versions.sections]]
+path = "versions/1970-missale-romanum-source-located/sections/apparatus/000-front-matter-and-promulgation.md"
+bytes = 13285
+sha256 = "475bf78007bd9de3aa23f7e8075dc221b8f8e94fc2147376795d0bac2899cd03"
+
+[[versions.sections]]
+path = "versions/1970-missale-romanum-source-located/sections/apparatus/010-institutio-generalis-calendar.md"
+bytes = 200606
+sha256 = "f8e5c47e4bad36ce0791efbe41685f839cab8f8bf1c9fb0ea7c5a53f05651035"
+
+[[versions.sections]]
+path = "versions/1970-missale-romanum-source-located/sections/common/010-commune-sanctorum.md"
+bytes = 26218
+sha256 = "611e7f8a52b2339de39ef702a856d44f35e367cde4d45c5c7da4d708698d80f1"
+
+[[versions.sections]]
+path = "versions/1970-missale-romanum-source-located/sections/ordinary/010-ordo-missae-cum-populo.md"
+bytes = 97072
+sha256 = "e4870f0fa25972bb8b1d8926409beb2739e2cab770e253089bc9e0d457fe3a57"
+
+[[versions.sections]]
+path = "versions/1970-missale-romanum-source-located/sections/ordinary/020-ordo-missae-sine-populo-and-appendix.md"
+bytes = 29875
+sha256 = "c99551d9f1d2685777f05aa331a37583986af6779408daa38d87a43767e2b8b0"
+
+[[versions.sections]]
+path = "versions/1970-missale-romanum-source-located/sections/proper/010-proprium-de-tempore.md"
+bytes = 286613
+sha256 = "d43b6b01c9423b08be10ba89278e7301d3a44fca76696240ffefb586bf442f22"
+
+[[versions.sections]]
+path = "versions/1970-missale-romanum-source-located/sections/proper/020-proprium-de-sanctis.md"
+bytes = 194664
+sha256 = "6f3abcdfc6bfca96b6e42921f04863717198762f5900fa28f7e1fbbe0b89f12b"
+
+[[versions.sections]]
+path = "versions/1970-missale-romanum-source-located/sections/supplements/010-missae-rituales.md"
+bytes = 38019
+sha256 = "0747ffe793d512aaccbf5e9ad07e96f8c336fa1e8d7a0d50d265a28600dcfa65"
+
+[[versions.sections]]
+path = "versions/1970-missale-romanum-source-located/sections/supplements/020-missae-et-orationes-ad-diversa.md"
+bytes = 85020
+sha256 = "c67b513e7ee0247016c519b05012e8645ecc1a7394ef0021d8df9ede7ec8481d"
+
+[[versions.sections]]
+path = "versions/1970-missale-romanum-source-located/sections/supplements/030-missae-defunctorum.md"
+bytes = 37040
+sha256 = "f453fe7c7dd2979eb96a68f7fb6fd946122f65bd55397e75bcb161a5b4efa68e"
+
+[[versions.sections]]
+path = "versions/1970-missale-romanum-source-located/sections/supplements/040-appendix-and-indices.md"
+bytes = 125683
+sha256 = "3b08143829d1d3a551ec37b943adf79eb4a77568bf753bb65adc561f2ed31ccf"
+
+[[versions]]
+id = "1972-nlc-interim-roman-missal-english"
+section_files = 4
+section_bytes = 643883
+audit_verdict = "excluded"
+source_urls = ["https://archive.org/details/MissalNLC1", "https://archive.org/download/MissalNLC1/Interim%20Translations%20of%20the%20Masses%20of%20the%20New%20Roman%20Missal%20-%20Book%201%20-%20Advent%20to%20Shrovetide%20%281972%29_djvu.txt", "https://archive.org/details/MissalNLC2", "https://archive.org/download/MissalNLC2/Interim%20Translations%20of%20the%20Masses%20of%20the%20New%20Roman%20Missal%20-%20Book%202%20-%20Lent%20and%20Eastertide%20%281972%29_djvu.txt", "https://archive.org/details/MissalNLC3", "https://archive.org/download/MissalNLC3/Interim%20Translations%20of%20the%20Masses%20of%20the%20New%20Roman%20Missal%20-%20Book%203%20-%20After%20Pentecost%20%281972%29_djvu.txt", "https://archive.org/details/MissalNLC4", "https://archive.org/download/MissalNLC4/Interim%20Translations%20of%20the%20Masses%20of%20the%20New%20Roman%20Missal%20-%20Book%204%20-%20Commons%2C%20Ritual%2C%20etc%20%281972%29_djvu.txt"]
+metadata_sha256 = "cfdf4b39301d819ad1f890bad2452f0de7df401fd753fe1f5027db580e7ad4b0"
+
+[[versions.sections]]
+path = "versions/1972-nlc-interim-roman-missal-english/sections/proper/010-book-1-advent-to-shrovetide.md"
+bytes = 121449
+sha256 = "5c2e64ca9de29aead577368bf20f9a5b128626082169242edf431e21ce0eac86"
+
+[[versions.sections]]
+path = "versions/1972-nlc-interim-roman-missal-english/sections/proper/020-book-2-lent-and-eastertide.md"
+bytes = 146653
+sha256 = "0d96b36d016a17d9617ef45bbd6a2c34df64459ce0e3fcabd7fc3490974b517a"
+
+[[versions.sections]]
+path = "versions/1972-nlc-interim-roman-missal-english/sections/proper/030-book-3-after-pentecost.md"
+bytes = 182342
+sha256 = "0ab0c5c3736cb48d06fa9a2f09df05df832073412a7418934ac6dfc16dc623f7"
+
+[[versions.sections]]
+path = "versions/1972-nlc-interim-roman-missal-english/sections/supplements/010-book-4-commons-ritual-occasional-votive-dead-appendices.md"
+bytes = 193439
+sha256 = "c3806477690b558417f8ef586b3b7279ebe95d1904db895c11732f8074cbc77d"
+
+[[versions]]
+id = "1974-sacramentary-english-source-located"
+section_files = 1
+section_bytes = 305
+audit_verdict = "excluded"
+source_urls = ["https://archive.org/details/sacramentary0000nume"]
+metadata_sha256 = "e64d3880f1a357a3f2455307b4bd17ec344b8e5c4ade1f8f754741f6a7817f60"
+
+[[versions.sections]]
+path = "versions/1974-sacramentary-english-source-located/sections/000-restricted-source-not-included.md"
+bytes = 305
+sha256 = "ba3a1c6bb38858c1971550d355d5eb44a2476a65533674cd298d5a474cb7eb65"
+
+[[versions]]
+id = "1975-missale-romanum-editio-typica-altera-source-located"
+section_files = 1
+section_bytes = 22035
+audit_verdict = "excluded"
+source_urls = ["https://archive.org/details/MissaleRomanum1975OrdoMissae", "https://archive.org/download/MissaleRomanum1975OrdoMissae/OrdoMissae1975_djvu.txt"]
+metadata_sha256 = "fe14bd8820735d230f92aa20aa57bf37547743e3a12922981ca9481d51ee0e34"
+
+[[versions.sections]]
+path = "versions/1975-missale-romanum-editio-typica-altera-source-located/sections/ordinary/010-ordo-missae-cum-populo.md"
+bytes = 22035
+sha256 = "ce96c2662bdfcbf82d368b9b6fb4c75803cb14f71af709f59392e658bbe3a381"
+
+[[versions]]
+id = "1981-ordo-lectionum-missae-editio-typica-altera-latin"
+section_files = 6
+section_bytes = 848729
+audit_verdict = "excluded"
+source_urls = ["https://archive.org/details/OLM1981", "https://archive.org/download/OLM1981/Ordo%20lectionum%20Missae%20-%20Ordo%20lectionum%20Missae%20%3A%20editio%20typica%20altera_djvu.txt"]
+metadata_sha256 = "971cc42a7b1547775c087f2094f4305dd990defb74a3f379ef813e361de221f8"
+
+[[versions.sections]]
+path = "versions/1981-ordo-lectionum-missae-editio-typica-altera-latin/sections/apparatus/000-front-matter-and-decrees.md"
+bytes = 5151
+sha256 = "2c466f22ecbdb54e22628ecbe08992a7f7cd41e405a7ddeca77c203882831c8b"
+
+[[versions.sections]]
+path = "versions/1981-ordo-lectionum-missae-editio-typica-altera-latin/sections/apparatus/010-praenotanda.md"
+bytes = 102842
+sha256 = "d887930144e5885aa52d42c965b928d67e4e3f7bf3fe442fc4faa59fb53bf1a4"
+
+[[versions.sections]]
+path = "versions/1981-ordo-lectionum-missae-editio-typica-altera-latin/sections/common/010-communia.md"
+bytes = 222788
+sha256 = "c2eb836d089a58efe08f359ca399208daabe8b708de302c78f6995ac6b3bc9a8"
+
+[[versions.sections]]
+path = "versions/1981-ordo-lectionum-missae-editio-typica-altera-latin/sections/proper/010-proprium-de-tempore.md"
+bytes = 374175
+sha256 = "ac11f7b720c02d798e4d6ead6b10c4786ddc9b09cecb3a69f8bce32e1d59d971"
+
+[[versions.sections]]
+path = "versions/1981-ordo-lectionum-missae-editio-typica-altera-latin/sections/proper/020-proprium-de-sanctis.md"
+bytes = 73275
+sha256 = "9d1b7e4c9a8bd28eb2946e9a59b8d9c084a9e86f0a038af1a9230523a7b0d933"
+
+[[versions.sections]]
+path = "versions/1981-ordo-lectionum-missae-editio-typica-altera-latin/sections/supplements/010-appendices-and-indices.md"
+bytes = 70498
+sha256 = "8a9be39d431ffe44c02320e0d4aea2e7e32b95431629d4d093c8ba0c929fea4a"
+
+[[versions]]
+id = "1985-sacramentary-english-source-located"
+section_files = 1
+section_bytes = 305
+audit_verdict = "excluded"
+source_urls = ["https://archive.org/details/sacramentary0000vari"]
+metadata_sha256 = "e881f6525487c5a574a6151ca79af875a5fa1e2a8f48307feed03bcb543fb52b"
+
+[[versions.sections]]
+path = "versions/1985-sacramentary-english-source-located/sections/000-restricted-source-not-included.md"
+bytes = 305
+sha256 = "4e5624c88f52460abcacce7087914f66f159a370ba95a8a3e78053c4c0e9fb20"
+
+[[versions]]
+id = "1988-ordo-cantus-missae-editio-typica-altera-latin"
+section_files = 7
+section_bytes = 303502
+audit_verdict = "excluded"
+source_urls = ["https://archive.org/details/OCMissae", "https://archive.org/download/OCMissae/Ordo%20Cantus%20Missae_djvu.txt"]
+metadata_sha256 = "93df12e605bbeebf9d7ddc5ea144dad578a30bb2f054118365972ed02034a65c"
+
+[[versions.sections]]
+path = "versions/1988-ordo-cantus-missae-editio-typica-altera-latin/sections/apparatus/000-front-matter-and-decree.md"
+bytes = 2683
+sha256 = "a7234bd62f271c28044265c6556ba29a27e26c036b76500549766d451ded1e1b"
+
+[[versions.sections]]
+path = "versions/1988-ordo-cantus-missae-editio-typica-altera-latin/sections/apparatus/010-praenotanda.md"
+bytes = 47374
+sha256 = "0f52fe7ae66a28660a279639daea47ce8f2f6ce84f37fa8046ee8aedcd6044d5"
+
+[[versions.sections]]
+path = "versions/1988-ordo-cantus-missae-editio-typica-altera-latin/sections/common/010-communia.md"
+bytes = 14339
+sha256 = "d9205b7a78d6d38953b2e2ecdfa0b43cd727786c5d76c28a4c9ce555ff0a11dd"
+
+[[versions.sections]]
+path = "versions/1988-ordo-cantus-missae-editio-typica-altera-latin/sections/proper/010-proprium-de-tempore.md"
+bytes = 54096
+sha256 = "580f56774fef1dce666ec61093199deff1487de2fb15dc0dd10ed57fff6f188e"
+
+[[versions.sections]]
+path = "versions/1988-ordo-cantus-missae-editio-typica-altera-latin/sections/proper/020-proprium-de-sanctis.md"
+bytes = 48857
+sha256 = "476173c2097f52c9e7577b82636524a7b6c78b5cb83e2105de21477cf269d934"
+
+[[versions.sections]]
+path = "versions/1988-ordo-cantus-missae-editio-typica-altera-latin/sections/supplements/010-missae-rituales-ad-diversa-votivae.md"
+bytes = 44704
+sha256 = "855c770e3b7203b5e139bcbeac90a51cce804b397a180cd7cc225a83f75414f6"
+
+[[versions.sections]]
+path = "versions/1988-ordo-cantus-missae-editio-typica-altera-latin/sections/supplements/020-appendix-cantus-and-indices.md"
+bytes = 91449
+sha256 = "84bac98dbbdb4b5a0ffc0c96e430d23fc9bef5cce78db1c96f623c622905905b"
+
+[[versions]]
+id = "1994-sacramentary-supplement-source-located"
+section_files = 1
+section_bytes = 245
+audit_verdict = "excluded"
+source_urls = ["https://archive.org/details/sacramentarysupp0000cath"]
+metadata_sha256 = "05800408e780a6bdf7772c109a9dbd97077a693a1fc71668a4337e1f4bf87ea7"
+
+[[versions.sections]]
+path = "versions/1994-sacramentary-supplement-source-located/sections/000-restricted-source-not-included.md"
+bytes = 245
+sha256 = "6b7904cc683870e16042aad616229d064f59f07c6f854499174ceb85718dbe22"
+
+[[versions]]
+id = "1998-icel-revised-sacramentary-source-located"
+section_files = 4
+section_bytes = 4480683
+audit_verdict = "excluded"
+source_urls = ["https://archive.org/details/icel-roman-missal-volume-1-a", "https://archive.org/download/icel-roman-missal-volume-1-a/ICEL_Roman_Missal_Volume_1A_djvu.txt", "https://archive.org/download/icel-roman-missal-volume-1-a/ICEL_Roman_Missal_Volume_1B_djvu.txt", "https://archive.org/download/icel-roman-missal-volume-1-a/ICEL_Roman_Missal_Volume_2A_djvu.txt", "https://archive.org/download/icel-roman-missal-volume-1-a/ICEL_Roman_Missal_Volume_2B_djvu.txt", "https://www.icelweb.org/copyrightICEL.htm"]
+metadata_sha256 = "bb535ca251bec825c85a15ea6976a61e91384785ece14d783a0fc5fa9b71a7c8"
+
+[[versions.sections]]
+path = "versions/1998-icel-revised-sacramentary-source-located/sections/volume-1/010-volume-1a.md"
+bytes = 2649377
+sha256 = "7bfcf1841f43c51000ea6dbca00d0dbe448c930c72fdd0fb259480bd96742677"
+
+[[versions.sections]]
+path = "versions/1998-icel-revised-sacramentary-source-located/sections/volume-1/020-volume-1b.md"
+bytes = 420922
+sha256 = "7eb4951e2d047aabb1b8033e9e8324f96f15357e9fe268eddafaa1eaaa02db0a"
+
+[[versions.sections]]
+path = "versions/1998-icel-revised-sacramentary-source-located/sections/volume-2/010-volume-2a.md"
+bytes = 761908
+sha256 = "92fdcc76a47ed50a84dce66ded9f08b275272afa8e3ca48760e76ec5ad7fa674"
+
+[[versions.sections]]
+path = "versions/1998-icel-revised-sacramentary-source-located/sections/volume-2/020-volume-2b.md"
+bytes = 648476
+sha256 = "bc87282196bcb439c1eb155f4bb7a2f98e0b09af3ac9af56a75dfdad6d5f845d"
+
+[[versions]]
+id = "2002-missale-romanum-editio-typica-tertia-source-located"
+section_files = 11
+section_bytes = 1322332
+audit_verdict = "excluded"
+source_urls = ["https://media.musicasacra.com/books/latin_missal2002.pdf", "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"]
+metadata_sha256 = "f7fdfeb714ab133d597c7f2f948e64586008927ff20876b2ed1d4bbfb7dee5e3"
+
+[[versions.sections]]
+path = "versions/2002-missale-romanum-editio-typica-tertia-source-located/sections/apparatus/000-front-matter-decrees-calendar.md"
+bytes = 246559
+sha256 = "7c23e927da3246feea16820e54004b8b77d2fe4181a83093a93903b808dd915e"
+
+[[versions.sections]]
+path = "versions/2002-missale-romanum-editio-typica-tertia-source-located/sections/common/010-commune-sanctorum.md"
+bytes = 76562
+sha256 = "65ca2e8eceb081d9e42e3b535c66c7bed8229be7e63b751df94738f7815b9d59"
+
+[[versions.sections]]
+path = "versions/2002-missale-romanum-editio-typica-tertia-source-located/sections/ordinary/010-ordo-missae.md"
+bytes = 122400
+sha256 = "e81d56c3a4349afc991d9ce1b450c81a3b39ed6fd804d4ea59ca13c54809916b"
+
+[[versions.sections]]
+path = "versions/2002-missale-romanum-editio-typica-tertia-source-located/sections/ordinary/020-appendix-ad-ordinem-missae.md"
+bytes = 36255
+sha256 = "4e5404eb29f222dce48b340c1f5c6d92324d0e374b16bcd594feabda061fb20e"
+
+[[versions.sections]]
+path = "versions/2002-missale-romanum-editio-typica-tertia-source-located/sections/proper/010-proprium-de-tempore.md"
+bytes = 306021
+sha256 = "cfed0d8dda243436eaadd98b6313d6e138bea0c81412caba90421905a1afcf20"
+
+[[versions.sections]]
+path = "versions/2002-missale-romanum-editio-typica-tertia-source-located/sections/proper/020-proprium-de-sanctis.md"
+bytes = 160206
+sha256 = "d3eca4cfed9e90126f72b46e1d3b3e84ad5e6c22aa1077c69148a7ecd588b119"
+
+[[versions.sections]]
+path = "versions/2002-missale-romanum-editio-typica-tertia-source-located/sections/supplements/010-missae-rituales.md"
+bytes = 107777
+sha256 = "601006de5ad1b4c265e3d09c39c987f23c218b362b2fee7c047924010dc97cdc"
+
+[[versions.sections]]
+path = "versions/2002-missale-romanum-editio-typica-tertia-source-located/sections/supplements/020-missae-et-orationes-ad-diversa.md"
+bytes = 79478
+sha256 = "5dd2264f23bcfc0963ebbde233af6d1d53cade8e4c2879f16dd23601f8915a38"
+
+[[versions.sections]]
+path = "versions/2002-missale-romanum-editio-typica-tertia-source-located/sections/supplements/030-missae-votivae.md"
+bytes = 34381
+sha256 = "f2091b1bd74162d236ee6b4b8c6d1b74e62c831f0db16370cf356e2d5dc48afa"
+
+[[versions.sections]]
+path = "versions/2002-missale-romanum-editio-typica-tertia-source-located/sections/supplements/040-missae-defunctorum.md"
+bytes = 38634
+sha256 = "844b774ce77be7a3b6b4c5802ea8bb02294684365405867d77709e8f99644046"
+
+[[versions.sections]]
+path = "versions/2002-missale-romanum-editio-typica-tertia-source-located/sections/supplements/050-appendices-and-indices.md"
+bytes = 114059
+sha256 = "29867153c933c9e172e84b396e98561780e2dabec8a069d4ece95baa17c81405"
+
+[[versions]]
+id = "2008-missale-romanum-reimpressio-emendata-source-located"
+section_files = 1
+section_bytes = 285
+audit_verdict = "excluded"
+source_urls = ["https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"]
+metadata_sha256 = "22cc9db974607a8cd33f398f2e9fe8a16f0b006d527e0229518be6bd0d841427"
+
+[[versions.sections]]
+path = "versions/2008-missale-romanum-reimpressio-emendata-source-located/sections/000-copyrighted-source-not-included.md"
+bytes = 285
+sha256 = "73f43ab00aada05c8be82cf7e174a0543f56094f31ba7e527937245dfae8fd18"
+
+[[versions]]
+id = "2011-roman-missal-third-edition-english-source-located"
+section_files = 9
+section_bytes = 1995778
+audit_verdict = "excluded"
+source_urls = ["https://archive.org/details/Roman-Missal-Third-Edition", "https://archive.org/download/Roman-Missal-Third-Edition/Roman%20Missal_djvu.txt", "https://www.icelweb.org/copyrightICEL.htm"]
+metadata_sha256 = "af01fdde4af94a9c3f94c1e80164c4517dfd1d452c84f2370f93cd460a1f00b6"
+
+[[versions.sections]]
+path = "versions/2011-roman-missal-third-edition-english-source-located/sections/apparatus/000-front-matter-decrees-calendar.md"
+bytes = 356051
+sha256 = "b4229958f88ecd884ac62c86f3244597110f6b6fdb7446342d0a5108b71df11d"
+
+[[versions.sections]]
+path = "versions/2011-roman-missal-third-edition-english-source-located/sections/common/010-common-of-saints.md"
+bytes = 102143
+sha256 = "aa06ca783ae7e633ea1c71af565353d32b4c37fe606ea83d2d59381bdec3c1ba"
+
+[[versions.sections]]
+path = "versions/2011-roman-missal-third-edition-english-source-located/sections/ordinary/010-order-of-mass.md"
+bytes = 269757
+sha256 = "ca8cfb73514c472a416c59b64576d58124021bc966024c1fa3d680f28e7e6e75"
+
+[[versions.sections]]
+path = "versions/2011-roman-missal-third-edition-english-source-located/sections/ordinary/020-appendix-to-the-order-of-mass.md"
+bytes = 54954
+sha256 = "9abbb886b3190133170abbc1339650016d41092abe42c132fda6ebd383eff2ec"
+
+[[versions.sections]]
+path = "versions/2011-roman-missal-third-edition-english-source-located/sections/proper/010-proper-of-time.md"
+bytes = 444795
+sha256 = "e8a043929000822530ea9c013a97f892ab3e22b1b803baa85be1278923b9b2e1"
+
+[[versions.sections]]
+path = "versions/2011-roman-missal-third-edition-english-source-located/sections/proper/020-proper-of-saints.md"
+bytes = 257987
+sha256 = "52722715de9e13b9d94b5b0c0e82c41a19154a2a7f171fc8cb677ec30c71dada"
+
+[[versions.sections]]
+path = "versions/2011-roman-missal-third-edition-english-source-located/sections/supplements/010-ritual-masses.md"
+bytes = 152716
+sha256 = "d9d018b59f4966e74dd2e588ba5287fcd103bc131c5f5b5332f2590552a93403"
+
+[[versions.sections]]
+path = "versions/2011-roman-missal-third-edition-english-source-located/sections/supplements/020-masses-and-prayers-for-various-needs-and-occasions.md"
+bytes = 206890
+sha256 = "965f3bd97748e2538afe43ba9b822ef4794046c749febbd5be910d6d94166501"
+
+[[versions.sections]]
+path = "versions/2011-roman-missal-third-edition-english-source-located/sections/supplements/030-appendices-and-indices.md"
+bytes = 150485
+sha256 = "17492d5f6288385e6ab9cf66f4f9eb1b5a6f75f9581f8944c568529cfb534256"
