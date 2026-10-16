@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 2977,
-  "editions": 1087,
+  "artifacts": 2992,
+  "editions": 1094,
   "passages": 5284,
   "readable": 3087,
-  "works": 947
+  "works": 954
  },
  "facets": {
   "authors": [
@@ -358,6 +358,10 @@
     "works": 1
    },
    {
+    "id": "Chaldean Catholic Church liturgical tradition",
+    "works": 2
+   },
+   {
     "id": "Charlemagne",
     "works": 1
    },
@@ -555,6 +559,10 @@
    },
    {
     "id": "Doug Batchelor",
+    "works": 1
+   },
+   {
+    "id": "Early Irish Church; anonymous compilers and revisers",
     "works": 1
    },
    {
@@ -1138,6 +1146,10 @@
     "works": 2
    },
    {
+    "id": "Maronite Church liturgical tradition",
+    "works": 1
+   },
+   {
     "id": "Martin Gardner",
     "works": 1
    },
@@ -1710,6 +1722,14 @@
     "works": 1
    },
    {
+    "id": "Syriac Catholic Church liturgical tradition",
+    "works": 1
+   },
+   {
+    "id": "Syro-Malabar Catholic Church liturgical tradition",
+    "works": 2
+   },
+   {
     "id": "Tatian",
     "works": 1
    },
@@ -1960,12 +1980,12 @@
     "works": 39
    },
    {
-    "id": "patristic-translation-anthology",
-    "works": 26
+    "id": "liturgical-book",
+    "works": 28
    },
    {
-    "id": "liturgical-book",
-    "works": 22
+    "id": "patristic-translation-anthology",
+    "works": 26
    },
    {
     "id": "judicial-opinion",
@@ -2056,6 +2076,10 @@
     "works": 7
    },
    {
+    "id": "sacramentary",
+    "works": 7
+   },
+   {
     "id": "biblical-translation",
     "works": 6
    },
@@ -2077,10 +2101,6 @@
    },
    {
     "id": "rabbinic-tractate",
-    "works": 6
-   },
-   {
-    "id": "sacramentary",
     "works": 6
    },
    {
@@ -3458,7 +3478,7 @@
     "id": "en"
    },
    {
-    "editions": 319,
+    "editions": 320,
     "id": "la"
    },
    {
@@ -3484,6 +3504,10 @@
    {
     "editions": 12,
     "id": "he"
+   },
+   {
+    "editions": 7,
+    "id": "syr"
    },
    {
     "editions": 6,
@@ -3535,10 +3559,6 @@
    },
    {
     "editions": 1,
-    "id": "syr"
-   },
-   {
-    "editions": 1,
     "id": "und"
    }
   ],
@@ -3584,12 +3604,12 @@
     "label": "18th century"
    },
    {
-    "editions": 203,
+    "editions": 205,
     "id": "1800",
     "label": "19th century"
    },
    {
-    "editions": 235,
+    "editions": 240,
     "id": "1900",
     "label": "20th century"
    },
@@ -3601,8 +3621,8 @@
   ],
   "rights": [
    {
-    "artifacts": 1670,
-    "editions": 400,
+    "artifacts": 1685,
+    "editions": 408,
     "id": "public-domain"
    },
    {
@@ -9588,6 +9608,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [
+      "public-domain",
       "unresolved"
      ],
      "title": "The Bobbio Missal, a Gallican Mass-book (MS. Paris. lat. 13246), ed. E. A. Lowe",
@@ -9955,6 +9976,64 @@
     "grc"
    ],
    "title": "CenterBLC LXX Text-Fabric Dataset"
+  },
+  {
+   "alternate_titles": [
+    "Ṭaksā d-rāzē ṿe-Ṭaksā d-ḳuddāshā dā-shelīḥē"
+   ],
+   "author": "Chaldean Catholic Church liturgical tradition",
+   "category": "liturgical-book",
+   "directory": "editions/chaldean-catholic-church/missale/",
+   "editions": [
+    {
+     "date": "1901",
+     "file": "1901-1901-mosul-dominican.json",
+     "id": "edition.chaldean-catholic-church.missale.1901-mosul-dominican",
+     "language": "syr",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Missale juxta ritum Ecclesiae Syrorum Orientalium, id est Chaldaeorum",
+     "year": 1901
+    }
+   ],
+   "id": "work.chaldean-catholic-church.missale",
+   "languages": [
+    "syr",
+    "la"
+   ],
+   "title": "Missale juxta ritum Ecclesiae Syrorum Orientalium, id est Chaldaeorum"
+  },
+  {
+   "alternate_titles": [
+    "Neqfājāt de-rāzē"
+   ],
+   "author": "Chaldean Catholic Church liturgical tradition",
+   "category": "liturgical-book",
+   "directory": "editions/chaldean-catholic-church/proprium-missarum/",
+   "editions": [
+    {
+     "date": "1901",
+     "file": "1901-1901-mosul-dominican.json",
+     "id": "edition.chaldean-catholic-church.proprium-missarum.1901-mosul-dominican",
+     "language": "syr",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Proprium missarum de tempore et de sanctis juxta ritum Ecclesiae Syrorum Orientalium, id est Chaldaeorum",
+     "year": 1901
+    }
+   ],
+   "id": "work.chaldean-catholic-church.proprium-missarum",
+   "languages": [
+    "syr",
+    "la"
+   ],
+   "title": "Proprium missarum de tempore et de sanctis juxta ritum Ecclesiae Syrorum Orientalium, id est Chaldaeorum"
   },
   {
    "alternate_titles": [],
@@ -12736,6 +12815,37 @@
     "en"
    ],
    "title": "How to Keep the Sabbath Holy"
+  },
+  {
+   "alternate_titles": [
+    "Stowe Missal",
+    "Missale Stowense",
+    "Royal Irish Academy MS D. II. 3"
+   ],
+   "author": "Early Irish Church; anonymous compilers and revisers",
+   "category": "sacramentary",
+   "directory": "editions/catholic-church/stowe-missal/",
+   "editions": [
+    {
+     "date": "1915",
+     "file": "1915-1915-warner-vol-2.json",
+     "id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "The Stowe Missal, MS. D. II. 3 in the Library of the Royal Irish Academy, Dublin. Vol. II: Printed Text",
+     "year": 1915
+    }
+   ],
+   "id": "work.catholic-church.stowe-missal",
+   "languages": [
+    "la",
+    "sga"
+   ],
+   "title": "The Stowe Missal"
   },
   {
    "alternate_titles": [
@@ -20000,6 +20110,35 @@
     "en"
    ],
    "title": "The Innocents Abroad, or The New Pilgrims' Progress"
+  },
+  {
+   "alternate_titles": [
+    "Maronitisches Missale"
+   ],
+   "author": "Maronite Church liturgical tradition",
+   "category": "liturgical-book",
+   "directory": "editions/maronite-church/qurbono/",
+   "editions": [
+    {
+     "date": "1908",
+     "file": "1908-1908-beirut-maronite-press-second-printing.json",
+     "id": "edition.maronite-church.qurbono.1908-beirut-maronite-press-second-printing",
+     "language": "syr",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Ketābā de-qurbānā āk 'eyādā de-'idtā d-Antiukiyā de-Mārūnāye",
+     "year": 1908
+    }
+   ],
+   "id": "work.maronite-church.qurbono",
+   "languages": [
+    "syr",
+    "ar"
+   ],
+   "title": "Ketābā de-qurbānā āk 'eyādā de-'idtā d-Antiukiyā de-Mārūnāye"
   },
   {
    "alternate_titles": [
@@ -28191,6 +28330,96 @@
     "grc"
    ],
    "title": "Canons of the Synod of Laodicea"
+  },
+  {
+   "alternate_titles": [
+    "Service de la Messe selon le rit syrien avec les prières qui se disent pour les morts",
+    "Kitāb hidmat al-quddās",
+    "Syrisch-Antiochenisches Missale"
+   ],
+   "author": "Syriac Catholic Church liturgical tradition",
+   "category": "liturgical-book",
+   "directory": "editions/syriac-catholic-church/missale/",
+   "editions": [
+    {
+     "date": "1881",
+     "file": "1881-1881-mosul-dominican-nouvelle-edition.json",
+     "id": "edition.syriac-catholic-church.missale.1881-mosul-dominican-nouvelle-edition",
+     "language": "syr",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Ketābā de-tešmeštā de-qurābā be-kullkēn dīlējātā le-fut teksā de-'ēdtā qaddīštā de-Surjājē",
+     "year": 1881
+    }
+   ],
+   "id": "work.syriac-catholic-church.missale",
+   "languages": [
+    "syr",
+    "ar",
+    "fr",
+    "la"
+   ],
+   "title": "Ketābā de-tešmeštā de-qurābā be-kullkēn dīlējātā le-fut teksā de-'ēdtā qaddīštā de-Surjājē"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Syro-Malabar Catholic Church liturgical tradition",
+   "category": "liturgical-book",
+   "directory": "editions/syro-malabar-catholic-church/preparation-for-qurbana/",
+   "editions": [
+    {
+     "date": "1898",
+     "file": "1898-1898-mannanam-mar-yusuf.json",
+     "id": "edition.syro-malabar-catholic-church.preparation-for-qurbana.1898-mannanam-mar-yusuf",
+     "language": "syr",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Ketābā de-ṭūyābā le-qūrāb qūrbānā",
+     "year": 1898
+    }
+   ],
+   "id": "work.syro-malabar-catholic-church.preparation-for-qurbana",
+   "languages": [
+    "syr",
+    "la"
+   ],
+   "title": "Ketābā de-ṭūyābā le-qūrāb qūrbānā"
+  },
+  {
+   "alternate_titles": [
+    "Ketābā de-ṭūkāsē wa-de-qerjānē da-ḥedattā wa-de-'attīqtā de-ḥadbešabbē we-'ad'ēdē we-dukrānē we-jawmātā šeḥīmē be-kullāh šattā ak ṭeksā kaldājā de-Malabar"
+   ],
+   "author": "Syro-Malabar Catholic Church liturgical tradition",
+   "category": "liturgical-book",
+   "directory": "editions/syro-malabar-catholic-church/ordo-chaldaicus/",
+   "editions": [
+    {
+     "date": "1906",
+     "file": "1906-1906-puttenpalli-mar-thoma-shliha.json",
+     "id": "edition.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha",
+     "language": "syr",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Ordo chaldaicus rituum et lectionum juxta morem Ecclesiae Malabaricae",
+     "year": 1906
+    }
+   ],
+   "id": "work.syro-malabar-catholic-church.ordo-chaldaicus",
+   "languages": [
+    "syr",
+    "la",
+    "en"
+   ],
+   "title": "Ordo chaldaicus rituum et lectionum juxta morem Ecclesiae Malabaricae"
   },
   {
    "alternate_titles": [

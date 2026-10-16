@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-raw-ocr-3d11ad59"
+edition_id = "edition.catholic-church.stowe-missal.warner-1915-vol-2"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The identified historical printing was published before 1931 and is public domain in the United States by expiration of its publication term. Cornell University Library, Copyright Term and the Public Domain, updated 1 January 2026, https://guides.library.cornell.edu/copyright/publicdomain, checked 16 October 2026, gives that rule for foreign publications. Faithful mechanical reproduction and automated OCR add no new human-authored text. This record covers this historical witness and stated mechanical artifact, not a modern critical edition or translation. The retained source wording is excluded from Triptych's CC BY 4.0 license."
+provenance = "Aliases Stowe, Missale Stowense, Royal Irish Academy D. II. 3 checked against canonical work manifests before acquisition; no existing Stowe owner found. The catalogue handoff supplied Internet Archive item publications32henruoft. Complete PDF and DjVuTXT responses downloaded directly with curl -L; complete byte counts and SHA-1 matched the item metadata file inventory. Source bytes never passed through a model. Edition identity checked against the title, series and contents page images."
+retrieved = "2026-10-16"
+sha256 = "3d11ad59b8968e9c0e2c816676d0b5a26142896a9af1a13dbf29aa8c6bd69cc4"
+byte_size = 277250
+path = "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/ia-raw-ocr-3d11ad59/source.txt"
+indexable = true
+notes = "Complete unaltered Internet Archive DjVuTXT response: 277,250 bytes. Includes historical Latin, Old Irish, English apparatus and library marks. OCR is uncorrected, including damaged title and date strings; page images control identity and wording. No claim of complete manuscript transcription, line-by-line image collation or approved ritual use. The PDF and OCR are parallel host derivatives; this record does not assert that the host generated its OCR from this exact PDF file."
+source_url = "https://archive.org/download/publications32henruoft/publications32henruoft_djvu.txt"
+encoding = "utf-8"
