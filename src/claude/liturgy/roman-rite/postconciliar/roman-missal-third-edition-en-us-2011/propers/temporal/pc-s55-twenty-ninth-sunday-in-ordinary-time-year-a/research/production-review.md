@@ -1057,3 +1057,125 @@ generated annotation was changed; the component manifest is unchanged.
 
 No search, listing or file of the other provider's leaf for this identity, its
 PDFs or web edition, or its production reviews was opened at this stage.
+
+## Derive-synthesis of the revision, iteration 0 (16 October 2026)
+
+`proper-study` v12, run `821c824684b0c7a7`, after the revised study's review
+(PASS at iteration 0, advisories STU-014 to STU-017). The stage ran as a Claude
+Code harness subagent, `claude-opus-5-5[1m]`, dispatched at reasoning effort
+`high`. No blocking, carried or advisory finding was forwarded in the packet;
+the standing findings that bear on the concise study and the revised study's
+changes were taken up as below. Only four concise components
+(`sections/concise/03-date-location.tex`, `04-themes.tex`, `10-commentary.tex`
+and `90-apparatus.tex`), the shared `generation-metadata.tex` (revision
+timestamp 2026-10-16T22:53:00Z, one appended contribution) and this record were
+changed. No research record, study component or manifest entry was edited; the
+inventory and overview components are unchanged.
+
+### Revisions
+
+- Page 2 (orientation-v2). The regenerated Passage cells, which now name each
+  psalm citation's numbering, carried the sheet onto a third page. Without a
+  change of type or of the shared table, it was brought back to page 2 by
+  removing the sentence above the table (its numbering sentence is now
+  redundant with the cells) and the note beneath it, whose qualifications (the
+  Isaiah rows date the ministry and the critical placement of chapters 40–55,
+  not the oracle; the composition rows date the books; the Psalter's bound
+  dates no psalm singly) now stand in the scope appendix's chronology
+  paragraph, and by shortening three place phrases from the study's reviewed
+  ones: the Gospel event ("Jesus answers on tribute in the temple at
+  Jerusalem"), and the two epistles, which now give the writer's place only and
+  leave their recipients to the books' names. The psalms' composition row adds
+  that its bound is the whole Psalter's, in a cell whose height the Passage
+  column already sets. The `\addlinespace` grouping is kept. All twelve rows
+  are placed once in the generator's order; no date is written by hand.
+- References-used (v12). The Douay–Rheims locus Matthew 21:45–46, which the
+  preflight refused, is now Matthew 21:45, cited where Themes and Movement
+  relies on it (the chief priests and Pharisees knew the parable was spoken of
+  them).
+- The ground of the debt (STU-011 as repaired in the study; STU-014). The
+  commentary now shows Chrysostom's ground in his words (*Homilies on Romans*
+  23: "for all, even for priests, and monks", "if thou be an Apostle even, or
+  an Evangelist, or a Prophet"), re-read at NPNF 1/11 tracked lines
+  46231–46236, and Augustine's (*En. in Ps.* 124.7: "thus hath God ordained His
+  Church ..."), re-read at NPNF 1/8 tracked lines 61102–61103. Following
+  advisory STU-014, the "yes" on whether one who keeps nothing still owes
+  Caesar is given to Chrysostom alone; Augustine is credited with what 124.7
+  states, and the concise says he does not take up possession. Themes and
+  Movement, the commentary's closing senses and its disagreement sentence are
+  narrowed to "what the debt to Caesar rests on".
+- SYN-004. Hilary's *interna cogitationum secreta* is given in the study's
+  English ("knowing the inner secrets of their thoughts"), joined to the
+  parenthesis it already rendered, with the denarius as in the study.
+- STU-012 (as repaired in the study). The scope note names Augustine's
+  application of the whited wall to the Donatist party, in the reception
+  paragraph.
+- *maiestas* (handoff item 7, as the study now uses it). The Collect paragraph
+  gives the second interpretation the lexical range from Lewis and Short
+  ("of the gods", "as a title of honor of the Roman emperors", s.v. *majestas*,
+  p. 1101), framed as that interpretation's reading; the dictionary is added to
+  the References and to the reading forms.
+- World Mission Day (handoff item 6, as the study's Liturgical Resolution
+  appendix records it). The scope note states that the Sunday is the hundredth
+  World Mission Day, dated by the Holy See's message, with no rank or text,
+  and that the Mass for the Evangelization of Peoples, which the rubrics permit
+  and do not prescribe, would replace this formulary. The message is added to
+  the References and listed as protected and cited only.
+- WEB-001's dated readings, as the study now gives them: the Lectionary entry
+  names the Internet Archive capture of 15 March 2026 for the page of readings,
+  and the *General Instruction* entry dates the chapter II page that nos. 61–62
+  rest on (16 October 2026).
+- STU-015 to STU-017 were checked against the concise: it gives no bare
+  Vulgate psalm number in prose outside work-and-section citations, and
+  mentions neither the Latin texts' spellings nor the antiphon's vocative.
+  STU-010's two corrections were already in the concise. SYN-005 was corrected
+  in this record by the author-study stage. HOM-001 and VIS-004 are not the
+  concise study's.
+
+Every interpretation's controlling claim, the preserved disagreements and the
+claim-local qualifications stand as in the iteration-1 record above. No new
+evidence-dependent claim was added beyond what the revised study prints, and
+no upstream defect was found while deriving. No search, listing or file of the
+other provider's leaf for this identity, its PDFs or web edition, or its
+production reviews was opened at this stage.
+
+### Word counts
+
+Counted with `detex` on the component sources: overview 234; Themes and
+Movement 1,666; commentary 4,284; scope note and References 1,638. The
+substantive concise argument (overview, Themes and Movement, commentary) is
+about 6,180 words.
+
+### Author proof
+
+- `make doc DOC=liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis PROVIDER=claude`
+  at revision timestamp 2026-10-16T22:53:00Z: settled with no LaTeX warning,
+  overfull or underfull box in the log; 11 contents lines on distinct anchors;
+  component manifest and generation metadata valid; all 16 fonts embedded.
+  Synthesis PDF: 12 physical pages, SHA-256
+  `89ccb6fea160816b763a3482953fcab1b6100683779116fd9243527b4f3a8960`;
+  auxiliary file
+  `67bcfe19155313c679122c539ed37d2b874fb8cf7f2fc8e366bfeecc4fc0745b`; log
+  `bd360bdd6dba0ff9551397873d865f37416e261a5f34c827325be5247c7ec782`.
+- Settled physical pages from the auxiliary file: inventory, overview and all
+  four sense markers on page 1; chronology starting and ending on page 2;
+  themes from page 3 to page 4; commentary from page 5. The References,
+  revision timestamp and rights colophon close page 12.
+- Every page was rasterized and inspected, page 2 at reading resolution, where
+  the lookup Matthew 22:15–21 → "Event. Jesus answers on tribute in the temple
+  at Jerusalem" → "Date unresolved" pairs on one row, and Psalm 96 (Vulgate 95)
+  → "Superscription setting: The raising of the second Temple by Zorobabel" →
+  "B.C. 537" on another.
+- `tools/check-proper-components --phase artifacts --edition synthesis`,
+  `scripts/_proper_study.py check --phase content --edition synthesis` with the
+  five `--require` flags (orientation-v2 among them), the eleven
+  `check-content-preflight --edition synthesis` checks (references-used: 25
+  entries and 30 loci, every one cited) and `provenance-matches-run`: pass. The
+  research edition, rebuilt with the shared metadata, still has 37 pages with
+  no warning.
+
+### Outstanding
+
+Cold concise review; homily revision and review; the shared-timestamp
+three-document build; visual review; canonical web generation and review;
+installation and publication gates.

@@ -49,13 +49,13 @@ provider = "claude"
 run_id = "821c824684b0c7a7"
 workflow = "proper-study"
 workflow_version = 12
-stage = "study-review"
+stage = "synthesis-review"
 iteration = 0
 disposition = "PASS"
 standing = 0
 accepted_count = 2
-advisory_count = 17
-observation_count = 7
+advisory_count = 16
+observation_count = 9
 
 [[stages]]
 stage = "homily-review"
@@ -95,15 +95,15 @@ observation_count = 1
 
 [[stages]]
 stage = "synthesis-review"
-iteration = 1
+iteration = 0
 disposition = "PASS"
-run_id = "4d16b5e19d25dad9"
+run_id = "821c824684b0c7a7"
 workflow = "proper-study"
-workflow_version = 11
+workflow_version = 12
 standing = 0
 accepted_count = 0
-advisory_count = 2
-observation_count = 0
+advisory_count = 1
+observation_count = 2
 
 [[stages]]
 stage = "visual-review"
@@ -245,19 +245,11 @@ required_result = "Keep the comparison with the two named psalters and add that 
 
 [[advisories]]
 stage = "synthesis-review"
-id = "SYN-004"
+id = "SYN-006"
 severity = "advisory"
-location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/concise/10-commentary.tex lines 215-217: 'Hilary: Christ knew interna cogitationum secreta, \"for God sees everything hidden within men\" (23.1)' (PDF pp. 7-8)"
-problem = "After the SYN-002 repair this is the one witness phrase in the commentary still given only in Latin. The English beside it renders Hilary's parenthesis and not the phrase itself, which is the object of what Christ knew. A reader without Latin gets the sense from context but not Hilary's words. The expansive study renders the phrase as 'knowing the inner secrets of their thoughts' (sections/40-sincere-heart.tex lines 83-85)."
-required_result = "Give the phrase the expansive study's rendering (for example 'the inner secrets of their thoughts') beside or in place of the Latin. Add no new claim and do not change the type size."
-
-[[advisories]]
-stage = "synthesis-review"
-id = "SYN-005"
-severity = "advisory"
-location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/production-review.md, 'Derive-synthesis, iteration 1', Repairs, SYN-002 bullet: 'and so do four further unglossed phrases (Aquinas's \"as if he said\", his \"to Christ, that is, to the king\", \"because it belongs to man to answer words\", and \"inasmuch as they have something of the light\")'"
-problem = "The record undercounts what the repair changed. A fifth phrase outside SYN-002's list also lost its Latin to an English rendering: Jerome's 'Prima virtus est respondentis, interrogantium mentem cognoscere' is now 'the first virtue of one who answers is to know the mind of those who ask' (10-commentary.tex lines 220-221), and the record does not mention it. The production audit is meant to state the revision exactly."
-required_result = "The next author to update the production record corrects the bullet to five further phrases and names Jerome's 'the first virtue of one who answers'. Nothing else needs to change."
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/concise/03-date-location.tex (rendered physical p. 2, Scriptural Date and Location: the note formerly beneath the orientation table)"
+problem = "This revision removed the short note beneath the page-2 table, and with it the table's only pointer to the evidence ('Sources are given passage by passage in the full study's appendix Scriptural Date and Location'). The note was cut so that the taller orientation-v2 Passage cells keep the sheet on one page. Its qualifications and the pointer now stand only in the scope appendix's 'Chronology and records' paragraph on p. 11. The three-document profile asks that full source and derivation detail be 'precisely referenced from the concise table', and that a qualification which changes a displayed answer carry 'a precise note to its fuller explanation'. One example: 'the bound is that of the whole Psalter', beside 'Before c. 165 B.C.', now has no such note on the page. The qualifications themselves remain beside their answers (generated relation labels and place phrases), so no displayed date is misread. What is missing is the table-local reference."
+required_result = "Page 2 carries one short line beneath the table that refers the reader to the full study's appendix Scriptural Date and Location for each passage's sources and setting. The sheet stays alone on physical page 2, with the type size and the generated cells unchanged. Room is made by tightening authored place phrases whose cells are the tallest in their row, for example the two Isaiah rows, whose three-line place cells stand beside two-line Passage cells."
 
 [[advisories]]
 stage = "visual-review"
@@ -307,6 +299,16 @@ note = "The Holy See pages return bytes of the same size but a different hash on
 stage = "study-review"
 location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/30-cyrus-and-caesar.tex lines 311-313 ('what the soldiers under Julian teach is the order of two masters, not a form of government, and the reading reaches no further')"
 note = "The closing clause disclaims a claim the study never makes, the 'claim disclaimed rather than left unmade' form of guidance/editorial.md, and the house-voice screen passed it (study-preflight 0000) because it names neither 'the interpretation' nor 'nothing is claimed'. It is a single instance and below the recurrence threshold, so it is recorded here for the screen's owner and not as a finding."
+
+[[observations]]
+stage = "synthesis-review"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/chronology-annotations.tex, orientation row row-e535d564c1cee995 (rendered concise p. 2, second First Reading row, Occurrence and place column)"
+note = "The generated subject 'The prophetic activity behind Isaiah 40-55 in the NABRE introduction' prints an ASCII hyphen, while the en-dash ranges around it and the concise scope appendix print '40–55'. orientation-v2 normalizes only the Passage refs, not corpus subject labels. This looks like a missing display-normalization criterion in the shared generator or corpus, which the leaf cannot repair."
+
+[[observations]]
+stage = "synthesis-review"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/concise/10-commentary.tex lines 125-138, against sections/50-comparison.tex lines 33-37 (comparison table, 'Disagreement among the witnesses')"
+note = "The concise sets Chrysostom alone against Hilary and Ambrose on whether one who keeps nothing of the world's goods still owes Caesar, and says Augustine 'does not take up possession'. The expansive table instead lists Augustine on the 'yes' side ('those who are better'). En. in Ps. 124.7 (NPNF8 tracked lines 61094-61105) grounds the honour in God's ordinance and never mentions possession, so the concise's narrower statement is the one the quoted words support, and it does not contradict research/interpretations.md. The difference between the two documents is recorded here so that it is not taken for a compression error."
 
 [[observations]]
 stage = "visual-review"
