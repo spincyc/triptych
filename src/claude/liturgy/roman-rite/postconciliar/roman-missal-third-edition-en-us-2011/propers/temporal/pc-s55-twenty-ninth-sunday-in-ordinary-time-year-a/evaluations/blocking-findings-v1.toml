@@ -49,12 +49,12 @@ provider = "claude"
 run_id = "4d16b5e19d25dad9"
 workflow = "proper-study"
 workflow_version = 11
-stage = "study-review"
+stage = "synthesis-review"
 iteration = 1
 disposition = "PASS"
 standing = 0
 accepted_count = 1
-advisory_count = 6
+advisory_count = 8
 observation_count = 4
 
 [[stages]]
@@ -80,6 +80,18 @@ standing = 0
 accepted_count = 1
 advisory_count = 4
 observation_count = 2
+
+[[stages]]
+stage = "synthesis-review"
+iteration = 1
+disposition = "PASS"
+run_id = "4d16b5e19d25dad9"
+workflow = "proper-study"
+workflow_version = 11
+standing = 0
+accepted_count = 0
+advisory_count = 2
+observation_count = 0
 
 [[accepted]]
 stage = "study-review"
@@ -137,6 +149,22 @@ severity = "advisory"
 location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/production-review.md, 'Author-study, iteration 1', 'Proof' list (lines 227-239)"
 problem = "The iteration-1 proof entry gives the page count but not the SHA-256 of the checked PDF, which the iteration-0 entry did give. The three-document profile asks the production record to carry checked artifacts and hashes. The reviewed build is 84e8166a38f5af6ae622412a962e5b4b67bde847af65f44814084176c6756db8 (37 pages), byte-identical to the author's iteration-1 proof."
 required_result = "The next author that updates the production record adds the iteration-1 proof's SHA-256 beside its page count."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-004"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/concise/10-commentary.tex lines 215-217: 'Hilary: Christ knew interna cogitationum secreta, \"for God sees everything hidden within men\" (23.1)' (PDF pp. 7-8)"
+problem = "After the SYN-002 repair this is the one witness phrase in the commentary still given only in Latin. The English beside it renders Hilary's parenthesis and not the phrase itself, which is the object of what Christ knew. A reader without Latin gets the sense from context but not Hilary's words. The expansive study renders the phrase as 'knowing the inner secrets of their thoughts' (sections/40-sincere-heart.tex lines 83-85)."
+required_result = "Give the phrase the expansive study's rendering (for example 'the inner secrets of their thoughts') beside or in place of the Latin. Add no new claim and do not change the type size."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-005"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/production-review.md, 'Derive-synthesis, iteration 1', Repairs, SYN-002 bullet: 'and so do four further unglossed phrases (Aquinas's \"as if he said\", his \"to Christ, that is, to the king\", \"because it belongs to man to answer words\", and \"inasmuch as they have something of the light\")'"
+problem = "The record undercounts what the repair changed. A fifth phrase outside SYN-002's list also lost its Latin to an English rendering: Jerome's 'Prima virtus est respondentis, interrogantium mentem cognoscere' is now 'the first virtue of one who answers is to know the mind of those who ask' (10-commentary.tex lines 220-221), and the record does not mention it. The production audit is meant to state the revision exactly."
+required_result = "The next author to update the production record corrects the bullet to five further phrases and names Jerome's 'the first virtue of one who answers'. Nothing else needs to change."
 
 [[observations]]
 stage = "research-review"

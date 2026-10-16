@@ -227,7 +227,10 @@ research evidence record was changed at this stage.
 ### Proof
 
 - Author proof built with `make doc … PROVIDER=claude` at revision timestamp
-  2026-10-16T14:45:02Z: 37 physical pages, no warnings, undefined references,
+  2026-10-16T14:45:02Z: 37 physical pages (SHA-256
+  `84e8166a38f5af6ae622412a962e5b4b67bde847af65f44814084176c6756db8`, the
+  value the study review recorded for the reviewed build, added at the
+  derive-synthesis stage under advisory STU-013), no warnings, undefined references,
   overfull or underfull boxes in the log; every page rendered and inspected at
   reduced resolution, the comparison page at reading resolution.
 - `tools/check-proper-components --phase artifacts --edition research`: valid.
@@ -240,3 +243,243 @@ research evidence record was changed at this stage.
 
 No search, listing or file of the other provider's leaf for this identity, its
 PDFs or web edition, or its production reviews was opened at this stage.
+
+## Derive-synthesis, iteration 0 (16 October 2026)
+
+Authored after the study review returned PASS at its iteration 1 with no
+blocking finding (accepted STU-004; advisories STU-010 to STU-013). No
+blocking, carried or advisory finding was forwarded to this stage. The stage
+ran as a Claude Code harness subagent, `claude-opus-5-5[1m]`, dispatched at
+reasoning effort `high`. The concise companion is *The Twenty-ninth Sunday in
+Ordinary Time, Year A: A Concise Study of the Proper in the Roman Missal, Third
+Edition*, built from `synthesis.tex` and derived from the accepted expansive
+study of this leaf for the occurrence of 18 October 2026. No research record,
+study component or manifest entry was edited; the manifest already declared
+the six concise components, their modes and the presentation roles. The shared
+`generation-metadata.tex` received a refreshed revision timestamp and one
+appended contribution for this stage, and this record received this entry and
+the iteration-1 proof hash above.
+
+### Components written
+
+- `concise-inventory` (`sections/concise/01-inventory.tex`): the map of the
+  eleven appointed elements in the order of the Mass, condensed from the
+  study's map, both Communion antiphons as options; Scripture in the
+  Douay–Rheims, orations and antiphons by Latin incipit and description only.
+  A note gives green, Gloria and Creed, the omission of Saint Luke (*Universal
+  Norms* 60), the alternatives, and the status of the study English.
+- `concise-overview` (`sections/concise/02-overview.tex`): exactly four rows
+  drawn from the three interpretations' own senses, each witness named beside
+  the clause he states.
+- `concise-date-location` (`sections/concise/03-date-location.tex`): the page-2
+  sheet. It imports the generated annotations once and places all twelve
+  `orientation-v1` rows once, in the generator's order and grouping, with the
+  place phrases of the study's reviewed appendix unchanged. A sentence above the
+  table states that the generated Passage cells cite the antiphons' psalms by
+  Vulgate number and the responsorial psalm by the Lectionary's, which answers
+  for the reader the numbering observation of the study review. No date is
+  written by hand.
+- `concise-themes` (`sections/concise/04-themes.tex`): *The Propers: Themes and
+  Movement*, opening with a direct thesis (a trap about one debt answered with a
+  sentence about two) and following the formulary in order: the Entrance
+  Antiphon's psalm and its unsung v. 8 opening, the Collect's will, majesty and
+  *sincero corde*, the oracle to Cyrus with the *Ordo*'s paired titles and
+  *Praenotanda* 105–107, the psalm's nations and gods, the Thessalonian church
+  and Acts 17:7, the acclamation's *simplices*, the Gospel's true praise, give
+  and render, and its unexplained second clause, the Prayer over the Offerings'
+  *donis tuis*, the two Communion antiphons with their unsung contexts, and the
+  Prayer after Communion's *erudiamur*. It closes with the three questions and
+  their witnesses, each credited only with his clause, and what the
+  interpretations share.
+- `concise-commentary` (`sections/concise/10-commentary.tex`): *The Propers:
+  Detailed Commentary*, in seven cross-proper units:
+  - What is owed to God? (Jerome's dues; Augustine's inference at *En. in Ps.*
+    4.8, *Tract.* 40.9, *En. in Ps.* 115.13; Ambrose IX.34–35; Hilary 23.2 by a
+    distinct premise; Aquinas's two senses; Jerome's will meeting Hilary's;
+    Cyril; the second and third interpretations' answers to the same question;
+    Augustine on Ps 95 (96):7–8).
+  - Render, not give (Chrysostom 70.2 and *Hom. in Rom.* 23; Justin; Aquinas
+    with Baruch; the limit in Chrysostom and Augustine 124.7; the
+    preserved disagreement of Hilary and Ambrose against Chrysostom and
+    Augustine, stated as whether one who keeps nothing of the world's goods
+    still owes Caesar, with Augustine's "for the sake of their everlasting
+    Master" as the other ground, which answers advisory STU-011 within the
+    study's own quotations; Ambrose's one passage serving the first and second
+    interpretations differently).
+  - A gentile king called the Lord's anointed (Jerome and Aquinas on the title
+    and its purpose; Chrysostom on Cyrus's free will; the "Christ my Lord"
+    variant and Jerome's rejection; *assimilavi* in Jerome and Aquinas; the
+    oracle's three weights; the psalm in Bellarmine and Augustine, "from the
+    wood" as his Old Latin text; the whited wall).
+  - True words from a divided heart (the four diagnoses; the Godhead difficulty
+    with Hilary, Aquinas, Jerome's rule and Chrysostom's concealment; the
+    counter-question as convergence and its use by all three; the acclamation's
+    *simplices*, outside the verse's words).
+  - Will, majesty and heart (Collect, Prayer over the Offerings, Prayer after
+    Communion and Entrance Antiphon in the three interpretations; v. 8's
+    "From them that resist thy right hand" described as the verse's opening,
+    per advisory STU-010 b; Bellarmine's "frail and delicate", the subject of
+    STU-010 a, is not used).
+  - A church among the nations (second reading, acclamation and both Communion
+    antiphons in the three interpretations; claims on either antiphon held to
+    its use; antiphon B's contrast of service credited to its unsung context).
+  - Three answers, four senses (decisive words, and the allegorical, moral and
+    anagogical senses compared where they differ; the principal difficulty of
+    each).
+- `concise-apparatus` (`sections/concise/90-apparatus.tex`): the scope note and
+  the References for the sources this companion uses (22 entries). The note
+  gives the four relations the books state and the witnesses' own joins, the
+  rights basis, the bound on presenting the questioners (*Nostra aetate* 4),
+  and the reading forms. Augustine's whited wall is qualified in the reception
+  paragraph and not in the paragraph about the questioners, per advisory
+  STU-012. The scope note does not name the liturgical commentators' other Mass
+  or the orations' sacramentary history, which the three-document profile
+  keeps out of the concise study.
+
+Every interpretation's controlling claim is preserved, and so are the study's
+differences and qualifications: Jerome's literal dues beside the image
+reading, which is never put in Jesus' mouth; Augustine's premise (image) and
+Hilary's (origin) kept apart; Ambrose on Luke; the two grounds of Caesar's
+claim; the variant told and not built on; *assimilavi* as the Clementine's word
+and Jerome's typology, absent from the Lectionary's English; the christological
+claim resting on Chrysostom, Hilary and Aquinas and Jerome's sentence on the
+moral side; the counter-question as convergence; "from the wood" as
+Augustine's own text; Communion antiphon B's context as unsung; and the agents
+as the Gospel names them. Set aside in compression and carried by the study:
+the opening's Gospel quotation in full, the element settings' textual notes
+(the *Nova Vulgata*, the psalm response's second noun, the acclamation's
+mood), Augustine's "house of God" on the psalm title, Chrysostom's "Herod's
+soldiers" and "precipice", Aquinas on the two opinions behind the question,
+Ambrose's *Maior est contractus fidei*, Aquinas on 1 Thessalonians 1:3, and the Liturgical Resolution's
+branch table. No new evidence-dependent claim was added, and no upstream
+defect was found while deriving. No search, listing or file of the other
+provider's leaf for this identity, its PDFs or web edition, or its production
+reviews was opened at this stage.
+
+### Word counts
+
+Counted with `detex` on the component sources, so the figures include Latin
+and quotations: inventory 402; overview 234; Scriptural Date and Location 268
+(authored text only; the generated rows are imported); Themes and Movement
+1,655; commentary 4,049; scope note and References 1,415. The substantive
+concise argument (overview, Themes and Movement, commentary) is about 5,940
+words.
+
+### Author proof
+
+- `make doc DOC=liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis PROVIDER=claude`
+  at revision timestamp 2026-10-16T15:20:53Z: settled with no LaTeX warning,
+  overfull or underfull box in the log; 11 contents lines on distinct anchors;
+  component manifest and generation metadata valid; every font embedded
+  (Latin Modern, Type 1). Synthesis PDF: 11 physical pages, SHA-256
+  `244e271358ae5d19d9ad68d0474dc1ff8a636b48f825c057e404044d81ebdb11`;
+  auxiliary file
+  `dca2714c3aeb2ddef3de3e67d66cf5abde7c0627c201c3f1174946d6bb68aeae`; log
+  `dfd02be34360c8dfd9231a01b3b11f17d5df070f4f5b41976230e20b1182498b`.
+- Settled physical pages from the auxiliary file: inventory, overview and all
+  four sense markers on page 1; chronology on page 2; themes from page 3 to
+  page 4; commentary from page 5. The terminal apparatus ends on page 11 with
+  the timestamp and rights colophon.
+- Every page was rasterized and inspected; page 2 at reading resolution, where
+  the lookup Matthew 22:15–21 → "Jesus answers the tribute question while
+  teaching in the temple at Jerusalem" → "Date unresolved" pairs on one row.
+  Earlier proofs were repaired: the first ran to 16 pages, with two overview
+  rows on page 2 and the page-2 note spilling to page 3, cured by condensing the
+  map, its note, the sense rows and the commentary; later ones left the rights
+  colophon alone on page 12, cured by shortening the scope note and merging
+  two References headings.
+- `tools/check-proper-components --phase artifacts --edition synthesis`,
+  `scripts/_proper_study.py check --phase content --edition synthesis` with the
+  four `--require` flags, the eleven `check-content-preflight --edition
+  synthesis` checks and `provenance-matches-run`: pass. The research edition,
+  rebuilt with the shared metadata, still has 37 pages with no warning and its
+  colophon on the final page.
+
+### Outstanding
+
+Cold concise review; homily authoring and review; the shared-timestamp
+three-document build; visual review; canonical web generation and review;
+installation and publication gates.
+
+## Derive-synthesis, iteration 1 (16 October 2026)
+
+Revised after the synthesis review returned one blocking finding, SYN-001, and
+two advisories, SYN-002 and SYN-003. The stage ran as a Claude Code harness
+subagent, `claude-opus-5-5[1m]`, dispatched at reasoning effort `high`. Only
+the concise apparatus and commentary, the shared `generation-metadata.tex`
+(refreshed revision timestamp, one appended contribution) and this record were
+changed. No research record, study component, manifest entry or opening
+component (pages 1–4) was edited, and no new evidence-dependent claim was
+added.
+
+### Repairs
+
+- SYN-001 (blocking). The concise References named four loci carried over from
+  the expansive study that the concise never uses. A search of all six concise
+  components confirmed none of them is cited, quoted or relied on, so each was
+  removed: Psalm 145:2 from the Douay–Rheims entry; sections 5 and "118, under
+  Schin" from the Augustine *Enarrationes in Psalmos* entry; and Psalm 16 from
+  the Aquinas *Postilla super Psalmos* entry, which now reads Psalm 32 only.
+  The iteration-0 entry above had listed "118 Schin" among the commentary's
+  sources for the limit of the debt; that phrase described a use the commentary
+  never made and has been corrected to Augustine 124.7.
+- SYN-002 (advisory). Every Latin witness phrase the finding lists now has an
+  English rendering, taken from the expansive study's own renderings, and so do
+  four further unglossed phrases (Aquinas's "as if he said", his "to Christ,
+  that is, to the king", "because it belongs to man to answer words", and
+  "inasmuch as they have something of the light"). To keep the page budget,
+  the Latin was trimmed rather than the type enlarged: the English stands alone
+  where it carries the witness's sense, and the Latin is kept beside the English
+  for Aquinas's definition of the hypocrite and for *simplices … intentio est
+  ad unum*, the word the acclamation turns on. The scope note now says that
+  English renderings of Latin sources are the editor's.
+- SYN-003 (advisory). The scope note cites *General Instruction* 61 and 62 for
+  the psalm's response to the first reading and the acclamation's greeting of
+  the Gospel, as the expansive study does. The United States *General
+  Instruction of the Roman Missal* (2011, with the emendations of 2021),
+  nos. 61–62, is added to the References, and the rights note lists it among
+  the protected books, cited only.
+
+### Word counts
+
+Counted with `detex` on the component sources: overview 234; Themes and
+Movement 1,655; commentary 4,134; scope note and References 1,438. The
+substantive concise argument (overview, Themes and Movement, commentary) is
+about 6,020 words.
+
+### Author proof
+
+- `make doc DOC=liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis PROVIDER=claude`
+  at revision timestamp 2026-10-16T15:43:11Z: settled with no LaTeX warning,
+  overfull or underfull box in the log; 11 contents lines on distinct anchors;
+  component manifest and generation metadata valid; all 16 fonts embedded.
+  Synthesis PDF: 11 physical pages, SHA-256
+  `8ed6020e6725a45f76d7e2a769b8c1b4fa341a5cd7618ed464096c138aabba4c`;
+  auxiliary file
+  `dca2714c3aeb2ddef3de3e67d66cf5abde7c0627c201c3f1174946d6bb68aeae`; log
+  `b15230dfeaacdac1fb7a3df287c5845fc6d41b4513e942fd6bdd9d5456e005b5`.
+- Settled physical pages from the auxiliary file, unchanged: inventory,
+  overview and all four sense markers on page 1; chronology on page 2; themes
+  from page 3 to page 4; commentary from page 5. The commentary ends on page
+  10 above the scope note; the References, revision timestamp and rights
+  colophon close page 11.
+- A first proof with English beside all of the Latin ran to 12 pages, the
+  References' last entry, the timestamp and the colophon alone on page 12;
+  trimming the Latin as described above restored 11 pages. Pages 5–11 were
+  rasterized and inspected.
+- `tools/check-proper-components --phase artifacts --edition synthesis`,
+  `scripts/_proper_study.py check --phase content --edition synthesis` with the
+  four `--require` flags, the eleven `check-content-preflight --edition
+  synthesis` checks (references-used: 23 entries, every one used) and
+  `provenance-matches-run`: pass. The research edition, rebuilt with the shared
+  metadata, still has 37 pages with no warning and its colophon on the final
+  page.
+
+No search, listing or file of the other provider's leaf for this identity, its
+PDFs or web edition, or its production reviews was opened at this stage.
+
+### Outstanding
+
+Cold concise review; homily authoring and review; the shared-timestamp
+three-document build; visual review; canonical web generation and review;
+installation and publication gates.
