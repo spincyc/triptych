@@ -98,7 +98,7 @@ class PageReferenceTests(unittest.TestCase):
 class PageReferenceConversionTests(unittest.TestCase):
     def convert(
         self, *, schema: int = 2, orientation: bool = True,
-        preamble: str = "", extra_body: str = "",
+        preamble: str = "", extra_body: str = "", presentation: str = "orientation-v1",
     ) -> str:
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
@@ -106,7 +106,7 @@ class PageReferenceConversionTests(unittest.TestCase):
             leaf.mkdir(parents=True)
             (leaf / "proper-components.toml").write_text(
                 f'schema = {schema}\nelement_keys = ["introit"]\n'
-                + ('chronology_presentation = "orientation-v1"\n' if orientation else "")
+                + (f'chronology_presentation = "{presentation}"\n' if orientation else "")
             )
             (leaf / "main.tex").write_text(
                 r"\input{common/preamble}" "\n"
@@ -141,6 +141,11 @@ class PageReferenceConversionTests(unittest.TestCase):
         self.assertNotIn(DRIVER.WEB_PAGE_REFERENCE_MARK, markdown)
         self.assertNotIn("p.", markdown)
         self.assertIn("hist-esther", DRIVER.rendered_markdown_anchors(markdown))
+
+    def test_orientation_v2_leaves_take_the_same_page_reference_path(self) -> None:
+        markdown = self.convert(presentation="orientation-v2")
+        self.assertIn('Sources: Esther, <a href="#hist-esther">Esther: a threatened people</a>;', markdown)
+        self.assertNotIn(DRIVER.WEB_PAGE_REFERENCE_MARK, markdown)
 
     def test_legacy_and_nonorientation_schema_two_do_not_enter_new_path(self) -> None:
         for schema, orientation in ((1, True), (2, False)):

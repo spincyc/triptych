@@ -52,7 +52,7 @@ page 2; and The Propers: Themes and Movement on pages 3–4. Developed commentar
 begins on page 5 and interleaves alternatives at their points of comparison.
 Follow the presentation contract and canonical chronology requirements in the
 owning profile; count terminal apparatus within the page limits. The new
-chronology presentation is `orientation-v1`: generated passage/subject/date
+chronology presentation is `orientation-v2`: generated passage/subject/date
 rows with concise sourced place descriptions and complete evidence retained in
 the historical appendix. It replaces the legacy exhaustive dossier display.
 The homily speaks one intelligible exegetical argument to an adult parish assembly,

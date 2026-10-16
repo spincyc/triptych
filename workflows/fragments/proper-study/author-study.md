@@ -39,7 +39,7 @@ the future concise opening roles. Declare
 lets them carry the reading. Follow the checker and owning profile for exact
 fields. Each interpretive lane
 is a separate component. Keep shared source ownership and references explicit.
-Declare `chronology_presentation = "orientation-v1"` for the concise table.
+Declare `chronology_presentation = "orientation-v2"` for the concise table.
 Give its generated dates and contextual claims a reviewed home in the study,
 with exact historical-appendix references for fuller alternatives and evidence.
 

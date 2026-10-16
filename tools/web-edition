@@ -1207,6 +1207,11 @@ def chronology_projection(body: str) -> str:
     )
 
 
+# The compact chronology presentations whose leaves carry literal page
+# references; `_proper_chronology.ORIENTATION_PRESENTATIONS` owns the list.
+ORIENTATION_PRESENTATIONS = ("orientation-v1", "orientation-v2")
+
+
 def expand_chronology_annotations(
     body: str, definition_source: str
 ) -> tuple[str, list[str]]:
@@ -3106,7 +3111,7 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
     body = deduplicate_contributions(body)
     page_references = []
     if (required_anchors is not None
-            and components.get("chronology_presentation") == "orientation-v1"):
+            and components.get("chronology_presentation") in ORIENTATION_PRESENTATIONS):
         definitions = local_definitions(preamble) + "\n" + local_definitions(body)
         if "pageref" in USE_RE.findall(mask_tex_comments(definitions)):
             raise ConversionError(

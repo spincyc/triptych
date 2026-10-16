@@ -370,13 +370,15 @@ a formerly date-free study's approval does not cover newly added dates.
 
 The page answers three connected questions: which appointed passage is this,
 what happens or is written and where, and when does that particular thing
-belong? Declare `chronology_presentation = "orientation-v1"` and use the
+belong? Declare `chronology_presentation = "orientation-v2"` and use the
 generated row interface defined in [Scripture chronology
 §14.1](../scripture-chronology.md#141-the-propers-wired), in the shared
 `chronologyorientationtable`. Its columns are **Passage**, **Occurrence and
 place**, and **Date**. The generator supplies the passage, dated subject,
 relation and concise date alternatives; the author supplies a short, sourced
-place or contextual phrase. A row must never pair one passage's label with
+place or contextual phrase. The Passage cell already names each psalm
+citation's numbering; the place phrase does not restate it. Leaves published
+under `orientation-v1` keep that declaration and its rows. A row must never pair one passage's label with
 an entire composite element's unrelated dates.
 
 Keep narrated events, remembered historical settings, traditional attribution
@@ -622,6 +624,17 @@ The visual reviewer must perform the passage-to-occurrence/place/date lookup
 on the rendered table. Record the concrete locus and outcome in the review;
 a manifest declaration, a source count, physical page markers or the absence
 of overflow does not answer these questions.
+From `proper-study` version 12, the preflight `references-used` check also
+holds every locus a References entry names, in the expansive and concise
+studies of a schema-2 leaf. A Bible-list verse or chapter, and a Hebrew-letter
+division of Psalm 118, must be cited somewhere in that document. A
+commentary's divisions and psalms must be cited as that entry's citation, in
+any document that cites the entry by locus at all. Homily, leaf-union and
+schema-1 scopes keep the work-level test. Repair a refusal by citing the
+locus where the prose relies on it, or by removing the locus from the entry.
+The concise References of the Claude Twenty-ninth Sunday listed four loci its
+prose never used, and the work-level test had passed them.
+
 The terminal program gate verifies all three installed PDFs, their exact
 reviewed artifacts and current sources, provenance, canonical web edition,
 correct family catalog, release records, and available publication checks.

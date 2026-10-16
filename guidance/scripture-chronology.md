@@ -1344,13 +1344,16 @@ The rule above binds the 1962 production workflow from `proper` v17. The
 postconciliar adapter uses the owning edition's reviewed appointment input;
 it does not import the 1962 calendar, source owner, or research judgments.
 
-**Compact orientation rows (2026-10-12).** A schema-2 study opts into
-`chronology_presentation = "orientation-v1"` in `proper-components.toml`.
-`proper-study` v10 requires this declaration from study preflight onward. During
-research, before that manifest exists, generate with:
+**Compact orientation rows (2026-10-12; v2 2026-10-16).** A schema-2 study
+opts into a compact presentation in `proper-components.toml`. New runs declare
+`chronology_presentation = "orientation-v2"`; `proper-study` v12 requires that
+value from study preflight onward (`--require-orientation-v2`).
+`orientation-v1`, which v10 and v11 required, stays valid only for the leaves
+published under it, and regenerates their bytes unchanged. During research,
+before that manifest exists, generate with:
 
 ```sh
-tools/tpt proper-chronology annotations --document <document> --provider <provider> --presentation orientation-v1 --write
+tools/tpt proper-chronology annotations --document <document> --provider <provider> --presentation orientation-v2 --write
 ```
 
 The explicit option must agree with a declaration once present. The same
@@ -1384,6 +1387,47 @@ are preserved for a complete element; a split row prints its exact canonical
 whole-verse chronology query envelope. Partial-verse appointment limits remain
 in the appointment record and must not be presented as a claim that the whole
 verse is appointed.
+
+**What v2 corrects (2026-10-16).** The Claude postconciliar Twenty-ninth
+Sunday run found three v1 defects in the Passage cell and row set. v2 fixes
+them; v1 keeps them, because its published leaves must regenerate byte for
+byte. Row keys, query loci, the record and the detailed annotations are
+computed exactly as in v1; the generated header names the presentation.
+
+1. **A narrated-event row belongs to a Gospel pericope only.** v1 adds an
+   unresolved narrated-event row to every element key beginning `gospel`,
+   which catches `gospel-acclamation`: an Alleluia verse such as
+   Philippians 2:15d, 16a narrates no event, yet printed "Event: Date
+   unresolved". v2 adds it only for `gospel`, `gospel-long` and
+   `gospel-short` (`GOSPEL_PERICOPE_KEYS` in the wiring). `gospel-acclamation`
+   is declared a non-pericope key; any other key beginning `gospel` refuses
+   until it is classified there. Element keys stay as their manifests declare
+   them; a leaf that keyed its verse `acclamation` to avoid the v1 row may
+   keep that key.
+2. **Ranges use the en dash.** v1 prints each appointment ref verbatim, so
+   `Isaiah 45:1, 4-6` sat beside the en-dash ranges of the rest of the page.
+   v2 displays `Isaiah 45:1, 4–6` and `9–10a`. This is display only: the ref
+   stored, queried, hashed into a row key and recorded keeps its hyphen.
+3. **Every psalm citation names its numbering.** A concise table could print
+   an antiphon's `Cf. Psalm 32:18-19` in Vulgate numbering beside a
+   responsorial `Psalm 96:1` in Hebrew numbering with nothing to say so, and
+   §8 and [versification §5](versification.md#5-the-finding-that-scopes-the-project)
+   show how often those two numbers name different psalms. v2 keeps the
+   printed citation in its witness's numbering and adds the missing key:
+   `Cf. Psalm 32:18–19 (Vulgate numbering; Hebrew 33)`,
+   `Psalm 96:1, 3, 4–5 (Hebrew numbering; Vulgate 95)`. The numbering is the
+   citation's own declaration: a postconciliar input's `system`, the 1962
+   calendar's `psalm_numbering`, or the corpus numbering for a split row's
+   canonical envelope. The conversion is `scripts/_psalms`', never a second
+   table. When conversion keeps every verse number, only the other psalm is
+   named, as the Nova Vulgata prints `PSALMUS 11 (10)`. When it renumbers a
+   verse or divides the citation between psalms, the whole converted address
+   is given with its part letters, as the Ordo prints `(gr. 15-20)` for
+   Sirach: `Psalm 9:22–25 (Vulgate numbering; Hebrew 10:1–4)`. Where the two
+   systems coincide the note says `(Vulgate and Hebrew numbering agree)`.
+   Consecutive citations with one note carry it once, after the last. The
+   note is only as true as the declaration beneath it, so research review
+   checks that declaration against the controlling witness.
 
 Background dates of a named anchor have their own **Historical background**
 row. Its subject, relationship to the passage, and same-year possibility remain

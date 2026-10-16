@@ -33,12 +33,12 @@ Prepare the concise study's required page-2 chronology through the canonical
 verified appointments and the owning adapter; preserve partial-verse and
 adaptation limits, alternatives, event/composition distinctions and absent
 dates. Follow the chronology profile for postconciliar appointment query inputs.
-Prepare the `orientation-v1` rows as the chronology profile directs. Inspect
+Prepare the `orientation-v2` rows as the chronology profile directs. Inspect
 their actual passage scope and dated subjects before handing them to an author;
 the concise table must not print a composite element's dates beside one of its
 constituent passages or repeat identical dates for nested Gospel forms.
 Before the component manifest exists, generate them with
-`tools/tpt proper-chronology annotations --provider {provider} --document {proper} --presentation orientation-v1 --write`.
+`tools/tpt proper-chronology annotations --provider {provider} --document {proper} --presentation orientation-v2 --write`.
 For Psalms, verify the traditional attribution and any identified occasion or
 remembered event separately from composition; an era attached to an author is
 not an event date. Inspect a composition-only answer for missing event evidence,

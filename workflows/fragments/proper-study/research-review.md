@@ -20,7 +20,8 @@ Postconciliar appointment query inputs must derive from that edition's own
 verified owner, never another family's calendar or a neighboring Sunday's data.
 Confirm that all controlling chronology evidence enters the research seal.
 Inspect the generated orientation rows against their actual passage scope,
-subject and relation. Check the research supporting the planned occurrence
+subject and relation. Each psalm citation's generated numbering note must
+agree with the numbering its controlling witness prints. Check the research supporting the planned occurrence
 and place phrases, and that
 an author's era or a collection-wide bound has not become a passage date.
 Full evidence remains in the research; the study author subsequently supplies

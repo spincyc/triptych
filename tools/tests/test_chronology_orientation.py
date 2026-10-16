@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -17,6 +18,11 @@ TWENTIETH = "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-penteco
 NEXT = "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"
 PC54 = ("liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/"
         "propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a")
+PC55 = ("liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/"
+        "propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a")
+# The leaves published under orientation-v1, whose bytes v2 must not move.
+PUBLISHED_V1 = tuple((provider, document) for provider in ("claude", "gpt")
+                     for document in (NEXT, PC55))
 
 
 class OrientationProjectionTests(unittest.TestCase):
@@ -174,15 +180,128 @@ class OrientationProjectionTests(unittest.TestCase):
             corpus._claims(raw, "fixture", loaded.policies)
 
 
+class OrientationV2Tests(unittest.TestCase):
+    """orientation-v2 corrects three v1 Passage/row defects; v1 stays byte-identical."""
+
+    @staticmethod
+    def rows(found, presentation):
+        return chronology.annotations(found._replace(presentation=presentation)).orientation_rows
+
+    def test_published_v1_leaves_regenerate_byte_identical(self):
+        for provider, document in PUBLISHED_V1:
+            with self.subTest(provider=provider, document=document):
+                found = chronology.dossier(document, provider=provider)
+                self.assertEqual(found.presentation, chronology.ORIENTATION_V1)
+                path = ROOT / "src" / provider / document / chronology.ANNOTATIONS_RECORD
+                self.assertEqual(chronology.render_annotations_tex(chronology.annotations(found)),
+                                 path.read_text())
+
+    def test_acclamation_gets_no_event_row_but_gospel_keeps_one(self):
+        found = chronology.dossier(PC54, provider="claude")
+        self.assertIn("gospel-acclamation", [element.key for element in found.elements])
+
+        def events(presentation):
+            return {p.element_key for row in self.rows(found, presentation)
+                    if row.group.relation == "narrated-event" for p in row.passages}
+        self.assertIn("gospel-acclamation", events(chronology.ORIENTATION_V1))
+        self.assertNotIn("gospel-acclamation", events(chronology.ORIENTATION_V2))
+        self.assertLessEqual({"gospel-long", "gospel-short"}, events(chronology.ORIENTATION_V2))
+
+    def test_an_unclassified_gospel_key_refuses_under_v2_only(self):
+        found = chronology.dossier(PC54, provider="claude")
+        renamed = found._replace(elements=tuple(
+            element._replace(key="gospel-procession") if element.key == "gospel-acclamation"
+            else element for element in found.elements))
+        self.assertTrue(self.rows(renamed, chronology.ORIENTATION_V1))
+        with self.assertRaisesRegex(chronology.ChronologyWiringError, "unclassified Gospel"):
+            self.rows(renamed, chronology.ORIENTATION_V2)
+        for key in ("gospel", "gospel-long", "gospel-short"):
+            self.assertTrue(chronology._gospel_pericope(key, chronology.ORIENTATION_V2))
+
+    def test_ranges_use_en_dash_only_in_the_display(self):
+        found = chronology.dossier(PC55, provider="claude")
+        v1 = {row.key: row for row in self.rows(found, chronology.ORIENTATION_V1)}
+        v2 = {row.key: row for row in self.rows(found, chronology.ORIENTATION_V2)}
+        self.assertEqual(set(v1), set(v2))
+        for key, row in v2.items():
+            self.assertEqual(row.passages, v1[key].passages)
+            self.assertNotRegex(chronology.orientation_passage(row), r"[0-9][a-z]?-[0-9]")
+        cells = {chronology.orientation_passage(row) for row in v2.values()}
+        self.assertIn("First Reading: Isaiah 45:1, 4\N{EN DASH}6", cells)
+        self.assertIn("Second Reading: 1 Thessalonians 1:1\N{EN DASH}5b", cells)
+        self.assertIn("Gospel: Matthew 22:15\N{EN DASH}21", cells)
+        self.assertIn("Isaiah 45:1, 4-6", next(e for e in found.elements if e.key == "first-reading").refs)
+        self.assertIn("Isaiah 45:1, 4-6", chronology.render(found))
+
+    def test_each_psalm_citation_names_its_numbering(self):
+        found = chronology.dossier(PC55, provider="claude")
+        cells = {chronology.orientation_passage(row) for row in self.rows(found, chronology.ORIENTATION_V2)}
+        self.assertIn("Communion Antiphon (first): Cf. Psalm 32:18\N{EN DASH}19 "
+                      "(Vulgate numbering; Hebrew 33)", cells)
+        self.assertIn("Responsorial Psalm: Psalm 96:1, 3, 4\N{EN DASH}5, 7\N{EN DASH}8, "
+                      "9\N{EN DASH}10a, 10c, Psalm 96:7b (Hebrew numbering; Vulgate 95)", cells)
+        self.assertTrue(any(cell.startswith("Entrance Antiphon: Cf. Psalm 16:6, 8 "
+                                            "(Vulgate numbering; Hebrew 17); ") for cell in cells))
+        self.assertNotIn("numbering", "".join(chronology.orientation_passage(row)
+                         for row in self.rows(found, chronology.ORIENTATION_V1)))
+
+    def test_1962_psalms_and_split_envelopes_are_vulgate(self):
+        found = chronology.dossier(NEXT, provider="gpt")
+        cells = " ".join(chronology.orientation_passage(row)
+                         for row in self.rows(found, chronology.ORIENTATION_V2))
+        self.assertIn("Alleluia: Psalm 113:1 (Vulgate numbering; Hebrew 114)", cells)
+        self.assertIn("Introit: Ps 118:1 (Vulgate numbering; Hebrew 119)", cells)
+
+    def test_numbering_note_converts_through_the_concordance(self):
+        def note(ref, system, *ranges):
+            return chronology.psalm_numbering_note(chronology.Citation(ref, "Psalms", system, ranges))
+        dash = "\N{EN DASH}"
+        self.assertEqual(note("Psalm 4:2", "vulgate", ((4, 2, ""), (4, 2, ""))),
+                         "(Vulgate and Hebrew numbering agree)")
+        self.assertEqual(note("Psalm 50", "vulgate", ((50, None, ""), (50, None, ""))),
+                         "(Vulgate numbering; Hebrew 51)")
+        self.assertEqual(note("Psalm 9:22-25", "vulgate", ((9, 22, ""), (9, 25, ""))),
+                         f"(Vulgate numbering; Hebrew 10:1{dash}4)")
+        self.assertEqual(note("Psalm 116:8-12", "hebrew", ((116, 8, ""), (116, 12, ""))),
+                         f"(Hebrew numbering; Vulgate 114:8{dash}9; 115:10{dash}12)")
+        self.assertEqual(note("Psalm 9:20b-23", "vulgate", ((9, 20, "b"), (9, 23, ""))),
+                         f"(Vulgate numbering; Hebrew 9:20b{dash}21; 10:1{dash}2)")
+        self.assertEqual(chronology.psalm_numbering_note(chronology.Citation(
+            "Isaiah 45:1", "Isaiah", "vulgate", (((45, 1, ""), (45, 1, "")),))), "")
+
+    def test_presentations_validate_and_new_runs_require_v2(self):
+        with tempfile.TemporaryDirectory() as directory:
+            leaf = Path(directory)
+            manifest = leaf / "proper-components.toml"
+            for value in chronology.ORIENTATION_PRESENTATIONS:
+                manifest.write_text(f'schema = 2\nchronology_presentation = "{value}"\n')
+                self.assertEqual(chronology.presentation_contract(leaf, required=True), value)
+            self.assertEqual(chronology.presentation_contract(leaf, current=True), "orientation-v2")
+            manifest.write_text('schema = 2\nchronology_presentation = "orientation-v1"\n')
+            with self.assertRaisesRegex(chronology.ChronologyWiringError, "new proper-study runs"):
+                chronology.presentation_contract(leaf, current=True)
+            manifest.write_text('schema = 2\nchronology_presentation = "orientation-v3"\n')
+            with self.assertRaisesRegex(chronology.ChronologyWiringError, "schema-2"):
+                chronology.presentation_contract(leaf)
+            manifest.unlink()
+            (leaf / "research").mkdir()
+            (leaf / chronology.ANNOTATIONS_RECORD).write_text("% presentation: orientation-v2\n")
+            self.assertEqual(chronology.presentation_contract(leaf), "orientation-v2")
+        self.assertEqual(chronology.ORIENTATION_PRESENTATION, chronology.ORIENTATION_V2)
+        self.assertEqual(load_tool("web-edition").ORIENTATION_PRESENTATIONS,
+                         chronology.ORIENTATION_PRESENTATIONS)
+
+
 class OrientationGateTests(StudyLeaf, unittest.TestCase):
     document = TWENTIETH
+    presentation = "orientation-v1"
 
     def setUp(self):
         super().setUp()
         self.shared_date_wrapper()
         with (self.leaf / "proper-components.toml").open("a") as stream:
             stream.write('presentation_contract = "interpretive-pagination-v1"\n'
-                         'chronology_presentation = "orientation-v1"\n')
+                         f'chronology_presentation = "{self.presentation}"\n')
         self.found = self.corpus()
         self.projection = chronology.annotations(self.found)
         self.generated = self.leaf / chronology.ANNOTATIONS_RECORD
@@ -202,7 +321,7 @@ class OrientationGateTests(StudyLeaf, unittest.TestCase):
 
     def test_research_before_manifest_recomputes_orientation_and_refuses_edits(self):
         (self.leaf / "proper-components.toml").unlink()
-        self.assertEqual(chronology.presentation_contract(self.leaf), "orientation-v1")
+        self.assertEqual(chronology.presentation_contract(self.leaf), self.presentation)
         self.assertEqual(self.check("chronology-annotations-current")[0], [])
         self.generated.write_text(self.generated.read_text().replace("B.C. 588", "B.C. 589"))
         self.assertTrue(self.check("chronology-annotations-current")[0])
@@ -242,6 +361,12 @@ class OrientationGateTests(StudyLeaf, unittest.TestCase):
         self.assertIn("Place uncertain.", expanded)
         with self.assertRaisesRegex(web.ConversionError, "no generated chronology orientation"):
             web.expand_chronology_annotations(r"\chronologyorientationrow{row-forged}{}", self.generated.read_text())
+
+
+class OrientationV2GateTests(OrientationGateTests):
+    """The same generated-row gates hold for a leaf declaring orientation-v2."""
+
+    presentation = "orientation-v2"
 
 
 if __name__ == "__main__":

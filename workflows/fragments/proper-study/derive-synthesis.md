@@ -13,7 +13,7 @@ begins on page 5. Declare the presentation component roles and place the
 profile's physical-page zref markers around their actual content. No cover
 may shift these positions. Use the same owner's reviewed generated chronology;
 preserve its exact dates, alternatives, relation labels and unresolved states.
-Use `chronology_presentation = "orientation-v1"` and the generated row interface
+Use `chronology_presentation = "orientation-v2"` and the generated row interface
 in `chronologyorientationtable` as the profile directs. Pair each passage with
 the actual occurrence or dated subject, its place and concise date alternatives.
 Consolidate identical answers; keep full evidence in the reviewed historical

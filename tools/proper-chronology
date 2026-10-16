@@ -513,7 +513,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     annotation_action = annotation_writer.add_mutually_exclusive_group()
     annotation_writer.add_argument(
-        "--presentation", choices=(_wiring.ORIENTATION_PRESENTATION,),
+        "--presentation", choices=_wiring.ORIENTATION_PRESENTATIONS,
         help="generate orientation rows before the component manifest exists; must agree when declared",
     )
     annotation_action.add_argument(

@@ -80,8 +80,25 @@ ANNOTATIONS_SCHEMA = 3
 LEGACY_ANNOTATIONS_SCHEMA = 2
 ANNOTATIONS_TYPE = "proper-chronology-annotations"
 ANNOTATIONS_GENERATOR = "tools/tpt proper-chronology annotations"
-ORIENTATION_PRESENTATION = "orientation-v1"
+# The compact page-2 orientation table has two presentations. `orientation-v1`
+# (2026-10-12) is retained byte for byte for the leaves published under it.
+# `orientation-v2` (2026-10-16) is what new runs declare: v1 plus a narrated-
+# event row for Gospel pericope keys only, en-dash verse ranges in Passage
+# cells, and every psalm citation's numbering named beside it
+# (guidance/scripture-chronology.md section 14.1). Both share the schema-5
+# artifact; its `% presentation:` header says which one generated it.
+ORIENTATION_V1 = "orientation-v1"
+ORIENTATION_V2 = "orientation-v2"
+ORIENTATION_PRESENTATIONS = (ORIENTATION_V1, ORIENTATION_V2)
+ORIENTATION_PRESENTATION = ORIENTATION_V2
 ORIENTATION_SCHEMA = 5
+
+# The element keys that carry a Gospel pericope, in any appointed form. Under
+# orientation-v2 only these receive the narrated-event row; v1 gave one to any
+# key beginning `gospel`, which caught the Gospel acclamation. A new key that
+# begins `gospel` must be classified here before v2 will project it.
+GOSPEL_PERICOPE_KEYS = frozenset({"gospel", "gospel-long", "gospel-short"})
+NON_PERICOPE_GOSPEL_KEYS = frozenset({"gospel-acclamation"})
 
 # Optional, authored selection of an additional evidence profile to show as a
 # comparison.  It is deliberately separate from both the appointment inventory
@@ -198,6 +215,22 @@ UNRECORDED_CLAIM_FIELDS = ("reaches", "derived", "binding_sources",
                          "orientation_qualification", "reporting_exception")
 
 
+class Citation(NamedTuple):
+    """One printed appointment citation, held for orientation-v2's Passage cell.
+
+    `ref` is the element's printed reference exactly as `Element.refs` holds it,
+    `system` the psalm numbering it is printed in, and `ranges` its endpoints
+    as `(chapter, verse, part)` in that numbering. Nothing here feeds a query,
+    a hash, the audit record or a v1 artifact: the query loci stay the
+    element's, and the display only names the numbering a reader is holding.
+    """
+
+    ref: str
+    book: str
+    system: str
+    ranges: tuple[tuple[tuple[int, int | None, str], tuple[int, int | None, str]], ...]
+
+
 class Element(NamedTuple):
     """One element's full audit answer and safe publication intersection."""
 
@@ -211,6 +244,7 @@ class Element(NamedTuple):
     publication_status: str
     publication_reason: str
     publication_claims: tuple[Claim, ...]
+    citations: tuple[Citation, ...] = ()
 
 
 class ProfileComparison(NamedTuple):
@@ -338,6 +372,8 @@ class OrientationRow(NamedTuple):
     key: str
     passages: tuple[OrientationPassage, ...]
     group: AnnotationGroup
+    # orientation-v2's Passage cell; empty for v1, whose cell is unchanged.
+    passage_display: str = ""
 
 
 class AnnotationProjection(NamedTuple):
@@ -521,8 +557,11 @@ def _loci_of(entry: dict, where: str) -> list[str]:
     return out
 
 
-def appointed(document: str, root: Path = ROOT) -> list[tuple[str, str, tuple[str, ...], tuple[str, ...]]]:
-    """Each appointed element as `(key, name, refs, loci)`, in missal order.
+def appointed(document: str, root: Path = ROOT) -> list[tuple]:
+    """Each appointed element as `(key, name, refs, loci, citations)`, in missal order.
+
+    `citations` are the same printed refs with their structured ranges, in the
+    calendar's declared numbering, for orientation-v2's Passage display only.
 
     Elements the missal composes rather than quotes — Collect, Secret,
     Postcommunion — carry no Scripture and appear with no loci. They are kept
@@ -554,16 +593,84 @@ def appointed(document: str, root: Path = ROOT) -> list[tuple[str, str, tuple[st
         where = f"mass {key} proper {name!r}"
         refs: list[str] = []
         loci: list[str] = []
+        citations: list[Citation] = []
         for entry in proper.get("verses") or []:
             if not isinstance(entry, dict):
                 continue
             refs.append(str(entry.get("ref") or ""))
             loci.extend(_loci_of(entry, where))
+            citations.append(Citation(refs[-1], str(entry.get("book") or ""), numbering,
+                                      _citation_ranges(entry.get("ranges") or [])))
         seen: dict[str, None] = {}
         for locus in loci:
             seen.setdefault(locus, None)
-        out.append((element_key(name), name, tuple(refs), tuple(seen)))
+        out.append((element_key(name), name, tuple(refs), tuple(seen), tuple(citations)))
     return out
+
+
+def _citation_ranges(ranges: list) -> tuple:
+    """Structured citation ranges as immutable `(chapter, verse, part)` endpoints.
+
+    Display data only, built for every dossier: a span this cannot read is
+    left out rather than refused, and orientation-v2 refuses the incomplete
+    citation when it needs it (`_element_citations`). No v1 output reads it.
+    """
+    def edge(marker: dict, chapter: object):
+        chapter = marker.get("chapter") or chapter
+        verse = marker.get("verse")
+        if not isinstance(chapter, int) or not (verse is None or isinstance(verse, int)):
+            return None
+        return (chapter, verse, str(marker.get("part") or ""))
+    held = []
+    for span in ranges:
+        if not isinstance(span, dict) or not isinstance(span.get("begin"), dict):
+            return ()
+        begin = edge(span["begin"], None)
+        end = edge(span.get("end") or span["begin"], begin[0] if begin else None)
+        if begin is None or end is None:
+            return ()
+        held.append((begin, end))
+    return tuple(held)
+
+
+# The adapter's appointment note: `<key>: <ref>; <kind>; <system> numbering; ...`.
+APPOINTMENT_NOTE = re.compile(
+    r"\A(?P<key>[a-z0-9]+(?:-[a-z0-9]+)*): (?P<ref>.+); "
+    r"(?:appointed|adaptation|identified-basis|response); (?P<system>[a-z]+) numbering; ")
+
+
+def _postconciliar_citations(appointments: tuple, notes: tuple[str, ...]) -> dict[str, tuple[Citation, ...]]:
+    """The adapter's validated citations, with the numbering each declares.
+
+    The adapter's query-shaped return carries no per-citation numbering; its
+    appointment notes, which it writes once per citation, do. The printed ref
+    is the citation itself, optionally prefixed `Cf.`, and is parsed by the
+    same canonical citation parser the adapter used.
+    """
+    import _proper_chronology_inputs
+
+    parse = _proper_chronology_inputs._citations().parse_citation
+    declared: dict[tuple[str, str], set[str]] = {}
+    for note in notes:
+        match = APPOINTMENT_NOTE.match(note)
+        if match:
+            declared.setdefault((match["key"], match["ref"]), set()).add(match["system"])
+    held: dict[str, tuple[Citation, ...]] = {}
+    for key, _name, refs, _loci in appointments:
+        citations = []
+        for ref in refs:
+            # Display data only; an unreadable citation is held incomplete and
+            # refused by orientation-v2 alone (`_element_citations`).
+            systems = declared.get((key, ref), set())
+            try:
+                passage = parse(ref.removeprefix("Cf. "))
+            except ValueError:
+                passage = {"book": "", "ranges": []}
+            citations.append(Citation(ref, passage["book"],
+                                      next(iter(systems)) if len(systems) == 1 else "",
+                                      _citation_ranges(passage["ranges"])))
+        held[key] = tuple(citations)
+    return held
 
 
 # --- From loci to the corpus's answer ---------------------------------------
@@ -913,9 +1020,11 @@ def dossier(
         mass_key, _mass = mass_of(document, root)
         appointments = appointed(document, root)
     else:
-        mass_key, appointments = inputs.formula, inputs.elements
+        mass_key = inputs.formula
+        held_citations = _postconciliar_citations(inputs.elements, inputs.notes)
+        appointments = [(*element, held_citations[element[0]]) for element in inputs.elements]
     elements = []
-    for key, name, refs, loci in appointments:
+    for key, name, refs, loci, citations in appointments:
         answers: list[tuple[str, str, str, list[Claim]]] = []
         for locus in loci:
             status, reason, found = _claims_at(
@@ -939,6 +1048,7 @@ def dossier(
                 publication_status=publication_status,
                 publication_reason=publication_reason,
                 publication_claims=publication_claims,
+                citations=citations,
             )
         )
     held_elements = tuple(elements)
@@ -963,28 +1073,39 @@ def dossier(
     )
 
 
-def presentation_contract(leaf: Path, *, required: bool = False) -> str:
-    """Presentation opts in without changing the corpus answer or old artifacts."""
+def presentation_contract(leaf: Path, *, required: bool = False,
+                          current: bool = False) -> str:
+    """Presentation opts in without changing the corpus answer or old artifacts.
+
+    Either orientation presentation validates, so a published v1 leaf keeps
+    regenerating its own bytes. `current` is the new-run gate: it requires the
+    declaration and requires it to be `ORIENTATION_PRESENTATION`.
+    """
+    required = required or current
     path = leaf / "proper-components.toml"
     if not path.is_file() and not required:
         generated = leaf / ANNOTATIONS_RECORD
         if generated.is_file():
             declarations = re.findall(r"^% presentation: (.*)$", generated.read_text(), re.M)
             if declarations:
-                if declarations != [ORIENTATION_PRESENTATION]:
+                if len(declarations) != 1 or declarations[0] not in ORIENTATION_PRESENTATIONS:
                     raise ChronologyWiringError("unknown or repeated generated chronology presentation")
                 # Before authoring creates the manifest, this generated header
                 # selects format only. Currency still regenerates every byte
                 # from the corpus, never trusting a claim in the carried file.
-                return ORIENTATION_PRESENTATION
+                return declarations[0]
     data = tomllib.loads(path.read_text()) if path.is_file() else {}
     value = data.get("chronology_presentation", "")
     if not value and not required:
         return ""
-    if value != ORIENTATION_PRESENTATION or data.get("schema") != 2:
+    if value not in ORIENTATION_PRESENTATIONS or data.get("schema") != 2:
         raise ChronologyWiringError(
             f"chronology_presentation must be {ORIENTATION_PRESENTATION!r} "
-            "in a schema-2 proper-components.toml")
+            f"(or the published {ORIENTATION_V1!r}) in a schema-2 proper-components.toml")
+    if current and value != ORIENTATION_PRESENTATION:
+        raise ChronologyWiringError(
+            f"new proper-study runs require chronology_presentation = "
+            f"{ORIENTATION_PRESENTATION!r}; {value!r} is retained for published leaves only")
     return value
 
 
@@ -1212,7 +1333,7 @@ def annotations(found: Dossier, *, presentation: str | None = None) -> Annotatio
     neither an attribution nor a later prophetic referent fills that gap.
     """
     selected = found.presentation if presentation is None else presentation
-    if selected not in ("", ORIENTATION_PRESENTATION):
+    if selected not in ("", *ORIENTATION_PRESENTATIONS):
         raise ChronologyWiringError(f"unknown chronology presentation: {selected!r}")
     if found.presentation and selected != found.presentation:
         raise ChronologyWiringError("presentation disagrees with proper-components.toml")
@@ -1372,7 +1493,7 @@ def annotations(found: Dossier, *, presentation: str | None = None) -> Annotatio
         appointment_notes=found.appointment_notes,
         comparison_dependencies=found.comparison_dependencies,
         presentation=selected,
-        orientation_rows=orientation_rows(found) if selected else (),
+        orientation_rows=orientation_rows(found, selected) if selected else (),
     )
 
 
@@ -1400,13 +1521,13 @@ def _locus_order(locus: str) -> tuple[int, int, int]:
     return (order.index(token), int(chapter), int(verse))
 
 
-def _passage_refs(loci: tuple[str, ...]) -> tuple[str, ...]:
-    """Compact canonical query envelopes, never a second citation parser."""
+def _passage_spans(loci: tuple[str, ...]) -> list[tuple[str, int, list[tuple[int, int]]]]:
+    """Canonical loci as `(token, chapter, [(first, last), ...])` verse runs."""
     chapters: dict[tuple[str, str], list[int]] = {}
     for locus in sorted(set(loci), key=_locus_order):
         token, chapter, verse = locus.split(".")
         chapters.setdefault((token, chapter), []).append(int(verse))
-    refs = []
+    held = []
     for (token, chapter), verses in chapters.items():
         spans = []
         first = last = verses[0]
@@ -1414,21 +1535,52 @@ def _passage_refs(loci: tuple[str, ...]) -> tuple[str, ...]:
             if verse == last + 1:
                 last = verse
             else:
-                spans.append(str(first) if first == last else f"{first}–{last}")
+                spans.append((first, last))
                 first = last = verse
-        spans.append(str(first) if first == last else f"{first}–{last}")
-        refs.append(f"{token} {chapter}:{','.join(spans)}")
-    return tuple(refs)
+        spans.append((first, last))
+        held.append((token, int(chapter), spans))
+    return held
 
 
-def orientation_rows(found: Dossier) -> tuple[OrientationRow, ...]:
+def _spell_spans(token: str, chapter: int, spans: list[tuple[int, int]]) -> str:
+    return f"{token} {chapter}:" + ",".join(
+        str(first) if first == last else f"{first}–{last}" for first, last in spans)
+
+
+def _passage_refs(loci: tuple[str, ...]) -> tuple[str, ...]:
+    """Compact canonical query envelopes, never a second citation parser."""
+    return tuple(_spell_spans(token, chapter, spans) for token, chapter, spans in _passage_spans(loci))
+
+
+def _gospel_pericope(key: str, presentation: str) -> bool:
+    """Whether an element narrates a Gospel episode needing an event row."""
+    if presentation == ORIENTATION_V1:
+        # The published v1 rule, retained byte for byte. It also catches
+        # `gospel-acclamation`, which narrates no event; v2 corrects it.
+        return key.startswith("gospel")
+    if key in GOSPEL_PERICOPE_KEYS:
+        return True
+    if key.startswith("gospel") and key not in NON_PERICOPE_GOSPEL_KEYS:
+        raise ChronologyWiringError(
+            f"{key}: unclassified Gospel element key; name it in GOSPEL_PERICOPE_KEYS "
+            "or NON_PERICOPE_GOSPEL_KEYS before projecting orientation rows")
+    return False
+
+
+def orientation_rows(found: Dossier, presentation: str | None = None) -> tuple[OrientationRow, ...]:
     """Group equal answers, retaining each subject's exact locus reach.
 
     The intersection used by the legacy Date cell cannot orient a mixed
     appointment. Here each locus contributes its complete relation/subject
     candidate set. Only equal sets share a row; neither a union of alternatives
     nor a date from one part can be attributed to another part.
+
+    `presentation` defaults to the dossier's declaration, and to v1 for a
+    dossier that declares none.
     """
+    selected = presentation or found.presentation or ORIENTATION_V1
+    if selected not in ORIENTATION_PRESENTATIONS:
+        raise ChronologyWiringError(f"unknown chronology presentation: {selected!r}")
     held: dict[str, tuple[AnnotationGroup, dict[str, set[str]]]] = {}
 
     def add(element: Element, loci: tuple[str, ...], group: AnnotationGroup) -> None:
@@ -1462,7 +1614,7 @@ def orientation_rows(found: Dossier) -> tuple[OrientationRow, ...]:
             relations = {relation for relation, _subject in groups}
             if locus.startswith("Ps.") and not relations & PSALM_OCCASION_RELATIONS:
                 add(element, (locus,), _gap_group("historical-setting", "research-pending", ""))
-            if element.key.startswith("gospel") and "narrated-event" not in relations:
+            if _gospel_pericope(element.key, selected) and "narrated-event" not in relations:
                 add(element, (locus,), _gap_group("narrated-event", "research-pending", ""))
             if not groups:
                 add(element, (locus,), _gap_group("composition", element.status, element.reason))
@@ -1494,16 +1646,21 @@ def orientation_rows(found: Dossier) -> tuple[OrientationRow, ...]:
     rows = []
     for key, (group, by_element) in held.items():
         passages = []
+        displays = []
         for element in found.elements:
             if element.key not in by_element:
                 continue
             loci = tuple(sorted(by_element[element.key], key=_locus_order))
-            refs = (element.refs if set(loci) == set(element.loci)
-                    else _passage_refs(loci))
+            whole = set(loci) == set(element.loci)
+            refs = element.refs if whole else _passage_refs(loci)
             passages.append(OrientationPassage(element.key, element.name, refs, loci))
+            if selected != ORIENTATION_V1:
+                displays.append(_passage_display_v2(
+                    element.name, _element_citations(element) if whole else _envelope_citations(loci)))
         coverage = tuple((p.element_key, p.refs, p.loci) for p in passages)
         row_key = "row-" + hashlib.sha256(json.dumps((key, coverage)).encode()).hexdigest()[:16]
-        rows.append(OrientationRow(row_key, tuple(passages), group))
+        rows.append(OrientationRow(row_key, tuple(passages), group,
+                                   "; ".join(dict.fromkeys(displays))))
     return tuple(sorted(rows, key=lambda row: (
         min(_locus_order(locus) for passage in row.passages for locus in passage.loci),
         ANNOTATION_RELATION_ORDER.get(row.group.relation, 999),
@@ -1539,8 +1696,143 @@ def orientation_date(row: OrientationRow) -> str:
 
 
 def orientation_passage(row: OrientationRow) -> str:
+    if row.passage_display:
+        return row.passage_display
     return "; ".join(dict.fromkeys(
         f"{passage.name}: {', '.join(passage.refs)}" for passage in row.passages))
+
+
+# --- orientation-v2 Passage display -----------------------------------------
+#
+# Display only. The refs, loci and row keys above are untouched; these
+# functions decide how a reader sees the same citation.
+
+PSALMS_BOOK = "Psalms"
+SYSTEM_NAMES = {"vulgate": "Vulgate", "hebrew": "Hebrew"}
+VERSE_RANGE_HYPHEN = re.compile(r"(?<=[0-9])([a-z]?)-(?=[0-9])")
+
+
+def _element_citations(element: Element) -> tuple[Citation, ...]:
+    if (tuple(citation.ref for citation in element.citations) != element.refs
+            or any(not citation.book or not citation.ranges or citation.system not in SYSTEM_NAMES
+                   for citation in element.citations)):
+        raise ChronologyWiringError(
+            f"{element.key}: orientation-v2 needs each printed ref's structured "
+            "citation and declared numbering")
+    return element.citations
+
+
+def _envelope_citations(loci: tuple[str, ...]) -> tuple[Citation, ...]:
+    """A split row's canonical whole-verse envelopes, in the corpus numbering."""
+    books = {token: book for book, token in _tokens().items()}
+    citations = []
+    for token, chapter, spans in _passage_spans(loci):
+        ranges = tuple(((chapter, first, ""), (chapter, last, "")) for first, last in spans)
+        citations.append(Citation(_spell_spans(token, chapter, spans), books.get(token, token),
+                                  REQUIRED_NUMBERING, ranges))
+    return tuple(citations)
+
+
+def _dash_ranges(ref: str) -> str:
+    """A printed verse range with the en dash the rest of the page uses."""
+    return VERSE_RANGE_HYPHEN.sub("\\1\N{EN DASH}", ref)
+
+
+def _psalm_chapter_spans(begin: tuple, end: tuple, system: str):
+    """Close whole-psalm edges and divide a range at each psalm boundary."""
+    import _psalms
+
+    spans = []
+    for chapter in range(begin[0], end[0] + 1):
+        extent = _psalms.psalm_extent(chapter, system)
+        if extent is None:
+            raise ChronologyWiringError(f"{SYSTEM_NAMES[system]} Psalm {chapter} does not exist")
+        first = begin if chapter == begin[0] and begin[1] is not None else (chapter, extent[0], "")
+        last = end if chapter == end[0] and end[1] is not None else (chapter, extent[1], "")
+        spans.append((first, last))
+    return spans
+
+
+def _marker(edge: tuple) -> dict[str, object]:
+    chapter, verse, part = edge
+    return {"chapter": chapter, "verse": verse, **({"part": part} if part else {})}
+
+
+def _edge(marker: dict) -> tuple[int, int, str]:
+    return (int(marker["chapter"]), int(marker["verse"]), str(marker.get("part") or ""))
+
+
+def _spell_psalm_pieces(pieces: list[tuple[tuple, tuple]]) -> str:
+    """`10:1–4; 11:2, 5`: verse letters kept, chapters stated once each."""
+    blocks: list[str] = []
+    chapter = None
+    for begin, end in pieces:
+        first = f"{begin[1]}{begin[2]}"
+        span = first if begin[1:] == end[1:] else f"{first}\N{EN DASH}{end[1]}{end[2]}"
+        if begin[0] != chapter:
+            blocks.append(f"{begin[0]}:{span}")
+            chapter = begin[0]
+        else:
+            blocks[-1] += f", {span}"
+    return "; ".join(blocks)
+
+
+def psalm_numbering_note(citation: Citation) -> str:
+    """Name a psalm citation's numbering and the other system's psalm.
+
+    Vulgate and Hebrew psalm numbers differ across most of the psalter, and a
+    reader cannot see which one a bare `Psalm 32` uses. The conversion is
+    `_psalms`', the one concordance this repository keeps. When the verses keep
+    their numbers only the other psalm number is given, as the Nova Vulgata
+    prints `PSALMUS 11 (10)`; when they do not, the whole converted address is
+    given, part letters included, as the Ordo prints `(gr. 15-20)`.
+    """
+    if citation.book != PSALMS_BOOK:
+        return ""
+    import _psalms
+
+    source = citation.system
+    if source not in SYSTEM_NAMES:
+        raise ChronologyWiringError(f"{citation.ref}: unknown psalm numbering {source!r}")
+    other = "hebrew" if source == "vulgate" else "vulgate"
+    pairs = []
+    for begin, end in citation.ranges:
+        for first, last in _psalm_chapter_spans(begin, end, source):
+            try:
+                converted, _caveats = _psalms.convert_range(
+                    PSALMS_BOOK, _marker(first), _marker(last), source, other)
+            except _psalms.NumberingError as exc:
+                raise ChronologyWiringError(f"{citation.ref}: {exc}") from exc
+            pairs.append(((first, last), [(_edge(p["begin"]), _edge(p["end"])) for p in converted]))
+    mapping: dict[int, set[int]] = {}
+    for (first, _last), pieces in pairs:
+        mapping.setdefault(first[0], set()).update(piece[0][0] for piece in pieces)
+    same_verses = all(len(pieces) == 1 and pieces[0][0][1:] == first[1:] and pieces[0][1][1:] == last[1:]
+                      for (first, last), pieces in pairs)
+    named, named_other = SYSTEM_NAMES[source], SYSTEM_NAMES[other]
+    if same_verses and all(len(targets) == 1 for targets in mapping.values()):
+        if all(targets == {chapter} for chapter, targets in mapping.items()):
+            return f"({named} and {named_other} numbering agree)"
+        chapters = ", ".join(str(next(iter(mapping[chapter]))) for chapter in mapping)
+        return f"({named} numbering; {named_other} {chapters})"
+    address = _spell_psalm_pieces([piece for _pair, pieces in pairs for piece in pieces])
+    return f"({named} numbering; {named_other} {address})"
+
+
+def _passage_display_v2(name: str, citations: tuple[Citation, ...]) -> str:
+    """One passage: en-dash ranges, and each psalm citation's numbering named.
+
+    A run of citations that share one note carries it once, after the last.
+    """
+    notes = [psalm_numbering_note(citation) for citation in citations]
+    items = []
+    for index, citation in enumerate(citations):
+        text = _dash_ranges(citation.ref)
+        following = notes[index + 1] if index + 1 < len(notes) else None
+        if notes[index] and notes[index] != following:
+            text += " " + notes[index]
+        items.append(text)
+    return f"{name}: {', '.join(items)}"
 
 
 def annotation_payload(found: AnnotationProjection) -> dict[str, object]:
