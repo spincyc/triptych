@@ -483,3 +483,188 @@ PDFs or web edition, or its production reviews was opened at this stage.
 Cold concise review; homily authoring and review; the shared-timestamp
 three-document build; visual review; canonical web generation and review;
 installation and publication gates.
+
+## Derive-homily, iteration 0 (16 October 2026)
+
+Authored after the study review and the synthesis review each returned PASS at
+iteration 1. No blocking, carried or advisory finding was forwarded to this
+stage. The stage ran as a Claude Code harness subagent, `claude-opus-5-5[1m]`,
+dispatched at reasoning effort `high`. The homily is *The Twenty-ninth Sunday
+in Ordinary Time, Year A: To God, Yourselves*, built from `homily.tex`, for an
+adult parish assembly at the occurrence of 18 October 2026, and derived from
+the expansive study and the concise study as their reviews accepted them. No
+research evidence record, no study or concise component, `main.tex`,
+`synthesis.tex`, `format.tex`, `web-edition.toml` or `proper-components.toml`
+was edited: the two homily components were already declared, in the homily
+mode alone. The shared `generation-metadata.tex` received a refreshed revision
+timestamp and one appended contribution for this stage.
+
+### What was written
+
+- `homily.tex`: `common/preamble`, `common/propers-format` and
+  `common/propers-homily` imported literally in that order, then the leaf's
+  format; the full-width shared title (the Sunday, the subtitle *To God,
+  Yourselves*, the Missal, Lectionary no. 145 and the date); one
+  `properhomily` environment enclosing only the literal import of the spoken
+  component; the terminal note after the environment's closing page break;
+  the generation record and the rights colophon. No local font, geometry,
+  title or column setting.
+- `homily-body` (`sections/homily/10-homily.tex`): the spoken body, eight
+  movements divided by seven vertical spaces: the true praise, the double
+  noose and the strange word *hypocrites*; the coin, the questioners' own
+  answer and *render*, not *give*, with the unexplained second clause; what
+  bears God's image, with Jerome's plain answer kept beside Augustine's "to God
+  yourselves"; the worn coin refashioned, Ambrose's Christ who bears no image
+  of Caesar, Mark 10:45, the new birth and Ambrose's promise at the font; why
+  true words are hypocrisy, Chrysostom's sign of knowing their secret
+  thoughts, the turn to the hearer, the Collect and the acclamation's
+  sentence; Cyrus and the limit of Caesar's claim, with Chrysostom and
+  Augustine's soldiers under Julian; the altar, with the Prayer over the
+  Offerings, the psalm's courts and Augustine's humble heart, and the Prayer
+  after Communion; and one practicable response, with Chrysostom on the labour
+  of love, ending on 1 John 3:2 and the opening question.
+- `homily-note` (`sections/homily/90-note.tex`): *Note on Sources and
+  Delivery* (audience and occasion, length and pace, relation to the reviewed
+  interpretations, the credits and the joins that are the homily's own, what
+  is left to the studies, the route of each quoted text, exact loci) and the
+  References (10 entries).
+
+### The argument and its relation to the studies
+
+The argument preached joins the first interpretation, `image-and-inscription`,
+and the third, `sincere-heart`, which the study's comparison says "can be
+preached together without strain: render yourself, with an undivided heart".
+From the first it takes the inference from the coin's image to the person
+made in God's image: Augustine (*Tract. in Ioh.* 40.9; *En. in Ps.* 4.8) and
+Ambrose (*Exp. Luc.* IX.35–36), with Jerome's literal answer (*In Matt.* III,
+col. 163) said aloud as "a fair reading of the words", which preserves the
+difference that matters to this argument. From the third it takes the
+hypocrite's true words from a divided heart, with Chrysostom (*Hom. in Matt.*
+70.1) and Aquinas (*Super Matth.* c. 22, p. 283), Chrysostom's argument from
+the concealed intent to the proof of Godhead (70.1–2), and the acclamation's
+*simplices* with Aquinas (*Super Phil.* c. 2, lect. 4). From the second,
+`cyrus-and-caesar`, it takes only what all three interpretations share,
+Caesar's claim beneath God's: the oracle to Cyrus, Chrysostom's render and
+not give and his limit at godliness (70.2), and Augustine's soldiers under
+Julian (*En. in Ps.* 124.7). The witnesses' disagreement over the ground of
+Caesar's claim is not preached: the speech says only that the questioners
+were carrying Caesar's coin, which both sides accept, and does not say that
+one who keeps nothing of the world's goods still owes Caesar. The
+christological claim is credited to Chrysostom alone; Jerome's rule of
+discernment and Aquinas's answer first to the mind are left to the studies.
+
+The connections no Father makes are listed in the note as the homily's own or
+the studies' synthesis: Ambrose's Christ as the one who strikes Augustine's
+worn coin again, and his self-gift with Mark 10:45; the restamping placed at
+the font with Ambrose's promise; Ambrose's renunciation "in words and not in
+affection" (said of the baptized) set beside the questioners' true words; the
+observation that Ambrose's *Redde promissum* uses the Vulgate's *Reddite*;
+the Collect and *simplices* as the contrary of hypocrisy; Caesar's coin
+"minted in God's world" from the Lectionary's pairing; the offerers going up
+with the bread and wine; the coin that helps and does not teach; Communion as
+the restamping of the image; and the practicable response.
+
+Branch and bound limits. The only optional element is the Communion antiphon.
+The speech names the second antiphon only as "one of the two Communion
+antiphons today", through the Douay–Rheims of Mark 10:45, and rests nothing on
+which is sung. Under `research/scope.md` section 3.10 and *Nostra aetate* 4,
+the agents are named as the Gospel names them, the vice is applied to the
+assembly ("This is where the Gospel turns toward us"), *Tract. in Ioh.* 41.2 is
+not used, and from *En. in Ps.* 57.8 only the "double noose" is reported,
+without the sentences that section excludes. Ambrose IX.34's opening is not
+used. No Missal or Lectionary English is quoted: the orations are described
+after the study's descriptions of the Latin, and the speech says that
+*render* is "the old translation".
+
+### How the appointed text changes the hearer's understanding
+
+The familiar pastoral question is the portion: what share of time and money
+God is owed beside everything else, the Sunday hour and the collection, often
+framed as a division between religion and the rest of life. The decisive
+textual detail is Matthew 22:20–21: Jesus makes the questioners name the
+image on their own coin, commands them to *render* (*reddite*), not to
+*give* (*dare*, 22:17), and adds "to God, the things that are God's" without
+naming any object. Read with Augustine's inference from Genesis 1:26 ("to
+Caesar his money, to God yourselves"), the question changes from "What
+portion does God get?" to "Whose image do I bear?": God is not owed a second
+tax set beside Caesar's but the one who carries the coin. The second detail,
+22:16–18, true praise called hypocrisy, turns the same answer on the hearer:
+a self cannot be rendered with correct words and a divided heart, which is
+what the Collect's *sincero corde* and Ambrose's renunciation "in words, not
+in affection" name. Replaced with unrelated readings the argument would lose
+its question, its image, its turn and its response: each rests on the coin's
+image and inscription, the verb *render*, the unexplained second clause, the
+praise of 22:16 and the rebuke of 22:18, with Isaiah 45:1, 4–6 supplying where
+Caesar stands.
+
+### Evidence read at this stage
+
+No evidence-dependent claim was added. Every quotation is a whole or an
+unbroken part of one the studies print or rely on, or a verse of the
+appointed readings, and each English quotation was read again at its locus in
+the tracked text: the Douay–Rheims (Challoner) verse files at Gn 1:26, Ps
+32:18–19, 95:7–8, Is 45:1, 4–6, Mt 22:15–21, Mk 10:45, Phil 2:15–16, 1 Thes
+1:3, 5 and 1 Jn 3:2; the Clementine Vulgate at Mt 22:17, 21 and Phil 2:15;
+NPNF 1/7 at *Tract. in Ioh.* 40.9 (where Augustine also cites 1 John 3:2) and
+41.2 (read, and not used for its polemic); NPNF 1/8 at *En. in Ps.* 4.8,
+57.8, 95.8–9 and 124.7–8; NPNF 1/10 at *Hom. in Matt.* 70.1–2; NPNF 1/13 at
+*Hom. in 1 Thess.* 1. Ambrose's Latin was read again at IX.34–36 in the
+tracked electronic text, including *omnes renuntiamus verbis, sed non omnes
+renuntiamus affectu* and *Redde promissum, dum in hoc corpore es* (the text
+prints *Major*; the note follows the study's *Maior*). Jerome's and Aquinas's
+Latin is reported without quotation marks in English that renders the Latin
+the study prints; their page images were read at the research stage and were
+not re-read here. All the loci are bound in `research/source-bindings.toml`.
+
+No search, listing or file of the other provider's leaf for this identity, its
+PDFs or web edition, or its production reviews was opened at this stage.
+
+### Counts, pace and rehearsal
+
+**Spoken words: 1,466**, counted as whitespace-separated tokens of the body
+with TeX comments, `\bigskip`, `\emph` markup and quotation marks removed. At
+130 words a minute that
+is a little over 11 minutes, at 125 a little under 12, and at 120 a little
+over 12. This is an estimate from the count; no speaker delivered the words
+and no delivery was timed. The prose was rehearsed for sense, sentence length
+and oral clarity by reading it through in full, silently and not aloud, in
+its final form; on the way a draft of 1,703 words was cut to its present
+length, a sentence claiming "six words" for a seven-word line was removed, the
+double colon after Jerome's dues was removed, an ambiguous "they" was given
+its subject, and "the Latin word" for *sincere* was assigned to the Latin
+Bible and not to Paul.
+
+### Author proof and checks
+
+- `make doc DOC=liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily PROVIDER=claude`
+  at revision timestamp 2026-10-16T16:05:28Z settles with no overfull or
+  underfull box, no LaTeX or pdfTeX warning and no undefined reference; the
+  component manifest and the generation metadata are valid. The proof is 4
+  physical pages, letter size, SHA-256
+  `2543cc5187959b2baa9a8afd34c4105d45072a681e2b41586a12f2037953d1d3`;
+  removing the PDF and building again from unchanged sources reproduced the
+  same bytes. The title and both columns of the spoken body fill pages 1 and
+  2; the note begins page 3 after the environment's page break; the exact
+  loci, the References, the revision timestamp and the rights colophon share
+  page 4. Every page was rasterized and inspected. All ten font resources are
+  embedded Latin Modern Type 1, and the document information carries the
+  title and the subject. Earlier proofs were repaired: the 1,506-word draft
+  ran the spoken body onto a third page, and a later one overran its column by
+  under 8 pt; both were cured by cutting words, not by changing type.
+- `tools/check-proper-components --phase artifacts --edition homily` and
+  `--phase content --edition homily`: valid.
+- `scripts/_proper_study.py check --phase content --edition homily` with the
+  four `--require` flags: pass. Its `--phase artifacts` reports that
+  `research/artifacts.json` does not yet exist; that record belongs to a later
+  stage.
+- `tools/check-content-preflight --edition homily`, all eleven checks
+  (`references-used`: 10 entries, every one used; `house-voice`: 3
+  reader-facing files) and `provenance-matches-run`: pass.
+- The research and synthesis editions, rebuilt with the shared metadata, still
+  have 37 and 11 pages with no warning and their colophons on their final
+  pages.
+
+### Outstanding
+
+Cold homily review; the shared-timestamp three-document build; visual review;
+canonical web generation and review; installation and publication gates.

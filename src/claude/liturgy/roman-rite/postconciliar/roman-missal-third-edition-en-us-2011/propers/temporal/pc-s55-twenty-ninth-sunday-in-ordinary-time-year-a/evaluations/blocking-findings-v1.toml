@@ -49,13 +49,25 @@ provider = "claude"
 run_id = "4d16b5e19d25dad9"
 workflow = "proper-study"
 workflow_version = 11
-stage = "synthesis-review"
-iteration = 1
+stage = "homily-review"
+iteration = 0
 disposition = "PASS"
 standing = 0
 accepted_count = 1
-advisory_count = 8
+advisory_count = 10
 observation_count = 4
+
+[[stages]]
+stage = "homily-review"
+iteration = 0
+disposition = "PASS"
+run_id = "4d16b5e19d25dad9"
+workflow = "proper-study"
+workflow_version = 11
+standing = 0
+accepted_count = 0
+advisory_count = 2
+observation_count = 0
 
 [[stages]]
 stage = "research-review"
@@ -101,6 +113,22 @@ location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-editi
 problem = "The research record still says that Augustine's v. 7 reads 'worship and honour'. His Latin at En. in Ps. 95.8 reads 'afferte Domino gloriam et honorem' (latin-migne-corpus-corporum-wikisource enarrationes-part-10.txt line 118); 'worship and honour' is the NPNF English. The study no longer reproduces the claim (STU-002 repaired), and research/production-review.md records the defect for the research owner."
 required_result = "Whenever the research records are next reopened by their owner, the parenthesis says that the NPNF English renders v. 7 'worship and honour' while Augustine's Latin reads gloriam et honorem."
 accepted_because = "The defect sits only in a reviewed, non-reader-facing audit record. Repairing it now would reopen the settled research owner and rerun the whole chain for one parenthesis, and no reader-facing text carries it."
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-001"
+severity = "advisory"
+location = "sections/homily/10-homily.tex, fourth movement (the worn coin restamped), the sentence beginning \"In Saint Mark's words, which one of the two Communion antiphons today takes up\""
+problem = "The relative clause \"which one of the two Communion antiphons today takes up\" puts liturgical apparatus inside the speech. It refers to a Missal option that an assembly rarely hears as such, because a hymn often replaces the antiphon. It also holds a ten-word aside between \"In Saint Mark's words\" and the quotation, which makes this the hardest sentence in the speech to follow by ear. The argument does not need it: Mark 10:45 carries the point as Scripture, and the terminal note already records the branch and the antiphon relation."
+required_result = "Introduce Mark 10:45 directly as Scripture without the embedded antiphon clause, for example \"In Saint Mark's Gospel the Son of man came ...\". If the link to the Communion antiphon is kept, give it a short sentence of its own after the quotation, one that stays true whichever antiphon or substitute is sung. Keep the terminal note's branch statement consistent with whatever the speech then says."
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-002"
+severity = "advisory"
+location = "research/scope.md section 2, textual-observations paragraph (\"in v. 8, bring sacrifices (*tollite hostias*, not sung)\"), on which the sentence \"The psalm told us how to come: 'Bring up sacrifices, and come into his courts.'\" in the seventh movement of sections/homily/10-homily.tex depends"
+problem = "Scope section 2's parenthetical says that v. 8's \"bring sacrifices\" is not sung. That contradicts three other statements in the records: the Ordo and US locator 7-8, given as whole verses in propers/verified.md (unit 4) and research/context.md (row 4); context.md's list of what is not sung (v. 2, v. 6 and the middle clause of v. 10 only); and scope.md's own section-2 table row for Psalm 95, which marks v. 8 without \"not sung\". The homily's claim that the psalm told the assembly to come into his courts with sacrifices holds only if v. 8b is sung. The bound locator supports the homily, so the defect is the research record's inconsistent parenthetical and not the speech. A later reader of scope.md would still find the homily's sentence contradicted there."
+required_result = "Make the research records agree that v. 8 is sung whole by correcting the scope.md section 2 parenthetical when the research owner next touches that file. Alternatively, if a reading of the printed Lectionary shows v. 8b omitted, revise the homily's sentence so that it no longer says the psalm told the assembly to bring sacrifices into his courts."
 
 [[advisories]]
 stage = "research-review"
