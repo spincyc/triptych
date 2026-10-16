@@ -1456,3 +1456,222 @@ the mechanism is built and the two cases are not asserted from memory. The
 constructed case, its refusals and the `merge-base` proof are in
 `tools/tests/test_act_history_reception.py`; twelve of its twenty-two tests fail
 when the guard is stubbed out [verified].
+
+## 20. Discovery coverage and bounded text reconstructions
+
+Added 2026-10-16. The accepted historical and language scope is owned by
+[time-machine.md §11](time-machine.md#11-historical-and-language-scope-agreed-2026-10-16).
+This section records the implementation boundary, not a second scope ruling.
+
+`tools/act-history` remains the owner of the act graph, its browser projection,
+the printed map source, the research catalogue and the emitted corpus. Its
+`catalogue` and `corpus` verbs read the routing record
+`src/sources/inventories/catholic-eucharistic-history-v1.toml`. That record names
+research inventories, accepted act slices, the earlier holdings audit and
+explicit supported text adapters. It does not copy their historical assertions,
+rights decisions or text. The helpers are `scripts/_eucharistic_history.py` and
+`scripts/_eucharistic_texts.py`; neither is another command or editorial owner.
+
+### Catalogue records are not admitted versions
+
+The catalogue combines candidate research records with links to recorded
+stations. It preserves the source inventory, table and stable row ID, source
+routes and original metadata. A printed witness, manuscript witness, normative
+act, complementary volume, translation and research lead retain distinct kinds.
+Neither a different imprint nor a fresh photograph proves a substantive change
+to liturgical text, order, rubrics or calendar. The catalogue's row total is
+therefore not a total of distinct liturgical versions; overlapping evidence can
+describe the same book or state. Positive substantive classification requires
+an explicit evidence-bearing declaration and is not inferred from a filename,
+station kind, title or date.
+
+Free-text date statements stay visible as written. Only supplied numeric
+chronological bounds, or an existing act's separately checked date, position a
+record. An unresolved date stays unpositioned. Unknown acquisition is not
+historical absence. `acquisition_status`, `text_status` and `collation_status`
+are separate: a completely acquired scan can still have no transcribed or
+collated liturgical text. The holdings inventory is a dated audit, not a live
+exhaustive acquisition count.
+
+The existing `/history/` page consumes the generated catalogue beside its act
+slices. `structure` owns `structure/act-history/catalogue.json` as part of its
+complete projection, so `structure --check` detects catalogue drift too. Its
+`--out` argument is the **data root**, not the `structure/act-history` directory.
+An explicitly scoped `structure --source` remains a single-slice operation.
+
+```sh
+tools/act-history catalogue --out .scratch/missal-history/catalogue.json
+tools/act-history catalogue --out .scratch/missal-history/catalogue.json --check
+tools/act-history structure --out .scratch/missal-history/browser-data
+tools/act-history structure --out .scratch/missal-history/browser-data --check
+```
+
+The catalogue output is JSON only. Discovery never adds a normative station,
+historical parent or text-carry permission. The record counts are derived by
+these commands and are not maintained again in this guidance.
+
+### Ancestry does not automatically carry text
+
+`text_parents()` now separates textual inheritance from own-line ancestry.
+`use-continuity` carries no text. A printed station carries no parent text
+unless it declares `text_inheritance` with an explicit own-line `parents` list,
+`scope = "recorded-units"` and an evidence `basis`. A reception parent cannot
+be selected, and a use-continuity edge cannot be upgraded merely by adding this
+permission. The text merge-base search follows the same permitted text edges.
+Ancestral act/witness metadata remains available even when no wording crosses
+an edge. A blocked edge with previously recorded units emits an `unestablished/`
+evidence note; that note is excluded from liturgical comparisons.
+
+This is a bounded guard, not a completed continuity review of every old act.
+Legacy promulgated chains retain their existing recorded-unit inheritance.
+`effect_established` describes the act's encoded departure and cannot by itself
+decide text continuity: some false values mean that no change within the tracer
+was encoded, whereas others expose an unread effect. A future explicit
+permission migration must review those bases rather than delete legitimate
+states or invent a general continuity claim. Comparing the guarded builder
+against the previous builder on the same current inventories left every
+existing state tree unchanged [verified]; the synthetic early Roman unit test
+proves that printing succession no longer carries newly introduced wording.
+
+### Corpus commits are typed reconstructions, not invented promulgations
+
+`corpus` emits a separate bare Git repository with isolated
+`reconstruction/<text-set-id>` branches. This is a deliberate extension of the
+act-only commit contract above: these commits declare `Record-kind:
+reconstruction` and `Historical-act-claimed: no`, receive no `act/` tags, and
+have no parents. They do not backfill the normative graph or infer descent
+between witnesses. The initially configured adapters are:
+
+- `roman-1962-propers`: direct Latin proper bodies from the existing calendar
+  owner, admitted only by its exact text hash, target-verification provenance
+  and existing publication decision. These are modern editorial projections
+  verified to the target, not diplomatic transcriptions of an older antecedent.
+- `cummiskey-1861-latin-ordinary`: the held facing-language Ordinary columns of
+  that identified lay witness, including its bounded Canon division. This is
+  not an altar book, complete missal, or established 1920/1962 Ordinary.
+- `wilson-1915-gregorian-canon-memento`: the single checked Memento for the living
+  in Wilson's 1915 critical edition. Its main text represents R, Vatican
+  Reginae 337, as mediated by that edition. The printed edition date and the
+  qualified represented witness date are separate; this is not a newly
+  inspected manuscript or a complete Gregorian Canon.
+
+All adapters retain explicit omitted coverage. No supported temporal
+parent/child revision pair is claimed. A removed or quarantined proper body has no wording
+exported; its omission is recorded. Present wording without the required
+publication permission, exact source hash or validated source identity causes
+the adapter to fail, rather than silently shrinking a successful export.
+
+```sh
+tools/act-history corpus --out .scratch/missal-history/corpus
+git -C .scratch/missal-history/corpus show-ref
+git -C .scratch/missal-history/corpus fsck --strict
+git -C .scratch/missal-history/corpus ls-tree -r --name-only \
+  reconstruction/roman-1962-proper-projection
+```
+
+The text files use readable liturgical paths. Proper identity retains Mass,
+form, course, cycle, proper and occurrence; the empty component marker cannot
+collide with an actual value. Ordinary paths retain division and element.
+Stable unit IDs and exact source-body `text_sha256` values remain in separate
+provenance files. The emitted text reuses the existing `ventilate()` function in
+`tools/act-history`: mechanical whitespace normalization and clause-line breaks,
+with no punctuation or word changes. The corpus helper receives that owning
+function rather than maintaining another serialization rule, and refuses a
+serialized result whose non-whitespace token sequence differs from its source.
+Each provenance record also carries `serialized_text_sha256` and an
+`act-history-ventilate/v1` descriptor naming the owner, encoding and newline
+convention. The source body and its publication hash are unchanged. Rewrapping
+source whitespace leaves the text blob unchanged while retaining the changed
+source hash as evidence; editing one clause changes one line in the text diff
+[verified].
+`order.json`, `coverage.json`, `sources.json`, `inputs.json` and
+`reconstruction.json` expose ordering, extent, witnesses, source fingerprints and
+the executing tool fingerprints. Repeated appointments are not counted as new
+direct text bodies. No complete-book denominator is invented.
+
+The target edition date, witness date, editorial-source dates and evidence
+review dates retain their own roles. A whole-reconstruction review date that
+was not established is explicitly unestablished. These independent roots use
+the fixed synthetic Git timestamp `2000-01-01T00:00:00Z`, with
+`Git-date-role: synthetic-serialization`; it is neither the historical book date
+nor a date of extraction. The existing act emitter's +10,000-year policy is
+unchanged. Two fresh corpus emissions give identical refs; strict fsck, ordinary
+garbage collection and commit-graph generation/verification pass [verified].
+
+The output directory is required. The tool validates inputs before replacement
+and stages a fresh repository. It refuses an existing directory without its
+own corpus ownership marker, a symlink output, and a marked repository with a
+configured remote. Git templates and inherited Git environment settings cannot
+inject refs, hooks or objects into a fresh corpus. This authorizes regeneration
+of a disposable artifact, not publication or replacement of an external
+repository; §18 still governs that separate action.
+
+### Explicit witness comparison without historical descent
+
+`compare` reads a named `[[comparisons]]` declaration from the same routing
+inventory. The supported kind is `same-prayer-witness-comparison`. The record
+must explicitly establish its membership, give an evidence basis and apparatus
+caveat, and cite canonical source IDs present in its checked adapters. Each
+`left` and `right` side names a configured `text_set` and an ordered `unit_ids`
+list. Missing or duplicate IDs, unsupported comparison kinds, unresolved source
+references and uncertain membership are refused. A group must remain within one
+semantic container in increasing source order; the order need not be consecutive
+when an omitted rubric intervenes.
+
+```sh
+tools/act-history compare \
+  --comparison roman-canon-memento-wilson-r-and-cummiskey-1861 \
+  --out .scratch/missal-history/memento-comparison.json
+```
+
+Omit `--out` to print the complete JSON. The default `--source` is the Catholic
+history routing inventory, as it is for `catalogue` and `corpus`; the other act
+verbs retain their slice defaults. Comparison generates no commit, parent, act
+or inferred introduction date.
+
+The bounded Memento comparison joins Cummiskey's `memento-domine` and
+`et-omnium-circumstantium` units in that order by inserting one space. Their
+maintained source bodies, identities and exact hashes remain unchanged. Wilson's
+single paragraph remains one source unit. Each output member retains its source
+order, comparison order, semantic path, exact source body/hash and publication
+provenance. The aggregate records its join rule and exact joined-body hash, then
+uses the owning `ventilate()` function. Both serialized passages, their hashes,
+a deterministic unified diff, data/tool fingerprints and source metadata are
+included. The catalogue advertises only the comparison's configured metadata;
+it does not run the text adapters or imply a new historical edge.
+
+The complete `structure` projection runs the same checked comparison and writes
+`structure/act-history/comparisons/<id>.json` beneath its data root. Catalogue
+metadata gives that relative `projection_path`, without claiming that a
+standalone catalogue invocation generated the passage. The browser loads the
+comparison only when requested. `structure --check` checks these files with all
+other fragments, refusing missing or changed comparisons and obsolete outputs.
+An explicit single-slice `structure --source` retains its existing scope.
+
+The apparatus caveat is part of the result, not an optional interpretation.
+Wilson's main text lacks the clause `pro quibus tibi offerimus: vel` found in
+Cummiskey, but Wilson's note 6 reports the corresponding clause in O, Vatican
+Ottobonianus 313. The two displayed bodies therefore cannot date its
+introduction or establish a nineteenth-century addition. Punctuation,
+capitalization, ligatures, spelling and spacing remain visible in the diff and
+are not automatically classified as substantive historical revisions.
+
+### A rendered review preview, with its limit on the artifact
+
+`plate --preview` adds `scripts/_act_history_preview.py` to the existing DOT
+route. It reads geometry from the actual browser implementation and produces
+SVG, PDF and PNG review artifacts plus a station-evidence catalogue PDF. The
+audit records the renderer, source hashes and retained graph identities. It
+does not draw candidate research records as accepted act stations.
+
+```sh
+tools/act-history plate \
+  --source src/sources/inventories/latin-missal-acts-v1.toml \
+  --out .scratch/missal-history/plate --preview
+```
+
+This makes a real rendered preview available [verified], but it is explicitly
+`review-preview`, using `existing-browser-geometry`. It is not the accepted
+LOOM production plate, and its existence does not establish final sheet design,
+label placement or visual acceptance. `plate` without `--preview` retains the
+DOT-only behavior recorded in §17.

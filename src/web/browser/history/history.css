@@ -436,3 +436,103 @@
     text-align: left;
   }
 }
+
+/* The catalogue shares this route and its evidence vocabulary, but never uses
+   the track grammar: date order alone is not an ancestry claim. */
+.history-views {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  border-bottom: 1px solid var(--section-line);
+  margin-bottom: 1.5rem;
+}
+.history-views a {
+  display: inline-block;
+  padding: 0.7rem 0.2rem;
+  font-family: var(--sans);
+}
+.history-views a[aria-current] {
+  font-weight: 700;
+  border-bottom: 3px solid var(--section-accent);
+  text-decoration: none;
+}
+.catalogue-filter {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 1.5rem 0 0.5rem;
+}
+.catalogue-filter label {
+  display: grid;
+  flex: 1 1 15rem;
+  gap: 0.3rem;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  min-width: 0;
+}
+.catalogue-filter input,
+.catalogue-filter select,
+.catalogue-filter button {
+  box-sizing: border-box;
+  min-height: 2.75rem;
+  max-width: 100%;
+  font: inherit;
+  padding: 0.5rem;
+  color: var(--ink, #1b1b1b);
+  background: var(--panel, #fff);
+  border: 1px solid var(--section-accent);
+  border-radius: 0;
+}
+.catalogue-filter button { cursor: pointer; }
+.history-page :is(.history-views a, .catalogue-filter input, .catalogue-filter select,
+  .catalogue-filter button, .catalogue-title, .catalogue-original summary,
+  .catalogue-coverage summary, #catalogue-detail):focus-visible {
+  outline: 3px solid #185ea8;
+  outline-offset: 3px;
+}
+.catalogue-period { margin: 1.8rem 0 0.4rem; }
+.catalogue-list { margin: 0; padding: 0; list-style: none; }
+.catalogue-entry {
+  display: grid;
+  grid-template-columns: minmax(7rem, 1fr) minmax(0, 4fr);
+  gap: 0.5rem 1.25rem;
+  border-top: 1px solid var(--section-line);
+  padding: 0.9rem 0;
+  overflow-wrap: anywhere;
+}
+.catalogue-date { font-family: var(--sans); font-size: 0.85rem; }
+.catalogue-title { display: inline-block; padding: 0.2rem 0; font-weight: 600; }
+.catalogue-title[aria-current] { text-decoration-thickness: 3px; }
+.catalogue-entry-meta { margin: 0.25rem 0 0; font-size: 0.82rem; color: var(--ink-soft); }
+.catalogue-facts { display: grid; grid-template-columns: minmax(8rem, 1fr) minmax(0, 3fr); gap: 0.5rem 1rem; }
+.catalogue-facts dt { font-weight: 600; }
+.catalogue-facts dd { margin: 0; white-space: pre-wrap; }
+.catalogue-original pre { white-space: pre-wrap; font-size: 0.8rem; }
+.catalogue-original,
+.catalogue-sources,
+.catalogue-facts,
+.catalogue-coverage { overflow-wrap: anywhere; }
+.catalogue-original summary,
+.catalogue-coverage summary { cursor: pointer; padding: 0.7rem 0; }
+.catalogue-coverage { margin: 1.5rem 0; border-top: 1px solid var(--section-line); }
+.history-page #catalogue-detail { scroll-margin-top: 1.5rem; }
+.catalogue-comparisons { margin: 1.5rem 0; border-block: 1px solid var(--section-line); padding: 0.5rem 0 1rem; }
+.comparison-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+.comparison-witness { min-width: 0; overflow-wrap: anywhere; }
+.comparison-witness h4 { margin-top: 0.5rem; }
+.comparison-text { font-size: 1.1rem; line-height: 1.65; }
+.comparison-members { padding-left: 1.2rem; }
+.comparison-members li { margin: 0.6rem 0; }
+.comparison-diff pre { overflow-wrap: anywhere; }
+.history-page [hidden] { display: none !important; }
+@media (max-width: 40rem) {
+  .catalogue-entry,
+  .catalogue-facts { grid-template-columns: minmax(0, 1fr); }
+  .catalogue-facts dd { margin-bottom: 0.6rem; }
+  .comparison-pair { grid-template-columns: minmax(0, 1fr); }
+}
+@media (forced-colors: active) {
+  .history-views a[aria-current] { border-color: CanvasText; }
+  .catalogue-filter :is(input, select, button) { border-color: ButtonText; }
+}

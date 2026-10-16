@@ -13,6 +13,36 @@ state = "in_progress"
   evidence = ["src/sources/inventories/missal-timeline-recovery-2026-10-16.md", "src/sources/inventories/missal-timeline-recovery-files-v1.toml", "tools/act-history", "src/web/browser/history/index.html"]
 
   [[deliverables.requirements]]
+  id = "agreed-scope"
+  criterion = "The accepted historical, language and substantive-distinctness boundaries have one durable owner, including shared ancestry and extinct uses, with Church, recension, edition, translation and witness identities distinguished."
+  status = "pass"
+  evidence = ["guidance/time-machine.md", "src/sources/inventories/catholic-eucharistic-history-v1.toml"]
+
+  [[deliverables.requirements]]
+  id = "source-aware-catalogue-tooling"
+  criterion = "The existing history browser consumes a deterministic source-aware catalogue with separate acquisition, transcription and collation statuses, explicit dating uncertainty, and links to accepted stations; discovery records cannot silently create historical acts or ancestry."
+  status = "pass"
+  evidence = ["scripts/_eucharistic_history.py", "src/web/data/structure/act-history/catalogue.json", "src/web/browser/history/history.js", "tools/tests/test_eucharistic_history.py", "tools/tests/test_history_catalogue.py"]
+
+  [[deliverables.requirements]]
+  id = "bounded-source-acquisitions"
+  criterion = "The six acquired Eastern books and four Western historical edition witnesses have canonical source identities, exact payload hashes, explicit rights and transformation records, and acquisition states that do not imply checked full transcription."
+  status = "pass"
+  evidence = ["THIRD_PARTY.md", "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml", "src/sources/inventories/western-eucharistic-books-timeline-v1.toml", "src/sources/works/chaldean-catholic-church", "src/sources/works/syriac-catholic-church", "src/sources/works/syro-malabar-catholic-church", "src/sources/works/maronite-church", "src/sources/works/catholic-church/stowe-missal"]
+
+  [[deliverables.requirements]]
+  id = "bounded-corpus-emitter"
+  criterion = "The generated corpus exports permitted, hash-checked text as isolated typed reconstructions, preserves source and serialized hashes separately, uses stable liturgical paths and the owning clause-line serializer, repeats deterministically, and refuses fabricated historical parents or unsafe output replacement."
+  status = "pass"
+  evidence = ["tools/act-history", "scripts/_eucharistic_history.py", "scripts/_eucharistic_texts.py", "tools/tests/test_eucharistic_history.py", "tools/tests/test_eucharistic_texts.py", "tools/tests/test_act_history_inheritance.py", "guidance/act-histories.md"]
+
+  [[deliverables.requirements]]
+  id = "bounded-witness-comparison"
+  criterion = "A real, independently checked Gregorian Memento passage can be compared with the ordered Cummiskey witness blocks, preserving source hashes, exact unit membership and the apparatus caveat without inventing temporal introduction or textual ancestry."
+  status = "pass"
+  evidence = ["src/sources/inventories/catholic-eucharistic-history-v1.toml", "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/canon-memento-domine.toml", "scripts/_eucharistic_history.py", "tools/tests/test_eucharistic_history.py"]
+
+  [[deliverables.requirements]]
   id = "historical-catalogue"
   criterion = "A reviewed, source-cited inventory covers the agreed historical boundary and every Catholic rite and materially distinct recension or edition, with explicit distinctness criteria, dating uncertainty, witness identities, and documented parentage; unresolved coverage is enumerated without a false completeness claim."
   status = "open"

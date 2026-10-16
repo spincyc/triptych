@@ -392,6 +392,10 @@ wrapper and library notices, whose exact parent remains separately identified.
 These historical editions and their scholarly apparatus have recorded U.S.
 public-domain bases; they are not relicensed under CC BY 4.0. The OCR and PDF
 extractions remain uncorrected source evidence, not checked liturgical text.
+One separately registered 46-word *Memento* transcription from Wilson's 1915
+main text was checked against the retained page image by two reviewers. It
+retains the historical text's public-domain basis and the same CC BY exclusion;
+that bounded verification does not extend to the remaining extraction.
 
 ## Fonts and External Software
 

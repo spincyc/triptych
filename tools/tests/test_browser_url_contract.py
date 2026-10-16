@@ -56,9 +56,14 @@ NODE = shutil.which("node")
 # ---------------------------------------------------------------------------
 
 # Every key each instrument reads out of the hash.
+HISTORY_VIEW_HASH_KEYS = {
+  "map": ["station", "unit"],
+  "catalogue": ["family", "q", "record"],
+}
+
 RECOGNISED_HASH_KEYS = {
   "catena/catena.js": ["bible", "book", "chapter", "voice"],
-  "history/history.js": ["station", "unit"],
+  "history/history.js": sorted(key for keys in HISTORY_VIEW_HASH_KEYS.values() for key in keys),
   "law/law.js": ["act", "canon", "line", "par", "unit"],
   "liturgy/day.js": [
     "bible", "date", "form", "mass", "missal", "orations", "ordinary", "ordinary-lang",
@@ -79,7 +84,8 @@ RECOGNISED_HASH_KEYS = {
 # listed in COMPUTED_HASH_WRITERS and pinned by replaying the function.
 WRITTEN_HASH_KEYS = {
   "catena/catena.js": [["book", "chapter", "bible", "voice"]],
-  "history/history.js": [["station", "unit"], ["station", "unit"]],
+  "history/history.js": [["station", "unit"], ["station", "unit"],
+                         ["family", "q", "record"], ["family", "q"]],
   "law/law.js": [["canon", "par", "line", "act"]],
   "liturgy/liturgy.js": [["missal", "type", "mass", "bible", "orations"]],
   "sources/sources.js": [
@@ -120,6 +126,7 @@ QUERY_PARAMETERS = {
   "data": "shared/browser-core.js",
   "plan": "scripture/plan-model.js",
   "slice": "law/law.js",
+  "view": "history/history.js",
   "design": "liturgy/reader-visual-reset.js",
 }
 
@@ -366,6 +373,19 @@ const PROBES = {
     return { literal, computed };
   },
 
+  /** Replay a literal writer with real values through the owning shared router. */
+  replayWrite(request) {
+    const core = loadCore(request);
+    const argument = writeHashArguments(source(request.file))[request.index];
+    if (!argument || argument[0] !== '[') throw new Error('expected a literal hash writer');
+    const pairs = new Function('scope', 'with (scope) { return ' + argument + '; }')(
+      permissiveScope(request.bindings || {})
+    );
+    core.T.writeHash(pairs);
+    return { hash: core.location.hash, search: core.location.search,
+      read: Object.fromEntries(core.T.readHash().entries()) };
+  },
+
   /** Run named functions out of a page, with the real router beneath them. */
   replay(request) {
     const core = loadCore(request);
@@ -469,8 +489,12 @@ HASH_VALIDATED_FACET_READ = re.compile(
 
 def hash_keys_read_by(relative: str) -> list[str]:
   text = text_of(relative)
+  # History's catalogue renderer receives parsed hash params directly; the
+  # older map aliases them to `state`. Do not treat every instrument's generic
+  # `params` as a hash receiver: some use that name for query parameters.
+  catalogue_reads = re.findall(r"\bparams\.get\('([^']+)'\)", text) if relative == "history/history.js" else []
   return sorted(set(
-    HASH_READ.findall(text) + HASH_VALIDATED_FACET_READ.findall(text)
+    HASH_READ.findall(text) + HASH_VALIDATED_FACET_READ.findall(text) + catalogue_reads
   ))
 
 
@@ -711,6 +735,89 @@ class CanonicalHashFormTest(unittest.TestCase):
 
 
 @needs_node
+class HistoryViewURLTest(unittest.TestCase):
+  """Catalogue state is view-specific; published map citations keep their meaning."""
+
+  def test_map_reads_only_station_and_unit_even_when_catalogue_keys_are_present(self):
+    answer = probe(
+      probe="replay", file="history/history.js", extract=["fromHash"], call="fromHash",
+      hash="#station=quo-primum-1570&unit=canon%2Fmemento&family=Roman&q=book&record=example",
+    )
+    self.assertEqual(answer["returned"], {"station": "quo-primum-1570", "unit": "canon/memento"})
+    self.assertEqual(list(answer["returned"]), HISTORY_VIEW_HASH_KEYS["map"])
+
+  def test_both_legacy_map_writers_keep_their_values_order_and_query(self):
+    for index, bindings in ((0, {"id": "quo-primum-1570", "openedUnit": "canon/memento"}),
+                            (1, {"selected": "quo-primum-1570", "id": "canon/memento"})):
+      with self.subTest(writer=index):
+        answer = probe(probe="replayWrite", file="history/history.js", index=index,
+                       search="?data=fixture&slice=latin-missal", bindings=bindings)
+        self.assertEqual(answer["hash"], "#station=quo-primum-1570&unit=canon%2Fmemento")
+        self.assertEqual(answer["search"], "?data=fixture&slice=latin-missal")
+
+  def test_catalogue_links_round_trip_encoded_filters_and_record_without_map_keys(self):
+    answer = probe(
+      probe="replay", file="history/history.js", extract=["catalogueHash"], call="catalogueHash",
+      args=["Roman / local", "Mémento & prayer", "western:example"],
+    )
+    self.assertEqual(answer["returned"],
+                     "#family=Roman+%2F+local&q=M%C3%A9mento+%26+prayer&record=western%3Aexample")
+    read = probe(probe="core", hash=answer["returned"])["read"]
+    self.assertEqual(read, {"family": "Roman / local", "q": "Mémento & prayer", "record": "western:example"})
+    self.assertEqual(list(read), HISTORY_VIEW_HASH_KEYS["catalogue"])
+
+  def test_catalogue_selection_and_filter_writers_use_real_router_and_clear_old_state(self):
+    query = "?view=catalogue&slice=latin-missal&data=fixture"
+    selection = probe(probe="replayWrite", file="history/history.js", index=2, search=query,
+                      hash="#station=old&unit=old", bindings={"selectedFamily": "Roman / local",
+                        "search": "Mémento & prayer", "row": {"id": "western:example"}})
+    self.assertEqual(selection["hash"],
+                     "#family=Roman%20%2F%20local&q=M%C3%A9mento%20%26%20prayer&record=western%3Aexample")
+    self.assertEqual(selection["search"], query)
+    filtered = probe(probe="replayWrite", file="history/history.js", index=3, search=query,
+                     hash=selection["hash"], bindings={"family": {"value": "Roman"}, "query": {"value": "  prayer  "}})
+    self.assertEqual(filtered["hash"], "#family=Roman&q=prayer")
+    self.assertEqual(filtered["search"], query)
+    cleared = probe(probe="replayWrite", file="history/history.js", index=3, search=query,
+                    hash=selection["hash"], bindings={"family": {"value": ""}, "query": {"value": ""}})
+    self.assertEqual(cleared["hash"], "")
+
+  def test_catalogue_renderer_parses_its_keys_and_ignores_legacy_map_selection(self):
+    from tools.tests.test_history_catalogue import CatalogueControllerTests
+
+    # Execute the actual controller, not only the key scanner. It restores the
+    # decoded search and record from a URL containing irrelevant map keys.
+    runner = CatalogueControllerTests()
+    got = runner.drive(hash="#family=Example+%2F+use&q=A+recorded&record=example&station=old&unit=old")
+    self.assertEqual(got["family"], "Example / use")
+    self.assertIn("1 of 2", got["catalogue-status"]["text"])
+    self.assertIn("A recorded book", got["catalogue-detail"]["text"])
+    no_record = runner.drive(hash="#station=example&unit=example")
+    self.assertTrue(no_record["catalogue-detail"]["hidden"])
+
+  def test_view_selection_is_explicit_and_existing_empty_and_slice_urls_still_choose_map(self):
+    for search, expected in (("", False), ("?slice=latin-missal", False),
+                             ("?view=map", False), ("?view=unknown", False),
+                             ("?view=catalogue", True)):
+      with self.subTest(search=search):
+        answer = probe(probe="assigned", file="history/history.js", anchor="const catalogueMode =",
+                       bindings={"window": {"location": {"search": search}}})
+        self.assertEqual(answer["value"], expected)
+
+  def test_view_switch_and_station_links_preserve_data_and_select_the_requested_slice(self):
+    original = "?data=fixture&slice=roman-holy-week&view=map"
+    catalogue = probe(probe="replay", file="history/history.js", extract=["historyURL"], call="historyURL",
+                      search=original, args=["catalogue"])
+    self.assertEqual(catalogue["returned"], "?data=fixture&slice=roman-holy-week&view=catalogue")
+    station = probe(probe="replay", file="history/history.js", extract=["historyURL"], call="historyURL",
+                    search=catalogue["returned"], args=["map", "latin-missal", "#station=quo-primum-1570"])
+    self.assertEqual(station["returned"], "?data=fixture&slice=latin-missal&view=map#station=quo-primum-1570")
+    parsed = probe(probe="replay", file="history/history.js", extract=["fromHash"], call="fromHash",
+                   hash="#" + station["returned"].split("#", 1)[1])
+    self.assertEqual(parsed["returned"], {"station": "quo-primum-1570", "unit": None})
+
+
+@needs_node
 class ReaderShellHashTest(unittest.TestCase):
   """The two `history.pushState` instruments, which do not use the shared router.
 
@@ -923,7 +1030,7 @@ class CrossInstrumentLinkTest(unittest.TestCase):
 
 @needs_node
 class QueryParameterTest(unittest.TestCase):
-  """`?data=`, `?plan=`, `?slice=`, `?missals=`, `?design=`, and their survival."""
+  """`?data=`, `?plan=`, `?slice=`, `?view=`, `?missals=`, `?design=`, and their survival."""
 
   def test_every_query_parameter_is_still_read_where_it_was_published(self):
     # WEAK: query reads happen at page start-up, which cannot run headless. The
@@ -932,6 +1039,7 @@ class QueryParameterTest(unittest.TestCase):
       "data": r"PARAMS\.get\('data'\)",
       "plan": r"T\.params\.get\('plan'\)",
       "slice": r"new URLSearchParams\(window\.location\.search\)\.get\('slice'\)",
+      "view": r"new URLSearchParams\(window\.location\.search\)\.get\('view'\)",
       "design": r"new URL\(window\.location\.href\)\.searchParams\.get\('design'\)",
     }
     for key, relative in sorted(QUERY_PARAMETERS.items()):

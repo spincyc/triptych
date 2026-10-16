@@ -1,0 +1,383 @@
+"""Original-language witness snapshots for the Eucharistic-book history.
+
+Adapters read canonical text owners and their publication decisions. A snapshot
+records evidence held, not prayers introduced by an act; missing collected text
+never implies historical deletion. No adapter infers ancestry or earlier text.
+"""
+from __future__ import annotations
+
+from collections import Counter
+import csv
+import hashlib
+import importlib.machinery
+import importlib.util
+import json
+from pathlib import Path
+import sys
+
+import _calendars
+import _proper_latin
+
+ROOT = Path(__file__).resolve().parents[1]
+SCHEMA = "triptych-eucharistic-texts/v1"
+PROPER_TARGET_EDITION = "edition.catholic-church.missale-romanum.vatican-typica-1962"
+TOOL_INPUT_PATHS = (
+    "scripts/_eucharistic_texts.py", "scripts/_proper_latin.py", "scripts/_calendars.py",
+    "scripts/_tooling.py", "tools/source-library", "guidance/liturgical-text-publication-policy.md",
+)
+ORDINARY_EDITION = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+WILSON_EDITION = "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915"
+WILSON_MEMENTO_PASSAGE = "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-memento-domine"
+WILSON_MEMENTO_ARTIFACT = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-memento-checked-latin-784ee4c8"
+WILSON_MEMENTO_TEXT_SHA256 = "4fc270656e69b4c24537399483253c6d0311f1b56d734744753fc701dd3ccf87"
+ORDINARY_DIVISIONS = (
+    "ordinarium-praeparatio", "ordinarium-oblatio", "praefationes", "canon-missae",
+    "ordinarium-communio", "ordinarium-conclusio",
+)
+SOURCE_FIELDS = frozenset({
+    "id", "record_type", "title", "publication", "date", "authority", "language", "jurisdiction",
+    "work_id", "edition_id", "artifact_id", "segment_id", "artifact_sha256", "physical_line_ranges",
+    "artifact_page_ranges", "locus", "states", "verified_on", "source_url", "provenance", "retrieved",
+    "artifact_type", "media_type", "storage", "rights_status", "rights_basis", "rights_jurisdiction",
+    "sha256", "byte_size", "path", "derived_from", "projected_from", "transformation",
+})
+
+
+class AdapterError(ValueError):
+    """A source, identity, or publication prerequisite is not satisfied."""
+
+
+def adapter_ids() -> tuple[str, ...]:
+    return ("roman-1962-propers", "cummiskey-1861-latin-ordinary", "wilson-1915-gregorian-canon-memento")
+
+
+def _sha(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
+
+
+def _tool_inputs() -> list[dict]:
+    """Pin required implementation/policy files from the executing checkout.
+
+    These paths are relative to ROOT, independently of an alternate data root.
+    Missing trusted inputs are errors, never silently incomplete provenance.
+    """
+    result = []
+    for relative in sorted(TOOL_INPUT_PATHS):
+        payload = (ROOT / relative).read_bytes()
+        result.append({"path": relative, "sha256": _sha(payload), "byte_size": len(payload)})
+    return result
+
+
+def _load_library(root: Path):
+    # Executable code comes only from this checkout, never from a data root.
+    name = "_eucharistic_texts_source_library"
+    if name not in sys.modules:
+        loader = importlib.machinery.SourceFileLoader(name, str(ROOT / "tools/source-library"))
+        spec = importlib.util.spec_from_loader(name, loader)
+        module = importlib.util.module_from_spec(spec)
+        sys.modules[name] = module
+        loader.exec_module(module)
+    library = sys.modules[name].load_library(root, check_binding_fingerprints=False)
+    if library.errors:
+        raise AdapterError("Source library prevents text export: " + "; ".join(library.errors))
+    return library
+
+
+class _Sources:
+    def __init__(self, root: Path, library):
+        self.root = root
+        self.library = library
+        self.records = {key: {**record.data, "record_type": record.record_type, "id": key}
+                        for key, record in library.records.items()}
+        self.used: set[str] = set()
+        self.inputs: dict[str, dict] = {}
+
+    def pin(self, path: Path) -> bytes:
+        path = path.resolve()
+        if not path.is_relative_to(self.root):
+            raise AdapterError("Source input is outside its repository root")
+        payload = path.read_bytes()
+        rel = path.relative_to(self.root).as_posix()
+        self.inputs[rel] = {"path": rel, "sha256": _sha(payload), "byte_size": len(payload)}
+        return payload
+
+    def use(self, source_id: str) -> dict:
+        if source_id not in self.records:
+            raise AdapterError(f"Unregistered source: {source_id}")
+        data = self.records[source_id]
+        if source_id in self.used:
+            return data
+        self.used.add(source_id)
+        self.pin(self.library.records[source_id].path)
+        for field in ("work_id", "edition_id", "artifact_id", "segment_id", "derived_from"):
+            parent = data.get(field)
+            if isinstance(parent, str):
+                self.use(parent)
+        for parent in data.get("projected_from", []):
+            self.use(parent)
+        if data.get("storage") == "tracked" and data.get("path"):
+            self.payload(data)
+        return data
+
+    def payload(self, artifact: dict) -> bytes:
+        if artifact.get("storage") != "tracked" or not artifact.get("path"):
+            raise AdapterError(f"No tracked payload: {artifact['id']}")
+        blob = self.pin(self.root / artifact["path"])
+        if _sha(blob) != artifact.get("sha256"):
+            raise AdapterError(f"Artifact hash mismatch: {artifact['id']}")
+        return blob
+
+    def verify_projection(self, passage: dict, text: str) -> None:
+        """Compare with the owning projection, allowing its printed line wraps."""
+        artifact = self.use(passage.get("artifact_id", ""))
+        if passage.get("artifact_sha256") != artifact.get("sha256"):
+            raise AdapterError(f"Passage artifact hash mismatch: {passage['id']}")
+        ranges = passage.get("physical_line_ranges")
+        if not ranges:
+            raise AdapterError(f"Projection has no bounded text: {passage['id']}")
+        lines = self.payload(artifact).decode("utf-8").splitlines()
+        selected = []
+        for start, end in ranges:
+            if not 1 <= start <= end <= len(lines):
+                raise AdapterError(f"Projection range outside artifact: {passage['id']}")
+            selected.extend(lines[start - 1:end])
+        if " ".join("\n".join(selected).split()) != " ".join(text.split()):
+            raise AdapterError(f"Calendar text differs from owning projection: {passage['id']}")
+
+    def metadata(self) -> list[dict]:
+        return [{"manifest_path": self.library.records[key].path.relative_to(self.root).as_posix(),
+                 "manifest_sha256": self.inputs[self.library.records[key].path.relative_to(self.root).as_posix()]["sha256"],
+                 **{field: value for field, value in self.records[key].items() if field in SOURCE_FIELDS}}
+                for key in sorted(self.used)]
+
+
+def _proper_units(sources: _Sources) -> dict:
+    calendar_root = sources.root / "src/sources/calendars"
+    path = calendar_root / "roman-1962/propers.yaml"
+    ledger = sources.root / "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml"
+    sources.pin(path)
+    sources.pin(ledger)
+    document = _calendars.load_document(calendar_root, "roman-1962", effective=False)
+    records, problems = _proper_latin.publication_records(calendar_root, "roman-1962", registered_sources=sources.records)
+    problems.extend(_proper_latin.sidecar_problems(
+        [path], inventory_root=ledger.parent, required=True, registered_source_ids=set(sources.records)))
+    if problems:
+        raise AdapterError("Latin publication gate: " + "; ".join(problems))
+    masses = {}
+    for section_key, section in document["sections"].items():
+        for order, mass in enumerate(section.get("masses", []), 1):
+            masses[mass["key"]] = {
+                "section": section_key, "section_kind": section["kind"], "source_mass_order": order,
+                **{field: mass[field] for field in ("key", "name", "registry", "date", "season", "rank") if field in mass},
+            }
+    units, omitted = [], []
+    for order, (key, text, state) in enumerate(_proper_latin.body_owners(document), 1):
+        if state != "present":
+            omitted.append({"identity": key.as_dict(), "body_status": state, "reason": "Quarantined body; wording not exported"})
+            continue
+        decision = _proper_latin.decision_for(key, text, records)
+        permission = decision.projection({"public-git", "corpus-data"})
+        if not decision.permits({"public-git", "corpus-data"}):
+            raise AdapterError(f"Present body lacks export permission: {key.label()}: {permission['reason']}")
+        if decision.provenance_status != "collated" or decision.relationship != "editorial-projection-exact-to-target":
+            raise AdapterError(f"Unsupported provenance relationship: {key.label()}")
+        source = sources.use(decision.source_id)
+        target = sources.use(decision.verification_source_id)
+        if target.get("edition_id") != PROPER_TARGET_EDITION:
+            raise AdapterError(f"Verification target edition mismatch: {key.label()}: "
+                               f"expected {PROPER_TARGET_EDITION}, got {target.get('edition_id')!r}")
+        sources.verify_projection(source, text)
+        for source_id in decision.publication_source_ids:
+            sources.use(source_id)
+        identity = {"calendar": "roman-1962", **key.as_dict()}
+        identity_hash = _sha(json.dumps(identity, ensure_ascii=False, sort_keys=True).encode("utf-8"))
+        units.append({
+            "unit_id": "unit.roman-1962.proper." + identity_hash[:24],
+            "content_id": "sha256:" + decision.text_sha256,
+            "language": "la", "text": text, "text_sha256": decision.text_sha256,
+            "identity": identity, "source_order": order, "mass": masses[key.mass],
+            "formulary": {"mass": key.mass, "form": key.form}, "slot": key.proper,
+            "text_edition_id": source["edition_id"], "target_edition_id": target["edition_id"],
+            "transcription_kind": "editorial-projection", "diplomatic": False,
+            "source_id": decision.source_id, **permission,
+        })
+    return {
+        "title": "Roman 1962 Latin Proper editorial projections", "units": units,
+        "target_date": sources.use(PROPER_TARGET_EDITION)["date"],
+        "witness_date": None, "reviewed_on": None,
+        "scope": {
+            "status": "partial", "whole_book_complete": False, "reference_expansion_performed": False,
+            "no_historical_backprojection": True,
+            "omitted_book_divisions": ["front matter", "calendar and computus", "general rubrics and Ritus servandus",
+                "Ordinary and Canon", "complete Preface series", "unrepresented ritual/votive/dead/local formularies",
+                "literal Scripture readings and chants represented only by citations", "unavailable and quarantined Proper bodies"],
+            "text_identity": "Project editorial projection with 1962 target verification; not a diplomatic historical antecedent",
+        },
+        "omitted_body_owners": omitted,
+        "counts": {"units": len(units), "unique_text_hashes": len({u["text_sha256"] for u in units}),
+                   "mass_identities_with_text": len({u["identity"]["mass"] for u in units}),
+                   "by_section": dict(Counter(u["mass"]["section_kind"] for u in units)),
+                   "by_text_edition": dict(Counter(u["text_edition_id"] for u in units))},
+    }
+
+
+def _tsv(sources: _Sources, artifact: dict) -> list[dict]:
+    return list(csv.DictReader(sources.payload(artifact).decode("utf-8").splitlines(), delimiter="\t"))
+
+
+def _ordinary_units(sources: _Sources) -> dict:
+    sources.use(ORDINARY_EDITION)
+    units, divisions = [], []
+    for division_order, division in enumerate(ORDINARY_DIVISIONS, 1):
+        latin_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861." + division + "-la"
+        latin = sources.use(latin_id)
+        english_id = latin_id[:-3] + "-en"
+        english = sources.use(english_id)
+        if latin.get("rights_status") != "public-domain" or not latin.get("rights_basis"):
+            raise AdapterError(f"Facing-language payload lacks publication basis: {latin_id}")
+        if latin.get("edition_id") != ORDINARY_EDITION or english.get("edition_id") != ORDINARY_EDITION:
+            raise AdapterError(f"Ordinary artifact has wrong edition: {latin_id}")
+        rows, english_rows = _tsv(sources, latin), _tsv(sources, english)
+        en_by_key = {row["element_key"]: row for row in english_rows}
+        if len(en_by_key) != len(english_rows):
+            raise AdapterError(f"Duplicate Ordinary skeleton key: {english_id}")
+        present, unit_ids = set(), []
+        last_seq = 0
+        for line, row in enumerate(rows, 2):
+            key = row["element_key"]
+            companion = en_by_key.get(key)
+            seq = int(row["seq"])
+            if key in present or seq <= last_seq or companion is None or row["seq"] != companion["seq"]:
+                raise AdapterError(f"Ordinary row identity/order mismatch: {latin_id}/{key}")
+            present.add(key)
+            last_seq = seq
+            unit_id = "unit.cummiskey-1861." + division + "." + key
+            unit_ids.append(unit_id)
+            text = row["latin"]
+            if not text:
+                raise AdapterError(f"Empty original-language body: {unit_id}")
+            text_hash = _sha(text.encode("utf-8"))
+            units.append({
+                "unit_id": unit_id, "content_id": "sha256:" + text_hash,
+                "language": "grc-Latn" if key in {"kyrie-eleison", "christe-eleison", "kyrie-eleison-repetitio"} else "la",
+                "source_column": "latin", "text": text, "text_sha256": text_hash,
+                "text_edition_id": ORDINARY_EDITION, "target_edition_id": ORDINARY_EDITION,
+                "transcription_kind": "witness-normalized-transcription", "diplomatic": False,
+                "division": division, "division_order": division_order, "source_order": seq,
+                "element_key": key, "part": row["part"], "kind": companion["kind"], "speaker": companion["speaker"],
+                "source_id": latin_id, "source_artifact_sha256": latin["sha256"], "source_physical_line": line,
+                "printed_page": row["printed_page"], "ia_leaf": row["ia_leaf"], "source_notes": row["notes"],
+                "structural_metadata_source_id": english_id,
+                "provenance": {"status": "recorded-page-image-transcription", "new_collation_performed": False,
+                    "relation": "same-identified-witness", "artifact_provenance_source_id": latin_id},
+                "publication": {"status": "permitted", "basis": "public-domain", "jurisdiction": "United States",
+                    "basis_source_id": latin_id, "surfaces": ["public-git", "corpus-data"]},
+            })
+        omitted = [{"element_key": row["element_key"], "source_order": int(row["seq"]), "kind": row["kind"],
+                    "printed_page": row["printed_page"], "reason": "Witness prints no facing Latin; English payload omitted"}
+                   for row in english_rows if row["element_key"] not in present]
+        divisions.append({"division": division, "unit_ids": unit_ids, "latin_column_rows": len(rows),
+                          "source_skeleton_rows": len(english_rows), "omitted_non_latin_blocks": omitted,
+                          "coverage_basis": latin.get("notes", ""),
+                          "completeness": "complete-held-facing-language-column; not the whole bilingual division or book"})
+    return {
+        "title": "Cummiskey 1861 original-language Ordinary", "edition_id": ORDINARY_EDITION,
+        "target_date": sources.use(ORDINARY_EDITION)["date"],
+        "witness_date": sources.use(ORDINARY_EDITION)["date"], "reviewed_on": None,
+        "units": units, "divisions": divisions,
+        "scope": {
+            "status": "partial-book; complete-held-facing-language-columns", "whole_book_complete": False,
+            "self_contained_division": {"division": "canon-missae", "scope": "Printed Latin prayer/form/dialogue blocks from Te igitur through the concluding Per omnia saecula saeculorum",
+                "printed_pages": "xxxiii-xxxix", "ia_leaves": "n43-n49",
+                "excluded_variants": "Proper Communicantes/Hanc igitur forms are outside this bounded Canon division"},
+            "omitted_book_divisions": ["English wording and English-only rubrics/headings", "temporale", "sanctorale", "Commons",
+                "votive and other formularies", "front matter and calendar", "all other book text outside the six retained Ordinary columns"],
+            "normalization": "Exact TSV wording; source records describe closed French spacing, small capitals rendered as capitals, omitted cross glyphs noted, and abbreviations retained",
+            "not_an_altar_book": True, "not_1920_or_1962_text": True,
+        },
+        "counts": {"units": len(units), "languages": dict(Counter(u["language"] for u in units)),
+                   "by_division": dict(Counter(u["division"] for u in units))},
+    }
+
+
+def _wilson_memento(sources: _Sources) -> dict:
+    passage = sources.use(WILSON_MEMENTO_PASSAGE)
+    artifact = sources.use(WILSON_MEMENTO_ARTIFACT)
+    if (passage.get("edition_id") != WILSON_EDITION or artifact.get("edition_id") != WILSON_EDITION
+            or passage.get("artifact_id") != WILSON_MEMENTO_ARTIFACT):
+        raise AdapterError("Wilson Memento source edition/artifact identity mismatch")
+    if "verified" not in passage.get("states", []) or not passage.get("verified_on"):
+        raise AdapterError("Wilson Memento lacks a verified bounded transcription")
+    if (artifact.get("rights_status") != "public-domain" or not artifact.get("rights_basis")
+            or artifact.get("rights_jurisdiction") != "United States"):
+        raise AdapterError("Wilson Memento lacks its public-domain publication basis")
+    if (artifact.get("artifact_type") != "normalized-text"
+            or passage.get("artifact_sha256") != artifact.get("sha256")
+            or passage.get("physical_line_ranges") != [[1, 1]]):
+        raise AdapterError("Wilson Memento checked-text extent/hash mismatch")
+    blob = sources.payload(artifact)
+    if not blob.endswith(b"\n") or blob.count(b"\n") != 1:
+        raise AdapterError("Wilson Memento must contain exactly one complete text line")
+    text = blob[:-1].decode("utf-8")
+    if _sha(text.encode("utf-8")) != WILSON_MEMENTO_TEXT_SHA256:
+        raise AdapterError("Wilson Memento differs from its reviewed wording")
+    unit = {
+        "unit_id": "unit.wilson-1915.gregorian.canon-missae.memento-vivorum",
+        "content_id": "sha256:" + WILSON_MEMENTO_TEXT_SHA256, "language": "la",
+        "text": text, "text_sha256": WILSON_MEMENTO_TEXT_SHA256,
+        "text_edition_id": WILSON_EDITION, "target_edition_id": WILSON_EDITION,
+        "transcription_kind": "witness-normalized-transcription", "diplomatic": False,
+        "division": "canon-missae", "division_order": 1, "source_order": 1,
+        "element_key": "memento-vivorum", "part": "canon", "kind": "prayer",
+        "source_id": WILSON_MEMENTO_PASSAGE, "source_artifact_id": WILSON_MEMENTO_ARTIFACT,
+        "source_artifact_sha256": artifact["sha256"], "source_physical_line": 1,
+        "printed_page": "2", "facsimile_pdf_page": 60,
+        "provenance": {"status": "verified-bounded-printed-edition-transcription",
+                       "reviewed_on": passage["verified_on"], "source_locator": passage["locus"],
+                       "represented_witness": "Wilson's R-based main text (Vatican Reginae 337); not the apparatus or a newly inspected manuscript",
+                       "normalization": artifact["transformation"],
+                       "apparatus_limit": "Note 6 assigns pro quibus tibi offerimus vel to O (Vatican Ottobonianus 313); this pair does not date its introduction"},
+        "publication": {"status": "permitted", "basis": "public-domain", "jurisdiction": "United States",
+                        "basis_source_id": WILSON_MEMENTO_ARTIFACT, "surfaces": ["public-git", "corpus-data"]},
+    }
+    return {
+        "title": "Wilson 1915 Gregorian Canon: Memento for the living", "edition_id": WILSON_EDITION,
+        "target_date": sources.use(WILSON_EDITION)["date"],
+        "witness_date": "ninth century (R, as represented by Wilson 1915; no exact date asserted)",
+        "reviewed_on": passage["verified_on"], "units": [unit],
+        "scope": {"status": "one-complete-prayer", "whole_book_complete": False,
+                  "text_identity": "A bounded normalized transcription of Wilson's 1915 critical-edition main text",
+                  "omitted_book_divisions": ["all other Canon prayers", "all other sacramentary text",
+                                             "critical apparatus, including the O variant", "front matter and supplements"],
+                  "not_direct_manuscript_transcription": True, "no_historical_backprojection": True},
+        "counts": {"units": 1, "words": len(text.split()), "languages": {"la": 1}},
+    }
+
+
+def load_adapter(adapter_id: str, root: Path = ROOT) -> dict:
+    """Return a deterministic JSON-compatible snapshot; write no export files.
+
+    Validation errors and present bodies without export permission raise
+    AdapterError. Quarantined text-free Proper nodes remain explicit omissions.
+    Source-library binding freshness is outside this text-owner adapter's scope.
+    """
+    if adapter_id not in adapter_ids():
+        raise AdapterError(f"Unknown Eucharistic text adapter: {adapter_id}")
+    root = Path(root).resolve()
+    sources = _Sources(root, _load_library(root))
+    try:
+        loaders = {"roman-1962-propers": _proper_units, "cummiskey-1861-latin-ordinary": _ordinary_units,
+                   "wilson-1915-gregorian-canon-memento": _wilson_memento}
+        result = loaders[adapter_id](sources)
+        unit_ids = [unit["unit_id"] for unit in result["units"]]
+        if len(set(unit_ids)) != len(unit_ids):
+            raise AdapterError("Export repeats a stable unit identity")
+        return {"schema": SCHEMA, "adapter_id": adapter_id, **result,
+                "sources": sources.metadata(), "inputs": sorted(sources.inputs.values(), key=lambda row: row["path"]),
+                "tool_inputs": _tool_inputs(), "tool_input_base": "executing-tool-checkout",
+                "historical_comparisons": [],
+                "history_semantics": "Evidence snapshot, not an act's additions/deletions. No inferred ancestry or backprojection; uncollected wording is unknown.",
+                "verification": {"source_library_valid": True, "source_binding_fingerprints_checked": False,
+                                 "new_page_collation_performed": False}}
+    except (OSError, KeyError, TypeError, UnicodeError) as error:
+        raise AdapterError(f"Cannot export {adapter_id}: {error}") from error

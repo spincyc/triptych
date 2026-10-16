@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="history.css">
 </head>
 <body class="history-page">
-<a class="skip-link" href="#map">Skip to the map</a>
+<a class="skip-link" href="#reading">Skip to the history</a>
 
 <header class="page-header">
   <h1><span class="page-mark" aria-hidden="true">→</span>How the Missal Changed</h1>
@@ -26,11 +26,54 @@
   <p class="tally" id="tally"></p>
 </header>
 
+<nav class="history-views" aria-label="History views">
+  <a id="history-map-link" href="?view=map" aria-current="page">Historical map</a>
+  <a id="history-catalogue-link" href="?view=catalogue">Source catalogue</a>
+</nav>
 <div id="banner" class="banner" role="status" hidden></div>
 
-<main id="map" class="map" tabindex="-1" aria-busy="true">
+<main id="reading" tabindex="-1">
+<noscript><p>The interactive history requires JavaScript. The source inventories
+  and their evidence remain available in the project’s Git repository.</p></noscript>
+<section id="catalogue" aria-labelledby="catalogue-heading" hidden>
+  <h2 id="catalogue-heading">Eucharistic books and historical uses</h2>
+  <p>Browse research coverage of Catholic traditions, shared ancestry, and extinct
+    local uses. Original liturgical-language books come first; independent
+    translation histories are deferred. A source record is not proof of a distinct
+    version or a complete transcribed book.</p>
+  <p class="panel-note">Dates order the records below; they do not establish
+    descent. No ancestry connections are drawn in this catalogue. A substantive
+    version requires evidence of changes to prayers, rubrics, calendar, or order;
+    a reprint, rescan, or OCR difference alone does not qualify.</p>
+  <section id="catalogue-comparisons" class="catalogue-comparisons" aria-labelledby="catalogue-comparisons-heading" hidden>
+    <h3 id="catalogue-comparisons-heading">Read a bounded witness comparison</h3>
+    <p class="panel-note">Open a comparison to fetch the identified passages.
+      These are differences between witnesses, not asserted revisions or ancestry.
+      A printed edition’s date does not date the introduction of a reading.</p>
+    <div id="catalogue-comparison-list"></div>
+  </section>
+  <form id="catalogue-filter" class="catalogue-filter" role="search" aria-label="Filter source catalogue">
+    <label for="catalogue-family">Tradition or use
+      <select id="catalogue-family" disabled><option value="">All traditions and uses</option></select>
+    </label>
+    <label for="catalogue-query">Search source records
+      <input id="catalogue-query" type="search" maxlength="200" disabled>
+    </label>
+    <button id="catalogue-search" type="submit" disabled>Search</button>
+  </form>
+  <p id="catalogue-status" role="status" aria-live="polite"></p>
+  <div id="catalogue-results" aria-busy="true"><p>Loading the source catalogue…</p></div>
+  <section id="catalogue-detail" class="panel" aria-label="Selected source record" tabindex="-1" hidden></section>
+  <details id="catalogue-coverage" class="catalogue-coverage" hidden>
+    <summary>Coverage limits and configured text sets</summary>
+    <div id="catalogue-limits"></div>
+  </details>
+</section>
+
+<section id="historical-map" aria-label="Historical map">
+<div id="map" class="map" tabindex="-1" aria-busy="true">
   <p class="placeholder">Loading the line…</p>
-</main>
+</div>
 
 <p class="legend" id="legend"></p>
 
@@ -58,6 +101,9 @@
   <h2 class="panel-title">Where the lines part</h2>
   <div id="lines-view"></div>
 </section>
+
+</section>
+</main>
 
 <footer class="page-footer">
   <p>

@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-memento-checked-latin-784ee4c8"
+edition_id = "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The identified Wilson 1915 printing is public domain in the United States by expiration of its publication term, as recorded for the parent facsimile and OCR artifacts. This bounded faithful transcription of its Latin main text adds no new authorship. It does not reproduce a modern critical edition or translation and is excluded from Triptych's CC BY 4.0 license."
+provenance = "Canonical source-reader edition query for Gregorian Sacramentary / Hadrianum / Wilson identified the existing edition and its retained full facsimile and extracted-text derivative before registration. No new retrieval or replacement edition was made. Exact bytes were produced deterministically from the registered pdftotext artifact, then compared to a rendering of the retained facsimile printed p. 2, PDF p. 60. The prayer is Wilson's R-based main text, not the apparatus reading and not a newly inspected manuscript. On 2026-10-16 an independent second reviewer checked all 46 words against a separately rendered page crop, including incolomitatis, circum adstantium, tibi reddunt and uiuo. Both reviewers confirmed the small printed baseline point after tuarum, which the OCR had lost; it is restored in this payload. The corrected payload was then rehashed."
+retrieved = "2026-10-16"
+sha256 = "784ee4c890ecfc846d774736dab9d80b0a80b0dded874df046eb7762a41f5d9f"
+byte_size = 302
+path = "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/canon-memento-checked-latin-784ee4c8/text.txt"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.pdf-text-layout-6ca97fd7"
+transformation = "Input SHA-256 6ca97fd74dee383bec70078151eaa0dc918a2b310389577d30690f4e503fdb53. Decode UTF-8 and split only on LF; take physical lines 2284-2289 inclusive. Join with one space, cut the prefix before Memento domine and the suffix beginning with the space before Communicantes. Replace the single famula- rumque with famularumque; remove the single caret following deuotio because it represents apparatus superscript 6. Restore the single printed point after tuarum: replace tuarum et with tuarum. et, confirmed in the independently rendered page crop. Write the resulting 301-character prayer plus one LF. No other spelling, capitalization, punctuation or wording changes. Visually checked against facsimile SHA-256 96fd93c73f8c9df47b6911981155b8b02cf2f2183ca6e87baad15128682d8681, printed p. 2/PDF p. 60."
+notes = "Complete Memento for the living, 46 words, one text line; excludes surrounding Te igitur and Communicantes and the page apparatus. Preserve circum adstantium, incolomitatis, tibi reddunt, uota and uiuo. The main text lacks the clause reported by apparatus note 6 in manuscript O; that omission is not an assertion about when the clause was introduced. Wilson identifies R (Vatican Reginae 337) as his main-text basis in the introduction printed p. xliv/PDF p. 54. The 1915 date belongs to this printed critical edition; no 811/812 date for Cambrai C is assigned to R."

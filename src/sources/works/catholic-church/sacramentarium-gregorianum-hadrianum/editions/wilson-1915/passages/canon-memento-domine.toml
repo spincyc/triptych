@@ -1,0 +1,12 @@
+schema = 2
+record_type = "passage"
+id = "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-memento-domine"
+edition_id = "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915"
+artifact_id = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-memento-checked-latin-784ee4c8"
+artifact_sha256 = "784ee4c890ecfc846d774736dab9d80b0a80b0dded874df046eb7762a41f5d9f"
+locus = "Canon Missae, Memento for the living; Wilson printed p. 2, PDF p. 60, R fol. 4; complete main-text prayer from Memento through uero immediately before Communicantes"
+states = ["cataloged", "acquired", "inspected", "verified"]
+physical_line_ranges = [[1, 1]]
+context = "The whole Memento prayer in Wilson's main text, mediated from R = Vatican Reginae 337. Apparatus note 6 separately assigns pro quibus tibi offerimus vel to O = Vatican Ottobonianus 313. A comparison with the checked Cummiskey 1861 Roman Canon is a same-prayer witness comparison, not an inferred ancestor edge or an act of insertion."
+notes = "Read against the retained facsimile printed p. 2/PDF p. 60 on 2026-10-16. Two independent reviewers checked the complete 46-word body and the apparatus boundary. The second reviewer also identified the small printed baseline point after tuarum; both reviewers confirmed it and the normalized payload restores that OCR omission. Orthography and maintext/apparatus separation are preserved as described by the owning artifact. This verifies the bounded printed-edition text, not the underlying manuscript or the entire critical edition."
+verified_on = "2026-10-16"
