@@ -1271,7 +1271,7 @@ class SliceVocabularyTests(unittest.TestCase):
         panel = json.loads(self.missal["panel"])
         self.assertEqual(panel["follow"], ["Follow this prayer"])
         self.assertEqual(panel["fold"],
-                         ["Read the missal as it stood after this act"])
+                         ["Read the recorded units as they stood after this act"])
         self.assertIn("The units", panel["sections"])
 
 

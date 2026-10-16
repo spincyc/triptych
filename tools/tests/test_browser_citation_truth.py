@@ -650,16 +650,14 @@ class MapLabelTests(unittest.TestCase):
 
     The label said "the acts that changed this missal" on every slice, so the
     Code of Canon Law was drawn under a sentence calling it a missal. It is not
-    one line among many: `role="img"` on the same element prunes all 47 station
-    buttons from the accessibility tree, so this is what a screen reader is
-    given INSTEAD of the map, not alongside it.
+    one line among many: the former `role="img"` also pruned the station
+    buttons from the accessibility tree. The map now uses a group, so its
+    neutral label accompanies the accessible station buttons.
 
     The slice declares no word for the thing the acts changed, and none is
     invented. The neutral word is used rather than the declared one on purpose:
-    this page has two places where an undeclared vocabulary falls back to the
-    Missal's own words, both defended because the slice that declares nothing
-    is in fact a missal, and a third would leave the same falsehood one
-    undeclared slice away from coming back.
+    the map label must stay true even when a slice declares no vocabulary.
+    State folds describe recorded units, without implying a complete missal.
     """
 
     @classmethod
@@ -681,8 +679,7 @@ class MapLabelTests(unittest.TestCase):
         self.assertNotIn("missal", self.seen["code"].lower())
 
     def test_the_label_still_says_what_the_drawing_is(self) -> None:
-        # Removing the falsehood must not empty the one string that stands in
-        # for a pruned subtree.
+        # Removing the falsehood must not empty the map's accessible label.
         stations = len(slice_file("code-of-canon-law")["stations"])
         self.assertIn("The acts this record carries", self.seen["code"])
         self.assertIn(f"{stations} stations", self.seen["code"])
@@ -693,16 +690,13 @@ class MapLabelTests(unittest.TestCase):
         self.assertIn(f"{missal} stations", self.seen["missal"])
 
     def test_nothing_printed_by_this_page_calls_an_unnamed_slice_a_missal(self) -> None:
-        # The two survivors are the guarded fallbacks the file argues for, and
-        # both are reached only where the slice declares no word of its own.
+        # Even the generic state-fold label describes recorded units; it must
+        # not imply that the slice supplies a complete missal.
         script = source("history/history.js")
         printed = [line for line in script.splitlines()
                    if "missal" in line.lower() and "*" not in line
                    and not line.lstrip().startswith("//")]
-        self.assertEqual(
-            [line.strip() for line in printed],
-            [": 'Read the missal as it stood after this act',"],
-        )
+        self.assertEqual(printed, [])
 
 
 LAW_CONTROLS = """JSON.stringify({

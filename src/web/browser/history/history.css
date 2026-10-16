@@ -60,6 +60,22 @@
   opacity: 0.75;
 }
 
+.track-reception { stroke-width: 8; }
+
+.track-reception-core {
+  fill: none;
+  stroke: var(--panel, #fff);
+  stroke-width: 3;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+.station-interchange-ring {
+  fill: var(--panel, #fff);
+  stroke: var(--section-accent);
+  stroke-width: 2;
+}
+
 .station {
   cursor: pointer;
 }
@@ -173,6 +189,20 @@
   border-radius: 0;
   border: 0;
   border-top: 4px dashed var(--section-accent);
+}
+
+.legend-reception .legend-mark {
+  outline: 2px solid var(--section-accent);
+  outline-offset: 3px;
+  margin: 3px;
+}
+
+.detail-receptions { overflow-wrap: anywhere; }
+
+@media (forced-colors: active) {
+  .track, .station-mark, .station-interchange-ring { stroke: CanvasText; }
+  .track-reception-core { stroke: Canvas; }
+  .station-interchange-ring { fill: Canvas; }
 }
 
 /* --- The station panel -------------------------------------------------
