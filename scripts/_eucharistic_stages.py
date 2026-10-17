@@ -133,8 +133,8 @@ def verify_inputs(root: Path, inputs: list[dict], *, fingerprint) -> None:
 def verify_progression(stages: dict[str, dict], transitions: list[dict]) -> None:
     """Documented progression is acyclic; comparable event bounds cannot reverse.
 
-    Different event roles, overlapping uncertainty and provisional research
-    links do not supply enough information to assert chronological order.
+    Same-role paths must admit nondecreasing dates within the supplied bounds.
+    Different event roles and provisional links do not impose date constraints.
     """
     successors = {key: set() for key in stages}
     incoming = dict.fromkeys(stages, 0)
@@ -150,11 +150,24 @@ def verify_progression(stages: dict[str, dict], transitions: list[dict]) -> None
             successors[row["from_stage"]].add(row["to_stage"])
             incoming[row["to_stage"]] += 1
     ready = deque(key for key, count in incoming.items() if count == 0)
+    earliest = {key: row["start_year"] for key, row in stages.items()}
+    bound_origin = {key: key for key in stages}
     visited = 0
     while ready:
         key = ready.popleft()
         visited += 1
         for successor in sorted(successors[key]):
+            later = stages[successor]
+            if (stages[key]["date_kind"] == later["date_kind"]
+                    and earliest[key] is not None
+                    and (earliest[successor] is None or earliest[key] > earliest[successor])):
+                earliest[successor] = earliest[key]
+                bound_origin[successor] = bound_origin[key]
+                if later["end_year"] is not None and earliest[successor] > later["end_year"]:
+                    raise StageError(
+                        f"documented transition path reverses disjoint {later['date_kind']} date bounds: "
+                        f"{bound_origin[successor]} ({earliest[successor]}) reaches "
+                        f"{successor} ({later['end_year']})")
             incoming[successor] -= 1
             if incoming[successor] == 0:
                 ready.append(successor)

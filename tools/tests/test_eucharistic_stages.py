@@ -149,6 +149,29 @@ class EucharisticStagesTests(unittest.TestCase):
                 reverse["status"] = "provisional"
                 self.assertEqual(1, self.project()["counts"]["documented_transitions"])
 
+    def test_progression_requires_feasible_dates_across_overlapping_chain(self):
+        self.data["stages"][0].update(start_year=1400, end_year=1500)
+        self.data["stages"][1].update(start_year=1000, end_year=1450)
+        third = copy.deepcopy(self.data["stages"][1])
+        third.update(id="fixture.third", start_year=1100, end_year=1200)
+        self.data["stages"].append(third)
+        onward = copy.deepcopy(self.data["transitions"][0])
+        onward.update(id="fixture.onward", from_stage="fixture.second", to_stage="fixture.third")
+        self.data["transitions"].append(onward)
+
+        # Each adjacent pair overlaps, but no dates satisfy first <= second <= third.
+        self.reject("transition path.*attestation.*fixture.first.*fixture.third")
+        third["end_year"] = 1400
+        self.assertEqual(2, self.project()["counts"]["documented_transitions"])
+        third["end_year"] = 1200
+        self.data["stages"][1].update(start_year=None, end_year=None)
+        self.reject("transition path.*attestation.*fixture.first.*fixture.third")
+        self.data["stages"][1]["date_kind"] = "publication"
+        self.assertEqual(2, self.project()["counts"]["documented_transitions"])
+        self.data["stages"][1]["date_kind"] = "attestation"
+        onward["status"] = "provisional"
+        self.assertEqual(1, self.project()["counts"]["documented_transitions"])
+
     def test_parallel_claims_and_converging_sequences_are_not_cycles(self):
         third = copy.deepcopy(self.data["stages"][1])
         third.update(id="fixture.third", start_year=1230, end_year=1230)
