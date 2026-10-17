@@ -73,6 +73,12 @@ state = "in_progress"
   evidence = ["PROJECT-WORK.md", "guidance/time-machine.md"]
 
   [[deliverables.requirements]]
+  id = "chronology-cold-review-corrections"
+  criterion = "Independent cold review of checkpoint f9b8c2f37 covers live browser behavior, historical evidence, both print companions and data/export integrity; concrete in-scope findings are corrected and independently rechecked, and durable dispositions distinguish verified acceptance from remaining research or reader decisions."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "src/sources/inventories/eucharistic-stages/roman.json", "scripts/_eucharistic_stages.py", "scripts/_act_history_preview.py", "src/web/browser/history/history.js", "src/web/browser/history/history.css", "tools/tests/test_eucharistic_stages.py", "tools/tests/test_act_history_preview.py", "tools/tests/test_history_catalogue.py", "tools/tests/test_browser_url_contract.py"]
+
+  [[deliverables.requirements]]
   id = "witnesses-and-texts"
   criterion = "Each temporal version has organized source witnesses and complete structured contents checked against those witnesses, with acquisition, transcription, collation, rights, and missing-book states recorded separately; metadata-only stations are never presented as complete missals."
   status = "open"

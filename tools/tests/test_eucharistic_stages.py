@@ -117,6 +117,51 @@ class EucharisticStagesTests(unittest.TestCase):
         self.data["stages"][0]["status"] = "provisional"
         self.reject("documented endpoints")
 
+    def test_documented_progression_rejects_disjoint_reverse_dates(self):
+        for kind in ("revision", "recension-branch", "reception", "witness-succession"):
+            with self.subTest(kind=kind):
+                self.data = fixture()
+                self.data["stages"][0].update(start_year=1500, end_year=1500)
+                self.data["transitions"][0]["kind"] = kind
+                self.reject("fixture.revision.*reverses disjoint attestation date bounds")
+
+    def test_progression_does_not_invent_order_from_uncertain_or_different_dates(self):
+        for start, end, role in ((1225, 1250, "attestation"), (1230, 1230, "attestation"),
+                                 (1500, 1500, "publication"), (None, None, "attestation")):
+            with self.subTest(start=start, end=end, role=role):
+                self.data = fixture()
+                self.data["stages"][0].update(start_year=start, end_year=end, date_kind=role)
+                self.assertEqual(1, self.project()["counts"]["documented_transitions"])
+        self.data = fixture()
+        self.data["stages"][0].update(start_year=1500, end_year=1500)
+        self.data["transitions"][0]["status"] = "provisional"
+        self.assertEqual(1, self.project()["counts"]["provisional_transitions"])
+
+    def test_documented_progression_rejects_cycles_with_overlapping_dates(self):
+        for kind in ("revision", "recension-branch", "reception", "witness-succession"):
+            with self.subTest(kind=kind):
+                self.data = fixture()
+                reverse = copy.deepcopy(self.data["transitions"][0])
+                reverse.update(id="fixture.reverse", from_stage="fixture.second",
+                               to_stage="fixture.first", kind=kind)
+                self.data["transitions"].append(reverse)
+                self.reject("documented transition cycle")
+                reverse["status"] = "provisional"
+                self.assertEqual(1, self.project()["counts"]["documented_transitions"])
+
+    def test_parallel_claims_and_converging_sequences_are_not_cycles(self):
+        third = copy.deepcopy(self.data["stages"][1])
+        third.update(id="fixture.third", start_year=1230, end_year=1230)
+        self.data["stages"].append(third)
+        for identifier, origin, target in (("parallel", "first", "second"),
+                                            ("direct", "first", "third"),
+                                            ("onward", "second", "third")):
+            edge = copy.deepcopy(self.data["transitions"][0])
+            edge.update(id="fixture." + identifier, from_stage="fixture." + origin,
+                        to_stage="fixture." + target)
+            self.data["transitions"].append(edge)
+        self.assertEqual(4, self.project()["counts"]["documented_transitions"])
+
     def test_complete_requires_separate_binding_contract(self):
         self.data["stages"][0]["text_coverage"] = "complete"
         self.reject("full-text binding and scope denominator")

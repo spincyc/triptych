@@ -274,6 +274,61 @@ class ActHistoryPreviewTests(unittest.TestCase):
         with self.assertRaisesRegex(preview.PreviewError, "missing source"):
             preview._stage_evidence(history, self.root, "fixture", {}, "")
 
+    def test_evidence_deduplicates_exact_claims_without_losing_distinct_claims(self):
+        history = stage_fixture()
+        transition = history["transitions"][0]
+        other = copy.deepcopy(transition["evidence"][0])
+        other["claim"] = "A distinct claim at the same locus."
+        transition["evidence"] = [*transition["evidence"], other]
+        paths = preview._stage_evidence(history, self.root, "fixture", {}, "")
+        words = " ".join(" ".join(ET.parse(path).getroot().itertext()) for path in paths)
+        transition_text = words.split("T001 · revision", 1)[1].split("Transition record:", 1)[0]
+        self.assertEqual(transition_text.count("This fixture supports no historical claim."), 1)
+        self.assertEqual(transition_text.count(other["claim"]), 1)
+
+    def test_evidence_terminal_identifier_has_body_context_on_continuation(self):
+        history = stage_fixture()
+        # Exercise each line-count remainder around a full page, including one orphan ID.
+        for count in range(42, 61):
+            history["transitions"][0]["limitations"] = " ".join(["x" * 90] * count)
+            paths = preview._stage_evidence(history, self.root, "fixture", {}, "")
+            for path in paths:
+                texts = ET.parse(path).getroot().findall(".//s:text", NS)
+                record = next((node for node in texts if node.text == "Transition record: change-ab"), None)
+                if record is None:
+                    continue
+                body_before = [node for node in texts if 120 <= float(node.get("y")) < float(record.get("y"))
+                               and node.get("font-weight") != "bold"]
+                self.assertGreaterEqual(len(body_before), 2, count)
+
+    def test_local_changes_keep_late_caveats_and_recorded_limits(self):
+        history = stage_fixture()
+        caveat = "Shared title does not establish the same composition."
+        history["transitions"][0]["changes"][0]["after"] = "A detailed change. " * 25 + caveat
+        geometry = preview.browser_geometry(self.spine, BROWSER, {"stage_history": history},
+                                            preview._stage_requests(history))
+        pages, _ = preview._stage_map_pages(history, geometry["chronology"], "fixture")
+        details = [node for page in pages for node in page.findall('.//s:g[@data-change-detail="change-ab"]', NS)]
+        words = " ".join(" ".join(node.itertext()) for node in details)
+        self.assertIn(caveat, words)
+        self.assertIn("Limits: Source-described, not text-collated.", words)
+        self.assertNotIn("(excerpt)", words)
+
+    def test_cross_sheet_source_names_recorded_destination_without_duplicate_arrow(self):
+        history = stage_fixture()
+        history["stages"][0].update(start_year=700, end_year=700, date_label="700")
+        history["transitions"][0]["status"] = "provisional"
+        geometry = preview.browser_geometry(self.spine, BROWSER, {"stage_history": history},
+                                            preview._stage_requests(history, {"fixture-tradition"}))
+        pages, sheets = preview._stage_map_pages(history, geometry["chronology"], "fixture")
+        self.assertNotEqual(sheets["state-a"], sheets["state-b"])
+        source = next(node for page in pages for node in page.findall('.//s:g[@data-stage-scope="state-a"]', NS))
+        words = " ".join(source.itertext())
+        self.assertIn("Outgoing: T001 → S002 on " + sheets["state-b"][0], words)
+        self.assertIn("revision · primary description · provisional", words)
+        arrows = [node for page in pages for node in page.findall('.//s:path[@data-transition="change-ab"]', NS)]
+        self.assertEqual(len(arrows), 1)
+
     def test_stage_keys_stay_in_source_order_and_dates_do_not_become_durations(self):
         history = stage_fixture()
         history["stages"].reverse()

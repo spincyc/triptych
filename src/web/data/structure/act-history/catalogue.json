@@ -20547,9 +20547,9 @@
       "sha256": "35812331e200d6bdbfed825c53687056b399e5cd9b6399070b70c558e0b14c82"
     },
     {
-      "byte_size": 62579,
+      "byte_size": 66105,
       "path": "src/sources/inventories/eucharistic-stages/roman.json",
-      "sha256": "01102b86d8b595e7b7d654857e88a16e108518e6c70f797ee649545d3b849a7e"
+      "sha256": "3710a830e1899192a07f58d3e97e2d74bbcab73f6b6e59ca7372e7629bab5fe7"
     },
     {
       "byte_size": 31240,
@@ -24896,7 +24896,7 @@
       "gaps": 78,
       "provisional_stages": 3,
       "provisional_transitions": 4,
-      "sources": 126,
+      "sources": 127,
       "stages": 97,
       "traditions": 32,
       "transitions": 54
@@ -26032,9 +26032,9 @@
         "sha256": "35812331e200d6bdbfed825c53687056b399e5cd9b6399070b70c558e0b14c82"
       },
       {
-        "byte_size": 62579,
+        "byte_size": 66105,
         "path": "src/sources/inventories/eucharistic-stages/roman.json",
-        "sha256": "01102b86d8b595e7b7d654857e88a16e108518e6c70f797ee649545d3b849a7e"
+        "sha256": "3710a830e1899192a07f58d3e97e2d74bbcab73f6b6e59ca7372e7629bab5fe7"
       },
       {
         "byte_size": 31240,
@@ -27599,9 +27599,9 @@
       {
         "checked_on": "2026-10-16",
         "id": "roman-stages-source-1604",
-        "inspection": "Downloaded original scan for research; page images PDF 5 title and 9 Cum sanctissimum read.",
+        "inspection": "Downloaded original scan for research; page images PDF 5 title, 9 Cum sanctissimum and 357 (printed 259, Ordo Missae final blessing) read.",
         "kind": "primary-book",
-        "limitations": "Google digitization research-only; no new retained-publication permission inferred. Constitution describes correction policy, not an exhaustive before/after apparatus.",
+        "limitations": "Google digitization research-only; no new retained-publication permission inferred. One final-blessing rubric checked against Venice 1570; the constitution supplies correction policy, not an exhaustive before/after apparatus.",
         "origin": {
           "id": "roman-stages-source-1604",
           "inventory": "src/sources/inventories/eucharistic-stages/roman.json",
@@ -27790,6 +27790,21 @@
         "status": "inspected",
         "title": "Official explanatory note on the seven additional prefaces",
         "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20200222_nota-decreto-quomagis_en.html"
+      },
+      {
+        "checked_on": "2026-10-16",
+        "id": "roman-stages-source-1570-venice",
+        "inspection": "Downloaded complete PDF; visually read PDF 643 colophon (Venetiis, M.D.LXX.) and PDF 40–41 Ritus servandus final blessing, especially PDF 41 left column final paragraph before De his quae omittuntur in missa pro defunctis.",
+        "kind": "primary-book",
+        "limitations": "Venice printing, not the Rome editio princeps cited by Pałęcki. One final-blessing rubric compared with Rome 1604; no whole-book equivalence or full recension collation inferred. Scan used for research; no new publication permission inferred.",
+        "origin": {
+          "id": "roman-stages-source-1570-venice",
+          "inventory": "src/sources/inventories/eucharistic-stages/roman.json",
+          "table": "sources"
+        },
+        "status": "inspected",
+        "title": "Missale Romanum, Venice: Joannes Variscus, heirs of Bartolomeo Faletti and associates, 1570",
+        "url": "https://archive.org/download/bub_gb_adC-aRGza70C/bub_gb_adC-aRGza70C.pdf"
       },
       {
         "checked_on": "2026-10-16",
@@ -31097,18 +31112,23 @@
             "claim": "Recites the Pian missal as the book being revised.",
             "locus": "Cum sanctissimum, PDF 9 opening",
             "source_id": "roman-stages-source-1604"
+          },
+          {
+            "claim": "Venice 1570 witness prescribes three blessings by the priest at solemn Mass; this is the before-witness for the bounded 1604 comparison.",
+            "locus": "PDF 643 colophon; PDF 40–41 Ritus servandus, final-blessing directions",
+            "source_id": "roman-stages-source-1570-venice"
           }
         ],
         "id": "roman-stages-1570",
         "label": "Roman Missal revised under Pius V",
-        "limitations": "14 July 1570 Quo primum is an act date, not claimed exact printing day; no full textual delta from 1474 proven. Exempt older uses are not silently incorporated.",
+        "limitations": "14 July 1570 Quo primum is an act date, not claimed exact printing day; no full textual delta from 1474 proven. The Venice rubric does not establish identical readings in the uninspected Rome printing. Exempt older uses are not silently incorporated.",
         "origin": {
           "id": "roman-stages-1570",
           "inventory": "src/sources/inventories/eucharistic-stages/roman.json",
           "table": "stages"
         },
         "reception": "Roman use subject to Quo primum and its exemptions; no assertion that every Latin use was replaced.",
-        "scope": "The promulgated Roman recension, anchored to an identified early printing.",
+        "scope": "The promulgated Roman recension, anchored to an identified Rome printing and a separately identified Venice printing for one rubric comparison.",
         "start_year": 1570,
         "status": "documented",
         "summary": "Roman Missal revised under Pius V with ordered ceremonial and Roman Canon.",
@@ -31117,7 +31137,7 @@
         "witness_ids": [
           "western:roman-1570-rome-faletti-varisco"
         ],
-        "witness_label": "Rome 1570, heirs of Bartolomeo Faletti, Joannes Variscus and associates"
+        "witness_label": "Rome 1570, heirs of Bartolomeo Faletti, Joannes Variscus and associates (identified in scholarship); Venice 1570, the same publishing consortium (inspected final-blessing rubric)"
       },
       {
         "components": [
@@ -31133,11 +31153,16 @@
             "claim": "Book identity and emendation rationale.",
             "locus": "PDF 5 title; PDF 9 constitution",
             "source_id": "roman-stages-source-1604"
+          },
+          {
+            "claim": "One final blessing even at solemn Mass; pontifical Mass retains three blessings.",
+            "locus": "Ordo Missae, printed 259; PDF 357 right column after Placeat",
+            "source_id": "roman-stages-source-1604"
           }
         ],
         "id": "roman-stages-1604",
         "label": "Clementine corrected missal",
-        "limitations": "7 July 1604 approval distinct from imprint year. Corrections described by the act, not enumerated here line by line; do not say all liturgical quotations were newly conformed to Vulgate.",
+        "limitations": "7 July 1604 approval distinct from imprint year. One final-blessing rubric compared with Venice 1570; other corrections are described by the act, not enumerated line by line. Do not say all liturgical quotations were newly conformed to Vulgate.",
         "origin": {
           "id": "roman-stages-1604",
           "inventory": "src/sources/inventories/eucharistic-stages/roman.json",
@@ -31147,7 +31172,7 @@
         "scope": "Vatican recension documented by its actual title and prefatory explanation.",
         "start_year": 1604,
         "status": "documented",
-        "summary": "Corrected textual transmission and fuller, clearer ritual rules.",
+        "summary": "Corrected textual transmission and clearer ritual rules; final blessing by a priest once also at solemn Mass.",
         "text_coverage": "not-transcribed",
         "tradition_id": "roman-stages-pian",
         "witness_ids": [],
@@ -34677,18 +34702,23 @@
       {
         "changes": [
           {
-            "after": "Rules expressed more fully and clearly.",
-            "before": "Earlier directions judged insufficiently explicit.",
+            "after": "The priest blesses once, explicitly also at solemn Mass. Pontifical Mass retains three blessings.",
+            "before": "At solemn Mass the priest blesses the people three times: from the Epistle side, before the middle of the altar and from the Gospel side.",
             "component": "rubrics",
             "evidence": [
               {
-                "claim": "States fuller, clearer rubrics derived from earlier principles.",
-                "locus": "middle of Cum sanctissimum",
+                "claim": "Prescribes three final blessings at solemn Mass and gives their positions.",
+                "locus": "PDF 41 left column final solemn-Mass paragraph",
+                "source_id": "roman-stages-source-1570-venice"
+              },
+              {
+                "claim": "Prescribes one final blessing even at solemn Mass and explicitly retains three for pontifical Mass.",
+                "locus": "Printed 259; PDF 357 right column after Placeat",
                 "source_id": "roman-stages-source-1604"
               }
             ],
-            "locus_after": "1604 constitution PDF 9",
-            "locus_before": "Pian rules as characterized in 1604 constitution"
+            "locus_after": "Rome 1604, Ordo Missae, printed 259; PDF 357 right column after Placeat",
+            "locus_before": "Venice 1570, Ritus servandus, PDF 41 left column: In missa solemni; final paragraph before De his quae omittuntur in missa pro defunctis"
           }
         ],
         "comparison_ids": [],
@@ -34700,6 +34730,16 @@
             "claim": "Identifies Pius V’s book as revised baseline.",
             "locus": "PDF 9",
             "source_id": "roman-stages-source-1604"
+          },
+          {
+            "claim": "Prescribes three final blessings at solemn Mass and gives their positions.",
+            "locus": "PDF 41 left column final solemn-Mass paragraph",
+            "source_id": "roman-stages-source-1570-venice"
+          },
+          {
+            "claim": "Prescribes one final blessing even at solemn Mass and explicitly retains three for pontifical Mass.",
+            "locus": "Printed 259; PDF 357 right column after Placeat",
+            "source_id": "roman-stages-source-1604"
           }
         ],
         "evidence_level": "primary-description",
@@ -34708,14 +34748,14 @@
         "historical_parentage": "established",
         "id": "roman-stages-clementine-correction",
         "kind": "revision",
-        "limitations": "Does not prove exact passage-level differences; condemnations of printers’ Vulgate substitutions are not authorization to describe 1604 as wholesale Vulgate replacement.",
+        "limitations": "Exact rubric pair inspected in Venice 1570 and Rome 1604; the Rome 1570 princeps remains uninspected and is not silently replaced by the Venice witness. No full-book collation, exact first introduction date, or complete list of Clementine changes is established. The 1604 constitution’s criticism of printers’ Vulgate substitutions does not make this a wholesale Vulgate replacement.",
         "origin": {
           "id": "roman-stages-clementine-correction",
           "inventory": "src/sources/inventories/eucharistic-stages/roman.json",
           "table": "transitions"
         },
         "status": "documented",
-        "summary": "Restores corrupted text transmission and clarifies rules.",
+        "summary": "Priest’s final blessing at solemn Mass changes from three to one in the compared Venice 1570 and Rome 1604 witnesses.",
         "text_inheritance": false,
         "to_stage": "roman-stages-1604"
       },
@@ -34768,14 +34808,14 @@
         "historical_parentage": "established",
         "id": "roman-stages-urbanian-correction",
         "kind": "revision",
-        "limitations": "No original 1634 book examined; extent and individual readings remain uncollated.",
+        "limitations": "Revision is documented by the issuing act; no original 1634 book examined and no particular before/after rubric or reading established here. The listed changes express the act’s correction policy, not passage-level collation.",
         "origin": {
           "id": "roman-stages-urbanian-correction",
           "inventory": "src/sources/inventories/eucharistic-stages/roman.json",
           "table": "transitions"
         },
         "status": "documented",
-        "summary": "Clarifies rubrics and corrects scriptural divergences.",
+        "summary": "Issuing act describes rubric clarification and scriptural correction; particular altered passages remain uncollated.",
         "text_inheritance": false,
         "to_stage": "roman-stages-1634"
       },

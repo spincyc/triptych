@@ -78,7 +78,7 @@ setImmediate(async () => {
   for (const action of input.actions || []) {
     if (action.do === 'stage' || action.do === 'transition') {
       const attr='data-'+action.do;
-      const element=[...all(nodes.get('timeline-chart')),...all(nodes.get('timeline-list')),...all(nodes.get('timeline-detail'))].find(n=>n.attrs[attr]===action.id && n.events.click);
+      const element=[...all(nodes.get('timeline-chart')),...all(nodes.get('timeline-list')),...all(nodes.get('timeline-detail')),...all(nodes.get('timeline-unpositioned-list')),...all(nodes.get('timeline-provisional-list'))].find(n=>n.attrs[attr]===action.id && n.events.click);
       const target=element || all(nodes.get('timeline-chart')).find(n=>n.attrs[attr]===action.id).parent;
       target.events.click({preventDefault(){}});
     } else if (action.do === 'timeline-control') {
@@ -100,6 +100,8 @@ setImmediate(async () => {
     } else if (action.do === 'open') {
       const link = all(nodes.get('catalogue-results')).find(n => n.className === 'catalogue-title');
       link.events.click({preventDefault() {}});
+    } else if (action.do === 'timeline-back') {
+      all(nodes.get('timeline-detail')).find(n => n.tagName === 'button').events.click();
     } else if (action.do === 'back') {
       const button = all(nodes.get('catalogue-detail')).find(n => n.tagName === 'button');
       button.events.click();
@@ -428,6 +430,55 @@ class TimelineControllerTests(unittest.TestCase):
         self.assertEqual(got["focus"],"timeline-detail")
         self.assertIn("stage=second",got["hash"])
         self.assertTrue(any("view=catalogue" in link["href"] and "record=example" in link["href"] for link in got["timeline-detail"]["links"]))
+
+    def test_presentation_is_restored_from_url_and_browser_history(self):
+        got=self.drive(hash="#presentation=list")
+        self.assertTrue(got["timeline-chart"]["hidden"])
+        self.assertFalse(got["timeline-list"]["hidden"])
+        got=self.drive(mobile=True,hash="#presentation=chart")
+        self.assertFalse(got["timeline-chart"]["hidden"])
+        got=self.drive(actions=[dict(do="timeline-control",id="timeline-presentation",event="change",value="list")])
+        self.assertIn("presentation=list",got["hash"])
+        got=self.drive(mobile=True,actions=[dict(do="hash",value="#presentation=chart")])
+        self.assertFalse(got["timeline-chart"]["hidden"])
+
+    def test_legacy_hash_restores_responsive_presentation_and_invalid_selection_name(self):
+        got=self.drive(actions=[dict(do="timeline-control",id="timeline-presentation",event="change",value="list"),dict(do="hash",value="")])
+        self.assertFalse(got["timeline-chart"]["hidden"])
+        got=self.drive(hash="#stage=second",actions=[dict(do="hash",value="#stage=missing")])
+        self.assertEqual(got["timeline-detail"]["attrs"]["aria-label"],"Selected state or transition evidence")
+
+    def test_invalid_year_hash_clears_previous_selection_before_focus_restore(self):
+        got=self.drive(hash="#stage=second",actions=[dict(do="hash",value="#stage=missing&start=2000&end=1900")])
+        self.assertTrue(got["timeline-detail"]["hidden"])
+        self.assertEqual(got["timeline-detail"]["text"],"")
+        self.assertEqual(got["timeline-detail"]["attrs"]["aria-label"],"Selected state or transition evidence")
+        self.assertEqual(got["focus"],"timeline-status")
+        self.assertIn("Choose an ending year",got["timeline-status"]["text"])
+
+    def test_supplementary_stage_controls_have_unique_ids_and_return_targets(self):
+        got=self.drive(hash="#leads=1")
+        ids=[identifier for host in ("timeline-list","timeline-provisional-list","timeline-unpositioned-list") for identifier in got[host]["ids"]]
+        self.assertEqual(len(ids),len(set(ids)))
+        got=self.drive(hash="#stage=undated",actions=[dict(do="timeline-back")])
+        self.assertEqual(got["focus"],"timeline-unpositioned-list-stage-undated")
+
+    def test_deep_links_and_browser_history_focus_selected_evidence(self):
+        for address in ("#stage=second", "#transition=change"):
+            with self.subTest(address=address):
+                direct=self.drive(hash=address)
+                back=self.drive(actions=[dict(do="hash",value=address)])
+                for result in (direct,back):
+                    self.assertEqual(result["focus"],"timeline-detail")
+                    self.assertTrue(result["timeline-detail"]["attrs"]["aria-label"].startswith("Selected "))
+
+    def test_return_restores_selected_marker_or_reading_list_item(self):
+        for mobile in (False,True):
+            for kind,identifier in (("stage","second"),("transition","change")):
+                with self.subTest(mobile=mobile,kind=kind):
+                    result=self.drive(mobile=mobile,actions=[dict(do=kind,id=identifier),dict(do="timeline-back")])
+                    host="timeline-list" if mobile else "timeline-chart"
+                    self.assertEqual(result["focus"],host+"-"+kind+"-"+identifier)
 
     def test_window_controls_keep_explicit_boundary_connection_and_shareable_state(self):
         got=self.drive(actions=[dict(do="years",start="1230",end="1260")])

@@ -59,7 +59,7 @@ NODE = shutil.which("node")
 HISTORY_VIEW_HASH_KEYS = {
   "map": ["station", "unit"],
   "catalogue": ["family", "q", "record"],
-  "timeline": ["tradition", "start", "end", "stage", "transition", "leads"],
+  "timeline": ["tradition", "start", "end", "stage", "transition", "leads", "presentation"],
 }
 
 RECOGNISED_HASH_KEYS = {
@@ -760,7 +760,7 @@ class HistoryViewURLTest(unittest.TestCase):
   def test_timeline_hash_pairs_round_trip_through_real_router_without_legacy_selection(self):
     state=dict(tradition="Roman / recension",start=1450,end=2050,leads=True,stage="roman:1962",transition=None)
     answer=probe(probe="replay",file="history/history.js",extract=["timelinePairs"],call="timelinePairs",args=[state])
-    self.assertEqual([p[0] for p in answer["returned"]],["tradition","start","end","leads","stage","transition"])
+    self.assertEqual([p[0] for p in answer["returned"]],["tradition","start","end","leads","stage","transition","presentation"])
     routed=probe(probe="core",hash="#station=old&unit=old",search="?view=timeline&data=fixture",writes=[answer["returned"]])
     self.assertEqual(routed["read"],dict(tradition="Roman / recension",start="1450",end="2050",leads="1",stage="roman:1962"))
     self.assertEqual(routed["search"],"?view=timeline&data=fixture")
