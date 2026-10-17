@@ -47,6 +47,57 @@ leaf under `evaluations/proper-study-results/821c824684b0c7a7/`, and
 `check-release-bindings`, `check-web-editions-current`, the promise ledger
 and `tmt check` pass.
 
+## Claude Four Last Things rewrite as Catholic spiritual reading, 2026-10-16
+
+<!-- promised-deliverable: claude-four-last-things-rewrite-2026-10-16 -->
+
+At the end of the liturgical year the maintainer asked for a cold review of the
+Four Last Things. The standard set is: unapologetically Catholic, not addressed
+to a skeptical secular reader, and a sober account of hell for contemplation
+carried by what the Fathers and saints have said. The review covers all four
+Claude essays. It is recorded in
+`src/claude/articles/faith/four-last-things-shared/cold-review-2026-10-16.md`.
+It found the July Claude series to be accurate doctrinal audits that are unfit
+for that purpose. It also confirmed source-claim errors, most of them in Hell,
+including Aquinas on the number of the saved, the Holy Thursday collect on
+Judas, Augustine on the fire, and Florence on the general judgment.
+
+The maintainer's decisions are recorded in the same file: rewrite the four
+essays in place; set no page target; include approved private revelation,
+labelled as such; state the few/many witness plainly; reduce the doctrinal
+audit to a short graded appendix; promote the 30 September voice rule to the
+universal editorial standard; and publish to `main` after review, aiming for
+before All Saints. GPT publications are excluded.
+
+**State: complete. Published to main and verified live.** The commits
+reached `origin/main` at `449423861` by ordinary fast-forward, after an
+ordinary merge of main's Claude Twenty-ninth Sunday publication.
+[Pages run 38946472459](https://github.com/spincyc/triptych/actions/runs/38946472459)
+and repository hygiene succeeded. All fifteen affected live routes match the
+verified build byte for byte, and the four live PDFs carry the accepted hashes.
+
+The four essays are rewritten in place under one shared series format.
+`src/claude/articles/faith/four-last-things-shared/rewrite-review.md`
+records:
+
+- the new titles and the closing received prayers;
+- how every confirmed cold-review error was resolved;
+- the independent content and quotation reviews of each essay, every
+  correction they required, and the coordinator's grade rulings;
+- the final review of all 128 rendered pages;
+- the accepted source, PDF and web hashes (revision `2026-10-16T17:56:47Z`).
+
+The page counts are 29, 33, 37 and 29.
+
+The universal voice rule now lives in `guidance/editorial.md`. The shared
+Four Last Things owner now serves both providers. The Claude source
+inventory, its classification review, the document catalogue and the
+release bindings are refreshed. The GPT publications are unchanged.
+
+Several new witnesses are cited by edition and stable URL, without
+source-library registration. Their list in the rewrite record is a
+follow-up for library work.
+
 ## Claude postconciliar Twenty-ninth Sunday three documents, 2026-10-16
 
 <!-- promised-deliverable: claude-pc-s55-three-documents-2026-10-16 -->

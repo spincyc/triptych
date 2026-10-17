@@ -1,80 +1,130 @@
-# Source Audit — What Death Does Not Finish (Claude edition, Part II of *The Four Last Things*)
+# What Death Does Not Finish — source audit
 
-Every witness below was read by the authoring agent on 2026-07-25 (UTC) unless another date is given. "Verified" means the wording quoted or relied on was read at the identified witness on that date; where a printed page image was inspected directly rather than read from optical character recognition, that is stated, and it is the only place this audit claims a witness stronger than a web transcription. No collation against a printed critical edition is claimed anywhere. Machine identities, hashes, and evidence states for each row are carried in `source-bindings.toml`, which is the machine record; this file is the human one.
+Rewrite of 2026-10-16. Every quotation printed in the body was read at the
+locus named below on 2026-10-16 (UTC) in the witness named. Supersedes the
+audit of July 2026. Where a witness is an OCR text layer, the page image was
+read for every quoted passage unless stated otherwise. Normalisations applied
+to every quotation: typographic quotation marks and apostrophes; spaces before
+colons and semicolons in French-style setting closed up; footnote and sigla
+markers omitted; stress accents in the liturgical Latin omitted; the ligature
+æ printed as ae in Latin (except where Alphonsus's own `tuæ viæ` is quoted
+inside his English); line-end hyphenation closed up. No wording was altered.
+Omissions are marked with ellipses.
 
-## Claim-to-source matrix
+Working copies used for reading were not retained in the repository.
 
-### Defining acts
+## Scripture
 
-| Consequential claim or quotation | Exact locus | Witness | State and ceiling |
+| Text | Witness | Check |
+| --- | --- | --- |
+| Matt 12:36–37; 24:3, 30–31, 35–36, 42, 44; 25:31–34, 37, 40, 41, 44, 46; 26:1–2 | Douay–Rheims, Challoner, PG 1581, library per-chapter JSON `src/sources/bibles/douay-rheims/chapters/Matt/*.json` | Printed from the JSON verse text; all quoted verses compared by script and by eye. |
+| Luke 12:2–3; 16:22, 26; 21:25–28; 23:43 | same, `Luke/` | same |
+| John 4:6; 5:22, 27–29; 1 John 2:1; 4:17–18 | same | same |
+| Rom 2:15–16; 1 Cor 3:13–15; 4:5; 2 Cor 5:8, 10; Phil 1:23; 2:12; Heb 4:15–16; 9:27; Tit 2:13 (two words); Apoc 20:11–12; 22:20; 2 Mach 12:43, 46 | same | same. Matt 25:37 corrected during review to quote through "gave thee drink?" rather than ending at "fed thee". |
+
+Liturgical assignments: 1962 Last Sunday after Pentecost, Matt 24:15–35
+(`src/sources/calendars/roman-1962/propers.yaml:15981`); 1962 Advent I, Luke
+21:25–33 (`:663`); 1962 All Souls, three Masses, first Mass Gospel John
+5:25–29, Sequence *Dies irae*, Offertory *Domine Jesu Christe*
+(`:47760–47960`); Postconciliar Christ the King, Year A, Matt 25:31–46
+(`src/sources/calendars/postconciliar/propers.yaml:38840`). Public domain.
+
+## Liturgy
+
+| Quotation | Witness and locus | Check | Rights |
 | --- | --- | --- | --- |
-| Lateran IV *Firmiter*: `venturus in fine saeculi, iudicaturus vivos et mortuos, et redditurus singulis secundum opera sua… qui omnes cum suis propriis resurgent corporibus, quae nunc gestant`. | DS 801 | Dated web state of the Latin *Enchiridion symbolorum* at patristica.net, registered as an exact artifact. | Verified (Latin quotation). Ceiling: a compilation and finding aid; printing not identified; no conciliar manuscript consulted. |
-| Lyons II: purification after death for the truly penitent; suffrages avail; `mox` to heaven and `mox` to hell; and then `Eadem sacrosancta Ecclesia Romana firmiter credit et firmiter asseverat, quod nihilominus in die iudicii omnes homines ante tribunal Christi cum suis corporibus comparebunt`. | DS 856–859 | Same page. | Verified (Latin quotation). Same ceiling. The article's weight on `nihilominus` is its own reading; that the word stands there is a fact of the delivered text. |
-| John XXII *Ne super his*: `Fatemur siquidem et credimus, quod animae purgatae separatae a corporibus sunt in caelo… et vident Deum de communi lege ac divinam essentiam facie ad faciem clare, in quantum status et condicio compatitur animae separatae`. | DS 990–991 | Same page. | Verified (Latin quotation). Same ceiling. The article makes no claim about John XXII's earlier sermons, which it did not read. |
-| *Benedictus Deus*: `in quibus nihil purgabile fuit`; `cum post mortem suam fuerint purgatae`; `mox post mortem suam… etiam ante resumptionem suorum corporum et iudicium generale… viderunt et vident divinam essentiam visione intuitiva et etiam faciali, nulla mediante creatura in ratione obiecti visi se habente`; the descent of those dying in actual mortal sin; and `et quod nihilominus in die iudicii omnes homines "ante tribunal Christi" cum suis corporibus comparebunt`. | DS 1000–1002 | Same page. English of the central clause quoted in the Catechism's own wording at CCC 1023. | Verified (Latin quotation). Same ceiling. |
-| Florence *Laetentur caeli*: `in caelum mox recipi et intueri clare ipsum Deum trinum et unum, sicuti est, pro meritorum tamen diversitate alium alio perfectius`; and the purification formula repeating Lyons almost verbatim. | DS 1304–1306 | Same page. | Verified (Latin quotation). Same ceiling. |
-| Trent, session VI, canon 30: the anathema on denying that a temporal debt may remain after guilt and eternal punishment are remitted, `vel in hoc saeculo, vel in futuro in purgatorio`. | DS 1580 | English: page image of printed p. 48 of the digitized Burns and Oates reprint of Waterworth (London 1848). Latin: page image of printed p. 38 of the Tauchnitz stereotype reprint (Leipzig 1887) of the Roman edition. | Verified (both languages). Page images inspected directly, not OCR. Ceiling: the Roman edition of 1834 behind the Tauchnitz was not consulted. |
-| Trent, session VI, canons 32 and 33: true merit by works done `per Dei gratiam et Iesu Christi meritum, cuius vivum membrum est`; and the guard that nothing is thereby derogated from the glory of God or the merits of Christ. | Session VI, cann. 32–33 | English page images of printed pp. 48–49 (canon 32 runs across the break; both leaves inspected); Latin page image of printed p. 38. | Verified (both languages), page images inspected directly. |
-| Trent, session XXV, decree on purgatory: `purgatorium esse, animasque ibi detentas fidelium suffragiis, potissimum vero acceptabili altaris sacrificio iuvari`; the injunction to bishops; the three exclusions from popular discourse; and the paragraph requiring the suffrages owed for the dead to be diligently discharged. | DS 1820 | English page images of printed pp. 232–233; Latin page image of printed p. 173. | Verified (both languages), page images inspected directly. One orthographic variant recorded: the Tauchnitz printing reads `nulla sit pietatis accessio` where the Denzinger web text reads `nulla fit`. No claim depends on it. |
+| *Dies irae*, strophes 1–2 (§1), 5–6 (§5), 10 (§4) and 7–19 (§9, the closing prayer) | *Missale Romanum* (Tournai: Desclée, 1889), *Missae pro Defunctis*, p. 92*; library artifact `…1889-tournai-desclee-leo-xiii-recognitum.ia-djvu-ocr-715f57fd` (OCR locates it at lines 89031–89090) | Every line read at the IA page image `missaleromanumex1889cath/page/n827.jpg`; the OCR's `Cundla stridle`, `didturus`, `maledidtis` etc. corrected from the image. Punctuation as printed (`tuae viae,`). | PD (pre-1931). The 1962 typica's own text is rights-withheld in the library, hence the 1889 printing. |
+| Offertory *Domine Jesu Christe … et semini ejus* | same, p. 93*, page image n828 | read at image; `Michaël` printed with diaeresis, normalised to Michael | PD |
+| Irons, stanzas 1, 3, 4–10 | *Hymns Ancient and Modern*, complete ed., hymn 398, pp. 307–309; library TSV `dies-irae-irons-en` | Every line compared with the page images n322–n324 (`hymnsancientmode0000unse_s2j4`). Stanza 5 line 4 "sought me," — the comma is broken in the print; read as comma, agreeing with the TSV. | PD (author d. 1883; text 1850s) |
+| *Judex crederis esse venturus* | J. H. Blunt, *Annotated Book of Common Prayer* (London, 1866), p. 12, Latin column; library artifact `…london-1866.ia-djvu-text-gtu-32400003882739-f3f87210` | read at page image `gtu_32400003882739/page/n157.jpg` | PD |
+| *Te ergo quaesumus tuis famulis subveni …* with English "We therefore beseech thee …" | Alphonsus, *Preparation for Death* XVI, Affections (Duffy 1843), p. 204 | page image n220 | PD |
 
-### Catechetical and curial teaching
+## Magisterium
 
-| Claim or quotation | Locus | Witness | State and ceiling |
+| Quotation | Witness and locus | Check | Rights |
 | --- | --- | --- | --- |
-| "Each man receives his eternal retribution in his immortal soul at the very moment of his death, in a particular judgment that refers his life to Christ"; and the footnoted citations at that paragraph. | CCC 1021–1022 | Archived Holy See English IntraText page, registered as an exact artifact of its 2026-07-25 delivery state. | Verified (quotation). Ceiling: no printed edition collated; the presentation lowercases some sentence-initial articles and renders some dashes as spaced hyphens. |
-| "In death, the separation of the soul from the body… while awaiting its reunion with its glorified body"; the Catechism's own English of Lateran IV at 999; the answer "Definitively 'at the last day'" at 1001. | CCC 997–1001 | Adjacent archived page. | Verified (quotation). |
-| Those who die in grace but imperfectly purified "are indeed assured of their eternal salvation"; "final purification of the elect"; "entirely different from the punishment of the damned"; the cleansing fire "by reference to certain texts of Scripture"; the argument from the practice of prayer for the dead with 2 Machabees 12:46. | CCC 1030–1032 | Adjacent archived page. | Verified (quotation). |
-| "The resurrection of all the dead, 'of both the just and the unjust,' will precede the Last Judgment"; "the truth of each man's relationship with God will be laid bare"; "even to its furthest consequences"; the Augustine *Sermo* 18, 4 quotation; "Only the Father knows the day and the hour." | CCC 1038–1041 | Adjacent archived page. | Verified (quotation). Augustine's sermon itself was **not** read at its own locus; it is used at the ceiling of a checked citation inside an official document, and the article says so. |
-| "Although we can judge that an act is in itself a grave offense, we must entrust judgment of persons to the justice and mercy of God." | CCC 1861 | Adjacent archived page. | Verified (quotation). |
-| Christ's judgment of the living and the dead; "all judgement to the Son." | CCC 678–679 | Adjacent archived page. | Read; characterization checked, not quoted at length. |
-| "The Church looks for 'the glorious manifestation of our Lord, Jesus Christ,' believing it to be distinct and deferred with respect to the situation of people immediately after death"; the subsisting "human self"; the exclusion of any way of speaking that would make the Church's prayers for the dead unintelligible, those prayers being in substance *loci theologici*; the Assumption as an anticipation; the warning against arbitrary imaginative representations together with the warning against over-attenuating the images. | CDF, *Recentiores episcoporum Synodi* (17 May 1979), points 2–7 and the pastoral part | Holy See English web text, registered as an exact artifact of its 2026-07-25 state. | Verified (quotation). Ceiling: an approved but non-definitive curial act; the *AAS* 71 (1979) Latin governs wording-critical claims and was **not** consulted. |
+| Lateran IV, *qui omnes cum suis propriis resurgent corporibus, quae nunc gestant* | Denzinger, DS 801, patristica.net Latin Enchiridion | Refetched 2026-10-16; sha256 604f24c4… equals the registered artifact. | Latin act PD; compilation's apparatus not reproduced |
+| Lyons II DS 856 (*poenis purgatoriis seu catharteriis, sicut nobis frater Iohannes … explanavit, post mortem purgari*; the body's quoted Latin is attributed to Florence, DS 1304, alone), 857–858 (*mox*), 859 (*nihilominus*) | same | read | same |
+| Florence DS 1304 *eorum animas poenis purgatoriis post mortem purgari* | same | read; DS 1304–1306 read through to 1307: no judgment clause (cold-review D1 confirmed) | same |
+| *Ne super his* DS 990–991 | same | read; the English given is a prose paraphrase outside quotation marks | same |
+| *Benedictus Deus* DS 1000–1002: defining formula, *in quibus nihil purgabile fuit …*, *cum post mortem suam fuerint purgatae*, *mox*, *etiam ante resumptionem …*, *visione intuitiva et etiam faciali*, *immediate … nude, clare et aperte*, *usque ad finale iudicium …*, DS 1002 entire | same | read | same |
+| CCC 679, 1021–1023, 1030–1032, 1038–1041, 1861 | Holy See archived IntraText pages `__P1W`, `__P2L`, `__P2M`, `__P2N`, `__P2P`, `__P6C` | fetched and read. The pages print spaced hyphens for dashes and lowercase some sentence-initial "the"; em dashes are typeset; no word changed. | Official copyrighted text, quoted briefly |
+| CDF, *Letter on Certain Questions concerning Eschatology* (1979), point 5 | vatican.va English | read; quoted only for the Parousia "distinct and deferred" (cold-review D2). The parenthetical citation of *Dei Verbum* inside the sentence is marked by an ellipsis. Point 7 cited (not quoted) in Appendix A. | Official, brief |
+| *Spe salvi* 41 (including the Creed's English, "he will come again in glory to judge the living and the dead", quoted from 41), 43, 44, 45, 47, 48 | vatican.va English | read; 47's fire-as-Christ is attributed as Benedict XVI attributes it, to "some recent theologians" | Official, brief |
+| Trent XXV, Decree concerning Purgatory | Waterworth (1848), Burns and Oates reprint, pp. 232–233 | page images `cu31924029369760/page/n505`, `n506` read | PD |
 
-### Scripture
+## Fathers
 
-| Use | Loci | Witness | State |
+| Quotation | Witness and locus | Check | Rights |
 | --- | --- | --- | --- |
-| Every English verse quoted anywhere in the article. | Matt 5:25–26; 7:21–23; 11:22–24; 12:36–37; 13:36–43, 47–50; 16:27; 24:29–36; 25:1–46. Luke 12:2–5; 16:19–31; 23:42–43. John 3:17–21; 5:22–30; 11:24–26; 12:47–50. Acts 17:30–31. Rom 2:5–16; 14:10–12. 1 Cor 3:11–17; 4:3–5; 15:20–28, 51–55. 2 Cor 5:1–10. Phil 1:21–24. 1 Thess 4:13–17. 2 Tim 4:1, 6–8. Heb 9:27–28. Apoc 14:13; 20:11–15. 2 Mach 12:43–46. | Tracked per-book verse tables of the registered Challoner electronic Douay–Rheims, read directly. Vulgate numbering. | Verified (tracked-artifact witness). |
-| Ecclesiasticus 7:40, "In all thy works remember thy last end, and thou shalt never sin," used for the scriptural warrant of the phrase "the last things". | Ecclus 7:40 | Same edition, Ecclesiasticus table; located by a replayable literal line search for `thy last end`, run 2026-07-26, one matching line. | Verified (tracked-artifact witness) with a recorded search receipt. |
-| Divergence control against the 1899 American edition. | Fifty loci covering every verse quoted in the article. | The edition's registered `american-edition-divergences` table. | Verified. Exactly two quoted verses carry a row — Matthew 24:36 and John 5:22 — and both divergences (punctuation; `does`/`doth`) are stated where the verse is quoted. Neither bears on a claim. |
+| Tertullian, *De corona* 3, "As often as the anniversary comes round …" | ANF 3 (Thelwall), New Advent `fathers/0304.htm` | fetched and read | PD |
+| Cyril, *Myst. Cat.* 5.8 (phrase), 5.9 (block), 5.10 (sentence) | NPNF II/7 (Gifford), library CCEL text `ccel-text-56d84cfa`, lines 21670–21697 | read | PD |
+| Chrysostom, *Hom. Matt.* 79.1–2 (four passages) | NPNF I/10, library CCEL text `ccel-text-adb8f1c9`, lines ~43858–43950; homily identity confirmed against New Advent `fathers/200179.htm` | read | PD |
+| Chrysostom, *Hom. Phil.* 3 | NPNF I/13, Oxford translation revised by John A. Broadus (title, line 16493), library CCEL text, lines 18007–18010 | read | PD |
+| Chrysostom, *Hom. 1 Cor.* 41 (NPNF section 8) | NPNF I/12, library CCEL text, lines 22668–22698 | read; CCC 1032 cites as 41, 5 (PG division) | PD |
+| Augustine, *De civ.* XX.1, XX.2, XX.14 | Dods 1871, library `pg45305-body-lf`, lines 13879–13996, 14884–14951 | read | PD |
+| Augustine, *De civ.* XXI.13, "temporary punishments are suffered by some in this life only, by others after death, by others both now and then; but all of them before that last and strictest judgment" | Dods 1871, library `pg45305-body-lf`, chapter 13 heading line 17541, sentence lines 17588–17590 | read (added on review, 2026-10-16) | PD |
+| Augustine, *De civ.* XXI.26, "this I do not contradict, because possibly it is true" / *non redarguo, quia forsitan uerum est* | Dods, lines 18429–18440; CSEL 40.2 TEI, lines 24365–24375 | read. The CSEL protasis reads *spiritus defunctorum*; the body's paraphrase follows the Latin. | PD |
+| Augustine, *Enchiridion* 110 | NPNF I/3 (Shaw), New Advent `fathers/1302.htm` | fetched and read | PD |
+| Augustine, *Confessions* IX.11.27 | NPNF I/1 (Pilkington), library CCEL text, lines 12972–12981 (the original "you" forms; New Advent's modernised text not used) | read | PD |
+| Augustine, *Sermo* 18.4 | as quoted at CCC 1039 only | read in CCC | Official, brief |
+| Gregory, *Dialogues* IV.39, IV.55 | P. W. (1608), ed. Gardner (London: Philip Lee Warner, 1911), pp. 233–234, 249–252, at tertullian.org | fetched and read; edition identified from the site's introduction page | PD |
 
-### Patristic witness
+## Doctors and saints
 
-| Claim or quotation | Locus | Witness | State and ceiling |
+| Quotation | Witness and locus | Check | Rights |
 | --- | --- | --- | --- |
-| Why the last day is properly called the day of judgment — "in it there shall be no room left for the ignorant questioning why this wicked person is happy and that righteous man unhappy" — with the caution that "day" is used in Scripture for "time", so the length of the last judgment is unknown. | *De civ. Dei* XX.1 | Tracked transcription of Dods's 1871 printing; complete chapter read at artifact lines 13879–13938 and registered as a passage with this revision. | Verified (tracked-artifact witness). |
-| The catalogue of unintelligible present judgments ("we do not know by what judgment of God this good man is poor and that bad man rich…"). | *De civ. Dei* XX.2 | Same artifact; chapter read from artifact line 13941. Not separately registered as a passage. | Verified (quotation). |
-| The books of Apocalypse 20: the plural books as the sacred books; the refusal of a material book of life on grounds of scale; "a certain divine power, by which it shall be brought about that every one shall recall to memory all his own works… and thus all and each shall be simultaneously judged." | *De civ. Dei* XX.14 | Same artifact; complete chapter read at lines 14884–14951 and registered as a passage. | Verified (tracked-artifact witness). Augustine's "accuse or excuse conscience" is his own echo of Rom 2:15. |
-| 1 Corinthians 3:15 referred primarily to the fire of tribulation in this life; the argument that this fire cannot be the everlasting fire of Matthew 25; and the concession about a post-mortem purgative fire: "this I do not contradict, because possibly it is true." | *De civ. Dei* XXI.26 | Same artifact; complete chapter read at lines 18318–18475 and registered as a passage. | Verified (tracked-artifact witness). This is the article's most consequential patristic result. |
-| Latin control on that concession: `non redarguo, quia forsitan uerum est`, with the protasis `Post istius sane corporis mortem, donec ad illum ueniatur, qui post resurrectionem corporum futurus est damnationis et remunerationis ultimus dies`. | *De civ. Dei* XXI.26 | Tracked TEI text of Hoffmann's CSEL 40.2 (Vienna 1900), physical lines 24365–24380. | Verified (Latin). Ceiling: the TEI encoding was not collated against page images; the edition prints `u` for consonantal `v`. Only this sentence was read in this artifact. |
-| Augustine rejects the Platonist position that all punishment after death is purgatorial while allowing temporary post-mortem punishments for some. | *De civ. Dei* XXI.13 | Same Dods artifact, from artifact line 17541. | Read; cited in the reference list, not quoted. |
+| Aquinas, *ST* III q.59 a.2 corpus, a.3 corpus, a.5 corpus and ad 1–3 | English Dominican translation, PG 19950 body, library artifact `pg19950-body-4597132e`, lines ~29790–29960 | read | PD |
+| Supplement q.88 a.1 corpus, ad 1, ad 2; Appendix I q.2 a.1 corpus ("punishment by corporeal fire") | English Dominican translation (London: Burns Oates and Washbourne, 1922), library OCR `ia-ocr-21251eee`, lines 581–654 and 10290–10294 | read in OCR; text clean at the quoted words | PD |
+| RB 4.44–46 | Latin Wikisource text, library `regula-latin-text`, line 26 | read; æ as ae. No PD English held: the registered Henderson (1910) witness abridges ch. 4 (checked at Wikisource). Gloss is prose, not a translation in quotation marks. | PD |
+| *Imitation* I.24, §§1, 2, 4 | Benham, PG 1653 | fetched and read | PD |
+| Ignatius, fourth rule of the second way of election | Mullan 1914, library OCR `historical-ocr-fe256c5b`, lines 4405–4425 (pp. 92–93) | read in OCR; footnote numerals omitted | PD |
+| de Sales, *Introduction* I.14, consideration 5; affections 2; conclusion | Rivingtons 1876, library OCR, lines 2794–2866 | page images `introductiontod00salegoog/page/n61`, `n62` | PD |
+| Alphonsus XXIV, first point (p. 289), Ancina (pp. 289–290), affections (p. 292), second point (p. 293), third point (p. 299) | Duffy 1843, library OCR `historical-ocr-d25bba22` | page images n305, n306, n308, n309, n315 of `preparation_for_death_1893-st_alphonsus_m_liguori` | PD |
+| Catherine of Genoa, *Treatise on Purgatory* ch. 2 | London: Burns and Lambert, 1858, IA `treatiseonpurga00cathgoog` | page images n15, n16; title page n7 (date 1858; OCR's "1868" and "Joy" capitalisation are OCR errors) | PD |
+| John of the Cross, *Dichos* 64 | as quoted at CCC 1022 | read in CCC | Official, brief |
 
-### Aquinas, and the text that is not his
+## Removed or paraphrased rather than quoted
 
-| Claim or quotation | Locus | Witness | State and ceiling |
-| --- | --- | --- | --- |
-| The redundancy objection at full strength; the *sed contra* from John 12:48; "judgment cannot be passed perfectly upon any changeable subject before its consummation"; the five ways a finished life continues, with Arius and the apostles; "although in regard to such things a man neither merits nor demerits"; `Deus non iudicabit bis in idipsum, idest secundum idem`; the reply about the changeable body; the rejection of soul-sleep from 2 Cor 5:8. | *ST* III, q. 59, a. 5, corpus, *sed contra*, obj. 1, and replies 1–3 | English: dated web state of the English Dominican translation at New Advent, registered as an exact artifact. Latin: dated web state at Corpus Thomisticum, paragraphs [49523]–[49530], registered. | Verified (both languages). Ceiling: no printed copy of the 1920 translation collated; no collation of the site Latin against a printed Leonine volume. |
-| Christ's judiciary power as man, and its universality. | *ST* III, q. 59, aa. 2 and 4 | Same English artifact. | Read; characterization checked. |
-| The Supplement's argument: two divine operations, therefore two judgments in reverse order; the judgment of governance in which "one man's reward is delayed for the good of others"; the general judgment as the world's "ultimate complement", each receiving `secundum seipsum`; the twofold judgment owed to a man as person and as part of the race; the increase from "the added glory of the body and from the completion of the number of the saints"; the manifestation of a divine justice now hidden; the mental rather than vocal conduct of the judgment, marked `probabile`; the reserved time with Acts 1:7 and the refusal to read the signs as a calendar; the frank uncertainty about the place. | *Supplementum* q. 88, aa. 1–4 | English: dated New Advent page, registered. Latin: page image of printed p. 205 of the Leonine *Opera omnia* XII (1906), inspected directly, for a. 1 corpus tail and replies and for a. 2; the volume's uncorrected machine transcription used only as a finding aid, and for a. 4, whose page image was **not** inspected. | Verified (English quotation; Latin at the stated loci from a directly inspected page image). Ceiling stated in the article at each use. |
-| The conscience as the book on which judgment is pronounced; the explicit dependence on Augustine for the books and for the divine energy of recall; the "more probable and more common opinion" that each will know all, with Peter Lombard recorded as holding the contrary. | *Supplementum* q. 87, aa. 1–3 | Dated New Advent page, registered. | Verified (quotation). The article reproduces the text's own epistemic marker rather than suppressing it. |
-| The receptacles of souls: incorporeal things in place only "after a manner befitting spiritual substances, a manner that cannot be fully manifest to us"; the gravity image; immediate conveyance "unless it be held back by some debt". | *Supplementum* q. 69, aa. 1–2 | Dated New Advent page, registered. | Verified (quotation). The limbos and abodes in the remaining articles are named as school theology and not used. |
-| Purgatory's place: "Nothing is clearly stated in Scripture about the situation of Purgatory"; the twofold place; the same fire tormenting the damned and cleansing the just; the two rejected opinions. And the argument for purgatory from 2 Machabees 12:46 through the practice of prayer. | *Supplementum*, Appendix II, q. 1, aa. 1–2 | Dated New Advent page, registered. | Verified (quotation). Used as specimens of the "difficult and subtle questions" Trent excluded from the pulpit, never as defined doctrine. |
-| Purgatory's severity: the twofold pain of loss and sense; "the least pain of Purgatory surpasses the greatest pain of this life"; the *sed contra* resting on a sermon attributed to Augustine; and the corpus's own "That the soul suffers pain from the bodily fire is at present taken for granted." | *Supplementum*, Appendix I, q. 2, aa. 1–2, 6 | Dated New Advent page, registered. | Verified (quotation). The undefended assumption is the point the article makes, and it is in the text. |
-| The Supplement's provenance: `Supplementum scilicet cum medio saeculo XIV. ex aliquo codice Commentarii in Quartum Librum Sententiarum transcriptum sit, alter scripturae Commentarii testis habendum est`; the transcription's starting point at IV, d. 14, q. 1, a. 3, qc. 2; and the editors' reference throughout to an unnamed *Compilator Supplementi*. | Leonine *Opera omnia* XII (1906), *Praefatio in Supplementum*, first page | Internet Archive page image of leaf 412, inspected directly, registered as an exact remote artifact with its hash. | Verified (Latin quotation from a directly inspected page image). This is the strongest witness used anywhere in the article. |
-| The parallel text the Supplement transcribes: `sicut operatio pertinet ad rerum principium quo producuntur in esse, ita judicium pertinet ad terminum`; `Unum singulare, quod de eo fiet post mortem`; the increase of reward; the four observed variants against the Leonine Supplement. | *Scriptum super Sententiis* IV, d. 47, q. 1, a. 1, qc. 1, corpus and replies 1–3, paragraphs [22137]–[22140] | Dated Corpus Thomisticum page, registered. | Verified (Latin quotation). Ceiling, stated in the article: the comparison is between one electronic transcription and one machine transcription of a printed page. It is **not** a collation, and no claim is made that the four named variants are the only ones. |
-| That the Latin at the place where English readers meet "the particular judgment" reads `iudicium singulare`, and that `particularis` occurs in the following reply of the *sentence* (`quoad particularem sententiam uniuscuiusque`) and not of the judgment. | *Supplementum* q. 88, a. 1, ad 1–2; *Scriptum* IV, d. 47, q. 1, a. 1, qc. 1, ad 1–2 | Leonine page image of printed p. 205, inspected directly; and the Corpus Thomisticum *Scriptum* page. | Verified. This is the article's own source-critical finding and the sharpest form of its engagement with the companion volume's result about the phrase. |
+- *Ne super his* and the defining formula of *Benedictus Deus*: an English
+  rendering first drafted inside quotation marks was recast as prose
+  paraphrase, since no published English of these sentences was read.
+- RB 4.44–46 and the *Quaerens me* strophe: given in Latin with commentary,
+  not with an English in quotation marks.
+- The English Te Deum line "we believe that thou shalt come to be our Judge"
+  was dropped: the only English held (Blunt's Prayer Book column) was not read
+  at its page image.
+- From the inventory's leads, not used: *Passion of Perpetua* 7–8; Newman,
+  *Dream of Gerontius*; Lumen gentium 48; the *Libera me* and *Absolve* (no
+  page-image witness of the Rituale read).
 
-## Consequential findings and negative results
+## Needs registration
 
-1. **The phrase "particular judgment" is theological, not conciliar.** Confirmed here for all five acts read at the Enchiridion (DS 801, 856–859, 990–991, 1000–1002, 1304–1306): the acts define an immediacy of retribution, not a separately narrated tribunal, and the phrase does not stand in them. The companion volume on death reached the same result for the two acts usually cited. This article adds the further finding above about the Latin of the Supplement. **Bounded:** these are statements about the wording of the acts read, established by reading them, not by a mechanical search over a magisterial corpus. No such search was run and none is claimed.
-2. **The fourfold enumeration is not in the acts.** The scriptural warrant of "the last things" is Ecclesiasticus 7:40, a counsel of remembrance that enumerates nothing; the four-item scheme occurs in none of the acts read for this article. Same bounding as above. The article uses this to explain why the redundancy puzzle feels sharper than the definitions require: the list has one slot where the acts have two events.
-3. **The standard proof text for purgatory is weaker than its reputation.** Augustine, expounding 1 Corinthians 3:15 in the work where he treats the last things at greatest length, refers the fire primarily to tribulation in this life, and says of a post-mortem purgative fire only *non redarguo, quia forsitan verum est*. Nothing in the doctrine depends on the verse: the Catechism rests its own argument on the practice of prayer for the dead, and so do Lyons, Florence, and Trent. This is a correction to a widely repeated claim, made at the locus where the evidence is discussed.
-4. **Trent defined two sentences and fenced the rest.** The positive definition is `purgatorium esse` and that the detained souls are helped by suffrages, above all by the Mass. The remainder of the decree is three prohibitions on popular preaching — the difficult and subtle, the uncertain or apparently false, and whatever savours of curiosity, superstition, or filthy lucre. Fire, place, duration, and degree fall under one or another. Trent did **not** condemn the school opinions: it restricted the audience.
-5. **The *Supplementum* is not a work of Aquinas's composition**, on the Leonine editors' own statement. Two incompatible accounts of the compiler are on record — the Leonine dating of the transcription to the middle of the fourteenth century with no name attached, and the widely repeated attribution to Reginald of Piperno, who died about 1290. The article resolves neither and reports both. What both accounts share, and all the argument needs, is that the Supplement is a compilation from the commentary on the *Sentences*.
-6. **What was not obtained.** No printed Denzinger volume and no conciliar manuscript or original register was reached for any of the five non-Tridentine acts; the *AAS* Latin of the 1979 letter was not reached; the Greek New Testament was not examined at all; and the modern exegetical literature on the form of Matthew 25:31–46 was not surveyed. Each of these is a real limit on a claim the article makes, and each is stated in the article's own appendix as well as here.
+- Tertullian, *De corona* (ANF 3, New Advent `fathers/0304.htm`), ch. 3.
+- Gregory, *Dialogues* IV, P. W./Gardner 1911 edition
+  (`https://www.tertullian.org/fathers/gregory_04_dialogues_book4.htm`),
+  IV.39 and IV.55 (bound at work level only).
+- Thomas à Kempis, *Imitation of Christ*, Benham, PG eBook 1653, I.24.
+- Catherine of Genoa, *Treatise on Purgatory* (London, 1858), IA
+  `treatiseonpurga00cathgoog`, ch. 2, pp. 3–4.
+- CCC 1023 page `__P2M` (bound at edition level).
 
-## Rights
+## Review corrections of 2026-10-16
 
-- **Public domain:** the tracked Challoner Douay–Rheims; Waterworth's 1848 English of Trent; the 1887 Tauchnitz Latin of Trent; Dods's 1871 English of *De civitate Dei*; Hoffmann's CSEL 40.2 Latin; the 1906 Leonine volume; the English Dominican translation of the *Summa*; and the Latin acts themselves by age.
-- **Copyrighted, quoted briefly with attribution:** the official Holy See English of the Catechism and of the 1979 letter. The exact bytes acquired from that host, and from the two transcription sites, are recorded but not redistributed by the publication.
-- **Third-party editorial work:** the Denzinger compilation's numbering and apparatus; the patristica.net presentation, which does not identify its printing; the New Advent and Corpus Thomisticum site editions, used as checked witnesses with no bulk text incorporated.
-- **Project content:** the argument, its organization, the synthesis block, the synopsis table, and every formulation not attributed above.
+Applied after the content and quotation reviews: Augustine's teaching on
+purification after death quoted from *De civ.* XXI.13 and his reserve limited
+to the reading of 1 Cor 3; "What the schools commonly taught" for the
+definition of 1336; Aquinas III q.59 a.2 restated (headship first, then three
+reasons of fittingness); Gregory "allows" the verse to be read of the fire to
+come; Lyons and Florence Latin distinguished; the Latin schools' corporeal
+fire (Supplement App. I q.2 a.1) and Florence's silence on fire added; Catherine
+labelled as the private revelation of a canonized saint and Justus's
+appearance as a reported apparition (pious tradition); the 1962 Missal named
+for the All Souls sequence and Gospel; the Offertory gloss now includes *de
+poenis inferni*; 2 Mach 12:43 and 12:46 cited separately; DS 1001 noted;
+Broadus named; Nahum (LXX) attributed as Aquinas's objection.
+
+Declined in part: Bellarmine is not named for the real-fire opinion, because
+no text of Bellarmine on purgatory was read this session; the "Greek reserve"
+is stated only as the verifiable fact that Florence's decree (DS 1304) names
+purgatorial pains without naming fire.

@@ -21,8 +21,9 @@ PC54 = ("liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/
 PC55 = ("liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/"
         "propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a")
 # The leaves published under orientation-v1, whose bytes v2 must not move.
-PUBLISHED_V1 = tuple((provider, document) for provider in ("claude", "gpt")
-                     for document in (NEXT, PC55))
+# Claude PC55 moved to orientation-v2 in its 2026-10-16 revision (run
+# 821c824684b0c7a7); the other three published orientation leaves stay v1.
+PUBLISHED_V1 = (("claude", NEXT), ("gpt", NEXT), ("gpt", PC55))
 
 
 class OrientationProjectionTests(unittest.TestCase):

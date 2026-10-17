@@ -5,74 +5,60 @@
 
 \hypersetup{
   pdftitle={The Debt of Nature},
-  pdfsubject={A discursive essay on human death: the separation of soul and body, death as natural term and as the wage of sin, the state of the separated soul, the particular judgment, the ars moriendi, and the Church's practice for the dying. The Four Last Things, Volume One}
+  pdfsubject={On Death and the Preparation for It. The Four Last Things, I}
 }
 
 \setcounter{tocdepth}{1}
-\setlength{\emergencystretch}{2em}
-\widowpenalty=10000
-\clubpenalty=10000
-\displaywidowpenalty=10000
-
-\titleformat{\section}
-  {\Large\bfseries}{\thesection}{0.55em}{}
-\titleformat{\subsection}
-  {\large\bfseries}{\thesubsection}{0.55em}{}
+\input{articles/faith/four-last-things-shared/format}
 
 \begin{document}
 
+\ifdefined\TriptychPrintEdition
 \hypersetup{pageanchor=false}
-\begin{titlepage}
-\thispagestyle{empty}
-\centering
-\vspace*{0.14\textheight}
-{\large\scshape A Triptych Article\par}
-\vspace{1.5em}
-{\Huge\bfseries The Debt of Nature\par}
-\vspace{0.9em}
-{\Large On Human Death, and Why the Tradition Counts It First\par}
-\vspace{1.4em}
-{\normalsize\itshape The Four Last Things --- Volume One\par}
-\vfill
-\end{titlepage}
-
-\pagenumbering{roman}
+\FourLastThingsTitlePage{I}{The Debt of Nature}{On Death and the Preparation for It}{In all thy works remember thy last end, and thou shalt never sin.}{Ecclesiasticus 7:40}
 \hypersetup{pageanchor=true}
-\begingroup
-\small
-\setlength{\parskip}{0pt}
-\tableofcontents
-\endgroup
-\clearpage
-
+\pagenumbering{roman}
+\else
+\fi
+\FourLastThingsNavigation
 \pagenumbering{arabic}
-\begin{deepstudy}
-\input{articles/faith/four-last-things-01-death/sections/00-the-verse-that-named-them}
-\input{articles/faith/four-last-things-01-death/sections/10-what-comes-apart}
-\input{articles/faith/four-last-things-01-death/sections/20-the-moment-no-one-occupies}
-\input{articles/faith/four-last-things-01-death/sections/30-two-questions}
-\input{articles/faith/four-last-things-01-death/sections/40-the-wage-and-the-enemy}
-\input{articles/faith/four-last-things-01-death/sections/50-what-the-soul-is-doing}
-\input{articles/faith/four-last-things-01-death/sections/60-judgment-at-the-door}
-\input{articles/faith/four-last-things-01-death/sections/70-the-craft}
-\input{articles/faith/four-last-things-01-death/sections/80-what-the-church-does}
+
+% BEGIN BODY SECTIONS (author-owned list; body sections only, in reading order)
+\input{articles/faith/four-last-things-01-death/sections/00-remember-thy-last-end}
+\input{articles/faith/four-last-things-01-death/sections/10-the-debt-of-nature}
+\input{articles/faith/four-last-things-01-death/sections/20-through-death-he-destroyed-death}
+\input{articles/faith/four-last-things-01-death/sections/30-at-what-hour}
+\input{articles/faith/four-last-things-01-death/sections/40-not-lost-but-sent-before}
+\input{articles/faith/four-last-things-01-death/sections/50-at-the-lords-altar}
+\input{articles/faith/four-last-things-01-death/sections/60-the-craft-of-dying}
+\input{articles/faith/four-last-things-01-death/sections/70-the-sacraments-of-the-departing}
+\input{articles/faith/four-last-things-01-death/sections/75-the-churchs-last-words}
+\input{articles/faith/four-last-things-01-death/sections/80-a-day-each-month}
+\input{articles/faith/four-last-things-01-death/sections/82-the-commendation-of-a-soul}
+% END BODY SECTIONS
+
 \clearpage
 \phantomsection
 \addcontentsline{toc}{section}{Notes}
 \begingroup
 \small
 \setlength{\parskip}{0.3em}
+\setlength{\parindent}{0pt}
 \theendnotes
 \endgroup
+
 \clearpage
 \appendix
-\input{articles/faith/four-last-things-01-death/sections/85-weights-synopsis}
+% BEGIN APPENDICES (author-owned list: graded teaching, scope, references)
+\input{articles/faith/four-last-things-01-death/sections/85-graded-teaching}
 \input{articles/faith/four-last-things-01-death/sections/90-scope-method-qualifications}
 \input{articles/faith/four-last-things-01-death/sections/99-references}
+% END APPENDICES
+% The revision line and the final-page rights colophon are set unindented.
+\par\setlength{\parindent}{0pt}
 \begingroup
 \setlength{\parskip}{0pt}
 {\scriptsize\input{articles/faith/four-last-things-01-death/generation-metadata}}
 \endgroup
-\end{deepstudy}
 
 \end{document}

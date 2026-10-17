@@ -192,7 +192,6 @@ PROVIDER_NONPUBLICATION_OWNERS = (
         "id": FOUR_LAST_THINGS_OWNER,
         "roots": ["articles/faith/four-last-things-shared"],
         "kind": "shared-render-owner",
-        "providers": ["gpt"],
     },
     {
         "id": BIOGRAPHY_OWNER,
@@ -445,7 +444,7 @@ def _document_shape(document: str, provider: str = DEFAULT_PROVIDER) -> tuple[st
             "proper-instance",
         )
     edges = [local]
-    if provider == "gpt" and document in FOUR_LAST_THINGS_DOCUMENTS:
+    if document in FOUR_LAST_THINGS_DOCUMENTS:
         edges.append({"id": FOUR_LAST_THINGS_OWNER, "relationship": "render-import"})
     if document.startswith("biographies/"):
         edges.append({"id": BIOGRAPHY_OWNER, "relationship": "render-import"})

@@ -1,69 +1,89 @@
-# What Death Does Not Finish — Research Scope and Qualification Record
+# What Death Does Not Finish — scope record
 
-## Work identity and governing question
+Rewritten 2026-10-16 under the maintainer's decisions of that day
+(`src/claude/articles/faith/four-last-things-shared/cold-review-2026-10-16.md`,
+"Decisions taken") and the series brief for the rewrite. Supersedes the
+July 2026 scope record, whose governing question ("if the sentence at death is
+final, what is the general judgment for?") and audit method are retired.
 
-- **Provider and collection:** Anthropic Claude; faith and theology articles.
-- **Genre and profile:** discursive theological article; `guidance/articles.md` governs, under `guidance/editorial.md` and `guidance/sources.md`. Theology governs the whole argument. No canonical claim is made, no body of law or jurisdiction is in view, and no as-of date attaches to any discipline. Trent's decree on purgatory is quoted for what it defines and for what it excludes from popular preaching, not as currently enforceable law.
-- **Series position:** Part II of *The Four Last Things*: death, judgment, hell, heaven. The four are independent works written concurrently and sharing no text. Cross-reference is by subject only, never by page or section, because the companion volumes' pagination was not available and could not have been verified.
-- **Language and currentness:** English throughout, with Latin quoted where the wording is load-bearing. Every witness was read on 2026-07-25 (UTC) except the single Ecclesiasticus search recorded below, run 2026-07-26.
-- **Intended reader:** a serious general reader who can follow careful distinctions and is not presumed to know scholastic vocabulary, Latin, or the conventions of magisterial citation.
-- **Governing question:** if the sentence passed at death is definitive, what is the general judgment for — and what does the tradition actually claim to know about either judgment, as against what it has drawn from imagery, inferred, or left open?
-- **Thesis, stated and qualified in the article's one synthesis block:** the two judgments are not two verdicts on one case but one verdict and its completion, differing in subject, in scope, and in publicity. The particular judgment terminates a person's own history; the general judgment terminates history's involvement with that person, restores the body, and makes the assessment public. The right analogy is verdict and vindication, not retrial. The claim is deliberately narrower than the section title's ambition: nothing is reassessed, and the article says so.
+## Governing purpose
 
-## Argument order and why it is that order
+Catholic spiritual reading for the close of the liturgical year and the annual
+preparation for death. The reader is placed before Christ the Judge: the
+particular judgment at death, the general judgment at his coming, purgatory as
+a mercy shown to the saved, the Church's prayer for the dead, and holy fear
+joined to hope. The *Dies irae* is the Church's own meditation on the judgment
+and runs through the essay; the essay closes in its strophes 7–19 (Latin of the
+Missal, Irons's English). Voice: from inside the faith, to a Catholic reader
+(`guidance/editorial.md`, "Speaking from within the tradition"; profile
+`guidance/articles.md`, "Faith and theology").
 
-The body follows the evidence rather than a template.
+## Order
 
-1. **The same man sentenced twice.** The difficulty at full strength, in the tradition's own voice, as the first objection at *ST* III, q. 59, a. 5; the rejected relief (soul-sleep); the two questions that govern.
-2. **What has actually been defined.** The acts in sequence — the fourfold list's own warrant and its inability to represent what the acts define; Lateran IV, Lyons II, *Ne super his*, *Benedictus Deus*, Florence; then the defined/named/open boundary, including the finding about the phrase "particular judgment"; then the 1979 letter's "distinct and deferred."
-3. **The scene in Matthew.** Matthew 25:31–46 read at its own locus, with the formal distinction between the two announced parables preceding it and the future-indicative prediction containing one simile; what it asserts; the tradition's own denial that the dialogue is a transcript; the two questions the text does not settle; Matthew 13 as a control case; the surrounding judgment sayings.
-4. **The other witnesses.** John's two hours and judgment as self-disclosure; Paul's verb of manifestation and the single paragraph of 2 Corinthians 5 that holds both judgments; the Apocalypse's books and Augustine's reading of them; the four texts of immediacy sorted strong from weak, including the correction to the usual use of Hebrews 9:27.
-5. **The body that has to come back.** The resurrection as the general judgment's precondition, not its scenery; who stands at each judgment; what the general judgment adds; the interval and what may not be filled in.
-6. **Why the second judgment is not a second trial.** Aquinas's own answer in the *Summa*; the source-critical establishment of which text of Aquinas is being read; the *Supplementum*'s different argument from governance and completion; the manifestation strand from Augustine; the labelled synthesis block with counterargument and defeaters.
-7. **Purgatory on the far side of the sentence.** Its position relative to the first judgment; what Trent defined; what Trent went out of its way not to define; the school's probable opinions with their own hedges; 1 Corinthians 3 and Augustine's reading; suffrages as the real ground.
-8. **According to his works, and what may not be said.** The criterion and its boundary against the treatise on justification; the reserved date; the prohibition of verdicts about persons; the close.
+1. The Son of Man in his majesty — the 1962 Last Sunday after Pentecost and
+   Advent I Gospels; Postconciliar Christ the King, Year A (Matt 25:31–46); the
+   *Dies irae* at All Souls; the two judgments named.
+2. At the evening of life — Heb 9:27; CCC 1022; *Ne super his*;
+   *Benedictus Deus* expounded (the series' home for it); Alphonsus XXIV.
+3. Nonetheless, on the day of judgment — *nihilominus* in Lyons II (DS 859)
+   and *Benedictus Deus* (DS 1002) only; Lateran IV; CDF 1979 point 5 on the
+   Parousia; Aquinas III q.59 a.5 (five continuations); Supplement q.88 a.1;
+   Augustine XX.1–2; verdict and vindication.
+4. The Judge who was judged — John 5:22, 27; Aquinas III q.59 aa.2–3; CCC
+   679; *Te Deum*; Chrysostom *Hom. Matt.* 79; Augustine *Sermo* 18 via CCC 1039.
+5. The books were opened — Apoc 20; Augustine XX.14; *Dies irae*; de Sales
+   I.14; Alphonsus XXIV.2.
+6. A mercy shown to the saved — Lyons, Florence, Trent XXV; CCC 1030–1031;
+   Gregory *Dial.* IV.39; Augustine XXI.26 *non redarguo*; *Spe salvi* 47;
+   Catherine of Genoa; *Imitation* I.24.
+7. Remember me at the altar — 2 Mach 12; Tertullian, Cyril, Chrysostom,
+   *Enchiridion* 110, Monica, Gregory IV.55; All Souls; Requiem Offertory;
+   *Spe salvi* 48.
+8. The fear of that day, and hope — RB 4.44–46; CCC 1041; *Imitation* I.24;
+   Ignatius's fourth rule of election; 1 John 4; *Spe salvi* 44, 47; CCC 1861
+   (one sentence); closing paragraph.
+9. Closing prayer: the *Dies irae*, strophes 7–19, with Irons stanzas 4–10.
 
-Terminal apparatus: notes, then the synopsis of claims by weight, then scope, then references, then generation metadata.
+Appendix A grades each teaching (six grades only); Appendix B is the one-page
+scope note; then references.
 
-## Evidence and authority structure
+## Authority boundary
 
-1. **Defining acts.** Lateran IV *Firmiter* (DS 801); Lyons II, profession of Michael Palaeologus (DS 856–859); John XXII *Ne super his* (DS 990–991); Benedict XII *Benedictus Deus* (DS 1000–1002); Florence *Laetentur caeli* (DS 1304–1306); Trent session VI canons 30, 32, 33 (DS 1580 for canon 30) and session XXV, decree on purgatory (DS 1820). Latin of the first five read in one dated web state of the Latin *Enchiridion symbolorum*; Trent read at page images of two printed editions, English and Latin.
-2. **Authoritative non-definitive teaching.** *Catechism of the Catholic Church* 678–679, 997–1001, 1021–1022, 1030–1032, 1038–1041, 1861, official English, archived Vatican presentation; Congregation for the Doctrine of the Faith, *Recentiores episcoporum Synodi* (17 May 1979), Holy See English, whose status as an approved but non-definitive curial act is stated wherever it is used.
-3. **Scripture.** Douay–Rheims in Challoner's revision, in the source library's tracked per-verse tables of the registered Challoner electronic edition, Vulgate numbering. No translation was composed for this article and no other English version is quoted in it.
-4. **Patristic witness.** Augustine only, and only from *De civitate Dei*: XX.1, XX.2, XX.14, XXI.13, XXI.26, in Dods's 1871 English in the tracked transcription, with one Latin check in the tracked TEI text of Hoffmann's CSEL 40.2. This is not a patristic survey and the article says so.
-5. **School theology.** Aquinas's own *Summa theologiae* III, q. 59 (English at New Advent, Latin at Corpus Thomisticum), kept distinct at every use from the *Supplementum Tertiae Partis* qq. 69, 87, 88 and its two appendices, whose status as a fourteenth-century compilation is established from the Leonine editors' own preface, read at a page image. Aquinas's *Scriptum super Sententiis* IV, d. 47, q. 1, a. 1 is read as the text the Supplement transcribes.
-6. **Project synthesis.** Listed exhaustively in the scope appendix and in the synopsis table; attributed to no source.
+Each teaching is stated in the body at its degree in one clause and graded in
+Appendix A. Only Lyons II and *Benedictus Deus* are cited for *nihilominus*
+(cold-review D1; Florence DS 1304–1306 was read and carries no such clause).
+The 1979 CDF letter is cited for the Parousia "distinct and deferred" and for
+the difference between purgatory and hell, never for "two judgments" (D2).
+"Particular judgment" is graded Church teaching (CCC 1022); the immediacy it
+names is defined (*Benedictus Deus*). The nature of the purifying fire is
+named once as an open question, with the positions held (Gregory; the
+theologians reported in *Spe salvi* 47). Gregory's Justus is graded pious
+tradition. No private revelation is used. No person's eternal state is judged
+(CCC 1861, one sentence; the full treatment belongs to Hell).
 
-## Included scope
+## Included and excluded
 
-The defined content of the six acts named above on the lot of the dead, the resurrection, the day of judgment, and purgatory; the Catechism's treatment of the particular judgment, the resurrection, purgatory, and the Last Judgment; the 1979 letter; the judgment scenes and sayings of Matthew, Luke, John, Paul, Hebrews, and the Apocalypse; Augustine on the last judgment and on purgative fire; Aquinas's own treatment of the general judgment and the Supplement's, with the provenance of the latter established; the relation of purgatory to the particular judgment and Trent's actual definitions against the popular accretions; the bounds of "according to works"; and the prohibition of verdicts about persons.
+Included: the above. Excluded by the series division of labour: Ecclus 7:40
+and the fourfold scheme (Death); the *ars moriendi*, Ostia at length (Death);
+the pains, eternity and population of hell, Judas, the few/many witness (Hell);
+the beatific vision beyond the clause *Benedictus Deus* defines (Heaven).
+Removed from the July text: the Supplement-provenance digression (one sentence
+on the Supplement's character now stands in Appendix B), the form-critical
+argument on Matt 25:31, the synthesis/objection box, the defined/named/open
+audit, the debunking frame of purgatory, and the reading of Trent's preaching
+rule as a verdict on school opinions (cold-review reservation; D8).
 
-## Excluded scope and material limits
+## Consequential negative results
 
-Excluded: death itself, and the *ars moriendi* — the first volume's subject; the nature and population of hell — the third volume's; the vision of God beyond the boundary *Benedictus Deus* draws — the fourth volume's; the treatise on justification, merit, grace, and predestination, bounded in the last section and not developed; Christology and soteriology, presupposed; the philosophical problems of the intermediate state (the mode of a separated soul's existence, temporal succession in it, personal identity across the interval); limbo and the fate of the unbaptized; indulgences and the application of suffrages; private revelations about purgatory or the judgment, of which none is used or cited; the modern exegetical literature on the form and sources of Matthew 25:31–46; the Greek New Testament, not examined at all; apocalyptic chronology, millennialism, and eschatological sign-reading; and any judgment about the destiny of any named person.
-
-Material limits, stated in full in the article's appendix and again in `source-audit.md`: all conciliar and papal Latin except Trent was read in one dated web presentation of a compilation that does not identify the printing it transcribes, and no printed Denzinger and no conciliar manuscript was collated; English renderings of Latin acts are working glosses except where the Catechism's own English is quoted; Trent was read at page images inspected directly rather than from OCR, but the Roman edition of 1834 behind the Tauchnitz reprint was not itself consulted; the English of Aquinas throughout is one dated web presentation of the English Dominican translation and no printed copy was collated; the Latin of the Supplement was read partly at a Leonine page image and partly in an uncorrected machine transcription used only as a finding aid, and the Supplement/*Scriptum* comparison in the source-critical section is a comparison of two transcriptions and not a collation; the Supplement's compiler is not settled and two incompatible accounts are reported rather than harmonized; the Catechism and the 1979 letter are quoted from web delivery states and the *Acta Apostolicae Sedis* Latin of the letter was not consulted; and the article makes no negative-search claim about any magisterial corpus — where it says a phrase does not occur in the acts of the second section, that is a statement about the wording of those acts as delivered by the registered witness, checked by reading them.
-
-## Relation to the companion volumes
-
-The volume on death independently reached two findings that bear on this one, and this article engages both rather than assuming otherwise. First, that the fourfold enumeration is a devotional and pedagogical ordering with no conciliar promulgation: this article makes the same observation from its own evidence — Ecclesiasticus 7:40 located by a recorded search of the tracked text, and the absence of the enumeration from the acts it read — and turns it to argumentative use, since a list with one slot for judgment cannot represent a structure the acts define as two events. Second, that the phrase "particular judgment" occurs in neither of the acts usually cited for it: this article confirms that for all five acts it read, and adds a further finding of its own, that the Latin at the place where English readers most often meet the term — Supplement q. 88, a. 1, ad 1 — reads *iudicium singulare*, with *particularis* said in the following reply of the *sentence* and not of the judgment. The article accordingly uses the term throughout, as the Catechism does, while stating that its warrant is theological usage and not a conciliar act.
-
-## Rights and source boundary
-
-Public domain: the Douay–Rheims in Challoner's revision as tracked; Waterworth's 1848 English of Trent; the 1887 Tauchnitz Latin of Trent; Dods's 1871 English of *De civitate Dei*; Hoffmann's CSEL 40.2 Latin; the 1906 Leonine volume; the English Dominican translation of the *Summa*; and the Latin acts of 1215, 1274, 1334, 1336, 1439, 1547, and 1563 as acts. Copyrighted, quoted briefly with attribution: the official Holy See English of the Catechism and of the 1979 letter. Editorial rights retained by third parties: printed editions of Denzinger, and the web presentations of the Enchiridion, the *Summa*, and the *Scriptum*, used as checked witnesses with no bulk text incorporated into the publication. None of this material is relicensed by this publication; project-created prose, organization, and synthesis fall under the repository's project-content terms.
-
-## Review state
-
-## First-baseline review — 2026-07-26
-Both candidates agreed on judgment, purification, and Augustine's qualified possibility. The authoring state is fit for baseline. See `src/sources/inventories/four-last-things-staleness-review-2026-07-26.md`.
-
-Completed: claim-driven research with same-day reading of every quoted witness (2026-07-25, with one recorded search on 2026-07-26); direct inspection of six printed page images of Trent and two of the Leonine volume; registration of the new work, edition, artifact, and passage records enumerated in `source-bindings.toml`, with `scripts/source-library validate` clean; classification of every consequential claim by weight, with the synopsis table as the terminal audit; boundary review against the three companion volumes; rights review; internal argumentative, source-consistency, and quotation review; a multipass build with clean fatal-error, undefined-reference, and layout scans; the generation-metadata gate; the web-edition eligibility gate and a checked conversion; and page-by-page raster review of the built PDF.
-
-Outstanding: independent scriptural, patristic, Thomistic, dogmatic, theological, and ecclesiastical review. No imprimatur, nihil obstat, ecclesiastical approval, or completion of independent review is claimed, and internal checking is not independent review. The provenance finding about the *Supplementum* deserves the attention of someone able to read the Leonine apparatus properly and with access to the manuscript scholarship this article did not consult. The three findings that would change the article's central synthesis are named in the synthesis block itself and are the most actionable follow-ups.
-
-## Research-staleness verdict — 2026-07-27
-
-The three treatments were compared against new Eucharistic loci in the
-Catechism, Trent, and Aquinas. They do not change particular or general
-judgment, purgatory, or resurrection. No consequential claim changes; no
-material change.
+- No Missal witness held as page images or tracked text for 1962 supplies the
+  *Dies irae* (the 1962 typica text is rights-withheld in
+  `src/sources/calendars/roman-1962/propers.yaml`); the Latin is therefore the
+  1889 Tournai (Desclée) printing, read at its page images.
+- No public-domain English of the Rule of Benedict chapter 4 is held or was
+  found in the registered Henderson (1910) witness, which abridges chapter 4;
+  RB 4.44–46 is given in Latin with a prose gloss.
+- No local or registered Roman Breviary text of the *Te Deum*; the line
+  *Judex crederis esse venturus* is quoted from Blunt (1866) and the following
+  verse with English from Alphonsus (Duffy 1843), both read at page images.
+- John of the Cross, *Dichos* 64, and Augustine, *Sermo* 18, are quoted only
+  as the Catechism quotes them.

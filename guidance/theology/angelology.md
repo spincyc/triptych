@@ -107,26 +107,19 @@ distinctions and expansive patristic exposition.
 The maintainer restated the direction for the Claude edition on 30 September
 2026: the work is an authentic Catholic treatise and an expansive account of
 what the best patristic and saintly sources wrote about the angels, not a
-secular or skeptical review. The rules that follow from it bind every edition.
+secular or skeptical review. The voice rules that follow from it are now
+universal and live in `guidance/editorial.md`, "Speaking from within the
+tradition". They cover stating each teaching at its degree, forbidding
+sentences about what the Church has not decided, letting the Fathers and
+saints speak at length, and relating devotional tradition as the Church
+receives it. Two applications belong to this profile and bind every edition:
 
-- Declare each teaching at its degree of determination and move on. The
-  verb carries the degree — "the Church confesses", "Scripture teaches",
-  "the Fathers commonly hold", "Aquinas determines", "it is piously
-  believed" — and the dossier carries the grade. One compact clause is the
-  most a body paragraph spends on authority.
-- Do not write sentences about what an act is not or what the Church has
-  not decided: "not a definition", "defines nothing", "adds no grade", "no
-  magisterial act addresses", "carries weight only by", "left to theology".
-  Name an act's kind once, where it is introduced, and then state what it
-  teaches.
-- Let the Fathers and saints speak at length. A major witness receives its
-  own exposition: the argument, the exegesis, the images, and focused
-  quotations at identified loci, not a citation list.
+- The dossier carries the grade, so the body states each teaching at its
+  degree in the verb alone.
 - Present the angels, the demons, and the Church's cult of the angels as the
-  faith presents them. Hagiography and devotional tradition are related as
-  the Church receives them ("tradition relates") and graded **Pious
-  tradition**, without debunking. Historical-critical data appear only where
-  a claim depends on them, in a sentence, with fuller treatment in the scope
+  faith presents them. Hagiography and devotional tradition are graded
+  **Pious tradition**. Historical-critical data appear only where a claim
+  depends on them, in a sentence, with fuller treatment in the scope
   appendix.
 
 ## Dossier contract

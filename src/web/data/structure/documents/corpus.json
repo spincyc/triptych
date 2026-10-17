@@ -3,7 +3,7 @@
  "counted": {
   "documents": 211,
   "issues": 265,
-  "pages": 7155,
+  "pages": 7133,
   "titles_unrecorded": 0,
   "works": 151
  },
@@ -13,7 +13,7 @@
    "id": "GPT-5-based Codex agent"
   },
   {
-   "documents": 91,
+   "documents": 95,
    "id": "claude-opus-5-5[1m]"
   },
   {
@@ -554,22 +554,38 @@
        "model": "claude-opus-5[1m]",
        "qualifiers": "unexposed: reasoning-effort and sampling configuration",
        "runtime": "Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "dispatch-declared-effort=high; unexposed: sampling configuration",
+       "runtime": "Anthropic Claude Code agent, fresh general-purpose subagents with no inherited conversation (cold review of 16 October 2026: quotation verification and patristic and classical-forms research lanes; rewrite of 16 October 2026 under the maintainer's decisions of that day: author of essay I, Death, covering research, drafting, verification of every quotation at its locus, and source records; and the independent content and quotation reviews that accepted it with corrections); Claude Code CLI 2.1.300; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "dispatch-declared-effort=medium; unexposed: sampling configuration",
+       "runtime": "Anthropic Claude Code agent, fresh general-purpose subagents with no inherited conversation (cold review of 16 October 2026: presentation and comparator lanes; production-pipeline survey; final page review of the rewritten series); Claude Code CLI 2.1.300; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
+       "runtime": "Anthropic Claude Code agent, coordinating session (cold review of 16 October 2026; series brief and shared format; integration, typesetting, web edition and production review of the rewrite); Claude Code CLI 2.1.300; unexposed: server revision"
       }
      ],
      "eligibility": "eligible",
      "models": [
-      "claude-opus-5[1m]"
+      "claude-opus-5[1m]",
+      "claude-opus-5-5[1m]"
      ],
-     "pages": 36,
+     "pages": 29,
      "pdf": "pdf/claude/articles/faith/four-last-things-01-death.pdf",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
      "provider": "claude",
-     "reviewed": "2026-07-26",
-     "revised": "2026-07-26T03:53:16Z",
+     "reviewed": "2026-10-16",
+     "revised": "2026-10-16T17:56:47Z",
      "status": "alpha",
-     "subject": "A discursive essay on human death: the separation of soul and body, death as natural term and as the wage of sin, the state of the separated soul, the particular judgment, the ars moriendi, and the Church's practice for the dying. The Four Last Things, Volume One",
+     "subject": "On Death and the Preparation for It. The Four Last Things, I",
      "title": "The Debt of Nature",
      "title_source": "src/claude/articles/faith/four-last-things-01-death/main.tex",
      "web": "web/claude/articles/faith/four-last-things-01-death.html"
@@ -619,23 +635,39 @@
        "model": "claude-opus-5[1m]",
        "qualifiers": "unexposed: reasoning-effort and sampling configuration",
        "runtime": "Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "dispatch-declared-effort=high; unexposed: sampling configuration",
+       "runtime": "Anthropic Claude Code agent, fresh general-purpose subagents with no inherited conversation (cold review of 16 October 2026: quotation verification and patristic and classical-forms research lanes; rewrite of 16 October 2026 under the maintainer's decisions of that day: author of essay II, Judgment, covering research, drafting, verification of every quotation at its locus, and source records; and the independent content and quotation reviews that accepted it with corrections); Claude Code CLI 2.1.300; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "dispatch-declared-effort=medium; unexposed: sampling configuration",
+       "runtime": "Anthropic Claude Code agent, fresh general-purpose subagents with no inherited conversation (cold review of 16 October 2026: presentation and comparator lanes; production-pipeline survey; final page review of the rewritten series); Claude Code CLI 2.1.300; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
+       "runtime": "Anthropic Claude Code agent, coordinating session (cold review of 16 October 2026; series brief and shared format; integration, typesetting, web edition and production review of the rewrite); Claude Code CLI 2.1.300; unexposed: server revision"
       }
      ],
      "eligibility": "eligible",
      "models": [
-      "claude-opus-5[1m]"
+      "claude-opus-5[1m]",
+      "claude-opus-5-5[1m]"
      ],
-     "pages": 37,
+     "pages": 33,
      "pdf": "pdf/claude/articles/faith/four-last-things-02-judgment.pdf",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
      "provider": "claude",
-     "reviewed": "2026-07-26",
-     "revised": "2026-07-26T10:02:00Z",
+     "reviewed": "2026-10-16",
+     "revised": "2026-10-16T17:56:47Z",
      "status": "alpha",
-     "subject": "Judgment: a Catholic study of the particular and the general judgment, their relation, the resurrection of the body as the general judgment's precondition, the judgment scenes read at their own loci, and purgatory's place relative to the first sentence",
-     "title": "The Four Last Things: What Death Does Not Finish",
+     "subject": "On the Particular and the General Judgment. The Four Last Things, II",
+     "title": "What Death Does Not Finish",
      "title_source": "src/claude/articles/faith/four-last-things-02-judgment/main.tex",
      "web": "web/claude/articles/faith/four-last-things-02-judgment.html"
     },
@@ -684,23 +716,44 @@
        "model": "claude-opus-5[1m]",
        "qualifiers": "unexposed: reasoning-effort and sampling configuration",
        "runtime": "Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "dispatch-declared-effort=xhigh; unexposed: sampling configuration",
+       "runtime": "Anthropic Claude Code agent, fresh general-purpose subagents with no inherited conversation (rewrite of 16 October 2026 under the maintainer's decisions of that day: author of essay III, Hell, covering research, drafting, verification of every quotation at its locus, and source records; and the independent content review that accepted it with corrections); Claude Code CLI 2.1.300; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "dispatch-declared-effort=high; unexposed: sampling configuration",
+       "runtime": "Anthropic Claude Code agent, fresh general-purpose subagents with no inherited conversation (cold review of 16 October 2026: quotation verification and patristic and classical-forms research lanes; and the independent quotation verification of the rewritten essay III, Hell); Claude Code CLI 2.1.300; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "dispatch-declared-effort=medium; unexposed: sampling configuration",
+       "runtime": "Anthropic Claude Code agent, fresh general-purpose subagents with no inherited conversation (cold review of 16 October 2026: presentation and comparator lanes; production-pipeline survey; final page review of the rewritten series); Claude Code CLI 2.1.300; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
+       "runtime": "Anthropic Claude Code agent, coordinating session (cold review of 16 October 2026; series brief and shared format; integration, typesetting, web edition and production review of the rewrite); Claude Code CLI 2.1.300; unexposed: server revision"
       }
      ],
      "eligibility": "eligible",
      "models": [
-      "claude-opus-5[1m]"
+      "claude-opus-5[1m]",
+      "claude-opus-5-5[1m]"
      ],
-     "pages": 38,
+     "pages": 37,
      "pdf": "pdf/claude/articles/faith/four-last-things-03-hell.pdf",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
      "provider": "claude",
-     "reviewed": "2026-07-26",
-     "revised": "2026-07-26T03:17:43Z",
+     "reviewed": "2026-10-16",
+     "revised": "2026-10-16T17:56:47Z",
      "status": "alpha",
-     "subject": "A discursive theological article on hell: what has actually been defined and by which acts, the pain of loss and the pain of sense, the eternity of punishment and the texts it rests on, the patristic range, the Thomistic treatment read at its own loci, the question of who is in fact damned, and the universal salvific will. The Four Last Things, Part III",
-     "title": "Nothing Said of Anyone",
+     "subject": "On Hell, Its Pains, and Its Eternity. The Four Last Things, III",
+     "title": "The Fire That Is Not Extinguished",
      "title_source": "src/claude/articles/faith/four-last-things-03-hell/main.tex",
      "web": "web/claude/articles/faith/four-last-things-03-hell.html"
     },
@@ -749,22 +802,38 @@
        "model": "claude-opus-5[1m]",
        "qualifiers": "unexposed: reasoning-effort and sampling configuration",
        "runtime": "Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "dispatch-declared-effort=high; unexposed: sampling configuration",
+       "runtime": "Anthropic Claude Code agent, fresh general-purpose subagents with no inherited conversation (cold review of 16 October 2026: quotation verification and patristic and classical-forms research lanes; rewrite of 16 October 2026 under the maintainer's decisions of that day: author of essay IV, Heaven, covering research, drafting, verification of every quotation at its locus, and source records; and the independent content and quotation reviews that accepted it with corrections); Claude Code CLI 2.1.300; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "dispatch-declared-effort=medium; unexposed: sampling configuration",
+       "runtime": "Anthropic Claude Code agent, fresh general-purpose subagents with no inherited conversation (cold review of 16 October 2026: presentation and comparator lanes; production-pipeline survey; final page review of the rewritten series); Claude Code CLI 2.1.300; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
+       "runtime": "Anthropic Claude Code agent, coordinating session (cold review of 16 October 2026; series brief and shared format; integration, typesetting, web edition and production review of the rewrite); Claude Code CLI 2.1.300; unexposed: server revision"
       }
      ],
      "eligibility": "eligible",
      "models": [
-      "claude-opus-5[1m]"
+      "claude-opus-5[1m]",
+      "claude-opus-5-5[1m]"
      ],
-     "pages": 39,
+     "pages": 29,
      "pdf": "pdf/claude/articles/faith/four-last-things-04-heaven.pdf",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
      "provider": "claude",
-     "reviewed": "2026-07-26",
-     "revised": "2026-07-26T03:28:39Z",
+     "reviewed": "2026-10-16",
+     "revised": "2026-10-16T17:56:47Z",
      "status": "alpha",
-     "subject": "A discursive theological article on heaven: the beatific vision as defined in Benedictus Deus, the Thomistic light of glory, the Eastern essence-and-energies alternative, the resurrection of the body, degrees of beatitude, the communion of saints, and the boundary between defined doctrine and theological speculation. The Four Last Things, Part IV",
+     "subject": "On Heaven and the Vision of God. The Four Last Things, IV",
      "title": "Then Face to Face",
      "title_source": "src/claude/articles/faith/four-last-things-04-heaven/main.tex",
      "web": "web/claude/articles/faith/four-last-things-04-heaven.html"
