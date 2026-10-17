@@ -4,7 +4,7 @@ schema_version = 1
 id = "missal-chronology-acceptance-review-2026-10-17"
 owner = "guidance/time-machine.md"
 promise = "Execute the corrected chronology handoff's bounded acceptance review for the Roman, Ruthenian and Cistercian progressions, repair reproducible in-scope findings, and deliver a durable disposition and current review transport without claiming wider corpus completion or maintainer approval."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "independent-reader-review"
@@ -21,8 +21,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "review-delivery"
   criterion = "A tracked report records the final recommendation and remaining decisions; a fresh immutable handoff and byte-verified ZIP bind current artifacts, checks and screenshots, and the reviewed change is committed and pushed to feature/missal-timeline."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/missal-chronology-2026-10-17/REPORT.md", "PROJECT-WORK.md"]
 
 [[deliverables]]
 id = "all-rite-missal-timeline-2026-10-16"

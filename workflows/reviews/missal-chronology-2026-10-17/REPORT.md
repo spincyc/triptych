@@ -125,12 +125,26 @@ recollation or specialist historical acceptance.
 
 The full promised-deliverable ledger has exactly the same 32 missing
 installed-PDF findings as the pre-change ledger, verified by byte comparison.
-No new finding was added.
+No new finding was added. Validating the exact review-deliverable entry in an
+isolated ledger with `--require-complete` passes: one tracked, one complete.
 
 ## Disposition and delivery
 
-Independent review and corrections are verified; immutable transport assembly
-is the remaining delivery step. The recommendations do not substitute for
+Independent review, corrections and immutable transport delivery are complete.
+The reviewed implementation is
+`35864a63a486ce1a252c70487a68b991f81c2f26`, pushed to
+`origin/feature/missal-timeline`. Its transport directory is
+`.scratch/agent-handoffs/20261017T105920Z-missal-chronology-acceptance/`;
+the sibling ZIP is
+`.scratch/agent-handoffs/20261017T105920Z-missal-chronology-acceptance.zip`.
+Both were created successfully. All 692 checksum entries match, and the
+693-file ZIP passes CRC, exact member-set and byte-equality verification.
+Its SHA-256 is
+`23367c2ed023218e9212159971dce7a04e82b4a2e0ac08e91aa522b39523ffa6`.
+The package preserves the reviewed commit's report; this later delivery record
+closes that report's then-pending assembly step without changing the package.
+
+The recommendations do not substitute for
 final maintainer reader judgment. No newly discovered recension has displaced
 the existing original-book collation priorities in this bounded review.
 The broader historical catalogue, witnesses and complete texts,
