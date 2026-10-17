@@ -262,6 +262,29 @@ nav a { color: var(--ink); text-decoration: none; }
 .page-shell.page-browser { max-width: 60rem; }
 .page-shell.reading table { display: block; width: max-content; max-width: 100%; overflow-x: auto; }
 
+/* A reading table whose unbreakable words are wider than the column scrolls
+   sideways, and its only cue was a scrollbar at its foot, thousands of pixels
+   below the clipped header a reader meets first (WEB-002, 2026-10-16). So the
+   edge that has more beyond it fades, from the header row down, and the fade
+   follows the scroll. A scroll timeline is inactive on a box with nothing to
+   scroll, so a table that fits and the dossier below are untouched, as is
+   print; a browser without scroll timelines keeps the scrollbar alone. The
+   fade is one cell padding wide, so a table clipped only in its padding keeps
+   its words unfaded. */
+@supports (animation-timeline: scroll()) {
+  @media screen {
+    .page-shell.reading table {
+      animation: reading-table-overflow linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+}
+@keyframes reading-table-overflow {
+  0% { mask-image: linear-gradient(to left, transparent, #000 0.9rem); }
+  2%, 98% { mask-image: linear-gradient(to right, transparent, #000 0.9rem, #000 calc(100% - 0.9rem), transparent); }
+  100% { mask-image: linear-gradient(to right, transparent, #000 0.9rem); }
+}
+
 /* A proper study's Scriptural Date and Location dossier: four columns (Proper
    or Textual unit, Citation, Location, Date) that a reader needs side by side,
    so no column of it may go behind a sideways scroll — the maintainer's

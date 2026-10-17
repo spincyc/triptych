@@ -1276,6 +1276,34 @@ class PublicAlphaTest(unittest.TestCase):
             r"\.page-shell\.reading dt\s*\{[^}]*font-weight:\s*700;",
         )
 
+    def test_overflowing_reading_table_fades_the_edge_it_scrolls_toward(self) -> None:
+        """Keep a sideways-scrolling reading table's cue where it is first met.
+
+        WEB-002 (2026-10-16): a reading table wider than the column scrolled
+        with no cue but a scrollbar at its foot. The cue is a mask driven by
+        the table's own inline scroll timeline, which is inactive when the
+        table has nothing to scroll, so a table that fits is untouched. It is
+        screen-only, so print is untouched too, and it fades no more than one
+        cell padding, so a table clipped only in its padding keeps its words.
+        """
+        css = (
+            REPOSITORY_ROOT / "release/public-alpha/assets/site.css"
+        ).read_text(encoding="utf-8")
+        self.assertRegex(
+            css,
+            r"@supports \(animation-timeline: scroll\(\)\) \{\s*@media screen \{\s*"
+            r"\.page-shell\.reading table \{\s*animation: reading-table-overflow linear both;\s*"
+            r"animation-timeline: scroll\(self inline\);\s*\}",
+        )
+        keyframes = re.search(r"@keyframes reading-table-overflow \{(.*?)\n\}", css, flags=re.S)
+        self.assertIsNotNone(keyframes)
+        body = keyframes.group(1)
+        self.assertEqual(body.count("mask-image:"), 3)
+        padding = re.search(r"^th, td \{[^}]*padding: [\d.]+rem ([\d.]+rem);", css, flags=re.M)
+        self.assertIsNotNone(padding)
+        self.assertEqual(set(re.findall(r"#000 ([\d.]+rem)", body)), {padding.group(1)})
+        self.assertNotIn("mask-image", css[css.index("@media print"):])
+
     def test_every_dossier_heading_has_an_id_the_narrow_dossier_rule_names(self) -> None:
         """Keep each proper dossier within reach of its phone-width layout.
 
