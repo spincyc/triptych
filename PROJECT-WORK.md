@@ -26,7 +26,7 @@ scope boundary is unchanged. A new version-12 run revises the leaf in place.
 It is seeded with the [research handoff](workflows/reviews/claude-pc-s55-revision-2026-10-16/HANDOFF.md), which lists the 22 standing
 findings and seven sourcing defects as leads, and keeps the GPT leaf closed.
 
-**Accepted and committed; the push to `main` is next.** Run
+**Complete: accepted, pushed to `main` and verified live.** Run
 `821c824684b0c7a7` (`proper-study` v12) reached ACCEPTED with no escalation:
 21 packets, 21 results, one intervention. Every review passed at its first
 round. Of the 22 standing findings, 21 are resolved. VIS-004 stays open: it
@@ -46,6 +46,17 @@ leaf under `evaluations/proper-study-results/821c824684b0c7a7/`, and
 [CYCLES.md](workflows/reviews/claude-pc-s55-revision-2026-10-16/CYCLES.md) accounts for every finding and source. `make check-sources`,
 `check-release-bindings`, `check-web-editions-current`, the promise ledger
 and `tmt check` pass.
+After acceptance, a stylesheet fix (`7bc3a878d`) fades the edge a
+reading-page table scrolls toward (the revision's WEB-002). Meanwhile `main`
+had moved with the Claude Four Last Things rewrite, so it was merged by an
+ordinary merge (`6b288c6ae`). The three deploy gates passed locally, and
+`main` was fast-forwarded from `be3b95612` to `6b288c6ae`. Pages run
+`38988086820` and repository-hygiene run `38988086833` succeeded. The three
+revised PDFs, the web page, the stylesheet and the Novus Ordo catalog are
+served byte-identical to the locally verified site; see the
+[deployment evidence](workflows/reviews/claude-pc-s55-revision-2026-10-16/deployment-evidence.json).
+VIS-004 (the shared homily environment) and the shared-data observations
+listed in CYCLES.md remain for their owners.
 
 ## Claude Four Last Things rewrite as Catholic spiritual reading, 2026-10-16
 

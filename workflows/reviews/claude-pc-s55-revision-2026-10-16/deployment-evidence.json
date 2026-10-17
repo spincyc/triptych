@@ -1,0 +1,92 @@
+{
+ "record_type": "deployment-verification",
+ "verified_on": "2026-10-16",
+ "commit": "6b288c6ae",
+ "commit_full": "6b288c6ae91e751a12f511f3fc9b33c572df9662",
+ "main_base": "be3b95612",
+ "main_base_full": "be3b95612286480d5707e7edbf3e2bdffa7a6331",
+ "integration": "origin/main had advanced with the Claude Four Last Things rewrite; it was merged into the workspace branch by an ordinary merge (6b288c6ae), not a rebase, so the revision run's seed commit stays reachable; main was then fast-forwarded to the merge. No force push or history rewrite.",
+ "local_gates": [
+  {
+   "command": "make check-deployment-sources",
+   "exit_code": 0,
+   "log_sha256": "dc234bd45341dba428e0ba1049eb75bb970f8184ef6ebc5076f9259108b6a7a3"
+  },
+  {
+   "command": "make public-site",
+   "exit_code": 0,
+   "log_sha256": "086b60ef0537fbe8d7ecce4cbe20da6db1c5249c8177d84c7f4f947ae290e902"
+  },
+  {
+   "command": "tools/tpt public-alpha verify --deployment-target github-pages",
+   "exit_code": 0,
+   "log_sha256": "b8dcb442f8587c1f6a2ca5328918e733ab0cd39794880f3c195805902e79ba14"
+  }
+ ],
+ "local_gate_environment": "Python Markdown 3.10.3 and PyYAML 6.0.3 from requirements-public-alpha.txt and requirements-tools.txt; the four rewritten Four Last Things PDFs were restored from the live site's SHA256SUMS and hash-checked before the catalogue was regenerated and the gates ran",
+ "disclosure": "Outgoing range be3b95612..6b288c6ae, 11 commits, 159 files; added text lines scanned for machine paths, usernames, hosts, addresses and credentials with no match. Seven added binaries are public-domain facsimiles or scans (Wilson 1894 pp. 105, 229, 237; the whole Feltoe 1896 Internet Archive scan; Lewis and Short 1879 title and p. 1101; Schuster 1927 vol. 3 pp. 182-185; The Liturgical Year XI 1883 pp. 472-485); their strings carry no host path or user name (one 4-byte match inside a compressed image stream of the unaltered Feltoe scan is noise). Publisher-restricted GIRM, readings, NABRE and Vatican pages are tracked as metadata only.",
+ "workflow_run": "https://github.com/spincyc/triptych/actions/runs/38988086820",
+ "workflow_conclusion": "success",
+ "repository_hygiene_run": "https://github.com/spincyc/triptych/actions/runs/38988086833",
+ "repository_hygiene_conclusion": "success",
+ "publication": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+ "provider": "claude",
+ "revision_run": "821c824684b0c7a7",
+ "routes": [
+  {
+   "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.pdf",
+   "http_status": 200,
+   "sha256": "99dfcd63a22fca05cdfe45681a32d4191440de4c36c1600eac6a3d354fe39304",
+   "physical_pages": 37,
+   "compared_with": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.pdf (the installed reviewed PDF) and build/public-alpha/site/pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.pdf",
+   "match": "byte-identical"
+  },
+  {
+   "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+   "http_status": 200,
+   "sha256": "a7548416bd93dea8149edc2bbc391ec647cfa8187319ea7008a36396671c7578",
+   "physical_pages": 12,
+   "compared_with": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.pdf (the installed reviewed PDF) and build/public-alpha/site/pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+   "match": "byte-identical"
+  },
+  {
+   "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily.pdf",
+   "http_status": 200,
+   "sha256": "6c71eddb0515a3015a5630b5862e69e265870acc886fff47df8d03208cefce55",
+   "physical_pages": 4,
+   "compared_with": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily.pdf (the installed reviewed PDF) and build/public-alpha/site/pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily.pdf",
+   "match": "byte-identical"
+  },
+  {
+   "url": "https://mystago.gy/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.html",
+   "http_status": 200,
+   "sha256": "3b42cd1ca26dab56eca903d31674749dce1901ea9531ad0b6f7f03835ebddd90",
+   "bytes": 160825,
+   "compared_with": "build/public-alpha/site/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.html (the locally verified site)",
+   "match": "byte-identical"
+  },
+  {
+   "url": "https://mystago.gy/assets/site.css",
+   "http_status": 200,
+   "sha256": "8667f2856518190333f431c6ee9e25f139ab92add677c1a8a25d432ebc6641eb",
+   "bytes": 27243,
+   "compared_with": "build/public-alpha/site/assets/site.css (the locally verified site)",
+   "match": "byte-identical"
+  },
+  {
+   "url": "https://mystago.gy/library/novus-ordo-liturgy.html",
+   "http_status": 200,
+   "sha256": "366a63e7c104fc1b60e8b6a420fe17a227fcbd28adac9de4749eab102698f04a",
+   "bytes": 29210,
+   "compared_with": "build/public-alpha/site/library/novus-ordo-liturgy.html (the locally verified site)",
+   "match": "byte-identical",
+   "links_found": [
+    "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-claude-27a86667518812dc.pdf",
+    "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily-claude-8fa2e02c5fa60f1c.pdf",
+    "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis-claude-48194c125850f84a.pdf",
+    "web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.html"
+   ],
+   "link_note": "The catalog row links each PDF through its provider-qualified alias; each alias was fetched live (HTTP 200) and is byte-identical to the canonical route above."
+  }
+ ]
+}

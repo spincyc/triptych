@@ -75,9 +75,11 @@ no blocking finding and 13 advisories, which stand in the leaf's
 - **Homily:** HOM-003 (the note's account of what the speech takes from the
   second interpretation).
 - **Web:** WEB-002 (the five-column branches table overflows the desktop
-  reading column by about 23 px). This is shared stylesheet work and is
-  repaired after acceptance in a separate commit, which leaves the reviewed
-  bytes unchanged.
+  reading column by about 23 px). This is shared stylesheet work. After
+  acceptance, commit `7bc3a878d` answered it with the finding's second
+  remedy: the table still scrolls, and it now visibly signals the scroll by
+  fading the edge it scrolls toward, from the header row down. The reviewed
+  bytes are unchanged.
 
 Observations on shared code and data that a later owner should take up:
 - The response citation (Ps 96:7b) prints unlabelled after the verses.

@@ -4,7 +4,7 @@ schema_version = 1
 id = "claude-pc-s55-revision-2026-10-16"
 owner = "PROJECT-WORK.md"
 promise = "Fix the standing issues and the sourcing of the published Claude postconciliar Twenty-ninth Sunday (pc-s55): repair the shared tools the first run exposed, then drive a fresh proper-study version-12 run for the same identity through terminal acceptance with fresh cold reviews, resolving the 22 standing findings and the sourcing defects the handoff lists or recording why one cannot be resolved; publish the revised three documents and web edition; document every cycle; push to origin/main with the Pages deployment verified."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "claude-pc-s55-revision-tools"
@@ -36,8 +36,11 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "claude-pc-s55-revision-main-and-pages"
   criterion = "On the maintainer's 2026-10-16 instruction, the revision reaches origin/main by fast-forward after the three deploy gates pass locally, and the triggered Pages run and the revised routes are verified live."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/claude-pc-s55-revision-2026-10-16/deployment-evidence.json", "PROJECT-WORK.md"]
+  check = "contains"
+  path = "workflows/reviews/claude-pc-s55-revision-2026-10-16/deployment-evidence.json"
+  needle = "\"workflow_conclusion\": \"success\""
 
 [[deliverables]]
 id = "claude-four-last-things-rewrite-2026-10-16"
