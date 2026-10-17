@@ -937,7 +937,17 @@ def _stage_requests(history, dense_traditions=None):
     return requests or [{"width": 1600, "includeProvisional": True, "compact": True}]
 
 
-def _stage_detail_blocks(history, members, edges):
+def _stage_outgoing_references(history, stage_id, member_ids, stage_sheets):
+    """Expose recorded onward connections even when their arrow is on another sheet."""
+    keys = _stage_keys(history)
+    return [f"Outgoing: {keys['transitions'][row['id']]} → {keys['stages'][row['to_stage']]} on "
+            + "/".join(stage_sheets.get(row["to_stage"], ["undated register"]))
+            + f" · {row['kind'].replace('-', ' ')} · {row['evidence_level'].replace('-', ' ')} · {row['status']}."
+            for row in history.get("transitions", [])
+            if row["from_stage"] == stage_id and row["to_stage"] not in member_ids]
+
+
+def _stage_detail_blocks(history, members, edges, stage_sheets=None):
     """Same-page source-derived explanations, independent of chart geometry."""
     keys = _stage_keys(history)
     stages = {row["id"]: row for row in history.get("stages", [])}
@@ -946,9 +956,6 @@ def _stage_detail_blocks(history, members, edges):
 
     def refs(evidence):
         return "; ".join(dict.fromkeys(keys["sources"][row["source_id"]] + " · " + row["locus"] for row in evidence))
-
-    def excerpt(label, value):
-        return label + (" (excerpt)" if len(value) > 220 else "") + ": " + (value[:217] + "…" if len(value) > 220 else value)
 
     def block(identifier, heading, values, kind):
         rows = [(line, 16, "bold", 21) for line in textwrap.wrap(heading, 155, break_on_hyphens=False)]
@@ -960,7 +967,8 @@ def _stage_detail_blocks(history, members, edges):
     for node in sorted(members, key=lambda node: (node["stage"]["start_year"], node["stage"]["end_year"], node["key"])):
         row = node["stage"]
         block(row["id"], node["key"] + " · " + ", ".join(row.get("components", [])),
-              [excerpt("Scope", row["scope"]), "State evidence: " + refs(row.get("evidence", []))], "stage-scope")
+              ["Scope: " + row["scope"], "State evidence: " + refs(row.get("evidence", []))]
+              + _stage_outgoing_references(history, row["id"], member_ids, stage_sheets or {}), "stage-scope")
     for edge in edges:
         owner = edge["to"] if stages[edge["to"]].get("start_year") is not None else edge["from"]
         if owner not in member_ids:
@@ -974,11 +982,13 @@ def _stage_detail_blocks(history, members, edges):
                   row["summary"]]
         change = next(iter(row.get("changes", [])), None)
         if change:
-            values += [excerpt("Before", change["before"]), excerpt("After", change["after"])]
+            values += ["Before: " + change["before"], "After: " + change["after"]]
             values.append("Compared loci: " + change["locus_before"] + " → " + change["locus_after"])
         if len(row.get("changes", [])) > 1:
             values.append("First component shown; further recorded changes appear under " + edge["key"] + " in the companion.")
         values.append("Evidence: " + refs(row.get("evidence", []) + (change.get("evidence", []) if change else [])))
+        if row.get("limitations"):
+            values.append("Limits: " + row["limitations"])
         block(row["id"], heading, values, "change-detail")
     return blocks
 
@@ -1030,7 +1040,7 @@ def _stage_map_pages(history, models, slice_id):
                                      + "/".join(stage_sheets.get(endpoint, ["undated register"])))
         continuation_lines = textwrap.wrap("Off-sheet endpoints — " + "; ".join(continued), 180) if continued else []
         extra_footer = max(0, len(continuation_lines) - 1) * 18
-        detail_blocks = _stage_detail_blocks(history, members, model["edges"])
+        detail_blocks = _stage_detail_blocks(history, members, model["edges"], stage_sheets)
         chart_height = max(300, place["bottom"] - place["top"])
         detail_top = 175 + chart_height + 35
         required_height = detail_top + sum(block["height"] for block in detail_blocks) + 175 + extra_footer
@@ -1172,6 +1182,7 @@ def _stage_map_pages(history, models, slice_id):
         blocks = [f"{keys['stages'][row['id']]} · {row['label']}",
                   f"{traditions[row['tradition_id']]['label']} · {row['status']} · text: {row['text_coverage']}",
                   "Date: " + row["date_label"] + ". No dated position asserted.", row["summary"], row["limitations"]]
+        blocks += _stage_outgoing_references(history, row["id"], {row["id"]}, stage_sheets)
         rows = [textwrap.wrap(" ".join(value.split()), 92) or [""] for value in blocks]
         required = sum(len(lines) * 17 for lines in rows) + 24
         if page is None or y + required > 1015:
@@ -1326,8 +1337,12 @@ def _stage_evidence(history, parts, slice_id, stage_sheets, catalogue_url):
         rows += [(line, False) for value in blocks for line in lines(value)]
         if page is None or (y > 120 and y + len(rows) * 16 + 20 > 1025):
             new_page()
-        for line, bold in rows:
-            if y > 1020:
+        # Keep a terminal record identifier with at least two preceding body lines.
+        has_record_id = blocks and blocks[-1].startswith(("Tradition record: ", "Stage record: ",
+                                                         "Transition record: ", "Source record: "))
+        tail_size = min(len(rows) - len(heading_rows), len(lines(blocks[-1])) + 2) if has_record_id else 0
+        for index, (line, bold) in enumerate(rows):
+            if y > 1020 or (index == len(rows) - tail_size and y + (tail_size - 1) * 16 > 1020):
                 new_page()
                 for continuation in lines(heading + " — continued", 83):
                     text(page, 45, y, continuation, 12, "bold")
@@ -1337,12 +1352,17 @@ def _stage_evidence(history, parts, slice_id, stage_sheets, catalogue_url):
             y += 16
         y += 22
 
-    def evidence(rows):
+    def evidence(rows, seen=None):
         blocks = []
+        seen = set() if seen is None else seen
         for row in rows:
             source_id = row["source_id"]
             if source_id not in sources:
                 raise PreviewError("stage evidence refers to a missing source: " + source_id)
+            identity = (source_id, row.get("locus", ""), row.get("claim", ""))
+            if identity in seen:
+                continue
+            seen.add(identity)
             source = sources[source_id]
             blocks.append(f"Evidence {keys['sources'][source_id]}: {source['title']}; {row.get('locus', '')}.")
             if row.get("claim"):
@@ -1398,12 +1418,15 @@ def _stage_evidence(history, parts, slice_id, stage_sheets, catalogue_url):
                   f"Kind: {row['kind']}. Status: {row['status']}. Evidence level: {row['evidence_level']}.",
                   "Historical parentage: " + row["historical_parentage"] + ". No Git ancestry or automatic text inheritance."]
         blocks += field(row, "summary", "What changed") + field(row, "components")
+        component_evidence = set()
         for change in row.get("changes", []):
             blocks.append("Component: " + change["component"])
             blocks += field(change, "before") + field(change, "locus_before", "Before locus")
             blocks += field(change, "after") + field(change, "locus_after", "After locus")
             blocks += evidence(change.get("evidence", []))
-        blocks += evidence(row.get("evidence", []))
+            component_evidence.update((item["source_id"], item.get("locus", ""), item.get("claim", ""))
+                                      for item in change.get("evidence", []))
+        blocks += evidence(row.get("evidence", []), component_evidence)
         blocks += field(row, "limitations") + field(row, "comparison_ids", "Existing comparisons")
         blocks.append("Transition record: " + row["id"])
         record(keys["transitions"][row["id"]] + " · " + row["kind"].replace("-", " "), blocks)

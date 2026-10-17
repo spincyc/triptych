@@ -2528,13 +2528,14 @@
   function timelineState(params) {
     const number=function (raw) { return raw !== null && /^-?\d+$/.test(raw) ? Number(raw) : null; };
     return {tradition:params.get('tradition'),start:number(params.get('start')),end:number(params.get('end')),
-      stage:params.get('stage'),transition:params.get('transition'),leads:params.get('leads')==='1'};
+      stage:params.get('stage'),transition:params.get('transition'),leads:params.get('leads')==='1',
+      presentation:params.get('presentation')};
   }
 
   function timelinePairs(state) {
     return [['tradition',state.tradition],['start',state.start===null ? '' : String(state.start)],
       ['end',state.end===null ? '' : String(state.end)],['leads',state.leads ? '1' : ''],
-      ['stage',state.stage],['transition',state.transition]];
+      ['stage',state.stage],['transition',state.transition],['presentation',state.presentation]];
   }
 
   async function startTimeline() {
@@ -2561,7 +2562,8 @@
       history.traditions.forEach(function (t) { const o=T.el('option',null,t.label); o.value=t.id; traditionControl.appendChild(o); });
       ['timeline-tradition','timeline-start','timeline-end','timeline-leads','timeline-apply','timeline-all-years','timeline-local-years','timeline-earlier','timeline-later','timeline-zoom-in','timeline-zoom-out']
         .forEach(function (id) { document.getElementById(id).disabled=false; });
-      presentation.value=window.matchMedia && window.matchMedia('(max-width: 800px)').matches ? 'list' : 'chart';
+      const defaultPresentation=window.matchMedia && window.matchMedia('(max-width: 800px)').matches ? 'list' : 'chart';
+      presentation.value=defaultPresentation;
 
       function citation(items,target) {
         const citations=T.el('ul','stage-citations');
@@ -2588,7 +2590,12 @@
           }
         }
         render(current); T.writeHash(timelinePairs(current));
-        detail.scrollIntoView({block:'nearest'}); detail.focus({preventScroll:true});
+        revealSelection();
+      }
+
+      function revealSelection() {
+        if (detail.hidden) return;
+        detail.scrollIntoView({block:'start'}); detail.focus({preventScroll:true});
       }
 
       function stageButton(stage,label) {
@@ -2630,19 +2637,32 @@
 
       function showDetail() {
         T.clear(detail); detail.hidden=!current.stage && !current.transition;
+        detail.setAttribute('aria-label','Selected state or transition evidence');
         if (detail.hidden) return;
         const back=T.el('button','link-button','Back to the timeline'); back.type='button';
         back.addEventListener('click',function () {
-          const target=presentation.value==='list' ? list : chart;
-          target.setAttribute('tabindex','-1'); target.focus(); target.scrollIntoView({block:'nearest'});
+          const host=presentation.value==='list' ? list : chart;
+          const kind=current.transition ? 'transition' : 'stage';
+          const id=current.transition || current.stage;
+          let target=document.getElementById(host.id+'-'+kind+'-'+id);
+          if (!target) ['timeline-unpositioned','timeline-provisional'].some(function (context) {
+            target=document.getElementById(context+'-list-'+kind+'-'+id);
+            if (target) document.getElementById(context).open=true;
+            return !!target;
+          });
+          target=target || host;
+          if (target===host) target.setAttribute('tabindex','-1');
+          target.focus(); target.scrollIntoView({block:'center',inline:'center'});
         }); detail.appendChild(back);
         if (current.transition) {
           const transition=byTransition.get(current.transition);
           if (!transition) { detail.appendChild(T.el('p',null,'This transition is not in the current record: '+current.transition)); return; }
+          detail.setAttribute('aria-label','Selected transition: '+transition.summary);
           transitionContent(transition,detail); return;
         }
         const stage=byStage.get(current.stage);
         if (!stage) { detail.appendChild(T.el('p',null,'This stage is not in the current record: '+current.stage)); return; }
+        detail.setAttribute('aria-label','Selected state: '+stage.label+'; '+stage.date_label);
         detail.appendChild(T.el('h3',null,keys.stageKeys[stage.id]+' · '+stage.label));
         detail.appendChild(T.el('p',null,stage.date_label+' · '+stage.date_kind+' · '+stage.status));
         detail.appendChild(T.el('p','panel-note',stage.start_year===null ? 'No year is positioned for this state.'
@@ -2679,15 +2699,21 @@
         }
       }
 
-      function readingCard(stage) {
+      function readingCard(stage,context) {
+        context=context || 'timeline-list';
         const article=T.el('article','timeline-list-card'); article.setAttribute('data-stage',stage.id);
-        article.appendChild(stageButton(stage,keys.stageKeys[stage.id]+' · '+stage.label));
+        const selection=stageButton(stage,keys.stageKeys[stage.id]+' · '+stage.label);
+        selection.id=context+'-stage-'+stage.id;
+        if (current.stage===stage.id) selection.setAttribute('aria-current','true');
+        article.appendChild(selection);
         article.appendChild(T.el('p','stage-date',stage.date_label+' · '+stage.date_kind));
         article.appendChild(T.el('p','panel-note',stage.status+' · Parts: '+stage.components.map(words).join(', ')+' · Text: '+words(stage.text_coverage)));
         article.appendChild(T.el('p',null,stage.scope));
         history.transitions.filter(function (t) { return t.to_stage===stage.id && (current.leads || t.status==='documented'); }).forEach(function (transition) {
           const summary=T.el('button','timeline-change-link',keys.transitionKeys[transition.id]+' · '+words(transition.kind)+' · '+transition.summary);
           summary.type='button'; summary.setAttribute('data-transition',transition.id);
+          summary.id=context+'-transition-'+transition.id;
+          if (current.transition===transition.id) summary.setAttribute('aria-current','true');
           summary.addEventListener('click',function () { select('transition',transition.id); }); article.appendChild(summary);
           article.appendChild(T.el('p','panel-note',words(transition.evidence_level)+' · '+transition.status+' · parentage '+transition.historical_parentage));
         }); return article;
@@ -2705,6 +2731,8 @@
 
       function render(state) {
         current={...state};
+        presentation.value=['chart','list'].includes(current.presentation) ? current.presentation : defaultPresentation;
+        current.presentation=presentation.value;
         if (!current.tradition) {
           const selectedTransition=byTransition.get(current.transition);
           const selected=byStage.get(current.stage) || (selectedTransition && byStage.get(selectedTransition.to_stage));
@@ -2723,7 +2751,10 @@
           }
         }
         if ((current.start!==null || current.end!==null) && (!Number.isFinite(current.start) || !Number.isFinite(current.end) || current.end<=current.start)) {
-          status.textContent='Choose an ending year later than the starting year.'; return;
+          T.clear(detail); detail.hidden=true;
+          detail.setAttribute('aria-label','Selected state or transition evidence');
+          status.textContent='Choose an ending year later than the starting year.';
+          status.setAttribute('tabindex','-1'); status.focus(); return;
         }
         const options={start:current.start,end:current.end,includeProvisional:current.leads,width:1600,compact:true,inlineSummary:true};
         if (current.tradition!=='all') options.tradition=current.tradition;
@@ -2768,6 +2799,8 @@
           link.appendChild(svg('path',{d:edge.path,fill:'none',stroke:'#666','stroke-width':edge.style.width,'stroke-dasharray':edge.style.dash,'marker-end':'url(#stage-arrow)','data-transition':edge.id}));
           const title=svg('title',{}); title.textContent=edge.key+' · '+edge.transition.summary+' · '+edge.style.label; link.appendChild(title);
           const keyLink=svg('a',linkAttrs);
+          keyLink.id='timeline-chart-transition-'+edge.id;
+          if (current.transition===edge.id) keyLink.setAttribute('aria-current','true');
           keyLink.addEventListener('click',function (event) { event.preventDefault(); select('transition',edge.id); });
           keyLink.appendChild(svg('rect',{x:edge.keyLabel.x-34,y:edge.keyLabel.y-13,width:38,height:17,fill:'#fffdf8'}));
           const key=svg('text',{x:edge.keyLabel.x,y:edge.keyLabel.y,'text-anchor':'end','font-size':12,fill:'#444','data-transition-key':edge.id}); key.textContent=edge.key; keyLink.appendChild(key);
@@ -2786,6 +2819,8 @@
         model.lanes.forEach(function (lane) { lane.nodes.forEach(function (node) {
           const stage=node.stage,link=svg('a',{href:'#'+new URLSearchParams(timelinePairs({...current,stage:stage.id,transition:null}).filter(function (p) { return p[1]; })),
             'data-stage':stage.id,'aria-label':stage.label+'; '+stage.date_label+'; '+stage.status+'; text '+stage.text_coverage});
+          link.id='timeline-chart-stage-'+stage.id;
+          if (current.stage===stage.id) link.setAttribute('aria-current','true');
           link.addEventListener('click',function (event) { event.preventDefault(); select('stage',stage.id); });
           link.appendChild(svg('rect',{x:node.labelX-7,y:node.labelY-17,width:node.cardWidth+14,height:node.cardHeight,rx:4,fill:'#fffdf8',stroke:'#ded8cb'}));
           if (stage.start_year!==stage.end_year) link.appendChild(svg('path',{
@@ -2809,7 +2844,7 @@
         [['timeline-unpositioned-list',model.unpositioned],['timeline-provisional-list',model.provisional]].forEach(function (pair) {
           const host=document.getElementById(pair[0]); T.clear(host);
           if (!pair[1].length) host.appendChild(T.el('p','panel-note','None recorded in this selection.'));
-          pair[1].forEach(function (stage) { host.appendChild(readingCard(stage)); });
+          pair[1].forEach(function (stage) { host.appendChild(readingCard(stage,pair[0])); });
         });
         const gaps=document.getElementById('timeline-gaps'); T.clear(gaps); gaps.appendChild(T.el('h3',null,'What this history does not yet establish'));
         const selectedGaps=history.gaps.filter(function (g) { return current.tradition==='all' || g.tradition_id===current.tradition; });
@@ -2830,7 +2865,7 @@
       });
       traditionControl.addEventListener('change',function () { update({...current,tradition:traditionControl.value,start:null,end:null,stage:null,transition:null}); });
       leadControl.addEventListener('change',function () { update({...current,leads:leadControl.checked}); });
-      presentation.addEventListener('change',function () { chart.hidden=presentation.value==='list'; list.hidden=presentation.value!=='list'; });
+      presentation.addEventListener('change',function () { update({...current,presentation:presentation.value}); });
       document.getElementById('timeline-all-years').addEventListener('click',function () { update({...current,...dateBounds(current.tradition,true)}); });
       document.getElementById('timeline-local-years').addEventListener('click',function () { update({...current,...dateBounds(current.tradition,false)}); });
       [['timeline-earlier',-1],['timeline-later',1]].forEach(function (pair) { document.getElementById(pair[0]).addEventListener('click',function () {
@@ -2840,8 +2875,8 @@
         const span=Math.max(10,Math.round((current.end-current.start)*pair[1])),center=(current.end+current.start)/2;
         update({...current,start:Math.floor(center-span/2),end:Math.ceil(center+span/2)});
       }); });
-      T.onHashChange(function (params) { render(timelineState(params)); });
-      render(timelineState(T.readHash()));
+      T.onHashChange(function (params) { render(timelineState(params)); revealSelection(); });
+      render(timelineState(T.readHash())); revealSelection();
     } catch(error) {
       T.doneBootstrapping(); T.clear(chart); chart.setAttribute('aria-busy','false');
       status.textContent='Historical timeline unavailable: '+String(error.message || error);

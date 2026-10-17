@@ -5,6 +5,7 @@ An inspected source declaration is reviewable evidence, not automated collation.
 """
 from __future__ import annotations
 
+from collections import deque
 from datetime import date
 import json
 from pathlib import Path
@@ -127,6 +128,39 @@ def verify_inputs(root: Path, inputs: list[dict], *, fingerprint) -> None:
     for stamp in inputs:
         if fingerprint(root, root / stamp["path"]) != stamp:
             raise StageError(f"stage input changed: {stamp['path']}")
+
+
+def verify_progression(stages: dict[str, dict], transitions: list[dict]) -> None:
+    """Documented progression is acyclic; comparable event bounds cannot reverse.
+
+    Different event roles, overlapping uncertainty and provisional research
+    links do not supply enough information to assert chronological order.
+    """
+    successors = {key: set() for key in stages}
+    incoming = dict.fromkeys(stages, 0)
+    for row in transitions:
+        if row["status"] != "documented":
+            continue
+        earlier, later = stages[row["from_stage"]], stages[row["to_stage"]]
+        if (earlier["date_kind"] == later["date_kind"]
+                and earlier["start_year"] is not None and later["end_year"] is not None
+                and earlier["start_year"] > later["end_year"]):
+            raise StageError(f"{row['id']}: documented transition reverses disjoint {earlier['date_kind']} date bounds")
+        if row["to_stage"] not in successors[row["from_stage"]]:
+            successors[row["from_stage"]].add(row["to_stage"])
+            incoming[row["to_stage"]] += 1
+    ready = deque(key for key, count in incoming.items() if count == 0)
+    visited = 0
+    while ready:
+        key = ready.popleft()
+        visited += 1
+        for successor in sorted(successors[key]):
+            incoming[successor] -= 1
+            if incoming[successor] == 0:
+                ready.append(successor)
+    if visited != len(stages):
+        pending = ", ".join(key for key, count in incoming.items() if count)
+        raise StageError(f"documented transition cycle prevents ordering: {pending}")
 
 
 def load(root: Path, *, catalogue_ids: set[str], comparisons: dict[str, dict], fingerprint,
@@ -283,6 +317,7 @@ def load(root: Path, *, catalogue_ids: set[str], comparisons: dict[str, dict], f
                 raise StageError(f"{context}: primary-description change requires primary source evidence")
             if level == "text-collated" and not any(sources[item["source_id"]]["kind"] in ("primary-book", "critical-edition") for item in cited):
                 raise StageError(f"{context}: text-collated change requires inspected book or critical-edition evidence")
+    verify_progression(stages, rows["transitions"])
     for row in rows["gaps"]:
         context = row["id"]
         if string(row, "tradition_id", context) not in traditions:

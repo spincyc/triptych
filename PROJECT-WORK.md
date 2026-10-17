@@ -19,6 +19,40 @@ and a subway-map visualizer over the same evidence. The workspace target is
 `feature/missal-timeline`; this does not authorize changing the default branch.
 The full project remains **in progress**.
 
+**Cold review and correction, 2026-10-16, complete.** The maintainer
+requested an independent review of checkpoint `f9b8c2f37` and execution of
+the resulting corrections. Separate reviewers covered live browser behavior,
+historical evidence, chronology and evidence printouts, and data/export
+integrity. This bounded correction pass preserves the broader census and
+complete-text requirements below; its completion does not close them.
+
+The browser now focuses evidence opened through a direct link, restores the
+selected control on return, and preserves chart/list presentation in URL
+history. Supplementary controls have distinct identities; invalid selections
+and year ranges cannot retain a misleading evidence label or panel. Long
+transition controls wrap at enlarged text sizes. Progression validation now
+rejects documented cycles and reversed disjoint bounds of the same date kind,
+while preserving uncertain, overlapping and differently typed dates. Independent
+export reproduction confirms all 15 native-text roots and the legacy bundle.
+
+The historical correction gives T043 an observable final-blessing difference
+between the separately identified Venice 1570 and Rome 1604 witnesses, checked
+independently against both pages. The Rome 1570 first edition remains
+uninspected. T044 remains a revision documented by its issuing act, with the
+absence of a particular collated rubric or reading now stated locally. This
+qualifies the evidence without demoting the documented revision to a mere
+bibliographic succession.
+
+The next research priorities within the Roman sequence are: original 1634
+against 1604 and the actual Rome 1570 printing against the inspected Venice
+rubric; the 1965 Order/Ritus/De defectibus and concelebration fascicles, 1967
+Variationes and 1968 Eucharistic Prayers as bounded component states between
+December 1962 and 1970; then the original 1956 Holy Week and 1920 books and
+assessment of the 1971 corrections and 2008 changes. These priorities precede
+further census expansion in this review's recommendation. The earlier six
+acquisition priorities remain open; no printing, correction or supplement is
+automatically promoted to a distinct typical edition.
+
 **Recovery verified.** The
 [recovery record](src/sources/inventories/missal-timeline-recovery-2026-10-16.md)
 identifies both surviving attempts: the predecessor's 25 version directories
@@ -103,22 +137,29 @@ history retains its synthetic dates without the unsupported commit-graph cache.
 prose spacing corrections. The promised-deliverables check has exactly the same
 32 missing installed-PDF findings as the base ledger, with no added findings.
 
-**Internal print review passes; browser and maintainer acceptance remain open.**
-The current review preview has 41 chronology pages and a 152-page evidence
+**Internal print and browser functional reviews pass; reader acceptance remains open.**
+The current review preview has 43 chronology pages and a 153-page evidence
 companion. All pages received visual review or an exact unchanged-page transfer
-from the preceding review; changed pages were reinspected. The opening index
+from the preceding review; changed pages were reinspected. Chronology sheets
+retain complete before/after descriptions and their limitations, with onward
+references to destination sheets. Evidence pages remove exact repeated claims
+and keep terminal record identifiers with body context. The opening index
 keeps the Roman curial, Pian and postconciliar sequences together. Map sheets
 require native A3 landscape/A2 portrait printing; index and evidence pages are A4.
 The earlier 48-page atlas and 64-page appendix are superseded, and the earlier
-LOOM plate that omitted isolated stations was rejected. The final controller
-replay and 99 focused tests pass. Real browser startup is denied with EPERM;
-these checks do not substitute for interactive or accessibility acceptance.
+LOOM plate that omitted isolated stations was rejected. All 196 current page
+SVGs match the reviewed final build exactly; a rebuild changed only PDF trailer
+identifiers. The focused regression suite passes with one optional transport
+parity test skipped. Real Chromium passes 73 checks at 320, 393, 1440 and 1680
+CSS-pixel widths, including keyboard return, browser history, source comparison,
+200% text, forced colors and accessible status semantics. A fresh browser session
+verified that the tested stylesheet matches the corrected source. Spoken
+screen-reader use and final maintainer reader judgment remain untested.
 
 **Remaining work:** close the enumerated historical gaps and substantive version
 boundaries; acquire missing witnesses; transcribe and collate complete books in
-their native divisions; establish only evidenced parentage; and obtain
-real-browser and reader
-acceptance. Restricted modern full text needs appropriate access and a settled
+their native divisions; establish only evidenced parentage; and obtain final
+reader acceptance. Restricted modern full text needs appropriate access and a settled
 public-versus-private export boundary. No all-rite or full-text completeness is
 claimed. Work remains on `feature/missal-timeline`; no new hosted corpus
 repository or website deployment has occurred.
