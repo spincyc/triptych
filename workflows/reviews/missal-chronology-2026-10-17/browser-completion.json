@@ -1,0 +1,842 @@
+{
+  "schema": "triptych-browser-review/v1",
+  "review_date": "2026-10-17",
+  "status": "accepted-for-recorded-snapshot",
+  "scope": "History timeline, historical map, catalogue and overview in the real public-alpha full-site preview, plus a scoped shared-header reflow repair. This is reader behavior acceptance for the bound snapshot; it is not whole-site acceptance or proof of complete all-rite historical research.",
+  "environment": {
+    "browser": "Chromium 154.0.8037.97",
+    "driver": "ChromeDriver 154.0.8037.97",
+    "headless": true,
+    "markdown": "3.10.3"
+  },
+  "input": {
+    "catalogue_sha256": "069639c012f8141f4a1cf4f120fc5f9ca965f1cd5b2801fa2349e0221800a142",
+    "entries": 259,
+    "stages": 97,
+    "traditions": 32,
+    "transitions": 54,
+    "site_build": {
+      "kind": "Snapshot of successful tools/public-alpha build --preview",
+      "command": ".scratch/completion-deps/bin/python tools/public-alpha build --preview",
+      "exit": 0,
+      "catalogue_sha256": "069639c012f8141f4a1cf4f120fc5f9ca965f1cd5b2801fa2349e0221800a142",
+      "site_manifest_sha256": "8c1e94ae854a5a2bde4553151bf0b4485fecc7b96c7c25dcde4fcdad155ecb3e"
+    }
+  },
+  "asset_identities": [
+    {
+      "source": "release/public-alpha/assets/site.css",
+      "built": "assets/site.css",
+      "source_sha256": "a1b950bccf1a471660fc7e7b7b1d5c6a0ce3afc08114ecf207a52d99c62202d2",
+      "built_sha256": "a1b950bccf1a471660fc7e7b7b1d5c6a0ce3afc08114ecf207a52d99c62202d2",
+      "identical": true
+    },
+    {
+      "source": "src/web/browser/history/history.css",
+      "built": "history/history.css",
+      "source_sha256": "b49810a44cd52699d5b2f6d4b1f8159dc1110a6ffaa5fe8118b6e944b4279682",
+      "built_sha256": "b49810a44cd52699d5b2f6d4b1f8159dc1110a6ffaa5fe8118b6e944b4279682",
+      "identical": true
+    },
+    {
+      "source": "src/web/browser/history/history.js",
+      "built": "history/history.js",
+      "source_sha256": "12e0f021040b41450b076aeb5c18aeefdc80daf658169d627ed80d76c46ab369",
+      "built_sha256": "12e0f021040b41450b076aeb5c18aeefdc80daf658169d627ed80d76c46ab369",
+      "identical": true
+    },
+    {
+      "source": "src/web/data/structure/act-history/catalogue.json",
+      "built": "browse/structure/act-history/catalogue.json",
+      "source_sha256": "069639c012f8141f4a1cf4f120fc5f9ca965f1cd5b2801fa2349e0221800a142",
+      "built_sha256": "069639c012f8141f4a1cf4f120fc5f9ca965f1cd5b2801fa2349e0221800a142",
+      "identical": true
+    }
+  ],
+  "fixes": [
+    {
+      "file": "src/web/browser/history/history.js",
+      "problem": "An explicit map station citation opened evidence without revealing it or moving keyboard focus. Catalogue-to-map readers stayed at the page top and could not immediately return to the named station.",
+      "change": "Reveal and focus the selected evidence or unknown-station refusal on explicit station entry and subsequent station hash navigation; default map entry keeps its prior focus behavior.",
+      "regression_routes": [
+        "/history/?view=catalogue#record=latin-missal:quo-primum-1570",
+        "/history/?view=map&slice=latin-missal#station=quo-primum-1570",
+        "/history/?view=map&slice=latin-missal#station=missing-review-station"
+      ]
+    },
+    {
+      "file": "src/web/browser/history/history.css",
+      "problem": "Native record-group select intrinsic width overflowed narrow overview/catalogue pages; long overview titles overflowed at200% text.",
+      "change": "Allow filter controls to shrink within their grid and long group titles to wrap within their available width.",
+      "regression_routes": [
+        "/history/?view=overview",
+        "/history/?view=catalogue"
+      ]
+    },
+    {
+      "file": "release/public-alpha/assets/site.css",
+      "problem": "At320px with200% text, the shared brand grid item widened Home and History to330px beyond305px client width.",
+      "change": "Scope min-width:0 and overflow-wrap:anywhere to the shared-header brand item.",
+      "regression_routes": [
+        "/",
+        "/history/?view=catalogue"
+      ],
+      "desktop_comparison": [
+        {
+          "page": "home",
+          "viewport": [
+            1440,
+            900
+          ],
+          "header_geometry_identical": true,
+          "screenshot_identical": true
+        },
+        {
+          "page": "history",
+          "viewport": [
+            1440,
+            900
+          ],
+          "header_geometry_identical": true,
+          "screenshot_identical": true
+        }
+      ]
+    }
+  ],
+  "checks": {
+    "main": [
+      {
+        "name": "timeline-1440-one-main",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "timeline-1440-reflow",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "timeline-1440-current-view",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "timeline-1024-one-main",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "timeline-1024-reflow",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "timeline-1024-current-view",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "timeline-768-one-main",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "timeline-768-reflow",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "timeline-768-current-view",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "timeline-393-one-main",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "timeline-393-reflow",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "timeline-393-current-view",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "timeline-320-one-main",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "timeline-320-reflow",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "timeline-320-current-view",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "overview-1440-one-main",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "overview-1440-reflow",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "overview-1440-current-view",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "overview-1024-one-main",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "overview-1024-reflow",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "overview-1024-current-view",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "overview-768-one-main",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "overview-768-reflow",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "overview-768-current-view",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "overview-393-one-main",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "overview-393-reflow",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "overview-393-current-view",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "overview-320-one-main",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "overview-320-reflow",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "overview-320-current-view",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "catalogue-1440-one-main",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "catalogue-1440-reflow",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "catalogue-1440-current-view",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "catalogue-1024-one-main",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "catalogue-1024-reflow",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "catalogue-1024-current-view",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "catalogue-768-one-main",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "catalogue-768-reflow",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "catalogue-768-current-view",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "catalogue-393-one-main",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "catalogue-393-reflow",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "catalogue-393-current-view",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "catalogue-320-one-main",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "catalogue-320-reflow",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "catalogue-320-current-view",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "map-1440-one-main",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "map-1440-reflow",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "map-1440-current-view",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "map-1024-one-main",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "map-1024-reflow",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "map-1024-current-view",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "map-768-one-main",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "map-768-reflow",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "map-768-current-view",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "map-393-one-main",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "map-393-reflow",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "map-393-current-view",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "map-320-one-main",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "map-320-reflow",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "map-320-current-view",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "keyboard-view-overview",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "keyboard-view-catalogue",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "keyboard-view-map",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "keyboard-view-timeline",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "catalogue-map-identity",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "map-deeplink-focus",
+        "pass": true,
+        "detail": "detail"
+      },
+      {
+        "name": "map-exact-keyboard-return",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "map-keyboard-reopen",
+        "pass": true,
+        "detail": null
+      }
+    ],
+    "supplement": [
+      {
+        "name": "project-subpath-overview",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "project-subpath-catalogue",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "project-subpath-map",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "project-subpath-timeline",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "text200-overview-reflow",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "text200-overview-named-filter",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "text200-catalogue-reflow",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "text200-catalogue-named-filter",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "invalid-map-citation-refusal",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "map-selected-evidence-in-viewport",
+        "pass": true,
+        "detail": {
+          "focus": "detail",
+          "outline": "rgb(29, 87, 57) solid 3px",
+          "top": 0.140625
+        }
+      },
+      {
+        "name": "forced-colors-timeline",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forced-colors-timeline-visible-focus",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forced-colors-map",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forced-colors-map-visible-focus",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "source-library-link",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "real400-timeline",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "real400-timeline-reflow",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "real400-map",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "real400-map-reflow",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "real400-overview",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "real400-overview-reflow",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "no-javascript-truth",
+        "pass": true,
+        "detail": null
+      }
+    ],
+    "shared_header": [
+      {
+        "name": "shell-after-home-1440-reflow",
+        "pass": true,
+        "client": 1425,
+        "scroll": 1425
+      },
+      {
+        "name": "shell-after-home-320-reflow",
+        "pass": true,
+        "client": 305,
+        "scroll": 305
+      },
+      {
+        "name": "shell-after-history-1440-reflow",
+        "pass": true,
+        "client": 1425,
+        "scroll": 1425
+      },
+      {
+        "name": "shell-after-history-320-reflow",
+        "pass": true,
+        "client": 305,
+        "scroll": 305
+      }
+    ],
+    "viewport_matrix": [
+      [
+        1440,
+        900
+      ],
+      [
+        1024,
+        768
+      ],
+      [
+        768,
+        1024
+      ],
+      [
+        393,
+        852
+      ],
+      [
+        320,
+        852
+      ]
+    ],
+    "views": [
+      "timeline",
+      "overview",
+      "catalogue",
+      "map"
+    ],
+    "actual_browser_zoom": {
+      "mechanism": "Chromium settingsPrivate.setDefaultZoom(4), without device-metrics emulation",
+      "verified_device_pixel_ratio": 4,
+      "maximum_css_viewport_width": 360,
+      "views": [
+        "timeline",
+        "map",
+        "overview"
+      ]
+    },
+    "accessibility_tree": {
+      "timeline_named_interactive_nodes": 63,
+      "map_named_interactive_nodes": 143,
+      "unnamed_interactive_nodes": 0,
+      "roles": [
+        "button",
+        "link",
+        "combobox",
+        "textbox",
+        "checkbox"
+      ],
+      "not_a_spoken_screen_reader_session": true
+    },
+    "local_destinations": [
+      {
+        "route": "/about.html",
+        "status": 200
+      },
+      {
+        "route": "/contributing.html",
+        "status": 200
+      },
+      {
+        "route": "/history/?view=catalogue&slice=latin-missal",
+        "status": 200
+      },
+      {
+        "route": "/history/?view=map&slice=latin-missal",
+        "status": 200
+      },
+      {
+        "route": "/history/?view=overview&slice=latin-missal",
+        "status": 200
+      },
+      {
+        "route": "/history/?view=timeline&slice=latin-missal",
+        "status": 200
+      },
+      {
+        "route": "/index.html",
+        "status": 200
+      },
+      {
+        "route": "/law/",
+        "status": 200
+      },
+      {
+        "route": "/license.html",
+        "status": 200
+      },
+      {
+        "route": "/liturgy/",
+        "status": 200
+      },
+      {
+        "route": "/liturgy/day.html",
+        "status": 200
+      },
+      {
+        "route": "/sources/",
+        "status": 200
+      },
+      {
+        "route": "/texts/",
+        "status": 200
+      },
+      {
+        "route": "/third-party.html",
+        "status": 200
+      }
+    ],
+    "external_source_destinations": [
+      {
+        "stage": "roman-stages-1962-june",
+        "href": "https://media.churchmusicassociation.org/pdf/missale62.pdf",
+        "status": 200,
+        "final_url": "https://media.churchmusicassociation.org/pdf/missale62.pdf",
+        "content_type": "application/pdf"
+      },
+      {
+        "stage": "byzantine-stages:ruth1942",
+        "href": "https://librinostri.catholica.cz/download/ActAcadVele18-r.pdf",
+        "status": 200,
+        "final_url": "https://librinostri.catholica.cz/download/ActAcadVele18-r.pdf",
+        "content_type": "application/pdf"
+      },
+      {
+        "stage": "cistercian-1606-1657-1657",
+        "href": "https://digital.fides.org.pl/dlibra/publication/3978/edition/3755/content",
+        "status": 200,
+        "final_url": "https://digital.fides.org.pl/dlibra/publication/3978/edition/3755/content",
+        "content_type": "text/html;charset=utf-8"
+      }
+    ],
+    "external_fides_navigation": {
+      "body": "Show details\nMissale Cisterciense 1657",
+      "title": "Missale Cisterciense 1657 - Księgozbiór Wirtualny Federacji „Fides”",
+      "url": "https://digital.fides.org.pl/dlibra/publication/3978/edition/3755/content"
+    },
+    "focused_tests": {
+      "command": "/usr/bin/python3 -m unittest tools.tests.test_browser_url_contract.HistoryViewURLTest tools.tests.test_history_catalogue -q",
+      "exit": 0,
+      "tests": 60,
+      "optional_skips": 1
+    },
+    "url_contract_tests": {
+      "command": "/usr/bin/python3 -m unittest tools.tests.test_browser_url_contract -q",
+      "exit": 0,
+      "tests": 61
+    },
+    "browser_console": [],
+    "supplement_browser_console": [
+      {
+        "level": "SEVERE",
+        "message": "https://digital.fides.org.pl/dlibra/publication/3978/edition/3755/content 372:1 Uncaught ReferenceError: $ is not defined",
+        "source": "javascript",
+        "timestamp": 1792237034163
+      },
+      {
+        "level": "INFO",
+        "message": "djvu_html5-0.js 344:28 \"Starting djvu-html5 viewer v0.3.2 from https://github.com/mateusz-matela/djvu-html5\"",
+        "source": "console-api",
+        "timestamp": 1792237035293
+      }
+    ]
+  },
+  "reproduction": [
+    "Build the actual preview with tools/public-alpha build --preview using locked Markdown3.10.3. Serve its output directory at a local origin.",
+    "For each named view at each matrix viewport, verify one main landmark, correct current-view signal and document scrollWidth equal clientWidth.",
+    "Keyboard-activate each view link; open the1570 catalogue record and activate its map link; verify selected evidence receives focus, Tab/Enter returns to that station, and Enter reopens evidence. Browser Back returns to the exact catalogue record URL.",
+    "At320px increase root text size to200%; inspect overview and catalogue filters and group titles. Inspect Home and History header reflow; compare default1440px captures with the original header.",
+    "At a project subpath, activate all four view links and verify each keeps that subpath. The test alias serves the exact build bytes and is not evidence of deployed GitHub Pages configuration.",
+    "Exercise forced-colors and reduced-motion media modes and visible keyboard focus; disable page JavaScript and verify the honest static enhancement notice.",
+    "Use real browser400% zoom and verify DPR4 and CSS viewport at most360px, then check the timeline/map/overview document has no horizontal overflow.",
+    "Follow the Source Library link to its actual built route. Resolve the three recorded external sources with HEAD; activate the Cistercian FIDES citation in the browser and record the destination behavior."
+  ],
+  "limits": [
+    "This browser run binds the catalogue hash and asset hashes above. Later source-projection changes need a new build and route check; they are not silently covered by this receipt.",
+    "No spoken screen-reader session, mobile physical device, Safari or Firefox session was performed.",
+    "The14 local HTTP checks establish route availability for visible navigation, not content acceptance of those other instruments.",
+    "External HTTP success and navigation establish destination behavior, not a fresh collation or rights clearance of the linked books.",
+    "The public-alpha build succeeded. An earlier verification attempt reported stale approved site-source bindings; publication approval is outside this browser receipt and requires final integration verification.",
+    "The supplied catalogue records incomplete text coverage and unresolved historical connections; successful rendering does not establish historical completeness.",
+    "The activated FIDES1657 citation reached the expected title and viewer URL. At the one-second observation the folio viewport still showed a loading spinner, and the external page emitted ReferenceError: $ is not defined. This does not establish successful folio rendering; the error is on the external FIDES page, not the local application."
+  ],
+  "visual_review": {
+    "reviewed_panels": [
+      "Roman chronological chart",
+      "Ruthenian chronological chart",
+      "Cistercian chronological chart",
+      "Recorded historical lines map",
+      "Traditions and documented connections overview",
+      "forced-colors selected timeline and map evidence",
+      "Home320px with200% text",
+      "History1440px desktop"
+    ],
+    "observations": [
+      "Charts retain named stage and transition references and actual year axes. Internal horizontal scrolling is explicit and contained within chart/network regions.",
+      "The historical-line map labels its spacing as station order rather than elapsed years. Overview labels relationship types, direction and evidence qualifications.",
+      "Forced-colors evidence headings, body text and keyboard outlines are legible in the captured panels."
+    ],
+    "not_claimed": "These captures are visual sampling; all final-data stage/transition route checks remain pending."
+  },
+  "evidence_digests": {
+    "catalogue-1024.png": "c4e11e0460fb745428a61ed3f557d533047d4afd03d031720ac6a8ad0268100c",
+    "catalogue-1440.png": "e86b9072f1bdba108e143fa7607a2b3ea725674699e358ab6c4c129c1908bf90",
+    "catalogue-320.png": "30a2acb4eec9df6ab2ca93f1518ce1e66de60d57ffb798b57b41149f6ed7fb21",
+    "catalogue-393.png": "9d8abfeea8d9c78419bdab246a3fa874229054b5ad4ac13c35a0ba10ae516e8b",
+    "catalogue-768.png": "3dbeb7531ad62abba385e7edc32956e0ca4d237b9dd90afe39f0f54a18d1d2bc",
+    "catalogue-linked-record.png": "9d8abfeea8d9c78419bdab246a3fa874229054b5ad4ac13c35a0ba10ae516e8b",
+    "catalogue-to-map.png": "0331b2e25438d8bba6da08100db93e122da39b3a943606be1a4f3846cc4a15be",
+    "external-fides-navigation.png": "8f56ba82a1892805da0a32acf4744214bdd70e9eba7aa036f36981804d089175",
+    "forced-colors-map.png": "48813ec408ea4ad13a2dbf71f48bc87c6f356f511466b4933e321e2a3ea8195d",
+    "forced-colors-timeline.png": "d9f9ade027b53fe4db69ca80b03ba2d86bfda2d05b9b8315d66f7a3cdeffd04b",
+    "map-1024.png": "5740ba72b0a2f5644837691d4dd21bc2d7dd9f105ce132b27bc68fc3d98984fe",
+    "map-1440.png": "d2844823027e5520f175c07811fbfe705a701848c6ab88dd5a3dc80701fb67f9",
+    "map-320.png": "1a90b3f708088e91febc29113acd0f54ec564c1216b624645042009ceaa0e4cf",
+    "map-393.png": "ca051bb2a33a76b27fe6ce9ddafda850ed2086dc822399cc28d199d102f86ef6",
+    "map-768.png": "638e1e5150b84b74835c6189f822908f8a8cf62f932280e5f6afac43f13f36a2",
+    "map-deeplink-settled.png": "5006f3a4d12ed38121913c6aade4799e9ea700b7c2c6766a5908f213037fa4c8",
+    "map-invalid-citation.png": "0e5fee7c5e9f45b004754e749fefee9ce1a2127995552ad0d23b26680e76efd7",
+    "map-local-destinations.png": "47efe735dc7f2a89348013ebd1ce4468d684380afe30dde83d4f061ac6fbae9d",
+    "no-javascript-history.png": "afc36155c77408da6737be20ffe57c1f8654f5e3882811a704bc8258b5283be8",
+    "overview-1024.png": "34fe8f3f3977ec2daf8b884f140226ec1d0f09f3445afa040662274861fdd1a7",
+    "overview-1440.png": "37894e3037e12a4b5f00aad1fbb6d1fdb49519e76f0a3d76834629fc0771298e",
+    "overview-320.png": "30a2acb4eec9df6ab2ca93f1518ce1e66de60d57ffb798b57b41149f6ed7fb21",
+    "overview-393.png": "5f0dbde6e14a457c1e6b13f972c3bdd34dd58bc8a40f065268e60851e5ade47e",
+    "overview-768.png": "26348476e9102b9ac185f72788a370cdb5cf4100c8dcfbe85688b7fae62030ff",
+    "panel-chart-cistercian.png": "c45d3e1edc9590637cc2154fcdecb2665283f55eeaf363015733f21da106507a",
+    "panel-chart-roman.png": "38aab6b77b666f44d5e257c78141a3395e904b638bc483bf0fbfde2304f3547f",
+    "panel-chart-ruthenian.png": "78c9081a859b8b4a4264a24289a5534580b61681ca129a74f58cdca88a0328ac",
+    "panel-map.png": "6975607bb9053822d2713e1becebe3bc8dfad3f6463a4e88c701320c0bd69f28",
+    "panel-overview.png": "d3f2af9b06debe948ca5ad20edc9db05d23b2aa6f3b6f63afd4f61a4109c3c41",
+    "real400-map.png": "b7be0ddbdb791a7afa894e0748575753f79faec58548de59582b85bac4baa2f6",
+    "real400-overview.png": "40da802986fbf11ae464acc4e44b579bdc52e35441cd4316117b62353f33db19",
+    "real400-timeline.png": "ec2a8be1b73cb478be1cb40c3034d671027c032cdcb4bd2b6fff78812669a772",
+    "shell-after-history-1440.png": "e86b9072f1bdba108e143fa7607a2b3ea725674699e358ab6c4c129c1908bf90",
+    "shell-after-history-320.png": "736fb6aa4054b2896ca67b70dc01bee0dbf879580cac0180a09c9fbbba19595e",
+    "shell-after-home-1440.png": "ff17560e2b50eb4cacbcf10b28627a65cef9e2d415419f6cbc9c661e874a721b",
+    "shell-after-home-320.png": "a91dc67874121856dc2c23aee4be2be043bce09d3501da96e6000064fafdd320",
+    "shell-before-history-1440.png": "e86b9072f1bdba108e143fa7607a2b3ea725674699e358ab6c4c129c1908bf90",
+    "shell-before-history-320.png": "842f3b1cbdaf61d412f0dc93513ee417c526629e5eda1e86e5807d0860b0892e",
+    "shell-before-home-1440.png": "ff17560e2b50eb4cacbcf10b28627a65cef9e2d415419f6cbc9c661e874a721b",
+    "shell-before-home-320.png": "e929864f1ac427ec6b7abb2eac69945ca7a5187e374918d00169ebba1b144254",
+    "source-library-destination.png": "0680822d5c2bc894189b4924d969bbfe61cd99953b16c9de8ac49fcf18f070fc",
+    "text200-catalogue-320.png": "982db9f94c5cfd4952a36f370518730442f57d8540bcc8ecb21d0208a700a381",
+    "text200-overview-320.png": "b0be8a0145eb71e21dc0d7b4ec8093d27fa1817b8b69fe3b90057b7f08c2bf50",
+    "timeline-1024.png": "6fcdee8a5519c8a5b6cf96e67e9fc55a392ce140621f28dfcb39d8ac4f477cfc",
+    "timeline-1440.png": "d4350cf66812249cbbfc3fa980d4d661adc75ae71bf88017b3942dce9193ce9a",
+    "timeline-320.png": "95af3268cb41320b5ac80e064ca7806f3874c6e3a83e52363b144a9e0fc6276d",
+    "timeline-393.png": "d30884549078ad4fc9e51fd8c36672b203670fa30c4f0712fedb485587611e3b",
+    "timeline-768.png": "8e80a96f117700a631ac262415488ed154b8d0961bedba90e1f4ca1e95fa0953"
+  }
+}
