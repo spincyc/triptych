@@ -476,6 +476,7 @@
 .catalogue-filter button {
   box-sizing: border-box;
   min-height: 2.75rem;
+  min-width: 0;
   max-width: 100%;
   font: inherit;
   padding: 0.5rem;
@@ -587,7 +588,7 @@
 .relation-evidence:focus-within { outline-offset: 4px; }
 .overview-groups { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .8rem 1.8rem; list-style: none; padding: 0; }
 .overview-group { border-left: 4px solid var(--section-line); padding: .4rem 0 .4rem 1rem; min-width: 0; }
-.overview-group-title { display: inline-block; padding: .3rem 0; font-size: 1rem; font-weight: 600; }
+.overview-group-title { display: inline-block; max-width: 100%; overflow-wrap: anywhere; padding: .3rem 0; font-size: 1rem; font-weight: 600; }
 .overview-group .panel-note { margin: .25rem 0; }
 @media (max-width: 40rem) {
   .line-index, .overview-groups { grid-template-columns: minmax(0,1fr); }

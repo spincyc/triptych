@@ -1779,8 +1779,11 @@
     // which is where a reader with no other instruction should arrive.
     const wanted = fromHash();
     if (wanted.unit) openUnit(wanted.unit);
-    if (wanted.station && byId.has(wanted.station)) open(wanted.station);
-    else if (wanted.station) reportUnknownStation(wanted.station);
+    if (wanted.station) {
+      if (byId.has(wanted.station)) open(wanted.station);
+      else reportUnknownStation(wanted.station);
+      revealDetail();
+    }
     else if (stations.length) open(stations[stations.length - 1].id);
 
     T.onHashChange(function (params) {
@@ -1789,6 +1792,7 @@
       if (!next.station || next.station === selected) return;
       if (byId.has(next.station)) open(next.station);
       else reportUnknownStation(next.station);
+      revealDetail();
     });
   }
 

@@ -73,6 +73,7 @@ a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 .triptych-mark i:nth-child(2) { height: 1.9rem; }
 
 .brand { display: flex; flex-direction: column; line-height: 1.16; }
+.site-header > .brand { min-width: 0; overflow-wrap: anywhere; }
 .brand a { color: var(--ink); font-size: 1.55rem; font-weight: 700; text-decoration: none; letter-spacing: 0.015em; }
 .brand span {
   max-width: 42rem;

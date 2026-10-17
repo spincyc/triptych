@@ -333,6 +333,30 @@ function loadCore(state) {
 }
 
 const PROBES = {
+  /** Map citations reveal their selected evidence, without moving a default visit. */
+  historyMapFocus(request) {
+    const events = [];
+    let hashHandler;
+    const scope = {
+      spine: null, byId: null, kindsStated: null, selected: null, openedUnit: null,
+      document: {getElementById() { return {}; }}, tally: {},
+      M: {kindsAreStated() { return true; }},
+      readVocabulary() {}, draw() {}, describeLegend() {}, fillUnits() {}, renderJunctions() {},
+      T: {readHash() { return new URLSearchParams(request.hash || ''); },
+          onHashChange(fn) { hashHandler = fn; }},
+      open(id) { scope.selected = id; events.push(['open', id]); },
+      openUnit(id) { scope.openedUnit = id; events.push(['unit', id]); },
+      reportUnknownStation(id) { scope.selected = null; events.push(['unknown', id]); },
+      revealDetail() { events.push(['reveal', scope.selected]); }
+    };
+    const text = source('history/history.js');
+    const start = new Function('scope', 'with (scope) {' +
+      extractFunction(text, 'fromHash') + extractFunction(text, 'start') +
+      '; return start; }')(scope);
+    start({stations: [{id:'first',parents:[]},{id:'last',parents:['first']}],lines:[]});
+    for (const hash of request.next || []) hashHandler(new URLSearchParams(hash));
+    return {events};
+  },
   /** The shared router, executed. */
   core(request) {
     const core = loadCore(request);
@@ -739,6 +763,17 @@ class CanonicalHashFormTest(unittest.TestCase):
 @needs_node
 class HistoryViewURLTest(unittest.TestCase):
   """Catalogue state is view-specific; published map citations keep their meaning."""
+
+  def test_map_direct_citation_reveals_selected_evidence_and_history_restores_it(self):
+    got = probe(probe="historyMapFocus", hash="station=first", next=["station=last", "station=first"])
+    self.assertEqual(got["events"], [["open", "first"], ["reveal", "first"],
+                                  ["open", "last"], ["reveal", "last"],
+                                  ["open", "first"], ["reveal", "first"]])
+
+  def test_map_default_does_not_take_focus_and_invalid_citation_reveals_refusal(self):
+    self.assertEqual(probe(probe="historyMapFocus")["events"], [["open", "last"]])
+    self.assertEqual(probe(probe="historyMapFocus", hash="station=missing")["events"],
+                     [["unknown", "missing"], ["reveal", None]])
 
   def test_map_reads_only_station_and_unit_even_when_catalogue_keys_are_present(self):
     answer = probe(
