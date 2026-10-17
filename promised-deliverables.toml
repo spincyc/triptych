@@ -18,14 +18,20 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "claude-pc-s55-revision-run-accepted"
   criterion = "A proper-study version-12 run for provider claude, identity liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a, date 2026-10-18, audience adult parish assembly, seeded with the research handoff, reaches ACCEPTED with every review a fresh worker; the revised PDFs and web edition are installed with exact reviewed bytes and the run is archived in the leaf."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/821c824684b0c7a7/record.md", "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/821c824684b0c7a7/terminal-status.json", "web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.md"]
+  check = "contains"
+  path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/821c824684b0c7a7/terminal-status.json"
+  needle = "\"disposition\": \"ACCEPTED\""
 
   [[deliverables.requirements]]
   id = "claude-pc-s55-revision-findings-and-sourcing"
   criterion = "Each of the 22 standing findings and each sourcing defect in the handoff is resolved by the run or recorded with the reason it is not, in a tracked record."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/claude-pc-s55-revision-2026-10-16/CYCLES.md"]
+  check = "contains"
+  path = "workflows/reviews/claude-pc-s55-revision-2026-10-16/CYCLES.md"
+  needle = "## What became of the sourcing"
 
   [[deliverables.requirements]]
   id = "claude-pc-s55-revision-main-and-pages"

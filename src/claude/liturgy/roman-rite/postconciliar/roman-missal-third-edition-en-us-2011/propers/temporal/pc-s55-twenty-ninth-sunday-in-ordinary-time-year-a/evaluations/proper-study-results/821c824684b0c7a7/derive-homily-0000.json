@@ -1,0 +1,14 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/homily.tex",
+  "changed_files": {
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/generation-metadata.tex": "1c3fd0de4aeea0bb96ff332d6df8ca02157d6fa245f9e6712c2cf099fa134c3b",
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/production-review.md": "e11f598090454e3ffd588fca709a3a3652650d86bfc84d53a1c85935110a5270",
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/homily/10-homily.tex": "87c2dec2ff718f4e405ee1c2590886087c799afba27582697c4bc27a37145537",
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/homily/90-note.tex": "ee1541e30799ed2e504654b72a19519e275c4e46edbc4f1704e410b2a0c8f013"
+  },
+  "disposition": "PASS",
+  "iteration": 0,
+  "notes": "homily.tex unchanged. HOM-002 already repaired by the research owner (scope.md section 2: v. 8 sung whole). VIS-004 (wide first movement break on homily page 1) persists: it comes from flush-bottom columns in the shared src/common/propers-homily.tex, whose owner must make the ragged-bottom change; no leaf-local override was added. Upstream observation for the homily reviewer: sections/50-comparison.tex still lists Augustine on the 'yes' side (advisory STU-014); the homily note follows the concise study's narrower account. No GPT-leaf file, PDF, web edition or review was opened, and no repository-wide search printed any of it.",
+  "stage": "derive-homily",
+  "summary": "Revised the published homily against the revised studies: Mark 10:45 is now spoken as Scripture without the Communion-antiphon clause (HOM-001), three small source-fidelity corrections were made in the speech (labour of love with Chrysostom's question; stamped by a new birth; the offertory-prayer timing removed), and the terminal note now states the narrowed disagreement over the ground of Caesar's debt, World Mission Day and the conditional Mass for the Evangelization of Peoples, the dated readings-page capture and Jerome's printed Latin; 1,459 spoken words, 4-page proof (sha256 6c71eddb0515a3015a5630b5862e69e265870acc886fff47df8d03208cefce55), all homily preflight checks pass."
+}

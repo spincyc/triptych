@@ -49,13 +49,13 @@ provider = "claude"
 run_id = "821c824684b0c7a7"
 workflow = "proper-study"
 workflow_version = 12
-stage = "homily-review"
+stage = "web-review"
 iteration = 0
 disposition = "PASS"
 standing = 0
-accepted_count = 2
-advisory_count = 15
-observation_count = 9
+accepted_count = 0
+advisory_count = 14
+observation_count = 8
 
 [[stages]]
 stage = "homily-review"
@@ -109,43 +109,25 @@ observation_count = 2
 stage = "visual-review"
 iteration = 0
 disposition = "PASS"
-run_id = "4d16b5e19d25dad9"
+run_id = "821c824684b0c7a7"
 workflow = "proper-study"
-workflow_version = 11
+workflow_version = 12
 standing = 0
-accepted_count = 1
-advisory_count = 3
-observation_count = 1
+accepted_count = 0
+advisory_count = 1
+observation_count = 0
 
 [[stages]]
 stage = "web-review"
 iteration = 0
 disposition = "PASS"
-run_id = "4d16b5e19d25dad9"
+run_id = "821c824684b0c7a7"
 workflow = "proper-study"
-workflow_version = 11
+workflow_version = 12
 standing = 0
-accepted_count = 1
-advisory_count = 0
+accepted_count = 0
+advisory_count = 1
 observation_count = 1
-
-[[accepted]]
-stage = "visual-review"
-id = "VIS-001"
-severity = "accepted"
-location = "Expansive study, physical page 28 (end of The Three Interpretations Compared, sections/50-comparison.tex; forced page break before sections/80-date-location.tex)"
-problem = "The comparison's closing paragraph (seven lines: the first and third can be preached together; each interpretation's principal difficulty) stands alone at the top of page 28, about 14% of the text block, and the rest of the page is empty because the Scriptural Date and Location appendix begins on a fresh page 29."
-required_result = "If the study is repaginated for another reason, end The Three Interpretations Compared on page 27, or follow it on the same page with the next section, without padding, type reduction or cutting the paragraph."
-accepted_because = "It is a complete paragraph ending a major part before a part that properly starts on a fresh page, the short final page normal at a chapter end; nothing is split, hidden or misread, and moving it would change study pagination and re-run every downstream review for no gain to the reader."
-
-[[accepted]]
-stage = "web-review"
-id = "WEB-001"
-severity = "accepted"
-location = "build/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.md line 600 (Appendix: Scope and Qualifications, 'Text control.' paragraph, last sentence); source src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/90-apparatus.tex lines 33-36"
-problem = "Reader-facing text names a production stage. The sentence says the branch rows rest on the United States General Instruction 'as read, in its official chapter pages, at the stage that resolved this Sunday's context; a later attempt to read the same pages again was refused by the publisher's site'. 'The stage that resolved this Sunday's context' is workflow-process language that a reader cannot interpret. The research PDF carries the same words, and the conversion reproduces them faithfully, so this is a study-writing defect, not a conversion defect."
-required_result = "If sections/90-apparatus.tex is reopened for another reason, identify the reading by its date instead of a production stage, for example: 'as read in its official chapter pages on 16 October 2026; a later attempt that day to read them again was refused by the publisher's site'. Then regenerate the web edition."
-accepted_because = "The sentence states the evidence and its limit correctly, and no reader is misled about what was read. Repairing one clause would reopen the reviewed study owner and rerun the study, concise, homily, build, visual and web reviews."
 
 [[advisories]]
 stage = "homily-review"
@@ -245,27 +227,19 @@ required_result = "Page 2 carries one short line beneath the table that refers t
 
 [[advisories]]
 stage = "visual-review"
-id = "VIS-002"
-severity = "advisory"
-location = "Expansive study, physical page 29, Scriptural Date and Location table (sections/80-date-location.tex)"
-problem = "Unlike the concise page-2 table, the study's table has no space between rows within a book group, so where the Passage cell is the tallest in its row, adjacent rows' Passage cells run together at the ordinary line pitch: the first two psalm rows form one unbroken ten-line block, and the two 'Responsorial Psalm: Psalm 96:1, 3, ...' rows form one six-line block of identical labels. A row boundary is visible only from where the Occurrence and Date cells start."
-required_result = "Row boundaries visible in the Passage column as on concise page 2 (for example the same inter-row spacing the concise component uses), with the table still on page 29 and its type size unchanged."
-
-[[advisories]]
-stage = "visual-review"
-id = "VIS-003"
-severity = "advisory"
-location = "Expansive study, physical page 7, first line (The Appointed Texts, Douay-Rheims Phil 2:15-16 block; sections/05-appointed-texts.tex, the \\notread after 'word of life')"
-problem = "The marked unappointed words print as 'the word of life[ to my glory in the day of Christ: ...]': the word space falls inside the bracket and none precedes it, which reads as a typesetting slip beside the other bracketed omissions on pages 5-8."
-required_result = "The bracket set as 'the word of life [to my glory in the day of Christ: because I have not run in vain, nor laboured in vain.]', with the space before the opening bracket."
-
-[[advisories]]
-stage = "visual-review"
 id = "VIS-004"
 severity = "advisory"
-location = "Homily, physical page 1, left column, the movement break after 'and he calls them hypocrites.' (sections/homily/10-homily.tex inside the shared properhomily environment)"
-problem = "The two-column environment sets flush-bottom columns, and the left column's only stretchable glue is this \\bigskip, so the break opens to about 0.8 in (158 px at 200 dpi) where every other movement break in the speech measures about 0.28-0.30 in (55-60 px). On the homily's first page it reads as a hole rather than one of the uniform breaks a speaker uses to find his place."
-required_result = "Every movement break in the speech of the same height on every page, without changing the spoken text; the general remedy is ragged-bottom columns in the shared homily environment, a maintainer-level shared change beyond this leaf."
+location = "Homily PDF, physical page 1, left column: the movement break after 'and he calls them hypocrites.' (sections/homily/10-homily.tex, a \\bigskip inside the shared properhomily environment of src/common/propers-homily.tex)"
+problem = "This defect is unchanged from run 4d16b5e19d25dad9. The shared environment sets flush-bottom columns, and the left column's only stretchable glue is this \\bigskip. The break therefore opens to about 0.78 in: 157 px at 200 dpi, with 55 pt between the last baseline before it at y=412.9 pt and the next at y=479.4 pt. The speech's other movement breaks measure 52-77 px (page 1 right column 77 px; page 2 52, 74 and 67 px). On the first page it reads as a hole rather than one of the uniform breaks a speaker finds his place by. Nothing is lost or misordered."
+required_result = "Every movement break in the speech is of the same height on every page, and the spoken text is unchanged. The general remedy is ragged-bottom columns in the shared properhomily environment. That is a maintainer-level change to src/common/propers-homily.tex, which no stage of this run may make, and no leaf-local dimension override should be used instead."
+
+[[advisories]]
+stage = "web-review"
+id = "WEB-002"
+severity = "advisory"
+location = "build/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.md lines 583-596 (Appendix: Liturgical Resolution, branches table), as rendered by the site at 1280 px and 1920 px with release/public-alpha/assets/site.css line 263 (.page-shell.reading table { display: block; width: max-content; max-width: 100%; overflow-x: auto; })"
+problem = "The five-column branches table cannot shrink to the reading column. Its narrowest possible width is 655 px: the widest unbreakable words are 'evangelization-', 'Evangelization', 'substitution', 'Responsorial' and 'replacement', each with 14.4 px of padding on either side. The reading column is 632 px at 1280 and 619 px at 1920. The stylesheet therefore makes the table a horizontal scroller and cuts off the right edge of the Resolution column by about 23-36 px. The header reads 'Resolutio', and the communion-antiphon-gospel row reads 'Rubric (', 'prefer' and 'fron'. The only sign that the table scrolls is a 15 px scrollbar at the foot of a table that stands 4,406 px tall at 1280, so a reader of the upper rows meets clipped words with no visible cause. No words are lost, since scrolling shows them, and the PDF sets the table within its measure. The published edition f7b4a079... renders identically, so this revision did not introduce the defect. Nothing the conversion owner or the leaf's study owner may change in this run would fix it without restructuring settled source."
+required_result = "At ordinary desktop widths, the branches table shows every column in full within the reading column, or signals its sideways scroll where the reader first meets it, with no change to its words. The proportionate remedy is a shared stylesheet rule that tightens cell padding or type for reading-page tables whose narrowest width exceeds the column, and it belongs to the stylesheet's owner, outside this run. If the study's apparatus is reopened for another reason, a four-column arrangement, for example with Status and Units affected combined, would also fit."
 
 [[observations]]
 stage = "research-review"
@@ -303,11 +277,6 @@ location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-editi
 note = "The concise sets Chrysostom alone against Hilary and Ambrose on whether one who keeps nothing of the world's goods still owes Caesar, and says Augustine 'does not take up possession'. The expansive table instead lists Augustine on the 'yes' side ('those who are better'). En. in Ps. 124.7 (NPNF8 tracked lines 61094-61105) grounds the honour in God's ordinance and never mentions possession, so the concise's narrower statement is the one the quoted words support, and it does not contradict research/interpretations.md. The difference between the two documents is recorded here so that it is not taken for a compression error."
 
 [[observations]]
-stage = "visual-review"
-location = "Concise page 2 and study page 29, Passage column of the generated orientation rows (refs from research/chronology-inputs.toml)"
-note = "The generator prints the input ref strings verbatim, so verse ranges show ASCII hyphens (Psalm 32:18-19, Isaiah 45:1, 4-6, Matthew 22:15-21, 1 Thessalonians 1:1-5b) beside the en-dash ranges of the page-1 map and the notes; other leaves' inputs use the same ASCII form, so this looks like a missing display-normalization rule at the generator rather than a leaf defect."
-
-[[observations]]
 stage = "web-review"
-location = "release/public-alpha/assets/site.css lines 596-627 (the 760px rules for the Scriptural Date and Location dossier), applied to the orientation-v1 table at build/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.md lines 526-539, rendered at 390 px"
-note = "At phone width the dossier rules set this three-column orientation-v1 table on a two-column grid: Passage and Occurrence on one line, Date beneath, with an empty cell beside 'Date' in the header block and beside each date. The stylesheet's comment and rules describe only the four-column dossier. Every row still pairs passage, occurrence and date legibly, so nothing is lost here, but no rule fits the three-column orientation shape the newer propers now publish."
+location = "src/sources/chronology/events.yaml line 11344 (event title 'The prophetic activity behind Isaiah 40-55 in the NABRE introduction'), printed through research/chronology-annotations.tex lines 42 and 99 into the study's Scriptural Date and Location table, build/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.md line 534"
+note = "The generated Occurrence cell writes the chapter range 'Isaiah 40-55' with an ASCII hyphen, while the notes beneath and the rest of the study write 'chapters 40–55' with an en dash. The PDF prints the same, so the conversion is faithful. The text comes from a shared corpus event title that orientation-v2's en-dash normalization of passage refs does not reach, which looks like a missing display-normalization rule for subject titles rather than a leaf defect."

@@ -1,0 +1,16 @@
+WORKFLOW: proper-study v12
+WORKFLOW_DIGEST: e6d49782e4c62eb282fbb9ce1e18a27f1e74c81170f26533f5efea288ebf4ff5
+RUN_ID: 821c824684b0c7a7
+COMMIT: d5abae0272089a418653fe675220d45f81313871
+STAGE: publication-gates
+ITERATION: 0
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-10-18","proper":"liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a","provider":"claude","research_handoff":"workflows/reviews/claude-pc-s55-revision-2026-10-16/HANDOFF.md"}
+DOCUMENT_ROOT: src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a
+REPAIR_TARGETS: ["research","study","synthesis","homily","artifacts","publication"]
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: []
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

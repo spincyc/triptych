@@ -1,0 +1,62 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/main.tex",
+  "disposition": "PASS",
+  "files_changed": [
+    {
+      "path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/generation-metadata.tex",
+      "sha256": "0c182e116f9e9ac64cef1715ae56eb0b9c79ba40fc0d8d34dcfc48cfa752b57d"
+    },
+    {
+      "path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/production-review.md",
+      "sha256": "7cebffdbccf8417adcc764c08ee0359e3f986229b79d275c43ad89597bdfef59"
+    },
+    {
+      "path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/05-appointed-texts.tex",
+      "sha256": "ad5c27fbde8e1613947ef42c036e2064c09a6fd23e5a41205af916be2d523296"
+    },
+    {
+      "path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/10-each-element.tex",
+      "sha256": "3b676f224b3fabaa31bb0af4057a3e7a7cae220593fe26f6ee74171ee19ad4f9"
+    },
+    {
+      "path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/30-cyrus-and-caesar.tex",
+      "sha256": "ae7704b3eab7453519bc6833c9c185fa083ff27bcd930adf730599a7c1532657"
+    },
+    {
+      "path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/40-sincere-heart.tex",
+      "sha256": "f074e9e5953888bb32592537f021e7f31a76901d4eebd75b3c1ca3da6a02eb0d"
+    },
+    {
+      "path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/50-comparison.tex",
+      "sha256": "9cc92271f837e55619ecb533743f2c1f93f7e36496fb961ae47a817deb61b37a"
+    },
+    {
+      "path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/80-date-location.tex",
+      "sha256": "44befe8121eef843134710e5cc57cbcd70a63e397a56ccf9f98b623f7963159d"
+    },
+    {
+      "path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/85-liturgical-resolution.tex",
+      "sha256": "d64115025cfa66a239e95e88936afabd8cc266f9aaf131b84221b7234fedf7a1"
+    },
+    {
+      "path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/90-apparatus.tex",
+      "sha256": "2e2bf793744f01cbccaf34b66e3af1716005bf382cd4621289031a6602656114"
+    }
+  ],
+  "iteration": 0,
+  "notes": [
+    "Generation provenance: claude-opus-5-5[1m] at reasoning effort high; generation-metadata.tex carries proper-study v12, digest e6d49782..., run 821c824684b0c7a7, seed d5abae02...; revision timestamp 2026-10-16T22:22:49Z; one contribution appended. The shared timestamp also changes the concise and homily records, which later stages rederive.",
+    "Checks (log: build/tpt-runs/821c824684b0c7a7/artifacts/author-study-0000/checks.log): check-proper-components artifacts valid; _proper_study.py content check with --require-orientation-v2 pass; all study-preflight check-content-preflight checks pass incl. references-used (39 entries/64 loci), house-voice, chronology-claims-supported, provenance-matches-run; web-edition probe (pandoc 3.11, Markdown 3.10.3) converted with each of 11 proper-* anchors once. TeX log: no warnings, undefined refs, over/underfull boxes. Rasters in artifacts/author-study-0000/rasters.",
+    "Layout: the orientation-v2 Passage cells (psalm numbering notes) make the Scriptural Date and Location table taller than one page; with \\addlinespace between grouped rows (VIS-002) it now breaks at the Gospel/Mark group boundary across pp. 29-30 with header repeated. VIS-002's 'table still on page 29' cannot be met: chronology-claims-supported rejects any authored \\pagebreak inside the table. Visual review should judge; the concise page 2 will face the same height on derive-synthesis.",
+    "Not taken up: RES-020 (Year B titulus, another cycle's Mass) and RES-021 (1 Paralipomenon 16 parallel, not yet in research records); RES-017 and RES-018 also name research/scope.md rows this stage does not own. HOM-001 (homily) and VIS-004 (shared homily env) are not study-owned.",
+    "No research evidence record, chronology input, annotation or manifest was changed. Independence: the GPT leaf for this identity, its PDFs/web edition and its review directory were not opened, and no search printed a line from them."
+  ],
+  "proof_pdf": {
+    "build_copy": "build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.pdf",
+    "pages": 37,
+    "path": "build/tpt-runs/821c824684b0c7a7/artifacts/author-study-0000/author-study-0000-proof.pdf",
+    "sha256": "1722f0bc74522058c97bc38d5ce9200e302fbac679ea9bf3076e72193bc91680"
+  },
+  "stage": "author-study",
+  "summary": "Revised the published expansive study of PC-S55-A for the v12 revision from the re-reviewed research: repaired the study-owned standing findings STU-010, STU-011, STU-012, WEB-001, VIS-002, VIS-003 (VIS-001 and STU-013 resolved by pagination/record) and SYN-005 in the production record; applied the research's new facts (Gelasian III.ix variant, Schuster/Fromage on page images, dated GIRM and readings-page witnesses, World Mission Day in the resolution appendix with the branch kept conditional, maiestas from Lewis and Short, Matthew 22:18 lemmas); updated provenance to run 821c824684b0c7a7 and built a clean 37-page author proof."
+}

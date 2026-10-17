@@ -26,8 +26,26 @@ scope boundary is unchanged. A new version-12 run revises the leaf in place.
 It is seeded with the [research handoff](workflows/reviews/claude-pc-s55-revision-2026-10-16/HANDOFF.md), which lists the 22 standing
 findings and seven sourcing defects as leads, and keeps the GPT leaf closed.
 
-**In progress.** The tool commits are on `feature/propers/claude`; the
-revision run is next.
+**Accepted and committed; the push to `main` is next.** Run
+`821c824684b0c7a7` (`proper-study` v12) reached ACCEPTED with no escalation:
+21 packets, 21 results, one intervention. Every review passed at its first
+round. Of the 22 standing findings, 21 are resolved. VIS-004 stays open: it
+lives in the shared homily environment, and fixing it re-renders all 17
+published homilies. All seven sourcing defects are resolved: the GIRM
+chapters and the readings page are re-read or registered from archived
+captures, without bypassing the publisher's bot challenge, and the
+sacramentaries, Schuster, Fromage and the *maiestas* claim are checked on
+retained page images. The revision's own reviews raised 13 minor
+advisories; they stand in the leaf with 8 observations.
+
+The installer was refused the 15-path site-source rebind. The maintainer
+authorized it, the driver ran it, and the same installer then passed. The
+revised family is a 37-page study, a 12-page concise study, a four-page
+homily (1,459 spoken words) and the web edition. The run is archived in the
+leaf under `evaluations/proper-study-results/821c824684b0c7a7/`, and
+[CYCLES.md](workflows/reviews/claude-pc-s55-revision-2026-10-16/CYCLES.md) accounts for every finding and source. `make check-sources`,
+`check-release-bindings`, `check-web-editions-current`, the promise ledger
+and `tmt check` pass.
 
 ## Claude postconciliar Twenty-ninth Sunday three documents, 2026-10-16
 

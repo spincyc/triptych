@@ -1,0 +1,373 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "SYN-006",
+      "location": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/concise/03-date-location.tex (rendered physical p. 2, Scriptural Date and Location: the note formerly beneath the orientation table)",
+      "problem": "This revision removed the short note beneath the page-2 table, and with it the table's only pointer to the evidence ('Sources are given passage by passage in the full study's appendix Scriptural Date and Location'). The note was cut so that the taller orientation-v2 Passage cells keep the sheet on one page. Its qualifications and the pointer now stand only in the scope appendix's 'Chronology and records' paragraph on p. 11. The three-document profile asks that full source and derivation detail be 'precisely referenced from the concise table', and that a qualification which changes a displayed answer carry 'a precise note to its fuller explanation'. One example: 'the bound is that of the whole Psalter', beside 'Before c. 165 B.C.', now has no such note on the page. The qualifications themselves remain beside their answers (generated relation labels and place phrases), so no displayed date is misread. What is missing is the table-local reference.",
+      "required_result": "Page 2 carries one short line beneath the table that refers the reader to the full study's appendix Scriptural Date and Location for each passage's sources and setting. The sheet stays alone on physical page 2, with the type size and the generated cells unchanged. Room is made by tightening authored place phrases whose cells are the tallest in their row, for example the two Isaiah rows, whose three-line place cells stand beside two-line Passage cells.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "observations": [
+    {
+      "location": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/chronology-annotations.tex, orientation row row-e535d564c1cee995 (rendered concise p. 2, second First Reading row, Occurrence and place column)",
+      "note": "The generated subject 'The prophetic activity behind Isaiah 40-55 in the NABRE introduction' prints an ASCII hyphen, while the en-dash ranges around it and the concise scope appendix print '40\u201355'. orientation-v2 normalizes only the Passage refs, not corpus subject labels. This looks like a missing display-normalization criterion in the shared generator or corpus, which the leaf cannot repair."
+    },
+    {
+      "location": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/concise/10-commentary.tex lines 125-138, against sections/50-comparison.tex lines 33-37 (comparison table, 'Disagreement among the witnesses')",
+      "note": "The concise sets Chrysostom alone against Hilary and Ambrose on whether one who keeps nothing of the world's goods still owes Caesar, and says Augustine 'does not take up possession'. The expansive table instead lists Augustine on the 'yes' side ('those who are better'). En. in Ps. 124.7 (NPNF8 tracked lines 61094-61105) grounds the honour in God's ordinance and never mentions possession, so the concise's narrower statement is the one the quoted words support, and it does not contradict research/interpretations.md. The difference between the two documents is recorded here so that it is not taken for a compression error."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "concise-inventory",
+          "kind": "front-matter",
+          "path": "sections/concise/01-inventory.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-inventory"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "concise-overview",
+          "kind": "front-matter",
+          "path": "sections/concise/02-overview.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "communion-antiphon-a",
+            "communion-antiphon-b"
+          ],
+          "key": "concise-date-location",
+          "kind": "front-matter",
+          "path": "sections/concise/03-date-location.tex",
+          "references": [
+            "format.tex",
+            "research/chronology-annotations.tex",
+            "research/chronology.toml"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-overview"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "concise-themes",
+          "kind": "front-matter",
+          "path": "sections/concise/04-themes.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-themes"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "concise-commentary",
+          "kind": "integrated-commentary",
+          "path": "sections/concise/10-commentary.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "concise-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/concise/90-apparatus.tex",
+          "references": [
+            "propers/verified.md",
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+      "element_keys": [
+        "entrance-antiphon",
+        "collect",
+        "first-reading",
+        "responsorial-psalm",
+        "second-reading",
+        "acclamation",
+        "gospel",
+        "prayer-over-offerings",
+        "communion-antiphon-a",
+        "communion-antiphon-b",
+        "prayer-after-communion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Ambrose of Milan",
+            "Hilary of Poitiers",
+            "Thomas Aquinas",
+            "Jerome",
+            "John Chrysostom",
+            "Bede"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Ambrose of Milan",
+            "Hilary of Poitiers",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "image-and-inscription"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "image-and-inscription",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Jerome",
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Hilary of Poitiers",
+            "Ambrose of Milan",
+            "Bede",
+            "Robert Bellarmine"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Jerome",
+            "Augustine of Hippo",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "cyrus-and-caesar"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "cyrus-and-caesar",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Jerome",
+            "Thomas Aquinas",
+            "Augustine of Hippo",
+            "Hilary of Poitiers",
+            "Robert Bellarmine",
+            "Bede"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Jerome",
+            "Thomas Aquinas",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "sincere-heart"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "sincere-heart",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+    "files": {
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/format.tex": "eeaf0327164d86b3e1294ccd6798be86513bb5471c89fd0009f9f455ec6985a2",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/propers/verified.md": "88708759210c340d16389a63d200bbc54c8b6e247005edea071a3530b6eb43fe",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/chronology-annotations.tex": "6a7b1d863a045f973d9dc63db12ac342c27123a94fd3a20d0179d1ee5fbc00ad",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/chronology.toml": "068443b2496832b456c4a5c459bf4745a9e1b1a68692155c8761151f02ae8572",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/interpretations.md": "110ae288f098bc51652f6912674fa3b840d9e21b634414ec1be79223eecf2b3f",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/scope.md": "51a11d77662f204ff913e045a2e609b7e10ab345ff8674e69787852bd4a327fd",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/concise/01-inventory.tex": "881575204fcda13d5691d3ea5bf3adb66a550bbe20bc0a39576436f50124b81c",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/concise/02-overview.tex": "964a7f8009bcf5b9a3946d8d63a62edd543c12bbb406c9c603ce42e4215ceb02",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/concise/03-date-location.tex": "845c146afb7baf817142094236318550ddc8e01609e991446f93c9c26b164eb8",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/concise/04-themes.tex": "d57a3be2fe09079391e9f265d5ffda7c461133aa6deb85ce9ea77e1fcab0bdd8",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/concise/10-commentary.tex": "662e90bfddd8a1f878d9b0fa502ebdd4fc9d5abbf309c7b9c82d67e9f8345422",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/concise/90-apparatus.tex": "33f7d1ca6ac5ca86a0d5a36a6acaa97f1acf6e7e834f2d9de8a9d3cfdbb858fe",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/synthesis.tex": "2255e5c9dca614a904c9b832c2c1446c05a32ac8678a85b9dd79b5389e0923e6",
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "12",
+            "e6d49782e4c62eb282fbb9ce1e18a27f1e74c81170f26533f5efea288ebf4ff5",
+            "821c824684b0c7a7",
+            "d5abae0272089a418653fe675220d45f81313871",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "synthesis",
+    "schema": 1
+  },
+  "stage": "synthesis-review",
+  "summary": "Reviewed the revised concise study (synthesis.tex with sections/concise/01-04, 10 and 90; every sealed file hash-matched REVIEW_INPUTS) against the accepted expansive study, research/interpretations.md, research/scope.md, research/context.md and exact source loci. An independent build from the sealed sources gives 12 physical pages, text identical to the author proof, settled in one pass with no warnings. The zref markers put the inventory and the four overview rows on p. 1, the date sheet alone on p. 2, Themes on pp. 3-4 (p. 4 about 85% full) and the commentary from p. 5. tools/check-proper-components --edition synthesis passes on that aux. Each reading's answer can be recovered from the concise prose alone. The first: the self, bearing God's image, is what is owed to God (Augustine, Ambrose; Hilary by origin; Aquinas's literal and mystical senses; Jerome's literal dues kept beside it). The second: Caesar's due is real and bounded inside the sovereignty that took Cyrus by the hand, with the Hilary/Ambrose against Chrysostom disagreement over possession kept. The third: true words come from a divided heart, and Christ's reading of hearts is a sign of Godhead (Chrysostom, Hilary, Aquinas) set against Jerome's rule of prudence. The commentary interleaves the three readings at shared questions and carries their reasoning beyond the opening. It keeps branch limits, Augustine's 'some', Jerome-only typology and the Old Latin 'from the wood', and it adds no compilation history. The revision's new material checks against its sources: Chrysostom Hom. in Rom. 23 (NPNF11 tracked lines 46231-46236), Augustine En. in Ps. 124.7-8 (NPNF8 lines 61094-61160), Hilary 23.1-2 (PL 9 cols. 1044-1045, page image), Lewis and Short s.v. majestas (p. 1101, page image), Mt 21:45, and World Mission Day and the conditional Mass for the Evangelization of Peoples (consistent with research/context.md and the expansive appendix). Spot checks on the page images: Jerome PL 26 col. 163, Aquinas Venice p. 284. English quotations of Augustine, Chrysostom (Matt., Phil., 1 Thess.) and Bellarmine were found verbatim in the tracked texts. Page-2 lookups. Second Reading 1 Thes 1:1-5b: Composition, Paul at Corinth (subscription: Athens), Disputed A.D. 52; A.D. 53-54. Gospel Mt 22:15-21: Event in the temple at Jerusalem, Date unresolved; Composition row, disputed list. Communion Antiphon (first) Ps 32 (33):18-19: three rows (occasion unresolved; Psalter bound before c. 165 B.C., labelled as the whole Psalter's; David's reign, disputed B.C. 1055-1015). Isaiah: two rows, each labelled by subject (Souvay's ministry; NABRE's chapters 40-55). Every passage pairs with its own occurrence, place and date. Limits: the restricted GIRM chapter II page, the readings-page capture and the NABRE introductions were not re-read and rest on the research records. The Ambrose electronic text and the Bede, Aquinas-Isaiah and Aquinas-Philippians page images were not re-opened. Verdict: PASS. One advisory: page 2 lost its pointer to the full study's appendix. Two observations."
+}

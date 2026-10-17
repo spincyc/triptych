@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 2986,
-  "editions": 1088,
+  "artifacts": 3003,
+  "editions": 1093,
   "passages": 5288,
   "readable": 3087,
-  "works": 947
+  "works": 951
  },
  "facets": {
   "authors": [
@@ -383,6 +383,10 @@
    },
    {
     "id": "Charles Wood",
+    "works": 1
+   },
+   {
+    "id": "Charlton T. Lewis and Charles Short, revising, enlarging and in great part rewriting E. A. Andrews's translation of Wilhelm Freund",
     "works": 1
    },
    {
@@ -1107,7 +1111,7 @@
    },
    {
     "id": "Leo XIV",
-    "works": 1
+    "works": 3
    },
    {
     "id": "Library of Congress",
@@ -1728,6 +1732,10 @@
    {
     "id": "The Metropolitan Museum of Art",
     "works": 13
+   },
+   {
+    "id": "The Pontifical Mission Societies in the United States",
+    "works": 1
    },
    {
     "id": "The Progressive Farmer",
@@ -2360,6 +2368,10 @@
     "works": 2
    },
    {
+    "id": "lexicon",
+    "works": 2
+   },
+   {
     "id": "liturgical-edition",
     "works": 2
    },
@@ -2377,6 +2389,10 @@
    },
    {
     "id": "papal-bull",
+    "works": 2
+   },
+   {
+    "id": "papal-message",
     "works": 2
    },
    {
@@ -2880,6 +2896,10 @@
     "works": 1
    },
    {
+    "id": "institutional-web-page",
+    "works": 1
+   },
+   {
     "id": "institutional-webpage",
     "works": 1
    },
@@ -2901,10 +2921,6 @@
    },
    {
     "id": "lexical-reference",
-    "works": 1
-   },
-   {
-    "id": "lexicon",
     "works": 1
    },
    {
@@ -3454,7 +3470,7 @@
   ],
   "languages": [
    {
-    "editions": 592,
+    "editions": 597,
     "id": "en"
    },
    {
@@ -3584,7 +3600,7 @@
     "label": "18th century"
    },
    {
-    "editions": 203,
+    "editions": 204,
     "id": "1800",
     "label": "19th century"
    },
@@ -3594,24 +3610,24 @@
     "label": "20th century"
    },
    {
-    "editions": 594,
+    "editions": 598,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 1675,
-    "editions": 400,
+    "artifacts": 1683,
+    "editions": 402,
     "id": "public-domain"
    },
    {
-    "artifacts": 797,
-    "editions": 401,
+    "artifacts": 805,
+    "editions": 405,
     "id": "restricted"
    },
    {
-    "artifacts": 331,
+    "artifacts": 332,
     "editions": 163,
     "id": "unresolved"
    },
@@ -9559,6 +9575,7 @@
      "passages": 1,
      "readable": 0,
      "rights": [
+      "public-domain",
       "unresolved"
      ],
      "title": "Sacramentarium Leonianum, edited with introduction, notes and three photographs by C. L. Feltoe",
@@ -10641,6 +10658,37 @@
     "la"
    ],
    "title": "Expectans Expectavi"
+  },
+  {
+   "alternate_titles": [
+    "Lewis and Short",
+    "Harpers' Latin Dictionary",
+    "A New Latin Dictionary"
+   ],
+   "author": "Charlton T. Lewis and Charles Short, revising, enlarging and in great part rewriting E. A. Andrews's translation of Wilhelm Freund",
+   "category": "lexicon",
+   "directory": "editions/charlton-t-lewis/a-latin-dictionary/",
+   "editions": [
+    {
+     "date": "1879",
+     "file": "1879-harper-new-york-1879.json",
+     "id": "edition.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Harpers' Latin Dictionary: A New Latin Dictionary founded on the translation of Freund's Latin-German Lexicon, edited by E. A. Andrews, revised, enlarged and in great part rewritten by Charlton T. Lewis and Charles Short",
+     "year": 1879
+    }
+   ],
+   "id": "work.charlton-t-lewis.a-latin-dictionary",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "title": "A Latin Dictionary, founded on Andrews' edition of Freund's Latin Dictionary"
   },
   {
    "alternate_titles": [
@@ -19734,6 +19782,59 @@
    "title": "Homily for the Jubilee of Marian Spirituality, 12 October 2025"
   },
   {
+   "alternate_titles": [],
+   "author": "Leo XIV",
+   "category": "papal-message",
+   "directory": "editions/leo-xiv/message-world-mission-day-2026/",
+   "editions": [
+    {
+     "date": "2026-10-16",
+     "file": "2026-2026-english-vatican-web-2026-10-16.json",
+     "id": "edition.leo-xiv.message-world-mission-day-2026.english-vatican-web-2026-10-16",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Message for the 100th World Mission Day 2026, official English Holy See web edition",
+     "year": 2026
+    }
+   ],
+   "id": "work.leo-xiv.message-world-mission-day-2026",
+   "languages": [
+    "it",
+    "en"
+   ],
+   "title": "Message of the Holy Father for the 100th World Mission Day 2026 [18 October 2026]: One in Christ, united in mission"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Leo XIV",
+   "category": "papal-message",
+   "directory": "editions/leo-xiv/video-message-world-mission-sunday-2026/",
+   "editions": [
+    {
+     "date": "2026-10-16",
+     "file": "2026-2026-english-vatican-web-2026-10-16.json",
+     "id": "edition.leo-xiv.video-message-world-mission-sunday-2026.english-vatican-web-2026-10-16",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Video message for the 100th World Mission Sunday, official English Holy See web edition",
+     "year": 2026
+    }
+   ],
+   "id": "work.leo-xiv.video-message-world-mission-sunday-2026",
+   "languages": [
+    "en"
+   ],
+   "title": "Video message of the Holy Father Leo XIV on the occasion of the 100th World Mission Sunday [18 October 2026]"
+  },
+  {
    "alternate_titles": [
     "Chronicling America",
     "National Digital Newspaper Program"
@@ -28772,6 +28873,32 @@
   },
   {
    "alternate_titles": [],
+   "author": "The Pontifical Mission Societies in the United States",
+   "category": "institutional-web-page",
+   "directory": "editions/pontifical-mission-societies-united-states/world-mission-sunday-2026-page/",
+   "editions": [
+    {
+     "date": "2026-10-16",
+     "file": "2026-2026-web-2026-10-16.json",
+     "id": "edition.pontifical-mission-societies-united-states.world-mission-sunday-2026-page.web-2026-10-16",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "World Mission Sunday 2026, web state of 16 October 2026",
+     "year": 2026
+    }
+   ],
+   "id": "work.pontifical-mission-societies-united-states.world-mission-sunday-2026-page",
+   "languages": [
+    "en"
+   ],
+   "title": "World Mission Sunday 2026 (web page)"
+  },
+  {
+   "alternate_titles": [],
    "author": "The Progressive Farmer",
    "category": "newspaper-issue",
    "directory": "editions/the-progressive-farmer/issue-1889-01-15/",
@@ -30649,6 +30776,19 @@
       "restricted"
      ],
      "title": "Daily Readings for 11 October 2026, Twenty-eighth Sunday in Ordinary Time, web state of 6 October 2026",
+     "year": 2026
+    },
+    {
+     "date": "2026-03-15",
+     "file": "2026-2026-03-15-page-for-2026-10-18.json",
+     "id": "edition.united-states-conference-of-catholic-bishops.daily-readings.2026-10-18-web-2026-03-15",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Daily Readings for 18 October 2026, Twenty-ninth Sunday in Ordinary Time, web state of 15 March 2026 (Internet Archive capture)",
      "year": 2026
     },
     {

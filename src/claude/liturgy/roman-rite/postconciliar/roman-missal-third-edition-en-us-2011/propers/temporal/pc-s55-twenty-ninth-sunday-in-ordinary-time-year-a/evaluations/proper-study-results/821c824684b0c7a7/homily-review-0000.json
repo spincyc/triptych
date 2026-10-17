@@ -1,0 +1,264 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "HOM-003",
+      "location": "sections/homily/90-note.tex, 'Relation to the reviewed interpretations' paragraph (lines 30-44): 'The argument preached joins the first and third of the expansive study's three interpretations ...' and 'From the second, The Lord Who Grasps the Hand of Kings, it takes only what all three share, that Caesar's claim stands beneath God's: the Lord's hand on Cyrus, Chrysostom's render and not give and his limit at godliness, and Augustine's soldiers under Julian.'",
+      "problem": "The note says the speech takes from the second interpretation 'only what all three share'. The reviewed comparison names two of the listed items as the very things that set the second interpretation apart (sections/50-comparison.tex lines 63-72; research/interpretations.md, Comparison, 'Where they differ'). First, only the second 'needs the first reading as an argument', and the speech's sixth movement uses Isaiah 45 exactly that way ('Caesar's coin is minted in God's world'). Second, the second alone 'asks, in addition, where the tax must be refused, and finds the answer in a soldier's refusal to offer incense', and the speech preaches that limit through Chrysostom and Augustine's soldiers under Julian. The speech itself is sound. It combines all three readings compatibly and, as the note rightly says, leaves unpreached the witnesses' disagreement over what the debt to Caesar rests on. But the audit statement understates what the speech takes from the second reading, and 'joins the first and third' reads as excluding the second.",
+      "required_result": "The note says that the speech joins the first and third interpretations and takes from the second its argument from Isaiah 45 (the Lord's hand on a king who does not know him) and its limit on Caesar's claim (Chrysostom's limit at godliness; Augustine's soldiers under Julian). It also says that the speech leaves the witnesses' disagreement over the ground of the debt to Caesar unpreached. The spoken body does not change.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-homily.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "homily-body"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "homily-note",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-note.tex",
+          "references": [
+            "propers/verified.md",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+      "element_keys": [
+        "entrance-antiphon",
+        "collect",
+        "first-reading",
+        "responsorial-psalm",
+        "second-reading",
+        "acclamation",
+        "gospel",
+        "prayer-over-offerings",
+        "communion-antiphon-a",
+        "communion-antiphon-b",
+        "prayer-after-communion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Ambrose of Milan",
+            "Hilary of Poitiers",
+            "Thomas Aquinas",
+            "Jerome",
+            "John Chrysostom",
+            "Bede"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Ambrose of Milan",
+            "Hilary of Poitiers",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "image-and-inscription"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "image-and-inscription",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Jerome",
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Hilary of Poitiers",
+            "Ambrose of Milan",
+            "Bede",
+            "Robert Bellarmine"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Jerome",
+            "Augustine of Hippo",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "cyrus-and-caesar"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "cyrus-and-caesar",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Jerome",
+            "Thomas Aquinas",
+            "Augustine of Hippo",
+            "Hilary of Poitiers",
+            "Robert Bellarmine",
+            "Bede"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Jerome",
+            "Thomas Aquinas",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "sincere-heart"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "sincere-heart",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+    "files": {
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/format.tex": "eeaf0327164d86b3e1294ccd6798be86513bb5471c89fd0009f9f455ec6985a2",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/homily.tex": "39d86f97961cf68493311c946b44e30c7733f0e5c149ebccca95e62e331264c1",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/propers/verified.md": "88708759210c340d16389a63d200bbc54c8b6e247005edea071a3530b6eb43fe",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/interpretations.md": "110ae288f098bc51652f6912674fa3b840d9e21b634414ec1be79223eecf2b3f",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/scope.md": "51a11d77662f204ff913e045a2e609b7e10ab345ff8674e69787852bd4a327fd",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/homily/10-homily.tex": "87c2dec2ff718f4e405ee1c2590886087c799afba27582697c4bc27a37145537",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/homily/90-note.tex": "ee1541e30799ed2e504654b72a19519e275c4e46edbc4f1704e410b2a0c8f013",
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "12",
+            "e6d49782e4c62eb282fbb9ce1e18a27f1e74c81170f26533f5efea288ebf4ff5",
+            "821c824684b0c7a7",
+            "d5abae0272089a418653fe675220d45f81313871",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Reviewed the homily of the Claude Twenty-ninth Sunday, Year A (homily.tex; spoken body sections/homily/10-homily.tex; terminal note sections/homily/90-note.tex; all ten sealed hashes matched REVIEW_INPUTS). I checked it against the three-document and postconciliar profiles, propers/verified.md, research/interpretations.md, research/scope.md and the expansive study's interpretations and comparison. Read straight through as a listener would hear it, the speech makes one exegetical argument that grows out of Matthew 22:15-21. Jesus changes give to render. Following Augustine (with Genesis 1:26), the coin's image leads to the self that is owed to God. The questioners' true praise is called hypocrisy because it comes from a divided heart. The speech ties this to the Collect's sincere heart, to the sentence the Alleluia verse comes from (Phil 2:15, simplices, with Aquinas), to Isaiah 45 as the frame and limit of Caesar's claim, to the Prayer over the Offerings, to the Prayer after Communion and to Communion. It ends with a practicable response, the hope of 1 John 3:2 and a return to the opening question. The argument would not survive replacing this Sunday's readings. Its decisive turns come from the text itself: render against give, whose image, and true words called hypocrisy. I checked every quotation and report at its locus. Douay-Rheims: Mt 22:16-21, Gn 1:26, Is 45:1, 4-6, Ps 95:8, Phil 2:15, Mk 10:45, 1 Jn 3:2 and 1 Thes 1:3 (tracked verse texts). Clementine: Phil 2:15 and Mt 22:17, 21. NPNF Augustine: En. in Ps. 4.8, 57.8, 95.9 and 124.7, and Tract. in Ioh. 40.9. NPNF Chrysostom: Hom. in Matt. 70.1-2 and Hom. in 1 Thess. 1. Ambrose: Exp. Luc. IX.35-36 (tracked Latin). On rendered page images: Jerome, PL 26 col. 163; Aquinas, Super Matth. (Venice, p. 283) and Super Phil. c. 2 lect. 4 (Dessain, p. 383). I compared the three oration descriptions with the Week XXIX owner's descriptions of the Latin. Every quotation is exact or faithfully reported, and no Father is credited beyond his locus. The note's exact loci, routes and list of the homily's own connections are accurate. The World Mission Day statement agrees with the bound Holy See message and with research/context.md. I re-derived the spoken count as 1,459 words: about 11.2 minutes at 130 words a minute and 11.7 at 125. Sentences average 13.6 words and the longest is 31. The speech has no stage direction, footnote dependence, clerical identity, invented anecdote, composed prayer, hidden disagreement that bears on its claims, or polemic against a people. The first run's two homily advisories are cleared: Mark 10:45 is now spoken as Scripture with no antiphon clause (HOM-001), and the research records now agree that v. 8 of the psalm is sung whole (HOM-002). Limits: no delivery was timed or heard. The rendered homily PDF was not inspected, which belongs to visual review. The printed Lectionary was not consulted. One advisory (HOM-003) concerns the note's account of what the speech takes from the second interpretation. A filesystem path search printed the names of the GPT provider's Week XXIX owner directories; none was opened, and nothing from them was used. Verdict: PASS."
+}

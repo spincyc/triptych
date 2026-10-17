@@ -1,0 +1,23 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/context.md",
+  "disposition": "PASS",
+  "files_changed": [
+    {
+      "path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/context.md",
+      "sha256": "1f818026dfca0d4298f5e255d500babfb68b37a9fe2b5e9cc422f574fde7e7de"
+    }
+  ],
+  "inventory_path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/context.md#appointed-inventory",
+  "iteration": 0,
+  "notes": [
+    "main.tex already exists; no scaffold was written.",
+    "No registry, manifest, verified.md, source-library or tool file was changed. The registry rows were re-read and still hold.",
+    "New states read but not registered, left for research: the GIRM VII capture (IA 20260613160611, raw sha256 87f33dba..., decoded e973bb8f...), the GIRM VIII capture (IA 20260618180311, raw dd244a19..., decoded dbdf98d9...), the readings-page capture (IA 20260315050321, f20f2e3c...), two Holy See World Mission Day documents and the PMS USA wms-2026 page. The full hashes are in context.md.",
+    "Handoff item 2 is inaccurate. The registered readings state 369f06fd records a direct acquisition, not one registered from the context hash.",
+    "Handoff items 3, 4, 5 and 7, plus standing findings STU-004, HOM-002 and RES-015, are listed as research tasks.",
+    "Independence: the GPT leaf and its records were not opened, and no search printed any line from them."
+  ],
+  "source_plan_path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/context.md#lawful-study-text-routes",
+  "stage": "resolve-context",
+  "summary": "Re-resolved PC-S55-A for 18 October 2026 in research/context.md: re-fetched and hash-matched the national calendar, 2002 Missal and 1981 Ordo; re-read GIRM ch. II directly (byte-identical to registered d10afff3); read GIRM VII/VIII and the readings page in stable Internet Archive captures because direct requests met a 403 challenge; and resolved World Mission Day (Holy See dates the 100th to 18 Oct 2026; PMS USA collection) as an observance with no textual effect, leaving the Pro evangelizatione populorum Mass conditional and unselected. The inventory, keys (acclamation kept) and branch IDs are unchanged, and the research to-do list is updated."
+}

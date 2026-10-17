@@ -1,0 +1,70 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/synthesis.tex",
+  "disposition": "PASS",
+  "files_changed": [
+    {
+      "path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/generation-metadata.tex",
+      "sha256": "47273b80d1fd6200551815224f8e8702777a2ddaabaeac2751920657c884a2b2"
+    },
+    {
+      "path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/production-review.md",
+      "sha256": "ba197ee8678da79971c78c3a1cf0a88be4ffef9cc9fa7652796948d1c2ec9059"
+    },
+    {
+      "path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/concise/03-date-location.tex",
+      "sha256": "845c146afb7baf817142094236318550ddc8e01609e991446f93c9c26b164eb8"
+    },
+    {
+      "path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/concise/04-themes.tex",
+      "sha256": "d57a3be2fe09079391e9f265d5ffda7c461133aa6deb85ce9ea77e1fcab0bdd8"
+    },
+    {
+      "path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/concise/10-commentary.tex",
+      "sha256": "662e90bfddd8a1f878d9b0fa502ebdd4fc9d5abbf309c7b9c82d67e9f8345422"
+    },
+    {
+      "path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/concise/90-apparatus.tex",
+      "sha256": "33f7d1ca6ac5ca86a0d5a36a6acaa97f1acf6e7e834f2d9de8a9d3cfdbb858fe"
+    }
+  ],
+  "iteration": 0,
+  "notes": [
+    "Generation provenance: claude-opus-5-5[1m] at reasoning effort high; revision timestamp 2026-10-16T22:53:00Z; one contribution appended; provenance-matches-run passes for run 821c824684b0c7a7.",
+    "Checks: check-proper-components artifacts (synthesis) valid; _proper_study.py content check with all five --require flags incl. orientation-v2 pass; all eleven check-content-preflight synthesis checks pass (references-used 25 entries/30 loci). TeX log: no warnings, over/underfull boxes or undefined refs; 16 fonts embedded. Research edition rebuilt with the shared timestamp: 37 pages, clean.",
+    "Page 2: the orientation-v2 Passage cells overflowed the sheet to page 3. Fit restored without type or shared-table changes by dropping the intro sentence and the note under the table (its qualifications now in the scope appendix's chronology paragraph) and shortening three place phrases (Gospel event; Philippians and 1 Thessalonians now give writer's place only, recipients left to the book names). Reviewer should judge these shortened phrases.",
+    "Not repaired here (other owners or upstream): STU-014 remains open in the study's own prose (the concise narrows it itself); STU-015-017 do not occur in the concise; HOM-001, VIS-004 not concise-owned. No upstream defect found.",
+    "Independence: the GPT leaf for this identity, its PDFs/web edition and its review directory were not opened; one listing of other leaves' concise date pages printed the path of the GPT 1962 Twenty-first-after-Pentecost file (a different identity), and nothing was used from it."
+  ],
+  "physical_pages": {
+    "chronology": "2-2",
+    "commentary_start": "5",
+    "inventory": "1",
+    "overview_and_four_senses": "1",
+    "themes": "3-4",
+    "total": 12
+  },
+  "proof_aux": {
+    "path": "build/tpt-runs/821c824684b0c7a7/artifacts/derive-synthesis-0000/derive-synthesis-0000-proof.aux",
+    "sha256": "67bcfe19155313c679122c539ed37d2b874fb8cf7f2fc8e366bfeecc4fc0745b"
+  },
+  "proof_log": {
+    "path": "build/tpt-runs/821c824684b0c7a7/artifacts/derive-synthesis-0000/derive-synthesis-0000-proof.log",
+    "sha256": "bd360bdd6dba0ff9551397873d865f37416e261a5f34c827325be5247c7ec782"
+  },
+  "proof_pdf": {
+    "build_copy": "build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+    "pages": 12,
+    "path": "build/tpt-runs/821c824684b0c7a7/artifacts/derive-synthesis-0000/derive-synthesis-0000-proof.pdf",
+    "sha256": "89ccb6fea160816b763a3482953fcab1b6100683779116fd9243527b4f3a8960"
+  },
+  "rasters": "build/tpt-runs/821c824684b0c7a7/artifacts/derive-synthesis-0000/rasters",
+  "stage": "derive-synthesis",
+  "substantive_word_count": {
+    "commentary": 4284,
+    "method": "detex on component sources",
+    "overview": 234,
+    "themes": 1666,
+    "total": 6184
+  },
+  "summary": "Revised the published concise study of PC-S55-A from the revised expansive study: page 2 now sets the twelve orientation-v2 rows on its one page (intro and note removed, note's qualifications moved to the scope appendix, three place phrases shortened); the ground-of-the-debt disagreement shows Chrysostom's and Augustine's own words with the 'yes' given to Chrysostom alone (STU-011/STU-014); SYN-004 English for Hilary; Mt 21:45 cited for references-used; maiestas (Lewis and Short), World Mission Day, the Donatist whited wall and dated GIRM/readings witnesses added from the study; 12-page author proof with settled page roles and all synthesis preflight checks passing."
+}
