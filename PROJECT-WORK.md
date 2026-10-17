@@ -11,19 +11,20 @@ Last reconciled: 2026-10-20.
 
 <!-- promised-deliverable: missal-chronology-acceptance-review-2026-10-17 -->
 
-**Review and corrections verified; transport delivery in progress.** The maintainer requested execution of the
+**Complete: bounded review, correction and verified delivery.** The maintainer
+requested execution of the
 `20261017T034400Z-missal-chronology-cold-review` handoff against checkpoint
 `7fcf8aacb2db404d6910475c4ea30d226b13e2be`, with independent reviewers
 permitted. This pass answers whether the Roman, Ruthenian and Cistercian
 progressions are understandable in the corrected print and live timeline,
 repairs reproducible in-scope defects, and records the evidence and disposition.
-Print, live-browser and model reviews run independently. The broader all-rite
+Print, live-browser and model reviews ran independently. The broader all-rite
 census, acquisitions and complete-text work below remain in progress. Final
 maintainer judgment is distinct from the independent review recommendation.
 
-Completion requires a tracked review with exact sheets and routes, rechecked
-corrections, the focused regression and source/projection checks, and a fresh
-immutable transport containing the current evidence. Changes remain on
+The tracked review names exact sheets and routes, rechecked corrections, the
+focused regression and source/projection results, and a fresh immutable
+transport containing the current evidence. Changes remain on
 `feature/missal-timeline`; no deployment or default-branch integration is part
 of this pass.
 
@@ -39,6 +40,13 @@ Live review passes 73 initial assertions and nine verified 400% zoom assertions;
 three failed initial zoom-setup assertions are explicitly superseded by the
 browser-native follow-up. The full ledger retains its same 32 inherited missing
 installed-PDF findings. Final maintainer judgment remains open.
+
+Reviewed implementation `35864a63a486ce1a252c70487a68b991f81c2f26` is pushed to
+the feature branch. The new transport directory is
+`.scratch/agent-handoffs/20261017T105920Z-missal-chronology-acceptance/`, with
+its sibling `.zip`. All 692 checksum entries match; the 693-file ZIP passes
+CRC, exact member-set and byte-equality verification. The report records its
+archive digest and separates delivery from final maintainer acceptance.
 
 ## All-rite missal timeline recovery and expansion, 2026-10-16
 
