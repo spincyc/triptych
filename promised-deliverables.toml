@@ -1,6 +1,30 @@
 schema_version = 1
 
 [[deliverables]]
+id = "missal-chronology-acceptance-review-2026-10-17"
+owner = "guidance/time-machine.md"
+promise = "Execute the corrected chronology handoff's bounded acceptance review for the Roman, Ruthenian and Cistercian progressions, repair reproducible in-scope findings, and deliver a durable disposition and current review transport without claiming wider corpus completion or maintainer approval."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "independent-reader-review"
+  criterion = "Independent print, live-browser and model reviews name exact sheets, states, transitions and routes and answer the handoff's progression question with reproducible evidence and explicit review limits."
+  status = "pass"
+  evidence = ["workflows/reviews/missal-chronology-2026-10-17/REPORT.md"]
+
+  [[deliverables.requirements]]
+  id = "verified-corrections"
+  criterion = "Every concrete in-scope finding has an evidence-backed disposition; required corrections receive focused regression checks and independent reinspection, with inherited failures distinguished from new failures."
+  status = "pass"
+  evidence = ["workflows/reviews/missal-chronology-2026-10-17/REPORT.md", "scripts/_eucharistic_stages.py", "tools/tests/test_eucharistic_stages.py"]
+
+  [[deliverables.requirements]]
+  id = "review-delivery"
+  criterion = "A tracked report records the final recommendation and remaining decisions; a fresh immutable handoff and byte-verified ZIP bind current artifacts, checks and screenshots, and the reviewed change is committed and pushed to feature/missal-timeline."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "all-rite-missal-timeline-2026-10-16"
 owner = "guidance/time-machine.md"
 promise = "Recover the prior missal-history implementation, establish a sourced historical timeline of sufficiently distinct Eucharistic books for every Catholic rite, organize their temporal witnesses and complete structured texts, and deliver a generated Git history and subway-map visualizer with meaningful textual diffs."
