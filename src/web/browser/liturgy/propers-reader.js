@@ -1139,12 +1139,16 @@
     if (value && groups.some(function (row) { return row.kind === value; })) typeSelect.value = value;
   }
 
+  // Each entry's coverage is the language the Orations control will submit,
+  // so the Orations control must be filled before this list, and a change to
+  // it relabels the list.
   function fillFormularies(groups, kind, value) {
     const group = groups.find(function (row) { return row.kind === kind; });
     const masses = group ? group.masses : [];
+    const language = orationsSelect.value || T.SOURCE_LANGUAGE;
     T.fillSelect(formularySelect, masses.map(function (mass) {
       const coverage = (mass.coverage && mass.coverage.languages || []).find(function (row) {
-        return row.lang === (orationsSelect.value || T.SOURCE_LANGUAGE);
+        return row.lang === language;
       });
       return { value: mass.key, label: (mass.name || mass.key) + (coverage
         ? ' — ' + T.orationLanguageLabel(coverage) : ' — coverage not assessed'), group: massGroup(mass) };
@@ -1241,12 +1245,12 @@
     fillMissals(state.edition.id);
     fillBibles(state.bible.id);
     fillTypes(runtime.groups, currentType);
-    fillFormularies(runtime.groups, typeSelect.value, currentMass);
     const mass = currentMass && (runtime.structure.masses || []).find(function (row) {
       return row.key === currentMass;
     });
     fillOrations(runtime.structure, mass, state.languages.orations,
       state.languages.translationWitness || null);
+    fillFormularies(runtime.groups, typeSelect.value, currentMass);
     browseStatus.textContent = currentMass
       ? 'Changing missal or type revalidates the formulary and requires another choice when it is not held.'
       : 'A formulary must be selected. Nothing is chosen by manifest order.';
@@ -1635,6 +1639,7 @@
         ? runtime.structure : null);
     const groups = draft ? runtime.draftGroups : runtime.groups;
     if (structure) {
+      fillFormularies(groups, typeSelect.value, formularySelect.value);
       fillOrations(structure, selectedBrowseMass(groups), orationsSelect.value, null);
     }
   });

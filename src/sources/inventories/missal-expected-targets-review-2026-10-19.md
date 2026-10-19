@@ -314,7 +314,8 @@ the book alone. Held propers, Mass keys and implementation selectors were not
 consulted. The payload stays outside the repository; this record holds metadata
 only.
 
-The inventory adds 35 slices, 7,621 targets and 30 boundaries for `roman-1962`.
+The inventory adds 35 slices, 7,623 targets and 28 boundaries for `roman-1962`,
+after the independent review corrections recorded below.
 Every artifact page now belongs either to a positive section slice or to an
 explicit extent boundary:
 
@@ -373,11 +374,11 @@ The kinds are not interchangeable and must never be summed into a text total:
 | `sanctoral-body-forms` | complete | form 323 |
 | `sanctoral-printed-slots` | partial | slot 2336 |
 | `sanctoral-form-referrals` | partial | referral 164 |
-| `sanctoral-preface-appointments` | partial | slot 42 |
+| `sanctoral-preface-appointments` | partial | slot 44 |
 | `purification-rite` | partial | slot 13, rite-unit 3, referral 1 |
 | `body-commons-forms` | complete | form 24, prayer-set 17, common 4 |
 | `body-marian-saturday-forms` | complete | form 5 |
-| `body-votives-forms` | complete | form 33, prayer-set 18, ord-opt 6, referral 1 |
+| `body-votives-forms` | complete | form 32, prayer-set 18, ord-opt 6, referral 2 |
 | `body-diverse-prayers-forms` | complete | prayer-set 37 |
 | `body-dead-forms` | complete | prayer-set 25, form 3, referral 1 |
 | `body-absolutions-forms` | complete | rite 2 |
@@ -388,7 +389,7 @@ The kinds are not interchangeable and must never be summed into a text total:
 | `body-dead-slots` | partial | slot 103, referral 9 |
 | `body-absolutions-slots` | partial | rite-unit 21, referral 4 |
 | `local-proper-forms` | complete | slot 650, form 66, referral 18, comm. 1 |
-| `local-additional-commons` | complete | slot 90, prayer-set 12, common 6 |
+| `local-additional-commons` | complete | slot 90, prayer-set 12, form 6 |
 | `holy-water-units` | complete | rite-unit 13 |
 | `appendix-chant-options` | complete | ord-opt 34 |
 | `bound-ritual-appendix` | complete | rite-unit 35, rite 16, slot 14 |
@@ -439,12 +440,15 @@ Commons, the holy-water units, the chant options and the bound appendix.
   except in two expected cases. First, the Apostle commemorations of 25 January,
   22 February and 30 June are printed inside the feast. Second, All Souls has
   three Masses.
-- **Prefaces.** Preface headings and the *Vere dignum* incipit occur only in the
-  Preface section, artifact pp. 305–379, and in the solemn-tone appendix,
-  pp. 1044–1070. The appendix has fourteen tones of existing Prefaces. Every
-  section lane records Preface appointments only as referrals. This supports
-  treating the sixteen existing Preface identities as the whole book's Preface
-  identity inventory, but the search ran over extracted text.
+- **Prefaces.** General rubrics nn. 484–499 (artifact p. 32) name sixteen
+  Prefaces. The Preface section, artifact pp. 304–379, prints fifteen in the
+  solemn tone (including the Chrism Mass), fifteen in the ferial tone and
+  fifteen without chant: together exactly the sixteen existing identities. The
+  solemn-tone appendix, pp. 1044–1071, has fourteen tones of existing Prefaces
+  and adds none. Every Preface appointment found in the text names one of the
+  sixteen. *Vere dignum* also occurs in the Exsultet (p. 268) and the
+  baptismal-water blessing (p. 281), rite texts sung in the manner of a Preface
+  and owned by Holy Week rows, not Mass Prefaces.
 
 ### Overlap with existing rows
 
@@ -491,19 +495,42 @@ commemorations and general-rubric appointments. Each such gap is an explicit
 and Pontificale; it is not those books. The local propers are conditional
 local-book use, not universal calendar membership.
 
-The whole-book slice therefore remains `unresolved`. Retiring its form and
-Preface boundaries was proposed and, on 19 October 2026, deferred: the
-formulary cross-check supports whole-book form enumeration, but the sanctoral
-and Commons sections rest on their first lanes' image checks and have not been
-independently re-verified, and the Preface search ran over extracted text. Both
-boundaries stay `unenumerated` with that evidence restated, until an
-independent review confirms them on page images. Text slots, Ordinary options, commemorations,
-Commons as a kind, and exceptional rites keep explicit `unenumerated`
-boundaries. No whole-book text-slot denominator is asserted.
+The whole-book slice remains `unresolved`, but its form and Preface boundaries
+are retired. Retirement was first deferred, because the sanctoral and Commons
+enumerations rested on their first lanes' image checks and the Preface search
+ran over extracted text. An independent review on 19 October 2026 then
+compared the targets with three self-derived text checks (date headings, rank
+lines and Introit markers), the book's alphabetic index, and 238 page images,
+115 of them in the sanctoral and Commons sections. It found no missing and no
+phantom formulary heading, and exactly sixteen Prefaces. It also found kind
+inconsistencies, now corrected:
+
+- The paschal sub-variants of the Peter and Paul and the Apostles votive Masses
+  (pp. 862, 864) were split out as forms; elsewhere the same device stays inside
+  one form, and the book's index lists each Mass once. They are now
+  `form-referral`.
+- The numbered marriage-anniversary heading (p. 885) is now `form`, as
+  referral-only headings are in the sanctoral and local propers.
+- The six full local Common Masses (pp. 1027–1038) are now `form`, not
+  `common`.
+- Two Preface appointments missed by the OCR (pp. 598 and 607) were added to
+  the partial sanctoral Preface-appointment slice.
+
+The whole-book Mass-formulary denominator is the `form` rows of the temporal,
+sanctoral, body Commons/Marian/votive/dead, local-proper and local-Commons
+slices: 601. The rubric n. 271 taxonomy (5) and the devotional preparation and
+thanksgiving entries (24) share the kind but are not formularies; oration-only
+and rite headings are `prayer-set` and `exceptional-rite` rows. The review's
+limit is stated plainly: a heading the OCR lost on its date line, rank line,
+Introit and index entry at once, on a page not imaged, cannot be ruled out; for
+fixed-date feasts the calendar check confines that risk to non-calendar
+headings. Text slots, Ordinary options, commemorations, Commons as a kind, and
+exceptional rites keep explicit `unenumerated` boundaries. No whole-book
+text-slot denominator is asserted.
 
 Known presentation inconsistencies are retained rather than silently
-normalized. The kind `common` holds four additional-reading pools as well as
-the local Common headings, while the main Common Masses are `form`. Holy Week
+normalized. The kind `common` holds four additional-reading pools, while the
+Common Masses are `form`. Holy Week
 days carry both a `celebration` and a `form` target, while other temporal days
 carry only `form`. Three identifier styles coexist. None of these is summed
 across kinds. The parent-row use of `form_id` remains a latent schema hazard:

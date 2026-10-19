@@ -271,6 +271,11 @@ they cite; a twelfth, christ-the-king's, does too since 2026-10-01. Until
 and served eleven as unresolved for the wrong reason and ot-25's
 `Psalm 118:4-5` as the wrong psalm while `show` printed the right one.
 
+Each calendar file is written compact, with one top-level key and one mass per
+line. Indentation was about a quarter of the raw bytes and a fifth of the
+gzipped bytes the browser downloads and parses. One mass per line keeps a
+regeneration's diff to the masses that changed. `index.json` stays indented.
+
 Cycle-varying propers keep each year's citations apart under `cycles`, because
 a merged list is one the browser cannot tell apart — and because merging them
 silently dropped 43% of the postconciliar citations when it was first written.
@@ -382,6 +387,11 @@ composes the same reports. The browser selects their units through the
 existing semantic events. It does not count translation rows or reconstruct
 a second calendar resolution.
 
+The file-level report states `count_basis` and `denominator` once. The
+per-Mass reports nested in `masses[].coverage` carry the same counts and
+languages but omit those two constants (`_missal_coverage.nested`); a page
+reads a nested report's counts against the file-level basis.
+
 Canonical represented text identities, their appointed occurrences, and
 published translation-witness alternatives are separate counts. Cycle
 containers are not empty extra bodies; their actual children carry coverage.
@@ -402,6 +412,16 @@ supply them. A complete fixed-calendar or Preface slice does not establish a
 whole-book denominator; unresolved enumeration keeps that denominator unknown.
 Neither represented-unit availability nor an inventory's validity is a claim
 of textual completeness.
+
+The structure file's `coverage.expected_inventory` is a projection
+(`_missal_coverage.published_expectations`) of the full join
+`_missal_coverage.expectations` returns. It keeps every slice with its
+per-kind state counts, every boundary, and the inventory state. It replaces
+the one row per expected target with exact totals in `target_states`
+(`represented`, `not-represented`, `unresolved`) and with `not_represented`,
+the `{id, slice_id, kind}` of each expected target no held Mass represents.
+Those rows were 1.4 MB of the 1962 file and no page read them; a consumer that
+needs each target's classification calls `expectations()`.
 
 ## The calendar layer
 

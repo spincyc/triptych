@@ -51,7 +51,7 @@ ASSERTION_COUNTS = {
     "day_reader_integration_browser.mjs": 43,
     "liturgy_reader_shell_browser.mjs": 18,
     "liturgy_reader_visual_reset_browser.mjs": 26,
-    "propers_reader_integration_browser.mjs": 40,
+    "propers_reader_integration_browser.mjs": 45,
 }
 
 # Review-only prototype harnesses serve the tracked tree directly rather than

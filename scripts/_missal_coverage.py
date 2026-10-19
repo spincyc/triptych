@@ -257,6 +257,18 @@ def summarize(units: list[dict], scope: str) -> dict:
     }
 
 
+FILE_CONSTANTS = ("count_basis", "denominator")
+
+
+def nested(report: dict) -> dict:
+    """A summary nested inside a file whose own report states its constants.
+
+    `count_basis` and `denominator` do not vary between summaries; the
+    file-level report states them once instead of once per Mass.
+    """
+    return {key: value for key, value in report.items() if key not in FILE_CONSTANTS}
+
+
 def proper_units(mass: dict) -> list[dict]:
     result = []
     for proper in mass.get("propers") or []:
@@ -466,3 +478,28 @@ def expectations(path: Path, calendar: str, masses: list[dict]) -> dict:
             else "bounded-slices-only",
             "review_ref": document.get("review_ref"),
             "slices": summaries, "targets": targets, "boundaries": boundaries}
+
+
+TARGET_STATES = ("represented", "not-represented", "unresolved")
+
+
+def published_expectations(report: dict) -> dict:
+    """Project `expectations()` for generated data without one row per target.
+
+    The per-target rows were most of a structure file's coverage bytes and no
+    page reads them. The projection keeps every slice and boundary, exact
+    per-state totals, and the identity of each expected target that no held
+    Mass represents, so a missing identity stays visible in the public data.
+    The full classification remains `expectations()`'s return.
+    """
+    targets = report.get("targets") or []
+    states = Counter(row["state"] for row in targets)
+    if set(states) - set(TARGET_STATES):
+        raise ValueError("expected Missal target has an unknown state")
+    projected = {key: value for key, value in report.items() if key != "targets"}
+    projected["target_states"] = {state: states[state] for state in TARGET_STATES}
+    projected["not_represented"] = [
+        {"id": row["id"], "slice_id": row["slice_id"], "kind": row["kind"]}
+        for row in targets if row["state"] == "not-represented"
+    ]
+    return projected

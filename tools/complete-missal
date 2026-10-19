@@ -1086,7 +1086,7 @@ def render_text(report: dict) -> None:
             )
             print(f"  Ordinary represented elements: {ordinary_counts}")
             expected = typed["propers"].get("expected_inventory") or {}
-            states = collections.Counter(row["state"] for row in expected.get("targets", []))
+            states = collections.Counter(expected.get("target_states") or {})
             print(
                 f"  Expected inventory: {len(expected.get('slices', []))} bounded slices; "
                 f"whole inventory {expected.get('whole_inventory_state', 'unresolved')}; "

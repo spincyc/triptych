@@ -20,14 +20,20 @@ C2–C6, corpus text acquisition, and production deployment remain separate
 milestones. Existing ritual-flow and historical acceptance records retain
 their scope.
 
-**In progress: source and browser retries after access restrictions were removed.**
-On 19 October the maintainer requested a retry with fresh parallel agents.
-Normal Git networking and real Chromium execution now work. The full registered
-1962 facsimile was retrieved with its expected SHA-256; whole-book enumeration
-is underway. The Isidore 3453 lead was retrieved but its inspected title page
-identifies a 2004 reprint, so it does not authenticate the 1920 Vatican target.
-Exact-edition source work and independent browser acceptance continue under
-the unchanged C1 requirements.
+**In progress: blocked only on exact-edition acquisition.** The common report,
+reader controls, verification and publication requirements pass. The target
+inventory stays open, for two reasons:
+
+- No authenticated 1920 Vatican typical impression is available. A bounded
+  search found only print records, and every file labelled "1920 typical
+  edition" is the registered 2004 Bonn reprint.
+- No complete 2008 body or index is available. The 2008 book is online only as
+  a paid electronic re-typeset.
+
+Gallica, BNE, Internet Culturale, DigiVatLib and FBC sat behind bot challenges
+and remain unsearched routes. The 1962 whole-book form and Preface boundaries
+are retired after independent page-image review. Text slots and several other
+dimensions remain explicit `unenumerated` boundaries for every family.
 
 The retry's real-browser checks pass all 91 assertion groups: forty Propers,
 eight choices and 43 Day, against the corrected production state. Independent print review
@@ -53,20 +59,52 @@ research and ran four fresh parallel lanes: 1962 inventory, postconciliar
   30 boundaries. Every artifact page 1–1088 is owned by a section slice or an
   explicit extent boundary, and five duplicates of existing identities were not
   added.
-- **Whole-book boundaries.** The 1962 whole-book slice stays unresolved.
-  Retiring its form and Preface boundaries was proposed and deferred until an
-  independent page-image review.
+- **Whole-book boundaries.** An independent review compared the 1962
+  targets with self-derived date, rank and Introit text checks, the book's
+  index, and 238 page images. It found no missing or phantom formulary heading
+  and exactly sixteen Prefaces. Nine kind inconsistencies were corrected and two
+  OCR-missed Preface appointments added. The form and Preface boundaries are
+  retired: 601 Mass formularies under one stated rule. The slice stays
+  unresolved for text slots and the other dimensions.
 - **2008 Latin.** Twenty existing 2002 appointments are joined to the official
   2008 variation list. This establishes identity only and makes no
   unchanged-wording claim.
 - **U.S. 2011.** A 210-heading General Index slice was added from the newly
   registered Catholic Book Publishing preview. The preview is restricted;
   metadata only is kept.
-- **Totals.** The inventory now holds 10,681 targets in 72 slices with 93
+- **Totals.** The inventory now holds 10,683 targets in 72 slices with 91
   boundaries. None of the three whole-book universes is resolved.
-- **Payload.** The generated 1962 Proper structure grows by 49,010 gzip bytes,
-  to 1,564,767 in total. Postconciliar grows by 2,387. The browser does not
-  read the per-target inventory rows the structure now carries.
+- **Browser acceptance.** Real Chromium checked ten Day/Propers states at
+  1024×768 and 768×1024, at 200% and 400% zoom equivalents, with text-only 200%
+  enlargement, forced colors, reduced motion, touch, an accessibility-tree
+  proxy, and real Tab focus containment.
+  - Fixed: the Browse formulary list labelled coverage in the wrong language
+    (introduced by C1); the forced-colors Apply label was invisible; an English
+    composed-text label was tagged Latin; and a zero denominator read "0 of 0".
+    Each has a harness or unit regression.
+  - Recorded for C4 and ritual-flow: the 400%-zoom Contents jump under the
+    action bar, 12 px notices, closed-select truncation, untagged Latin
+    headings, the pre-1955 "Selection unavailable" state without a formulary,
+    and postconciliar "No English or Latin body" wording beside restricted
+    units.
+- **Layout shift.** Throttled-mobile cold CLS fell from 0.117–0.203 to under
+  0.01. The cause was the empty reading box, which moved as the identity block
+  and the longer notice arrived. It is now hidden while only its loading line
+  is present. Settled and loading pixels are unchanged; the reader still sees
+  the loading line replaced by content. While loading, the `main` landmark and
+  skip-link target are therefore not exposed.
+- **Payload.** The published structures no longer carry per-target inventory
+  rows, which the browser never read. They keep exact state totals and the one
+  unrepresented target. Constant per-Mass report fields are also dropped, and
+  the three calendar files are written compactly, one mass per line. Gzip sizes
+  are now: postconciliar 342,797, roman-1962 1,171,066 and pre-1955 441,251
+  bytes. Before C1 they were 309,406, 1,086,641 and 378,778.
+- **Load time.** Day 1962 cold LCP on throttled mobile is 12.21 s, against
+  11.89 s before C1 and 14.54 s at its peak. Postconciliar is 8.21 s against
+  8.13 s. Both still fail the vision's 2.5 s budget, as before C1; warm and
+  desktop loads pass. Larger reductions, a lazily fetched coverage sidecar or
+  per-Mass files, need reader changes and are recorded in the payload lane's
+  proposals.
 
 Work began from verified feature-branch baseline
 `8f7be05286739235d590833eddba538e7e069ce0`; the implementation contract was

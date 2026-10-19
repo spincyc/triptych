@@ -335,6 +335,54 @@ state = "unenumerated"
         missing = [row for row in fixed if row["state"] == "not-represented"]
         self.assertEqual([row["id"] for row in missing],
                          ["roman-1962:commemoration:1962-12-25-comm"])
+        published = coverage.published_expectations(report)
+        self.assertEqual([row["id"] for row in published["not_represented"]],
+                         ["roman-1962:commemoration:1962-12-25-comm"])
+
+    def test_published_inventory_keeps_exact_totals_without_target_rows(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "inventory.toml"
+            path.write_text(self.inventory() + (
+                '\n[[targets]]\nid="absent"\nslice_id="fixed"\nkind="commemoration"\n'
+                'calendar_mass_key="absent"\nidentity_state="established"\n'
+                '\n[[targets]]\nid="unmapped"\nslice_id="fixed"\nkind="preface"\n'
+                'identity_state="target-correspondence-unresolved"\n'
+            ))
+            report = coverage.expectations(path, "roman-1962", [{"key": "feast"}])
+        published = coverage.published_expectations(report)
+        self.assertNotIn("targets", published)
+        self.assertEqual(published["target_states"],
+                         {"represented": 1, "not-represented": 1, "unresolved": 1})
+        self.assertEqual(published["not_represented"],
+                         [{"id": "absent", "slice_id": "fixed", "kind": "commemoration"}])
+        # The slice summaries, boundaries and inventory state are carried whole.
+        self.assertEqual({key: value for key, value in published.items()
+                          if key not in {"target_states", "not_represented"}},
+                         {key: value for key, value in report.items() if key != "targets"})
+        # Totals agree with the slice summaries a reader can also add up.
+        totals = {}
+        for row in published["slices"]:
+            for kind in row["kinds"]:
+                for state, count in kind["states"].items():
+                    totals[state] = totals.get(state, 0) + count
+        self.assertEqual(totals, {key: value for key, value in published["target_states"].items() if value})
+        with self.assertRaises(ValueError):
+            coverage.published_expectations({"targets": [{"id": "x", "slice_id": "s", "kind": "form", "state": "typo"}]})
+
+    def test_nested_summary_drops_only_file_level_constants(self):
+        report = coverage.summarize([coverage.unit({"text": "x"}, target_id="t", occurrence_id="o")], "mass")
+        nested = coverage.nested(report)
+        self.assertEqual(set(report) - set(nested), {"count_basis", "denominator"})
+        self.assertEqual({key: nested[key] for key in nested}, {key: report[key] for key in nested})
+        coverage.validate_summary(nested)
+
+    def test_unrecorded_inventory_projects_zero_totals(self):
+        report = coverage.expectations(Path("/nonexistent/inventory.toml"), "roman-1962", [])
+        published = coverage.published_expectations(report)
+        self.assertEqual(published["state"], "unresolved")
+        self.assertEqual(published["target_states"],
+                         {"represented": 0, "not-represented": 0, "unresolved": 0})
+        self.assertEqual(published["not_represented"], [])
 
 
 if __name__ == "__main__":

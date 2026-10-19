@@ -285,6 +285,14 @@ window.Triptych = (function () {
     return node;
   }
 
+  // The label is English interface text inside a paragraph whose `lang` is
+  // the oration's; it carries its own `lang` so it is not read as Latin.
+  function composedLabel(text) {
+    const label = el('span', 'composed-label', text);
+    label.lang = 'en';
+    return label;
+  }
+
   function clear(node) {
     while (node.firstChild) node.removeChild(node.firstChild);
   }
@@ -1385,9 +1393,11 @@ window.Triptych = (function () {
 
   /** The label an orations control gives one of those languages. */
   function orationLanguageLabel(entry) {
-    return languageName(entry.lang) + (Number.isInteger(entry.targets)
-      ? ' — ' + entry.available_targets + ' of ' + entry.targets + ' represented texts available'
-      : ' — coverage not assessed');
+    // A zero denominator is not a ratio: "0 of 0" reads as a total absence.
+    return languageName(entry.lang) + (!Number.isInteger(entry.targets)
+      ? ' — coverage not assessed'
+      : entry.targets === 0 ? ' — no composed texts represented'
+        : ' — ' + entry.available_targets + ' of ' + entry.targets + ' represented texts available');
   }
 
   const COVERAGE_RELATIONSHIPS = Object.freeze({
@@ -1884,7 +1894,7 @@ window.Triptych = (function () {
           ? 'Composed text — not scripture · ' + languageName(SOURCE_LANGUAGE)
           : 'Composed text — not scripture' +
             (oration.lang === SOURCE_LANGUAGE ? '' : ' · ' + languageName(oration.lang));
-        composed.appendChild(el('span', 'composed-label', label));
+        composed.appendChild(composedLabel(label));
         composed.appendChild(versicled(oration.text));
         composed.lang = oration.lang;
         section.appendChild(composed);
@@ -1968,7 +1978,7 @@ window.Triptych = (function () {
         );
         if (oration.text) {
         const composed = el('p', 'composed');
-        composed.appendChild(el('span', 'composed-label',
+        composed.appendChild(composedLabel(
           'Composed text — not scripture' +
           (oration.lang === SOURCE_LANGUAGE ? '' : ' · ' + languageName(oration.lang))));
         composed.appendChild(versicled(oration.text));
