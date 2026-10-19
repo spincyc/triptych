@@ -20,15 +20,24 @@ C2–C6, corpus text acquisition, and production deployment remain separate
 milestones. Existing ritual-flow and historical acceptance records retain
 their scope.
 
-**Blocked: implementation published; source enumeration and browser acceptance
-remain open.** Work began from verified feature-branch baseline
+**In progress: source and browser retries after access restrictions were removed.**
+On 19 October the maintainer requested a retry with fresh parallel agents.
+Normal Git networking and real Chromium execution now work. The full registered
+1962 facsimile was retrieved with its expected SHA-256; whole-book enumeration
+is underway. The Isidore 3453 lead was retrieved but its inspected title page
+identifies a 2004 reprint, so it does not authenticate the 1920 Vatican target.
+Exact-edition source work and independent browser acceptance continue under
+the unchanged C1 requirements.
+
+Work began from verified feature-branch baseline
 `8f7be05286739235d590833eddba538e7e069ce0`; the implementation contract was
 published as `13e7a190ee4a9771810bf9e516c5490a32b4792b`.
 The first [source inventory](src/sources/inventories/missal-expected-targets-v1.toml)
 checkpoint, `1f8cf65bb1d692b08115665eb8ab74258567f99c`, published 938
 independently grounded identities. The common-report and reader implementation
-was published as `cd6ce81a526238728e3d27230b5c46524c1052a8`. The final source
-checkpoint contains 2,850 identities in 36 bounded slices and 57 explicit
+was published as `cd6ce81a526238728e3d27230b5c46524c1052a8`. The source
+checkpoint `2d698a79b26f0df49fd6e71c4ade016a4b224733`
+contains 2,850 identities in 36 bounded slices and 57 explicit
 boundaries, including sixty appointments/referrals directly established from
 the official 2008 supplement. These heterogeneous identities are not a
 whole-book text-slot denominator. Its
@@ -70,21 +79,24 @@ static/harness regression runs pass 126 tests with two opt-in browser skips,
 plus 21 Day integration tests. The last fixture assertion was rechecked by
 the offline fixture check and seven harness tests (two browser skips).
 
-Real-browser verification is blocked by this environment's refusal of local
-listener and Chromium sandbox system calls; no responsive or print acceptance
-is inferred from the passing unit tests. With the locked Markdown 3.10.3
+The initial run could not perform real-browser verification because the
+environment refused local listener and Chromium sandbox system calls. Those
+restrictions are now removed and verification is running; no responsive or print
+acceptance is inferred from the passing unit tests. With the locked Markdown 3.10.3
 dependency restored under scratch from verified upstream blobs, 130 of 131
 broader public-alpha tests pass. Its sole error is the unchanged absence of
 `pdf/gpt/theology/mariology/ark-of-the-covenant.pdf` in this source-only checkout;
 no publication-filter code was changed. The promise-ledger
 check retains exactly its 32 baseline missing-artifact findings.
 Proper payloads increase by approximately 0.16–0.43 MB compressed per family;
-live load/parse impact remains unmeasured with the browser checks blocked.
-Shell Git networking is unavailable; verified feature-branch checkpoints use
-the connected GitHub API with an expected-head lease and matching local trees.
-The final checkpoint includes the completed bounded inventory, corrected
-browser fixtures, generated data/bindings, and this blocked disposition.
-It does not authorize production deployment or close C1.
+live load/parse impact is being measured in the browser retry.
+The first four feature-branch checkpoints used the connected GitHub API with
+an expected-head lease and matching local trees while shell networking was
+unavailable. A normal Git fetch now succeeds. The last checkpoint includes the
+bounded inventory, corrected browser fixtures, generated data/bindings, and the
+initial blocked disposition.
+That disposition describes the first run; the retry is active and does not
+authorize production deployment or close C1.
 
 Completion requires independently reviewable target and occurrence identities,
 separate witness counts, distinct availability/rights/wording relationships,

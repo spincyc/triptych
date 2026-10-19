@@ -140,8 +140,9 @@ immutable acceptance package. Reproduce them for any release review.
 ### Ordered implementation milestones
 
 The C-series below refines the existing W1–W9 workstreams. It does not replace
-M1–M6 or broaden any historical acceptance. C1 is **blocked pending exact-edition
-source enumeration and real-browser acceptance**; C2–C6 remain
+M1–M6 or broaden any historical acceptance. C1 is **in progress after source and
+browser access restrictions were removed**, with exact-edition enumeration and
+real-browser acceptance still outstanding; C2–C6 remain
 **planned**.
 
 | Milestone | Deliverable | Exit evidence and dependency |
@@ -203,6 +204,14 @@ that permits the local listener and Chromium system calls refused here.
 The [work register](../PROJECT-WORK.md) records the validation results,
 unchanged source-only baseline failures, publication checkpoints, and payload
 cost. This checkpoint does not close C1.
+
+Retry, 2026-10-19: the maintainer requested fresh parallel source and browser
+work after removing the execution restrictions. The complete registered 1962
+PDF now downloads with its expected hash, and Chromium runs the reader harness.
+Exact-target source enumeration, independent responsive/print review and payload
+measurements are active. The earlier inaccessible Isidore 3453 candidate was
+inspected and is a 2004 reprint, not an authenticated 1920 Vatican impression.
+The acceptance criteria above remain unchanged.
 
 #### C2: the reusable representative-Mass pattern
 
