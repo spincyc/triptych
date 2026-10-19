@@ -1,6 +1,36 @@
 schema_version = 1
 
 [[deliverables]]
+id = "missal-reader-completion-plan-2026-10-19"
+owner = "guidance/liturgy-browser-roadmap.md"
+promise = "Persist the recovered daily Missal reader state and detailed completion pattern for content and translations, source-owned text and versicle/response presentation, design, usability, remaining modes, and verification; preserve the historical acceptance boundaries and publish the planning change on feature/missal-reader."
+state = "candidate"
+
+  [[deliverables.requirements]]
+  id = "missal-plan-recovery"
+  criterion = "The roadmap identifies the recovered commit and live surface, distinguishes inventory units and text provenance, records concrete coverage and glyph defects, and reconciles historical acceptance with current outstanding work."
+  status = "pass"
+  evidence = ["guidance/liturgy-browser-roadmap.md"]
+  check = "contains"
+  path = "guidance/liturgy-browser-roadmap.md"
+  needle = "### Recovered baseline and acceptance boundaries"
+
+  [[deliverables.requirements]]
+  id = "missal-plan-execution"
+  criterion = "The canonical roadmap specifies ordered milestones, dependencies, the representative-Mass pattern, dialogue and typography rules, usability and remaining-mode work, release acceptance criteria, and reproducible verification without claiming implementation completion."
+  status = "pass"
+  evidence = ["guidance/liturgy-browser-roadmap.md", "build/agent-continuity/liturgy-reader-visual-plan.md"]
+  check = "contains"
+  path = "guidance/liturgy-browser-roadmap.md"
+  needle = "#### C2: the reusable representative-Mass pattern"
+
+  [[deliverables.requirements]]
+  id = "missal-plan-persistence"
+  criterion = "The work register and continuity entry point point to the canonical plan, the plan's ledger requirements validate, and the coherent documentation change is prepared for a normal commit and push on feature/missal-reader; remote publication is verified from the pushed ref."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "guidance/liturgy-browser-roadmap.md", "build/agent-continuity/liturgy-reader-visual-plan.md"]
+
+[[deliverables]]
 id = "claude-pc-s55-revision-2026-10-16"
 owner = "PROJECT-WORK.md"
 promise = "Fix the standing issues and the sourcing of the published Claude postconciliar Twenty-ninth Sunday (pc-s55): repair the shared tools the first run exposed, then drive a fresh proper-study version-12 run for the same identity through terminal acceptance with fresh cold reviews, resolving the 22 standing findings and the sourcing defects the handoff lists or recording why one cannot be resolved; publish the revised three documents and web edition; document every cycle; push to origin/main with the Pages deployment verified."

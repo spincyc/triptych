@@ -1,6 +1,22 @@
 # Liturgy reader visual plan and continuity
 
-## Resume header
+## Current resume entry, 2026-10-19
+
+Resume from [the canonical reader completion plan](../../guidance/liturgy-browser-roadmap.md#completion-plan-2026-10-19),
+recovered at `c6da24eda429337fe13d59420a3c489a98a16e66`. It owns current
+content/translation accounting, dialogue and typography work, navigation,
+remaining modes, dependencies, and acceptance gates. The maintainer requested
+that plan's persistence, commit, and push on `feature/missal-reader`.
+
+The older entries below preserve historical decisions and evidence. Their
+then-current branch, commits, pending runs, unavailable environments, and
+next commands are not current resume instructions. The August 28 reviewed
+remediation and October repairs supersede the old source-review and example
+replay status; see the roadmap for their evidence owners. The separate ritual
+flow deliverable remains open. No implementation or visual acceptance is
+claimed by persisting this plan.
+
+## Historical resume header, 2026-08-07
 
 - Current branch: `main`
 - Current commit: `85abf971e70e7d1acc8bfa1c29c61ff8c1ff26b3`; pushed emergency takeover checkpoint for Live Reader — Ritual Flow & Orientation
