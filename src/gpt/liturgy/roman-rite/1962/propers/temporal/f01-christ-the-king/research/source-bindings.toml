@@ -1,0 +1,134 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+loci = ["Printed 697–698 / PDF 778–779, marginal 3938–3949", "Printed 291 / PDF 372, Preface 1080", "PDF 10,16,17,29: RG17d,109,111a,112b,115c; RGMR427,431–432"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Whole delivery authenticated; exact images inspected in the assigned pdf-review rasters. Eleven active elements, inactive votive alternatives, conclusions and occurrence rubrics checked. Governing 1962 authority; does not authorize redistribution of the full facsimile. Full leaf text transcription remains pending."
+verified_on = "2026-10-19"
+source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76"
+
+[[bindings]]
+source_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+loci = ["Printed 1257–1260 / PDF 1258–1261", "Printed 813–814 / PDF 812–813"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Whole delivery authenticated; actual body-page images read and compared with the 1962 formulary and Preface. Historical English and Latin antecedent evidence only. Older Sunday-commemoration rubric excluded. Rights inventory covers the specified registered body editions and excludes later inserts; no whole-scan public-domain claim. Leaf exact-text transcription remains pending."
+verified_on = "2026-10-19"
+source_fingerprint = "sha256:376ca4e5db5bd3291c6c11b085c73dafdd1a09a8a7af523652257183cc25d645"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.christ-the-king-appointments"
+loci = ["D. N. Iesu Christi Regis, Dominica ultima octobris, I classis: printed pp. 697-698, artifact PDF pp. 778-779, marginal nos. 3938-3949; proper Preface at printed p. 291, artifact PDF p. 372, no. 1080"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Calendar appointment record corroborated by independent inspection of the governing page images. Composed orations remain nonbiblical; Communion includes selected clauses from Psalm28:10–11; inactive Tract excluded from the dated active inventory."
+verified_on = "2026-10-19"
+source_fingerprint = "sha256:2f2fe1c653f7be6bb4bb3e78860c2737a62e3975905d4fc481f870d3b4dc4d0b"
+
+[[bindings]]
+source_id = "artifact.fssp-france.ordo-du-mois.web-2026-10-19.html-4eb6a52b"
+loci = ["October25,2026 entry"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Exact dated response independently hashed and entry inspected. Institutional corroboration of feast, I class and white; territorial additions outside scope."
+source_fingerprint = "sha256:36b867851ec080442b39b736ed44f7c9ca056b48ad0620efa3b7bdbad3b173d6"
+
+[[bindings]]
+source_id = "artifact.pius-xi.quas-primas.official-english-web-2026-10-19.html-f17b882f"
+loci = ["Paragraphs1–34; particularly7–20,24,28–33"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Whole encyclical read in the acquired official English delivery. Institution, doctrinal grounds and stated pastoral purpose of the feast; independent summaries only. Translation date/rights not established; does not prove personal authorship of Mass prayers."
+source_fingerprint = "sha256:f6e2c5e23a86474d65cd9bab04ec47e0675255e6133c480e67ed8a6672684b46"
+
+[[bindings]]
+source_id = "artifact.ante-nicene-fathers.volume-7.ccel-web-2026-10-19.ccel-text-b69327af"
+loci = ["Victorinus, Commentary on the Apocalypse, chapter1 comments on1,4–7", "Victorinus, chapter5, entire exposition; surrounding editorial elucidations"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Received English commentary inspected, not image-collated. Kingdom/priesthood, witness and the Lamb overcoming death. Editorial interpolation/attribution concerns preserved; not a sole carrier of an interpretation."
+source_fingerprint = "sha256:f3e73dde77b3f5cefed09f8434f7e1d070ba005508c320851c66d617b3e618ae"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-7.ccel-web-2026-09-17.ccel-text-266502c9"
+loci = ["Augustine, Tractate115 on John18:33–40, sections1–5"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete tractate read in retained NPNF delivery. Kingdom in but not originating from the world, regeneration, obedient hearing and prior grace. Commentary extends beyond the appointment into38–40; these verses remain context."
+source_fingerprint = "sha256:10294711891b3ca7163bf578e02d0a027dbd110257bdaf2fb0b89b65ffe858de"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-13.english-ccel-web-2026-09-05.ccel-npnf113-text-54274dd9"
+loci = ["Chrysostom, Homilies on ColossiansII, exposition of1:9–15", "HomilyIII, exposition of1:15–20 and peace application"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Direct exegesis read in retained anthology. Rescue and transfer, Creator not creature, sustaining providence, reconciliation of angels with humanity and liturgical peace. Editorial notes and homily textual variants distinguished from Chrysostom and from the Missal."
+source_fingerprint = "sha256:374d296602c0a52e4c252ad0e7704b9c9952d06f6b66b891bb391c8509c390db"
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950"
+loci = ["2.1-11", "28.1-11", "71.1-20"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "These three complete expositions read. Incarnate intercession, the Church amid storms and peace in Christ, the true Solomon and worldwide redemption. Electronic text inspected; no independent image collation claimed."
+source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573856782e822f37"
+
+[[bindings]]
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1"
+loci = ["Psalms2,28,71,complete expositions in Vulgate numbering"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Historical O’Sullivan English read. Natural sonship and rightful inheritance; natural/ecclesial alternatives for Psalm28; David/Solomon opening and Christological extension of Psalm71; distinct senses of universal homage. These are Psalm commentaries, not direct commentaries on the feast prayers or Gospel."
+source_fingerprint = "sha256:85b019a495120f1320c91743bdd127eef0ccb54126e0247bcb0298f9fb7c3344"
+
+[[bindings]]
+source_id = "artifact.jerome.commentaria-in-danielem.migne-pl-25-wikisource-1845.latin-text-3fe4ba4f"
+loci = ["ChapterVII,on13–14,17–18,25–28"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Native chapter/verse passages read in retained Latin. Received dominion explained by assumed humanity and self-emptying; critiques of Porphyry and earthly millennial expectation. Generated paragraph prefixes are not native loci; no facsimile collation claimed."
+source_fingerprint = "sha256:dab9057a0dc93c8f7e968498dc2c41949281b7c7b59b8d746f86eb80b992a6d8"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.american-1899-ebible.verse-text-21-psalms-6d114c22"
+loci = ["Ps.2.1-13", "Ps.28.1-11", "Ps.71.1-20"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete biblical contexts read in the registered verse delivery. Scripture study English is not silently adapted into a translation of the Missal. Psalm71 title/verse offset is explicitly recorded in scope.md."
+source_fingerprint = "sha256:2c0c07bbac7a7e547fc0be807dfbb67f9a1746ea5ae62bd07c6f7e3015eaa05b"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.american-1899-ebible.verse-text-32-daniel-1550cfbe"
+loci = ["Dan.7.1-28"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete biblical contexts read in the registered verse delivery. Scripture study English is not silently adapted into a translation of the Missal. Psalm71 title/verse offset is explicitly recorded in scope.md."
+source_fingerprint = "sha256:b35bd3f7fb324d9c81ebfff81b1807036e69dc3123696c319795926b48a82b70"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.american-1899-ebible.verse-text-50-john-c90873e2"
+loci = ["John.18.1-40", "John.19.1-42"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete biblical contexts read in the registered verse delivery. Scripture study English is not silently adapted into a translation of the Missal. Psalm71 title/verse offset is explicitly recorded in scope.md."
+source_fingerprint = "sha256:9d79d90abbc2440ecde5739631b77eaa1366edef621ac16df8deb298dcd7d178"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.american-1899-ebible.verse-text-58-colossians-9bd63ede"
+loci = ["Col.1.1-29", "Col.2.1-23"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete biblical contexts read in the registered verse delivery. Scripture study English is not silently adapted into a translation of the Missal. Psalm71 title/verse offset is explicitly recorded in scope.md."
+source_fingerprint = "sha256:57fe82020c834e0b99daa7f6a4e0f2e2472015f4950139ecda20b54cf87be99b"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.american-1899-ebible.verse-text-73-apocalypse-5e392286"
+loci = ["Apoc.1.1-20", "Apoc.5.1-14"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete biblical contexts read in the registered verse delivery. Scripture study English is not silently adapted into a translation of the Missal. Psalm71 title/verse offset is explicitly recorded in scope.md."
+source_fingerprint = "sha256:2d7612d08073c99c92bae2641ac6ccf6b64f3e053352cb4125d02ec656a70dae"

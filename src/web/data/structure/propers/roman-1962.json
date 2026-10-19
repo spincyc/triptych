@@ -12,9 +12,9 @@
    "incipit_only": 0,
    "lang": "la",
    "rights_withheld": 0,
-   "scripture_delegated": 3474,
-   "unavailable": 209,
-   "units": 5060,
+   "scripture_delegated": 3473,
+   "unavailable": 212,
+   "units": 5062,
    "withheld": 0
   },
   {
@@ -26,9 +26,9 @@
    "incipit_only": 0,
    "lang": "en",
    "rights_withheld": 610,
-   "scripture_delegated": 3474,
-   "unavailable": 112,
-   "units": 5060,
+   "scripture_delegated": 3473,
+   "unavailable": 115,
+   "units": 5062,
    "withheld": 0
   }
  ],
@@ -424285,6 +424285,70 @@
      "untranslated": null
     },
     {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "form_id": "main",
+     "incipit": null,
+     "languages": [
+      {
+       "available": false,
+       "held": false,
+       "lang": "la",
+       "reason": null,
+       "status": "unavailable"
+      },
+      {
+       "available": false,
+       "held": false,
+       "lang": "en",
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "christ-the-king",
+           "occurrence": 1,
+           "proper": "Collect"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
+      }
+     ],
+     "latin": null,
+     "name": "Collect",
+     "source": "composed",
+     "taken_from": null,
+     "text": null,
+     "text_status": {
+      "scope": "proper-body",
+      "state": "unavailable"
+     },
+     "translations": null,
+     "unavailable_translations": null,
+     "untranslated": [
+      {
+       "lang": "en",
+       "state": "unavailable",
+       "target": {
+        "cycle": "all",
+        "extent": "body",
+        "form_id": "main",
+        "mass": "christ-the-king",
+        "occurrence": 1,
+        "proper": "Collect"
+       }
+      }
+     ]
+    },
+    {
      "citations": [
       {
        "book": "Colossians",
@@ -424480,84 +424544,6 @@
     {
      "citations": [
       {
-       "book": "Psalms",
-       "loci": {
-        "hebrew": [
-         {
-          "chapter": 89,
-          "first": 27,
-          "last": 28
-         },
-         {
-          "chapter": 89,
-          "first": 30,
-          "last": 30
-         }
-        ],
-        "hebrew-unnumbered-titles": [
-         {
-          "chapter": 89,
-          "first": 26,
-          "last": 27
-         },
-         {
-          "chapter": 89,
-          "first": 29,
-          "last": 29
-         }
-        ],
-        "vulgate": [
-         {
-          "chapter": 88,
-          "first": 27,
-          "last": 28
-         },
-         {
-          "chapter": 88,
-          "first": 30,
-          "last": 30
-         }
-        ]
-       },
-       "numbering": "vulgate",
-       "ref": "Psalms 88:27-28,30",
-       "token": "Ps",
-       "unresolved": null
-      }
-     ],
-     "cycles": {},
-     "form": "",
-     "form_id": "main",
-     "incipit": null,
-     "languages": [
-      {
-       "available": false,
-       "held": false,
-       "lang": "la",
-       "reason": "delegated-to-scripture",
-       "status": "scripture-delegated"
-      },
-      {
-       "available": false,
-       "held": false,
-       "lang": "en",
-       "reason": "delegated-to-scripture",
-       "status": "scripture-delegated"
-      }
-     ],
-     "latin": null,
-     "name": "Tract",
-     "source": "scripture",
-     "taken_from": null,
-     "text": null,
-     "text_status": null,
-     "translations": null,
-     "unavailable_translations": null,
-     "untranslated": null
-    },
-    {
-     "citations": [
-      {
        "book": "John",
        "loci": {
         "hebrew": [
@@ -424677,18 +424663,75 @@
      "untranslated": null
     },
     {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "form_id": "main",
+     "incipit": null,
+     "languages": [
+      {
+       "available": false,
+       "held": false,
+       "lang": "la",
+       "reason": null,
+       "status": "unavailable"
+      },
+      {
+       "available": false,
+       "held": false,
+       "lang": "en",
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "christ-the-king",
+           "occurrence": 1,
+           "proper": "Secret"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
+      }
+     ],
+     "latin": null,
+     "name": "Secret",
+     "source": "composed",
+     "taken_from": null,
+     "text": null,
+     "text_status": {
+      "scope": "proper-body",
+      "state": "unavailable"
+     },
+     "translations": null,
+     "unavailable_translations": null,
+     "untranslated": [
+      {
+       "lang": "en",
+       "state": "unavailable",
+       "target": {
+        "cycle": "all",
+        "extent": "body",
+        "form_id": "main",
+        "mass": "christ-the-king",
+        "occurrence": 1,
+        "proper": "Secret"
+       }
+      }
+     ]
+    },
+    {
      "citations": [
       {
        "book": "Psalms",
-       "loci": {
-        "hebrew": [
-         {
-          "chapter": 29,
-          "first": 10,
-          "last": 10
-         }
-        ],
-        "vulgate": [
+       "edition_loci": {
+        "douay-rheims": [
          {
           "chapter": 28,
           "first": 10,
@@ -424696,8 +424739,24 @@
          }
         ]
        },
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 29,
+          "first": 10,
+          "last": 11
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 28,
+          "first": 10,
+          "last": 11
+         }
+        ]
+       },
        "numbering": "vulgate",
-       "ref": "Psalms 28:10",
+       "ref": "Psalm 28:10-11",
        "refused": {
         "hebrew-unnumbered-titles": "English Bibles divide Psalm 29 differently from the Hebrew numbering, and no verse-for-verse correspondence is recorded for it"
        },
@@ -424734,6 +424793,70 @@
      "translations": null,
      "unavailable_translations": null,
      "untranslated": null
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "form_id": "main",
+     "incipit": null,
+     "languages": [
+      {
+       "available": false,
+       "held": false,
+       "lang": "la",
+       "reason": null,
+       "status": "unavailable"
+      },
+      {
+       "available": false,
+       "held": false,
+       "lang": "en",
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "christ-the-king",
+           "occurrence": 1,
+           "proper": "Postcommunion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
+      }
+     ],
+     "latin": null,
+     "name": "Postcommunion",
+     "source": "composed",
+     "taken_from": null,
+     "text": null,
+     "text_status": {
+      "scope": "proper-body",
+      "state": "unavailable"
+     },
+     "translations": null,
+     "unavailable_translations": null,
+     "untranslated": [
+      {
+       "lang": "en",
+       "state": "unavailable",
+       "target": {
+        "cycle": "all",
+        "extent": "body",
+        "form_id": "main",
+        "mass": "christ-the-king",
+        "occurrence": 1,
+        "proper": "Postcommunion"
+       }
+      }
+     ]
     }
    ],
    "registry": "F01",

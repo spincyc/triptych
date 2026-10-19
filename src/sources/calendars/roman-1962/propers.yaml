@@ -15668,18 +15668,21 @@ sections:
           humanis non sinas subjacere periculis. Per Dominum nostrum Jesum Christum,
           Filium tuum: Qui tecum vivit et regnat in unitate.
     - key: christ-the-king
-      name: D. N. Iesu Christi Regis
+      name: 'D. N. Iesu Christi Regis'
       registry: 'F01'
       season: after-pentecost
       rank: I
-      notes: 'RG 17 d assigns this feast perpetually to the last Sunday of October, which always falls between
-        25 and 31 October; the calendar prints it as a notice at the foot of October rather than against
-        a numeral, so it carries no fixed date and a synthetic registry id. Nothing of its formulary has
-        been read. Read on 2026-08-08 from the embedded text layer of the CMAA facsimile of the controlling
-        edition, at this day''s own heading, and nothing has been visually collated. Only the printed scripture
-        citations are recorded: the facsimile sets each oration under a drop capital that the text layer
-        renders as wreckage, so the orations the Missal prints here are appointed and not transcribed. Every
-        citation was re-parsed against the repository''s own canonical book list before it was written.'
+      notes: 'The October feast appointed by RG 17 d, not a seasonal votive Mass. Its heading, rank,
+        appointment order and scripture citations were visually checked on 2026-10-19 in the controlling
+        CMAA facsimile, printed pp. 697-698, artifact PDF pp. 778-779, nos. 3938-3949; the source-local
+        record is passage.catholic-church.missale-romanum.vatican-typica-1962.christ-the-king-appointments.
+        No Sunday commemoration is made. The three appointed orations have text-free witness-gap
+        records pending a separately established publishable wording witness. The proper Preface is
+        appointed at printed p. 698 and printed at p. 291, artifact PDF p. 372, no. 1080; Prefaces remain
+        outside this index. Inactive seasonal-votive alternatives, not October appointments: after
+        Septuagesima the Tract, Psalms 88:27-28,30 (no. 3943), replaces the Alleluia and verse; in
+        Paschal time the Gradual is omitted and the double Alleluia uses Daniel 7:14 and Revelation
+        19:16 (no. 3944). Those alternatives remain source evidence, not extra propers of this feast.'
       propers:
       - name: Introit
         source: scripture
@@ -15711,6 +15714,15 @@ sections:
               chapter: 71
               verse: 1
           ref: Psalms 71:1
+      - name: 'Collect'
+        source: composed
+        notes: 'Printed p. 697, no. 3939; artifact PDF p. 778. Appointment verified; no body retained.'
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: passage.catholic-church.missale-romanum.vatican-typica-1962.christ-the-king-appointments
       - name: Epistle
         source: scripture
         verses:
@@ -15753,24 +15765,6 @@ sections:
               chapter: 7
               verse: 14
           ref: Daniel 7:14
-      - name: Tract
-        source: scripture
-        verses:
-        - book: Psalms
-          ranges:
-          - begin:
-              chapter: 88
-              verse: 27
-            end:
-              chapter: 88
-              verse: 28
-          - begin:
-              chapter: 88
-              verse: 30
-            end:
-              chapter: 88
-              verse: 30
-          ref: Psalms 88:27-28,30
       - name: Gospel
         source: scripture
         verses:
@@ -15795,6 +15789,15 @@ sections:
               chapter: 2
               verse: 8
           ref: Psalms 2:8
+      - name: 'Secret'
+        source: composed
+        notes: 'Printed p. 698, no. 3947; artifact PDF p. 779. Appointment verified; no body retained.'
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: passage.catholic-church.missale-romanum.vatican-typica-1962.christ-the-king-appointments
       - name: Communion
         source: scripture
         verses:
@@ -15805,8 +15808,17 @@ sections:
               verse: 10
             end:
               chapter: 28
-              verse: 10
-          ref: Psalms 28:10
+              verse: 11
+          ref: 'Psalm 28:10-11'
+      - name: 'Postcommunion'
+        source: composed
+        notes: 'Printed p. 698, no. 3949; artifact PDF p. 779. Appointment verified; no body retained.'
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: passage.catholic-church.missale-romanum.vatican-typica-1962.christ-the-king-appointments
     - key: resumed-epiphany-3
       name: Third Sunday after the Epiphany, resumed after Pentecost
       registry: '64'

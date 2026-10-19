@@ -19,12 +19,23 @@ The calendar computation places this feast ahead of the Twenty-second Sunday
 after Pentecost; the workflow must verify the appointment in the governing
 Missal and a dated occurrence witness. No unspecified local overlay is assumed.
 
-State: in progress. The clean workspace was fast-forwarded to current `main`
+State: blocked in research. The clean workspace was fast-forwarded to `main`
 at `c6da24eda`; the exact provider target is now authorized in the production
 plan. Production follows `proper-study` version 12: expansive study, concise
 study, standalone homily for an adult parish assembly, and canonical web
-edition, each with its required fresh review. No artifact or acceptance is
-claimed at this point. The driver record is
+edition, each with its required fresh review. Run `3c11005c63dcd584` has passed
+the scope gate and context resolution. The context identifies eleven active
+elements and the inactive seasonal votive branches against inspected Missal
+pages and the dated FSSP France Ordo. Source-text production encountered
+repeated output rejection; the research worker returned BLOCKED and the
+engine recorded that terminal disposition. Partial research and a bounded
+calendar correction are preserved, but complete text collation, reconciliation
+and research validation remain unfinished. No reviewed publication, acceptance,
+main push or live deployment is claimed. The native run is archived under the
+leaf's `evaluations/proper-study-results/3c11005c63dcd584/`. A future production
+attempt must use a new native run, independently verify the retained work and
+complete every required review; the blocked run supplies no acceptance.
+The driver record is
 `workflows/reviews/gpt-1962-f01-production-2026-10-19/CYCLES.md`.
 Coherent commits stay on `feature/propers/codex`; ordinary pushes to `main`
 and verification of the automatic Pages deployment are explicitly authorized.

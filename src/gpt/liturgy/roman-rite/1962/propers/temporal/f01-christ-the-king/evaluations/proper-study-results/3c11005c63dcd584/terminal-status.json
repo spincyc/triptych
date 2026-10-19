@@ -1,0 +1,48 @@
+{
+  "awaiting_result_for": null,
+  "current_stage": "BLOCKED",
+  "disposition": "BLOCKED",
+  "escalations": [],
+  "iteration": 3,
+  "packet_hash": "54268de70b4b827b140d39be8f380615ba446e1478f29d21a01e8ccc507a877d",
+  "packet_path": "build/tpt-runs/3c11005c63dcd584/packets/research-0000.txt",
+  "packets_emitted": 3,
+  "repo_commit": "dbaed43763020c5deea78e4cf4fcbba124edf58a",
+  "results_received": 3,
+  "run_id": "3c11005c63dcd584",
+  "stage_failures": {
+    "scope-gate": 0
+  },
+  "stage_iterations": {
+    "research": 1,
+    "resolve-context": 1,
+    "scope-gate": 1
+  },
+  "stage_novel": {
+    "scope-gate": 0
+  },
+  "stage_repeats": {
+    "scope-gate": 0
+  },
+  "standing_findings": [],
+  "transitions": [
+    {
+      "disposition": "PASS",
+      "from": "scope-gate",
+      "to": "resolve-context"
+    },
+    {
+      "disposition": "PASS",
+      "from": "resolve-context",
+      "to": "research"
+    },
+    {
+      "disposition": "BLOCKED",
+      "from": "research",
+      "to": "BLOCKED"
+    }
+  ],
+  "workflow_digest": "e6d49782e4c62eb282fbb9ce1e18a27f1e74c81170f26533f5efea288ebf4ff5",
+  "workflow_id": "proper-study",
+  "workflow_version": 12
+}
