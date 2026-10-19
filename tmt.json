@@ -330,6 +330,20 @@
       "stage": "draft",
       "usage": "mass-today show [--date ISO] [--calendar NAME] [--ordinary] [--why] [--format {text,yaml,json}]"
     },
+    "missal-coverage-reconciliation": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": false,
+      "origin": "local",
+      "purpose": "Audit Eucharistic inventories and coverage against canonical source records.",
+      "requires": [
+        "act-history",
+        "source-library"
+      ],
+      "stage": "draft",
+      "usage": "tools/missal-coverage-reconciliation [--json]"
+    },
     "pdf-review": {
       "idempotent": true,
       "json": false,

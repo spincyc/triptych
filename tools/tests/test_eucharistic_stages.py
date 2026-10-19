@@ -5,6 +5,7 @@ from pathlib import Path
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -409,6 +410,65 @@ record_id="research:second"
             return copy.deepcopy(payload)
         with self.assertRaisesRegex(history.HistoryError, "stage dossier membership changed"):
             compare(added)
+
+
+class NativeStageBindingTests(unittest.TestCase):
+    def setUp(self):
+        from test_eucharistic_texts import AdapterBoundaryTests, native_fixture
+        import _eucharistic_texts as texts
+        AdapterBoundaryTests.setUp(self)
+        self.texts = texts
+        self.book, self.extent, self.review, self.save = native_fixture(self)
+        self.data = fixture()
+        self.directory = self.root / stages.DIRECTORY
+        self.directory.mkdir(parents=True)
+        self.path = self.directory / "fixture.json"
+        self.data["stages"][0].update(text_binding="native-book:fixture-book", text_coverage="complete")
+        self.catalogue_records = {"research:first": {"source_record": {"source_library_edition_id": "edition.fixture-book"}}}
+
+    def record(self, *args, **kwargs):
+        from test_eucharistic_texts import AdapterBoundaryTests
+        return AdapterBoundaryTests.record(self, *args, **kwargs)
+
+    def artifact(self, *args, **kwargs):
+        from test_eucharistic_texts import AdapterBoundaryTests
+        return AdapterBoundaryTests.artifact(self, *args, **kwargs)
+
+    def project(self):
+        self.path.write_text(json.dumps(self.data))
+        with patch.object(self.texts, "_load_library", return_value=self.library):
+            return stages.load(self.root, catalogue_ids={"research:first", "research:second"},
+                               catalogue_records=self.catalogue_records, comparisons={}, fingerprint=history.fingerprint)
+
+    def test_complete_stage_binds_exact_native_scope_and_pins_all_inputs(self):
+        result = self.project()
+        self.assertEqual("complete", result["stages"][0]["text_coverage"])
+        self.assertTrue(any(stamp["path"].endswith("fixture-book-review.json") for stamp in result["inputs"]))
+        stages.verify_inputs(self.root, result["inputs"], fingerprint=history.fingerprint)
+        review = self.root / self.book["collation_path"]
+        review.write_text(review.read_text() + "\n")
+        with self.assertRaisesRegex(stages.StageError, "stage input changed"):
+            stages.verify_inputs(self.root, result["inputs"], fingerprint=history.fingerprint)
+
+    def test_matching_catalogue_labels_cannot_hide_different_canonical_editions(self):
+        self.catalogue_records["research:first"]["source_record"]["source_library_edition_id"] = "edition.another-book"
+        with self.assertRaisesRegex(stages.StageError, "edition differs from catalogue"):
+            self.project()
+        self.catalogue_records = {}
+        with self.assertRaisesRegex(stages.StageError, "requires canonical catalogue edition"):
+            self.project()
+
+    def test_constituent_stage_remains_partial_and_wrong_witness_is_refused(self):
+        self.book["extent_kind"] = "constituent"
+        self.book["excluded_book_divisions"] = ["Another service book constituent"]
+        self.save()
+        with self.assertRaisesRegex(stages.StageError, "scope mismatch"):
+            self.project()
+        self.data["stages"][0]["text_coverage"] = "partial"
+        self.assertEqual("partial", self.project()["stages"][0]["text_coverage"])
+        self.data["stages"][0]["witness_ids"] = ["research:second"]
+        with self.assertRaisesRegex(stages.StageError, "scope mismatch"):
+            self.project()
 
 
 if __name__ == "__main__":

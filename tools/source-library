@@ -1925,7 +1925,7 @@ def _validate_passage_locators(library: Library) -> None:
 
 
 def _owned_history_inventory(library: Library, entry: Path, relative: Path) -> bool:
-    """Recognize two exact editorial JSON owners, never a general JSON exemption.
+    """Recognize exact editorial JSON owners, never a general JSON exemption.
 
     This checks ownership envelopes only. The history command owns the dossier
     evidence and reference checks; this tool owns neither historical assertions
@@ -1940,6 +1940,22 @@ def _owned_history_inventory(library: Library, entry: Path, relative: Path) -> b
     elif relative == Path("inventories/eucharistic-stage-coverage-v1.json"):
         record_type, identity = "eucharistic-book-stage-coverage-audit", "audit_id"
         arrays = ("inputs", "sources")
+    elif (len(relative.parts) == 3 and relative.parts[:2] == ("inventories", "eucharistic-books")
+          and entry.suffix == ".json" and KEBAB_PATTERN.fullmatch(entry.stem)):
+        record_type, identity = "eucharistic-native-book", "id"
+        arrays = ("stage_ids", "catalogue_witness_ids", "components", "languages", "witnesses", "units", "excluded_book_divisions")
+    elif (len(relative.parts) == 4 and relative.parts[:3] == ("inventories", "eucharistic-books", "support")
+          and entry.suffix == ".json" and KEBAB_PATTERN.fullmatch(entry.stem)
+          and any(entry.stem.endswith(suffix) for suffix in ("-extent", "-review", "-parentage"))):
+        if entry.stem.endswith("-extent"):
+            record_type, identity = "eucharistic-book-extent", "book_id"
+            arrays = ("expected_unit_ids", "pages", "unresolved", "omitted")
+        elif entry.stem.endswith("-review"):
+            record_type, identity = "eucharistic-book-collation", "book_id"
+            arrays = ()
+        else:
+            record_type, identity = "eucharistic-text-parentage", "id"
+            arrays = ("evidence",)
     else:
         return False
 
@@ -1965,6 +1981,27 @@ def _owned_history_inventory(library: Library, entry: Path, relative: Path) -> b
             or not _is_string(data.get(identity)) or not _is_string(data.get("title"))
             or any(not isinstance(data.get(key), list) for key in arrays)):
         library.error(entry, f"expected schema_version=1 {record_type} ownership envelope")
+        return True
+    required = {
+        "eucharistic-native-book": ("scope", "transcribed_by", "extent_kind", "extent_path", "collation_path"),
+        "eucharistic-book-extent": ("status",),
+        "eucharistic-book-collation": ("status", "reviewer", "checked_on", "binding_sha256", "extent_sha256"),
+        "eucharistic-text-parentage": ("status", "reviewer", "checked_on", "parent_binding_sha256", "child_binding_sha256", "kind", "basis", "scope"),
+    }.get(record_type, ())
+    if any(not _is_string(data.get(key)) for key in required):
+        library.error(entry, f"incomplete {record_type} ownership envelope")
+    if record_type == "eucharistic-native-book" and (
+            data["id"] != entry.stem or data.get("extent_kind") not in {"whole-book", "constituent"}
+            or not isinstance(data.get("date"), dict)):
+        library.error(entry, "native book ownership requires matching filename, explicit extent kind and date record")
+    if record_type == "eucharistic-book-collation" and (
+            any(type(data.get(key)) is not bool for key in ("independent", "complete_extent_verified"))
+            or any(not isinstance(data.get(key), dict) for key in ("witness_sha256", "unit_sha256"))):
+        library.error(entry, "native book collation ownership requires independent extent and hash tables")
+    if record_type == "eucharistic-text-parentage" and (
+            type(data.get("git_parent_authorized")) is not bool or type(data.get("text_inheritance")) is not bool
+            or not _is_string(data.get("historical_parentage"))):
+        library.error(entry, "native book parentage ownership requires explicit historical and Git authorization states")
     return True
 
 

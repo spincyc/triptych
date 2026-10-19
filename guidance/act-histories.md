@@ -1525,8 +1525,10 @@ describe the years during which a book was used. `date_kind` distinguishes
 attestation, publication, approval, effectiveness and reconstruction. Undated
 states remain unpositioned. A documented state means that its limited scope is
 attested, not that its whole text is reconstructed. Transcription coverage is
-reported separately, and the present validator refuses `complete` until a
-coordinated text binding and defined extent support that assertion.
+reported separately. The validator requires a checked native-book binding for
+`complete`, as specified below; an unbound claim is refused. The binding must
+coordinate the literal text, identified witness and independently reviewed
+complete extent. A complete constituent retains partial whole-book coverage.
 
 Revision, recension branch, reception and witness succession are distinct
 transition kinds. Documented revisions and recension branches require concrete
@@ -1797,3 +1799,74 @@ This makes a real rendered preview available [verified], but it is explicitly
 LOOM production plate, and its existence does not establish final sheet design,
 label placement or visual acceptance. `plate` without `--preview` retains the
 DOT-only behavior recorded in §17.
+
+
+### Checked native books, constituents and explicit text versions
+
+`native-book:<slug>` discovers only
+`src/sources/inventories/eucharistic-books/<slug>.json`. Its schema-1
+`eucharistic-native-book` record identifies native semantic units, exact source
+editions and retained facsimiles, stage and catalogue witnesses, languages,
+components, and an evidenced historical date with a separate role and bounds.
+It references a separate `eucharistic-book-extent` census and
+`eucharistic-book-collation` receipt. These are evidence records, not a new place
+to copy source text. Literal wording is read only from registered, verified
+passages whose normalized-text artifact hash and exact edition agree. Each
+unit binds its selected physical lines and exact text hash. Its artifact must
+derive from the identified facsimile, or the unit must explicitly bind that
+facsimile's ID and SHA-256 as the independently checked witness; this permits
+truthful collation of a parallel host OCR derivative without inventing byte
+lineage. New literal payloads require a United States public-domain basis in
+this adapter. Rights-ineligible or unverified modern text is refused, even
+when its historical state is documented.
+
+`extent_kind = "whole-book"` requires every retained witness page in scope and
+no excluded book divisions. `extent_kind = "constituent"` names its excluded
+book divisions and explicit witness page ranges. The census accounts for every
+facsimile page as literal text, non-text with an explanation, or (only for a
+constituent) explicitly outside that constituent. Its ordered unit census must
+match every literal unit, and every unit's page loci must be represented.
+Unresolved or omitted contents within the declared extent prevent acceptance.
+A distinct reviewer must affirm independent complete-extent collation, naming
+the exact binding, census, witnesses and all unit hashes. These structural
+checks enforce the receipt; they do not themselves perform or replace human
+or agent inspection of the facsimile.
+
+The accepted payload distinguishes `complete_declared_extent` from
+`whole_book_complete`. A complete constituent can supply a stage's
+`text_binding` only while its `text_coverage` remains `partial`. A complete
+whole book can support `text_coverage = "complete"` only when the documented
+stage, exact catalogue witnesses and components match its binding. Every
+binding dependency is pinned in the stage projection. Neither binding type
+silently resolves a dossier gap or claims that complementary service books
+have been transcribed.
+
+`source-library` recognizes only the typed main JSON envelopes and the exact
+`eucharistic-books/support/<slug>-extent.json`, `-review.json` and
+`-parentage.json` envelopes. Unrelated JSON, nested paths and opaque files remain
+unowned. This ownership check is not a second evidence validator: the native
+adapter owns complete census, rights, literal text and collation validation.
+Use `act-history corpus` to exercise that semantic gate.
+
+Optional routing `[[text_versions]]` tables name an `id`, a configured native
+`text_set`, and an explicit `parents` array. Each parent names `version_id` and
+`evidence_path`. An empty array declares an isolated root. Every snapshot must
+have a verified complete declared extent. Every edge needs a schema-1
+`eucharistic-text-parentage` receipt with exact parent/child binding hashes,
+inspected evidence and scope, reviewer and review date, established historical
+parentage, explicit Git-parent authorization, no text inheritance, and kind
+`revision` or `recension-branch`. A chronological sequence, shared prayer,
+reception claim or stage edge cannot substitute for that receipt. Cycles and
+impossible same-event date sequences are refused; different event roles retain
+their distinct meanings.
+
+The corpus emits these snapshots at `refs/heads/version/<id>`, alongside the
+existing isolated reconstruction roots. Every snapshot materializes its own
+literal units at stable native semantic paths; it never fills missing text from
+a parent. Git can therefore show ordinary text diffs while receipt metadata
+explains each authorized parent. Historical date kind, label and uncertainty
+bounds remain explicit metadata; Git timestamps remain synthetic 2000-01-01.
+All validation precedes replacement of an existing owned artifact. Routing
+without `text_versions` retains the original root-only behavior. These
+capabilities do not establish any unreviewed historical ancestry or make the
+all-rite full-text corpus complete.

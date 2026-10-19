@@ -123,7 +123,7 @@ def verify_inputs(root: Path, inputs: list[dict], *, fingerprint) -> None:
     """Check both auto-discovered membership and every retained byte hash."""
     root = root.resolve()
     paths = [path.relative_to(root).as_posix() for path in _files(root)]
-    if paths != [stamp["path"] for stamp in inputs]:
+    if paths != [stamp["path"] for stamp in inputs if stamp["path"].startswith(DIRECTORY + "/")]:
         raise StageError("stage dossier membership changed during projection")
     for stamp in inputs:
         if fingerprint(root, root / stamp["path"]) != stamp:
@@ -177,7 +177,7 @@ def verify_progression(stages: dict[str, dict], transitions: list[dict]) -> None
 
 
 def load(root: Path, *, catalogue_ids: set[str], comparisons: dict[str, dict], fingerprint,
-         default_tradition_id: str | None = None) -> dict:
+         default_tradition_id: str | None = None, catalogue_records: dict[str, dict] | None = None) -> dict:
     """Read the canonical dossier directory; preserve authored order within files.
 
     The owning engine supplies its shared fingerprint function. Missing dossiers
@@ -219,7 +219,8 @@ def load(root: Path, *, catalogue_ids: set[str], comparisons: dict[str, dict], f
                 raise StageError(f"{owner}: {table} must be an array")
             for row in values:
                 fields(row, FIELDS[table], f"{owner} {table}",
-                       "git_ancestry text_inheritance" if table == "transitions" else "")
+                       "git_ancestry text_inheritance" if table == "transitions" else
+                       "text_binding" if table == "stages" else "")
                 key = string(row, "id", owner)
                 if not IDENTIFIER.fullmatch(key) or key in seen_ids:
                     raise StageError(f"duplicate or invalid stage-history id {key!r}")
@@ -254,6 +255,7 @@ def load(root: Path, *, catalogue_ids: set[str], comparisons: dict[str, dict], f
             date.fromisoformat(value)
         except ValueError as error:
             raise StageError(f"{context}: checked_on must be an ISO date") from error
+    bound_inputs = {}
     for row in rows["stages"]:
         context = row["id"]
         for field in ("label", "date_label", "scope", "witness_label", "summary", "limitations", "reception"):
@@ -267,13 +269,42 @@ def load(root: Path, *, catalogue_ids: set[str], comparisons: dict[str, dict], f
         choice(row, "date_kind", {"attestation", "publication", "approval", "effective", "reconstruction"}, context)
         status = choice(row, "status", {"documented", "provisional"}, context)
         choice(row, "text_coverage", {"not-transcribed", "partial", "complete"}, context)
-        if row["text_coverage"] == "complete":
+        if row["text_coverage"] == "complete" and "text_binding" not in row:
             raise StageError(f"{context}: complete coverage requires a coordinated full-text binding and scope denominator")
         component_list(row, context)
         for identifier in strings(row, "witness_ids", context):
             if identifier not in catalogue_ids:
                 raise StageError(f"{context}: unresolved witness_id {identifier}")
         evidence(row, sources, context, inspected=status == "documented")
+        if "text_binding" in row:
+            from _eucharistic_texts import load_adapter, AdapterError, NATIVE_BOOK_PREFIX
+            binding_id = string(row, "text_binding", context)
+            if not binding_id.startswith(NATIVE_BOOK_PREFIX):
+                raise StageError(f"{context}: full-text binding must identify a native book")
+            try:
+                payload = load_adapter(binding_id, root)
+            except AdapterError as error:
+                raise StageError(f"{context}: full-text binding: {error}") from error
+            binding = payload["book_binding"]
+            if (row["text_coverage"] != ("complete" if payload["scope"]["whole_book_complete"] else "partial") or status != "documented"
+                    or context not in binding["stage_ids"]
+                    or set(row["witness_ids"]) != set(binding["catalogue_witness_ids"])
+                    or not set(binding["components"]) <= set(row["components"])
+                    or (row["text_coverage"] == "complete" and set(row["components"]) != set(binding["components"]))):
+                raise StageError(f"{context}: full-text binding stage/witness/component scope mismatch")
+            catalogue_editions = set()
+            for witness_id in binding["catalogue_witness_ids"]:
+                record = (catalogue_records or {}).get(witness_id, {}).get("source_record", {})
+                edition_id = record.get("source_library_edition_id")
+                if not isinstance(edition_id, str) or not edition_id:
+                    raise StageError(f"{context}: full-text binding requires canonical catalogue edition identity: {witness_id}")
+                catalogue_editions.add(edition_id)
+            if catalogue_editions != {witness["edition_id"] for witness in binding["witnesses"]}:
+                raise StageError(f"{context}: full-text binding edition differs from catalogue witness")
+            for stamp in payload["inputs"]:
+                if stamp["path"] in bound_inputs and stamp != bound_inputs[stamp["path"]]:
+                    raise StageError(f"{context}: full-text binding input changed")
+                bound_inputs[stamp["path"]] = stamp
     for row in rows["transitions"]:
         context = row["id"]
         for field in ("summary", "limitations"):
@@ -338,6 +369,7 @@ def load(root: Path, *, catalogue_ids: set[str], comparisons: dict[str, dict], f
         for field in ("period", "missing", "next_source", "consequence"):
             string(row, field, context)
 
+    inputs.extend(bound_inputs[key] for key in sorted(bound_inputs) if key not in {stamp["path"] for stamp in inputs})
     verify_inputs(root, inputs, fingerprint=fingerprint)
     counts = {"dossiers": len(dossiers), **{table: len(rows[table]) for table in TABLES}}
     for table in ("stages", "transitions"):
