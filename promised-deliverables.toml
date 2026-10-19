@@ -15,14 +15,15 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "missal-c1-common-report"
   criterion = "One versioned coverage contract separates canonical target identities, reused occurrences, and witness alternatives, and independently records availability, rights, and exact-target, antecedent, study-translation or Bible-reconstruction relationships. Generated structures and CLI audit consume the same derivation."
-  status = "open"
-  evidence = ["guidance/liturgy-browser-roadmap.md", "PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["scripts/_missal_coverage.py", "tools/mass-propers", "tools/mass-ordinary", "tools/complete-missal", "tools/tests/test_missal_coverage.py"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "missal-c1-reader-controls"
   criterion = "Day and Propers language/witness selectors, notices and existing discovery results consume the common coverage contract, account for nested cycles and selected Mass coverage, avoid Latin completeness claims, and preserve explicit missing-witness and unsupported states."
   status = "open"
-  evidence = ["guidance/liturgy-browser-roadmap.md", "PROJECT-WORK.md"]
+  evidence = ["src/web/browser/shared/browser-core.js", "src/web/browser/liturgy/day-reader.js", "src/web/browser/liturgy/propers-reader.js", "src/web/browser/liturgy/reader-state-adapters.js", "tools/tests/test_reader_coverage.py", "PROJECT-WORK.md"]
 
   [[deliverables.requirements]]
   id = "missal-c1-verification"

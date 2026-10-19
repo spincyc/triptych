@@ -778,9 +778,15 @@ class OrdinaryTool(unittest.TestCase):
         required = {
             "calendar", "elements", "witnesses", "language_coverage",
             "relation_coverage", "absent", "language_absences", "exclusions",
+            "typed_coverage",
         }
         for calendar, row in rows.items():
             self.assertEqual(set(row), required, calendar)
+            self.assertEqual(row["typed_coverage"]["counts"]["occurrences"], row["elements"])
+            for language in row["typed_coverage"]["languages"]:
+                original = next(item for item in row["language_coverage"]
+                                if item["lang"] == language["lang"])
+                self.assertEqual(language["available"], original["held"])
             for language in row["language_coverage"]:
                 self.assertEqual(
                     language["held"] + language["missing"], row["elements"], calendar

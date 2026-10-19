@@ -30,7 +30,7 @@ basis = "Singular identities derived by calendar-spine from the independently so
 id = "postconciliar-temporal-composition-registry"
 calendar = "postconciliar"
 recension_id = "roman-missal-en-us-2011"
-territory = "universal"
+territory = "US"
 languages = ["la", "en"]
 date_range = "Registry kernel adopted 2026-08-22; edition dispositions retain their own evaluation dates"
 source_refs = ["guidance/liturgy/postconciliar-propers-registry.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/formula-dispositions.md"]
@@ -179,6 +179,72 @@ date_range = "Historical edition snapshot; no civil-year occurrence claim"
 source_refs = ["src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/praefationes-en/artifact.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
 enumeration_state = "complete-within-slice"
 basis = "Eleven Preface identities printed in the 1861 Cummiskey lay witness section, not an enumeration of the 1920 target altar book. Target correspondence remains unresolved."
+
+[[slices]]
+id = "postconciliar-2002-common-formularies"
+calendar = "postconciliar"
+recension_id = "roman-2008-reimpressio-emendata"
+territory = "universal"
+languages = ["la", "en"]
+date_range = "Historical edition snapshot; no civil-year occurrence claim"
+source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
+enumeration_state = "complete-within-slice"
+basis = "All sixty body-numbered full formularies beneath the thirty-three Common leaf headings, artifact pp. 536-592. Each printed numbered form is one identity; internal alternatives and its individual semantic slots are not multiplied into assembled combinations. This enumerates the registered secondary 2002 witness section only; target-2008 correspondence remains unresolved."
+
+[[slices]]
+id = "postconciliar-2002-ritual-formularies"
+calendar = "postconciliar"
+recension_id = "roman-2008-reimpressio-emendata"
+territory = "universal"
+languages = ["la", "en"]
+date_range = "Historical edition snapshot; no civil-year occurrence claim"
+source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
+enumeration_state = "complete-within-slice"
+basis = "All thirty-one named body entries in the ritual section, artifact pp. 593-667: twenty-eight Mass formularies, one alternative three-prayer set, and two referrals. Full forms may appoint antiphons by reference. These do not enumerate every internal blessing, intercession, Preface, option or ritual action. This enumerates the registered secondary 2002 witness section only; target-2008 correspondence remains unresolved."
+
+[[slices]]
+id = "postconciliar-2002-votive-forms"
+calendar = "postconciliar"
+recension_id = "roman-2008-reimpressio-emendata"
+territory = "universal"
+languages = ["la", "en"]
+date_range = "Historical edition snapshot; no civil-year occurrence claim"
+source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
+enumeration_state = "complete-within-slice"
+basis = "All nineteen numbered votive categories expanded through their named subdivisions, artifact pp. 724-749: twenty-three explicit Mass forms and one seasonal Marian Common referral. Optional referrals are not multiplied into guessed combinations. This enumerates the registered secondary 2002 witness section only; target-2008 correspondence remains unresolved."
+
+[[slices]]
+id = "postconciliar-2002-dead-forms"
+calendar = "postconciliar"
+recension_id = "roman-2008-reimpressio-emendata"
+territory = "universal"
+languages = ["la", "en"]
+date_range = "Historical edition snapshot; no civil-year occurrence claim"
+source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
+enumeration_state = "complete-within-slice"
+basis = "All named forms, prayer sets and collect categories in the dead section, artifact pp. 750-777: sixteen Mass forms, twenty three-prayer sets and six collect-only categories. Forty-two entries do not mean forty-two Masses; interchange rubrics do not define a finite Cartesian universe. This enumerates the registered secondary 2002 witness section only; target-2008 correspondence remains unresolved."
+
+[[slices]]
+id = "postconciliar-2002-various-needs-forms"
+calendar = "postconciliar"
+recension_id = "roman-2008-reimpressio-emendata"
+territory = "universal"
+languages = ["la", "en"]
+date_range = "Historical edition snapshot; no civil-year occurrence claim"
+source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
+enumeration_state = "complete-within-slice"
+basis = "All forty-nine numbered various-needs categories expanded through named subdivisions, artifact pp. 667-724: forty-nine antiphon-bearing forms, ten three-prayer sets, nine single-Collect categories and one two-Collect choice category. Sixty-nine entries are not sixty-nine full Masses. This enumerates the registered secondary 2002 witness section only; target-2008 correspondence remains unresolved."
+
+[[slices]]
+id = "postconciliar-2008-supplement-named-additions"
+calendar = "postconciliar"
+recension_id = "roman-2008-reimpressio-emendata"
+territory = "universal"
+languages = ["la", "en"]
+date_range = "Historical edition snapshot; no civil-year occurrence claim"
+source_refs = ["src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
+enumeration_state = "partial"
+basis = "Selected positive target identities from the official 2008 Supplementum itself: extended Pentecost Vigil, its six post-reading prayer alternatives and two dismissal options, two Super oblata appointments, and three added memorial Collects. These identities are established by the 2008 publication, independently of 2002-to-2008 correspondence. Full Vigil units, referrals and internal options remain a partial enumeration."
 
 [[targets]]
 id = "roman-1962:celebration:1962-01-01"
@@ -9555,6 +9621,2400 @@ source_locus = "Cummiskey 1861 printed p. xxxii; element praefatio-de-apostolis-
 identity_state = "target-correspondence-unresolved"
 slice_id = "roman-pre-1955-cummiskey-prefaces"
 
+[[targets]]
+id = "postconciliar:2002:common-formularies:dedication-own-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Dedication anniversary, own church 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 536; web text line 21112; body dedication-own-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "dedication-own-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:dedication-other-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Dedication anniversary, other church 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 538; web text line 21187; body dedication-other-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "dedication-other-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:mary-ordinary-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Mary, Ordinary Time 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 540; web text line 21259; body mary-ordinary-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "mary-ordinary-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:mary-ordinary-2"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Mary, Ordinary Time 2"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 540; web text line 21288; body mary-ordinary-2"
+identity_state = "target-correspondence-unresolved"
+form_id = "mary-ordinary-2"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:mary-ordinary-3"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Mary, Ordinary Time 3"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 541; web text line 21314; body mary-ordinary-3"
+identity_state = "target-correspondence-unresolved"
+form_id = "mary-ordinary-3"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:mary-ordinary-4"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Mary, Ordinary Time 4"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 542; web text line 21344; body mary-ordinary-4"
+identity_state = "target-correspondence-unresolved"
+form_id = "mary-ordinary-4"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:mary-ordinary-5"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Mary, Ordinary Time 5"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 543; web text line 21373; body mary-ordinary-5"
+identity_state = "target-correspondence-unresolved"
+form_id = "mary-ordinary-5"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:mary-ordinary-6"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Mary, Ordinary Time 6"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 543; web text line 21405; body mary-ordinary-6"
+identity_state = "target-correspondence-unresolved"
+form_id = "mary-ordinary-6"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:mary-ordinary-7"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Mary, Ordinary Time 7"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 544; web text line 21432; body mary-ordinary-7"
+identity_state = "target-correspondence-unresolved"
+form_id = "mary-ordinary-7"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:mary-ordinary-8"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Mary, Ordinary Time 8"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 545; web text line 21459; body mary-ordinary-8"
+identity_state = "target-correspondence-unresolved"
+form_id = "mary-ordinary-8"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:mary-advent-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Mary, Advent 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 546; web text line 21487; body mary-advent-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "mary-advent-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:mary-nativity-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Mary, Nativity season 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 547; web text line 21528; body mary-nativity-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "mary-nativity-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:mary-easter-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Mary, Easter season 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 548; web text line 21568; body mary-easter-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "mary-easter-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:martyrs-several-outside-easter-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Several martyrs, outside Easter 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 549; web text line 21600; body martyrs-several-outside-easter-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "martyrs-several-outside-easter-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:martyrs-several-outside-easter-2"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Several martyrs, outside Easter 2"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 550; web text line 21637; body martyrs-several-outside-easter-2"
+identity_state = "target-correspondence-unresolved"
+form_id = "martyrs-several-outside-easter-2"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:martyrs-several-outside-easter-3"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Several martyrs, outside Easter 3"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 551; web text line 21674; body martyrs-several-outside-easter-3"
+identity_state = "target-correspondence-unresolved"
+form_id = "martyrs-several-outside-easter-3"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:martyrs-several-outside-easter-4"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Several martyrs, outside Easter 4"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 552; web text line 21713; body martyrs-several-outside-easter-4"
+identity_state = "target-correspondence-unresolved"
+form_id = "martyrs-several-outside-easter-4"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:martyrs-several-outside-easter-5"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Several martyrs, outside Easter 5"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 553; web text line 21753; body martyrs-several-outside-easter-5"
+identity_state = "target-correspondence-unresolved"
+form_id = "martyrs-several-outside-easter-5"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:martyr-one-outside-easter-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "One martyr, outside Easter 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 554; web text line 21795; body martyr-one-outside-easter-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "martyr-one-outside-easter-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:martyr-one-outside-easter-2"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "One martyr, outside Easter 2"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 555; web text line 21835; body martyr-one-outside-easter-2"
+identity_state = "target-correspondence-unresolved"
+form_id = "martyr-one-outside-easter-2"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:martyrs-several-easter-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Several martyrs, Easter 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 556; web text line 21878; body martyrs-several-easter-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "martyrs-several-easter-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:martyrs-several-easter-2"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Several martyrs, Easter 2"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 557; web text line 21918; body martyrs-several-easter-2"
+identity_state = "target-correspondence-unresolved"
+form_id = "martyrs-several-easter-2"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:martyr-one-easter-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "One martyr, Easter 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 558; web text line 21953; body martyr-one-easter-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "martyr-one-easter-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:martyrs-missionary-several-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Several missionary martyrs 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 559; web text line 21991; body martyrs-missionary-several-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "martyrs-missionary-several-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:martyr-missionary-one-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "One missionary martyr 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 560; web text line 22025; body martyr-missionary-one-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "martyr-missionary-one-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:martyr-virgin-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Virgin martyr 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 561; web text line 22049; body martyr-virgin-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "martyr-virgin-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:martyr-woman-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Woman martyr 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 561; web text line 22082; body martyr-woman-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "martyr-woman-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:pastor-pope-bishop-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Pope or bishop 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 562; web text line 22112; body pastor-pope-bishop-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "pastor-pope-bishop-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:pastor-pope-bishop-2"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Pope or bishop 2"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 563; web text line 22150; body pastor-pope-bishop-2"
+identity_state = "target-correspondence-unresolved"
+form_id = "pastor-pope-bishop-2"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:pastor-bishop-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Bishop 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 564; web text line 22191; body pastor-bishop-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "pastor-bishop-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:pastor-bishop-2"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Bishop 2"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 565; web text line 22232; body pastor-bishop-2"
+identity_state = "target-correspondence-unresolved"
+form_id = "pastor-bishop-2"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:pastors-several-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Several pastors 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 567; web text line 22275; body pastors-several-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "pastors-several-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:pastor-one-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "One pastor 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 567; web text line 22306; body pastor-one-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "pastor-one-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:pastor-one-2"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "One pastor 2"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 568; web text line 22336; body pastor-one-2"
+identity_state = "target-correspondence-unresolved"
+form_id = "pastor-one-2"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:founder-one-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "One church founder 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 569; web text line 22373; body founder-one-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "founder-one-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:founders-several-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Several church founders 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 570; web text line 22416; body founders-several-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "founders-several-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:missionaries-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Missionaries 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 572; web text line 22462; body missionaries-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "missionaries-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:missionaries-2"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Missionaries 2"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 573; web text line 22502; body missionaries-2"
+identity_state = "target-correspondence-unresolved"
+form_id = "missionaries-2"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:missionaries-3"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Missionaries 3"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 573; web text line 22533; body missionaries-3"
+identity_state = "target-correspondence-unresolved"
+form_id = "missionaries-3"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:doctors-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Doctors 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 574; web text line 22563; body doctors-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "doctors-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:doctors-2"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Doctors 2"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 575; web text line 22597; body doctors-2"
+identity_state = "target-correspondence-unresolved"
+form_id = "doctors-2"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:virgins-several-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Several virgins 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 576; web text line 22628; body virgins-several-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "virgins-several-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:virgin-one-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "One virgin 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 577; web text line 22663; body virgin-one-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "virgin-one-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:virgin-one-2"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "One virgin 2"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 578; web text line 22696; body virgin-one-2"
+identity_state = "target-correspondence-unresolved"
+form_id = "virgin-one-2"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:virgin-one-3"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "One virgin 3"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 579; web text line 22737; body virgin-one-3"
+identity_state = "target-correspondence-unresolved"
+form_id = "virgin-one-3"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:saints-several-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Several saints 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 580; web text line 22781; body saints-several-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "saints-several-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:saints-several-2"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Several saints 2"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 581; web text line 22817; body saints-several-2"
+identity_state = "target-correspondence-unresolved"
+form_id = "saints-several-2"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:saints-several-3"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Several saints 3"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 582; web text line 22840; body saints-several-3"
+identity_state = "target-correspondence-unresolved"
+form_id = "saints-several-3"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:saints-several-4"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Several saints 4"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 582; web text line 22866; body saints-several-4"
+identity_state = "target-correspondence-unresolved"
+form_id = "saints-several-4"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:saint-one-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "One saint 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 583; web text line 22895; body saint-one-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "saint-one-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:saint-one-2"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "One saint 2"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 584; web text line 22923; body saint-one-2"
+identity_state = "target-correspondence-unresolved"
+form_id = "saint-one-2"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:abbot-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Abbot 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 584; web text line 22949; body abbot-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "abbot-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:monk-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Monk 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 585; web text line 22986; body monk-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "monk-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:nun-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Nun 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 586; web text line 23018; body nun-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "nun-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:religious-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Religious 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 587; web text line 23056; body religious-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "religious-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:religious-2"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Religious 2"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 588; web text line 23089; body religious-2"
+identity_state = "target-correspondence-unresolved"
+form_id = "religious-2"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:mercy-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Works of mercy 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 589; web text line 23123; body mercy-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "mercy-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:educators-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Educators 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 590; web text line 23165; body educators-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "educators-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:holy-women-1"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Holy women 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 591; web text line 23199; body holy-women-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "holy-women-1"
+
+[[targets]]
+id = "postconciliar:2002:common-formularies:holy-women-2"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "form"
+label = "Holy women 2"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 592; web text line 23236; body holy-women-2"
+identity_state = "target-correspondence-unresolved"
+form_id = "holy-women-2"
+
+[[targets]]
+id = "postconciliar:2002:ritual-formularies:i-1"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "form"
+label = "Election or inscription"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 593; web text line 23279; body i-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "i-1"
+
+[[targets]]
+id = "postconciliar:2002:ritual-formularies:i-2-a"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "form"
+label = "First scrutiny"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 594; web text line 23327; body i-2-a"
+identity_state = "target-correspondence-unresolved"
+form_id = "i-2-a"
+
+[[targets]]
+id = "postconciliar:2002:ritual-formularies:i-2-b"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "form"
+label = "Second scrutiny"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 596; web text line 23386; body i-2-b"
+identity_state = "target-correspondence-unresolved"
+form_id = "i-2-b"
+
+[[targets]]
+id = "postconciliar:2002:ritual-formularies:i-2-c"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "form"
+label = "Third scrutiny"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 597; web text line 23417; body i-2-c"
+identity_state = "target-correspondence-unresolved"
+form_id = "i-2-c"
+
+[[targets]]
+id = "postconciliar:2002:ritual-formularies:i-3-a"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "form"
+label = "Baptism A"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 598; web text line 23458; body i-3-a"
+identity_state = "target-correspondence-unresolved"
+form_id = "i-3-a"
+
+[[targets]]
+id = "postconciliar:2002:ritual-formularies:i-3-b"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "form"
+label = "Baptism B"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 600; web text line 23532; body i-3-b"
+identity_state = "target-correspondence-unresolved"
+form_id = "i-3-b"
+
+[[targets]]
+id = "postconciliar:2002:ritual-formularies:i-4-a"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "form"
+label = "Confirmation A"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 601; web text line 23567; body i-4-a"
+identity_state = "target-correspondence-unresolved"
+form_id = "i-4-a"
+
+[[targets]]
+id = "postconciliar:2002:ritual-formularies:i-4-b"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "form"
+label = "Confirmation B"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 603; web text line 23664; body i-4-b"
+identity_state = "target-correspondence-unresolved"
+form_id = "i-4-b"
+
+[[targets]]
+id = "postconciliar:2002:ritual-formularies:i-4-c"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "prayer-set"
+label = "Confirmation C, alternative prayers"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 604; web text line 23700; body i-4-c"
+identity_state = "target-correspondence-unresolved"
+form_id = "i-4-c"
+
+[[targets]]
+id = "postconciliar:2002:ritual-formularies:ii"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "form-referral"
+label = "Anointing, referral to Mass for the sick"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 605; web text line 23716; body ii"
+identity_state = "target-correspondence-unresolved"
+form_id = "ii"
+
+[[targets]]
+id = "postconciliar:2002:ritual-formularies:iii"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "form"
+label = "Viaticum"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 606; web text line 23749; body iii"
+identity_state = "target-correspondence-unresolved"
+form_id = "iii"
+
+[[targets]]
+id = "postconciliar:2002:ritual-formularies:iv-1-a"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "form"
+label = "Episcopal ordination A"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 607; web text line 23794; body iv-1-a"
+identity_state = "target-correspondence-unresolved"
+form_id = "iv-1-a"
+
+[[targets]]
+id = "postconciliar:2002:ritual-formularies:iv-1-b"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "form"
+label = "Episcopal ordination B"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 613; web text line 24028; body iv-1-b"
+identity_state = "target-correspondence-unresolved"
+form_id = "iv-1-b"
+
+[[targets]]
+id = "postconciliar:2002:ritual-formularies:iv-2-a"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "form"
+label = "Presbyteral ordination A"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 618; web text line 24208; body iv-2-a"
+identity_state = "target-correspondence-unresolved"
+form_id = "iv-2-a"
+
+[[targets]]
+id = "postconciliar:2002:ritual-formularies:iv-2-b"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "form"
+label = "Presbyteral ordination B"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 621; web text line 24336; body iv-2-b"
+identity_state = "target-correspondence-unresolved"
+form_id = "iv-2-b"
+
+[[targets]]
+id = "postconciliar:2002:ritual-formularies:iv-3-a"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "form"
+label = "Diaconal ordination A"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 624; web text line 24468; body iv-3-a"
+identity_state = "target-correspondence-unresolved"
+form_id = "iv-3-a"
+
+[[targets]]
+id = "postconciliar:2002:ritual-formularies:iv-3-b"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "form"
+label = "Diaconal ordination B"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 628; web text line 24593; body iv-3-b"
+identity_state = "target-correspondence-unresolved"
+form_id = "iv-3-b"
+
+[[targets]]
+id = "postconciliar:2002:ritual-formularies:iv-4"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "form"
+label = "Joint diaconal and presbyteral ordination"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 631; web text line 24718; body iv-4"
+identity_state = "target-correspondence-unresolved"
+form_id = "iv-4"
+
+[[targets]]
+id = "postconciliar:2002:ritual-formularies:v-a"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "form"
+label = "Matrimony A"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 634; web text line 24838; body v-a"
+identity_state = "target-correspondence-unresolved"
+form_id = "v-a"
+
+[[targets]]
+id = "postconciliar:2002:ritual-formularies:v-b"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "form"
+label = "Matrimony B"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 638; web text line 25001; body v-b"
+identity_state = "target-correspondence-unresolved"
+form_id = "v-b"
+
+[[targets]]
+id = "postconciliar:2002:ritual-formularies:v-c"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "form"
+label = "Matrimony C"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 642; web text line 25134; body v-c"
+identity_state = "target-correspondence-unresolved"
+form_id = "v-c"
+
+[[targets]]
+id = "postconciliar:2002:ritual-formularies:vi-1"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "form"
+label = "Abbatial blessing 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 645; web text line 25266; body vi-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "vi-1"
+
+[[targets]]
+id = "postconciliar:2002:ritual-formularies:vi-2"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "form"
+label = "Abbatial blessing 2"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 648; web text line 25386; body vi-2"
+identity_state = "target-correspondence-unresolved"
+form_id = "vi-2"
+
+[[targets]]
+id = "postconciliar:2002:ritual-formularies:vii"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "form"
+label = "Consecration of virgins"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 651; web text line 25479; body vii"
+identity_state = "target-correspondence-unresolved"
+form_id = "vii"
+
+[[targets]]
+id = "postconciliar:2002:ritual-formularies:viii-1"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "form"
+label = "First religious profession"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 654; web text line 25591; body viii-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "viii-1"
+
+[[targets]]
+id = "postconciliar:2002:ritual-formularies:viii-2-a"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "form"
+label = "Perpetual profession A"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 654; web text line 25622; body viii-2-a"
+identity_state = "target-correspondence-unresolved"
+form_id = "viii-2-a"
+
+[[targets]]
+id = "postconciliar:2002:ritual-formularies:viii-2-b"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "form"
+label = "Perpetual profession B"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 658; web text line 25769; body viii-2-b"
+identity_state = "target-correspondence-unresolved"
+form_id = "viii-2-b"
+
+[[targets]]
+id = "postconciliar:2002:ritual-formularies:viii-3"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "form"
+label = "Renewal of vows, prayers with referred antiphons"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 660; web text line 25826; body viii-3"
+identity_state = "target-correspondence-unresolved"
+form_id = "viii-3"
+
+[[targets]]
+id = "postconciliar:2002:ritual-formularies:ix"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "form-referral"
+label = "Institution of lectors and acolytes, referral"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 661; web text line 25854; body ix"
+identity_state = "target-correspondence-unresolved"
+form_id = "ix"
+
+[[targets]]
+id = "postconciliar:2002:ritual-formularies:x-1"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "form"
+label = "Church dedication"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 661; web text line 25861; body x-1"
+identity_state = "target-correspondence-unresolved"
+form_id = "x-1"
+
+[[targets]]
+id = "postconciliar:2002:ritual-formularies:x-2"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "form"
+label = "Altar dedication"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "2002 digital reproduction, artifact p. 664; web text line 26005; body x-2"
+identity_state = "target-correspondence-unresolved"
+form_id = "x-2"
+
+[[targets]]
+id = "postconciliar.2002.votive.1"
+kind = "form"
+label = "Trinity"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 724, web text line 28262"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-votive-forms"
+form_id = "1"
+
+[[targets]]
+id = "postconciliar.2002.votive.2"
+kind = "form"
+label = "Divine Mercy"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 726, web text line 28315"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-votive-forms"
+form_id = "2"
+
+[[targets]]
+id = "postconciliar.2002.votive.3"
+kind = "form"
+label = "Christ the Eternal High Priest"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 727, web text line 28355"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-votive-forms"
+form_id = "3"
+
+[[targets]]
+id = "postconciliar.2002.votive.4"
+kind = "form"
+label = "Holy Cross"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 728, web text line 28386"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-votive-forms"
+form_id = "4"
+
+[[targets]]
+id = "postconciliar.2002.votive.5"
+kind = "form"
+label = "Eucharist"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 729, web text line 28435"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-votive-forms"
+form_id = "5"
+
+[[targets]]
+id = "postconciliar.2002.votive.6"
+kind = "form"
+label = "Holy Name of Jesus"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 730, web text line 28473"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-votive-forms"
+form_id = "6"
+
+[[targets]]
+id = "postconciliar.2002.votive.7"
+kind = "form"
+label = "Precious Blood"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 731, web text line 28502"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-votive-forms"
+form_id = "7"
+
+[[targets]]
+id = "postconciliar.2002.votive.8"
+kind = "form"
+label = "Sacred Heart"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 732, web text line 28539"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-votive-forms"
+form_id = "8"
+
+[[targets]]
+id = "postconciliar.2002.votive.11"
+kind = "form"
+label = "Angels"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 740, web text line 28856"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-votive-forms"
+form_id = "11"
+
+[[targets]]
+id = "postconciliar.2002.votive.12"
+kind = "form"
+label = "John the Baptist"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 741, web text line 28906"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-votive-forms"
+form_id = "12"
+
+[[targets]]
+id = "postconciliar.2002.votive.13"
+kind = "form"
+label = "Joseph"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 743, web text line 28958"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-votive-forms"
+form_id = "13"
+
+[[targets]]
+id = "postconciliar.2002.votive.14"
+kind = "form"
+label = "All Apostles"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 744, web text line 29014"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-votive-forms"
+form_id = "14"
+
+[[targets]]
+id = "postconciliar.2002.votive.15"
+kind = "form"
+label = "Peter and Paul"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 745, web text line 29041"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-votive-forms"
+form_id = "15"
+
+[[targets]]
+id = "postconciliar.2002.votive.16"
+kind = "form"
+label = "Peter"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 746, web text line 29089"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-votive-forms"
+form_id = "16"
+
+[[targets]]
+id = "postconciliar.2002.votive.17"
+kind = "form"
+label = "Paul"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 747, web text line 29121"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-votive-forms"
+form_id = "17"
+
+[[targets]]
+id = "postconciliar.2002.votive.18"
+kind = "form"
+label = "Any Apostle"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 748, web text line 29150"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-votive-forms"
+form_id = "18"
+
+[[targets]]
+id = "postconciliar.2002.votive.19"
+kind = "form"
+label = "All Saints"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 749, web text line 29180"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-votive-forms"
+form_id = "19"
+
+[[targets]]
+id = "postconciliar.2002.votive.9.a"
+kind = "form"
+label = "Holy Spirit A"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 733, web text line 28593"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-votive-forms"
+form_id = "9.A"
+
+[[targets]]
+id = "postconciliar.2002.votive.9.b"
+kind = "form"
+label = "Holy Spirit B"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 734, web text line 28633"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-votive-forms"
+form_id = "9.B"
+
+[[targets]]
+id = "postconciliar.2002.votive.9.c"
+kind = "form"
+label = "Holy Spirit C"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 736, web text line 28684"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-votive-forms"
+form_id = "9.C"
+
+[[targets]]
+id = "postconciliar.2002.votive.10.a"
+kind = "form-referral"
+label = "Mary: seasonal Common referral"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 736, web text line 28720"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-votive-forms"
+form_id = "10.A"
+
+[[targets]]
+id = "postconciliar.2002.votive.10.b"
+kind = "form"
+label = "Mary, Mother of the Church"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 737, web text line 28722"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-votive-forms"
+form_id = "10.B"
+
+[[targets]]
+id = "postconciliar.2002.votive.10.c"
+kind = "form"
+label = "Holy Name of Mary"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 738, web text line 28787"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-votive-forms"
+form_id = "10.C"
+
+[[targets]]
+id = "postconciliar.2002.votive.10.d"
+kind = "form"
+label = "Mary, Queen of Apostles"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 739, web text line 28825"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-votive-forms"
+form_id = "10.D"
+
+[[targets]]
+id = "postconciliar.2002.dead.i.a"
+kind = "form"
+label = "Funeral outside Easter A"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 750, web text line 29226"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "I.A"
+
+[[targets]]
+id = "postconciliar.2002.dead.i.b"
+kind = "form"
+label = "Funeral outside Easter B"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 751, web text line 29265"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "I.B"
+
+[[targets]]
+id = "postconciliar.2002.dead.i.c"
+kind = "form"
+label = "Funeral during Easter"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 752, web text line 29306"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "I.C"
+
+[[targets]]
+id = "postconciliar.2002.dead.i.d"
+kind = "prayer-set"
+label = "Funeral alternative prayers D"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 753, web text line 29343"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "I.D"
+
+[[targets]]
+id = "postconciliar.2002.dead.i.e.1"
+kind = "form"
+label = "Funeral of baptized child 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 753, web text line 29364"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "I.E.1"
+
+[[targets]]
+id = "postconciliar.2002.dead.i.e.2"
+kind = "prayer-set"
+label = "Baptized child: alternative prayers 2"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 754, web text line 29396"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "I.E.2"
+
+[[targets]]
+id = "postconciliar.2002.dead.i.f"
+kind = "form"
+label = "Funeral of unbaptized child"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 755, web text line 29416"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "I.F"
+
+[[targets]]
+id = "postconciliar.2002.dead.ii.a"
+kind = "form"
+label = "Anniversary outside Easter A"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 756, web text line 29467"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "II.A"
+
+[[targets]]
+id = "postconciliar.2002.dead.ii.b"
+kind = "form"
+label = "Anniversary outside Easter B"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 757, web text line 29496"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "II.B"
+
+[[targets]]
+id = "postconciliar.2002.dead.ii.c"
+kind = "form"
+label = "Anniversary during Easter"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 758, web text line 29524"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "II.C"
+
+[[targets]]
+id = "postconciliar.2002.dead.ii.d"
+kind = "prayer-set"
+label = "Anniversary alternative prayers D"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 758, web text line 29555"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "II.D"
+
+[[targets]]
+id = "postconciliar.2002.dead.ii.e"
+kind = "prayer-set"
+label = "Anniversary alternative prayers E"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 759, web text line 29576"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "II.E"
+
+[[targets]]
+id = "postconciliar.2002.dead.iii.a.1"
+kind = "form"
+label = "One deceased 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 760, web text line 29605"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "III.A.1"
+
+[[targets]]
+id = "postconciliar.2002.dead.iii.a.2"
+kind = "form"
+label = "One deceased 2"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 761, web text line 29641"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "III.A.2"
+
+[[targets]]
+id = "postconciliar.2002.dead.iii.a.3"
+kind = "prayer-set"
+label = "One deceased 3"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 761, web text line 29668"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "III.A.3"
+
+[[targets]]
+id = "postconciliar.2002.dead.iii.a.4"
+kind = "prayer-set"
+label = "One deceased 4"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 762, web text line 29689"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "III.A.4"
+
+[[targets]]
+id = "postconciliar.2002.dead.iii.a.5"
+kind = "prayer-set"
+label = "One deceased 5"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 763, web text line 29710"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "III.A.5"
+
+[[targets]]
+id = "postconciliar.2002.dead.iii.b.1"
+kind = "form"
+label = "Several or all deceased 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 763, web text line 29733"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "III.B.1"
+
+[[targets]]
+id = "postconciliar.2002.dead.iii.b.2"
+kind = "form"
+label = "Several or all deceased 2"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 764, web text line 29761"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "III.B.2"
+
+[[targets]]
+id = "postconciliar.2002.dead.iii.b.3"
+kind = "form"
+label = "Several or all deceased 3"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 765, web text line 29794"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "III.B.3"
+
+[[targets]]
+id = "postconciliar.2002.dead.iii.b.4"
+kind = "form"
+label = "Several or all deceased 4"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 766, web text line 29824"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "III.B.4"
+
+[[targets]]
+id = "postconciliar.2002.dead.iii.b.5"
+kind = "form"
+label = "Several or all deceased 5"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 766, web text line 29851"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "III.B.5"
+
+[[targets]]
+id = "postconciliar.2002.dead.iii.b.6"
+kind = "form"
+label = "Several or all deceased 6"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 767, web text line 29884"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "III.B.6"
+
+[[targets]]
+id = "postconciliar.2002.dead.iii.b.7"
+kind = "prayer-set"
+label = "Several or all deceased 7"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 768, web text line 29912"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "III.B.7"
+
+[[targets]]
+id = "postconciliar.2002.dead.iii.b.8"
+kind = "prayer-set"
+label = "Several or all deceased 8"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 768, web text line 29932"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "III.B.8"
+
+[[targets]]
+id = "postconciliar.2002.dead.iii.b.9"
+kind = "prayer-set"
+label = "Several or all deceased 9"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 769, web text line 29952"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "III.B.9"
+
+[[targets]]
+id = "postconciliar.2002.dead.iv.1.a"
+kind = "prayer-set"
+label = "Pope A"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 770, web text line 29979"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "IV.1.A"
+
+[[targets]]
+id = "postconciliar.2002.dead.iv.1.b"
+kind = "prayer-set"
+label = "Pope B"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 770, web text line 30001"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "IV.1.B"
+
+[[targets]]
+id = "postconciliar.2002.dead.iv.1.c"
+kind = "prayer-set"
+label = "Pope C"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 771, web text line 30021"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "IV.1.C"
+
+[[targets]]
+id = "postconciliar.2002.dead.iv.2.a"
+kind = "prayer-set"
+label = "Diocesan bishop"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 771, web text line 30046"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "IV.2.A"
+
+[[targets]]
+id = "postconciliar.2002.dead.iv.2.b"
+kind = "prayer-set"
+label = "Other bishop"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 772, web text line 30068"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "IV.2.B"
+
+[[targets]]
+id = "postconciliar.2002.dead.iv.3.a"
+kind = "prayer-set"
+label = "Priest A"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 773, web text line 30090"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "IV.3.A"
+
+[[targets]]
+id = "postconciliar.2002.dead.iv.3.b"
+kind = "prayer-set"
+label = "Priest B"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 773, web text line 30112"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "IV.3.B"
+
+[[targets]]
+id = "postconciliar.2002.dead.iv.4"
+kind = "prayer-set"
+label = "Deacon"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 774, web text line 30134"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "IV.4"
+
+[[targets]]
+id = "postconciliar.2002.dead.iv.5"
+kind = "collect-category"
+label = "Religious"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 774, web text line 30154"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "IV.5"
+
+[[targets]]
+id = "postconciliar.2002.dead.iv.6"
+kind = "collect-category"
+label = "Gospel worker"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 775, web text line 30162"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "IV.6"
+
+[[targets]]
+id = "postconciliar.2002.dead.iv.7"
+kind = "collect-category"
+label = "Young deceased"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 775, web text line 30170"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "IV.7"
+
+[[targets]]
+id = "postconciliar.2002.dead.iv.8"
+kind = "collect-category"
+label = "After long illness"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 775, web text line 30179"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "IV.8"
+
+[[targets]]
+id = "postconciliar.2002.dead.iv.9"
+kind = "collect-category"
+label = "Sudden death"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 775, web text line 30188"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "IV.9"
+
+[[targets]]
+id = "postconciliar.2002.dead.iv.10"
+kind = "collect-category"
+label = "Deceased spouses"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 775, web text line 30195"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "IV.10"
+
+[[targets]]
+id = "postconciliar.2002.dead.iv.11"
+kind = "prayer-set"
+label = "Parents"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 776, web text line 30210"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "IV.11"
+
+[[targets]]
+id = "postconciliar.2002.dead.iv.12"
+kind = "prayer-set"
+label = "Relatives and benefactors"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002 digital reproduction, PDF p. 776, web text line 30232"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-dead-forms"
+form_id = "IV.12"
+
+[[targets]]
+id = "postconciliar.2002.needs.1.a"
+kind = "form"
+label = "Church A"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 1.A; PDF p. 668, web text line 26142"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "1.A"
+
+[[targets]]
+id = "postconciliar.2002.needs.1.b"
+kind = "form"
+label = "Church B"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 1.B; PDF p. 669, web text line 26174"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "1.B"
+
+[[targets]]
+id = "postconciliar.2002.needs.1.c"
+kind = "form"
+label = "Church C"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 1.C; PDF p. 670, web text line 26212"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "1.C"
+
+[[targets]]
+id = "postconciliar.2002.needs.1.d"
+kind = "form"
+label = "Church D"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 1.D; PDF p. 671, web text line 26244"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "1.D"
+
+[[targets]]
+id = "postconciliar.2002.needs.1.e"
+kind = "form"
+label = "Particular Church"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 1.E; PDF p. 672, web text line 26276"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "1.E"
+
+[[targets]]
+id = "postconciliar.2002.needs.2"
+kind = "form"
+label = "Pope"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 2; PDF p. 673, web text line 26314"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "2"
+
+[[targets]]
+id = "postconciliar.2002.needs.3"
+kind = "form"
+label = "Bishop"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 3; PDF p. 674, web text line 26369"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "3"
+
+[[targets]]
+id = "postconciliar.2002.needs.4"
+kind = "form"
+label = "Election of pope or bishop"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 4; PDF p. 675, web text line 26424"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "4"
+
+[[targets]]
+id = "postconciliar.2002.needs.5"
+kind = "form"
+label = "Council or synod"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 5; PDF p. 676, web text line 26453"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "5"
+
+[[targets]]
+id = "postconciliar.2002.needs.6"
+kind = "form"
+label = "Priests"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 6; PDF p. 677, web text line 26487"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "6"
+
+[[targets]]
+id = "postconciliar.2002.needs.7.a"
+kind = "form"
+label = "Priest with pastoral care"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 7.A; PDF p. 678, web text line 26526"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "7.A"
+
+[[targets]]
+id = "postconciliar.2002.needs.7.b"
+kind = "form"
+label = "Priest himself B"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 7.B; PDF p. 679, web text line 26560"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "7.B"
+
+[[targets]]
+id = "postconciliar.2002.needs.7.c"
+kind = "form"
+label = "Ordination anniversary"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 7.C; PDF p. 680, web text line 26589"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "7.C"
+
+[[targets]]
+id = "postconciliar.2002.needs.8"
+kind = "form"
+label = "Church ministers"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 8; PDF p. 681, web text line 26617"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "8"
+
+[[targets]]
+id = "postconciliar.2002.needs.9"
+kind = "form"
+label = "Ordination vocations"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 9; PDF p. 681, web text line 26647"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "9"
+
+[[targets]]
+id = "postconciliar.2002.needs.10"
+kind = "form"
+label = "Laity"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 10; PDF p. 682, web text line 26673"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "10"
+
+[[targets]]
+id = "postconciliar.2002.needs.11.a"
+kind = "prayer-set"
+label = "Marriage anniversary"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 11.A; PDF p. 683, web text line 26719"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "11.A"
+
+[[targets]]
+id = "postconciliar.2002.needs.11.b"
+kind = "prayer-set"
+label = "25th marriage anniversary"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 11.B; PDF p. 684, web text line 26742"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "11.B"
+
+[[targets]]
+id = "postconciliar.2002.needs.11.c"
+kind = "prayer-set"
+label = "50th marriage anniversary"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 11.C; PDF p. 684, web text line 26763"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "11.C"
+
+[[targets]]
+id = "postconciliar.2002.needs.12"
+kind = "form"
+label = "Family"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 12; PDF p. 685, web text line 26786"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "12"
+
+[[targets]]
+id = "postconciliar.2002.needs.13.a"
+kind = "form"
+label = "Religious A"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 13.A; PDF p. 686, web text line 26815"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "13.A"
+
+[[targets]]
+id = "postconciliar.2002.needs.13.b"
+kind = "form"
+label = "25th or 50th religious profession anniversary"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 13.B; PDF p. 687, web text line 26850"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "13.B"
+
+[[targets]]
+id = "postconciliar.2002.needs.14"
+kind = "form"
+label = "Religious vocations"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 14; PDF p. 688, web text line 26884"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "14"
+
+[[targets]]
+id = "postconciliar.2002.needs.15"
+kind = "form"
+label = "Concord"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 15; PDF p. 689, web text line 26931"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "15"
+
+[[targets]]
+id = "postconciliar.2002.needs.16"
+kind = "form"
+label = "Reconciliation"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 16; PDF p. 690, web text line 26968"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "16"
+
+[[targets]]
+id = "postconciliar.2002.needs.17.a"
+kind = "form"
+label = "Christian unity A"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 17.A; PDF p. 691, web text line 27021"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "17.A"
+
+[[targets]]
+id = "postconciliar.2002.needs.17.b"
+kind = "form"
+label = "Christian unity B"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 17.B; PDF p. 693, web text line 27078"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "17.B"
+
+[[targets]]
+id = "postconciliar.2002.needs.17.c"
+kind = "form"
+label = "Christian unity C"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 17.C; PDF p. 694, web text line 27115"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "17.C"
+
+[[targets]]
+id = "postconciliar.2002.needs.18.a"
+kind = "form"
+label = "Evangelization A"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 18.A; PDF p. 695, web text line 27161"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "18.A"
+
+[[targets]]
+id = "postconciliar.2002.needs.18.b"
+kind = "form"
+label = "Evangelization B"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 18.B; PDF p. 696, web text line 27201"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "18.B"
+
+[[targets]]
+id = "postconciliar.2002.needs.19"
+kind = "form"
+label = "Persecuted Christians"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 19; PDF p. 697, web text line 27238"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "19"
+
+[[targets]]
+id = "postconciliar.2002.needs.20"
+kind = "form"
+label = "Spiritual or pastoral meeting"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 20; PDF p. 698, web text line 27283"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "20"
+
+[[targets]]
+id = "postconciliar.2002.needs.21"
+kind = "collect-category"
+label = "Country or city"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 21; PDF p. 699, web text line 27324"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "21"
+
+[[targets]]
+id = "postconciliar.2002.needs.22"
+kind = "collect-category"
+label = "Public authorities"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 22; PDF p. 700, web text line 27332"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "22"
+
+[[targets]]
+id = "postconciliar.2002.needs.23"
+kind = "collect-category"
+label = "International assembly"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 23; PDF p. 700, web text line 27341"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "23"
+
+[[targets]]
+id = "postconciliar.2002.needs.24"
+kind = "collect-category"
+label = "Head of state or monarch"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 24; PDF p. 700, web text line 27350"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "24"
+
+[[targets]]
+id = "postconciliar.2002.needs.25"
+kind = "form"
+label = "Civil year's beginning"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 25; PDF p. 700, web text line 27359"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "25"
+
+[[targets]]
+id = "postconciliar.2002.needs.26.a"
+kind = "form"
+label = "Human work A"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 26.A; PDF p. 701, web text line 27389"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "26.A"
+
+[[targets]]
+id = "postconciliar.2002.needs.26.b"
+kind = "prayer-set"
+label = "Human work B"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 26.B; PDF p. 702, web text line 27430"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "26.B"
+
+[[targets]]
+id = "postconciliar.2002.needs.27.a"
+kind = "form"
+label = "Sowing crops A"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 27.A; PDF p. 703, web text line 27450"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "27.A"
+
+[[targets]]
+id = "postconciliar.2002.needs.27.b"
+kind = "prayer-set"
+label = "Sowing crops B"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 27.B; PDF p. 704, web text line 27479"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "27.B"
+
+[[targets]]
+id = "postconciliar.2002.needs.28"
+kind = "form"
+label = "Harvest"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 28; PDF p. 704, web text line 27504"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "28"
+
+[[targets]]
+id = "postconciliar.2002.needs.29"
+kind = "form"
+label = "Human development"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 29; PDF p. 705, web text line 27537"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "29"
+
+[[targets]]
+id = "postconciliar.2002.needs.30.a"
+kind = "form"
+label = "Peace and justice A"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 30.A; PDF p. 706, web text line 27577"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "30.A"
+
+[[targets]]
+id = "postconciliar.2002.needs.30.b"
+kind = "collect-category"
+label = "Peace and justice B"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 30.B; PDF p. 707, web text line 27610"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "30.B"
+
+[[targets]]
+id = "postconciliar.2002.needs.31"
+kind = "form"
+label = "War or upheaval"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 31; PDF p. 707, web text line 27627"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "31"
+
+[[targets]]
+id = "postconciliar.2002.needs.32"
+kind = "form"
+label = "Refugees and exiles"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 32; PDF p. 709, web text line 27667"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "32"
+
+[[targets]]
+id = "postconciliar.2002.needs.33.a"
+kind = "form"
+label = "Famine A"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 33.A; PDF p. 709, web text line 27701"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "33.A"
+
+[[targets]]
+id = "postconciliar.2002.needs.33.b"
+kind = "prayer-set"
+label = "Prayers of those suffering hunger"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 33.B; PDF p. 710, web text line 27728"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "33.B"
+
+[[targets]]
+id = "postconciliar.2002.needs.34"
+kind = "collect-category"
+label = "Earthquake"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 34; PDF p. 711, web text line 27748"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "34"
+
+[[targets]]
+id = "postconciliar.2002.needs.35"
+kind = "collect-category"
+label = "Rain"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 35; PDF p. 711, web text line 27756"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "35"
+
+[[targets]]
+id = "postconciliar.2002.needs.36"
+kind = "collect-category"
+label = "Fair weather"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 36; PDF p. 711, web text line 27763"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "36"
+
+[[targets]]
+id = "postconciliar.2002.needs.37"
+kind = "collect-category"
+label = "Storms"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 37; PDF p. 711, web text line 27772"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "37"
+
+[[targets]]
+id = "postconciliar.2002.needs.38.a"
+kind = "form"
+label = "Forgiveness A"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 38.A; PDF p. 712, web text line 27780"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "38.A"
+
+[[targets]]
+id = "postconciliar.2002.needs.38.b"
+kind = "prayer-set"
+label = "Forgiveness B"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 38.B; PDF p. 712, web text line 27813"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "38.B"
+
+[[targets]]
+id = "postconciliar.2002.needs.39"
+kind = "prayer-set"
+label = "Continence"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 39; PDF p. 713, web text line 27837"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "39"
+
+[[targets]]
+id = "postconciliar.2002.needs.40"
+kind = "form"
+label = "Charity"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 40; PDF p. 714, web text line 27857"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "40"
+
+[[targets]]
+id = "postconciliar.2002.needs.41"
+kind = "form"
+label = "Friends"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 41; PDF p. 714, web text line 27884"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "41"
+
+[[targets]]
+id = "postconciliar.2002.needs.42"
+kind = "form"
+label = "Adversaries"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 42; PDF p. 715, web text line 27914"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "42"
+
+[[targets]]
+id = "postconciliar.2002.needs.43"
+kind = "form"
+label = "Captivity"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 43; PDF p. 716, web text line 27943"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "43"
+
+[[targets]]
+id = "postconciliar.2002.needs.44"
+kind = "collect-category"
+label = "Prisoners"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 44; PDF p. 717, web text line 27972"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "44"
+
+[[targets]]
+id = "postconciliar.2002.needs.45"
+kind = "form"
+label = "Sick"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 45; PDF p. 717, web text line 27984"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "45"
+
+[[targets]]
+id = "postconciliar.2002.needs.46"
+kind = "form"
+label = "Dying"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 46; PDF p. 718, web text line 28025"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "46"
+
+[[targets]]
+id = "postconciliar.2002.needs.47"
+kind = "form"
+label = "Good death"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 47; PDF p. 719, web text line 28070"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "47"
+
+[[targets]]
+id = "postconciliar.2002.needs.48.a"
+kind = "form"
+label = "Any need A"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 48.A; PDF p. 720, web text line 28109"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "48.A"
+
+[[targets]]
+id = "postconciliar.2002.needs.48.b"
+kind = "form"
+label = "Any need B"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 48.B; PDF p. 721, web text line 28136"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "48.B"
+
+[[targets]]
+id = "postconciliar.2002.needs.48.c"
+kind = "prayer-set"
+label = "Any need C"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 48.C; PDF p. 722, web text line 28162"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "48.C"
+
+[[targets]]
+id = "postconciliar.2002.needs.49.a"
+kind = "form"
+label = "Thanksgiving A"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 49.A; PDF p. 722, web text line 28191"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "49.A"
+
+[[targets]]
+id = "postconciliar.2002.needs.49.b"
+kind = "prayer-set"
+label = "Thanksgiving B"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "Missale Romanum 2002, various needs no. 49.B; PDF p. 723, web text line 28225"
+identity_state = "target-correspondence-unresolved"
+slice_id = "postconciliar-2002-various-needs-forms"
+form_id = "49.B"
+
+[[targets]]
+id = "postconciliar:2008:pentecost-vigil-extended"
+slice_id = "postconciliar-2008-supplement-named-additions"
+kind = "exceptional-rite"
+label = "Extended Pentecost Vigil"
+source_record = "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml"
+source_locus = "Notitiae 44 (2008), printed pp. 380-384, Supplementum nn. 1-13; artifact pp. 62-66"
+identity_state = "established"
+
+[[targets]]
+id = "postconciliar:2008:pentecost-vigil:reading-1"
+slice_id = "postconciliar-2008-supplement-named-additions"
+kind = "text-slot"
+label = "Prayer after first reading"
+source_record = "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml"
+source_locus = "Notitiae 44 (2008), printed p. 381; Supplementum n. 5; artifact p. 63"
+identity_state = "established"
+form_id = "pentecost-vigil-extended"
+
+[[targets]]
+id = "postconciliar:2008:pentecost-vigil:reading-2"
+slice_id = "postconciliar-2008-supplement-named-additions"
+kind = "text-slot"
+label = "Prayer after second reading"
+source_record = "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml"
+source_locus = "Notitiae 44 (2008), printed p. 381; Supplementum n. 6; artifact p. 63"
+identity_state = "established"
+form_id = "pentecost-vigil-extended"
+
+[[targets]]
+id = "postconciliar:2008:pentecost-vigil:reading-3-a"
+slice_id = "postconciliar-2008-supplement-named-additions"
+kind = "text-slot"
+label = "Prayer after third reading, first option"
+source_record = "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml"
+source_locus = "Notitiae 44 (2008), printed p. 382; Supplementum n. 7; artifact p. 64"
+identity_state = "established"
+form_id = "pentecost-vigil-extended"
+
+[[targets]]
+id = "postconciliar:2008:pentecost-vigil:reading-3-b"
+slice_id = "postconciliar-2008-supplement-named-additions"
+kind = "text-slot"
+label = "Prayer after third reading, second option"
+source_record = "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml"
+source_locus = "Notitiae 44 (2008), printed p. 382; Supplementum n. 7; artifact p. 64"
+identity_state = "established"
+form_id = "pentecost-vigil-extended"
+
+[[targets]]
+id = "postconciliar:2008:pentecost-vigil:reading-3-c"
+slice_id = "postconciliar-2008-supplement-named-additions"
+kind = "text-slot"
+label = "Prayer after third reading, third option"
+source_record = "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml"
+source_locus = "Notitiae 44 (2008), printed p. 383; Supplementum n. 7; artifact p. 65"
+identity_state = "established"
+form_id = "pentecost-vigil-extended"
+
+[[targets]]
+id = "postconciliar:2008:pentecost-vigil:reading-4"
+slice_id = "postconciliar-2008-supplement-named-additions"
+kind = "text-slot"
+label = "Prayer after fourth reading"
+source_record = "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml"
+source_locus = "Notitiae 44 (2008), printed p. 383; Supplementum n. 8; artifact p. 65"
+identity_state = "established"
+form_id = "pentecost-vigil-extended"
+
+[[targets]]
+id = "postconciliar:2008:supplement:mary-nativity-oblata"
+slice_id = "postconciliar-2008-supplement-named-additions"
+kind = "text-slot"
+label = "Nativity of Mary, Prayer over the Offerings"
+source_record = "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml"
+source_locus = "Notitiae 44 (2008), printed p. 385; artifact p. 67; Ad diem 8 septembris; target Missal p. 823"
+identity_state = "established"
+
+[[targets]]
+id = "postconciliar:2008:supplement:mary-common-ordinary-1-oblata-option"
+slice_id = "postconciliar-2008-supplement-named-additions"
+kind = "text-slot"
+label = "Marian Common Ordinary Time 1, alternative Prayer over the Offerings"
+source_record = "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml"
+source_locus = "Notitiae 44 (2008), printed p. 385; artifact p. 67; Ad Commune Beatae Mariae Virginis I.1; target Missal p. 897"
+identity_state = "established"
+
+[[targets]]
+id = "postconciliar:2008:supplement:pio-collect"
+slice_id = "postconciliar-2008-supplement-named-additions"
+kind = "text-slot"
+label = "Pio of Pietrelcina, Collect"
+source_record = "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml"
+source_locus = "Notitiae 44 (2008), printed p. 386; artifact p. 68; 23 September; target Supplementum p. 1276"
+identity_state = "established"
+
+[[targets]]
+id = "postconciliar:2008:supplement:juan-diego-collect"
+slice_id = "postconciliar-2008-supplement-named-additions"
+kind = "text-slot"
+label = "Juan Diego, Collect"
+source_record = "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml"
+source_locus = "Notitiae 44 (2008), printed p. 386; artifact p. 68; 9 December; target Supplementum p. 1276"
+identity_state = "established"
+
+[[targets]]
+id = "postconciliar:2008:supplement:guadalupe-collect"
+slice_id = "postconciliar-2008-supplement-named-additions"
+kind = "text-slot"
+label = "Our Lady of Guadalupe, Collect"
+source_record = "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml"
+source_locus = "Notitiae 44 (2008), printed p. 387; artifact p. 69; 12 December; target Supplementum p. 1277"
+identity_state = "established"
+
+[[targets]]
+id = "postconciliar:2008:pentecost-vigil:dismissal-1"
+slice_id = "postconciliar-2008-supplement-named-additions"
+kind = "ordinary-option"
+label = "Pentecost Vigil dismissal 1"
+source_record = "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml"
+source_locus = "Notitiae 44 (2008), printed p. 384; artifact p. 66; Supplementum n. 13"
+identity_state = "established"
+form_id = "pentecost-vigil-extended"
+
+[[targets]]
+id = "postconciliar:2008:pentecost-vigil:dismissal-2"
+slice_id = "postconciliar-2008-supplement-named-additions"
+kind = "ordinary-option"
+label = "Pentecost Vigil dismissal 2"
+source_record = "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml"
+source_locus = "Notitiae 44 (2008), printed p. 384; artifact p. 66; Supplementum n. 13"
+identity_state = "established"
+form_id = "pentecost-vigil-extended"
+
 [[boundaries]]
 id = "roman-1962-fixed-calendar-text-slots"
 slice_id = "roman-1962-universal-fixed-calendar"
@@ -9601,7 +12061,7 @@ slice_id = "postconciliar-common-index-headings"
 kind = "common"
 state = "unenumerated"
 source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
-basis = "The index does not enumerate every numbered formulary beneath its headings. A body walk of printed pp. 891-969, with each form, oration alternative, seasonal condition and cross-reference resolved, is required. The Mary Ordinary Time heading demonstrably begins with numbered formulary 1 at artifact p. 540; treating these 33 headings as 33 complete formularies would undercount."
+basis = "The separate 2002 Common-formularies slice enumerates all sixty source-numbered body forms beneath these thirty-three headings. Exact 2008 correspondence, internal oration alternatives, seasonal appointments and cross-reference resolution remain open; these section headings are not additional Mass formularies."
 
 [[boundaries]]
 id = "postconciliar-ritual-votive-dead-appendices"
@@ -9609,7 +12069,7 @@ slice_id = "postconciliar-exceptional-and-additional-rites"
 kind = "exceptional-rite"
 state = "unenumerated"
 source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
-basis = "Index generalis printed pp. 971-1292 separately identifies ritual Masses, needs and occasions, votive Masses, Masses for the dead and appendices. These are not supplied by the calendar-spine or the main Ordinary and remain unenumerated at individual formulary/option level."
+basis = "Separate 2002 body slices enumerate named ritual, various-needs, votive and dead forms, prayer sets and referrals. Internal options, appendix rites, and exact 2008 correspondence remain unenumerated; the calendar-spine and main Ordinary cannot supply these targets."
 
 [[boundaries]]
 id = "roman-1962-whole-celebration"
@@ -9826,3 +12286,51 @@ kind = "text-slots"
 state = "unenumerated"
 source_refs = ["src/sources/calendars/roman-pre-1955/propers.yaml"]
 basis = "No source-checked whole-book inventory for this dimension is established by this record. Bounded positive slices, where present, remain separately countable. For roman-pre-1955, the target is the 1920 typical edition; neither later composite OCR nor inherited 1962 rows establishes its universe."
+
+[[boundaries]]
+id = "postconciliar-2002-common-formularies-slots-and-alternatives"
+slice_id = "postconciliar-2002-common-formularies"
+kind = "text-slots"
+state = "unenumerated"
+source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
+basis = "Named body-entry enumeration is complete within the declared witness section. Individual semantic slots, internal alternative prayers, conditional replacements and reference targets still need reconciliation; no whole-book text-slot denominator is inferred."
+
+[[boundaries]]
+id = "postconciliar-2002-ritual-formularies-slots-and-alternatives"
+slice_id = "postconciliar-2002-ritual-formularies"
+kind = "text-slots"
+state = "unenumerated"
+source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
+basis = "Named body-entry enumeration is complete within the declared witness section. Individual semantic slots, internal alternative prayers, conditional replacements and reference targets still need reconciliation; no whole-book text-slot denominator is inferred."
+
+[[boundaries]]
+id = "postconciliar-2002-votive-forms-slots-and-alternatives"
+slice_id = "postconciliar-2002-votive-forms"
+kind = "text-slots"
+state = "unenumerated"
+source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
+basis = "Named body-entry enumeration is complete within the declared witness section. Individual semantic slots, internal alternative prayers, conditional replacements and reference targets still need reconciliation; no whole-book text-slot denominator is inferred."
+
+[[boundaries]]
+id = "postconciliar-2002-dead-forms-slots-and-alternatives"
+slice_id = "postconciliar-2002-dead-forms"
+kind = "text-slots"
+state = "unenumerated"
+source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
+basis = "Named body-entry enumeration is complete within the declared witness section. Individual semantic slots, internal alternative prayers, conditional replacements and reference targets still need reconciliation; no whole-book text-slot denominator is inferred."
+
+[[boundaries]]
+id = "postconciliar-2002-various-needs-forms-slots-and-alternatives"
+slice_id = "postconciliar-2002-various-needs-forms"
+kind = "text-slots"
+state = "unenumerated"
+source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
+basis = "Named body-entry enumeration is complete within the declared witness section. Individual semantic slots, internal alternative prayers, conditional replacements and reference targets still need reconciliation; no whole-book text-slot denominator is inferred."
+
+[[boundaries]]
+id = "postconciliar-2008-supplement-named-additions-remaining-units"
+slice_id = "postconciliar-2008-supplement-named-additions"
+kind = "exceptional-rite-unit"
+state = "unenumerated"
+source_refs = ["src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
+basis = "The Supplementum also appoints readings, psalms or silence, a referred Collect, optional integration with Vespers and a solemn blessing. Those appointments need their own semantic target identities and referral reconciliation; this selected positive slice does not enumerate the complete Vigil."

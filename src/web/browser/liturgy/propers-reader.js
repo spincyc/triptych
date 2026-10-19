@@ -191,7 +191,7 @@
   function translationWitnessRow(structure, id) {
     if (!structure || !id) return null;
     return (structure.translations || []).find(function (row) {
-      return row && (row.source_id || row.source || null) === id;
+      return row && (row.source_id || row.source || 'project-created') === id;
     }) || null;
   }
 
@@ -479,11 +479,10 @@
       return row.key === normalized.state.formulary.id;
     });
     const witnessState = formularyWitnessState(
-      prepared.structure, mass, normalized.state.languages.orations
+      prepared.structure, mass, normalized.state.languages.orations, normalized.state
     );
     if (witness) {
-      const held = witnessState.deterministic === witness ||
-        witnessState.choices.some(function (row) { return row.id === witness; });
+      const held = witnessState.held.indexOf(witness) >= 0;
       if (!held || normalized.state.languages.orations === T.SOURCE_LANGUAGE) {
         errors.push({
           code: 'invalid-explicit-value', path: PUBLIC_KEYS.translationWitness,
@@ -765,7 +764,7 @@
     });
     if (translationChoice) {
       section.appendChild(T.el('p', 'composed-note',
-        'More than one translation witness is held. Choose a witness in Browse & edition; the missal’s Latin is shown meanwhile.'));
+        'More than one translation witness is held. Choose a witness in Browse & edition; missing portions will remain explicit.'));
     }
     return section;
   }
@@ -945,9 +944,13 @@
     return rows.length ? 'This formulary has a material coverage limitation.' : null;
   }
 
-  function coverageMessage(result, mass, structure) {
+  function coverageMessage(result, mass, structure, detail) {
     const recension = recensionContext(structure, mass);
-    return [recension && recension.notice, materialCoverageMessage(result)]
+    const report = T.summarizeCoverage(T.selectedCoverageUnits(result, structure));
+    const languages = result.request && result.request.languages || {};
+    return [recension && recension.notice, materialCoverageMessage(result),
+      (detail ? T.coverageSummaryText : T.coverageNoticeText)(report,
+        languages.orations || 'la', languages.translationWitness)]
       .filter(Boolean).join(' ') || null;
   }
 
@@ -1140,46 +1143,37 @@
     const group = groups.find(function (row) { return row.kind === kind; });
     const masses = group ? group.masses : [];
     T.fillSelect(formularySelect, masses.map(function (mass) {
-      return { value: mass.key, label: mass.name || mass.key, group: massGroup(mass) };
+      const coverage = (mass.coverage && mass.coverage.languages || []).find(function (row) {
+        return row.lang === (orationsSelect.value || T.SOURCE_LANGUAGE);
+      });
+      return { value: mass.key, label: (mass.name || mass.key) + (coverage
+        ? ' — ' + T.orationLanguageLabel(coverage) : ' — coverage not assessed'), group: massGroup(mass) };
     }));
     placeholder(formularySelect, 'Choose a formulary…');
     if (value && masses.some(function (mass) { return mass.key === value; })) formularySelect.value = value;
   }
 
-  function translationIdentity(row) {
-    return row && (row.source_id || row.source || null);
-  }
-
-  function formularyWitnessState(structure, mass, language) {
+  function formularyWitnessState(structure, mass, language, state) {
     if (language === T.SOURCE_LANGUAGE || !mass) {
-      return { deterministic: null, choices: [] };
+      return { deterministic: null, choices: [], held: [] };
     }
-    const heldRows = (mass.propers || []).filter(function (proper) {
-      return proper && !T.isPlaceholder(proper);
-    }).map(function (proper) {
-      return (proper.translations || []).filter(function (row) {
-        return row && row.lang === language && row.text;
-      });
-    }).filter(function (rows) { return rows.length; });
-    if (!heldRows.length || heldRows.some(function (rows) {
-      return rows.some(function (row) { return !translationIdentity(row); });
-    })) return { deterministic: null, choices: [] };
-    const heldByProper = heldRows.map(function (rows) {
-      return Array.from(new Set(rows.map(translationIdentity)));
-    });
-
-    const common = heldByProper.reduce(function (intersection, ids) {
-      return intersection.filter(function (id) { return ids.indexOf(id) >= 0; });
-    }, heldByProper[0].slice());
-    const labels = new Map((structure.translations || []).map(function (row) {
-      return [translationIdentity(row), row.label || translationIdentity(row)];
-    }));
-    const choices = common.map(function (id) {
-      return { id: id, label: labels.get(id) || id };
-    });
+    let report = mass.coverage;
+    const current = state || runtime.normalized && runtime.normalized.state;
+    if (current && current.edition.id === structure.calendar && current.formulary && current.formulary.id === mass.key) {
+      const languages = Object.assign({}, current.languages, { orations: language });
+      delete languages.translationWitness;
+      try {
+        const probe = Adapters.adaptPropers({ request: Object.assign({}, current, { languages: languages }), structure: structure });
+        report = T.summarizeCoverage(T.selectedCoverageUnits(probe, structure));
+      } catch (_error) {
+        return { deterministic: null, choices: [], held: [] };
+      }
+    }
+    const choices = T.coverageWitnesses(report, language);
     return {
       deterministic: choices.length === 1 ? choices[0].id : null,
-      choices: choices.length > 1 ? choices : []
+      choices: choices.length > 1 ? choices : [],
+      held: choices.flatMap(function (row) { return [row.id].concat(row.aliases || []); })
     };
   }
 
@@ -1207,9 +1201,10 @@
         return { value: row.id, label: row.label, title: row.id };
       }));
       placeholder(witnessSelect, 'Choose a translation witness…');
-      if (witness && witnessState.choices.some(function (row) { return row.id === witness; })) {
-        witnessSelect.value = witness;
-      }
+      const selectedWitness = witness && witnessState.choices.find(function (row) {
+        return row.id === witness || (row.aliases || []).indexOf(witness) >= 0;
+      });
+      if (selectedWitness) witnessSelect.value = selectedWitness.id;
       witnessField.hidden = false;
     }
   }
@@ -1329,7 +1324,7 @@
 
   function coverageSummary(result, mass, structure) {
     if (!result) return null;
-    const notice = coverageMessage(result, mass, structure);
+    const notice = coverageMessage(result, mass, structure, true);
     return notice || 'Complete for the selected production state';
   }
 

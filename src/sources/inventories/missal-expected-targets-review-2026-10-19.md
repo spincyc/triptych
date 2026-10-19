@@ -105,14 +105,72 @@ not a collation of the 2008 reprint or English expression.
 
 A second source pass opened the complete, 828-page
 [registered 2002 digital reproduction](https://media.musicasacra.com/books/latin_missal2002.pdf)
-through the web reader, then inspected its index. The index identifies Common
+through the web reader, then inspected its index and the complete body sections
+for Commons, ritual Masses, various needs, votive Masses and the dead. The index identifies Common
 subdivisions, additional Eucharistic Prayers and a one-minister Order of Mass.
 It also locates ritual, votive and funeral material outside the calendar.
-These positive headings enter bounded slices. A body check of the Marian Common
-confirmed numbering beneath a heading: index leaves cannot stand in for every
-formulary. Whole-book and internal-form enumeration remain open. This was a
+These positive headings enter bounded slices. The subsequent body reading
+establishes the following separate entry inventories; index leaves cannot stand
+in for every formulary:
+
+| Source body slice | Artifact pages | Source-defined entries |
+| --- | --- | --- |
+| Commons | 536–592 | 60 numbered formularies beneath 33 section headings |
+| Ritual | 593–667 | 28 formularies, one alternative prayer set, two referrals |
+| Various needs | 667–724 | 49 formularies, ten prayer sets, ten Collect categories |
+| Votive | 724–749 | 23 formularies and one Marian Common referral |
+| Dead | 750–777 | 16 formularies, twenty prayer sets, six Collect categories |
+
+These five body slices contribute 226 metadata identities. Their whole bounded
+sections were read in overlapping extraction windows; numbered/lettered
+subdivisions were checked in surrounding body context. The source locators use
+one-based artifact pages and web-extraction lines because the source's printed
+pagination differs. The existing 33 Common headings remain section identities,
+not another 33 Masses. All new body identities retain unresolved correspondence
+to 2008; a complete 2002 witness section does not settle the target edition.
+
+The Common sequence comprises dedication (2), Mary (11), martyrs (14), pastors
+(12), doctors (2), virgins (4), and saints (15). Ritual Confirmation C is an
+alternative three-prayer set. Anointing refers to the Mass for the sick;
+institution of lectors/acolytes refers to ministers of the Church. Renewal of
+vows appoints antiphons by reference but supplies its Mass prayers. Various-needs
+categories 11 A–C and 39 are prayer sets; categories 21–24, 34–37 and 44 are
+Collect-only, while 30 B contains two Collect choices. Votive Mary A refers to
+the appropriate seasonal Common. These referrals remain explicit identities
+rather than guessed combinations of their possible targets.
+
+The dead section has funeral entries A–F, with E subdivided 1–2; anniversary
+A–E; daily Masses for one deceased 1–5 and several/all deceased 1–9; and diverse
+prayers 1 A–C, 2 A–B, 3 A–B, then 4–12. Some lettered entries are prayer sets,
+and diverse-prayer categories 5–10 supply only Collects. The section explicitly
+permits interchange and grammatical adaptations, so forty-two named entries
+cannot be promoted to forty-two full Masses or a finite Cartesian total.
+
+Internal alternate Collects and antiphons, proper Prefaces and Eucharistic
+Prayer inserts, blessings, conditional appointments, and semantic slots remain
+separate work. These are per-entry structural unknowns; the named body entries
+themselves are now enumerated within the five stated source sections. This was a
 bounded reading of that registered source's delivery, not a fresh hash check or
 acquisition receipt; its existing artifact and edition limitations still apply.
+
+The registered official
+[2008 variation list and Supplementum](../works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml)
+also opened through the web reader. A separate bounded slice records fourteen
+positive 2008 target identities: the extended Pentecost Vigil, six post-reading
+prayer alternatives, two Vigil dismissals, the September 8 Prayer over the
+Offerings, an alternative Prayer over the Offerings for Marian Common I.1, and
+the Collects of Pio, Juan Diego and Guadalupe. These have established identity
+from the official 2008 publication itself. Their language availability and
+publication status are separate questions. The three general dismissal additions
+already occur in the Ordinary-option inventory and are not counted again here.
+
+The official notice and the existing Ordinary source audit explicitly limit the
+variation list: it is directed to changes affecting translation, while further
+presentation and textual corrections are unlisted. Its silence cannot establish
+exact 2008 correspondence for every 2002 row. The selected Supplementum slice
+also leaves the extended Vigil's remaining readings, responses, Vespers options,
+references and ritual actions unenumerated; it does not hide those under a
+claim of a complete rite.
 
 The 1962 exceptional-rite subset combines five precedents to Mass explicitly
 named in the registered reading of rubric 424 with the separately collated
@@ -166,9 +224,9 @@ the books cannot be obtained. Existing registered records remain the evidence
 for prior acquisitions and collations.
 
 Closing C1 for the full intended scope still requires an item-level body/index
-reconciliation for temporal weekdays, all Commons and conditional appointments,
-votive/ritual/Requiem formularies, proper Prefaces outside the main section,
-Ordinary subdivisions, exceptional rites, and their appointed semantic slots;
+reconciliation for temporal weekdays, conditional appointments, proper Prefaces
+outside the main section, Ordinary subdivisions, appendix and exceptional rites,
+and appointed semantic slots and internal alternatives of the enumerated forms;
 the exact pre-1955 target witness; and explicit 2008/U.S. edition dispositions.
 Known unavailable wording can then be classified per target without blocking an
 otherwise complete identity inventory. Missing enumeration cannot be repaired by

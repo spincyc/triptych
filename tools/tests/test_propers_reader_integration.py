@@ -290,12 +290,9 @@ class PropersReaderIntegrationTests(unittest.TestCase):
     def test_witness_choice_is_formulary_and_translation_specific(self) -> None:
         source = text(JS)
         for token in (
-            "function formularyWitnessState(structure, mass, language)",
+            "function formularyWitnessState(structure, mass, language, state)",
             "language === T.SOURCE_LANGUAGE || !mass",
-            "mass.propers || []",
-            "proper.translations || []",
-            "proper && !T.isPlaceholder(proper)",
-            "translationIdentity(row)",
+            "T.coverageWitnesses(report, language)",
             "witnessState.choices.length > 1",
             "witnessState.deterministic",
             "selectedBrowseMass(groups)",

@@ -168,15 +168,22 @@ completion requires those gaps to be filled for the claimed scope.
 
 Implementation checkpoint, 2026-10-19: the independent
 [expected-target inventory](../src/sources/inventories/missal-expected-targets-v1.toml)
-begins with 938 identities in sixteen bounded source slices and 34 explicit
-boundaries. The accompanying
+now contains 1,178 identities in 22 bounded source slices and forty explicit
+boundaries, including fourteen established directly from the official 2008
+supplement. The accompanying
 [source review](../src/sources/inventories/missal-expected-targets-review-2026-10-19.md)
 records source extent, target correspondence and retrieval limits. In
 particular, Saint Anastasia's Christmas commemoration is expected from the
 1962 source calendar but lacks a represented Mass entry. Whole-book enumeration
-remains open for every family. Shared report, reader implementation and
-independent review continue; browser and print checks have not passed in the
-current restricted execution environment. This checkpoint does not close C1.
+remains open for every family. The versioned shared report drives generated
+Proper/Ordinary data, CLI accounting, and Day/Propers controls, discovery and
+selected-Mass notices. Partial witnesses remain selectable with explicit gaps;
+mixed components and nested cycles retain separate accounting. Independent
+review fixes passed 279 regression tests (six existing skips), all nineteen
+affected captured examples, source checks, and strict public-data admission.
+Browser and print checks have not passed in the current restricted execution
+environment. The work register records the remaining validation and payload
+limitations. This checkpoint does not close C1.
 
 #### C2: the reusable representative-Mass pattern
 

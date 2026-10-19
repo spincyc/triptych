@@ -569,11 +569,11 @@
       formularySelect.replaceChildren();
     }
     if (runtime.mode === 'missal' && runtime.ordinary) {
-      const languages = runtime.ordinary.languages || [];
+      const languages = T.orationLanguagesOf(runtime.ordinary);
       T.fillSelect(ordinaryLangSelect, languages.map(function (row) {
         return {
           value: row.lang,
-          label: humanLanguage(row.lang) + (row.held ? ' — ' + row.held + ' of ' + row.elements : ' — none held')
+          label: T.orationLanguageLabel(row)
         };
       }));
       ordinaryLangSelect.value = state.languages.ordinary || 'en';
@@ -677,7 +677,10 @@
         }).filter(Boolean).join('; ')
         : (runtime.result && runtime.result.resolved && runtime.result.resolved.formulary)],
       ['Mass form', state.form ||
-        (runtime.result && runtime.result.resolved && runtime.result.resolved.form)]
+        (runtime.result && runtime.result.resolved && runtime.result.resolved.form)],
+      ['Text coverage', runtime.branches.map(function (row) {
+        return row.result && coverageMessage(row.result, true);
+      }).filter(Boolean).join(' ')]
     ]));
     detailsBody.appendChild(selection);
 
@@ -810,7 +813,7 @@
     ));
   }
 
-  function coverageMessage(result) {
+  function materialCoverageMessage(result) {
     const rows = (result && result.coverage) || [];
     if (rows.every(function (row) {
       return row.state === 'supported' && row.completeness === 'complete';
@@ -828,6 +831,18 @@
       return 'Some appointed text is not held in this repository; the available portions are shown.';
     }
     return 'This selection has a material coverage limitation.';
+  }
+
+  function coverageMessage(result, detail) {
+    const report = T.summarizeCoverage(T.selectedCoverageUnits(result, runtime.structure || {}));
+    const languages = result && result.request && result.request.languages || {};
+    const describe = detail ? T.coverageSummaryText : T.coverageNoticeText;
+    const ordinary = result && result.request && result.request.requestedMode === 'missal'
+      ? describe(T.summarizeCoverage(T.selectedOrdinaryCoverageUnits(result, runtime.ordinary)),
+        languages.ordinary || 'en', languages.ordinaryWitness, 'Ordinary') : null;
+    return [materialCoverageMessage(result),
+      describe(report, languages.orations || 'la', languages.translationWitness), ordinary]
+      .filter(Boolean).join(' ');
   }
 
   function reasoningParagraph(text, locus) {
@@ -1178,53 +1193,17 @@
     }) || null;
   }
 
-  function translationIdentity(row) {
-    return row && (row.source_id || row.source || null);
-  }
-
-  /** Witnesses that can supply every translated Proper without suppressing one. */
+  /** Every public witness with some coverage remains selectable. */
   function translationWitnessState(result, structure, language) {
     if (!result || language === T.SOURCE_LANGUAGE) {
       return { requiresChoice: false, held: [], choices: [] };
     }
-    const heldByProper = [];
-    let requiresChoice = false;
-    let anonymousHeldTranslation = false;
-    semanticProperEvents(result).forEach(function (event) {
-      if (!event.selected ||
-          event.selected.kind !== 'composed' || event.selected.language !== language) return;
-      const selected = event.selected;
-      if (selected.availability === 'choice-required') {
-        const ids = Array.from(new Set(selected.unresolvedWitnesses || [])).filter(Boolean);
-        if (ids.length > 1) {
-          requiresChoice = true;
-          heldByProper.push(ids);
-        } else anonymousHeldTranslation = true;
-      } else if (selected.availability === 'held' && !selected.missing && selected.text) {
-        if (selected.sourceId) heldByProper.push([selected.sourceId]);
-        else anonymousHeldTranslation = true;
-      }
-    });
-    if (!heldByProper.length || anonymousHeldTranslation) {
-      return { requiresChoice: requiresChoice, held: [], choices: [] };
-    }
-    const common = heldByProper.reduce(function (intersection, ids) {
-      return intersection.filter(function (id) { return ids.indexOf(id) >= 0; });
-    }, heldByProper[0].slice());
-    const labels = new Map((structure.translations || []).map(function (row) {
-      return [translationIdentity(row), row.label || translationIdentity(row)];
-    }));
-    const names = common.map(function (id) { return labels.get(id) || id; });
+    const report = T.summarizeCoverage(T.selectedCoverageUnits(result, structure));
+    const choices = T.coverageWitnesses(report, language);
     return {
-      requiresChoice: requiresChoice,
-      held: common,
-      choices: requiresChoice ? common.map(function (id, index) {
-        const label = names[index];
-        return {
-          id: id,
-          label: names.indexOf(label) === names.lastIndexOf(label) ? label : label + ' — ' + id
-        };
-      }) : []
+      requiresChoice: choices.length > 1,
+      held: choices.flatMap(function (row) { return [row.id].concat(row.aliases || []); }),
+      choices: choices.length > 1 ? choices : []
     };
   }
 
@@ -1676,15 +1655,27 @@
   }
 
   function renderTranslationWitnessChoice(event, witnessState, prefix, result, locationEvent) {
-    if (!event.selected || event.selected.availability !== 'choice-required') return null;
+    function hasBody(row) {
+      return row.selected && (row.selected.kind === 'composed' ||
+        T.selectedCoverageUnits({ events: [row] }, runtime.structure).some(function (unit) {
+          return unit.component !== 'scripture';
+        }));
+    }
+    if (!hasBody(event)) return null;
+    const selectedWitness = result.request && result.request.languages && result.request.languages.translationWitness;
+    if (selectedWitness) return null;
+    if (event.selected.availability !== 'choice-required') {
+      if (!witnessState.requiresChoice) return null;
+      const first = semanticProperEvents(result).find(hasBody);
+      if (first !== event) return null;
+    }
     if (!witnessState.choices.length) {
       const first = semanticProperEvents(result).find(function (row) {
         return row.selected && row.selected.availability === 'choice-required';
       });
       if (first !== event) return null;
       const explanation = T.el('p', 'composed-note translation-witness-limitation',
-        'No single held translation witness supplies every translated Proper in this ' +
-          'formulary. Choosing one would suppress another held translation.');
+        'No public translation witness is available for this selection.');
       explanation.dataset.translationWitnessLimitation = event.id;
       return explanation;
     }
@@ -1693,7 +1684,7 @@
     fieldset.appendChild(T.el('legend', null,
       'Choose a translation witness for ' + (event.editionSlotLabel || 'this Proper')));
     fieldset.appendChild(T.el('p', 'ordinary-choice-note',
-      'This witness will be used only when it faithfully supplies every translated Proper in this formulary.'));
+      'The selected witness supplies only its available portions. Missing text remains explicit; another witness is not substituted.'));
     const options = T.el('div', 'ordinary-choice-options');
     witnessState.choices.forEach(function (option) {
       const label = T.el('label', 'ordinary-choice-option');

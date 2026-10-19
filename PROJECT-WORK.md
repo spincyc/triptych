@@ -24,19 +24,39 @@ their scope.
 `8f7be05286739235d590833eddba538e7e069ce0`; the implementation contract was
 published as `13e7a190ee4a9771810bf9e516c5490a32b4792b`.
 The first [source inventory](src/sources/inventories/missal-expected-targets-v1.toml)
-checkpoint contains 938 independently grounded identities in sixteen bounded
-slices and 34 explicit boundaries. Its
+checkpoint, `1f8cf65bb1d692b08115665eb8ab74258567f99c`, published 938
+independently grounded identities. The implementation checkpoint expands that
+to 1,178 identities in 22 bounded slices and forty explicit boundaries. Its
 [source review](src/sources/inventories/missal-expected-targets-review-2026-10-19.md)
 distinguishes source-witness enumeration from target-edition correspondence.
 The 1962 calendar identifies Saint Anastasia's Christmas commemoration even
 though no represented Mass row exists. None of the three whole-book universes
 is fully enumerated; accessible source-body enumeration continues.
 
-The shared report and reader consumers are under implementation and independent
-review. Baseline generator/reader regression suites passed 239 tests with six
-existing skips. Real-browser verification is currently blocked by this
-environment's refusal of local listener and Chromium sandbox system calls;
-no responsive or print acceptance is inferred from the passing unit tests.
+The shared report now drives generated Proper/Ordinary structures, the CLI
+audit, and Day/Propers controls, discovery and selected-Mass notices. It separates
+source-owned targets, appointed uses and published witness alternatives;
+preserves mixed composed/Scripture components; and exposes partial witnesses
+without substituting another translation. Publication-basis metadata does not
+grant authorization, and protected artifact aliases are excluded.
+
+Independent implementation review reproduced and verified fixes for alias
+conflicts, mixed-only witnesses, nested translation-only cycles, form-scoped
+target joins, and public wording beside restricted alternatives. The unchanged
+publication scanner accepts all six generated structures and still rejects
+protected identities and wording inserted into coverage metadata. The combined
+regression suite passes 279 tests with six existing skips; nineteen captured
+examples replay without divergence. Source checks, release bindings, and tool
+registry checks pass. The full-year rendering matrix is still running.
+
+Real-browser verification is blocked by this environment's refusal of local
+listener and Chromium sandbox system calls; no responsive or print acceptance
+is inferred from the passing unit tests. The broader public-alpha test suite
+still has 24 errors from the installed Markdown dependency mismatch and an
+absent installed PDF; no publication-filter code was changed. The promise-ledger
+check retains exactly its 32 baseline missing-artifact findings.
+Proper payloads increase by approximately 0.16–0.43 MB compressed per family;
+live load/parse impact remains unmeasured with the browser checks blocked.
 Shell Git networking is unavailable; verified feature-branch checkpoints use
 the connected GitHub API with an expected-head lease and matching local trees.
 

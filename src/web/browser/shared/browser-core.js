@@ -1252,7 +1252,9 @@ window.Triptych = (function () {
       translations: held.translations || [],
       unavailable_translations: held.unavailable_translations || [],
       untranslated: held.untranslated || [],
-      latin: held.latin || null
+      latin: held.latin || null,
+      coverage: held.coverage || null,
+      text_status: held.text_status || null
     };
   }
 
@@ -1374,35 +1376,241 @@ window.Triptych = (function () {
    * dropdown that implies completeness.
    */
   function orationLanguagesOf(structure) {
-    let composed = 0;
-    const held = new Map();
-    for (const mass of (structure && structure.masses) || []) {
-      for (const proper of mass.propers || []) {
-        if (isPlaceholder(proper)) continue;
-        const translations = proper.translations || [];
-        if (!proper.text && !proper.latin && !translations.some((row) => row && row.text)) continue;
-        composed += 1;
-        for (const translation of translations) {
-          if (!translation || !translation.lang || !translation.text) continue;
-          held.set(translation.lang, (held.get(translation.lang) || 0) + 1);
-        }
-      }
-    }
-    const languages = [{ lang: SOURCE_LANGUAGE, held: composed, composed: composed }];
-    for (const lang of Array.from(held.keys()).sort()) {
-      languages.push({ lang: lang, held: held.get(lang), composed: composed });
-    }
-    return languages;
+    const report = structure && structure.coverage;
+    return report && report.schema === 'triptych-missal-coverage/v1'
+      ? report.languages : Array.from(new Set([SOURCE_LANGUAGE].concat(
+        (structure && structure.translations || []).map(function (row) { return row.lang; }).filter(Boolean)
+      ))).map(function (lang) { return { lang: lang }; });
   }
 
   /** The label an orations control gives one of those languages. */
   function orationLanguageLabel(entry) {
-    // The source language needs no coverage figure: it is what the missal
-    // prints, so it is complete by definition. Every other entry states how far
-    // it reaches, because none of them reaches everywhere.
-    return entry.lang === SOURCE_LANGUAGE
-      ? languageName(entry.lang) + ', as printed'
-      : languageName(entry.lang) + ' — ' + entry.held + ' of ' + entry.composed;
+    return languageName(entry.lang) + (Number.isInteger(entry.targets)
+      ? ' — ' + entry.available_targets + ' of ' + entry.targets + ' represented texts available'
+      : ' — coverage not assessed');
+  }
+
+  const COVERAGE_RELATIONSHIPS = Object.freeze({
+    'exact-target': 'exact target wording',
+    'historical-antecedent': 'historical antecedent',
+    'study-translation': 'study translation',
+    'bible-reconstruction': 'Bible reconstruction',
+    'unresolved': 'target relationship unresolved'
+  });
+
+  function coverageUnitsOf(owner) {
+    if (!owner) return [];
+    const units = owner.coverage && owner.coverage.schema === 'triptych-missal-unit-coverage/v1'
+      ? [owner.coverage] : [];
+    ['cycles', 'weekday_cycles'].forEach(function (family) {
+      Object.values(owner[family] || {}).forEach(function (child) {
+        units.push.apply(units, coverageUnitsOf(child));
+      });
+    });
+    return units;
+  }
+
+  /** Select report units through existing resolved events, never re-resolve a Mass. */
+  function selectedCoverageUnits(result, structure) {
+    const units = [];
+    function visit(event) {
+      if (event.kind === 'proper-choice') {
+        (event.options || []).forEach(function (option) { (option.events || []).forEach(visit); });
+        return;
+      }
+      if (event.kind !== 'proper' || !event.selected || event.selected.kind === 'absent') return;
+      const hook = (event.sourceHooks || []).find(function (row) { return row.kind === 'proper-structure'; });
+      if (!hook) return;
+      const mass = (structure.masses || []).find(function (row) {
+        return hook.id.slice(0, hook.id.lastIndexOf('/')) === structure.calendar + '/' + row.key;
+      });
+      const proper = mass && mass.propers[Number(hook.id.slice(hook.id.lastIndexOf('/') + 1)) - 1];
+      if (!proper) return;
+      const selected = event.selected;
+      const cycles = selected.kind === 'cycle-alternatives'
+        ? selected.alternatives.map(function (row) { return row.cycle; })
+        : selected.cycle ? [selected.cycle] : [];
+      coverageUnitsOf(proper).forEach(function (unit) {
+        if (!unit.cycle || unit.cycle === 'all' || cycles.indexOf(unit.cycle) >= 0) units.push(unit);
+      });
+    }
+    (result && result.events || []).forEach(visit);
+    return units;
+  }
+
+  function selectedOrdinaryCoverageUnits(result, ordinary) {
+    const selected = new Set((result && result.events || []).filter(function (event) {
+      return event.kind === 'ordinary-element';
+    }).map(function (event) { return event.id.slice('ordinary-element/'.length); }));
+    return (ordinary && ordinary.sections || []).flatMap(function (section) {
+      return (section.elements || []).filter(function (element) {
+        return selected.has(element.key) && element.coverage;
+      }).map(function (element) { return element.coverage; });
+    });
+  }
+
+  /** Only report identities and dispositions are aggregated; text rows are never counted. */
+  function summarizeCoverage(units) {
+    const unique = new Map(units.map(function (unit) { return [unit.occurrence_id, unit]; }));
+    const languages = new Map();
+    ['la', 'en'].forEach(function (lang) {
+      languages.set(lang, {
+        lang: lang, targets: new Set(), occurrences: 0, available: 0,
+        available_targets: new Set(), exact_target: 0, exact_target_targets: new Set(),
+        scripture_targets: new Set(), scripture_occurrences: 0,
+        mixed_targets: new Set(), mixed_occurrences: 0,
+        availability: Object.fromEntries(['available', 'not-publishable', 'not-sourced',
+          'unresolved', 'inapplicable', 'absent-in-witness'].map(function (value) { return [value, 0]; })),
+        relationships: Object.fromEntries(Object.keys(COVERAGE_RELATIONSHIPS).map(function (value) { return [value, 0]; })),
+        collations: Object.fromEntries(['collated', 'uncollated', 'not-applicable', 'unresolved'].map(function (value) { return [value, 0]; })),
+        witnesses: new Map()
+      });
+    });
+    const targets = new Set();
+    const witnesses = new Set();
+    unique.forEach(function (unit) {
+      targets.add(unit.target_id);
+      (unit.languages || []).forEach(function (entry) {
+        const row = languages.get(entry.lang);
+        if (unit.scripture_component) {
+          row.scripture_targets.add(unit.scripture_component.target_id);
+          row.scripture_occurrences += 1;
+          row.mixed_targets.add(unit.target_id); row.mixed_occurrences += 1;
+        }
+        if (unit.component === 'scripture') {
+          row.scripture_targets.add(unit.target_id); row.scripture_occurrences += 1; return;
+        }
+        row.targets.add(unit.target_id); row.occurrences += 1;
+        row.availability[entry.availability] = (row.availability[entry.availability] || 0) + 1;
+        row.relationships[entry.relationship] = (row.relationships[entry.relationship] || 0) + 1;
+        row.collations[entry.collation] = (row.collations[entry.collation] || 0) + 1;
+        if (entry.availability === 'available') {
+          row.available += 1; row.available_targets.add(unit.target_id);
+          if (entry.relationship === 'exact-target' || (entry.witnesses || []).some(function (witness) {
+            return witness.relationship === 'exact-target';
+          })) {
+            row.exact_target += 1; row.exact_target_targets.add(unit.target_id);
+          }
+        }
+        (entry.witnesses || []).forEach(function (witness) {
+          witnesses.add(JSON.stringify([unit.target_id, entry.lang, witness.id]));
+          if (!row.witnesses.has(witness.id)) row.witnesses.set(witness.id, Object.assign({}, witness, {
+            available: 0, available_targets: new Set(), relationships: new Set(), publication_bases: new Set(), aliases: new Set(), collations: new Set()
+          }));
+          const held = row.witnesses.get(witness.id);
+          held.available += 1; held.available_targets.add(unit.target_id);
+          held.relationships.add(witness.relationship); held.publication_bases.add(witness.publication_basis);
+          held.collations.add(witness.collation);
+          (witness.aliases || []).forEach(function (alias) { held.aliases.add(alias); });
+        });
+      });
+    });
+    return { schema: 'triptych-missal-coverage/v1', scope: 'selection', denominator: 'represented-units',
+      count_basis: {
+        canonical_targets: 'distinct source-owned targets within this recension',
+        occurrences: 'appointed units, including distinct cycle owners',
+        witness_alternatives: 'distinct published translation witnesses per target and language'
+      }, counts: {
+      canonical_targets: targets.size, occurrences: unique.size, witness_alternatives: witnesses.size
+    }, languages: Array.from(languages.values()).map(function (row) {
+      ['targets', 'available_targets', 'exact_target_targets', 'scripture_targets', 'mixed_targets'].forEach(function (key) {
+        row[key] = row[key].size;
+      });
+      row.witnesses = Array.from(row.witnesses.values()).sort(function (a, b) { return a.id < b.id ? -1 : a.id > b.id ? 1 : 0; }).map(function (witness) {
+        witness.available_targets = witness.available_targets.size;
+        witness.targets = witness.available_targets; witness.occurrences = witness.available;
+        witness.relationships = Array.from(witness.relationships).filter(Boolean).sort();
+        witness.publication_bases = Array.from(witness.publication_bases).filter(Boolean).sort();
+        witness.aliases = Array.from(witness.aliases).sort();
+        witness.collations = Array.from(witness.collations).filter(Boolean).sort();
+        delete witness.relationship;
+        delete witness.collation;
+        delete witness.publication_basis;
+        return witness;
+      });
+      return row;
+    }) };
+  }
+
+  function coverageWitnesses(report, language) {
+    const row = report && (report.languages || []).find(function (entry) { return entry.lang === language; });
+    return (row && row.witnesses || []).map(function (witness) {
+      return Object.assign({}, witness, { label: witness.label + ' — ' + witness.available +
+        ' of ' + row.occurrences + ' uses' +
+        (witness.relationships && witness.relationships.length ? '; ' + witness.relationships.map(function (value) {
+          return COVERAGE_RELATIONSHIPS[value] || value;
+        }).join(', ') : '') });
+    });
+  }
+
+  function coverageSummaryText(report, language, witnessId, component) {
+    const row = report && (report.languages || []).find(function (entry) { return entry.lang === language; });
+    const label = component || 'Proper';
+    if (!row || !(report.counts && report.counts.occurrences)) {
+      return label + ' text coverage has not been assessed for this selection.';
+    }
+    const witness = witnessId && (row.witnesses || []).find(function (entry) {
+      return entry.id === witnessId || (entry.aliases || []).indexOf(witnessId) >= 0;
+    });
+    const parts = [label + ' coverage in ' + languageName(language) + ': ' + row.available_targets + ' of ' +
+      row.targets + ' represented distinct texts available (' + row.available + ' of ' + row.occurrences + ' uses).'];
+    if (!row.occurrences) parts.splice(0, 1, 'This represented selection has no composed ' + label.toLowerCase() + ' bodies.');
+    if (witnessId) parts.push('Selected witness: ' + (witness ? witness.label : witnessId) + ' — ' +
+      (witness ? witness.available : 0) + ' of ' + row.occurrences + ' uses; gaps remain explicit.');
+    parts.push(row.exact_target + ' uses have verified target wording across available witnesses.');
+    if (witness) parts.push('Witness relationship: ' + (witness.relationships || []).map(function (value) {
+      return COVERAGE_RELATIONSHIPS[value] || value;
+    }).join(', ') + '; publication basis: ' + (witness.publication_bases || []).join(', ') + '.');
+    const relationships = Object.keys(row.relationships || {}).filter(function (value) {
+      return value !== 'exact-target' && row.relationships[value] > 0;
+    });
+    if (relationships.length) parts.push(relationships.map(function (value) {
+      return row.relationships[value] + ' ' + (COVERAGE_RELATIONSHIPS[value] || value);
+    }).join('; ') + '.');
+    if (row.scripture_occurrences) parts.push(row.scripture_occurrences +
+      ' Scripture uses are Bible reconstructions, which do not establish exact Missal wording.');
+    return parts.join(' ');
+  }
+
+  function coverageNoticeText(report, language, witnessId, component) {
+    const row = report && (report.languages || []).find(function (entry) { return entry.lang === language; });
+    if (!row || !(report.counts && report.counts.occurrences)) {
+      return (component || 'Proper') + ' coverage not assessed for this selection.';
+    }
+    const witness = witnessId && (row.witnesses || []).find(function (entry) {
+      return entry.id === witnessId || (entry.aliases || []).indexOf(witnessId) >= 0;
+    });
+    const available = witnessId ? witness ? witness.available : 0 : row.available;
+    const texts = witnessId ? witness ? witness.available_targets : 0 : row.available_targets;
+    if (!row.occurrences) return row.scripture_occurrences +
+      ' Bible reconstructions; exact Missal wording is not established.';
+    const parts = [languageName(language) + ' ' + (component || 'Propers') + ': ' + texts + '/' + row.targets +
+      ' represented texts, ' + available + '/' + row.occurrences + ' uses available' +
+      (witnessId ? ' from the selected witness' : '') + '.'];
+    if (witnessId ? !witness || available < row.occurrences ||
+        (witness.relationships || []).some(function (value) { return value !== 'exact-target'; })
+      : row.exact_target < row.occurrences) parts.push('Exact target wording remains incomplete.');
+    if (row.scripture_occurrences) parts.push(row.scripture_occurrences + ' Bible reconstructions.');
+    return parts.join(' ');
+  }
+
+  function coverageWitnessMatches(owner, language, requested, translation) {
+    const actual = translation.source_id || translation.source || '';
+    if (requested === actual || requested === 'project-created' && !actual) return true;
+    const entry = owner.coverage && (owner.coverage.languages || []).find(function (row) { return row.lang === language; });
+    return Boolean(entry && (entry.witnesses || []).some(function (row) {
+      return (row.id === requested || (row.aliases || []).indexOf(requested) >= 0) &&
+        (row.id === actual || (row.aliases || []).indexOf(actual) >= 0);
+    }));
+  }
+
+  function coverageWitnessIdentity(owner, language, translation) {
+    const actual = translation.source_id || translation.source || '';
+    const entry = owner.coverage && (owner.coverage.languages || []).find(function (row) { return row.lang === language; });
+    const witness = entry && (entry.witnesses || []).find(function (row) {
+      return row.id === actual || (row.aliases || []).indexOf(actual) >= 0;
+    });
+    return witness ? witness.id : actual || 'project-created';
   }
 
   /* ------------------------------------------------------------------------
@@ -1512,12 +1720,27 @@ window.Triptych = (function () {
       }
       return { text: proper.text, lang: SOURCE_LANGUAGE, missing: false, source: null };
     }
-    const candidates = (proper.translations || []).filter((translation) => {
+    const rawCandidates = (proper.translations || []).filter((translation) => {
       return translation && translation.lang === asked && translation.text;
     });
+    const grouped = new Map();
+    const conflicts = new Set();
+    rawCandidates.forEach(function (translation) {
+      const id = coverageWitnessIdentity(proper, asked, translation);
+      if (grouped.has(id) && grouped.get(id).text !== translation.text) conflicts.add(id);
+      else grouped.set(id, translation);
+    });
+    const candidates = Array.from(grouped.values());
+    if (candidates.some(function (translation) {
+      return conflicts.has(coverageWitnessIdentity(proper, asked, translation)) &&
+        (!witness || coverageWitnessMatches(proper, asked, witness, translation));
+    })) return {
+      text: null, lang: asked, missing: true, wanted: asked, source: null,
+      availability: 'unavailable', reason: 'conflicting-witness', held: false
+    };
     const found = witness
       ? candidates.find((translation) => {
-          return (translation.source_id || translation.source || null) === witness;
+          return coverageWitnessMatches(proper, asked, witness, translation);
         })
       : (candidates.length === 1 ? candidates[0] : null);
     if (found) {
@@ -1549,7 +1772,7 @@ window.Triptych = (function () {
     })) {
       const state = unavailable.state || 'unavailable';
       const latinUnavailable = properBodyUnavailable(proper) && !proper.text;
-      const blocksFallback = state === 'rights-restricted' || latinUnavailable;
+      const blocksFallback = Boolean(witness) || state === 'rights-restricted' || latinUnavailable;
       return {
         text: blocksFallback ? null : (proper.text || null),
         lang: blocksFallback ? asked : SOURCE_LANGUAGE,
@@ -1571,6 +1794,11 @@ window.Triptych = (function () {
         unavailableState: 'unavailable', held: false
       };
     }
+    if (witness) return {
+      text: null, lang: asked, missing: true, wanted: asked,
+      source: null, availability: 'unavailable',
+      reason: 'absent-in-witness', held: false
+    };
     return {
       text: proper.text,
       lang: SOURCE_LANGUAGE,
@@ -1673,12 +1901,16 @@ window.Triptych = (function () {
           : oration.reason === 'text-unavailable'
             ? 'No ' + languageName(oration.wanted) +
               ' or Latin body is held here.'
+          : oration.reason === 'conflicting-witness'
+            ? 'Conflicting readings of this witness remain unresolved; no text was selected.'
+          : oration.reason === 'absent-in-witness'
+            ? 'No ' + languageName(oration.wanted) + ' text is available from the selected witness for this Proper.'
           : oration.reason === 'translation-choice-required'
             ? 'Several ' + languageName(oration.wanted) +
               ' translations are held. Choose a witness before reading one.'
           : oration.reason === 'unavailable'
             ? 'No ' + languageName(oration.wanted) +
-              ' body is held here. The safe Latin the missal prints is shown instead.'
+              ' body is held here.' + (oration.text ? ' The available Latin is shown instead.' : '')
           : 'No ' + languageName(oration.wanted) + ' translation is recorded for ' +
             'this proper. The Latin the missal prints is shown instead.';
         section.appendChild(
@@ -1752,6 +1984,10 @@ window.Triptych = (function () {
               : oration.reason === 'text-unavailable'
                 ? 'No ' + languageName(oration.wanted) +
                   ' or Latin body is held for this cycle.'
+              : oration.reason === 'conflicting-witness'
+                ? 'Conflicting readings of this witness remain unresolved; no text was selected.'
+              : oration.reason === 'absent-in-witness'
+                ? 'No ' + languageName(oration.wanted) + ' text is available from the selected witness for this cycle.'
               : 'No ' + languageName(oration.wanted) + ' body is held for this cycle.';
           block.appendChild(el('p', 'composed-note', message));
         }
@@ -1840,6 +2076,13 @@ window.Triptych = (function () {
     massHasContent: massHasContent,
     orationLanguagesOf: orationLanguagesOf,
     orationLanguageLabel: orationLanguageLabel,
+    coverageUnitsOf: coverageUnitsOf,
+    selectedCoverageUnits: selectedCoverageUnits,
+    selectedOrdinaryCoverageUnits: selectedOrdinaryCoverageUnits,
+    summarizeCoverage: summarizeCoverage,
+    coverageWitnesses: coverageWitnesses,
+    coverageSummaryText: coverageSummaryText,
+    coverageNoticeText: coverageNoticeText,
     orationFor: orationFor,
     versicled: versicled,
     renderProper: renderProper,
