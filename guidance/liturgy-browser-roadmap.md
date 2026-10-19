@@ -137,7 +137,8 @@ immutable acceptance package. Reproduce them for any release review.
 ### Ordered implementation milestones
 
 The C-series below refines the existing W1–W9 workstreams. It does not replace
-M1–M6 or broaden any historical acceptance. Every milestone below is **planned**.
+M1–M6 or broaden any historical acceptance. C1 is **in progress**; C2–C6 remain
+**planned**.
 
 | Milestone | Deliverable | Exit evidence and dependency |
 | --- | --- | --- |
@@ -164,6 +165,18 @@ Mass-specific coverage without implying that a whole language is complete.
 All selectors, notices, discovery results, and audit tools consume this report.
 The report may establish a complete inventory with known gaps; textual
 completion requires those gaps to be filled for the claimed scope.
+
+Implementation checkpoint, 2026-10-19: the independent
+[expected-target inventory](../src/sources/inventories/missal-expected-targets-v1.toml)
+begins with 938 identities in sixteen bounded source slices and 34 explicit
+boundaries. The accompanying
+[source review](../src/sources/inventories/missal-expected-targets-review-2026-10-19.md)
+records source extent, target correspondence and retrieval limits. In
+particular, Saint Anastasia's Christmas commemoration is expected from the
+1962 source calendar but lacks a represented Mass entry. Whole-book enumeration
+remains open for every family. Shared report, reader implementation and
+independent review continue; browser and print checks have not passed in the
+current restricted execution environment. This checkpoint does not close C1.
 
 #### C2: the reusable representative-Mass pattern
 

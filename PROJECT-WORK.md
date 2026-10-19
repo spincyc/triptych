@@ -20,12 +20,25 @@ C2–C6, corpus text acquisition, and production deployment remain separate
 milestones. Existing ritual-flow and historical acceptance records retain
 their scope.
 
-**In progress.** Baseline `8f7be05286739235d590833eddba538e7e069ce0` is clean
-and matches the remote feature branch. Initial inspection confirms the
-browser independently counts translation rows as availability and assumes
-Latin completeness. Source-backed expected-target evidence and the common
-coverage contract are being audited before implementation. Expected targets
-must not be inferred merely from held texts or projected Mass records.
+**In progress.** Work began from verified feature-branch baseline
+`8f7be05286739235d590833eddba538e7e069ce0`; the implementation contract was
+published as `13e7a190ee4a9771810bf9e516c5490a32b4792b`.
+The first [source inventory](src/sources/inventories/missal-expected-targets-v1.toml)
+checkpoint contains 938 independently grounded identities in sixteen bounded
+slices and 34 explicit boundaries. Its
+[source review](src/sources/inventories/missal-expected-targets-review-2026-10-19.md)
+distinguishes source-witness enumeration from target-edition correspondence.
+The 1962 calendar identifies Saint Anastasia's Christmas commemoration even
+though no represented Mass row exists. None of the three whole-book universes
+is fully enumerated; accessible source-body enumeration continues.
+
+The shared report and reader consumers are under implementation and independent
+review. Baseline generator/reader regression suites passed 239 tests with six
+existing skips. Real-browser verification is currently blocked by this
+environment's refusal of local listener and Chromium sandbox system calls;
+no responsive or print acceptance is inferred from the passing unit tests.
+Shell Git networking is unavailable; verified feature-branch checkpoints use
+the connected GitHub API with an expected-head lease and matching local trees.
 
 Completion requires independently reviewable target and occurrence identities,
 separate witness counts, distinct availability/rights/wording relationships,
