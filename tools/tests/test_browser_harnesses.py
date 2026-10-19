@@ -166,6 +166,23 @@ class BrowserHarnessStructureTest(unittest.TestCase):
             with self.subTest(harness=name):
                 subprocess.run(["node", "--check", str(TESTS / name)], cwd=ROOT, check=True)
 
+    def test_mutated_reader_fixtures_rebuild_authoritative_coverage(self) -> None:
+        """Check fixture data and selection without claiming browser execution."""
+        for name in ("day_reader_choices_browser.mjs", "propers_reader_integration_browser.mjs"):
+            with self.subTest(harness=name):
+                result = subprocess.run(
+                    ["node", str(TESTS / name), "--check-fixtures"], cwd=ROOT,
+                    capture_output=True, text=True, timeout=120,
+                )
+                self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+                report = json.loads(result.stdout)
+                self.assertEqual(report["status"], "pass")
+                self.assertEqual(report["mode"], "fixtures-only")
+                self.assertEqual(len(report["checks"]), 5)
+                self.assertIn("canonical-witness-aliases", report["checks"])
+                self.assertIn("partial-witness-no-fallback", report["checks"])
+                self.assertIn("report-language-labels", report["checks"])
+
     def test_every_harness_reads_the_preview_build(self) -> None:
         for name in discovered_harnesses():
             if name in PROTOTYPE_HARNESSES:

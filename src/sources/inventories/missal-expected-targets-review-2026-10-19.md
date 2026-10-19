@@ -70,14 +70,49 @@ unresolved target correspondence. The uncollated U.S. All Souls reading pool,
 conditional Scrutinies, weekday fallbacks and replacement combinations remain
 explicit boundaries. PC-T03 is an Easter Vigil alias, not another composition.
 
+A separate body reading of the registered 2002 witness, artifact pp. 82–303,
+enumerates 185 named temporal Mass forms: Advent 29, Christmas season 19,
+Lent 39, Holy Week 6, Easter season 54, and Ordinary Time with its concluding
+solemnities 38. These are source forms, not a derivation from PC-S keys or a
+civil-year calendar. The 34 Ordinary Time forms are reusable on weekdays;
+weeks I and XXXIV explicitly redirect their Sunday appointments. No Saturday
+of Advent III or Cartesian weekday/cycle combinations were invented.
+Six Christmas weekday forms have paired Collect choices before/after Epiphany,
+which are kept as prayer sets rather than extra complete Mass forms.
+
+The same body pass records nineteen positive referrals, five exceptional rites,
+twenty-two ritual units and thirty-one prayer sets at explicitly partial scope.
+The Easter Vigil and its Mass have separate granularity; Good Friday and the
+Holy Saturday observance are not Mass forms. The source expressly excludes Mass
+before the Holy Saturday Vigil. Readings, internal options, ritual actions and
+all proper/Ordinary slots require finer inventories beyond these named forms.
+
+The Proper of Saints body, artifact pp. 415–535, independently supplies 212
+entries under 207 celebration headings: 85 with all five printed core proper
+roles, six three-prayer sets and 121 own-Collect categories. Three vigil/day
+pairs and All Souls forms 1–3 account for the expansion. Every entry has one
+own Collect heading; those 212 headings independently cross-check membership.
+Christmas and January 1 belong to the temporal body. This does not equate the
+212 source entries with the 222 identities of the later calendar publication.
+Thirty printed Preface referrals and six Presentation rite options are separate
+targets; they do not become additional owned Prefaces or complete Masses.
+
+The already extracted sanctoral markers also supply 564 explicit core-role
+appointments: 212 Collects, 91 prayers over the offerings, 91 postcommunions,
+85 entrance antiphons and 85 Communion antiphons. Each target retains its exact
+source heading line; its locator separately identifies where the owning form
+begins, without pretending that opening page is the slot's page. Alternatives
+under one heading and imported Common/seasonal choices remain distinct work.
+
 The source-backed
 [postconciliar sequence inventory](../../claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/research/sequence-inventory.md)
 provides positive identities for greetings, Penitential Acts, sprinkling, Creeds,
 the four principal Eucharistic Prayers, priestly preparation alternatives,
 dismissals and blessing classes. These include choices beyond the current
-selectors. Blessing classes do not enumerate every numbered blessing. Roman
-Canon inserts, internal alternatives, supplementary Eucharistic Prayers and
-individual prayers over the people still need their own source-defined detail.
+selectors. Blessing classes do not enumerate every numbered blessing; the later
+2002 body slices now supply the main section's twenty blessings and twenty-eight
+prayers over the people. Roman Canon inserts, other internal alternatives and
+supplementary Eucharistic Prayers still need their own source-defined detail.
 
 The 1962 Mass-form slice names the hierarchical taxonomy of general rubric 271:
 Low and sung, the Solemn/sung-without-sacred-ministers subdivision, and pontifical
@@ -100,8 +135,20 @@ The registered 2002
 [main Preface passage](../works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/ordo-missae-praefationes.toml)
 independently enumerates fifty headings at artifact pp. 311–346. It explicitly
 excludes Prefaces printed with proper formularies elsewhere. Those fifty are a
-defensible main-section denominator, not the book's complete Preface count and
-not a collation of the 2008 reprint or English expression.
+defensible main-section denominator, not a collation of the 2008 reprint or
+English expression. A subsequent complete reading of the Preface index at
+artifact pp. 818–821 identifies 98 contextual entries. Fifty refer to the
+already enumerated main section. Two further entries repeat exactly the same
+indexed body locus: joint ordination refers to diaconal ordination at printed
+p. 1012, and the dedication anniversary repeats the second dedication Preface
+at p. 1064. Excluding those two repeats leaves 46 additional appointments,
+entered separately, and 96 indexed appointments across the two slices. This is
+not a count of 96 unique formula wordings: distinct printed loci can carry the
+same formula, and the source's index itself has textual and pagination defects.
+Twelve temporal body Prefaces were independently located and attached to these
+index identities, without creating duplicate target rows. Fifteen sanctoral
+body occurrences likewise remain evidence of appointments, rather than an
+additional fifteen entries on top of the index inventory.
 
 A second source pass opened the complete, 828-page
 [registered 2002 digital reproduction](https://media.musicasacra.com/books/latin_missal2002.pdf)
@@ -115,7 +162,7 @@ in for every formulary:
 
 | Source body slice | Artifact pages | Source-defined entries |
 | --- | --- | --- |
-| Commons | 536–592 | 60 numbered formularies beneath 33 section headings |
+| Commons | 536–593 | 60 numbered formularies beneath 33 section headings |
 | Ritual | 593–667 | 28 formularies, one alternative prayer set, two referrals |
 | Various needs | 667–724 | 49 formularies, ten prayer sets, ten Collect categories |
 | Votive | 724–749 | 23 formularies and one Marian Common referral |
@@ -146,20 +193,60 @@ and diverse-prayer categories 5–10 supply only Collects. The section explicitl
 permits interchange and grammatical adaptations, so forty-two named entries
 cannot be promoted to forty-two full Masses or a finite Cartesian total.
 
-Internal alternate Collects and antiphons, proper Prefaces and Eucharistic
-Prayer inserts, blessings, conditional appointments, and semantic slots remain
-separate work. These are per-entry structural unknowns; the named body entries
+A further Common body pass identifies 403 explicit contextual slot options:
+94 entrance antiphons, 78 Collects, 63 prayers over the offerings, 93 Communion
+antiphons, 62 postcommunions and thirteen explicit Preface appointments. Each of
+the sixty forms has all five core proper roles. Alternatives introduced by
+`Vel` and the separately labelled papal/episcopal Collects retain distinct
+option identities and precise source loci. The Preface appointments comprise
+two printed dedication Prefaces and eleven Marian references; referenced
+alternatives are not silently expanded. These are contextual appointments, not
+403 unique texts. General-rubric choices, cross-references outside these roles,
+grammatical substitutions and exact 2008 correspondence remain explicit limits.
+The Common introduction at artifact pp. 535–536 expressly permits interchange
+within a Common, seasonal prayers for memorials, and grammatical adaptation;
+its temporal/circumstantial restrictions remain controlling. Those permissions
+do not create a finite list of all assembled combinations.
+
+The main Ordinary's blessing section separately supplies twenty numbered solemn
+blessings and twenty-eight prayers over the people, at artifact pp. 370–383.
+The source's prayer 14 is concatenated after the previous conclusion in the text
+extraction; its printed number was retained. These complete bounded sequences
+do not enumerate blessings or prayers appointed elsewhere in the book.
+
+The appendices add fifty-five positive source structures: eleven index-only
+chant categories, three rites, four water/salt prayer options, eight sprinkling
+chants, eleven sample universal-prayer sets, four preparation units, seven
+thanksgiving units, six supplementary Eucharistic-Prayer forms and the
+single-minister Mass form. The last seven refine previously recorded rite-level
+identities; they are not seven additional liturgical celebrations. Source bounds
+are artifact pp. 383–414 and 777–812, with the chant index at pp. 827–828.
+Appendix I's music is absent from the accessible text body, so its eleven index
+headings do not establish its musical variants. Numbered intentions and seasonal
+inserts inside these forms remain a finer inventory boundary.
+
+Three children's Eucharistic Prayers printed in the 2002 appendix are retained
+only as named `inapplicable` boundaries. The official 2008 variation list,
+printed p. 379 / artifact p. 61, explicitly removes that appendix from the 2008
+book. They contribute no expected target rows. This bibliographic exclusion
+makes no claim about their liturgical use beyond the target book.
+
+Internal alternate Collects and antiphons beyond the enumerated Common roles,
+proper Prefaces and Eucharistic Prayer inserts, other blessings, conditional
+appointments, and further semantic slots remain separate work. These are
+per-entry structural unknowns; the named body entries
 themselves are now enumerated within the five stated source sections. This was a
 bounded reading of that registered source's delivery, not a fresh hash check or
 acquisition receipt; its existing artifact and edition limitations still apply.
 
 The registered official
 [2008 variation list and Supplementum](../works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml)
-also opened through the web reader. A separate bounded slice records fourteen
-positive 2008 target identities: the extended Pentecost Vigil, six post-reading
-prayer alternatives, two Vigil dismissals, the September 8 Prayer over the
-Offerings, an alternative Prayer over the Offerings for Marian Common I.1, and
-the Collects of Pio, Juan Diego and Guadalupe. These have established identity
+also opened through the web reader. A separate bounded slice records sixty
+positive 2008 target identities. It covers the extended Pentecost Vigil's two
+opening modes; its reading, psalm, response, prayer and dismissal appointments;
+conditional Vespers actions; explicit referrals; the September 8 Prayer over the
+Offerings; an alternative Prayer over the Offerings for Marian Common I.1; and
+the Collects and Common referrals of Pio, Juan Diego and Guadalupe. These have established identity
 from the official 2008 publication itself. Their language availability and
 publication status are separate questions. The three general dismissal additions
 already occur in the Ordinary-option inventory and are not counted again here.
@@ -167,10 +254,21 @@ already occur in the Ordinary-option inventory and are not counted again here.
 The official notice and the existing Ordinary source audit explicitly limit the
 variation list: it is directed to changes affecting translation, while further
 presentation and textual corrections are unlisted. Its silence cannot establish
-exact 2008 correspondence for every 2002 row. The selected Supplementum slice
-also leaves the extended Vigil's remaining readings, responses, Vespers options,
-references and ritual actions unenumerated; it does not hide those under a
-claim of a complete rite.
+exact 2008 correspondence for every 2002 row. The Supplementum slice closes
+that publication's appointment/referral extent, including all four Old Testament
+readings and their explicit response options, six post-reading prayer alternatives,
+the apostolic reading, two opening modes, and the Vespers actions specified in
+nn. 1–13. Biblical numbering follows the source. A response group may instead
+be replaced by silence; the shared prayer invitation and ritual pause remain
+separate identities, as does the shared response to the six post-reading prayer
+options. Repeated use of a shared prayer does not multiply its target,
+and permitted similar admonition wording does not imply a finite list of paraphrases.
+
+References to the ordinary Vigil Mass, Lectionary and Hours remain explicit
+referrals. Their owning editions still need downstream slot inventories; no
+familiar Gospel, psalmody or ordinary text was supplied from memory. This
+distinguishes a complete bounded supplement inventory from a complete assembled
+Vigil or entire 2008 book.
 
 The 1962 exceptional-rite subset combines five precedents to Mass explicitly
 named in the registered reading of rubric 424 with the separately collated
@@ -218,17 +316,59 @@ absence as a worldwide absence:
   reader. A shell download failed DNS resolution, so this review records no
   fresh local byte acquisition or hash verification. Protected payloads were
   not retained or added to the repository.
+- An exact-target follow-up opened the official 2008 Notitiae source, but found
+  no authenticated complete 2008 body or structural index. The nominal 2008
+  link at [Liturgia.it](https://www.liturgia.it/index.html) resolves to an
+  [expanded partial transcription](https://iglesiaactualidad.wordpress.com/liturgia/missale-romanum/)
+  containing later decrees through 2024 and incomplete ritual/needs/votive
+  contents. It was not accepted as an exact-edition denominator. Searches for
+  the 2008 title, index and ISBN 9788820981204 returned catalogue or sales
+  metadata and the registered correction list.
+- The exact 1920 impression is corroborated by
+  [WorldCat 224202518](https://search.worldcat.org/title/Missale-Romanum/oclc/224202518)
+  and [Google Books Z4zIzgEACAAJ](https://books.google.com/books/about/Missale_romanum.html?id=Z4zIzgEACAAJ),
+  but their accessible pages expose no body or contents scan. A new candidate
+  [Isidore item 3453](https://isidore.co/calibre/browse/book/3453) has a directory
+  label claiming 1920; its PDF redirects to an inaccessible host and no title
+  page was inspected. It remains unauthenticated and is not identified with
+  either the exact target or the known composite. Bounded searches covered
+  Archive.org, Google Books, Gallica, Vatican-title metadata and Isidore leads.
 
 These are access findings for the named routes in this session, not claims that
 the books cannot be obtained. Existing registered records remain the evidence
 for prior acquisitions and collations.
 
-Closing C1 for the full intended scope still requires an item-level body/index
-reconciliation for temporal weekdays, conditional appointments, proper Prefaces
-outside the main section, Ordinary subdivisions, appendix and exceptional rites,
-and appointed semantic slots and internal alternatives of the enumerated forms;
-the exact pre-1955 target witness; and explicit 2008/U.S. edition dispositions.
-Known unavailable wording can then be classified per target without blocking an
-otherwise complete identity inventory. Missing enumeration cannot be repaired by
-assigning every current held row a state, and the accompanying record does not
-claim to have done so.
+The named 2002 source queues are now enumerated at their declared granularity:
+temporal and sanctoral forms, Commons, ritual/needs/votive/dead entries, main
+Ordinary options, appendix structures and the full Preface index. The already
+extracted sanctoral core-role markers and the Common's explicit proper options
+also have individual targets. The official 2008 Supplementum's printed
+appointment/referral extent is separately complete. None of these facts
+establishes an entire exact target book's denominator.
+
+Further work runnable from the accessible 2002 witness comprises nested
+alternatives within the remaining formularies, ritual and Eucharistic-Prayer
+units, and reconciliation of Common/seasonal/Ordinary references.
+Its absent Appendix I music cannot be reconstructed from index headings. More
+2002 body detail would refine a source inventory; it cannot by itself establish
+2008 membership or wording. The official variation list can independently
+establish the specific changed appointments it positively names, but its silence
+cannot turn the rest into target attestations. The missing downstream Lectionary
+and Hours source inventories similarly cannot be supplied by familiar practice.
+
+The next acquisitions needed for whole-target C1 are concrete: an authenticated
+1920 Vatican typical impression with title, contents and body; authenticated
+2008 contents/body evidence or documented correspondence for each bounded source
+slice; the selected U.S. English edition's structural dispositions; and readable
+access to the already registered complete 1962 target facsimile. For 1920, the
+catalogued Vatican impression and unverified Isidore 3453 delivery are leads,
+not attested replacements for the known composite. For 2008, the LEV ISBN
+9788820981204 identifies the desired volume; the incomplete later web
+transcription is unsuitable. For 1962, access to either registered CMAA or SP07
+artifact through a delivery capable of handling its size would allow the
+remaining whole-book inventory. These are source or retrieval blockers, distinct
+from known unavailable wording at an already enumerated target.
+
+Closing C1 still requires those target-book extents and their semantic slots to
+be reconciled. Missing enumeration cannot be repaired by assigning every held
+row a state, and this record does not claim to have done so.

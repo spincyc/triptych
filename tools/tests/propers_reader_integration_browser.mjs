@@ -9,6 +9,7 @@ import { mkdir, mkdtemp, readFile, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { extname, resolve, sep } from 'node:path';
 import process from 'node:process';
+import { refreshCoverage, readerTools, fixtureRequest, verifyRealWitnesses } from './reader_coverage_fixture.mjs';
 
 const ROOT = resolve(process.env.TRIPTYCH_REVIEW_ROOT || resolve(import.meta.dirname, '../..'));
 const CANDIDATE = '/src/web/browser/liturgy/propers-reader.html';
@@ -63,6 +64,75 @@ async function waitGate(gate) {
   ]);
 }
 
+function withCycleUntranslated(body) {
+  const payload = JSON.parse(body);
+  const mass = payload.masses.find((row) => row.key === 'transfiguration-lord');
+  const proper = mass && mass.propers[0];
+  if (!proper) throw new Error('cycle-untranslated fixture target is absent');
+  mass.propers.forEach((row) => { row.form_id = 'main'; });
+  proper.name = 'Collect';
+  proper.source = 'composed';
+  const absence = (cycle, state) => ({
+    target: {
+      mass: mass.key, form_id: 'main', proper: proper.name,
+      cycle, occurrence: 1, extent: 'body'
+    },
+    lang: 'en', state
+  });
+  proper.citations = [];
+  proper.text = null;
+  proper.translations = [];
+  proper.unavailable_translations = null;
+  proper.untranslated = null;
+  proper.incipit = null;
+  proper.cycles = {
+    A: {
+      citations: [], text: 'A Latin sibling sentinel',
+      unavailable_translations: [absence('A', 'rights-restricted')]
+    },
+    B: {
+      citations: [], text: null,
+      latin: {
+        target: absence('B', 'unavailable').target,
+        state: 'unavailable', held: false, available: false, withheld: false
+      },
+      translations: [{
+        lang: 'en', text: 'B held English without a Latin body',
+        source_id: 'synthetic.cycle-b-held-english', rights: 'Public Domain'
+      }]
+    },
+    C: {
+      citations: [], text: 'C Latin safe sibling',
+      untranslated: [absence('C', 'unavailable')]
+    }
+  };
+  return refreshCoverage(payload, ROOT);
+}
+
+function withoutWitness(body) {
+  const payload = JSON.parse(body);
+  const mass = payload.masses.find((row) =>
+    row.key === 's-hilarii-episcopi-confessoris-ecclesiae-doctoris');
+  if (!mass) throw new Error('no-witness fixture target is absent');
+  const occurrences = new Map();
+  mass.propers.forEach((proper) => {
+    proper.form_id = 'main';
+    delete proper.form;
+    if (!proper.text) return;
+    const occurrence = (occurrences.get(proper.name) || 0) + 1;
+    occurrences.set(proper.name, occurrence);
+    proper.translations = [];
+    proper.untranslated = [{
+      target: {
+        mass: mass.key, form_id: 'main', proper: proper.name,
+        cycle: 'all', occurrence, extent: 'body'
+      },
+      lang: 'en', state: 'unavailable'
+    }];
+  });
+  return refreshCoverage(payload, ROOT);
+}
+
 function server() {
   return createServer(async (request, response) => {
     let gate = null;
@@ -109,71 +179,10 @@ function server() {
       if (file !== ROOT && !file.startsWith(ROOT + sep)) throw new Error('outside root');
       let body = await readFile(file);
       if (cycleUntranslated && relative.endsWith('/structure/propers/postconciliar.json')) {
-        const payload = JSON.parse(body.toString('utf8'));
-        const mass = payload.masses.find((row) => row.key === 'transfiguration-lord');
-        const proper = mass && mass.propers[0];
-        if (!proper) throw new Error('cycle-untranslated fixture target is absent');
-        mass.propers.forEach((row) => { row.form_id = 'main'; });
-        proper.name = 'Collect';
-        proper.source = 'composed';
-        const absence = (cycle, state) => ({
-          target: {
-            mass: mass.key, form_id: 'main', proper: proper.name,
-            cycle, occurrence: 1, extent: 'body'
-          },
-          lang: 'en', state
-        });
-        proper.citations = [];
-        proper.text = null;
-        proper.translations = [];
-        proper.unavailable_translations = null;
-        proper.untranslated = null;
-        proper.incipit = null;
-        proper.cycles = {
-          A: {
-            citations: [], text: 'A Latin sibling sentinel',
-            unavailable_translations: [absence('A', 'rights-restricted')]
-          },
-          B: {
-            citations: [], text: null,
-            latin: {
-              target: absence('B', 'unavailable').target,
-              state: 'unavailable', held: false, available: false, withheld: false
-            },
-            translations: [{
-              lang: 'en', text: 'B held English without a Latin body',
-              source_id: 'synthetic.cycle-b-held-english', rights: 'Public Domain'
-            }]
-          },
-          C: {
-            citations: [], text: 'C Latin safe sibling',
-            untranslated: [absence('C', 'unavailable')]
-          }
-        };
-        body = Buffer.from(JSON.stringify(payload));
+        body = Buffer.from(JSON.stringify(withCycleUntranslated(body.toString('utf8'))));
       }
       if (noWitness && relative.endsWith('/structure/propers/roman-1962.json')) {
-        const payload = JSON.parse(body.toString('utf8'));
-        const mass = payload.masses.find((row) =>
-          row.key === 's-hilarii-episcopi-confessoris-ecclesiae-doctoris');
-        if (!mass) throw new Error('no-witness fixture target is absent');
-        const occurrences = new Map();
-        mass.propers.forEach((proper) => {
-          proper.form_id = 'main';
-          delete proper.form;
-          if (!proper.text) return;
-          const occurrence = (occurrences.get(proper.name) || 0) + 1;
-          occurrences.set(proper.name, occurrence);
-          proper.translations = [];
-          proper.untranslated = [{
-            target: {
-              mass: mass.key, form_id: 'main', proper: proper.name,
-              cycle: 'all', occurrence, extent: 'body'
-            },
-            lang: 'en', state: 'unavailable'
-          }];
-        });
-        body = Buffer.from(JSON.stringify(payload));
+        body = Buffer.from(JSON.stringify(withoutWitness(body.toString('utf8'))));
       }
       response.writeHead(200, {
         'content-type': mime(file), 'cache-control': 'no-store',
@@ -282,8 +291,8 @@ const STATES = Object.freeze({
   invalid: hash({ missal: 'not-a-missal', type: 'seasonal', mass: 'advent-1', bible: 'douay-rheims', orations: 'la' }),
   invalidMass: hash({ missal: 'roman-1962', type: 'seasonal', mass: 'not-a-mass', bible: 'douay-rheims', orations: 'la' }),
   fast: hash({ missal: 'postconciliar', type: 'marian', mass: 'visitation-blessed-virgin-mary', bible: 'douay-rheims', orations: 'la' }),
-  englishMultiple: hash({ missal: 'roman-1962', type: 'seasonal', mass: 'easter-sunday', bible: 'douay-rheims', orations: 'en' }),
-  englishWitness: hash({ missal: 'roman-1962', type: 'seasonal', mass: 'easter-sunday', bible: 'douay-rheims', orations: 'en', 'translation-witness': MULTIPLE_TRANSLATION_WITNESS }),
+  englishMultiple: hash({ missal: 'roman-1962', type: 'sanctoral', mass: 'commemoratione-omnium-fidelium-defunctorum', form: 'first', bible: 'douay-rheims', orations: 'en' }),
+  englishWitness: hash({ missal: 'roman-1962', type: 'sanctoral', mass: 'commemoratione-omnium-fidelium-defunctorum', form: 'first', bible: 'douay-rheims', orations: 'en', 'translation-witness': MULTIPLE_TRANSLATION_WITNESS }),
   englishOne: hash({ missal: 'roman-1962', type: 'common', mass: 'commune-virginum-4', bible: 'douay-rheims', orations: 'en' }),
   englishNone: hash({ missal: 'roman-1962', type: 'sanctoral', mass: 's-hilarii-episcopi-confessoris-ecclesiae-doctoris', bible: 'douay-rheims', orations: 'en' }),
   romanChristmasForms: hash({ missal: 'roman-1962', type: 'christological', mass: 'nativitate-domini-octave', bible: 'douay-rheims', orations: 'la' }),
@@ -374,6 +383,8 @@ async function browseSnapshot(cdp) {
     witnessHidden: document.querySelector('#reader-witness-field').hidden,
     witnessDisplay: getComputedStyle(document.querySelector('#reader-witness-field')).display,
     witnesses: [...document.querySelector('#reader-witness').options].map(row => row.value),
+    witnessLabels: [...document.querySelector('#reader-witness').options].map(row => row.textContent),
+    orationLabels: [...document.querySelector('#reader-orations').options].map(row => row.textContent),
     witness: document.querySelector('#reader-witness').value,
     status: document.querySelector('#browse-status').textContent,
     applyDisabled: document.querySelector('#browse-form .surface-apply').disabled,
@@ -467,10 +478,11 @@ async function assertions(cdp, base) {
     const value = await snapshot(cdp);
     assert.equal(value.title, 'First Sunday of Advent', JSON.stringify(value));
     assert.equal(value.outcome, 'ready');
-    // Every 1962 Advent I text is held since the Latin backfill published its
-    // orations (3f86eed68), so the calm deep link has no coverage to report.
-    // The typed notice is held to a formulary still withheld, below.
-    assert.equal(value.noticeHidden, true);
+    // Held bodies do not establish target fidelity or exact Scripture wording.
+    assert.equal(value.noticeHidden, false);
+    assert.match(value.notice, /represented texts/);
+    assert.match(value.notice, /Exact target wording remains incomplete/);
+    assert.match(value.notice, /Bible reconstructions/);
     assert.deepEqual(value.semantic.coverage.map(row => [row.scope, row.completeness]),
       [['formulary:advent-1', 'complete']]);
     assert.equal(value.semantic.resolved.formulary, 'advent-1');
@@ -961,9 +973,12 @@ async function assertions(cdp, base) {
     await click(cdp, '[data-reader-action="browse"]');
     const form = await browseSnapshot(cdp);
     assert.equal(form.witnessHidden, false); assert.notEqual(form.witnessDisplay, 'none');
-    assert.equal(form.witnesses.length, 3);
+    assert.equal(form.witnesses.length, 4);
     assert.equal(form.witnesses[0], '');
-    const witness = form.witnesses[1];
+    assert.ok(form.orationLabels.every(label => /represented texts available/.test(label)));
+    assert.ok(form.witnessLabels.slice(1).every(label => /[13] of 6 uses/.test(label)));
+    const witness = MULTIPLE_TRANSLATION_WITNESS;
+    assert.ok(form.witnesses.includes(witness));
     await select(cdp, '#reader-witness', witness);
     await click(cdp, '#browse-form .surface-apply');
     await waitFor(cdp,
@@ -973,6 +988,10 @@ async function assertions(cdp, base) {
       `new URLSearchParams(location.hash.slice(1)).get('translation-witness')`), witness);
     assert.equal(await evaluate(cdp,
       `[...new URLSearchParams(location.hash.slice(1)).keys()].some(key => key.startsWith('_candidate-'))`), false);
+    assert.equal(await evaluate(cdp, `document.querySelectorAll('.composed[lang="en"]').length`), 1);
+    assert.equal((await snapshot(cdp)).semantic.events.filter(row =>
+      row.selected?.reason === 'absent-in-witness').length, 3);
+    assert.match((await snapshot(cdp)).notice, /from the selected witness/);
   });
 
   await check('no held witness remains an explicit unavailable or partial result', async () => {
@@ -1444,6 +1463,42 @@ async function captures(cdp, base) {
     results, measurements, accessibility: accessibilityReport, performance: performanceReport
   }, null, 2) + '\n');
   return measurements;
+}
+
+if (process.argv.includes('--check-fixtures')) {
+  const read = async (edition) => readFile(resolve(ROOT,
+    'src/web/data/structure/propers', edition + '.json'), 'utf8');
+  const { T, A } = readerTools(ROOT);
+  const roman = await read('roman-1962');
+  const empty = withoutWitness(roman);
+  const emptyMass = empty.masses.find(row => row.key ===
+    's-hilarii-episcopi-confessoris-ecclesiae-doctoris');
+  assert.deepEqual(T.coverageWitnesses(emptyMass.coverage, 'en'), []);
+  const emptyResult = A.adaptPropers({ structure: empty, request: fixtureRequest(empty, emptyMass) });
+  const emptyBodies = emptyResult.events.filter(row => row.selected?.kind === 'composed');
+  assert.ok(emptyBodies.length > 0);
+  assert.ok(emptyBodies.every(row => row.selected.missing));
+  const cycles = withCycleUntranslated(await read('postconciliar'));
+  const mass = cycles.masses.find(row => row.key === 'transfiguration-lord');
+  const proper = mass.propers[0];
+  assert.equal(proper.coverage, null);
+  assert.deepEqual(['A', 'B', 'C'].map(cycle =>
+    proper.cycles[cycle].coverage.languages.find(row => row.lang === 'en').availability),
+  ['not-publishable', 'available', 'unresolved']);
+  for (const cycle of ['A', 'B', 'C']) {
+    const request = fixtureRequest(cycles, mass, { cycle });
+    const result = A.adaptPropers({ request, structure: cycles });
+    const report = T.summarizeCoverage(T.selectedCoverageUnits(result, cycles));
+    const offered = T.coverageWitnesses(report, 'en').map(row => row.id);
+    assert.equal(offered.includes('synthetic.cycle-b-held-english'), cycle === 'B');
+    assert.ok(T.selectedCoverageUnits(result, cycles).some(row => row.cycle === cycle));
+  }
+  assert.deepEqual(T.summarizeCoverage(mass.propers.flatMap(row => T.coverageUnitsOf(row))),
+    { ...mass.coverage, scope: 'selection' });
+  const checks = verifyRealWitnesses(JSON.parse(roman), ROOT);
+  process.stdout.write(JSON.stringify({ status: 'pass', mode: 'fixtures-only',
+    checks: ['untranslated-report', 'cycle-owned-reports', ...checks] }) + '\n');
+  process.exit(0);
 }
 
 const instance = server();

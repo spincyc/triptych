@@ -947,6 +947,7 @@ async function runAssertions(cdp, base) {
       title: document.querySelector('#celebration-title').textContent,
       meta: document.querySelector('#celebration-meta').textContent,
       noticeHidden: document.querySelector('#coverage-notice').hidden,
+      notice: document.querySelector('#coverage-notice').textContent,
       events: [...document.querySelectorAll('[data-semantic-event-id]')].map(row => row.dataset.semanticEventId),
       actions: [...document.querySelectorAll('[data-reader-action]')].map(row => row.textContent.trim()),
       shell: getComputedStyle(document.querySelector('.reader-actions')).position,
@@ -960,11 +961,12 @@ async function runAssertions(cdp, base) {
     assert.equal(value.title, 'Tenth Sunday after Pentecost');
     assert.match(value.meta, /Missale Romanum, editio typica 1962/);
     assert.doesNotMatch(value.meta, /explicit|bound M1|fixture|contract/i);
-    // Every appointed Pentecost X text is held since 3f86eed68 published its
-    // orations, so a calm Read of it carries no coverage notice at all. The
-    // notice for withheld Latin is held to a formulary that still has some,
-    // under STATES.partial and on the first visit below.
-    assert.equal(value.noticeHidden, true);
+    // Availability does not establish exact target wording or liturgical
+    // Scripture fragments; C1 keeps that qualification visible.
+    assert.equal(value.noticeHidden, false);
+    assert.match(value.notice, /represented texts/);
+    assert.match(value.notice, /Exact target wording remains incomplete/);
+    assert.match(value.notice, /Bible reconstructions/);
     assert.equal(value.events.length, 10);
     assert.deepEqual(value.actions.map(row => row.replace(/\s+/g, ' ')),
       ['Date', 'Contents', 'Mode Read', 'Details']);
