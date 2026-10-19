@@ -112,7 +112,10 @@ Evidence owners:
   expectation model. `--check` validates the report while 13 of 15 dimension
   cells per family remain unresolved: 39 cells, not 39 missing texts.
 
-### Confirmed reader defects and design gaps
+### Recovery findings and remaining design gaps
+
+The first two findings below describe the recovered baseline. C1 implements
+their accounting and label corrections; real-browser acceptance remains open.
 
 | Finding | Evidence and consequence |
 | --- | --- |
@@ -137,7 +140,8 @@ immutable acceptance package. Reproduce them for any release review.
 ### Ordered implementation milestones
 
 The C-series below refines the existing W1–W9 workstreams. It does not replace
-M1–M6 or broaden any historical acceptance. C1 is **in progress**; C2–C6 remain
+M1–M6 or broaden any historical acceptance. C1 is **blocked pending exact-edition
+source enumeration and real-browser acceptance**; C2–C6 remain
 **planned**.
 
 | Milestone | Deliverable | Exit evidence and dependency |
@@ -166,24 +170,39 @@ All selectors, notices, discovery results, and audit tools consume this report.
 The report may establish a complete inventory with known gaps; textual
 completion requires those gaps to be filled for the claimed scope.
 
-Implementation checkpoint, 2026-10-19: the independent
+Implementation and bounded source checkpoint, 2026-10-19: the independent
 [expected-target inventory](../src/sources/inventories/missal-expected-targets-v1.toml)
-now contains 1,178 identities in 22 bounded source slices and forty explicit
-boundaries, including fourteen established directly from the official 2008
-supplement. The accompanying
+contains 2,850 identities in 36 bounded source slices and 57 explicit
+boundaries, including sixty appointments/referrals established directly from
+the official 2008 supplement. These heterogeneous identities do not form a
+whole-book text-slot denominator. The accompanying
 [source review](../src/sources/inventories/missal-expected-targets-review-2026-10-19.md)
 records source extent, target correspondence and retrieval limits. In
 particular, Saint Anastasia's Christmas commemoration is expected from the
 1962 source calendar but lacks a represented Mass entry. Whole-book enumeration
-remains open for every family. The versioned shared report drives generated
+remains open for every family. The accessible 2002 book's named structural
+queues are inventoried at their declared granularity; they do not establish
+exact 2008 correspondence. Completion requires authenticated 1920 Vatican
+evidence, readable full 1962 witness evidence, an authenticated complete 2008
+body/index or documented correspondence for each bounded slice, and the
+selected US 2011 edition's structural dispositions. The source review records
+the exact retrieval boundaries.
+
+The versioned shared report drives generated
 Proper/Ordinary data, CLI accounting, and Day/Propers controls, discovery and
 selected-Mass notices. Partial witnesses remain selectable with explicit gaps;
 mixed components and nested cycles retain separate accounting. Independent
 review fixes passed 279 regression tests (six existing skips), all nineteen
 affected captured examples, source checks, and strict public-data admission.
-Browser and print checks have not passed in the current restricted execution
-environment. The work register records the remaining validation and payload
-limitations. This checkpoint does not close C1.
+The full-year gate passes all 4,380 JSON/text renderings; final source-snapshot
+coverage checks pass 53 tests. Corrected real-browser fixtures now exercise
+alias deduplication and genuinely partial witnesses; their offline/static
+regression checks pass, with live browser runs still skipped or blocked.
+Browser, responsive and print acceptance require an execution environment
+that permits the local listener and Chromium system calls refused here.
+The [work register](../PROJECT-WORK.md) records the validation results,
+unchanged source-only baseline failures, publication checkpoints, and payload
+cost. This checkpoint does not close C1.
 
 #### C2: the reusable representative-Mass pattern
 

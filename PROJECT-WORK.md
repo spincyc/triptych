@@ -20,18 +20,33 @@ C2–C6, corpus text acquisition, and production deployment remain separate
 milestones. Existing ritual-flow and historical acceptance records retain
 their scope.
 
-**In progress.** Work began from verified feature-branch baseline
+**Blocked: implementation published; source enumeration and browser acceptance
+remain open.** Work began from verified feature-branch baseline
 `8f7be05286739235d590833eddba538e7e069ce0`; the implementation contract was
 published as `13e7a190ee4a9771810bf9e516c5490a32b4792b`.
 The first [source inventory](src/sources/inventories/missal-expected-targets-v1.toml)
 checkpoint, `1f8cf65bb1d692b08115665eb8ab74258567f99c`, published 938
-independently grounded identities. The implementation checkpoint expands that
-to 1,178 identities in 22 bounded slices and forty explicit boundaries. Its
+independently grounded identities. The common-report and reader implementation
+was published as `cd6ce81a526238728e3d27230b5c46524c1052a8`. The final source
+checkpoint contains 2,850 identities in 36 bounded slices and 57 explicit
+boundaries, including sixty appointments/referrals directly established from
+the official 2008 supplement. These heterogeneous identities are not a
+whole-book text-slot denominator. Its
 [source review](src/sources/inventories/missal-expected-targets-review-2026-10-19.md)
 distinguishes source-witness enumeration from target-edition correspondence.
 The 1962 calendar identifies Saint Anastasia's Christmas commemoration even
 though no represented Mass row exists. None of the three whole-book universes
-is fully enumerated; accessible source-body enumeration continues.
+is fully enumerated. The accessible 2002 book's named structural queues have
+been inventoried at their declared granularity; correspondence with the exact
+2008 target remains unresolved unless directly evidenced.
+
+Completion now requires an authenticated 1920 Vatican typical witness,
+readable full evidence for the registered 1962 witness, and an authenticated
+complete 2008 body/index or documented correspondence for each bounded slice,
+together with the selected US 2011 edition's structural dispositions. The
+source review records the attempted URLs and retrieval limits. A 1922
+conformed printing, a 2002 antecedent, and partial later transcriptions cannot
+establish those target denominators.
 
 The shared report now drives generated Proper/Ordinary structures, the CLI
 audit, and Day/Propers controls, discovery and selected-Mass notices. It separates
@@ -47,18 +62,29 @@ publication scanner accepts all six generated structures and still rejects
 protected identities and wording inserted into coverage metadata. The combined
 regression suite passes 279 tests with six existing skips; nineteen captured
 examples replay without divergence. Source checks, release bindings, and tool
-registry checks pass. The full-year rendering matrix is still running.
+registry checks pass. The full-year gate passes all 4,380 live JSON/text
+renderings across 2,190 date/calendar/language cases. Final source-snapshot
+coverage tests pass (53 tests). Updated browser fixtures use real partial
+witnesses and regenerate their coverage through the shared derivation; their
+static/harness regression runs pass 126 tests with two opt-in browser skips,
+plus 21 Day integration tests. The last fixture assertion was rechecked by
+the offline fixture check and seven harness tests (two browser skips).
 
 Real-browser verification is blocked by this environment's refusal of local
 listener and Chromium sandbox system calls; no responsive or print acceptance
-is inferred from the passing unit tests. The broader public-alpha test suite
-still has 24 errors from the installed Markdown dependency mismatch and an
-absent installed PDF; no publication-filter code was changed. The promise-ledger
+is inferred from the passing unit tests. With the locked Markdown 3.10.3
+dependency restored under scratch from verified upstream blobs, 130 of 131
+broader public-alpha tests pass. Its sole error is the unchanged absence of
+`pdf/gpt/theology/mariology/ark-of-the-covenant.pdf` in this source-only checkout;
+no publication-filter code was changed. The promise-ledger
 check retains exactly its 32 baseline missing-artifact findings.
 Proper payloads increase by approximately 0.16–0.43 MB compressed per family;
 live load/parse impact remains unmeasured with the browser checks blocked.
 Shell Git networking is unavailable; verified feature-branch checkpoints use
 the connected GitHub API with an expected-head lease and matching local trees.
+The final checkpoint includes the completed bounded inventory, corrected
+browser fixtures, generated data/bindings, and this blocked disposition.
+It does not authorize production deployment or close C1.
 
 Completion requires independently reviewable target and occurrence identities,
 separate witness counts, distinct availability/rights/wording relationships,

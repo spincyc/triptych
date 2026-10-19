@@ -4,12 +4,12 @@ schema_version = 1
 id = "missal-reader-c1-coverage-2026-10-19"
 owner = "guidance/liturgy-browser-roadmap.md"
 promise = "Complete C1 of the 2026-10-19 Missal reader plan: source-grounded expected-target inventory, one typed coverage report, truthful language and witness controls and selected-Mass notices, consistent browser/generated-data/CLI results, and validated regular checkpoints published on feature/missal-reader."
-state = "in_progress"
+state = "blocked"
 
   [[deliverables.requirements]]
   id = "missal-c1-target-inventory"
   criterion = "Expected targets are inventoried from identified books or source-backed registries independently of held text, with explicit recension, territory, date range, language, source, and typed dispositions covering celebrations, Commons, commemorations, prefaces, Ordinary options, forms, cycles, and exceptional rites; incomplete enumeration is never represented as a complete denominator."
-  status = "open"
+  status = "blocked"
   evidence = ["guidance/liturgy-browser-roadmap.md", "PROJECT-WORK.md", "src/sources/inventories/missal-expected-targets-v1.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
 
   [[deliverables.requirements]]
@@ -22,19 +22,19 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "missal-c1-reader-controls"
   criterion = "Day and Propers language/witness selectors, notices and existing discovery results consume the common coverage contract, account for nested cycles and selected Mass coverage, avoid Latin completeness claims, and preserve explicit missing-witness and unsupported states."
-  status = "open"
+  status = "blocked"
   evidence = ["src/web/browser/shared/browser-core.js", "src/web/browser/liturgy/day-reader.js", "src/web/browser/liturgy/propers-reader.js", "src/web/browser/liturgy/reader-state-adapters.js", "tools/tests/test_reader_coverage.py", "PROJECT-WORK.md"]
 
   [[deliverables.requirements]]
   id = "missal-c1-verification"
   criterion = "Regression fixtures prove identity, counting, typed absence, no fallback, and browser/generated-data/CLI parity; applicable source and data checks and real-browser responsive, interaction and print checks pass or identify unchanged baseline failures, and independent review findings are dispositioned."
-  status = "open"
+  status = "blocked"
   evidence = ["guidance/liturgy-browser-roadmap.md", "PROJECT-WORK.md"]
 
   [[deliverables.requirements]]
   id = "missal-c1-publication"
   criterion = "The roadmap, work register and ledger agree with the verified C1 result, coherent checkpoints reach feature/missal-reader, and the final published ref is verified without claiming production deployment or later-milestone completion."
-  status = "open"
+  status = "pass"
   evidence = ["guidance/liturgy-browser-roadmap.md", "PROJECT-WORK.md"]
 
 [[deliverables]]
