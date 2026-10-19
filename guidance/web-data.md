@@ -357,22 +357,51 @@ sat inside those 45 — where they agreed, they were right 54 times out of 54.
 `(lang, source_id)`: the same witness twice is a copied row, two witnesses are
 the feature.
 
-Which one a reader sees is decided once, in the generator, and never by list
-order. The manifest is sorted `(lang, -held, source_id)` — within a language
-the witness that reaches the most of the missal comes first — and every
-proper's `translations` array is sorted into that same order. So **the default
-is the first row of the manifest in the reader's language**, and a consumer
-that has never heard of the manifest, taking the first translation matching the
-language it wants, lands on the identical witness. The coverage figures are
-counted rather than assumed, because partial coverage here is permanent and a
-reader offered a choice is owed the figure rather than a control implying
-completeness.
+The generator sorts the manifest `(lang, -held, source_id)` and each Proper's
+translation array into the same order. This is stable presentation order.
+The shared reader preserves an explicit witness choice and exposes coequal
+witnesses for selection under the liturgy-browser vision. It offers the union
+of witnesses available within the selected Mass, including partial witnesses
+and identified project translations. An intersection would hide a witness
+merely because another prayer lacks its text. Aliases of one source do not
+create additional witness choices.
 
 Where the chosen witness has no translation for a proper, the absence is stated
 where the text would have been. It is not filled in from another witness: that
 is the same rule the page already applies to a missing language, and quietly
 substituting one translator for another is exactly the confusion a choice of
 witness exists to prevent.
+
+### Typed Missal coverage
+
+`scripts/_missal_coverage.py` owns the additive
+`triptych-missal-coverage/v1` report and its per-unit projection.
+`mass-propers structure` and `mass-ordinary structure` attach those reports
+after their existing resolution and publication filters; `complete-missal`
+composes the same reports. The browser selects their units through the
+existing semantic events. It does not count translation rows or reconstruct
+a second calendar resolution.
+
+Canonical represented text identities, their appointed occurrences, and
+published translation-witness alternatives are separate counts. Cycle
+containers are not empty extra bodies; their actual children carry coverage.
+Availability, rights, relation to target wording, and recorded collation stay
+independent. Available historical wording does not become exact target text,
+and Bible citation expansion is not exact Missal wording. Public negative
+metadata retains the restricted projection stated above.
+Coverage records describe rights evidence through `publication_basis` and
+aggregate `publication_bases`. These fields grant no publication permission;
+the source text's `rights` authorization and the public projection's identity
+and content quarantine checks still control its admission.
+
+The independent expected-target owner is
+`src/sources/inventories/missal-expected-targets-v1.toml`. Its sourced slices
+name their edition, territory, language, time boundary and enumeration state.
+Missing expected identities remain visible even when no held Mass row can
+supply them. A complete fixed-calendar or Preface slice does not establish a
+whole-book denominator; unresolved enumeration keeps that denominator unknown.
+Neither represented-unit availability nor an inventory's validity is a claim
+of textual completeness.
 
 ## The calendar layer
 

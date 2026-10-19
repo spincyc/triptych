@@ -1,0 +1,468 @@
+"""Public, text-free Missal coverage shared by generators and audit commands.
+
+Callers supply already resolved, publication-filtered units. This module never
+resolves a calendar, grants publication rights, or infers target fidelity from
+the existence of a body. Identity, occurrence, and witness counts are separate.
+"""
+from __future__ import annotations
+
+from collections import Counter
+from pathlib import Path
+from urllib.parse import quote
+import tomllib
+
+SCHEMA = "triptych-missal-coverage/v1"
+UNIT_SCHEMA = "triptych-missal-unit-coverage/v1"
+LANGUAGES = ("la", "en")
+AVAILABILITIES = (
+    "available", "not-publishable", "not-sourced", "unresolved",
+    "inapplicable", "absent-in-witness",
+)
+RELATIONSHIPS = (
+    "exact-target", "historical-antecedent", "study-translation",
+    "bible-reconstruction", "unresolved",
+)
+COLLATIONS = ("collated", "uncollated", "not-applicable", "unresolved")
+
+
+def identity(*parts: object) -> str:
+    return ":".join(quote(str(part), safe="-._") for part in parts)
+
+
+def relationship(row: dict) -> str:
+    """Only source-declared relations establish fidelity; unknown stays unknown."""
+    explicit = row.get("coverage_relationship")
+    if explicit in RELATIONSHIPS:
+        return explicit
+    if row.get("rights") == "project-created":
+        return "study-translation"
+    relation = row.get("witness_relation") or row.get("relation")
+    if relation == "antecedent":
+        return "historical-antecedent"
+    if relation == "own":
+        return "exact-target"
+    return "unresolved"
+
+
+def witness(row: dict, witnesses: dict) -> dict:
+    source_id = str(row.get("source_id") or "")
+    metadata = witnesses.get(source_id) or {}
+    canonical = str(metadata.get("source_id") or source_id)
+    # Only identifiers on surviving public translation rows may be offered.
+    # Metadata can identify a restricted artifact for internal resolution.
+    aliases = sorted({source_id, canonical})
+    return {
+        "id": canonical or "project-created",
+        "source_id": canonical,
+        "label": str(metadata.get("label") or row.get("source_label") or
+                     canonical or "This project"),
+        "aliases": aliases,
+        "relationship": relationship(row),
+        "collation": row.get("collation") if row.get("collation") in COLLATIONS
+        else ("not-applicable" if row.get("relation") == "own" else "unresolved"),
+        "publication_basis": str(row.get("rights") or "unresolved"),
+    }
+
+
+def absence(owner: dict, lang: str) -> str:
+    """Use public dispositions only; never carry private absence evidence."""
+    rows = (owner.get("unavailable_translations") or [])
+    untranslated = owner.get("untranslated") or []
+    if isinstance(untranslated, dict):
+        untranslated = [untranslated]
+    if isinstance(untranslated, list):
+        rows = list(rows) + untranslated
+    states = {row.get("state") for row in rows
+              if isinstance(row, dict) and row.get("lang") == lang}
+    latin = owner.get("latin") or {}
+    if "rights-restricted" in states or (
+        lang == "la" and latin.get("state") == "rights-restricted"
+    ):
+        return "not-publishable"
+    if "unavailable" in states:
+        # Public unavailable deliberately does not disclose a private reason.
+        return "unresolved"
+    if lang == "la" and (latin.get("withheld") or
+                          latin.get("state") == "unavailable"):
+        return "unresolved"
+    if (owner.get("text_status") or {}).get("state") == "unavailable":
+        return "unresolved"
+    return "not-sourced"
+
+
+def unit(owner: dict, *, target_id: str, occurrence_id: str,
+         witnesses: dict | None = None, cycle_family: str | None = None,
+         cycle: str = "all", component: str | None = None,
+         latin_relation: str = "unresolved",
+         translation_relation: str | None = None,
+         ordinary_absences: dict[str, str] | None = None) -> dict:
+    """Classify one body or Scripture owner after its publication filter."""
+    witnesses = witnesses or {}
+    if component is None:
+        component = "scripture" if owner.get("source") == "scripture" else "proper-body"
+    languages = []
+    for lang in LANGUAGES:
+        published = [row for row in owner.get("translations") or []
+                     if row.get("lang") == lang and row.get("text")]
+        offered = {}
+        witness_bodies = {}
+        for row in published:
+            projection = dict(row)
+            if translation_relation and "coverage_relationship" not in projection:
+                projection["coverage_relationship"] = translation_relation
+            one = witness(projection, witnesses)
+            key = one["id"]
+            if key in witness_bodies and witness_bodies[key] != row["text"]:
+                raise ValueError(f"conflicting bodies for canonical Missal witness {key}")
+            witness_bodies[key] = row["text"]
+            if key in offered:
+                previous = offered[key]
+                # Aliases are one witness; conflicting grades must not be upgraded.
+                previous["aliases"] = sorted(set(previous["aliases"] + one["aliases"]))
+                if previous["relationship"] != one["relationship"]:
+                    previous["relationship"] = "unresolved"
+                if previous["publication_basis"] != one["publication_basis"]:
+                    previous["publication_basis"] = "unresolved"
+                if previous["collation"] != one["collation"]:
+                    previous["collation"] = "unresolved"
+            else:
+                offered[key] = one
+        source_body = lang == "la" and bool(owner.get("text"))
+        relations = {one["relationship"] for one in offered.values()}
+        rights = {one["publication_basis"] for one in offered.values()}
+        collations = {one["collation"] for one in offered.values()}
+        if source_body:
+            relations.add(latin_relation)
+            # Text was admitted upstream; that does not identify its rights basis.
+            rights.add(str((owner.get("latin") or {}).get("rights") or "unresolved"))
+            collations.add("unresolved")
+        if component == "scripture":
+            availability, relation, right = "unresolved", "bible-reconstruction", "unresolved"
+        elif source_body or offered:
+            availability = "available"
+            relation = next(iter(relations)) if len(relations) == 1 else "unresolved"
+            right = next(iter(rights)) if len(rights) == 1 else "unresolved"
+        else:
+            availability = (ordinary_absences or {}).get(lang) or absence(owner, lang)
+            relation, right = "unresolved", "unresolved"
+            if availability == "not-publishable":
+                right = "restricted"
+        languages.append({
+            "lang": lang, "availability": availability,
+            "relationship": relation, "publication_basis": right,
+            "collation": next(iter(collations)) if len(collations) == 1 else "unresolved",
+            "witnesses": sorted(offered.values(), key=lambda row: row["id"]),
+        })
+    result = {
+        "schema": UNIT_SCHEMA, "target_id": target_id,
+        "occurrence_id": occurrence_id, "component": component,
+        "cycle_family": cycle_family, "cycle": cycle, "languages": languages,
+    }
+    if component != "scripture" and owner.get("citations"):
+        result["scripture_component"] = {
+            "target_id": identity(target_id, "scripture"),
+            "occurrence_id": identity(occurrence_id, "scripture"),
+            "relationship": "bible-reconstruction", "availability": "unresolved",
+            "publication_basis": "unresolved",
+        }
+    return result
+
+
+def summarize(units: list[dict], scope: str) -> dict:
+    """Aggregate typed unit reports; repetitions never increase target counts."""
+    by_occurrence = {}
+    for one in units:
+        if one.get("schema") != UNIT_SCHEMA:
+            raise ValueError("Missal coverage unit has an unsupported schema")
+        key = one["occurrence_id"]
+        if key in by_occurrence and one != by_occurrence[key]:
+            raise ValueError(f"conflicting Missal coverage occurrence {key}")
+        by_occurrence[key] = one
+    units = list(by_occurrence.values())
+    bodies = [one for one in units if one["component"] != "scripture"]
+    scripture = [one for one in units if one["component"] == "scripture"]
+    mixed = [one for one in bodies if one.get("scripture_component")]
+    languages = []
+    alternatives = set()
+    for lang in LANGUAGES:
+        availability = Counter({key: 0 for key in AVAILABILITIES})
+        relations = Counter({key: 0 for key in RELATIONSHIPS})
+        collations = Counter({key: 0 for key in COLLATIONS})
+        available_targets, exact_targets = set(), set()
+        offered: dict[str, dict] = {}
+        exact_occurrences = 0
+        for one in bodies:
+            row = next(row for row in one["languages"] if row["lang"] == lang)
+            if row["availability"] not in AVAILABILITIES or row["relationship"] not in RELATIONSHIPS:
+                raise ValueError("Missal coverage unit has an unknown classification")
+            availability[row["availability"]] += 1
+            relations[row["relationship"]] += 1
+            collations[row["collation"]] += 1
+            if row["availability"] == "available":
+                available_targets.add(one["target_id"])
+                if row["relationship"] == "exact-target" or any(
+                    witness["relationship"] == "exact-target" for witness in row["witnesses"]
+                ):
+                    exact_targets.add(one["target_id"])
+                    exact_occurrences += 1
+            for item in row["witnesses"]:
+                alternatives.add((one["target_id"], lang, item["id"]))
+                entry = offered.setdefault(item["id"], {
+                    "id": item["id"], "source_id": item["source_id"],
+                    "label": item["label"], "aliases": set(), "target_ids": set(),
+                    "occurrence_ids": set(), "relationships": set(), "publication_bases": set(),
+                    "collations": set(),
+                })
+                entry["aliases"].update(item["aliases"])
+                entry["target_ids"].add(one["target_id"])
+                entry["occurrence_ids"].add(one["occurrence_id"])
+                entry["relationships"].add(item["relationship"])
+                entry["publication_bases"].add(item["publication_basis"])
+                entry["collations"].add(item["collation"])
+        witnesses = []
+        for item in sorted(offered.values(), key=lambda row: row["id"]):
+            witnesses.append({
+                key: sorted(value) if isinstance(value, set) else value
+                for key, value in item.items() if key not in {"target_ids", "occurrence_ids"}
+            } | {"targets": len(item["target_ids"]),
+                 "available_targets": len(item["target_ids"]),
+                 "occurrences": len(item["occurrence_ids"]),
+                 "available": len(item["occurrence_ids"])})
+        languages.append({
+            "lang": lang, "targets": len({one["target_id"] for one in bodies}),
+            "occurrences": len(bodies), "available": availability["available"],
+            "available_targets": len(available_targets),
+            "exact_target": exact_occurrences, "exact_target_targets": len(exact_targets),
+            "scripture_targets": len({one["target_id"] for one in scripture} | {
+                one["scripture_component"]["target_id"] for one in mixed
+            }),
+            "scripture_occurrences": len(scripture) + len(mixed),
+            "mixed_targets": len({one["target_id"] for one in mixed}),
+            "mixed_occurrences": len(mixed),
+            "availability": dict(availability), "relationships": dict(relations),
+            "collations": dict(collations),
+            "witnesses": witnesses,
+        })
+    return {
+        "schema": SCHEMA, "scope": scope,
+        "denominator": "represented-units",
+        "count_basis": {
+            "canonical_targets": "distinct source-owned targets within this recension",
+            "occurrences": "appointed units, including distinct cycle owners",
+            "witness_alternatives": "distinct published translation witnesses per target and language",
+        },
+        "counts": {"canonical_targets": len({one["target_id"] for one in units}),
+                   "occurrences": len(units), "witness_alternatives": len(alternatives)},
+        "languages": languages,
+    }
+
+
+def proper_units(mass: dict) -> list[dict]:
+    result = []
+    for proper in mass.get("propers") or []:
+        if isinstance(proper.get("coverage"), dict):
+            result.append(proper["coverage"])
+        for family in ("cycles", "weekday_cycles"):
+            for owner in (proper.get(family) or {}).values():
+                if isinstance(owner.get("coverage"), dict):
+                    result.append(owner["coverage"])
+    return result
+
+
+def validate_summary(report: object) -> None:
+    """Reject a drifting accounting partition at the CLI composition boundary."""
+    if not isinstance(report, dict) or report.get("schema") != SCHEMA:
+        raise ValueError("unsupported Missal coverage summary")
+    def count(value: object) -> int:
+        if isinstance(value, bool) or not isinstance(value, int) or value < 0:
+            raise ValueError("Missal coverage counts must be nonnegative integers")
+        return value
+    counts = report.get("counts")
+    if not isinstance(counts, dict) or set(counts) != {
+        "canonical_targets", "occurrences", "witness_alternatives"
+    }:
+        raise ValueError("Missal coverage summary has no exact counting units")
+    for value in counts.values():
+        count(value)
+    if counts["canonical_targets"] > counts["occurrences"]:
+        raise ValueError("canonical targets exceed occurrences")
+    languages = report.get("languages")
+    if not isinstance(languages, list) or [row.get("lang") for row in languages] != list(LANGUAGES):
+        raise ValueError("Missal coverage summary must declare Latin and English")
+    witness_alternatives = 0
+    for row in languages:
+        for field in ("targets", "occurrences", "available", "available_targets",
+                      "exact_target", "exact_target_targets", "scripture_targets",
+                      "scripture_occurrences", "mixed_targets", "mixed_occurrences"):
+            count(row.get(field))
+        for field, keys in (("availability", AVAILABILITIES), ("relationships", RELATIONSHIPS),
+                            ("collations", COLLATIONS)):
+            values = row.get(field)
+            if not isinstance(values, dict) or set(values) != set(keys):
+                raise ValueError(f"Missal coverage {field} has unknown or missing states")
+            if sum(count(value) for value in values.values()) != row["occurrences"]:
+                raise ValueError(f"Missal coverage {field} does not partition occurrences")
+        if row["available"] != row["availability"]["available"] or not (
+            row["exact_target"] <= row["available"] <= row["occurrences"]
+            and row["exact_target_targets"] <= row["available_targets"] <= row["targets"]
+            and row["available_targets"] <= row["available"]
+            and row["mixed_occurrences"] <= min(row["occurrences"], row["scripture_occurrences"])
+            and row["mixed_targets"] <= min(row["targets"], row["scripture_targets"])
+            and row["occurrences"] + row["scripture_occurrences"] - row["mixed_occurrences"] == counts["occurrences"]
+            and row["targets"] + row["scripture_targets"] - row["mixed_targets"] == counts["canonical_targets"]
+        ):
+            raise ValueError("Missal coverage numerator or denominator is inconsistent")
+        witnesses = row.get("witnesses")
+        if not isinstance(witnesses, list):
+            raise ValueError("Missal coverage witness summary must be an array")
+        seen = set()
+        for witness in witnesses:
+            if not isinstance(witness, dict) or not isinstance(witness.get("id"), str) or not witness["id"]:
+                raise ValueError("Missal coverage witness requires a nonempty ID")
+            if witness["id"] in seen:
+                raise ValueError("duplicate Missal coverage witness")
+            seen.add(witness["id"])
+            for field in ("targets", "available_targets", "occurrences", "available"):
+                count(witness.get(field))
+            if not (
+                witness["targets"] == witness["available_targets"] <= row["available_targets"]
+                and witness["occurrences"] == witness["available"] <= row["available"]
+                and witness["targets"] <= witness["occurrences"]
+            ):
+                raise ValueError("Missal witness coverage exceeds available units")
+            for field, allowed in (("relationships", set(RELATIONSHIPS)), ("collations", set(COLLATIONS))):
+                values = witness.get(field)
+                if not isinstance(values, list) or not values or len(values) != len(set(values)) or not set(values) <= allowed:
+                    raise ValueError(f"invalid Missal witness {field}")
+            for field in ("aliases", "publication_bases"):
+                values = witness.get(field)
+                if not isinstance(values, list) or not values or any(not isinstance(value, str) for value in values) or len(values) != len(set(values)):
+                    raise ValueError(f"invalid Missal witness {field}")
+            witness_alternatives += witness["targets"]
+    if witness_alternatives != counts["witness_alternatives"]:
+        raise ValueError("Missal witness alternatives do not partition canonical witness targets")
+
+
+def expectations(path: Path, calendar: str, masses: list[dict]) -> dict:
+    """Join a separately sourced heterogeneous inventory, never invent its extent."""
+    if not path.exists():
+        return {"state": "unresolved", "reason": "expected-inventory-not-recorded",
+                "slices": [], "targets": [], "boundaries": []}
+    document = tomllib.loads(path.read_text(encoding="utf-8"))
+    if document.get("schema") != "triptych-missal-expected-targets/v1":
+        raise ValueError("unsupported expected Missal target inventory schema")
+    kinds = {"celebration", "commemoration", "common", "cycle", "preface",
+             "ordinary-option", "form", "exceptional-rite", "exceptional-rite-unit",
+             "prayer-set", "collect-category", "form-referral", "text-slot"}
+    slice_ids = set()
+    for section in ("slices", "targets", "boundaries"):
+        if not isinstance(document.get(section), list):
+            raise ValueError(f"expected Missal inventory requires {section} array")
+        ids = set()
+        for row in document[section]:
+            if not isinstance(row, dict) or not isinstance(row.get("id"), str) or not row["id"]:
+                raise ValueError(f"expected Missal {section} require nonempty IDs")
+            if row["id"] in ids:
+                raise ValueError(f"duplicate expected Missal {section} ID {row['id']}")
+            ids.add(row["id"])
+            if section == "slices":
+                required = ("calendar", "recension_id", "territory", "date_range", "basis")
+                if any(not isinstance(row.get(key), str) or not row[key] for key in required):
+                    raise ValueError("expected Missal slice omits scope or evidence basis")
+                if row.get("enumeration_state") not in {"complete-within-slice", "partial", "unresolved"}:
+                    raise ValueError("unknown expected Missal enumeration state")
+                for field in ("source_refs", "languages"):
+                    values = row.get(field)
+                    if not isinstance(values, list) or not values or any(
+                        not isinstance(value, str) or not value for value in values
+                    ) or len(values) != len(set(values)):
+                        raise ValueError(f"expected Missal slice requires unique {field}")
+            else:
+                if row.get("slice_id") not in slice_ids:
+                    raise ValueError("expected Missal target or boundary has an unknown slice")
+                allowed = kinds | ({"text-slots", "forms-and-cycles"} if section == "boundaries" else set())
+                if row.get("kind") not in allowed:
+                    raise ValueError("unknown expected Missal target kind")
+                if section == "targets":
+                    if row.get("identity_state") not in {"established", "target-correspondence-unresolved"}:
+                        raise ValueError("unknown expected Missal identity state")
+                    for field in ("calendar_mass_key", "form_id", "cycle", "cycle_family"):
+                        if field in row and (not isinstance(row[field], str) or not row[field]):
+                            raise ValueError(f"invalid expected Missal {field} join")
+                    if row.get("cycle") and row["cycle"] not in {"A", "B", "C", "ABC", "I", "II", "I-II"}:
+                        raise ValueError("unknown expected Missal cycle")
+                    if row.get("cycle_family") and row["cycle_family"] not in {"sunday", "weekday", "cycles", "weekday_cycles"}:
+                        raise ValueError("unknown expected Missal cycle family")
+                elif row.get("state") not in {"unenumerated", "inapplicable"}:
+                    raise ValueError("unknown expected Missal boundary state")
+        if section == "slices":
+            slice_ids = ids
+    slices = [row for row in document.get("slices", []) if row.get("calendar") == calendar]
+    selected = {row["id"] for row in slices}
+    by_key = {str(row["key"]): row for row in masses}
+    by_registry = {str(row.get("registry")): row for row in masses if row.get("registry")}
+    targets = []
+    seen = set()
+    for target in document.get("targets", []):
+        if target.get("slice_id") not in selected:
+            continue
+        key = target.get("id")
+        if not isinstance(key, str) or not key or key in seen:
+            raise ValueError("expected Missal targets require unique nonempty IDs")
+        seen.add(key)
+        lookup = str(target.get("calendar_mass_key") or "")
+        mass = by_key.get(lookup) or by_registry.get(lookup)
+        if target.get("identity_state") != "established":
+            state = "unresolved"
+        elif not lookup:
+            state = "unresolved"
+        elif mass is None:
+            state = "not-represented"
+        else:
+            state = "represented"
+            form_id = target.get("form_id")
+            forms = mass.get("forms") or []
+            form_ids = {form.get("id") for form in forms} if forms else {"main"}
+            if form_id and form_id not in form_ids:
+                state = "not-represented"
+            elif target.get("cycle"):
+                selected_mass = dict(mass)
+                if form_id:
+                    selected_mass["propers"] = [proper for proper in mass.get("propers") or []
+                                                if (proper.get("form_id") or "main") == form_id]
+                family = {"sunday": "cycles", "weekday": "weekday_cycles"}.get(
+                    target.get("cycle_family"), target.get("cycle_family")
+                )
+                cycles = {one["cycle"] for one in proper_units(selected_mass)
+                          if not family or one["cycle_family"] == family}
+                expected_cycles = {"A", "B", "C"} if target["cycle"] == "ABC" else (
+                    {"I", "II"} if target["cycle"] == "I-II" else {target["cycle"]}
+                )
+                if not expected_cycles <= cycles:
+                    state = "not-represented"
+        targets.append({"id": key, "slice_id": target["slice_id"],
+                        "kind": target["kind"], "state": state,
+                        "mass": mass["key"] if mass else None})
+    summaries = []
+    for slice_row in slices:
+        rows = [row for row in targets if row["slice_id"] == slice_row["id"]]
+        summaries.append({
+            "id": slice_row["id"], "enumeration_state": slice_row["enumeration_state"],
+            **{key: slice_row[key] for key in (
+                "calendar", "recension_id", "territory", "languages",
+                "date_range", "source_refs", "basis"
+            )},
+            "kinds": [{"kind": kind, "states": dict(Counter(
+                row["state"] for row in rows if row["kind"] == kind
+            ))} for kind in sorted({row["kind"] for row in rows})],
+        })
+    boundaries = [{"id": row["id"], "slice_id": row["slice_id"],
+                   "kind": row["kind"], "state": row["state"]}
+                  for row in document.get("boundaries", []) if row.get("slice_id") in selected]
+    return {"state": "classified", "as_of": str(document.get("as_of") or ""),
+            "whole_inventory_state": "unresolved" if any(
+                row["state"] == "unenumerated" for row in boundaries
+            ) or any(row["enumeration_state"] != "complete-within-slice" for row in slices)
+            else "bounded-slices-only",
+            "review_ref": document.get("review_ref"),
+            "slices": summaries, "targets": targets, "boundaries": boundaries}

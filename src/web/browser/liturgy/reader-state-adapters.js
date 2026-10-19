@@ -276,6 +276,29 @@
       proper[selection.family][selection.key] || proper || {};
   }
 
+  function properWitnessId(owner, language, translation) {
+    const actual = translation.source_id || translation.source || '';
+    const entry = owner.coverage && (owner.coverage.languages || []).find(function (row) {
+      return row.lang === language;
+    });
+    const witness = entry && (entry.witnesses || []).find(function (row) {
+      return row.id === actual || (row.aliases || []).indexOf(actual) >= 0;
+    });
+    return witness ? witness.id : actual || 'project-created';
+  }
+
+  function properWitnessMatches(owner, language, requested, translation) {
+    const actual = translation.source_id || translation.source || '';
+    if (requested === actual || requested === 'project-created' && !actual) return true;
+    const entry = owner.coverage && (owner.coverage.languages || []).find(function (row) {
+      return row.lang === language;
+    });
+    return Boolean(entry && (entry.witnesses || []).some(function (row) {
+      return (row.id === requested || (row.aliases || []).indexOf(requested) >= 0) &&
+        (row.id === actual || (row.aliases || []).indexOf(actual) >= 0);
+    }));
+  }
+
   function exactPublicTextStatus(value, owner) {
     if (value === null || value === undefined) return null;
     if (!value || typeof value !== 'object' || Array.isArray(value) ||
@@ -453,23 +476,41 @@
       const parentTranslations = (proper.translations || []).filter(function (one) {
         return one && one.lang === wanted && one.text;
       });
-      const translations = owner !== proper && (cycleText || ownerTranslations.length)
+      const ownerHasBodyState = cycleText || ownerTranslations.length ||
+        (owner.unavailable_translations || []).length || (owner.untranslated || []).length ||
+        owner.latin || owner.text_status;
+      const rawTranslations = owner !== proper && ownerHasBodyState
         ? ownerTranslations : parentTranslations;
-      if (witness && translations.length && !translations.some(function (one) {
-        return (one.source_id || one.source || null) === witness;
-      })) {
-        throw new Error('explicit translation witness is not held for an appointed Proper');
-      }
+      const grouped = new Map();
+      const conflicts = new Set();
+      rawTranslations.forEach(function (translation) {
+        const id = properWitnessId(owner, wanted, translation);
+        if (grouped.has(id) && grouped.get(id).text !== translation.text) conflicts.add(id);
+        else grouped.set(id, translation);
+      });
+      const translations = Array.from(grouped.values());
       const typed = typedUnavailableFor(proper, wanted, selection);
-      if (typed) return Object.assign(typed, {
+      // A public body has its own publication basis. A redacted absence row
+      // for another witness cannot withdraw that body or identify its witness.
+      if (typed && !translations.length) return Object.assign(typed, {
         cycle: typed.cycle || cycle,
         cycles: cycleRows,
         weekdayCycles: weekdayCycleRows,
         cycleDimension: selection ? selection.dimension : null
       });
+      if (translations.some(function (translation) {
+        return conflicts.has(properWitnessId(owner, wanted, translation)) &&
+          (!witness || properWitnessMatches(owner, wanted, witness, translation));
+      })) return {
+        kind: 'composed', language: wanted, cycle: cycle, cycles: cycleRows,
+        weekdayCycles: weekdayCycleRows,
+        cycleDimension: selection ? selection.dimension : null,
+        sourceId: null, rights: null, missing: true, availability: 'unavailable',
+        held: false, text: null, reason: 'conflicting-witness'
+      };
       const translation = witness
         ? translations.find(function (one) {
-            return (one.source_id || one.source || null) === witness;
+            return properWitnessMatches(owner, wanted, witness, one);
           })
         : (translations.length === 1 ? translations[0] : null);
       if (translation) {
@@ -477,24 +518,15 @@
           kind: 'composed', language: wanted, cycle: cycle, cycles: cycleRows,
           weekdayCycles: weekdayCycleRows,
           cycleDimension: selection ? selection.dimension : null,
-          sourceId: translation.source_id || translation.source || null,
+          sourceId: witness || translation.source_id || translation.source || null,
           rights: translation.rights || null, missing: false,
           availability: 'held', text: translation.text
         };
       }
       if (translations.length > 1 && !witness) {
-        const witnessIds = translations.map(function (one) {
-          return one.source_id || one.source || null;
-        });
-        if (witnessIds.some(function (id) { return !id; })) {
-          return {
-            kind: 'composed', language: wanted, cycle: cycle, cycles: cycleRows,
-            weekdayCycles: weekdayCycleRows,
-            cycleDimension: selection ? selection.dimension : null,
-            sourceId: null, rights: null, missing: true, availability: 'unavailable',
-            held: false, text: null, reason: 'translation-witness-identity-missing'
-          };
-        }
+        const witnessIds = Array.from(new Set(translations.map(function (one) {
+          return properWitnessId(owner, wanted, one);
+        })));
         return {
           kind: 'composed', language: wanted, cycle: cycle, cycles: cycleRows,
           weekdayCycles: weekdayCycleRows,
@@ -508,7 +540,7 @@
         weekdayCycles: weekdayCycleRows,
         cycleDimension: selection ? selection.dimension : null,
         sourceId: null, rights: null, missing: true, availability: 'unavailable',
-        held: false, text: null, reason: 'translation-missing'
+        held: false, text: null, reason: witness ? 'absent-in-witness' : 'translation-missing'
       };
     }
     const typed = typedUnavailableFor(proper, wanted, selection);
@@ -1636,11 +1668,27 @@
     });
   }
 
-  function assertExplicitWitnesses(events, request) {
+  function assertExplicitWitnesses(events, request, structure) {
     const languages = request.languages || {};
     if (languages.translationWitness) {
       const held = selectedRows(events).some(function (row) {
-        return row.selected.sourceId === languages.translationWitness;
+        if (row.selected.sourceId === languages.translationWitness) return true;
+        // A mixed Proper retains its v1 Scripture event, while its composed
+        // body remains independently selectable in the shared renderer/report.
+        if (row.selected.kind !== 'scripture' && row.selected.reason !== 'conflicting-witness') return false;
+        const hook = (row.event.sourceHooks || []).find(function (one) { return one.kind === 'proper-structure'; });
+        if (!hook || !structure) return false;
+        const mass = (structure.masses || []).find(function (one) {
+          return hook.id.slice(0, hook.id.lastIndexOf('/')) === structure.calendar + '/' + one.key;
+        });
+        const proper = mass && mass.propers[Number(hook.id.slice(hook.id.lastIndexOf('/') + 1)) - 1];
+        if (!proper) return false;
+        const selection = row.selected.cycle ? explicitCycleSelection(proper, row.selected.cycle) : null;
+        const owner = selectedOwner(proper, selection);
+        return (owner.translations || []).some(function (translation) {
+          return translation.lang === languages.orations && translation.text &&
+            properWitnessMatches(owner, languages.orations, languages.translationWitness, translation);
+        });
       });
       if (!held) throw new Error('explicit translation witness selected no appointed text');
     }
@@ -1780,7 +1828,7 @@
       })
     );
     const events = seated.events;
-    assertExplicitWitnesses(events, adaptedRequest);
+    assertExplicitWitnesses(events, adaptedRequest, input.structure);
     const resolved = {
       edition: request.edition.id, formulary: mass.key, standing: readable.state
     };
@@ -1868,7 +1916,7 @@
       mass, formSelection.rows, request, input.structure, null, 'propers'
     );
     const events = seated.events;
-    assertExplicitWitnesses(events, request);
+    assertExplicitWitnesses(events, request, input.structure);
     const resolved = {
       edition: request.edition.id, formulary: mass.key, type: mass.kind || null
     };
@@ -2255,7 +2303,7 @@
         function () { throw new Error('unframed Proper sequence carried an Ordinary event'); }
       );
     }
-    assertExplicitWitnesses(events, adaptedRequest);
+    assertExplicitWitnesses(events, adaptedRequest, input.structure);
     const resolved = {
       edition: request.edition.id, formulary: mass.key, standing: mass.standing
     };
@@ -2318,7 +2366,7 @@
         formsByMass[mass.key] = (mass.forms || []).map(function (form) { return form.id; });
       }
       const languages = ['la'];
-      for (const translation of structure.translations || []) {
+      for (const translation of structure.coverage && structure.coverage.languages || structure.translations || []) {
         if (translation.lang && languages.indexOf(translation.lang) < 0) languages.push(translation.lang);
       }
       context.missals[entry.id] = {

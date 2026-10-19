@@ -168,6 +168,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import _calendars  # noqa: E402
+import _missal_coverage  # noqa: E402
 from _ordinary_text import element_lines  # noqa: E402
 from _tooling import (  # noqa: E402
     Example,
@@ -2040,6 +2041,28 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
                 "language partition"
             )
 
+    coverage_units = []
+    coverage_absences = {
+        "witness-gap": "absent-in-witness", "rights-withheld": "not-publishable",
+        "rights-unresolved": "unresolved", "no-exemplar": "not-sourced",
+        "model-gap": "unresolved", "outside-layer": "inapplicable",
+        "not-applicable": "inapplicable",
+    }
+    coverage_witnesses = {row["source_id"]: row for row in manifest}
+    for section in sections:
+        for element in section["elements"]:
+            disposition = {}
+            for language in LANGUAGES:
+                reason = element["absent"][language["absent"]]
+                if reason:
+                    disposition[language["lang"]] = coverage_absences[absences[reason]["kind"]]
+            identifier = _missal_coverage.identity(calendar, "ordinary", element["key"])
+            element["coverage"] = _missal_coverage.unit(
+                element, target_id=identifier, occurrence_id=identifier,
+                component="ordinary-body", witnesses=coverage_witnesses,
+                ordinary_absences=disposition,
+            )
+            coverage_units.append(element["coverage"])
     return {
         "schema": OUT_SCHEMA,
         "calendar": calendar,
@@ -2072,6 +2095,7 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
         "slots": slots,
         "translations": manifest,
         "sections": sections,
+        "coverage": _missal_coverage.summarize(coverage_units, "ordinary"),
     }
 
 
@@ -2630,6 +2654,7 @@ def run_coverage(arguments: argparse.Namespace) -> dict:
                 "absent": one["absences"],
                 "language_absences": one["language_absences"],
                 "exclusions": one["exclusions"],
+                "typed_coverage": one["coverage"],
             }
         )
     return {"coverage": rows}

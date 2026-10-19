@@ -20,6 +20,7 @@ TOOLS = ROOT / "tools"
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from _tooling import Example, print_json, with_examples  # noqa: E402
+from _missal_coverage import validate_summary  # noqa: E402
 
 
 FAMILIES = ("roman-pre-1955", "roman-1962", "postconciliar")
@@ -64,7 +65,7 @@ EXAMPLES = {
                 "complete-missal completeness: unresolved",
                 "placement span: 2020-2120",
                 "roman-pre-1955: 8 represented celebrations (recension-delta); at least 5160 modeled text slots; 13/15 dimensions unresolved",
-                "... 5 more lines",
+                "... 20 more lines",
             ),
         ),
         Example(
@@ -682,7 +683,7 @@ def one_family(
             "absent",
             "language_absences",
             "exclusions",
-        },
+        } | ({"typed_coverage"} if "typed_coverage" in ordinary else set()),
         f"mass-ordinary.coverage.{calendar}",
     )
     witnesses = ordinary.get("witnesses")
@@ -985,6 +986,21 @@ def build_report(propers: dict, placement: dict, ordinary: dict) -> dict:
     for family in families:
         validate_family(family)
 
+    typed = []
+    if "typed_coverage" in propers:
+        proper_coverage = rows_by_calendar(propers, "typed_coverage", "mass-propers")
+        for calendar in FAMILIES:
+            proper_report = dict(proper_coverage[calendar])
+            proper_report.pop("calendar")
+            ordinary_report = ordinaries[calendar].get("typed_coverage")
+            try:
+                validate_summary(proper_report)
+                validate_summary(ordinary_report)
+            except ValueError as error:
+                raise Refused(f"{calendar} typed coverage: {error}") from error
+            typed.append({"calendar": calendar, "propers": proper_report,
+                          "ordinary": ordinary_report})
+
     reasons: collections.Counter[str] = collections.Counter()
     for family in families:
         for group in GROUPS:
@@ -1000,6 +1016,7 @@ def build_report(propers: dict, placement: dict, ordinary: dict) -> dict:
             "valid": True,
         },
         "families": families,
+        "coverage": typed,
         "schema": "triptych-complete-missal-completeness/v1",
         "scope": {
             "dimensions": {
@@ -1046,6 +1063,36 @@ def render_text(report: dict) -> None:
             f"({represented['scope']}); at least {modeled} modeled text slots; "
             f"{unresolved_count}/15 dimensions unresolved"
         )
+        typed = next((row for row in report.get("coverage", [])
+                      if row["calendar"] == family["calendar"]), None)
+        if typed:
+            counts = typed["propers"]["counts"]
+            print(
+                f"  Proper coverage: {counts['canonical_targets']} canonical targets; "
+                f"{counts['occurrences']} uses; {counts['witness_alternatives']} "
+                "published translation alternatives"
+            )
+            for row in typed["propers"]["languages"]:
+                print(
+                    f"  {row['lang']} composed wording: {row['available_targets']}/{row['targets']} "
+                    f"represented targets available ({row['available']}/{row['occurrences']} uses); "
+                    f"{row['exact_target_targets']} exact-target; "
+                    f"{row['scripture_occurrences']} Bible reconstruction uses"
+                )
+            ordinary_counts = "; ".join(
+                f"{row['lang']} {row['available']}/{row['occurrences']} available, "
+                f"{row['exact_target']} exact-target"
+                for row in typed["ordinary"]["languages"]
+            )
+            print(f"  Ordinary represented elements: {ordinary_counts}")
+            expected = typed["propers"].get("expected_inventory") or {}
+            states = collections.Counter(row["state"] for row in expected.get("targets", []))
+            print(
+                f"  Expected inventory: {len(expected.get('slices', []))} bounded slices; "
+                f"whole inventory {expected.get('whole_inventory_state', 'unresolved')}; "
+                f"{states['not-represented']} target records not represented; "
+                f"{states['unresolved']} target mappings unresolved"
+            )
     kinds = ", ".join(
         f"{row['kind']}={row['count']}" for row in report["unresolved_by_kind"]
     )
