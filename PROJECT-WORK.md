@@ -7,6 +7,32 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-10-19.
 
+## Missal reader C1 truthful coverage, 2026-10-19
+
+<!-- promised-deliverable: missal-reader-c1-coverage-2026-10-19 -->
+
+The maintainer requested completion of the first implementation phase of the
+[daily reader completion plan](guidance/liturgy-browser-roadmap.md#completion-plan-2026-10-19),
+with regular validated commits and publication to `feature/missal-reader`.
+The target is C1: an expected-target inventory grounded in identified books,
+one typed coverage report, and truthful language/witness controls and notices.
+C2–C6, corpus text acquisition, and production deployment remain separate
+milestones. Existing ritual-flow and historical acceptance records retain
+their scope.
+
+**In progress.** Baseline `8f7be05286739235d590833eddba538e7e069ce0` is clean
+and matches the remote feature branch. Initial inspection confirms the
+browser independently counts translation rows as availability and assumes
+Latin completeness. Source-backed expected-target evidence and the common
+coverage contract are being audited before implementation. Expected targets
+must not be inferred merely from held texts or projected Mass records.
+
+Completion requires independently reviewable target and occurrence identities,
+separate witness counts, distinct availability/rights/wording relationships,
+browser/generated-data/CLI parity, regression and browser evidence, and
+verified feature-branch publication. Known missing texts may remain typed
+gaps; neither a valid report nor a full inventory asserts textual completeness.
+
 ## Daily Missal reader recovery and completion plan, 2026-10-19
 
 <!-- promised-deliverable: missal-reader-completion-plan-2026-10-19 -->
