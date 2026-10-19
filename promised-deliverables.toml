@@ -103,6 +103,12 @@ state = "in_progress"
   evidence = ["PROJECT-WORK.md", "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml", "src/sources/inventories/western-eucharistic-books-timeline-v1.toml"]
 
   [[deliverables.requirements]]
+  id = "full-research-acquisition-cold-review-2026-10-19"
+  criterion = "A full research and acquisition pass covers every existing Church and use plus discovered omissions; independent cold reviews reconcile expected versions against the canonical inventories, every known applicable version or unresolved bibliographic lead retains an explicit label even without an acquired source, and complete accessible repertoires, whole-source acquisition receipts, rights, exact external gaps and limits to historical completeness are durably recorded and checked."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml", "src/sources/inventories/western-eucharistic-books-timeline-v1.toml"]
+
+  [[deliverables.requirements]]
   id = "evidenced-book-stages"
   criterion = "Source-owned dossiers distinguish dated book states from witness succession and substantive revisions, record exact component changes and inspected evidence, enumerate historical gaps, and project deterministically without granting Git ancestry or claiming complete texts."
   status = "pass"
