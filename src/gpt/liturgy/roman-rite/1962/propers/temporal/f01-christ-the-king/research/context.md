@@ -9,8 +9,10 @@ The maintainer restored the requirement for full sourced appointed material on
 19 October 2026 and withdrew the temporary reference-only exception. The
 appointment evidence below remains available for independent verification.
 The earlier reference-only production is terminal BLOCKED and provides no
-research acceptance. The full-text source work remains incomplete because the
-previously recorded source-text output rejection has not been resolved.
+research acceptance. The full appointed-text records remain incomplete. A
+research response was rejected during the earlier work, but the diagnostic
+does not expose its text or identify a source passage. Independent evidence
+work can continue; that incident does not show the witnesses are unavailable.
 
 ## Governing identity and occurrence
 
@@ -152,12 +154,14 @@ The ordinary 1962 source-record contract applies again. Complete appointed
 Latin and independently sourced historical English must be verified from
 identified human witnesses; original AI translation and locator-only commentary
 do not satisfy the restored request. No full-text source records or publication
-are claimed here. The complete witnesses are available, but a prior source-text
-output rejection remains unresolved; this record does not authorize bypassing
-it through another tool or model.
+are claimed here. The complete witnesses are available. The prior output
+rejection remains unresolved, and its text is not exposed; this record does
+not authorize retrying or reconstructing that rejected output through another
+tool or model, nor does it prohibit independent evidence work.
 
-Once a permitted operational route is available, a fresh run must independently
-resolve and complete the following work:
+A fresh production run must independently resolve and complete the following
+work. The analytical checks can be prepared independently of the unfinished
+full-text record; preparatory work provides no native acceptance:
 
 1. Establish the complete governing formulary, proper Preface and both inactive
    seasonal branches from the authenticated 1962 Missal. Preserve the original

@@ -19,15 +19,17 @@ The calendar computation places this feast ahead of the Twenty-second Sunday
 after Pentecost; the workflow must verify the appointment in the governing
 Missal and a dated occurrence witness. No unspecified local overlay is assumed.
 
-State: blocked with full sourced material required. The workspace remains on
+State: full-material production remains unfinished; independent evidence has
+been consolidated. The workspace remains on
 `feature/propers/codex`; `main` was incorporated at `c6da24eda`. No completed
 publication, main push or live deployment is claimed.
 
 The original version-12 run `3c11005c63dcd584` passed scope and context but
-terminated BLOCKED after repeated source-text output rejection. Its partial
+terminated BLOCKED after repeated research-response output rejection. Its partial
 research, calendar correction and native archive are preserved. The complete
-witness PDFs have been acquired and inspected; the rejection concerns source-text
-generation, not locating the witnesses. It does not establish a rights finding.
+witness PDFs have been acquired and inspected. The rejection occurred during
+research, not source acquisition, and the rejected text is not exposed in the
+diagnostic. It does not establish a rights finding.
 
 The maintainer temporarily approved a reference-only commentary edition. The
 version-13 contract and validators passed independent internal review and
@@ -40,9 +42,19 @@ and archived; neither blocked run supplies acceptance or can be resumed.
 
 The production plan now withdraws only the reference-only exception, retaining
 ordinary authorization. The promise ledger preserves the prior dispositions
-and adds the restored full-material requirement. Its remaining blocker is the
-unresolved source-text output rejection; no alternate tool or model is used to
-bypass it. Full appointed Latin and independently sourced historical English,
+and adds the restored full-material requirement. The failure evidence identifies
+an output rejection but exposes no rejected passage or failed tool command;
+the earlier claim that all source-text work or all progress was blocked was
+too broad. The sources are acquired. The complete checked appointed-text
+records remain missing. Independent reception verification, source-binding
+reconciliation and interpretation corrections are now recorded in the leaf's
+`research/reception-verification.md`, `scope.md`, `source-bindings.toml` and
+`interpretations.md`, without retrying or reconstructing the rejected output.
+The audit distinguishes full readings from partially inspected passages and
+corrects the Bellarmine comment/verse numbering and unsupported prayer dating.
+This preparatory work is not a resumed terminal run, a locator-only publication
+or native acceptance. The repeated output rejection has no verified resolution.
+Full appointed Latin and independently sourced historical English,
 all three documents, canonical web edition, source verification, independent
 reviews, installation, main publication and live verification remain required.
 The driver record is

@@ -2,9 +2,11 @@
 
 Research proposals, 19 October 2026. The arguments below are editorial
 constructions from independently inspected sources. The Fathers and saints did
-not comment on this 1925 formulary as a whole. The exact-text record remains
-pending; the elemental assignments and biblical boundaries are those verified
-against the 1962 page images and recorded in `scope.md`.
+not comment on this feast formulary as a whole. Institution of the feast in
+1925 does not establish the first composition date of each prayer. The complete
+sourced Latin and received English text record remains pending; the elemental
+assignments and biblical boundaries were checked against the 1962 page images.
+`reception-verification.md` records the independent rereading and its limits.
 
 ## A. The King makes a people capable of hearing him
 
@@ -89,7 +91,8 @@ exchanging the Church's peace while continuing a feud with one's brother.
 Bellarmine, *Commentary on Psalms* 2 and 71, supplies the compatible but distinct
 argument about universal rule. At Psalm 71's opening he allows a literal Davidic
 prayer for Solomon's just government, then shows why the promise exceeds that
-king. At the universal-homage verse he distinguishes widespread present conversion,
+king. At the universal-homage verse (biblical Psalm 71:11; numbered comment 10
+in the retained O'Sullivan delivery) he distinguishes widespread present conversion,
 the complete recognition of final judgment, and Christ's present authority even
 over those who do not recognize him. The following verses explain the attractive
 reason for homage: rescue of the helpless, forgiveness and healing. Christ's right
@@ -100,7 +103,8 @@ the extension, justice and unfinished recognition of the reign.
 Augustine Psalm 71.1,13–16 adds the true Solomon as peacemaker and the humility
 of kings who acknowledge their own need. The received Victorinus commentary on
 Apocalypse 5 adds qualified support for the Lamb's death opening the testament
-and bringing humanity from death into life. Neither secondary support is needed
+and bringing humanity from death into life. This is chapter-level support, not
+a direct exposition of every term in Apocalypse 5:12. Neither secondary support is needed
 to meet the two-carrier threshold; the interpolation cautions in ANF remain visible.
 
 | Element | Contribution to this reading |

@@ -6,6 +6,10 @@ calendar, a postconciliar formulary, or evidence of completed publication review
 The exact-text transcription remains pending; this is an evidence dossier, not
 a claim that the research stage has passed.
 
+The subsequent `reception-verification.md` consolidates the independent reading
+and its inspection limits. The matrix below is reconciled to that audit; earlier
+whole-work inspection claims do not enlarge the passages actually checked.
+
 ## Identity and occurrence
 
 The governing facsimile is the Vatican 1962 typical edition, printed pp. 697–698,
@@ -149,21 +153,21 @@ feast was instituted in 1925.
 
 | Appointed text or prayer | Direct patristic work inspected | Medieval/later saintly or feast reception and limitation |
 | --- | --- | --- |
-| Introit, Apocalypse clauses | Victorinus, *Commentary on the Apocalypse*, chapter 1 on 1,4–7; chapter 5 in full in ANF VII: the believing Church as kingdom/priesthood, the Lamb's death overcoming death and unveiling the testament. | Pius XI, *Quas primas* 10–18 supplies feast doctrine and reception, not an eligible saint carrying an interpretation. Bellarmine on Psalm 2:7–8 supplies compatible natural-sonship and acquired-inheritance distinctions; it is not an Apocalypse commentary. No directly inspected later saint commentary on Apocalypse 5:12 is claimed. |
-| Introit Psalm and Gradual | Augustine, *Enarrationes*, Psalm 71 (NPNF English heading 72), §§1–20: Christ the true peacemaker, worldwide Church, grace and deliverance of the poor. | Bellarmine, Psalm 71, entire exposition: David's prayer for Solomon at the opening, the transition beyond Solomon, worldwide rule, actual authority versus willing homage and final judgment. |
-| Epistle | Chrysostom, *Homilies on Colossians* II, exposition of 1:9–15; III, exposition of 1:15–20 and its practical peace application. | Bellarmine, Psalms 2 and 71, gives a later saintly reception of the same redemption-and-kingdom argument, explicitly invoking release from darkness. This is thematic reception, not a second direct commentary on every Pauline clause. |
-| Alleluia | Jerome, *Commentary on Daniel*, VII on 13–14, 17–18 and 25–28: the Son's reception of dominion according to assumed humanity; rejection of Porphyry's Maccabean-only fulfillment and an earthly millennial kingdom. | Bellarmine, Psalm 2:8 and Psalm 71's dominion discussion; Pius XI 7–9. The latter's feast use does not make him a canonized carrier. |
+| Introit, Apocalypse clauses | Victorinus, *Commentary on the Apocalypse*, chapter 1 on 1,4–7; chapter 5 in full in ANF VII: the believing Church as kingdom/priesthood, the Lamb's death overcoming death and unveiling the testament. Chapter-level support does not supply a separate exposition of every term in 5:12. | Pius XI, *Quas primas* 12–18 supplies feast doctrine and reception, not an eligible saint carrying an interpretation. Bellarmine on Psalm 2:7–8 supplies compatible natural-sonship and acquired-inheritance distinctions; it is not an Apocalypse commentary. No directly inspected later saint commentary on Apocalypse 5:12 is claimed. |
+| Introit Psalm and Gradual | Augustine, *Enarrationes*, Psalm 71 (NPNF English heading 72), §§1–20: Christ the true peacemaker, worldwide Church, grace and deliverance of the poor. | Bellarmine, Psalm 71, inspected arguments at the opening, dominion, homage, deliverance and closing praise: David's prayer for Solomon, the transition beyond Solomon, worldwide rule, actual authority versus willing homage and final judgment. Numbered comment 10 expounds biblical verse 11. Truncated output prevents a claim of uninterrupted inspection of the entire exposition. |
+| Epistle | Chrysostom, *Homilies on Colossians* II, exposition of 1:12–15 and opening of its practical application; III in full, including its peace application and editorial notes. | Bellarmine, Psalms 2 and 71, gives a later saintly reception of the same redemption-and-kingdom argument, explicitly invoking release from darkness. This is thematic reception, not a second direct commentary on every Pauline clause. |
+| Alleluia | Jerome, *Commentary on Daniel*, VII on 13–14, 17–18 and 25–28: the Son's reception of dominion according to assumed humanity; rejection of Porphyry's Maccabean-only fulfillment and an earthly millennial kingdom. | Bellarmine, Psalm 2:8 and Psalm 71's dominion discussion; Pius XI 7–8. The latter's feast use does not make him a canonized carrier. |
 | Gospel | Augustine, *Tractates on John* 115, §§1–5, read in full: origin of the kingdom, regeneration, hearing as obedient faith, grace preceding merit. | Bellarmine's Psalms 2 and 71 compare spiritual Church membership, all-embracing authority and public obedience. No direct Bellarmine commentary on John 18 is claimed. |
 | Offertory | Augustine, Psalm 2, §§1–11, particularly §7: the Son's petition within the temporal economy of incarnate sacrifice and intercession. | Bellarmine, Psalm 2, full exposition, particularly 7–10: Sonship, inheritance and the power to correct or judge. |
-| Communion | Augustine, Psalm 28 (NPNF English heading 29), §§1–11: the Church amid the world's storms, final kingship in the saints, peace in Christ without a promise of worldly tranquility. | Bellarmine, Psalm 28, entire exposition: natural and ecclesial readings, present strength and final blessing, with alternative readings of the flood expressly left open. |
-| Collect | No ancient commentary on this composed 1925 feast prayer found or possible as direct reception of that prayer. Augustine 115.2 and Chrysostom Colossians II explain sin, regeneration and transfer. | Pius XI 15,18,20,24,33 supplies feast-context teaching; Bellarmine Psalm 71 explains healing dominion. Whole-prayer coordination is editorial synthesis. |
+| Communion | Augustine, Psalm 28 (NPNF English heading 29), §§1–11: the Church amid the world's storms, final kingship in the saints, peace in Christ without a promise of worldly tranquility. | Bellarmine, Psalm 28, inspected opening, natural/ecclesial alternatives and conclusion: present strength and final blessing, with alternative readings of the flood expressly left open. Truncated output prevents a claim of uninterrupted inspection of the entire exposition. |
+| Collect | No ancient commentary on this feast prayer found. Institution of the feast in 1925 does not establish when every phrase was composed. Augustine 115.2 and Chrysostom Colossians II explain sin, regeneration and transfer. | Pius XI 15,18,20,24,33 supplies feast-context teaching; Bellarmine Psalm 71 explains healing dominion. Whole-prayer coordination is editorial synthesis. |
 | Secret | Chrysostom Colossians III directly expounds reconciliation through Christ's blood and develops its liturgical and interpersonal peace implications. | Pius XI 13,16,20 and Bellarmine Psalm 2:8. These are doctrinal and thematic controls; no direct commentary on this Secret is attributed to them. |
 | Preface | Jerome on Daniel 7:13–14 and Chrysostom Colossians III control the received kingdom, divine preeminence and sacrificial peace. | Pius XI 7,13,16–20 relates kingship, redemption and priesthood. No proof of an individual compiler's intention or personal authorship follows. |
 | Postcommunion | Augustine Psalm 28.10–11 and Chrysostom Colossians II's kingdom and perseverance discussion. | Bellarmine Psalm 28's distinction between strength in pilgrimage and final blessing; Pius XI 24,33 supplies feast-context moral reception. Neither is represented as an ancient exposition of the prayer. |
 
-Every exact locus above was read in the named delivery; searchable presence alone
-was not treated as inspection. NPNF's editorial comments are not the Fathers'
-own words. The ANF VII received text and elucidations explicitly raise problems
+The inspection extents above are detailed in `reception-verification.md`;
+searchable presence alone was not treated as inspection. NPNF's editorial
+comments are not the Fathers' own words. The ANF VII received text and elucidations explicitly raise problems
 of interpolation and attribution; Victorinus is used as a qualified secondary
 support, never as the sole carrier of an interpretation. Jerome's electronic Latin
 has generated paragraph markers and uncorrected typographical debris; native
@@ -201,7 +205,9 @@ Scriptural date.
 Outstanding before research submission: complete and inspect the focused
 unchanged extraction and full verified Latin/received-English text record;
 resolve its lawful exact-text production route without filling it by generated
-translation; validate the finished record and final source bindings. Newly
-suggested pre-1931 witnesses are discovery leads only until acquired and inspected.
+translation; validate the finished record and final source bindings. The complete
+Husslein and Schott witnesses have since been acquired; their identified pages
+and bounded rights evidence are recorded in `context.md` and the source library.
+Acquisition is not the missing step, and it does not itself complete collation.
 No source-list entry, predecessor approval, or present dossier substitutes for
 that unfinished textual work.

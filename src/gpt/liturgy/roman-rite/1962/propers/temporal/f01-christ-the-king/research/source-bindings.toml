@@ -39,18 +39,18 @@ source_fingerprint = "sha256:36b867851ec080442b39b736ed44f7c9ca056b48ad0620efa3b
 
 [[bindings]]
 source_id = "artifact.pius-xi.quas-primas.official-english-web-2026-10-19.html-f17b882f"
-loci = ["Paragraphs1–34; particularly7–20,24,28–33"]
+loci = ["Paragraphs7–8,12–25,28–34"]
 role = "context"
 states = ["cataloged", "acquired", "inspected"]
-context = "Whole encyclical read in the acquired official English delivery. Institution, doctrinal grounds and stated pastoral purpose of the feast; independent summaries only. Translation date/rights not established; does not prove personal authorship of Mass prayers."
+context = "Recorded delivery independently authenticated. The listed arguments were reread; this consolidation does not certify a fresh uninterrupted reading of the entire encyclical. Institution, doctrinal grounds and pastoral purpose of the feast; independent analysis only. Translation date/rights not established; does not prove personal authorship or first composition date of each Mass prayer."
 source_fingerprint = "sha256:f6e2c5e23a86474d65cd9bab04ec47e0675255e6133c480e67ed8a6672684b46"
 
 [[bindings]]
 source_id = "artifact.ante-nicene-fathers.volume-7.ccel-web-2026-10-19.ccel-text-b69327af"
-loci = ["Victorinus, Commentary on the Apocalypse, chapter1 comments on1,4–7", "Victorinus, chapter5, entire exposition; surrounding editorial elucidations"]
+loci = ["Victorinus, Commentary on the Apocalypse, chapter1 comments on1,4–7", "Victorinus, chapter5, entire exposition", "Victorinus, chapter19, comment on verse11"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
-context = "Received English commentary inspected, not image-collated. Kingdom/priesthood, witness and the Lamb overcoming death. Editorial interpolation/attribution concerns preserved; not a sole carrier of an interpretation."
+context = "Received English commentary inspected, not image-collated. Kingdom/priesthood, witness and the Lamb overcoming death. Chapter5 supports the context of Apocalypse5:12 without separately explaining every term; chapter19 comments on11, not16. Existing interpolation/attribution cautions remain; no independent recension finding or sole-carrier role is claimed."
 source_fingerprint = "sha256:f3e73dde77b3f5cefed09f8434f7e1d070ba005508c320851c66d617b3e618ae"
 
 [[bindings]]
@@ -63,10 +63,10 @@ source_fingerprint = "sha256:10294711891b3ca7163bf578e02d0a027dbd110257bdaf2fb0b
 
 [[bindings]]
 source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-13.english-ccel-web-2026-09-05.ccel-npnf113-text-54274dd9"
-loci = ["Chrysostom, Homilies on ColossiansII, exposition of1:9–15", "HomilyIII, exposition of1:15–20 and peace application"]
+loci = ["Chrysostom, Homilies on ColossiansII, exposition of1:12–15 and opening of practical application", "HomilyIII, entire homily and editorial notes"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
-context = "Direct exegesis read in retained anthology. Rescue and transfer, Creator not creature, sustaining providence, reconciliation of angels with humanity and liturgical peace. Editorial notes and homily textual variants distinguished from Chrysostom and from the Missal."
+context = "Listed direct exegesis reread in retained anthology. No fresh reading of all HomilyII is claimed. Rescue and transfer, Creator not creature, sustaining providence, reconciliation of angels with humanity and liturgical peace. Editorial notes and textual variants distinguished from Chrysostom and from the Missal."
 source_fingerprint = "sha256:374d296602c0a52e4c252ad0e7704b9c9952d06f6b66b891bb391c8509c390db"
 
 [[bindings]]
@@ -79,10 +79,10 @@ source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573
 
 [[bindings]]
 source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1"
-loci = ["Psalms2,28,71,complete expositions in Vulgate numbering"]
+loci = ["Psalm2,complete exposition", "Psalm28,opening and natural/ecclesial alternatives; conclusion on10–11", "Psalm71,opening and arguments on dominion,homage,deliverance and closing praise"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
-context = "Historical O’Sullivan English read. Natural sonship and rightful inheritance; natural/ecclesial alternatives for Psalm28; David/Solomon opening and Christological extension of Psalm71; distinct senses of universal homage. These are Psalm commentaries, not direct commentaries on the feast prayers or Gospel."
+context = "Historical O’Sullivan English inspected at the listed arguments. Truncated output prevents certification here of a fresh uninterrupted reading of every line of Psalms28 and71. Natural sonship, rightful inheritance, natural/ecclesial alternatives, David/Solomon opening and distinct senses of universal homage. Psalm71 numbered comment10 treats biblical verse11. These are Psalm commentaries, not direct feast-prayer, Gospel or Epistle commentaries."
 source_fingerprint = "sha256:85b019a495120f1320c91743bdd127eef0ccb54126e0247bcb0298f9fb7c3344"
 
 [[bindings]]
@@ -95,7 +95,7 @@ source_fingerprint = "sha256:dab9057a0dc93c8f7e968498dc2c41949281b7c7b59b8d746f8
 
 [[bindings]]
 source_id = "artifact.english-college-of-douay.douay-rheims-bible.american-1899-ebible.verse-text-21-psalms-6d114c22"
-loci = ["Ps.2.1-13", "Ps.28.1-11", "Ps.71.1-20"]
+loci = ["Ps.2.1-13", "Ps.28.1-11", "Ps.71.1-20", "Ps.88.1-53"]
 role = "context"
 states = ["cataloged", "acquired", "inspected"]
 context = "Complete biblical contexts read in the registered verse delivery. Scripture study English is not silently adapted into a translation of the Missal. Psalm71 title/verse offset is explicitly recorded in scope.md."
@@ -127,7 +127,7 @@ source_fingerprint = "sha256:57fe82020c834e0b99daa7f6a4e0f2e2472015f4950139ecda2
 
 [[bindings]]
 source_id = "artifact.english-college-of-douay.douay-rheims-bible.american-1899-ebible.verse-text-73-apocalypse-5e392286"
-loci = ["Apoc.1.1-20", "Apoc.5.1-14"]
+loci = ["Apoc.1.1-20", "Apoc.5.1-14", "Apoc.19.1-21"]
 role = "context"
 states = ["cataloged", "acquired", "inspected"]
 context = "Complete biblical contexts read in the registered verse delivery. Scripture study English is not silently adapted into a translation of the Missal. Psalm71 title/verse offset is explicitly recorded in scope.md."

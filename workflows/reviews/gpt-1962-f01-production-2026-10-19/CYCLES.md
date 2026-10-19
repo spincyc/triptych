@@ -305,3 +305,41 @@ or confer acceptance.
 The working context now retains the fresh appointment evidence but restores
 the full-material source plan, explicitly marked unfinished. That scope
 reconciliation occurs after the stopped run and is not a new native review.
+
+## Narrowing the blocker and continuing independent evidence
+
+The maintainer challenged the halt and asked what was missing and whether work
+could proceed without the sources. Reinspection confirms that the complete
+source witnesses are acquired; the missing deliverables are the finished
+appointed-text records, authored studies and homily, and their reviewed
+publication artifacts. The diagnostic records an explicit output rejection,
+but no rejected passage or subsequent failed tool call is exposed. Treating
+that evidence as proof that all sourcing or writing was impossible was an
+overstatement. It does not establish a general rights restriction either.
+
+The coordinator continues independent reception verification and original
+interpretation work, using the sources already examined, without retrying or
+reconstructing the rejected output. A bounded preparatory lane consolidates
+its actual completed reading and reconciles binding states; it changes no
+proper-body source record and supplies no native PASS. The full-material
+requirement remains open and blocked at its unfinished text-record boundary;
+it is not waived or replaced by locators. Both historical native runs retain
+their terminal dispositions. Further acquisition is not the present obstacle
+to this independent research work.
+
+The preparatory consolidation is complete in `research/reception-verification.md`.
+It preserves the inspected biblical contexts, substantive reception arguments,
+chronology evidence and partial-read limits. The bindings and reception matrix
+now agree with those limits. Interpretation corrections distinguish Bellarmine's
+comment number from its biblical verse, Victorinus's chapter-level support from
+verse-specific exposition, and the feast's institution from individual prayers'
+composition dates. No source fingerprints were replaced. The scope also records
+the completed acquisition of the earlier witnesses rather than continuing to
+call them unacquired leads.
+
+Source-library validation passed for 4,113 publication bindings. The promise
+ledger and whitespace checks passed. These validate the preparatory records;
+they do not certify a complete appointed-text record, authored document or
+publishable artifact. The model-output rejection still has no verified
+resolution, and no rejected payload was replayed. The required full-material
+production remains unfinished; no main push or new deployment was attempted.
