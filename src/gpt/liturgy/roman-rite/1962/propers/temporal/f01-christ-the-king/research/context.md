@@ -5,6 +5,13 @@ The canonical owner is this GPT 1962 proper leaf, permanent identity **F01**,
 calendar key `christ-the-king`. The intended audience is an adult parish
 assembly. No preliminary research handoff was supplied.
 
+The maintainer restored the requirement for full sourced appointed material on
+19 October 2026 and withdrew the temporary reference-only exception. The
+appointment evidence below remains available for independent verification.
+The earlier reference-only production is terminal BLOCKED and provides no
+research acceptance. The full-text source work remains incomplete because the
+previously recorded source-text output rejection has not been resolved.
+
 ## Governing identity and occurrence
 
 The governing book is the Latin *Missale Romanum*, Vatican editio typica 1962,
@@ -32,19 +39,26 @@ dated witness.
 The **Fraternité Sacerdotale Saint-Pierre, Province de France**, official
 institutional [Ordo du mois](https://www.fssp.fr/ordo-du-mois/), October 2026,
 entry for Sunday 25 October, was independently opened and read on 19 October
-2026. It appoints Christ the King, first class, white. The complete HTML was
-acquired that day (169,687 bytes; SHA-256
+2026. It appoints Christ the King, first class, white. The registered complete
+HTML snapshot was independently rehashed and its October 25 entry reread
+(169,687 bytes; SHA-256
 `4eb6a52bd3e6b2b5d294035133c01b14dc1dc0ca42ac9953e167e443a991af04`).
-Its October section is the controlling dated corroboration; the mutable page
-also contains November and December. No page payload is proposed for tracking.
+A fresh complete retrieval the same day independently confirms the same entry
+(169,685 bytes; SHA-256
+`2ca3b1c647864c561428b88ee1879ba008b93748ad2a6616ccb481acfcaea995`).
+The two deliveries are distinct artifacts; the existing binding remains to
+the registered snapshot, not silently to the new bytes. Its October section
+is the controlling dated corroboration; the mutable page also contains
+November and December. No page payload is proposed for tracking.
 
 The 1962 Missal itself expressly excludes the Sunday commemoration after
 each of the Collect, Secret, and Postcommunion on pp. 697–698. Those three
 rubrics were read on the page images. Saints Chrysanthus and Daria are an
 ordinary commemoration and do not enter this first-class feast: *Rubricae
 generales* 109 and 111(a), printed p. XVIII, permit only one privileged
-commemoration on a first-class day. That latter rule was read in the
-facsimile's text layer; image collation of the rubric remains a research task.
+commemoration on a first-class day. These rules and 112(b) were independently
+read in the page image at printed p. XVIII, one-based PDF page 16. Rubric
+17(d), PDF page 10, also expressly excludes the Sunday commemoration.
 The date therefore adds neither a Sunday prayer nor a martyr prayer to the
 inventory below. No ritual supplement, local chant, or additional prayer is
 inferred.
@@ -60,12 +74,23 @@ SHA-256 `648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a`.
 The source has 1,088 digital pages. Printed pp. 697–698 correspond to
 one-based PDF pages 778–779; printed p. 291 is PDF page 372.
 
-All three page images were generated through the repository's `pdf-review`
-tool and individually opened on 19 October. That inspection establishes the
+Fresh page images were generated through the repository's `pdf-review`
+tool and individually opened on 19 October: one-based PDF pages 10, 16, 17,
+29, 372, 778, and 779. That inspection establishes the
 heading, rank, ordered inventory, biblical loci, seasonal substitution rules,
-three exclusions of Sunday commemoration, and proper-Preface appointment.
-It does not substitute for the research stage's complete word-for-word Latin
-collation and rights corroboration. No liturgical body text is composed here.
+three exclusions of Sunday commemoration, proper-Preface appointment, and
+the rubric controls below. The scope of this check is appointment and
+boundaries; the research stage must independently examine every text and
+verify material textual and interpretive claims. Full appointed-text
+source records and publication remain unfinished. No liturgical body text is composed here.
+
+The additional inspected controls are General Rubrics 115(c), printed p. XIX
+(PDF 17), on the three prayers' conclusions; 120(a), on white for this feast
+of the Lord; and General Rubrics of the Missal 427–432, printed p. XXXI
+(PDF 29), on the Introit frame and Gloria. The recorded rule for this feast's
+Gloria is 431(b), for festal Masses. The antiphon's repetition after the psalm
+verse and doxology follows 427. These appointment checks do not establish that a complete
+publication transcription has been verified.
 
 ## Ordered inventory for 25 October 2026
 
@@ -94,11 +119,14 @@ Sequence, blessing, additional lesson, or proper Canon insertion in this
 formulary. The study does not expand into an edition of the entire Ordinary.
 
 The source inventory is eleven proper elements, including the proper Preface.
-The calendar finding aid omits the three orations and Preface, and its Communion
-row names only Psalm 28:10. The page image controls: the Communion citation is
-**Psalm 28:10 and 11**. The finding aid also carries a Tract without the
-branch context that prevents its use on this October feast. Do not use the
-finding aid alone to generate the canonical inventory or chronology inputs.
+The page image controls: the Communion citation is **Psalm 28:10 and 11**.
+Earlier research identified incomplete orations and Preface coverage and a
+missing Communion verse in the calendar finding aid; the source library now
+has the appointment record
+`passage.catholic-church.missale-romanum.vatican-typica-1962.christ-the-king-appointments`.
+That record was read against the images, not adopted as a predecessor's
+verdict. The exact active inventory above, rather than an unqualified calendar
+export, controls this study and its chronology inputs.
 
 ## Closed seasonal branches of the same printed formulary
 
@@ -114,77 +142,51 @@ votive Mass on any particular day is inferred from their presence.
 
 The dates limiting those seasons and permissions governing votive celebration
 come from the same 1962 rubrics. No seasonal branch is activated in the dated
-study. The research record must preserve their texts and label their status;
+study. The full source record must preserve these branches and label their status;
 the main interpretation and concise opening must not represent their additional
 verses as readings appointed on October 25.
 
-## Source plan and remaining verification
+## Full-material source work still required
 
-The concrete plan is to complete the following evidence at this canonical
-owner, preserving the distinction between a source lead and checked text.
+The ordinary 1962 source-record contract applies again. Complete appointed
+Latin and independently sourced historical English must be verified from
+identified human witnesses; original AI translation and locator-only commentary
+do not satisfy the restored request. No full-text source records or publication
+are claimed here. The complete witnesses are available, but a prior source-text
+output rejection remains unresolved; this record does not authorize bypassing
+it through another tool or model.
 
-1. **1962 Latin.** Produce `propers/retrieved.txt` as a focused, unchanged
-   finding-aid extraction and `propers/verified.md` as the complete
-   image-collated formulary, including its proper Preface and both seasonal
-   branches. Collate every word, accent, reference, rubric, conclusion, and
-   boundary. Inspect the General Rubrics at 17(d), 109, 111(a), 112(b), and
-   the relevant Gloria provisions in page images before calling them
-   facsimile-verified. The existing index is not a substitute. Resolve
-   abbreviations only from the governing witness; do not construct text.
-2. **Dated authority.** Register the newly acquired FSSP web state and its
-   October 25 locus under the existing `fssp-france/ordo-du-mois` work, then
-   bind it and the exact 1962 artifact in `research/source-bindings.toml`.
-   The earlier library artifact dated October 12 has a different hash and
-   reports inspection of October 18 only; neither that event nor a predecessor
-   verdict verifies this date. Seal the adopted calendar and rubric source
-   owners as well as the formulary controller.
-3. **Lawful Latin route.** Apply the existing
-   `src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml`
-   distinction between the modern facsimile and independently witnessed
-   preexisting wording. This feast's twentieth-century formulary requires its
-   own antecedent; the 1862 Missal cannot witness a feast instituted later.
-   The registered Lasance/Walsh *New Roman Missal*, Benziger revised 1945,
-   carries the Latin at printed pp. 1257–1260 and its Preface at p. 813.
-   Compare those exact pages with 1962 and record the wording and rights basis
-   actually established. A pre-1931 official witness to the feast is an
-   additional acquisition route if needed, not evidence already inspected.
-4. **Historical English.** Use registered Douay–Rheims/Challoner Scripture
-   (`english-college-of-douay/douay-rheims-bible`, American 1899 eBible edition)
-   for biblical study text, with each exact Vulgate locus and any Missal
-   adaptation disclosed. The Introit and Communion are selected/adapted
-   biblical wording, not permission to create an English liturgical rendering.
-   For the composed prayers and proper Preface, the Lasance/Walsh witness is
-   the concrete human-translation route. Its retained OCR was read at the
-   feast's locus and identifies all three prayers and Preface no. 10, p. 813;
-   its page images remain to be collated. It is historical study English,
-   not an approved 1962 vernacular liturgical edition. Its Sunday-commemoration
-   instructions differ from 1962 and must not be imported.
-5. **Rights evidence.** The registered Lasance OCR artifact is
-   `artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.new-roman-missal-text-80b34759`.
-   Its public-domain basis and excluded later inserts are recorded in
-   `src/sources/inventories/lasance-new-roman-missal-rights-v1.toml`.
-   The corresponding registered PDF is
-   `artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0`.
-   It is a later printing of the revised edition, not the 1937 first edition
-   despite the delivery filename. Read the complete rights record and the
-   precise page evidence before adopting publication wording. Keep the
-   restricted whole PDF out of tracked artifacts. Do not supply AI translations
-   if an English element cannot be verified; use its incipit and description.
-6. **Research and chronology.** Record the passage-by-passage reception sweep
-   and actual evidence use in `research/scope.md`; develop interpretations only
-   after checking the underlying works. Generate chronology from the shared
-   corpus for the actual inventory, including Psalm 28:11. The distinct active
-   biblical loci are Psalms 2:8; 28:10–11; 71:1, 8, 11; Daniel 7:14;
-   John 18:33–37; Colossians 1:12–20; Apocalypse 1:6 and 5:12. Inactive
-   votive loci Psalm 88:27–28, 30 and Apocalypse 19:16 remain separately
-   identified. The proper Preface is a composed prayer, not an additional
-   directly appointed biblical lesson.
+Once a permitted operational route is available, a fresh run must independently
+resolve and complete the following work:
+
+1. Establish the complete governing formulary, proper Preface and both inactive
+   seasonal branches from the authenticated 1962 Missal. Preserve the original
+   source pull and separately verified source record required by the profile,
+   with actual inspection outcomes and unresolved discrepancies.
+2. Verify the historical English and any Latin antecedent used against their
+   identified edition and controlling rights evidence. The registered
+   Lasance/Walsh revised 1945 witness is a comparison route at printed
+   pp. 1257–1260 (one-based PDF 1258–1261) and Preface pp. 813–814
+   (PDF 812–813). Its earlier commemoration rubrics do not govern 1962.
+   Existing Husslein and Schott records are additional research leads, not
+   inherited approval of wording or rights.
+3. Reconcile source bindings and the complete controlling dependency chain,
+   including the authenticated dated Ordo snapshot, calendar, rubrics and
+   applicable rights inventories. Keep acquired, inspected, collated and
+   published states distinct.
+4. Reverify the complete biblical contexts and exact reception arguments
+   before adopting whole-formulary interpretations. Generate chronology for
+   the eleven active elements, including Communion Psalm 28:10–11; keep the
+   inactive votive loci separate. Prior reading and scratch evidence are
+   available for checking but provide no research-review verdict.
+5. Produce the complete study, concise companion, homily and canonical web
+   edition through fresh native review, build and publication gates. A
+   reference-only manifest or component cannot satisfy this restored scope.
 
 No authored shared Missal owner is imported. This leaf owns the complete
 formulary research; therefore no exceptional external TeX dependency is
-introduced at this stage. The research stage must declare controlling source
-and rights owners in `research/review-dependencies.toml` wherever binding
-ancestry does not already seal them. Source-library fingerprinting, complete
-collation, rights corroboration, reception research, and generated chronology
-remain research-stage work. The source-owner reservation in `main.tex` is
-unpublished scaffolding, not study prose or a reviewed artifact.
+introduced here. The research stage owns the remaining textual, reception,
+chronology and rights evidence judgments and consistency of its source
+records. The existing `main.tex` source-owner reservation is preserved
+unchanged: it is unpublished scaffolding, not study prose or a reviewed
+artifact.

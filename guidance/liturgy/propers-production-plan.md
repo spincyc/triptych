@@ -160,13 +160,16 @@ and an identity with no line here is closed.
 
 ### Reference-only publication scope
 
-The following additional authorization replaces full appointed-text reproduction
+An additional authorization here replaces full appointed-text reproduction
 with original commentary and precise source locators for the named provider and
 identity. It does not change source rights or waive source verification, complete
 element coverage, the three-document contract, independent review or deployment
 checks. The owning 1962 and three-document profiles define this schema-2 mode.
 
-- Authorized reference-only 2026-10-19: provider `gpt`, identity `liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king`.
+No reference-only target is currently authorized. On 19 October 2026 the
+maintainer withdrew that scope for GPT F01 and restored the requirement for
+full sourced material. The ordinary F01 production authorization above remains
+active; this withdraws the exception, not the publication target.
 
 ### Withdrawn targets
 

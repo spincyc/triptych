@@ -248,3 +248,60 @@ author-registry failure. Promise-ledger, tool-registry and whitespace checks
 also pass. This closes implementation validation only, not native production
 or any substantive review. The version-13 workflow is committed before seeding
 the fresh run; the incomplete publication is still not deployable to main.
+
+## Fresh version-13 production
+
+Run `78d1516ca75da9df` was seeded from committed and feature-pushed
+`e8d76b1266990caa5eb18b50d1862af3453483bc`, workflow version 13, digest
+`7568a7728ef8a16e5a7c65475e9a3ae0d24c695caab6faa5d0c0c7ec52621d16`.
+Its arguments are provider `gpt`, the F01 canonical identity, date
+`2026-10-25`, audience `adult parish assembly`, and no preliminary handoff.
+The native scope gate passed. A fresh worker at the declared high effort
+received the exact `resolve-context-0000` packet, with exclusive stage scratch
+and no inherited authoring conversation. No old result is carried into this run.
+
+`resolve-context-0000` returned PASS and was accepted by the engine. It changed
+only `research/context.md`: the first-line mode declaration, independent
+appointment and boundary inspection of seven Missal pages, the dated Ordo
+check, and the element-specific locator/inspection plan. It retains eleven
+active elements and two inactive seasonal branches. The authenticated Missal
+matches its registered hash; the original registered Ordo snapshot and a
+fresh, byte-distinct retrieval independently agree on the October 25 entry.
+The existing binding remains explicitly tied to the registered snapshot.
+Identity and whitespace checks pass; `make check-sources` validates the source
+graph and then fails on the scaffold's pending web-edition/catalogue work.
+The native engine emitted `research-0000`, dispatched to a fresh high-effort
+worker with exclusive scratch and no inherited conversation.
+
+## Full material restored; reference-only scope withdrawn
+
+The maintainer then explicitly rejected locators as the deliverable and
+required full sourced material. The coordinator immediately stopped the
+reference-only research worker. Its closeout reported no tracked edits,
+unfinished writes or live operations. It had independently authenticated both
+complete missal PDFs, inspected thirteen fresh page rasters, and reread
+biblical, reception and chronology evidence; those additional research findings
+were not written into the dossier or accepted. Its structured result was
+BLOCKED because the packet no longer matched the requested scope.
+
+The native engine recorded `78d1516ca75da9df` as terminal BLOCKED with three
+packets, three results and no interventions. Its native archive is retained
+under the leaf's `evaluations/proper-study-results/78d1516ca75da9df/`.
+The target's reference-only authorization is withdrawn; ordinary production
+authorization remains. The ledger explicitly supersedes the reference-only
+acceptance requirement and restores full appointed Latin and independently
+sourced historical English as a blocked requirement. The tested optional mode
+implementation is historical work, not fulfillment of the restored promise.
+
+The previously recorded source-text output rejection remains unresolved.
+Full witness acquisition and reading are distinct from generating the complete
+appointed source records and publication text. No alternate tool or model is
+used to bypass the rejection. No fresh full-text generation is attempted,
+no native acceptance is claimed, and no incomplete publication is pushed to
+main. The next full-material production needs a permitted, operational way to
+complete its source-text work and a fresh run; neither blocked run can resume
+or confer acceptance.
+
+The working context now retains the fresh appointment evidence but restores
+the full-material source plan, explicitly marked unfinished. That scope
+reconciliation occurs after the stopped run and is not a new native review.
