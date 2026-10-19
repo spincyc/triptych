@@ -1547,6 +1547,20 @@ routing inventory can choose the initial recension with
 ranking. The existing catalogue and relationship views remain available beside
 the primary chronology.
 
+### Lane review receipts
+
+A research lane that adds inventory rows leaves one receipt at
+`src/sources/inventories/eucharistic-research-reviews/<lane>.json`
+(`record_type = "eucharistic-research-lane-review"`; `tools/source-library`
+checks only its ownership envelope). It records per-use dispositions, searched
+repertoires with their unexamined ranges, every labelled version including
+unresolved leads, acquisition hashes with proposed storage, the independent
+reviewer's reconciliation of its own expected list, coverage placements and
+remaining gaps. The research packet and cold review stay in disposable scratch
+and are pinned here by SHA-256 only. A receipt is evidence of review; it feeds
+neither the catalogue nor any coverage count, and its version list is not a
+count of substantive revisions.
+
 ### Typed relationships and named display groups
 
 The routing inventory's `[[relationship_sets]]` rows name an `id` and `path`.
