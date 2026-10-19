@@ -691,8 +691,14 @@ section above. Isidore item 3453 was retrieved and is byte-identical to the
 registered 2004 Bonn *reimpressio*, so it is not a 1920 Vatican impression. The
 selected U.S. edition's General Index was acquired from the publisher's preview
 and is inventoried above. An authenticated 1920 Vatican typical impression and
-authenticated complete 2008 contents or body evidence remain outstanding. The
-bullets that follow record the earlier pass as it happened.
+authenticated complete 2008 contents or body evidence remain outstanding. A
+bounded search of the major digital libraries and catalogues found neither. Every
+file circulating as the "1920 typical edition" is the registered Bonn
+*reimpressio*. The 2008 body exists online only as a paid electronic re-typeset.
+Gallica, BNE, Internet Culturale, DigiVatLib and the Polish FBC federation were
+behind bot challenges and were not searched. The
+[acquisition audit](missal-acquisition-audit-v1.toml) records the hosts reached.
+The bullets that follow record the earlier pass as it happened.
 
 The second pass pursued registered alternatives rather than treating a local
 absence as a worldwide absence:
