@@ -1,6 +1,37 @@
 schema_version = 1
 
 [[deliverables]]
+id = "gpt-1962-christ-the-king-2026-10-19"
+owner = "PROJECT-WORK.md"
+promise = "Drive the GPT 1962 Christ the King propers for Sunday 2026-10-25 through proper-study acceptance, independently review and install the expansive study, concise study, homily and canonical web edition, then push the validated result to main and verify its automatic Pages deployment."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "gpt-f01-context-and-scope"
+  criterion = "The exact provider and identity are authorized; governing edition, occurrence, full appointed inventory, seasonal variants and local limits are verified in source records."
+  status = "open"
+  evidence = ["guidance/liturgy/propers-production-plan.md", "workflows/reviews/gpt-1962-f01-production-2026-10-19/CYCLES.md"]
+
+  [[deliverables.requirements]]
+  id = "gpt-f01-workflow-and-artifacts"
+  criterion = "The actual proper-study version-12 run reaches ACCEPTED with fresh authors and cold reviewers at the declared efforts, no unresolved blocking findings, all required artifacts installed and cataloged, and native run evidence and repair cycles archived."
+  status = "open"
+  evidence = ["workflows/reviews/gpt-1962-f01-production-2026-10-19/CYCLES.md"]
+
+  [[deliverables.requirements]]
+  id = "gpt-f01-validation-and-main"
+  criterion = "Required source, publication and deployment checks pass; all outgoing objects are reviewed for public disclosure; coherent commits reach origin/main without rewriting published history."
+  status = "open"
+  evidence = ["workflows/reviews/gpt-1962-f01-production-2026-10-19/CYCLES.md"]
+
+  [[deliverables.requirements]]
+  id = "gpt-f01-live-publication"
+  criterion = "The automatic Pages workflow succeeds and the three PDF routes, canonical web edition, catalog and document data are verified live against the accepted artifacts."
+  status = "open"
+  evidence = ["workflows/reviews/gpt-1962-f01-production-2026-10-19/CYCLES.md"]
+
+
+[[deliverables]]
 id = "claude-pc-s55-revision-2026-10-16"
 owner = "PROJECT-WORK.md"
 promise = "Fix the standing issues and the sourcing of the published Claude postconciliar Twenty-ninth Sunday (pc-s55): repair the shared tools the first run exposed, then drive a fresh proper-study version-12 run for the same identity through terminal acceptance with fresh cold reviews, resolving the 22 standing findings and the sourcing defects the handoff lists or recording why one cannot be resolved; publish the revised three documents and web edition; document every cycle; push to origin/main with the Pages deployment verified."

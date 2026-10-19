@@ -5,7 +5,30 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-10-16.
+Last reconciled: 2026-10-19.
+
+## GPT Christ the King three documents, 2026-10-19
+
+<!-- promised-deliverable: gpt-1962-christ-the-king-2026-10-19 -->
+
+The maintainer requested the upcoming Sunday's 1962 propers workflow through
+completion and publication to `main`, with subagents permitted. The target is
+25 October 2026, Christ the King, provider `gpt`, canonical identity
+`liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king`.
+The calendar computation places this feast ahead of the Twenty-second Sunday
+after Pentecost; the workflow must verify the appointment in the governing
+Missal and a dated occurrence witness. No unspecified local overlay is assumed.
+
+State: in progress. The clean workspace was fast-forwarded to current `main`
+at `c6da24eda`; the exact provider target is now authorized in the production
+plan. Production follows `proper-study` version 12: expansive study, concise
+study, standalone homily for an adult parish assembly, and canonical web
+edition, each with its required fresh review. No artifact or acceptance is
+claimed at this point. The driver record is
+`workflows/reviews/gpt-1962-f01-production-2026-10-19/CYCLES.md`.
+Coherent commits stay on `feature/propers/codex`; ordinary pushes to `main`
+and verification of the automatic Pages deployment are explicitly authorized.
+
 
 ## Claude postconciliar Twenty-ninth Sunday revision, 2026-10-16
 
