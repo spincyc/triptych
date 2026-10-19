@@ -299,6 +299,96 @@ C1 establishes attainable, source-checked coverage. A postconciliar exemplar
 with unavailable exact text may prove the renderer's partial-state behavior
 but cannot pass the complete-text gate.
 
+##### C2 exemplars and execution plan, 2026-10-19
+
+A read-only audit ran real Chromium against the source-served readers at
+`d3c36e8ea`. Its per-unit tables were transient; this section records the
+decisions and the gap register they produced.
+
+**Exemplars.** All three principal missals use Pentecost Sunday, civil date
+**2026-05-24**. That one formulary exercises a Sequence, the Pentecost
+genuflection, proper Ordinary variables, form and source alternatives, and a
+Sunday cycle. The three sides resolve the date independently, which also gives
+C5 its first Day Compare fixture.
+
+| Missal | Exemplar | Gate it can reach | Measured at selection |
+| --- | --- | --- | --- |
+| Roman 1962 | `pentecost` (printed pp. 356–358) | complete text, after bounded C3 work | 10 units: 6 Bible reconstructions, 5 bodies; Latin 5/5 collated word-exact projections; English 1/5; Preface, Communicantes and Hanc igitur not modelled |
+| Postconciliar | `pentecost`, form `day`, Year A | partial-state behaviour only | 16 units: 11 Bible, 5 bodies; Latin 0/5; English 2/5 (study Collect, antecedent Sequence); Missal frame withheld for lack of a Sequence slot |
+| Pre-1955 | `pentecost` | after the Bonn-witness inventory | inherited from 1962, uncollated |
+
+Alternates: 1962 Saturday of Our Lady III, the highest attainable text;
+postconciliar Corpus Christi; pre-1955 Vigil of Pentecost, a probable
+structural departure. 1962 Pentecost X and postconciliar Advent I stay
+regression baselines. Low Sunday 1962 (2026-04-12) and Lent III Year A
+(2026-03-08) cover long Gospels.
+
+**Decisions taken from existing guidance, 2026-10-19:**
+
+- A collated projection that is word-exact under the 2026-09-03 rule in
+  [propers-for-agents](propers-for-agents.md) is the target's wording and
+  counts as `exact-target`. That rule makes agreement of words, never of
+  strings, the test.
+- A Read-mode Contents jump writes `location` to the URL, as Missal mode
+  already does. The [vision](liturgy-browser-vision.md) requires stable
+  semantic location anchors.
+- The postconciliar Vigil-or-Day offering needs a cited source rule (G8). It is
+  research, not preference.
+- The pre-1955 exemplar is chosen after its witness inventory is read.
+
+**Gap register.** C2 owns wrong or unexplained claims, C3 missing text, and C4
+truthful but not yet usable presentation.
+
+| ID | Finding | Owner | Milestone |
+| --- | --- | --- | --- |
+| G1 | Coverage never receives the Latin provenance relation: `tools/mass-propers` omits it and `_missal_coverage.unit` reads `latin.rights` where data carry `latin.publication.basis`, so every report says "0 exact-target" | `tools/mass-propers`, `scripts/_missal_coverage.py` | C2 |
+| G2 | Caswall English is `unresolved` in 1962 and pre-1955 but `historical-antecedent` postconciliar | 1962 translation inventory | C2 |
+| G3 | Four 1962 oration absences say "rights restricted" although Cummiskey 1861 is public domain; the blocker is a missing passage binding | 1962 translation sidecar; absence wording | C2 retype; C3 binding |
+| G4 | Exemplar expected-target rows are unjoined and text-slot targets are unclassified | expected-target inventory, `expectations()` | C2 |
+| G5 | Ordinary variables are not appointed: Missal mode prints all eleven 1962 Prefaces, and the common Communicantes and Hanc igitur stand silently in Pentecost's proper seats; the postconciliar Preface and paschal dismissal are unmodelled; pre-1955 seasonal orations render on a first-class day | calendar appointments, Preface rules, Ordinary inventories, `tools/mass-ordinary`, `ordinary-seating.js` | C2 model; C3 texts |
+| G6 | 1962 English Missal mode shows postcommunion elements its inventory types `not-in-the-1962-ordo` | `roman-1962-ordo-missae-v1.toml` exclusions | C2 |
+| G7 | The postconciliar Ordinary inventory has no Sequence slot, so the Missal frame is withheld on Pentecost, Easter, Corpus Christi and Our Lady of Sorrows | postconciliar Ordinary inventory, seating | C2 |
+| G8 | Postconciliar 2026-05-24 offers Vigil and Day with no default and loses the celebration from the first view | postconciliar rubrics, assembly, calendar | C2 rule; C4 presentation |
+| G9 | No unit-level marker says a Bible reconstruction is not the Missal's wording | shared renderer | C2 |
+| G10 | Choosing an unavailable English hides the held Latin | shared renderer | C2; C4 pairing |
+| G11 | Pre-1955 Day surfaces and print omit the inherited-and-uncollated caveat | `day.js` notice and print | C2 |
+| G12 | `no-exemplar` units lose their typed reason ("No English or Latin body is held here") | shared absence wording | C2 |
+| G13 | Details says no formulary outcome was selected after an explicit `form=day` | `day.js` Details | C2 |
+| G14 | Sequence stanzas flatten, the genuflection rubric sits in principal text, and copy loses ℣ but gains labels | inline-action and stanza data contract (C2); rendering and copy (C4) | C2/C4 |
+| G15–G16 | Repeated "Not shown" notes, untagged Latin headings, small form radios, a witness chooser offering a witness with no body for the unit | C4 surfaces | C4 |
+| G17 | Read-mode Contents jumps write no `location` | reader state | C2 |
+| G18–G20 | Missal pericope incipits and refrains; 1962 Ordinary collation; the basis of the postconciliar study Collect | calendar and fragment data; Ordinary inventory; translation review | C3 |
+| G21 | Approved postconciliar English and Lectionary English are restricted, and no 2002/2008 Latin body is held | publication policy; participation-aid review due to begin by 2026-11-15 | C3, rights-blocked |
+| G22 | Pre-1955 needs witness loci, per-proper attestation, the Kalendarium and precedence | pre-1955 inventory | dependency |
+
+**Ordered work.** Each step regenerates through its owning tool and adds its
+regression before the next begins:
+
+1. truthful accounting (G1–G3);
+2. the expected-target join (G4), after the pre-1955 inventory lands;
+3. the appointment and sequence model (G5–G8); a proper Ordinary variable that
+   is not held seats a typed absence, never the common form;
+4. claim-local truth in both entrances (G9–G13, G17);
+5. the internal-structure data contract (G14), handing rendering to C4;
+6. exemplar evidence: harness states, a CLI/structure/browser event-order
+   parity test, the viewport and print matrix, and an external-review handoff.
+
+An exemplar passes C2 when:
+
+- every expected text slot is joined and classified;
+- every seat is the appointed text with its witness, relationship, locus and
+  basis, or a typed absence in the appointed place, with no common or
+  neighbouring substitute;
+- coverage, Details, notices, `complete-missal` and Propers agree;
+- Day and Propers render the same units;
+- language and witness switches preserve location and never substitute;
+- print carries identity, witness, coverage and recension caveats; and
+- the console is clean.
+
+1962 reaches the complete-text gate only after C3 supplies its chant,
+pericope-incipit, English and Ordinary-variable texts. Postconciliar is
+accepted only as a partial-state exemplar.
+
 #### C3: source and translation completion lanes
 
 - **1962:** recover remaining Latin and historical English against exact target

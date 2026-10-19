@@ -222,10 +222,23 @@ Remaining:
 
 <!-- promised-deliverable: missal-reader-c2-exemplars-2026-10-19 -->
 
-The same request starts C2. A read-only audit is choosing one representative
-Mass per principal missal from C1's coverage and auditing every unit against
-the roadmap's six-part pattern. **In progress: selection and audit running;
-no implementation yet.**
+The same request starts C2. **In progress: exemplars chosen; implementation
+lanes starting.** A read-only real-browser audit chose Pentecost Sunday,
+2026-05-24, for all three missals and audited every unit against the six-part
+pattern. The pre-1955 audit is provisional until its witness inventory lands.
+It found 22 gaps, now recorded in the
+[roadmap](guidance/liturgy-browser-roadmap.md#c2-exemplars-and-execution-plan-2026-10-19).
+The most serious are:
+
+- coverage never receives the Latin provenance relation, so every report says
+  "0 exact-target" (a C1 accounting defect);
+- Missal mode silently seats the common Communicantes and Hanc igitur in
+  Pentecost's proper seats, and prints all eleven 1962 Prefaces.
+
+Two open questions were settled from existing guidance: the 2026-09-03
+word-agreement rule makes collated word-exact projections `exact-target`, and
+the vision's stable semantic anchors make Read-mode Contents jumps URL
+`location`.
 
 ## Daily Missal reader recovery and completion plan, 2026-10-19
 
