@@ -300,6 +300,8 @@
           item.element.focus({ preventScroll: true });
           currentLocation = item.id;
           markCurrent();
+          // The controller owns the URL: a jump is a semantic location it may record.
+          if (typeof held.onContentsJump === 'function') held.onContentsJump(item.id);
         });
         contents.appendChild(button);
       });

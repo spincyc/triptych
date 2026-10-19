@@ -20,24 +20,31 @@ C2–C6, corpus text acquisition, and production deployment remain separate
 milestones. Existing ritual-flow and historical acceptance records retain
 their scope.
 
-**In progress: pre-1955 inventory under the 2026-10-19 maintainer decisions.**
-The common report, reader controls, verification and publication requirements
-pass. The maintainer then made three decisions, recorded in the roadmap's C1
-status:
+**Complete on `feature/missal-reader`; no production deployment.** Every C1
+requirement passes. The maintainer made three decisions on 2026-10-19, recorded
+in the roadmap's C1 status:
 
-- **1920 witness.** The files circulating as the "1920 typical edition" are
-  public domain for their 1920 content and may be used. They are the registered
-  Bonn 2004 *reimpressio* of a conformed edition of about 1954, now the
-  pre-1955 witness, with the 1922 Mame printing as control for post-1922
-  additions. Text first published in 1931 or later stays outside that rights
-  decision.
+- **1920 witness.** The circulating "1920 typical edition" files are public
+  domain for their 1920 content and usable. They are the registered Bonn 2004
+  *reimpressio* of a conformed edition of about 1954, accepted as the pre-1955
+  witness with the 1922 Mame printing as control. Text first published in 1931
+  or later stays outside that rights decision.
 - **2008.** Acquiring the complete 2008 book is deferred.
 - **Performance.** Load-time work is deferred to C6.
 
-Four lanes are enumerating the pre-1955 book from that witness. The 1962
-whole-book form and Preface boundaries are retired after independent
-page-image review. Text slots and several other dimensions remain explicit
-`unenumerated` boundaries for every family.
+Four parallel lanes then enumerated the whole Bonn witness: 45 slices and 8,274
+targets, every artifact page owned by a section slice or an extent boundary.
+322 targets sit in post-1922-additions slices, each absence confirmed on 1922
+Mame page images. The two older pre-1955 Holy Week slices, 42 rows each mapped
+one-to-one to a new row, are superseded. The inventory now holds 18,915 targets
+in 115 slices with 107 boundaries. All three whole-book universes stay
+`unresolved`: 1962's text slots and other dimensions, pre-1955's
+not-yet-reviewed whole-book dimensions, and the deferred 2008 book. No
+denominator is asserted beyond what the slices state.
+
+The C2 audit later found that coverage never received the Latin provenance
+relation, so every report said "0 exact-target". C2 step 1 fixed it: roman-1962
+now reports 1,377 exact-target Latin uses (1,068 targets).
 
 The retry's real-browser checks pass all 91 assertion groups: forty Propers,
 eight choices and 43 Day, against the corrected production state. Independent print review
@@ -222,8 +229,8 @@ Remaining:
 
 <!-- promised-deliverable: missal-reader-c2-exemplars-2026-10-19 -->
 
-The same request starts C2. **In progress: exemplars chosen; implementation
-lanes starting.** A read-only real-browser audit chose Pentecost Sunday,
+The same request starts C2. **In progress: exemplars chosen; steps 1 (truthful accounting) and 4
+(claim-local truth) implemented.** A read-only real-browser audit chose Pentecost Sunday,
 2026-05-24, for all three missals and audited every unit against the six-part
 pattern. The pre-1955 audit is provisional until its witness inventory lands.
 It found 22 gaps, now recorded in the

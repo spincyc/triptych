@@ -404,6 +404,21 @@ aggregate `publication_bases`. These fields grant no publication permission;
 the source text's `rights` authorization and the public projection's identity
 and content quarantine checks still control its admission.
 
+Each axis is read from the record that owns it (`_missal_coverage`, 2026-10-19).
+A Latin body takes its relationship, collation and basis from its own
+`latin.provenance` and `latin.publication`: only a collated
+`editorial-projection-exact-to-target` is `exact-target`, under the
+words-not-strings rule in [propers-for-agents](propers-for-agents.md), and a
+body a recension inherits through `text_from` is `uncollated` and never
+`exact-target` for the inheriting target. A translation row's relation comes
+from its entry, else from its witness row's declared `witness_relation`. A
+body absence takes its availability from the typed source reason behind the
+public `unavailable` state: `no-exemplar` is `not-sourced`, `rights-withheld`
+is `not-publishable`, and `witness-gap`, which the Propers sidecars use both
+for a checked absence in the witness and for an identity not yet established
+against it, stays `unresolved`. Only the class crosses into coverage, never
+the reason's witness, locator or note.
+
 The independent expected-target owner is
 `src/sources/inventories/missal-expected-targets-v1.toml`. Its sourced slices
 name their edition, territory, language, time boundary and enumeration state.

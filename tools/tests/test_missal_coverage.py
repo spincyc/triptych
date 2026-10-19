@@ -141,6 +141,106 @@ class CoverageTests(unittest.TestCase):
         self.assertEqual(other["languages"][0]["availability"], "inapplicable")
         self.assertEqual(english(other)["availability"], "absent-in-witness")
 
+    def latin(self, relationship="editorial-projection-exact-to-target", status="collated",
+              basis="public-domain"):
+        return {"text_sha256": "0" * 64, "withheld": False, "reason": None,
+                "provenance": {"status": status, "relationship": relationship},
+                "publication": {"status": "permitted", "basis": basis}}
+
+    def test_word_exact_collated_projection_is_exact_target_latin(self):
+        # G1: the 2026-09-03 rule makes a collated, word-exact projection the
+        # target's wording; its record, not its availability, says so.
+        one = coverage.unit({"source": "composed", "text": "Deus", "latin": self.latin()},
+                            target_id="collect", occurrence_id="collect")
+        latin = one["languages"][0]
+        self.assertEqual((latin["availability"], latin["relationship"], latin["collation"],
+                          latin["publication_basis"]),
+                         ("available", "exact-target", "collated", "public-domain"))
+        report = coverage.summarize([one], "mass")
+        self.assertEqual(report["languages"][0]["exact_target"], 1)
+        self.assertEqual(report["languages"][0]["exact_target_targets"], 1)
+        self.assertEqual(report["languages"][0]["collations"]["collated"], 1)
+        coverage.validate_summary(report)
+
+    def test_uncollated_or_other_witness_latin_is_not_exact_target(self):
+        cases = (
+            # identified but never collated against the target
+            (self.latin(status="identified"), "unresolved", "uncollated"),
+            # exact to some witness, not declared exact to the target
+            (self.latin(relationship="collated-exact"), "unresolved", "collated"),
+            (self.latin(relationship="exact-transcription"), "unresolved", "collated"),
+            (self.latin(relationship="collated-non-exact"), "unresolved", "collated"),
+            # a body with no provenance record at all
+            (None, "unresolved", "unresolved"),
+        )
+        for record, relation, collation in cases:
+            with self.subTest(record=record):
+                owner = {"source": "composed", "text": "Deus"}
+                if record is not None:
+                    owner["latin"] = record
+                latin = coverage.unit(owner, target_id="t", occurrence_id="o")["languages"][0]
+                self.assertEqual(latin["availability"], "available")
+                self.assertEqual(latin["relationship"], relation)
+                self.assertEqual(latin["collation"], collation)
+                report = coverage.summarize([coverage.unit(owner, target_id="t", occurrence_id="o")], "mass")
+                self.assertEqual(report["languages"][0]["exact_target"], 0)
+
+    def test_inherited_latin_is_uncollated_and_never_exact_target(self):
+        # Pre-1955 carries 1962's bodies by `text_from`; their collation was
+        # against 1962, so the same record is not exact for the inheriting target.
+        one = coverage.unit({"source": "composed", "text": "Deus", "latin": self.latin()},
+                            target_id="t", occurrence_id="o", latin_inherited=True)
+        latin = one["languages"][0]
+        self.assertEqual((latin["relationship"], latin["collation"]), ("unresolved", "uncollated"))
+        self.assertEqual(coverage.summarize([one], "mass")["languages"][0]["exact_target"], 0)
+
+    def test_witness_declared_antecedent_types_its_bodies_and_entries_still_win(self):
+        # G2: a source row's own relation covers every body it supplies.
+        witnesses = {
+            "edition.caswall": {"source_id": "edition.caswall", "witness_relation": "antecedent"},
+            "edition.irons": {"source_id": "edition.irons"},
+        }
+        one = coverage.unit({"translations": [
+            {"lang": "en", "text": "Holy Spirit!", "source_id": "edition.caswall", "rights": "public-domain"},
+        ]}, target_id="t", occurrence_id="o", witnesses=witnesses)
+        self.assertEqual(english(one)["relationship"], "historical-antecedent")
+        self.assertEqual(english(one)["witnesses"][0]["relationship"], "historical-antecedent")
+        both = coverage.unit({"translations": [
+            {"lang": "en", "text": "Day of wrath", "source_id": "edition.caswall", "rights": "public-domain"},
+            {"lang": "en", "text": "Day of ire", "source_id": "edition.irons", "rights": "public-domain"},
+        ]}, target_id="t2", occurrence_id="o2", witnesses=witnesses)
+        relations = {row["id"]: row["relationship"] for row in english(both)["witnesses"]}
+        self.assertEqual(relations, {"edition.caswall": "historical-antecedent",
+                                     "edition.irons": "unresolved"})
+        self.assertEqual(english(both)["relationship"], "unresolved")
+        own = coverage.unit({"translations": [
+            {"lang": "en", "text": "Exact", "source_id": "edition.caswall", "relation": "own"},
+        ]}, target_id="t3", occurrence_id="o3", witnesses=witnesses)
+        self.assertEqual(english(own)["relationship"], "exact-target")
+
+    def test_typed_source_absences_name_their_class_without_their_evidence(self):
+        # G3: a slot whose only blocker is an unbound passage is not sourced,
+        # not rights restricted; the public projection still says `unavailable`.
+        public = {"untranslated": [{"lang": "en", "state": "unavailable"}]}
+        for kinds, expected in (
+            (["no-exemplar"], "not-sourced"),
+            (["rights-withheld"], "not-publishable"),
+            (["witness-gap"], "unresolved"),
+            (["no-exemplar", "witness-gap"], "unresolved"),
+            (["no-exemplar", "rights-withheld"], "not-publishable"),
+            (None, "unresolved"),
+        ):
+            with self.subTest(kinds=kinds):
+                one = coverage.unit(public, target_id="t", occurrence_id="o",
+                                    absence_kinds={"en": kinds} if kinds else None)
+                self.assertEqual(english(one)["availability"], expected)
+                self.assertEqual(english(one)["publication_basis"],
+                                 "restricted" if expected == "not-publishable" else "unresolved")
+        # A publicly restricted translation stays restricted whatever the ledger says.
+        restricted = coverage.unit({"unavailable_translations": [{"lang": "en", "state": "rights-restricted"}]},
+                                   target_id="t", occurrence_id="o", absence_kinds={"en": ["no-exemplar"]})
+        self.assertEqual(english(restricted)["availability"], "not-publishable")
+
     def test_report_refuses_conflicting_occurrences_and_bad_partition(self):
         one = coverage.unit({}, target_id="target", occurrence_id="one")
         other = copy.deepcopy(one)
@@ -223,6 +323,79 @@ class GeneratorCoverageTests(unittest.TestCase):
         self.assertNotEqual(left[0]["occurrence_id"], right[0]["occurrence_id"])
         coverage.validate_summary(report["coverage"])
 
+    def test_generator_passes_latin_record_and_keeps_inherited_latin_below_target(self):
+        propers = tool("mass-propers")
+        latin = {"text_sha256": "0" * 64, "withheld": False, "reason": None,
+                 "provenance": {"status": "collated",
+                                "relationship": "editorial-projection-exact-to-target"},
+                 "publication": {"status": "permitted", "basis": "public-domain"}}
+
+        def mass(key, stamp):
+            row = {"key": key, "name": key, "propers": [
+                {"name": "Collect", "source": "composed", "text": "Deus", "latin": dict(latin)}
+            ]}
+            if stamp is not None:
+                row["recension"] = stamp
+            return row
+
+        masses = [
+            mass("own", None),
+            mass("stated", {"calendar": "roman-1962", "kind": "replaced", "stated": True,
+                            "text_from": "", "basis": "", "also": []}),
+            mass("inherited", {"calendar": "roman-1962", "kind": "", "stated": False,
+                               "text_from": "roman-1962", "basis": "", "also": []}),
+        ]
+        document = {"psalm_numbering": "vulgate",
+                    "sections": {"temporal": {"kind": "seasonal", "masses": masses}}}
+        with mock.patch.object(propers, "load_calendar", return_value=document), \
+             mock.patch.object(propers, "translation_overlay", return_value=({}, {}, [], {})), \
+             mock.patch.object(propers, "publication_records", return_value=({}, [])), \
+             mock.patch.object(propers, "sanitize_proper", side_effect=lambda value, *args: value), \
+             mock.patch.object(propers._missal_coverage, "expectations", return_value={"state": "unresolved"}):
+            report = propers.calendar_structure(ROOT / "src/sources/calendars", "roman-pre-1955", {})
+        latin_rows = {row["key"]: row["propers"][0]["coverage"]["languages"][0]
+                      for row in report["masses"]}
+        self.assertEqual((latin_rows["own"]["relationship"], latin_rows["own"]["collation"]),
+                         ("exact-target", "collated"))
+        self.assertEqual(latin_rows["stated"]["relationship"], "exact-target")
+        self.assertEqual((latin_rows["inherited"]["relationship"], latin_rows["inherited"]["collation"]),
+                         ("unresolved", "uncollated"))
+        self.assertEqual(latin_rows["inherited"]["publication_basis"], "public-domain")
+        self.assertEqual(report["coverage"]["languages"][0]["exact_target"], 2)
+        coverage.validate_summary(report["coverage"])
+
+    def test_source_row_relation_requires_evidence_and_an_established_attestation(self):
+        propers = tool("mass-propers")
+        good = {"id": "w", "source_id": "edition.w", "label": "W", "rights": "public-domain",
+                "attests": "si-quid-est-1634", "witness_relation": "antecedent",
+                "witness_relation_basis": "dated before the target"}
+        for row, message in (
+            (dict(good, witness_relation="own"), "must be 'antecedent'"),
+            ({key: value for key, value in good.items() if key != "witness_relation_basis"},
+             "requires witness_relation_basis"),
+            (dict(good, attests="unestablished"), "established attestation"),
+        ):
+            with self.subTest(message=message), tempfile.TemporaryDirectory() as tmp:
+                inventories = Path(tmp) / "inventories"
+                inventories.mkdir()
+                lines = ["[[sources]]"] + [f"{key} = {json.dumps(value)}" for key, value in row.items()]
+                (inventories / "fixture-proper-translations-v1.toml").write_text("\n".join(lines) + "\n")
+                with mock.patch.object(propers, "inventory_root", return_value=inventories), \
+                     mock.patch.object(propers, "translation_ledger_calendars", return_value=["fixture"]), \
+                     mock.patch.object(propers._calendars, "load_document", return_value={}), \
+                     self.assertRaisesRegex(ValueError, message):
+                    propers.translation_overlay("fixture", Path(tmp))
+        with tempfile.TemporaryDirectory() as tmp:
+            inventories = Path(tmp) / "inventories"
+            inventories.mkdir()
+            lines = ["[[sources]]"] + [f"{key} = {json.dumps(value)}" for key, value in good.items()]
+            (inventories / "fixture-proper-translations-v1.toml").write_text("\n".join(lines) + "\n")
+            with mock.patch.object(propers, "inventory_root", return_value=inventories), \
+                 mock.patch.object(propers, "translation_ledger_calendars", return_value=["fixture"]), \
+                 mock.patch.object(propers._calendars, "load_document", return_value={}):
+                witnesses = propers.translation_overlay("fixture", Path(tmp))[3]
+            self.assertEqual(witnesses["edition.w"]["witness_relation"], "antecedent")
+
 
 class RealCorpusCoverageTests(unittest.TestCase):
     @classmethod
@@ -246,6 +419,57 @@ class RealCorpusCoverageTests(unittest.TestCase):
         self.assertGreater(english(document["coverage"])["available"], 0)
         self.assertTrue(any(mass.get("recension") for mass in document["masses"]))
         self.assertTrue(all(row["exact_target"] == 0 for row in document["coverage"]["languages"]))
+
+    def test_pentecost_exemplar_accounts_truthfully(self):
+        """The C2 exemplar, 1962 Pentecost (2026-05-24), after G1-G3."""
+        def bodies(calendar):
+            mass = next(row for row in self.files[calendar]["masses"] if row["key"] == "pentecost")
+            return {row["name"]: row["coverage"]["languages"] for row in mass["propers"]
+                    if (row.get("form_id") or "main") in {"main", "day"}
+                    and row.get("coverage") and row["coverage"]["component"] != "scripture"}
+
+        roman = bodies("roman-1962")
+        self.assertEqual(set(roman), {"Collect", "Alleluia", "Sequence", "Secret", "Postcommunion"})
+        for name, (latin, english_row) in roman.items():
+            with self.subTest(name=name):
+                self.assertEqual((latin["availability"], latin["relationship"], latin["collation"],
+                                  latin["publication_basis"]),
+                                 ("available", "exact-target", "collated", "public-domain"))
+                if name == "Sequence":
+                    self.assertEqual(english_row["relationship"], "historical-antecedent")
+                    self.assertEqual([row["relationship"] for row in english_row["witnesses"]],
+                                     ["historical-antecedent"])
+                else:
+                    # Cummiskey 1861 is public domain; the blocker is an unbound passage.
+                    self.assertEqual(english_row["availability"], "not-sourced")
+        mass = next(row for row in self.files["roman-1962"]["masses"] if row["key"] == "pentecost")
+        self.assertEqual(mass["coverage"]["languages"][0]["exact_target"], 5)
+        # Pre-1955 inherits 1962's bodies uncollated: never exact-target there.
+        for name, (latin, english_row) in bodies("roman-pre-1955").items():
+            with self.subTest(calendar="roman-pre-1955", name=name):
+                self.assertNotEqual(latin["relationship"], "exact-target")
+                if name == "Sequence":
+                    self.assertEqual(english_row["relationship"], "historical-antecedent")
+        sequence = bodies("postconciliar")["Sequence"][1]
+        self.assertEqual(sequence["relationship"], "historical-antecedent")
+
+    def test_no_public_domain_witness_absence_is_typed_rights_withheld(self):
+        # G3: `rights-withheld` asserts a restriction. The only 1962 rows that
+        # keep it are the Supreme-Pontiff readings on Lasance's excluded insert.
+        import tomllib
+        ledger = tomllib.loads((ROOT / "src/sources/inventories/roman-1962-proper-translations-v1.toml")
+                               .read_text(encoding="utf-8"))
+        withheld = [row for row in ledger["untranslated"] if row["reason"]["kind"] == "rights-withheld"]
+        self.assertEqual({row["mass"] for row in withheld}, {"commune-summorum-pontificum"})
+        self.assertEqual(len(withheld), 5)
+        retyped = [row for row in ledger["untranslated"] if "(C2 gap G3)" in row["note"]]
+        self.assertEqual(len(retyped), 339)
+        self.assertEqual({row["reason"]["kind"] for row in retyped}, {"no-exemplar"})
+        restricted = [unit for mass in self.files["roman-1962"]["masses"]
+                      for unit in coverage.proper_units(mass)
+                      if english(unit)["availability"] == "not-publishable"]
+        self.assertTrue(restricted)
+        self.assertTrue(all("summorum-pontificum" in unit["target_id"] for unit in restricted))
 
     def test_pentecost_19_keeps_all_seven_scripture_bearing_propers(self):
         mass = next(row for row in self.files["roman-1962"]["masses"] if row["key"] == "pentecost-19")

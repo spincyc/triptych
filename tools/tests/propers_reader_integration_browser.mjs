@@ -441,6 +441,82 @@ async function snapshot(cdp) {
   }))()`);
 }
 
+// Whether the selected Latin Proper bodies fall short of exact target wording,
+// computed from the same structure and unit coverage records the notice reads.
+// The coverage lane regrades these records, so the notice is checked against the
+// contract rather than against a fixed count (C2).
+async function latinExactIncomplete(cdp, calendar, debug = 'propersReaderDebug') {
+  return evaluate(cdp, `(async () => {
+    const structure = await window.Triptych.loadJSON('structure/propers/${calendar}.json');
+    const report = window.Triptych.summarizeCoverage(
+      window.Triptych.selectedCoverageUnits(window[${JSON.stringify(debug)}].semantic, structure));
+    const row = report.languages.find(one => one.lang === 'la');
+    return row.exact_target < row.occurrences;
+  })()`);
+}
+
+// Every rendered Proper unit against its own unit coverage record: a Bible
+// reconstruction carries the claim immediately before its passages; a unit the
+// record does not type as one carries none (C2 G9).
+async function bibleClaimAudit(cdp, debug, calendar) {
+  return evaluate(cdp, `(async () => {
+    const T = window.Triptych;
+    const structure = await T.loadJSON('structure/propers/${calendar}.json');
+    const events = [];
+    (window[${JSON.stringify(debug)}].semantic.events || []).forEach(row => {
+      if (row.kind === 'proper') events.push(row);
+      if (row.kind === 'proper-choice') (row.options || []).forEach(option =>
+        (option.events || []).forEach(member => events.push(member)));
+    });
+    return events.map(event => {
+      const expected = T.selectedCoverageUnits({ events: [event] }, structure).some(unit =>
+        unit.scripture_component
+          ? unit.scripture_component.relationship === 'bible-reconstruction'
+          : unit.component === 'scripture' &&
+            (unit.languages || []).some(row => row.relationship === 'bible-reconstruction'));
+      const node = document.querySelector('[data-proper-choice-member-event="' + event.id + '"]') ||
+        document.querySelector('[data-semantic-event-id="' + event.id + '"]');
+      const claims = node ? [...node.querySelectorAll('[data-unit-claim="bible-reconstruction"]')] : [];
+      return {
+        id: event.id, expected, found: Boolean(node), claims: claims.length,
+        citations: node ? node.querySelectorAll('.citation').length : 0,
+        ordered: claims.every(claim => claim.nextElementSibling &&
+          claim.nextElementSibling.classList.contains('citation')),
+        text: claims.map(claim => claim.textContent.trim())
+      };
+    });
+  })()`);
+}
+
+function assertBibleClaims(rows, label) {
+  assert.ok(rows.length > 0, label + ' rendered no Proper units');
+  assert.ok(rows.some(row => row.expected) && rows.some(row => !row.expected),
+    label + ' exemplar exercises both kinds: ' + JSON.stringify(rows));
+  for (const row of rows) {
+    assert.ok(row.found, label + ' unit missing from the page: ' + row.id);
+    if (row.expected) {
+      assert.ok(row.claims >= 1 && row.claims <= row.citations, label + ' ' + JSON.stringify(row));
+      assert.ok(row.ordered, label + ' claim not set before its passage: ' + JSON.stringify(row));
+      assert.ok(row.text.every(text => text === 'Bible reconstruction · Missal wording not established'),
+        label + ' ' + JSON.stringify(row));
+    } else {
+      assert.equal(row.claims, 0, label + ' claim on a unit not typed as reconstruction: ' + row.id);
+    }
+  }
+}
+
+async function claimsSurvivePrint(cdp) {
+  await cdp.send('Emulation.setEmulatedMedia', { media: 'print' });
+  try {
+    return await evaluate(cdp, `[...document.querySelectorAll('[data-unit-claim]')].map(node => {
+      const style = getComputedStyle(node);
+      return style.display !== 'none' && style.visibility !== 'hidden' && node.getClientRects().length > 0;
+    })`);
+  } finally {
+    await cdp.send('Emulation.setEmulatedMedia', { media: '' });
+  }
+}
+
 async function metrics(cdp) {
   return evaluate(cdp, `(() => {
     const action = document.querySelector('.reader-actions');
@@ -483,7 +559,8 @@ async function assertions(cdp, base) {
     // Held bodies do not establish target fidelity or exact Scripture wording.
     assert.equal(value.noticeHidden, false);
     assert.match(value.notice, /represented texts/);
-    assert.match(value.notice, /Exact target wording remains incomplete/);
+    assert.equal(/Exact target wording remains incomplete/.test(value.notice),
+      await latinExactIncomplete(cdp, 'roman-1962'), value.notice);
     assert.match(value.notice, /Bible reconstructions/);
     assert.deepEqual(value.semantic.coverage.map(row => [row.scope, row.completeness]),
       [['formulary:advent-1', 'complete']]);
@@ -649,9 +726,11 @@ async function assertions(cdp, base) {
 
   await check('cycle branches keep typed absences isolated and held translations reachable', async () => {
     const cases = [
-      [STATES.cycleAUntranslated, 'rights-restricted', /rights restricted/i,
+      [STATES.cycleAUntranslated, 'rights-restricted',
+        /English translation unavailable for this cycle: not publishable here \(its use is rights restricted\)\. The Latin original is shown\./,
         'A Latin sibling sentinel', 'C Latin safe sibling'],
-      [STATES.cycleCUntranslated, 'unavailable', /No English body is held.*cycle/i,
+      [STATES.cycleCUntranslated, 'unavailable',
+        /English translation unavailable for this cycle: [a-z ]+\. The Latin original is shown\./,
         'C Latin safe sibling', 'A Latin sibling sentinel']
     ];
     for (const [state, unavailable, notice, present, absent] of cases) {
@@ -667,8 +746,9 @@ async function assertions(cdp, base) {
       assert.equal(row.selected.missing, true);
       assert.equal(row.selected.text, null);
       assert.match(row.text, notice);
-      if (unavailable === 'unavailable') assert.match(row.text, new RegExp(present));
-      else assert.doesNotMatch(row.text, new RegExp(present));
+      // The semantic selection stays the requested English absence; the held
+      // Latin original of the same cycle remains visible beside it (C2 G10).
+      assert.match(row.text, new RegExp(present));
       assert.doesNotMatch(row.text, new RegExp(absent));
     }
 
@@ -710,6 +790,15 @@ async function assertions(cdp, base) {
     assert.match(row.composed, /This is a wise virgin, and one of the number of the prudent/);
     assert.equal(row.lang, 'en');
     assert.doesNotMatch(row.text, /Latin text unavailable|No English body is held/i);
+  });
+
+  await check('C2 G9: Bible-reconstructed units carry one quiet claim, in Read and print', async () => {
+    await candidate(cdp, base, STATES.postPentecostDay);
+    assert.equal((await snapshot(cdp)).outcome, 'ready');
+    assertBibleClaims(await bibleClaimAudit(cdp, 'propersReaderDebug', 'postconciliar'),
+      'Propers postconciliar Pentecost (day)');
+    const printed = await claimsSurvivePrint(cdp);
+    assert.ok(printed.length > 0 && printed.every(Boolean), JSON.stringify(printed));
   });
 
   await check('source alternatives remain one atomic form-exact choice in source order', async () => {
@@ -1133,7 +1222,7 @@ async function assertions(cdp, base) {
     assert.ok(value.semantic.coverage.some(row =>
       row.state === 'unavailable' && row.scope === 'proper-translation:en'));
     assert.ok(value.texts.some(row =>
-      /No English (?:or Latin body is held here|body is held|translation is recorded)/i.test(row)));
+      /English translation unavailable: (?:not resolved|not yet sourced|not publishable here|not present in this witness|not part of this rite or branch)/.test(row)));
     await click(cdp, '[data-reader-action="browse"]');
     const form = await browseSnapshot(cdp);
     assert.equal(form.witnessHidden, true); assert.equal(form.witnessDisplay, 'none');

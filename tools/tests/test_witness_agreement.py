@@ -623,11 +623,14 @@ class TheCorpusItself(unittest.TestCase):
         unavailable = [
             row
             for row in document["untranslated"]
-            if row.get("reason", {}).get("source_id") == EDITION
-            and row.get("reason", {}).get("kind") == "rights-withheld"
+            if row.get("reason") == {"kind": "no-exemplar"}
+            and EDITION in row.get("note", "")
         ]
         # 348 until 2026-10-01: four pentecost-19 rows, then nine orations of
         # pentecost-13 through pentecost-15 acquired exact publication bindings.
+        # On 2026-10-19 (C2 gap G3) the 335 were retyped from rights-withheld
+        # to no-exemplar: the witness is public domain and only the binding is
+        # missing. Each note still names this edition as the quarantined lead.
         self.assertEqual(len(unavailable), 335)
         self.assertTrue(all("text" not in row for row in unavailable))
 

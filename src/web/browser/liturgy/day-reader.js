@@ -140,6 +140,24 @@
     return runtime.bibles.find(function (row) { return row.id === id; }) || null;
   }
 
+  function resultMass(result) {
+    const key = result && result.resolved && result.resolved.formulary;
+    return key && runtime.structure && (runtime.structure.masses || []).find(function (row) {
+      return row.key === key;
+    }) || null;
+  }
+
+  /** The recension caveat the Propers entrance states for the same structure. */
+  function recensionFor(result) {
+    return runtime.structure && T.recensionContext(runtime.structure, resultMass(result),
+      function (id) { const row = missalRow(id); return row && (row.edition || row.label) || id; });
+  }
+
+  function withRecensionNotice(result, text) {
+    const recension = recensionFor(result);
+    return [recension && recension.notice, text].filter(Boolean).join(' ');
+  }
+
   function sourceIndex(event) {
     const hook = (event.sourceHooks || []).find(function (one) {
       return one.kind === 'proper-structure';
@@ -655,6 +673,10 @@
     }
     const missal = missalRow(state.edition.id);
     const bible = bibleRow(state.bible.id);
+    const firstResult = runtime.result || runtime.branches.map(function (row) {
+      return row.result;
+    }).find(Boolean) || null;
+    const recension = recensionFor(firstResult);
     const selection = T.el('section', 'details-section');
     selection.appendChild(T.el('h3', null, 'Selection'));
     selection.appendChild(definitionList([
@@ -678,13 +700,19 @@
         : (runtime.result && runtime.result.resolved && runtime.result.resolved.formulary)],
       ['Mass form', state.form ||
         (runtime.result && runtime.result.resolved && runtime.result.resolved.form)],
-      ['Text coverage', runtime.branches.map(function (row) {
+      ['Historical boundary — stands before', recension && recension.boundaryLabel],
+      ['Recension coverage', recension && recension.coverage],
+      ['Proper recension basis', recension && recension.coverageBasis],
+      ['Proper text source', recension && recension.textSource],
+      ['Inheritance basis', recension && recension.inheritanceBasis],
+      ['Text coverage', withRecensionNotice(firstResult, runtime.branches.map(function (row) {
         return row.result && coverageMessage(row.result, true);
-      }).filter(Boolean).join(' ')]
+      }).filter(Boolean).join(' '))]
     ]));
     detailsBody.appendChild(selection);
 
-    if (runtime.outcome === 'ready' && runtime.result && runtime.result.resolved) {
+    if (runtime.result && runtime.result.resolved && (runtime.outcome === 'ready' ||
+        (runtime.outcome === 'unresolved' && runtime.result.resolved.formulary))) {
       const calendar = T.el('section', 'details-section');
       calendar.appendChild(T.el('h3', null, 'Resolved Day result'));
       const winner = runtime.branch && runtime.branch.winner;
@@ -696,21 +724,25 @@
         ['Standing', runtime.result.resolved && runtime.result.resolved.standing]
       ]));
       detailsBody.appendChild(calendar);
-    } else if (runtime.outcome !== 'ready') {
+    }
+    if (runtime.outcome !== 'ready') {
       const outcome = T.el('section', 'details-section');
       outcome.appendChild(T.el('h3', null, 'Reader outcome'));
       const ordinaryUnresolved = runtime.branches.some(function (row) {
         return row.result && (row.result.ordinaryUnresolved || []).length;
       });
+      const selected = selectedOutcomeMessage(runtime.result);
+      const open = ordinaryUnresolved
+        ? 'Some Ordinary elements have unresolved applicability, so their text is not shown.'
+        : runtime.branches.length > 1 && runtime.branches.some(function (row) {
+          return row.result && row.result.resolved && !(row.result.unresolvedChoices || []).length;
+        })
+        ? 'The current request has rendered territorial results alongside a branch-local formulary choice that remains unresolved.'
+        : selected ? null
+        : 'The current request is validated, but no formulary outcome has been selected.';
       const messages = {
         deferred: 'An active request is valid and preserved, but is not yet rendered.',
-        unresolved: ordinaryUnresolved
-          ? 'Some Ordinary elements have unresolved applicability, so their text is not shown.'
-          : runtime.branches.length > 1 && runtime.branches.some(function (row) {
-            return row.result && row.result.resolved && !(row.result.unresolvedChoices || []).length;
-          })
-          ? 'The current request has rendered territorial results alongside a branch-local formulary choice that remains unresolved.'
-          : 'The current request is validated, but no formulary outcome has been selected.',
+        unresolved: [selected, open].filter(Boolean).join(' '),
         unrenderable: 'The current request is valid, but its semantic document cannot be rendered from the available production resources.'
       };
       outcome.appendChild(T.el('p', 'surface-note', messages[runtime.outcome] || 'This selection is not resolved.'));
@@ -727,6 +759,24 @@
     window.dayReaderDebug.detailsBuilds += 1;
   }
 
+  /** An honoured explicit formulary or form is selected; only what is open is unresolved. */
+  function selectedOutcomeMessage(result) {
+    const resolved = result && result.resolved;
+    const mass = resolved && resolved.formulary && resultMass(result);
+    if (!mass) return null;
+    const form = (mass.forms || []).find(function (row) { return row.id === resolved.form; });
+    const open = (result.unresolvedChoices || []).map(function (choice) {
+      const event = result.events.find(function (row) { return row.id === choice.id; });
+      return (event && event.kind === 'proper-choice' ? properChoiceLabel(event) : choice.id) +
+        ' (' + choice.options.map(function (option) {
+          return T.titleCase(String(option.id).replace(/[-_]+/g, ' '));
+        }).join(' or ') + ')';
+    });
+    return 'Selected formulary: ' + (mass.name || mass.key) +
+      (resolved.form ? '; form: ' + (form ? form.name : resolved.form) : '') + '.' +
+      (open.length ? ' Still to be chosen: ' + open.join('; ') + '. No option is selected silently.' : '');
+  }
+
   function refreshDetailsAfterOutcome() {
     runtime.detailsLoaded = false;
     detailsBody.replaceChildren(T.el('p', 'surface-note',
@@ -740,7 +790,8 @@
     beforeOpen: function (name) {
       if (name === 'details') populateDetails();
       if (name === 'date') populateDateSurface();
-    }
+    },
+    onContentsJump: writeContentsLocation
   });
 
   function ordinaryVariantGroups(ordinary) {
@@ -1431,7 +1482,7 @@
         'No default selected'
       ].filter(Boolean).join(' · ')
     });
-    coverageNotice.textContent = coverageMessage(result);
+    coverageNotice.textContent = withRecensionNotice(result, coverageMessage(result));
     coverageNotice.hidden = false;
     document.title = documentChoice.title + ' — Day — Triptych';
     refreshDetailsAfterOutcome();
@@ -1600,15 +1651,18 @@
 
     const notices = rows.map(function (row) { return row.notice; }).filter(Boolean);
     const uncompiled = rows.map(function (row) { return row.uncompiled; }).filter(Boolean);
+    // Said once for the structure every branch reads, and printed with the notices.
+    const firstResult = rows.map(function (row) { return row.result; }).find(Boolean) || null;
     if (uncompiled.length) {
-      coverageNotice.textContent = multiple
+      coverageNotice.textContent = withRecensionNotice(firstResult, multiple
         ? 'One or more held territorial results are not fully compiled; each available portion remains identified.'
-        : uncompiled[0].textContent;
+        : uncompiled[0].textContent);
       coverageNotice.hidden = false;
     } else {
-      coverageNotice.textContent = notices.length
-        ? Array.from(new Set(notices)).join(' ') : '';
-      coverageNotice.hidden = !notices.length;
+      const notice = withRecensionNotice(firstResult, notices.length
+        ? Array.from(new Set(notices)).join(' ') : '');
+      coverageNotice.textContent = notice;
+      coverageNotice.hidden = !notice;
     }
   }
 
@@ -2750,6 +2804,25 @@
     runtime.modeStartedAt = performance.now();
     navigate({ mode: 'missal' }, ['ordinary'], { location: location, modeFocus: true });
   });
+  /* A Contents jump is a stable semantic location in Read and Missal, written as
+   * Propers writes it: the entry is replaced, nothing re-renders, and a target a
+   * fresh load would refuse clears `location`. */
+  function writeContentsLocation(id) {
+    const normalized = runtime.normalized;
+    if (!normalized || ['ready', 'unresolved'].indexOf(runtime.outcome) < 0) return;
+    const node = Array.from(reading.querySelectorAll('[data-semantic-event-id]')).find(function (row) {
+      return row.dataset.semanticLocation === id;
+    });
+    const event = node && node.dataset.semanticEventId;
+    if (event && (runtime.mode === 'missal' || /^proper(?:-choice)?\//.test(event))) {
+      normalized.state.semanticLocation = { eventId: id };
+    } else delete normalized.state.semanticLocation;
+    history.replaceState(Object.assign({}, history.state, {
+      dayReaderLocation: normalized.state.semanticLocation ? { kind: 'event', id: id } : null
+    }), '', Contract.canonicalRoute('day', window.location.pathname) + window.location.search +
+      Contract.serializeLegacy(normalized));
+  }
+
   let historyRenderTimer = null;
   function scheduleHistoryRender() {
     if (historyRenderTimer !== null) return;

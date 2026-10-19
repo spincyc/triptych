@@ -199,69 +199,9 @@
     return value ? T.titleCase(String(value).replace(/-/g, ' ')) : null;
   }
 
-  function sourceStateLabel(value) {
-    const held = typeof value === 'string' ? value.trim() : '';
-    return held ? held.charAt(0).toUpperCase() + held.slice(1) : null;
-  }
-
+  /** Shared with Day, so both entrances state the same recension caveat. */
   function recensionContext(structure, mass) {
-    const boundaries = structure && Array.isArray(structure.stands_before)
-      ? structure.stands_before.filter(function (id) {
-        return typeof id === 'string' && id;
-      }) : [];
-    const candidate = structure && structure.recension_coverage;
-    const coverage = candidate && typeof candidate === 'object' && !Array.isArray(candidate)
-      ? candidate : null;
-    const domains = coverage && coverage.domains && typeof coverage.domains === 'object'
-      ? coverage.domains : {};
-    const properDomain = domains.propers && typeof domains.propers === 'object'
-      ? domains.propers : {};
-    const inheritance = coverage && coverage.inheritance &&
-      typeof coverage.inheritance === 'object' ? coverage.inheritance : {};
-    const stamp = mass && mass.recension && typeof mass.recension === 'object'
-      ? mass.recension : null;
-    if (!coverage && !stamp && !boundaries.length) return null;
-    const sourceId = stamp && typeof stamp.text_from === 'string' && stamp.text_from
-      ? stamp.text_from : null;
-    const additional = stamp && Array.isArray(stamp.also) ? stamp.also.filter(function (row) {
-      return row && typeof row === 'object' && typeof row.kind === 'string' && row.kind;
-    }) : [];
-    const coverageStatus = coverage && coverage.status || null;
-    const properStatus = properDomain.state || null;
-    const inheritanceStatus = inheritance.status || null;
-    const inheritanceSource = inheritance.source_calendar || null;
-    const coverageLabel = [
-      coverageStatus && sourceStateLabel(coverageStatus) + ' finding aid',
-      properStatus && 'Propers: ' + sourceStateLabel(properStatus),
-      coverage && coverage.as_of && 'as of ' + coverage.as_of
-    ].filter(Boolean).join(' · ') || null;
-    const notice = [
-      coverageStatus && 'This edition surface is a ' + coverageStatus +
-        ' finding aid; recension coverage is dated ' + (coverage.as_of || 'without an as-of date') + '.',
-      properStatus && 'Proper wording coverage is ' + properStatus + '.',
-      inheritanceStatus && 'Inherited material' +
-        (inheritanceSource ? ' from ' + editionName(inheritanceSource) : '') +
-        ' remains ' + inheritanceStatus + '.'
-    ].filter(Boolean).join(' ') || null;
-    return {
-      coverage: coverageLabel,
-      coverageAsOf: coverage && coverage.as_of || null,
-      coverageBasis: properDomain.basis || null,
-      inheritanceBasis: inheritance.basis || null,
-      notice: notice,
-      textSource: sourceId
-        ? editionName(sourceId) + ' · inherited ' + (inheritanceStatus || 'uncollated')
-        : (stamp && stamp.stated === true
-          ? 'Departure stated by this recension; no other calendar supplies this formulary'
-          : null),
-      departure: stamp && stamp.kind || null,
-      departureAct: stamp && stamp.act || null,
-      departureBasis: stamp && stamp.basis || null,
-      additional: additional,
-      boundaries: boundaries,
-      boundaryLabel: boundaries.length ? boundaries.join('; ') : null,
-      sourceId: sourceId
-    };
+    return T.recensionContext(structure, mass, editionName);
   }
 
   function setSourceContext(parts) {

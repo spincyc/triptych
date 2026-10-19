@@ -145,7 +145,11 @@ export function verifyRealWitnesses(structure, root) {
     const bodies = bodyRows.map(row => T.orationFor(row, 'en', witness));
     assert.equal(bodies.filter(row => !row.missing).length, held);
     assert.equal(bodies.filter(row => row.missing).length, 6 - held);
-    assert.equal(bodies.filter(row => row.reason === 'rights-restricted').length, 2);
+    // Restricted absences keep their type rather than becoming witness gaps. The
+    // coverage lane retypes these records, so the count follows the data (C2).
+    assert.equal(bodies.filter(row => row.reason === 'rights-restricted').length,
+      bodyRows.filter(row => (row.unavailable_translations || []).some(entry =>
+        entry.lang === 'en' && entry.state === 'rights-restricted')).length);
     assert.ok(bodies.filter(row => row.missing).every(row => row.text === null && !row.fallback));
     assert.match(T.coverageNoticeText(report, 'en', witness),
       new RegExp(held + '/6 uses available from the selected witness'));

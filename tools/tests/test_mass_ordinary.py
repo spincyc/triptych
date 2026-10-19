@@ -1766,10 +1766,13 @@ process.stdout.write(JSON.stringify({
         # dialogue and Pax regained their opening "Priest"; and a final word
         # label is no longer glued to its words ("ResponseAmen." became
         # "Response Amen."), matching every interior label.
+        # Re-pinned 2026-10-19 (C2 gap G3): only the Collect, Secret and
+        # Postcommunion English absences of Pentecost X changed state, from
+        # rights-restricted to unavailable; count and order are unchanged.
         expected = {
             "pentecost_10_text": (
                 205,
-                "60485d61b5edca3cada03d486e2fa671b3e1f3637a0f53f95873f7212bce4109",
+                "30d20acee086f4d87398e3d36f488bab7f509a8114ba1c296a6ec1b959835888",
             ),
             "ot_18_text": (
                 67,
@@ -2339,11 +2342,14 @@ class FormularyPage(unittest.TestCase):
         # citation numbering and hebrew-unnumbered-titles loci additions:
         # 16 fields in Advent I and six in ot-18, with no prayer text or
         # translation/provenance change and the same ten/eleven Proper rows.
+        # Re-pinned 2026-10-19 (C2 gap G3): Advent I's Collect, Secret and
+        # Postcommunion English absences changed state from rights-restricted
+        # to unavailable; nothing else in these rows changed.
         expected = {
             "roman-1962": (
                 "advent-1",
                 10,
-                "23cb24d02409584f7c1e1d436dbbb279f29f09b5887082610458f079f0974b5f",
+                "8e36c79bba3591bbf94933c71422f087f6a1e778b1970e4138962b36785f81ea",
             ),
             "postconciliar": (
                 "ot-18",
