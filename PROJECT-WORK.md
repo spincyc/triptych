@@ -5,7 +5,35 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-10-16.
+Last reconciled: 2026-10-19.
+
+## Claude 1962 Christ the King three documents, 2026-10-19
+
+<!-- promised-deliverable: claude-1962-f01-christ-the-king-three-documents-2026-10-19 -->
+
+The maintainer asked on 2026-10-19 for the TLM propers workflow for the
+upcoming Sunday, 25 October 2026, to be driven to completion and pushed to
+`main`, with subagents permitted. The maintainer also confirmed the provider
+authorization explicitly. `tools/mass-today --date 2026-10-25 --calendar
+roman-1962` resolves the feast of Our Lord Jesus Christ the King
+(*D. N. Iesu Christi Regis*), first class, which the general rubrics assign
+perpetually to the last Sunday of October. It displaces the Twenty-second
+Sunday after Pentecost (Easter 5 April 2026, Pentecost 24 May, twenty-two
+weeks to 25 October), and `tools/calendar-rubrics day` also lists the
+commemoration of Ss. Chrysanthus and Daria as displaced. The target is
+provider `claude`, identity
+`liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king`. That is the
+profile's `F01`, the first `F`-series leaf either provider has produced. It
+runs under the current `proper-study` three-document contract: a 20–50-page
+expansive study, a 10–12-page concise study, a standalone homily for an
+adult parish assembly, and the canonical study's web edition. The production
+plan records this exact scope opening. No GPT leaf exists for this identity,
+and this independent Claude production borrows from no other leaf.
+
+**In progress.** Authorization and acceptance criteria are recorded; the run
+has not yet been seeded. Work is committed on `feature/propers/claude`, the
+workspace's required branch, and reaches `main` by fast-forward after the
+local deploy gates pass.
 
 ## Claude postconciliar Twenty-ninth Sunday revision, 2026-10-16
 
