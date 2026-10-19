@@ -185,6 +185,16 @@ class ProperComponentTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "Research PDF"):
                 module.audit_manifest(path, provider)
 
+    def test_schema_one_rejects_reference_only_even_with_research_label(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path, provider = self.component_tree(directory)
+            path.write_text(path.read_text().replace(
+                'appointed_text_completeness = "complete"',
+                'appointed_text_completeness = "reference-only"',
+            ).replace('canonical_label = "Full PDF"', 'canonical_label = "Research PDF"'))
+            with self.assertRaisesRegex(ValueError, "appointed_text_completeness"):
+                module.audit_manifest(path, provider)
+
     def test_exact_two_page_markers(self):
         with tempfile.TemporaryDirectory() as directory:
             aux = Path(directory) / "guide.aux"

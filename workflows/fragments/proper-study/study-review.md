@@ -1,5 +1,12 @@
 # Review the expansive study
 
+Cross-check the manifest's appointed-text mode against reviewed research and
+the production-plan authorization. In reference-only mode, verify the
+`Research PDF` label, complete element-specific locators and web anchors,
+truthful terminal scope, and original commentary without reproduced full
+proper bodies, substitute translation or close paraphrase. Source verification
+and interpretive depth are unchanged; locators alone do not prove either.
+
 Read the complete canonical study and its exact source records. Audit the
 argument and evidence for each interpretation, not merely declarations in its
 manifest. Require two to five distinguishable and internally coherent readings,

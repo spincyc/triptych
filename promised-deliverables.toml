@@ -3,8 +3,8 @@ schema_version = 1
 [[deliverables]]
 id = "gpt-1962-christ-the-king-2026-10-19"
 owner = "PROJECT-WORK.md"
-promise = "Drive the GPT 1962 Christ the King propers for Sunday 2026-10-25 through proper-study acceptance, independently review and install the expansive study, concise study, homily and canonical web edition, then push the validated result to main and verify its automatic Pages deployment."
-state = "blocked"
+promise = "Drive the authorized reference-only GPT 1962 Christ the King propers for Sunday 2026-10-25 through fresh proper-study acceptance: original expansive study, concise study, homily and canonical web edition with precise source citations and links but no reproduced full Latin/English propers; independently review and install them, push the validated result to main and verify its automatic Pages deployment."
+state = "in_progress"
 
   [[deliverables.requirements]]
   id = "gpt-f01-context-and-scope"
@@ -15,7 +15,21 @@ state = "blocked"
   [[deliverables.requirements]]
   id = "gpt-f01-workflow-and-artifacts"
   criterion = "The actual proper-study version-12 run reaches ACCEPTED with fresh authors and cold reviewers at the declared efforts, no unresolved blocking findings, all required artifacts installed and cataloged, and native run evidence and repair cycles archived."
-  status = "blocked"
+  status = "waived"
+  waiver_reason = "Superseded by the explicitly authorized reference-only scope and fresh version-13 workflow requirement below; the blocked version-12 run remains archived and supplies no acceptance."
+  waiver_authority = "Maintainer approval on 2026-10-19 to omit reproduced full Latin/English propers while retaining the three commentary documents, source citations/links, independent reviews and main publication."
+  evidence = ["workflows/reviews/gpt-1962-f01-production-2026-10-19/CYCLES.md"]
+
+  [[deliverables.requirements]]
+  id = "gpt-f01-reference-only-contract"
+  criterion = "The authorized schema-2 reference-only scope is represented truthfully in guidance, workflow, manifest validation and labels, with meaningful checks preserving existing complete and rights-limited behavior."
+  status = "pass"
+  evidence = ["guidance/liturgy/propers-production-plan.md", "workflows/reviews/gpt-1962-f01-production-2026-10-19/CYCLES.md"]
+
+  [[deliverables.requirements]]
+  id = "gpt-f01-reference-only-workflow"
+  criterion = "A fresh proper-study version-13 run reaches ACCEPTED with fresh authors and cold reviewers at the declared efforts, complete appointed-element coverage and source verification, no unresolved blocking findings, three commentary PDFs and canonical web edition installed and cataloged, and native run evidence archived; full Latin/English propers are not reproduced."
+  status = "open"
   evidence = ["workflows/reviews/gpt-1962-f01-production-2026-10-19/CYCLES.md"]
 
   [[deliverables.requirements]]
@@ -41,10 +55,10 @@ state = "complete"
   id = "claude-pc-s55-revision-tools"
   criterion = "The shared-tool fixes (orientation-v2 and proper-study version 12, locus-aware references-used and the extended house-voice screen, and the three-column phone layout) are committed before the revision run is seeded, with orientation-v1 output unchanged for every published leaf and no test failing that the recorded baseline passed."
   status = "pass"
-  evidence = ["workflows/OPERATOR.md", "guidance/scripture-chronology.md"]
+  evidence = ["workflows/OPERATOR.md", "guidance/scripture-chronology.md", "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/821c824684b0c7a7/seed-manifest.json"]
   check = "contains"
-  path = "workflows/pipelines/proper-study.json"
-  needle = "\"version\": 12"
+  path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/821c824684b0c7a7/seed-manifest.json"
+  needle = "\"workflow_version\": 12"
 
   [[deliverables.requirements]]
   id = "claude-pc-s55-revision-run-accepted"

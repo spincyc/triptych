@@ -1,5 +1,12 @@
 # Review the research before prose
 
+Check the declared publication mode against the exact provider-and-identity
+authorization and all four context, scope and appointed-source records. For
+reference-only work, verify each element's precise witness locator and actual
+inspection outcome under the 1962 profile; require no full-text pull or
+transcription. Reject invented inspection, incomplete appointments, unsupported
+claims, or an operational limitation misreported as a rights restriction.
+
 Review `research/context.md`, `scope.md`, `interpretations.md`, source bindings,
 and the edition-controlled collation records. Verify the Sunday, cycle,
 territory, exact passage boundaries, full ordered inventory, and branches.

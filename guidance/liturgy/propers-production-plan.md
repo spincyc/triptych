@@ -158,6 +158,16 @@ and an identity with no line here is closed.
 
 - Authorized 2026-10-19: provider `gpt`, identity `liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king`.
 
+### Reference-only publication scope
+
+The following additional authorization replaces full appointed-text reproduction
+with original commentary and precise source locators for the named provider and
+identity. It does not change source rights or waive source verification, complete
+element coverage, the three-document contract, independent review or deployment
+checks. The owning 1962 and three-document profiles define this schema-2 mode.
+
+- Authorized reference-only 2026-10-19: provider `gpt`, identity `liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king`.
+
 ### Withdrawn targets
 
 

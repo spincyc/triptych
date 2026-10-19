@@ -19,9 +19,9 @@ The calendar computation places this feast ahead of the Twenty-second Sunday
 after Pentecost; the workflow must verify the appointment in the governing
 Missal and a dated occurrence witness. No unspecified local overlay is assumed.
 
-State: blocked in research. The clean workspace was fast-forwarded to `main`
+State: in progress under an amended reference-only scope. The clean workspace was fast-forwarded to `main`
 at `c6da24eda`; the exact provider target is now authorized in the production
-plan. Production follows `proper-study` version 12: expansive study, concise
+plan. The original production used `proper-study` version 12: expansive study, concise
 study, standalone homily for an adult parish assembly, and canonical web
 edition, each with its required fresh review. Run `3c11005c63dcd584` has passed
 the scope gate and context resolution. The context identifies eleven active
@@ -37,8 +37,20 @@ attempt must use a new native run, independently verify the retained work and
 complete every required review; the blocked run supplies no acceptance.
 The driver record is
 `workflows/reviews/gpt-1962-f01-production-2026-10-19/CYCLES.md`.
+On 19 October the maintainer explicitly approved replacing full Latin/English
+proper reproduction with original commentary and exact source citations and
+links. The expansive study, concise study, homily, canonical web edition,
+complete appointment coverage, evidence quality and independent reviews remain
+required. This is a publication-scope change, not a finding about source rights.
+The old version-12 acceptance requirement is explicitly waived in favor of a
+fresh version-13 reference-only run; its terminal BLOCKED archive is preserved.
+The version-13 contract and validators passed independent internal review,
+including repair of the generic checker's calendar restriction. The focused
+compatibility suite and targeted repair tests pass; broader baseline failures
+are recorded in the driver log. A fresh production run is next; no native
+acceptance or substantive review transfers from this implementation review.
 Coherent commits stay on `feature/propers/codex`; ordinary pushes to `main`
-and verification of the automatic Pages deployment are explicitly authorized.
+and verification of the automatic Pages deployment remain explicitly authorized.
 
 
 ## Claude postconciliar Twenty-ninth Sunday revision, 2026-10-16

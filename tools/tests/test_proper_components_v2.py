@@ -100,6 +100,85 @@ class ProperV2Tests(unittest.TestCase):
     def test_complete_three_edition_graph(self):
         self.audit()
 
+    def test_reference_only_retains_all_outputs_and_accepts_locator_content(self):
+        self.data["appointed_text_completeness"] = "reference-only"
+        self.data["outputs"]["canonical_label"] = "Research PDF"
+        (self.path.parent / "appointed.tex").write_text(
+            "Appointed elements: identified edition, page and passage locators.\n")
+        save(self.data, self.path)
+        self.audit()
+        self.assertEqual(components.outputs(self.data)["web"], "proper")
+        self.assertEqual(components.companion_owner(self.provider, "proper-homily"),
+                         (self.path.parent, self.path.parent / "homily.tex"))
+
+    def test_each_completeness_mode_keeps_its_label(self):
+        for completeness, label in (("complete", "Full PDF"),
+                                    ("rights-limited", "Research PDF"),
+                                    ("reference-only", "Research PDF")):
+            with self.subTest(completeness=completeness):
+                self.data["appointed_text_completeness"] = completeness
+                self.data["outputs"]["canonical_label"] = label
+                self.audit()
+                self.data["outputs"]["canonical_label"] = (
+                    "Research PDF" if label == "Full PDF" else "Full PDF")
+                with self.assertRaisesRegex(ValueError, "canonical_label"):
+                    self.audit()
+
+    def test_reference_only_still_requires_appointed_component_and_every_element(self):
+        self.data["appointed_text_completeness"] = "reference-only"
+        self.data["outputs"]["canonical_label"] = "Research PDF"
+        appointed = self.data["components"][0]
+        appointed["element_keys"].pop()
+        with self.assertRaisesRegex(ValueError, "appointed-text must declare coverage"):
+            self.audit()
+        self.data["components"].remove(appointed)
+        with self.assertRaisesRegex(ValueError, "exactly one appointed-text"):
+            self.audit()
+
+    def test_schema_one_outputs_keep_the_original_modes(self):
+        self.data["schema"] = 1
+        self.data["outputs"].pop("homily")
+        self.data["outputs"].pop("homily_label")
+        for completeness, label in (("complete", "Full PDF"), ("rights-limited", "Research PDF")):
+            self.data["appointed_text_completeness"] = completeness
+            self.data["outputs"]["canonical_label"] = label
+            components.outputs(self.data)
+        self.data["appointed_text_completeness"] = "reference-only"
+        with self.assertRaisesRegex(ValueError, "appointed_text_completeness"):
+            components.outputs(self.data)
+
+    def test_postconciliar_standalone_audit_keeps_the_original_modes(self):
+        document = ("liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/"
+                    "propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a")
+        self.data.update(document=document, calendar="postconciliar")
+        for mode in (*components.MODES, "web"):
+            self.data["outputs"][mode] = (
+                document if mode in {"research", "web"} else f"{document}-{mode}")
+        path = self.provider / document / components.MANIFEST
+        path.parent.mkdir(parents=True)
+        for completeness, label in (("complete", "Full PDF"), ("rights-limited", "Research PDF")):
+            with self.subTest(completeness=completeness):
+                self.data["appointed_text_completeness"] = completeness
+                self.data["outputs"]["canonical_label"] = label
+                components.outputs(self.data)
+                components.audit_v2(self.data, path, self.provider, phase="scope")
+        self.data["appointed_text_completeness"] = "reference-only"
+        with self.assertRaisesRegex(ValueError, "appointed_text_completeness"):
+            components.outputs(self.data)
+        with self.assertRaisesRegex(ValueError, "appointed_text_completeness"):
+            components.audit_v2(self.data, path, self.provider, phase="scope")
+
+    def test_reference_only_outputs_require_an_explicit_valid_1962_calendar(self):
+        self.data["appointed_text_completeness"] = "reference-only"
+        self.data["outputs"]["canonical_label"] = "Research PDF"
+        for calendar in (None, "roman-1962-typo"):
+            with self.subTest(calendar=calendar):
+                self.data.pop("calendar", None)
+                if calendar is not None:
+                    self.data["calendar"] = calendar
+                with self.assertRaisesRegex(ValueError, "appointed_text_completeness"):
+                    components.outputs(self.data)
+
     def test_calendar_identity_is_required(self):
         self.data.pop("calendar")
         with self.assertRaisesRegex(ValueError, "calendar"):

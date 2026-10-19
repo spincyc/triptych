@@ -19,6 +19,19 @@ homily from one canonical research owner. The three entrypoints are `main.tex`,
 `-homily`. `proper-components.toml` uses schema 2. The sole web edition belongs
 to the canonical study. No second research owner or companion leaf is created.
 
+Apply the three-document profile's appointed-text publication mode. A 1962
+reference-only study requires the production plan's separate exact-provider,
+exact-identity authorization; it produces original commentary and precise
+element-specific source locators, without full Latin or English proper bodies.
+Research and source records declare `appointed_text_completeness = "reference-only"`;
+the manifest must match and use `canonical_label = "Research PDF"`. Follow the
+1962 profile's locator/audit exception for `retrieved.txt` and `verified.md`.
+In this mode, do not create full proper-text pulls or transcriptions,
+substitute translations or close paraphrases, or retry rejected source-text
+generation. An operational
+limitation is not a rights finding. Every inventory, evidence, analytical,
+chronology, extent and independent-review requirement remains in force.
+
 The 1962 and postconciliar productions are completely separate. Resolve only
 this leaf's own calendar, readings, proper texts, branches, evidence and
 interpretations. Never borrow the other form's Sunday, prayers, textual

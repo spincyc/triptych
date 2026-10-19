@@ -164,8 +164,10 @@ other legal status of their respective sources and editions.
 
 In particular:
 
-- `src/gpt/liturgy/roman-rite/1962/propers/**/propers/retrieved.txt` contains
-  focused OCR source extracts and is not offered under CC BY 4.0; and
+- source extracts, where retained in
+  `src/gpt/liturgy/roman-rite/1962/propers/**/propers/retrieved.txt`,
+  are not offered under CC BY 4.0; reference-only editions retain locators
+  rather than those extracts; and
 - the liturgical-text portions of the corresponding `propers/verified.md`
   files, document sources, and PDFs are not offered under CC BY 4.0; and
 - English translations carried by the sidecar inventories under

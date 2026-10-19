@@ -503,8 +503,9 @@ owns, in this order and joined by ` · `:
     [Full PDF](../pdf/<provider>/<leaf>.pdf) · [Synthesis PDF](../pdf/<provider>/<leaf>-synthesis.pdf) · [Read](../web/<provider>/<leaf>.html)
 
 For schema 2, insert `[Homily PDF](../pdf/<provider>/<leaf>-homily.pdf)`
-between the synthesis and web links. The canonical label remains `Research PDF`
-when appointed text is rights-limited. All three PDFs occupy the same owning
+between the synthesis and web links. The canonical label is `Research PDF`
+when appointed text is rights-limited or the schema-2 edition is expressly
+authorized as reference-only under its owning profile. All three PDFs occupy the same owning
 catalog identity; their separate release records do not create extra rows.
 
 A named `ChatGPT` or `Claude` column links only that provider's
@@ -523,8 +524,9 @@ the synthesis companion's. Earlier revisions of this rule linked the synthesis
 alone and left the canonical PDF and web edition reachable only through the
 marker. That suppressed installed artifacts a reader had no other route to, so
 the rule now names them.
-The component manifest records `appointed_text_completeness` as `complete` or
-`rights-limited`; its canonical label must correspond, and its synthesis label
+The component manifest records `appointed_text_completeness` as `complete`,
+`rights-limited`, or, in schema 2 with explicit profile authorization,
+`reference-only`; its canonical label must correspond, and its synthesis label
 is always `Synthesis PDF`.
 
 A curriculum section landing follows that provider-column rule at course

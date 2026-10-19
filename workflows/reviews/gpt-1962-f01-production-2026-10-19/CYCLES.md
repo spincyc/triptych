@@ -197,3 +197,54 @@ registered delivery states public-domain status; the modern official pages and
 both alternate missal facsimiles remain metadata-only. The outgoing additions
 were screened for machine-local paths and common credential patterns, with no
 match. No PDF publication, facsimile scan or scratch transcription is included.
+
+## Authorized reference-only scope, 19 October
+
+The maintainer explicitly approved continuing with original commentary and
+precise source citations and links, without reproducing the full Latin or
+English propers. The three PDFs, canonical web edition, complete appointed
+inventory, source verification, independent reviews and main deployment remain
+required. This changes the publication's scope; it neither changes historical
+source rights nor authorizes a retry of rejected source-text production.
+
+The production plan now records the exact provider/identity authorization.
+The promise ledger retains the unmet version-12 requirement with an explicit
+maintainer-authorized waiver and adds the reference-only contract and fresh
+version-13 acceptance requirements. The old terminal archive remains intact.
+
+Two implementation lanes have exclusive ownership: one updates the owning
+profiles and workflow instructions, and one updates the component/gate checks
+and focused tests. The coordinator owns this record, production authorization,
+project/ledger state and adjacent license/catalog descriptions. A separate
+review will assess the integrated contract before a new production run begins.
+
+Advancing the workflow version exposed a historical ledger check that looked
+for version 12 in the current mutable pipeline file. Its criterion and PASS
+remain unchanged; the check now reads the accepted Claude PC-S55 revision's
+existing, immutable seed manifest, which records `workflow_version: 12`.
+No historical run, receipt or publication input was altered.
+
+The initial focused compatibility suite ran 221 tests successfully, with one
+existing archival-fixture skip. A broader run found one author-registry failure
+(Cyril of Alexandria in the unrelated Claude Twentieth Sunday manifest) and
+five errors in two pagination tests whose mocks lack `presentation`. Both
+the implementer and independent reviewer reproduced that exact failure set
+against the unchanged base code. The registry and whitespace checks pass.
+
+Independent review found one boundary defect: the generic schema-2 component
+validator admitted reference-only postconciliar manifests, although the native
+production gate correctly rejected them and the profile limits this mode to
+1962. The finding is accepted and routed for a narrow calendar restriction
+and standalone regression test before production is seeded. Exact provider
+authorization remains the native production gate's responsibility.
+
+The repaired component helper now permits reference-only only for schema 2
+with `calendar = "roman-1962"`. Two additional regression tests cover canonical
+postconciliar rejection and missing/invalid calendars while preserving existing
+complete and rights-limited behavior. All 72 focused repair tests pass. The
+independent reviewer closed the finding and returned PASS with no remaining
+findings; its 139-test run had 138 passes and only the baseline-confirmed
+author-registry failure. Promise-ledger, tool-registry and whitespace checks
+also pass. This closes implementation validation only, not native production
+or any substantive review. The version-13 workflow is committed before seeding
+the fresh run; the incomplete publication is still not deployable to main.

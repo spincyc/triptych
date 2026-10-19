@@ -1,5 +1,10 @@
 # Resolve the celebration and its complete text inventory
 
+Check the production plan for the exact provider and identity's publication
+mode. If separately authorized as reference-only, declare that mode at the
+start of `research/context.md` as the three-document profile requires, and plan
+element-specific source locators and inspection records under the 1962 profile.
+
 Write `research/context.md` identifying this exact proper, governing books,
 territory, and authorized occurrence or cycle. Read `ARGS.date`; when it is
 `undated`, study the formulary without inventing a civil occurrence. Otherwise
