@@ -4,7 +4,7 @@ schema_version = 1
 id = "missal-reader-completion-plan-2026-10-19"
 owner = "guidance/liturgy-browser-roadmap.md"
 promise = "Persist the recovered daily Missal reader state and detailed completion pattern for content and translations, source-owned text and versicle/response presentation, design, usability, remaining modes, and verification; preserve the historical acceptance boundaries and publish the planning change on feature/missal-reader."
-state = "candidate"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "missal-plan-recovery"
@@ -26,9 +26,12 @@ state = "candidate"
 
   [[deliverables.requirements]]
   id = "missal-plan-persistence"
-  criterion = "The work register and continuity entry point point to the canonical plan, the plan's ledger requirements validate, and the coherent documentation change is prepared for a normal commit and push on feature/missal-reader; remote publication is verified from the pushed ref."
-  status = "open"
+  criterion = "The work register and continuity entry point point to the canonical plan, the plan's ledger requirements validate, and the coherent documentation change is committed and pushed on feature/missal-reader; remote publication is verified from the pushed ref."
+  status = "pass"
   evidence = ["PROJECT-WORK.md", "guidance/liturgy-browser-roadmap.md", "build/agent-continuity/liturgy-reader-visual-plan.md"]
+  check = "contains"
+  path = "PROJECT-WORK.md"
+  needle = "Complete: the detailed plan is committed and pushed."
 
 [[deliverables]]
 id = "claude-pc-s55-revision-2026-10-16"
