@@ -115,6 +115,33 @@ hashes and extents, rights and retention decisions, searched repertoire limits,
 and the remaining external inputs. Acquisition alone does not establish a fully
 collated or transcribed book, a normative revision, or local reception.
 
+**Full research pass interrupted, 2026-10-19.** The pass stopped when its agents
+exhausted their provider allowance; nothing from it is yet tracked. It ran 25
+rite lanes: the 24 assigned groups of discovery rows plus a discovered
+additional-orders lane for the Augustinian Hermits, Servites, Mercedarians and
+the Order of Santiago. Every lane's independent reviewer froze an initial
+expected-version list before seeing research findings. Research packets exist
+for only three lanes: Greek and Melkite Byzantine, regional Byzantine, and
+early Latin, the last still provisional. No final cold review was written and
+no lane was integrated. Acquisition receipts were independently verified for
+one packet only. The reviewer for the Greek lane had already requested separate
+labels for the Melkite Pentecostarion, Triodion, Menaia and the Presanctified
+readings book. All findings, receipts and acquired files remain in the
+workspace's untracked `.scratch/full-research-20261019/` and are lost if that
+scratch is cleared. USUARIUM's full-book downloads have required an approved
+access request since 2026-10-17; no request is authorized, so independent
+institutional copies are used instead.
+
+The maintainer approved resuming from that lane state rather than restarting.
+The three lanes with packets close first, through final cold review,
+integration, checks and a pushed checkpoint, to prove the integration path.
+The remaining lanes follow in waves of about six to eight, each ending in a
+pushed checkpoint: Eastern Churches; then the Roman books and religious orders;
+then the cross-lane scope census and the Western local uses. Each researcher
+writes a packet from the evidence already held and records every unfinished
+search as a labelled open lead with its unexamined range. That defers
+exhaustion of a lead to later work; it never drops a known version.
+
 The [stage dossiers](src/sources/inventories/eucharistic-stages/) now cover
 43 traditions in 14 dossiers: 147 book-state records, 141 documented and six
 provisional. Attestation, publication, approval and effectiveness retain their
