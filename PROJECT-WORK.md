@@ -20,20 +20,24 @@ C2–C6, corpus text acquisition, and production deployment remain separate
 milestones. Existing ritual-flow and historical acceptance records retain
 their scope.
 
-**In progress: blocked only on exact-edition acquisition.** The common report,
-reader controls, verification and publication requirements pass. The target
-inventory stays open, for two reasons:
+**In progress: pre-1955 inventory under the 2026-10-19 maintainer decisions.**
+The common report, reader controls, verification and publication requirements
+pass. The maintainer then made three decisions, recorded in the roadmap's C1
+status:
 
-- No authenticated 1920 Vatican typical impression is available. A bounded
-  search found only print records, and every file labelled "1920 typical
-  edition" is the registered 2004 Bonn reprint.
-- No complete 2008 body or index is available. The 2008 book is online only as
-  a paid electronic re-typeset.
+- **1920 witness.** The files circulating as the "1920 typical edition" are
+  public domain for their 1920 content and may be used. They are the registered
+  Bonn 2004 *reimpressio* of a conformed edition of about 1954, now the
+  pre-1955 witness, with the 1922 Mame printing as control for post-1922
+  additions. Text first published in 1931 or later stays outside that rights
+  decision.
+- **2008.** Acquiring the complete 2008 book is deferred.
+- **Performance.** Load-time work is deferred to C6.
 
-Gallica, BNE, Internet Culturale, DigiVatLib and FBC sat behind bot challenges
-and remain unsearched routes. The 1962 whole-book form and Preface boundaries
-are retired after independent page-image review. Text slots and several other
-dimensions remain explicit `unenumerated` boundaries for every family.
+Four lanes are enumerating the pre-1955 book from that witness. The 1962
+whole-book form and Preface boundaries are retired after independent
+page-image review. Text slots and several other dimensions remain explicit
+`unenumerated` boundaries for every family.
 
 The retry's real-browser checks pass all 91 assertion groups: forty Propers,
 eight choices and 43 Day, against the corrected production state. Independent print review

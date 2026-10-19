@@ -140,10 +140,29 @@ immutable acceptance package. Reproduce them for any release review.
 ### Ordered implementation milestones
 
 The C-series below refines the existing W1–W9 workstreams. It does not replace
-M1–M6 or broaden any historical acceptance. C1 is **in progress, blocked only on
-exact-edition acquisition** (an authenticated 1920 Vatican impression and
-complete 2008 evidence); its report, controls, verification and publication
-requirements pass. C2–C6 remain **planned**.
+M1–M6 or broaden any historical acceptance. C1 is **in progress**: its report, controls,
+verification and publication requirements pass, and the pre-1955 inventory is
+being enumerated from the witness the maintainer accepted on 2026-10-19
+(decisions below). C2–C6 remain **planned**.
+
+Maintainer decisions, 2026-10-19:
+
+- **1920 witness.** The files circulating as the "1920 typical edition" are
+  public domain for their 1920 content and may be pulled and used. They are the
+  registered Bonn 2004 *reimpressio* of a conformed 28th edition of about
+  1954, now accepted as the witness of the pre-1955 recension, with the 1922
+  Mame conformed printing as control. An exact Vatican 1920 impression is no
+  longer a C1 blocker. Text first published in 1931 or later inside that
+  printing is outside the decision (`guidance/missals.md` §5), so post-1922
+  additions are inventoried in separate slices.
+- **2008.** Acquiring complete 2008 body or index evidence is deferred. The
+  2008 whole-book universe stays an explicit unresolved boundary and does not
+  hold up later milestones.
+- **Performance.** Load-time optimization is deferred to the end, once
+  presentation and sources are in place, so the project does not chase
+  performance changes the entire time. Payload and timing are measured and
+  recorded at checkpoints, but budget failures do not block C1–C5; C6 owns
+  them. This supersedes treating the 2.5 s LCP budget as a per-milestone gate.
 
 | Milestone | Deliverable | Exit evidence and dependency |
 | --- | --- | --- |
@@ -242,8 +261,8 @@ regressions. These findings belong to C4 and the ritual-flow deliverable:
 | A postconciliar unit says "No English or Latin body is held here" beside restricted siblings | absence wording for `untranslated` units |
 
 Throttled-mobile cold LCP still fails the 2.5 s budget, as it did before C1
-(Day 1962 12.21 s against 11.89 s). Further payload reductions require reader
-changes. In roman-1962 gzip terms, a lazily fetched coverage sidecar plus
+(Day 1962 12.21 s against 11.89 s). Under the 2026-10-19 decision above this is
+C6 work. These are the recorded options, all requiring reader changes. In roman-1962 gzip terms, a lazily fetched coverage sidecar plus
 removing the pre-C1 `forms[].propers` copy saves about 233 KB. Deriving unit
 target and occurrence identities from position saves about 75 KB. Computing
 per-Mass coverage in the browser saves about 66 KB. Per-Mass structure files,
