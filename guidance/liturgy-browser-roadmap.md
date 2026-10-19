@@ -213,6 +213,17 @@ measurements are active. The earlier inaccessible Isidore 3453 candidate was
 inspected and is a 2004 reprint, not an authenticated 1920 Vatican impression.
 The acceptance criteria above remain unchanged.
 
+The second retry's inventory checkpoint enumerates every section of the
+registered 1962 facsimile and assigns every artifact page to a section slice or
+an extent boundary. It joins twenty 2002 appointments to the official 2008
+variation list and adds the selected U.S. 2011 General Index headings. The
+inventory now holds 10,681 targets in 72 slices with 93 boundaries; the
+[source review](../src/sources/inventories/missal-expected-targets-review-2026-10-19.md)
+owns the extents and dispositions. All three whole-book universes stay
+unresolved: 1962 awaits independent page-image review of its form and Preface
+boundaries, 2008 an authenticated complete body or index, and 1920 an
+authenticated Vatican impression.
+
 #### C2: the reusable representative-Mass pattern
 
 Each reviewed slice carries the following evidence in its existing source and

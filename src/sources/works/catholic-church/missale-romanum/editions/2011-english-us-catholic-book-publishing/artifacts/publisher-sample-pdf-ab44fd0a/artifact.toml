@@ -1,0 +1,71 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.2011-english-us-catholic-book-publishing.publisher-sample-pdf-ab44fd0a"
+edition_id = "edition.catholic-church.missale-romanum.2011-english-us-catholic-book-publishing"
+artifact_type = "publisher-issued-sample-pdf"
+media_type = "application/pdf"
+storage = "restricted"
+rights_status = "restricted"
+rights_basis = """
+The publisher's own preview establishes provenance and authority of the copy,
+not a licence to redistribute it. The book binds several properties: ICEL's
+English, U.S. national adaptations and propers owned by the USCCB, and the
+publisher's own layout and plate. No artifact-level redistribution grant was
+located on the product page or in the preview, so the exact bytes are not
+retained in the repository, its build products or its public data.
+
+ICEL's conditional web permission, recorded in
+src/sources/inventories/icel-web-permission-rights-v1.toml, concerns display
+of ICEL text on a qualifying website. It does not license this PDF, a bundled
+corpus, or the USCCB material in it, and this record claims no such reach.
+guidance/liturgical-text-publication-policy.md governs any later use of text.
+
+ACCESS LIMITATION. What is not retained: the 15-page PDF. Why: no
+redistribution basis for these exact bytes. What a reader without the network
+can open instead: the structural loci in this edition's General Index passage
+record and the heading inventory that cites it, which carry headings as short
+editorial descriptions with their index and body page numbers, and no text.
+"""
+source_url = "https://b2c-cbp-assets.s3.amazonaws.com/pdfs/9780899420738.pdf"
+provenance = """
+Fetched whole with curl over HTTPS on 2026-10-19 (HTTP 200) from the Look
+Inside link on the publisher's product page
+https://catholicbookpublishing.com/collections/liturgical-editions/products/roman-missal-altar-edition-burgundy,
+which identifies the altar edition, ISBN 9780899420738, 1456 pages. The
+product page response was fetched whole the same day and hashed
+(SHA-256 6ce566a896280e073464d6a1e755edba833dffff00bd8e3bc0f077a05e11aa3c).
+Nothing in the retrieval path passed through a model. The SHA-256 below was
+computed over the downloaded bytes at acquisition and recomputed, matching,
+when the record was written the same day.
+
+Other routes tried in the same pass, recorded so they are not re-derived: the
+Liturgical Press altar edition (ISBN 9780814633755) sample contains selected
+Order of Mass leaves only, no contents or index; the USCCB resource titled
+"The Roman Missal" is a four-page educational handout, not the Missal; LTP's
+product offers a Google Books preview, not pursued once this whole publisher
+preview was in hand.
+"""
+retrieved = "2026-10-19"
+sha256 = "ab44fd0a3677874c78821934ddb460f12f75aea6172d2f1dd3ead6e98f2b2944"
+byte_size = 1076966
+page_count = 15
+indexable = false
+notes = """
+EXTENT, MEASURED. A bounded 15-page publisher sample of a 1456-page book. The
+artifact pages hold: p. 1 title page; pp. 2-5 the complete General Index,
+printed pp. 5*-8*; pp. 6-7 front-matter decrees, printed pp. 10*-11*; p. 8 a
+plate; and selected body leaves at artifact pp. 9-15, printed pp. 365, 378,
+379, 507, 526, 729 and 1003. The preview states no limitation of its own; the
+product page's link text "Look Inside" is the only characterisation, and
+nothing in either attests completeness of the book.
+
+The General Index refers to body pages that are not in the preview, including
+the Alphabetical Index of Celebrations at printed p. 1335 and the Index of
+Prefaces at printed p. 1339. Index referrals are not acquired body pages.
+
+PDF metadata: creator and producer QuarkXPress 9.3; created 2018-11-04,
+modified 2019-05-07; document title field "1-introduction NT-nab", an
+evidently reused production label that does not describe this content.
+Title, all four General Index pages and the remaining pages were inspected as
+page images on 2026-10-19.
+"""
