@@ -242,6 +242,42 @@
      "kind": "text-slots",
      "slice_id": "postconciliar-2002-sanctoral-core-slots",
      "state": "unenumerated"
+    },
+    {
+     "id": "postconciliar-us2011-index-proper-of-saints",
+     "kind": "celebration",
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unenumerated"
+    },
+    {
+     "id": "postconciliar-us2011-alphabetical-celebration-index",
+     "kind": "celebration",
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unenumerated"
+    },
+    {
+     "id": "postconciliar-us2011-preface-index",
+     "kind": "preface",
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unenumerated"
+    },
+    {
+     "id": "postconciliar-us2011-order-of-mass-section",
+     "kind": "ordinary-option",
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unenumerated"
+    },
+    {
+     "id": "postconciliar-us2011-index-formularies",
+     "kind": "forms-and-cycles",
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unenumerated"
+    },
+    {
+     "id": "postconciliar-us2011-index-text-slots",
+     "kind": "text-slots",
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unenumerated"
     }
    ],
    "review_ref": "src/sources/inventories/missal-expected-targets-review-2026-10-19.md",
@@ -297,7 +333,7 @@
      "territory": "US"
     },
     {
-     "basis": "All fifty heading identities independently enumerated in the registered 2002 Ordo passage. This is the main Preface section only; proper Prefaces printed with other formularies are additional. Exact 2008/English correspondence and wording remain separate.",
+     "basis": "All fifty heading identities independently enumerated in the registered 2002 Ordo passage. This is the main Preface section only; proper Prefaces printed with other formularies are additional. Exact 2008/English correspondence and wording remain separate. The official 2008 variation list (Notitiae 44, printed pp. 368-380) positively names one of these appointments; that row carries established 2008 identity, with no claim of unchanged wording. The list's silence establishes nothing for the other rows, whose 2008 correspondence remains unresolved.",
      "calendar": "postconciliar",
      "date_range": "Historical edition snapshot; no civil-year occurrence claim",
      "enumeration_state": "complete-within-slice",
@@ -316,7 +352,8 @@
      ],
      "recension_id": "roman-2008-reimpressio-emendata",
      "source_refs": [
-      "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/ordo-missae-praefationes.toml"
+      "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/ordo-missae-praefationes.toml",
+      "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml"
      ],
      "territory": "universal"
     },
@@ -582,7 +619,7 @@
      "territory": "universal"
     },
     {
-     "basis": "All explicit printed options in the five core proper roles of the sixty Common forms, plus their thirteen explicit Preface appointments: 94 entrance antiphons, 78 Collects, 63 offering prayers, 93 Communion antiphons, 62 postcommunions and 13 Preface appointments. The 403 entries are contextual appointments, not 403 distinct texts or assembled Masses. References and applicability follow their source loci; unprinted/general-rubric appointments, additional Preface choices within a reference and exact 2008 correspondence remain unresolved.",
+     "basis": "All explicit printed options in the five core proper roles of the sixty Common forms, plus their thirteen explicit Preface appointments: 94 entrance antiphons, 78 Collects, 63 offering prayers, 93 Communion antiphons, 62 postcommunions and 13 Preface appointments. The 403 entries are contextual appointments, not 403 distinct texts or assembled Masses. References and applicability follow their source loci; unprinted/general-rubric appointments, additional Preface choices within a reference and exact 2008 correspondence remain unresolved. The official 2008 variation list (Notitiae 44, printed pp. 368-380) positively names eight of these appointments; those rows carry established 2008 identity, with no claim of unchanged wording. The list's silence establishes nothing for the other rows, whose 2008 correspondence remains unresolved.",
      "calendar": "postconciliar",
      "date_range": "Historical edition snapshot; no civil-year occurrence claim",
      "enumeration_state": "complete-within-slice",
@@ -602,7 +639,8 @@
      "recension_id": "roman-2008-reimpressio-emendata",
      "source_refs": [
       "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml",
-      "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"
+      "src/sources/inventories/missal-expected-targets-review-2026-10-19.md",
+      "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml"
      ],
      "territory": "universal"
     },
@@ -889,7 +927,7 @@
      "territory": "universal"
     },
     {
-     "basis": "Forty-six additional appointments in the full 2002 Preface index after excluding the fifty already enumerated main-section entries and two exact repeated index referrals. The full index has ninety-eight contextual entries; ninety-six remain after those explicit referral duplicates. This is source index membership, not a claim of ninety-six unique formula wordings. Body correspondence and exact 2008 attestation remain separate.",
+     "basis": "Forty-six additional appointments in the full 2002 Preface index after excluding the fifty already enumerated main-section entries and two exact repeated index referrals. The full index has ninety-eight contextual entries; ninety-six remain after those explicit referral duplicates. This is source index membership, not a claim of ninety-six unique formula wordings. Body correspondence and exact 2008 attestation remain separate. The official 2008 variation list (Notitiae 44, printed pp. 368-380) positively names one of these appointments; that row carries established 2008 identity, with no claim of unchanged wording. The list's silence establishes nothing for the other rows, whose 2008 correspondence remains unresolved.",
      "calendar": "postconciliar",
      "date_range": "Historical edition snapshot; no civil-year occurrence claim",
      "enumeration_state": "complete-within-slice",
@@ -910,7 +948,8 @@
      "source_refs": [
       "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml",
       "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/ordo-missae-praefationes.toml",
-      "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"
+      "src/sources/inventories/missal-expected-targets-review-2026-10-19.md",
+      "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml"
      ],
      "territory": "universal"
     },
@@ -1008,7 +1047,7 @@
      "territory": "universal"
     },
     {
-     "basis": "All 564 explicit printed core-role headings beneath the 212 sanctoral entries: 85 five-role forms plus 6 three-prayer sets plus 121 own Collects. These identify source role appointments, not every alternative under a heading and not imported Common/seasonal slots. Every marker was extracted independently from the source body; the final form locator retains the exact web line and distinguishes the form opening artifact page from the slot location. Exact 2008 correspondence remains unresolved.",
+     "basis": "All 564 explicit printed core-role headings beneath the 212 sanctoral entries: 85 five-role forms plus 6 three-prayer sets plus 121 own Collects. These identify source role appointments, not every alternative under a heading and not imported Common/seasonal slots. Every marker was extracted independently from the source body; the final form locator retains the exact web line and distinguishes the form opening artifact page from the slot location. Exact 2008 correspondence remains unresolved. The official 2008 variation list (Notitiae 44, printed pp. 368-380) positively names ten of these appointments; those rows carry established 2008 identity, with no claim of unchanged wording. The list's silence establishes nothing for the other rows, whose 2008 correspondence remains unresolved.",
      "calendar": "postconciliar",
      "date_range": "Historical edition snapshot; no civil-year occurrence claim",
      "enumeration_state": "complete-within-slice",
@@ -1028,9 +1067,65 @@
      "recension_id": "roman-2008-reimpressio-emendata",
      "source_refs": [
       "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml",
-      "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"
+      "src/sources/inventories/missal-expected-targets-review-2026-10-19.md",
+      "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml"
      ],
      "territory": "universal"
+    },
+    {
+     "basis": "Every leaf heading the selected U.S. edition's General Index (printed pp. 5*-8*) lists under the Proper of Time, the Order of Mass with a single minister, the Appendix to the Order of Mass, the Commons, Ritual Masses, Masses and Prayers for Various Needs and Occasions, Votive Masses, Masses for the Dead, and the Appendices with Preparation and Thanksgiving: 210 headings, each image-checked. A parent heading counts only through its children when it has no page of its own or shares its first child's page (the dedication anniversary, the Scrutinies); needs categories 7 and 13 have their own pages and count beside their anniversary children. Kinds are the nearest permitted kind for a heading, not a granularity claim: 20 of the 41 temporal 'celebration' headings group a Sunday with its week, a run of weekdays or a whole season. Ritual, needs, votive and dead Mass headings are recorded as 'form', the kind the 2002 body slices give those sections, although one may hold several forms, a prayer set or a Collect only. Front-matter documents, the main Order of Mass section, the Proper of Saints month headings and the two further indexes are outside these targets and stated as boundaries. U.S. recension only: these headings do not duplicate, replace or reconcile the 184 PC-S composition keys of postconciliar-temporal-composition-registry, and they assert no correspondence to the Latin 2002/2008 slices, including the 33 Latin Common index headings. No held-row join is asserted.",
+     "calendar": "postconciliar",
+     "date_range": "2011 as printed on the edition's title page; preview PDF produced 2018-2019; no civil-year occurrence claim",
+     "enumeration_state": "complete-within-slice",
+     "id": "postconciliar-us2011-general-index-headings",
+     "kinds": [
+      {
+       "kind": "celebration",
+       "states": {
+        "unresolved": 41
+       }
+      },
+      {
+       "kind": "common",
+       "states": {
+        "unresolved": 33
+       }
+      },
+      {
+       "kind": "exceptional-rite",
+       "states": {
+        "unresolved": 3
+       }
+      },
+      {
+       "kind": "form",
+       "states": {
+        "unresolved": 109
+       }
+      },
+      {
+       "kind": "ordinary-option",
+       "states": {
+        "unresolved": 8
+       }
+      },
+      {
+       "kind": "prayer-set",
+       "states": {
+        "unresolved": 16
+       }
+      }
+     ],
+     "languages": [
+      "en"
+     ],
+     "recension_id": "roman-missal-en-us-2011",
+     "source_refs": [
+      "src/sources/works/catholic-church/missale-romanum/editions/2011-english-us-catholic-book-publishing/passages/general-index.toml",
+      "src/sources/works/catholic-church/missale-romanum/editions/2011-english-us-catholic-book-publishing/artifacts/publisher-sample-pdf-ab44fd0a/artifact.toml",
+      "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"
+     ],
+     "territory": "US"
     }
    ],
    "state": "classified",
@@ -18071,6 +18166,1476 @@
      "kind": "text-slot",
      "mass": null,
      "slice_id": "postconciliar-2002-sanctoral-core-slots",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:dedication.in",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:dedication.outside",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:mary.ordinary",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:mary.advent",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:mary.christmas",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:mary.easter",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:martyrs.outside.several",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:martyrs.outside.one",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:martyrs.easter.several",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:martyrs.easter.one",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:martyrs.missionary.several",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:martyrs.missionary.one",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:martyrs.virgin",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:martyrs.woman",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:pastors.pope-bishop",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:pastors.bishop",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:pastors.several",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:pastors.one",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:founders.one",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:founders.several",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:missionaries",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:doctors",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:virgins.several",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:virgins.one",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:saints.several",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:saints.one",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:religious.abbot",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:religious.monk",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:religious.nun",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:religious",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:mercy",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:educators",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:common:women",
+     "kind": "common",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:ritual:I.1",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:ritual:I.2.first",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:ritual:I.2.second",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:ritual:I.2.third",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:ritual:I.3",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:ritual:I.4",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:ritual:II",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:ritual:III",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:ritual:IV.1.one",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:ritual:IV.1.several",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:ritual:IV.2.several",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:ritual:IV.2.one",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:ritual:IV.3.several",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:ritual:IV.3.one",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:ritual:IV.3.joint",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:ritual:V",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:ritual:VI.1",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:ritual:VI.2",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:ritual:VII",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:ritual:VIII.1",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:ritual:VIII.2",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:ritual:VIII.3",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:ritual:IX",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:ritual:X.1",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:ritual:X.2",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:1",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:2",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:3",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:4",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:5",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:6",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:7",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:7.anniversary",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:8",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:9",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:10",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:11.any",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:11.twenty-fifth",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:11.fiftieth",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:12",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:13",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:13.anniversary",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:14",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:15",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:16",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:17",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:18",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:19",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:20",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:21",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:22",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:23",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:24",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:25",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:26",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:27",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:28",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:29",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:30",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:31",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:32",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:33",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:34",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:35",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:36",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:37",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:38",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:39",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:40",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:41",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:42",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:43",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:44",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:45",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:46",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:47",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:48",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:48-1-us",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:needs:49",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:votive:1",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:votive:2",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:votive:3",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:votive:4",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:votive:5",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:votive:6",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:votive:7",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:votive:8",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:votive:9",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:votive:10.mother",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:votive:10.name",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:votive:10.queen",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:votive:11",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:votive:12",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:votive:13",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:votive:14",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:votive:15",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:votive:16",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:votive:17",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:votive:18",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:votive:19",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:dead:I.outside",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:dead:I.easter",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:dead:I.baptized-child",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:dead:I.unbaptized-child",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:dead:II.outside",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:dead:II.easter",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:dead:II.other",
+     "kind": "prayer-set",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:dead:III.one",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:dead:III.several-all",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:dead:IV.1",
+     "kind": "prayer-set",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:dead:IV.2",
+     "kind": "prayer-set",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:dead:IV.3",
+     "kind": "prayer-set",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:dead:IV.4",
+     "kind": "prayer-set",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:dead:IV.5",
+     "kind": "prayer-set",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:dead:IV.6",
+     "kind": "prayer-set",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:dead:IV.7",
+     "kind": "prayer-set",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:dead:IV.8",
+     "kind": "prayer-set",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:dead:IV.9",
+     "kind": "prayer-set",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:dead:IV.10",
+     "kind": "prayer-set",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:dead:IV.11",
+     "kind": "prayer-set",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:dead:IV.12",
+     "kind": "prayer-set",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:appendix:I",
+     "kind": "ordinary-option",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:appendix:II",
+     "kind": "exceptional-rite",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:appendix:III",
+     "kind": "exceptional-rite",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:appendix:IV",
+     "kind": "exceptional-rite",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:appendix:V",
+     "kind": "prayer-set",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:appendix:VI-us",
+     "kind": "ordinary-option",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:appendix:preparation",
+     "kind": "prayer-set",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:appendix:thanksgiving",
+     "kind": "prayer-set",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:additional-order:single-minister",
+     "kind": "form",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:additional-order:reconciliation-I",
+     "kind": "ordinary-option",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:additional-order:reconciliation-II",
+     "kind": "ordinary-option",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:additional-order:various-needs-I",
+     "kind": "ordinary-option",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:additional-order:various-needs-II",
+     "kind": "ordinary-option",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:additional-order:various-needs-III",
+     "kind": "ordinary-option",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:additional-order:various-needs-IV",
+     "kind": "ordinary-option",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:advent.1",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:advent.2",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:advent.3",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:advent.4",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:advent.dec17-24",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:christmas.nativity",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:christmas.holy-family",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:christmas.octave",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:christmas.mary",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:christmas.second-sunday",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:christmas.epiphany",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:christmas.weekdays",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:christmas.baptism",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:lent.ash-wednesday",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:lent.1",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:lent.2",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:lent.3",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:lent.4",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:lent.5",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:holy-week.palm",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:holy-week.weekdays",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:holy-week.chrism",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:triduum.thursday",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:triduum.friday",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:triduum.saturday",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:easter.vigil",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:easter.day",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:easter.octave",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:easter.2",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:easter.3",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:easter.4",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:easter.5",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:easter.6",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:easter.ascension",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:easter.7",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:easter.pentecost",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:ordinary-time",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:ordinary.trinity",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:ordinary.corpus-christi",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:ordinary.sacred-heart",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
+     "state": "unresolved"
+    },
+    {
+     "id": "postconciliar:us2011:index:temporal:ordinary.christ-king",
+     "kind": "celebration",
+     "mass": null,
+     "slice_id": "postconciliar-us2011-general-index-headings",
      "state": "unresolved"
     }
    ],

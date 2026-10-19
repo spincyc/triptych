@@ -1,0 +1,69 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "publisher-issued-sample-pdf",
+   "byte_size": 1076966,
+   "edition_owned": true,
+   "id": "artifact.catholic-church.missale-romanum.2011-english-us-catholic-book-publishing.publisher-sample-pdf-ab44fd0a",
+   "media_type": "application/pdf",
+   "page_count": 15,
+   "retrieved": "2026-10-19",
+   "rights": "restricted",
+   "rights_jurisdiction": null,
+   "source_url": "https://b2c-cbp-assets.s3.amazonaws.com/pdfs/9780899420738.pdf",
+   "storage": "restricted"
+  }
+ ],
+ "edition": {
+  "authority": "The title page states approval by the United States Conference of Catholic Bishops and confirmation by the Apostolic See. This is a commercial publisher's printing of the approved U.S. English, not a Latin typical edition and not the Latin 2008 reprint.",
+  "date": "2011",
+  "editors": [],
+  "id": "edition.catholic-church.missale-romanum.2011-english-us-catholic-book-publishing",
+  "jurisdiction": "United States of America. The General Index marks five entries [USA]: three front-matter documents and two liturgical entries (various-needs category 48/1 and an appendix of Penitential Act invocations). Unmarked entries are not thereby established as universal ICEL English, and nothing here witnesses another conference's book.",
+  "language": "en",
+  "publication": "Catholic Book Publishing Corp., New Jersey, 2011, as printed on the title page (artifact p. 1 of the publisher's preview). The publisher's product page for the burgundy altar edition gives ISBN 9780899420738 and 1456 pages; state retrieved 2026-10-19.",
+  "title": "The Roman Missal, English translation according to the third typical edition, for use in the dioceses of the United States of America — Catholic Book Publishing altar edition, 2011",
+  "translators": [
+   "International Commission on English in the Liturgy Corporation"
+  ],
+  "year": 2011
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.catholic-church.missale-romanum.2011-english-us-catholic-book-publishing.publisher-sample-pdf-ab44fd0a",
+   "artifact_type": "publisher-issued-sample-pdf",
+   "id": "passage.catholic-church.missale-romanum.2011-english-us-catholic-book-publishing.general-index",
+   "locus": "general-index",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "The rights record states that lawful project access to this artifact does not include redistribution from this repository.",
+   "rights": "restricted",
+   "rights_jurisdiction": null,
+   "segment_id": null,
+   "source_url": "https://b2c-cbp-assets.s3.amazonaws.com/pdfs/9780899420738.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "restricted",
+   "verified_on": "2026-10-19",
+   "withheld": "rights"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Roman Missal"
+  ],
+  "author": "Catholic Church",
+  "category": "liturgical-book",
+  "description": "The Roman Rite altar book containing the Order of Mass, the temporal and sanctoral cycles, Commons, votive and Requiem Masses, and related rubrical and ritual material. Edition records distinguish the authoritative typical edition from publisher-produced editions made according to it.",
+  "id": "work.catholic-church.missale-romanum",
+  "languages": [
+   "la"
+  ],
+  "title": "Missale Romanum"
+ }
+}

@@ -43,6 +43,31 @@ The focused Python run exercised 139 tests with two opt-in browser skips;
 its sole initial error was the stale shared-renderer release binding. That
 binding was refreshed and its exact guard rerun passes.
 
+A second retry on 19 October recovered the interrupted session's scratch
+research and ran four fresh parallel lanes: 1962 inventory, postconciliar
+2008/U.S. 2011, browser acceptance, and 1920/2008 acquisition.
+
+- **1962.** The interrupted Lent enumeration was verified against OCR role
+  headings, marginal numbers and 45 page images. Every section of the
+  registered facsimile was then consolidated: 35 slices, 7,621 targets and
+  30 boundaries. Every artifact page 1–1088 is owned by a section slice or an
+  explicit extent boundary, and five duplicates of existing identities were not
+  added.
+- **Whole-book boundaries.** The 1962 whole-book slice stays unresolved.
+  Retiring its form and Preface boundaries was proposed and deferred until an
+  independent page-image review.
+- **2008 Latin.** Twenty existing 2002 appointments are joined to the official
+  2008 variation list. This establishes identity only and makes no
+  unchanged-wording claim.
+- **U.S. 2011.** A 210-heading General Index slice was added from the newly
+  registered Catholic Book Publishing preview. The preview is restricted;
+  metadata only is kept.
+- **Totals.** The inventory now holds 10,681 targets in 72 slices with 93
+  boundaries. None of the three whole-book universes is resolved.
+- **Payload.** The generated 1962 Proper structure grows by 49,010 gzip bytes,
+  to 1,564,767 in total. Postconciliar grows by 2,387. The browser does not
+  read the per-target inventory rows the structure now carries.
+
 Work began from verified feature-branch baseline
 `8f7be05286739235d590833eddba538e7e069ce0`; the implementation contract was
 published as `13e7a190ee4a9771810bf9e516c5490a32b4792b`.

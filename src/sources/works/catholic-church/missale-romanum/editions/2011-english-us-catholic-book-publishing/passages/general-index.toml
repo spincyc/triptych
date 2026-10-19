@@ -1,0 +1,41 @@
+schema = 2
+record_type = "passage"
+id = "passage.catholic-church.missale-romanum.2011-english-us-catholic-book-publishing.general-index"
+edition_id = "edition.catholic-church.missale-romanum.2011-english-us-catholic-book-publishing"
+artifact_id = "artifact.catholic-church.missale-romanum.2011-english-us-catholic-book-publishing.publisher-sample-pdf-ab44fd0a"
+artifact_sha256 = "ab44fd0a3677874c78821934ddb460f12f75aea6172d2f1dd3ead6e98f2b2944"
+locus = "general-index"
+states = ["cataloged", "acquired", "inspected", "verified"]
+artifact_page_ranges = [[2, 5]]
+context = """
+The complete General Index, artifact pp. 2-5, printed pp. 5*-8*. It lists, with
+body page numbers: front-matter documents; the Proper of Time by season and
+grouped headings; the Order of Mass with its Prefaces, Eucharistic Prayers I-IV,
+blessings and notated Eucharistic Prayers; the Order of Mass with a single
+minister; the Appendix to the Order of Mass (two Reconciliation prayers and four
+forms for various needs); the Proper of Saints by month only; the Commons;
+Ritual Masses; Masses and Prayers for Various Needs and Occasions; Votive
+Masses; Masses for the Dead; Appendices I-VI with Preparation for and
+Thanksgiving after Mass; and two further indexes.
+
+Two entries carry the index's own [USA] marker: various-needs category 48/1,
+thanksgiving for the gift of human life, body p. 1165; and Appendix VI, sample
+invocations for the Penitential Act, body p. 1316; both at printed p. 8*. Three
+further [USA] markers stand on front-matter documents at printed p. 5*.
+
+Heading levels differ. A temporal heading may group a Sunday with its week, a
+run of weekdays, or a whole season; a Common, ritual, needs, votive or dead
+heading may hold several numbered or lettered forms, a prayer set, or a
+Collect only. Headings at different levels must not be summed as Mass
+formularies or text slots.
+"""
+verified_on = "2026-10-19"
+notes = """
+Each of the four index pages was rendered from the exact bytes and read as an
+image, and every leaf entry with its page number was checked against that
+image. Indexed body pages are referrals: the bodies, the Alphabetical Index of
+Celebrations (p. 1335) and the Index of Prefaces (p. 1339) are not in this
+artifact. The index does not enumerate internal alternatives, the Sunday or
+weekday reading cycles, U.S. sanctoral celebrations, or Prefaces. No prayer
+bodies or rubric wording are recorded here.
+"""
