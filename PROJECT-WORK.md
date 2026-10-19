@@ -174,7 +174,10 @@ and reviews stay in scratch, pinned by hash.
 Open from this wave:
 - **Retention.** Thirty-three acquisitions are proposed for tracked retention
   and await source-library registration with per-artifact rights records.
-  Reviewers flagged three issues for that registration:
+  On 2026-10-19 the maintainer deferred all registration until every lane is
+  integrated, so retention is decided once for the whole pass. Until then the
+  bytes stay in untracked scratch, identified by the receipts' hashes. Reviewers
+  flagged three issues for that registration:
   - United States-only bases for Lowe 1920 and 1924, Bălan 1915 and Charon
     1908.
   - Session identifiers embedded in the five BnF catalogue pages.
