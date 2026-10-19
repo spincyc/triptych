@@ -550,6 +550,11 @@ body:has(.reader-instrument) > .site-footer,
 .reader-instrument .candidate-limitation h2,
 .reader-instrument .candidate-failure h2 { margin: 0 0 0.45rem; color: var(--instrument-ink); font: 600 1.25rem/1.3 var(--instrument-serif); }
 .reader-instrument .reader-document .placeholder { color: var(--instrument-faint); font: 0.9rem/1.5 var(--instrument-sans); text-align: left; }
+/* While only the loading line is held, the unpainted landmark box is hidden so
+   the identity block and coverage notice that arrive above it do not count it
+   as shifted content; the loading line itself stays visible and is replaced. */
+.reader-instrument .reader-document:has(> .placeholder:only-child) { visibility: hidden; }
+.reader-instrument .reader-document > .placeholder:only-child { visibility: visible; }
 
 .reader-instrument .cycle-choice { margin-bottom: 3rem; }
 .reader-instrument .cycle-choice-note { color: var(--instrument-soft); font: 0.84rem/1.5 var(--instrument-sans); }
@@ -878,6 +883,10 @@ body:has(.reader-instrument) > .site-footer,
   .reader-instrument .reader-actions button[aria-expanded="true"],
   .reader-instrument .semantic-contents button[aria-current="location"],
   .reader-instrument .mode-options button[aria-checked="true"] { outline: 2px solid Highlight; }
+  /* The inverted Apply fill keeps CanvasText behind Canvas text, and the
+     forced Canvas text backplate then hides the label: use the button pair. */
+  .reader-instrument .surface-apply,
+  .reader-instrument .surface-apply:hover { border-color: ButtonText; background: ButtonFace; color: ButtonText; }
   .reader-instrument .reader-brand-mark {
     background:
       linear-gradient(CanvasText, CanvasText) left bottom / 0.24rem 78% no-repeat,

@@ -29,6 +29,7 @@ if (input.op === 'labels') out = {
   witnesses: T.coverageWitnesses(input.structure.coverage, 'en'),
   notice: T.coverageSummaryText(input.structure.coverage, input.language || 'en', input.witness)
 };
+if (input.op === 'label') out = input.entries.map(T.orationLanguageLabel);
 if (input.op === 'oration') out = T.orationFor(input.proper, 'en', input.witness);
 if (input.op === 'adapt' || input.op === 'choices') {
   const request = {
@@ -107,6 +108,16 @@ class ReaderCoverageTests(unittest.TestCase):
         self.assertIn("2 of 3 represented texts available", labels["languages"][1])
         self.assertEqual({row["id"] for row in labels["witnesses"]}, {"edition.a", "project-created"})
         self.assertNotIn("as printed", json.dumps(labels))
+
+    def test_zero_denominator_label_is_plain_rather_than_a_ratio(self):
+        labels = node(op="label", entries=[
+            {"lang": "la", "targets": 0, "available_targets": 0},
+            {"lang": "en", "targets": 3, "available_targets": 0},
+            {"lang": "en"}])
+        self.assertEqual(labels, [
+            "Latin — no composed texts represented",
+            "English — 0 of 3 represented texts available",
+            "English — coverage not assessed"])
 
     def test_partial_explicit_witness_keeps_other_units_absent(self):
         data = structure([proper("one", "one", [translation()]),

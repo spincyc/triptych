@@ -11379,8 +11379,8 @@ release attachment, announcement, or promotion.
 | `src/web/browser/liturgy/proper-placement-notes.js` | `dd02a28ab4a922adbac69b26e53566e0dde23610f09359cd4377893b37f5fe6b` |
 | `src/web/browser/liturgy/propers-reader.css` | `93651fe00f97beaa55c581bb5066da0467a0245fd06bb02f7a5988b059e92ae9` |
 | `src/web/browser/liturgy/propers-reader.html` | `b8547c6fd5251e9987bfb933df2ad27e2e99195f40d18d6252d7339dc285e5c6` |
-| `src/web/browser/liturgy/propers-reader.js` | `1be9e3959e6cc34a84b1cec8f659ef550792c5e7511b5c90f60c2ddbcc6172b5` |
-| `src/web/browser/liturgy/reader-instrument.css` | `f0d75a2147774bb663100540e903ec3669c6f9f5cfd5f3e0bb71bf9e3b3274ec` |
+| `src/web/browser/liturgy/propers-reader.js` | `c0fff2dba897b750c84e85362b64462f3ec716e7e203af93c88b3dabcbc1230e` |
+| `src/web/browser/liturgy/reader-instrument.css` | `7a107cc37d2f2e3e0c984d98ee7f31116cad6bf2d367f3cbb6ce83903fce2537` |
 | `src/web/browser/liturgy/reader-shell.css` | `e7195cd86ed4fc4a8455e97369702239eb22d709a13d3d8462d7759c01fe814a` |
 | `src/web/browser/liturgy/reader-shell.js` | `1c586ebc3e99c851ffa4f14d68fd61563c57a23e72427cb22ff5deecd1941c0a` |
 | `src/web/browser/liturgy/reader-state-adapters.js` | `de74314c379d69f04716f6b4b88b3388bdc7ea2e23b75bffda2363396f41a0d6` |
@@ -11397,7 +11397,7 @@ release attachment, announcement, or promotion.
 | `src/web/browser/scripture/track.html` | `6f8858de7b6dfe6af1bdb27dbda9062cc21df664df56ca0869ca0daf7e7fe40b` |
 | `src/web/browser/scripture/track.js` | `5cac123c49f4bc89d9845e0299ddacd2a89cb71a7760c86db54c0c5e5866b1a0` |
 | `src/web/browser/shared/browser-core.css` | `61ee283812f93f05df3fbe66949d03f06123f63426143426f7a49fdc069e4bb8` |
-| `src/web/browser/shared/browser-core.js` | `3fcb5b575c86ee31eb92325b270164cb7f044f401a2892e56155c14c9efd7c16` |
+| `src/web/browser/shared/browser-core.js` | `78409847b1d890a1c2a92e2d2da51c1fd7ed25ceb73c1976fb9b613fd4703995` |
 | `src/web/browser/sources/index.html` | `0c7c34677ebe7f2d3c09fd8079cea8b6e136ccdd3ddbf1cec8d5d90627febd63` |
 | `src/web/browser/sources/reader-model.js` | `d265d2977a8338026ba810446f74c8e7aae9777b185ea1a0716f92d20e35cdb1` |
 | `src/web/browser/sources/sources.css` | `4d47cb9f37fa95e6cb3894b500ab31c0b123adf27e65aa8784e313103409a41b` |
@@ -19685,9 +19685,9 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/paragraphs/world-english-bible-catholic/73-apoc/021.json` | `f8f88417560529269645c36c33f66b6177323f18aed2fc95e817720ef31841fd` |
 | `src/web/data/structure/paragraphs/world-english-bible-catholic/73-apoc/022.json` | `b38cf221de030ad24aba0c1dd88f0823bcb4a721a25bc35fa8f94e1a903b4097` |
 | `src/web/data/structure/propers/index.json` | `ed462d89e5777f12b009cb962ebe1a59d4a2082a552489198f54feb8067c9536` |
-| `src/web/data/structure/propers/postconciliar.json` | `72e4752aba914c470deea67a714e52c38df096fdc9b796d876d8013f56fa6412` |
-| `src/web/data/structure/propers/roman-1962.json` | `2279ab93649d163be88ac42396e4be7883009d8b84d09321414cd5b29ef77f4f` |
-| `src/web/data/structure/propers/roman-pre-1955.json` | `f75d09c5008fd45c5bb0098e97fc8d5a1073e8d9a7e6efba358ef88d69f5cb64` |
+| `src/web/data/structure/propers/postconciliar.json` | `0b0ec0022f5ba65dc5406b3167b0ed69f0d2f1c15720438e90af3dd5c069d903` |
+| `src/web/data/structure/propers/roman-1962.json` | `9dd57988de46940a89f99e226e2d56ea25422383087922a9eddc28779b19cd73` |
+| `src/web/data/structure/propers/roman-pre-1955.json` | `151b5f9ea599ba56b1fdba3964b2bec98f321e2d455f3f9839460a282d12de03` |
 | `src/web/data/structure/readings/narrative-spine.json` | `9be6d97c206bc3544905f354090567f00f0f08a0b879b79f1d61499cc59db452` |
 | `src/web/data/structure/rubrics/index.json` | `61f18bea60e8f821891efc243a86e01bc140b65b40b3c65c8930e430d69058dc` |
 | `src/web/data/structure/rubrics/postconciliar.json` | `fb9dd1594412905efad869b4ea7031b989cdb9bf445283176f5b905a49d14be9` |

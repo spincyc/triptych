@@ -378,6 +378,8 @@ async function browseSnapshot(cdp) {
     type: document.querySelector('#reader-type').value,
     formularies: [...document.querySelector('#reader-formulary').options].map(row => row.value),
     formulary: document.querySelector('#reader-formulary').value,
+    formularyLabel: document.querySelector('#reader-formulary').selectedOptions[0]?.textContent || '',
+    formularyLabels: [...document.querySelector('#reader-formulary').options].map(row => row.textContent),
     bible: document.querySelector('#reader-bible').value,
     orations: document.querySelector('#reader-orations').value,
     witnessHidden: document.querySelector('#reader-witness-field').hidden,
@@ -954,6 +956,131 @@ async function assertions(cdp, base) {
     }
   });
 
+  await check('Browse formulary coverage follows the Orations language on open and on change', async () => {
+    const allSouls = 'commemoratione-omnium-fidelium-defunctorum';
+    const language = (form, name) => {
+      assert.match(form.formularyLabel, new RegExp(' — ' + name + ' — '), JSON.stringify(form.formularyLabel));
+      const other = name === 'English' ? 'Latin' : 'English';
+      assert.ok(!form.formularyLabels.some(label => label.includes(' — ' + other + ' — ')),
+        JSON.stringify(form.formularyLabels));
+    };
+    // A first open after a cold load once read the still-empty Orations control.
+    await freshCandidate(cdp, base, STATES.englishWitness);
+    await click(cdp, '[data-reader-action="browse"]');
+    let form = await browseSnapshot(cdp);
+    assert.equal(form.orations, 'en'); assert.equal(form.formulary, allSouls);
+    language(form, 'English');
+    await select(cdp, '#reader-orations', 'la');
+    form = await browseSnapshot(cdp);
+    assert.equal(form.formulary, allSouls); language(form, 'Latin');
+    await select(cdp, '#reader-orations', 'en');
+    form = await browseSnapshot(cdp);
+    assert.equal(form.formulary, allSouls); language(form, 'English');
+    await escape(cdp);
+    // A reopen after a route change once read the previous route's language.
+    await candidate(cdp, base, STATES.roman); await click(cdp, '[data-reader-action="browse"]');
+    language(await browseSnapshot(cdp), 'Latin'); await escape(cdp);
+    await candidate(cdp, base, STATES.englishWitness); await click(cdp, '[data-reader-action="browse"]');
+    language(await browseSnapshot(cdp), 'English'); await escape(cdp);
+  });
+
+  await check('a zero coverage denominator is stated plainly, never as 0 of 0', async () => {
+    await candidate(cdp, base, STATES.cycles); await click(cdp, '[data-reader-action="browse"]');
+    const form = await browseSnapshot(cdp);
+    const labels = form.formularyLabels.concat(form.orationLabels);
+    assert.ok(!labels.some(label => /\b0 of 0\b/.test(label)), JSON.stringify(labels));
+    // The served report decides whether this formulary exercises the zero case.
+    const targets = await evaluate(cdp, `(async () => {
+      const url = performance.getEntriesByType('resource').map(row => row.name)
+        .find(name => /\\/structure\\/propers\\/postconciliar\\.json/.test(name));
+      const structure = await (await fetch(url)).json();
+      const mass = structure.masses.find(row => row.key === 'transfiguration-lord');
+      return mass.coverage.languages.find(row => row.lang === 'la').targets;
+    })()`);
+    if (targets === 0) {
+      assert.equal(form.formularyLabel, 'The Transfiguration of the Lord — Latin — no composed texts represented');
+    } else {
+      assert.match(form.formularyLabel, /— Latin — \d+ of [1-9]\d* represented texts available$/);
+    }
+    await escape(cdp);
+  });
+
+  await check('the loading placeholder does not shift the reading landmark when data arrives', async () => {
+    await freshCandidate(cdp, base, STATES.post);
+    await evaluate(cdp, `(() => {
+      window.__readerDocumentShifts = [];
+      new PerformanceObserver(list => list.getEntries().forEach(entry => {
+        for (const source of entry.sources || []) {
+          if (source.node && source.node.id === 'reader-document') window.__readerDocumentShifts.push(entry.value);
+        }
+      })).observe({ type: 'layout-shift' });
+    })()`);
+    // Hold the new missal so the placeholder-only document is painted, then
+    // let the taller identity block and its coverage notice arrive above it.
+    const gate = armGate((path) => path.endsWith('/structure/propers/roman-1962.json'));
+    await cdp.send('Runtime.evaluate', {
+      expression: `location.hash=${JSON.stringify(STATES.englishWitness.slice(1))}` });
+    await waitGate(gate);
+    // Past the 500 ms recent-input window, so no shift can be excused as input.
+    await evaluate(cdp, 'new Promise(done => setTimeout(() => requestAnimationFrame(() => requestAnimationFrame(done)), 600))');
+    const loading = await evaluate(cdp, `(() => {
+      const main = document.querySelector('#reader-document');
+      const placeholder = main.querySelector(':scope > .placeholder:only-child');
+      return { busy: main.getAttribute('aria-busy'), placeholder: placeholder && getComputedStyle(placeholder).visibility };
+    })()`);
+    assert.deepEqual(loading, { busy: 'true', placeholder: 'visible' });
+    gate.release(); await gate.served;
+    await waitFor(cdp, `propersReaderDebug.ready && propersReaderDebug.state?.formulary?.id === 'commemoratione-omnium-fidelium-defunctorum'`, 'gated All Souls');
+    await evaluate(cdp, 'new Promise(done => requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(done, 100))))');
+    assert.equal((await snapshot(cdp)).noticeHidden, false);
+    assert.deepEqual(await evaluate(cdp, 'window.__readerDocumentShifts'), []);
+  });
+
+  await check('composed-text labels carry their own interface language', async () => {
+    for (const state of [STATES.roman, STATES.englishWitness]) {
+      await candidate(cdp, base, state);
+      const rows = await evaluate(cdp, `[...document.querySelectorAll('#reader-document .composed')].map(node => ({
+        lang: node.lang, label: node.querySelector(':scope > .composed-label')?.lang ?? null
+      }))`);
+      assert.ok(rows.length > 0, 'no composed text rendered');
+      assert.ok(rows.every(row => row.label === 'en'), JSON.stringify(rows));
+    }
+    assert.ok(await evaluate(cdp, `document.querySelectorAll('#reader-document .composed[lang="la"], #reader-document .composed[lang="en"]').length > 0`));
+  });
+
+  await check('forced colors keep the Browse submit label visible against its backplate', async () => {
+    await cdp.send('Emulation.setEmulatedMedia', { features: [{ name: 'forced-colors', value: 'active' }] });
+    try {
+      for (const scheme of ['light', 'dark']) {
+        await cdp.send('Emulation.setEmulatedMedia', { features: [
+          { name: 'forced-colors', value: 'active' }, { name: 'prefers-color-scheme', value: scheme }] });
+        await candidate(cdp, base, STATES.roman); await click(cdp, '[data-reader-action="browse"]');
+        const paint = await evaluate(cdp, `(() => {
+          const probe = document.createElement('span');
+          document.body.appendChild(probe);
+          const system = name => { probe.style.color = name; return getComputedStyle(probe).color; };
+          const canvas = system('Canvas'); const buttonText = system('ButtonText');
+          probe.remove();
+          const apply = getComputedStyle(document.querySelector('#browse-form .surface-apply'));
+          return { forced: matchMedia('(forced-colors: active)').matches, canvas, buttonText,
+            color: apply.color, background: apply.backgroundColor, border: apply.borderTopColor,
+            borderWidth: apply.borderTopWidth };
+        })()`);
+        assert.equal(paint.forced, true);
+        // Chromium paints a Canvas backplate behind forced text, so the label
+        // must never be Canvas, and the button must keep a visible edge.
+        assert.notEqual(paint.color, paint.canvas, JSON.stringify(paint));
+        assert.notEqual(paint.color, paint.background, JSON.stringify(paint));
+        assert.equal(paint.color, paint.buttonText, JSON.stringify(paint));
+        assert.notEqual(paint.border, paint.background, JSON.stringify(paint));
+        assert.notEqual(paint.borderWidth, '0px');
+        await escape(cdp);
+      }
+    } finally {
+      await cdp.send('Emulation.setEmulatedMedia', { features: [] });
+    }
+  });
+
   await check('one formulary-relevant witness resolves deterministically without a control', async () => {
     await candidate(cdp, base, STATES.englishOne);
     const state = await evaluate(cdp, 'propersReaderDebug.state');
@@ -1449,6 +1576,13 @@ async function captures(cdp, base) {
     await click(cdp, `[data-reader-action="${action}"]`);
     await shot(cdp, resolve(captureDir, `propers-reader-${action}-open-393x852.png`)); await escape(cdp);
   }
+  for (const scheme of ['light', 'dark']) {
+    await cdp.send('Emulation.setEmulatedMedia', { features: [
+      { name: 'forced-colors', value: 'active' }, { name: 'prefers-color-scheme', value: scheme }] });
+    await candidate(cdp, base, STATES.englishWitness); await click(cdp, '[data-reader-action="browse"]');
+    await shot(cdp, resolve(captureDir, `propers-reader-browse-forced-${scheme}-393x852.png`)); await escape(cdp);
+  }
+  await cdp.send('Emulation.setEmulatedMedia', { features: [] });
   await viewport(cdp, 1440, 900); await candidate(cdp, base, STATES.roman);
   await click(cdp, '[data-reader-action="browse"]');
   await shot(cdp, resolve(captureDir, 'propers-reader-browse-open-1440x900.png')); await escape(cdp);

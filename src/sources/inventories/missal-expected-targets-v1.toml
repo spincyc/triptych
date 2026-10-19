@@ -90,7 +90,7 @@ languages = ["la", "en"]
 date_range = "Historical edition snapshot; no civil-year occurrence claim"
 source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md", "src/sources/inventories/roman-1962-finding-aid-coverage-v1.toml"]
 enumeration_state = "unresolved"
-basis = "Accounting boundary for the whole registered target facsimile, artifact pp. 1-1088. Every page is assigned to a bounded positive section slice or to an explicit extent boundary (seam table in the source review). Section slices enumerate printed formulary headings and the sixteen Preface identities at their declared granularity; whole-book form and Preface denominators await independent review (see the form and Preface boundaries). Text slots, Ordinary options, commemorations, Commons as a kind, and exceptional rites are not. The positive slices remain subsets at their declared granularity; their union is not a text-slot denominator and this slice has no invented target count."
+basis = "Accounting boundary for the whole registered target facsimile, artifact pp. 1-1088. Every page is assigned to a bounded positive section slice or to an explicit extent boundary (seam table in the source review). Mass formularies and Preface identities are enumerated across the whole book, confirmed by an independent page-image review on 2026-10-19. The whole-book Mass-formulary denominator is the form rows of the temporal, sanctoral, body Commons/Marian/votive/dead, local-proper and local-Commons slices (601); the rubric n. 271 taxonomy (5) and the devotional preparation/thanksgiving entries (24) share the kind but are not formularies, and oration-only and rite headings are prayer-set and exceptional-rite rows. Text slots, Ordinary options, commemorations, Commons as a kind, and exceptional rites are not. The positive slices remain subsets at their declared granularity; their union is not a text-slot denominator and this slice has no invented target count."
 
 [[slices]]
 id = "postconciliar-whole-book"
@@ -123,7 +123,7 @@ languages = ["la", "en"]
 date_range = "Historical edition snapshot; no civil-year occurrence claim"
 source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/praefationes.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
 enumeration_state = "complete-within-slice"
-basis = "The sixteen Preface identities independently enumerated by the registered 1962 passage. Chant tones and unnotated repetitions do not multiply identities. The prior source reading was OCR structure, not a fresh wording collation."
+basis = "The sixteen Preface identities independently enumerated by the registered 1962 passage. Chant tones and unnotated repetitions do not multiply identities. The prior source reading was OCR structure, not a fresh wording collation. General rubrics nn. 484-499 (artifact p. 32) name exactly these sixteen, and a 2026-10-19 image review of artifact pp. 304-379 and the solemn tones at pp. 1044-1071 found no other. The preface-form rite texts, the Exsultet (pp. 266-275) and the baptismal-water blessing (pp. 281-288), are owned by Holy Week rows."
 
 [[slices]]
 id = "roman-1962-exceptional-rites-bounded"
@@ -84573,7 +84573,7 @@ identity_state = "established"
 [[targets]]
 id = "roman-1962:body:votive-peter-paul-paschal"
 slice_id = "roman-1962-body-votives-forms"
-kind = "form"
+kind = "form-referral"
 label = "Missa de Ss. Petro et Paulo Apostolis: Tempore paschali"
 source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml"
 source_locus = "1962 CMAA facsimile, artifact p. 862, printed [54]; raw text page line 46"
@@ -84591,7 +84591,7 @@ identity_state = "established"
 [[targets]]
 id = "roman-1962:body:votive-apostles-paschal"
 slice_id = "roman-1962-body-votives-forms"
-kind = "form"
+kind = "form-referral"
 label = "Missa de omnibus Ss. Apostolis: Tempore paschali"
 source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml"
 source_locus = "1962 CMAA facsimile, artifact p. 864, printed [56]; raw text page line 9"
@@ -84762,7 +84762,7 @@ identity_state = "established"
 [[targets]]
 id = "roman-1962:body:votive-marriage-anniversary"
 slice_id = "roman-1962-body-votives-forms"
-kind = "form-referral"
+kind = "form"
 label = "12. In 25 et 50 anniversario a celebratione matrimonii"
 source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml"
 source_locus = "1962 CMAA facsimile, artifact p. 885, printed [77]; raw text page line 69"
@@ -104221,7 +104221,7 @@ form_id = "roman-1962:local:mary-miraculous-medal"
 [[targets]]
 id = "roman-1962:local:common-many-bishop-confessors"
 slice_id = "roman-1962-local-additional-commons"
-kind = "common"
+kind = "form"
 label = "Commune plurium Confessorum Pontificum"
 source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml"
 source_locus = "CMAA artifact PDF p. 1027; printed [219]; raw page-local line 1; Body form through PDF 1029:1 exclusive; source date/designation local Common; conditional local-book use, not a universal-calendar appointment"
@@ -104400,7 +104400,7 @@ form_id = "roman-1962:local:common-many-bishop-confessors"
 [[targets]]
 id = "roman-1962:local:common-many-nonbishop-confessors"
 slice_id = "roman-1962-local-additional-commons"
-kind = "common"
+kind = "form"
 label = "Commune plurium Confessorum non Pontificum"
 source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml"
 source_locus = "CMAA artifact PDF p. 1029; printed [221]; raw page-local line 1; Body form through PDF 1031:1 exclusive; source date/designation local Common; conditional local-book use, not a universal-calendar appointment"
@@ -104579,7 +104579,7 @@ form_id = "roman-1962:local:common-many-nonbishop-confessors"
 [[targets]]
 id = "roman-1962:local:common-many-virgin-martyrs"
 slice_id = "roman-1962-local-additional-commons"
-kind = "common"
+kind = "form"
 label = "Commune plurium Virginum I: pro Virginibus et Martyribus"
 source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml"
 source_locus = "CMAA artifact PDF p. 1031; printed [223]; raw page-local line 1; Body form through PDF 1033:3 exclusive; source date/designation local Common; conditional local-book use, not a universal-calendar appointment"
@@ -104758,7 +104758,7 @@ form_id = "roman-1962:local:common-many-virgin-martyrs"
 [[targets]]
 id = "roman-1962:local:common-many-virgins"
 slice_id = "roman-1962-local-additional-commons"
-kind = "common"
+kind = "form"
 label = "Commune plurium Virginum II: pro Virginibus tantum"
 source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml"
 source_locus = "CMAA artifact PDF p. 1033; printed [225]; raw page-local line 3; Body form through PDF 1035:1 exclusive; source date/designation local Common; conditional local-book use, not a universal-calendar appointment"
@@ -104937,7 +104937,7 @@ form_id = "roman-1962:local:common-many-virgins"
 [[targets]]
 id = "roman-1962:local:common-many-women-martyrs"
 slice_id = "roman-1962-local-additional-commons"
-kind = "common"
+kind = "form"
 label = "Commune plurium non Virginum I: pro Martyribus"
 source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml"
 source_locus = "CMAA artifact PDF p. 1035; printed [227]; raw page-local line 1; Body form through PDF 1036:51 exclusive; source date/designation local Common; conditional local-book use, not a universal-calendar appointment"
@@ -105116,7 +105116,7 @@ form_id = "roman-1962:local:common-many-women-martyrs"
 [[targets]]
 id = "roman-1962:local:common-many-holy-women"
 slice_id = "roman-1962-local-additional-commons"
-kind = "common"
+kind = "form"
 label = "Commune plurium non Virginum II: pro non Martyribus"
 source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml"
 source_locus = "CMAA artifact PDF p. 1036; printed [228]; raw page-local line 51; Body form through PDF 1039:1 exclusive; source date/designation local Common; conditional local-book use, not a universal-calendar appointment"
@@ -106391,6 +106391,26 @@ source_locus = "CMAA artifact PDF p. 1081; printed [273]; raw page-local line 24
 identity_state = "established"
 form_id = "roman-1962:bound-appendix:paten-chalice"
 
+[[targets]]
+id = "roman-1962:sanctoral-form:p597-l2:preface:p598-l31"
+slice_id = "roman-1962-sanctoral-preface-appointments"
+kind = "text-slot"
+label = "S. Ioseph Opificis, Sponsi B. Mariae Virg., Confessoris — preface appointment"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml"
+source_locus = "artifact p. 598 / printed p. 517, raw page-local line 31; Praefatio de S. Ioseph (image-checked 2026-10-19)"
+identity_state = "established"
+form_id = "roman-1962:sanctoral-form:p597-l2"
+
+[[targets]]
+id = "roman-1962:sanctoral-form:p605-l44:preface:p607-l53"
+slice_id = "roman-1962-sanctoral-preface-appointments"
+kind = "text-slot"
+label = "SS. PHILIPPI ET IACOBI APOSTOLORUM — preface appointment (extra tempus paschale)"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml"
+source_locus = "artifact p. 607 / printed p. 526, raw page-local line 53; Praefatio de Apostolis (image-checked 2026-10-19)"
+identity_state = "established"
+form_id = "roman-1962:sanctoral-form:p605-l44"
+
 [[boundaries]]
 id = "roman-1962-fixed-calendar-text-slots"
 slice_id = "roman-1962-universal-fixed-calendar"
@@ -106461,7 +106481,7 @@ slice_id = "roman-1962-whole-book"
 kind = "common"
 state = "unenumerated"
 source_refs = ["src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
-basis = "Common formularies are enumerated as forms in the Commons and local-Commons slices; the kind common is used there only for additional-reading pools and local Common headings. No whole-book denominator of this kind is asserted."
+basis = "Common formularies are enumerated as forms in the Commons and local-Commons slices; the kind common is used there only for four additional-reading pools. No whole-book denominator of this kind is asserted."
 
 [[boundaries]]
 id = "roman-1962-whole-commemoration"
@@ -106472,28 +106492,12 @@ source_refs = ["src/sources/inventories/missal-expected-targets-review-2026-10-1
 basis = "Fixed-calendar commemorations are complete in their own slice. Commemorations appointed in formularies appear as contextual oration slots, and occurrence-dependent commemorations under the rubrics are not enumerated."
 
 [[boundaries]]
-id = "roman-1962-whole-preface"
-slice_id = "roman-1962-whole-book"
-kind = "preface"
-state = "unenumerated"
-source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
-basis = "The sixteen tracked Preface identities stand. Preface headings and the Vere dignum incipit were found only at artifact pp. 305-379 and in the solemn tones at pp. 1044-1070, but that search ran over extracted text; no whole-book Preface denominator is asserted until it is confirmed against page images."
-
-[[boundaries]]
 id = "roman-1962-whole-ordinary-option"
 slice_id = "roman-1962-whole-book"
 kind = "ordinary-option"
 state = "unenumerated"
 source_refs = ["src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
 basis = "The main Ordo, Canon and Preface wording options, Ritus additions, musical presentations and chant appendix are complete in their slices. Ordinary directions in proper formularies are positive but partial, and general-rubric options (pp. 10-34) are not enumerated."
-
-[[boundaries]]
-id = "roman-1962-whole-form"
-slice_id = "roman-1962-whole-book"
-kind = "form"
-state = "unenumerated"
-source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
-basis = "Every formulary-bearing section slice is complete within its slice for printed formulary headings, every fixed-calendar date has a printed formulary, and every sanctoral date heading falls on a calendar date (seam table in the source review). The sanctoral and Commons sections rest on their first enumeration lanes' image checks and have not been independently re-verified, so no whole-book form denominator is asserted yet."
 
 [[boundaries]]
 id = "roman-1962-whole-cycle"

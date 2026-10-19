@@ -140,10 +140,10 @@ immutable acceptance package. Reproduce them for any release review.
 ### Ordered implementation milestones
 
 The C-series below refines the existing W1–W9 workstreams. It does not replace
-M1–M6 or broaden any historical acceptance. C1 is **in progress after source and
-browser access restrictions were removed**, with exact-edition enumeration and
-real-browser acceptance still outstanding; C2–C6 remain
-**planned**.
+M1–M6 or broaden any historical acceptance. C1 is **in progress, blocked only on
+exact-edition acquisition** (an authenticated 1920 Vatican impression and
+complete 2008 evidence); its report, controls, verification and publication
+requirements pass. C2–C6 remain **planned**.
 
 | Milestone | Deliverable | Exit evidence and dependency |
 | --- | --- | --- |
@@ -216,13 +216,39 @@ The acceptance criteria above remain unchanged.
 The second retry's inventory checkpoint enumerates every section of the
 registered 1962 facsimile and assigns every artifact page to a section slice or
 an extent boundary. It joins twenty 2002 appointments to the official 2008
-variation list and adds the selected U.S. 2011 General Index headings. The
-inventory now holds 10,681 targets in 72 slices with 93 boundaries; the
+variation list and adds the selected U.S. 2011 General Index headings. An
+independent page-image review then confirmed the 1962 formulary and Preface
+enumeration, corrected nine kinds, and retired those two whole-book boundaries.
+The inventory now holds 10,683 targets in 72 slices with 91 boundaries; the
 [source review](../src/sources/inventories/missal-expected-targets-review-2026-10-19.md)
 owns the extents and dispositions. All three whole-book universes stay
-unresolved: 1962 awaits independent page-image review of its form and Preface
-boundaries, 2008 an authenticated complete body or index, and 1920 an
-authenticated Vatican impression.
+unresolved. 1962 still has unenumerated text-slot and other dimensions. 2008
+needs an authenticated complete body or index, and 1920 an authenticated
+Vatican impression; a bounded search found neither, and the
+[acquisition audit](../src/sources/inventories/missal-acquisition-audit-v1.toml)
+records the hosts reached and the hosts still unsearched.
+
+Real-browser acceptance of the C1 surfaces is recorded in the
+[work register](../PROJECT-WORK.md); C1-attributable defects were fixed with
+regressions. These findings belong to C4 and the ritual-flow deliverable:
+
+| Finding | Owner surface |
+| --- | --- |
+| At 400% zoom, a Contents jump leaves the chosen unit under the fixed action bar | `reader-instrument.css` scroll padding/margin; ritual-flow `contents-live-map` |
+| Coverage notice and absence notes are about 12 px, below the 16 px body norm | `reader-instrument.css` notice styles |
+| Closed selects truncate trailing coverage figures, including the witness count | Browse and Date selector presentation |
+| Latin headings and option labels carry no `lang="la"` | shared renderer and reader identity blocks |
+| Pre-1955 days without a formulary show "Selection unavailable" | `day-reader.js` selection resolution |
+| A postconciliar unit says "No English or Latin body is held here" beside restricted siblings | absence wording for `untranslated` units |
+
+Throttled-mobile cold LCP still fails the 2.5 s budget, as it did before C1
+(Day 1962 12.21 s against 11.89 s). Further payload reductions require reader
+changes. In roman-1962 gzip terms, a lazily fetched coverage sidecar plus
+removing the pre-C1 `forms[].propers` copy saves about 233 KB. Deriving unit
+target and occurrence identities from position saves about 75 KB. Computing
+per-Mass coverage in the browser saves about 66 KB. Per-Mass structure files,
+which `web-data.md` already names as the next candidate, are the largest
+option.
 
 #### C2: the reusable representative-Mass pattern
 

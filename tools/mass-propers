@@ -2843,8 +2843,9 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
         # interpret.
         if isinstance(mass.get(RECENSION), dict):
             built[RECENSION] = mass[RECENSION]
-        built["coverage"] = _missal_coverage.summarize(
-            _missal_coverage.proper_units(built), "mass"
+        # The file-level report states `count_basis` and `denominator` once.
+        built["coverage"] = _missal_coverage.nested(
+            _missal_coverage.summarize(_missal_coverage.proper_units(built), "mass")
         )
         masses.append(built)
     manifest = translation_manifest(masses, witnesses)
@@ -2890,8 +2891,12 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
             "calendar",
         ),
     }
-    structure["coverage"]["expected_inventory"] = _missal_coverage.expectations(
-        inventory_root(root) / "missal-expected-targets-v1.toml", calendar, masses
+    # Published as exact per-state totals, not one row per expected target: the
+    # rows were 1.4 MB of the 1962 file and no page reads them.
+    structure["coverage"]["expected_inventory"] = _missal_coverage.published_expectations(
+        _missal_coverage.expectations(
+            inventory_root(root) / "missal-expected-targets-v1.toml", calendar, masses
+        )
     )
     # A recension's aggregate limitation is part of the public structure, not
     # UI copy. Without these source-owned fields an inherited base formulary can
@@ -2908,6 +2913,29 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
 
 def _serialise(payload: object) -> str:
     return json.dumps(payload, ensure_ascii=False, sort_keys=True, indent=1) + "\n"
+
+
+def _compact(payload: object) -> str:
+    return json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+
+
+def _serialise_structure(payload: dict) -> str:
+    """Compact bytes with one top-level key, and one mass, per line.
+
+    Indentation was a fifth of a calendar file gzipped and a quarter of it raw,
+    every byte of it downloaded and parsed by the browser (1962: 22.1 MB raw,
+    1.56 MB gzipped, against 16.4 MB and 1.24 MB compact). One mass per line
+    keeps a regeneration's diff to the masses that changed.
+    """
+    lines = []
+    for key in sorted(payload):
+        value = payload[key]
+        if key == "masses" and isinstance(value, list):
+            body = "[\n" + ",\n".join(_compact(mass) for mass in value) + "\n]"
+        else:
+            body = _compact(value)
+        lines.append(f"{_compact(key)}:{body}")
+    return "{\n" + ",\n".join(lines) + "\n}\n"
 
 
 def refuse_symlink_output(root: Path, target: Path) -> None:
@@ -2978,7 +3006,7 @@ def run_structure(arguments: argparse.Namespace) -> dict:
         # files under `structure/`.
         path = propers_dir / f"{name}.json"
         refuse_symlink_output(out, path)
-        files[path] = _serialise(built)
+        files[path] = _serialise_structure(built)
         written.append(str(path))
         cited = [
             citation

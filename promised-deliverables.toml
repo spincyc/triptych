@@ -22,14 +22,14 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "missal-c1-reader-controls"
   criterion = "Day and Propers language/witness selectors, notices and existing discovery results consume the common coverage contract, account for nested cycles and selected Mass coverage, avoid Latin completeness claims, and preserve explicit missing-witness and unsupported states."
-  status = "open"
-  evidence = ["src/web/browser/shared/browser-core.js", "src/web/browser/liturgy/day-reader.js", "src/web/browser/liturgy/propers-reader.js", "src/web/browser/liturgy/reader-state-adapters.js", "tools/tests/test_reader_coverage.py", "PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["src/web/browser/shared/browser-core.js", "src/web/browser/liturgy/day-reader.js", "src/web/browser/liturgy/propers-reader.js", "src/web/browser/liturgy/reader-state-adapters.js", "tools/tests/test_reader_coverage.py", "tools/tests/propers_reader_integration_browser.mjs", "PROJECT-WORK.md"]
 
   [[deliverables.requirements]]
   id = "missal-c1-verification"
   criterion = "Regression fixtures prove identity, counting, typed absence, no fallback, and browser/generated-data/CLI parity; applicable source and data checks and real-browser responsive, interaction and print checks pass or identify unchanged baseline failures, and independent review findings are dispositioned."
-  status = "open"
-  evidence = ["guidance/liturgy-browser-roadmap.md", "PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["guidance/liturgy-browser-roadmap.md", "PROJECT-WORK.md", "tools/tests/test_missal_coverage.py", "tools/tests/propers_reader_integration_browser.mjs"]
 
   [[deliverables.requirements]]
   id = "missal-c1-publication"
