@@ -1625,6 +1625,28 @@ class SourceLibraryTests(unittest.TestCase):
         self.assertIn("matching filename", joined)
         self.assertIn("duplicate JSON key", joined)
 
+    def test_lane_review_json_ownership_is_typed_and_narrow(self) -> None:
+        self.add_valid_vertical_fixture()
+        base = "src/sources/inventories/eucharistic-research-reviews/"
+        review = {"schema_version": 1, "record_type": "eucharistic-research-lane-review", "id": "fixture",
+                  "title": "Fixture lane review", "side": "eastern", "checked_on": "2026-10-19",
+                  "target_inventory": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
+                  "review_files": {"packet_sha256": "0" * 64}, "coverage_rows": [], "uses": [], "searches": [],
+                  "versions": [], "acquisitions": []}
+        self.write(base + "fixture.json", json.dumps(review))
+        self.assertEqual([], SOURCE_LIBRARY.load_library(self.root).errors)
+        self.write(base + "not-fixture.json", json.dumps(review))
+        self.write(base + "unpinned.json", json.dumps({**review, "id": "unpinned", "review_files": "scratch"}))
+        self.write(base + "no-versions.json", json.dumps({key: value for key, value in {**review, "id": "no-versions"}.items() if key != "versions"}))
+        self.write(base + "snake_case.json", json.dumps({**review, "id": "snake_case"}))
+        self.write(base + "nested/fixture.json", json.dumps(review))
+        joined = "\n".join(SOURCE_LIBRARY.load_library(self.root).errors)
+        self.assertIn(base + "not-fixture.json: lane review ownership requires matching filename", joined)
+        self.assertIn(base + "unpinned.json: lane review ownership requires matching filename and pinned review files", joined)
+        self.assertIn(base + "no-versions.json: expected schema_version=1 eucharistic-research-lane-review ownership envelope", joined)
+        for name in ("snake_case.json", "nested/fixture.json"):
+            self.assertIn(base + name + ": file is outside", joined)
+
     def test_history_inventory_ownership_does_not_exempt_nearby_json_or_payloads(self) -> None:
         self.add_valid_vertical_fixture()
         dossier = {"schema_version": 1, "record_type": "eucharistic-book-stages", "dossier_id": "fixture",

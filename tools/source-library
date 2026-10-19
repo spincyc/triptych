@@ -1940,6 +1940,10 @@ def _owned_history_inventory(library: Library, entry: Path, relative: Path) -> b
     elif relative == Path("inventories/eucharistic-stage-coverage-v1.json"):
         record_type, identity = "eucharistic-book-stage-coverage-audit", "audit_id"
         arrays = ("inputs", "sources")
+    elif (len(relative.parts) == 3 and relative.parts[:2] == ("inventories", "eucharistic-research-reviews")
+          and entry.suffix == ".json" and KEBAB_PATTERN.fullmatch(entry.stem)):
+        record_type, identity = "eucharistic-research-lane-review", "id"
+        arrays = ("coverage_rows", "uses", "searches", "versions", "acquisitions")
     elif (len(relative.parts) == 3 and relative.parts[:2] == ("inventories", "eucharistic-books")
           and entry.suffix == ".json" and KEBAB_PATTERN.fullmatch(entry.stem)):
         record_type, identity = "eucharistic-native-book", "id"
@@ -1987,9 +1991,13 @@ def _owned_history_inventory(library: Library, entry: Path, relative: Path) -> b
         "eucharistic-book-extent": ("status",),
         "eucharistic-book-collation": ("status", "reviewer", "checked_on", "binding_sha256", "extent_sha256"),
         "eucharistic-text-parentage": ("status", "reviewer", "checked_on", "parent_binding_sha256", "child_binding_sha256", "kind", "basis", "scope"),
+        "eucharistic-research-lane-review": ("side", "checked_on", "target_inventory"),
     }.get(record_type, ())
     if any(not _is_string(data.get(key)) for key in required):
         library.error(entry, f"incomplete {record_type} ownership envelope")
+    if record_type == "eucharistic-research-lane-review" and (
+            data["id"] != entry.stem or not isinstance(data.get("review_files"), dict)):
+        library.error(entry, "lane review ownership requires matching filename and pinned review files")
     if record_type == "eucharistic-native-book" and (
             data["id"] != entry.stem or data.get("extent_kind") not in {"whole-book", "constituent"}
             or not isinstance(data.get("date"), dict)):

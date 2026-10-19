@@ -142,6 +142,49 @@ writes a packet from the evidence already held and records every unfinished
 search as a labelled open lead with its unexamined range. That defers
 exhaustion of a lead to later work; it never drops a known version.
 
+**First wave closed, 2026-10-19.** Three lanes are integrated after final
+packets and final independent cold reviews:
+- Greek and Melkite Byzantine: Greek, Melkite, Italo-Albanian and Albanian.
+- Regional Byzantine: Bulgarian, Macedonian, Croatia–Serbia, Romanian and
+  Hungarian.
+- Early Latin: ancient Roman, Gallican and Insular, and Roman curial.
+
+Each packet was rebuilt from the interrupted one. Every acquisition was
+re-hashed, and prose whose word spacing the interrupted build had stripped was
+rewritten. Each reviewer reconciled its frozen expected list, checked the cited
+page images and disposed of every proposal. The reviews made 238 corrections,
+added 26 rows the packets had omitted and rejected two: a duplicate Haymo
+ordinal and an Irish hymn book without Eucharistic content. Nothing was
+blocking.
+
+The Eastern inventory now holds 252 records and 208 sources. The Western
+inventory holds 281 candidates and 249 sources, and the catalogue projects 592
+entries. These rows remain witnesses, components, translations and leads, not
+counts of substantive revisions. All 301 new rows are linked to coverage rows
+except two eleventh-century witnesses, Šibenik and Madrid RAH 112. They stay
+outside any row until the lanes owning Dalmatian and Iberian books take them.
+
+Per-lane receipts in
+[`eucharistic-research-reviews/`](src/sources/inventories/eucharistic-research-reviews/)
+record per-use dispositions and the searched repertoires with their unexamined
+ranges. They also hold 40 unresolved leads, 222 acquisition receipts with
+hashes and proposed storage, and each reviewer's reconciliation. The packets
+and reviews stay in scratch, pinned by hash.
+
+Open from this wave:
+- **Retention.** Thirty-three acquisitions are proposed for tracked retention
+  and await source-library registration with per-artifact rights records.
+  Reviewers flagged three issues for that registration:
+  - United States-only bases for Lowe 1920 and 1924, Bălan 1915 and Charon
+    1908.
+  - Session identifiers embedded in the five BnF catalogue pages.
+  - An unverified death date for Lippe.
+- **Identity.** The Rome 1970 Ruthenian printing must be reconciled with the
+  Slavic lane before admission.
+- **Leads.** The receipts name the remaining unexamined ranges, among them
+  Andrieu's ordines XVII–L, the 1873–1902 Roman Greek series and any Serbian
+  books.
+
 The [stage dossiers](src/sources/inventories/eucharistic-stages/) now cover
 43 traditions in 14 dossiers: 147 book-state records, 141 documented and six
 provisional. Attestation, publication, approval and effectiveness retain their
@@ -282,6 +325,26 @@ remain untested. The all-rite historical census, whole-book text corpus and
 complete textual Git history therefore remain open. Work stays on
 `feature/missal-timeline`; no new hosted corpus repository or site deployment is
 part of this continuation.
+
+## Missale Gothicum volume mismatch identified, 2026-10-19
+
+The early Latin lane and its independent reviewer both read the title and series
+leaves of the two Internet Archive items for Bannister's *Missale Gothicum*.
+Item `missalegothicumg01cath` is volume II, Notes and Indices (London 1919,
+HBS LIV); `missalegothicumg02cath` is volume I, Text and Introduction (London
+1917, HBS LII). The registered artifact
+`artifact.catholic-church.missale-gothicum.bannister-1917.ia-djvu-ocr-missalegothicumg01cath`
+therefore holds the notes volume under the 1917 text edition. The edition's
+negative search note and the Missale Gothicum member of
+`corpus.catholic-church.ancient-sacramentaries-2026-08-01` were run against
+that volume. They prove nothing about the text until rerun on volume I.
+
+`tools/source-library impact` names four publication bindings that use the
+corpus as a search boundary. The GPT and Claude Thirteenth Sundays after
+Pentecost bind it, and so do the Claude Fifteenth and Eighteenth Sundays after
+Pentecost. Correcting the artifact's identity and rerunning those searches is
+separately scoped publication work. It has not been performed. The missal
+timeline pass does not depend on it.
 
 ## Wilson 1915 consumer corrections identified, 2026-10-16
 
