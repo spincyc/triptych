@@ -593,12 +593,14 @@ missal_number = "n. 29"
 # witness rows join to one element because the book sets the priest's summons
 # and the people's answer as separate blocks and the Missal sets them as one.
 absent_english = "approved-english-publication-restriction"
-# V1 preserves the antecedent witness's literal `R.` in row 53 and also records
-# its explicit response role. Nothing strips or infers from the source string;
-# separating that printed cue from spoken text needs a later reviewed derivative.
+# Row 53 keeps the antecedent witness's literal `R.` byte for byte, and the turn
+# records its explicit response role. `printed_marker` is the reviewed
+# derivative (2026-10-19) separating that printed cue from the spoken text, so
+# the reader sets one cue, the role's response glyph, rather than the glyph
+# plus the printed letter. The role is declared, never inferred from the `R.`.
 latin_turns = [
   { key = "priest-summons", seq = [52], speaker = "priest", dialogue_role = "versicle" },
-  { key = "people-response", seq = [53], speaker = "all", dialogue_role = "response" },
+  { key = "people-response", seq = [53], speaker = "all", dialogue_role = "response", printed_marker = "R." },
 ]
 [sections.elements.latin]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"

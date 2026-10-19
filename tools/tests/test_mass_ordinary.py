@@ -257,8 +257,20 @@ class OrdinaryStructure(unittest.TestCase):
                     for turn in turns:
                         self.assertEqual(
                             set(turn),
-                            {"key", "speaker", "dialogue_role", "action", "text"},
+                            {"key", "speaker", "dialogue_role", "action",
+                             "printed_marker", "text"},
                         )
+                        # The reviewed marker is the row's own head letter,
+                        # one space, then spoken matter; the row text itself
+                        # is never shortened in the generated data.
+                        self.assertIn(turn["printed_marker"], (None, "P.", "R."))
+                        if turn["printed_marker"] is not None:
+                            self.assertTrue(
+                                turn["text"].startswith(turn["printed_marker"] + " "),
+                                (calendar, element["key"], turn["key"]),
+                            )
+                        else:
+                            self.assertNotRegex(turn["text"], r"^(?:[PRVS]\.|[℣℟])")
                         self.assertRegex(turn["key"], r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
                         self.assertIn(turn["speaker"], allowed_speakers)
                         self.assertIn(turn["dialogue_role"], allowed_roles)
@@ -296,11 +308,19 @@ class OrdinaryStructure(unittest.TestCase):
              ("people-response", "all", "response", None)],
         )
         self.assertTrue(post_turns[1]["text"].startswith("R. Suscipiat"))
+        self.assertEqual([turn["printed_marker"] for turn in post_turns], [None, "R."])
         for calendar, key, lang, turns in found:
             if calendar.startswith("roman-"):
                 self.assertEqual(len(turns), 1, (calendar, key, lang))
                 self.assertEqual(turns[0]["speaker"], roman_elements[key])
                 self.assertIsNone(turns[0]["dialogue_role"])
+                # The book's P. marks the priest's row and R. the server's;
+                # declaring either never supplies a dialogue role.
+                self.assertEqual(
+                    turns[0]["printed_marker"],
+                    "P." if roman_elements[key] == "priest" else "R.",
+                    (calendar, key, lang),
+                )
 
         # Quarantined English has neither text nor turns. Metadata on Latin
         # never leaks across to English, and no Roman source is heuristically
@@ -1380,16 +1400,17 @@ class OrdinaryTool(unittest.TestCase):
                         {
                             "key": "server-call", "speaker": "server",
                             "dialogue_role": "versicle", "action": None,
-                            "text": "Server call.",
+                            "printed_marker": None, "text": "Server call.",
                         },
                         {
                             "key": "priest-response", "speaker": "priest",
                             "dialogue_role": "response", "action": None,
-                            "text": "Priest response.",
+                            "printed_marker": None, "text": "Priest response.",
                         },
                         {
                             "key": "bow", "speaker": None,
-                            "dialogue_role": None, "action": True, "text": "Bow.",
+                            "dialogue_role": None, "action": True,
+                            "printed_marker": None, "text": "Bow.",
                         },
                     ],
                 )
@@ -1440,6 +1461,18 @@ class OrdinaryTool(unittest.TestCase):
                         {"key": "unknown-field", "seq": [10, 20, 30],
                          "offset": 0},
                     ]}, "unknown fields"),
+                    ({"english_turns": [
+                        {"key": "bad-marker", "seq": [10, 20, 30],
+                         "speaker": "server", "printed_marker": "V."},
+                    ]}, "has printed_marker"),
+                    ({"english_turns": [
+                        {"key": "marked-action", "seq": [10, 20, 30],
+                         "action": True, "printed_marker": "R."},
+                    ]}, "is an action and cannot carry"),
+                    ({"english_turns": [
+                        {"key": "absent-marker", "seq": [10, 20, 30],
+                         "speaker": "server", "printed_marker": "R."},
+                    ]}, "does not open with that marker"),
                 )
                 for bad_entry, message in invalid:
                     with self.subTest(message=message):
@@ -1449,6 +1482,49 @@ class OrdinaryTool(unittest.TestCase):
                                 ["dialogue"], "text", "synthetic/dialogue",
                                 "synthetic", parent,
                             )
+
+                # A printed head letter is separated only by a reviewed
+                # declaration, never inferred from the string, and a row that
+                # opens with one undeclared is refused rather than rendered
+                # under two cues.
+                (fixture / "marked.tsv").write_text(
+                    "element_key\tseq\ttext\n"
+                    "marked\t10\tP. Priest summons.\n"
+                    "marked\t20\tR. Server answer.\n",
+                    encoding="utf-8",
+                )
+                marked_id = "artifact.synthetic.marked"
+                library[marked_id] = {
+                    "id": marked_id, "path": "marked.tsv", "_source_root": fixture,
+                }
+                marked_parent = "P. Priest summons.\nR. Server answer."
+                marked = tool.structured_turns(
+                    {"english_turns": [
+                        {"key": "summons", "seq": [10], "speaker": "priest",
+                         "printed_marker": "P."},
+                        {"key": "answer", "seq": [20], "speaker": "server",
+                         "printed_marker": "R."},
+                    ]},
+                    "english", library, marked_id, ["marked"], "text",
+                    "synthetic/marked", "synthetic", marked_parent,
+                )
+                self.assertEqual(
+                    [(row["printed_marker"], row["dialogue_role"], row["text"])
+                     for row in marked],
+                    [("P.", None, "P. Priest summons."),
+                     ("R.", None, "R. Server answer.")],
+                )
+                with self.assertRaisesRegex(tool.SourceError, "undeclared printed cue"):
+                    tool.structured_turns(
+                        {"english_turns": [
+                            {"key": "summons", "seq": [10], "speaker": "priest",
+                             "printed_marker": "P."},
+                            {"key": "answer", "seq": [20], "speaker": "server",
+                             "dialogue_role": "response"},
+                        ]},
+                        "english", library, marked_id, ["marked"], "text",
+                        "synthetic/marked", "synthetic", marked_parent,
+                    )
 
                 with self.assertRaisesRegex(tool.SourceError, "without a english text block"):
                     tool.side_text(
@@ -1682,14 +1758,22 @@ process.stdout.write(JSON.stringify({
         # c2b1a271b's explicit Psalm numbering/title-unnumbered loci and the
         # collated ot-18 Communion group basis changed. Received prayer text,
         # translations, event order and counts are unchanged.
+        # Re-pinned against d3c36e8ea on 2026-10-19 (C4 cue step). Sequences
+        # are unchanged; received text changed in exactly three ways: a turn's
+        # reviewed printed marker (the 1962 Confiteor, Laus tibi, Suscipiat and
+        # Deo gratias rows; the postconciliar Suscipiat response) moved out of
+        # the spoken words beside its one structured cue; the `all` Preface
+        # dialogue and Pax regained their opening "Priest"; and a final word
+        # label is no longer glued to its words ("ResponseAmen." became
+        # "Response Amen."), matching every interior label.
         expected = {
             "pentecost_10_text": (
                 205,
-                "78c002dd2f36e44c9e10b8bb8657e537124582b997c12774891e84f5ea654083",
+                "60485d61b5edca3cada03d486e2fa671b3e1f3637a0f53f95873f7212bce4109",
             ),
             "ot_18_text": (
                 67,
-                "28630a65f69d784944b4ea4ed0b6e2f47c8c894a799a2fbb5872f859b88fcb1f",
+                "01b6b8f6895b452d0d511e3ca7230cc2a6be816dcd11c88380f3e1771a53d33d",
             ),
         }
         for key, (count, wanted_digest) in expected.items():
@@ -1947,7 +2031,8 @@ process.stdout.write(JSON.stringify({
             [
                 {
                     "speaker": "server", "dialogue_role": "versicle",
-                    "action": None, "id": None, "semantic_id": None,
+                    "action": None, "printed_marker": None,
+                    "id": None, "semantic_id": None,
                     "labels": ["Versicle — Server"],
                     "cues": [{"mark": "℣", "aria_hidden": "true"}],
                     "texts": [{"lang": "en", "text": "Server call."}],
@@ -1955,7 +2040,8 @@ process.stdout.write(JSON.stringify({
                 },
                 {
                     "speaker": "priest", "dialogue_role": "response",
-                    "action": None, "id": None, "semantic_id": None,
+                    "action": None, "printed_marker": None,
+                    "id": None, "semantic_id": None,
                     "labels": ["Response — Priest"],
                     "cues": [{"mark": "℟", "aria_hidden": "true"}],
                     "texts": [{"lang": "en", "text": "Priest response."}],
@@ -1963,7 +2049,8 @@ process.stdout.write(JSON.stringify({
                 },
                 {
                     "speaker": "priest", "dialogue_role": None,
-                    "action": None, "id": None, "semantic_id": None,
+                    "action": None, "printed_marker": None,
+                    "id": None, "semantic_id": None,
                     "labels": ["Priest"],
                     "cues": [{"mark": "P", "aria_hidden": "true"}],
                     "texts": [{"lang": "en", "text": "Priest part."}],
@@ -1971,7 +2058,8 @@ process.stdout.write(JSON.stringify({
                 },
                 {
                     "speaker": "server", "dialogue_role": None,
-                    "action": None, "id": None, "semantic_id": None,
+                    "action": None, "printed_marker": None,
+                    "id": None, "semantic_id": None,
                     "labels": ["Server"],
                     "cues": [{"mark": "S", "aria_hidden": "true"}],
                     "texts": [{"lang": "en", "text": "Server part."}],
@@ -1979,7 +2067,8 @@ process.stdout.write(JSON.stringify({
                 },
                 {
                     "speaker": None, "dialogue_role": None,
-                    "action": "true", "id": None, "semantic_id": None,
+                    "action": "true", "printed_marker": None,
+                    "id": None, "semantic_id": None,
                     "labels": [], "cues": [],
                     "texts": [{"lang": "en", "text": "Bow."}],
                     "received": "Bow.",
@@ -2008,9 +2097,18 @@ process.stdout.write(JSON.stringify({
             [row["text"] for row in real["source_turns"]],
             real["source_text"].split("\n"),
         )
+        # The generated row keeps the printed `R.`; the reader sets the role's
+        # one cue and the spoken words, and records the separated marker.
         self.assertEqual(
-            [row["texts"][0]["text"] for row in real["rendered_turns"]],
+            [
+                (row["printed_marker"] or "") + (" " if row["printed_marker"] else "")
+                + row["texts"][0]["text"]
+                for row in real["rendered_turns"]
+            ],
             [row["text"] for row in real["source_turns"]],
+        )
+        self.assertEqual(
+            [row["printed_marker"] for row in real["rendered_turns"]], [None, "R."]
         )
         self.assertEqual(
             [
@@ -2028,11 +2126,119 @@ process.stdout.write(JSON.stringify({
                 ),
             ],
         )
-        self.assertTrue(real["rendered_turns"][1]["received"].startswith("R. Suscipiat"))
+        self.assertTrue(real["rendered_turns"][1]["received"].startswith("Suscipiat"))
         self.assertTrue(all(
             row["id"] is None and row["semantic_id"] is None
             for row in real["rendered_turns"]
         ))
+
+        # A declared marker steps aside only for a structured cue that fits it.
+        marked = report["marked_synthetic"]
+        self.assertEqual(
+            [
+                (row["printed_marker"], [cue["mark"] for cue in row["cues"]],
+                 row["texts"][0]["text"])
+                for row in marked["turns"]
+            ],
+            [
+                ("R.", ["S"], "Cued answer."),
+                (None, [], "R. Uncued answer."),
+                (None, ["P"], "P. Misdeclared row."),
+            ],
+        )
+
+    def test_each_verified_turn_sets_exactly_one_visible_cue(self) -> None:
+        """Confiteor, Suscipiat and Orate fratres: one cue, one label per turn.
+
+        Before 2026-10-19 the 1962 Confiteor set a gutter P beside the printed
+        "P.", the server's rows S beside "R.", and Orate fratres needed an
+        event-specific stylesheet rule to hide its generated response glyph.
+        The reviewed `printed_marker` now separates the book's letter, so the
+        common representation alone yields one visible cue per turn. Its one
+        accessible label is English; the spoken words keep the row's language.
+        """
+        report = self.run_harness()
+        dialogues = report["real_dialogues"]
+        self.assertEqual(len(dialogues), 7)
+        expected_cues = {
+            "praeparatio/confiteor-sacerdotis": [("P", "Priest", "P.")],
+            "praeparatio/confiteor-ministrorum": [("S", "Server", "R.")],
+            "oblatio/suscipiat-dominus": [("S", "Server", "R.")],
+            "praeparatio-donorum/orate-fratres": [
+                ("℣", "Versicle — Priest", None),
+                ("℟", "Response — All", "R."),
+            ],
+        }
+        for name, dialogue in dialogues.items():
+            calendar, key, lang = name.split(" ")
+            rows = dialogue["rendered_turns"]
+            with self.subTest(dialogue=name):
+                self.assertEqual(
+                    [
+                        (
+                            [cue["mark"] for cue in row["cues"]][0],
+                            row["labels"][0],
+                            row["printed_marker"],
+                        )
+                        for row in rows
+                    ],
+                    expected_cues[key],
+                )
+                for row, source in zip(rows, dialogue["source_turns"]):
+                    self.assertEqual(len(row["cues"]), 1, "one visible cue")
+                    self.assertEqual(row["cues"][0]["aria_hidden"], "true")
+                    self.assertEqual(len(row["labels"]), 1, "one accessible label")
+                    self.assertEqual(row["texts"][0]["lang"], lang)
+                    body = row["texts"][0]["text"]
+                    # No printed cue letter survives in the spoken words, and
+                    # the source row is recovered exactly from marker + body.
+                    self.assertNotRegex(body, r"^(?:[PRVS]\.|[℣℟])")
+                    marker = row["printed_marker"]
+                    self.assertEqual(
+                        (marker + " " if marker else "") + body, source["text"]
+                    )
+                    self.assertEqual(row["received"], body)
+
+    def test_opaque_all_dialogue_keeps_its_opening_attribution(self) -> None:
+        """An `all` element announces no opening speaker, so its P. survives.
+
+        Regression for the recovery probe of 2026-10-19: the postconciliar
+        Preface dialogue and Pax Domini suppressed the `all` opening cue and
+        also removed the leading source P., so their first line had no
+        attribution at all. The last word label is also kept apart from its
+        words, as every interior label already was.
+        """
+        report = self.run_harness()
+        opaque = report["opaque_all"]
+        preface = opaque["preface"]
+        self.assertEqual(preface["speaker"], "all")
+        self.assertTrue(preface["source"].startswith("P. Dominus vobiscum."))
+        self.assertEqual(preface["opening_cues"], 0)
+        self.assertEqual(
+            preface["received"],
+            "Priest Dominus vobiscum. Response Et cum spiritu tuo. "
+            "Priest Sursum corda. Response Habemus ad Dominum. "
+            "Priest Gratias agamus Domino Deo nostro. Response Dignum et justum est.",
+        )
+        self.assertEqual(preface["tags"], ["Priest", "Response"] * 3)
+        # English word labels inside Latin words carry their own language.
+        self.assertEqual(preface["body_lang"], "la")
+        self.assertEqual(preface["tag_langs"], ["en"] * 6)
+
+        pax = opaque["pax"]
+        self.assertEqual(pax["speaker"], "all")
+        self.assertEqual(pax["opening_cues"], 0)
+        self.assertEqual(
+            pax["received"], "Priest Pax Domini sit semper vobiscum. Response Et cum spiritu tuo."
+        )
+
+        # Where the speaker IS announced, the redundant leading mark still goes.
+        priest = opaque["priest_dominus_vobiscum"]
+        self.assertEqual(priest["speaker"], "priest")
+        self.assertEqual(priest["opening_cues"], 1)
+        self.assertTrue(priest["source"].startswith("P. "))
+        self.assertFalse(priest["received"].startswith("Priest Priest"))
+        self.assertNotIn("P. ", priest["received"])
 
     def run_harness(self) -> dict:
         run = subprocess.run(
@@ -2469,6 +2675,7 @@ function dialogueReport(rendered) {
     speaker: row.attrs['data-speaker'] || null,
     dialogue_role: row.attrs['data-dialogue-role'] || null,
     action: row.attrs['data-action'] || null,
+    printed_marker: row.attrs['data-printed-marker'] || null,
     id: row.attrs.id || null,
     semantic_id: row.attrs['data-semantic-id'] || null,
     labels: descendants(row, 'visually-hidden').map((one) => one.text()),
@@ -2642,6 +2849,72 @@ const raw = {
 P.state.ordinaryLang = 'en';
 const rawRendered = P.renderElement(raw, syntheticFile);
 P.state.ordinaryLang = null;
+/* A declared printed marker is separated only where a structured cue stands
+   in its place, and only when the declaration fits the row; otherwise the row
+   is shown exactly as printed and keeps its one printed cue. */
+const marked = {
+  key: 'synthetic/marked', kind: 'dialogue', speaker: null,
+  name: null, latin_incipit: null, locus: null, note: null, variant: null,
+  absent: {english: null, latin: null},
+  translations: [{lang: 'en', source_id: 'synthetic-en', rights: 'project-created',
+    text: 'R. Cued answer.\nR. Uncued answer.\nP. Misdeclared row.',
+    turns: [
+      {key: 'cued', speaker: 'server', dialogue_role: null, action: null,
+        printed_marker: 'R.', text: 'R. Cued answer.'},
+      {key: 'uncued', speaker: null, dialogue_role: null, action: null,
+        printed_marker: 'R.', text: 'R. Uncued answer.'},
+      {key: 'misdeclared', speaker: 'priest', dialogue_role: null, action: null,
+        printed_marker: 'R.', text: 'P. Misdeclared row.'}
+    ]}]
+};
+P.state.ordinaryLang = 'en';
+const markedRendered = P.renderElement(marked, syntheticFile);
+P.state.ordinaryLang = null;
+
+/* The three verified dialogues C4 names, rendered from the generated data. */
+function realTurns(file, key, lang) {
+  const element = all(file).find((e) => e.key === key);
+  const held = (element.translations || []).find((one) => one.lang === lang);
+  P.state.ordinaryLang = lang;
+  const rendered = P.renderElement(element, file);
+  P.state.ordinaryLang = null;
+  return { source_turns: held.turns, rendered_turns: dialogueReport(rendered) };
+}
+const realDialogues = {};
+for (const lang of ['en', 'la']) {
+  for (const key of ['praeparatio/confiteor-sacerdotis',
+    'praeparatio/confiteor-ministrorum', 'oblatio/suscipiat-dominus']) {
+    realDialogues['roman-1962 ' + key + ' ' + lang] = realTurns(tlm, key, lang);
+  }
+}
+realDialogues['postconciliar praeparatio-donorum/orate-fratres la'] =
+  realTurns(pc, 'praeparatio-donorum/orate-fratres', 'la');
+
+/* Opaque `all` dialogues: no opening cue is set, so the leading P. is the
+   first line's only attribution and must survive as its word label. */
+function opaqueCues(file, key, lang) {
+  const element = all(file).find((e) => e.key === key);
+  P.state.ordinaryLang = lang;
+  const rendered = P.renderElement(element, file);
+  P.state.ordinaryLang = null;
+  const body = descendants(rendered, 'composed')[0];
+  return {
+    speaker: element.speaker,
+    source: (element.translations || []).find((one) => one.lang === lang).text,
+    received: body.receivedText(),
+    opening_cues: descendants(rendered, 'is-opening-cue').length,
+    tags: descendants(body, 'speaker-tag').map((one) => one.text()),
+    tag_langs: descendants(body, 'speaker-tag').map((one) => one.lang),
+    body_lang: body.lang
+  };
+}
+const opaqueAll = {
+  preface: opaqueCues(pc, 'prex-eucharistica/praefationis-dialogus', 'la'),
+  pax: opaqueCues(pc, 'ritus-communionis/pax-domini', 'la'),
+  // A priest-announced element still drops its redundant leading mark.
+  priest_dominus_vobiscum: opaqueCues(tlm, 'praeparatio/dominus-vobiscum', 'en')
+};
+
 const orateElement = all(pc).find(
   (e) => e.key === 'praeparatio-donorum/orate-fratres');
 const orateLatin = (orateElement.translations || []).find((one) => one.lang === 'la');
@@ -2689,6 +2962,12 @@ process.stdout.write(JSON.stringify({
     vr_marks: descendants(rawRendered, 'vr-mark').length,
     cues: descendants(rawRendered, 'cue-mark').map((one) => one.attrs['data-cue'])
   },
+  marked_synthetic: {
+    turns: dialogueReport(markedRendered),
+    received: markedRendered.receivedText()
+  },
+  real_dialogues: realDialogues,
+  opaque_all: opaqueAll,
   real_orate_latin: {
     source_text: orateLatin && orateLatin.text,
     source_turns: orateLatin && orateLatin.turns,

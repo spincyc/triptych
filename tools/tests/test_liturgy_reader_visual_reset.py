@@ -210,17 +210,16 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
         ]
         self.assertEqual(len(responses), 1)
         self.assertRegex(responses[0]["text"], r"^R\.\s")
-
-        response_rule = re.search(
-            r'\[data-semantic-event-id="ordinary-element/'
-            r'praeparatio-donorum/orate-fratres"\]\s+'
-            r'\.ordinary-turn\[data-dialogue-role="response"\]\s*>\s*'
-            r'\.ordinary-turn-cue\s+\.cue-mark::before\s*\{([^}]*)\}',
+        # The printed `R.` is a reviewed, separated marker, so the common turn
+        # representation sets one cue. No event-specific rule may hide a
+        # generated cue on one dialogue again (removed 2026-10-19, C4).
+        self.assertEqual(responses[0]["printed_marker"], "R.")
+        self.assertNotIn("orate-fratres", css)
+        self.assertIsNone(re.search(
+            r'\[data-semantic-event-id="ordinary-element/[^"]*"\][^{]*'
+            r'\.cue-mark::before',
             css,
-            re.DOTALL,
-        )
-        self.assertIsNotNone(response_rule)
-        self.assertIn("content: none;", response_rule.group(1))
+        ))
 
         for rule in (
             "padding-inline: max(1rem, var(--reader-safe-left)) "

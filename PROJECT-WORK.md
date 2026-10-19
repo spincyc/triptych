@@ -185,6 +185,48 @@ browser/generated-data/CLI parity, regression and browser evidence, and
 verified feature-branch publication. Known missing texts may remain typed
 gaps; neither a valid report nor a full inventory asserts textual completeness.
 
+## Missal reader C4 dialogue cues, 2026-10-19
+
+<!-- promised-deliverable: missal-reader-c4-dialogue-cues-2026-10-19 -->
+
+After C1's acceptance checkpoint the maintainer asked for the next parallel
+steps. C4's first ordered step is the dialogue cue contract in the
+[roadmap](guidance/liturgy-browser-roadmap.md#c4-dialogue-typography-and-usability-contract).
+
+**In progress: step 1 implemented; the remaining dialogues are open.**
+
+- **Opening cue.** `spoken()` now keeps an all-speaker dialogue's printed
+  opening attribution as a language-tagged "Priest" word label, so the
+  postconciliar Preface dialogue and Pax Domini no longer lose it. Final word
+  labels keep their space in announced and copied text.
+- **One visible cue.** Ordinary turns may declare a `printed_marker` (`P.` or
+  `R.`). `tools/mass-ordinary` accepts it only for a row that is exactly that
+  marker, a space and the spoken words, and refuses an undeclared opening
+  marker on a spoken turn. The renderer then shows one cue per verified turn:
+  ℣/℟ where a role is declared, otherwise the speaker. This covers the 1962
+  Confiteor and Suscipiat, the postconciliar Orate fratres, and the existing
+  Laus tibi and Deo gratias turns. Source text is unchanged byte for byte.
+- **CSS exception removed.** The Orate-fratres-only rule is gone.
+- **Evidence.** Real-browser checks cover visible cue count, accessibility
+  names and clipboard text; unit tests cover the generator guards.
+
+Remaining:
+
+- Introibo/Judica, Sursum corda, Pax and the dismissal need reviewed per-turn
+  source rows and dialogue roles. The postconciliar dismissal holds no text in
+  either language.
+- Element headings still print P./R. from their incipits.
+- ℣/℟ typography and turn-row layout belong to later C4 steps.
+
+## Missal reader C2 representative Masses, 2026-10-19
+
+<!-- promised-deliverable: missal-reader-c2-exemplars-2026-10-19 -->
+
+The same request starts C2. A read-only audit is choosing one representative
+Mass per principal missal from C1's coverage and auditing every unit against
+the roadmap's six-part pattern. **In progress: selection and audit running;
+no implementation yet.**
+
 ## Daily Missal reader recovery and completion plan, 2026-10-19
 
 <!-- promised-deliverable: missal-reader-completion-plan-2026-10-19 -->

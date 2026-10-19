@@ -276,6 +276,7 @@ const STATES = Object.freeze({
   postconciliar: hash({ date: '2026-11-29', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', mass: 'advent-1' }),
   postReadLatent: hash({ date: '2026-11-29', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', mass: 'advent-1', ordinary: '0', 'ordinary-lang': 'en', rubrics: '0', why: '0', 'eucharistic-prayer': 'ep-ii' }),
   postMissal: hash({ date: '2026-11-29', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', mass: 'advent-1', ordinary: '1', 'ordinary-lang': 'en', rubrics: '1', why: '0', 'eucharistic-prayer': 'ep-ii' }),
+  postLatinMissal: hash({ date: '2026-11-29', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', mass: 'advent-1', ordinary: '1', 'ordinary-lang': 'la', rubrics: '1', why: '0', 'eucharistic-prayer': 'ep-ii' }),
   postPentecostDayMissal: hash({ date: '2026-05-24', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', mass: 'pentecost', form: 'day', ordinary: '1', 'ordinary-lang': 'en', rubrics: '1', why: '0' }),
   romanEmberLongerMissal: hash({ date: '2026-12-19', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'advent-ember-saturday', form: 'longer', ordinary: '1', 'ordinary-lang': 'en', rubrics: '1', why: '0' }),
   multiple: hash({ date: '2026-01-11', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'comm-s-hygini-papae-martyris' }),
@@ -2528,6 +2529,177 @@ async function runAssertions(cdp, base) {
       assert.equal(candidate.title, current.title);
       assert.deepEqual(candidate.ordinary, current.ordinary);
       assert.deepEqual(candidate.propers, current.propers);
+    }
+  });
+
+  await test('each verified dialogue turn exposes one visible, announced, and copied cue', async () => {
+    // C4, first step: the 1962 Confiteor and Suscipiat and the postconciliar
+    // Orate fratres. Structured turns once set a generated cue beside the
+    // book's printed P./R., and Orate fratres needed an event-specific rule
+    // to hide its response glyph. Visible cues, the accessibility tree and the
+    // real clipboard are measured here because CSS-generated content and
+    // fake-DOM parity cannot prove any of the three.
+    await viewport(cdp, 1440, 900);
+    await cdp.send('Browser.grantPermissions', {
+      origin: base, permissions: ['clipboardReadWrite', 'clipboardSanitizedWrite']
+    });
+    await cdp.send('Emulation.setFocusEmulationEnabled', { enabled: true });
+    try {
+      const cases = [
+        [STATES.romanMissal, 'en', [
+          ['praeparatio/confiteor-sacerdotis', [['P', 'Priest', 'P.', 'I confess to Almighty God, &c.']]],
+          ['praeparatio/confiteor-ministrorum', [['S', 'Server', 'R.', 'I confess to Almighty God, to blessed Mary']]],
+          ['oblatio/suscipiat-dominus', [['S', 'Server', 'R.', 'May the Lord receive the sacrifice']]]
+        ]],
+        [STATES.romanLatinMissal, 'la', [
+          ['praeparatio/confiteor-sacerdotis', [['P', 'Priest', 'P.', 'Confiteor Deo omnipotenti, &c.']]],
+          ['praeparatio/confiteor-ministrorum', [['S', 'Server', 'R.', 'Confiteor Deo omnipotenti, beatæ Mariæ']]],
+          ['oblatio/suscipiat-dominus', [['S', 'Server', 'R.', 'Suscipiat Dominus sacrificium']]]
+        ]],
+        [STATES.postLatinMissal, 'la', [
+          ['praeparatio-donorum/orate-fratres', [
+            ['℣', 'Versicle — Priest', null, 'Orate Fratres: ut meum ac vestrum'],
+            ['℟', 'Response — All', 'R.', 'Suscipiat Dominus sacrificium de manibus tuis']
+          ]]
+        ]]
+      ];
+      for (const [state, lang, events] of cases) {
+        await navigateCandidate(cdp, base, state);
+        for (const [key, expected] of events) {
+          const eventId = 'ordinary-element/' + key;
+          const observed = await evaluate(cdp, `(async () => {
+            const event = [...document.querySelectorAll('[data-semantic-event-id]')]
+              .find((node) => node.dataset.semanticEventId === ${JSON.stringify(eventId)});
+            if (!event) return null;
+            event.scrollIntoView({ block: 'center' });
+            const rows = [...event.querySelectorAll('.ordinary-turn')];
+            const turns = rows.map((row, index) => {
+              row.setAttribute('data-cue-probe', String(index));
+              const generated = [...row.querySelectorAll('.cue-mark')]
+                .map((mark) => getComputedStyle(mark, '::before').content)
+                .filter((content) => content && content !== 'none' && content !== 'normal');
+              const words = row.querySelector('.ordinary-turn-text');
+              const label = row.querySelector('.speaker-tag .visually-hidden');
+              const selection = getSelection();
+              selection.removeAllRanges();
+              const range = document.createRange();
+              range.selectNodeContents(row);
+              selection.addRange(range);
+              const selected = selection.toString();
+              selection.removeAllRanges();
+              return {
+                generated: generated.map((content) => content.replace(/^"|"$/g, '')),
+                cueLang: row.querySelector('.speaker-tag')?.lang || null,
+                cueHidden: [...row.querySelectorAll('.cue-mark')]
+                  .map((mark) => mark.getAttribute('aria-hidden')),
+                label: label ? label.textContent : null,
+                printedMarker: row.dataset.printedMarker || null,
+                wordsLang: words ? words.lang : null,
+                words: words ? words.textContent : null,
+                selected
+              };
+            });
+            const body = event.querySelector('.ordinary-dialogue');
+            const selection = getSelection();
+            selection.removeAllRanges();
+            const range = document.createRange();
+            range.selectNodeContents(body);
+            selection.addRange(range);
+            const copiedOk = document.execCommand('copy');
+            selection.removeAllRanges();
+            let copied = null;
+            try { copied = await navigator.clipboard.readText(); } catch (error) { copied = 'ERROR ' + error; }
+            return { turns, copiedOk, copied };
+          })()`);
+          assert.ok(observed, 'rendered ' + eventId);
+          assert.equal(observed.turns.length, expected.length, eventId + ' turn count');
+
+          // The accessibility tree: one cue name per row and spoken words
+          // without a printed letter or a decorative glyph beside them.
+          const { nodes } = await cdp.send('Accessibility.getFullAXTree');
+          const byId = new Map(nodes.map((node) => [node.nodeId, node]));
+          const { root } = await cdp.send('DOM.getDocument', { depth: 0 });
+          const announced = [];
+          for (let index = 0; index < expected.length; index += 1) {
+            const { nodeId } = await cdp.send('DOM.querySelector', {
+              nodeId: root.nodeId,
+              selector: `[data-semantic-event-id="${eventId}"] [data-cue-probe="${index}"]`
+            });
+            const { node } = await cdp.send('DOM.describeNode', { nodeId });
+            const start = nodes.find((one) => one.backendDOMNodeId === node.backendNodeId);
+            assert.ok(start, eventId + ' turn ' + index + ' is in the accessibility tree');
+            const names = [];
+            (function walk(one) {
+              if (!one.ignored && one.role?.value === 'StaticText') {
+                names.push(one.name?.value || '');
+                return;
+              }
+              for (const child of one.childIds || []) {
+                const next = byId.get(child);
+                if (next) walk(next);
+              }
+            })(start);
+            announced.push(names);
+          }
+
+          observed.turns.forEach((turn, index) => {
+            const [glyph, label, marker, opening] = expected[index];
+            const where = `${eventId} ${lang} turn ${index}`;
+            assert.deepEqual(turn.generated, [glyph], where + ' sets exactly one visible cue');
+            assert.deepEqual(turn.cueHidden, ['true'], where + ' hides the decorative glyph');
+            assert.equal(turn.label, label, where + ' accessible cue');
+            assert.equal(turn.cueLang, 'en', where + ' cue language');
+            assert.equal(turn.wordsLang, lang, where + ' spoken language');
+            assert.equal(turn.printedMarker, marker, where + ' separated printed marker');
+            assert.ok(turn.words.startsWith(opening), where + ' spoken words: ' + turn.words);
+            assert.doesNotMatch(turn.words, /^(?:[PRVS]\.|[℣℟])/, where + ' no printed cue');
+            assert.deepEqual(announced[index], [label, turn.words], where + ' announcement');
+            assert.equal(announced[index].join(' ').match(/[℣℟]/g), null, where + ' glyph silent');
+            assert.equal(turn.selected.replace(/\s+/g, ' ').trim(), label + ' ' + turn.words,
+              where + ' selected text');
+          });
+          assert.equal(observed.copiedOk, true, eventId + ' copy command');
+          assert.equal(
+            observed.copied.replace(/\s+/g, ' ').trim(),
+            observed.turns.map((turn) => turn.label + ' ' + turn.words).join(' '),
+            eventId + ' copied text holds one cue per turn'
+          );
+        }
+      }
+
+      // The opening-cue regression: an `all` element announces no opening
+      // speaker, so its source P. remains the first line's only attribution.
+      await navigateCandidate(cdp, base, STATES.postLatinMissal);
+      for (const [key, first] of [
+        ['prex-eucharistica/praefationis-dialogus', 'Dominus vobiscum.'],
+        ['ritus-communionis/pax-domini', 'Pax Domini sit semper vobiscum.']
+      ]) {
+        const eventId = 'ordinary-element/' + key;
+        const opening = await evaluate(cdp, `(() => {
+          const event = [...document.querySelectorAll('[data-semantic-event-id]')]
+            .find((node) => node.dataset.semanticEventId === ${JSON.stringify(eventId)});
+          const body = event.querySelector('.composed');
+          const tags = [...body.querySelectorAll('.speaker-tag')];
+          return {
+            openingCues: event.querySelectorAll('.is-opening-cue').length,
+            firstTag: tags[0] ? tags[0].textContent : null,
+            firstTagLang: tags[0] ? tags[0].lang : null,
+            bodyLang: body.lang,
+            text: body.textContent.replace(/\\s+/g, ' ').trim()
+          };
+        })()`);
+        assert.equal(opening.openingCues, 0, eventId + ' has no generated opening cue');
+        assert.equal(opening.firstTag, 'Priest', eventId + ' keeps its opening attribution');
+        assert.equal(opening.firstTagLang, 'en', eventId + ' English label in Latin text');
+        assert.equal(opening.bodyLang, 'la');
+        assert.ok(opening.text.startsWith('Priest ' + first), eventId + ': ' + opening.text);
+        assert.doesNotMatch(opening.text, /Response(?=\S)/, eventId + ' no glued label');
+      }
+    } finally {
+      await cdp.send('Emulation.setFocusEmulationEnabled', { enabled: false });
+      await cdp.send('Browser.resetPermissions', {});
+      // Later assertions inherit the viewport the preceding test set.
+      await viewport(cdp, 1024, 768);
     }
   });
 
