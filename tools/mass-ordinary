@@ -380,7 +380,17 @@ SIDE_BLOCKS = {one["lang"]: one["absent"] for one in LANGUAGES}
 # independent: a priest can answer, and a server can initiate a prayer.
 TURN_SPEAKERS = ("all", "priest", "server")
 TURN_DIALOGUE_ROLES = ("versicle", "response")
-TURN_FIELDS = {"key", "seq", "speaker", "dialogue_role", "action"}
+# A printed marker is the book's own cue letter at the head of a turn row
+# ("P. I confess", "R. Suscipiat").  It stays in `text`, which remains the
+# byte-exact source row; declaring it records the reviewed reading that the
+# head of that row is a cue and not spoken matter, so the reader can set ONE
+# visible cue per turn instead of the structured cue plus the printed one.  It
+# is presentation evidence only: it never implies a speaker or a dialogue role,
+# and a turn whose row opens with an undeclared marker is refused rather than
+# rendered with two cues.
+TURN_PRINTED_MARKERS = ("P.", "R.")
+TURN_MARKER_HEAD = re.compile(r"^(?:[PRVS]\.|[℣℟]\.?)\s")
+TURN_FIELDS = {"key", "seq", "speaker", "dialogue_role", "action", "printed_marker"}
 TURN_PARTITION_FIELDS = {"element", "lang", "parts"}
 
 # Source inventories may state choices and applicability, but they do not get
@@ -1677,12 +1687,24 @@ def structured_turns(entry: dict, side: str, library: dict, artifact_id: str,
                 f"{name}: element {key} turn {turn_key} cannot be both an action "
                 "and a spoken turn"
             )
+        printed_marker = declaration.get("printed_marker")
+        if printed_marker is not None and printed_marker not in TURN_PRINTED_MARKERS:
+            raise SourceError(
+                f"{name}: element {key} turn {turn_key} has printed_marker "
+                f"{printed_marker!r}; one of {', '.join(TURN_PRINTED_MARKERS)} is required"
+            )
+        if printed_marker is not None and action:
+            raise SourceError(
+                f"{name}: element {key} turn {turn_key} is an action and cannot "
+                "carry a printed speaker or response marker"
+            )
         turns.append(
             {
                 "key": turn_key,
                 "speaker": speaker,
                 "dialogue_role": dialogue_role,
                 "action": action,
+                "printed_marker": printed_marker,
                 "text": None,
             }
         )
@@ -1698,6 +1720,27 @@ def structured_turns(entry: dict, side: str, library: dict, artifact_id: str,
         sequence = declared_sequence[offset:offset + count]
         turn["text"] = "\n".join(source_rows[one] for one in sequence)
         offset += count
+        marker = turn["printed_marker"]
+        if marker is not None:
+            # Exactly the marker, one space, then spoken matter: the reader
+            # removes precisely `len(marker) + 1` characters and nothing else.
+            spoken = turn["text"][len(marker) + 1:]
+            if (
+                not turn["text"].startswith(marker + " ")
+                or not spoken
+                or spoken[0].isspace()
+            ):
+                raise SourceError(
+                    f"{name}: element {key} turn {turn['key']} declares printed_marker "
+                    f"{marker!r}, but its source row does not open with that marker "
+                    "followed by one space and spoken text"
+                )
+        elif not turn["action"] and TURN_MARKER_HEAD.match(turn["text"]):
+            raise SourceError(
+                f"{name}: element {key} turn {turn['key']} opens with an undeclared "
+                "printed cue; declare its printed_marker after review or the reader "
+                "would set two cues on one turn"
+            )
     if "\n".join(turn["text"] for turn in turns) != parent_text:
         raise SourceError(
             f"{name}: element {key} {field} changes the selected parent text"

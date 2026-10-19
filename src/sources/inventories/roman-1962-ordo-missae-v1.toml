@@ -154,25 +154,31 @@ note = "ANTECEDENT, NOT THE TARGET EDITION. This Latin is the facing column prin
 [sections.absent_latin_by_element]
 rubrica-benedictio-incensi-et-introitus = "no-facing-latin"
 
+# Each partition below is one printed single-speaker row. `printed_marker` is
+# the 1861 book's own head letter on that row, reviewed 2026-10-19 against the
+# artifact text: "P." on the priest's Confiteor, "R." on the server's rows. The
+# row text keeps it byte for byte; the declaration lets the reader set one cue
+# (the structured speaker) instead of that cue plus the printed letter. It
+# implies no dialogue role: an "R." here is not read as a reviewed response.
 [[sections.turn_partitions]]
 element = "confiteor-sacerdotis"
 lang = "en"
-parts = [{ key = "confiteor-sacerdotis", seq = [12], speaker = "priest" }]
+parts = [{ key = "confiteor-sacerdotis", seq = [12], speaker = "priest", printed_marker = "P." }]
 
 [[sections.turn_partitions]]
 element = "confiteor-sacerdotis"
 lang = "la"
-parts = [{ key = "confiteor-sacerdotis", seq = [12], speaker = "priest" }]
+parts = [{ key = "confiteor-sacerdotis", seq = [12], speaker = "priest", printed_marker = "P." }]
 
 [[sections.turn_partitions]]
 element = "confiteor-ministrorum"
 lang = "en"
-parts = [{ key = "confiteor-ministrorum", seq = [14], speaker = "server" }]
+parts = [{ key = "confiteor-ministrorum", seq = [14], speaker = "server", printed_marker = "R." }]
 
 [[sections.turn_partitions]]
 element = "confiteor-ministrorum"
 lang = "la"
-parts = [{ key = "confiteor-ministrorum", seq = [14], speaker = "server" }]
+parts = [{ key = "confiteor-ministrorum", seq = [14], speaker = "server", printed_marker = "R." }]
 
 [[sections]]
 key = "oblatio"
@@ -203,22 +209,22 @@ secreta-ii = "not-in-the-1962-ordo"
 [[sections.turn_partitions]]
 element = "laus-tibi-christe"
 lang = "en"
-parts = [{ key = "laus-tibi-christe", seq = [11], speaker = "server" }]
+parts = [{ key = "laus-tibi-christe", seq = [11], speaker = "server", printed_marker = "R." }]
 
 [[sections.turn_partitions]]
 element = "laus-tibi-christe"
 lang = "la"
-parts = [{ key = "laus-tibi-christe", seq = [11], speaker = "server" }]
+parts = [{ key = "laus-tibi-christe", seq = [11], speaker = "server", printed_marker = "R." }]
 
 [[sections.turn_partitions]]
 element = "suscipiat-dominus"
 lang = "en"
-parts = [{ key = "suscipiat-dominus", seq = [53], speaker = "server" }]
+parts = [{ key = "suscipiat-dominus", seq = [53], speaker = "server", printed_marker = "R." }]
 
 [[sections.turn_partitions]]
 element = "suscipiat-dominus"
 lang = "la"
-parts = [{ key = "suscipiat-dominus", seq = [53], speaker = "server" }]
+parts = [{ key = "suscipiat-dominus", seq = [53], speaker = "server", printed_marker = "R." }]
 
 [[sections.exclusions]]
 element = "a-cunctis"
@@ -328,12 +334,12 @@ et-famulos = "not-in-the-1962-ordo"
 [[sections.turn_partitions]]
 element = "deo-gratias"
 lang = "en"
-parts = [{ key = "deo-gratias", seq = [23], speaker = "server" }]
+parts = [{ key = "deo-gratias", seq = [23], speaker = "server", printed_marker = "R." }]
 
 [[sections.turn_partitions]]
 element = "deo-gratias"
 lang = "la"
-parts = [{ key = "deo-gratias", seq = [23], speaker = "server" }]
+parts = [{ key = "deo-gratias", seq = [23], speaker = "server", printed_marker = "R." }]
 
 # ---------------------------------------------------------------- slots
 #

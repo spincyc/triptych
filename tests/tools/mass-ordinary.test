@@ -228,6 +228,11 @@ for path in files:
                 assert turn["speaker"] == speaker, (key, turn)
                 assert turn["dialogue_role"] is None and turn["action"] is None, (key, turn)
                 assert turn["text"] == row["text"], (key, row["lang"])
+                # The book's head letter is a reviewed, separated marker; it is
+                # kept in the row text and supplies no dialogue role.
+                marker = "P." if speaker == "priest" else "R."
+                assert turn["printed_marker"] == marker, (key, turn)
+                assert turn["text"].startswith(marker + " "), (key, turn)
                 reached.add((key, row["lang"]))
         assert reached == {
             (key, lang) for key in partitioned for lang in ("en", "la")

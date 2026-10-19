@@ -419,17 +419,6 @@ body:has(.reader-instrument) > .site-footer,
   font-family: var(--instrument-serif);
   font-size: 1.08em;
 }
-/*
- * This source-owned response still begins with its printed `R.`. Suppress only
- * the second, generated sighted mark on that exact semantic event; the source
- * text and the cue's assistive label remain intact, and other structured
- * responses continue to receive their explicit response glyph.
- */
-.reader-instrument .reader-document
-[data-semantic-event-id="ordinary-element/praeparatio-donorum/orate-fratres"]
-.ordinary-turn[data-dialogue-role="response"] > .ordinary-turn-cue .cue-mark::before {
-  content: none;
-}
 .reader-instrument .reader-document .ordinary-turn.is-action[data-action="true"] > .ordinary-turn-text {
   margin-block: 0.2rem;
   padding-left: 0.85rem;

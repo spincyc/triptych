@@ -370,6 +370,18 @@ Confiteor, Suscipiat, and postconciliar Orate fratres before extending checked
 turns through Introibo/Judica, Sursum corda, Pax, and dismissal. Preserve
 language-local turn boundaries, source text, and event order throughout.
 
+Progress, 2026-10-19: the first two steps are implemented. The opening-cue
+loss is repaired. Ordinary turns may declare a generator-validated
+`printed_marker`, so each verified turn of those three dialogues shows one
+visible cue, and the Orate-fratres CSS exception is removed. The
+[work register](../PROJECT-WORK.md) records the evidence. The extension needs
+reviewed per-turn source rows, because 1962 holds whole exchanges in single
+rows of the 1861 artifacts and postconciliar holds only Latin antecedents. It
+also needs a reviewed basis for each ℣/℟ role, a decision on Judica's
+alternating verses, protection of "Anth.", and sourced text for the
+postconciliar dismissal. Element headings still show printed P./R. from their
+incipits until a reviewed derivative replaces them.
+
 ### Verification and completion gates
 
 Recovery checks actually run on the baseline:

@@ -32,10 +32,60 @@ state = "in_progress"
   evidence = ["guidance/liturgy-browser-roadmap.md", "PROJECT-WORK.md", "tools/tests/test_missal_coverage.py", "tools/tests/propers_reader_integration_browser.mjs"]
 
   [[deliverables.requirements]]
+  id = "missal-c1-pre1955-witness-inventory"
+  criterion = "Under the 2026-10-19 maintainer decision, the pre-1955 recension is enumerated section by section from the registered Bonn reimpressio witness with the 1922 Mame printing as control; post-1922 additions sit in separate slices, every artifact page is owned by a slice or an explicit boundary, and overlaps with existing pre-1955 slices are dispositioned."
+  status = "open"
+  evidence = ["src/sources/inventories/missal-expected-targets-v1.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
+
+  [[deliverables.requirements]]
   id = "missal-c1-publication"
   criterion = "The roadmap, work register and ledger agree with the verified C1 result, coherent checkpoints reach feature/missal-reader, and the final published ref is verified without claiming production deployment or later-milestone completion."
   status = "pass"
   evidence = ["guidance/liturgy-browser-roadmap.md", "PROJECT-WORK.md"]
+
+[[deliverables]]
+id = "missal-reader-c4-dialogue-cues-2026-10-19"
+owner = "guidance/liturgy-browser-roadmap.md"
+promise = "Deliver C4 of the 2026-10-19 Missal reader plan in ordered steps, starting with dialogue cues: repair the opening-cue loss, prove one visible cue per verified turn on the 1962 Confiteor and Suscipiat and the postconciliar Orate fratres, then extend checked turns to Introibo/Judica, Sursum corda, Pax and the dismissal."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "c4-opening-cue-repair"
+  criterion = "An all-speaker dialogue keeps its printed opening attribution as a language-tagged word label; the postconciliar Preface dialogue and Pax Domini no longer lose their initial priest attribution, with unit and real-browser regressions."
+  status = "pass"
+  evidence = ["src/web/browser/liturgy/day.js", "tools/tests/test_mass_ordinary.py", "tools/tests/day_reader_integration_browser.mjs"]
+  check = "path_exists"
+
+  [[deliverables.requirements]]
+  id = "c4-one-visible-cue"
+  criterion = "Each verified turn of the 1962 Confiteor and Suscipiat and the postconciliar Orate fratres shows exactly one visible cue through the common representation, with the printed marker separated by a generator-validated declaration, one accessible label, unchanged source text, and the Orate-fratres-only CSS exception removed; real-browser checks cover visible cues, accessibility names and copied text."
+  status = "pass"
+  evidence = ["tools/mass-ordinary", "src/sources/inventories/roman-1962-ordo-missae-v1.toml", "src/sources/inventories/postconciliar-ordo-missae-v1.toml", "tools/tests/day_reader_integration_browser.mjs", "tools/tests/test_liturgy_reader_visual_reset.py"]
+  check = "path_exists"
+
+  [[deliverables.requirements]]
+  id = "c4-remaining-dialogues"
+  criterion = "Introibo/Judica, Sursum corda, Pax and the dismissal carry reviewed per-turn source rows, speakers and dialogue roles in each held language, with one visible cue per turn and the same browser evidence; element headings no longer show printed P./R. except through a reviewed derivative."
+  status = "open"
+  evidence = ["guidance/liturgy-browser-roadmap.md"]
+
+[[deliverables]]
+id = "missal-reader-c2-exemplars-2026-10-19"
+owner = "guidance/liturgy-browser-roadmap.md"
+promise = "Deliver C2 of the 2026-10-19 Missal reader plan: choose one representative Mass per principal missal from C1's attainable coverage, audit every unit against the six-part pattern, and implement the pattern without claiming textual completeness where units remain missing or restricted."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "c2-exemplar-selection-and-audit"
+  criterion = "Each principal missal has a recorded exemplar choice with its rationale and a unit-by-unit audit across identity, sequence, text and witness, internal structure, presentation and interaction, each gap assigned to its owner and milestone."
+  status = "open"
+  evidence = ["guidance/liturgy-browser-roadmap.md"]
+
+  [[deliverables.requirements]]
+  id = "c2-pattern-implemented"
+  criterion = "The audited pattern is implemented for each exemplar in its existing source and test owners, with real-browser and print evidence, and missing or restricted units stay explicit."
+  status = "open"
+  evidence = ["guidance/liturgy-browser-roadmap.md"]
 
 [[deliverables]]
 id = "missal-reader-completion-plan-2026-10-19"

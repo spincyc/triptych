@@ -1229,6 +1229,9 @@
       'speaker-tag' + (speaker ? ' is-' + speaker : '') + (opening ? ' is-opening-cue' : '')
     );
     if (!opening) {
+      // The label is an English word set inside a text that may be Latin;
+      // without its own language it is announced with Latin pronunciation.
+      tag.lang = 'en';
       tag.textContent = word;
       return tag;
     }
@@ -1278,6 +1281,25 @@
     return tag;
   }
 
+  /**
+   * A turn's spoken matter, apart from the book's own printed head letter.
+   *
+   * `printed_marker` is a reviewed inventory declaration, validated by the
+   * generator: the row is exactly that marker, one space, then spoken text. The
+   * structured cue already says who speaks or which side of the dialogue this
+   * is, so the printed letter would be a second visible cue on one turn. It is
+   * kept on the row as data, never re-read as a speaker or a role, and if the
+   * declaration does not fit the text the row is shown exactly as printed.
+   */
+  function turnBody(turn) {
+    const text = String(turn.text === null || turn.text === undefined ? '' : turn.text);
+    const marker = typeof turn.printed_marker === 'string' ? turn.printed_marker : '';
+    if (!marker || !text.startsWith(marker + ' ') || text.length <= marker.length + 1) {
+      return { marker: null, body: text };
+    }
+    return { marker: marker, body: text.slice(marker.length + 1) };
+  }
+
   /** Exact source-owned turns inside one Ordinary element and semantic event. */
   function structuredTurns(held, locus) {
     const body = T.el('div', 'composed ordinary-dialogue');
@@ -1293,9 +1315,13 @@
       }
       if (action) row.setAttribute('data-action', 'true');
 
+      // One visible cue per turn. Only where the structured cue is set does the
+      // printed letter step aside; a turn with no structured cue keeps it.
       const cue = structuredTurnCue(turn);
+      const spokenPart = cue ? turnBody(turn) : { marker: null, body: turn.text };
       if (cue) row.appendChild(cue);
-      const text = T.el('span', 'ordinary-turn-text', turn.text);
+      if (spokenPart.marker) row.setAttribute('data-printed-marker', spokenPart.marker);
+      const text = T.el('span', 'ordinary-turn-text', spokenPart.body);
       text.lang = held.lang;
       row.appendChild(text);
       body.appendChild(row);
@@ -1314,11 +1340,16 @@
     if (!SPOKEN_KINDS[element.kind]) return document.createTextNode(source);
 
     const fragment = document.createDocumentFragment();
-    const opening = SPEAKER_WORDS[element.speaker] || null;
     // `all` is frequently attached to a composite element whose first turn is
     // the priest (for example the postconciliar Greeting). Without structured
-    // turns it is not an honest opening cue, so do not present it as one.
-    if (opening && element.speaker !== 'all') {
+    // turns it is not an honest opening cue, so do not present it as one. And
+    // because nothing then announces the opening speaker, a leading P./R. is
+    // not furniture there: it is the only attribution the first line has, and
+    // it is kept like an interior mark (the Preface dialogue, the Pax).
+    const opening = element.speaker !== 'all'
+      ? SPEAKER_WORDS[element.speaker] || null
+      : null;
+    if (opening) {
       fragment.appendChild(speakerTag(opening, element.speaker, true));
     }
 
@@ -1334,6 +1365,7 @@
     let at = 0;
     let found;
     let first = true;
+    let droppedLast = false;
     A_MARK.lastIndex = 0;
     while ((found = A_MARK.exec(source)) !== null) {
       const word = MARK_WORDS[found[2]];
@@ -1345,7 +1377,11 @@
       // the speaker changed inside the element.
       const leading = first && source.slice(0, start).trim() === '';
       first = false;
-      if (leading && opening) { at = start + found[2].length; continue; }
+      if (leading && opening) {
+        at = start + found[2].length;
+        droppedLast = true;
+        continue;
+      }
       // This compatibility path retains the already reviewed P./R. word
       // labels while an opaque source remains unmodelled. It never manufactures
       // ℣/℟: those glyphs belong only to explicit structured dialogue roles.
@@ -1354,11 +1390,15 @@
       }
       fragment.appendChild(speakerTag(word, word === 'Priest' ? 'priest' : null));
       at = start + found[2].length;
+      droppedLast = false;
     }
-    // The space that followed the mark is the mark's own spacing, and left in
-    // place it opened every turn with a double space.
+    // The space after a DROPPED mark was that mark's own spacing, and left in
+    // place it opened the turn with a double space. The space after a KEPT
+    // word label separates the label from the words, exactly as it does for
+    // every interior turn above; stripping it here glued the last label to its
+    // text in copied and announced text ("ResponseEt cum spiritu tuo.").
     const rest = source.slice(at);
-    const tail = at === 0 ? rest : rest.replace(/^[ \t]+/, '');
+    const tail = droppedLast ? rest.replace(/^[ \t]+/, '') : rest;
     if (tail) fragment.appendChild(document.createTextNode(tail));
     return fragment;
   }
