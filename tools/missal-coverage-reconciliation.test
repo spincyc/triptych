@@ -1,0 +1,5 @@
+#!/bin/sh
+# Exercise isolated source graphs and snapshots, including failing references.
+set -eu
+root="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
+exec python3 -B "$root/tools/tests/test_missal_coverage_reconciliation.py"

@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 from pathlib import Path
 import sys
 import tempfile
@@ -19,9 +20,319 @@ def sha(value: str) -> str:
     return hashlib.sha256(value.encode("utf-8")).hexdigest()
 
 
+def native_fixture(test, identifier="fixture-book", wording="Exact native fixture."):
+    """Synthetic full two-page witness; never evidence of a historical book."""
+    edition_id = "edition." + identifier
+    test.record(edition_id, "edition", date="1200", language="la")
+    scan = test.artifact("artifact." + identifier + ".scan", "Synthetic facsimile bytes.\n",
+                         artifact_type="scan", edition_id=edition_id, page_count=2,
+                         rights_status="public-domain", rights_basis="Test only", rights_jurisdiction="United States")
+    evidence_id = "passage." + identifier + ".extent"
+    test.record(evidence_id, "passage", edition_id=edition_id, artifact_id=scan["id"],
+                states=["inspected"], locus="Synthetic title and two-page extent")
+    evidence = [{"source_id": evidence_id, "locus": "Synthetic pages 1–2"}]
+    book = {"schema_version": 1, "record_type": "eucharistic-native-book", "id": identifier,
+            "title": "Synthetic book fixture", "extent_kind": "whole-book", "excluded_book_divisions": [], "scope": "Both pages of one synthetic native book",
+            "transcribed_by": "fixture-transcriber", "stage_ids": ["fixture.first"],
+            "catalogue_witness_ids": ["research:first"], "components": ["rubrics"], "languages": ["la"],
+            "date": {"kind": "attestation", "label": "1200", "start_year": 1200, "end_year": 1200,
+                     "evidence": evidence},
+            "witnesses": [{"id": "copy", "edition_id": edition_id, "artifact_id": scan["id"],
+                           "completeness_evidence": evidence, "scope_pages": [[1, 2]]}],
+            "extent_path": texts.NATIVE_BOOK_DIRECTORY + "/support/" + identifier + "-extent.json",
+            "collation_path": texts.NATIVE_BOOK_DIRECTORY + "/support/" + identifier + "-review.json", "units": []}
+    extent = {"schema_version": 1, "record_type": "eucharistic-book-extent", "book_id": identifier,
+              "title": "Synthetic extent", "status": "complete", "unresolved": [], "omitted": [], "expected_unit_ids": [], "pages": []}
+    for index, body in enumerate((wording, "Second native fixture."), 1):
+        unit_id = "unit.fixture." + str(index)
+        artifact = test.artifact("artifact." + identifier + ".unit" + str(index), body + "\n",
+                                 artifact_type="normalized-text", edition_id=edition_id,
+                                 derived_from=scan["id"], transformation="Synthetic fixture only",
+                                 rights_status="public-domain", rights_basis="Test only", rights_jurisdiction="United States")
+        passage_id = "passage." + identifier + ".unit" + str(index)
+        test.record(passage_id, "passage", edition_id=edition_id, artifact_id=artifact["id"],
+                    artifact_sha256=artifact["sha256"], physical_line_ranges=[[1, 1]],
+                    states=["verified"], verified_on="2026-10-17", locus=f"Synthetic page {index}")
+        book["units"].append({"unit_id": unit_id, "native_path": ["native-division", "unit-" + str(index)],
+                              "source_order": index, "language": "la", "component": "rubrics", "kind": "rubric",
+                              "witness_id": "copy", "witness_pages": [[index, index]],
+                              "passage_id": passage_id, "text_sha256": sha(body)})
+        extent["expected_unit_ids"].append(unit_id)
+        extent["pages"].append({"witness_id": "copy", "ranges": [[index, index]], "role": "text", "unit_ids": [unit_id]})
+    review = {"schema_version": 1, "record_type": "eucharistic-book-collation", "book_id": identifier,
+              "title": "Synthetic independent review", "status": "verified", "independent": True, "complete_extent_verified": True,
+              "reviewer": "fixture-independent-reviewer", "checked_on": "2026-10-17",
+              "witness_sha256": {"copy": scan["sha256"]},
+              "unit_sha256": {unit["unit_id"]: unit["text_sha256"] for unit in book["units"]}}
+
+    def save():
+        path = test.root / texts.NATIVE_BOOK_DIRECTORY / (identifier + ".json")
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(book), encoding="utf-8")
+        extent_path = test.root / book["extent_path"]
+        extent_path.parent.mkdir(parents=True, exist_ok=True)
+        extent_path.write_text(json.dumps(extent), encoding="utf-8")
+        review["binding_sha256"] = sha(path.read_text())
+        review["extent_sha256"] = sha(extent_path.read_text())
+        (test.root / book["collation_path"]).write_text(json.dumps(review), encoding="utf-8")
+    save()
+    return book, extent, review, save
+
+
+class NativeBookTests(unittest.TestCase):
+    setUp = lambda self: AdapterBoundaryTests.setUp(self)
+    record = lambda self, *args, **kwargs: AdapterBoundaryTests.record(self, *args, **kwargs)
+    artifact = lambda self, *args, **kwargs: AdapterBoundaryTests.artifact(self, *args, **kwargs)
+    load = lambda self, adapter="native-book:fixture-book": AdapterBoundaryTests.load(self, adapter)
+
+    def test_complete_native_book_is_literal_reviewed_and_deterministic(self):
+        native_fixture(self)
+        result = self.load()
+        self.assertEqual(result, self.load())
+        self.assertTrue(result["scope"]["whole_book_complete"])
+        self.assertEqual(2, result["scope"]["known_extent_pages"])
+        self.assertEqual("Exact native fixture.", result["units"][0]["text"])
+        self.assertEqual(["native-division", "unit-1"], result["units"][0]["native_path"])
+        self.assertEqual(1200, result["historical_date"]["start_year"])
+
+    def test_complete_constituent_cannot_claim_the_whole_book(self):
+        book, extent, review, save = native_fixture(self)
+        book["extent_kind"] = "constituent"
+        book["excluded_book_divisions"] = ["Second native division"]
+        book["witnesses"][0]["scope_pages"] = [[1, 1]]
+        book["units"].pop()
+        extent["expected_unit_ids"].pop()
+        extent["pages"][1] = {"witness_id": "copy", "ranges": [[2, 2]], "role": "outside-constituent",
+                               "unit_ids": [], "description": "Second native division outside this complete constituent"}
+        review["unit_sha256"].pop("unit.fixture.2")
+        save()
+        result = self.load()
+        self.assertFalse(result["scope"]["whole_book_complete"])
+        self.assertTrue(result["scope"]["complete_declared_extent"])
+        self.assertEqual(1, result["scope"]["known_extent_pages"])
+        book["extent_kind"] = "whole-book"
+        book["excluded_book_divisions"] = []
+        save()
+        with self.assertRaisesRegex(texts.AdapterError, "every witness page in scope"):
+            self.load()
+
+    def test_parallel_derivative_requires_exact_new_collation_witness(self):
+        book, extent, review, save = native_fixture(self)
+        self.records["artifact.fixture-book.unit1"].data.pop("derived_from")
+        unit = book["units"][0]
+        unit["verified_against_artifact_id"] = "artifact.fixture-book.scan"
+        unit["verified_against_artifact_sha256"] = review["witness_sha256"]["copy"]
+        save()
+        self.assertEqual("Exact native fixture.", self.load()["units"][0]["text"])
+        unit["verified_against_artifact_sha256"] = "0" * 64
+        save()
+        with self.assertRaisesRegex(texts.AdapterError, "does not derive"):
+            self.load()
+
+    def test_projection_or_companion_cannot_substitute_for_byte_derivation(self):
+        book, extent, review, save = native_fixture(self)
+        artifact = self.records["artifact.fixture-book.unit1"].data
+        artifact.pop("derived_from")
+        artifact.pop("transformation")
+        unit = book["units"][0]
+        witness_id = "artifact.fixture-book.scan"
+        for field, value in (("projected_from", [witness_id]),
+                             ("support_artifacts", [{"artifact_id": witness_id, "embedded_reference": "fixture"}])):
+            with self.subTest(edge=field):
+                artifact[field] = value
+                save()
+                with self.assertRaisesRegex(texts.AdapterError, "does not derive from its exact witness"):
+                    self.load()
+                unit["verified_against_artifact_id"] = witness_id
+                unit["verified_against_artifact_sha256"] = review["witness_sha256"]["copy"]
+                save()
+                self.assertEqual("Exact native fixture.", self.load()["units"][0]["text"])
+                unit["verified_against_artifact_sha256"] = "0" * 64
+                save()
+                with self.assertRaisesRegex(texts.AdapterError, "does not derive from its exact witness"):
+                    self.load()
+                artifact.pop(field)
+                unit.pop("verified_against_artifact_id")
+                unit.pop("verified_against_artifact_sha256")
+
+    def test_native_literal_ranges_preserve_non_lf_line_characters(self):
+        native_fixture(self, wording="First\rSecond\u2028Third.")
+        result = self.load()
+        self.assertEqual("First\rSecond\u2028Third.", result["units"][0]["text"])
+
+    def test_scratch_or_unowned_support_cannot_authorize_complete_extent(self):
+        book, extent, review, save = native_fixture(self)
+        book["extent_path"] = ".scratch/unreviewed-extent.json"
+        book["collation_path"] = ".scratch/unreviewed-review.json"
+        save()
+        with self.assertRaisesRegex(texts.AdapterError, "canonical inventory ownership"):
+            self.load()
+
+    def test_adapter_rejects_unit_identity_that_corpus_cannot_serialize(self):
+        book, extent, review, save = native_fixture(self)
+        old = book["units"][0]["unit_id"]
+        book["units"][0]["unit_id"] = "invalid/unit"
+        extent["expected_unit_ids"][0] = "invalid/unit"
+        extent["pages"][0]["unit_ids"] = ["invalid/unit"]
+        review["unit_sha256"]["invalid/unit"] = review["unit_sha256"].pop(old)
+        save()
+        with self.assertRaisesRegex(texts.AdapterError, "safe stable unit id"):
+            self.load()
+
+    def test_native_paths_cannot_replace_another_unit_with_a_git_directory(self):
+        book, extent, review, save = native_fixture(self)
+        book["units"][0]["native_path"] = ["canon"]
+        book["units"][1]["native_path"] = ["canon.txt", "memento"]
+        save()
+        with self.assertRaisesRegex(texts.AdapterError, "file/directory collision"):
+            self.load()
+        book["units"][0]["native_path"], book["units"][1]["native_path"] = (
+            book["units"][1]["native_path"], book["units"][0]["native_path"])
+        save()
+        with self.assertRaisesRegex(texts.AdapterError, "file/directory collision"):
+            self.load()
+
+    def test_native_gate_covers_provenance_paths_and_uses_real_escaping(self):
+        book, extent, review, save = native_fixture(self)
+        book["units"][0]["native_path"] = ["canon"]
+        book["units"][1]["native_path"] = ["canon.json", "memento"]
+        save()
+        with self.assertRaisesRegex(texts.AdapterError, "file/directory collision"):
+            self.load()
+        book["units"][0]["native_path"] = ["."]
+        book["units"][1]["native_path"] = ["..txt", "memento"]
+        save()
+        result = self.load()
+        self.assertEqual("text/native/%2E.txt", texts.native_text_path(result["units"][0]["native_path"]))
+
+    def test_approval_date_cannot_relabel_the_identified_witness(self):
+        book, extent, review, save = native_fixture(self)
+        book["date"].update(kind="approval", label="1250 approval", start_year=1250, end_year=1250)
+        save()
+        result = self.load()
+        self.assertEqual("1250 approval", result["target_date"])
+        self.assertEqual("approval", result["historical_date"]["kind"])
+        self.assertEqual("1200", result["witness_date"])
+        self.assertEqual("edition.fixture-book", result["witness_dates"][0]["edition_id"])
+
+    def test_retained_page_image_can_bind_a_complete_constituent(self):
+        book, extent, review, save = native_fixture(self)
+        self.records["artifact.fixture-book.scan"].data.update(artifact_type="facsimile-image", page_count=1)
+        book.update(extent_kind="constituent", excluded_book_divisions=["Other divisions outside the held image"])
+        book["witnesses"][0]["scope_pages"] = [[1, 1]]
+        book["units"].pop()
+        extent["expected_unit_ids"].pop()
+        extent["pages"].pop()
+        review["unit_sha256"].pop("unit.fixture.2")
+        save()
+        result = self.load()
+        self.assertTrue(result["scope"]["complete_declared_extent"])
+        self.assertFalse(result["scope"]["whole_book_complete"])
+
+    def test_image_preserving_pdf_derivative_remains_a_reviewed_facsimile(self):
+        book, extent, review, save = native_fixture(self)
+        images = self.artifact("artifact.fixture-book.images", "Synthetic exact page-image package.\n",
+                               artifact_type="page-image-package", media_type="application/zip",
+                               edition_id="edition.fixture-book")
+        scan = self.records["artifact.fixture-book.scan"].data
+        scan.update(artifact_type="facsimile-pdf-derivative", media_type="application/pdf",
+                    derived_from=images["id"], transformation="Embed original JPEG byte streams in page order.")
+        result = self.load()
+        self.assertTrue(result["scope"]["whole_book_complete"])
+        self.assertEqual("Exact native fixture.", result["units"][0]["text"])
+        self.assertEqual("facsimile-pdf-derivative", next(source["artifact_type"] for source in result["sources"]
+                                                         if source["id"] == scan["id"]))
+        # Image provenance cannot substitute for full extent or independent review.
+        review["independent"] = False
+        save()
+        with self.assertRaisesRegex(texts.AdapterError, "complete extent and independent collation"):
+            self.load()
+        review["independent"] = True
+        extent["pages"].pop()
+        save()
+        with self.assertRaisesRegex(texts.AdapterError, "pages unaccounted"):
+            self.load()
+
+    def test_pdf_derivative_requires_image_provenance_not_ocr_or_text(self):
+        native_fixture(self)
+        images = self.artifact("artifact.fixture-book.images", "Synthetic page-image package.\n",
+                               artifact_type="page-image-package", edition_id="edition.fixture-book")
+        scan = self.records["artifact.fixture-book.scan"].data
+        scan.update(artifact_type="facsimile-pdf-derivative", media_type="application/pdf",
+                    derived_from=images["id"], transformation="Embed original image byte streams.")
+        for field, value in (("artifact_type", "ocr"), ("artifact_type", "normalized-text"),
+                             ("artifact_type", "pdf-derivative"), ("media_type", "text/plain"),
+                             ("derived_from", None), ("transformation", "")):
+            with self.subTest(field=field, value=value):
+                original = scan[field]
+                try:
+                    scan[field] = value
+                    with self.assertRaisesRegex(texts.AdapterError, "exact retained facsimile"):
+                        self.load()
+                finally:
+                    scan[field] = original
+        for kind in ("ocr", "normalized-text"):
+            with self.subTest(parent_type=kind):
+                images["artifact_type"] = kind
+                with self.assertRaisesRegex(texts.AdapterError, "exact retained facsimile"):
+                    self.load()
+
+    def test_partial_selection_cannot_claim_complete(self):
+        book, extent, review, save = native_fixture(self)
+        book["units"].pop()
+        save()
+        with self.assertRaisesRegex(texts.AdapterError, "independent extent census"):
+            self.load()
+
+    def test_complete_census_requires_every_page_and_every_unit_locus(self):
+        book, extent, review, save = native_fixture(self)
+        extent["pages"].pop()
+        save()
+        with self.assertRaisesRegex(texts.AdapterError, "pages unaccounted"):
+            self.load()
+        extent["pages"].append({"witness_id": "copy", "ranges": [[2, 2]], "role": "non-text", "unit_ids": [], "description": "Blank"})
+        save()
+        with self.assertRaisesRegex(texts.AdapterError, "unit loci unaccounted"):
+            self.load()
+
+    def test_review_must_be_independent_complete_and_current(self):
+        book, extent, review, save = native_fixture(self)
+        review["reviewer"] = book["transcribed_by"]
+        save()
+        with self.assertRaisesRegex(texts.AdapterError, "independent of transcriber"):
+            self.load()
+        review["reviewer"] = "independent"
+        extent["unresolved"] = ["unread rubric"]
+        save()
+        with self.assertRaisesRegex(texts.AdapterError, "complete extent"):
+            self.load()
+        extent["unresolved"] = []
+        save()
+        path = self.root / texts.NATIVE_BOOK_DIRECTORY / "fixture-book.json"
+        path.write_text(path.read_text() + "\n")
+        with self.assertRaisesRegex(texts.AdapterError, "collation is stale"):
+            self.load()
+
+    def test_unverified_or_rights_ineligible_literal_is_denied(self):
+        native_fixture(self)
+        passage = self.records["passage.fixture-book.unit1"].data
+        passage["states"] = ["inspected"]
+        with self.assertRaisesRegex(texts.AdapterError, "verified exact-edition"):
+            self.load()
+        passage["states"] = ["verified"]
+        artifact = self.records["artifact.fixture-book.unit1"].data
+        artifact["rights_status"] = "unresolved"
+        with self.assertRaisesRegex(texts.AdapterError, "public-git publication"):
+            self.load()
+        artifact["rights_status"] = "public-domain"
+        artifact.pop("derived_from")
+        with self.assertRaisesRegex(texts.AdapterError, "exact witness"):
+            self.load()
+
+
 class AdapterBoundaryTests(unittest.TestCase):
     def setUp(self):
-        scratch = ROOT / ".scratch/text-reuse-expansion"
+        scratch = Path(os.environ.get("TMPDIR", ROOT / ".scratch/text-reuse-expansion"))
         scratch.mkdir(parents=True, exist_ok=True)
         self.temp = tempfile.TemporaryDirectory(dir=scratch)
         self.addCleanup(self.temp.cleanup)

@@ -1596,6 +1596,35 @@ class SourceLibraryTests(unittest.TestCase):
         self.assertEqual(set(before.records), set(after.records))
         self.assertEqual(before.payload_paths, after.payload_paths)
 
+    def test_native_book_json_ownership_is_typed_and_narrow(self) -> None:
+        self.add_valid_vertical_fixture()
+        base = "src/sources/inventories/eucharistic-books/"
+        binding = {"schema_version": 1, "record_type": "eucharistic-native-book", "id": "fixture", "title": "Synthetic native book",
+                   "stage_ids": [], "catalogue_witness_ids": [], "components": [], "languages": [], "witnesses": [], "units": [],
+                   "excluded_book_divisions": [], "scope": "Fixture", "transcribed_by": "Fixture", "extent_kind": "whole-book",
+                   "extent_path": base + "support/fixture-extent.json", "collation_path": base + "support/fixture-review.json", "date": {}}
+        extent = {"schema_version": 1, "record_type": "eucharistic-book-extent", "book_id": "fixture", "title": "Fixture extent",
+                  "status": "complete", "expected_unit_ids": [], "pages": [], "unresolved": [], "omitted": []}
+        review = {"schema_version": 1, "record_type": "eucharistic-book-collation", "book_id": "fixture", "title": "Fixture review",
+                  "status": "verified", "reviewer": "Independent", "checked_on": "2026-10-17", "binding_sha256": "0" * 64,
+                  "extent_sha256": "0" * 64, "independent": True, "complete_extent_verified": True, "witness_sha256": {}, "unit_sha256": {}}
+        for name, record in (("fixture.json", binding), ("support/fixture-extent.json", extent), ("support/fixture-review.json", review)):
+            self.write(base + name, json.dumps(record))
+        # This tool owns the envelope, not the adapter's full evidence/census gate.
+        self.assertEqual([], SOURCE_LIBRARY.load_library(self.root).errors)
+        self.write(base + "support/rogue.json", json.dumps(review))
+        self.write(base + "support/extra/deep-review.json", json.dumps(review))
+        self.write(base + "opaque.pdf", b"opaque")
+        self.write(base + "support/invalid-review.json", json.dumps({**review, "independent": "yes"}))
+        self.write(base + "not-fixture.json", json.dumps(binding))
+        self.write(base + "support/duplicate-extent.json", '{"schema_version":1,"schema_version":1}')
+        joined = "\n".join(SOURCE_LIBRARY.load_library(self.root).errors)
+        for name in ("support/rogue.json", "support/extra/deep-review.json", "opaque.pdf"):
+            self.assertIn(base + name + ": file is outside", joined)
+        self.assertIn("independent extent and hash tables", joined)
+        self.assertIn("matching filename", joined)
+        self.assertIn("duplicate JSON key", joined)
+
     def test_history_inventory_ownership_does_not_exempt_nearby_json_or_payloads(self) -> None:
         self.add_valid_vertical_fixture()
         dossier = {"schema_version": 1, "record_type": "eucharistic-book-stages", "dossier_id": "fixture",

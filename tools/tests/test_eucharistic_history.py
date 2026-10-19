@@ -81,6 +81,17 @@ source_ids=["library"]
     def catalogue(self):
         return history.catalogue(self.source, self.root, act_loader=lambda path: {})
 
+    def test_semantic_file_directory_collision_preserves_prior_corpus(self):
+        before = self.emit()["branches"]
+        self.payload["units"][0]["native_path"] = ["canon"]
+        second = copy.deepcopy(self.payload["units"][0])
+        second.update(unit_id="unit.fixture.second", native_path=["canon.txt", "memento"], source_order=2)
+        self.payload["units"].append(second)
+        with self.assertRaisesRegex(history.HistoryError, "file/directory collision"):
+            self.emit()
+        marker = json.loads((self.root / "corpus" / history.MARKER).read_text())
+        self.assertEqual(before, marker["branches"])
+
     def test_candidate_has_no_invented_date_or_normative_acceptance(self):
         result = self.catalogue()
         entry = result["entries"][0]
@@ -714,6 +725,139 @@ comparison_ids=["constructed-pair"]
         self.payload["units"][0]["publication"]["surfaces"] = []
         with self.assertRaisesRegex(history.HistoryError, "not permitted"):
             self.compare()
+
+
+class NativeVersionTests(unittest.TestCase):
+    """Real source adapter with synthetic evidence; no historical parent is invented."""
+    def setUp(self):
+        from test_eucharistic_texts import AdapterBoundaryTests, native_fixture
+        import _eucharistic_texts as texts
+        AdapterBoundaryTests.setUp(self)
+        self.texts = texts
+        self.first = native_fixture(self, "first-book")
+        self.second = native_fixture(self, "second-book", "Changed native fixture.")
+        self.second[0]["date"].update(label="1250", start_year=1250, end_year=1250)
+        self.second[3]()
+        self.source = self.root / "routing.toml"
+        self.source.write_text('''schema_version=1
+record_type="catholic-eucharistic-history"
+scope_ref="test-only"
+[[text_sets]]
+id="first"
+adapter="native-book:first-book"
+[[text_sets]]
+id="second"
+adapter="native-book:second-book"
+[[text_versions]]
+id="earlier"
+text_set="first"
+parents=[]
+[[text_versions]]
+id="later"
+text_set="second"
+parents=[{version_id="earlier", evidence_path="src/sources/inventories/eucharistic-books/support/fixture-parentage.json"}]
+''')
+        self.receipt = {"schema_version": 1, "record_type": "eucharistic-text-parentage", "id": "fixture-parentage",
+                        "title": "Synthetic parentage", "status": "verified", "historical_parentage": "established",
+                        "git_parent_authorized": True, "text_inheritance": False, "kind": "revision",
+                        "reviewer": "fixture-reviewer", "checked_on": "2026-10-17", "basis": "Synthetic test only",
+                        "scope": "Two-page synthetic book", "evidence": self.first[0]["date"]["evidence"]}
+        self.save_receipt()
+
+    def record(self, *args, **kwargs):
+        from test_eucharistic_texts import AdapterBoundaryTests
+        return AdapterBoundaryTests.record(self, *args, **kwargs)
+
+    def artifact(self, *args, **kwargs):
+        from test_eucharistic_texts import AdapterBoundaryTests
+        return AdapterBoundaryTests.artifact(self, *args, **kwargs)
+
+    def save_receipt(self):
+        self.receipt["parent_binding_sha256"] = self.first[2]["binding_sha256"]
+        self.receipt["child_binding_sha256"] = self.second[2]["binding_sha256"]
+        (self.root / self.texts.NATIVE_BOOK_DIRECTORY / "support/fixture-parentage.json").write_text(json.dumps(self.receipt))
+
+    def emit(self, name="corpus"):
+        with mock.patch.object(self.texts, "_load_library", return_value=self.library):
+            return history.corpus(self.source, self.root, self.root / name, ventilator=owning_ventilator())
+
+    def test_reviewed_versions_form_deterministic_git_diff_without_inherited_text(self):
+        result = self.emit()
+        repeated = self.emit("repeated")
+        self.assertEqual(result["version_branches"], repeated["version_branches"])
+        self.assertTrue(result["historical_ancestry_claimed"])
+        repo = self.root / "corpus"
+        earlier, later = (result["version_branches"][key] for key in ("earlier", "later"))
+        self.assertEqual(earlier, history.git(repo, "rev-parse", later + "^").decode().strip())
+        changed = history.git(repo, "diff", "--name-only", earlier, later, "--", "text/").decode().splitlines()
+        self.assertEqual(["text/native/native-division/unit-1.txt"], changed)
+        self.assertEqual(b"Second native fixture.\n", history.git(repo, "show", later + ":text/native/native-division/unit-2.txt"))
+        self.assertEqual("946684800", history.git(repo, "show", "-s", "--format=%ct", later).decode().strip())
+        metadata = json.loads(history.git(repo, "show", later + ":reconstruction.json"))
+        self.assertEqual(1250, metadata["historical_date"]["start_year"])
+        self.assertFalse(metadata["text_inheritance"])
+        self.assertFalse(metadata["historical_act_claimed"])
+        self.assertEqual("explicit-evidence-authorized", metadata["text_ancestry"])
+        self.assertIn(history.fingerprint(ROOT, ROOT / "scripts/_eucharistic_stages.py"), metadata["tool_inputs"])
+
+    def test_missing_or_stale_parent_authorization_preserves_prior_artifact(self):
+        before = self.emit()["version_branches"]
+        self.receipt["git_parent_authorized"] = False
+        self.save_receipt()
+        with self.assertRaisesRegex(history.HistoryError, "exact reviewed authorization"):
+            self.emit()
+        held = json.loads((self.root / "corpus" / history.MARKER).read_text())
+        self.assertEqual(before, held["version_branches"])
+        self.receipt["git_parent_authorized"] = True
+        self.save_receipt()
+        (self.root / self.texts.NATIVE_BOOK_DIRECTORY / "support/fixture-parentage.json").write_text(json.dumps({**self.receipt, "parent_binding_sha256": "0" * 64}))
+        with self.assertRaisesRegex(history.HistoryError, "exact reviewed authorization"):
+            self.emit()
+
+    def test_scratch_parentage_receipt_is_not_a_canonical_authorization(self):
+        path = self.root / ".scratch/fixture-parentage.json"
+        path.parent.mkdir()
+        path.write_text(json.dumps(self.receipt))
+        self.source.write_text(self.source.read_text().replace(
+            "src/sources/inventories/eucharistic-books/support/fixture-parentage.json", ".scratch/fixture-parentage.json"))
+        with self.assertRaisesRegex(history.HistoryError, "canonical inventory ownership"):
+            self.emit()
+
+    def test_temporal_bounds_are_real_roles_not_git_dates(self):
+        self.second[0]["date"].update(label="1100", start_year=1100, end_year=1100)
+        self.second[3]()
+        self.save_receipt()
+        with self.assertRaisesRegex(history.HistoryError, "reverses disjoint"):
+            self.emit()
+        self.second[0]["date"]["kind"] = "approval"
+        self.second[3]()
+        self.save_receipt()
+        self.assertEqual(2, self.emit()["version_commits"])
+
+    def test_partial_or_forged_complete_adapter_cannot_create_temporal_version(self):
+        self.second[1]["unresolved"] = ["missing rubric"]
+        self.second[3]()
+        with self.assertRaisesRegex(self.texts.AdapterError, "complete extent"):
+            self.emit()
+        with mock.patch.object(self.texts, "_load_library", return_value=self.library):
+            payload = self.texts.load_adapter("native-book:first-book", self.root)
+            payload["units"][0]["text"] = "Fabricated text."
+            payload["units"][0]["text_sha256"] = history.digest(b"Fabricated text.")
+            with self.assertRaisesRegex(history.HistoryError, "differs from its checked source"):
+                history.verify_adapter(payload, self.root)
+
+    def test_parent_cycles_are_rejected_even_with_explicit_receipts(self):
+        reversed_receipt = {**self.receipt, "parent_binding_sha256": self.second[2]["binding_sha256"],
+                            "child_binding_sha256": self.first[2]["binding_sha256"]}
+        (self.root / self.texts.NATIVE_BOOK_DIRECTORY / "support/reverse-parentage.json").write_text(json.dumps(reversed_receipt))
+        self.source.write_text(self.source.read_text().replace('parents=[]', 'parents=[{version_id="later", evidence_path="src/sources/inventories/eucharistic-books/support/reverse-parentage.json"}]'))
+        self.second[0]["date"] = self.first[0]["date"]
+        self.second[3]()
+        self.save_receipt()
+        reversed_receipt["parent_binding_sha256"] = self.second[2]["binding_sha256"]
+        (self.root / self.texts.NATIVE_BOOK_DIRECTORY / "support/reverse-parentage.json").write_text(json.dumps(reversed_receipt))
+        with self.assertRaisesRegex(history.HistoryError, "cycle"):
+            self.emit()
 
 
 if __name__ == "__main__":

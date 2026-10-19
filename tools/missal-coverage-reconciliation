@@ -1,0 +1,394 @@
+#!/usr/bin/env python3
+"""Read-only reconciliation of Eucharistic inventories and their coverage audit.
+
+Examples (from the repository root):
+  tools/missal-coverage-reconciliation --json
+  tools/missal-coverage-reconciliation.test
+
+Exit 0: references and snapshots agree, even when research is incomplete.
+Exit 1: invalid references, stale snapshots, or owning-validator findings.
+Exit 70: unexpected failure. No files, caches or research statuses are written.
+Agreement does not establish historical completeness or publication permission.
+"""
+from __future__ import annotations
+
+import argparse
+from collections import Counter
+from contextlib import contextmanager
+import importlib.machinery
+import importlib.util
+import json
+import os
+from pathlib import Path
+import sys
+
+sys.dont_write_bytecode = True
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+import _eucharistic_history as history
+import _eucharistic_stages as stages_owner
+
+BASE = "src/sources/inventories/"
+COVERAGE = BASE + "eucharistic-stage-coverage-v1.json"
+INVENTORIES = {
+    "eastern": (BASE + "eastern-eucharistic-books-timeline-v1.toml", "records", "church_coverage", "eastern_church_coverage"),
+    "western": (BASE + "western-eucharistic-books-timeline-v1.toml", "candidates", "coverage", "western_trajectory_coverage"),
+}
+SOURCE_KEYS = {"sources", "source_ids", "source_id", "census_source_ids", "followup_source_ids"}
+CANDIDATE_KEYS = {"candidate_id", "candidate_ids", "ancestry_candidate_ids", "related_candidate_ids",
+                  "deferred_or_origin_review_candidate_ids", "consulted_candidate_ids", "represents_candidate_ids"}
+CANONICAL_KEYS = {
+    "source_library_work_id": "work", "canonical_work_id": "work", "work_id": "work",
+    "source_library_edition_id": "edition", "canonical_edition_id": "edition", "edition_id": "edition",
+    "source_artifact_id": "artifact", "source_artifact_ids": "artifact", "source_library_artifact_ids": "artifact",
+    "original_scan_artifact_id": "artifact", "artifact_id": "artifact", "alternative_registered_artifact_ids": "artifact",
+    "registered_derivative_artifact_id": "artifact", "source_library_checked_text_artifact_ids": "artifact",
+    "source_segment_ids": "segment", "source_library_passage_ids": "passage",
+}
+
+
+def owner(name):
+    identity = "coverage_owner_" + name.replace("-", "_")
+    if identity not in sys.modules:
+        loader = importlib.machinery.SourceFileLoader(identity, str(ROOT / "tools" / name))
+        spec = importlib.util.spec_from_loader(identity, loader)
+        module = importlib.util.module_from_spec(spec)
+        sys.modules[identity] = module
+        loader.exec_module(module)
+    return sys.modules[identity]
+
+
+@contextmanager
+def uncached():
+    previous = os.environ.get("TRIPTYCH_LIBRARY_CACHE")
+    os.environ["TRIPTYCH_LIBRARY_CACHE"] = "0"
+    try:
+        yield
+    finally:
+        if previous is None:
+            os.environ.pop("TRIPTYCH_LIBRARY_CACHE", None)
+        else:
+            os.environ["TRIPTYCH_LIBRARY_CACHE"] = previous
+
+
+def strings(value):
+    if isinstance(value, str):
+        return [value]
+    return value if isinstance(value, list) and all(isinstance(x, str) for x in value) else []
+
+
+class Audit:
+    def __init__(self, root):
+        self.root = Path(root).resolve()
+        self.findings, self.inputs, self.actual, self.research = [], {}, {}, {}
+
+    def finding(self, kind, code, location, message, **detail):
+        self.findings.append(dict(kind=kind, code=code, location=location, message=message, **detail))
+
+    def message(self, error):
+        return str(error).replace(str(self.root) + "/", "").replace(str(ROOT) + "/", "")
+
+    def read(self, relative):
+        try:
+            path = history.inside(self.root, relative)
+            if path.suffix == ".toml":
+                return history.read_toml(self.root, path, self.inputs)
+            stamp = history.fingerprint(self.root, path)
+            data = json.loads(path.read_text(encoding="utf-8"), object_pairs_hook=stages_owner._object,
+                              parse_constant=stages_owner._constant)
+            if history.fingerprint(self.root, path) != stamp:
+                raise ValueError("input changed while being read")
+            self.inputs[relative] = stamp
+            return data
+        except (ValueError, OSError) as error:
+            self.finding("invalid", "input-unreadable", relative, self.message(error))
+            return {}
+
+    def index(self, rows, location, key="id"):
+        result = {}
+        if not isinstance(rows, list):
+            self.finding("invalid", "invalid-table", location, "Expected an array of records.")
+            return result
+        for ordinal, row in enumerate(rows):
+            identifier = row.get(key) if isinstance(row, dict) else None
+            if not isinstance(identifier, str) or not identifier:
+                self.finding("invalid", "missing-id", f"{location}[{ordinal}]", f"Missing {key}.")
+            elif identifier in result:
+                self.finding("invalid", "duplicate-id", location, f"Duplicate {key}: {identifier}")
+            else:
+                result[identifier] = row
+        return result
+
+    def refs(self, values, known, location, target):
+        for identifier in strings(values):
+            if identifier not in known:
+                self.finding("invalid", "unknown-" + target, location,
+                             f"Unresolved {target}: {identifier}", reference=identifier)
+
+    def equal(self, declared, actual, location, code="stale-value"):
+        if declared != actual:
+            self.finding("stale", code, location, "Snapshot differs from current source; review before updating.",
+                         declared=declared, actual=actual)
+
+    def members(self, declared, actual, location):
+        self.equal(sorted(declared), sorted(actual), location, "stale-membership")
+
+    def inventory_refs(self, node, location, sources, candidates, canonical):
+        if isinstance(node, list):
+            for n, row in enumerate(node):
+                label = row.get("id", row.get("candidate_id", n)) if isinstance(row, dict) else n
+                self.inventory_refs(row, f"{location}[{label}]", sources, candidates, canonical)
+            return
+        if not isinstance(node, dict):
+            return
+        for key, value in node.items():
+            here = location + "." + key
+            if key in SOURCE_KEYS:
+                self.refs(value, sources, here, "source")
+            if key in CANDIDATE_KEYS:
+                self.refs(value, candidates, here, "candidate")
+            if key in CANONICAL_KEYS:
+                self.refs(value, canonical, here, "canonical-record")
+                for identifier in strings(value):
+                    if identifier in canonical and canonical[identifier].record_type != CANONICAL_KEYS[key]:
+                        self.finding("invalid", "canonical-type", here, f"{identifier} must identify a {CANONICAL_KEYS[key]}.")
+            self.inventory_refs(value, here, sources, candidates, canonical)
+        edition = node.get("source_library_edition_id", node.get("canonical_edition_id", node.get("edition_id")))
+        work = node.get("source_library_work_id", node.get("canonical_work_id", node.get("work_id")))
+        if edition in canonical and work and canonical[edition].data.get("work_id") != work:
+            self.finding("invalid", "edition-work-mismatch", location, f"{edition} does not belong to {work}.")
+        # A constituent keeps its own edition while its explicitly named segment
+        # identifies the exact container artifact (guidance/sources.md). The
+        # source-library owner validates that segment's hash and physical bounds.
+        # Neither an unlisted segment nor a sibling/parent artifact is evidence
+        # for this row's artifact reference.
+        containers = {
+            canonical[segment].data.get("artifact_id")
+            for segment in strings(node.get("source_segment_ids"))
+            if segment in canonical and canonical[segment].record_type == "segment"
+            and canonical[segment].data.get("edition_id") == edition
+        }
+        for key, kind in CANONICAL_KEYS.items():
+            if kind in {"artifact", "passage", "segment"}:
+                for identifier in strings(node.get(key)):
+                    if edition and identifier in canonical and canonical[identifier].data.get("edition_id") != edition:
+                        if kind == "artifact" and canonical[identifier].record_type == "artifact" and identifier in containers:
+                            continue
+                        self.finding("invalid", "edition-member-mismatch", location + "." + key,
+                                     f"{identifier} does not belong to {edition}.")
+        artifact = node.get("original_scan_artifact_id", node.get("source_artifact_id", node.get("artifact_id")))
+        if node.get("id") in canonical and canonical[node["id"]].record_type == "artifact":
+            artifact = node["id"]
+        if artifact in canonical:
+            record = canonical[artifact]
+            for supplied, field in (("acquisition_sha256", "sha256"), ("sha256", "sha256"),
+                                    ("acquisition_byte_count", "byte_size"), ("byte_count", "byte_size"),
+                                    ("byte_size", "byte_size"), ("path", "path")):
+                if supplied in node:
+                    self.equal(node[supplied], record.data.get(field), location + "." + supplied, "stale-artifact-metadata")
+            if "manifest_path" in node:
+                self.equal(node["manifest_path"], record.path.relative_to(self.root).as_posix(),
+                           location + ".manifest_path", "stale-artifact-metadata")
+
+    def run(self):
+        routing = self.read(history.DEFAULT_SOURCE)
+        documents = {key: self.read(spec[0]) for key, spec in INVENTORIES.items()}
+        coverage = self.read(COVERAGE)
+        with uncached():
+            library = owner("source-library").load_library(self.root, check_binding_fingerprints=False)
+            for error in library.errors:
+                self.finding("invalid", "source-owner-validation", "tools/source-library", self.message(error))
+            try:
+                history.catalogue(self.root / history.DEFAULT_SOURCE, self.root, act_loader=owner("act-history").load)
+            except (ValueError, OSError) as error:
+                self.finding("invalid", "history-owner-validation", "tools/act-history catalogue", self.message(error))
+        candidates, inventories, sources = {}, {}, {}
+        for family, (path, candidate_table, coverage_table, _) in INVENTORIES.items():
+            data = documents[family]
+            sources[family] = self.index(data.get("sources", []), path + ":sources")
+            candidates[family] = self.index(data.get(candidate_table, []), path + ":" + candidate_table)
+            inventories[family] = self.index(data.get(coverage_table, []), path + ":" + coverage_table)
+            self.inventory_refs(data, path, sources[family], candidates[family], library.records)
+            self.actual[family] = {"candidates": len(candidates[family]), "sources": len(sources[family]), "coverage_rows": len(inventories[family]),
+                                   "canonical_edition_links": sum(bool(row.get("source_library_edition_id")) for row in candidates[family].values())}
+            self.research[family] = {"empty_candidate_rows": sorted(key for key, row in inventories[family].items() if not row.get("candidate_ids")),
+                                     "candidates_without_canonical_edition": sorted(key for key, row in candidates[family].items() if not row.get("source_library_edition_id"))}
+        dossiers, stages, traditions, stage_owners, tradition_owners = {}, {}, {}, {}, {}
+        for path in sorted((self.root / stages_owner.DIRECTORY).glob("*.json")):
+            relative = path.relative_to(self.root).as_posix()
+            data = self.read(relative)
+            identifier = data.get("dossier_id")
+            if not identifier:
+                continue  # The owning validator reports malformed envelopes.
+            if identifier in dossiers:
+                self.finding("invalid", "duplicate-dossier", relative, f"Duplicate dossier_id: {identifier}")
+            dossiers[identifier] = data
+            for key, target, owners in (("stages", stages, stage_owners), ("traditions", traditions, tradition_owners)):
+                indexed = self.index(data.get(key, []), relative + ":" + key)
+                for row_id in indexed:
+                    if row_id in target:
+                        self.finding("invalid", "duplicate-" + key, relative, f"Duplicate {key} id: {row_id}")
+                    owners[row_id] = identifier
+                target.update(indexed)
+        witness_ids = {family + ":" + key for family in candidates for key in candidates[family]}
+        for route in routing.get("act_slices", []):
+            try:
+                data = owner("act-history").load(history.inside(self.root, route["path"]))
+                witness_ids.update(route["id"] + ":" + row["id"] for row in data.get("acts", []))
+            except (ValueError, OSError) as error:
+                self.finding("invalid", "act-owner-validation", route.get("path", "act_slices"), self.message(error))
+        for key, row in stages.items():
+            self.refs(row.get("witness_ids", []), witness_ids, key + ".witness_ids", "witness")
+        self.actual["stage_history"] = {"dossiers": len(dossiers), "traditions": len(traditions), "stages": len(stages),
+                                        "transitions": sum(len(d.get("transitions", [])) for d in dossiers.values()),
+                                        "gaps": sum(len(d.get("gaps", [])) for d in dossiers.values()),
+                                        "stage_status_counts": dict(Counter(r.get("status") for r in stages.values())),
+                                        "text_coverage_counts": dict(Counter(r.get("text_coverage") for r in stages.values()))}
+        self.research["declared_stage_gaps"] = sorted(row["id"] for d in dossiers.values() for row in d.get("gaps", []))
+        self.coverage(coverage, routing, inventories, sources, candidates, dossiers, stages, traditions, stage_owners, tradition_owners)
+        for relative, stamp in sorted(self.inputs.items()):
+            try:
+                self.equal(stamp, history.fingerprint(self.root, self.root / relative), relative, "input-changed-during-audit")
+            except history.HistoryError as error:
+                self.finding("invalid", "input-changed-during-audit", relative, self.message(error))
+        self.findings.sort(key=lambda row: (row["kind"], row["location"], row["code"], row["message"]))
+        return {"status": "findings" if self.findings else "ok", "actual": self.actual, "findings": self.findings,
+                "finding_counts": dict(Counter(row["kind"] for row in self.findings)), "research_limits": self.research,
+                "scope": "Mechanical reconciliation only; unresolved research is not an invalid reference, and agreement is not historical completeness.",
+                "owner_checks": {"source_library": "complete graph; publication binding fingerprints excluded",
+                                 "act_history": "catalogue and stage evidence; no text exported"}}
+
+    def coverage(self, data, routing, inventories, sources, candidates, dossiers, stages, traditions, stage_owners, tradition_owners):
+        stamps = self.index(data.get("inputs", []), COVERAGE + ":inputs", "path")
+        required = {history.DEFAULT_SOURCE, *(spec[0] for spec in INVENTORIES.values()),
+                    *(row["path"] for row in routing.get("act_slices", [])),
+                    *(path for path in self.inputs if path.startswith(stages_owner.DIRECTORY + "/"))}
+        for path in sorted(required - stamps.keys()):
+            self.finding("stale", "missing-input-fingerprint", COVERAGE + ":inputs", "Owner input has no snapshot fingerprint.", reference=path)
+        for path, stamp in stamps.items():
+            try:
+                actual = history.fingerprint(self.root, history.inside(self.root, path))
+                for field in ("sha256", "byte_size"):
+                    if field == "sha256" or field in stamp:
+                        self.equal(stamp.get(field), actual[field], COVERAGE + ":inputs[" + path + "]." + field, "stale-fingerprint")
+            except (ValueError, OSError) as error:
+                self.finding("invalid", "unknown-input", COVERAGE + ":inputs", self.message(error), reference=path)
+        counts = {"eastern_census_slots": len(inventories["eastern"]), "western_coverage_trajectories": len(inventories["western"]),
+                  "eastern_candidates": len(candidates["eastern"]), "western_candidates": len(candidates["western"]),
+                  "presentation_groups": len(routing.get("presentation_groups", [])),
+                  "eastern_empty_candidate_slots_at_input": self.research["eastern"]["empty_candidate_rows"],
+                  "western_empty_candidate_slots_at_input": len(self.research["western"]["empty_candidate_rows"])}
+        self.actual["count_semantics"] = counts
+        for key, actual in counts.items():
+            declared = data.get("count_semantics", {}).get(key)
+            self.equal(sorted(declared) if isinstance(declared, list) else declared, actual, COVERAGE + ":count_semantics." + key, "stale-count")
+        snapshots = self.index(data.get("dossier_snapshot", []), COVERAGE + ":dossier_snapshot", "dossier_id")
+        self.members(snapshots, dossiers, COVERAGE + ":dossier_snapshot")
+        for key in snapshots.keys() & dossiers.keys():
+            snapshot, dossier = snapshots[key], dossiers[key]
+            location = COVERAGE + ":dossier_snapshot[" + key + "]"
+            for status in ("documented", "provisional"):
+                field = status + "_stage_count"
+                self.equal(snapshot.get(field), sum(r.get("status") == status for r in dossier.get("stages", [])), location + "." + field, "stale-count")
+            self.equal(snapshot.get("text_coverage_counts"), dict(Counter(r.get("text_coverage") for r in dossier.get("stages", []))), location + ".text_coverage_counts", "stale-count")
+            self.equal(snapshot.get("traditions"), [{"id": r["id"], "label": r["label"]} for r in dossier.get("traditions", [])], location + ".traditions")
+        canonical = self.index(data.get("canonical_traditions", []), COVERAGE + ":canonical_traditions")
+        self.members(canonical, traditions, COVERAGE + ":canonical_traditions")
+        for key in canonical.keys() & traditions.keys():
+            self.equal(canonical[key], {"id": key, "label": traditions[key]["label"], "dossier_id": tradition_owners[key]}, COVERAGE + ":canonical_traditions[" + key + "]")
+        proposed = self.index(data.get("proposed_traditions", []), COVERAGE + ":proposed_traditions")
+        coverage_sources = self.index(data.get("sources", []), COVERAGE + ":sources")
+        all_rows, statuses = {}, Counter()
+        for family, (_, _, _, table) in INVENTORIES.items():
+            rows = self.index(data.get(table, []), COVERAGE + ":" + table)
+            self.members(rows, inventories[family], COVERAGE + ":" + table)
+            for key, row in rows.items():
+                location = COVERAGE + ":" + table + "[" + key + "]"
+                all_rows[key] = row
+                self.refs(row.get("candidate_ids", []), candidates[family], location + ".candidate_ids", "candidate")
+                if key in inventories[family]:
+                    self.members(row.get("candidate_ids", []), inventories[family][key].get("candidate_ids", []), location + ".candidate_ids")
+                    if family == "eastern":
+                        self.members(row.get("contextual_ancestry_candidates", []), inventories[family][key].get("ancestry_candidate_ids", []), location + ".contextual_ancestry_candidates")
+                for field, known, target in (("contextual_ancestry_candidates", candidates[family], "candidate"),
+                                             ("canonical_tradition_ids", traditions, "tradition"),
+                                             ("proposed_tradition_ids", proposed, "proposed-tradition")):
+                    self.refs(row.get(field, []), known, location + "." + field, target)
+                self.refs(row.get("next_sources", {}).get("inventory_source_ids", []), sources[family], location + ".next_sources", "source")
+                self.refs(row.get("component_profile"), data.get("component_profiles", {}), location + ".component_profile", "component-profile")
+                for witness in row.get("witnesses", []):
+                    self.refs(witness.get("candidate_id"), candidates[family], location + ".witnesses", "candidate")
+                detail = row.get("dossier_coverage", {})
+                statuses[detail.get("status", "unspecified")] += 1
+                self.refs(detail.get("dossier_ids", []), dossiers, location + ".dossier_coverage.dossier_ids", "dossier")
+                selected = detail.get("stage_ids", []) + detail.get("provisional_stage_ids", [])
+                self.refs(selected, stages, location + ".dossier_coverage", "stage")
+                for stage_id in selected:
+                    if stage_id in stages and stage_owners[stage_id] not in detail.get("dossier_ids", []):
+                        self.finding("invalid", "stage-dossier-mismatch", location, f"{stage_id} belongs to unlisted dossier {stage_owners[stage_id]}.")
+                if all(key in stages for key in selected):
+                    self.equal(detail.get("text_coverage_counts"), dict(Counter(stages[key]["text_coverage"] for key in selected)), location + ".dossier_coverage.text_coverage_counts", "stale-count")
+                for field, status in (("stage_ids", "documented"), ("provisional_stage_ids", "provisional")):
+                    for stage_id in detail.get(field, []):
+                        if stage_id in stages:
+                            self.equal(status, stages[stage_id]["status"], location + ".dossier_coverage." + field + "[" + stage_id + "]", "stale-stage-status")
+        self.actual["coverage_status_counts"] = dict(statuses)
+        self.equal(data.get("validation", {}).get("coverage_status_counts"), dict(statuses), COVERAGE + ":validation.coverage_status_counts", "stale-count")
+        self.research["coverage_rows_without_stages"] = sorted(key for key, row in all_rows.items()
+                                                            if not row.get("dossier_coverage", {}).get("stage_ids")
+                                                            and not row.get("dossier_coverage", {}).get("provisional_stage_ids"))
+        for table in ("component_findings", "focused_gap_dispositions", "missing_stage_chains", "access_failures", "catalogue_proposals"):
+            for n, row in enumerate(data.get(table, [])):
+                location = COVERAGE + ":" + table + f"[{row.get('id', n)}]"
+                self.refs(row.get("coverage_ids", []), all_rows, location, "coverage-row")
+                for field in ("source_id", "source_ids", "next_source_ids"):
+                    self.refs(row.get(field, []), coverage_sources, location + "." + field, "coverage-source")
+        for row in data.get("inventory_source_routes", []):
+            location = COVERAGE + ":inventory_source_routes[" + row.get("id", "") + "]"
+            family = next((key for key, spec in INVENTORIES.items() if spec[0] == row.get("inventory")), None)
+            if family is None:
+                self.finding("invalid", "unknown-inventory", location, "Unknown inventory owner.")
+            else:
+                self.refs(row.get("inventory_id"), sources[family], location, "source")
+                self.equal(row.get("id"), family + ":" + row.get("inventory_id", ""), location + ".id")
+
+
+def run(root=ROOT):
+    return Audit(root).run()
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--root", type=Path, default=ROOT, help="repository root (default: tool's repository)")
+    parser.add_argument("--json", action="store_true", help="one deterministic compact JSON object")
+    args = parser.parse_args(argv)
+    try:
+        payload = run(args.root)
+    except Exception as error:
+        message = str(error).replace(str(args.root.resolve()) + "/", "") or type(error).__name__
+        if args.json:
+            print(json.dumps({"v": 1, "status": "error", "code": "internal", "error": message},
+                             ensure_ascii=False, sort_keys=True, separators=(",", ":")), file=sys.stderr)
+        else:
+            print(f"missal-coverage-reconciliation: {message}", file=sys.stderr)
+        return 70
+    if args.json:
+        print(json.dumps({"v": 1, **payload}, ensure_ascii=False, sort_keys=True, separators=(",", ":")))
+    else:
+        print("Missal coverage reconciliation: " + payload["status"])
+        for family in INVENTORIES:
+            counts = payload["actual"][family]
+            print(f"{family}: {counts['candidates']} candidates, {counts['sources']} sources, {counts['coverage_rows']} coverage rows")
+        counts = payload["actual"]["stage_history"]
+        print(f"Stages: {counts['dossiers']} dossiers, {counts['traditions']} traditions, {counts['stages']} stages, {counts['transitions']} transitions, {counts['gaps']} declared research gaps")
+        for row in payload["findings"]:
+            print(f"{row['kind']} [{row['code']}] {row['location']}: {row['message']}")
+            if "declared" in row:
+                print("  declared=" + json.dumps(row["declared"], ensure_ascii=False, sort_keys=True) +
+                      " actual=" + json.dumps(row["actual"], ensure_ascii=False, sort_keys=True))
+        print(payload["scope"])
+    return int(bool(payload["findings"]))
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

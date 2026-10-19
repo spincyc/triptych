@@ -1,4 +1,4 @@
-"""Coverage and isolated text reconstructions owned by tools/act-history.
+"""Coverage and evidence-bound text snapshots owned by tools/act-history.
 
 Research discovery cannot create normative stations or text ancestry. Text
 adapters remain responsible for exact source identity and publication decisions.
@@ -83,7 +83,7 @@ def route(source: Path, root: Path) -> tuple[dict, dict]:
         raise HistoryError("expected schema_version=1, record_type=catholic-eucharistic-history")
     if not isinstance(data.get("scope_ref"), str) or not data["scope_ref"]:
         raise HistoryError("history routing requires scope_ref")
-    for table in ("catalogues", "act_slices", "text_sets", "comparisons", "relationship_sets", "presentation_groups"):
+    for table in ("catalogues", "act_slices", "text_sets", "comparisons", "relationship_sets", "presentation_groups", "text_versions"):
         rows = data.get(table, [])
         if not isinstance(rows, list) or any(not isinstance(row, dict) for row in rows):
             raise HistoryError(f"{table} must be an array of tables")
@@ -94,7 +94,7 @@ def route(source: Path, root: Path) -> tuple[dict, dict]:
             raise HistoryError(f"duplicate id in {table}")
         fields = {"text_sets": ("adapter",), "catalogues": ("path", "table"),
                   "act_slices": ("path",), "comparisons": ("kind",), "relationship_sets": ("path",),
-                  "presentation_groups": ("label",)}[table]
+                  "presentation_groups": ("label",), "text_versions": ("text_set",)}[table]
         for row in rows:
             for field in fields:
                 if not isinstance(row.get(field), str) or not row[field]:
@@ -437,7 +437,7 @@ def catalogue(source: Path, root: Path, *, act_loader) -> dict:
     groups = presentation_groups(data, entries, entities)
     from _eucharistic_stages import load as load_stages, StageError
     try:
-        stage_history = load_stages(root, catalogue_ids=set(by_id), comparisons=comparisons_by_id,
+        stage_history = load_stages(root, catalogue_ids=set(by_id), catalogue_records=by_id, comparisons=comparisons_by_id,
                                     fingerprint=fingerprint,
                                     default_tradition_id=data.get("stage_history_default_tradition"))
     except StageError as error:
@@ -483,6 +483,17 @@ def verify_adapter(payload: dict, root: Path) -> None:
     units = payload.get("units")
     if not isinstance(units, list) or not units:
         raise HistoryError("adapter produced no accepted text units")
+    if payload.get("book_binding") or payload.get("scope", {}).get("whole_book_complete"):
+        from _eucharistic_texts import load_adapter, NATIVE_BOOK_PREFIX, AdapterError
+        adapter = payload.get("adapter_id", "")
+        if not adapter.startswith(NATIVE_BOOK_PREFIX):
+            raise HistoryError("complete extent requires a validated native book adapter")
+        try:
+            canonical = load_adapter(adapter, root)
+        except AdapterError as error:
+            raise HistoryError(f"native book validation: {error}") from error
+        if any(payload.get(key) != canonical.get(key) for key in ("units", "scope", "book_binding", "historical_date", "inputs")):
+            raise HistoryError("native book adapter result differs from its checked source binding")
     seen = set()
     for unit in units:
         key = unit.get("unit_id")
@@ -524,6 +535,9 @@ def text_path(unit: dict) -> str:
             encoded = encoded.replace(".", "%2E")
         return encoded
     identity = unit.get("identity", {})
+    if unit.get("native_path"):
+        from _eucharistic_texts import native_text_path
+        return native_text_path(unit["native_path"])
     if {"mass", "form", "course", "cycle", "proper", "occurrence"} <= identity.keys():
         return (f"text/propers/{component(identity['mass'])}/form-{component(identity['form'])}/"
                 f"course-{component(identity['course'])}/cycle-{component(identity['cycle'])}/"
@@ -547,6 +561,9 @@ def serialized_text(text: str, identifier: str, *, ventilator) -> bytes:
 
 def reconstruction_tree(payload: dict, identifier: str, inputs: dict, *, ventilator) -> dict[str, bytes]:
     units = payload["units"]
+    complete = payload.get("scope", {}).get("whole_book_complete") is True
+    if complete and not payload.get("book_binding"):
+        raise HistoryError("complete book requires a validated native book binding")
     metadata = {key: value for key, value in payload.items() if key not in ("units", "inputs", "sources")}
     metadata.update({"schema": CORPUS_SCHEMA, "record_kind": "reconstruction", "id": identifier,
                      "text_ancestry": "isolated-root", "historical_act_claimed": False,
@@ -559,7 +576,7 @@ def reconstruction_tree(payload: dict, identifier: str, inputs: dict, *, ventila
     files = {"reconstruction.json": json_bytes(metadata), "inputs.json": json_bytes(sorted(inputs.values(), key=lambda row: row["path"])),
              "sources.json": json_bytes(payload.get("sources", [])),
              "coverage.json": json_bytes({"scope": payload.get("scope"), "counts": payload.get("counts"),
-                                           "unknown_is_absence": False, "complete_book": False,
+                                           "unknown_is_absence": False, "complete_book": complete,
                                            "omitted_body_owners": payload.get("omitted_body_owners", [])}),
              "order.json": json_bytes([{"unit_id": unit["unit_id"], "path": text_path(unit), "source_order": unit.get("source_order"),
                                          "division": unit.get("division"), "division_order": unit.get("division_order")}
@@ -572,9 +589,12 @@ def reconstruction_tree(payload: dict, identifier: str, inputs: dict, *, ventila
         provenance = {k: v for k, v in unit.items() if k != "text"}
         provenance.update({"serialized_text_sha256": digest(files[path]), "text_serialization": TEXT_SERIALIZATION})
         files["provenance/" + path.removeprefix("text/").removesuffix(".txt") + ".json"] = json_bytes(provenance)
-    files["README.md"] = (f"# {payload.get('title', identifier)}\n\n"
-        "This is an isolated, bounded reconstruction from registered source owners.\n"
-        "It is not a promulgation, a complete missal, or an asserted historical revision.\n"
+    introduction = ("This is an independently collated complete native book within its explicit witness extent.\n"
+                    "It is not a promulgation or a claim that all complementary service books are held.\n"
+                    if complete else
+                    "This is an isolated, bounded reconstruction from registered source owners.\n"
+                    "It is not a promulgation, a complete missal, or an asserted historical revision.\n")
+    files["README.md"] = (f"# {payload.get('title', identifier)}\n\n" + introduction +
         "The Git timestamp is a fixed synthetic value, not the target or extraction date.\n"
         f"Target date: {payload.get('target_date') or 'not established'}.\n"
         f"Witness date: {payload.get('witness_date') or 'not a single dated witness'}.\n"
@@ -586,6 +606,10 @@ def reconstruction_tree(payload: dict, identifier: str, inputs: dict, *, ventila
         "Unknown acquisition or omitted coverage\n"
         "does not mean a prayer was historically absent. These branches claim no text\n"
         "inheritance from one another or from the separate normative act graph.\n").encode()
+    for name in files:
+        parts = name.split("/")
+        if any("/".join(parts[:length]) in files for length in range(1, len(parts))):
+            raise HistoryError(f"semantic file/directory collision: {name}")
     return files
 
 
@@ -617,11 +641,86 @@ def _owned_output(out: Path) -> None:
         raise HistoryError("refusing to replace a corpus repository configured with a remote")
 
 
+def _text_versions(data: dict, accepted: list, root: Path) -> list:
+    """Resolve only explicitly authorized historical parents, never text inheritance."""
+    from _eucharistic_texts import native_parentage, AdapterError
+    from _eucharistic_stages import verify_progression, StageError
+    progression_input = fingerprint(TOOL_ROOT, TOOL_ROOT / "scripts/_eucharistic_stages.py")
+    by_set = {row["id"]: (payload, files) for row, payload, files in accepted}
+    versions, transitions, stages = {}, [], {}
+    for row in data.get("text_versions", []):
+        if row["text_set"] not in by_set:
+            raise HistoryError(f"{row['id']}: unknown version text_set")
+        payload, files = by_set[row["text_set"]]
+        if not payload.get("book_binding") or payload.get("scope", {}).get("complete_declared_extent") is not True:
+            raise HistoryError(f"{row['id']}: temporal snapshot requires an independently verified complete declared extent")
+        parents = row.get("parents")
+        if not isinstance(parents, list) or any(not isinstance(parent, dict) for parent in parents):
+            raise HistoryError("text version requires explicit parents array (empty for an isolated root)")
+        parent_ids = [parent.get("version_id") for parent in parents]
+        if (any(not isinstance(key, str) or not SLUG.fullmatch(key) for key in parent_ids)
+                or len(set(parent_ids)) != len(parent_ids)):
+            raise HistoryError("text version parents must be distinct version ids")
+        event = payload["historical_date"]
+        stages[row["id"]] = {"date_kind": event["kind"], "start_year": event["start_year"], "end_year": event["end_year"]}
+        versions[row["id"]] = (row, payload, dict(files), [])
+    for key, (row, payload, files, receipts) in versions.items():
+        for parent in row["parents"]:
+            if parent["version_id"] not in versions:
+                raise HistoryError(f"{key}: unknown parent version {parent['version_id']}")
+            try:
+                receipt = native_parentage(root, required_string(parent, "evidence_path", key),
+                                          versions[parent["version_id"]][1], payload)
+            except (AdapterError, OSError) as error:
+                raise HistoryError(f"{key}: historical parentage: {error}") from error
+            receipts.append({"version_id": parent["version_id"], **receipt})
+            transitions.append({"id": parent["version_id"] + "--" + key, "from_stage": parent["version_id"],
+                                "to_stage": key, "status": "documented"})
+        metadata = json.loads(files["reconstruction.json"])
+        implementation = {stamp["path"]: stamp for stamp in metadata["tool_inputs"]}
+        implementation[progression_input["path"]] = progression_input
+        metadata["tool_inputs"] = sorted(implementation.values(), key=lambda stamp: stamp["path"])
+        metadata.update({"record_kind": "text-version", "id": key,
+                         "text_ancestry": "explicit-evidence-authorized" if receipts else "explicit-isolated-root",
+                         "historical_parentage_claimed": bool(receipts), "text_inheritance": False,
+                         "parents": receipts})
+        files["reconstruction.json"] = json_bytes(metadata)
+        inputs = {row["path"]: row for row in json.loads(files["inputs.json"])}
+        for receipt in receipts:
+            for stamp in receipt["inputs"]:
+                if stamp["path"] in inputs and inputs[stamp["path"]] != stamp:
+                    raise HistoryError("version parentage source changed during validation")
+                inputs[stamp["path"]] = stamp
+        files["inputs.json"] = json_bytes(sorted(inputs.values(), key=lambda row: row["path"]))
+        files["README.md"] = (f"# {payload.get('title', key)}\n\n"
+            "This is a complete snapshot within its explicitly reviewed native extent.\n"
+            "See coverage.json for whole-book versus constituent coverage and exclusions.\n"
+            "Git parents exist only where the exact binding has an evidence authorization receipt.\n"
+            "Every snapshot materializes its own verified literal text; no parent text is inherited.\n"
+            "The Git timestamp is synthetic 2000-01-01, never the historical event date.\n"
+            "Historical date bounds and their event role remain in reconstruction.json.\n").encode()
+    try:
+        verify_progression(stages, transitions)
+    except StageError as error:
+        raise HistoryError(f"text version progression: {error}") from error
+    ordered, pending = [], set(versions)
+    while pending:
+        ready = sorted(key for key in pending if all(parent["version_id"] not in pending for parent in versions[key][0]["parents"]))
+        if not ready:
+            raise HistoryError("text version parent cycle")
+        for key in ready:
+            ordered.append(versions[key])
+            pending.remove(key)
+    if fingerprint(TOOL_ROOT, TOOL_ROOT / progression_input["path"]) != progression_input:
+        raise HistoryError("version progression implementation changed during validation")
+    return ordered
+
+
 def corpus(source: Path, root: Path, out: Path, *, ventilator, adapter_loader=None, supported_adapters=None) -> dict:
     root = root.resolve()
     if adapter_loader is None:
         from _eucharistic_texts import load_adapter, adapter_ids
-        adapter_loader, supported_adapters = load_adapter, adapter_ids()
+        adapter_loader, supported_adapters = load_adapter, adapter_ids(root)
     data, routing_inputs = route(source, root)
     rows = data.get("text_sets", [])
     if not rows:
@@ -636,12 +735,17 @@ def corpus(source: Path, root: Path, out: Path, *, ventilator, adapter_loader=No
         verify_adapter(payload, root)
         inputs = {**routing_inputs, **{item["path"]: item for item in payload["inputs"]}}
         accepted.append((row, payload, reconstruction_tree(payload, row["id"], inputs, ventilator=ventilator)))
+    versions = _text_versions(data, accepted, root)
     # All source/permission checks happen before touching a previous artifact.
     for expected in routing_inputs.values():
         if fingerprint(root, inside(root, expected["path"]))["sha256"] != expected["sha256"]:
             raise HistoryError(f"routing input changed during reconstruction: {expected['path']}")
     for _, payload, _ in accepted:
         verify_adapter(payload, root)
+    for _, _, files, _ in versions:
+        for expected in json.loads(files["inputs.json"]):
+            if fingerprint(root, inside(root, expected["path"])) != expected:
+                raise HistoryError(f"version input changed during reconstruction: {expected['path']}")
     out.parent.mkdir(parents=True, exist_ok=True)
     stage = Path(tempfile.mkdtemp(prefix=".act-history-corpus-", dir=out.parent))
     backup = None
@@ -661,13 +765,40 @@ def corpus(source: Path, root: Path, out: Path, *, ventilator, adapter_loader=No
                 stream.extend(f"M 100644 inline {name}\ndata {len(body)}\n".encode())
                 stream.extend(body + b"\n")
             stream.extend(b"\n")
+        marks = {row["id"]: index for index, (row, _, _, _) in enumerate(versions, 1)}
+        for row, payload, files, receipts in versions:
+            identifier, event = row["id"], payload["historical_date"]
+            message = (f"Native text snapshot: {identifier}\n\nRecord-kind: text-version\n"
+                       f"Historical-date-role: {event['kind']}\nHistorical-date-start: {event['start_year']}\n"
+                       f"Historical-date-end: {event['end_year']}\nHistorical-date-label: {event['label']}\n"
+                       "Timestamp-policy: synthetic-fixed-epoch-v1\nGit-date-role: synthetic-serialization\n"
+                       "Historical-act-claimed: no\nText-inheritance: no\n").encode()
+            stream.extend(f"commit refs/heads/version/{identifier}\nmark :{marks[identifier]}\nauthor Triptych reconstruction <reconstruction@triptych.invalid> 946684800 +0000\ncommitter Triptych reconstruction <reconstruction@triptych.invalid> 946684800 +0000\ndata {len(message)}\n".encode())
+            stream.extend(message + b"\n")
+            for index, parent in enumerate(row["parents"]):
+                stream.extend(f"{'from' if index == 0 else 'merge'} :{marks[parent['version_id']]}\n".encode())
+            stream.extend(b"deleteall\n")
+            for name, body in sorted(files.items()):
+                stream.extend(f"M 100644 inline {name}\ndata {len(body)}\n".encode())
+                stream.extend(body + b"\n")
+            stream.extend(b"\n")
         stream.extend(b"done\n")
         git(stage, "fast-import", "--quiet", "--date-format=raw", input=bytes(stream))
         git(stage, "symbolic-ref", "HEAD", "refs/heads/reconstruction/" + accepted[0][0]["id"])
         git(stage, "fsck", "--strict")
+        expected_trees = [("refs/heads/reconstruction/" + row["id"], files) for row, _, files in accepted]
+        expected_trees += [("refs/heads/version/" + row["id"], files) for row, _, files, _ in versions]
+        for ref, files in expected_trees:
+            paths = {name.decode("utf-8") for name in git(stage, "ls-tree", "-rz", "--name-only", ref).split(b"\0") if name}
+            if paths != set(files):
+                raise HistoryError(f"serialized Git tree differs from the complete snapshot: {ref}")
         branches = {row["id"]: git(stage, "rev-parse", "refs/heads/reconstruction/" + row["id"]).decode().strip()
                     for row, _, _ in accepted}
+        version_branches = {row["id"]: git(stage, "rev-parse", "refs/heads/version/" + row["id"]).decode().strip()
+                            for row, _, _, _ in versions}
         marker = {"schema": CORPUS_SCHEMA, "owner": "tools/act-history corpus", "branches": branches}
+        if versions:
+            marker["version_branches"] = version_branches
         (stage / MARKER).write_bytes(json_bytes(marker))
         _owned_output(out)
         if out.exists():
@@ -683,18 +814,21 @@ def corpus(source: Path, root: Path, out: Path, *, ventilator, adapter_loader=No
             raise
         if backup is not None:
             shutil.rmtree(backup)
-        return {"schema": CORPUS_SCHEMA, "out": str(out), "commits": len(accepted), "branches": branches,
+        return {"schema": CORPUS_SCHEMA, "out": str(out), "commits": len(accepted) + len(versions), "branches": branches,
                 "units": sum(len(payload["units"]) for _, payload, _ in accepted),
                 "text_sets": [{"id": row["id"], "adapter": row["adapter"], "counts": payload["counts"],
                                "scope": payload["scope"], "ref": "refs/heads/reconstruction/" + row["id"]}
                               for row, payload, _ in accepted],
-                "historical_ancestry_claimed": False}
+                "historical_ancestry_claimed": any(receipts for _, _, _, receipts in versions),
+                **({"version_commits": len(versions), "version_branches": version_branches} if versions else {})}
     finally:
         if stage.exists():
             shutil.rmtree(stage)
 
 
 def _member_container(unit: dict) -> tuple | None:
+    if unit.get("native_path"):
+        return ("native", *unit["native_path"][:-1])
     if unit.get("division"):
         return ("ordinary", unit["division"])
     identity = unit.get("identity", {})
@@ -758,7 +892,7 @@ def compare(source: Path, root: Path, identifier: str, *, ventilator,
         raise HistoryError("comparison requires distinct explicit source_refs")
     if adapter_loader is None:
         from _eucharistic_texts import load_adapter, adapter_ids
-        adapter_loader, supported_adapters = load_adapter, adapter_ids()
+        adapter_loader, supported_adapters = load_adapter, adapter_ids(root)
     text_sets = {row["id"]: row for row in data.get("text_sets", [])}
     loaded, sides, source_records, tool_inputs = {}, {}, {}, {}
 

@@ -7,13 +7,17 @@ never implies historical deletion. No adapter infers ancestry or earlier text.
 from __future__ import annotations
 
 from collections import Counter
+from datetime import date
 import csv
 import hashlib
 import importlib.machinery
 import importlib.util
+import io
 import json
+import re
 from pathlib import Path
 import sys
+from urllib.parse import quote
 
 import _calendars
 import _proper_latin
@@ -604,9 +608,15 @@ class AdapterError(ValueError):
     """A source, identity, or publication prerequisite is not satisfied."""
 
 
-def adapter_ids() -> tuple[str, ...]:
+NATIVE_BOOK_DIRECTORY = "src/sources/inventories/eucharistic-books"
+NATIVE_BOOK_PREFIX = "native-book:"
+
+
+def adapter_ids(root: Path = ROOT) -> tuple[str, ...]:
     return ("roman-1962-propers", "cummiskey-1861-latin-ordinary", "wilson-1915-gregorian-canon-memento",
-            *sorted(CHECKED_PASSAGE_SETS))
+            *sorted(CHECKED_PASSAGE_SETS),
+            *(NATIVE_BOOK_PREFIX + path.stem for path in sorted((Path(root) / NATIVE_BOOK_DIRECTORY).glob("*.json"))
+              if re.fullmatch(r"[a-z0-9][a-z0-9-]*", path.stem)))
 
 
 def _sha(data: bytes) -> str:
@@ -967,6 +977,358 @@ def _checked_passages(sources: _Sources, selection: dict) -> dict:
                        "languages": dict(Counter(u["language"] for u in units))}}
 
 
+def _native_string(row: dict, field: str) -> str:
+    if not isinstance(row, dict):
+        raise AdapterError("native book fields require an object")
+    value = row.get(field)
+    if not isinstance(value, str) or not value.strip():
+        raise AdapterError(f"native book requires {field}")
+    return value
+
+
+def _native_ids(row: dict, field: str, *, nonempty: bool = True) -> list[str]:
+    if not isinstance(row, dict):
+        raise AdapterError("native book fields require an object")
+    values = row.get(field)
+    if (not isinstance(values, list) or (nonempty and not values)
+            or any(not isinstance(value, str) or not value.strip() for value in values)
+            or len(set(values)) != len(values)):
+        raise AdapterError(f"native book requires distinct {field}")
+    return values
+
+
+def _native_json(sources: _Sources, relative: str) -> tuple[dict, str]:
+    if not isinstance(relative, str) or not re.fullmatch(
+            re.escape(NATIVE_BOOK_DIRECTORY) + r"/(?:[a-z0-9][a-z0-9-]*\.json|support/[a-z0-9][a-z0-9-]*-(?:extent|review|parentage)\.json)", relative):
+        raise AdapterError("native book records require their canonical inventory ownership path")
+    path = sources.root / relative
+    if (Path(relative).is_absolute()
+            or not path.resolve().is_relative_to(sources.root)
+            or any(part.is_symlink() for part in (path, *path.parents) if part != sources.root)):
+        raise AdapterError("native book binding must be a regular repository file")
+
+    def unique(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise AdapterError(f"duplicate native book JSON key: {key}")
+            result[key] = value
+        return result
+
+    raw = sources.pin(path)
+    try:
+        result = json.loads(raw, object_pairs_hook=unique,
+                            parse_constant=lambda value: (_ for _ in ()).throw(AdapterError("invalid JSON number")))
+    except (ValueError, UnicodeError) as error:
+        raise AdapterError(f"invalid native book JSON: {relative}") from error
+    if not isinstance(result, dict):
+        raise AdapterError("native book record must be an object")
+    return result, _sha(raw)
+
+
+def _native_pages(ranges, limit: int) -> set[int]:
+    if not isinstance(ranges, list) or not ranges:
+        raise AdapterError("native book requires source page ranges")
+    pages = set()
+    for pair in ranges:
+        if (not isinstance(pair, list) or len(pair) != 2
+                or any(type(value) is not int for value in pair) or not 1 <= pair[0] <= pair[1] <= limit):
+            raise AdapterError("native book source page range outside witness")
+        selected = set(range(pair[0], pair[1] + 1))
+        if pages & selected:
+            raise AdapterError("native book source page ranges overlap")
+        pages.update(selected)
+    return pages
+
+
+def _native_evidence(sources: _Sources, evidence) -> None:
+    if not isinstance(evidence, list) or not evidence:
+        raise AdapterError("native book requires inspected source evidence")
+    for citation in evidence:
+        if not isinstance(citation, dict):
+            raise AdapterError("native book evidence must name source and locus")
+        source = sources.use(_native_string(citation, "source_id"))
+        _native_string(citation, "locus")
+        if not {"inspected", "verified"} & set(source.get("states", [])):
+            raise AdapterError("native book evidence is not inspected")
+
+
+def _native_facsimile(sources: _Sources, artifact: dict) -> bool:
+    direct_types = {"scan", "scan-pdf", "facsimile", "facsimile-image"}
+    if artifact.get("artifact_type") in direct_types:
+        return True
+    # A PDF assembled from exact page images remains a facsimile. Preserve its
+    # derivative identity rather than relabeling it as a provider-issued scan.
+    # This accepts the recorded image provenance, not an OCR/text rendering;
+    # source-library validates the exact parent and the collation receipt still
+    # controls whether the witness supports a complete native transcription.
+    if (artifact.get("artifact_type") != "facsimile-pdf-derivative"
+            or artifact.get("media_type") != "application/pdf"
+            or not isinstance(artifact.get("derived_from"), str) or not artifact["derived_from"]
+            or not isinstance(artifact.get("transformation"), str) or not artifact["transformation"].strip()):
+        return False
+    parent = sources.use(artifact["derived_from"])
+    return (parent.get("record_type") == "artifact"
+            and parent.get("edition_id") == artifact.get("edition_id")
+            and parent.get("artifact_type") in direct_types | {"page-image-package"})
+
+
+def _native_derives_from(sources: _Sources, artifact: dict, ancestor: str, seen=None) -> bool:
+    seen = set() if seen is None else seen
+    if artifact["id"] == ancestor:
+        return True
+    if artifact["id"] in seen:
+        return False
+    seen.add(artifact["id"])
+    # Projection testimony and embedded companions are evidence dependencies,
+    # not byte lineage. A parallel witness needs the explicit hash-bound
+    # verified_against declaration checked by the native unit gate below.
+    parent = artifact.get("derived_from")
+    return isinstance(parent, str) and _native_derives_from(sources, sources.use(parent), ancestor, seen)
+
+
+def native_parentage(root: Path, relative: str, parent: dict, child: dict) -> dict:
+    """Authorize a Git parent explicitly, without copying any parent's text."""
+    if not isinstance(relative, str) or not relative.endswith("-parentage.json"):
+        raise AdapterError("native book parentage requires its canonical parentage record")
+    sources = _Sources(root.resolve(), _load_library(root.resolve()))
+    row, checksum = _native_json(sources, relative)
+    if (type(row.get("schema_version")) is not int or row.get("schema_version") != 1 or row.get("record_type") != "eucharistic-text-parentage"
+            or row.get("status") != "verified" or row.get("historical_parentage") != "established"
+            or row.get("git_parent_authorized") is not True or row.get("text_inheritance") is not False
+            or row.get("kind") not in {"revision", "recension-branch"}
+            or row.get("parent_binding_sha256") != parent["book_binding"]["sha256"]
+            or row.get("child_binding_sha256") != child["book_binding"]["sha256"]):
+        raise AdapterError("native book parentage lacks exact reviewed authorization")
+    for field in ("id", "title", "reviewer", "basis", "scope"):
+        _native_string(row, field)
+    try:
+        value = _native_string(row, "checked_on")
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
+            raise ValueError()
+        date.fromisoformat(value)
+    except ValueError as error:
+        raise AdapterError("native book parentage requires an ISO review date") from error
+    _native_evidence(sources, row.get("evidence"))
+    return {"record": row, "path": relative, "sha256": checksum,
+            "inputs": sorted(sources.inputs.values(), key=lambda stamp: stamp["path"]),
+            "sources": sources.metadata()}
+
+
+def native_text_path(parts: list[str]) -> str:
+    """One injective native path serializer shared by the adapter and Git exporter."""
+    encoded = []
+    for part in parts:
+        segment = quote(part, safe="-._")
+        if segment in (".", "..") or segment.lower() == ".git":
+            segment = segment.replace(".", "%2E")
+        encoded.append(segment)
+    return "text/native/" + "/".join(encoded) + ".txt"
+
+
+def _native_book(sources: _Sources, identifier: str) -> dict:
+    """Complete native contents require an independently reviewed page/unit census."""
+    path = NATIVE_BOOK_DIRECTORY + "/" + identifier + ".json"
+    book, binding_hash = _native_json(sources, path)
+    if (type(book.get("schema_version")) is not int or book.get("schema_version") != 1 or book.get("record_type") != "eucharistic-native-book"
+            or book.get("id") != identifier):
+        raise AdapterError("native book binding identity/schema mismatch")
+    for field in ("title", "scope", "transcribed_by"):
+        _native_string(book, field)
+    for field in ("stage_ids", "catalogue_witness_ids", "components", "languages"):
+        _native_ids(book, field)
+    if set(book["components"]) - {"ordinary", "anaphoras", "propers", "rubrics", "calendar", "lectionary", "chant"}:
+        raise AdapterError("native book has unsupported component")
+    extent_kind = book.get("extent_kind")
+    if extent_kind not in {"whole-book", "constituent"}:
+        raise AdapterError("native book requires an explicit whole-book or constituent extent kind")
+    excluded = _native_ids(book, "excluded_book_divisions", nonempty=extent_kind == "constituent")
+    if extent_kind == "whole-book" and excluded:
+        raise AdapterError("whole native book cannot exclude book divisions")
+    event = book.get("date", {})
+    if (not isinstance(event, dict) or event.get("kind") not in {"publication", "attestation", "approval", "effective", "reconstruction"}
+            or type(event.get("start_year")) is not int or type(event.get("end_year")) is not int
+            or not 1 <= event["start_year"] <= event["end_year"] <= 9999):
+        raise AdapterError("native book requires explicit historical date bounds and role")
+    _native_string(event, "label")
+    _native_evidence(sources, event.get("evidence"))
+    if (not _native_string(book, "extent_path").endswith("-extent.json")
+            or not _native_string(book, "collation_path").endswith("-review.json")):
+        raise AdapterError("native book extent and collation require their canonical record paths")
+    extent, extent_hash = _native_json(sources, _native_string(book, "extent_path"))
+    review, review_hash = _native_json(sources, _native_string(book, "collation_path"))
+    for record, kind in ((extent, "eucharistic-book-extent"), (review, "eucharistic-book-collation")):
+        _native_string(record, "title")
+        if type(record.get("schema_version")) is not int or record.get("schema_version") != 1 or record.get("record_type") != kind or record.get("book_id") != identifier:
+            raise AdapterError("native book extent/collation identity mismatch")
+    if (extent.get("status") != "complete" or extent.get("unresolved") != [] or extent.get("omitted") != []
+            or review.get("status") != "verified" or review.get("independent") is not True
+            or review.get("complete_extent_verified") is not True):
+        raise AdapterError("native book requires complete extent and independent collation")
+    if _native_string(review, "reviewer") == book["transcribed_by"]:
+        raise AdapterError("native book collation reviewer must be independent of transcriber")
+    checked_on = _native_string(review, "checked_on")
+    try:
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", checked_on):
+            raise ValueError()
+        date.fromisoformat(checked_on)
+    except ValueError as error:
+        raise AdapterError("native book collation requires an ISO review date") from error
+    if review.get("binding_sha256") != binding_hash or review.get("extent_sha256") != extent_hash:
+        raise AdapterError("native book collation is stale for binding or extent")
+    witnesses = book.get("witnesses")
+    if not isinstance(witnesses, list) or not witnesses:
+        raise AdapterError("native book requires identified complete witnesses")
+    by_witness, witness_hashes, in_scope = {}, {}, {}
+    for witness in witnesses:
+        key = _native_string(witness, "id")
+        if key in by_witness:
+            raise AdapterError("duplicate native book witness")
+        edition = sources.use(_native_string(witness, "edition_id"))
+        artifact = sources.use(_native_string(witness, "artifact_id"))
+        if (edition["record_type"] != "edition" or artifact["record_type"] != "artifact"
+                or artifact.get("edition_id") != edition["id"] or artifact.get("storage") != "tracked"
+                or not _native_facsimile(sources, artifact)
+                or type(artifact.get("page_count")) is not int or artifact["page_count"] < 1):
+            raise AdapterError("native book witness requires exact retained facsimile and page count")
+        _native_evidence(sources, witness.get("completeness_evidence"))
+        in_scope[key] = _native_pages(witness.get("scope_pages"), artifact["page_count"])
+        if extent_kind == "whole-book" and in_scope[key] != set(range(1, artifact["page_count"] + 1)):
+            raise AdapterError("whole native book requires every witness page in scope")
+        by_witness[key] = (witness, artifact)
+        witness_hashes[key] = artifact["sha256"]
+    if review.get("witness_sha256") != witness_hashes:
+        raise AdapterError("native book collation does not cover exact witness artifacts")
+    expected = _native_ids(extent, "expected_unit_ids")
+    declarations = book.get("units")
+    if (not isinstance(declarations, list) or any(not isinstance(unit, dict) for unit in declarations)
+            or [unit.get("unit_id") for unit in declarations] != expected):
+        raise AdapterError("native book units do not match the independent extent census")
+    units, unit_pages, unit_hashes, paths, file_paths = [], {}, {}, set(), set()
+    for order, chosen in enumerate(declarations, 1):
+        key = _native_string(chosen, "unit_id")
+        if not re.fullmatch(r"[a-zA-Z0-9][a-zA-Z0-9._-]*", key):
+            raise AdapterError("native book requires a safe stable unit id")
+        native_path = _native_ids(chosen, "native_path")
+        if tuple(native_path) in paths:
+            raise AdapterError("native book duplicates a semantic path")
+        paths.add(tuple(native_path))
+        text_file = native_text_path(native_path)
+        provenance_file = "provenance/" + text_file.removeprefix("text/").removesuffix(".txt") + ".json"
+        for file_name in (text_file, provenance_file):
+            file_path = tuple(file_name.split("/"))
+            if any(file_path[:len(existing)] == existing or existing[:len(file_path)] == file_path
+                   for existing in file_paths):
+                raise AdapterError("native book semantic paths contain a file/directory collision")
+            file_paths.add(file_path)
+        if (type(chosen.get("source_order")) is not int or chosen.get("source_order") != order
+                or chosen.get("language") not in book["languages"]
+                or chosen.get("component") not in book["components"]):
+            raise AdapterError("native book unit order/language/component mismatch")
+        _native_string(chosen, "kind")
+        witness_id = _native_string(chosen, "witness_id")
+        if witness_id not in by_witness:
+            raise AdapterError("native book unit has unknown witness")
+        witness, facsimile = by_witness[witness_id]
+        unit_pages[key] = (witness_id, _native_pages(chosen.get("witness_pages"), facsimile["page_count"]))
+        passage = sources.use(_native_string(chosen, "passage_id"))
+        artifact = sources.use(passage.get("artifact_id", ""))
+        if (passage["record_type"] != "passage" or "verified" not in passage.get("states", [])
+                or not passage.get("verified_on") or passage.get("edition_id") != witness["edition_id"]
+                or artifact.get("edition_id") != witness["edition_id"]
+                or artifact.get("artifact_type") != "normalized-text"
+                or passage.get("artifact_sha256") != artifact.get("sha256")):
+            raise AdapterError("native book requires a verified exact-edition literal passage")
+        if (not _native_derives_from(sources, artifact, facsimile["id"])
+                and not (chosen.get("verified_against_artifact_id") == facsimile["id"]
+                         and chosen.get("verified_against_artifact_sha256") == facsimile["sha256"])):
+            raise AdapterError("native book literal passage does not derive from its exact witness")
+        if (artifact.get("rights_status") != "public-domain" or not artifact.get("rights_basis")
+                or artifact.get("rights_jurisdiction") != "United States"):
+            raise AdapterError("native book literal text lacks public-git publication basis")
+        # Match source-library physical-line locators: only LF splits a line.
+        lines = [line.decode("utf-8").rstrip("\r\n") for line in io.BytesIO(sources.payload(artifact))]
+        selected = _native_pages(passage.get("physical_line_ranges"), len(lines))
+        text = "\n".join(lines[index - 1] for index in sorted(selected))
+        if not text.strip() or _sha(text.encode()) != chosen.get("text_sha256"):
+            raise AdapterError("native book literal passage differs from reviewed text hash")
+        unit_hashes[key] = chosen["text_sha256"]
+        units.append({**chosen, "text": text, "text_edition_id": witness["edition_id"],
+                      "target_edition_id": witness["edition_id"], "source_id": passage["id"],
+                      "source_artifact_id": artifact["id"], "source_artifact_sha256": artifact["sha256"],
+                      "provenance": {"status": "independently-collated-native-unit", "reviewed_on": checked_on,
+                                     "source_locator": passage.get("locus"), "collation_sha256": review_hash},
+                      "publication": {"status": "permitted", "basis": "public-domain", "jurisdiction": "United States",
+                                      "basis_source_id": artifact["id"], "surfaces": ["public-git", "corpus-data"]}})
+    if set(book["components"]) != {unit["component"] for unit in units}:
+        raise AdapterError("native book components do not match represented contents")
+    if review.get("unit_sha256") != unit_hashes:
+        raise AdapterError("native book collation does not cover every exact unit")
+    accounts = extent.get("pages")
+    if not isinstance(accounts, list) or not accounts:
+        raise AdapterError("native book extent requires every witness page accounted for")
+    accounted = {key: set() for key in by_witness}
+    represented = {key: set() for key in expected}
+    for account in accounts:
+        if not isinstance(account, dict):
+            raise AdapterError("native book page account must be an object")
+        witness_id = account.get("witness_id")
+        if witness_id not in by_witness:
+            raise AdapterError("native book page account has unknown witness")
+        pages = _native_pages(account.get("ranges"), by_witness[witness_id][1]["page_count"])
+        if accounted[witness_id] & pages:
+            raise AdapterError("native book page accounts overlap")
+        accounted[witness_id].update(pages)
+        if account.get("role") != "outside-constituent" and not pages <= in_scope[witness_id]:
+            raise AdapterError("native book account extends outside its declared constituent")
+        ids = _native_ids(account, "unit_ids", nonempty=False)
+        if account.get("role") == "text":
+            if not ids:
+                raise AdapterError("native book text pages require literal units")
+            covered = set()
+            for key in ids:
+                if key not in unit_pages or unit_pages[key][0] != witness_id:
+                    raise AdapterError("native book page account unit/witness mismatch")
+                overlap = pages & unit_pages[key][1]
+                if not overlap:
+                    raise AdapterError("native book page account does not match unit loci")
+                represented[key].update(overlap)
+                covered.update(overlap)
+            if covered != pages:
+                raise AdapterError("native book text pages contain unrepresented extent")
+        elif (account.get("role") == "outside-constituent" and not ids
+              and extent_kind == "constituent" and not pages & in_scope[witness_id]):
+            _native_string(account, "description")
+        elif account.get("role") == "non-text" and not ids:
+            _native_string(account, "description")
+        else:
+            raise AdapterError("native book page account must distinguish text from non-text")
+    if any(accounted[key] != set(range(1, artifact["page_count"] + 1))
+           for key, (_, artifact) in by_witness.items()):
+        raise AdapterError("native book extent leaves witness pages unaccounted for")
+    if any(represented[key] != pages for key, (_, pages) in unit_pages.items()):
+        raise AdapterError("native book extent leaves unit loci unaccounted for")
+    witness_dates = [{"witness_id": key, "edition_id": witness["edition_id"],
+                      "date": sources.use(witness["edition_id"]).get("date")}
+                     for key, (witness, _) in by_witness.items()]
+    distinct_dates = {row["date"] for row in witness_dates}
+    witness_date = next(iter(distinct_dates)) if len(distinct_dates) == 1 else None
+    return {"title": book["title"], "target_date": event["label"], "witness_date": witness_date,
+            "witness_dates": witness_dates, "witness_date_basis": "identified source-edition metadata; not the historical event role",
+            "historical_date": event, "reviewed_on": checked_on, "units": units,
+            "book_binding": {"id": identifier, "path": path, "sha256": binding_hash,
+                             "extent_path": book["extent_path"], "extent_sha256": extent_hash,
+                             "collation_path": book["collation_path"], "collation_sha256": review_hash,
+                             "stage_ids": book["stage_ids"], "catalogue_witness_ids": book["catalogue_witness_ids"],
+                             "components": book["components"], "witnesses": witnesses},
+            "scope": {"status": "complete-native-" + extent_kind, "description": book["scope"],
+                      "whole_book_complete": extent_kind == "whole-book", "complete_declared_extent": True,
+                      "extent_kind": extent_kind, "omitted_book_divisions": excluded, "known_extent_units": len(expected),
+                      "known_extent_pages": sum(len(pages) for pages in in_scope.values())},
+            "counts": {"units": len(units), "whitespace_tokens": sum(len(unit["text"].split()) for unit in units),
+                       "languages": dict(Counter(unit["language"] for unit in units))}}
+
+
 def load_adapter(adapter_id: str, root: Path = ROOT) -> dict:
     """Return a deterministic JSON-compatible snapshot; write no export files.
 
@@ -974,14 +1336,16 @@ def load_adapter(adapter_id: str, root: Path = ROOT) -> dict:
     AdapterError. Quarantined text-free Proper nodes remain explicit omissions.
     Source-library binding freshness is outside this text-owner adapter's scope.
     """
-    if adapter_id not in adapter_ids():
+    if adapter_id not in adapter_ids(root):
         raise AdapterError(f"Unknown Eucharistic text adapter: {adapter_id}")
     root = Path(root).resolve()
     sources = _Sources(root, _load_library(root))
     try:
         loaders = {"roman-1962-propers": _proper_units, "cummiskey-1861-latin-ordinary": _ordinary_units,
                    "wilson-1915-gregorian-canon-memento": _wilson_memento}
-        result = (_checked_passages(sources, CHECKED_PASSAGE_SETS[adapter_id])
+        result = (_native_book(sources, adapter_id.removeprefix(NATIVE_BOOK_PREFIX))
+                  if adapter_id.startswith(NATIVE_BOOK_PREFIX) else
+                  _checked_passages(sources, CHECKED_PASSAGE_SETS[adapter_id])
                   if adapter_id in CHECKED_PASSAGE_SETS else loaders[adapter_id](sources))
         unit_ids = [unit["unit_id"] for unit in result["units"]]
         if len(set(unit_ids)) != len(unit_ids):
