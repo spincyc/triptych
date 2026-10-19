@@ -10,7 +10,7 @@ state = "in_progress"
   id = "missal-c1-target-inventory"
   criterion = "Expected targets are inventoried from identified books or source-backed registries independently of held text, with explicit recension, territory, date range, language, source, and typed dispositions covering celebrations, Commons, commemorations, prefaces, Ordinary options, forms, cycles, and exceptional rites; incomplete enumeration is never represented as a complete denominator."
   status = "open"
-  evidence = ["guidance/liturgy-browser-roadmap.md", "PROJECT-WORK.md"]
+  evidence = ["guidance/liturgy-browser-roadmap.md", "PROJECT-WORK.md", "src/sources/inventories/missal-expected-targets-v1.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
 
   [[deliverables.requirements]]
   id = "missal-c1-common-report"
