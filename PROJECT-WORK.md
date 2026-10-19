@@ -7,6 +7,38 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-10-21.
 
+## Daily Missal reader recovery and completion plan, 2026-10-19
+
+<!-- promised-deliverable: missal-reader-completion-plan-2026-10-19 -->
+
+The maintainer requested recovery of the online daily Missal reader, a detailed
+completion plan for readings, translation availability, text layout, versicle
+and response glyphs, and ease of use, followed by persistence and a commit and
+push on `feature/missal-reader`. This deliverable covers the recovery and plan;
+the reader implementation milestones remain future work.
+
+The canonical plan belongs in
+[the liturgy-browser roadmap](guidance/liturgy-browser-roadmap.md#completion-plan-2026-10-19).
+The recovery baseline is `c6da24eda429337fe13d59420a3c489a98a16e66`.
+The existing `liturgy-reader-live-ritual-flow-2026-08-07` deliverable remains
+open and is incorporated into the plan without a second implementation ledger.
+
+Status: the detailed plan is a documentation candidate, with an internal
+review of its recovery and acceptance boundaries. It records the content and
+translation inventory, concrete availability and cue defects, C1–C6 execution
+order, the representative-Mass pattern, typography and usability rules, and
+verification gates. Commit and feature-branch publication remain to be verified.
+The existing browser vision, source ownership, publication policy, and
+historical acceptance records remain controlling in their scopes.
+
+Documentation validation: the plan-only promise entry and its unique register
+marker validate; all 19 added relative Markdown links and anchors resolve;
+`git diff --check`, the tracked-ignored-path hygiene check, and `tmt check`
+pass. The full promise-ledger validation reports the same 32 missing generated
+PDF/evidence findings as the unchanged baseline in a source-only checkout,
+with zero added or removed findings. No unrelated publication rebuild or
+browser implementation is part of this planning change.
+
 ## Missal chronology acceptance review, 2026-10-17
 
 <!-- promised-deliverable: missal-chronology-acceptance-review-2026-10-17 -->

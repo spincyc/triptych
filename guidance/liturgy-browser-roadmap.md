@@ -12,7 +12,323 @@ This roadmap does not authorize liturgical data, source acquisition,
 publication, deployment, or release on its own. Each workstream remains subject
 to the guidance that owns its data and artifacts.
 
-## Current deployed baseline
+## Completion plan, 2026-10-19
+
+This section is the current recovery and execution plan. It supersedes the
+older sections' descriptions of the **current** baseline and next action;
+their dated implementation and acceptance records remain historical evidence.
+The [vision](liturgy-browser-vision.md) still owns the product contract. The
+maintainer requested this plan's persistence on `feature/missal-reader`;
+recording it does not mark its implementation milestones accepted.
+
+### Recovered baseline and acceptance boundaries
+
+Recovery baseline: `c6da24eda429337fe13d59420a3c489a98a16e66`, inspected on
+2026-10-19. The canonical public entrances are
+[Day](https://mystago.gy/liturgy/day.html) and
+[Propers](https://mystago.gy/liturgy/index.html). The repository's older Pages
+hostname redirects to `mystago.gy`. The latest successful Pages run at recovery,
+[38988789355](https://github.com/spincyc/triptych/actions/runs/38988789355),
+names that commit; the served `day-reader.js` also matched the tracked file
+byte for byte. These are recovery observations, not acceptance of a new reader.
+
+- Preserve the accepted Liturgical Instrument foundation and canonical URLs.
+  Day enables Read and Missal. Propers enables Read. Study and Compare are
+  disabled, as is Propers Missal. A visible mode description is not delivered
+  functionality; source owners are `day.html` and `index.html` under
+  `src/web/browser/liturgy/`.
+- The separately accepted August public cutover was a narrower release than
+  the full four-mode M6 destination. Older wording that M6 would be the first
+  public redesigned reader release describes the original sequencing, not
+  today's deployment. Full M6 completion remains outstanding.
+- The August 28 Complete Missal remediation received independent AI cold
+  review and verified deployment. Its completion included typed unresolved
+  and unavailable dispositions; it did not assert possession of every text.
+  [The work register](../PROJECT-WORK.md) and
+  [promise ledger](../promised-deliverables.toml) own that disposition and
+  supersede the August 20/27 rows' then-current review status.
+- The separate `liturgy-reader-live-ritual-flow-2026-08-07` deliverable still
+  has six open requirements. October's KI-052 also records it as planned.
+  Reuse that deliverable for orientation and long-reading work; do not mark it
+  complete from the old implementation checkpoint or duplicate its promises.
+- October repaired nested main landmarks, arrival Browse focus trapping,
+  leaking Day CSS, and incompatible Ordinary options surviving a missal
+  switch. Reproduce before reopening them. The old example-replay failure is
+  also superseded by October's recorded zero-divergence result.
+- KI-046 retains 77 enhanced control-target findings across the whole corpus.
+  Treat them as a design baseline to investigate by affected surface, not as
+  77 Liturgy defects or an established WCAG AA failure. Ritual-flow acceptance
+  also needs a fresh disposition of the historical mobile-overlap measurement.
+- Some pre-rewrite commit IDs in historical continuity are absent from the
+  recovered history. Reachable milestones include `6603fd0947ec9cb34bafaf64765974dd5b53ad2c`
+  (canonical promotion), `ab9eb9388d182b0013baa0f708ec4ee6e8a5abd5`
+  (ritual-orientation checkpoint), and `3e35f3b1f22bdf9afc26f8557aee5e86fa965028`
+  (takeover record). Do not apply old scratch patches or replay old cutover
+  instructions against the current reader.
+
+### Content and translation inventory
+
+The following are measured or source-recorded facts at the recovery commit.
+The units are deliberately named: distinct source identities, modeled elements,
+and reused occurrences are different denominators. None is a whole-Missal
+completion percentage.
+
+| Family | Represented Proper scope | English non-scriptural identities | Latin Proper bodies | Ordinary coverage and qualification |
+| --- | --- | --- | --- | --- |
+| Roman 1962 | 491 Mass records; 3,443 direct Proper records; 5,060 resolved occurrences | 112 of 1,197 canonical identities translated; 1,085 typed untranslated | 1,377 available resolved occurrences; 209 unavailable | English 189 and Latin 112 of 189 modeled elements; all held wording is an 1861 antecedent uncollated against the 1962 target |
+| Postconciliar 2008 | 619 Mass records; 2,998 Proper records; seven Commons have identities without formularies | 113 of 330 canonical identities: 70 project translations, 40 Cummiskey antecedents, three Caswall sequences; 217 untranslated | No resident/published full bodies; the source census records 322 incipit-only and four absent non-scriptural slots | No English; 20 Latin antecedent elements of 59 modeled, five target-collated and 15 uncollated |
+| Pre-1955, nominal 1920 | Eight departure rows, no independent Proper wording; 489 projected Mass records through inheritance | 99 of 1,149 canonical identities, principally inherited dispositions | No target-qualified published Proper bodies | English 195 and Latin 112 of 195 modeled elements; uncollated 1861 antecedents |
+
+The seven public Bible editions are Douay-Rheims (Challoner), Douay-Rheims
+(American 1899), Clementine Vulgate, Catholic Public Domain Version, World
+English Bible Catholic Edition, King James with Apocrypha, and Revised Version
+with Apocrypha. Six are English and one Latin. They supply Bible renderings,
+not seven complete liturgical translations.
+
+The 1962 projection delegates 3,474 occurrences to Scripture and the
+postconciliar projection 2,647. Citation expansion does not establish the exact
+Missal or Lectionary incipit, part-verse, antiphon adaptation, response,
+acclamation, or ending. Existing gaps include 4 Esdras references, the declared
+postconciliar Ordinary Time 24 Saturday cycle-II Psalm 56:13–14 refusal, and
+edition-dependent correspondence gaps in Sirach, Psalms, Daniel, and Esther.
+The 2026 calendar report finds some Mass on all 365 dates in each family;
+that does not prove precedence, complete wording, or Missal-mode rendering.
+
+Evidence owners:
+
+- [Public Bible manifest](../src/web/data/bibles.json) and the generated
+  [1962](../src/web/data/structure/propers/roman-1962.json),
+  [postconciliar](../src/web/data/structure/propers/postconciliar.json), and
+  [pre-1955](../src/web/data/structure/propers/roman-pre-1955.json) structures.
+- [1962 translation inventory](../src/sources/inventories/roman-1962-proper-translations-v1.toml)
+  and [postconciliar translation inventory](../src/sources/inventories/postconciliar-proper-translations-v1.toml).
+  The latter records the 70 project-created translations as unreviewed study
+  English. Review does not convert them into approved liturgical translations.
+- [1962 Ordinary inventory](../src/sources/inventories/roman-1962-ordo-missae-v1.toml),
+  [postconciliar Ordinary inventory](../src/sources/inventories/postconciliar-ordo-missae-v1.toml),
+  and [pre-1955 inheritance](../src/sources/calendars/roman-pre-1955/propers.yaml).
+- [Completeness report implementation](../tools/complete-missal):
+  `expected_celebrations` and `expected_text_slots` have no target-book
+  expectation model. `--check` validates the report while 13 of 15 dimension
+  cells per family remain unresolved: 39 cells, not 39 missing texts.
+
+### Confirmed reader defects and design gaps
+
+| Finding | Evidence and consequence |
+| --- | --- |
+| Availability counters mix units | `orationLanguagesOf()` in `src/web/browser/shared/browser-core.js` counts translation rows against top-level occurrences and omits nested cycle accounting. The 1962 label 234 of 1,441 counts 234 records covering only 207 occurrences, with repeated witnesses/aliases; those occurrences derive from 112 canonical translated identities. |
+| Latin availability is overstated | `orationLanguageLabel()` says “Latin, as printed” and assumes source-language completeness even where postconciliar full Proper bodies are absent. Availability and target-edition fidelity need independent assertions. |
+| Cue loss | `spoken()` in `src/web/browser/liturgy/day.js` suppresses an `all` opening cue but still removes the leading source P./R. The postconciliar preface dialogue and Pax Domini lose their initial priest attribution. |
+| Duplicate and inconsistent cues | Structured 1962 Confiteor turns receive a gutter P plus source P.; server turns receive S plus source R. An event-specific rule in `reader-instrument.css` hides the generated response glyph only for postconciliar Orate fratres. |
+| Sparse structured dialogue | Of 301 held 1962 Ordinary translations, ten across five elements have turns and none has an explicit dialogue role. Of 20 held postconciliar translations, only Orate fratres has turns. Most exchanges remain inline prose with word labels. |
+| Flattened prose, poetry, and actions | Shared passage/composed renderers use single paragraphs. They do not consume the Bible paragraph layer or checked stanza structure. A Pentecost Alleluia's embedded genuflection rubric remains mixed into principal text. File hard wraps cannot safely supply poetic lineation. |
+| Sustained-reading hierarchy | Live 1962 Missal reading interleaves small headings, source page loci, and inline response labels with short exchanges. The pending ritual-flow work owns the current-place indicator and Contents behavior. |
+| Unclear daily choices | On postconciliar 2026-10-19, three legitimate options appear as inline radios, repeated choice headings, and unexpanded rubric codes. Preserve explicit choice while making its presentation understandable and touch-friendly. |
+| Advanced product unfinished | Study, Compare, Propers Missal, comprehensive search, and paired bilingual presentation still need their governed implementations and acceptance. Existing internal fixtures do not prove public coverage. |
+
+Live Chromium inspection covered Roman 1962 Read at 393×852, Roman 1962
+Missal at 1440×1000, postconciliar Read at 393×852, and the postconciliar
+choice state at 1440×1000. The 1962 mobile first view already contains the
+celebration and real text. Postconciliar Advent I exposed Bible citation
+expansion including a Psalm superscription in its Entrance Antiphon. These are
+diagnostic observations; the temporary captures were not retained as an
+immutable acceptance package. Reproduce them for any release review.
+
+### Ordered implementation milestones
+
+The C-series below refines the existing W1–W9 workstreams. It does not replace
+M1–M6 or broaden any historical acceptance. Every milestone below is **planned**.
+
+| Milestone | Deliverable | Exit evidence and dependency |
+| --- | --- | --- |
+| C1 — Truthful coverage | One typed coverage report and an expected-target inventory; corrected language/witness controls and notices | Every expected target is classified; canonical identities, occurrences, and witness alternatives have separate counts; browser, generated data, CLI, and tests agree. W1/W4/W7/W9. |
+| C2 — Representative Mass pattern | One fully audited representative Mass per principal missal, using the common text/turn model, source links, language selection, reading layout, and print | Each promised unit is checked; missing or restricted units remain explicit and prevent a claim of textual completeness. No unrelated text substitution. Depends on C1; W1/W3/W4/W7. |
+| C3 — Corpus completion | Expand the pattern through the expected daily formularies, Commons, commemorations, Ordinary, prefaces, cycles, alternatives, and exceptional rites | Exact target and language denominators; source and publication checks; zero unexplained gaps in each completed slice. Begin 1962 completion while postconciliar acquisition and review run alongside it. Depends on C1/C2; W7. |
+| C4 — Reading design and navigation | Consistent dialogue/glyph presentation, paragraph/stanza/action layouts, bilingual pairing, source-aware hierarchy, current-place Contents, date movement, and clear choices | Fresh real-browser and print evidence; source text/event parity; all six existing ritual-flow requirements independently dispositioned. Prototype alongside C1; integrate after C2. W2/W3/W8/W9. |
+| C5 — Complete shared capabilities | Propers Missal, Study, semantic Compare, meaningful formulary search, contextual history/source navigation, sharing, and preferences | Both entrances meet their separate identity/URL contracts; modes operate over the same semantic units; compare retains one-sided absences and independently resolved calendar differences. Depends on stable C1/C2/C4 seams; W3/W5/W6. |
+| C6 — Accepted release | Advertised coverage and all implemented modes pass the vision's acceptance gates | Full content/semantic/browser/print/URL evidence, independent review disposition, exact artifact and deployment verification. A reliable daily Read/Missal slice may be accepted within its named boundary; full M6 requires C5 and the complete product contract. |
+
+#### C1: one coverage vocabulary and a defensible denominator
+
+Inventory expected targets from the identified books rather than from the
+records already held. Include celebrations, Commons, commemorations, proper
+prefaces, Ordinary options, Mass forms, cycles, and rites outside an ordinary
+Mass frame. Record date range, recension, territory, language, and source for
+each advertised slice. The existing typed absences remain distinct: genuinely
+inapplicable, absent in this witness, not sourced, not publishable, and unresolved.
+
+Track exact target wording, historical antecedent, study translation, and Bible
+reconstruction separately from availability and rights. Count a target once
+even if multiple witnesses or aliases supply it. Expose witness selection and
+Mass-specific coverage without implying that a whole language is complete.
+All selectors, notices, discovery results, and audit tools consume this report.
+The report may establish a complete inventory with known gaps; textual
+completion requires those gaps to be filled for the claimed scope.
+
+#### C2: the reusable representative-Mass pattern
+
+Each reviewed slice carries the following evidence in its existing source and
+test owners, rather than another hand-maintained copy of the liturgical text:
+
+1. **Identity and appointment:** edition, calendar/territory, date or stable
+   formulary, cycle, form, authorized alternatives, Ordinary options, and
+   governing source. Preserve genuinely coequal choices until explicitly made.
+2. **Expected sequence:** every appointed semantic unit and seat, including
+   commemorations and exceptional before/after material. Preserve event IDs
+   and legacy URLs; version any identity change under the state contract.
+3. **Text and witness:** target-language wording, translation, exact loci,
+   rights/distribution basis, collation status, and typed absences. Whole-book
+   possession does not establish a checked passage.
+4. **Internal text structure:** edition-owned paragraphs, checked stanzas,
+   speaker/role turns, printed markers, and inline actions. Every derivative
+   must retain an auditable relationship to immutable witness text.
+5. **Presentation:** Read and Missal, chosen language/witness, paired bilingual
+   units, source access, clear incomplete states, and independent print context.
+6. **Interaction and evidence:** selection, Contents, deep-scroll location,
+   focus restoration, sharing, copy behavior, real accessibility output, and
+   browser/generated-data/CLI parity.
+
+Existing 1962 Pentecost X on 2026-08-02 and postconciliar Advent I on
+2026-11-29 are useful reproducible baseline fixtures, not assertions that
+either is textually complete. Select the first completion exemplars only after
+C1 establishes attainable, source-checked coverage. A postconciliar exemplar
+with unavailable exact text may prove the renderer's partial-state behavior
+but cannot pass the complete-text gate.
+
+#### C3: source and translation completion lanes
+
+- **1962:** recover remaining Latin and historical English against exact target
+  slots; collate the 1861 Ordinary's inherited wording and target differences;
+  supply exact sung Propers; resolve Common-set selections. Include Holy Week,
+  Christmas/All Souls forms, commemorations, and exceptional frames explicitly.
+- **Postconciliar:** complete assignments and versification, model actual
+  liturgical fragments separately from Bible expansion, review project study
+  translations, and acquire/collate target Latin. Approved English requires an
+  exact exemplar and a permitted publication route. The existing
+  [publication policy](liturgical-text-publication-policy.md) owns that decision;
+  a live daily-readings feed is not an arbitrary-date downloadable Lectionary.
+- **Pre-1955:** retain honest partial access while acquiring and collating an
+  authenticated target witness and historical calendar. Do not relabel the
+  1922 Mame conformed printing as the 1920 Vatican impression or treat inherited
+  1962 wording as independent evidence of its ancestor.
+
+The existing [participation-aid review record](../src/sources/inventories/day-reader-participation-aid-review-v1.toml)
+requires review to begin by **2026-11-15** and complete before **2026-11-29**.
+Refresh its evidence before a proposed affected release; this plan records the
+existing dependency and supplies no new rights clearance.
+
+#### C4: dialogue, typography, and usability contract
+
+The versicle/response work completes the existing distinction between speaker
+and dialogue role. A priest may respond and a server may initiate. Do not
+derive ℣/℟ from priest/server identity, a Bible verse number, or an unreviewed
+string substitution. Preserve protections for abbreviations such as B. V. M.
+and Post Communion labels.
+
+- Show **one visible cue per verified turn**. Separate a printed source marker
+  from the spoken body in a reviewed presentation derivative. Remove the
+  Orate-fratres-only CSS exception once the common representation handles it.
+- Place each spoken turn on its own row. Align its cue with the first text
+  baseline in a narrow hanging column; continuation lines align under words.
+  Group short exchanges without repeated heading or source-locus interruptions.
+- Give ℣/℟ one deliberate font, fallback, and readable scale across Ordinary
+  and Propers. Preserve speaker identity where it adds information. Use red
+  consistently and supplement color with structure and labels.
+- Expose one understandable accessible cue with correct language tagging;
+  decorative glyphs do not produce duplicate announcements. Test actual
+  browser accessibility and selected/copied text, since CSS-generated cues and
+  fake-DOM source-parity tests cannot prove those behaviors.
+- Use canonical Bible paragraph breaks where available. Supply checked stanza
+  boundaries for Sequences and distinct inline-action/rubric structure. Source
+  file hard wraps are not poetic lineation. Start with a long Gospel, one
+  Sequence, and the Pentecost genuflection rubric.
+- Preserve the Instrument's calm ground, dominant celebration, bounded serif
+  reading measure, quiet controls, and useful first viewport. Subordinate
+  routine provenance and page loci to Details while retaining qualifications
+  needed to understand the displayed text.
+- Pair bilingual text by corresponding fragment: readable columns on wide
+  screens and adjacent stacked fragments on narrow screens. Missing translation
+  leaves the original visible with its precise absence.
+- Keep Previous/Today/Next and direct date access reachable without full
+  configuration. Present authorized celebration choices as distinct touchable
+  rows with short explanations; do not choose one by incidental ordering.
+- Complete source-owned current-place orientation and Contents centering;
+  preserve focus and semantic location through auxiliary surfaces and state
+  changes. Provide practical text enlargement, share, and print controls.
+  Remember valid preferences below explicit URL state; infer no territory.
+- Print the same semantic sequence with independent identity, source, and
+  coverage context. Keep cues with their text, avoid stranded headings, and let
+  long readings and Sequences paginate instead of imposing blanket no-break
+  treatment on an entire Proper.
+
+Repair the demonstrated opening-cue loss first. Then prove one visible cue on
+Confiteor, Suscipiat, and postconciliar Orate fratres before extending checked
+turns through Introibo/Judica, Sursum corda, Pax, and dismissal. Preserve
+language-local turn boundaries, source text, and event order throughout.
+
+### Verification and completion gates
+
+Recovery checks actually run on the baseline:
+
+| Command or check | Result and limit |
+| --- | --- |
+| `python3 tools/complete-missal --check` | Passed report validation; 39 completeness dimension cells remain unresolved. |
+| `python3 tools/mass-propers census --json` | Produced the source-identity census used above. |
+| `python3 tools/mass-propers structure --check` | Four tracked generated files current. |
+| `python3 tools/mass-ordinary coverage --json` and `python3 tools/mass-ordinary check` | Coverage measured; generated files current. |
+| `python3 tools/check-calendar-masses check` | Passed with the declared Psalm 56:14 exception. |
+| `python3 tools/calendar-days coverage --first 2026 --last 2026 --json` | All 365 dates reach some Mass in each family; no text-completeness claim. |
+| `python3 -m unittest tools.tests.test_day_missal_switch tools.tests.test_liturgy_reader_state tools.tests.test_day_missal_integration` | 95 tests passed. |
+| Focused Ordinary renderer checks | Three existing semantic/rendering tests passed; an additional harness probe reproduced the two initial priest-cue losses. |
+| Live Chromium diagnostic views and deployed script comparison | Observations and byte match recorded above; no complete browser, accessibility, or print acceptance claimed. |
+
+Implementation gates extend these existing tools and fixtures rather than
+creating a second liturgical resolver. Run affected source, rights, generated
+data, and seating checks; the opt-in 4,380-render year matrix; Sunday A/B/C
+and weekday I/II selections; Holy Week; multiple-Mass days; commemorations;
+territorial choices; long/short alternatives; and every distinct absence.
+The year matrix was not run during this recovery.
+
+Its existing opt-in invocation is:
+
+```sh
+TRIPTYCH_COMPLETE_MISSAL_YEAR=1 \
+  python3 -m unittest tools.tests.test_complete_missal_year
+```
+
+The UI matrix includes both entrances, every delivered mode, deep-scroll
+navigation and each auxiliary surface, at 1440×900, 1024×768, 768×1024,
+393×852, and exact 320 CSS pixels; 200% text and 400% zoom; keyboard, touch,
+representative screen readers, forced colors, and reduced motion. Assert
+identity, unit order, text/source status, focus, location, URL, overflow, and
+console/network outcomes. Exercise actual copy and accessible-name behavior
+for crossed speaker/role turns and duplicate-marker regressions. Inspect every
+page of representative short, long, bilingual, partial, and comparison print.
+
+Use the vision's WCAG 2.2 AA and measured performance budgets. A current-state
+audit or a passing static test is not independent visual acceptance. Prepare
+fresh evidence under the [external-review protocol](external-review-handoffs.md)
+for the implementation milestones that require it; record blocker dispositions
+in this roadmap and reconcile the existing deliverables. Verify exact outgoing
+objects, release bindings, artifacts, and the deployed revision at release.
+
+### Execution order and next action
+
+Start with C1's coverage vocabulary and denominators, then deliver C2's audited
+representative pattern. Content acquisition and typography prototypes can run
+in parallel with distinct ownership; integration waits for the shared text,
+turn, and coverage contracts. Expand C3 and C4 in tested slices, implement C5
+on those same contracts, and use C6 to accept the named scope. Additional
+recension expansion must not delay repair of the daily reader's current claims.
+
+The next implementation checkpoint is **truthful availability controls plus
+the representative-Mass pattern for each principal missal**. Record exact
+textual limitations for any partial exemplar. Completing this planning
+deliverable does not close ritual-flow, corpus, or full-product requirements.
+Resume through this section and the current source tree, not the historical
+takeover commands below.
+
+## Historical deployed baseline, 2026-08-03
 
 Baseline date: **2026-08-03**. The unchanged production-browser and deployed
 review baseline is `18256c51e72099b64bb1b9a6b17db9b6257e7ebf` (`Add Proper
@@ -632,7 +948,12 @@ official acts and inherited base. No ordinary public selector appears until the
 advertised calendar span, formularies, Ordinary extent, locality, rights, and
 tests are complete and explicit.
 
-## Current next action
+## Historical next-action record, through 2026-08-27
+
+The [2026-10-19 completion plan](#completion-plan-2026-10-19) owns current
+recovery and execution order. The following record preserves the historical
+cutover and phase dispositions; its then-current next actions, old object IDs,
+and example-replay status must not be treated as today's instructions.
 
 The Liturgical Instrument visual reset, responsive correction, production
 integration, compatibility closure, cutover gate repair, and same-path public
@@ -799,6 +1120,7 @@ tracked commit say so rather than borrowing a neighboring SHA.
 | 2026-08-20 | Missal mode — a day of several Masses is seated as one | **Diagnosed and measured; fix written and deliberately NOT applied.** A day that prints several Masses carries them as `forms`, and `mass-propers structure` flattens that block into one `propers` array whose entries keep only a `form` label — a mass carrying forms has no `forms` key in the served file at all. `seatPropers` therefore reads three Masses as one, and the second Introit sends the walk backwards at the first slot it reaches, so the second and third Masses lose their seats and the reader refuses the day. Christmas Day and All Souls are the 1962 cases; the postconciliar Pentecost is another. Measured: seating each form on its own closes 2 of the 1962's 17 remaining refusals and 6 of the postconciliar's 30, 8 masses across both editions. A patch is written at `.scratch/lanes/forms-seating-defect/ordinary-seating.patch` and is additive — `formsOf` and `propersOfForm` helpers, a subsequence and never a reordering, and a caller that names no form gets byte-identical behaviour. **Two reasons it is not landed.** It is inert alone: which of several Masses a reader is at is not deterministic from the data, so a caller must name the form, and that is a reader decision this ledger owns. And it edits `ordinary-seating.js`, which the acceptance freeze hashes and which this branch has already moved twice; a third move for a change that would observably do nothing is not a trade this lane may make. | proposal and measurement in the lane directory; no commit |
 | 2026-08-27 | Missal mode — stable Mass forms supersede the unlanded flattening patch | **The 2026-08-20 diagnosis is historical and its patch must not be applied.** Generated Masses with authored alternatives now carry an ordered `forms[]` manifest whose stable `forms[].id` values partition the legacy flat Proper sequence, and every nested Proper carries its matching `form_id`. The shared reader adapter requires that exact partition, refuses an implicit default when several forms exist, and preserves each selected form's original flat source offsets. This closes the old data-shape blocker without label inference or the lane's obsolete display-label patch; remaining alternative and exceptional-frame seating is tracked separately. | Current generated Propers structures, `properFormSelection`, and form-parity tests; no historical row rewritten |
 | 2026-08-27 | Postconciliar Ordinary boundary recovery and browser evidence refresh | **Implemented, not externally re-accepted.** The Rite of Peace is now two elements at nn. 127 and 128; n. 127 carries only an explicitly uncollated 1861 antecedent because the target evidence does not establish the full response at that locus, and optional n. 128 remains text-free. Eucharistic Prayer I is represented by twelve option-bound children around the already-common n. 91 acclamation and n. 98 doxology; nine carry labelled antecedents, while Communicantes, Qui pridie and Supplices remain empty at their proved divergences. The generated postconciliar structure is 59 elements with 20 Latin antecedents, and no production browser JavaScript changed. The Day Chromium harness now resolves EP I to Te igitur, counts all twelve selected children, and passed that keyboard focus/location assertion plus 39 other source-only assertions. Its sole 40/41 failure was the concurrent source-only Proper scratch fixture saying the January 15 Mass lacked its own oration slot; it did not touch this Ordinary sequence. This row records refreshed acceptance evidence, not a new external blessing. | Working-tree recovery; `mass-ordinary check --calendar postconciliar` current; focused Ordinary/source tests 17/17; Day source-only Chromium 40/41 with the EP-I assertion green |
+| 2026-10-19 | Daily reader recovery and completion planning | Recovered baseline `c6da24eda429337fe13d59420a3c489a98a16e66`; reconciled accepted cutover/remediation with unfinished ritual-flow and modes; recorded scoped translation inventories, coverage-counter defects, cue/paragraph defects, the C1–C6 execution plan, representative-Mass pattern, and acceptance gates. Planning only; implementation remains open. | This planning change; promise `missal-reader-completion-plan-2026-10-19`; recovery commands and evidence owners in the current completion-plan section |
 
 For later updates, append a dated row with the workstream or unchanged
 historical phase name, the evidence-backed result, and the exact commit(s).
