@@ -93,6 +93,28 @@ contains 291. These are bibliographic witnesses and research candidates, not
 291 distinct liturgical revisions. The 54 presentation groups remain navigation
 categories rather than a census of rites or Churches.
 
+**Full research and acquisition pass authorized, 2026-10-19.** The maintainer
+requested a fresh research and acquisition pass with an independent cold review
+for each rite, explicitly retaining every known applicable version even when
+its source cannot yet be obtained. This pass is **in progress** after the pushed
+`53871f3c0` integration checkpoint. The checkpoint counts and verification below
+describe that baseline, not the unfinished expansion. Research covers all 77
+existing discovery rows and additionally tests the coverage universe for omitted
+local uses and religious orders. A complete accessible repertoire is examined
+where available; selected examples do not establish a census.
+
+The pass distinguishes substantive revisions, complementary books, manuscript
+layers, printing witnesses, reprints, translations and unresolved bibliographic
+leads. Approval, publication, effectiveness and attestation remain separate.
+Independent reviewers first preserve their own expected-version lists, then
+reconcile the researched records and require correction of omissions and false
+distinctions. Publicly offered whole sources are acquired and checked where
+possible; an inaccessible original receives a precise source and access gap.
+The final integration must preserve reviewed per-use dispositions, acquisition
+hashes and extents, rights and retention decisions, searched repertoire limits,
+and the remaining external inputs. Acquisition alone does not establish a fully
+collated or transcribed book, a normative revision, or local reception.
+
 The [stage dossiers](src/sources/inventories/eucharistic-stages/) now cover
 43 traditions in 14 dossiers: 147 book-state records, 141 documented and six
 provisional. Attestation, publication, approval and effectiveness retain their
