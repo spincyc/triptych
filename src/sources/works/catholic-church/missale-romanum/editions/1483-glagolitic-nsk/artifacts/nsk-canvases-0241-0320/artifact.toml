@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1483-glagolitic-nsk.nsk-canvases-0241-0320"
+edition_id = "edition.catholic-church.missale-romanum.1483-glagolitic-nsk"
+artifact_type = "scan-pdf"
+media_type = "application/pdf"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The identified 1483 historical printing is public domain in the United States under the repository’s pre-1931 publication policy. The NSK manifest marks the work as public domain (Javno dobro) with free access. Faithful mechanical page scans and lossless packaging add no original human-authored source matter. Attribution: Nacionalna i sveučilišna knjižnica u Zagrebu, RI-4°-62 a. Historical source content is excluded from Triptych’s CC BY 4.0 licence."
+source_url = "https://digitalna.nsk.hr/api.php?pr=iiif&id=681720"
+provenance = "All 432 offered image resources were acquired directly from the NSK IIIF sequence with HTTP 200 responses. This part embeds unchanged original JPEG streams in manifest order. PyMuPDF packages pages at a display scale of 150 pixels per inch without resampling. Every saved PDF image was independently extracted with Poppler pdfimages -j and SHA-256 matched to the downloaded original. A registered acquisition manifest records every source URL, byte size, hash and page-to-part mapping."
+retrieved = "2026-10-19"
+sha256 = "3f789650077b5bb8772f7f36daf7948949b06f7a925a11124e685867ecc09e47"
+byte_size = 79672905
+path = "src/sources/works/catholic-church/missale-romanum/editions/1483-glagolitic-nsk/artifacts/nsk-canvases-0241-0320/nsk-canvases-0241-0320.pdf"
+page_count = 80
+indexable = false
+notes = "Canvases 241–320 of the complete 432-canvas offered sequence, retained across six parts below the 100 MiB file limit. The original JPEGs total 420,134,949 bytes. Complete delivery does not make the historical copy complete: NSK describes 211 of 220 leaves and misbinding. Only previously named loci were visually inspected; no full-book transcription or complete collation is claimed."

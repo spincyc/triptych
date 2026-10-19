@@ -1,0 +1,17 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.greek-catholic-church.liturgikon.1692-1695-vilnius-suprasl.nbuv-part1-pdf-8153ae1b"
+edition_id = "edition.greek-catholic-church.liturgikon.1692-1695-vilnius-suprasl"
+artifact_type = "scan-pdf"
+media_type = "application/pdf"
+storage = "restricted"
+rights_status = "restricted"
+rights_basis = "The exact NBUV Ukrainika viewer states that resources are supplied for educational and scientific noncommercial use with attribution, without the right to further reproduce complete document texts. This record does not turn the age of the underlying book into permission to redistribute the complete hosted scan."
+source_url = "https://irbis-nbuv.gov.ua/E_LIB/PDF/00005467_01.pdf"
+provenance = "Followed NBUV record https://irbis-nbuv.gov.ua/ulib/item/0002474 and its two linked PDF parts. Acquired the complete first PDF response using the public PDF.js viewer as the HTTP Referer after a direct file request returned 403. The public viewer route is https://irbis-nbuv.gov.ua/pdfjs/web/viewer.html?file=/E_LIB/PDF/00005467_01.pdf . Inspected front images 1–8; image 2 bears the handwritten shelfmark Кир. 5232 and the printed title is image 5. The separately cataloged copy Кир.1269п is not this acquired copy."
+retrieved = "2026-10-17"
+sha256 = "8153ae1ba637929c7ecc03454e7f32649aeac72930106e6aa87571f18c2b3d7b"
+byte_size = 98863953
+indexable = false
+page_count = 316
+notes = "All 316 offered images were acquired and hashed; only the stated front images were inspected. The complete scan is not distributed because of the viewer's explicit restriction on reproducing complete texts. Offline readers can inspect the identity and bounded passage records, not the page images."

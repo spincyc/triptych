@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-extent",
+  "title": "Complete constituent extent: mozarabic-1500-benedictio-panis",
+  "book_id": "mozarabic-1500-benedictio-panis",
+  "status": "complete",
+  "unresolved": [],
+  "omitted": [],
+  "expected_unit_ids": [
+    "mozarabic.1500.benedictio.heading",
+    "mozarabic.1500.benedictio.opening-versicles",
+    "mozarabic.1500.benedictio.opening-greeting",
+    "mozarabic.1500.benedictio.oratio-heading",
+    "mozarabic.1500.benedictio.oratio",
+    "mozarabic.1500.benedictio.closing-greeting",
+    "mozarabic.1500.benedictio.blessing-heading",
+    "mozarabic.1500.benedictio.blessing",
+    "mozarabic.1500.benedictio.sprinkling"
+  ],
+  "pages": [
+    {
+      "witness_id": "copy",
+      "ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "mozarabic.1500.benedictio.heading",
+        "mozarabic.1500.benedictio.opening-versicles",
+        "mozarabic.1500.benedictio.opening-greeting",
+        "mozarabic.1500.benedictio.oratio-heading",
+        "mozarabic.1500.benedictio.oratio",
+        "mozarabic.1500.benedictio.closing-greeting",
+        "mozarabic.1500.benedictio.blessing-heading",
+        "mozarabic.1500.benedictio.blessing",
+        "mozarabic.1500.benedictio.sprinkling"
+      ],
+      "description": "The complete Benedictio panis at viewer position 964: from its heading in the lower left column, continuing at the top of the right column, through the final sprinkling rubric. The index in the upper left column is excluded."
+    }
+  ]
+}

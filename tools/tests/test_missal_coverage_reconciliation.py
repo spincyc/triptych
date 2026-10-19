@@ -2,6 +2,8 @@
 from __future__ import annotations
 
 import copy
+from contextlib import redirect_stdout
+import io
 import hashlib
 import importlib.machinery
 import importlib.util
@@ -12,6 +14,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest import mock
 
 sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parents[2]
@@ -26,6 +29,26 @@ EDITION = "edition.fixture.constituent.1900"
 CONTAINER_EDITION = "edition.fixture.container.1900"
 ARTIFACT = "artifact.fixture.container.1900.text"
 SEGMENT = "segment.fixture.constituent.1900.text"
+
+
+class CommandHelpTests(unittest.TestCase):
+    def test_help_shows_both_real_commands_and_notes_without_audit_or_transcripts(self):
+        output = io.StringIO()
+        with mock.patch.object(REPORT, "run", side_effect=AssertionError("help ran the audit")), \
+                redirect_stdout(output), self.assertRaises(SystemExit) as stopped:
+            REPORT.main(["--help"])
+        self.assertEqual(0, stopped.exception.code)
+        help_text = output.getvalue()
+        self.assertIn("examples (real invocations; `make check-examples` replays each one):", help_text)
+        examples = REPORT.EXAMPLES[""]
+        self.assertEqual([example.command for example in examples],
+                         ["tools/missal-coverage-reconciliation", "tools/missal-coverage-reconciliation --json"])
+        for example in examples:
+            self.assertIn("$ " + example.command, help_text)
+            self.assertIn(example.note, help_text)
+            self.assertTrue(example.output, "each command must have an actual captured transcript")
+            for line in example.output:
+                self.assertNotIn(line, help_text)
 
 
 class ReconciliationTests(unittest.TestCase):

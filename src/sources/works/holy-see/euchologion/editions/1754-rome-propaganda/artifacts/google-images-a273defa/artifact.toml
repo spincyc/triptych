@@ -1,0 +1,18 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.holy-see.euchologion.1754-rome-propaganda.google-images-a273defa"
+edition_id = "edition.holy-see.euchologion.1754-rome-propaganda"
+artifact_type = "page-image-package"
+media_type = "application/zip"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "United States: these historical printings of 1738, 1754 and 1873 are public domain by publication date. The acquired page images are mechanical facsimiles, with no modern critical text or authored annotation added. U.S. Copyright Office Compendium section 313.4(A), Chapter 300 pp. 26–27 (https://www.copyright.gov/comp3/chap300/ch300-copyrightable-authorship.pdf), treats scanning a literary work as mere copying without new authorship. Google Books Terms of Service section 2 (https://books.google.com/intl/en/googlebooks/tos.html) preserves uses permitted by the U.S. Copyright Act. The repository's settled treatment of Google stamps and incidental notices is src/sources/inventories/google-usage-guidelines-rights-v1.toml. All visible source marks remain intact and are not counted as historical book text. Retained bytes are not offered under Triptych's CC BY 4.0. This is a United States basis, not a claim of a general Google redistribution licence or of status in every jurisdiction."
+rights_jurisdiction = "United States"
+source_url = "https://books.google.com/books?id=B9BRAAAAcAAJ"
+provenance = "The public Google Books viewer for B9BRAAAAcAAJ identifies the original as Austrian National Library. The ordinary public page images and complete offered page roster were retrieved on 2026-10-17. Repository ownership was checked with case-insensitive rg over work.toml and edition.toml using the exact alternatives Euchologion|Euchologium|Akolouthiai|Akoluthiai|Εὐχολόγιον|Ἀκολουθίαι τῶν ἀνωνύμων. The other hits were Goar's Paris 1647 Euchologion and the Coptic-Arabic missal, neither the same work and edition as these Roman Greek printings. The existing-owner check found no duplicate of these editions. No restricted endpoint was bypassed. The official whole-PDF route for 1754 and 1873 returned HTTP 429 with a CAPTCHA and was not used."
+retrieved = "2026-10-17"
+sha256 = "a273defab09a890b67d83185c33ce443abf417ca7b3446c4e31e70854533c998"
+byte_size = 54764090
+path = "src/sources/works/holy-see/euchologion/editions/1754-rome-propaganda/artifacts/google-images-a273defa/1754-google-images.zip"
+indexable = false
+notes = "488 of 488 offered provider images, in original order: PP1–PP16, PA1–PA452, PA452-IA1–PA452-IA8, PA453–PA460 and PT1–PT4. No failed or omitted offered IDs. Physical-volume completeness is unverified. Deterministic project assembly, not a provider-supplied ZIP. Each acquired image is byte-identical and separately hashed in sequence.json. All visible Google and library marks are retained; no image enlargement, correction, OCR or reordering was applied."

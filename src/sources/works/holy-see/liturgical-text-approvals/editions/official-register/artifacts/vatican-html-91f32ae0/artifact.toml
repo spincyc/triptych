@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.holy-see.liturgical-text-approvals.official-register.vatican-html-91f32ae0"
+edition_id = "edition.holy-see.liturgical-text-approvals.official-register"
+artifact_type = "official-html"
+media_type = "text/html"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "Modern official webpage. Public access does not establish permission to redistribute the HTML presentation or modern wording, and no affirmative distribution basis was established. Project-created factual metadata and bounded paraphrases alone are retained."
+source_url = "https://press.vatican.va/roman_curia/congregations/orientchurch/documents/rc_con_corient_doc_20070601_liturgical-texts_it.html"
+provenance = "Whole public HTML response retrieved with curl and hashed. Targeted discovery queries included site:vatican.va/roman_curia/congregations/orientchurch/sico \"slovacca\" \"2004\" and site:vatican.va/roman_curia/congregations/orientchurch/sico \"Basilio\" \"2005\". The retrieved list was inspected at the dated Macedonian 2009 and Slovak 2004 entries and surrounding notices."
+retrieved = "2026-10-17"
+sha256 = "91f32ae0d490a63ef5252a1d90ff42af3ca9e800387ab364a3f5a7c338d90388"
+byte_size = 10226
+indexable = false
+notes = "Complete delivered HTML: 10,226 bytes and 61 LF-delimited physical lines. The page presents a list of recent approvals rather than claiming exhaustive historical coverage. No original decree attachments were supplied at the inspected entries. Source HTML and extracted text are withheld from Git because redistribution rights remain unresolved. Offline readers have the hash, extent and bounded paraphrase; source inspection requires the public URL."

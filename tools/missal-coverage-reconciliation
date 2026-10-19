@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 """Read-only reconciliation of Eucharistic inventories and their coverage audit.
 
-Examples (from the repository root):
-  tools/missal-coverage-reconciliation --json
-  tools/missal-coverage-reconciliation.test
-
 Exit 0: references and snapshots agree, even when research is incomplete.
 Exit 1: invalid references, stale snapshots, or owning-validator findings.
 Exit 70: unexpected failure. No files, caches or research statuses are written.
@@ -27,6 +23,32 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import _eucharistic_history as history
 import _eucharistic_stages as stages_owner
+from _tooling import Example, with_examples
+
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "": (
+        Example(
+            "tools/missal-coverage-reconciliation",
+            (
+                "Missal coverage reconciliation: ok",
+                "eastern: 95 candidates, 118 sources, 23 coverage rows",
+                "western: 137 candidates, 139 sources, 54 coverage rows",
+                "Stages: 14 dossiers, 43 traditions, 147 stages, 75 transitions, 91 declared research gaps",
+                "Mechanical reconciliation only; unresolved research is not an invalid reference, and agreement is not historical completeness.",
+            ),
+            "read-only reconciliation; incomplete research is reported without becoming a validation failure",
+        ),
+        Example(
+            "tools/missal-coverage-reconciliation --json",
+            (
+                "{\"actual\":{\"count_semantics\":{\"eastern_candidates\":95,\"eastern_census_slots\":23,\"eastern_empty_candidate_slots_at_input\":[\"albanian\",\"macedonian\"],\"presentation_groups\":54,\"western_candidates\":137,\"western_coverage_trajectories\":54,\"western_empty_candidate_slots_at_input\":20},\"coverage_status_counts... [+9342 chars]",
+            ),
+            "the same audit as one deterministic JSON object; no caches or research records are written",
+        ),
+    ),
+}
 
 BASE = "src/sources/inventories/"
 COVERAGE = BASE + "eucharistic-stage-coverage-v1.json"
@@ -358,7 +380,7 @@ def run(root=ROOT):
 
 
 def main(argv=None):
-    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser = with_examples(argparse.ArgumentParser(description=__doc__), EXAMPLES[""])
     parser.add_argument("--root", type=Path, default=ROOT, help="repository root (default: tool's repository)")
     parser.add_argument("--json", action="store_true", help="one deterministic compact JSON object")
     args = parser.parse_args(argv)

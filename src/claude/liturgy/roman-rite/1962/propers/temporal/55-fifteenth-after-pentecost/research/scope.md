@@ -1013,8 +1013,8 @@ negatives are not scan damage: `incursus` occurs 4, 4, 2 and 3 times in the two 
 the Mozarabic and the Gothicum; `possideat` 1, 1 and 16; `continuata` 10 and 11; `mentes
 nostras` 5, 6 and 1; `ecclesiam tuam` 33, 36, 10 and 3 (LIT-021, COV-007). Four bounds travel
 with it: it is a literal search over uncorrected optical text and cannot see a paraphrase or a
-recentonised descendant; three of the four books are diplomatic editions printing manuscript
-contractions; two positive-control strings return zero in the Hadrianum layer for a known reason
+recentonised descendant; printed abbreviations can conceal expanded wording, including those Feltoe selectively
+retains (preface p. vi); two positive-control strings return zero in the Hadrianum layer for a known reason
 (Wilson prints the e-caudata, which the layer renders as a caret, so `celestis operatio` and
 `doni celestis` cannot be found there even though the page image shows them, and the same
 failure mode would hide the prayer in any of the four negatives); and the corpus's own
@@ -2595,3 +2595,36 @@ assert more than that.
   `c` with the third cue block `Miserere mihi domine`, so the +2 reading is right and the
   optical placement is wrong** (LIT-005). That correction is recorded here because the same page
   carries this Sunday's chant cue; it is not authority over another leaf's records.
+
+
+### Veronense source-impact review, 19 October 2026
+
+The work description and Feltoe edition notes changed after the historical
+search. The retained 1896 facsimile
+`artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ia-pdf-3b991b13`
+(SHA-256 `3b991b133889bbd4803831455bb4f49de30ecb4d8386534cee1f80f79541967a`)
+was inspected on PDF pages 10–12, printed pp. vi–viii. The preface expressly
+describes selective manuscript spellings and abbreviations, editorial
+punctuation and a non-exact reproduction. The introduction identifies the
+fragmentary surviving extent and distinguishes present locality from origin.
+The claim that three of the four searched books are diplomatic editions was
+therefore replaced by the actual search limitation: printed abbreviations can
+conceal expanded wording. The two registered Veronense OCR hashes, corpus
+membership and corpus snapshot are unchanged. The historical negative and its
+normalization, positive controls and limits are retained; no new search or
+prayer-text collation is claimed. The separate 17 October Ferotin storage
+review remains operative. This review does not reopen the Wilson claims.
+
+The corrected full and synthesis PDFs were rebuilt, visually reviewed and
+installed at 36 and 24 pages, respectively, with no final-log layout warnings.
+Their extracted text changes only on full-edition pages 31, 33 and 36 and
+synthesis pages 20, 22 and 24: the two corrected passages and revision
+stamp. The canonical web edition was regenerated and checked against those
+changes. Component, source-binding, generation-metadata and web-declaration
+checks pass. Full content preflight retains one pre-existing failure:
+`chronology-annotations-current`. Running the same generator against the
+pre-correction leaf produces the same annotation differences; the chronology
+record, generated annotation file, component manifest and page-2 source are
+unchanged. The corpus record and chronology-claim checks pass. The unrelated
+projection refresh is outside this Veronense correction; no chronology
+change or whole-publication re-research is claimed.

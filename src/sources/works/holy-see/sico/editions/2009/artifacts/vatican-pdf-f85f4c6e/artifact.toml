@@ -1,0 +1,17 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.holy-see.sico.2009.vatican-pdf-f85f4c6e"
+edition_id = "edition.holy-see.sico.2009"
+artifact_type = "official-pdf"
+media_type = "application/pdf"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "Modern official periodical and digital presentation. Public retrieval establishes access, not a redistribution grant; no affirmative basis for distributing this complete artifact or its extracted text was established. Only project-created factual metadata and bounded paraphrases are retained."
+source_url = "https://www.vatican.va/roman_curia/congregations/orientchurch/sico/SICO_PDF/SICO%202009.pdf"
+provenance = "Whole public PDF retrieved with curl from the link in the Congregation's SICO index. Discovery followed the official liturgical-text approval register's Macedonian entry dated 9 December 2009. Exact bytes were hashed. PDF pages 2, 3 and 290 were rendered and visually inspected; PDF page 290 is printed page 291."
+retrieved = "2026-10-17"
+sha256 = "f85f4c6ebc5edca69da7c8d1bff487ce256e8a28bac8dfaef0132db7a56d71a9"
+byte_size = 3123242
+page_count = 492
+indexable = false
+notes = "Complete delivered PDF: 492 artifact pages. No whole-volume reading or textual collation is asserted. Source bytes, page rasters and extracted text are withheld from Git because redistribution rights remain unresolved. Offline readers can inspect the source identity, exact hash, extent and bounded paraphrase; reopening the source requires the public URL."

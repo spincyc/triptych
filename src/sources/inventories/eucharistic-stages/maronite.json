@@ -9,7 +9,7 @@
       "label": "Maronite Antiochene Qurbono",
       "family": "West Syriac / Maronite",
       "scope": "Maronite Eucharistic books in Syriac and native Syriac/Arabic composition; independent vernacular translation history excluded.",
-      "coverage_note": "First printing through 1992 with a bounded manuscript precursor. Dates mark attestation/publication, not continuous use. Later 2005 edition remains a named gap."
+      "coverage_note": "First printing through 1992 with a bounded manuscript precursor and 2003–2006 synodal reception prescriptions. Dates mark attestation/publication, not continuous use. The 2005 original book remains an acquisition gap."
     }
   ],
   "sources": [
@@ -28,7 +28,7 @@
       "title": "Pierre Jabbour, L’identité religieuse des Maronites du Mont-Liban au XVIe siècle au prisme du premier missel maronite imprimé à Rome, Proche-Orient Chrétien 70 (2020), 59–87",
       "url": "https://www.researchgate.net/publication/351617405_L'identite_religieuse_des_Maronites_du_Mont-Liban_au_XVIe_siecle_au_prisme_du_premier_missel_maronite_imprime_a_Rome",
       "kind": "scholarship",
-      "inspection": "Author-uploaded rendered full text read: pp 59–65 identity and divided manuscripts; pp 70–75 institution and epiclesis alterations; pp 76–78 variant 1608 copies. Journal abstract checked at https://journals.usj.edu.lb/poc/article/view/1200 ; DOI10.3917/poc.701.0059.",
+      "inspection": "Author-uploaded rendered full text read: pp 59–65 identity and divided manuscripts; pp 70–75 institution and epiclesis alterations; pp 76–78 variant 1608 copies. Journal abstract checked at https://journals.usj.edu.lb/poc/article/view/1200 ; DOI 10.3917/poc.701.0059.",
       "checked_on": "2026-10-16",
       "status": "inspected",
       "limitations": "Rendered author text has damaged character mapping. PDF page-image download was unavailable; quoted Syriac not used as checked transcription. Manuscripts and variant 1608 copies not independently inspected. This is original research describing its own collation, not a collation performed here."
@@ -102,6 +102,16 @@
       "checked_on": "2026-10-16",
       "status": "lead",
       "limitations": "Lead only. Search-index detail not promoted to an inspected stable catalogue or primary book."
+    },
+    {
+      "id": "maronite-synod2006-liturgy",
+      "title": "Maronite Patriarchal Synod 2003–2006, Text 12: Liturgy, official Arabic text",
+      "url": "https://bkerki.org/document/المجمع-البطريركي-الماروني-2003-2006/النص-الثاني-عشر-الليتورجيّا/",
+      "kind": "primary-act",
+      "inspection": "Complete official HTML acquired; chapter on the sacraments, section 2, القدّاس أو الإفخارستيّا, and final recommendation 5 directly read in Arabic. This section prescribes authorized books, concelebration, vesture, candles, Eucharistic days and Communion. Acquired HTML SHA-256 2fefde7caebf384d01257458bb6d826593e9e945d6e65ae02dada59a161d0ac3.",
+      "checked_on": "2026-10-17",
+      "status": "inspected",
+      "limitations": "The official online synodal text attests these prescriptions during the 2003–2006 synod. It does not by itself identify the date of a particular missal decree or prove parish implementation. No modern liturgical body is imported."
     }
   ],
   "stages": [
@@ -416,6 +426,35 @@
       ],
       "limitations": "Primary reform explanation, not a full transcription. Comprehensive Old/New Testament lectionary was still being prepared; later complementary Gospel/Epistle books are not successive missal versions.",
       "reception": "Intro reports synodal/Congregation approval and patriarchal signature. 31 July dates the introduction, not independently the decree or universal effective date. A later 2005 edition is reported by Jabbour; 1992 is not labelled current."
+    },
+    {
+      "id": "maronite-synod2003-2006",
+      "tradition_id": "maronite-antiochene",
+      "label": "Synodal book-use and celebration prescriptions",
+      "date_label": "2003–2006 Patriarchal Synod",
+      "start_year": 2003,
+      "end_year": 2006,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Eucharistic legislation governing approved books and celebration; a reception witness alongside printed missals.",
+      "components": [
+        "rubrics",
+        "lectionary",
+        "chant"
+      ],
+      "witness_ids": [],
+      "witness_label": "Maronite Patriarchal Synod, Text 12: Liturgy, official Arabic text on Bkerki.org",
+      "summary": "The synod directs exclusive use of the Mass order approved by the synod and patriarchal decree, alongside separately issued Epistle and Gospel books, chant book and ritual directions. It prefers concelebration at the principal altar, prescribes the Presanctified on Good Friday and no Mass on Holy Saturday.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "maronite-synod2006-liturgy",
+          "locus": "Sacraments chapter, section 2, القدّاس أو الإفخارستيّا, first eight paragraphs; final recommendation 5",
+          "claim": "Explicitly distinguishes the approved Mass order from complementary reading, chant and directions books; sets celebration and Holy Week prescriptions."
+        }
+      ],
+      "limitations": "No new complete missal recension is inferred from the synodal date. The before-state and first introduction of these rubrics are not established here; no revision edge is drawn.",
+      "reception": "The synodal directions encompass the patriarchal territory and diaspora in the document’s account of the liturgical commission. Prescribed unity does not establish uniform empirical use."
     }
   ],
   "transitions": [
@@ -835,9 +874,9 @@
       "id": "maronite-later2005",
       "tradition_id": "maronite-antiochene",
       "period": "After 1992",
-      "missing": "Content and legal status of the 2005 edition reported by Jabbour p 59.",
-      "next_source": "Native 2005 Qurbono, title, preface and decree; Jabbour 2020 opening paragraph.",
-      "consequence": "1992 is not described as the latest or presently normative state."
+      "missing": "Original 2005 Qurbono title, patriarchal decree, introduction and eight-anaphora bodies remain unacquired. The official 2003–2006 synod independently supplies book-use prescriptions.",
+      "next_source": "Maronite Patriarchal Seminary catalogue, https://seminairemaronite.org/المكتبة/page/159/, Tl 188 Ar, 1117 pages, 2005; reported decree no. 1512 of 29 June 2005 and Congregation letter 381/2003 dated 17 April 2005 require original-page confirmation. Check native book pp. 4–5, 8–9, 33–34, 1116 and distinguish the 2008 Sharar booklet Tl 191 Ar, 61 pages.",
+      "consequence": "The 2005 title is independently catalogued; exact new-anaphora and effective-date claims remain unverified until original pages are acquired. Searches in Arabic, French and English found catalogue and secondary descriptions, later parish aids and an unavailable NDU Spirit 35 PDF; none substitutes for the primary book."
     }
   ]
 }

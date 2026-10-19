@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-collation",
+  "book_id": "mozarabic-1804-benedictio-panis",
+  "title": "Independent complete-constituent image collation: Mozarabic Benedictio panis, 1804",
+  "status": "verified",
+  "independent": true,
+  "complete_extent_verified": true,
+  "reviewer": "Independent AI source reviewer (Mozarabic blessing integration collation)",
+  "checked_on": "2026-10-19",
+  "binding_sha256": "ad3d60bd19824466e8b337eb27b0da3a13c15916da82a000992386abde462f59",
+  "extent_sha256": "15b31fa9e183bd80a6b6529be006b90ad15fda738f155b2bdbe0a01a5355d320",
+  "witness_sha256": {
+    "copy": "176accd26d07aa14930b4e9d23d6cff005395cb73d23cd1b7738fcd3238daf24"
+  },
+  "unit_sha256": {
+    "mozarabic.1804.benedictio.heading": "c769ef28a55ac5cb793346ee2cf78bf2c3141fc02b5101c79dce4fa2ad662af6",
+    "mozarabic.1804.benedictio.opening-versicles": "8db581c56f4534d1cb5cc5b2b4f9169702ebaff1a3903173f5ab910884851325",
+    "mozarabic.1804.benedictio.opening-greeting": "40ef017cdc47ca1a7d1eb49338631cf9a5fc80215a8b5a60414ae385dd750921",
+    "mozarabic.1804.benedictio.oratio-heading": "268dec6408c7fbf349deecd3db5eaeea70d42cc0778ef3628f3d1768a3d4e057",
+    "mozarabic.1804.benedictio.oratio": "aa35b0c10b103618c26691ea5bcf92c54e1cd4059440a578ce4b8ab0c01e42e1",
+    "mozarabic.1804.benedictio.closing-greeting": "809ad94e107dfebffdb029b4fa86c11fefa1de0418ada0f64946a8a615e14038",
+    "mozarabic.1804.benedictio.blessing-heading": "a605c6596505357e52b84d48161943a62300a60c48946aadf25d0350201db1b7",
+    "mozarabic.1804.benedictio.blessing": "a6ebeb43d2b917c2299ea15308153c6fab5436026409acb027254a757dec80bb",
+    "mozarabic.1804.benedictio.sprinkling": "75371ee14c68664fb23d9dfadb7ed667ea9cd762bc5a00247a094c182394b586"
+  },
+  "scope": "The complete Benedictio panis on printed p. XVI, in the right column: from its heading below the water blessing through the final sprinkling rubric. All preceding water-blessing text on this page is excluded.",
+  "method": "Fresh independent review of the retained complete source page against all 19 transcription lines and all nine semantic units. Checked the heading-to-final-sprinkling bounds, column continuity, opening verses and responses, both greetings, priest and choir rubrics, full prayer conclusion, three blessing crosses and Amens. Also reopened the identified publication-date image. Accepted the declared reading normalization; this is not a glyph-diplomatic transcription. Earlier scratch receipt binding and extent hashes were stale and were not adopted as final approval."
+}

@@ -1,0 +1,100 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "scan-pdf",
+   "byte_size": 98863953,
+   "edition_owned": true,
+   "id": "artifact.greek-catholic-church.liturgikon.1692-1695-vilnius-suprasl.nbuv-part1-pdf-8153ae1b",
+   "media_type": "application/pdf",
+   "page_count": 316,
+   "retrieved": "2026-10-17",
+   "rights": "restricted",
+   "rights_jurisdiction": null,
+   "source_url": "https://irbis-nbuv.gov.ua/E_LIB/PDF/00005467_01.pdf",
+   "storage": "restricted"
+  },
+  {
+   "artifact_type": "scan-pdf",
+   "byte_size": 108858600,
+   "edition_owned": true,
+   "id": "artifact.greek-catholic-church.liturgikon.1692-1695-vilnius-suprasl.nbuv-part2-pdf-4be28b88",
+   "media_type": "application/pdf",
+   "page_count": 349,
+   "retrieved": "2026-10-17",
+   "rights": "restricted",
+   "rights_jurisdiction": null,
+   "source_url": "https://irbis-nbuv.gov.ua/E_LIB/PDF/00005467_02.pdf",
+   "storage": "restricted"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1692–1695",
+  "editors": [],
+  "id": "edition.greek-catholic-church.liturgikon.1692-1695-vilnius-suprasl",
+  "jurisdiction": null,
+  "language": "cu",
+  "publication": "Vilnius, Holy Trinity Basilian monastery, 1692; completed at Suprasl, 1695",
+  "title": "ΛΕΙΤΟΥΡΓΙΚΟΝ, си єсть Служебник: Vilnius–Suprasl 1692–1695",
+  "translators": [],
+  "year": 1692
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.greek-catholic-church.liturgikon.1692-1695-vilnius-suprasl.nbuv-part1-pdf-8153ae1b",
+   "artifact_type": "scan-pdf",
+   "id": "passage.greek-catholic-church.liturgikon.1692-1695-vilnius-suprasl.title-imprint",
+   "locus": "Part 1, PDF image 5: title and imprint",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "The rights record states that lawful project access to this artifact does not include redistribution from this repository.",
+   "rights": "restricted",
+   "rights_jurisdiction": null,
+   "segment_id": null,
+   "source_url": "https://irbis-nbuv.gov.ua/E_LIB/PDF/00005467_01.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "restricted",
+   "verified_on": "2026-10-17",
+   "withheld": "rights"
+  },
+  {
+   "artifact_id": "artifact.greek-catholic-church.liturgikon.1692-1695-vilnius-suprasl.nbuv-part2-pdf-4be28b88",
+   "artifact_type": "scan-pdf",
+   "id": "passage.greek-catholic-church.liturgikon.1692-1695-vilnius-suprasl.terminal-folio-and-blank-end-leaves",
+   "locus": "Part 2, PDF images 343–349: folio 86 recto–verso and end leaves",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "The rights record states that lawful project access to this artifact does not include redistribution from this repository.",
+   "rights": "restricted",
+   "rights_jurisdiction": null,
+   "segment_id": null,
+   "source_url": "https://irbis-nbuv.gov.ua/E_LIB/PDF/00005467_02.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "restricted",
+   "verified_on": "2026-10-17",
+   "withheld": "rights"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Greek Catholic Church; Basilian printing tradition",
+  "category": "liturgical-service-book",
+  "description": "Church Slavonic Greek Catholic celebrant books, with edition and copy identity, extent, rubrical states, and reception kept distinct. This work grouping does not assert an uninterrupted textual genealogy or a single uniform regional use.",
+  "id": "work.greek-catholic-church.liturgikon",
+  "languages": [
+   "cu"
+  ],
+  "title": "Літургиконъ, сирѣчь Служебникъ"
+ }
+}

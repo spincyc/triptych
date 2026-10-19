@@ -1,0 +1,92 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "scan-pdf",
+   "byte_size": 37928725,
+   "edition_owned": true,
+   "id": "artifact.chaldean-catholic-church.missale.1767-rome-propaganda.google-scan-pdf-4d048b31",
+   "media_type": "application/pdf",
+   "notes": "Complete provider PDF retained byte-for-byte. Whole-file possession does not establish that every original leaf survives; PDF page 1 is an image-unavailable placeholder. PDF pages 630–631 (titles) and 339 (Addai and Mari intercession, printed p. 284) independently inspected by two researchers. Additional anaphora pages 337–350 inspected by one researcher. The omission at printed p. 284 was checked against the 1901 reading and Macomber 1966 p. 366 line 53. This bounded collation is not a full-book reading.",
+   "page_count": 634,
+   "retrieved": "2026-10-17",
+   "rights": "public-domain",
+   "rights_basis": "Historical 1767 printing is public domain in the United States by expired publication term. The page images are mechanical facsimiles of that historical book, not a modern translation or critical edition. This is the recorded U.S. public-domain and mechanical-reproduction basis, not an assertion of a general Google redistribution licence. The provider's marks and notices are preserved in the unaltered delivery and are not offered under Triptych's CC BY 4.0 licence; the historical wording is likewise excluded from that licence.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/bub_gb_PSttGL9Rf08C_2/bub_gb_PSttGL9Rf08C.pdf",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": "The Latin title at PDF page 630 states that the book was published ex decreto of the Sacred Congregation de Propaganda Fide. The title establishes the issuing authority, not the geographical breadth of actual use.",
+  "date": "1767",
+  "editors": [],
+  "id": "edition.chaldean-catholic-church.missale.1767-rome-propaganda",
+  "jurisdiction": "Chaldean Catholic Church",
+  "language": "syr",
+  "publication": "Rome: Typis Sacrae Congregationis de Propaganda Fide, 1767.",
+  "title": "Missale Chaldaicum ex decreto Sacrae Congregationis de Propaganda Fide editum",
+  "translators": [],
+  "year": 1767
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.chaldean-catholic-church.missale.1767-rome-propaganda.google-scan-pdf-4d048b31",
+   "artifact_type": "scan-pdf",
+   "id": "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-intercession",
+   "locus": "Addai and Mari, printed p. 284, PDF page 339, right column bottom continued at left column top",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "This passage records neither a transcription nor line bounds, so the corpus identifies where it is without holding its words.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://archive.org/download/bub_gb_PSttGL9Rf08C_2/bub_gb_PSttGL9Rf08C.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-17",
+   "withheld": "no-transcription"
+  },
+  {
+   "artifact_id": "artifact.chaldean-catholic-church.missale.1767-rome-propaganda.google-scan-pdf-4d048b31",
+   "artifact_type": "scan-pdf",
+   "id": "passage.chaldean-catholic-church.missale.1767-rome-propaganda.title",
+   "locus": "Latin and Syriac titles, PDF pages 630–631",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "This passage records neither a transcription nor line bounds, so the corpus identifies where it is without holding its words.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://archive.org/download/bub_gb_PSttGL9Rf08C_2/bub_gb_PSttGL9Rf08C.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-17",
+   "withheld": "no-transcription"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Ṭaksā d-rāzē ṿe-Ṭaksā d-ḳuddāshā dā-shelīḥē"
+  ],
+  "author": "Chaldean Catholic Church liturgical tradition",
+  "category": "liturgical-book",
+  "description": "Chaldean Eucharistic service book, separately issued from the temporal and sanctoral propers. Exact scope of its anaphoras and rubrics remains uncollated.",
+  "id": "work.chaldean-catholic-church.missale",
+  "languages": [
+   "syr",
+   "la"
+  ],
+  "title": "Missale juxta ritum Ecclesiae Syrorum Orientalium, id est Chaldaeorum"
+ }
+}

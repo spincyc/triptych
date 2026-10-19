@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-collation",
+  "book_id": "mozarabic-1755-benedictio-panis",
+  "title": "Independent complete-constituent image collation: Mozarabic Benedictio panis, 1755",
+  "status": "verified",
+  "independent": true,
+  "complete_extent_verified": true,
+  "reviewer": "Independent AI source reviewer (1755 complete blessing collation)",
+  "checked_on": "2026-10-19",
+  "binding_sha256": "c094fd1bc024c5db9953850a6699089b3eaac9c0ef149f2bd538aa63d6e8ee57",
+  "extent_sha256": "dce48dcbba896da0f509509f674f73fc068b4d54d1f635946b83a0f2415f961e",
+  "witness_sha256": {
+    "copy": "06fa2cf519045e236e20d66bd64d6a1625625d22a6bacc97428f3da7a713fccf"
+  },
+  "unit_sha256": {
+    "mozarabic.1755.benedictio.heading": "c769ef28a55ac5cb793346ee2cf78bf2c3141fc02b5101c79dce4fa2ad662af6",
+    "mozarabic.1755.benedictio.opening-versicles": "74dd37da20d480fb74eadaf22ab9b28d740fb0bd48dbe7d0d9bfb8641b164e83",
+    "mozarabic.1755.benedictio.opening-greeting": "40ef017cdc47ca1a7d1eb49338631cf9a5fc80215a8b5a60414ae385dd750921",
+    "mozarabic.1755.benedictio.oratio-heading": "268dec6408c7fbf349deecd3db5eaeea70d42cc0778ef3628f3d1768a3d4e057",
+    "mozarabic.1755.benedictio.oratio": "741c3acd0da75ada6acc7ffd2899db50a37836cc6d8ddd738785f6bae5633eaa",
+    "mozarabic.1755.benedictio.closing-greeting": "809ad94e107dfebffdb029b4fa86c11fefa1de0418ada0f64946a8a615e14038",
+    "mozarabic.1755.benedictio.blessing-heading": "a605c6596505357e52b84d48161943a62300a60c48946aadf25d0350201db1b7",
+    "mozarabic.1755.benedictio.blessing": "a6ebeb43d2b917c2299ea15308153c6fab5436026409acb027254a757dec80bb",
+    "mozarabic.1755.benedictio.sprinkling": "75371ee14c68664fb23d9dfadb7ed667ea9cd762bc5a00247a094c182394b586"
+  },
+  "scope": "Complete Benedictio panis on printed p. 471, from its heading at the top of the left column through the final sprinkling rubric in the right column. The ornament below and the following publication colophon are excluded.",
+  "method": "Independently read the complete original JPEG2000 page 590, printed page 471, against all nineteen semantic transcription lines and all nine units on 2026-10-19. Compared the viewed PNG with the pinned source JPEG2000 using ImageMagick absolute error and recomputed binding, extent, witness, full text artifact and individual passage hashes from their actual bytes. Confirmed both columns from the heading through the final sprinkling rubric, the cross-column recipiant continuation, the clearly legible quinque, all versicles and responses, both priest greetings, the choir direction, both Amens and all three blessing crosses including San✠cti. Ornament and subsequent colophon lie outside the declared constituent.",
+  "normalization_limit": "Approval concerns the declared reading transcription: expanded contractions and ampersands, normalized long-s, consonantal u/v and i/j, capitalization, punctuation and line wrapping; printed e spellings and presbyter retained. It is not a diplomatic typography transcription.",
+  "review_limit": "Only this complete source-defined Benedictio panis is certified. No complete Ordinary, missal, scholarly apparatus or textual parentage is certified by this receipt."
+}

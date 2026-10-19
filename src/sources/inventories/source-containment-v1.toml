@@ -3620,3 +3620,43 @@ work_id = "work.armenian-church.ministerium-missae"
 locator = "1677 bound-volume PDF pages 67–96; segment.armenian-church.ministerium-missae.1677-rome-propaganda-armenian.bound-volume-pages-67-96"
 extent_unresolved = "Clerical directions and appended Office/hymn corrections remain untranscribed; their internal constituent census is open."
 basis = "Separate native title at RA1-PA1; provider sequence reaches RA1-PA30."
+
+[[not_containers]]
+id = "artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.creed-checked-arabic-79536f9c"
+manifest_sha256 = "79d97669f384dd7a6c6dac06547d940a75edc484af312c671aa59d1c4c0efa44"
+reason = "This 1,313-byte normalized text contains only the Arabic Creed, 139 words from Part II printed pp. 85–87 / parent PDF pages 378–380. Its transformation bounds the text from the first black Creed line after the red rubric through Amen, excluding the parallel Coptic, surrounding rubrics and remaining service. The detector matches the notes' explicit denial of whole physical volume completeness, which describes the separately retained parent sequence, not additional works inside this bounded derivative."
+
+[[containers]]
+id = "artifact.holy-see.decreta-authentica-congregationis-sacrorum-rituum.rome-1900-volume-3.scan-pdf-e5f66086"
+manifest_sha256 = "e3cc075ecfe2033581cf292a30ba644bebef985c1cd22ef22e1bb920231448b0"
+status = "partial"
+basis = "The owning work identifies an official collection of decrees; the edition and artifact record a complete 402-page facsimile of volume III, dated 1900 on its inspected title. The recorded inspection names decree 3421 and its location."
+unresolved = "The remaining decrees, preliminary matter and other constituents have not been enumerated in this containment review. Whole-file acquisition does not establish full-volume inspection, transcription or collation. The collection's 1900 publication date is distinct from the dates of its reprinted decrees."
+
+[[containers.constituents]]
+author = "Sacred Congregation of Rites"
+title = "Decree 3421, 25 May 1877"
+locator = "Volume III (Rome, 1900), printed p. 80 / PDF p. 92"
+extent_unresolved = "This is the inspected decree-bearing page identified by the edition and artifact; the precise full textual boundaries of the decree have not been separately registered."
+basis = "The edition notes identify decree 3421 and its date; the artifact notes identify the same inspected printed and PDF page. The title here is a descriptive identifier, not an asserted transcription of a formal heading."
+
+[[containers]]
+id = "work.holy-see.sico"
+manifest_sha256 = "05180d0547d5fddfe42b46bcfef6ac82f1270cdf53fc5559ae216417e9122c0d"
+status = "partial"
+basis = "The work identifies the Congregation for the Eastern Churches' annual official periodical. Two registered passages identify bounded notices in the 1997 and 2009 issues, each checked against its own page image. The complete source PDFs were acquired and hashed but remain restricted; the repository retains metadata and factual paraphrases, not their text."
+unresolved = "Other notices and constituent documents in the 1997 and 2009 issues have not been enumerated, and no census of the periodical's other years is claimed. The listed notices report acts; they do not supply the original signed decrees or the approved liturgical texts."
+
+[[containers.constituents]]
+author = "Congregazione per le Chiese Orientali"
+title = "Notice of approval of the Slovak translation of the Divine Liturgy of St John Chrysostom, 14 September 1997"
+locator = "S.I.C.O. 1997, printed p. 195 / PDF p. 195, XIV Attività liturgica, first notice"
+extent_unresolved = "The bounded notice is represented by a factual paraphrase; no source quotation, signed decree or translated celebrant book is retained."
+basis = "Passage passage.holy-see.sico.1997.slovak-chrysostom-approval-1997-09-14 identifies the notice, date and decree protocol 45/78. This is a descriptive constituent title, not the title of the original decree."
+
+[[containers.constituents]]
+author = "Congregazione per le Chiese Orientali"
+title = "Notice of recognitio for the Macedonian versions of the Divine Liturgies of St John Chrysostom and St Basil the Great, 9 December 2009"
+locator = "S.I.C.O. 2009, printed p. 291 / PDF p. 290, Recognitio e approvazione dei testi liturgici, final bullet"
+extent_unresolved = "The bounded notice is represented by a factual paraphrase; no original act or approved liturgical text is retained. Its term recognitio is preserved without deciding equivalence to the separate register's approval wording."
+basis = "Passage passage.holy-see.sico.2009.macedonian-recognitio-2009-12-09 identifies the final bullet and its dated action. This is a descriptive constituent title, not an asserted source heading."

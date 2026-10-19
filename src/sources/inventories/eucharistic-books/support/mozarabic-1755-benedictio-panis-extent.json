@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-extent",
+  "title": "Complete constituent extent: mozarabic-1755-benedictio-panis",
+  "book_id": "mozarabic-1755-benedictio-panis",
+  "status": "complete",
+  "unresolved": [],
+  "omitted": [],
+  "expected_unit_ids": [
+    "mozarabic.1755.benedictio.heading",
+    "mozarabic.1755.benedictio.opening-versicles",
+    "mozarabic.1755.benedictio.opening-greeting",
+    "mozarabic.1755.benedictio.oratio-heading",
+    "mozarabic.1755.benedictio.oratio",
+    "mozarabic.1755.benedictio.closing-greeting",
+    "mozarabic.1755.benedictio.blessing-heading",
+    "mozarabic.1755.benedictio.blessing",
+    "mozarabic.1755.benedictio.sprinkling"
+  ],
+  "pages": [
+    {
+      "witness_id": "copy",
+      "ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "mozarabic.1755.benedictio.heading",
+        "mozarabic.1755.benedictio.opening-versicles",
+        "mozarabic.1755.benedictio.opening-greeting",
+        "mozarabic.1755.benedictio.oratio-heading",
+        "mozarabic.1755.benedictio.oratio",
+        "mozarabic.1755.benedictio.closing-greeting",
+        "mozarabic.1755.benedictio.blessing-heading",
+        "mozarabic.1755.benedictio.blessing",
+        "mozarabic.1755.benedictio.sprinkling"
+      ],
+      "description": "Complete Benedictio panis on printed p. 471, from its heading at the top of the left column through the final sprinkling rubric in the right column. The ornament below and the following publication colophon are excluded."
+    }
+  ]
+}

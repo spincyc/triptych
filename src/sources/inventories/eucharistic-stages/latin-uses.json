@@ -2,7 +2,7 @@
   "schema_version": 1,
   "record_type": "eucharistic-book-stages",
   "dossier_id": "latin-uses",
-  "title": "Bounded Dominican, Carmelite and Braga book states",
+  "title": "Bounded Western local and monastic Eucharistic book states",
   "traditions": [
     {
       "id": "dominican",
@@ -24,6 +24,41 @@
       "family": "latin",
       "scope": "Bracarense Latin missals, kept distinct from Roman, Carmelite and Dominican uses.",
       "coverage_note": "1538–1558 change is established through original scholarship. The 1924 approved state has direct prefatory evidence; its precise body revision remains open."
+    },
+    {
+      "id": "carthusian",
+      "label": "Carthusian use",
+      "family": "latin",
+      "scope": "Carthusian Latin missals and the complementary Ordinarium; chapter and publication dates are distinguished.",
+      "coverage_note": "The 1582 preparation and 1603 Gloria are reported through page-checked scholarship; the 1627 title and three Ordinary pages are directly image-checked. No complete-book reconstruction is asserted."
+    },
+    {
+      "id": "sarum",
+      "label": "Sarum use",
+      "family": "latin",
+      "scope": "Selected medieval Sarum missal witnesses, read through Legg’s critical edition.",
+      "coverage_note": "Two manuscript states are distinguished without making their differences a single linear reform."
+    },
+    {
+      "id": "hereford",
+      "label": "Hereford use",
+      "family": "latin",
+      "scope": "The Whitchurch manuscript and the 1502 Hereford printing, through Henderson’s edition.",
+      "coverage_note": "Local manuscript features and printed differences are documented; a diocesan revision mechanism is not established."
+    },
+    {
+      "id": "york",
+      "label": "York use",
+      "family": "latin",
+      "scope": "The early printed York sequence as compared by Henderson, with manuscript diversity retained as a limitation.",
+      "coverage_note": "Five printed witnesses are not five demonstrated recensions."
+    },
+    {
+      "id": "esztergom",
+      "label": "Esztergom use",
+      "family": "latin",
+      "scope": "The pre-1341 notated missal and 1484 Esztergom printing as compared in Déri’s critical edition.",
+      "coverage_note": "Substantive repertory differences are established by scholarship; the exact sequence of intermediate revisions is not."
     }
   ],
   "sources": [
@@ -95,7 +130,7 @@
       "inspection": "Catalogue identity, digital source link and contents locators inspected; PDF endpoint returned HTTP 401.",
       "checked_on": "2026-10-16",
       "status": "inspected",
-      "limitations": "Catalogue establishes a specific witness and locators, not textual differences. Data retrieved from USUARIUM: A Digital Library and Database for the Study of Latin Liturgical History in the Middle Ages and Early Modern Period, built by Miklós István Földváry et al., Eötvös Loránd University, Research Group of Liturgical History, from 2015 onwards."
+      "limitations": "Catalogue establishes a specific witness and locators, not textual differences. Data retrieved from USUARIUM: A Digital Library and Database for the Study of Latin Liturgical History in the Middle Ages and Early Modern Period, built by Miklós István Földváry et al., Eötvös Loránd University, Research Group of Liturgical History, from 2015 onwards. The earlier USUARIUM PDF failure was subsequently bypassed by a normal public BNP download; see the directly acquired primary source record. Catalogue and scholarship colophon locators are resolved against the actual scan at fol. 184v."
     },
     {
       "id": "latin-uses:usuarium1558",
@@ -126,6 +161,106 @@
       "checked_on": "2026-10-16",
       "status": "lead",
       "limitations": "Full study not inspected; its advertised comparison of Braga 1924 with Braga 1558 and Roman 1886/1921 must be acquired before specific revision claims."
+    },
+    {
+      "id": "latin-uses:carthusian-palecki",
+      "title": "Waldemar Pałęcki, “Celebracja Eucharystii w zakonie kartuzów w świetle pierwszych źródeł liturgicznych wydanych po reformie trydenckiej”, Roczniki Teologiczne 62/8 (2015), 109–130",
+      "url": "https://ojs.tnkul.pl/index.php/rt/article/download/8689/8368",
+      "kind": "scholarship",
+      "inspection": "Complete PDF acquired, SHA-256 fc35106d5395233383f382980d759ddc452663f139145a0ad74af5f8ca32d03b. Printed pp. 114–115 visually inspected; notes 24 and 32 distinguish the complementary Ordinarium and identify the 1603 missal.",
+      "limitations": "Copyrighted scholarship retained in scratch only. Its original descriptions are reported rather than presented as this dossier’s direct primary-book collation.",
+      "checked_on": "2026-10-17",
+      "status": "inspected"
+    },
+    {
+      "id": "latin-uses:carthusian1627",
+      "title": "Missale Cartusiani Ordinis (Lyon: Ioannes Pillehotte, 1627), BSB 2 Liturg. 197",
+      "url": "https://www.digitale-sammlungen.de/en/view/bsb10496380",
+      "kind": "primary-book",
+      "inspection": "Complete IA PDF acquired: 452,460,457 bytes, 527 pages, SHA-256 eab1a2289a878da9a97d08ffea74ae5ec41a431cee7d029e772533e7c3287339. Title canvas 7 and pp. 203–205, canvases 229–231, visually inspected; four exact page images retained in the canonical source library.",
+      "limitations": "Internet Archive item missale-carthusiense incorrectly dates this copy 1620. The title states chapter 1622 and imprint 1627. Complete acquisition is not complete transcription. BSB NoC-NC 1.0 image conditions; historical Latin public domain.",
+      "checked_on": "2026-10-17",
+      "status": "inspected"
+    },
+    {
+      "id": "latin-uses:carthusian-official-books",
+      "title": "Carthusian Order, liturgical books and official publications",
+      "url": "https://chartreux.org/moines/ressources/textes/",
+      "kind": "institutional-catalogue",
+      "inspection": "Complete public HTML acquired; liturgical-book list and notice about postconciliar revision and Roman recognition inspected.",
+      "limitations": "The page distinguishes the recognized missal from other books but provides no missal payload or verified 1981 publication date.",
+      "checked_on": "2026-10-17",
+      "status": "inspected"
+    },
+    {
+      "id": "latin-uses:legg1916",
+      "title": "J. Wickham Legg, The Sarum Missal edited from three early manuscripts (Oxford: Clarendon Press, 1916)",
+      "url": "https://archive.org/details/sarummissaledite00cathrich",
+      "kind": "critical-edition",
+      "inspection": "Complete 652-page PDF acquired and hashed. Page images inspected: printed pp. vi, viii–ix, xvi (PDF 10, 12–13, 20); dates, manuscript identities, Ordinary comparison and later additions checked.",
+      "checked_on": "2026-10-17",
+      "status": "inspected",
+      "limitations": "This is a critical edition published in 1916, not a 1916 liturgical state. Its report distinguishes C, A, B and M. Its general comparison with printed books does not identify a single print as the immediate descendant. The manuscript itself was not newly collated."
+    },
+    {
+      "id": "latin-uses:crawford-catalogue",
+      "title": "John Rylands Library, Latin MS 24, Sarum Missal",
+      "url": "https://www.digitalcollections.manchester.ac.uk/view/MS-LATIN-00024/295",
+      "kind": "institutional-catalogue",
+      "inspection": "Complete catalogue-page HTML retrieved and hashed; opening description inspected: mid-thirteenth-century manuscript made at Salisbury cathedral.",
+      "checked_on": "2026-10-17",
+      "status": "inspected",
+      "limitations": "Identity and dating evidence only; no manuscript image collation. The embedded 3-D model link label says Latin MS 124, inconsistent with the page and model identifier MS 24; it is not adopted."
+    },
+    {
+      "id": "latin-uses:henderson-hereford1874",
+      "title": "W. G. Henderson, Missale ad usum percelebris ecclesiae Herfordensis (Leeds, 1874)",
+      "url": "https://archive.org/details/missaleadusumpe00churgoog",
+      "kind": "critical-edition",
+      "inspection": "Complete 522-page PDF acquired and hashed. Images inspected: title (PDF 8), pp. iii–v (PDF 10–12), pp. 54–55 (PDF 109–110).",
+      "checked_on": "2026-10-17",
+      "status": "inspected",
+      "limitations": "The 1874 edition reprints 1502 with manuscript variants. The physical medieval manuscript and original 1502 leaves were not separately collated; the editor’s claim that only one manuscript survived is historical, not a current census. Later handwritten Henry VIII/Anne prayers in copies are not assigned to the printed 1502 state."
+    },
+    {
+      "id": "latin-uses:henderson-york1874",
+      "title": "W. G. Henderson, Missale ad usum insignis ecclesiae Eboracensis, vol. I (Surtees Society 59, 1874)",
+      "url": "https://archive.org/details/missaleadusumin00churgoog",
+      "kind": "critical-edition",
+      "inspection": "Complete 316-page volume I PDF acquired and hashed. Images inspected: pp. v–vi, ix–xi, xiii (PDF 10–11, 14–16, 18). Volume II was separately acquired in full (392 pages), but its detailed text comparison was not completed.",
+      "checked_on": "2026-10-17",
+      "status": "inspected",
+      "limitations": "The edition combines manuscript and print witnesses and is not a medieval date or a single historical missal. The printed table on p. vi and detailed manuscript descriptions disagree in letter assignments and dates; manuscript D is therefore not promoted here as an uncontested dated stage. No new manuscript stemma or complete original-book collation."
+    },
+    {
+      "id": "latin-uses:deri2009",
+      "title": "Balázs Déri, ed., Missale Strigoniense 1484, Monumenta Ritualia Hungarica I (Budapest: Argumentum, 2009)",
+      "url": "https://vallastudomany.elte.hu/sites/default/files/kiadvanyok/MRH/MRH01_Missale%20Strigoniense%201484.pdf",
+      "kind": "critical-edition",
+      "inspection": "Complete 813-page PDF acquired and hashed. Images inspected: title/copyright (PDF 3–4); printed pp. XXXIX, XLI, XLIII, XLV (PDF 49, 51, 53, 55).",
+      "checked_on": "2026-10-17",
+      "status": "inspected",
+      "limitations": "The exact PDF says 2009 on title and copyright pages, despite 2008 in catalogue leads. Copyright reserved to Argumentum and Déri; complete bytes remain research-only. The 1484 text is represented by a modern critical edition. The comparison is Déri’s, not a new full collation, and the editor warns against reducing 150 years of relationships to simple omission or addition."
+    },
+    {
+      "id": "latin-uses:esztergom-notatum-catalogue",
+      "title": "USUARIUM book 840: Missale notatum Strigoniense, AM Bratislava EC Lad 3",
+      "url": "https://usuarium.elte.hu/book/840/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Complete catalogue HTML retrieved and hashed; identity, 1320–1341 dating, main-volume designation, related fragments/volume and 1982 facsimile citation inspected.",
+      "checked_on": "2026-10-17",
+      "status": "inspected",
+      "limitations": "Catalogue identity and dates only. Contents locators are not a prayer collation. Data from USUARIUM: A Digital Library and Database for the Study of Latin Liturgical History in the Middle Ages and Early Modern Period, built by Miklós István Földváry et al., Eötvös Loránd University Research Group of Liturgical History, from 2015 onwards."
+    },
+    {
+      "id": "latin-uses:braga1538-primary",
+      "title": "Missale iuxta antiquam almae Bracarensis Ecclesiae consuetudinem (Lisbon: Germão Galharde, 16 July 1538), BNP RES-1633-A",
+      "url": "https://purl.pt/14877",
+      "kind": "primary-book",
+      "inspection": "Complete 368-page delivered PDF acquired: 422,386,823 bytes, SHA-256 cc797a89ed2122ee8595da02d60363a97e6954c3f458b7e783b5e90ad8c0a06d. Visually inspected Palm Sunday PDF 95–99, printed fols 41r–43r, and final fol. 184r–v, PDF 363–364. Colophon is on fol. 184v in this copy.",
+      "checked_on": "2026-10-17",
+      "status": "inspected",
+      "limitations": "The full digital file represents an incomplete physical copy: BNP identifies missing initial leaves and other losses. Whole acquisition does not reconstruct missing leaves or establish full collation. Provider public-copy terms identify public-domain historical scans as freely reusable under Public Domain Mark."
     }
   ],
   "stages": [
@@ -284,13 +419,13 @@
     {
       "id": "latin-uses:braga-1538",
       "tradition_id": "braga",
-      "label": "Braga state preceding Limpo’s revision",
-      "date_label": "1538",
+      "label": "Galharde’s revised Braga printing before Limpo",
+      "date_label": "16 July 1538",
       "start_year": 1538,
       "end_year": 1538,
       "date_kind": "publication",
       "status": "documented",
-      "scope": "Identified edition, represented through critical discussion of its Ordo and Palm Sunday.",
+      "scope": "Directly inspected Palm Sunday blessing and the printing’s own account of corrections and additions.",
       "components": [
         "ordinary",
         "propers",
@@ -300,8 +435,8 @@
         "western:braga-1538"
       ],
       "witness_label": "Missale Bracarense, Lisbon: Germão Galharde, 1538; BNP RES-1633-A",
-      "summary": "The pre-Limpo witness used in the reported comparison.",
-      "text_coverage": "not-transcribed",
+      "summary": "The colophon reports corrected passages, added Gloria/Credo rules and Masses of Christian victory and St Apollonia, preface notation following Coimbra cathedral practice, and removal of some material already available in the Manual. The Palm blessing has seven prayers and one preface.",
+      "text_coverage": "partial",
       "evidence": [
         {
           "source_id": "latin-uses:usuarium1538",
@@ -312,9 +447,19 @@
           "source_id": "latin-uses:carvalho",
           "locus": "p. 162, note 135; p. 164, note 141",
           "claim": "Colophon and comparison identify this state."
+        },
+        {
+          "source_id": "latin-uses:braga1538-primary",
+          "locus": "Colophon fol. 184v, PDF 364; preceding recto foliation on PDF 363",
+          "claim": "The colophon dates publication decimo septimo kalendas Augusti 1538 (16 July); names Galharde and corrector Fernandus Olegarius; expressly lists corrections, additions and omissions."
+        },
+        {
+          "source_id": "latin-uses:braga1538-primary",
+          "locus": "Palm blessing, fol. 42r–v, PDF 97–98",
+          "claim": "Seven prayer units are visible: Omnipotens…in diluvio, Petimus te, Deus cuius filius, Deus qui dispersa congregas, Domine Iesu Christe, Benedic Domine hos ramos, Omnipotens Iesu Christe; the preface begins Qui miro dispositionis ordine."
         }
       ],
-      "limitations": "Primary pages remain uninspected; catalogue colophon locator f. 184v differs from article f. 183v and needs reconciliation.",
+      "limitations": "The 1538 colophon describes its own revision without identifying the exact previous printing as an immediate parent. The earlier state has not been directly collated. This surviving copy is incomplete; the whole digital file is acquired, not the complete original printed volume.",
       "reception": "A book of the church of Braga; surviving print identification does not establish continuous archdiocesan use until 1558."
     },
     {
@@ -393,6 +538,335 @@
       ],
       "limitations": "These rules describe the 1924 state; their absence from 1558 has not been established. Later inserted feasts in this copy must not be assigned to 1924.",
       "reception": "The bull requires this missal for priests of the Archdiocese of Braga. This establishes the contemporary prescription, not universal subsequent observance or present law."
+    },
+    {
+      "id": "latin-uses:carthusian-1582",
+      "tradition_id": "carthusian",
+      "label": "Carthusian preparation in the 1582 Ordinarium",
+      "date_label": "1582",
+      "start_year": 1582,
+      "end_year": 1582,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Reported preparatory prayers and gestures in the complementary Ordinarium.",
+      "components": [
+        "ordinary",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:carthusian-ordinarium-1582"
+      ],
+      "witness_label": "Ordinarium Cartusiense, Paris, 1582",
+      "summary": "Preparation begins at the Gospel side with Pone Domine and a short Confiteor; the confession includes omissione and three strikes of the breast.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "latin-uses:carthusian-palecki",
+          "locus": "p. 114, notes 23–25",
+          "claim": "Describes the preparation from the Ordinarium and states that the 1603 missal does not print these preparation texts."
+        }
+      ],
+      "limitations": "Primary leaves not directly inspected. Their omission from a missal is not treated as omission from the liturgy or a ritual revision.",
+      "reception": "An identified order-level prescription or scholarly description does not establish use in every charterhouse."
+    },
+    {
+      "id": "latin-uses:carthusian-1603",
+      "tradition_id": "carthusian",
+      "label": "Paris missal following the 1602 chapter",
+      "date_label": "1603",
+      "start_year": 1603,
+      "end_year": 1603,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Reported Gloria wording and title authority.",
+      "components": [
+        "ordinary",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:carthusian-missale-1603"
+      ],
+      "witness_label": "Missale Cartusiani Ordinis, Paris: Iametius Mettayer, 1603",
+      "summary": "The Gloria reads propter gloriam tuam magnam. The cited title invokes the general chapter held in 1602; 1603 is the publication year.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "latin-uses:carthusian-palecki",
+          "locus": "p. 115, note 32, citing 1603 fol. 92v",
+          "claim": "Prints the Gloria word order and title with chapter 1602 and imprint 1603."
+        }
+      ],
+      "limitations": "USUARIUM 8356 links Google Books UxFlAAAAcAAJ, whose complete download returned HTTP 429. The 1582 Ordinarium is complementary evidence, not a demonstrated parent version.",
+      "reception": "An identified order-level prescription or scholarly description does not establish use in every charterhouse."
+    },
+    {
+      "id": "latin-uses:carthusian-1627",
+      "tradition_id": "carthusian",
+      "label": "Lyon witness authorized by the 1622 chapter",
+      "date_label": "1627",
+      "start_year": 1627,
+      "end_year": 1627,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Title and printed Ordinary prayers on pp. 203–205.",
+      "components": [
+        "ordinary",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:carthusian-1627",
+        "latin-missal:cartusiense-1620"
+      ],
+      "witness_label": "Missale Cartusiani Ordinis, Lyon: Ioannes Pillehotte, 1627; BSB 2 Liturg. 197",
+      "summary": "The title invokes the chapter of 1622. Gloria retains propter gloriam tuam magnam; the water prayer begins De latere Domini, the chalice offering uses In spiritu humilitatis, and Orate asks prayer pro me peccatore.",
+      "text_coverage": "partial",
+      "evidence": [
+        {
+          "source_id": "latin-uses:carthusian1627",
+          "locus": "Title, BSB canvas 7",
+          "claim": "Chapter year 1622 and Lyon printing 1627 are explicit."
+        },
+        {
+          "source_id": "latin-uses:carthusian1627",
+          "locus": "Printed pp. 203–205, canvases 229–231",
+          "claim": "The named Ordinary prayer loci and rubrics are directly image-checked."
+        }
+      ],
+      "limitations": "The legacy cartusiense-1620 identifier remains for stable references only. No complete Ordinary transcription and no intervening change from 1603 is inferred.",
+      "reception": "An identified order-level prescription or scholarly description does not establish use in every charterhouse."
+    },
+    {
+      "id": "latin-uses:sarum-crawford",
+      "tradition_id": "sarum",
+      "label": "Crawford missal before the later vesting additions",
+      "date_label": "Mid-thirteenth century",
+      "start_year": 1200,
+      "end_year": 1299,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "The base Ordinary and calendar of Legg’s manuscript C.",
+      "components": [
+        "ordinary",
+        "rubrics",
+        "calendar"
+      ],
+      "witness_ids": [
+        "western:sarum-crawford-latin24"
+      ],
+      "witness_label": "Sarum Missal, John Rylands Library Latin MS 24; Legg manuscript C",
+      "summary": "Veni Creator belongs at the beginning of Mass. The relics feast is entered on 15 September and Corpus Christi is absent from the base book. Prayers for individual vestments in a vacant space are a much later hand.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "latin-uses:crawford-catalogue",
+          "locus": "Opening manuscript description",
+          "claim": "Dates and identifies Latin MS 24 as a mid-thirteenth-century Salisbury manuscript."
+        },
+        {
+          "source_id": "latin-uses:legg1916",
+          "locus": "pp. vi and xvi (PDF 10, 20)",
+          "claim": "Identifies C and distinguishes its base Ordinary/calendar from late additions."
+        }
+      ],
+      "limitations": "The numeric bounds encode the identified century, not a claim of use throughout it. No universal Sarum inception date is inferred, and later added prayers are not dated to the base hand.",
+      "reception": "A Sarum book, with Legg recording its own closing identification of the use; no claim that every Sarum church used an identical Ordinary."
+    },
+    {
+      "id": "latin-uses:sarum-bologna",
+      "tradition_id": "sarum",
+      "label": "Bologna manuscript’s vesting and offertory arrangement",
+      "date_label": "First quarter of the fourteenth century",
+      "start_year": 1300,
+      "end_year": 1325,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "The Ordinary in Legg’s manuscript B, with added calendar directions kept distinct.",
+      "components": [
+        "ordinary",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:sarum-bologna2565"
+      ],
+      "witness_label": "Sarum Missal, Bologna University Library MS 2565; Legg manuscript B",
+      "summary": "Individual vestment prayers accompany preparation, while Veni Creator occurs at the offertory. A later calendar annotation directs the relics feast to the Sunday after the July translation of Thomas of Canterbury, while its service remains at the September position.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "latin-uses:legg1916",
+          "locus": "pp. viii–ix and xvi (PDF 12–13, 20)",
+          "claim": "Identifies and dates B; distinguishes the later calendar annotation and describes the Ordinary difference."
+        }
+      ],
+      "limitations": "The annotation is later than the base hand and has no independently verified insertion date. C and B are compared witnesses, not a demonstrated immediate parent and revised child.",
+      "reception": "The editor suggests an Oxford destination from a Frideswide formulary; this remains his inference, not a new provenance finding."
+    },
+    {
+      "id": "latin-uses:hereford-whitchurch",
+      "tradition_id": "hereford",
+      "label": "Whitchurch manuscript with local Dubricius observance",
+      "date_label": "Fourteenth century",
+      "start_year": 1300,
+      "end_year": 1400,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Selected calendar and Mass proper features in Henderson’s University College manuscript.",
+      "components": [
+        "calendar",
+        "propers"
+      ],
+      "witness_ids": [
+        "western:hereford-whitchurch-university-college"
+      ],
+      "witness_label": "Hereford-use Whitchurch missal, University College Oxford; Henderson’s fourteenth-century manuscript",
+      "summary": "The calendar marks the local dedication on 11 March and Dubricius on 14 November; a Dubricius Mass is present. For the second Sunday of Lent Henderson reports the Secret Sacrificiis praesentibus, Domine.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "latin-uses:henderson-hereford1874",
+          "locus": "pp. iii–v (PDF 10–12)",
+          "claim": "Identifies the manuscript, local dedication and Dubricius Mass, and prints its second-Lent-Sunday Secret variant."
+        }
+      ],
+      "limitations": "The manuscript is incomplete, including substantial Holy Week and Canon losses. The feast’s presence in a local book does not prove that it was obligatory across the diocese.",
+      "reception": "Henderson identifies the original church as Whitchurch, Monmouthshire, from its dedication to Dubricius."
+    },
+    {
+      "id": "latin-uses:hereford-1502",
+      "tradition_id": "hereford",
+      "label": "Hereford printing represented by Henderson",
+      "date_label": "1502",
+      "start_year": 1502,
+      "end_year": 1502,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Selected proper differences from the Whitchurch manuscript.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:hereford-1502"
+      ],
+      "witness_label": "Missale Herfordense, Rouen: Pierre Olivier and Jean Mauditier for Jean Richard, 1502; represented by Henderson 1874",
+      "summary": "The printed second-Sunday-of-Lent Secret is Ecclesiae tuae, Domine, munera placatus assume. Henderson reports that the manuscript’s Dubricius Mass is absent from the printing.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "latin-uses:henderson-hereford1874",
+          "locus": "p. iii (PDF 10)",
+          "claim": "Transcribes the 1 September 1502 imprint and episcopal/chapter authority claim."
+        },
+        {
+          "source_id": "latin-uses:henderson-hereford1874",
+          "locus": "pp. iv–v and 54–55 (PDF 11–12, 109–110)",
+          "claim": "Reports the Dubricius difference and allows the manuscript Secret to be compared with the printed base text."
+        }
+      ],
+      "limitations": "The 1502 original is mediated by Henderson’s critical reprint. The witness difference does not identify when or why the prayers diverged, nor prove a diocesan decree removing a local feast.",
+      "reception": "The printed title reports bishop, dean and chapter authority; geographical uptake remains unestablished."
+    },
+    {
+      "id": "latin-uses:york-printed-sequence",
+      "tradition_id": "york",
+      "label": "York’s closely related printed witnesses",
+      "date_label": "c. 1509–1533",
+      "start_year": 1509,
+      "end_year": 1533,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Henderson’s bounded comparison of five printed editions.",
+      "components": [
+        "rubrics",
+        "calendar",
+        "chant"
+      ],
+      "witness_ids": [
+        "western:york-printing-series"
+      ],
+      "witness_label": "York missals: Violette, undated c. 1509; Gachet 1516; Bernard/Cousin 1517; Gachet 1530; Regnault 1533",
+      "summary": "The earliest printing lacks the monthly calendar notices and places Modus finiendi Collectas and Considerationes circa Missam differently. Henderson reports shared errors across the sequence, including an omitted Holy Saturday rubric line and Petrocius placed in April rather than June; musical note lengths also vary.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "latin-uses:henderson-york1874",
+          "locus": "pp. vi and xiii (PDF 11, 18)",
+          "claim": "Lists the early prints and describes their limited differences and continuing shared errors."
+        }
+      ],
+      "limitations": "This bounded witness group is not one complete reconstructed book or five independently proved recensions. The first print is undated; c. 1509 is the editor’s attribution. His proposed manuscript ancestry is explicitly tentative.",
+      "reception": "Printed intended use is York. Henderson describes substantial earlier manuscript ceremonial diversity, so the printed state must not be projected backwards to all medieval York books."
+    },
+    {
+      "id": "latin-uses:esztergom-notatum",
+      "tradition_id": "esztergom",
+      "label": "Notated missal’s larger medieval repertory",
+      "date_label": "1320–1341",
+      "start_year": 1320,
+      "end_year": 1341,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Preparation placement and proper/sequence repertory compared by Déri with 1484.",
+      "components": [
+        "ordinary",
+        "propers",
+        "chant"
+      ],
+      "witness_ids": [
+        "western:esztergom-notatum-pre1341"
+      ],
+      "witness_label": "Missale notatum Strigoniense ante 1341; main volume AM Bratislava EC Lad 3, with related surviving material",
+      "summary": "Déri counts approximately 210 saints with special propers and 78 sequences in the fourteenth-century notated missal. It also includes the Pentecost-octave Mass and the Transfiguration grape blessing that his later comparators lack. Preparation follows the Holy Saturday baptismal order.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "latin-uses:esztergom-notatum-catalogue",
+          "locus": "Book identity and related-book list",
+          "claim": "Identifies the main volume and dates the witness 1320–1341."
+        },
+        {
+          "source_id": "latin-uses:deri2009",
+          "locus": "pp. XLI, XLIII and XLV (PDF 51, 53, 55)",
+          "claim": "States the earlier repertory and compares it with the fifteenth-century witnesses."
+        }
+      ],
+      "limitations": "The manuscript is incomplete and composite surviving material must be mapped carefully. Its fuller repertory may include options rather than mandatory observance of every listed item.",
+      "reception": "A medieval Esztergom exemplar; no claim that every listed saint or sequence was used in every celebration."
+    },
+    {
+      "id": "latin-uses:esztergom-1484",
+      "tradition_id": "esztergom",
+      "label": "Esztergom’s 1484 printed repertory",
+      "date_label": "1484",
+      "start_year": 1484,
+      "end_year": 1484,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Selected repertory and arrangement changes reported in Déri’s edition.",
+      "components": [
+        "ordinary",
+        "propers",
+        "chant"
+      ],
+      "witness_ids": [
+        "western:esztergom-1484"
+      ],
+      "witness_label": "Missale Strigoniense, Nuremberg: Anton Koberger, completed 31 August 1484; Déri’s critical text",
+      "summary": "Compared with the pre-1341 witness, the special-proper sanctoral is reduced by about one third. The later sequentiary retains 39 of the earlier 78 sequences and adds ten others; its material substantially agrees with the intervening Pálóczi manuscript. Preparation prayers move to the beginning of the book.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "latin-uses:deri2009",
+          "locus": "p. XXXIX (PDF 49)",
+          "claim": "Reproduces the 31 August 1484 colophon, printer and chapter/vicar authority."
+        },
+        {
+          "source_id": "latin-uses:deri2009",
+          "locus": "pp. XLI, XLIII and XLV (PDF 51, 53, 55)",
+          "claim": "Describes preparation placement, sanctoral reduction and sequence comparison."
+        }
+      ],
+      "limitations": "The 1484 book is not identified as the moment when all differences first arose. Déri expressly requires more complex relationships than a single subtraction/addition sequence; the Pálóczi comparator already shares much of the later state. The absent intervening preparation texts could be a copying omission or assumed memorized text, not a proven ritual abolition.",
+      "reception": "The colophon identifies Esztergom use and the vicar and chapter’s assent; survival of a printing does not demonstrate uniform implementation."
     }
   ],
   "transitions": [
@@ -602,13 +1076,18 @@
           "component": "rubrics",
           "before": "Palm blessing: seven prayers and a preface.",
           "after": "Six prayers and a preface; four older prayers retained in a new order.",
-          "locus_before": "1538 and earlier editions: Carvalho p. 164 n. 141",
+          "locus_before": "1538 fol. 42r–v, PDF 97–98; earlier-edition context in Carvalho p. 164 n. 141",
           "locus_after": "1558: Carvalho p. 164 n. 141",
           "evidence": [
             {
               "source_id": "latin-uses:carvalho",
               "locus": "p. 164, note 141",
               "claim": "Reports Bragança’s comparison."
+            },
+            {
+              "source_id": "latin-uses:braga1538-primary",
+              "locus": "Fol. 42r–v, PDF 97–98",
+              "claim": "Direct visual inspection confirms the earlier seven blessing prayers and one preface."
             }
           ]
         }
@@ -618,9 +1097,14 @@
           "source_id": "latin-uses:carvalho",
           "locus": "pp. 163–165",
           "claim": "Describes Limpo’s revision and its comparison."
+        },
+        {
+          "source_id": "latin-uses:braga1538-primary",
+          "locus": "Fol. 42r–v, PDF 97–98",
+          "claim": "Direct visual inspection confirms the earlier seven blessing prayers and one preface."
         }
       ],
-      "limitations": "Scholarly description only; exact source-text ancestry remains unestablished. No direct dependence on a Carmelite missal is asserted.",
+      "limitations": "The earlier Palm blessing count now has direct primary-page verification. The 1558 comparison remains a scholarly description; exact source-text ancestry is unestablished. No direct dependence on a Carmelite missal is asserted.",
       "comparison_ids": [],
       "historical_parentage": "unestablished"
     },
@@ -652,6 +1136,102 @@
       "limitations": "This edge records chronology only. The 1924 future-adaptation rule is described in its stage; no unsupported before/after rule change is inferred.",
       "comparison_ids": [],
       "historical_parentage": "unestablished"
+    },
+    {
+      "id": "latin-uses:carthusian-1603-1627-witnesses",
+      "from_stage": "latin-uses:carthusian-1603",
+      "to_stage": "latin-uses:carthusian-1627",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "Two dated missal witnesses retain the same reported Gloria word order; their titles invoke different chapters. Intervening revision extent is not established.",
+      "components": [
+        "ordinary"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "latin-uses:carthusian-palecki",
+          "locus": "p. 115, note 32",
+          "claim": "Identifies the earlier printing and Gloria."
+        },
+        {
+          "source_id": "latin-uses:carthusian1627",
+          "locus": "Title and p. 203",
+          "claim": "Identifies chapter 1622 and printing 1627; Gloria matches the reported earlier order."
+        }
+      ],
+      "limitations": "Succession and a retained phrase do not establish direct descent or that the remaining book was unchanged.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished"
+    },
+    {
+      "id": "latin-uses:esztergom-medieval-repertory-change",
+      "from_stage": "latin-uses:esztergom-notatum",
+      "to_stage": "latin-uses:esztergom-1484",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "The two Esztergom witnesses delimit substantive repertory and book-arrangement changes, many already present in the intervening Pálóczi manuscript.",
+      "components": [
+        "ordinary",
+        "propers",
+        "chant"
+      ],
+      "changes": [
+        {
+          "component": "propers",
+          "before": "Approximately 210 saints with special propers; Pentecost-octave Mass and Transfiguration grape blessing present.",
+          "after": "The special-proper repertory is reduced by about one third; the two named observances are absent in the Pálóczi and 1484 comparators.",
+          "locus_before": "Missale notatum as compared in Déri, p. XLIII (PDF 53)",
+          "locus_after": "1484 missal as compared in Déri, p. XLIII (PDF 53)",
+          "evidence": [
+            {
+              "source_id": "latin-uses:deri2009",
+              "locus": "p. XLIII (PDF 53)",
+              "claim": "The critical editor compares these identified earlier and later arrangements or repertories."
+            }
+          ]
+        },
+        {
+          "component": "chant",
+          "before": "78 sequences in the earlier notated missal.",
+          "after": "39 of those sequences retained, plus ten additional sequences; the later repertory substantially agrees with Pálóczi.",
+          "locus_before": "Missale notatum as compared in Déri, p. XLV (PDF 55)",
+          "locus_after": "1484 missal as compared in Déri, p. XLV (PDF 55)",
+          "evidence": [
+            {
+              "source_id": "latin-uses:deri2009",
+              "locus": "p. XLV (PDF 55)",
+              "claim": "The critical editor compares these identified earlier and later arrangements or repertories."
+            }
+          ]
+        },
+        {
+          "component": "ordinary",
+          "before": "Preparation follows the Holy Saturday baptismal order and precedes the Mass order.",
+          "after": "Preparation appears at the start of the printed book, divided by the calendar.",
+          "locus_before": "Missale notatum as compared in Déri, p. XLI (PDF 51)",
+          "locus_after": "1484 missal as compared in Déri, p. XLI (PDF 51)",
+          "evidence": [
+            {
+              "source_id": "latin-uses:deri2009",
+              "locus": "p. XLI (PDF 51)",
+              "claim": "The critical editor compares these identified earlier and later arrangements or repertories."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "latin-uses:deri2009",
+          "locus": "pp. XLI, XLIII and XLV (PDF 51, 53, 55)",
+          "claim": "Direct critical comparison of the named witnesses."
+        }
+      ],
+      "limitations": "This is an aggregate endpoint change across about 150 years, not a single 1484 promulgation, an immediate parent-child edge, or proof that every omitted item ceased to be celebrated. Preparation placement concerns the book’s arrangement, not the sequence of actions during Mass.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished"
     }
   ],
   "gaps": [
@@ -675,16 +1255,16 @@
       "id": "latin-uses:braga-primary-pairs",
       "tradition_id": "braga",
       "period": "1538–1558",
-      "missing": "Primary-page collation of the Ordo and Palm Sunday blessings described by Carvalho.",
-      "next_source": "BNP RES-1633-A, https://purl.pt/14877 (1538); BnF B-1478, https://gallica.bnf.fr/ark:/12148/bpt6k993722f (1558). USUARIUM locators: 1538 Palm Sunday PDF 95/f. 41r, ordinary PDF 230/f. 108v and PDF 240/f. 114v; 1558 Ordo PDF 23/f. 1r, Palm Sunday PDF 165/f. 72r, colophon PDF 522/f. 250v. Original comparison cited by Carvalho: J. O. Bragança, “A reforma litúrgica de D. Frei Baltasar Limpo”, Actas do III Congresso Histórico de Guimarães, II (Guimarães, 2004), p. 197.",
-      "consequence": "Transition stays scholarly-description until actual page pairs are inspected; colophon foliation discrepancy must be reconciled."
+      "missing": "Primary-page acquisition and collation of the 1558 Ordo and Palm Sunday against the now-acquired 1538 file.",
+      "next_source": "1538 BNP RES-1633-A is now acquired from https://purl.pt/14877/4/res-1633-a_PDF/res-1633-a_PDF_24-C-R0150/res-1633-a_0000_capa-capa_t24-C-R0150.pdf . Palm blessing is fol. 42r–v (PDF 97–98); colophon is fol. 184v (PDF 364), resolving the previous 183v discrepancy. For 1558 BnF B-1478, https://gallica.bnf.fr/ark:/12148/bpt6k993722f.pdf , public IIIF f165 image and f165.highres all returned HTTP 403 on 17 October 2026. The original comparison remains J. O. Bragança, “A reforma litúrgica de D. Frei Baltasar Limpo”, Actas do III Congresso Histórico de Guimarães II (2004), p. 197.",
+      "consequence": "The earlier prayer count and 1538 editorial program now have direct evidence. The endpoint transition remains scholarly-description until the 1558 pages can be checked."
     },
     {
       "id": "latin-uses:braga-1924-reform",
       "tradition_id": "braga",
       "period": "1558–1924",
       "missing": "Specific ordinary, proper, lectionary or rubric changes made by the 1924 revisers.",
-      "next_source": "Pinheiro 2019 thesis, repository handle 10400.14/29449; advertised comparisons with MB1558, MR-S1886 and MR1921. Download route yielded anti-bot HTML, not the thesis. Compare primary 1558 book with dated 1924 leaves after leaf mapping.",
+      "next_source": "Pinheiro 2019 thesis, repository handle 10400.14/29449; advertised comparisons with MB1558, MR-S1886 and MR1921. Download route yielded anti-bot HTML, not the thesis. Compare primary 1558 book with dated 1924 leaves after leaf mapping. On 17 October 2026 the current DSpace entity c7cfc454-4efc-4735-be4c-a41b9795c233/full was also located through public discovery, but both the entity request and handle delivery failed (403 or connection refused); no actual thesis PDF was retrieved.",
       "consequence": "The 1558→1924 edge remains witness-succession rather than a proved substantive revision."
     },
     {
@@ -694,6 +1274,54 @@
       "missing": "A reviewed page-to-edition leaf map for the exact acquired scan.",
       "next_source": "src/sources/inventories/missale-bracarense-rights-v1.toml and acquired PDF sha256 2be6474d75f495f79a74eac962355aa880d08b326915c3a3547ae7be82930841; map separately the title, 1924 prefatory acts and later supplement gatherings.",
       "consequence": "No scan or text payload from the mixed file is approved for repository publication by this dossier."
+    },
+    {
+      "id": "latin-uses:carthusian-revisions",
+      "tradition_id": "carthusian",
+      "period": "1481–1679",
+      "missing": "Direct collation of early missals, complete 1582 Ordinarium and 1603 missal, and complete 1677 ordinance reprinted in 1679.",
+      "next_source": "USUARIUM 8356 links Google Books UxFlAAAAcAAJ (download HTTP 429 on 17 October 2026). Gallica bpt6k9127828m manifest, text and page routes returned HTTP 403. The 1679 title cites chapter 1677; read the full prefatory ordinance and named changed passages before asserting a revision.",
+      "consequence": "The 1627 identity is resolved and a bounded direct state exists; substantive changes cannot be reconstructed from title-date succession."
+    },
+    {
+      "id": "latin-uses:carthusian-modern",
+      "tradition_id": "carthusian",
+      "period": "Postconciliar revision; reported 1981 printing",
+      "missing": "Original-language missal, approval instrument and verified publication date.",
+      "next_source": "The official https://chartreux.org/moines/ressources/textes/ page confirms the missal’s distinct recognition status but supplies no missal or date. Bibliographic 1981 remains a lead.",
+      "consequence": "No protected modern text is imported and no detailed revision follows from a catalogue year."
+    },
+    {
+      "id": "latin-uses:sarum-print-boundary",
+      "tradition_id": "sarum",
+      "period": "Thirteenth to sixteenth centuries",
+      "missing": "Exact early print witnesses for Legg’s general Ordinary comparison, and the dates/mechanisms of manuscript changes.",
+      "next_source": "Collate Legg pp. 216–230 with separately identified Sarum prints; inspect the source manuscript images.",
+      "consequence": "No linear C-to-B reform or single manuscript-to-print revision date is asserted."
+    },
+    {
+      "id": "latin-uses:hereford-local-versus-diocesan",
+      "tradition_id": "hereford",
+      "period": "Fourteenth century–1502",
+      "missing": "Whether local Whitchurch features and changed proper readings reflect local adaptation, distinct transmission, or a diocesan intervention.",
+      "next_source": "Whitchurch manuscript and 1502 original; further medieval Hereford witnesses including BL Add. 39675.",
+      "consequence": "The local Dubricius difference is not recorded as a proven removal from the diocesan use."
+    },
+    {
+      "id": "latin-uses:york-manuscript-identities",
+      "tradition_id": "york",
+      "period": "Medieval York–1533",
+      "missing": "Reconciled manuscript sigla and dates, and directly collated ceremonial states.",
+      "next_source": "Henderson’s detailed descriptions, table and corrigenda; current holding catalogues; Ordinary/Canon parallel columns.",
+      "consequence": "Printed succession does not become five revisions; the conflicting manuscript table does not supply an uncontested dated stage."
+    },
+    {
+      "id": "latin-uses:esztergom-intermediate-revisions",
+      "tradition_id": "esztergom",
+      "period": "1320–1484 and later",
+      "missing": "Precise dates and mechanisms of repertory reduction, and relationships among all intervening books.",
+      "next_source": "Pálóczi manuscript OSZK Clmae 359, Missale notatum facsimile and original 1484 print; later 1491/1498 editions.",
+      "consequence": "The endpoint change cannot be assigned wholesale to the 1484 printing or treated as abolition of every omitted observance."
     }
   ]
 }

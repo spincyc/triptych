@@ -49,20 +49,20 @@
       "title": "Missale mixtum secundum regulam beati Isidori dictum Mozarabes; Alexander Lesley, Rome 1755",
       "url": "https://archive.org/details/bub_gb_hAJaQabODUYC",
       "kind": "primary-book",
-      "inspection": "Acquired complete 761-page Florence/Google PDF. Image-inspected title (PDF 8), Advent IV pp 15–16 (PDF 134–135), Benedictio panis p 471 (PDF 591), reprinted 1500 colophon (PDF 592), Appendix prima p 621 (PDF 739). Other pages searched only as OCR leads.",
-      "checked_on": "2026-10-16",
+      "inspection": "Acquired complete 761-page Florence/Google PDF. Image-inspected title (PDF 8), Advent IV pp 15–16 (PDF 134–135), Benedictio panis p 471 (PDF 591), reprinted 1500 colophon (PDF 592), Appendix prima p 621 (PDF 739). Other pages searched only as OCR leads. On 2026-10-19 the exact original JPEG2000 source image 590 was retained and independently collated against the complete nineteen-line Benedictio panis transcription (nine units); it resolves quinque where the bilevel PDF obscures i. Title PDF 8, publisher dedication and reprinted colophon PDF 592 were reopened.",
+      "checked_on": "2026-10-19",
       "status": "inspected",
-      "limitations": "Complete file acquisition is not complete transcription or complete page review. Scan resolution and OCR are poor. The original 1500 colophon is mediated through this reprint; NYPL 408-image copy is incomplete and was not substituted for this copy."
+      "limitations": "Complete file acquisition is not complete transcription or complete page review. The native binding covers only the complete Benedictio panis. NYPL’s 408-image copy is incomplete and was not substituted for the complete Florence copy. The original 1500 colophon is now separately retained and inspected in the Castilla-La Mancha witness."
     },
     {
       "id": "hispano-mozarabic-1804-book",
       "title": "Missale Gothicum, Rome: Fulgonius, 1804; BSB Res/2 Liturg. 222 m",
       "url": "https://www.digitale-sammlungen.de/en/view/bsb10869679",
       "kind": "primary-book",
-      "inspection": "Inspected BSB IIIF manifest (854 canvases), title canvas 7; water blessing p XV and bread blessing p XVI (canvases 21–22); Temporal cols 1–2 (canvas 23), Advent IV cols 39–40 (canvas 42); Arévalo Illustratio cols 1145–1146 and Lesley dissertation cols 1147–1148 (canvases 667–668).",
-      "checked_on": "2026-10-16",
+      "inspection": "Inspected BSB IIIF manifest (854 canvases), title canvas 7; water blessing p XV and bread blessing p XVI (canvases 21–22); Temporal cols 1–2 (canvas 23), Advent IV cols 39–40 (canvas 42); Arévalo Illustratio cols 1145–1146 and Lesley dissertation cols 1147–1148 (canvases 667–668). The title and complete bread blessing were freshly reopened on 2026-10-19; all nineteen transcription lines and nine semantic units were independently collated. The reprinted colophon (canvas 666) and editor’s method (canvas 667) are now retained canonically and independently reviewed; the colophon repeats 1755’s Bagembach error against the original 1500 Hagenbach. Whole-book regeneration succeeded on 2026-10-19: HEAD 200 and GET bytes 0–31 returned 206, application/pdf and total 744082515 bytes. A subsequent complete GET acquired all 744082515 bytes; independently verified SHA-256 c5eb4c0dc348d13aab77b35b4232c0c74c2a162a475bfbdca33c4362841784f9. PDF inspection established 855 pages: a modern BSB delivery cover plus 854 book images. Complete image census found one scan image on each PDF page 2–855; cover, first two book images and canvas 22 at PDF page 23 were visually checked.",
+      "checked_on": "2026-10-19",
       "status": "inspected",
-      "limitations": "Complete-book download service was attempted first and timed out after 60 seconds with incomplete HTML; only listed IIIF page images were acquired. No claim of complete collation. IIIF manifest records NoC-NC/1.0; do not treat hosted scan as unrestricted public-domain payload."
+      "limitations": "The complete 855-page PDF (delivery cover plus 854 book images) was acquired and hashed, but remains deliberately remote because its measured 744082515-byte size would substantially increase every ordinary-Git checkout; the exact reason and retrieval receipt are in the canonical bsb-complete-pdf artifacts. Generated links expire; the institutional whole-book form can regenerate them. Exact retained title, complete blessing, colophon and editorial-method pages support the bounded offline claims. Remaining pages are not available in an offline checkout; no complete-volume collation is claimed. BSB NoC-NC/1.0 conditions remain explicit for hosted images and PDF."
     },
     {
       "id": "hispano-mozarabic-1988",
@@ -129,13 +129,86 @@
       "title": "BnF Gallica, Missale mixtum 1500, Arsenal FOL-T-742; ISTC im 00732000",
       "url": "https://gallica.bnf.fr/ark:/12148/bpt6k8728875t",
       "kind": "institutional-catalogue",
-      "inspection": "Attempted Gallica IIIF manifest; HTTP 403. ISTC URL returned bot challenge. Existing repository identity retained, but fresh direct 1500 page inspection not achieved.",
+      "inspection": "Attempted Gallica IIIF manifest; HTTP 403. ISTC URL returned bot challenge. Existing repository identity retained, but this Gallica route did not yield fresh page inspection. The separately identified Castilla-La Mancha copy was subsequently acquired and inspected; see its own source row.",
       "checked_on": "2026-10-16",
       "status": "lead",
       "limitations": "Lead only; do not use current blocked access as an inspected source or full-text acquisition."
+    },
+    {
+      "id": "hispano-mozarabic-ferotin-1912",
+      "title": "Marius Férotin, Le Liber Mozarabicus Sacramentorum et les manuscrits mozarabes (Paris 1912)",
+      "url": "https://archive.org/details/lelibermozarabic06cath",
+      "kind": "critical-edition",
+      "inspection": "Complete 672-page institutional PDF and full OCR acquired and retained. PDF SHA-256 f4a97029d36bc0ff9ab5de1509bb1e0f5d6d36d0f2cf664f3e79d100654a785b; 61169486 bytes. Printed xxv–xxvi/PDF 29–30 and cols 689–690/PDF 441 visually inspected.",
+      "checked_on": "2026-10-17",
+      "status": "inspected",
+      "limitations": "1912 critical edition is not a manuscript facsimile. Its 9th-century dating of 35.3 differs from the later 12th-century attribution and is recorded as an attribution, not silently adopted. Raw OCR misreads 234 folios as 534; images control this fact."
+    },
+    {
+      "id": "hispano-mozarabic-camarero-2004",
+      "title": "Jesús Camarero Cuñado, La figura del santo en la liturgia: fuentes archivísticas, Memoria Ecclesiae 24 (2004)",
+      "url": "https://scrinia.org/wp-content/uploads/2021/12/Memoria-Ecclesiae-24.pdf",
+      "kind": "scholarship",
+      "inspection": "Complete publisher/institutional volume downloaded; printed pp. 688–689/PDF 688–689 visually inspected. Explicitly identifies Toledo 35.3 as tradition A, describes 234 folios and 12th-century Santa Eulalia copying.",
+      "checked_on": "2026-10-17",
+      "status": "inspected",
+      "limitations": "Original scholarly discussion, not a direct manuscript facsimile or a modern final-missal collation. Dating differs materially from Férotin 1912; neither a 1912 manuscript date nor a common A/B ancestor is inferred."
+    },
+    {
+      "id": "hispano-mozarabic-janini-1984",
+      "title": "José Janini, El Ordo missae del Misal mozárabe de Cisneros, Anales Valentinos 10 (1984), 333–344",
+      "url": "https://dialnet.unirioja.es/descarga/articulo/9655685.pdf",
+      "kind": "scholarship",
+      "inspection": "Read institutional PDF text rendering, pp 333–340 and appendices. Direct download failed TLS; screenshot requests timed out. No local complete PDF or checked images acquired.",
+      "checked_on": "2026-10-17",
+      "status": "inspected",
+      "limitations": "Critical comparison mediated through cited editions. Article p 339 contradicts Férotin’s non-use claim for Toledo 35.3; manuscript and print originals require independent checking."
+    },
+    {
+      "id": "hispano-mozarabic-1500-castilla",
+      "title": "Missale mixtum, Toledo 1500; Biblioteca de Castilla-La Mancha Inc.1, record 12134",
+      "url": "https://patrimoniodigital.castillalamancha.es/bidicam/es/catalogo_imagenes/imagen_id.do?idImagen=100617795&formato=jpg&registrardownload=0",
+      "kind": "primary-book",
+      "inspection": "All 973 offered institutional image positions were acquired and retained as ten lossless PDF parts with exact per-page URL/hash receipts. Fresh 2026-10-19 independent review checked the entire Benedictio panis at position 964 against all nineteen transcription lines and nine semantic units, and directly read the original publication colophon at position 965: Toledo, Petrus Hagenbach, for Melchior Gorricius, 9 January 1500.",
+      "checked_on": "2026-10-19",
+      "status": "inspected",
+      "limitations": "Complete offered-sequence acquisition is not a verification of the physical copy against every printed gathering or a complete-volume transcription/collation. Only the complete bread blessing is bound as native text here; unrelated matter sharing its page is excluded. Institutional images carry CC BY 4.0 with library attribution; the historical Latin has its separate public-domain basis."
     }
   ],
   "stages": [
+    {
+      "id": "hispano-mozarabic-a-toledo-35-3",
+      "tradition_id": "hispanic-tradition-a",
+      "label": "Toledo 35.3: tradition A sacramentary",
+      "date_label": "Medieval; 12th century in 2004 study, 9th century in Férotin 1912",
+      "start_year": null,
+      "end_year": null,
+      "date_kind": "attestation",
+      "status": "provisional",
+      "scope": "Individually identified priestly euchology witness, mediated by a critical edition and later scholarship; exact manuscript date remains unresolved.",
+      "components": [
+        "anaphoras",
+        "propers"
+      ],
+      "witness_ids": [],
+      "witness_label": "Toledo Cathedral Library 35.3, 234 folios; Santa Eulalia ownership; chief witness of Férotin 1912.",
+      "summary": "Tradition A is now represented by an identified manuscript witness, without a false A→B succession.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "hispano-mozarabic-camarero-2004",
+          "locus": "pp 688–689",
+          "claim": "Explicitly assigns 35.3 toA and describes its variable priestly prayers and lacunae."
+        },
+        {
+          "source_id": "hispano-mozarabic-ferotin-1912",
+          "locus": "ppxxv–xxvi; cols 689–690",
+          "claim": "Describes lost first leaves, 234 folios, two hands and Santa Eulalia provenance; distinguishes the manuscript from the 1912 supplemented critical edition."
+        }
+      ],
+      "limitations": "No direct 35.3 images acquired. Date bounds deliberately unset because inspected sources disagree. 1912 publication is not the date of this manuscript; Férotin supplements its lacunae from other manuscripts, so the complete edition must not be labeled pure 35.3. Exact contributions to 1991/1994 remain uncollated.",
+      "reception": "Evidence of a medieval Hispanic source tradition, later used in critical reconstruction; no continuous or exclusive modern reception inferred."
+    },
     {
       "id": "hispano-mozarabic-manuscript-bl30846",
       "tradition_id": "hispanic-manuscripts-unassigned",
@@ -191,7 +264,7 @@
       ],
       "witness_label": "Missale mixtum secundum regulam beati Isidori dictum Mozarabes; Toledo 1500",
       "summary": "The print consolidates B-based materials used by the Saints Justa and Rufina community. Its Order retains Creed before fraction and Lord’s Prayer, while adding Roman devotional material to Hispanic formulas. The printed compilation is an editorial state with partly lost manuscript exemplars.",
-      "text_coverage": "not-transcribed",
+      "text_coverage": "partial",
       "evidence": [
         {
           "source_id": "hispano-mozarabic-1988",
@@ -207,10 +280,21 @@
           "source_id": "hispano-mozarabic-2014",
           "locus": "p 506",
           "claim": "Describes the 1500 Ordo as Hispanic formulas adapted to a Roman Toledan order with priestly apologies."
+        },
+        {
+          "source_id": "hispano-mozarabic-janini-1984",
+          "locus": "pp 334–339",
+          "claim": "Traces the Roman-Toledan preparatory layer and composite Hispanic Order, including Toledo 35.6; attributes the James formulary to Toledo 35.3 and London Add.30844."
+        },
+        {
+          "source_id": "hispano-mozarabic-1500-castilla",
+          "locus": "Position 964, complete blessing; position 965, original publication colophon",
+          "claim": "Complete source-defined Benedictio panis independently image-collated and bound as nine native text units, with declared reading normalization; no complete Ordinary or missal claimed."
         }
       ],
-      "limitations": "Exact day is currently inspected through 1755’s reprinted colophon, not the 1500 original. This dossier has no full 1500 text and no quantified inventory of additions. The Roman-source dating differs in emphasis between 1988 (thirteenth-century copies) and 2014 (fifteenth-century usage); no false reconciliation.",
-      "reception": "Cisneros established the Corpus Christi chapel for daily Mass and Office; the 1988 account also notes earlier parish use. No claim that every manuscript or parish followed this printed recension."
+      "limitations": "Exact 9 January 1500 publication date is directly inspected in the original colophon, in addition to its 1755 reprint. All 973 offered image positions are retained, but the full book has not been transcribed or collated and physical completeness is not independently established. Only the complete bread blessing has a native text binding. The Roman-source dating differs in emphasis between 1988 (thirteenth-century copies) and 2014 (fifteenth-century usage); no false reconciliation.",
+      "reception": "Cisneros established the Corpus Christi chapel for daily Mass and Office; the 1988 account also notes earlier parish use. No claim that every manuscript or parish followed this printed recension.",
+      "text_binding": "native-book:mozarabic-1500-benedictio-panis"
     },
     {
       "id": "hispano-mozarabic-1755",
@@ -236,7 +320,7 @@
       ],
       "witness_label": "Missale mixtum, Alexander Lesley; Rome, Monaldini / typis Joannis Generosi Salomoni, 1755",
       "summary": "Lesley gives the inherited printed missal a scholarly apparatus. The inspected body includes Advent IV’s variable euchology and blessing; Benedictio panis stands at p 471 before the original colophon and later notes. Appendix prima prints a Mass attributed to St Pelagius from Sandoval; an appendix is not automatically part of the prescribed liturgical body.",
-      "text_coverage": "not-transcribed",
+      "text_coverage": "partial",
       "evidence": [
         {
           "source_id": "hispano-mozarabic-1755-book",
@@ -247,10 +331,16 @@
           "source_id": "hispano-mozarabic-1988",
           "locus": "p 679 § 19",
           "claim": "Calls 1755 a re-edition with Lesley’s presentation and explanatory notes; identifies PL 85 as a reproduction of it."
+        },
+        {
+          "source_id": "hispano-mozarabic-1755-book",
+          "locus": "Printed p. 471, original source image 590 / PDF page 591",
+          "claim": "Complete source-defined Benedictio panis independently image-collated and bound as nine native text units, with declared reading normalization; no complete Ordinary or missal claimed."
         }
       ],
-      "limitations": "No whole-body 1500/1755 collation and no established substantive ritual revision are claimed. Florence PDF acquired in full; text_coverage remains not-transcribed because no new checked canonical text has been bound to the stage.",
-      "reception": "A scholarly republication of the Toledan printed tradition. Its publication alone does not demonstrate substitution in every celebrating community."
+      "limitations": "No whole-body 1500/1755 collation or substantive ritual revision is claimed. The entire offered Florence PDF is retained; only the complete nine-unit Benedictio panis is bound as native text, using the sharper original JPEG2000 page. Comparison preserves the presbiter/presbyter orthographic difference without treating it as a new prayer version.",
+      "reception": "A scholarly republication of the Toledan printed tradition. Its publication alone does not demonstrate substitution in every celebrating community.",
+      "text_binding": "native-book:mozarabic-1755-benedictio-panis"
     },
     {
       "id": "hispano-mozarabic-1804",
@@ -276,7 +366,7 @@
       ],
       "witness_label": "Missale Gothicum secundum regulam beati Isidori hispalensis episcopi; Rome, Fulgonius 1804; BSB bsb 10869679",
       "summary": "Arévalo completed Lorenzana’s posthumous edition. The title calls it recognized and reprinted; Arévalo explains his reuse of Lesley’s dissertation and notes, addition of his own notes and attempted correction of faulty or obscure readings, with further manuscript collation left to readers who had access. Benedictio panis now precedes the Temporal at p XVI.",
-      "text_coverage": "not-transcribed",
+      "text_coverage": "partial",
       "evidence": [
         {
           "source_id": "hispano-mozarabic-1804-book",
@@ -287,10 +377,16 @@
           "source_id": "hispano-mozarabic-1988",
           "locus": "pp 670; 679 § 19",
           "claim": "Calls 1804 a corrected edition and reports it as the book then in use for daily Toledo chapel celebration."
+        },
+        {
+          "source_id": "hispano-mozarabic-1804-book",
+          "locus": "Printed p. XVI, right column, BSB canvas 22",
+          "claim": "Complete source-defined Benedictio panis independently image-collated and bound as nine native text units, with declared reading normalization; no complete Ordinary or missal claimed."
         }
       ],
-      "limitations": "Selected pages checked after complete-download failure; no full-lineage or exhaustive text-change count. Do not confuse it with PL 85’s 1862 reprint of 1755.",
-      "reception": "Contemporary 1988 reform introduction reports daily use of the 1804 book in Toledo’s Mozarabic chapel. This attests use in 1988; it does not establish a universal 1804 effective date or uninterrupted use everywhere."
+      "limitations": "Exact selected pages and the complete nine-unit bread blessing are checked; the acquired and hashed 744082515-byte complete PDF remains remote for its measured size. No full-lineage or exhaustive text-change count is claimed. Do not confuse this edition with PL 85’s 1862 reprint of 1755. Edition dependence and changed blessing placement do not by themselves identify the immediate textual parent of this constituent.",
+      "reception": "Contemporary 1988 reform introduction reports daily use of the 1804 book in Toledo’s Mozarabic chapel. This attests use in 1988; it does not establish a universal 1804 effective date or uninterrupted use everywhere.",
+      "text_binding": "native-book:mozarabic-1804-benedictio-panis"
     },
     {
       "id": "hispano-mozarabic-1991-1994",
@@ -423,7 +519,7 @@
           "claim": "Explicit relationship of 1500 and 1755 editions."
         }
       ],
-      "limitations": "This is a transmission/apparatus edge, not evidence of a new liturgical recension. No full 1500/1755 collation, no new mandatory formulary inferred from scholarly appendices.",
+      "limitations": "This is a transmission/apparatus edge, not evidence of a new liturgical recension. No full 1500/1755 collation, no new mandatory formulary inferred from scholarly appendices. The complete bread blessing is now independently collated in both witnesses. Its unchanged lexical content with presbiter/presbyter spelling does not establish a new liturgical version or authorize native Git ancestry.",
       "comparison_ids": [],
       "historical_parentage": "established"
     },
@@ -434,7 +530,7 @@
       "kind": "witness-succession",
       "status": "documented",
       "evidence_level": "text-collated",
-      "summary": "The bread blessing is relocated from the end of the liturgical body to the preliminaries before the Temporal. The sampled blessing remains recognizably the same rite; Arévalo separately describes reusing and correcting Lesley’s apparatus.",
+      "summary": "The complete bread blessing occurs at the end of the 1755 liturgical body and in the 1804 preliminaries before the Temporal. Its words agree after declared spelling normalization. Arévalo separately describes reusing and correcting Lesley’s apparatus; edition dependence does not identify the immediate textual exemplar of this prayer.",
       "components": [
         "rubrics"
       ],
@@ -471,7 +567,7 @@
           "claim": "Independent study identifies modest corrections and bread-blessing relocation."
         }
       ],
-      "limitations": "The text-collated claim is bounded to this blessing and placement, not a complete-edition collation or substantial ritual reform. The cited Advent IV rubric at 1804 col 40 already matches 1755 p 16; it cannot establish a 1755→1804 rubric innovation. No exact count of corrections.",
+      "limitations": "The text-collated claim is bounded to this blessing and placement, not a complete-edition collation or substantial ritual reform. The cited Advent IV rubric at 1804 col 40 already matches 1755 p 16; it cannot establish a 1755→1804 rubric innovation. No exact count of corrections. The separately complete native constituent snapshots remain independent roots. Same-prayer comparison, printed placement and the edition’s reuse of Lesley do not establish a substantive prayer revision or the immediate descent of this particular constituent.",
       "comparison_ids": [],
       "historical_parentage": "established"
     },
@@ -623,7 +719,7 @@
           "claim": "Retrospective commission account corroborates Order reconstruction and formulary adaptation."
         }
       ],
-      "limitations": "Primary-description establishes operations, not a full before/after transcription. No exact old/new formula text, exhaustive omission list, manuscript stemma, new chant melody or complete 1960s-to 1990s promulgation history is inferred. Approval 17 July 1988 was partial; 1991/1994 volumes are complementary. Preservation of B Creed/fraction order is continuity, not an innovation.",
+      "limitations": "Primary-description establishes operations, not a full before/after transcription. No exact old/new formula text, exhaustive omission list, manuscript stemma, new chant melody or complete 1960s to 1990s promulgation history is inferred. Approval 17 July 1988 was partial; 1991/1994 volumes are complementary. Preservation of B Creed/fraction order is continuity, not an innovation.",
       "comparison_ids": [],
       "historical_parentage": "established"
     }
@@ -633,32 +729,32 @@
       "id": "hispano-mozarabic-gap-a-manuscripts",
       "tradition_id": "hispanic-tradition-a",
       "period": "Medieval manuscript period before 1500",
-      "missing": "An individually identified A manuscript with checked eucharistic contents, date and exact contribution to the modern repertory; no common ancestor or A→B evolution demonstrated.",
-      "next_source": "Marius Férotin, Le Liber Mozarabicus Sacramentorum (1912), manuscript inventory and apparatus; follow its shelfmarks to complete institutional manuscript images, then compare with 1988 Praenotanda §§ 15–16.",
-      "consequence": "A remains a distinct source tradition and documented reform input, without an invented dated stage or linear parent edge."
+      "missing": "Direct manuscript images and current palaeographic resolution for the now individually identified tradition A witness Toledo 35.3; exact attribution of its contributions to the modern repertory.",
+      "next_source": "Toledo Cathedral 35.3 original or complete institutional facsimile; compare Férotin 1912 xxv–xxvi, cols 689–690 with Camarero 2004 pp 688–689 and modern palaeography. Full 1912 PDF/OCR now retained canonically.",
+      "consequence": "An explicit provisional A manuscript stage exists, with date bounds unset for the ninth-versus-twelfth-century disagreement. No common ancestor or A→B evolution edge is manufactured."
     },
     {
       "id": "hispano-mozarabic-gap-b-exemplars",
       "tradition_id": "hispanic-tradition-b-print",
       "period": "Manuscripts used in the 1500 compilation",
-      "missing": "The editors’ individual manuscript dependencies and the recoverable scope of lost exemplars.",
-      "next_source": "José Janini, El “Ordo missae” del Misal mozárabe de Cisneros, Anales Valentinos 10 (1984), 333–344; surviving Toledo Cathedral manuscripts, including Toledo 35.6 as named in 1988 Praenotanda § 90.",
-      "consequence": "B affiliation is supported by official critical description; no exact manuscript-to-print stemma or complete medieval Order is invented."
+      "missing": "Independent original verification of manuscript dependencies. Janini 1984 p 339 identifies Toledo 35.3 and London Add.30844 behind the James formulary, contradicting Férotin 1912 p xxvi on non-use of 35.3. This specific disagreement must be resolved before an exclusive B manuscript stemma is asserted.",
+      "next_source": "Compare the James formulary in original 1500 with Toledo 35.3 and London Add.30844, using Janini 1984 pp 339–340 and Férotin 1912 p xxvi as competing critical accounts; check Toledo 35.6 institution narrative separately.",
+      "consequence": "The printed line remains conventionally B-based; this classification does not establish exclusive dependence on B manuscripts or erase individual A-source contributions identified by later scholarship."
     },
     {
       "id": "hispano-mozarabic-gap-1500-collation",
       "tradition_id": "hispanic-tradition-b-print",
       "period": "1500→1755",
-      "missing": "Fresh complete 1500 acquisition and page-level collation against the complete 1755 witness.",
-      "next_source": "BnF Arsenal FOL-T-742, Gallica ark:/12148/bpt 6 k 8728875 t; ISTC im 00732000; compare original colophon and Advent IV f XVIra with 1755 p 16.",
-      "consequence": "Exact 1500 day is mediated through reprinted colophon. 1755 is a witness/apparatus state; no substantive ritual revision is established."
+      "missing": "Physical completeness review and complete-volume text collation of the retained 973-position Castilla-La Mancha 1500 sequence against the complete 1755 Florence witness; only the entire bread blessing is independently collated.",
+      "next_source": "Retained Castilla-La Mancha Inc.1 image sequence, especially Advent IV f. XVIr / position 53, compared with 1755 p. 16; the original 1500 colophon at position 965 is already checked.",
+      "consequence": "Original colophon directly establishes the exact 1500 date. Complete offered-sequence acquisition closes the acquisition gap, while the full textual comparison and evidence of substantive ritual revision remain open."
     },
     {
       "id": "hispano-mozarabic-gap-1804-complete",
       "tradition_id": "hispanic-tradition-b-print",
       "period": "1755→1804",
-      "missing": "Complete 1804 payload and exhaustive distinction between typographic corrections, apparatus changes and liturgical changes.",
-      "next_source": "BSB bsb 10869679, 854-canvas IIIF manifest and complete download service; Arévalo cols 1145–1146 gives editorial method; compare Lesley full body against each corrected locus.",
+      "missing": "Full-volume text collation and exhaustive distinction between typographic corrections, apparatus changes and liturgical changes. The acquired and hashed 744082515-byte complete PDF is deliberately remote for measured size; exact evidence pages and the entire bread blessing are retained.",
+      "next_source": "Regenerate the complete BSB bsb10869679 PDF (855 pages: delivery cover plus 854 book images) through its public whole-book form when a full-volume collation is undertaken. Canonical bsb-complete-pdf and retrieval metadata record the measured size and access limit; the complete blessing and editorial/colophon evidence already have retained exact images.",
       "consequence": "Only bounded bread-blessing relocation is text-collated. General correction claims remain the editor’s description."
     },
     {

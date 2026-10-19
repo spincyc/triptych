@@ -68,6 +68,9 @@ REPO = "<repo>"
 # would report a divergence that says nothing about the transcript, so each
 # tool's scratch paths are removed and rebuilt before its captures run.
 SCRATCH: dict[str, tuple[str, ...]] = {
+    # The complete writer reports changed-file counts; start empty so its
+    # transcript and the strict read-only check immediately after it repeat.
+    "act-history": (".scratch/history-engine-expansion/example-browser-data",),
     "artwork-library": ("build/example-art.png",),
     "calendar-days": ("build/example-days",),
     "calendar-rubrics": ("build/example-web",),

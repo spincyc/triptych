@@ -31,6 +31,16 @@
       "limitations": "Modern critical edition and collation, not direct inspection of the medieval codices. Its paleographic dates and qualified conclusions remain attributed. A complete acquired PDF does not mean a complete transcription."
     },
     {
+      "id": "chaldean-east-syriac:rome1767-original",
+      "title": "Missale Chaldaicum ex decreto Sacrae Congregationis de Propaganda Fide editum (Rome, 1767), Google-origin original scan",
+      "url": "https://archive.org/download/bub_gb_PSttGL9Rf08C_2/bub_gb_PSttGL9Rf08C.pdf",
+      "kind": "primary-book",
+      "inspection": "Complete 634-page PDF retained; original Latin and Syriac titles PDF 630–631 and Addai and Mari intercession printed p. 284/PDF 339 independently checked by two researchers. Related anaphora pages PDF 337–350 checked by one researcher. Source passages title and addai-mari-intercession bind exact hash 4d048b311c7f585e3824061d2d00727ad2e6e236f86ae6a876e4c36036348b5e.",
+      "checked_on": "2026-10-17",
+      "status": "inspected",
+      "limitations": "Bounded native-page collation of the intercession only. No complete liturgical transcription, full prayer inventory or comprehensive comparison of the 1767 and 1901 editions."
+    },
+    {
       "id": "chaldean-east-syriac:rome1767-rsl",
       "title": "Missale Chaldaicum ex decreto Sacrae Congregationis de Propaganda Fide editum (Rome, 1767), Russian State Library copy",
       "url": "https://kp.rusneb.ru/item/material/missale-chaldaicum-ex-decreto-sacrae-congregationis-de-propaganda-fide-editum",
@@ -55,10 +65,10 @@
       "title": "Missale juxta ritum Ecclesiae Syrorum Orientalium, id est Chaldaeorum (Mosul, Dominican press, 1901)",
       "url": "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3058397",
       "kind": "primary-book",
-      "inspection": "Retained full scan; images inspected at PDF 93–100, 102 and 77–78. Native opening printed pp. 4–7 = PDF 97–94, especially expanded Lord’s Prayer printed p. 5 = PDF 96; Latin imprimatur PDF 102 dated 22 October 1901. Anaphora beginning printed pp. 23–24 = PDF 78–77.",
-      "checked_on": "2026-10-16",
+      "inspection": "Retained full scan; images inspected at PDF 93–100, 102 and 77–78. Native opening printed pp. 4–7 = PDF 97–94, especially expanded Lord’s Prayer printed p. 5 = PDF 96; Latin imprimatur PDF 102 dated 22 October 1901. Anaphora beginning printed pp. 23–24 = PDF 78–77. Printed p. 35/PDF 67 was independently compared with Rome 1767 p. 284/PDF 339 on 2026-10-17; the life-giving Gospel phrase is present.",
+      "checked_on": "2026-10-17",
       "status": "inspected",
-      "limitations": "Full book not transcribed or collated. Critical-edition loci, rather than these opening pages, establish the specific institution-narrative and intercession variants."
+      "limitations": "Full book not transcribed or collated. The intercession phrase is directly page-collated; the institution-narrative comparison remains supported by the critical edition."
     },
     {
       "id": "chaldean-east-syriac:mosul1901-propers",
@@ -102,7 +112,7 @@
     },
     {
       "id": "chaldean-east-syriac:recognitio2014",
-      "title": "Congregatio pro Ecclesiis Orientalibus, Prot. N.57/2003, recognitio ad quinquennium, 20 October 2014",
+      "title": "Congregatio pro Ecclesiis Orientalibus, Prot. N. 57/2003, recognitio ad quinquennium, 20 October 2014",
       "url": "https://thecmsindia.org/StaticFiles/docs/pdf/Chaldean-catholic-holy-mass-text-with-arabic-and-syriac.pdf",
       "kind": "primary-act",
       "inspection": "Original Italian letter reproduced on book p. 2, signature block Sandri/Vasil, date 20 October 2014; Arabic translation p. 3.",
@@ -251,9 +261,14 @@
         "eastern:chald-1767"
       ],
       "witness_label": "Missale Chaldaicum ex decreto Sacrae Congregationis de Propaganda Fide editum (Rome, 1767)",
-      "summary": "Macomber’s Cr witness supplies an identifiable Catholic printed state. Its intercession omits the phrase about the life-giving Gospel that is present in the ancient witness and modern Mosul editions.",
+      "summary": "The original Propaganda title identifies a Catholic printed state. In the Addai and Mari intercession, printed p. 284 omits the life-giving Gospel phrase that the Mosul 1901 printed p. 35 includes.",
       "text_coverage": "not-transcribed",
       "evidence": [
+        {
+          "source_id": "chaldean-east-syriac:rome1767-original",
+          "locus": "Title PDF 630; Addai and Mari printed p. 284/PDF 339",
+          "claim": "Original title and bounded native intercession directly checked; omitted phrase independently confirmed."
+        },
         {
           "source_id": "chaldean-east-syriac:rome1767-rsl",
           "locus": "Title, imprint and shelfmark",
@@ -265,7 +280,7 @@
           "claim": "Identifies Cr as 1767 pp. 280–286 and distinguishes the older printed omission from the later Mosul reading."
         }
       ],
-      "limitations": "The full 1767 book is not page-collated. No claim of first Catholic printing or a complete list of Latin/Maronite additions. Institution placement at the fraction remains an acquisition gap.",
+      "limitations": "Only the titles and selected anaphoral pages have been checked. No claim of first Catholic printing or complete list of Latin/Maronite additions. Institution placement at the fraction still requires a precise comparison.",
       "reception": "Publication by the Roman Propaganda Congregation identifies a Catholic book; breadth and continuity of local adoption not independently established."
     },
     {
@@ -289,7 +304,7 @@
         "eastern:chald-proper-1901"
       ],
       "witness_label": "Missale juxta ritum Ecclesiae Syrorum Orientalium, id est Chaldaeorum; companion Proprium missarum de tempore et de sanctis (Mosul, Dominican press, 1901)",
-      "summary": "The ordinary prints the expanded Lord’s Prayer near the beginning. In Addai and Mari, Macomber locates the institution narrative at the opening of the post-Sanctus prayer and records the life-giving Gospel phrase in the intercession.",
+      "summary": "The ordinary prints the expanded Lord’s Prayer near the beginning and the life-giving Gospel phrase in the Addai and Mari intercession. Macomber locates the institution narrative at the opening of the post-Sanctus prayer.",
       "text_coverage": "not-transcribed",
       "evidence": [
         {
@@ -306,6 +321,11 @@
           "source_id": "chaldean-east-syriac:macomber1966",
           "locus": "p. 357 Cm 01; p. 363 note 10; p. 366 line 53 apparatus",
           "claim": "Specifies 1901 pp. 24–36 as Cm 01 and records the relevant anaphoral readings."
+        },
+        {
+          "source_id": "chaldean-east-syriac:source-mosul1901",
+          "locus": "Printed p. 35/PDF 67",
+          "claim": "Native intercession directly checked against Rome 1767 printed p. 284/PDF 339."
         }
       ],
       "limitations": "The companion volume is not a second stage. 1901 attests these readings; it does not date their introduction. Macomber also finds the post-Sanctus insertion in a late nineteenth-century Mar Ya‘qob ritual.",
@@ -474,7 +494,7 @@
       "to_stage": "chaldean-east-syriac:mosul1901",
       "kind": "revision",
       "status": "documented",
-      "evidence_level": "scholarly-description",
+      "evidence_level": "text-collated",
       "summary": "The Mosul intercession contains the life-giving Gospel phrase omitted in the Roman 1767 reading.",
       "components": [
         "anaphoras"
@@ -482,11 +502,21 @@
       "changes": [
         {
           "component": "anaphoras",
-          "before": "The words corresponding to through his life-giving Gospel are absent from Cr.",
-          "after": "The phrase is present in Cm; it also appears in the older manuscript text.",
-          "locus_before": "1767 Addai and Mari intercession, Cr in Macomber p. 366 line 53",
-          "locus_after": "1901 Addai and Mari intercession, Cm in the same apparatus",
+          "before": "The phrase ܒܐܘܢܓܠܝܘܢܗ ܡܚܝܢܐ (in his life-giving Gospel) is absent from the intercession.",
+          "after": "The intercession includes ܒܐܘܢܓܠܝܘܢܗ ܡܚܝܢܐ (in his life-giving Gospel).",
+          "locus_before": "Rome 1767 Addai and Mari, printed p. 284/PDF 339, right column bottom continuing at left column top",
+          "locus_after": "Mosul 1901 Addai and Mari, printed p. 35/PDF 67, upper half",
           "evidence": [
+            {
+              "source_id": "chaldean-east-syriac:rome1767-original",
+              "locus": "Printed p. 284/PDF 339",
+              "claim": "Original intercession passes from what the Lord and God taught to purity/holiness without the phrase."
+            },
+            {
+              "source_id": "chaldean-east-syriac:source-mosul1901",
+              "locus": "Printed p. 35/PDF 67",
+              "claim": "Original intercession contains the life-giving Gospel phrase at the corresponding locus."
+            },
             {
               "source_id": "chaldean-east-syriac:macomber1966",
               "locus": "p. 345 note 2; p. 366 line 53; p. 357 sigla",
@@ -497,12 +527,22 @@
       ],
       "evidence": [
         {
+          "source_id": "chaldean-east-syriac:rome1767-original",
+          "locus": "Printed p. 284/PDF 339",
+          "claim": "Original intercession passes from what the Lord and God taught to purity/holiness without the phrase."
+        },
+        {
+          "source_id": "chaldean-east-syriac:source-mosul1901",
+          "locus": "Printed p. 35/PDF 67",
+          "claim": "Original intercession contains the life-giving Gospel phrase at the corresponding locus."
+        },
+        {
           "source_id": "chaldean-east-syriac:macomber1966",
           "locus": "pp. 345, 357, 366",
           "claim": "Bounded intercession variant, not a complete edition collation."
         }
       ],
-      "limitations": "Exact introduction date and direct 1767-to-1901 editorial dependence are unproved. The critical apparatus supports this one locus; original 1767 page images remain unavailable.",
+      "limitations": "The original pages establish this one variant between the two printed witnesses. Exact introduction date and direct 1767-to-1901 editorial dependence are unproved. The bounded phrase is not a complete prayer or book transcription.",
       "comparison_ids": [],
       "historical_parentage": "unestablished"
     },
@@ -684,12 +724,12 @@
       "consequence": "No invented 1552/1697 complete-missal stage; Catholic reception and institution-placement claims await direct or critical verification."
     },
     {
-      "id": "chaldean-east-syriac:gap-1767-acquisition",
+      "id": "chaldean-east-syriac:gap-1767-full-collation",
       "tradition_id": "chaldean-catholic",
       "period": "1767",
-      "missing": "Full native page access, including title, Addai and Mari pp. 280–286, fraction, and borrowed prayers.",
-      "next_source": "Russian State Library reader: https://kp.rusneb.ru/item/reader/missale-chaldaicum-ex-decreto-sacrae-congregationis-de-propaganda-fide-editum ; HMML Reading Room 882047.",
-      "consequence": "Only critical-apparatus variants and institutional identity are established; no full 1767/1901 collation."
+      "missing": "Complete 1767/1901 native-body collation, especially institution/fraction arrangement and borrowed prayers; complete 1767 source bytes and the intercession variant are now acquired and checked.",
+      "next_source": "Retained 1767 original scan, edition.chaldean-catholic-church.missale.1767-rome-propaganda; Addai and Mari printed pp. 280–286 = PDF 343–337, alongside the held 1901 book.",
+      "consequence": "One direct native variant is established; it does not establish the full scope or date of the intervening reform."
     },
     {
       "id": "chaldean-east-syriac:gap-1890-1971",
@@ -720,7 +760,7 @@
       "tradition_id": "chaldean-catholic",
       "period": "1936–present",
       "missing": "Independent history of Arabic, Sureth, English and French translations, including the earlier 1936 Arabic booklet and exact identity of the 2022 Fides lead.",
-      "next_source": "Sako 2025 names Suleiman Sayegh’s 1936 Arabic booklet and the 1982 Yashuran French edition. Compare the original 2020 collection with Fides71516 before merging catalogue records.",
+      "next_source": "Sako 2025 names Suleiman Sayegh’s 1936 Arabic booklet and the 1982 Yashuran French edition. Compare the original 2020 collection with Fides 71516 before merging catalogue records.",
       "consequence": "Translation is not counted as original Syriac reform. The apparent 2020 addition of apostolic transmission is excluded: the same Syriac clause appears in 2014 p. 25 and 2025 p. 26 while the Arabic wording changes."
     }
   ]

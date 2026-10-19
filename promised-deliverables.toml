@@ -31,6 +31,12 @@ promise = "Recover the prior missal-history implementation, establish a sourced 
 state = "in_progress"
 
   [[deliverables.requirements]]
+  id = "execution-through-completion"
+  criterion = "The 2026-10-17 continuation executes the underlying historical, text, generated-history and reader requirements without another handoff package; completed implementation and source work are integrated and verified, and any genuinely unavailable external input is documented separately from runnable unfinished work."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
   id = "recovery"
   criterion = "Identify and verify the surviving prior source inventories, generator, generated Git history, interactive map, and printed map, with exact provenance and measured scope."
   status = "pass"
@@ -59,6 +65,18 @@ state = "in_progress"
   criterion = "The generated corpus exports permitted, hash-checked text as isolated typed reconstructions, preserves source and serialized hashes separately, uses stable liturgical paths and the owning clause-line serializer, repeats deterministically, and refuses fabricated historical parents or unsafe output replacement."
   status = "pass"
   evidence = ["tools/act-history", "scripts/_eucharistic_history.py", "scripts/_eucharistic_texts.py", "tools/tests/test_eucharistic_history.py", "tools/tests/test_eucharistic_texts.py", "tools/tests/test_act_history_inheritance.py", "guidance/act-histories.md"]
+
+  [[deliverables.requirements]]
+  id = "bounded-native-constituents"
+  criterion = "Independently checked native constituents declare their complete bounded extent, excluded divisions, normalization, exact source identities and hashes, rights, and literal structured text; their deterministic version exports retain partial whole-book coverage and refuse unsupported parentage or inheritance."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "src/sources/inventories/eucharistic-books", "scripts/_eucharistic_history.py", "tools/act-history", "tools/tests/test_eucharistic_history.py", "tools/tests/test_act_history_inheritance.py"]
+
+  [[deliverables.requirements]]
+  id = "coverage-reconciliation"
+  criterion = "The coverage audit preserves all 77 Eastern and Western discovery rows, verifies exact owner fingerprints and candidate, witness, stage, artifact and segment identities, and refuses stale or inconsistent mappings without treating gaps as completed research."
+  status = "pass"
+  evidence = ["src/sources/inventories/eucharistic-stage-coverage-v1.json", "tools/missal-coverage-reconciliation", "tools/tests/test_missal_coverage_reconciliation.py"]
 
   [[deliverables.requirements]]
   id = "bounded-witness-comparison"

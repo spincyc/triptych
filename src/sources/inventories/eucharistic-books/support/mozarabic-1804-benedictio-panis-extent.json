@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-extent",
+  "title": "Complete constituent extent: mozarabic-1804-benedictio-panis",
+  "book_id": "mozarabic-1804-benedictio-panis",
+  "status": "complete",
+  "unresolved": [],
+  "omitted": [],
+  "expected_unit_ids": [
+    "mozarabic.1804.benedictio.heading",
+    "mozarabic.1804.benedictio.opening-versicles",
+    "mozarabic.1804.benedictio.opening-greeting",
+    "mozarabic.1804.benedictio.oratio-heading",
+    "mozarabic.1804.benedictio.oratio",
+    "mozarabic.1804.benedictio.closing-greeting",
+    "mozarabic.1804.benedictio.blessing-heading",
+    "mozarabic.1804.benedictio.blessing",
+    "mozarabic.1804.benedictio.sprinkling"
+  ],
+  "pages": [
+    {
+      "witness_id": "copy",
+      "ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "mozarabic.1804.benedictio.heading",
+        "mozarabic.1804.benedictio.opening-versicles",
+        "mozarabic.1804.benedictio.opening-greeting",
+        "mozarabic.1804.benedictio.oratio-heading",
+        "mozarabic.1804.benedictio.oratio",
+        "mozarabic.1804.benedictio.closing-greeting",
+        "mozarabic.1804.benedictio.blessing-heading",
+        "mozarabic.1804.benedictio.blessing",
+        "mozarabic.1804.benedictio.sprinkling"
+      ],
+      "description": "The complete Benedictio panis on printed p. XVI, in the right column: from its heading below the water blessing through the final sprinkling rubric. All preceding water-blessing text on this page is excluded."
+    }
+  ]
+}

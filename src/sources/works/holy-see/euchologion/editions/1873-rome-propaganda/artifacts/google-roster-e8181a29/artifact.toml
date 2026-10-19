@@ -1,0 +1,18 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.holy-see.euchologion.1873-rome-propaganda.google-roster-e8181a29"
+edition_id = "edition.holy-see.euchologion.1873-rome-propaganda"
+artifact_type = "provider-page-roster"
+media_type = "application/json"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "United States: these historical printings of 1738, 1754 and 1873 are public domain by publication date. The acquired page images are mechanical facsimiles, with no modern critical text or authored annotation added. U.S. Copyright Office Compendium section 313.4(A), Chapter 300 pp. 26–27 (https://www.copyright.gov/comp3/chap300/ch300-copyrightable-authorship.pdf), treats scanning a literary work as mere copying without new authorship. Google Books Terms of Service section 2 (https://books.google.com/intl/en/googlebooks/tos.html) preserves uses permitted by the U.S. Copyright Act. The repository's settled treatment of Google stamps and incidental notices is src/sources/inventories/google-usage-guidelines-rights-v1.toml. All visible source marks remain intact and are not counted as historical book text. Retained bytes are not offered under Triptych's CC BY 4.0. This is a United States basis, not a claim of a general Google redistribution licence or of status in every jurisdiction."
+rights_jurisdiction = "United States"
+source_url = "https://books.google.com/books?id=m2TsEVn4SzcC&jscmd=click3&pg=PP7"
+provenance = "The public Google Books viewer for m2TsEVn4SzcC identifies the original as Sapienza University of Rome. The ordinary public page images and complete offered page roster were retrieved on 2026-10-17. Repository ownership was checked with case-insensitive rg over work.toml and edition.toml using the exact alternatives Euchologion|Euchologium|Akolouthiai|Akoluthiai|Εὐχολόγιον|Ἀκολουθίαι τῶν ἀνωνύμων. The other hits were Goar's Paris 1647 Euchologion and the Coptic-Arabic missal, neither the same work and edition as these Roman Greek printings. The existing-owner check found no duplicate of these editions. No restricted endpoint was bypassed. The official whole-PDF route for 1754 and 1873 returned HTTP 429 with a CAPTCHA and was not used."
+retrieved = "2026-10-17"
+sha256 = "e8181a2986a1f9cf12b171b63f2aa3b363f9a44e7cdd649e741fafcc0a23fd7c"
+byte_size = 10317
+path = "src/sources/works/holy-see/euchologion/editions/1873-rome-propaganda/artifacts/google-roster-e8181a29/1873-google-provider-roster.json"
+indexable = false
+notes = "Exact whole click3 JSON response. The final pid-only objects form the full offered roster; prefixed requested-page preview entries are not additional pages. This is machine-generated factual delivery metadata, not historical book text. The roster agrees with the ordered page metadata in the ordinary viewer HTML. 596 of 596 offered provider images, in original order: PP1, PP3, PP5, PP7–PP10, PA1–PA484, PT1–PT104 and PT108. The provider order numbers omit 1, 3, 5, 598, 599 and 600; these absent roster entries are not acquired or silently filled. No failed or omitted offered IDs. PT1 begins the separately paginated Apostle and Gospel readings for the twelve months. Physical-volume completeness is unverified."

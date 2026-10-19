@@ -197,8 +197,10 @@ FOUR ALIAS LESSONS, each of which changed a result [verified]:
 1. `carthusiense` WITH THE H FINDS WHAT `cartusiense` DOES NOT. The acquisition
    audit recorded that no Carthusian missal was found on the Internet Archive
    under `cartusiense`, `cartusiensis`, `cartusianum` or `chartreux`. A title
-   search including `carthusiense` returns `missale-carthusiense`, a whole 1620
-   printing with a 1,277,278-byte text layer. See `[[corrections]]`.
+   search including `carthusiense` returns `missale-carthusiense`, catalogued
+   there as 1620. Direct title-page inspection on 2026-10-17 identifies Lyon
+   1627, issued by order of the General Chapter of 1622. The 1,277,278-byte text
+   layer belongs to that witness. See `[[corrections]]`.
 2. THE ORDER'S LATIN GENITIVE, not its English adjective: `praedicatorum`
    returns nine items; `dominican rite missal` returns two irrelevant ones.
 3. THE PLACE IN LATIN: `eboracensis` returns York and `york missal` does not;
@@ -1663,7 +1665,7 @@ language = "la"
 printed = "1755"
 attests = "mozarabicum-lesley-1755"
 attests_kind = "the-printing-itself"
-attests_basis = "The station is this printing, which is also the first edition of the rite anyone here can read whole."
+attests_basis = "This witness identifies the 1755 printing; the NYPL copy named here is partial. A complete Florence copy is registered under the same canonical edition. Complete acquisition does not mean complete transcription."
 read_from = "not-read"
 rights = "public-domain"
 rights_basis = "A 1755 printing; the Internet Archive item is marked NOT_IN_COPYRIGHT, New York Public Library copy [verified]."
@@ -1944,15 +1946,15 @@ note = "NOT ON THE INTERNET ARCHIVE under any of nine alias forms. This row exis
 
 [[witnesses]]
 id = "1620-missale-carthusiense"
-label = "Missale Carthusiense, 1620"
+label = "Missale Cartusiani Ordinis, Lyon: Jean Pillehotte, 1627 (formerly catalogued as 1620)"
 language = "la"
-printed = "1620"
+printed = "1627"
 attests = "cartusiense-1620"
-attests_kind = "the-printing-itself"
-attests_basis = "The station is this printing."
-read_from = "not-read"
+attests_kind = "title-page-act"
+attests_basis = "The title expressly identifies the ordinance of the General Chapter held in 1622 under Bruno d'Haffringues. Its imprint separately dates the printing to Lyon 1627. The stable witness and station IDs retain their former catalogue year for existing links."
+read_from = "page-image"
 rights = "public-domain"
-rights_basis = "A 1620 printing. The item carries no licence field; the basis is the date alone."
+rights_basis = "Historical 1627 wording is public domain in the United States by publication date. The BSB digital artifact separately carries No Copyright - Non-Commercial Use Only 1.0; its canonical artifact manifest owns the exact digital-image conditions."
 digitisation = "https://archive.org/details/missale-carthusiense -- PDF 452,460,457 bytes, OCR text layer 1,277,278 bytes [verified]. A duplicate upload, missale-carthusiense_202309, is a mirror and not a second station."
 corrects = """
 THIS ROW CORRECTS A NEGATIVE IN THIS REPOSITORY. The missal acquisition audit
@@ -1963,6 +1965,13 @@ Library. The first half is still true. The conclusion was too strong: a title
 search including `carthusiense` -- the same word with an h -- returns this item
 [verified]. See `[[corrections]]`.
 """
+source_library_work_id = "work.carthusian-order.missale-cartusiense"
+source_library_edition_id = "edition.carthusian-order.missale-cartusiense.1627-lyon-pillehotte"
+source_library_artifact_ids = ["artifact.carthusian-order.missale-cartusiense.1627-lyon-pillehotte.bsb-canvas-00007-a28debe6", "artifact.carthusian-order.missale-cartusiense.1627-lyon-pillehotte.bsb-canvas-00229-56e46a83", "artifact.carthusian-order.missale-cartusiense.1627-lyon-pillehotte.bsb-canvas-00230-24435bff", "artifact.carthusian-order.missale-cartusiense.1627-lyon-pillehotte.bsb-canvas-00231-249f27c4", "artifact.carthusian-order.missale-cartusiense.1627-lyon-pillehotte.ia-complete-pdf-eab1a228"]
+source_library_passage_ids = ["passage.carthusian-order.missale-cartusiense.1627-lyon-pillehotte.canvas-00007", "passage.carthusian-order.missale-cartusiense.1627-lyon-pillehotte.canvas-00229", "passage.carthusian-order.missale-cartusiense.1627-lyon-pillehotte.canvas-00230", "passage.carthusian-order.missale-cartusiense.1627-lyon-pillehotte.canvas-00231"]
+acquisition_status = "complete-delivered-file-acquired-with-bounded-tracked-page-images"
+transcription_status = "bounded-page-observations-no-complete-text-transcription"
+collation_status = "named-page-observations-visually-checked-not-complete-book-collation"
 
 [[witnesses]]
 id = "1510-missale-praemonstratense-argentorati"
@@ -2363,17 +2372,19 @@ title = "The Mozarabic missal is printed at Rome in Lesley's edition"
 printing = "1755-missale-mixtum-lesley"
 parents = []
 root_basis = """
-The earliest Mozarabic printing this run could reach. The Cisneros editio princeps of 1500 is at the Bibliotheque nationale de France, which was unreachable here, so no edge runs behind this station and its absence is a bound on this run.
+This historical inventory begins its Mozarabic act slice at 1755; that slice boundary is not the earliest surviving or accessed printing. The original 1500 Castilla-La Mancha copy is separately catalogued and its 973 offered positions are retained. No act parent is retrospectively inferred.
 """
 act_citation = "none-claimed"
 distinct_edition_basis = """
-Alexander Lesley's Rome edition of 1755, 408 images. Distinct edition; the 1862 station beside it reprints this one and says so.
+Alexander Lesley's Rome edition of 1755, identified by its original title and the complete 761-page Florence/Google PDF (Internet Archive bub_gb_hAJaQabODUYC; canonical artifact ending ia-pdf-225d6721, 13,372,022 bytes). The NYPL 408-image copy is partial. The 1862 station reprints this edition and says so.
 """
 citation = "See the witness record 1755-missale-mixtum-lesley for the imprint, the extent and the repository."
 attested_in = ["1755-missale-mixtum-lesley"]
 read_from = "not-read"
-effect = "No departure. No unit of this use has been read, so this station changes nothing in the tree."
+effect = "No departure in this act history. A separate native book binding certifies only the complete Benedictio panis, nine units and 137 whitespace-delimited tokens; it does not certify the whole Ordinary or missal. This act history applies no inherited text."
 effect_established = false
+source_library_work_id = "work.archdiocese-of-toledo.missale-mixtum-mozarabicum"
+source_library_edition_id = "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755"
 
 [[acts]]
 id = "mozarabicum-migne-1862"
@@ -2604,30 +2615,21 @@ effect_established = false
 [[acts]]
 id = "cartusiense-1620"
 line = "cartusiense"
-station_kind = "printed"
-kind = "printing"
-date = "1620"
-title = "A Carthusian missal is printed"
-printing = "1620-missale-carthusiense"
-parents = ["cartusiense-spirae-1496"]
-parent_kind = "use-continuity"
-parent_basis = """
-Both books declare the same use, and this is their order. The edge asserts that
-and nothing else: it does not claim the later printing was set from the earlier,
-and no colophon read here says so.
-"""
-use_declared = """
-Read from the two books' catalogued titles at the metadata records fetched here
-[verified]. Each names its use; neither names the other.
-"""
-act_citation = "none-claimed"
-distinct_edition_basis = """
-The 1620 printing, whole, with a 1,277,278-byte text layer. It is the item the acquisition audit's alias set missed, and a duplicate upload of the same bytes is recorded on the witness row as a mirror.
-"""
-citation = "See the witness record 1620-missale-carthusiense for the imprint, the extent and the repository."
+station_kind = "promulgated"
+kind = "printing-order"
+date = "1622"
+title = "The General Chapter orders a Carthusian missal, printed in Lyon in 1627"
+authority = "The General Chapter of 1622 under Bruno d'Haffringues, Prior of the Grande Chartreuse and General of the Order"
+instrument = "Ordinance of the General Chapter of 1622, attested on the title of the 1627 Missale Cartusiani Ordinis"
+parents = []
+root_basis = "The title establishes the issuing ordinance but identifies no predecessor edition. The former edge from the 1496 printing rested only on use-continuity; it is withdrawn rather than promoted into descent from that witness."
+act_citation = "cited-externally"
+citation = "Missale Cartusiani Ordinis (Lyon: Jean Pillehotte, 1627), BSB bsb10496380, title at canvas 7: ex ordinatione capituli generalis Anno Domini M.DC.XXII celebrati, under Bruno d'Haffringues; imprint M.DC.XXVII. Title image independently inspected by two reviewers on 2026-10-17. https://mdz-nbn-resolving.de/details:bsb10496380"
 attested_in = ["1620-missale-carthusiense"]
 read_from = "not-read"
-effect = "No departure. No unit of this use has been read, so this station changes nothing in the tree."
+read_from_note = "The original title page was inspected; the full ordinance and complete liturgical text have not been collated."
+date_note = "The stable ID preserves the superseded Internet Archive catalogue year 1620. The act year is 1622, explicitly printed on the original title; the witness publication year is separately 1627. No month, day or effective date is inferred."
+effect = "The title documents an order to issue the book. No substantive textual change or inherited unit is inferred from that order."
 effect_established = false
 
 [[acts]]
@@ -2845,7 +2847,7 @@ instrument = "The ordinance of the General Chapter of 1677, by which the missal 
 title = "A general chapter of 1677 orders the Carthusian missal"
 parents = ["cartusiense-1620"]
 parent_kind = "line-order"
-parent_basis = "Both stations are of the Carthusian use and this is their order; nothing in the 1679 book names the 1620 printing."
+parent_basis = "The 1622 and 1677 chapter ordinances belong to the Carthusian use and stand in this order. Nothing inspected in the 1679 book names the 1627 printing; no textual descent or inheritance is inferred from this line-order edge."
 act_citation = "cited-externally"
 citation = """
 Printed on the engraved title page of the 1679 edition, READ HERE IN THE PAGE
@@ -3424,7 +3426,7 @@ THE NEGATIVE IS TRUE AND THE CONCLUSION DRAWN FROM IT WAS TOO STRONG, and the
 audit had already written the remedy two paragraphs above.
 
 A title search of the Internet Archive including `carthusiense` -- the same word
-with an h -- returns `missale-carthusiense`, a whole 1620 printing with a PDF of
+with an h -- returns `missale-carthusiense`, catalogued as a 1620 printing, with a PDF of
 452,460,457 bytes and an OCR text layer of 1,277,278 bytes, plus a duplicate
 upload of the same book [verified here at the advanced-search and metadata APIs].
 
@@ -3436,7 +3438,8 @@ settled. It had been settled -- one paragraph earlier, about a different
 repository.
 """
 consequences = """
-- A Carthusian station of 1620 is carried here, on the Internet Archive item.
+- The original row used the Internet Archive's 1620 label. The 2026-10-17
+  title-page correction below replaces that date while retaining the stable ID.
 - The audit's sentence should gain the fifth alias and the result.
 - THE RULE THIS ADDS, and it is a small one worth having: an alias set must be
   applied to EVERY repository searched, not to the repository where it was
@@ -3444,6 +3447,15 @@ consequences = """
   lesson.
 """
 status = "recorded here; the audit file is another lane's surface and is not edited from here"
+
+[[corrections]]
+id = "carthusian-1620-catalogue-date"
+severity = "high"
+target = "Witness 1620-missale-carthusiense and station cartusiense-1620"
+target_says = "The Internet Archive catalogue year 1620 identified the printing, and the station claimed no act."
+finding = "The original BSB bsb10496380 title, canvas 7, prints the General Chapter year M.DC.XXII and the Lyon Pillehotte imprint M.DC.XXVII. Independently inspected on 2026-10-17. The item is the 1627 witness to a 1622 ordinance, not an authenticated 1620 edition."
+consequences = "The witness is dated 1627; the station is promulgated and dated by the attested 1622 ordinance. The former 1496 use-continuity parent is withdrawn. Existing stable IDs remain for citations. No full collation, substantive revision, precise effective date or permission to inherit text is claimed."
+status = "corrected in the witness and station; canonical source record and chronology dossier carry the original title evidence"
 
 [[corrections]]
 id = "station-is-the-act-amended"

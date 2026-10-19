@@ -2,24 +2,34 @@
   "schema_version": 1,
   "record_type": "eucharistic-book-stages",
   "dossier_id": "cistercian-1606-1657",
-  "title": "Cistercian further Roman correction: 1606 and 1657 paired witnesses",
+  "title": "Cistercian corrected missals: 1487, 1606 and 1657 witnesses",
   "traditions": [
     {
       "id": "cistercian",
       "label": "Cistercian",
       "family": "Latin religious-order uses",
       "scope": "Printed missals of the Cistercian Order",
-      "coverage_note": "Two early modern revised states; three complete Ordinary prayer pairs. Their prefaces describe the broader reforms."
+      "coverage_note": "Corrected printed witnesses of 1487, 1606 and 1657; bounded Canon and Pentecost comparisons alongside three complete Ordinary prayer pairs. Publication, mandates and reception remain distinct."
     }
   ],
   "sources": [
+    {
+      "id": "cistercian-1606-1657-1487-book",
+      "title": "Missale Cisterciense (Strasbourg, Johann Grüninger, 1487)",
+      "url": "https://www.digitale-sammlungen.de/en/view/bsb00044164",
+      "kind": "primary-book",
+      "inspection": "BSB 2 Inc.c.a. 1921, bsb 00044164: opening mandate canvas 6 dated 3 October 1486; execution canvas 7; Canon opening and Memento canvas 225; Confiteor canvas 234; colophon canvas 423 dated pridie nonas Septembris 1487 (4 September). Complete 428-page PDF acquired and hashed, with critical page images retained.",
+      "checked_on": "2026-10-17",
+      "status": "inspected",
+      "limitations": "Selected critical pages inspected, not a complete-book collation. PDF has a provider cover before 427 source canvases and no usable historical-text layer. The 1486 mandate and 1487 publication do not establish uniform local reception."
+    },
     {
       "id": "cistercian-1606-1657-1606-book",
       "title": "Missale ad usum Sacri Ordinis Cisterciensis (Paris, 1606)",
       "url": "https://www.digitale-sammlungen.de/en/view/bsb10496382",
       "kind": "primary-book",
-      "inspection": "BSB 2 Liturg. 205 a, bsb10496382: title canvas 1; Annotanda canvases 27–28; printed pp. 180–181, canvases 234–235; Good Friday p. 107, canvas 157; Easter p. 117, canvas 169. Holy Saturday printed pp. 114–115, canvases 166–167.",
-      "checked_on": "2026-10-16",
+      "inspection": "BSB 2 Liturg. 205 a, bsb 10496382: title canvas 1; Annotanda canvases 27–28; printed pp. 180–181, canvases 234–235; Good Friday p. 107, canvas 157; Easter p. 117, canvas 169. Holy Saturday printed pp. 114–115, canvases 166–167. Pentecost sequence printed pp. 149–150, canvases 201–202, visually compared with 1657 pp. 264–265; Canon Memento printed pp. 190–191, canvases 244–245, compared with 1487 canvas 225.",
+      "checked_on": "2026-10-17",
       "status": "inspected",
       "limitations": "Selected pages inspected; no complete-book collation."
     },
@@ -28,8 +38,8 @@
       "title": "Missale Cisterciense iuxta Romani recogniti correctionem (Paris, 1657)",
       "url": "https://digital.fides.org.pl/dlibra/publication/3978/edition/3755/content",
       "kind": "primary-book",
-      "inspection": "FIDES 3755: page-file 0005 title; 0007–0008 Vaussin mandate; 0009 Monitum; 0045 Ritus celebrandi; 0231 printed p. 169; 0234–0236 printed pp. 172–174; 0230 Holy Saturday p. 168; 0350 printed p. 284. Holy Saturday p. 168 specifically compared against 1606 p. 115.",
-      "checked_on": "2026-10-16",
+      "inspection": "FIDES 3755: page-file 0005 title; 0007–0008 Vaussin mandate; 0009 Monitum; 0045 Ritus celebrandi; 0231 printed p. 169; 0234–0236 printed pp. 172–174; 0230 Holy Saturday p. 168; 0350 printed p. 284. Holy Saturday p. 168 specifically compared against 1606 p. 115. First Sunday after Pentecost printed pp. 264–265, page-files 0330–0331, visually compared with 1606 pp. 149–150.",
+      "checked_on": "2026-10-17",
       "status": "inspected",
       "limitations": "Selected pages inspected; no complete-book collation."
     },
@@ -51,10 +61,55 @@
       "inspection": "Date 1657; Latin; old print; Krzeszów Benedictine abbey; shelfmark OSB Missale_Cisterciense_1657; public domain; unrestricted access.",
       "checked_on": "2026-10-16",
       "status": "inspected",
-      "limitations": "The rights metadata applies to the object; selected DjVu pages are retained, not the whole book."
+      "limitations": "The rights metadata applies to the object; all 740 page DjVu constituents, indirect index and shared annotation file were acquired and individually hashed on 17 October 2026. Acquisition does not imply complete-book collation."
     }
   ],
   "stages": [
+    {
+      "tradition_id": "cistercian",
+      "date_kind": "publication",
+      "status": "documented",
+      "text_coverage": "not-transcribed",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "rubrics",
+        "calendar",
+        "lectionary",
+        "chant"
+      ],
+      "id": "cistercian-1606-1657-1487",
+      "label": "1487 corrected Cistercian missal",
+      "date_label": "4 September 1487",
+      "start_year": 1487,
+      "end_year": 1487,
+      "scope": "Printed order missal prepared under the 1486 commission for uniform corrected liturgical books.",
+      "witness_ids": [
+        "western:cistercian-1487"
+      ],
+      "witness_label": "Missale Cisterciense, Strasbourg, Johann Grüninger, 1487; BSB 2 Inc.c.a. 1921, bsb 00044164; USUARIUM 423",
+      "summary": "The opening mandate of Johannes abbot of Cîteaux orders corrected missals, breviaries and psalters under general-chapter authority and directs houses to acquire and conform their books. The colophon dates this printing to 4 September 1487. Its Memento lacks two clauses found in 1606, while both Canon openings retain the king among named intercessions.",
+      "evidence": [
+        {
+          "source_id": "cistercian-1606-1657-1487-book",
+          "locus": "Opening mandate, BSB canvas 6",
+          "claim": "Mandate dated 3 October 1486; corrected books and order-wide uniformity are prescribed."
+        },
+        {
+          "source_id": "cistercian-1606-1657-1487-book",
+          "locus": "Colophon, BSB canvas 423",
+          "claim": "Publication date 1487, pridie nonas Septembris (4 September)."
+        },
+        {
+          "source_id": "cistercian-1606-1657-1487-book",
+          "locus": "Canon opening and Memento, BSB canvas 225",
+          "claim": "Earlier paired Canon wording read directly from the page image."
+        }
+      ],
+      "limitations": "Already a corrected printed state, not a proxy for every medieval Cistercian manuscript. The 1486 mandate is a separate event from 1487 publication; the date of first introduction of individual clauses is unestablished. Retained source images and bounded readings do not provide a checked canonical text transcription.",
+      "reception": "The mandate directs houses to acquire and use corrected books; no house-by-house reception chronology has been established."
+    },
     {
       "tradition_id": "cistercian",
       "date_kind": "publication",
@@ -143,16 +198,66 @@
   ],
   "transitions": [
     {
+      "id": "cistercian-1606-1657-1487-1606-comparison",
+      "from_stage": "cistercian-1606-1657-1487",
+      "to_stage": "cistercian-1606-1657-1606",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "text-collated",
+      "summary": "The 1606 Memento includes all the faithful and an explicit offering on behalf of those remembered, clauses absent from the 1487 printing.",
+      "components": [
+        "anaphoras"
+      ],
+      "changes": [
+        {
+          "component": "anaphoras",
+          "before": "et omnium circumstantium. Quorum tibi fides cognita est et nota devotio. Qui tibi offerunt hoc sacrificium laudis",
+          "after": "Et omnium circumstantium omniumque fidelium, quorum tibi fides cognita est, & nota devotio: pro quibus tibi offerimus, vel qui tibi offerunt hoc sacrificium laudis",
+          "locus_before": "1487 BSB canvas 225, right column, complete Memento visible",
+          "locus_after": "1606 printed pp. 190–191, BSB canvases 244–245",
+          "evidence": [
+            {
+              "source_id": "cistercian-1606-1657-1487-book",
+              "locus": "BSB canvas 225, Memento",
+              "claim": "The 1487 reading proceeds directly from circumstantium through quorum to qui tibi offerunt."
+            },
+            {
+              "source_id": "cistercian-1606-1657-1606-book",
+              "locus": "Printed pp. 190–191, canvases 244–245",
+              "claim": "The 1606 reading adds omniumque fidelium and pro quibus tibi offerimus, vel."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "cistercian-1606-1657-1487-book",
+          "locus": "BSB canvas 225",
+          "claim": "Direct comparison of the complete Memento context."
+        },
+        {
+          "source_id": "cistercian-1606-1657-1606-book",
+          "locus": "Annotanda canvas 27; Memento canvases 244–245",
+          "claim": "The 1606 edition describes Roman conformity under the 1601 and 1605 chapters; the compared wording is directly visible."
+        }
+      ],
+      "limitations": "This bounded witness comparison is not a complete Ordinary collation. The 1487 printing is not established as the direct exemplar of 1606. Neither the first introduction of either clause nor an intermediate effective date is inferred. Latin excerpts normalize long-s, expand typographic abbreviations and omit accent marks for the bounded comparison.",
+      "historical_parentage": "unestablished",
+      "comparison_ids": []
+    },
+    {
       "id": "cistercian-1606-1657-revision",
       "from_stage": "cistercian-1606-1657-1606",
       "to_stage": "cistercian-1606-1657-1657",
       "kind": "revision",
       "status": "documented",
       "evidence_level": "text-collated",
-      "summary": "Further Romanization changes three complete Ordinary prayer units and the printed Holy Saturday ending: expanded Confiteor, replaced Orate and response, revised and relocated Suscipe Trinitas, and relocation of Spiritum nobis from a Postcommunio heading to the integrated Vespers sequence.",
+      "summary": "Further Romanization changes three complete Ordinary prayer units and the printed Holy Saturday ending: expanded Confiteor, replaced Orate and response, revised and relocated Suscipe Trinitas, and relocation of Spiritum nobis from a Postcommunio heading to the integrated Vespers sequence. A paired Pentecost Sunday example also changes numbering and Gospel while retaining the epistle, gradual and Alleluia.",
       "components": [
         "ordinary",
-        "rubrics"
+        "rubrics",
+        "lectionary",
+        "chant"
       ],
       "changes": [
         {
@@ -230,6 +335,25 @@
               "claim": "The Holy Saturday ending changes presentation and rubrics: the 1606 book labels Spiritum nobis as Postcommunio; the 1657 book explicitly omits Postcommunio and supplies the same prayer after integrated Vespers. This is not proof that Cistercians omitted Vespers in 1606."
             }
           ]
+        },
+        {
+          "component": "lectionary",
+          "before": "Dominica Secunda post Pentecosten: 1 John 4, Carissimi Deus charitas est; Gospel Luke 16, Homo quidam erat dives. Gradual Ego dixi Domine miserere mei / Beatus qui intelligit; Alleluia Verba mea auribus percipe Domine.",
+          "after": "Dominica Prima post Pentecosten: 1 John 4, Carissimi Deus charitas est; Gospel Luke 6, Estote misericordes. Gradual Ego dixi Domine miserere mei / Beatus qui intelligit; Alleluia Verba mea auribus percipe Domine.",
+          "locus_before": "1606 printed pp. 149–150, BSB canvases 201–202",
+          "locus_after": "1657 printed pp. 264–265, FIDES page files 0330–0331",
+          "evidence": [
+            {
+              "source_id": "cistercian-1606-1657-1606-book",
+              "locus": "Printed pp. 149–150, canvases 201–202",
+              "claim": "Second Sunday pairs the 1 John 4 epistle and retained chants with Luke 16."
+            },
+            {
+              "source_id": "cistercian-1606-1657-1657-book",
+              "locus": "Printed pp. 264–265, files 0330–0331; Monitum file 0009",
+              "claim": "First Sunday pairs the same epistle and chant incipits with Luke 6. The Monitum describes the broader Pentecost-to-Advent rearrangement and retained graduals."
+            }
+          ]
         }
       ],
       "evidence": [
@@ -240,11 +364,11 @@
         },
         {
           "source_id": "cistercian-1606-1657-1657-book",
-          "locus": "Monitum, page-file0009",
+          "locus": "Monitum, page-file 0009",
           "claim": "The 1651 chapter ordered renewed revision; the editor claims a closer Roman form but retains differences in the graduals."
         }
       ],
-      "limitations": "Text-collated applies to three complete prayer units, their local rubrics, and the Holy Saturday ending on the identified pages. The Holy Saturday quotations are bounded excerpts, not complete service transcriptions. Wider calendar, lectionary, and chant changes have primary-description evidence and have not been exhaustively collated. This is an institutional Cistercian revision relation, not proof that the 1657 typesetter directly copied this particular 1606 edition. All six complete prayer bodies have passed independent image review; one printed accent was corrected. The Holy Saturday rubrics remain a separate bounded review.",
+      "limitations": "Text-collated applies to three complete prayer units, their local rubrics, and the Holy Saturday ending on the identified pages. The Holy Saturday quotations are bounded excerpts, not complete service transcriptions. Wider calendar, lectionary, and chant changes have primary-description evidence and have not been exhaustively collated. This is an institutional Cistercian revision relation, not proof that the 1657 typesetter directly copied this particular 1606 edition. All six complete prayer bodies have passed independent image review; one printed accent was corrected. The Holy Saturday rubrics remain a separate bounded review. A further bounded example directly compares 1606 Second Sunday and 1657 First Sunday after Pentecost: numbering and Gospel change, while the identified epistle and chant units are retained. These are descriptive incipits and appointments, not complete literal transcriptions of the propers. This supports one instance of the Monitum claim without verifying all Sundays or comparing every chant against a Roman exemplar.",
       "comparison_ids": [
         "cistercian-1606-1657-confiteor",
         "cistercian-1606-1657-suscipe-trinitas",
@@ -258,17 +382,17 @@
       "id": "cistercian-1606-1657-pre1606",
       "tradition_id": "cistercian",
       "period": "Before 1606",
-      "missing": "Complete paired medieval or 1486–1487 Ordinary against 1606, and original chapter acts of 1601 and 1605.",
-      "next_source": "USUARIUM 423 early printed missal; editions of the chapter acts for 1601 and 1605; BL Add. 46203 and Fribourg L158.",
+      "missing": "Complete paired 1487 or medieval Ordinary against 1606, and visually verified original chapter acts of 1601 and 1605; the 1487 publication and mandate and a bounded Memento comparison are now documented.",
+      "next_source": "BSB bsb00044164 remaining Ordinary pages; Canivez Statuta volume VII and original chapter-act witnesses for 1601 and 1605; BL Add. 46203 and Fribourg L 158.",
       "consequence": "Cannot treat 1606 as an unchanged medieval baseline or date the first introduction of every Romanizing element."
     },
     {
       "id": "cistercian-1606-1657-wide-revision",
       "tradition_id": "cistercian",
       "period": "1606–1657",
-      "missing": "Complete collation of Pentecost-to-Advent readings, new feasts, exceptions in the graduals, and the Holy Week sequence.",
-      "next_source": "1606 BSB bsb10496382 temporale and calendar; 1657 FIDES 3755 Monitum and the complete corresponding sections.",
-      "consequence": "The Monitum supports claims labelled primary-description; three complete Ordinary prayer pairs and the bounded Holy Saturday ending have direct paired image inspection."
+      "missing": "Complete collation of all Pentecost-to-Advent readings, new feasts, retained graduals against Roman exemplars, and the Holy Week sequence.",
+      "next_source": "1606 BSB bsb 10496382 temporale and calendar; 1657 FIDES 3755 Monitum and the complete corresponding sections.",
+      "consequence": "One paired Pentecost Sunday example now has direct image evidence alongside three complete Ordinary prayer pairs and the bounded Holy Saturday ending. The complete seasonal and calendar reform remains uncollated."
     },
     {
       "id": "cistercian-1606-1657-reception",

@@ -8,14 +8,14 @@
   "identity_claim": "same-prayer-witnesses",
   "inputs": [
     {
-      "byte_size": 65568,
+      "byte_size": 73376,
       "path": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
-      "sha256": "6174951e3825999abac44335f5e23c348674827816e1815107eb333f704417a6"
+      "sha256": "747b89178d2f05096fd4297bff2eba5e8ae0851f72a5cc92ddacc8e1390c532f"
     },
     {
-      "byte_size": 292531,
+      "byte_size": 360126,
       "path": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
-      "sha256": "56d1041e2733208bff1a7fbcd273cf0675b1cb29ca76820683818993604c6671"
+      "sha256": "c29ec31c52904324aa01acc3f046626aa9f69ec595a2303b236275689641d5d9"
     },
     {
       "byte_size": 89758,
@@ -23,69 +23,139 @@
       "sha256": "d43fb733824f87fa46c4c5c1b81417683cbe496b140a97ea6139f1952830a91e"
     },
     {
-      "byte_size": 28509,
+      "byte_size": 7325,
+      "path": "src/sources/inventories/eucharistic-books/mozarabic-1500-benedictio-panis.json",
+      "sha256": "e39bae86bdaf1dbd344a8f774b63b5d2e3f7c112a5ded703c453e97d09a21737"
+    },
+    {
+      "byte_size": 7301,
+      "path": "src/sources/inventories/eucharistic-books/mozarabic-1755-benedictio-panis.json",
+      "sha256": "c094fd1bc024c5db9953850a6699089b3eaac9c0ef149f2bd538aa63d6e8ee57"
+    },
+    {
+      "byte_size": 7242,
+      "path": "src/sources/inventories/eucharistic-books/mozarabic-1804-benedictio-panis.json",
+      "sha256": "ad3d60bd19824466e8b337eb27b0da3a13c15916da82a000992386abde462f59"
+    },
+    {
+      "byte_size": 1579,
+      "path": "src/sources/inventories/eucharistic-books/support/mozarabic-1500-benedictio-panis-extent.json",
+      "sha256": "afaeefa2fa521bf2d66dbc1a47519b71dfe4a5cc3af42830b33ad8d9913e58cf"
+    },
+    {
+      "byte_size": 2576,
+      "path": "src/sources/inventories/eucharistic-books/support/mozarabic-1500-benedictio-panis-review.json",
+      "sha256": "33350c80e8ab57bb1d8ce1385e3f7c3cc19bafbd753fae29233d794219259065"
+    },
+    {
+      "byte_size": 1575,
+      "path": "src/sources/inventories/eucharistic-books/support/mozarabic-1755-benedictio-panis-extent.json",
+      "sha256": "dce48dcbba896da0f509509f674f73fc068b4d54d1f635946b83a0f2415f961e"
+    },
+    {
+      "byte_size": 3207,
+      "path": "src/sources/inventories/eucharistic-books/support/mozarabic-1755-benedictio-panis-review.json",
+      "sha256": "d9157cc97d1129c083fa0a8327c94056378cd63aa021842d3e583c8eed69fc3c"
+    },
+    {
+      "byte_size": 1563,
+      "path": "src/sources/inventories/eucharistic-books/support/mozarabic-1804-benedictio-panis-extent.json",
+      "sha256": "15b31fa9e183bd80a6b6529be006b90ad15fda738f155b2bdbe0a01a5355d320"
+    },
+    {
+      "byte_size": 2560,
+      "path": "src/sources/inventories/eucharistic-books/support/mozarabic-1804-benedictio-panis-review.json",
+      "sha256": "8c85bd0a75c7c6ce5111c49467b118c8c853fab6b90a5370383c88c3fed2c1d0"
+    },
+    {
+      "byte_size": 2472,
+      "path": "src/sources/inventories/eucharistic-books/support/tuki-1736-arabic-creed-extent.json",
+      "sha256": "0233b7d5eee84cba778909f76a3bc2fdd3c37fdcaf83c26a1b687f8bf2c7c862"
+    },
+    {
+      "byte_size": 2252,
+      "path": "src/sources/inventories/eucharistic-books/support/tuki-1736-arabic-creed-review.json",
+      "sha256": "6df851eef57eeb59017b4860b7364bf2710ab3b65404e2b06161740e0446b96c"
+    },
+    {
+      "byte_size": 3251,
+      "path": "src/sources/inventories/eucharistic-books/tuki-1736-arabic-creed.json",
+      "sha256": "1cabeaf38fae7ebf85c4b42f372347795c0012a397c784955d3cb936bedbc9ec"
+    },
+    {
+      "byte_size": 54962,
       "path": "src/sources/inventories/eucharistic-stages/alexandrian.json",
-      "sha256": "8d42d7c2aff4a46d7b42f62536d1a358cfad479321fe918c498dbc8cb3cb1af7"
+      "sha256": "f47a20513aef0ca65452902da493c5239894e7e7ef9f46df74a4dd76ec334f9a"
     },
     {
-      "byte_size": 31070,
+      "byte_size": 38053,
       "path": "src/sources/inventories/eucharistic-stages/ambrosian.json",
-      "sha256": "46616b871de98a741858f5b54e9b72e7b9f2607aee3aa93574eb21e05cadddb4"
+      "sha256": "48e0e1c8cc8a1c75ca226c25d3fd0891c7d1a43bde49c22e2d73a313f457609e"
     },
     {
-      "byte_size": 36101,
+      "byte_size": 41863,
       "path": "src/sources/inventories/eucharistic-stages/armenian.json",
-      "sha256": "5cbfeea1830f38329ee7e43fd0fd79db4b6245f4ef2a20cbc0206fc5827bffdb"
+      "sha256": "0e32e1b88d73ef4219d4a8fa004d2a5632677ae55aa228ae4a74806153958a10"
     },
     {
-      "byte_size": 37366,
+      "byte_size": 73252,
       "path": "src/sources/inventories/eucharistic-stages/byzantine.json",
-      "sha256": "db4316ec417c52fcd46025152a663a0e0a02a073a6a9acf6393c72e6b1d516e9"
+      "sha256": "fcf1afcc469c3cacb1b8daaa0e4cdfb3df2e3fd7a9b426adc2dfdb8492e21544"
     },
     {
-      "byte_size": 42261,
+      "byte_size": 39930,
+      "path": "src/sources/inventories/eucharistic-stages/canonical-orders.json",
+      "sha256": "9945e6ee93b4e7561f11e572c78a013a0a5df136ac62ed95f6f23fec92695613"
+    },
+    {
+      "byte_size": 45165,
       "path": "src/sources/inventories/eucharistic-stages/chaldean.json",
-      "sha256": "545531688b5bbee45ba265c02e2656947a66b1d30897c439485f621fb4b2068b"
+      "sha256": "deac3a956ed12f2b6f78d6af4bb9c60bfe8de63f59e2adcc9bba999e937b9bde"
     },
     {
-      "byte_size": 18309,
+      "byte_size": 26782,
       "path": "src/sources/inventories/eucharistic-stages/cistercian.json",
-      "sha256": "8ed49ffd176ce63de75389a78669fe49d42f7734f355740f7e5b62eadda8f490"
+      "sha256": "ae068309aa209dfba791d4c24463f3ddffa6c861880336080502ccb28e15473a"
     },
     {
-      "byte_size": 34163,
+      "byte_size": 71740,
       "path": "src/sources/inventories/eucharistic-stages/latin-uses.json",
-      "sha256": "14c033848c4b8a9a63a56f7418b781c8097fbf945511bccd13f1fe6b05f6b738"
+      "sha256": "25774a79a5e66dc22aaa4af1b7b3166b0a7aa21b014fc81a1f01b8b5c958b4c5"
     },
     {
-      "byte_size": 38353,
+      "byte_size": 42032,
       "path": "src/sources/inventories/eucharistic-stages/malabar.json",
-      "sha256": "62f7b28aa8d16add38d429d73f08e0c2b632a0bd2ae882acb2d8873d7027832d"
+      "sha256": "2cedafadabfdecd955c811bbd3b0e7946caf326516ddd4963da5a8b19ead42d0"
     },
     {
-      "byte_size": 40829,
+      "byte_size": 44469,
       "path": "src/sources/inventories/eucharistic-stages/maronite.json",
-      "sha256": "ac8e944addb232a75bffd3a7663c183b23b59cfa6346ae30ebc96131b771c546"
+      "sha256": "78bcaa7f4b123694e121dcabaa523cde7431477821fde2e619fda81eaeb42965"
     },
     {
-      "byte_size": 41527,
+      "byte_size": 52734,
       "path": "src/sources/inventories/eucharistic-stages/mozarabic.json",
-      "sha256": "35812331e200d6bdbfed825c53687056b399e5cd9b6399070b70c558e0b14c82"
+      "sha256": "3aad7b953a82cb8ab736aad88f487554e2aabf7caed6cb7855ab5d767c91eaa8"
     },
     {
-      "byte_size": 66105,
+      "byte_size": 106223,
       "path": "src/sources/inventories/eucharistic-stages/roman.json",
-      "sha256": "3710a830e1899192a07f58d3e97e2d74bbcab73f6b6e59ca7372e7629bab5fe7"
+      "sha256": "264cad2f690faac3e5bed627a1b136dc7fa376ac83a7741f0e2d215e2ee24566"
     },
     {
-      "byte_size": 31240,
+      "byte_size": 10800,
+      "path": "src/sources/inventories/eucharistic-stages/slavonic-roman.json",
+      "sha256": "680df02025d8b9d66165a0c0bd878b5c3a6758e9ac21c203e59d676cbe7563b8"
+    },
+    {
+      "byte_size": 36161,
       "path": "src/sources/inventories/eucharistic-stages/west-syriac.json",
-      "sha256": "14a7f4235930568c1f2162c41226471aab03f5d3233900be0b5534369722d293"
+      "sha256": "a09f4a30cc0b1e25d2e897ca8679858c1f12f09ea036c1d131ea7b32ca388df4"
     },
     {
-      "byte_size": 186074,
+      "byte_size": 190275,
       "path": "src/sources/inventories/latin-missal-acts-v1.toml",
-      "sha256": "14a1321e559e4edf4141285686a808acb40d77e330783f24b2c29d3446e9233d"
+      "sha256": "917895b2fc23efa60665c5210714b6737e741b177507b0e877fcd0aef9fc1174"
     },
     {
       "byte_size": 9311,
@@ -98,9 +168,9 @@
       "sha256": "cfbc951ec40071d5eb78c55d9453811ee194647b57893b7aa3b4768abadea9bb"
     },
     {
-      "byte_size": 236924,
+      "byte_size": 295075,
       "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
-      "sha256": "83a22e7ec81089a8c6e25a0d43bd9a83aa90193026bf602ea1595976f2720024"
+      "sha256": "3eb1536caa671f3f8b4c3dc8fdc1bcd592150d8897f113efcef36ebfd1c630b2"
     },
     {
       "byte_size": 1240,
@@ -126,6 +196,281 @@
       "byte_size": 666,
       "path": "src/sources/works/anonymous/gelasian-sacramentary/work.toml",
       "sha256": "a41c01cc8c194696663fab1631d3c4f96828ab0ab07be883df92d243805690e3"
+    },
+    {
+      "byte_size": 2595,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/artifacts/benedictio-panis-checked/artifact.toml",
+      "sha256": "fa40ffecec5dff657bc33967b00f3c674dbf12b801e9dec579e58359a4d05505"
+    },
+    {
+      "byte_size": 904,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/artifacts/benedictio-panis-checked/benedictio-panis.txt",
+      "sha256": "de272dc92fc46da7d096e59a0a3a95d9900233fe3d1cc03796a5fb80129273d9"
+    },
+    {
+      "byte_size": 2253,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/artifacts/bsb-canvas22-176accd2/artifact.toml",
+      "sha256": "4d074831b6ab950ea54f2063c2d9437e04ed8b6b83c4473dc6c3dd51ac762720"
+    },
+    {
+      "byte_size": 598342,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/artifacts/bsb-canvas22-176accd2/canvas-22.jpg",
+      "sha256": "176accd26d07aa14930b4e9d23d6cff005395cb73d23cd1b7738fcd3238daf24"
+    },
+    {
+      "byte_size": 1829,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/artifacts/bsb-title-canvas7/artifact.toml",
+      "sha256": "60fb96ee918dfe1e184b2d4effafa790a1c4acbc453c1faf54a42adbf483c538"
+    },
+    {
+      "byte_size": 493891,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/artifacts/bsb-title-canvas7/canvas-7.jpg",
+      "sha256": "bfe6b7ca48c0a714092cbfc2530885259fcaa7b13fe100f97255e2ec34720d2a"
+    },
+    {
+      "byte_size": 1093,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/edition.toml",
+      "sha256": "de7ee6d840cdd8c9bc07f70876c8f984154bb3bc163de7c33968b79f0017ba6f"
+    },
+    {
+      "byte_size": 1418,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/benedictio-blessing-heading.toml",
+      "sha256": "05d8df95f28b0789ddeedba264dfc2e0c3d7ff17badd525442763c1bc0d46d82"
+    },
+    {
+      "byte_size": 1402,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/benedictio-blessing.toml",
+      "sha256": "c34d9882f7e19b09b6aa6943465344def02675d9731de415601f02ef0ae58205"
+    },
+    {
+      "byte_size": 1418,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/benedictio-closing-greeting.toml",
+      "sha256": "60c5061d76caf588ba9936f56ed82bb88a25bfcd1bb6377c419413ca8be2b0f5"
+    },
+    {
+      "byte_size": 1486,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/benedictio-extent.toml",
+      "sha256": "368838599137282984522fb4e808de8950f2342cdf500850d848b9fb8cea0e92"
+    },
+    {
+      "byte_size": 1398,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/benedictio-heading.toml",
+      "sha256": "ec1da892cc878efb05338edb04edcde485c5daf3fe8814c9be1a479680987821"
+    },
+    {
+      "byte_size": 1416,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/benedictio-opening-greeting.toml",
+      "sha256": "9f36a562693f01347a28dd68b904289124850fdde8c26cbf0db6f2ca53d40b17"
+    },
+    {
+      "byte_size": 1418,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/benedictio-opening-versicles.toml",
+      "sha256": "0799992bb046b7b3d7b75bf8baa45002ca09ff9d991bfa317253a9f91be36bfe"
+    },
+    {
+      "byte_size": 1414,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/benedictio-oratio-heading.toml",
+      "sha256": "09673b4255ee54e5209b66a266b85ddbaf75ad021c07245715289cc794609100"
+    },
+    {
+      "byte_size": 1398,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/benedictio-oratio.toml",
+      "sha256": "e1faa7c7d7d587059523f62309ef048e2cd4e6d94680ede3619d3cefd1d4e2eb"
+    },
+    {
+      "byte_size": 1406,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/benedictio-sprinkling.toml",
+      "sha256": "bc8b1a5ec8703fd47f7e4126e82dff4408de1b01c4006b3d4e3dcef95b7418a8"
+    },
+    {
+      "byte_size": 825,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/publication-date.toml",
+      "sha256": "493f6c54b298989bc916cf638ee58abb73716ebc5383e91323cb3b678f3f05e3"
+    },
+    {
+      "byte_size": 2108,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/benedictio-panis-checked/artifact.toml",
+      "sha256": "c499a33e8fc0a435bf9193f10b8aeb1c96f17e109ed7a7ad0fab8ca4650809d2"
+    },
+    {
+      "byte_size": 899,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/benedictio-panis-checked/benedictio-panis.txt",
+      "sha256": "fd364b6f3c2fd5f2127c8dce780d99df56368a5913dd336b44d529162217606b"
+    },
+    {
+      "byte_size": 1840,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/ia-jp2-page590/artifact.toml",
+      "sha256": "61910718f8ef8ef669444e07827b942a8fed8dc21e563b5d4c4c7747e4deb547"
+    },
+    {
+      "byte_size": 81800,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/ia-jp2-page590/page-590.jp2",
+      "sha256": "06fa2cf519045e236e20d66bd64d6a1625625d22a6bacc97428f3da7a713fccf"
+    },
+    {
+      "byte_size": 1965,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/ia-pdf-225d6721/artifact.toml",
+      "sha256": "0ec27f9f654bde9fc0bccceb74a238edce5721328cec0f11bf8e1b921873c67e"
+    },
+    {
+      "byte_size": 13372022,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/ia-pdf-225d6721/missale-mixtum-1755.pdf",
+      "sha256": "225d6721834132ba0a354db2a041029968efbe39e701e5b37615a2675caddc45"
+    },
+    {
+      "byte_size": 2669,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/edition.toml",
+      "sha256": "18e2bb4ad4be886c72e182babd73f525f7ed12718a6eee37523fb8df1b9f43d5"
+    },
+    {
+      "byte_size": 1289,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/benedictio-blessing-heading.toml",
+      "sha256": "953a87bb4d509cffbe4f73e92f9e89f52a64a41a86bb515ac767302b4c0d1256"
+    },
+    {
+      "byte_size": 1273,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/benedictio-blessing.toml",
+      "sha256": "7ba219b415703f66aa107a8c1e5ab193489eb7eca452f94a459414f59c7bfc75"
+    },
+    {
+      "byte_size": 1289,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/benedictio-closing-greeting.toml",
+      "sha256": "3bc690b8592325fc68a73b4ca952951305201b92d437dc22feccabdb9a917377"
+    },
+    {
+      "byte_size": 1398,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/benedictio-extent.toml",
+      "sha256": "df45d3fb7247e54d1dcaf20348b36e35bc29510d850ddad55f660b93d913b4b1"
+    },
+    {
+      "byte_size": 1269,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/benedictio-heading.toml",
+      "sha256": "0e11f1fb6ffcf8a85cec4a398c557c832d826d6985a6f8f1cd3ff059ca9a3714"
+    },
+    {
+      "byte_size": 1287,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/benedictio-opening-greeting.toml",
+      "sha256": "7042d645c7bdfd374d884eb0fb8d3c371bb13ab2eaf1095b6a24d7b612004031"
+    },
+    {
+      "byte_size": 1289,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/benedictio-opening-versicles.toml",
+      "sha256": "a51959d1367c8ca42772a3915b17788cd7e7f94705e15e940e6b4f27943ee028"
+    },
+    {
+      "byte_size": 1285,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/benedictio-oratio-heading.toml",
+      "sha256": "5e541b726c0e633bddc3f18b370941fcd1a1d86c468e27a66caef5e0ed9c5068"
+    },
+    {
+      "byte_size": 1269,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/benedictio-oratio.toml",
+      "sha256": "da928961d1aada7f44975d7e39f5b43f7e71a4bfa486231763027d521fcfaa9e"
+    },
+    {
+      "byte_size": 1277,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/benedictio-sprinkling.toml",
+      "sha256": "32c64b8ee912f565ea34a11256189b8ed1f6f25d523f7214d069da88fc14d3eb"
+    },
+    {
+      "byte_size": 824,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/publication-date.toml",
+      "sha256": "fa3a6e89b93c382b1a572b43b74911883f56dd2915489d6acd8d3a44717ba001"
+    },
+    {
+      "byte_size": 2622,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/artifacts/benedictio-panis-checked/artifact.toml",
+      "sha256": "7baa6a232bf3051024b098f6d63b5d7fabd38f1c8e93e69cf547a17d5dfc785a"
+    },
+    {
+      "byte_size": 899,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/artifacts/benedictio-panis-checked/benedictio-panis.txt",
+      "sha256": "443342e10cec49650fa8d2c0d8ff2ab6a75b18ab1ff05bf18c7c7d04224529dd"
+    },
+    {
+      "byte_size": 1834,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/artifacts/castilla-la-mancha-p964-25d703c8/artifact.toml",
+      "sha256": "27736905a7ab5ffe50d141af77afcbd5abdebea0b8b87a107742f6d5036bbbb2"
+    },
+    {
+      "byte_size": 246835,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/artifacts/castilla-la-mancha-p964-25d703c8/position-964.jpg",
+      "sha256": "25d703c822248111e168eb9b494d4da54d6306927600407cb52ff7c2e015f6cb"
+    },
+    {
+      "byte_size": 1725,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/artifacts/castilla-la-mancha-p965-992df6eb/artifact.toml",
+      "sha256": "298967fc1132a165ea6e4d7c0ce1aeb4a40cb38e00dd3d05723e855050c43f40"
+    },
+    {
+      "byte_size": 166290,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/artifacts/castilla-la-mancha-p965-992df6eb/position-965.jpg",
+      "sha256": "992df6eb3f47b38c8e092454a224c11821e0f9ae4108457209af2975a6fe0df8"
+    },
+    {
+      "byte_size": 957,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/edition.toml",
+      "sha256": "9d25c88b62685f4d22bf37ac1434a4699aa0eaa21a105c2ccd3a2ce046cd420f"
+    },
+    {
+      "byte_size": 1430,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/benedictio-blessing-heading.toml",
+      "sha256": "77db7057fcc55fb2bdd0605c1607dfb19946f6191b42c9b9ae08452fefe372e7"
+    },
+    {
+      "byte_size": 1414,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/benedictio-blessing.toml",
+      "sha256": "ea229ffdbf71e6e713f58bea81f668a890ede130fce1bc88a7b9f44dfc40e4b4"
+    },
+    {
+      "byte_size": 1430,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/benedictio-closing-greeting.toml",
+      "sha256": "03a43f592e4332c57e6cfe0056f35d2e0315725a92636b4f0ca46a59e3965004"
+    },
+    {
+      "byte_size": 1519,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/benedictio-extent.toml",
+      "sha256": "36bee0e114c627c960990ed013fd541965053cef7145059fc13b47ecb7baa83f"
+    },
+    {
+      "byte_size": 1410,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/benedictio-heading.toml",
+      "sha256": "1d0bd6f25caafd9714dde5b0ed3837a84322de2d9ed09ed558edb0b3c1273047"
+    },
+    {
+      "byte_size": 1428,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/benedictio-opening-greeting.toml",
+      "sha256": "7224ec3521a88543abce118c7811745c04b75cf990838dd21f51e5b2fe3deb95"
+    },
+    {
+      "byte_size": 1430,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/benedictio-opening-versicles.toml",
+      "sha256": "4e0850c1106d30284acb8d7279f1caca8df5babcc536ef6874ad9bc88f3ad4ab"
+    },
+    {
+      "byte_size": 1426,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/benedictio-oratio-heading.toml",
+      "sha256": "4a9ead5f8afb98e30ea7ed6d9e02d9c8ee8d863d4793358e6783d14cb335e989"
+    },
+    {
+      "byte_size": 1410,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/benedictio-oratio.toml",
+      "sha256": "1093f61ba4bc084a12812ca585d1aeaf3c6bd7084d2ae4ad8979ae01337d69dc"
+    },
+    {
+      "byte_size": 1418,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/benedictio-sprinkling.toml",
+      "sha256": "f71ae3cdbb1c2cbdeb2c363da23dedfa46314119d00640b52224a4ae57aace82"
+    },
+    {
+      "byte_size": 863,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/publication-date.toml",
+      "sha256": "c61f08eeca9281c9b5edaced3a3d621a1f3f62f3ef17b36c2b809ed60ab6589e"
+    },
+    {
+      "byte_size": 1763,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/work.toml",
+      "sha256": "d614b8c3ef194d3ad59dae541041c8e31b84327fbf7cd9988cb2beb8d50bad31"
     },
     {
       "byte_size": 3368,
@@ -181,6 +526,61 @@
       "byte_size": 754,
       "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/work.toml",
       "sha256": "034be9e2898ee8994a5aa64c1d4316d18271274e68532d1e37b0ba576071a618"
+    },
+    {
+      "byte_size": 81657379,
+      "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/artifacts/bonn-images-a09b6368/1736-bonn-images.zip",
+      "sha256": "a09b63688e35e0b4a372063ea1f26bdf5f990686c17358483820383f42461eed"
+    },
+    {
+      "byte_size": 2796,
+      "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/artifacts/bonn-images-a09b6368/artifact.toml",
+      "sha256": "e6b57a5df0a4c23c615f57f9ca91a5c9cd7c062ad873c0bf7dfce384891a9b82"
+    },
+    {
+      "byte_size": 81013230,
+      "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/artifacts/bonn-pdf-add039d0/1736-bonn-pages.pdf",
+      "sha256": "add039d0fa12b9379035c2820e10ff6df042dc49651628a7dc7f3e9f6b5f375f"
+    },
+    {
+      "byte_size": 3213,
+      "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/artifacts/bonn-pdf-add039d0/artifact.toml",
+      "sha256": "0a0873d6c7d2b06766164995901c5409ca16969893c9d3387fc8d0de46638ddd"
+    },
+    {
+      "byte_size": 7059,
+      "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/artifacts/creed-checked-arabic-79536f9c/artifact.toml",
+      "sha256": "79d97669f384dd7a6c6dac06547d940a75edc484af312c671aa59d1c4c0efa44"
+    },
+    {
+      "byte_size": 1313,
+      "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/artifacts/creed-checked-arabic-79536f9c/text.txt",
+      "sha256": "79536f9cec56d16b9a1740b9baf9db7353b435577320b60983ffa674b4f9563e"
+    },
+    {
+      "byte_size": 1280,
+      "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/edition.toml",
+      "sha256": "05ef09bb03bc76e3f818cf46c191599ba61f85e88f3470eb8bab7b0a836b6607"
+    },
+    {
+      "byte_size": 2452,
+      "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/passages/creed-arabic-facsimile.toml",
+      "sha256": "5d34a59a39ec8c5807d48c71c4f2e679585fe634423f1200571fcb9fe91418c1"
+    },
+    {
+      "byte_size": 2348,
+      "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/passages/creed-arabic.toml",
+      "sha256": "532b8b8b6ece7078a21c799ba82134f4959dab2e930b4bf56b614ff6a5aa8422"
+    },
+    {
+      "byte_size": 772,
+      "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/segments/colophon.toml",
+      "sha256": "4d5af8b096c2f0799172178bf08ff63fe762367c84305a7e9b2d5695e4909de8"
+    },
+    {
+      "byte_size": 579,
+      "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/work.toml",
+      "sha256": "5adc2c30a98ae3a509bafac212ad9191eb1981fbf43ccafead41a8bcea899a43"
     },
     {
       "byte_size": 3763,
@@ -1056,19 +1456,19 @@
       "sha256": "9961359f38a3e390b5de4103a5222149e40b906362bba4b5620590f5ee1fed8e"
     },
     {
-      "byte_size": 53238,
+      "byte_size": 66579,
       "path": "scripts/_eucharistic_history.py",
-      "sha256": "fc414ea64fa3ed738cd57aa7d19d3cf158144aa1980e85febed620e831abaf47"
+      "sha256": "4c9ca690a173babfa4eb848e1104e7aa9b6625d9aecd8ba2621a9b271c8acb03"
     },
     {
-      "byte_size": 20653,
+      "byte_size": 23154,
       "path": "scripts/_eucharistic_stages.py",
-      "sha256": "4f1ffd04e7a479c9463a435a731276b6c94ba2976f445196705831847fbd1fe3"
+      "sha256": "cbda670a16bd4d1e4ea9d500426b86d1ec958e9f65773ecbf528b0c982a4fa6f"
     },
     {
-      "byte_size": 87820,
+      "byte_size": 110703,
       "path": "scripts/_eucharistic_texts.py",
-      "sha256": "bc12a7da107bd63bf2a6c51e55b8389f088f560e882a5485405389e9750a9e5a"
+      "sha256": "159aef82b0fe6eb923acbcca85eb100bae030bde84632c733fc424b810a534a0"
     },
     {
       "byte_size": 48920,
@@ -1081,14 +1481,14 @@
       "sha256": "86c302fcb7be450dec4dc1d45c4f529b000e79d5c548fae2b22212f7246e0afe"
     },
     {
-      "byte_size": 252633,
+      "byte_size": 254329,
       "path": "tools/act-history",
-      "sha256": "b0502f14dcce6a54c4dfb33ce980e004941e8ae1d727f12a5fa8253c73eae06e"
+      "sha256": "e80a09fa09f81e3eb8bfce96b1f54396118e63e5f46883f0ddd140e7bbc92a51"
     },
     {
-      "byte_size": 120266,
+      "byte_size": 123068,
       "path": "tools/source-library",
-      "sha256": "c4d2065026a7cb0c94049e572251b2f3c3af615a4f9531793a1818d185327efc"
+      "sha256": "08a23d41e753db4698a855b531afe857f33fbd99571138b2bea0fdc70e4a6fe3"
     }
   ],
   "unified_diff": "--- left/wilson-1894-gelasian-canon-prayers\n+++ right/cummiskey-1861-latin-ordinary\n@@ -1 +1,2 @@\n-Quam oblationem tu, Deus, in omnibus, quaesumus, benedictam, adscriptam, ratam, rationabilem, acceptabilemque facere digneris, ut nobis corpus et sanguis fiat dilectissimi Filii tui Domini Dei nostri Iesu Christi.\n+Quam oblationem tu Deus in omnibus, quæsumus benedictam, adscriptam, ratam, rationabilem, acceptabilemque facere digneris;\n+ut nobis Corpus et Sanguis fiat dilectissimi Filii tui Domini nostri Jesu Christi.\n"

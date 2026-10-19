@@ -28,12 +28,22 @@
   ],
   "sources": [
     {
+      "id": "west-syriac-stages-rome1843-original",
+      "title": "Missale Syriacum juxta ritum Ecclesiae Antiochenae Syrorum (Rome: Propaganda Fide, 1843), original book",
+      "url": "https://books.google.com/books?jscmd=download&vid=AoxG4JWD4VkC&output=pdf",
+      "kind": "primary-book",
+      "inspection": "Complete 279-page provider PDF retained. Latin title/imprint PDF 10 and patriarchal attestation with Roman imprimaturs PDF 272 independently read by two researchers. The source passage title-and-patriarchal-attestation binds hash 4bc875a28f40dc1868619121a7a4e413f58b7093610d66ad35df79f4f6896132. The seven anaphora openings at printed 103, 119, 128, 138, 146, 155, 168/PDF 134, 150, 159, 169, 177, 186, 199 were independently read by two researchers; Presanctified opening printed 53/PDF 84 also inspected.",
+      "checked_on": "2026-10-17",
+      "status": "inspected",
+      "limitations": "No complete liturgical transcription or complete comparison with the 1922 prayer bodies. Printed pagination and provider PDF page numbering remain distinct."
+    },
+    {
       "id": "west-syriac-stages-missal1922",
       "title": "Missale iuxta ritum Ecclesiae Apostolicae Antiochenae Syrorum auctoritate recognitum (Sharfeh, 1922)",
       "url": "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3097402",
       "kind": "primary-book",
-      "inspection": "Full provider PDF acquired. Direct page images read: Latin title PDF 6; Rahmani address/decree PDF 8–9 (printed 3–4); dissertation PDF 10–20 (printed 5–15), especially revision description PDF 17–20 (printed 12–15); native contents PDF 22–23; Syriac title PDF 339.",
-      "checked_on": "2026-10-16",
+      "inspection": "Full provider PDF acquired. Direct page images read: Latin title PDF 6; Rahmani address/decree PDF 8–9 (printed 3–4); dissertation PDF 10–20 (printed 5–15), especially revision description PDF 17–20 (printed 12–15); native contents PDF 22–23; Syriac title PDF 339. Native contents PDF 23 reread independently on 2026-10-17 against the 1843 headings; seven labels verified.",
+      "checked_on": "2026-10-17",
       "status": "inspected",
       "limitations": "Complete bytes do not mean complete body collation. Syriac/Arabic prayer bodies not transcribed. Rahmani’s historical authorship and confessional judgments are editorial assertions, not independently verified textual identifications."
     },
@@ -102,10 +112,10 @@
       "title": "Google Books/KU Leuven copy: Missale syriacum juxta ritum ecclesiae Antiochenae Syrorum (Rome, 1843)",
       "url": "https://books.google.com.lb/books?hl=ar&id=AoxG4JWD4VkC",
       "kind": "institutional-catalogue",
-      "inspection": "Read title, Propaganda Fide 1843 imprint, original holding KU Leuven, and preview/download links. PDF request returned HTTP 429; historic book images were not obtained.",
-      "checked_on": "2026-10-16",
+      "inspection": "Catalogue title, Propaganda Fide 1843 imprint and KU Leuven holding identified. The initial PDF request returned HTTP 429; the renewed complete-download route succeeded on 2026-10-17 and is registered separately as an original-book source.",
+      "checked_on": "2026-10-17",
       "status": "inspected",
-      "limitations": "Catalogue reports 210 pages; other descriptions report 238 + 3, so extent remains unverified and is not a claimed stage property."
+      "limitations": "Catalogue extent descriptions differ; complete provider file has 279 PDF pages. Its liturgical content is assessed from original pages, not catalogue pagination."
     },
     {
       "id": "west-syriac-stages-anaphora-project",
@@ -126,6 +136,16 @@
       "checked_on": "2026-10-16",
       "status": "lead",
       "limitations": "OCR is a lead, not support for an established transition. Its shorthand “restored” must be distinguished from the 1922 primary statement that an 1843 constructed Presanctified form was replaced."
+    },
+    {
+      "id": "west-syriac-stages-malankara-feb2007",
+      "title": "Geevarghese Mar Divannasios, pastoral letter Prot. ADM2/2007, 15 February 2007, Malankara 2.3 (April 2007)",
+      "url": "https://malankaracatholicchurch.in/admin/pdf/Vol_2_No_3.pdf",
+      "kind": "primary-act",
+      "inspection": "Whole 176-page bulletin acquired, SHA256 19f540df577c6fe5ed1a87e21fd7c1664b01ee39b348683dc9f7eb13f9f527af; English printed/PDF 163 and corresponding Malayalam 159 read directly. Letter opens 160; signed 163.",
+      "checked_on": "2026-10-17",
+      "status": "inspected",
+      "limitations": "English 163 dates the fourth Synod 31 October–3 November 2005; Malayalam 159 says 2006. The letter does not identify the renewed book’s language, edition or precise textual changes. The instruction to read the letter is not a commencement order for the book."
     }
   ],
   "stages": [
@@ -138,7 +158,7 @@
       "end_year": 1843,
       "date_kind": "publication",
       "status": "documented",
-      "scope": "Identified Catholic celebrant missal predecessor; repertoire and three revision-relevant units attested by later primary description and later bibliography.",
+      "scope": "Original Catholic celebrant missal with directly checked title, patriarchal attestation and seven anaphora section openings.",
       "components": [
         "ordinary",
         "anaphoras",
@@ -166,10 +186,20 @@
           "source_id": "west-syriac-stages-rome1843catalogue",
           "locus": "bibliographic metadata",
           "claim": "Confirms exact Latin title, publisher and 1843 imprint."
+        },
+        {
+          "source_id": "west-syriac-stages-rome1843-original",
+          "locus": "Latin title PDF 10; attestation and imprimaturs PDF 272",
+          "claim": "Original 1843 Propaganda imprint and patriarchal attestation dated Aleppo, 31 August 1840, directly read."
+        },
+        {
+          "source_id": "west-syriac-stages-rome1843-original",
+          "locus": "Printed 103, 119, 128, 138, 146, 155, 168/PDF 134, 150, 159, 169, 177, 186, 199; Presanctified printed 53/PDF 84",
+          "claim": "Original headings establish the seven named anaphora sections; the Presanctified opening explicitly identifies the signing-of-the-chalice service."
         }
       ],
-      "limitations": "Original 1843 body and approval leaves not acquired. The stage records bounded source-described contents, not a completed transcription or full repertoire identification. Named Basil and Chrysostom do not automatically identify familiar Byzantine compositions.",
-      "reception": "Syriac Catholic book according to later Catholic-book bibliography and Rahmani’s stated predecessor. No claim of uniform empirical use in every diocese."
+      "limitations": "Original title, attestation and anaphora labels are checked; entrance-prayer restoration and the derivation of the Presanctified compilation remain the 1922 editor’s descriptions. Prayer bodies are not fully transcribed. Shared author labels do not establish textual identity or historical authorship.",
+      "reception": "Patriarch Ignazio Pietro Giarve attests on 31 August 1840 that the book contains the Syriac missal and rubrics used by Syriac patriarchs, archbishops, bishops and priests in churches and convents. Roman imprimaturs by Dominicus Buttaoni and Joseph Canali appear on the same page. These are the book’s historical attestations; they do not prove uniform later use in every diocese."
     },
     {
       "id": "west-syriac-stages-mosul1881-service",
@@ -330,42 +360,75 @@
   ],
   "transitions": [
     {
+      "id": "west-syriac-stages-anaphora-selection1922",
+      "from_stage": "west-syriac-stages-rome1843",
+      "to_stage": "west-syriac-stages-sharfeh1922",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "text-collated",
+      "summary": "The original 1843 anaphora headings and 1922 contents establish a different seven-title selection.",
+      "components": [
+        "anaphoras"
+      ],
+      "changes": [
+        {
+          "component": "anaphoras",
+          "before": "1843 roster: James, Peter, John Chrysostom, Xystus, Matthew the Shepherd, Basil, John Evangelist.",
+          "after": "1922 native roster: James, John Evangelist, Twelve Apostles, Basil of Caesarea, Mark, Eustathius and Cyril of Jerusalem.",
+          "locus_before": "1843 original section openings: printed 103, 119, 128, 138, 146, 155, 168/PDF 134, 150, 159, 169, 177, 186, 199",
+          "locus_after": "1922 native contents PDF 23; Latin explanation printed 13/PDF 18",
+          "evidence": [
+            {
+              "source_id": "west-syriac-stages-rome1843-original",
+              "locus": "1843 original section openings: printed 103, 119, 128, 138, 146, 155, 168/PDF 134, 150, 159, 169, 177, 186, 199",
+              "claim": "Directly read the seven original anaphora attributions."
+            },
+            {
+              "source_id": "west-syriac-stages-missal1922",
+              "locus": "Native contents PDF 23",
+              "claim": "Directly read the seven anaphora attributions in their printed order."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "west-syriac-stages-rome1843-original",
+          "locus": "1843 original section openings: printed 103, 119, 128, 138, 146, 155, 168/PDF 134, 150, 159, 169, 177, 186, 199",
+          "claim": "Directly read the seven original anaphora attributions."
+        },
+        {
+          "source_id": "west-syriac-stages-missal1922",
+          "locus": "Native contents PDF 23",
+          "claim": "Directly read the seven anaphora attributions in their printed order."
+        },
+        {
+          "source_id": "west-syriac-stages-missal1922",
+          "locus": "Printed 13 / PDF 18",
+          "claim": "The editor expressly identifies rejected 1843 compositions and the revised selection."
+        }
+      ],
+      "limitations": "This is a comparison of native repertoire labels, not complete anaphora texts. A shared Basil title does not identify the same composition: the 1922 editor expressly rejects the 1843 Basil attribution. No general manuscript ancestry follows.",
+      "comparison_ids": [],
+      "historical_parentage": "established"
+    },
+    {
       "id": "west-syriac-stages-rome1843-to-sharfeh1922",
       "from_stage": "west-syriac-stages-rome1843",
       "to_stage": "west-syriac-stages-sharfeh1922",
       "kind": "revision",
       "status": "documented",
       "evidence_level": "primary-description",
-      "summary": "Rahmani’s edition revises the named 1843 missal: a different seven-anaphora selection, restoration of entrance prayers shortened in 1843, and replacement of the 1843 editor’s James-based Presanctified compilation by a manuscript Basil-labelled rite.",
+      "summary": "Rahmani’s edition reports restoration of entrance prayers shortened in 1843 and replacement of the 1843 James-based Presanctified compilation by a manuscript Basil-labelled rite.",
       "components": [
-        "anaphoras",
         "ordinary"
       ],
       "changes": [
         {
-          "component": "anaphoras",
-          "before": "1843 roster: James, Peter, John Chrysostom, Xystus, Matthew the Shepherd, Basil, John Evangelist.",
-          "after": "1922 roster: James, John Evangelist, Twelve Apostles, Basil of Caesarea, Mark, Eustathius, Cyril of Jerusalem; Peter/Xystus excluded and the 1843 Matthew, Basil and Chrysostom texts rejected. Shared Basil title does not mean the same composition.",
-          "locus_before": "1843 original not inspected; roster reported by Ziadé, column 3026, and rejected 1843 texts named in the 1922 dissertation, page 13.",
-          "locus_after": "1922 dissertation printed 13 / PDF 18; native contents PDF 23.",
-          "evidence": [
-            {
-              "source_id": "west-syriac-stages-missal1922",
-              "locus": "printed 13/PDF 18",
-              "claim": "Explicitly describes selection and rejects named 1843 contents; editorial attributions remain attributed."
-            },
-            {
-              "source_id": "west-syriac-stages-ziade1941",
-              "locus": "col 3026",
-              "claim": "Reports full 1843 seven-title list; the 1922 list in this secondary source is incomplete and not used."
-            }
-          ]
-        },
-        {
           "component": "ordinary",
           "before": "Some entrance propitiatory prayers were shortened in the 1843 edition.",
           "after": "These prayers are restored in full in 1922.",
-          "locus_before": "1843 original uninspected; named retrospectively in 1922 printed 14, paragraph Orationes propitiatorias introitus.",
+          "locus_before": "1843 entrance-prayer bodies not yet collated; named retrospectively in 1922 printed 14, paragraph Orationes propitiatorias introitus.",
           "locus_after": "1922 printed 14 / PDF 19, same paragraph.",
           "evidence": [
             {
@@ -379,7 +442,7 @@
           "component": "ordinary",
           "before": "The 1843 editor constructed the Presanctified rite by collecting secret prayers of the James liturgy.",
           "after": "The 1922 book replaces that compilation with a manuscript-derived Presanctified liturgy bearing Basil’s name, for Lenten fast days.",
-          "locus_before": "1843 original uninspected; explicitly described in the final third of 1922 printed 14.",
+          "locus_before": "1843 Presanctified begins printed 53/PDF 84; its derivation from James is described in 1922 printed 14.",
           "locus_after": "1922 printed 14 / PDF 19, paragraph Ad sic dictam missam praesanctificatorum.",
           "evidence": [
             {
@@ -397,7 +460,7 @@
           "claim": "Explicit original revision description identifies the 1843 predecessor and bounded changes."
         }
       ],
-      "limitations": "Not a before/after text collation; the 1843 original remains unavailable. Additional 1922 changes described on pages 12–15 are recorded in its stage but not all tied to an exact 1843 leaf. No 1881 → 1922 succession is asserted: 1881 is a complementary minister book. No Git/text ancestry is granted.",
+      "limitations": "The original 1843 book is acquired and its Presanctified opening inspected; the prayer-body changes here still depend on the 1922 editor’s description. Native repertoire-label comparison is recorded separately. Additional 1922 changes are not all tied to exact 1843 leaves. The 1881 minister book remains complementary, not the predecessor of the 1922 altar book.",
       "comparison_ids": [],
       "historical_parentage": "established"
     }
@@ -415,8 +478,8 @@
       "id": "west-syriac-stages-rome1843-collation",
       "tradition_id": "syriac-catholic-celebrant",
       "period": "1843 → 1922",
-      "missing": "Original 1843 title, approval and relevant prayer bodies not acquired; Google PDF request returned HTTP 429.",
-      "next_source": "KU Leuven Google Books AoxG4JWD4VkC; alternative Google Books LbJEAAAAcAAJ; British Museum 14501.f.1; compare entrance prayers and Presanctified with 1922.",
+      "missing": "Full before/after collation of the 1843 and 1922 native prayer bodies. The original 1843 full PDF, title, patriarchal attestation and imprimaturs are now acquired and checked.",
+      "next_source": "Retained edition.syriac-catholic-church.missale-syriacum.1843-rome-propaganda; compare native entrance prayers and Presanctified form with held Sharfeh 1922.",
       "consequence": "Established primary-described revision remains source-described, not an actual before/after Syriac comparison."
     },
     {
@@ -463,9 +526,9 @@
       "id": "west-syriac-stages-malankara2007-taksa",
       "tradition_id": "syro-malankara-catholic",
       "period": "2007 and later",
-      "missing": "Released revised Taksa’s language, title page, approval, predecessor and changed passages uninspected; the later 2012 English Takso does not prove an original revision.",
-      "next_source": "Malankara Catholic Publications, Order of the Holy Qurbono / Taksa, released 9–12 October 2007; Synodal Acts and Voice 3.2, page 25; compare explicit concelebration decision, page 40, with the actual book.",
-      "consequence": "Only direct synodal rubrics are a stage; release alone cannot be a substantive book revision edge. Separate Kudasakramam/burial edits are not misattributed to Taksa."
+      "missing": "The renewed book’s language, title, approval, predecessor and exact changes remain uninspected. A pastoral letter dated 15 February 2007 reports an already published renewed Holy Qurbono order with Qyomto and Sleebo prayers, available at eparchial centres; the later October release report may concern another publication state.",
+      "next_source": "Original book distributed by eparchial centres before 15 February 2007; pastoral letter Prot. ADM2/2007, Malankara 2.3 (April 2007), pp 159, 163. Compare the October 2007 release in Synodal Acts 3.2, p 25 and concelebration decision p 40. English/Malayalam synod years conflict (2005/2006).",
+      "consequence": "Publication by February 2007 is established, but no native-language reform stage is inferred from an unidentified book. The relation of the February and October publications and the synod-year discrepancy need original book and minutes."
     }
   ]
 }

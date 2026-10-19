@@ -1,14 +1,17 @@
 """History discovery cannot admit text; text commits require exact owner evidence."""
 import copy
+from contextlib import redirect_stdout
 import hashlib
 import importlib.machinery
 import importlib.util
+import io
 import json
 import os
 from pathlib import Path
 import sys
 import tempfile
 import unittest
+from types import SimpleNamespace
 from unittest import mock
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -80,6 +83,16 @@ source_ids=["library"]
 
     def catalogue(self):
         return history.catalogue(self.source, self.root, act_loader=lambda path: {})
+
+    def test_corpus_cli_counts_reconstruction_and_version_refs_separately(self):
+        render = self.ventilator.__globals__["render"]
+        payload = {"units": 28, "commits": 6, "branches": {"first": "a", "second": "b"},
+                   "version_branches": {"a": "c", "b": "d", "c": "e", "d": "f"}, "out": "fixture-corpus"}
+        output = io.StringIO()
+        with redirect_stdout(output):
+            render(payload, SimpleNamespace(command="corpus", json=False))
+        self.assertIn("2 isolated reconstruction branches and 4 native text version branches", output.getvalue())
+        self.assertNotIn("6 isolated", output.getvalue())
 
     def test_semantic_file_directory_collision_preserves_prior_corpus(self):
         before = self.emit()["branches"]
@@ -858,6 +871,65 @@ parents=[{version_id="earlier", evidence_path="src/sources/inventories/eucharist
         (self.root / self.texts.NATIVE_BOOK_DIRECTORY / "support/reverse-parentage.json").write_text(json.dumps(reversed_receipt))
         with self.assertRaisesRegex(history.HistoryError, "cycle"):
             self.emit()
+
+
+class NativeReadingProjectionTests(unittest.TestCase):
+    def setUp(self):
+        from test_eucharistic_texts import AdapterBoundaryTests, native_fixture, texts
+        self.texts = texts
+        AdapterBoundaryTests.setUp(self)
+        self.record = lambda *args, **kwargs: AdapterBoundaryTests.record(self, *args, **kwargs)
+        self.artifact = lambda *args, **kwargs: AdapterBoundaryTests.artifact(self, *args, **kwargs)
+        self.book, self.extent, self.review, self.save = native_fixture(self, wording="ألف باء")
+        self.book["languages"] = ["ar"]
+        for unit in self.book["units"]:
+            unit["language"] = "ar"
+        self.save()
+        patched = mock.patch.object(texts, "_load_library", return_value=self.library)
+        patched.start()
+        self.addCleanup(patched.stop)
+
+    def project(self):
+        return history.native_text("native-book:fixture-book", self.root)
+
+    def test_literal_units_extent_and_citation_survive_without_storage_paths(self):
+        result = self.project()
+        self.assertEqual(result, self.project())
+        self.assertEqual(result["schema"], history.NATIVE_TEXT_SCHEMA)
+        self.assertEqual(result["units"][0]["text"], "ألف باء")
+        self.assertEqual(result["units"][0]["direction"], "rtl")
+        self.assertEqual(result["units"][0]["source_locator"], "Synthetic page 1")
+        self.assertEqual(result["units"][0]["native_path"], ["native-division", "unit-1"])
+        self.assertTrue(result["scope"]["complete_declared_extent"])
+        self.assertTrue(result["scope"]["whole_book_complete"])
+        self.assertEqual(result["witnesses"][0]["scope_pages"], [[1, 2]])
+        self.assertNotIn(str(self.root), json.dumps(result))
+        self.assertNotIn("path", {key for source in result["sources"] for key in source})
+        self.assertTrue(any(source.get("rights_basis") == "Test only" for source in result["sources"]))
+
+    def test_reading_projection_refuses_unreviewed_or_stale_text(self):
+        self.review["complete_extent_verified"] = False
+        self.save()
+        with self.assertRaisesRegex(history.HistoryError, "independent collation"):
+            self.project()
+        self.review["complete_extent_verified"] = True
+        self.save()
+        path = self.root / self.texts.NATIVE_BOOK_DIRECTORY / "fixture-book.json"
+        changed = json.loads(path.read_text())
+        changed["scope"] = "An unreviewed extent change"
+        path.write_text(json.dumps(changed))
+        with self.assertRaisesRegex(history.HistoryError, "collation is stale"):
+            self.project()
+
+    def test_reading_projection_refuses_rights_ineligible_or_changed_literal_body(self):
+        record = self.records["artifact.fixture-book.unit1"].data
+        record["rights_status"] = "unresolved"
+        with self.assertRaisesRegex(history.HistoryError, "publication basis"):
+            self.project()
+        record["rights_status"] = "public-domain"
+        (self.root / record["path"]).write_text("Changed unreviewed text.\n")
+        with self.assertRaisesRegex(history.HistoryError, "hash mismatch"):
+            self.project()
 
 
 if __name__ == "__main__":

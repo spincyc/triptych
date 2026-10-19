@@ -368,6 +368,14 @@
       const inWindow = start === null ? [] : dated.filter(function (s) { return s.end_year >= start && s.start_year <= end; });
       const visible = inWindow.filter(function (s) { return !options.stageIds || options.stageIds.includes(s.id); });
       const visibleIds=new Set(visible.map(function (s) { return s.id; }));
+      const pairKey=function (a,b) { return JSON.stringify([a,b].sort()); };
+      const pairCounts=new Map();
+      transitions.forEach(function (t) {
+        if ((!options.includeProvisional && t.status!=='documented') ||
+            (!visibleIds.has(t.from_stage) && !visibleIds.has(t.to_stage))) return;
+        const key=pairKey(t.from_stage,t.to_stage);
+        pairCounts.set(key,(pairCounts.get(key) || 0)+1);
+      });
       const nodeById = new Map(), cardWidth = 260, leading = 20;
       let top = 90;
       const lanes = traditions.map(function (tradition,laneIndex) {
@@ -419,6 +427,12 @@
                 ((t.to_stage===stage.id && !visibleIds.has(t.from_stage)) || (t.from_stage===stage.id && !visibleIds.has(t.to_stage)));
             });
             if (external) rows[row].portClearance=45;
+            transitions.forEach(function (t) {
+              if (t.from_stage===stage.id || t.to_stage===stage.id) {
+                const count=pairCounts.get(pairKey(t.from_stage,t.to_stage)) || 1;
+                rows[row].portClearance=Math.max(rows[row].portClearance,(external ? 45 : 0)+(count-1)*32);
+              }
+            });
             return {id:stage.id,key:stageKeys.get(stage.id),stage:stage,row:row,x:clamp(x(year)),
               xStart:clamp(x(stage.start_year)),xEnd:clamp(x(stage.end_year)),
               clippedStart:stage.start_year<start,clippedEnd:stage.end_year>end,
@@ -457,9 +471,20 @@
         corridors[track].push({low:low,high:high});
         const gutter=x0-18-track*11;
         const clearance=22+(track%5)*5;
-        const lift=Math.min(from.y,to.y)-28;
         const hasCorridor=fromNode && toNode && from.y!==to.y;
-        const keyLabel=hasCorridor ? {x:gutter-5,y:(from.y+to.y)/2} : {x:(from.x+to.x)/2,y:fromNode && toNode && from.y===to.y ? from.y-3 : lift-5};
+        const parallel=hasCorridor ? 0 : edges.filter(function (edge) {
+          return pairKey(edge.from,edge.to)===pairKey(transition.from_stage,transition.to_stage);
+        }).length;
+        const lift=Math.min(from.y,to.y)-28-parallel*32;
+        const keyLabel=hasCorridor ? {x:gutter-5,y:(from.y+to.y)/2} : {x:(from.x+to.x)/2,y:fromNode && toNode && from.y===to.y ? from.y-3-parallel*24 : lift-5};
+        const pairCount=pairCounts.get(pairKey(transition.from_stage,transition.to_stage)) || 1;
+        const externalParallel=(!fromNode || !toNode) && from.x===to.x && pairCount>1;
+        const side=from.x-x0>x1-from.x ? -1 : 1;
+        const bend=from.x+side*(parallel+1)*60;
+        if (externalParallel) {
+          keyLabel.x=from.x+side*(parallel+1)*45+17;
+          keyLabel.y=(from.y+to.y)/2+4;
+        }
         if (hasCorridor) {
           const middle=keyLabel.y;
           const available=function (y) { return y>Math.min(from.y,to.y)+18 && y<Math.max(from.y,to.y)-18 &&
@@ -475,6 +500,8 @@
           keyLabel:keyLabel,
           path:fromNode && toNode && from.y!==to.y
             ? 'M '+from.x+' '+from.y+' V '+(from.y-clearance)+' H '+gutter+' V '+(to.y-clearance)+' H '+to.x+' V '+to.y
+            : externalParallel
+              ? 'M '+from.x+' '+from.y+' C '+bend+' '+from.y+' '+bend+' '+to.y+' '+to.x+' '+to.y
             : (!fromNode || !toNode) && from.x===to.x
               ? 'M '+from.x+' '+from.y+' L '+to.x+' '+to.y
               : 'M '+from.x+' '+from.y+' C '+from.x+' '+lift+' '+to.x+' '+lift+' '+to.x+' '+to.y,
@@ -1330,20 +1357,28 @@
     const summary = T.el('summary', 'fold-summary', summaryText);
     block.appendChild(summary);
     const host = T.el('div', 'fold-body');
+    const progress=T.el('p','panel-note fragment-status');
+    progress.setAttribute('role','status'); progress.setAttribute('aria-live','polite');
+    block.appendChild(progress);
     host.appendChild(T.el('p', 'placeholder', 'Not fetched yet.'));
     block.appendChild(host);
     let started = false;
     block.addEventListener('toggle', function () {
       if (!block.open || started) return;
       started = true;
+      progress.textContent='Loading source text…'; host.setAttribute('aria-busy','true');
       T.clear(host);
       host.appendChild(T.el('p', 'placeholder', 'Loading…'));
       fragment(path).then(function (payload) {
+        if (block.isConnected === false) return;
         render(host, payload);
+        host.setAttribute('aria-busy','false'); progress.textContent='Source text loaded.';
       }).catch(function (error) {
+        if (block.isConnected === false) return;
         T.clear(host);
         host.appendChild(T.el('p', 'error',
           path + ' could not be read: ' + String(error.message || error)));
+        host.setAttribute('aria-busy','false'); progress.textContent='Source text could not be loaded.';
       });
     });
     return block;
@@ -2330,6 +2365,85 @@
     host.appendChild(sources);
   }
 
+  function nativeTextValid(payload, stage) {
+    const strings=function (items) { return Array.isArray(items) && items.every(function (s) { return typeof s==='string' && s.length>0; }); };
+    const unique=function (items) { return strings(items) && new Set(items).size===items.length; };
+    if (!payload || payload.schema!=='triptych-eucharistic-native-text/v1' ||
+        payload.adapter_id!==stage.text_binding || payload.adapter_id!=='native-book:'+payload.id ||
+        !/^[0-9a-f]{64}$/.test(stage.text_binding_sha256) || payload.binding_sha256!==stage.text_binding_sha256 ||
+        typeof payload.title!=='string' || !unique(payload.stage_ids) || !payload.stage_ids.includes(stage.id) ||
+        !unique(payload.catalogue_witness_ids) || JSON.stringify(payload.catalogue_witness_ids.slice().sort())!==JSON.stringify(stage.witness_ids.slice().sort()) ||
+        !payload.scope || payload.scope.complete_declared_extent!==true ||
+        !['constituent','whole-book'].includes(payload.scope.extent_kind) ||
+        payload.scope.whole_book_complete!==(payload.scope.extent_kind==='whole-book') ||
+        stage.text_coverage!==(payload.scope.whole_book_complete ? 'complete' : 'partial') ||
+        typeof payload.scope.description!=='string' || !strings(payload.scope.omitted_book_divisions) ||
+        (payload.scope.whole_book_complete ? payload.scope.omitted_book_divisions.length!==0 : payload.scope.omitted_book_divisions.length===0) ||
+        !Array.isArray(payload.sources) || !unique(payload.sources.map(function (s) { return s && s.id; })) ||
+        !Array.isArray(payload.witnesses) || !unique(payload.witnesses.map(function (w) { return w && w.id; })) ||
+        !Array.isArray(payload.units) || !payload.units.length || !unique(payload.units.map(function (u) { return u && u.unit_id; })) ||
+        !payload.counts || payload.counts.units!==payload.units.length || payload.scope.known_extent_units!==payload.units.length) return false;
+    const sources=new Map(payload.sources.map(function (s) { return [s.id,s]; }));
+    const witnesses=new Map(payload.witnesses.map(function (w) { return [w.id,w]; }));
+    return payload.units.every(function (unit,index) {
+      const artifact=sources.get(unit.source_artifact_id),edition=sources.get(unit.text_edition_id),witness=witnesses.get(unit.witness_id),passage=sources.get(unit.source_id);
+      return unit.source_order===index+1 && typeof unit.text==='string' && unit.text.trim().length>0 &&
+        typeof unit.kind==='string' && strings(unit.native_path) && typeof unit.source_locator==='string' &&
+        /^[a-z]{2,3}(?:-[A-Za-z0-9]+)*$/.test(unit.language) &&
+        unit.direction===(['ar','he','syr','arc'].includes(unit.language.split('-')[0]) ? 'rtl' : 'ltr') &&
+        artifact && artifact.record_type==='artifact' && artifact.rights_status==='public-domain' &&
+        artifact.edition_id===unit.text_edition_id &&
+        artifact.rights_jurisdiction==='United States' && typeof artifact.rights_basis==='string' && artifact.rights_basis.length>0 &&
+        edition && edition.record_type==='edition' && typeof edition.title==='string' &&
+        witness && witness.edition_id===unit.text_edition_id && sources.has(witness.artifact_id) &&
+        sources.get(witness.artifact_id).record_type==='artifact' &&
+        passage && passage.record_type==='passage' && passage.edition_id===unit.text_edition_id && passage.artifact_id===unit.source_artifact_id &&
+        unit.publication && unit.publication.status==='permitted' && unit.publication.basis==='public-domain' &&
+        unit.publication.jurisdiction==='United States' && Array.isArray(unit.publication.surfaces) &&
+        ['public-git','corpus-data'].every(function (surface) { return unit.publication.surfaces.includes(surface); });
+    });
+  }
+
+  function renderNativeText(host,payload,stage) {
+    if (!nativeTextValid(payload,stage)) throw Error('The source text is malformed or does not match this state’s accepted binding and extent.');
+    T.clear(host);
+    const sources=new Map(payload.sources.map(function (s) { return [s.id,s]; }));
+    const witnesses=new Map(payload.witnesses.map(function (w) { return [w.id,w]; }));
+    host.appendChild(T.el('h4',null,payload.title));
+    host.appendChild(T.el('p','native-text-extent',
+      'Complete declared '+payload.scope.extent_kind+': '+payload.counts.units+' source unit'+(payload.counts.units===1 ? '' : 's')+
+      '. Whole-book text coverage: '+(payload.scope.whole_book_complete ? 'complete.' : 'partial.')));
+    host.appendChild(T.el('p','native-text-scope',payload.scope.description));
+    if (payload.scope.omitted_book_divisions.length) {
+      host.appendChild(T.el('p',null,'Excluded book divisions:'));
+      const exclusions=T.el('ul','native-text-exclusions');
+      payload.scope.omitted_book_divisions.forEach(function (text) { exclusions.appendChild(T.el('li',null,text)); });
+      host.appendChild(exclusions);
+    }
+    payload.units.forEach(function (unit) {
+      const part=T.el('section','native-text-unit');
+      part.appendChild(T.el('h5',null,unit.source_order+' · '+unit.kind.replace(/-/g,' ')));
+      const text=T.el('p','held-text native-text-body',unit.text);
+      text.setAttribute('data-unit-id',unit.unit_id);
+      text.setAttribute('lang',unit.language); text.setAttribute('dir',unit.direction);
+      part.appendChild(text);
+      const edition=sources.get(unit.text_edition_id),witness=witnesses.get(unit.witness_id),facsimile=sources.get(witness.artifact_id);
+      const citation=T.el('p','panel-note native-text-source');
+      citation.appendChild(catalogueLink(facsimile.source_url,edition.title+(edition.date ? ' ('+edition.date+')' : '')));
+      citation.appendChild(T.el('span',null,' · '+unit.source_locator));
+      part.appendChild(citation); host.appendChild(part);
+    });
+    Array.from(new Set(payload.units.map(function (u) { return u.source_artifact_id; }))).forEach(function (id) {
+      const source=sources.get(id);
+      host.appendChild(T.el('p','panel-note native-text-rights','Public domain · United States. '+source.rights_basis));
+      if (source.transformation) {
+        const normalization=T.el('details','catalogue-original native-text-normalization');
+        normalization.appendChild(T.el('summary',null,'Transcription and normalization'));
+        normalization.appendChild(T.el('p',null,source.transformation)); host.appendChild(normalization);
+      }
+    });
+  }
+
   function catalogueComparisons(data) {
     const rows = data.comparisons;
     if (!Array.isArray(rows) || !rows.length) return;
@@ -2672,6 +2786,18 @@
         detail.appendChild(T.el('p','panel-note',stage.start_year===null ? 'No year is positioned for this state.'
           : 'Date bounds: '+stage.start_year+'–'+stage.end_year+'. These date this attestation; they are not a period of validity.'));
         detail.appendChild(T.el('p','stage-coverage','Text coverage: '+words(stage.text_coverage)+'. This is independent of historical evidence.'));
+        if (stage.text_binding) {
+          const identifier=stage.text_binding.replace(/^native-book:/,'');
+          if (!/^[a-z0-9][a-z0-9-]*$/.test(identifier) || stage.text_binding!=='native-book:'+identifier ||
+              stage.text_projection_path!=='native-texts/'+identifier+'.json') {
+            detail.appendChild(T.el('p','error','The available source text has invalid routing metadata and cannot be opened.'));
+          } else {
+            const fold=lazyBlock('Read available source text','structure/act-history/'+stage.text_projection_path,
+              function (host,payload) { renderNativeText(host,payload,stage); });
+            fold.classList.add('native-text-fold'); fold.setAttribute('data-text-binding',stage.text_binding);
+            detail.appendChild(fold);
+          }
+        }
         detail.appendChild(T.el('p',null,stage.summary));
         detail.appendChild(T.el('p',null,'Scope: '+stage.scope));
         detail.appendChild(T.el('p',null,'Parts represented: '+stage.components.map(words).join(', ')));
