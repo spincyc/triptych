@@ -19,6 +19,11 @@ its failing report to stderr and a parser that only reads stdout would score tha
 run as zero assertions — and requires every recorded assertion and process exit
 to be green. Console, request, and HTTP diagnostics are checked separately so a
 nominal assertion count cannot conceal a page problem.
+
+The Day, Propers, and choices harnesses accept TRIPTYCH_BROWSER_SCRATCH for
+their temporary browser profiles and coverage fixtures. Set it to a lane's
+repository-local .scratch directory when running isolated review work; capture
+directories remain controlled by --capture-dir. Existing defaults are unchanged.
 """
 
 from __future__ import annotations

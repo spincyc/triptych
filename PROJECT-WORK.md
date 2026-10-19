@@ -29,6 +29,20 @@ identifies a 2004 reprint, so it does not authenticate the 1920 Vatican target.
 Exact-edition source work and independent browser acceptance continue under
 the unchanged C1 requirements.
 
+The retry's real-browser checks pass all 91 assertion groups: forty Propers,
+eight choices and 43 Day, against the corrected production state. Independent print review
+found that selecting a partial Caswall witness falsely said no English or Latin
+body was held where Cummiskey English was available. The shared renderer now
+preserves `absent-in-witness` before the broad missing-body fallback; actual
+All Souls unit and live-browser regressions pass. Harness fixes retain the
+failure-race assertions while correcting their source-only URLs, wait for
+profile cleanup, permit an isolated scratch location, and exclude scratch
+artifacts from the publication-route scan. Source and final visual acceptance
+remain open; these are local implementation checkpoints, not C1 completion.
+The focused Python run exercised 139 tests with two opt-in browser skips;
+its sole initial error was the stale shared-renderer release binding. That
+binding was refreshed and its exact guard rerun passes.
+
 Work began from verified feature-branch baseline
 `8f7be05286739235d590833eddba538e7e069ce0`; the implementation contract was
 published as `13e7a190ee4a9771810bf9e516c5490a32b4792b`.

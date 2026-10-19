@@ -498,11 +498,12 @@ class DayReaderIntegrationTests(unittest.TestCase):
                 self.assertNotIn(sentinel, payload, path.as_posix())
         # Pruned rather than filtered: `ROOT.rglob("*.html")` walks the whole
         # repository including `.git`, whose object store is most of the files
-        # in it, and then discards those paths one at a time. Skipping the two
-        # directories during the walk visits the same HTML files.
+        # in it, and then discards those paths one at a time. Exclude build and
+        # scratch output as well: neither is a published source, and a browser
+        # profile or downloaded witness may contain binary or unrelated HTML.
         for directory, dirnames, filenames in os.walk(ROOT):
             dirnames[:] = [
-                name for name in dirnames if name not in {".git", "build"}
+                name for name in dirnames if name not in {".git", "build", ".scratch"}
             ]
             for filename in filenames:
                 if not filename.endswith(".html"):

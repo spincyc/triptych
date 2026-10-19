@@ -1787,6 +1787,11 @@ window.Triptych = (function () {
         extent: unavailable.target && unavailable.target.extent || null
       };
     }
+    if (witness) return {
+      text: null, lang: asked, missing: true, wanted: asked,
+      source: null, availability: 'unavailable',
+      reason: 'absent-in-witness', held: false
+    };
     if (properBodyUnavailable(proper) && !proper.text) {
       return {
         text: null, lang: asked, missing: true, wanted: asked,
@@ -1794,11 +1799,6 @@ window.Triptych = (function () {
         unavailableState: 'unavailable', held: false
       };
     }
-    if (witness) return {
-      text: null, lang: asked, missing: true, wanted: asked,
-      source: null, availability: 'unavailable',
-      reason: 'absent-in-witness', held: false
-    };
     return {
       text: proper.text,
       lang: SOURCE_LANGUAGE,
