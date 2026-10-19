@@ -424680,15 +424680,8 @@
      "citations": [
       {
        "book": "Psalms",
-       "loci": {
-        "hebrew": [
-         {
-          "chapter": 29,
-          "first": 10,
-          "last": 10
-         }
-        ],
-        "vulgate": [
+       "edition_loci": {
+        "douay-rheims": [
          {
           "chapter": 28,
           "first": 10,
@@ -424696,8 +424689,24 @@
          }
         ]
        },
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 29,
+          "first": 10,
+          "last": 11
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 28,
+          "first": 10,
+          "last": 11
+         }
+        ]
+       },
        "numbering": "vulgate",
-       "ref": "Psalms 28:10",
+       "ref": "Psalms 28:10-11",
        "refused": {
         "hebrew-unnumbered-titles": "English Bibles divide Psalm 29 differently from the Hebrew numbering, and no verse-for-verse correspondence is recorded for it"
        },
