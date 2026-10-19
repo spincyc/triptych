@@ -4,12 +4,12 @@ schema_version = 1
 id = "missal-reader-c1-coverage-2026-10-19"
 owner = "guidance/liturgy-browser-roadmap.md"
 promise = "Complete C1 of the 2026-10-19 Missal reader plan: source-grounded expected-target inventory, one typed coverage report, truthful language and witness controls and selected-Mass notices, consistent browser/generated-data/CLI results, and validated regular checkpoints published on feature/missal-reader."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "missal-c1-target-inventory"
   criterion = "Expected targets are inventoried from identified books or source-backed registries independently of held text, with explicit recension, territory, date range, language, source, and typed dispositions covering celebrations, Commons, commemorations, prefaces, Ordinary options, forms, cycles, and exceptional rites; incomplete enumeration is never represented as a complete denominator."
-  status = "open"
+  status = "pass"
   evidence = ["guidance/liturgy-browser-roadmap.md", "PROJECT-WORK.md", "src/sources/inventories/missal-expected-targets-v1.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
 
   [[deliverables.requirements]]
@@ -34,7 +34,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "missal-c1-pre1955-witness-inventory"
   criterion = "Under the 2026-10-19 maintainer decision, the pre-1955 recension is enumerated section by section from the registered Bonn reimpressio witness with the 1922 Mame printing as control; post-1922 additions sit in separate slices, every artifact page is owned by a slice or an explicit boundary, and overlaps with existing pre-1955 slices are dispositioned."
-  status = "open"
+  status = "pass"
   evidence = ["src/sources/inventories/missal-expected-targets-v1.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
 
   [[deliverables.requirements]]

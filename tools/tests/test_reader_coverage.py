@@ -93,6 +93,67 @@ def structure(propers):
             "coverage": coverage.summarize(units, "calendar")}
 
 
+# A minimal document for `renderProper`: enough to build a unit and read back
+# each node's class, language, data attributes and text, without a browser.
+RENDER = r"""
+const fs = require('fs');
+const input = JSON.parse(fs.readFileSync(0, 'utf8'));
+function node(tag) {
+  return {
+    tagName: tag, className: '', children: [], attributes: {}, _text: '', lang: '',
+    appendChild(child) { this.children.push(child); return child; },
+    setAttribute(name, value) { this.attributes[name] = String(value); },
+    removeChild() {},
+    get firstChild() { return this.children[0] || null; },
+    set textContent(value) { this._text = String(value); this.children = []; },
+    get textContent() { return this._text + this.children.map((c) => c.textContent).join(''); }
+  };
+}
+global.document = {
+  createElement: (tag) => node(tag),
+  createDocumentFragment: () => node('#fragment'),
+  createTextNode: (text) => ({ textContent: String(text), children: [] })
+};
+global.window = {location: {search: ''}};
+require('./src/web/browser/shared/browser-core.js');
+const T = window.Triptych;
+const rows = [];
+function walk(one) {
+  if (one.className !== undefined) rows.push({cls: one.className, lang: one.lang || '',
+    attrs: one.attributes, text: one.textContent});
+  (one.children || []).forEach(walk);
+}
+walk(T.renderProper(input.proper, {id: 'douay-rheims'}, new Map(), {
+  orations: input.language, translationWitness: input.witness || null, cycle: input.cycle || null
+}));
+process.stdout.write(JSON.stringify(rows));
+"""
+
+
+def render(proper, language="en", witness=None):
+    result = subprocess.run(["node", "-e", RENDER], text=True, capture_output=True, cwd=ROOT,
+        input=json.dumps({"proper": proper, "language": language, "witness": witness}))
+    if result.returncode:
+        raise AssertionError(result.stderr)
+    return json.loads(result.stdout)
+
+
+def unit_record(component="proper-body", la=("available", "exact-target"),
+                en=("unresolved", "unresolved"), scripture_component=None):
+    """A hand-built unit record, independent of the generator's current typing."""
+    record = {"schema": "triptych-missal-unit-coverage/v1", "target_id": "t", "occurrence_id": "o",
+              "component": component, "cycle_family": None, "cycle": "all", "languages": [
+                  {"lang": lang, "availability": state[0], "relationship": state[1],
+                   "publication_basis": "unresolved", "collation": "unresolved", "witnesses": []}
+                  for lang, state in (("la", la), ("en", en))]}
+    if scripture_component:
+        record["scripture_component"] = scripture_component
+    return record
+
+
+CITATION = {"ref": "Wisdom 1:7", "unresolved": "fixture citation"}
+
+
 class ReaderCoverageTests(unittest.TestCase):
     def test_report_parity_deduplicates_targets_occurrences_and_witness_aliases(self):
         rows = [proper("shared", "one", [translation(), translation("artifact.a")]),
@@ -285,6 +346,92 @@ class ReaderCoverageTests(unittest.TestCase):
         self.assertTrue(all("coverage not assessed" in row for row in labels["languages"]))
         empty = {"coverage": coverage.summarize([], "calendar")}
         self.assertIn("not been assessed", node(op="labels", structure=empty)["notice"])
+
+
+    # C2 claim-local truth (G9, G10, G12): each rendered unit says what it is.
+    def by_class(self, rows, name):
+        return [row for row in rows if name in row["cls"].split()]
+
+    def test_bible_reconstruction_carries_one_quiet_unit_claim(self):
+        scripture = {"name": "Introit", "source": "scripture", "citations": [CITATION, CITATION],
+                     "coverage": unit_record("scripture", ("unresolved", "bible-reconstruction"),
+                                             ("unresolved", "bible-reconstruction"))}
+        claims = self.by_class(render(scripture, "la"), "unit-claim")
+        self.assertEqual(len(claims), 1)
+        self.assertEqual(claims[0]["attrs"]["data-unit-claim"], "bible-reconstruction")
+        self.assertIn("Missal wording not established", claims[0]["text"])
+        mixed = {"name": "Alleluia", "source": "mixed", "text": "Fixture Latin body",
+                 "latin": {"withheld": False}, "citations": [CITATION],
+                 "coverage": unit_record(scripture_component={
+                     "relationship": "bible-reconstruction", "availability": "unresolved"})}
+        rows = render(mixed, "la")
+        self.assertEqual(len(self.by_class(rows, "unit-claim")), 1)
+        self.assertLess(rows.index(self.by_class(rows, "composed")[0]),
+                        rows.index(self.by_class(rows, "unit-claim")[0]))
+        exact = dict(scripture, coverage=unit_record("scripture", ("available", "exact-target"),
+                                                     ("unresolved", "exact-target")))
+        self.assertEqual(self.by_class(render(exact, "la"), "unit-claim"), [])
+        composed = {"name": "Collect", "source": "composed", "text": "Fixture Latin body",
+                    "latin": {"withheld": False}, "citations": [], "coverage": unit_record()}
+        self.assertEqual(self.by_class(render(composed, "la"), "unit-claim"), [])
+
+    def test_missing_translation_keeps_the_held_original_with_its_typed_absence(self):
+        restricted = {"name": "Collect", "source": "composed", "text": "Fixture Latin body",
+                      "latin": {"withheld": False}, "citations": [], "translations": [],
+                      "unavailable_translations": [{"lang": "en", "state": "rights-restricted"}],
+                      "coverage": unit_record(en=("not-publishable", "unresolved"))}
+        rows = render(restricted)
+        composed = self.by_class(rows, "composed")
+        self.assertEqual([row["lang"] for row in composed], ["la"])
+        self.assertEqual(composed[0]["attrs"]["data-unit-original"], "la")
+        self.assertIn("Fixture Latin body", composed[0]["text"])
+        note = self.by_class(rows, "unit-absence")[0]
+        self.assertEqual(note["attrs"]["data-unit-absence"], "en:not-publishable")
+        self.assertIn("English translation unavailable: not publishable here", note["text"])
+        self.assertIn("rights restricted", note["text"])
+        self.assertIn("The Latin original is shown.", note["text"])
+        witness = dict(restricted, unavailable_translations=[],
+                       translations=[translation("edition.b", "Other witness words")],
+                       coverage=unit_record(en=("available", "historical-antecedent")))
+        rows = render(witness, witness="edition.a")
+        self.assertEqual([row["lang"] for row in self.by_class(rows, "composed")], ["la"])
+        self.assertNotIn("Other witness words", json.dumps(rows))
+        self.assertEqual(self.by_class(rows, "unit-absence")[0]["attrs"]["data-unit-absence"],
+                         "en:absent-in-witness")
+
+    def test_withheld_original_is_never_shown_as_a_fallback(self):
+        withheld = {"name": "Collect", "source": "composed", "text": "protected Latin words",
+                    "latin": {"withheld": True, "state": "rights-restricted", "held": False,
+                              "available": False},
+                    "citations": [], "translations": [],
+                    "unavailable_translations": [{"lang": "en", "state": "rights-restricted"}]}
+        rows = render(withheld)
+        self.assertNotIn("protected Latin words", json.dumps(rows))
+        self.assertEqual(self.by_class(rows, "composed"), [])
+        self.assertEqual(self.by_class(rows, "unit-absence")[0]["attrs"]["data-unit-absence"],
+                         "en:not-publishable la:not-publishable")
+
+    def test_every_absence_states_its_typed_reason(self):
+        for en, la in (("not-sourced", "unresolved"), ("inapplicable", "not-sourced"),
+                       ("absent-in-witness", "not-publishable")):
+            with self.subTest(en=en, la=la):
+                body = {"name": "Prayer over the Offerings", "source": "composed", "text": None,
+                        "text_status": {"state": "unavailable", "scope": "proper-body"},
+                        "latin": {"withheld": True, "state": "unavailable", "held": False,
+                                  "available": False},
+                        "citations": [], "translations": [],
+                        "untranslated": [{"lang": "en", "state": "unavailable"}],
+                        "coverage": unit_record(la=(la, "unresolved"), en=(en, "unresolved"))}
+                for language in ("en", "la"):
+                    note = self.by_class(render(body, language), "unit-absence")[0]
+                    self.assertNotIn("No English or Latin body is held here", note["text"])
+                    self.assertIn("Latin text unavailable: " +
+                                  {"unresolved": "not resolved", "not-sourced": "not yet sourced",
+                                   "not-publishable": "not publishable here"}[la], note["text"])
+                    if language == "en":
+                        self.assertEqual(note["attrs"]["data-unit-absence"], f"en:{en} la:{la}")
+                    else:
+                        self.assertEqual(note["attrs"]["data-unit-absence"], f"la:{la}")
 
 
 if __name__ == "__main__":

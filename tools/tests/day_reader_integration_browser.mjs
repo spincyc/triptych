@@ -305,7 +305,13 @@ const STATES = Object.freeze({
   territorialCorpus: hash({ date: '2026-06-07', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la' }),
   loadFailure: hash({ date: '2121-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la' }),
   fastValid: hash({ date: '2026-11-29', missal: 'postconciliar', bible: 'clementine-vulgate', orations: 'la', mass: 'advent-1' }),
-  slowYear: hash({ date: '2027-08-01', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la' })
+  slowYear: hash({ date: '2027-08-01', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la' }),
+  // C2 representative-Mass exemplars: Pentecost Sunday in the three principal missals.
+  pentecost1962: hash({ date: '2026-05-24', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'pentecost' }),
+  pentecost1962English: hash({ date: '2026-05-24', missal: 'roman-1962', bible: 'douay-rheims', orations: 'en', mass: 'pentecost' }),
+  pentecost1962Missal: hash({ date: '2026-05-24', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'pentecost', ordinary: '1', 'ordinary-lang': 'en', rubrics: '1', why: '0' }),
+  pentecostPostDayEnglish: hash({ date: '2026-05-24', missal: 'postconciliar', bible: 'douay-rheims', orations: 'en', mass: 'pentecost', form: 'day' }),
+  pentecostPre1955: hash({ date: '2026-05-24', missal: 'roman-pre-1955', bible: 'douay-rheims', orations: 'la', mass: 'pentecost' })
 });
 
 const DUPLICATE_ORDINARY_STATES = Object.freeze({
@@ -785,6 +791,129 @@ async function surfaceOverflow(cdp, name) {
   })()`);
 }
 
+// Every rendered Proper unit against its own unit coverage record: a Bible
+// reconstruction carries the claim immediately before its passages; a unit the
+// record does not type as one carries none (C2 G9).
+async function bibleClaimAudit(cdp, debug, calendar) {
+  return evaluate(cdp, `(async () => {
+    const T = window.Triptych;
+    const structure = await T.loadJSON('structure/propers/${calendar}.json');
+    const events = [];
+    (window[${JSON.stringify(debug)}].semantic.events || []).forEach(row => {
+      if (row.kind === 'proper') events.push(row);
+      if (row.kind === 'proper-choice') (row.options || []).forEach(option =>
+        (option.events || []).forEach(member => events.push(member)));
+    });
+    return events.map(event => {
+      const expected = T.selectedCoverageUnits({ events: [event] }, structure).some(unit =>
+        unit.scripture_component
+          ? unit.scripture_component.relationship === 'bible-reconstruction'
+          : unit.component === 'scripture' &&
+            (unit.languages || []).some(row => row.relationship === 'bible-reconstruction'));
+      const node = document.querySelector('[data-proper-choice-member-event="' + event.id + '"]') ||
+        document.querySelector('[data-semantic-event-id="' + event.id + '"]');
+      const claims = node ? [...node.querySelectorAll('[data-unit-claim="bible-reconstruction"]')] : [];
+      return {
+        id: event.id, expected, found: Boolean(node), claims: claims.length,
+        citations: node ? node.querySelectorAll('.citation').length : 0,
+        ordered: claims.every(claim => claim.nextElementSibling &&
+          claim.nextElementSibling.classList.contains('citation')),
+        text: claims.map(claim => claim.textContent.trim())
+      };
+    });
+  })()`);
+}
+
+function assertBibleClaims(rows, label) {
+  assert.ok(rows.length > 0, label + ' rendered no Proper units');
+  assert.ok(rows.some(row => row.expected) && rows.some(row => !row.expected),
+    label + ' exemplar exercises both kinds: ' + JSON.stringify(rows));
+  for (const row of rows) {
+    assert.ok(row.found, label + ' unit missing from the page: ' + row.id);
+    if (row.expected) {
+      assert.ok(row.claims >= 1 && row.claims <= row.citations, label + ' ' + JSON.stringify(row));
+      assert.ok(row.ordered, label + ' claim not set before its passage: ' + JSON.stringify(row));
+      assert.ok(row.text.every(text => text === 'Bible reconstruction · Missal wording not established'),
+        label + ' ' + JSON.stringify(row));
+    } else {
+      assert.equal(row.claims, 0, label + ' claim on a unit not typed as reconstruction: ' + row.id);
+    }
+  }
+}
+
+async function claimsSurvivePrint(cdp) {
+  await cdp.send('Emulation.setEmulatedMedia', { media: 'print' });
+  try {
+    return await evaluate(cdp, `[...document.querySelectorAll('[data-unit-claim]')].map(node => {
+      const style = getComputedStyle(node);
+      return style.display !== 'none' && style.visibility !== 'hidden' && node.getClientRects().length > 0;
+    })`);
+  } finally {
+    await cdp.send('Emulation.setEmulatedMedia', { media: '' });
+  }
+}
+
+// Whether the selected Latin Proper bodies fall short of exact target wording,
+// computed from the same structure and unit coverage records the notice reads.
+// The coverage lane regrades these records, so the notice is checked against the
+// contract rather than against a fixed count (C2).
+async function latinExactIncomplete(cdp, calendar) {
+  return evaluate(cdp, `(async () => {
+    const structure = await window.Triptych.loadJSON('structure/propers/${calendar}.json');
+    const report = window.Triptych.summarizeCoverage(
+      window.Triptych.selectedCoverageUnits(dayReaderDebug.semantic, structure));
+    const row = report.languages.find(one => one.lang === 'la');
+    return row.exact_target < row.occurrences;
+  })()`);
+}
+
+// Each composed Proper body against its unit coverage record: what is shown,
+// and which typed absences its note states (C2 G10, G12).
+async function unitAbsenceAudit(cdp, calendar) {
+  return evaluate(cdp, `(async () => {
+    const T = window.Triptych;
+    const structure = await T.loadJSON('structure/propers/${calendar}.json');
+    const asked = dayReaderDebug.state.languages.orations;
+    const events = [];
+    (dayReaderDebug.semantic.events || []).forEach(row => {
+      if (row.kind === 'proper') events.push(row);
+      if (row.kind === 'proper-choice') (row.options || []).forEach(option =>
+        (option.events || []).forEach(member => events.push(member)));
+    });
+    return events.map(event => {
+      const units = T.selectedCoverageUnits({ events: [event] }, structure)
+        .filter(unit => unit.component !== 'scripture');
+      if (units.length !== 1) return null;
+      const state = lang => ((units[0].languages || []).find(row => row.lang === lang) || {}).availability || null;
+      const node = document.querySelector('[data-proper-choice-member-event="' + event.id + '"]') ||
+        document.querySelector('[data-semantic-event-id="' + event.id + '"]');
+      const notes = node ? [...node.querySelectorAll('.unit-absence')] : [];
+      return {
+        id: event.id, asked, la: state('la'), requested: state(asked),
+        composed: node ? [...node.querySelectorAll('.composed')].map(row => ({
+          lang: row.lang, original: row.dataset.unitOriginal || null })) : [],
+        absences: notes.map(row => row.dataset.unitAbsence || null),
+        notes: notes.map(row => row.textContent.trim())
+      };
+    }).filter(Boolean);
+  })()`);
+}
+
+const ABSENCE_WORDS = Object.freeze({
+  'inapplicable': 'not part of this rite or branch',
+  'absent-in-witness': 'not present in this witness',
+  'not-sourced': 'not yet sourced',
+  'not-publishable': 'not publishable here',
+  'unresolved': 'not resolved'
+});
+
+async function detailsText(cdp) {
+  await click(cdp, '[data-reader-action="details"]');
+  const text = await evaluate(cdp, `document.querySelector('[data-reader-details]').innerText`);
+  await escape(cdp);
+  return text;
+}
+
 async function metrics(cdp) {
   return evaluate(cdp, `(() => {
     const action = document.querySelector('.reader-actions');
@@ -966,7 +1095,8 @@ async function runAssertions(cdp, base) {
     // Scripture fragments; C1 keeps that qualification visible.
     assert.equal(value.noticeHidden, false);
     assert.match(value.notice, /represented texts/);
-    assert.match(value.notice, /Exact target wording remains incomplete/);
+    assert.equal(/Exact target wording remains incomplete/.test(value.notice),
+      await latinExactIncomplete(cdp, 'roman-1962'), value.notice);
     assert.match(value.notice, /Bible reconstructions/);
     assert.equal(value.events.length, 10);
     assert.deepEqual(value.actions.map(row => row.replace(/\s+/g, ' ')),
@@ -1039,14 +1169,18 @@ async function runAssertions(cdp, base) {
           .filter(row => row.childNodes[0]?.textContent.trim() === 'Collect').length,
         composedCount: collect?.querySelectorAll('.composed').length ?? -1,
         note: collect?.querySelector('.composed-note')?.textContent.trim() || '',
+        absence: collect?.querySelector('.unit-absence')?.dataset.unitAbsence || '',
         sectionText: collect?.innerText.replace(/\\s+/g, ' ').trim() || ''
       };
     })()`);
     assert.equal(unavailable.formulary, 'saint-augustine-bishop-doctor-church');
     assert.equal(unavailable.collectCount, 1);
     assert.equal(unavailable.composedCount, 0);
-    assert.equal(unavailable.note, 'Latin text unavailable');
-    assert.equal(unavailable.sectionText, 'Collect Latin text unavailable');
+    const typed = /^la:([a-z-]+)$/.exec(unavailable.absence);
+    assert.ok(typed && ABSENCE_WORDS[typed[1]], JSON.stringify(unavailable));
+    assert.equal(unavailable.note, 'Latin text unavailable: ' + ABSENCE_WORDS[typed[1]] +
+      (typed[1] === 'not-publishable' ? ' (its use is rights restricted)' : '') + '.');
+    assert.equal(unavailable.sectionText, 'Collect ' + unavailable.note);
   });
 
   await test('explicit readable formulary and material coverage remain explicit', async () => {
@@ -2013,6 +2147,153 @@ async function runAssertions(cdp, base) {
     await click(cdp, '[data-reader-contents] button:last-child');
     assert.equal(await evaluate(cdp,
       'document.activeElement.dataset.semanticEventId'), 'proper/roman-1962/pentecost-10/010');
+  });
+
+
+  await test('C2 G9: Bible-reconstructed units carry one quiet claim in Read, Missal and print', async () => {
+    await navigateCandidate(cdp, base, STATES.pentecost1962);
+    assertBibleClaims(await bibleClaimAudit(cdp, 'dayReaderDebug', 'roman-1962'), 'Day 1962 Pentecost Read');
+    const printed = await claimsSurvivePrint(cdp);
+    assert.ok(printed.length > 0 && printed.every(Boolean), JSON.stringify(printed));
+    await navigateCandidate(cdp, base, STATES.pentecost1962Missal);
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.mode'), 'missal');
+    assertBibleClaims(await bibleClaimAudit(cdp, 'dayReaderDebug', 'roman-1962'), 'Day 1962 Pentecost Missal');
+  });
+
+  await test('C2 G10: a missing translation leaves the held Latin original visible with its typed absence', async () => {
+    await navigateCandidate(cdp, base, STATES.pentecost1962English);
+    const rows = await unitAbsenceAudit(cdp, 'roman-1962');
+    const missing = rows.filter(row => row.requested !== 'available');
+    assert.ok(missing.some(row => row.la === 'available'), 'exemplar has a held Latin body without English: ' +
+      JSON.stringify(rows));
+    for (const row of rows) {
+      if (row.requested === 'available') {
+        assert.deepEqual(row.composed.map(one => one.lang), ['en'], JSON.stringify(row));
+        assert.deepEqual(row.absences, [], JSON.stringify(row));
+        continue;
+      }
+      assert.equal(row.absences.length, 1, JSON.stringify(row));
+      assert.ok(row.absences[0].startsWith('en:' + row.requested), JSON.stringify(row));
+      assert.match(row.notes[0], new RegExp('^English translation unavailable: ' + ABSENCE_WORDS[row.requested]));
+      if (row.la === 'available') {
+        assert.deepEqual(row.composed, [{ lang: 'la', original: 'la' }], JSON.stringify(row));
+        assert.match(row.notes[0], /The Latin original is shown\.$/);
+      } else {
+        assert.deepEqual(row.composed, [], JSON.stringify(row));
+        assert.ok(row.absences[0].endsWith(' la:' + row.la), JSON.stringify(row));
+      }
+    }
+  });
+
+  await test('C2 G11: pre-1955 Day states the inherited, uncollated recension caveat on screen, in Details and in print', async () => {
+    await navigateCandidate(cdp, base, STATES.pentecostPre1955);
+    const value = await evaluate(cdp, `(async () => {
+      const structure = await window.Triptych.loadJSON('structure/propers/roman-pre-1955.json');
+      const notice = document.querySelector('#coverage-notice');
+      return {
+        coverage: structure.recension_coverage,
+        notice: notice.textContent, hidden: notice.hidden,
+        notes: [...document.querySelectorAll('#reader-document .composed-note')].map(row => ({
+          text: row.textContent.trim(), typed: row.dataset.unitAbsence || null }))
+      };
+    })()`);
+    assert.ok(value.coverage && value.coverage.inheritance, 'pre-1955 structure carries recension coverage');
+    assert.equal(value.hidden, false);
+    assert.ok(value.notice.startsWith('This edition surface is a ' + value.coverage.status + ' finding aid'),
+      value.notice);
+    assert.match(value.notice, new RegExp('Proper wording coverage is ' + value.coverage.domains.propers.state + '\\.'));
+    assert.match(value.notice, new RegExp('Inherited material from Missale Romanum, editio typica 1962 remains ' +
+      value.coverage.inheritance.status + '\\.'));
+    assert.ok(value.notes.length > 0);
+    assert.ok(value.notes.every(row => row.text !== 'Latin text unavailable'), JSON.stringify(value.notes));
+    assert.ok(value.notes.filter(row => /unavailable/.test(row.text)).every(row => row.typed), JSON.stringify(value.notes));
+    await cdp.send('Emulation.setEmulatedMedia', { media: 'print' });
+    try {
+      assert.equal(await evaluate(cdp, `(() => {
+        const notice = document.querySelector('#coverage-notice');
+        return getComputedStyle(notice).display !== 'none' && notice.getClientRects().length > 0;
+      })()`), true);
+    } finally {
+      await cdp.send('Emulation.setEmulatedMedia', { media: '' });
+    }
+    const details = await detailsText(cdp);
+    assert.match(details, /RECENSION COVERAGE|Recension coverage/);
+    assert.match(details, /Proper text source[\s\S]*Missale Romanum, editio typica 1962 · inherited/i);
+    assert.match(details, /Inheritance basis/i);
+    assert.match(details, /remains uncollated|remains inherited/);
+  });
+
+  await test('C2 G12: every absent Proper body states each typed reason', async () => {
+    await navigateCandidate(cdp, base, STATES.pentecostPostDayEnglish);
+    const rows = await unitAbsenceAudit(cdp, 'postconciliar');
+    const empty = rows.filter(row => row.requested !== 'available' && row.la !== 'available');
+    assert.ok(empty.length > 0, 'exemplar has a body held in neither language: ' + JSON.stringify(rows));
+    for (const row of empty) {
+      assert.deepEqual(row.absences, ['en:' + row.requested + ' la:' + row.la], JSON.stringify(row));
+      assert.equal(row.notes[0], 'English translation unavailable: ' + ABSENCE_WORDS[row.requested] +
+        (row.requested === 'not-publishable' ? ' (its use is rights restricted)' : '') +
+        '. Latin text unavailable: ' + ABSENCE_WORDS[row.la] +
+        (row.la === 'not-publishable' ? ' (its use is rights restricted)' : '') + '.');
+    }
+    assert.doesNotMatch(await evaluate(cdp, `document.querySelector('#reader-document').innerText`),
+      /No English or Latin body is held here/);
+  });
+
+  await test('C2 G13: Details reports the explicitly selected formulary and form, and only what remains open', async () => {
+    await navigateCandidate(cdp, base, STATES.pentecostPostDayEnglish);
+    const value = await evaluate(cdp, `(async () => {
+      const structure = await window.Triptych.loadJSON('structure/propers/postconciliar.json');
+      const mass = structure.masses.find(row => row.key === 'pentecost');
+      return { outcome: dayReaderDebug.outcome, name: mass.name,
+        form: (mass.forms || []).find(row => row.id === 'day').name,
+        choices: dayReaderDebug.semantic.unresolvedChoices.map(row => row.id) };
+    })()`);
+    assert.equal(value.outcome, 'unresolved');
+    assert.deepEqual(value.choices, ['proper-choice/postconciliar/pentecost/day/entrance-antiphon']);
+    const details = await detailsText(cdp);
+    assert.doesNotMatch(details, /no formulary outcome has been selected/i);
+    assert.ok(details.includes('Selected formulary: ' + value.name + '; form: ' + value.form + '.'), details);
+    assert.match(details, /Still to be chosen: Source Proper choice: Entrance Antiphon \(Spiritus Domini or Caritas Dei\)\. No option is selected silently\./);
+    assert.match(details, /Pentecost Sunday/);
+  });
+
+  await test('C2 G17: Read and Missal Contents jumps write a stable semantic location that a fresh load restores', async () => {
+    for (const [state, mode] of [[STATES.pentecost1962, 'read'], [STATES.pentecost1962Missal, 'missal']]) {
+      await navigateCandidate(cdp, base, state);
+      const before = await evaluate(cdp, '({ hash: location.hash, length: history.length })');
+      assert.equal(new URLSearchParams(before.hash.slice(1)).has('location'), false);
+      await click(cdp, '[data-reader-action="contents"]');
+      const target = await evaluate(cdp, `(() => {
+        const rows = [...document.querySelectorAll('[data-reader-contents] [data-reader-location]')]
+          .filter(row => /^proper\\//.test(row.dataset.readerLocation));
+        const row = rows[Math.min(4, rows.length - 1)];
+        row.click();
+        return row.dataset.readerLocation;
+      })()`);
+      await waitForVisualSettlement(cdp, { semanticEventId: target });
+      const after = await evaluate(cdp, `({ hash: location.hash, length: history.length,
+        state: history.state && history.state.dayReaderLocation,
+        debug: dayReaderDebug.state.semanticLocation,
+        focus: document.activeElement.dataset.semanticEventId || null })`);
+      const params = new URLSearchParams(after.hash.slice(1));
+      assert.equal(params.get('location'), target, mode + ' ' + after.hash);
+      assert.equal(params.get('mode'), mode);
+      assert.equal(after.length, before.length, mode + ' jump replaces rather than adds history');
+      assert.deepEqual(after.state, { kind: 'event', id: target });
+      assert.deepEqual(after.debug, { eventId: target });
+      assert.equal(after.focus, target);
+      await navigateCandidate(cdp, base, after.hash);
+      const restored = await evaluate(cdp, `(() => {
+        const node = document.querySelector('[data-semantic-event-id="${target}"]');
+        const box = node.getBoundingClientRect();
+        return { outcome: dayReaderDebug.outcome, error: dayReaderDebug.error,
+          location: new URLSearchParams(location.hash.slice(1)).get('location'),
+          visible: box.bottom > 0 && box.top < innerHeight };
+      })()`);
+      assert.equal(restored.outcome, 'ready', JSON.stringify(restored));
+      assert.equal(restored.location, target);
+      assert.equal(restored.visible, true, JSON.stringify(restored));
+    }
   });
 
   await test('deep Missal locus and Contents map share current semantic ownership', async () => {

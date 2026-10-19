@@ -140,10 +140,10 @@ immutable acceptance package. Reproduce them for any release review.
 ### Ordered implementation milestones
 
 The C-series below refines the existing W1–W9 workstreams. It does not replace
-M1–M6 or broaden any historical acceptance. C1 is **in progress**: its report, controls,
-verification and publication requirements pass, and the pre-1955 inventory is
-being enumerated from the witness the maintainer accepted on 2026-10-19
-(decisions below). C2–C6 remain **planned**.
+M1–M6 or broaden any historical acceptance. C1 is **complete** on the feature branch: every
+requirement passes under the maintainer decisions below, and the pre-1955
+recension is enumerated from its accepted witness. C2 and C4 are **in
+progress**; C3, C5 and C6 remain **planned**.
 
 Maintainer decisions, 2026-10-19:
 
@@ -364,11 +364,35 @@ truthful but not yet usable presentation.
 **Ordered work.** Each step regenerates through its owning tool and adds its
 regression before the next begins:
 
-1. truthful accounting (G1–G3);
+1. truthful accounting (G1–G3), implemented 2026-10-19:
+   - coverage reads Latin provenance and publication records;
+   - a collated `editorial-projection-exact-to-target` body is `exact-target`,
+     so roman-1962 reports 1,377 exact-target uses (1,068 targets);
+   - inherited Latin is never `exact-target`;
+   - Caswall English is `historical-antecedent` in all three families;
+   - 339 English absences whose only blocker is a missing passage binding are
+     retyped `no-exemplar` and reported `not-sourced`.
+   Follow-ups:
+   - a more precise binding-pending absence kind;
+   - typing the postconciliar `no-exemplar` rows that are really ICEL rights
+     matters (G21) as restricted;
+   - giving the Cummiskey and Lasance rows the same evidenced antecedent
+     relation as Caswall;
 2. the expected-target join (G4), after the pre-1955 inventory lands;
 3. the appointment and sequence model (G5–G8); a proper Ordinary variable that
    is not held seats a typed absence, never the common form;
-4. claim-local truth in both entrances (G9–G13, G17);
+4. claim-local truth in both entrances (G9–G13, G17), implemented 2026-10-19.
+   Both entrances state each unit's claim from its coverage record:
+   - a Bible-reconstructed unit carries one quiet "Bible reconstruction ·
+     Missal wording not established" line, on screen and in print;
+   - a missing translation leaves the held Latin visible beside its typed
+     absence, and every absence names one of the five typed reasons;
+   - pre-1955 Day shows the Propers recension caveat in its notice, Details
+     and print;
+   - Details reports an explicit formulary or form and only what remains open;
+   - Read and Missal Contents jumps record `location` by replacing the history
+     entry, as Propers does (neither Day mode had written it).
+   Ordinary element absences keep their key-only wording, a C4 (G15) item;
 5. the internal-structure data contract (G14), handing rendering to C4;
 6. exemplar evidence: harness states, a CLI/structure/browser event-order
    parity test, the viewport and print matrix, and an external-review handoff.

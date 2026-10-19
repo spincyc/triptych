@@ -278,6 +278,11 @@ inventory of exceptional rites or their internal texts.
 
 ## Pre-1955 evidence and the unavailable denominator
 
+**Superseded in part, 19 October 2026.** The pre-1955 recension now has an
+accepted witness and a section inventory; see "The pre-1955 witness: section body
+inventory" below. Its Holy Week slices replace the two witness slices described
+here. The paragraphs that follow record the earlier state.
+
 The target remains `roman-1920`, the 1920 Vatican typical edition. The positive
 Holy Week entries come from the explicit witness-level structure of
 [roman-holy-week-acts-v1.toml](roman-holy-week-acts-v1.toml): four celebration
@@ -708,6 +713,1006 @@ nothing of it is retained. The record states that access limitation in plain
 words. ICEL's conditional web permission is not claimed to reach this PDF or
 any USCCB material in it. The 1456-page body, including the two further
 indexes, is not acquired.
+
+## The pre-1955 witness: section body inventory
+
+On 19 October 2026 the maintainer decided that the files circulating as the
+"1920 typical edition" are public domain for their 1920 content and may be
+used. Every such file found is the registered
+[Bonn 2004 *reimpressio*](../works/catholic-church/missale-romanum/editions/2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920/artifacts/ia-reimpressio-pdf-b676ce5c/artifact.toml)
+of a 28th edition conformed to the Vatican typical edition: 1,220 artifact
+pages, SHA-256 `b676ce5c…a1d`. It is a 2003 typesetting with a clean text layer
+of a printing of about 1954. It carries St Pius X (1954) and lacks St Joseph the
+Worker (1955), so it witnesses the recension as it stood before the 1955 Holy
+Week reform. The registered
+[1922 Mame conformed printing](../works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ia-scan-pdf-9873693a/artifact.toml)
+is the control.
+
+Four section lanes read the book. Each derived identities from the witness
+alone and image-checked seams and doubtful cases against both books:
+
+| Lane | Artifact pp. | Slices | Targets | Boundaries |
+| --- | --- | --- | --- | --- |
+| Front matter, Kalendarium, rubrics, preparation, Ordo, Prefaces, Canon | 1–104, 375–454 | 11 | 739 | 6 |
+| Proprium de Tempore and the pre-1955 Holy Week | 105–374, 455–582 | 4 | 2,613 | 4 |
+| Proprium de Sanctis | 583–966 | 7 | 2,899 | 0 |
+| Commons, votives, the dead, rites, blessings, local propers | 967–1220 | 23 | 2,023 | 6 |
+
+Every artifact page belongs to a section slice or an explicit extent boundary.
+The 45 new slices hold 8,274 targets. All of them are `established` on the
+witness, and none carries a calendar join yet.
+
+**Post-1922 additions.** 322 targets in twelve `…-post-1922-additions` slices
+have no counterpart in the 1922 control; each absence was confirmed on Mame
+page images or its printed index. "Addition" means the identity is new to that
+section, not necessarily new text. St Gabriel, St John Leonardi and St Margaret
+Mary had Masses with the same Introit in Mame's local appendix before entering
+the universal Proper. The 1922 local Maternity Mass differs from Bonn's.
+
+No witness or registered source prints an institution date, except St Pius X,
+whose 1954 date is in the registered artifact record. Every other row therefore
+says "date not established". The rubrics show that the book does not reflect a
+single moment. *Additiones* tit. VI n. 4 adds the Sacred Heart and Christ the
+King to the days that exclude ordered Collects, while the general rubrics' Credo
+list names Canisius and John of the Cross but omits Bellarmine and Albert.
+Rights follow the same split: the 2026-10-19 public-domain decision does not
+reach text first published in 1931 or later (`guidance/missals.md` §5).
+
+**Identities only in the 1922 control** are reported, not inventoried:
+
+- the Octave of the Assumption on 22 August;
+- the Christopher commemoration on 25 July;
+- Mame's Sacred Heart formularies *Miserebitur* and *Egredimini*;
+- Kalendarium commemorations of Agapitus, Melchiades, Anastasia and the Vigil
+  of the Immaculate Conception. Bonn's body still prints Anastasia,
+  Melchiades and the vigil.
+
+Some dates or ranks moved: Peter Nolasco, Hedwig and Gertrude; Agnes
+*secundo*; the Vigil of St Lawrence; and the Commemoration of the Supreme
+Pontiffs, 3 July in Mame and 4 July in Bonn. Holy Family, Hyginus and the
+Sacred Heart sit in Bonn's temporal but in Mame's sanctoral.
+
+**Integration dispositions.**
+
+- The two Holy Week slices from the 1862 Pustet and the 1951–1954 composite are
+  superseded and removed; their mapping is in the temporal subsection.
+  [roman-holy-week-acts-v1.toml](roman-holy-week-acts-v1.toml) stays as the
+  other-witness tracer.
+- The 1861 Cummiskey Preface slice is kept as other-witness evidence. Its
+  eleven Prefaces are a strict subset of the fifteen enumerated here and are
+  never summed with them.
+- The whole-book slice stays `unresolved`, and every whole-book boundary stays
+  `unenumerated` until an independent page-image review, as for 1962.
+
+The four lane records follow as the next subsections. Counts in them are as
+each lane reported, except where integration changed them.
+
+### Pre-1955 front matter, Kalendarium, Ordinary, Prefaces and Canon
+
+On 19 October 2026 the maintainer accepted the registered
+[Bonn reimpressio](../works/catholic-church/missale-romanum/editions/2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920/artifacts/ia-reimpressio-pdf-b676ce5c/artifact.toml)
+of the 28th edition *iuxta typicam Vaticanam* (SHA-256 `b676ce5c…`, 1,220
+pages) as the witness for `roman-1920`. It is a later conformed printing.
+This section covers artifact pp. 1–104 and 375–454. It reads the clean
+InDesign text layer, page by page, and checks headings, seams and doubtful
+cases on page images. The registered
+[Mame 1922 scan](../works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ia-scan-pdf-9873693a/artifact.toml)
+is the control for what already stood in 1922. Its OCR is used only to locate
+text; every absence claimed below was confirmed on a Mame page image. No held
+propers, Mass keys or selectors were consulted. The rows hold metadata only.
+
+The lane adds 11 slices, 739 targets and 6 extent boundaries. No identifier
+collides with an existing row. No row carries `calendar_mass_key`, so the
+validator classifies all 739 targets as `unresolved`, as intended.
+
+| Slice | State | Targets by kind |
+| --- | --- | --- |
+| `kalendarium-fixed` | complete | celebration 285, commemoration 92 |
+| `kalendarium-movable` | complete | celebration 5, commemoration 3 |
+| `kalendarium-post-1922-additions` | complete | celebration 11 |
+| `ordinary-text-blocks` | complete | slot 111, referral 13 |
+| `ordinary-canon-and-preface-options` | complete | ord-opt 26 |
+| `ordinary-musical-presentation-options` | complete | ord-opt 43 |
+| `prefaces` | complete | preface 13 |
+| `ordinary-post-1922-additions` | complete | preface 2, ord-opt 5 |
+| `ritus-additional-text-appointments` | complete | slot 11, ord-opt 5 |
+| `preparation-thanksgiving-entries` | complete | form 23 |
+| `preparation-thanksgiving-slots` | complete | slot 91 |
+
+Slice names omit the `roman-pre-1955-` prefix.
+
+#### Extent and seams
+
+| Artifact pp. | Content | Owner | Status |
+| --- | --- | --- | --- |
+| 1–13 | Title (Bonn 2004), blank p. 2, 1920 decree, bulls | `extent-front-documents` | inapplicable |
+| 14–25 | *De anno*, tables; Tabella temporaria 2003–2046 (reprinter) | `extent-computus-tables` | inapplicable |
+| 26–36 | Kalendarium | `kalendarium-*` | complete |
+| 37–47 | Rubricae generales I–XX | `extent-general-rubrics` | unenumerated |
+| 48–59 | Additiones et Variationes | `extent-additiones` | unenumerated |
+| 60–76 | Ritus servandus | `ritus-additional-text-appointments` | complete after Ordo deduplication |
+| 77–82 | De defectibus | `extent-de-defectibus` | unenumerated |
+| 83–101 | Praeparatio, Gratiarum actio | `preparation-thanksgiving-*` | complete |
+| 102–104 | Ordo incensandi diagrams; plate p. 104 | `extent-incensation-diagrams` | inapplicable |
+| 375–381 | Ordo Missae to the Secret | `ordinary-*` | complete |
+| 382–403 | Prefaces, solemn tone (14) | `prefaces`, `ordinary-*` | complete |
+| 404–425 | Prefaces, ferial tone (15) | `prefaces`, `ordinary-*` | complete |
+| 426–437 | Prefaces without chant (15) | `prefaces`, options, dialogue | complete |
+| 438 | Canon plate | none (image only) | — |
+| 439–453 | Canon through Last Gospel | `ordinary-*` | complete |
+| 454 | Plate before Easter | none (image only) | — |
+
+Two seams in the brief's section map were corrected. Page 48 is the title page
+and tit. I of the Additiones, so the general rubrics end at p. 47. Page 374 is
+a full-page plate in the temporal lane's extent, not a blank. Page 426 is
+shared: it ends the ferial Preface of the Dead and opens the Prefaces without
+chant. In the Ordinary pages, printed page equals artifact page minus 104. In
+the front matter, printed `n*` equals artifact page n.
+
+#### Method and granularity
+
+**Kalendarium.** All 365 date lines were parsed and checked for continuity
+(31/28/31/30/… per month, none lost). That gives 296 dated entries. The model
+is the 1962 fixed-calendar slice, with the same clause splitting:
+
+- Each principal clause is one celebration. Vigils printed as the day's entry
+  count as celebrations.
+- Each `Com.` clause is one commemoration. A clause is split at *ac*/*et* only
+  between distinct identities, never inside a companion group. For example,
+  *Ss. Ursulæ ac Sociarum* stays one.
+- Octave, vigil, feria and Sunday commemorations are kept as identities,
+  with their owner in square brackets.
+- The rankless 12-05 *Commemoratio S. Sabbæ* is a commemoration.
+
+The six movable feasts printed inside the months form a separate slice, so
+that the fixed slice stays comparable with 1962. Labels normalize glyph losses
+in the typesetting (*Puriicatio*, *Transiguratio*, *iliorum*) and two
+misprints (*Daminani*, *Alexandrini*).
+
+**Ordinary.** The granularity of the corrected 1962 Ordinary slices is
+followed:
+
+- Text blocks are prayer blocks and dialogue turns. The Preface dialogue and
+  Sanctus come from the first Preface without chant.
+- Wording options cover the Preface rubrics and the Canon's seasonal
+  Communicantes and Hanc igitur.
+- Musical presentations are Gloria ×4, Credo ×1, Pater ×2, Pax ×1, dismissal
+  ×11, plus each solemn and ferial Preface.
+
+As in 1962, the Prefaces without chant are the spoken presentation. They own
+the Preface identities and wording options and add no musical row.
+
+Differences from 1962 at the same granularity:
+
+- *Benedicamus Domino* is the alternative dismissal by quality of Mass; there
+  is no procession form.
+- The Joseph Preface has two occasions (feast, votive).
+- The Gloria has four intonations.
+- There is no Chrism Preface.
+
+**Ritus servandus.** The 13 appointments of the 1962 model recur, including
+the episcopal *Pax vobis* at V.1. Three more belong to the pre-1960
+communion of the faithful (X.6): the minister's Confiteor, the *Misereatur
+vestri*, and *Indulgentiam … peccatorum vestrorum*, the last as a wording
+alternative.
+
+**Preparation and thanksgiving.** The Bonn witness has 23 entries and 91
+slots: the 1962 set without the *Oratio universalis* attributed to Clement XI.
+
+#### Mame 1922 comparison
+
+The Mame Kalendarium (artifact pp. 40–49) was read on page images, month by
+month. **The scan lacks the leaf printed xxx–xxxi (7 May–10 July).** For that
+range the Mame Proprium Sanctorum headings and index were used. The only Bonn
+identity absent there is Robert Bellarmine: the Mass sequence passes from
+12 May to 14 May (p. 709, image-checked).
+
+| Post-1922 addition (Bonn) | Bonn locus | Mame 1922 evidence | Date |
+| --- | --- | --- | --- |
+| S. Joannes Bosco, 01-31 | Kal. p. 27 | p. 41: 01-31 is Peter Nolasco | not established |
+| S. Gabriel a Virgine Perdolente, 02-27 | Kal. p. 27 (also leap-year note) | p. 41: 02-27 empty | not established |
+| S. Petrus Canisius, 04-27 | Kal. p. 29 | p. 43: 04-27 empty | not established |
+| S. Robertus Bellarmino, 05-13 | Kal. p. 30 | leaf missing; Proprium p. 709 has no 05-13; index has none | not established |
+| S. Joannes Maria Vianney, 08-09 | Kal. p. 32 | p. 45: 08-09 is the Vigil of St Lawrence | not established |
+| S. Joannes Eudes, 08-19 | Kal. p. 32 | p. 45: 08-19 is a day within the Assumption octave | not established |
+| Immaculate Heart, 08-22 | Kal. p. 32 | p. 45: 08-22 is the Assumption octave day | not established |
+| S. Teresia a Jesu Infante, 10-03 | Kal. p. 34 | p. 46: 10-03 empty | not established |
+| Maternity of the BVM, 10-11 | Kal. p. 34 | p. 47: 10-11 empty | not established |
+| S. Albertus Magnus, 11-15 | Kal. p. 35 | p. 47: 11-15 is Gertrude | not established |
+| Christ the King, last Sunday of October | Kal. p. 34 | p. 47: none; Additiones p. 70 lacks it | not established |
+| Preface of the Sacred Heart (solemn, ferial, without chant) | pp. 390, 412, 430 | absent; the Holy Cross Preface rubric (p. 399) appoints that Preface for the Sacred Heart | not established |
+| Preface of Christ the King (solemn, ferial, without chant) | pp. 392, 414, 431 | absent from all three series | not established |
+| Ferial tone of the Epiphany Preface | p. 405 | ferial series goes Nativity → Lent (pp. 418–420) | not established |
+
+Neither witness prints any date later than 1920. Bonn's latest printed dates
+are the 1920 decree (p. 3) and an indulgence of 1917 (p. 101). Mame's license
+(p. 15) cites S.R.C. decrees of 24 October 1920 and 26 October 1921.
+
+**1922-only identities**, present in Mame but absent from the Bonn
+Kalendarium:
+
+- the Assumption octave day (08-22);
+- the commemorations of S. Agapitus (08-18), of the Vigil of the Immaculate
+  Conception (12-07), of S. Melchiades (12-10) and of S. Anastasia in the
+  second Christmas Mass (12-25).
+
+Three of these persist in the Bonn *body*: the Vigil rubric on p. 594,
+*Pro S. Melchiade* on p. 601, and Anastasia on p. 127. They are therefore
+omissions from the Kalendarium print, not lost identities. Their owning lanes
+should keep them.
+
+**Identities that changed date or kind** stay in the fixed slice with a note:
+
+- Peter Nolasco moved from 01-31 to 01-28.
+- Agnes *secundo* changed from a simplex celebration to a commemoration.
+- The Vigil of St Lawrence changed from the principal entry to a commemoration.
+- Gertrude moved from 11-15 to 11-16.
+
+**Rank and title differences:**
+
+- 09-29: Bonn *duplex II classis*, Mame *duplex I classis*. This may be a
+  reprint error.
+- Precious Blood, 07-01: Bonn prints *I classis*. Mame's Kalendarium leaf for
+  this date is missing.
+- John of the Cross is styled *Eccl. Doct.* in Bonn only.
+
+Musical structure differs in one place. Mame has twelve dismissal tones, with
+separate *Benedicamus* tones for ferias *per annum* and for Advent/Lent ferias
+(pp. 467–468). Bonn merges these into its tone VIII, giving eleven tones.
+Mame prints the seasonal Communicantes after each Preface without chant
+(p. 447), not in the Canon. That is a placement difference, not a different
+identity.
+
+The Ordinary, Ritus and preparation sections otherwise match. The
+preparation has the same 23 entries; only Oblatio sui and En ego change
+places.
+
+#### Rubrical evidence for dating (Additiones and general rubrics)
+
+The rubrics give no dates, but they show that the rubric text was conformed
+after 1922:
+
+- Additiones tit. VI n. 4 (p. 58) adds the Sacred Heart and Christ the King to
+  the first-class days that exclude ordered Collects. Mame's list (p. 70) ends
+  at Corpus Christi.
+- The Credo list, Rubricae generales XI (p. 42), adds Peter Canisius and John
+  of the Cross. It gives the Sacred Heart an octave.
+- That list does not name Robert Bellarmine or Albert the Great, although the
+  Kalendarium styles both as Doctors. The rubric text was therefore not
+  conformed as far as the Kalendarium. This supports dating each addition
+  separately rather than treating the book as a single c. 1954 state.
+
+#### Overlap with existing rows
+
+`roman-pre-1955-cummiskey-prefaces` (1861, 11 Prefaces,
+`target-correspondence-unresolved`) is a strict subset of the new Preface
+identities. It lacks only St Joseph and the Dead, both added in 1919, and the
+two post-1922 Prefaces. No Bonn Preface was added a second time under a
+Cummiskey ID, and the two slices must not be summed.
+
+Recommendation: keep the Cummiskey slice as other-witness evidence. Its basis
+should cross-reference `roman-pre-1955-prefaces`. Retiring the whole-book
+`roman-pre-1955-whole-preface` boundary should wait for an independent review
+of these 15 identities. The whole-book slice basis, which says no 1920 witness
+is held, needs updating by the coordinator.
+
+The Holy Week rows belong to the temporal extent and do not overlap this
+lane's extent.
+
+#### Image checks
+
+Bonn pages checked on images:
+
+- Front matter and Kalendarium: 24, 27, 32, 34, 36.
+- Rubrics, Additiones, preparation and diagrams: 48, 83, 104.
+- Plates: 374, 438, 454.
+- Ordinary, Prefaces and Canon: 377, 379, 392, 405, 446, 450, 451.
+
+Mame pages checked on images:
+
+- Kalendarium: 40–49.
+- Ordinary and Canon: 386, 387, 455, 458, 465, 467, 468.
+- Prefaces: 399, 416, 418–420, 440, 442, 447, 450, 453.
+- Proprium Sanctorum: 709.
+
+#### Limits
+
+- These are structural identities, not wording collations.
+- For the Mame leaf gap, presence of an identity in that range rests on Mame
+  body headings found by OCR, not on Kalendarium images.
+- Mame identity of the Ordinary blocks was established by OCR phrase search,
+  plus images where the OCR failed.
+- Dismissal-tone melodies were not compared note by note.
+- The general rubrics, Additiones and *De defectibus* remain unenumerated.
+- Kalendarium rows assert no formulary or calendar join.
+
+### The pre-1955 witness: Proprium de Tempore and the pre-1955 Holy Week
+
+The maintainer accepted the registered
+[Bonn reimpressio](../works/catholic-church/missale-romanum/editions/2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920/artifacts/ia-reimpressio-pdf-b676ce5c/artifact.toml)
+on 19 October 2026 as the witness of the `roman-1920` recension. Its SHA-256 is
+`b676ce5c…a1d` and it has 1,220 artifact pages. It is a 2003 typesetting of the
+28th edition iuxta typicam and a conformed printing of about 1954. The
+temporal lane read artifact pp. 105–374 and 455–582. The text layer is typeset,
+not OCR, but it has scattered keying errors such as *Praetatio* and
+*Postcornmuniones*. Every page of the extent belongs to a positive slice or is a
+full-page plate or blank. The registered
+[1922 Mame scan](../works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ia-scan-pdf-9873693a/artifact.toml)
+is the control. The payloads stay outside the repository, and this record holds
+metadata only.
+
+The lane adds 4 slices, 2,613 targets and 4 boundaries. It used no held
+propers, Mass keys or 1962 rows, and it adds no calendar joins.
+
+| Section | Artifact pp. | Printed pp. | Slice | Status |
+| --- | --- | --- | --- | --- |
+| Plate facing the Temporal | 104 | – | extent boundary (lane-ordinary) | inapplicable |
+| Advent to Saturday after Passion Sunday | 105–273 | 1–169 | `temporal-advent-to-passiontide` | complete |
+| Holy Week, Palm Sunday to the Holy Saturday Vespers | 275–373 | 171–269 | `temporal-holy-week` | complete |
+| Plate before the Ordo | 374 | 270 | none (no text) | inapplicable |
+| Easter Sunday to the last Sunday after Pentecost | 455–581 | 351–477 | `temporal-easter-to-last-sunday` | complete |
+| Sacred Heart formulary and octave appointments | 527–531 | 423–427 | `temporal-post-1922-additions` | complete |
+| Plate before the Proprium de Sanctis | 582 | 478 | none (no text) | inapplicable |
+
+Printed page numbers equal the artifact page minus 104 throughout this extent,
+because the plates are paginated. Twenty-four pages have no text layer:
+
+- 19 are full-page plates: pp. 104, 124, 146, 154, 158, 192, 258, 274, 306,
+  314, 334, 374, 454, 482, 496, 512, 518, 526 and 582.
+- 5 are blank: pp. 123, 153, 333, 495 and 525.
+
+The seams are exact. Page 104 is a plate, and p. 105 opens *PROPRIUM DE
+TEMPORE* with Advent I. Page 373 ends the Holy Saturday Vespers and dismissal,
+p. 374 is a plate, and p. 375 opens the *ORDO MISSÆ*. Page 454 is a plate, and
+p. 455 opens *DOMINICA RESURRECTIONIS*. Page 581 ends the last Sunday after
+Pentecost, p. 582 is a plate, and p. 583 opens the *PROPRIUM DE SANCTIS*.
+
+| Slice | State | Targets by kind |
+| --- | --- | --- |
+| `temporal-advent-to-passiontide` | complete | slot 966, referral 167, form 77, ord-opt 60, prayer-set 14, rite 1 |
+| `temporal-holy-week` | complete | slot 210, rite-unit 26, referral 20, ord-opt 13, celebration 7, form 6, rite 4 |
+| `temporal-easter-to-last-sunday` | complete | slot 742, referral 141, ord-opt 68, form 57, prayer-set 11 |
+| `temporal-post-1922-additions` | complete | slot 19, referral 2, form 1, ord-opt 1 |
+
+The lane first typed 152 Credo, Gloria, *Flectamus genua* and dismissal
+directions as text slots. At integration the 142 Ordinary directions were
+retyped `ordinary-option`, following the 1962 temporal convention. The eight
+*Flectamus genua* units of the Good Friday solemn orations remain text slots of
+the rite. Before that retyping, the 2,079 text slots divided as follows. They
+must not be summed with other kinds:
+
+| Text-slot role | Count |
+| --- | --- |
+| Printed proper units | 1,608 |
+| Preface, Communicantes and Hanc igitur appointments | 190 |
+| Credo, Gloria, Flectamus genua and dismissal directions | 152 |
+| Seasonal prayer-set slots | 75 |
+| Printed commemorations | 54 |
+
+#### Method and granularity
+
+The book prints no marginal unit numbers. The text layer was therefore parsed
+with its typography, taking font, size, colour and position from
+`pdftohtml -xml`. Each printed formulary heading is one `form`; these headings
+are the bold black or large red titles. Within a formulary:
+
+- Each red role heading is one compound unit. This covers the Introit with its
+  psalm, each Oratio, the Gradual, the Tract, the Sequence, the Offertory, the
+  Secret, the Communion, the Postcommunion and the *Oratio super populum*.
+- Each reading title is a unit, as are the paragraph-initial *Alleluja* with its
+  verse, the *Hymnus* of the Ember Saturdays and each Pentecost-vigil
+  *Prophetia*.
+- Repeated role headings take ordinals, as in the Ember-day collects and
+  lessons.
+- Seasonal and votive alternatives printed inside a formulary stay distinct
+  slots under the same form. Examples are the post-Septuagesima votive Tract,
+  the paschal Alleluja and the votive Offertory and Communion of the Sacred
+  Heart.
+
+The first pass missed role headings that were printed at 12 or 14 point, in
+italic or with a truncated title, for example on pp. 120, 128, 209 and 521. The
+role rule was widened to catch them, and the result was confirmed on page
+images.
+
+Pre-1955 printing has features that 1962 lacks, and they are recorded as
+follows:
+
+- **Seasonal orations.** The *Orationes pro diversitate Temporum* (de S. Maria,
+  contra persecutores, pro Papa, ad poscenda suffragia, pro vivis et defunctis)
+  are printed in full at eleven places. Each printed collect, secret and
+  postcommunion triple is one `prayer-set` with three slots, which gives 25
+  sets. Every other formulary refers to these sets in its collect, secret and
+  postcommunion positions. Each printed referral (*Aliae Orationes / Secretae /
+  Postcommuniones, ut supra*, *Altera Oratio*, or *Orationes … assignatae, ut*)
+  is one `form-referral` per position.
+- **Commemorations.** Printed commemorations are slots of their form. Examples
+  are the octaves of the Nativity, Epiphany, Ascension, Corpus Christi and
+  Sacred Heart, and Saints Anastasia and Telesphorus.
+- **Referral headings.** The headings of 2–4 January (octave days) and of the
+  Telesphorus commemoration are referral-only `form`s, each with a referral
+  child. This follows the sanctoral precedent in the 1962 review. The Hyginus
+  heading has three proper orations.
+- **Directions and appointments.** Credo, Gloria and Flectamus genua directions,
+  both positive and explicit negative, and printed dismissal directions are
+  positive text-slots. So are the Preface, Communicantes and Hanc igitur
+  appointments, including conditional alternatives. The Credo directions were
+  read from the running text, not from the red drop capital, because many of
+  them are printed without one.
+
+Rites are recorded in this way:
+
+- **Ashes.** The blessing of ashes is an `exceptional-rite` with 10 slots. No
+  pre-1955 ash rite existed before this lane.
+- **Holy Week.** Holy Week is counted in named semantic blocks at the
+  granularity of the 1962 Holy Week lane:
+  - 7 day celebrations.
+  - Mass forms for Palm Sunday, Monday, Tuesday, Wednesday, Maundy Thursday
+    and Holy Saturday.
+  - The palms rite, with blessing, distribution and procession, 27 slots in
+    all, including the Preface and Sanctus of the blessing.
+  - The Thursday reposition, stripping of the altars and Mandatum, with nine
+    antiphons.
+  - Good Friday:
+    - the lessons and Passion;
+    - the nine solemn orations, including *pro Imperatore*, each a unit with
+      an invitation, a Flectamus direction or, for the Jews, the printed
+      rubric, and an oration;
+    - the adoration of the Cross, with the Improperia, Crucem tuam, Crux
+      fidelis, Pange lingua and doxology;
+    - the Mass of the Presanctified, with Vexilla Regis, three incensation
+      formulas, In spiritu humilitatis, Orate fratres, Pater noster, Libera nos
+      and the communion formulas.
+  - Holy Saturday:
+    - the three new-fire orations, the blessing of the incense grains and
+      Lumen Christi;
+    - the deacon's blessing and the Exsultet as one block;
+    - the twelve prophecies with twelve orations and three tracts;
+    - the blessing of the font: the Sicut cervus procession, two orations, the
+      Preface-tone consecratory prayer as one block, and the three oil and
+      chrism formulas;
+    - the litany;
+    - the Mass with its Vespers.
+
+  Named texts that are not printed are `form-referral`s: Pange lingua on
+  Thursday, Psalm 21, Asperges and the Rituale baptism. No Chrism Mass is
+  printed.
+
+#### Cross-checks
+
+- **Heading counts.** A line-start count of role headings in `pdftotext -raw`
+  matched the slots for Introit, Offertory, Communion, Secret and Postcommunion
+  page by page. The only differences were explained by rubric lines that begin
+  with a role word and by tracts that sit inside rite and vigil blocks.
+- **Formulary sequence.** Every Bonn temporal formulary was matched to Mame's
+  running heads (Mame artifact pp. 115–593). The two temporal sequences are
+  identical except for the cases below.
+- **Holy Family and Hyginus.** Mame prints Holy Family in its Proprium de Sanctis
+  (artifact pp. 614–616, printed 500–502) and Pro S. Hygino at artifact p. 617.
+  Bonn prints both in the Temporal. These are relocations, not additions.
+
+#### Post-1922 additions
+
+These rows are printed in Bonn with no counterpart in Mame 1922. The absences
+were confirmed on Mame page images at artifact pp. 540 and 720.
+
+| Rows | Bonn locus | Mame 1922 | Date |
+| --- | --- | --- | --- |
+| Form *In Festo Sacratissimi Cordis Jesu* (Cogitationes; *cum Octava privilegiata III ordinis*), 15 slots, credo direction, Preface appointment, within-octave referral | pp. 527–529 | different formulary *Miserebitur*, Proprium de Sanctis p. 720 (printed 606), no octave | not established |
+| Sacred Heart octave commemoration collect, secret and postcommunion, Sacred Heart Preface appointment, octave-day referral, in the *Dominica infra Octavam Sacratissimi Cordis* | pp. 529–531 | the same Mass headed *Dominica III post Pentecosten*, with no octave (p. 541) | not established |
+
+The Sunday's own formulary has a 1922 counterpart and stays in the main slice.
+Only its octave appointments move.
+
+Mame's *Miserebitur* Sacred Heart formulary is the one 1922-only identity
+connected with this extent. It is printed nowhere in Bonn: a text search of the
+whole book found it absent. It belongs to Mame's sanctoral, so it is reported
+here and was not entered as a row. Christ the King is printed in Bonn's
+sanctoral (p. 927), outside this extent.
+
+#### Holy Week: the earlier slices
+
+The tracked slices `roman-pre-1955-holy-week-witness-celebrations` (4) and
+`roman-pre-1955-holy-week-witness-units` (38) come from the 1862 Pustet and
+from the 1951–1954 composite, and they are marked
+`target-correspondence-unresolved`. Each of their 42 rows maps one-to-one to a
+new established row:
+
+- the four celebrations map to `roman-pre-1955:temporal:celebration:` plus
+  `dominica-in-palmis`, `feria-5-in-cena-domini`, `feria-6-in-parasceve` and
+  `sabbato-sancto`;
+- the 14 palm-blessing units map to `…:slot:palm-blessing:palms-blessing:*`,
+  and the three distribution units to `…:palms-distribution:*`;
+- the Palm Sunday and Maundy Thursday Introits map to those Masses'
+  `…:introit` slots;
+- the three *pro Iudaeis* units map to
+  `…:slot:parasceve:solemn-oration-8:{invitation,rubric-no-flectamus,oration}`;
+- Prophecies 1–12 map to `…:slot:sabbato-sancto:prophecies:prophecy-NN`;
+- the Holy Saturday *nec postcommunio* rubric and three Vespers units map to the
+  corresponding `…:slot:sabbato-sancto-missa:` rows.
+
+Keeping both sets would double-count those identities in the `roman-pre-1955`
+report. The two old slices are therefore superseded and removed from the
+inventory.
+[roman-holy-week-acts-v1.toml](roman-holy-week-acts-v1.toml) stays as the
+other-witness tracer and is not changed.
+
+#### Image checks
+
+Artifact pages checked as images:
+
+| Witness | Artifact pages |
+| --- | --- |
+| Bonn | 104, 105, 120, 123, 124, 128, 146, 150, 152, 153, 154, 158, 162, 163, 192, 209, 223, 258, 274, 275, 280, 281, 306, 310, 311, 314, 325, 333, 334, 336, 359, 371, 374, 375, 454, 455, 456, 482, 493, 495, 496, 512, 518, 521, 525, 526, 527, 529, 582, 583 |
+| Mame | 157, 165, 540, 720 |
+
+The checks found two corrections, both made before the counts above:
+
+- The Exsultet begins on p. 336, not p. 337.
+- The Innocents Alleluja and Tract are conditional alternatives, not the
+  votive post-Septuagesima pattern.
+
+#### Limits
+
+These are structural identities, not wording collations. Incipits in labels
+identify units; they are not verified text.
+
+Three things are not enumerated, and each is an explicit `unenumerated`
+boundary:
+
+- imported bodies of referred Masses;
+- conditional omissions when a Sunday Mass is resumed on a feria;
+- occurrence and commemoration rules, verse- and stanza-level segmentation and
+  the unchanging Ordinary.
+
+No dates were asserted for the post-1922 additions. The whole-book `roman-1920`
+universe remains `unresolved`.
+
+Three choices are open for review:
+
+- **Kind of the directions.** Credo, Gloria and Flectamus directions are
+  `text-slot`, as the brief specified. The 1962 Lent lane typed them as
+  `ordinary-option`. Their IDs contain `:direction-`, so they can be retyped
+  mechanically.
+- **The Sacred Heart form.** It is held in the post-1922 slice. Its celebration
+  existed in 1922, but the 1922 formulary text differs.
+- **Unpaired qualifiers.** Some Ember and Lent orations without a printed
+  qualifier were given ordinals by position.
+
+### Pre-1955 Proprium de Sanctis (Bonn artifact pp. 583–966)
+
+**Witness.** The registered
+[Bonn 2004 reimpressio](../works/catholic-church/missale-romanum/editions/2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920/artifacts/ia-reimpressio-pdf-b676ce5c/artifact.toml)
+of the 28th edition iuxta typicam is a conformed printing of about 1954. Its SHA-256 is
+`b676ce5c…a1d`, and it has 1,220 pages. The control witness is the registered
+[1922 Mame editio quarta iuxta typicam](../works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ia-scan-pdf-9873693a/artifact.toml).
+In this extent the printed page number is the artifact page minus 104 throughout,
+and the running heads were checked against it. The Proprium opens at artifact
+p. 583 and ends at p. 965. Pp. 598, 634, 668, 674, 768, 778, 830, 846, 874, 934
+and 966 are full-page plates without text, so no targets fall on them.
+
+**Method.** The lane worked on the `pdftotext -raw` layer, which is a clean
+typeset text and not OCR. It then fixed the reading order. The raw stream follows
+content order, so on pages where a heading spans both columns, that heading and
+the lower band come out before the upper band (pp. 599, 635, 700, 831, 847, 896
+and 938). The lane therefore rebuilt each page's reading order from word
+coordinates, band by band and column by column. Every locus keeps its raw
+page-local line number.
+
+Date headings were swept with these patterns: *Die N*, *Eadem die*,
+*Item eadem die*, *Die N vel N*, *Feria …* and *Dominica ultima Octobris*. Nested
+*Missa votiva* headings and *Ad primam/secundam/tertiam Missam* were swept too.
+Title lines, rank lines and Introit markers were then checked against those
+headings. Role headings were classified from the line-start markers. A pattern
+search also caught the text layer's typographic variants (*Postcummunio*,
+*Postcommumo*, *Postcommimio*, *Offertórium*, *Seqientia*, *Prætatio*). Every
+form's role sequence was then checked: full Masses for the
+I–C–L–E–O–S–M–P core, and orations-only Masses for C–S–P.
+
+Commemoration orations are identified in three ways:
+
+- by a *Pro N.* heading, including one split across two lines;
+- by an introducing *fit Commemoratio N.:* rubric, excluding the feria;
+- by position, after the main oration of the same type.
+
+Overrides, each checked by locus:
+
+- the within-octave third orations *de Spiritu Sancto* (p. 601);
+- the Vigil of Ss. Peter and Paul commemoration under St Irenaeus (pp. 763, 765);
+- St Hadrian (p. 875);
+- three role headings that do not begin a line (pp. 811, 946, 947).
+
+**Granularity.** The granularity follows the corrected 1962 slices:
+
+- The three All Souls Masses are separate forms.
+- The 2 February Mass under *Ad Missam* belongs to the Purification form, and the candle rite is its own exceptional rite.
+- Referral-only *Pro N.* and *Missa … de Communi* headings are forms.
+- The second printed Masses of 1 May and 12 May are seasonal or votive sub-variants inside one form. Their role headings are counted as slots.
+- Five rubric-only date headings are not forms: 28 Nov., 1 Dec., 14 Dec., 19 Dec. and 27 Jun.
+- The 1 September *Pro Ss. duodecim Fratribus* appointment is printed as an italic rubric sentence, not a display heading. It is kept as a form because it carries its own orations (p. 870).
+
+| Slice | State | Targets by kind |
+| --- | --- | --- |
+| `roman-pre-1955-sanctoral-body-forms` | complete | form 327 |
+| `roman-pre-1955-sanctoral-printed-slots` | complete | slot 2130 |
+| `roman-pre-1955-sanctoral-form-referrals` | partial | referral 224 |
+| `roman-pre-1955-sanctoral-preface-appointments` | complete | slot 56 |
+| `roman-pre-1955-purification-rite` | complete | rite 1, rite-unit 3, slot 15 |
+| `roman-pre-1955-sanctoral-post-1922-additions` | complete | form 13, slot 126 (121 role, 5 Preface) |
+| `roman-pre-1955-sanctoral-referrals-post-1922-additions` | partial | referral 4 |
+
+The 2,130 role slots break down as follows:
+
+| Role | Slots |
+| --- | --- |
+| collect | 266 |
+| secret | 263 |
+| postcommunion | 263 |
+| alleluia | 194 |
+| introit | 168 |
+| epistle-or-lesson | 167 |
+| offertory | 167 |
+| communion | 166 |
+| gospel | 163 |
+| gradual | 154 |
+| tract | 48 |
+| commemoration collect | 33 |
+| commemoration secret | 33 |
+| commemoration postcommunion | 33 |
+| sequence | 4 |
+| third-oration collect | 2 |
+| third-oration secret | 2 |
+| third-oration postcommunion | 2 |
+| alternative collect | 1 |
+| commemoration Gospel | 1 |
+
+The 228 referrals break down as follows:
+
+| Referral type | Count |
+| --- | --- |
+| formulary | 191 |
+| votive-use rubric | 20 |
+| infra-octave | 5 |
+| role-level | 11 |
+| Greater Litanies Rogation Mass | 1 |
+
+The 340 forms are the Mass-formulary denominator of this extent.
+
+**Seams.** P. 582 is a plate without text, at the end of the temporal lane's
+extent. P. 583 opens *Proprium de Sanctis* with its general rubric and then gives
+28 Nov. (a rubric) and the Vigil of St Andrew. P. 965 ends with *Pro S. Petro
+Alexandrino*, and p. 966 is the Commune frontispiece plate, without text.
+P. 967 opens *Commune Sanctorum*. All four seam pages and the plate were checked
+on images. Every target locus falls within pp. 583–965. The sanctoral has no
+headings for 22 Dec.–13 Jan. These days are in the Bonn temporal, including
+Hyginus at p. 163 and Holy Family at pp. 159–160. The Sacred Heart is also in the
+temporal, at pp. 527–531.
+
+**Kalendarium cross-check (pp. 26–36, read only).** Every Kalendarium celebration
+dated in this extent has a printed formulary heading. The two movable ones (Seven
+Sorrows in Lent, the Solemnity of St Joseph) and Christ the King are printed too.
+Each listed commemoration is either a *Pro N.* form or a set of printed
+commemoration orations. The exception is the Cathedra Antiochiae commemoration of
+St Paul, which is referred to 18 Jan. Octave days are covered by the infra-octave
+referrals (*Missa ut in Festo*): Immaculate Conception, St Joseph, St John
+Baptist, Assumption and All Saints. The body prints four identities that the
+Kalendarium omits:
+
+- the Vigil of the Immaculate Conception on 7 Dec. (p. 596);
+- St Pudentiana on 19 May (pp. 723–725);
+- St Agapitus on 18 Aug. (p. 852);
+- St John Leonardi on 9 Oct. (p. 908). The Kalendarium still gives Ss. Dionysius and companions as the day's semidouble, while the body makes John Leonardi the duplex and prints Dionysius as a *Pro* Mass.
+
+There are also minor spelling variants: Christiana/Christina, Nicodemis/Nicomede,
+Theresiae/Teresiae.
+
+**Mame 1922 comparison.** Mame's Proprium de Sanctis occupies artifact
+pp. 594–878. Its noisy OCR headings and running heads were aligned by date with
+the Bonn forms. Each unmatched name was searched in the Mame text, and every
+absence and doubtful match was checked on a Mame page image.
+
+Thirteen Bonn formularies have no counterpart in Mame's Proprium:
+
+- John Bosco, 31 Jan.
+- Gabriel a Virgine Perdolente, 27 Feb.
+- Peter Canisius, 27 Apr.
+- Robert Bellarmine, 13 May
+- John Vianney, 9 Aug.
+- John Eudes, 19 Aug.
+- Immaculate Heart, 22 Aug.
+- Teresa of the Child Jesus, 3 Oct.
+- John Leonardi, 9 Oct.
+- Maternity of the BVM, 11 Oct.
+- Margaret Mary Alacoque, 17 Oct.
+- Christ the King, last Sunday of October
+- Albert the Great, 15 Nov.
+
+Four of these have a counterpart among Mame's *Missae propriae pro aliquibus
+locis*:
+
+- Gabriel, p. 1096, same Introit.
+- B. Joannis Leonardi, p. 1086, same Introit.
+- Margaret Mary, p. 1103, same Introit.
+- Maternity, p. 1049, a different Mass (Introit *Salve sancta parens*, not *Ecce Virgo*).
+
+Mame's local *Purissimi Cordis* Mass (p. 1048) is not the 1944 Immaculate Heart
+formulary. Neither witness, nor any registered source, establishes institution or
+decree dates. Three identities are present in Mame on another day: Peter Nolasco
+(Mame 31 Jan.), Hedwig (Mame 17 Oct.) and Gertrude (Mame 15 Nov.).
+
+Two Mame sanctoral formularies have no Bonn counterpart:
+
+- *Eadem die 25 Julii Pro S. Christophoro* (Mame p. 783). Bonn keeps Christopher only as a private-Mass commemoration within St James (p. 813).
+- *Die 22 Augusti In Octava Assumptionis* (Mame p. 811). Bonn suppresses it: *De die Octava … nihil fit*.
+
+Mame's sanctoral also holds Holy Family, Hyginus and the Sacred Heart, which Bonn
+places in the temporal. Several papal formularies now refer to a *Commune
+Summorum Pontificum* that Mame does not have; for example, Mame refers Cletus and
+Marcellinus to *Sancti tui* and prints Callistus in full. These are post-1922
+changes to the referral targets of pre-1922 identities. They remain in the main
+referral slice, and their loci show the target.
+
+**Image checks.**
+
+- Bonn artifact pp. 582, 583, 605, 607, 634, 635, 652, 681, 692, 700, 703, 719, 765, 770, 813, 856, 870, 893, 907, 925, 937, 938, 941, 965, 966 and 967.
+- Mame artifact pp. 633, 634, 654, 655, 689, 690, 709, 783, 799, 810, 811, 833, 834, 842, 843, 848, 850, 851, 857, 860, 872, 1049, 1086, 1096 and 1103.
+
+**Limits.** These are structural identities, not wording collations, and Preface
+markers name an appointment, not a Preface identity. The *Præfatio propria* of
+Christ the King (p. 927) implies a post-1922 Preface for the Ordinary lane to
+reconcile. The candle-rite identity needs reconciling with any pre-1955
+exceptional-rite inventory.
+
+Referrals embedded mid-rubric, conventual-Mass directions, occasional-oration
+referrals and last-Gospel directions are not exhausted; the referral slices are
+therefore partial. Absence in Mame is certified for the Proprium de Sanctis as
+image-checked at each date. It is not certified for the whole Mame volume beyond
+the OCR searches stated. No calendar joins were added, so every target classifies
+as `unresolved` in `expectations()`.
+
+### The pre-1955 witness: Commons, votives, the dead, rites and propers for certain places
+
+The registered
+[Bonn reimpressio](../works/catholic-church/missale-romanum/editions/2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920/artifacts/ia-reimpressio-pdf-b676ce5c/artifact.toml)
+is accepted, by the maintainer's decision of 19 October 2026, as the witness of
+the pre-1955 recension. Its SHA-256 matches the registered value, `b676ce5c…a1d`,
+and it has 1,220 artifact pages. This section covers artifact pp. 967–1220: the
+Commons, the votive Masses, the Orationes diversae, the Masses and prayers for
+the dead, the absolution, the holy-water rite, the blessings, the Pontifical
+excerpts, and the Masses and Commons for certain places. The text layer is a
+2003 digital typesetting, not OCR. Identities were taken from that layer and
+from page images. Held propers, Mass keys and selectors were not consulted. The
+payload stays outside the repository, and this record holds metadata only.
+
+The book is a conformed printing of about 1954, so it carries additions made
+after 1920. Each identity was therefore compared with the registered
+[1922 Mame editio quarta](../works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ia-scan-pdf-9873693a/artifact.toml).
+An identity printed in Bonn with no Mame counterpart is placed in a separate
+`…-post-1922-additions` slice. The public-domain decision does not reach text
+first published in 1931 or later, so those slices must remain separable.
+
+The inventory adds 23 slices, 2,023 targets and 6 boundaries for
+`roman-pre-1955`:
+
+| Section | Artifact pp. | Printed pp. | Slices | Status |
+| --- | --- | --- | --- | --- |
+| Commune Sanctorum | 967–1015 | [1]–[49] | `body-commons-*` | forms complete; slots partial |
+| Missae de sancta Maria in Sabbato | 1015–1022 | [49]–[56] | `body-marian-saturday-*` | forms complete; slots partial |
+| Commune Summorum Pontificum | 1022–1024 | [56]–[58] | `body-commons-*-post-1922-additions` | post-1922 |
+| Missae votivae, votivae ad diversa | 1025–1076 | [59]–[110] | `body-votives-*`, `body-votives-*-post-1922-additions` | forms complete; slots partial |
+| Orationes diversae | 1076–1089 | [110]–[123] | `body-diverse-prayers-*` | forms complete; slots partial |
+| Missae Defunctorum, Orationes pro Defunctis | 1090–1106 | [124]–[140] | `body-dead-*` | forms complete; slots partial |
+| Absolutio super tumulum | 1106–1110 | [140]–[144] | `body-absolution-*` | complete; units partial |
+| Ordo ad faciendam aquam benedictam | 1111–1113 | [145]–[147] | `holy-water-rite` | complete |
+| Benedictiones diversae; episcopal blessings | 1113–1117 | [147]–[151] | `blessings`, `blessings-post-1922-additions` | complete |
+| Confirmation, paten and chalice; Pontifical orations | 1118–1124 | [152]–[158] | `pontificale-excerpts-post-1922-additions` | post-1922 |
+| Missae pro aliquibus locis | 1125–1209 | [159]–[243] | `local-proper-forms`, `local-proper-forms-post-1922-additions` | complete |
+| Commune Sanctorum pro aliquibus locis | 1209–1220 | [243]–[254] | `local-additional-commons` | complete |
+
+Slices are named here without the `roman-pre-1955-` prefix. Kinds are counted
+separately and must never be summed into a text total:
+
+| Slice | State | Targets by kind |
+| --- | --- | --- |
+| `body-commons-forms` | complete | form 24, prayer-set 14, common 8 |
+| `body-commons-slots` | partial | slot 309, referral 34 |
+| `body-marian-saturday-forms` | complete | form 5 |
+| `body-marian-saturday-slots` | partial | slot 51, referral 6 |
+| `body-commons-forms-post-1922-additions` | complete | form 1, prayer-set 2 |
+| `body-commons-slots-post-1922-additions` | partial | slot 15, referral 1 |
+| `body-votives-forms` | complete | form 24, prayer-set 11 |
+| `body-votives-slots` | partial | slot 323, referral 24 |
+| `body-votives-forms-post-1922-additions` | complete | form 1 |
+| `body-votives-slots-post-1922-additions` | partial | slot 12, referral 1 |
+| `body-diverse-prayers-forms` | complete | prayer-set 36 |
+| `body-diverse-prayers-slots` | partial | slot 108 |
+| `body-dead-forms` | complete | prayer-set 27, form 3, referral 1 |
+| `body-dead-slots` | partial | slot 109, referral 7 |
+| `body-absolution-forms` | complete | rite 1 |
+| `body-absolution-slots` | partial | rite-unit 13, referral 3 |
+| `holy-water-rite` | complete | rite 1, rite-unit 11, referral 3 |
+| `blessings` | complete | rite 2, rite-unit 2, slot 2 |
+| `blessings-post-1922-additions` | complete | rite 8, rite-unit 8, slot 13 |
+| `pontificale-excerpts-post-1922-additions` | complete | slot 18, rite-unit 17, referral 7, prayer-set 5, rite 2 |
+| `local-proper-forms` | complete | slot 539, form 55, referral 20, comm. 1 |
+| `local-proper-forms-post-1922-additions` | complete | slot 25, form 2 |
+| `local-additional-commons` | complete | slot 83, prayer-set 12, referral 7, form 6 |
+
+By kind: text-slot 1,607, form 121, form-referral 114, prayer-set 107,
+exceptional-rite-unit 51, exceptional-rite 14, common 8 and commemoration 1.
+The post-1922 slices hold 138 of these rows.
+
+#### Method and granularity
+
+The method and granularity follow the corrected 1962 body rows. The two-column
+pages were put into reading order from the PDF's word boxes. Lines that the
+extractor had merged across the gutter were split, and every line was mapped
+back to its line in the `pdftotext -raw` page. A hand-built segmentation then
+opens each formulary at its printed heading. Each marker must resolve to
+exactly one line, and markers must run in page order. Role headings within a
+segment become text slots. They are the Introit, Collect, Lesson, Gradual,
+Alleluia, Tract, Sequence, Gospel, Offertory, Secret, Communion and
+Postcommunion, numbered by option within the form. Readings and Masses printed
+only by incipit with a cross-reference become `form-referral`, as do Preface
+referrals.
+
+- **Forms.** One `form` per printed Mass heading. Referral-only local headings,
+  such as *Missa Salve, de Communi* with own prayers, are forms with a
+  `:referral` child. Paschal variants printed inline under "Tempore autem
+  Paschali dicitur sequens" stay options within the form. These are the Introit,
+  Offertory and Communion of the Peter and Paul and Apostles votives. Bonn
+  prints no paschal sub-heading, so the 1962 `form-referral` device does not
+  arise.
+- **Prayer sets.** Oration-only categories are `prayer-set`. These are the
+  Orationes diversae, the diverse prayers for the dead and their printed plural
+  sets, and numbered alternatives within a form. Other prayer sets are the
+  consecration, ordination and thanksgiving prayers, which the Mass of the day
+  takes, and the Pontifical orations.
+- **Additional readings.** The pools of further Epistles and Gospels after a
+  Common are `common`: 8 in all, against 4 in 1962. Bonn prints such pools
+  after the paschal Martyrs, Doctors, Virgins and non-Virgins Commons as well.
+- **Rites.** The absolution, holy-water rite, blessings, Confirmation, and
+  paten and chalice consecration are `exceptional-rite`, counted in named
+  semantic units as in 1962. Chant notation, responsory repeats and actions are
+  not multiplied.
+- **Corrections to the automatic pass.** Bonn prints the Saturday collect
+  *Concede nos* twice in Saturday forms III and IV (pp. 1018, 1020). Mame 55*
+  prints it once, so the repeat is a typesetting duplication and was dropped.
+  The two prayers after the Pater noster and the final blessing in the
+  marriage Mass are typed as nuptial units, as in 1962. The Consecrator and
+  Consecratus Secret and Hanc igitur of the bishop's consecration were added
+  as options.
+
+#### Seams and printed numbers
+
+The printed page number in brackets reconciles contiguously: artifact page = 966 + printed number,
+[1]–[254], with no gap and no mismatch on all 254 pages. Four section-opening
+pages under a plate carry no printed number: pp. 967 [1], 1025 [59], 1090 [124]
+and 1125 [159]. The briefed ranges "[60]–[109]" and "[160]–[243]" begin one
+page late for that reason, and the book ends at [254], not [252]. Bonn has no
+marginal unit numbers, so there is no analogue of the 1962 4175–5190 audit.
+
+| Seam | Evidence |
+| --- | --- |
+| 965 / 966 / 967 | p. 965 ends the Proper of Saints (26 November); p. 966 is a full-page plate with an empty text layer; p. 967 opens *Commune Sanctorum*. No target on p. 966. |
+| 1015 | Marian Common ends; Saturday Masses begin on the same page |
+| 1022 | Saturday V ends; Popes Common begins on the same page |
+| 1024 / 1025 | Popes Common ends; *Missae votivae* opener |
+| 1044 | heading *II Missae votivae ad diversa* inside the papal-election page |
+| 1076 | thanksgiving Postcommunion, then *Orationes diversae* |
+| 1089 / 1090 | prayer 35 ends; *Missae Defunctorum* opener |
+| 1106 | prayer for the dead 17 ends; *Absolutio super tumulum* |
+| 1110 / 1111 | absolution ends; holy-water *Ordo* |
+| 1113, 1115 | holy water, then *Benedictiones diversae*; candles, then the episcopal blessings |
+| 1117 / 1118, 1122 | tabernacle blessing, then *Forma Confirmationis*; *Appendix* of Pontifical orations |
+| 1124 / 1125 | reconciliation prayers end; *Missae pro aliquibus locis* opener |
+| 1209 | Miraculous Medal ends; *Commune Sanctorum pro aliquibus locis* on the same page |
+| 1220 | last page of the artifact, ending with an ornament; no index follows |
+
+#### Comparison with Mame 1922
+
+The Mame Commons, votive and dead sections (pp. 879–1030, printed 1*–152*), the
+local supplement (pp. 1031–1126, [1]–[96]) and its index (pp. 1136–1138) were
+compared by heading and by index. Every absence was then confirmed on Mame page
+images.
+
+| Post-1922 identity | Bonn locus | Mame evidence | Date evidence |
+| --- | --- | --- | --- |
+| Commune unius aut plurium Summorum Pontificum | pp. 1022–1024 [56]–[58] | 59*–60* (pp. 937–938) pass from Saturday V straight to *Missae votivae*; index j omits it | not established |
+| Missa de D. N. Jesu Christo summo et aeterno Sacerdote | pp. 1038–1040 [72]–[74] | 71*–74* (pp. 949–952): Eucharist votive, then *Feria VI* Cross; index omits it | not established |
+| Blessings of eggs, bread, new fruits and any food | pp. 1113–1114 [147]–[148] | 152* (p. 1030) prints only the Easter lamb and candles; index j lists no others | not established |
+| Episcopal blessings: vestments, altar linens, corporals, tabernacle | pp. 1115–1117 [149]–[151] | absent at 152*; no OCR hit anywhere in Mame | not established |
+| Confirmation; paten and chalice consecration | pp. 1118–1121 [152]–[155] | absent at 152*; local Masses follow at once | not established |
+| Pontifical orations: abbot, abbess, virgins, cemetery, reconciliation | pp. 1122–1124 [156]–[158] | absent; no OCR hit for *Abbatissae* | not established |
+| Eucharistici Cordis Jesu (local) | pp. 1165–1167 [199]–[201] | absent from the *In honorem D. N. J. C.* section and from index i | not established |
+| S. Pii X (local) | pp. 1189–1191 [223]–[225] | absent from index k–l | 1954, as stated by the registered Bonn artifact record |
+
+Seven identities in this extent are printed in Mame 1922 but not in Bonn's
+pp. 967–1220. They are reported here, not added as rows:
+
+- *Missa propria Sacratissimi Cordis Jesu* (*Egredimini*), Mame [3]–[4].
+  Bonn has the feast in its temporal section, pp. 528–530, and uses the
+  Introit *Egredimini* in the Crown of Thorns Mass (p. 1136).
+- *Maternitatis B. M. V.* (11 October), Mame [19]–[20]. Bonn has it in its
+  universal calendar (p. 34).
+- *S. Gabrielis a Virgine Perdolente*, Mame [66]–[67]. Bonn has it in the
+  Proper of Saints (p. 655).
+- *S. Margaritae Mariae Alacoque*, Mame [73]–[74]. Bonn has it in the Proper of
+  Saints (p. 916).
+- *Commemoratio omnium Ss. Summorum Pontificum* is the same identity in both
+  books, but the date differs: Mame's index gives 3 July and Bonn 4 July.
+
+Everything else matches at identity level:
+
+- Commons: Mame has the same thirteen sections, including *In Vigiliis
+  Apostolorum*, *Doctorum* and *Abbatum*.
+- Saturday Masses and votives: the five Saturday Masses, and every votive
+  heading in Mame's index except the High Priest. Those are the 24 Bonn votive
+  forms and the consecration, ordination, Holy Spirit and thanksgiving prayer
+  sets.
+- Prayers: Orationes diversae 1–35 and Orationes pro Defunctis 1–17.
+- Rites: the absolution, the holy-water *Ordo*, and the Easter-lamb and candle
+  blessings.
+- Local propers: 55 of the 57 local Masses, and all six local Commons. Mame
+  prints the same *juxta decretum S. R. C. diei 22 Maji 1914* heading.
+
+Mame prints the Mediatrix Mass as an appendix at [94]–[96]; Bonn puts it at
+31 May.
+
+#### Image checks
+
+Every two-page spread from 967 to 1124 was viewed at 100 dpi, most of them
+twice. The spreads viewed on the local supplement were:
+
+- 1125–1130 and 1133–1136;
+- 1141–1142, 1155–1158, 1161–1162 and 1165–1168;
+- 1175–1184, 1189–1194 and 1207–1220.
+
+The seam and opener pages 965–967, 1025, 1089–1090 and 1125 were also viewed.
+On the Mame side, the pages viewed were:
+
+- 931–934, 937–938, 949–952 and 959–962;
+- 1030, 1033–1034 and 1113–1124;
+- the index, pp. 1136–1138.
+
+The checks resolved these cases:
+
+- the typo *Prætatio* on p. 1024, which is a Preface referral;
+- the typo *Offebrium* on p. 1060, which is the Offertory;
+- *Postcomrnunio* on p. 1128;
+- the duplicated Saturday collect;
+- the marriage-Mass units;
+- the alternative episcopal-consecration texts;
+- the referral-only local headings;
+- the Commons with two forms, *I* and *II*.
+
+#### Limits
+
+These are structural identities, not wording collations. Labels identify units
+and are not verified text. The slot slices are `partial`. The reasons are as
+follows:
+
+- Inherited appointments are not expanded: Commons and Masses of the day used
+  with printed prayers, and the seasonal second and third prayers.
+- Inline Credo, Gloria and Alleluia directions are not separate slots.
+- The All Souls Masses are referred to the Proper of Saints.
+
+The local propers are conditional local use, not membership of the universal
+calendar.
+
+Rights and provenance are affected in three places:
+
+- On p. 1189 the printed rank note for St Pius X names the *Fraternitas
+  sacerdotalis S. Pii X*. It is therefore a publisher's insertion later than
+  1954, and was not made a target.
+- The local supplement carries marginal *P* and *C (1)* markers, apparently
+  publisher apparatus.
+- Cross-references print as `[000]`.
+
+The artifact record's rights note places the Immaculate Heart (1944) in the
+local supplement. Bonn prints that Mass at p. 856, in the Proper of Saints, and
+this extent contains no Immaculate Heart Mass. The record needs correcting. A
+negative found only in the Mame OCR was always rechecked on Mame page images
+or in its printed index.
 
 ## Retrieval bounds and remaining work
 

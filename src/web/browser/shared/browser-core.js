@@ -1604,6 +1604,76 @@ window.Triptych = (function () {
     return parts.join(' ');
   }
 
+  /**
+   * The recension caveat both entrances state, from the structure's public
+   * `recension_coverage`, `stands_before`, and the Mass's `recension` stamp.
+   * `editionName` maps a calendar id to its edition label.
+   */
+  function recensionContext(structure, mass, editionName) {
+    const name = typeof editionName === 'function' ? editionName : function (id) { return id; };
+    const label = function (value) {
+      const held = typeof value === 'string' ? value.trim() : '';
+      return held ? held.charAt(0).toUpperCase() + held.slice(1) : null;
+    };
+    const boundaries = structure && Array.isArray(structure.stands_before)
+      ? structure.stands_before.filter(function (id) {
+        return typeof id === 'string' && id;
+      }) : [];
+    const candidate = structure && structure.recension_coverage;
+    const coverage = candidate && typeof candidate === 'object' && !Array.isArray(candidate)
+      ? candidate : null;
+    const domains = coverage && coverage.domains && typeof coverage.domains === 'object'
+      ? coverage.domains : {};
+    const properDomain = domains.propers && typeof domains.propers === 'object'
+      ? domains.propers : {};
+    const inheritance = coverage && coverage.inheritance &&
+      typeof coverage.inheritance === 'object' ? coverage.inheritance : {};
+    const stamp = mass && mass.recension && typeof mass.recension === 'object'
+      ? mass.recension : null;
+    if (!coverage && !stamp && !boundaries.length) return null;
+    const sourceId = stamp && typeof stamp.text_from === 'string' && stamp.text_from
+      ? stamp.text_from : null;
+    const additional = stamp && Array.isArray(stamp.also) ? stamp.also.filter(function (row) {
+      return row && typeof row === 'object' && typeof row.kind === 'string' && row.kind;
+    }) : [];
+    const coverageStatus = coverage && coverage.status || null;
+    const properStatus = properDomain.state || null;
+    const inheritanceStatus = inheritance.status || null;
+    const inheritanceSource = inheritance.source_calendar || null;
+    const coverageLabel = [
+      coverageStatus && label(coverageStatus) + ' finding aid',
+      properStatus && 'Propers: ' + label(properStatus),
+      coverage && coverage.as_of && 'as of ' + coverage.as_of
+    ].filter(Boolean).join(' · ') || null;
+    const notice = [
+      coverageStatus && 'This edition surface is a ' + coverageStatus +
+        ' finding aid; recension coverage is dated ' + (coverage.as_of || 'without an as-of date') + '.',
+      properStatus && 'Proper wording coverage is ' + properStatus + '.',
+      inheritanceStatus && 'Inherited material' +
+        (inheritanceSource ? ' from ' + name(inheritanceSource) : '') +
+        ' remains ' + inheritanceStatus + '.'
+    ].filter(Boolean).join(' ') || null;
+    return {
+      coverage: coverageLabel,
+      coverageAsOf: coverage && coverage.as_of || null,
+      coverageBasis: properDomain.basis || null,
+      inheritanceBasis: inheritance.basis || null,
+      notice: notice,
+      textSource: sourceId
+        ? name(sourceId) + ' · inherited ' + (inheritanceStatus || 'uncollated')
+        : (stamp && stamp.stated === true
+          ? 'Departure stated by this recension; no other calendar supplies this formulary'
+          : null),
+      departure: stamp && stamp.kind || null,
+      departureAct: stamp && stamp.act || null,
+      departureBasis: stamp && stamp.basis || null,
+      additional: additional,
+      boundaries: boundaries,
+      boundaryLabel: boundaries.length ? boundaries.join('; ') : null,
+      sourceId: sourceId
+    };
+  }
+
   function coverageWitnessMatches(owner, language, requested, translation) {
     const actual = translation.source_id || translation.source || '';
     if (requested === actual || requested === 'project-created' && !actual) return true;
@@ -1818,6 +1888,149 @@ window.Triptych = (function () {
     };
   }
 
+  /* ------------------------------------------------------------------------
+   * Claim-local truth
+   *
+   * Each displayed unit says locally what it is. The typed reasons are the
+   * unit coverage record's own `availability` values, which are the vision's
+   * five distinct absences; the page never parses prose to recover them, and a
+   * unit without a coverage record falls back to the same public dispositions
+   * `_missal_coverage.absence` derives that value from.
+   * --------------------------------------------------------------------- */
+
+  const ABSENCE_REASONS = Object.freeze({
+    'inapplicable': 'not part of this rite or branch',
+    'absent-in-witness': 'not present in this witness',
+    'not-sourced': 'not yet sourced',
+    'not-publishable': 'not publishable here',
+    'unresolved': 'not resolved'
+  });
+
+  function unitCoverageOf(owner) {
+    const unit = owner && owner.coverage;
+    return unit && unit.schema === 'triptych-missal-unit-coverage/v1' ? unit : null;
+  }
+
+  function typedAvailability(owner, lang) {
+    const unit = unitCoverageOf(owner);
+    const entry = unit && (unit.languages || []).find(function (row) { return row.lang === lang; });
+    if (entry && Object.prototype.hasOwnProperty.call(ABSENCE_REASONS, entry.availability)) {
+      return entry.availability;
+    }
+    if (lang === SOURCE_LANGUAGE) {
+      return owner && owner.latin && owner.latin.state === 'rights-restricted'
+        ? 'not-publishable' : 'unresolved';
+    }
+    const rows = [].concat(owner && owner.unavailable_translations || [],
+      owner && owner.untranslated || []).filter(function (row) {
+      return row && row.lang === lang;
+    });
+    if (rows.some(function (row) { return row.state === 'rights-restricted'; })) return 'not-publishable';
+    return rows.length ? 'unresolved' : 'not-sourced';
+  }
+
+  /** "English translation unavailable: not publishable here (…)." */
+  function absenceClause(owner, lang, scope) {
+    const availability = typedAvailability(owner, lang);
+    const subject = lang === SOURCE_LANGUAGE ? 'Latin text' : languageName(lang) + ' translation';
+    return {
+      lang: lang,
+      availability: availability,
+      text: subject + ' unavailable' + (scope ? ' ' + scope : '') + ': ' +
+        ABSENCE_REASONS[availability] +
+        (availability === 'not-publishable' ? ' (its use is rights restricted)' : '') + '.'
+    };
+  }
+
+  /**
+   * Whether the citation passages of this owner are Bible reconstructions.
+   *
+   * A citation is expanded from the selected Bible, which does not establish
+   * the Missal's own wording (incipit, part-verse, adaptation, ending). The unit
+   * coverage record says so as `bible-reconstruction`, on the unit itself or on
+   * its `scripture_component`; only a unit with no record falls back to the
+   * expansion itself.
+   */
+  function isBibleReconstruction(owner, fallbackOwner) {
+    const unit = unitCoverageOf(owner) || unitCoverageOf(fallbackOwner);
+    if (!unit) return true;
+    if (unit.scripture_component) {
+      return unit.scripture_component.relationship === 'bible-reconstruction';
+    }
+    return unit.component === 'scripture' && (unit.languages || []).some(function (row) {
+      return row.relationship === 'bible-reconstruction';
+    });
+  }
+
+  function reconstructionMarker() {
+    const node = el('p', 'unit-claim', 'Bible reconstruction · Missal wording not established');
+    node.setAttribute('data-unit-claim', 'bible-reconstruction');
+    return node;
+  }
+
+  /**
+   * One owner's composed words and the claim-local account of what is absent.
+   *
+   * A requested translation that is missing never suppresses the held original:
+   * the Latin stays visible, labelled as Latin, beside the exact typed absence of
+   * the translation. No other witness of the translation is borrowed.
+   */
+  function renderOrationState(container, owner, held, scope) {
+    const asked = held.orations || SOURCE_LANGUAGE;
+    const oration = orationFor(owner, asked, held.translationWitness || null);
+    const latinHeld = Boolean(owner.text) && !(owner.latin && owner.latin.withheld);
+    const original = !oration.text && oration.missing && asked !== SOURCE_LANGUAGE && latinHeld
+      ? owner.text : null;
+    const shown = oration.text || original;
+    const shownLang = oration.text ? oration.lang : SOURCE_LANGUAGE;
+    if (shown) {
+      const composed = el('p', 'composed');
+      composed.appendChild(composedLabel('Composed text — not scripture' +
+        (shownLang !== SOURCE_LANGUAGE ? ' · ' + languageName(shownLang)
+          : (asked !== SOURCE_LANGUAGE ? ' · ' + languageName(SOURCE_LANGUAGE) : ''))));
+      composed.appendChild(versicled(shown));
+      composed.lang = shownLang;
+      if (shownLang === SOURCE_LANGUAGE && asked !== SOURCE_LANGUAGE) {
+        composed.setAttribute('data-unit-original', SOURCE_LANGUAGE);
+      }
+      container.appendChild(composed);
+    }
+    if (!oration.missing) return oration;
+
+    // Said where the translation would have been, not in a footnote: a reader
+    // who asked for English and is reading Latin needs to know that at the text.
+    const sentences = [];
+    const absences = [];
+    function clause(lang) {
+      const one = absenceClause(owner, lang, scope);
+      sentences.push(one.text);
+      absences.push(one.lang + ':' + one.availability);
+    }
+    const unit = scope ? 'cycle' : 'Proper';
+    if (asked === SOURCE_LANGUAGE) {
+      clause(SOURCE_LANGUAGE);
+    } else if (oration.reason === 'conflicting-witness') {
+      sentences.push('Conflicting readings of this witness remain unresolved; no translation was selected.');
+    } else if (oration.reason === 'translation-choice-required') {
+      sentences.push('Several ' + languageName(asked) +
+        ' translations are held. Choose a witness before reading one.');
+    } else if (oration.reason === 'absent-in-witness') {
+      sentences.push('No ' + languageName(asked) +
+        ' text is available from the selected witness for this ' + unit + '.');
+      absences.push(asked + ':absent-in-witness');
+    } else {
+      clause(asked);
+    }
+    if (asked !== SOURCE_LANGUAGE) {
+      if (shown && shownLang === SOURCE_LANGUAGE) sentences.push('The Latin original is shown.');
+      else if (!latinHeld) clause(SOURCE_LANGUAGE);
+    }
+    const note = el('p', 'composed-note unit-absence', sentences.join(' '));
+    if (absences.length) note.setAttribute('data-unit-absence', absences.join(' '));
+    container.appendChild(note);
+    return oration;
+  }
+
   /**
    * One proper, with its text.
    *
@@ -1887,46 +2100,7 @@ window.Triptych = (function () {
       Boolean(proper.latin && proper.latin.withheld) ||
       properBodyUnavailable(proper);
     if (hasOrationState) {
-      const oration = orationFor(proper, held.orations, held.translationWitness || null);
-      if (oration.text) {
-        const composed = el('p', 'composed');
-        const label = oration.missing
-          ? 'Composed text — not scripture · ' + languageName(SOURCE_LANGUAGE)
-          : 'Composed text — not scripture' +
-            (oration.lang === SOURCE_LANGUAGE ? '' : ' · ' + languageName(oration.lang));
-        composed.appendChild(composedLabel(label));
-        composed.appendChild(versicled(oration.text));
-        composed.lang = oration.lang;
-        section.appendChild(composed);
-      }
-
-      // Said where the English would have been, not in a footnote: a reader who
-      // asked for English and was handed Latin needs to know that at the text.
-      if (oration.missing) {
-        const missing = oration.reason === 'rights-restricted'
-          ? 'The ' + languageName(oration.wanted) +
-            ' translation is unavailable because its use is rights restricted.'
-          : ['latin-withheld', 'latin-unavailable'].includes(oration.reason)
-            ? 'Latin text unavailable'
-          : oration.reason === 'text-unavailable'
-            ? 'No ' + languageName(oration.wanted) +
-              ' or Latin body is held here.'
-          : oration.reason === 'conflicting-witness'
-            ? 'Conflicting readings of this witness remain unresolved; no text was selected.'
-          : oration.reason === 'absent-in-witness'
-            ? 'No ' + languageName(oration.wanted) + ' text is available from the selected witness for this Proper.'
-          : oration.reason === 'translation-choice-required'
-            ? 'Several ' + languageName(oration.wanted) +
-              ' translations are held. Choose a witness before reading one.'
-          : oration.reason === 'unavailable'
-            ? 'No ' + languageName(oration.wanted) +
-              ' body is held here.' + (oration.text ? ' The available Latin is shown instead.' : '')
-          : 'No ' + languageName(oration.wanted) + ' translation is recorded for ' +
-            'this proper. The Latin the missal prints is shown instead.';
-        section.appendChild(
-          el('p', 'composed-note', missing)
-        );
-      }
+      const oration = renderOrationState(section, proper, held, null);
       // Whose English it is. A translation is someone's expression, and the
       // reader is entitled to know whose before weighing it.
       if (oration.source) {
@@ -1949,6 +2123,10 @@ window.Triptych = (function () {
     }
 
     const citations = proper.citations || [];
+    // One quiet claim before the passages it qualifies, never a note per verse.
+    if (citations.length && isBibleReconstruction(proper)) {
+      section.appendChild(reconstructionMarker());
+    }
     for (const citation of citations) {
       section.appendChild(
         renderCitation(citation, bible, fragments, numbering, { showRef: false })
@@ -1973,34 +2151,10 @@ window.Triptych = (function () {
       if (cycle.text || cycle.translations.some((translation) => translation && translation.text) ||
           cycle.unavailable_translations.length || cycle.untranslated.length ||
           (cycle.latin && cycle.latin.withheld) || properBodyUnavailable(cycle)) {
-        const oration = orationFor(
-          cycle, held.orations, held.translationWitness || null
-        );
-        if (oration.text) {
-        const composed = el('p', 'composed');
-        composed.appendChild(composedLabel(
-          'Composed text — not scripture' +
-          (oration.lang === SOURCE_LANGUAGE ? '' : ' · ' + languageName(oration.lang))));
-        composed.appendChild(versicled(oration.text));
-        composed.lang = oration.lang;
-        block.appendChild(composed);
-        }
-        if (oration.missing) {
-          const message = oration.reason === 'rights-restricted'
-            ? 'The ' + languageName(oration.wanted) +
-              ' translation is unavailable because its use is rights restricted.'
-            : ['latin-withheld', 'latin-unavailable'].includes(oration.reason)
-              ? 'Latin text unavailable'
-              : oration.reason === 'text-unavailable'
-                ? 'No ' + languageName(oration.wanted) +
-                  ' or Latin body is held for this cycle.'
-              : oration.reason === 'conflicting-witness'
-                ? 'Conflicting readings of this witness remain unresolved; no text was selected.'
-              : oration.reason === 'absent-in-witness'
-                ? 'No ' + languageName(oration.wanted) + ' text is available from the selected witness for this cycle.'
-              : 'No ' + languageName(oration.wanted) + ' body is held for this cycle.';
-          block.appendChild(el('p', 'composed-note', message));
-        }
+        renderOrationState(block, cycle, held, 'for this cycle');
+      }
+      if (cycle.citations.length && isBibleReconstruction(cycle, proper)) {
+        block.appendChild(reconstructionMarker());
       }
       for (const citation of cycle.citations) {
         block.appendChild(renderCitation(citation, bible, fragments, numbering));
@@ -2093,6 +2247,8 @@ window.Triptych = (function () {
     coverageWitnesses: coverageWitnesses,
     coverageSummaryText: coverageSummaryText,
     coverageNoticeText: coverageNoticeText,
+    recensionContext: recensionContext,
+    absenceReasons: ABSENCE_REASONS,
     orationFor: orationFor,
     versicled: versicled,
     renderProper: renderProper,

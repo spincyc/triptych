@@ -1993,7 +1993,11 @@ class ParityTests(unittest.TestCase):
         self.assertIsNone(browser_latin["text"])
         self.assertNotIn("protected Latin words", json.dumps(browser_latin))
         browser_source = BROWSER_CORE.read_text(encoding="utf-8")
-        self.assertEqual(browser_source.count("'Latin text unavailable'"), 2)
+        # C2 G11/G12: the bare phrase hid the typed reason; every absence now
+        # carries one of the five typed states from the unit coverage record.
+        self.assertNotIn("'Latin text unavailable'", browser_source)
+        self.assertIn("const ABSENCE_REASONS = Object.freeze({", browser_source)
+        self.assertNotIn("or Latin body is held", browser_source)
         self.assertNotIn("Latin body is unavailable for public display", browser_source)
 
     def test_browser_typed_proper_body_absence_never_becomes_empty_text(self) -> None:

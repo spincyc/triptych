@@ -44,6 +44,63 @@ def relationship(row: dict) -> str:
     return "unresolved"
 
 
+# A Latin body's own provenance record names how its words relate to the
+# target edition. Only a relationship that is itself declared exact TO THE
+# TARGET, and recorded as collated, is the target's wording: under the
+# 2026-09-03 rule in guidance/propers-for-agents.md (words, never strings) such
+# a projection is word-exact, so it counts as `exact-target`. An exact
+# transcription of some other witness, an identified but uncollated body, or a
+# body this calendar inherits from another one keeps its own, weaker relation.
+LATIN_TARGET_RELATIONSHIPS = frozenset({"editorial-projection-exact-to-target"})
+LATIN_COLLATIONS = {"collated": "collated", "identified": "uncollated",
+                    "unresolved": "unresolved"}
+
+
+def latin_evidence(latin: object, *, inherited: bool = False) -> dict:
+    """Map one public Latin record to coverage terms without reading the text.
+
+    `inherited` marks a body carried from another calendar's corpus (a
+    recension's `text_from`). Its collation was made against that calendar's
+    target, not this one, so it is uncollated here and never exact-target.
+    """
+    latin = latin if isinstance(latin, dict) else {}
+    provenance = latin.get("provenance") if isinstance(latin.get("provenance"), dict) else {}
+    publication = latin.get("publication") if isinstance(latin.get("publication"), dict) else {}
+    basis = str(publication.get("basis") or "unresolved")
+    if inherited:
+        return {"relationship": "unresolved", "collation": "uncollated",
+                "publication_basis": basis}
+    collation = LATIN_COLLATIONS.get(str(provenance.get("status") or ""), "unresolved")
+    exact = (collation == "collated"
+             and provenance.get("relationship") in LATIN_TARGET_RELATIONSHIPS)
+    return {"relationship": "exact-target" if exact else "unresolved",
+            "collation": collation, "publication_basis": basis}
+
+
+# The typed reasons of a source-side translation absence, mapped to coverage
+# availability. `no-exemplar` says no exact exemplar is bound to the slot, so
+# the slot is not sourced; `rights-withheld` is an affirmative restriction.
+# `witness-gap` stays `unresolved` in the Propers: their sidecars use it both
+# for a checked absence or variant in the named witness and for an identity
+# not yet established against it, and the reason alone cannot tell them apart.
+ABSENCE_KIND_AVAILABILITY = {
+    "rights-withheld": "not-publishable",
+    "no-exemplar": "not-sourced",
+    "witness-gap": "unresolved",
+}
+
+
+def source_absence(kinds: object) -> str | None:
+    """One availability for a language's typed source-side absence reasons."""
+    states = {ABSENCE_KIND_AVAILABILITY.get(str(kind), "unresolved")
+              for kind in (kinds or ())}
+    if not states:
+        return None
+    if "not-publishable" in states:
+        return "not-publishable"
+    return next(iter(states)) if len(states) == 1 else "unresolved"
+
+
 def witness(row: dict, witnesses: dict) -> dict:
     source_id = str(row.get("source_id") or "")
     metadata = witnesses.get(source_id) or {}
@@ -51,21 +108,33 @@ def witness(row: dict, witnesses: dict) -> dict:
     # Only identifiers on surviving public translation rows may be offered.
     # Metadata can identify a restricted artifact for internal resolution.
     aliases = sorted({source_id, canonical})
+    declared = row
+    if not any(row.get(key) for key in ("coverage_relationship", "witness_relation", "relation")) \
+            and metadata.get("witness_relation"):
+        # A witness row may declare its relation to this calendar's target once
+        # for every body it supplies; an entry's own relation still wins.
+        declared = dict(row, witness_relation=metadata["witness_relation"])
     return {
         "id": canonical or "project-created",
         "source_id": canonical,
         "label": str(metadata.get("label") or row.get("source_label") or
                      canonical or "This project"),
         "aliases": aliases,
-        "relationship": relationship(row),
+        "relationship": relationship(declared),
         "collation": row.get("collation") if row.get("collation") in COLLATIONS
         else ("not-applicable" if row.get("relation") == "own" else "unresolved"),
         "publication_basis": str(row.get("rights") or "unresolved"),
     }
 
 
-def absence(owner: dict, lang: str) -> str:
-    """Use public dispositions only; never carry private absence evidence."""
+def absence(owner: dict, lang: str, kinds: object = None) -> str:
+    """Classify an absence; export its class only, never its evidence.
+
+    `kinds` are the typed source-side reasons the generator holds for this
+    language (`no-exemplar`, `witness-gap`, `rights-withheld`). Without them
+    the public projection is all there is, and its `unavailable` stays
+    `unresolved`.
+    """
     rows = (owner.get("unavailable_translations") or [])
     untranslated = owner.get("untranslated") or []
     if isinstance(untranslated, dict):
@@ -79,8 +148,11 @@ def absence(owner: dict, lang: str) -> str:
         lang == "la" and latin.get("state") == "rights-restricted"
     ):
         return "not-publishable"
+    typed = source_absence(kinds)
+    if typed:
+        return typed
     if "unavailable" in states:
-        # Public unavailable deliberately does not disclose a private reason.
+        # The public state alone does not say why the body is unavailable.
         return "unresolved"
     if lang == "la" and (latin.get("withheld") or
                           latin.get("state") == "unavailable"):
@@ -93,10 +165,17 @@ def absence(owner: dict, lang: str) -> str:
 def unit(owner: dict, *, target_id: str, occurrence_id: str,
          witnesses: dict | None = None, cycle_family: str | None = None,
          cycle: str = "all", component: str | None = None,
-         latin_relation: str = "unresolved",
+         latin_relation: str | None = None,
+         latin_inherited: bool = False,
          translation_relation: str | None = None,
-         ordinary_absences: dict[str, str] | None = None) -> dict:
-    """Classify one body or Scripture owner after its publication filter."""
+         ordinary_absences: dict[str, str] | None = None,
+         absence_kinds: dict[str, list[str]] | None = None) -> dict:
+    """Classify one body or Scripture owner after its publication filter.
+
+    The Latin body's relationship, collation and publication basis come from
+    its own `latin` record (`latin_evidence`); `latin_relation` overrides only
+    the relationship, for a caller that already holds a classified report.
+    """
     witnesses = witnesses or {}
     if component is None:
         component = "scripture" if owner.get("source") == "scripture" else "proper-body"
@@ -132,10 +211,12 @@ def unit(owner: dict, *, target_id: str, occurrence_id: str,
         rights = {one["publication_basis"] for one in offered.values()}
         collations = {one["collation"] for one in offered.values()}
         if source_body:
-            relations.add(latin_relation)
-            # Text was admitted upstream; that does not identify its rights basis.
-            rights.add(str((owner.get("latin") or {}).get("rights") or "unresolved"))
-            collations.add("unresolved")
+            # Text was admitted upstream; that alone identifies neither its
+            # relation to the target nor its rights basis. Its record does.
+            evidence = latin_evidence(owner.get("latin"), inherited=latin_inherited)
+            relations.add(latin_relation or evidence["relationship"])
+            rights.add(evidence["publication_basis"])
+            collations.add(evidence["collation"])
         if component == "scripture":
             availability, relation, right = "unresolved", "bible-reconstruction", "unresolved"
         elif source_body or offered:
@@ -143,7 +224,8 @@ def unit(owner: dict, *, target_id: str, occurrence_id: str,
             relation = next(iter(relations)) if len(relations) == 1 else "unresolved"
             right = next(iter(rights)) if len(rights) == 1 else "unresolved"
         else:
-            availability = (ordinary_absences or {}).get(lang) or absence(owner, lang)
+            availability = (ordinary_absences or {}).get(lang) or absence(
+                owner, lang, (absence_kinds or {}).get(lang))
             relation, right = "unresolved", "unresolved"
             if availability == "not-publishable":
                 right = "restricted"

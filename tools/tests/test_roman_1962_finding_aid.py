@@ -686,6 +686,9 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
         # Recovery restored nine Pentecost 13–15 publication bindings and
         # recorded two Angela Merici English gaps: 956 -> 949, 600 -> 602,
         # and 344 -> 335. These are deliberate dispositions, not lost rows.
+        # On 2026-10-19 (C2 gap G3) those 335 Cummiskey rows, whose only
+        # blocker is a missing publication-artifact and passage binding, were
+        # retyped from rights-withheld to no-exemplar: 602 -> 937, 335 -> 0.
         self.assertEqual(len(source_established), 65)
         self.assertEqual(len(expected), 136)
         self.assertTrue(expected.issubset(typed))
@@ -711,8 +714,7 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
                 for identity in quarantined
             },
             {
-                ("no-exemplar", None): 602,
-                ("rights-withheld", CUMMISKEY_SOURCE): 335,
+                ("no-exemplar", None): 937,
                 ("witness-gap", CUMMISKEY_SOURCE): 12,
             },
         )
@@ -726,6 +728,12 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
                     "Postcommunion",
                     "Postcommunion (Altera postcommunio)",
                 },
+            }
+        )
+        # Public-domain Lasance readings awaiting only their visual and
+        # publication passages: no exemplar is bound yet (C2 gap G3).
+        lasance_unbound = self.main_identities(
+            {
                 "palm-sunday": {"Hymn to Christ the King"},
                 "mass-of-the-lords-supper": {
                     "Mandatum Antiphon 8",
@@ -793,6 +801,8 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
                             row["reason"],
                             {"kind": "witness-gap", "source_id": CUMMISKEY_SOURCE},
                         )
+                elif identity in lasance_unbound:
+                    self.assertEqual(row["reason"], {"kind": "no-exemplar"})
                 elif identity in rights_withheld:
                     self.assertEqual(
                         row["reason"],

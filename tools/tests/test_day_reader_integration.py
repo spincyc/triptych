@@ -538,8 +538,12 @@ class DayReaderIntegrationTests(unittest.TestCase):
         prototype = LITURGY / "prototypes/reader-shell/reader-shell.js"
         self.assertLess(SHELL_JS.stat().st_size, prototype.stat().st_size // 4)
         # Atomic Proper choices and honest non-full Missal frames add production
-        # rendering contracts here; keep the controller below a concrete 120 KiB.
-        self.assertLess(DAY_JS.stat().st_size, 120 * 1024)
+        # rendering contracts here. C2 claim-local truth (2026-10-19) adds the
+        # recension caveat, the selected-outcome report and Contents locations;
+        # load-time optimisation is deferred to C6 by the same day's decision, so
+        # the concrete bound moves from 120 to 124 KiB rather than the code
+        # being contorted to fit it.
+        self.assertLess(DAY_JS.stat().st_size, 124 * 1024)
 
     def test_chromium_evidence_distinguishes_commit_from_visual_settlement(self) -> None:
         harness = text(ROOT / "tools/tests/day_reader_integration_browser.mjs")

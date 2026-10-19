@@ -324,9 +324,12 @@ class PropersReaderIntegrationTests(unittest.TestCase):
         self.assertNotIn("T.el('button', null, T.titleCase(option.id))", source)
 
     def test_pre_1955_recension_coverage_and_text_source_are_never_silent(self) -> None:
-        source = text(JS)
+        # The caveat is derived once, in the shared core, so Day states it too (C2 G11).
+        source = text(JS) + text(CORE_JS)
+        self.assertIn("return T.recensionContext(structure, mass, editionName);", text(JS))
         for token in (
             "function recensionContext(structure, mass)",
+            "function recensionContext(structure, mass, editionName)",
             "structure.recension_coverage",
             "coverage.domains",
             "domains.propers",

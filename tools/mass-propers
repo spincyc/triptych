@@ -2031,6 +2031,25 @@ def translation_overlay(
             if local_id in local_witness_ids:
                 raise ValueError(f"{path}: duplicate translation source id {local_id!r}")
             local_witness_ids.add(local_id)
+            if "witness_relation" in row:
+                # A book-level relation to the calendar's target covers every
+                # body the book supplies, so it needs its own stated evidence
+                # and an established attestation, never a default.
+                if row.get("witness_relation") != "antecedent":
+                    raise ValueError(
+                        f"{path}: translation source {local_id!r} witness_relation "
+                        "must be 'antecedent'"
+                    )
+                if not str(row.get("witness_relation_basis") or "").strip():
+                    raise ValueError(
+                        f"{path}: translation source {local_id!r} witness_relation "
+                        "requires witness_relation_basis"
+                    )
+                if str(row.get("attests") or "unestablished").strip() == "unestablished":
+                    raise ValueError(
+                        f"{path}: translation source {local_id!r} cannot declare an "
+                        "antecedent relation without an established attestation"
+                    )
             for field in ("source_id", "artifact_id"):
                 if field not in row:
                     continue
@@ -2546,6 +2565,17 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
     masses = []
     for kind, mass in masses_of(document):
         propers = []
+        # A recension mass whose text is carried from another calendar's corpus
+        # holds that corpus's Latin records. Their collation was against that
+        # calendar's target, never this one's (guidance/recensions.md), so its
+        # Latin is uncollated here and cannot be this target's exact wording.
+        stamp = mass.get(RECENSION)
+        text_from = (
+            str(stamp.get(_calendars.RECENSION_BASE) or "")
+            if isinstance(stamp, dict)
+            else ""
+        )
+        latin_inherited = bool(text_from) and text_from != calendar
         for proper_index, (form, proper, taken_from) in enumerate(
             appointed_propers(document, mass), 1
         ):
@@ -2760,12 +2790,29 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
                 )
                 source_owner = dict(owner)
                 source_owner["source"] = owner.get("source") or built_proper.get("source")
+                # The typed source-side reason behind each body absence. The
+                # public projection says only `unavailable`; coverage may say
+                # which class of absence it is without exporting its evidence.
+                absence_kinds: dict[str, list[str]] = {}
+                for record in absence_records:
+                    reason = record.get("reason")
+                    if (
+                        str(record.get("cycle") or CYCLE_ALL) == cycle
+                        and str(record.get("extent") or "body") == "body"
+                        and isinstance(reason, dict)
+                        and reason.get("kind")
+                    ):
+                        absence_kinds.setdefault(
+                            str(record.get("lang") or "und"), []
+                        ).append(str(reason["kind"]))
                 owner["coverage"] = _missal_coverage.unit(
                     source_owner,
                     target_id=_missal_coverage.identity(source_key, family or "all", cycle),
                     occurrence_id=_missal_coverage.identity(occurrence_key, family or "all", cycle),
                     witnesses=witnesses, cycle_family=family, cycle=cycle,
                     translation_relation=relation,
+                    latin_inherited=latin_inherited,
+                    absence_kinds=absence_kinds,
                 )
             propers.append(built_proper)
         built = {
