@@ -2850,7 +2850,7 @@ async function main() {
   freshNavigationSequence += 1;
   const bootstrapTarget = candidateUrl(base, STATES.roman,
     `bootstrap-${freshNavigationSequence}`);
-  const profileRoot = join(ROOT, 'build');
+  const profileRoot = resolve(process.env.TRIPTYCH_BROWSER_SCRATCH || join(ROOT, 'build'));
   await mkdir(profileRoot, { recursive: true });
   const profile = await mkdtemp(join(profileRoot, 'triptych-day-reader-chrome-'));
   const chrome = spawn(chromeBinary, [
@@ -2952,6 +2952,7 @@ async function main() {
       files: measuredFiles
     };
     if (captureDir) {
+      await mkdir(captureDir, { recursive: true });
       await writeFile(join(captureDir, 'browser-results.json'), JSON.stringify(report, null, 2) + '\n');
     }
     process.stdout.write(JSON.stringify(report, null, 2) + '\n');
@@ -2970,7 +2971,7 @@ async function main() {
     }
     server.closeAllConnections();
     await new Promise((accept) => server.close(accept));
-    await rm(profile, { recursive: true, force: true });
+    await rm(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 });
   }
 }
 

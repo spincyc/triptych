@@ -5,7 +5,7 @@
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
 import { createServer } from 'node:http';
-import { mkdir, mkdtemp, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { extname, resolve, sep } from 'node:path';
 import process from 'node:process';
@@ -146,9 +146,9 @@ function server() {
       if (responseGate && responseGate.match(relative)) {
         gate = responseGate; gate.claim(relative); await gate.releaseSignal;
       }
-      const corrupt = relative.startsWith('build/public-alpha/preview/browse-failure/');
+      const corrupt = relative.startsWith(DATA.slice(1) + '-failure/');
       if (corrupt) {
-        relative = relative.replace('/browse-failure/', '/browse/');
+        relative = relative.replace(DATA.slice(1) + '-failure/', DATA.slice(1) + '/');
         if (relative.endsWith('/structure/propers/roman-1962.json')) {
           response.writeHead(200, { 'content-type': 'application/json', 'cache-control': 'no-store' });
           response.end('{'); return;
@@ -991,6 +991,11 @@ async function assertions(cdp, base) {
     assert.equal(await evaluate(cdp, `document.querySelectorAll('.composed[lang="en"]').length`), 1);
     assert.equal((await snapshot(cdp)).semantic.events.filter(row =>
       row.selected?.reason === 'absent-in-witness').length, 3);
+    const selectedNotes = await evaluate(cdp,
+      `[...document.querySelectorAll('.composed-note')].map(node => node.textContent)`);
+    assert.equal(selectedNotes.filter(text =>
+      /No English text is available from the selected witness for this Proper/.test(text)).length, 3);
+    assert.ok(!selectedNotes.some(text => /No English or Latin body is held here/.test(text)));
     assert.match((await snapshot(cdp)).notice, /from the selected witness/);
   });
 
@@ -1122,7 +1127,7 @@ async function assertions(cdp, base) {
   await check('superseded Browse failure cannot overwrite a current valid form', async () => {
     await freshCandidate(cdp, base, STATES.post, DATA + '-failure');
     await click(cdp, '[data-reader-action="browse"]');
-    const gate = armGate((path) => path.endsWith('/browse-failure/structure/propers/roman-1962.json'));
+    const gate = armGate((path) => path === DATA.slice(1) + '-failure/structure/propers/roman-1962.json');
     await select(cdp, '#reader-missal', 'roman-1962'); await waitGate(gate);
     await evaluate(cdp, `location.hash=${JSON.stringify(STATES.fast.slice(1))}`);
     await waitFor(cdp, `propersReaderDebug.ready && propersReaderDebug.outcome === 'ready'`, 'valid after Browse failure');
@@ -1374,7 +1379,7 @@ async function assertions(cdp, base) {
   });
 
   await check('superseded slow failure cannot overwrite fast valid', async () => {
-    const gate = armGate((path) => path.endsWith('/browse-failure/structure/propers/roman-1962.json'));
+    const gate = armGate((path) => path === DATA.slice(1) + '-failure/structure/propers/roman-1962.json');
     await cdp.send('Page.navigate', { url: candidateUrl(base, STATES.roman, DATA + '-failure') });
     await waitGate(gate); await evaluate(cdp, `location.hash=${JSON.stringify(STATES.fast.slice(1))}`);
     await waitFor(cdp, `propersReaderDebug.ready && propersReaderDebug.outcome === 'ready'`, 'fast valid after pending failure');
@@ -1504,7 +1509,9 @@ if (process.argv.includes('--check-fixtures')) {
 const instance = server();
 const port = await listen(instance);
 const debugPort = await freePort();
-const profile = await mkdtemp(resolve(tmpdir(), 'triptych-propers-reader-'));
+const profileRoot = resolve(process.env.TRIPTYCH_BROWSER_SCRATCH || tmpdir());
+await mkdir(profileRoot, { recursive: true });
+const profile = await mkdtemp(resolve(profileRoot, 'triptych-propers-reader-'));
 const chrome = spawn(chromeBinary, [
   '--headless=new', '--disable-gpu', '--no-sandbox', '--disable-dev-shm-usage',
   `--remote-debugging-port=${debugPort}`, `--user-data-dir=${profile}`, 'about:blank'
@@ -1549,7 +1556,15 @@ try {
   failures.push({ name: 'harness', detail: error.stack || String(error) });
 } finally {
   if (responseGate) responseGate.release();
-  if (cdp) cdp.close(); chrome.kill('SIGTERM'); await new Promise((done) => instance.close(done));
+  if (cdp) cdp.close();
+  if (chrome.exitCode === null && chrome.signalCode === null) {
+    const exited = new Promise((done) => chrome.once('exit', done));
+    chrome.kill('SIGTERM');
+    await exited;
+  }
+  instance.closeAllConnections();
+  await new Promise((done) => instance.close(done));
+  await rm(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 });
 }
 
 if (consoleProblems.length) failures.push({ name: 'console', detail: consoleProblems.join('\n') });

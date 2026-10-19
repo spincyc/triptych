@@ -126,6 +126,26 @@ class ReaderCoverageTests(unittest.TestCase):
         self.assertEqual(result["result"]["events"][0]["selected"]["text"], "Project study words")
         self.assertEqual(node(op="oration", proper=row, witness="project-created")["text"], "Project study words")
 
+    def test_all_souls_witness_gap_does_not_deny_another_held_english_body(self):
+        data = json.loads((ROOT / "src/web/data/structure/propers/roman-1962.json").read_text())
+        mass = next(row for row in data["masses"]
+                    if row["key"] == "commemoratione-omnium-fidelium-defunctorum")
+        caswall = "edition.edward-caswall.lyra-catholica.london-1849"
+        cummiskey = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+        prayers = [row for row in mass["propers"] if row["form_id"] == "first"
+                   and row["name"] in {"Collect", "Secret", "Postcommunion"}]
+        self.assertEqual(len(prayers), 3)
+        for row in prayers:
+            with self.subTest(proper=row["name"]):
+                self.assertEqual(row["text_status"]["state"], "unavailable")
+                missing = node(op="oration", proper=row, witness=caswall)
+                self.assertIsNone(missing["text"])
+                self.assertEqual(missing["reason"], "absent-in-witness")
+                held = node(op="oration", proper=row, witness=cummiskey)
+                self.assertTrue(held["text"])
+                self.assertFalse(held["missing"])
+                self.assertEqual(held["lang"], "en")
+
     def test_aliases_collapse_only_identical_bodies(self):
         row = proper("one", "one", [translation(), translation("artifact.a")])
         result = node(op="adapt", structure=structure([row]))

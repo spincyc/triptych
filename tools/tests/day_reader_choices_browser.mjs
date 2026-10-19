@@ -582,6 +582,11 @@ async function testTranslationWitnesses(cdp, base) {
   assert.deepEqual(selected.witnessChoices, []);
   assert.equal(selected.englishComposed, 1);
   assert.equal(selected.absentInWitness, 3);
+  const selectedNotes = await evaluate(cdp,
+    `[...document.querySelectorAll('.composed-note')].map(node => node.textContent)`);
+  assert.equal(selectedNotes.filter(text =>
+    /No English text is available from the selected witness for this Proper/.test(text)).length, 3);
+  assert.ok(!selectedNotes.some(text => /No English or Latin body is held here/.test(text)));
   assert.match(selected.coverageNotice, /1\/6 uses available from the selected witness/);
   assert.equal(await evaluate(cdp,
     'document.activeElement.dataset.semanticEventId || ""'), focusedEvent);
@@ -664,7 +669,7 @@ async function main() {
   const port = await listen(server);
   const base = `http://127.0.0.1:${port}`;
   const debugPort = await freePort();
-  const scratch = join(ROOT, '.scratch');
+  const scratch = resolve(process.env.TRIPTYCH_BROWSER_SCRATCH || join(ROOT, '.scratch'));
   await mkdir(scratch, { recursive: true });
   const profile = await mkdtemp(join(scratch, 'day-choice-chrome-'));
   const chrome = spawn(chromeBinary, [

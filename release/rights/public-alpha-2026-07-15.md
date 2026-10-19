@@ -11397,7 +11397,7 @@ release attachment, announcement, or promotion.
 | `src/web/browser/scripture/track.html` | `6f8858de7b6dfe6af1bdb27dbda9062cc21df664df56ca0869ca0daf7e7fe40b` |
 | `src/web/browser/scripture/track.js` | `5cac123c49f4bc89d9845e0299ddacd2a89cb71a7760c86db54c0c5e5866b1a0` |
 | `src/web/browser/shared/browser-core.css` | `61ee283812f93f05df3fbe66949d03f06123f63426143426f7a49fdc069e4bb8` |
-| `src/web/browser/shared/browser-core.js` | `b0b72ae733cf632ecdebe337c72959f4106c617d04cc17fce4178ed96c6988a8` |
+| `src/web/browser/shared/browser-core.js` | `3fcb5b575c86ee31eb92325b270164cb7f044f401a2892e56155c14c9efd7c16` |
 | `src/web/browser/sources/index.html` | `0c7c34677ebe7f2d3c09fd8079cea8b6e136ccdd3ddbf1cec8d5d90627febd63` |
 | `src/web/browser/sources/reader-model.js` | `d265d2977a8338026ba810446f74c8e7aae9777b185ea1a0716f92d20e35cdb1` |
 | `src/web/browser/sources/sources.css` | `4d47cb9f37fa95e6cb3894b500ab31c0b123adf27e65aa8784e313103409a41b` |

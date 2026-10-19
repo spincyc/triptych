@@ -71,7 +71,7 @@ json.dump(payload, sys.stdout)
 `;
 
 export function refreshCoverage(payload, root) {
-  const scratch = resolve(root, '.scratch');
+  const scratch = resolve(process.env.TRIPTYCH_BROWSER_SCRATCH || resolve(root, '.scratch'));
   mkdirSync(scratch, { recursive: true });
   const directory = mkdtempSync(resolve(scratch, 'reader-coverage-fixture-'));
   const input = resolve(directory, 'input.json');
