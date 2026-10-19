@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-panis-checked"
+edition_id = "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The underlying 1755 Latin printing is public domain in the United States by expiration of its publication term. This faithful mechanical scan of the identified Florence copy adds no original authorship. No modern translation or protected scholarly apparatus is included. The historical text and third-party scan are excluded from Triptych’s CC BY 4.0 licence."
+rights_jurisdiction = "United States"
+derived_from = "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ia-jp2-page590"
+transformation = "Reading transcription checked against the original JPEG2000 page, not the degraded PDF or provider OCR. Expand printed contractions and ampersands; normalize long-s, consonantal u/v and i/j, case, punctuation and line wrapping. Preserve the printed e spellings celum, anime, seculum and the y in presbyter. Preserve all lexical items, responses, priest/choir rubrics, all three crosses including San✠cti and both Amens. The original image clearly prints quinque; no conjectural restoration from another edition is used."
+provenance = "Direct page reading by an AI source transcriber (1755 blessing preparation); independently collated against every source word and rubric by a separate AI source reviewer on 2026-10-19."
+retrieved = "2026-10-19"
+sha256 = "fd364b6f3c2fd5f2127c8dce780d99df56368a5913dd336b44d529162217606b"
+byte_size = 899
+path = "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/benedictio-panis-checked/benedictio-panis.txt"
+encoding = "utf-8"
+indexable = true
+notes = "Nineteen semantic lines, nine units. Complete only for the source-defined Benedictio panis; the remaining missal, colophon and apparatus are excluded."

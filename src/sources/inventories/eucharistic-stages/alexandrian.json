@@ -15,8 +15,8 @@
       "id": "coptic-catholic",
       "label": "Coptic Catholic Euchologion",
       "family": "Alexandrian",
-      "scope": "Coptic and received Arabic Catholic liturgical books; 1736 and 1898 attested states.",
-      "coverage_note": "Exact medieval exemplar and post 1898 received-state sequence remain incomplete. Orthodox 1902 is not a Catholic successor."
+      "scope": "Coptic and received Arabic Catholic liturgical books; 1736, 1898 and 1971 attested states.",
+      "coverage_note": "Whole 1736 offered scan recovered; exact medieval exemplar, complete 1898/1971 comparison and later received-state sequence remain incomplete."
     },
     {
       "id": "geez-aksumite-euchologion",
@@ -29,8 +29,8 @@
       "id": "geez-catholic",
       "label": "Ge’ez Catholic missal",
       "family": "Alexandrian",
-      "scope": "Vatican 1945 book and 2025 missal intended for Ethiopian and Eritrean Catholic Churches.",
-      "coverage_note": "Exact books and intermediate received editions are missing; Ethiopian/Eritrean implementation dates are not equated with presentation."
+      "scope": "Catholic printings of 1890, 1913, 1945 and the joint 2024 edition presented in 2025.",
+      "coverage_note": "Original earlier books remain unacquired. The 2024 editorial note expressly names 1945 as the replaced edition; presentation and local implementation are separate dates."
     }
   ],
   "sources": [
@@ -49,10 +49,10 @@
       "title": "Raphael Tuki, Missale copto arabicum, Rome 1736; ULB Bonn digital copy",
       "url": "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/253288",
       "kind": "primary-book",
-      "inspection": "Holding record inspected; images 253291 title leaf, 253295 opening evening-incense prayer, 253379 morning-incense opening and 253583 internal Euchologion title inspected. IIIF manifest downloaded.",
-      "checked_on": "2026-10-16",
+      "inspection": "Entire Bonn IIIF manifest and all 676 default JPEG images acquired, each hashed and preserved in provider order; lossless 676-page PDF derivative independently checked by recovering and byte-comparing every JPEG stream. Title, incense openings, part II pp. 3, 86–87, 110–111, 212–213, 262, 272, 277, 282, 287–290 and 317, and the final colophon inspected. Creed printed II p. 86 / artifact 379 directly includes procession from the Father and Son in Coptic and Arabic. Colophon artifact 672 gives 3 Baunah / 13 June 1736. PDF SHA-256 add039d0fa12b9379035c2820e10ff6df042dc49651628a7dc7f3e9f6b5f375f; ZIP SHA-256 a09b63688e35e0b4a372063ea1f26bdf5f990686c17358483820383f42461eed; exact manifest SHA-256 ea71e2eecf1a4183e7c69fd75a6a6e93178ded0ed8f9aaa299cc7ab78c6131c6. Complete Arabic Creed II pp. 85–87 / artifacts 378–380 independently word-checked and retained as a 139-word unvocalized reading transcription; normalized-text SHA-256 79536f9cec56d16b9a1740b9baf9db7353b435577320b60983ffa674b4f9563e. The five errata leaves, artifacts 667–671, were checked for this component; no listed correction to its Arabic words was identified.",
+      "checked_on": "2026-10-17",
       "status": "inspected",
-      "limitations": "Only selected leaves inspected. No Creed, diptychs or intercession text collated. Publisher/date supplied by holding record; not independently read from an imprint leaf."
+      "limitations": "The complete offered 1000-pixel-wide image sequence is acquired; physical-volume completeness, complete transcription and whole-book collation are not established. Blue reader annotations on Basil’s cup-narrative leaves are separate from the original print. Medieval exemplar identity and a complete 1898 comparison remain unresolved. Bonn’s extent field says 288, 479 pages, which is not reconciled with the 676-image offered sequence; Part I printed p. 288 is artifact 293, errata begin at 667, and the colophon is 672."
     },
     {
       "id": "alexandrian-stages-lietzmann1926",
@@ -143,6 +143,96 @@
       "checked_on": "2026-10-16",
       "status": "inspected",
       "limitations": "A firsthand scholarly comparison and edited text, not the original 1898 printing. Its reconstructed text and variants must not be imported as an unchecked transcription of that book. P. 228 names no shelfmark for Tuki’s thirteenth-century Vatican exemplar; the same bibliographical note mistakenly calls Renaudot 1716 a translation of Tuki, so its broad dependency statements require care."
+    },
+    {
+      "id": "alexandrian-stages-keren2009",
+      "title": "Abba Uqbagaber Woldeghiorghis, Historical development and printing of the Catholic missal, 1638–2009 (Tigrinya title; Keren, 16 June 2009)",
+      "url": "http://www.eparchyofkeren.com/topics/Catholic%20Mass%20Book.pdf",
+      "kind": "scholarship",
+      "inspection": "Whole 10-page PDF downloaded and hashed; text read; PDF pp. 4, 5 and 8 visually inspected, including the three-column Ge’ez comparison on p. 5. Whole delivered file: 188620 bytes, SHA-256 bc94f557f3c4481d8ecf9f26b167813f3e4efb1dd45ccc695ba4129759848b77.",
+      "checked_on": "2026-10-17",
+      "status": "inspected",
+      "limitations": "Retrospective study hosted by the Catholic Eparchy of Keren. The table supplies neither original-book page references nor an explicit anaphora heading; whether it reproduces original spelling, normalizes, or translates is unstated. Its early chronology is inconsistent (1638/1639/1658 for Tesfa Sion versus 1548 in the author’s English study); do not use it to date that early edition. Research-only acquisition; no modern source payload or prayer text is republished."
+    },
+    {
+      "id": "alexandrian-stages-semharay",
+      "title": "Abba Uqbagaber Woldeghiorghis, Abba Teklemaryam Semharay Selim",
+      "url": "http://www.eparchyofkeren.com/topics/Abba.Teklemariam.Semharay.pdf",
+      "kind": "scholarship",
+      "inspection": "Whole PDF downloaded and hashed; English study read; PDF pp. 1–2 visually inspected. Whole delivered file: 167458 bytes, SHA-256 4b30d5609f2cf8be96f02eca4e16f313aa54d0e31f2cccb063ac2e01e1944209.",
+      "checked_on": "2026-10-17",
+      "status": "inspected",
+      "limitations": "Same author as the 2009 history, not independent corroboration. No original missal pages or complete archival shelfmarks. Its bibliography/body disagree on the year of the Marian study (1927/1937), and p. 2 calls 1548 a Ge’ez-calendar date; those chronologies are not adopted. Research-only acquisition; no modern source payload or prayer text is republished."
+    },
+    {
+      "id": "alexandrian-stages-blin2009",
+      "title": "Bishop Kidane Yebio, History of the translation of the missal into Blin (Keren, 16 June 2009)",
+      "url": "http://www.eparchyofkeren.com/topics/History.Blin.Mass.pdf",
+      "kind": "official-retrospective",
+      "inspection": "Whole four-page PDF downloaded and hashed; text read; PDF pp. 2 and 4 visually inspected. Whole delivered file: 111349 bytes, SHA-256 66a72e7cd853f7358b1476d03d53344169ee87abd02e63b1f7441750f9d2ee2d.",
+      "checked_on": "2026-10-17",
+      "status": "inspected",
+      "limitations": "Tigrinya report of one translation project. Its selection of 1945 as a translation base supports local reception, not uniform use by all Eritrean or Ethiopian Catholics. Research-only acquisition; no modern source payload or prayer text is republished."
+    },
+    {
+      "id": "alexandrian-stages-geez2024note",
+      "title": "Claudio Cardinal Gugerotti, Editorial Note to the new 2024 Ge’ez missal, 27 September 2024",
+      "url": "https://valoreitalianobookstore.com/cdn/shop/files/MESSALE_GHE_EZ__03.jpg?v=1769445095",
+      "kind": "primary-book",
+      "inspection": "Publisher’s complete single-page English editorial-note image downloaded, hashed and visually read; signed Prefect and dated 17 Mäskäräm 2017 / 27 September 2024. Unnumbered leaf, publisher preview 03. Whole delivered file: 229133 bytes, SHA-256 72dc66bed486301ef0d81494756d6efba1e5cc54c57706255b7703e729363f8c.",
+      "checked_on": "2026-10-17",
+      "status": "inspected",
+      "limitations": "One public preview leaf of the book. The English note’s original/translated status is unstated. It describes replacement and editorial work but is not an inspected approval decree or implementation notice; no complete native text was acquired. Research-only acquisition; no modern source payload or prayer text is republished."
+    },
+    {
+      "id": "alexandrian-stages-geez2024previews",
+      "title": "Missal in the Ge’ez language (The new 2024 edition), Valore Italiano publisher’s catalogue and public book previews, ISBN 979-12-81584-24-2",
+      "url": "https://valoreitalianobookstore.com/collections/catalogo-generale/products/missal-in-the-ge-ez-language-messale-in-lingua-ghe-ez",
+      "kind": "primary-book",
+      "inspection": "Complete catalogue HTML and all nine public images downloaded and hashed; preview images 02–09 visually inspected, especially contents 05, numbered anaphora list 07 and Prayer of the Covenant opening 09 with chant marks. Whole delivered file: 248263 bytes, SHA-256 df5eab7d2e17e25a8a2448e33de0b98a928497566aa396ba0fcef62b7e0601c2. Exact preview-image SHA-256 values: contents 05 2389d6fdb3a611d31f4d2d18a5a249e8e31496a138382b6e56419d6fb72a4c36; numbered list 07 4ad1a648061370ae68066b3ed3a5521c9667ef35a343e18e8de11fa6e808302e; chant opening 09 a2a05a05d8877defce6e2f32c16f9781d02d462a7e47b418422316204ff709f8.",
+      "checked_on": "2026-10-17",
+      "status": "inspected",
+      "limitations": "Public selection only, not the whole book. The native-language prefaces have not been independently translated. Contents-page start numbers identify requested sections but do not expose their institution narratives. Commercial print and Kindle access are not public full-text acquisition. Research-only acquisition; no modern source payload or prayer text is republished."
+    },
+    {
+      "id": "alexandrian-stages-tzadua-mashafa",
+      "title": "Abuna Paulos Cardinal Tzadua, Mashafa qeddäse, Marienlexikon, p. 348",
+      "url": "https://www.marienlexikon.de/wp-content/uploads/Marienlexikon_M-kompr.pdf",
+      "kind": "scholarship",
+      "inspection": "Whole M-section PDF downloaded and hashed; article and bibliography on printed p. 348 (PDF p. 132) read and visually inspected. Whole delivered file: 53316588 bytes, SHA-256 aa5f4573c8282b33025f311736636df89bf0ac2772f6247d44776e6050e5bffe.",
+      "checked_on": "2026-10-17",
+      "status": "inspected",
+      "limitations": "Scholarly bibliographic description, not a facsimile of the 1945 title page. The title citation contains an ellipsis; the edition’s full title and imprint remain to be checked in the book. Research-only acquisition; no modern source payload or prayer text is republished."
+    },
+    {
+      "id": "alexandrian-stages-coptic-books",
+      "title": "Istifanus Daniel Girgis, Coptic Catholic liturgical books (1736–2009), Coptic Catholic Church website",
+      "url": "https://coptcatholic.net/11243/",
+      "kind": "official-retrospective",
+      "inspection": "Complete article read; numbered entries 1, 9, 44, 47 and 52 identify the 1736/1898 books, Rome 1971 Euchologion, Basil chant-response book 1974 and Basil printings from 1987. Whole HTML: 197223 bytes, SHA-256 3bef1f86ce0bd719595949501d13daad978db6a0099f624a91967437e71b5ea0.",
+      "checked_on": "2026-10-17",
+      "status": "inspected",
+      "limitations": "Retrospective bibliography explicitly disclaims exhaustiveness. Separate lectionary, hymn and service books are complementary; publication and reprint dates alone do not prove new recensions. Modern HTML is research-only; no source payload is republished."
+    },
+    {
+      "id": "alexandrian-stages-coptic-synod1957",
+      "title": "Istifanus Daniel Girgis, The unknown second Alexandrian synod, Coptic Catholic Church website, 17 December 2014",
+      "url": "https://coptcatholic.net/30600/",
+      "kind": "official-retrospective",
+      "inspection": "Complete article read, especially final numbered work-list item 2 connecting the common portion of the three anaphoras and its ritual directions to the 1971 Roman Euchologion. Whole HTML: 135991 bytes, SHA-256 a1cb93a2b3b14bb4b625cbb54c6978521f096157291e2bb263ed89f7b1803661.",
+      "checked_on": "2026-10-17",
+      "status": "inspected",
+      "limitations": "Retrospective account reports the 12 March 1957 synod and later incorporation of directions; original synodal act and exact 1971 rubric pages remain uninspected. The article has inconsistent dates for a later synod; these do not date the 1957 work. Modern HTML is research-only; no source payload is republished."
+    },
+    {
+      "id": "alexandrian-stages-coptic-tasted",
+      "title": "Why was the word tasted added in the Coptic rite?, Coptic Catholic Church website, 12 April 2013",
+      "url": "https://coptcatholic.net/1385/",
+      "kind": "official-retrospective",
+      "inspection": "Complete article read; sixth section, Coptic Catholic Euchologia, identifies cup-narrative loci for 1736, 1898 and 1971. The 1736 Gregory II p. 212 and Cyril II p. 317 references were independently checked in the original Bonn images. Whole HTML: 157268 bytes, SHA-256 3fa68e3b5694196dafc570cfa26d419460877824bc99f9a68802ffda16a13673.",
+      "checked_on": "2026-10-17",
+      "status": "inspected",
+      "limitations": "Modern comparative article supplies page leads for the unacquired 1898 and 1971 books. Its Basil 1736 p. 11 reference is inconsistent with the inspected printed II pp. 110–111; quoted forms and possible typographic errors are not silently substituted for original text. Modern HTML is research-only; no source payload is republished."
     }
   ],
   "stages": [
@@ -199,8 +289,8 @@
         "eastern:alex-coptic-1736"
       ],
       "witness_label": "Raphael Tuki, Missale copto arabicum, [Rome] 1736",
-      "summary": "Contains Basil, Gregory and Cyril. Brightman describes Catholic adjustments: Filioque in the Creed, revised commemorations including Chalcedon, and additional Arabic rubrics.",
-      "text_coverage": "not-transcribed",
+      "summary": "Contains Basil, Gregory and Cyril. The original Creed prints procession from the Father and the Son in both Coptic and Arabic. The Cyril section retains intercessions inside the anaphora. Brightman additionally describes revised commemorations including Chalcedon and extra Arabic rubrics.",
+      "text_coverage": "partial",
       "evidence": [
         {
           "source_id": "alexandrian-stages-tuki1736",
@@ -216,10 +306,31 @@
           "source_id": "alexandrian-stages-chaine1912",
           "locus": "p. 228 n. 2",
           "claim": "Attributes Tuki’s text to a thirteenth-century Vatican manuscript, without identifying its shelfmark."
+        },
+        {
+          "source_id": "alexandrian-stages-tuki1736",
+          "locus": "Part II p. 86 / artifact 379 / canvas 253668",
+          "claim": "The Creed’s Spirit clause visibly includes the Father and the Son in both columns."
+        },
+        {
+          "source_id": "alexandrian-stages-tuki1736",
+          "locus": "Part II anaphora heading p. 272 / artifact 565; intercessions pp. 277, 282 and 287–290 / artifacts 570, 575, 580–583",
+          "claim": "Petitions for Church, travellers and departed stand inside the separately headed Cyril anaphora."
+        },
+        {
+          "source_id": "alexandrian-stages-tuki1736",
+          "locus": "Colophon, artifact 672 / canvas 253961",
+          "claim": "Original Coptic-Arabic completion statement gives 13 June 1736."
+        },
+        {
+          "source_id": "alexandrian-stages-tuki1736",
+          "locus": "Part II pp. 85–87, Arabic right columns / artifact pages 378–380; passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.creed-arabic",
+          "claim": "Complete Arabic Creed component is independently checked and retained with explicit normalization; remaining Coptic and Arabic service text is not transcribed."
         }
       ],
-      "limitations": "Changes are source-described, not newly collated. Chaîne p. 228 n. 2 reports a thirteenth-century Vatican exemplar without a shelfmark; no particular codex is established as parent. The specific removed names and addition of the pope are not expanded beyond Brightman’s checked wording.",
-      "reception": "Brightman expressly identifies Tuki and derivatives as the Coptic Catholic modified rite; no parish adoption date established."
+      "limitations": "Creed wording and the placement of sampled Cyril intercessions are directly image-checked. Their exact differences from Tuki’s unidentified manuscript exemplar remain uncollated. Chalcedon and omitted commemorations remain Brightman’s scholarly description; no specific removed name or pope addition is inferred. The native binding certifies the complete Arabic Creed only (139 normalized words on three pages), excluding parallel Coptic, rubrics and every other book division; it is not a complete Ordinary or missal.",
+      "reception": "Brightman expressly identifies Tuki and derivatives as the Coptic Catholic modified rite; no parish adoption date established.",
+      "text_binding": "native-book:tuki-1736-arabic-creed"
     },
     {
       "id": "alexandrian-stages-coptic1898",
@@ -294,52 +405,76 @@
     {
       "id": "alexandrian-stages-geez1945",
       "tradition_id": "geez-catholic",
-      "label": "Vatican missal with revised institution narratives",
-      "date_label": "1945: publication reported by Fritsch",
+      "label": "Vatican Catholic missal with seventeen anaphoras",
+      "date_label": "1945: publication reported by scholarly and local ecclesial sources",
       "start_year": 1945,
       "end_year": 1945,
       "date_kind": "publication",
       "status": "documented",
-      "scope": "Ge’ez Catholic missal, especially institution narratives in the Lord and James of Sarug anaphoras.",
+      "scope": "Catholic Ge’ez missal: anaphora repertoire, source-described invocation and institution revisions, and later replacement.",
       "components": [
-        "anaphoras"
+        "ordinary",
+        "anaphoras",
+        "rubrics",
+        "chant"
       ],
       "witness_ids": [
         "eastern:alex-geez-1945"
       ],
-      "witness_label": "Vatican Ge’ez missal of 1945; exact title page not inspected",
-      "summary": "Fritsch reports 17 anaphoras; removal of the bread noun from institution wording, adaptation of the Apostles narrative for the Lord anaphora, and its insertion in James of Sarug. The cup noun remains in some anaphoras.",
+      "witness_label": "Missale aethiopicum, Roman edition of 1945; original title page not acquired",
+      "summary": "Keren’s study reports expansion from fourteen to seventeen anaphoras and compares an altered Spirit invocation. Fritsch separately reports institution-narrative revisions in the Lord and James of Sarug anaphoras. These describe different changes.",
       "text_coverage": "not-transcribed",
       "evidence": [
         {
           "source_id": "alexandrian-stages-fritsch2011",
           "locus": "p. 1 introduction and sections (a)–(b); p. 2 section (c)",
           "claim": "Explicitly attributes these bounded revisions to the 1945 Vatican edition."
+        },
+        {
+          "source_id": "alexandrian-stages-keren2009",
+          "locus": "PDF p. 5 table; p. 8 paragraph and prefatory quotation",
+          "claim": "Compares 1890/1913 and 1945 invocation wording; reports three added anaphoras and fourteen becoming seventeen."
+        },
+        {
+          "source_id": "alexandrian-stages-blin2009",
+          "locus": "PDF p. 2, arrowed paragraph preceding 1990–91 committee",
+          "claim": "Identifies the Vatican 1945 missal as the literal translation base."
+        },
+        {
+          "source_id": "alexandrian-stages-tzadua-mashafa",
+          "locus": "Printed p. 348 (PDF p. 132), bibliography",
+          "claim": "Provides a fuller Latin title and the Roman first-edition designation."
+        },
+        {
+          "source_id": "alexandrian-stages-geez2024note",
+          "locus": "Unnumbered editorial note, paragraph 2",
+          "claim": "Identifies the 1945 edition as the book replaced by the new 2024 edition."
         }
       ],
-      "limitations": "Exact predecessor and 1945 page loci are missing. No invented baseline stage or assumption that all institution texts were uniformly rewritten. Modern Eritrean reception chronology is not supplied.",
-      "reception": "A Catholic revision per Fritsch. Intended/use history should be distinguished from later Eritrean ecclesial organization."
+      "limitations": "No complete 1945 book acquired; exact prayer pages and approval act remain missing. The Keren table is not original-page collation, and does not show an earlier absence of every Spirit invocation. Added James brother of the Lord must not be confused with Fritsch’s revised James of Sarug.",
+      "reception": "The Keren bishop’s 2009 account identifies the 1945 edition as the base of the Blin translation. This establishes bounded reception in Eritrea; universal use and implementation dates remain unproved."
     },
     {
       "id": "alexandrian-stages-geez2025",
       "tradition_id": "geez-catholic",
-      "label": "Joint Catholic edition with chant annotations",
-      "date_label": "Presented 27 May 2025; publication attested",
-      "start_year": 2025,
-      "end_year": 2025,
-      "date_kind": "attestation",
+      "label": "Joint 2024 Catholic edition with chant annotations",
+      "date_label": "2024 edition; editorial note 27 September 2024; presented 27 May 2025",
+      "start_year": 2024,
+      "end_year": 2024,
+      "date_kind": "publication",
       "status": "documented",
-      "scope": "Ge’ez missal with annotated chant and freshly baked leavened bread instruction.",
+      "scope": "Joint Ge’ez missal: ordinary, seventeen anaphoras, clarified rubrics and integrated chant notation.",
       "components": [
         "ordinary",
+        "anaphoras",
         "rubrics",
         "chant"
       ],
       "witness_ids": [
         "eastern:alex-geez-2025"
       ],
-      "witness_label": "Nuovo messale del rito ge’ez / new Ge’ez-language Missal presented at Pontifical Ethiopian College, 27 May 2025",
-      "summary": "Official reporting identifies the first inclusion of chant annotations, fresh leavened bread instructions, and preparation by commissions from both Catholic Churches.",
+      "witness_label": "Missal in the Ge’ez language (The new 2024 edition), Valore Italiano, ISBN 979-12-81584-24-2",
+      "summary": "The signed editorial note names 1945 as the replaced edition. Public native contents list seventeen anaphoras; the publisher’s opening prayer image shows chant notation. The 2025 ceremony is a presentation, distinct from the book’s stated edition year.",
       "text_coverage": "not-transcribed",
       "evidence": [
         {
@@ -351,10 +486,125 @@
           "source_id": "alexandrian-stages-vatican2025it",
           "locus": "Il lavoro frutto di due commissioni",
           "claim": "Reports work on ancient sources and updating in relation to Vatican II and CCEO."
+        },
+        {
+          "source_id": "alexandrian-stages-geez2024note",
+          "locus": "Unnumbered editorial note, paragraphs 2–3 and dated signature",
+          "claim": "Dates the edition 2024, explicitly replaces 1945, and describes joint revision, clarified rubrics and integrated musical notation."
+        },
+        {
+          "source_id": "alexandrian-stages-geez2024previews",
+          "locus": "Preview 05 (contents), preview 07 (numbered anaphora list), preview 09 (opening prayer)",
+          "claim": "Seventeen anaphoras are listed; Apostles starts p. 82, Lord p. 98, James of Sarug p. 324; chant marks are visible in the opening prayer."
         }
       ],
-      "limitations": "No book text, table of contents, decree or effective date inspected. The bread instruction is not proved new. No claim that 1945 institution narrative edits were retained or reversed.",
-      "reception": "Intended for the Ethiopian and Eritrean Catholic Churches; bishops express hope for common implementation. Actual implementation dates and universal adoption not established."
+      "limitations": "Only public preview leaves inspected; no complete native book or institution narratives. The 2024 note and 2025 presentation do not establish an approval or effective date. The bread instruction is not proved new; retention/reversal of 1945 institution edits is unknown.",
+      "reception": "Prepared jointly for Ethiopian and Eritrean Catholic Churches at their hierarchs’ request. May 2025 bishop interviews express implementation hopes; universal adoption and local start dates remain unestablished."
+    },
+    {
+      "id": "alexandrian-stages-geez1890",
+      "tradition_id": "geez-catholic",
+      "label": "Keren Catholic Ge’ez missal",
+      "date_label": "1890: printing reported by Keren studies",
+      "start_year": 1890,
+      "end_year": 1890,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Catholic Ge’ez printing with fourteen anaphoras; source-described prayer passage.",
+      "components": [
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [],
+      "witness_label": "Keren 1890 printing; no original copy acquired",
+      "summary": "Coulbeaux’s Keren printing contains fourteen anaphoras.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "alexandrian-stages-keren2009",
+          "locus": "PDF pp. 4–5",
+          "claim": "Identifies this printing and compares one prayer passage with 1945."
+        },
+        {
+          "source_id": "alexandrian-stages-semharay",
+          "locus": "PDF p. 1, final paragraph",
+          "claim": "English account identifies place, year and Catholic editorial context."
+        }
+      ],
+      "limitations": "Original title, index, approval and prayer pages remain unavailable. The retrospective table is source-described evidence, not direct collation.",
+      "reception": "Catholic mission printing in present-day Eritrea; no claim of uniform reception or present ecclesial boundaries."
+    },
+    {
+      "id": "alexandrian-stages-geez1913",
+      "tradition_id": "geez-catholic",
+      "label": "Asmara Catholic Ge’ez missal",
+      "date_label": "1913: printing reported by Keren studies",
+      "start_year": 1913,
+      "end_year": 1913,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Catholic Ge’ez printing with fourteen anaphoras; source-described prayer passage.",
+      "components": [
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [],
+      "witness_label": "Asmara 1913 printing; no original copy acquired",
+      "summary": "Asmara reprinting follows the unavailable 1890 stock; fourteen anaphoras remain.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "alexandrian-stages-keren2009",
+          "locus": "PDF pp. 4–5",
+          "claim": "Identifies this printing and compares one prayer passage with 1945."
+        },
+        {
+          "source_id": "alexandrian-stages-semharay",
+          "locus": "PDF p. 2, paragraph beginning Therefore",
+          "claim": "English account identifies place, year and Catholic editorial context."
+        }
+      ],
+      "limitations": "Original title, index, approval and prayer pages remain unavailable. The retrospective table is source-described evidence, not direct collation.",
+      "reception": "Catholic mission printing in present-day Eritrea; no claim of uniform reception or present ecclesial boundaries."
+    },
+    {
+      "id": "alexandrian-stages-coptic1971",
+      "tradition_id": "coptic-catholic",
+      "label": "Roman Euchologion receiving common ritual directions",
+      "date_label": "1971: publication described by Coptic Catholic sources",
+      "start_year": 1971,
+      "end_year": 1971,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Khulaji of the Church of Alexandria, printed in Rome under Patriarch Stephanos I, with the three anaphoras and common ritual directions.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [],
+      "witness_label": "خولاجي كنيسة الإسكندرية, Rome 1971; original volume not acquired",
+      "summary": "The church’s bibliography identifies the 1971 Roman book. Its synod history reports incorporation of the common directions prepared in connection with the 1957 synod. A comparative article cites cup-narrative pages for Basil, Gregory and Cyril.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "alexandrian-stages-coptic-books",
+          "locus": "Numbered entry 44",
+          "claim": "Names title, Rome 1971 and Patriarch Stephanos I’s order."
+        },
+        {
+          "source_id": "alexandrian-stages-coptic-synod1957",
+          "locus": "Final work list, item 2",
+          "claim": "Reports common ritual directions for the three anaphoras incorporated in the 1971 book."
+        },
+        {
+          "source_id": "alexandrian-stages-coptic-tasted",
+          "locus": "Sixth section, Coptic Catholic books, item 3",
+          "claim": "Cites Cyril p. 627, Gregory p. 498 and Basil p. 305 in the 1971 edition."
+        }
+      ],
+      "limitations": "Official retrospective descriptions, not original-book collation. Exact changes to preceding rubrics and the authorizing instrument remain uninspected. The 1934 two-anaphora title does not prove that Cyril was suppressed in Catholic use.",
+      "reception": "Described as a Coptic Catholic patriarchal book. Publication and reported synodal reception do not establish adoption dates in individual parishes."
     }
   ],
   "transitions": [
@@ -373,15 +623,20 @@
       "changes": [
         {
           "component": "anaphoras",
-          "before": "Intercession discussed within the Mark/Cyril textual tradition represented by Tuki; this dossier has not independently checked its 1736 page locus.",
+          "before": "Intercessions for the Church, travellers and departed occur within Tuki’s separately headed Cyril anaphora.",
           "after": "Entire intercession, with several alterations, placed before all the anaphoras in Cairo 1898.",
-          "locus_before": "Tuki 1736: exact page not yet verified; comparison described in Lietzmann p. 12.",
+          "locus_before": "Tuki 1736 part II: heading p. 272, sampled intercessions pp. 277, 282 and 287–290 (artifact pages 565, 570, 575, 580–583).",
           "locus_after": "Cairo 1898: exact page not yet verified; arrangement described in Lietzmann p. 12.",
           "evidence": [
             {
               "source_id": "alexandrian-stages-lietzmann1926",
               "locus": "Printed p. 12, opening paragraph",
               "claim": "Explicitly describes 1898 relocation and multiple changes."
+            },
+            {
+              "source_id": "alexandrian-stages-tuki1736",
+              "locus": "Part II pp. 272, 277, 282 and 287–290",
+              "claim": "Original before-state placement directly checked; the 1898 after-state remains scholarly described."
             }
           ]
         }
@@ -403,7 +658,7 @@
           "claim": "Author who used the 1898 text explicitly describes it as a modified re-edition of Tuki 1736."
         }
       ],
-      "limitations": "The 1898 re-edition’s dependence on Tuki is attributed to Chaîne’s firsthand scholarly description. This is not a new page-by-page collation. The date when intercession relocation first entered the line and the precise altered words remain unproved.",
+      "limitations": "The original 1736 placement is checked at bounded pages, while the 1898 relocation and re-edition’s dependence on Tuki remain scholarly descriptions by Lietzmann and Chaîne. The mixed comparison is therefore classified at scholarly-description level. Exact altered words and the date when relocation first entered the line remain unproved.",
       "comparison_ids": [],
       "historical_parentage": "attributed"
     },
@@ -412,38 +667,133 @@
       "from_stage": "alexandrian-stages-geez1945",
       "to_stage": "alexandrian-stages-geez2025",
       "kind": "revision",
-      "status": "provisional",
+      "status": "documented",
       "evidence_level": "primary-description",
-      "summary": "The 2025 report calls chant annotations a first inclusion. Connecting that novelty specifically to the 1945 book as its immediate predecessor remains provisional.",
+      "summary": "The 2024 signed editorial note explicitly replaces the 1945 edition and reports integrated musical notation; the 2025 official report calls these annotations a first inclusion.",
       "components": [
         "chant"
       ],
       "changes": [
         {
           "component": "chant",
-          "before": "Earlier Ge’ez missals implied by official report to lack these annotations; 1945 book not independently checked.",
-          "after": "Chant annotations included in 2025 edition.",
-          "locus_before": "No 1945 page locus available; earlier state implicit in official first-inclusion description.",
-          "locus_after": "2025 book page locus unavailable; Vatican News 27 May 2025 paragraph beginning For the first time.",
+          "before": "The 1945 predecessor is named by the new book; the official presentation describes annotations as first included, but the earlier score pages remain uninspected.",
+          "after": "The 2024 edition integrates chant notes, visible in its public opening-prayer preview.",
+          "locus_before": "No 1945 page available; identification in 2024 editorial note paragraph 2, novelty in Vatican News 27 May 2025.",
+          "locus_after": "2024 unnumbered editorial note paragraph 3; publisher preview 09, Prayer of the Covenant opening (section starts p. 11 in preview 05).",
           "evidence": [
+            {
+              "source_id": "alexandrian-stages-geez2024note",
+              "locus": "Unnumbered editorial note, paragraphs 2–3",
+              "claim": "Names replaced edition and integrated chant notes."
+            },
+            {
+              "source_id": "alexandrian-stages-geez2024previews",
+              "locus": "Preview 09, bottom of opening prayer",
+              "claim": "Native musical notation is visibly integrated."
+            },
             {
               "source_id": "alexandrian-stages-vatican2025en",
               "locus": "For the first time paragraph",
-              "claim": "Chant annotations expressly identified as new."
+              "claim": "Calls chant annotations a first inclusion."
             }
           ]
         }
       ],
       "evidence": [
         {
+          "source_id": "alexandrian-stages-geez2024note",
+          "locus": "Unnumbered editorial note, paragraphs 2–3",
+          "claim": "Explicit replacement statement connects 1945 and 2024 at editorial-description level."
+        },
+        {
           "source_id": "alexandrian-stages-vatican2025en",
-          "locus": "For the first time paragraph; Yebio interview",
-          "claim": "Novelty documented; previous missals unnamed."
+          "locus": "For the first time paragraph",
+          "claim": "Describes the chant novelty."
         }
       ],
-      "limitations": "Novelty is documented; the bridge from 1945 and direct parentage are not. No claimed bread-rubric change, 1945 institution text continuity, approval date or effective date.",
+      "limitations": "Declared replacement is established at editorial-description level; no text collation, canonical effective date or proof of universal implementation. No claimed bread-rubric novelty or continuity of 1945 institution texts.",
       "comparison_ids": [],
-      "historical_parentage": "unestablished"
+      "historical_parentage": "attributed"
+    },
+    {
+      "id": "alexandrian-stages-geez1890-1913",
+      "from_stage": "alexandrian-stages-geez1890",
+      "to_stage": "alexandrian-stages-geez1913",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "Keren’s account describes an Asmara reprinting after the 1890 edition became unavailable.",
+      "components": [
+        "anaphoras"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "alexandrian-stages-keren2009",
+          "locus": "PDF p. 4",
+          "claim": "Reports the 1913 reprinting and unchanged fourteen-anaphora extent."
+        },
+        {
+          "source_id": "alexandrian-stages-semharay",
+          "locus": "PDF p. 2, paragraph beginning Therefore",
+          "claim": "Explains reprinting after the earlier edition was out of stock."
+        }
+      ],
+      "limitations": "This is attributed printing succession; neither whole-book identity nor absence of other textual changes is established.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed"
+    },
+    {
+      "id": "alexandrian-stages-geez1913-1945",
+      "from_stage": "alexandrian-stages-geez1913",
+      "to_stage": "alexandrian-stages-geez1945",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "The Keren study describes repertoire expansion and displays a bounded prayer-wording contrast between the earlier printing and 1945.",
+      "components": [
+        "anaphoras"
+      ],
+      "changes": [
+        {
+          "component": "anaphoras",
+          "before": "The source reports fourteen anaphoras in 1890/1913.",
+          "after": "The source reports seventeen, adding Mary by Giyorgis, James brother of the Lord and Mark.",
+          "locus_before": "Keren history PDF p. 4; original indexes unavailable.",
+          "locus_after": "Keren history PDF p. 8; original 1945 index unavailable.",
+          "evidence": [
+            {
+              "source_id": "alexandrian-stages-keren2009",
+              "locus": "PDF pp. 4 and 8",
+              "claim": "Reports repertoire expansion and names the additions."
+            }
+          ]
+        },
+        {
+          "component": "anaphoras",
+          "before": "The table’s 1913 column already contains a Spirit petition; its red label says ይረስዮ is absent.",
+          "after": "The 1945 column separates an invocation over bread and cup, highlights ይረስዮ and prints cross marks.",
+          "locus_before": "Keren history PDF p. 5, middle column; original book page and anaphora identity not supplied.",
+          "locus_after": "Keren history PDF p. 5, right column; original book page not supplied.",
+          "evidence": [
+            {
+              "source_id": "alexandrian-stages-keren2009",
+              "locus": "PDF p. 5, three-column table",
+              "claim": "Displays the specific invocation contrast without establishing an earlier absence of an epiclesis."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "alexandrian-stages-keren2009",
+          "locus": "PDF pp. 4–5 and 8",
+          "claim": "Identifies earlier printings, a native-script comparison and the expanded repertoire."
+        }
+      ],
+      "limitations": "Source-described comparison only; original/normalized/translated status of table text is unstated. No original-book page collation, exhaustive revision inventory or demonstrated manuscript stemma.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed"
     }
   ],
   "gaps": [
@@ -451,25 +801,25 @@
       "id": "alexandrian-stages-gap-coptic-exemplar",
       "tradition_id": "coptic-catholic",
       "period": "Medieval manuscripts→1736",
-      "missing": "Tuki’s exact exemplar and original page comparison for Creed/commemorations/rubrics.",
+      "missing": "Tuki’s exact manuscript exemplar, a complete diptych comparison and precise pre-print Creed/rubric readings; the 1736 Creed and sampled Cyril intercession placement are now directly inspected.",
       "next_source": "Tuki 1736 Bonn copy and relevant Propaganda Fide editorial records; Chaîne 1912 p. 228 n. 2 describes a thirteenth-century Vatican exemplar without shelfmark. Compare Vat.copt.17 at https://digi.vatlib.it/mss/detail/Vat.copt.17 only after identifying the exemplar.",
-      "consequence": "Do not draw Vat.copt.17→Tuki as established ancestry; 1736 revision facts remain scholarly description."
+      "consequence": "The 1736 printed state is directly documented at bounded loci; an edge from Vat.copt.17 to Tuki still lacks demonstrated ancestry."
     },
     {
       "id": "alexandrian-stages-gap-coptic1898",
       "tradition_id": "coptic-catholic",
       "period": "1736–1898",
       "missing": "Original 1898 book images, authorizing act, precise intercession loci and particular textual alterations.",
-      "next_source": "Cairo 1898 Hūlāǧī’l-kanīsat al-iskandariyya, WorldCat 560963690 (catalogue lead not inspected); holding copy required.",
+      "next_source": "Cairo 1898 Hūlāǧī’l-kanīsat al-iskandariyya, WorldCat 560963690; seek original intercession pages and cup loci Cyril p. 21, Gregory p. 28, Basil p. 63 supplied by the church’s comparative article. Arabic/Latin alias searches across web-indexed library catalogues, Internet Archive and the Coptic Catholic site located descriptions, not a complete public original copy.",
       "consequence": "The relocation is documented by Lietzmann and dependence on Tuki is attributed by Chaîne; the actual prayer comparison and date of introduction remain open."
     },
     {
       "id": "alexandrian-stages-gap-coptic1934-modern",
       "tradition_id": "coptic-catholic",
       "period": "1898–present",
-      "missing": "The 1934 book and the subsequent Catholic received-state sequence, including native Coptic and received Arabic revisions with their acts.",
-      "next_source": "Hammerschmidt 1957 p. 4 lists Euchologium Ecclesiae Alexandrinae continens liturgias S. Basilii et S. Gregorii, Cairo 1934. Pursue Coptic Catholic Patriarchate and Vatican/PIO holdings.",
-      "consequence": "1934 title alone does not prove Cyril’s liturgical suppression. Orthodox 1902, 1927 and 1936 must not fill this gap."
+      "missing": "Original Cairo 1934 and Rome 1971 books, exact common-rubric deltas, acts and later received Arabic/Coptic revisions. The 1971 book is now identified with a reported 1957 synodal connection.",
+      "next_source": "Rome 1971 Khulaji of the Church of Alexandria (Cyril p. 627, Gregory p. 498, Basil p. 305); Cairo 1934 Euchologium; Coptic Catholic Patriarchate/Vatican/PIO holdings. Church bibliography entries 47 and 52 also identify the complementary Basil chant book (1974; later impressions 1996/2006) and Basil order (1987; ninth printing 2009). No complete original 1971 volume was recovered from Arabic/Latin title searches or the church’s public text pages.",
+      "consequence": "A 1971 three-anaphora state can be positioned, but exact 1898–1971 or later revision edges require the original books. Neither a two-anaphora title nor later reprint numbers establish suppression or substantive reform."
     },
     {
       "id": "alexandrian-stages-gap-geez-ancient-reception",
@@ -482,18 +832,26 @@
     {
       "id": "alexandrian-stages-gap-geez1945",
       "tradition_id": "geez-catholic",
-      "period": "Before 1945 /1945 revision",
-      "missing": "The exact predecessor book; the 1945 title, imprint, index, approval act and pages for the three reported revisions.",
-      "next_source": "Congregatio Orientalis: Documenti relativi al Rito Etiopico, Fascicoli I–II (1940); Notationes atque animadversiones de Anaphoris Ritus Aethiopici (1940); Liturgia-Etiopi. Revisione e ristampa del Messale Etiopico, Allegati I–II (1944); and the Vatican 1945 book. Giraudo 2011 p. 2, entries 27–29 identifies the working documents.",
-      "consequence": "Fritsch documents substantive revision, but actual book comparisons and an exact preceding stage are not yet possible."
+      "period": "1913–1945 revision",
+      "missing": "Original 1945 title, imprint, index, approval and prayer pages; full 1940–44 editorial dossiers; original pages underlying the retrospective table.",
+      "next_source": "A lawful full scan/manifest for Vatican Missale aethiopicum (1945; LEV lead Meshàfé Keddasie, 234 pp., code 0927-8), and Congregatio Orientalis: Documenti relativi al Rito Etiopico I–II (1940), Notationes atque animadversiones de Anaphoris Ritus Aethiopici (1940), Liturgia-Etiopi. Revisione e ristampa del Messale Etiopico, Plenaria seconda, Allegati I–II (1944). These remain bibliography/access leads, not acquired originals.",
+      "consequence": "1890/1913 are identified preceding editions and 1945 revisions are source-described; exact original-page collation and canonical chronology remain open."
     },
     {
       "id": "alexandrian-stages-gap-geez-1945-2025",
       "tradition_id": "geez-catholic",
-      "period": "1945–2025",
-      "missing": "Intervening Catholic editions; the 2025 title, index and approval/implementation acts; treatment of the 1945 institution narratives in the 2025 book.",
-      "next_source": "The 2025 printed book through the Dicastery for the Eastern Churches, Pontifical Ethiopian College and joint liturgical commission. Obtain specific institution, chant and bread-rubric pages from it and its actual predecessor.",
-      "consequence": "Chant novelty and intended shared use are attested; direct succession from 1945 and further changes remain unproved."
+      "period": "1945–2024 edition / 2025 presentation",
+      "missing": "Complete 2024 native book, approval/implementation acts, and comparison of institution and bread-rubric pages with 1945; intervening vernacular revisions.",
+      "next_source": "Lawful full native text of Valore Italiano ISBN 979-12-81584-24-2, especially Apostles from p. 82, Lord from p. 98 and James of Sarug from p. 324; 1945 originals and local implementation notices. Publisher supplies only preview images publicly; no paid access was used.",
+      "consequence": "Title, edition year, contents, intended joint reception and declared replacement of 1945 are now documented. Detailed textual continuity and universal reception remain unproved."
+    },
+    {
+      "id": "alexandrian-stages-gap-geez1890-1913",
+      "tradition_id": "geez-catholic",
+      "period": "1890–1913 Catholic printings",
+      "missing": "Original title/index, approval and native prayer pages of Keren 1890 and Asmara 1913; identification of the prayer sampled in the 2009 comparison.",
+      "next_source": "A lawful complete scan or stable library manifest for each printing, plus the original pages behind the Keren study’s PDF p. 5 table. The study’s early chronology and table-transcription method require checking against the originals.",
+      "consequence": "Printing stages and described differences can be recorded, but whole-book collation and exact textual parentage cannot."
     }
   ]
 }

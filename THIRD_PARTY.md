@@ -470,6 +470,193 @@ per artifact. All these third-party images and historical texts remain excluded
 from Triptych's CC BY 4.0 licence. Modern research PDFs and protected modern
 service-book bodies used during research are not imported by these registrations.
 
+The continuation also retains the complete provider PDFs of the Chaldean
+Propaganda missal of 1767 and the Syriac Catholic Propaganda missal of 1843.
+Their manifests record the historical U.S. public-domain and mechanical
+facsimile bases, exact Google-origin bytes, and the limited pages inspected.
+Provider marks and notices remain intact and outside Triptych's CC BY licence.
+The 1767/1901 intercession comparison establishes only its stated native
+reading; possession of either scan is not a complete transcription.
+
+Férotin's 1912 *Liber Mozarabicus Sacramentorum* now includes its complete
+Internet Archive PDF and the exact previously identified OCR delivery. The
+historical edition and apparatus have a recorded U.S. public-domain basis.
+The OCR remains uncorrected evidence. Its retention does not make all its
+readings verified or turn the critical edition into a medieval liturgical
+state. Neither delivery is relicensed under CC BY 4.0.
+
+The Carthusian witness formerly catalogued as 1620 is the Lyon 1627 printing,
+whose title names the chapter of 1622. Its selected BSB images retain the
+provider's No Copyright–Non-Commercial Use Only notice and attribution;
+the exact complete PDF is recorded remotely because it exceeds the single
+Git-object size limit. The independently checked historical Latin selections
+have their own public-domain basis, separate from the image conditions.
+No general redistribution licence is inferred from online availability.
+
+The Toledo 1500 *Missale mixtum* images are supplied by Biblioteca de
+Castilla-La Mancha, Patrimonio Digital de Castilla-La Mancha, Inc.1, record
+12134, under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+The retained individual images are unchanged; ten PDF parts package all 973
+offered images without image recompression. The separately registered delivery
+map records each source URL and image hash. Reusers must preserve the library
+attribution and licence and identify changes. The historical Latin has its
+own U.S. public-domain basis; the library's licence is not a grant from
+Triptych. The Rome 1804 *Missale Gothicum* page images are supplied by
+Bayerische Staatsbibliothek, Res/2 Liturg.222 m, bsb10869679, under
+[No Copyright–Non-Commercial Use Only 1.0](https://rightsstatements.org/vocab/NoC-NC/1.0/).
+That rights statement is not a Creative Commons licence. The retained images
+of its title, blessing, reprinted colophon and editorial method carry the
+provider's attribution and noncommercial condition. Its complete PDF was
+acquired and hashed: 855 PDF pages comprise a modern delivery cover and all
+854 offered book images. The 744,082,515-byte file is identified remotely
+because of its size; a small factual receipt records the full acquisition,
+hash and page census. The separately
+registered *Benedictio panis* transcriptions from both printings preserve
+historical Latin under its own public-domain basis, with abbreviation,
+orthography and punctuation treatment recorded per artifact. Their verified
+extent is the blessing alone. The complete Rome 1755 provider PDF is also
+retained under its recorded historical U.S. public-domain and mechanical
+facsimile basis. A separately retained original JPEG2000 page resolves a
+blurred reading in that PDF and controls the independently checked 1755
+*Benedictio panis* transcription. Its recorded normalization and verified
+extent apply only to that blessing, not to the rest of the missal.
+These source images, facsimiles and historical texts are excluded from
+Triptych's CC BY 4.0 licence.
+
+The retained Cistercian 1487 page images and IIIF manifest identify Bayerische
+Staatsbibliothek, 2 Inc.c.a. 1921, bsb00044164, and Public Domain Mark 1.0.
+Unlike the separately identified 1606 and 1627 BSB witnesses above, their
+recorded provider notice imposes no noncommercial condition. The complete
+1487 PDF is hash-identified remotely because of its measured size; selected
+page images remain available for offline inspection. The Braga 1538 pages
+derive from Biblioteca Nacional de Portugal, RES-1633-A, whose public-copy
+terms identify public-domain works with Public Domain Mark 1.0. Its complete
+422,386,823-byte PDF is likewise remote, with the retained page derivatives
+and their bounds separately manifested. These historical texts and mechanical
+facsimiles are not relicensed under Triptych's CC BY 4.0 licence.
+
+The Bremen 1511 missal is supplied by Staats- und Universitätsbibliothek
+Bremen, VD16 M 5563, urn:nbn:de:gbv:46:1-16346, under Public Domain Mark 1.0.
+Its complete 561-page delivery is retained in two lossless page-range PDFs;
+the exact larger original is hash-identified remotely. The Paris 1481 missal
+is the Bibliothèque Sainte-Geneviève copy OEXV 228 RES, distributed through
+Internet Archive with Public Domain Mark 1.0. Its complete offered 506-page
+text-PDF and selected page derivatives are retained. Feltoe's Cambridge 1896
+*Sacramentarium Leonianum* is retained as a complete Internet Archive
+facsimile of the historical critical edition, including its apparatus.
+Their manifests distinguish exact provider deliveries, extracted pages and
+machine OCR; none establishes a complete checked transcription or physical
+completeness of the historical copy. The historical editions and facsimiles
+have recorded U.S. public-domain bases and are excluded from the project licence.
+
+Tuki's Rome 1736 *Missale copto-arabicum* is supplied by ULB Bonn, digital item
+253288, with Public Domain Mark 1.0. The retained ZIP preserves all 676
+offered images, the provider manifest and a sequence map; the PDF is a
+separate viewing derivative. All source marks and reader annotations remain.
+The offered sequence is complete, but its extent is not reconciled with the
+library's catalogue pagination and does not certify the physical volume.
+The separately registered Arabic Creed is a bounded, image-checked historical
+transcription with its normalization recorded, not a translation or a complete
+transcription of the book. The historical printing, images and Arabic wording
+retain their recorded U.S. public-domain basis and are not offered under
+Triptych's CC BY 4.0 licence.
+
+The Roman Greek books of 1738, 1754 and 1873 are retained as exact public
+Google Books image sequences, provider roster responses, project-packaged ZIP
+masters and separately manifested viewing PDFs. The 1738 and 1754 copies are
+from the Austrian National Library; the 1873 copy is from Sapienza University
+of Rome. Their respective 202, 488 and 596 offered images preserve provider
+order, stamps and incidental notices. The manifest records missing provider
+order numbers without supplying invented pages. Retention rests on the
+historical printings' U.S. public-domain status and the recorded mechanical
+reproduction basis, not on a general Google redistribution licence. Google
+marks and notices are not treated as historical liturgical text or offered
+under the project licence. The historical Greek wording is likewise excluded
+from Triptych's CC BY 4.0 licence; bounded inspected passages do not establish
+a complete transcription of any volume.
+
+The 2024 Ambrosian consultation PDF, SICO annual volumes, the 1967 edited
+*Actes et documents* volume, modern Holy See approval register and UGCC synod
+page are represented by metadata and bounded project-created paraphrase.
+Their protected or unresolved source deliveries are not retained in Git.
+The newly registered *Notitiae* issues of 1967, 1968, 1973, 1985 and 2008
+likewise retain only metadata and bounded factual paraphrases. The 1965
+*Ordo Missae, Ritus servandus et De defectibus*, the 1965 Holy Week
+*Variationes* and the 1967 *Variationes in Ordinem Missae* are separate
+component books acquired through public secondary scan hosts; neither their
+modern text nor their scans are imported. Their records distinguish those
+delivery routes from the issuing authority and from official journal witnesses.
+The NBUV and UGCC commission-hosted Slavonic scans likewise remain
+metadata-only under their individual restriction or unresolved-rights records;
+the date of an underlying printing does not supply a redistribution grant
+for an unidentified later reprint or mixed digital bundle.
+
+Reginald Maxwell Woolley's *The Gilbertine Rite*, volumes I–II (1921–1922),
+is retained as two unchanged Internet Archive PDFs and their complete raw OCR
+deliveries. The historical critical edition, including its scholarly apparatus,
+has a recorded U.S. public-domain basis. Provider and library wrapper material
+remains intact; the OCR is uncorrected and does not establish a checked
+transcription of any manuscript or book state. These historical source texts
+and facsimiles are excluded from Triptych's CC BY 4.0 licence.
+
+The Rome 1893 Slavonic *Missale Romanum*, edited by Dragutin Antun Parčić,
+is represented by its hash-identified complete 792-page scan and a retained
+lossless derivative of source pages 7–13. Its historical printing and mechanical
+facsimile have a recorded U.S. public-domain basis. The original exceeds
+1.3 GB and remains remote; the retained seven pages include the title and
+approval matter, without supplying the other 785 pages or a complete native
+transcription. The complete provider OCR is separately retained unchanged;
+its poor Glagolitic recognition is not a checked reading text and supplies
+no verified textual coverage. Their historical wording and images are not
+offered under Triptych's CC BY 4.0 licence.
+
+The 1483 Glagolitic Roman Missal is supplied by the National and University
+Library in Zagreb (NSK), RI-4°-62 a, whose manifest marks it public domain
+(*Javno dobro*) with free access. Six PDF parts preserve all 432 offered
+JPEGs without resampling; a separate delivery map records each source URL,
+hash and page-to-part relationship. Two previously retained individual images
+remain separately identified. These mechanical facsimiles have a recorded
+U.S. public-domain basis. Complete delivery does not restore missing leaves:
+NSK describes 211 of 220 leaves and misbinding. The retained colophon image
+is not an independently verified native transcription.
+Lucas Jelić's *Fontes historici liturgiae glagolito-romanae*
+(Veglae, 1906) is retained as a complete 544-page scan of the historical
+documentary collection, under its own U.S. public-domain basis. Its edited
+documents, abridgments and editorial commentary remain distinct from the
+original instruments. Neither its historical wording and apparatus nor the
+NSK images are relicensed under Triptych's CC BY 4.0 licence.
+
+The Rome Faletti–Varisco 1570 *Missale Romanum* is supplied by the Dominican
+Digital Library, edition 176, with a public-domain designation. Its historical
+printing and faithful mechanical facsimile have a recorded U.S. public-domain
+basis. The complete 108,391,684-byte DjVu archive is hash-identified remotely;
+four photographed openings containing the title, *Ritus*, *Ordo* and colophon
+are retained as mechanically decoded PNG derivatives. The archive's 339 image
+positions are photographed openings, not a count of printed pages. The
+retained derivatives do not constitute a complete missal or a checked
+transcription and are excluded from Triptych's CC BY 4.0 licence.
+
+The 1889 Tournai Desclée missal has a separately registered, hash-identified
+complete Internet Archive PDF of 134,269,422 bytes, retained remotely for its
+size. Its decree-bearing page 14 is available as a mechanically rendered PNG,
+alongside the edition's existing OCR. The complete 402-page facsimile of
+*Decreta authentica Congregationis Sacrorum Rituum*, volume III, is retained
+under the date printed on its title, Rome 1900; its delivery filename's 1898
+date does not identify the edition. Both historical printings and their
+mechanical facsimiles have recorded U.S. public-domain bases. They are not
+offered under the project licence, and their bounded inspection does not
+establish complete transcription or collation.
+
+Fryderyk Rozen's [“The 15th-century edition of the Pauline missal as a source
+for Gregorian chant history”](https://doi.org/10.21697/sc.2023.30.2.7),
+*Saeculum Christianum* 30/2 (2023), 89–101, is retained as the complete,
+unchanged [publisher PDF](https://czasopisma.uksw.edu.pl/sc/article/download/13495/11888).
+Copyright © 2023 *Saeculum Christianum. Historical Writings*.
+The article's own [CC BY-ND 4.0 licence](https://creativecommons.org/licenses/by-nd/4.0/)
+governs its reuse; it is excluded from Triptych's CC BY 4.0 grant.
+Its figures, references and original notices remain intact. No endorsement
+by the author or publisher is implied.
+
 ## Reuse and Contributions
 
 Before reusing an excluded passage, consult its citation, the nearby research

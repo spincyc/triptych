@@ -1,0 +1,12 @@
+schema = 2
+record_type = "passage"
+id = "passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.creed-arabic"
+edition_id = "edition.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki"
+artifact_id = "artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.creed-checked-arabic-79536f9c"
+artifact_sha256 = "79536f9cec56d16b9a1740b9baf9db7353b435577320b60983ffa674b4f9563e"
+locus = "Part II printed pp. 85–87, right Arabic column: first black Creed line after the red Creed rubric on p. 85 through Amen on p. 87, before the following long red rubric; PDF artifact pages 378–380 (one-based)."
+states = ["cataloged", "acquired", "inspected", "verified"]
+physical_line_ranges = [[1, 1]]
+context = "Complete Arabic Creed in Tuki’s 1736 Coptic-Arabic Catholic printing, 139 whitespace-separated words after the declared normalization. The parallel Coptic text, surrounding rubrics and the remainder of the service are outside this component."
+notes = "Two AI readers independently inspected and enlarged the retained original page images on 2026-10-17, checking all lexical words and the component boundaries. No unresolved lexical reading remained. This is not a glyph-diplomatic transcription or human specialist certification. The five errata leaves (artifact pages 667–671) were inspected; no listed correction to these Arabic Creed words was identified. The Arabic Creed is read as printed, without importing the Coptic errata or later recensions. Join source line wraps and ten typographic paragraphs into one reading line; omit decorative endpoint rosettes, vowel/accent signs, typographic elongation and discretionary spacing. Do not insert punctuation or modern hamzas. Preserve historical words and spellings, including بالاه, الاه, نومن, وتانس, تالم, العذرى, بلاطس, الاحيا, انقضا and شى. Separate لا يرى as two lexical words. Source terminal yāʾ is historically undotted or not consistently distinguishable at the retained resolution: lexical Unicode ي/ى choices are an explicit reading normalization, not a claim to reproduce printed dotting. Omit the catchwords نحن at the foot of II.85 and مع at the foot of II.86, retaining each only in its following body line. Encode one NFC UTF-8 line with one final LF."
+verified_on = "2026-10-17"

@@ -91,7 +91,12 @@ class ActHistoryPreviewTests(unittest.TestCase):
         self.assertEqual({(p.get("data-from"), p.get("data-to")) for p in paths}, expected_edges)
         self.assertEqual(len(paths), len(expected_edges))
         isolated = expected_ids - {s for pair in expected_edges for s in pair}
-        self.assertEqual(len(isolated), 4, "the fixture must continue exercising the observed LOOM loss")
+        # The inspected 1622 Carthusian ordinance names no predecessor;
+        # withdrawing its old use-continuity edge leaves Speyer 1496 isolated.
+        self.assertEqual(isolated, {
+            "cartusiense-spirae-1496", "lugdunense-1503", "eboracensis-1517",
+            "monasticum-casinense-1580", "slavonico-1893",
+        }, "each named isolated witness must survive the observed LOOM loss")
         self.assertEqual(self.audit["isolated_count"], len(isolated))
         self.assertNotIn("unaccepted-candidate", ET.tostring(self.svg, encoding="unicode"))
         self.assertEqual(self.audit["status"], "review-preview")

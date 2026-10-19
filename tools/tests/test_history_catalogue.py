@@ -8,6 +8,7 @@ separate gate; these tests never claim visual acceptance.
 from __future__ import annotations
 
 import json
+import copy
 import os
 from pathlib import Path
 import shutil
@@ -36,6 +37,14 @@ class Element {
   set textContent(text) { this._text = String(text); this.children = []; }
   get textContent() { return this._text + this.children.map(n => n.textContent).join(''); }
   get childNodes() { return this.children; }
+  get isConnected() {
+    let node=this;
+    while(node.parent) {
+      if (!node.parent.children.includes(node)) return false;
+      node=node.parent;
+    }
+    return nodes.get(node.id)===node;
+  }
   appendChild(child) { child.parent = this; this.children.push(child); return child; }
   setAttribute(k, v) { this.attrs[k] = String(v); }
   removeAttribute(k) { delete this.attrs[k]; }
@@ -53,6 +62,7 @@ for (const id of html.matchAll(/id="([^"]+)"/g)) { const e = new Element('div');
 const document = {getElementById: id => nodes.get(id), createElementNS: (_,tag) => new Element(tag), activeElement: null};
 const location = {search: input.search === undefined ? '?view=catalogue&data=../../../data' : input.search, hash: input.hash || ''};
 const calls = [];
+const pending = [];
 let hashHandler;
 const Triptych = {
   stationKind: {}, dataRoot: '../../../data',
@@ -62,7 +72,10 @@ const Triptych = {
     calls.push(path);
     if (input.missing) throw Error('HTTP 404');
     if (path === 'structure/act-history/catalogue.json') return input.data;
-    if (input.fragments && Object.hasOwn(input.fragments, path)) return input.fragments[path];
+    if (input.fragments && Object.hasOwn(input.fragments, path)) {
+      if (input.defer_native && path.includes('/native-texts/')) return new Promise(resolve=>pending.push(()=>resolve(input.fragments[path])));
+      return input.fragments[path];
+    }
     throw Error('HTTP 404');
   },
   setInlineNotice() {}, doneBootstrapping() {},
@@ -105,6 +118,13 @@ setImmediate(async () => {
     } else if (action.do === 'back') {
       const button = all(nodes.get('catalogue-detail')).find(n => n.tagName === 'button');
       button.events.click();
+    } else if (action.do === 'native-text') {
+      const fold=all(nodes.get('timeline-detail')).find(n=>(n.className || '').includes('native-text-fold'));
+      fold.open=true; fold.events.toggle();
+      await new Promise(resolve=>setImmediate(resolve));
+    } else if (action.do === 'release-responses') {
+      pending.forEach(resolve=>resolve());
+      await new Promise(resolve=>setImmediate(resolve));
     } else if (action.do === 'comparison' || action.do === 'relationship-comparison' || action.do === 'stage-comparison') {
       const host=action.do === 'comparison' ? 'catalogue-comparison-list' : action.do === 'stage-comparison' ? 'timeline-detail' : 'overview-connections';
       const fold = all(nodes.get(host)).filter(n => (n.className || '').includes('comparison-fold'))[action.index || 0];
@@ -120,6 +140,7 @@ setImmediate(async () => {
       links: all(node).filter(n => n.tagName === 'a').map(n => ({text: n.textContent, href: n.href, attrs: n.attrs})),
       tags: all(node).map(n => n.tagName)};
     result[id].texts = all(node).filter(n => n.className === 'held-text comparison-text').map(n => n.textContent);
+    result[id].nativeTexts = all(node).filter(n => n.className === 'held-text native-text-body').map(n => ({text:n.textContent,attrs:n.attrs}));
     result[id].elements = all(node).map(n=>({tag:n.tagName,attrs:n.attrs,text:n._text}));
     result[id].ids = all(node).map(n => n.id).filter(Boolean);
   }
@@ -345,6 +366,30 @@ def comparison_fixture():
     return data, {"structure/act-history/" + declared["projection_path"]: payload}
 
 
+def native_reading_fixture():
+    """Literal fixture strings test display and refusal, never historical text."""
+    history=stage_fixture()
+    stage=history["stages"][1]
+    stage.update(text_binding="native-book:fixture-text", text_projection_path="native-texts/fixture-text.json", text_binding_sha256="a"*64)
+    payload=dict(schema="triptych-eucharistic-native-text/v1", id="fixture-text", adapter_id=stage["text_binding"],
+        title="Constructed Arabic constituent", binding_sha256=stage["text_binding_sha256"], stage_ids=[stage["id"]], catalogue_witness_ids=stage["witness_ids"],
+        scope=dict(extent_kind="constituent", whole_book_complete=False, complete_declared_extent=True,
+                   description="Two constructed units only.", omitted_book_divisions=["The rest of the constructed book"], known_extent_units=2),
+        counts=dict(units=2), witnesses=[dict(id="copy", edition_id="edition.fixture", artifact_id="artifact.scan")],
+        sources=[dict(id="edition.fixture",record_type="edition",title="Constructed edition",date="1200"),
+                 dict(id="artifact.scan",record_type="artifact",source_url="https://example.org/source"),
+                 dict(id="artifact.text",record_type="artifact",edition_id="edition.fixture",rights_status="public-domain",rights_jurisdiction="United States",
+                      rights_basis="Synthetic test rights statement; no historical source asserted.",transformation="No new paragraph divisions."),
+                 dict(id="passage.first",record_type="passage",edition_id="edition.fixture",artifact_id="artifact.text"),
+                 dict(id="passage.second",record_type="passage",edition_id="edition.fixture",artifact_id="artifact.text")], units=[])
+    for index, body in enumerate(("ألف باء\n\nجيم <img src=x>", "دال هاء"),1):
+        payload["units"].append(dict(unit_id="unit."+str(index),source_order=index,kind="rubric",native_path=["fixture",str(index)],
+            text=body,language="ar",direction="rtl",source_locator="Constructed page "+str(index),
+            source_id="passage.first" if index==1 else "passage.second",source_artifact_id="artifact.text",text_edition_id="edition.fixture",witness_id="copy",
+            publication=dict(status="permitted",basis="public-domain",jurisdiction="United States",surfaces=["public-git","corpus-data"])))
+    return history, {"structure/act-history/"+stage["text_projection_path"]:payload}
+
+
 @unittest.skipIf(NODE is None, "node is unavailable")
 class TimelineControllerTests(unittest.TestCase):
     def drive(self, history=None, **options):
@@ -420,6 +465,99 @@ class TimelineControllerTests(unittest.TestCase):
         keys=[i for i,e in enumerate(elements) if e["attrs"].get("data-transition-key")]
         self.assertEqual(len(paths),len(keys))
         self.assertGreater(min(keys),max(paths))
+
+    def test_parallel_same_row_transitions_keep_distinct_reachable_labels_and_paths(self):
+        history=stage_fixture()
+        history["stages"]=history["stages"][:2]
+        history["stages"][0].update(start_year=1200,end_year=1200)
+        history["stages"][1].update(start_year=1300,end_year=1300)
+        history["transitions"]=[dict(history["transitions"][0],id="parallel-"+str(i)) for i in range(3)]
+        model=stage_geometry(history,tradition="fixture-line",compact=True,start=1200,end=1300)
+        self.assertEqual({edge["id"] for edge in model["edges"]},{row["id"] for row in history["transitions"]})
+        self.assertEqual(len({edge["path"] for edge in model["edges"]}),3)
+        for left,right in zip(model["edges"],model["edges"][1:]):
+            self.assertEqual(left["fromPoint"],right["fromPoint"])
+            self.assertEqual(left["toPoint"],right["toPoint"])
+            self.assertGreaterEqual(abs(left["keyLabel"]["y"]-right["keyLabel"]["y"]),24)
+        self.assertGreater(min(edge["keyLabel"]["y"] for edge in model["edges"]),model["lanes"][0]["top"])
+
+    def test_parallel_undated_connections_have_distinct_curves_and_clear_labels(self):
+        for from_stage,to_stage in (("first","undated"),("undated","first")):
+            with self.subTest(from_stage=from_stage):
+                history=stage_fixture()
+                history["transitions"]=[dict(history["transitions"][0],id="parallel-"+str(i),from_stage=from_stage,to_stage=to_stage) for i in range(3)]
+                model=stage_geometry(history,tradition="fixture-line",compact=True)
+                self.assertEqual(len({edge["path"] for edge in model["edges"]}),3)
+                for left,right in zip(model["edges"],model["edges"][1:]):
+                    self.assertGreaterEqual(abs(left["keyLabel"]["x"]-right["keyLabel"]["x"]),38)
+                for edge in model["edges"]:
+                    self.assertGreater(edge["keyLabel"]["y"],model["lanes"][0]["top"])
+                    self.assertGreaterEqual(edge["keyLabel"]["x"]-34,model["axis"]["x0"])
+                    self.assertLessEqual(edge["keyLabel"]["x"]+4,model["axis"]["x1"])
+
+    def test_native_text_is_lazy_literal_ordered_and_bounded_in_chart_and_list(self):
+        history,fragments=native_reading_fixture()
+        payload=next(iter(fragments.values()))
+        for mobile in (False,True):
+            with self.subTest(mobile=mobile):
+                closed=self.drive(history,mobile=mobile,fragments=fragments,hash="#stage=second")
+                self.assertEqual(closed["calls"],["structure/act-history/catalogue.json"])
+                got=self.drive(history,mobile=mobile,fragments=fragments,hash="#stage=second",actions=[dict(do="native-text")])
+                self.assertEqual(got["calls"],["structure/act-history/catalogue.json",*fragments])
+                shown=got["timeline-detail"]
+                self.assertEqual([row["text"] for row in shown["nativeTexts"]],[unit["text"] for unit in payload["units"]])
+                self.assertEqual([row["attrs"] for row in shown["nativeTexts"]],
+                                 [{"data-unit-id":unit["unit_id"],"lang":"ar","dir":"rtl"} for unit in payload["units"]])
+                self.assertNotIn("img",shown["tags"])
+                for value in ("Complete declared constituent", "Whole-book text coverage: partial", "The rest of the constructed book",
+                              "Constructed edition", "Constructed page 1", "Public domain · United States", "Synthetic test rights statement"):
+                    self.assertIn(value,shown["text"])
+                self.assertTrue(any(e["attrs"].get("role")=="status" and e["text"]=="Source text loaded." for e in shown["elements"]))
+                self.assertTrue(any(e["attrs"].get("aria-busy")=="false" for e in shown["elements"]))
+
+    def test_native_text_refuses_wrong_binding_extent_rights_and_unit_order_before_display(self):
+        history,fragments=native_reading_fixture()
+        path=next(iter(fragments))
+        for defect in ("binding","stale-binding","stage","extent","rights","unit-order","wrong-source-type","wrong-source-edition","wrong-witness-type"):
+            with self.subTest(defect=defect):
+                changed=copy.deepcopy(fragments)
+                payload=changed[path]
+                if defect=="binding": payload["adapter_id"]="native-book:different"
+                elif defect=="stale-binding": payload["binding_sha256"]="b"*64
+                elif defect=="stage": payload["stage_ids"]=["different"]
+                elif defect=="extent": payload["scope"]["whole_book_complete"]=True
+                elif defect=="rights": payload["sources"][2]["rights_status"]="unresolved"
+                elif defect=="wrong-source-type": payload["units"][0]["source_id"]="artifact.scan"
+                elif defect=="wrong-source-edition": payload["sources"][3]["edition_id"]="edition.different"
+                elif defect=="wrong-witness-type": payload["witnesses"][0]["artifact_id"]="passage.first"
+                else: payload["units"].reverse()
+                got=self.drive(history,fragments=changed,hash="#stage=second",actions=[dict(do="native-text")])
+                self.assertEqual(got["timeline-detail"]["nativeTexts"],[])
+                self.assertIn("does not match this state",got["timeline-detail"]["text"])
+                self.assertNotIn("ألف",got["timeline-detail"]["text"])
+                self.assertTrue(any(e["attrs"].get("role")=="status" and e["text"]=="Source text could not be loaded." for e in got["timeline-detail"]["elements"]))
+
+    def test_native_text_loading_announces_progress_without_making_literal_body_live(self):
+        history,fragments=native_reading_fixture()
+        got=self.drive(history,fragments=fragments,defer_native=True,hash="#stage=second",actions=[dict(do="native-text")])
+        self.assertTrue(any(e["attrs"].get("role")=="status" and e["text"]=="Loading source text…" for e in got["timeline-detail"]["elements"]))
+        self.assertTrue(any(e["attrs"].get("aria-busy")=="true" for e in got["timeline-detail"]["elements"]))
+        self.assertEqual(got["timeline-detail"]["nativeTexts"],[])
+
+    def test_native_text_late_response_cannot_replace_new_selection(self):
+        history,fragments=native_reading_fixture()
+        got=self.drive(history,fragments=fragments,defer_native=True,hash="#stage=second",
+                       actions=[dict(do="native-text"),dict(do="stage",id="first"),dict(do="release-responses")])
+        self.assertIn("Book state first",got["timeline-detail"]["text"])
+        self.assertEqual(got["timeline-detail"]["nativeTexts"],[])
+        self.assertNotIn("ألف",got["timeline-detail"]["text"])
+
+    def test_native_text_routing_cannot_fetch_an_unowned_path(self):
+        history,fragments=native_reading_fixture()
+        history["stages"][1]["text_projection_path"]="../../unreviewed.json"
+        got=self.drive(history,fragments=fragments,hash="#stage=second")
+        self.assertEqual(got["calls"],["structure/act-history/catalogue.json"])
+        self.assertIn("invalid routing metadata",got["timeline-detail"]["text"])
 
     def test_selecting_state_reveals_change_loci_witness_and_independent_text_status(self):
         got=self.drive(actions=[dict(do="stage",id="second")])

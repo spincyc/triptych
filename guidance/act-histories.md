@@ -1841,6 +1841,22 @@ binding dependency is pinned in the stage projection. Neither binding type
 silently resolves a dossier gap or claims that complementary service books
 have been transcribed.
 
+The complete `structure` projection emits one
+`structure/act-history/native-texts/<slug>.json` per accepted stage binding.
+The catalogue advertises each stage's exact `text_projection_path` and binding
+hash; the reader
+fetches that constituent only when its source-text disclosure is opened. Both
+chart and list selections use the same evidence panel. The payload reuses the
+publication-checked adapter and exposes literal units in source order, language
+and direction, exact locus and edition, rights basis, normalization, complete
+declared extent and excluded divisions. Unit and stored paragraph boundaries
+are preserved; no new paragraphing or translation is inferred. A complete
+constituent continues to say that whole-book text coverage is partial.
+`structure --check` owns missing, changed and obsolete native payloads together
+with the other projection files. Detached selections cannot receive a late
+text response, and a mismatched binding or extent displays an error without
+literal wording.
+
 `source-library` recognizes only the typed main JSON envelopes and the exact
 `eucharistic-books/support/<slug>-extent.json`, `-review.json` and
 `-parentage.json` envelopes. Unrelated JSON, nested paths and opaque files remain

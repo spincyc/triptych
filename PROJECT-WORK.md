@@ -60,150 +60,179 @@ and a subway-map visualizer over the same evidence. The workspace target is
 `feature/missal-timeline`; this does not authorize changing the default branch.
 The full project remains **in progress**.
 
-**Cold review and correction, 2026-10-16, complete.** The maintainer
-requested an independent review of checkpoint `f9b8c2f37` and execution of
-the resulting corrections. Separate reviewers covered live browser behavior,
-historical evidence, chronology and evidence printouts, and data/export
-integrity. This bounded correction pass preserves the broader census and
-complete-text requirements below; its completion does not close them.
+**Execution resumed, 2026-10-17.** The maintainer clarified that completing the
+bounded review is not the requested finish: continue the underlying all-rite
+inventory, source texts, generated history and reader work to completion, with
+sub-agents permitted and no further handoff package. The completed review above
+is evidence for that work, not a substitute for it. This instruction supersedes
+handoff packaging for this continuation only; it does not waive source evidence,
+publication rights, independent verification or any open acceptance criterion.
+Research lanes own separate tradition dossiers while corpus tooling and full-site
+reader verification proceed independently. Requirements stay open until their
+actual artifacts and checks establish them; an unavailable source or unresolved
+permission must be identified precisely, rather than used to stop other work.
 
-The browser now focuses evidence opened through a direct link, restores the
-selected control on return, and preserves chart/list presentation in URL
-history. Supplementary controls have distinct identities; invalid selections
-and year ranges cannot retain a misleading evidence label or panel. Long
-transition controls wrap at enlarged text sizes. Progression validation now
-rejects documented cycles and reversed disjoint bounds of the same date kind,
-while preserving uncertain, overlapping and differently typed dates. Independent
-export reproduction confirms all 15 native-text roots and the legacy bundle.
+**Recovery and continuation, 2026-10-19.** The maintainer authorized resuming
+the interrupted expansion with independent agents. The saved feature checkpoint
+is `2c3fb855f`; its full-site browser receipt covers the earlier catalogue only.
+The recovered working tree contains additional source acquisitions, stage
+dossiers and native-constituent tooling, with unfinished catalogue integration
+and stale coverage snapshots. The current pass integrates the surviving reviewed
+research, validates literal constituent bindings, repairs the coverage checker,
+reviews source-binding changes and regenerates the derived history surfaces.
+Any necessary correction of a source edition's characterization remains bounded
+to the affected claims and receives its own publication checks. The separately
+recorded Wilson consumer corrections remain outside this pass. No whole-book
+completion or final reader acceptance is inferred from this recovery.
 
-The historical correction gives T043 an observable final-blessing difference
-between the separately identified Venice 1570 and Rome 1604 witnesses, checked
-independently against both pages. The Rome 1570 first edition remains
-uninspected. T044 remains a revision documented by its issuing act, with the
-absence of a particular collated rubric or reading now stated locally. This
-qualifies the evidence without demoting the documented revision to a mere
-bibliographic succession.
-
-The next research priorities within the Roman sequence are: original 1634
-against 1604 and the actual Rome 1570 printing against the inspected Venice
-rubric; the 1965 Order/Ritus/De defectibus and concelebration fascicles, 1967
-Variationes and 1968 Eucharistic Prayers as bounded component states between
-December 1962 and 1970; then the original 1956 Holy Week and 1920 books and
-assessment of the 1971 corrections and 2008 changes. These priorities precede
-further census expansion in this review's recommendation. The earlier six
-acquisition priorities remain open; no printing, correction or supplement is
-automatically promoted to a distinct typical edition.
-
-**Recovery verified.** The
-[recovery record](src/sources/inventories/missal-timeline-recovery-2026-10-16.md)
-identifies both surviving attempts: the predecessor's 25 version directories
-and 140 raw OCR sections, and Triptych's act-keyed successor. The latter
-reproduces 59 commits across 17 branches and its exact browser projection.
-Its 53 base units contain only two nonempty body fields, totaling 414
-characters. This is a functioning historical tracer, not complete missals.
-The predecessor's source metadata and file hashes are retained without
-importing its raw OCR, inaccurate edition labels or distribution assertions.
-
-**Chronology checkpoint, 2026-10-16.** The maintainer rejected the earlier
-preview's readability and insufficient historical stages. The agreed
-[historical and language scope](guidance/time-machine.md#11-historical-and-language-scope-agreed-2026-10-16)
-and [reader criteria](guidance/time-machine.md#12-research-relationships-and-reader-acceptance-revised-2026-10-16)
-require named recensions on a common year axis, concrete component changes,
-visible evidence gaps, and coexistence distinguished from descent. The default
-`/history/` and `/history/?view=timeline` now present that chronology;
-relationship and map views remain secondary. Final reader acceptance is pending.
-
-The [stage dossiers](src/sources/inventories/eucharistic-stages/) cover 32
-traditions in 12 dossiers: 97 book-state records, 94 documented and three
-provisional. These are **not 97 distinct revisions**: attestation, publication,
-approval and effective dates retain separate roles. The 54 transition links
-comprise 40 documented revisions, three receptions, seven witness successions
-and four provisional links. Seventy-eight explicit gaps identify missing
-witnesses, comparisons or access. The [coverage audit](src/sources/inventories/eucharistic-stage-coverage-v1.json)
-retains all 77 existing census rows and exposes 50 without a new researched
-sequence, four local-reception gaps and a Carthusian row without a matching
-stage. Source descriptions remain distinct from original-book collation;
-endpoint component scope is checked.
-
-The [Eastern](src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml)
+**Current source and text integration, 2026-10-19.** The
+[Eastern](src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml)
 and [Western](src/sources/inventories/western-eucharistic-books-timeline-v1.toml)
-inventories supply 87 and 113 records, respectively; with 59 legacy records the
-catalogue totals 259. Bibliographic witnesses, complementary volumes and reform
-candidates are not automatically distinct liturgical states. The Eastern census
-retains 23 Church slots; Albanian and Macedonian still lack identified editions.
-Slovak shared reception is mapped without inventing a new edition. The 54
-presentation groups, including four clarified Iberian labels, are navigation
+inventories now supply 95 and 137 records; with 59 legacy records the catalogue
+contains 291. These are bibliographic witnesses and research candidates, not
+291 distinct liturgical revisions. The 54 presentation groups remain navigation
 categories rather than a census of rites or Churches.
 
-The [relationship inventory](src/sources/inventories/eucharistic-book-relationships-v1.toml)
-retains 61 typed relationships: borrowing, reception, shared text, common ancestry
-and edition succession. These are separate from the 54 stage transitions.
-Unidentified donor traditions remain contextual entities; shared wording alone
-supplies no direction, Git parent or permission to inherit text. The guarded
-emitter retains explicit inheritance requirements; legacy promulgated-chain
-continuity remains a review limit. Exact identities and reproduction commands
-are owned by the [routing inventory](src/sources/inventories/catholic-eucharistic-history-v1.toml)
-and [act-histories §20](guidance/act-histories.md#20-discovery-coverage-and-bounded-text-reconstructions).
+The [stage dossiers](src/sources/inventories/eucharistic-stages/) now cover
+43 traditions in 14 dossiers: 147 book-state records, 141 documented and six
+provisional. Attestation, publication, approval and effectiveness retain their
+separate date roles. There are 75 transitions, 73 documented and two provisional,
+and 91 explicit gaps. Text coverage is partial for 14 stages and not transcribed
+for 133; **no stage claims a complete whole book**. The separate
+[relationship inventory](src/sources/inventories/eucharistic-book-relationships-v1.toml)
+still holds 61 typed research relationships. Neither a stage transition nor
+shared wording alone supplies a Git parent or permission to inherit text.
 
-Source-library manifests retain the earlier six Eastern scan deliveries, four
-Western access witnesses and Brightman 1896, with exact identities, hashes,
-rights and transformations. The new delivery set adds Syriac 1922, Maronite
-1594, and Armenian 1642, 1677 and 1823 witnesses. Selected Cistercian, Dominican
-and Carmelite native-language passages add ten bounded units. Acquisition does
-not establish full transcription or collation: Stowe is Warner's 1915 volume II,
-Bobbio is Lowe's 1917 facsimile volume, and Wilson's Gregorian main text follows
-R (Reginae 337), not Cambrai 164. Its apparatus does not establish when the
-longer Memento wording originated. Restricted modern texts retain their access
-and public-export limits.
+The [coverage audit](src/sources/inventories/eucharistic-stage-coverage-v1.json)
+retains all 77 discovery rows: 23 Eastern Church slots and 54 Western trajectories.
+Thirty-two rows select researched stages; 41 still lack a researched sequence;
+four point to related dossiers with local reception unresolved. Albanian and
+Macedonian have no identified edition candidate, and 20 Western trajectories
+still have no candidate. These are counts of different research objects, not
+a percentage of historical or textual completeness. The new
+`tools/missal-coverage-reconciliation` checks exact owner fingerprints and
+candidate, witness, stage, artifact and segment identities.
 
-Twenty-five explicit comparisons comprise 19 Latin and six Greek comparisons,
-with exact endpoints, source apparatus and normalization limits. Same-prayer
-comparisons remain distinct from parallel liturgical functions; none proves
-whole-book descent. Fresh corpus exports produce 1,204 units
-on 15 isolated reconstruction roots: 1,068 target-verified Latin proper
-projections, 112 Ordinary blocks from the Cummiskey 1861 lay witness and 24
-bounded selections. All 15 references match the earlier fresh export exactly;
-1,782 declared inputs remain current. Stable liturgical paths, separate
-source/text hashes and declared synthetic Git dates
-preserve honest diffs without pretending these selections are complete missals.
+The Roman sequence adds bounded 1860 and 1877 provisions, separate 1965 Order
+and Holy Week components, 1967 Variationes, 1968 Eucharistic Prayers, 1971
+corrections and 2020 saint additions. The actual Rome 1570 scan is now acquired;
+its title, Ritus, Ordo and dated colophon were image-read. The 1570–1604
+comparison records a narrow clarification of the Ordo blessing rubric. It no
+longer substitutes the separately identified Venice printing for Rome or claims
+that the single blessing first appeared in 1604. Original Rome 1634 remains a
+specific acquisition and collation gap. Modern component records distinguish
+inspection from permission to redistribute their full texts.
 
-Independent evidence and code reviews pass. Final source closure verifies all
-12 dossier hashes and the coverage audit's 16 inputs. The canonical history
-projection has 531 current files; the source reader has 4,221. Twenty-five
-actual comparisons verify all 50 endpoint identities, including edition,
-passage and artifact limits wherever declared. Strict Git checks, corpus
-commit-graph verification and bundle restoration pass. The recovered legacy
-history retains its synthetic dates without the unsupported commit-graph cache.
-`make check-sources` passes; final stage and source validation remain clean after
-prose spacing corrections. The promised-deliverables check has exactly the same
-32 missing installed-PDF findings as the base ledger, with no added findings.
+Western additions include canonical-order and Slavonic/Glagolitic dossiers,
+Cistercian 1487, Paris 1481, Gilbertine complementary volumes, Jelić's historical
+collection and Parčić's 1893 book. All 432 offered images of the 1483 Glagolitic
+missal were acquired and retained as six lossless PDF parts; independent image
+extraction matched every original JPEG hash. Whole-source acquisition does not
+establish checked transcription. Eastern additions preserve Armenian bound-volume
+segments, Syriac and Chaldean source distinctions, Byzantine component changes,
+and the bounded evidence for Alexandrian and Ge’ez publications.
 
-**Internal print and browser functional reviews pass; reader acceptance remains open.**
-The current review preview has 43 chronology pages and a 153-page evidence
-companion. All pages received visual review or an exact unchanged-page transfer
-from the preceding review; changed pages were reinspected. Chronology sheets
-retain complete before/after descriptions and their limitations, with onward
-references to destination sheets. Evidence pages remove exact repeated claims
-and keep terminal record identifiers with body context. The opening index
-keeps the Roman curial, Pian and postconciliar sequences together. Map sheets
-require native A3 landscape/A2 portrait printing; index and evidence pages are A4.
-The earlier 48-page atlas and 64-page appendix are superseded, and the earlier
-LOOM plate that omitted isolated stations was rejected. All 196 current page
-SVGs match the reviewed final build exactly; a rebuild changed only PDF trailer
-identifiers. The focused regression suite passes with one optional transport
-parity test skipped. Real Chromium passes 73 checks at 320, 393, 1440 and 1680
-CSS-pixel widths, including keyboard return, browser history, source comparison,
-200% text, forced colors and accessible status semantics. A fresh browser session
-verified that the tested stylesheet matches the corrected source. Spoken
-screen-reader use and final maintainer reader judgment remain untested.
+Four accepted [native bindings](src/sources/inventories/eucharistic-books/)
+cover complete declared constituents: Tuki's 1736 Arabic Creed, and the complete
+Mozarabic bread blessing in the 1500, 1755 and 1804 witnesses. Together they add
+28 structured units. Their extent, excluded divisions, literal wording, rights,
+source hashes and independent reviews are explicit. The Arabic reading retains
+its declared normalization; no new paragraphing or translation is inferred.
+The reader exposes each binding through its stage's source-text disclosure,
+with native language and direction, exact source loci, scope and normalization.
+Whole-book coverage remains partial. The complete 1804 PDF has also been
+retrieved; its measured size justifies remote retention of that payload while
+the controlling selected pages and checked constituent remain available offline.
 
-**Remaining work:** close the enumerated historical gaps and substantive version
-boundaries; acquire missing witnesses; transcribe and collate complete books in
-their native divisions; establish only evidenced parentage; and obtain final
-reader acceptance. Restricted modern full text needs appropriate access and a settled
-public-versus-private export boundary. No all-rite or full-text completeness is
-claimed. Work remains on `feature/missal-timeline`; no new hosted corpus
-repository or website deployment has occurred.
+The [routing inventory](src/sources/inventories/catholic-eucharistic-history-v1.toml)
+now declares 28 comparisons: 22 Latin and six Greek. The three new Mozarabic
+comparisons expose bounded spelling differences, including presbiter/presbyter
+and celum/caelum; they do not establish introduction dates or textual parentage.
+The corpus has 1,232 units on 19 isolated reconstruction branches, plus four
+isolated version roots for the accepted native constituents: 23 Git heads in
+all. The version roots repeat 28 of those units as explicitly typed snapshots;
+they are not another 28 unique units. Every native version has zero parents and
+no text inheritance. Stable liturgical paths, separate source and serialized
+text hashes, and synthetic Git dates preserve honest diffs without presenting
+selected constituents as complete missals.
+
+Source review repaired eleven stale binding rows in ten publications after
+reconstructing the exact earlier fingerprints. Feltoe's edition description
+required a bounded correction in the Claude Fifteenth Sunday study; the 36-page
+research and 24-page synthesis editions and canonical web edition were rebuilt
+and reviewed. Its pre-existing chronology-annotation discrepancy reproduces
+against the pre-change fixture and remains separately identified. The Wilson
+consumer corrections below remain outside this pass. Source-family migration
+still has no accepted semantic families and 161 pending review units; refreshing
+its catalogue fingerprint does not complete that review.
+
+**Integration verification, 2026-10-19.** The final `make check-sources` passes:
+3,179 artifacts, 1,148 editions, 978 works, 5,439 passages, 106 segments and
+3,955 publication bindings validate. Both browser projections are current:
+538 history files and 4,288 source-reader files. Coverage reconciliation has
+zero findings and all 18 owner fingerprints match. The focused suite runs
+327 tests, with 326 passing and one existing optional browser test skipped;
+all 13 complete projection tests, the reconciliation tool's 11 tests and all
+18 captured CLI examples also pass.
+The rebuilt full-site preview passes its release verifier.
+
+Independent review prompted repairs to parallel-edge geometry, source identity
+checks and asynchronous reader status. Browser review exercised every stage and
+transition in both presentations: 444 routes. A further 304 checks pass against
+the rebuilt preview, including exact native-text bindings, all 28 comparisons,
+parallel-transition pointer targets, narrow layouts, enlarged text, 400% zoom
+and accessible names. The final route evidence transfers only across unchanged
+JavaScript and catalogue bytes; the changed CSS receives fresh checks. Long map
+titles, index links and evidence fields now wrap at 320 pixels with 200% text.
+All four owning Chromium regression tests pass, and the new reflow regression
+fails against the earlier CSS. A separate native-text capture pass adds 25
+passing checks and visual inspection of all 28 units, including the shaped
+right-to-left Arabic Creed. No unresolved product findings remain in this
+bounded review. Browser checks use Chromium 154; other engines and spoken
+screen-reader use remain untested. The consolidated browser receipt has SHA-256
+`28ecab1e01b3eb37cb163032a21b50fd79ce2b5bd6a0e52793b6f7885ea7b864`.
+
+The regenerated print companions pass independent review of all 61 chronology
+and 234 evidence pages. Eleven changed pages were directly reinspected; 284
+unchanged pages retain exact SVG and freshly rendered PNG identity with their
+earlier page reviews. All 22 print inputs remain unchanged after the browser-only
+CSS correction. These are review previews, not physical printer proofs.
+
+Two fresh corpus exports and a bundle restore reproduce all 23 refs exactly;
+strict Git integrity checks pass on all three repositories. All 1,260 literary
+file occurrences match the checked corpus, including the 28 repeated native
+version units. The current bundle SHA-256 is
+`27b7a4216b23b0e8229496f6ec4e2293e3b308326870b685debf40ade13c5e7e`.
+The source-disclosure audit covers 112 changed artifact records: 84 tracked,
+20 restricted and eight remote. Retained source payloads total 1,654,214,532
+bytes; no outgoing file reaches the 100 MiB hosting limit. Restricted modern
+payloads remain metadata-only. Review outputs stay in disposable `.scratch`;
+the source records, checks and this work register carry the durable result.
+
+**Recovered work and prior review.** The
+[recovery record](src/sources/inventories/missal-timeline-recovery-2026-10-16.md)
+identifies the predecessor's 25 version directories and 140 raw OCR sections,
+and Triptych's act-keyed successor. The latter reproduces 59 commits across
+17 branches; its 53 base units have only two nonempty body fields, totaling
+414 characters. Its functionality is historical tracing, not complete missals.
+The predecessor's hashes survive without importing raw OCR or inaccurate edition
+and distribution assertions. The independent October 16 and 17 reviews remain
+bounded evidence for their named snapshots; their former 97-stage counts,
+Rome-1570 access gap and 15-root corpus are superseded by the current results.
+The [agreed scope and reader criteria](guidance/time-machine.md#11-historical-and-language-scope-agreed-2026-10-16)
+still control substantive version boundaries, coexistence, descent and local
+visibility of evidence limits.
+
+**Remaining work:** research the unfilled census trajectories and unresolved
+version boundaries; acquire and collate missing originals, including Rome 1634
+and the named Roman component gaps; transcribe complete books in their native
+divisions; establish parentage only where exact evidence supports it; and obtain
+final reader acceptance. Restricted modern full text needs an appropriate access
+and export basis. Spoken screen-reader use and the maintainer's reader judgment
+remain untested. The all-rite historical census, whole-book text corpus and
+complete textual Git history therefore remain open. Work stays on
+`feature/missal-timeline`; no new hosted corpus repository or site deployment is
+part of this continuation.
 
 ## Wilson 1915 consumer corrections identified, 2026-10-16
 

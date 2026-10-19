@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "record_type": "complete-retrieval-observation",
+  "checked_on": "2026-10-19",
+  "source_url": "https://download.digitale-sammlungen.de/pdf/17924264108888bsb10869679.pdf",
+  "regeneration_url": "https://download.digitale-sammlungen.de/BOOKS/download.pl?id=bsb10869679&ersteseite=1&letzteseite=854&vers=en",
+  "provider_extent": "Images 1–854, entire digitized object",
+  "provider_size_label": "744 MB",
+  "head_response": [
+    "HTTP/2 200 ",
+    "server: nginx/1.26.3",
+    "date: Mon, 19 Oct 2026 16:18:14 GMT",
+    "content-type: application/pdf",
+    "content-length: 744082515",
+    "last-modified: Mon, 19 Oct 2026 16:17:02 GMT",
+    "etag: \"2c59cc53-65e33d818d4f3\"",
+    "accept-ranges: bytes",
+    ""
+  ],
+  "range_response": [
+    "HTTP/2 206 ",
+    "server: nginx/1.26.3",
+    "date: Mon, 19 Oct 2026 16:18:14 GMT",
+    "content-type: application/pdf",
+    "content-length: 32",
+    "last-modified: Mon, 19 Oct 2026 16:17:02 GMT",
+    "etag: \"2c59cc53-65e33d818d4f3\"",
+    "accept-ranges: bytes",
+    "content-range: bytes 0-31/744082515",
+    ""
+  ],
+  "requested_range": [
+    0,
+    31
+  ],
+  "received_bytes": 32,
+  "received_prefix_hex": "255044462d312e340a25e2e3cfd30a342030206f626a0a3c3c2f547970652f58",
+  "measured_full_byte_size": 744082515,
+  "full_payload_acquired": true,
+  "full_payload_sha256": "c5eb4c0dc348d13aab77b35b4232c0c74c2a162a475bfbdca33c4362841784f9",
+  "retention_reason": "The complete PDF was acquired in full on 2026-10-19: HTTP 200, 744082515 bytes, SHA-256 c5eb4c0dc348d13aab77b35b4232c0c74c2a162a475bfbdca33c4362841784f9. It contains 855 PDF pages: one modern BSB delivery cover followed by the 854 offered book-scan images. PDF image census confirms one scan image per page on pages 2–855; the cover and first book images were visually checked, and canvas 22 / printed p. XVI was directly verified at PDF page 23. Retaining this approximately 710 MiB payload in ordinary Git would substantially increase every checkout for a bounded nine-unit comparison; it remains remote for this measured artifact-specific size reason. Complete bytes were acquired and hashed locally, but are not retained in the repository. Offline checkout readers can open the exact retained title, complete blessing, reprinted colophon and editorial-method images, plus the complete checked blessing text; the other pages require the remote PDF. Generated URLs can expire; regenerate through the institutional whole-book form. Acquisition and page census do not establish physical completeness or complete-volume textual collation.",
+  "full_transfer": {
+    "http_code": 200,
+    "content_type": "application/pdf",
+    "exitcode": 0,
+    "size_download": 744082515,
+    "time_total": 28.814442,
+    "url_effective": "https://download.digitale-sammlungen.de/pdf/17924264108888bsb10869679.pdf",
+    "sha256_verified_locally": "c5eb4c0dc348d13aab77b35b4232c0c74c2a162a475bfbdca33c4362841784f9"
+  },
+  "pdf_page_count": 855,
+  "provider_scan_image_count": 854,
+  "page_mapping": {
+    "pdf_page_1": "Modern BSB delivery cover; not an image of the historical book",
+    "pdf_pages_2_to_855": "854 offered book-scan images, one image object on each page",
+    "directly_inspected_mapping": [
+      {
+        "canvas": 1,
+        "pdf_page": 2,
+        "description": "Historical volume front cover"
+      },
+      {
+        "canvas": 2,
+        "pdf_page": 3,
+        "description": "Inside cover with bookplates"
+      },
+      {
+        "canvas": 22,
+        "pdf_page": 23,
+        "description": "Printed p. XVI, complete Benedictio panis in lower right column"
+      }
+    ],
+    "limit": "The mapping is the provider scan order with a one-page delivery-cover offset; complete-volume visual or textual collation is not claimed."
+  },
+  "repository_payload_retained": false
+}

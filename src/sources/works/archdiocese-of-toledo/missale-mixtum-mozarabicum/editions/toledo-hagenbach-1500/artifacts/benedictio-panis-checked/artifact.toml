@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-panis-checked"
+edition_id = "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This literal Latin constituent was printed in 1500, before the pre 1931 United States public-domain boundary applicable in 2026. The historical wording is public domain independently of image licensing. Mechanical abbreviation expansion and orthographic regularization add no new liturgical composition; no modern translation or protected edition is reproduced."
+rights_jurisdiction = "United States"
+derived_from = "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.castilla-la-mancha-p964-25d703c8"
+transformation = "Independent page-collated reading transcription, not OCR. Expand printed contractions; long-s to s; consonantal u/v and i/j standardized; et replaces ampersand or Tironian et; ae ligatures expanded as ae. Preserve the 1500 e spellings celum, anime, seculum and presbiter, versus 1804 caelum, animae, saeculum and presbyter. Case and punctuation regularized; 1804 printed acute accents are omitted, and æ is expanded as ae. Preserve every lexical item, response and rubric, all three crosses including San✠cti, and Amens. The 1500 terram uses final-m abbreviation. The original orthographic differences are visible, not classified as liturgical revision."
+provenance = "Transcribed directly from the identified page image by an AI source transcriber; independently read and checked by a separate AI source reviewer. Complete declared constituent; all surrounding book matter excluded."
+retrieved = "2026-10-17"
+sha256 = "443342e10cec49650fa8d2c0d8ff2ab6a75b18ab1ff05bf18c7c7d04224529dd"
+byte_size = 899
+path = "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/artifacts/benedictio-panis-checked/benedictio-panis.txt"
+encoding = "utf-8"
+indexable = true
+notes = "Nineteen semantic lines. Complete only for Benedictio panis, not the Missal. Lexical contents agree after separately declared orthographic normalization; the retained reading texts preserve edition-specific e/ae and presbiter/presbyter. The printed placement differs between the final appendix in 1500 and the preliminary blessings in 1804; the comparison does not establish immediate textual descent. The historical wording is excluded from Triptych’s CC BY 4.0 licence."

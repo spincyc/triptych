@@ -5,10 +5,10 @@ inventory_path = "src/sources/inventories/publications-v1.toml"
 inventory_snapshot = "sha256:519e864d416ac05b23475d2f3132ee6adda22b8c27819c20af99c780e34b241d"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:d95f23179049f3d3b5655a32bae25aee01add984555e3ada621980bd27835639"
-canonical_catalog_snapshot = "sha256:ded877767527344906f601be7d9ce091c3ccc61719ef9dcddc4c6aa799f558a8"
+canonical_catalog_snapshot = "sha256:b5ee90bd6620def35838153b1dbbd0d379e569813d5c4d794b912777200a564b"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:5bd0a7a6bbeac2cbd857d449648d802e7412bbcea235219780389756ead59460"
+snapshot = "sha256:a783f903f23ac484a3afeed2c325f836212da2238e43cea28254a6d0132c9766"
 families = []
 
 [[review_units]]
@@ -458,12 +458,12 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost"
-surface_snapshot = "sha256:e41e5bab8df4a66a466c255a10452c79078fecae163da14c64c6703254e8917e"
+surface_snapshot = "sha256:443ea31f48293f7c4ab5a8b3908509de0183cd10a98c2fcd515b77896c192e7d"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost"
-surface_snapshot = "sha256:5ec52180fafc26f2efb75e164666e31cb14bb4db4f303b30d3690bcaf9e7bfee"
+surface_snapshot = "sha256:1ff87db53f92cc557d37f218558a52d00d0fe645a20183baa902353fcfe2d6a6"
 review_state = "pending"
 
 [[review_units]]

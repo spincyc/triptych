@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-collation",
+  "book_id": "tuki-1736-arabic-creed",
+  "title": "Independent complete Arabic Creed constituent collation",
+  "status": "verified",
+  "independent": true,
+  "complete_extent_verified": true,
+  "reviewer": "Independent AI source reviewer (Arabic Creed collation)",
+  "checked_on": "2026-10-17",
+  "binding_sha256": "1cabeaf38fae7ebf85c4b42f372347795c0012a397c784955d3cb936bedbc9ec",
+  "extent_sha256": "0233b7d5eee84cba778909f76a3bc2fdd3c37fdcaf83c26a1b687f8bf2c7c862",
+  "witness_sha256": {
+    "tuki-1736-bonn": "add039d0fa12b9379035c2820e10ff6df042dc49651628a7dc7f3e9f6b5f375f"
+  },
+  "unit_sha256": {
+    "unit.tuki-1736.arabic.ordinary.creed": "4e02d9636a901c11e54b90df85e053222ec5fdddf2b570217a9d0cf630f564c6"
+  },
+  "scope": "The complete Arabic Creed, a source-defined spoken profession beginning after the red Creed rubric at part II p. 85 and ending with Amen at II p. 87 before the following red rubric. Every black Arabic body word in this expression is represented, with declared unvocalized reading normalization. This constituent excludes the parallel Coptic expression, rubrics, page furniture and all other book divisions; it is not the complete ordinary, missal or bilingual page.",
+  "method": "Independent original-image review of all 41 black Arabic Creed body lines against the 139-word reading transcription, including enlarged details, historical orthography and the two catchwords. The recovered final review approved the exact canonical serialization and complete binding extent on 2026-10-17. Integration on 2026-10-19 verified that the recovered binding, extent, witness and unit hashes matched; the binding was then changed only to replace the session identifier with this role description, and its hash was renewed. No human specialist certification or glyph-diplomatic transcription is claimed.",
+  "normalization_limit": "Approval is for declared unvocalized reading text, including lexical Unicode terminal yāʾ normalization and لا يرى spacing; not glyph-diplomatic transcription or modernized Arabic.",
+  "review_limit": "Parent annotation about five errata leaves was not independently verified by this reviewer; no claim of doing so."
+}

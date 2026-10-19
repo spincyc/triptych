@@ -1,0 +1,17 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.holy-see.sico.1997.vatican-pdf-926a1dc7"
+edition_id = "edition.holy-see.sico.1997"
+artifact_type = "official-pdf"
+media_type = "application/pdf"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "Modern official periodical and digital presentation. Public retrieval establishes access, not a redistribution grant; no affirmative basis for distributing this complete artifact or its extracted text was established. Only project-created factual metadata and bounded paraphrases are retained."
+source_url = "https://www.vatican.va/roman_curia/congregations/orientchurch/sico/SICO_PDF/SICO-1997.pdf"
+provenance = "Whole public PDF retrieved with curl. Targeted web query: \"45/78\" \"1997\" liturgia. The result identified the official annual record; its URL was also linked by the Congregation's SICO index. Exact bytes were hashed. PDF pages 4, 195 and 279 were rendered and visually inspected; page 195 contains the Slovak Chrysostom approval notice."
+retrieved = "2026-10-17"
+sha256 = "926a1dc74707675f10c929bf5afd776003f14e4816111c00317cac8833f3329b"
+byte_size = 1978144
+page_count = 280
+indexable = false
+notes = "Complete delivered PDF: 280 artifact pages, including blank leaves. No whole-volume reading or textual collation is asserted. Source bytes, page rasters and extracted text are withheld from Git because redistribution rights remain unresolved. Offline readers can inspect the source identity, exact hash, extent and bounded paraphrase; reopening the source requires the public URL."

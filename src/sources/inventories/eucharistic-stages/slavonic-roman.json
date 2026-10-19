@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-stages",
+  "dossier_id": "slavonic-roman",
+  "title": "Historical Slavonic Roman celebrant-book states",
+  "traditions": [
+    {
+      "id": "slavonic-roman",
+      "label": "Slavonic / Glagolitic Roman books",
+      "family": "latin",
+      "scope": "Historical Church Slavonic Roman celebrant-book tradition, distinct from Byzantine Slavonic and from independent modern translations.",
+      "coverage_note": "1631 mandate directly witnessed; 1741/1893 linguistic redactions remain provisional pending prayer/rubric collation. 1483 is an incomplete original-copy witness; 1896/1905 are uncollated printing leads."
+    }
+  ],
+  "sources": [
+    {
+      "id": "slavonic-roman:1893",
+      "title": "Missale Romanum Slavonico idiomate (Rome: Typographia Polyglotta S. Congregationis de Propaganda Fide, 1893)",
+      "url": "https://archive.org/download/missale-romanum-slavonico-idiomate-1893/MISSALE%20ROMANUM%20SLAVONICO%20IDIOMATE%20MDCCCXCIII.pdf",
+      "kind": "primary-book",
+      "inspection": "Whole 792-page PDF acquired/hash-verified; images of title PDF 7, approval PDF 8, bilingual Urban VIII act PDF 12–13 inspected. Whole source PDF pages 7–13 retained losslessly as derivative.",
+      "checked_on": "2026-10-17",
+      "status": "inspected",
+      "limitations": "This is an original celebrant-book witness in Church Slavonic/Glagolitic, not a modern lay translation. Approval says it faithfully represents the Roman Missal; neither approval nor title proves a distinct Latin source recension. No Glagolitic body transcription or complete comparison."
+    },
+    {
+      "id": "slavonic-roman:jelic1906",
+      "title": "Lucas Jelić, Fontes historici liturgiae Glagolito-Romanae a XIII ad XIX saeculum (Veglae, 1906)",
+      "url": "https://librinostri.catholica.cz/download/JelLuFonHistGlagRom-r0.pdf",
+      "kind": "critical-edition",
+      "inspection": "Whole 544-page PDF acquired; images of XVII pp 26–27 (PDF 164–165), XIX p 91 (PDF 412) inspected. XVIII pp 3 and 30, XIX pp 102–103 inspected in extracted text only.",
+      "checked_on": "2026-10-17",
+      "status": "inspected",
+      "limitations": "XVII no. 87 abbreviates original act as shown by 1893 reproduction. XIX no. 108 gives approval date 1878, conflicting with original 1893 approval leaf dated 1893. The original controls; do not inherit erroneous year. XIX no. 115 calls 1905 second edition, while Lokmer calls it third after 1896; original printing sequence still needs checking."
+    },
+    {
+      "id": "slavonic-roman:lokmer2008",
+      "title": "Juraj Lokmer, Tiskane glagoljske liturgijske knjige u knjižnici senjskoga biskupijskog arhiva, Senjski zbornik 35 (2008), 161–212",
+      "url": "https://hrcak.srce.hr/en/file/66978",
+      "kind": "scholarship",
+      "inspection": "Whole 52-page PDF acquired/hash-verified. Images of printed 164 (1631 title), 181 (1741 redaction/1789 supplement), 185 (1741 title) and 193 (1893/1896/1905) inspected; pp. 170, 182–187, 194 located/read in extracted text.",
+      "checked_on": "2026-10-17",
+      "status": "inspected",
+      "limitations": "Modern protected scholarship and page renders are not republished. Author physically inspected named Senj copies; descriptions are attributed copy-level research, not an independent direct full-book collation. Identical 1741 title on partial Dead-Mass extracts makes title alone insufficient."
+    },
+    {
+      "id": "slavonic-roman:nsk1483",
+      "title": "NSK RI-4-62a, Misal po zakonu rimskoga dvora, 22 February 1483",
+      "url": "https://urn.nsk.hr/urn:nbn:hr:238:553156",
+      "kind": "institutional-catalogue",
+      "inspection": "Complete HTML and 432-canvas manifest acquired; holding-library colophon transcription and copy-defect metadata read. All 432 offered images acquired with HTTP 200, totaling 420,134,949 original JPEG bytes, and retained in six lossless PDF parts. Every embedded image independently extracted and hash-matched. Visual inspection remains bounded to canvases 427–428; canvas 428 has the colophon at lower right.",
+      "checked_on": "2026-10-19",
+      "status": "inspected",
+      "limitations": "Complete offered image-sequence acquisition is not physical-copy completeness. The catalogue declares 211 of 220 leaves, with missing leaves and misbinding. The date follows the catalogue’s colophon transcription; no independently verified Glagolitic transcription or full-book collation is supplied."
+    },
+    {
+      "id": "slavonic-roman:stin",
+      "title": "Ana Mihaljević, Glagoljica, Staroslavenski institut",
+      "url": "https://stin.hr/glagoljica/",
+      "kind": "scholarship",
+      "inspection": "Whole HTML acquired; historical-book section read, including return to Croatian Church Slavonic in 1893 and Vajs 1905 edition.",
+      "checked_on": "2026-10-17",
+      "status": "inspected",
+      "limitations": "Institutional modern scholarly overview not republished. Supports linguistic-recension characterization, not specific changed prayers or an independent normative lineage."
+    }
+  ],
+  "stages": [
+    {
+      "id": "slavonic-roman:1631",
+      "tradition_id": "slavonic-roman",
+      "label": "Urban VIII revision mandate for Slavonic Roman missal",
+      "date_label": "29 April 1631; posted 29 November 1631",
+      "start_year": 1631,
+      "end_year": 1631,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Missal-level normative revision and replacement prescription, not enumerated prayer changes.",
+      "components": [
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:slavonic-roman-1631"
+      ],
+      "witness_label": "Urban VIII revision mandate for Slavonic Roman missal",
+      "summary": "Ecclesia catholica mandates a missal corrected against the Pius V and Clement VIII Roman emendations, from multiple Dalmatian Slavonic missals. It prohibits use of older printed/manuscript Slavonic books and prescribes new book or Latin after eight months from Roman publication.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "slavonic-roman:1893",
+          "locus": "Printed IV–V, PDF 12–13",
+          "claim": "Dated 29 April 1631; posting certificate 29 November 1631. Text expressly identifies correction/conformity and replacement."
+        },
+        {
+          "source_id": "slavonic-roman:lokmer2008",
+          "locus": "Printed 164, PDF 4; p. 170, extracted text",
+          "claim": "1631 title and Levaković preparation identify historical celebrant witness."
+        }
+      ],
+      "limitations": "Original 1631 body not acquired; no actual-use abolition or exact prayer/rubric delta claimed. Need precise target source/prayer collation; no immediate 1483 parent.",
+      "reception": "Prescription, printing and regional reception are separate. No universal implementation date asserted."
+    },
+    {
+      "id": "slavonic-roman:1741",
+      "tradition_id": "slavonic-roman",
+      "label": "Karaman/Sović East Slavonic redaction candidate",
+      "date_label": "1741",
+      "start_year": 1741,
+      "end_year": 1741,
+      "date_kind": "publication",
+      "status": "provisional",
+      "scope": "Historical source-language redaction; component changes uncollated.",
+      "components": [
+        "ordinary",
+        "propers",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:slavonic-roman-1741"
+      ],
+      "witness_label": "Karaman/Sović East Slavonic redaction candidate",
+      "summary": "Copy-based scholarship reports complete East Slavonic linguistic recension and an initial pro aliquibus locis appendix; later 1789 supplement is separately bound.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "slavonic-roman:lokmer2008",
+          "locus": "Printed 181, 185; PDF 21, 25",
+          "claim": "Redaction description and original title photo checked."
+        }
+      ],
+      "limitations": "Language-redaction characterization does not by itself establish changed ritual/prayer content; no accepted independent Latin source revision or exact before/after transition. Whole original 1741 and supplements required.",
+      "reception": "Prescription, printing and regional reception are separate. No universal implementation date asserted."
+    },
+    {
+      "id": "slavonic-roman:1893-witness",
+      "tradition_id": "slavonic-roman",
+      "label": "Parčić Croatian Church Slavonic restoration witness",
+      "date_label": "1893",
+      "start_year": 1893,
+      "end_year": 1893,
+      "date_kind": "publication",
+      "status": "provisional",
+      "scope": "Approved historical native-language expression; Latin source-recension identity unresolved.",
+      "components": [
+        "ordinary",
+        "propers",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:slavonic-roman-1893"
+      ],
+      "witness_label": "Parčić Croatian Church Slavonic restoration witness",
+      "summary": "Title names Pius V, Clement VIII, Urban VIII and Leo XIII. Approval 25 January 1893 attests faithful Roman Missal version; institutional scholarship describes return to Croatian Church Slavonic.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "slavonic-roman:1893",
+          "locus": "PDF 7–8",
+          "claim": "Original title 1893 and printing permission 25 January 1893 directly visible."
+        },
+        {
+          "source_id": "slavonic-roman:stin",
+          "locus": "Glagoljica u Hrvata section",
+          "claim": "Attributed linguistic restoration characterization."
+        }
+      ],
+      "limitations": "No exact body wording has been collated against 1741 or Latin 1884; publication permission is not evidence of an independent Latin recension. 1896/1905 not automatically distinct.",
+      "reception": "Prescription, printing and regional reception are separate. No universal implementation date asserted."
+    }
+  ],
+  "transitions": [],
+  "gaps": [
+    {
+      "id": "slavonic-roman:original-copies",
+      "tradition_id": "slavonic-roman",
+      "period": "1483–1905",
+      "missing": "Complete printed/multiple manuscript comparison; 1631, 1706, 1741, 1789, 1896, 1905 full originals; precise substantive deltas; local reception.",
+      "next_source": "NSK RI-4-62a and second 1483 copy; Vienna 25B124 Nr. 5765 (1631); Senj 16.409/15.974 (1631), 15.724/15.795 (1741 with 1789), 15.721 and 15.723 partial extracts; original 1896/1905 titles and approvals.",
+      "consequence": "A real historical native Roman celebrant-book trajectory is established, but its full version genealogy and source-defined complete texts remain open."
+    }
+  ]
+}

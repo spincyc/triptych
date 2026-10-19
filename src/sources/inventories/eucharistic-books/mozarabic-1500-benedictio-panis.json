@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-native-book",
+  "id": "mozarabic-1500-benedictio-panis",
+  "title": "Mozarabic Benedictio panis, 1500: complete constituent",
+  "extent_kind": "constituent",
+  "excluded_book_divisions": [
+    "All other Missal divisions and appendices",
+    "Index text in the upper left column of the same retained page"
+  ],
+  "scope": "The complete Benedictio panis at viewer position 964: from its heading in the lower left column, continuing at the top of the right column, through the final sprinkling rubric. The index in the upper left column is excluded.",
+  "transcribed_by": "AI source transcriber (Mozarabic blessing preparation)",
+  "stage_ids": [
+    "hispano-mozarabic-1500"
+  ],
+  "catalogue_witness_ids": [
+    "western:mozarabic-1500"
+  ],
+  "components": [
+    "rubrics"
+  ],
+  "languages": [
+    "la"
+  ],
+  "date": {
+    "kind": "publication",
+    "label": "1500",
+    "start_year": 1500,
+    "end_year": 1500,
+    "evidence": [
+      {
+        "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.publication-date",
+        "locus": "Original 1500 colophon"
+      }
+    ]
+  },
+  "witnesses": [
+    {
+      "id": "copy",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500",
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.castilla-la-mancha-p964-25d703c8",
+      "completeness_evidence": [
+        {
+          "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-extent",
+          "locus": "Exact complete blessing under its own heading; final rubric Et statim aspergat aquam benedictam."
+        }
+      ],
+      "scope_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    }
+  ],
+  "extent_path": "src/sources/inventories/eucharistic-books/support/mozarabic-1500-benedictio-panis-extent.json",
+  "collation_path": "src/sources/inventories/eucharistic-books/support/mozarabic-1500-benedictio-panis-review.json",
+  "units": [
+    {
+      "unit_id": "mozarabic.1500.benedictio.heading",
+      "native_path": [
+        "benedictio-panis",
+        "heading"
+      ],
+      "source_order": 1,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "heading",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-heading",
+      "text_sha256": "c769ef28a55ac5cb793346ee2cf78bf2c3141fc02b5101c79dce4fa2ad662af6"
+    },
+    {
+      "unit_id": "mozarabic.1500.benedictio.opening-versicles",
+      "native_path": [
+        "benedictio-panis",
+        "opening-versicles"
+      ],
+      "source_order": 2,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "dialogue",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-opening-versicles",
+      "text_sha256": "74dd37da20d480fb74eadaf22ab9b28d740fb0bd48dbe7d0d9bfb8641b164e83"
+    },
+    {
+      "unit_id": "mozarabic.1500.benedictio.opening-greeting",
+      "native_path": [
+        "benedictio-panis",
+        "opening-greeting"
+      ],
+      "source_order": 3,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "dialogue",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-opening-greeting",
+      "text_sha256": "5a8e6e16448ac1b863d4da1d8a68c5c0e51327c4ec9a3f135ee84e02544a3148"
+    },
+    {
+      "unit_id": "mozarabic.1500.benedictio.oratio-heading",
+      "native_path": [
+        "benedictio-panis",
+        "oratio-heading"
+      ],
+      "source_order": 4,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "heading",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-oratio-heading",
+      "text_sha256": "268dec6408c7fbf349deecd3db5eaeea70d42cc0778ef3628f3d1768a3d4e057"
+    },
+    {
+      "unit_id": "mozarabic.1500.benedictio.oratio",
+      "native_path": [
+        "benedictio-panis",
+        "oratio"
+      ],
+      "source_order": 5,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "prayer",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-oratio",
+      "text_sha256": "741c3acd0da75ada6acc7ffd2899db50a37836cc6d8ddd738785f6bae5633eaa"
+    },
+    {
+      "unit_id": "mozarabic.1500.benedictio.closing-greeting",
+      "native_path": [
+        "benedictio-panis",
+        "closing-greeting"
+      ],
+      "source_order": 6,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "dialogue",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-closing-greeting",
+      "text_sha256": "1c01a3d41bb44c1ad76f7a529b1055fd48aa8e862f8f19060fc3719ee22e7671"
+    },
+    {
+      "unit_id": "mozarabic.1500.benedictio.blessing-heading",
+      "native_path": [
+        "benedictio-panis",
+        "blessing-heading"
+      ],
+      "source_order": 7,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "heading",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-blessing-heading",
+      "text_sha256": "a605c6596505357e52b84d48161943a62300a60c48946aadf25d0350201db1b7"
+    },
+    {
+      "unit_id": "mozarabic.1500.benedictio.blessing",
+      "native_path": [
+        "benedictio-panis",
+        "blessing"
+      ],
+      "source_order": 8,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "prayer",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-blessing",
+      "text_sha256": "a6ebeb43d2b917c2299ea15308153c6fab5436026409acb027254a757dec80bb"
+    },
+    {
+      "unit_id": "mozarabic.1500.benedictio.sprinkling",
+      "native_path": [
+        "benedictio-panis",
+        "sprinkling"
+      ],
+      "source_order": 9,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-sprinkling",
+      "text_sha256": "75371ee14c68664fb23d9dfadb7ed667ea9cd762bc5a00247a094c182394b586"
+    }
+  ]
+}

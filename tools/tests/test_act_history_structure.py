@@ -36,8 +36,15 @@ def comparison_paths() -> set[str]:
 
 def expected_file_count() -> int:
     # The three recovered slices retain 505 fragments; coverage adds one
-    # catalogue and exactly one file per explicitly declared comparison.
-    return 506 + len(comparison_paths())
+    # catalogue, one file per comparison and one per bound native constituent.
+    return 506 + len(comparison_paths()) + len(native_text_paths())
+
+
+def native_text_paths() -> set[str]:
+    dossiers = ROOT / "src/sources/inventories/eucharistic-stages"
+    return {"native-texts/" + stage["text_binding"].removeprefix("native-book:") + ".json"
+            for path in dossiers.glob("*.json") for stage in json.loads(path.read_text())["stages"]
+            if stage.get("text_binding")}
 
 
 def load_tool():
@@ -91,6 +98,17 @@ class ActHistoryStructureTests(unittest.TestCase):
         self.assertEqual(comparison_paths(), {path.relative_to(TRACKED).as_posix()
                                              for path in (TRACKED / "comparisons").rglob("*") if path.is_file()})
         self.assertEqual(comparison_paths(), {row["projection_path"] for row in catalogue["comparisons"]})
+        self.assertEqual(native_text_paths(), {row["projection_path"] for row in catalogue["native_texts"]})
+        self.assertEqual(native_text_paths(), {path.relative_to(TRACKED).as_posix()
+                                              for path in (TRACKED / "native-texts").rglob("*.json")})
+        for stage in catalogue["stage_history"]["stages"]:
+            if not stage.get("text_binding"):
+                continue
+            native = json.loads((TRACKED / stage["text_projection_path"]).read_text())
+            self.assertEqual(stage["text_binding"], native["adapter_id"])
+            self.assertEqual(stage["text_binding_sha256"], native["binding_sha256"])
+            self.assertIn(stage["id"], native["stage_ids"])
+            self.assertTrue(native["units"])
         for declaration in catalogue["comparisons"]:
             comparison = json.loads((TRACKED / declaration["projection_path"]).read_text())
             self.assertEqual(comparison["id"], declaration["id"])
@@ -104,6 +122,9 @@ class ActHistoryStructureTests(unittest.TestCase):
             "missing",
             "changed-comparison",
             "missing-comparison",
+            "changed-native-text",
+            "missing-native-text",
+            "orphan-native-text",
             "orphan",
             "symlink",
             "directory-symlink",
@@ -132,6 +153,12 @@ class ActHistoryStructureTests(unittest.TestCase):
                     orphan = projection / name
                     orphan.parent.mkdir(parents=True, exist_ok=True)
                     orphan.write_text("{}\n", encoding="utf-8")
+                elif kind in ("changed-native-text", "missing-native-text", "orphan-native-text"):
+                    name = sorted(native_text_paths())[0] if kind != "orphan-native-text" else "native-texts/retired-binding.json"
+                    if kind == "missing-native-text":
+                        (projection / name).unlink()
+                    else:
+                        (projection / name).write_text('{"stale":true}\n', encoding="utf-8")
                 elif kind == "symlink":
                     name = "linked-projection.json"
                     (projection / name).symlink_to(projection / "index.json")

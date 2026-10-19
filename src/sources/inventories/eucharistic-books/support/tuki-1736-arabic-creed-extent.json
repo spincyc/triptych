@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-extent",
+  "book_id": "tuki-1736-arabic-creed",
+  "title": "Arabic Creed constituent extent and whole scan-page account",
+  "status": "complete",
+  "unresolved": [],
+  "omitted": [],
+  "expected_unit_ids": [
+    "unit.tuki-1736.arabic.ordinary.creed"
+  ],
+  "scope": "The complete Arabic Creed, a source-defined spoken profession beginning after the red Creed rubric at part II p. 85 and ending with Amen at II p. 87 before the following red rubric. Every black Arabic body word in this expression is represented, with declared unvocalized reading normalization. This constituent excludes the parallel Coptic expression, rubrics, page furniture and all other book divisions; it is not the complete ordinary, missal or bilingual page.",
+  "pages": [
+    {
+      "witness_id": "tuki-1736-bonn",
+      "ranges": [
+        [
+          1,
+          377
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "All offered source pages before the Arabic Creed component."
+    },
+    {
+      "witness_id": "tuki-1736-bonn",
+      "ranges": [
+        [
+          378,
+          380
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.tuki-1736.arabic.ordinary.creed"
+      ],
+      "description": "Only the right-column black Arabic Creed body belongs to this source-defined constituent. Parallel Coptic, red rubrics and page furniture on these pages are explicitly outside it."
+    },
+    {
+      "witness_id": "tuki-1736-bonn",
+      "ranges": [
+        [
+          381,
+          676
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "All offered source pages after the Arabic Creed component, including errata and colophon."
+    }
+  ],
+  "source_boundary_audit": {
+    "start": "II.85: first black Arabic line after red Creed rubric, نومن بالاه واحد اب",
+    "end": "II.87: Amen, امين, before the following long red rubric",
+    "word_count_after_declared_normalization": 139,
+    "source_black_body_lines": 41,
+    "catchwords_excluded": [
+      "نحن at II.85 foot; repeated at II.86 first body line",
+      "مع at II.86 foot; repeated at II.87 first body line"
+    ],
+    "physical_volume_completeness": "Unresolved: provider catalogue gives 288,479 pages; retained complete offered sequence has676 images. This does not affect the contiguous bounded Creed component."
+  }
+}

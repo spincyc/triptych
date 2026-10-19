@@ -1,0 +1,76 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "scan",
+   "byte_size": 13326816,
+   "edition_owned": true,
+   "id": "artifact.catholic-church.missale-romanum.1893-rome-slavonic-parcic.front-matter-5b64aed7",
+   "media_type": "application/pdf",
+   "notes": "Whole original artifact pages 7–13. Includes title, approval, Slavonic earlier acts and complete bilingual Ecclesia catholica on original pp IV–V (artifact 12–13). Omits other 785 pages. Parent hash d613911749c4a72ed6cc33093997795d6a01955a4d18cc9776a24dacafb1a8f4",
+   "page_count": 7,
+   "retrieved": "2026-10-17",
+   "rights": "public-domain",
+   "rights_basis": "Identified 1893 historical printing is public domain in United States under pre-1931 publication rule documented in repository rights policy; faithful mechanical scan and lossless page extraction add no original human-authored matter. Excluded from Triptych CC BY 4.0.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/missale-romanum-slavonico-idiomate-1893/MISSALE%20ROMANUM%20SLAVONICO%20IDIOMATE%20MDCCCXCIII.pdf",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "ocr-text",
+   "byte_size": 3920683,
+   "edition_owned": true,
+   "id": "artifact.catholic-church.missale-romanum.1893-rome-slavonic-parcic.provider-ocr-26c99892",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Complete provider OCR, uncorrected and substantially unreliable for Glagolitic; retained as acquired evidence, not a reusable checked reading text. Not indexed or bound to stage text coverage.",
+   "page_count": null,
+   "retrieved": "2026-10-17",
+   "rights": "public-domain",
+   "rights_basis": "Identified historical printing published before 1931 is public domain in the United States under the repository rights policy. Faithful mechanical reproduction and automated OCR add no original human-authored matter. Historical source content is excluded from Triptych’s CC BY 4.0 licence.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/missale-romanum-slavonico-idiomate-1893/MISSALE%20ROMANUM%20SLAVONICO%20IDIOMATE%20MDCCCXCIII_djvu.txt",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "scan",
+   "byte_size": 1323591298,
+   "edition_owned": true,
+   "id": "artifact.catholic-church.missale-romanum.1893-rome-slavonic-parcic.whole-scan-d6139117",
+   "media_type": "application/pdf",
+   "notes": "Whole 1,323,591,298-byte scan exceeds practical Git size. Exact source pages 7–13 are retained losslessly in the 13,326,816-byte front-matter derivative. The remaining 785 pages require the external source; no offline whole-book availability or complete transcription is claimed.",
+   "page_count": 792,
+   "retrieved": "2026-10-17",
+   "rights": "public-domain",
+   "rights_basis": "Identified 1893 historical printing is public domain in United States under pre-1931 publication rule documented in repository rights policy; faithful mechanical scan and lossless page extraction add no original human-authored matter. Excluded from Triptych CC BY 4.0.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/missale-romanum-slavonico-idiomate-1893/MISSALE%20ROMANUM%20SLAVONICO%20IDIOMATE%20MDCCCXCIII.pdf",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1893",
+  "editors": [],
+  "id": "edition.catholic-church.missale-romanum.1893-rome-slavonic-parcic",
+  "jurisdiction": null,
+  "language": "cu",
+  "publication": "Romae: ex Typographia Polyglotta S. Congregationis de Propaganda Fide, 1893",
+  "title": "Missale Romanum Slavonico idiomate",
+  "translators": [],
+  "year": 1893
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Roman Missal"
+  ],
+  "author": "Catholic Church",
+  "category": "liturgical-book",
+  "description": "The Roman Rite altar book containing the Order of Mass, the temporal and sanctoral cycles, Commons, votive and Requiem Masses, and related rubrical and ritual material. Edition records distinguish the authoritative typical edition from publisher-produced editions made according to it.",
+  "id": "work.catholic-church.missale-romanum",
+  "languages": [
+   "la"
+  ],
+  "title": "Missale Romanum"
+ }
+}

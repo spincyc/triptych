@@ -1,0 +1,94 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "scan-pdf",
+   "byte_size": 18003493,
+   "edition_owned": true,
+   "id": "artifact.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.google-scan-pdf-4bc875a2",
+   "media_type": "application/pdf",
+   "notes": "Complete provider PDF retained byte-for-byte. Whole-file possession does not establish that every original leaf survives. PDF pages 10 and 272 independently read by two researchers; native title page 9 visually inspected by one researcher. Seven anaphora opening pages 134,150,159,169,177,186,199 were later read independently by two researchers, and the Presanctified opening84 was inspected. This verifies those labels and bounded loci, not every liturgical page or a complete native transcription. PDF page 1 contains the Google wrapper.",
+   "page_count": 279,
+   "retrieved": "2026-10-17",
+   "rights": "public-domain",
+   "rights_basis": "Historical 1843 printing is public domain in the United States by expired publication term. The page images are mechanical facsimiles of that historical book, not a modern translation or critical edition. This is the recorded U.S. public-domain and mechanical-reproduction basis, not an assertion of a general Google redistribution licence. The provider's marks and notices are preserved in the unaltered delivery and are not offered under Triptych's CC BY 4.0 licence; the historical wording is likewise excluded from that licence.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://books.google.com/books?jscmd=download&vid=AoxG4JWD4VkC&output=pdf",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": "Patriarch Ignazio Pietro Giarve attests at PDF page 272 that this book contains the Syriac Missal and its rubrics as used by Syriac patriarchs, archbishops, bishops and priests in churches and convents; dateline Aleppo, 31 August 1840. The same page prints Roman imprimaturs by Fr. Dominicus Buttaoni and Joseph Canali. Publication is 1843, distinct from this attestation date.",
+  "date": "1843",
+  "editors": [],
+  "id": "edition.syriac-catholic-church.missale-syriacum.1843-rome-propaganda",
+  "jurisdiction": "Syriac Catholic Church",
+  "language": "syr",
+  "publication": "Rome: Typis Sacrae Congregationis de Propaganda Fide, 1843.",
+  "title": "Missale Syriacum juxta ritum Ecclesiae Antiochenae Syrorum",
+  "translators": [],
+  "year": 1843
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.google-scan-pdf-4bc875a2",
+   "artifact_type": "scan-pdf",
+   "id": "passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-roster",
+   "locus": "Anaphora section openings: printed pp. 103,119,128,138,146,155,168 = PDF pages 134,150,159,169,177,186,199",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "This passage records neither a transcription nor line bounds, so the corpus identifies where it is without holding its words.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://books.google.com/books?jscmd=download&vid=AoxG4JWD4VkC&output=pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-17",
+   "withheld": "no-transcription"
+  },
+  {
+   "artifact_id": "artifact.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.google-scan-pdf-4bc875a2",
+   "artifact_type": "scan-pdf",
+   "id": "passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.title-and-patriarchal-attestation",
+   "locus": "Latin title and imprint, PDF page 10; patriarchal attestation and Roman imprimaturs, PDF page 272",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "This passage records neither a transcription nor line bounds, so the corpus identifies where it is without holding its words.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://books.google.com/books?jscmd=download&vid=AoxG4JWD4VkC&output=pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-17",
+   "withheld": "no-transcription"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Ketābā de-taksā de-qūrrābā",
+   "Syriac Catholic altar missal"
+  ],
+  "author": "Syriac Catholic Church liturgical tradition",
+  "category": "liturgical-book",
+  "description": "The Syriac Catholic celebrant's Eucharistic book, represented here by the patriarchal Sharfeh edition of 1922. It is a separate intellectual book from the auxiliary diaconicon represented by the Mosul 1881 witness registered under the stable legacy work ID work.syriac-catholic-church.missale.",
+  "id": "work.syriac-catholic-church.missale-syriacum",
+  "languages": [
+   "syr",
+   "ar",
+   "la"
+  ],
+  "title": "Missale iuxta ritum Ecclesiae Apostolicae Antiochenae Syrorum"
+ }
+}

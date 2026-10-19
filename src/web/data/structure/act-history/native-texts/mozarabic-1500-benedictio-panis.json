@@ -1,0 +1,445 @@
+{
+  "adapter_id": "native-book:mozarabic-1500-benedictio-panis",
+  "binding_sha256": "e39bae86bdaf1dbd344a8f774b63b5d2e3f7c112a5ded703c453e97d09a21737",
+  "catalogue_witness_ids": [
+    "western:mozarabic-1500"
+  ],
+  "counts": {
+    "languages": {
+      "la": 9
+    },
+    "units": 9,
+    "whitespace_tokens": 137
+  },
+  "id": "mozarabic-1500-benedictio-panis",
+  "schema": "triptych-eucharistic-native-text/v1",
+  "scope": {
+    "complete_declared_extent": true,
+    "description": "The complete Benedictio panis at viewer position 964: from its heading in the lower left column, continuing at the top of the right column, through the final sprinkling rubric. The index in the upper left column is excluded.",
+    "extent_kind": "constituent",
+    "known_extent_pages": 1,
+    "known_extent_units": 9,
+    "omitted_book_divisions": [
+      "All other Missal divisions and appendices",
+      "Index text in the upper left column of the same retained page"
+    ],
+    "status": "complete-native-constituent",
+    "whole_book_complete": false
+  },
+  "sources": [
+    {
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500",
+      "id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-panis-checked",
+      "record_type": "artifact",
+      "rights_basis": "This literal Latin constituent was printed in 1500, before the pre 1931 United States public-domain boundary applicable in 2026. The historical wording is public domain independently of image licensing. Mechanical abbreviation expansion and orthographic regularization add no new liturgical composition; no modern translation or protected edition is reproduced.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "transformation": "Independent page-collated reading transcription, not OCR. Expand printed contractions; long-s to s; consonantal u/v and i/j standardized; et replaces ampersand or Tironian et; ae ligatures expanded as ae. Preserve the 1500 e spellings celum, anime, seculum and presbiter, versus 1804 caelum, animae, saeculum and presbyter. Case and punctuation regularized; 1804 printed acute accents are omitted, and æ is expanded as ae. Preserve every lexical item, response and rubric, all three crosses including San✠cti, and Amens. The 1500 terram uses final-m abbreviation. The original orthographic differences are visible, not classified as liturgical revision."
+    },
+    {
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500",
+      "id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.castilla-la-mancha-p964-25d703c8",
+      "record_type": "artifact",
+      "rights_basis": "Biblioteca de Castilla-La Mancha, Inc.1, record 12134 expressly supplies this digitized work under CC BY 4.0, https://creativecommons.org/licenses/by/4.0/ . Attribution: Biblioteca de Castilla-La Mancha, Patrimonio Digital de Castilla-La Mancha, Missale mixtum (Toledo 1500), Inc.1, image 100617794. Image retained unchanged. The ancient Latin text has its independent United States public-domain basis.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "licensed",
+      "source_url": "https://patrimoniodigital.castillalamancha.es/bidicam/es/catalogo_imagenes/imagen_id.do?idImagen=100617794&formato=jpg&registrardownload=0"
+    },
+    {
+      "date": "1500",
+      "id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500",
+      "language": "la",
+      "publication": "Toledo: Petrus Hagenbach, for Melchior Gorricius, 9 January 1500.",
+      "record_type": "edition",
+      "title": "Missale mixtum secundum regulam beati Isidori dictum Mozarabes"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-panis-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-blessing",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-panis-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-blessing-heading",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-panis-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-closing-greeting",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-panis-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-heading",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-panis-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-opening-greeting",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-panis-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-opening-versicles",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-panis-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-oratio",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-panis-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-oratio-heading",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-panis-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-sprinkling",
+      "record_type": "passage"
+    }
+  ],
+  "stage_ids": [
+    "hispano-mozarabic-1500"
+  ],
+  "title": "Mozarabic Benedictio panis, 1500: complete constituent",
+  "units": [
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "heading",
+      "language": "la",
+      "native_path": [
+        "benedictio-panis",
+        "heading"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-panis-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-panis-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-heading",
+      "source_locator": "Benedictio panis: heading",
+      "source_order": 1,
+      "text": "Benedictio panis.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500",
+      "text_sha256": "c769ef28a55ac5cb793346ee2cf78bf2c3141fc02b5101c79dce4fa2ad662af6",
+      "unit_id": "mozarabic.1500.benedictio.heading",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "dialogue",
+      "language": "la",
+      "native_path": [
+        "benedictio-panis",
+        "opening-versicles"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-panis-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-panis-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-opening-versicles",
+      "source_locator": "Benedictio panis: opening-versicles",
+      "source_order": 2,
+      "text": "℣. Adiutorium nostrum in nomine Domini.\n℟. Qui fecit celum et terram.\n℣. Sit nomen Domini benedictum.\n℟. Ex hoc nunc et usque in seculum.\n℣. Domine exaudi orationem meam.\n℟. Et clamor meus ad te veniat.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500",
+      "text_sha256": "74dd37da20d480fb74eadaf22ab9b28d740fb0bd48dbe7d0d9bfb8641b164e83",
+      "unit_id": "mozarabic.1500.benedictio.opening-versicles",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "dialogue",
+      "language": "la",
+      "native_path": [
+        "benedictio-panis",
+        "opening-greeting"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-panis-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-panis-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-opening-greeting",
+      "source_locator": "Benedictio panis: opening-greeting",
+      "source_order": 3,
+      "text": "Dicat presbiter. Dominus sit semper vobiscum.\n℟. Et cum spiritu tuo.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500",
+      "text_sha256": "5a8e6e16448ac1b863d4da1d8a68c5c0e51327c4ec9a3f135ee84e02544a3148",
+      "unit_id": "mozarabic.1500.benedictio.opening-greeting",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "heading",
+      "language": "la",
+      "native_path": [
+        "benedictio-panis",
+        "oratio-heading"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-panis-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-panis-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-oratio-heading",
+      "source_locator": "Benedictio panis: oratio-heading",
+      "source_order": 4,
+      "text": "Oremus.\nOratio.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500",
+      "text_sha256": "268dec6408c7fbf349deecd3db5eaeea70d42cc0778ef3628f3d1768a3d4e057",
+      "unit_id": "mozarabic.1500.benedictio.oratio-heading",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "benedictio-panis",
+        "oratio"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-panis-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-panis-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-oratio",
+      "source_locator": "Benedictio panis: oratio",
+      "source_order": 5,
+      "text": "Benedic Domine creaturam istam panis: sicut benedixisti quinque panes in deserto: ut omnes qui ex eo gustaverint: tam corporis quam anime recipiant sanitatem. Per Dominum nostrum Iesum Christum Filium tuum. Qui tecum vivit et regnat in unitate Spiritus Sancti Deus. Per omnia semper secula seculorum.\n℟. Amen.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500",
+      "text_sha256": "741c3acd0da75ada6acc7ffd2899db50a37836cc6d8ddd738785f6bae5633eaa",
+      "unit_id": "mozarabic.1500.benedictio.oratio",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "dialogue",
+      "language": "la",
+      "native_path": [
+        "benedictio-panis",
+        "closing-greeting"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-panis-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-panis-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-closing-greeting",
+      "source_locator": "Benedictio panis: closing-greeting",
+      "source_order": 6,
+      "text": "Dicat presbiter. Dominus sit semper vobiscum.\nRespondeat chorus. Et cum spiritu tuo.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500",
+      "text_sha256": "1c01a3d41bb44c1ad76f7a529b1055fd48aa8e862f8f19060fc3719ee22e7671",
+      "unit_id": "mozarabic.1500.benedictio.closing-greeting",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "heading",
+      "language": "la",
+      "native_path": [
+        "benedictio-panis",
+        "blessing-heading"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-panis-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-panis-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-blessing-heading",
+      "source_locator": "Benedictio panis: blessing-heading",
+      "source_order": 7,
+      "text": "Benedictio.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500",
+      "text_sha256": "a605c6596505357e52b84d48161943a62300a60c48946aadf25d0350201db1b7",
+      "unit_id": "mozarabic.1500.benedictio.blessing-heading",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "benedictio-panis",
+        "blessing"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-panis-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-panis-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-blessing",
+      "source_locator": "Benedictio panis: blessing",
+      "source_order": 8,
+      "text": "Benedictio Dei Patris omnipotentis ✠ et Filii ✠ et Spiritus San✠cti descendat et maneat super hanc creaturam panis.\n℟. Amen.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500",
+      "text_sha256": "a6ebeb43d2b917c2299ea15308153c6fab5436026409acb027254a757dec80bb",
+      "unit_id": "mozarabic.1500.benedictio.blessing",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "benedictio-panis",
+        "sprinkling"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-panis-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-panis-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-sprinkling",
+      "source_locator": "Benedictio panis: sprinkling",
+      "source_order": 9,
+      "text": "Et statim aspergat aquam benedictam.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500",
+      "text_sha256": "75371ee14c68664fb23d9dfadb7ed667ea9cd762bc5a00247a094c182394b586",
+      "unit_id": "mozarabic.1500.benedictio.sprinkling",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    }
+  ],
+  "witnesses": [
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.castilla-la-mancha-p964-25d703c8",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500",
+      "id": "copy",
+      "scope_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    }
+  ]
+}

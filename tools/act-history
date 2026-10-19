@@ -386,7 +386,7 @@ EXAMPLES = {
         Example(
             "tools/act-history catalogue --out .scratch/history-engine-expansion/example-catalogue.json",
             (
-                "wrote: 259 catalogue records",
+                "wrote: 291 catalogue records",
                 "  -> .scratch/history-engine-expansion/example-catalogue.json",
             ),
             note="Derived discovery records; no new normative station or ancestry is admitted.",
@@ -396,17 +396,26 @@ EXAMPLES = {
         Example(
             "tools/act-history corpus --out .scratch/history-engine-expansion/example-corpus",
             (
-                "wrote 1204 text units on 15 isolated reconstruction branches to .scratch/history-engine-expansion/example-corpus",
+                "wrote 1232 text units on 19 isolated reconstruction branches and 4 native text version branches to .scratch/history-engine-expansion/example-corpus",
             ),
             note="Writes a disposable bare repository with isolated, bounded reconstructions; no historical ancestry is asserted.",
         ),
     ),
     "structure": (
         Example(
-            "tools/act-history structure --check",
+            "tools/act-history structure --out .scratch/history-engine-expansion/example-browser-data",
             (
-                "current: 531 files for 3 slices, 118 stations on 23 lines",
-                "  -> <repo>/src/web/data/structure/act-history",
+                "wrote: 538 files for 3 slices, 118 stations on 23 lines",
+                "  -> .scratch/history-engine-expansion/example-browser-data/structure/act-history",
+                "  updated: 538",
+            ),
+            note="writes the complete projection into a disposable data root before the read-only check below",
+        ),
+        Example(
+            "tools/act-history structure --check --out .scratch/history-engine-expansion/example-browser-data",
+            (
+                "current: 538 files for 3 slices, 118 stations on 23 lines",
+                "  -> .scratch/history-engine-expansion/example-browser-data/structure/act-history",
             ),
             note=(
                 "writes nothing; derives every tracked act-history slice and refuses"
@@ -416,11 +425,11 @@ EXAMPLES = {
         Example(
             "tools/act-history structure"
             " --source src/sources/inventories/latin-missal-acts-v1.toml"
-            " --out build/act-history/structure-latin-missal",
+            " --out .scratch/history-engine-expansion/example-structure-latin-missal",
             (
                 "59 stations on 17 lines",
-                "  -> build/act-history/structure-latin-missal/structure/act-history/latin-missal.json",
-                "  -> build/act-history/structure-latin-missal/structure/act-history/index.json",
+                "  -> .scratch/history-engine-expansion/example-structure-latin-missal/structure/act-history/latin-missal.json",
+                "  -> .scratch/history-engine-expansion/example-structure-latin-missal/structure/act-history/index.json",
                 "  slices there: latin-missal; opens on latin-missal",
             ),
             note="the manifest names the slices the browser may open, one per source",
@@ -428,7 +437,7 @@ EXAMPLES = {
     ),
     "commonality": (
         Example(
-            "tools/act-history commonality --repo build/act-history/roman-holy-week",
+            "tools/act-history commonality --repo .scratch/history-engine-expansion/example-roman-holy-week",
             (
                 "exempt-uses / typica",
                 "  shared base : quo-primum-1570",
@@ -438,14 +447,14 @@ EXAMPLES = {
             ),
             note=(
                 "omitting the line ids reports every pair; the repository is emitted"
-                " first if build/ does not hold it yet"
+                " first if the scratch directory does not hold it yet"
             ),
         ),
         Example(
             "tools/act-history commonality typica exempt-uses"
-            " --repo build/act-history/roman-holy-week --json",
+            " --repo .scratch/history-engine-expansion/example-roman-holy-week --json",
             (
-                "{\"pairs\":[{\"a\":\"exempt-uses\",\"a_head\":\"quo-primum-exemption-1570\",\"b\":\"typica\",\"b_head\":\"editio-typi... [+2701 chars]",
+                "{\"pairs\":[{\"a\":\"exempt-uses\",\"a_head\":\"quo-primum-exemption-1570\",\"b\":\"typica\",\"b_head\":\"editio-typi... [+2725 chars]",
             ),
             note=(
                 "two ids select one pair, and --json carries the unit lists the table"
@@ -456,29 +465,29 @@ EXAMPLES = {
     "plate": (
         Example(
             "tools/act-history plate --source src/sources/inventories/latin-missal-acts-v1.toml"
-            " --out build/act-history/plate",
+            " --out .scratch/history-engine-expansion/example-plate",
             (
-                "59 stations on 17 lines, 45 edges",
-                "  roots 15, termini 17, interchanges 1, single-station lines 5",
+                "59 stations on 17 lines, 44 edges",
+                "  roots 16, termini 18, interchanges 1, single-station lines 5",
                 "  monochrome: 6 textures x 3 greys separates 18 lines",
                 "  apparatus: edition, provenance, exceptions, epistemic, legend, grammar, url, cite, unmarked",
-                "  -> build/act-history/plate/latin-missal.dot",
-                "  octilinearise: octi < build/act-history/plate/latin-missal.dot | transitmap > latin-missal.svg",
+                "  -> .scratch/history-engine-expansion/example-plate/latin-missal.dot",
+                "  octilinearise: octi < .scratch/history-engine-expansion/example-plate/latin-missal.dot | transitmap > latin-missal.svg",
             ),
             note=(
-                "writes an untracked DOT under build/; the SVG step needs LOOM's `octi`,"
+                "writes an untracked DOT under .scratch/; the SVG step needs LOOM's `octi`,"
                 " which this repository does not ship and did not run"
             ),
         ),
         Example(
-            "tools/act-history plate --out build/act-history/plate",
+            "tools/act-history plate --out .scratch/history-engine-expansion/example-plate",
             (
                 "12 stations on 2 lines, 12 edges",
                 "  roots 1, termini 2, interchanges 1, single-station lines 1",
                 "  monochrome: 6 textures x 3 greys separates 18 lines",
                 "  apparatus: edition, provenance, exceptions, epistemic, legend, grammar, url, cite, unmarked",
-                "  -> build/act-history/plate/roman-holy-week.dot",
-                "  octilinearise: octi < build/act-history/plate/roman-holy-week.dot | transitmap > roman-holy-week.svg",
+                "  -> .scratch/history-engine-expansion/example-plate/roman-holy-week.dot",
+                "  octilinearise: octi < .scratch/history-engine-expansion/example-plate/roman-holy-week.dot | transitmap > roman-holy-week.svg",
             ),
             note="the default source is the Holy Week tracer: one fork, one reception, one terminus",
         ),
@@ -498,8 +507,8 @@ EXAMPLES = {
             " --source src/sources/inventories/latin-missal-acts-v1.toml",
             (
                 "ok: 59 acts, 17 lines, 43 witnesses, 5 masses, 53 base units, 55 departures",
-                "stations: printed 26, promulgated 33; 15 roots",
-                "edges rest on: act-states-it 23, book-states-it 2, line-order 8, use-continuity 12",
+                "stations: printed 25, promulgated 34; 16 roots",
+                "edges rest on: act-states-it 23, book-states-it 2, line-order 8, use-continuity 11",
                 "departure kinds used: absent 30, added 1, moved 3, renamed 5, replaced 4, reslotted 8, unrecorded 4",
             ),
             note=(
@@ -539,18 +548,18 @@ EXAMPLES = {
     ),
     "emit": (
         Example(
-            "tools/act-history emit --out build/act-history/roman-holy-week",
+            "tools/act-history emit --out .scratch/history-engine-expansion/example-roman-holy-week",
             (
-                "wrote 12 commits on 2 branches to build/act-history/roman-holy-week",
+                "wrote 12 commits on 2 branches to .scratch/history-engine-expansion/example-roman-holy-week",
             ),
-            note="writes an untracked Git repository under build/; rerunning replaces it",
+            note="writes an untracked Git repository under .scratch/; rerunning replaces it",
         ),
         Example(
             "tools/act-history emit"
             " --source src/sources/inventories/latin-missal-acts-v1.toml"
-            " --out build/act-history/latin-missal",
+            " --out .scratch/history-engine-expansion/example-latin-missal",
             (
-                "wrote 59 commits on 17 branches to build/act-history/latin-missal",
+                "wrote 59 commits on 18 branches to .scratch/history-engine-expansion/example-latin-missal",
             ),
             note=(
                 "one branch a line and one commit an act, so `git log` on a branch is"
@@ -3843,6 +3852,13 @@ def build_structure_projection(sources: tuple[Path, ...], out: Path) -> dict:
     if routing.is_file():
         catalogue = eucharistic_history.catalogue(routing, ROOT, act_loader=load)
         eucharistic_history.write_catalogue(catalogue, root / "catalogue.json")
+        for declaration in catalogue["native_texts"]:
+            payload = eucharistic_history.native_text(declaration["adapter_id"], ROOT)
+            if payload["binding_sha256"] != declaration["binding_sha256"]:
+                raise eucharistic_history.HistoryError("native text binding changed during structure generation")
+            target = root / declaration["projection_path"]
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes(eucharistic_history.json_bytes(payload))
         for declaration in catalogue["comparisons"]:
             comparison = eucharistic_history.compare(
                 routing, ROOT, declaration["id"], ventilator=ventilate, act_loader=load,
@@ -5004,7 +5020,10 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
             print(f"{'current' if 'current' in payload else 'wrote'}: {payload['counts']['entries']} catalogue records")
             print(f"  -> {payload.get('current') or payload['written']}")
     elif verb == "corpus":
-        print(f"wrote {payload['units']} text units on {payload['commits']} isolated reconstruction branches to {payload['out']}")
+        branches = f"{len(payload['branches'])} isolated reconstruction branches"
+        if payload.get("version_branches"):
+            branches += f" and {len(payload['version_branches'])} native text version branches"
+        print(f"wrote {payload['units']} text units on {branches} to {payload['out']}")
     elif verb == "check":
         kinds = payload["departure_kinds"]
         print(

@@ -960,3 +960,93 @@ record_id = "latin-missal:carmelitarum-venetiis-1574"
 text_set = "carmelite-1621-october-calendar"
 unit_ids = ["unit.carmelite-1621-october-calendar.october-05-calendar-entry"]
 record_id = "latin-missal:carmelitarum-capitulum-1621"
+
+# Complete checked constituents, with whole-book coverage remaining partial.
+
+[[text_sets]]
+id = "tuki-1736-arabic-creed"
+adapter = "native-book:tuki-1736-arabic-creed"
+
+[[text_sets]]
+id = "mozarabic-1500-benedictio-panis"
+adapter = "native-book:mozarabic-1500-benedictio-panis"
+
+[[text_sets]]
+id = "mozarabic-1804-benedictio-panis"
+adapter = "native-book:mozarabic-1804-benedictio-panis"
+
+[[comparisons]]
+id = "mozarabic-1500-1804-benedictio-panis"
+kind = "same-prayer-witness-comparison"
+membership_status = "established"
+basis = "Both identified printings carry the complete source-defined Benedictio panis, with the same heading, opening dialogue, Benedic Domine prayer, blessing and final sprinkling rubric. All nine ordered semantic units are independently collated. In the 1500 witness the blessing follows the final index and precedes the colophon; in 1804 it appears among preliminary blessings on p. XVI. The comparison aligns the complete blessing constituents, not the surrounding books."
+apparatus_caveat = "The transcriptions preserve edition-specific e/ae and presbiter/presbyter, with abbreviation expansion, long-s, u/v, i/j, case, punctuation, accents and line layout treated as declared in each artifact. Lexical agreement under those declared normalizations does not establish substantive prayer revision. The 1804 title identifies a new printing of the Cisneros book, but does not identify the immediate exemplar of this blessing. Neither bibliographic succession nor changed printed placement establishes direct 1500-to-1804 textual parentage or the date of relocation. No Git parent, inheritance, complete Ordinary or whole missal is claimed."
+source_refs = ["passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-extent", "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.benedictio-extent", "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.publication-date"]
+
+[comparisons.left]
+record_id = "western:mozarabic-1500"
+text_set = "mozarabic-1500-benedictio-panis"
+unit_ids = ["mozarabic.1500.benedictio.heading", "mozarabic.1500.benedictio.opening-versicles", "mozarabic.1500.benedictio.opening-greeting", "mozarabic.1500.benedictio.oratio-heading", "mozarabic.1500.benedictio.oratio", "mozarabic.1500.benedictio.closing-greeting", "mozarabic.1500.benedictio.blessing-heading", "mozarabic.1500.benedictio.blessing", "mozarabic.1500.benedictio.sprinkling"]
+
+[comparisons.right]
+record_id = "western:mozarabic-1804"
+text_set = "mozarabic-1804-benedictio-panis"
+unit_ids = ["mozarabic.1804.benedictio.heading", "mozarabic.1804.benedictio.opening-versicles", "mozarabic.1804.benedictio.opening-greeting", "mozarabic.1804.benedictio.oratio-heading", "mozarabic.1804.benedictio.oratio", "mozarabic.1804.benedictio.closing-greeting", "mozarabic.1804.benedictio.blessing-heading", "mozarabic.1804.benedictio.blessing", "mozarabic.1804.benedictio.sprinkling"]
+
+[[text_sets]]
+id = "mozarabic-1755-benedictio-panis"
+adapter = "native-book:mozarabic-1755-benedictio-panis"
+
+[[comparisons]]
+id = "mozarabic-1500-1755-benedictio-panis"
+label = "Complete Mozarabic bread blessing: 1500 and 1755"
+kind = "same-prayer-witness-comparison"
+membership_status = "established"
+basis = "Independent complete-constituent image collation covers all nine units of Benedictio panis in both identified editions. The 1500 presbiter becomes 1755 presbyter; the lexical rite is unchanged under the separately declared reading normalization."
+apparatus_caveat = "This comparison covers only the complete source-defined bread blessing. It does not establish substantive liturgical revision, whole-book textual completeness or a physical exemplar. Edition republication and apparatus dependence are separately documented; they do not establish the immediate transmission of this unchanged constituent. Native snapshots are independent roots with no Git parent or inherited text."
+source_refs = ["passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-extent", "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-extent"]
+[comparisons.left]
+text_set = "mozarabic-1500-benedictio-panis"
+record_id = "western:mozarabic-1500"
+unit_ids = ["mozarabic.1500.benedictio.heading", "mozarabic.1500.benedictio.opening-versicles", "mozarabic.1500.benedictio.opening-greeting", "mozarabic.1500.benedictio.oratio-heading", "mozarabic.1500.benedictio.oratio", "mozarabic.1500.benedictio.closing-greeting", "mozarabic.1500.benedictio.blessing-heading", "mozarabic.1500.benedictio.blessing", "mozarabic.1500.benedictio.sprinkling"]
+[comparisons.right]
+text_set = "mozarabic-1755-benedictio-panis"
+record_id = "latin-missal:mozarabicum-lesley-1755"
+unit_ids = ["mozarabic.1755.benedictio.heading", "mozarabic.1755.benedictio.opening-versicles", "mozarabic.1755.benedictio.opening-greeting", "mozarabic.1755.benedictio.oratio-heading", "mozarabic.1755.benedictio.oratio", "mozarabic.1755.benedictio.closing-greeting", "mozarabic.1755.benedictio.blessing-heading", "mozarabic.1755.benedictio.blessing", "mozarabic.1755.benedictio.sprinkling"]
+
+[[comparisons]]
+id = "mozarabic-1755-1804-benedictio-panis"
+label = "Complete Mozarabic bread blessing: 1755 and 1804"
+kind = "same-prayer-witness-comparison"
+membership_status = "established"
+basis = "Independent complete-constituent image collation covers all nine units of Benedictio panis in both identified editions. The 1755 e spellings become 1804 ae spellings in several words; the lexical rite agrees under the separately declared reading normalization. The prayer stands at 1755 p. 471 and in the 1804 preliminary blessings, p. XVI."
+apparatus_caveat = "This comparison covers only the complete source-defined bread blessing. It does not establish substantive liturgical revision, whole-book textual completeness or a physical exemplar. Edition republication and apparatus dependence are separately documented; they do not establish the immediate transmission of this unchanged constituent. Native snapshots are independent roots with no Git parent or inherited text."
+source_refs = ["passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-extent", "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.benedictio-extent"]
+[comparisons.left]
+text_set = "mozarabic-1755-benedictio-panis"
+record_id = "latin-missal:mozarabicum-lesley-1755"
+unit_ids = ["mozarabic.1755.benedictio.heading", "mozarabic.1755.benedictio.opening-versicles", "mozarabic.1755.benedictio.opening-greeting", "mozarabic.1755.benedictio.oratio-heading", "mozarabic.1755.benedictio.oratio", "mozarabic.1755.benedictio.closing-greeting", "mozarabic.1755.benedictio.blessing-heading", "mozarabic.1755.benedictio.blessing", "mozarabic.1755.benedictio.sprinkling"]
+[comparisons.right]
+text_set = "mozarabic-1804-benedictio-panis"
+record_id = "western:mozarabic-1804"
+unit_ids = ["mozarabic.1804.benedictio.heading", "mozarabic.1804.benedictio.opening-versicles", "mozarabic.1804.benedictio.opening-greeting", "mozarabic.1804.benedictio.oratio-heading", "mozarabic.1804.benedictio.oratio", "mozarabic.1804.benedictio.closing-greeting", "mozarabic.1804.benedictio.blessing-heading", "mozarabic.1804.benedictio.blessing", "mozarabic.1804.benedictio.sprinkling"]
+
+[[text_versions]]
+id = "tuki-1736-arabic-creed"
+text_set = "tuki-1736-arabic-creed"
+parents = []
+
+[[text_versions]]
+id = "mozarabic-1500-benedictio-panis"
+text_set = "mozarabic-1500-benedictio-panis"
+parents = []
+
+[[text_versions]]
+id = "mozarabic-1755-benedictio-panis"
+text_set = "mozarabic-1755-benedictio-panis"
+parents = []
+
+[[text_versions]]
+id = "mozarabic-1804-benedictio-panis"
+text_set = "mozarabic-1804-benedictio-panis"
+parents = []

@@ -1,0 +1,17 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.greek-catholic-church.liturgikon.1733-univ.nbuv-pdf-f9b65b35"
+edition_id = "edition.greek-catholic-church.liturgikon.1733-univ"
+artifact_type = "scan-pdf"
+media_type = "application/pdf"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "The exact NBUV Digital Library viewer carries a general NBUV copyright footer and no affirmative redistribution license located in that viewer. The separate Ukrainika collection's complete-text reproduction restriction is not silently applied to this different viewer. Permission to redistribute this entire hosted photographic artifact remains unestablished; the underlying 1733 text is a distinct rights object."
+source_url = "https://irbis-nbuv.gov.ua/E_LIB/PDF/00003633.pdf"
+provenance = "Followed NBUV record https://irbis-nbuv.gov.ua/dlib/item/0003876 to its complete offered PDF. The direct file request returned 403; the same public PDF.js viewer used as the HTTP Referer successfully delivered the full response: https://irbis-nbuv.gov.ua/pdfjs/web/viewer.html?file=/E_LIB/PDF/00003633.pdf . Inspected images 1, 3–4 and 638–646. All six appended read-Liturgy pages were inspected individually at two raster sizes, with the colophon checked at a larger size."
+retrieved = "2026-10-17"
+sha256 = "f9b65b356531ec4c1637bff58c6fa5392dcc4883970c6f0998a550a9535de0f7"
+byte_size = 95897086
+indexable = false
+page_count = 646
+notes = "All 646 offered images were acquired and hashed, but image 1 starts within an index and the printed title/front leaves are absent. Poppler reported incorrect stream lengths while rendering the inspected pages legibly. The 95,897,086-byte scan is not distributed because republication permission for this exact digital artifact is unresolved. Offline readers have the bibliographic identity and bounded passage observations, not the scan or a full transcription."

@@ -1,0 +1,446 @@
+{
+  "adapter_id": "native-book:mozarabic-1755-benedictio-panis",
+  "binding_sha256": "c094fd1bc024c5db9953850a6699089b3eaac9c0ef149f2bd538aa63d6e8ee57",
+  "catalogue_witness_ids": [
+    "latin-missal:mozarabicum-lesley-1755"
+  ],
+  "counts": {
+    "languages": {
+      "la": 9
+    },
+    "units": 9,
+    "whitespace_tokens": 137
+  },
+  "id": "mozarabic-1755-benedictio-panis",
+  "schema": "triptych-eucharistic-native-text/v1",
+  "scope": {
+    "complete_declared_extent": true,
+    "description": "Complete Benedictio panis on printed p. 471, from its heading at the top of the left column through the final sprinkling rubric in the right column. The ornament below and the following publication colophon are excluded.",
+    "extent_kind": "constituent",
+    "known_extent_pages": 1,
+    "known_extent_units": 9,
+    "omitted_book_divisions": [
+      "All other Missal divisions and appendices",
+      "Ornament below the blessing and following publication colophon"
+    ],
+    "status": "complete-native-constituent",
+    "whole_book_complete": false
+  },
+  "sources": [
+    {
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-panis-checked",
+      "record_type": "artifact",
+      "rights_basis": "The underlying 1755 Latin printing is public domain in the United States by expiration of its publication term. This faithful mechanical scan of the identified Florence copy adds no original authorship. No modern translation or protected scholarly apparatus is included. The historical text and third-party scan are excluded from Triptych’s CC BY 4.0 licence.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "transformation": "Reading transcription checked against the original JPEG2000 page, not the degraded PDF or provider OCR. Expand printed contractions and ampersands; normalize long-s, consonantal u/v and i/j, case, punctuation and line wrapping. Preserve the printed e spellings celum, anime, seculum and the y in presbyter. Preserve all lexical items, responses, priest/choir rubrics, all three crosses including San✠cti and both Amens. The original image clearly prints quinque; no conjectural restoration from another edition is used."
+    },
+    {
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ia-jp2-page590",
+      "record_type": "artifact",
+      "rights_basis": "The underlying 1755 Latin printing is public domain in the United States by expiration of its publication term. This faithful mechanical scan of the identified Florence copy adds no original authorship. No modern translation or protected scholarly apparatus is included. The historical text and third-party scan are excluded from Triptych’s CC BY 4.0 licence.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "source_url": "https://archive.org/download/bub_gb_hAJaQabODUYC/bub_gb_hAJaQabODUYC_jp2.zip/bub_gb_hAJaQabODUYC_jp2%2Fbub_gb_hAJaQabODUYC_0590.jp2"
+    },
+    {
+      "authority": "None. `Superiorum permissu` on the title page is the ordinary Roman printing licence and nothing more; the book is a bookseller's undertaking dedicated to the reigning pope, not a promulgation. Monaldini’s dedication explains why it was made: the Cisneros book had become so rare that it could not be had except for a great sum, and liturgical scholarship needed it in print again.",
+      "date": "1755",
+      "id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "language": "la",
+      "publication": "MISSALE MIXTUM SECUNDUM REGULAM BEATI ISIDORI DICTUM MOZARABES, PRAEFATIONE, NOTIS, ET APPENDICE AB ALEXANDRO LESLEO S. J. SACERDOTE ORNATUM. PARS PRIMA. ROMAE MDCCLV. Sumptibus Venantii Monaldini Bibliopolae in Via Cursus. TYPIS JOANNIS GENEROSI SALOMONI. SUPERIORUM PERMISSU. Dedicated by the bookseller Monaldini to Benedict XIV.",
+      "record_type": "edition",
+      "title": "Missale mixtum ... ab Alexandro Lesleo ornatum, Rome: Venantius Monaldini, 1755"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-panis-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-blessing",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-panis-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-blessing-heading",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-panis-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-closing-greeting",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-panis-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-heading",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-panis-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-opening-greeting",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-panis-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-opening-versicles",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-panis-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-oratio",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-panis-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-oratio-heading",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-panis-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-sprinkling",
+      "record_type": "passage"
+    }
+  ],
+  "stage_ids": [
+    "hispano-mozarabic-1755"
+  ],
+  "title": "Mozarabic Benedictio panis, 1755: complete constituent",
+  "units": [
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "heading",
+      "language": "la",
+      "native_path": [
+        "benedictio-panis",
+        "heading"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-panis-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-panis-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-heading",
+      "source_locator": "Benedictio panis: heading",
+      "source_order": 1,
+      "text": "Benedictio panis.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "text_sha256": "c769ef28a55ac5cb793346ee2cf78bf2c3141fc02b5101c79dce4fa2ad662af6",
+      "unit_id": "mozarabic.1755.benedictio.heading",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "dialogue",
+      "language": "la",
+      "native_path": [
+        "benedictio-panis",
+        "opening-versicles"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-panis-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-panis-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-opening-versicles",
+      "source_locator": "Benedictio panis: opening-versicles",
+      "source_order": 2,
+      "text": "℣. Adiutorium nostrum in nomine Domini.\n℟. Qui fecit celum et terram.\n℣. Sit nomen Domini benedictum.\n℟. Ex hoc nunc et usque in seculum.\n℣. Domine exaudi orationem meam.\n℟. Et clamor meus ad te veniat.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "text_sha256": "74dd37da20d480fb74eadaf22ab9b28d740fb0bd48dbe7d0d9bfb8641b164e83",
+      "unit_id": "mozarabic.1755.benedictio.opening-versicles",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "dialogue",
+      "language": "la",
+      "native_path": [
+        "benedictio-panis",
+        "opening-greeting"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-panis-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-panis-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-opening-greeting",
+      "source_locator": "Benedictio panis: opening-greeting",
+      "source_order": 3,
+      "text": "Dicat presbyter. Dominus sit semper vobiscum.\n℟. Et cum spiritu tuo.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "text_sha256": "40ef017cdc47ca1a7d1eb49338631cf9a5fc80215a8b5a60414ae385dd750921",
+      "unit_id": "mozarabic.1755.benedictio.opening-greeting",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "heading",
+      "language": "la",
+      "native_path": [
+        "benedictio-panis",
+        "oratio-heading"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-panis-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-panis-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-oratio-heading",
+      "source_locator": "Benedictio panis: oratio-heading",
+      "source_order": 4,
+      "text": "Oremus.\nOratio.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "text_sha256": "268dec6408c7fbf349deecd3db5eaeea70d42cc0778ef3628f3d1768a3d4e057",
+      "unit_id": "mozarabic.1755.benedictio.oratio-heading",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "benedictio-panis",
+        "oratio"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-panis-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-panis-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-oratio",
+      "source_locator": "Benedictio panis: oratio",
+      "source_order": 5,
+      "text": "Benedic Domine creaturam istam panis: sicut benedixisti quinque panes in deserto: ut omnes qui ex eo gustaverint: tam corporis quam anime recipiant sanitatem. Per Dominum nostrum Iesum Christum Filium tuum. Qui tecum vivit et regnat in unitate Spiritus Sancti Deus. Per omnia semper secula seculorum.\n℟. Amen.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "text_sha256": "741c3acd0da75ada6acc7ffd2899db50a37836cc6d8ddd738785f6bae5633eaa",
+      "unit_id": "mozarabic.1755.benedictio.oratio",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "dialogue",
+      "language": "la",
+      "native_path": [
+        "benedictio-panis",
+        "closing-greeting"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-panis-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-panis-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-closing-greeting",
+      "source_locator": "Benedictio panis: closing-greeting",
+      "source_order": 6,
+      "text": "Dicat presbyter. Dominus sit semper vobiscum.\nRespondeat chorus. Et cum spiritu tuo.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "text_sha256": "809ad94e107dfebffdb029b4fa86c11fefa1de0418ada0f64946a8a615e14038",
+      "unit_id": "mozarabic.1755.benedictio.closing-greeting",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "heading",
+      "language": "la",
+      "native_path": [
+        "benedictio-panis",
+        "blessing-heading"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-panis-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-panis-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-blessing-heading",
+      "source_locator": "Benedictio panis: blessing-heading",
+      "source_order": 7,
+      "text": "Benedictio.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "text_sha256": "a605c6596505357e52b84d48161943a62300a60c48946aadf25d0350201db1b7",
+      "unit_id": "mozarabic.1755.benedictio.blessing-heading",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "benedictio-panis",
+        "blessing"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-panis-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-panis-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-blessing",
+      "source_locator": "Benedictio panis: blessing",
+      "source_order": 8,
+      "text": "Benedictio Dei Patris omnipotentis ✠ et Filii ✠ et Spiritus San✠cti descendat et maneat super hanc creaturam panis.\n℟. Amen.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "text_sha256": "a6ebeb43d2b917c2299ea15308153c6fab5436026409acb027254a757dec80bb",
+      "unit_id": "mozarabic.1755.benedictio.blessing",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "benedictio-panis",
+        "sprinkling"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-panis-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-panis-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-sprinkling",
+      "source_locator": "Benedictio panis: sprinkling",
+      "source_order": 9,
+      "text": "Et statim aspergat aquam benedictam.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "text_sha256": "75371ee14c68664fb23d9dfadb7ed667ea9cd762bc5a00247a094c182394b586",
+      "unit_id": "mozarabic.1755.benedictio.sprinkling",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    }
+  ],
+  "witnesses": [
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ia-jp2-page590",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "copy",
+      "scope_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    }
+  ]
+}

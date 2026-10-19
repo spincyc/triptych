@@ -1,0 +1,18 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.bsb-complete-pdf"
+edition_id = "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804"
+artifact_type = "scan-pdf"
+media_type = "application/pdf"
+storage = "remote"
+rights_status = "permission"
+rights_basis = "The 1804 Latin text is public domain in the United States by expiration of its publication term. BSB supplies this digital copy under No Copyright–Non-Commercial Use Only 1.0, https://rightsstatements.org/vocab/NoC-NC/1.0/ ; this is a rights statement, not a Creative Commons license. Retained for noncommercial scholarly comparison with attribution: München, Bayerische Staatsbibliothek, Res/2 Liturg.222 m, bsb 10869679. Provider image conditions do not attach to underlying historical literary text. This third-party image is excluded from Triptych’s CC BY 4.0 license; no unrestricted image reuse is asserted."
+rights_jurisdiction = "United States"
+source_url = "https://download.digitale-sammlungen.de/pdf/17924264108888bsb10869679.pdf"
+provenance = "Institutional whole-book generator https://download.digitale-sammlungen.de/BOOKS/download.pl?id=bsb10869679&ersteseite=1&letzteseite=854&vers=en returned a download link labelled 744 MB for images 1–854. HEAD and bounded range GET first verified it on 2026-10-19; a subsequent complete GET returned all 744082515 bytes, which were locally hashed and inspected. exact response metadata is retained in artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.bsb-complete-pdf-retrieval. The earlier generated link /pdf/17922371198583bsb10869679.pdf had expired (404); fresh generation succeeded after earlier bounded attempts timed out."
+retrieved = "2026-10-19"
+sha256 = "c5eb4c0dc348d13aab77b35b4232c0c74c2a162a475bfbdca33c4362841784f9"
+byte_size = 744082515
+page_count = 855
+indexable = false
+notes = "The complete PDF was acquired in full on 2026-10-19: HTTP 200, 744082515 bytes, SHA-256 c5eb4c0dc348d13aab77b35b4232c0c74c2a162a475bfbdca33c4362841784f9. It contains 855 PDF pages: one modern BSB delivery cover followed by the 854 offered book-scan images. PDF image census confirms one scan image per page on pages 2–855; the cover and first book images were visually checked, and canvas 22 / printed p. XVI was directly verified at PDF page 23. Retaining this approximately 710 MiB payload in ordinary Git would substantially increase every checkout for a bounded nine-unit comparison; it remains remote for this measured artifact-specific size reason. Complete bytes were acquired and hashed locally, but are not retained in the repository. Offline checkout readers can open the exact retained title, complete blessing, reprinted colophon and editorial-method images, plus the complete checked blessing text; the other pages require the remote PDF. Generated URLs can expire; regenerate through the institutional whole-book form. Acquisition and page census do not establish physical completeness or complete-volume textual collation."

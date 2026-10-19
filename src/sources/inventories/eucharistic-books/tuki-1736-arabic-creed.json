@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-native-book",
+  "id": "tuki-1736-arabic-creed",
+  "title": "Tuki 1736: complete Arabic Creed constituent",
+  "scope": "The complete Arabic Creed, a source-defined spoken profession beginning after the red Creed rubric at part II p. 85 and ending with Amen at II p. 87 before the following red rubric. Every black Arabic body word in this expression is represented, with declared unvocalized reading normalization. This constituent excludes the parallel Coptic expression, rubrics, page furniture and all other book divisions; it is not the complete ordinary, missal or bilingual page.",
+  "transcribed_by": "AI source transcriber (Arabic Creed preparation)",
+  "stage_ids": [
+    "alexandrian-stages-coptic1736"
+  ],
+  "catalogue_witness_ids": [
+    "eastern:alex-coptic-1736"
+  ],
+  "components": [
+    "ordinary"
+  ],
+  "languages": [
+    "ar"
+  ],
+  "extent_kind": "constituent",
+  "excluded_book_divisions": [
+    "The parallel Coptic Creed expression on the same pages",
+    "The red rubric introducing the Creed and the red rubric following Amen",
+    "All other ordinary prayers, rubrics, three anaphoras, incense offices and appendices",
+    "Page numbers, ornament, line wrapping, catchwords and typographic vocalization as declared in the source transformation"
+  ],
+  "date": {
+    "kind": "publication",
+    "label": "1736 publication",
+    "start_year": 1736,
+    "end_year": 1736,
+    "evidence": [
+      {
+        "source_id": "segment.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.colophon",
+        "locus": "Original colophon, artifact page 672, completion 3 Baunah / 13 June 1736"
+      }
+    ]
+  },
+  "extent_path": "src/sources/inventories/eucharistic-books/support/tuki-1736-arabic-creed-extent.json",
+  "collation_path": "src/sources/inventories/eucharistic-books/support/tuki-1736-arabic-creed-review.json",
+  "witnesses": [
+    {
+      "id": "tuki-1736-bonn",
+      "edition_id": "edition.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki",
+      "artifact_id": "artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.bonn-pdf-add039d0",
+      "scope_pages": [
+        [
+          378,
+          380
+        ]
+      ],
+      "completeness_evidence": [
+        {
+          "source_id": "passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.creed-arabic-facsimile",
+          "locus": "Complete black Arabic Creed body in right columns II.85–87, bounded by the red rubrics; artifact pages 378–380. Neither physical completeness of the volume nor transcription of the adjacent Coptic column is claimed."
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "unit.tuki-1736.arabic.ordinary.creed",
+      "native_path": [
+        "ordinary",
+        "arabic-creed"
+      ],
+      "source_order": 1,
+      "language": "ar",
+      "component": "ordinary",
+      "kind": "creed",
+      "witness_id": "tuki-1736-bonn",
+      "witness_pages": [
+        [
+          378,
+          380
+        ]
+      ],
+      "passage_id": "passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.creed-arabic",
+      "text_sha256": "4e02d9636a901c11e54b90df85e053222ec5fdddf2b570217a9d0cf630f564c6"
+    }
+  ]
+}

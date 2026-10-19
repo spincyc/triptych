@@ -40,7 +40,9 @@ def drive(plan: dict) -> dict:
         script.write_text(harness, encoding="utf-8")
         result = subprocess.run(
             ["node", str(script), str(ROOT), json.dumps(plan), chrome],
-            cwd=ROOT, env={**os.environ, "TMPDIR": temporary},
+            # Chromium puts a Unix socket below TMPDIR. A deep worktree's
+            # absolute path can exceed its limit; cwd fixes this scratch path.
+            cwd=ROOT, env={**os.environ, "TMPDIR": str(Path(temporary).relative_to(ROOT))},
             capture_output=True, text=True, timeout=300,
         )
     if result.returncode:
@@ -95,7 +97,10 @@ class HistoryReceptionBrowserTests(unittest.TestCase):
             {"do": "cdp", "method": "Accessibility.getFullAXTree", "name": "ax"},
             {"do": "eval", "expression": "document.querySelector('.station[data-station=\"editio-typica-1962\"]').dispatchEvent(new Event('click')); document.querySelector('.station-interchange').focus()"},
             {"do": "cdp", "method": "Input.dispatchKeyEvent", "params": {
-                "type": "keyDown", "key": "Enter", "code": "Enter", "windowsVirtualKeyCode": 13}},
+                "type": "keyDown", "key": "Enter", "code": "Enter", "windowsVirtualKeyCode": 13,
+                "text": "\r", "unmodifiedText": "\r"}},
+            {"do": "cdp", "method": "Input.dispatchKeyEvent", "params": {
+                "type": "keyUp", "key": "Enter", "code": "Enter", "windowsVirtualKeyCode": 13}},
             {"do": "eval", "name": "hash", "expression": "location.hash"},
             {"do": "eval", "expression": "document.querySelector('.detail-receptions button').click()"},
             {"do": "wait", "until": "location.hash.includes('station=editio-typica-1962')"},
@@ -166,6 +171,51 @@ class HistoryReceptionBrowserTests(unittest.TestCase):
         ]})
         data = browser.spine("latin-missal")
         self.assertEqual(seen["receptions"], sum(len(row.get("receptions", [])) for row in data["stations"]))
+
+    def test_long_map_titles_and_selected_evidence_reflow_at_double_text_size(self):
+        data = browser.spine("latin-missal")
+        station = next(row for row in data["stations"]
+                       if row["id"] == "praemonstratense-argentorati-1510")
+        seen = drive({"acts": [
+            {"do": "cdp", "method": "Emulation.setDeviceMetricsOverride", "params": {
+                "width": 320, "height": 900, "deviceScaleFactor": 1, "mobile": False}},
+            {"do": "navigate", "url": browser.page("history", "slice=latin-missal&view=map")},
+            {"do": "wait", "until": "document.querySelector('.route-title')"},
+            {"do": "eval", "expression": "document.documentElement.style.fontSize = '200%'"},
+            {"do": "eval", "expression": "document.querySelector('[data-station=\"" + station["id"] + "\"]').focus()"},
+            {"do": "cdp", "method": "Input.dispatchKeyEvent", "params": {
+                "type": "keyDown", "key": "Enter", "code": "Enter", "windowsVirtualKeyCode": 13,
+                "text": "\r", "unmodifiedText": "\r"}},
+            {"do": "cdp", "method": "Input.dispatchKeyEvent", "params": {
+                "type": "keyUp", "key": "Enter", "code": "Enter", "windowsVirtualKeyCode": 13}},
+            {"do": "wait", "until": "document.querySelector('#detail .detail-title') && "
+                "document.querySelector('#detail .detail-title').textContent === " + json.dumps(station["title"])},
+            {"do": "eval", "name": "reflow", "expression": """(() => {
+              const visible = [...document.querySelectorAll(
+                '#historical-map .route-title, #historical-map .detail-list > *, #historical-map .link-button, #historical-map .line-index a'
+              )].filter(n => n.getBoundingClientRect().width > 0);
+              return {
+                client: document.documentElement.clientWidth,
+                scroll: document.documentElement.scrollWidth,
+                labels: [...document.querySelectorAll('.route-title-text')].map(n => n.textContent),
+                hash: location.hash,
+                evidence: document.querySelector('#detail .detail-list').textContent,
+                controls: visible.map(n => ({
+                  text: n.textContent, right: n.getBoundingClientRect().right,
+                  client: n.clientWidth, scroll: n.scrollWidth
+                }))
+              };
+            })()"""},
+        ]})["reflow"]
+        self.assertIn("station=" + station["id"], seen["hash"])
+        self.assertIn(station["date"], seen["evidence"])
+        self.assertEqual(set(seen["labels"]), {row["title"] for row in data["stations"]})
+        self.assertLessEqual(seen["scroll"], seen["client"] + 1)
+        self.assertTrue(seen["controls"])
+        for control in seen["controls"]:
+            with self.subTest(text=control["text"]):
+                self.assertLessEqual(control["right"], seen["client"] + 1)
+                self.assertLessEqual(control["scroll"], control["client"] + 1)
 
 
 if __name__ == "__main__":

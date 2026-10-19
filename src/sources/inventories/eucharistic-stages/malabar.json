@@ -18,8 +18,8 @@
       "title": "Ordo chaldaicus rituum et lectionum, Puttenpalli 1906",
       "url": "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3724391",
       "kind": "primary-book",
-      "inspection": "Reopened full-size original physical PDF 508 (1904 permission) and 6 (1905 approval and 1906 imprint); title PDF 510 inspected in prior acquisition.",
-      "checked_on": "2026-10-16",
+      "inspection": "Reopened full-size original physical PDF 508 (1904 permission) and 6 (1905 approval and 1906 imprint); title PDF 510 inspected in prior acquisition. Added section 55*–101* = whole PDF 69–23 identified, distinct from earlier appendix 1*–54*. Opening native headings PDF 69–67 and approval PDF 22 independently read on 2026-10-17; first entries Francis Xavier, Nicholas, Ambrose, Holy House and Lucy.",
+      "checked_on": "2026-10-17",
       "status": "inspected",
       "limitations": "Complete original scan held and registered; Syriac body and specific newly appended Masses not collated. Bonn physical page order is reversed for this RTL book."
     },
@@ -92,6 +92,16 @@
       "checked_on": "2026-10-16",
       "status": "inspected",
       "limitations": "Catalogue account only; reported 67-page extent differs from other edition descriptions and requires copy-level identification. No contact was sent."
+    },
+    {
+      "id": "stages-malabar-1905-propaganda-reply",
+      "title": "Propaganda Fide, Oriental affairs, protocol 19636, reply 10 August 1905, reproduced in Ordo Chaldaicus 1906",
+      "url": "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3724391",
+      "kind": "primary-act",
+      "inspection": "Original printed PDF 22 read independently by two researchers: Pareparambil petition 10 June 1905, Italian reply Rome 10 August 1905 signed Girolamo Rolleri, reporting the Rites letter of 31 July 1905. Registered passage added-masses-approval-and-opening binds the retained first-part hash 51510073251bd819cc9a662e88c04ffd33f396d4a6427aad9acab66ae9e5157b.",
+      "checked_on": "2026-10-17",
+      "status": "inspected",
+      "limitations": "The reply is reproduced in the 1906 book; the separately signed 31 July Rites letter was not acquired. The letter authorizes insertion of the submitted Masses but does not establish universal practical reception."
     }
   ],
   "stages": [
@@ -189,7 +199,7 @@
         "eastern:malabar-1906"
       ],
       "witness_label": "Ordo chaldaicus rituum et lectionum, Puttenpalli, Mar Thoma Sliha Press, 1906",
-      "summary": "Collects the ordinary; moves the three pre-Septuagesima Rogation readings into place; adds Masses approved in 1905.",
+      "summary": "Collects the ordinary, moves the three pre-Septuagesima Rogation readings into place, and adds the 1905-authorized Masses in a distinct 55*–101* section, beginning with December feasts.",
       "text_coverage": "not-transcribed",
       "evidence": [
         {
@@ -201,10 +211,20 @@
           "source_id": "stages-malabar-1906",
           "locus": "Physical PDF 6, 15 October 1905 approval and 1906 imprint",
           "claim": "Reports comparison with the exemplar and newly appended Masses approved by the Congregation of Rites on 31 July 1905."
+        },
+        {
+          "source_id": "stages-malabar-1905-propaganda-reply",
+          "locus": "Physical PDF 22",
+          "claim": "The reproduced 10 August 1905 official reply reports the Rites 31 July nulla osta for the requested insertion."
+        },
+        {
+          "source_id": "stages-malabar-1906",
+          "locus": "Added section 55*–57*/physical PDF 69–67",
+          "claim": "Opening native entries identify Francis Xavier (3 December), Nicholas (6 December), Ambrose (7 December), Holy House (10 December) and Lucy (13 December)."
         }
       ],
-      "limitations": "The censor’s report is primary evidence of additions, not our collation. Names and precise Syriac loci of the appended Masses remain unverified.",
-      "reception": "Printing authorized by Aloysius Pareparambil for Malabar Catholic use; no wider normative replacement is inferred."
+      "limitations": "The added section is located and its first named feasts are checked. Remaining feast and votive entries are not fully enumerated or transcribed; the older appendix 1*–54* is not all attributed to the 1905 permission.",
+      "reception": "Aloysius Pareparambil petitioned also on behalf of the other two Syrian apostolic vicars. Propaganda’s reply reports the Rites nulla osta for insertion; the 15 October 1905 imprimatur authorizes printing. Neither record establishes universal actual adoption."
     },
     {
       "id": "stages-malabar-vadakel-roman-exemplar",
@@ -485,14 +505,24 @@
         {
           "component": "propers",
           "before": "Newly approved Masses not included in the named earlier exemplar.",
-          "after": "Masses approved 31 July 1905 appended.",
+          "after": "Masses authorized in 1905 appended as a distinct 55*–101* section; opening December entries include Francis Xavier, Nicholas, Ambrose, Holy House and Lucy.",
           "locus_before": "Absence inferred only from the censor’s explicit description as newly added.",
-          "locus_after": "1906 PDF 6, 15 October 1905 approval.",
+          "locus_after": "Added section 55*–101*/PDF 69–23; first headings 55*–57*/PDF 69–67; official reply PDF 22; censor approval PDF 6",
           "evidence": [
             {
               "source_id": "stages-malabar-1906",
               "locus": "Physical PDF 6",
               "claim": "Reports newly appended Masses approved on 31 July 1905."
+            },
+            {
+              "source_id": "stages-malabar-1905-propaganda-reply",
+              "locus": "Physical PDF 22",
+              "claim": "The reproduced 10 August 1905 official reply reports the Rites 31 July nulla osta for the requested insertion."
+            },
+            {
+              "source_id": "stages-malabar-1906",
+              "locus": "Added section 55*–57*/physical PDF 69–67",
+              "claim": "Opening native entries identify Francis Xavier (3 December), Nicholas (6 December), Ambrose (7 December), Holy House (10 December) and Lucy (13 December)."
             }
           ]
         }
@@ -507,9 +537,14 @@
           "source_id": "stages-malabar-1906",
           "locus": "Physical PDF 6",
           "claim": "Reports newly appended Masses approved on 31 July 1905."
+        },
+        {
+          "source_id": "stages-malabar-1905-propaganda-reply",
+          "locus": "Physical PDF 22",
+          "claim": "The reproduced 10 August 1905 official reply reports the Rites 31 July nulla osta for the requested insertion."
         }
       ],
-      "limitations": "This records the book’s explicit description. It is not a claim of project-completed textual collation, nor an identification of each new Mass.",
+      "limitations": "The source describes insertion into the earlier exemplar, whose original pages are still uncollated. The new section and its first feast names are directly checked; no complete proper-body collation or complete added-Mass enumeration is claimed.",
       "comparison_ids": [],
       "historical_parentage": "established"
     },
@@ -747,9 +782,9 @@
       "id": "stages-malabar-new-masses",
       "tradition_id": "stages-malabar-tradition",
       "period": "1905–1906",
-      "missing": "Names and complete Syriac loci of newly appended Masses, and the original 31 July 1905 approval.",
-      "next_source": "Held 1906 Bonn PDF, rear proper material preceding physical PDF 6; Congregation of Rites act dated 31 July 1905 cited there.",
-      "consequence": "Addition is primary-described, not text-collated or individually enumerated."
+      "missing": "Complete enumeration and prayer-body collation of the added section 55*–101*. The section’s bounds, first five December feast labels and reproduced 10 August 1905 reply are now verified; the original separately signed 31 July 1905 Rites letter remains unacquired.",
+      "next_source": "Held 1906 PDF 69→23 for native added feast/votive entries, distinct from 1*–54*/PDF 125→72. PDF 22 reproduces Propaganda Oriental-affairs protocol 19636, 10 August 1905, replying to the 10 June petition and reporting the 31 July Rites nulla osta.",
+      "consequence": "The authority chain and exact added-section location are established; only the first five named feasts are independently identified, and the full change relative to the earlier exemplar remains uncollated."
     },
     {
       "id": "stages-malabar-1946-comparison",

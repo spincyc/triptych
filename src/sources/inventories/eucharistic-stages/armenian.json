@@ -59,8 +59,8 @@
       "title": "Կարգեալ սուրբ խորհուրդ պատարագի հայոց / Ordo divinae missae Armenorum (Rome: Propaganda Fide, 1642)",
       "url": "https://books.google.com/books?id=ct5lAAAAcAAJ",
       "kind": "primary-book",
-      "inspection": "All 148 available page IDs acquired as images. Visually read title PP5 and Creed sequence PA46–PA49, both Armenian and facing Latin. PA46 image has printed numeral 49 and PA49 image numeral 46; PA47 and PA48 have matching numerals. Read the transition from Creed Amen directly to the doxology on printed p. 48.",
-      "checked_on": "2026-10-16",
+      "inspection": "All 148 available page IDs acquired as images. Visually read title PP5 and Creed sequence PA46–PA49, both Armenian and facing Latin. PA46 image has printed numeral 49 and PA49 image numeral 46; PA47 and PA48 have matching numerals. Read the transition from Creed Amen directly to the doxology on printed p. 48. Front matter PP7/artifact 7 inspected: Vincentius Riccardus dates the review/emendation certificate Rome 6 May 1636. PP8/artifact 8 is Giovanni Molino’s undated Italian certificate comparing Latin and Armenian; PP9/artifact 9 has two imprimaturs. These are front matter, not a terminal colophon. Original title remains Rome 1642.",
+      "checked_on": "2026-10-17",
       "status": "inspected",
       "limitations": "Whole book acquired but not wholly read or transcribed. Google page IDs and printed pagination must both be retained. The work is an Armenian liturgy edited in Rome, not thereby a Roman-rite missal."
     },
@@ -69,20 +69,20 @@
       "title": "Խորհրդատետր պատարագին հայոց / Lyturgia Armena; Սպասաւորութիւն պատարագի / Ministerium Missae (Rome, 1677), Biblioteca Angelica copy",
       "url": "https://books.google.com/books?id=ZYYB9ymm0iAC",
       "kind": "primary-book",
-      "inspection": "All 96 available image IDs acquired. This bound digital object starts with Latin Codex mysterii missae Armenorum, then native Armenian Lyturgia and Ministerium. Visually read native title RA1-PP3; native Lyturgia pp. 6–9 = RA1-PP12–15, especially Creed/anathema/doxology p. 8; Ministerium title RA1-PA1. Parallel Melikian photographs independently checked title leaves and Ministerium pp. 21 and 25.",
-      "checked_on": "2026-10-16",
+      "inspection": "All 96 provider images acquired. Native Lyturgia pp. 1–20 and Ministerium pp. 1–30 visually surveyed; exact bounded Creed/anathema loci compared with 1823. Lyturgia title is artifact 41, printed pp. 1–2 are vesting prayers at 43–44; printed pp. 4–5 appear twice at 46–47 and 48–49. Printed p. 8 is artifact 52 / RA1-PP14. Ministerium service text pp. 2–19 precedes blank p. 20, Office corrections pp. 21–24 and hymnal corrections pp. 25–30. Whole PDF SHA-256 5f0b9eb92edbc3b2028e72e5017158be1942d89603917e1c00feca490f4462bc recomputed and matched.",
+      "checked_on": "2026-10-17",
       "status": "inspected",
-      "limitations": "Google describes the first Latin part as a 37-page book; its page manifest includes the Armenian books too. Do not misclassify native pages as Latin translation. Only specified pages collated; no complete transcription."
+      "limitations": "Native pages were structurally surveyed, not exhaustively transcribed or word-collated. The Latin Codex is a separately titled expression, not the native textual control. Repeated scan leaves do not create extra liturgical text or a different impression."
     },
     {
       "id": "armenian-eucharistic-stages:venice1823",
       "title": "Խորհրդատետր սրբոյ Պատարագին ըստ արարողութեան Հայաստանեայց եկեղեցւոյ համեմատ օրինակին տպելոյ ի Հռովմ 1677 (Venice: San Lazzaro, 1823), University of Michigan copy",
       "url": "https://books.google.com/books?id=r7gzAAAAMAAJ",
       "kind": "primary-book",
-      "inspection": "All 88 available page IDs acquired; title PA1 visually read, including Armenian-Church rite, explicit Rome 1677 exemplar, San Lazzaro imprint and 1823 date.",
-      "checked_on": "2026-10-16",
+      "inspection": "All 88 provider images acquired; title PA1/artifact 5 names Rome 1677 as exemplar. All printed pp. 5–80 visually surveyed against the native 1677 booklets. Creed, Nicene anathema and doxology occur pp. 40–41; institution narrative p. 50; epiclesis and bread/cup blessing pp. 51–53; Gospel bodies pp. 69–70; dismissal p. 71; Alleluia appendix pp. 72–80. Final six words of the anathema at p. 41/artifact 45 agree with 1677 p. 8/artifact 52 after line-wrap and punctuation normalization. Whole PDF SHA-256 81812bd4c2895111788582de47144fabb2500f9f923b22bb441274cbee7a8bb6 recomputed and matched.",
+      "checked_on": "2026-10-17",
       "status": "inspected",
-      "limitations": "This 80-page Michigan witness is not automatically the same format or copy as the LOC exhibition witness. Declared conformity is checked; identity of every prayer and rubric is not."
+      "limitations": "Whole retained sequence structurally surveyed; no exhaustive verbal identity or new normative reform established. Expanded Psalm/Gospel bodies and added supporting sections are changes in printed extent. This Michigan 80-page format is not automatically identical to the LOC exhibition copy."
     },
     {
       "id": "armenian-eucharistic-stages:eton1677latin",
@@ -275,9 +275,14 @@
           "source_id": "armenian-eucharistic-stages:rsl1642",
           "locus": "Language and collation fields",
           "claim": "Identifies bilingual Armenian/Latin edition, [4], 132, [2] pages."
+        },
+        {
+          "source_id": "armenian-eucharistic-stages:ordo1642",
+          "locus": "Front matter PP7–PP9 / artifact pages 7–9",
+          "claim": "A 6 May 1636 review/emendation certificate and undated Latin-Armenian comparison certificate precede the 1642 printing; approval and publication dates are distinct."
         }
       ],
-      "limitations": "Bounded Creed comparison only. Neither a complete diplomatic transcription nor proof of every relationship to earlier Armenian manuscripts.",
+      "limitations": "Bounded Creed comparison only. Neither a complete diplomatic transcription nor proof of every relationship to earlier Armenian manuscripts. The 1636 certificate does not date the printing or prove the later 1677 book’s complete ancestry.",
       "reception": "Published by the Catholic Propaganda Fide for Armenian liturgical use; the extent of local adoption is not established here."
     },
     {
@@ -298,10 +303,9 @@
       ],
       "witness_ids": [
         "eastern:arm-1677-liturgia",
-        "eastern:arm-1677-ministerium",
-        "eastern:arm-1823"
+        "eastern:arm-1677-ministerium"
       ],
-      "witness_label": "Խորհրդատետր պատարագին հայոց / Lyturgia Armena (20 pp.) + Սպասաւորութիւն պատարագի / Ministerium Missae (30 pp.); later claimed-conforming witness: San Lazzaro 1823",
+      "witness_label": "Խորհրդատետր պատարագին հայոց / Lyturgia Armena (20 pp.) + Սպասաւորութիւն պատարագի / Ministerium Missae (30 pp.)",
       "summary": "One complementary set: celebrant’s liturgy and ministers’ directions. The liturgy prints Armenian-form Creed, Nicene anathema and doxology. Ministerium appends corrections to Office and hymns.",
       "text_coverage": "not-transcribed",
       "evidence": [
@@ -314,14 +318,9 @@
           "source_id": "armenian-eucharistic-stages:bibliography1988",
           "locus": "p. 79, entry 103",
           "claim": "Describes the 20+30-page complementary set; corrections target Office 1667 and hymnal 1664."
-        },
-        {
-          "source_id": "armenian-eucharistic-stages:venice1823",
-          "locus": "PA1 title",
-          "claim": "The later San Lazzaro witness explicitly claims conformity to the Rome 1677 exemplar."
         }
       ],
-      "limitations": "The two works are not successive versions. Office/hymnal appendices do not establish revision of the entire Eucharistic chant corpus. Entry 104 is another impression of both titles, possibly later despite its 1677 imprint. 1823 is grouped as declared reception, not a newly proven recension.",
+      "limitations": "The two native works are complementary. Ministerium pp. 21–24 correct the Office and pp. 25–30 the hymnal; those appendices do not establish successive Eucharistic versions. The native Lyturgia has twenty numbered pages, with pp. 4–5 rescanned twice. Bibliography entry 104 is another impression of both titles, possibly later despite its 1677 imprint. Whole-book verbal collation remains incomplete.",
       "reception": "Catholic Armenian Roman edition, later explicitly followed by a Mkhitarist Armenian-Church book in 1823; universal use is not inferred."
     },
     {
@@ -441,6 +440,38 @@
       ],
       "limitations": "Primary decree and definitive book not acquired. Changes to particular prayers and rubrics remain unproved; 1987 demonstration is not treated as a separate edition.",
       "reception": "The retrospective reports prescription for all Armenian Catholic churches; implementation beyond the decree is not independently measured."
+    },
+    {
+      "id": "armenian-eucharistic-stages:venice1823-state",
+      "tradition_id": "armenian-eucharistic-stages:catholic",
+      "label": "Expanded printing following the Roman 1677 exemplar",
+      "date_label": "Venice, 1823: publication",
+      "start_year": 1823,
+      "end_year": 1823,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "An Armenian Eucharistic order expressly following Rome 1677, with expanded supporting texts and a longer presentation.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics",
+        "chant"
+      ],
+      "witness_ids": [
+        "eastern:arm-1823"
+      ],
+      "witness_label": "Խորհրդատետր սրբոյ Պատարագին, Venice: San Lazzaro, 1823, Michigan 80-page copy",
+      "summary": "The title names Rome 1677 as its exemplar. The Creed–Nicene anathema–doxology sequence persists. Psalm and Gospel texts are printed at greater length, and supporting sections surround the service.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "armenian-eucharistic-stages:venice1823",
+          "locus": "Title p. 1; pp. 19–20, 40–41, 69–80",
+          "claim": "Declared exemplar, retained anathema and expanded displayed text are directly visible."
+        }
+      ],
+      "limitations": "A separately dated reception witness, not a demonstrated new normative recension. A structural survey cannot establish every prayer or rubric as identical, and this copy’s exact relation to other 1823 formats remains open.",
+      "reception": "Mkhitarist San Lazzaro publication expressly claims conformity to Rome 1677; universal Armenian Catholic use is not inferred."
     }
   ],
   "transitions": [
@@ -550,6 +581,59 @@
       "limitations": "Not directly collated from manuscript images. The 1636 date belongs to the composite copy, not the correction event; calendar and Mass hands may differ. The calendar alteration is not attributed to the 1677 book. Exact Mass readings are missing.",
       "comparison_ids": [],
       "historical_parentage": "attributed"
+    },
+    {
+      "id": "armenian-eucharistic-stages:rome1677-venice1823-reception",
+      "from_stage": "armenian-eucharistic-stages:rome1677-state",
+      "to_stage": "armenian-eucharistic-stages:venice1823-state",
+      "kind": "reception",
+      "status": "documented",
+      "evidence_level": "text-collated",
+      "summary": "The 1823 title declares reception of Rome 1677. Its Creed retains the Nicene anathema while its presentation expands supporting texts.",
+      "components": [
+        "ordinary"
+      ],
+      "changes": [
+        {
+          "component": "ordinary",
+          "before": "The twenty-page celebrant booklet gives concluding-Gospel direction and incipit.",
+          "after": "The longer service prints the Gospel bodies John 1:1–14 and John 21:15–22.",
+          "locus_before": "Lyturgia 1677 p. 19 / artifact 63",
+          "locus_after": "Venice 1823 pp. 69–70 / artifacts 73–74",
+          "evidence": [
+            {
+              "source_id": "armenian-eucharistic-stages:rome1677",
+              "locus": "p. 19",
+              "claim": "Concluding-Gospel direction and incipit are visible."
+            },
+            {
+              "source_id": "armenian-eucharistic-stages:venice1823",
+              "locus": "pp. 69–70",
+              "claim": "The corresponding Gospel bodies are printed."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "armenian-eucharistic-stages:venice1823",
+          "locus": "p. 1",
+          "claim": "The title explicitly names the Rome 1677 exemplar."
+        },
+        {
+          "source_id": "armenian-eucharistic-stages:rome1677",
+          "locus": "p. 8 / artifact 52",
+          "claim": "The Nicene anathema follows the Creed."
+        },
+        {
+          "source_id": "armenian-eucharistic-stages:venice1823",
+          "locus": "p. 41 / artifact 45",
+          "claim": "The anathema persists, including an image-checked six-word ending agreeing with 1677."
+        }
+      ],
+      "limitations": "The declared exemplar establishes reception of the named edition, not descent from this particular surviving copy. Expanded display of a Gospel does not establish that the 1823 printing introduced its ritual prescription. No whole-book word identity or reform act is asserted.",
+      "comparison_ids": [],
+      "historical_parentage": "established"
     }
   ],
   "gaps": [
@@ -565,8 +649,8 @@
       "id": "armenian-eucharistic-stages:gap-1642-ancestry",
       "tradition_id": "armenian-eucharistic-stages:catholic",
       "period": "1630s–1677",
-      "missing": "Full revision dossiers and direct exemplar genealogy; reason for Ohanjanyan’s 1646 date.",
-      "next_source": "1642 approvals and Italian colophon now acquired; Propaganda Fide editorial records; compare the complete 1642 and 1677 scans and Ohanjanyan n. 121.",
+      "missing": "Direct complete exemplar genealogy and editorial revision dossier; reason for Ohanjanyan’s 1646 bibliographic date. The approval/publication chronology is now distinguished.",
+      "next_source": "The 1642 front-matter review dated 6 May 1636 and Italian Latin-Armenian comparison certificate have been read; exact Propaganda Fide editorial dossiers, any genuine 1646 printing and Ohanjanyan n. 121 remain to be checked.",
       "consequence": "Bounded Creed difference is established; whole-book direct parentage remains unestablished."
     },
     {
@@ -581,9 +665,9 @@
       "id": "armenian-eucharistic-stages:gap-1823",
       "tradition_id": "armenian-eucharistic-stages:catholic",
       "period": "1677–1823",
-      "missing": "Complete comparison testing the 1823 title’s conformity claim and identifying differences among 1823 formats.",
+      "missing": "Exhaustive word-level and rubric collation, and comparison of the Michigan 80-page printing with other 1823 formats; the retained native sequences have now been structurally surveyed.",
       "next_source": "Acquired 1677 native Lyturgia and 1823 Michigan 80-page witness; LOC 1823 exhibition copy; Armenian bibliography 1801–1850 entries 422–423.",
-      "consequence": "1823 is a declared-conforming witness within the 1677 state, not a separate reform."
+      "consequence": "The declared 1677 reception, retained anathema and expanded displayed text are documented; a separate normative reform remains unproved."
     },
     {
       "id": "armenian-eucharistic-stages:gap-1722",

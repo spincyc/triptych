@@ -21,6 +21,7 @@ from urllib.parse import quote, urlsplit
 SCHEMA = "triptych-eucharistic-history/v1"
 CORPUS_SCHEMA = "triptych-eucharistic-corpus/v1"
 COMPARISON_SCHEMA = "triptych-eucharistic-witness-comparison/v1"
+NATIVE_TEXT_SCHEMA = "triptych-eucharistic-native-text/v1"
 COMPARISON_KINDS = {"same-prayer-witness-comparison": "same-prayer-witnesses",
                     "parallel-liturgical-unit-comparison": "parallel-function-not-same-composition"}
 RELATIONSHIP_SCHEMA = "eucharistic-history-relationships"
@@ -444,6 +445,19 @@ def catalogue(source: Path, root: Path, *, act_loader) -> dict:
         raise HistoryError(f"stage history: {error}") from error
     for stamp in stage_history["inputs"]:
         inputs[stamp["path"]] = stamp
+    native_texts = {}
+    for stage in stage_history["stages"]:
+        if "text_binding" not in stage:
+            continue
+        # The stage loader has checked the binding, extent, rights and exact
+        # catalogue witnesses. One constituent is stored once across stages.
+        identifier = stage["text_binding"].removeprefix("native-book:")
+        projection_path = f"native-texts/{identifier}.json"
+        binding_hash = inputs[f"src/sources/inventories/eucharistic-books/{identifier}.json"]["sha256"]
+        stage["text_projection_path"] = projection_path
+        stage["text_binding_sha256"] = binding_hash
+        native_texts[identifier] = {"id": identifier, "adapter_id": stage["text_binding"],
+                                    "projection_path": projection_path, "binding_sha256": binding_hash}
     entries.sort(key=lambda row: row["id"])
     return {"schema": SCHEMA, "scope_ref": data["scope_ref"], "entries": entries,
             "counts": {"entries": len(entries), "substantive_established": sum(e["substantive_status"] == "substantive-established" for e in entries),
@@ -452,6 +466,7 @@ def catalogue(source: Path, root: Path, *, act_loader) -> dict:
                        "relationships": len(relations), "relationship_entities": len(entities), "presentation_groups": len(groups),
                        "unmapped_families": sum(group["status"] == "unmapped" for group in groups)},
             "text_sets": text_sets,
+            "native_texts": [native_texts[key] for key in sorted(native_texts)],
             "comparisons": comparisons, "relationships": relations, "relationship_entities": entities, "presentation_groups": groups,
             "stage_history": stage_history,
             "holdings": holdings, "inputs": sorted(inputs.values(), key=lambda row: row["path"]),
@@ -463,6 +478,47 @@ def catalogue(source: Path, root: Path, *, act_loader) -> dict:
                             "Presentation groups label source-family aliases; their count is not a census of rites or Churches.",
                             "No complete-book claim or all-tradition completeness claim is made.",
                             "Legacy promulgated act chains retain recorded-unit inheritance; departure-effect status is not a text-continuity audit."]}
+
+
+def native_text(adapter_id: str, root: Path) -> dict:
+    """Project accepted native wording and its public citation, never raw OCR."""
+    from _eucharistic_texts import load_adapter, AdapterError, NATIVE_BOOK_PREFIX
+    identifier = adapter_id.removeprefix(NATIVE_BOOK_PREFIX)
+    if not adapter_id.startswith(NATIVE_BOOK_PREFIX) or not SLUG.fullmatch(identifier):
+        raise HistoryError("native text projection requires an exact native-book binding")
+    try:
+        payload = load_adapter(adapter_id, root)
+    except AdapterError as error:
+        raise HistoryError(f"native text projection: {error}") from error
+    binding = payload["book_binding"]
+    sources = {row["id"]: row for row in payload["sources"]}
+    # This is a reading projection, not the source-library manifests. Only
+    # public citation and normalization fields cross this boundary.
+    source_fields = ("id", "record_type", "edition_id", "artifact_id", "title", "publication", "date", "authority",
+                     "language", "source_url", "rights_status", "rights_basis",
+                     "rights_jurisdiction", "transformation")
+    cited = set()
+    units = []
+    for unit in payload["units"]:
+        cited.update((unit["source_id"], unit["source_artifact_id"], unit["text_edition_id"]))
+        language = unit["language"]
+        units.append({key: unit[key] for key in
+                      ("unit_id", "source_order", "native_path", "component", "kind", "language",
+                       "text", "text_sha256", "witness_id", "witness_pages", "source_id",
+                       "source_artifact_id", "text_edition_id", "publication")})
+        units[-1].update(direction="rtl" if language.split("-")[0] in ("ar", "he", "syr", "arc") else "ltr",
+                         source_locator=unit["provenance"]["source_locator"])
+    for witness in binding["witnesses"]:
+        cited.update((witness["edition_id"], witness["artifact_id"]))
+    return {"schema": NATIVE_TEXT_SCHEMA, "id": identifier, "adapter_id": adapter_id,
+            "title": payload["title"], "stage_ids": binding["stage_ids"],
+            "catalogue_witness_ids": binding["catalogue_witness_ids"],
+            "binding_sha256": binding["sha256"], "scope": payload["scope"], "counts": payload["counts"],
+            "witnesses": [{key: witness[key] for key in ("id", "edition_id", "artifact_id", "scope_pages")}
+                          for witness in binding["witnesses"]],
+            "sources": [{key: sources[identifier][key] for key in source_fields if key in sources[identifier]}
+                        for identifier in sorted(cited)],
+            "units": units}
 
 
 def write_catalogue(payload: dict, out: Path, *, check: bool = False) -> dict:
