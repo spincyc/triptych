@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.internet-archive.catalogue-and-reader-metadata.2026-10-20-response-states.raw-ia-holyweek-e5bdea26"
+edition_id = "edition.internet-archive.catalogue-and-reader-metadata.2026-10-20-response-states"
+artifact_type = "catalogue-or-service-response"
+media_type = "application/json"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "No complete-host-response redistribution basis was established. Exact raw bytes may include host presentation, descriptions, user-associated metadata or unrelated records; those are not admitted through the independently justified factual extract. Public access is not used as a blanket licence."
+source_url = "https://archive.org/advancedsearch.php?q=%28title%3A%22ordo+hebdomadae%22+OR+title%3A%22ordo+sabbati%22+OR+title%3A%22preces+eucharisticae%22+OR+title%3A%22ritus+servandus%22%29&output=json&rows=100"
+provenance = "Complete dated provider response acquired 20 October 2026 by GET; parameters: {}. Exact input hash and byte count verified. Raw response is metadata only, not a liturgical-body acquisition."
+retrieved = "2026-10-20"
+sha256 = "e5bdea267877e1f096d9fa3cdf605c7ca4d3b1b1ee657d191913102728982b50"
+byte_size = 5192
+indexable = false
+notes = "Raw response withheld. An offline checkout can inspect the linked retained factual derivative with its declared field scope and exact input hash, but cannot reopen this complete host response. A licence reaching these exact bytes or an independently reviewed complete-response basis would permit reconsideration."

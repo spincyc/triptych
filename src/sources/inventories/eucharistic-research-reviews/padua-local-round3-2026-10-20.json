@@ -1,0 +1,448 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "padua-local-round3-2026-10-20",
+  "title": "Padua E.57 local rubrics, D.30 chant witness and separately qualified manuscript holdings",
+  "lane": "padua-local-round3",
+  "side": "western",
+  "checked_on": "2026-10-20",
+  "reviewed_on": "2026-10-20",
+  "coverage_rows": [
+    "italian-padua"
+  ],
+  "target_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+  "review_files": {
+    "packet_sha256": "32d84ede2ceb0bfdd1fca46a3def4e8dcfa70575e394673542f76a212b51ef78",
+    "packet_pin_sha256": "8b45a97a28fc78fba732f78376fa2386e01c6f4063307eb493484f931da5e063",
+    "independent_review_sha256": "30a609f4641e56bdda11b39dce38f2d06d35c9a2783fd54c9a6705f2ce97b626",
+    "acquisition_manifest_sha256": "24dc8bc95cfe3127d2f5a442ab7bda55d7abd53329ce34f2e21ea23532e54fb0",
+    "control_url_addendum_sha256": "3cb8fae1fa9f3d22b8f55aa400db1b0cc3dfeae3beb683791afbca8f5e46a4d5",
+    "verdict": "accept-two-bounded-source-described-states-with-required-qualifications"
+  },
+  "integration": {
+    "new_source_ids": [
+      "italian-padua-bellinati-2014",
+      "italian-padua-toigo-passio-thesis",
+      "italian-padua-diocese-exhibit-2021",
+      "italian-padua-calendaria-d30",
+      "italian-padua-leto-2025",
+      "italian-padua-lovato-processioni-abstract",
+      "italian-padua-vildera-genealogia-2013"
+    ],
+    "new_candidate_ids": [
+      "italian-padua-e57",
+      "italian-padua-b26",
+      "italian-padua-b31-1328",
+      "italian-padua-cholet-c47-d34"
+    ],
+    "existing_candidate_updates": [
+      "italian-padua-d30"
+    ],
+    "new_stage_ids": [
+      "padua-local-round3:e57-eucharistic-rubrics",
+      "padua-local-round3:d30-chant-witness"
+    ],
+    "new_transitions": 0,
+    "corrections": [
+      {
+        "id": "cholet-identification-tentative",
+        "disposition": "applied; Bellinati p. 43 sembra preserved separately from firm D.34 catalogue identity"
+      },
+      {
+        "id": "human-prose-spacing",
+        "disposition": "applied; IDs and shelfmarks preserved"
+      },
+      {
+        "id": "control-source-url",
+        "disposition": "corrected only from the hashed author addendum; control is not a proposed source/stage"
+      },
+      {
+        "id": "b26-planned-altar",
+        "disposition": "qualified 1352 destination versus 1357 construction; no 1352 celebration claim"
+      }
+    ],
+    "existing_dossier_change": "Only the existing Padua gap wording changed; stable IDs and unrelated content preserved.",
+    "fingerprint_refresh": "Pending final reviewed input freeze."
+  },
+  "uses": [
+    {
+      "object": "E.57 Eucharistic rubrics",
+      "sources": [
+        "https://www.istitutostoriaecclesiasticapadovana.net/fonti/27.html",
+        "https://drive.google.com/file/d/1iizNbac1eXOmsDRu6tqb8HDdRWL-vLCY/view",
+        "https://www.padovauniversitypress.it/system/files/download-count/attachments/2026-01/9788869384837.pdf"
+      ],
+      "loci": "Bellinati printed77-78/PDF109-110 original page images; Leto printed87-88/PDF88-89 original page images, nn55/59; ISEP publisher card.",
+      "finding": "Bellinati explicitly describes Thursday Mass, consecrated bread and reservation at ordinal ff89v-92v, and Friday celebrant communion at ff92v-95r. The later post-prandium procession is separately attributed to C56f60 and is properly excluded. Leto cites E.57 edition127g before Easter Missa maior and 140e before Ascension solemn Mass. These are precise local rubrical loci, not a generic ritual-title inference."
+    },
+    {
+      "object": "E.57 date and Office control",
+      "sources": [
+        "https://ojs.zrc-sazu.si/dmd/article/download/2202/1961/0",
+        "https://www.padovauniversitypress.it/system/files/download-count/attachments/2026-01/9788869384837.pdf"
+      ],
+      "loci": "Vildera printed p. 139 original first-page image, 153 source list; Leto printed p. 86; ISEP publisher card.",
+      "finding": "First-page image clearly names Anna Vildera. Her c. 1256–1275 E.57 c. 43v text concerns Christmas Matins; it is correctly not imported as Mass text. Leto gives 1234–1304; publisher gives thirteenth century. A 1201–1300 plotting coordinate is explicitly the selected publisher-century attestation, not first use or an independently dated period of implementation."
+    },
+    {
+      "object": "D.30 date/component dispute",
+      "sources": [
+        "https://liturgicum.irht.cnrs.fr/manuscrit/616628",
+        "https://www.calendaria.org/calendaria.html",
+        "https://tesidottorato.depositolegale.it/bitstream/20.500.14242/109890/4/TESI_DEFINITIVA.pdf",
+        "https://ufficiostampa.diocesipadova.it/wp-content/uploads/sites/19/2021/12/04_scheda-codici_incunaboli.pdf"
+      ],
+      "loci": "Preserved IRHT HTML fields64-85; Bellinati printed44 original image n22; Calendaria D.30 row; Toigo printed48/PDF86 original image and n153; Diocese2021 item13/PDF2.",
+      "finding": "IRHT1301-1310 conflicts with Bellinati post1323 and Calendaria c1338. Toigo says early-fourteenth-century Roman Missal, Padua provenance, Matthew c70r/v and Mark c74r/v, with a very short visible Matthew melody crop. Official item13 identifies f20v Epiphany introit. This supports a scoped chant witness but no full Missal contents, actual altar-use date or local recension. Null stage dates and removal of narrow candidate plotting dates are appropriate."
+    },
+    {
+      "object": "Other holdings",
+      "loci": "Bellinati printed43-44/PDF75-76; Toigo printed47n151; Diocese2021 item4/PDF1.",
+      "finding": "B.26 is tied to Conti’s 1352 bequest/altar destination, B.31 to reported 5 October 1328 colophon and Roman-Franciscan use, and D.34 to Paris 1281–1292 Franciscan contents. No state for these is proposed. C.47/D.34 complementary volumes must not count as two recension versions or a complete surviving three-volume book."
+    },
+    {
+      "object": "Combined chant siglum",
+      "loci": "Corpus Troporum X A printed28 and 85 original page images.",
+      "finding": "Pad16/57 combines B16* and E.57. Its high folio numbers247ff cannot be silently assigned to ordinal E.57. Packet rejection of this shortcut is appropriate, as are separate treatment of D.47 Gregorian transmission, Passau Pataviense and Leto MFR prayers."
+    }
+  ],
+  "sources": [
+    {
+      "id": "italian-padua-bellinati-2014",
+      "url": "https://drive.google.com/file/d/1iizNbac1eXOmsDRu6tqb8HDdRWL-vLCY/view",
+      "type": "published-original-archival-and-manuscript-study",
+      "inspection": "Complete 2014 Claudio Bellinati, Contributo alla storia della cattedrale di Padova nell'età di Giotto e della cappella Scrovegni, 201-page publisher-linked PDF acquired. Printed pp. 26–29, 43–45, 56, 74–79 inspected; pp. 44, 77–78 checked against page images. D.30 is post-1323 and associated with Cathedral Inventory 1350 f. 14v; E.57 Thursday Mass and reservation are described at ff. 89v–92v, Friday communion at ff. 92v–95r. The exact original E.57 leaves and archival inventories were not acquired. Publisher landing route https://www.padovaeilsuoterritorio.it/archivio/quaderni links this public download. At p. 43 the C.47/D.34–Cholet identification is tentative (sembra); p. 44 distinguishes the planned 1352 Holy Cross altar destination from its 1357 construction."
+    },
+    {
+      "id": "italian-padua-toigo-passio-thesis",
+      "url": "https://tesidottorato.depositolegale.it/bitstream/20.500.14242/109890/4/TESI_DEFINITIVA.pdf",
+      "type": "university-original-manuscript-study",
+      "inspection": "Whole Diego Toigo, Intonazioni monodiche della Passione in Italia fra i secoli XIII e XVI, doctoral dissertation, 228-page PDF acquired. Printed pp. 47–48 and manuscript crop on p. 48 checked against image. D.30 is expressly Missale Romanum, early fourteenth century, with Matthew Passion melody at c. 70r/v and Mark at c. 74r/v; B.31 is expressly Roman use for Padua Friars Minor (p. 47 n. 151). Crop does not constitute inspection of the complete original leaf or whole Mass formulary."
+    },
+    {
+      "id": "italian-padua-diocese-exhibit-2021",
+      "url": "https://ufficiostampa.diocesipadova.it/wp-content/uploads/sites/19/2021/12/04_scheda-codici_incunaboli.pdf",
+      "type": "official-diocesan-manuscript-exhibition-list",
+      "inspection": "Entire two-page 21 December 2021 Diocese of Padua Ecce advenit list acquired and inspected. Item 13 names D.30 f. 20v, Epiphany introit Ecce advenit, fourteenth century, Padua. Item 4 identifies D.34 f. 17v as Paris 1281–1292 Franciscan Missal, Christmas major Mass. These are catalogue descriptions of identified leaves, not a direct reading of the original leaves or proof of a distinct Padua recension."
+    },
+    {
+      "id": "italian-padua-calendaria-d30",
+      "url": "https://www.calendaria.org/calendaria.html",
+      "type": "specialist-manuscript-calendar-repertoire",
+      "inspection": "Complete public Calendaria HTML acquired. Padova Biblioteca Capitolare-Archivio D.30 row reports c. 1338, Padova Duomo. This disagrees with IRHT 616628's 1301–1310 copying range; neither value is silently substituted for the other. The calendar row is a specialist index, not inspected original calendar evidence."
+    },
+    {
+      "id": "italian-padua-leto-2025",
+      "url": "https://www.padovauniversitypress.it/system/files/download-count/attachments/2026-01/9788869384837.pdf",
+      "type": "university-published-manuscript-study",
+      "inspection": "Whole 150-page Inferno e Paradiso, first edition 2025 (not 2026 URL year), acquired. Francesca Leto chapter pp. 86–88 inspected and pp. 87–88 checked against images. Notes 55 and 59 cite E.57 edited sections 127g (Easter procession before Missa maior) and 140e (Ascension procession before solemn Mass). P. 86 reports wider date 1234–1304. The chapter's separate Franciscan Missal exemplar MFR is not E.57 and is not used to supply E.57 prayers."
+    },
+    {
+      "id": "italian-padua-lovato-processioni-abstract",
+      "url": "https://www.research.unipd.it/handle/11577/1352018",
+      "type": "university-research-repository",
+      "inspection": "Complete IRIS record acquired; abstract and file-availability section inspected. Author Antonio Lovato's abstract identifies the 2002 study as direct examination of E.57 and other named cathedral books, including chants prescribed for Mass and Office in local thirteenth–fifteenth-century processions. The record explicitly has no attached file. An abstract is not the full contribution or original manuscript collation."
+    },
+    {
+      "id": "italian-padua-vildera-genealogia-2013",
+      "url": "https://ojs.zrc-sazu.si/dmd/article/download/2202/1961/0",
+      "type": "published-original-manuscript-study",
+      "inspection": "Complete 17-page Anna Vildera, Formulari processionali per il canto del Vangelo Liber generationis, De musica disserenda IX/1–2 (2013), pp. 139–155, acquired. P. 139 and source list p. 153 identify E.57 c. 43v, dated c. 1256–1275. Its printed rubric concerns Christmas Matins and is not counted as a Mass proper or complete Eucharistic book."
+    }
+  ],
+  "versions": [
+    {
+      "id": "italian-padua-e57",
+      "family": "padua-manuscript-holding",
+      "title": "Padua Cathedral Liber ordinarius E.57: local Eucharistic rubrics",
+      "date": "Thirteenth-century manuscript; narrower c. 1256–1275 in Vildera 2013, wider 1234–1304 in Leto 2025",
+      "kind": "manuscript-local-order-book-witness",
+      "status": "local-rubrics-documented-through-manuscript-studies",
+      "sources": [
+        "italian-padua-e57-source",
+        "italian-padua-bellinati-2014",
+        "italian-padua-leto-2025",
+        "italian-padua-lovato-processioni-abstract",
+        "italian-padua-vildera-genealogia-2013"
+      ],
+      "source_locus": "Bellinati 2014 pp. 26–29, 77–78: E.57 ff. 1r–7v, 89v–92v, 92v–95r; Leto 2025 pp. 87–88 nn. 55, 59: E.57 edited sections 127g, 140e.",
+      "qualification": "A cathedral order book with explicitly local Mass rubrics, not a complete Padua Missal or an independently collated recension. The primary manuscript and complete 2002 edition/facsimile remain unacquired. E.57's Christmas Matins rubric c. 43v and Leto's separate Franciscan exemplar MFR are not imported as E.57 Eucharistic text.",
+      "scope_disposition": "in-scope-original-book-or-historical-witness",
+      "version_status": "bounded-rubrical-witness-state-not-proven-recension",
+      "date_role": "manuscript-attestation-range",
+      "chronology_start": 1201,
+      "chronology_end": 1300,
+      "chronology_kind": "manuscript-witness-date",
+      "chronology_certainty": "publisher-century-with-qualified-scholarly-ranges",
+      "acquisition_status": "full-studies-acquired-original-manuscript-not-acquired",
+      "transcription_status": "no-new-verified-transcription",
+      "collation_status": "named-scholarly-loci-inspected-original-not-fully-collated"
+    },
+    {
+      "id": "italian-padua-b26",
+      "family": "padua-manuscript-holding",
+      "title": "Padua Cathedral B.26: Ildebrandino Conti's missal",
+      "date": "Attested in bequest 24 September 1352; copying date not established here",
+      "kind": "manuscript-missal-holding-witness",
+      "status": "sourced-ownership-and-altar-destination-not-collated",
+      "sources": [
+        "italian-padua-bellinati-2014"
+      ],
+      "source_locus": "Bellinati 2014 p. 44 and n. 20: B.26, bequest 24 September 1352 for cathedral Holy Cross altar, Inventory 1350 f. 12v; cites Bernardinello 2007 I pp. 205–209.",
+      "qualification": "Identified physical missal and local ownership/destination. No copying date, complete contents, actual celebration or independent Padua recension is established by this bequest report. No dated stage proposed. Bellinati, p. 44, describes the 1352 destination as a Holy Cross altar then planned, actually built in 1357; the bequest does not establish celebration at that altar in 1352.",
+      "scope_disposition": "in-scope-original-book-or-historical-witness",
+      "version_status": "holding-witness-not-proven-recension",
+      "date_role": "reported-ownership-and-destination-not-copying-date",
+      "chronology_layout": "unpositioned-pending-manuscript-copying-date",
+      "acquisition_status": "full-study-acquired-original-not-acquired",
+      "transcription_status": "no-verified-transcription",
+      "collation_status": "not-fully-collated"
+    },
+    {
+      "id": "italian-padua-b31-1328",
+      "family": "padua-manuscript-holding",
+      "title": "Padua B.31: Roman Missal for the city's Friars Minor",
+      "date": "5 October 1328, colophon reported by Bellinati 2014",
+      "kind": "manuscript-roman-franciscan-missal-witness",
+      "status": "scholarly-described-colophon-and-use-original-uninspected",
+      "sources": [
+        "italian-padua-bellinati-2014",
+        "italian-padua-toigo-passio-thesis"
+      ],
+      "source_locus": "Bellinati 2014 p. 44 n. 21: dated scribal colophon; Toigo dissertation p. 47 n. 151: Missale Romanum ad usum fratrum minorum civitatis Padue, Matthew Passion c. 80r and unnotated Mark space c. 85r.",
+      "qualification": "Roman use for Padua Friars Minor; Padua copying and custody do not establish a separate Padua diocesan Missal. Reported 1328 colophon has not been checked on the original page. No new local recension or stage proposed.",
+      "scope_disposition": "in-scope-original-book-or-historical-witness",
+      "version_status": "roman-franciscan-witness-not-padua-diocesan-recension",
+      "date_role": "reported-manuscript-copying-date",
+      "chronology_start": 1328,
+      "chronology_end": 1328,
+      "chronology_kind": "manuscript-witness-date",
+      "chronology_certainty": "scholarly-reported-colophon",
+      "acquisition_status": "full-studies-acquired-original-not-acquired",
+      "transcription_status": "no-verified-transcription",
+      "collation_status": "not-fully-collated"
+    },
+    {
+      "id": "italian-padua-cholet-c47-d34",
+      "family": "padua-manuscript-holding",
+      "title": "Cholet Franciscan Missal: surviving Padua C.47 and D.34 volumes",
+      "date": "D.34 dated 1281–1292, Paris, by diocesan catalogue; linked volumes' detailed dating uncollated",
+      "kind": "complementary-manuscript-missal-volumes",
+      "status": "sourced-surviving-volumes-and-french-origin",
+      "sources": [
+        "italian-padua-bellinati-2014",
+        "italian-padua-diocese-exhibit-2021"
+      ],
+      "source_locus": "Bellinati (2014), p. 43, cautiously proposes (sembra) that C.47/D.34 survive from the former three-volume Cholet missal; pp. 43–44, notes 15–17, give owner/donor context. Official diocesan Ecce advenit (2021), item 4, separately identifies D.34 f. 17v as a Paris 1281–1292 Franciscan Missal.",
+      "qualification": "Bellinati's identification of the two volumes with the Cholet missal is tentative. D.34's independently catalogued Paris 1281–1292 Franciscan identity and date do not automatically apply to C.47. Exact divisions, the missing third volume, original leaves, local reception and altar use remain uninspected; no complete Padua book or two recension states are established.",
+      "scope_disposition": "in-scope-original-book-or-historical-witness",
+      "version_status": "complementary-witnesses-not-proven-local-recension",
+      "date_role": "catalogue-copying-range-for-d34-only",
+      "chronology_layout": "unpositioned-pending-volume-specific-collation",
+      "acquisition_status": "full-study-and-official-list-acquired-originals-not-acquired",
+      "transcription_status": "no-verified-transcription",
+      "collation_status": "not-fully-collated"
+    },
+    {
+      "title": "Padua Cathedral D.30 Roman Missal and calendar",
+      "date": "Fourteenth century; IRHT 1301–1310 conflicts with Bellinati post-1323 and Calendaria c. 1338",
+      "status": "scoped-manuscript-excerpt-and-catalogue-loci-inspected-date-disputed",
+      "sources": [
+        "italian-padua-d30-irht",
+        "italian-padua-bellinati-2014",
+        "italian-padua-toigo-passio-thesis",
+        "italian-padua-diocese-exhibit-2021",
+        "italian-padua-calendaria-d30"
+      ],
+      "source_locus": "IRHT 616628 preserved HTML lines 64–85; Bellinati 2014 p. 44 n. 22 (post-1323; Inventario 1350 f. 14v); Toigo dissertation pp. 47–48 n. 153 (D.30 Matthew c. 70r/v, Mark c. 74r/v, manuscript crop); Diocese Ecce advenit 2021 item 13 (Epiphany introit f. 20v); Calendaria D.30 row (c. 1338, Padova Duomo).",
+      "qualification": "Identified Roman Missal of Padua provenance, with named chant loci and a short original musical crop inspected. Full original Mass prayers, calendar, local rubrics, approval and actual altar use remain uninspected. Conflicting narrow copying dates remain unresolved; no independent Padua diocesan recension is asserted. B.31 is a separate Roman-Franciscan book; Pataviense may denote Passau.",
+      "date_role": "disputed-manuscript-copying-date",
+      "chronology_layout": "unpositioned-pending-conflicting-copying-dates",
+      "acquisition_status": "full-studies-and-official-list-acquired-short-reproduced-excerpt-inspected-original-not-acquired",
+      "transcription_status": "no-new-verified-transcription",
+      "collation_status": "short-manuscript-crop-and-described-loci-inspected-not-fully-collated",
+      "id": "italian-padua-d30",
+      "disposition": "unpositioned; narrow chronology fields removed"
+    }
+  ],
+  "searches": [
+    {
+      "service": "web search",
+      "queries": [
+        "\"Padova\" \"E 57\" \"messa\"",
+        "\"Liber ordinarius\" \"Padova\" \"eucaristia\"",
+        "\"Padova\" \"D.30\" messale",
+        "\"Biblioteca Capitolare\" \"Padova\" \"messali\""
+      ],
+      "result": "Located direct university manuscript studies, specialist Calendaria and institutional book records; results were followed to complete fetched sources."
+    },
+    {
+      "service": "web search",
+      "queries": [
+        "\"Liber ordinarius\" \"Padovana\" filetype:pdf",
+        "\"Liber ordinarius\" \"Padova\" \"missam\"",
+        "\"E 57\" \"Ordinarius\" digital",
+        "\"Padova\" \"D 30\" \"1338\""
+      ],
+      "result": "Located publisher-linked Bellinati history and university volume with precise rubrical references. No complete publicly reachable E.57 original or full 2002 edition was obtained within these searches."
+    },
+    {
+      "service": "web search",
+      "queries": [
+        "\"Toigo\" \"tercio cantatur Officium\"",
+        "\"tropi\" \"padovana\" \"Toigo\" pdf",
+        "\"E57\" \"missa\" Padova filetype:pdf -scribd -studocu",
+        "\"E 57\" \"messa\" filetype:pdf -scribd -studocu"
+      ],
+      "result": "Located Corpus Troporum X A as an accessible critical scholarly control. Academy and commercial listings remain leads; no credentialed access used."
+    },
+    {
+      "service": "web search",
+      "queries": [
+        "\"Padova\" \"D.30\" missale 1323",
+        "\"Padova\" \"D 30\" \"1323\"",
+        "\"616628\" \"Padova\"",
+        "\"D.30\" \"Missale\" Padova"
+      ],
+      "result": "Located official Diocese 2021 exhibition list; read the whole two-page PDF. Live IRHT retrieval did not complete; inspected existing full 2026-10-19 HTML rather than manufacturing a fresh verification."
+    }
+  ],
+  "acquisitions": [
+    {
+      "retrieved_on": "2026-10-20",
+      "extent": "Complete publisher book page",
+      "role": "Edition and thirteenth-century manuscript identity; no full book",
+      "rights_review": "No affirmative repository byte-distribution basis established; metadata only proposed",
+      "sha256": "54762a8bc878ea4723772570ecf5b7c9845ac1ca10db59b7c9cc8f4228e4dbb8",
+      "bytes": 4806,
+      "source_url": "https://www.istitutostoriaecclesiasticapadovana.net/fonti/27.html"
+    },
+    {
+      "retrieved_on": "2026-10-20",
+      "extent": "Complete university repository product page; explicitly no attached full text",
+      "role": "Author's abstract identifies local cathedral processional/Mass study; cannot stand in for its full contribution",
+      "rights_review": "No affirmative repository byte-distribution basis established; metadata only proposed",
+      "sha256": "f802f9b9e77c49a18fddcc724243a46d46add09fc9126bc9099dea99733be556",
+      "bytes": 56650,
+      "source_url": "https://www.research.unipd.it/handle/11577/1352018"
+    },
+    {
+      "retrieved_on": "2026-10-20",
+      "extent": "Complete calendar-witness repertoire HTML",
+      "role": "D.30 c.1338, Padova Duomo row; specialist index only",
+      "rights_review": "No affirmative repository byte-distribution basis established; metadata only proposed",
+      "sha256": "61f75b2c3f982387806a2b623f916a8762f5443356a23c61df9a57d2fbf66651",
+      "bytes": 631938,
+      "source_url": "https://www.calendaria.org/calendaria.html"
+    },
+    {
+      "retrieved_on": "2026-10-19",
+      "inspected_on": "2026-10-20",
+      "extent": "Complete earlier source HTML from repository scratch receipt, copied byte-for-byte; current live retrieval did not complete",
+      "role": "Competing 1301–1310 catalogue date, Padua origin, 360 leaves, Missale Calendarium",
+      "rights_review": "No affirmative repository byte-distribution basis established; metadata only proposed",
+      "sha256": "24e5a601a9b3537d3923ff47050461f77c8574eb226ce6f1c00df79d0b44c4a9",
+      "bytes": 5810,
+      "source_url": "https://liturgicum.irht.cnrs.fr/manuscrit/616628"
+    },
+    {
+      "retrieved_on": "2026-10-20",
+      "extent": "Whole 201-page PDF of 2014 book, linked by publisher",
+      "inspected_pages": "Printed 26–29,43–45,56,74–79; images 44,77–78 checked",
+      "role": "Original manuscript/archival study; E.57 Eucharistic rubrics, D.30 date and other exact holdings",
+      "rights_review": "Copyright 2014 notice; public reading route is not a redistribution grant; metadata only proposed",
+      "sha256": "06569f2bef3ad613c0cab17ed4daf17bd03feb53667545d50b75876ac1a2ee09",
+      "bytes": 1646925,
+      "source_url": "https://drive.google.com/uc?id=1iizNbac1eXOmsDRu6tqb8HDdRWL-vLCY&export=download"
+    },
+    {
+      "retrieved_on": "2026-10-20",
+      "extent": "Whole 228-page Diego Toigo doctoral dissertation",
+      "inspected_pages": "Printed 47–48 (PDF 85–86), including original D.30 crop on printed 48",
+      "role": "D.30 Roman Missal identity, precise Passion chant loci and short original image; B.31 Roman-Franciscan identity",
+      "rights_review": "Modern dissertation and photographs; no affirmative repository distribution basis established; metadata only proposed",
+      "technical_note": "Poppler reports an optional-content-group warning but extracts and renders the inspected pages; no complete original D.30 leaf is certified",
+      "sha256": "4fc86344aebf7e387dd86be99e308d765d2968afea01ec5317d20c24866d3c12",
+      "bytes": 11232092,
+      "source_url": "https://tesidottorato.depositolegale.it/bitstream/20.500.14242/109890/4/TESI_DEFINITIVA.pdf"
+    },
+    {
+      "retrieved_on": "2026-10-20",
+      "extent": "Complete 2-page official 21 December 2021 exhibition list",
+      "inspected_pages": "Both pages; item 13 on page 2 checked against image",
+      "role": "D.30 f.20v Epiphany introit and D.34 f.17v Paris Franciscan Christmas major Mass catalogue descriptions",
+      "rights_review": "No affirmative repository byte-distribution basis established; retain factual bibliographic descriptions only in proposal",
+      "sha256": "6a5c8dccc134abc95a51cf1cc755d0843bda15c7858a0fbba504bd66e1b855f8",
+      "bytes": 328529,
+      "source_url": "https://ufficiostampa.diocesipadova.it/wp-content/uploads/sites/19/2021/12/04_scheda-codici_incunaboli.pdf"
+    },
+    {
+      "retrieved_on": "2026-10-20",
+      "extent": "Whole 150-page university book; title/copyright says first edition 2025",
+      "inspected_pages": "Francesca Leto chapter printed 86–88; images 87–88 (PDF 88–89)",
+      "role": "Specific E.57 Eucharistic-adjacent processions and source loci; separate MFR exemplar is explicitly excluded from E.57 prayer attribution",
+      "rights_review": "Copyright 2025 Padova University Press; no affirmative repository distribution basis established; metadata only proposed",
+      "sha256": "bc7a4c77ee4fc01f4fbcfc28822995044d7ebda7ed444ff882d6ec75d1d7f8d0",
+      "bytes": 10072332,
+      "source_url": "https://www.padovauniversitypress.it/system/files/download-count/attachments/2026-01/9788869384837.pdf"
+    },
+    {
+      "retrieved_on": "2026-10-20",
+      "extent": "Whole 17-page Anna Vildera 2013 article (source filename retained from preliminary acquisition label)",
+      "inspected_pages": "Printed 139,153; first page checked against image to correct author attribution",
+      "role": "E.57 identity and reported c.1256–1275 date; Christmas Matins c.43v is not used as a Mass proper",
+      "rights_review": "Modern article; PDF permissions report copying/printing disabled; no repository payload proposed",
+      "sha256": "1981878f17cb3743f26f6d9e42a5d11e1b864ba4fad844db6a68bf7bde7c6251",
+      "bytes": 509933,
+      "source_url": "https://ojs.zrc-sazu.si/dmd/article/download/2202/1961/0"
+    },
+    {
+      "retrieved_on": "2026-10-20",
+      "extent": "Whole 668-page Corpus Troporum X, volumeA only,2011; volumeB not retrieved",
+      "inspected_pages": "Printed/PDF28,85–86 against images; related source-discussion text around108–109",
+      "role": "Control only; combined Pad16/57 siglum; no proposed inventory or Eucharistic stage evidence. URL corrected by hashed author addendum.",
+      "rights_review": "Copyright Ritva Maria Jacobsson and Acta Universitatis Stockholmiensis; no repository payload proposed",
+      "technical_note": "Download initially remained running; partial files were not treated as complete. Final 25,228,072-byte PDF parses at 668 pages and its exact duplicate retry has the same SHA-256. The duplicate is not a separate source artifact.",
+      "sha256": "10c151b5c24f1e8b1e08f8e679ea28d3cb526932bd2c65851ff99ca6f492bc12",
+      "bytes": 25228072,
+      "source_url": "https://www.diva-portal.org/smash/get/diva2%3A400022/FULLTEXT02.pdf"
+    }
+  ],
+  "independent_review": {
+    "verdict": "accept-two-bounded-source-described-states-with-required-qualifications",
+    "verification": {
+      "all_proposal_json_toml_parse": "pass",
+      "acquisition_manifest_artifacts_checked": 10,
+      "manifest_hash_size_mismatches": [],
+      "research_packet_sha256": "32d84ede2ceb0bfdd1fca46a3def4e8dcfa70575e394673542f76a212b51ef78",
+      "dossier_sha256": "59dd1ddbef4c5d25693e1c23518933fd62d03cf42b5a4e40718190a36abfc58a",
+      "private_payloads": "No PDF, extraction, image, contact footer or session artifact is proposed for tracked integration. Metadata and bounded paraphrases only.",
+      "tracked_writes_by_reviewer": 0
+    },
+    "limits": "Acceptance does not certify original complete texts, chronological succession, broader parish implementation, approbation or an independent Padua Missal recension. Keep source-described evidence level explicit in route, dossier and public projection."
+  },
+  "remaining_gaps": [
+    "Complete original E.57 Eucharistic leaves, editorial layer distinctions, exact prayers and full local adoption evidence. Next: Acquire Cattin/Vildera 2002 critical edition and full facsimile: E.57 ff. 1r–7v, 89v–95r; edited sections 127g, 140e. Inspect dating discussion and separate original text from corrections. No public full facsimile obtained in this pass.",
+    "Resolution of 1301–1310 versus post-1323/c. 1338 dating, complete calendar/colophon, original Mass prayers, and actual local use. Next: Bernardinello 2007 I pp. 574–577; La miniatura a Padova 1999 pp. 98–99; D.30 f. 20v, 70r/v, 74r/v and calendar; Cathedral Inventario 1350 f. 14v. Compare the original manuscript and calendar layers before restoring narrow numeric dates.",
+    "Exact Mass components and reception of B.26, B.31 and C.47/D.34; older and newer ordinal relation; fully evidenced local sequence and later adoption. Next: Inspect B.26, Roman-Franciscan B.31 (reported colophon 5 October 1328), surviving C.47/D.34 Cholet volumes and their lost third volume; distinguish lost Rubricarium ministrorum altaris recorded in 1407 from extant E.57. Read original 1339/1350 book inventories before asserting a Romanization transition."
+  ],
+  "semantics": "Two source-described states, no complete Missal or transition. E.57 has bounded local Eucharistic rubrics; D.30 remains unpositioned with IRHT 1301–1310, Bellinati post-1323 and Calendaria c. 1338 unresolved. Anna Vildera (2013) is the correct attribution; E.57 Christmas Matins, separate MFR prayers, Pad16/57 combined chant loci and Passau Pataviense are not imported as Padua Mass text. Modern source bytes remain outside Git.",
+  "post_acceptance_bibliographic_qualification": {
+    "source": "Anna Vildera, Formulari processionali per il canto del vangelo Liber generationis",
+    "doi": "10.3986/dmd09.1-2.08",
+    "nominal_issue_year": 2013,
+    "publisher_item_issued_date": "2015-06-24",
+    "locus": {
+      "url": "https://ojs.zrc-sazu.si/dmd/article/view/2202",
+      "whole_saved_html_sha256": "f82ba47d6e72245e3a850250192a3a7d243f6ab69168559c14be7edbad9c66f2",
+      "loci": [
+        "HTML15–17 DC.Date.created/dateSubmitted/issued2015-06-24",
+        "HTML51 citation_date2013; issue headings2013; PDFheaders2013",
+        "HTML290–299 visible Objavljeno2015-06-24",
+        "HTML309 generatedCSLcitation2015"
+      ]
+    },
+    "limit": "Preserve nominal issue year separately from the publisher-item issued/published date; do not silently adjudicate an upload/migration/actual-release explanation.",
+    "independent_review_sha256": "261b36fd2db1cc98fda0431318f4311e2018aea48ed4d26ba1282bbe49da2066"
+  }
+}

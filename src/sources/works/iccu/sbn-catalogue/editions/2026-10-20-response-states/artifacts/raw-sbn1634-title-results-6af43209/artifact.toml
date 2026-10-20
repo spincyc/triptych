@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.iccu.sbn-catalogue.2026-10-20-response-states.raw-sbn1634-title-results-6af43209"
+edition_id = "edition.iccu.sbn-catalogue.2026-10-20-response-states"
+artifact_type = "catalogue-or-service-response"
+media_type = "application/json"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "No complete-host-response redistribution basis was established. Exact raw bytes may include host presentation, descriptions, user-associated metadata or unrelated records; those are not admitted through the independently justified factual extract. Public access is not used as a blanket licence."
+source_url = "https://opac.sbn.it/o/opac-api/titles-search-full-post"
+provenance = "Complete dated provider response acquired 20 October 2026 by POST form; parameters: {\"core\": \"sbn\", \"filter:31:Anno_pubblicazione:2:4\": \"1634\", \"filter:31:Anno_pubblicazione:4:4\": \"1634\", \"item:4:Titolo\": \"Missale Romanum\"}. Exact input hash and byte count verified. Raw response is metadata only, not a liturgical-body acquisition."
+retrieved = "2026-10-20"
+sha256 = "6af4320988be06c77bae4f4b0c1d54a817ec411ce8ca3707bdff794d7493c6de"
+byte_size = 2507
+indexable = false
+notes = "Raw response withheld. An offline checkout can inspect the linked retained factual derivative with its declared field scope and exact input hash, but cannot reopen this complete host response. A licence reaching these exact bytes or an independently reviewed complete-response basis would permit reconsideration."

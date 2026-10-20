@@ -79,6 +79,43 @@ def native_fixture(test, identifier="fixture-book", wording="Exact native fixtur
     return book, extent, review, save
 
 
+def segmented_native_fixture(test):
+    """A complete two-page work inside a separately owned four-page volume."""
+    book, extent, review, save = native_fixture(test)
+    edition_id = book["witnesses"][0]["edition_id"]
+    container_id = "edition.fixture-container"
+    test.record(container_id, "edition", date="1200", language="la")
+    scan = test.records["artifact.fixture-book.scan"].data
+    scan.update(schema=2, edition_id=container_id, page_count=4)
+    facsimile_segment = test.record("segment.fixture-book.facsimile", "segment", schema=2,
+                                    edition_id=edition_id, artifact_id=scan["id"], artifact_sha256=scan["sha256"],
+                                    segment_type="constituent-work", artifact_page_ranges=[[2, 3]],
+                                    states=["verified"], verified_on="2026-10-17")
+    witness = book["witnesses"][0]
+    witness.update(segment_id=facsimile_segment["id"], scope_pages=[[2, 3]])
+    evidence = test.records["passage.fixture-book.extent"].data
+    evidence.pop("artifact_id")
+    evidence.update(schema=2, segment_id=facsimile_segment["id"], artifact_sha256=scan["sha256"],
+                    artifact_page_ranges=[[2, 3]])
+    literal = test.artifact("artifact.fixture-container.text", "Other work before.\nExact native fixture.\nSecond native fixture.\nOther work after.\n",
+                            edition_id=container_id, artifact_type="normalized-text", derived_from=scan["id"],
+                            transformation="Synthetic normalized volume transcription; not historical evidence",
+                            rights_status="public-domain", rights_basis="Test only", rights_jurisdiction="United States")
+    literal_segment = test.record("segment.fixture-book.text", "segment", schema=2, edition_id=edition_id,
+                                 artifact_id=literal["id"], artifact_sha256=literal["sha256"],
+                                 segment_type="constituent-work", physical_line_ranges=[[2, 3]],
+                                 states=["verified"], verified_on="2026-10-17")
+    for index, unit in enumerate(book["units"], 2):
+        passage = test.records[unit["passage_id"]].data
+        passage.pop("artifact_id")
+        passage.update(schema=2, segment_id=literal_segment["id"], artifact_sha256=literal["sha256"],
+                       physical_line_ranges=[[index, index]])
+        unit["witness_pages"] = [[index, index]]
+        extent["pages"][index - 2]["ranges"] = [[index, index]]
+    save()
+    return book, extent, review, save
+
+
 class NativeBookTests(unittest.TestCase):
     setUp = lambda self: AdapterBoundaryTests.setUp(self)
     record = lambda self, *args, **kwargs: AdapterBoundaryTests.record(self, *args, **kwargs)
@@ -94,6 +131,247 @@ class NativeBookTests(unittest.TestCase):
         self.assertEqual("Exact native fixture.", result["units"][0]["text"])
         self.assertEqual(["native-division", "unit-1"], result["units"][0]["native_path"])
         self.assertEqual(1200, result["historical_date"]["start_year"])
+
+    def test_complete_segment_book_keeps_constituent_identity_and_container_census(self):
+        segmented_native_fixture(self)
+        result = self.load()
+        self.assertEqual(result, self.load())
+        self.assertTrue(result["scope"]["whole_book_complete"])
+        self.assertTrue(result["scope"]["complete_declared_extent"])
+        self.assertEqual(2, result["scope"]["known_extent_pages"])
+        self.assertEqual(["Exact native fixture.", "Second native fixture."], [unit["text"] for unit in result["units"]])
+        self.assertNotIn("Other work", json.dumps(result["units"]))
+        unit = result["units"][0]
+        self.assertEqual("edition.fixture-book", unit["text_edition_id"])
+        self.assertEqual("segment.fixture-book.text", unit["source_segment_id"])
+        self.assertEqual("artifact.fixture-container.text", unit["source_artifact_id"])
+        sources = {row["id"]: row for row in result["sources"]}
+        self.assertEqual("edition.fixture-container", sources["artifact.fixture-container.text"]["edition_id"])
+        self.assertEqual("edition.fixture-container", sources["artifact.fixture-book.scan"]["edition_id"])
+        self.assertEqual([[2, 3]], result["book_binding"]["witness_extents"][0]["artifact_page_ranges"])
+        self.assertEqual("segment-artifact-page-ranges", result["book_binding"]["witness_extents"][0]["census_boundary"])
+        self.assertIn("segment.fixture-book.facsimile", sources)
+        self.assertIn("segment.fixture-book.text", sources)
+
+    def test_segment_book_can_keep_direct_constituent_literal_passages(self):
+        book, extent, review, save = segmented_native_fixture(self)
+        for index, unit in enumerate(book["units"], 1):
+            passage = self.records[unit["passage_id"]].data
+            passage.pop("segment_id")
+            artifact = self.records[f"artifact.fixture-book.unit{index}"].data
+            artifact.pop("derived_from")  # Cross-edition byte derivation would be false.
+            passage.update(schema=1, artifact_id=artifact["id"], artifact_sha256=artifact["sha256"], physical_line_ranges=[[1, 1]])
+            unit.update(verified_against_artifact_id="artifact.fixture-book.scan",
+                        verified_against_artifact_sha256=review["witness_sha256"]["copy"])
+        save()
+        self.assertEqual("Exact native fixture.", self.load()["units"][0]["text"])
+        self.assertNotIn("source_segment_id", self.load()["units"][0])
+
+    def test_segment_witness_requires_exact_edition_container_hash_and_page_bounds(self):
+        book, extent, review, save = segmented_native_fixture(self)
+        segment = self.records["segment.fixture-book.facsimile"].data
+        alternative = self.artifact("artifact.fixture-container.other-scan", "Other synthetic copy.\n",
+                                    edition_id="edition.fixture-container", artifact_type="scan", page_count=4)
+        for field, value, message in (
+                ("edition_id", "edition.fixture-container", "exact-edition constituent"),
+                ("artifact_sha256", "0" * 64, "container artifact hash"),
+                ("artifact_id", alternative["id"], "container artifact hash"),
+                ("artifact_page_ranges", [[2, 5]], "range outside witness"),
+                ("artifact_page_ranges", [[3, 3]], "scope extends outside"),
+                ("states", ["cataloged"], "inspected exact-edition"),
+                ("schema", 1, "inspected exact-edition")):
+            with self.subTest(field=field):
+                original = segment[field]
+                try:
+                    segment[field] = value
+                    with self.assertRaisesRegex(texts.AdapterError, message):
+                        self.load()
+                finally:
+                    segment[field] = original
+        segment.update(artifact_id=alternative["id"], artifact_sha256=alternative["sha256"])
+        with self.assertRaisesRegex(texts.AdapterError, "different container artifact"):
+            self.load()
+
+    def test_segment_whole_book_requires_verified_complete_segment_boundary(self):
+        book, extent, review, save = segmented_native_fixture(self)
+        segment = self.records["segment.fixture-book.facsimile"].data
+        for field, value in (("states", ["inspected"]), ("verified_on", ""), ("segment_type", "excerpt")):
+            with self.subTest(field=field):
+                original = segment[field]
+                try:
+                    segment[field] = value
+                    with self.assertRaisesRegex(texts.AdapterError, "verified constituent-work segment boundary"):
+                        self.load()
+                finally:
+                    segment[field] = original
+        book["witnesses"][0]["scope_pages"] = [[2, 2]]
+        save()
+        with self.assertRaisesRegex(texts.AdapterError, "every witness page in scope"):
+            self.load()
+
+    def test_inspected_segment_supports_a_complete_declared_constituent(self):
+        book, extent, review, save = segmented_native_fixture(self)
+        book.update(extent_kind="constituent", excluded_book_divisions=["Second synthetic division"])
+        book["witnesses"][0]["scope_pages"] = [[2, 2]]
+        book["units"].pop()
+        extent["expected_unit_ids"].pop()
+        extent["pages"][1].update(role="outside-constituent", unit_ids=[], description="Excluded second division")
+        review["unit_sha256"].pop("unit.fixture.2")
+        segment = self.records["segment.fixture-book.facsimile"].data
+        segment.update(states=["inspected"])
+        segment.pop("verified_on")
+        save()
+        result = self.load()
+        self.assertTrue(result["scope"]["complete_declared_extent"])
+        self.assertFalse(result["scope"]["whole_book_complete"])
+        self.assertEqual(1, result["scope"]["known_extent_pages"])
+
+    def test_segment_census_excludes_container_pages_and_requires_all_segment_pages(self):
+        book, extent, review, save = segmented_native_fixture(self)
+        extent["pages"].pop()
+        save()
+        with self.assertRaisesRegex(texts.AdapterError, "pages unaccounted"):
+            self.load()
+        extent["pages"].append({"witness_id": "copy", "ranges": [[3, 3]], "role": "text", "unit_ids": ["unit.fixture.2"]})
+        for role in ("non-text", "outside-constituent"):
+            with self.subTest(role=role):
+                extent["pages"].append({"witness_id": "copy", "ranges": [[1, 1]], "role": role,
+                                        "unit_ids": [], "description": "Other work in the container"})
+                save()
+                with self.assertRaisesRegex(texts.AdapterError, "account extends outside its controlling segment"):
+                    self.load()
+                extent["pages"].pop()
+        book["units"][0]["witness_pages"] = [[1, 2]]
+        save()
+        with self.assertRaisesRegex(texts.AdapterError, "unit loci extend outside"):
+            self.load()
+
+    def test_segment_literal_requires_exact_edition_hash_and_single_controller(self):
+        segmented_native_fixture(self)
+        segment = self.records["segment.fixture-book.text"].data
+        passage = self.records["passage.fixture-book.unit1"].data
+        for record, field, value, message in (
+                (segment, "edition_id", "edition.fixture-container", "exact-edition constituent"),
+                (segment, "artifact_sha256", "0" * 64, "container artifact hash"),
+                (segment, "physical_line_ranges", [[3, 3]], "lines extend outside"),
+                (passage, "edition_id", "edition.fixture-container", "verified exact-edition literal"),
+                (passage, "artifact_sha256", "0" * 64, "verified exact-edition literal"),
+                (passage, "schema", 1, "exactly one schema-2 segment controller")):
+            with self.subTest(field=field):
+                original = record[field]
+                try:
+                    record[field] = value
+                    with self.assertRaisesRegex(texts.AdapterError, message):
+                        self.load()
+                finally:
+                    record[field] = original
+        passage["artifact_id"] = "artifact.fixture-container.text"
+        with self.assertRaisesRegex(texts.AdapterError, "exactly one schema-2 segment controller"):
+            self.load()
+        passage.pop("artifact_id")
+        passage.pop("segment_id")
+        with self.assertRaisesRegex(texts.AdapterError, "Unregistered source"):
+            self.load()
+
+    def test_segment_literal_rechecks_container_lineage_rights_and_physical_bounds(self):
+        segmented_native_fixture(self)
+        literal = self.records["artifact.fixture-container.text"].data
+        for field, value, message in (("derived_from", None, "does not derive from its exact witness"),
+                                      ("rights_status", "unresolved", "public-git publication basis"),
+                                      ("rights_jurisdiction", "Elsewhere", "public-git publication basis")):
+            with self.subTest(field=field):
+                original = literal[field]
+                try:
+                    literal[field] = value
+                    with self.assertRaisesRegex(texts.AdapterError, message):
+                        self.load()
+                finally:
+                    literal[field] = original
+        segment = self.records["segment.fixture-book.text"].data
+        passage = self.records["passage.fixture-book.unit1"].data
+        literal["page_count"] = 4
+        segment["artifact_page_ranges"] = [[2, 3]]
+        passage["artifact_page_ranges"] = [[1, 2]]
+        with self.assertRaisesRegex(texts.AdapterError, "pages extend outside its controlling segment"):
+            self.load()
+        passage["artifact_page_ranges"] = [[2, 2]]
+        self.assertEqual("Exact native fixture.", self.load()["units"][0]["text"])
+
+    def test_segment_manifest_and_container_dependencies_are_pinned(self):
+        segmented_native_fixture(self)
+        result = self.load()
+        inputs = {row["path"]: row for row in result["inputs"]}
+        identities = ("segment.fixture-book.facsimile", "segment.fixture-book.text",
+                      "edition.fixture-book", "edition.fixture-container", "artifact.fixture-book.scan", "artifact.fixture-container.text")
+        for identity in identities:
+            record = self.records[identity]
+            relative = record.path.relative_to(self.root).as_posix()
+            self.assertEqual(sha(record.path.read_text()), inputs[relative]["sha256"])
+        record = self.records["segment.fixture-book.text"]
+        record.path.write_text(record.path.read_text() + "\n")
+        changed = {row["path"]: row for row in self.load()["inputs"]}
+        relative = record.path.relative_to(self.root).as_posix()
+        self.assertNotEqual(inputs[relative]["sha256"], changed[relative]["sha256"])
+        literal = self.records["artifact.fixture-container.text"].data
+        (self.root / literal["path"]).write_text("Changed volume bytes.\n")
+        with self.assertRaisesRegex(texts.AdapterError, "Artifact hash mismatch"):
+            self.load()
+
+    def test_segment_book_passes_the_real_source_library_gate(self):
+        segmented_native_fixture(self)
+        (self.root / "src/gpt").mkdir(parents=True)
+        used = {row["id"] for row in self.load()["sources"]}
+        owners = {"edition.fixture-book": "fixture-book", "edition.fixture-container": "fixture-container"}
+        for slug in owners.values():
+            self.record("work." + slug, "work", schema=1, title="Synthetic " + slug,
+                        responsible="Synthetic fixture only", work_type="test-fixture", languages=["la"])
+            used.add("work." + slug)
+        for identity in sorted(used):
+            data = dict(self.records[identity].data)
+            kind = data["record_type"]
+            if kind == "work":
+                directory = "src/sources/works/test/" + identity.removeprefix("work.")
+                relative = directory + "/work.toml"
+            else:
+                slug = owners[identity if kind == "edition" else data["edition_id"]]
+                directory = "src/sources/works/test/" + slug + "/editions/1200-fixture"
+                if kind == "edition":
+                    data.update(schema=1, work_id="work." + slug, title="Synthetic " + slug, publication="Test only")
+                    relative = directory + "/edition.toml"
+                elif kind == "artifact":
+                    directory += "/artifacts/" + identity.removeprefix("artifact.")
+                    payload = (self.root / data["path"]).read_bytes()
+                    data.update(schema=2 if "page_count" in data else 1, retrieved="2026-10-17",
+                                provenance="Synthetic fixture bytes only", media_type="text/plain")
+                    if data["artifact_type"] == "normalized-text":
+                        data.update(indexable=True, encoding="utf-8")
+                    else:
+                        data["media_type"] = "application/pdf"
+                    data["path"] = directory + "/payload.txt"
+                    payload_path = self.root / data["path"]
+                    payload_path.parent.mkdir(parents=True, exist_ok=True)
+                    payload_path.write_bytes(payload)
+                    relative = directory + "/artifact.toml"
+                else:
+                    data.setdefault("context", "Synthetic constituent extent only")
+                    relative = directory + "/" + kind + "s/" + identity + ".toml"
+            manifest = self.root / relative
+            manifest.parent.mkdir(parents=True, exist_ok=True)
+            manifest.write_text("\n".join(key + " = " + json.dumps(value) for key, value in data.items()) + "\n")
+        result = texts.load_adapter("native-book:fixture-book", self.root)
+        self.assertTrue(result["verification"]["source_library_valid"])
+        self.assertEqual("Exact native fixture.", result["units"][0]["text"])
+        self.assertEqual("edition.fixture-book", result["units"][0]["text_edition_id"])
+        library = texts._load_library(self.root)
+        source_library = sys.modules["_eucharistic_texts_source_library"]
+        fingerprint = source_library.source_fingerprint(library, "passage.fixture-book.unit1")
+        for identity in ("artifact.fixture-book.scan", "edition.fixture-book"):
+            manifest = library.records[identity].path
+            manifest.write_text(manifest.read_text() + '\nnotes = "Changed synthetic evidence metadata"\n')
+            library = texts._load_library(self.root)
+            changed = source_library.source_fingerprint(library, "passage.fixture-book.unit1")
+            self.assertNotEqual(fingerprint, changed)
+            fingerprint = changed
 
     def test_complete_constituent_cannot_claim_the_whole_book(self):
         book, extent, review, save = native_fixture(self)

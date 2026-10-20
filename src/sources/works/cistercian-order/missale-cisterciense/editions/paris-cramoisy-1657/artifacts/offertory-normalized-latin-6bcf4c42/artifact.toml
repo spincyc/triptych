@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42"
+edition_id = "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Faithful bounded transcription or mechanical facsimile packaging of the original Latin Paris 1657 printing, whose United States publication term has expired. No modern translation or new critical reconstruction is included. The historical wording is distinct from delivery-image rights; the existing retained FIDES image manifests record the source object as public domain with unrestricted access. Third-party source text and mechanical source images are excluded from Triptych’s CC BY 4.0 grant. Scholarly availability does not authorize contemporary liturgical use."
+retrieved = "2026-10-20"
+sha256 = "6bcf4c42c4dfe5627a064af5a399ff43fd83d3efb1666b4bc74b33e146aa9201"
+byte_size = 5134
+path = "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/offertory-normalized-latin-6bcf4c42/text.txt"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-facsimile-2ac96448"
+provenance = "Direct visual transcription of the exact retained page images by the named transcriber on 2026-10-20. The prior checked Orate spoken selection supplies only its exact three spoken blocks; this fuller unit restores both intervening red rubrics from the facsimile. Independent complete-extent review is recorded separately and is required for native admission."
+transformation = "NFC UTF-8; long s becomes s; display initials and following capitals merge to sentence case; printed nasal suspension bars expand; physical wraps and line-end word division disappear; retain printed u/v, i/j, æ/œ, accents, punctuation, abbreviations, alternatives, all rubric words and spoken cues. Printed versicle/response signs are represented by ℣. and ℟.; pattée crosses by ✠, separated from adjoining letters by spaces. Each stored line is one consecutive source block (rubric, spoken text, or quoted spoken cue); no explanatory wrapper enters literal text. Block breaks represent source paragraph/ink/function boundaries, not every printed line. Colour changes of display initials are not encoded as separate letters; line-class metadata identifies red rubrics, response cue, black spoken incipits and inline red alternatives/crosses. The opening/closing boundaries remain functional editorial bounds within the native Ordo Missæ, not a claim that the printing gives this constituent its own named chapter."
+notes = "No familiar missal text supplies missing words. Suscipe Trinitas is reused directly from its existing checked artifact and is not duplicated in this payload. The source-order unit census, physical-line classes and page loci are in cistercian-1657-offertory-extent.json. Each new passage records the exact normalized lines. Literal verification here is the transcriber’s bounded direct check; only a distinct collation receipt can attest independent complete-extent review."

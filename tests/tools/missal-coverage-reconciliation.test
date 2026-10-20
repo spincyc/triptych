@@ -3,8 +3,9 @@
 set -eu
 
 repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
-mkdir -p "$repo/.scratch"
-tmp="$(mktemp -d "$repo/.scratch/missal-coverage-test.XXXXXX")"
+scratch="${TMPDIR:-$repo/.scratch}"
+mkdir -p "$scratch"
+tmp="$(mktemp -d "$scratch/missal-coverage-test.XXXXXX")"
 trap 'rm -rf "$tmp"' EXIT HUP INT TERM
 
 "$repo/tools/tpt" missal-coverage-reconciliation --json > "$tmp/report.json"
@@ -17,7 +18,8 @@ report = json.load(open(sys.argv[1], encoding="utf-8"))
 assert report["status"] == "ok", report["findings"]
 assert report["findings"] == [], report["findings"]
 actual = report["actual"]
+# Current research-route census, independent of complete-book text coverage.
 assert actual["eastern"]["coverage_rows"] == 23, actual
-assert actual["western"]["coverage_rows"] == 73, actual
+assert actual["western"]["coverage_rows"] == 78, actual
 assert actual["stage_history"]["stages"] > 0, actual
 PY

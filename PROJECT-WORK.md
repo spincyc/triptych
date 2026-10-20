@@ -60,7 +60,154 @@ and a subway-map visualizer over the same evidence. The workspace target is
 `feature/missal-timeline`; this does not authorize changing the default branch.
 The full project remains **in progress**.
 
-**Clean-agent handoff, 2026-10-20.** The maintainer requested a persistent
+**Next phases authorized after cold review, 2026-10-20.** The maintainer
+requested execution of the outstanding phases with as many useful independent
+lanes as can work safely in parallel. The cold review reconciled the current
+checkpoint and identified seven substantive routes without stages, unresolved
+local reception, incomplete version classification and permission coverage,
+missing original books, no complete whole-book text, and five parentless native
+text versions. It also found 24 unmapped presentation families affecting 137
+catalogue entries, stale captured CLI examples and a stale Western trajectory
+count. The execution now separates source research, exact native constituents,
+presentation naming, validation repairs and fresh interactive/print acceptance,
+with independent source and literal-text review before integration. All work
+remains on `feature/missal-timeline`; the all-rite completion criteria remain
+open, and neither a new hosted corpus nor deployment is part of this phase.
+
+**Current integration checkpoint, 2026-10-20.**
+The frozen [coverage audit](src/sources/inventories/eucharistic-stage-coverage-v1.json)
+reconciles **101 routes: 23 Eastern research slots and 78 Western trajectories**.
+Ninety-one routes have selected stages, three retain related dossiers without
+established local reception, and seven have no new researched sequence. The
+[Eastern](src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml)
+and [Western](src/sources/inventories/western-eucharistic-books-timeline-v1.toml)
+inventories hold **443 and 1,188 candidates**, respectively; with 59 legacy
+records, the catalogue has **1,690 entries**. All entries route through **159
+named presentation groups**, with no unmapped family. These groups organize
+reading; they do not establish distinct local recensions or a complete census.
+
+The [35 stage dossiers](src/sources/inventories/eucharistic-stages/) now hold
+149 traditions, **287 stages, 77 transitions and 195 declared gaps**. Stages
+comprise 276 documented and 11 provisional records. Text coverage remains
+**271 not-transcribed, 16 partial and zero complete whole books**. The
+[classification review](src/sources/inventories/eucharistic-research-reviews/version-classification-next-phase-2026-10-20.json)
+records 44 positive book/source classifications of bounded component
+differences. Seven act-component classifications remain separate; neither
+indicator counts whole distinct Missals or supplies a textual parent.
+
+The reviewed research now distinguishes previously unresolved evidence:
+
+- Hungarian book reception has two bounded modern states and one
+  witness-succession edge. The 1920 imprint and private-use printing permission
+  remain separate from the early-1921 attestation; the 1949 Chrysostom extract
+  is not another complete Liturgikon recension. Older ownership and the
+  distinct 1646 museum colophon do not prove Hungarian Catholic use.
+- OCSO has three scoped proper/approval states, keeping its 1975 confirmation,
+  the shared 1983 publication and the Maria Gabriella component distinct.
+  Padua has two qualified rubric/chant attestations; Monza has the H14 annual
+  local order. Ravenna has three physical fragment attestations in a related
+  dossier, with local reception and conflicting dates still unresolved. These
+  sources do not reconstruct complete local Missals or establish new recensions.
+- [Greek and Italo-Albanian reception](src/sources/inventories/eucharistic-research-reviews/greek-italo-local-reception-next-phase-2026-10-20.json)
+  has four bounded language/calendar states: named Lungro parish use attested
+  in 2015, Piana's 2019 reference-book/rubric choices, the circulated Lungro
+  2026 Ordo and Athens's announced 2026 service programme. December 2025
+  printing, the 2026 calendar issue and January 2026 circulation remain distinct.
+  The Athens programme does not prove completed celebrations or identify its
+  receiving altar book. Albanian archival loci and Macedonian approval/book
+  leads are more precise, but neither route has an admitted exact book candidate
+  or a mapped stage.
+- The [coverage-universe review](src/sources/inventories/eucharistic-research-reviews/coverage-universe-next-phase-2026-10-20.json)
+  crosswalks the offered 678-row Amiet table and admits 12 individual metadata
+  witnesses across five new French routes. It leaves 250 France-labelled
+  Missal rows for semantic crosswalk, all 271 non-France/blank-country rows
+  outside that French boundary, and the broader repertoire open. An unmatched
+  catalogue ID is not a proved missing version. The 23 Eastern research slots
+  preserve the unresolved current named enumeration and Albanian classification.
+- [Roman original/component research](src/sources/inventories/eucharistic-research-reviews/rome-originals-next-phase-2026-10-20.json)
+  acquires the offered 1951 booklet and checks the complete March 1955 act,
+  while preserving the Rome 1634 original, complete 1956 Holy Week book,
+  1965 concelebration and 1968 Preces gaps. Broome's Pentecost 2026 use and
+  India's dated ritual concessions are now distinguished from exact book
+  identity, Roman approval and unapproved experimental proposals. The
+  permission register retains its 49 identities; this follow-up does not
+  exhaust regional or missionary permissions.
+
+Final source and print review also corrected two bounded integration defects: four
+Lviv page images now have explicit non-container decisions without altering their
+payloads or manifests; the Gilbertine prefixed-supplement citation now points to
+Woolley volume II, printed page 21 (PDF 37), independently checked in the original
+scan. Claims, historical dates and text membership remain unchanged.
+
+Two independently reviewed Cistercian offertory constituents, from 1606 and
+1657, add literal native text and a bounded comparison. Their declared extents
+are complete constituents; their whole Missals and complete Ordinary remain
+partial. The current corpus has **1,280 units, 22 reconstruction branches,
+seven parentless native version roots and 29 comparisons**. The 29 Git heads
+and 29 comparisons count different objects. No native root inherits text or
+acquires historical ancestry from shared wording, a comparison or a stage edge.
+
+The [retention decisions](src/sources/inventories/eucharistic-source-retention-decision-v1.toml)
+now itemize 389 additional exact artifacts: **63 retained payloads totaling
+139,548,459 bytes**, 324 deferrals and two non-sources. The earlier 80 decisions
+remain unchanged. Each retained payload has an exact source-library identity,
+extent, hash and distribution basis; restricted modern originals remain
+metadata-only. Four retained Hungarian images are isolated flat pages, not a
+complete acquired book. Neither payload retention nor an offered whole scan
+establishes complete transcription, collation or local reception.
+
+Source-library validation and zero-finding coverage reconciliation passed on
+the frozen owners. Phase-1 GPT and Claude publication inventories, family
+migration validation and the empty-family acceptance test also passed. **All 161 review units remain pending**; no semantic families or atomic
+citation coverage have been accepted by refreshing the family catalogue pin.
+
+**Verified phase results, 2026-10-20.** Final `make check-sources` exits 0
+with current 542-file history and 4,368-file source-reader projections,
+zero-finding reconciliation and exact release bindings. Focused verification
+includes 151 stage/history/text/inheritance/reconciliation tests, 61
+source-library tests and 44 PDF-review tests. Both tool smoke tests and registry
+checks pass. All 21 normal captured CLI examples replayed without divergence
+or tracked writes; an interrupted optional repeat is excluded from that result.
+After the locator correction, the real comparison stdout
+still matches exactly and tool bytes remain unchanged.
+
+The two generated corpora have identical 5,924-object manifests, 29 refs and
+all tree listings; strict Git integrity checks pass. Every emitted source and
+tool stamp still matches the final checkout. All seven native version metadata
+parent arrays and actual Git parent lists are empty. The later locator/audit
+correction affects no corpus input, so acceptance transfers by exact object and
+input identity rather than a new export.
+
+The corrected full-site preview passes its registered check, build and verify
+using Python 3.14.8 and Markdown 3.10.3 in an isolated, byte-pinned scratch source
+snapshot. The browser's preserved exhaustive run passes 1,271 checks; the final
+citation/runtime transfer and focused reading follow-up pass 32 checks, and the
+isolated real-axis-pan supplement passes 17. These are separate scoped runs,
+not a count of unique assertions. The [browser receipt](workflows/reviews/missal-next-phases-2026-10-20/browser.json)
+records functional scope, actual captures, independent reading and limits.
+
+The [print receipt](workflows/reviews/missal-next-phases-2026-10-20/print.json)
+accepts the digital review preview with retained minor findings: 167 chronology
+and 403 evidence pages, with no unreviewed page. Independent leaves inspected
+561 original new/changed pages; nine earlier pages transferred by exact SVG and
+fresh-raster identity. The locator repair changed two visible pages, both
+re-inspected; the other 568 transferred by exact SVG/raster identity. All fonts,
+indices, evidence references, year geometry and text bounds pass. A false
+missing-header display report and an ordinary page continuation were resolved;
+27 minor typography, routing and locator-grouping observations remain explicit
+production-polish limits. Three browser startup failures, an obsolete-hash
+transfer refusal, seven superseded harness assertions and one interrupted print
+render are recorded separately from successful product checks.
+
+The named Cistercian reading distinguishes publication dates from use duration,
+concrete local changes from whole-book coverage, and attributed institutional
+revision from Git ancestry or automatic inheritance. This phase does not claim
+complete all-rite historical coverage, complete texts, final production-sheet
+acceptance, physical-printer proof, spoken screen-reader review or deployment.
+Existing source advisories and all 161 pending semantic family review units
+remain explicit. Earlier passes below remain evidence for their named snapshots.
+
+**Pre-phase clean-agent handoff, 2026-10-20.** The maintainer requested a persistent
 restart record after the regional, missionary and historical expansion.
 The [continuation handoff](src/sources/inventories/missal-timeline-handoff-2026-10-20.md)
 pins research checkpoint `1356d8eaa56341687106c52170e450f29867f9b5`,
@@ -69,24 +216,25 @@ commands, source corrections and concrete next inputs. This request permits
 the tracked handoff for the current checkpoint; it supersedes the earlier
 instruction against another handoff without closing the underlying project.
 
-The current audit reconciles **96 routes**: 23 Eastern and 73 Western.
-Eighty-five have selected stages, nine retain related dossiers or unresolved
-local reception, and two have no new researched sequence. Nine routes have no
-mapped stage at all. The inventories hold 440 Eastern and 1,161 Western
-candidates; the 29 dossiers hold 272 stages, 76 transitions and 177 declared
-research gaps. Text coverage remains 256 not-transcribed and 16 partial stages,
-with no complete whole-book stage. The regional and mission permission register
-contains 49 scoped findings across 32 routes. These current totals supersede
-the earlier checkpoint counts in this section, without turning them into
-historical or textual completeness measures.
+**Pre-phase research checkpoint, 2026-10-20.** The audit at the handoff
+reconciled **96 routes**: 23 Eastern and 73 Western. Eighty-five had selected
+stages, nine retained related dossiers or unresolved local reception, and two
+had no new researched sequence. Nine routes had no mapped stage at all. The
+inventories held 440 Eastern and 1,161 Western candidates; the 29 dossiers held
+272 stages, 76 transitions and 177 declared research gaps. Text coverage was
+256 not-transcribed and 16 partial stages, with no complete whole-book stage.
+The regional and mission permission register contained 49 scoped findings
+across 32 routes. These are the pre-phase measurements preserved by the handoff;
+the current integration checkpoint above supersedes them without converting
+either set into historical or textual completeness measures.
 
 Source-library validation, zero-finding coverage reconciliation, the 539-file
-projection drift check, 84 focused stage/history tests, the new reconciliation
-smoke test and the tool-registry self-check passed at the research checkpoint.
-The handoff distinguishes interrupted broad test runs and known wider findings
-from those completed checks. Current historical, text, Git-history and reader
-requirements remain open. The handoff and ledger changes are documentation
-only; no further research, source acquisition or deployment is claimed.
+projection drift check, 84 focused stage/history tests, the reconciliation smoke
+test and the tool-registry self-check passed at that pre-phase research
+checkpoint. The handoff distinguishes interrupted broad test runs and known
+wider findings from those completed checks. The handoff and ledger changes at
+that checkpoint were documentation only; the newly authorized research,
+retention and native-text work is recorded separately above.
 
 **Execution resumed, 2026-10-17.** The maintainer clarified that completing the
 bounded review is not the requested finish: continue the underlying all-rite
@@ -113,7 +261,7 @@ to the affected claims and receives its own publication checks. The separately
 recorded Wilson consumer corrections remain outside this pass. No whole-book
 completion or final reader acceptance is inferred from this recovery.
 
-**Current source and text integration, 2026-10-19.** The
+**Source and text integration checkpoint, 2026-10-19.** The
 [Eastern](src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml)
 and [Western](src/sources/inventories/western-eucharistic-books-timeline-v1.toml)
 inventories now supply 95 and 137 records; with 59 legacy records the catalogue
@@ -571,14 +719,27 @@ The [agreed scope and reader criteria](guidance/time-machine.md#11-historical-an
 still control substantive version boundaries, coexistence, descent and local
 visibility of evidence limits.
 
-**Remaining work:** research the unfilled census trajectories and unresolved
-version boundaries; acquire and collate missing originals, including Rome 1634
-and the named Roman component gaps; transcribe complete books in their native
-divisions; establish parentage only where exact evidence supports it; and obtain
-final reader acceptance. Restricted modern full text needs an appropriate access
-and export basis. Spoken screen-reader use and the maintainer's reader judgment
-remain untested. The all-rite historical census, whole-book text corpus and
-complete textual Git history therefore remain open. Work stays on
+**Remaining work after the 2026-10-20 integration checkpoint:** reconcile the
+unexamined historical repertoires and unresolved version boundaries, including
+the named Eastern census and Albanian classification; identify original books
+and dated receiving-copy evidence for Albanian, Macedonian and other local
+routes; and acquire and collate the missing Roman and other full-book witnesses.
+The Rome 1634 original, questioned UB imprint and defective copy, complete
+1956/1965/1968 Roman components, original Hungarian books and circulars, original
+Lungro book/decree, exact Greek receiving editions and Ravenna local use remain
+specific open inputs. A holding, permission, catalogue entry or service programme
+cannot substitute for an identified received book.
+
+No stage yet has complete whole-book native text. Transcribe and independently
+check complete books in their native divisions, establish textual ancestry only
+from exact evidence, and keep the seven native versions parentless until such
+evidence exists. The 44 book/source classifications are bounded positive
+findings; unclassified witnesses and unexamined ranges remain open. Modern full
+text needs a defensible basis for each proposed distribution surface. All 161
+source-family review units remain pending. Finish the current source, browser
+and print gates above, then obtain the maintainer's reader acceptance; spoken
+screen-reader use remains untested. The all-rite historical census, whole-book
+corpus and complete textual Git history remain **in progress**. Work stays on
 `feature/missal-timeline`; no new hosted corpus repository or site deployment is
 part of this continuation.
 

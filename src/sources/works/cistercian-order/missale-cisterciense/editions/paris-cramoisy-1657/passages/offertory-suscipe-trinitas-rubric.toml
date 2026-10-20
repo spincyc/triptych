@@ -1,0 +1,12 @@
+schema = 2
+record_type = "passage"
+id = "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-suscipe-trinitas-rubric"
+edition_id = "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657"
+artifact_id = "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42"
+artifact_sha256 = "6bcf4c42c4dfe5627a064af5a399ff43fd83d3efb1666b4bc74b33e146aa9201"
+locus = "Printed p. 174, left column, after Lavabo doxology and above Suscipe sancta Trinitas. FIDES page-files 0234–0236; controlling facsimile PDF page(s) 3."
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-20"
+context = "Complete source-order native constituent unit 21 of 25; Bounded functional offertory constituent within the native running head Ordo Missæ: from red Deinde osculatur Altare, & versus ad populum after the Creed on printed p. 172, through the complete Secreta/preface-transition rubric ending signum Crucis sibi producit à fronte ad pectus on p. 174, above the horizontal rule and ¶ Sequens Præfatio. Includes every intervening prayer, dialogue, black quoted incipit, sign and red rubric. This functional bound is not a printed native chapter heading. No earlier Creed or later preface belongs to the constituent."
+notes = "NFC UTF-8; long s becomes s; display initials and following capitals merge to sentence case; printed nasal suspension bars expand; physical wraps and line-end word division disappear; retain printed u/v, i/j, æ/œ, accents, punctuation, abbreviations, alternatives, all rubric words and spoken cues. Printed versicle/response signs are represented by ℣. and ℟.; pattée crosses by ✠, separated from adjoining letters by spaces. Each stored line is one consecutive source block (rubric, spoken text, or quoted spoken cue); no explanatory wrapper enters literal text. Block breaks represent source paragraph/ink/function boundaries, not every printed line. Colour changes of display initials are not encoded as separate letters; line-class metadata identifies red rubrics, response cue, black spoken incipits and inline red alternatives/crosses. The opening/closing boundaries remain functional editorial bounds within the native Ordo Missæ, not a claim that the printing gives this constituent its own named chapter."
+physical_line_ranges = [[37, 39]]

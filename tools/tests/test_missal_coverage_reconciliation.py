@@ -131,9 +131,22 @@ class ReconciliationTests(unittest.TestCase):
         return "".join(f"{key} = {json.dumps(value)}\n" for key, value in fields.items())
 
     def write_inventory(self):
+        fields = {key: value for key, value in self.candidate.items() if key != "chronology"}
+        nested = ("[records.chronology]\n" + self.toml_fields(self.candidate["chronology"])
+                  if "chronology" in self.candidate else "")
         self.write(REPORT.INVENTORIES["eastern"][0],
-                   '[[sources]]\nid = "catalogue"\n[[records]]\n' + self.toml_fields(self.candidate)
+                   '[[sources]]\nid = "catalogue"\n[[records]]\n' + self.toml_fields(fields) + nested
                    + '[[church_coverage]]\nid = "church"\ncandidate_ids = ["candidate"]\n')
+
+    def witness(self, start, end, **fields):
+        row = {"candidate_id": "candidate", "start_year": start, "end_year": end,
+               "date_role": "independently authored date explanation", **fields}
+        self.coverage["eastern_church_coverage"][0]["witnesses"] = [row]
+        return row
+
+    def chronology(self, start, end):
+        self.candidate.update(chronology_start=start, chronology_end=end,
+                              chronology_kind="publication", chronology_certainty="constructed fixture")
 
     def refresh_fixture_snapshot(self):
         # Only fixture setup updates pins. The tool is never allowed to do so.
@@ -266,6 +279,78 @@ class ReconciliationTests(unittest.TestCase):
         self.assertTrue({"stale-count", "stale-fingerprint", "stale-membership", "unknown-candidate", "unknown-source"}
                         <= self.codes(json.loads(result.stdout)))
         self.assertEqual(before, self.filesystem_state())
+
+    def test_stale_witness_dates_fail_even_with_current_inventory_fingerprints(self):
+        cases = (
+            ((1900, 1900), (1901, 1901)),
+            ((1870, 1890), (1870, 1880)),
+            ((1870, 1890), (1880, 1880)),
+            ((1900, 1900), (None, None)),
+        )
+        for canonical, snapshot in cases:
+            with self.subTest(canonical=canonical, snapshot=snapshot):
+                self.chronology(*canonical)
+                self.witness(*snapshot)
+                self.write_inventory()
+                self.refresh_fixture_snapshot()
+                before = self.filesystem_state()
+                result = self.cli()
+                self.assertEqual(1, result.returncode, result.stdout + result.stderr)
+                findings = json.loads(result.stdout)["findings"]
+                self.assertEqual(1, len(findings), findings)
+                finding = findings[0]
+                self.assertEqual(("stale", "stale-witness-date"), (finding["kind"], finding["code"]))
+                self.assertEqual(REPORT.COVERAGE + ":eastern_church_coverage[church].witnesses[0]",
+                                 finding["location"])
+                self.assertEqual({"start_year": snapshot[0], "end_year": snapshot[1]}, finding["declared"])
+                self.assertEqual({"start_year": canonical[0], "end_year": canonical[1]}, finding["actual"])
+                self.assertEqual("candidate", finding["candidate_id"])
+                self.assertEqual(before, self.filesystem_state())
+
+    def test_changing_owner_to_unpositioned_invalidates_old_range_snapshot(self):
+        self.chronology(1870, 1890)
+        self.witness(1870, 1890)
+        self.write_inventory()
+        self.refresh_fixture_snapshot()
+        self.assertEqual([], REPORT.run(self.root)["findings"])
+        for field in ("start", "end", "kind", "certainty"):
+            self.candidate.pop("chronology_" + field)
+        self.candidate.update(date="Disputed composite range: 1870–1890", date_role="unresolved")
+        self.write_inventory()
+        # Refreshed pins are not evidence that the embedded witness dates agree.
+        self.refresh_fixture_snapshot()
+        payload = REPORT.run(self.root)
+        self.assertEqual({"stale-witness-date"}, self.codes(payload))
+        self.assertEqual({"start_year": None, "end_year": None}, payload["findings"][0]["actual"])
+        self.witness(None, None)
+        self.write_coverage()
+        self.assertEqual([], REPORT.run(self.root)["findings"])
+
+    def test_unpositioned_dates_and_authored_date_roles_remain_valid(self):
+        self.candidate.update(date="circa 1700, disputed", date_role="unresolved")
+        self.witness(None, None, date_role="unresolved or non-coordinate date; see qualification")
+        self.write_inventory()
+        self.refresh_fixture_snapshot()
+        self.assertEqual([], REPORT.run(self.root)["findings"])
+        self.chronology(1700, 1720)
+        self.witness(1700, 1720, date_role="catalogue-publication-range-reported")
+        self.write_inventory()
+        self.refresh_fixture_snapshot()
+        self.assertEqual([], REPORT.run(self.root)["findings"])
+
+    def test_nested_chronology_controls_snapshot_in_preference_to_flat_fields(self):
+        self.chronology(1900, 1900)
+        self.candidate["chronology"] = {"start": 1880, "end": 1890, "kind": "attestation",
+                                        "certainty": "constructed fixture"}
+        self.witness(1880, 1890)
+        self.write_inventory()
+        self.refresh_fixture_snapshot()
+        self.assertEqual([], REPORT.run(self.root)["findings"])
+        self.witness(1900, 1900)
+        self.write_coverage()
+        payload = REPORT.run(self.root)
+        self.assertEqual({"stale-witness-date"}, self.codes(payload))
+        self.assertEqual({"start_year": 1880, "end_year": 1890}, payload["findings"][0]["actual"])
 
     def test_read_only_deterministic_cli_even_when_cache_is_enabled(self):
         before = self.filesystem_state()

@@ -1,0 +1,487 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "ocso-next-phase-2026-10-20",
+  "title": "OCSO Latin proper: branch confirmations, shared 1983 publication and bounded house testimony",
+  "lane": "ocso-next",
+  "side": "western",
+  "checked_on": "2026-10-20",
+  "reviewed_on": "2026-10-20",
+  "coverage_rows": [
+    "ocso"
+  ],
+  "target_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+  "review_files": {
+    "accepted_manifest_sha256": "f48892d3ae7a7ba3c6199c15525c4af536a8a1fd4d860c932f47c1cf202f1ae9",
+    "research_packet_sha256": "cbb686ca6a0fc700ebc769c5fe6c59435eacf2845739c1a19f8b6fdef7264a5e",
+    "dossier_sha256": "259643b64d9cfd57fa19984da7cbf4e4b9000544ad1002b591b33773ddd46c2d",
+    "independent_review_sha256": "d3230f7037853daf87e2a4a5ab0fc1fa03c28cc4317f445dae8bbcc4304f022e",
+    "acquisition_manifest_sha256": "d2749e7217268ed68b242f504bed508ac213feee4f3a77f5cc7c2072a40ef999",
+    "verdict": "pass-corrected-revision-2-only"
+  },
+  "integration": {
+    "new_source_ids": [
+      "ocso-src-notitiae-1975-proper",
+      "ocso-src-rituale-1998-latin",
+      "ocso-src-notitiae-1983-books",
+      "ocso-src-dli-83442",
+      "ocso-src-notitiae-1983-gabriella",
+      "ocso-src-notitiae-1983-calendar",
+      "ocso-src-latin-lectionary-web",
+      "ocso-src-vitorchiano-2014"
+    ],
+    "new_candidate_ids": [
+      "ocso-latin-proper-1975",
+      "ocso-shared-proper-1983",
+      "ocso-gabriella-1983-component",
+      "ocso-latin-lectionary-web-undated"
+    ],
+    "new_stage_ids": [
+      "ocso-next:proper1975",
+      "ocso-next:shared-book1983",
+      "ocso-next:gabriella1983-component"
+    ],
+    "new_transitions": 0,
+    "tradition_move": "ocso-round2 moved once from other-orders-round2.json to ocso-next.json; empty old definition and other-orders:ocso-gap removed, unrelated order rows preserved.",
+    "review_corrections": [
+      "Official 1983 publication bibliography classified institutional-catalogue, not primary-act.",
+      "Explicit 1892–1971 distinct-branch gap retained.",
+      "Required chronology_certainty metadata records the actual official-notice/catalogue basis; no date inferred from file properties."
+    ],
+    "fingerprint_refresh": "Pending final reviewed input freeze."
+  },
+  "uses": [
+    {
+      "id": "ocso",
+      "states": [
+        {
+          "id": "ocso-next:proper1975",
+          "scope": "Latin prayers and indications for readings of OCSO proper Masses; the attached proper and its first printing are uninspected.",
+          "date_kind": "approval",
+          "date_label": "16 September 1975 confirmation, CD 83/75",
+          "evidence": [
+            {
+              "source_id": "ocso-next:notitiae1975",
+              "locus": "Printed p. 343/PDF p. 61, CD 83/75",
+              "claim": "The confirmation expressly names the Strict Observance branch, date and Latin component extent."
+            },
+            {
+              "source_id": "ocso-next:ritual1998",
+              "locus": "Printed p. 85/PDF p. 45",
+              "claim": "The shared Ritual distinguishes OCSO 1975 from OCist 1977 confirmation and refers to the Rome 1983 proper."
+            }
+          ],
+          "limitations": "A scoped component approval, not evidence of a whole independent OCSO Missal, complete text, original printed book identity or new 1983 general approval. No continuity or parentage edge is drawn.",
+          "reception": "Order-directed confirmation, without a checked 1975 first celebration or named house's use of the attached Latin texts."
+        },
+        {
+          "id": "ocso-next:shared-book1983",
+          "scope": "The named complementary Latin Mass proper and Lectionarium, issued by the OCist General Curia and referred to by the shared OCist/OCSO Ritual.",
+          "date_kind": "publication",
+          "date_label": "Rome 1983 publication; OCist confirmation 9 May 1977",
+          "evidence": [
+            {
+              "source_id": "ocso-next:books1983",
+              "locus": "Printed p. 329/PDF p. 43",
+              "claim": "Both complementary Latin books were issued in Rome in 1983 and confirmed for OCist under CD 452/77 on 9 May 1977."
+            },
+            {
+              "source_id": "ocso-next:dli83442",
+              "locus": "Title, mandate, year, extent, contents and shelfmark fields",
+              "claim": "The exact catalogued title includes a Lectionarium and has 128, 96 pages."
+            },
+            {
+              "source_id": "ocso-next:ritual1998",
+              "locus": "Printed p. 85/PDF p. 45",
+              "claim": "The shared Latin Ritual refers to the named Rome 1983 book after distinguishing the two branches' approvals."
+            }
+          ],
+          "limitations": "Original book unacquired. The shared reference does not prove identical OCist and OCSO texts, blanket reception of every component, a new approval in 1983, or an OCSO-owned whole Missal. No substantive revision or inheritance is asserted.",
+          "reception": "A later common Ritual directs readers to the book; use of an exact 1983 copy, language and readings at any OCSO house is unestablished."
+        },
+        {
+          "id": "ocso-next:gabriella1983-component",
+          "scope": "Maria Gabriella's Latin Mass collect and 22 April OCSO observance; the companion Office reading and Italian expression remain identified but outside this Latin Mass state's text extent.",
+          "date_kind": "approval",
+          "date_label": "3 February house grant; 14 February text confirmation; 5 March order-calendar grant, 1983",
+          "evidence": [
+            {
+              "source_id": "ocso-next:gabriella1983",
+              "locus": "Printed pp. 139–140/PDF pp. 37–38",
+              "claim": "Text confirmation and the four-house calendar grant have distinct protocols, dates and scope; Vitorchiano has a higher rank."
+            },
+            {
+              "source_id": "ocso-next:calendar1983",
+              "locus": "Printed p. 202/PDF p. 16, Prot. 330/83",
+              "claim": "The later grant permits an order-calendar optional memorial on 22 April."
+            },
+            {
+              "source_id": "ocso-next:ritual1998",
+              "locus": "Printed pp. 85–86/PDF pp. 45–46",
+              "claim": "The shared Ritual lists later addition protocols and supplies a Latin Maria Gabriella collect."
+            },
+            {
+              "source_id": "ocso-next:vitorchiano2014",
+              "locus": "Article published 2 May 2014, opening and Mass paragraphs",
+              "claim": "The house reports a later celebration with Mass, deferred from 22 April because of the Easter octave."
+            }
+          ],
+          "limitations": "Original signed instruments and the earliest attached collect remain unacquired. No Mass lection is inferred from the Office second reading. No original-before text is collated, so there is no revision edge from the 1975 proper and no assumed identity with the 1983 printed book's contents.",
+          "reception": "Permissions name houses and order scope separately. Vitorchiano's report supplies one later actual Mass celebration, without identifying the exact book, language or collect used. It does not prove every house used the proper or date its first use."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "ocso-src-notitiae-1975-proper",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-11-%281975%29/Notitiae-111-112-1975.pdf",
+      "type": "official-congregation-decree-summary",
+      "inspection": "Original journal scan, Notitiae 11 (1975) nos. 111–112, printed p. 343/PDF p. 61, visually inspected 2026-10-20: OCSO, 16 September 1975, CD 83/75; confirmation covers Latin prayers and indications for readings of the order's proper Masses. This is the Congregation's published summary, not the signed instrument or attached proper."
+    },
+    {
+      "id": "ocso-src-rituale-1998-latin",
+      "url": "https://win.ocist.org/pdf/LAT_RITUALE_1998.pdf",
+      "type": "official-order-latin-ritual-scan",
+      "inspection": "1998 Langwaden Bernardus-Verlag Latin Ritual, PDF pp. 2–5 title/presentation/contents; PDF p. 24 (printed p. 43) Missale adhibendum; PDF pp. 45–46 (printed pp. 85–87) proper references and additions visually inspected 2026-10-20. The title names both OCist and OCSO. Printed p. 85 distinguishes OCSO CD 83/75 (16 September 1975) and OCist CD 452/77 (9 May 1977), refers to the Rome 1983 Missae propriae, then lists later additions. It refers readers to the 1983 book rather than reproducing that whole proper."
+    },
+    {
+      "id": "ocso-src-notitiae-1983-books",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-19-%281983%29/Notitiae-203-1983.pdf",
+      "type": "official-congregation-publication-bibliography",
+      "inspection": "Notitiae 19 (1983) no. 203, printed p. 329/PDF p. 43, visually inspected 2026-10-20: under Ordo Cisterciensis, Latin Missae Propriae and Missae Propriae – Lectionarium, Curia Generalis Ordinis, Rome 1983; each has confirmation 9 May 1977, CD 452/77. The heading is OCist; it must not be silently relabelled OCSO."
+    },
+    {
+      "id": "ocso-src-dli-83442",
+      "url": "https://dli.institute/dlibib/dlibibkatwp.php?layout=dbk&ausgabe=1&nummer=83442&Bestand=c&NurSchweiz=0",
+      "type": "holding-library-catalogue",
+      "inspection": "Whole DLI catalogue response acquired and read 2026-10-20: Missae propriae ad usum Ordinis Cisterciensis, Latin, issued by authority of the General Chapter and mandate of Abbot General Sighard Kleiner; Rome 1983; extent 128, 96 pages; includes Lectionarium; shelfmark Lesesaal EDZ OCist, 1983. The catalogue explicitly offers no digitization. Original book title, approval and body leaves remain uninspected."
+    },
+    {
+      "id": "ocso-src-notitiae-1983-gabriella",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-19-%281983%29/Notitiae-200-1983.pdf",
+      "type": "official-congregation-decree-summary",
+      "inspection": "Notitiae 19 (1983) no. 200, printed pp. 139–140/PDF pp. 37–38, visually inspected 2026-10-20: CD 124/83, 14 February, confirms Latin/Italian collect and Office second reading for Maria Gabriella; CD 125/83, 3 February, allows 22 April in four named OCSO houses, obligatory at Vitorchiano and optional at Tre Fontane, Frattocchie and Valserena. OCist CD 203/83 of 5 February is a separate branch's calendar grant."
+    },
+    {
+      "id": "ocso-src-notitiae-1983-calendar",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-19-%281983%29/Notitiae-201-1983.pdf",
+      "type": "official-congregation-decree-summary",
+      "inspection": "Notitiae 19 (1983) no. 201, printed p. 202/PDF p. 16, visually inspected 2026-10-20: OCSO, 5 March 1983, Prot. 330/83, permits Maria Gabriella Sagheddu in the order's calendar on 22 April as an optional memorial. This later order-level grant is distinct from the earlier four-house grant; the notice does not expressly repeal Vitorchiano's higher local grade."
+    },
+    {
+      "id": "ocso-src-latin-lectionary-web",
+      "url": "https://www.ocso.org/uploads/resources/liturgy/cistercian-lectionary/Lectionario-cisterciense-LA.doc",
+      "type": "official-order-undated-latin-component-delivery",
+      "inspection": "Whole legacy DOC acquired from the order's current All Documents table 2026-10-20. Binary printable-string extraction identifies the title Supplementum Cisterciense Ordinis Lectionum Missae iuxta Missale Romanum (1969) and assignments. File metadata reports creation/save on 21 July 2010 and seven pages; these are file properties, not proof of a 2010 publication, approval or textual revision. Document was not rendered or collated; relation to the 1983 printed Lectionarium remains open."
+    },
+    {
+      "id": "ocso-src-vitorchiano-2014",
+      "url": "https://www.trappistevitorchiano.it/b-m-gabriella/eventi-sulla-beata-gabriella/centenario-della-nascita-della-b-maria-gabriella-sagheddu-3/",
+      "type": "house-primary-celebration-report",
+      "inspection": "Whole house HTML acquired 2026-10-20; article publication metadata gives 2 May 2014, later modification 5 August 2024. HTML lines 484, 489–499 identify a celebration of Maria Gabriella deferred from 22 April because of the Easter octave, with Mass opening the festive day and sisters of Valserena present. This is concrete house celebration testimony, not identification of a Latin proper or printing used."
+    }
+  ],
+  "versions": [
+    {
+      "id": "ocso-latin-proper-1975",
+      "family": "Cistercians of the Strict Observance (OCSO)",
+      "title": "OCSO Latin prayers and reading indications for proper Masses, CD 83/75",
+      "kind": "Latin-Mass-proper-approval-witness",
+      "date": "16 September 1975",
+      "date_role": "confirmation of Latin prayers and reading indications; not a printing date",
+      "sources": [
+        "ocso-src-notitiae-1975-proper",
+        "ocso-src-rituale-1998-latin"
+      ],
+      "source_locus": "Notitiae 11 (1975) nos. 111–112, p. 343/PDF p. 61; Rituale Cisterciense 1998 p. 85/PDF p. 45",
+      "qualification": "Published official confirmation expressly names the Strict Observance branch. The exact attached 1975 proper and original signed decree remain unacquired. Descriptive catalogue title identifies the confirmed component, not an inspected book title. A later shared Ritual refers to the Rome 1983 proper; it does not establish identical entire books or dated house use.",
+      "status": "official-component-approval-documented-original-book-open",
+      "language_priority": [
+        "Latin"
+      ],
+      "scope_disposition": "in-scope-original-book-or-historical-witness",
+      "version_status": "scoped-approval-witness-not-whole-missal-recension",
+      "chronology_start": 1975,
+      "chronology_end": 1975,
+      "chronology_kind": "approval",
+      "acquisition_status": "official-notice-acquired-attached-proper-not-acquired",
+      "transcription_status": "no-new-verified-transcription",
+      "collation_status": "approval-notice-image-checked-proper-text-unexamined",
+      "chronology_certainty": "explicit-published-confirmation-date"
+    },
+    {
+      "id": "ocso-shared-proper-1983",
+      "family": "Cistercian Latin proper (OCist edition; OCSO reference)",
+      "title": "Missae propriae ad usum Ordinis Cisterciensis, with Lectionarium",
+      "kind": "complementary-Latin-Mass-proper-and-lectionary",
+      "date": "Rome 1983; OCist confirmation 9 May 1977",
+      "date_role": "1983 publication; distinct 1977 OCist and 1975 OCSO approvals",
+      "sources": [
+        "ocso-src-dli-83442",
+        "ocso-src-notitiae-1983-books",
+        "ocso-src-rituale-1998-latin"
+      ],
+      "source_locus": "DLI 83442; Notitiae 19 (1983) no. 203, p. 329/PDF p. 43; shared Ritual 1998 p. 85/PDF p. 45",
+      "qualification": "DLI identifies Latin Rome 1983, 128 and 96 pages, with Lectionarium and Sighard Kleiner's mandate. The official bibliography places the two components under Ordo Cisterciensis and confirms both under CD 452/77 of 9 May 1977. The shared OCist/OCSO Ritual points to this edition alongside branch-specific approvals. This supports an OCSO-related source witness, not an independently issued whole OCSO Missal, universal reception of every reading, or identification of an OCSO-owned printing. Original book leaves remain uninspected.",
+      "status": "exact-bibliographic-identity-original-book-not-acquired",
+      "language_priority": [
+        "Latin"
+      ],
+      "scope_disposition": "in-scope-original-book-or-historical-witness",
+      "version_status": "complementary-component-witness-not-proven-new-recension",
+      "chronology_start": 1983,
+      "chronology_end": 1983,
+      "chronology_kind": "publication",
+      "acquisition_status": "official-bibliography-and-library-record-acquired-original-book-unavailable-at-identified-route",
+      "transcription_status": "no-new-verified-transcription",
+      "collation_status": "bibliography-image-checked-original-proper-and-lectionary-unexamined",
+      "chronology_certainty": "contemporary-official-bibliography-and-holding-catalogue-year"
+    },
+    {
+      "id": "ocso-gabriella-1983-component",
+      "family": "Cistercians of the Strict Observance (OCSO)",
+      "title": "Maria Gabriella Sagheddu: Latin Mass collect and 22 April calendar grants",
+      "kind": "Latin-Mass-proper-and-calendar-amendment-witness",
+      "date": "3 and 14 February; 5 March 1983",
+      "date_role": "separate local calendar, text and order calendar approvals",
+      "sources": [
+        "ocso-src-notitiae-1983-gabriella",
+        "ocso-src-notitiae-1983-calendar",
+        "ocso-src-rituale-1998-latin",
+        "ocso-src-vitorchiano-2014"
+      ],
+      "source_locus": "Notitiae 19 (1983) no. 200, pp. 139–140/PDF pp. 37–38; no. 201, p. 202/PDF p. 16; Ritual 1998 pp. 85–86/PDF pp. 45–46; Vitorchiano house report dated 2 May 2014",
+      "qualification": "CD 124/83 confirms the Latin/Italian collect and Office second reading; the latter is not a Mass lection. CD 125/83 names four houses with distinct ranks; Prot. 330/83 later permits an order-calendar optional memorial. The later Ritual prints the Latin collect at p. 86, but this lane supplies no prayer payload or complete collation. The 2014 house report establishes celebration, without an exact book/language identification. None of these is a general approval of the entire Cistercian proper in 1983.",
+      "status": "component-and-jurisdiction-documented",
+      "language_priority": [
+        "Latin"
+      ],
+      "scope_disposition": "in-scope-original-book-or-historical-witness",
+      "version_status": "scoped-calendar-and-proper-addition-not-whole-book-recension",
+      "chronology_start": 1983,
+      "chronology_end": 1983,
+      "chronology_kind": "approval",
+      "acquisition_status": "official-notices-and-later-Latin-witness-acquired-original-signed-instruments-open",
+      "transcription_status": "no-new-verified-transcription",
+      "collation_status": "notice-images-checked-collect-witness-inspected-no-complete-text-collation",
+      "chronology_certainty": "explicit-published-confirmation-date"
+    },
+    {
+      "id": "ocso-latin-lectionary-web-undated",
+      "family": "Cistercians of the Strict Observance (OCSO)",
+      "title": "Supplementum Cisterciense Ordinis Lectionum Missae iuxta Missale Romanum (1969)",
+      "kind": "undated-official-Latin-lectionary-supplement-delivery",
+      "date": "undated; file creation/save metadata 21 July 2010",
+      "date_role": "file metadata only; publication and approval dates unestablished",
+      "sources": [
+        "ocso-src-latin-lectionary-web"
+      ],
+      "qualification": "The current order site supplies a legacy DOC with a Latin Mass-reading supplement title. File dates cannot place a historical stage. Its body is not rendered or collated, and identity with the Rome 1983 Lectionarium, separate approval, completeness and house use are unestablished.",
+      "status": "delivery-acquired-historical-edition-identity-open",
+      "language_priority": [
+        "Latin"
+      ],
+      "scope_disposition": "in-scope-original-book-or-historical-witness",
+      "version_status": "component-delivery-not-proven-new-recension",
+      "chronology_layout": "unpositioned-pending-edition-and-approval-identity",
+      "acquisition_status": "whole-official-DOC-delivery-acquired",
+      "transcription_status": "unverified-printable-string-discovery-only",
+      "collation_status": "not-rendered-not-collated"
+    }
+  ],
+  "searches": [
+    {
+      "repertoires": [
+        "Official OCSO liturgy and All Documents/Missal table",
+        "Official OCist Latin Ritual",
+        "Named Notitiae issues and printed loci",
+        "DLI 83442 catalogue",
+        "Vitorchiano house report",
+        "OCSO Atlas directive dated 25 April 2019"
+      ],
+      "queries": "Exact 1983 Latin title and vernacular variants, Cisterciensis/Cisterciensium/OCSO, protocols 83/75, 452/77 and 330/83.",
+      "unexamined_ranges": "No exhaustive journal, order archive or library census; medieval books not reexamined. Original 1971/1975/1977 instruments and attachments, complete 1983 proper/lectionary, and renderable DOC identity remain missing.",
+      "negative_limit": "The named current web table did not identify a complete Latin proper; this does not establish historical or worldwide absence."
+    }
+  ],
+  "acquisitions": [
+    {
+      "source_url": "https://www.ocso.org/resources/liturgy/",
+      "sha256": "3a211c87d9bd9f0b03c7f763d1f5f5a6d761e68a26ffa6d9dd3e0fdb04524d61",
+      "byte_size": 32882,
+      "retrieved_on": "2026-10-20",
+      "inspection_locus": "Ritual; Calendar & Martyrology; Missal; Lectionary paragraphs",
+      "limitation": "Official retrospective; general 1983 approval is a report without its instrument.",
+      "rights_status": "unresolved-for-repository-redistribution",
+      "proposed_storage": "restricted-payload-metadata-only-integration"
+    },
+    {
+      "source_url": "https://www.ocso.org/resources/all-documents/?category=liturgy&folder=missal",
+      "sha256": "698e088a12b2fb46e293dda4467dc25da2f643e42de1b5cfb71bbea26337c3ae",
+      "byte_size": 1222880,
+      "retrieved_on": "2026-10-20",
+      "inspection_locus": "Current Missal folder rows and Latin Mass-lectionary DOC row",
+      "limitation": "Acquired whole table; not an exhaustive archive census.",
+      "rights_status": "unresolved-for-repository-redistribution",
+      "proposed_storage": "restricted-payload-metadata-only-integration"
+    },
+    {
+      "source_url": "https://win.ocist.org/pdf/LAT_RITUALE_1998.pdf",
+      "sha256": "ab6bbf56b3535dc90a0f6e19c63b0b5786e2cf10aefc47b9c1b490206a6241a2",
+      "byte_size": 9062063,
+      "retrieved_on": "2026-10-20",
+      "inspection_locus": "PDF pp. 2–5, 24, 45–46, visually inspected",
+      "limitation": "Shared OCist/OCSO later Ritual; whole delivery acquired, not whole book collated. Publisher rights reservation observed.",
+      "rights_status": "unresolved-for-repository-redistribution",
+      "proposed_storage": "restricted-payload-metadata-only-integration"
+    },
+    {
+      "source_url": "https://www.ocso.org/uploads/resources/liturgy/ordo/Praenotanda-LA.pdf",
+      "sha256": "bfede3555513c6113eb8c0d1d719cd58088e92114b7b51911acfa20172d01cc6",
+      "byte_size": 78921,
+      "retrieved_on": "2026-10-20",
+      "inspection_locus": "III.A, extracted text lines 334–348",
+      "limitation": "Text-layer inspection only; later norms cite 1971, 1975 and 1977 instruments.",
+      "rights_status": "unresolved-for-repository-redistribution",
+      "proposed_storage": "restricted-payload-metadata-only-integration"
+    },
+    {
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-11-%281975%29/Notitiae-111-112-1975.pdf",
+      "sha256": "93c2c915aeb4e42c24321f9205e3ba8ef4a4b532fa0268ac7b2195cc7c4c5e3f",
+      "byte_size": 6619771,
+      "retrieved_on": "2026-10-20",
+      "inspection_locus": "Printed p. 343/PDF p. 61, visually inspected",
+      "limitation": "Original journal summary, not original signed CD 83/75 or its attached texts.",
+      "rights_status": "unresolved-for-repository-redistribution",
+      "proposed_storage": "restricted-payload-metadata-only-integration"
+    },
+    {
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-19-%281983%29/Notitiae-203-1983.pdf",
+      "sha256": "362ecb4010f29d7d97b34032e691a54f181048a94a90ea2d0f6a0816613e502a",
+      "byte_size": 5938048,
+      "retrieved_on": "2026-10-20",
+      "inspection_locus": "Printed p. 329/PDF p. 43, visually inspected",
+      "limitation": "Official bibliography under OCist: 1983 publication, 1977 confirmation; original books unacquired.",
+      "rights_status": "unresolved-for-repository-redistribution",
+      "proposed_storage": "restricted-payload-metadata-only-integration"
+    },
+    {
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-19-%281983%29/Notitiae-200-1983.pdf",
+      "sha256": "84b1627afff093e0720795afe3be9a419a61007bfd04bd831f76a80e4eb9999a",
+      "byte_size": 8486294,
+      "retrieved_on": "2026-10-20",
+      "inspection_locus": "Printed pp. 139–140/PDF pp. 37–38, visually inspected; p. 142/PDF p. 40 text layer only",
+      "limitation": "Collect/Office text and four-house calendar grants; p142 separate beatification celebrations lead, not a complete-book permission.",
+      "rights_status": "unresolved-for-repository-redistribution",
+      "proposed_storage": "restricted-payload-metadata-only-integration"
+    },
+    {
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-19-%281983%29/Notitiae-201-1983.pdf",
+      "sha256": "af82716d3cc0465207ce27f8aeb57f9ca13555d0cd14a5ea6280b4ef107fa1b7",
+      "byte_size": 4682005,
+      "retrieved_on": "2026-10-20",
+      "inspection_locus": "Printed p. 202/PDF p. 16, visually inspected",
+      "limitation": "Order-calendar grant distinct from earlier four-house grant.",
+      "rights_status": "unresolved-for-repository-redistribution",
+      "proposed_storage": "restricted-payload-metadata-only-integration"
+    },
+    {
+      "source_url": "https://dli.institute/dlibib/dlibibkatwp.php?layout=dbk&ausgabe=1&nummer=83442&Bestand=c&NurSchweiz=0",
+      "sha256": "859a15b20a2e17507d4583928149628b79d59f72c763016595139665f2d81fcf",
+      "byte_size": 7028,
+      "retrieved_on": "2026-10-20",
+      "inspection_locus": "All book identity fields and no-digitization statement, HTML line 75",
+      "limitation": "Exact library catalogue response, not the 1983 original book.",
+      "rights_status": "unresolved-for-repository-redistribution",
+      "proposed_storage": "restricted-payload-metadata-only-integration"
+    },
+    {
+      "source_url": "https://dli.institute/dlibib/dlibibkatwp.php?Bestand=c&Kat=EDZ%3B0%3B0&NurGanze=0&Sortierung=Jahr&ausgabe=5",
+      "sha256": "2558507579603e3a03ea41fe0a2ce1cd054d5405a12aecdffa1b08cd80fc8f3e",
+      "byte_size": 19207,
+      "retrieved_on": "2026-10-20",
+      "inspection_locus": "1983 Missae propriae listing and detail link",
+      "limitation": "Discovery list; detail record controls.",
+      "rights_status": "unresolved-for-repository-redistribution",
+      "proposed_storage": "restricted-payload-metadata-only-integration"
+    },
+    {
+      "source_url": "https://www.ocso.org/uploads/resources/liturgy/cistercian-lectionary/Lectionario-cisterciense-LA.doc",
+      "sha256": "521e663115f7d78fd7f8f224c5638699439283f73b2ee45e322aa4355f1de05b",
+      "byte_size": 53760,
+      "retrieved_on": "2026-10-20",
+      "inspection_locus": "Title/assignment strings and file metadata only",
+      "limitation": "Legacy DOC not rendered; seven-page file metadata and 2010 save dates do not establish historical edition date.",
+      "rights_status": "unresolved-for-repository-redistribution",
+      "proposed_storage": "restricted-payload-metadata-only-integration"
+    },
+    {
+      "source_url": "https://www.ocso.org/uploads/resources/liturgy/missal/Cistercian-Sanctoral-EN.doc",
+      "sha256": "b1b410d24a09aabbd11dc5508954edd1613bc526ff0198ff24ad393b44929b6f",
+      "byte_size": 92160,
+      "retrieved_on": "2026-10-20",
+      "inspection_locus": "File identity metadata only",
+      "limitation": "Not rendered, body unexamined; no independent English translation history claimed.",
+      "rights_status": "unresolved-for-repository-redistribution",
+      "proposed_storage": "restricted-payload-metadata-only-integration"
+    },
+    {
+      "source_url": "https://www.ocso.org/uploads/resources/liturgy/missal/Sanctoral-Cistercien-FR.doc",
+      "sha256": "22e4557fdd78be47cb02765598ed4587e257923bb7396556d9c58fc3b6a19bb5",
+      "byte_size": 118272,
+      "retrieved_on": "2026-10-20",
+      "inspection_locus": "File identity metadata only",
+      "limitation": "Not rendered, body unexamined; no independent French translation history claimed.",
+      "rights_status": "unresolved-for-repository-redistribution",
+      "proposed_storage": "restricted-payload-metadata-only-integration"
+    },
+    {
+      "source_url": "https://www.trappistevitorchiano.it/b-m-gabriella/eventi-sulla-beata-gabriella/centenario-della-nascita-della-b-maria-gabriella-sagheddu-3/",
+      "sha256": "8d83c7cd2a6d3a446f502c429c27d24706562db0b2bdf3160880d2bbc1bcf162",
+      "byte_size": 98595,
+      "retrieved_on": "2026-10-20",
+      "inspection_locus": "Publication metadata and article lines 484, 489–499",
+      "limitation": "House reports later Mass celebration; exact book/language unidentified.",
+      "rights_status": "unresolved-for-repository-redistribution",
+      "proposed_storage": "restricted-payload-metadata-only-integration"
+    },
+    {
+      "source_url": "https://www.ocso.org/news/general/celebrating-the-atlas-martyrs/",
+      "sha256": "15286c65fdabddf6d79c921a26829da0405c0047080b980ff6be556dfda0877e",
+      "byte_size": 29651,
+      "retrieved_on": "2026-10-20",
+      "inspection_locus": "Article date and approval/interim Common paragraphs",
+      "limitation": "Bounded order directive and distinct Algiers French permission, not actual use or Latin proper identity.",
+      "rights_status": "unresolved-for-repository-redistribution",
+      "proposed_storage": "restricted-payload-metadata-only-integration"
+    }
+  ],
+  "remaining_gaps": [
+    {
+      "id": "ocso-early-distinct-branch-reception-gap",
+      "tradition_id": "ocso-round2",
+      "period": "1892–1971",
+      "missing": "The distinct Strict Observance branch's exact Mass-book sequence, branch-specific approvals, and named-house reception from the 1892 separation to the 1971 Roman Missal adoption faculty have not been established in this continuation.",
+      "next_source": "Original OCSO General Chapter and liturgy records after 1892, identified preconciliar Latin Mass books and their approval leaves, and dated house book inventories or adoption records; reconcile earlier monastic receipt leads without treating catalogue association as proof of branch-wide reception.",
+      "consequence": "The new postconciliar states do not fill the 1892–1971 interval or establish continuous OCSO reception. Shared earlier Cistercian material does not create a medieval OCSO institutional identity."
+    },
+    {
+      "id": "ocso-original-books-and-instruments-gap",
+      "tradition_id": "ocso-round2",
+      "period": "1971–1983",
+      "missing": "Original signed reply 525/70 of 8 June 1971; signed OCSO CD 83/75 with attached prayers/reading indications; signed OCist CD 452/77; exact Rome 1983 Mass proper and Lectionarium; resolution of the overview's reported 1983 general approval.",
+      "next_source": "Order archives and public library copies, beginning with DLI 83442 (128, 96 pages); compare branch-specific approval and title leaves against the official 1975 notice, 1983 bibliography and shared 1998 Ritual.",
+      "consequence": "No whole OCSO Missal, exact complete text, substantive before/after revision or automatic relation to the older Cistercian whole-missal line is claimed."
+    },
+    {
+      "id": "ocso-web-lectionary-and-later-use-gap",
+      "tradition_id": "ocso-round2",
+      "period": "1983–present",
+      "missing": "Edition identity and approval of the official undated Latin DOC reading supplement, relation to the 1983 printed Lectionarium, original later-addition instruments, and exact books used by OCSO houses.",
+      "next_source": "Render the order's Lectionario-cisterciense-LA.doc; acquire the 1983 book and original 1983/1992/1995 instruments named by Ritual p. 85; use dated house ordines and celebrations that identify exact books and language. The 2019 Atlas directive is a separate permission/reception control.",
+      "consequence": "File metadata dates do not create a 2010 revision. Named permissions and one house celebration do not establish uniform reception, exact Latin-book use or modern full-text publication rights."
+    }
+  ],
+  "semantics": "Three bounded states are not three substantive recensions. OCSO 1975 confirmation, OCist 1977 confirmation, 1983 publication and later shared reference retain separate beneficiaries and event roles. One Vitorchiano Mass report identifies no exact Latin book or universal use. File creation/save on 21 July 2010 does not date an edition. No prayer/body/source payload tracked."
+}

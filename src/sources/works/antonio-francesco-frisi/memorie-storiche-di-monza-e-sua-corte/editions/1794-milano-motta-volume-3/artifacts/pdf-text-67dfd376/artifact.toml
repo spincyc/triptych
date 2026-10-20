@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.antonio-francesco-frisi.memorie-storiche-di-monza-e-sua-corte.1794-milano-motta-volume-3.pdf-text-67dfd376"
+edition_id = "edition.antonio-francesco-frisi.memorie-storiche-di-monza-e-sua-corte.1794-milano-motta-volume-3"
+artifact_type = "pdf-text-layer"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Complete technical extraction of the independently identified public-domain historical edition and faithful scan; same US term and mechanical-copy basis as controlling facsimile."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/memoriestoriched03fris/memoriestoriched03fris.pdf"
+provenance = "University of Illinois Urbana-Champaign, digitized by the Internet Archive. Exact HTTPS response acquired and hashed for Monza research on 2026-10-20; no source bytes passed through a model. Internet Archive item memoriestoriched03fris metadata; contributor and sponsor University of Illinois Urbana-Champaign; IA Scribe scanning workflow, imagecount 396 including ancillary images, exact served PDF 394 pages."
+retrieved = "2026-10-20"
+sha256 = "67dfd376b1d5f0cdc79154a2a1b5b58b9b1dc2a2251a3955c9b171a3ced0fd63"
+byte_size = 2453598
+path = "src/sources/works/antonio-francesco-frisi/memorie-storiche-di-monza-e-sua-corte/editions/1794-milano-motta-volume-3/artifacts/pdf-text-67dfd376/frisi-1794-v3.txt"
+indexable = true
+notes = "Antonio Francesco Frisi, Memorie storiche di Monza e sua corte, tomo III (Milano: Stamperia di Gaetano Motta, 1794). University of Illinois Urbana-Champaign copy, Internet Archive digitization memoriestoriched03fris. Underlying 1794 edition and faithful scan treated as public domain in the United States. No project CC BY claim is made over external source material; provider attribution is retained as provenance. Complete delivered extent; individual source claims remain bounded to inspected pages."
+encoding = "utf-8"
+derived_from = "artifact.antonio-francesco-frisi.memorie-storiche-di-monza-e-sua-corte.1794-milano-motta-volume-3.institutional-facsimile-d5d58b52"
+transformation = "pdftotext -layout over the entire controlling PDF, preserving form feeds; no subsequent text edits"

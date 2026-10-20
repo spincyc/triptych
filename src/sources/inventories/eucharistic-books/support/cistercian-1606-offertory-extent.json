@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-extent",
+  "book_id": "cistercian-1606-offertory",
+  "title": "Cistercian 1606 Præparationes ante Missam offertory: complete page/unit census",
+  "status": "complete",
+  "unresolved": [],
+  "omitted": [],
+  "expected_unit_ids": [
+    "unit.cistercian-1606.offertory.opening-rubric",
+    "unit.cistercian-1606.offertory.suscipe-trinitas",
+    "unit.cistercian-1606.offertory.in-spiritu-rubric",
+    "unit.cistercian-1606.offertory.in-spiritu-humilitatis",
+    "unit.cistercian-1606.offertory.orate-rubric",
+    "unit.cistercian-1606.offertory.orate-invitation",
+    "unit.cistercian-1606.offertory.dominus-response"
+  ],
+  "scope": "Complete functional offertory constituent within the native Præparationes ante Missam division, Paris 1606 printed p.181 right column (BSB canvas 235): from the red Offertorio dicto, eleuatis patena cum pane, & calice, & genufle. dicat. instruction through the final Amen of the Dominus sit response. Includes all three standalone red rubrics, the complete Suscipe Trinitas and In spiritu humilitatis prayers, the Orate invitation, printed red response cue and complete Dominus response. Offertory names a bounded function introduced by the source wording, not a separately printed chapter title. Creed above and in the left column, subsequent prefaces and all other book divisions remain outside this constituent. Whole-book and complete-Ordinary text coverage remain partial; no text is inherited from another edition.",
+  "pages": [
+    {
+      "witness_id": "cistercian-1606-bsb-p181",
+      "ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.cistercian-1606.offertory.opening-rubric",
+        "unit.cistercian-1606.offertory.suscipe-trinitas",
+        "unit.cistercian-1606.offertory.in-spiritu-rubric",
+        "unit.cistercian-1606.offertory.in-spiritu-humilitatis",
+        "unit.cistercian-1606.offertory.orate-rubric",
+        "unit.cistercian-1606.offertory.orate-invitation",
+        "unit.cistercian-1606.offertory.dominus-response"
+      ],
+      "description": "The one-page retained witness is printed p.181, BSB canvas 235. Constituent text occupies only the right column after the Creed Amen. All 33 printed lines from red Offertorio dicto through final response Amen are represented. Left-column Benedictio super diaconem/Creed rubrics and Creed text, right-column Creed continuation above Offertorio, running head, page number, signature and show-through are outside this functional constituent."
+    }
+  ],
+  "source_boundary_audit": {
+    "native_division_running_head": "Præparationes ante Missam.",
+    "start": "Red Offertorio dicto, eleuatis patena cum pane, & calice, & genufle. dicat. immediately after the Creed Amen in the right column.",
+    "end": "Final salúte. Amen. of the Dominus sit response, before the blank foot of the right column.",
+    "unit_count": 7,
+    "source_printed_lines": 33,
+    "standalone_red_rubrics": 3,
+    "printed_response_cues": [
+      {
+        "source": "Stylized crossed-R followed by m.",
+        "serialization": "℟m.",
+        "position": "Beginning of source line 28, immediately before Dóminus sit in corde tuo",
+        "expanded": false
+      }
+    ],
+    "printed_crosses": 0,
+    "facsimile_sha256": "2646b0f5aa0a2bb55fd1042680a673e6adb99ec66913f754a8ceeac0f14830d7",
+    "boundary_rationale": "Seven units replace the proposed six because the printed response cue and source paragraph boundary require separate Orate invitation and Dominus response blocks. The existing checked spoken-only dialogue remains unchanged; its two exact spoken spans are reused in the new broader marked selection. The three red standalone instructions are independently addressable. The native running head names Præparationes ante Missam; the source opening Offertorio dicto establishes the bounded functional extent."
+  },
+  "serialization_line_classes": [
+    {
+      "unit_id": "unit.cistercian-1606.offertory.opening-rubric",
+      "source_printed_line_range_from_offertorio": [
+        1,
+        2
+      ],
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-checked-latin-9c003023",
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "line_sha256": "af1d4573f87bf8b1bf34f68a1b525c81a35ecf5953af4f5ad59b548e4fe6663f",
+      "ink": "red-rubric",
+      "response_label": null
+    },
+    {
+      "unit_id": "unit.cistercian-1606.offertory.suscipe-trinitas",
+      "source_printed_line_range_from_offertorio": [
+        3,
+        16
+      ],
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.suscipe-trinitas-checked-latin-0c61e53d",
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "line_sha256": "f4ef4201b6fd2a2d3b81da889d8706d698d73f6c14e36d2e7f73b291820b76ac",
+      "ink": "black-reading-with-red-initial",
+      "response_label": null
+    },
+    {
+      "unit_id": "unit.cistercian-1606.offertory.in-spiritu-rubric",
+      "source_printed_line_range_from_offertorio": [
+        17,
+        18
+      ],
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-checked-latin-9c003023",
+      "physical_line_ranges": [
+        [
+          2,
+          2
+        ]
+      ],
+      "line_sha256": "1859bab0e308b9bf128db5da043cae4acf243528e164abac84328259094b3a28",
+      "ink": "red-rubric",
+      "response_label": null
+    },
+    {
+      "unit_id": "unit.cistercian-1606.offertory.in-spiritu-humilitatis",
+      "source_printed_line_range_from_offertorio": [
+        19,
+        23
+      ],
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-checked-latin-9c003023",
+      "physical_line_ranges": [
+        [
+          3,
+          3
+        ]
+      ],
+      "line_sha256": "0571780570f988848e59713aca331785fe8cefcae85989bb7aa45cdbf2e1a2a7",
+      "ink": "black-reading-with-red-initial",
+      "response_label": null
+    },
+    {
+      "unit_id": "unit.cistercian-1606.offertory.orate-rubric",
+      "source_printed_line_range_from_offertorio": [
+        24,
+        24
+      ],
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-checked-latin-9c003023",
+      "physical_line_ranges": [
+        [
+          4,
+          4
+        ]
+      ],
+      "line_sha256": "52a72fd9f26ac5d5d7d68d9ed83e520121ca6a2aff31381911b4c85e7a737ada",
+      "ink": "red-rubric",
+      "response_label": null
+    },
+    {
+      "unit_id": "unit.cistercian-1606.offertory.orate-invitation",
+      "source_printed_line_range_from_offertorio": [
+        25,
+        27
+      ],
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-checked-latin-9c003023",
+      "physical_line_ranges": [
+        [
+          5,
+          5
+        ]
+      ],
+      "line_sha256": "e98e3dfe198f15c1191adccd2a03f4591549793fd6d51ca24d08e11879a3cf60",
+      "ink": "black-reading-with-red-initial",
+      "response_label": null
+    },
+    {
+      "unit_id": "unit.cistercian-1606.offertory.dominus-response",
+      "source_printed_line_range_from_offertorio": [
+        28,
+        33
+      ],
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-checked-latin-9c003023",
+      "physical_line_ranges": [
+        [
+          6,
+          6
+        ]
+      ],
+      "line_sha256": "e253cd015066923a2b0ba212ff0d044b6e3e7eabff7d7199aee244834e9b73fc",
+      "ink": "black-reading-with-red-initial",
+      "response_label": {
+        "printed_representation": "℟m.",
+        "ink": "red",
+        "position": "before Dóminus",
+        "expanded": false
+      }
+    }
+  ]
+}

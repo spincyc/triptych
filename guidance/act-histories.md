@@ -1855,6 +1855,25 @@ binding dependency is pinned in the stage projection. Neither binding type
 silently resolves a dossier gap or claims that complementary service books
 have been transcribed.
 
+A native witness may additionally name `segment_id` alongside its exact
+`artifact_id`. The schema-2 segment belongs to the witness edition, pins the
+container artifact and hash, carries inspected or verified evidence, and
+declares physical `artifact_page_ranges`. Required `scope_pages` and unit page
+loci remain in those container coordinates. A literal passage may instead name
+its schema-2 segment controller; its edition, ultimate artifact hash and
+physical-line ranges must agree with that controller. A page-only segment is
+insufficient for literal export. Any supplied passage page ranges must also
+remain inside the segment. Segments transfer neither artifact ownership,
+rights nor byte lineage.
+
+Without a segment, the census covers every artifact page. With a segment, it
+covers exactly that segment's physical page ranges. A whole book requires those
+complete ranges in scope and a verified, dated `constituent-work` segment,
+together with independent complete-extent collation. Container pages outside
+the segment cannot enter its census. A narrower constituent still accounts for
+every segment page and explicitly excludes omitted book divisions. Segment
+controllers establish neither historical ancestry nor text inheritance.
+
 The complete `structure` projection emits one
 `structure/act-history/native-texts/<slug>.json` per accepted stage binding.
 The catalogue advertises each stage's exact `text_projection_path` and binding

@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-native-book",
+  "id": "cistercian-1606-offertory",
+  "title": "Cistercian 1606, Præparationes ante Missam: complete offertory constituent",
+  "scope": "Complete functional offertory constituent within the native Præparationes ante Missam division, Paris 1606 printed p.181 right column (BSB canvas 235): from the red Offertorio dicto, eleuatis patena cum pane, & calice, & genufle. dicat. instruction through the final Amen of the Dominus sit response. Includes all three standalone red rubrics, the complete Suscipe Trinitas and In spiritu humilitatis prayers, the Orate invitation, printed red response cue and complete Dominus response. Offertory names a bounded function introduced by the source wording, not a separately printed chapter title. Creed above and in the left column, subsequent prefaces and all other book divisions remain outside this constituent. Whole-book and complete-Ordinary text coverage remain partial; no text is inherited from another edition.",
+  "transcribed_by": "AI source transcriber (Cistercian 1606 original-image offertory preparation)",
+  "stage_ids": [
+    "cistercian-1606-1657-1606"
+  ],
+  "catalogue_witness_ids": [
+    "western:cistercian-1606"
+  ],
+  "components": [
+    "ordinary",
+    "rubrics"
+  ],
+  "languages": [
+    "la"
+  ],
+  "extent_kind": "constituent",
+  "excluded_book_divisions": [
+    "The Creed above the opening instruction and in the left column of printed p.181",
+    "Other material of Præparationes ante Missam before the Offertorio dicto opening",
+    "The following prefaces, Canon, communion and all other Ordinary outside the stated bounds",
+    "Calendar, propers, lectionary, chant and all other missal divisions",
+    "Page furniture, running head, signature q, show-through and glyph-diplomatic typography"
+  ],
+  "date": {
+    "kind": "publication",
+    "label": "1606 Paris publication",
+    "start_year": 1606,
+    "end_year": 1606,
+    "evidence": [
+      {
+        "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.title-and-imprint",
+        "locus": "Unnumbered title page, BSB canvas 1: Paris Marnef/Cavellat imprint 1606"
+      }
+    ]
+  },
+  "extent_path": "src/sources/inventories/eucharistic-books/support/cistercian-1606-offertory-extent.json",
+  "collation_path": "src/sources/inventories/eucharistic-books/support/cistercian-1606-offertory-review.json",
+  "witnesses": [
+    {
+      "id": "cistercian-1606-bsb-p181",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00235-2646b0f5",
+      "scope_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "completeness_evidence": [
+        {
+          "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-facsimile",
+          "locus": "Exact complete photographed printed p.181; only the right-column Offertorio-to-response-Amen extent is the constituent"
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "unit.cistercian-1606.offertory.opening-rubric",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "opening-rubric"
+      ],
+      "source_order": 1,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1606-bsb-p181",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-opening-rubric",
+      "text_sha256": "af1d4573f87bf8b1bf34f68a1b525c81a35ecf5953af4f5ad59b548e4fe6663f",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00235-2646b0f5",
+      "verified_against_artifact_sha256": "2646b0f5aa0a2bb55fd1042680a673e6adb99ec66913f754a8ceeac0f14830d7",
+      "normalization": "Direct reading normalization of retained BSB canvas 235, printed p.181 right column: long s becomes s; display initials merge in sentence case; line-end word divisions and printed line wraps are joined within each semantic block; printed nasal suspension bars are expanded (including chorum, dicens, meum and sacrifícium); printed u/v, æ/œ, accents, abbreviations, punctuation and ampersands are retained. The stylized red crossed-R response cue followed by m. is represented as ℟m., without expanding the abbreviation. No absent Amen, prayer ending or familiar Roman wording is supplied. Six NFC UTF-8 physical lines, each a complete semantic block, end in LF. The Orate invitation and Dominus response retain their distinct source paragraph boundary. The spoken wording of those two blocks is byte-identical to the corresponding spans of existing checked orate-response-checked-latin-2bab0892; this broader source-derived selection restores the printed response cue omitted by that narrower spoken-only comparison. The separately bound Suscipe Trinitas reuses its existing checked passage unchanged. Rubrics are separate lines/units; their red ink, and red initials in the prayers, are recorded in the extent census rather than encoded as colour. This is a normalized reading transcription, not a glyph-diplomatic facsimile."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.offertory.suscipe-trinitas",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "suscipe-trinitas"
+      ],
+      "source_order": 2,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-p181",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.suscipe-trinitas",
+      "text_sha256": "f4ef4201b6fd2a2d3b81da889d8706d698d73f6c14e36d2e7f73b291820b76ac",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00235-2646b0f5",
+      "verified_against_artifact_sha256": "2646b0f5aa0a2bb55fd1042680a673e6adb99ec66913f754a8ceeac0f14830d7",
+      "normalization": "Reuses the unchanged checked Paris 1606 Suscipe Trinitas passage: normalize long s to s; merge the display initial in sentence case; join source line wraps and line-end word divisions; expand printed nasal suspension bars. Retain this printing’s u/v, æ/œ, accents, punctuation, ampersands and actual short ending Per ómnia sǽcula. The preceding red instruction is a separate literal unit. One NFC UTF-8 physical line is selected without its terminal LF; no wording, alternative or ending from another edition is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.offertory.in-spiritu-rubric",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "in-spiritu-rubric"
+      ],
+      "source_order": 3,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1606-bsb-p181",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-in-spiritu-rubric",
+      "text_sha256": "1859bab0e308b9bf128db5da043cae4acf243528e164abac84328259094b3a28",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00235-2646b0f5",
+      "verified_against_artifact_sha256": "2646b0f5aa0a2bb55fd1042680a673e6adb99ec66913f754a8ceeac0f14830d7",
+      "normalization": "Direct reading normalization of retained BSB canvas 235, printed p.181 right column: long s becomes s; display initials merge in sentence case; line-end word divisions and printed line wraps are joined within each semantic block; printed nasal suspension bars are expanded (including chorum, dicens, meum and sacrifícium); printed u/v, æ/œ, accents, abbreviations, punctuation and ampersands are retained. The stylized red crossed-R response cue followed by m. is represented as ℟m., without expanding the abbreviation. No absent Amen, prayer ending or familiar Roman wording is supplied. Six NFC UTF-8 physical lines, each a complete semantic block, end in LF. The Orate invitation and Dominus response retain their distinct source paragraph boundary. The spoken wording of those two blocks is byte-identical to the corresponding spans of existing checked orate-response-checked-latin-2bab0892; this broader source-derived selection restores the printed response cue omitted by that narrower spoken-only comparison. The separately bound Suscipe Trinitas reuses its existing checked passage unchanged. Rubrics are separate lines/units; their red ink, and red initials in the prayers, are recorded in the extent census rather than encoded as colour. This is a normalized reading transcription, not a glyph-diplomatic facsimile."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.offertory.in-spiritu-humilitatis",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "in-spiritu-humilitatis"
+      ],
+      "source_order": 4,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-p181",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-in-spiritu-humilitatis",
+      "text_sha256": "0571780570f988848e59713aca331785fe8cefcae85989bb7aa45cdbf2e1a2a7",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00235-2646b0f5",
+      "verified_against_artifact_sha256": "2646b0f5aa0a2bb55fd1042680a673e6adb99ec66913f754a8ceeac0f14830d7",
+      "normalization": "Direct reading normalization of retained BSB canvas 235, printed p.181 right column: long s becomes s; display initials merge in sentence case; line-end word divisions and printed line wraps are joined within each semantic block; printed nasal suspension bars are expanded (including chorum, dicens, meum and sacrifícium); printed u/v, æ/œ, accents, abbreviations, punctuation and ampersands are retained. The stylized red crossed-R response cue followed by m. is represented as ℟m., without expanding the abbreviation. No absent Amen, prayer ending or familiar Roman wording is supplied. Six NFC UTF-8 physical lines, each a complete semantic block, end in LF. The Orate invitation and Dominus response retain their distinct source paragraph boundary. The spoken wording of those two blocks is byte-identical to the corresponding spans of existing checked orate-response-checked-latin-2bab0892; this broader source-derived selection restores the printed response cue omitted by that narrower spoken-only comparison. The separately bound Suscipe Trinitas reuses its existing checked passage unchanged. Rubrics are separate lines/units; their red ink, and red initials in the prayers, are recorded in the extent census rather than encoded as colour. This is a normalized reading transcription, not a glyph-diplomatic facsimile."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.offertory.orate-rubric",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "orate-rubric"
+      ],
+      "source_order": 5,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1606-bsb-p181",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-orate-rubric",
+      "text_sha256": "52a72fd9f26ac5d5d7d68d9ed83e520121ca6a2aff31381911b4c85e7a737ada",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00235-2646b0f5",
+      "verified_against_artifact_sha256": "2646b0f5aa0a2bb55fd1042680a673e6adb99ec66913f754a8ceeac0f14830d7",
+      "normalization": "Direct reading normalization of retained BSB canvas 235, printed p.181 right column: long s becomes s; display initials merge in sentence case; line-end word divisions and printed line wraps are joined within each semantic block; printed nasal suspension bars are expanded (including chorum, dicens, meum and sacrifícium); printed u/v, æ/œ, accents, abbreviations, punctuation and ampersands are retained. The stylized red crossed-R response cue followed by m. is represented as ℟m., without expanding the abbreviation. No absent Amen, prayer ending or familiar Roman wording is supplied. Six NFC UTF-8 physical lines, each a complete semantic block, end in LF. The Orate invitation and Dominus response retain their distinct source paragraph boundary. The spoken wording of those two blocks is byte-identical to the corresponding spans of existing checked orate-response-checked-latin-2bab0892; this broader source-derived selection restores the printed response cue omitted by that narrower spoken-only comparison. The separately bound Suscipe Trinitas reuses its existing checked passage unchanged. Rubrics are separate lines/units; their red ink, and red initials in the prayers, are recorded in the extent census rather than encoded as colour. This is a normalized reading transcription, not a glyph-diplomatic facsimile."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.offertory.orate-invitation",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "orate-invitation"
+      ],
+      "source_order": 6,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "invitation",
+      "witness_id": "cistercian-1606-bsb-p181",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-orate-invitation",
+      "text_sha256": "e98e3dfe198f15c1191adccd2a03f4591549793fd6d51ca24d08e11879a3cf60",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00235-2646b0f5",
+      "verified_against_artifact_sha256": "2646b0f5aa0a2bb55fd1042680a673e6adb99ec66913f754a8ceeac0f14830d7",
+      "normalization": "Direct reading normalization of retained BSB canvas 235, printed p.181 right column: long s becomes s; display initials merge in sentence case; line-end word divisions and printed line wraps are joined within each semantic block; printed nasal suspension bars are expanded (including chorum, dicens, meum and sacrifícium); printed u/v, æ/œ, accents, abbreviations, punctuation and ampersands are retained. The stylized red crossed-R response cue followed by m. is represented as ℟m., without expanding the abbreviation. No absent Amen, prayer ending or familiar Roman wording is supplied. Six NFC UTF-8 physical lines, each a complete semantic block, end in LF. The Orate invitation and Dominus response retain their distinct source paragraph boundary. The spoken wording of those two blocks is byte-identical to the corresponding spans of existing checked orate-response-checked-latin-2bab0892; this broader source-derived selection restores the printed response cue omitted by that narrower spoken-only comparison. The separately bound Suscipe Trinitas reuses its existing checked passage unchanged. Rubrics are separate lines/units; their red ink, and red initials in the prayers, are recorded in the extent census rather than encoded as colour. This is a normalized reading transcription, not a glyph-diplomatic facsimile."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.offertory.dominus-response",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "dominus-response"
+      ],
+      "source_order": 7,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "response-with-cue",
+      "witness_id": "cistercian-1606-bsb-p181",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-dominus-response",
+      "text_sha256": "e253cd015066923a2b0ba212ff0d044b6e3e7eabff7d7199aee244834e9b73fc",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00235-2646b0f5",
+      "verified_against_artifact_sha256": "2646b0f5aa0a2bb55fd1042680a673e6adb99ec66913f754a8ceeac0f14830d7",
+      "normalization": "Direct reading normalization of retained BSB canvas 235, printed p.181 right column: long s becomes s; display initials merge in sentence case; line-end word divisions and printed line wraps are joined within each semantic block; printed nasal suspension bars are expanded (including chorum, dicens, meum and sacrifícium); printed u/v, æ/œ, accents, abbreviations, punctuation and ampersands are retained. The stylized red crossed-R response cue followed by m. is represented as ℟m., without expanding the abbreviation. No absent Amen, prayer ending or familiar Roman wording is supplied. Six NFC UTF-8 physical lines, each a complete semantic block, end in LF. The Orate invitation and Dominus response retain their distinct source paragraph boundary. The spoken wording of those two blocks is byte-identical to the corresponding spans of existing checked orate-response-checked-latin-2bab0892; this broader source-derived selection restores the printed response cue omitted by that narrower spoken-only comparison. The separately bound Suscipe Trinitas reuses its existing checked passage unchanged. Rubrics are separate lines/units; their red ink, and red initials in the prayers, are recorded in the extent census rather than encoded as colour. This is a normalized reading transcription, not a glyph-diplomatic facsimile."
+    }
+  ]
+}

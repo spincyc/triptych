@@ -4,12 +4,15 @@ import hashlib
 import importlib.machinery
 import importlib.util
 import json
+import os
+import shutil
 import subprocess
 import sys
 import tempfile
 import textwrap
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -420,6 +423,108 @@ class SourceLibraryTests(unittest.TestCase):
             "binding_path": binding_path,
             "passage_fingerprint": passage_fingerprint,
         }
+
+    def test_cache_directory_override_round_trips_and_serves_identical_library(self) -> None:
+        self.add_valid_vertical_fixture()
+        directory = self.root / ".scratch/custom-source-cache"
+        with patch.dict(os.environ, {"TRIPTYCH_LIBRARY_CACHE": "1", "TRIPTYCH_LIBRARY_CACHE_DIR": str(directory)}), patch.object(
+            SOURCE_LIBRARY, "LIBRARY_CACHE_FLOOR", 0
+        ):
+            cold = SOURCE_LIBRARY.load_library(self.root)
+            self.assertEqual([], cold.errors)
+            entry = SOURCE_LIBRARY._library_cache_entry(self.root, True)
+            self.assertEqual(directory, entry.parent)
+            self.assertTrue(entry.is_file())
+            self.assertEqual(cold, SOURCE_LIBRARY._library_from_json(json.loads(entry.read_text())))
+            with patch.object(SOURCE_LIBRARY, "_load_source_records", side_effect=AssertionError("unexpected cache miss")):
+                warm = SOURCE_LIBRARY.load_library(self.root)
+            self.assertEqual(cold, warm)
+            self.assertEqual(
+                SOURCE_LIBRARY.source_fingerprint(cold, PASSAGE_ID),
+                SOURCE_LIBRARY.source_fingerprint(warm, PASSAGE_ID),
+            )
+
+    def test_relative_cache_override_uses_source_root_and_empty_override_keeps_default(self) -> None:
+        self.add_valid_vertical_fixture()
+        with patch.dict(os.environ, {"TRIPTYCH_LIBRARY_CACHE": "1", "TRIPTYCH_LIBRARY_CACHE_DIR": ".scratch/source-cache"}), patch.object(
+            SOURCE_LIBRARY, "LIBRARY_CACHE_FLOOR", 0
+        ):
+            SOURCE_LIBRARY.load_library(self.root)
+            entry = SOURCE_LIBRARY._library_cache_entry(self.root, True)
+            self.assertEqual(self.root / ".scratch/source-cache", entry.parent)
+            self.assertTrue(entry.is_file())
+            with patch.dict(os.environ, {"TRIPTYCH_LIBRARY_CACHE_DIR": ""}):
+                self.assertEqual(SOURCE_LIBRARY.LIBRARY_CACHE_DIR, SOURCE_LIBRARY._library_cache_entry(self.root, True).parent)
+
+    def test_cache_disable_wins_over_custom_directory_without_reads_or_writes(self) -> None:
+        self.add_valid_vertical_fixture()
+        directory = self.root / ".scratch/source-cache"
+        with patch.dict(os.environ, {"TRIPTYCH_LIBRARY_CACHE": "0", "TRIPTYCH_LIBRARY_CACHE_DIR": str(directory)}), patch.object(
+            SOURCE_LIBRARY, "tree_fingerprint", side_effect=AssertionError("disabled cache inspected trees")
+        ):
+            self.assertIsNone(SOURCE_LIBRARY._library_cache_entry(self.root, True))
+            self.assertEqual([], SOURCE_LIBRARY.load_library(self.root).errors)
+        self.assertFalse(directory.exists())
+
+    def test_custom_cache_invalidates_dependencies_and_separates_validation_modes(self) -> None:
+        self.add_valid_vertical_fixture()
+        directory = self.root / ".scratch/source-cache"
+        with patch.dict(os.environ, {"TRIPTYCH_LIBRARY_CACHE": "1", "TRIPTYCH_LIBRARY_CACHE_DIR": str(directory)}), patch.object(
+            SOURCE_LIBRARY, "LIBRARY_CACHE_FLOOR", 0
+        ):
+            before = SOURCE_LIBRARY.load_library(self.root)
+            old_entry = SOURCE_LIBRARY._library_cache_entry(self.root, True)
+            original_fingerprint = SOURCE_LIBRARY.source_fingerprint(before, PASSAGE_ID)
+            work = before.records[WORK_ID].path
+            work.write_text(work.read_text().replace("De civitate Dei", "Changed title!!"))
+            after = SOURCE_LIBRARY.load_library(self.root)
+            self.assertNotEqual(old_entry, SOURCE_LIBRARY._library_cache_entry(self.root, True))
+            self.assertNotEqual(original_fingerprint, SOURCE_LIBRARY.source_fingerprint(after, PASSAGE_ID))
+            self.assertIn("source_fingerprint must be", "\n".join(after.errors))
+            without_fingerprints = SOURCE_LIBRARY.load_library(self.root, check_binding_fingerprints=False)
+            self.assertEqual([], without_fingerprints.errors)
+            self.assertNotEqual(
+                SOURCE_LIBRARY._library_cache_entry(self.root, True),
+                SOURCE_LIBRARY._library_cache_entry(self.root, False),
+            )
+            with patch.object(SOURCE_LIBRARY, "_load_source_records", side_effect=AssertionError("unexpected cache miss")):
+                self.assertEqual(after, SOURCE_LIBRARY.load_library(self.root))
+                self.assertEqual(without_fingerprints, SOURCE_LIBRARY.load_library(self.root, check_binding_fingerprints=False))
+
+    def test_shared_cache_directory_keeps_distinct_source_roots(self) -> None:
+        self.add_valid_vertical_fixture()
+        directory = self.root / ".scratch/shared-source-cache"
+        second_root = self.root / ".scratch/second-root"
+        shutil.copytree(self.root / "src", second_root / "src", copy_function=shutil.copy2)
+        with patch.dict(os.environ, {"TRIPTYCH_LIBRARY_CACHE": "1", "TRIPTYCH_LIBRARY_CACHE_DIR": str(directory)}), patch.object(
+            SOURCE_LIBRARY, "LIBRARY_CACHE_FLOOR", 0
+        ):
+            first = SOURCE_LIBRARY.load_library(self.root)
+            second = SOURCE_LIBRARY.load_library(second_root)
+            self.assertEqual([], second.errors)
+            self.assertEqual(first.records[ARTIFACT_ID].data, second.records[ARTIFACT_ID].data)
+            self.assertNotEqual(
+                SOURCE_LIBRARY._library_cache_entry(self.root, True),
+                SOURCE_LIBRARY._library_cache_entry(second_root, True),
+            )
+            with patch.object(SOURCE_LIBRARY, "_load_source_records", side_effect=AssertionError("unexpected cache miss")):
+                self.assertEqual(first, SOURCE_LIBRARY.load_library(self.root))
+                self.assertEqual(second, SOURCE_LIBRARY.load_library(second_root))
+            self.assertEqual(self.root, first.root)
+            self.assertEqual(second_root, second.root)
+
+    def test_custom_cache_retains_json_round_trip_refusal(self) -> None:
+        self.add_valid_vertical_fixture()
+        directory = self.root / ".scratch/source-cache"
+        work = self.root / "src/sources/works/augustine/de-civitate-dei/work.toml"
+        # A TOML date remains a date in record data; JSON cannot preserve it.
+        work.write_text(work.read_text() + "description = 2026-10-20\n")
+        with patch.dict(os.environ, {"TRIPTYCH_LIBRARY_CACHE": "1", "TRIPTYCH_LIBRARY_CACHE_DIR": str(directory)}), patch.object(
+            SOURCE_LIBRARY, "LIBRARY_CACHE_FLOOR", 0
+        ):
+            library = SOURCE_LIBRARY.load_library(self.root)
+            self.assertEqual("2026-10-20", library.records[WORK_ID].data["description"].isoformat())
+            self.assertFalse(directory.exists())
 
     def test_valid_vertical_fixture_and_validate_cli_summary(self) -> None:
         self.add_valid_vertical_fixture()

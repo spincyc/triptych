@@ -1,0 +1,12 @@
+schema = 2
+record_type = "passage"
+id = "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-in-spiritu-rubric"
+edition_id = "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606"
+artifact_id = "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-checked-latin-9c003023"
+artifact_sha256 = "9c003023910561e31e5c59c4e37aa5550994cf04633e856dbb3d5222b728d537"
+physical_line_ranges = [[2, 2]]
+locus = "Paris 1606 Cistercian missal, printed p.181 right column; BSB canvas 235; normalized physical line 2."
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-20"
+context = "Complete in-spiritu-rubric source block in the bounded offertory constituent under the running head Præparationes ante Missam; source lines 17–18 counted from the red Offertorio opening. Source rubrics, prayer endings and response cue are retained under the disclosed reading normalization."
+notes = "Direct original-image reading by the preparation agent; independent complete-extent collation remains controlled by the separate native-book review receipt. Direct reading normalization of retained BSB canvas 235, printed p.181 right column: long s becomes s; display initials merge in sentence case; line-end word divisions and printed line wraps are joined within each semantic block; printed nasal suspension bars are expanded (including chorum, dicens, meum and sacrifícium); printed u/v, æ/œ, accents, abbreviations, punctuation and ampersands are retained. The stylized red crossed-R response cue followed by m. is represented as ℟m., without expanding the abbreviation. No absent Amen, prayer ending or familiar Roman wording is supplied. Six NFC UTF-8 physical lines, each a complete semantic block, end in LF. The Orate invitation and Dominus response retain their distinct source paragraph boundary. The spoken wording of those two blocks is byte-identical to the corresponding spans of existing checked orate-response-checked-latin-2bab0892; this broader source-derived selection restores the printed response cue omitted by that narrower spoken-only comparison. The separately bound Suscipe Trinitas reuses its existing checked passage unchanged. Rubrics are separate lines/units; their red ink, and red initials in the prayers, are recorded in the extent census rather than encoded as colour. This is a normalized reading transcription, not a glyph-diplomatic facsimile."

@@ -1,0 +1,2329 @@
+{
+  "schema_version": 1,
+  "record_type": "missal-next-phase-interactive-reader-acceptance",
+  "reviewed_at_utc": "2026-10-20T19:20:12.765287+00:00",
+  "result": "pass-with-explicit-scope-and-capture-limits",
+  "repository_state": {
+    "branch": "feature/missal-timeline",
+    "task_base_commit": "e5992f3d9af18bc1b7e687edc6cbdf4619750399",
+    "reviewed_sources_include_uncommitted_changes": true,
+    "identity_rule": "Exact runtime, source, build and served digests identify this reviewed candidate; integration must preserve these bytes or establish a new bounded transfer."
+  },
+  "scope": "Chronological reader revision and browser acceptance under guidance/time-machine.md section 12. Does not close the complete project, relationship-map research, whole-book transcription or physical/spoken-screen-reader acceptance.",
+  "browser": {
+    "name": "Chromium",
+    "version": "154.0.8037.97",
+    "driver_version": "154.0.8037.97",
+    "platform_scope": "One Linux desktop browser using headless Chromium and actual browser keyboard/zoom interactions."
+  },
+  "counts": {
+    "candidates": 1631,
+    "entries": 1690,
+    "presentation_groups": 159,
+    "relationship_entities": 28,
+    "relationships": 61,
+    "substantive_established": 44,
+    "text_sets": 22,
+    "unmapped_families": 0,
+    "witnesses": 220
+  },
+  "stage_counts": {
+    "documented_recension_branches": 0,
+    "documented_receptions": 5,
+    "documented_revisions": 58,
+    "documented_stages": 276,
+    "documented_transitions": 74,
+    "documented_witness_successions": 11,
+    "dossiers": 35,
+    "gaps": 195,
+    "provisional_stages": 11,
+    "provisional_transitions": 3,
+    "sources": 385,
+    "stages": 287,
+    "traditions": 149,
+    "transitions": 77
+  },
+  "exhaustive_run": {
+    "result": "pass",
+    "checks": 1271,
+    "failures": 0,
+    "catalogue_sha256": "87631500391a925ff0eb74a48e99746c7373f913ce2c7a4202d195b4eaf98b3a",
+    "harness": {
+      "path": ".scratch/next-phases-20261020/browser/browser.py",
+      "executed_sha256": "ff575875fc8488354e47f360272a76d1ee37284ca4d1fce78e6b8ce926455361"
+    },
+    "summary": {
+      "path": ".scratch/next-phases-20261020/browser/review/summary.json",
+      "sha256": "0bb898b32e5576b141f29ea247ef9242196ac75b023541cd8032e600faee0ca7",
+      "byte_size": 66
+    },
+    "checks_receipt": {
+      "path": ".scratch/next-phases-20261020/browser/review/checks.json",
+      "sha256": "a88bbbb75b1d3673498fac9e07cfd89a18a00d82c511edc70baf28ad86a14fd9",
+      "byte_size": 439577
+    },
+    "route_results": {
+      "path": ".scratch/next-phases-20261020/browser/review/routes.json",
+      "sha256": "0af1482b23cf9dcb620e4e66cd45fa7736397cba177eb78047826a64fe634e7e",
+      "byte_size": 289029
+    },
+    "coverage": {
+      "stage_and_transition_targets": 728,
+      "meaning": "Every one of 287 stages and 77 transitions in both chart and list routes; verified selection, authored evidence and keyboard return.",
+      "tradition_deep_links": 149,
+      "presentation_groups": 159,
+      "group_checks": "Each current group derived from the payload: filter, actual keyboard opening and return, selected-record narrow text reflow.",
+      "native_bindings": 7,
+      "native_units": 76,
+      "comparisons": 29,
+      "native_checks": "Lazy load, exact literal/order, source/projection hashes, language/direction, declared extent, scope/exclusions, source loci, rights and independent partial whole-book status.",
+      "comparison_checks": "All 29 rendered source text/diff/apparatus/caveat payloads against owning data; all four Cistercian revision comparison routes reached from the reader detail.",
+      "viewports_css_pixels": [
+        1440,
+        768,
+        393,
+        320
+      ],
+      "views": [
+        "timeline",
+        "catalogue",
+        "overview",
+        "map"
+      ],
+      "accessibility_checks": "Actual keyboard navigation/return, accessible-tree names, forced-colors visible focus, 200% text sizing and document reflow, actual browser 400% zoom with reachable content in four views.",
+      "runtime_checks": "Before/after catalogue and owner identity; 47 actually requested local resource bindings; no browser console errors or local HTTP errors."
+    },
+    "native_results": [
+      {
+        "binding": "native-book:tuki-1736-arabic-creed",
+        "stage": "alexandrian-stages-coptic1736",
+        "projection_path": "native-texts/tuki-1736-arabic-creed.json",
+        "payload_sha256": "48e95b3360d139cb2fa05636b532317c0d088722b9778d79c3a35f4d26f7fcce",
+        "literal_text": true,
+        "unit_order": true,
+        "language_direction": true,
+        "bounded_extent": true,
+        "scope": true,
+        "exclusions": true,
+        "source_loci": true,
+        "rights": true,
+        "stage_remains_partial": true,
+        "text200_reflow": true,
+        "rtl_rendering": true
+      },
+      {
+        "binding": "native-book:cistercian-1606-offertory",
+        "stage": "cistercian-1606-1657-1606",
+        "projection_path": "native-texts/cistercian-1606-offertory.json",
+        "payload_sha256": "898466341960df64aaeece8bc706d33337db38c7a89fe33974b8169a6b8921e6",
+        "literal_text": true,
+        "unit_order": true,
+        "language_direction": true,
+        "bounded_extent": true,
+        "scope": true,
+        "exclusions": true,
+        "source_loci": true,
+        "rights": true,
+        "stage_remains_partial": true,
+        "text200_reflow": true,
+        "rtl_rendering": true
+      },
+      {
+        "binding": "native-book:cistercian-1657-offertory",
+        "stage": "cistercian-1606-1657-1657",
+        "projection_path": "native-texts/cistercian-1657-offertory.json",
+        "payload_sha256": "e95853fbe4c38667c33299f23f64ab76c34ca645a0054e2ce44ab47192286a91",
+        "literal_text": true,
+        "unit_order": true,
+        "language_direction": true,
+        "bounded_extent": true,
+        "scope": true,
+        "exclusions": true,
+        "source_loci": true,
+        "rights": true,
+        "stage_remains_partial": true,
+        "text200_reflow": true,
+        "rtl_rendering": true
+      },
+      {
+        "binding": "native-book:mozarabic-1500-benedictio-panis",
+        "stage": "hispano-mozarabic-1500",
+        "projection_path": "native-texts/mozarabic-1500-benedictio-panis.json",
+        "payload_sha256": "d87d555fb0e9148eb9198b18820dd686537495c47b046fba86fb3d257033f947",
+        "literal_text": true,
+        "unit_order": true,
+        "language_direction": true,
+        "bounded_extent": true,
+        "scope": true,
+        "exclusions": true,
+        "source_loci": true,
+        "rights": true,
+        "stage_remains_partial": true,
+        "text200_reflow": true,
+        "rtl_rendering": true
+      },
+      {
+        "binding": "native-book:mozarabic-1755-benedictio-panis",
+        "stage": "hispano-mozarabic-1755",
+        "projection_path": "native-texts/mozarabic-1755-benedictio-panis.json",
+        "payload_sha256": "551dd395b385da4162858ecb512da6b0219f116271bc16731d724ecd5e73ccd0",
+        "literal_text": true,
+        "unit_order": true,
+        "language_direction": true,
+        "bounded_extent": true,
+        "scope": true,
+        "exclusions": true,
+        "source_loci": true,
+        "rights": true,
+        "stage_remains_partial": true,
+        "text200_reflow": true,
+        "rtl_rendering": true
+      },
+      {
+        "binding": "native-book:mozarabic-1804-benedictio-panis",
+        "stage": "hispano-mozarabic-1804",
+        "projection_path": "native-texts/mozarabic-1804-benedictio-panis.json",
+        "payload_sha256": "38e5cf8b5aefa6e6e8806482e7e3ed48437a02b8cb379b86f43a0588306f1f51",
+        "literal_text": true,
+        "unit_order": true,
+        "language_direction": true,
+        "bounded_extent": true,
+        "scope": true,
+        "exclusions": true,
+        "source_loci": true,
+        "rights": true,
+        "stage_remains_partial": true,
+        "text200_reflow": true,
+        "rtl_rendering": true
+      },
+      {
+        "binding": "native-book:roman-1570-canon-missae",
+        "stage": "roman-stages-1570",
+        "projection_path": "native-texts/roman-1570-canon-missae.json",
+        "payload_sha256": "b9f9f10d5c8a457bff72b340517a333702c6bcf706a7b85f301289bad6f4e2b4",
+        "literal_text": true,
+        "unit_order": true,
+        "language_direction": true,
+        "bounded_extent": true,
+        "scope": true,
+        "exclusions": true,
+        "source_loci": true,
+        "rights": true,
+        "stage_remains_partial": true,
+        "text200_reflow": true,
+        "rtl_rendering": true
+      }
+    ],
+    "source_built_served_bindings": [
+      {
+        "source": "src/web/browser/history/history.js",
+        "built": "history/history.js",
+        "source_sha256": "79619b21c6ebd74595f774fd287f0d771021d255dc4d91af6b347f939509aace",
+        "served_sha256": "79619b21c6ebd74595f774fd287f0d771021d255dc4d91af6b347f939509aace"
+      },
+      {
+        "source": "src/web/browser/history/history.css",
+        "built": "history/history.css",
+        "source_sha256": "334b1e477208a470667104c18ea72ceae17ffdb1add0fb3e60d3fe51fd7a107d",
+        "served_sha256": "334b1e477208a470667104c18ea72ceae17ffdb1add0fb3e60d3fe51fd7a107d"
+      },
+      {
+        "source": "release/public-alpha/assets/site.css",
+        "built": "assets/site.css",
+        "source_sha256": "a1b950bccf1a471660fc7e7b7b1d5c6a0ce3afc08114ecf207a52d99c62202d2",
+        "served_sha256": "a1b950bccf1a471660fc7e7b7b1d5c6a0ce3afc08114ecf207a52d99c62202d2"
+      },
+      {
+        "source": "src/web/data/structure/act-history/catalogue.json",
+        "built": "browse/structure/act-history/catalogue.json",
+        "source_sha256": "87631500391a925ff0eb74a48e99746c7373f913ce2c7a4202d195b4eaf98b3a",
+        "served_sha256": "87631500391a925ff0eb74a48e99746c7373f913ce2c7a4202d195b4eaf98b3a"
+      }
+    ],
+    "html": {
+      "source_sha256": "f17ff19e5d6d30a291776b2ea20f9ac4efcb4790ca4a4a5a07dcbe027552663e",
+      "built_sha256": "1bb5bfd69b71323a8b9b48fc8e785bd4656169be94c61950d3d49ba0277fd4fa",
+      "served_sha256": "1bb5bfd69b71323a8b9b48fc8e785bd4656169be94c61950d3d49ba0277fd4fa"
+    }
+  },
+  "final_focused_run": {
+    "result": "pass",
+    "exit_status": 0,
+    "checks": 32,
+    "failures": 0,
+    "catalogue_sha256": "d343259c2c2f38004c9a98e2669d592578d2c76b07d1ceb3a545c855651d57e4",
+    "harness": {
+      "path": ".scratch/next-phases-20261020/browser/visual/executed-harness.py",
+      "sha256": "69eeeeac53e7a093cbed78b17198383b5fb2f2b4dc492a1293ab2963a2a704e0",
+      "byte_size": 16737
+    },
+    "summary": {
+      "path": ".scratch/next-phases-20261020/browser/visual/summary.json",
+      "sha256": "edf2d438ed4ed3b7c77bd82a1c8824d3ca5773dbde77beee5cea2782e596a203",
+      "byte_size": 215
+    },
+    "checks_receipt": {
+      "path": ".scratch/next-phases-20261020/browser/visual/checks.json",
+      "sha256": "a272164b174d016649d7a5ab1df9b689c592bf588c5c7f8cf8bd3c6a8a188508",
+      "byte_size": 20623
+    },
+    "coverage": "Exact five-scalar catalogue transfer; unchanged runtime and HTML; final source equals served catalogue; selected narrow keyboard reading; named 1657 book search and exact witness navigation; Cistercian three-state list/chart DOM; corrected S049 source disclosure; final served-catalogue stability and all 231 input owner hashes."
+  },
+  "axis_supplement": {
+    "result": "pass",
+    "exit_status": 0,
+    "checks": 17,
+    "failures": 0,
+    "catalogue_sha256": "d343259c2c2f38004c9a98e2669d592578d2c76b07d1ceb3a545c855651d57e4",
+    "harness": {
+      "path": ".scratch/next-phases-20261020/browser/visual.py",
+      "sha256": "bd862c345d71da8e3db8c5627f4f665d58e5d8c3e56146ea0114cd8413234164",
+      "byte_size": 17944
+    },
+    "summary": {
+      "path": ".scratch/next-phases-20261020/browser/axis/summary.json",
+      "sha256": "79653ce27ed84cf4f3af9f19f09efe703739361bbe57cd35f32e650fe46a19c5",
+      "byte_size": 215
+    },
+    "checks_receipt": {
+      "path": ".scratch/next-phases-20261020/browser/axis/checks.json",
+      "sha256": "0f4052dd0be5faf29c41e457dd4ff777cc66313eec55571228ac0f53507b6a81",
+      "byte_size": 15867
+    },
+    "coverage": "Actual supported horizontal pan at0%,50%,100%; visible SVGcircle-linked stageIDs union equals all three expected Cistercian states, with common year scale and readable date cards. Repeated source/runtime/catalogue guards passed."
+  },
+  "transfer_to_final": {
+    "result": "pass",
+    "proof": {
+      "path": ".scratch/next-phases-20261020/root/late-citation-catalogue-parity.json",
+      "sha256": "7e1b1e79a3d6f94ddee3550051e9bdcdbb1f63cc0c69828040681a29211b89ef",
+      "byte_size": 1138
+    },
+    "catalogue_changes": [
+      {
+        "path": "/inputs/29/byte_size",
+        "before": 39930,
+        "after": 39919
+      },
+      {
+        "path": "/inputs/29/sha256",
+        "before": "9945e6ee93b4e7561f11e572c78a013a0a5df136ac62ed95f6f23fec92695613",
+        "after": "b968a4d049e327f1f5b5c9fa76230fb60bcd99682259c31f6ab7cc7d828f85e0"
+      },
+      {
+        "path": "/stage_history/inputs/5/byte_size",
+        "before": 39930,
+        "after": 39919
+      },
+      {
+        "path": "/stage_history/inputs/5/sha256",
+        "before": "9945e6ee93b4e7561f11e572c78a013a0a5df136ac62ed95f6f23fec92695613",
+        "after": "b968a4d049e327f1f5b5c9fa76230fb60bcd99682259c31f6ab7cc7d828f85e0"
+      },
+      {
+        "path": "/stage_history/stages/48/evidence/1/locus",
+        "before": "Vol. I, pp. xv–xvi (PDF 19–20)",
+        "after": "Vol. II, p. 21 (PDF 37)"
+      }
+    ],
+    "rule": "Transfer exhaustive interaction acceptance through unchanged runtime/HTML/native text and exact catalogue/comparison difference proofs. The catalogue changes only four dossier size/hash values and the corrected S049 source locus. Changed comparison payloads differ only in the canonical-orders owning-input size/hash: reverting those two scalars reconstructs each exact old served SHA. All comparison rendered content is unchanged. Final browser directly rechecked corrected S049 source disclosure.",
+    "unchanged_requested_resources": 17,
+    "changed_comparison_provenance_resources": 29,
+    "comparison_provenance_transfer": [
+      {
+        "path": "src/web/data/structure/act-history/comparisons/brightman-1896-greek-basil-chrysostom-anamnesis-oblation.json",
+        "result": "exact-old-served-sha-reconstructed",
+        "only_changes": "canonical-orders.json owning-input byte_size and sha256; all rendered text, source loci, apparatus, diff and other data unchanged"
+      },
+      {
+        "path": "src/web/data/structure/act-history/comparisons/brightman-1896-greek-basil-chrysostom-invocation-gifts.json",
+        "result": "exact-old-served-sha-reconstructed",
+        "only_changes": "canonical-orders.json owning-input byte_size and sha256; all rendered text, source loci, apparatus, diff and other data unchanged"
+      },
+      {
+        "path": "src/web/data/structure/act-history/comparisons/brightman-1896-greek-basil-james-anamnesis-oblation.json",
+        "result": "exact-old-served-sha-reconstructed",
+        "only_changes": "canonical-orders.json owning-input byte_size and sha256; all rendered text, source loci, apparatus, diff and other data unchanged"
+      },
+      {
+        "path": "src/web/data/structure/act-history/comparisons/brightman-1896-greek-basil-james-invocation-gifts.json",
+        "result": "exact-old-served-sha-reconstructed",
+        "only_changes": "canonical-orders.json owning-input byte_size and sha256; all rendered text, source loci, apparatus, diff and other data unchanged"
+      },
+      {
+        "path": "src/web/data/structure/act-history/comparisons/brightman-1896-greek-chrysostom-james-anamnesis-oblation.json",
+        "result": "exact-old-served-sha-reconstructed",
+        "only_changes": "canonical-orders.json owning-input byte_size and sha256; all rendered text, source loci, apparatus, diff and other data unchanged"
+      },
+      {
+        "path": "src/web/data/structure/act-history/comparisons/brightman-1896-greek-chrysostom-james-invocation-gifts.json",
+        "result": "exact-old-served-sha-reconstructed",
+        "only_changes": "canonical-orders.json owning-input byte_size and sha256; all rendered text, source loci, apparatus, diff and other data unchanged"
+      },
+      {
+        "path": "src/web/data/structure/act-history/comparisons/carmelite-1574-1621-october-05-calendar.json",
+        "result": "exact-old-served-sha-reconstructed",
+        "only_changes": "canonical-orders.json owning-input byte_size and sha256; all rendered text, source loci, apparatus, diff and other data unchanged"
+      },
+      {
+        "path": "src/web/data/structure/act-history/comparisons/cistercian-1606-1657-confiteor.json",
+        "result": "exact-old-served-sha-reconstructed",
+        "only_changes": "canonical-orders.json owning-input byte_size and sha256; all rendered text, source loci, apparatus, diff and other data unchanged"
+      },
+      {
+        "path": "src/web/data/structure/act-history/comparisons/cistercian-1606-1657-offertory-constituents.json",
+        "result": "exact-old-served-sha-reconstructed",
+        "only_changes": "canonical-orders.json owning-input byte_size and sha256; all rendered text, source loci, apparatus, diff and other data unchanged"
+      },
+      {
+        "path": "src/web/data/structure/act-history/comparisons/cistercian-1606-1657-orate-response.json",
+        "result": "exact-old-served-sha-reconstructed",
+        "only_changes": "canonical-orders.json owning-input byte_size and sha256; all rendered text, source loci, apparatus, diff and other data unchanged"
+      },
+      {
+        "path": "src/web/data/structure/act-history/comparisons/cistercian-1606-1657-suscipe-trinitas.json",
+        "result": "exact-old-served-sha-reconstructed",
+        "only_changes": "canonical-orders.json owning-input byte_size and sha256; all rendered text, source loci, apparatus, diff and other data unchanged"
+      },
+      {
+        "path": "src/web/data/structure/act-history/comparisons/dominican-1550-1604-suscepimus-collect.json",
+        "result": "exact-old-served-sha-reconstructed",
+        "only_changes": "canonical-orders.json owning-input byte_size and sha256; all rendered text, source loci, apparatus, diff and other data unchanged"
+      },
+      {
+        "path": "src/web/data/structure/act-history/comparisons/mozarabic-1500-1755-benedictio-panis.json",
+        "result": "exact-old-served-sha-reconstructed",
+        "only_changes": "canonical-orders.json owning-input byte_size and sha256; all rendered text, source loci, apparatus, diff and other data unchanged"
+      },
+      {
+        "path": "src/web/data/structure/act-history/comparisons/mozarabic-1500-1804-benedictio-panis.json",
+        "result": "exact-old-served-sha-reconstructed",
+        "only_changes": "canonical-orders.json owning-input byte_size and sha256; all rendered text, source loci, apparatus, diff and other data unchanged"
+      },
+      {
+        "path": "src/web/data/structure/act-history/comparisons/mozarabic-1755-1804-benedictio-panis.json",
+        "result": "exact-old-served-sha-reconstructed",
+        "only_changes": "canonical-orders.json owning-input byte_size and sha256; all rendered text, source loci, apparatus, diff and other data unchanged"
+      },
+      {
+        "path": "src/web/data/structure/act-history/comparisons/roman-canon-memento-wilson-r-and-cummiskey-1861.json",
+        "result": "exact-old-served-sha-reconstructed",
+        "only_changes": "canonical-orders.json owning-input byte_size and sha256; all rendered text, source loci, apparatus, diff and other data unchanged"
+      },
+      {
+        "path": "src/web/data/structure/act-history/comparisons/roman-hanc-igitur-gelasian-and-cummiskey-1861.json",
+        "result": "exact-old-served-sha-reconstructed",
+        "only_changes": "canonical-orders.json owning-input byte_size and sha256; all rendered text, source loci, apparatus, diff and other data unchanged"
+      },
+      {
+        "path": "src/web/data/structure/act-history/comparisons/roman-hanc-igitur-gelasian-and-stowe.json",
+        "result": "exact-old-served-sha-reconstructed",
+        "only_changes": "canonical-orders.json owning-input byte_size and sha256; all rendered text, source loci, apparatus, diff and other data unchanged"
+      },
+      {
+        "path": "src/web/data/structure/act-history/comparisons/roman-hanc-igitur-gregorian-and-cummiskey-1861.json",
+        "result": "exact-old-served-sha-reconstructed",
+        "only_changes": "canonical-orders.json owning-input byte_size and sha256; all rendered text, source loci, apparatus, diff and other data unchanged"
+      },
+      {
+        "path": "src/web/data/structure/act-history/comparisons/roman-hanc-igitur-gregorian-and-gelasian.json",
+        "result": "exact-old-served-sha-reconstructed",
+        "only_changes": "canonical-orders.json owning-input byte_size and sha256; all rendered text, source loci, apparatus, diff and other data unchanged"
+      },
+      {
+        "path": "src/web/data/structure/act-history/comparisons/roman-hanc-igitur-gregorian-and-stowe.json",
+        "result": "exact-old-served-sha-reconstructed",
+        "only_changes": "canonical-orders.json owning-input byte_size and sha256; all rendered text, source loci, apparatus, diff and other data unchanged"
+      },
+      {
+        "path": "src/web/data/structure/act-history/comparisons/roman-hanc-igitur-stowe-and-cummiskey-1861.json",
+        "result": "exact-old-served-sha-reconstructed",
+        "only_changes": "canonical-orders.json owning-input byte_size and sha256; all rendered text, source loci, apparatus, diff and other data unchanged"
+      },
+      {
+        "path": "src/web/data/structure/act-history/comparisons/roman-quam-oblationem-gelasian-and-cummiskey-1861.json",
+        "result": "exact-old-served-sha-reconstructed",
+        "only_changes": "canonical-orders.json owning-input byte_size and sha256; all rendered text, source loci, apparatus, diff and other data unchanged"
+      },
+      {
+        "path": "src/web/data/structure/act-history/comparisons/roman-quam-oblationem-gelasian-and-stowe.json",
+        "result": "exact-old-served-sha-reconstructed",
+        "only_changes": "canonical-orders.json owning-input byte_size and sha256; all rendered text, source loci, apparatus, diff and other data unchanged"
+      },
+      {
+        "path": "src/web/data/structure/act-history/comparisons/roman-quam-oblationem-gregorian-and-cummiskey-1861.json",
+        "result": "exact-old-served-sha-reconstructed",
+        "only_changes": "canonical-orders.json owning-input byte_size and sha256; all rendered text, source loci, apparatus, diff and other data unchanged"
+      },
+      {
+        "path": "src/web/data/structure/act-history/comparisons/roman-quam-oblationem-gregorian-and-gelasian.json",
+        "result": "exact-old-served-sha-reconstructed",
+        "only_changes": "canonical-orders.json owning-input byte_size and sha256; all rendered text, source loci, apparatus, diff and other data unchanged"
+      },
+      {
+        "path": "src/web/data/structure/act-history/comparisons/roman-quam-oblationem-gregorian-and-stowe.json",
+        "result": "exact-old-served-sha-reconstructed",
+        "only_changes": "canonical-orders.json owning-input byte_size and sha256; all rendered text, source loci, apparatus, diff and other data unchanged"
+      },
+      {
+        "path": "src/web/data/structure/act-history/comparisons/roman-quam-oblationem-stowe-and-cummiskey-1861.json",
+        "result": "exact-old-served-sha-reconstructed",
+        "only_changes": "canonical-orders.json owning-input byte_size and sha256; all rendered text, source loci, apparatus, diff and other data unchanged"
+      },
+      {
+        "path": "src/web/data/structure/act-history/comparisons/roman-sanctus-stowe-and-cummiskey-1861.json",
+        "result": "exact-old-served-sha-reconstructed",
+        "only_changes": "canonical-orders.json owning-input byte_size and sha256; all rendered text, source loci, apparatus, diff and other data unchanged"
+      }
+    ],
+    "resource_bindings": [
+      {
+        "site_path": "assets/icon.png",
+        "source_path": "release/public-alpha/assets/icon.png",
+        "exhaustive_run_served_sha256": "ef1315d47930179e71319cebba58bd284756b9306a40d376ab7ca6e6d3c15ad5",
+        "final_built_sha256": "ef1315d47930179e71319cebba58bd284756b9306a40d376ab7ca6e6d3c15ad5",
+        "unchanged_since_exhaustive_run": true,
+        "final_source_sha256": "ef1315d47930179e71319cebba58bd284756b9306a40d376ab7ca6e6d3c15ad5"
+      },
+      {
+        "site_path": "assets/site.css",
+        "source_path": "release/public-alpha/assets/site.css",
+        "exhaustive_run_served_sha256": "a1b950bccf1a471660fc7e7b7b1d5c6a0ce3afc08114ecf207a52d99c62202d2",
+        "final_built_sha256": "a1b950bccf1a471660fc7e7b7b1d5c6a0ce3afc08114ecf207a52d99c62202d2",
+        "unchanged_since_exhaustive_run": true,
+        "final_source_sha256": "a1b950bccf1a471660fc7e7b7b1d5c6a0ce3afc08114ecf207a52d99c62202d2"
+      },
+      {
+        "site_path": "browse/structure/act-history/catalogue.json",
+        "source_path": "src/web/data/structure/act-history/catalogue.json",
+        "exhaustive_run_served_sha256": "87631500391a925ff0eb74a48e99746c7373f913ce2c7a4202d195b4eaf98b3a",
+        "final_built_sha256": "d343259c2c2f38004c9a98e2669d592578d2c76b07d1ceb3a545c855651d57e4",
+        "unchanged_since_exhaustive_run": false,
+        "final_source_sha256": "d343259c2c2f38004c9a98e2669d592578d2c76b07d1ceb3a545c855651d57e4"
+      },
+      {
+        "site_path": "browse/structure/act-history/comparisons/brightman-1896-greek-basil-chrysostom-anamnesis-oblation.json",
+        "source_path": "src/web/data/structure/act-history/comparisons/brightman-1896-greek-basil-chrysostom-anamnesis-oblation.json",
+        "exhaustive_run_served_sha256": "2024160e92054a5863e9f995b8faaa8140a46448903e3bb67b1f3424321767d3",
+        "final_built_sha256": "d20eedb23f6a2de5cea11e393df6f85fea429e9135f30eef2e0c4d51a5ead243",
+        "unchanged_since_exhaustive_run": false,
+        "final_source_sha256": "d20eedb23f6a2de5cea11e393df6f85fea429e9135f30eef2e0c4d51a5ead243"
+      },
+      {
+        "site_path": "browse/structure/act-history/comparisons/brightman-1896-greek-basil-chrysostom-invocation-gifts.json",
+        "source_path": "src/web/data/structure/act-history/comparisons/brightman-1896-greek-basil-chrysostom-invocation-gifts.json",
+        "exhaustive_run_served_sha256": "59a0c6ea2ede4b8b5b9793992c857475ad343b3623805a5c50d62f4e6aebcf29",
+        "final_built_sha256": "99899e13cbeaff7327764eef0e7d133200dd02d45a33fc90ac6284b698fa05cd",
+        "unchanged_since_exhaustive_run": false,
+        "final_source_sha256": "99899e13cbeaff7327764eef0e7d133200dd02d45a33fc90ac6284b698fa05cd"
+      },
+      {
+        "site_path": "browse/structure/act-history/comparisons/brightman-1896-greek-basil-james-anamnesis-oblation.json",
+        "source_path": "src/web/data/structure/act-history/comparisons/brightman-1896-greek-basil-james-anamnesis-oblation.json",
+        "exhaustive_run_served_sha256": "9fcc226e1b234f09664095f371ac58b40912416b0cba408812f03bf215ab06ca",
+        "final_built_sha256": "d00717e93575e614fabc4de46bd53cc1c63818cd6c67b2f25d56ccaf3ec18c27",
+        "unchanged_since_exhaustive_run": false,
+        "final_source_sha256": "d00717e93575e614fabc4de46bd53cc1c63818cd6c67b2f25d56ccaf3ec18c27"
+      },
+      {
+        "site_path": "browse/structure/act-history/comparisons/brightman-1896-greek-basil-james-invocation-gifts.json",
+        "source_path": "src/web/data/structure/act-history/comparisons/brightman-1896-greek-basil-james-invocation-gifts.json",
+        "exhaustive_run_served_sha256": "fb5c3fbaf9470fc826709b14242f2b82284181bf9017f7d217ed0721ee731260",
+        "final_built_sha256": "723853f650060ffe64f99811c8fce5c66d59ad10bbbaf53dbc48e3b7d6ea73f8",
+        "unchanged_since_exhaustive_run": false,
+        "final_source_sha256": "723853f650060ffe64f99811c8fce5c66d59ad10bbbaf53dbc48e3b7d6ea73f8"
+      },
+      {
+        "site_path": "browse/structure/act-history/comparisons/brightman-1896-greek-chrysostom-james-anamnesis-oblation.json",
+        "source_path": "src/web/data/structure/act-history/comparisons/brightman-1896-greek-chrysostom-james-anamnesis-oblation.json",
+        "exhaustive_run_served_sha256": "ed1c07a724ec1e700a84450398b26eb5410766d3c13a8a6bd3e4baa2a63439e2",
+        "final_built_sha256": "77080cf6199e3de1692f1b0f318611f9716db0998be17bf5eda5d989df40c439",
+        "unchanged_since_exhaustive_run": false,
+        "final_source_sha256": "77080cf6199e3de1692f1b0f318611f9716db0998be17bf5eda5d989df40c439"
+      },
+      {
+        "site_path": "browse/structure/act-history/comparisons/brightman-1896-greek-chrysostom-james-invocation-gifts.json",
+        "source_path": "src/web/data/structure/act-history/comparisons/brightman-1896-greek-chrysostom-james-invocation-gifts.json",
+        "exhaustive_run_served_sha256": "243baee80d66b4fdec670ddd28392fa0f137739377bbd0a9d226eb7406e30038",
+        "final_built_sha256": "f3c6f94ea8b7727892604ad257bf278ac791266f77cdb7802b417fc15ba45d55",
+        "unchanged_since_exhaustive_run": false,
+        "final_source_sha256": "f3c6f94ea8b7727892604ad257bf278ac791266f77cdb7802b417fc15ba45d55"
+      },
+      {
+        "site_path": "browse/structure/act-history/comparisons/carmelite-1574-1621-october-05-calendar.json",
+        "source_path": "src/web/data/structure/act-history/comparisons/carmelite-1574-1621-october-05-calendar.json",
+        "exhaustive_run_served_sha256": "0a14be71dda478f49709a73b458ee78ff69fab432f9eb220c2a8e8a06afdce75",
+        "final_built_sha256": "200743acd5bdd900cf63a4a8be0bcfee4d9f2ddfc428bb83c856f52e1b93b38f",
+        "unchanged_since_exhaustive_run": false,
+        "final_source_sha256": "200743acd5bdd900cf63a4a8be0bcfee4d9f2ddfc428bb83c856f52e1b93b38f"
+      },
+      {
+        "site_path": "browse/structure/act-history/comparisons/cistercian-1606-1657-confiteor.json",
+        "source_path": "src/web/data/structure/act-history/comparisons/cistercian-1606-1657-confiteor.json",
+        "exhaustive_run_served_sha256": "140d4bc48b6865d4447defd238b3796313509331305e5bdb9f1d4be0d3cebe88",
+        "final_built_sha256": "29cbac8548643db66c1369baccfb4fc389ba39dabb10993854dec73452d4e598",
+        "unchanged_since_exhaustive_run": false,
+        "final_source_sha256": "29cbac8548643db66c1369baccfb4fc389ba39dabb10993854dec73452d4e598"
+      },
+      {
+        "site_path": "browse/structure/act-history/comparisons/cistercian-1606-1657-offertory-constituents.json",
+        "source_path": "src/web/data/structure/act-history/comparisons/cistercian-1606-1657-offertory-constituents.json",
+        "exhaustive_run_served_sha256": "5f3d50e95fec063810d1f658641c13414acd59397e4428505793ba64e2d2f325",
+        "final_built_sha256": "4818a2da33257f7cb3cae141af6a1b0b9bbe382f4f6e4e37937b75790963ac03",
+        "unchanged_since_exhaustive_run": false,
+        "final_source_sha256": "4818a2da33257f7cb3cae141af6a1b0b9bbe382f4f6e4e37937b75790963ac03"
+      },
+      {
+        "site_path": "browse/structure/act-history/comparisons/cistercian-1606-1657-orate-response.json",
+        "source_path": "src/web/data/structure/act-history/comparisons/cistercian-1606-1657-orate-response.json",
+        "exhaustive_run_served_sha256": "34d76aa437b0925c9eb14911c0fa5095d4f9015c3b804a4473af3d39872a7d22",
+        "final_built_sha256": "27bced23a5ac38f684219c4b8ba9dbfc7494131f2d09c684ea88fb005e8a873e",
+        "unchanged_since_exhaustive_run": false,
+        "final_source_sha256": "27bced23a5ac38f684219c4b8ba9dbfc7494131f2d09c684ea88fb005e8a873e"
+      },
+      {
+        "site_path": "browse/structure/act-history/comparisons/cistercian-1606-1657-suscipe-trinitas.json",
+        "source_path": "src/web/data/structure/act-history/comparisons/cistercian-1606-1657-suscipe-trinitas.json",
+        "exhaustive_run_served_sha256": "ac0925c47b8ef60f138b352c35a7f79aeea81a20ea8643882f53845b0a7bb9ac",
+        "final_built_sha256": "295681ea5c81c8ffcc76cc56a9f9b065728a4a008feb86f80542fa56e526331b",
+        "unchanged_since_exhaustive_run": false,
+        "final_source_sha256": "295681ea5c81c8ffcc76cc56a9f9b065728a4a008feb86f80542fa56e526331b"
+      },
+      {
+        "site_path": "browse/structure/act-history/comparisons/dominican-1550-1604-suscepimus-collect.json",
+        "source_path": "src/web/data/structure/act-history/comparisons/dominican-1550-1604-suscepimus-collect.json",
+        "exhaustive_run_served_sha256": "ea4158fdea2491588f5fb33c20d54ccb40344f078f29db10f684f6b16fd090de",
+        "final_built_sha256": "a1546db3ba64185452a146e067fc4f677d211ac5dfdb5ea695b4f6f1cbbcf2e3",
+        "unchanged_since_exhaustive_run": false,
+        "final_source_sha256": "a1546db3ba64185452a146e067fc4f677d211ac5dfdb5ea695b4f6f1cbbcf2e3"
+      },
+      {
+        "site_path": "browse/structure/act-history/comparisons/mozarabic-1500-1755-benedictio-panis.json",
+        "source_path": "src/web/data/structure/act-history/comparisons/mozarabic-1500-1755-benedictio-panis.json",
+        "exhaustive_run_served_sha256": "1d17b847517768d3a0d6fad88b7df1d0ffb725fb71fa17f22c4d74b704809da0",
+        "final_built_sha256": "fd56abdf20436ce50e7ac94075ab325d6940f4307dd8fe6d4ceed18584a10f18",
+        "unchanged_since_exhaustive_run": false,
+        "final_source_sha256": "fd56abdf20436ce50e7ac94075ab325d6940f4307dd8fe6d4ceed18584a10f18"
+      },
+      {
+        "site_path": "browse/structure/act-history/comparisons/mozarabic-1500-1804-benedictio-panis.json",
+        "source_path": "src/web/data/structure/act-history/comparisons/mozarabic-1500-1804-benedictio-panis.json",
+        "exhaustive_run_served_sha256": "6e560a082a4b2bd3b96dba8027242164abee9c4696cc0bf71e6dbb095bc622c5",
+        "final_built_sha256": "3c8121c4e03d80db2a22a4b691e4ef57df8474fa06fbf86928145e6567a8c243",
+        "unchanged_since_exhaustive_run": false,
+        "final_source_sha256": "3c8121c4e03d80db2a22a4b691e4ef57df8474fa06fbf86928145e6567a8c243"
+      },
+      {
+        "site_path": "browse/structure/act-history/comparisons/mozarabic-1755-1804-benedictio-panis.json",
+        "source_path": "src/web/data/structure/act-history/comparisons/mozarabic-1755-1804-benedictio-panis.json",
+        "exhaustive_run_served_sha256": "c4ab4607ae2b2cc5d95fc0eb32982a1af5a6dbf1562c090d2e93c5a1d135dffd",
+        "final_built_sha256": "5828eee997fa336a9e556185744ba513a3295eaf7e9e4951d7d3cda6b52c1950",
+        "unchanged_since_exhaustive_run": false,
+        "final_source_sha256": "5828eee997fa336a9e556185744ba513a3295eaf7e9e4951d7d3cda6b52c1950"
+      },
+      {
+        "site_path": "browse/structure/act-history/comparisons/roman-canon-memento-wilson-r-and-cummiskey-1861.json",
+        "source_path": "src/web/data/structure/act-history/comparisons/roman-canon-memento-wilson-r-and-cummiskey-1861.json",
+        "exhaustive_run_served_sha256": "00726ce3f8df41fe94d68e117bd838eeac5aa6e4593f31dbd310529e7ec6d34a",
+        "final_built_sha256": "d06cca364cb45e8453e35907424b690a37b59cf45816191c863b1ccbd4433389",
+        "unchanged_since_exhaustive_run": false,
+        "final_source_sha256": "d06cca364cb45e8453e35907424b690a37b59cf45816191c863b1ccbd4433389"
+      },
+      {
+        "site_path": "browse/structure/act-history/comparisons/roman-hanc-igitur-gelasian-and-cummiskey-1861.json",
+        "source_path": "src/web/data/structure/act-history/comparisons/roman-hanc-igitur-gelasian-and-cummiskey-1861.json",
+        "exhaustive_run_served_sha256": "e4f52b07df47b47b0b429e3f174ecf48aefdc9a328084febc18f4a4261f266f5",
+        "final_built_sha256": "c810898cca794c89259c29b12afba0d5239b944c4113407d6d969dd2cf411b39",
+        "unchanged_since_exhaustive_run": false,
+        "final_source_sha256": "c810898cca794c89259c29b12afba0d5239b944c4113407d6d969dd2cf411b39"
+      },
+      {
+        "site_path": "browse/structure/act-history/comparisons/roman-hanc-igitur-gelasian-and-stowe.json",
+        "source_path": "src/web/data/structure/act-history/comparisons/roman-hanc-igitur-gelasian-and-stowe.json",
+        "exhaustive_run_served_sha256": "d078ab41e02e251a2e69135a98afb2b5e8ed30eac6ec7b164d8fdc75061adfd8",
+        "final_built_sha256": "e9b90abec8c2ab05da8d4b2fb4c357a67116573cc33089b0622b574dbbfd1cc5",
+        "unchanged_since_exhaustive_run": false,
+        "final_source_sha256": "e9b90abec8c2ab05da8d4b2fb4c357a67116573cc33089b0622b574dbbfd1cc5"
+      },
+      {
+        "site_path": "browse/structure/act-history/comparisons/roman-hanc-igitur-gregorian-and-cummiskey-1861.json",
+        "source_path": "src/web/data/structure/act-history/comparisons/roman-hanc-igitur-gregorian-and-cummiskey-1861.json",
+        "exhaustive_run_served_sha256": "c2ee9547b0ae42dcd9eefeae9d647a85f3366353b5d39f55c0cdafc7dc0afd59",
+        "final_built_sha256": "84a1546cda59086666b36e625e048a56e3b3cb2f0718833bfaa71ce209b9b482",
+        "unchanged_since_exhaustive_run": false,
+        "final_source_sha256": "84a1546cda59086666b36e625e048a56e3b3cb2f0718833bfaa71ce209b9b482"
+      },
+      {
+        "site_path": "browse/structure/act-history/comparisons/roman-hanc-igitur-gregorian-and-gelasian.json",
+        "source_path": "src/web/data/structure/act-history/comparisons/roman-hanc-igitur-gregorian-and-gelasian.json",
+        "exhaustive_run_served_sha256": "66426510883be574d7b10ced75a04d10203b2665d66c79417707febf862fb950",
+        "final_built_sha256": "5816b6e949ed0e191358a2c9977687e03b3d309e6aaf6c05a5afcc4c63f6b0a9",
+        "unchanged_since_exhaustive_run": false,
+        "final_source_sha256": "5816b6e949ed0e191358a2c9977687e03b3d309e6aaf6c05a5afcc4c63f6b0a9"
+      },
+      {
+        "site_path": "browse/structure/act-history/comparisons/roman-hanc-igitur-gregorian-and-stowe.json",
+        "source_path": "src/web/data/structure/act-history/comparisons/roman-hanc-igitur-gregorian-and-stowe.json",
+        "exhaustive_run_served_sha256": "d674a79498444b3ccf6901dee3e67bca14c966e4b22f0f46b10409573420ec3c",
+        "final_built_sha256": "95f66d6601f8ae8c7196221ffcf37e3afd9e6a9b3aa5d02eb48996949fd2c2e8",
+        "unchanged_since_exhaustive_run": false,
+        "final_source_sha256": "95f66d6601f8ae8c7196221ffcf37e3afd9e6a9b3aa5d02eb48996949fd2c2e8"
+      },
+      {
+        "site_path": "browse/structure/act-history/comparisons/roman-hanc-igitur-stowe-and-cummiskey-1861.json",
+        "source_path": "src/web/data/structure/act-history/comparisons/roman-hanc-igitur-stowe-and-cummiskey-1861.json",
+        "exhaustive_run_served_sha256": "fb545759d6a981e88fca6e1ab5f37b01a0b71cb8f395ab379ab368e7788db418",
+        "final_built_sha256": "82112c4dc7a10f7c9465bc5b67c7a104ecd882c82c9b9c6bd62dc41f115b17a9",
+        "unchanged_since_exhaustive_run": false,
+        "final_source_sha256": "82112c4dc7a10f7c9465bc5b67c7a104ecd882c82c9b9c6bd62dc41f115b17a9"
+      },
+      {
+        "site_path": "browse/structure/act-history/comparisons/roman-quam-oblationem-gelasian-and-cummiskey-1861.json",
+        "source_path": "src/web/data/structure/act-history/comparisons/roman-quam-oblationem-gelasian-and-cummiskey-1861.json",
+        "exhaustive_run_served_sha256": "4abcd7572e4cff559e6b94f356faad1cffcb55d5f8e293b8912b1a79455bee55",
+        "final_built_sha256": "b02e21e04a6d52e1d5283bd2ee5b95d0d427c18596a3a18fde14c0364aeaca15",
+        "unchanged_since_exhaustive_run": false,
+        "final_source_sha256": "b02e21e04a6d52e1d5283bd2ee5b95d0d427c18596a3a18fde14c0364aeaca15"
+      },
+      {
+        "site_path": "browse/structure/act-history/comparisons/roman-quam-oblationem-gelasian-and-stowe.json",
+        "source_path": "src/web/data/structure/act-history/comparisons/roman-quam-oblationem-gelasian-and-stowe.json",
+        "exhaustive_run_served_sha256": "f1e648760ff0040d97b26ca7c906aad81448e332332507d2e2eef557c3a10316",
+        "final_built_sha256": "df7891e5993de67707cab870e95c9d91d39483582a7f4e9f7d3839be70de85e6",
+        "unchanged_since_exhaustive_run": false,
+        "final_source_sha256": "df7891e5993de67707cab870e95c9d91d39483582a7f4e9f7d3839be70de85e6"
+      },
+      {
+        "site_path": "browse/structure/act-history/comparisons/roman-quam-oblationem-gregorian-and-cummiskey-1861.json",
+        "source_path": "src/web/data/structure/act-history/comparisons/roman-quam-oblationem-gregorian-and-cummiskey-1861.json",
+        "exhaustive_run_served_sha256": "c84fc320cfb39c497eb6cd6f020dc3ab1c6dc6b8e356f7416b6ab4088723eaaf",
+        "final_built_sha256": "ca9f3e25d905bc49705d3368df3c271b1cb630207268a97fc3d474bc477bde8d",
+        "unchanged_since_exhaustive_run": false,
+        "final_source_sha256": "ca9f3e25d905bc49705d3368df3c271b1cb630207268a97fc3d474bc477bde8d"
+      },
+      {
+        "site_path": "browse/structure/act-history/comparisons/roman-quam-oblationem-gregorian-and-gelasian.json",
+        "source_path": "src/web/data/structure/act-history/comparisons/roman-quam-oblationem-gregorian-and-gelasian.json",
+        "exhaustive_run_served_sha256": "8ff6d937c57e3646edefc20a82fd204e1fc299056d35a0b0d6cfe05e08e1feed",
+        "final_built_sha256": "e5e61be8a1723c8748dbf869d0b5ebe77dfe698f8b32ad3cda5faa3850cf41e5",
+        "unchanged_since_exhaustive_run": false,
+        "final_source_sha256": "e5e61be8a1723c8748dbf869d0b5ebe77dfe698f8b32ad3cda5faa3850cf41e5"
+      },
+      {
+        "site_path": "browse/structure/act-history/comparisons/roman-quam-oblationem-gregorian-and-stowe.json",
+        "source_path": "src/web/data/structure/act-history/comparisons/roman-quam-oblationem-gregorian-and-stowe.json",
+        "exhaustive_run_served_sha256": "785904f5e6437a70681b22376ced70ca0122ad6aaf375ae6a3d292cd4e87ad30",
+        "final_built_sha256": "f57f00b2b7d930ad215f5a386a1495c0e017794301a325d60811d597ed84ebff",
+        "unchanged_since_exhaustive_run": false,
+        "final_source_sha256": "f57f00b2b7d930ad215f5a386a1495c0e017794301a325d60811d597ed84ebff"
+      },
+      {
+        "site_path": "browse/structure/act-history/comparisons/roman-quam-oblationem-stowe-and-cummiskey-1861.json",
+        "source_path": "src/web/data/structure/act-history/comparisons/roman-quam-oblationem-stowe-and-cummiskey-1861.json",
+        "exhaustive_run_served_sha256": "dbcffd194dee41519889502c8d626b7e0f5c567f7d0d1c0b727664ad74df2a72",
+        "final_built_sha256": "c257a911531fb2cbe7651662d6c3504e96bfd7fdb0dcd4e0a97ed74bf6b6c9ad",
+        "unchanged_since_exhaustive_run": false,
+        "final_source_sha256": "c257a911531fb2cbe7651662d6c3504e96bfd7fdb0dcd4e0a97ed74bf6b6c9ad"
+      },
+      {
+        "site_path": "browse/structure/act-history/comparisons/roman-sanctus-stowe-and-cummiskey-1861.json",
+        "source_path": "src/web/data/structure/act-history/comparisons/roman-sanctus-stowe-and-cummiskey-1861.json",
+        "exhaustive_run_served_sha256": "868bf537b4a22de366f0adcf3380844399ec092e6015f40b5f89adbbf809dd64",
+        "final_built_sha256": "7f9c8413dcd81734551f40c215b4b992a52c1e5d49f3ddc55e749c248f06cfc5",
+        "unchanged_since_exhaustive_run": false,
+        "final_source_sha256": "7f9c8413dcd81734551f40c215b4b992a52c1e5d49f3ddc55e749c248f06cfc5"
+      },
+      {
+        "site_path": "browse/structure/act-history/index.json",
+        "source_path": "src/web/data/structure/act-history/index.json",
+        "exhaustive_run_served_sha256": "c296412caa1471f26424babba89cc10f2fe1fe3cc8daa7b7f7f85b9c10182cbf",
+        "final_built_sha256": "c296412caa1471f26424babba89cc10f2fe1fe3cc8daa7b7f7f85b9c10182cbf",
+        "unchanged_since_exhaustive_run": true,
+        "final_source_sha256": "c296412caa1471f26424babba89cc10f2fe1fe3cc8daa7b7f7f85b9c10182cbf"
+      },
+      {
+        "site_path": "browse/structure/act-history/latin-missal.json",
+        "source_path": "src/web/data/structure/act-history/latin-missal.json",
+        "exhaustive_run_served_sha256": "91f859746fe19c847b925490f1576e0e8f367a5d512652efd7835d0af30edd93",
+        "final_built_sha256": "91f859746fe19c847b925490f1576e0e8f367a5d512652efd7835d0af30edd93",
+        "unchanged_since_exhaustive_run": true,
+        "final_source_sha256": "91f859746fe19c847b925490f1576e0e8f367a5d512652efd7835d0af30edd93"
+      },
+      {
+        "site_path": "browse/structure/act-history/latin-missal/station/2023-02-21-rescriptum-traditionis-custodes.json",
+        "source_path": "src/web/data/structure/act-history/latin-missal/station/2023-02-21-rescriptum-traditionis-custodes.json",
+        "exhaustive_run_served_sha256": "ad15786ad78fed31d8b25af9505f67a531886724b0a355db8c7b9cb5d38fcd8f",
+        "final_built_sha256": "ad15786ad78fed31d8b25af9505f67a531886724b0a355db8c7b9cb5d38fcd8f",
+        "unchanged_since_exhaustive_run": true,
+        "final_source_sha256": "ad15786ad78fed31d8b25af9505f67a531886724b0a355db8c7b9cb5d38fcd8f"
+      },
+      {
+        "site_path": "browse/structure/act-history/native-texts/cistercian-1606-offertory.json",
+        "source_path": "src/web/data/structure/act-history/native-texts/cistercian-1606-offertory.json",
+        "exhaustive_run_served_sha256": "898466341960df64aaeece8bc706d33337db38c7a89fe33974b8169a6b8921e6",
+        "final_built_sha256": "898466341960df64aaeece8bc706d33337db38c7a89fe33974b8169a6b8921e6",
+        "unchanged_since_exhaustive_run": true,
+        "final_source_sha256": "898466341960df64aaeece8bc706d33337db38c7a89fe33974b8169a6b8921e6"
+      },
+      {
+        "site_path": "browse/structure/act-history/native-texts/cistercian-1657-offertory.json",
+        "source_path": "src/web/data/structure/act-history/native-texts/cistercian-1657-offertory.json",
+        "exhaustive_run_served_sha256": "e95853fbe4c38667c33299f23f64ab76c34ca645a0054e2ce44ab47192286a91",
+        "final_built_sha256": "e95853fbe4c38667c33299f23f64ab76c34ca645a0054e2ce44ab47192286a91",
+        "unchanged_since_exhaustive_run": true,
+        "final_source_sha256": "e95853fbe4c38667c33299f23f64ab76c34ca645a0054e2ce44ab47192286a91"
+      },
+      {
+        "site_path": "browse/structure/act-history/native-texts/mozarabic-1500-benedictio-panis.json",
+        "source_path": "src/web/data/structure/act-history/native-texts/mozarabic-1500-benedictio-panis.json",
+        "exhaustive_run_served_sha256": "d87d555fb0e9148eb9198b18820dd686537495c47b046fba86fb3d257033f947",
+        "final_built_sha256": "d87d555fb0e9148eb9198b18820dd686537495c47b046fba86fb3d257033f947",
+        "unchanged_since_exhaustive_run": true,
+        "final_source_sha256": "d87d555fb0e9148eb9198b18820dd686537495c47b046fba86fb3d257033f947"
+      },
+      {
+        "site_path": "browse/structure/act-history/native-texts/mozarabic-1755-benedictio-panis.json",
+        "source_path": "src/web/data/structure/act-history/native-texts/mozarabic-1755-benedictio-panis.json",
+        "exhaustive_run_served_sha256": "551dd395b385da4162858ecb512da6b0219f116271bc16731d724ecd5e73ccd0",
+        "final_built_sha256": "551dd395b385da4162858ecb512da6b0219f116271bc16731d724ecd5e73ccd0",
+        "unchanged_since_exhaustive_run": true,
+        "final_source_sha256": "551dd395b385da4162858ecb512da6b0219f116271bc16731d724ecd5e73ccd0"
+      },
+      {
+        "site_path": "browse/structure/act-history/native-texts/mozarabic-1804-benedictio-panis.json",
+        "source_path": "src/web/data/structure/act-history/native-texts/mozarabic-1804-benedictio-panis.json",
+        "exhaustive_run_served_sha256": "38e5cf8b5aefa6e6e8806482e7e3ed48437a02b8cb379b86f43a0588306f1f51",
+        "final_built_sha256": "38e5cf8b5aefa6e6e8806482e7e3ed48437a02b8cb379b86f43a0588306f1f51",
+        "unchanged_since_exhaustive_run": true,
+        "final_source_sha256": "38e5cf8b5aefa6e6e8806482e7e3ed48437a02b8cb379b86f43a0588306f1f51"
+      },
+      {
+        "site_path": "browse/structure/act-history/native-texts/roman-1570-canon-missae.json",
+        "source_path": "src/web/data/structure/act-history/native-texts/roman-1570-canon-missae.json",
+        "exhaustive_run_served_sha256": "b9f9f10d5c8a457bff72b340517a333702c6bcf706a7b85f301289bad6f4e2b4",
+        "final_built_sha256": "b9f9f10d5c8a457bff72b340517a333702c6bcf706a7b85f301289bad6f4e2b4",
+        "unchanged_since_exhaustive_run": true,
+        "final_source_sha256": "b9f9f10d5c8a457bff72b340517a333702c6bcf706a7b85f301289bad6f4e2b4"
+      },
+      {
+        "site_path": "browse/structure/act-history/native-texts/tuki-1736-arabic-creed.json",
+        "source_path": "src/web/data/structure/act-history/native-texts/tuki-1736-arabic-creed.json",
+        "exhaustive_run_served_sha256": "48e95b3360d139cb2fa05636b532317c0d088722b9778d79c3a35f4d26f7fcce",
+        "final_built_sha256": "48e95b3360d139cb2fa05636b532317c0d088722b9778d79c3a35f4d26f7fcce",
+        "unchanged_since_exhaustive_run": true,
+        "final_source_sha256": "48e95b3360d139cb2fa05636b532317c0d088722b9778d79c3a35f4d26f7fcce"
+      },
+      {
+        "site_path": "history/",
+        "source_path": "src/web/browser/history/index.html",
+        "exhaustive_run_served_sha256": "1bb5bfd69b71323a8b9b48fc8e785bd4656169be94c61950d3d49ba0277fd4fa",
+        "final_built_sha256": "1bb5bfd69b71323a8b9b48fc8e785bd4656169be94c61950d3d49ba0277fd4fa",
+        "unchanged_since_exhaustive_run": true
+      },
+      {
+        "site_path": "history/history.css",
+        "source_path": "src/web/browser/history/history.css",
+        "exhaustive_run_served_sha256": "334b1e477208a470667104c18ea72ceae17ffdb1add0fb3e60d3fe51fd7a107d",
+        "final_built_sha256": "334b1e477208a470667104c18ea72ceae17ffdb1add0fb3e60d3fe51fd7a107d",
+        "unchanged_since_exhaustive_run": true,
+        "final_source_sha256": "334b1e477208a470667104c18ea72ceae17ffdb1add0fb3e60d3fe51fd7a107d"
+      },
+      {
+        "site_path": "history/history.js",
+        "source_path": "src/web/browser/history/history.js",
+        "exhaustive_run_served_sha256": "79619b21c6ebd74595f774fd287f0d771021d255dc4d91af6b347f939509aace",
+        "final_built_sha256": "79619b21c6ebd74595f774fd287f0d771021d255dc4d91af6b347f939509aace",
+        "unchanged_since_exhaustive_run": true,
+        "final_source_sha256": "79619b21c6ebd74595f774fd287f0d771021d255dc4d91af6b347f939509aace"
+      },
+      {
+        "site_path": "shared/browser-core.css",
+        "source_path": "src/web/browser/shared/browser-core.css",
+        "exhaustive_run_served_sha256": "61ee283812f93f05df3fbe66949d03f06123f63426143426f7a49fdc069e4bb8",
+        "final_built_sha256": "61ee283812f93f05df3fbe66949d03f06123f63426143426f7a49fdc069e4bb8",
+        "unchanged_since_exhaustive_run": true,
+        "final_source_sha256": "61ee283812f93f05df3fbe66949d03f06123f63426143426f7a49fdc069e4bb8"
+      },
+      {
+        "site_path": "shared/browser-core.js",
+        "source_path": "src/web/browser/shared/browser-core.js",
+        "exhaustive_run_served_sha256": "86afaa4ea86b451a1da17195ba1128158e713210a326ee8de4f5cbf15180f9b1",
+        "final_built_sha256": "86afaa4ea86b451a1da17195ba1128158e713210a326ee8de4f5cbf15180f9b1",
+        "unchanged_since_exhaustive_run": true,
+        "final_source_sha256": "86afaa4ea86b451a1da17195ba1128158e713210a326ee8de4f5cbf15180f9b1"
+      }
+    ],
+    "final_source_owners": [
+      {
+        "path": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
+        "sha256": "8df354dd19f0ea60437b2a5d6e0ffc938f8ccd30d076fb94c1d52558f57bc421",
+        "byte_size": 145758
+      },
+      {
+        "path": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
+        "sha256": "aaf99fb725ad870d1e01c5bb10967f3e0c3711d19bed4837bcca543da3c54adb",
+        "byte_size": 1365168
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-book-relationships-v1.toml",
+        "sha256": "d43fb733824f87fa46c4c5c1b81417683cbe496b140a97ea6139f1952830a91e",
+        "byte_size": 89758
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-books/cistercian-1606-offertory.json",
+        "sha256": "7dc837f08ecfca3eadd8c423bfe7f7907c13823bf5a8af7fedb8a4d3b5868e61",
+        "byte_size": 17971
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-books/cistercian-1657-offertory.json",
+        "sha256": "66c7a01e6e24eb7be66f1e1734c79105eaf48997cd9db7a593de9fcafd866afc",
+        "byte_size": 19092
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-books/mozarabic-1500-benedictio-panis.json",
+        "sha256": "e39bae86bdaf1dbd344a8f774b63b5d2e3f7c112a5ded703c453e97d09a21737",
+        "byte_size": 7325
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-books/mozarabic-1755-benedictio-panis.json",
+        "sha256": "c094fd1bc024c5db9953850a6699089b3eaac9c0ef149f2bd538aa63d6e8ee57",
+        "byte_size": 7301
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-books/mozarabic-1804-benedictio-panis.json",
+        "sha256": "ad3d60bd19824466e8b337eb27b0da3a13c15916da82a000992386abde462f59",
+        "byte_size": 7242
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-books/roman-1570-canon-missae.json",
+        "sha256": "8cbb45f8fee8fad2522e928ac5598bfc184c7117747e3502f653f2cf0c5ba1dd",
+        "byte_size": 16331
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-books/support/cistercian-1606-offertory-extent.json",
+        "sha256": "69f25569e7522048761ad2a1911413bf45b28b899271cfbdc2ef50b72ceda79e",
+        "byte_size": 7905
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-books/support/cistercian-1606-offertory-review.json",
+        "sha256": "bbf709dff6d03e39d509aa7fe555b1e065c15e8961d0b8f15e920423e7aad114",
+        "byte_size": 4995
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-books/support/cistercian-1657-offertory-extent.json",
+        "sha256": "24e03070cd310cf56723c322e4566a30c38e984bbf052438b18b5700e51b1fa3",
+        "byte_size": 18164
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-books/support/cistercian-1657-offertory-review.json",
+        "sha256": "05c82a972febb0a2fed74c56be9a9366b7003d7a1964c7ea44fbcb7ad60c35dd",
+        "byte_size": 10849
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-books/support/mozarabic-1500-benedictio-panis-extent.json",
+        "sha256": "afaeefa2fa521bf2d66dbc1a47519b71dfe4a5cc3af42830b33ad8d9913e58cf",
+        "byte_size": 1579
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-books/support/mozarabic-1500-benedictio-panis-review.json",
+        "sha256": "33350c80e8ab57bb1d8ce1385e3f7c3cc19bafbd753fae29233d794219259065",
+        "byte_size": 2576
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-books/support/mozarabic-1755-benedictio-panis-extent.json",
+        "sha256": "dce48dcbba896da0f509509f674f73fc068b4d54d1f635946b83a0f2415f961e",
+        "byte_size": 1575
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-books/support/mozarabic-1755-benedictio-panis-review.json",
+        "sha256": "d9157cc97d1129c083fa0a8327c94056378cd63aa021842d3e583c8eed69fc3c",
+        "byte_size": 3207
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-books/support/mozarabic-1804-benedictio-panis-extent.json",
+        "sha256": "15b31fa9e183bd80a6b6529be006b90ad15fda738f155b2bdbe0a01a5355d320",
+        "byte_size": 1563
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-books/support/mozarabic-1804-benedictio-panis-review.json",
+        "sha256": "8c85bd0a75c7c6ce5111c49467b118c8c853fab6b90a5370383c88c3fed2c1d0",
+        "byte_size": 2560
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-books/support/roman-1570-canon-missae-extent.json",
+        "sha256": "f1d97c3993c2d3545c6f1ce1f1c226886bcee876da71b633569715218f6303d8",
+        "byte_size": 12078
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-books/support/roman-1570-canon-missae-review.json",
+        "sha256": "e862a73aee907aa4d9dcf89de254f34682d7b7ff3aaedd11a89e73a5af281316",
+        "byte_size": 3869
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-books/support/tuki-1736-arabic-creed-extent.json",
+        "sha256": "0233b7d5eee84cba778909f76a3bc2fdd3c37fdcaf83c26a1b687f8bf2c7c862",
+        "byte_size": 2472
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-books/support/tuki-1736-arabic-creed-review.json",
+        "sha256": "6df851eef57eeb59017b4860b7364bf2710ab3b65404e2b06161740e0446b96c",
+        "byte_size": 2252
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-books/tuki-1736-arabic-creed.json",
+        "sha256": "1cabeaf38fae7ebf85c4b42f372347795c0012a397c784955d3cb936bedbc9ec",
+        "byte_size": 3251
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/alexandrian.json",
+        "sha256": "f47a20513aef0ca65452902da493c5239894e7e7ef9f46df74a4dd76ec334f9a",
+        "byte_size": 54962
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/ambrosian.json",
+        "sha256": "beb74ea19c8deab1eaa6534328adce296525d10b9370bf5adee8c2c3cf933bd7",
+        "byte_size": 38225
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/armenian.json",
+        "sha256": "aab1be485e4e466296f14a708352157a30d62655e0c848d158287763e7d5f8a7",
+        "byte_size": 42822
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/bursfelde.json",
+        "sha256": "acfe5cbc563a73e9a65862e5f07eae729b058ac8109be6e2406c8b0e91c6a2d2",
+        "byte_size": 7280
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/byzantine.json",
+        "sha256": "fcf1afcc469c3cacb1b8daaa0e4cdfb3df2e3fd7a9b426adc2dfdb8492e21544",
+        "byte_size": 73252
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/canonical-orders.json",
+        "sha256": "b968a4d049e327f1f5b5c9fa76230fb60bcd99682259c31f6ab7cc7d828f85e0",
+        "byte_size": 39919
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/central-europe-round3.json",
+        "sha256": "0dd08cd209a64e2f0f9b4eddc6c982b86322d1f7a3e03d097eff0fd09f119746",
+        "byte_size": 36093
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/chaldean.json",
+        "sha256": "c117f0343b5fb8e91ab8dbb070ae907f71318f30b822628a2751400c7926efb0",
+        "byte_size": 45165
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/cistercian.json",
+        "sha256": "0fab5fe1ae79c38a521c99384036521630e8404432bf6344ec83128d53c9749c",
+        "byte_size": 27706
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/early-western-round2.json",
+        "sha256": "9e6df55da5942db905df222d9f690e0d0695789df9f6a8df2df8a6dfca86f8e1",
+        "byte_size": 31327
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/eastern-local-round2.json",
+        "sha256": "19d21c08f0c825c143b6cc7447f881cbdf323cb33bd75ba80aced9676d43198b",
+        "byte_size": 19457
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/evora.json",
+        "sha256": "6bda1d2551caa7405e7e3db7d47c5cad484bcaa62734013c310d1b02bc3c282d",
+        "byte_size": 7001
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/french-local-round2.json",
+        "sha256": "01433657b83458c95d77cb31f2cc08e0c581f46aec2ca948bd253583819ad3a7",
+        "byte_size": 41742
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/german-regional.json",
+        "sha256": "514155850a7227b28296c52710c7c460e175e6ea0ce73cfcf05ae5487fc2b085",
+        "byte_size": 23314
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/greek-italo-local-reception.json",
+        "sha256": "cf0b8b788a85dc0aa3cd9a26aa06694cbcede0931fe6410f993eed71a7f37d0d",
+        "byte_size": 17995
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/hungarian-reception.json",
+        "sha256": "d54f53b8e1c57f6292b8623855d267731c9753cfb1e5728fb349ed833e4fe495",
+        "byte_size": 12433
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/italian-local-round2.json",
+        "sha256": "23a7cc45b3d7c8d0e3aeb04d930581ad2bd295a2448ccac84421cd81056ea4f5",
+        "byte_size": 32075
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/latin-uses.json",
+        "sha256": "25774a79a5e66dc22aaa4af1b7b3166b0a7aa21b014fc81a1f01b8b5c958b4c5",
+        "byte_size": 71740
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/malabar.json",
+        "sha256": "18dc67367728a9af0cdf919b0eb34b2304da8b44b39b98fcde26756f3e8a18c2",
+        "byte_size": 42250
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/maronite.json",
+        "sha256": "78bcaa7f4b123694e121dcabaa523cde7431477821fde2e619fda81eaeb42965",
+        "byte_size": 44469
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/monza-local-next.json",
+        "sha256": "47dcb83a520ae81cab766376dfc94ac00c3df9d46a99ce452122e2a0bf9fdecd",
+        "byte_size": 9223
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/mozarabic.json",
+        "sha256": "3aad7b953a82cb8ab736aad88f487554e2aabf7caed6cb7855ab5d767c91eaa8",
+        "byte_size": 52734
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/northern-central-regional.json",
+        "sha256": "855b6ff82eb9af3e3bba3dfaa3cf3430186311d51cd2ee3caa8b8d942c207dd3",
+        "byte_size": 15433
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/northwest-round2.json",
+        "sha256": "5d13abbb9e35948d145852e27a1bfdde219a7ecaf5f202a6d923cca136b565d2",
+        "byte_size": 63056
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/ocso-next.json",
+        "sha256": "259643b64d9cfd57fa19984da7cbf4e4b9000544ad1002b591b33773ddd46c2d",
+        "byte_size": 16383
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/other-orders-round2.json",
+        "sha256": "904a61d641f13cbed54276250bf1129edb6abbe8769a5542afa7d9e458763292",
+        "byte_size": 28825
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/padua-local-round3.json",
+        "sha256": "324e8b8be5d02e32ff8b24a8ef23be579b3e8edfee88678a2c0ab2f9936ff612",
+        "byte_size": 13807
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/ravenna-fragments.json",
+        "sha256": "380de2749f35ad1d7b2ed587cc5f5f16a69329caebced64bdb54bb2332475778",
+        "byte_size": 16074
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/regional-variants.json",
+        "sha256": "1b8d0c5b530452d6ad2c107f315f546b1ea38ff10239b27443045f290f25c8ab",
+        "byte_size": 26727
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/residual-orders-round3.json",
+        "sha256": "01b6657c5f670a6e7300316e08b30d8f683266def1ca717e0c3c0f70b7b07dea",
+        "byte_size": 30475
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/residual-western-round3.json",
+        "sha256": "262117f9dade135eb75310b3423344c0bb2a1a9e34a0447094cb2eab13eb6f8f",
+        "byte_size": 21405
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/roman.json",
+        "sha256": "0803cb8241d49b82b796db94403c2f05756fa607b86d3a9e89b85a8627aaf0ec",
+        "byte_size": 108549
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/romanian-blaj.json",
+        "sha256": "f59e5da265728d0dd6c1f1f048c2045d1e9e95ad15b3b2e37e45f88f0356c42b",
+        "byte_size": 8181
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/slavonic-roman.json",
+        "sha256": "680df02025d8b9d66165a0c0bd878b5c3a6758e9ac21c203e59d676cbe7563b8",
+        "byte_size": 10800
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-stages/west-syriac.json",
+        "sha256": "5af5b77cfacbce6570a8abf8b7d3060070301fe8be43afcd3409bd6d9fb71587",
+        "byte_size": 36965
+      },
+      {
+        "path": "src/sources/inventories/latin-missal-acts-v1.toml",
+        "sha256": "917895b2fc23efa60665c5210714b6737e741b177507b0e877fcd0aef9fc1174",
+        "byte_size": 190275
+      },
+      {
+        "path": "src/sources/inventories/missal-timeline-holdings-v1.toml",
+        "sha256": "43d18228b997f149a6aab5605ee0397713348cc1d2f1458c49940fa89f147c8e",
+        "byte_size": 9311
+      },
+      {
+        "path": "src/sources/inventories/roman-holy-week-acts-v1.toml",
+        "sha256": "a441e1d2de4577177e7f0c8243dabb69d1f3051bdc11b3258512d6ec2ac67684",
+        "byte_size": 82587
+      },
+      {
+        "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+        "sha256": "0fe0cf0c1f8978d2fcca683aaeb7400f95b9ba34be49fd853af93dad60a654d6",
+        "byte_size": 1833766
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/artifacts/benedictio-panis-checked/artifact.toml",
+        "sha256": "fa40ffecec5dff657bc33967b00f3c674dbf12b801e9dec579e58359a4d05505",
+        "byte_size": 2595
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/artifacts/benedictio-panis-checked/benedictio-panis.txt",
+        "sha256": "de272dc92fc46da7d096e59a0a3a95d9900233fe3d1cc03796a5fb80129273d9",
+        "byte_size": 904
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/artifacts/bsb-canvas22-176accd2/artifact.toml",
+        "sha256": "4d074831b6ab950ea54f2063c2d9437e04ed8b6b83c4473dc6c3dd51ac762720",
+        "byte_size": 2253
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/artifacts/bsb-canvas22-176accd2/canvas-22.jpg",
+        "sha256": "176accd26d07aa14930b4e9d23d6cff005395cb73d23cd1b7738fcd3238daf24",
+        "byte_size": 598342
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/artifacts/bsb-title-canvas7/artifact.toml",
+        "sha256": "60fb96ee918dfe1e184b2d4effafa790a1c4acbc453c1faf54a42adbf483c538",
+        "byte_size": 1829
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/artifacts/bsb-title-canvas7/canvas-7.jpg",
+        "sha256": "bfe6b7ca48c0a714092cbfc2530885259fcaa7b13fe100f97255e2ec34720d2a",
+        "byte_size": 493891
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/edition.toml",
+        "sha256": "de7ee6d840cdd8c9bc07f70876c8f984154bb3bc163de7c33968b79f0017ba6f",
+        "byte_size": 1093
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/benedictio-blessing-heading.toml",
+        "sha256": "05d8df95f28b0789ddeedba264dfc2e0c3d7ff17badd525442763c1bc0d46d82",
+        "byte_size": 1418
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/benedictio-blessing.toml",
+        "sha256": "c34d9882f7e19b09b6aa6943465344def02675d9731de415601f02ef0ae58205",
+        "byte_size": 1402
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/benedictio-closing-greeting.toml",
+        "sha256": "60c5061d76caf588ba9936f56ed82bb88a25bfcd1bb6377c419413ca8be2b0f5",
+        "byte_size": 1418
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/benedictio-extent.toml",
+        "sha256": "368838599137282984522fb4e808de8950f2342cdf500850d848b9fb8cea0e92",
+        "byte_size": 1486
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/benedictio-heading.toml",
+        "sha256": "ec1da892cc878efb05338edb04edcde485c5daf3fe8814c9be1a479680987821",
+        "byte_size": 1398
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/benedictio-opening-greeting.toml",
+        "sha256": "9f36a562693f01347a28dd68b904289124850fdde8c26cbf0db6f2ca53d40b17",
+        "byte_size": 1416
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/benedictio-opening-versicles.toml",
+        "sha256": "0799992bb046b7b3d7b75bf8baa45002ca09ff9d991bfa317253a9f91be36bfe",
+        "byte_size": 1418
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/benedictio-oratio-heading.toml",
+        "sha256": "09673b4255ee54e5209b66a266b85ddbaf75ad021c07245715289cc794609100",
+        "byte_size": 1414
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/benedictio-oratio.toml",
+        "sha256": "e1faa7c7d7d587059523f62309ef048e2cd4e6d94680ede3619d3cefd1d4e2eb",
+        "byte_size": 1398
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/benedictio-sprinkling.toml",
+        "sha256": "bc8b1a5ec8703fd47f7e4126e82dff4408de1b01c4006b3d4e3dcef95b7418a8",
+        "byte_size": 1406
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/publication-date.toml",
+        "sha256": "493f6c54b298989bc916cf638ee58abb73716ebc5383e91323cb3b678f3f05e3",
+        "byte_size": 825
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/benedictio-panis-checked/artifact.toml",
+        "sha256": "c499a33e8fc0a435bf9193f10b8aeb1c96f17e109ed7a7ad0fab8ca4650809d2",
+        "byte_size": 2108
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/benedictio-panis-checked/benedictio-panis.txt",
+        "sha256": "fd364b6f3c2fd5f2127c8dce780d99df56368a5913dd336b44d529162217606b",
+        "byte_size": 899
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/ia-jp2-page590/artifact.toml",
+        "sha256": "61910718f8ef8ef669444e07827b942a8fed8dc21e563b5d4c4c7747e4deb547",
+        "byte_size": 1840
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/ia-jp2-page590/page-590.jp2",
+        "sha256": "06fa2cf519045e236e20d66bd64d6a1625625d22a6bacc97428f3da7a713fccf",
+        "byte_size": 81800
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/ia-pdf-225d6721/artifact.toml",
+        "sha256": "0ec27f9f654bde9fc0bccceb74a238edce5721328cec0f11bf8e1b921873c67e",
+        "byte_size": 1965
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/ia-pdf-225d6721/missale-mixtum-1755.pdf",
+        "sha256": "225d6721834132ba0a354db2a041029968efbe39e701e5b37615a2675caddc45",
+        "byte_size": 13372022
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/edition.toml",
+        "sha256": "18e2bb4ad4be886c72e182babd73f525f7ed12718a6eee37523fb8df1b9f43d5",
+        "byte_size": 2669
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/benedictio-blessing-heading.toml",
+        "sha256": "953a87bb4d509cffbe4f73e92f9e89f52a64a41a86bb515ac767302b4c0d1256",
+        "byte_size": 1289
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/benedictio-blessing.toml",
+        "sha256": "7ba219b415703f66aa107a8c1e5ab193489eb7eca452f94a459414f59c7bfc75",
+        "byte_size": 1273
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/benedictio-closing-greeting.toml",
+        "sha256": "3bc690b8592325fc68a73b4ca952951305201b92d437dc22feccabdb9a917377",
+        "byte_size": 1289
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/benedictio-extent.toml",
+        "sha256": "df45d3fb7247e54d1dcaf20348b36e35bc29510d850ddad55f660b93d913b4b1",
+        "byte_size": 1398
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/benedictio-heading.toml",
+        "sha256": "0e11f1fb6ffcf8a85cec4a398c557c832d826d6985a6f8f1cd3ff059ca9a3714",
+        "byte_size": 1269
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/benedictio-opening-greeting.toml",
+        "sha256": "7042d645c7bdfd374d884eb0fb8d3c371bb13ab2eaf1095b6a24d7b612004031",
+        "byte_size": 1287
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/benedictio-opening-versicles.toml",
+        "sha256": "a51959d1367c8ca42772a3915b17788cd7e7f94705e15e940e6b4f27943ee028",
+        "byte_size": 1289
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/benedictio-oratio-heading.toml",
+        "sha256": "5e541b726c0e633bddc3f18b370941fcd1a1d86c468e27a66caef5e0ed9c5068",
+        "byte_size": 1285
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/benedictio-oratio.toml",
+        "sha256": "da928961d1aada7f44975d7e39f5b43f7e71a4bfa486231763027d521fcfaa9e",
+        "byte_size": 1269
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/benedictio-sprinkling.toml",
+        "sha256": "32c64b8ee912f565ea34a11256189b8ed1f6f25d523f7214d069da88fc14d3eb",
+        "byte_size": 1277
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/publication-date.toml",
+        "sha256": "fa3a6e89b93c382b1a572b43b74911883f56dd2915489d6acd8d3a44717ba001",
+        "byte_size": 824
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/artifacts/benedictio-panis-checked/artifact.toml",
+        "sha256": "7baa6a232bf3051024b098f6d63b5d7fabd38f1c8e93e69cf547a17d5dfc785a",
+        "byte_size": 2622
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/artifacts/benedictio-panis-checked/benedictio-panis.txt",
+        "sha256": "443342e10cec49650fa8d2c0d8ff2ab6a75b18ab1ff05bf18c7c7d04224529dd",
+        "byte_size": 899
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/artifacts/castilla-la-mancha-p964-25d703c8/artifact.toml",
+        "sha256": "27736905a7ab5ffe50d141af77afcbd5abdebea0b8b87a107742f6d5036bbbb2",
+        "byte_size": 1834
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/artifacts/castilla-la-mancha-p964-25d703c8/position-964.jpg",
+        "sha256": "25d703c822248111e168eb9b494d4da54d6306927600407cb52ff7c2e015f6cb",
+        "byte_size": 246835
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/artifacts/castilla-la-mancha-p965-992df6eb/artifact.toml",
+        "sha256": "298967fc1132a165ea6e4d7c0ce1aeb4a40cb38e00dd3d05723e855050c43f40",
+        "byte_size": 1725
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/artifacts/castilla-la-mancha-p965-992df6eb/position-965.jpg",
+        "sha256": "992df6eb3f47b38c8e092454a224c11821e0f9ae4108457209af2975a6fe0df8",
+        "byte_size": 166290
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/edition.toml",
+        "sha256": "9d25c88b62685f4d22bf37ac1434a4699aa0eaa21a105c2ccd3a2ce046cd420f",
+        "byte_size": 957
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/benedictio-blessing-heading.toml",
+        "sha256": "77db7057fcc55fb2bdd0605c1607dfb19946f6191b42c9b9ae08452fefe372e7",
+        "byte_size": 1430
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/benedictio-blessing.toml",
+        "sha256": "ea229ffdbf71e6e713f58bea81f668a890ede130fce1bc88a7b9f44dfc40e4b4",
+        "byte_size": 1414
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/benedictio-closing-greeting.toml",
+        "sha256": "03a43f592e4332c57e6cfe0056f35d2e0315725a92636b4f0ca46a59e3965004",
+        "byte_size": 1430
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/benedictio-extent.toml",
+        "sha256": "36bee0e114c627c960990ed013fd541965053cef7145059fc13b47ecb7baa83f",
+        "byte_size": 1519
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/benedictio-heading.toml",
+        "sha256": "1d0bd6f25caafd9714dde5b0ed3837a84322de2d9ed09ed558edb0b3c1273047",
+        "byte_size": 1410
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/benedictio-opening-greeting.toml",
+        "sha256": "7224ec3521a88543abce118c7811745c04b75cf990838dd21f51e5b2fe3deb95",
+        "byte_size": 1428
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/benedictio-opening-versicles.toml",
+        "sha256": "4e0850c1106d30284acb8d7279f1caca8df5babcc536ef6874ad9bc88f3ad4ab",
+        "byte_size": 1430
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/benedictio-oratio-heading.toml",
+        "sha256": "4a9ead5f8afb98e30ea7ed6d9e02d9c8ee8d863d4793358e6783d14cb335e989",
+        "byte_size": 1426
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/benedictio-oratio.toml",
+        "sha256": "1093f61ba4bc084a12812ca585d1aeaf3c6bd7084d2ae4ad8979ae01337d69dc",
+        "byte_size": 1410
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/benedictio-sprinkling.toml",
+        "sha256": "f71ae3cdbb1c2cbdeb2c363da23dedfa46314119d00640b52224a4ae57aace82",
+        "byte_size": 1418
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/publication-date.toml",
+        "sha256": "c61f08eeca9281c9b5edaced3a3d621a1f3f62f3ef17b36c2b809ed60ab6589e",
+        "byte_size": 863
+      },
+      {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/work.toml",
+        "sha256": "d614b8c3ef194d3ad59dae541041c8e31b84327fbf7cd9988cb2beb8d50bad31",
+        "byte_size": 1763
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/artifacts/canon-djvu-four-5d5366c2/artifact.toml",
+        "sha256": "98fe1def15b2c6dd2cba8259b5adff1da96bf512961c1a918008eb26f2fae3bd",
+        "byte_size": 1676
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/artifacts/canon-djvu-four-5d5366c2/openings.zip",
+        "sha256": "5d5366c20a6a6271586628f563914d234e7421ca875cc1e2fd47e94b6ad4e364",
+        "byte_size": 1662947
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/artifacts/canon-facsimile-8755a363/artifact.toml",
+        "sha256": "0c908530b7ebd4db528e657cc12f90eadb12b10694190e39b51440fed3e8bcf8",
+        "byte_size": 1779
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/artifacts/canon-facsimile-8755a363/canon-openings.pdf",
+        "sha256": "8755a3634bc771e327bcbbd2bbb7ef9b94d41e9ac5c4e30ec10a673e113c7ffa",
+        "byte_size": 37486068
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/artifacts/canon-reading-0c33d78a/artifact.toml",
+        "sha256": "2d1cad17608e67574dbcd95bdcbbdfa70a4cf6d7fe582d74e9777693e2aca3f3",
+        "byte_size": 2243
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/artifacts/canon-reading-0c33d78a/canon-reading.txt",
+        "sha256": "0c33d78a64fe8b2cd9a7ab76e0cb5b79384703485567227e7c8cf9102d291ec0",
+        "byte_size": 6583
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/artifacts/dlibra-djvu-archive-5c284229/artifact.toml",
+        "sha256": "f7df95678f9cb773a065d97f7c8e56f750e8a82fcd103b2af765eb3147d15705",
+        "byte_size": 1615
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/artifacts/scan-332-png-98cf8f3f/artifact.toml",
+        "sha256": "5016b3225e423a27c013e66d3d942654eadb6d13dda625a58077851d28c32332",
+        "byte_size": 1810
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/artifacts/scan-332-png-98cf8f3f/page.png",
+        "sha256": "98cf8f3f3c5feb8ea59f72950c6320c74011166dd22c10e6fd2e06d56935f074",
+        "byte_size": 1357817
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/edition.toml",
+        "sha256": "63f0d3d3070282783a1aa1ca699b5e1f6db9a425012684bb0edbb1ad421e5a77",
+        "byte_size": 705
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-communicantes.toml",
+        "sha256": "fd2d87e321c630222ed3f730d498946f3eb94035538571b9cef43ba3dece98e2",
+        "byte_size": 1225
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-concluding-response.toml",
+        "sha256": "ff8cb3744b4ba59e8562cc34d6aa9aa79ba95fea76990d1a375a733af3065fe1",
+        "byte_size": 1237
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-facsimile.toml",
+        "sha256": "a33772bc24a3396484519fa7b2d4e5c8fe349a1485e387b4dd905a601eecdfe1",
+        "byte_size": 1114
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-hanc-igitur.toml",
+        "sha256": "35dca292ac7c18d354974356a907235a5041f6b228d3c0745536e0750a6993b7",
+        "byte_size": 1226
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-memento-defunctorum.toml",
+        "sha256": "3c81f98cbd4a70aa2d2eea0051645bee5f24422c6f258ac7fa2eb59f2174e6b5",
+        "byte_size": 1237
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-memento-vivorum.toml",
+        "sha256": "07b0d024fd7e8028bda8cbbf81e1d49ccf4bcab3d7dc04c28a302638fa43c8c8",
+        "byte_size": 1227
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-nobis-quoque.toml",
+        "sha256": "fda360d95538d274200962b73c040cb43649e271e3db943b845e6445f78b80b4",
+        "byte_size": 1223
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-opening-rubric.toml",
+        "sha256": "6917ca80bf9ccd9ac23418943036be62584dd3a0a723c3fa5978761d1d7ce00f",
+        "byte_size": 1223
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-per-ipsum.toml",
+        "sha256": "4ecc1ddf9fa2d87d3e72d481d955e0e209464c988cb8f69252272866c52f62bf",
+        "byte_size": 1217
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-per-quem.toml",
+        "sha256": "69aa3b2435b6dcab38d827bcfdc9ff60e07efc1f2f1a25baa013e032c0993a00",
+        "byte_size": 1215
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-quam-oblationem.toml",
+        "sha256": "97429ef7a3665e40158e6bbcd19dd95931f5ebdb44c2af21e7c2f7bd0c792b02",
+        "byte_size": 1229
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-qui-pridie.toml",
+        "sha256": "7b9c8e3f02858cf9ac6f73b401aa10d53ca802cbecfcd81d2c9affed3d6d7dbb",
+        "byte_size": 1219
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-simili-modo.toml",
+        "sha256": "3cc1c7983ec69fc9db21f59f6f4cbfa66b3c90e933b31332e6303b6ab6610e04",
+        "byte_size": 1234
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-supplices.toml",
+        "sha256": "94fe83b7711d9c3666595688c88db3d843f11fad2e032c144c3a5757cd03734a",
+        "byte_size": 1222
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-supra-quae.toml",
+        "sha256": "646901a1142e6b129bb0995960443f2c98db70342ca5ad5965dc4ebb8926c700",
+        "byte_size": 1219
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-te-igitur.toml",
+        "sha256": "b496077eaae600fb9f5f51888f7b04ef04b7d6db3e4cbea97df150af00b94c0e",
+        "byte_size": 1226
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-unde-et-memores.toml",
+        "sha256": "250e9da1822aab7183de859c204fd38bc3fe246834432288c698d569718919ab",
+        "byte_size": 1229
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/colophon-1570.toml",
+        "sha256": "8df1621b6a271c58b95e945ef3fc467f951f43033320fbca990f3c6398f6f245",
+        "byte_size": 858
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/work.toml",
+        "sha256": "ae029277a68493ed903cd608cd7abdb91797aaff614ab5646f7c6a2dbeaa2ffd",
+        "byte_size": 521
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/djvu-shared-annotation-af707c77/artifact.toml",
+        "sha256": "acec4760e4ec47064972404005959b4e4d7bb548fdbaa1f99253e6132f8af4ba",
+        "byte_size": 1664
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/djvu-shared-annotation-af707c77/shared_anno.iff",
+        "sha256": "af707c77503377397fabd114a5775918b8a83962045aa2cb7a19bc6b9bd5cd7d",
+        "byte_size": 83
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0005-djvu-add1dd8a/1657-page-0005.djvu",
+        "sha256": "add1dd8aef836a88b13415fa836dad310d2dfe1c2b91c9554c0eb59d16a33f98",
+        "byte_size": 1105948
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0005-djvu-add1dd8a/artifact.toml",
+        "sha256": "c40f38a530f5ea3d9c4353f210e2f983d20dbc2e88d38903f922de3a58d3e340",
+        "byte_size": 2030
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0005-jpeg-62bdeb90/1657-page-0005.djvu.review.jpg",
+        "sha256": "62bdeb90dfab9f6aac673f1abd36aa0b4fe9cbdfd900476a0076ac8525e37cfd",
+        "byte_size": 1156854
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0005-jpeg-62bdeb90/artifact.toml",
+        "sha256": "c420412ecf142f25f90190661fcf837027c9a8700a9df382d3d2dae978b94684",
+        "byte_size": 2386
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0234-djvu-f743e6b3/1657-page-0234.djvu",
+        "sha256": "f743e6b3d9248a9bfbd984f0bec8b0c52e5885b60c7578eaa3d0613f73382305",
+        "byte_size": 927062
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0234-djvu-f743e6b3/artifact.toml",
+        "sha256": "6faa7bcf9fe9dbfbe9fa86a06ae556f62aea3c9167c35d8ecb15c6212063c41e",
+        "byte_size": 2029
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0234-jpeg-ae2266c7/1657-page-0234.djvu.review.jpg",
+        "sha256": "ae2266c770aa36d936172ee327593a7f772eeccf5b994b0a62437f739c236798",
+        "byte_size": 1289246
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0234-jpeg-ae2266c7/artifact.toml",
+        "sha256": "212872273efe7a7cc690882ed2eb0b9dd23ab77c21cac9fcf84a0d28bb1e062a",
+        "byte_size": 2386
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0235-djvu-a76ca681/1657-page-0235.djvu",
+        "sha256": "a76ca681c57e62d740067360e395dc97981c1466b6bdbdd6f22733443737a937",
+        "byte_size": 952080
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0235-djvu-a76ca681/artifact.toml",
+        "sha256": "25553f1fe50bde05222b87005fa1491312da217303c48ba256530f6314ae9807",
+        "byte_size": 2029
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0235-jpeg-f64508f8/1657-page-0235.djvu.review.jpg",
+        "sha256": "f64508f8e681f364e766483608820a1f0710cdd2025cb58335239afbb594dd6e",
+        "byte_size": 1304027
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0235-jpeg-f64508f8/artifact.toml",
+        "sha256": "f514391cf9fc2c8b12b74d6b675a5cb671487a5e57b84e18d8c1c09333097cf8",
+        "byte_size": 2386
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0236-djvu-32b17621/1657-page-0236.djvu",
+        "sha256": "32b17621cd542459396ce113a9169c42b1fe9875ba6756ea397bd3c59227bd47",
+        "byte_size": 894204
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0236-djvu-32b17621/artifact.toml",
+        "sha256": "f59bb536db56dc3acad6eca76bf64249c13c4d7608e83f10a86500e4080a4466",
+        "byte_size": 2029
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0236-jpeg-f461bff9/1657-page-0236.djvu.review.jpg",
+        "sha256": "f461bff997cdf0397ea643fce154f44f066ac142960a520dd031166ea6957e1d",
+        "byte_size": 1282098
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0236-jpeg-f461bff9/artifact.toml",
+        "sha256": "9e7fede40f441ae349a4d102d59452f2eaeb7e0fe04f599456b2e911d2c67d4c",
+        "byte_size": 2386
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/offertory-facsimile-2ac96448/artifact.toml",
+        "sha256": "99d3bde8ec9880999472dabda5e4a4e356c7de35cca9845231a88465fe61b0f7",
+        "byte_size": 2009
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/offertory-facsimile-2ac96448/offertory-pages.pdf",
+        "sha256": "2ac96448c79e67ab0fce08467f71a42a51079c81198af7e7cf68cdf5d1a8ee53",
+        "byte_size": 3876972
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/offertory-normalized-latin-6bcf4c42/artifact.toml",
+        "sha256": "010c84edb1184123b73a6f4994bb0242da459bdfcec4b7a4aebd4ff3bafcd441",
+        "byte_size": 3298
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/offertory-normalized-latin-6bcf4c42/text.txt",
+        "sha256": "6bcf4c42c4dfe5627a064af5a399ff43fd83d3efb1666b4bc74b33e146aa9201",
+        "byte_size": 5134
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/offertory-page-images-9fcb1be3/artifact.toml",
+        "sha256": "2bfe7a3655a212b2b2d9e426596e08c107e47d6f92fb0f0451bf7ddbe86abdda",
+        "byte_size": 2370
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/offertory-page-images-9fcb1be3/pages.zip",
+        "sha256": "9fcb1be3a3e8252990f0749767b1b94820305b5334297ce7dba3491469e11a84",
+        "byte_size": 3876758
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/suscipe-trinitas-checked-latin-6da6f1b5/artifact.toml",
+        "sha256": "cd231d945510d099cb6309679dfb7a76f7f07274168643fe1a24deb973dd26e8",
+        "byte_size": 4619
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/suscipe-trinitas-checked-latin-6da6f1b5/text.txt",
+        "sha256": "6da6f1b5e8b8d559d239ab61d991a45be84dbd50ef3060e95ece5f18884c4d5e",
+        "byte_size": 495
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/edition.toml",
+        "sha256": "5d3fa02e48cf6b49e0dce36e5affcb1e324611e8635b1131c0c107ce71804cef",
+        "byte_size": 1169
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/offertory-accendat-in-nobis.toml",
+        "sha256": "07938a0a5dc2a2c409822aecf47b00d7b651107b987bcddf42a50ab947b188dd",
+        "byte_size": 2311
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/offertory-altar-incensing-rubric.toml",
+        "sha256": "489a449759841e167e1df666552e2f0b912aa3a2e93b5981aa1968ff6b771a7b",
+        "byte_size": 2316
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/offertory-chalice-offering-rubric.toml",
+        "sha256": "87da327a33cc1aee27a77e5c92e3b7c124ca9884dbc90f4afc656dd0a0913745",
+        "byte_size": 2339
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/offertory-deus-qui-humanae.toml",
+        "sha256": "e8759aa56410205b8a432e42c2f94f3e8b975fd3298b670d5f522e4377a28504",
+        "byte_size": 2308
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/offertory-dirigatur-domine.toml",
+        "sha256": "956ed016d7938d7bfd5d13d5ec1ae760c33a84f0c592723eecf097af166a16c6",
+        "byte_size": 2310
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/offertory-extent.toml",
+        "sha256": "1c97451843335489d24b1113853c389bbb27ce35c9d29063da5ef0b09474bacd",
+        "byte_size": 1516
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/offertory-host-deposition-water-rubric.toml",
+        "sha256": "6759b92b939a139cb94eef30c3079a144911b72b88ae59b6e4dd1a119170b301",
+        "byte_size": 2346
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/offertory-in-spiritu-humilitatis.toml",
+        "sha256": "0f0b409bb94dd463654a129b10bb96754c9a50131388f94650b0fec4a2de458c",
+        "byte_size": 2349
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/offertory-in-spiritu-rubric.toml",
+        "sha256": "f77c7ac804e05e3d081ae1ed236042aed7252cab84db9b061ae9b2cd000fa72a",
+        "byte_size": 2331
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/offertory-incense-blessing-rubric.toml",
+        "sha256": "220ec161d042c04020189ff0fee3cb17c05344355f00e8f2f82d74d074cb63f7",
+        "byte_size": 2317
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/offertory-incensum-istud.toml",
+        "sha256": "2b9150ef7f225e0aab086dda3dc2fbc27cdbaaf38e01964b1ebc58bf75a92d42",
+        "byte_size": 2308
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/offertory-lavabo-doxology.toml",
+        "sha256": "473a7bf5626b9bc141630973340a721dc4ec2bdc54b18ab332dc377fac20fb89",
+        "byte_size": 2338
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/offertory-lavabo-rubric.toml",
+        "sha256": "a2540c6a75ac7980c1d42fefdba51d2aa27994fb4e500e346392d9342830bfe8",
+        "byte_size": 2352
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/offertory-oblata-incensing-rubric.toml",
+        "sha256": "8d64659c19b2ac49202586d47dd698bfdd0bf1af809944e0fc257ad3e62c1682",
+        "byte_size": 2317
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/offertory-offerimus-tibi.toml",
+        "sha256": "1c3c953316b46f479daa499a66c5d86b3ac43bab9ac214e53ddafd2fec007034",
+        "byte_size": 2306
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/offertory-opening-dialogue-rubric.toml",
+        "sha256": "543a1da3eac24547e1c168e6af1a3a85d6d8d852aad02e1a317b8d890c62fab6",
+        "byte_size": 2360
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/offertory-orate-response.toml",
+        "sha256": "554be0c504eee17531effa6cc244abaafab72fe3ead4b5788644c841b594a58e",
+        "byte_size": 2827
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/offertory-orate-rubric.toml",
+        "sha256": "89ddcfcc7331d44d7d42ba47180f8c7fffd3a1073dec191e42a01bda18e4f3db",
+        "byte_size": 2330
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/offertory-per-intercessionem.toml",
+        "sha256": "47317a623091977ef97805c4a1954be61f2916d440d07ec2b82146d663e584dc",
+        "byte_size": 2312
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/offertory-secreta-preface-transition-rubric.toml",
+        "sha256": "f3218c01b0b561701cbb4b5c02ab245b43c9eedaef0399950cfa7df733b02234",
+        "byte_size": 2445
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/offertory-suscipe-sancte-pater.toml",
+        "sha256": "1c572de544703f3d0d2e646cca8e15facaed08244001be868dbf3aeaf36d193d",
+        "byte_size": 2356
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/offertory-suscipe-trinitas-rubric.toml",
+        "sha256": "a7c2f945674c4bec518aefb50ecaa11481b6e45e64f3a73e0ccb6502da732084",
+        "byte_size": 2373
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/offertory-thurible-return-rubric.toml",
+        "sha256": "42205a26a4e544863a421c69ee0d03795aa592fc80bd03529a331fcb023d9840",
+        "byte_size": 2316
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/offertory-veni-sanctificator-rubric.toml",
+        "sha256": "5cad101903f752d513fef8feafe2f1a4549d7c9272deab9eae6e3771a2fa839c",
+        "byte_size": 2344
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/offertory-veni-sanctificator.toml",
+        "sha256": "9d856b66584847de04d03d00360b2b8d62f372d1713015a7374a7d966a30ac00",
+        "byte_size": 2365
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/suscipe-trinitas.toml",
+        "sha256": "83e12bc22e1e4744c67e4998de531ba5b525cd7d40ff40262e8b5d19ec03dd3b",
+        "byte_size": 2340
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/passages/title-and-imprint.toml",
+        "sha256": "e4d3865fc81a69798092b8dc6a9a22e69dbbddf3de4a78b01d2fbff22958a165",
+        "byte_size": 948
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/bsb-canvas-00001-44b8ddf4/1606-page-1.jpg",
+        "sha256": "44b8ddf44781e3c23c318ae95cf2bfd3eb75c891ac269e67719fef483808cd30",
+        "byte_size": 617354
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/bsb-canvas-00001-44b8ddf4/artifact.toml",
+        "sha256": "3aaa8f0ba26f824cd95f1e02f2d34fa828ad39b1cac2acfe75e7d6db76c0ec16",
+        "byte_size": 2228
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/bsb-canvas-00235-2646b0f5/1606-page-235.jpg",
+        "sha256": "2646b0f5aa0a2bb55fd1042680a673e6adb99ec66913f754a8ceeac0f14830d7",
+        "byte_size": 655093
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/bsb-canvas-00235-2646b0f5/artifact.toml",
+        "sha256": "d29df1be3dc722944feab576a18e14dc456acb4c5d2181ae372abf61108a502d",
+        "byte_size": 2232
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/offertory-checked-latin-9c003023/artifact.toml",
+        "sha256": "3640cb3326728a7c67428fa4a03d40c493b36429abb3b7a03037fd39751aa0c5",
+        "byte_size": 3962
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/offertory-checked-latin-9c003023/text.txt",
+        "sha256": "9c003023910561e31e5c59c4e37aa5550994cf04633e856dbb3d5222b728d537",
+        "byte_size": 684
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/suscipe-trinitas-checked-latin-0c61e53d/artifact.toml",
+        "sha256": "6255b1e2b535879ecc2cdadcd0a89cdbbca29267c9a234793667be7f08122979",
+        "byte_size": 4461
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/suscipe-trinitas-checked-latin-0c61e53d/text.txt",
+        "sha256": "0c61e53dbefbeac73599036df993c0330a28920f3cea81e23c0ca2d62ec3a849",
+        "byte_size": 479
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/edition.toml",
+        "sha256": "fb474c80a7d91801fcec163231ebbca13c96310adf4410722137f56a1d149580",
+        "byte_size": 1123
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/offertory-dominus-response.toml",
+        "sha256": "bad37d4c2a5f31b6db286a46c12353ef73ada411ee6f9e40e79002d109b82c6a",
+        "byte_size": 2473
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/offertory-facsimile.toml",
+        "sha256": "68317d6b8070bc7bd44094de5e141e24d28f2b68e60f373ef8fbc89ec0c3e8e0",
+        "byte_size": 1539
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/offertory-in-spiritu-humilitatis.toml",
+        "sha256": "9c6d95116840c95966351be3dacd6872a9f7c4710366a25fc6b42f47dc76ea37",
+        "byte_size": 2485
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/offertory-in-spiritu-rubric.toml",
+        "sha256": "1e63d56d2250585e9506b985d61d97bea834e4ffd6ea34062f9e52b1c4d1c9a6",
+        "byte_size": 2475
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/offertory-opening-rubric.toml",
+        "sha256": "45b105f85f80f111e9a23d8ca3233f32ced06528748f38ae0b835b0b0f76f20e",
+        "byte_size": 2467
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/offertory-orate-invitation.toml",
+        "sha256": "48e1e4f21c1c4ca66827b5339c2d876a9537dd137105e85dd6fcacdd7c0df179",
+        "byte_size": 2473
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/offertory-orate-rubric.toml",
+        "sha256": "3b8deb97dcb926ccb6273be1c5e2ba0390547d56e8f04eda1afd893985530336",
+        "byte_size": 2465
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/suscipe-trinitas.toml",
+        "sha256": "ab3ea877fbc40fea9048160a31a8042eba732afde9f928fd51ef5b1b54e5168b",
+        "byte_size": 2216
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/title-and-imprint.toml",
+        "sha256": "c2ad4286672e48d90e71cf7bdaf54195ebc9e30dd1afb8e3cad3ce13407d0817",
+        "byte_size": 1005
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/work.toml",
+        "sha256": "0a20612dcc68b398e30947dd780fca1072e9fb84e01b0fda56798a473449ea1a",
+        "byte_size": 476
+      },
+      {
+        "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/artifacts/bonn-images-a09b6368/1736-bonn-images.zip",
+        "sha256": "a09b63688e35e0b4a372063ea1f26bdf5f990686c17358483820383f42461eed",
+        "byte_size": 81657379
+      },
+      {
+        "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/artifacts/bonn-images-a09b6368/artifact.toml",
+        "sha256": "e6b57a5df0a4c23c615f57f9ca91a5c9cd7c062ad873c0bf7dfce384891a9b82",
+        "byte_size": 2796
+      },
+      {
+        "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/artifacts/bonn-pdf-add039d0/1736-bonn-pages.pdf",
+        "sha256": "add039d0fa12b9379035c2820e10ff6df042dc49651628a7dc7f3e9f6b5f375f",
+        "byte_size": 81013230
+      },
+      {
+        "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/artifacts/bonn-pdf-add039d0/artifact.toml",
+        "sha256": "0a0873d6c7d2b06766164995901c5409ca16969893c9d3387fc8d0de46638ddd",
+        "byte_size": 3213
+      },
+      {
+        "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/artifacts/creed-checked-arabic-79536f9c/artifact.toml",
+        "sha256": "79d97669f384dd7a6c6dac06547d940a75edc484af312c671aa59d1c4c0efa44",
+        "byte_size": 7059
+      },
+      {
+        "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/artifacts/creed-checked-arabic-79536f9c/text.txt",
+        "sha256": "79536f9cec56d16b9a1740b9baf9db7353b435577320b60983ffa674b4f9563e",
+        "byte_size": 1313
+      },
+      {
+        "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/edition.toml",
+        "sha256": "05ef09bb03bc76e3f818cf46c191599ba61f85e88f3470eb8bab7b0a836b6607",
+        "byte_size": 1280
+      },
+      {
+        "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/passages/creed-arabic-facsimile.toml",
+        "sha256": "5d34a59a39ec8c5807d48c71c4f2e679585fe634423f1200571fcb9fe91418c1",
+        "byte_size": 2452
+      },
+      {
+        "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/passages/creed-arabic.toml",
+        "sha256": "532b8b8b6ece7078a21c799ba82134f4959dab2e930b4bf56b614ff6a5aa8422",
+        "byte_size": 2348
+      },
+      {
+        "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/segments/colophon.toml",
+        "sha256": "4d5af8b096c2f0799172178bf08ff63fe762367c84305a7e9b2d5695e4909de8",
+        "byte_size": 772
+      },
+      {
+        "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/work.toml",
+        "sha256": "5adc2c30a98ae3a509bafac212ad9191eb1981fbf43ccafead41a8bcea899a43",
+        "byte_size": 579
+      }
+    ]
+  },
+  "build": {
+    "preview_path": ".scratch/next-phases-20261020/site-snapshot/build/public-alpha/preview",
+    "receipt": {
+      "path": ".scratch/next-phases-20261020/cistercian1657/20261020T185341Z-site-preview-result.json",
+      "sha256": "e38f7299370974861c4a0da12c145ff626e6444ce8acb6de0b2a6e20f606ebb6",
+      "byte_size": 1389
+    },
+    "snapshot_entries_sha256": "16eb4d5577f90415aca43495e96cb76668dc1692f54c5d8da40c4ca98335aaa5",
+    "artifact_checksums_sha256": "cde96f39a82924c38d3f6006352128f6c6e08f2d209698687af58869f0fc86f4",
+    "publication_manifest_sha256": "df57e488a106d4c1bc49ef27e36a840128ee250cb3e75598527990292988b28a",
+    "registered_commands": [
+      {
+        "command": [
+          ".scratch/public-alpha-venv/bin/python",
+          "-B",
+          "tools/public-alpha",
+          "check"
+        ],
+        "exit_status": 0,
+        "log": ".scratch/next-phases-20261020/cistercian1657/20261020T185341Z-site-preview-check.log"
+      },
+      {
+        "command": [
+          ".scratch/public-alpha-venv/bin/python",
+          "-B",
+          "tools/public-alpha",
+          "build",
+          "--preview"
+        ],
+        "exit_status": 0,
+        "log": ".scratch/next-phases-20261020/cistercian1657/20261020T185341Z-site-preview-build.log"
+      },
+      {
+        "command": [
+          ".scratch/public-alpha-venv/bin/python",
+          "-B",
+          "tools/public-alpha",
+          "verify",
+          "--preview"
+        ],
+        "exit_status": 0,
+        "log": ".scratch/next-phases-20261020/cistercian1657/20261020T185341Z-site-preview-verify.log"
+      }
+    ],
+    "artifact_parity": {
+      "path": ".scratch/next-phases-20261020/cistercian1657/20261020T185341Z-site-preview-artifact-parity.json",
+      "sha256": "e7afbc4bf01db4979b480fe01614c556aaf7045fe22a853ddbe694d1b2fdeede",
+      "byte_size": 9651413
+    },
+    "attribution": "Parent integrator ran the registered check/build --preview/verify --preview gates and artifact parity; this lane inspected their receipts and ran the actual browser review."
+  },
+  "reader_answers": [
+    {
+      "task": "Follow named Roman recension and explain a concrete local change.",
+      "result": "pass",
+      "sequence": "Roman 1570 to Rome 1604, Clementine correction.",
+      "answer": "The Rome 1570 Ordo gives the blessing instruction and formula without an explicit count or separate solemn/pontifical qualification at that locus. Rome 1604 adds an explicit single blessing including solemn Mass, with a separate three-blessing provision for pontifical Mass.",
+      "loci": [
+        "Rome 1570 printed p.291, scan174 right after Placeat",
+        "Rome 1604 printed p.259 / PDF357 right after Placeat"
+      ],
+      "parentage": "Historical parentage established; Git ancestry and text inheritance false.",
+      "limits": "The earlier 1570 Ritus already provides a single ordinary blessing. This bounded Ordo expansion does not establish first introduction, an exhaustive Clementine delta, or the Venice1570 wording as Roman before-text. Roman1570 whole-book coverage remains partial and1604 not-transcribed."
+    },
+    {
+      "task": "Follow named Cistercian recension and distinguish supported changes from succession.",
+      "result": "pass-for-list-detail-and-comparison-reader-task",
+      "sequence": "1487 corrected missal to1606 Romanizing missal to1657 further Roman correction.",
+      "answer": "The list visibly gives all three publication states. The1487-to1606 Memento comparison adds all the faithful and explicit offering on behalf of those remembered, but parentage remains unestablished. The1606-to1657 Orate drops pro me peccatore, pariter and in conspectu; Dominus sit in corde tuo is replaced by the Suscipiat Dominus response with minister/self alternatives. The detail also identifies expanded Confiteor, changed/relocated Suscipe Trinitas, a bounded Holy Saturday change and a paired Pentecost Sunday example.",
+      "loci": [
+        "1487 BSB canvas225 right;1606 printed190–191 / BSB244–245 for Memento",
+        "1606 printed181 right / BSBcanvas235;1657 printed174 right / FIDES0236 for Orate"
+      ],
+      "parentage": "1487-to1606 unestablished;1606-to1657 attributed institutional revision, not proof a particular1606 copy was the typesetter exemplar. Both Git ancestry and text inheritance false.",
+      "text_status": "1487 not-transcribed;1606 and1657 partial whole books. The complete declared offertory constituents have7 and25 native units respectively; these are bounded functional extents, not complete books or complete Ordinaries.",
+      "limits": "All four linked Cistercian comparison routes were actually reached. Local prayer/rubric comparisons and Holy Saturday excerpt do not exhaust calendar, chant or lectionary changes. Mandate, publication, reception and first introduction remain distinct."
+    },
+    {
+      "task": "Distinguish uncertain dates from duration and independent text coverage.",
+      "result": "pass",
+      "answer": "Mainz MsBarth118 is positioned by the1030–1070 catalogue copying estimate, explicitly not years of use; only the summer part is identified and its later-print relationship remains unproved. Greek Hieratikon distinguishes the1950 title-year from printing completed March1952 and uses1952 publication placement; this does not establish territorial Greek/Melkite reception. Ruthenian1941 attestation/implementation is distinguished from the underlying1940 book. These documented states can remain not-transcribed, independently of their historical evidence."
+    },
+    {
+      "task": "Find a named book, follow a supported connection, identify evidence/limits and reach actual text.",
+      "result": "pass",
+      "answer": "Named Cistercian1657 search selected western:cistercian-1657; its exact chronology witness link selected the same record and1657 date metadata. The selected1606-to1657 attributed revision exposed before/after loci and limits; its four comparison links reached the actual bound source text, including Orate and the complete declared offertory constituents. Date order alone supplied no additional parent."
+    }
+  ],
+  "qualitative_visual_review": {
+    "result": "pass-with-capture-limits",
+    "method": "Reader inspected rendered screenshots and source-locus/limits panels, then wrote the concrete historical answers above; visible-text equality alone was not used as qualitative acceptance.",
+    "selected_evidence": [
+      {
+        "path": ".scratch/next-phases-20261020/browser/axis/cistercian-axis-pan-0.png",
+        "sha256": "699db4306858ea92d28abb52224861334a452b681c4948e941539fb178bd887a",
+        "byte_size": 35961,
+        "purpose": "Actual left axis viewport:1487state and common year scale.",
+        "visually_inspected": true
+      },
+      {
+        "path": ".scratch/next-phases-20261020/browser/axis/cistercian-axis-pan-50.png",
+        "sha256": "0501cbc4a929c48f460db48bc397149602bc32ed02839e859c138ce44b841900",
+        "byte_size": 40511,
+        "purpose": "Actual middle axis viewport and supported horizontal pan.",
+        "visually_inspected": true
+      },
+      {
+        "path": ".scratch/next-phases-20261020/browser/axis/cistercian-axis-pan-100.png",
+        "sha256": "aad56b0284e7de13c1f4db63698fe0e0dce20579f0e2e4c75405af07858eb0df",
+        "byte_size": 64439,
+        "purpose": "Actual right axis viewport:1606and1657states, dated cards and partial-text status.",
+        "visually_inspected": true
+      },
+      {
+        "path": ".scratch/next-phases-20261020/browser/visual/cistercian-sequence-list.png",
+        "sha256": "8e0d6b2cebd6a88fde3e37e4bd6362a1e0a7dd4f079dd2b7dfb9fbab7d701e7a",
+        "byte_size": 155147,
+        "purpose": "Named 1487/1606/1657 chronology, text status and distinct unestablished/attributed parentage.",
+        "visually_inspected": true
+      },
+      {
+        "path": ".scratch/next-phases-20261020/browser/visual/reader-cistercian-1606-1657-revision-wide.png",
+        "sha256": "993063016295335303044eea96899ba15e038e161b507f15457f28480b10302d",
+        "byte_size": 186145,
+        "purpose": "Selected Cistercian revision, dates and attributed historical parentage.",
+        "visually_inspected": true
+      },
+      {
+        "path": ".scratch/next-phases-20261020/browser/visual/reader-cistercian-1606-1657-revision-change-2.png",
+        "sha256": "4af3569f963b0704da337e054ee5267d1fdb622522ff6ffebd5e8a6e2676e7a8",
+        "byte_size": 179339,
+        "purpose": "Concrete Orate before/after, exact source loci and evidence.",
+        "visually_inspected": true
+      },
+      {
+        "path": ".scratch/next-phases-20261020/browser/visual/reader-cistercian-1606-1657-revision-limits.png",
+        "sha256": "47642e5442888c5147daa52c257c790ad066b5570e67a53e4e0db45e070464b1",
+        "byte_size": 69555,
+        "purpose": "Local collation limits, whole-book partial status and no Git inheritance.",
+        "visually_inspected": true
+      },
+      {
+        "path": ".scratch/next-phases-20261020/browser/visual/reader-cistercian-1606-1657-revision-comparison-3.png",
+        "sha256": "c02a93c60d924aa480aa3460f8dc04c1274f6f861666fb0a0a759ef0aea61629",
+        "byte_size": 258375,
+        "purpose": "Reached actual Orate source text comparison from the supported revision.",
+        "visually_inspected": true
+      },
+      {
+        "path": ".scratch/next-phases-20261020/browser/visual/reader-cistercian-1606-1657-revision-comparison-4.png",
+        "sha256": "171462eaad983bf1af5921ac2c6a9d961474064a66c2419acc64aea81ad2ecae",
+        "byte_size": 1944263,
+        "purpose": "Bounded 7-unit/25-unit offertory constituent comparison.",
+        "visually_inspected": true
+      },
+      {
+        "path": ".scratch/next-phases-20261020/browser/visual/reader-roman-stages-clementine-correction-change-1.png",
+        "sha256": "ad8182ca6ec9f0eb55c8654731baaed120e93a6097dbb1b2d3e1578e6e65a476",
+        "byte_size": 187468,
+        "purpose": "Roman 1570/1604 local blessing change with exact before/after loci.",
+        "visually_inspected": true
+      },
+      {
+        "path": ".scratch/next-phases-20261020/browser/visual/reader-central-europe-round3-stage-mainz-ms-wide.png",
+        "sha256": "cf2096d253f99679552fcfd097a91256c27c825061e73466fe765d8dffb7104b",
+        "byte_size": 125110,
+        "purpose": "Uncertain copying interval explicitly distinguished from duration of use.",
+        "visually_inspected": true
+      },
+      {
+        "path": ".scratch/next-phases-20261020/browser/visual/reader-eastern-local-round2-greek-1950-wide.png",
+        "sha256": "4ff968efea20491011c4ddd154ace3f9b02fa8ad245e2d908f9c8887af077af8",
+        "byte_size": 171610,
+        "purpose": "Title-year 1950 and completed printing 1952 distinguished.",
+        "visually_inspected": true
+      },
+      {
+        "path": ".scratch/next-phases-20261020/browser/visual/reader-cistercian-1606-1657-revision-320-text200.png",
+        "sha256": "9bbb571fac794ea6bb9f74b66283ca76313bcc82211d49a79d2f1000e87b00d6",
+        "byte_size": 37814,
+        "purpose": "Settled selected detail at 320 CSS pixels and 200% text size; very tall narrow reading.",
+        "visually_inspected": true
+      },
+      {
+        "path": ".scratch/next-phases-20261020/browser/review/actual400-content-timeline.png",
+        "sha256": "c90ab41deb9626bc284c92aba82709d87d45775c228c7efbbb8b26ac131239ec",
+        "byte_size": 77352,
+        "purpose": "Actual browser 400% zoom, reachable selected timeline content.",
+        "visually_inspected": true
+      },
+      {
+        "path": ".scratch/next-phases-20261020/browser/review/native-tuki-1736-arabic-creed-unit-1-320-text200.png",
+        "sha256": "c142f0fd7da6791a4a6a802db58905b44d7c13324738408be760b85231d13988",
+        "byte_size": 261499,
+        "purpose": "Arabic native constituent RTL narrow-screen spot inspection; no linguistic proofreading claim.",
+        "visually_inspected": true
+      },
+      {
+        "path": ".scratch/next-phases-20261020/browser/visual/corrected-S049-source-detail.png",
+        "sha256": "6dd0483f9fb38ecc8ee4c54c459ec429559b1bd34b1b476589fc913658841abe",
+        "byte_size": 430200,
+        "purpose": "Final corrected Gilbertine Vol. II p.21/PDF37 locator visible in source disclosure.",
+        "visually_inspected": true
+      },
+      {
+        "path": ".scratch/next-phases-20261020/browser/visual/named-cistercian-1657-record.png",
+        "sha256": "f0b2f12c2ddb35e142cedb79077239bbdcc019502d7460483513f6be7eabff48",
+        "byte_size": 139768,
+        "purpose": "Named catalogue search reaches exact Cistercian 1657 record.",
+        "visually_inspected": true
+      }
+    ],
+    "axis_capture_limit": "The initial single cistercian-sequence-chart.png capture shows only the left viewport. The17-check pan supplement closes that capture gap through three actual scroll positions; no single unpanned image is claimed to contain the whole axis.",
+    "independent_cistercian_review": {
+      "list_detail_addendum": {
+        "path": ".scratch/next-phases-20261020/native-plan/cistercian-reader-review-addendum-v2.json",
+        "sha256": "e8831f0d74ac153e3b8aa8f816b72f674cd66248ba603863ac3028692ebf67c1",
+        "byte_size": 7900
+      },
+      "axis_addendum": {
+        "path": ".scratch/next-phases-20261020/native-plan/cistercian-reader-review-addendum-v3-axis.json",
+        "sha256": "4fc0fd707747615d1d4e0838f220b879230918a4a24a267046970e880dc290b0",
+        "byte_size": 6290
+      },
+      "judgment": "Independent bounded PASS: actual three-state list and common-axis pans, concrete local Orate change/loci, parentage/date/text-coverage distinctions and loaded comparisons. No whole-project, all-rite visual, print or spoken-screen-reader claim."
+    }
+  },
+  "harness_issues": [
+    {
+      "kind": "approval/startup",
+      "finding": "One earlier visual command did not execute while approval was pending and was interrupted; it supplies no product result."
+    },
+    {
+      "kind": "startup",
+      "finding": "Three visual startup attempts exited1 with Chromium singleton socket path length failures. Root used a /proc directory-descriptor alias to the same repository scratch directory; no product code changed."
+    },
+    {
+      "kind": "identity_guard",
+      "finding": "One startup reached Chromium but correctly rejected the late corrected catalogue against the old frozen hash. Root added the exact authorized five-scalar transfer proof and current source/served identity guard."
+    },
+    {
+      "kind": "superseded_assertions",
+      "checks": 27,
+      "failed_assertions": 7,
+      "archive": ".scratch/next-phases-20261020/browser/visual-before-assertion-correction",
+      "finding": "Six assertions rejected harmless negative subpixel scroll tops between approximately-0.016 and-0.422 CSSpx. One asserted year/capitalization inside the title even though the exact1657 record and separate date metadata were correct. Harness only was corrected to tolerate1CSSpx rounding, reset font size per navigation, and assert exact record identity plus date metadata. Final32checks passed; no product defect inferred from those assertions."
+    }
+  ],
+  "product_findings": {
+    "confirmed_new_defects": [],
+    "corrected_source_locator": "S049 now displays Woolley volumeII p.21/PDF37 for the printed Thomas formulary; the volumeI introduction citation remains distinct."
+  },
+  "limits": [
+    "Single Chromium/Linux environment. No cross-browser, physical device, touch, spoken screen-reader, physical printer or full WCAG conformance claim.",
+    "The seven native versions and76 units passed literal/source/geometry checks; visual inspection was spot-based, including Arabic RTL. This is not linguistic proofreading of every unit or new independent source collation.",
+    "At320CSS pixels plus200% text, native and selected detail content reflows into very long narrow columns; captures can be extremely tall. Functional reachability does not establish reading comfort for every reader.",
+    "Some earlier text200 and tradition screenshots frame headers after resizing; actual settled final detail captures and geometry supplement them. Actual400% overview/map images show reachable semantic content/legend, not exhaustive graph-label visual inspection.",
+    "The initial single chart-axis capture is clipped to its left viewport; the separate three-position pan supplement supplies actual all-three-state axis evidence. No screenshot failure is promoted to a product defect without reproduction.",
+    "No external linked destinations were followed in this local-browser lane. Historical source correctness and image collation are separately owned review gates.",
+    "Presentation groups reconcile aliases;159groups do not count rites or Churches. Missing connections remain uninvestigated/unestablished, not evidence of historical isolation.",
+    "This closes the bounded interactive chronological reader acceptance only. The full relationship map, exhaustive research coverage, complete books, corpus ancestry and continuous full-text history remain outside this result."
+  ],
+  "reproduction": {
+    "working_directory": "repository root",
+    "build_working_directory": ".scratch/next-phases-20261020/site-snapshot",
+    "build_commands": [
+      [
+        ".scratch/public-alpha-venv/bin/python",
+        "-B",
+        "tools/public-alpha",
+        "check"
+      ],
+      [
+        ".scratch/public-alpha-venv/bin/python",
+        "-B",
+        "tools/public-alpha",
+        "build",
+        "--preview"
+      ],
+      [
+        ".scratch/public-alpha-venv/bin/python",
+        "-B",
+        "tools/public-alpha",
+        "verify",
+        "--preview"
+      ]
+    ],
+    "exhaustive_command": [
+      "/usr/bin/python",
+      ".scratch/next-phases-20261020/browser/browser.py",
+      "--site",
+      ".scratch/next-phases-20261020/site-snapshot/build/public-alpha/preview"
+    ],
+    "final_focused_command": [
+      "env",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "TMPDIR=.scratch/next-phases-20261020/root/tmp",
+      "/usr/bin/python",
+      ".scratch/next-phases-20261020/browser/visual.py",
+      "--site",
+      ".scratch/next-phases-20261020/site-snapshot/build/public-alpha/preview"
+    ],
+    "axis_command": [
+      "env",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "TMPDIR=.scratch/next-phases-20261020/root/tmp",
+      "/usr/bin/python",
+      ".scratch/next-phases-20261020/browser/visual.py",
+      "--site",
+      ".scratch/next-phases-20261020/site-snapshot/build/public-alpha/preview",
+      "--axis-only"
+    ],
+    "server": "Each harness starts and shuts down its own local static server and driver; no fixed port is part of the receipt.",
+    "requirements": "System Python, Chromium and matching chromedriver; approved local Chromium execution; existing checked full-site preview; TMPDIR kept in repository scratch with short directory-descriptor alias as implemented by the frozen visual harness."
+  }
+}

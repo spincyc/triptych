@@ -1,0 +1,32 @@
+{
+  "schema": "triptych-source-factual-extract-v1",
+  "rights_notice": "Project-created selection of factual metadata, distributed under Triptych's CC BY 4.0 terms. The source's individual facts and titles are not claimed as project-authored expression. This file contains no liturgical body, host UI, user favorites/account identifiers or unselected descriptive prose.",
+  "source_artifact_id": "artifact.iccu.sbn-catalogue.2026-10-20-response-states.raw-sbn1635-monocampo-results-8a407392",
+  "source_sha256": "8a407392994581f79077bc976983dd435c5d7468f6f6d054b4645fb3475a9ec0",
+  "source_bytes": 27430,
+  "source_url": "https://opac.sbn.it/o/opac-api/titles-search-full-post",
+  "method": "POST form",
+  "params": {
+    "core": "sbn",
+    "monocampo": "Missale",
+    "filter:31:Anno_pubblicazione:4:4": "1635",
+    "filter:31:Anno_pubblicazione:2:4": "1635"
+  },
+  "facts": {
+    "total": 10,
+    "query": "%28any_notitle%3AMissale%29+AND+%28%28datada%3A%28%5B*+TO+1635%5D%29+AND+dataa%3A%28%5B1635++TO+*%5D%29%29+OR+%28datada2%3A%28%5B*+TO+1635%5D%29+AND+dataa2%3A%28%5B1635+TO+*%5D%29%29%29",
+    "returned_result_count": 10,
+    "returned_identifiers": [
+      "ITICCUAQ1E000498",
+      "ITICCURT1E011053",
+      "ITICCUNAPE048417",
+      "ITICCUPBEE017510",
+      "ITICCUUM1E041839",
+      "ITICCUUM1E008100",
+      "ITICCUMUS0124181",
+      "ITICCUUM1E008721",
+      "ITICCUBVEE080782",
+      "ITICCUTO0E042151"
+    ]
+  }
+}

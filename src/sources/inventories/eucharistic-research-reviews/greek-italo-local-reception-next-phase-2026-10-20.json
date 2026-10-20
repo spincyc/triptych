@@ -1,0 +1,650 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "greek-italo-local-reception-next-phase-2026-10-20",
+  "title": "Bounded Lungro received-language evidence and local Greek/Italo-Albanian calendar components",
+  "lane": "greek-italo-local-reception-next",
+  "side": "eastern",
+  "checked_on": "2026-10-20",
+  "reviewed_on": "2026-10-20",
+  "coverage_rows": [
+    "greek",
+    "italo-albanian"
+  ],
+  "target_inventory": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
+  "review_files": {
+    "accepted_manifest_sha256": "ad450acd18c72820f9d36af9fc305ada6f3059231c50d09f9885a99b72a32f88",
+    "independent_review_sha256": "41e1b3b4e1e8e88a3f890c8b4847131817f45aad638d41390d0ba7167951aa96",
+    "verified_file_count": 43
+  },
+  "integration": {
+    "new_source_ids": [
+      "greek-reception-src-lungro2014",
+      "greek-reception-src-lungro2023",
+      "greek-reception-src-lungro-calendar-use2026",
+      "greek-reception-src-piana2019",
+      "greek-reception-src-piana-publisher2020",
+      "greek-reception-src-athens-holyweek2026",
+      "greek-reception-src-athens-trinity2026",
+      "greek-reception-src-grottaferrata-current"
+    ],
+    "updated_source_ids": [
+      "byzantine-greek-src-lungro2015",
+      "byzantine-greek-src-lungro2018",
+      "byzantine-greek-src-calendar2026"
+    ],
+    "new_candidate_ids": [
+      "greek-reception-piana2019",
+      "greek-reception-athens-holyweek2026"
+    ],
+    "candidate_updates": [
+      "byzantine-greek-lungro1968",
+      "byzantine-greek-calendar2026"
+    ],
+    "new_stage_ids": [
+      "greek-italo-local-reception:lungro-albanian2015",
+      "greek-italo-local-reception:piana-calendar2019",
+      "greek-italo-local-reception:lungro-calendar2026",
+      "greek-italo-local-reception:athens-holyweek2026"
+    ],
+    "new_transitions": 0,
+    "new_substantive_revisions": 0,
+    "required_correction": "GR-INT-001: all nine disposable research_artifact_path fields removed from added and updated source tables, including three inherited paths. Exact source hashes, sizes, URLs and limits retained.",
+    "fingerprint_refresh": "Pending final reviewed input freeze."
+  },
+  "semantics": "Concrete local received-language and calendar/rubric evidence found; no blanket Church adoption, full receiving celebrant book, whole-book transcription, collation, historical transition or ancestry asserted.",
+  "findings": [
+    {
+      "id": "lungro-operative-language",
+      "support": [
+        "lungro-lajme2015.pdf, PDF p.25/right-hand printed p.49",
+        "lungro-pastoral2018.pdf, PDF pp. 30–31"
+      ],
+      "assertion": "Official 2015 bulletin names Liturgjia Hyjnore e atit tonë ndër shëjtrat Joan Hrysostomit and expressly says it remains in use in Lungro Arbëresh parishes. The bishop’s 2018 pastoral identifies Congregation approval and reports Albanian commonly used in almost all parishes. Candidate byzantine-greek-lungro1968 should no longer be automatically deferred solely as translation.",
+      "limit": "The physical book was not acquired; 1967/1968 printing, press and bilingual-format reports differ. No reception outside Lungro inferred."
+    },
+    {
+      "id": "lungro-date-roles",
+      "support": [
+        "lungro-lajme2023vol2.pdf, printed/PDF p. 104; note9 p.113",
+        "lungro-pastoral2018.pdf, PDF p. 30",
+        "lungro-lajme2014.pdf, printed/PDF p.49"
+      ],
+      "assertion": "2023 retrospective says decree published 6 August 1968; 2018 pastoral says adoption decreed 13 October 1968. Both point to Bollettino 3 (1968), pp. 14–16. 2014 quotes Assembly art.120 requiring Albanian/Greek, with Italian in Italophone parishes or elsewhere by ordinary permission.",
+      "limit": "Preserve attributed dates; do not assert that October is independently proven implementation date. Original decree and Assembly act remain uninspected. 2023 quote itself prints con where sense appears non; no silent repair or reliance on that malformed phrase."
+    },
+    {
+      "id": "lungro-calendar2026",
+      "support": [
+        "lungro-imerologhion2026.pdf, PDF pp.3,60,196",
+        "https://www.eparchialungro.it/2026/01/20/imerologhion-2026-2/"
+      ],
+      "assertion": "Official 20 January announcement says this Ordo was already circulated to regulate festive and daily Vespers, Orthros, Hours and Divine Liturgy. Primary PDF p.60 assigns Pascha 5 April 2026 and Chrysostom with propers/readings.",
+      "limit": "One local calendar/rubric component. No full-book adoption, new recension, first celebration or full implementation claimed. Piana appendix credit does not rename the whole book."
+    },
+    {
+      "id": "piana-calendar2019",
+      "support": [
+        "piana-imerologhion2019.pdf, original cover PDF p.1, credits p.3, Note per l’uso p.10/printed p.11"
+      ],
+      "assertion": "Piana Curia/Ufficio Liturgico’s own Ordo names Roman Greek Anthologion 1967–1980 and Lipa Italian 1999–2000. It explicitly explains that certain Sunday saints get only the IX-ode incipit following the Italian sequence, whereas Greek reference canons generally present I,VI,IX.",
+      "limit": "This is explicit local receiving calendar/rubric context, no named full Eucharistic celebrant book, first adoption, textual collation, decree of approval or uniform parish use."
+    },
+    {
+      "id": "piana-publisher2020",
+      "support": [
+        "piana-publisher2020.html, product description and Product JSON-LD"
+      ],
+      "assertion": "Primary co-publisher lists a 2020 Greek/Italian coedition with Piana, ISBN 9788897789796, same two reference sets/rubric explanation, 384 pages.",
+      "limit": "Retail catalogues list 368 pages; original 2020 volume/approval leaves not inspected. Supplemental source only; no extra annual state proposed."
+    },
+    {
+      "id": "athens-calendar2026",
+      "support": [
+        "greek-holyweek2026.html; greek-holyweek2026.jpg",
+        "greek-trinity2026.html; greek-trinity2026.jpg"
+      ],
+      "assertion": "Official Athens Holy Trinity cathedral/parish programme posted 24 March 2026 schedules Presanctified 6–8 April, Vespers/Basil 9 and 11 April and Paschal Orthros/Divine Liturgy at midnight before 12 April. Official 16 May programme separately schedules Pentecost 31 May and Holy Spirit Monday 1 June.",
+      "limit": "Published intended local arrangements, not proof completed celebrations, receiving edition, liturgical performance language, Greek exarchate-wide practice or Roman 1950/1952 book reception. Proposed stage is a calendar/rubric programme component only."
+    },
+    {
+      "id": "grottaferrata-bounded-negative",
+      "support": [
+        "https://www.abbaziasannilo.org/typikon",
+        "https://www.abbaziasannilo.org/doni-presantificati",
+        "https://www.abbaziasannilo.org/theotokos",
+        "https://www.abbaziasannilo.org/pubblicazioni"
+      ],
+      "assertion": "Official current pages describe Presanctified Wednesdays/Fridays 18:15; local Theotokos feast 22 August; annual dual Italo-Byzantine/Roman calendars. Typikon page gives monastic spirituality.",
+      "limit": "Pages are undated and identify no exact receiving service-book edition or adoption date. No new Grottaferrata stage proposed. Current circular/homily PDF requests returned 403; no contents inferred."
+    }
+  ],
+  "sources": [
+    {
+      "id": "greek-reception-src-lungro2014",
+      "url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2020/06/Lajme-settembredicembre-2014.pdf",
+      "checked_on": "2026-10-20",
+      "evidence_type": "official-eparchial-retrospective",
+      "title": "Lajme / Notizie, September–December 2014",
+      "inspection": "PDF p. 49 directly inspected as raster; p.48 text layer read.",
+      "locus": "Printed/PDF pp.48–49: inter-eparchial translation, reported 1967 printing; art.120; use in 29 Albanophone parishes",
+      "limitation": "The decree original and Assembly original were not inspected. Printed p. 49 misprints decree page range as 14–96; do not silently use that range. Reported 1967 printing conflicts with the 2015 report of 1968.",
+      "full_contents_examined": false,
+      "text_acquisition": "acquired-in-research-scratch; protected material not proposed for tracked retention",
+      "hash_state": "computed",
+      "sha256": "2935d486f921c3312f38d865ec22c86aea725d92632dd914d194f821f56a27a8",
+      "byte_size": 4312136
+    },
+    {
+      "id": "greek-reception-src-lungro2023",
+      "url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2026/01/impaginato-2023-Vol-2-per-la-stampa-compresso.pdf",
+      "checked_on": "2026-10-20",
+      "evidence_type": "official-eparchial-retrospective",
+      "title": "Lajme / Notizie, July–December 2023; Antonio Bellusci on Stamati and the Bollettino",
+      "inspection": "Original bulletin PDF p. 104 directly inspected as raster; note 9 text layer read. The account paraphrases and quotes three operative points of the decree.",
+      "locus": "Printed/PDF p. 104; note 9 at printed/PDF p.113 cites Bollettino 3 (1968), 14–16",
+      "limitation": "This is a 2023 retrospective, not the 1968 original. It gives decree publication 6 August 1968; the 2018 pastoral gives 13 October for decreed adoption. Preserve source-specific roles pending original.",
+      "full_contents_examined": false,
+      "text_acquisition": "acquired-in-research-scratch; protected material not proposed for tracked retention",
+      "hash_state": "computed",
+      "sha256": "f0e42b449d7101c7a2a01ecb2988f19c1809d6530b000a909c773d663f620363",
+      "byte_size": 10110234
+    },
+    {
+      "id": "greek-reception-src-lungro-calendar-use2026",
+      "url": "https://www.eparchialungro.it/2026/01/20/imerologhion-2026-2/",
+      "checked_on": "2026-10-20",
+      "evidence_type": "official-local-implementation-announcement",
+      "title": "Imerologhion 2026, official Lungro announcement of 20 January 2026",
+      "inspection": "Complete short article read through the web reader: the eparchy has already circulated the Ordo regulating festive and daily Vespers, Orthros, Hours and Divine Liturgy; service is credited to the eparchial liturgical office.",
+      "locus": "Opening paragraph below the dated title",
+      "limitation": "Does not identify a celebrant Hieratikon edition, first celebration or universal compliance.",
+      "full_contents_examined": false,
+      "text_acquisition": "not-acquired",
+      "hash_state": "not-computed"
+    },
+    {
+      "id": "greek-reception-src-piana2019",
+      "url": "https://irp-cdn.multiscreensite.com/89b1017e/files/uploaded/Imerologhion_PIANA_2019.pdf",
+      "checked_on": "2026-10-20",
+      "evidence_type": "primary-local-calendar-and-rubric-book",
+      "title": "Imerologhion 2019, Eparchy of Piana degli Albanesi",
+      "inspection": "Complete offered 327-page PDF acquired; original cover (PDF p.1), Curia/Ufficio Liturgico credits (p.3) and entire Note per l’uso (p.10) directly inspected as raster.",
+      "locus": "PDF pp.1–3 identity/credits; printed p.11 (PDF p.10) Note per l’uso",
+      "limitation": "Source names reference books and a concrete local editorial/rubrical choice. It does not identify the Eucharistic celebrant book, first adoption date of the reference books, decree of approval, or actual practice in every parish. Rest of book not systematically inspected.",
+      "full_contents_examined": false,
+      "text_acquisition": "acquired-in-research-scratch; protected material not proposed for tracked retention",
+      "hash_state": "computed",
+      "sha256": "1c0d3bd783971aeb4c869b698a80bd34fa9ed7395a95b98cc351e9052eb364de",
+      "byte_size": 7405010
+    },
+    {
+      "id": "greek-reception-src-piana-publisher2020",
+      "url": "https://valoreitalianobookstore.com/products/ημερολογιον-imerologhion-2020-2021",
+      "checked_on": "2026-10-20",
+      "evidence_type": "primary-co-publisher-catalogue",
+      "title": "Valore Italiano, Ημερολογιον | Imerologhion 2020–2021",
+      "inspection": "Publisher HTML directly acquired and product description read: Greek/Italian; coedition with Eparchy of Piana, 2020; ISBN 9788897789796; 384 pages reported; same two Anthologia reference sets and IX-ode explanation.",
+      "locus": "Product description and embedded Product JSON-LD",
+      "limitation": "Primary publisher reports 384 pages, retail catalogues report 368; original 2020 volume/approval leaves not acquired. No extra dated stage proposed for an uncollated annual issue.",
+      "full_contents_examined": false,
+      "text_acquisition": "acquired-in-research-scratch; protected material not proposed for tracked retention",
+      "hash_state": "computed",
+      "sha256": "f6fc8bd175913bc0834f97b01054d6e475636f4a9f162d2840eef96961fd3d0f",
+      "byte_size": 223198
+    },
+    {
+      "id": "greek-reception-src-athens-holyweek2026",
+      "url": "https://elcathex.gr/προγραμμα-τησ-μεγαλησ-εβδομαδοσ-2026/",
+      "checked_on": "2026-10-20",
+      "evidence_type": "primary-local-service-programme",
+      "title": "Greek Catholic Exarchate, Athens Holy Trinity cathedral/parish Holy Week programme 2026",
+      "inspection": "Official HTML acquired by curl after web-reader 403; full original JPEG inspected. Header identifies the Greek Catholic Exarchate and Athens Holy Trinity cathedral/parish. It schedules Presanctified 6–8 April and Vespers/Basil 9,11 April.",
+      "locus": "Web article dated 24 March 2026; full linked original programme image, dates 5–12 April 2026",
+      "limitation": "A published programme attests intended local service/calendar arrangements. It does not prove each service occurred, identify an exact receiving book, establish the spoken language, or prove Roman 1950/1952 book adoption.",
+      "full_contents_examined": false,
+      "text_acquisition": "acquired-in-research-scratch; protected material not proposed for tracked retention",
+      "hash_state": "computed",
+      "sha256": "1be3ee7d69312b29fed6a0aaa5c4572849fa780877af769630074f2e9626a4b2",
+      "byte_size": 225115
+    },
+    {
+      "id": "greek-reception-src-athens-trinity2026",
+      "url": "https://elcathex.gr/προγραμμα-αγιασ-τριαδοσ-2026/",
+      "checked_on": "2026-10-20",
+      "evidence_type": "primary-local-service-programme",
+      "title": "Greek Catholic Exarchate, Athens Holy Trinity Pentecost programme 2026",
+      "inspection": "Official HTML and full original JPEG acquired by curl and image directly inspected; Pentecost 31 May and Holy Spirit Monday 1 June with Divine Liturgy scheduled.",
+      "locus": "Article dated 16 May 2026; full linked original image, dates 29 May–1 June",
+      "limitation": "Corroborates the published local calendar programme only; no receiving edition or completed celebration is proved.",
+      "full_contents_examined": false,
+      "text_acquisition": "acquired-in-research-scratch; protected material not proposed for tracked retention",
+      "hash_state": "computed",
+      "sha256": "33d1917c3727e07021cbbe148890d9ef9187602035188b47274fc0116cd7a1f2",
+      "byte_size": 226007
+    },
+    {
+      "id": "greek-reception-src-grottaferrata-current",
+      "url": "https://www.abbaziasannilo.org/theotokos",
+      "checked_on": "2026-10-20",
+      "evidence_type": "official-monastery-local-practice-description",
+      "title": "Grottaferrata abbey, Theotokos page and current service/publication pages",
+      "inspection": "Official abbey pages read via web: local icon feast 22 August; Presanctified advertised Wednesdays/Fridays 18:15; annual dual Italo-Byzantine/Roman calendars are published. /typikon gives monastic rule spirituality, no service-book edition.",
+      "locus": "Theotokos page final sentence; /doni-presantificati final paragraph; /pubblicazioni annual calendars paragraph",
+      "limitation": "Undated pages inspected 20 October 2026; present web descriptions cannot establish the date a book was adopted. No new Grottaferrata stage proposed and the exact current receiving books remain unknown.",
+      "full_contents_examined": false,
+      "text_acquisition": "not-acquired",
+      "hash_state": "not-computed"
+    },
+    {
+      "id": "byzantine-greek-src-lungro2015",
+      "url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2020/10/Lajme.-1-del-2015-pdf.pdf",
+      "checked_on": "2026-10-20",
+      "evidence_type": "official-eparchial-history",
+      "title": "Lajme / Notizie, January–April 2015",
+      "inspection": "Original PDF p. 25 (two-up printed pp. 48–49) directly inspected as raster 20 October 2026; named book and current Lungro use in right-hand printed p. 49.",
+      "locus": "Reports the 1968 first printed Arbëresh Chrysostom Liturgy (Tipografia Italo-Orientale S. Nilo, Grottaferrata) and the inter-eparchial translation commission, with local Albanian-language performance already in the 1950s; printed pp. 46–51 also list Giordano's Arbëresh Gospel and Apostle books (2010), Presanctified Liturgy (2011) and Holy Week (2012).",
+      "limitation": "Original 1967/1968 book and approval leaves remain uninspected; publication reports conflict. Its approved operative Lungro language is not deferred solely because it originated through translation.",
+      "full_contents_examined": false,
+      "text_acquisition": "acquired-in-research-scratch; proposed-storage-scratch-only",
+      "hash_state": "computed",
+      "sha256": "fba00341598b8fbe3cbd0a92a8497a00f03ce901362eb35333aa21fbb75a7b6b",
+      "byte_size": 1935504,
+      "page_count": 53
+    },
+    {
+      "id": "byzantine-greek-src-lungro2018",
+      "url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2020/10/Il-sogno-di-Dio-sulla-nostra-Chiesa.pdf",
+      "checked_on": "2026-10-20",
+      "evidence_type": "official-pastoral-history",
+      "title": "Il sogno di Dio sulla nostra Chiesa, pastoral letter 2018/2019",
+      "inspection": "Bishop Donato Oliverio’s pastoral PDF pp. 30–31 directly inspected as rasters 20 October 2026; other earlier inspection loci remain in prior record.",
+      "locus": "Reports the 1939 instruction on Greek books, the first inter-eparchial synod of 13–16 October 1940, and a decree of 13 October 1968 (citing Bollettino Ecclesiastico 1968, no. III, pp. 14–16) adopting Albanian in two editions, Greek with Albanian and Albanian with Italian.",
+      "limitation": "The retrospective says decreed adoption 13 October 1968, whereas Lajme 2023 gives decree publication 6 August 1968. Preserve both reports pending original Bollettino 3 (1968), 14–16. No exact Greek receiving edition is named.",
+      "full_contents_examined": false,
+      "text_acquisition": "acquired-in-research-scratch; proposed-storage-scratch-only",
+      "hash_state": "computed",
+      "sha256": "85d61f5d126ee3133c84fe4e04f77133a50eb842928e5a437168dde38626ece6",
+      "byte_size": 580874,
+      "page_count": 65
+    },
+    {
+      "id": "byzantine-greek-src-calendar2026",
+      "url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2026/01/Imerologhion-2026-compresso.pdf",
+      "checked_on": "2026-10-20",
+      "evidence_type": "primary-calendar-and-proper-book",
+      "title": "Imerologhion 2026, Eparchy of Lungro",
+      "inspection": "Original PDF pp. 3 (title), 60 (Pascha), 196 (Piana appendix credit) directly inspected as rasters 20 October 2026; whole text layer searched only as finding aid.",
+      "locus": "The annual calendar of Lungro, with proper appendices attributed to Piana, including the office for Blessed Josif Papamihali on 5 November.",
+      "limitation": "A search snippet had identified the whole volume as Piana's; the cover corrects this to Lungro, while the file keeps its discovery name. Whether the individual new propers are original compositions or translations, and their approval, are open.",
+      "full_contents_examined": false,
+      "text_acquisition": "acquired-in-research-scratch; proposed-storage-scratch-only",
+      "hash_state": "computed",
+      "sha256": "55cf4585745af0aaa5f4985ce37dd8f765a6634c69859d553ad758f98ec60524",
+      "byte_size": 6047792,
+      "page_count": 212
+    }
+  ],
+  "versions": [
+    {
+      "family": "Byzantine",
+      "evidence": "original-page-images-inspected",
+      "date_basis": "Date bounds identify this published/attested document only, never duration of a use or inferred adoption of another book.",
+      "text_acquisition": "complete-offered-file-acquired-in-research-scratch; rights-unresolved",
+      "full_contents_examined": false,
+      "research_priority": "source-language-local-reception",
+      "version_status": "local-component-witness; substantive-edition-change-not-established",
+      "acquisition_status": "scratch-held; not-canonically-registered",
+      "transcription_status": "not-transcribed",
+      "collation_status": "not-collated",
+      "source_title_status": "Original title or document header directly inspected",
+      "chronology_certainty": "explicit-in-inspected-primary-document",
+      "id": "greek-reception-piana2019",
+      "church_scope": "Eparchy of Piana degli Albanesi; local annual calendar/rubric book",
+      "book_label": "Imerologhion 2019 (Curia Vescovile; Ufficio Liturgico Diocesano)",
+      "date": "2019 issue",
+      "language": "Greek and Italian",
+      "kind": "local-calendar-and-rubric-witness",
+      "source_ids": [
+        "greek-reception-src-piana2019"
+      ],
+      "source_urls": [
+        "https://irp-cdn.multiscreensite.com/89b1017e/files/uploaded/Imerologhion_PIANA_2019.pdf"
+      ],
+      "note": "Its own Note per l’uso identifies the Roman Greek Anthologion 1967–1980 and the Italian Lipa Anthologhion 1999–2000 as reference books. The editors follow the Italian layout, with only ode IX indicated for certain saints on some Sundays, contrasting the generally I, VI, IX form of the Greek reference. This is source-described local calendrical/rubrical reception, not a collated textual descent, Eucharistic altar-book identity or universal local implementation.",
+      "chronology_start": 2019,
+      "chronology_end": 2019,
+      "chronology_kind": "calendar-issue-year"
+    },
+    {
+      "family": "Byzantine",
+      "evidence": "original-page-images-inspected",
+      "date_basis": "Date bounds identify this published/attested document only, never duration of a use or inferred adoption of another book.",
+      "text_acquisition": "complete-offered-file-acquired-in-research-scratch; rights-unresolved",
+      "full_contents_examined": false,
+      "research_priority": "source-language-local-reception",
+      "version_status": "local-component-witness; substantive-edition-change-not-established",
+      "acquisition_status": "scratch-held; not-canonically-registered",
+      "transcription_status": "not-transcribed",
+      "collation_status": "not-collated",
+      "source_title_status": "Original title or document header directly inspected",
+      "chronology_certainty": "explicit-in-inspected-primary-document",
+      "id": "greek-reception-athens-holyweek2026",
+      "church_scope": "Greek Catholic Exarchate; Holy Trinity cathedral and parish, Athens only",
+      "book_label": "ΠΡΟΓΡΑΜΜΑ ΤΗΣ ΜΕΓΑΛΗΣ ΕΒΔΟΜΑΔΟΣ 2026",
+      "date": "Programme posted 24 March 2026 for 5–12 April 2026",
+      "language": "Greek (document); performed liturgical language not established",
+      "kind": "dated-local-service-programme",
+      "source_ids": [
+        "greek-reception-src-athens-holyweek2026",
+        "greek-reception-src-athens-trinity2026"
+      ],
+      "source_urls": [
+        "https://elcathex.gr/προγραμμα-τησ-μεγαλησ-εβδομαδοσ-2026/",
+        "https://elcathex.gr/wp-content/uploads/2026/03/Μεγάλη-Εβδομάδα-2026.jpg"
+      ],
+      "note": "Published primary programme schedules Presanctified 6–8 April; Vespers with Basil 9 April and 11 April; Paschal Orthros and Divine Liturgy at midnight before 12 April. The Pentecost programme separately schedules Pentecost 31 May and Holy Spirit Monday 1 June 2026. Announced arrangements are attested; actual completion, first introduction, exact receiving editions and uniform exarchate practice are not proved.",
+      "chronology_start": 2026,
+      "chronology_end": 2026,
+      "chronology_kind": "programme-publication-year"
+    },
+    {
+      "id": "byzantine-greek-lungro1968",
+      "family": "Byzantine",
+      "church_scope": "Eparchy of Lungro (with the inter-eparchial commission)",
+      "book_label": "Liturgjia Hyjnore e atit tonë ndër shëjtrat Joan Hrysostomit",
+      "date": "Printing 1967 or 1968 reported; decree publication 6 August 1968 per 2023 retrospective; decreed adoption 13 October 1968 per 2018 pastoral; use explicitly attested 2015 and 2018",
+      "language": "Albanian (Arbëresh) with Greek or Italian",
+      "kind": "approved-operative-received-service-book-language",
+      "evidence": "official-retrospective-inspected",
+      "source_ids": [
+        "byzantine-greek-src-lungro2015",
+        "byzantine-greek-src-lungro2013",
+        "byzantine-greek-src-lungro2018",
+        "greek-reception-src-lungro2014",
+        "greek-reception-src-lungro2023"
+      ],
+      "source_urls": [
+        "https://www.eparchialungro.it/wp-content/uploads/sites/2/2020/10/Lajme.-1-del-2015-pdf.pdf",
+        "https://www.eparchialungro.it/wp-content/uploads/sites/2/2020/06/lajme.pdf",
+        "https://www.eparchialungro.it/wp-content/uploads/sites/2/2020/10/Il-sogno-di-Dio-sulla-nostra-Chiesa.pdf",
+        "https://www.eparchialungro.it/wp-content/uploads/sites/2/2020/06/Lajme-settembredicembre-2014.pdf",
+        "https://www.eparchialungro.it/wp-content/uploads/sites/2/2026/01/impaginato-2023-Vol-2-per-la-stampa-compresso.pdf"
+      ],
+      "note": "Official Lungro sources identify the inter-eparchial Arbëresh Chrysostom Liturgy, Congregation approval and actual continued parish use. Lajme 2015 printed p. 49 explicitly names Liturgjia Hyjnore e atit tonë ndër shëjtrat Joan Hrysostomit (reported 1968, S. Nilo Grottaferrata) and says it remains used in Lungro Arbëresh parishes. The bishop’s 2018 pastoral PDF pp. 30–31 identifies Greek–Albanian and Albanian–Italian approved formats and says Albanian is commonly used in almost all its parishes. This meets received-service-book-language scope and is not blanket-deferred solely as a translation. Printing 1967 versus 1968, press and bilingual-format discrepancies remain unresolved until original title/approval leaves are inspected. Lajme 2023 p. 104 gives decree publication 6 August 1968; the 2018 pastoral p. 30 says adoption decreed 13 October 1968. These reports do not authorize a silently harmonized exact adoption day. No Piana, Grottaferrata or Albanian Catholic local reception is inferred.",
+      "date_basis": "Distinct source-reported publication/adoption/use dates are preserved; no numeric printing bound or invented reconciliation.",
+      "text_acquisition": "not-acquired",
+      "full_contents_examined": false,
+      "research_priority": "received-service-book-language",
+      "version_status": "approved-local-use-attested; original-printing-identity-and-date-conflict-open",
+      "acquisition_status": "not-acquired",
+      "transcription_status": "not-transcribed",
+      "collation_status": "not-collated",
+      "source_title_status": "Source-supplied bibliographic label; native title page not independently inspected unless stated"
+    },
+    {
+      "id": "byzantine-greek-calendar2026",
+      "family": "Byzantine",
+      "church_scope": "Eparchy of Lungro, with appendices credited to the Eparchy of Piana degli Albanesi",
+      "book_label": "Imerologhion 2026 with proper appendices attributed to Piana",
+      "date": "2026",
+      "language": "Italian for the Piana appendix propers; other parts as printed",
+      "kind": "annual-calendar-and-component-witness",
+      "evidence": "original-page-images-inspected",
+      "source_ids": [
+        "byzantine-greek-src-calendar2026",
+        "greek-reception-src-lungro-calendar-use2026"
+      ],
+      "source_urls": [
+        "https://www.eparchialungro.it/wp-content/uploads/sites/2/2026/01/Imerologhion-2026-compresso.pdf",
+        "https://www.eparchialungro.it/2026/01/20/imerologhion-2026-2/"
+      ],
+      "note": "Original Lungro title and calendar inspected. The official 20 January 2026 announcement expressly says the eparchy has circulated this Ordo to regulate the year’s festive/daily Vespers, Orthros, Hours and Divine Liturgy. PDF p. 60 assigns Pascha 5 April 2026 and Chrysostom with proper hymns/readings; this is a concrete local operative calendar/rubric component, not a new Eucharistic recension. PDF pp. 196 and 199 credit Piana’s Liturgical Office for Italian propers, which does not make the whole volume Piana’s. Exact receiving Hieratikon, decree for the appended propers, first celebration and parish-wide compliance remain unproved.",
+      "date_basis": "Date identifies only the event named in date_role; it is not composition, universal adoption or a period of use.",
+      "text_acquisition": "complete-offered-file-acquired; restricted-metadata-only",
+      "full_contents_examined": false,
+      "research_priority": "source-language",
+      "version_status": "calendar-content-documented; predecessor-collation-open",
+      "acquisition_status": "scan-held-in-scratch; not-canonically-registered",
+      "transcription_status": "not-transcribed",
+      "collation_status": "not-collated",
+      "source_title_status": "Cover and opening pages inspected",
+      "chronology_start": 2026,
+      "chronology_end": 2026,
+      "chronology_kind": "publication-year",
+      "chronology_certainty": "explicit-in-inspected-title"
+    }
+  ],
+  "uses": [
+    {
+      "id": "greek-italo-local-reception:lungro-albanian2015",
+      "scope": "Named inter-eparchial Arbëresh Chrysostom Liturgy; original physical printing identity not independently inspected.",
+      "date_kind": "attestation",
+      "date_label": "2015 attestation",
+      "evidence": [
+        {
+          "source_id": "greek-italo-local-reception:source:byzantine-greek-src-lungro2015",
+          "locus": "Printed p. 49 / PDF p. 25 (right-hand page)",
+          "claim": "Names book, reported 1968 S. Nilo imprint and current Lungro use."
+        },
+        {
+          "source_id": "greek-italo-local-reception:source:byzantine-greek-src-lungro2018",
+          "locus": "PDF pp. 30–31, especially note 44",
+          "claim": "Reports Congregation approval, paired formats and widespread local use."
+        }
+      ],
+      "limitations": "This is a 2015 use attestation, not a 1968 publication date or first adoption. Official printing, format and adoption-date reports disagree; no local reception outside Lungro is inferred.",
+      "reception": "Approval and use are supported by named official retrospectives; original book/approval and 1968 decree uninspected."
+    },
+    {
+      "id": "greek-italo-local-reception:piana-calendar2019",
+      "scope": "Local annual Ordo and its own reference-book/selected-ode rubric explanation.",
+      "date_kind": "publication",
+      "date_label": "2019 publication",
+      "evidence": [
+        {
+          "source_id": "greek-italo-local-reception:source:greek-reception-src-piana2019",
+          "locus": "Original cover/credits PDF pp. 1,3; Note per l’uso printed p. 11/PDF p. 10",
+          "claim": "Identifies local book, reference sets and the explicit local rubrical/editorial choice."
+        }
+      ],
+      "limitations": "No full-book collation, celebrant-book identity, first adoption date, individual parish implementation or text inheritance is established.",
+      "reception": "The local receiving calendar itself declares its reference books and rubrical arrangement; no universal Church adoption claim."
+    },
+    {
+      "id": "greek-italo-local-reception:lungro-calendar2026",
+      "scope": "Annual calendar and bounded inspected Pascha rubric; no full celebrant book.",
+      "date_kind": "attestation",
+      "date_label": "2026 calendar issue; circulation attested 20 January 2026; printing completed December 2025",
+      "evidence": [
+        {
+          "source_id": "greek-italo-local-reception:source:greek-reception-src-lungro-calendar-use2026",
+          "locus": "20 January 2026 article, opening paragraph",
+          "claim": "Circulation and operative local calendar function are explicit."
+        },
+        {
+          "source_id": "greek-italo-local-reception:source:byzantine-greek-src-calendar2026",
+          "locus": "PDF pp. 3,60,196",
+          "claim": "Identifies Lungro, concrete Pascha rubric and separately credited Piana appendix."
+        },
+        {
+          "source_id": "greek-italo-local-reception:source:byzantine-greek-src-calendar2026",
+          "locus": "Original PDF p. 210, colophon; independently checked raster SHA-256 98e68246198058ea43d117d27e969f58157f089c2b74d9e6c52d9299710743f9",
+          "claim": "Printing completed in December 2025 at GLF, Castrovillari; the 2026 calendar issue and dated circulation attestation remain separate event roles."
+        }
+      ],
+      "limitations": "Annual issue alone is not a new Eucharistic recension. Complete contents, appended-proper approval, exact celebrant book and parish-wide compliance are unverified. Original colophon PDF p. 210 separately dates printing completion to December 2025; exact publication date remains unestablished.",
+      "reception": "Locally circulated regulatory Ordo attested by official announcement; no first celebration or universal obedience inferred."
+    },
+    {
+      "id": "greek-italo-local-reception:athens-holyweek2026",
+      "scope": "Published Holy Week programme for one Greek Catholic cathedral/parish.",
+      "date_kind": "attestation",
+      "date_label": "2026 attestation",
+      "evidence": [
+        {
+          "source_id": "greek-italo-local-reception:source:greek-reception-src-athens-holyweek2026",
+          "locus": "Dated webpage and full original programme JPEG, dated entries 5–12 April 2026",
+          "claim": "A named Catholic local community publishes specific Eucharistic/service arrangements."
+        }
+      ],
+      "limitations": "This is announced practice, not proof each celebration occurred. Receiving editions, performance language, earlier history and other exarchate communities remain unestablished.",
+      "reception": "Only the published local calendar arrangement is attested; no 1950/1952 Hieratikon reception is inferred."
+    }
+  ],
+  "remaining_gaps": [
+    {
+      "id": "greek-italo-local-reception:lungro-original",
+      "tradition_id": "greek-italo-local-reception:lungro",
+      "period": "1967/1968 and prior Greek receiving books",
+      "missing": "Original Arbëresh title/approval leaves; exact Greek exemplar; Bollettino 3 (1968), pp. 14–16.",
+      "next_source": "Original two bilingual book formats and decree, plus Assembly original art. 120.",
+      "consequence": "Printing 1967/1968, format and 6 August/13 October roles stay source-qualified; no textual transition or exact first adoption."
+    },
+    {
+      "id": "greek-italo-local-reception:piana-altar-book",
+      "tradition_id": "greek-italo-local-reception:piana",
+      "period": "Before and after 2019",
+      "missing": "Exact Eucharistic celebrant book, adoption act and parish implementation.",
+      "next_source": "Piana library/Curia inventories and original receiving Hieratikon; approval record for 2019 Ordo.",
+      "consequence": "Calendar reference-book reception cannot establish full-book or Church-wide Eucharistic reception."
+    },
+    {
+      "id": "greek-italo-local-reception:greek-receiving-editions",
+      "tradition_id": "greek-italo-local-reception:athens",
+      "period": "Earlier history through 2026; Greece and Istanbul",
+      "missing": "Exact receiving Hieratikon/Euchologion books, adoption decrees and completed dated celebrations using identified editions.",
+      "next_source": "Athens cathedral sacristy/library catalogue, exarchate rubrics/approval files; Istanbul local records.",
+      "consequence": "The Roman 1950 title/1952 printing state remains separate from Greek local reception; 2026 programme proves planned local dates only."
+    }
+  ],
+  "searches": [
+    {
+      "bounds": [
+        "Piana2019: full327-page file acquired; only cover, credits and printed p.11 notes visually inspected. Remaining calendar/prayer body not collated or systematically examined.",
+        "Lungro2026: full212-page file acquired; title, Pascha rubric and one Piana appendix credit re-inspected; text layer searched as finding aid. Remaining annual rubrics/propers not certified complete.",
+        "Lajme2014: PDFp.49 visually inspected; p.48 text layer read. Other pages searched as finding aid, no full issue review.",
+        "Lajme2015: two-up PDFp.25/printedpp.48–49 visually inspected; other issue pages not re-examined.",
+        "Lajme2023: PDF/printedp. 104 visually inspected; note9 p.113 text layer. Other220-page issue material unexamined.",
+        "Lungro2018: PDFpp. 30–31 visually inspected for approval/use/date claims; original1968book/decree/Assembly acts remain missing.",
+        "Greek exarchate: homepage, official publications landing page and two2026service programmes inspected. KalosTypos2017price list text searched, no exact receiving celebrant edition established; publication-gallery pages2–3, older schedules, sacristy/library inventories and Istanbul records unexamined.",
+        "RomanGreek1950title/1952printing and1601publication sources already have states and were not reacquired; neither is converted into local reception here."
+      ],
+      "access_failures": [
+        "Named official contemporary circular/homily PDFs returned HTTP 403 and were not inspected.",
+        "Some web-reader routes failed while separately acquired official responses were successfully inspected; no broad source absence follows."
+      ]
+    }
+  ],
+  "acquisitions": [
+    {
+      "artifact_label": "elcathex-home.html",
+      "sha256": "424b443f4cb045b1a9213eca98db8c1fe9048ab7374281bb8bfd28b3b322e7ac",
+      "byte_size": 67210,
+      "rights": "Modern source response or derivative; no public-payload basis or source-library retention admitted by this research integration."
+    },
+    {
+      "artifact_label": "greek-holyweek2026.html",
+      "sha256": "1be3ee7d69312b29fed6a0aaa5c4572849fa780877af769630074f2e9626a4b2",
+      "byte_size": 225115,
+      "rights": "Modern source response or derivative; no public-payload basis or source-library retention admitted by this research integration."
+    },
+    {
+      "artifact_label": "greek-holyweek2026.jpg",
+      "sha256": "0743d944d0d3a245a8e48d1f0629ac758701c87e6f8bc81800bf905416fa6e88",
+      "byte_size": 352938,
+      "rights": "Modern source response or derivative; no public-payload basis or source-library retention admitted by this research integration."
+    },
+    {
+      "artifact_label": "greek-kalostypos2017.pdf",
+      "sha256": "63e078585bd5cc843baed2e8ff42c3352f6202587ea5af9e4e3406b881cf5472",
+      "byte_size": 184118,
+      "rights": "Modern source response or derivative; no public-payload basis or source-library retention admitted by this research integration."
+    },
+    {
+      "artifact_label": "greek-publications.html",
+      "sha256": "e6b5546cd55013a07a8a73987a7421627826aaaffef3b01af41ec3c40cd5b112",
+      "byte_size": 112627,
+      "rights": "Modern source response or derivative; no public-payload basis or source-library retention admitted by this research integration."
+    },
+    {
+      "artifact_label": "greek-trinity2026.html",
+      "sha256": "33d1917c3727e07021cbbe148890d9ef9187602035188b47274fc0116cd7a1f2",
+      "byte_size": 226007,
+      "rights": "Modern source response or derivative; no public-payload basis or source-library retention admitted by this research integration."
+    },
+    {
+      "artifact_label": "greek-trinity2026.jpg",
+      "sha256": "9b6e0c1ab8991a1ca54f175c04b400f6f87452d30414187dfe7a6354c4beee33",
+      "byte_size": 376868,
+      "rights": "Modern source response or derivative; no public-payload basis or source-library retention admitted by this research integration."
+    },
+    {
+      "artifact_label": "lungro-imerologhion2026.pdf",
+      "sha256": "55cf4585745af0aaa5f4985ce37dd8f765a6634c69859d553ad758f98ec60524",
+      "byte_size": 6047792,
+      "rights": "Modern source response or derivative; no public-payload basis or source-library retention admitted by this research integration."
+    },
+    {
+      "artifact_label": "lungro-lajme2014.pdf",
+      "sha256": "2935d486f921c3312f38d865ec22c86aea725d92632dd914d194f821f56a27a8",
+      "byte_size": 4312136,
+      "rights": "Modern source response or derivative; no public-payload basis or source-library retention admitted by this research integration."
+    },
+    {
+      "artifact_label": "lungro-lajme2015.pdf",
+      "sha256": "fba00341598b8fbe3cbd0a92a8497a00f03ce901362eb35333aa21fbb75a7b6b",
+      "byte_size": 1935504,
+      "rights": "Modern source response or derivative; no public-payload basis or source-library retention admitted by this research integration."
+    },
+    {
+      "artifact_label": "lungro-lajme2023vol2.pdf",
+      "sha256": "f0e42b449d7101c7a2a01ecb2988f19c1809d6530b000a909c773d663f620363",
+      "byte_size": 10110234,
+      "rights": "Modern source response or derivative; no public-payload basis or source-library retention admitted by this research integration."
+    },
+    {
+      "artifact_label": "lungro-pastoral2018.pdf",
+      "sha256": "85d61f5d126ee3133c84fe4e04f77133a50eb842928e5a437168dde38626ece6",
+      "byte_size": 580874,
+      "rights": "Modern source response or derivative; no public-payload basis or source-library retention admitted by this research integration."
+    },
+    {
+      "artifact_label": "piana-imerologhion2019.pdf",
+      "sha256": "1c0d3bd783971aeb4c869b698a80bd34fa9ed7395a95b98cc351e9052eb364de",
+      "byte_size": 7405010,
+      "rights": "Modern source response or derivative; no public-payload basis or source-library retention admitted by this research integration."
+    },
+    {
+      "artifact_label": "piana-publisher2020.html",
+      "sha256": "f6fc8bd175913bc0834f97b01054d6e475636f4a9f162d2840eef96961fd3d0f",
+      "byte_size": 223198,
+      "rights": "Modern source response or derivative; no public-payload basis or source-library retention admitted by this research integration."
+    },
+    {
+      "artifact_label": "publisher-search.html",
+      "sha256": "c5b3f79d031dad271569a9823684ec644c95af80c6138f4e8b9512c46c79e406",
+      "byte_size": 190691,
+      "rights": "Modern source response or derivative; no public-payload basis or source-library retention admitted by this research integration."
+    }
+  ],
+  "rights": "Only project-created factual metadata, exact identity/hash/size and bounded paraphrase are tracked. Modern source payload retention requires separate reviewed exact-artifact decisions.",
+  "post_acceptance_correction": {
+    "basis": "Independent original colophon image inspection and coordinator approval; frozen research packet unchanged.",
+    "candidate_id": "byzantine-greek-calendar2026",
+    "stage_id": "greek-italo-local-reception:lungro-calendar2026",
+    "prior_coordinate": [
+      2026,
+      2026
+    ],
+    "current_coordinate": [
+      2026,
+      2026
+    ],
+    "prior_role": "publication",
+    "current_role": "attestation",
+    "locus": "Imerologhion 2026 original PDF p. 210; original PDF SHA-256 55cf4585745af0aaa5f4985ce37dd8f765a6634c69859d553ad758f98ec60524; checked raster SHA-256 98e68246198058ea43d117d27e969f58157f089c2b74d9e6c52d9299710743f9",
+    "finding": "Printing completed December 2025; issue is for calendar year 2026; official 20 January 2026 announcement attests prior circulation; exact publication date unestablished.",
+    "limit": "No stage count, substantive revision, ancestry, first celebration or whole-book scope change."
+  }
+}

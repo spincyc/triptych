@@ -1,0 +1,21 @@
+{
+  "schema": "triptych-source-factual-extract-v1",
+  "rights_notice": "Project-created selection of factual metadata, distributed under Triptych's CC BY 4.0 terms. The source's individual facts and titles are not claimed as project-authored expression. This file contains no liturgical body, host UI, user favorites/account identifiers or unselected descriptive prose.",
+  "source_artifact_id": "artifact.iccu.sbn-catalogue.2026-10-20-response-states.raw-sbn1634-title-results-6af43209",
+  "source_sha256": "6af4320988be06c77bae4f4b0c1d54a817ec411ce8ca3707bdff794d7493c6de",
+  "source_bytes": 2507,
+  "source_url": "https://opac.sbn.it/o/opac-api/titles-search-full-post",
+  "method": "POST form",
+  "params": {
+    "core": "sbn",
+    "item:4:Titolo": "Missale Romanum",
+    "filter:31:Anno_pubblicazione:4:4": "1634",
+    "filter:31:Anno_pubblicazione:2:4": "1634"
+  },
+  "facts": {
+    "total": 0,
+    "query": "%28%28%28datada%3A%28%5B*+TO+1634%5D%29+AND+dataa%3A%28%5B1634++TO+*%5D%29%29+OR+%28datada2%3A%28%5B*+TO+1634%5D%29+AND+dataa2%3A%28%5B1634+TO+*%5D%29%29%29+AND+%28titolo_all_notitle%3A%28%22Missale%22%29+AND+titolo_all_notitle%3A%28%22Romanum%22%29%29%29",
+    "returned_result_count": 0,
+    "returned_identifiers": []
+  }
+}

@@ -1,0 +1,1138 @@
+{
+  "adapter_id": "native-book:cistercian-1657-offertory",
+  "binding_sha256": "66c7a01e6e24eb7be66f1e1734c79105eaf48997cd9db7a593de9fcafd866afc",
+  "catalogue_witness_ids": [
+    "western:cistercian-1657"
+  ],
+  "counts": {
+    "languages": {
+      "la": 25
+    },
+    "units": 25,
+    "whitespace_tokens": 779
+  },
+  "id": "cistercian-1657-offertory",
+  "schema": "triptych-eucharistic-native-text/v1",
+  "scope": {
+    "complete_declared_extent": true,
+    "description": "Bounded functional offertory constituent within the native running head Ordo Missæ: from red Deinde osculatur Altare, & versus ad populum after the Creed on printed p. 172, through the complete Secreta/preface-transition rubric ending signum Crucis sibi producit à fronte ad pectus on p. 174, above the horizontal rule and ¶ Sequens Præfatio. Includes every intervening prayer, dialogue, black quoted incipit, sign and red rubric. This functional bound is not a printed native chapter heading. No earlier Creed or later preface belongs to the constituent.",
+    "extent_kind": "constituent",
+    "known_extent_pages": 3,
+    "known_extent_units": 25,
+    "omitted_book_divisions": [
+      "All front matter, calendar and general rubrics outside this bounded Ordo Missæ constituent",
+      "Earlier Ordo Missæ, including the Creed and its chant before the opening Deinde osculatur Altare on printed p. 172",
+      "All prefaces beginning with ¶ Sequens Præfatio below the rule on printed p. 174, the Canon and remaining Ordo Missæ",
+      "The entire Temporale, Sanctorale, Commons, votive and other proper formularies, lectionary and chant outside the declared constituent"
+    ],
+    "status": "complete-native-constituent",
+    "whole_book_complete": false
+  },
+  "sources": [
+    {
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-facsimile-2ac96448",
+      "record_type": "artifact",
+      "rights_basis": "Faithful bounded transcription or mechanical facsimile packaging of the original Latin Paris 1657 printing, whose United States publication term has expired. No modern translation or new critical reconstruction is included. The historical wording is distinct from delivery-image rights; the existing retained FIDES image manifests record the source object as public domain with unrestricted access. Third-party source text and mechanical source images are excluded from Triptych’s CC BY 4.0 grant. Scholarly availability does not authorize contemporary liturgical use.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "transformation": "Embed each original JPEG byte stream unchanged using PDF /DCTDecode, RGB, original pixel dimensions as MediaBox points; no decode/re-encode, crop, resampling, text overlay, metadata timestamps, or image omission. Three source image hashes are pinned in the parent sequence.json and support manifests. Construction verifies every original JPEG stream occurs byte-for-byte in the PDF. PDF pages 1, 2, 3 correspond to printed pp. 172, 173, 174."
+    },
+    {
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "record_type": "artifact",
+      "rights_basis": "Faithful bounded transcription or mechanical facsimile packaging of the original Latin Paris 1657 printing, whose United States publication term has expired. No modern translation or new critical reconstruction is included. The historical wording is distinct from delivery-image rights; the existing retained FIDES image manifests record the source object as public domain with unrestricted access. Third-party source text and mechanical source images are excluded from Triptych’s CC BY 4.0 grant. Scholarly availability does not authorize contemporary liturgical use.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "transformation": "NFC UTF-8; long s becomes s; display initials and following capitals merge to sentence case; printed nasal suspension bars expand; physical wraps and line-end word division disappear; retain printed u/v, i/j, æ/œ, accents, punctuation, abbreviations, alternatives, all rubric words and spoken cues. Printed versicle/response signs are represented by ℣. and ℟.; pattée crosses by ✠, separated from adjoining letters by spaces. Each stored line is one consecutive source block (rubric, spoken text, or quoted spoken cue); no explanatory wrapper enters literal text. Block breaks represent source paragraph/ink/function boundaries, not every printed line. Colour changes of display initials are not encoded as separate letters; line-class metadata identifies red rubrics, response cue, black spoken incipits and inline red alternatives/crosses. The opening/closing boundaries remain functional editorial bounds within the native Ordo Missæ, not a claim that the printing gives this constituent its own named chapter."
+    },
+    {
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.suscipe-trinitas-checked-latin-6da6f1b5",
+      "record_type": "artifact",
+      "rights_basis": "Faithful bounded transcription of original Latin from the identified Paris 1657 printing, whose United States publication term has expired. This contains no modern translation or new critical reconstruction. The historical text is separate from the provider’s particular image rights; FIDES explicitly marks the source object public domain with unrestricted access. Third-party text is excluded from Triptych’s CC BY 4.0 license. Scholarly availability does not authorize contemporary liturgical use.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "transformation": "Manual transcription of the exact retained image SHA-256 f461bff997cdf0397ea643fce154f44f066ac142960a520dd031166ea6957e1d at Cistercian missal 1657, printed p. 174, left bottom continuing right top column; FIDES file 0236. Normalize long s to s; merge display initials with the following letters in sentence case; remove line wraps and line-end word division; expand printed nasal suspension bars; retain printed u/v, æ/œ, accents, B. abbreviations, punctuation and the 1657 (vel meis) alternative. Separate standalone and intervening red rubrics from the spoken body, recording their source positions below; omit response cue glyphs from spoken text. Preserve the 1657 inline alternative (vel meis), including its red vel, as printed textual evidence. Join spoken blocks with one space. Preserve the source’s actual short endings rather than expanding them from other editions. Write one NFC UTF-8 line followed by one LF. These disclosed reading conventions make this a normalized transcription, not a diplomatic reproduction. Spoken block metadata (zero-based half-open Unicode codepoint ranges in the NFC body, excluding terminal LF): [{\"block\":1,\"codepoint_range\":[0,460],\"speaker\":\"priest\",\"incipit\":\"Súscipe sancta Trínitas, hanc\"}]. Separate source rubric context: After Lavabo: Deinde aliquantum inclinatus in medio Altaris, iunctis manibus super eo, dicit: Rubric words and positions checked independently; English labels are editorial wrappers. Typography and punctuation of context remain accessible in the retained source image."
+    },
+    {
+      "authority": "Cistercian Order",
+      "date": "1657",
+      "id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "language": "la",
+      "publication": "Parisiis, Sumptibus Sebastiani Cramoisy et Gabrielis Cramoisy, 1657",
+      "record_type": "edition",
+      "title": "Missale Cisterciense iuxta Romani recogniti correctionem. Primo editum. Authoritate Superiorum"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-accendat-in-nobis",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-altar-incensing-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-chalice-offering-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-deus-qui-humanae",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-dirigatur-domine",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-host-deposition-water-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-in-spiritu-humilitatis",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-in-spiritu-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-incense-blessing-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-incensum-istud",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-lavabo-doxology",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-lavabo-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-oblata-incensing-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-offerimus-tibi",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-opening-dialogue-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-orate-response",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-orate-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-per-intercessionem",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-secreta-preface-transition-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-suscipe-sancte-pater",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-suscipe-trinitas-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-thurible-return-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-veni-sanctificator",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-veni-sanctificator-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.suscipe-trinitas-checked-latin-6da6f1b5",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.suscipe-trinitas",
+      "record_type": "passage"
+    }
+  ],
+  "stage_ids": [
+    "cistercian-1606-1657-1657"
+  ],
+  "title": "Cistercian missal 1657: complete bounded offertory constituent",
+  "units": [
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "dialogue-and-rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "opening-dialogue-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-opening-dialogue-rubric",
+      "source_locator": "Printed p. 172, right column, after the Creed through quam offerens, dicit. FIDES page-files 0234–0236; controlling facsimile PDF page(s) 1.",
+      "source_order": 1,
+      "text": "Deinde osculatur Altare, & versus ad populum, dicit ℣.\nDóminus vobíscum.\n℟.\nEt cum spíritu tuo.\nPosteà dicit,\nOrémus.\n& Offertorium. Quo dicto, si est Missa solemnis, Diaconus porrigit Celebranti patenam cum Hostia: si priuata, Sacerdos ipse accipit patenam cum Hostia, quam offerens, dicit.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "2a1a97fa6f95ac90065613cfe254c1ccf1bf3ab4967c9886da14311f3f167115",
+      "unit_id": "unit.cistercian-1657.offertory.opening-dialogue-rubric",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "suscipe-sancte-pater"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-suscipe-sancte-pater",
+      "source_locator": "Printed p. 172, right column bottom, continuing p. 173, left column top. FIDES page-files 0234–0236; controlling facsimile PDF page(s) 1,2.",
+      "source_order": 2,
+      "text": "Súscipe sancte pater, omnípotens ætérne Deus, hanc immaculátam hóstiam, quam ego indígnus fámulus tuus óffero tibi Deo meo viuo & vero, pro innumerabílibus peccátis & offensiónibus & negligéntiis meis, & pro ómnibus circumstántibus, sed & pro ómnibus fidélibus Christiánis viuis atque defúnctis: vt mihi & illis profíciat ad salútem in vitam ætérnam. Amen.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "2ab497152688caf9ce0936d050759966e32b39bce63e4d02464f216619d0994a",
+      "unit_id": "unit.cistercian-1657.offertory.suscipe-sancte-pater",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "host-deposition-water-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-host-deposition-water-rubric",
+      "source_locator": "Printed p. 173, left column, after Suscipe sancte pater. FIDES page-files 0234–0236; controlling facsimile PDF page(s) 2.",
+      "source_order": 3,
+      "text": "Deinde faciens crucem cum eadem patena, deponit Hostiam super corporale. Diaconus ministrat vinum, Subdiaconus aquam in Calice: vel si priuata est Missa, vtrumque infundit Sacerdos, & aquam miscendam in Calice benedicit, ✠ dicens:",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "64d9c8bf0fd5107bf8205fbf7a741ef6844ac3485ca44f1cf52ab3108e3611da",
+      "unit_id": "unit.cistercian-1657.offertory.host-deposition-water-rubric",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "deus-qui-humanae"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-deus-qui-humanae",
+      "source_locator": "Printed p. 173, left column. FIDES page-files 0234–0236; controlling facsimile PDF page(s) 2.",
+      "source_order": 4,
+      "text": "Déus, qui humánæ substántiæ dignitátem mirabíliter condidísti, & mirabílius reformásti: da nobis per huius aquæ & vini mystérium, eius diuinitátis esse consórtes, qui humanitátis nostræ fíeri dignátus est párticeps, Iesus Christus fílius tuus Dóminus noster: Qui tecum viuit & regnat in vnitáte Spíritus sancti Deus: per ómnia sæcula sæculórum, Amen.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "46ce3c3215d2682e8753872f91b22c540920c476e17f6e84975a651a01af7a3a",
+      "unit_id": "unit.cistercian-1657.offertory.deus-qui-humanae",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "chalice-offering-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-chalice-offering-rubric",
+      "source_locator": "Printed p. 173, left column, after Deus qui humanae. FIDES page-files 0234–0236; controlling facsimile PDF page(s) 2.",
+      "source_order": 5,
+      "text": "In Missis pro Defunctis dicitur prædicta Oratio: sed aqua non benedicitur. Posteà accipit Calicem, & offert, dicens:",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "af37b510a28eaca658ca813dbb095eeaf0ad6fba61aa52f7c36938b0804298bd",
+      "unit_id": "unit.cistercian-1657.offertory.chalice-offering-rubric",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "offerimus-tibi"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-offerimus-tibi",
+      "source_locator": "Printed p. 173, left column. FIDES page-files 0234–0236; controlling facsimile PDF page(s) 2.",
+      "source_order": 6,
+      "text": "Offérimus tibi Dómine cálicem salutáris, tuam deprecántes cleméntiam: vt in conspéctu diuinæ maiestátis tuæ, pro nostra & totíus mundi salúte cum odóre suauitátis ascéndat. Amen.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "33a691868094896084a294340f6c9ddac048ff958884e460eed6fb5e3fd41992",
+      "unit_id": "unit.cistercian-1657.offertory.offerimus-tibi",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "in-spiritu-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-in-spiritu-rubric",
+      "source_locator": "Printed p. 173, left column, below Offerimus tibi. FIDES page-files 0234–0236; controlling facsimile PDF page(s) 2.",
+      "source_order": 7,
+      "text": "Deinde facit signum crucis cum Calice, & illum ponit super corporale, & palla cooperit: tum iunctis manibus super Altare, aliquantulùm inclinatus dicit:",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "98d059258e69c01839237ed3ef63e11c9bc4d6452fa104f27c3266fdd4c2e642",
+      "unit_id": "unit.cistercian-1657.offertory.in-spiritu-rubric",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "in-spiritu-humilitatis"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-in-spiritu-humilitatis",
+      "source_locator": "Printed p. 173, left column bottom continuing right column top. FIDES page-files 0234–0236; controlling facsimile PDF page(s) 2.",
+      "source_order": 8,
+      "text": "In spíritu humilitátis, & in ánimo contríto suscipiámur à te Dómine: & sic fiat sacrifícium nostrum in conspéctu tuo hódie, vt pláceat tibi Dómine Deus.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "adeaa143f4c16048dbc449b080e02d48255fc3aecce1c41f200410583680fea2",
+      "unit_id": "unit.cistercian-1657.offertory.in-spiritu-humilitatis",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "veni-sanctificator-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-veni-sanctificator-rubric",
+      "source_locator": "Printed p. 173, right column, above Veni sanctificator. FIDES page-files 0234–0236; controlling facsimile PDF page(s) 2.",
+      "source_order": 9,
+      "text": "Erectus expandit manus, easque in altum porrectas iungens eleuatis ad cælum oculis, & statim demissis, dicit:",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "adf54d90e31e71f446f320ec77bd50d29493d549b1ba4f694d2b42f12fc27827",
+      "unit_id": "unit.cistercian-1657.offertory.veni-sanctificator-rubric",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer-and-interleaved-rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "veni-sanctificator"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-veni-sanctificator",
+      "source_locator": "Printed p. 173, right column; Benedicit oblata, prosequendo is interleaved in red. FIDES page-files 0234–0236; controlling facsimile PDF page(s) 2.",
+      "source_order": 10,
+      "text": "Veni sanctificátor omnípotens ætérne Deus:\nBenedicit oblata, prosequendo\n& béne ✠ dic hoc sacrifícium tuo sancto nómini præparátum.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "4d66107d8d3735fca1c5b6a9cc7923e75496e167f5025e6427de0b9b83b4e060",
+      "unit_id": "unit.cistercian-1657.offertory.veni-sanctificator",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "incense-blessing-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-incense-blessing-rubric",
+      "source_locator": "Printed p. 173, right column. FIDES page-files 0234–0236; controlling facsimile PDF page(s) 2.",
+      "source_order": 11,
+      "text": "Posteà, si solemniter celebrat, benedicit incensum, dicens:",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "dcb0728606f01d13621ee79db1bcbee88588e60d8f75b6a32d8db591533ef90b",
+      "unit_id": "unit.cistercian-1657.offertory.incense-blessing-rubric",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "per-intercessionem"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-per-intercessionem",
+      "source_locator": "Printed p. 173, right column. FIDES page-files 0234–0236; controlling facsimile PDF page(s) 2.",
+      "source_order": 12,
+      "text": "Per intercessiónem beáti Michaëlis Archángeli stantis à dextris altáris incénsi, & ómnium electórum suórum, incénsum istud dignétur Dóminus béne ✠ dícere, & in odórem suauitátis accípere. Per Christum Dóminum nostrum. Amen.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "e526d8513899e9baf51d5190c0a6abe20705324739a56b2f0d01731786cf0be7",
+      "unit_id": "unit.cistercian-1657.offertory.per-intercessionem",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "oblata-incensing-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-oblata-incensing-rubric",
+      "source_locator": "Printed p. 173, right column. FIDES page-files 0234–0236; controlling facsimile PDF page(s) 2.",
+      "source_order": 13,
+      "text": "Et accepto thuribulo à Diacono incensat oblata, modo in Rubricis generalibus præscripto, dicens:",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "feb0f927de6aa1a38dcf34d954ed94a25a5ab6bc70d3b3dccaa2491beb30cc73",
+      "unit_id": "unit.cistercian-1657.offertory.oblata-incensing-rubric",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "incensum-istud"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-incensum-istud",
+      "source_locator": "Printed p. 173, right column. FIDES page-files 0234–0236; controlling facsimile PDF page(s) 2.",
+      "source_order": 14,
+      "text": "Incénsum istud à te benedíctum, ascéndat ad te Dómine, & descéndat super nos misericórdia tua.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "e447e107dd83c0c62108e0cc9c0ec371d01b39811c2478e760f62762e5e2bb94",
+      "unit_id": "unit.cistercian-1657.offertory.incensum-istud",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "altar-incensing-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-altar-incensing-rubric",
+      "source_locator": "Printed p. 173, right column. FIDES page-files 0234–0236; controlling facsimile PDF page(s) 2.",
+      "source_order": 15,
+      "text": "Deinde incensat Altare, dicens:",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "c420953513fbb383d64901a9723b63aa1108d39dfb5d55ab0af491e3f211b3d8",
+      "unit_id": "unit.cistercian-1657.offertory.altar-incensing-rubric",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "dirigatur-domine"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-dirigatur-domine",
+      "source_locator": "Printed p. 173, right column. FIDES page-files 0234–0236; controlling facsimile PDF page(s) 2.",
+      "source_order": 16,
+      "text": "Dirigátur Dómine orátio mea, sicut incénsum, in conspéctu tuo: eleuátio mánuum meárum sacrifícium vespertínum. Pone Dómine, custódiam ori meo, & óstium circumstántiæ lábiis meis: vt non declínet cor meum in verba malítiæ, ad excusándas excusatiónes in peccátis.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "0f3e31cefb155028763dad760f501e09bf4b7c68ca0e0517727b3a20b21f741b",
+      "unit_id": "unit.cistercian-1657.offertory.dirigatur-domine",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "thurible-return-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-thurible-return-rubric",
+      "source_locator": "Printed p. 173, right column. FIDES page-files 0234–0236; controlling facsimile PDF page(s) 2.",
+      "source_order": 17,
+      "text": "Deinde reddit thuribulum Diacono, dicens:",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "5dc9fb762afdf60205a394ba3280bd62424c027f771fb679cacddfe18413e34b",
+      "unit_id": "unit.cistercian-1657.offertory.thurible-return-rubric",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "accendat-in-nobis"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-accendat-in-nobis",
+      "source_locator": "Printed p. 173, right column. FIDES page-files 0234–0236; controlling facsimile PDF page(s) 2.",
+      "source_order": 18,
+      "text": "Accéndat in nobis Dóminus ignem sui amóris, & flammam ætérnæ caritátis. Amen.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "c3ec0b2865daa1078e081dbb648a52d9432941239bc8aa981b10572c05699541",
+      "unit_id": "unit.cistercian-1657.offertory.accendat-in-nobis",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "lavabo-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-lavabo-rubric",
+      "source_locator": "Printed p. 173, right column bottom, continuing p. 174, left column top. FIDES page-files 0234–0236; controlling facsimile PDF page(s) 2,3.",
+      "source_order": 19,
+      "text": "Posteà incensatur Sacerdos à Diacono, deinde alij per ordinem. Interim Sacerdos lauat manus, dicens:",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "d54a51abf43084d65b8d2ddaa22febc46081a2e4ba607441acb4d506ce155809",
+      "unit_id": "unit.cistercian-1657.offertory.lavabo-rubric",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "psalm-and-doxology",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "lavabo-doxology"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-lavabo-doxology",
+      "source_locator": "Printed p. 174, left column, Lavabo through doxology Amen. FIDES page-files 0234–0236; controlling facsimile PDF page(s) 3.",
+      "source_order": 20,
+      "text": "Lauábo inter innocéntes manus meas: & circumdábo altáre tuum Dómine.\nVt áudiam vocem laudis: & enárrem vniuérsa mirabília tua.\nDómine diléxi decórem domus tuæ, & locum habitatiónis glóriæ tuæ.\nNe perdas cum ímpiis ánimam meam, & cum viris sánguinum vitam meam.\nIn quorum mánibus iniquitátes sunt: déxtera eórum repléta est munéribus.\nEgo autem in innocéntia mea ingréssus sum: rédime me, & miserére mei.\nPes meus stetit in dirécto: in ecclésiis benedícam te Dómine.\nGlória Patri, & Fílio, & Spirítui sancto.\nSicut erat in princípio, & nunc & semper, & in sæcula sæculórum, Amen.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "6680858d7f847a8528b308cfadb05af542bcce411272824ce3f00c0cb0e3ea3f",
+      "unit_id": "unit.cistercian-1657.offertory.lavabo-doxology",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric-with-quoted-incipit",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "suscipe-trinitas-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-suscipe-trinitas-rubric",
+      "source_locator": "Printed p. 174, left column, after Lavabo doxology and above Suscipe sancta Trinitas. FIDES page-files 0234–0236; controlling facsimile PDF page(s) 3.",
+      "source_order": 21,
+      "text": "In Missis pro defunctis, & tempore Passionis in Missis de Tempore omittitur,\nGlória Patri.\nDeinde aliquantum inclinatus in medio Altaris, iunctis manibus super eo, dicit:",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "1cad74a666f531474c3ccb51f137c953ebdd72c63ecc4218cc3e1d969559d3b8",
+      "unit_id": "unit.cistercian-1657.offertory.suscipe-trinitas-rubric",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "suscipe-trinitas"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.suscipe-trinitas-checked-latin-6da6f1b5",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.suscipe-trinitas-checked-latin-6da6f1b5",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.suscipe-trinitas",
+      "source_locator": "Cistercian missal 1657, printed p. 174, left bottom continuing right top column; FIDES file 0236.",
+      "source_order": 22,
+      "text": "Súscipe sancta Trínitas, hanc oblatiónem, quam tibi offérimus ob memóriam passiónis, resurrectiónis, & ascensiónis Iesu Christi Dómini nostri: & in honóre beátæ Maríæ semper vírginis, & beáti Ioánnis Baptístæ, & sanctórum Apostolórum Petri & Pauli, & istórum, & ómnium Sanctórum: vt illis profíciat ad honórem, nobis autem ad salútem: & illi pro nobis intercédere dignéntur in cælis, quorum memóriam ágimus in terris. Per eúmdem Christum Dóminum nostrum. Amen.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "3088e7f4905afabe0f2e384ed69a33c58342b21de8a79c7e431c655a174a07de",
+      "unit_id": "unit.cistercian-1657.offertory.suscipe-trinitas",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "orate-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-orate-rubric",
+      "source_locator": "Printed p. 174, right column, after Suscipe Trinitas. FIDES page-files 0234–0236; controlling facsimile PDF page(s) 3.",
+      "source_order": 23,
+      "text": "Posteà osculatur Altare, & versus ad populum, extendens & iungens manus, voce paululùm eleuata dicat.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "4eccb43f3928dc671f25df1218354904340b167e9dfe650f4e3707379851cb5f",
+      "unit_id": "unit.cistercian-1657.offertory.orate-rubric",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "dialogue-and-interleaved-rubrics",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "orate-response"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-orate-response",
+      "source_locator": "Printed p. 174, right column; invitation, Minister rubric, Suscipiat response, Sacerdos rubric and Amen. FIDES page-files 0234–0236; controlling facsimile PDF page(s) 3.",
+      "source_order": 24,
+      "text": "Oráte fratres, vt meum ac vestrum sacrifícium acceptábile fiat apud Deum patrem omnipoténtem.\nMinister, seu circumstantes respondent: alioquin ipsemet Sacerdos.\nSuscípiat Dóminus sacrifícium de mánibus tuis (vel meis) ad laudem & glóriam nóminis sui, ad vtilitátem quoque nostram, totiúsque Ecclésiæ suæ sanctæ.\nSacerdos submissa voce dicit,\nAmen.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "38596a06743ffa215bb30037f0fe3ec0b2b1a3b25fc9f035e69b20fac0bc2228",
+      "unit_id": "unit.cistercian-1657.offertory.orate-response",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric-with-interleaved-spoken-cues",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "secreta-preface-transition-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-secreta-preface-transition-rubric",
+      "source_locator": "Printed p. 174, right column, Deinde manibus extensis through signum Crucis sibi producit à fronte ad pectus; above rule and ¶ Sequens Præfatio. FIDES page-files 0234–0236; controlling facsimile PDF page(s) 3.",
+      "source_order": 25,
+      "text": "Deinde manibus extensis absolutè sine\nOrémus,\nsubiungit Orationes secretas. Quibus finitis, cùm peruenerit ad conclusionem, clara voce dicit:\nPer ómnia sæcula sæculórum.\ncum Præfatione, vt in sequentibus. Præfatio incipitur ambabus manibus positis hinc inde super Altare: quas aliquantulùm eleuat, cùm dicit\nSursum corda.\nIungit eas ante pectus, & caput inclinat, cùm dicit;\nGrátias agámus Dómino Deo nostro.\nDeinde disiungit manus, & disiunctas tenet vsque ad finem Præfationis: qua finita, iterum iungit eas, & inclinatus dicit,\nSanctus.\nEt cùm dicit,\nBenedíctus qui venit.\nsignum Crucis sibi producit à fronte ad pectus.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "67600e2efa95a44f923a6f5a5c84904a7882e940fdb2cc608f4279df4b661483",
+      "unit_id": "unit.cistercian-1657.offertory.secreta-preface-transition-rubric",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    }
+  ],
+  "witnesses": [
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-facsimile-2ac96448",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "cistercian-1657-offertory-pages",
+      "scope_pages": [
+        [
+          1,
+          3
+        ]
+      ]
+    }
+  ]
+}

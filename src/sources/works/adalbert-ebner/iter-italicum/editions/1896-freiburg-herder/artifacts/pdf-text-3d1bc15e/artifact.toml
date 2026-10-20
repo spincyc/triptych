@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.adalbert-ebner.iter-italicum.1896-freiburg-herder.pdf-text-3d1bc15e"
+edition_id = "edition.adalbert-ebner.iter-italicum.1896-freiburg-herder"
+artifact_type = "pdf-text-layer"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Complete technical extraction of the independently identified public-domain historical edition and faithful scan; same US term and mechanical-copy basis as controlling facsimile."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/quellenundforsch00ebne/quellenundforsch00ebne.pdf"
+provenance = "PIMS / University of Toronto, digitized by the Internet Archive. Exact HTTPS response acquired and hashed for Monza research on 2026-10-20; no source bytes passed through a model. Internet Archive item quellenundforsch00ebne metadata; contributor PIMS - University of Toronto, sponsor University of Toronto; IA Scribe and automated ABBYY workflow, imagecount 512 including ancillary images, exact served PDF 510 pages."
+retrieved = "2026-10-20"
+sha256 = "3d1bc15eb540380fbbf233edb347f0d4644d36d4316a305b090d3983ed912a63"
+byte_size = 1365699
+path = "src/sources/works/adalbert-ebner/iter-italicum/editions/1896-freiburg-herder/artifacts/pdf-text-3d1bc15e/ebner-1896.txt"
+indexable = true
+notes = "Adalbert Ebner, Quellen und Forschungen zur Geschichte und Kunstgeschichte des Missale Romanum im Mittelalter: Iter Italicum (Freiburg im Breisgau: Herder, 1896). PIMS / University of Toronto copy, Internet Archive digitization quellenundforsch00ebne. Underlying 1896 edition and faithful scan treated as public domain in the United States. No project CC BY claim is made over external source material; provider attribution is retained as provenance. Complete delivered extent; individual source claims remain bounded to inspected pages."
+encoding = "utf-8"
+derived_from = "artifact.adalbert-ebner.iter-italicum.1896-freiburg-herder.institutional-facsimile-e0a3f15a"
+transformation = "pdftotext -layout over the entire controlling PDF, preserving form feeds; no subsequent text edits"

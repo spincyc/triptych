@@ -23,7 +23,7 @@ law="$inventories/canon-law-acts-v1.toml"
 help="$(run_tool --help)"
 # The registry's usage line has gone stale on this tool before; the verbs the
 # tool actually accepts are the ones its own help names.
-for verb in check graph structure plate commonality emit; do
+for verb in check graph structure plate commonality emit catalogue corpus compare; do
 	case "$help" in
 	*"$verb"*) ;;
 	*) echo "--help does not name the $verb verb" >&2; exit 1 ;;
@@ -57,15 +57,17 @@ expect_json() {
 # the weaker claim stands beside the stronger rather than replacing it.
 expect_json '"acts":59' "$missal"
 expect_json '"lines":17' "$missal"
-expect_json '"station_kinds":{"printed":26,"promulgated":33}' "$missal"
-# Fifteen of the seventeen lines stand as roots: where a line's other side has no
-# witness here, the branch is a root and its emptiness is the record.
+expect_json '"station_kinds":{"printed":25,"promulgated":34}' "$missal"
+# Sixteen roots on seventeen lines: the inspected 1622 Carthusian ordinance
+# names no predecessor, so it starts a separate root beside the 1496 printing.
+# A shared use alone must not restore the withdrawn descent between them.
 run_tool check --source "$missal" --json >missal-check.json
 python3 - <<'PY'
 import json
 
 document = json.load(open("missal-check.json"))
-assert len(document["roots"]) == 15, document["roots"]
+assert len(document["roots"]) == 16, document["roots"]
+assert {"cartusiense-spirae-1496", "cartusiense-1620"} <= set(document["roots"]), document["roots"]
 PY
 # A use kept in print with no act behind the continuity is still an edge, and it
 # declares what it rests on rather than passing as an act.
@@ -296,9 +298,12 @@ for earlier, later in zip(by_date, by_date[1:]):
     else:
         assert placed[earlier] < placed[later], (earlier, later)
 
-# Fifteen roots: where a line's other side has no witness here, the branch is a
-# root and its emptiness is the record.
-assert sum(node["role"] == "root" for node in nodes.values()) == 15
+# The 1622 Carthusian ordinance names no predecessor; sharing the 1496 witness's
+# use does not make the two a documented sequence.
+assert sum(node["role"] == "root" for node in nodes.values()) == 16
+assert nodes["cartusiense-1620"]["role"] == "root"
+assert nodes["cartusiense-1620"]["date"] == "1622"
+assert not any(child == "cartusiense-1620" for _, child, _ in edges)
 
 # Five lines are ONE station and nothing more -- a use that ended, standing as a
 # terminus. It is the thing the map exists to make visible and the thing a
@@ -352,7 +357,8 @@ assert all(nodes[parent]["line"] == nodes[interchanges[0]]["line"] for parent, _
 kinds = {}
 for node in nodes.values():
     kinds[node["station_kind"]] = kinds.get(node["station_kind"], 0) + 1
-assert kinds == {"printed": 26, "promulgated": 33}, kinds
+assert kinds == {"printed": 25, "promulgated": 34}, kinds
+assert nodes["cartusiense-1620"]["station_kind"] == "promulgated"
 
 # The same shape reads a code, with no lane sharing and no cross-line edge that
 # is not a birth.

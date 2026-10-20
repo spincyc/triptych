@@ -81,7 +81,7 @@ state = "in_progress"
 
   [[deliverables.requirements]]
   id = "coverage-reconciliation"
-  criterion = "The coverage audit preserves all 96 current Eastern and Western discovery rows, verifies exact owner fingerprints and candidate, witness, stage, artifact and segment identities, and refuses stale or inconsistent mappings without treating gaps as completed research."
+  criterion = "The coverage audit preserves all 101 current Eastern and Western discovery rows, verifies exact owner fingerprints and candidate, witness, stage, artifact and segment identities, and refuses stale or inconsistent mappings without treating gaps as completed research."
   status = "pass"
   evidence = ["src/sources/inventories/eucharistic-stage-coverage-v1.json", "tools/missal-coverage-reconciliation", "tools/tests/test_missal_coverage_reconciliation.py"]
 
@@ -124,8 +124,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "chronological-reader-revision"
   criterion = "The primary interactive and printable views let a reader follow one named recension on a common year axis, understand concrete changes and their evidence locally, distinguish uncertain dates from duration and coexistence from descent, and reach exact witness and text records; functional and reader review cover those tasks."
-  status = "open"
-  evidence = ["PROJECT-WORK.md", "guidance/time-machine.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "guidance/time-machine.md", "workflows/reviews/missal-next-phases-2026-10-20/browser.json", "workflows/reviews/missal-next-phases-2026-10-20/print.json"]
 
   [[deliverables.requirements]]
   id = "chronology-cold-review-corrections"

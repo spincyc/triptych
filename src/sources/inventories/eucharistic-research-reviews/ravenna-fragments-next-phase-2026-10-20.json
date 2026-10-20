@@ -1,0 +1,692 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "ravenna-fragments-next-phase-2026-10-20",
+  "title": "Ravenna-attributed Mass-book fragments: physical attestations and open local reception",
+  "lane": "ravenna-fragments",
+  "side": "western",
+  "checked_on": "2026-10-20",
+  "reviewed_on": "2026-10-20",
+  "coverage_rows": [
+    "italian-ravenna"
+  ],
+  "target_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+  "review_files": {
+    "independent_review_sha256": "d07a5a3a78def2e7480d81ff04512821715a2277ca86a5084164f08818cdec0c",
+    "packet_pin_sha256": "cf5959dc16b91e000262c828adf38dcee752aa3c38348b68e88dccfdcce2f4ff",
+    "report_sha256": "5848668c6ab409be6bd271c0e736811822df7a7ab9ca6c8369c940042881bd14",
+    "acquisition_manifest_sha256": "16b830ddc7ea1aeed2e68ef43595737d09d5676a61ab7bf8daecf52c06924efd",
+    "inventory_proposal_sha256": "041e69351da313c6c56f29969cc999b3f8af1d716596a287aaf9047aca9b22f4",
+    "dossier_proposal_sha256": "2350b583d0162e96be3e01bda6e46097fda4f24ffafc02ce3c78179625503f7f",
+    "audit_proposal_sha256": "b1b8a24837bceaa53d6cf7cd291ee88b6495463137d2d577c0403b57ee0b9517",
+    "verdict": "accept-bounded-fragment-states-with-required-corrections",
+    "storage": "Research files and protected source deliveries remain outside Git; exact hashes pin the independent review."
+  },
+  "integration": {
+    "new_source_ids": [
+      "italian-ravenna-fragments-stockholm",
+      "italian-ravenna-fragments-wroclaw",
+      "italian-ravenna-fragments-suski",
+      "italian-ravenna-fragments-sodi-suski",
+      "italian-ravenna-fragments-rotulus-ceriani",
+      "italian-ravenna-fragments-rotulus-rozein",
+      "italian-ravenna-fragments-munich",
+      "italian-ravenna-fragments-catalogue6347",
+      "italian-ravenna-fragments-catalogue6348",
+      "italian-ravenna-fragments-catalogue6349",
+      "italian-ravenna-fragments-catalogue6351"
+    ],
+    "source_reuse": {
+      "italian-ravenna-fragments-stockholm-cla": "latin-early-elmss-cat-346",
+      "italian-ravenna-fragments-stuttgart": "latin-early-elmss-cat-1862",
+      "italian-ravenna-fragments-montecassino": "latin-early-elmss-cat-715-cold",
+      "italian-ravenna-fragments-westwell": "latin-early-westwell2024"
+    },
+    "new_candidate_ids": [
+      "italian-ravenna-stockholm-wroclaw",
+      "italian-ravenna-stuttgart-100a",
+      "italian-ravenna-montecassino-271-lower2",
+      "italian-ravenna-stuttgart-ink15370"
+    ],
+    "new_stage_ids": [
+      "ravenna-fragments:stockholm-wroclaw",
+      "ravenna-fragments:stuttgart-100a",
+      "ravenna-fragments:montecassino-271-lower2"
+    ],
+    "new_transition_ids": [],
+    "canonical_local_use_stage_ids": [],
+    "route_status": "related-dossier-only-local-reception-unresearched",
+    "existing_dossier_change": "Only wording of italian-local-round2:ravenna-local changed; its original ID, tradition and period remain intact.",
+    "corrections": [
+      {
+        "id": "westwell-locus",
+        "disposition": "applied",
+        "basis": "Montecassino discussion corrected everywhere imported to Westwell p. 42, note 121 / PDF p. 68."
+      },
+      {
+        "id": "human-prose-spacing",
+        "disposition": "applied",
+        "basis": "Restored ordinary spaces in human-facing prose/citations, preserving stable identifiers and shelfmarks."
+      },
+      {
+        "id": "old-gap-id-boundary",
+        "disposition": "applied",
+        "basis": "Existing Ravenna local gap retains italian-local-round2 ownership; new archive011 gap belongs only to ravenna-fragments."
+      },
+      {
+        "id": "third-catalogue-date",
+        "disposition": "applied",
+        "basis": "ELMSS 715 supplies the plotted 680–720 copying interpretation; Usuarium 6351 gives 675–700, while the indexed IRHT 599830 view gives 691–710 and Ravenna(?). The live IRHT delivery was inaccessible (https://liturgicum.irht.cnrs.fr/manuscrit/599830). These are qualified catalogue disagreements, not one harmonized date or a new palaeographic judgment."
+      }
+    ],
+    "fingerprint_refresh": "Pending final reviewed input freeze."
+  },
+  "semantics": "Four exact fragment candidates and three bounded physical attestations; no Ravenna local-use stage, recension, full text, anaphora extent, transition, historical parent or text inheritance. Stockholm and Wroclaw preserve two strips of one codex, not two versions. Archive 011 remains holding-only. Rotulus Advent/Office prayers and later letters do not establish an annual Mass book.",
+  "uses": [
+    {
+      "id": "italian-ravenna",
+      "disposition": "associated-fragment-states; local-reception-open",
+      "evidence_checks": [
+        {
+          "object": "Stockholm A135a + Wroclaw Akc.1955/3",
+          "sources": [
+            "https://www.manuscripta.se/ms/101123",
+            "https://bibliotekacyfrowa.pl/publication/84013",
+            "https://elmss.universityofgalway.ie/catalogue/346"
+          ],
+          "loci": "Manuscripta Contents/History/metadata; Wroclaw __NEXT_DATA__ edition 133364 metadata; CLA XI 1596 record; both original image sides of each strip.",
+          "finding": "One codex, two preserved strips. Swedish record bases Ravenna? and early-eighth-century dating on Gamber and says early provenance unknown; Wroclaw metadata says 701-750 and same-codex relation; CLA says probably Northern Italy, 701-750. The 700-750 envelope is a documented catalogue synthesis, not local-use chronology. Original images confirm the very small fragmentary extent; no complete Canon is supplied."
+        },
+        {
+          "object": "Stuttgart Cod.fragm.100A",
+          "sources": [
+            "https://elmss.universityofgalway.ie/catalogue/1862",
+            "https://czasopisma.uni.opole.pl/index.php/ls/article/download/4803/4232/13680",
+            "https://www.pontificiaacademialatinitatis.org/wp-content/uploads/rivista-latinitas/interno_Latinitas_1_2022.pdf"
+          ],
+          "loci": "CLA IX 1361 Date/Contents/Origin; Suski printed196 item 145 original page image; Sodi-Suski printed65; catalogue opening image.",
+          "finding": "Seventh-century lower text, c. 800 penitential overwrite, later Constance/Weingarten custody. Genre labels genuinely differ: Leonine-form, mixed Gelasian, pre-Hadrian Gregorian. Suski gives c. 650 and Ravenna? while CLA gives uncertain origin. No Canon extent or local reception follows."
+        },
+        {
+          "object": "Montecassino 271 lower 2",
+          "sources": [
+            "https://elmss.universityofgalway.ie/catalogue/715",
+            "https://czasopisma.uni.opole.pl/index.php/ls/article/download/4803/4232/13680",
+            "https://epub.uni-regensburg.de/59552/1/10.1515_9781501517563-1.pdf"
+          ],
+          "loci": "CLA III 376 Date/Contents/Origin plus p84 sample image; Suski printed189 items 69-71 original page image; Westwell printed42 n121.",
+          "finding": "Early Gregorian sacramentary layer is distinct from two tenth/eleventh-century missal strata and eleventh-century Gregory Dialogues upper text. CLA assigns680-720 and Italy. Suski item 71 has Ravenna? and explicitly incomplete page examples. Westwell supports prayers with readings and reports Ravenna as Gamber supposition; he does not establish actual Ravenna use."
+        },
+        {
+          "object": "Stuttgart Ink.15370 b om",
+          "sources": [
+            "https://www.pontificiaacademialatinitatis.org/wp-content/uploads/rivista-latinitas/interno_Latinitas_1_2022.pdf",
+            "https://usuarium.elte.hu/book/6349/view"
+          ],
+          "loci": "Sodi-Suski printed65; whole acquired Usuarium card.",
+          "finding": "Separate tenth-century votive-Mass fragment; no original image or exact prayer text inspected. Candidate-only disposition is appropriate."
+        },
+        {
+          "object": "Rotulus",
+          "sources": [
+            "https://elmss.universityofgalway.ie/catalogue/709",
+            "https://orbi.uliege.be/handle/2268/266475"
+          ],
+          "loci": "Independent CLA 709 precheck; Rozein author postprint p1 n2; source packet Ceriani 1884 pp1-4.",
+          "finding": "Seventh-century recto compilation remains separate from early-tenth-century verso letters and present Ambrosiana shelfmark. CLA 709 has an internal date-display/numeric mismatch (VI ex-VIII in vs676-725); do not harmonize it silently. No roll state is proposed. Advent prayers and Office-use interpretation do not yield an annual Mass book."
+        },
+        {
+          "object": "Archive 011",
+          "loci": "Preserved whole IRHT620300 HTML, fields Date/Typology/extent and absence of Origin; current baseline frozen candidate.",
+          "finding": "1454, 186 leaves, missal-calendar held in Ravenna. No original calendar/colophon/Canon or local use verified. Retaining holding-only status is required; do not identify with unlinked 1454 Ursian-basilica report."
+        }
+      ],
+      "selected_local_use_stage_ids": [],
+      "associated_fragment_stage_ids": [
+        "ravenna-fragments:stockholm-wroclaw",
+        "ravenna-fragments:stuttgart-100a",
+        "ravenna-fragments:montecassino-271-lower2"
+      ],
+      "date_disagreement": "ELMSS 715 supplies the plotted 680–720 copying interpretation; Usuarium 6351 gives 675–700, while the indexed IRHT 599830 view gives 691–710 and Ravenna(?). The live IRHT delivery was inaccessible (https://liturgicum.irht.cnrs.fr/manuscrit/599830). These are qualified catalogue disagreements, not one harmonized date or a new palaeographic judgment."
+    }
+  ],
+  "sources": [
+    {
+      "id": "italian-ravenna-fragments-stockholm",
+      "url": "https://www.manuscripta.se/ms/101123",
+      "inspection": "Contents, physical description, origin, provenance, acquisition, license and complete TEI inspected; both S1r/S1v original images inspected. Catalogue identifies the surviving Mass formularies, one 30 x 200 mm strip, Italy/Ravenna? and first-quarter eighth-century dating based on Gamber 1958. LIMIT: Early provenance is unknown; Ravenna is low-certainty attribution. Image inspection verifies fragmentary physical extent and visible liturgical headings, not a complete transcription, independent palaeographic date, or local use."
+    },
+    {
+      "id": "italian-ravenna-fragments-wroclaw",
+      "url": "https://bibliotekacyfrowa.pl/publication/84013",
+      "inspection": "Whole catalogue HTML and metadata inspected, including 701-750 date, current shelfmark, same-codex relation to Stockholm A 135a and public-domain image declaration. Both original image sides in the linked complete two-canvas GLAM manifest inspected. LIMIT: No Ravenna place of copying or local liturgical use is established by this record. Surviving strips do not supply the missing whole codex or a complete Eucharistic prayer."
+    },
+    {
+      "id": "italian-ravenna-fragments-suski",
+      "url": "https://czasopisma.uni.opole.pl/index.php/ls/article/download/4803/4232/13680",
+      "inspection": "Complete 43-page PDF acquired; title, abstract, bibliography, printed p. 189 items 69-71 and p. 196 item 145 inspected. Item 71 separates the early Gregorian lower layer of Montecassino 271 from two X/XI-century missals; item 145 identifies Stuttgart 100A and its editions. LIMIT: Catalogue descriptions are secondary evidence, not a new collation. Suski's mixed-Gelasian label for Stuttgart 100A differs from other catalogues. Listed page examples include an explicit etc., so they are not a complete denominator."
+    },
+    {
+      "id": "italian-ravenna-fragments-sodi-suski",
+      "url": "https://www.pontificiaacademialatinitatis.org/wp-content/uploads/rivista-latinitas/interno_Latinitas_1_2022.pdf",
+      "inspection": "Whole journal issue acquired; article title p. 45, Milan and Montecassino entries p. 57, Stockholm and Stuttgart entries p. 65 inspected. Gives edition loci for Rotulus, fragment 100A, Stockholm-Wroclaw and Ink.15370 b om. LIMIT: A bibliographic list, not original text collation. The Wroclaw shelfmark printed Akc.1955 K/4 conflicts with the holding library's Akc.1955/3 and is retained only as an alias to resolve. Catalogue genre and origin disagreements remain open."
+    },
+    {
+      "id": "italian-ravenna-fragments-rotulus-ceriani",
+      "url": "https://archive.org/details/ArchivioStoricoLombardoS2V1/page/n23/mode/2up",
+      "inspection": "Previously acquired whole 944-page 1884 volume and text layer reopened; printed pp. 1-4 and 11-16 inspected, and printed p. 3 image inspected. Ceriani describes the mutilated seven-membrane roll, assigns its prayers to Advent Office use, treats Ravenna provenance as conjectural, and declares editorial spelling corrections. LIMIT: The 1884 dating claim is historical editorial judgment. The printed text expands abbreviations and corrects spellings; it is not an unaltered diplomatic transcription. Neither its Mass-book label elsewhere nor its Advent prayers establish an annual Missal."
+    },
+    {
+      "id": "italian-ravenna-fragments-rotulus-rozein",
+      "url": "https://orbi.uliege.be/handle/2268/266475",
+      "inspection": "Repository record and whole 29-page author postprint acquired; postprint p. 1 and note 2 inspected. Current shelfmark is Milan, Ambrosiana, Archivio Falco Pio di Savoia I sez.n.256(V.N.1); seventh-century recto compilation is distinguished from early-tenth-century verso letters. LIMIT: The article studies the letters, not a fresh edition of the prayers. Seven letters are ascribed to Archbishop John 905-914 and one to Sergius III 904-911; these are not dates for the recto prayers or evidence of their original altar use."
+    },
+    {
+      "id": "italian-ravenna-fragments-munich",
+      "url": "https://elmss.universityofgalway.ie/catalogue/1835",
+      "inspection": "Current/former shelfmarks, VI ex (576-600), Comes Duplex contents, probable Northern Italian origin and unknown history inspected. LIMIT: The current holding-library shelfmark must be checked before merging with Usuarium 6411's Clm29270(8 alias. This is a lectionary fragment, not a Canon or anaphora witness. Ravenna attribution is unproved."
+    },
+    {
+      "id": "italian-ravenna-fragments-catalogue6347",
+      "url": "https://usuarium.elte.hu/book/6347/view",
+      "inspection": "Complete downloaded book card inspected: Stuttgart 100A, 600-700, Sacramentary; Gamber 1960; CLLA 650; origin explicitly uncertain in Remark. LIMIT: Catalogue metadata only; geographical origin-table placement is not proof of local use, component completeness, or a distinct recension."
+    },
+    {
+      "id": "italian-ravenna-fragments-catalogue6348",
+      "url": "https://usuarium.elte.hu/book/6348/view",
+      "inspection": "Complete downloaded book card inspected: Wroclaw-Stockholm fragments, 600-800, Sacramentary; Gamber 1958; CLLA 651; origin explicitly uncertain in Remark. LIMIT: Catalogue metadata only; geographical origin-table placement is not proof of local use, component completeness, or a distinct recension."
+    },
+    {
+      "id": "italian-ravenna-fragments-catalogue6349",
+      "url": "https://usuarium.elte.hu/book/6349/view",
+      "inspection": "Complete downloaded book card inspected: Stuttgart Ink.15370 b om, 900-1000, Sacramentary; Gamber 1966; CLLA 659; origin explicitly uncertain in Remark. LIMIT: Catalogue metadata only; geographical origin-table placement is not proof of local use, component completeness, or a distinct recension."
+    },
+    {
+      "id": "italian-ravenna-fragments-catalogue6351",
+      "url": "https://usuarium.elte.hu/book/6351/view",
+      "inspection": "Complete downloaded book card inspected: Montecassino 271 olim 348, 675-700, Sacramentary; Dold 1943; CLLA 701; Lectionary-Sacramentary and uncertain origin in Remark. LIMIT: Catalogue metadata only; geographical origin-table placement is not proof of local use, component completeness, or a distinct recension."
+    },
+    {
+      "id": "latin-early-elmss-cat-346",
+      "url": "https://elmss.universityofgalway.ie/catalogue/346",
+      "inspection": "Exact shelfmarks, contents, VIII first-half (701-750) date, Northern Italian attribution, Avicenna binding provenance and script commentary inspected in the record and full 2047-row CSV export. LIMIT: The catalogue gives probable Northern Italy rather than Ravenna. This broader date differs from Manuscripta's 700-725 range; the stage retains both descriptions."
+    },
+    {
+      "id": "latin-early-elmss-cat-1862",
+      "url": "https://elmss.universityofgalway.ie/catalogue/1862",
+      "inspection": "Contents, VII (601-700) date, current/former shelfmarks, uncertain origin, c. 800 penitential overwrite and Constance/Weingarten provenance inspected. Complete catalogue illustration of an opening inspected; undertext is fragmentary and difficult to read. LIMIT: The illustration is a sample, not a complete original codex. Catalogue sacramentary-type labels disagree across sources. Ravenna use and a complete Canon have not been established."
+    },
+    {
+      "id": "latin-early-elmss-cat-715-cold",
+      "url": "https://elmss.universityofgalway.ie/catalogue/715",
+      "inspection": "Exact lower-layer identification, VII–VIII (680-720) date, Gregorian sacramentary-fragment contents and Italian origin inspected. Provenance identifies eleventh-century Beneventan rewriting with Gregory's Dialogues. Complete catalogue illustration of p. 84 inspected. LIMIT: The sample illustration and metadata do not establish every lower-text page or whole-book content. Other reused missal strata in the same present codex must remain separate. Ravenna origin remains a scholarly question."
+    },
+    {
+      "id": "latin-early-westwell2024",
+      "url": "https://epub.uni-regensburg.de/59552/1/10.1515_9781501517563-1.pdf",
+      "inspection": "Whole book PDF acquired from institutional repository; title/rights page, p. 42, note 121 / PDF p. 68, 56 note 180, 58-62 and note 201 inspected. Discusses Montecassino 271 as a mass-prayer/reading book, the single Stockholm-Wroclaw codex, and the evidential limits of Gamber's Ravenna archetype hypothesis. LIMIT: Critical discussion does not independently date or locate the fragment scriptoria. No Ravenna archetype is promoted to a surviving book or historical stage. PDF figures carry separate rights."
+    }
+  ],
+  "versions": [
+    {
+      "id": "italian-ravenna-stockholm-wroclaw",
+      "title": "Stockholm A135a and Wroclaw Akc.1955/3: one Gelasian sacramentary's fragments",
+      "date": "First half of eighth century; A135a catalogue narrows to 700-725; shared-codex catalogue gives 701-750",
+      "plotting_bounds": [
+        700,
+        750
+      ],
+      "date_role": "copying-of-surviving-lower-text-or-fragment",
+      "sources": [
+        "italian-ravenna-fragments-stockholm",
+        "italian-ravenna-fragments-wroclaw",
+        "latin-early-elmss-cat-346",
+        "latin-early-westwell2024"
+      ],
+      "locus": "Manuscripta ms 101123 Contents/History; Wroclaw publication 84013 metadata and both GLAM canvases; ELMSS 346 CLA XI 1596.",
+      "limitations": "One codex, not two versions. The surviving Mass prayers are bounded; no complete Canon is established. Northern Italy probable; Ravenna? is low-certainty attribution, early provenance unknown. Date bounds are the envelope of differing catalogue datings."
+    },
+    {
+      "id": "italian-ravenna-stuttgart-100a",
+      "title": "Stuttgart Cod.fragm.100A: sacramentary lower text beneath penitential canons",
+      "date": "Seventh-century lower-text copying; ELMSS 601-700; Suski approximately 650",
+      "plotting_bounds": [
+        601,
+        700
+      ],
+      "date_role": "copying-of-surviving-lower-text-or-fragment",
+      "sources": [
+        "latin-early-elmss-cat-1862",
+        "italian-ravenna-fragments-suski",
+        "italian-ravenna-fragments-sodi-suski"
+      ],
+      "locus": "ELMSS 1862 CLA IX 1361; Suski 2022 p. 196 item 145; Sodi-Suski 2022 p. 65.",
+      "limitations": "Preserve conflicting type labels: ELMSS Leonine-form, Suski mixed Gelasian, Sodi-Suski pre-Hadrian Gregorian. Origin uncertain in ELMSS; Ravenna attributed elsewhere. Overwrite c. 800 is a separate event, not the Mass-text date."
+    },
+    {
+      "id": "italian-ravenna-montecassino-271-lower2",
+      "title": "Montecassino 271 [palimpsest old 2]: early Gregorian sacramentary and reading fragments",
+      "date": "VII–VIII lower-text copying, ELMSS 680-720; Usuarium's narrower 675-700 remains a catalogue disagreement",
+      "plotting_bounds": [
+        680,
+        720
+      ],
+      "date_role": "copying-of-surviving-lower-text-or-fragment",
+      "sources": [
+        "latin-early-elmss-cat-715-cold",
+        "italian-ravenna-fragments-suski",
+        "latin-early-westwell2024"
+      ],
+      "locus": "ELMSS 715 CLA III 376; Suski 2022 p. 189 item 71 versus items 69-70; Westwell 2024 p. 42, note 121 / PDF p. 68.",
+      "limitations": "The early stratum is distinct from two tenth/eleventh-century missal strata and the eleventh-century Gregory Dialogues upper text. Italy is supported; Ravenna? remains attributed. Original complete lower text, Canon extent and use context remain uncollated. ELMSS 715 supplies the plotted 680–720 copying interpretation; Usuarium 6351 gives 675–700, while the indexed IRHT 599830 view gives 691–710 and Ravenna(?). The live IRHT delivery was inaccessible (https://liturgicum.irht.cnrs.fr/manuscrit/599830). These are qualified catalogue disagreements, not one harmonized date or a new palaeographic judgment."
+    },
+    {
+      "id": "italian-ravenna-stuttgart-ink15370",
+      "title": "Stuttgart Ink.15370 b om: separately identified votive-Mass fragment",
+      "date": "Tenth-century catalogue date 0900-1000",
+      "plotting_bounds": [
+        900,
+        1000
+      ],
+      "date_role": "copying-of-surviving-lower-text-or-fragment",
+      "sources": [
+        "italian-ravenna-fragments-sodi-suski",
+        "italian-ravenna-fragments-catalogue6349"
+      ],
+      "locus": "Usuarium 6349/Gamber CLLA 659; Sodi-Suski 2022 p. 65; Gamber 1966 pp. 246-250; Catella-Dell'Oro-Martini 2005 pp. 522-525.",
+      "limitations": "Separate from palimpsest 100A. Sodi-Suski attributes Ravenna and calls it pre-Hadrian Gregorian; Usuarium explicitly says uncertain origin. No original fragment image or prayer transcription inspected; no stage proposed until component extent is read."
+    }
+  ],
+  "searches": [
+    {
+      "scope": "Public web institutional/research catalogues and named critical-edition leads. All 11 Usuarium Ravenna-origin cards downloaded; ELMSS complete 2047-row HTML/CSV downloaded. No claim of exhaustive Ravenna manuscript or historical-use census.",
+      "repertoires": [
+        "All 11 Usuarium Ravenna-origin book cards, with non-Mass objects and duplicate Rotulus cards disaggregated",
+        "Complete ELMSS 2047-row export and exact named records",
+        "Manuscripta and Wroclaw metadata plus both sides of each Stockholm/Wroclaw strip",
+        "Exact Suski, Sodi–Suski, Westwell, Ceriani and Rozein loci named in this receipt"
+      ],
+      "failed_routes": [
+        {
+          "url": "https://liturgicum.irht.cnrs.fr/manuscrit/620300",
+          "status": "curl timeout after 30 or 45 seconds; web path also checked",
+          "fallback": "Preserved 19 October complete HTML where available"
+        },
+        {
+          "url": "https://liturgicum.irht.cnrs.fr/manuscrit/620299",
+          "status": "curl timeout after 30 or 45 seconds; web path also checked",
+          "fallback": "Preserved 19 October complete HTML where available"
+        },
+        {
+          "url": "https://liturgicum.irht.cnrs.fr/manuscrit/599830",
+          "status": "curl timeout after 30 or 45 seconds; web path also checked",
+          "fallback": "Preserved 19 October complete HTML where available"
+        },
+        {
+          "url": "https://liturgicum.irht.cnrs.fr/fr/manuscrits/index?lettre=R",
+          "status": "curl 45-second timeout; web index accessible"
+        },
+        {
+          "url": "https://archivio.diocesiravennacervia.it/wp-content/uploads/sites/5/2019/05/AARA_Indice_fondi.pdf",
+          "status": "HTTP 404"
+        }
+      ],
+      "unexamined_ranges": [
+        "Complete original lower texts and any missing Canon/anaphora leaves",
+        "Contemporary evidence of Ravenna copying or actual church use",
+        "Archive 011 original colophon, calendar, Canon and provenance",
+        "Current BSB shelfmark resolution for the Munich lectionary fragment",
+        "Caronti, Frammenti di anafora ravennate del secolo IV?, Rivista liturgica IX (1922), pp. 114–118",
+        "Sources outside the named public repertoire; no exhaustive Ravenna book or historical-use census"
+      ]
+    }
+  ],
+  "acquisitions": [
+    {
+      "sha256": "d7d5a850e4d933115523dd8da7d27a5933823a29146f48d18cf8ba10dd962602",
+      "bytes": 17169,
+      "source_url": "https://elmss.universityofgalway.ie/catalogue/1835",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review"
+    },
+    {
+      "sha256": "6abf8d2a9267afd44a8bc05d1de45ac1e38806458aee28eb6a74c6b9a48d863b",
+      "bytes": 16489,
+      "source_url": "https://elmss.universityofgalway.ie/catalogue/1862",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review"
+    },
+    {
+      "sha256": "c7a3891970ff9b51e74f64d98adbeb6d4cedc723e5e760671634c68895e2d34f",
+      "bytes": 16582,
+      "source_url": "https://elmss.universityofgalway.ie/catalogue/346",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review"
+    },
+    {
+      "sha256": "00c36f47ba198c912c9e68e372dae7ba8c675c883df5842cb31cf2726bdef9a0",
+      "bytes": 20640,
+      "source_url": "https://elmss.universityofgalway.ie/catalogue/400",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review"
+    },
+    {
+      "sha256": "24862c643c040830a3b9d98b4d00af4b25215f42efa9562b07c83b97837caa0d",
+      "bytes": 15999,
+      "source_url": "https://elmss.universityofgalway.ie/catalogue/715",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review"
+    },
+    {
+      "sha256": "0e3ec515808049b69219057cdf88651282aa14a67cc7dd4958ee0d87f63c492b",
+      "bytes": 4511377,
+      "source_url": "https://elmss.universityofgalway.ie/catalogue/export/csv",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review"
+    },
+    {
+      "sha256": "8dc66b7afdc0590e6d5787ef67c79acfbfdc87e19711de21d97517e9c1ee23f2",
+      "bytes": 3652224,
+      "source_url": "https://elmss.universityofgalway.ie/catalogue",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review"
+    },
+    {
+      "sha256": "a0538e4329a5387e153ec4b69937daf4f8a2e8fa13f25ab3c481dc7ffb31f95b",
+      "bytes": 14351,
+      "source_url": "https://elmss.nuigalway.ie/",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review"
+    },
+    {
+      "sha256": "a5b940ed50aa171322c09d3520d6860750843bc95fb4d7f3cf613b877bf0a8f8",
+      "bytes": 21748,
+      "source_url": "https://www.manuscripta.se/iiif/101123/manifest.json",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "tracked-after-canonical-manifest-and-attribution",
+      "rights_basis": "Catalogue/TEI CC BY 4.0; image manifest PDM 1.0, National Library of Sweden attribution"
+    },
+    {
+      "sha256": "7140445391cfb595324ee0c4e1910d5f86000ad5354461d26a5e3d5da98fefcc",
+      "bytes": 21145,
+      "source_url": "https://www.manuscripta.se/ms/101123",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "tracked-after-canonical-manifest-and-attribution",
+      "rights_basis": "Catalogue/TEI CC BY 4.0; image manifest PDM 1.0, National Library of Sweden attribution"
+    },
+    {
+      "sha256": "3fca27c70d4a3bfc8ff1577e9314265a56be5c63ea03f8a2b886aacb9eca71b5",
+      "bytes": 13023,
+      "source_url": "https://www.manuscripta.se/ms/101123.xml",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "tracked-after-canonical-manifest-and-attribution",
+      "rights_basis": "Catalogue/TEI CC BY 4.0; image manifest PDM 1.0, National Library of Sweden attribution"
+    },
+    {
+      "sha256": "d26417965478dc95b5ba2d7453ea53ff651e03ab4bb1d4911f8e9a732c6afaa4",
+      "bytes": 1414588,
+      "source_url": "https://elmss.universityofgalway.ie/storage/images/catalogue/full/3/715.jpg",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review"
+    },
+    {
+      "sha256": "11504c2d4e99d7307ba5695281a2ecbd779847553827051f5d6dcc776750a390",
+      "bytes": 40386,
+      "source_url": "https://orbi.uliege.be/handle/2268/266475",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review"
+    },
+    {
+      "sha256": "fb86b20d8d3addd2eff3d698a50a43614196e32e0955132b7da4f5785115a308",
+      "bytes": 981226,
+      "source_url": "https://iiif.manuscripta.se/iiif/ms-101123/ms-101123_0001.tif/full/full/0/default.jpg",
+      "retrieved_on": "2026-10-17",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "tracked-after-canonical-manifest-and-attribution",
+      "inspected_on": "2026-10-20",
+      "acquisition_note": "Reused already-acquired complete side images; hashes checked against original acquisition receipt.",
+      "rights_basis": "PDM 1.0 in current holding-library IIIF manifest"
+    },
+    {
+      "sha256": "ebf1c139e6186d6648c1bf2048aa5a82bf97f8b3642e8db875c46cd896723b73",
+      "bytes": 1082868,
+      "source_url": "https://iiif.manuscripta.se/iiif/ms-101123/ms-101123_0002.tif/full/full/0/default.jpg",
+      "retrieved_on": "2026-10-17",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "tracked-after-canonical-manifest-and-attribution",
+      "inspected_on": "2026-10-20",
+      "acquisition_note": "Reused already-acquired complete side images; hashes checked against original acquisition receipt.",
+      "rights_basis": "PDM 1.0 in current holding-library IIIF manifest"
+    },
+    {
+      "sha256": "ce78a455c78aa4e51f9bfa50783d72fa65061b017949c1a4cd1c07c53e65335d",
+      "bytes": 1564214,
+      "source_url": "https://elmss.universityofgalway.ie/storage/images/catalogue/full/9/1862.jpg",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review"
+    },
+    {
+      "sha256": "c11bad5f358ad6840b32b3f31afde4b712d75cbe4d32dc85bea45674ee2a2166",
+      "bytes": 17302,
+      "source_url": "https://usuarium.elte.hu/book/5911/view",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review"
+    },
+    {
+      "sha256": "c112c2501b7e268ca80fa6eda47f3a561ccadf4968ede976845ac1a8b5f7f36c",
+      "bytes": 17308,
+      "source_url": "https://usuarium.elte.hu/book/5932/view",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review"
+    },
+    {
+      "sha256": "8426d2caa48e0ac10b1ddc5199cf69c91d15b6087af3ed349e8203308135b4d2",
+      "bytes": 16248,
+      "source_url": "https://usuarium.elte.hu/book/6346/view",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review"
+    },
+    {
+      "sha256": "6922bd8a1a95d2dfbb5aeb5f1bdb9c814a3958d528caab4f8168fed03a066e4f",
+      "bytes": 17234,
+      "source_url": "https://usuarium.elte.hu/book/6347/view",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review"
+    },
+    {
+      "sha256": "c41e504766cdbab3fc4f7a1db5c98952a0813c8d877c97f0e23b28ff706398a3",
+      "bytes": 16900,
+      "source_url": "https://usuarium.elte.hu/book/6348/view",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review"
+    },
+    {
+      "sha256": "e41d49c0bbc3d5fb89773818b19b1aadf1a6b8acdcc54d856e0155b31c54b329",
+      "bytes": 17196,
+      "source_url": "https://usuarium.elte.hu/book/6349/view",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review"
+    },
+    {
+      "sha256": "432da4fc9bc829032e7ef90adb612c9972f62346302b3d15b92824578e01ad30",
+      "bytes": 16429,
+      "source_url": "https://usuarium.elte.hu/book/6350/view",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review"
+    },
+    {
+      "sha256": "56067d7ceb9a1d8dc3865549ddd9bf581ecb51d08f6e528c0671a3c92acf693c",
+      "bytes": 17207,
+      "source_url": "https://usuarium.elte.hu/book/6351/view",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review"
+    },
+    {
+      "sha256": "a63076fdb9207ae04de9b4f3e3bd339968f0eea2ce0613137cb7bc5b8ee6cd13",
+      "bytes": 17084,
+      "source_url": "https://usuarium.elte.hu/book/6411/view",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review"
+    },
+    {
+      "sha256": "b25e03f4663d038531bb6636aa94cef23834ea1d3c1a0e0eac79df2b5f508b10",
+      "bytes": 17899,
+      "source_url": "https://usuarium.elte.hu/book/6518/view",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review"
+    },
+    {
+      "sha256": "65b481cd0834804d615c301695e5739768573df4e4b7d71a80c322796ba6e0e6",
+      "bytes": 16964,
+      "source_url": "https://usuarium.elte.hu/book/6843/view",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review"
+    },
+    {
+      "sha256": "c492906f9b328102fa80b5bfbc1fe6ffb4a6c568c7652b76c08513aad75665b2",
+      "bytes": 17920,
+      "source_url": "https://usuarium.elte.hu/origin/929/view",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review"
+    },
+    {
+      "sha256": "8ddba886bb42fdda9db4cc6e737cedebe8fc5ebf01758fa57f8f74e77fbccc9e",
+      "bytes": 6821314,
+      "source_url": "https://glam.uwr.edu.pl/iiif/image-api/RKP_AKC_1955_3_30045_0001/full/full/0/default.jpg",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "tracked-after-canonical-manifest-and-attribution",
+      "rights_basis": "Holding-library object metadata declares PDM 1.0 and unrestricted public access"
+    },
+    {
+      "sha256": "ee09fa97245b14e747f93df28478ad3fa7806b8ce324f37567eeeb099890391e",
+      "bytes": 7098909,
+      "source_url": "https://glam.uwr.edu.pl/iiif/image-api/RKP_AKC_1955_3_30045_0002/full/full/0/default.jpg",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "tracked-after-canonical-manifest-and-attribution",
+      "rights_basis": "Holding-library object metadata declares PDM 1.0 and unrestricted public access"
+    },
+    {
+      "sha256": "ce602434f76f7f540e9821890dfed496f5a82d39e7075f39cb0b551270b44c78",
+      "bytes": 98625,
+      "source_url": "https://bibliotekacyfrowa.pl/publication/84013",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review"
+    },
+    {
+      "sha256": "e7a2c6c49f04834a6a1a0667bb974640467ed0cd99dfcd3510021c5fd2373745",
+      "bytes": 8698,
+      "source_url": "https://glam.uni.wroc.pl/index.php?s=RKP_AKC_1955_3_30045&view=thumbnails&browser=seadragon",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review"
+    },
+    {
+      "sha256": "ff0092ba627992cebf0f1a9952959956b1ccede82d08ed8b72f4af8ab526ee51",
+      "bytes": 4097,
+      "source_url": "https://glam.uwr.edu.pl/iiif/RKP_AKC_1955_3_30045/manifest",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review"
+    },
+    {
+      "sha256": "2544984db6b705b02e57f96fcc3c90214eb616508a4dfe77177eee3b102e5e7a",
+      "bytes": 18909,
+      "source_url": "https://zpe.gov.pl/kronika/16344984",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review"
+    },
+    {
+      "sha256": "ea05800193a44bdd4cbe5285450b9a1ebb864f4b7436c1d0ba4634cfd36bbecf",
+      "bytes": 978076,
+      "source_url": "https://www.pontificiaacademialatinitatis.org/wp-content/uploads/rivista-latinitas/interno_Latinitas_1_2022.pdf",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review",
+      "private_bytes_excluded_from_proposals": true
+    },
+    {
+      "sha256": "8efdcc93de51cd856a0d5003207ab30c363ad87a7766b9ed85216a0e0dc3b73c",
+      "bytes": 793036,
+      "source_url": "https://www.rivistaliturgica.it/wp-content/uploads/2020/09/Indice-cronologico-1914-1936.pdf",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review",
+      "private_bytes_excluded_from_proposals": true
+    },
+    {
+      "sha256": "270ea6a055958d1c5b38127457d636342cac51572d6a927d07ec7f9d681ab9b2",
+      "bytes": 4522940,
+      "source_url": "https://orbi.uliege.be/bitstream/2268/266475/1/Rozein_2022_Die%20acht%20Briefe%20des%20Rotulus%20%20von%20Ravenna%20%28author%29.pdf",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review",
+      "private_bytes_excluded_from_proposals": true
+    },
+    {
+      "sha256": "3f88d19e2ec88426ba34cdb2b7ccf39a1fd7943217bbf41a2044dfda1f3cd45a",
+      "bytes": 416203,
+      "source_url": "https://czasopisma.uni.opole.pl/index.php/ls/article/download/4803/4232/13680",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review",
+      "private_bytes_excluded_from_proposals": true
+    },
+    {
+      "sha256": "57d0319927d0dd7dd8a7705db3eeb29b19a6a2f6878ec79b384c5065934a4cf0",
+      "bytes": 7501943,
+      "source_url": "https://epub.uni-regensburg.de/59552/1/10.1515_9781501517563-1.pdf",
+      "retrieved_on": "2026-10-20",
+      "whole_delivery_artifact": true,
+      "proposed_storage": "metadata-only-pending-exact-rights-and-manifest-review",
+      "private_bytes_excluded_from_proposals": true
+    }
+  ],
+  "independent_review": {
+    "verdict": "accept-bounded-fragment-states-with-required-corrections",
+    "verification": {
+      "proposal_json_toml_parse": "pass",
+      "acquisition_manifest_artifacts_checked": 39,
+      "manifest_hash_size_mismatches": [],
+      "private_payloads": "Modern source bytes remain scratch-only; proposals contain metadata/paraphrases, not full texts or session material.",
+      "tracked_writes_by_reviewer": 0
+    },
+    "limits": "This review independently checks the material physical, date, genre and local-use boundaries. It does not collate the missing original codices, date scripts independently, or establish a local Ravenna lineage."
+  },
+  "remaining_gaps": [
+    "No original local-use or copying-place evidence identifies these fragments as a Ravenna recension. Next: Reopen Gamber CLLA 646, 650-651, 659-660, 701 and named critical editions against full original leaves; obtain documented provenance and contemporary church-use evidence.",
+    "Complete Eucharistic-prayer extent and literal readings for 100A, the Stockholm-Wroclaw codex, Montecassino lower 2 and Ink.15370. Next: Dold 1923 pp. 10-11; Gamber 1960 pp. 455-460; Gamber 1958 pp. 111-126 and 1966 pp. 242-250; Dold 1943 pp. 1*-52*; Catella-Dell'Oro-Martini 2005 pp. 513-525. Collate surviving leaves before declaring anaphora coverage.",
+    "Archive 011 remains an origin-unassigned 186-leaf missal-calendar; no original calendar, colophon, Canon, marginal use or provenance examined. Next: Obtain public images or a detailed institutional description of archive 011's colophon, calendar including 18 August, Ordinary and Canon. Resolve any connection to the 1454 Ursian-basilica Roman-Missal report rather than assuming identity.",
+    "The Rotulus is bounded Advent prayer evidence with Office-use interpretation; sermon, diptychon, ritual and lectionary leads do not identify annual Mass books. Next: Read Benz 1967 pp. 20–31 and prayer analysis, Olivar 1969 pp. 40-58, Mohlberg appendix pp. 173-178; obtain Caronti 1922 pp. 114-118 and physical identity for Usuarium 6346. Resolve Munich current shelfmark with BSB, and Ravenna-held IRHT fragments from their original leaves."
+  ],
+  "rights_limit": "No third-party payload was added. Identified public-domain or CC BY images still require canonical artifact manifests and attribution before retention; modern figures and source text retain their separate rights limits."
+}

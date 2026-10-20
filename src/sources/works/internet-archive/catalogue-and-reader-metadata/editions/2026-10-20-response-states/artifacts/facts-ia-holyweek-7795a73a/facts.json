@@ -1,0 +1,40 @@
+{
+  "schema": "triptych-source-factual-extract-v1",
+  "rights_notice": "Project-created selection of factual metadata, distributed under Triptych's CC BY 4.0 terms. The source's individual facts and titles are not claimed as project-authored expression. This file contains no liturgical body, host UI, user favorites/account identifiers or unselected descriptive prose.",
+  "source_artifact_id": "artifact.internet-archive.catalogue-and-reader-metadata.2026-10-20-response-states.raw-ia-holyweek-e5bdea26",
+  "source_sha256": "e5bdea267877e1f096d9fa3cdf605c7ca4d3b1b1ee657d191913102728982b50",
+  "source_bytes": 5192,
+  "source_url": "https://archive.org/advancedsearch.php?q=%28title%3A%22ordo+hebdomadae%22+OR+title%3A%22ordo+sabbati%22+OR+title%3A%22preces+eucharisticae%22+OR+title%3A%22ritus+servandus%22%29&output=json&rows=100",
+  "method": "GET",
+  "params": {},
+  "facts": {
+    "query": "title:&quot;ordo hebdomadae&quot; OR title:&quot;ordo sabbati&quot; OR title:&quot;preces eucharisticae&quot; OR title:&quot;ritus servandus&quot;",
+    "numFound": 4,
+    "start": 0,
+    "results": [
+      {
+        "identifier": "bub_gb_k528LQLyNAcC",
+        "title": "Ritus servandus in clausura portae sanctae papalis patriarchii S. Pauli apostoli anno jubilaei 1725. Ab eminentissimo ... Fabritio episcopo Ostiensi S.R.E. cardinali Paulutio ..",
+        "year": 1725,
+        "date": "1725-01-01T00:00:00Z"
+      },
+      {
+        "identifier": "bwb_W9-COP-443",
+        "title": "Ritus Servandus in Conselebratione Missae et Ritus Communionis Sub Utraque Specie",
+        "year": 1965,
+        "date": "1965-01-01T00:00:00Z"
+      },
+      {
+        "identifier": "ordo-sabbati-sancti",
+        "title": "Ordo Sabbati Sancti"
+      },
+      {
+        "identifier": "ordohebdomadaesa0000cath",
+        "title": "Ordo Hebdomadae Sanctae instauratus",
+        "year": 1956,
+        "date": "1956-01-01T00:00:00Z",
+        "publisher": "Torino : Marietti"
+      }
+    ]
+  }
+}

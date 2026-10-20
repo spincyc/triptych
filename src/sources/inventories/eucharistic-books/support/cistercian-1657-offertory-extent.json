@@ -1,0 +1,526 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-extent",
+  "title": "Complete bounded constituent extent: Cistercian 1657 offertory",
+  "book_id": "cistercian-1657-offertory",
+  "status": "complete",
+  "unresolved": [],
+  "omitted": [],
+  "expected_unit_ids": [
+    "unit.cistercian-1657.offertory.opening-dialogue-rubric",
+    "unit.cistercian-1657.offertory.suscipe-sancte-pater",
+    "unit.cistercian-1657.offertory.host-deposition-water-rubric",
+    "unit.cistercian-1657.offertory.deus-qui-humanae",
+    "unit.cistercian-1657.offertory.chalice-offering-rubric",
+    "unit.cistercian-1657.offertory.offerimus-tibi",
+    "unit.cistercian-1657.offertory.in-spiritu-rubric",
+    "unit.cistercian-1657.offertory.in-spiritu-humilitatis",
+    "unit.cistercian-1657.offertory.veni-sanctificator-rubric",
+    "unit.cistercian-1657.offertory.veni-sanctificator",
+    "unit.cistercian-1657.offertory.incense-blessing-rubric",
+    "unit.cistercian-1657.offertory.per-intercessionem",
+    "unit.cistercian-1657.offertory.oblata-incensing-rubric",
+    "unit.cistercian-1657.offertory.incensum-istud",
+    "unit.cistercian-1657.offertory.altar-incensing-rubric",
+    "unit.cistercian-1657.offertory.dirigatur-domine",
+    "unit.cistercian-1657.offertory.thurible-return-rubric",
+    "unit.cistercian-1657.offertory.accendat-in-nobis",
+    "unit.cistercian-1657.offertory.lavabo-rubric",
+    "unit.cistercian-1657.offertory.lavabo-doxology",
+    "unit.cistercian-1657.offertory.suscipe-trinitas-rubric",
+    "unit.cistercian-1657.offertory.suscipe-trinitas",
+    "unit.cistercian-1657.offertory.orate-rubric",
+    "unit.cistercian-1657.offertory.orate-response",
+    "unit.cistercian-1657.offertory.secreta-preface-transition-rubric"
+  ],
+  "pages": [
+    {
+      "witness_id": "cistercian-1657-offertory-pages",
+      "ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.cistercian-1657.offertory.opening-dialogue-rubric",
+        "unit.cistercian-1657.offertory.suscipe-sancte-pater"
+      ],
+      "description": "Printed p. 172 (FIDES 0234): only red Deinde osculatur Altare after the Creed and following offertory through the bottom belong to this constituent. Earlier Creed text, its rubrics, chant and page furniture are outside the declared extent."
+    },
+    {
+      "witness_id": "cistercian-1657-offertory-pages",
+      "ranges": [
+        [
+          2,
+          2
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.cistercian-1657.offertory.suscipe-sancte-pater",
+        "unit.cistercian-1657.offertory.host-deposition-water-rubric",
+        "unit.cistercian-1657.offertory.deus-qui-humanae",
+        "unit.cistercian-1657.offertory.chalice-offering-rubric",
+        "unit.cistercian-1657.offertory.offerimus-tibi",
+        "unit.cistercian-1657.offertory.in-spiritu-rubric",
+        "unit.cistercian-1657.offertory.in-spiritu-humilitatis",
+        "unit.cistercian-1657.offertory.veni-sanctificator-rubric",
+        "unit.cistercian-1657.offertory.veni-sanctificator",
+        "unit.cistercian-1657.offertory.incense-blessing-rubric",
+        "unit.cistercian-1657.offertory.per-intercessionem",
+        "unit.cistercian-1657.offertory.oblata-incensing-rubric",
+        "unit.cistercian-1657.offertory.incensum-istud",
+        "unit.cistercian-1657.offertory.altar-incensing-rubric",
+        "unit.cistercian-1657.offertory.dirigatur-domine",
+        "unit.cistercian-1657.offertory.thurible-return-rubric",
+        "unit.cistercian-1657.offertory.accendat-in-nobis",
+        "unit.cistercian-1657.offertory.lavabo-rubric"
+      ],
+      "description": "Printed p. 173 (FIDES 0235): all text in both columns belongs to this constituent; the running head Ordo Missæ, folio, signature/catchword furniture and borders are not liturgical unit text."
+    },
+    {
+      "witness_id": "cistercian-1657-offertory-pages",
+      "ranges": [
+        [
+          3,
+          3
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.cistercian-1657.offertory.lavabo-rubric",
+        "unit.cistercian-1657.offertory.lavabo-doxology",
+        "unit.cistercian-1657.offertory.suscipe-trinitas-rubric",
+        "unit.cistercian-1657.offertory.suscipe-trinitas",
+        "unit.cistercian-1657.offertory.orate-rubric",
+        "unit.cistercian-1657.offertory.orate-response",
+        "unit.cistercian-1657.offertory.secreta-preface-transition-rubric"
+      ],
+      "description": "Printed p. 174 (FIDES 0236): all text from the left-column top continuation through the final right-column à fronte ad pectus above the rule belongs to this constituent. ¶ Sequens Præfatio and subsequent text below the rule, running head, folio, catchword and borders are outside it."
+    }
+  ],
+  "source_boundary_audit": {
+    "native_running_head": "Ordo Missæ.",
+    "bound_kind": "functional constituent within native Ordo Missæ; no independently printed offertory chapter heading",
+    "start": "Printed p. 172, right column: red Deinde osculatur Altare, & versus ad populum after the Creed Amen.",
+    "end": "Printed p. 174, right column: signum Crucis sibi producit à fronte ad pectus. above horizontal rule and ¶ Sequens Præfatio.",
+    "unit_count": 25,
+    "printed_crosses": 3,
+    "printed_versicle_signs": 1,
+    "printed_response_signs": 1,
+    "facsimile_pdf_sha256": "2ac96448c79e67ab0fce08467f71a42a51079c81198af7e7cf68cdf5d1a8ee53",
+    "page_image_package_sha256": "9fcb1be3a3e8252990f0749767b1b94820305b5334297ce7dba3491469e11a84",
+    "original_image_sequence": [
+      {
+        "printed_page": 172,
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0234-jpeg-ae2266c7",
+        "sha256": "ae2266c770aa36d936172ee327593a7f772eeccf5b994b0a62437f739c236798",
+        "filename": "1657-page-0234.djvu.review.jpg"
+      },
+      {
+        "printed_page": 173,
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0235-jpeg-f64508f8",
+        "sha256": "f64508f8e681f364e766483608820a1f0710cdd2025cb58335239afbb594dd6e",
+        "filename": "1657-page-0235.djvu.review.jpg"
+      },
+      {
+        "printed_page": 174,
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0236-jpeg-f461bff9",
+        "sha256": "f461bff997cdf0397ea643fce154f44f066ac142960a520dd031166ea6957e1d",
+        "filename": "1657-page-0236.djvu.review.jpg"
+      }
+    ]
+  },
+  "normalization": "NFC UTF-8; long s becomes s; display initials and following capitals merge to sentence case; printed nasal suspension bars expand; physical wraps and line-end word division disappear; retain printed u/v, i/j, æ/œ, accents, punctuation, abbreviations, alternatives, all rubric words and spoken cues. Printed versicle/response signs are represented by ℣. and ℟.; pattée crosses by ✠, separated from adjoining letters by spaces. Each stored line is one consecutive source block (rubric, spoken text, or quoted spoken cue); no explanatory wrapper enters literal text. Block breaks represent source paragraph/ink/function boundaries, not every printed line. Colour changes of display initials are not encoded as separate letters; line-class metadata identifies red rubrics, response cue, black spoken incipits and inline red alternatives/crosses. The opening/closing boundaries remain functional editorial bounds within the native Ordo Missæ, not a claim that the printing gives this constituent its own named chapter.",
+  "serialization_line_classes": [
+    {
+      "unit_id": "unit.cistercian-1657.offertory.opening-dialogue-rubric",
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-opening-dialogue-rubric",
+      "physical_lines": [
+        {
+          "line": 1,
+          "type": "red-rubric"
+        },
+        {
+          "line": 2,
+          "type": "reading"
+        },
+        {
+          "line": 3,
+          "type": "red-response-cue"
+        },
+        {
+          "line": 4,
+          "type": "reading"
+        },
+        {
+          "line": 5,
+          "type": "red-rubric"
+        },
+        {
+          "line": 6,
+          "type": "reading"
+        },
+        {
+          "line": 7,
+          "type": "red-rubric"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.suscipe-sancte-pater",
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-suscipe-sancte-pater",
+      "physical_lines": [
+        {
+          "line": 8,
+          "type": "reading"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.host-deposition-water-rubric",
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-host-deposition-water-rubric",
+      "physical_lines": [
+        {
+          "line": 9,
+          "type": "red-rubric-with-black-cross"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.deus-qui-humanae",
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-deus-qui-humanae",
+      "physical_lines": [
+        {
+          "line": 10,
+          "type": "reading"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.chalice-offering-rubric",
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-chalice-offering-rubric",
+      "physical_lines": [
+        {
+          "line": 11,
+          "type": "red-rubric"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.offerimus-tibi",
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-offerimus-tibi",
+      "physical_lines": [
+        {
+          "line": 12,
+          "type": "reading"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.in-spiritu-rubric",
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-in-spiritu-rubric",
+      "physical_lines": [
+        {
+          "line": 13,
+          "type": "red-rubric"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.in-spiritu-humilitatis",
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-in-spiritu-humilitatis",
+      "physical_lines": [
+        {
+          "line": 14,
+          "type": "reading"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.veni-sanctificator-rubric",
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-veni-sanctificator-rubric",
+      "physical_lines": [
+        {
+          "line": 15,
+          "type": "red-rubric"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.veni-sanctificator",
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-veni-sanctificator",
+      "physical_lines": [
+        {
+          "line": 16,
+          "type": "reading"
+        },
+        {
+          "line": 17,
+          "type": "red-rubric"
+        },
+        {
+          "line": 18,
+          "type": "reading-with-red-cross"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.incense-blessing-rubric",
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-incense-blessing-rubric",
+      "physical_lines": [
+        {
+          "line": 19,
+          "type": "red-rubric"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.per-intercessionem",
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-per-intercessionem",
+      "physical_lines": [
+        {
+          "line": 20,
+          "type": "reading-with-red-cross"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.oblata-incensing-rubric",
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-oblata-incensing-rubric",
+      "physical_lines": [
+        {
+          "line": 21,
+          "type": "red-rubric"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.incensum-istud",
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-incensum-istud",
+      "physical_lines": [
+        {
+          "line": 22,
+          "type": "reading"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.altar-incensing-rubric",
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-altar-incensing-rubric",
+      "physical_lines": [
+        {
+          "line": 23,
+          "type": "red-rubric"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.dirigatur-domine",
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-dirigatur-domine",
+      "physical_lines": [
+        {
+          "line": 24,
+          "type": "reading"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.thurible-return-rubric",
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-thurible-return-rubric",
+      "physical_lines": [
+        {
+          "line": 25,
+          "type": "red-rubric"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.accendat-in-nobis",
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-accendat-in-nobis",
+      "physical_lines": [
+        {
+          "line": 26,
+          "type": "reading"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.lavabo-rubric",
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-lavabo-rubric",
+      "physical_lines": [
+        {
+          "line": 27,
+          "type": "red-rubric"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.lavabo-doxology",
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-lavabo-doxology",
+      "physical_lines": [
+        {
+          "line": 28,
+          "type": "reading"
+        },
+        {
+          "line": 29,
+          "type": "reading"
+        },
+        {
+          "line": 30,
+          "type": "reading"
+        },
+        {
+          "line": 31,
+          "type": "reading"
+        },
+        {
+          "line": 32,
+          "type": "reading"
+        },
+        {
+          "line": 33,
+          "type": "reading"
+        },
+        {
+          "line": 34,
+          "type": "reading"
+        },
+        {
+          "line": 35,
+          "type": "reading"
+        },
+        {
+          "line": 36,
+          "type": "reading"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.suscipe-trinitas-rubric",
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-suscipe-trinitas-rubric",
+      "physical_lines": [
+        {
+          "line": 37,
+          "type": "red-rubric"
+        },
+        {
+          "line": 38,
+          "type": "black-incipit"
+        },
+        {
+          "line": 39,
+          "type": "red-rubric"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.suscipe-trinitas",
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.suscipe-trinitas",
+      "physical_lines": [
+        {
+          "line": 1,
+          "type": "reading-reused-checked-passage"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.orate-rubric",
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-orate-rubric",
+      "physical_lines": [
+        {
+          "line": 40,
+          "type": "red-rubric"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.orate-response",
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-orate-response",
+      "physical_lines": [
+        {
+          "line": 41,
+          "type": "reading"
+        },
+        {
+          "line": 42,
+          "type": "red-rubric"
+        },
+        {
+          "line": 43,
+          "type": "reading-with-red-alternative-vel"
+        },
+        {
+          "line": 44,
+          "type": "red-rubric"
+        },
+        {
+          "line": 45,
+          "type": "reading"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.secreta-preface-transition-rubric",
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-secreta-preface-transition-rubric",
+      "physical_lines": [
+        {
+          "line": 46,
+          "type": "red-rubric"
+        },
+        {
+          "line": 47,
+          "type": "black-incipit"
+        },
+        {
+          "line": 48,
+          "type": "red-rubric"
+        },
+        {
+          "line": 49,
+          "type": "black-incipit"
+        },
+        {
+          "line": 50,
+          "type": "red-rubric"
+        },
+        {
+          "line": 51,
+          "type": "black-incipit"
+        },
+        {
+          "line": 52,
+          "type": "red-rubric"
+        },
+        {
+          "line": 53,
+          "type": "black-incipit"
+        },
+        {
+          "line": 54,
+          "type": "red-rubric"
+        },
+        {
+          "line": 55,
+          "type": "black-incipit"
+        },
+        {
+          "line": 56,
+          "type": "red-rubric"
+        },
+        {
+          "line": 57,
+          "type": "black-incipit"
+        },
+        {
+          "line": 58,
+          "type": "red-rubric"
+        }
+      ]
+    }
+  ],
+  "review_boundary": "This is the transcriber’s exhaustive page/unit census. Completeness is not admitted until an independent reviewer collates every literal unit and binds the exact final hashes in the separate -review.json receipt."
+}

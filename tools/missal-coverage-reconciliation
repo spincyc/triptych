@@ -33,9 +33,9 @@ EXAMPLES = {
             "tools/missal-coverage-reconciliation",
             (
                 "Missal coverage reconciliation: ok",
-                "eastern: 95 candidates, 118 sources, 23 coverage rows",
-                "western: 137 candidates, 139 sources, 54 coverage rows",
-                "Stages: 14 dossiers, 43 traditions, 147 stages, 75 transitions, 91 declared research gaps",
+                "eastern: 443 candidates, 392 sources, 23 coverage rows",
+                "western: 1188 candidates, 959 sources, 78 coverage rows",
+                "Stages: 35 dossiers, 149 traditions, 287 stages, 77 transitions, 195 declared research gaps",
                 "Mechanical reconciliation only; unresolved research is not an invalid reference, and agreement is not historical completeness.",
             ),
             "read-only reconciliation; incomplete research is reported without becoming a validation failure",
@@ -43,7 +43,7 @@ EXAMPLES = {
         Example(
             "tools/missal-coverage-reconciliation --json",
             (
-                "{\"actual\":{\"count_semantics\":{\"eastern_candidates\":95,\"eastern_census_slots\":23,\"eastern_empty_candidate_slots_at_input\":[\"albanian\",\"macedonian\"],\"presentation_groups\":54,\"western_candidates\":137,\"western_coverage_trajectories\":54,\"western_empty_candidate_slots_at_input\":20},\"coverage_status_counts... [+9342 chars]",
+                "{\"actual\":{\"count_semantics\":{\"eastern_candidates\":443,\"eastern_census_slots\":23,\"eastern_empty_candidate_slots_at_input\":[\"albanian\",\"macedonian\"],\"presentation_groups\":159,\"western_candidates\":1188,\"western_coverage_trajectories\":78,\"western_empty_candidate_slots_at_input\":1},\"coverage_status_coun... [+53741 chars]",
             ),
             "the same audit as one deterministic JSON object; no caches or research records are written",
         ),
@@ -338,8 +338,27 @@ class Audit:
                     self.refs(row.get(field, []), known, location + "." + field, target)
                 self.refs(row.get("next_sources", {}).get("inventory_source_ids", []), sources[family], location + ".next_sources", "source")
                 self.refs(row.get("component_profile"), data.get("component_profiles", {}), location + ".component_profile", "component-profile")
-                for witness in row.get("witnesses", []):
-                    self.refs(witness.get("candidate_id"), candidates[family], location + ".witnesses", "candidate")
+                for ordinal, witness in enumerate(row.get("witnesses", [])):
+                    witness_location = location + f".witnesses[{ordinal}]"
+                    candidate_id = witness.get("candidate_id")
+                    self.refs(candidate_id, candidates[family], witness_location + ".candidate_id", "candidate")
+                    if isinstance(candidate_id, str) and candidate_id in candidates[family]:
+                        try:
+                            bounds = history.chronology(candidates[family][candidate_id])
+                        except history.HistoryError as error:
+                            self.finding("invalid", "witness-chronology-owner-validation", witness_location,
+                                         self.message(error), candidate_id=candidate_id)
+                        else:
+                            # Only the owner's structured chronology positions a
+                            # witness. Free date text and date_role explanations
+                            # remain authored research, including unresolved dates.
+                            declared = {field: witness.get(field) for field in ("start_year", "end_year")}
+                            actual = {"start_year": bounds["start"] if bounds else None,
+                                      "end_year": bounds["end"] if bounds else None}
+                            if declared != actual:
+                                self.finding("stale", "stale-witness-date", witness_location,
+                                             "Witness date bounds differ from canonical inventory chronology; review before updating.",
+                                             candidate_id=candidate_id, declared=declared, actual=actual)
                 detail = row.get("dossier_coverage", {})
                 statuses[detail.get("status", "unspecified")] += 1
                 self.refs(detail.get("dossier_ids", []), dossiers, location + ".dossier_coverage.dossier_ids", "dossier")

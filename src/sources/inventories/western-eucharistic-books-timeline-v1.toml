@@ -2053,9 +2053,9 @@ family = "roman"
 title = "Ritus servandus in concelebratione Missae et Ritus Communionis sub utraque specie"
 date = "1965"
 kind = "supplementary-typical-edition"
-status = "checked-official-bibliography"
-sources = ["notitiae-book-bibliography-1985"]
-qualification = "104-page TPV book; 7 March 1965 decree in bibliography. Eucharistic service supplement, not entire missal."
+status = "original-title-public-preview-inspected"
+sources = ["notitiae-book-bibliography-1985", "roman-next-1965-concelebration-public-title"]
+qualification = "Public original title preview confirms Latin title, editio typica, TPV and 1965. IA bwb_W9-COP-443 marks the body private/access-restricted; 104-page extent remains official bibliography, distinct from reader image counts. No complete original-book acquisition or content collation."
 date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
 chronology_start = 1965
 chronology_end = 1965
@@ -2063,6 +2063,11 @@ chronology_kind = "publication"
 chronology_certainty = "reported-in-inspected-source"
 version_status = "witness-or-revision-candidate-see-qualification"
 scope_disposition = "in-scope-original-book-or-historical-witness"
+acquisition_status = "title-only-public-preview-inspected; complete-component-unacquired"
+collation_status = "title-only; body-not-collated"
+source_library_work_id = "work.catholic-church.missale-romanum"
+source_library_edition_id = "edition.catholic-church.missale-romanum.vatican-concelebration-1965"
+source_artifact_id = "artifact.catholic-church.missale-romanum.vatican-concelebration-1965.public-title-preview-d7534472"
 
 [[candidates]]
 id = "roman-variationes-1967"
@@ -2094,7 +2099,7 @@ date = "1968"
 kind = "supplementary-eucharistic-book"
 status = "official-contemporary-parallel-evidence-inspected"
 sources = ["notitiae-book-bibliography-1985", "western-roman-preces-1968-primary"]
-qualification = "54-page TPV publication, decree 23 May 1968; precedes 1969/1970 full reform. Official journal complete issue acquired and selected original page images checked: Notitiae 40 (1968) pp 156–179. Exact 54-page Vatican booklet remains unacquired; do not bind the booklet candidate to the journal edition as if identical."
+qualification = "54-page TPV publication, decree 23 May 1968; precedes 1969/1970 full reform. Official journal complete issue acquired and selected original page images checked: Notitiae 40 (1968) pp 156–179. Exact 54-page Vatican booklet remains unacquired; do not bind the booklet candidate to the journal edition as if identical. Contemporary Notitiae 40 final PDF page 80 advertisement independently confirms 54 pages, red/black liturgical printing, initial selection norms and Gregorian melody. It does not supply the separate booklet; full booklet/musical contents remain unacquired."
 date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
 chronology_start = 1968
 chronology_end = 1968
@@ -2538,7 +2543,7 @@ date = "1657"
 kind = "revised-order-missal-candidate"
 status = "registered-bounded-original-latin-image-collation"
 sources = ["cistercian-1657-google", "cistercian-1657-fides"]
-qualification = "Identified Paris Sebastian/Gabriel Cramoisy 1657 printing, Krzeszów Benedictine abbey copy, FIDES edition 3755. Title file 0005, Vaussin mandate 0007–0008 dated 3 July 1655, Monitum 0009 and selected Ordinary pages 169,172–174 inspected. Three complete selected prayer bodies on pp. 169 and 174 independently collated and registered; pp. 172–173 retain offering-placement context. The Monitum describes further Roman conformity while retaining gradual differences. Printed mandate date, edition publication and individual textual introductions are distinct. FIDES marks the digital object public domain/unrestricted; only selected page files and decoding dependencies are retained, not the whole indirect DjVu book."
+qualification = "Identified Paris Sebastian/Gabriel Cramoisy 1657 printing, Krzeszów Benedictine abbey copy, FIDES edition 3755. Title file 0005, Vaussin mandate 0007–0008 dated 3 July 1655, Monitum 0009 and selected Ordinary pages 169,172–174 inspected. Three complete selected prayer bodies on pp. 169 and 174 independently collated and registered; pp. 172–173 retain offering-placement context. The Monitum describes further Roman conformity while retaining gradual differences. Printed mandate date, edition publication and individual textual introductions are distinct. FIDES marks the digital object public domain/unrestricted; only selected page files and decoding dependencies are retained, not the whole indirect DjVu book. The complete bounded offertory constituent is now independently collated in 25 native source units, with every intervening rubric and prayer inside the declared bounds retained; the earlier selected Confiteor remains separately available. The constituent runs from Deinde osculatur Altare on printed p.172 through the Secreta/preface-transition rubric on p.174, before the following prefaces. The whole Missal and complete Ordinary remain partial; no text is inherited from another edition."
 date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
 chronology_start = 1657
 chronology_end = 1657
@@ -2548,13 +2553,13 @@ version_status = "witness-or-revision-candidate-see-qualification"
 scope_disposition = "in-scope-original-book-or-historical-witness"
 source_library_work_id = "work.cistercian-order.missale-cisterciense"
 source_library_edition_id = "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657"
-source_library_artifact_ids = ["artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.confiteor-checked-latin-b2321dac", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.djvu-shared-annotation-af707c77", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0005-djvu-add1dd8a", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0005-jpeg-62bdeb90", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0007-djvu-ca6fa120", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0007-jpeg-d111ceaa", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0008-djvu-6e67574b", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0008-jpeg-35e26c7c", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0009-djvu-2d265622", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0009-jpeg-9f894b68", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0231-djvu-f8ff8572", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0231-jpeg-ef6deece", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0234-djvu-f743e6b3", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0234-jpeg-ae2266c7", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0235-djvu-a76ca681", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0235-jpeg-f64508f8", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0236-djvu-32b17621", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0236-jpeg-f461bff9", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.orate-response-checked-latin-a362cf3f", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.suscipe-trinitas-checked-latin-6da6f1b5"]
-source_library_evidence_relation = "Eight exact selected DjVu page files, eight complete-page JPEG renderings, one shared annotation dependency and three checked Latin text artifacts; source-page and derivation hashes are explicit."
+source_library_artifact_ids = ["artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.confiteor-checked-latin-b2321dac", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.djvu-shared-annotation-af707c77", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0005-djvu-add1dd8a", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0005-jpeg-62bdeb90", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0007-djvu-ca6fa120", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0007-jpeg-d111ceaa", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0008-djvu-6e67574b", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0008-jpeg-35e26c7c", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0009-djvu-2d265622", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0009-jpeg-9f894b68", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0231-djvu-f8ff8572", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0231-jpeg-ef6deece", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0234-djvu-f743e6b3", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0234-jpeg-ae2266c7", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0235-djvu-a76ca681", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0235-jpeg-f64508f8", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0236-djvu-32b17621", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0236-jpeg-f461bff9", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.orate-response-checked-latin-a362cf3f", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.suscipe-trinitas-checked-latin-6da6f1b5", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-facsimile-2ac96448"]
+source_library_evidence_relation = "Eight exact selected DjVu page files, eight complete-page JPEG renderings, one shared annotation dependency and three checked Latin text artifacts; source-page and derivation hashes are explicit. Accepted native constituent cistercian-1657-offertory binds all 25 exact passage identities to their registered checked-text and page-image artifacts; all earlier selected passage and artifact bindings are retained."
 acquisition_status = "selected-pages-and-dependencies-retained-and-hash-verified"
-transcription_status = "three-complete-selected-original-latin-units-independently-collated"
-collation_status = "bounded-confiteor-suscipe-trinitas-orate-dialogue; not-whole-book"
-source_library_checked_text_artifact_ids = ["artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.confiteor-checked-latin-b2321dac", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.suscipe-trinitas-checked-latin-6da6f1b5", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.orate-response-checked-latin-a362cf3f"]
-source_library_passage_ids = ["passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.confiteor", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.suscipe-trinitas", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.orate-response"]
+transcription_status = "complete-bounded-offertory-constituent-25-units-and-selected-confiteor-independently-collated"
+collation_status = "complete-bounded-offertory-constituent-and-selected-confiteor; whole-book-and-complete-Ordinary-remain-partial"
+source_library_checked_text_artifact_ids = ["artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.confiteor-checked-latin-b2321dac", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.suscipe-trinitas-checked-latin-6da6f1b5", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.orate-response-checked-latin-a362cf3f", "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-normalized-latin-6bcf4c42"]
+source_library_passage_ids = ["passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.confiteor", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.suscipe-trinitas", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.orate-response", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-opening-dialogue-rubric", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-suscipe-sancte-pater", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-host-deposition-water-rubric", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-deus-qui-humanae", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-chalice-offering-rubric", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-offerimus-tibi", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-in-spiritu-rubric", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-in-spiritu-humilitatis", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-veni-sanctificator-rubric", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-veni-sanctificator", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-incense-blessing-rubric", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-per-intercessionem", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-oblata-incensing-rubric", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-incensum-istud", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-altar-incensing-rubric", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-dirigatur-domine", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-thurible-return-rubric", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-accendat-in-nobis", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-lavabo-rubric", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-lavabo-doxology", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-suscipe-trinitas-rubric", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-orate-rubric", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-orate-response", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-secreta-preface-transition-rubric"]
 
 [[candidates]]
 id = "hereford-1502"
@@ -6896,10 +6901,10 @@ scope = "western-original-source-trajectory"
 [[coverage]]
 id = "ocso"
 title = "Cistercians of the Strict Observance / Trappists"
-status = "order-evidence-and-original-Latin-book-leads-open"
-sources = ["monastic-src-ocso-official-liturgy"]
-candidate_ids = []
-remaining_work = "The monastic receipt records shared historical Cistercian books and separately attested OCSO reception, including 1983 proper prayers with order-specific variations. Obtain original Latin Missal, propers, lectionary and decrees; check later saints and branch reception. Do not infer a medieval OCSO identity from retrospective catalogue labels. This coverage row is distinct from the Trinitarian order."
+status = "Latin-proper-approval-and-1983-shared-book-identified-original-editions-and-text-comparison-open"
+sources = ["monastic-src-ocso-official-liturgy", "ocso-src-notitiae-1975-proper", "ocso-src-rituale-1998-latin", "ocso-src-notitiae-1983-books", "ocso-src-dli-83442", "ocso-src-notitiae-1983-gabriella", "ocso-src-notitiae-1983-calendar", "ocso-src-latin-lectionary-web", "ocso-src-vitorchiano-2014"]
+candidate_ids = ["ocso-latin-proper-1975", "ocso-shared-proper-1983", "ocso-gabriella-1983-component", "ocso-latin-lectionary-web-undated"]
+remaining_work = "The distinct OCSO branch's 1892–1971 book sequence, approvals and named-house reception remain an explicit unresolved interval; obtain original post-1892 chapter records and exact preconciliar books without backdating OCSO identity. Acquire the original signed CD 83/75 and its attached Latin prayers/reading indications, OCist CD 452/77, and DLI 83442's Rome 1983 proper plus lectionary (128, 96 pages). Collate their branch scopes and relationship; do not turn the current overview's reported 1983 approval into a general decree date against the 1975/1977 confirmations and 1983 publication evidence. Authenticate and render the undated official Latin DOC and determine whether it derives from the printed Lectionarium. Original later-addition decrees and actual use of exact editions remain open. Vitorchiano's 2014 Mass celebration supplies bounded house reception of Maria Gabriella's observance, not use of a named Latin book or universal reception. Medieval Cistercian witnesses remain shared ancestry, not medieval OCSO institutional identity."
 scope = "western-original-source-trajectory"
 
 [[coverage]]
@@ -7365,7 +7370,7 @@ date = "1606"
 kind = "identified-order-missal"
 status = "registered-bounded-original-latin-image-collation"
 sources = ["cistercian-1606-bsb-primary", "cistercian-usuarium"]
-qualification = "Identified Paris Marnef/Cavellat 1606 printing, BSB 2 Liturg. 205 a, bsb10496382. Title canvas 1 and Annotanda canvases 27–28 inspected; the latter already describes Romanizing decisions of the 1601 and 1605 chapters, so this is not an untouched medieval baseline. Three complete selected Ordinary prayer bodies, printed pp. 180–181 (canvases 234–235), independently collated and registered. BSB image-specific NoC-NC permission remains distinct from the public-domain historical Latin. No full-book acquisition or collation is claimed."
+qualification = "Identified Paris Marnef/Cavellat 1606 printing, BSB 2 Liturg. 205 a, bsb10496382. Title canvas 1 and Annotanda canvases 27–28 inspected; the latter already describes Romanizing decisions of the 1601 and 1605 chapters, so this is not an untouched medieval baseline. Three complete selected Ordinary prayer bodies, printed pp. 180–181 (canvases 234–235), independently collated and registered. BSB image-specific NoC-NC permission remains distinct from the public-domain historical Latin. No full-book acquisition or collation is claimed. The complete bounded offertory constituent is now independently collated in 7 native source units, with every intervening rubric and prayer inside the declared bounds retained; the earlier selected Confiteor remains separately available. The constituent runs from Offertorio dicto through the Dominus response Amen on printed p.181 right column, BSB canvas 235. The whole Missal and complete Ordinary remain partial; no text is inherited from another edition."
 date_role = "publication"
 chronology_start = 1606
 chronology_end = 1606
@@ -7374,14 +7379,14 @@ chronology_certainty = "direct-title-page-inspection"
 version_status = "bounded-substantive-revision-evidence; see book-stage dossier"
 scope_disposition = "in-scope-original-book-or-historical-witness"
 acquisition_status = "selected-pages-and-dependencies-retained-and-hash-verified"
-transcription_status = "three-complete-selected-original-latin-units-independently-collated"
-collation_status = "bounded-confiteor-suscipe-trinitas-orate-dialogue; not-whole-book"
+transcription_status = "complete-bounded-offertory-constituent-7-units-and-selected-confiteor-independently-collated"
+collation_status = "complete-bounded-offertory-constituent-and-selected-confiteor; whole-book-and-complete-Ordinary-remain-partial"
 source_library_work_id = "work.cistercian-order.missale-cisterciense"
 source_library_edition_id = "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606"
-source_library_artifact_ids = ["artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00001-44b8ddf4", "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00027-5ffde528", "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00028-e9916c53", "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00234-7c8474ea", "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00235-2646b0f5", "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.confiteor-checked-latin-60e1426e", "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.orate-response-checked-latin-2bab0892", "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.suscipe-trinitas-checked-latin-0c61e53d"]
-source_library_evidence_relation = "Five exact BSB IIIF page images and three checked Latin text artifacts; independent review is bounded to the selected statements and prayers."
-source_library_checked_text_artifact_ids = ["artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.confiteor-checked-latin-60e1426e", "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.suscipe-trinitas-checked-latin-0c61e53d", "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.orate-response-checked-latin-2bab0892"]
-source_library_passage_ids = ["passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.confiteor", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.suscipe-trinitas", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.orate-response"]
+source_library_artifact_ids = ["artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00001-44b8ddf4", "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00027-5ffde528", "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00028-e9916c53", "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00234-7c8474ea", "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00235-2646b0f5", "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.confiteor-checked-latin-60e1426e", "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.orate-response-checked-latin-2bab0892", "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.suscipe-trinitas-checked-latin-0c61e53d", "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-checked-latin-9c003023"]
+source_library_evidence_relation = "Five exact BSB IIIF page images and three checked Latin text artifacts; independent review is bounded to the selected statements and prayers. Accepted native constituent cistercian-1606-offertory binds all 7 exact passage identities to their registered checked-text and page-image artifacts; all earlier selected passage and artifact bindings are retained."
+source_library_checked_text_artifact_ids = ["artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.confiteor-checked-latin-60e1426e", "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.suscipe-trinitas-checked-latin-0c61e53d", "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.orate-response-checked-latin-2bab0892", "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-checked-latin-9c003023"]
+source_library_passage_ids = ["passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.confiteor", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.suscipe-trinitas", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.orate-response", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-opening-rubric", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-in-spiritu-rubric", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-in-spiritu-humilitatis", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-orate-rubric", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-orate-invitation", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-dominus-response"]
 
 [[sources]]
 id = "coverage-usuarium-progress"
@@ -8195,7 +8200,7 @@ sha256 = "e94bab3a67cde4db59415d859fd9e23ff03cce9db2bbd72c50eb0bee6c90799d"
 id = "western-roman-preces-1968-primary"
 url = "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1960/notitiae-04-%281968%29/Notitiae-040-1968.pdf"
 type = "primary-act"
-inspection = "Official journal complete issue acquired and selected original page images checked: Notitiae 40 (1968) pp 156–179. Exact 54-page Vatican booklet remains unacquired; do not bind the booklet candidate to the journal edition as if identical."
+inspection = "Official journal complete issue acquired and selected original page images checked: Notitiae 40 (1968) pp 156–179. Exact 54-page Vatican booklet remains unacquired; do not bind the booklet candidate to the journal edition as if identical. Additional original publication-notice inspection on 2026-10-20: Notitiae 40 (1968), unpaginated final PDF page 80 advertisement: separate 54-page booklet, rubricated printing, initial norms and Gregorian music."
 source_library_edition_id = "edition.holy-see.notitiae.volume-4-number-40-1968"
 
 [[sources]]
@@ -8222,7 +8227,7 @@ id = "latin-early-westwell2024"
 url = "https://epub.uni-regensburg.de/59552/1/10.1515_9781501517563-1.pdf"
 type = "scholarly-primary-manuscript-research"
 title = "Arthur Westwell, The Carolingian Sacramentaries of Saint-Amand (2024)"
-inspection = "Complete PDF; title, key to manuscripts, ch. 1 Gelasian/Gregorian sections, ch. 3 selected supplement passages and manuscript bibliography. Witnesses local compilation and supplement diversity; disputed archetypes must not become universal linear reforms."
+inspection = "Complete PDF; title, key to manuscripts, ch. 1 Gelasian/Gregorian sections, ch. 3 selected supplement passages and manuscript bibliography. Witnesses local compilation and supplement diversity; disputed archetypes must not become universal linear reforms. Additional bounded Monza inspection on 2026-10-20: Whole Arthur Westwell, The Carolingian Sacramentaries of Saint-Amand (2024), 514 PDF pages acquired. Introduction pp. 6–7, Appendix 2 pp. 419–425 (PDF pp. 445–451), and related discussion read; Appendix 2 p. 419 visually inspected. Distinguishes treasury Berengar (called Ms.89) from F.1/101. Catalogues Mass components and later additions by folio. The date, northeastern-French manufacture and possible Cysoing/Eberhard relationship remain the author's argument, not an established Monza local-use or donor-book edge. Additional bounded Ravenna-fragment inspection on 2026-10-20: Whole book PDF acquired from institutional repository; title/rights page, p. 42, note 121 / PDF p. 68, 56 note 180, 58-62 and note 201 inspected. Discusses Montecassino 271 as a mass-prayer/reading book, the single Stockholm-Wroclaw codex, and the evidential limits of Gamber's Ravenna archetype hypothesis. LIMIT: Critical discussion does not independently date or locate the fragment scriptoria. No Ravenna archetype is promoted to a surviving book or historical stage. PDF figures carry separate rights."
 limitations = "Book is not all surviving sacramentaries. Phillipps 1997 and cod 48 in passages conflict with proper institutional 1667/348 identifiers. The key prints 'Latin 9433' under 'Tours' and p. 130 gives 9433 for Drogo, but the text identifies BnF lat. 9433 as the Sacramentary of Echternach (p. 342) and places the Saint-Martin of Tours book in BnF lat. 9430 and Tours 184 (p. 83); the 9433 readings are slips."
 inspected_on = "2026-10-19"
 
@@ -8447,7 +8452,7 @@ id = "latin-early-elmss-cat-346"
 url = "https://elmss.universityofgalway.ie/catalogue/346"
 type = "institutional-palaeographic-catalogue"
 title = "ELMSS 346: Stockholm, National Library, A 135a; Wrocław, University Library Rehdigeranus, Akc. 1955/3"
-inspection = "Complete API item metadata including contents, provenance, script comments and shelfmarks. Manuscript/layer identified independently from later printed edition."
+inspection = "Complete API item metadata including contents, provenance, script comments and shelfmarks. Manuscript/layer identified independently from later printed edition. Additional bounded Ravenna-fragment inspection on 2026-10-20: Exact shelfmarks, contents, VIII first-half (701-750) date, Northern Italian attribution, Avicenna binding provenance and script commentary inspected in the record and full 2047-row CSV export. LIMIT: The catalogue gives probable Northern Italy rather than Ravenna. This broader date differs from Manuscripta's 700-725 range; the stage retains both descriptions."
 limitations = "CLA/ELMSS palaeographic date and traditional classification; neither universal recension nor composition date."
 inspected_on = "2026-10-19"
 
@@ -8807,7 +8812,7 @@ id = "latin-early-elmss-cat-1862"
 url = "https://elmss.universityofgalway.ie/catalogue/1862"
 type = "institutional-palaeographic-catalogue"
 title = "ELMSS 1862: Stuttgart, Württembergische Landesbibliothek, Cod. fragm. 100A"
-inspection = "Complete API item metadata including contents, provenance, script comments and shelfmarks. Manuscript/layer identified independently from later printed edition."
+inspection = "Complete API item metadata including contents, provenance, script comments and shelfmarks. Manuscript/layer identified independently from later printed edition. Additional bounded Ravenna-fragment inspection on 2026-10-20: Contents, VII (601-700) date, current/former shelfmarks, uncertain origin, c. 800 penitential overwrite and Constance/Weingarten provenance inspected. Complete catalogue illustration of an opening inspected; undertext is fragmentary and difficult to read. LIMIT: The illustration is a sample, not a complete original codex. Catalogue sacramentary-type labels disagree across sources. Ravenna use and a complete Canon have not been established."
 limitations = "CLA/ELMSS palaeographic date and traditional classification; neither universal recension nor composition date."
 inspected_on = "2026-10-19"
 
@@ -9149,7 +9154,7 @@ id = "latin-early-elmss-cat-715-cold"
 url = "https://elmss.universityofgalway.ie/catalogue/715"
 type = "institutional-palaeographic-catalogue"
 title = "ELMSS 715 (CLA 3.376): Monte Cassino, Archivio della Badia, 271 [palimpsest old 2], Sacramentarium Gregorianum (fragm.)"
-inspection = "Complete API item as retained by the researcher (research/elmss-sacramentaries-full.json): VII–VIII, numeric 680–720; written doubtless in Italy; rewritten with Gregory's Dialogi in the Beneventan zone in the eleventh century. Date label and midpoint cross-checked against the reviewer's frozen catalogue table."
+inspection = "Complete API item as retained by the researcher (research/elmss-sacramentaries-full.json): VII–VIII, numeric 680–720; written doubtless in Italy; rewritten with Gregory's Dialogi in the Beneventan zone in the eleventh century. Date label and midpoint cross-checked against the reviewer's frozen catalogue table. Additional bounded Ravenna-fragment inspection on 2026-10-20: Exact lower-layer identification, VII–VIII (680-720) date, Gregorian sacramentary-fragment contents and Italian origin inspected. Provenance identifies eleventh-century Beneventan rewriting with Gregory's Dialogues. Complete catalogue illustration of p. 84 inspected. LIMIT: The sample illustration and metadata do not establish every lower-text page or whole-book content. Other reused missal strata in the same present codex must remain separate. Ravenna origin remains a scholarly question."
 limitations = "Catalogue description only; manuscript and editions not inspected."
 inspected_on = "2026-10-19"
 
@@ -12788,16 +12793,24 @@ family = "roman"
 title = "Ordo Sabbati sancti quando vigilia paschalis instaurata peragitur"
 date = "1951"
 kind = "experimental-component-book"
-status = "unresolved-lead-retained"
-qualification = "Only the named edition or component and cited locus have been identified. Record class: experimental component book; research disposition: unresolved-bibliographic-lead. Primary edition or act locus remains to verify; do not create a station from this row."
-date_role = "experimental-book-publication"
-version_status = "unresolved-bibliographic-lead"
+status = "original-component-scan-acquired-bounded-inspection"
+qualification = "Complete offered 44-page scan of the 1951 TPV experimental Ordo acquired. Original title, 9 February decree, selected Office/Vigil/Mass loci, final printed p. 39 and index inspected. Its physical service-book contents exceed the AAS rubrics, which refer back to the existing Missal. Exact scan and modern body remain withheld; no whole-text collation or ideal-edition completeness claim."
+date_role = "book-imprint-1951; decree-approval-1951-02-09; optional-experiment-for-1951"
+version_status = "documented-component-witness; no-whole-book-collation"
 scope_disposition = "in-scope-original-book-or-historical-witness"
-transcription_status = "not-whole-book-transcribed"
-collation_status = "bounded-evidence-only; not-whole-book"
-acquisition_status = "exact-original-not-acquired-or-not-linked"
-source_locus = "expected_versions cold-roman-019"
+transcription_status = "not-transcribed-for-publication"
+collation_status = "selected-original-image-loci-against-AAS; not-whole-book"
+acquisition_status = "complete-offered-44-page-booklet-pdf-acquired-to-restricted-scratch"
+source_locus = "Original TPV booklet PDF pp. 5, 7, 9–11, 36, 39, 41–44; AAS 43 (1951), pp. 128–137."
 existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+chronology_start = 1951
+chronology_end = 1951
+chronology_kind = "publication"
+chronology_certainty = "title-imprint-image-verified"
+sources = ["roman-next-1951-original-tpv", "roman-next-1951-aas-original"]
+source_library_work_id = "work.catholic-church.missale-romanum"
+source_library_edition_id = "edition.catholic-church.missale-romanum.vatican-ordo-sabbati-sancti-1951"
+source_artifact_id = "artifact.catholic-church.missale-romanum.vatican-ordo-sabbati-sancti-1951.ia-searchable-pdf-3c9a9291"
 
 [[candidates]]
 id = "roman-modern-020"
@@ -12827,16 +12840,17 @@ family = "roman"
 title = "Cum nostra hac aetate simplification of calendar and rubrics"
 date = "1955"
 kind = "component-revision"
-status = "reviewed-bounded-metadata"
-qualification = "Only the named edition or component and cited locus have been identified. Record class: component revision; research disposition: substantive-component-change-candidate."
-date_role = "act-or-publication-as-qualified-in-source"
+status = "complete-published-act-image-inspected"
+qualification = "Own complete published act now image-read, AAS 47 (1955) 218-224, not merely cited in a later act. Five titles cover general norms, calendar, commemorations, Breviary and Missal; the Missal-specific prescriptions are at 224. Full operational Missal and exact before/after prayer collation remain unestablished."
+date_role = "approval-1955-03-23; effectiveness-1956-01-01"
 version_status = "substantive-component-change-candidate"
 scope_disposition = "in-scope-original-book-or-historical-witness"
 transcription_status = "not-whole-book-transcribed"
-collation_status = "bounded-evidence-only; not-whole-book"
-acquisition_status = "exact-original-not-acquired-or-not-linked"
+collation_status = "complete-act-page-image-inspection; not-whole-missal"
+acquisition_status = "official-container-pdf-acquired; exact-existing-artifact-reverified"
 source_locus = "act de-rubricis-simpliciorem-1955, 23 March 1955"
 existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-next-1955-march-aas-images"]
 
 [[candidates]]
 id = "roman-modern-022"
@@ -17027,12 +17041,12 @@ title = "Indian twelve points of adaptation"
 date = "25 April 1969"
 kind = "approved-rubric-component"
 status = "reviewed-bounded-metadata"
-qualification = "A primary 1969 permission covers twelve ritual points and does not establish a new anaphora. Original volume, approval scope and textual relation require direct review."
+qualification = "Original printed permission covers twelve ritual points. Optional and prepared introduction is reiterated in 1970; dated use of the permitted ceremonial is directly reported on 15 February 1970. No new anaphora or complete Indian altar Missal is authenticated."
 date_role = "approval"
 version_status = "source-witness-or-component; substantive whole-book revision unestablished"
 scope_disposition = "in-scope-regional-source-adaptation-or-lead"
-sources = ["roman-adaptations-src-india1969"]
-source_locus = "roman-adaptations-src-india1969: Notitiae 5 (1969) printed pp. 365–374, permission printed p. 365 / PDF p. 39, protocol 802/69 dated 25 April 1969; twelve ritual points, no new anaphora approval."
+sources = ["roman-adaptations-src-india1969", "permissions-followup-src-india1970-use", "permissions-followup-src-india1970-clarification"]
+source_locus = "roman-adaptations-src-india1969: Notitiae 5 (1969) printed pp. 365–374, permission printed p. 365 / PDF p. 39, protocol 802/69 dated 25 April 1969; twelve ritual points, no new anaphora approval. Notitiae 6 (1970) printed p.89 / PDF p.15, named 15 February 1970 celebration; printed p.282 / PDF p.24, optional whole/partial episcopal or regional implementation after preparation."
 acquisition_status = "source-or-original-unacquired"
 collation_status = "not-collated-whole-book"
 transcription_status = "not-complete"
@@ -17067,16 +17081,16 @@ existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman
 [[candidates]]
 id = "roman-adaptations-india1971"
 family = "roman"
-title = "Indian Orderof Mass"
+title = "Indian Order of Mass: reported experimental preparation"
 date = "1971 preparation; experimentaluseattested 2005"
 kind = "experimental-order-candidate"
 status = "reviewed-bounded-metadata"
-qualification = "An experimental Order was prepared; its original text and approval terms remain to obtain. Original volume, approval scope and textual relation require direct review."
+qualification = "The 1971 preparation remains participant-history evidence pending original book. Notitiae 9 (1973) pp.76–77 distinguishes English Roman Order implementation from the proposed Indian anaphora and prints a Roman voting-threshold correction plus the apparently unmet prior-submission requirement. Do not present the candidate as an approved complete Indian Mass order."
 date_role = "reported-order-preparation"
 version_status = "source-witness-or-component; substantive whole-book revision unestablished"
 scope_disposition = "in-scope-regional-source-adaptation-or-lead"
-sources = ["roman-adaptations-src-india2005"]
-source_locus = "roman-adaptations-src-india2005: Puthanangady (2005) pp. 99–100, retrospective Order preparation and experimental use; original 1971 Order and approval terms uninspected."
+sources = ["roman-adaptations-src-india2005", "permissions-followup-src-india1973-report"]
+source_locus = "roman-adaptations-src-india2005: Puthanangady (2005) pp. 99–100, retrospective Order preparation and experimental use; original 1971 Order and approval terms uninspected. Notitiae 9 (1973) printed p.76 II.1 (required English Lectionary, Order and Holy Week use from 28 November 1971), III.5 and p.77 n.1 (separate Indian anaphora proposal and Roman procedural correction)."
 acquisition_status = "source-or-original-unacquired"
 collation_status = "not-collated-whole-book"
 transcription_status = "not-complete"
@@ -17533,12 +17547,12 @@ title = "Missa Terra Spiritus Sancti / Missa Kimberley"
 date = "7 May 2024"
 kind = "original-adapted-order"
 status = "reviewed-bounded-metadata"
-qualification = "Australian episcopal approval and later local performance are evidenced; Roman recognitio is not established. Original volume, approval scope and textual relation require direct review."
+qualification = "Conference approval and named diocesan celebrations are evidenced; Roman recognitio remains unverified. The original conference release identifies a Liturgy Brisbane 2018 publication, but the 2018 original book and submitted 2024 annex are unacquired. Dated 2026 use is reception evidence for the named adaptation, not proof of an unchanged exact printing or issued Roman instrument."
 date_role = "episcopal-conference-approval"
 version_status = "source-witness-or-component; substantive whole-book revision unestablished"
 scope_disposition = "in-scope-regional-source-adaptation-or-lead"
-sources = ["roman-adaptations-src-broome2024", "roman-adaptations-src-broome-booklet"]
-source_locus = "roman-adaptations-src-broome2024: 10 May 2024 Vatican newspaper report, bishops' release paragraph dated 7 May 2024; roman-adaptations-src-broome-booklet: diocesan installation PDF pp. 13–15 witnesses selected performance in December, not the full submitted book."
+sources = ["roman-adaptations-src-broome2024", "roman-adaptations-src-broome-booklet", "permissions-followup-src-broome-acbc2024", "permissions-followup-src-broome-plenary2024", "permissions-followup-src-broome-use2026"]
+source_locus = "roman-adaptations-src-broome2024: 10 May 2024 Vatican newspaper report, bishops' release paragraph dated 7 May 2024; roman-adaptations-src-broome-booklet: diocesan installation PDF pp. 13–15 witnesses selected performance in December, not the full submitted book. Original ACBC release, 7 May 2024, PDF pp.1–2; May 2024 plenary summary, PDF p.3, Liturgy; Walking Together volume 13 (printed June 2026; July archive/upload), Part1 PDF pp.1,3."
 acquisition_status = "source-or-original-unacquired"
 collation_status = "not-collated-whole-book"
 transcription_status = "not-complete"
@@ -17635,11 +17649,11 @@ title = "Early Indiananaphoraproposal"
 date = "after 1969; exactdateunestablished"
 kind = "unapproved-proposal"
 status = "reviewed-bounded-metadata"
-qualification = "The early proposal is reported as unapproved and not sent to Rome. Notanauthorizedstage."
+qualification = "The early proposal is reported as unapproved and not sent to Rome. Notanauthorizedstage. The 1973 official journal describes the 1972 proposal and prints Roman procedural qualifications; it does not authenticate Roman approval or exact complete printing. Do not convert its record of 60 votes out of 81 present into a successful approval without the full voting body and governing threshold."
 date_role = "proposal"
 version_status = "source-witness-or-component; substantive whole-book revision unestablished"
 scope_disposition = "in-scope-regional-source-adaptation-or-lead"
-sources = ["roman-adaptations-src-india2005"]
+sources = ["roman-adaptations-src-india2005", "permissions-followup-src-india1973-report"]
 source_locus = "roman-adaptations-src-india2005: Puthanangady (2005) pp. 99–100, retrospective account of early unapproved anaphora; no original typescript or secure proposal year inspected."
 acquisition_status = "source-or-original-unacquired"
 collation_status = "not-collated-whole-book"
@@ -19357,7 +19371,7 @@ title = "Rome 1635 Vatican Missale Romanum: bibliographic witnesses after Urban 
 date = "1635"
 kind = "printed-witness-cluster"
 status = "unresolved-bibliographic-lead"
-qualification = "Rusca Lanzada L-77 (printed p. 49) catalogues a Rome Vatican 1635 'Secunda editio' with saints' proper Masses set out at length; its copy is incomplete after p. 4 of the final sequence. Asachiana 19 (2023), printed pp. 15-16, photographs another Rome Vatican 1635 title leaf and describes a defective/composite copy, but its stated 698-page complete extent does not reconcile with its section breakdown. Whether these are the same or different settings/issues, or whether either changes the 1634 text substantively, is unverified. Bibliographic witness lead only; no new stage."
+qualification = "Rusca Lanzada L-77 (printed p. 49) catalogues a Rome Vatican 1635 'Secunda editio' with saints' proper Masses set out at length; its copy is incomplete after p. 4 of the final sequence. Asachiana 19 (2023), printed pp. 15-16, photographs another Rome Vatican 1635 title leaf and describes a defective/composite copy, but its stated 698-page complete extent does not reconcile with its section breakdown. Whether these are the same or different settings/issues, or whether either changes the 1634 text substantively, is unverified. Bibliographic witness lead only; no new stage. SBN adds Rome Vatican bibliographic records for explicitly Secunda editio (UM1E041839: [40],444,LXXVI), Tertia editio (PBEE017510: [40],448,LXXVI,[4]), and a larger setting without a transcribed edition label (UM1E008100: catalogue displays [56!,572,XCVII,[3! pages). Preserve them as distinct setting/issue leads until original title and collation verify identity. No new recension/station or 1634/1635 parentage."
 date_role = "imprint-year"
 version_status = "witness-or-component-candidate-not-proven-recension"
 scope_disposition = "in-scope-original-book-or-historical-witness"
@@ -19366,7 +19380,7 @@ collation_status = "no-1634-1635-text-collation"
 acquisition_status = "exact-original-not-acquired; catalogues-and-title-photo-only"
 source_locus = "Rusca Lanzada L-77 printed p. 49; Asachiana 19 printed pp. 15-16, 27-28"
 existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-1634-1635-followup-2026-10-20.json"
-sources = ["roman-modern-1635-rusca-l77", "roman-modern-1635-asachiana-iasi"]
+sources = ["roman-modern-1635-rusca-l77", "roman-modern-1635-asachiana-iasi", "roman-next-1635-sbn-pbee017510", "roman-next-1635-sbn-um1e041839", "roman-next-1635-sbn-um1e008100"]
 chronology_start = 1635
 chronology_end = 1635
 chronology_kind = "publication"
@@ -22106,28 +22120,28 @@ scope = "western-original-source-trajectory"
 [[coverage]]
 id = "italian-padua"
 title = "Padua Eucharistic-book discovery"
-status = "selected-manuscript-witness-documented"
-sources = ["italian-usuarium-padua", "italian-padua-e57-source", "italian-padua-d30-irht"]
-candidate_ids = ["italian-padua-d30"]
-remaining_work = "Inspect D.30 original Mass prayers, calendar and rubrics and establish any Padua diocesan use before claiming a distinct recension. Inspect E 57 Eucharistic rubrics and other local holdings. Padua B.31 is Roman use for Friars Minor; Pataviense can mean Passau."
+status = "selected-local-rubrical-state-and-roman-holdings-documented"
+sources = ["italian-usuarium-padua", "italian-padua-e57-source", "italian-padua-d30-irht", "italian-padua-bellinati-2014", "italian-padua-toigo-passio-thesis", "italian-padua-diocese-exhibit-2021", "italian-padua-calendaria-d30", "italian-padua-leto-2025", "italian-padua-lovato-processioni-abstract", "italian-padua-vildera-genealogia-2013"]
+candidate_ids = ["italian-padua-d30", "italian-padua-e57", "italian-padua-b26", "italian-padua-b31-1328", "italian-padua-cholet-c47-d34"]
+remaining_work = "Collate E.57 ff. 89v–95r and edited sections 127g, 140e in the original/full 2002 edition; its named local Eucharistic rubrics are now documented through inspected studies. Resolve D.30 copying dates before plotting it, acquire its full calendar/prayers and test actual use. Inspect B.26, Roman-Franciscan B.31 and surviving Paris Cholet C.47/D.34 volumes separately. No complete Padua Missal, substantive transition or independent recension is certified."
 scope = "western-original-source-trajectory"
 
 [[coverage]]
 id = "italian-monza"
 title = "Monza Eucharistic-book discovery"
-status = "selected-manuscript-witnesses-documented"
-sources = ["italian-usuarium-monza", "italian-monza-ordo-vatican-bibliography", "italian-monza-f05-irht", "italian-monza-f12-irht"]
-candidate_ids = ["italian-monza-f05-109", "italian-monza-f12-108"]
-remaining_work = "Inspect original leaves of f-05/109 and f-12/108, identify exact Mass components, compare them and establish any local reception. Catalogue origin alone does not distinguish Roman, Ambrosian or Monza use. Also inspect Liber ordinarius Modoetiensis and exact Monza/Berengar sacramentary contents."
+status = "bounded-local-order-and-distinct-sacramentary-witnesses-documented"
+sources = ["italian-usuarium-monza", "italian-monza-ordo-vatican-bibliography", "italian-monza-f05-irht", "italian-monza-f12-irht", "italian-monza-frisi1794-v3", "italian-monza-ebner1896", "italian-monza-ordinal-latinitas2018", "italian-monza-ordinal-messa2003", "latin-early-westwell2024", "italian-monza-berengar-hoffmann2005", "italian-monza-berengar-irht98", "italian-monza-f1-dicenso2010", "italian-monza-cathedral2025-rite", "italian-monza-h14-bibale"]
+candidate_ids = ["italian-monza-f05-109", "italian-monza-f12-108", "italian-monza-h14-ordinal", "italian-monza-f1-101-sacramentary", "italian-monza-berengar-98"]
+remaining_work = "Collate H14 ff. 47–74 and Dell’Oro–Mambretti (2001), volume A critical text pp. 431–541; identify all Mass-book cross-references and layers. Separate F.1/101 chant, sacramentary, Ambrosian formularies and lectionary; resolve its constituent dating. Resolve Berengar treasury 98/89, 846–855 versus the 860s, before 867, and Monza holding versus northeastern-French manufacture. Inspect original 1578 instruments and f-05/109, f-12/108 leaves before any local reception or substantive transition."
 scope = "western-original-source-trajectory"
 
 [[coverage]]
 id = "italian-ravenna"
 title = "Ravenna Eucharistic-book discovery"
-status = "selected-archive-holding-witness-only"
-sources = ["italian-usuarium-ravenna", "italian-ravenna-011-irht", "italian-ravenna-roman-irht"]
-candidate_ids = ["italian-ravenna-archive-011"]
-remaining_work = "Establish origin and actual use of archive 011 from original leaves and provenance before any Ravenna-use attribution. Another archive missal is explicitly Roman origin. Identify each fragment, copying layer and provenance; compare Advent prayer corpus without inventing a complete annual Mass book or a local revision sequence."
+status = "bounded-fragment-identities-local-use-unproved"
+sources = ["italian-usuarium-ravenna", "italian-ravenna-011-irht", "italian-ravenna-roman-irht", "italian-ravenna-fragments-stockholm", "italian-ravenna-fragments-wroclaw", "latin-early-elmss-cat-346", "latin-early-elmss-cat-1862", "latin-early-elmss-cat-715-cold", "italian-ravenna-fragments-suski", "latin-early-westwell2024", "italian-ravenna-fragments-sodi-suski", "italian-ravenna-fragments-rotulus-ceriani", "italian-ravenna-fragments-rotulus-rozein", "italian-ravenna-fragments-munich", "italian-ravenna-fragments-catalogue6347", "italian-ravenna-fragments-catalogue6348", "italian-ravenna-fragments-catalogue6349", "italian-ravenna-fragments-catalogue6351"]
+candidate_ids = ["italian-ravenna-archive-011", "italian-ravenna-stockholm-wroclaw", "italian-ravenna-stuttgart-100a", "italian-ravenna-montecassino-271-lower2", "italian-ravenna-stuttgart-ink15370"]
+remaining_work = "Collate exact surviving fragment and lower-text loci before assigning Canon scope or Ravenna use. Resolve 100A type disagreements and the 700-725 versus 701-750 Stockholm-Wroclaw dating. Archive 011 still requires original colophon/calendar/Canon and actual-use evidence. Rotulus Advent Office prayers and later archival letters do not define an annual Mass book; proposed fragment stages are associated witnesses, not a Ravenna local recension."
 scope = "western-original-source-trajectory"
 
 [[coverage]]
@@ -29233,23 +29247,20 @@ inspection = "BNP RES.2787 V, 1565 Constituições, Title XXVII chapter I, print
 [[candidates]]
 id = "italian-padua-d30"
 family = "padua-manuscript-holding"
-title = "Padua Cathedral Chapter D.30 missal-calendar"
-date = "1301–1310 catalogue copying range"
+title = "Padua Cathedral D.30 Roman Missal and calendar"
+date = "Fourteenth century; IRHT 1301–1310 conflicts with Bellinati post-1323 and Calendaria c. 1338"
 kind = "manuscript-missal-witness"
-status = "catalogue-witness-leaves-uninspected"
-sources = ["italian-padua-d30-irht"]
-source_locus = "IRHT manuscript 616628: D.30, Missale Calendarium, 360 leaves, origin Padova, date 1301–1310."
-qualification = "Padua-origin physical Mass book; original Mass texts, local rubrics, approval and distinct recension have not been checked. Do not conflate with Padua B.31, expressly Roman use for Friars Minor, or with Pataviense meaning Passau."
+status = "scoped-manuscript-excerpt-and-catalogue-loci-inspected-date-disputed"
+sources = ["italian-padua-d30-irht", "italian-padua-bellinati-2014", "italian-padua-toigo-passio-thesis", "italian-padua-diocese-exhibit-2021", "italian-padua-calendaria-d30"]
+source_locus = "IRHT 616628 preserved HTML lines 64–85; Bellinati 2014 p. 44 n. 22 (post-1323; Inventario 1350 f. 14v); Toigo dissertation pp. 47–48 n. 153 (D.30 Matthew c. 70r/v, Mark c. 74r/v, manuscript crop); Diocese Ecce advenit 2021 item 13 (Epiphany introit f. 20v); Calendaria D.30 row (c. 1338, Padova Duomo)."
+qualification = "Identified Roman Missal of Padua provenance, with named chant loci and a short original musical crop inspected. Full original Mass prayers, calendar, local rubrics, approval and actual altar use remain uninspected. Conflicting narrow copying dates remain unresolved; no independent Padua diocesan recension is asserted. B.31 is a separate Roman-Franciscan book; Pataviense may denote Passau."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-state-not-independently-established"
-date_role = "manuscript-copying-range"
-chronology_start = 1301
-chronology_end = 1310
-chronology_kind = "manuscript-witness-date"
-chronology_certainty = "catalogue-reported"
-acquisition_status = "not-acquired-in-this-pass"
-transcription_status = "no-verified-complete-transcription"
-collation_status = "not-fully-collated"
+date_role = "disputed-manuscript-copying-date"
+acquisition_status = "full-studies-and-official-list-acquired-short-reproduced-excerpt-inspected-original-not-acquired"
+transcription_status = "no-new-verified-transcription"
+collation_status = "short-manuscript-crop-and-described-loci-inspected-not-fully-collated"
+chronology_layout = "unpositioned-pending-conflicting-copying-dates"
 
 [[candidates]]
 id = "italian-monza-f05-109"
@@ -29533,3 +29544,1061 @@ chronology_kind = "publication"
 chronology_certainty = "official-diocesan-book-and-page"
 scope_disposition = "in-scope-component-or-adjunct"
 version_status = "paired-book-state; substantive-change-uncollated"
+
+[[sources]]
+id = "italian-monza-frisi1794-v3"
+url = "https://archive.org/download/memoriestoriched03fris/memoriestoriched03fris.pdf"
+type = "original-catalogue-and-edited-manuscript-excerpts"
+inspection = "Whole University of Illinois digitization acquired, 394 PDF pages. Printed pp. 190–191, 195 (PDF pp. 220–221, 225) visually inspected; other Monza catalogue passages read in extracted text. Entry CLXXXVII describes and partially edits the local order, historically Milan Cathedral B.43; printed pp. 79–82 describe F.1/101 under former E.III / CXXVI. This is an eighteenth-century witness to the manuscript and a partial edition, not original manuscript-image collation. Frisi III, p. 190, note 18, reports that the words identifying Ecclesia Modoetiensis were erased but still legible in vestiges; modern H14 identity and local-order classification are independently supported by the 2018 census and the critical-edition review."
+source_library_work_id = "work.antonio-francesco-frisi.memorie-storiche-di-monza-e-sua-corte"
+source_library_edition_id = "edition.antonio-francesco-frisi.memorie-storiche-di-monza-e-sua-corte.1794-milano-motta-volume-3"
+source_library_artifact_ids = ["artifact.antonio-francesco-frisi.memorie-storiche-di-monza-e-sua-corte.1794-milano-motta-volume-3.institutional-facsimile-d5d58b52", "artifact.antonio-francesco-frisi.memorie-storiche-di-monza-e-sua-corte.1794-milano-motta-volume-3.pdf-text-67dfd376"]
+text_acquisition = "complete-exact-provider-PDF-and-whole-text-layer-canonically-retained"
+retention_note = "Independent exact-byte rights/identity/extent review accepted the whole identified historical printing and faithful mechanical scan on a United States public-domain basis; both PDF and uncorrected text extraction are retained. This does not expand the stated inspected loci or establish complete manuscript collation."
+
+[[sources]]
+id = "italian-monza-ebner1896"
+url = "https://archive.org/download/quellenundforsch00ebne/quellenundforsch00ebne.pdf"
+type = "original-manuscript-census"
+inspection = "Whole PIMS/University of Toronto digitization acquired, 510 PDF pages. Printed pp. 108–109 (PDF pp. 126–127) visually inspected for F.1/101 components; pp. 105–110 read with surrounding entries. Ebner explicitly had insufficient access time to settle leaf-order questions, p. 109. His older dating of the treasury sacramentary is superseded by later palaeography and is not adopted."
+source_library_work_id = "work.adalbert-ebner.iter-italicum"
+source_library_edition_id = "edition.adalbert-ebner.iter-italicum.1896-freiburg-herder"
+source_library_artifact_ids = ["artifact.adalbert-ebner.iter-italicum.1896-freiburg-herder.institutional-facsimile-e0a3f15a", "artifact.adalbert-ebner.iter-italicum.1896-freiburg-herder.pdf-text-3d1bc15e"]
+text_acquisition = "complete-exact-provider-PDF-and-whole-text-layer-canonically-retained"
+retention_note = "Independent exact-byte rights/identity/extent review accepted the whole identified historical printing and faithful mechanical scan on a United States public-domain basis; both PDF and uncorrected text extraction are retained. This does not expand the stated inspected loci or establish complete manuscript collation."
+
+[[sources]]
+id = "italian-monza-ordinal-latinitas2018"
+url = "https://www.pontificiaacademialatinitatis.org/wp-content/uploads/rivista-latinitas/interno_Latinitas_1_2018.pdf"
+type = "scholarly-manuscript-census"
+inspection = "Whole Latinitas series nova VI (2018), vol.1 acquired, 160 PDF pages. Baroffio, Sodi and Suski, I libri ordinari di origine italiana: guida ai manoscritti pretridentini, p. 73 (PDF p. 73), Monza entry visually inspected: H-14 ff. 47–74, Ordinarium, XII–XIII centuries, Monza; cites Dell’Oro–Mambretti (2001). Nearby B-14/121 is explicitly an Ambrosian Manuale fragment, not H14."
+
+[[sources]]
+id = "italian-monza-ordinal-messa2003"
+url = "https://www.antoniano.org/carbajo/prof_bibliografiaViewnota.php?id=1638&lg=it"
+type = "university-hosted-critical-edition-review"
+inspection = "Complete university HTML review by Pietro Messa, Antonianum 78/1 (2003), pp. 187–190 acquired and read. It separates H14 calendar-obituary ff. 1–46 from local order ff. 47–74; identifies edition A pp. 53–77 parallel Mass/Office books, pp. 251–276 initiation, pp. 375–382 Roman rite according to Monza custom, and critical text pp. 431–541. Review evidence is not direct inspection of the 2001 edition."
+
+[[sources]]
+id = "italian-monza-berengar-hoffmann2005"
+url = "https://www.mgh-bibliothek.de/dokumente/BV/BV048149079.pdf"
+type = "critical-manuscript-catalogue-correction"
+inspection = "Whole Hartmut Hoffmann, Zum 2. Band von Bernhard Bischoffs Katalog, Deutsches Archiv 61/1 (2005), pp. 53–72, with issue front matter acquired, 24 PDF pages. Printed p. 71 (PDF p. 23) expressly corrects the treasury Sacramentario di Berengario shelfmark from 89 to 98, at Bischoff record 2898. This conflicts with Westwell (2024)'s 89; do not erase the alias/conflict."
+
+[[sources]]
+id = "italian-monza-berengar-irht98"
+url = "https://liturgicum.irht.cnrs.fr/manuscrit/614133"
+type = "institutional-manuscript-catalogue"
+inspection = "Current indexed IRHT record inspected through web search on 2026-10-20: Monza 98, Sacramentarium, 125 leaves, 265 × 140 mm, 846–855, origin Monza; bibliography Belloni–Ferrari, pp. 194–196, Bischoff II, no. 2898, Gamber II, no. 728. Whole raw IRHT delivery timed out for other exact pages in this lane; no newly acquired raw HTML or manuscript images are claimed. Date/origin conflict with Westwell is retained."
+
+[[sources]]
+id = "italian-monza-f1-dicenso2010"
+url = "https://www.amsmusicology.org/wp-content/uploads/2025/02/2010-indianapolis.pdf"
+type = "scholarly-original-research-abstract"
+inspection = "Whole AMS/SMT Indianapolis 2010 program and abstracts acquired. Daniel DiCenso, How One Source Could Change our Understanding of Chant Transmission: Monza Biblioteca Capitolare f. 1/101, printed pp. 208–209 (PDF pp. 177–178), read. Re-dates the chant unit to ninth-century Bergamo and reports 14 folios, disputing late/fragment labels. This abstract cannot date the entire composite codex or reconcile Ebner's ff. 1–11 count."
+
+[[sources]]
+id = "italian-monza-cathedral2025-rite"
+url = "https://www.duomomonza.it/phocadownload/ilduomo/2025/nov_2025.pdf"
+type = "holding-church-historical-retrospective"
+inspection = "Whole cathedral bulletin November 2025 acquired, 36 PDF pages. Claudio Antonio Fontana, Servare et fovere, printed pp. 21–24, read. Discusses Roman books, Ambrosian holdings, missing patriarchine ritual exemplars, the local ordinary as a coordinating book, and the 1578 dispute. Reports 18 June and 16 October 1578 letters; original archival texts and their full instruments remain uninspected. No normative transition is created from this retrospective."
+
+[[sources]]
+id = "italian-monza-h14-bibale"
+url = "https://bibale.irht.cnrs.fr/51077"
+type = "institutional-manuscript-provenance-catalogue"
+inspection = "Current indexed Bibale record inspected through web search on 2026-10-20: H14 calendar-obituary and cathedral ordinary, 1101–1300; Monza before 1578, Milan 1578–ca 1800, Phillipps 7091, returned 1983. Direct raw HTML request timed out; no new full raw artifact is claimed. Broad catalogue chronology corroborates XII–XIII; custody is not continuous liturgical use."
+
+[[candidates]]
+id = "italian-monza-h14-ordinal"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-state-not-independently-established"
+acquisition_status = "descriptions-and-partial-edition-acquired-original-manuscript-not-acquired"
+transcription_status = "no-verified-complete-transcription"
+collation_status = "not-fully-collated"
+family = "monza-local-roman-order"
+title = "Monza H14 ff. 47–74, Liber ordinarius Modoetiensis"
+date = "12th–13th centuries; broad palaeographical bounds"
+kind = "manuscript-local-liturgical-order-witness"
+status = "bounded-local-order-witness-documented"
+sources = ["italian-monza-frisi1794-v3", "italian-monza-ordinal-latinitas2018", "italian-monza-ordinal-messa2003", "italian-monza-h14-bibale"]
+source_locus = "H14 ff. 47–74; Frisi (1794), vol. III, entry CLXXXVII, pp. 190–201, especially 190–191, 195; Baroffio–Sodi–Suski (2018) p. 73; Messa review of Dell’Oro (2001), volume A pp. 375–382 and 431–541."
+qualification = "Local annual order-book witness, not an altar Missal or a complete Mass Ordinary. Calendar-obituary ff. 1–46 is a separate constituent. Roman rite according to Monza custom is the critical edition's conclusion reported in its review; initiation relationships with Milan do not make the whole book Ambrosian. Frisi's old Milan B.43 description is kept as historical custody, not a new book. Frisi III, p. 190, note 18, reports that the words identifying Ecclesia Modoetiensis were erased but still legible in vestiges; modern H14 identity and local-order classification are independently supported by the 2018 census and the critical-edition review."
+date_role = "manuscript-copying-range"
+chronology_start = 1101
+chronology_end = 1300
+chronology_kind = "manuscript-witness-date"
+chronology_certainty = "catalogue-reported-broad-century-range"
+
+[[candidates]]
+id = "italian-monza-f1-101-sacramentary"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-state-not-independently-established"
+acquisition_status = "descriptions-and-partial-edition-acquired-original-manuscript-not-acquired"
+transcription_status = "no-verified-complete-transcription"
+collation_status = "not-fully-collated"
+family = "monza-held-composite-sacramentary"
+title = "Monza F.1/101 composite Mass antiphoner, sacramentary and lectionary"
+date = "Constituent datings disputed: ninth-century chant unit argued; older catalogues IX–X or XI for codex"
+kind = "manuscript-sacramentary-and-complementary-components-witness"
+status = "components-documented-dates-and-use-unresolved"
+sources = ["italian-monza-ebner1896", "italian-monza-frisi1794-v3", "italian-monza-f1-dicenso2010"]
+source_locus = "Ebner (1896) pp. 108–110, especially chant ff. 1–11 and sacramentary from f. 12; Frisi (1794), vol. III, CXXVI pp. 79–82, formerly E.III; DiCenso (2010) pp. 208–209 dates only the chant witness and gives 14 folios."
+qualification = "Distinct from treasury Berengar 98/89. Composite Mass materials: no inference of one homogeneous date. Ebner describes Ambrosian traces in Canon and two Ambrose formularies alongside Roman prayer material, plus later corrections and incomplete lectionary. Monza custody and possible Bergamo origin do not establish Monza local reception. Dold–Gamber (1957) and Chavasse (1985) remain exact next editions, not read here."
+chronology_layout = "unpositioned-pending-constituent-dating-and-reception"
+
+[[candidates]]
+id = "italian-monza-berengar-98"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-state-not-independently-established"
+acquisition_status = "descriptions-and-partial-edition-acquired-original-manuscript-not-acquired"
+transcription_status = "no-verified-complete-transcription"
+collation_status = "not-fully-collated"
+family = "monza-treasury-royal-sacramentary"
+title = "Monza treasury Sacramentary of Berengar, 98 (89 in some scholarship)"
+date = "Ninth century; IRHT 846–855 conflicts with Westwell's 860s before 867"
+kind = "manuscript-sacramentary-witness"
+status = "components-documented-shelfmark-date-origin-qualified"
+sources = ["latin-early-westwell2024", "italian-monza-berengar-hoffmann2005", "italian-monza-berengar-irht98", "italian-monza-frisi1794-v3"]
+source_locus = "Westwell (2024) introduction pp. 6–7 and Appendix 2 pp. 419–425: 125 leaves; Preface/Canon ff. 1v–5v, Gregorian body ff. 5v–115v; Hoffmann (2005) p. 71 corrects 89 to 98 (Bischoff 2898); IRHT 614133 gives 98."
+qualification = "Named royal intercession at f. 48r and chapel inventories ff. 116v, 124v support a royal association, not a cathedral-wide Monza Eucharistic recension. Westwell's northeastern-French manufacture and Cysoing/Eberhard transfer are qualified arguments; IRHT origin Monza is not silently adopted as manufacture. No historical-parentage or local adoption edge is asserted."
+chronology_layout = "unpositioned-pending-competing-copy-dates-and-exact-holding-identity"
+
+[[sources]]
+id = "italian-ravenna-fragments-stockholm"
+url = "https://www.manuscripta.se/ms/101123"
+type = "institutional-catalogue"
+inspection = "Contents, physical description, origin, provenance, acquisition, license and complete TEI inspected; both S1r/S1v original images inspected. Catalogue identifies the surviving Mass formularies, one 30 x 200 mm strip, Italy/Ravenna? and first-quarter eighth-century dating based on Gamber 1958. LIMIT: Early provenance is unknown; Ravenna is low-certainty attribution. Image inspection verifies fragmentary physical extent and visible liturgical headings, not a complete transcription, independent palaeographic date, or local use."
+
+[[sources]]
+id = "italian-ravenna-fragments-wroclaw"
+url = "https://bibliotekacyfrowa.pl/publication/84013"
+type = "institutional-catalogue"
+inspection = "Whole catalogue HTML and metadata inspected, including 701-750 date, current shelfmark, same-codex relation to Stockholm A 135a and public-domain image declaration. Both original image sides in the linked complete two-canvas GLAM manifest inspected. LIMIT: No Ravenna place of copying or local liturgical use is established by this record. Surviving strips do not supply the missing whole codex or a complete Eucharistic prayer."
+
+[[sources]]
+id = "italian-ravenna-fragments-suski"
+url = "https://czasopisma.uni.opole.pl/index.php/ls/article/download/4803/4232/13680"
+type = "scholarship"
+inspection = "Complete 43-page PDF acquired; title, abstract, bibliography, printed p. 189 items 69-71 and p. 196 item 145 inspected. Item 71 separates the early Gregorian lower layer of Montecassino 271 from two X/XI-century missals; item 145 identifies Stuttgart 100A and its editions. LIMIT: Catalogue descriptions are secondary evidence, not a new collation. Suski's mixed-Gelasian label for Stuttgart 100A differs from other catalogues. Listed page examples include an explicit etc., so they are not a complete denominator."
+
+[[sources]]
+id = "italian-ravenna-fragments-sodi-suski"
+url = "https://www.pontificiaacademialatinitatis.org/wp-content/uploads/rivista-latinitas/interno_Latinitas_1_2022.pdf"
+type = "scholarship"
+inspection = "Whole journal issue acquired; article title p. 45, Milan and Montecassino entries p. 57, Stockholm and Stuttgart entries p. 65 inspected. Gives edition loci for Rotulus, fragment 100A, Stockholm-Wroclaw and Ink.15370 b om. LIMIT: A bibliographic list, not original text collation. The Wroclaw shelfmark printed Akc.1955 K/4 conflicts with the holding library's Akc.1955/3 and is retained only as an alias to resolve. Catalogue genre and origin disagreements remain open."
+
+[[sources]]
+id = "italian-ravenna-fragments-rotulus-ceriani"
+url = "https://archive.org/details/ArchivioStoricoLombardoS2V1/page/n23/mode/2up"
+type = "critical-edition"
+inspection = "Previously acquired whole 944-page 1884 volume and text layer reopened; printed pp. 1-4 and 11-16 inspected, and printed p. 3 image inspected. Ceriani describes the mutilated seven-membrane roll, assigns its prayers to Advent Office use, treats Ravenna provenance as conjectural, and declares editorial spelling corrections. LIMIT: The 1884 dating claim is historical editorial judgment. The printed text expands abbreviations and corrects spellings; it is not an unaltered diplomatic transcription. Neither its Mass-book label elsewhere nor its Advent prayers establish an annual Missal."
+
+[[sources]]
+id = "italian-ravenna-fragments-rotulus-rozein"
+url = "https://orbi.uliege.be/handle/2268/266475"
+type = "scholarship"
+inspection = "Repository record and whole 29-page author postprint acquired; postprint p. 1 and note 2 inspected. Current shelfmark is Milan, Ambrosiana, Archivio Falco Pio di Savoia I sez.n.256(V.N.1); seventh-century recto compilation is distinguished from early-tenth-century verso letters. LIMIT: The article studies the letters, not a fresh edition of the prayers. Seven letters are ascribed to Archbishop John 905-914 and one to Sergius III 904-911; these are not dates for the recto prayers or evidence of their original altar use."
+
+[[sources]]
+id = "italian-ravenna-fragments-munich"
+url = "https://elmss.universityofgalway.ie/catalogue/1835"
+type = "institutional-catalogue"
+inspection = "Current/former shelfmarks, VI ex (576-600), Comes Duplex contents, probable Northern Italian origin and unknown history inspected. LIMIT: The current holding-library shelfmark must be checked before merging with Usuarium 6411's Clm29270(8 alias. This is a lectionary fragment, not a Canon or anaphora witness. Ravenna attribution is unproved."
+
+[[sources]]
+id = "italian-ravenna-fragments-catalogue6347"
+url = "https://usuarium.elte.hu/book/6347/view"
+type = "institutional-catalogue"
+inspection = "Complete downloaded book card inspected: Stuttgart 100A, 600-700, Sacramentary; Gamber 1960; CLLA 650; origin explicitly uncertain in Remark. LIMIT: Catalogue metadata only; geographical origin-table placement is not proof of local use, component completeness, or a distinct recension."
+
+[[sources]]
+id = "italian-ravenna-fragments-catalogue6348"
+url = "https://usuarium.elte.hu/book/6348/view"
+type = "institutional-catalogue"
+inspection = "Complete downloaded book card inspected: Wroclaw-Stockholm fragments, 600-800, Sacramentary; Gamber 1958; CLLA 651; origin explicitly uncertain in Remark. LIMIT: Catalogue metadata only; geographical origin-table placement is not proof of local use, component completeness, or a distinct recension."
+
+[[sources]]
+id = "italian-ravenna-fragments-catalogue6349"
+url = "https://usuarium.elte.hu/book/6349/view"
+type = "institutional-catalogue"
+inspection = "Complete downloaded book card inspected: Stuttgart Ink.15370 b om, 900-1000, Sacramentary; Gamber 1966; CLLA 659; origin explicitly uncertain in Remark. LIMIT: Catalogue metadata only; geographical origin-table placement is not proof of local use, component completeness, or a distinct recension."
+
+[[sources]]
+id = "italian-ravenna-fragments-catalogue6351"
+url = "https://usuarium.elte.hu/book/6351/view"
+type = "institutional-catalogue"
+inspection = "Complete downloaded book card inspected: Montecassino 271 olim 348, 675-700, Sacramentary; Dold 1943; CLLA 701; Lectionary-Sacramentary and uncertain origin in Remark. LIMIT: Catalogue metadata only; geographical origin-table placement is not proof of local use, component completeness, or a distinct recension."
+
+[[candidates]]
+id = "italian-ravenna-stockholm-wroclaw"
+family = "ravenna-attributed-fragment"
+title = "Stockholm A135a and Wroclaw Akc.1955/3: one Gelasian sacramentary's fragments"
+date = "First half of eighth century; A135a catalogue narrows to 700-725; shared-codex catalogue gives 701-750"
+kind = "manuscript-fragment-witness"
+status = "bounded-fragment-local-use-unproved"
+sources = ["italian-ravenna-fragments-stockholm", "italian-ravenna-fragments-wroclaw", "latin-early-elmss-cat-346", "latin-early-westwell2024"]
+source_locus = "Manuscripta ms 101123 Contents/History; Wroclaw publication 84013 metadata and both GLAM canvases; ELMSS 346 CLA XI 1596."
+qualification = "One codex, not two versions. The surviving Mass prayers are bounded; no complete Canon is established. Northern Italy probable; Ravenna? is low-certainty attribution, early provenance unknown. Date bounds are the envelope of differing catalogue datings."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "fragment-attestation-not-recension-proof"
+date_role = "copying-of-surviving-lower-text-or-fragment"
+chronology_start = 700
+chronology_end = 750
+chronology_kind = "manuscript-witness-date"
+chronology_certainty = "catalogue-reported-uncertain-origin"
+acquisition_status = "bounded-original-images-or-catalogue-acquired"
+transcription_status = "no-verified-complete-transcription"
+collation_status = "not-fully-collated"
+
+[[candidates]]
+id = "italian-ravenna-stuttgart-100a"
+family = "ravenna-attributed-fragment"
+title = "Stuttgart Cod.fragm.100A: sacramentary lower text beneath penitential canons"
+date = "Seventh-century lower-text copying; ELMSS 601-700; Suski approximately 650"
+kind = "manuscript-fragment-witness"
+status = "bounded-fragment-local-use-unproved"
+sources = ["latin-early-elmss-cat-1862", "italian-ravenna-fragments-suski", "italian-ravenna-fragments-sodi-suski"]
+source_locus = "ELMSS 1862 CLA IX 1361; Suski 2022 p. 196 item 145; Sodi-Suski 2022 p. 65."
+qualification = "Preserve conflicting type labels: ELMSS Leonine-form, Suski mixed Gelasian, Sodi-Suski pre-Hadrian Gregorian. Origin uncertain in ELMSS; Ravenna attributed elsewhere. Overwrite c. 800 is a separate event, not the Mass-text date."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "fragment-attestation-not-recension-proof"
+date_role = "copying-of-surviving-lower-text-or-fragment"
+chronology_start = 601
+chronology_end = 700
+chronology_kind = "manuscript-witness-date"
+chronology_certainty = "catalogue-reported-uncertain-origin"
+acquisition_status = "bounded-original-images-or-catalogue-acquired"
+transcription_status = "no-verified-complete-transcription"
+collation_status = "not-fully-collated"
+
+[[candidates]]
+id = "italian-ravenna-montecassino-271-lower2"
+family = "ravenna-attributed-fragment"
+title = "Montecassino 271 [palimpsest old 2]: early Gregorian sacramentary and reading fragments"
+date = "VII–VIII lower-text copying, ELMSS 680-720; Usuarium's narrower 675-700 remains a catalogue disagreement"
+kind = "manuscript-fragment-witness"
+status = "bounded-fragment-local-use-unproved"
+sources = ["latin-early-elmss-cat-715-cold", "italian-ravenna-fragments-suski", "latin-early-westwell2024"]
+source_locus = "ELMSS 715 CLA III 376; Suski 2022 p. 189 item 71 versus items 69-70; Westwell 2024 p. 42, note 121 / PDF p. 68."
+qualification = "The early stratum is distinct from two tenth/eleventh-century missal strata and the eleventh-century Gregory Dialogues upper text. Italy is supported; Ravenna? remains attributed. Original complete lower text, Canon extent and use context remain uncollated. ELMSS 715 supplies the plotted 680–720 copying interpretation; Usuarium 6351 gives 675–700, while the indexed IRHT 599830 view gives 691–710 and Ravenna(?). The live IRHT delivery was inaccessible (https://liturgicum.irht.cnrs.fr/manuscrit/599830). These are qualified catalogue disagreements, not one harmonized date or a new palaeographic judgment."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "fragment-attestation-not-recension-proof"
+date_role = "copying-of-surviving-lower-text-or-fragment"
+chronology_start = 680
+chronology_end = 720
+chronology_kind = "manuscript-witness-date"
+chronology_certainty = "catalogue-reported-uncertain-origin"
+acquisition_status = "bounded-original-images-or-catalogue-acquired"
+transcription_status = "no-verified-complete-transcription"
+collation_status = "not-fully-collated"
+
+[[candidates]]
+id = "italian-ravenna-stuttgart-ink15370"
+family = "ravenna-attributed-fragment"
+title = "Stuttgart Ink.15370 b om: separately identified votive-Mass fragment"
+date = "Tenth-century catalogue date 0900-1000"
+kind = "manuscript-fragment-witness"
+status = "bounded-fragment-local-use-unproved"
+sources = ["italian-ravenna-fragments-sodi-suski", "italian-ravenna-fragments-catalogue6349"]
+source_locus = "Usuarium 6349/Gamber CLLA 659; Sodi-Suski 2022 p. 65; Gamber 1966 pp. 246-250; Catella-Dell'Oro-Martini 2005 pp. 522-525."
+qualification = "Separate from palimpsest 100A. Sodi-Suski attributes Ravenna and calls it pre-Hadrian Gregorian; Usuarium explicitly says uncertain origin. No original fragment image or prayer transcription inspected; no stage proposed until component extent is read."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "fragment-attestation-not-recension-proof"
+date_role = "copying-of-surviving-lower-text-or-fragment"
+chronology_start = 900
+chronology_end = 1000
+chronology_kind = "manuscript-witness-date"
+chronology_certainty = "catalogue-reported-uncertain-origin"
+acquisition_status = "bounded-original-images-or-catalogue-acquired"
+transcription_status = "no-verified-complete-transcription"
+collation_status = "not-fully-collated"
+
+[[sources]]
+id = "roman-next-1951-original-tpv"
+url = "https://archive.org/download/ordo-sabbati-sancti/Ordo%20Sabbati%20Sancti_text.pdf"
+type = "primary-book-secondary-public-scan"
+inspection = "1951 TPV title, dated decree, selected ritual loci, final printed p. 39, index and publisher back cover image-inspected in a complete offered 44-page PDF. No whole-text collation."
+sha256 = "3c9a92919264be624e9b9bc132a32a2f881af75f825434866317fd1cb88ca50c"
+limitations = "Public secondary scan; modern text and exact facsimile redistribution are not cleared. The download is whole provider file, not proof of ideal-edition completeness."
+
+[[sources]]
+id = "roman-next-1951-aas-original"
+url = "https://www.vatican.va/archive/aas/documents/AAS-43-1951-ocr.pdf"
+type = "primary-act-official-gazette"
+inspection = "AAS 43 (1951), printed/PDF 128-137, entire decree and published rubrics read from rendered page images; selected booklet loci compared."
+sha256 = "4b80095bae6d93901f28f30bae8f10ff7e3e362d9441695e5fbaf8c057070ebc"
+limitations = "The gazette prints rubrics with references to the Missal; not every physical booklet text or chant."
+
+[[sources]]
+id = "roman-next-1955-march-aas-images"
+url = "https://www.vatican.va/archive/aas/documents/AAS-47-1955-ocr.pdf"
+type = "primary-act-official-gazette"
+inspection = "AAS 47 (1955), printed/PDF 218-224, complete act read from rendered page images with the next-issue boundary at 225. Approval 23 March 1955; effective 1 January 1956."
+source_library_edition_id = "edition.holy-see.acta-apostolicae-sedis.volume-47-1955"
+limitations = "Full published act inspected; not a reconstructed whole Missal or before/after collation of all affected prayers."
+
+[[sources]]
+id = "roman-next-1965-concelebration-public-title"
+url = "https://archive.org/details/bwb_W9-COP-443#page/n4/mode/1up"
+type = "primary-book-public-title-preview"
+inspection = "Public BookReader title leaf 5 / origIndex 4, browser image: Latin title, editio typica, TPV, MCMLXV."
+sha256 = "d7534472c514a861e4402742cf81e8c3514b5a01357e8bb7bb297124f17b86b5"
+limitations = "Title-only preview. Whole book is access-restricted; no body or 104-page extent independently acquired."
+
+[[sources]]
+id = "roman-next-1635-sbn-pbee017510"
+url = "https://opac.sbn.it/bid/PBEE017510"
+type = "institutional-union-catalogue"
+inspection = "Original provider JSON edition, imprint, physical description, signatures, fingerprint and holdings fields inspected. Edition field: Tertia editio in qua missae propriae de sanctis omnes ad longum positae sunt ad maiorem celebrantium commoditatem. Rome, Vatican press, 1635; extent [40], 448, lxxvj, [4] p. : ill. ; 2°; fingerprint m.o- 3130 ,&e. tiro (3) 1635 (R). Distinct setting/issue lead; no original title image or substantive textual identity established."
+sha256 = "f1f6ed195249e366b321a4a064e8756018c16075c0e3e5c07d8bd589e8c4f0e7"
+limitations = "Bibliography and physical-holding descriptions only; no original title image or textual collation. Setting identity across catalogues not established."
+
+[[sources]]
+id = "roman-next-1635-sbn-um1e041839"
+url = "https://opac.sbn.it/bid/UM1E041839"
+type = "institutional-union-catalogue"
+inspection = "Original provider JSON edition, imprint, physical description, signatures, fingerprint and holdings fields inspected. Edition field: Secunda editio, in qua Missae propriae de sanctis ... Rome, Vatican press, 1635; extent [40], 444, lxxvj p. : ill. calcogr. ; fol; fingerprint m.o- 3130 ,&e. tipr (C) 1635 (R). Distinct setting/issue lead; no original title image or substantive textual identity established."
+sha256 = "c0fdd53a9233ba462f301de7a88abba59ac1473470260f168178860a3d1ee698"
+limitations = "Bibliography and physical-holding descriptions only; no original title image or textual collation. Setting identity across catalogues not established."
+
+[[sources]]
+id = "roman-next-1635-sbn-um1e008100"
+url = "https://opac.sbn.it/bid/UM1E008100"
+type = "institutional-union-catalogue"
+inspection = "Original provider JSON edition, imprint, physical description, signatures, fingerprint and holdings fields inspected. No transcribed edition label. Rome, Vatican press, 1635; extent [56!, 572, xcvij, [3! p. : ill. calcogr. ; fol; fingerprint m.o- 3130 t,nc huDe (3) 1635 (R). Distinct setting/issue lead; no original title image or substantive textual identity established."
+sha256 = "bec91e4ca92eb1c1f408e2b7c523fb53dddbc79d80d2ce7e24fd029f5f922ab6"
+limitations = "Bibliography and physical-holding descriptions only; no original title image or textual collation. Setting identity across catalogues not established."
+
+[[sources]]
+id = "italian-padua-bellinati-2014"
+url = "https://drive.google.com/file/d/1iizNbac1eXOmsDRu6tqb8HDdRWL-vLCY/view"
+type = "published-original-archival-and-manuscript-study"
+inspection = "Complete 2014 Claudio Bellinati, Contributo alla storia della cattedrale di Padova nell'età di Giotto e della cappella Scrovegni, 201-page publisher-linked PDF acquired. Printed pp. 26–29, 43–45, 56, 74–79 inspected; pp. 44, 77–78 checked against page images. D.30 is post-1323 and associated with Cathedral Inventory 1350 f. 14v; E.57 Thursday Mass and reservation are described at ff. 89v–92v, Friday communion at ff. 92v–95r. The exact original E.57 leaves and archival inventories were not acquired. Publisher landing route https://www.padovaeilsuoterritorio.it/archivio/quaderni links this public download. At p. 43 the C.47/D.34–Cholet identification is tentative (sembra); p. 44 distinguishes the planned 1352 Holy Cross altar destination from its 1357 construction."
+
+[[sources]]
+id = "italian-padua-toigo-passio-thesis"
+url = "https://tesidottorato.depositolegale.it/bitstream/20.500.14242/109890/4/TESI_DEFINITIVA.pdf"
+type = "university-original-manuscript-study"
+inspection = "Whole Diego Toigo, Intonazioni monodiche della Passione in Italia fra i secoli XIII e XVI, doctoral dissertation, 228-page PDF acquired. Printed pp. 47–48 and manuscript crop on p. 48 checked against image. D.30 is expressly Missale Romanum, early fourteenth century, with Matthew Passion melody at c. 70r/v and Mark at c. 74r/v; B.31 is expressly Roman use for Padua Friars Minor (p. 47 n. 151). Crop does not constitute inspection of the complete original leaf or whole Mass formulary."
+
+[[sources]]
+id = "italian-padua-diocese-exhibit-2021"
+url = "https://ufficiostampa.diocesipadova.it/wp-content/uploads/sites/19/2021/12/04_scheda-codici_incunaboli.pdf"
+type = "official-diocesan-manuscript-exhibition-list"
+inspection = "Entire two-page 21 December 2021 Diocese of Padua Ecce advenit list acquired and inspected. Item 13 names D.30 f. 20v, Epiphany introit Ecce advenit, fourteenth century, Padua. Item 4 identifies D.34 f. 17v as Paris 1281–1292 Franciscan Missal, Christmas major Mass. These are catalogue descriptions of identified leaves, not a direct reading of the original leaves or proof of a distinct Padua recension."
+
+[[sources]]
+id = "italian-padua-calendaria-d30"
+url = "https://www.calendaria.org/calendaria.html"
+type = "specialist-manuscript-calendar-repertoire"
+inspection = "Complete public Calendaria HTML acquired. Padova Biblioteca Capitolare-Archivio D.30 row reports c. 1338, Padova Duomo. This disagrees with IRHT 616628's 1301–1310 copying range; neither value is silently substituted for the other. The calendar row is a specialist index, not inspected original calendar evidence."
+
+[[sources]]
+id = "italian-padua-leto-2025"
+url = "https://www.padovauniversitypress.it/system/files/download-count/attachments/2026-01/9788869384837.pdf"
+type = "university-published-manuscript-study"
+inspection = "Whole 150-page Inferno e Paradiso, first edition 2025 (not 2026 URL year), acquired. Francesca Leto chapter pp. 86–88 inspected and pp. 87–88 checked against images. Notes55 and 59 cite E.57 edited sections 127g (Easter procession before Missa maior) and 140e (Ascension procession before solemn Mass). P.86 reports wider date 1234–1304. The chapter's separate Franciscan Missal exemplar MFR is not E.57 and is not used to supply E.57 prayers."
+
+[[sources]]
+id = "italian-padua-lovato-processioni-abstract"
+url = "https://www.research.unipd.it/handle/11577/1352018"
+type = "university-research-repository"
+inspection = "Complete IRIS record acquired; abstract and file-availability section inspected. Author Antonio Lovato's abstract identifies the 2002 study as direct examination of E.57 and other named cathedral books, including chants prescribed for Mass and Office in local thirteenth–fifteenth-century processions. The record explicitly has no attached file. An abstract is not the full contribution or original manuscript collation."
+
+[[sources]]
+id = "italian-padua-vildera-genealogia-2013"
+url = "https://ojs.zrc-sazu.si/dmd/article/download/2202/1961/0"
+type = "published-original-manuscript-study"
+inspection = "Complete 17-page Anna Vildera, Formulari processionali per il canto del Vangelo Liber generationis, De musica disserenda IX/1–2 (2013), pp. 139–155, acquired. P.139 and source list p. 153 identify E.57 c. 43v, dated c. 1256–1275. Its printed rubric concerns Christmas Matins and is not counted as a Mass proper or complete Eucharistic book."
+
+[[candidates]]
+id = "italian-padua-e57"
+family = "padua-manuscript-holding"
+title = "Padua Cathedral Liber ordinarius E.57: local Eucharistic rubrics"
+date = "Thirteenth-century manuscript; narrower c. 1256–1275 in Vildera 2013, wider 1234–1304 in Leto 2025"
+kind = "manuscript-local-order-book-witness"
+status = "local-rubrics-documented-through-manuscript-studies"
+sources = ["italian-padua-e57-source", "italian-padua-bellinati-2014", "italian-padua-leto-2025", "italian-padua-lovato-processioni-abstract", "italian-padua-vildera-genealogia-2013"]
+source_locus = "Bellinati 2014 pp. 26–29, 77–78: E.57 ff. 1r–7v, 89v–92v, 92v–95r; Leto 2025 pp. 87–88 nn. 55, 59: E.57 edited sections 127g, 140e."
+qualification = "A cathedral order book with explicitly local Mass rubrics, not a complete Padua Missal or an independently collated recension. The primary manuscript and complete 2002 edition/facsimile remain unacquired. E.57's Christmas Matins rubric c. 43v and Leto's separate Franciscan exemplar MFR are not imported as E.57 Eucharistic text."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "bounded-rubrical-witness-state-not-proven-recension"
+date_role = "manuscript-attestation-range"
+chronology_start = 1201
+chronology_end = 1300
+chronology_kind = "manuscript-witness-date"
+chronology_certainty = "publisher-century-with-qualified-scholarly-ranges"
+acquisition_status = "full-studies-acquired-original-manuscript-not-acquired"
+transcription_status = "no-new-verified-transcription"
+collation_status = "named-scholarly-loci-inspected-original-not-fully-collated"
+
+[[candidates]]
+id = "italian-padua-b26"
+family = "padua-manuscript-holding"
+title = "Padua Cathedral B.26: Ildebrandino Conti's missal"
+date = "Attested in bequest 24 September 1352; copying date not established here"
+kind = "manuscript-missal-holding-witness"
+status = "sourced-ownership-and-altar-destination-not-collated"
+sources = ["italian-padua-bellinati-2014"]
+source_locus = "Bellinati 2014 p. 44 and n. 20: B.26, bequest 24 September 1352 for cathedral Holy Cross altar, Inventory 1350 f. 12v; cites Bernardinello 2007 I pp. 205–209."
+qualification = "Identified physical missal and local ownership/destination. No copying date, complete contents, actual celebration or independent Padua recension is established by this bequest report. No dated stage proposed. Bellinati, p. 44, describes the 1352 destination as a Holy Cross altar then planned, actually built in 1357; the bequest does not establish celebration at that altar in 1352."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "holding-witness-not-proven-recension"
+date_role = "reported-ownership-and-destination-not-copying-date"
+chronology_layout = "unpositioned-pending-manuscript-copying-date"
+acquisition_status = "full-study-acquired-original-not-acquired"
+transcription_status = "no-verified-transcription"
+collation_status = "not-fully-collated"
+
+[[candidates]]
+id = "italian-padua-b31-1328"
+family = "padua-manuscript-holding"
+title = "Padua B.31: Roman Missal for the city's Friars Minor"
+date = "5 October 1328, colophon reported by Bellinati 2014"
+kind = "manuscript-roman-franciscan-missal-witness"
+status = "scholarly-described-colophon-and-use-original-uninspected"
+sources = ["italian-padua-bellinati-2014", "italian-padua-toigo-passio-thesis"]
+source_locus = "Bellinati 2014 p. 44 n. 21: dated scribal colophon; Toigo dissertation p. 47 n. 151: Missale Romanum ad usum fratrum minorum civitatis Padue, Matthew Passion c. 80r and unnotated Mark space c. 85r."
+qualification = "Roman use for Padua Friars Minor; Padua copying and custody do not establish a separate Padua diocesan Missal. Reported 1328 colophon has not been checked on the original page. No new local recension or stage proposed."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "roman-franciscan-witness-not-padua-diocesan-recension"
+date_role = "reported-manuscript-copying-date"
+chronology_start = 1328
+chronology_end = 1328
+chronology_kind = "manuscript-witness-date"
+chronology_certainty = "scholarly-reported-colophon"
+acquisition_status = "full-studies-acquired-original-not-acquired"
+transcription_status = "no-verified-transcription"
+collation_status = "not-fully-collated"
+
+[[candidates]]
+id = "italian-padua-cholet-c47-d34"
+family = "padua-manuscript-holding"
+title = "Cholet Franciscan Missal: surviving Padua C.47 and D.34 volumes"
+date = "D.34 dated 1281–1292, Paris, by diocesan catalogue; linked volumes' detailed dating uncollated"
+kind = "complementary-manuscript-missal-volumes"
+status = "sourced-surviving-volumes-and-french-origin"
+sources = ["italian-padua-bellinati-2014", "italian-padua-diocese-exhibit-2021"]
+source_locus = "Bellinati (2014), p. 43, cautiously proposes (sembra) that C.47/D.34 survive from the former three-volume Cholet missal; pp. 43–44, notes 15–17, give owner/donor context. Official diocesan Ecce advenit (2021), item 4, separately identifies D.34 f. 17v as a Paris 1281–1292 Franciscan Missal."
+qualification = "Bellinati's identification of the two volumes with the Cholet missal is tentative. D.34's independently catalogued Paris 1281–1292 Franciscan identity and date do not automatically apply to C.47. Exact divisions, the missing third volume, original leaves, local reception and altar use remain uninspected; no complete Padua book or two recension states are established."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "complementary-witnesses-not-proven-local-recension"
+date_role = "catalogue-copying-range-for-d34-only"
+chronology_layout = "unpositioned-pending-volume-specific-collation"
+acquisition_status = "full-study-and-official-list-acquired-originals-not-acquired"
+transcription_status = "no-verified-transcription"
+collation_status = "not-fully-collated"
+
+[[sources]]
+id = "ocso-src-notitiae-1975-proper"
+url = "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-11-%281975%29/Notitiae-111-112-1975.pdf"
+type = "official-congregation-decree-summary"
+inspection = "Original journal scan, Notitiae 11 (1975) nos. 111–112, printed p. 343/PDF p. 61, visually inspected 2026-10-20: OCSO, 16 September 1975, CD 83/75; confirmation covers Latin prayers and indications for readings of the order's proper Masses. This is the Congregation's published summary, not the signed instrument or attached proper."
+
+[[sources]]
+id = "ocso-src-rituale-1998-latin"
+url = "https://win.ocist.org/pdf/LAT_RITUALE_1998.pdf"
+type = "official-order-latin-ritual-scan"
+inspection = "1998 Langwaden Bernardus-Verlag Latin Ritual, PDF pp. 2–5 title/presentation/contents; PDF p. 24 (printed p. 43) Missale adhibendum; PDF pp. 45–46 (printed pp. 85–87) proper references and additions visually inspected 2026-10-20. The title names both OCist and OCSO. Printed p. 85 distinguishes OCSO CD 83/75 (16 September 1975) and OCist CD 452/77 (9 May 1977), refers to the Rome 1983 Missae propriae, then lists later additions. It refers readers to the 1983 book rather than reproducing that whole proper."
+
+[[sources]]
+id = "ocso-src-notitiae-1983-books"
+url = "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-19-%281983%29/Notitiae-203-1983.pdf"
+type = "official-congregation-publication-bibliography"
+inspection = "Notitiae 19 (1983) no. 203, printed p. 329/PDF p. 43, visually inspected 2026-10-20: under Ordo Cisterciensis, Latin Missae Propriae and Missae Propriae – Lectionarium, Curia Generalis Ordinis, Rome 1983; each has confirmation 9 May 1977, CD 452/77. The heading is OCist; it must not be silently relabelled OCSO."
+
+[[sources]]
+id = "ocso-src-dli-83442"
+url = "https://dli.institute/dlibib/dlibibkatwp.php?layout=dbk&ausgabe=1&nummer=83442&Bestand=c&NurSchweiz=0"
+type = "holding-library-catalogue"
+inspection = "Whole DLI catalogue response acquired and read 2026-10-20: Missae propriae ad usum Ordinis Cisterciensis, Latin, issued by authority of the General Chapter and mandate of Abbot General Sighard Kleiner; Rome 1983; extent 128, 96 pages; includes Lectionarium; shelfmark Lesesaal EDZ OCist, 1983. The catalogue explicitly offers no digitization. Original book title, approval and body leaves remain uninspected."
+
+[[sources]]
+id = "ocso-src-notitiae-1983-gabriella"
+url = "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-19-%281983%29/Notitiae-200-1983.pdf"
+type = "official-congregation-decree-summary"
+inspection = "Notitiae 19 (1983) no. 200, printed pp. 139–140/PDF pp. 37–38, visually inspected 2026-10-20: CD 124/83, 14 February, confirms Latin/Italian collect and Office second reading for Maria Gabriella; CD 125/83, 3 February, allows 22 April in four named OCSO houses, obligatory at Vitorchiano and optional at Tre Fontane, Frattocchie and Valserena. OCist CD 203/83 of 5 February is a separate branch's calendar grant."
+
+[[sources]]
+id = "ocso-src-notitiae-1983-calendar"
+url = "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-19-%281983%29/Notitiae-201-1983.pdf"
+type = "official-congregation-decree-summary"
+inspection = "Notitiae 19 (1983) no. 201, printed p. 202/PDF p. 16, visually inspected 2026-10-20: OCSO, 5 March 1983, Prot. 330/83, permits Maria Gabriella Sagheddu in the order's calendar on 22 April as an optional memorial. This later order-level grant is distinct from the earlier four-house grant; the notice does not expressly repeal Vitorchiano's higher local grade."
+
+[[sources]]
+id = "ocso-src-latin-lectionary-web"
+url = "https://www.ocso.org/uploads/resources/liturgy/cistercian-lectionary/Lectionario-cisterciense-LA.doc"
+type = "official-order-undated-latin-component-delivery"
+inspection = "Whole legacy DOC acquired from the order's current All Documents table 2026-10-20. Binary printable-string extraction identifies the title Supplementum Cisterciense Ordinis Lectionum Missae iuxta Missale Romanum (1969) and assignments. File metadata reports creation/save on 21 July 2010 and seven pages; these are file properties, not proof of a 2010 publication, approval or textual revision. Document was not rendered or collated; relation to the 1983 printed Lectionarium remains open."
+
+[[sources]]
+id = "ocso-src-vitorchiano-2014"
+url = "https://www.trappistevitorchiano.it/b-m-gabriella/eventi-sulla-beata-gabriella/centenario-della-nascita-della-b-maria-gabriella-sagheddu-3/"
+type = "house-primary-celebration-report"
+inspection = "Whole house HTML acquired 2026-10-20; article publication metadata gives 2 May 2014, later modification 5 August 2024. HTML lines 484, 489–499 identify a celebration of Maria Gabriella deferred from 22 April because of the Easter octave, with Mass opening the festive day and sisters of Valserena present. This is concrete house celebration testimony, not identification of a Latin proper or printing used."
+
+[[candidates]]
+id = "ocso-latin-proper-1975"
+family = "Cistercians of the Strict Observance (OCSO)"
+title = "OCSO Latin prayers and reading indications for proper Masses, CD 83/75"
+kind = "Latin-Mass-proper-approval-witness"
+date = "16 September 1975"
+date_role = "confirmation of Latin prayers and reading indications; not a printing date"
+sources = ["ocso-src-notitiae-1975-proper", "ocso-src-rituale-1998-latin"]
+source_locus = "Notitiae 11 (1975) nos. 111–112, p. 343/PDF p. 61; Rituale Cisterciense 1998 p. 85/PDF p. 45"
+qualification = "Published official confirmation expressly names the Strict Observance branch. The exact attached 1975 proper and original signed decree remain unacquired. Descriptive catalogue title identifies the confirmed component, not an inspected book title. A later shared Ritual refers to the Rome 1983 proper; it does not establish identical entire books or dated house use."
+status = "official-component-approval-documented-original-book-open"
+language_priority = ["Latin"]
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "scoped-approval-witness-not-whole-missal-recension"
+chronology_start = 1975
+chronology_end = 1975
+chronology_kind = "approval"
+acquisition_status = "official-notice-acquired-attached-proper-not-acquired"
+transcription_status = "no-new-verified-transcription"
+collation_status = "approval-notice-image-checked-proper-text-unexamined"
+chronology_certainty = "explicit-published-confirmation-date"
+
+[[candidates]]
+id = "ocso-shared-proper-1983"
+family = "Cistercian Latin proper (OCist edition; OCSO reference)"
+title = "Missae propriae ad usum Ordinis Cisterciensis, with Lectionarium"
+kind = "complementary-Latin-Mass-proper-and-lectionary"
+date = "Rome 1983; OCist confirmation 9 May 1977"
+date_role = "1983 publication; distinct 1977 OCist and 1975 OCSO approvals"
+sources = ["ocso-src-dli-83442", "ocso-src-notitiae-1983-books", "ocso-src-rituale-1998-latin"]
+source_locus = "DLI 83442; Notitiae 19 (1983) no. 203, p. 329/PDF p. 43; shared Ritual 1998 p. 85/PDF p. 45"
+qualification = "DLI identifies Latin Rome 1983, 128 and 96 pages, with Lectionarium and Sighard Kleiner's mandate. The official bibliography places the two components under Ordo Cisterciensis and confirms both under CD 452/77 of 9 May 1977. The shared OCist/OCSO Ritual points to this edition alongside branch-specific approvals. This supports an OCSO-related source witness, not an independently issued whole OCSO Missal, universal reception of every reading, or identification of an OCSO-owned printing. Original book leaves remain uninspected."
+status = "exact-bibliographic-identity-original-book-not-acquired"
+language_priority = ["Latin"]
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "complementary-component-witness-not-proven-new-recension"
+chronology_start = 1983
+chronology_end = 1983
+chronology_kind = "publication"
+acquisition_status = "official-bibliography-and-library-record-acquired-original-book-unavailable-at-identified-route"
+transcription_status = "no-new-verified-transcription"
+collation_status = "bibliography-image-checked-original-proper-and-lectionary-unexamined"
+chronology_certainty = "contemporary-official-bibliography-and-holding-catalogue-year"
+
+[[candidates]]
+id = "ocso-gabriella-1983-component"
+family = "Cistercians of the Strict Observance (OCSO)"
+title = "Maria Gabriella Sagheddu: Latin Mass collect and 22 April calendar grants"
+kind = "Latin-Mass-proper-and-calendar-amendment-witness"
+date = "3 and 14 February; 5 March 1983"
+date_role = "separate local calendar, text and order calendar approvals"
+sources = ["ocso-src-notitiae-1983-gabriella", "ocso-src-notitiae-1983-calendar", "ocso-src-rituale-1998-latin", "ocso-src-vitorchiano-2014"]
+source_locus = "Notitiae 19 (1983) no. 200, pp. 139–140/PDF pp. 37–38; no. 201, p. 202/PDF p. 16; Ritual 1998 pp. 85–86/PDF pp. 45–46; Vitorchiano house report dated 2 May 2014"
+qualification = "CD 124/83 confirms the Latin/Italian collect and Office second reading; the latter is not a Mass lection. CD 125/83 names four houses with distinct ranks; Prot. 330/83 later permits an order-calendar optional memorial. The later Ritual prints the Latin collect at p. 86, but this lane supplies no prayer payload or complete collation. The 2014 house report establishes celebration, without an exact book/language identification. None of these is a general approval of the entire Cistercian proper in 1983."
+status = "component-and-jurisdiction-documented"
+language_priority = ["Latin"]
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "scoped-calendar-and-proper-addition-not-whole-book-recension"
+chronology_start = 1983
+chronology_end = 1983
+chronology_kind = "approval"
+acquisition_status = "official-notices-and-later-Latin-witness-acquired-original-signed-instruments-open"
+transcription_status = "no-new-verified-transcription"
+collation_status = "notice-images-checked-collect-witness-inspected-no-complete-text-collation"
+chronology_certainty = "explicit-published-confirmation-date"
+
+[[candidates]]
+id = "ocso-latin-lectionary-web-undated"
+family = "Cistercians of the Strict Observance (OCSO)"
+title = "Supplementum Cisterciense Ordinis Lectionum Missae iuxta Missale Romanum (1969)"
+kind = "undated-official-Latin-lectionary-supplement-delivery"
+date = "undated; file creation/save metadata 21 July 2010"
+date_role = "file metadata only; publication and approval dates unestablished"
+sources = ["ocso-src-latin-lectionary-web"]
+qualification = "The current order site supplies a legacy DOC with a Latin Mass-reading supplement title. File dates cannot place a historical stage. Its body is not rendered or collated, and identity with the Rome 1983 Lectionarium, separate approval, completeness and house use are unestablished."
+status = "delivery-acquired-historical-edition-identity-open"
+language_priority = ["Latin"]
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "component-delivery-not-proven-new-recension"
+chronology_layout = "unpositioned-pending-edition-and-approval-identity"
+acquisition_status = "whole-official-DOC-delivery-acquired"
+transcription_status = "unverified-printable-string-discovery-only"
+collation_status = "not-rendered-not-collated"
+
+[[sources]]
+id = "permissions-followup-src-broome-acbc2024"
+url = "https://s3.ap-southeast-2.amazonaws.com/acbcwebsite/Articles/Media%20Releases/2024-05-07%20Bishops%20approve%20Mass%20of%20the%20Land%20of%20the%20Holy%20Spirit.pdf"
+type = "original-conference-media-release"
+title = "ACBC, Bishops approve Mass of the Land of the Holy Spirit, 7 May 2024"
+inspection = "Whole delivered two-page original release acquired and extracted; both pages read. Page 1 distinguishes conference approval and subsequent Roman recognitio submission and reports May 1973 experimental permission; page 2 identifies Liturgy Brisbane 2018 publication and Warmun presentation and celebration."
+limitations = "No signed recognitio or exact 2018 book supplied. This institutional release's historical account is not the original 1973 diocesan instrument. Modern source retained only in scratch."
+inspected_on = "2026-10-20"
+
+[[sources]]
+id = "permissions-followup-src-broome-plenary2024"
+url = "https://s3.ap-southeast-2.amazonaws.com/acbcwebsite/Plenary%20Meetings/Summary%20of%20Bishops%20Plenary%20-%20May%202024%20b.pdf"
+type = "official-conference-plenary-summary"
+title = "ACBC General Secretariat, Summary of Bishops Plenary, May 2024"
+inspection = "Whole four-page delivered PDF acquired; PDF p.3 Liturgy paragraph read, confirming conference approval for Broome and subsequent submission for recognitio."
+limitations = "Summary is not the signed conference motion, submitted annex or Roman recognitio. PDF metadata generation in October 2024 does not redate the May meeting. Modern source retained only in scratch."
+inspected_on = "2026-10-20"
+
+[[sources]]
+id = "permissions-followup-src-broome-use2026"
+url = "https://broomediocese.org/wp-content/uploads/2026/07/Walking-Together-13-Part1.pdf"
+type = "official-diocesan-contemporary-use-report"
+title = "Diocese of Broome, Walking Together volume 13 (printed June 2026; July archive/upload), Part 1: Pentecost 2026 – Warmun"
+inspection = "Whole delivered six-page PDF acquired; text searched, PDF pp.1,3 read and visually checked. Cover explicitly gives June 2026 and volume 13, while the archive label and upload URL use July. The article directly names the Missa Terra Spiritus Sancti, Fr Brian presiding and Bishop Tim concelebrating at Pentecost 2026."
+limitations = "Names adaptation but not exact service-copy imprint, complete components or Roman instrument. Celebration date expressed as Pentecost 2026, without an inferred civil day; July archive/upload does not redate the June printed issue. Modern source retained only in scratch."
+inspected_on = "2026-10-20"
+
+[[sources]]
+id = "permissions-followup-src-india1970-use"
+url = "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-06-%281970%29/Notitiae-052-1970.pdf"
+type = "official-contemporary-celebration-notice"
+title = "Peculiaritates liturgicae pro India, Notitiae 6 (1970), p.89"
+inspection = "Whole delivered 40-page PDF acquired; printed p.89 / PDF p.15 read in extracted text and visually. Notice explicitly links the 15 February 1970 Rome concelebration by Archbishop Simon Lourdusamy to the 25 April 1969 concessions."
+limitations = "No exact service copy or new anaphora is identified; the notice is not a territorial extension decree. Modern journal retained only in scratch."
+inspected_on = "2026-10-20"
+
+[[sources]]
+id = "permissions-followup-src-india1970-clarification"
+url = "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-06-%281970%29/Notitiae-056-1970.pdf"
+type = "official-contemporary-implementation-report"
+title = "Aptatio liturgiae in India, Notitiae 6 (1970), p.282"
+inspection = "Whole delivered 48-page PDF acquired; printed p.282 / PDF p.24 read in extracted text and visually. March 1970 episcopal reaffirmation and optional, whole/partial, gradual introduction after preparation reported, citing Cardinal Gracias and Word and Worship 3 (1970), pp.192–193."
+limitations = "Original conference minute and Gracias communication not independently acquired; this report does not approve a new Indian anaphora or exact complete altar book. Modern journal retained only in scratch."
+inspected_on = "2026-10-20"
+
+[[sources]]
+id = "permissions-followup-src-india1973-report"
+url = "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-09-%281973%29/Notitiae-080-1973.pdf"
+type = "official-journal-meeting-report-and-roman-letter-excerpts"
+title = "India: CBCI Madras meeting, 6–14 April 1972, Notitiae 9 (1973), pp.75–77"
+inspection = "Whole delivered 48-page image-only PDF acquired. Printed pp.75–77 / PDF pp.33–35 visually read. Page 76 II.1 gives 28 November 1971 obligatory English Lectionary/Order/Holy Week implementation; III.5 and p.77 n.1 distinguish the Indian anaphora proposal, voting dispute, 30 May and 24 July 1972 Roman replies and apparently unmet prior Roman-study submission requirement."
+limitations = "Meeting report credits D.S. Amalorpavadass, Word and Worship 5 (1972), pp.223–242; editorial footnote supplies qualifications. Neither full original letter nor complete experimental order acquired. No post-1973 approval absence asserted. Modern journal retained only in scratch."
+inspected_on = "2026-10-20"
+
+[[sources]]
+id = "french-agde-6872-usuarium"
+url = "https://usuarium.elte.hu/book/6872/view"
+type = "university-research-catalogue"
+checked_on = "2026-10-20"
+inspection_status = "inspected"
+inspection = "Complete catalogue HTML acquired; bibliographic metadata table read directly. Origin: Agde (FR); Genre: Missal (Mass); Age: 1765; Shelfmark of library: BM Besançon, ARCH.M.II.2; Catalogue: Amiet, 6B."
+limitations = "Catalogue evidence only. No original prayer, rubric, calendar or Order of Mass was inspected; no substantive recension, approval, reception or complete text established."
+text_acquisition = "complete-catalogue-html-research-copy; no-canonical-source-payload"
+sha256 = "a4b9297ea8ded092e3aa3da95cc388dd577b83e00e741de04fb7f411f56862c3"
+byte_count = 16483
+full_contents_examined = false
+rights_note = "Project-created bibliographic metadata only; exact university HTML wrapper is retained in scratch and has no affirmative repository redistribution grant."
+
+[[sources]]
+id = "french-agde-6873-usuarium"
+url = "https://usuarium.elte.hu/book/6873/view"
+type = "university-research-catalogue"
+checked_on = "2026-10-20"
+inspection_status = "inspected"
+inspection = "Complete catalogue HTML acquired; bibliographic metadata table read directly. Origin: Agde (FR); Genre: Missal (Mass); Age: 1766; Shelfmark of library: BNF Paris, B-152; Catalogue: Amiet, 0007 BNF Paris Digit., B-152."
+limitations = "Catalogue evidence only. No original prayer, rubric, calendar or Order of Mass was inspected; no substantive recension, approval, reception or complete text established."
+text_acquisition = "complete-catalogue-html-research-copy; no-canonical-source-payload"
+sha256 = "5b74afdf2ae69a3109063d3c9623464bb1f49a402eb755c4795599a4c709abf3"
+byte_count = 16670
+full_contents_examined = false
+rights_note = "Project-created bibliographic metadata only; exact university HTML wrapper is retained in scratch and has no affirmative repository redistribution grant."
+
+[[sources]]
+id = "french-albi-6875-usuarium"
+url = "https://usuarium.elte.hu/book/6875/view"
+type = "university-research-catalogue"
+checked_on = "2026-10-20"
+inspection_status = "inspected"
+inspection = "Complete catalogue HTML acquired; bibliographic metadata table read directly. Origin: Albi (FR); Genre: Missal (Mass); Age: 1764; Catalogue: Amiet, 0008B."
+limitations = "Catalogue evidence only. No original prayer, rubric, calendar or Order of Mass was inspected; no substantive recension, approval, reception or complete text established."
+text_acquisition = "complete-catalogue-html-research-copy; no-canonical-source-payload"
+sha256 = "0907c76e8e4e6cf414a1953f170dc4ce917d713aebe418968fbe0d7f1e9c7954"
+byte_count = 16186
+full_contents_examined = false
+rights_note = "Project-created bibliographic metadata only; exact university HTML wrapper is retained in scratch and has no affirmative repository redistribution grant."
+
+[[sources]]
+id = "french-albi-6876-usuarium"
+url = "https://usuarium.elte.hu/book/6876/view"
+type = "university-research-catalogue"
+checked_on = "2026-10-20"
+inspection_status = "inspected"
+inspection = "Complete catalogue HTML acquired; bibliographic metadata table read directly. Origin: Albi (FR); Genre: Missal (Mass); Age: 1766; Catalogue: Amiet, 0009 BU Toulouse Digit., Res 1341."
+limitations = "Catalogue evidence only. No original prayer, rubric, calendar or Order of Mass was inspected; no substantive recension, approval, reception or complete text established."
+text_acquisition = "complete-catalogue-html-research-copy; no-canonical-source-payload"
+sha256 = "6d63b2608b2e248b872afd8243ceb8b1ea2b4b0380854cae9d49d5869f773652"
+byte_count = 16581
+full_contents_examined = false
+rights_note = "Project-created bibliographic metadata only; exact university HTML wrapper is retained in scratch and has no affirmative repository redistribution grant."
+
+[[sources]]
+id = "french-albi-6877-usuarium"
+url = "https://usuarium.elte.hu/book/6877/view"
+type = "university-research-catalogue"
+checked_on = "2026-10-20"
+inspection_status = "inspected"
+inspection = "Complete catalogue HTML acquired; bibliographic metadata table read directly. Origin: Albi (FR); Genre: Missal (Mass); Age: 1846; Catalogue: Amiet, 0010."
+limitations = "Catalogue evidence only. No original prayer, rubric, calendar or Order of Mass was inspected; no substantive recension, approval, reception or complete text established."
+text_acquisition = "complete-catalogue-html-research-copy; no-canonical-source-payload"
+sha256 = "6231ed6a8e49f1eb26a2c883b67bc7e47939ab2aca192bbd66fb5ecba7850a77"
+byte_count = 16185
+full_contents_examined = false
+rights_note = "Project-created bibliographic metadata only; exact university HTML wrapper is retained in scratch and has no affirmative repository redistribution grant."
+
+[[sources]]
+id = "french-pamiers-6904-usuarium"
+url = "https://usuarium.elte.hu/book/6904/view"
+type = "university-research-catalogue"
+checked_on = "2026-10-20"
+inspection_status = "inspected"
+inspection = "Complete catalogue HTML acquired; bibliographic metadata table read directly. Original title: Missale Appamiense; Origin: Pamiers (FR); Genre: Missal (Mass); Age: 1782; Catalogue: Amiet, 0075."
+limitations = "Catalogue evidence only. No original prayer, rubric, calendar or Order of Mass was inspected; no substantive recension, approval, reception or complete text established."
+text_acquisition = "complete-catalogue-html-research-copy; no-canonical-source-payload"
+sha256 = "df7bf1d97cad952eaceabd4aba007b6f670bc6c1d60350eb1f246a3f620e7c87"
+byte_count = 16570
+full_contents_examined = false
+rights_note = "Project-created bibliographic metadata only; exact university HTML wrapper is retained in scratch and has no affirmative repository redistribution grant."
+
+[[sources]]
+id = "french-pamiers-6905-usuarium"
+url = "https://usuarium.elte.hu/book/6905/view"
+type = "university-research-catalogue"
+checked_on = "2026-10-20"
+inspection_status = "inspected"
+inspection = "Complete catalogue HTML acquired; bibliographic metadata table read directly. Original title: Missale Appamiense; Origin: Pamiers (FR); Genre: Missal (Mass); Age: 1845; Shelfmark of library: BNF Paris, B-0773; Catalogue: Amiet, 0076."
+limitations = "Catalogue evidence only. No original prayer, rubric, calendar or Order of Mass was inspected; no substantive recension, approval, reception or complete text established."
+text_acquisition = "complete-catalogue-html-research-copy; no-canonical-source-payload"
+sha256 = "525667ea8e201cff2608565ed9ade00954ed758b91a1ee6355a5d408ad6df060"
+byte_count = 16678
+full_contents_examined = false
+rights_note = "Project-created bibliographic metadata only; exact university HTML wrapper is retained in scratch and has no affirmative repository redistribution grant."
+
+[[sources]]
+id = "french-dax-7905-usuarium"
+url = "https://usuarium.elte.hu/book/7905/view"
+type = "university-research-catalogue"
+checked_on = "2026-10-20"
+inspection_status = "inspected"
+inspection = "Complete catalogue HTML acquired; bibliographic metadata table read directly. Original title: Missale Aquense; Origin: Dax (FR); Genre: Missal (Mass); Age: 1506 (before); Catalogue: Amiet, 77 B. The Remark explicitly describes a lost printed missal, no available item, with trade evidence dated 26 August 1506; its underlying cited documentary source was not independently inspected."
+limitations = "Catalogue evidence only. No original prayer, rubric, calendar or Order of Mass was inspected; no substantive recension, approval, reception or complete text established."
+text_acquisition = "complete-catalogue-html-research-copy; no-canonical-source-payload"
+sha256 = "e636e843e2c5c316df8348cc5a6384d96f3311d052a750f1e1f5ddf41da848b5"
+byte_count = 23215
+full_contents_examined = false
+rights_note = "Project-created bibliographic metadata only; exact university HTML wrapper is retained in scratch and has no affirmative repository redistribution grant."
+
+[[sources]]
+id = "french-dax-6907-usuarium"
+url = "https://usuarium.elte.hu/book/6907/view"
+type = "university-research-catalogue"
+checked_on = "2026-10-20"
+inspection_status = "inspected"
+inspection = "Complete catalogue HTML acquired; bibliographic metadata table read directly. Original title: Missale Aquense; Origin: Dax (FR); Genre: Missal (Mass); Age: 1779; Shelfmark of library: BM Besançon, Arch.G.II.11; Catalogue: Amiet, 0078."
+limitations = "Catalogue evidence only. No original prayer, rubric, calendar or Order of Mass was inspected; no substantive recension, approval, reception or complete text established."
+text_acquisition = "complete-catalogue-html-research-copy; no-canonical-source-payload"
+sha256 = "85874375ffdb6571446543d661bfeea83bec4d885ce3d7cb43ae9266697b5f5a"
+byte_count = 16676
+full_contents_examined = false
+rights_note = "Project-created bibliographic metadata only; exact university HTML wrapper is retained in scratch and has no affirmative repository redistribution grant."
+
+[[sources]]
+id = "french-auch-6924-usuarium"
+url = "https://usuarium.elte.hu/book/6924/view"
+type = "university-research-catalogue"
+checked_on = "2026-10-20"
+inspection_status = "inspected"
+inspection = "Complete catalogue HTML acquired; bibliographic metadata table read directly. Original title: Liber missalis ad usum ecclesie metropolitane Beate Marie Auxis; Origin: Auch (FR); Genre: Missal (Mass); Age: 1491; Shelfmark of library: Grand Sém. Auch; Catalogue: Amiet, 0119 USTC, 201090."
+limitations = "Catalogue evidence only. No original prayer, rubric, calendar or Order of Mass was inspected; no substantive recension, approval, reception or complete text established."
+text_acquisition = "complete-catalogue-html-research-copy; no-canonical-source-payload"
+sha256 = "29ca33af2aaf25628be5e0cbfab5e65d5f5b9b935b3a18e1b1c087e184001c2f"
+byte_count = 16899
+full_contents_examined = false
+rights_note = "Project-created bibliographic metadata only; exact university HTML wrapper is retained in scratch and has no affirmative repository redistribution grant."
+
+[[sources]]
+id = "french-auch-6925-usuarium"
+url = "https://usuarium.elte.hu/book/6925/view"
+type = "university-research-catalogue"
+checked_on = "2026-10-20"
+inspection_status = "inspected"
+inspection = "Complete catalogue HTML acquired; bibliographic metadata table read directly. Original title: Missale Auscitanum; Origin: Auch (FR); Genre: Missal (Mass); Age: 1753; Shelfmark of library: BNF Paris, B-124; Catalogue: Amiet, 0122."
+limitations = "Catalogue evidence only. No original prayer, rubric, calendar or Order of Mass was inspected; no substantive recension, approval, reception or complete text established."
+text_acquisition = "complete-catalogue-html-research-copy; no-canonical-source-payload"
+sha256 = "7c4e7dc75e3e89d90e158b7714095bab736903adfcee93e79e00f2dc09eb5861"
+byte_count = 16674
+full_contents_examined = false
+rights_note = "Project-created bibliographic metadata only; exact university HTML wrapper is retained in scratch and has no affirmative repository redistribution grant."
+
+[[sources]]
+id = "french-auch-6926-usuarium"
+url = "https://usuarium.elte.hu/book/6926/view"
+type = "university-research-catalogue"
+checked_on = "2026-10-20"
+inspection_status = "inspected"
+inspection = "Complete catalogue HTML acquired; bibliographic metadata table read directly. Original title: Missale Auscitanum; Origin: Auch (FR); Genre: Missal (Mass); Age: 1836; Shelfmark of library: BNF Paris, B-125; Catalogue: Amiet, 0123."
+limitations = "Catalogue evidence only. No original prayer, rubric, calendar or Order of Mass was inspected; no substantive recension, approval, reception or complete text established."
+text_acquisition = "complete-catalogue-html-research-copy; no-canonical-source-payload"
+sha256 = "097b5179688f9f2c1012931a6de891c13e1cf00cde15778ca1fd6094193d6a06"
+byte_count = 16674
+full_contents_examined = false
+rights_note = "Project-created bibliographic metadata only; exact university HTML wrapper is retained in scratch and has no affirmative repository redistribution grant."
+
+[[candidates]]
+id = "french-agde-usuarium-6872"
+family = "historic-agde-use"
+title = "Missale Agathense"
+date = "1765"
+kind = "printed-edition-candidate"
+status = "checked-catalogue-metadata"
+sources = ["french-agde-6872-usuarium"]
+source_locus = "Origin: Agde (FR); Genre: Missal (Mass); Age: 1765; Shelfmark of library: BM Besançon, ARCH.M.II.2; Catalogue: Amiet, 6B"
+qualification = "An individually catalogued witness in the bounded Amiet-table selection. A catalogue age and a different printing do not establish substantive revision, local authorization or use. Original-book inspection and comparison remain open."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-revision-candidate-not-yet-collated"
+date_role = "printed-witness-publication"
+chronology_start = 1765
+chronology_end = 1765
+chronology_kind = "printed-witness-publication"
+chronology_certainty = "catalogue-reported-year; original-title-leaf-uninspected"
+
+[[candidates]]
+id = "french-agde-usuarium-6873"
+family = "historic-agde-use"
+title = "Missale Agathense"
+date = "1766"
+kind = "printed-edition-candidate"
+status = "checked-catalogue-metadata"
+sources = ["french-agde-6873-usuarium"]
+source_locus = "Origin: Agde (FR); Genre: Missal (Mass); Age: 1766; Shelfmark of library: BNF Paris, B-152; Catalogue: Amiet, 0007 BNF Paris Digit., B-152"
+qualification = "An individually catalogued witness in the bounded Amiet-table selection. A catalogue age and a different printing do not establish substantive revision, local authorization or use. Original-book inspection and comparison remain open."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-revision-candidate-not-yet-collated"
+date_role = "printed-witness-publication"
+chronology_start = 1766
+chronology_end = 1766
+chronology_kind = "printed-witness-publication"
+chronology_certainty = "catalogue-reported-year; original-title-leaf-uninspected"
+
+[[candidates]]
+id = "french-albi-usuarium-6875"
+family = "historic-albi-use"
+title = "Missale Albiense"
+date = "1764"
+kind = "printed-edition-candidate"
+status = "checked-catalogue-metadata"
+sources = ["french-albi-6875-usuarium"]
+source_locus = "Origin: Albi (FR); Genre: Missal (Mass); Age: 1764; Catalogue: Amiet, 0008B"
+qualification = "An individually catalogued witness in the bounded Amiet-table selection. A catalogue age and a different printing do not establish substantive revision, local authorization or use. Original-book inspection and comparison remain open."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-revision-candidate-not-yet-collated"
+date_role = "printed-witness-publication"
+chronology_start = 1764
+chronology_end = 1764
+chronology_kind = "printed-witness-publication"
+chronology_certainty = "catalogue-reported-year; original-title-leaf-uninspected"
+
+[[candidates]]
+id = "french-albi-usuarium-6876"
+family = "historic-albi-use"
+title = "Missale Albiense"
+date = "1766"
+kind = "printed-edition-candidate"
+status = "checked-catalogue-metadata"
+sources = ["french-albi-6876-usuarium"]
+source_locus = "Origin: Albi (FR); Genre: Missal (Mass); Age: 1766; Catalogue: Amiet, 0009 BU Toulouse Digit., Res 1341"
+qualification = "An individually catalogued witness in the bounded Amiet-table selection. A catalogue age and a different printing do not establish substantive revision, local authorization or use. Original-book inspection and comparison remain open."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-revision-candidate-not-yet-collated"
+date_role = "printed-witness-publication"
+chronology_start = 1766
+chronology_end = 1766
+chronology_kind = "printed-witness-publication"
+chronology_certainty = "catalogue-reported-year; original-title-leaf-uninspected"
+
+[[candidates]]
+id = "french-albi-usuarium-6877"
+family = "historic-albi-use"
+title = "Missale Albiense"
+date = "1846"
+kind = "printed-edition-candidate"
+status = "checked-catalogue-metadata"
+sources = ["french-albi-6877-usuarium"]
+source_locus = "Origin: Albi (FR); Genre: Missal (Mass); Age: 1846; Catalogue: Amiet, 0010"
+qualification = "An individually catalogued witness in the bounded Amiet-table selection. A catalogue age and a different printing do not establish substantive revision, local authorization or use. Original-book inspection and comparison remain open."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-revision-candidate-not-yet-collated"
+date_role = "printed-witness-publication"
+chronology_start = 1846
+chronology_end = 1846
+chronology_kind = "printed-witness-publication"
+chronology_certainty = "catalogue-reported-year; original-title-leaf-uninspected"
+
+[[candidates]]
+id = "french-pamiers-usuarium-6904"
+family = "historic-pamiers-use"
+title = "Missale Appamiense"
+date = "1782"
+kind = "printed-edition-candidate"
+status = "checked-catalogue-metadata"
+sources = ["french-pamiers-6904-usuarium"]
+source_locus = "Original title: Missale Appamiense; Origin: Pamiers (FR); Genre: Missal (Mass); Age: 1782; Catalogue: Amiet, 0075"
+qualification = "An individually catalogued witness in the bounded Amiet-table selection. A catalogue age and a different printing do not establish substantive revision, local authorization or use. Original-book inspection and comparison remain open."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-revision-candidate-not-yet-collated"
+date_role = "printed-witness-publication"
+chronology_start = 1782
+chronology_end = 1782
+chronology_kind = "printed-witness-publication"
+chronology_certainty = "catalogue-reported-year; original-title-leaf-uninspected"
+
+[[candidates]]
+id = "french-pamiers-usuarium-6905"
+family = "historic-pamiers-use"
+title = "Missale Appamiense"
+date = "1845"
+kind = "printed-edition-candidate"
+status = "checked-catalogue-metadata"
+sources = ["french-pamiers-6905-usuarium"]
+source_locus = "Original title: Missale Appamiense; Origin: Pamiers (FR); Genre: Missal (Mass); Age: 1845; Shelfmark of library: BNF Paris, B-0773; Catalogue: Amiet, 0076"
+qualification = "An individually catalogued witness in the bounded Amiet-table selection. A catalogue age and a different printing do not establish substantive revision, local authorization or use. Original-book inspection and comparison remain open."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-revision-candidate-not-yet-collated"
+date_role = "printed-witness-publication"
+chronology_start = 1845
+chronology_end = 1845
+chronology_kind = "printed-witness-publication"
+chronology_certainty = "catalogue-reported-year; original-title-leaf-uninspected"
+
+[[candidates]]
+id = "french-dax-usuarium-7905"
+family = "historic-dax-use"
+title = "Missale Aquense"
+date = "By 26 August 1506 according to catalogue-attributed trade evidence; publication year unestablished"
+kind = "lost-print-documentary-lead"
+status = "checked-catalogue-metadata"
+sources = ["french-dax-7905-usuarium"]
+source_locus = "Original title: Missale Aquense; Origin: Dax (FR); Genre: Missal (Mass); Age: 1506 (before); Catalogue: Amiet, 77 B"
+qualification = "USUARIUM describes a lost printed Dax missal, known from book-trade testimony by 26 August 1506; no surviving item, publication year, printer, or literal text established. The cited Dubarat/documentary testimony remains uninspected."
+scope_disposition = "in-scope-historical-eucharistic-book-lead"
+version_status = "witness-or-revision-candidate-not-yet-collated"
+date_role = "documentary-terminus-ante-quem-attributed-by-catalogue"
+date_status = "unresolved"
+chronology_layout = "unpositioned-pending-date-evidence-or-dispute-resolution"
+
+[[candidates]]
+id = "french-dax-usuarium-6907"
+family = "historic-dax-use"
+title = "Missale Aquense"
+date = "1779"
+kind = "printed-edition-candidate"
+status = "checked-catalogue-metadata"
+sources = ["french-dax-6907-usuarium"]
+source_locus = "Original title: Missale Aquense; Origin: Dax (FR); Genre: Missal (Mass); Age: 1779; Shelfmark of library: BM Besançon, Arch.G.II.11; Catalogue: Amiet, 0078"
+qualification = "An individually catalogued witness in the bounded Amiet-table selection. A catalogue age and a different printing do not establish substantive revision, local authorization or use. Original-book inspection and comparison remain open."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-revision-candidate-not-yet-collated"
+date_role = "printed-witness-publication"
+chronology_start = 1779
+chronology_end = 1779
+chronology_kind = "printed-witness-publication"
+chronology_certainty = "catalogue-reported-year; original-title-leaf-uninspected"
+
+[[candidates]]
+id = "french-auch-usuarium-6924"
+family = "historic-auch-use"
+title = "Liber missalis ad usum ecclesie metropolitane Beate Marie Auxis"
+date = "1491"
+kind = "printed-edition-candidate"
+status = "checked-catalogue-metadata"
+sources = ["french-auch-6924-usuarium"]
+source_locus = "Original title: Liber missalis ad usum ecclesie metropolitane Beate Marie Auxis; Origin: Auch (FR); Genre: Missal (Mass); Age: 1491; Shelfmark of library: Grand Sém. Auch; Catalogue: Amiet, 0119 USTC, 201090"
+qualification = "An individually catalogued witness in the bounded Amiet-table selection. A catalogue age and a different printing do not establish substantive revision, local authorization or use. Original-book inspection and comparison remain open."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-revision-candidate-not-yet-collated"
+date_role = "printed-witness-publication"
+chronology_start = 1491
+chronology_end = 1491
+chronology_kind = "printed-witness-publication"
+chronology_certainty = "catalogue-reported-year; original-title-leaf-uninspected"
+
+[[candidates]]
+id = "french-auch-usuarium-6925"
+family = "historic-auch-use"
+title = "Missale Auscitanum"
+date = "1753"
+kind = "printed-edition-candidate"
+status = "checked-catalogue-metadata"
+sources = ["french-auch-6925-usuarium"]
+source_locus = "Original title: Missale Auscitanum; Origin: Auch (FR); Genre: Missal (Mass); Age: 1753; Shelfmark of library: BNF Paris, B-124; Catalogue: Amiet, 0122"
+qualification = "An individually catalogued witness in the bounded Amiet-table selection. A catalogue age and a different printing do not establish substantive revision, local authorization or use. Original-book inspection and comparison remain open."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-revision-candidate-not-yet-collated"
+date_role = "printed-witness-publication"
+chronology_start = 1753
+chronology_end = 1753
+chronology_kind = "printed-witness-publication"
+chronology_certainty = "catalogue-reported-year; original-title-leaf-uninspected"
+
+[[candidates]]
+id = "french-auch-usuarium-6926"
+family = "historic-auch-use"
+title = "Missale Auscitanum"
+date = "1836"
+kind = "printed-edition-candidate"
+status = "checked-catalogue-metadata"
+sources = ["french-auch-6926-usuarium"]
+source_locus = "Original title: Missale Auscitanum; Origin: Auch (FR); Genre: Missal (Mass); Age: 1836; Shelfmark of library: BNF Paris, B-125; Catalogue: Amiet, 0123"
+qualification = "An individually catalogued witness in the bounded Amiet-table selection. A catalogue age and a different printing do not establish substantive revision, local authorization or use. Original-book inspection and comparison remain open."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-revision-candidate-not-yet-collated"
+date_role = "printed-witness-publication"
+chronology_start = 1836
+chronology_end = 1836
+chronology_kind = "printed-witness-publication"
+chronology_certainty = "catalogue-reported-year; original-title-leaf-uninspected"
+
+[[coverage]]
+id = "french-agde"
+title = "Agde local Mass books"
+status = "bounded-amiet-table-witness-census-documented"
+scope = "western-original-source-trajectory"
+sources = ["french-agde-6872-usuarium", "french-agde-6873-usuarium"]
+candidate_ids = ["french-agde-usuarium-6872", "french-agde-usuarium-6873"]
+remaining_work = "Only the complete set of records under this raw origin label in the frozen 2026-10-20 USUARIUM Amiet table is enumerated here. Broader manuscripts, printings, complementary books, historical revisions, reception, exact originals and full-text comparison remain open. This is not complete historical coverage."
+
+[[coverage]]
+id = "french-albi"
+title = "Albi local Mass books"
+status = "bounded-amiet-table-witness-census-documented"
+scope = "western-original-source-trajectory"
+sources = ["french-albi-6875-usuarium", "french-albi-6876-usuarium", "french-albi-6877-usuarium"]
+candidate_ids = ["french-albi-usuarium-6875", "french-albi-usuarium-6876", "french-albi-usuarium-6877"]
+remaining_work = "Only the complete set of records under this raw origin label in the frozen 2026-10-20 USUARIUM Amiet table is enumerated here. Broader manuscripts, printings, complementary books, historical revisions, reception, exact originals and full-text comparison remain open. This is not complete historical coverage."
+
+[[coverage]]
+id = "french-pamiers"
+title = "Pamiers local Mass books"
+status = "bounded-amiet-table-witness-census-documented"
+scope = "western-original-source-trajectory"
+sources = ["french-pamiers-6904-usuarium", "french-pamiers-6905-usuarium"]
+candidate_ids = ["french-pamiers-usuarium-6904", "french-pamiers-usuarium-6905"]
+remaining_work = "Only the complete set of records under this raw origin label in the frozen 2026-10-20 USUARIUM Amiet table is enumerated here. Broader manuscripts, printings, complementary books, historical revisions, reception, exact originals and full-text comparison remain open. This is not complete historical coverage."
+
+[[coverage]]
+id = "french-dax"
+title = "Dax local Mass books"
+status = "bounded-amiet-table-witness-census-documented"
+scope = "western-original-source-trajectory"
+sources = ["french-dax-7905-usuarium", "french-dax-6907-usuarium"]
+candidate_ids = ["french-dax-usuarium-7905", "french-dax-usuarium-6907"]
+remaining_work = "Only the complete set of records under this raw origin label in the frozen 2026-10-20 USUARIUM Amiet table is enumerated here. Broader manuscripts, printings, complementary books, historical revisions, reception, exact originals and full-text comparison remain open. This is not complete historical coverage."
+
+[[coverage]]
+id = "french-auch"
+title = "Auch local Mass books"
+status = "bounded-amiet-table-witness-census-documented"
+scope = "western-original-source-trajectory"
+sources = ["french-auch-6924-usuarium", "french-auch-6925-usuarium", "french-auch-6926-usuarium"]
+candidate_ids = ["french-auch-usuarium-6924", "french-auch-usuarium-6925", "french-auch-usuarium-6926"]
+remaining_work = "Only the complete set of records under this raw origin label in the frozen 2026-10-20 USUARIUM Amiet table is enumerated here. Broader manuscripts, printings, complementary books, historical revisions, reception, exact originals and full-text comparison remain open. This is not complete historical coverage."

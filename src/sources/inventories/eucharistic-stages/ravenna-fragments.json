@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-stages",
+  "dossier_id": "ravenna-fragments",
+  "title": "Ravenna-attributed Mass-book fragments: bounded attestations and unresolved local reception",
+  "traditions": [
+    {
+      "id": "ravenna-fragments:associated-fragments",
+      "label": "Mass-book fragments attributed to Ravenna: local use unproved",
+      "family": "latin",
+      "scope": "Three physically identified fragmentary Mass-book states associated with Ravenna in scholarship. A research grouping, not one local recension or a lineage.",
+      "coverage_note": "None establishes a Ravenna annual Missal, continuous local use, a complete Eucharistic prayer, or a textual transition. Independent dates and origin qualifications control each witness."
+    }
+  ],
+  "sources": [
+    {
+      "id": "ravenna-fragments:stockholm",
+      "title": "National Library of Sweden A 135a: catalogue and TEI, revision 25 August 2026",
+      "url": "https://www.manuscripta.se/ms/101123",
+      "kind": "institutional-catalogue",
+      "inspection": "Contents, physical description, origin, provenance, acquisition, license and complete TEI inspected; both S1r/S1v original images inspected. Catalogue identifies the surviving Mass formularies, one 30 x 200 mm strip, Italy/Ravenna? and first-quarter eighth-century dating based on Gamber 1958.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Early provenance is unknown; Ravenna is low-certainty attribution. Image inspection verifies fragmentary physical extent and visible liturgical headings, not a complete transcription, independent palaeographic date, or local use."
+    },
+    {
+      "id": "ravenna-fragments:wroclaw",
+      "title": "University of Wroclaw Akc. 1955/3, publication 84013 / edition 133364",
+      "url": "https://bibliotekacyfrowa.pl/publication/84013",
+      "kind": "institutional-catalogue",
+      "inspection": "Whole catalogue HTML and metadata inspected, including 701-750 date, current shelfmark, same-codex relation to Stockholm A 135a and public-domain image declaration. Both original image sides in the linked complete two-canvas GLAM manifest inspected.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "No Ravenna place of copying or local liturgical use is established by this record. Surviving strips do not supply the missing whole codex or a complete Eucharistic prayer."
+    },
+    {
+      "id": "ravenna-fragments:stockholm-cla",
+      "title": "Earlier Latin Manuscripts: CLA XI 1596, Stockholm-Wroclaw sacramentary fragments",
+      "url": "https://elmss.universityofgalway.ie/catalogue/346",
+      "kind": "institutional-catalogue",
+      "inspection": "Exact shelfmarks, contents, VIII first-half (701-750) date, Northern Italian attribution, Avicenna binding provenance and script commentary inspected in the record and full 2047-row CSV export.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The catalogue gives probable Northern Italy rather than Ravenna. This broader date differs from Manuscripta's 700-725 range; the stage retains both descriptions."
+    },
+    {
+      "id": "ravenna-fragments:stuttgart",
+      "title": "Earlier Latin Manuscripts: CLA IX 1361, Stuttgart Cod. fragm. 100A",
+      "url": "https://elmss.universityofgalway.ie/catalogue/1862",
+      "kind": "institutional-catalogue",
+      "inspection": "Contents, VII (601-700) date, current/former shelfmarks, uncertain origin, c. 800 penitential overwrite and Constance/Weingarten provenance inspected. Complete catalogue illustration of an opening inspected; undertext is fragmentary and difficult to read.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The illustration is a sample, not a complete original codex. Catalogue sacramentary-type labels disagree across sources. Ravenna use and a complete Canon have not been established."
+    },
+    {
+      "id": "ravenna-fragments:montecassino",
+      "title": "Earlier Latin Manuscripts: CLA III 376, Montecassino 271 [palimpsest old 2]",
+      "url": "https://elmss.universityofgalway.ie/catalogue/715",
+      "kind": "institutional-catalogue",
+      "inspection": "Exact lower-layer identification, VII–VIII (680-720) date, Gregorian sacramentary-fragment contents and Italian origin inspected. Provenance identifies eleventh-century Beneventan rewriting with Gregory's Dialogues. Complete catalogue illustration of p. 84 inspected.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The sample illustration and metadata do not establish every lower-text page or whole-book content. Other reused missal strata in the same present codex must remain separate. Ravenna origin remains a scholarly question."
+    },
+    {
+      "id": "ravenna-fragments:suski",
+      "title": "Andrzej Suski, Latin liturgical manuscripts surviving as palimpsests, Liturgia Sacra 29/1 (2022), 163-205",
+      "url": "https://czasopisma.uni.opole.pl/index.php/ls/article/download/4803/4232/13680",
+      "kind": "scholarship",
+      "inspection": "Complete 43-page PDF acquired; title, abstract, bibliography, printed p. 189 items 69-71 and p. 196 item 145 inspected. Item 71 separates the early Gregorian lower layer of Montecassino 271 from two X/XI-century missals; item 145 identifies Stuttgart 100A and its editions.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Catalogue descriptions are secondary evidence, not a new collation. Suski's mixed-Gelasian label for Stuttgart 100A differs from other catalogues. Listed page examples include an explicit etc., so they are not a complete denominator."
+    },
+    {
+      "id": "ravenna-fragments:westwell",
+      "title": "Arthur Westwell, The Carolingian Sacramentaries of Saint-Amand (2024), chapter 1",
+      "url": "https://epub.uni-regensburg.de/59552/1/10.1515_9781501517563-1.pdf",
+      "kind": "scholarship",
+      "inspection": "Whole book PDF acquired from institutional repository; title/rights page, p. 42, note 121 / PDF p. 68, 56 note 180, 58-62 and note 201 inspected. Discusses Montecassino 271 as a mass-prayer/reading book, the single Stockholm-Wroclaw codex, and the evidential limits of Gamber's Ravenna archetype hypothesis.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Critical discussion does not independently date or locate the fragment scriptoria. No Ravenna archetype is promoted to a surviving book or historical stage. PDF figures carry separate rights."
+    }
+  ],
+  "stages": [
+    {
+      "id": "ravenna-fragments:stockholm-wroclaw",
+      "tradition_id": "ravenna-fragments:associated-fragments",
+      "label": "Stockholm-Wroclaw Gelasian Mass-prayer fragments",
+      "date_label": "700-750 catalogue-dating envelope: Swedish 700-725 versus shared-codex 701-750",
+      "start_year": 700,
+      "end_year": 750,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Surviving strips from a single Gelasian sacramentary: votive/live/dead/abbot-and-community Mass-prayer material identified by the Swedish catalogue. No whole-book extent is reconstructed.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:italian-ravenna-stockholm-wroclaw"
+      ],
+      "witness_label": "Stockholm A135a and Wroclaw Akc.1955/3: one Gelasian sacramentary's fragments",
+      "summary": "The two institutional catalogues resolve the fragments to one codex; original images show tiny preserved parts of Mass formularies.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "ravenna-fragments:stockholm",
+          "locus": "Contents; Origin; Provenance; Acquisition; S1r/S1v",
+          "claim": "The catalogue identifies Mass-prayer fragments and uncertain Ravenna origin; both strip sides were inspected."
+        },
+        {
+          "source_id": "ravenna-fragments:wroclaw",
+          "locus": "edition 133364 DC.date/DC.description/DC.source; GLAM canvases 1-2",
+          "claim": "A dated, shelfmarked fragment is related to A135a as the same codex."
+        },
+        {
+          "source_id": "ravenna-fragments:stockholm-cla",
+          "locus": "CLA XI 1596 shelfmarks, date and provenance",
+          "claim": "The joint record dates the codex to 701-750 and locates it only probably in Northern Italy."
+        }
+      ],
+      "limitations": "Numeric bounds preserve the two catalogue ranges rather than selecting Gamber's narrow dating as settled. Not a complete Canon/anaphora, not two liturgical versions, and not an annual Ravenna Missal.",
+      "reception": "No Ravenna church's actual use is established. The present holdings and scholarly attribution do not establish local reception."
+    },
+    {
+      "id": "ravenna-fragments:stuttgart-100a",
+      "tradition_id": "ravenna-fragments:associated-fragments",
+      "label": "Stuttgart 100A sacramentary undertext",
+      "date_label": "Seventh-century copying 601-700; catalogue range, not date of later overwrite",
+      "start_year": 601,
+      "end_year": 700,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "One surviving sacramentary palimpsest fragment beneath penitential canons. Its liturgical type is disputed across catalogues.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:italian-ravenna-stuttgart-100a"
+      ],
+      "witness_label": "Stuttgart Cod.fragm.100A: sacramentary lower text beneath penitential canons",
+      "summary": "The exact fragment and its lower-text date are identified; later reuse and uncertain origin remain separate.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "ravenna-fragments:stuttgart",
+          "locus": "CLA IX 1361 Date; Contents; Origin and Provenance; Notes",
+          "claim": "The record identifies 100A, its seventh-century sacramentary lower text, c. 800 overwrite and later custody."
+        },
+        {
+          "source_id": "ravenna-fragments:suski",
+          "locus": "printed p. 196 item 145",
+          "claim": "A distinct shelfmarked liturgical palimpsest is catalogued with its edition loci."
+        }
+      ],
+      "limitations": "A documented physical fragment attestation only. Type labels Leonine-form, mixed Gelasian and pre-Hadrian Gregorian conflict; neither local recension nor complete Eucharistic prayer is established.",
+      "reception": "No Ravenna church's actual use is established. The present holdings and scholarly attribution do not establish local reception."
+    },
+    {
+      "id": "ravenna-fragments:montecassino-271-lower2",
+      "tradition_id": "ravenna-fragments:associated-fragments",
+      "label": "Montecassino 271 early sacramentary lower layer",
+      "date_label": "680-720 lower-text copying, catalogue's VII–VIII interpretation",
+      "start_year": 680,
+      "end_year": 720,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "The identified early Gregorian sacramentary/readings stratum within a multiply reused codex, excluding its later missals and upper Gregory Dialogues.",
+      "components": [
+        "propers",
+        "lectionary"
+      ],
+      "witness_ids": [
+        "western:italian-ravenna-montecassino-271-lower2"
+      ],
+      "witness_label": "Montecassino 271 [palimpsest old 2]: early Gregorian sacramentary and reading fragments",
+      "summary": "Catalogue and critical scholarship distinguish an early Mass-prayer/reading book from other layers of the present volume.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "ravenna-fragments:montecassino",
+          "locus": "CLA III 376 shelfmark palimpsest old 2; Date; Contents; Provenance",
+          "claim": "The lower fragment dates 680-720 and was reused under Gregory Dialogues in the eleventh century."
+        },
+        {
+          "source_id": "ravenna-fragments:suski",
+          "locus": "printed p. 189 items 69-71",
+          "claim": "The early sacramentary is item 71, separately from two X/XI-century missal strata."
+        },
+        {
+          "source_id": "ravenna-fragments:westwell",
+          "locus": "printed p. 42, note 121 / PDF p. 68",
+          "claim": "The early book combined Mass prayers with readings, while Ravenna remains Gamber's supposition."
+        }
+      ],
+      "limitations": "Numeric date is one catalogue's interpretation, not a new palaeographic judgment; Usuarium gives 675-700. Complete original undertext, exact Canon scope and Ravenna use remain unproved. ELMSS 715 supplies the plotted 680–720 copying interpretation; Usuarium 6351 gives 675–700, while the indexed IRHT 599830 view gives 691–710 and Ravenna(?). The live IRHT delivery was inaccessible (https://liturgicum.irht.cnrs.fr/manuscrit/599830). These are qualified catalogue disagreements, not one harmonized date or a new palaeographic judgment.",
+      "reception": "No Ravenna church's actual use is established. The present holdings and scholarly attribution do not establish local reception."
+    }
+  ],
+  "transitions": [],
+  "gaps": [
+    {
+      "id": "ravenna-fragments:local-reception",
+      "tradition_id": "ravenna-fragments:associated-fragments",
+      "period": "late antique and early medieval",
+      "missing": "No original local-use or copying-place evidence identifies these fragments as a Ravenna recension.",
+      "next_source": "Reopen Gamber CLLA646, 650-651, 659-660, 701 and named critical editions against full original leaves; obtain documented provenance and contemporary church-use evidence.",
+      "consequence": "Keep the grouping attributed and separate from local reception. No ancestry, revision or text-inheritance edge follows."
+    },
+    {
+      "id": "ravenna-fragments:canon-extent",
+      "tradition_id": "ravenna-fragments:associated-fragments",
+      "period": "seventh to tenth centuries",
+      "missing": "Complete Eucharistic-prayer extent and literal readings for 100A, the Stockholm-Wroclaw codex, Montecassino lower 2 and Ink.15370.",
+      "next_source": "Dold 1923 pp. 10-11; Gamber 1960 pp. 455-460; Gamber 1958 pp. 111-126 and 1966 pp. 242-250; Dold 1943 pp. 1*-52*; Catella-Dell'Oro-Martini 2005 pp. 513-525. Collate surviving leaves before declaring anaphora coverage.",
+      "consequence": "No anaphoras component or complete text is asserted by this dossier."
+    },
+    {
+      "id": "ravenna-fragments:archive011",
+      "tradition_id": "ravenna-fragments:associated-fragments",
+      "period": "1454 and later",
+      "missing": "Archive 011 remains an origin-unassigned 186-leaf missal-calendar; no original calendar, colophon, Canon, marginal use or provenance examined.",
+      "next_source": "Obtain public images or a detailed institutional description of archive 011's colophon, calendar including 18 August, Ordinary and Canon. Resolve any connection to the 1454 Ursian-basilica Roman-Missal report rather than assuming identity.",
+      "consequence": "Archive 011 remains a holding-only candidate and receives no local-use stage."
+    },
+    {
+      "id": "ravenna-fragments:roll-and-context",
+      "tradition_id": "ravenna-fragments:associated-fragments",
+      "period": "late antique to medieval",
+      "missing": "The Rotulus is bounded Advent prayer evidence with Office-use interpretation; sermon, diptychon, ritual and lectionary leads do not identify annual Mass books.",
+      "next_source": "Read Benz 1967 pp. 20–31 and prayer analysis, Olivar 1969 pp. 40-58, Mohlberg appendix pp. 173-178; obtain Caronti 1922 pp. 114-118 and physical identity for Usuarium 6346. Resolve Munich current shelfmark with BSB, and Ravenna-held IRHT fragments from their original leaves.",
+      "consequence": "No Rotulus, sermon collection, diptychon or unspecified Exultet roll is admitted as a complete annual Eucharistic book."
+    }
+  ]
+}

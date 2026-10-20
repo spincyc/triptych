@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.mark-stansbury.earlier-latin-manuscripts.2026-10-20-web-state.elmss-catalogue-without-request-token-66c4299d"
+edition_id = "edition.mark-stansbury.earlier-latin-manuscripts.2026-10-20-web-state"
+artifact_type = "sanitized-catalogue-html"
+media_type = "text/html; charset=utf-8"
+storage = "tracked"
+rights_status = "licensed"
+rights_basis = "Raw response contains an ephemeral request token and must not enter Git. Retain the complete licensed HTML body as the deterministic derivative with that single non-source field removed. Attribution: The Earlier Latin Manuscripts Project, Mark Stansbury and contributors, University of Galway. CC BY-NC 4.0. Rights evidence: https://elmss.universityofgalway.ie/about#license; https://creativecommons.org/licenses/by-nc/4.0/legalcode.en"
+source_url = "https://elmss.universityofgalway.ie/catalogue"
+provenance = "Exact public delivery acquired directly, or the precisely stated deterministic transformation of its exact parent; source bytes did not pass through a model. Independent rights, byte and extent review accepted this payload on 20 October 2026."
+retrieved = "2026-10-20"
+sha256 = "66c4299d1b6b896501023b9de2b02e323d6eba3aa80df9b7dcec67d9d57e9b08"
+byte_size = 3652186
+path = "src/sources/works/mark-stansbury/earlier-latin-manuscripts/editions/2026-10-20-web-state/artifacts/elmss-catalogue-without-request-token-66c4299d/elmss-catalogue-without-request-token.html"
+indexable = false
+notes = "whole HTML response except one ephemeral request-token input element; exact parent SHA-256 8dc66b7afdc0590e6d5787ef67c79acfbfdc87e19711de21d97517e9c1ee23f2. Third-party source bytes retain their own rights; no project CC BY offer is made over them."
+license = "CC-BY-NC-4.0"
+derived_from = "artifact.mark-stansbury.earlier-latin-manuscripts.2026-10-20-web-state.elmss-catalogue-raw-8dc66b7a"
+transformation = "Byte-for-byte copy except the single input named _token is replaced by an explanatory HTML comment; no source-bearing catalogue text or data removed."

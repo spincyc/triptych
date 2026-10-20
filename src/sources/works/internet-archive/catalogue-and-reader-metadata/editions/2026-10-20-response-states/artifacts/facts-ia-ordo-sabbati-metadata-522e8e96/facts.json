@@ -1,0 +1,80 @@
+{
+  "schema": "triptych-source-factual-extract-v1",
+  "rights_notice": "Project-created selection of factual metadata, distributed under Triptych's CC BY 4.0 terms. The source's individual facts and titles are not claimed as project-authored expression. This file contains no liturgical body, host UI, user favorites/account identifiers or unselected descriptive prose.",
+  "source_artifact_id": "artifact.internet-archive.catalogue-and-reader-metadata.2026-10-20-response-states.raw-ia-ordo-sabbati-metadata-3e209f1b",
+  "source_sha256": "3e209f1b4e77072e07c2c1a36145757334e7ff63e0ab5f5aff1663d6fa3b148f",
+  "source_bytes": 7430,
+  "source_url": "https://archive.org/metadata/ordo-sabbati-sancti",
+  "method": "GET",
+  "params": {},
+  "facts": {
+    "item": {
+      "identifier": "ordo-sabbati-sancti",
+      "title": "Ordo Sabbati Sancti",
+      "collection": "opensource",
+      "identifier-ark": "ark:/13960/s283v96tx48",
+      "language": "gle"
+    },
+    "files": [
+      {
+        "name": "Ordo Sabbati Sancti.pdf",
+        "size": "640728628",
+        "format": "Image Container PDF",
+        "source": "original",
+        "md5": "dba184f2e529ff2c1772d745eaf4b7fe",
+        "sha1": "889e583e6b4d68dcae3ce1efe8e2b794f29440d7"
+      },
+      {
+        "name": "Ordo Sabbati Sancti_djvu.xml",
+        "size": "766561",
+        "format": "Djvu XML",
+        "source": "derivative",
+        "original": "Ordo Sabbati Sancti_hocr.html",
+        "md5": "c3fe60296676a1f053a4ac95278ba6e8",
+        "sha1": "8c671102ced83abb338fbfe3b0f4bdcef6826fa3"
+      },
+      {
+        "name": "Ordo Sabbati Sancti_jp2.zip",
+        "size": "154373839",
+        "format": "Single Page Processed JP2 ZIP",
+        "source": "derivative",
+        "original": "Ordo Sabbati Sancti.pdf",
+        "md5": "2a41f61d3c3ccdf96865f6a58daccd5c",
+        "sha1": "3e1ece9890b15c83c4d15fbb2e77b0547e9d80f4",
+        "filecount": "44"
+      },
+      {
+        "name": "Ordo Sabbati Sancti_scandata.xml",
+        "size": "15360",
+        "format": "Scandata",
+        "source": "derivative",
+        "original": "Ordo Sabbati Sancti_djvu.xml",
+        "md5": "1552483881242569bd8822da9027d65b",
+        "sha1": "2cee38e5a29f2147d6ada4bdd20407bba53574e0"
+      },
+      {
+        "name": "Ordo Sabbati Sancti_text.pdf",
+        "size": "21819494",
+        "format": "Additional Text PDF",
+        "source": "derivative",
+        "original": "Ordo Sabbati Sancti_page_numbers.json",
+        "md5": "26810636e88e9922333a3d7bbb8d8f86",
+        "sha1": "1ace560d12df9092fa51902ce81cf16fda25589c"
+      },
+      {
+        "name": "ordo-sabbati-sancti_files.xml",
+        "format": "Metadata",
+        "source": "original",
+        "md5": "299ded0bb055276c29dd732ad3569fb4"
+      },
+      {
+        "name": "ordo-sabbati-sancti_meta.xml",
+        "size": "1663",
+        "format": "Metadata",
+        "source": "original",
+        "md5": "60247ebfd8b788443762e89a59673e50",
+        "sha1": "a00edbdf0ac77b0d39443755dc6b8c5451f8e19d"
+      }
+    ]
+  }
+}

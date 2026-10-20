@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-stages",
+  "dossier_id": "hungarian-reception",
+  "title": "Hungarian Greek Catholic revised Liturgikon and Chrysostom replacement extract, with scoped approval and reception",
+  "traditions": [
+    {
+      "id": "hungarian-reception:hajdudorog",
+      "label": "Hungarian Greek Catholic Hajdúdorog received service books",
+      "family": "Byzantine",
+      "scope": "The 1920 revised combined Liturgikon and its 1949 Chrysostom extract, in Hungarian with Greek canonical parts in the full book.",
+      "coverage_note": "The books have explicit local private-use publishing permission and separately evidenced operative reception. The dossier does not equate private permission with general public-language authorization or establish a seventeenth-century-to-present chain."
+    }
+  ],
+  "sources": [
+    {
+      "id": "hungarian-reception:ivancso2007",
+      "title": "István Ivancsó, Miklósy István hajdúdorogi megyéspüspök liturgikus rendelkezései, Athanasiana 26 (2007), pp. 65–87",
+      "url": "https://epa.oszk.hu/05200/05207/00026/pdf/EPA05207_athanasiana_2007_26.pdf",
+      "kind": "scholarship",
+      "inspection": "Acquired full issue; printed pp. 65–73 read, p. 69 visually inspected. Reports the 1920 book and quotes directive 1021/1921 on using its revised text. At pp. 72–73 quotes distribution circular 1195/1921 and transcribes private-use permission 1235/1920. Full original book and circulars were not inspected.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Primary documents quoted through scholarship. Private-use printing permission, a local directive and reported actual reception have distinct scopes; no Holy See public-language approval or uniform parish compliance is established. Earlier 1793 Krucsay attribution in this source is not used."
+    },
+    {
+      "id": "hungarian-reception:ivancso2008",
+      "title": "István Ivancsó, A magyar Liturgikon a hajdúdorogi egyházmegyében, Athanasiana 27 (2008), pp. 11–28",
+      "url": "https://epa.oszk.hu/05200/05207/00027/pdf/EPA05207_athanasiana_2008_27.pdf",
+      "kind": "scholarship",
+      "inspection": "Acquired full issue; printed pp. 19–25 read, pp. 20–21 and 24 visually inspected. Quotes the 1920 book’s Emlékezetül pp. 309–310, records 22 August 1920 printing permission, reports 1921 release and quotes Dudás’s 2351/1949 circular describing the worn 1920 Chrysostom section and two formats of replacement extract. The 1984 reprint is expressly unchanged.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Original books and circulars not acquired. Its table gives 1235/1920 for the 1949 title, against 1650/1949 reported by Ivancsó 2003. Neither number is silently preferred. The books’ whole contents and modern reception after this source’s date are not independently collated."
+    }
+  ],
+  "stages": [
+    {
+      "id": "hungarian-reception:1920-liturgikon",
+      "tradition_id": "hungarian-reception:hajdudorog",
+      "label": "Hajdúdorog revised and expanded Liturgikon",
+      "date_label": "Attested off press and awaiting distribution in early 1921; bears 1920 imprint and printing permission of 22 August 1920",
+      "start_year": 1921,
+      "end_year": 1921,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "The combined Hungarian service book, with the canonical parts also in Greek, incorporating Chrysostom, Basil and Presanctified with the offices and calendar. Local private-use approval and operative reception are separately qualified.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics",
+        "propers",
+        "calendar"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-regional-hung1920"
+      ],
+      "witness_label": "Nyíregyháza, Jóba Elek, 1920, 311 pages; identified and described by Ivancsó, originals unacquired",
+      "summary": "The revised and expanded book bearing a 1920 imprint is attested off press and awaiting distribution in early 1921. It combines the earlier separately issued liturgies and adds Greek canonical parts, offices, calendar and paschalion. The 1921 wording directive documents operative local reception, with private-use permission explicit.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "hungarian-reception:ivancso2008",
+          "locus": "Printed pp. 19–21, especially p. 20 and notes 31–34; p. 24 title table",
+          "claim": "Identifies the book, the 1235/1920 private-use printing permission, preparation/release sequence and expanded components. The early-1921 announcement attests the book already off press and awaiting distribution, rather than proving exact publication in either 1920 or 1921."
+        },
+        {
+          "source_id": "hungarian-reception:ivancso2007",
+          "locus": "Printed pp. 69–73; circular 1021/1921 quoted at pp. 69–71",
+          "claim": "Documents direction to use the revised wording and describes the book as operative in the eparchy; this is distinct from the earlier printing permission."
+        },
+        {
+          "source_id": "hungarian-reception:ivancso2008",
+          "locus": "Printed p. 21, quotation of circular 2351/1949",
+          "claim": "Dudás describes the heavily worn Chrysostom sections of copies in use, corroborating actual reception of the 1920 book before 1949."
+        }
+      ],
+      "limitations": "No exact complete book or original approval/circular scan acquired. The stage uses the early-1921 attestation of a book already off press and awaiting distribution. Its 1920 imprint, summer preparation and 22 August 1920 printing permission do not establish an exact publication date; neither does the early-1921 announcement exclude late-1920 printing. First celebration remains unknown. The printed permission is for private use, and no general Holy See authorization or present obligation follows. Scholarly descriptions do not authorize text inheritance.",
+      "reception": "Local operational wording is documented by the 1921 directive; worn copies are described in the 1949 episcopal circular through scholarship. Geographic extent, first use, individual parish compliance and later modifications remain unproved."
+    },
+    {
+      "id": "hungarian-reception:1949-chrysostom-extract",
+      "tradition_id": "hungarian-reception:hajdudorog",
+      "label": "Hajdúdorog Chrysostom replacement extract",
+      "date_label": "1949 publication and episcopal announcement; permission number discrepant in the literature",
+      "start_year": 1949,
+      "end_year": 1949,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "The Chrysostom section of the 1920 service book reissued as an extract, in a bind-in replacement format and a separately titled format; not another complete liturgikon recension.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-regional-hung1949"
+      ],
+      "witness_label": "Aranyszájú Szent János egyházatya szent és isteni liturgiája, Nyíregyháza, Orosz Károly, 1949; reported 59 pages",
+      "summary": "Dudás commissioned a replacement for worn Chrysostom sections. One format could be bound into the older 1920 book, the other separately; variable intention formularies were omitted. A changed format and reduced extent do not establish a newly revised anaphora.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "hungarian-reception:ivancso2008",
+          "locus": "Printed pp. 21–22 and 24; 2351/1949 circular quoted at p. 21",
+          "claim": "Identifies the 1949 extract, its practical replacement purpose, two physical formats and omission of variable intention formularies."
+        },
+        {
+          "source_id": "hungarian-reception:ivancso2007",
+          "locus": "Printed p. 73",
+          "claim": "Describes the 1949 publication as an unchanged-text extract of the 1920 book."
+        }
+      ],
+      "limitations": "Full original copy and the 1949 circular were not inspected. Ivancsó 2003 gives private-use permission 1650/1949; Ivancsó 2008 gives 1235/1920. Approval number remains unresolved; no substantive new textual recension or first date of actual use is claimed.",
+      "reception": "Episcopal commissioning and distribution are reported by the quoted 1949 circular. Its replacement purpose concerns the operative 1920 book; no independent altar-use event of a named surviving 1949 copy was found."
+    }
+  ],
+  "transitions": [
+    {
+      "id": "hungarian-reception:1920-to-1949-extract",
+      "from_stage": "hungarian-reception:1920-liturgikon",
+      "to_stage": "hungarian-reception:1949-chrysostom-extract",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "A practical extract reissues the Chrysostom component for replacement or independent binding. This is witness and component succession, with no demonstrated new recension.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "hungarian-reception:ivancso2008",
+          "locus": "Printed pp. 21–22",
+          "claim": "The bishop’s announcement relates the 1949 extract directly to worn Chrysostom sections of the 1920 book."
+        },
+        {
+          "source_id": "hungarian-reception:ivancso2007",
+          "locus": "Printed p. 73",
+          "claim": "The 1949 witness is described as an unchanged-text extract."
+        }
+      ],
+      "limitations": "No independent whole-text collation. This edge records a described extract relationship and does not grant literal inheritance or exact-copy identity.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished",
+      "git_ancestry": false,
+      "text_inheritance": false
+    }
+  ],
+  "gaps": [
+    {
+      "id": "hungarian-reception:early-local-reception",
+      "tradition_id": "hungarian-reception:hajdudorog",
+      "period": "Before 1920",
+      "missing": "Dated Nyírderzs use, the unidentified Kriva/Krive church in the 1666 note, and a supported sequence of exact Slavonic service books. Habina’s ownership and a separate museum colophon do not establish such a chain.",
+      "next_source": "M–920 (Ant 10467) ownership leaves 102–109 and dated Nyírderzs parish inventories; Eger Uu.III.8 original terminal colophon; Földvári–Ojtozi 1992 catalogue item 4 and the original 1775 estate list.",
+      "consequence": "No reception edge connects Lviv 1646 or the Vilnius/Supraśl edition to the Hungarian 1920 book."
+    },
+    {
+      "id": "hungarian-reception:originals-and-approval",
+      "tradition_id": "hungarian-reception:hajdudorog",
+      "period": "1920–1949",
+      "missing": "Exact original service books, original circulars and resolution of the 1949 permission number. The distinction between private-use printing permission, normative local wording and public-language authorization remains explicit.",
+      "next_source": "Acquire the 1920 book including its permission and Emlékezetül pp. 309–310, both 1949 formats including title/permission leaves, circulars 1021/1921, 1195/1921 and 2351/1949, and Ivancsó Dokumentáció I (2006), pp. 44–54.",
+      "consequence": "Documentary book states and the described extract relationship are available; exact liturgical text, legal scope beyond the printed permission and substantive prayer changes remain uncollated."
+    },
+    {
+      "id": "hungarian-reception:later-operative-sequence",
+      "tradition_id": "hungarian-reception:hajdudorog",
+      "period": "After 1949",
+      "missing": "Original 1954 rubric directives, later operative revisions and exact editions currently used. The reported unchanged 1984 printing does not establish a new textual state.",
+      "next_source": "Dudás directive 819 in circular 1954/XIII; exact 1984 reprint and its 1983/1984 correspondence; later local rubric/translation decrees and dated named-copy use.",
+      "consequence": "No continuous or present-day adoption claim is inferred from the two documented states."
+    }
+  ]
+}
