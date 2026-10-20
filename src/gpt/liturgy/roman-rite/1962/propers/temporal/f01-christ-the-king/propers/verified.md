@@ -1,9 +1,8 @@
 # Christ the King: independently collated source text
 
-Research run `095fe00a9fe8cfee`, 20 October 2026. This is a source-data
-checkpoint, not acceptance of the research stage. The full English biblical
-selection, framing apparatus, reception audit and final completeness check
-remain to be completed.
+Research run `095fe00a9fe8cfee`, 20 October 2026. This is the appointed-text record, not
+acceptance of the research stage. Reception and interpretation work is recorded
+separately in the research directory.
 
 ## Witnesses and actual inspection
 
@@ -49,8 +48,9 @@ status have not been adopted. This worker did not inspect, retry or reconstruct
 any unknown rejected model output.
 
 The Latin quotations retain the 1962 accents and spelling, with typographic
-line breaks joined only where convenient. Every proper body agrees in words
-with AAS 1925. Orthographic j/i, capitalization and punctuation differ. AAS
+line breaks joined only where convenient. The proper bodies agree in words over the spans actually printed
+by both the 1962 controller and AAS 1925; the abbreviated or absent spans
+are itemized immediately below. Orthographic j/i, capitalization and punctuation differ. AAS
 abbreviates each oration's ending to Qui tecum and the Preface closing to
 Et ideo; these abbreviations do not establish the full framing. The 1962
 paschal alternative adds its final Alleluia, also printed by Lasance.
@@ -62,25 +62,33 @@ not an eclectic combination of those variants.
 ## Latin as printed in the controller
 
 Eleven numbered elements are active on 25 October 2026. Both unnumbered
-seasonal branches are inactive. Abbreviated common endings below are the
-page's abbreviations; they are not a claim to complete recitation framing.
+seasonal branches are inactive. The display below expands the controller's abbreviated common endings.
+The expansions and the historical witnesses for them are identified below;
+they are not silently attributed to the feast pages. The Introit antiphon is
+repeated after the full doxology. The Preface includes dialogue and Sanctus.
+The last Per omnia / Amen of the Secret and the opening of the Preface are
+one transition in celebration, displayed at both boundaries for completeness,
+not said twice.
 
 ### 1. Introit (`introit`) — no. 3938, printed p. 697, left column
 
 > Dignus est Agnus, qui occísus est, accípere virtútem, et divinitátem, et
 > sapiéntiam, et fortitúdinem, et honórem. Ipsi glória et impérium in sǽcula
 > sæculórum. *Ps. 71, 1* Deus, iudícium tuum Regi da: et iustítiam tuam Fílio
-> Regis. ℣. Glória Patri.
+> Regis. ℣. Glória Patri, et Fílio, et Spirítui Sancto. ℟. Sicut erat in princípio, et nunc, et semper, et in sǽcula sæculórum. Amen.
+>
+> Dignus est Agnus, qui occísus est, accípere virtútem, et divinitátem, et sapiéntiam, et fortitúdinem, et honórem. Ipsi glória et impérium in sǽcula sæculórum.
 
 ### 2. Collect (`collect`) — no. 3939, printed p. 697, left column
 
 > Omnípotens sempitérne Deus, qui in dilécto Fílio tuo, universórum Rege, ómnia
 > instauráre voluísti: concéde propítius; ut cunctæ famíliæ géntium, peccáti
-> vúlnere disgregátæ, eius suavíssimo subdántur império: Qui tecum vivit et
-> regnat in unitáte.
+> vúlnere disgregátæ, eius suavíssimo subdántur império: Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. ℟. Amen.
 
 ### 3. Epistle (`epistle`) — no. 3940, printed pp. 697–698
 
+> Léctio Epístolæ beáti Pauli Apóstoli ad Colossénses.
+>
 > Fratres: Grátias ágimus Deo Patri, qui dignos nos fecit in partem sortis
 > sanctórum in lúmine, qui erípuit nos de potestáte tenebrárum, et tránstulit
 > in regnum Fílii dilectiónis suæ, in quo habémus redemptiónem per sánguinem
@@ -119,6 +127,8 @@ page's abbreviations; they are not a claim to complete recitation framing.
 
 ### 6. Gospel (`gospel`) — no. 3945, printed p. 698
 
+> ✠ Sequéntia sancti Evangélii secúndum Ioánnem.
+>
 > In illo témpore: Dixit Pilátus ad Iesum: Tu es Rex Iudæórum? Respóndit
 > Iesus: A temetípso hoc dicis, an álii dixérunt tibi de me? Respóndit Pilátus:
 > Numquid ego Iudǽus sum? Gens tua et pontífices tradidérunt te mihi: quid
@@ -138,11 +148,12 @@ page's abbreviations; they are not a claim to complete recitation framing.
 
 > Hóstiam tibi, Dómine, humánæ reconciliatiónis offérimus: præsta, quǽsumus;
 > ut, quem sacrifíciis præséntibus immolámus, ipse cunctis géntibus unitátis
-> et pacis dona concédat, Iesus Christus, Fílius tuus, Dóminus noster: Qui
-> tecum vivit et regnat in unitáte.
+> et pacis dona concédat, Iesus Christus, Fílius tuus, Dóminus noster: Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. ℟. Amen.
 
 ### 9. Preface (`preface`) — no. 1080, printed p. 291
 
+> ℣. Per ómnia sǽcula sæculórum. ℟. Amen. ℣. Dóminus vobíscum. ℟. Et cum spíritu tuo. ℣. Sursum corda. ℟. Habémus ad Dóminum. ℣. Grátias agámus Dómino Deo nostro. ℟. Dignum et iustum est.
+>
 > Vere dignum et iustum est, æquum et salutáre, nos tibi semper et ubíque
 > grátias ágere: Dómine, sancte Pater, omnípotens ætérne Deus: Qui unigénitum
 > Fílium tuum, Dóminum nostrum Iesum Christum, Sacerdótem ætérnum et
@@ -153,6 +164,8 @@ page's abbreviations; they are not a claim to complete recitation framing.
 > sanctitátis et grátiæ; regnum iustítiæ, amóris et pacis. Et ídeo cum Angelis
 > et Archángelis, cum Thronis et Dominatiónibus, cumque omni milítia cæléstis
 > exércitus, hymnum glóriæ tuæ cánimus, sine fine dicéntes:
+>
+> Sanctus, Sanctus, Sanctus Dóminus Deus Sábaoth. Pleni sunt cæli et terra glória tua. Hosánna in excélsis. Benedíctus qui venit in nómine Dómini. Hosánna in excélsis.
 
 ### 10. Communion (`communion`) — no. 3948, printed p. 698, right column
 
@@ -162,35 +175,125 @@ page's abbreviations; they are not a claim to complete recitation framing.
 
 > Immortalitátis alimóniam consecúti, quǽsumus, Dómine: ut, qui sub Christi
 > Regis vexíllis militáre gloriámur, cum ipso, in cælésti sede, iúgiter
-> regnáre possímus: Qui tecum vivit et regnat in unitáte.
+> regnáre possímus: Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. ℟. Amen.
 
-## Historical English orations and proper Preface
+## Historical English: continuous Lasance wording
 
-Quoted from the inspected Lasance pages; these are historical English,
-not a new translation. Printed abbreviated conclusions are retained here.
+All thirteen units use the inspected English column of the same historical
+missal. No Bible translation is stitched into it, and no liturgical English
+is generated. Line-end hyphenation and spacing are normalized; versicle and
+response signs are rendered ℣ and ℟. Common abbreviations are expanded from
+the same missal's printed formulas: doxology p. 757; oration conclusion p. 819;
+Preface dialogue p. 772; Sanctus p. 814. Their use here does not adopt the
+missal's obsolete Sunday-commemoration or rank rubrics.
 
-### Collect
+### 1. Introit — printed 1257
 
-> Almighty and eternal God, Who hast wished to restore all things through Thy beloved Son, the King of the universe, graciously grant that all the familes of the Gentiles separated by the wound of sin, may be subjected to His most loving dominion, Who with Thee liveth.
+> The Lamb that was slain is worthy to receive power, and divinity, and wisdom, and strength, and honor. To Him be glory and empire for ever and ever. *Ps. 71, 1.* Give to the King Thy judgment, O God: and to the King's Son Thy justice. ℣. Glory be to the Father, and to the Son, and to the Holy Ghost. ℟. As it was in the beginning, is now, and ever shall be, world without end. Amen.
+>
+> The Lamb that was slain is worthy to receive power, and divinity, and wisdom, and strength, and honor. To Him be glory and empire for ever and ever.
 
-### Secret
+### 2. Collect — printed 1257
 
-> O Lord, we offer Thee this host for the reconciliation of humanity; grant, we beseech Thee, that Jesus Christ Thy Son our Lord, Whom we immolate in this sacrifice, will bestow on all Gentiles the gifts of unity and peace, Who with Thee liveth.
+> Almighty and eternal God, Who hast wished to restore all things through Thy beloved Son, the King of the universe, graciously grant that all the familes of the Gentiles separated by the wound of sin, may be subjected to His most loving dominion, Who with Thee liveth and reigneth in the unity of the Holy Ghost, God, world without end. ℟. Amen.
 
-### Postcommunion
+### 3. Epistle — printed 1257–1258
 
-> Fed with this immortal nourishment, we beseech Thee, O Lord, that we who glory to fight under the standard of Christ the King, may forever reign with Him on the heavenly throne. Who with Thee liveth.
+> Lesson from the Epistle of blessed Paul the Apostle to the the Colossians.
+>
+> Brethren, we give thanks to God the Father, Who hath made us worthy to be partakers of the lot of the saints in light: Who hath delivered us from the power of darkness, and hath translated us into the kingdom of the Son of His love. In Whom we have redemption through His blood, the remission of sins; Who is the image of the invisible God, the firstborn of every creature; for in Him were all things created in heaven and on earth, visible and invisible, whether thrones, or dominations, or principalities, or powers: all things were created by Him and in Him. And He is before all, and by Him all things consist. And He is the head of the body, the Church, Who is the beginning, the firstborn from the dead; that in all things He may hold the primacy: because in Him, it hath well pleased the Father, that all fulness should dwell; and through Him to reconcile all things unto Himself, making peace through the blood of His cross, both as to the things that are on earth, and the things that are in heaven, in Christ Jesus Our Lord.
 
-### Preface
+### 4. Gradual — printed 1258
 
+> He shall rule from sea to sea, and from the river unto the ends of the earth. ℣. And all kings of the earth shall adore Him: all nations shall serve Him.
+
+### 5. Alleluia — printed 1258–1259
+
+> Alleluia, alleluia. ℣. *Dan. 7, 14.* His power is an everlasting power that shall not be taken away: and His kingdom that shall not be destroyed. Alleluia.
+
+### Inactive Tract — printed 1259
+
+> He shall cry out to Me: Thou art My Father: My God, and the support of My salvation. ℣. And I will make Him My firstborn, high above the kings of the earth. ℣. And I will make His seed to endure for evermore: and His throne as the days of heaven.
+
+### Inactive paschal Alleluia — printed 1259
+
+> Alleluia, alleluia. ℣. *Dan. 7, 14.* His power is an everlasting power that shall not be taken away: and His kingdom that shall not be destroyed, Alleluia. ℣. *Apoc. 19, 16.* He hath on His garment, and on His thigh written: King of kings, and Lord of lords, Alleluia.
+
+### 6. Gospel — printed 1259–1260
+
+> ✠ Continuation of the holy Gospel according to St. John.
+>
+> At that time: Pilate said to Jesus: Art thou the King of the Jews? Jesus answered: Sayest thou this thing of thyself, or have others told it thee of Me? Pilate answered: Am I a Jew? Thy own nation, and the chief priests, have delivered thee up to me: what hast thou done? Jesus answered: My kingdom is not of this world. If My kingdom were of this world, My servants would certainly strive that I should not be delivered to the Jews: but now My kingdom is not from hence. Pilate therefore said to him: Art thou a king then? Jesus answered: Thou sayest that I am a King. For this was I born, and for this came I into the world; that I should give testimony to the truth, Everyone that is of the truth, heareth My voice.
+
+### 7. Offertory — printed 1260
+
+> Ask of Me, and I will give The the Gentiles for Thy inheritance, and the utmost parts of the earth for Thy possession.
+
+### 8. Secret — printed 1260
+
+> O Lord, we offer Thee this host for the reconciliation of humanity; grant, we beseech Thee, that Jesus Christ Thy Son our Lord, Whom we immolate in this sacrifice, will bestow on all Gentiles the gifts of unity and peace, Who with Thee liveth and reigneth in the unity of the Holy Ghost, God, world without end. ℟. Amen.
+
+### 9. Preface — printed 813–814, dialogue from 772
+
+> ℣. World without end. ℟. Amen. ℣. The Lord be with you. ℟. And with thy spirit. ℣. Lift up your hearts. ℟. We have them lifted up unto the Lord. ℣. Let us give thanks to the Lord our God. ℟. It is meet and just.
+>
 > It is truly meet and just, right and profitable, for us, at all times, and in all places, to give thanks to Thee, O Lord, the holy One, the Father almighty, the everlasting God: Who didst anoint with the oil of gladness Thine only-begotten Son, our Lord Jesus Christ, eternal Priest and King of the universe: that, offering Himself a stainless peace-offering on the altar of the cross, He might fulfill the pledges of man's redemption; and, having all creatures subject to His power, might deliver to Thy sublime majesty an eternal and universal kingdom, a kingdom of truth and life; a kingdom of holiness and grace, a kingdom of justice, love and peace. And therefore with the angels and archangels, with the thrones and dominations, and with all the array of the heavenly host, we sing a hymn to Thy glory and unceasingly repeat:
+>
+> Holy, Holy, Holy, Lord God of hosts. Heaven and earth are full of Thy glory. Hosanna in the highest. Blessed is He Who cometh in the name of the Lord. Hosanna in the highest.
 
-Lasance's printed `familes` in the Collect is retained. The full common
-English ending for these three orations is printed on p. 819:
+### 10. Communion — printed 1260
 
-> Who with Thee liveth and reigneth in the unity of the Holy Ghost, God, world without end. ℟. Amen.
+> The Lord shall sit King forever. The Lord will bless His people with peace.
 
-This same-witness common formula expands the printed abbreviation; it is not
-new English composed by the worker. Final integration with the Latin
-conclusions, Introit doxology and repetition, and Preface dialogue/Sanctus
-remains pending at this checkpoint.
+### 11. Postcommunion — printed 1260
+
+> Fed with this immortal nourishment, we beseech Thee, O Lord, that we who glory to fight under the standard of Christ the King, may forever reign with Him on the heavenly throne. Who with Thee liveth and reigneth in the unity of the Holy Ghost, God, world without end. ℟. Amen.
+
+## Editorial and textual controls
+
+The following printed peculiarities are retained, not corrected silently:
+`familes` in the Collect; `the the Colossians` in the Epistle heading;
+`The the Gentiles` in the Offertory, where the first `The` is the printed
+defective pronoun; and the comma before `Everyone` in the Gospel. The
+historical English body uses `fulness` in the Epistle and `forever` in the
+Communion. These are not OCR corrections invented to modernize the source.
+Lasance supplies every element; it omits no proper body. Its local
+abbreviations and common cross-references are the only framing supplied from
+other pages of that same witness.
+
+The Latin full conclusion is witnessed independently in the 1862 Pustet
+printing, printed p. 2 / PDF 88, prayer against persecutors, from `qui tecum`
+through Amen. PDF 44, Rubricae generales IX.17, confirms the common
+conclusion rule. PDF 332, the unnumbered opening page of Praefationes sine
+cantu (between printed 245 and 247), supplies the dialogue, full Et ideo
+closing and Sanctus. This worker independently rehashed the whole 1862 PDF
+(`363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474`)
+and inspected its embedded scan text masks, extracted with pdfimages;
+the faint background images alone were inadequate. These are original
+scan layers, not OCR reconstructions. Capitalization, accents, æ/œ and
+j/i follow the 1962 controller in the displayed text; the 1862 witness
+establishes the preexisting words. Lasance p. 819 independently prints the
+same Latin conclusion and its historical English.
+
+The complete Gloria Patri and Sicut erat are independently visible in the
+1862 scan at PDF 299, the unnumbered opening of the Ordo Missae between
+printed 212 and 214. The words agree with the common formula used above.
+This witness establishes the doxology's wording, not the 1962 direction
+to repeat the Introit antiphon; that direction is RGMR 427.
+
+The Introit is Apocalypse 5:12 plus 1:6, with Psalm 71:1 in the Missal's
+numbering (the first part of Douay 71:2, whose title is numbered 1).
+The Gradual is Psalm 71:8,11; the ordinary Alleluia selects the latter part
+of Daniel 7:14. The Epistle is Colossians 1:12–20 with its liturgical address
+and closing; the Gospel is John 18:33–37 with its substituted opening.
+The Offertory is Psalm 2:8. The Communion selects the latter clauses of
+Psalm 28:10 and 11, not verse 10 alone. The inactive Tract selects
+Psalm 88:27,28,30, omitting 29; the paschal alternative joins Daniel 7:14b
+and Apocalypse 19:16. The common doxology and endings are not extra Bible
+verses. The prayers and Preface are composed liturgical texts with biblical
+echoes, not additional appointed Scripture.
+
+The independently inspected American-1899 Douay Bible artifacts retain
+separate Psalm 28:10 and 11 rows, unlike the separate Gutenberg witness
+used by the prior Claude source record. That other witness's merged row
+must not be reported as a property of this leaf's bound Bible edition.

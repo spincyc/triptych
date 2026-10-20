@@ -16,18 +16,27 @@ source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-f
 loci = ["Printed 697–698 / PDF 778–779, marginal 3938–3949", "Printed 291 / PDF 372, Preface 1080", "PDF 10,16,17,29: RG17d,109,111a,112b,115c; RGMR427,431–432"]
 role = "textual-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
-context = "Whole delivery authenticated; exact images inspected in the assigned pdf-review rasters. Eleven active elements, inactive votive alternatives, conclusions and occurrence rubrics checked. Governing 1962 authority; does not authorize redistribution of the full facsimile. Full leaf text transcription remains pending."
-verified_on = "2026-10-19"
+context = "Whole delivery independently rehashed and feast/Preface images independently read in research run 095fe00a9fe8cfee on 20 October. Eleven active elements and two inactive alternatives are now transcribed in propers/verified.md. Existing context-stage rubric verification remains dated 19 October. Governing 1962 authority; no whole-facsimile redistribution claim. Preexisting full Latin framing is separately witnessed by the bound 1862 images."
+verified_on = "2026-10-20"
 source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76"
 
 [[bindings]]
 source_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
-loci = ["Printed 1257–1260 / PDF 1258–1261", "Printed 813–814 / PDF 812–813"]
+loci = ["Printed 1257–1260 / PDF 1258–1261", "Printed 813–814 / PDF 812–813", "Printed 757 / PDF 755: doxology", "Printed 772 / PDF 770: dialogue", "Printed 819 / PDF 818: prayer conclusions"]
 role = "textual-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
-context = "Whole delivery authenticated; actual body-page images read and compared with the 1962 formulary and Preface. Historical English and Latin antecedent evidence only. Older Sunday-commemoration rubric excluded. Rights inventory covers the specified registered body editions and excludes later inserts; no whole-scan public-domain claim. Leaf exact-text transcription remains pending."
-verified_on = "2026-10-19"
+context = "Whole delivery independently rehashed and these actual images independently read on 20 October. Continuous historical English for all eleven active elements and both inactive branches transcribed; full framing comes from the named common pages in the same witness. Printed errors preserved and annotated. Older Sunday-commemoration instructions excluded from the dated appointment. Specific nonrenewal holding applies to the historical body English, not excluded later inserts or whole scan packaging."
+verified_on = "2026-10-20"
 source_fingerprint = "sha256:376ca4e5db5bd3291c6c11b085c73dafdd1a09a8a7af523652257183cc25d645"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+loci = ["Printed 2 / PDF 88: conclusion from qui tecum through Amen", "PDF 44, Rubricae generales IX.17: conclusion rule", "PDF 299, opening Ordo Missae: Gloria Patri and Sicut erat", "PDF 332, opening Praefationes sine cantu: dialogue, Et ideo closing and Sanctus"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Whole PDF independently rehashed on 20 October; original embedded scan text masks extracted with pdfimages and read directly. Faint background layers alone were inadequate. These are mechanical scan components, not OCR reconstructions. Pre-1931 witness for the words of common Latin framing; no claim this 1862 book contains the 1925 feast or governs 1962 rubrics."
+verified_on = "2026-10-20"
+source_fingerprint = "sha256:53cf8c027d0647a872a62d51ef6884807380f4b5050ae98f65506b3578ce4fd8"
 
 [[bindings]]
 source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.christ-the-king-appointments"
