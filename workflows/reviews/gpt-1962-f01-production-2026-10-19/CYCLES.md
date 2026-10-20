@@ -434,3 +434,15 @@ The exact AAS binding and explicit Claude-source dependency validated with
 `1649a5864`. Complete English biblical selections, framing, research
 reconciliation and independent cold review remain pending; there has been
 no new output rejection at this checkpoint.
+
+A second research checkpoint completed the source-data record: all thirteen
+units now have continuous historical English from the inspected Lasance
+columns, including the reading frames, with printed errors retained and
+identified. The Latin common doxology, oration endings, dialogue and Preface
+close were checked against page-image layers of the registered public-domain
+1862 Pustet printing and the 1962 controller; Lasance supplies English common
+forms. The exact 1862, 1962 and Lasance bindings and dependency record were
+updated. Source-library validation passed with 4,156 bindings, and the four
+files were committed and feature-pushed as `6d8e443ca`. This is a research
+checkpoint, not a research gate or review PASS; reception reconciliation and
+the native cold evidence review remain required.
