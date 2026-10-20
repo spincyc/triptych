@@ -401,3 +401,22 @@ live, but its acceptance cannot supply this GPT run's missing PASS. The
 maintainer's full-material requirement is still open; a locator-only study
 is not an authorized substitute. No GPT publication or push to `main` was
 attempted from this run.
+
+## 20 October source-data reuse run
+
+The maintainer continued to require full sourced material. A new full-material
+v13 run `095fe00a9fe8cfee` was seeded at `5b4829232`; its scope gate passed.
+Its fresh context worker independently rechecked the 25 October occurrence,
+governing page images and dated Ordo, corrected the inherited Gloria locator
+to RGMR 431(a), and added the registered 1925 AAS first-printing route and
+review dependency. Context passed; its correction was committed and
+feature-pushed as `ce7815e4d`.
+
+Before research, driver intervention `0000` identified the separately
+published Claude F01 source files as possible untrusted data leads only.
+This run must independently authenticate and inspect the primary witnesses,
+verify each adopted source unit and its rights and extent, disclose any
+cross-provider data contribution, and inherit no Claude acceptance. It must
+not retry or reconstruct unknown rejected model output. A fresh high-effort
+research worker has the exact native packet and intervention; no research
+PASS or later-stage result is claimed yet.
