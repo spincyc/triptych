@@ -14,12 +14,12 @@
     {
       "id": "western",
       "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
-      "sha256": "7648e03892b009f5cf6f0c2117ff250c454a41f3b8346ca0376c17848af88f0f"
+      "sha256": "4a88540e45eff0cc029ba6c3920ca6849808d2e3734f62235c9ef097bd137c4a"
     },
     {
       "id": "presentation",
       "path": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
-      "sha256": "ea84b5e01dd2bdcd3311230483f34657a4869dd025a60e9d714c673ef0305a02"
+      "sha256": "a6113dd126060c08bb641659cf2149d6264e4ab74fa2642c2c401082331dfe88"
     },
     {
       "id": "legacy_latin",
@@ -84,7 +84,7 @@
     {
       "id": "dossier:roman-stages",
       "path": "src/sources/inventories/eucharistic-stages/roman.json",
-      "sha256": "264cad2f690faac3e5bed627a1b136dc7fa376ac83a7741f0e2d215e2ee24566"
+      "sha256": "be420b68c502c0d2ee28dfb48de89aff7d81dd1e889cd0a3ebc1bf76e296693f"
     },
     {
       "id": "dossier:slavonic-roman",
@@ -3820,7 +3820,8 @@
       "documented_stage_count": 24,
       "provisional_stage_count": 1,
       "text_coverage_counts": {
-        "not-transcribed": 25
+        "not-transcribed": 24,
+        "partial": 1
       },
       "status": "canonical-bounded-dossier-snapshot"
     },
@@ -6958,7 +6959,8 @@
         "scope": "General Roman books, separately dated component books, corrigenda and optional supplementary rules; the 1965–1968 components are not complete typical missals.",
         "provisional_stage_ids": [],
         "text_coverage_counts": {
-          "not-transcribed": 21
+          "not-transcribed": 20,
+          "partial": 1
         },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": [

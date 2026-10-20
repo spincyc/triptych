@@ -3982,8 +3982,8 @@ date = "1570"
 kind = "identified-printed-missal-comparison-witness"
 status = "whole-original-provider-archive-acquired; bounded-loci-inspected"
 sources = ["palecki-carthusian-2015", "roman-1570-rome-original"]
-source_locus = "Title opening 004; colophon 332; Ritus opening 014, signature **2; Ordo opening 174, printed pp. 290–291."
-qualification = "The original title and colophon identify Rome, Faletti/Varisco and associates, MDLXX. The complete 339-opening provider archive was acquired; four evidence openings are retained and the archive remains remote under its recorded size rationale. Bounded comparison uses this Rome 1570 Ritus and Ordo witness, distinct from the Venice printing and from Quo primum legislation. No whole-book transcription, exhaustive collation or uniform reception is claimed."
+source_locus = "Title opening 004; colophon 332; Ritus opening 014, signature **2; Ordo opening 174, printed pp. 290–291; strict Canon openings 169 right–172 left, printed pp. 281–286."
+qualification = "The original title and colophon identify Rome, Faletti/Varisco and associates, MDLXX. The complete 339-opening provider archive was acquired; four earlier evidence openings and four exact original Canon DjVu openings are retained, with a four-page Canon PDF derivative. The full archive remains remote under its recorded size rationale. Bounded comparison uses this Rome 1570 Ritus and Ordo witness, distinct from the Venice printing and from Quo primum legislation. The strict Canon on printed pp. 281–286 is independently collated as a complete selective-reading constituent of 16 units. No whole-book transcription, exhaustive whole-book collation or uniform reception is claimed."
 date_role = "printed-witness-publication"
 chronology_start = 1570
 chronology_end = 1570
@@ -3991,11 +3991,11 @@ chronology_kind = "printed-witness-publication"
 chronology_certainty = "original-title-and-colophon-inspection"
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "comparison-witness-not-separately-established-new-recension"
-acquisition_status = "complete-provider-archive-acquired; four-evidence-openings-retained; archive-remote-for-size"
-transcription_status = "no-new-verified-transcription"
-collation_status = "bounded-original-Ritus-and-Ordo-image-comparison"
+acquisition_status = "complete-provider-archive-acquired; four-evidence-openings-and-four-original-canon-openings-retained; archive-remote-for-size"
+transcription_status = "complete-strict-canon-p281-286-selective-reading-constituent; whole-book-not-transcribed"
+collation_status = "independently-image-collated-strict-canon-p281-286; bounded-original-Ritus-and-Ordo-image-comparison"
 source_library_edition_id = "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570"
-source_library_artifact_ids = ["artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.dlibra-djvu-archive-5c284229", "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.scan-004-png-6e07c82a", "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.scan-014-png-eeb5415d", "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.scan-174-png-db429ac5", "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.scan-332-png-98cf8f3f"]
+source_library_artifact_ids = ["artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.dlibra-djvu-archive-5c284229", "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.scan-004-png-6e07c82a", "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.scan-014-png-eeb5415d", "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.scan-174-png-db429ac5", "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.scan-332-png-98cf8f3f", "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-djvu-four-5d5366c2", "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-facsimile-8755a363", "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a"]
 
 [[candidates]]
 id = "german-swiss-salzburg-witness-cluster"

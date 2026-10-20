@@ -1161,6 +1161,10 @@ record_id = "latin-missal:carmelitarum-capitulum-1621"
 # Complete checked constituents, with whole-book coverage remaining partial.
 
 [[text_sets]]
+id = "roman-1570-canon-missae"
+adapter = "native-book:roman-1570-canon-missae"
+
+[[text_sets]]
 id = "tuki-1736-arabic-creed"
 adapter = "native-book:tuki-1736-arabic-creed"
 
@@ -1227,6 +1231,11 @@ unit_ids = ["mozarabic.1755.benedictio.heading", "mozarabic.1755.benedictio.open
 text_set = "mozarabic-1804-benedictio-panis"
 record_id = "western:mozarabic-1804"
 unit_ids = ["mozarabic.1804.benedictio.heading", "mozarabic.1804.benedictio.opening-versicles", "mozarabic.1804.benedictio.opening-greeting", "mozarabic.1804.benedictio.oratio-heading", "mozarabic.1804.benedictio.oratio", "mozarabic.1804.benedictio.closing-greeting", "mozarabic.1804.benedictio.blessing-heading", "mozarabic.1804.benedictio.blessing", "mozarabic.1804.benedictio.sprinkling"]
+
+[[text_versions]]
+id = "roman-1570-canon-missae"
+text_set = "roman-1570-canon-missae"
+parents = []
 
 [[text_versions]]
 id = "tuki-1736-arabic-creed"

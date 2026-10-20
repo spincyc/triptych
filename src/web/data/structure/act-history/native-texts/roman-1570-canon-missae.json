@@ -1,0 +1,761 @@
+{
+  "adapter_id": "native-book:roman-1570-canon-missae",
+  "binding_sha256": "8cbb45f8fee8fad2522e928ac5598bfc184c7117747e3502f653f2cf0c5ba1dd",
+  "catalogue_witness_ids": [
+    "western:roman-1570-rome-faletti-varisco"
+  ],
+  "counts": {
+    "languages": {
+      "la": 16
+    },
+    "units": 16,
+    "whitespace_tokens": 911
+  },
+  "id": "roman-1570-canon-missae",
+  "schema": "triptych-eucharistic-native-text/v1",
+  "scope": {
+    "complete_declared_extent": true,
+    "description": "Complete strict Eucharistic Canon from opening 169 right printed p.281 red Sacerdos/Te igitur through opening 172 left p.286 Per omnia secula seculorum and R. Amen. Includes source prayer wording, three red headings, action rubrics and 25 printed crosses under declared selective reading normalization. Excludes p.280, p.287, the subsequent Pater and the running-head continuation to p.292; neither whole Missal nor diplomatic glyph/chant-pitch completeness is claimed.",
+    "extent_kind": "constituent",
+    "known_extent_pages": 4,
+    "known_extent_units": 16,
+    "omitted_book_divisions": [
+      "Preface and Sanctus before p.281",
+      "Pater noster, communion, dismissal and other material after p.286, even where Canon Misse running head continues",
+      "All propers, calendar, lectionary, other ordinary, rubrics outside the strict Canon",
+      "Page furniture, manuscript marks, diplomatic Gothic glyph variants and chant-note pitches"
+    ],
+    "status": "complete-native-constituent",
+    "whole_book_complete": false
+  },
+  "sources": [
+    {
+      "edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-facsimile-8755a363",
+      "record_type": "artifact",
+      "rights_basis": "The Rome 1570 printing is public domain in the United States by publication date. The Dominican Digital Library labels its mechanical images public domain; mechanical extraction and faithful bounded reading transcription add no separately claimed expressive rights. Excluded from Triptych CC BY 4.0 grant.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "source_url": "https://bc.dominikanie.pl/Content/176/download/",
+      "transformation": "DjVuLibre 3.5.30.1 decoded each exact member to unscaled 6512×4376 RGB PPM. ImageMagick embedded four full-size images in provider order in PDF using quality-95 JPEG compression. JPEG is lossy; the exact original DjVu members remain in the tracked parent package. No crop, page omission, OCR or editorial text."
+    },
+    {
+      "edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "record_type": "artifact",
+      "rights_basis": "The Rome 1570 printing is public domain in the United States by publication date. The Dominican Digital Library labels its mechanical images public domain; mechanical extraction and faithful bounded reading transcription add no separately claimed expressive rights. Excluded from Triptych CC BY 4.0 grant.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "source_url": "https://bc.dominikanie.pl/Content/176/download/",
+      "transformation": "Render the accepted 16-unit JSON reading into sequential UTF-8 LF lines. Printed headings and red rubrics occupy their own lines; other lines are normalized spoken or chanted reading text. Retain 25 printed ✠ signs at source positions, one red N. at each Memento site, and no unprinted Amen. The original print is not glyph-diplomatically encoded; chant pitches are excluded. The native extent support record roman-1570-canon-missae-extent.json durably classifies every physical line as reading, red-heading or red-rubric and marks the two red N. sites without duplicating literal wording."
+    },
+    {
+      "authority": "Catholic Church",
+      "date": "1570",
+      "id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "language": "la",
+      "publication": "Romae: apud heredes Bartholomei Faletti, Ioannem Variscum et socios, 1570",
+      "record_type": "edition",
+      "title": "Missale Romanum, Rome: Faletti heirs, Joannes Variscus and associates, 1570"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-communicantes",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-concluding-response",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-hanc-igitur",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-memento-defunctorum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-memento-vivorum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-nobis-quoque",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-opening-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-per-ipsum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-per-quem",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-quam-oblationem",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-qui-pridie",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-simili-modo",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-supplices",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-supra-quae",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-te-igitur",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-unde-et-memores",
+      "record_type": "passage"
+    }
+  ],
+  "stage_ids": [
+    "roman-stages-1570"
+  ],
+  "title": "Rome 1570: complete strict Canon Missae constituent",
+  "units": [
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "opening-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "source_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-opening-rubric",
+      "source_locator": "Strict Canon unit opening-rubric; printed p. 281; original opening(s) 169; PDF page(s) 1; normalized-text physical lines 1–1.",
+      "source_order": 1,
+      "text": "Sacerdos extendens et iungens manus, elevans ad caelum oculos et statim demittens, inclinatus ante altare dicit.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "text_sha256": "b49acc8cbc8684384989c3c955daa0ad0bfc7af5b65ea779f5c14df3d027c5e6",
+      "unit_id": "unit.rome-1570.canon.opening-rubric",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "te-igitur"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "source_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-te-igitur",
+      "source_locator": "Strict Canon unit te-igitur; printed p. 281, 282; original opening(s) 169, 170; PDF page(s) 1, 2; normalized-text physical lines 2–8.",
+      "source_order": 2,
+      "text": "Te igitur clementissime Pater, per Iesum Christum filium tuum dominum nostrum, supplices rogamus, ac petimus,\nOsculatur altare\nuti accepta habeas, et benedicas,\nTer signet super oblata.\nhaec ✠ dona, haec ✠ munera, haec ✠ sancta sacrificia illibata.\nExtensis manibus prosequitur\nIn primis quae tibi offerimus pro Ecclesia tua sancta catholica: quam pacificare, custodire, adunare, et regere digneris toto orbe terrarum: una cum famulo tuo papa nostro N. et antistite nostro N. et omnibus orthodoxis, atque catholicae et apostolicae fidei cultoribus.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "text_sha256": "fd9f6f281507e12755be9741e005837c571141746bab5d90eaf1b6331fefc869",
+      "unit_id": "unit.rome-1570.canon.te-igitur",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "memento-vivorum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "source_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-memento-vivorum",
+      "source_locator": "Strict Canon unit memento-vivorum; printed p. 282; original opening(s) 170; PDF page(s) 2; normalized-text physical lines 9–12.",
+      "source_order": 3,
+      "text": "Commemor. pro vivis.\nMemento domine famulorum famularumque tuarum N.\niungit manus, orat aliquantulum pro quibus orare intendit: et extensis manibus prosequitur.\nEt omnium circumstantium, quorum tibi fides cognita est, et nota devotio, pro quibus tibi offerimus: vel qui tibi offerunt hoc sacrificium laudis, pro se, suisque omnibus: pro redemptione animarum suarum, pro spe salutis et incolumitatis suae, tibi reddunt vota sua aeterno deo vivo et vero.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "text_sha256": "1a7df7d48f281df40740fb4ad8fc134355be9c14910ce7f8dbc7f79092cb48d3",
+      "unit_id": "unit.rome-1570.canon.memento-vivorum",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "communicantes"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "source_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-communicantes",
+      "source_locator": "Strict Canon unit communicantes; printed p. 282; original opening(s) 170; PDF page(s) 2; normalized-text physical lines 13–16.",
+      "source_order": 4,
+      "text": "Infra actionem.\nCommunicantes, et memoriam venerantes: in primis gloriosae semper virginis Mariae genitricis Dei et domini nostri Iesu Christi, sed et beatorum apostolorum ac martyrum tuorum, Petri et Pauli, Andreae, Iacobi, Ioannis, Thomae, Iacobi, Philippi, Bartholomaei, Matthaei, Simonis et Thaddaei: Lini, Cleti, Clementis, Xisti, Cornelii, Cypriani, Laurentii, Chrysogoni, Ioannis et Pauli, Cosmae et Damiani. Et omnium sanctorum tuorum: quorum meritis precibusque concedas, ut in omnibus protectionis tuae muniamur auxilio.\niungit manus.\nPer eundem Christum dominum nostrum.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "text_sha256": "52bcafbd2066c13216f32a9579a18df16ba0de29f35a018b1dd0737763ba0f17",
+      "unit_id": "unit.rome-1570.canon.communicantes",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "hanc-igitur"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "source_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-hanc-igitur",
+      "source_locator": "Strict Canon unit hanc-igitur; printed p. 282, 283; original opening(s) 170; PDF page(s) 2; normalized-text physical lines 17–20.",
+      "source_order": 5,
+      "text": "Tenens manus extensas super oblata dicit.\nHanc igitur oblationem servitutis nostrae, sed et cunctae familiae tuae, quaesumus domine, ut placatus accipias: diesque nostros in tua pace disponas, atque ab aeterna damnatione nos eripi, et in electorum tuorum iubeas grege numerari.\niungit manus.\nPer Christum dominum nostrum.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "text_sha256": "59cff45b06ac3cdd669ea9ccef61f2433679c049fe5551de991eea9f3d1c2e11",
+      "unit_id": "unit.rome-1570.canon.hanc-igitur",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "quam-oblationem"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "source_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-quam-oblationem",
+      "source_locator": "Strict Canon unit quam-oblationem; printed p. 283; original opening(s) 170; PDF page(s) 2; normalized-text physical lines 21–25.",
+      "source_order": 6,
+      "text": "Quam oblationem tu Deus in omnibus, quaesumus,\nsignat ter super oblata.\nbene✠dictam, ascri✠ptam, ra✠tam, rationabilem, acceptabilemque facere digneris:\nsignat semel super hostiam, et semel super calicem.\nut nobis cor✠pus et san✠guis fiat dilectissimi filii tui, domini nostri Iesu Christi.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "text_sha256": "2eeb793f19ae982b7f6fa99bc36365e8d0c9ab7d8ec63b50def0022fcff7d16a",
+      "unit_id": "unit.rome-1570.canon.quam-oblationem",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "institution-narrative-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "qui-pridie"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "source_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-qui-pridie",
+      "source_locator": "Strict Canon unit qui-pridie; printed p. 283; original opening(s) 170; PDF page(s) 2; normalized-text physical lines 26–35.",
+      "source_order": 7,
+      "text": "Qui pridie quam pateretur:\naccipit hostiam.\naccepit panem in sanctas ac venerabiles manus suas:\nelevat oculos ad caelum.\net elevatis oculis in caelum ad te Deum patrem suum omnipotentem: tibi gratias agens,\nsignat super hostiam.\nbene✠dixit, fregit, deditque discipulis suis, dicens. Accipite et manducate ex hoc omnes.\nTenens ambabus manibus hostiam, profert verba consecrationis distincte, secrete, et attente.\nHoc est enim corpus meum.\nProlatis verbis consecrationis, statim hostiam consecratam genuflexus adorat: surgit, ostendit populo: reponit super corporale, iterum adorat: et non disiungit pollices et indices, nisi quando hostia tractanda est, usque ad ablutionem digitorum. Tunc detecto calice dicit.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "text_sha256": "371229b25f3061dcf4b7ff581cda2832fd57e2a523457d86b0c13867ef7b7521",
+      "unit_id": "unit.rome-1570.canon.qui-pridie",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "institution-narrative-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "simili-modo"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "source_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-simili-modo",
+      "source_locator": "Strict Canon unit simili-modo; printed p. 283, 284; original opening(s) 170, 171; PDF page(s) 2, 3; normalized-text physical lines 36–45.",
+      "source_order": 8,
+      "text": "Simili modo postquam cenatum est:\nambabus manibus accipit calicem.\naccipiens et hunc praeclarum calicem in sanctas ac venerabiles manus suas: item tibi gratias agens,\nsinistra tenens calicem, dextra signat super eum.\nbene✠dixit, deditque discipulis suis, dicens. Accipite et bibite ex eo omnes.\nProfert verba consecrationis super calicem tenens illum parum elevatum.\nHic est enim calix sanguinis mei: novi et aeterni testamenti: mysterium fidei: qui pro vobis et pro multis effundetur in remissionem peccatorum.\nProlatis verbis consecrationis deponit calicem super corporale, et genuflexus adorat: surgit, ostendit populo, dicens.\nHaec quotiescumque feceritis, in mei memoriam facietis.\nDeponit, cooperit, et iterum adorat. Deinde disiunctis manibus dicit.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "text_sha256": "29d2ad8984f82e392954ce0cf404e1d02590eb6a02853561ce94c6dbc5ab1590",
+      "unit_id": "unit.rome-1570.canon.simili-modo",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "unde-et-memores"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "source_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-unde-et-memores",
+      "source_locator": "Strict Canon unit unde-et-memores; printed p. 284; original opening(s) 171; PDF page(s) 3; normalized-text physical lines 46–51.",
+      "source_order": 9,
+      "text": "Unde et memores domine nos servi tui, sed et plebs tua sancta, eiusdem Christi filii tui domini nostri, tam beatae passionis, necnon et ab inferis resurrectionis, sed et in caelos gloriosae ascensionis, offerimus praeclarae maiestati tuae de tuis donis ac datis,\nsignat ter super hostiam et calicem simul.\nhostiam ✠ puram, hostiam ✠ sanctam, hostiam ✠ immaculatam,\nsignat semel super hostiam, et semel super calicem.\npanem ✠ sanctum vitae aeternae, et calicem ✠ salutis perpetuae.\nextensis manibus prosequitur.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "text_sha256": "3b49e0c8080521daeec01520d53206dba3206ecf8e215a4b3e4bd8a6ecced3e9",
+      "unit_id": "unit.rome-1570.canon.unde-et-memores",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supra-quae"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "source_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-supra-quae",
+      "source_locator": "Strict Canon unit supra-quae; printed p. 284; original opening(s) 171; PDF page(s) 3; normalized-text physical lines 52–52.",
+      "source_order": 10,
+      "text": "Supra quae propitio ac sereno vultu respicere digneris: et accepta habere, sicuti accepta habere dignatus es munera pueri tui iusti Abel, et sacrificium patriarchae nostri Abrahae: et quod tibi obtulit summus sacerdos tuus Melchisedech, sanctum sacrificium, immaculatam hostiam.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "text_sha256": "7c19bf675ea732405654289ef846bee07a0b15da9f79250674b7fd507a894ac9",
+      "unit_id": "unit.rome-1570.canon.supra-quae",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supplices"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "source_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-supplices",
+      "source_locator": "Strict Canon unit supplices; printed p. 284, 285; original opening(s) 171; PDF page(s) 3; normalized-text physical lines 53–58.",
+      "source_order": 11,
+      "text": "profunde inclinatus iunctis manibus dicit.\nSupplices te rogamus omnipotens Deus: iube haec perferri per manus sancti Angeli tui in sublime altare tuum in conspectu divinae maiestatis tuae. Et quotquot,\nosculatur altare.\nex hac altaris participatione, sacrosanctum filii tui\nsignat semel super hostiam, et semel super calicem.\ncor✠pus et san✠guinem sumpserimus, omni benedictione caelesti et gratia repleamur. Per eundem Christum dominum nostrum. Amen.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "text_sha256": "83f05156d1c53ed734bbe9047bf9f6efa6fb8eaf7392676b5d7d376776995fda",
+      "unit_id": "unit.rome-1570.canon.supplices",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "memento-defunctorum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "source_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-memento-defunctorum",
+      "source_locator": "Strict Canon unit memento-defunctorum; printed p. 285; original opening(s) 171; PDF page(s) 3; normalized-text physical lines 59–62.",
+      "source_order": 12,
+      "text": "Commemoratio pro defunctis.\nMemento etiam domine famulorum famularumque tuarum, qui nos praecesserunt cum signo fidei, et dormiunt in somno pacis. N.\niungit manus, orat aliquantulum pro his defunctis pro quibus orare intendit: et extensis manibus prosequitur.\nIpsis domine, et omnibus in Christo quiescentibus, locum refrigerii, lucis, et pacis, ut indulgeas, deprecamur. Per eundem Christum dominum nostrum.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "text_sha256": "b823655096d1447812acd63e4df915212d9ba0b9d435decc9d8292d9e14c1d67",
+      "unit_id": "unit.rome-1570.canon.memento-defunctorum",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "nobis-quoque"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "source_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-nobis-quoque",
+      "source_locator": "Strict Canon unit nobis-quoque; printed p. 285; original opening(s) 171; PDF page(s) 3; normalized-text physical lines 63–64.",
+      "source_order": 13,
+      "text": "Percutit pectus elata parum voce dicens.\nNobis quoque peccatoribus famulis tuis, de multitudine miserationum tuarum sperantibus, partem aliquam et societatem donare digneris, cum tuis sanctis apostolis et martyribus: cum Ioanne, Stephano, Matthia, Barnaba, Ignatio, Alexandro, Marcellino, Petro, Felicitate, Perpetua, Agatha, Lucia, Agnete, Caecilia, Anastasia: et omnibus sanctis tuis. Intra quorum nos consortium, non estimator meriti, sed veniae, quaesumus, largitor admitte. Per Christum dominum nostrum.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "text_sha256": "049e60859cedf036d7b12c4603a8831fcb050e14ef9ce5b0c1a6d2f4084fc241",
+      "unit_id": "unit.rome-1570.canon.nobis-quoque",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-quem"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "source_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-per-quem",
+      "source_locator": "Strict Canon unit per-quem; printed p. 286; original opening(s) 172; PDF page(s) 4; normalized-text physical lines 65–68.",
+      "source_order": 14,
+      "text": "Per quem haec omnia domine semper bona creas:\nsignat ter super hostiam et calicem simul dicens.\nsan✠ctificas, vivi✠ficas, ben✠dicis, et praestas nobis.\ndiscooperit calicem, genuflectit, accipit sacramentum dextera, tenens sinistra calicem: signat cum hostia ter a labio ad labium calicis dicens.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "text_sha256": "37a0cfb1e0a863c9b2c8ea0fe94486beb9722d6b022548e296d77bc71c4e6d78",
+      "unit_id": "unit.rome-1570.canon.per-quem",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "doxology-with-rubrics-and-response",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-ipsum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "source_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-per-ipsum",
+      "source_locator": "Strict Canon unit per-ipsum; printed p. 286; original opening(s) 172; PDF page(s) 4; normalized-text physical lines 69–74.",
+      "source_order": 15,
+      "text": "Per ip✠sum: et cum ip✠so:\nbis signat inter seipsum et calicem.\nin ip✠so: est tibi Deo patri ✠ omnipotenti: in unitate spiritus ✠ sancti:\nelevans parum calicem cum hostia dicit.\nomnis honor et gloria.\nreponit hostiam, operit calicem, genuflectit, surgit et dicit.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "text_sha256": "490892a6be0e91c4d8179fa08a816408102f127ce4836e092748efc68384a241",
+      "unit_id": "unit.rome-1570.canon.per-ipsum",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "notated-dialogue",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "concluding-response"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a",
+      "source_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-concluding-response",
+      "source_locator": "Strict Canon unit concluding-response; printed p. 286; original opening(s) 172; PDF page(s) 4; normalized-text physical lines 75–75.",
+      "source_order": 16,
+      "text": "Per omnia secula seculorum. R. Amen.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "text_sha256": "4cdb69ebc562bbde63b612a0a791d7766b87e3f6ad8e958e423250f509900982",
+      "unit_id": "unit.rome-1570.canon.concluding-response",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    }
+  ],
+  "witnesses": [
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-facsimile-8755a363",
+      "edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "id": "rome-1570-canon-openings",
+      "scope_pages": [
+        [
+          1,
+          4
+        ]
+      ]
+    }
+  ]
+}

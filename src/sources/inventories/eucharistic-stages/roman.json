@@ -322,10 +322,10 @@
       "title": "Missale Romanum, Rome: heirs of Bartolomeo Faletti, Joannes Variscus and associates (1570), Dominican Digital Library copy",
       "url": "https://bc.dominikanie.pl/dlibra/publication/170/edition/176",
       "kind": "primary-book",
-      "inspection": "Complete 339-position DjVu archive acquired; read rendered scan 004 title, 332 colophon (ROMAE, MDLXX), 014 Ritus final blessing and 174 printed 290–291 Ordo/Canon conclusion. The four inspected openings are retained as canonical PNG derivatives.",
-      "checked_on": "2026-10-19",
+      "inspection": "Complete 339-position DjVu archive acquired; read rendered scan 004 title, 332 colophon (ROMAE, MDLXX), 014 Ritus final blessing and 174 printed 290–291 Ordo/Canon conclusion. Four inspected evidence openings are retained as canonical PNG derivatives. Original openings 169 right through 172 left, printed pp. 281–286, were separately image-read for the complete strict Canon constituent; their four exact DjVu members and a four-page full-resolution PDF derivative are retained.",
+      "checked_on": "2026-10-20",
       "status": "inspected",
-      "limitations": "The original Roman copy is now acquired and identified. Only the named passages were read for this comparison, not the entire missal. The 108,391,684-byte complete archive remains remote for measured size; four exact image derivatives support offline inspection. Venice 1570 remains a distinct witness."
+      "limitations": "The original Roman copy is acquired and identified. The strict Canon on printed pp. 281–286 is independently collated as a selective reading transcription, including rubrics, headings and 25 printed crosses; it is not a diplomatic glyph or chant-note transcription. The rest of the missal is not completely transcribed. The 108,391,684-byte complete archive remains remote for measured size. Venice 1570 remains a distinct witness."
     }
   ],
   "stages": [
@@ -475,7 +475,8 @@
       ],
       "witness_label": "Rome 1570, heirs of Bartolomeo Faletti, Joannes Variscus and associates; original Dominican Digital Library copy inspected",
       "summary": "Roman Missal revised under Pius V with ordered ceremonial and Roman Canon.",
-      "text_coverage": "not-transcribed",
+      "text_coverage": "partial",
+      "text_binding": "native-book:roman-1570-canon-missae",
       "evidence": [
         {
           "source_id": "roman-stages-source-pian-witness",
@@ -496,9 +497,14 @@
           "source_id": "roman-stages-source-1570-rome",
           "locus": "Scan 174, printed 291, right column after Placeat",
           "claim": "The Rome 1570 Ordo has a short instruction to bless the people and the formula; it does not contain the later explicit single/solemn/pontifical distinction at this locus."
+        },
+        {
+          "source_id": "roman-stages-source-1570-rome",
+          "locus": "Original archive openings 169 right–172 left, printed pp. 281–286; retained four-page Canon facsimile PDF pages 1–4",
+          "claim": "The complete strict Canon constituent is independently image-collated as 16 native selective-reading units with red headings, action rubrics and 25 printed crosses. This does not establish whole-Missal text coverage."
         }
       ],
-      "limitations": "The title and colophon identify the original Rome 1570 printing; 14 July Quo primum remains an act date, not its exact printing day. No full textual delta from 1474 is proven. The Ritus final-blessing directions differ from the separate Venice 1570 witness, so that witness cannot silently supply the Roman baseline. Exempt older uses are not incorporated.",
+      "limitations": "The title and colophon identify the original Rome 1570 printing; 14 July Quo primum remains an act date, not its exact printing day. No full textual delta from 1474 is proven. The Ritus final-blessing directions differ from the separate Venice 1570 witness, so that witness cannot silently supply the Roman baseline. Exempt older uses are not incorporated. The native text binding completes only the strict Canon on printed pp. 281–286 under its declared reading normalization; the remainder of the wider running-head section and whole Missal remain untranscribed.",
       "reception": "Roman use subject to Quo primum and its exemptions; no assertion that every Latin use was replaced."
     },
     {

@@ -433,6 +433,22 @@ no text inheritance. Stable liturgical paths, separate source and serialized
 text hashes, and synthetic Git dates preserve honest diffs without presenting
 selected constituents as complete missals.
 
+**Rome 1570 strict Canon integration, 2026-10-20.** The original Rome printing
+now supplies a fifth independently reviewed native version: the complete strict
+Canon constituent on printed pp. 281–286, from `Te igitur` through the concluding
+`R. Amen.` Sixteen ordered units preserve 75 selectively normalized reading
+lines, headings, action rubrics and 25 printed crosses. The source library holds
+the four exact DjVu openings, a four-page facsimile derivative and the bounded
+reading text with separate artifact, passage, extent and review records. The
+stage is **partial** because the rest of the Missal is not transcribed; no
+1474-to-1570 textual descent or complete whole-book version is claimed.
+Independent postimage review accepts the copied bytes and bindings. The history
+corpus now has 1,248 units on 20 reconstruction branches and five parentless
+native version roots. Its browser projection has 539 files, including the new
+Canon text view. Source-library validation reports 3,182 artifacts and 5,457
+passages; the stage crosswalk reconciles to 132 not-transcribed and 15 partial
+stages with zero findings.
+
 Source review repaired eleven stale binding rows in ten publications after
 reconstructing the exact earlier fingerprints. Feltoe's edition description
 required a bounded correction in the Claude Fifteenth Sunday study; the 36-page

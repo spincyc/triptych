@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-collation",
+  "book_id": "roman-1570-canon-missae",
+  "title": "Rome 1570 strict Canon native serialization independent review",
+  "status": "verified",
+  "independent": true,
+  "complete_extent_verified": true,
+  "reviewer": "Independent AI source reviewer (Rome 1570 Canon original-image and native serialization collation)",
+  "checked_on": "2026-10-20",
+  "binding_sha256": "8cbb45f8fee8fad2522e928ac5598bfc184c7117747e3502f653f2cf0c5ba1dd",
+  "extent_sha256": "f1d97c3993c2d3545c6f1ce1f1c226886bcee876da71b633569715218f6303d8",
+  "witness_sha256": {
+    "rome-1570-canon-openings": "8755a3634bc771e327bcbbd2bbb7ef9b94d41e9ac5c4e30ec10a673e113c7ffa"
+  },
+  "unit_sha256": {
+    "unit.rome-1570.canon.opening-rubric": "b49acc8cbc8684384989c3c955daa0ad0bfc7af5b65ea779f5c14df3d027c5e6",
+    "unit.rome-1570.canon.te-igitur": "fd9f6f281507e12755be9741e005837c571141746bab5d90eaf1b6331fefc869",
+    "unit.rome-1570.canon.memento-vivorum": "1a7df7d48f281df40740fb4ad8fc134355be9c14910ce7f8dbc7f79092cb48d3",
+    "unit.rome-1570.canon.communicantes": "52bcafbd2066c13216f32a9579a18df16ba0de29f35a018b1dd0737763ba0f17",
+    "unit.rome-1570.canon.hanc-igitur": "59cff45b06ac3cdd669ea9ccef61f2433679c049fe5551de991eea9f3d1c2e11",
+    "unit.rome-1570.canon.quam-oblationem": "2eeb793f19ae982b7f6fa99bc36365e8d0c9ab7d8ec63b50def0022fcff7d16a",
+    "unit.rome-1570.canon.qui-pridie": "371229b25f3061dcf4b7ff581cda2832fd57e2a523457d86b0c13867ef7b7521",
+    "unit.rome-1570.canon.simili-modo": "29d2ad8984f82e392954ce0cf404e1d02590eb6a02853561ce94c6dbc5ab1590",
+    "unit.rome-1570.canon.unde-et-memores": "3b49e0c8080521daeec01520d53206dba3206ecf8e215a4b3e4bd8a6ecced3e9",
+    "unit.rome-1570.canon.supra-quae": "7c19bf675ea732405654289ef846bee07a0b15da9f79250674b7fd507a894ac9",
+    "unit.rome-1570.canon.supplices": "83f05156d1c53ed734bbe9047bf9f6efa6fb8eaf7392676b5d7d376776995fda",
+    "unit.rome-1570.canon.memento-defunctorum": "b823655096d1447812acd63e4df915212d9ba0b9d435decc9d8292d9e14c1d67",
+    "unit.rome-1570.canon.nobis-quoque": "049e60859cedf036d7b12c4603a8831fcb050e14ef9ce5b0c1a6d2f4084fc241",
+    "unit.rome-1570.canon.per-quem": "37a0cfb1e0a863c9b2c8ea0fe94486beb9722d6b022548e296d77bc71c4e6d78",
+    "unit.rome-1570.canon.per-ipsum": "490892a6be0e91c4d8179fa08a816408102f127ce4836e092748efc68384a241",
+    "unit.rome-1570.canon.concluding-response": "4cdb69ebc562bbde63b612a0a791d7766b87e3f6ad8e958e423250f509900982"
+  },
+  "scope": "Complete strict Eucharistic Canon from opening 169 right printed p.281 red Sacerdos/Te igitur through opening 172 left p.286 Per omnia secula seculorum and R. Amen. Includes source prayer wording, three red headings, action rubrics and 25 printed crosses under declared selective reading normalization. Excludes p.280, p.287, the subsequent Pater and the running-head continuation to p.292; neither whole Missal nor diplomatic glyph/chant-pitch completeness is claimed.",
+  "method": "Independent original-DjVu image review accepted the bounded selective reading and every rubric/sign in 16 units (SHA d0ac74ab66f219cdc4e9fb5d163f782fd41f51826df064bb871b61ed58527141). A second cold pass accepted all 75 serialized physical lines, all 16 line-selected unit hashes, three headings, 33 red rubric lines, two red N. sites, 25 crosses, exact original-DjVu package members and four PDF image/page mappings (SHA 060e1b83eb458a5bf26018bc10f0ef9e5044d63fab9b034bf377bea4b11bfda2). The native extent records the per-line classification without duplicating the literal text.",
+  "normalization_limit": "Declared selective Latin reading only; not glyph-diplomatic typography, abbreviation signs, color reproduction or chant-note pitches.",
+  "review_limit": "Complete declared strict Canon constituent only, not the wider p.281–292 running-head section or whole Missal."
+}
