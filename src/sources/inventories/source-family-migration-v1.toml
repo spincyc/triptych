@@ -1,14 +1,14 @@
 migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
-audited_on = "2026-10-19"
+audited_on = "2026-10-20"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:078fc46e75d652e071b3af143047c22b9cc092236c3ccd7ff6b13810f7e17498"
+inventory_snapshot = "sha256:6e291292ad3a01bab7e9ed53bbfb03862241cb6b96a9123012231515bd012946"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
-classification_snapshot = "sha256:d95f23179049f3d3b5655a32bae25aee01add984555e3ada621980bd27835639"
-canonical_catalog_snapshot = "sha256:58b3f322cc1319115e4cf1fac71508aa24d18d56362418957fa9b287adf5399c"
+classification_snapshot = "sha256:6ed335d8da72bef42e08cfe75d6d126d301cac9be075e0a5976736ec938cb94f"
+canonical_catalog_snapshot = "sha256:f1dcc0a52650e0416c3828f9bd3cc35ca95a1451d70fe1c4a033255deabdc3cd"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:a2ee3ad5a9dc6c5003a84cb1d2135c065dca56f0a09c65af43cbdc922f4763c2"
+snapshot = "sha256:8c79e5d6b20918102f319bc664d5bc27039b1c942dfb2e820ad6b921216db4a8"
 families = []
 
 [[review_units]]
@@ -499,6 +499,11 @@ review_state = "pending"
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"
 surface_snapshot = "sha256:5f812b9adea8f5d4ff18364ffd22b069ea5f7bfc664cfdc231190d5e3190e5ba"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"
+surface_snapshot = "sha256:0edeede229210075a93783716dc498027c3ca6775bd6c57e9700181a4ec24621"
 review_state = "pending"
 
 [[review_units]]

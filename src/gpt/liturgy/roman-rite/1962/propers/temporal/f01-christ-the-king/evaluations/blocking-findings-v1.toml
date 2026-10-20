@@ -1,0 +1,79 @@
+# Blocking findings standing against this publication, the
+# verdicts its evaluation lanes reached, and the observations
+# they recorded outside their own criteria. Written by tpt after
+# each evaluation of this leaf.
+#
+# One record, several stages. Every entry names the stage that
+# raised it, [[stages]] says what each stage last said, and an
+# evaluation replaces its own stage's entries and leaves every
+# other stage's alone -- so what the content evaluation found
+# still stands here after the synthesis evaluation has spoken. A
+# stage that looked and found nothing leaves an empty list
+# rather than no entry: "evaluated, nothing stands" and
+# "nobody has looked" are different facts, per stage.
+#
+# The keys directly below these comments describe the write that
+# last touched this file, and count every stage's entries
+# together. They are its summary line. What a given stage found
+# is in that stage's [[stages]] entry and in the entries naming
+# it -- reading the top-level stage as the record's one stage is
+# the mistake this schema exists to stop.
+#
+# It exists because a run's own results live under build/, which
+# is ignored, which `make clean` and `wt tidy` delete without
+# asking, and which nothing preserves between productions.
+#
+# Nothing reads this back into a run. Carrying findings from one
+# production into the next wants doing where the run's identity
+# can cover it -- a committed record, or this file's hash in the
+# run id and the acceptance audit -- and until then this is a
+# record for people.
+#
+# Escalations -- defects in artifacts no stage of the run may
+# write: guidance, the source library, the tools, the workflow --
+# are written here too, from the run's whole ledger, so that the
+# decision they ask of a maintainer outlives the run directory.
+#
+# Accepted findings are true defects a lane judged not worth a
+# repair round, with the reason it judged so. Advisories are
+# defects that did not merit blocking. Both are here because a
+# verdict that dies with the run is met again by the next cold
+# read as though nobody had ever weighed it, and weighed again --
+# which is how a document in good shape spends a whole iteration
+# budget. A later evaluation reads these before it raises.
+
+standing_findings_schema = 4
+record_type = "standing-blocking-findings"
+document = "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"
+provider = "gpt"
+run_id = "095fe00a9fe8cfee"
+workflow = "proper-study"
+workflow_version = 13
+stage = "research-review"
+iteration = 0
+disposition = "CHANGES_REQUIRED"
+standing = 1
+accepted_count = 0
+advisory_count = 0
+observation_count = 0
+
+[[stages]]
+stage = "research-review"
+iteration = 0
+disposition = "CHANGES_REQUIRED"
+run_id = "095fe00a9fe8cfee"
+workflow = "proper-study"
+workflow_version = 13
+standing = 1
+accepted_count = 0
+advisory_count = 0
+observation_count = 0
+
+[[findings]]
+stage = "research-review"
+id = "RES-HIS-001"
+severity = "blocking"
+location = "research/chronology-notes.md, Subjects and source inspection (John and Colossians composition rows) and Concise place descriptions; research/reception-verification.md, Chronology passages rechecked"
+problem = "The historical-appendix plan supplies the inherited composition dates and places for John and Colossians, but no checked account of their principal modern critical authorship/composition horizon. The 1962 profile, Scriptural Date and Location, expressly requires that horizon, and propers-three-documents.md preserves those evidence rules when moving detailed qualification to the historical appendix. Calling the selected dates disputed or the encyclopedia non-consensus does not provide the missing substance. For example, the USCCB John introduction, paragraphs beginning Critical analysis and The final editing, discusses successive formation, the distinction between received apostolic attribution and historical judgment, and alternatives to Ephesus (https://bible.usccb.org/bible/john/0); the Colossians introduction, final two prose paragraphs, distinguishes the traditional Roman setting from Caesarea/Ephesus proposals and possible authorship by a Pauline follower (https://bible.usccb.org/bible/colossians/0?bk=Colossians&ch=). I inspected these loci independently; none of these material qualifications appears in the reviewed research. The study author therefore cannot produce the required historically qualified appendix from the currently reviewed evidence alone."
+required_result = "Add a concise, independently checked and source-bound modern critical horizon for John and Colossians to the research and historical-appendix plan, preserving the traditional Catholic attribution and generated chronology beside it. State the material authorship/final-formation questions, writing-place alternatives and limits of certainty without presenting a disputed proposal as settled. Retain exact source loci and include any newly adopted controlling source owners in the research seal through bindings or review dependencies. If an additional date/profile comparison is needed, use the canonical chronology comparison and regeneration procedure rather than inserting a publication-local date; the existing traditional default need not be replaced."
+repair_target = "research"

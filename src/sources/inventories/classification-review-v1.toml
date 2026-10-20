@@ -1,8 +1,8 @@
 classification_schema = 1
 record_type = "publication-source-classification-review"
-audited_on = "2026-10-14"
-publication_snapshot = "sha256:71d67e6099220b5ef8405fc2c51e760b765403ea99e9d08a981fd98e556a4d2e"
-classification_snapshot = "sha256:d95f23179049f3d3b5655a32bae25aee01add984555e3ada621980bd27835639"
+audited_on = "2026-10-20"
+publication_snapshot = "sha256:f08a70270b12c8d85ff4db7b791cfa8dd052675c6b3b545c67b8ecb766ba7ce3"
+classification_snapshot = "sha256:6ed335d8da72bef42e08cfe75d6d126d301cac9be075e0a5976736ec938cb94f"
 
 [[classifications]]
 document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -395,6 +395,10 @@ source_categories = ["finding-aid", "historical-primary", "institutional-current
 [[classifications]]
 document = "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"
 source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "patristic", "scholastic", "scripture", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "repository-internal", "scripture", "secondary"]
 
 [[classifications]]
 document = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass"

@@ -233,6 +233,17 @@ events narrated in the Gospel. The Introit's Apocalypse chronology must never
 appear beside the Psalm alone. Four nonbiblical elements receive no invented
 Scriptural date.
 
+Research reentry for `RES-HIS-001` independently checked the complete USCCB
+NABRE John and Colossians introductions. `chronology-notes.md`, **Modern
+critical horizon: John and Colossians**, now owns their bounded historical
+qualifications and the instruction to carry them beside the inherited evidence
+in the expansive appendix. `reception-verification.md` records the exact
+inspection, extents and hashes; new bindings seal both artifacts and their
+dated source ancestry. Their scholarly apparatus is used for historical
+orientation, not appointed English or a judgment on patristic interpretation.
+Protected page bodies remain untracked. No numerical date, chronology profile,
+appointment or interpretive lane changes.
+
 The complete sourced text record and bindings are now supplied. Reception remains
 bounded: no direct later saintly Apocalypse 5:12 exposition or ancient exposition
 of the complete feast was verified. Aquinas and other discovery leads are not

@@ -174,6 +174,29 @@ represented as current scholarly consensus. Existing bindings, chronology
 records and review dependencies identify the source owners. Restricted modern
 pages are used through independent analysis, not reproduced bodies.
 
+### Critical-horizon recheck for RES-HIS-001
+
+On 20 October 2026 the complete official USCCB NABRE introductions to John
+and Colossians were independently opened, fetched in full and read. The
+claim-level account and historical-appendix instructions are in
+`chronology-notes.md`, **Modern critical horizon: John and Colossians**.
+Those qualifications now accompany the two composition rows above; the
+encyclopedia testimony is not their only historical frame.
+
+| Exact delivery | Inspection and locus |
+| --- | --- |
+| John introduction, 59,028 bytes, SHA-256 `05dadab8c1f94ae8fe44faa4c282b31abf98cbca0789629865815b5c6a7efe2c` | All ten prose paragraphs and four division entries read; paragraphs 5–7 and 10 control the adopted qualification (HTML 660–670). |
+| Colossians introduction, 53,966 bytes, SHA-256 `34fce9b4270228a5242a54cb6c51915ff41089f5b76c53676c13bbfe67b707cf` | All five prose paragraphs and five division entries read; paragraphs 2 and 5 control the adopted qualification (HTML 620, 626). |
+
+Each response reached its closing HTML tag (John: line 788; Colossians:
+line 745). The query-free Colossians browser route returned 403; the bound
+query-string URL succeeded. The source records state that these are complete
+introduction pages, not whole-Bible acquisitions. Bindings reach both exact
+artifacts and their dated edition/work ancestry. Source verification here means
+direct inspection of official scholarly apparatus, not manuscript collation or
+an independent survey establishing scholarly consensus. No new numerical date
+is adopted and no generated date is reclassified.
+
 ## Consequences and open work
 
 Inspection sustains both proposals in `interpretations.md`. Augustine and Jerome

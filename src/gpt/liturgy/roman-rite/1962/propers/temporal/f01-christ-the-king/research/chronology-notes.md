@@ -28,6 +28,51 @@ Howlett's03731a were additionally inspected for the attribution era and trial
 uncertainty. No newly inspected webpage wrapper was treated as an altered
 historical article or substituted into an existing accepted fingerprint.
 
+## Modern critical horizon: John and Colossians
+
+The following source-bound qualifications complete the historical-appendix
+plan. Both complete USCCB NABRE introductions were independently read on
+20 October 2026, including their surrounding literary discussions and division
+lists. Their exact October deliveries are registered and bound in
+`source-bindings.toml`. These are modern Catholic scholarly judgments, distinct
+from the received testimony and generated composition answers in the table above.
+
+**John.** The received attribution names John son of Zebedee. The USCCB
+introduction distinguishes eyewitness testimony underlying the tradition from
+the authorship of the finished Gospel. It reports that most modern scholars
+do not identify that witness confidently with Zebedee's son. Its account of
+successive editing draws on the added chapter 21, an adapted prologue hymn
+and discontinuities in the farewell discourse; neither the number nor identities
+of all contributors are established. Ephesus remains the traditional writing
+place; Syria, possibly Antioch, and Alexandria are proposals, not settled
+alternatives. The narrated trial remains at Jerusalem. Checked loci:
+[John introduction](https://bible.usccb.org/bible/john/0), prose paragraphs
+5–7 and 10, beginning “Critical analysis,” “Other difficulties,”
+“The gospel contains,” and “The final editing”; exact HTML lines 660–670.
+
+**Colossians.** The received attribution is to Paul, with Rome the traditional
+captivity setting. The USCCB introduction notes that the letter leaves the
+prison's location unnamed and that Paul's several imprisonments make precise
+dating uncertain. Besides Roman house arrest or another Roman imprisonment,
+it reports Caesarea and Ephesus proposals. It also records authorship by a
+pupil or follower writing in Paul's name as a distinct possibility; it does
+not decide between that account and direct Pauline authorship or assign the
+follower a definite date or city. Colossae remains the addressees' location.
+Checked loci: [Colossians introduction](https://bible.usccb.org/bible/colossians/0?bk=Colossians&ch=),
+prose paragraphs 2 and 5, especially the final paragraph beginning
+“Paul wrote”; exact HTML lines 620 and 626. The browser's split of the final
+paragraph does not create two different source loci.
+
+The appendix must place these qualifications beside the respective traditional
+attribution and generated composition answer, rather than bury them in a generic
+statement that dates are disputed. The concise place phrases below give the
+short local qualification and should point to those two appendix entries.
+No additional numerical chronology claim is adopted in this repair: the
+formation discussion identifies a process, not a replacement date, and the
+existing default remains intact. Do not relabel its composition ranges as
+final-formation dates. Adding a separately dated critical comparison later
+requires the canonical subject/profile selection and regeneration procedure.
+
 ## Attribution is not occasion or composition
 
 The existing canonical binding, added in the earlier 19 October work, reaches
@@ -72,10 +117,15 @@ a table row naming only one biblical component.
   this row at Calvary or claim a precise modern archaeological site from these
   verses. The exact calendar year remains unresolved in the generated answer.
 - Gospel composition row: Ephesus in the received tradition reported in the
-  inspected encyclopedia's composition discussion; distinguish this from the
-  narrated Jerusalem scene.
+  inspected encyclopedia's composition discussion; concise qualification:
+  “Ephesus traditionally; writing place disputed.” The modern-critical
+  subsection above supplies the alternatives and formation limits for the
+  historical appendix. Distinguish this from the narrated Jerusalem scene.
 - Epistle composition row: Rome in the selected captivity chronology; addressed
-  to Colossae, which is the recipient location, not the source's writing location.
+  to Colossae, which is the recipient location. Concise qualification:
+  “Rome traditionally; authorship and prison location disputed.” The
+  modern-critical subsection supplies the appendix's alternatives; the
+  selected Roman chronology is not a date assigned to the follower hypothesis.
 - Apocalypse composition row: Patmos in the received seer's setting, with the
   heavenly throne-room as vision rather than an earthly writing location. The
   passage label must include both Apocalypse1:6 and5:12 and exclude the Introit's
@@ -102,3 +152,9 @@ reaccepted or given refreshed bindings by this worker. This leaf's record and
 annotations were regenerated and checked against its actual appointments.
 The remaining unresolved trial year and Psalm occasions are positive statements
 of the evidence limit, not omitted research.
+
+Research reentry for `RES-HIS-001` adds the independently checked critical
+horizon and its source bindings above. It changes no appointment, interpretation,
+canonical chronology assertion or generated date. The two introductions are
+used through bounded original analysis; their protected bodies are not retained
+in tracked sources.
