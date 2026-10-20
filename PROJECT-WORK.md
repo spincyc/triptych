@@ -533,6 +533,22 @@ and source content is preserved; representative long-reading and final-page
 rasters were inspected. This bounded print evidence does not close the full
 C4 composition matrix or independent C5 acceptance.
 
+The next C5 slice enables Day Study with `ordinary=1` through the existing
+Missal renderer. Seven full-order fixtures preserve text, event order,
+branches, choices, absences, coverage and semantic place across Missal and
+Study; moving to Read maps to the nearest Proper event. The expanded Day
+Study Chromium probe passes 25 checks, including missing-resource refusal.
+
+Propers Compare now supports an explicitly chosen held lectionary cycle for
+the same formulary. The Transfiguration fixture pairs its recorded A/B/C
+Gospels while holding edition, form, Bible and language choices fixed. These
+remain Bible reconstructions; neither exact Missal wording nor civil-year
+applicability is inferred. Eight contract checks and eight Chromium checks
+cover coequal selection, invalid peers, source boundaries and peer-state
+cleanup. A print regression also keeps source credits with the preceding
+text tail without preventing long readings from paginating. Independent
+C5 acceptance and the remaining comparison axes are still open.
+
 A parallel witness audit found no publishable English witness for the 1962
 Pentecost Lesson's printed `discipuli` wording. [Cabrol 1921](https://catalog.hathitrust.org/Record/100567132)
 is an inaccessible page-image lead, not a text source. An

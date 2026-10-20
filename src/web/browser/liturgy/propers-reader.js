@@ -1715,7 +1715,7 @@
       ? Compare.fromCompareLocation(captured, runtime.result)
       : ProperEvents.nearestProperLocation(captured, runtime.result);
     readerShell.close({ restoreFocus: false });
-    navigate({ mode: 'read' }, ['compare', 'peer-orations'],
+    navigate({ mode: 'read' }, Compare?.URL_KEYS,
       { location: location, focus: 'mode' });
   });
 
@@ -1729,7 +1729,7 @@
     const location = current.requestedMode === 'compare'
       ? Compare.fromCompareLocation(captured, runtime.result) : captured;
     readerShell.close({ restoreFocus: false });
-    navigate({ mode: 'missal' }, ['compare', 'peer-orations'],
+    navigate({ mode: 'missal' }, Compare?.URL_KEYS,
       { location: location, focus: 'mode' });
   });
 

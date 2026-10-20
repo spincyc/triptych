@@ -75,3 +75,11 @@
     line-height: 1.4;
   }
 }
+
+/* Keep a compared source credit with the last line it identifies while
+   allowing a long reading to continue across pages. */
+@media print {
+  .reader-instrument[data-reader-mode="compare"] .reader-document .compare-evidence {
+    break-before: avoid-page;
+  }
+}

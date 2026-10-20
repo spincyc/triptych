@@ -869,6 +869,33 @@ Compare, formerly 10/12/8/9. Extracted content parity and representative page
 rasters were checked. Full C4 print composition, the broader C5 modes and
 independent acceptance remain open.
 
+Retained-oracle dependency correction, 2026-10-20: extracting Day mode
+bindings into the existing `day-study.js` helper required that helper before
+`day-reader.js` in `reader-visual-reset-day.html`. The old dock, labels, DOM
+composition and visual CSS are preserved. Guarded Study-marker updates also
+permit a shell without the new Study dock command. The protected HTML hash
+now records this one-script dependency repair; the 30-check visual suite
+passes. This records a changed dependency baseline, not external re-acceptance
+of the earlier prototype.
+
+The next internal C5 slice supersedes the explicit Day Study Ordinary defer:
+`mode=study&ordinary=1` now uses the existing full Missal renderer, attaching
+the same source/coverage facts to its semantic events. Seven full-order
+fixtures preserve text, order, branches, choices, absences and coverage;
+mode changes preserve semantic place and map to the nearest Proper in Read.
+The expanded Day Study Chromium probe passes 25 checks, including explicit
+missing-resource refusal.
+
+Propers Compare also supports explicitly selected held lectionary cycles
+within one formulary. The Transfiguration A/B/C Gospel fixture holds edition,
+form, Bible and languages fixed. Its text remains a Bible reconstruction,
+without exact-Missal-wording or civil-year-applicability claims. Eight contract
+checks and eight Chromium checks cover coequal selection, invalid or equal
+peers, source boundaries and state cleanup. Compare print now keeps a source
+credit with the preceding text tail while long readings still paginate.
+These are internal capabilities; remaining comparison axes, the full print
+matrix and independent C5 acceptance remain open.
+
 ### Verification and completion gates
 
 Recovery checks actually run on the baseline:

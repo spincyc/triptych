@@ -342,12 +342,6 @@
     return keys;
   }
 
-  function deferredState(parsed) {
-    const mode = requestedModeOf(parsed);
-    return mode === 'study' && parsed.recognized.ordinary === '1'
-      ? ['mode=study', 'ordinary=1'] : [];
-  }
-
   function requestedModeOf(parsed) {
     const duplicates = (parsed.duplicates || []).some(function (row) {
       return row.key === 'ordinary' || row.key === 'mode';
@@ -615,7 +609,7 @@
       formularyField.hidden = true;
       formularySelect.replaceChildren();
     }
-    if (runtime.mode === 'missal' && runtime.ordinary) {
+    if (state.options.ordinary && runtime.ordinary) {
       const languages = T.orationLanguagesOf(runtime.ordinary);
       T.fillSelect(ordinaryLangSelect, languages.map(function (row) {
         return {
@@ -723,9 +717,9 @@
       ['Bible', bible && bible.label || state.bible.id],
       ['Orations', humanLanguage(state.languages.orations)],
       ['Mode', modeLabel(runtime.mode)],
-      ['Ordinary language', runtime.mode === 'missal'
+      ['Ordinary language', state.options.ordinary
         ? humanLanguage(state.languages.ordinary || 'en') : null],
-      ['Ordinary option', runtime.mode === 'missal'
+      ['Ordinary option', state.options.ordinary
         ? selectedOrdinaryOptionLabel(state, runtime.ordinary,
           runtime.branches.map(function (row) { return row.result; })) : null],
       ['Formulary', runtime.branches.length > 1
@@ -924,7 +918,7 @@
     const report = T.summarizeCoverage(T.selectedCoverageUnits(result, runtime.structure || {}));
     const languages = result && result.request && result.request.languages || {};
     const describe = detail ? T.coverageSummaryText : T.coverageNoticeText;
-    const ordinary = result && result.request && result.request.requestedMode === 'missal'
+    const ordinary = result && result.request && result.request.options.ordinary
       ? describe(T.summarizeCoverage(T.selectedOrdinaryCoverageUnits(result, runtime.ordinary)),
         languages.ordinary || 'en', languages.ordinaryWitness, 'Ordinary') : null;
     return [materialCoverageMessage(result),
@@ -1335,13 +1329,13 @@
           request: branchState,
           derived: derived,
           structure: structure,
-          ordinary: state.requestedMode === 'missal' ? ordinary : null
+          ordinary: state.options.ordinary ? ordinary : null
         });
         adapted = true;
         if (!result.resolved || primaryDayChoice(result, branch)) return;
         const prefix = locationPrefix(branch, multiple);
         (result.events || []).forEach(function (event) {
-          if (['read', 'study'].indexOf(state.requestedMode) >= 0 &&
+          if (!state.options.ordinary &&
               ['proper', 'proper-choice'].indexOf(event.kind) < 0) return;
           held.add(prefix + event.id);
         });
@@ -1519,7 +1513,6 @@
 
   async function buildResultDocument(result, structure, branch, renderContext, isCurrent) {
     const state = renderContext.state;
-    const mode = renderContext.mode;
     const ordinary = renderContext.ordinary;
     const prefix = renderContext.locationPrefix || '';
     const mass = (structure.masses || []).find(function (row) {
@@ -1535,7 +1528,7 @@
       ? T.titleCase(String(branch.option).replace(/-/g, ' ')) : null;
 
     const uncompiled = T.massIsUncompiled(mass) ? T.uncompiledNote(mass) : null;
-    if (mode === 'missal') {
+    if (state.options.ordinary) {
       const hasOrdinaryFrame = (result.events || []).some(function (event) {
         return event.kind === 'ordinary-section' || event.kind === 'ordinary-element';
       });
@@ -1668,7 +1661,7 @@
       bible && bible.label,
       humanLanguage(state.languages.orations) + ' orations'
     ];
-    if (runtime.mode === 'missal') {
+    if (state.options.ordinary) {
       metadata.push(humanLanguage(state.languages.ordinary || 'en') + ' Ordinary');
       metadata.push(selectedOrdinaryOptionLabel(
         state, runtime.ordinary, rows.map(function (row) { return row.result; })
@@ -2330,7 +2323,7 @@
       if (input.checked) selectedApplicability = applicability;
       input.addEventListener('change', function () {
         if (!input.checked) return;
-        navigate({ mode: 'missal', [group.group]: option.id }, ['ordinary'], {
+        navigate({ mode: state.requestedMode, [group.group]: option.id }, [], {
           location: target ? { kind: 'event', id: (prefix || '') + target.id } : null,
           focus: {
             kind: 'ordinary-option', group: group.group, option: option.id,
@@ -2466,10 +2459,10 @@
       runtime.rubrics = assembled.rubrics;
       runtime.structure = assembled.structure;
       runtime.mode = normalized.state.requestedMode;
-      runtime.ordinary = runtime.mode === 'missal' ? assembled.ordinary : null;
+      runtime.ordinary = normalized.state.options.ordinary ? assembled.ordinary : null;
       runtime.branch = assembled.derived.options.length === 1 ? assembled.derived.options[0] : null;
       runtime.branches = [];
-      runtime.deferred = deferredState(parsed);
+      runtime.deferred = [];
       window.dayReaderDebug.state = normalized.state;
       window.dayReaderDebug.deferred = runtime.deferred.slice();
       window.dayReaderDebug.legacy = normalized.legacy;
@@ -2483,25 +2476,6 @@
       if (window.location.pathname !== canonicalPath || window.location.hash !== canonicalHash) {
         history.replaceState(history.state, '',
           canonicalPath + window.location.search + canonicalHash);
-      }
-
-      if (runtime.deferred.length) {
-        commitOutcomePresentation({
-          mode: runtime.mode,
-          outcome: 'deferred',
-          outcomeClass: 'deferred',
-          metadata: outcomeMetadata(runtime.mode, 'deferred')
-        });
-        populateDateSurface();
-        replaceReading(limitation(
-          'This selection belongs to a later integration slice',
-          'The reader preserved ' + runtime.deferred.join(', ') +
-            ' but did not partially render it.'
-        ));
-        title.textContent = runtime.branch && runtime.branch.winner
-          ? runtime.branch.winner.name : 'Deferred Day selection';
-        dateLine.textContent = longDate(assembled.derived.date, assembled.derived.weekday);
-        return;
       }
 
       if (runtime.mode === 'compare') {
@@ -2698,7 +2672,8 @@
       modeFocus: runtime.pendingModeFocus,
       focus: runtime.pendingFocus
     };
-    const hash = hashWith(updates, (removals || []).concat(['ordinary']));
+    const hash = hashWith(updates, (removals || []).concat(
+      (updates.mode || runtime.mode) === 'study' ? [] : ['ordinary']));
     const route = Contract.canonicalRoute('day', window.location.pathname);
     history.pushState(Object.assign({}, history.state || {}, {
       dayReaderLocation: runtime.pendingLocation
@@ -2740,7 +2715,7 @@
     if (runtime.mode === 'compare') {
       return DayCompare.fromCompareLocation(location, runtime.result);
     }
-    if (runtime.mode === 'missal' && targetMode !== 'missal') {
+    if (runtime.normalized && runtime.normalized.state.options.ordinary && targetMode === 'read') {
       return nearestProperLocation(location, runtime.result && runtime.result.events);
     }
     return location;
@@ -2862,7 +2837,7 @@
     });
     const event = node && node.dataset.semanticEventId;
     if (runtime.mode === 'compare' && /^compare\/proper\//.test(id) ||
-        event && (runtime.mode === 'missal' || /^proper(?:-choice)?\//.test(event))) {
+        event && (normalized.state.options.ordinary || /^proper(?:-choice)?\//.test(event))) {
       normalized.state.semanticLocation = { eventId: id };
     } else delete normalized.state.semanticLocation;
     history.replaceState(Object.assign({}, history.state, {

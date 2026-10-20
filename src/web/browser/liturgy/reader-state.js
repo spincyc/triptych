@@ -72,7 +72,7 @@
   const PROPERS_KEYS = Object.freeze([
     'missal', 'type', 'mass', 'bible', 'orations',
     'form', 'cycle', 'alternative', 'translation-witness', 'mode', 'location',
-    'ordinary-lang', 'compare', 'peer-orations'
+    'ordinary-lang', 'compare', 'peer-orations', 'peer-cycle'
   ]);
   const URL_INVENTORY = Object.freeze({
     day: Object.freeze({
@@ -905,6 +905,27 @@
         }
       }
     }
+    if (value.comparison && value.comparison.dimension === 'lectionary-cycle' &&
+        value.entrance === 'propers') {
+      const sides = value.comparison.sides;
+      const left = Array.isArray(sides) && sides[0];
+      const right = Array.isArray(sides) && sides[1];
+      if (!Array.isArray(sides) || sides.length !== 2 || !left || !right || !left.edition || !right.edition ||
+          !left.formulary || !right.formulary ||
+          left.edition.id !== (value.edition && value.edition.id) ||
+          right.edition.id !== left.edition.id ||
+          left.formulary.id !== (value.formulary && value.formulary.id) ||
+          right.formulary.id !== left.formulary.id ||
+          !nonempty(value.cycle) || left.cycle !== value.cycle ||
+          !nonempty(right.cycle) || right.cycle === left.cycle ||
+          !value.comparison.anchor ||
+          value.comparison.anchor.correspondingFormulary !== left.formulary.id) {
+        errors.push(issue(
+          'propers-compare-cycle-state', 'comparison.sides',
+          'lectionary-cycle Compare needs explicit distinct cycles of one edition-qualified formulary'
+        ));
+      }
+    }
     if (value.requestedMode === 'compare' &&
         (!has(value, 'comparison') || value.comparison === null)) {
       errors.push(issue(
@@ -1235,12 +1256,13 @@
     // shared URL identifies the left side with the existing entrance keys and
     // names the second side and comparison anchor with these additive keys.
     const comparisonKeys = parsed.entrance === 'day'
-      ? ['compare', 'peer-missal', 'territory'] : ['compare', 'peer-orations'];
+      ? ['compare', 'peer-missal', 'territory'] : ['compare', 'peer-orations', 'peer-cycle'];
     const compared = comparisonKeys.filter(function (key) {
       return has(parsed.recognized, key);
     });
     if (state.requestedMode === 'compare' && (parsed.unknown || []).some(function (row) {
       return row.key === (parsed.entrance === 'day' ? 'peer-orations' : 'peer-missal') ||
+        row.key === 'peer-cycle' && parsed.entrance === 'day' ||
         row.key === 'territory' && parsed.entrance === 'propers';
     })) {
       errors.push(issue(
@@ -1255,7 +1277,10 @@
       ));
     }
     if (state.requestedMode === 'compare') {
-      comparisonKeys.forEach(function (key) {
+      const requiredKeys = parsed.entrance === 'propers'
+        ? ['compare', parsed.recognized.compare === 'lectionary-cycle' ? 'peer-cycle' : 'peer-orations']
+        : comparisonKeys;
+      requiredKeys.forEach(function (key) {
         if (!has(parsed.recognized, key) || !nonempty(parsed.recognized[key])) {
           errors.push(issue(
             'required-comparison-value', key,
@@ -1293,10 +1318,35 @@
         }
       } else if (errors.length === 0) {
         const peer = parsed.recognized['peer-orations'];
-        if (parsed.recognized.compare !== 'oration-language') {
+        if (parsed.recognized.compare === 'lectionary-cycle') {
+          const peerCycle = parsed.recognized['peer-cycle'];
+          if (has(parsed.recognized, 'peer-orations')) {
+            errors.push(issue('comparison-peer-dimension', 'peer-orations',
+              'oration peers do not belong to a lectionary-cycle comparison', 'url'));
+          } else if (!has(parsed.recognized, 'cycle') || !nonempty(state.cycle) ||
+                     !nonempty(peerCycle) || peerCycle === state.cycle) {
+            errors.push(issue('invalid-comparison-peer', 'peer-cycle',
+              'choose explicit distinct primary and peer cycles', 'url'));
+          } else if (!state.formulary || !state.formulary.id) {
+            errors.push(issue('comparison-formulary-required', 'mass',
+              'Propers Compare needs an exact formulary', 'url'));
+          } else {
+            state.comparison = {
+              dimension: 'lectionary-cycle',
+              anchor: { correspondingFormulary: state.formulary.id },
+              sides: [state.cycle, peerCycle].map(function (cycle) {
+                return { id: cycle, edition: { id: missal },
+                  formulary: { id: state.formulary.id }, cycle: cycle };
+              })
+            };
+          }
+        } else if (has(parsed.recognized, 'peer-cycle')) {
+          errors.push(issue('comparison-peer-dimension', 'peer-cycle',
+            'cycle peers do not belong to an oration-language comparison', 'url'));
+        } else if (parsed.recognized.compare !== 'oration-language') {
           errors.push(issue(
             'comparison-dimension', 'compare',
-            'Propers Compare currently supports oration language only', 'url'
+            'Propers Compare supports oration language or held lectionary cycles', 'url'
           ));
         } else if (!valuesOf(missalContext.orationLanguages).includes(peer) ||
                    peer === state.languages.orations) {
@@ -1376,7 +1426,9 @@
       pairs.push(['mode', state.requestedMode || 'read']);
       if (state.comparison) {
         pairs.push(['compare', state.comparison.dimension]);
-        pairs.push(['peer-orations', state.comparison.sides[1].languages.orations]);
+        if (state.comparison.dimension === 'lectionary-cycle') {
+          pairs.push(['peer-cycle', state.comparison.sides[1].cycle]);
+        } else pairs.push(['peer-orations', state.comparison.sides[1].languages.orations]);
       }
       if (state.languages.ordinary) pairs.push(['ordinary-lang', state.languages.ordinary]);
       if (state.semanticLocation) pairs.push(['location', state.semanticLocation.eventId]);

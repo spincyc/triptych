@@ -15,14 +15,27 @@ const Study = require(resolve(ROOT, 'src/web/browser/liturgy/reader-study-view.j
 class Node {
   constructor(tag, className, value) {
     this.tag = tag;
+    this.tagName = tag.toUpperCase();
+    this.parentNode = null;
     this.nodeType = tag === 'fragment' ? 11 : 1;
     this.className = className || '';
     this.textContent = value || '';
     this.children = [];
     this.dataset = {};
   }
-  appendChild(child) { this.children.push(child); return child; }
+  appendChild(child) { child.parentNode = this; this.children.push(child); return child; }
+  after(node) {
+    const parent = this.parentNode;
+    node.parentNode = parent;
+    parent.children.splice(parent.children.indexOf(this) + 1, 0, node);
+  }
   contains(node) { return this === node || this.children.some((child) => child.contains(node)); }
+  querySelectorAll(selector) {
+    assert.equal(selector, '[data-semantic-event-id]');
+    return this.children.flatMap(child => [
+      ...(child.dataset.semanticEventId ? [child] : []), ...child.querySelectorAll(selector)
+    ]);
+  }
   get firstChild() { return this.children[0] || null; }
   insertBefore(child, before) {
     const index = this.children.indexOf(before);
@@ -150,4 +163,41 @@ test('unrendered source placeholders and unresolved choice context do not invent
   assert.deepEqual(rendered.contents, []);
   assert.match(textOf(fragment), /Unresolved choices/);
   assert.doesNotMatch(textOf(fragment), /HELD SOURCE BODY/);
+});
+
+
+test('Ordinary division Study apparatus follows its heading without nesting headings or duplicating IDs', () => {
+  const result = fixture('day-roman-1962-2026-08-02');
+  result.events[0].kind = 'ordinary-section';
+  const source = readingOf(result);
+  const heading = source.contents[0].element;
+  heading.tag = 'h2';
+  heading.tagName = 'H2';
+  const original = textOf(heading);
+  const ids = result.events.map(one => one.id);
+  const rendered = Study.attach({result, ...source});
+  assert.equal(textOf(heading), original);
+  assert.deepEqual(heading.children, []);
+  assert.equal(rendered.fragment.children[1], heading);
+  const apparatus = rendered.fragment.children[2];
+  assert.equal(apparatus.tag, 'aside');
+  assert.equal(apparatus.dataset.studyEventId, ids[0]);
+  assert.equal(apparatus.dataset.semanticEventId, undefined);
+  assert.deepEqual(rendered.semanticIds, ids);
+  assert.deepEqual(rendered.contents.map(one => one.element.dataset.semanticEventId), ids);
+});
+
+
+test('Ordinary source events receive Study facts without adding Contents destinations', () => {
+  const result = fixture('day-roman-1962-2026-08-02');
+  const source = readingOf(result);
+  result.events[1].kind = 'ordinary-element';
+  const ordinary = source.contents[1].element;
+  source.contents.splice(1, 1);
+  const ids = source.contents.map(one => one.id);
+  const rendered = Study.attach({result, ...source});
+  assert.deepEqual(rendered.contents.map(one => one.id), ids);
+  assert.equal(ordinary.children[0].tag, 'aside');
+  assert.equal(ordinary.children[0].dataset.studyEventId, result.events[1].id);
+  assert.match(textOf(ordinary.children[0]), /ordinary-element/);
 });

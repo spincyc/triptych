@@ -53,6 +53,15 @@ test('descriptive titles name the Day date and Compare territory, without invent
   });
   assert.match(language, /Compare oration-language with en/);
   assert.doesNotMatch(language, /with roman-1962/);
+  const cycle = actions.shareTitle('propers', shell, {
+    edition: { id: 'postconciliar' }, requestedMode: 'compare', cycle: 'A',
+    comparison: { dimension: 'lectionary-cycle', sides: [
+      { edition: { id: 'postconciliar' }, cycle: 'A' },
+      { edition: { id: 'postconciliar' }, cycle: 'B' }
+    ] }
+  });
+  assert.match(cycle, /Compare lectionary-cycle with Cycle B/);
+  assert.doesNotMatch(cycle, /with postconciliar/);
 });
 
 test('native share receives only title and URL; copy handles unavailability and native failure', async () => {
