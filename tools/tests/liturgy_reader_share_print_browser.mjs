@@ -308,6 +308,8 @@ try {
       assert.match(pdfText, /advent-1/);
     }
     if (state.requestedMode === 'study') {
+      assert.ok(pages.every((page) => !/^Study notes for /.test(page.trimStart().split('\n')[0])),
+        'a Study note cannot begin a page without its reading tail');
       assert.ok(expectedPrint.studyNotes > 0);
       assert.equal((pdfText.match(/Study notes for /g) || []).length,
         expectedPrint.studyNotes);
@@ -329,6 +331,68 @@ try {
       hasAttribute('data-reader-share-print')`, 'Details reinsertion');
   }
 
+  async function checkMissalPagination() {
+    const route = base + DAY + '?data=/src/web/data' +
+      '#date=2026-05-24&missal=roman-1962&bible=douay-rheims&orations=la' +
+      '&mass=pentecost&mode=missal&ordinary=1&ordinary-lang=en&rubrics=1&why=0';
+    await cdp.send('Page.navigate', { url: route });
+    await waitFor(cdp, 'window.dayReaderDebug?.ready && dayReaderDebug.outcome !== "loading"',
+      'long Day Missal');
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'ready');
+    const before = await evaluate(cdp, `(() => ({
+      ids: [...document.querySelectorAll('#reader-document [data-semantic-event-id]')]
+        .map((node) => node.dataset.semanticEventId),
+      html: document.querySelector('#reader-document').innerHTML
+    }))()`);
+    assert.ok(before.ids.length > 150);
+    await cdp.send('Emulation.setEmulatedMedia', { media: 'print' });
+    const lifecycle = await evaluate(cdp, `(() => {
+      const reading = document.querySelector('#reader-document');
+      window.dispatchEvent(new Event('beforeprint'));
+      const first = reading.querySelectorAll('.ordinary-print-tie').length;
+      window.dispatchEvent(new Event('beforeprint'));
+      const repeated = reading.querySelectorAll('.ordinary-print-tie').length;
+      window.dispatchEvent(new Event('afterprint'));
+      return { first, repeated, restored: reading.innerHTML === ${JSON.stringify(before.html)} };
+    })()`);
+    assert.ok(lifecycle.first > 0);
+    assert.equal(lifecycle.repeated, lifecycle.first);
+    assert.equal(lifecycle.restored, true);
+    const pdf = await cdp.send('Page.printToPDF', {
+      printBackground: true, preferCSSPageSize: true
+    });
+    const pdfFile = resolve(profile, 'day-missal-composition.pdf');
+    await writeFile(pdfFile, Buffer.from(pdf.data, 'base64'));
+    const { stdout } = await execFileAsync('pdftotext', ['-layout', pdfFile, '-'],
+      { maxBuffer: 2 * 1024 * 1024 });
+    const pages = stdout.split('\f').filter((page) => page.trim());
+    assert.ok(pages.length > 15 && pages.every((page) => page.trim().length > 80));
+    for (const [direction, continuation] of [
+      ['Turning towards the people, the Priest salutes them, saying,', 'Dominus vobiscum'],
+      ['When the Priest puts the Wine and Water into the Chalice, he says,',
+        'Deus qui humanae substantiae dignitatem'],
+      ['Bowing before the middle of the Altar, he says,',
+        'Suscipe sancta Trinitas hanc oblationem'],
+      ['Taking the Host in his Hands, he says,', 'Panem cœlestem accipiam'],
+      ['THE CANON OF THE MASS.', 'Te igitur, clementissime Pater']
+    ]) {
+      assert.ok(pages.some((page) => {
+        const at = page.indexOf(direction);
+        return at >= 0 && page.slice(at).includes(continuation);
+      }), direction + ' must share a page with its following Ordinary text');
+    }
+    const after = await evaluate(cdp, `(() => ({
+      ids: [...document.querySelectorAll('#reader-document [data-semantic-event-id]')]
+        .map((node) => node.dataset.semanticEventId),
+      html: document.querySelector('#reader-document').innerHTML,
+      wrappers: document.querySelectorAll('#reader-document .ordinary-print-tie').length
+    }))()`);
+    assert.deepEqual(after.ids, before.ids);
+    assert.equal(after.html, before.html);
+    assert.equal(after.wrappers, 0);
+    await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
+  }
+
   activeCase = 'day-compare-share-print';
   await check('day', '#date=2026-11-22&missal=roman-1962&bible=douay-rheims&orations=la' +
     '&mode=compare&compare=recension&peer-missal=postconciliar&territory=universal&ordinary=0');
@@ -344,6 +408,9 @@ try {
   activeCase = 'propers-compare-print-composition';
   await check('propers', '#missal=roman-1962&type=seasonal&mass=advent-1' +
     '&bible=douay-rheims&orations=la&mode=compare&compare=oration-language&peer-orations=en');
+  assertions.push({ name: activeCase, status: 'pass' });
+  activeCase = 'day-missal-print-pagination';
+  await checkMissalPagination();
   assertions.push({ name: activeCase, status: 'pass' });
 } catch (error) {
   const detail = error && error.stack || String(error);

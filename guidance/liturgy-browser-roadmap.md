@@ -956,6 +956,42 @@ become 41,404 bytes for the Tenth Sunday or 51,149 for Pentecost instead of
 The complete Ordinary stays separate. No new latency, field percentile or
 independent release acceptance follows from these byte measurements.
 
+Latin accompaniment candidate: the optional `text-display=latin-and-selected`
+presentation pairs held prayer and Missal bodies at the existing Proper/cycle/
+Ordinary-element boundary on both entrances. It preserves primary selection,
+source absences, and semantic event order. Selected Latin appears once; Compare
+retains its existing axis and stacks internal language pairs. Scripture remains
+one selected Bible unless the separate companion selection below is requested.
+No stanza/turn correspondence is inferred. Source-owned subfragment alignment
+and independent C4 acceptance remain open.
+
+Latin Bible companion candidate: optional `scripture-companion=clementine-vulgate`
+adds independently addressed Latin and primary selected Bible text at each
+citation in both entrances and all modes. Each side retains its language,
+edition witness, numbering, rights, reconstruction qualification and precise
+refusal. Primary semantic selection and all Compare axes stay fixed; one selected
+Latin edition appears once. This supplies citation-level bilingual presentation
+using the existing held text and loci. It establishes no finer verse/stanza/turn
+correspondence and no exact Missal wording from a Bible reconstruction.
+
+The same shared-capability checkpoint adds explicit Propers translation-witness
+and Bible-edition comparison. Both sides retain exact source-occurrence IDs,
+form membership and unique hooks; All Souls Sequence can pair despite lacking a
+cross-edition functional slot. Partial Caswall/Cummiskey gaps remain one-sided,
+and Bible cells separately record coordinate refusals with their precise reason.
+Independent numbering conversion, source qualifications and unchanged primary
+Compare axes are covered by the combined 63-check Node run and four feature
+browser wrappers. Cross-edition comparisons retain their strict slot guard.
+
+Bounded print composition keeps source directions/headings with their next short
+Ordinary text, and short paired bodies with their own source accounts. Long
+Scripture/stanzas remain free to paginate. Repeated beforeprint, afterprint and
+reader rerendering preserve event IDs and restore the original screen DOM.
+Current-input ordered PDF text is preserved; final frozen all-page review remains
+pending. The cumulative declared script/style gzip6 increase against
+`aa39475c5` is 9,252 bytes for Day and 10,645 for Propers, with 29 direct resources
+each. These measurements do not establish latency or independent acceptance.
+
 ### Verification and completion gates
 
 Recovery checks actually run on the baseline:

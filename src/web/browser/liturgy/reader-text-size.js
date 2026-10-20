@@ -154,5 +154,5 @@
 
   return Object.freeze({ SIZES: SIZES, PREFERENCE_KEY: PREFERENCE_KEY,
     validSize: validSize, readPreference: readPreference, writePreference: writePreference,
-    install: install });
+    captureLocation: captureLocation, install: install });
 }));

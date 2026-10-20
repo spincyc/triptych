@@ -623,6 +623,34 @@ qualification uses readable edition/locus citations; protected artifact IDs and
 hashes remain in the owning study evidence. Representative AT and final
 print/independent acceptance remain open.
 
+A further shared-capability checkpoint adds explicit Latin accompaniment at
+existing Proper/cycle/Ordinary and citation boundaries, with independent prayer
+and Bible controls. Each language keeps its own source, rights, turns and precise
+gaps; a citation's Bible sides use their own generated numbering/refusal records.
+The selected Latin Bible appears once. Default state, requests and DOM remain
+unchanged, including actual English/Latin non-liturgy Scripture tracks.
+Date-free Propers Compare additionally supports explicit same-language witnesses
+and Bible editions, with exact source-occurrence coordinates for the held All
+Souls Sequence and Psalm-numbering refusal cases. Other selections stay fixed;
+cross-edition semantic-slot guards remain strict. The combined tree passes 63
+adjacent Node checks without skips, all four feature browser wrappers, the
+36-check dialogue probe and five Share/Print browser groups.
+
+Print composition temporarily keeps bounded source directions with their next
+short Ordinary text and short paired bodies with their source notes, restoring
+the exact screen DOM after printing or rerendering. Long readings remain free
+to paginate. Current-input print review preserves the full ordered extracted
+text; final built-artifact all-page review awaits source freeze. Direct declared
+script/style gzip6 sums grow by 9,252 bytes for Day and 10,645 for Propers against
+`aa39475c5`, with the same 29 resources per entrance. These are byte counts,
+not latency results; C6 and independent C4/C5 acceptance remain open.
+
+The integrated checkpoint passes all seven full browser tests and all 206
+selected static tests. `make check` reports 259 captured examples, 250 replayed,
+zero divergence and zero tracked writes. The preview build and integrity
+verification also pass. These checks cover the combined implementation; final
+source-frozen print review and performance measurements remain pending.
+
 A parallel witness audit found no publishable English witness for the 1962
 Pentecost Lesson's printed `discipuli` wording. [Cabrol 1921](https://catalog.hathitrust.org/Record/100567132)
 is an inaccessible page-image lead, not a text source. An

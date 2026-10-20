@@ -39,6 +39,12 @@
 
   function same(left, right) { return JSON.stringify(ordered(left)) === JSON.stringify(ordered(right)); }
 
+  const SOURCE_COORDINATE_DIMENSIONS = Object.freeze(['translation-witness', 'bible-edition']);
+
+  function withoutWitness(languages) {
+    const rest = Object.assign({}, languages); delete rest.translationWitness; return rest;
+  }
+
   function withoutOrations(languages) {
     const rest = Object.assign({}, languages);
     delete rest.orations;
@@ -73,10 +79,11 @@
       fail('Day comparison currently supports recension only');
     }
     if (entrance === 'propers' &&
-        ['oration-language', 'lectionary-cycle', 'reading-alternative'].indexOf(dimension) < 0) {
-      fail('Propers comparison supports oration language, held cycles, or reading alternatives');
+        ['oration-language', 'lectionary-cycle', 'reading-alternative', 'translation-witness', 'bible-edition'].indexOf(dimension) < 0) {
+      fail('Propers comparison supports translation witnesses, Bible editions, oration languages, held cycles and reading alternatives');
     }
 
+    const bibleComparison = dimension === 'bible-edition';
     const sides = input.comparison.sides.map(function (descriptor, index) {
       const supplied = input.sides[index];
       const result = supplied && supplied.result;
@@ -110,6 +117,14 @@
         }
       } else {
         const anchor = input.comparison.anchor;
+        if (bibleComparison) {
+          const bible = descriptor.bible;
+          const held = (input.bibles || []).filter(function (row) { return bible && row.id === bible.id; });
+          if (!bible || descriptor.id !== bible.id || held.length !== 1 ||
+              !same(result.request.bible, bible) || (held[0].numbering || null) !== bible.numbering) {
+            fail('Bible comparison side must match one published Bible and its declared numbering');
+          }
+        }
         if (!result.request.languages || (dimension === 'oration-language' &&
             (!descriptor.languages || !descriptor.languages.orations))) {
           fail('side ' + descriptor.id + ' needs an explicit oration language');
@@ -122,6 +137,9 @@
               result.request.languages.orations !== descriptor.languages.orations) ||
             (dimension === 'lectionary-cycle' &&
               (!descriptor.cycle || result.request.cycle !== descriptor.cycle)) ||
+            (dimension === 'translation-witness' && (!descriptor.languages ||
+              result.request.languages.orations !== descriptor.languages.orations ||
+              result.request.languages.translationWitness !== descriptor.languages.translationWitness)) ||
             (dimension === 'reading-alternative' && (!descriptor.alternative ||
               !same(result.request.alternative, descriptor.alternative) ||
               result.resolved.alternative !== descriptor.alternative.id))) {
@@ -137,12 +155,17 @@
       const cycleComparison = dimension === 'lectionary-cycle';
       const alternativeComparison = dimension === 'reading-alternative';
       const languageComparison = dimension === 'oration-language';
-      if (left.resolved.edition !== right.resolved.edition ||
+      const witnessComparison = dimension === 'translation-witness';
+      if (!same(left.request.scriptureCompanion, right.request.scriptureCompanion) ||
+          (left.request.textDisplay || 'selected') !== (right.request.textDisplay || 'selected') ||
+          left.resolved.edition !== right.resolved.edition ||
           left.resolved.formulary !== right.resolved.formulary ||
           left.resolved.form !== right.resolved.form ||
-          !same(left.request.bible, right.request.bible) ||
+          (bibleComparison ? left.request.bible.id === right.request.bible.id :
+            !same(left.request.bible, right.request.bible)) ||
           !(languageComparison ?
             same(withoutOrations(left.request.languages), withoutOrations(right.request.languages)) :
+            witnessComparison ? same(withoutWitness(left.request.languages), withoutWitness(right.request.languages)) :
             same(left.request.languages, right.request.languages)) ||
           !same(left.request.options, right.request.options) ||
           (cycleComparison ? left.request.cycle === right.request.cycle :
@@ -150,10 +173,14 @@
           left.request.form !== right.request.form ||
           (alternativeComparison ? same(left.request.alternative, right.request.alternative) :
             !same(left.request.alternative, right.request.alternative)) ||
-          (languageComparison && left.request.languages.orations === right.request.languages.orations)) {
+          (languageComparison && left.request.languages.orations === right.request.languages.orations) ||
+          (witnessComparison && left.request.languages.translationWitness === right.request.languages.translationWitness)) {
         fail(dimension + ' requires the same edition, form, formulary, Bible, and other selections on distinct peers');
       }
-    } else if (!same(sides[0].result.request.bible, sides[1].result.request.bible) ||
+    } else if (!same(sides[0].result.request.scriptureCompanion, sides[1].result.request.scriptureCompanion) ||
+               (sides[0].result.request.textDisplay || 'selected') !==
+               (sides[1].result.request.textDisplay || 'selected') ||
+               !same(sides[0].result.request.bible, sides[1].result.request.bible) ||
                !same(sides[0].result.request.languages, sides[1].result.request.languages)) {
       fail('recension comparison requires the same Bible and language selections');
     } else if (sides[0].result.resolved.edition === sides[1].result.resolved.edition) {
@@ -186,6 +213,40 @@
       if (groups[0] !== groups[1]) fail('reading alternatives must belong to the same held source group');
     }
 
+    const coordinateAxis = SOURCE_COORDINATE_DIMENSIONS.includes(dimension);
+    let coordinateOwners;
+    if (coordinateAxis) {
+      const structure = input.sides[0].structure;
+      if (!structure || structure.schema !== 'triptych-propers-structure/v1' || !input.sides.every(function (side) { return side.structure === structure; }) ||
+          structure.calendar !== sides[0].result.resolved.edition) {
+        fail('same-source comparison requires one identical source structure revision on both sides');
+      }
+      const mass = (structure.masses || []).find(function (one) {
+        return one.key === input.comparison.anchor.correspondingFormulary;
+      });
+      if (!mass) fail('same-source comparison has no exact source formulary');
+      coordinateOwners = new Map();
+      sides.forEach(function (side) {
+        selectedPropers(side.result).forEach(function (event) {
+          const prefix = 'proper/' + structure.calendar + '/' + mass.key + '/';
+          const ordinal = event && event.id && event.id.startsWith(prefix) ? event.id.slice(prefix.length) : '';
+          const hooks = event && (event.sourceHooks || []).filter(function (hook) { return hook.kind === 'proper-structure'; });
+          const sourceId = structure.calendar + '/' + mass.key + '/' + ordinal;
+          const owner = /^\d{3}$/.test(ordinal) && (mass.propers || [])[Number(ordinal) - 1];
+          const form = side.result.resolved.form || 'main';
+          if (!owner || !hooks || hooks.length !== 1 || hooks[0].id !== sourceId ||
+              (owner.form_id || 'main') !== form || (event.form || null) !== (owner.form || null) ||
+              event.sourceKind !== (owner.source || null) || event.editionSlotLabel !== (owner.name || null)) {
+            fail('Proper event has no exact edition/formulary/form/source coordinate');
+          }
+          coordinateOwners.set(event.id, { label: owner.name, semanticSlot: event.semanticSlot &&
+            event.semanticSlot.state === 'mapped' ? event.semanticSlot.identity.id : null,
+            sourceCoordinate: { edition: structure.calendar, formulary: mass.key, form: form,
+              eventId: event.id, properStructureId: sourceId, ordinal: Number(ordinal) } });
+        });
+      });
+    }
+
     const indexed = sides.map(function (side) {
       const bySlot = new Map();
       selectedPropers(side.result).forEach(function (event) {
@@ -193,8 +254,8 @@
           fail('only resolved Proper events can be aligned in this slice');
         }
         const slot = event.semanticSlot;
-        const slotId = slot && slot.state === 'mapped' && slot.identity && slot.identity.id;
-        if (!SLOT_SET.has(slotId)) {
+        const slotId = coordinateAxis ? event.id : slot && slot.state === 'mapped' && slot.identity && slot.identity.id;
+        if (!coordinateAxis && !SLOT_SET.has(slotId)) {
           fail('unmapped or unsupported Proper slot on side ' + side.id);
         }
         if (bySlot.has(slotId)) {
@@ -221,16 +282,23 @@
       return { id: side.id, status: statuses[availability], event: event };
     }
 
-    const units = SLOT_ORDER.filter(function (slot) {
+    if (coordinateAxis && !same(Array.from(indexed[0].keys()).sort(), Array.from(indexed[1].keys()).sort())) {
+      fail('same-source comparison sides require identical source coordinates');
+    }
+    const orderedUnits = coordinateAxis ? Array.from(coordinateOwners.keys()).sort(function (left, right) {
+      return coordinateOwners.get(left).sourceCoordinate.ordinal - coordinateOwners.get(right).sourceCoordinate.ordinal;
+    }) : SLOT_ORDER;
+    const units = orderedUnits.filter(function (slot) {
       return indexed.some(function (bySlot) { return bySlot.has(slot); });
     }).map(function (slot) {
-      return {
-        semanticSlot: slot,
-        relation: 'functional-slot-only',
+      return Object.assign(coordinateAxis ? {
+        semanticSlot: coordinateOwners.get(slot).semanticSlot, relation: 'same-source-event',
+        sourceCoordinate: coordinateOwners.get(slot).sourceCoordinate, label: coordinateOwners.get(slot).label
+      } : { semanticSlot: slot, relation: 'functional-slot-only' }, {
         sides: sides.map(function (side, index) {
           return cell(side, indexed[index].get(slot));
         })
-      };
+      });
     });
     const calendarResults = entrance === 'day' ? sides.map(function (side) {
       return {
@@ -251,5 +319,5 @@
     };
   }
 
-  return Object.freeze({ SLOT_ORDER: SLOT_ORDER, compare: compare });
+  return Object.freeze({ SLOT_ORDER: SLOT_ORDER, SOURCE_COORDINATE_DIMENSIONS: SOURCE_COORDINATE_DIMENSIONS, compare: compare });
 }));

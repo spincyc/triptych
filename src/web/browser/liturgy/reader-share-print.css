@@ -46,20 +46,20 @@
    corresponding units at a legible Letter-page measure. */
 @media print {
   .reader-instrument[data-reader-mode="study"] .reader-document .study-event {
-    margin-bottom: 0.12in;
-    padding-top: 0.08in;
+    margin-bottom: 0.08in;
+    padding-top: 0.04in;
   }
   .reader-instrument[data-reader-mode="study"] .reader-document .study-event h3 {
     margin-bottom: 0.06in;
     font-size: 11pt;
   }
   .reader-instrument[data-reader-mode="study"] .reader-document .study-facts {
-    row-gap: 0.02in;
+    row-gap: 0;
   }
   .reader-instrument[data-reader-mode="study"] .reader-document .study-facts dt,
   .reader-instrument[data-reader-mode="study"] .reader-document .study-facts dd {
-    padding-block: 0.02in;
-    line-height: 1.35;
+    padding-block: 0;
+    line-height: 1.25;
   }
   .reader-instrument[data-reader-mode="compare"] .reader-document .compare-pair,
   .reader-instrument[data-reader-mode="compare"] .reader-document .compare-calendar-pair {
@@ -81,5 +81,125 @@
 @media print {
   .reader-instrument[data-reader-mode="compare"] .reader-document .compare-evidence {
     break-before: avoid-page;
+  }
+}
+
+/* Temporary print ties are installed only while the browser composes pages.
+   Screen rendering keeps its original event layout if a print dialog remains open. */
+.reader-instrument .reader-document .ordinary-print-tie,
+.reader-instrument .reader-document .study-print-tie { display: contents; }
+@media print {
+  .reader-instrument[data-reader-mode="missal"] .reader-document .ordinary-frame > .ordinary-print-tie,
+  .reader-instrument[data-reader-mode="study"] .reader-document .proper > .study-print-tie {
+    display: block;
+    break-inside: avoid-page;
+  }
+  .reader-instrument[data-reader-mode="missal"] .reader-document .ordinary-frame > .ordinary-print-tie > .ordinary-element {
+    display: block;
+    max-width: 47.75rem;
+    margin: 0 0 1.15rem;
+    padding: 0;
+    border: 0;
+  }
+  .reader-instrument[data-reader-mode="missal"] .reader-document .ordinary-frame > .ordinary-print-tie > .ordinary-element:is(.is-dialogue,.is-prayer,.is-form) {
+    margin-bottom: 0.78rem;
+  }
+  .reader-instrument[data-reader-mode="study"] .reader-document .study-print-tie > .composed {
+    break-inside: avoid;
+  }
+}
+
+/* Prayer language pairs remain inside their existing semantic event. */
+.reader-instrument .text-pair {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+.reader-instrument .text-side { min-width: 0; }
+.reader-instrument .scripture-single { max-width: 39.75rem; }
+.reader-instrument .text-side-label,
+.reader-instrument .reader-text-display-context {
+  margin: 0 0 0.6rem;
+  color: var(--instrument-soft);
+  font: 600 0.82rem/1.45 var(--instrument-sans);
+}
+.reader-instrument .reader-text-display-context {
+  width: min(calc(100% - 2.5rem), 39.75rem);
+  margin: 0 auto 0.6rem;
+}
+.reader-instrument .reader-text-display-control {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 44px;
+  font: 500 0.9rem/1.45 var(--instrument-sans);
+}
+.reader-instrument .reader-text-display-control input { flex: none; }
+.reader-instrument .text-side-body { margin: 0; padding: 0; border: 0; }
+.reader-instrument .reader-document .text-side .composed:has(> .speaker-tag.is-opening-cue) {
+  padding-inline-start: 2.25rem;
+}
+.reader-instrument .reader-document .text-side .composed > .speaker-tag.is-opening-cue {
+  inset-inline-start: 0;
+  inset-inline-end: auto;
+  width: 1.5rem;
+}
+.reader-instrument .reader-document .text-side .ordinary-dialogue > .ordinary-locus {
+  margin-inline-start: 0;
+}
+@media (min-width: 72rem) {
+  .reader-instrument .reader-document:has(.text-pair) {
+    width: min(calc(100% - 12rem), 72rem);
+  }
+  .reader-instrument:has(.text-pair) .reader-actions,
+  .reader-instrument:has(.text-pair) .reader-locus {
+    left: max(0.75rem, var(--reader-safe-left));
+  }
+  .reader-instrument:has(.text-pair) .reader-locus {
+    width: 4.25rem;
+    max-width: 4.25rem;
+    overflow-wrap: anywhere;
+  }
+  .reader-instrument .reader-document:has(.scripture-pair) .proper:not(:has(.text-pair)),
+  .reader-instrument .reader-document:has(.scripture-pair) .proper > .composed,
+  .reader-instrument .reader-document:has(.scripture-pair) .proper > .composed-note {
+    max-width: 39.75rem;
+  }
+  .reader-instrument .reader-document .proper:has(.scripture-pair),
+  .reader-instrument .reader-document .proper:has(> .text-pair),
+  .reader-instrument .reader-document .ordinary-frame > .annotated:has(.text-pair) {
+    max-width: none;
+    margin-inline: 0;
+  }
+  .reader-instrument .reader-document .ordinary-frame > .ordinary-element:has(> .text-pair) {
+    max-width: none;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .reader-instrument .reader-document .ordinary-element:has(> .text-pair) > * { grid-column: 1; }
+  .reader-instrument .reader-document .proper:has(> .text-pair) > .citation { max-width: 39.75rem; }
+  .reader-instrument .text-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .reader-instrument[data-reader-mode="compare"] .text-pair { grid-template-columns: minmax(0, 1fr); }
+}
+@media print {
+  .reader-instrument .text-pair {
+    grid-template-columns: minmax(0, 1fr);
+    display: block;
+  }
+  .reader-instrument .text-side { break-inside: auto; }
+  .reader-instrument .text-side.print-keep-short-body { break-inside: avoid-page; }
+  .reader-instrument .compare-side:has(.text-pair) { break-inside: auto; }
+  .reader-instrument .text-side-label { break-after: avoid-page; font-size: 9pt; }
+  .reader-instrument .text-side + .text-side { margin-top: 0.12in; }
+  .reader-instrument .reader-text-display-context { font-size: 9pt; }
+}
+
+/* Long paired readings may continue across pages with their source credit
+   tied to the text tail. */
+@media print {
+  .reader-instrument[data-reader-mode="study"] .reader-document .text-pair > .text-side:not(.print-keep-short-body) > .composed-note {
+    break-before: avoid-page;
+  }
+  .reader-instrument .ordinary-preamble .mass-head > p.row-meta {
+    break-inside: avoid-page;
   }
 }

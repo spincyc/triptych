@@ -134,7 +134,7 @@
         return one.id === side.result.request.bible.id;
       });
       if (!bible) throw new Error('the selected comparison Bible is not held');
-      const loaded = await input.T.fetchFragments(bible, input.T.citationsOf(mass));
+      const loaded = await input.T.fetchFragments(bible, input.T.citationsOf(mass), side.result.request, input.bibles);
       const missal = input.missals.find(function (one) {
         return one.id === side.result.resolved.edition;
       });
@@ -144,7 +144,7 @@
         structure: side.structure,
         mass: mass,
         bible: bible,
-        fragments: loaded.fragments
+        fragments: loaded.fragments, companion: loaded.companion
       };
     }));
     if (!input.isCurrent()) return null;

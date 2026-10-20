@@ -1060,14 +1060,14 @@ class ContractTests(unittest.TestCase):
             day["hash"],
             ["date", "missal", "bible", "orations", "why", "ordinary",
              "ordinary-lang", "rubrics", "mass", "form", "translation-witness",
-             "mode", "location", "compare", "peer-missal", "territory",
+             "mode", "location", "text-display", "scripture-companion", "compare", "peer-missal", "territory",
              "eucharistic-prayer"],
         )
         self.assertEqual(
             propers["hash"],
             ["missal", "type", "mass", "bible", "orations", "form", "cycle",
-             "alternative", "translation-witness", "mode", "location",
-             "ordinary-lang", "compare", "peer-orations", "peer-cycle", "peer-alternative", "penitential-act",
+             "alternative", "translation-witness", "mode", "location", "text-display", "scripture-companion",
+             "ordinary-lang", "compare", "peer-orations", "peer-cycle", "peer-alternative", "peer-witness", "peer-bible", "penitential-act",
              "creed", "eucharistic-prayer"],
         )
         self.assertEqual(day["query"], ["data"])

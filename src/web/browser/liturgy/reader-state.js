@@ -29,7 +29,7 @@
     'schema', 'entrance', 'civilDate', 'edition', 'calendar', 'formulary', 'browse',
     'bible', 'languages', 'selectedReadableFormulary', 'requestedMode', 'options',
     'apparatus', 'form', 'cycle', 'alternative', 'semanticLocation', 'sourceHooks',
-    'coverage', 'unresolvedChoices', 'explicitAbsences', 'comparison'
+    'coverage', 'unresolvedChoices', 'explicitAbsences', 'comparison', 'textDisplay', 'scriptureCompanion'
   ]);
 
   const COVERAGE_STATES = Object.freeze(['supported', 'unsupported', 'unavailable', 'absent']);
@@ -66,13 +66,13 @@
 
   const DAY_KEYS = Object.freeze([
     'date', 'missal', 'bible', 'orations', 'why', 'ordinary',
-    'ordinary-lang', 'rubrics', 'mass', 'form', 'translation-witness', 'mode', 'location',
+    'ordinary-lang', 'rubrics', 'mass', 'form', 'translation-witness', 'mode', 'location', 'text-display', 'scripture-companion',
     'compare', 'peer-missal', 'territory'
   ]);
   const PROPERS_KEYS = Object.freeze([
     'missal', 'type', 'mass', 'bible', 'orations',
-    'form', 'cycle', 'alternative', 'translation-witness', 'mode', 'location',
-    'ordinary-lang', 'compare', 'peer-orations', 'peer-cycle', 'peer-alternative'
+    'form', 'cycle', 'alternative', 'translation-witness', 'mode', 'location', 'text-display', 'scripture-companion',
+    'ordinary-lang', 'compare', 'peer-orations', 'peer-cycle', 'peer-alternative', 'peer-witness', 'peer-bible'
   ]);
   const URL_INVENTORY = Object.freeze({
     day: Object.freeze({
@@ -583,6 +583,14 @@
           ));
         } else sideIds.push(side.id);
         assertIdentity(errors, side && side.edition, sidePath + '.edition');
+        if (value.dimension === 'bible-edition') {
+          assertIdentity(errors, side && side.bible, sidePath + '.bible');
+          if (!side || !object(side.bible) || !has(side.bible, 'numbering') ||
+              side.bible.numbering !== null && !nonempty(side.bible.numbering)) {
+            errors.push(issue('comparison-bible-numbering', sidePath + '.bible',
+              'each Bible rendering needs its declared numbering identity or null'));
+          }
+        }
         if (entrance === 'day') {
           assertIdentity(errors, side && side.calendar, sidePath + '.calendar');
         } else {
@@ -648,6 +656,25 @@
     if (has(value, 'requestedMode') && value.requestedMode !== null &&
         MODES.indexOf(value.requestedMode) < 0) {
       errors.push(issue('mode', 'requestedMode', 'unknown reader mode'));
+    }
+    if (has(value, 'textDisplay') && !['selected', 'latin-and-selected'].includes(value.textDisplay)) {
+      errors.push(issue('text-display', 'textDisplay', 'unknown prayer text presentation'));
+    }
+    if (has(value, 'scriptureCompanion')) {
+      assertIdentity(errors, value.scriptureCompanion, 'scriptureCompanion');
+      if (object(value.scriptureCompanion) &&
+          Object.keys(value.scriptureCompanion).some(function (key) {
+            return ['id', 'numbering'].indexOf(key) < 0;
+          })) errors.push(issue('scripture-companion', 'scriptureCompanion', 'unknown companion field'));
+      if (object(value.scriptureCompanion) && !has(value.scriptureCompanion, 'numbering')) {
+        errors.push(issue('scripture-companion-numbering', 'scriptureCompanion.numbering',
+          'a companion states its edition numbering explicitly'));
+      }
+      if (object(value.scriptureCompanion) && has(value.scriptureCompanion, 'numbering') &&
+          value.scriptureCompanion.numbering !== null && !nonempty(value.scriptureCompanion.numbering)) {
+        errors.push(issue('scripture-companion-numbering', 'scriptureCompanion.numbering',
+          'Bible numbering must be a stable code or explicit null'));
+      }
     }
     if (has(value, 'bible')) assertIdentity(errors, value.bible, 'bible');
     if (object(value.bible) && has(value.bible, 'numbering') &&
@@ -944,6 +971,38 @@
           'reading-alternative Compare needs explicit distinct options of one edition-qualified source group'));
       }
     }
+    if (value.comparison && value.comparison.dimension === 'translation-witness' && value.entrance === 'propers') {
+      const sides = value.comparison.sides;
+      const left = Array.isArray(sides) && sides[0], right = Array.isArray(sides) && sides[1];
+      if (!Array.isArray(sides) || sides.length !== 2 || !left || !right || !left.edition || !right.edition ||
+          !left.formulary || !right.formulary || !left.languages || !right.languages ||
+          left.edition.id !== (value.edition && value.edition.id) || right.edition.id !== left.edition.id ||
+          left.formulary.id !== (value.formulary && value.formulary.id) || right.formulary.id !== left.formulary.id ||
+          left.languages.orations !== (value.languages && value.languages.orations) ||
+          right.languages.orations !== left.languages.orations || left.languages.orations === 'la' ||
+          !nonempty(left.languages.translationWitness) || !nonempty(right.languages.translationWitness) ||
+          left.languages.translationWitness === right.languages.translationWitness ||
+          left.languages.translationWitness !== (value.languages && value.languages.translationWitness) ||
+          !value.comparison.anchor || value.comparison.anchor.correspondingFormulary !== left.formulary.id) {
+        errors.push(issue('propers-compare-witness-state', 'comparison.sides',
+          'translation-witness Compare needs explicit distinct witnesses in one language and edition-qualified formulary'));
+      }
+    }
+    if (value.comparison && value.comparison.dimension === 'bible-edition' && value.entrance === 'propers') {
+      const sides = value.comparison.sides;
+      const left = Array.isArray(sides) && sides[0], right = Array.isArray(sides) && sides[1];
+      if (!Array.isArray(sides) || sides.length !== 2 || !left || !right || !left.edition || !right.edition ||
+          !left.formulary || !right.formulary || !left.bible || !right.bible ||
+          left.edition.id !== (value.edition && value.edition.id) || right.edition.id !== left.edition.id ||
+          left.formulary.id !== (value.formulary && value.formulary.id) || right.formulary.id !== left.formulary.id ||
+          left.id !== left.bible.id || right.id !== right.bible.id || left.bible.id === right.bible.id ||
+          left.bible.id !== (value.bible && value.bible.id) ||
+          left.bible.numbering !== (value.bible && value.bible.numbering) ||
+          !value.comparison.anchor || value.comparison.anchor.correspondingFormulary !== left.formulary.id) {
+        errors.push(issue('propers-compare-bible-state', 'comparison.sides',
+          'Bible-edition Compare needs distinct explicit Bibles of one edition-qualified formulary'));
+      }
+    }
     if (value.requestedMode === 'compare' &&
         (!has(value, 'comparison') || value.comparison === null)) {
       errors.push(issue(
@@ -1141,6 +1200,17 @@
       sourceHooks: []
     };
 
+    const textDisplay = validOrDefault('text-display', function (value) {
+      return ['selected', 'latin-and-selected'].includes(value);
+    }, false);
+    if (textDisplay !== null) state.textDisplay = textDisplay;
+    const scriptureCompanion = validOrDefault('scripture-companion', function (id) {
+      return knownId(context.bibles, id) && context.bibles[id].language === 'la';
+    }, false);
+    if (scriptureCompanion !== null) state.scriptureCompanion = {
+      id: scriptureCompanion, numbering: context.bibles[scriptureCompanion].numbering || null
+    };
+
     const legacy = {
       sources: sources,
       unknown: (parsed.unknown || []).slice(),
@@ -1274,13 +1344,13 @@
     // shared URL identifies the left side with the existing entrance keys and
     // names the second side and comparison anchor with these additive keys.
     const comparisonKeys = parsed.entrance === 'day'
-      ? ['compare', 'peer-missal', 'territory'] : ['compare', 'peer-orations', 'peer-cycle', 'peer-alternative'];
+      ? ['compare', 'peer-missal', 'territory'] : ['compare', 'peer-orations', 'peer-cycle', 'peer-alternative', 'peer-witness', 'peer-bible'];
     const compared = comparisonKeys.filter(function (key) {
       return has(parsed.recognized, key);
     });
     if (state.requestedMode === 'compare' && (parsed.unknown || []).some(function (row) {
       return row.key === (parsed.entrance === 'day' ? 'peer-orations' : 'peer-missal') ||
-        ['peer-cycle', 'peer-alternative'].includes(row.key) && parsed.entrance === 'day' ||
+        ['peer-cycle', 'peer-alternative', 'peer-witness', 'peer-bible'].includes(row.key) && parsed.entrance === 'day' ||
         row.key === 'territory' && parsed.entrance === 'propers';
     })) {
       errors.push(issue(
@@ -1296,9 +1366,12 @@
     }
     if (state.requestedMode === 'compare') {
       const requiredKeys = parsed.entrance === 'propers'
-        ? ['compare', parsed.recognized.compare === 'reading-alternative' ? 'peer-alternative' :
+        ? ['compare', parsed.recognized.compare === 'bible-edition' ? 'peer-bible' :
+          parsed.recognized.compare === 'translation-witness' ? 'peer-witness' :
+          parsed.recognized.compare === 'reading-alternative' ? 'peer-alternative' :
           parsed.recognized.compare === 'lectionary-cycle' ? 'peer-cycle' : 'peer-orations']
         : comparisonKeys;
+      if (parsed.entrance === 'propers' && parsed.recognized.compare === 'bible-edition') requiredKeys.push('bible');
       requiredKeys.forEach(function (key) {
         if (!has(parsed.recognized, key) || !nonempty(parsed.recognized[key])) {
           errors.push(issue(
@@ -1337,7 +1410,46 @@
         }
       } else if (errors.length === 0) {
         const peer = parsed.recognized['peer-orations'];
-        if (parsed.recognized.compare === 'reading-alternative') {
+        if (parsed.recognized.compare === 'bible-edition') {
+          const peerBible = parsed.recognized['peer-bible'];
+          if (['peer-orations', 'peer-cycle', 'peer-alternative', 'peer-witness'].some(function (key) { return has(parsed.recognized, key); })) {
+            errors.push(issue('comparison-peer-dimension', 'compare', 'Bible-edition comparison accepts only its Bible peer', 'url'));
+          } else if (!knownId(context.bibles, peerBible) || peerBible === bible) {
+            errors.push(issue('invalid-comparison-peer', 'peer-bible', 'choose a distinct published Bible edition', 'url'));
+          } else if (!state.formulary || !state.formulary.id) {
+            errors.push(issue('comparison-formulary-required', 'mass', 'Propers Compare needs an exact formulary', 'url'));
+          } else {
+            state.comparison = {
+              dimension: 'bible-edition', anchor: { correspondingFormulary: state.formulary.id },
+              sides: [bible, peerBible].map(function (id) {
+                return { id: id, edition: { id: missal }, formulary: { id: state.formulary.id },
+                  bible: { id: id, numbering: context.bibles[id].numbering || null } };
+              })
+            };
+          }
+        } else if (has(parsed.recognized, 'peer-bible')) {
+          errors.push(issue('comparison-peer-dimension', 'peer-bible', 'this comparison dimension accepts no Bible peer', 'url'));
+        } else if (parsed.recognized.compare === 'translation-witness') {
+          const primary = state.languages.translationWitness, peerWitness = parsed.recognized['peer-witness'];
+          if (['peer-orations', 'peer-cycle', 'peer-alternative'].some(function (key) { return has(parsed.recognized, key); })) {
+            errors.push(issue('comparison-peer-dimension', 'compare', 'translation-witness comparison accepts only its witness peer', 'url'));
+          } else if (!has(parsed.recognized, 'translation-witness') || !nonempty(primary) ||
+              !nonempty(peerWitness) || primary === peerWitness || state.languages.orations === 'la') {
+            errors.push(issue('invalid-comparison-peer', 'peer-witness', 'choose explicit distinct translated witnesses in one language', 'url'));
+          } else if (!state.formulary || !state.formulary.id) {
+            errors.push(issue('comparison-formulary-required', 'mass', 'Propers Compare needs an exact formulary', 'url'));
+          } else {
+            state.comparison = {
+              dimension: 'translation-witness', anchor: { correspondingFormulary: state.formulary.id },
+              sides: [primary, peerWitness].map(function (witness) {
+                return { id: witness, edition: { id: missal }, formulary: { id: state.formulary.id },
+                  languages: { orations: state.languages.orations, translationWitness: witness } };
+              })
+            };
+          }
+        } else if (has(parsed.recognized, 'peer-witness')) {
+          errors.push(issue('comparison-peer-dimension', 'peer-witness', 'this comparison dimension accepts no witness peer', 'url'));
+        } else if (parsed.recognized.compare === 'reading-alternative') {
           const primary = state.alternative && state.alternative.id;
           const peerAlternative = parsed.recognized['peer-alternative'];
           if (has(parsed.recognized, 'peer-orations') || has(parsed.recognized, 'peer-cycle')) {
@@ -1471,7 +1583,11 @@
       pairs.push(['mode', state.requestedMode || 'read']);
       if (state.comparison) {
         pairs.push(['compare', state.comparison.dimension]);
-        if (state.comparison.dimension === 'reading-alternative') {
+        if (state.comparison.dimension === 'bible-edition') {
+          pairs.push(['peer-bible', state.comparison.sides[1].bible.id]);
+        } else if (state.comparison.dimension === 'translation-witness') {
+          pairs.push(['peer-witness', state.comparison.sides[1].languages.translationWitness]);
+        } else if (state.comparison.dimension === 'reading-alternative') {
           pairs.push(['peer-alternative', state.comparison.sides[1].alternative.id]);
         } else if (state.comparison.dimension === 'lectionary-cycle') {
           pairs.push(['peer-cycle', state.comparison.sides[1].cycle]);
@@ -1489,6 +1605,8 @@
         pairs.push([key, normalized.legacy.variants[key]]);
       });
     }
+    if (has(state, 'textDisplay')) pairs.push(['text-display', state.textDisplay]);
+    if (has(state, 'scriptureCompanion')) pairs.push(['scripture-companion', state.scriptureCompanion.id]);
     for (const row of normalized.legacy.unknown || []) pairs.push([row.key, row.value]);
     return '#' + pairs.filter(function (one) {
       return one[1] !== null && one[1] !== undefined;

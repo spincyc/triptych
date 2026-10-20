@@ -71,6 +71,14 @@ test('descriptive titles name the Day date and Compare territory, without invent
   });
   assert.match(alternative, /Compare reading-alternative with Option shorter/);
   assert.doesNotMatch(alternative, /with postconciliar/);
+  const witness = actions.shareTitle('propers', shell, {
+    edition: { id: 'roman-1962' }, requestedMode: 'compare', comparison: {
+      dimension: 'translation-witness', sides: [{}, { edition: { id: 'roman-1962' },
+        languages: { orations: 'en', translationWitness: 'edition.edward-caswall.lyra-catholica.london-1849' } }]
+    }
+  });
+  assert.match(witness, /Compare translation-witness with edition.edward-caswall.lyra-catholica.london-1849/);
+  assert.doesNotMatch(witness, /with roman-1962/);
 });
 
 test('native share receives only title and URL; copy handles unavailability and native failure', async () => {
@@ -122,6 +130,7 @@ class Element {
     this.textContent = '';
     this.attributes = {};
   }
+  before() {}
   get firstChild() { return this.children[0] || null; }
   appendChild(child) { this.children.push(child); child.parentElement = this; return child; }
   append(...children) { children.forEach((child) => this.appendChild(child)); }
@@ -167,6 +176,7 @@ test('Details retains native keyboard buttons after replacement; Share and Print
     const doc = {
       querySelector() { return shell; },
       getElementById() { return reading; },
+      createTextNode(text) { const node = new Element('#text'); node.textContent = text; return node; },
       createElement(tag) { return new Element(tag); }
     };
     const path = entrance === 'day' ? 'day.html#date=2026-08-02&missal=roman-1962&mode=read' :
@@ -192,14 +202,14 @@ test('Details retains native keyboard buttons after replacement; Share and Print
     assert.ok(mounted);
     assert.equal(body.firstChild, mounted.section);
     assert.equal(actions.install({ document: doc, window: win }), null);
-    const controls = mounted.section.children[1];
+    const controls = mounted.section.children.find((node) => node.className === 'reader-share-print-controls');
     const shareButton = controls.children[0];
     const printButton = controls.children[1];
     assert.equal(shareButton.tagName, 'BUTTON');
     assert.equal(printButton.tagName, 'BUTTON');
     assert.equal(shareButton.type, 'button');
     assert.equal(printButton.type, 'button');
-    assert.equal(mounted.section.children[2].attributes.role, 'status');
+    assert.ok(mounted.section.children.some((node) => node.attributes.role === 'status'));
     await shareButton.listeners.click();
     assert.equal(copied, url);
     printButton.listeners.click();

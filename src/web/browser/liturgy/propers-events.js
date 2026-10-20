@@ -61,7 +61,7 @@
     event.selected.alternatives.forEach(function (alternative) {
       const rendered = T.renderProper(proper, bible, fragments, {
         numbering: runtime.structure.numbering || null,
-        orations: state.languages.orations,
+        orations: state.languages.orations, textDisplay: state.textDisplay,
         translationWitness: state.languages.translationWitness || null,
         heading: 'h2', cycle: alternative.cycle
       });
@@ -96,7 +96,9 @@
     const translationChoice = eventHasTranslationChoice(event);
     const section = T.renderProper(proper, bible, fragments, {
       numbering: runtime.structure.numbering || null,
-      orations: translationChoice ? T.SOURCE_LANGUAGE : state.languages.orations,
+      orations: translationChoice && state.textDisplay !== 'latin-and-selected'
+        ? T.SOURCE_LANGUAGE : state.languages.orations,
+      textDisplay: state.textDisplay,
       translationWitness: state.languages.translationWitness || null,
       heading: heading || 'h2', cycle: selectedCycle
     });
@@ -286,7 +288,7 @@
       throw new Error('the selected edition has no matching production Ordinary to render');
     }
     OrdinaryRenderer.configure({
-      ordinaryLang: state.languages.ordinary,
+      ordinaryLang: state.languages.ordinary, textDisplay: state.textDisplay || 'selected',
       variants: state.options.legitimate || {}, why: false
     });
     const sections = new Map();

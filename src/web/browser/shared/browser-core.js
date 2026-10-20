@@ -767,7 +767,8 @@ window.Triptych = (function () {
    * Fetch every chapter a selection needs, in one pass, through the cache.
    * A chapter already held costs nothing; a chapter cited twice is fetched once.
    */
-  async function fetchFragments(bible, citations) {
+  async function fetchFragments(bible, citations, state, bibles) {
+    if (state && state.scriptureCompanion) return fetchReaderFragments(bible, citations, state, bibles);
     const chapters = chaptersNeeded(citations, lociKey(bible), bible.id);
     const results = await Promise.all(
       chapters.map((needed) => loadChapter(bible.id, needed.book, needed.chapter))
@@ -777,6 +778,30 @@ window.Triptych = (function () {
       fragments.set(needed.book + '|' + needed.chapter, results[index]);
     });
     return { fragments: fragments, chapters: chapters };
+  }
+
+  /**
+   * Liturgy's optional named Latin companion. Each edition reads the citation's
+   * own generated loci and refusals through the existing chapter loader. The
+   * returned bundle is explicit; legacy two-argument fetchFragments consumers
+   * retain their exact shape, requests and rendering.
+   */
+  async function fetchReaderFragments(bible, citations, state, bibles) {
+    const descriptor = state && state.scriptureCompanion;
+    if (!descriptor) return fetchFragments(bible, citations);
+    const held = (bibles || []).filter(function (row) {
+      return row.id === descriptor.id && row.language === SOURCE_LANGUAGE;
+    });
+    if (held.length !== 1 || (descriptor.numbering || null) !== (held[0].numbering || null)) {
+      throw new Error('The named Latin Bible companion is not held with this numbering.');
+    }
+    const companion = held[0];
+    const loaded = await Promise.all([
+      fetchFragments(bible, citations),
+      companion.id === bible.id ? null : fetchFragments(companion, citations)
+    ]);
+    return { fragments: loaded[0].fragments, chapters: loaded[0].chapters,
+      companion: { bible: companion, fragments: (loaded[1] || loaded[0]).fragments } };
   }
 
   /* ------------------------------------------------------------------------
@@ -2211,14 +2236,15 @@ window.Triptych = (function () {
    * the Latin stays visible, labelled as Latin, beside the exact typed absence of
    * the translation. No other witness of the translation is borrowed.
    */
-  function renderOrationState(container, owner, held, scope, parentSource) {
+  function renderSingleOrationState(container, owner, held, scope, parentSource) {
     const asked = held.orations || SOURCE_LANGUAGE;
     const oration = orationFor(owner, asked, held.translationWitness || null);
     const latinHeld = Boolean(owner.text) && !(owner.latin && owner.latin.withheld);
-    const original = !oration.text && oration.missing && asked !== SOURCE_LANGUAGE && latinHeld
+    const original = !held.separateOriginal && !oration.text && oration.missing && asked !== SOURCE_LANGUAGE && latinHeld
       ? owner.text : null;
-    const shown = oration.text || original;
-    const shownLang = oration.text ? oration.lang : SOURCE_LANGUAGE;
+    const selectedText = held.separateOriginal && oration.missing ? null : oration.text;
+    const shown = selectedText || original;
+    const shownLang = selectedText ? oration.lang : SOURCE_LANGUAGE;
     // A Latin fallback is the owner's own text, and carries its structure;
     // a structure travels only with the exact words it was checked against.
     const structure = oration.text ? oration.structure : (owner.text_structure || null);
@@ -2263,7 +2289,7 @@ window.Triptych = (function () {
     } else {
       clause(asked);
     }
-    if (asked !== SOURCE_LANGUAGE) {
+    if (asked !== SOURCE_LANGUAGE && !held.separateOriginal) {
       if (shown && shownLang === SOURCE_LANGUAGE) sentences.push('The Latin original is shown.');
       else if (!latinHeld) clause(SOURCE_LANGUAGE);
     }
@@ -2271,6 +2297,106 @@ window.Triptych = (function () {
     if (absences.length) note.setAttribute('data-unit-absence', absences.join(' '));
     container.appendChild(note);
     return oration;
+  }
+
+  /** One labelled language side; metadata is passed from its source owner. */
+  function textSide(language, metadata) {
+    const facts = metadata || {};
+    const side = el('section', 'text-side');
+    side.setAttribute('data-text-language', language);
+    ['sourceId', 'rights', 'relationship', 'availability'].forEach(function (key) {
+      if (facts[key]) side.setAttribute('data-text-' + key.replace(/[A-Z]/g, function (one) {
+        return '-' + one.toLowerCase();
+      }), facts[key]);
+    });
+    const relation = COVERAGE_RELATIONSHIPS[facts.relationship] ||
+      (facts.relationship === 'antecedent' ? 'historical antecedent' : facts.relationship);
+    const label = el('p', 'text-side-label', [languageName(language), relation,
+      facts.rights && String(facts.rights).replace(/-/g, ' '),
+      facts.collation === 'uncollated' && 'uncollated'].filter(Boolean).join(' · '));
+    label.lang = 'en';
+    side.appendChild(label);
+    return side;
+  }
+
+  function orationCredits(container, oration) {
+    if (oration.source) container.appendChild(el('p', 'composed-note',
+      'Translation: ' + (oration.sourceLabel || oration.source)));
+    if (oration.caution) container.appendChild(el('p', 'composed-note', oration.caution));
+    if (oration.notice) container.appendChild(el('p', 'composed-note', oration.notice));
+  }
+
+  function renderOrationState(container, owner, held, scope, parentSource) {
+    const asked = held.orations || SOURCE_LANGUAGE;
+    if (held.textDisplay !== 'latin-and-selected' || asked === SOURCE_LANGUAGE) {
+      return renderSingleOrationState(container, owner, held, scope, parentSource);
+    }
+    const pair = el('div', 'text-pair');
+    const coverage = unitCoverageOf(owner);
+    const latin = orationFor(owner, SOURCE_LANGUAGE, null);
+    const selected = orationFor(owner, asked, held.translationWitness || null);
+    function metadata(lang, selection) {
+      const row = coverage && (coverage.languages || []).find(function (one) { return one.lang === lang; });
+      const witness = row && (row.witnesses || []).find(function (one) {
+        return one.id === selection.source || one.source_id === selection.source ||
+          (one.aliases || []).includes(selection.source);
+      });
+      const original = lang === SOURCE_LANGUAGE && owner.latin || {};
+      return {
+        sourceId: selection.source || original.provenance && original.provenance.source_id,
+        rights: selection.rights || original.publication && original.publication.basis,
+        relationship: witness && witness.relationship || row && row.relationship,
+        availability: selection.missing ? selection.availability || 'unavailable' :
+          (selection.text ? 'held' : 'unavailable')
+      };
+    }
+    const originalSide = textSide(SOURCE_LANGUAGE, metadata(SOURCE_LANGUAGE, latin));
+    const originalResult = renderSingleOrationState(originalSide, owner,
+      Object.assign({}, held, { orations: SOURCE_LANGUAGE, translationWitness: null }), scope, parentSource);
+    if (!originalResult.shown && !originalResult.missing) {
+      const absence = absenceClause(owner, SOURCE_LANGUAGE, scope);
+      const note = el('p', 'composed-note unit-absence', absence.text);
+      note.setAttribute('data-unit-absence', SOURCE_LANGUAGE + ':' + absence.availability);
+      originalSide.appendChild(note);
+    }
+    const provenance = owner.latin && owner.latin.provenance;
+    if (originalResult.shown && provenance && (provenance.source_date || provenance.source_id)) originalSide.appendChild(el('p', 'composed-note',
+      'Latin source: ' + (provenance.source_date || provenance.source_id) +
+      (provenance.verification_locator ? ' · ' + provenance.verification_locator : '')));
+    const selectedSide = textSide(asked, metadata(asked, selected));
+    const result = renderSingleOrationState(selectedSide, owner,
+      Object.assign({}, held, { separateOriginal: true }), scope, parentSource);
+    orationCredits(selectedSide, result);
+    pair.appendChild(originalSide);
+    pair.appendChild(selectedSide);
+    container.appendChild(pair);
+    result.creditsShown = true;
+    result.shown = result.shown || originalResult.shown;
+    return result;
+  }
+
+  function renderScriptureCitation(citation, bible, fragments, numbering, options, companion) {
+    if (!companion) return renderCitation(citation, bible, fragments, numbering, options);
+    const sameEdition = companion.bible.id === bible.id;
+    const pair = el('div', sameEdition ? 'scripture-single' : 'text-pair scripture-pair');
+    function side(edition, chapters) {
+      const node = textSide(edition.language, { sourceId: edition.id, rights: edition.rights });
+      node.classList.add('scripture-side');
+      node.setAttribute('data-bible-edition', edition.id);
+      node.setAttribute('data-bible-numbering', lociKey(edition));
+      if (edition.edition) node.setAttribute('data-bible-witness', edition.edition);
+      const label = el('p', 'text-side-label scripture-edition', bibleMeta(edition).join(' · '));
+      node.appendChild(label);
+      const body = el('div', 'text-side-body');
+      body.appendChild(renderCitation(citation, edition, chapters, numbering, options));
+      node.appendChild(body);
+      return node;
+    }
+    // The citation is the common semantic fragment. Loci/verses inside each
+    // side remain in that edition's own order and are never zipped together.
+    pair.appendChild(side(companion.bible, companion.fragments));
+    if (!sameEdition) pair.appendChild(side(bible, fragments));
+    return pair;
   }
 
   /**
@@ -2287,6 +2413,9 @@ window.Triptych = (function () {
    * "The Priest at the Foot of the Altar" are peers, which they are not.
    */
   function renderProper(proper, bible, fragments, options) {
+    const bundle = fragments && fragments.fragments ? fragments : null;
+    const companion = bundle && bundle.companion;
+    if (bundle) fragments = bundle.fragments;
     const held = options || {};
     const numbering = held.numbering || null;
     const level = held.heading || 'h3';
@@ -2345,20 +2474,7 @@ window.Triptych = (function () {
     if (hasOrationState) {
       const oration = renderOrationState(section, proper, held, null);
       missalTextShown = Boolean(oration.shown);
-      // Whose English it is. A translation is someone's expression, and the
-      // reader is entitled to know whose before weighing it.
-      if (oration.source) {
-        section.appendChild(el(
-          'p', 'composed-note',
-          'Translation: ' + (oration.sourceLabel || oration.source)
-        ));
-      }
-      if (oration.caution) {
-        section.appendChild(el('p', 'composed-note', oration.caution));
-      }
-      if (oration.notice) {
-        section.appendChild(el('p', 'composed-note', oration.notice));
-      }
+      if (!oration.creditsShown) orationCredits(section, oration);
     } else if (proper.incipit && proper.source === 'composed') {
       section.appendChild(
         el('p', 'composed-note',
@@ -2369,11 +2485,11 @@ window.Triptych = (function () {
     const citations = proper.citations || [];
     // One quiet claim before the passages it qualifies, never a note per verse.
     const claim = citations.length
-      ? citationClaim(proper, null, proper.source, missalTextShown, bible) : null;
+      ? citationClaim(proper, null, proper.source, missalTextShown, companion ? null : bible) : null;
     if (claim) section.appendChild(claim);
     for (const citation of citations) {
       section.appendChild(
-        renderCitation(citation, bible, fragments, numbering, { showRef: false })
+        renderScriptureCitation(citation, bible, fragments, numbering, { showRef: false }, companion)
       );
     }
 
@@ -2400,10 +2516,10 @@ window.Triptych = (function () {
           renderOrationState(block, cycle, held, 'for this cycle', proper.source).shown);
       }
       const cycleClaim = cycle.citations.length
-        ? citationClaim(cycle, proper, cycle.source || proper.source, cycleTextShown, bible) : null;
+        ? citationClaim(cycle, proper, cycle.source || proper.source, cycleTextShown, companion ? null : bible) : null;
       if (cycleClaim) block.appendChild(cycleClaim);
       for (const citation of cycle.citations) {
-        block.appendChild(renderCitation(citation, bible, fragments, numbering));
+        block.appendChild(renderScriptureCitation(citation, bible, fragments, numbering, null, companion));
       }
       section.appendChild(block);
     }
@@ -2469,6 +2585,7 @@ window.Triptych = (function () {
     formatLoci: formatLoci,
     chaptersNeeded: chaptersNeeded,
     fetchFragments: fetchFragments,
+    fetchReaderFragments: fetchReaderFragments,
 
     // propers, shared by both pages that show the text of a Mass
     SOURCE_LANGUAGE: SOURCE_LANGUAGE,
@@ -2498,6 +2615,7 @@ window.Triptych = (function () {
     orationFor: orationFor,
     versicled: versicled,
     composedBody: composedBody,
+    textSide: textSide,
     renderProper: renderProper,
     uncompiledNote: uncompiledNote,
 
