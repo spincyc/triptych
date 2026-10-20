@@ -343,3 +343,27 @@ they do not certify a complete appointed-text record, authored document or
 publishable artifact. The model-output rejection still has no verified
 resolution, and no rejected payload was replayed. The required full-material
 production remains unfinished; no main push or new deployment was attempted.
+
+## 20 October recovery and fresh full-material run
+
+The maintainer renewed the instruction to complete the GPT edition and push it
+to `main`. This workspace merged current main `6dad4a7a3` through merge commit
+`0b318d400`, keeping both provider records and both calendar corrections.
+Source-library validation passed with 4,154 bindings; generated propers and
+source-browser structures and the promise ledger checked cleanly after conflict
+resolution. The merge includes the separately published Claude F01 edition.
+Its acceptance belongs to Claude alone.
+
+An independent read-only audit of that edition's records identified the
+registered 1925 *Acta Apostolicae Sedis* fascicle, printed pp. 666–668, as a
+potential antecedent for every Latin proper body and the Preface. It also
+identified Lasance's ordinary body pages for English and cautions about
+abbreviated conclusions, a Preface ending, the inactive Paschal Alleluia, Psalm
+numbering and displaced older rubrics. The audit did not render the primary
+facsimiles itself. GPT research must inspect and record its own findings; it
+may reuse provider-neutral source identities but no other provider's PASS.
+
+Fresh GPT `proper-study` v13 run `8d637d6f2f9160aa` was seeded from
+`0b318d400` for 25 October 2026 under ordinary full-material authorization.
+Its scope gate passed. The next native packet is `resolve-context-0000`; no
+context, research, document or publication PASS is claimed at this checkpoint.

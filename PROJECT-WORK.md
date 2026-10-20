@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-10-19.
+Last reconciled: 2026-10-20.
 
 ## GPT Christ the King three documents, 2026-10-19
 
@@ -59,6 +59,16 @@ all three documents, canonical web edition, source verification, independent
 reviews, installation, main publication and live verification remain required.
 The driver record is
 `workflows/reviews/gpt-1962-f01-production-2026-10-19/CYCLES.md`.
+
+On 20 October the maintainer renewed the instruction to complete the GPT
+production and push it to `main`. Current `main` through `6dad4a7a3` was merged
+into this workspace at `0b318d400`; it includes an independently accepted Claude
+F01 publication and a registered 1925 first-printing witness. Those are source
+leads, not acceptance of the GPT leaf. A fresh GPT `proper-study` v13 run,
+`8d637d6f2f9160aa`, is in progress under full-material scope. Its scope gate
+passed; context and research still require their own work and reviews. The
+earlier model-output incident remains documented, without a blanket prohibition
+on ordinary independent source verification.
 
 ## Claude 1962 Christ the King three documents, 2026-10-19
 
