@@ -109,6 +109,7 @@ limits are retained in the browser receipt and the remaining-work table.
 | Reader follow-up | Improve direct unit-source access and long-title narrow presentation; extend accessibility and cross-browser review. |
 | Production acceptance | Complete production-sheet and physical-printer proof. |
 
-The fresh review transport and publication facts will be recorded after the
-reviewed implementation commit, so the patch and archive can identify an exact
-immutable target without a digest cycle.
+[Verified delivery](DELIVERY.md) identifies the pushed implementation
+`95b1fe4be30caf604ba7ed7737247072a8216ff4` and its fresh immutable review directory
+and byte-verified ZIP. The subsequent bookkeeping changes only these operational
+records; the archive continues to identify its exact reviewed implementation.

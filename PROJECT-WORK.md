@@ -117,8 +117,16 @@ production runtime and preview bytes stayed unchanged. Digital print acceptance
 covers all 570 freshly rasterized pages, including independent direct review of
 fifteen source-delta pages. Twenty-six retained observations are corrected and
 one margin allegation is independently withdrawn. Production and physical-print
-proof remain open. Reviewed publication and transport facts will follow the
-implementation checkpoint; the full project remains **in progress**.
+proof remain open. Reviewed implementation
+`95b1fe4be30caf604ba7ed7737247072a8216ff4` is committed and pushed to the feature
+branch. The [verified delivery](workflows/reviews/missal-batch2-2026-10-20/DELIVERY.md)
+records `.scratch/agent-handoffs/20261020T224530Z-missal-batch2/` and its sibling
+ZIP: directory created, ZIP created and verified, all 57 members byte-equal.
+The 26,935,099-byte archive's SHA-256 is
+`f35b8a98ce970b46a2d343ecb0722741b91f558a1427dc70933ec962467220b4`.
+It supersedes the preserved first pair only to document 260 separately supplied
+installed-PDF prerequisites. Source/runtime/projection inputs are unchanged by
+the delivery bookkeeping. The full project remains **in progress**.
 
 | Full-project area | Outstanding work |
 | --- | --- |
