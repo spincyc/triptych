@@ -95,7 +95,7 @@ label = "The Roman Missal translated into the English language for the use of th
 rights = "public-domain"
 caution = "A pre-1955 lay hand missal, not an approved liturgical translation and never an altar book. Its rubrics and its seasonal second orations are not those of 1962, and its spelling is its own. Nothing here may be used for recitation."
 artifacts = [
-  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-2",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en",
@@ -114,7 +114,7 @@ label = "The Roman Missal translated into the English language for the use of th
 rights = "public-domain"
 caution = "The Latin of a pre-1955 lay hand missal's facing column: never an altar book, and nothing here may be used for recitation. It is the 1861 printing's own text and NOT the 1962 typical edition's. Its Canon prints the Communicantes without the clause naming St Joseph that later legislation inserted; its seasonal second orations and rubrics are the discipline in force before the 1955 and 1960 reforms; and its orthography, j and the ae/oe ligatures, is its own. Collation against the 1962 book is asserted only on the elements whose own provenance says so."
 artifacts = [
-  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la-turn-divided",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la-turn-divided-2",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la-turn-divided",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-la",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la",
@@ -366,9 +366,9 @@ locus = "The Mass of the Lord's Supper prints its own Communicantes and Hanc igi
 [[sections]]
 key = "praeparatio"
 name = "The Priest at the Foot of the Altar"
-artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-2"
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la-turn-divided"
+artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la-turn-divided-2"
 absent_latin = "witness-own-english"
 
 [sections.english]
@@ -525,6 +525,24 @@ basis = "1962 Ordo Missae n. 1015, printed p. 216, artifact PDF p. 297, right co
 parts = [
   { key = "priest-1", seq = [1001], speaker = "priest", printed_marker = "P." },
   { key = "server-1", seq = [1002], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "adjutorium-nostrum"
+lang = "en"
+basis = "1962 Ordo Missae n. 1016, printed p. 216, artifact PDF p. 297 of the registered CMAA facsimile, read on the page image on 2026-10-20: the priest's Adjutorium carries V. and the ministers' answer carries R.; these are dialogue roles, distinct from the 1861 witness's P./R. speaker letters."
+parts = [
+  { key = "priest-1", seq = [1101], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "server-1", seq = [1102], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "adjutorium-nostrum"
+lang = "la"
+basis = "1962 Ordo Missae n. 1016, printed p. 216, artifact PDF p. 297 of the registered CMAA facsimile, read on the page image on 2026-10-20: the priest's Adjutorium carries V. and the ministers' answer carries R.; these are dialogue roles, distinct from the 1861 witness's P./R. speaker letters."
+parts = [
+  { key = "priest-1", seq = [1101], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "server-1", seq = [1102], speaker = "server", dialogue_role = "response", printed_marker = "R." },
 ]
 
 # C2 gap G19 (2026-10-19): element-level collation of the 1861 Latin the 1962

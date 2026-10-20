@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-2"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The 1861 Philadelphia printing is public domain in the United States. This English text is a word-preserving, turn-divided derivative of the tracked 2026-10-19 transcription artifact; the source words, pointing, and printed head letters are unchanged. The United States basis and jurisdiction of the parent apply to this derivative."
+rights_jurisdiction = "United States"
+derived_from = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided"
+transformation = "From the exact parent artifact artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided (sha256 4275d96eefa03177f1f555a9cdf740f401135d961ea1107c10386993c3d6703c), copy every TSV row byte for byte except seq 11, Adjutorium nostrum. Split that row before its printed R. at zero-based single-space token 10, making child rows 1101 and 1102; retain the first row metadata, append a division note, and leave the second row notes and any element-level speaker and incipit cells empty. Joining the child text cells with one space exactly recovers the parent text cell. The parent artifact and its earlier six divisions remain unchanged."
+retrieved = "2026-10-20"
+sha256 = "6e2bf1500e7d525cbb3257fb81c07a6a2736d7905daa4f3d5aaacf3c9176f4c7"
+byte_size = 17486
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-praeparatio-en-turn-divided-2/ordinarium-praeparatio-en-turn-divided-2.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "Second turn-divided derivative of the 1861 English Preparation section. It preserves the parent artifact's six previously divided blocks and all other rows except Adjutorium nostrum seq 11, whose P./R. head letters bound child rows 1101-1102 on printed p. xvi, Internet Archive leaf 26. The target 1962 typica supplies dialogue roles separately in the Ordinary inventory; this artifact records only the 1861 witness. Parent exact sha256 4275d96eefa03177f1f555a9cdf740f401135d961ea1107c10386993c3d6703c. Rejoin verified against the parent seq 11 text cell."

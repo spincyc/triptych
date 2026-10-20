@@ -720,7 +720,7 @@ state = "unenumerated"
         current = {row["id"]: row["state"] for row in coverage.expectations(
             path, "roman-1962", masses)["targets"]}
         self.assertEqual(Counter(current[row["id"]] for row in joined),
-                         {"represented": 2950, "not-represented": 407})
+                         {"represented": 2962, "not-represented": 395})
         gap_id = "roman-1962:sanctoral-form:p511-l46:slot:p511-l62:secret"
         self.assertEqual(current[gap_id], "not-represented")
 
@@ -793,10 +793,67 @@ state = "unenumerated"
                     self.assertEqual([row["ref"] for row in held[0]["citations"]], [citation])
         published = document["coverage"]["expected_inventory"]
         self.assertEqual(published["target_states"],
-                         {"represented": 4005, "not-represented": 179, "unresolved": 3806})
+                         {"represented": 4017, "not-represented": 167, "unresolved": 3806})
         self.assertEqual({row["id"] for row in published["not_represented"]} & joins.keys(), set())
         self.assertIn("roman-1962:sanctoral-form:p518-l3:slot:p518-l21:collect",
                       {row["id"] for row in published["not_represented"]})
+
+    def test_1962_source_checked_scripture_roles_join_in_ritual_order(self):
+        propers = tool("mass-propers")
+        document = propers.calendar_structure(
+            ROOT / "src/sources/calendars", "roman-1962", propers.book_tokens())
+        masses = {mass["key"]: mass for mass in document["masses"]}
+        # Expected-target identifiers and citations come from the 1962 facsimile's
+        # numbered Sanctoral roles, independently of the YAML proper rows.
+        rows = (
+            ("p524-l43:slot:p525-l19:gospel", "s-pauli-primi-eremitae-confessoris", "Gospel", "Matthew 11:25-30", "Alleluia", "Offertory"),
+            ("p527-l61:slot:p528-l50:gospel", "comm-ss-marii-marthae-audifacis-abachum", "Gospel", "Matthew 24:3-13", "Tract", "Offertory"),
+            ("p572-l5:slot:p573-l19:gospel", "s-ioseph-sponsi-beatae-mariae-virginis", "Gospel", "Matthew 1:18-21", "Tract", "Secret"),
+            ("p641-l21:slot:p642-l5:offertory-antiphon", "s-paulini-episcopi-confessoris", "Offertory", "Psalms 88:21-22", "Gospel", "Secret"),
+            ("p663-l27:slot:p664-l28:gospel", "ss-septem-fratrum-martyrum-ac-ss", "Gospel", "Matthew 12:46-50", "Gradual", "Offertory"),
+            ("p672-l66:slot:p673-l39:gospel", "s-vincentii-a-paulo-confessoris", "Gospel", "Luke 10:1-9", "Gradual", "Offertory"),
+            ("p755-l21:slot:p756-l14:gospel", "s-teresiae-a-iesu-infante-virginis", "Gospel", "Matthew 18:1-4", "Tract", "Offertory"),
+            ("p758-l42:slot:p759-l48:gospel", "beatae-mariae-virginis-a-rosario", "Gospel", "Luke 1:26-38", "Gradual", "Offertory"),
+            ("p764-l45:slot:p765-l43:gospel", "comm-ss-dionysii-episcopi-rustici-eleutherii", "Gospel", "Luke 12:1-8", "Alleluia", "Offertory"),
+            ("p770-l57:slot:p771-l25:gradual", "s-lucae-evangelistae", "Gradual", "Psalms 18:5,2", "Epistle", "Alleluia"),
+            ("p781-l46:slot:p782-l21:gospel", "ss-simonis-iudae-apostolorum", "Gospel", "John 15:17-25", "Tract", "Offertory"),
+            ("p799-l15:slot:p799-l67:gospel", "s-iosaphat-episcopi-martyris", "Gospel", "John 10:11-16", "Gradual", "Secret"),
+        )
+        states = {row["id"]: row["state"] for row in coverage.expectations(
+            ROOT / "src/sources/inventories/missal-expected-targets-v1.toml",
+            "roman-1962", document["masses"])["targets"]}
+        for locus, key, role, citation, before, after in rows:
+            with self.subTest(locus=locus):
+                target_id = f"roman-1962:sanctoral-form:{locus}"
+                self.assertEqual(states[target_id], "represented")
+                named = [proper for proper in masses[key]["propers"] if proper["name"] == role]
+                self.assertEqual(len(named), 1)
+                self.assertEqual([row["ref"] for row in named[0]["citations"]], [citation])
+                order = [proper["name"] for proper in masses[key]["propers"]]
+                self.assertLess(order.index(before), order.index(role))
+                self.assertLess(order.index(role), order.index(after))
+        published = document["coverage"]["expected_inventory"]
+        self.assertEqual(published["target_states"],
+                         {"represented": 4017, "not-represented": 167, "unresolved": 3806})
+        gaps = {row["id"] for row in published["not_represented"]}
+        self.assertTrue(all(f"roman-1962:sanctoral-form:{locus}" not in gaps
+                            for locus, *_ in rows))
+        # These printed chants omit, recast, or differ from the complete Bible
+        # verses. Preserve the appointed role as a visible content gap.
+        for locus in (
+            "p526-l24:slot:p527-l8:offertory-antiphon",
+            "p529-l59:slot:p530-l26:gradual",
+            "p535-l10:slot:p536-l78:communion-antiphon",
+            "p538-l32:slot:p539-l2:alleluia",
+            "p572-l5:slot:p573-l37:offertory-antiphon",
+            "p644-l1:slot:p645-l27:communion-antiphon",
+            "p688-l2:slot:p688-l45:gradual",
+            "p722-l52:slot:p723-l17:gradual",
+        ):
+            self.assertIn(f"roman-1962:sanctoral-form:{locus}", gaps)
+        # The March 24 Gabriel heading says Luc. 2, 26-38 but prints Luke 1's
+        # Annunciation; no Bible passage is published under the wrong locator.
+        self.assertIn("roman-1962:sanctoral-form:p574-l14:slot:p575-l19:gospel", gaps)
 
     def test_duplicate_held_proper_does_not_resolve_a_single_source_slot(self):
         slot = ('\n[[targets]]\nid="slot"\nslice_id="fixed"\nkind="text-slot"\n'
@@ -826,7 +883,7 @@ state = "unenumerated"
         self.assertEqual([row["id"] for row in missing],
                          ["roman-1962:commemoration:1962-12-25-comm"])
         published = coverage.published_expectations(report)
-        self.assertEqual(len(published["not_represented"]), 408)
+        self.assertEqual(len(published["not_represented"]), 396)
         self.assertEqual([row["id"] for row in published["not_represented"]
                           if row["slice_id"] == "roman-1962-universal-fixed-calendar"],
                          ["roman-1962:commemoration:1962-12-25-comm"])

@@ -479,6 +479,18 @@ the same browser sequence. The CLI still has no machine-readable expanded
 event stream for full event-ID parity. This is additional C2 evidence, not
 independent acceptance.
 
+A second 2026-10-20 Sanctoral citation pass added twelve source-checked roles.
+The effective Roman 1962 text-slot states are now 3,194 represented, 166 not
+represented and 2,925 unresolved; across 7,990 target kinds they are 4,017,
+167 and 3,806 respectively. Each added Gospel or chant uses the existing
+Bible-reconstruction claim; no exact Missal wording is asserted. Eight
+candidate chant joins were held because the printed words differ from the
+whole Bible verse, and the St Gabriel Gospel's printed Luke 2:26–38 locator
+contradicts its Annunciation body, so its role remains open pending a source
+correction. The 1962 Adjutorium row now has source-bound priest and answer
+turns, restoring its printed ℣/℟ dialogue cue; sixteen other Ordinary
+elements still need glyph review.
+
 An exemplar passes C2 when:
 
 - every expected text slot is joined and classified;
@@ -577,6 +589,14 @@ checked on page images:
 - **English.** Cummiskey binds the Collect, Secret and Postcommunion, and
   Lasance the Introit, Gospel, Offertory and Communion. The Lesson is a typed
   gap.
+  A 2026-10-20 page-image audit also checked the complete Acts 2:1–11 Lesson
+  in [Pace/Wynne 1916, p. 608](https://archive.org/download/TheMassEveryDayOfTheYear/page/n613_w1400.jpg)
+  and [a B. Herder 1926 missal, p. 381](https://archive.org/download/missal0000vari/page/n448_w1400.jpg). Both omit “disciples” in
+  verse 1, as Cummiskey, Lasance and Lefebvre do; none can supply the recorded
+  1962 Latin's English counterpart under the word-agreement rule. [Cabrol
+  1921](https://catalog.hathitrust.org/Record/100567132) is catalogued full-view
+  but its page image was inaccessible here, so that
+  candidate remains unverified and the `witness-gap` stays explicit.
 - **Antecedent typing.** Cummiskey and Lasance rows declare the evidenced
   antecedent relation.
 - **Saturday-BVM rows** now name Mame as their publication witness.
@@ -693,11 +713,18 @@ Remaining:
 On 2026-10-20, Ordinary absence rows gained short source-owned reader labels.
 The Day preamble and silent elements now show those labels with the existing
 typed state, while the internal keys remain in generated data. This closes the
-key-only wording portion of G15; repeated absence notices and other G15–G16
+key-only wording portion of G15; repeated absence notices and other G15
 presentation work remain open. A print-only C4 pass lets long Proper witness
 accounts paginate, keeping headings and short prayers together; 1962 Pentecost
 English Read fell from ten to seven pages in both entrances with the extracted
 text unchanged. Long notes still need mode-aware print composition.
+
+The G16 translation-witness chooser now stands beside its first Proper and
+names its Mass-wide scope. It retains all source-supported partial witnesses
+with their coverage counts, and a focused Pentecost Chromium regression
+confirms that selecting Caswall leaves the Introit's English gap explicit
+while holding its Sequence in both entrances. The control no longer suggests
+that every offered witness supplies the Introit.
 
 The first C5 core-preference slice now shares missal, Bible and oration-language
 choices across Day and Propers. An explicit URL still wins; a malformed or

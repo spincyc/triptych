@@ -278,6 +278,9 @@ async function snapshot(cdp) {
     formularyControlHidden: document.querySelector('#reader-formulary-field').hidden,
     witnessChoices: [...document.querySelectorAll('[data-translation-witness-choice]')]
       .map((row) => row.dataset.translationWitnessChoice),
+    witnessAnchors: [...document.querySelectorAll('[data-translation-witness-choice]')]
+      .map((row) => row.previousElementSibling?.dataset.semanticEventId ||
+        row.closest('[data-semantic-event-id]')?.dataset.semanticEventId || null),
     witnessOptions: [...document.querySelectorAll('[data-translation-witness]')]
       .map((row) => row.value),
     witnessLimitations: [...document.querySelectorAll('[data-translation-witness-limitation]')]
@@ -561,6 +564,7 @@ async function testTranslationWitnesses(cdp, base) {
   const partial = await snapshot(cdp);
   assert.equal(partial.outcome, 'unresolved', JSON.stringify(partial.error));
   assert.ok(partial.witnessChoices.length > 0);
+  assert.ok(partial.witnessChoices.every((id) => id.startsWith('mass/')));
   assert.deepEqual([...new Set(partial.witnessOptions)].sort(), [
     editionWitness, prayerWitness,
     'edition.hymns-ancient-and-modern-proprietors.hymns-ancient-and-modern.london-complete-edition-1890'
@@ -571,7 +575,8 @@ async function testTranslationWitnesses(cdp, base) {
     .map((node) => node.name?.value).filter(Boolean);
   assert.ok(witnessRadioNames.some((name) => /Lyra Catholica.*1 of 6 uses/.test(name)));
   assert.ok(witnessRadioNames.some((name) => /3 of 6 uses/.test(name)));
-  const focusedEvent = partial.witnessChoices[0];
+  const focusedEvent = partial.witnessAnchors[0];
+  assert.ok(focusedEvent);
   await click(cdp, `[data-translation-witness="${editionWitness}"]`);
   await waitFor(cdp,
     `dayReaderReady && dayReaderDebug.outcome === 'ready' && ` +

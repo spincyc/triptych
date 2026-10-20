@@ -604,8 +604,8 @@ carries the identical block.
 | roman-pre-1955 | sanctoral | 1 | 0 | 0 |
 | roman-1962 | seasonal | 128 | 1354 | 0 |
 | roman-1962 | christological | 8 | 96 | 0 |
-| roman-1962 | marian | 18 | 124 | 0 |
-| roman-1962 | sanctoral | 307 | 1516 | 0 |
+| roman-1962 | marian | 18 | 125 | 0 |
+| roman-1962 | sanctoral | 307 | 1527 | 0 |
 | roman-1962 | common | 30 | 358 | 0 |
 | postconciliar | seasonal | 390 | 2116 | 0 |
 | postconciliar | christological | 7 | 69 | 0 |

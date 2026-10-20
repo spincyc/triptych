@@ -335,6 +335,11 @@ class OrdinaryStructure(unittest.TestCase):
         } | {
             ("postconciliar", "prex-eucharistica/praefationis-dialogus", "la"),
             ("postconciliar", "ritus-communionis/pax-domini", "la"),
+        } | {
+            # The 1962 n. 1016 Adjutorium has its own two source-backed turns;
+            # the pre-1955 frame still uses the unchanged block artifact.
+            ("roman-1962", "praeparatio/adjutorium-nostrum", lang)
+            for lang in ("en", "la")
         }
         self.assertEqual(reached, expected)
         # Postconciliar: speakers priest/all; roles only where the 2002
@@ -400,11 +405,11 @@ class OrdinaryStructure(unittest.TestCase):
             row["lang"] == "en"
             for row in (post_by_key[key]["translations"] or [])
         ), key)
-        for calendar in ("roman-1962", "roman-pre-1955"):
+        for calendar in ("roman-pre-1955",):
             opaque = next(
                 element for element in elements(self.files[calendar])
-                # Introibo became reviewed child rows on 2026-10-19 (C4 step
-                # 2); Adjutorium is still one opaque printed block.
+                # The 1962 frame now has reviewed Adjutorium child rows; the
+                # pre-1955 witness still holds this as one opaque block.
                 if element["key"] == "praeparatio/adjutorium-nostrum"
             )
             for translation in opaque["translations"] or []:
@@ -2169,10 +2174,13 @@ process.stdout.write(JSON.stringify({
         # Re-pinned 2026-10-20 (C4 G15): both streams keep their
         # liturgical words and order; typed absence prose now uses the
         # source-owned reader labels instead of storage keys.
+        # Re-pinned 2026-10-20 (C4 Adjutorium): one 1962 element's received
+        # cue words become the two structured turns established by n. 1016;
+        # its 1861 spoken words and semantic event position are unchanged.
         expected = {
             "pentecost_10_text": (
                 178,
-                "d279eefc0b4f4bc7568bd36309fb375a5fa9f75efcb8df583e2c28d95229f23b",
+                "0050435a37259403fd32488be1eba46df9a6c117bbffcad39468d86621b4c0f0",
             ),
             # Re-pinned 2026-10-19 (C4 step 2), diffed against HEAD 1107fdc1a:
             # the sequence is unchanged and only the Preface dialogue and the
@@ -2580,7 +2588,7 @@ process.stdout.write(JSON.stringify({
         """
         report = self.run_harness()
         dialogues = report["real_dialogues"]
-        self.assertEqual(len(dialogues), 29)
+        self.assertEqual(len(dialogues), 31)
         priest_server = [("P", "Priest", "P."), ("S", "Server", "R.")]
         versicle_response = [("℣", "Versicle — Priest", "P."), ("℟", "Response — Server", "R.")]
         expected_cues = {
@@ -2604,6 +2612,7 @@ process.stdout.write(JSON.stringify({
             "praeparatio/introibo-ad-altare-dei-repetitio": [
                 ("P", "Priest", "P."), ("℟", "Response — Server", "R."),
             ],
+            "praeparatio/adjutorium-nostrum": versicle_response,
             "oblatio/per-omnia-saecula": versicle_response,
             "oblatio/sursum-corda": versicle_response * 3,
             "communio/pax-domini": [("P", "Priest", "P."), ("℟", "Response — Server", "R.")],
@@ -3361,6 +3370,7 @@ for (const lang of ['en', 'la']) {
     'praeparatio/introibo-ad-altare-dei', 'praeparatio/judica-me-deus',
     'praeparatio/emitte-lucem-tuam', 'praeparatio/confitebor-tibi-in-cithara',
     'praeparatio/gloria-patri', 'praeparatio/introibo-ad-altare-dei-repetitio',
+    'praeparatio/adjutorium-nostrum',
     'oblatio/per-omnia-saecula', 'oblatio/sursum-corda', 'communio/pax-domini',
     'conclusio/dominus-vobiscum-ite-missa-est']) {
     realDialogues['roman-1962 ' + key + ' ' + lang] = realTurns(tlm, key, lang);
