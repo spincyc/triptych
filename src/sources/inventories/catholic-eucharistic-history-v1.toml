@@ -182,6 +182,24 @@ label = "Carmelite rite"
 families = ["carmelite", "carmelitarum"]
 
 [[presentation_groups]]
+id = "humiliati"
+label = "Humiliati books"
+families = ["humiliati"]
+note = "Navigation for identified order books; no complete recension sequence is established."
+
+[[presentation_groups]]
+id = "minim"
+label = "Minim books"
+families = ["minim"]
+note = "Navigation for identified order books and Mass propers; no complete recension sequence is established."
+
+[[presentation_groups]]
+id = "discalced-carmelite"
+label = "Discalced Carmelite books"
+families = ["discalced-carmelite"]
+note = "Navigation for identified OCD books and components; this label does not assert a separate normative rite or textual recension."
+
+[[presentation_groups]]
 id = "carthusian"
 label = "Carthusian rite"
 families = ["carthusian", "cartusiense"]
@@ -911,6 +929,33 @@ families = ["historic-seville-use"]
 id = "toledo-roman"
 label = "Roman use of Toledo"
 families = ["historic-toledo-roman-use"]
+
+# Exact [[presentation_groups]] append fragment for catholic-eucharistic-history-v1.toml.
+# Bibliographic presentation only; group IDs do not assert independent recensions.
+
+[[presentation_groups]]
+id = "augustinian-hermits"
+label = "Augustinian Hermits (OSA)"
+families = ["OSA"]
+note = "USUARIUM OSA origin 408 and BAV Pal. lat. 500 attest order-labelled witnesses; 2007 Augustinian Acta reports the Spanish confirmation of 17 May 1975 and 1976 missal. Keep Hermits separate from Canons Regular and Windesheim. Source IDs: additional-orders-src-usuarium-osa, additional-orders-src-osa-pal500, additional-orders-src-augustinian-2007. Presentation grouping only; no independent recension or parentage asserted."
+
+[[presentation_groups]]
+id = "servites"
+label = "Servite Order"
+families = ["Servites"]
+note = "BAV Pal. lat. 505 describes a Servite witness; OSZK cites a 1745 proper, Notitiae attests the 1971 proper approval, and Baroffio PDF p. 230 identifies both 1998 volumes. Original 1998 front matter remains unexamined. Source IDs: additional-orders-src-servite-pal505, additional-orders-src-servite-1971-approval, additional-orders-src-servite-bibliography, additional-orders-src-servite-oszk-1745. Presentation grouping only; no independent recension or parentage asserted."
+
+[[presentation_groups]]
+id = "mercedarians"
+label = "Order of Mercy (Mercedarians)"
+families = ["Mercedarians"]
+note = "USUARIUM book 8573 and 8574 separate 1507 and 1560 missal reports; Biblioteca Virtual de Madrid identifies the 1617 supplement; Notitiae records 1976 proper confirmation. A title or bound supplement is not recension proof. Source IDs: additional-orders-src-merced-1507, additional-orders-src-merced-1560, additional-orders-src-merced-1617, additional-orders-src-merced-1976. Presentation grouping only; no independent recension or parentage asserted."
+
+[[presentation_groups]]
+id = "santiago-military"
+label = "Military Order of Santiago"
+families = ["Santiago military"]
+note = "USUARIUM origin 890 indexes Santiago books; IEC study printed p. 73 calls the 1560 print the third missal and cites a 1536 authorization letter and 1541 Uclés inventory for an earlier edition. The Andalusian thesis p. 116 supplies the BNE MS 931 manuscript lead. Earlier print exemplars and the direct BNE record remain uninspected. Source IDs: additional-orders-src-santiago-usuarium, additional-orders-src-santiago-iec, additional-orders-src-santiago-thesis. Presentation grouping only; no independent recension or parentage asserted."
 
 # Bounded collect and calendar comparisons in exact Dominican/Carmelite witnesses.
 [[text_sets]]

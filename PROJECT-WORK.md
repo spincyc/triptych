@@ -243,6 +243,42 @@ reconciles all 117 packet records, the 108 new inventory rows, 52 sources,
 Original books, rights, textual collation and stage admission still require
 separate checks; the Roman lane and full project remain in progress.
 
+**Western Roman adaptations and religious-order metadata wave, 2026-10-20.**
+Five independently reviewed packets are integrated as qualified research
+metadata: [Mendicant](src/sources/inventories/eucharistic-research-reviews/mendicant-2026-10-20.json),
+[Roman adaptations](src/sources/inventories/eucharistic-research-reviews/roman-adaptations-2026-10-20.json),
+[additional orders](src/sources/inventories/eucharistic-research-reviews/additional-orders-2026-10-20.json),
+[canonical orders](src/sources/inventories/eucharistic-research-reviews/canonical-orders-2026-10-20.json),
+and [monastic orders](src/sources/inventories/eucharistic-research-reviews/monastic-2026-10-20.json).
+Together they add 130 Western source records and 152 candidates or witnesses,
+bringing the inventory to 431 sources and 541 records. The generated catalogue
+has 1,039 entries including the 439 Eastern and 59 legacy records. Four order
+coverage rows now separate the Augustinian Hermits, Servites, Mercedarians and
+Santiago; reader groups distinguish these four and, after a targeted routing
+review, Humiliati, Minims and Discalced Carmelites. The Western discovery
+crosswalk now has 58 rows and the presentation registry 61 groups. Those groups
+are navigation categories, not a count of rites or substantive recensions.
+
+The packets preserve frozen expected-version dispositions, inspected loci,
+acquisition hashes and extents, rights limits, and unexamined repertoire ranges.
+The 1936 Premonstratensian title is admitted as a witness, while 41 Canons
+Regular leads stay deferred. The Slavonic Roman 1896 candidate has a pinned,
+qualified correction; four Roman-adaptation leads remain off the year axis and
+Brazil 1991 remains a translation witness. A mixed 1549 Harley manuscript has
+no assigned Catholic coverage row because its reception is unestablished. The
+1529 Trinitarian *Missale* remains a labelled open lead pending its own family
+route and original-book inspection; Wrocław I F 352 remains cross-lane ownership
+work. Cold reviews found and corrected a Santiago source-attribution error,
+transient acquisition URLs in the canonical receipt, and misleading Mendicant
+reader grouping. No new act-history station, textual parent, complete book,
+source payload, or redistribution permission follows from this metadata wave.
+Independent post-integration checks accept the selected Mendicant, Roman
+adaptation, additional-order, canonical-order and monastic records with no
+content blocker (verdict SHA-256 prefixes `c4e9817b`, `5b0b5265`,
+`a5d5081f`, `69269c4a` and `a056b475`, respectively). The derived coverage
+reconciliation reports zero findings; these verdicts do not close the full
+historical-catalogue or complete-text requirements.
+
 Open from this wave:
 
 - **Rights rulings for retention.** ONB non-commercial images, arar.sci.am
@@ -263,10 +299,11 @@ still holds 61 typed research relationships. Neither a stage transition nor
 shared wording alone supplies a Git parent or permission to inherit text.
 
 The [coverage audit](src/sources/inventories/eucharistic-stage-coverage-v1.json)
-retains all 77 discovery rows: 23 Eastern Church slots and 54 Western trajectories.
-Thirty-two rows select researched stages; 41 still lack a researched sequence;
+retains all 77 original discovery rows and adds four separately named order
+routes: 23 Eastern Church slots and 58 Western trajectories. Thirty-two rows
+select researched stages; 45 still lack a researched sequence;
 four point to related dossiers with local reception unresolved. Albanian and
-Macedonian have no identified edition candidate, and 20 Western trajectories
+Macedonian have no identified edition candidate, and 18 Western trajectories
 still have no candidate. These are counts of different research objects, not
 a percentage of historical or textual completeness. The new
 `tools/missal-coverage-reconciliation` checks exact owner fingerprints and

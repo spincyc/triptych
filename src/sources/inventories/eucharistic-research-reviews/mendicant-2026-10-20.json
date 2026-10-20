@@ -1,0 +1,2382 @@
+{
+ "schema_version": 1,
+ "record_type": "eucharistic-research-lane-review",
+ "id": "mendicant-2026-10-20",
+ "title": "Mendicant Eucharistic books: qualified research review, 2026-10-20",
+ "lane": "mendicant",
+ "side": "western",
+ "checked_on": "2026-10-20",
+ "reviewed_on": "2026-10-20",
+ "coverage_rows": [
+  "dominican",
+  "carmelite",
+  "orders-other"
+ ],
+ "target_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+ "semantics": "Project-created bibliographic metadata. Forty-seven candidate rows are witnesses, component controls and leads, not a count of substantive revisions or new act-history stations. No whole-book text, ancestry, local receipt or redistribution right is established.",
+ "review_files": {
+  "storage": "untracked workspace scratch, pinned here by SHA-256 only",
+  "packet_sha256": "ebd56ae05df50d49da6596dc232afe0d6848ea18644859d2ac298a83c349521a",
+  "coverage_links_sha256": "bcc2836d0d0a4be0520ee75a5cfe1d60ed68e9bdee6bc0f4f91f571212e45179",
+  "cold_re_review_sha256": "3b1cfadea38081427f24fd6b26a4cc1d78c463f16d0980319892f5a8468817c1",
+  "cold_initial_sha256": "eb4052031def1c38d38cd6e1be8f2a542fc82ab7da6c2768e81e5b4a074bcef7",
+  "cold_first_verdict_sha256": "55977ad218cca167b85c06c18ff1fa0be8528738909701e7facb91baae0898b7",
+  "cold_verdict": "ready"
+ },
+ "integration": {
+  "new_sources": [
+   "mendicant-src-cmaa-carm",
+   "mendicant-src-cmaa-dom",
+   "mendicant-src-hum-746",
+   "mendicant-src-hum-8571",
+   "mendicant-src-min-2015",
+   "mendicant-src-min-adabi",
+   "mendicant-src-min-google",
+   "mendicant-src-min-index",
+   "mendicant-src-min-notitiae",
+   "mendicant-src-oc-1490-gallica",
+   "mendicant-src-oc-1500-usu",
+   "mendicant-src-oc-1866",
+   "mendicant-src-oc-acta2020",
+   "mendicant-src-oc-ant1960",
+   "mendicant-src-oc-bnf",
+   "mendicant-src-oc-boyce",
+   "mendicant-src-oc-calendar",
+   "mendicant-src-oc-carmelus",
+   "mendicant-src-oc-openlibrary",
+   "mendicant-src-oc-usu",
+   "mendicant-src-ocd-1925",
+   "mendicant-src-ocd-1950",
+   "mendicant-src-ocd-1959",
+   "mendicant-src-ocd-1978",
+   "mendicant-src-ocd-2025-documents",
+   "mendicant-src-ocd-2025-lectionarium",
+   "mendicant-src-ocd-2025-missale",
+   "mendicant-src-ocd-official",
+   "mendicant-src-ocd-teresianum",
+   "mendicant-src-ocd-usu",
+   "mendicant-src-op-1985-original",
+   "mendicant-src-op-add2006",
+   "mendicant-src-op-calendar",
+   "mendicant-src-op-claverie2019",
+   "mendicant-src-op-dir1979",
+   "mendicant-src-op-hw1959",
+   "mendicant-src-op-hw1965",
+   "mendicant-src-op-m39",
+   "mendicant-src-op-m65",
+   "mendicant-src-op-ocarroll",
+   "mendicant-src-op-official",
+   "mendicant-src-op-usu"
+  ],
+  "new_records": [
+   "mendicant-hum-1504",
+   "mendicant-hum-ms",
+   "mendicant-min-1976",
+   "mendicant-min-later",
+   "mendicant-min-manual1569",
+   "mendicant-min-proper1756",
+   "mendicant-oc-1490",
+   "mendicant-oc-1500",
+   "mendicant-oc-1510",
+   "mendicant-oc-1759",
+   "mendicant-oc-1866",
+   "mendicant-oc-1935",
+   "mendicant-oc-antiphonale1960",
+   "mendicant-oc-calendar1972",
+   "mendicant-oc-calendar2021",
+   "mendicant-oc-krakow-graduals",
+   "mendicant-oc-medieval",
+   "mendicant-oc-ordinals",
+   "mendicant-oc-proper1974",
+   "mendicant-ocd-1925",
+   "mendicant-ocd-1933",
+   "mendicant-ocd-1950",
+   "mendicant-ocd-1959",
+   "mendicant-ocd-1973",
+   "mendicant-ocd-2025",
+   "mendicant-ocd-2025-saints-open",
+   "mendicant-ocd-calendar2023",
+   "mendicant-ocd-early",
+   "mendicant-op-1933",
+   "mendicant-op-1939",
+   "mendicant-op-1965",
+   "mendicant-op-1969-control",
+   "mendicant-op-1977-78",
+   "mendicant-op-1977-calendar",
+   "mendicant-op-1983-angelico",
+   "mendicant-op-1983-annual",
+   "mendicant-op-1983-preface",
+   "mendicant-op-1985",
+   "mendicant-op-additamenta2006",
+   "mendicant-op-armenian1728",
+   "mendicant-op-calendar2019",
+   "mendicant-op-claverie2019",
+   "mendicant-op-directorium1979",
+   "mendicant-op-holyweek1959",
+   "mendicant-op-holyweek1965",
+   "mendicant-op-medieval-components",
+   "mendicant-op-pre-humbert"
+  ],
+  "updates": [],
+  "baseline_candidate_ids_preserved": {
+   "dominican": [
+    "dominican-correctorium-1256",
+    "dominican-early-prints",
+    "dominican-1933-1939-1965",
+    "dominican-master-exemplar-add23935"
+   ],
+   "carmelite": [
+    "carmelite-sibert-ordinal",
+    "carmelite-early-missals",
+    "carmelite-krakow-gradual-1644"
+   ],
+   "orders-other": []
+  },
+  "no_stage_or_parent_changes": true,
+  "presentation_family_alias_corrections": [
+   {
+    "candidate_id": "mendicant-hum-ms",
+    "packet_proposed_family": "exempt-uses",
+    "integrated_presentation_family": "humiliati",
+    "presentation_group": "humiliati",
+    "scope": "reader-navigation-only"
+   },
+   {
+    "candidate_id": "mendicant-hum-1504",
+    "packet_proposed_family": "exempt-uses",
+    "integrated_presentation_family": "humiliati",
+    "presentation_group": "humiliati",
+    "scope": "reader-navigation-only"
+   },
+   {
+    "candidate_id": "mendicant-min-manual1569",
+    "packet_proposed_family": "exempt-uses",
+    "integrated_presentation_family": "minim",
+    "presentation_group": "minim",
+    "scope": "reader-navigation-only"
+   },
+   {
+    "candidate_id": "mendicant-min-proper1756",
+    "packet_proposed_family": "exempt-uses",
+    "integrated_presentation_family": "minim",
+    "presentation_group": "minim",
+    "scope": "reader-navigation-only"
+   },
+   {
+    "candidate_id": "mendicant-min-1976",
+    "packet_proposed_family": "exempt-uses",
+    "integrated_presentation_family": "minim",
+    "presentation_group": "minim",
+    "scope": "reader-navigation-only"
+   },
+   {
+    "candidate_id": "mendicant-min-later",
+    "packet_proposed_family": "exempt-uses",
+    "integrated_presentation_family": "minim",
+    "presentation_group": "minim",
+    "scope": "reader-navigation-only"
+   },
+   {
+    "candidate_id": "mendicant-ocd-early",
+    "packet_proposed_family": "carmelite",
+    "integrated_presentation_family": "discalced-carmelite",
+    "presentation_group": "discalced-carmelite",
+    "scope": "reader-navigation-only"
+   },
+   {
+    "candidate_id": "mendicant-ocd-1925",
+    "packet_proposed_family": "carmelite",
+    "integrated_presentation_family": "discalced-carmelite",
+    "presentation_group": "discalced-carmelite",
+    "scope": "reader-navigation-only"
+   },
+   {
+    "candidate_id": "mendicant-ocd-1933",
+    "packet_proposed_family": "carmelite",
+    "integrated_presentation_family": "discalced-carmelite",
+    "presentation_group": "discalced-carmelite",
+    "scope": "reader-navigation-only"
+   },
+   {
+    "candidate_id": "mendicant-ocd-1950",
+    "packet_proposed_family": "carmelite",
+    "integrated_presentation_family": "discalced-carmelite",
+    "presentation_group": "discalced-carmelite",
+    "scope": "reader-navigation-only"
+   },
+   {
+    "candidate_id": "mendicant-ocd-1959",
+    "packet_proposed_family": "carmelite",
+    "integrated_presentation_family": "discalced-carmelite",
+    "presentation_group": "discalced-carmelite",
+    "scope": "reader-navigation-only"
+   },
+   {
+    "candidate_id": "mendicant-ocd-1973",
+    "packet_proposed_family": "carmelite",
+    "integrated_presentation_family": "discalced-carmelite",
+    "presentation_group": "discalced-carmelite",
+    "scope": "reader-navigation-only"
+   },
+   {
+    "candidate_id": "mendicant-ocd-2025",
+    "packet_proposed_family": "carmelite",
+    "integrated_presentation_family": "discalced-carmelite",
+    "presentation_group": "discalced-carmelite",
+    "scope": "reader-navigation-only"
+   },
+   {
+    "candidate_id": "mendicant-ocd-calendar2023",
+    "packet_proposed_family": "carmelite",
+    "integrated_presentation_family": "discalced-carmelite",
+    "presentation_group": "discalced-carmelite",
+    "scope": "reader-navigation-only"
+   },
+   {
+    "candidate_id": "mendicant-ocd-2025-saints-open",
+    "packet_proposed_family": "carmelite",
+    "integrated_presentation_family": "discalced-carmelite",
+    "presentation_group": "discalced-carmelite",
+    "scope": "reader-navigation-only"
+   }
+  ],
+  "presentation_route_inventory": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
+  "presentation_alias_correction_basis": "Cold post-integration routing audit, SHA-256 238156427aac73e017b286ec932fd847305b95ca46617ff03afdb2691b2281a3; packet proposal and version tradition_or_use fields retained unchanged."
+ },
+ "uses": [
+  {
+   "id": "dominican",
+   "label": "Dominican",
+   "disposition": "researched-candidates-and-component-witnesses",
+   "finding": "Known books and controls set out in PACKET.md; no whole-book genealogy claimed.",
+   "limit": "Originals and substantive differences remain incompletely examined.",
+   "next_sources": [
+    "op-usu"
+   ]
+  },
+  {
+   "id": "carmelite",
+   "label": "Carmelite Ancient Observance",
+   "disposition": "researched-candidates-and-component-witnesses",
+   "finding": "Known books and controls set out in PACKET.md; no whole-book genealogy claimed.",
+   "limit": "Originals and substantive differences remain incompletely examined.",
+   "next_sources": [
+    "oc-usu"
+   ]
+  },
+  {
+   "id": "ocd",
+   "label": "Discalced Carmelite",
+   "disposition": "researched-candidates-and-component-witnesses",
+   "finding": "Known books and controls set out in PACKET.md; no whole-book genealogy claimed.",
+   "limit": "Originals and substantive differences remain incompletely examined.",
+   "next_sources": [
+    "ocd-usu"
+   ]
+  },
+  {
+   "id": "humiliati",
+   "label": "Humiliati",
+   "disposition": "researched-candidates-and-component-witnesses",
+   "finding": "Known books and controls set out in PACKET.md; no whole-book genealogy claimed.",
+   "limit": "Originals and substantive differences remain incompletely examined.",
+   "next_sources": [
+    "hum-746"
+   ]
+  },
+  {
+   "id": "minims",
+   "label": "Minims",
+   "disposition": "researched-candidates-and-component-witnesses",
+   "finding": "Known books and controls set out in PACKET.md; no whole-book genealogy claimed.",
+   "limit": "Originals and substantive differences remain incompletely examined.",
+   "next_sources": [
+    "min-notitiae"
+   ]
+  }
+ ],
+ "searches": [
+  {
+   "repository": "USUARIUM",
+   "queries": [
+    "Dominican origin 231",
+    "Carmelite origin 226",
+    "OCD origin 406",
+    "Humiliati books 746 and 8571"
+   ],
+   "url": "https://usuarium.elte.hu/",
+   "checked_on": "2026-10-19",
+   "outcome": "Catalogue listings examined; full Humiliati PDF routes 401.",
+   "extent_examined": "Named listings and retained OP HTML; no whole catalogue census.",
+   "unexamined_range": "Underlying manuscripts and all further order listings."
+  },
+  {
+   "repository": "retained PDF and official-site sweep",
+   "queries": [
+    "Dominican M33 M39 M65",
+    "OCD Proprium Missarum",
+    "Minimorum Proprium",
+    "Carmelite missal 1866"
+   ],
+   "url": "https://www.op.org/liturgical-books/",
+   "checked_on": "2026-10-20",
+   "outcome": "Named front matter and receipts checked; details in PACKET.md.",
+   "extent_examined": "Selected title and decree pages only.",
+   "unexamined_range": "Full component content and edition comparisons."
+  }
+ ],
+ "sources": [
+  {
+   "id": "mendicant-src-op-usu",
+   "url": "https://usuarium.elte.hu/origin/231/view",
+   "type": "catalogue",
+   "inspection": "Dominican origin listing, individual catalogue IDs; metadata only."
+  },
+  {
+   "id": "mendicant-src-oc-usu",
+   "url": "https://usuarium.elte.hu/origin/226/view",
+   "type": "catalogue",
+   "inspection": "Carmelite origin listing, individual IDs; metadata only."
+  },
+  {
+   "id": "mendicant-src-ocd-usu",
+   "url": "https://usuarium.elte.hu/origin/406/view",
+   "type": "catalogue",
+   "inspection": "Discalced Carmelite origin listing; metadata only."
+  },
+  {
+   "id": "mendicant-src-op-official",
+   "url": "https://www.op.org/liturgical-books/",
+   "type": "official-order",
+   "inspection": "Mass, Office, Ritual and additions listing; title labels checked."
+  },
+  {
+   "id": "mendicant-src-op-calendar",
+   "url": "https://www.op.org/calendar-ordinis-praedicatorum/",
+   "type": "official-order",
+   "inspection": "2019 calendar announcement, promulgation and first Vespers."
+  },
+  {
+   "id": "mendicant-src-cmaa-dom",
+   "url": "https://media.churchmusicassociation.org/dominican/M33.pdf",
+   "type": "facsimile",
+   "inspection": "1933 original title and Gillet letter; 1939 and 1965 separately acquired."
+  },
+  {
+   "id": "mendicant-src-cmaa-carm",
+   "url": "https://media.churchmusicassociation.org/pdf/carmelite/",
+   "type": "facsimile-index",
+   "inspection": "Carmelite and OCD historical PDFs; each identity read from its own title."
+  },
+  {
+   "id": "mendicant-src-op-ocarroll",
+   "url": "https://heyjoe.fbk.eu/index.php/afp/article/download/8504/8505/8506",
+   "type": "scholarship",
+   "inspection": "O’Carroll 1979, pp. 80–84 and comparison tables; Temporal pericopes only."
+  },
+  {
+   "id": "mendicant-src-oc-boyce",
+   "url": "https://real.mtak.hu/65294/1/smus.45.2004.1-2.2.pdf",
+   "type": "scholarship",
+   "inspection": "Boyce 2004, p. 20 table 1 and p. 28; choir books and attributed reception."
+  },
+  {
+   "id": "mendicant-src-oc-bnf",
+   "url": "https://bp16.bnf.fr/ark%3A/12148/cb418750746/",
+   "type": "institutional-catalogue",
+   "inspection": "1510 print metadata; original images not acquired."
+  },
+  {
+   "id": "mendicant-src-oc-openlibrary",
+   "url": "https://openlibrary.org/books/OL20996845M/Missale_ordinis_fratrum_beatae_Mariae_Virginis_de_Monte_Carmelo",
+   "type": "catalogue",
+   "inspection": "1935 Rome missal catalogue identity; conflicting 1937 report unresolved."
+  },
+  {
+   "id": "mendicant-src-oc-acta2020",
+   "url": "https://www.carmelitaniscalzi.com/wp-content/uploads/2022/07/ACTA-ORDINIS-2020.pdf",
+   "type": "order-historical-citation",
+   "inspection": "Historical note 10 cites the 1759 OCarm missal at p. 350; original not inspected."
+  },
+  {
+   "id": "mendicant-src-oc-calendar",
+   "url": "https://ocarm.org/en/calendar-of-feasts-and-memorials",
+   "type": "official-order",
+   "inspection": "2021 calendar resources and current listing; linked decree still to inspect fully."
+  },
+  {
+   "id": "mendicant-src-oc-carmelus",
+   "url": "https://carmelus.com/index.php/carmelus/issue/download/24/17",
+   "type": "order-bibliography",
+   "inspection": "1974 proper and lectionary, bibliography entry 137."
+  },
+  {
+   "id": "mendicant-src-ocd-official",
+   "url": "https://www.carmelitaniscalzi.com/proprium-missarum-ocd-missale-lectionarium-latino/",
+   "type": "official-order",
+   "inspection": "2025 two-volume proper offered in 2026; native decrees in both PDFs."
+  },
+  {
+   "id": "mendicant-src-ocd-teresianum",
+   "url": "https://www.teresianum.net/wp-content/uploads/2016/11/Ter_49_1998-1_165-185.pdf",
+   "type": "order-scholarship",
+   "inspection": "1933 proper cited in note 15."
+  },
+  {
+   "id": "mendicant-src-ocd-1978",
+   "url": "https://dialnet.unirioja.es/descarga/articulo/5363764.pdf",
+   "type": "order-scholarship",
+   "inspection": "1973 OCD proper attested; original unavailable."
+  },
+  {
+   "id": "mendicant-src-hum-746",
+   "url": "https://usuarium.elte.hu/book/746/view",
+   "type": "institutional-catalogue",
+   "inspection": "Venegono manuscript description and Eucharistic contents; PDF 401."
+  },
+  {
+   "id": "mendicant-src-hum-8571",
+   "url": "https://usuarium.elte.hu/book/8571/view",
+   "type": "institutional-catalogue",
+   "inspection": "Braidense 1504 printed Humiliati missal; PDF 401."
+  },
+  {
+   "id": "mendicant-src-min-google",
+   "url": "https://books.google.com/books?id=mCzcRyDjD6kC&printsec=frontcover",
+   "type": "catalogue-viewer",
+   "inspection": "1756 proper metadata and page viewer; full PDF not acquired."
+  },
+  {
+   "id": "mendicant-src-min-notitiae",
+   "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-12-%281976%29/Notitiae-121-122-1976.pdf",
+   "type": "official-primary",
+   "inspection": "Printed pp. 308 and 310, protocol CD 405/76."
+  },
+  {
+   "id": "mendicant-src-min-adabi",
+   "url": "https://www.adabi.org.mx/vufind/Record/1029928/Similar",
+   "type": "catalogue-lead",
+   "inspection": "1569 manual search metadata; Eucharistic content unresolved."
+  },
+  {
+   "id": "mendicant-src-min-2015",
+   "url": "https://www.vatican.va/roman_curia/congregations/ccdds/notitiae/2015/notitiae2015-1.pdf",
+   "type": "official-primary",
+   "inspection": "p. 53 translation confirmation only."
+  },
+  {
+   "id": "mendicant-src-min-index",
+   "url": "https://propriodeisanti.jimdofree.com/minimi/",
+   "type": "unofficial-index",
+   "inspection": "Later proper discovery only; native approval unresolved."
+  },
+  {
+   "id": "mendicant-src-op-1985-original",
+   "url": "https://www.op.org/wp-content/uploads/2026/05/TL-01-Missale-et-Lectionarium-OP-1985.pdf",
+   "type": "acquired-original-facsimile",
+   "inspection": "PDF pp. 5–6 printed VII–VIII component list; PDF p. 8 printed X §3 n. 5 cites the 1969 decree. Original 1969 act not inspected."
+  },
+  {
+   "id": "mendicant-src-op-m39",
+   "url": "https://www.musicasacra.com/dominican/M39.pdf",
+   "type": "acquired-original-facsimile",
+   "inspection": "1939 title and Gillet letter, PDF pp. 2–5."
+  },
+  {
+   "id": "mendicant-src-op-hw1959",
+   "url": "https://www.musicasacra.com/dominican/hebdomada-sancta-1959.pdf",
+   "type": "acquired-original-facsimile",
+   "inspection": "1959 chant supplement title and approval, PDF pp. 1–3."
+  },
+  {
+   "id": "mendicant-src-op-m65",
+   "url": "https://www.musicasacra.com/dominican/M65.pdf",
+   "type": "acquired-original-facsimile",
+   "inspection": "1965 title and three decrees, especially PDF p. 4 protocol 55/965."
+  },
+  {
+   "id": "mendicant-src-op-hw1965",
+   "url": "https://www.musicasacra.com/dominican/OHS1965.PDF",
+   "type": "acquired-original-facsimile",
+   "inspection": "1965 Holy Week title and opening, PDF pp. 1–3."
+  },
+  {
+   "id": "mendicant-src-oc-1866",
+   "url": "https://archive.org/download/Missale-Carmelitarum/MC_text.pdf",
+   "type": "acquired-original-facsimile",
+   "inspection": "Rome 1866 original title, PDF p. 5."
+  },
+  {
+   "id": "mendicant-src-ocd-1925",
+   "url": "https://media.churchmusicassociation.org/pdf/carmelite/propmis6x9.pdf",
+   "type": "acquired-original-facsimile",
+   "inspection": "OCD 1925 title and approval front matter, PDF pp. 1–2."
+  },
+  {
+   "id": "mendicant-src-ocd-1950",
+   "url": "https://media.churchmusicassociation.org/pdf/carmelite/Proprium_Carmelitarum.pdf",
+   "type": "acquired-original-facsimile",
+   "inspection": "OCD 1950 original title, PDF pp. 2–3."
+  },
+  {
+   "id": "mendicant-src-ocd-1959",
+   "url": "https://media.churchmusicassociation.org/pdf/carmelite/discalced-carmelite-1959-proprium.pdf",
+   "type": "acquired-original-facsimile",
+   "inspection": "OCD 1959 title and 1958 order approval, PDF pp. 1–3."
+  },
+  {
+   "id": "mendicant-src-op-dir1979",
+   "url": "https://www.op.org/wp-content/uploads/2026/05/TL-04-Directorium-pro-Celebrationibus-Liturgicis-OP.pdf",
+   "type": "acquired-original-facsimile",
+   "inspection": "1979 title and front matter."
+  },
+  {
+   "id": "mendicant-src-op-add2006",
+   "url": "https://www.op.org/wp-content/uploads/2026/05/AD-01-Additamenta-OP-2006.pdf",
+   "type": "acquired-original-facsimile",
+   "inspection": "2006 title and introduction, PDF pp. 1–3."
+  },
+  {
+   "id": "mendicant-src-oc-ant1960",
+   "url": "https://media.churchmusicassociation.org/pdf/carmelite/Carmelite_Antiphonale_Missarum.pdf",
+   "type": "acquired-original-facsimile",
+   "inspection": "OCarm Antiphonale Missarum title and 1959 approval, PDF pp. 1–3."
+  },
+  {
+   "id": "mendicant-src-ocd-2025-missale",
+   "url": "https://www.carmelitaniscalzi.com/wp-content/uploads/2026/04/1.-Proprium-Missarum-OCD-Missale-Latino.pdf",
+   "type": "acquired-original-facsimile",
+   "inspection": "Title and decrees, PDF pp. 1–3: 2023 calendar, 2025 proper, promulgation and obligation."
+  },
+  {
+   "id": "mendicant-src-ocd-2025-lectionarium",
+   "url": "https://www.carmelitaniscalzi.com/wp-content/uploads/2026/04/2.-Proprium-Missarum-OCD-Lectionarium-Latino.pdf",
+   "type": "acquired-original-facsimile",
+   "inspection": "Complementary Lectionarium title and identical decrees, PDF pp. 1–3."
+  },
+  {
+   "id": "mendicant-src-op-claverie2019",
+   "url": "https://www.op.org/wp-content/uploads/2026/05/AD-02-Beatorum-Petri-Caverie-et-Sociorum-LT-FR.pdf",
+   "type": "acquired-original-facsimile",
+   "inspection": "2019 proper text PDF acquired, but title/front matter alone does not establish its approval date."
+  },
+  {
+   "id": "mendicant-src-oc-1490-gallica",
+   "url": "https://gallica.bnf.fr/ark:/12148/bpt6k5578012t",
+   "type": "institutional-source-route",
+   "inspection": "1490 Carmelite missal discovery route; original page images not acquired in this lane."
+  },
+  {
+   "id": "mendicant-src-oc-1500-usu",
+   "url": "https://usuarium.elte.hu/book/4913/view",
+   "type": "institutional-catalogue",
+   "inspection": "1500 Carmelite printed missal entry USUARIUM 4913; original not acquired."
+  },
+  {
+   "id": "mendicant-src-ocd-2025-documents",
+   "url": "https://www.carmelitaniscalzi.com/es/documentos/",
+   "type": "official-order-index",
+   "inspection": "Lists 2025 calendar and individual saint texts/decrees; individual native approvals not enumerated in this pass."
+  }
+ ],
+ "versions": [
+  {
+   "id": "mendicant-op-pre-humbert",
+   "label": "OP early manuscript cluster: BnF lat. 8884; Karlsruhe St Peter perg. 20 and 46; Toulouse 103–105",
+   "tradition_or_use": "dominican",
+   "date_label": "1230–1270; 1250; 1260",
+   "date_role": "manuscript copying range",
+   "record_class": "manuscript-witness",
+   "distinctness_basis": "Catalogue dates overlap Humbert; textual stratum unproved.",
+   "source_refs": [
+    "mendicant-src-op-usu"
+   ],
+   "acquisition_ids": [],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-op-pre-humbert"
+   ]
+  },
+  {
+   "id": "mendicant-op-exemplar",
+   "label": "Humbert/Correctorium ordinal and BL Add. 23935 master exemplar",
+   "tradition_or_use": "dominican",
+   "date_label": "1254–1267; copied 1255–1263",
+   "date_role": "reform, confirmation and copying, separate",
+   "record_class": "reform-control-and-witness",
+   "distinctness_basis": "1267 confirmation does not by itself establish changed Mass text.",
+   "source_refs": [
+    "mendicant-src-op-usu"
+   ],
+   "acquisition_ids": [],
+   "unresolved": true,
+   "inventory_ids": [
+    "dominican-correctorium-1256",
+    "dominican-master-exemplar-add23935"
+   ]
+  },
+  {
+   "id": "mendicant-op-medieval-components",
+   "label": "Provins 3bis Mass lectionary and Rochester Sibley Gradual",
+   "tradition_or_use": "dominican",
+   "date_label": "1253–1262 and unresolved",
+   "date_role": "manuscript copying",
+   "record_class": "complementary-book-witness",
+   "distinctness_basis": "Lection and chant components, not full missals.",
+   "source_refs": [
+    "mendicant-src-op-usu"
+   ],
+   "acquisition_ids": [],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-op-medieval-components"
+   ]
+  },
+  {
+   "id": "mendicant-op-early-prints",
+   "label": "Dominican printed missals 1482, 1484, 1488, 1494, 1497, 1500, 1512, 1530, 1553, 1562, 1596, 1687, 1726",
+   "tradition_or_use": "dominican",
+   "date_label": "1482–1726",
+   "date_role": "printing dates",
+   "record_class": "edition-witness-cluster",
+   "distinctness_basis": "Catalogue IDs 448,449,451,4166,440,452,1809,3386,4730,441,1808,3717,3625,3626,4565,7100,8322; individual revisions unproven.",
+   "source_refs": [
+    "mendicant-src-op-usu"
+   ],
+   "acquisition_ids": [],
+   "unresolved": true,
+   "inventory_ids": [
+    "dominican-early-prints"
+   ]
+  },
+  {
+   "id": "mendicant-op-1550-1604",
+   "label": "Dominican missals, Venice 1550 and Rome 1604",
+   "tradition_or_use": "dominican",
+   "date_label": "1550; 1604",
+   "date_role": "publication and 1604 master-general revision",
+   "record_class": "existing-dossier-stations",
+   "distinctness_basis": "Existing latin-uses Dominican stations and source-library witnesses; no new parentage proposed here.",
+   "source_refs": [
+    "mendicant-src-op-usu"
+   ],
+   "acquisition_ids": [],
+   "unresolved": false,
+   "inventory_ids": []
+  },
+  {
+   "id": "mendicant-op-armenian1728",
+   "label": "Armenian expression of Dominican missal, USUARIUM 8323",
+   "tradition_or_use": "dominican",
+   "date_label": "1728",
+   "date_role": "printing date",
+   "record_class": "translation-or-received-use-witness",
+   "distinctness_basis": "Latin Dominican book in Armenian; exact exemplar and reception unresolved.",
+   "source_refs": [
+    "mendicant-src-op-usu"
+   ],
+   "acquisition_ids": [],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-op-armenian1728"
+   ]
+  },
+  {
+   "id": "mendicant-op-1921",
+   "label": "Reported OP reception of Pius X reforms",
+   "tradition_or_use": "dominican",
+   "date_label": "1921",
+   "date_role": "reported reception",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Frozen expected-list historical lead only. Original Mass-specific instrument, actual local receipt and scope remain unexamined; do not plot a point or claim a normative change.",
+   "source_refs": [],
+   "acquisition_ids": [],
+   "unresolved": true,
+   "inventory_ids": []
+  },
+  {
+   "id": "mendicant-op-1933",
+   "label": "Missale S. Ordinis Praedicatorum, Rome 1933",
+   "tradition_or_use": "dominican",
+   "date_label": "1933",
+   "date_role": "publication; Gillet letter 19 March",
+   "record_class": "missal-print-witness",
+   "distinctness_basis": "Title and letter specify corrected rubrics and sanctoral; full delta uncollated.",
+   "source_refs": [
+    "mendicant-src-cmaa-dom"
+   ],
+   "acquisition_ids": [
+    "dom-1933.pdf"
+   ],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-op-1933",
+    "dominican-1933-1939-1965"
+   ]
+  },
+  {
+   "id": "mendicant-op-1939",
+   "label": "Missale S. Ordinis Praedicatorum, Rome 1939",
+   "tradition_or_use": "dominican",
+   "date_label": "1939",
+   "date_role": "publication; Gillet letter 2 February",
+   "record_class": "missal-print-witness",
+   "distinctness_basis": "Smaller corrected/augmented edition after 1938 chapter; exact 1933 delta uncollated.",
+   "source_refs": [
+    "mendicant-src-op-m39"
+   ],
+   "acquisition_ids": [
+    "dom-1939.pdf"
+   ],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-op-1939",
+    "dominican-1933-1939-1965"
+   ]
+  },
+  {
+   "id": "mendicant-op-holyweek1959",
+   "label": "Cantus Gregoriani ad Ordinem Hebdomadae Sanctae OP",
+   "tradition_or_use": "dominican",
+   "date_label": "1959",
+   "date_role": "publication",
+   "record_class": "chant-supplement",
+   "distinctness_basis": "Chants missing or differently arranged in OP books; not complete Holy Week.",
+   "source_refs": [
+    "mendicant-src-op-hw1959"
+   ],
+   "acquisition_ids": [
+    "dom-holyweek-1959.pdf"
+   ],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-op-holyweek1959"
+   ]
+  },
+  {
+   "id": "mendicant-op-1965",
+   "label": "Missale S. Ordinis Praedicatorum, 1965",
+   "tradition_or_use": "dominican",
+   "date_label": "1960, 1961, 1965",
+   "date_role": "rubric/calendar/Order approvals and publication",
+   "record_class": "missal-print-and-component-controls",
+   "distinctness_basis": "Front matter names three distinct approvals; complete textual changes uncollated.",
+   "source_refs": [
+    "mendicant-src-op-m65"
+   ],
+   "acquisition_ids": [
+    "dom-1965.pdf"
+   ],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-op-1965",
+    "dominican-1933-1939-1965"
+   ]
+  },
+  {
+   "id": "mendicant-op-holyweek1965",
+   "label": "Officium Hebdomadae Sanctae iuxta ritum OP",
+   "tradition_or_use": "dominican",
+   "date_label": "1965",
+   "date_role": "publication",
+   "record_class": "complementary-holy-week-book",
+   "distinctness_basis": "Distinct Holy Week book, not another full missal.",
+   "source_refs": [
+    "mendicant-src-op-hw1965"
+   ],
+   "acquisition_ids": [
+    "dom-holyweek-1965.pdf"
+   ],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-op-holyweek1965"
+   ]
+  },
+  {
+   "id": "mendicant-op-1970",
+   "label": "Dominican reception of Roman Missal with Order proper",
+   "tradition_or_use": "dominican",
+   "date_label": "1970",
+   "date_role": "reported reception",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Frozen expected-list historical lead only. Original Mass-specific instrument, actual local receipt and scope remain unexamined; do not plot a point or claim a normative change.",
+   "source_refs": [],
+   "acquisition_ids": [],
+   "unresolved": true,
+   "inventory_ids": []
+  },
+  {
+   "id": "mendicant-op-1977-78",
+   "label": "OP peculiar elements and proper confirmations",
+   "tradition_or_use": "dominican",
+   "date_label": "1977–1978",
+   "date_role": "confirmations 25 July 1977 and 18 February 1978",
+   "record_class": "normative-component-controls",
+   "distinctness_basis": "CD 671/76 and CD 1590/77 in 1985 book; exact component boundaries uncollated.",
+   "source_refs": [
+    "mendicant-src-op-official"
+   ],
+   "acquisition_ids": [],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-op-1977-78"
+   ]
+  },
+  {
+   "id": "mendicant-op-directorium1979",
+   "label": "Directorium pro celebrationibus liturgicis OP",
+   "tradition_or_use": "dominican",
+   "date_label": "1979",
+   "date_role": "publication",
+   "record_class": "rubrical-companion",
+   "distinctness_basis": "Separate directorium, not a full missal.",
+   "source_refs": [
+    "mendicant-src-op-dir1979"
+   ],
+   "acquisition_ids": [
+    "op-directorium-1979.pdf"
+   ],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-op-directorium1979"
+   ]
+  },
+  {
+   "id": "mendicant-op-1985",
+   "label": "Missale et Lectionarium OP, editio typica",
+   "tradition_or_use": "dominican",
+   "date_label": "1985",
+   "date_role": "publication",
+   "record_class": "proper-missal-and-lectionary",
+   "distinctness_basis": "One typical-edition package; Office 1982 separate.",
+   "source_refs": [
+    "mendicant-src-op-1985-original"
+   ],
+   "acquisition_ids": [
+    "op-missale-1985.pdf"
+   ],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-op-1985"
+   ]
+  },
+  {
+   "id": "mendicant-op-additamenta2006",
+   "label": "Additamenta ad Proprium Missalis et Liturgiae Horarum",
+   "tradition_or_use": "dominican",
+   "date_label": "2006",
+   "date_role": "compilation publication",
+   "record_class": "component-collection",
+   "distinctness_basis": "Documenta/instrumenta laboris; individual confirmed additions must be assessed separately.",
+   "source_refs": [
+    "mendicant-src-op-add2006"
+   ],
+   "acquisition_ids": [
+    "op-additamenta-2006.pdf"
+   ],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-op-additamenta2006"
+   ]
+  },
+  {
+   "id": "mendicant-op-calendar2019",
+   "label": "OP calendar and Peter Claverie proper",
+   "tradition_or_use": "dominican",
+   "date_label": "2019",
+   "date_role": "24 July promulgation; first Vespers 30 November effectiveness",
+   "record_class": "calendar-and-proper-component",
+   "distinctness_basis": "Civil Sunday is 1 December; proper text approval date requires separate check.",
+   "source_refs": [
+    "mendicant-src-op-calendar"
+   ],
+   "acquisition_ids": [
+    "op-claverie-2019.pdf"
+   ],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-op-calendar2019"
+   ]
+  },
+  {
+   "id": "mendicant-oc-ordinals",
+   "label": "Dublin MS 194 and Lambeth 193 Sibert de Beka ordinals",
+   "tradition_or_use": "carmelite",
+   "date_label": "c.1263 and c.1312",
+   "date_role": "manuscript and reported promulgation",
+   "record_class": "ordinal-controls",
+   "distinctness_basis": "Mass-book relation uncollated; Holy Sepulchre donor unproved.",
+   "source_refs": [
+    "mendicant-src-oc-usu"
+   ],
+   "acquisition_ids": [],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-oc-ordinals",
+    "carmelite-sibert-ordinal"
+   ]
+  },
+  {
+   "id": "mendicant-oc-medieval",
+   "label": "Carmelite medieval missal manuscript cluster",
+   "tradition_or_use": "carmelite",
+   "date_label": "14th–15th centuries",
+   "date_role": "copying range",
+   "record_class": "manuscript-witness",
+   "distinctness_basis": "BnF lat.884, Lisbon il-112, BL Add.29704/29705/44892, Florence San Marco C/D and further USUARIUM records; layers uncollated.",
+   "source_refs": [
+    "mendicant-src-oc-usu"
+   ],
+   "acquisition_ids": [],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-oc-medieval",
+    "carmelite-early-missals"
+   ]
+  },
+  {
+   "id": "mendicant-oc-1490-1510",
+   "label": "Carmelite missal prints 1490 Brescia, 1500, 1510",
+   "tradition_or_use": "carmelite",
+   "date_label": "1490–1510",
+   "date_role": "print dates",
+   "record_class": "edition-witness-cluster",
+   "distinctness_basis": "1510 BnF BP16; title/contents of all three originals require checks.",
+   "source_refs": [
+    "mendicant-src-oc-1490-gallica",
+    "mendicant-src-oc-1500-usu",
+    "mendicant-src-oc-bnf"
+   ],
+   "acquisition_ids": [],
+   "unresolved": true,
+   "inventory_ids": [
+    "carmelite-early-missals"
+   ]
+  },
+  {
+   "id": "mendicant-oc-1574-1621",
+   "label": "Carmelite missals Venice 1574 and 1621",
+   "tradition_or_use": "carmelite",
+   "date_label": "1574; 1621",
+   "date_role": "publication and General Chapter act",
+   "record_class": "existing-dossier-stations",
+   "distinctness_basis": "Existing latin-uses Carmelite stations; 1574 Jerusalem norm and 1621 chapter/prior general authority are documented; no backward ancestry inferred.",
+   "source_refs": [
+    "mendicant-src-oc-usu"
+   ],
+   "acquisition_ids": [],
+   "unresolved": false,
+   "inventory_ids": []
+  },
+  {
+   "id": "mendicant-oc-krakow-graduals",
+   "label": "Krakow Carmelite Mass graduals, four witnesses",
+   "tradition_or_use": "carmelite",
+   "date_label": "1644; 17th–18th c.; 1727; 1745",
+   "date_role": "manuscript attestation dates",
+   "record_class": "complementary-chant-witnesses",
+   "distinctness_basis": "USUARIUM 1116,1117,1119,1120; four revisions not asserted.",
+   "source_refs": [
+    "mendicant-src-oc-boyce"
+   ],
+   "acquisition_ids": [],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-oc-krakow-graduals",
+    "carmelite-krakow-gradual-1644"
+   ]
+  },
+  {
+   "id": "mendicant-oc-1759",
+   "label": "Rome 1759 Carmelite missal",
+   "tradition_or_use": "carmelite",
+   "date_label": "1759",
+   "date_role": "printing date",
+   "record_class": "edition-witness-lead",
+   "distinctness_basis": "Cited in order history, original title and contents unavailable.",
+   "source_refs": [
+    "mendicant-src-oc-acta2020"
+   ],
+   "acquisition_ids": [],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-oc-1759"
+   ]
+  },
+  {
+   "id": "mendicant-oc-1866",
+   "label": "Missale Fratrum Ordinis BMV de Monte Carmeli, Rome 1866",
+   "tradition_or_use": "carmelite",
+   "date_label": "1866",
+   "date_role": "printing date",
+   "record_class": "missal-print-witness",
+   "distinctness_basis": "Original title gives Angelus Savini authority and appended saints Masses through Pius IX; predecessor delta uncollated.",
+   "source_refs": [
+    "mendicant-src-oc-1866"
+   ],
+   "acquisition_ids": [
+    "carmelite-missal-unknown.pdf"
+   ],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-oc-1866"
+   ]
+  },
+  {
+   "id": "mendicant-oc-1935",
+   "label": "Missale Ordinis Fratrum BMV de Monte Carmelo, Rome 1935",
+   "tradition_or_use": "carmelite",
+   "date_label": "1935; conflicting 1937 claim",
+   "date_role": "printing date",
+   "record_class": "edition-witness-lead",
+   "distinctness_basis": "Catalogue identifies 1935; original title and 1937 relationship inaccessible.",
+   "source_refs": [
+    "mendicant-src-oc-openlibrary"
+   ],
+   "acquisition_ids": [],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-oc-1935"
+   ]
+  },
+  {
+   "id": "mendicant-oc-antiphonale1960",
+   "label": "Chorale II Antiphonale Missarum",
+   "tradition_or_use": "carmelite",
+   "date_label": "1959 approval; 1960 copyright",
+   "date_role": "approval, promulgation and printing",
+   "record_class": "complementary-chant-book",
+   "distinctness_basis": "30 November approval and 8 December promulgation; Chorale I is Compline.",
+   "source_refs": [
+    "mendicant-src-oc-ant1960"
+   ],
+   "acquisition_ids": [
+    "carmelite-antiphonale.pdf"
+   ],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-oc-antiphonale1960"
+   ]
+  },
+  {
+   "id": "mendicant-oc-proper1974",
+   "label": "Proprium Missarum una cum lectionario OCarm, editio typica",
+   "tradition_or_use": "carmelite",
+   "date_label": "1974",
+   "date_role": "publication date",
+   "record_class": "proper-and-lectionary-lead",
+   "distinctness_basis": "Bibliography identifies 158-page typical edition; original not acquired.",
+   "source_refs": [
+    "mendicant-src-oc-carmelus"
+   ],
+   "acquisition_ids": [],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-oc-proper1974"
+   ]
+  },
+  {
+   "id": "mendicant-oc-calendar2021",
+   "label": "OCarm 1972 and 2021 calendar states, later Titus Brandsma memorial",
+   "tradition_or_use": "carmelite",
+   "date_label": "1972; 2021; later date unresolved",
+   "date_role": "calendar states and 2021 approval",
+   "record_class": "calendar-component",
+   "distinctness_basis": "2021 approval 6 November, notification 18 November, order letter 26 November; Titus approval still unresolved.",
+   "source_refs": [
+    "mendicant-src-oc-calendar"
+   ],
+   "acquisition_ids": [],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-oc-calendar2021"
+   ]
+  },
+  {
+   "id": "mendicant-ocd-early",
+   "label": "OCD 1616 manual, 1692 ceremonial, Barcelona abbreviated Missal/Gradual",
+   "tradition_or_use": "carmelite",
+   "date_label": "1616–17th century",
+   "date_role": "publication and catalogue date",
+   "record_class": "component-witness-cluster",
+   "distinctness_basis": "1702 breviary is Office; Mass contents of components need check.",
+   "source_refs": [
+    "mendicant-src-ocd-usu"
+   ],
+   "acquisition_ids": [],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-ocd-early"
+   ]
+  },
+  {
+   "id": "mendicant-ocd-1925",
+   "label": "Proprium Missarum OCD, Mechlin 1925",
+   "tradition_or_use": "carmelite",
+   "date_label": "1920, 1921, 1924, 1925",
+   "date_role": "approval, concordat, imprimatur, print",
+   "record_class": "proper-book-witness",
+   "distinctness_basis": "Original front matter separates 28 Aug 1920, 15 Feb 1921, 6 Dec 1924, 1925.",
+   "source_refs": [
+    "mendicant-src-ocd-1925"
+   ],
+   "acquisition_ids": [
+    "carmelite-propmis.pdf"
+   ],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-ocd-1925"
+   ]
+  },
+  {
+   "id": "mendicant-ocd-1933",
+   "label": "Proprium Missarum et Officiorum OCD, Desclée",
+   "tradition_or_use": "carmelite",
+   "date_label": "1933",
+   "date_role": "publication date",
+   "record_class": "proper-book-lead",
+   "distinctness_basis": "242-page bibliographic witness; original unacquired.",
+   "source_refs": [
+    "mendicant-src-ocd-teresianum"
+   ],
+   "acquisition_ids": [],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-ocd-1933"
+   ]
+  },
+  {
+   "id": "mendicant-ocd-1950",
+   "label": "Proprium Missarum et Officiorum OCD, Desclée 1950",
+   "tradition_or_use": "carmelite",
+   "date_label": "1950",
+   "date_role": "publication date",
+   "record_class": "proper-book-witness",
+   "distinctness_basis": "Original title identifies OCD, not OCarm.",
+   "source_refs": [
+    "mendicant-src-ocd-1950"
+   ],
+   "acquisition_ids": [
+    "carmelite-proprium.pdf"
+   ],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-ocd-1950"
+   ]
+  },
+  {
+   "id": "mendicant-ocd-1959",
+   "label": "Proprium Missarum et Officiorum OCD 1959",
+   "tradition_or_use": "carmelite",
+   "date_label": "1958 approval; 1959 print",
+   "date_role": "approval and publication",
+   "record_class": "revised-proper-witness",
+   "distinctness_basis": "Mass and Office combined; Mass-specific difference from 1950 uncollated.",
+   "source_refs": [
+    "mendicant-src-ocd-1959"
+   ],
+   "acquisition_ids": [
+    "ocd-proprium-1959.pdf"
+   ],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-ocd-1959"
+   ]
+  },
+  {
+   "id": "mendicant-ocd-1973",
+   "label": "Proprium Missarum OCD, editio typica",
+   "tradition_or_use": "carmelite",
+   "date_label": "1973",
+   "date_role": "typical-edition publication",
+   "record_class": "proper-edition-lead",
+   "distinctness_basis": "Scholarly attestation; original unavailable.",
+   "source_refs": [
+    "mendicant-src-ocd-1978"
+   ],
+   "acquisition_ids": [],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-ocd-1973"
+   ]
+  },
+  {
+   "id": "mendicant-ocd-2025",
+   "label": "Proprium Missarum OCD editio typica altera, Missale plus Lectionarium",
+   "tradition_or_use": "carmelite",
+   "date_label": "2023, 2025, 2026",
+   "date_role": "calendar recognition, proper recognition, promulgation, offering",
+   "record_class": "proper-and-complementary-lectionary",
+   "distinctness_basis": "Prot.600/23, 726/23, 2025/326 DF; obligatory 30 Nov 2025; two volumes one edition.",
+   "source_refs": [
+    "mendicant-src-ocd-2025-missale",
+    "mendicant-src-ocd-2025-lectionarium"
+   ],
+   "acquisition_ids": [
+    "ocd-missale-2025.pdf",
+    "ocd-lectionarium-2025.pdf"
+   ],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-ocd-2025"
+   ]
+  },
+  {
+   "id": "mendicant-hum-ms",
+   "label": "Humiliati missal Venegono FV.B.VII.45",
+   "tradition_or_use": "exempt-uses",
+   "date_label": "1400–1500",
+   "date_role": "manuscript copy range",
+   "record_class": "manuscript-witness",
+   "distinctness_basis": "USUARIUM 746 lists Ordinary, Canon, sanctoral, votive; PDF 401.",
+   "source_refs": [
+    "mendicant-src-hum-746"
+   ],
+   "acquisition_ids": [],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-hum-ms"
+   ]
+  },
+  {
+   "id": "mendicant-hum-1504",
+   "label": "Ordo missalis Ordinis Humiliatorum, Milan Zarotus",
+   "tradition_or_use": "exempt-uses",
+   "date_label": "1504-01-25",
+   "date_role": "printing date",
+   "record_class": "printed-missal-witness",
+   "distinctness_basis": "USUARIUM 8571 and Braidense AB.XIV.10; original PDF 401.",
+   "source_refs": [
+    "mendicant-src-hum-8571"
+   ],
+   "acquisition_ids": [],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-hum-1504"
+   ]
+  },
+  {
+   "id": "mendicant-min-manual1569",
+   "label": "Manuale fratrum ordinis minimorum",
+   "tradition_or_use": "exempt-uses",
+   "date_label": "1569",
+   "date_role": "catalogue publication date",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Mass contents not established; inspect full manual.",
+   "source_refs": [
+    "mendicant-src-min-adabi"
+   ],
+   "acquisition_ids": [],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-min-manual1569"
+   ]
+  },
+  {
+   "id": "mendicant-min-proper1756",
+   "label": "Missae propriae ss. Ordinis Minimorum, Delaroche",
+   "tradition_or_use": "exempt-uses",
+   "date_label": "1756",
+   "date_role": "publication date",
+   "record_class": "proper-book-witness-lead",
+   "distinctness_basis": "Google Books public-domain metadata, 48 printed pages; full PDF not acquired.",
+   "source_refs": [
+    "mendicant-src-min-google"
+   ],
+   "acquisition_ids": [],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-min-proper1756"
+   ]
+  },
+  {
+   "id": "mendicant-min-1976",
+   "label": "Minim Latin proper, Italian translation and calendar",
+   "tradition_or_use": "exempt-uses",
+   "date_label": "1976-06-14",
+   "date_role": "confirmation date",
+   "record_class": "proper-calendar-and-translation",
+   "distinctness_basis": "Notitiae printed pp.308,310, CD 405/76; print date unknown.",
+   "source_refs": [
+    "mendicant-src-min-notitiae"
+   ],
+   "acquisition_ids": [
+    "minims-1976-notitiae.pdf"
+   ],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-min-1976"
+   ]
+  },
+  {
+   "id": "mendicant-min-later",
+   "label": "Later Minim saint Mass propers",
+   "tradition_or_use": "exempt-uses",
+   "date_label": "2015 and later",
+   "date_role": "translation confirmation and undated original",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Nicholas Saggio and García Solanas companions; Latin text/decree not acquired.",
+   "source_refs": [
+    "mendicant-src-min-2015"
+   ],
+   "acquisition_ids": [],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-min-later"
+   ]
+  },
+  {
+   "id": "mendicant-op-1969-control",
+   "label": "De Missali Romano et novo calendario pro O.F.P.",
+   "tradition_or_use": "dominican",
+   "date_label": "2 June 1969",
+   "date_role": "decree date cited in 1985 promulgation letter",
+   "record_class": "act-citation-control",
+   "distinctness_basis": "1985 volume PDF p. 8 / printed X §3 n. 5 cites CD 98/69 in ASOP 39 (1969) pp. 250–251. Original decree and operative/local reception scope not inspected.",
+   "source_refs": [
+    "mendicant-src-op-1985-original"
+   ],
+   "acquisition_ids": [
+    "op-missale-1985.pdf"
+   ],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-op-1969-control"
+   ]
+  },
+  {
+   "id": "mendicant-op-1977-calendar",
+   "label": "OP calendar changes CD 670/76",
+   "tradition_or_use": "dominican",
+   "date_label": "10 May 1977",
+   "date_role": "component approval date",
+   "record_class": "calendar-component-control",
+   "distinctness_basis": "1985 volume PDF p. 5 / printed VII lists St John Macias on 18 September as obligatory memorial and Raymond of Capua on 5 October as optional; provincial calendars follow in continuation on p. 6. No whole-missal revision inferred.",
+   "source_refs": [
+    "mendicant-src-op-1985-original"
+   ],
+   "acquisition_ids": [
+    "op-missale-1985.pdf"
+   ],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-op-1977-calendar"
+   ]
+  },
+  {
+   "id": "mendicant-op-1983-preface",
+   "label": "OP proper preface CD 194/83",
+   "tradition_or_use": "dominican",
+   "date_label": "7 October 1983",
+   "date_role": "text approval date",
+   "record_class": "mass-preface-component",
+   "distinctness_basis": "1985 volume PDF p. 6 / printed VIII confirms Rosary and order saints/blesseds proper preface text. Not a complete missal revision.",
+   "source_refs": [
+    "mendicant-src-op-1985-original"
+   ],
+   "acquisition_ids": [
+    "op-missale-1985.pdf"
+   ],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-op-1983-preface"
+   ]
+  },
+  {
+   "id": "mendicant-op-1983-annual",
+   "label": "OP annual rites and texts renewal CD 524/83",
+   "tradition_or_use": "dominican",
+   "date_label": "1983 protocol; exact act date unprinted here",
+   "date_role": "component approval, date unresolved",
+   "record_class": "mass-and-annual-rite-component-control",
+   "distinctness_basis": "1985 volume PDF p. 6 / printed VIII records approval of renewed annual rites and texts, cross-refers CD 671/76. Exact component extent and date need original instrument.",
+   "source_refs": [
+    "mendicant-src-op-1985-original"
+   ],
+   "acquisition_ids": [
+    "op-missale-1985.pdf"
+   ],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-op-1983-annual"
+   ]
+  },
+  {
+   "id": "mendicant-op-1983-angelico",
+   "label": "Blessed Angelico calendar insertion and Mass/Office texts CD 1165/83",
+   "tradition_or_use": "dominican",
+   "date_label": "1983 protocol; exact act date unprinted here",
+   "date_role": "calendar and text approval, date unresolved",
+   "record_class": "calendar-and-mass-component-control",
+   "distinctness_basis": "1985 volume PDF p. 6 / printed VIII names 18 February optional memorial and Mass/Office texts. Exact act date and Latin constituent require original instrument.",
+   "source_refs": [
+    "mendicant-src-op-1985-original"
+   ],
+   "acquisition_ids": [
+    "op-missale-1985.pdf"
+   ],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-op-1983-angelico"
+   ]
+  },
+  {
+   "id": "mendicant-op-claverie2019",
+   "label": "Peter Claverie and companions Dominican Mass proper",
+   "tradition_or_use": "dominican",
+   "date_label": "2019 witness; approval date unresolved",
+   "date_role": "proper-text witness, approval unresolved",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Separate from the 24 July 2019 calendar promulgation. Original text is acquired, but native approval and effective date are unestablished.",
+   "source_refs": [
+    "mendicant-src-op-claverie2019"
+   ],
+   "acquisition_ids": [
+    "op-claverie-2019.pdf"
+   ],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-op-claverie2019"
+   ]
+  },
+  {
+   "id": "mendicant-oc-calendar1972",
+   "label": "OCarm proper calendar preceding 2021 revision",
+   "tradition_or_use": "carmelite",
+   "date_label": "1972",
+   "date_role": "calendar publication/approval not yet discriminated",
+   "record_class": "calendar-state-lead",
+   "distinctness_basis": "Official 26 November 2021 letter identifies this as earlier calendar; original 1972 decree and exact publication date not inspected.",
+   "source_refs": [
+    "mendicant-src-oc-calendar"
+   ],
+   "acquisition_ids": [],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-oc-calendar1972"
+   ]
+  },
+  {
+   "id": "mendicant-ocd-calendar2023",
+   "label": "OCD proper calendar recognition Prot. 600/23",
+   "tradition_or_use": "carmelite",
+   "date_label": "2 October 2023",
+   "date_role": "recognition date",
+   "record_class": "calendar-component-control",
+   "distinctness_basis": "Official 2025 Missale PDF p. 3 cites calendar recognition by dicastery, distinct from 2025 proper recognition and promulgation.",
+   "source_refs": [
+    "mendicant-src-ocd-2025-missale"
+   ],
+   "acquisition_ids": [
+    "ocd-missale-2025.pdf"
+   ],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-ocd-calendar2023"
+   ]
+  },
+  {
+   "id": "mendicant-oc-1490",
+   "label": "Missale Carmelitarum, Brescia 1490",
+   "tradition_or_use": "carmelite",
+   "date_label": "1490",
+   "date_role": "printing date",
+   "record_class": "printed-missal-witness",
+   "distinctness_basis": "Original printing images and substantive relation to adjacent prints remain unexamined; bibliographic witness only.",
+   "source_refs": [
+    "mendicant-src-oc-1490-gallica"
+   ],
+   "acquisition_ids": [],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-oc-1490"
+   ]
+  },
+  {
+   "id": "mendicant-oc-1500",
+   "label": "Missale Carmelitarum, 1500; USUARIUM 4913",
+   "tradition_or_use": "carmelite",
+   "date_label": "1500",
+   "date_role": "printing date",
+   "record_class": "printed-missal-witness",
+   "distinctness_basis": "Original printing images and substantive relation to adjacent prints remain unexamined; bibliographic witness only.",
+   "source_refs": [
+    "mendicant-src-oc-1500-usu"
+   ],
+   "acquisition_ids": [],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-oc-1500"
+   ]
+  },
+  {
+   "id": "mendicant-oc-1510",
+   "label": "Missale secundum usum Carmelitarum cum annotationibus, 1510",
+   "tradition_or_use": "carmelite",
+   "date_label": "1510",
+   "date_role": "printing date",
+   "record_class": "printed-missal-witness",
+   "distinctness_basis": "Original printing images and substantive relation to adjacent prints remain unexamined; bibliographic witness only.",
+   "source_refs": [
+    "mendicant-src-oc-bnf"
+   ],
+   "acquisition_ids": [],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-oc-1510"
+   ]
+  },
+  {
+   "id": "mendicant-ocd-2025-saints-open",
+   "label": "Individual OCD newly approved saints’ Mass propers and decrees",
+   "tradition_or_use": "carmelite",
+   "date_label": "2025 and earlier unresolved",
+   "date_role": "individual approval and effective dates unresolved",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Official documents index names further saint-proper material. Enumerate each native Latin text, decree, date and relation to 2025 typical edition before claiming a complete range.",
+   "source_refs": [
+    "mendicant-src-ocd-2025-documents"
+   ],
+   "acquisition_ids": [],
+   "unresolved": true,
+   "inventory_ids": [
+    "mendicant-ocd-2025-saints-open"
+   ]
+  }
+ ],
+ "acquisitions": [
+  {
+   "id": "amiet-1990.pdf",
+   "original_url": "https://media.churchmusicassociation.org/dominican/Studies/amiet-missels_et_breviaires_imprimes-1990.pdf",
+   "sha256": "b288cfc32be336c8eb47db084e06177bdadd9a4c1dd09ccaf4a635c0862abdfe",
+   "bytes": 9136029,
+   "pages": 28,
+   "delivered_extent": "28 PDF pages; container completeness not collated",
+   "identity_inspection": "Retained file or wrapper inspected only to the extent described in PACKET.md; no whole-text verification.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "boyce-2004.pdf",
+   "original_url": "https://real.mtak.hu/65294/1/smus.45.2004.1-2.2.pdf",
+   "sha256": "ce88373c6d109b6ab767f1151ec8b843abf90334c29150c9fa4708ab1d332bd0",
+   "bytes": 604552,
+   "pages": 18,
+   "delivered_extent": "18 PDF pages; container completeness not collated",
+   "identity_inspection": "Retained file or wrapper inspected only to the extent described in PACKET.md; no whole-text verification.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "carmelite-1935-bne-record.html",
+   "original_url": "https://www.iberoamericadigital.net/BDPI/CompleteSearch.do?doctype=Libro&institution=Biblioteca+Nacional+de+Espa%C3%B1a&matter=Misales&pageNumber=19&pageSize=1&pageSizeAbrv=20",
+   "sha256": "e1aafb39df6009eb3391fe5b6cb833952fadd7bb424eb52a2fd30369d0085a9a",
+   "bytes": 39825,
+   "pages": null,
+   "delivered_extent": "39825 HTML bytes; verify page content, some wrappers are not source records",
+   "identity_inspection": "Retained file or wrapper inspected only to the extent described in PACKET.md; no whole-text verification.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "carmelite-antiphonale.pdf",
+   "original_url": "https://media.churchmusicassociation.org/pdf/carmelite/Carmelite_Antiphonale_Missarum.pdf",
+   "sha256": "2eb8583bc32c64cbc1177a2f965e67dbbbf33c0c88785bd0bed3000d6081e7c6",
+   "bytes": 140805676,
+   "pages": 928,
+   "delivered_extent": "928 PDF pages; container completeness not collated",
+   "identity_inspection": "OCarm Antiphonale Missarum title and approval, PDF pages 1–3.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "carmelite-missal-unknown.pdf",
+   "original_url": "https://archive.org/download/Missale-Carmelitarum/MC_text.pdf",
+   "sha256": "88c628c3f4c0849e6c26b68c34cb7acf2beed1ffaba5454f5b4c5deee7d7ae28",
+   "bytes": 82702029,
+   "pages": 698,
+   "delivered_extent": "698 PDF pages; container completeness not collated",
+   "identity_inspection": "Rome 1866 title, PDF page 5; original images in research/images pages 5, 7, 8.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "carmelite-prefaces.pdf",
+   "original_url": "https://media.churchmusicassociation.org/pdf/carmelite/prefaces.pdf",
+   "sha256": "c09a4f4091280772f16db3eb5b81e2bcf4e1c6d37dd7931df475705081ea63be",
+   "bytes": 3405671,
+   "pages": 16,
+   "delivered_extent": "16 PDF pages; container completeness not collated",
+   "identity_inspection": "Retained file or wrapper inspected only to the extent described in PACKET.md; no whole-text verification.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "carmelite-proper1896.pdf",
+   "original_url": "https://media.churchmusicassociation.org/pdf/carmelite/proper1896.pdf",
+   "sha256": "5941e2fe9078b0acf1e93b637cae7e62e89e12d6407d7db3b2d6a46ae5b61efa",
+   "bytes": 6812718,
+   "pages": 428,
+   "delivered_extent": "428 PDF pages; container completeness not collated",
+   "identity_inspection": "Retained file or wrapper inspected only to the extent described in PACKET.md; no whole-text verification.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "carmelite-proper1961.pdf",
+   "original_url": "https://media.churchmusicassociation.org/pdf/carmelite/1961prop.pdf",
+   "sha256": "eb10e2350ec882cc893a5b26bbe70fc47dbdb50d1876a804809896ea23c0ac8f",
+   "bytes": 8090367,
+   "pages": 62,
+   "delivered_extent": "62 PDF pages; container completeness not collated",
+   "identity_inspection": "Retained file or wrapper inspected only to the extent described in PACKET.md; no whole-text verification.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "carmelite-proper1966.pdf",
+   "original_url": "https://media.churchmusicassociation.org/pdf/carmelite/proper1966.pdf",
+   "sha256": "52ec360a5cb76a8766e218bd393edc587c561694669ebbe08d4d837d07d3ae99",
+   "bytes": 6830554,
+   "pages": 136,
+   "delivered_extent": "136 PDF pages; container completeness not collated",
+   "identity_inspection": "Retained file or wrapper inspected only to the extent described in PACKET.md; no whole-text verification.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "carmelite-propmis.pdf",
+   "original_url": "https://media.churchmusicassociation.org/pdf/carmelite/propmis6x9.pdf",
+   "sha256": "017486a69e807d6046df3b693ca3f6b8a6b53784cfe7c492120c66e5a9db7188",
+   "bytes": 4319405,
+   "pages": 84,
+   "delivered_extent": "84 PDF pages; container completeness not collated",
+   "identity_inspection": "OCD 1925 title and approvals, PDF pages 1–2.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "carmelite-proprium.pdf",
+   "original_url": "https://media.churchmusicassociation.org/pdf/carmelite/Proprium_Carmelitarum.pdf",
+   "sha256": "f264da50d579ce943f3b9c1bfccd8fddea844feb39c65f8aebeeddba253588e2",
+   "bytes": 24959514,
+   "pages": 280,
+   "delivered_extent": "280 PDF pages; container completeness not collated",
+   "identity_inspection": "OCD 1950 title, PDF pages 2–3.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "carmelite-reform-parish.html",
+   "original_url": "https://www.parrocchie.it/roma/smariadelcarmelo/formazione/formazione007.htm",
+   "sha256": "c21d408a26c793c62e65a7801dcc3d3f65af288025ce1d648a6d5628f0caef3a",
+   "bytes": 71641,
+   "pages": null,
+   "delivered_extent": "71641 HTML bytes; verify page content, some wrappers are not source records",
+   "identity_inspection": "Retained file or wrapper inspected only to the extent described in PACKET.md; no whole-text verification.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "dom-1933.pdf",
+   "original_url": "https://www.musicasacra.com/dominican/M33.pdf",
+   "sha256": "4218533d411430ef0877ec3d9bfab83396e8df873bf94a30b8e9cbc7060d91c8",
+   "bytes": 122458245,
+   "pages": 790,
+   "delivered_extent": "790 PDF pages; container completeness not collated",
+   "identity_inspection": "Title and Gillet letter, PDF pages 1, 3, 5.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "dom-1939.pdf",
+   "original_url": "https://www.musicasacra.com/dominican/M39.pdf",
+   "sha256": "51db1925aefa3b6134afbffeac3f50984668f9a724153ef7aafe9d6251474e5e",
+   "bytes": 50280074,
+   "pages": 463,
+   "delivered_extent": "463 PDF pages; container completeness not collated",
+   "identity_inspection": "Title and Gillet letter, PDF pages 2–5.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "dom-1965.pdf",
+   "original_url": "https://www.musicasacra.com/dominican/M65.pdf",
+   "sha256": "6fdd7255eeae71085ce09cec683e3e0e9ae28f7aa7f29f3febe13baa1c8e5ca8",
+   "bytes": 815278107,
+   "pages": 416,
+   "delivered_extent": "416 PDF pages; container completeness not collated",
+   "identity_inspection": "Title and three decree pages, PDF pages 1, 3–5.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "dom-holyweek-1959.pdf",
+   "original_url": "https://www.musicasacra.com/dominican/hebdomada-sancta-1959.pdf",
+   "sha256": "9fa645a77fa37da51a9fdcb83e245405755dc1244654e4fe14f074fd9bfc25c5",
+   "bytes": 1042930,
+   "pages": 17,
+   "delivered_extent": "17 PDF pages; container completeness not collated",
+   "identity_inspection": "Title and approval, PDF pages 1–3.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "dom-holyweek-1965.pdf",
+   "original_url": "https://www.musicasacra.com/dominican/OHS1965.PDF",
+   "sha256": "ab8a74d6f907cc0b883029988b595a03e0e9fbc2a6ad5db5886470ca616653b3",
+   "bytes": 47688571,
+   "pages": 140,
+   "delivered_extent": "140 PDF pages; container completeness not collated",
+   "identity_inspection": "Title and opening, PDF pages 1–3.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "humiliati-istc.html",
+   "original_url": "https://data.cerl.org/istc/im00643300",
+   "sha256": "4253422715537f6699d31c5213e7029971aee32c83ae98713e41dc6e2dec543d",
+   "bytes": 7819,
+   "pages": null,
+   "delivered_extent": "7819 HTML bytes; verify page content, some wrappers are not source records",
+   "identity_inspection": "Retained file or wrapper inspected only to the extent described in PACKET.md; no whole-text verification.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "minims-1756-google.html",
+   "original_url": "https://books.google.com/books?id=mCzcRyDjD6kC&printsec=frontcover",
+   "sha256": "038cc0149a46e94449ee4f9455a97f7034244cee326108ca44a05823ae04cfa9",
+   "bytes": 96857,
+   "pages": null,
+   "delivered_extent": "96857 HTML bytes; verify page content, some wrappers are not source records",
+   "identity_inspection": "Retained file or wrapper inspected only to the extent described in PACKET.md; no whole-text verification.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "minims-1976-notitiae.pdf",
+   "original_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-12-%281976%29/Notitiae-121-122-1976.pdf",
+   "sha256": "2d093652c5efb6a0874164e6eb70fc20c9273c0f2767bbf2d2f5efa18c57b070",
+   "bytes": 7108803,
+   "pages": 76,
+   "delivered_extent": "76 PDF pages; container completeness not collated",
+   "identity_inspection": "Official Notitiae printed pages 308 and 310.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "ocarroll-1979.pdf",
+   "original_url": "https://heyjoe.fbk.eu/index.php/afp/article/download/8504/8505/8506",
+   "sha256": "3751b15fab850f6baff80a6fdfbae3bc0b3c3040246f05e39be41b2b889b1e12",
+   "bytes": 936291,
+   "pages": 27,
+   "delivered_extent": "27 PDF pages; container completeness not collated",
+   "identity_inspection": "Retained file or wrapper inspected only to the extent described in PACKET.md; no whole-text verification.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "ocd-books.html",
+   "original_url": "https://www.carmelitaniscalzi.com/proprium-missarum-ocd-missale-lectionarium-latino/",
+   "sha256": "316101f4e0bd29f89a89717e58041601134ca145cd2fa45e70a38f98a5c17277",
+   "bytes": 100755,
+   "pages": null,
+   "delivered_extent": "100755 HTML bytes; verify page content, some wrappers are not source records",
+   "identity_inspection": "Retained file or wrapper inspected only to the extent described in PACKET.md; no whole-text verification.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "ocd-lectionarium-2025.pdf",
+   "original_url": "https://www.carmelitaniscalzi.com/wp-content/uploads/2026/04/2.-Proprium-Missarum-OCD-Lectionarium-Latino.pdf",
+   "sha256": "8c80f9ae522e70fd8c496f6325817443b70a7a5b096f3faf40f4b9bbac3b548e",
+   "bytes": 1189919,
+   "pages": 153,
+   "delivered_extent": "153 PDF pages; container completeness not collated",
+   "identity_inspection": "Title and recognition, PDF pages 1–3.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "ocd-missale-2025.pdf",
+   "original_url": "https://www.carmelitaniscalzi.com/wp-content/uploads/2026/04/1.-Proprium-Missarum-OCD-Missale-Latino.pdf",
+   "sha256": "82d4277a50c74f0b1d1eb6c26368338e54dbae1ce0a28a8a44a5295d86c0f34a",
+   "bytes": 925237,
+   "pages": 101,
+   "delivered_extent": "101 PDF pages; container completeness not collated",
+   "identity_inspection": "Title, recognition and promulgation, PDF pages 1–3.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "ocd-proprium-1959.pdf",
+   "original_url": "https://media.churchmusicassociation.org/pdf/carmelite/discalced-carmelite-1959-proprium.pdf",
+   "sha256": "d0b066f590a95edaec63b2218a1905385dbecebc1721dd6b0867d88137b8f1d3",
+   "bytes": 7867930,
+   "pages": 240,
+   "delivered_extent": "240 PDF pages; container completeness not collated",
+   "identity_inspection": "OCD 1959 title and approval, PDF pages 1–3.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "op-additamenta-2006.pdf",
+   "original_url": "https://www.op.org/wp-content/uploads/2026/05/AD-01-Additamenta-OP-2006.pdf",
+   "sha256": "d0bf279f468479ba2617106fc934d13a18ffaad4d6b68cbc7c4d4ba1d371def0",
+   "bytes": 2248187,
+   "pages": 210,
+   "delivered_extent": "210 PDF pages; container completeness not collated",
+   "identity_inspection": "Title and introduction, PDF pages 1–3.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "op-books.html",
+   "original_url": "https://www.op.org/liturgical-books/",
+   "sha256": "7010701442b0d87d5fbab0988cfcd036acab1add60a4a855a3b3efc095526216",
+   "bytes": 276228,
+   "pages": null,
+   "delivered_extent": "276228 HTML bytes; verify page content, some wrappers are not source records",
+   "identity_inspection": "Retained file or wrapper inspected only to the extent described in PACKET.md; no whole-text verification.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "op-claverie-2019.pdf",
+   "original_url": "https://www.op.org/wp-content/uploads/2026/05/AD-02-Beatorum-Petri-Caverie-et-Sociorum-LT-FR.pdf",
+   "sha256": "4b41a319c5c199934fe31ffbb6ac78eb06c1d1f60f56f53618c7c95a532c983d",
+   "bytes": 2120854,
+   "pages": 10,
+   "delivered_extent": "10 PDF pages; container completeness not collated",
+   "identity_inspection": "Retained file or wrapper inspected only to the extent described in PACKET.md; no whole-text verification.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "op-directorium-1979.pdf",
+   "original_url": "https://www.op.org/wp-content/uploads/2026/05/TL-04-Directorium-pro-Celebrationibus-Liturgicis-OP.pdf",
+   "sha256": "2da657ad25b526dfd6edf31ded3e53e415fb403a54796032acfa8bbcbc1a8194",
+   "bytes": 5661415,
+   "pages": 156,
+   "delivered_extent": "156 PDF pages; container completeness not collated",
+   "identity_inspection": "Retained file or wrapper inspected only to the extent described in PACKET.md; no whole-text verification.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "op-history.html",
+   "original_url": "https://dominican-liturgy.blogspot.com/",
+   "sha256": "4fce84bedf6fd8761060f27941943cb6c03815394aa91dfffbc094f2dfd93823",
+   "bytes": 160938,
+   "pages": null,
+   "delivered_extent": "160938 HTML bytes; verify page content, some wrappers are not source records",
+   "identity_inspection": "Retained file or wrapper inspected only to the extent described in PACKET.md; no whole-text verification.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "op-missale-1985.pdf",
+   "original_url": "https://www.op.org/wp-content/uploads/2026/05/TL-01-Missale-et-Lectionarium-OP-1985.pdf",
+   "sha256": "ea5f25d61a5b3a6d9fc047f70d1bf0439fa08d0933dd806988e769610506f734",
+   "bytes": 49872759,
+   "pages": 604,
+   "delivered_extent": "604 PDF pages; container completeness not collated",
+   "identity_inspection": "Title and confirmation decrees, PDF pages 1–5.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "princeton-carmelite.html",
+   "original_url": "https://dpul.princeton.edu/medieval_manuscripts/catalog/rv043220z",
+   "sha256": "7ce2047453d23a9313efe62a823c6ffb661f4b431e19b01fcd25716ccb60edd5",
+   "bytes": 17464,
+   "pages": null,
+   "delivered_extent": "17464 HTML bytes; verify page content, some wrappers are not source records",
+   "identity_inspection": "Retained file or wrapper inspected only to the extent described in PACKET.md; no whole-text verification.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "usuarium-dominican.html",
+   "original_url": "https://usuarium.elte.hu/origin/231/view",
+   "sha256": "e29a07478cb71cc4081ba15d58092dcb5b7040ac2f4a573274bf00a2e8d3a311",
+   "bytes": 99371,
+   "pages": null,
+   "delivered_extent": "99371 HTML bytes; verify page content, some wrappers are not source records",
+   "identity_inspection": "Retained file or wrapper inspected only to the extent described in PACKET.md; no whole-text verification.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "wickstrom-1992.pdf",
+   "original_url": "https://heyjoe.fbk.eu/index.php/afp/article/download/8099/8100/8101",
+   "sha256": "f3fdbd22bc7d038726ea50c2cb957eba5b03b7a949b4dd820d7c8c0dce36b8c0",
+   "bytes": 1769356,
+   "pages": 33,
+   "delivered_extent": "33 PDF pages; container completeness not collated",
+   "identity_inspection": "Retained file or wrapper inspected only to the extent described in PACKET.md; no whole-text verification.",
+   "rights_basis": "Underlying historical text and provider scan rights require per-artifact review; online availability gives no redistribution permission. Source terms at original URL have not been established.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retention deferred by maintainer; distribution basis and exact canonical identity not adjudicated.",
+   "existing_canonical_identity": null
+  }
+ ],
+ "expected_list_reconciliation": [
+  {
+   "id": "cold-op-medieval",
+   "frozen_label": "Pre-Humbert witnesses, Humbert exemplar and subsequent medieval books",
+   "initial_cold_disposition": "covered-with-stated-limit",
+   "final_packet_disposition": "done",
+   "evidence": "Identified or corrected in the relevant PACKET.md row with source locus and evidence limit."
+  },
+  {
+   "id": "cold-op-printed",
+   "frozen_label": "Early and later Dominican printed missal series",
+   "initial_cold_disposition": "covered-with-stated-limit",
+   "final_packet_disposition": "done",
+   "evidence": "Identified or corrected in the relevant PACKET.md row with source locus and evidence limit."
+  },
+  {
+   "id": "cold-op-1254-1267",
+   "frozen_label": "1254–1256 establishment; Clement IV confirmation 1267",
+   "initial_cold_disposition": "covered-with-stated-limit",
+   "final_packet_disposition": "done",
+   "evidence": "Identified or corrected in the relevant PACKET.md row with source locus and evidence limit."
+  },
+  {
+   "id": "cold-op-pius-x",
+   "frozen_label": "1921 reception of Pius X liturgical reforms",
+   "initial_cold_disposition": "retained-open-lead",
+   "final_packet_disposition": "deferred-as-lead",
+   "evidence": "Identity retained as a labelled lead with the unexamined original and access gap in PACKET.md."
+  },
+  {
+   "id": "cold-op-modern-missals",
+   "frozen_label": "1933/1939/1965 missals and intermediate Holy Week/rubric supplements",
+   "initial_cold_disposition": "correction-required",
+   "final_packet_disposition": "done",
+   "evidence": "Corrected 1965 protocol to 55/965 from original PDF p. 4; witness and component dates separated."
+  },
+  {
+   "id": "cold-op-1970",
+   "frozen_label": "Reception of Roman Missal 1970 with Dominican proper",
+   "initial_cold_disposition": "correction-required",
+   "final_packet_disposition": "deferred-as-lead",
+   "evidence": "1985 volume p. 8 n. 5 cites 2 June 1969 CD 98/69; original act and local receipt uninspected. The 1970 label remains only a lead."
+  },
+  {
+   "id": "cold-op-1977",
+   "frozen_label": "Elementa peculiaria et adaptationes propriae ritus Ordinis Praedicatorum, confirmed 25 July 1977",
+   "initial_cold_disposition": "correction-required",
+   "final_packet_disposition": "done",
+   "evidence": "Identified or corrected in the relevant PACKET.md row with source locus and evidence limit."
+  },
+  {
+   "id": "cold-op-1979",
+   "frozen_label": "Directorium pro celebrationibus liturgicis (1979)",
+   "initial_cold_disposition": "covered-with-stated-limit",
+   "final_packet_disposition": "done",
+   "evidence": "Identified or corrected in the relevant PACKET.md row with source locus and evidence limit."
+  },
+  {
+   "id": "cold-op-1985",
+   "frozen_label": "Missale et Lectionarium O.P., editio typica 1985; Cantus excerpt",
+   "initial_cold_disposition": "correction-required",
+   "final_packet_disposition": "done",
+   "evidence": "1985 volume pp. 5–6 lists CD 670/76 and three separate 1983 controls, now individually recorded; original 1983 instruments remain to inspect."
+  },
+  {
+   "id": "cold-op-2006",
+   "frozen_label": "Additamenta ad Proprium Missalis et Liturgiae Horarum, 2006",
+   "initial_cold_disposition": "covered-with-stated-limit",
+   "final_packet_disposition": "done",
+   "evidence": "Identified or corrected in the relevant PACKET.md row with source locus and evidence limit."
+  },
+  {
+   "id": "cold-op-2019",
+   "frozen_label": "Calendar promulgated 24 July 2019; effective first Vespers 30 November 2019; Peter Claverie collect 2019",
+   "initial_cold_disposition": "correction-required",
+   "final_packet_disposition": "deferred-as-lead",
+   "evidence": "Calendar promulgation/effectiveness is checked; Peter Claverie proper text is acquired but its own approval and effective dates remain open as mendicant-op-claverie2019."
+  },
+  {
+   "id": "cold-carm-1263",
+   "frozen_label": "Trinity Dublin MS194 ordinal, c.1263",
+   "initial_cold_disposition": "covered-with-stated-limit",
+   "final_packet_disposition": "done",
+   "evidence": "Identified or corrected in the relevant PACKET.md row with source locus and evidence limit."
+  },
+  {
+   "id": "cold-carm-1312",
+   "frozen_label": "Lambeth193 Sibert ordinal, c.1312",
+   "initial_cold_disposition": "covered-with-stated-limit",
+   "final_packet_disposition": "done",
+   "evidence": "Identified or corrected in the relevant PACKET.md row with source locus and evidence limit."
+  },
+  {
+   "id": "cold-carm-manuscripts",
+   "frozen_label": "Medieval Carmelite Eucharistic manuscripts",
+   "initial_cold_disposition": "covered-with-stated-limit",
+   "final_packet_disposition": "done",
+   "evidence": "Identified or corrected in the relevant PACKET.md row with source locus and evidence limit."
+  },
+  {
+   "id": "cold-carm-1490",
+   "frozen_label": "Missale Carmelitarum 1490",
+   "initial_cold_disposition": "correction-required",
+   "final_packet_disposition": "done",
+   "evidence": "1490 Gallica, 1500 USUARIUM 4913 and 1510 BnF BP16 now have separate source bindings and candidate rows; original images unacquired."
+  },
+  {
+   "id": "cold-carm-1500",
+   "frozen_label": "Missale Carmelitarum 1500 (USUARIUM4913)",
+   "initial_cold_disposition": "correction-required",
+   "final_packet_disposition": "done",
+   "evidence": "1490 Gallica, 1500 USUARIUM 4913 and 1510 BnF BP16 now have separate source bindings and candidate rows; original images unacquired."
+  },
+  {
+   "id": "cold-carm-1510",
+   "frozen_label": "Missale secundum usum Carmelitarum cum annotationibus, 1510 BnF BP16",
+   "initial_cold_disposition": "correction-required",
+   "final_packet_disposition": "done",
+   "evidence": "1490 Gallica, 1500 USUARIUM 4913 and 1510 BnF BP16 now have separate source bindings and candidate rows; original images unacquired."
+  },
+  {
+   "id": "cold-carm-1574-1621",
+   "frozen_label": "1574 Jerusalem-norm missal and 1621 general-chapter missal",
+   "initial_cold_disposition": "covered-with-stated-limit",
+   "final_packet_disposition": "done",
+   "evidence": "Identified or corrected in the relevant PACKET.md row with source locus and evidence limit."
+  },
+  {
+   "id": "cold-carm-graduals",
+   "frozen_label": "Krakow Mass graduals 1644, 17th–18th century, 1727 and 1745",
+   "initial_cold_disposition": "correction-required",
+   "final_packet_disposition": "done",
+   "evidence": "Identified or corrected in the relevant PACKET.md row with source locus and evidence limit."
+  },
+  {
+   "id": "cold-carm-1759",
+   "frozen_label": "Missale Fratrum Ordinis BMV de Monte Carmelo, Rome 1759",
+   "initial_cold_disposition": "retained-open-lead",
+   "final_packet_disposition": "deferred-as-lead",
+   "evidence": "Identity retained as a labelled lead with the unexamined original and access gap in PACKET.md."
+  },
+  {
+   "id": "cold-carm-1935",
+   "frozen_label": "Missale Ordinis Fratrum BMV de Monte Carmelo, Rome 1935",
+   "initial_cold_disposition": "retained-open-lead",
+   "final_packet_disposition": "deferred-as-lead",
+   "evidence": "Identity retained as a labelled lead with the unexamined original and access gap in PACKET.md."
+  },
+  {
+   "id": "cold-carm-1974",
+   "frozen_label": "Proprium Missarum una cum lectionario Ordinis Fratrum BMV de Monte Carmelo, editio typica, Rome 1974, 158pp",
+   "initial_cold_disposition": "retained-open-lead",
+   "final_packet_disposition": "deferred-as-lead",
+   "evidence": "Identity retained as a labelled lead with the unexamined original and access gap in PACKET.md."
+  },
+  {
+   "id": "cold-ocd-early",
+   "frozen_label": "Roman-Carmelite manual 1616, ceremonial 1692, Barcelona Graduale Romanum abbreviated missal [17th century]",
+   "initial_cold_disposition": "covered-with-stated-limit",
+   "final_packet_disposition": "done",
+   "evidence": "Identified or corrected in the relevant PACKET.md row with source locus and evidence limit."
+  },
+  {
+   "id": "cold-ocd-1925",
+   "frozen_label": "Proprium Missarum Ordinis Carmelitarum Discalceatorum, Mechlin 1925",
+   "initial_cold_disposition": "correction-required",
+   "final_packet_disposition": "done",
+   "evidence": "Identified or corrected in the relevant PACKET.md row with source locus and evidence limit."
+  },
+  {
+   "id": "cold-ocd-1933",
+   "frozen_label": "Proprium Missarum et Officiorum OCD, Desclee 1933, 242pp",
+   "initial_cold_disposition": "retained-open-lead",
+   "final_packet_disposition": "deferred-as-lead",
+   "evidence": "Identity retained as a labelled lead with the unexamined original and access gap in PACKET.md."
+  },
+  {
+   "id": "cold-ocd-1959",
+   "frozen_label": "Proprium 1959 and later supplements",
+   "initial_cold_disposition": "correction-required",
+   "final_packet_disposition": "done",
+   "evidence": "Identified or corrected in the relevant PACKET.md row with source locus and evidence limit."
+  },
+  {
+   "id": "cold-ocd-1973",
+   "frozen_label": "Proprium Missarum OCD, editio typica, Rome1973",
+   "initial_cold_disposition": "retained-open-lead",
+   "final_packet_disposition": "deferred-as-lead",
+   "evidence": "Identity retained as a labelled lead with the unexamined original and access gap in PACKET.md."
+  },
+  {
+   "id": "cold-ocd-2025-calendar",
+   "frozen_label": "2025 proper calendar and individual new saints' proper texts",
+   "initial_cold_disposition": "correction-required",
+   "final_packet_disposition": "deferred-as-lead",
+   "evidence": "2023 calendar recognition and 2025 typical edition checked; individual saint-proper/decree range explicitly open as mendicant-ocd-2025-saints-open."
+  },
+  {
+   "id": "cold-ocd-2025-altera",
+   "frozen_label": "Proprium Missarum OCD, editio typica altera, approved16 July2025, two volumes Missale + Lectionarium, publicly offered2026",
+   "initial_cold_disposition": "correction-required",
+   "final_packet_disposition": "done",
+   "evidence": "Identified or corrected in the relevant PACKET.md row with source locus and evidence limit."
+  },
+  {
+   "id": "cold-humiliati-manuscript",
+   "frozen_label": "Manuscript missal included in USUARIUM Missalia project",
+   "initial_cold_disposition": "covered-with-stated-limit",
+   "final_packet_disposition": "done",
+   "evidence": "Identified or corrected in the relevant PACKET.md row with source locus and evidence limit."
+  },
+  {
+   "id": "cold-humiliati-1504",
+   "frozen_label": "Missale secundum morem et constitutiones fratrum Ordinis Humiliatorum, Milan Antonius Zarotus25 January1504",
+   "initial_cold_disposition": "covered-with-stated-limit",
+   "final_packet_disposition": "done",
+   "evidence": "Identified or corrected in the relevant PACKET.md row with source locus and evidence limit."
+  },
+  {
+   "id": "cold-minims-1569",
+   "frozen_label": "Manuale fratrum ordinis minimorum,1569 catalogue lead",
+   "initial_cold_disposition": "retained-open-lead",
+   "final_packet_disposition": "deferred-as-lead",
+   "evidence": "Identity retained as a labelled lead with the unexamined original and access gap in PACKET.md."
+  },
+  {
+   "id": "cold-minims-1976",
+   "frozen_label": "Latin and Italian Proprium Missarum et Liturgiae Horarum; proper calendar confirmed14 June1976, CD405/76",
+   "initial_cold_disposition": "covered-with-stated-limit",
+   "final_packet_disposition": "done",
+   "evidence": "Identified or corrected in the relevant PACKET.md row with source locus and evidence limit."
+  },
+  {
+   "id": "cold-minims-later",
+   "frozen_label": "Later Mass propers: Nicholas Saggio; Maria a Monte Serrato Garcia Solanas, Lucretia Garcia Solanas and companions",
+   "initial_cold_disposition": "correction-required",
+   "final_packet_disposition": "deferred-as-lead",
+   "evidence": "Identity retained as a labelled lead with the unexamined original and access gap in PACKET.md."
+  }
+ ],
+ "cold_correction_groups": [
+  {
+   "id": "op-1965-protocol",
+   "status": "closed",
+   "locus": "dom-1965.pdf PDF p.4; packet v2 55/965"
+  },
+  {
+   "id": "op-1969-control",
+   "status": "closed-at-candidate-level",
+   "locus": "op-missale-1985.pdf PDF p.8 n.5; original decree and local receipt open"
+  },
+  {
+   "id": "op-1977-1983-components",
+   "status": "closed-at-candidate-level",
+   "locus": "op-missale-1985.pdf PDF pp.5–6; CD 670/76, 194/83, 524/83, 1165/83"
+  },
+  {
+   "id": "source-bindings",
+   "status": "closed",
+   "locus": "research-final-v2.json new_sources and new_records; acquisition receipts"
+  },
+  {
+   "id": "chronology-date-kinds",
+   "status": "closed",
+   "locus": "research-final-v2.json new_records chronology fields"
+  },
+  {
+   "id": "ocd-saints-and-ocarm-prints",
+   "status": "closed-at-lead-level",
+   "locus": "cold_requests_addressed; mendicant-ocd-2025-saints-open and separate OCarm 1490/1500/1510 records"
+  }
+ ],
+ "remaining_bounded_gaps": [
+  {
+   "range": "Dominican 1969–1985",
+   "gap": "Original ASOP 39 (1969) pp. 250–251 decree CD 98/69, local 1970 receipt, two 1983 exact act dates and constituent extents, and full 1933/1939/1965 collation."
+  },
+  {
+   "range": "Carmelite Ancient Observance",
+   "gap": "1490/1500/1510, 1759, 1935/37 and 1974 originals; 1866 differences, 2021 calendar and Titus Brandsma approvals, Holy Sepulchre donor comparison."
+  },
+  {
+   "range": "Discalced Carmelites",
+   "gap": "1973 original and full 2025 textual delta; individual saints’ proper/decree enumeration and approvals."
+  },
+  {
+   "range": "Humiliati",
+   "gap": "USUARIUM 746 and 8571 original PDF access returned 401; CERL response was an anti-bot page; Braidense/Venegono originals and thesis need legitimate access."
+  },
+  {
+   "range": "Minims",
+   "gap": "1569 Manuale Mass contents, 1756 Google Books source PDF, 1976 proper book, later native Latin saint-proper approvals; Toulouse 95 is a provenance false positive."
+  },
+  {
+   "range": "All five uses",
+   "gap": "Medieval manuscript strata, complete printed-book succession, exact Mass-component collation, per-artifact rights and tracked source retention remain open."
+  }
+ ],
+ "blocking_items": [],
+ "discovered_unassigned_uses": [
+  {
+   "id": "holy-sepulchre",
+   "finding": "Separate Latin Holy Sepulchre contextual use; no automatic Carmelite ancestry.",
+   "next_sources": [
+    "https://usuarium.elte.hu/origin/607/view"
+   ]
+  }
+ ],
+ "next_sources": [
+  "See PACKET.md section Frozen-list comparison and precise unfinished work."
+ ],
+ "limits": [
+  "PACKET.md is the self-contained claim-by-claim research narrative and source-locus register.",
+  "Family exempt-uses is the only current presentation alias for Humiliati and Minims; root should decide whether dedicated group/coverage rows are needed.",
+  "All 34 retained acquisitions remain scratch only pending rights and retention decision.",
+  "Neither acquisition nor OCR establishes whole-book transcription, full collation or Git parentage.",
+  "No new stage dossier or coverage projection is supplied by this packet.",
+  "Revision v2 responds to independent cold review pinned to original packet; exact corrections in PACKET-v2.md.",
+  "1969 Dominican decree remains citation-in-1985 only; ASOP 39 (1969) pp. 250–251 has not been independently inspected.",
+  "Some 1983 OP protocol numbers appear in 1985 front matter without exact act dates; no fabricated chronology point.",
+  "Individual OCD saint propers remain unenumerated.",
+  "All 34 acquired files remain untracked scratch evidence and are proposed scratch-only pending per-artifact rights review."
+ ],
+ "coverage_placements": [
+  {
+   "row_id": "dominican",
+   "candidate_ids": [
+    "mendicant-op-pre-humbert",
+    "mendicant-op-medieval-components",
+    "mendicant-op-armenian1728",
+    "mendicant-op-1933",
+    "mendicant-op-1939",
+    "mendicant-op-holyweek1959",
+    "mendicant-op-1965",
+    "mendicant-op-holyweek1965",
+    "mendicant-op-1977-78",
+    "mendicant-op-directorium1979",
+    "mendicant-op-1985",
+    "mendicant-op-additamenta2006",
+    "mendicant-op-calendar2019",
+    "mendicant-op-1969-control",
+    "mendicant-op-1977-calendar",
+    "mendicant-op-1983-preface",
+    "mendicant-op-1983-annual",
+    "mendicant-op-1983-angelico",
+    "mendicant-op-claverie2019"
+   ],
+   "review_status": "qualified-candidate-integration"
+  },
+  {
+   "row_id": "carmelite",
+   "candidate_ids": [
+    "mendicant-oc-ordinals",
+    "mendicant-oc-medieval",
+    "mendicant-oc-krakow-graduals",
+    "mendicant-oc-1759",
+    "mendicant-oc-1866",
+    "mendicant-oc-1935",
+    "mendicant-oc-antiphonale1960",
+    "mendicant-oc-proper1974",
+    "mendicant-oc-calendar2021",
+    "mendicant-oc-calendar1972",
+    "mendicant-oc-1490",
+    "mendicant-oc-1500",
+    "mendicant-oc-1510"
+   ],
+   "review_status": "qualified-candidate-integration"
+  },
+  {
+   "row_id": "orders-other",
+   "candidate_ids": [
+    "mendicant-ocd-early",
+    "mendicant-ocd-1925",
+    "mendicant-ocd-1933",
+    "mendicant-ocd-1950",
+    "mendicant-ocd-1959",
+    "mendicant-ocd-1973",
+    "mendicant-ocd-2025",
+    "mendicant-hum-ms",
+    "mendicant-hum-1504",
+    "mendicant-min-manual1569",
+    "mendicant-min-proper1756",
+    "mendicant-min-1976",
+    "mendicant-min-later",
+    "mendicant-ocd-calendar2023",
+    "mendicant-ocd-2025-saints-open"
+   ],
+   "review_status": "qualified-candidate-integration"
+  }
+ ],
+ "unlinked_new_records": []
+}
