@@ -33,7 +33,14 @@
     "nidaros",
     "zagreb",
     "prague",
-    "swiss-uses"
+    "swiss-uses",
+    "ukrainian",
+    "teutonic",
+    "monastic-other-orders",
+    "augustinian-hermits",
+    "regular-canonical-uses",
+    "premonstratensian",
+    "orders-other"
   ],
   "semantics": "A dated permission is an authority event scoped to its named people and place; a printing is a book witness; an actual celebration or directly attested operative rule is reception evidence. None alone proves a new rite, substantive textual transition, universal adoption, or ancestry. This receipt records verified bounded findings and leads, not a complete permission census for every diocese, order, mission, or historical century.",
   "review_files": {
@@ -247,6 +254,19 @@
       "source_url": "https://ocso.org/download-attachment/24078",
       "locus": "OCSO General Norms, sections I.B, III.A.1 and III.D, PDF pp. 1-2, 11-12, 15",
       "actual_use_state": "Operative norms describe allowed choices; individual monastery and region uptake unverified."
+    },
+    {
+      "id": "ocso-cistercian-saints-proper-1983",
+      "class": "order-reported-approved-calendar-propers",
+      "authority": "1983 approving authority not named in the OCSO's official retrospective",
+      "date": "1983 approval year; exact decree and effective dates uninspected",
+      "scope": "OCSO Cistercian-calendar saints' celebrations; the order's page describes a calendar common to OCSO and OCist with variations, but does not define the 1983 approval's full jurisdiction",
+      "book_or_component": "Mass and Divine Office prayers for the proper of saints of the Cistercian calendar, with later additions separately reported",
+      "established": "The order's official liturgy page reports that these proper prayers were approved for use in 1983 and offers later Missal material under its Missal heading.",
+      "limit": "The page does not identify the 1983 decree, approving body, exact 1983 book title or imprint, component text, or first celebration. Later additions cannot be dated to 1983, and the page's Missal heading does not establish a distinct whole Cistercian Missal or replace the separately recorded 1971 norms.",
+      "source_url": "https://www.ocso.org/resources/liturgy/",
+      "locus": "Official OCSO Liturgy page, 'Calendar & Martyrology' and 'Missal' paragraphs, inspected 20 October 2026",
+      "actual_use_state": "Approval for use reported by order; dated actual celebration from the exact 1983 proper not established."
     },
     {
       "id": "servite-todi-foligno-1971-1973",
@@ -520,6 +540,175 @@
       "source_url": "https://www.bistum-stgallen.ch/bistum/heilige/",
       "locus": "St Gall Heilige, official Mass texts and 1976 Messbuch/Lektionar supplements",
       "actual_use_state": "Official operative book list supports local use; first dated celebration with a particular 1976 copy unverified."
+    },
+    {
+      "id": "ugcc-ukrainian-liturgies-2024",
+      "class": "promulgated-operative-eastern-service-text",
+      "authority": "Sviatoslav, Major Archbishop of Kyiv-Halych, following Ukrainian Greek Catholic Church Synod approvals in 2022 and 2023; decree BA 24/027",
+      "date": "2024-01-25 promulgation; 2024-03-25 effective celebration direction",
+      "scope": "Ukrainian Greek Catholic eparchies and exarchates using Ukrainian; the decree does not impose Ukrainian on other language communities",
+      "book_or_component": "New Ukrainian texts of the Divine Liturgies of John Chrysostom and Basil the Great; Ukrainian Sluzhebnyk printing blessed separately",
+      "established": "The signed decree promulgates the texts, directs celebration with them from 25 March 2024, blesses printing and requires Ukrainian-speaking eparchies and exarchates to observe them; the Church-hosted 2024 service-book PDF identifies the same two liturgies and directs use of this official translation.",
+      "limit": "The decree's publication and printing clauses are separate from observed celebrations. The 33-page Church-hosted liturgy PDF is an identified expression, not proof that every altar used an exact bound Sluzhebnyk on the effective date. No source-language Slavonic or Greek revision follows from this Ukrainian text.",
+      "source_url": "https://docs.ugcc.ua/1718/",
+      "locus": "Decree BA 24/027, 25 January 2024, operative paragraphs beginning 'проголошуємо' through Ukrainian-speaking eparchies/exarchates; 2024 service-book PDF https://docs.ugcc.ua/pub/files/0424f00cf76d4fb8.pdf, PDF pp. 3, 7-8",
+      "actual_use_state": "Binding operative direction from 25 March 2024 and identified official text; an individual dated celebration using an exact copy was not independently checked."
+    },
+    {
+      "id": "mali-dogon-lectionary-1975",
+      "class": "confirmed-mission-language-lectionary-translation",
+      "authority": "Sacred Congregation for Divine Worship, protocol 570/75",
+      "date": "1975-05-13",
+      "scope": "Mali, Dogon-language liturgical region as registered; exact receiving dioceses not specified",
+      "book_or_component": "Dogon interpretation of the Order of Mass Readings for Sundays, cycles A and B",
+      "established": "The contemporary official decree summary records confirmation of the Dogon Sunday Lectionary interpretation, a bounded Eucharistic word-liturgy component.",
+      "limit": "This is neither approval of a complete Dogon Roman Missal nor evidence of a distinct Mass order. The original decree, exact translation booklet, publication and actual celebration are uninspected; no cycle C confirmation is inferred from this entry.",
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-11-%281975%29/Notitiae-108-109-1975.pdf",
+      "locus": "Notitiae 11 (1975), printed p. 227, 'Malia', decree 13 May 1975, protocol 570/75",
+      "actual_use_state": "Translation confirmation established; printed copy and local use not established."
+    },
+    {
+      "id": "teutonic-german-propers-1966",
+      "class": "confirmed-order-proper-translation",
+      "authority": "Consilium, protocol 3455/66, as printed in its contemporary decree summary",
+      "date": "1966-12-07",
+      "scope": "Order of Saint Mary of the Germans in Jerusalem; no wider German diocesan authorization stated",
+      "book_or_component": "German translation of the Teutonic Order's proper Masses",
+      "established": "The official summary confirms the German interpretation of the order's Mass propers.",
+      "limit": "The notice does not identify an independently revised Missal, an exact printed booklet or a first celebration. Confirmation of translation does not prove substantive changes to the underlying proper texts.",
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1960/notitiae-03-%281967%29/Notitiae-026-1967.pdf",
+      "locus": "Notitiae 3 (1967), printed p. 54, religious propers decree summary, protocol 3455/66",
+      "actual_use_state": "Translation confirmed; book publication and actual order use unverified."
+    },
+    {
+      "id": "swiss-benedictine-abbey-propers-1975",
+      "class": "confirmed-named-abbey-mass-propers",
+      "authority": "Sacred Congregation for Divine Worship, protocol 138/75",
+      "date": "1975-07-16",
+      "scope": "Named abbeys of the Swiss Benedictine Congregation, including Einsiedeln, Heiligkreuz, Engelberg, Disentis and Mariastein as listed in the notice",
+      "book_or_component": "Latin and German Mass propers of those abbeys",
+      "established": "The contemporary official summary confirms Latin and German texts of Mass propers for the listed abbeys, a component-level local approval.",
+      "limit": "The printed summary does not supply the proper prayers, an approved bound book, effective date or actual celebration at each abbey. Its list does not establish uniform texts for all Swiss dioceses or a separate whole Benedictine Missal.",
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-11-%281975%29/Notitiae-108-109-1975.pdf",
+      "locus": "Notitiae 11 (1975), printed p. 234, Congregatio Helvetica OSB, protocol 138/75",
+      "actual_use_state": "Named abbey proper texts confirmed; exact printings and dated celebrations unverified."
+    },
+    {
+      "id": "augustinian-recollects-propers-1975",
+      "class": "cross-order-permission-to-use-confirmed-propers",
+      "authority": "Sacred Congregation for Divine Worship, protocols 2435/74 and 582/75",
+      "date": "1975-04-15 Augustinian confirmation; 1975-05-15 Recollect permission",
+      "scope": "Order of Saint Augustine's Latin proper texts; Augustinian Recollects' permitted use of those texts",
+      "book_or_component": "Latin Mass and Liturgy of the Hours propers confirmed for the Order of Saint Augustine and permitted to the Augustinian Recollects",
+      "established": "The contemporary official notice distinguishes confirmation of one order's Latin proper texts from permission for a second order to use those already confirmed texts.",
+      "limit": "The shared permission establishes a textual-use relation between the two orders, not a second independent recension. The exact books, any Recollect-specific changes and individual celebrations are uninspected.",
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-11-%281975%29/Notitiae-108-109-1975.pdf",
+      "locus": "Notitiae 11 (1975), printed p. 234, Order of Saint Augustine and Augustinian Recollects entries, protocols 2435/74 and 582/75",
+      "actual_use_state": "Texts confirmed and cross-order use allowed; a dated Recollect celebration from an exact text is unverified."
+    },
+    {
+      "id": "crosiers-latin-proper-1975",
+      "class": "confirmed-order-latin-mass-proper",
+      "authority": "Sacred Congregation for Divine Worship, protocol 2502/74",
+      "date": "1975-06-16",
+      "scope": "Order of the Holy Cross (Crosiers), not all canons regular",
+      "book_or_component": "Latin text of the order's proper Masses",
+      "established": "The contemporary official decree summary confirms the Latin proper-Mass texts of the Order of the Holy Cross.",
+      "limit": "No whole Missal, particular printed proper, prayer collation, first effective-use date or observed celebration was inspected; proper-text confirmation does not itself identify a new rite.",
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-11-%281975%29/Notitiae-108-109-1975.pdf",
+      "locus": "Notitiae 11 (1975), printed p. 235, Ordo Sanctae Crucis, protocol 2502/74",
+      "actual_use_state": "Latin proper texts confirmed; exact book and actual use unverified."
+    },
+    {
+      "id": "philippines-ibanag-order-and-eucharistic-prayers-1975",
+      "class": "confirmed-mission-language-mass-translation",
+      "authority": "Sacred Congregation for Divine Worship, protocol 1910/74",
+      "date": "1975-01-13",
+      "scope": "Philippines, Ibanag-language liturgical region; exact receiving dioceses are not stated in the summary",
+      "book_or_component": "Ibanag translation of the Order of Mass and the Roman Missal Eucharistic Prayers",
+      "established": "The contemporary official summary confirms an Ibanag interpretation of the Ordo Missae and of the Missal's Eucharistic Prayers. This is a modern Roman-rite translation, not an independently inherited historical local use.",
+      "limit": "The notice does not approve a complete Ibanag Missal, identify its printing or record first local use; translation approval alone establishes no substantive new Mass order or regional rite.",
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-11-%281975%29/Notitiae-104-1975.pdf",
+      "locus": "Notitiae 11 (1975), printed p. 104, Insulae Philippinae decree summary, 13 January 1975, protocol 1910/74",
+      "actual_use_state": "Ibanag component translations confirmed; bound edition and dated celebration unverified."
+    },
+    {
+      "id": "welsh-order-of-mass-1975",
+      "class": "confirmed-regional-order-of-mass-translation",
+      "authority": "Sacred Congregation for Divine Worship, protocol 1913/74",
+      "date": "1975-03-13",
+      "scope": "England and Wales decree-summary grouping; Welsh-language beneficiaries beyond this heading are not enumerated",
+      "book_or_component": "Welsh translation of the Order of Mass",
+      "established": "The official summary confirms the Welsh interpretation of the Ordo Missae. It is a modern-language Roman translation, not evidence of survival or revival of a medieval British local use.",
+      "limit": "No complete Welsh Missal, particular printing, effective date or first celebration is identified; neither historical British-use ancestry nor a separate Welsh Mass order follows.",
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-11-%281975%29/Notitiae-104-1975.pdf",
+      "locus": "Notitiae 11 (1975), printed p. 105, Anglia et Cambria particular decrees, 13 March 1975, protocol 1913/74",
+      "actual_use_state": "Welsh Order of Mass translation confirmed; edition and actual use unverified."
+    },
+    {
+      "id": "jerusalem-latin-patriarchate-mass-propers-1975",
+      "class": "confirmed-patriarchal-territory-mass-propers",
+      "authority": "Sacred Congregation for Divine Worship, protocols 2296/74 and 704/73",
+      "date": "1975-01-16 and 1975-01-21",
+      "scope": "Latin Patriarchate of Jerusalem; the summary does not enumerate each benefitting parish or country",
+      "book_or_component": "Texts of proper Masses for the Latin Patriarchate",
+      "established": "The contemporary official decree summary confirms proper-Mass texts in two January 1975 decrees. These are local Roman-rite components, not a separately approved whole Missal.",
+      "limit": "The summary does not supply the prayer text, bound proper, precise distribution of the two protocols, effective date or first actual use.",
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-11-%281975%29/Notitiae-104-1975.pdf",
+      "locus": "Notitiae 11 (1975), printed p. 105, Patriarchatus Latinus Hierosolymitanus, decrees of 16 and 21 January 1975, protocols 2296/74 and 704/73",
+      "actual_use_state": "Proper-Mass texts confirmed; exact publication and dated use unverified."
+    },
+    {
+      "id": "premonstratensian-latin-propers-1981",
+      "class": "confirmed-order-latin-mass-proper",
+      "authority": "Sacred Congregation for the Sacraments and Divine Worship, protocol CD 953/77",
+      "date": "1981-12-19",
+      "scope": "Premonstratensian Order; the summary states no territorial extension to all Canons Regular",
+      "book_or_component": "Latin texts of the Premonstratensian Mass proper and Liturgy of the Hours proper",
+      "established": "The official decree summary confirms the order's Latin Mass and Hours proper texts. It does not certify a new whole Premonstratensian Missal or a textual transition from a named predecessor.",
+      "limit": "The decrees and component text, exact published proper, effective date, local order use and comparison to the earlier missals remain uninspected.",
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-18-%281982%29/Notitiae-186-1982.pdf",
+      "locus": "Notitiae 18 (1982), printed p. 25, Ordo Praemonstratensis, decree 19 December 1981, protocol CD 953/77",
+      "actual_use_state": "Order proper texts confirmed; exact edition and dated celebration unverified."
+    },
+    {
+      "id": "pime-mass-proper-2018",
+      "class": "approved-mission-institute-mass-proper-and-translation",
+      "authority": "Congregation for Divine Worship and the Discipline of the Sacraments, protocol 238/17",
+      "date": "2018-08-06",
+      "scope": "Pontifical Institute for Foreign Missions (PIME); no approval for every mission territory is stated",
+      "book_or_component": "Latin Mass proper; Italian translation of the Mass and Hours proper; institute calendar",
+      "established": "The official 2018 summary places the Latin Mass proper under approval of texts, the Italian Mass and Hours proper under confirmation of translations, and an institute proper calendar under calendar concessions, all dated 6 August 2018 under the same protocol.",
+      "limit": "Institute-specific proper and calendar approval is not a separate mission-country Missal or a territory-wide concession. The prayer text, published book, effective date and actual mission use were not inspected.",
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/2010/notitiae-54-%282018%29/Notitiae-595-NS-003-2018.pdf",
+      "locus": "Notitiae 54 (2018), Summarium Decretorum, printed pp. 90 (Latin proper), 98 (Italian translation), 103 (calendar), protocol 238/17",
+      "actual_use_state": "Latin proper approved and Italian translation confirmed; exact printed edition and dated use unverified."
+    },
+    {
+      "id": "discalced-carmelite-latin-proper-2025",
+      "class": "recognized-order-mass-proper-with-local-calendar-grades",
+      "authority": "Dicastery for Divine Worship and the Discipline of the Sacraments, protocol 726/23; Discalced Carmelite General Definitory, protocol 2025/326 DF",
+      "date": "2023-10-02 calendar recognition; 2025-07-16 Latin proper recognition; 2025-08-15 order promulgation; 2025-11-30 specified obligation after publication",
+      "scope": "Order of Discalced Carmelite Friars; named house-level calendar grades in India, Italy and France, among other local entries",
+      "book_or_component": "Latin editio typica altera of the Proprium Missarum OCD, with proper calendar and local Mass formularies; a proper supplement, not a complete stand-alone Roman Missal",
+      "established": "The attached Dicastery decree recognizes the Latin second edition of the order's Mass proper. The General Definitory's printed decree promulgates it for the order, permits use once published, and names 30 November 2025 as the date it becomes obligatory. The printed calendar gives memorial rank in houses of India for St Cyriacus Elias Chavara, Italy for St Andrew Corsini, and France for Blessed Mary of the Incarnation Avrillot.",
+      "limit": "The printed decree makes use conditional on publication; its date does not prove a 2025 first celebration. The order's 4 September 2025 news item (https://www.carmelitaniscalzi.com/en/2025/09/04/liturgy-of-the-order/) calls 20 November the first Sunday of Advent, conflicting with the signed Latin decree's 30 November; this record follows the decree. The edition's title 'Missale' describes the Mass proper volume, not a whole independent rite, and the cited house examples do not exhaust its local calendar entries.",
+      "source_url": "https://www.carmelitaniscalzi.com/wp-content/uploads/2026/04/1.-Proprium-Missarum-OCD-Missale-Latino.pdf",
+      "locus": "Official Latin Proprium Missarum OCD editio typica altera (Rome 2025), printed p. 2 Dicastery recognition of 16 July 2025 (Prot. 726/23), p. 3 order promulgation of 15 August 2025 (Prot. 2025/326 DF), p. 4 India/Italy/France house grades",
+      "actual_use_state": "Recognition and conditional order promulgation established; first observed celebration and date of first printed distribution unverified."
+    },
+    {
+      "id": "minims-mass-and-hours-propers-1976",
+      "class": "confirmed-order-mass-and-hours-propers",
+      "authority": "Sacred Congregation for the Sacraments and Divine Worship, protocol CD 405/76",
+      "date": "1976-06-14",
+      "scope": "Order of Minims; the notice does not extend these texts to other Franciscan or mendicant orders",
+      "book_or_component": "Latin text and Italian translation of the Minims' Mass and Liturgy of the Hours propers, with a particular order calendar",
+      "established": "The contemporary official decree summary confirms the Latin and Italian Mass and Hours proper texts and separately confirms the Minims' particular calendar under the same protocol.",
+      "limit": "This is order-specific proper and calendar approval, not a whole independent Missal or proof of a new Mass order. The decree file, exact printed books, component comparison with earlier Minims propers, effective date and actual use remain uninspected.",
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-12-%281976%29/Notitiae-121-122-1976.pdf",
+      "locus": "Notitiae 12 (1976), printed p. 308, Ordo Minimorum Mass and Hours proper texts, and printed p. 310, particular calendar; both 14 June 1976, protocol CD 405/76",
+      "actual_use_state": "Order proper texts and calendar confirmed; first printed edition and dated celebration unverified."
     }
   ],
   "non_admissions": [
@@ -570,6 +759,13 @@
       "evidence": "Patriarchal instruction orders an experimental translation, while bounded searches found no dated celebration from exact printing.",
       "source_url": "https://armeniancatholic.org/wp-content/uploads/2017/07/Khorhrtadedre-Sourp-Badaraki.pdf",
       "locus": "PDF pp. 6, 8-9"
+    },
+    {
+      "permission_id": "ugcc-ukrainian-liturgies-2024",
+      "state": "operative-text-required-by-major-archiepiscopal-decree",
+      "evidence": "The signed decree gives the Ukrainian texts legal effect on 25 March 2024 and directs Ukrainian-speaking eparchies and exarchates to use them; the Church-hosted 2024 service-book foreword reiterates exclusive use of this official translation.",
+      "source_url": "https://docs.ugcc.ua/1718/",
+      "locus": "Decree BA 24/027, 25 January 2024, promulgation, effective-date and eparchy/exarchate paragraphs; https://docs.ugcc.ua/pub/files/0424f00cf76d4fb8.pdf, PDF pp. 7-8"
     }
   ],
   "searches": [
@@ -592,6 +788,18 @@
     {
       "scope": "unassigned Eastern Dicastery Czech, German and Russian approval register entries",
       "result": "Approval dates found; exact recipient, original notice, printed book, local promulgation and actual-use records not found in register."
+    },
+    {
+      "scope": "1975 Dogon Sunday Lectionary, Swiss Benedictine abbey propers and Crosiers Latin proper in Notitiae 108-109",
+      "result": "Contemporary summaries establish precise component approvals; the inspected summaries do not print the full approved texts, identify first celebrations or establish whole-book revisions. Searches in this receipt did not extend to the original decree files or every local archive."
+    },
+    {
+      "scope": "1966 Teutonic German Mass propers in Notitiae 26",
+      "result": "The contemporary summary confirms a translation only. The exact German booklet and local reception were not identified by this notice."
+    },
+    {
+      "scope": "OCSO's 1983 Cistercian saints' proper approval on its official Liturgy page and two 1983 Notitiae decree summaries",
+      "result": "The OCSO page reports a general 1983 approval without date or approving body. Notitiae 19 (1983) nos. 200 and 201 report narrower Maria Gabriella Sagheddu text and calendar permissions; those cannot be equated with the whole proper's approval. Original general decree and exact 1983 proper were not found in these inspected records."
     }
   ],
   "versions": [
@@ -614,6 +822,14 @@
     {
       "permission_id": "china-1615-1670-1680",
       "status": "historical-translation-witness; printed-copy-approval-and-actual-use-unproved"
+    },
+    {
+      "permission_id": "ugcc-ukrainian-liturgies-2024",
+      "status": "promulgated-operative-Ukrainian-service-text; distinct-source-language-revision-unproved"
+    },
+    {
+      "permission_id": "augustinian-recollects-propers-1975",
+      "status": "cross-order-use-of-confirmed-proper-texts; independent-Recollect-recension-unproved"
     }
   ],
   "acquisitions": [
@@ -664,6 +880,7 @@
     "Acquire original approval instruments and exact title/approval leaves where only official reports or catalogues were inspected.",
     "Find dated actual-use evidence for the exact Armenian 2007, Maronite 2005, Syro-Malabar English 2018 and Malankara 1966/2007 expressions before received-book admission.",
     "Collate named before/after prayers, rubrics, calendars and order components before asserting substantive transitions, source ancestry or independent recensions.",
-    "Build a separate component-level census of diocesan and religious Propers, and a local-reception crosswalk for mission and diaspora jurisdictions; this receipt is a bounded sample, not closure of either census."
+    "Build a separate component-level census of diocesan and religious Propers, and a local-reception crosswalk for mission and diaspora jurisdictions; this receipt is a bounded sample, not closure of either census.",
+    "For the 1966 and 1975 Notitiae notices added in the second pass, acquire the original decrees and exact approved books before asserting a textual delta, first celebration or continuing authorization beyond each notice."
   ]
 }

@@ -1,0 +1,628 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-stages",
+  "dossier_id": "italian-local-round2",
+  "title": "Italian local Eucharistic book witnesses: Aquileia, Aosta, Benevento and Messina, with Padua, Monza and Ravenna gaps",
+  "traditions": [
+    {
+      "id": "italian-local-round2:aquileia",
+      "label": "Aquileian local Mass books",
+      "family": "latin",
+      "scope": "The Aquileian church missal printings; individual edition identities, not a continuous normalized text.",
+      "coverage_note": "Original leaves of four printings and their relations remain incompletely collated."
+    },
+    {
+      "id": "italian-local-round2:aosta",
+      "label": "Aosta diocesan Mass books",
+      "family": "latin",
+      "scope": "Local Missale Augustense printings for Aosta, distinct from Augsburg.",
+      "coverage_note": "The 1617 book is indexed with a bishop’s decree and Ordinary; the decree and comparison with 1733 remain uninspected."
+    },
+    {
+      "id": "italian-local-round2:benevento",
+      "label": "Benevento missal manuscripts",
+      "family": "latin",
+      "scope": "Two separately shelfmarked Benevento missals, with scribal style and present or former holding distinguished from local liturgical authority.",
+      "coverage_note": "Dates and holdings are bounded; no full recension, use history or manuscript collation is proved."
+    },
+    {
+      "id": "italian-local-round2:messina",
+      "label": "Messina local Missal printings",
+      "family": "latin",
+      "scope": "Edition-identified Missale Messanense books in the examined catalogue.",
+      "coverage_note": "Only the identified copies and the 1499 contents are mapped; no print-to-print revisions or adoption dates are established."
+    },
+    {
+      "id": "italian-local-round2:padua",
+      "label": "Padua Mass-book leads",
+      "family": "latin",
+      "scope": "Padua-origin and Padua-held books requiring specific Mass text and use attribution.",
+      "coverage_note": "No candidate in the existing Western coverage row identifies a Padua local Mass recension."
+    },
+    {
+      "id": "italian-local-round2:monza",
+      "label": "Monza Mass-book leads",
+      "family": "latin",
+      "scope": "Monza-related sacramentary, chant and order-book records requiring provenance and Mass-use tests.",
+      "coverage_note": "An archive holding is not a Monza Eucharistic use; no Western local candidate is admitted."
+    },
+    {
+      "id": "italian-local-round2:ravenna",
+      "label": "Ravenna Mass-book leads",
+      "family": "latin",
+      "scope": "Ravenna-attributed components and fragments requiring physical identification and use context.",
+      "coverage_note": "No complete Ravenna Missal or independently dated local recension is identified in the reviewed set."
+    }
+  ],
+  "sources": [
+    {
+      "id": "italian-local-round2:aquileia1494",
+      "title": "Missale Aquileiense 1494 facsimile, dLib/Internet Archive",
+      "url": "https://archive.org/details/missale-aquileiense-1494",
+      "kind": "primary-book",
+      "inspection": "Original facsimile images 4–5 inspected: Aquileian church caption and prefatory text concerning its liturgical custom; source review records images 525–529. Year supplied by catalogue, not those pages.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Named original leaves do not establish date, full contents, act of approval, use throughout the patriarchate or difference from later prints."
+    },
+    {
+      "id": "italian-local-round2:aquileia-origin",
+      "title": "Usuarium Aquileia origin 393",
+      "url": "https://usuarium.elte.hu/origin/393/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Books rows 164, 6908–6910 inspected: 1494, 1508, 1517 and 1519 Missale Aquileiense entries.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Origin table identifies bibliographic rows; it does not collate their texts or prove succession."
+    },
+    {
+      "id": "italian-local-round2:aquileia1508",
+      "title": "Usuarium 6909, Missale Aquileiense (1508)",
+      "url": "https://usuarium.elte.hu/book/6909/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Original-title, 1508 date and Braidense Gerli 201 / AB.XVIII.26 holding checked against the exact book card; existing Braidense CNCE002269 record independently identifies the Venetian edition.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Catalogue book identity and holding, not direct original-page reading or evidence of a new recension."
+    },
+    {
+      "id": "italian-local-round2:aquileia1517",
+      "title": "Usuarium 164, Missale Aquileiense (1517)",
+      "url": "https://usuarium.elte.hu/book/164/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Original-title, age, BSB Res/4 Liturg. 393, contents rows for calendar p.40, temporal p.58, ordinary p.219, Canon p.264, sanctoral p.316, common p.384, and transcribed colophon p.452 checked.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Catalogue transcription and contents index; original page images and exact predecessor comparisons are not claimed here."
+    },
+    {
+      "id": "italian-local-round2:aquileia1519",
+      "title": "LILLIT/ICCU CNCE002271, Missale Aquileiense (1519)",
+      "url": "https://lillit.share-family.org/lillit/resource?uri=89480",
+      "kind": "institutional-catalogue",
+      "inspection": "Bibliographic record title and imprint lines checked: Gregorio de Gregori, Venice, 15 September 1519, [12]+308 leaves; linked Gorizia copy lacks title leaf.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Exact edition is identified bibliographically; Gorizia digital delivery did not yield inspected original book pages."
+    },
+    {
+      "id": "italian-local-round2:aosta1617",
+      "title": "Usuarium 5764, Missale Augustense (1617)",
+      "url": "https://usuarium.elte.hu/book/5764/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Original-title, Turin printers, Arsenal FOL-Z-1397 and contents rows checked: indexed decree p.7, calendar p.13, ordinary p.206, Canon p.239, sanctoral p.315.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Contents index does not read the bishop’s decree, prove its legal effect, or establish a full Roman substitution."
+    },
+    {
+      "id": "italian-local-round2:aosta1733",
+      "title": "Usuarium 6920, Missale Augustense (1733)",
+      "url": "https://usuarium.elte.hu/book/6920/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Original-title, Aosta origin, 1733 date and Arsenal FOL-Z-1399 holding checked.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Book body, original authority and relation to 1617 not inspected."
+    },
+    {
+      "id": "italian-local-round2:benevento33",
+      "title": "Usuarium 938, Missale notatum Beneventanum VI.33",
+      "url": "https://usuarium.elte.hu/book/938/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Shelfmark Bibl. Cap. Benevento Cod. VI.33, approximate date, modern 1983 edition, and indexed temporal fol.1r, Canon scan p.61, Holy Week and sanctoral rows checked.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Modern 1983 edition is not a second historical witness; catalogue date and component index do not prove first local use or a complete original text."
+    },
+    {
+      "id": "italian-local-round2:benevento29",
+      "title": "UK Department for Culture, Beneventan Missal restitution announcement",
+      "url": "https://www.gov.uk/government/news/manuscript-lost-during-nazi-era-will-be-returned-to-italy-culture-minister-ed-vaizey-confirms",
+      "kind": "official-retrospective",
+      "inspection": "Announcement paragraphs identifying twelfth-century Missal, Benevento VI 29 = formerly Egerton 3511, and Chapter custodianship checked.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Custody and Beneventan script do not prove local liturgical use, a uniform Old Beneventan rite, or exact manuscript contents."
+    },
+    {
+      "id": "italian-local-round2:benevento29-card",
+      "title": "Usuarium 6287, Missale Beneventanum",
+      "url": "https://usuarium.elte.hu/book/6287/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Missal genre, manuscript, former BL Egerton 3511 shelfmark and broad 1000–1200 catalogue date checked.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Old shelfmark denotes the same object as VI 29; the card has no content index."
+    },
+    {
+      "id": "italian-local-round2:messina1480",
+      "title": "Usuarium 7272, Missale Messanense (1480)",
+      "url": "https://usuarium.elte.hu/book/7272/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Original-title, 1480 date and John Rylands Library 18620 shelfmark checked.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "No direct original-page reading or evidence that the advertised consuetudo Gallicorum means the ancient Gallican rite."
+    },
+    {
+      "id": "italian-local-round2:messina1499",
+      "title": "Usuarium 382, Missale Messanense (1499)",
+      "url": "https://usuarium.elte.hu/book/382/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Original-title, 1499 Venetian printer, Catania Agatina Inc.1 and contents: temporal fol.1r, Ordinary fol.97r, Canon fol.100r, sanctoral fol.169r, common fol.235r checked.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The title advertises correction and additions, but no exact changed reading or normative act is inspected."
+    },
+    {
+      "id": "italian-local-round2:messina1538",
+      "title": "Usuarium 7276, Missale Messanense (1538)",
+      "url": "https://usuarium.elte.hu/book/7276/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Original-title, 1538 date, BN Napoli S.Q.21.D21 and another Acireale copy noted in catalogue.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The two holdings do not mean two editions; original text and relation to 1499 uncollated."
+    },
+    {
+      "id": "italian-local-round2:padua-origin",
+      "title": "Usuarium Padua origin 899",
+      "url": "https://usuarium.elte.hu/origin/899/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Entire Books table inspected: pontificals and rituals, including twelve 1597 ritual entries; no Missal/Sacramentary/Gradual row.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Bounded absence in this index only; does not prove absence of Padua Eucharistic books elsewhere."
+    },
+    {
+      "id": "italian-local-round2:monza-origin",
+      "title": "Usuarium Monza origin 1103",
+      "url": "https://usuarium.elte.hu/origin/1103/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Books table inspected for Eucharistic genre and exact Monza local attribution.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Catalogue holdings and origin assignments do not themselves establish a Monza liturgical recension."
+    },
+    {
+      "id": "italian-local-round2:ravenna-origin",
+      "title": "Usuarium Ravenna origin 929",
+      "url": "https://usuarium.elte.hu/origin/929/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Books table inspected for complete Missal identity; separate components and fragments remain leads.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "No corpus-wide absence of a Ravenna Missal is claimed from this table."
+    },
+    {
+      "id": "italian-local-round2:aquileia1494-card",
+      "title": "Usuarium 6908, Missale Aquileiense (1494)",
+      "url": "https://usuarium.elte.hu/book/6908/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Original-title, 1494 age and National and University Library Ljubljana Ti II 13349 shelfmark checked against exact book card.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Year is catalogue-reported; inspected original front leaves do not display it."
+    }
+  ],
+  "stages": [
+    {
+      "id": "italian-local-round2:italian-aquileia-1494",
+      "tradition_id": "italian-local-round2:aquileia",
+      "label": "1494 Aquileian Missal print",
+      "date_label": "1494 printing, catalogue date",
+      "start_year": 1494,
+      "end_year": 1494,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Local Missal book identity from inspected front leaves; text extent not collated.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:italian-aquileia-1494"
+      ],
+      "witness_label": "Missale Aquileiense, 1494 facsimile",
+      "summary": "The facsimile frontispiece names the Aquileian church; its date is catalogue attributed.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "italian-local-round2:aquileia1494",
+          "locus": "facsimile images 4–5; Usuarium origin 393 row 6908",
+          "claim": "The original front leaves name the Aquileian church and preserve a prefatory text about its local custom."
+        },
+        {
+          "source_id": "italian-local-round2:aquileia1494-card",
+          "locus": "original title, age and NUK Ljubljana Ti II 13349 fields",
+          "claim": "The catalogue assigns the 1494 printing date and identifies a physical copy."
+        }
+      ],
+      "limitations": "The inspected pages do not give the year or establish a new text compared with any predecessor.",
+      "reception": "Local intended book identity, not documented adoption at each church."
+    },
+    {
+      "id": "italian-local-round2:italian-aquileia-1508",
+      "tradition_id": "italian-local-round2:aquileia",
+      "label": "1508 Aquileian Missal print",
+      "date_label": "1508 printing, catalogue date",
+      "start_year": 1508,
+      "end_year": 1508,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Edition-identified printed Missal; book text not inspected.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:italian-aquileia-1508"
+      ],
+      "witness_label": "Missale iuxta ritum almae Aquileiensis ecclesiae, Braidense AB.18.0026",
+      "summary": "Braidense CNCE002269 and Usuarium identify a 1508 Venetian edition.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "italian-local-round2:aquileia1508",
+          "locus": "Usuarium book 6909, original title, age and Braidense shelfmark fields",
+          "claim": "The exact book card identifies the 1508 local Missal and Braidense copy."
+        }
+      ],
+      "limitations": "No changed prayer, rubric or adoption event is known.",
+      "reception": "No individual-church reception established."
+    },
+    {
+      "id": "italian-local-round2:italian-aquileia-1517",
+      "tradition_id": "italian-local-round2:aquileia",
+      "label": "1517 Aquileian Missal print",
+      "date_label": "1517 printing, catalogue date",
+      "start_year": 1517,
+      "end_year": 1517,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Indexed calendar, Mass cycles, Ordinary, Canon, common and rubrics of the 1517 print.",
+      "components": [
+        "calendar",
+        "propers",
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:italian-aquileia-1517"
+      ],
+      "witness_label": "Missale Aquileiense, BSB Res/4 Liturg. 393",
+      "summary": "Usuarium identifies the 1517 print and indexes its main Mass divisions and colophon.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "italian-local-round2:aquileia1517",
+          "locus": "original title; contents pp.40,58,219,264,316,384,452",
+          "claim": "The card identifies a local Missal printed in 1517 and its major divisions."
+        }
+      ],
+      "limitations": "Emendatissime in the title is not a collated revision claim.",
+      "reception": "Title names Aquileia; geographical extent of use not verified."
+    },
+    {
+      "id": "italian-local-round2:italian-aquileia-1519",
+      "tradition_id": "italian-local-round2:aquileia",
+      "label": "1519 Aquileian Missal print",
+      "date_label": "1519 printing, catalogue date",
+      "start_year": 1519,
+      "end_year": 1519,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Edition-identified Aquileian Missal printing; component readings uninspected.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:italian-aquileia-1519"
+      ],
+      "witness_label": "Missale Aquileyensis Ecclesie, ICCU CNCE002271",
+      "summary": "ICCU title and imprint identify Venice 15 September 1519, with a Gorizia copy lacking its title.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "italian-local-round2:aquileia1519",
+          "locus": "CNCE002271 title, imprint, physical description and copy note",
+          "claim": "The record identifies a 1519 Aquileian print."
+        }
+      ],
+      "limitations": "No original book page obtained in this pass; no textual succession inferred.",
+      "reception": "No actual Gorizia or wider use established by present holding."
+    },
+    {
+      "id": "italian-local-round2:italian-aosta-1617",
+      "tradition_id": "italian-local-round2:aosta",
+      "label": "1617 Aosta Missal print",
+      "date_label": "1617 printing, catalogue date",
+      "start_year": 1617,
+      "end_year": 1617,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Indexed calendar, Ordinary, Canon and Mass propers in the local Missal.",
+      "components": [
+        "calendar",
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:italian-aosta-1617"
+      ],
+      "witness_label": "Missale Augustense, Arsenal FOL-Z-1397",
+      "summary": "The catalogue distinguishes the 1617 Aosta printing and indexes a decree and Mass components.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "italian-local-round2:aosta1617",
+          "locus": "original title; contents pp.7,13,206,239,315",
+          "claim": "A named Aosta Missal and its component locations are identified."
+        }
+      ],
+      "limitations": "Indexed decree unread; no effective date or whole-Missal substitution claimed.",
+      "reception": "Aosta destination appears in book title; reach and first use unknown."
+    },
+    {
+      "id": "italian-local-round2:italian-aosta-1733",
+      "tradition_id": "italian-local-round2:aosta",
+      "label": "1733 Aosta Missal print",
+      "date_label": "1733 printing, catalogue date",
+      "start_year": 1733,
+      "end_year": 1733,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Edition-identified Aosta Missal printing; text components uncollated.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:italian-aosta-1733"
+      ],
+      "witness_label": "Missale Augustense, Arsenal FOL-Z-1399",
+      "summary": "Usuarium identifies a separate 1733 Aosta print at Arsenal.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "italian-local-round2:aosta1733",
+          "locus": "original title, age and shelfmark fields",
+          "claim": "The card identifies this 1733 local Missal print."
+        }
+      ],
+      "limitations": "No comparison with 1617, approval or distinct recension demonstrated.",
+      "reception": "No parish adoption date established."
+    },
+    {
+      "id": "italian-local-round2:italian-benevento-vi33",
+      "tradition_id": "italian-local-round2:benevento",
+      "label": "Benevento VI.33 notated Missal",
+      "date_label": "1000–1025 manuscript dating, approximate",
+      "start_year": 1000,
+      "end_year": 1025,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "One manuscript with indexed Mass cycles and Canon.",
+      "components": [
+        "propers",
+        "anaphoras",
+        "chant"
+      ],
+      "witness_ids": [
+        "western:italian-benevento-vi33"
+      ],
+      "witness_label": "Benevento Chapter Library Cod. VI.33",
+      "summary": "Usuarium identifies the shelfmarked manuscript and its indexed Mass components.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "italian-local-round2:benevento33",
+          "locus": "shelfmark, age and contents rows pp.61,71,83,197–279",
+          "claim": "A single VI.33 manuscript is attested, with a catalogue preference for early eleventh-century date."
+        }
+      ],
+      "limitations": "Catalogue aliases 938/1299/6276 are not separate books; no complete text or rite-wide use established.",
+      "reception": "Benevento holding and apparent origin do not prove every local church used its text."
+    },
+    {
+      "id": "italian-local-round2:italian-benevento-vi29",
+      "tradition_id": "italian-local-round2:benevento",
+      "label": "Benevento VI.29 Missal",
+      "date_label": "1100–1200 manuscript dating, approximate",
+      "start_year": 1100,
+      "end_year": 1200,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "One twelfth-century Missal manuscript, formerly BL Egerton 3511; contents uncollated.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:italian-benevento-vi29"
+      ],
+      "witness_label": "Benevento VI.29 = former BL Egerton 3511",
+      "summary": "Government custody account and catalogue resolve two shelfmarks to one manuscript.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "italian-local-round2:benevento29",
+          "locus": "announcement paragraphs identifying century, missal genre and two shelfmarks",
+          "claim": "The report identifies the same twelfth-century manuscript under VI.29 and Egerton 3511."
+        }
+      ],
+      "limitations": "Provenance and Beneventan script do not establish historical liturgical use or old-rite identity.",
+      "reception": "Chapter custody is established; medieval local use remains unproved."
+    },
+    {
+      "id": "italian-local-round2:italian-messina-1480",
+      "tradition_id": "italian-local-round2:messina",
+      "label": "1480 Messina Missal print",
+      "date_label": "1480 printing, catalogue date",
+      "start_year": 1480,
+      "end_year": 1480,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Edition-identified local Missal print; original body uninspected.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:italian-messina-1480"
+      ],
+      "witness_label": "Missale Messanense, John Rylands Library 18620",
+      "summary": "Usuarium identifies an exact Manchester holding with a Messina title and 1480 date.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "italian-local-round2:messina1480",
+          "locus": "original-title, age and shelfmark fields",
+          "claim": "A specific 1480 Messina Missal copy is identified."
+        }
+      ],
+      "limitations": "No original page or first-use evidence; Gallicorum is title language, not ancient Gallican rite identification.",
+      "reception": "Book title names Messina; church-level reception unknown."
+    },
+    {
+      "id": "italian-local-round2:italian-messina-1499",
+      "tradition_id": "italian-local-round2:messina",
+      "label": "1499 Messina Missal print",
+      "date_label": "1499 printing, catalogue date",
+      "start_year": 1499,
+      "end_year": 1499,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Indexed temporal, sanctoral, common, ordinary, Canon and rubrics.",
+      "components": [
+        "calendar",
+        "propers",
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:italian-messina-1499"
+      ],
+      "witness_label": "Missale Messanense, Catania Agatina Inc.1",
+      "summary": "A 1499 Venetian print for Messina is identified with an indexed Mass-book structure.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "italian-local-round2:messina1499",
+          "locus": "original title; contents fols.1r,97r,100r,169r,235r",
+          "claim": "The title identifies the local book and advertises sanctoral/common correction."
+        }
+      ],
+      "limitations": "Advertising does not verify a predecessor or exact changed reading.",
+      "reception": "No adoption by all Messina churches proved."
+    },
+    {
+      "id": "italian-local-round2:italian-messina-1538",
+      "tradition_id": "italian-local-round2:messina",
+      "label": "1538 Messina Missal print",
+      "date_label": "1538 printing, catalogue date",
+      "start_year": 1538,
+      "end_year": 1538,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Edition-identified local Missal print; text not collated.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:italian-messina-1538"
+      ],
+      "witness_label": "Missale Gallicanum et Messanensis Ecclesie, BN Napoli S.Q.21.D21",
+      "summary": "Usuarium identifies the 1538 print and a Naples copy, with a second copy at Acireale.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "italian-local-round2:messina1538",
+          "locus": "original title, age, Naples shelfmark and Acireale copy remark",
+          "claim": "A specific 1538 Messina Missal edition is catalogued."
+        }
+      ],
+      "limitations": "Two holdings do not establish two states; no comparison with 1499 or normative act inspected.",
+      "reception": "Present Naples and Acireale holdings do not prove historical use there."
+    }
+  ],
+  "transitions": [],
+  "gaps": [
+    {
+      "id": "italian-local-round2:aquileia-collation",
+      "tradition_id": "italian-local-round2:aquileia",
+      "period": "before 1494 through 1519",
+      "missing": "Original text and authority of the four identified printings, earlier manuscript relation, and actual local reception.",
+      "next_source": "Collate 1494, Braidense 1508, BSB 1517 and Gorizia 1519 original leaves, prefaces, calendars, Ordinary and propers.",
+      "consequence": "Four publication events cannot be counted as three liturgical revisions or a use duration."
+    },
+    {
+      "id": "italian-local-round2:aosta-authority",
+      "tradition_id": "italian-local-round2:aosta",
+      "period": "1617–1733",
+      "missing": "1617 bishop decree text, exact Ordinary readings, prior Aosta book, 1733 comparison and use.",
+      "next_source": "Read Arsenal FOL-Z-1397 decree and Ordinary, compare FOL-Z-1399 and Aosta manuscript witnesses.",
+      "consequence": "No reform, succession edge or effective date follows from the two printed years."
+    },
+    {
+      "id": "italian-local-round2:benevento-identity",
+      "tradition_id": "italian-local-round2:benevento",
+      "period": "eleventh–twelfth centuries",
+      "missing": "Physical dating, component readings and liturgical provenance of VI.33 and VI.29.",
+      "next_source": "Inspect original manuscripts or full facsimiles, colophons, calendar, Canon and additions; separate script from use.",
+      "consequence": "The two shelfmarks and their custody do not define one Beneventan recension."
+    },
+    {
+      "id": "italian-local-round2:messina-remaining",
+      "tradition_id": "italian-local-round2:messina",
+      "period": "1480–1568",
+      "missing": "Original pages for 1480, 1499, 1538; exact identification and copies for catalogued 1510, 1527, 1534, 1568; approval and reception.",
+      "next_source": "Read Rylands 18620, Agatina Inc.1, Napoli S.Q.21.D21 and trace USTC 819816 plus other catalogue leads.",
+      "consequence": "No print sequence, correction event, or ancient Gallican ancestry is established."
+    },
+    {
+      "id": "italian-local-round2:padua-local",
+      "tradition_id": "italian-local-round2:padua",
+      "period": "medieval to post-Tridentine",
+      "missing": "No exact Western candidate for a Padua local Eucharistic book; D47 copying location and E57 order-book Mass loci need attribution.",
+      "next_source": "Inspect Padua E57 Mass loci, D47 origin and local books outside Usuarium origin 899; distinguish Patavinus from Passau Pataviense.",
+      "consequence": "A Padua shelfmark or ritual title cannot be projected as a Padua Missal state."
+    },
+    {
+      "id": "italian-local-round2:monza-local",
+      "tradition_id": "italian-local-round2:monza",
+      "period": "medieval to early modern",
+      "missing": "No exact Western candidate proving Monza Eucharistic recension or normative use.",
+      "next_source": "Identify and inspect Monza sacramentary F.1/101, gradual and Ordo with shelfmark, origin, Mass loci and authority context.",
+      "consequence": "Monza-held Ambrosian or Roman books cannot silently become a Monza local stage."
+    },
+    {
+      "id": "italian-local-round2:ravenna-local",
+      "tradition_id": "italian-local-round2:ravenna",
+      "period": "early medieval to early modern",
+      "missing": "No exact Western candidate for a complete Ravenna Missal; fragments and Rotulus require attribution.",
+      "next_source": "Identify each Ravenna fragment and Rotulus physical witness; inspect original Mass loci and use context.",
+      "consequence": "A Ravenna holding or hypothesized archetype cannot serve as a dated local book state."
+    }
+  ]
+}

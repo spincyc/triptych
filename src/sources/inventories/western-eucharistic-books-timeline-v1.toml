@@ -280,10 +280,40 @@ type = "university-research-catalogue"
 inspection = "Opened use table. Printed missal entries1493 (duplicate IDs),1510,1717 and1733 (duplicate IDs). Content differences not inspected."
 
 [[sources]]
+id = "cluny-usuarium-272"
+url = "https://usuarium.elte.hu/book/272/view"
+type = "university-research-catalogue"
+inspection = "Opened exact book entry: 1493 Missale Ordinis Cluniacensis, BnF B-308, with temporal, ordinary, canon and sanctoral contents indexed. Its original leaves and colophon have not been independently checked."
+
+[[sources]]
+id = "cluny-bnf-1510"
+url = "https://catalogue.bnf.fr/ark:/12148/cb36821193b"
+type = "holding-library-catalogue"
+inspection = "Opened exact BnF record: Paris Simon Vostre 1510 Missale ordinis Cluniacensis; Arsenal reserve 8-T-2452 and other copies. USUARIUM book 5837 lists the same Arsenal shelfmark and Mass sections."
+
+[[sources]]
+id = "cluny-bnf-1717"
+url = "https://catalogue.bnf.fr/ark:/12148/cb36821196c"
+type = "holding-library-catalogue"
+inspection = "Opened exact BnF record: Paris Louis Sevestre 1717 Cluniac missal, title claiming publication by order of the General Chapter; B-309 and Arsenal FOL-T-758 copies. The named act and body have not been read."
+
+[[sources]]
+id = "cluny-bnf-1733"
+url = "https://catalogue.bnf.fr/ark:/12148/cb36821197q"
+type = "holding-library-catalogue"
+inspection = "Opened exact BnF record: Paris Pierre Simon 1733 Cluniac missal; Arsenal FOL-T-759 and B-311–313 copies. No relation to the 1717 text is inferred."
+
+[[sources]]
 id = "verona-beweb"
 url = "https://www.beweb.chiesacattolica.it/books/book/181127999/Sacramentarium%2BVeronense"
 type = "ecclesiastical-library-catalogue"
 inspection = "Search-index metadata identifies modern edition of codex Verona LXXXV(80). Manuscript dating and original images not established; this record is not a manuscript digitization."
+
+[[sources]]
+id = "verona-elmss-866"
+url = "https://elmss.universityofgalway.ie/catalogue/866"
+type = "university-research-catalogue"
+inspection = "Opened Earlier Latin Manuscripts CLA 4/514: Verona Biblioteca Capitolare LXXXV(80), sixth-century second-half (551–600) uncial copying range, origin uncertain, Sacramentarium Leonianum contents. Catalogue suggests private design and describes seventh-century additions; no original prayer collation or public-use claim."
 
 [[sources]]
 id = "gothicum-vatican"
@@ -1880,6 +1910,48 @@ url = "https://usuarium.elte.hu/origin/6/view"
 type = "university-liturgical-catalogue-origin-table"
 inspection = "Complete saved public origin table; all returned rows and Mass-book subset retained in this packet. Origin tagging, book genre and age are catalogue metadata, not proof of a rite, approval, full text or reception."
 
+[[sources]]
+id = "mainz-usuarium-book-28"
+url = "https://usuarium.elte.hu/book/28/view"
+type = "university-research-catalogue"
+inspection = "Book 28: 1482 Würzburg Reyser printing; BSB Rar. 0957; indexed decree p.7, calendar p.9, temporal p.27, Canon p.257 and sanctoral p.437."
+
+[[sources]]
+id = "german-swiss-usuarium-book-19"
+url = "https://usuarium.elte.hu/book/19/view"
+type = "university-research-catalogue"
+inspection = "Book 19: 1510 Augsburg Ratdolt printing, BSB 2 Liturg. 185 a; title p.4, episcopal item p.6, Ordinary p.217, additional Mass headings pp.446,458 and colophon p.484."
+
+[[sources]]
+id = "german-swiss-usuarium-book-20"
+url = "https://usuarium.elte.hu/book/20/view"
+type = "university-research-catalogue"
+inspection = "Book 20: 1490 Bamberg Sensenschmidt printing, BSB 2 Inc.c.a. 2432; bishop item p.19, temporal p.21, Ordinary p.330, Canon p.341 and colophon p.645."
+
+[[sources]]
+id = "german-swiss-usuarium-book-106"
+url = "https://usuarium.elte.hu/book/106/view"
+type = "university-research-catalogue"
+inspection = "Book 106: 1511 Strasbourg Beck printing, BL b.52.h.4; temporal p.10, Ordinary p.218, Canon p.246, sanctoral p.351 and Common p.452."
+
+[[sources]]
+id = "german-swiss-usuarium-book-22"
+url = "https://usuarium.elte.hu/book/22/view"
+type = "university-research-catalogue"
+inspection = "Book 22: 1486 Eichstätt Reyser printing, BSB Rar. 0953; bishop item p.10, temporal p.16, Ordinary p.326, sanctoral p.374 and rubrics p.516."
+
+[[sources]]
+id = "german-swiss-usuarium-book-96"
+url = "https://usuarium.elte.hu/book/96/view"
+type = "university-research-catalogue"
+inspection = "Book 96: 1495 Delft Snellaert printing, KB Den Haag 170 E 11; title p.10, temporal p.18, Ordinary p.258, Canon p.269, sanctoral p.346 and colophon p.534."
+
+[[sources]]
+id = "german-swiss-usuarium-book-560"
+url = "https://usuarium.elte.hu/book/560/view"
+type = "university-research-catalogue"
+inspection = "Book 560: Riga Ms. 1 (R 2665), c.1450 estimate, fol.2 cathedral altar note, marginal notes; calendar p.4, temporal p.10, Ordinary p.209 and Canon p.214."
+
 [[candidates]]
 id = "roman-1474"
 family = "roman"
@@ -2554,14 +2626,17 @@ id = "veronense-cod85"
 family = "western-sacramentary-context"
 title = "Sacramentarium Veronense, Verona LXXXV(80)"
 kind = "manuscript-collection-lead"
-status = "identity-lead-date-unresolved"
-sources = ["verona-beweb"]
-qualification = "Identity reported through edition catalogue. No copying or underlying libellus dates established here; do not invent an early universal complete missal."
+status = "checked-manuscript-catalogue-metadata"
+sources = ["verona-beweb", "verona-elmss-866"]
+qualification = "CLA 4/514 dates the surviving copy to 551–600, with uncertain origin, possible private design and later seventh-century additions. This is a copying bound for a collection, not a date for its underlying libelli or a public universal missal. Original prayers remain uncollated."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-revision-candidate-not-yet-collated"
-date_status = "unresolved"
-date_role = "unresolved or non-coordinate date; see qualification"
-chronology_layout = "unpositioned-pending-date-evidence-or-dispute-resolution"
+date_status = "catalogue-palaeographic-range"
+date_role = "manuscript copying of surviving collection; not composition or public adoption"
+chronology_start = 551
+chronology_end = 600
+chronology_kind = "manuscript-copying"
+chronology_certainty = "catalogue-palaeographic-range"
 
 [[candidates]]
 id = "missale-gothicum-reg317"
@@ -3293,6 +3368,74 @@ chronology_start = 1493
 chronology_end = 1733
 chronology_kind = "publication-witness-cluster"
 chronology_certainty = "catalogue-reported-years"
+
+[[candidates]]
+id = "cluniac-1493-bnf-b308"
+family = "cluniac"
+title = "Missale Ordinis Cluniacensis, BnF B-308"
+kind = "printed-missal-witness"
+status = "checked-catalogue-metadata"
+sources = ["cluny-usuarium-272"]
+qualification = "USUARIUM book 272 identifies the BnF B-308 copy and indexes its Mass sections; the same-year book 3349 requires copy-level deduplication. Its printer metadata and 1493 dating need original-colophon confirmation."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-revision-candidate-not-yet-collated"
+date = "1493 catalogue year"
+date_role = "catalogue-reported-publication"
+chronology_start = 1493
+chronology_end = 1493
+chronology_kind = "catalogue-publication"
+chronology_certainty = "qualified"
+
+[[candidates]]
+id = "cluniac-1510-arsenal-8t2452"
+family = "cluniac"
+title = "Missale ordinis Cluniacensis, BnF Arsenal 8-T-2452"
+kind = "printed-missal-witness"
+status = "checked-catalogue-metadata"
+sources = ["cluny-bnf-1510"]
+qualification = "BnF identifies the 1510 Paris Simon Vostre edition and Arsenal copy; USUARIUM book 5837 indexes its Mass sections. No textual relation to 1493 is inferred."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-revision-candidate-not-yet-collated"
+date = "1510"
+date_role = "publication"
+chronology_start = 1510
+chronology_end = 1510
+chronology_kind = "publication"
+chronology_certainty = "documented-catalogue"
+
+[[candidates]]
+id = "cluniac-1717-bnf-b309"
+family = "cluniac"
+title = "Missale monasticum ad usum sacri ordinis Cluniacensis, BnF B-309"
+kind = "printed-missal-witness"
+status = "checked-catalogue-metadata"
+sources = ["cluny-bnf-1717"]
+qualification = "BnF title claims General Chapter authority; the chapter record, original front matter, body and use in particular houses have not been inspected."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-revision-candidate-not-yet-collated"
+date = "1717"
+date_role = "publication"
+chronology_start = 1717
+chronology_end = 1717
+chronology_kind = "publication"
+chronology_certainty = "documented-catalogue"
+
+[[candidates]]
+id = "cluniac-1733-arsenal-folt759"
+family = "cluniac"
+title = "Missale monasticum ad usum sacri ordinis Cluniacensis, BnF Arsenal FOL-T-759"
+kind = "printed-missal-witness"
+status = "checked-catalogue-metadata"
+sources = ["cluny-bnf-1733"]
+qualification = "BnF identifies the 1733 Paris Pierre Simon edition and several copies. USUARIUM book IDs 5693 and 7091 require copy-level deduplication; no revised text is inferred."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-revision-candidate-not-yet-collated"
+date = "1733"
+date_role = "publication"
+chronology_start = 1733
+chronology_end = 1733
+chronology_kind = "publication"
+chronology_certainty = "documented-catalogue"
 
 [[candidates]]
 id = "stowe-warner-1915-vol2"
@@ -6073,6 +6216,122 @@ chronology_kind = "printed-component-witness-publication"
 chronology_certainty = "critical-introduction-bibliographic-identification"
 source_locus = "Földváry critical introduction, printed pp. XXXVII–XXXIX; PDF pp. 36–38"
 
+[[candidates]]
+id = "mainz-usuarium-28"
+family = "historic-mainz-use"
+title = "Missale Moguntinum (1482), BSB Rar. 0957"
+kind = "printed-missal"
+status = "checked-catalogue-metadata"
+sources = ["mainz-usuarium-book-28"]
+qualification = "The indexed decree is not independently read as an act; no relation to Frankfurt Ms. Barth. 118 or other Mainz prints is established."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-revision-candidate-not-yet-collated"
+date = "1482"
+date_role = "printed-witness-publication"
+chronology_start = 1482
+chronology_end = 1482
+chronology_kind = "printed-witness-publication"
+chronology_certainty = "edition-identified-catalogue-date"
+
+[[candidates]]
+id = "german-swiss-augsburg-usuarium-19"
+family = "historic-augsburg-use"
+title = "Missale secundum ritum Augustensis ecclesiae (1510), BSB 2 Liturg. 185 a"
+kind = "printed-missal"
+status = "checked-catalogue-metadata"
+sources = ["german-swiss-usuarium-book-19"]
+qualification = "The title claims additions without dating them; distinguish Augsburg from Aosta and do not infer a revision from the print date."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-revision-candidate-not-yet-collated"
+date = "1510"
+date_role = "printed-witness-publication"
+chronology_start = 1510
+chronology_end = 1510
+chronology_kind = "printed-witness-publication"
+chronology_certainty = "edition-identified-catalogue-date"
+
+[[candidates]]
+id = "german-swiss-bamberg-usuarium-20"
+family = "historic-bamberg-use"
+title = "Liber missalis Bambergensis (1490), BSB 2 Inc.c.a. 2432"
+kind = "printed-missal"
+status = "checked-catalogue-metadata"
+sources = ["german-swiss-usuarium-book-20"]
+qualification = "The episcopal item and contents are indexed only; no comparison to 1499 or 1507 prints or adoption date."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-revision-candidate-not-yet-collated"
+date = "1490"
+date_role = "printed-witness-publication"
+chronology_start = 1490
+chronology_end = 1490
+chronology_kind = "printed-witness-publication"
+chronology_certainty = "edition-identified-catalogue-date"
+
+[[candidates]]
+id = "german-swiss-bremen-usuarium-106"
+family = "historic-bremen-use"
+title = "Ordo missalis Bremensis (1511), BL b.52.h.4"
+kind = "printed-missal"
+status = "checked-catalogue-metadata"
+sources = ["german-swiss-usuarium-book-106"]
+qualification = "One named print, not the whole Bremen manuscript sequence or proof of reception throughout the diocese."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-revision-candidate-not-yet-collated"
+date = "1511"
+date_role = "printed-witness-publication"
+chronology_start = 1511
+chronology_end = 1511
+chronology_kind = "printed-witness-publication"
+chronology_certainty = "edition-identified-catalogue-date"
+
+[[candidates]]
+id = "german-swiss-eichstatt-usuarium-22"
+family = "historic-eichstatt-use"
+title = "Missale Eystetense (1486), BSB Rar. 0953"
+kind = "printed-missal"
+status = "checked-catalogue-metadata"
+sources = ["german-swiss-usuarium-book-22"]
+qualification = "The bishop item and rubrics are indexed, not collated against earlier books; no use or replacement date follows."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-revision-candidate-not-yet-collated"
+date = "1486"
+date_role = "printed-witness-publication"
+chronology_start = 1486
+chronology_end = 1486
+chronology_kind = "printed-witness-publication"
+chronology_certainty = "edition-identified-catalogue-date"
+
+[[candidates]]
+id = "german-swiss-utrecht-usuarium-96"
+family = "historic-utrecht-use"
+title = "Missale secundum ordinarium Traiectensem (1495), KB 170 E 11"
+kind = "printed-missal"
+status = "checked-catalogue-metadata"
+sources = ["german-swiss-usuarium-book-96"]
+qualification = "One Delft edition; relation to other Utrecht prints and modern Old Catholic books is unestablished."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-revision-candidate-not-yet-collated"
+date = "1495"
+date_role = "printed-witness-publication"
+chronology_start = 1495
+chronology_end = 1495
+chronology_kind = "printed-witness-publication"
+chronology_certainty = "edition-identified-catalogue-date"
+
+[[candidates]]
+id = "german-swiss-riga-usuarium-560"
+family = "historic-riga-use"
+title = "Akad. Rīga Ms. 1 (R 2665), Missale Rigense"
+kind = "manuscript-missal"
+status = "checked-catalogue-metadata"
+sources = ["german-swiss-usuarium-book-560"]
+qualification = "Dating conflicts with another fourteenth-century institutional description; original folios and marginal layers require review."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-revision-candidate-not-yet-collated"
+date_status = "disputed-catalogue-date"
+date_role = "manuscript-copying estimate, disputed; no timeline coordinate"
+chronology_layout = "unpositioned-pending-date-evidence-or-dispute-resolution"
+
 [[coverage]]
 id = "roman-ancient"
 title = "Ancient Roman, Gallican and Roman-Frankish sacramentary traditions"
@@ -6351,8 +6610,8 @@ scope = "western-original-source-trajectory"
 id = "mainz"
 title = "Mainz trajectory"
 status = "selected-catalogue-witness-census-documented"
-sources = ["mainz-usuarium", "german-swiss-weale1886", "german-swiss-weale1928"]
-candidate_ids = ["mainz-medieval", "mainz-printed-series"]
+sources = ["mainz-usuarium", "german-swiss-weale1886", "german-swiss-weale1928", "mainz-usuarium-book-28"]
+candidate_ids = ["mainz-medieval", "mainz-printed-series", "mainz-usuarium-28"]
 remaining_work = "Resolve duplicate and disputed catalogue entries; acquire/inspect whole witnesses, compare prayers, readings, chants, Ordinary, calendar and rubrics; read approval and local reception evidence."
 scope = "western-original-source-trajectory"
 
@@ -6431,9 +6690,9 @@ existing_record_ids = ["missale-praemonstratense"]
 id = "cluny"
 title = "Cluniac trajectory"
 status = "selected-witness-census-documented"
-sources = ["cluny-usuarium"]
-candidate_ids = ["cluniac-printed-series"]
-remaining_work = "Retained catalogues identify a bounded witness sequence, but Cluny 1717 and 1733 Gallica PDF routes returned HTTP 403. Recover institutional-viewer originals, earlier bibliography and manuscript records; compare the 1717/1733 texts before inferring a revision or an end date."
+sources = ["cluny-usuarium", "cluny-usuarium-272", "cluny-bnf-1510", "cluny-bnf-1717", "cluny-bnf-1733"]
+candidate_ids = ["cluniac-printed-series", "cluniac-1493-bnf-b308", "cluniac-1510-arsenal-8t2452", "cluniac-1717-bnf-b309", "cluniac-1733-arsenal-folt759"]
+remaining_work = "Four printed Cluniac missals now have exact BnF or USUARIUM catalogue identities. Verify 1493 original dating and copy duplicates, inspect the General Chapter authority claimed by the 1717 title, retrieve original 1717/1733 pages and compare components before inferring a revision, continuous reception or an end date."
 scope = "western-original-source-trajectory"
 
 [[coverage]]
@@ -6467,8 +6726,8 @@ scope = "western-original-source-trajectory"
 id = "augsburg-bamberg-bremen-eichstatt"
 title = "Augsburg, Bamberg, Bremen and Eichstätt"
 status = "selected-catalogue-witness-census-documented"
-sources = ["usuarium-origins-0", "german-swiss-usuarium-origin-35", "german-swiss-weale1886", "german-swiss-weale1928", "german-swiss-usuarium-origin-36", "german-swiss-usuarium-origin-40", "german-swiss-usuarium-origin-42"]
-candidate_ids = ["german-swiss-augsburg-witness-cluster", "german-swiss-bamberg-witness-cluster", "german-swiss-bremen-witness-cluster", "german-swiss-eichstatt-witness-cluster"]
+sources = ["usuarium-origins-0", "german-swiss-usuarium-origin-35", "german-swiss-weale1886", "german-swiss-weale1928", "german-swiss-usuarium-origin-36", "german-swiss-usuarium-origin-40", "german-swiss-usuarium-origin-42", "german-swiss-usuarium-book-19", "german-swiss-usuarium-book-20", "german-swiss-usuarium-book-106", "german-swiss-usuarium-book-22"]
+candidate_ids = ["german-swiss-augsburg-witness-cluster", "german-swiss-bamberg-witness-cluster", "german-swiss-bremen-witness-cluster", "german-swiss-eichstatt-witness-cluster", "german-swiss-augsburg-usuarium-19", "german-swiss-bamberg-usuarium-20", "german-swiss-bremen-usuarium-106", "german-swiss-eichstatt-usuarium-22"]
 remaining_work = "Resolve duplicate and disputed catalogue entries; acquire/inspect whole witnesses, compare prayers, readings, chants, Ordinary, calendar and rubrics; read approval and local reception evidence."
 scope = "western-original-source-trajectory"
 
@@ -6584,8 +6843,8 @@ scope = "western-original-source-trajectory"
 id = "utrecht-riga"
 title = "Utrecht and Riga"
 status = "selected-catalogue-witness-census-documented"
-sources = ["usuarium-origins-700", "german-swiss-usuarium-origin-424", "german-swiss-weale1886", "german-swiss-weale1928", "german-swiss-usuarium-origin-421"]
-candidate_ids = ["german-swiss-utrecht-witness-cluster", "german-swiss-riga-witness-cluster"]
+sources = ["usuarium-origins-700", "german-swiss-usuarium-origin-424", "german-swiss-weale1886", "german-swiss-weale1928", "german-swiss-usuarium-origin-421", "german-swiss-usuarium-book-96", "german-swiss-usuarium-book-560"]
+candidate_ids = ["german-swiss-utrecht-witness-cluster", "german-swiss-riga-witness-cluster", "german-swiss-utrecht-usuarium-96", "german-swiss-riga-usuarium-560"]
 remaining_work = "Resolve duplicate and disputed catalogue entries; acquire/inspect whole witnesses, compare prayers, readings, chants, Ordinary, calendar and rubrics; read approval and local reception evidence."
 scope = "western-original-source-trajectory"
 
@@ -20630,6 +20889,27 @@ collation_status = "no-new-complete-collation"
 
 
 [[candidates]]
+id = "additional-orders-hospitaller-bnf-b320-1553"
+family = "Hospitaller Order of St John of Jerusalem (OMel)"
+title = "1553 Lyon Hospitaller missal, BnF B-320"
+kind = "printed-missal"
+date = "1553"
+date_role = "printed-witness-publication"
+sources = ["additional-orders-src-hospitaller-bnf-cb36827961c"]
+qualification = "The BnF owning catalogue identifies B-320 as the Lyon printing of 1553 by the heirs of Jacques Giunta, [22]-CCCLXXIIII leaves with music. Its old 1551 date is explicitly corrected; original folios, a separate 1551 printing and substantive relation to other copies remain uninspected. This exact copy is separate from the broader 1553 bibliography cluster."
+status = "checked-catalogue-metadata"
+language_priority = ["Latin"]
+version_status = "witness-or-component-candidate-not-proven-recension"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+acquisition_status = "source-metadata-acquired-original-book-not-acquired"
+transcription_status = "no-new-verified-transcription"
+collation_status = "no-new-complete-collation"
+chronology_start = 1553
+chronology_end = 1553
+chronology_kind = "printed-witness-publication"
+chronology_certainty = "owning-catalogue-corrected-year"
+
+[[candidates]]
 id = "additional-orders-hospitaller-haarlem-gradual-184c7"
 family = "Hospitaller Order of St John of Jerusalem (OMel)"
 title = "Haarlem 184 C 7 gradual"
@@ -20742,7 +21022,7 @@ id = "hospitaller-order-of-malta"
 title = "Hospitaller Order of St John of Jerusalem, Rhodes and Malta Eucharistic books"
 status = "bounded-bibliographic-candidates-documented"
 sources = ["additional-orders-src-hospitaller-usuarium-origin-889", "additional-orders-src-hospitaller-usuarium-7877", "additional-orders-src-hospitaller-usuarium-9950", "additional-orders-src-hospitaller-google-9950", "additional-orders-src-hospitaller-order-status", "additional-orders-src-hospitaller-dondi-v1", "additional-orders-src-hospitaller-dondi-v2", "additional-orders-src-hospitaller-sigena-study", "additional-orders-src-hospitaller-notitiae-1987", "additional-orders-src-hospitaller-notitiae-1990", "additional-orders-src-hospitaller-notitiae-1991", "additional-orders-src-hospitaller-notitiae-1995", "additional-orders-src-hospitaller-dli-1987", "additional-orders-src-hospitaller-order-regulations", "additional-orders-src-hospitaller-order-calendar", "additional-orders-src-hospitaller-bnf-cb36827961c"]
-candidate_ids = ["additional-orders-hospitaller-fribourg-l91", "additional-orders-hospitaller-bnf-nal1689", "additional-orders-hospitaller-aosta-ms1", "additional-orders-hospitaller-strasbourg-1505", "additional-orders-hospitaller-haarlem-1511", "additional-orders-hospitaller-sixena-1528", "additional-orders-hospitaller-lyon-1553", "additional-orders-hospitaller-haarlem-gradual-184c7", "additional-orders-hospitaller-zittau-gradual-av", "additional-orders-hospitaller-turin-gradual-fiii17", "additional-orders-hospitaller-cologne-gradual-262", "additional-orders-hospitaller-proper-1987", "additional-orders-hospitaller-proper-2005"]
+candidate_ids = ["additional-orders-hospitaller-fribourg-l91", "additional-orders-hospitaller-bnf-nal1689", "additional-orders-hospitaller-aosta-ms1", "additional-orders-hospitaller-strasbourg-1505", "additional-orders-hospitaller-haarlem-1511", "additional-orders-hospitaller-sixena-1528", "additional-orders-hospitaller-lyon-1553", "additional-orders-hospitaller-bnf-b320-1553", "additional-orders-hospitaller-haarlem-gradual-184c7", "additional-orders-hospitaller-zittau-gradual-av", "additional-orders-hospitaller-turin-gradual-fiii17", "additional-orders-hospitaller-cologne-gradual-262", "additional-orders-hospitaller-proper-1987", "additional-orders-hospitaller-proper-2005"]
 remaining_work = "Resolve separate 1551 report only through independent primary holding; inspect 1505 and confirmed 1553 originals, Aosta manuscript date, Sigena lost-book evidence, four gradual repertoires, 1987/2005 Latin front matter and lectionary. USUARIUM 9950 physical copy/edition state remains open. Four modern translations remain deferred expressions; Office-only and ownership-only controls remain excluded. No independent recension, normative stage, full-book descent or Holy Sepulchre parentage established."
 scope = "additional-order-eucharistic-book-metadata"
 research_review = "src/sources/inventories/eucharistic-research-reviews/hospitaller-2026-10-20.json"

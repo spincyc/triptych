@@ -23,7 +23,7 @@ scope_questions_remaining = "Scope agreed. Exact manuscript transmission paths, 
 coverage_definition = "A version requires evidence of substantive changes to prayers, rubrics, calendar or order. A manuscript witness, printing date, script change, Church union, or institutional erection alone is not a new version. Keep historical liturgical-language books first; approved vernacular and lay translations form later independent work. Modern-language original composition remains in scope and must be distinguished from translation."
 source_library_manifest_limit = "This inventory links canonical source-library identities; it is not itself a source artifact manifest. Scan acquisition does not establish checked transcription, complete structured contents, a substantive version boundary or edition-to-edition descent."
 
-record_count_note = "440 candidate records, 23 Church/tradition coverage slots and 372 source records are research objects, not distinct versions. Source-book printings, study texts, reprints and provisional leads remain separately qualified."
+record_count_note = "440 candidate records, 23 Church/tradition coverage slots and 373 source records are research objects, not distinct versions. Source-book printings, study texts, reprints and provisional leads remain separately qualified."
 
 [[sources]]
 id = "ziade-syriac-diaconicon-1941"
@@ -99,6 +99,17 @@ checked_on = "2026-10-16"
 evidence_type = "official-decree"
 inspection = "web-rendered-description-or-stated-locus"
 locus = "BA 24/027 dated 25 January 2024; operative promulgation and commencement paragraphs"
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+full_contents_examined = false
+
+[[sources]]
+id = "ugcc-servicebook-interview-2024"
+url = "https://ugcc.ua/en/data/the-new-translation-is-about-truth-not-comfort-head-of-ugcc-explains-whether-non-use-of-new-service-book-is-a-violation-1006/"
+checked_on = "2026-10-20"
+evidence_type = "church-interview"
+inspection = "official-English-web-article-inspected"
+locus = "19 April 2024, paragraphs 1–6: the head of the UGCC describes implementation of the new Service Book as a process, cites a changed Publican’s Prayer wording, and states that clergy must follow the Church’s liturgical order. This does not date a first celebration or prove uniform compliance."
 text_acquisition = "not-acquired"
 hash_state = "not-computed"
 full_contents_examined = false
@@ -1182,15 +1193,15 @@ date = "2024-01-25 decree; 2024-03-25 effective"
 language = "Ukrainian"
 kind = "revised-translation"
 evidence = "official-decree-inspected"
-source_ids = ["ugcc-act"]
+source_ids = ["ugcc-act", "ugcc-servicebook-interview-2024"]
 note = "Decree BA 24/027 cites synodal approvals in 2022 and 2023 and notification to Apostolic See under CCEO 657 §2. Printing authorized; adaptation of other language translations required. Do not mislabel notification as a new recognitio."
-source_urls = ["https://docs.ugcc.ua/1718/"]
+source_urls = ["https://docs.ugcc.ua/1718/", "https://ugcc.ua/en/data/the-new-translation-is-about-truth-not-comfort-head-of-ugcc-explains-whether-non-use-of-new-service-book-is-a-violation-1006/"]
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
 text_acquisition = "not-acquired"
 full_contents_examined = false
-research_priority = "deferred-translation-lane"
-version_status = "substantive-difference-not-established"
-scope_note = "Retained prior research; independent vernacular/lay translation work is deferred. Rubrical or original-composition evidence may later justify a separately sourced version claim."
+research_priority = "received-church-service-book-language"
+version_status = "approved-revised-translation; official-interview-identifies-wording-change-example; original-pages-uncollated"
+scope_note = "The Church promulgated these Ukrainian Chrysostom and Basil texts for use from 25 March 2024, and its April 2024 interview describes implementation of the new Service Book as underway. This is the Church’s received operative service-book language, not an independent lay or diaspora translation. The decree authorizes printing but does not establish an inspected complete printed volume, a first celebration, universal compliance, or a distinct source-language recension; those remain open."
 chronology_start = 2024
 chronology_end = 2024
 chronology_kind = "promulgation-and-effective-year"
@@ -3825,14 +3836,14 @@ id = "ukrainian"
 name = "Ukrainian Greek Catholic Church"
 family = "Byzantine"
 census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025"]
-candidate_ids = ["byz-lviv-1905", "byz-ruthenian-1942", "byz-ruthenian-chrysostom-1940", "byz-ruthenian-ordo-1944", "byz-univ1733-read-liturgy", "byz-lviv1929", "byz-ruthenian-ordo-1953", "byzantine-slavic-pochaiv1788", "byzantine-slavic-zhovkva1927", "byzantine-slavic-lviv1930-mikron", "byzantine-slavic-archieratikon1973"]
+candidate_ids = ["byz-ugcc-2024", "byz-lviv-1905", "byz-ruthenian-1942", "byz-ruthenian-chrysostom-1940", "byz-ruthenian-ordo-1944", "byz-univ1733-read-liturgy", "byz-lviv1929", "byz-ruthenian-ordo-1953", "byzantine-slavic-pochaiv1788", "byzantine-slavic-zhovkva1927", "byzantine-slavic-lviv1930-mikron", "byzantine-slavic-archieratikon1973"]
 ancestry_candidate_ids = ["byz-barberini336", "byz-striatyn1604", "byzantine-slavic-vat-slav14", "byzantine-slavic-borgia-illyr-13-14"]
-deferred_or_origin_review_candidate_ids = ["byz-ugcc-2024", "byzantine-slavic-vilnius1617-mamonych", "byzantine-slavic-vilnius1691-trinity", "byzantine-slavic-suprasl1716-pontifical", "byzantine-slavic-suprasl1727-1732", "byzantine-slavic-suprasl1758", "byzantine-slavic-suprasl1763", "byzantine-slavic-vilnius1773", "byzantine-slavic-univ1740", "byzantine-slavic-univ1740-pontifical", "byzantine-slavic-univ1747", "byzantine-slavic-univ-feast-supplements", "byzantine-slavic-pochaiv-eucharist-supplements", "byzantine-slavic-pochaiv-printing-series", "byzantine-slavic-lviv1712-stauropegion", "byzantine-slavic-lviv1780", "byzantine-slavic-przemysl1840", "byzantine-slavic-lviv1850", "byzantine-slavic-lviv1866", "byzantine-slavic-fragment-pre1894", "byzantine-slavic-rome1929-bishops-conference", "byzantine-slavic-przemysl-chrysostom-insert-cold"]
+deferred_or_origin_review_candidate_ids = ["byzantine-slavic-vilnius1617-mamonych", "byzantine-slavic-vilnius1691-trinity", "byzantine-slavic-suprasl1716-pontifical", "byzantine-slavic-suprasl1727-1732", "byzantine-slavic-suprasl1758", "byzantine-slavic-suprasl1763", "byzantine-slavic-vilnius1773", "byzantine-slavic-univ1740", "byzantine-slavic-univ1740-pontifical", "byzantine-slavic-univ1747", "byzantine-slavic-univ-feast-supplements", "byzantine-slavic-pochaiv-eucharist-supplements", "byzantine-slavic-pochaiv-printing-series", "byzantine-slavic-lviv1712-stauropegion", "byzantine-slavic-lviv1780", "byzantine-slavic-przemysl1840", "byzantine-slavic-lviv1850", "byzantine-slavic-lviv1866", "byzantine-slavic-fragment-pre1894", "byzantine-slavic-rome1929-bishops-conference", "byzantine-slavic-przemysl-chrysostom-insert-cold"]
 coverage_status = "incomplete"
 missing_chronology = "Acquire 1940/1941 and 1942 printed witnesses and 1944 Ordo; establish region-specific receipt and supplements. The 1941 act permits exceptions, so publication is not universal replacement."
 relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
-source_ids = ["slipyj-reception1942-adss", "ugcc-ordo-decree2006"]
-reception_note = "Contemporary 12 April 1942 testimony documents new Liturgikon use at the Lviv seminary and some Stanislaviv resistance. UGCC Synod decree 4 (2006) affirms Church-wide obligation of the Rome 1953 Ordo; obligation is distinct from demonstrated uniform observance. Slavic-lane addition (byzantine_slavic, 2026-10-19): The UGCC liturgical commission lists Rome 1942 (Church Slavonic Sluzhebnyk) and Rome 1973 (Archieratikon) as official books. The Zhovkva 1927 extract carries the Przemyśl ordinariate's permission; the 1930 Lviv small Liturgikon carries the blessing of the Lviv, Stanislaviv and Przemyśl bishops; Pochaiv 1788 is an inspected Basilian printing of the Galician-Volhynian Uniate line. Keleher reports a 1942 Lviv reprint of the Roman Chrysostom (5,000 copies)."
+source_ids = ["slipyj-reception1942-adss", "ugcc-ordo-decree2006", "ugcc-act", "ugcc-servicebook-interview-2024"]
+reception_note = "The 2024 decree BA 24/027 promulgates the Church-approved Ukrainian Chrysostom and Basil texts effective 25 March, and an April 2024 UGCC interview describes implementation of the new Service Book as a process; first observed celebration and uniform compliance remain unverified. Contemporary 12 April 1942 testimony documents new Liturgikon use at the Lviv seminary and some Stanislaviv resistance. UGCC Synod decree 4 (2006) affirms Church-wide obligation of the Rome 1953 Ordo; obligation is distinct from demonstrated uniform observance. Slavic-lane addition (byzantine_slavic, 2026-10-19): The UGCC liturgical commission lists Rome 1942 (Church Slavonic Sluzhebnyk) and Rome 1973 (Archieratikon) as official books. The Zhovkva 1927 extract carries the Przemyśl ordinariate's permission; the 1930 Lviv small Liturgikon carries the blessing of the Lviv, Stanislaviv and Przemyśl bishops; Pochaiv 1788 is an inspected Basilian printing of the Galician-Volhynian Uniate line. Keleher reports a 1942 Lviv reprint of the Roman Chrysostom (5,000 copies)."
 
 [[church_coverage]]
 id = "hungarian"
@@ -6791,10 +6802,10 @@ acquisition_status = "scan-held-in-scratch; not-canonically-registered"
 transcription_status = "not-transcribed"
 collation_status = "not-collated"
 source_title_status = "Original Greek title and approval page inspected at PDF pages 3–4"
-chronology_start = 1950
-chronology_end = 1950
-chronology_kind = "imprint-year-on-title"
-chronology_certainty = "explicit-in-inspected-title; colophon-records-printing-completed-March-1952"
+chronology_start = 1952
+chronology_end = 1952
+chronology_kind = "printing-completed-by-colophon"
+chronology_certainty = "explicit-in-inspected-colophon; title-imprint-says-1950"
 
 [[records]]
 id = "byzantine-greek-rome-anthologion-vol1"

@@ -1,0 +1,772 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-stages",
+  "dossier_id": "central-europe-round3",
+  "title": "Named Mainz, Olomouc, German, Hungarian, Adriatic, Utrecht and Riga book witnesses",
+  "traditions": [
+    {
+      "id": "central-europe-round3:mainz",
+      "label": "Mainz Mass-book witnesses",
+      "family": "latin",
+      "scope": "A medieval summer-part manuscript and one identified Mainz print, not the whole printed series.",
+      "coverage_note": "The 1482 book is not made an immediate successor to the Frankfurt manuscript; other dated prints need independent collation."
+    },
+    {
+      "id": "central-europe-round3:olomouc",
+      "label": "Olomouc Mass-book witnesses",
+      "family": "latin",
+      "scope": "Named 1488 print and a surviving fragment of the 1499 print.",
+      "coverage_note": "The 1499 fragment cannot characterize the whole edition or demonstrate a new recension."
+    },
+    {
+      "id": "central-europe-round3:augsburg",
+      "label": "Augsburg diocesan Missal",
+      "family": "latin",
+      "scope": "The 1510 Augsburg print, distinct from similarly named Aosta books.",
+      "coverage_note": "Earlier and later Augsburg printings require comparison; the title mentions added Masses without dating their introduction."
+    },
+    {
+      "id": "central-europe-round3:bamberg",
+      "label": "Bamberg diocesan Missal",
+      "family": "latin",
+      "scope": "The 1490 Bamberg print identified by its title and colophon.",
+      "coverage_note": "Its episcopal preface is indexed, but the instrument and other prints have not been collated."
+    },
+    {
+      "id": "central-europe-round3:bremen",
+      "label": "Bremen diocesan Missal",
+      "family": "latin",
+      "scope": "The 1511 Bremen print, not a claim about every Bremen manuscript.",
+      "coverage_note": "Two fifteenth-century manuscript leads remain uncollated against the print."
+    },
+    {
+      "id": "central-europe-round3:eichstatt",
+      "label": "Eichstätt diocesan Missal",
+      "family": "latin",
+      "scope": "The 1486 Missale Eystetense print.",
+      "coverage_note": "The indexed episcopal text and rubrics are bounded contents evidence, not a reviewed reform."
+    },
+    {
+      "id": "central-europe-round3:pecs",
+      "label": "Pécs Mass-book print",
+      "family": "latin",
+      "scope": "The 1487 Missale Quinqueecclesiense identified in a Wolfenbüttel copy.",
+      "coverage_note": "A later handwritten title is explicitly misleading; the 1499 print and fragments remain separate evidence."
+    },
+    {
+      "id": "central-europe-round3:eger",
+      "label": "Eger-held Mass-book and Eger ordinal",
+      "family": "latin",
+      "scope": "A dated missal manuscript now held at Eger and a separate 1509 Eger ordinal component.",
+      "coverage_note": "Miskolc use is uncertain from the scribe name; an ordinal is not a complete Mass book."
+    },
+    {
+      "id": "central-europe-round3:zadar-ofm",
+      "label": "Zadar Franciscan gradual-missal",
+      "family": "latin",
+      "scope": "A thirteenth-century OFM gradual-missal, separate from a secular Zadar diocesan use.",
+      "coverage_note": "The catalogue attribution and manuscript contents support a bounded OFM state, not a diocesan recension."
+    },
+    {
+      "id": "central-europe-round3:split",
+      "label": "Split manuscript leads",
+      "family": "latin",
+      "scope": "The Split cathedral missal, its older sacramentary fragments, and a disputed Dalmatian manuscript attribution.",
+      "coverage_note": "No secure single dated Split book-state row is promoted here; layers and origin need examination."
+    },
+    {
+      "id": "central-europe-round3:utrecht",
+      "label": "Utrecht diocesan Missal",
+      "family": "latin",
+      "scope": "The 1495 Delft printing titled for the Utrecht ordinal.",
+      "coverage_note": "Other Delft and later prints need collation; Old Catholic reception is outside this witness claim."
+    },
+    {
+      "id": "central-europe-round3:riga",
+      "label": "Riga Mass-book manuscript",
+      "family": "latin",
+      "scope": "Akad. Rīga Ms. 1 (R 2665), catalogued as Missale Rigense.",
+      "coverage_note": "The c.1450 catalogue dating conflicts with another institutional fourteenth-century account; an exact copying bound is not settled."
+    }
+  ],
+  "sources": [
+    {
+      "id": "central-europe-round3:source-mainz-ms",
+      "title": "Usuarium book 5594, Missale Moguntinum",
+      "url": "https://usuarium.elte.hu/book/5594/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Book identity fields read: 1030–1070, UB Frankfurt Ms. Barth. 118, pars aestivalis.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Research catalogue, not inspected original manuscript images."
+    },
+    {
+      "id": "central-europe-round3:source-mainz-1482",
+      "title": "Usuarium book 28, Missale Moguntinum",
+      "url": "https://usuarium.elte.hu/book/28/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Book card title, 1482 age, Würzburg printer, BSB Rar. 0957, and contents rows 7, 9, 27, 257 and 437 read.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Index and transcription of headings are not direct collation of original body or episcopal instrument."
+    },
+    {
+      "id": "central-europe-round3:source-olomouc-1488",
+      "title": "Landesbibliothekszentrum Rheinland-Pfalz, Missale Olomucense",
+      "url": "https://www.dilibri.de/rlb/content/titleinfo/1452963",
+      "kind": "institutional-catalogue",
+      "inspection": "Institutional digitisation record read: Bamberg, Sensenschmidt for Drach, 4 March 1488, 370 leaves, original holding link.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Edition-identifying metadata; original leaves and Mass contents not independently collated."
+    },
+    {
+      "id": "central-europe-round3:source-olomouc-1499",
+      "title": "Usuarium book 122, Missale Olomucense",
+      "url": "https://usuarium.elte.hu/book/122/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Book card read: 1499 Nuremberg Stuchs print, BSB 2 Inc.c.a. 3786 m, explicitly a fragment; sole indexed sanctoral page 4 (268r).",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The surviving fragment does not attest the rest of the book or a complete 1499 recension."
+    },
+    {
+      "id": "central-europe-round3:source-augsburg-1510",
+      "title": "Usuarium book 19, Missale Augustense",
+      "url": "https://usuarium.elte.hu/book/19/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Book card and rows 4, 6, 8, 30, 217, 302, 446, 458 and 484 inspected: 1510 Ratdolt print, BSB 2 Liturg. 185 a.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Catalogue headings and title claim of added Masses are not a text collation or date of each addition."
+    },
+    {
+      "id": "central-europe-round3:source-bamberg-1490",
+      "title": "Usuarium book 20, Missale Bambergense",
+      "url": "https://usuarium.elte.hu/book/20/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Book card and rows 19, 21, 330, 341, 439 and 645 read: Sensenschmidt 1490, BSB 2 Inc.c.a. 2432.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Indexed decree and colophon have not been checked against original page images."
+    },
+    {
+      "id": "central-europe-round3:source-bremen-1511",
+      "title": "Usuarium book 106, Missale Bremense",
+      "url": "https://usuarium.elte.hu/book/106/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Book card and contents rows 10, 218, 246, 351 and 452 read: 1511 Strasbourg Beck print, BL b.52.h.4.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Catalogue identification and headings, not an original-page collation or evidence of citywide reception."
+    },
+    {
+      "id": "central-europe-round3:source-eichstatt-1486",
+      "title": "Usuarium book 22, Missale Eystetense",
+      "url": "https://usuarium.elte.hu/book/22/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Book card and rows 10, 16, 326, 374 and 516 read: 1486 Reyser print, BSB Rar. 0953.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Episcopal text and local rubrics are indexed, but their full wording and earlier comparison are uninspected."
+    },
+    {
+      "id": "central-europe-round3:source-pecs-1487",
+      "title": "Usuarium book 91, Missale Quinqueecclesiense",
+      "url": "https://usuarium.elte.hu/book/91/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Book card and rows 19, 253, 267, 392 and 609 read; 1487 Wenssler print, HAB H:S 456.2° Helmst.; warning about later handwritten mislabel read.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Contents index only; handwritten label is not accepted as original title or place of use."
+    },
+    {
+      "id": "central-europe-round3:source-eger-1394",
+      "title": "Usuarium book 764, Missale Miskolci",
+      "url": "https://usuarium.elte.hu/book/764/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Book card, 1394 colophon transcription and rows 18, 164, 170, 242 and 367 read; Eger U2 VI.5 holding.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Catalogue expressly doubts Miskolc origin; original colophon image and locale of use uninspected."
+    },
+    {
+      "id": "central-europe-round3:source-eger-1509",
+      "title": "Usuarium book 854, Ordinarius Agriensis",
+      "url": "https://usuarium.elte.hu/book/854/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Book card read: 1509 Kraków Haller ordinal, Ossolineum XVI.Qu.1922, modern Dobszay edition separately identified.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "An ordinal gives directions, not all prayers; exact Eucharistic sections and original leaves remain uninspected."
+    },
+    {
+      "id": "central-europe-round3:source-zadar-ofm-ms",
+      "title": "Usuarium book 1132, Missale Iadrense",
+      "url": "https://usuarium.elte.hu/book/1132/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Book card read: BAV Reg. lat. 2049, 1250–1300, OFM Zadar; contents rows 11, 22, 219, 226 and 313, with Vatican digitisation link.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Research catalogue and indexed headings, not a direct folio collation; OFM context must not become secular diocesan use."
+    },
+    {
+      "id": "central-europe-round3:source-utrecht-1495",
+      "title": "Usuarium book 96, Missale Traiectense",
+      "url": "https://usuarium.elte.hu/book/96/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Book card read: original title, 1495 Snellaert Delft print, KB Den Haag 170 E 11; contents rows 10, 18, 258, 269, 346 and 534.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Catalogue headings and colophon index do not establish a distinct recension relative to other Utrecht prints."
+    },
+    {
+      "id": "central-europe-round3:source-riga-ms",
+      "title": "Usuarium book 560, Missale Rigense",
+      "url": "https://usuarium.elte.hu/book/560/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Book card read: Ms. 1 (R 2665), approximate 1450 date and provenance-note transcription; contents rows 4, 10, 209, 214 and 281.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Approximate catalogue date conflicts with another reported dating; provenance note and marginal layers require original-folio review."
+    }
+  ],
+  "stages": [
+    {
+      "id": "central-europe-round3:stage-mainz-ms",
+      "tradition_id": "central-europe-round3:mainz",
+      "label": "Frankfurt Ms. Barth. 118, summer Missal part",
+      "date_label": "1030–1070 attestation date",
+      "start_year": 1030,
+      "end_year": 1070,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "One manuscript summer part only.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:mainz-medieval"
+      ],
+      "witness_label": "Frankfurt Ms. Barth. 118, summer Missal part",
+      "summary": "The 1030–1070 range is a catalogue copying estimate, not duration of Mainz use.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "central-europe-round3:source-mainz-ms",
+          "locus": "Book 5594, Age, shelfmark and Remark",
+          "claim": "A Mainz-attributed summer-part missal manuscript is catalogued at Frankfurt."
+        }
+      ],
+      "limitations": "No full contents, reception or relationship to later prints established.",
+      "reception": "Local use and original production site are not independently proved."
+    },
+    {
+      "id": "central-europe-round3:stage-mainz-1482",
+      "tradition_id": "central-europe-round3:mainz",
+      "label": "1482 Missale Moguntinum, BSB Rar. 0957",
+      "date_label": "1482 publication date",
+      "start_year": 1482,
+      "end_year": 1482,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Single Mainz print, not the whole series.",
+      "components": [
+        "calendar",
+        "propers",
+        "ordinary",
+        "anaphoras"
+      ],
+      "witness_ids": [
+        "western:mainz-usuarium-28"
+      ],
+      "witness_label": "1482 Missale Moguntinum, BSB Rar. 0957",
+      "summary": "The 1482 date belongs to Reyser’s printing; the indexed prefatory item is not treated as an independently verified act.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "central-europe-round3:source-mainz-1482",
+          "locus": "Book 28, identity; contents pp. 7, 9, 27, 257, 437",
+          "claim": "The print is identified and indexed with episcopal prefatory text, calendar, temporal, Canon and sanctoral."
+        }
+      ],
+      "limitations": "Original leaves and the remaining printed series are uncollated.",
+      "reception": "No 1482 diocesan adoption or direct descent from Ms. Barth. 118 asserted."
+    },
+    {
+      "id": "central-europe-round3:stage-olomouc-1488",
+      "tradition_id": "central-europe-round3:olomouc",
+      "label": "1488 Missale Olomucense, Bamberg",
+      "date_label": "1488 publication date",
+      "start_year": 1488,
+      "end_year": 1488,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "One edition-identified print; component contents are not certified.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:ce-olomouc-olomouc-1488-missale-olomucense-bamberg"
+      ],
+      "witness_label": "1488 Missale Olomucense, Bamberg",
+      "summary": "This is the publication date of the Sensenschmidt/Drach book.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "central-europe-round3:source-olomouc-1488",
+          "locus": "Digitisation title record, Published and Description fields",
+          "claim": "The holding library identifies an Olomouc Missal edition of 4 March 1488, 370 leaves."
+        }
+      ],
+      "limitations": "The print was not collated against Olomouc manuscripts or the later prints.",
+      "reception": "A title for Olomouc does not date first or universal diocesan use."
+    },
+    {
+      "id": "central-europe-round3:stage-olomouc-1499-fragment",
+      "tradition_id": "central-europe-round3:olomouc",
+      "label": "1499 Missale Olomucense surviving fragment",
+      "date_label": "1499 publication date",
+      "start_year": 1499,
+      "end_year": 1499,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Fragmentary sanctoral witness only.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:ce-olomouc-olomouc-1499-missale-olomucense-nuremberg"
+      ],
+      "witness_label": "1499 Missale Olomucense surviving fragment",
+      "summary": "The date identifies the edition; the surviving fragment does not stand for its complete contents.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "central-europe-round3:source-olomouc-1499",
+          "locus": "Book 122, age, shelfmark, Remark Fragment and p. 4 (268r)",
+          "claim": "The Nuremberg Stuchs print is identified by a surviving BSB fragment with a sanctoral entry."
+        }
+      ],
+      "limitations": "The date and single indexed leaf do not prove change from 1488.",
+      "reception": "No local-use date established."
+    },
+    {
+      "id": "central-europe-round3:stage-augsburg-1510",
+      "tradition_id": "central-europe-round3:augsburg",
+      "label": "1510 Missale secundum ritum Augustensis ecclesiae",
+      "date_label": "1510 publication date",
+      "start_year": 1510,
+      "end_year": 1510,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "One 1510 Augsburg book; title-level additions only.",
+      "components": [
+        "calendar",
+        "propers",
+        "ordinary",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:german-swiss-augsburg-usuarium-19"
+      ],
+      "witness_label": "1510 Missale secundum ritum Augustensis ecclesiae",
+      "summary": "Ratdolt’s print is dated 1510, while introduction dates of its named additions are unknown.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "central-europe-round3:source-augsburg-1510",
+          "locus": "Book 19, pp. 4, 6, 8, 30, 217, 302, 446, 458 and 484",
+          "claim": "The named Augsburg print contains indexed episcopal prefatory text, calendar, Ordinary and Mass divisions; title mentions added Masses."
+        }
+      ],
+      "limitations": "The title’s added-Masses language is not encoded as a before/after transition.",
+      "reception": "The indexed episcopal preface does not by itself establish dates or extent of diocesan implementation."
+    },
+    {
+      "id": "central-europe-round3:stage-bamberg-1490",
+      "tradition_id": "central-europe-round3:bamberg",
+      "label": "1490 Liber missalis Bambergensis",
+      "date_label": "1490 publication date",
+      "start_year": 1490,
+      "end_year": 1490,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "One 1490 Bamberg print.",
+      "components": [
+        "calendar",
+        "propers",
+        "ordinary",
+        "anaphoras"
+      ],
+      "witness_ids": [
+        "western:german-swiss-bamberg-usuarium-20"
+      ],
+      "witness_label": "1490 Liber missalis Bambergensis",
+      "summary": "Its title names Bamberg order, and the index locates a bishop’s prefatory item.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "central-europe-round3:source-bamberg-1490",
+          "locus": "Book 20, pp. 19, 21, 330, 341, 439, 645",
+          "claim": "The Sensenschmidt book is identified by the 1490 colophon and indexed Mass sections."
+        }
+      ],
+      "limitations": "No comparison with the 1499 or 1507 print, and no inferred reform.",
+      "reception": "Printing for the Bamberg church is distinct from proved use in every local parish."
+    },
+    {
+      "id": "central-europe-round3:stage-bremen-1511",
+      "tradition_id": "central-europe-round3:bremen",
+      "label": "1511 Ordo missalis Bremensis",
+      "date_label": "1511 publication date",
+      "start_year": 1511,
+      "end_year": 1511,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "One edition-identified printed missal.",
+      "components": [
+        "propers",
+        "ordinary",
+        "anaphoras",
+        "calendar"
+      ],
+      "witness_ids": [
+        "western:german-swiss-bremen-usuarium-106"
+      ],
+      "witness_label": "1511 Ordo missalis Bremensis",
+      "summary": "The 1511 year dates the printing.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "central-europe-round3:source-bremen-1511",
+          "locus": "Book 106, title and pp. 10, 218, 246, 351, 452",
+          "claim": "The Strasbourg Beck print names Bremen order and contains indexed temporal, Ordinary, Canon, sanctoral and Common."
+        }
+      ],
+      "limitations": "Fifteenth-century Bremen manuscripts and this print remain uncollated.",
+      "reception": "No date of Bremen-wide reception inferred."
+    },
+    {
+      "id": "central-europe-round3:stage-eichstatt-1486",
+      "tradition_id": "central-europe-round3:eichstatt",
+      "label": "1486 Missale Eystetense",
+      "date_label": "1486 publication date",
+      "start_year": 1486,
+      "end_year": 1486,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "One 1486 Eichstätt print.",
+      "components": [
+        "rubrics",
+        "ordinary",
+        "propers",
+        "calendar"
+      ],
+      "witness_ids": [
+        "western:german-swiss-eichstatt-usuarium-22"
+      ],
+      "witness_label": "1486 Missale Eystetense",
+      "summary": "The date marks publication of BSB Rar. 0953.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "central-europe-round3:source-eichstatt-1486",
+          "locus": "Book 22, pp. 10, 16, 326, 374, 516",
+          "claim": "The Reyser print is identified with indexed diocesan prefatory text, Ordinary, sanctoral and local rubrics."
+        }
+      ],
+      "limitations": "The bishop’s text is an indexed item, not an inspected full instrument; no precursor comparison.",
+      "reception": "No first-use or later replacement date established."
+    },
+    {
+      "id": "central-europe-round3:stage-pecs-1487",
+      "tradition_id": "central-europe-round3:pecs",
+      "label": "1487 Missale Quinqueecclesiense, Wolfenbüttel copy",
+      "date_label": "1487 publication date",
+      "start_year": 1487,
+      "end_year": 1487,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "One 1487 print despite its later misleading handwritten label.",
+      "components": [
+        "calendar",
+        "propers",
+        "ordinary",
+        "anaphoras"
+      ],
+      "witness_ids": [
+        "western:ce-pecs-pecs1487"
+      ],
+      "witness_label": "1487 Missale Quinqueecclesiense, Wolfenbüttel copy",
+      "summary": "The source expressly warns that the later Ultramontanorum tag is incorrect.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "central-europe-round3:source-pecs-1487",
+          "locus": "Book 91, age, remark and contents pp. 19, 253, 267, 392",
+          "claim": "The Basel Wenssler print is attributed to Pécs, with indexed temporal, Ordinary, Canon and sanctoral material."
+        }
+      ],
+      "limitations": "Original print has not been collated with 1499 or manuscript fragments.",
+      "reception": "Attribution of the book is not proof of every parish’s use."
+    },
+    {
+      "id": "central-europe-round3:stage-eger-1394",
+      "tradition_id": "central-europe-round3:eger",
+      "label": "Eger U2 VI.5, 1394 missal manuscript",
+      "date_label": "1394 attestation date",
+      "start_year": 1394,
+      "end_year": 1394,
+      "date_kind": "attestation",
+      "status": "provisional",
+      "scope": "Dated manuscript identity, not a certified Miskolc or Eger local recension.",
+      "components": [
+        "calendar",
+        "propers",
+        "ordinary",
+        "anaphoras"
+      ],
+      "witness_ids": [
+        "western:ce-eger-miskolc1394"
+      ],
+      "witness_label": "Eger U2 VI.5, 1394 missal manuscript",
+      "summary": "The year is a scribal colophon date reported by the catalogue.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "central-europe-round3:source-eger-1394",
+          "locus": "Book 764, colophon Remark and contents pp. 18, 164, 170, 242, 367",
+          "claim": "A colophon names scribe Ladislaus de Miskolch and year 1394; the manuscript is held at Eger."
+        }
+      ],
+      "limitations": "The scribe name alone does not determine production or use place.",
+      "reception": "Eger holding does not establish historical Eger diocesan reception."
+    },
+    {
+      "id": "central-europe-round3:stage-eger-1509",
+      "tradition_id": "central-europe-round3:eger",
+      "label": "1509 Ordinarius Agriensis component",
+      "date_label": "1509 publication date",
+      "start_year": 1509,
+      "end_year": 1509,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Ordinal component only.",
+      "components": [
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:ce-eger-eger1509"
+      ],
+      "witness_label": "1509 Ordinarius Agriensis component",
+      "summary": "Its 1509 date is publication, while the modern Dobszay edition is separate.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "central-europe-round3:source-eger-1509",
+          "locus": "Book 854, original title, genre, age and holding fields",
+          "claim": "The Haller print is identified as an Eger ordinal for observance, distinct from a missal."
+        }
+      ],
+      "limitations": "Exact Mass-specific provisions and relation to 1514 print not checked here.",
+      "reception": "Title’s Eger association does not give implementation date."
+    },
+    {
+      "id": "central-europe-round3:stage-zadar-ofm-ms",
+      "tradition_id": "central-europe-round3:zadar-ofm",
+      "label": "BAV Reg. lat. 2049, Zadar OFM gradual-missal",
+      "date_label": "1250–1300 attestation date",
+      "start_year": 1250,
+      "end_year": 1300,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "One Franciscan manuscript, not a Zadar cathedral missal.",
+      "components": [
+        "chant",
+        "propers",
+        "ordinary",
+        "anaphoras",
+        "calendar"
+      ],
+      "witness_ids": [
+        "western:ce-zadar-zadar-ofm"
+      ],
+      "witness_label": "BAV Reg. lat. 2049, Zadar OFM gradual-missal",
+      "summary": "The range is estimated copying date, not duration of Franciscan use.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "central-europe-round3:source-zadar-ofm-ms",
+          "locus": "Book 1132, identity and contents pp. 11, 22, 219, 226, 313",
+          "claim": "The manuscript is indexed as a gradual and missal with a Roman-curial order title and Mass components in Franciscan Zadar context."
+        }
+      ],
+      "limitations": "Original leaves and possible later layers are uncollated.",
+      "reception": "The OFM attribution does not establish a separate secular Zadar recension."
+    },
+    {
+      "id": "central-europe-round3:stage-utrecht-1495",
+      "tradition_id": "central-europe-round3:utrecht",
+      "label": "1495 Missale secundum ordinarium Traiectensem",
+      "date_label": "1495 publication date",
+      "start_year": 1495,
+      "end_year": 1495,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "One identified Delft edition.",
+      "components": [
+        "calendar",
+        "propers",
+        "ordinary",
+        "anaphoras"
+      ],
+      "witness_ids": [
+        "western:german-swiss-utrecht-usuarium-96"
+      ],
+      "witness_label": "1495 Missale secundum ordinarium Traiectensem",
+      "summary": "The 1495 date is a print date, not a new Utrecht rite event.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "central-europe-round3:source-utrecht-1495",
+          "locus": "Book 96, title and pp. 10, 18, 258, 269, 346, 534",
+          "claim": "The Snellaert Delft print names the Utrecht ordinal and is indexed with the major Mass divisions and colophon."
+        }
+      ],
+      "limitations": "Other Utrecht manuscripts and prints remain uncollated.",
+      "reception": "No relation to modern Old Catholic books or adoption date is asserted."
+    },
+    {
+      "id": "central-europe-round3:stage-riga-ms",
+      "tradition_id": "central-europe-round3:riga",
+      "label": "Akad. Rīga Ms. 1 (R 2665), Missale Rigense",
+      "date_label": "c.1450 catalogue estimate; competing fourteenth-century dating unresolved",
+      "start_year": null,
+      "end_year": null,
+      "date_kind": "attestation",
+      "status": "provisional",
+      "scope": "One manuscript with reported provenance and marginal notes.",
+      "components": [
+        "calendar",
+        "propers",
+        "ordinary",
+        "anaphoras"
+      ],
+      "witness_ids": [
+        "western:german-swiss-riga-usuarium-560"
+      ],
+      "witness_label": "Akad. Rīga Ms. 1 (R 2665), Missale Rigense",
+      "summary": "The catalogue identifies one Riga missal with indexed Mass contents and a reported cathedral altar ownership note. Its copying date is left unpositioned pending reconciliation of divergent estimates.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "central-europe-round3:source-riga-ms",
+          "locus": "Book 560, age, shelfmark, fol. 2 note and contents pp. 4, 10, 209, 214, 281",
+          "claim": "The catalogue identifies one Riga missal with indexed Mass contents and a reported cathedral altar ownership note."
+        }
+      ],
+      "limitations": "Ownership transcription and manuscript layers need original-folio review; this is not the Viborg print held in Riga.",
+      "reception": "The altar note is ownership context, not an independently established date of general Riga adoption."
+    }
+  ],
+  "transitions": [],
+  "gaps": [
+    {
+      "id": "central-europe-round3:gap-mainz-series",
+      "tradition_id": "central-europe-round3:mainz",
+      "period": "eleventh–eighteenth centuries",
+      "missing": "Original summer manuscript and individual printings require component collation, act review and reception evidence.",
+      "next_source": "Frankfurt Ms. Barth. 118 original images; Usuarium origin 57 book cards 28, 5224–25, 5252–53, 6492 and 7295–97.",
+      "consequence": "No direct manuscript-to-print descent or ten dated revisions follows."
+    },
+    {
+      "id": "central-europe-round3:gap-olomouc-series",
+      "tradition_id": "central-europe-round3:olomouc",
+      "period": "thirteenth–eighteenth centuries",
+      "missing": "Manuscript identities and whole 1499/1505/1712/1740 print contents remain uncollated.",
+      "next_source": "dilibri 1488 digitisation; Usuarium Olomouc origin and BSB fragment 122; original 1505 and eighteenth-century books.",
+      "consequence": "1499 fragment and 1488 metadata do not prove a substantive transition."
+    },
+    {
+      "id": "central-europe-round3:gap-german-prints",
+      "tradition_id": "central-europe-round3:augsburg",
+      "period": "fifteenth–sixteenth centuries",
+      "missing": "Compare title-mentioned additions with earlier Augsburg editions and inspect episcopal preface.",
+      "next_source": "Usuarium 19 original PDF and Augsburg origin 35, especially 1491, 1496, 1505 and 1555 missals.",
+      "consequence": "No revision date or effective act is inferred from 1510 title."
+    },
+    {
+      "id": "central-europe-round3:gap-bamberg-prints",
+      "tradition_id": "central-europe-round3:bamberg",
+      "period": "1490–1507",
+      "missing": "Compare the 1490, 1499 and 1507 prints and inspect the indexed episcopal decree.",
+      "next_source": "Usuarium books 20, 126, 125 and original BSB page images.",
+      "consequence": "Multiple print dates do not count as multiple recensions."
+    },
+    {
+      "id": "central-europe-round3:gap-bremen-manuscripts",
+      "tradition_id": "central-europe-round3:bremen",
+      "period": "fifteenth–sixteenth centuries",
+      "missing": "Collate Bremen manuscript witnesses with the 1511 print.",
+      "next_source": "Usuarium Bremen origin 40, manuscripts 6975–76 and print 106.",
+      "consequence": "The 1511 print is a book state, not a dated wholesale revision."
+    },
+    {
+      "id": "central-europe-round3:gap-eichstatt-print-series",
+      "tradition_id": "central-europe-round3:eichstatt",
+      "period": "1486–1556",
+      "missing": "Inspect 1486 bishop’s text and compare printings and later 1556 lead.",
+      "next_source": "Usuarium Eichstätt origin 42 and BSB Rar. 0953 original page images.",
+      "consequence": "No final-state or replacement date can be assigned."
+    },
+    {
+      "id": "central-europe-round3:gap-pecs-series",
+      "tradition_id": "central-europe-round3:pecs",
+      "period": "fifteenth century",
+      "missing": "Identify each fragment and compare the 1487 and 1499 Pécs prints.",
+      "next_source": "Usuarium books 91, 532, 4657, 9845 and 9874–76; original HAB images.",
+      "consequence": "Copies and fragments cannot become an inferred revision series."
+    },
+    {
+      "id": "central-europe-round3:gap-eger-context",
+      "tradition_id": "central-europe-round3:eger",
+      "period": "1394–1563",
+      "missing": "Check manuscript origin and use, Mass-specific ordinal directions, 1514 print, and 1563 praefationale.",
+      "next_source": "Original Eger U2 VI.5, Ordinarius 1509 Ossolineum XVI.Qu.1922, Földváry’s introduction.",
+      "consequence": "Eger holding and an ordinal do not prove a complete Eger missal sequence."
+    },
+    {
+      "id": "central-europe-round3:gap-split-layers",
+      "tradition_id": "central-europe-round3:split",
+      "period": "ninth–fourteenth centuries",
+      "missing": "Separate the ninth-century Sacramentarium Spalatense fragments, twelfth-century Chapter Archive 624D missal and disputed Clmae 334 layers; establish copying and local use.",
+      "next_source": "Split Chapter Archive 624D fols. 217 and 220 and missal body; OSZK Clmae 334 original images; manuscript descriptions cited in Western inventory.",
+      "consequence": "No composite Split date, reception or relation to Zadar is manufactured."
+    },
+    {
+      "id": "central-europe-round3:gap-zadar-context",
+      "tradition_id": "central-europe-round3:zadar-ofm",
+      "period": "thirteenth–fifteenth centuries",
+      "missing": "Check BAV manuscript folios and distinguish Franciscan book from Zadar evangelistary, Benedictine and gradual fragment witnesses.",
+      "next_source": "BAV Reg. lat. 2049 original digitisation, Usuarium book 1132 and separately shelfmarked Zadar sources.",
+      "consequence": "Franciscan locality cannot stand for a diocesan recension."
+    },
+    {
+      "id": "central-europe-round3:gap-utrecht-series",
+      "tradition_id": "central-europe-round3:utrecht",
+      "period": "fifteenth–sixteenth centuries",
+      "missing": "Reconcile early Delft edition dates and compare Utrecht manuscripts and prints through 1540.",
+      "next_source": "Usuarium Utrecht origin 424, original 1495 KB 170 E 11 and other named prints.",
+      "consequence": "The 1495 witness supplies no ancestry or early modern reception date."
+    },
+    {
+      "id": "central-europe-round3:gap-riga-dating",
+      "tradition_id": "central-europe-round3:riga",
+      "period": "fourteenth–fifteenth centuries",
+      "missing": "Resolve divergent century assignments and inspect ownership note and marginal hands.",
+      "next_source": "Akad. Rīga Ms. 1 (R 2665) original folios; Usuarium book 560; institutional exhibition dating.",
+      "consequence": "Approximate 1450 is a provisional catalogue placement, not a fixed copying or adoption year."
+    }
+  ]
+}
