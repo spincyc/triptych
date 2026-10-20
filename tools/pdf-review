@@ -461,8 +461,20 @@ def managed_run_id() -> str | None:
 
 
 def validate_artifact_root(value: Path, option: str) -> Path:
-    output = (ROOT / value).resolve() if not value.is_absolute() else value.resolve()
-    build_root = (ROOT / "build").resolve()
+    if ".." in value.parts:
+        raise ReviewError(f"{option} must not contain parent-directory traversal")
+    checkout = ROOT.resolve()
+    requested = checkout / value if not value.is_absolute() else value
+    output = requested.resolve()
+    build_root = checkout / "build"
+    scratch_root = checkout / ".scratch"
+    if output in (checkout, scratch_root):
+        raise ReviewError(f"{option} must not replace the checkout or .scratch root")
+    # A lexical artifact path must remain in that exact tree after resolving
+    # symlinks, even if its target would otherwise qualify as a /tmp path.
+    for artifact_root in (build_root, scratch_root):
+        if is_relative_to(requested, artifact_root) and not is_relative_to(output, artifact_root):
+            raise ReviewError(f"{option} resolves outside this checkout's {artifact_root.name}/ tree")
     run_id = managed_run_id()
     managed_worker = run_id is not None
     temporary_roots: list[Path] = []
@@ -497,17 +509,26 @@ def validate_artifact_root(value: Path, option: str) -> Path:
         output != temporary_root and is_relative_to(output, temporary_root)
         for temporary_root in temporary_roots
     )
-    allowed = is_relative_to(output, build_root) or allowed_temporary
+    allowed_scratch = (
+        not managed_worker
+        and is_relative_to(requested, scratch_root)
+        and is_relative_to(output, scratch_root)
+    )
+    allowed = is_relative_to(output, build_root) or allowed_scratch or allowed_temporary
+    # /tmp may itself contain a checkout. Its source paths and unrelated dotted
+    # directories must not become replaceable artifact roots by that accident.
+    for path in (requested, output):
+        if is_relative_to(path, checkout) and not any(
+            is_relative_to(path, root) for root in (build_root, scratch_root)
+        ):
+            allowed = False
     if not allowed:
-        temporary_description = (
-            "the managed TMPDIR"
+        allowed_description = (
+            "this checkout's build/ tree or a managed TMPDIR subdirectory"
             if managed_worker
-            else "/tmp"
+            else "this checkout's build/ tree, a .scratch/ subdirectory, or a /tmp subdirectory"
         )
-        raise ReviewError(
-            f"{option} must remain under this checkout's build/ tree or a "
-            f"{temporary_description} subdirectory"
-        )
+        raise ReviewError(f"{option} must remain under {allowed_description}")
     return output
 
 
@@ -1617,13 +1638,13 @@ def parse_arguments(argv: list[str]) -> argparse.Namespace:
         "--output",
         type=Path,
         default=DEFAULT_OUTPUT,
-        help="inspection artifact root",
+        help="inspection artifact root (build/, unmanaged .scratch/ descendants, or an allowed temporary subdirectory)",
     )
     parser.add_argument(
         "--cache",
         type=Path,
         default=default_cache_root(),
-        help="persistent content-addressed raster cache",
+        help="content-addressed raster cache (same allowed roots as --output)",
     )
     parser.add_argument(
         "--jobs",

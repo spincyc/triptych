@@ -1,0 +1,590 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-native-book",
+  "id": "cistercian-1657-offertory",
+  "title": "Cistercian missal 1657: complete bounded offertory constituent",
+  "extent_kind": "constituent",
+  "excluded_book_divisions": [
+    "All front matter, calendar and general rubrics outside this bounded Ordo Missæ constituent",
+    "Earlier Ordo Missæ, including the Creed and its chant before the opening Deinde osculatur Altare on printed p. 172",
+    "All prefaces beginning with ¶ Sequens Præfatio below the rule on printed p. 174, the Canon and remaining Ordo Missæ",
+    "The entire Temporale, Sanctorale, Commons, votive and other proper formularies, lectionary and chant outside the declared constituent"
+  ],
+  "scope": "Bounded functional offertory constituent within the native running head Ordo Missæ: from red Deinde osculatur Altare, & versus ad populum after the Creed on printed p. 172, through the complete Secreta/preface-transition rubric ending signum Crucis sibi producit à fronte ad pectus on p. 174, above the horizontal rule and ¶ Sequens Præfatio. Includes every intervening prayer, dialogue, black quoted incipit, sign and red rubric. This functional bound is not a printed native chapter heading. No earlier Creed or later preface belongs to the constituent.",
+  "transcribed_by": "AI source transcriber (1657 Cistercian offertory preparation)",
+  "stage_ids": [
+    "cistercian-1606-1657-1657"
+  ],
+  "catalogue_witness_ids": [
+    "western:cistercian-1657"
+  ],
+  "components": [
+    "ordinary",
+    "rubrics"
+  ],
+  "languages": [
+    "la"
+  ],
+  "date": {
+    "kind": "publication",
+    "label": "1657 Paris printing; distinct from the 1655 Vaussin mandate",
+    "start_year": 1657,
+    "end_year": 1657,
+    "evidence": [
+      {
+        "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.title-and-imprint",
+        "locus": "FIDES page-file 0005, identified title and 1657 Cramoisy imprint"
+      }
+    ]
+  },
+  "witnesses": [
+    {
+      "id": "cistercian-1657-offertory-pages",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-facsimile-2ac96448",
+      "completeness_evidence": [
+        {
+          "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-extent",
+          "locus": "Printed pp. 172–174; exact opening and closing bounds, complete page images in original sequence"
+        }
+      ],
+      "scope_pages": [
+        [
+          1,
+          3
+        ]
+      ]
+    }
+  ],
+  "extent_path": "src/sources/inventories/eucharistic-books/support/cistercian-1657-offertory-extent.json",
+  "collation_path": "src/sources/inventories/eucharistic-books/support/cistercian-1657-offertory-review.json",
+  "units": [
+    {
+      "unit_id": "unit.cistercian-1657.offertory.opening-dialogue-rubric",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "opening-dialogue-rubric"
+      ],
+      "source_order": 1,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "dialogue-and-rubric",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-opening-dialogue-rubric",
+      "text_sha256": "2a1a97fa6f95ac90065613cfe254c1ccf1bf3ab4967c9886da14311f3f167115"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.suscipe-sancte-pater",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "suscipe-sancte-pater"
+      ],
+      "source_order": 2,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          1,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-suscipe-sancte-pater",
+      "text_sha256": "2ab497152688caf9ce0936d050759966e32b39bce63e4d02464f216619d0994a"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.host-deposition-water-rubric",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "host-deposition-water-rubric"
+      ],
+      "source_order": 3,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-host-deposition-water-rubric",
+      "text_sha256": "64d9c8bf0fd5107bf8205fbf7a741ef6844ac3485ca44f1cf52ab3108e3611da"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.deus-qui-humanae",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "deus-qui-humanae"
+      ],
+      "source_order": 4,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-deus-qui-humanae",
+      "text_sha256": "46ce3c3215d2682e8753872f91b22c540920c476e17f6e84975a651a01af7a3a"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.chalice-offering-rubric",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "chalice-offering-rubric"
+      ],
+      "source_order": 5,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-chalice-offering-rubric",
+      "text_sha256": "af37b510a28eaca658ca813dbb095eeaf0ad6fba61aa52f7c36938b0804298bd"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.offerimus-tibi",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "offerimus-tibi"
+      ],
+      "source_order": 6,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-offerimus-tibi",
+      "text_sha256": "33a691868094896084a294340f6c9ddac048ff958884e460eed6fb5e3fd41992"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.in-spiritu-rubric",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "in-spiritu-rubric"
+      ],
+      "source_order": 7,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-in-spiritu-rubric",
+      "text_sha256": "98d059258e69c01839237ed3ef63e11c9bc4d6452fa104f27c3266fdd4c2e642"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.in-spiritu-humilitatis",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "in-spiritu-humilitatis"
+      ],
+      "source_order": 8,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-in-spiritu-humilitatis",
+      "text_sha256": "adeaa143f4c16048dbc449b080e02d48255fc3aecce1c41f200410583680fea2"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.veni-sanctificator-rubric",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "veni-sanctificator-rubric"
+      ],
+      "source_order": 9,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-veni-sanctificator-rubric",
+      "text_sha256": "adf54d90e31e71f446f320ec77bd50d29493d549b1ba4f694d2b42f12fc27827"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.veni-sanctificator",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "veni-sanctificator"
+      ],
+      "source_order": 10,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer-and-interleaved-rubric",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-veni-sanctificator",
+      "text_sha256": "4d66107d8d3735fca1c5b6a9cc7923e75496e167f5025e6427de0b9b83b4e060"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.incense-blessing-rubric",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "incense-blessing-rubric"
+      ],
+      "source_order": 11,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-incense-blessing-rubric",
+      "text_sha256": "dcb0728606f01d13621ee79db1bcbee88588e60d8f75b6a32d8db591533ef90b"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.per-intercessionem",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "per-intercessionem"
+      ],
+      "source_order": 12,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-per-intercessionem",
+      "text_sha256": "e526d8513899e9baf51d5190c0a6abe20705324739a56b2f0d01731786cf0be7"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.oblata-incensing-rubric",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "oblata-incensing-rubric"
+      ],
+      "source_order": 13,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-oblata-incensing-rubric",
+      "text_sha256": "feb0f927de6aa1a38dcf34d954ed94a25a5ab6bc70d3b3dccaa2491beb30cc73"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.incensum-istud",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "incensum-istud"
+      ],
+      "source_order": 14,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-incensum-istud",
+      "text_sha256": "e447e107dd83c0c62108e0cc9c0ec371d01b39811c2478e760f62762e5e2bb94"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.altar-incensing-rubric",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "altar-incensing-rubric"
+      ],
+      "source_order": 15,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-altar-incensing-rubric",
+      "text_sha256": "c420953513fbb383d64901a9723b63aa1108d39dfb5d55ab0af491e3f211b3d8"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.dirigatur-domine",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "dirigatur-domine"
+      ],
+      "source_order": 16,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-dirigatur-domine",
+      "text_sha256": "0f3e31cefb155028763dad760f501e09bf4b7c68ca0e0517727b3a20b21f741b"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.thurible-return-rubric",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "thurible-return-rubric"
+      ],
+      "source_order": 17,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-thurible-return-rubric",
+      "text_sha256": "5dc9fb762afdf60205a394ba3280bd62424c027f771fb679cacddfe18413e34b"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.accendat-in-nobis",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "accendat-in-nobis"
+      ],
+      "source_order": 18,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-accendat-in-nobis",
+      "text_sha256": "c3ec0b2865daa1078e081dbb648a52d9432941239bc8aa981b10572c05699541"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.lavabo-rubric",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "lavabo-rubric"
+      ],
+      "source_order": 19,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          2,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-lavabo-rubric",
+      "text_sha256": "d54a51abf43084d65b8d2ddaa22febc46081a2e4ba607441acb4d506ce155809"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.lavabo-doxology",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "lavabo-doxology"
+      ],
+      "source_order": 20,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "psalm-and-doxology",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-lavabo-doxology",
+      "text_sha256": "6680858d7f847a8528b308cfadb05af542bcce411272824ce3f00c0cb0e3ea3f"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.suscipe-trinitas-rubric",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "suscipe-trinitas-rubric"
+      ],
+      "source_order": 21,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric-with-quoted-incipit",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-suscipe-trinitas-rubric",
+      "text_sha256": "1cad74a666f531474c3ccb51f137c953ebdd72c63ecc4218cc3e1d969559d3b8"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.suscipe-trinitas",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "suscipe-trinitas"
+      ],
+      "source_order": 22,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.suscipe-trinitas",
+      "text_sha256": "3088e7f4905afabe0f2e384ed69a33c58342b21de8a79c7e431c655a174a07de",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-facsimile-2ac96448",
+      "verified_against_artifact_sha256": "2ac96448c79e67ab0fce08467f71a42a51079c81198af7e7cf68cdf5d1a8ee53"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.orate-rubric",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "orate-rubric"
+      ],
+      "source_order": 23,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-orate-rubric",
+      "text_sha256": "4eccb43f3928dc671f25df1218354904340b167e9dfe650f4e3707379851cb5f"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.orate-response",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "orate-response"
+      ],
+      "source_order": 24,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "dialogue-and-interleaved-rubrics",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-orate-response",
+      "text_sha256": "38596a06743ffa215bb30037f0fe3ec0b2b1a3b25fc9f035e69b20fac0bc2228"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.offertory.secreta-preface-transition-rubric",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "secreta-preface-transition-rubric"
+      ],
+      "source_order": 25,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric-with-interleaved-spoken-cues",
+      "witness_id": "cistercian-1657-offertory-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-secreta-preface-transition-rubric",
+      "text_sha256": "67600e2efa95a44f923a6f5a5c84904a7882e940fdb2cc608f4279df4b661483"
+    }
+  ]
+}

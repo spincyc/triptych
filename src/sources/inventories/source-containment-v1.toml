@@ -3699,3 +3699,25 @@ work_id = "work.anonymous.karlsruhe-aug253-palimpsest-elmss-1570"
 locator = "Cod. Aug. perg. 253 fols. 13–14, 18–25 and 96; PDF pp. 30–33, 40–55 and 196–197"
 extent_unresolved = "Folio and image bounds are registered, but the Mass components and text were not read or collated. This is not the Mone Masses."
 basis = "Segment segment.anonymous.karlsruhe-aug253-palimpsest-elmss-1570.medieval-undertext.bounded-folios pins the BLB artifact SHA and three PDF ranges; latin-early receipt version latin-early-elmss-1570 and its Suski entry [48] identify CLA VIII 1103 as a separate sacramentary layer."
+
+# Isolated Lviv Google Books page images reviewed 2026-10-20.
+
+[[not_containers]]
+id = "artifact.lviv-orthodox-eparchy.leiturgiarion.1646-lviv-mihail-sliozka.google-jr1n-pa1-jpeg-bf777130"
+manifest_sha256 = "cd7301623abfdbaeef7d41b160232619f2cc77cbe051324e9d9a61e5a9cba75f"
+reason = "One 82,681-byte JPEG of provider page PA1, 575 by 703 pixels, shows a single printed service-heading leaf of the owning Leiturgiarion. It is neither the publication title nor a colophon and contains no separately identified work. The unchanged artifact notes explicitly deny whole-volume acquisition; that denial triggers the container-shape pattern but does not describe additional works inside this one-page image. No conclusion about the unacquired book's remaining constituents is made."
+
+[[not_containers]]
+id = "artifact.lviv-orthodox-eparchy.leiturgiarion.1646-lviv-mihail-sliozka.google-jr1n-pp3-jpeg-e3923f79"
+manifest_sha256 = "dead57a8ab6c85a1d2d771655fa73fc18f4d55a8e1252f079860d20d01f5941e"
+reason = "One 31,888-byte JPEG of provider page PP3, 575 by 689 pixels, shows a single blank preliminary leaf, with no separately identified work, historical title or publication-date evidence. The unchanged artifact notes explicitly deny whole-volume acquisition; that denial triggers the container-shape pattern but does not describe additional works inside this one-page image. No conclusion about the unacquired book's remaining constituents is made."
+
+[[not_containers]]
+id = "artifact.lviv-orthodox-eparchy.leiturgiarion.1646-lviv-mihail-sliozka.google-jr1n-pp4-jpeg-ab3d69a8"
+manifest_sha256 = "3502d269d8006cc1ab8e8a1def05ca14b7d38d30e1e281d1bcc7690bcbf652ee"
+reason = "One 30,439-byte JPEG of provider page PP4, 575 by 676 pixels, shows a single blank preliminary leaf, with no separately identified work, historical title or publication-date evidence. The unchanged artifact notes explicitly deny whole-volume acquisition; that denial triggers the container-shape pattern but does not describe additional works inside this one-page image. No conclusion about the unacquired book's remaining constituents is made."
+
+[[not_containers]]
+id = "artifact.lviv-orthodox-eparchy.leiturgiarion.1646-lviv-mihail-sliozka.google-jr1n-pp7-jpeg-9d467f01"
+manifest_sha256 = "177e6244b41acffa051dcda192c6eecfda441dd47db1b7f95085e5db1c787a13"
+reason = "One 39,880-byte JPEG of provider page PP7, 575 by 689 pixels, shows a single blank preliminary leaf, with no separately identified work, historical title or publication-date evidence. The unchanged artifact notes explicitly deny whole-volume acquisition; that denial triggers the container-shape pattern but does not describe additional works inside this one-page image. No conclusion about the unacquired book's remaining constituents is made."

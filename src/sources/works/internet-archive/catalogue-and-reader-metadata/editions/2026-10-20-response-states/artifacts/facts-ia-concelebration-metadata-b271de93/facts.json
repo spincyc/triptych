@@ -1,0 +1,82 @@
+{
+  "schema": "triptych-source-factual-extract-v1",
+  "rights_notice": "Project-created selection of factual metadata, distributed under Triptych's CC BY 4.0 terms. The source's individual facts and titles are not claimed as project-authored expression. This file contains no liturgical body, host UI, user favorites/account identifiers or unselected descriptive prose.",
+  "source_artifact_id": "artifact.internet-archive.catalogue-and-reader-metadata.2026-10-20-response-states.raw-ia-concelebration-metadata-8be0e583",
+  "source_sha256": "8be0e58335dea0dc5975e364eff1f1b5facb8433bdb5cec9e80c38c020caeb97",
+  "source_bytes": 11157,
+  "source_url": "https://archive.org/metadata/bwb_W9-COP-443",
+  "method": "GET",
+  "params": {},
+  "facts": {
+    "item": {
+      "identifier": "bwb_W9-COP-443",
+      "title": "Ritus Servandus in Conselebratione Missae et Ritus Communionis Sub Utraque Specie",
+      "date": "1965",
+      "collection": [
+        "internetarchivebooks",
+        "printdisabled",
+        "inlibrary"
+      ],
+      "access-restricted-item": "true",
+      "imagecount": "110",
+      "image_count": "108",
+      "identifier-ark": "ark:/13960/s2x7cvntkdx"
+    },
+    "files": [
+      {
+        "name": "bwb_W9-COP-443.pdf",
+        "size": "3584757",
+        "format": "Text PDF",
+        "private": "true",
+        "source": "derivative",
+        "original": "bwb_W9-COP-443_page_numbers.json",
+        "md5": "7c6e197540fabaa1e239bef4e5d3de7a",
+        "sha1": "15f78ff491dab35a41aa58d78b4fddb3ee7889ef"
+      },
+      {
+        "name": "bwb_W9-COP-443_djvu.xml",
+        "size": "1265993",
+        "format": "Djvu XML",
+        "private": "true",
+        "source": "derivative",
+        "original": "bwb_W9-COP-443_hocr.html",
+        "md5": "10700940c803e11c3a6763faf5575fcc",
+        "sha1": "d889cd91001f6669675834cb4724f627d4bfc9fc"
+      },
+      {
+        "name": "bwb_W9-COP-443_files.xml",
+        "format": "Metadata",
+        "source": "original",
+        "md5": "62c3d4c135817676ff18db493e46878b"
+      },
+      {
+        "name": "bwb_W9-COP-443_jp2.zip",
+        "size": "31253089",
+        "format": "Single Page Processed JP2 ZIP",
+        "private": "true",
+        "source": "derivative",
+        "original": "bwb_W9-COP-443_orig_jp2.tar",
+        "md5": "c329ae80b8970a860e554b1d0fdf6521",
+        "sha1": "3f1d5fc3f859ff8c3b17d51e530f5bd3dd1452da",
+        "filecount": "110"
+      },
+      {
+        "name": "bwb_W9-COP-443_meta.xml",
+        "size": "2681",
+        "format": "Metadata",
+        "source": "original",
+        "md5": "53631c2bcb4ee92719d63a7a0bb16812",
+        "sha1": "31c084e5f325675f1246837c796a85b9c883af49"
+      },
+      {
+        "name": "bwb_W9-COP-443_scandata.xml",
+        "size": "130903",
+        "format": "Scandata",
+        "source": "original",
+        "original": "bwb_W9-COP-443_scandata.xml",
+        "md5": "71bd0607de7e22a17191b7f9d8e97a7d",
+        "sha1": "1490a92a427d91a2ac797722c10490f1b6c3cb33"
+      }
+    ]
+  }
+}

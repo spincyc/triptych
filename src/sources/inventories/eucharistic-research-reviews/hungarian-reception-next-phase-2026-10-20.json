@@ -1,0 +1,633 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "hungarian-reception-next-phase-2026-10-20",
+  "title": "Hungarian received service-book states and separate early copy-provenance controls",
+  "lane": "hungarian-reception-next",
+  "side": "eastern",
+  "checked_on": "2026-10-20",
+  "reviewed_on": "2026-10-20",
+  "coverage_rows": [
+    "hungarian"
+  ],
+  "target_inventory": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
+  "review_files": {
+    "accepted_manifest_sha256": "e2613b94a47db8e9dfbb6fed830347a39b6fcb19c3447535ed8d319f6c24e52f",
+    "accepted_dossier_sha256": "d54f53b8e1c57f6292b8623855d267731c9753cfb1e5728fb349ed833e4fe495",
+    "independent_review_sha256": "6cdd2103f19962d9297866a2cb0d4ab72dd5bc34bf740c4cd755b720c8e6be0c",
+    "superseded_independent_review_sha256": "554809d5abb1ae064696fc7b31d759788a380a0f782c386feec96f2598b3aea8",
+    "verified_file_count": 67,
+    "verdict": "accepted-revision-2"
+  },
+  "integration": {
+    "new_source_ids": [
+      "hungarian-next-src-choim1646",
+      "hungarian-next-src-google1646",
+      "hungarian-next-src-foldvari1992",
+      "hungarian-next-src-foldvari2015"
+    ],
+    "new_candidate_ids": [
+      "hungarian-next-eger-uu-iii-8"
+    ],
+    "existing_candidate_updates": [
+      "byz-lviv1646-nyirderzs",
+      "byzantine-regional-hung1920",
+      "byzantine-regional-hung1949"
+    ],
+    "promoted_existing_candidate_ids": [
+      "byzantine-regional-hung1920",
+      "byzantine-regional-hung1949"
+    ],
+    "new_stage_ids": [
+      "hungarian-reception:1920-liturgikon",
+      "hungarian-reception:1949-chrysostom-extract"
+    ],
+    "new_transitions": 1,
+    "transition_classification": "witness-succession",
+    "new_substantive_revisions": 0,
+    "review_corrections": [
+      {
+        "id": "HUN-DATE-001",
+        "disposition": "resolved",
+        "evidence": "Stage hungarian-reception:1920-liturgikon now uses date_kind attestation and year 1921. The label, summary, cited claim and limitations expressly distinguish the early-1921 announcement from the candidate's 1920 imprint and August 1920 printing permission, and avoid asserting exact publication in either year. Audit date_limit repeats the same distinction. Stable identities remain unchanged."
+      },
+      {
+        "id": "HUN-INT-002",
+        "disposition": "resolved",
+        "evidence": "Both Földvári proposed source rows no longer carry research_artifact_path. Their hashes, sizes, URLs and evidence limitations are retained."
+      },
+      {
+        "id": "HUN-INT-003",
+        "disposition": "resolved",
+        "evidence": "Hungarian audit proposal uses dossier_coverage.status selected-stages-available."
+      }
+    ],
+    "fingerprint_refresh": "Pending final reviewed input freeze."
+  },
+  "semantics": "The 1920 imprint and 22 August 1920 private-use printing permission remain distinct from the stage’s early-1921 attestation. Exact publication in either year is not established. Operative local wording and worn-copy replacement evidence do not establish Holy See public-language authorization, first celebration, uniform compliance or present obligation. The 1949 component extract and unchanged 1984 reprint are not new full recensions. Ownership and a colophon of another copy establish no early local reception.",
+  "sources": [
+    {
+      "id": "hungarian-next-src-choim1646",
+      "url": "https://choim.org/служебник-1646-року/",
+      "checked_on": "2026-10-20",
+      "title": "Chernihiv Historical Museum named for V. V. Tarnovskyi, Служебник 1646 року (8 February 2021), copy АЛ-674",
+      "evidence_type": "holding-museum-primary-book-photographs",
+      "inspection": "Museum article read; original-book photographs 1–6 acquired and visually inspected. Photograph 5 is the terminal colophon naming Lviv, Mihail Sliozka, 1646 and 23 August. Photograph 4 shows the end of Arsenii Zheliborskyi’s preface and an adjacent heading describing Chrysostom, Basil, Presanctified and the daily offices. Photograph 2 is a contents leaf with the museum shelfmark АЛ-674 visible on the facing endpaper; it is not the missing printed title.",
+      "locus": "https://choim.org/wp-content/uploads/2021/02/5.jpg (colophon); /4.jpg (preface ending and scope heading); /2.jpg (copy identification and contents)",
+      "full_contents_examined": false,
+      "limitation": "Only the article and six photographs were inspected, not a full volume. This museum copy is distinct from Nyírderzs M–920 and the Google Czech copy. Its colophon independently controls the edition imprint/date; no local Hungarian ownership, Catholic reception or complete text follows. No full original title leaf is supplied in the six photographs.",
+      "text_acquisition": "six-offered-photographs-acquired-in-research-scratch",
+      "hash_state": "sha256-computed",
+      "rights_note": "Underlying 1646 book text is old public-domain matter; the museum photographs and modern article carry no inspected reuse grant, and the site reserves rights. No photograph or article text is proposed for Git distribution; metadata and original paraphrases only."
+    },
+    {
+      "id": "hungarian-next-src-google1646",
+      "url": "https://books.google.com/books?id=jr1nAAAAcAAJ",
+      "checked_on": "2026-10-20",
+      "title": "Leiturgiarion, Google Books jr1nAAAAcAAJ, digitized National Library of the Czech Republic copy",
+      "evidence_type": "library-copy-digital-discovery-and-bounded-page-inspection",
+      "inspection": "Public bibliographic page identifies typ. M. Sljozka, 1646, original from National Library of the Czech Republic, digitized 2 May 2016. Displayed images PP1 (cover), PP3, PP4, PP7 (blank preliminaries) and PA1 (first printed service heading, not the publication title) were acquired and inspected. The public page offers a PDF, whose attempted download returned HTTP 429. The complete scan and original imprint/date leaves were not acquired.",
+      "locus": "About page https://books.google.com/books/about/Leiturgiarion.html?id=jr1nAAAAcAAJ; displayed page PA1; preliminary pages PP1, PP3, PP4 and PP7",
+      "full_contents_examined": false,
+      "limitation": "A fuller digital-copy lead, not a verified whole 1646 scan or title-page identification. PP5 returned an image-not-available placeholder; it is excluded from source-image evidence. Page count from a delivery catalogue does not establish physical completeness. No relation to a Hungarian physical copy is established.",
+      "text_acquisition": "bounded-displayed-images-only; offered-whole-pdf-rate-limited",
+      "hash_state": "sha256-computed-for-acquired-pages-only",
+      "rights_note": "No whole source-book or modern Google presentation is proposed for retention. Metadata only; independently identify exact library shelfmark, missing front matter and reproduction terms before retention."
+    },
+    {
+      "id": "hungarian-next-src-foldvari1992",
+      "url": "https://epa.oszk.hu/00000/00021/00349/pdf/MKSZ_EPA00021_1992_108_02_00349.pdf",
+      "checked_on": "2026-10-20",
+      "title": "Sándor Földvári, Adalékok az Egri Főegyházmegyei Könyvtár cirill és glagolita nyomtatványainak proveniencia-kérdéséhez, Magyar Könyvszemle 108/2 (1992), pp. 169–173",
+      "evidence_type": "library-specialist-copy-provenance-study",
+      "inspection": "Printed pp. 169–173 read in the acquired complete issue; pp. 170 and 173 visually inspected. At p. 170 and note 9 the Eger Sluzhebnik is identified as Uu.III.8, catalogue item 4 in Földvári–Ojtozi 1992. Its own title is missing; a foreign Vilnius 1692 title was bound in, causing older misidentification. At p. 173 the inserted title bears Lucas Habina’s ownership inscription. Requests for liturgical books in letters of 22 December 1768 are reported, but the author found no archival trace that the requests were fulfilled.",
+      "locus": "Printed p. 170 and note 9 (PDF p. 80); printed p. 173 and notes 36–40 (PDF p. 83)",
+      "full_contents_examined": false,
+      "limitation": "The physical book and the separate 1992 annotated catalogue were not acquired. The article calls the text block Supraśl 1695; the foreign 1692 title cannot independently authenticate that dating or a complete edition. Signature proves ownership, not altar use or a dated first possession. The study reports Habina changed to the Latin rite during his Eger years; do not erase that qualification when assigning confessional context.",
+      "text_acquisition": "complete-offered-issue-acquired-in-research-scratch",
+      "hash_state": "sha256-computed",
+      "rights_note": "Modern 1992 scholarship; EPA reproduction permission not established. Restricted research bytes only; no modern article text or page images proposed for Git distribution.",
+      "sha256": "b561185479ca8b9c7d31ce4aefca55d4ab398f0497d70c712e7097cd1e8aad58",
+      "byte_size": 12186715
+    },
+    {
+      "id": "hungarian-next-src-foldvari2015",
+      "url": "https://real.mtak.hu/83534/1/Foldvari2015in_Magocsi_Festschrift_onSuprasl_u.pdf",
+      "checked_on": "2026-10-20",
+      "title": "Sándor Földvári, Лукас Габина, преподаватель русинских семинаристов в г. Эгер (Северная Венгрия) – владелец экземпляра первой книги типографии в Супрасле, in A Jubilee Collection: Essays in Honor of Professor Paul Robert Magocsi (2015), pp. 235–245",
+      "evidence_type": "specialist-copy-provenance-study-with-primary-title-photograph",
+      "inspection": "Acquired the complete offered 11-page PDF (two printed pages per image); visually inspected PDF pp. 1–2, 4–7 and 9–11, especially printed pp. 235–241 and the English abstract at p. 245. Printed p. 238 reproduces the inserted Vilnius 1692 title and Lucas Habina’s inscription. Printed pp. 237–239 report a 1775 estate inventory of 82 books, including 16 Church Slavonic books, and attribute its generic Missale Ruthenicum, folio item to this copy. The acquisition route is explicitly hypothetical.",
+      "locus": "Printed pp. 236–239 (PDF pp. 5–6); image of title/signature at printed p. 238 (PDF p. 6); printed English abstract p. 245 (PDF p. 9); REAL item abstract https://real.mtak.hu/83534/",
+      "full_contents_examined": false,
+      "limitation": "The 2015 body calls the printing/colophon 1696 and captions the book 1692–1696; its printed English abstract at p. 245 says both 1696 and 1695, while the REAL abstract and Földvári 1992 say 1695. Preserve this discrepancy. The 2015 treatment of the title/body as a combined Vilnius–Supraśl book differs from the 1992 claim that the title was foreign; neither attribution is independently adjudicated here. The original Eger colophon and 1775 estate document were not seen. The generic estate item is an authorial copy identification, not an exact native-title inventory entry or proof of liturgical use. The inserted title was already identified as foreign in Földvári 1992.",
+      "text_acquisition": "complete-offered-file-acquired-in-research-scratch",
+      "hash_state": "sha256-computed",
+      "rights_note": "Modern 2015 study and original-book photographs embedded in that study, copyrighted volume; no reuse grant inspected. Restricted research bytes only; no modern article text or facsimile exported.",
+      "sha256": "f2ad4a7d98a2cf1aa3cfbe1d9292dd28a1856b32e35b0ad18eba291478085780",
+      "byte_size": 3948233
+    }
+  ],
+  "versions": [
+    {
+      "id": "byz-lviv1646-nyirderzs",
+      "family": "Byzantine",
+      "church_scope": "Historical Slavonic witness from Nyírderzs, now in a Hungarian Greek Catholic college collection; original Lviv imprint not designated Catholic",
+      "book_label": "Leïturgïarïon, si estʹ Služebnikʺ …",
+      "date": "1646-08-23",
+      "language": "Church Slavonic",
+      "kind": "historical-print-witness",
+      "evidence": "collection-catalogue for Nyírderzs copy; independent colophon photograph for edition imprint/date",
+      "source_ids": [
+        "hungarian-collection-1646",
+        "byzantine-regional-src-light2020",
+        "hungarian-next-src-choim1646",
+        "hungarian-next-src-google1646"
+      ],
+      "source_urls": [
+        "https://real.mtak.hu/123139/1/terdik_katalogustetelek.pdf",
+        "https://real.mtak.hu/123184/1/orcad_vilagossaga_angol.pdf",
+        "https://choim.org/служебник-1646-року/",
+        "https://books.google.com/books?id=jr1nAAAAcAAJ"
+      ],
+      "note": "Catalogue identifies the incomplete copy by its engravings and reports transfer from Nyírderzs in 2010. Collection provenance establishes historical relevance, not the dates or legal scope of liturgical use. Regional lane addition (byzantine_regional, 2026-10-19): The Light of Thy Countenance (2020), catalogue II.16, printed pp. 71–72, transcribes the title of complete copies, reports a fragmentary Cyrillic donation note on pp. 102–109 of this copy recording a purchase for the church of 'Kriva' or 'Krive' in 1666 (the English prose says June, the transcription reads '[1666] m[ěsâ]ca iûl', with the year in editorial brackets, so the month is unresolved; the church is unidentified), and notes a second copy of the 1646 book transferred from Nyírpazony. The 1666 note does not name Nyírderzs. Follow-up 2026-10-20: the independently inspected colophon of the distinct Chernihiv museum copy АЛ-674 (museum photograph 5) names Lviv, Mihail Sliozka, 1646 and 23 August. Photograph 4 controls the edition’s three-liturgies/office scope. It does not restore the missing leaves of Nyírderzs M–920. Google Books jr1nAAAAcAAJ identifies a Czech National Library copy as 1646; only cover, blank preliminary leaves and the first service heading were inspected, while its offered whole PDF returned HTTP 429. Neither different copy supplies dated Nyírderzs ownership or altar use.",
+      "date_basis": "1646-08-23 is catalogued for this incomplete Nyírderzs copy and independently read on the colophon photograph of a separate museum copy АЛ-674. No imprint leaf survives in the inspected description of M–920.",
+      "text_acquisition": "not-acquired",
+      "full_contents_examined": false,
+      "research_priority": "source-language",
+      "version_status": "substantive-difference-not-established",
+      "chronology_start": 1646,
+      "chronology_end": 1646,
+      "chronology_kind": "edition-colophon-date-cross-copy-control",
+      "chronology_certainty": "independent 1646-08-23 colophon photograph; exact M–920 attribution remains collection-catalogue-based",
+      "acquisition_status": "not-acquired",
+      "transcription_status": "not-transcribed",
+      "collation_status": "not-collated",
+      "source_title_status": "Catalogue title retained; independent colophon and book-scope heading inspected in distinct museum copy, not a full printed title transcription",
+      "holding": "Nyíregyháza, Szent Atanáz Görögkatolikus Hittudományi Főiskola",
+      "shelfmark": "M–920 (Ant 10467)",
+      "imprint": "Lviv, Mihail Sliozka",
+      "extent": "Edition: [6], 308, [2] folios; this copy: folios 12–279",
+      "witness_limit": "M–920 is incomplete (folios 12–279); original missing front/title and final leaves not restored. Different museum and Czech copies are separate controls, not evidence of M–920 completeness or Hungarian use."
+    },
+    {
+      "id": "byzantine-regional-hung1920",
+      "family": "Byzantine",
+      "church_scope": "Hungarian Greek Catholics (Hajdúdorog eparchy)",
+      "book_label": "A görög szertartásu katholikus egyház szent és isteni liturgiája … (Nyíregyháza 1920)",
+      "date": "1920 imprint and permission for private use (1235/1920); 1921 distribution and enforcement (circulars 1021 and 1195)",
+      "language": "Hungarian, with the canonical parts (anaphoras) of the liturgies also printed in Greek",
+      "kind": "revised-expanded-liturgikon",
+      "evidence": "church-academic-studies-quoting-primary-circulars",
+      "source_ids": [
+        "byzantine-regional-src-ivancso2007",
+        "byzantine-regional-src-ivancso2008",
+        "byzantine-regional-src-light2020"
+      ],
+      "source_urls": [
+        "https://epa.oszk.hu/05200/05207/00026/pdf/EPA05207_athanasiana_2007_26.pdf",
+        "https://epa.oszk.hu/05200/05207/00027/pdf/EPA05207_athanasiana_2008_27.pdf",
+        "https://real.mtak.hu/123184/1/orcad_vilagossaga_angol.pdf"
+      ],
+      "note": "Revised against the Greek and expanded edition combining the 1882 and 1890 volumes, with the offices of the liturgical day, the Great Canon, dismissals, Sunday propers, calendar and a paschalion for 1921–1960. Its preface states that the canonical parts of the liturgies were printed in Greek as well, so that clergy could celebrate the essential part in the Church's original language until Greek liturgikons could be obtained from Rome (Athanasiana 27 (2008), printed p. 20, quoting the book's 'Emlékezetül', pp. 309–310). Distribution was announced by circular 1195 and the text made binding by circular 1021 of 1921. Open: do not date all public use from the private-use permission alone; book not acquired. Follow-up 2026-10-20: Ivancsó 2007, pp. 69–73, and Ivancsó 2008, pp. 19–25, re-inspected. The approval formula is permission for private use and must remain explicit. Dated circular 1021/1921 directs the revised book’s wording; circular 2351/1949 describes the heavily worn Chrysostom section of 1920 copies and orders a replacement extract. This documents operative local reception without establishing papal approval, public-use permission from 1920 alone, first celebration or universal compliance. The 1984 printing is reported as an unchanged reprint, not a new recension.",
+      "date_basis": "Date identifies the event stated in chronology_kind (printing-approval-implementation-distinguished), not composition, approval of another book or a period of use.",
+      "text_acquisition": "not-acquired",
+      "full_contents_examined": false,
+      "research_priority": "received-service-book-language; approval-scope-qualified",
+      "version_status": "revised-and-expanded-liturgikon-documented",
+      "acquisition_status": "not-acquired",
+      "transcription_status": "not-transcribed",
+      "collation_status": "not-collated",
+      "source_title_status": "Title as reported in secondary sources",
+      "chronology_start": 1920,
+      "chronology_end": 1920,
+      "chronology_kind": "imprint-year",
+      "chronology_certainty": "source-explicit; permission-and-enforcement-dates-separate",
+      "approval_note": "Hajdúdorog authority no. 1235/1920, approved and printing permitted 22 August 1920, printed as permitted for private use; circulars 1195 and 1021 of 1921",
+      "substantive_feature": "Greek text of the canonical parts beside Hungarian; Basil and Presanctified joined to Chrysostom; offices of the day, calendar and paschalion 1921–1960 (Athanasiana 27 (2008), printed pp. 20–21)"
+    },
+    {
+      "id": "byzantine-regional-hung1949",
+      "family": "Byzantine",
+      "church_scope": "Hungarian Greek Catholics (Hajdúdorog eparchy)",
+      "book_label": "Aranyszájú Szent János egyházatya szent és isteni liturgiája (Nyíregyháza: Orosz Károly, 1949)",
+      "date": "1949 (title-page permission given as 1650/1949 in Athanasiana 16 (2003) and as 1235/1920 in Athanasiana 27 (2008))",
+      "language": "Hungarian",
+      "kind": "component-extract-format-variants",
+      "evidence": "church-academic-studies with title transcription",
+      "source_ids": [
+        "byzantine-regional-src-ivancso2008",
+        "byzantine-regional-src-ivancso2003",
+        "byzantine-regional-src-ivancso2007"
+      ],
+      "source_urls": [
+        "https://epa.oszk.hu/05200/05207/00027/pdf/EPA05207_athanasiana_2008_27.pdf",
+        "https://epa.oszk.hu/05200/05207/00016/pdf/EPA05207_athanasiana_2003_16_041-074.pdf",
+        "https://epa.oszk.hu/05200/05207/00026/pdf/EPA05207_athanasiana_2007_26.pdf"
+      ],
+      "note": "An extract of the 1920 Liturgikon containing only the Chrysostom liturgy, issued in two variants (one beginning with the midday service for binding into worn 1920 copies, one with its own title page) and omitting the variable intention formularies; 59 pages (Ivancsó 2008, printed pp. 21–22 and 24). The retained text is not a new full recension (Ivancsó 2003 and 2008). Open: book not acquired; the title-page permission number differs between Ivancsó 2003 and 2008; Dokumentáció I (2006), pp. 53–54, not seen. Follow-up 2026-10-20: Ivancsó 2007, pp. 69–73, and Ivancsó 2008, pp. 19–25, re-inspected. The approval formula is permission for private use and must remain explicit. Dated circular 1021/1921 directs the revised book’s wording; circular 2351/1949 describes the heavily worn Chrysostom section of 1920 copies and orders a replacement extract. This documents operative local reception without establishing papal approval, public-use permission from 1920 alone, first celebration or universal compliance. The 1984 printing is reported as an unchanged reprint, not a new recension.",
+      "date_basis": "Date identifies the event stated in chronology_kind (publication), not composition, approval of another book or a period of use.",
+      "text_acquisition": "not-acquired",
+      "full_contents_examined": false,
+      "research_priority": "received-service-book-language; approval-scope-qualified",
+      "version_status": "extract-of-1920; not-new-recension",
+      "acquisition_status": "not-acquired",
+      "transcription_status": "not-transcribed",
+      "collation_status": "not-collated",
+      "source_title_status": "Title as transcribed in Athanasiana 16 (2003), printed p. 47, note 20",
+      "chronology_start": 1949,
+      "chronology_end": 1949,
+      "chronology_kind": "publication-year",
+      "chronology_certainty": "title-transcribed-in-study; book-uninspected",
+      "approval_note": "Private-use permission printed on the title page: no. 1650/1949 according to Ivancsó 2003 (printed p. 47, note 20), no. 1235/1920 according to Ivancsó 2008 (printed p. 24 table); unresolved without the book. Announced by circular 2351 of 1949."
+    },
+    {
+      "id": "hungarian-next-eger-uu-iii-8",
+      "family": "Byzantine",
+      "church_scope": "Eger copy once owned by Lucas Habina, former Greek Catholic parish priest and Eger Byzantine-rite teacher; Földvári 1992 reports a subsequent change to the Latin rite",
+      "book_label": "Eger, Egri Főegyházmegyei Könyvtár Uu.III.8: Sluzhebnik with Vilnius 1692 title, described as foreign in Földvári 1992",
+      "date": "Text block catalogued as Supraśl 1695 in Földvári 1992; 2015 body says 1696; ownership inscription undated; 1775 estate-item identification attributed",
+      "language": "Church Slavonic",
+      "kind": "copy-provenance-research-witness",
+      "evidence": "library-specialist studies; ownership signature reproduced in 2015",
+      "source_ids": [
+        "hungarian-next-src-foldvari1992",
+        "hungarian-next-src-foldvari2015"
+      ],
+      "source_urls": [
+        "https://epa.oszk.hu/00000/00021/00349/pdf/MKSZ_EPA00021_1992_108_02_00349.pdf",
+        "https://real.mtak.hu/83534/1/Foldvari2015in_Magocsi_Festschrift_onSuprasl_u.pdf"
+      ],
+      "note": "The exact physical witness is Eger Uu.III.8, identified in Földvári–Ojtozi 1992 catalogue item 4 as cited by Földvári 1992, p. 170 n. 9. Földvári 1992 says its own title is absent and a foreign Vilnius 1692 title was bound in; Földvári 2015 instead treats the Vilnius/Supraśl dates as one combined book. The title leaf bears Lucas Habina’s signature. The physical title-to-text-block relation was not independently checked. The 2015 author associates the generic Missale Ruthenicum, folio in Habina’s 1775 estate inventory with this copy, but does not reproduce the estate record. The 2015 body/caption says 1696/1692–1696, and its printed English abstract gives both 1696 and 1695, against the 1992 article and REAL abstract’s 1695. No original Eger colophon, date of ownership, specific altar use or continuous reception is established. Do not treat the inserted title as evidence that this text block is an exact copy of the registered NBUV 1692–1695 edition.",
+      "date_basis": "Unpositioned because the dated printing attribution is discrepant and the ownership signature is undated; 1775 dates an attributed estate-inventory item, not first ownership or celebration.",
+      "text_acquisition": "not-acquired; photograph of inserted title/signature only via 2015 study",
+      "full_contents_examined": false,
+      "research_priority": "historical-copy-provenance",
+      "version_status": "not-a-new-edition; exact-text-block-attribution-needs-original-colophon",
+      "acquisition_status": "not-acquired",
+      "transcription_status": "not-transcribed",
+      "collation_status": "not-collated",
+      "source_title_status": "Title-to-body relation attributed differently in 1992 and 2015; not independently authenticated for this copy",
+      "holding": "Eger, Egri Főegyházmegyei Könyvtár",
+      "shelfmark": "Uu.III.8",
+      "witness_limit": "Ownership only; edition attribution and 1775 estate identification remain source-qualified; no liturgical-use claim"
+    }
+  ],
+  "uses": [
+    {
+      "id": "hungarian-reception:1920-liturgikon",
+      "scope": "The combined Hungarian service book, with the canonical parts also in Greek, incorporating Chrysostom, Basil and Presanctified with the offices and calendar. Local private-use approval and operative reception are separately qualified.",
+      "date_kind": "attestation",
+      "date_label": "Attested off press and awaiting distribution in early 1921; bears 1920 imprint and printing permission of 22 August 1920",
+      "evidence": [
+        {
+          "source_id": "hungarian-reception:ivancso2008",
+          "locus": "Printed pp. 19–21, especially p. 20 and notes 31–34; p. 24 title table",
+          "claim": "Identifies the book, the 1235/1920 private-use printing permission, preparation/release sequence and expanded components. The early-1921 announcement attests the book already off press and awaiting distribution, rather than proving exact publication in either 1920 or 1921."
+        },
+        {
+          "source_id": "hungarian-reception:ivancso2007",
+          "locus": "Printed pp. 69–73; circular 1021/1921 quoted at pp. 69–71",
+          "claim": "Documents direction to use the revised wording and describes the book as operative in the eparchy; this is distinct from the earlier printing permission."
+        },
+        {
+          "source_id": "hungarian-reception:ivancso2008",
+          "locus": "Printed p. 21, quotation of circular 2351/1949",
+          "claim": "Dudás describes the heavily worn Chrysostom sections of copies in use, corroborating actual reception of the 1920 book before 1949."
+        }
+      ],
+      "limitations": "No exact complete book or original approval/circular scan acquired. The stage uses the early-1921 attestation of a book already off press and awaiting distribution. Its 1920 imprint, summer preparation and 22 August 1920 printing permission do not establish an exact publication date; neither does the early-1921 announcement exclude late-1920 printing. First celebration remains unknown. The printed permission is for private use, and no general Holy See authorization or present obligation follows. Scholarly descriptions do not authorize text inheritance.",
+      "reception": "Local operational wording is documented by the 1921 directive; worn copies are described in the 1949 episcopal circular through scholarship. Geographic extent, first use, individual parish compliance and later modifications remain unproved."
+    },
+    {
+      "id": "hungarian-reception:1949-chrysostom-extract",
+      "scope": "The Chrysostom section of the 1920 service book reissued as an extract, in a bind-in replacement format and a separately titled format; not another complete liturgikon recension.",
+      "date_kind": "publication",
+      "date_label": "1949 publication and episcopal announcement; permission number discrepant in the literature",
+      "evidence": [
+        {
+          "source_id": "hungarian-reception:ivancso2008",
+          "locus": "Printed pp. 21–22 and 24; 2351/1949 circular quoted at p. 21",
+          "claim": "Identifies the 1949 extract, its practical replacement purpose, two physical formats and omission of variable intention formularies."
+        },
+        {
+          "source_id": "hungarian-reception:ivancso2007",
+          "locus": "Printed p. 73",
+          "claim": "Describes the 1949 publication as an unchanged-text extract of the 1920 book."
+        }
+      ],
+      "limitations": "Full original copy and the 1949 circular were not inspected. Ivancsó 2003 gives private-use permission 1650/1949; Ivancsó 2008 gives 1235/1920. Approval number remains unresolved; no substantive new textual recension or first date of actual use is claimed.",
+      "reception": "Episcopal commissioning and distribution are reported by the quoted 1949 circular. Its replacement purpose concerns the operative 1920 book; no independent altar-use event of a named surviving 1949 copy was found."
+    }
+  ],
+  "transitions": [
+    {
+      "id": "hungarian-reception:1920-to-1949-extract",
+      "from_stage": "hungarian-reception:1920-liturgikon",
+      "to_stage": "hungarian-reception:1949-chrysostom-extract",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "A practical extract reissues the Chrysostom component for replacement or independent binding. This is witness and component succession, with no demonstrated new recension.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "hungarian-reception:ivancso2008",
+          "locus": "Printed pp. 21–22",
+          "claim": "The bishop’s announcement relates the 1949 extract directly to worn Chrysostom sections of the 1920 book."
+        },
+        {
+          "source_id": "hungarian-reception:ivancso2007",
+          "locus": "Printed p. 73",
+          "claim": "The 1949 witness is described as an unchanged-text extract."
+        }
+      ],
+      "limitations": "No independent whole-text collation. This edge records a described extract relationship and does not grant literal inheritance or exact-copy identity.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished",
+      "git_ancestry": false,
+      "text_inheritance": false
+    }
+  ],
+  "remaining_gaps": [
+    {
+      "id": "hungarian-reception:early-local-reception",
+      "tradition_id": "hungarian-reception:hajdudorog",
+      "period": "Before 1920",
+      "missing": "Dated Nyírderzs use, the unidentified Kriva/Krive church in the 1666 note, and a supported sequence of exact Slavonic service books. Habina’s ownership and a separate museum colophon do not establish such a chain.",
+      "next_source": "M–920 (Ant 10467) ownership leaves 102–109 and dated Nyírderzs parish inventories; Eger Uu.III.8 original terminal colophon; Földvári–Ojtozi 1992 catalogue item 4 and the original 1775 estate list.",
+      "consequence": "No reception edge connects Lviv 1646 or the Vilnius/Supraśl edition to the Hungarian 1920 book."
+    },
+    {
+      "id": "hungarian-reception:originals-and-approval",
+      "tradition_id": "hungarian-reception:hajdudorog",
+      "period": "1920–1949",
+      "missing": "Exact original service books, original circulars and resolution of the 1949 permission number. The distinction between private-use printing permission, normative local wording and public-language authorization remains explicit.",
+      "next_source": "Acquire the 1920 book including its permission and Emlékezetül pp. 309–310, both 1949 formats including title/permission leaves, circulars 1021/1921, 1195/1921 and 2351/1949, and Ivancsó Dokumentáció I (2006), pp. 44–54.",
+      "consequence": "Documentary book states and the described extract relationship are available; exact liturgical text, legal scope beyond the printed permission and substantive prayer changes remain uncollated."
+    },
+    {
+      "id": "hungarian-reception:later-operative-sequence",
+      "tradition_id": "hungarian-reception:hajdudorog",
+      "period": "After 1949",
+      "missing": "Original 1954 rubric directives, later operative revisions and exact editions currently used. The reported unchanged 1984 printing does not establish a new textual state.",
+      "next_source": "Dudás directive 819 in circular 1954/XIII; exact 1984 reprint and its 1983/1984 correspondence; later local rubric/translation decrees and dated named-copy use.",
+      "consequence": "No continuous or present-day adoption claim is inferred from the two documented states."
+    }
+  ],
+  "early_local_gap": {
+    "id": "eastern-local-round2:hungarian-use",
+    "tradition_id": "eastern-local-round2:hungarian",
+    "period": "Seventeenth–nineteenth-century local reception",
+    "missing": "Dated Nyírderzs ownership/use and identity of the Kriva/Krive church in the reported 1666 note. M–920 lacks its front/title and terminal leaves. A distinct museum copy now supplies a 1646-08-23 edition colophon, not local reception.",
+    "next_source": "Inspect original M–920 ownership leaves 102–109 and dated Nyírderzs parish inventories. Eger Uu.III.8 has an undated Habina signature on a 1692 title whose relation to the body is described differently in 1992 and 2015; examine its original colophon and the 1775 estate list. The later 1920/1949 states are handled in hungarian-reception.json.",
+    "consequence": "No early Hungarian reception edge follows from the museum imprint or either owner’s possession; the separate modern dossier provides limited later book states."
+  },
+  "searches": [
+    {
+      "repertoires": [
+        "Chernihiv Historical Museum exact book page and six offered photographs",
+        "Google Books jr1nAAAAcAAJ Czech National Library copy",
+        "Földvári 1992 p.170 n.9 and Földvári 2015 body/caption/abstract",
+        "Ivancsó 2007 pp.69–73 and 2008 pp.19–25",
+        "The Light of Thy Countenance catalogue II.16 pp.71–72"
+      ],
+      "bounds": "Source-specific loci only. The Google whole-PDF route returned HTTP 429; PP3/PP4/PP7 are blank, PA1 is a service heading, and PP5 is an unavailable-image placeholder excluded from original-book evidence. No Google original title/date leaf or whole scan is verified.",
+      "unexamined": "Original M–920 ownership leaves and Nyírderzs inventories; Eger Uu.III.8 colophon/text block, Földvári–Ojtozi catalogue item4 and original 1775 estate list; exact 1920/1949 books and original circulars/permissions; later operative sequence. No exhaustive book or archive census."
+    }
+  ],
+  "acquisitions": [
+    {
+      "artifact_label": "athanasiana2007-26.pdf",
+      "sha256": "3c4935f9215fb7d4ecdd8151cd29e945ad309be4342f4277677790ef53b21d65",
+      "byte_size": 40697124,
+      "distribution": "scratch-only; no payload approved for Git",
+      "evidence_role": "exact-acquired-bytes; inspect source-specific bounds"
+    },
+    {
+      "artifact_label": "athanasiana2007-26.txt",
+      "sha256": "9edf6bffba1ebe0bb63139eab5bcd56aab1d22ef5837761843bdcffa28279ef7",
+      "byte_size": 806318,
+      "distribution": "scratch-only; no payload approved for Git",
+      "evidence_role": "exact-acquired-bytes; inspect source-specific bounds"
+    },
+    {
+      "artifact_label": "athanasiana2008-27.pdf",
+      "sha256": "a9365ae273ba649d834c3ac8093ee299fd9d0a9694974eec8261b87daeeb45e4",
+      "byte_size": 1528567,
+      "distribution": "scratch-only; no payload approved for Git",
+      "evidence_role": "exact-acquired-bytes; inspect source-specific bounds"
+    },
+    {
+      "artifact_label": "athanasiana2008-27.txt",
+      "sha256": "3f7abd1fdf2d3f032fbe8d0a148bb01865efd3ac818f9ab58cc20be0038654ba",
+      "byte_size": 624895,
+      "distribution": "scratch-only; no payload approved for Git",
+      "evidence_role": "exact-acquired-bytes; inspect source-specific bounds"
+    },
+    {
+      "artifact_label": "choim1646-1.jpg",
+      "sha256": "7369c726c5e654223b90a950ddd5982adf9a4a9099e7783246f1ad2bb749de81",
+      "byte_size": 236289,
+      "distribution": "scratch-only; no payload approved for Git",
+      "evidence_role": "exact-acquired-bytes; inspect source-specific bounds"
+    },
+    {
+      "artifact_label": "choim1646-2.jpg",
+      "sha256": "914cfa1d3de3520a193d3e107be9111dd8de7425e6b27e19a917bf01bee9db3e",
+      "byte_size": 257826,
+      "distribution": "scratch-only; no payload approved for Git",
+      "evidence_role": "exact-acquired-bytes; inspect source-specific bounds"
+    },
+    {
+      "artifact_label": "choim1646-3.jpg",
+      "sha256": "570cdc682a5e2a79f8170c94ca0f7ddd036c53c6f5b7b69c99ca5788579f5743",
+      "byte_size": 416752,
+      "distribution": "scratch-only; no payload approved for Git",
+      "evidence_role": "exact-acquired-bytes; inspect source-specific bounds"
+    },
+    {
+      "artifact_label": "choim1646-4.jpg",
+      "sha256": "1275f24e2dc9c6382864fa1b59ca8a1f6d19385f73366257459fdbcfcf8b85d5",
+      "byte_size": 298966,
+      "distribution": "scratch-only; no payload approved for Git",
+      "evidence_role": "exact-acquired-bytes; inspect source-specific bounds"
+    },
+    {
+      "artifact_label": "choim1646-5.jpg",
+      "sha256": "374758634172dd1519e3bb4137c50ed603b59b46ed312c7db119ba9c2c8e8697",
+      "byte_size": 479974,
+      "distribution": "scratch-only; no payload approved for Git",
+      "evidence_role": "exact-acquired-bytes; inspect source-specific bounds"
+    },
+    {
+      "artifact_label": "choim1646-6.jpg",
+      "sha256": "51dfe0647437dd3410a9383f77b6ae9189260280e2dc8d9a3d90b7905cd652b8",
+      "byte_size": 317085,
+      "distribution": "scratch-only; no payload approved for Git",
+      "evidence_role": "exact-acquired-bytes; inspect source-specific bounds"
+    },
+    {
+      "artifact_label": "choim1646.html",
+      "sha256": "20269f6245ca8602c4c3a4b879c25f4c0958765376105fcfd62b8607d7a96484",
+      "byte_size": 112634,
+      "distribution": "scratch-only; no payload approved for Git",
+      "evidence_role": "exact-acquired-bytes; inspect source-specific bounds"
+    },
+    {
+      "artifact_label": "foldvari2015.pdf",
+      "sha256": "f2ad4a7d98a2cf1aa3cfbe1d9292dd28a1856b32e35b0ad18eba291478085780",
+      "byte_size": 3948233,
+      "distribution": "scratch-only; no payload approved for Git",
+      "evidence_role": "exact-acquired-bytes; inspect source-specific bounds"
+    },
+    {
+      "artifact_label": "foldvari2015.txt",
+      "sha256": "1708940227de929934e4bae47bf4a207918837bc4240070f2c6c8af5177eab17",
+      "byte_size": 11,
+      "distribution": "scratch-only; no payload approved for Git",
+      "evidence_role": "exact-acquired-bytes; inspect source-specific bounds"
+    },
+    {
+      "artifact_label": "google1646-PA1.html",
+      "sha256": "8d56d06df0a0612ef67fee8d39eb3340a75aacc5150561bd4314753173a1fb93",
+      "byte_size": 59344,
+      "distribution": "scratch-only; no payload approved for Git",
+      "evidence_role": "exact-acquired-bytes; inspect source-specific bounds"
+    },
+    {
+      "artifact_label": "google1646-PP3.html",
+      "sha256": "c8191bc97263bc960b72f0dc9f93321af0b9fb4f1ee5c35763183e1fa1368e03",
+      "byte_size": 59335,
+      "distribution": "scratch-only; no payload approved for Git",
+      "evidence_role": "exact-acquired-bytes; inspect source-specific bounds"
+    },
+    {
+      "artifact_label": "google1646-PP4.html",
+      "sha256": "354eb817f51a095092724cea0d72af29700da552f516118ebb9b76a72c0a1a7f",
+      "byte_size": 59335,
+      "distribution": "scratch-only; no payload approved for Git",
+      "evidence_role": "exact-acquired-bytes; inspect source-specific bounds"
+    },
+    {
+      "artifact_label": "google1646-PP7.html",
+      "sha256": "d0e2ea865ac0a1b945c141120296a3a68fbdce90d49399123f912992353bc8b1",
+      "byte_size": 59335,
+      "distribution": "scratch-only; no payload approved for Git",
+      "evidence_role": "exact-acquired-bytes; inspect source-specific bounds"
+    },
+    {
+      "artifact_label": "google1646-about.html",
+      "sha256": "8f773537e171de1f49a899d0b0441f027d3503179c5bef7042e5511e0b59c804",
+      "byte_size": 51422,
+      "distribution": "scratch-only; no payload approved for Git",
+      "evidence_role": "exact-acquired-bytes; inspect source-specific bounds"
+    },
+    {
+      "artifact_label": "google1646-search.json",
+      "sha256": "bc293d9fd9711629cd8e15c3e941831a61fd0eee1b96842ec26869e8eb61622e",
+      "byte_size": 1642,
+      "distribution": "scratch-only; no payload approved for Git",
+      "evidence_role": "exact-acquired-bytes; inspect source-specific bounds"
+    },
+    {
+      "artifact_label": "google1646.html",
+      "sha256": "a5b157b94e5ab92c9095c7a16faa2eaeef4bfe1768f1a09057351a79016911dd",
+      "byte_size": 59401,
+      "distribution": "scratch-only; no payload approved for Git",
+      "evidence_role": "exact-acquired-bytes; inspect source-specific bounds"
+    },
+    {
+      "artifact_label": "habina-record.html",
+      "sha256": "a48d5e224532af32f9b09cad33769657e161490f98417a28b9f5f28c8f063b37",
+      "byte_size": 24158,
+      "distribution": "scratch-only; no payload approved for Git",
+      "evidence_role": "exact-acquired-bytes; inspect source-specific bounds"
+    },
+    {
+      "artifact_label": "light2020.pdf",
+      "sha256": "7ee73bab7fe80cc73bc77a978d0a9dc3c96ad635280530ecddb72110c826b6c4",
+      "byte_size": 57246531,
+      "distribution": "scratch-only; no payload approved for Git",
+      "evidence_role": "exact-acquired-bytes; inspect source-specific bounds"
+    },
+    {
+      "artifact_label": "light2020.txt",
+      "sha256": "d7a15a8c11ff8fe6cc707583f082e863b5adb3a403148ca660791c2a633e29a0",
+      "byte_size": 2655428,
+      "distribution": "scratch-only; no payload approved for Git",
+      "evidence_role": "exact-acquired-bytes; inspect source-specific bounds"
+    },
+    {
+      "artifact_label": "lviv1646-PA1.jpg",
+      "sha256": "bf777130fce19b5f21c2d36916d1724fdfebac43fae58bff67378e445bfa6aba",
+      "byte_size": 82681,
+      "distribution": "scratch-only; no payload approved for Git",
+      "evidence_role": "exact-acquired-bytes; inspect source-specific bounds"
+    },
+    {
+      "artifact_label": "lviv1646-PP1.jpg",
+      "sha256": "73f03623e71f28f1be852c0a964ef41f9a13d8ebf6155f3dd659483f65de53d8",
+      "byte_size": 701855,
+      "distribution": "scratch-only; no payload approved for Git",
+      "evidence_role": "exact-acquired-bytes; inspect source-specific bounds"
+    },
+    {
+      "artifact_label": "lviv1646-PP3.jpg",
+      "sha256": "e3923f79cecc65e80da7ccfe031229f2b6544bd8dea760b4d7e0671dbdce0e47",
+      "byte_size": 31888,
+      "distribution": "scratch-only; no payload approved for Git",
+      "evidence_role": "exact-acquired-bytes; inspect source-specific bounds"
+    },
+    {
+      "artifact_label": "lviv1646-PP4.jpg",
+      "sha256": "ab3d69a8ded4dccc09d871a8d60eff37b5b4bcf769c056c710cf5f956c343fb0",
+      "byte_size": 30439,
+      "distribution": "scratch-only; no payload approved for Git",
+      "evidence_role": "exact-acquired-bytes; inspect source-specific bounds"
+    },
+    {
+      "artifact_label": "lviv1646-PP5.jpg",
+      "sha256": "12557f8948b8bdc6af436e3a8b3adddd45f7f7d2b67c5832e799cdf4686f72bb",
+      "byte_size": 15567,
+      "distribution": "scratch-only; no payload approved for Git",
+      "evidence_role": "placeholder-not-source"
+    },
+    {
+      "artifact_label": "lviv1646-PP7.jpg",
+      "sha256": "9d467f01416483647d33c4a10031acd199deb858433360a80175edf4b9f72a34",
+      "byte_size": 39880,
+      "distribution": "scratch-only; no payload approved for Git",
+      "evidence_role": "exact-acquired-bytes; inspect source-specific bounds"
+    },
+    {
+      "artifact_label": "mksz1992-108-2.pdf",
+      "sha256": "b561185479ca8b9c7d31ce4aefca55d4ab398f0497d70c712e7097cd1e8aad58",
+      "byte_size": 12186715,
+      "distribution": "scratch-only; no payload approved for Git",
+      "evidence_role": "exact-acquired-bytes; inspect source-specific bounds"
+    },
+    {
+      "artifact_label": "mksz1992-108-2.txt",
+      "sha256": "915d6f271b8a179c2a24f861b8adc0d7a9c6b0d7ff9825f43ada3018caeeb49b",
+      "byte_size": 402259,
+      "distribution": "scratch-only; no payload approved for Git",
+      "evidence_role": "exact-acquired-bytes; inspect source-specific bounds"
+    }
+  ],
+  "failed_routes": [
+    {
+      "url": "https://books.google.com/books/download/Leiturgiarion.pdf?id=jr1nAAAAcAAJ&output=pdf",
+      "result": "Offered signed download tried once; HTTP 429; no whole PDF acquired"
+    },
+    {
+      "url": "https://books.google.com/books/content?id=jr1nAAAAcAAJ&pg=PP5&img=1&zoom=2&hl=en",
+      "result": "Image-not-available placeholder acquired; excluded from original-book evidence"
+    }
+  ],
+  "rights": "Modern article prose, service-book texts, museum photographs and provider deliveries have no affirmative exact-artifact repository redistribution basis in this packet. Only identity, bounded factual paraphrase, exact hashes/sizes and evidence locators are tracked; source payloads are excluded."
+}

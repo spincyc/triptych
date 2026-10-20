@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-stages",
+  "dossier_id": "monza-local-next",
+  "title": "Monza local Roman ceremonial order: H14, with sacramentary and reception gaps",
+  "traditions": [
+    {
+      "id": "monza-local-next:monza-local-roman-order",
+      "label": "Monza local Roman ceremonial order",
+      "family": "latin",
+      "scope": "The local annual order of San Giovanni Battista in Monza attested by H14, distinguished from Monza-held sacramentaries and Ambrosian books.",
+      "coverage_note": "One bounded order-book state; no complete Mass text, continuous sequence, or whole-book recension is reconstructed."
+    }
+  ],
+  "sources": [
+    {
+      "id": "monza-local-next:frisi1794",
+      "title": "Frisi, Memorie storiche di Monza III (1794), local order excerpt",
+      "url": "https://archive.org/download/memoriestoriched03fris/memoriestoriched03fris.pdf",
+      "kind": "primary-book",
+      "inspection": "Whole University of Illinois digitization acquired, 394 PDF pages. Printed pp. 190–191, 195 (PDF pp. 220–221, 225) visually inspected; other Monza catalogue passages read in extracted text. Entry CLXXXVII describes and partially edits the local order, historically Milan Cathedral B.43; printed pp. 79–82 describe F.1/101 under former E.III / CXXVI. This is an eighteenth-century witness to the manuscript and a partial edition, not original manuscript-image collation. Frisi III, p. 190, note 18, reports that the words identifying Ecclesia Modoetiensis were erased but still legible in vestiges; modern H14 identity and local-order classification are independently supported by the 2018 census and the critical-edition review.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Partial printed edition with eighteenth-century editorial observations; no original H14 image collation. The earlier Pontificale entry CLXXXVI on the left of p. 190 must not be merged into the local order beginning on the right."
+    },
+    {
+      "id": "monza-local-next:ordinal-census",
+      "title": "Baroffio, Sodi and Suski, Italian libri ordinari census (2018), p. 73",
+      "url": "https://www.pontificiaacademialatinitatis.org/wp-content/uploads/rivista-latinitas/interno_Latinitas_1_2018.pdf",
+      "kind": "scholarship",
+      "inspection": "Whole Latinitas series nova VI (2018), vol.1 acquired, 160 PDF pages. Baroffio, Sodi and Suski, I libri ordinari di origine italiana: guida ai manoscritti pretridentini, p. 73 (PDF p. 73), Monza entry visually inspected: H-14 ff. 47–74, Ordinarium, XII–XIII centuries, Monza; cites Dell’Oro–Mambretti (2001). Nearby B-14/121 is explicitly an Ambrosian Manuale fragment, not H14.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Century range is palaeographic attestation, not first use, effectiveness, or a continuous lifespan."
+    },
+    {
+      "id": "monza-local-next:messa-review",
+      "title": "Pietro Messa, review of Liber ordinarius Modoetiensis (2003)",
+      "url": "https://www.antoniano.org/carbajo/prof_bibliografiaViewnota.php?id=1638&lg=it",
+      "kind": "scholarship",
+      "inspection": "Complete university HTML review by Pietro Messa, Antonianum 78/1 (2003), pp. 187–190 acquired and read. It separates H14 calendar-obituary ff. 1–46 from local order ff. 47–74; identifies edition A pp. 53–77 parallel Mass/Office books, pp. 251–276 initiation, pp. 375–382 Roman rite according to Monza custom, and critical text pp. 431–541. Review evidence is not direct inspection of the 2001 edition.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The 2001 critical text and apparatus are not directly acquired or collated; conclusions are attributed to that edition through this review."
+    }
+  ],
+  "stages": [
+    {
+      "id": "monza-local-next:h14-local-order",
+      "tradition_id": "monza-local-next:monza-local-roman-order",
+      "label": "Monza H14 local Roman ceremonial order",
+      "date_label": "12th–13th-century manuscript, broad palaeographic dating",
+      "start_year": 1101,
+      "end_year": 1300,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Annual local ceremonial order in H14 ff. 47–74; printed excerpts and modern manuscript identity, not a complete altar Mass book.",
+      "components": [
+        "rubrics",
+        "chant"
+      ],
+      "witness_ids": [
+        "western:italian-monza-h14-ordinal"
+      ],
+      "witness_label": "Monza Biblioteca Capitolare H14 ff. 47–74, Liber ordinarius Modoetiensis",
+      "summary": "A shelfmarked local order coordinates Monza's annual worship; original printed excerpts preserve Christmas and Easter Mass/Communion and processional directions. The critical edition describes Roman liturgy according to Monza custom.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "monza-local-next:ordinal-census",
+          "locus": "p. 73, Monza H-14 ff. 47–74 (PDF p. 73)",
+          "claim": "Identifies the manuscript constituent, Monza origin and XII–XIII palaeographic dating."
+        },
+        {
+          "source_id": "monza-local-next:frisi1794",
+          "locus": "III, CLXXXVII pp. 190–191, 195 (PDF pp. 220–221, 225)",
+          "claim": "Frisi prints the local-church attribution from still-legible vestiges of erased wording (p. 190, note 18); his excerpts give Christmas Mass and Communion and Easter baptismal, Mass and processional directions. Modern H14 identification is independently supported by the census and edition review."
+        },
+        {
+          "source_id": "monza-local-next:messa-review",
+          "locus": "Review of edition A chapters 4, 6, 9 and critical text: pp. 53–77, 251–276, 375–382, 431–541",
+          "claim": "Distinguishes calendar-obituary from order; attributes Roman rite according to Monza custom to the edition, with specific Ambrosian initiation parallels."
+        }
+      ],
+      "limitations": "No complete H14 text, original manuscript collation, exact copying year, promulgation act or revision is established. Liber ordinarius is an order book; its title does not identify a Mass Ordinary. Frisi associated copying with a 1256 bequest; that older report is not used to narrow the modern broad century range.",
+      "reception": "The local order prescribes ceremonial practice for Monza. Frisi's local title attribution rests on still-legible erased wording; the census and edition review separately support H14 identity and classification. No first celebration, uniform observance or continuity through 1578 is established."
+    }
+  ],
+  "transitions": [],
+  "gaps": [
+    {
+      "id": "monza-local-next:h14-text",
+      "tradition_id": "monza-local-next:monza-local-roman-order",
+      "period": "12th–13th-century order and subsequent practice",
+      "missing": "Direct H14 original leaves and the 2001 critical text, its pericope and Mass-book references, apparatus and layers; exact continuity or changes are not collated.",
+      "next_source": "H14 ff. 47r–74v complete images, compared with Dell’Oro–Mambretti (2001), volume A pp. 431–541; consult chapters pp. 53–77, 251–276, 375–382 and indices 545–594 for exact component crosswalks. Frisi (1794), vol. III pp. 190–201 is only a partial earlier edition.",
+      "consequence": "No complete altar book, anaphora, revision, textual ancestry, or first-use date is asserted."
+    },
+    {
+      "id": "monza-local-next:sacramentary-identity-use",
+      "tradition_id": "monza-local-next:monza-local-roman-order",
+      "period": "Ninth-century through high-medieval witnesses",
+      "missing": "F.1/101 constituent dates, foliation, exact Canon and mixed ritual layers; Berengar 98/89 identity/date/origin conflict and cathedral reception; relation to H14.",
+      "next_source": "F.1/101 full images plus Dold–Gamber (1957) and Chavasse (1985) pp. 3–29; treasury 98/89 full images ff. 1v–5v, 46v–49r, 115v–125v; compare Belloni–Ferrari pp. 194–196, Hoffmann (2005) p. 71 and Westwell (2024) pp. 419–425. For damaged Berengar text obtain Vallicelliana T58 and Ambrosiana Fondo Varisco N.I.6inf inserto 43 copies.",
+      "consequence": "Catalogue holdings, royal chapel use and Ambrosian components cannot become a Monza cathedral recension or a reception edge."
+    },
+    {
+      "id": "monza-local-next:1578-instruments",
+      "tradition_id": "monza-local-next:monza-local-roman-order",
+      "period": "Before and after 1578",
+      "missing": "Original Borromeo letters of 18 June and 16 October 1578, exact approving instrument, books affected and dated implementation; reported patriarchine rites concern mainly initiation, unction and funerals.",
+      "next_source": "Original correspondence cited in Fontana, Il Duomo November 2025 pp. 22–24, and T. M. Abbiati, La Scuola cattolica 68 (1940), pp. 200–209; do not substitute the cathedral retrospective for the instrument.",
+      "consequence": "No dated Roman replacement, Ambrosian adoption or abolition of an independently reconstructed patriarchine Mass is plotted."
+    }
+  ]
+}

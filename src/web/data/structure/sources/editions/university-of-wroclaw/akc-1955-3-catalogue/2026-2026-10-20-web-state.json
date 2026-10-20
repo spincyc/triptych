@@ -1,0 +1,72 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "raw-catalogue-html",
+   "byte_size": 98625,
+   "edition_owned": true,
+   "id": "artifact.university-of-wroclaw.akc-1955-3-catalogue.2026-10-20-web-state.wroclaw-84013-raw-ce602434",
+   "media_type": "text/html; charset=utf-8",
+   "page_count": null,
+   "retrieved": "2026-10-20",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": "https://bibliotekacyfrowa.pl/publication/84013",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "factual-metadata",
+   "byte_size": 2780,
+   "edition_owned": true,
+   "id": "artifact.university-of-wroclaw.akc-1955-3-catalogue.2026-10-20-web-state.wroclaw-complete-dc-metadata-15cf2529",
+   "media_type": "application/json",
+   "notes": "all DC meta fields from complete HTML response; exact parent SHA-256 ce602434f76f7f540e9821890dfed496f5a82d39e7075f39cb0b551270b44c78. Third-party source bytes retain their own rights; no project CC BY offer is made over them.",
+   "page_count": null,
+   "retrieved": "2026-10-20",
+   "rights": "public-domain",
+   "rights_basis": "Individual factual bibliographic identifiers, dates, physical description, attribution and source citations; no site wrapper or literary research article copied. Attribution: University Library of Wrocław Rights evidence: https://bibliotekacyfrowa.pl/publication/84013; https://www.copyright.gov/circs/circ33.pdf",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://bibliotekacyfrowa.pl/publication/84013",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "iiif-manifest",
+   "byte_size": 4097,
+   "edition_owned": true,
+   "id": "artifact.university-of-wroclaw.akc-1955-3-catalogue.2026-10-20-web-state.wroclaw-manifest-ff0092ba",
+   "media_type": "application/json",
+   "notes": "Whole mechanical IIIF manifest with two canvases. Its 701–800 date is retained separately from the catalogue's 701–750 and Swedish 700–725 dates. Third-party source bytes retain their own rights; no project CC BY offer is made over them.",
+   "page_count": null,
+   "retrieved": "2026-10-20",
+   "rights": "public-domain",
+   "rights_basis": "Retain the complete 4,097-byte mechanical IIIF record: generic schema labels, physical identifiers, dimensions, sequential canvases and public image URLs; no original scholarly commentary or image bytes are embedded. Attribution: University Library of Wrocław, GLAM, Akc.1955/3 IIIF manifest; factual technical metadata. Rights evidence: https://bibliotekacyfrowa.pl/publication/84013; https://www.copyright.gov/circs/circ33.pdf",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://glam.uwr.edu.pl/iiif/RKP_AKC_1955_3_30045/manifest",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-10-20",
+  "editors": [],
+  "id": "edition.university-of-wroclaw.akc-1955-3-catalogue.2026-10-20-web-state",
+  "jurisdiction": null,
+  "language": "pl",
+  "publication": "Publication 84013 / edition 133364 and GLAM manifest delivered 20 October 2026; University Library of Wrocław",
+  "title": "Publication 84013 / edition 133364 and GLAM manifest delivered 20 October 2026",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "University Library of Wrocław",
+  "category": "scholarly-catalogue",
+  "description": "Modern bibliographic description or catalogue. Source catalogue assertions are distinguished from independently established manuscript origin, contents and local use.",
+  "id": "work.university-of-wroclaw.akc-1955-3-catalogue",
+  "languages": [
+   "pl"
+  ],
+  "title": "University of Wrocław catalogue and technical metadata for Akc. 1955/3"
+ }
+}

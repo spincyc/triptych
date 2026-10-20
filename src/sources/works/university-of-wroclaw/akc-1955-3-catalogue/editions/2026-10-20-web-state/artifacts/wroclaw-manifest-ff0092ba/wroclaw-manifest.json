@@ -1,0 +1,94 @@
+
+{
+    "@context": "http://iiif.io/api/presentation/2/context.json",
+    "logo": "https://glam.uwr.edu.pl/thumbnail/images/uwr_buwr_logo.svg",
+    "@id": "https://glam.uwr.edu.pl/iiif/RKP_AKC_1955_3_30045/manifest",
+    "label": "Sacramentarium Gelasianum. Fragmentum",
+    "@type": "sc:Manifest",
+    "description": "Opis obiektu",
+    "viewingDirection": "left-to-right",
+    "viewingHint": "paged",
+    "metadata": [
+        {
+            "label": "Sygnatura",
+            "language": "pl",
+            "value": "Akc. 1955/3"
+        },
+        {
+            "label": "Tytu\u0142",
+            "language": "pl",
+            "value": "Sacramentarium Gelasianum. Fragmentum"
+        },
+        {
+            "label": "Data publikacji",
+            "language": "pl",
+            "value": "701-800"
+        }
+    ],
+    "service": [],
+    "sequences": [
+        {
+            "@id": "https://glam.uwr.edu.pl/iiif/RKP_AKC_1955_3_30045/sequences/s0",
+            "@type": "sc:Sequence",
+            "label": "Sequence s0",
+            "viewingHint": "paged",
+            "canvases": [
+                {
+                    "@id": "https://glam.uwr.edu.pl/iiif/RKP_AKC_1955_3_30045/canvas/c0",
+                    "@type": "sc:Canvas",
+                    "label": "Strona 1",
+                    "width": 4678,
+                    "height": 22119,
+                    "images": [
+                        {
+                            "@id": "https://glam.uwr.edu.pl/iiif/image-api/RKP_AKC_1955_3_30045_0001",
+                            "@type": "oa:Annotation",
+                            "motivation": "sc:painting",
+                            "resource": {
+                                "@id": "https://glam.uwr.edu.pl/iiif/image-api/RKP_AKC_1955_3_30045_0001/full/full/0/default.jpg",
+                                "@type": "dctypes:Image",
+                                "format": "image/jpeg",
+                                "width": 4678,
+                                "height": 22119,
+                                "service": {
+                                    "@context": "http://iiif.io/api/image/2/context.json",
+                                    "@id": "https://glam.uwr.edu.pl/iiif/image-api/RKP_AKC_1955_3_30045_0001",
+                                    "profile": "http://iiif.io/api/image/2/level2.json"
+                                }
+                            },
+                            "on": "https://glam.uwr.edu.pl/iiif/RKP_AKC_1955_3_30045/canvas/c0"
+                        }
+                    ]
+                },
+                {
+                    "@id": "https://glam.uwr.edu.pl/iiif/RKP_AKC_1955_3_30045/canvas/c1",
+                    "@type": "sc:Canvas",
+                    "label": "Strona 2",
+                    "width": 4679,
+                    "height": 22118,
+                    "images": [
+                        {
+                            "@id": "https://glam.uwr.edu.pl/iiif/image-api/RKP_AKC_1955_3_30045_0002",
+                            "@type": "oa:Annotation",
+                            "motivation": "sc:painting",
+                            "resource": {
+                                "@id": "https://glam.uwr.edu.pl/iiif/image-api/RKP_AKC_1955_3_30045_0002/full/full/0/default.jpg",
+                                "@type": "dctypes:Image",
+                                "format": "image/jpeg",
+                                "width": 4679,
+                                "height": 22118,
+                                "service": {
+                                    "@context": "http://iiif.io/api/image/2/context.json",
+                                    "@id": "https://glam.uwr.edu.pl/iiif/image-api/RKP_AKC_1955_3_30045_0002",
+                                    "profile": "http://iiif.io/api/image/2/level2.json"
+                                }
+                            },
+                            "on": "https://glam.uwr.edu.pl/iiif/RKP_AKC_1955_3_30045/canvas/c1"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "structures": []
+}

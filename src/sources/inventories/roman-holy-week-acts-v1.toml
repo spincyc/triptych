@@ -47,9 +47,9 @@ renamed, moved, reslotted, unrecorded -- and this file exercises all seven.
 """
 
 evidence = """
-Nothing in this file has been read against a page image. Every quotation, line
-number and reading below comes from Internet Archive DjVu optical-character-
-recognition text layers, which are discovery aids and not witnesses to wording.
+The complete 23 March 1955 act was image-inspected on 2026-10-20. The
+original tracer's quotations, line numbers and remaining readings come from
+Internet Archive DjVu optical-character-recognition text layers, which are discovery aids and not witnesses to wording.
 Their rights are recorded per physical artifact rather than inferred from the
 edition a text layer appears to reproduce. In particular, the artifact formerly
 called the 1920 printing is a later composite: its body is 1951-1954 and its
@@ -57,8 +57,9 @@ appendix is post-1970, its exact bytes are remote, and their rights are
 unresolved. That body retains pre-1955 Holy Week and can locate structural
 features; it cannot identify an exact 1920 printing or establish target-edition
 wording. Each unit and each act therefore carries `read_from`, whose only values
-here are `ocr-only` and `not-read`; no row claims `page-image`, and `inspected`
-in the sense of guidance/sources.md is the ceiling reached, never `verified`.
+for the original tracer are `ocr-only` and `not-read`; the 23 March 1955 act
+now records `page-image`. That complete-act reading does not verify the
+remaining OCR readings or reconstruct an operational Missal.
 
 That matters more here than usual. On 2026-07-31 this repository collated 99
 orations that had been taken from an OCR text layer of a single 1861 printing
@@ -449,19 +450,14 @@ title = "The rubrics are reduced to a simpler form"
 parents = ["editio-typica-1920"]
 parent_kind = "line-order"
 parent_basis = "It simplifies the rubrics of the books the 1920 typical edition carried."
-citation = "Sacred Congregation of Rites, De rubricis ad simpliciorem formam redigendis, 23 March 1955, named and dated in Rubricarum instructum."
-act_citation = "cited-in-corpus"
+citation = "Sacred Congregation of Rites, De rubricis ad simpliciorem formam redigendis, 23 March 1955, AAS 47 (1955), pp. 218–224; commencement 1 January 1956 at p. 219."
+act_citation = "cited-externally"
 attested_in = ["benziger-iuxta-typicam-1962"]
-read_from = "ocr-only"
-locus = "benziger-iuxta-typicam-1962 1131-1134 and 1171-1173, where Rubricarum instructum names it by title and date and declares it to have ceased to be in force, absorbed into the new redaction"
+read_from = "page-image"
+locus = "Complete published act at AAS 47 (1955), printed/PDF pp. 218–224, image-inspected 2026-10-20; p. 225 is outside the act. Exact artifact: artifact.holy-see.acta-apostolicae-sedis.volume-47-1955.vatican-ocr-pdf-87faf821."
 effect = "No departure in this slice."
 effect_established = false
-effect_note = """
-Its own text was not read; only the two places where a later act names it. It
-stands here because it is a citable act of 1955 touching the rubrics of these
-very books, and leaving it out would make the eight months before Maxima
-redemptionis look emptier than they were.
-"""
+effect_note = "The complete published act was image-inspected on 2026-10-20. Its five titles cover general norms, calendar, commemorations, Breviary and Missal; title V at p. 224 prescribes the Missal changes. Approval on 23 March 1955 and commencement on 1 January 1956 are separate dates. No departure is newly encoded in this slice, and complete operational-Missal or prayer-by-prayer before/after reconstruction remains open."
 
 [[acts]]
 id = "rubricarum-instructum-1960"

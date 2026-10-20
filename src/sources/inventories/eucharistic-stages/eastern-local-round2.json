@@ -130,14 +130,28 @@
       "date_kind": "publication",
       "status": "documented",
       "scope": "A Church-approved Eucharistic service-book corpus containing Chrysostom in part 1 and Basil and Presanctified in part 2; the two parts are one book state, not two revisions.",
-      "components": ["ordinary", "anaphoras", "rubrics"],
-      "witness_ids": ["eastern:byzantine-greek-liturgy2006"],
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-greek-liturgy2006"
+      ],
       "witness_label": "Patriarchal book identified by the official Letter and DLI holding record 47966",
       "summary": "The patriarchal letter reports definitive synodal agreement in 2001 and publication in 2006; the library distinguishes the 2006 Chrysostom and 2007 Basil/Presanctified parts. The patriarch's later decree requires the approved Liturgy books and withdraws other Liturgy books from use.",
       "text_coverage": "not-transcribed",
       "evidence": [
-        {"source_id": "eastern-local-round2:melkite-letter", "locus": "Foreword 3; chapter 4 §§2–4", "claim": "Identifies the approved two-part Eucharistic book and the patriarchal use rule."},
-        {"source_id": "eastern-local-round2:melkite-catalogue", "locus": "Record 47966, parts 1–2", "claim": "Supplies the separate publication years, contents and extents of the complementary parts."}
+        {
+          "source_id": "eastern-local-round2:melkite-letter",
+          "locus": "Foreword 3; chapter 4 §§2–4",
+          "claim": "Identifies the approved two-part Eucharistic book and the patriarchal use rule."
+        },
+        {
+          "source_id": "eastern-local-round2:melkite-catalogue",
+          "locus": "Record 47966, parts 1–2",
+          "claim": "Supplies the separate publication years, contents and extents of the complementary parts."
+        }
       ],
       "limitations": "The 2001 approval is not the date of these physical publications. Neither the Arabic text nor the 1992 experimental book was collated; no exact predecessor, component-level revision or first day of uniform use is asserted.",
       "reception": "Patriarch Gregorios III's decree orders use of the approved Liturgy books in the Melkite Church; actual compliance in each eparchy is not measured."
@@ -152,13 +166,23 @@
       "date_kind": "publication",
       "status": "documented",
       "scope": "Greek celebrant book with Vespers, Orthros and the Liturgies of Chrysostom, Basil and the Presanctified Gifts.",
-      "components": ["ordinary", "anaphoras", "rubrics"],
-      "witness_ids": ["eastern:byzantine-greek-rome1950"],
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-greek-rome1950"
+      ],
       "witness_label": "Internet Archive copy of the Roman Greek Hieratikon, original title and approval leaves",
       "summary": "An approved Roman Greek celebrant book is attested by its own title and approval leaves. The colophon records that printing was completed at Harissa in March 1952.",
       "text_coverage": "not-transcribed",
       "evidence": [
-        {"source_id": "eastern-local-round2:greek-hieratikon", "locus": "Original PDF pp. 3–4, 343, as inspected in the prior Eastern research", "claim": "Original title, approval and colophon identify this edition and distinguish title date from end of printing."}
+        {
+          "source_id": "eastern-local-round2:greek-hieratikon",
+          "locus": "Original PDF pp. 3–4, 343, as inspected in the prior Eastern research",
+          "claim": "Original title, approval and colophon identify this edition and distinguish title date from end of printing."
+        }
       ],
       "limitations": "This is a Roman Greek edition state, not a Greek exarchate or Melkite reception state. The press location at Harissa cannot establish Melkite use. No comparison with the 1925 or other Roman Greek books has been made.",
       "reception": "Holy See approval is printed in the book; named territorial implementation has not been verified."
@@ -173,13 +197,23 @@
       "date_kind": "publication",
       "status": "documented",
       "scope": "Printing expressly for the Italo-Greek Basilian monks following the Grottaferrata Typikon, with the three named Eucharistic liturgies.",
-      "components": ["ordinary", "anaphoras", "rubrics"],
-      "witness_ids": ["eastern:byzantine-greek-rome1601"],
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-greek-rome1601"
+      ],
       "witness_label": "1601 Zannettus printing, Latin and Greek title leaves in public object photographs",
       "summary": "The original title identifies a particular monastic use and printing audience, allowing a bounded local book state without assigning the edition to later Italo-Albanian eparchies.",
       "text_coverage": "not-transcribed",
       "evidence": [
-        {"source_id": "eastern-local-round2:grottaferrata1601", "locus": "Latin title and second Greek title leaf; object description lines 17–27", "claim": "Names the three liturgies, Italo-Greek Basilian audience, Grottaferrata Typikon and 1601 Rome imprint."}
+        {
+          "source_id": "eastern-local-round2:grottaferrata1601",
+          "locus": "Latin title and second Greek title leaf; object description lines 17–27",
+          "claim": "Names the three liturgies, Italo-Greek Basilian audience, Grottaferrata Typikon and 1601 Rome imprint."
+        }
       ],
       "limitations": "The title's declared audience is not a dated use record for a particular monastery, nor approval or reception in Lungro or Piana. No whole copy or exact predecessor has been inspected; its textual distinctness from 1683 remains unestablished.",
       "reception": "The printing itself declares the Grottaferrata monastic use it serves; no broader territorial use is inferred."
@@ -199,25 +233,25 @@
       "id": "eastern-local-round2:greek-reception",
       "tradition_id": "eastern-local-round2:roman-greek",
       "period": "1950 title / March 1952 completion onward",
-      "missing": "Identified Greek exarchate or Italo-Albanian celebrant copies and adoption evidence; full collation against earlier Roman Greek books.",
-      "next_source": "Inspect the Hieratikon and local exarchate or eparchial library inventories, title leaves, permissions and use records; compare bounded prayers and rubrics with the 1925 printing.",
+      "missing": "Identified Greek exarchate or Italo-Albanian celebrant copies and adoption evidence; full collation against earlier Roman Greek books. The separate local-reception dossier now records planned Athens 2026 calendar arrangements and selected Italo-Albanian language/calendar evidence; these do not identify receiving Roman 1950/1952 altar copies.",
+      "next_source": "Inspect the Hieratikon and local exarchate or eparchial library inventories, title leaves, permissions and use records; compare bounded prayers and rubrics with the 1925 printing. Retain the distinct local-language and calendar findings in greek-italo-local-reception.json without inferring this Roman book’s adoption.",
       "consequence": "The Roman edition cannot be placed as a locally received Greek, Piana or Melkite state."
     },
     {
       "id": "eastern-local-round2:italo-albanian-eparchies",
       "tradition_id": "eastern-local-round2:grottaferrata",
       "period": "After the 1601 Grottaferrata printing",
-      "missing": "Exact altar books and dated use or approval for Lungro and Piana; whole-book comparison of the 1601 and 1683 Grottaferrata printings and local manuscripts.",
-      "next_source": "Locate copies and approval leaves in Grottaferrata, Lungro and Piana collections. Lungro's official 2026 account attests occasional Liturgy of Saint James without identifying its celebrant book: https://www.eparchialungro.it/2026/02/26/leparchia-di-lungro-nella-chiesa-italiana/",
+      "missing": "Exact Greek altar books, original title/approval leaves and dated local adoption for Lungro and Piana; whole-book comparison of the 1601 and 1683 Grottaferrata printings and local manuscripts. Lungro’s named received Arbëresh book and the 2019/2026 local Ordos now have bounded evidence in greek-italo-local-reception.json; original 1967/1968 book and decree reports remain unresolved.",
+      "next_source": "Locate copies and approval leaves in Grottaferrata, Lungro and Piana collections. Lungro's official 2026 account attests occasional Liturgy of Saint James without identifying its celebrant book: https://www.eparchialungro.it/2026/02/26/leparchia-di-lungro-nella-chiesa-italiana/ Inspect original Lungro Arbëresh title/approval leaves and Bollettino 3 (1968), pp. 14–16, while keeping Piana calendar reference books distinct from Eucharistic altar books.",
       "consequence": "Grottaferrata printing cannot be used as a surrogate for either modern eparchy or for the unidentified Saint James book."
     },
     {
       "id": "eastern-local-round2:hungarian-use",
       "tradition_id": "eastern-local-round2:hungarian",
-      "period": "Seventeenth to twentieth centuries",
-      "missing": "Inspected title and ownership leaves for the 1646 Nyírderzs copy, the identity of the church in its reported 1666 note, and dated liturgical-use records. The 1882, 1890 and 1920 Hungarian Liturgikons still need origin and approval review.",
-      "next_source": "Inspect Szent Atanáz catalogue II.16 and its copy M–920 (Ant 10467), then local parish inventories and the original circulars for the 1916–1919 reforms.",
-      "consequence": "A library provenance or a reported local reform cannot be promoted to a Hungarian Catholic book state or revision edge."
+      "period": "Seventeenth–nineteenth-century local reception",
+      "missing": "Dated Nyírderzs ownership/use and identity of the Kriva/Krive church in the reported 1666 note. M–920 lacks its front/title and terminal leaves. A distinct museum copy now supplies a 1646-08-23 edition colophon, not local reception.",
+      "next_source": "Inspect original M–920 ownership leaves 102–109 and dated Nyírderzs parish inventories. Eger Uu.III.8 has an undated Habina signature on a 1692 title whose relation to the body is described differently in 1992 and 2015; examine its original colophon and the 1775 estate list. The later 1920/1949 states are handled in hungarian-reception.json.",
+      "consequence": "No early Hungarian reception edge follows from the museum imprint or either owner’s possession; the separate modern dossier provides limited later book states."
     },
     {
       "id": "eastern-local-round2:bulgarian-receipt",

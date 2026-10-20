@@ -23,7 +23,7 @@ scope_questions_remaining = "Scope agreed. Exact manuscript transmission paths, 
 coverage_definition = "A version requires evidence of substantive changes to prayers, rubrics, calendar or order. A manuscript witness, printing date, script change, Church union, or institutional erection alone is not a new version. Keep historical liturgical-language books first; approved vernacular and lay translations form later independent work. Modern-language original composition remains in scope and must be distinguished from translation."
 source_library_manifest_limit = "This inventory links canonical source-library identities; it is not itself a source artifact manifest. Scan acquisition does not establish checked transcription, complete structured contents, a substantive version boundary or edition-to-edition descent."
 
-record_count_note = "440 candidate records, 23 Church/tradition coverage slots and 373 source records are research objects, not distinct versions. Source-book printings, study texts, reprints and provisional leads remain separately qualified."
+record_count_note = "443 candidate records, 23 Church/tradition coverage slots and 392 source records are research objects, not distinct versions. Source-book printings, study texts, reprints and provisional leads remain separately qualified."
 
 [[sources]]
 id = "ziade-syriac-diaconicon-1941"
@@ -271,46 +271,64 @@ full_contents_examined = false
 [[sources]]
 id = "census-sico-2007"
 url = "https://www.vatican.va/roman_curia/congregations/orientchurch/sico/SICO_PDF/SICO%202007.pdf"
-checked_on = "2026-10-16"
+checked_on = "2026-10-20"
 evidence_type = "dicastery-periodical"
-inspection = "web-rendered-description-or-stated-locus"
+inspection = "Complete 264-page PDF acquired. Printed p.187 / PDF p.186 was read from the text layer and independently inspected as a page image, including the paragraph and footnote 9. The footnote names 22 Churches, including Albanian and excluding Eritrean before its establishment."
 locus = "Printed p. 187 / PDF p. 186, footnote 9: 22 named Churches and five traditions before Eritrean establishment"
-text_acquisition = "not-acquired"
-hash_state = "not-computed"
+text_acquisition = "whole-source-research-copy; no-canonical-payload-import"
+hash_state = "sha256-48d5b6578fe2d697908d83a0437d4a775b71afe242a14eb4d68ea12e88bfbcf1"
 full_contents_examined = false
+inspection_status = "inspected"
+limitations = "This is the 2007 issue, printed in 2008, not a current named enumeration. Other pages were not exhaustively examined."
+sha256 = "48d5b6578fe2d697908d83a0437d4a775b71afe242a14eb4d68ea12e88bfbcf1"
+byte_count = 1098146
+pdf_pages = 264
 
 [[sources]]
 id = "census-vatican-news-2025"
 url = "https://www.vaticannews.va/en/church/news/2025-05/rome-hosts-jubilee-of-eastern-churches-may.html"
-checked_on = "2026-10-16"
+checked_on = "2026-10-20"
 evidence_type = "official-news-report"
-inspection = "web-rendered-description-or-stated-locus"
+inspection = "Complete official HTML acquired; The Eastern Catholic Churches section read in surrounding article context. It reports 23 Churches and does not provide a complete named enumeration."
 locus = "The Eastern Catholic Churches section: count 23; does not enumerate all names"
-text_acquisition = "not-acquired"
-hash_state = "not-computed"
+text_acquisition = "whole-source-research-copy; no-canonical-payload-import"
+hash_state = "sha256-e78779ab7cce2e4be1acb49b60b9d3e6e4d6e64bc22b6cc57adf30637d334012"
 full_contents_examined = false
+inspection_status = "inspected"
+limitations = "Official news count, not a named statutory census."
+sha256 = "e78779ab7cce2e4be1acb49b60b9d3e6e4d6e64bc22b6cc57adf30637d334012"
+byte_count = 82952
 
 [[sources]]
 id = "census-parenti-2022"
 url = "https://www.ppoomm.va/content/dam/ppoomm/documentazioni/pubblicazioni/pubblicazioni-pum/libri/the-mission-of-the-universal-church-an-oriental-perspective/The-Mission-of-the-Universal-Church-An-Oriental-PerspectiveUUP.pdf"
-checked_on = "2026-10-16"
+checked_on = "2026-10-20"
 evidence_type = "official-hosted-scholarly-publication"
-inspection = "web-rendered-description-or-stated-locus"
+inspection = "Complete 266-page PDF acquired. Stefano Parenti, printed pp.122–123 / PDF pp.123–124, were read and independently checked as images; p.124 text was read for genealogical caution. The list has 22 names, includes Eritrean, and omits Albanian. Footnote 4 cites Annuario Pontificio 2022 pp.1126–1129."
 locus = "Stefano Parenti, pp. 122-124: 22 named Churches, five categories, Annuario Pontificio 2022 pp. 1126-1129 cited; Albanian absent; Ethiopian and Maronite genealogical cautions"
-text_acquisition = "not-acquired"
-hash_state = "not-computed"
+text_acquisition = "whole-source-research-copy; no-canonical-payload-import"
+hash_state = "sha256-1c11797b3a806685242ef5880a3b70f17703e6253cb34d84e6daa3a926e8f24b"
 full_contents_examined = false
+inspection_status = "inspected"
+limitations = "Official-hosted scholarly chapter, not independent inspection of the cited Annuario. Its omission of Albania does not itself establish canonical suppression or current classification."
+sha256 = "1c11797b3a806685242ef5880a3b70f17703e6253cb34d84e6daa3a926e8f24b"
+byte_count = 3052734
+pdf_pages = 266
 
 [[sources]]
 id = "eritrea-2015-act"
 url = "https://www.vatican.va/content/francesco/la/apost_constitutions/documents/papa-francesco_costituzione-ap_20150119_ecclesia-metropolitana-asmarensis.html"
-checked_on = "2026-10-16"
+checked_on = "2026-10-20"
 evidence_type = "official-apostolic-constitution"
-inspection = "web-rendered-description-or-stated-locus"
+inspection = "Complete official HTML acquired and operative body, closing date and AAS reference read. Establishes Metropolitan Church sui iuris of Asmara from named Eritrean eparchies; closing date gives 19 January 2015."
 locus = "Operative constitution and closing date 19 January 2015; AAS 107(2015)p 246. Web heading has 2105 typo; body and AAS reference establish 2015."
-text_acquisition = "not-acquired"
-hash_state = "not-computed"
+text_acquisition = "whole-source-research-copy; no-canonical-payload-import"
+hash_state = "sha256-7a82675002b066462528ecc98adf8e9a46ecca151259cd29b8fda4472d0da71d"
 full_contents_examined = false
+inspection_status = "inspected"
+limitations = "Church/jurisdiction establishment, not a missal revision. Web heading says 2105, while body and AAS107(2015)p.246 establish 2015."
+sha256 = "7a82675002b066462528ecc98adf8e9a46ecca151259cd29b8fda4472d0da71d"
+byte_count = 35190
 
 [[sources]]
 id = "oriental-publications-profile"
@@ -2492,28 +2510,28 @@ book_label = "Leïturgïarïon, si estʹ Služebnikʺ …"
 date = "1646-08-23"
 language = "Church Slavonic"
 kind = "historical-print-witness"
-evidence = "holding-or-collection-catalogue-inspected"
-source_ids = ["hungarian-collection-1646", "byzantine-regional-src-light2020"]
-source_urls = ["https://real.mtak.hu/123139/1/terdik_katalogustetelek.pdf", "https://real.mtak.hu/123184/1/orcad_vilagossaga_angol.pdf"]
-note = "Catalogue identifies the incomplete copy by its engravings and reports transfer from Nyírderzs in 2010. Collection provenance establishes historical relevance, not the dates or legal scope of liturgical use. Regional lane addition (byzantine_regional, 2026-10-19): The Light of Thy Countenance (2020), catalogue II.16, printed pp. 71–72, transcribes the title of complete copies, reports a fragmentary Cyrillic donation note on pp. 102–109 of this copy recording a purchase for the church of 'Kriva' or 'Krive' in 1666 (the English prose says June, the transcription reads '[1666] m[ěsâ]ca iûl', with the year in editorial brackets, so the month is unresolved; the church is unidentified), and notes a second copy of the 1646 book transferred from Nyírpazony. The 1666 note does not name Nyírderzs."
-date_basis = "Publication date supplied by the cited holding or collection catalogue; no independently inspected title leaf."
+evidence = "collection-catalogue for Nyírderzs copy; independent colophon photograph for edition imprint/date"
+source_ids = ["hungarian-collection-1646", "byzantine-regional-src-light2020", "hungarian-next-src-choim1646", "hungarian-next-src-google1646"]
+source_urls = ["https://real.mtak.hu/123139/1/terdik_katalogustetelek.pdf", "https://real.mtak.hu/123184/1/orcad_vilagossaga_angol.pdf", "https://choim.org/служебник-1646-року/", "https://books.google.com/books?id=jr1nAAAAcAAJ"]
+note = "Catalogue identifies the incomplete copy by its engravings and reports transfer from Nyírderzs in 2010. Collection provenance establishes historical relevance, not the dates or legal scope of liturgical use. Regional lane addition (byzantine_regional, 2026-10-19): The Light of Thy Countenance (2020), catalogue II.16, printed pp. 71–72, transcribes the title of complete copies, reports a fragmentary Cyrillic donation note on pp. 102–109 of this copy recording a purchase for the church of 'Kriva' or 'Krive' in 1666 (the English prose says June, the transcription reads '[1666] m[ěsâ]ca iûl', with the year in editorial brackets, so the month is unresolved; the church is unidentified), and notes a second copy of the 1646 book transferred from Nyírpazony. The 1666 note does not name Nyírderzs. Follow-up 2026-10-20: the independently inspected colophon of the distinct Chernihiv museum copy АЛ-674 (museum photograph 5) names Lviv, Mihail Sliozka, 1646 and 23 August. Photograph 4 controls the edition’s three-liturgies/office scope. It does not restore the missing leaves of Nyírderzs M–920. Google Books jr1nAAAAcAAJ identifies a Czech National Library copy as 1646; only cover, blank preliminary leaves and the first service heading were inspected, while its offered whole PDF returned HTTP 429. Neither different copy supplies dated Nyírderzs ownership or altar use."
+date_basis = "1646-08-23 is catalogued for this incomplete Nyírderzs copy and independently read on the colophon photograph of a separate museum copy АЛ-674. No imprint leaf survives in the inspected description of M–920."
 text_acquisition = "not-acquired"
 full_contents_examined = false
 research_priority = "source-language"
 version_status = "substantive-difference-not-established"
 chronology_start = 1646
 chronology_end = 1646
-chronology_kind = "catalogue-publication-date"
-chronology_certainty = "catalogue-explicit; title-page-not-independently-inspected"
+chronology_kind = "edition-colophon-date-cross-copy-control"
+chronology_certainty = "independent 1646-08-23 colophon photograph; exact M–920 attribution remains collection-catalogue-based"
 acquisition_status = "not-acquired"
 transcription_status = "not-transcribed"
 collation_status = "not-collated"
-source_title_status = "Catalogue title retained; not a fresh title-page transcription"
+source_title_status = "Catalogue title retained; independent colophon and book-scope heading inspected in distinct museum copy, not a full printed title transcription"
 holding = "Nyíregyháza, Szent Atanáz Görögkatolikus Hittudományi Főiskola"
 shelfmark = "M–920 (Ant 10467)"
 imprint = "Lviv, Mihail Sliozka"
 extent = "Edition: [6], 308, [2] folios; this copy: folios 12–279"
-witness_limit = "Incomplete copy; no full-book scan route or reproduction rights established"
+witness_limit = "M–920 is incomplete (folios 12–279); original missing front/title and final leaves not restored. Different museum and Czech copies are separate controls, not evidence of M–920 completeness or Hungarian use."
 
 [[records]]
 id = "byz-vilnius-suprasl1692-95"
@@ -3661,12 +3679,12 @@ candidate_ids = []
 ancestry_candidate_ids = ["byz-barberini336"]
 deferred_or_origin_review_candidate_ids = []
 coverage_status = "no-specific-book-witness; census-status-unresolved"
-missing_chronology = "Obtain an Albanian community library inventory or title and approbation leaves; resolve the census classification separately. The byzantine_greek lane (2026-10-19) confirmed the historical Elbasan community from the Papamihali biography and mission studies but found no celebrant edition; it is recorded as an unresolved bibliographic lead, and neither the Lungro 1968 translation nor Fan Noli's Orthodox books is assigned to it."
+missing_chronology = "No exact Elbasan Catholic celebrant book is established. Inspect mission inventories and original reports for title, imprint, approval, received exemplar and dated use; resolve current census classification separately. Orthodox Albanian and Italo-Albanian books remain unassigned to this row."
 relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
-followup_source_ids = []
-followup_note = "Targeted Elbasan, Greek Catholic, Scarpelli/Germanos and Vatican approval searches did not authenticate an original-language Catholic celebrant book or local adoption act. The 1967 Greek-Albanian item is explicitly Italo-Albanian, and Fan Noli editions are Orthodox; neither has been transferred to this Catholic community by inference."
-next_evidence_target = "An Albanian community book inventory or identifiable celebrant title and approbation leaves are the missing inputs; do not supply an edition merely from rite membership."
-research_followup_status = "no-authenticated-source-language-book-or-adoption-record-located"
+followup_source_ids = ["albanian-src-trani2007-archive-census", "albanian-src-murzaku2007-scarpelli-leads", "albanian-src-gori2021-archive-access"]
+followup_note = "The 2026-10-20 bounded search verified concrete archival targets, not a book: DGA’s 2007 census, printed p. 244, identifies Albanesi mission files beginning in 1928; p. 374 identifies de Meester–Scarpelli correspondence; p. 496 identifies relevant Grottaferrata holdings. Murzaku’s archival references remain uninspected originals. Gori’s 2021 report describes access through 1958 but does not deliver the files online."
+next_evidence_target = "Inspect ACCO Prot. 441/28, especially Scarpelli’s 10 January 1930 Terza Relazione, Nr. X, pp. 37–50; compare the Greek College de Meester–Scarpelli correspondence and any Elbasan book inventory. These are archival leads, not identified books."
+research_followup_status = "exact-archival-targets-established; no-authenticated-celebrant-book-or-adoption-record"
 
 [[church_coverage]]
 id = "belarusian"
@@ -3722,11 +3740,11 @@ id = "greek"
 name = "Greek Byzantine Catholic Church"
 family = "Byzantine"
 census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025"]
-candidate_ids = ["byz-greek-1754", "byz-greek-1873", "byzantine-greek-rome1738-parakletike", "byzantine-greek-rome1738-triodion", "byzantine-greek-rome1738-pentecostarion", "byzantine-greek-rome1738-biblos", "byzantine-greek-rome1872", "byzantine-greek-rome1876-horologion", "byzantine-greek-rome1880-euangelion", "byzantine-greek-rome1881-apostolos", "byzantine-greek-rome1886-oktoechos", "byzantine-greek-rome1925", "byzantine-greek-rome1937-horologion", "byzantine-greek-rome1950", "byzantine-greek-rome-anthologion-vol1", "byzantine-greek-rome-anthologion-vol2", "byzantine-greek-rome-anthologion-vol3", "byzantine-greek-rome-anthologion-vol4", "byzantine-greek-rome1873-1902-series-cold"]
+candidate_ids = ["byz-greek-1754", "byz-greek-1873", "byzantine-greek-rome1738-parakletike", "byzantine-greek-rome1738-triodion", "byzantine-greek-rome1738-pentecostarion", "byzantine-greek-rome1738-biblos", "byzantine-greek-rome1872", "byzantine-greek-rome1876-horologion", "byzantine-greek-rome1880-euangelion", "byzantine-greek-rome1881-apostolos", "byzantine-greek-rome1886-oktoechos", "byzantine-greek-rome1925", "byzantine-greek-rome1937-horologion", "byzantine-greek-rome1950", "byzantine-greek-rome-anthologion-vol1", "byzantine-greek-rome-anthologion-vol2", "byzantine-greek-rome-anthologion-vol3", "byzantine-greek-rome-anthologion-vol4", "byzantine-greek-rome1873-1902-series-cold", "greek-reception-athens-holyweek2026"]
 ancestry_candidate_ids = ["byz-barberini336", "byzantine-greek-rome1526", "byzantine-greek-venice1602", "byzantine-greek-coislin213", "byzantine-greek-venice1663-cold", "byzantine-greek-venice1727-cold"]
 deferred_or_origin_review_candidate_ids = ["byzantine-greek-rome1724-triodion"]
 coverage_status = "incomplete"
-missing_chronology = "Exact reception of Roman Greek books, later Greek editions, local rubrics and calendar changes remain unverified. The byzantine_greek lane (2026-10-19) labelled the Roman Greek complementary books individually: the April 1738 Paraklitike, Triodion, Pentecostarion and annual book; the 1872 small Euchologion; the 1876 Horologion, 1880 Gospel book, 1881 Apostolos and 1886 Oktoechos; the 1925 Chrysostom Liturgy; the 1937 Horologion; the 1950 Hieratikon (title Rome 1950, printed at Harissa in March 1952); and the four Anthologion volumes dated 1967, 1974, 1980 and 1968. Their reception by the exarchates of Greece and Istanbul is still unestablished; the 1724 Triodion is an unchecked encyclopedia report."
+missing_chronology = "Roman Greek source books remain relevant witnesses without established Greek exarchate reception. Athens Holy Trinity’s official 2026 programme now supplies specific announced local Holy Week service/calendar arrangements (Presanctified 6–8 April, Basil 9/11 April, Pascha 12 April), not completed celebrations or exact receiving editions. Earlier Greek local chronology, receiving altar books, adoption acts and Istanbul reception remain unverified."
 relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
 
 [[church_coverage]]
@@ -3746,11 +3764,11 @@ id = "italo-albanian"
 name = "Byzantine Catholic Church in Italy / Italo-Albanian"
 family = "Byzantine"
 census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025"]
-candidate_ids = ["byz-greek-1754", "byz-greek-1873", "byzantine-greek-rome1880-euangelion", "byzantine-greek-rome1937-horologion", "byzantine-greek-rome1601", "byzantine-greek-santadriano1667", "byzantine-greek-rome1683", "byzantine-greek-crypt1300", "byzantine-greek-crypt1579", "byzantine-greek-crypt1881", "byzantine-greek-crypt1950", "byzantine-greek-crypt1994", "byzantine-greek-italian1940", "byzantine-greek-italian2005", "byzantine-greek-lungro-james", "byzantine-greek-calendar2026"]
+candidate_ids = ["byz-greek-1754", "byz-greek-1873", "byzantine-greek-rome1880-euangelion", "byzantine-greek-rome1937-horologion", "byzantine-greek-rome1601", "byzantine-greek-santadriano1667", "byzantine-greek-rome1683", "byzantine-greek-crypt1300", "byzantine-greek-crypt1579", "byzantine-greek-crypt1881", "byzantine-greek-crypt1950", "byzantine-greek-crypt1994", "byzantine-greek-italian1940", "byzantine-greek-italian2005", "byzantine-greek-lungro-james", "byzantine-greek-calendar2026", "byzantine-greek-lungro1968", "greek-reception-piana2019"]
 ancestry_candidate_ids = ["byz-barberini336", "byzantine-greek-crypt20", "byzantine-greek-ott344", "byzantine-greek-rossano-typikon", "byzantine-greek-messina-typikon", "byzantine-greek-casole-typikon", "byzantine-greek-stpeter", "byzantine-greek-rossano-angelo-cold", "byzantine-greek-correction1370-cold"]
-deferred_or_origin_review_candidate_ids = ["byzantine-greek-rome1831", "byzantine-greek-rome1967-greek-italian", "byzantine-greek-lungro1968", "byzantine-greek-lungro2005-evangeliary", "byzantine-greek-grottaferrata-hours2001-cold"]
+deferred_or_origin_review_candidate_ids = ["byzantine-greek-rome1831", "byzantine-greek-rome1967-greek-italian", "byzantine-greek-lungro2005-evangeliary", "byzantine-greek-grottaferrata-hours2001-cold"]
 coverage_status = "incomplete"
-missing_chronology = "Separate Grottaferrata, Lungro and Piana reception; locate older Italo-Greek local euchologia and normative Greek printing chain. The 1754 act is broad Greek-rite evidence, not proof of identical local use. The byzantine_greek lane (2026-10-19) labelled the Grottaferrata sequence (1299/1300 Typikon reworking, 1579 extension, 1601 and 1683 books, the 1667 Sant'Adriano codex 393, the 1881 restoration, the 1937 and 1950 Horologia and the 1994–1999 commission), the 1940 and 2005 inter-eparchial synods, and Lungro's 2026 calendar and Saint James book gap. Lungro's 2005 bulletin ties its Italian Evangeliary to the Rome 1880 Gospel text. The Greek altar books used at Lungro and Piana remain unidentified; the medieval Rossano, Messina and Casole Typika and the Liturgy of Saint Peter are comparison witnesses only."
+missing_chronology = "Lungro’s named approved Arbëresh Chrysostom book has explicit official 2015 use evidence and 2018 approval/widespread-use testimony; it is received service-book language, not automatically deferred. Original title/approval leaves, conflicting 1967/1968 printing and 6 August/13 October 1968 reports remain unresolved. Lungro’s 2026 circulated Ordo documents local calendar/rubrics. Piana’s 2019 Ordo names Greek Roman 1967–1980 and Italian Lipa 1999–2000 Anthologia and describes a concrete selected-ode arrangement. Exact Greek Eucharistic receiving books at Lungro, Piana and Grottaferrata, original adoption acts and earlier sequences remain unestablished; these findings do not establish whole-book identity or universal adoption."
 relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
 
 [[church_coverage]]
@@ -3761,13 +3779,13 @@ census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-
 candidate_ids = []
 ancestry_candidate_ids = ["byz-barberini336"]
 deferred_or_origin_review_candidate_ids = []
-coverage_status = "official-translation-approval-attested; source-language-chronology-incomplete"
-missing_chronology = "Identify the source-language exemplar and recension behind the approved Macedonian texts, a local celebrant-book title/imprint and dated implementation."
+coverage_status = "official-translation-approval-attested; exact-book-and-operative-use-unresolved"
+missing_chronology = "Authenticate the reported Литургикон (2009) and companion books from original title, imprint, approval and contents leaves; identify the Greek or Church Slavonic exemplar and establish dated local use of the approved wording."
 relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
-followup_source_ids = ["sico-macedonian-recognitio-2009", "oriental-liturgical-approval-register"]
-followup_note = "SICO 2009, printed p. 291, records recognitio on 2009-12-09 for Macedonian Chrysostom and Basil; the official online register calls the same dated action approval. Neither identifies a Greek or Church Slavonic source edition or a local celebrant-book imprint. This establishes a translation reception act without creating an independent vernacular textual stage."
-next_evidence_target = "Locate the Macedonian celebrant edition with its title and approval leaves, then identify its Greek or Church Slavonic source and dated local use."
-research_followup_status = "official-2009-reception-act-verified; exact-source-language-edition-unresolved"
+followup_source_ids = ["sico-macedonian-recognitio-2009", "oriental-liturgical-approval-register", "macedonian-src-eparchy-letter2023", "macedonian-src-monograph-presentation2024", "macedonian-src-monograph-extract-unverified-lead"]
+followup_note = "SICO 2009, printed p. 291, records recognitio on 2009-12-09 for Macedonian Chrysostom and Basil; the online register calls the same dated action approval. The same bytes were re-acquired on 2026-10-20 and the SICO page image rechecked. A newly inspected official pastoral letter requests thanksgiving liturgies on 3 December 2023 without naming a book or its language. Vatican News authenticates the identity and September 2024 presentation of a jubilee monograph by Goce Kostov and Zoran I. Stojanov. An unauthenticated third-party extract apparently from that monograph supplies a concrete Литургикон (2009) title lead and five companion-title leads; the original monograph pages and every service-book title leaf remain unverified. The six titles cannot all be assigned to the Byzantine route because Stojanov also governs the Latin diocese. No exact source-language edition, contents census, actual use of the approved wording, independent textual stage, or transmission edge is established."
+next_evidence_target = "Obtain publicly reachable original pages of the 2024 jubilee monograph's Издаваштво / Литургиски книги section, then the reported 2009 Литургикон title, imprint, approval and contents leaves; establish its Greek or Church Slavonic exemplar and a dated implementation or use record tied to that exact book."
+research_followup_status = "official-2009-approval-rechecked; 2023-letter-inspected; concrete-book-list-lead-unauthenticated; exact-book-and-use-unresolved"
 
 [[church_coverage]]
 id = "romanian"
@@ -3850,16 +3868,16 @@ id = "hungarian"
 name = "Hungarian Greek Catholic Church"
 family = "Byzantine"
 census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025"]
-candidate_ids = ["byz-lviv1646-nyirderzs", "byzantine-regional-hung1916", "byzantine-regional-hung1918", "byzantine-regional-hung1919", "byzantine-regional-hung1954", "byzantine-regional-hu-ceremonial1955"]
+candidate_ids = ["byz-lviv1646-nyirderzs", "byzantine-regional-hung1916", "byzantine-regional-hung1918", "byzantine-regional-hung1919", "byzantine-regional-hung1954", "byzantine-regional-hu-ceremonial1955", "byzantine-regional-hung1920", "byzantine-regional-hung1949"]
 ancestry_candidate_ids = ["byz-barberini336"]
-deferred_or_origin_review_candidate_ids = ["byzantine-regional-kyiv1738-timar", "byzantine-regional-lviv1759-abod", "byzantine-regional-slavonic1899-kantorjanosi", "byzantine-regional-hung1795", "byzantine-regional-hung1814", "byzantine-regional-hung1854", "byzantine-regional-hung1882", "byzantine-regional-hung1890", "byzantine-regional-hung1920", "byzantine-regional-hung1949"]
-coverage_status = "historical-or-local-candidate; chronology-incomplete"
-missing_chronology = "Obtain title/colophon identification images or a fuller 1646 copy, and dated Nyírderzs ownership/use evidence; later sequence remains open."
+deferred_or_origin_review_candidate_ids = ["byzantine-regional-kyiv1738-timar", "byzantine-regional-lviv1759-abod", "byzantine-regional-slavonic1899-kantorjanosi", "byzantine-regional-hung1795", "byzantine-regional-hung1814", "byzantine-regional-hung1854", "byzantine-regional-hung1882", "byzantine-regional-hung1890", "hungarian-next-eger-uu-iii-8"]
+coverage_status = "selected-received-book-states; chronology-incomplete"
+missing_chronology = "Dated Nyírderzs reception and seventeenth–nineteenth-century source-book succession remain open. Separate 1646 edition identification and Habina’s ownership from actual liturgical use. Exact 1920/1949 books and original local circulars remain unacquired; the modern sequence is supported by inspected document quotations and descriptions."
 relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
-followup_source_ids = ["hungarian-collection-1646", "byzantine-regional-src-light2020", "byzantine-regional-src-dobos2020", "byzantine-regional-src-ivancso2007", "byzantine-regional-src-ivancso2008", "byzantine-regional-src-ivancso2003", "byzantine-regional-src-athanasiana2010", "byzantine-regional-src-timar1822", "byzantine-regional-src-kantorjanosi"]
-followup_note = "A specific historical source-language copy has local provenance. Its original printing was not Catholic; possession does not establish continuous liturgical use. Regional lane addition (2026-10-19): The 2020 catalogue reports a 1666 donation note in the Nyírderzs copy naming an unidentified church of Kriva or Krive (month unresolved) and a second 1646 copy from Nyírpazony. Hungarian Catholic reform acts are linked as candidates: the 1916 Gregorian calendar reform, the 1918 removal of petitions for the ruler, the 1919 Holy Cross propers, the 1954 rubric directives and a 1955 Nyíregyháza cathedral ceremonial. The Hungarian books (manuscripts of 1795, 1814 and 1854; Liturgikons of 1882, 1890, 1920 and the 1949 extract) are linked for origin review as translation-based adaptations; the 1984 unchanged reprint and the 1793 Krucsay attribution are not linked. Slavonic books recorded in Greek Catholic parishes (Kyiv 1738 at Tímár in 1822, Lviv 1759 at Abod in 1877, an 1899 Liturgikon at Kántorjánosi) are reception witnesses."
-next_evidence_target = "Obtain title/colophon identification images or a fuller 1646 copy, and dated Nyírderzs ownership/use evidence; later sequence remains open. Regional lane addition (2026-10-19): Acquire the 1882, 1890, 1920 and 1949 Hungarian books and the 1916–1919 circular originals; consult Ivancsó, Dokumentáció I (2006), pp. 44–54."
-research_followup_status = "historical-or-local-witness-linked; chronology-incomplete"
+followup_source_ids = ["hungarian-collection-1646", "byzantine-regional-src-light2020", "byzantine-regional-src-dobos2020", "byzantine-regional-src-ivancso2007", "byzantine-regional-src-ivancso2008", "byzantine-regional-src-ivancso2003", "byzantine-regional-src-athanasiana2010", "byzantine-regional-src-timar1822", "byzantine-regional-src-kantorjanosi", "hungarian-next-src-choim1646", "hungarian-next-src-google1646", "hungarian-next-src-foldvari1992", "hungarian-next-src-foldvari2015"]
+followup_note = "The 1646 edition date is independently controlled by the museum АЛ-674 colophon; M–920 itself retains only folios 12–279. Its reported 1666 donation concerns an unidentified Kriva/Krive church and does not name Nyírderzs. Eger Uu.III.8 carries Habina’s signature on a Vilnius 1692 title described as foreign in 1992, while 2015 treats the dates as a combined book; the 1775 generic estate item is an attributed copy identification, and the 1695/1696 text-block dating needs original-colophon review. Neither ownership establishes altar use. The 1920 revised Liturgikon has local private-use printing permission under 1235/1920 and an explicit 1921 directive for operative wording; the 1949 extract replaces worn Chrysostom sections of that book. These received service-book witnesses can be admitted with approval scope explicit. The 1882/1890 translations remain origin/approval controls, and the reported unchanged 1984 reprint does not create another version."
+next_evidence_target = "Acquire M–920 ownership leaves 102–109 and a dated Nyírderzs parish inventory; identify Eger Uu.III.8’s original terminal colophon and consult Földvári–Ojtozi 1992 catalogue item 4 plus the 1775 estate original. Acquire the 1920 and 1949 books (resolve 1949 permission 1650/1949 versus 1235/1920) and Hajdúdorog circulars 1021/1921, 1195/1921 and 2351/1949; collate texts without treating the unchanged 1984 reprint as a recension."
+research_followup_status = "received-modern-book-states-documented; early-local-reception-open"
 
 [[church_coverage]]
 id = "coptic"
@@ -4304,15 +4322,12 @@ followup_boundary = "Two census slots remain without linked source-language cand
 [census]
 coverage_slots = 23
 status = "named-coverage-census-with-enumeration-discrepancy"
-source_ids = ["census-sico-2007", "census-vatican-news-2025", "census-parenti-2022", "eritrea-2015-act"]
-source_urls = ["https://www.vatican.va/roman_curia/congregations/orientchurch/sico/SICO_PDF/SICO%202007.pdf", "https://www.vaticannews.va/en/church/news/2025-05/rome-hosts-jubilee-of-eastern-churches-may.html", "https://www.ppoomm.va/content/dam/ppoomm/documentazioni/pubblicazioni/pubblicazioni-pum/libri/the-mission-of-the-universal-church-an-oriental-perspective/The-Mission-of-the-Universal-Church-An-Oriental-PerspectiveUUP.pdf", "https://www.vatican.va/content/francesco/la/apost_constitutions/documents/papa-francesco_costituzione-ap_20150119_ecclesia-metropolitana-asmarensis.html"]
-method = "Use the 22 named coverage slots in SICO 2007 plus the Eritrean Church established in 2015; Vatican News in 2025 reports 23. The official-hosted 2022 scholarly chapter instead enumerates 22 and omits Albanian. Retain the Albanian slot with unresolved current classification. This reconciliation is not a directly inspected current Annuario Pontificio named list."
+source_ids = ["census-sico-2007", "census-vatican-news-2025", "census-parenti-2022", "eritrea-2015-act", "census-annuario-public-access-2026"]
+source_urls = ["https://www.vatican.va/roman_curia/congregations/orientchurch/sico/SICO_PDF/SICO%202007.pdf", "https://www.vaticannews.va/en/church/news/2025-05/rome-hosts-jubilee-of-eastern-churches-may.html", "https://www.ppoomm.va/content/dam/ppoomm/documentazioni/pubblicazioni/pubblicazioni-pum/libri/the-mission-of-the-universal-church-an-oriental-perspective/The-Mission-of-the-Universal-Church-An-Oriental-PerspectiveUUP.pdf", "https://www.vatican.va/content/francesco/la/apost_constitutions/documents/papa-francesco_costituzione-ap_20150119_ecclesia-metropolitana-asmarensis.html", "https://www.annuariopontificio.catholic/welcome"]
+method = "Retain 23 research coverage slots from the 22 names in the 2007 SICO issue plus the Eritrean Church established in 2015; the official Vatican News report in 2025 counts 23 without a complete list. Direct image inspection on 2026-10-20 confirms that Parenti 2022 printed pp.122–123 instead lists 22, includes Eritrean and omits Albanian; his citation to Annuario Pontificio 2022 was not independently inspected. The official Annuario public welcome page requires account/subscription for directory access and does not expose a named census. Current named enumeration and Albanian canonical classification therefore remain unresolved; neither omission nor this research-slot count resolves them. Church slots do not count service books, recensions or textual states."
 five_families = "Alexandrian; Antiochene/West Syriac; Armenian; Chaldean/East Syriac; Constantinopolitan/Byzantine. These are broad ecclesial categories, not a demonstrated five-node textual stemma."
 genealogical_caution = "The 2022 chapter challenges a simple Alexandrian derivation for the Ethiopian tradition and treats Maronite origins separately. These category labels do not establish manuscript descent."
 non_version_act = "The 2015 Eritrean establishment supplies Church identity evidence only; it is not a missal revision."
-
-# REVIEWABLE APPEND FRAGMENT ONLY. No source-book payload or new stage is created.
-# Sources are deduplicated by existing URL; records are absent from the inventory snapshot.
 
 [[sources]]
 id = "coptic-vat17-catalogue"
@@ -5821,18 +5836,17 @@ research_artifact_path = ".scratch/full-research-20261019/byzantine_greek/resear
 [[sources]]
 id = "byzantine-greek-src-lungro2015"
 url = "https://www.eparchialungro.it/wp-content/uploads/sites/2/2020/10/Lajme.-1-del-2015-pdf.pdf"
-checked_on = "2026-10-19"
+checked_on = "2026-10-20"
 evidence_type = "official-eparchial-history"
 title = "Lajme / Notizie, January–April 2015"
-inspection = "Eparchy of Lungro (official bulletin). Printed pp. 46–51"
+inspection = "Original PDF p. 25 (two-up printed pp. 48–49) directly inspected as raster 20 October 2026; named book and current Lungro use in right-hand printed p. 49."
 locus = "Reports the 1968 first printed Arbëresh Chrysostom Liturgy (Tipografia Italo-Orientale S. Nilo, Grottaferrata) and the inter-eparchial translation commission, with local Albanian-language performance already in the 1950s; printed pp. 46–51 also list Giordano's Arbëresh Gospel and Apostle books (2010), Presanctified Liturgy (2011) and Holy Week (2012)."
-limitation = "Translation history is deferred. Other official retrospectives give 1967 as the printing year."
+limitation = "Original 1967/1968 book and approval leaves remain uninspected; publication reports conflict. Its approved operative Lungro language is not deferred solely because it originated through translation."
 full_contents_examined = false
 text_acquisition = "acquired-in-research-scratch; proposed-storage-scratch-only"
 hash_state = "computed"
 sha256 = "fba00341598b8fbe3cbd0a92a8497a00f03ce901362eb35333aa21fbb75a7b6b"
 byte_size = 1935504
-research_artifact_path = ".scratch/full-research-20261019/byzantine_greek/research/acquisitions/lungro-lajme-2015.pdf"
 page_count = 53
 
 [[sources]]
@@ -5855,18 +5869,17 @@ page_count = 65
 [[sources]]
 id = "byzantine-greek-src-lungro2018"
 url = "https://www.eparchialungro.it/wp-content/uploads/sites/2/2020/10/Il-sogno-di-Dio-sulla-nostra-Chiesa.pdf"
-checked_on = "2026-10-19"
+checked_on = "2026-10-20"
 evidence_type = "official-pastoral-history"
 title = "Il sogno di Dio sulla nostra Chiesa, pastoral letter 2018/2019"
-inspection = "Bishop Donato Oliverio, Eparchy of Lungro. PDF pages 22, 29 and 30 and the historical sections; the 13 October 1968 decree is at PDF page 30"
+inspection = "Bishop Donato Oliverio’s pastoral PDF pp. 30–31 directly inspected as rasters 20 October 2026; other earlier inspection loci remain in prior record."
 locus = "Reports the 1939 instruction on Greek books, the first inter-eparchial synod of 13–16 October 1940, and a decree of 13 October 1968 (citing Bollettino Ecclesiastico 1968, no. III, pp. 14–16) adopting Albanian in two editions, Greek with Albanian and Albanian with Italian."
-limitation = "Does not identify which Greek book edition was used. An institutional history does not prove that all books were identical."
+limitation = "The retrospective says decreed adoption 13 October 1968, whereas Lajme 2023 gives decree publication 6 August 1968. Preserve both reports pending original Bollettino 3 (1968), 14–16. No exact Greek receiving edition is named."
 full_contents_examined = false
 text_acquisition = "acquired-in-research-scratch; proposed-storage-scratch-only"
 hash_state = "computed"
 sha256 = "85d61f5d126ee3133c84fe4e04f77133a50eb842928e5a437168dde38626ece6"
 byte_size = 580874
-research_artifact_path = ".scratch/full-research-20261019/byzantine_greek/research/acquisitions/lungro-pastoral2018.pdf"
 page_count = 65
 
 [[sources]]
@@ -5902,18 +5915,17 @@ hash_state = "not-computed"
 [[sources]]
 id = "byzantine-greek-src-calendar2026"
 url = "https://www.eparchialungro.it/wp-content/uploads/sites/2/2026/01/Imerologhion-2026-compresso.pdf"
-checked_on = "2026-10-19"
+checked_on = "2026-10-20"
 evidence_type = "primary-calendar-and-proper-book"
 title = "Imerologhion 2026, Eparchy of Lungro"
-inspection = "Eparchy of Lungro; appendix credits the Liturgical Office of the Eparchy of Piana. Cover image, opening pages and the Papamihali appendix"
+inspection = "Original PDF pp. 3 (title), 60 (Pascha), 196 (Piana appendix credit) directly inspected as rasters 20 October 2026; whole text layer searched only as finding aid. Supplemental retention inspection independently checked original colophon PDF p. 210: printing completed December 2025 at GLF, Castrovillari; copyright Eparchia di Lungro. Raster SHA-256 98e68246198058ea43d117d27e969f58157f089c2b74d9e6c52d9299710743f9."
 locus = "The annual calendar of Lungro, with proper appendices attributed to Piana, including the office for Blessed Josif Papamihali on 5 November."
-limitation = "A search snippet had identified the whole volume as Piana's; the cover corrects this to Lungro, while the file keeps its discovery name. Whether the individual new propers are original compositions or translations, and their approval, are open."
+limitation = "A search snippet had identified the whole volume as Piana's; the cover corrects this to Lungro, while the file keeps its discovery name. Whether the individual new propers are original compositions or translations, and their approval, are open. The 2026 title identifies the calendar issue; it does not establish exact printing/publication in 2026. Official 20 January 2026 announcement supplies circulation attestation."
 full_contents_examined = false
 text_acquisition = "acquired-in-research-scratch; proposed-storage-scratch-only"
 hash_state = "computed"
 sha256 = "55cf4585745af0aaa5f4985ce37dd8f765a6634c69859d553ad758f98ec60524"
 byte_size = 6047792
-research_artifact_path = ".scratch/full-research-20261019/byzantine_greek/research/acquisitions/piana-imerologhion2026.pdf"
 page_count = 212
 
 [[sources]]
@@ -7459,18 +7471,18 @@ id = "byzantine-greek-lungro1968"
 family = "Byzantine"
 church_scope = "Eparchy of Lungro (with the inter-eparchial commission)"
 book_label = "Liturgjia Hyjnore e atit tonë ndër shëjtrat Joan Hrysostomit"
-date = "1967 or 1968 reported for the printing; decree of 6 August 1968; adoption reported on 13 October 1968"
+date = "Printing 1967 or 1968 reported; decree publication 6 August 1968 per 2023 retrospective; decreed adoption 13 October 1968 per 2018 pastoral; use explicitly attested 2015 and 2018"
 language = "Albanian (Arbëresh) with Greek or Italian"
-kind = "deferred-vernacular-translation"
+kind = "approved-operative-received-service-book-language"
 evidence = "official-retrospective-inspected"
-source_ids = ["byzantine-greek-src-lungro2015", "byzantine-greek-src-lungro2013", "byzantine-greek-src-lungro2018"]
-source_urls = ["https://www.eparchialungro.it/wp-content/uploads/sites/2/2020/10/Lajme.-1-del-2015-pdf.pdf", "https://www.eparchialungro.it/wp-content/uploads/sites/2/2020/06/lajme.pdf", "https://www.eparchialungro.it/wp-content/uploads/sites/2/2020/10/Il-sogno-di-Dio-sulla-nostra-Chiesa.pdf"]
-note = "Greek–Albanian and Albanian–Italian formats. A translation history, not a recension of the Albanian Church's books. The official retrospectives disagree on 1967 versus 1968; the original title leaves and decree are needed. No inference about adoption elsewhere or about Noli's books."
-date_basis = "Printing (1967 or 1968), decree (6 August 1968) and adoption (13 October 1968) are separate events; no bounds are given while the printing year conflicts."
+source_ids = ["byzantine-greek-src-lungro2015", "byzantine-greek-src-lungro2013", "byzantine-greek-src-lungro2018", "greek-reception-src-lungro2014", "greek-reception-src-lungro2023"]
+source_urls = ["https://www.eparchialungro.it/wp-content/uploads/sites/2/2020/10/Lajme.-1-del-2015-pdf.pdf", "https://www.eparchialungro.it/wp-content/uploads/sites/2/2020/06/lajme.pdf", "https://www.eparchialungro.it/wp-content/uploads/sites/2/2020/10/Il-sogno-di-Dio-sulla-nostra-Chiesa.pdf", "https://www.eparchialungro.it/wp-content/uploads/sites/2/2020/06/Lajme-settembredicembre-2014.pdf", "https://www.eparchialungro.it/wp-content/uploads/sites/2/2026/01/impaginato-2023-Vol-2-per-la-stampa-compresso.pdf"]
+note = "Official Lungro sources identify the inter-eparchial Arbëresh Chrysostom Liturgy, Congregation approval and actual continued parish use. Lajme 2015 printed p. 49 explicitly names Liturgjia Hyjnore e atit tonë ndër shëjtrat Joan Hrysostomit (reported 1968, S. Nilo Grottaferrata) and says it remains used in Lungro Arbëresh parishes. The bishop’s 2018 pastoral PDF pp. 30–31 identifies Greek–Albanian and Albanian–Italian approved formats and says Albanian is commonly used in almost all its parishes. This meets received-service-book-language scope and is not blanket-deferred solely as a translation. Printing 1967 versus 1968, press and bilingual-format discrepancies remain unresolved until original title/approval leaves are inspected. Lajme 2023 p. 104 gives decree publication 6 August 1968; the 2018 pastoral p. 30 says adoption decreed 13 October 1968. These reports do not authorize a silently harmonized exact adoption day. No Piana, Grottaferrata or Albanian Catholic local reception is inferred."
+date_basis = "Distinct source-reported publication/adoption/use dates are preserved; no numeric printing bound or invented reconciliation."
 text_acquisition = "not-acquired"
 full_contents_examined = false
-research_priority = "deferred-translation-lane"
-version_status = "translation-deferred; printing-date-conflict-preserved"
+research_priority = "received-service-book-language"
+version_status = "approved-local-use-attested; original-printing-identity-and-date-conflict-open"
 acquisition_status = "not-acquired"
 transcription_status = "not-transcribed"
 collation_status = "not-collated"
@@ -7529,14 +7541,14 @@ id = "byzantine-greek-calendar2026"
 family = "Byzantine"
 church_scope = "Eparchy of Lungro, with appendices credited to the Eparchy of Piana degli Albanesi"
 book_label = "Imerologhion 2026 with proper appendices attributed to Piana"
-date = "2026"
+date = "2026 calendar issue; already-circulated Ordo attested 20 January 2026; printing completed December 2025"
 language = "Italian for the Piana appendix propers; other parts as printed"
 kind = "annual-calendar-and-component-witness"
 evidence = "original-page-images-inspected"
-source_ids = ["byzantine-greek-src-calendar2026"]
-source_urls = ["https://www.eparchialungro.it/wp-content/uploads/sites/2/2026/01/Imerologhion-2026-compresso.pdf"]
-note = "A calendar issue is not a new Liturgy recension; the Papamihali proper is an identifiable component. The file name preserves the discovery lead, but the cover is Lungro's. The Piana appendix propers (PDF pages 196 and 199, including Papamihali on 5 November) are printed in Italian, so they are vernacular texts; their composition and approval need checking."
-date_basis = "Date identifies only the event named in date_role; it is not composition, universal adoption or a period of use."
+source_ids = ["byzantine-greek-src-calendar2026", "greek-reception-src-lungro-calendar-use2026"]
+source_urls = ["https://www.eparchialungro.it/wp-content/uploads/sites/2/2026/01/Imerologhion-2026-compresso.pdf", "https://www.eparchialungro.it/2026/01/20/imerologhion-2026-2/"]
+note = "Original Lungro title and calendar inspected. The official 20 January 2026 announcement expressly says the eparchy has circulated this Ordo to regulate the year’s festive/daily Vespers, Orthros, Hours and Divine Liturgy. PDF p. 60 assigns Pascha 5 April 2026 and Chrysostom with proper hymns/readings; this is a concrete local operative calendar/rubric component, not a new Eucharistic recension. PDF pp. 196 and 199 credit Piana’s Liturgical Office for Italian propers, which does not make the whole volume Piana’s. Exact receiving Hieratikon, decree for the appended propers, first celebration and parish-wide compliance remain unproved. Supplemental independently reviewed colophon inspection: PDF p. 210 says printing was completed in December 2025, followed by Copyright Eparchia di Lungro. Keep printing completion separate from the 2026 calendar issue and 20 January 2026 circulation attestation."
+date_basis = "The 2026 coordinate is the dated official circulation attestation, not a title-imputed printing or exact publication date. The original colophon, PDF p. 210, states printing completed December 2025 at GLF, Castrovillari; exact publication date remains unestablished."
 text_acquisition = "complete-offered-file-acquired; restricted-metadata-only"
 full_contents_examined = false
 research_priority = "source-language"
@@ -7547,8 +7559,9 @@ collation_status = "not-collated"
 source_title_status = "Cover and opening pages inspected"
 chronology_start = 2026
 chronology_end = 2026
-chronology_kind = "publication-year"
-chronology_certainty = "explicit-in-inspected-title"
+chronology_kind = "attestation"
+chronology_certainty = "explicit-circulation-attestation-in-official-20-January-2026-announcement"
+date_role = "circulation-attestation; distinct-calendar-issue-and-printing-completion"
 
 [[records]]
 id = "byzantine-greek-karme1612"
@@ -10916,11 +10929,11 @@ kind = "revised-expanded-liturgikon"
 evidence = "church-academic-studies-quoting-primary-circulars"
 source_ids = ["byzantine-regional-src-ivancso2007", "byzantine-regional-src-ivancso2008", "byzantine-regional-src-light2020"]
 source_urls = ["https://epa.oszk.hu/05200/05207/00026/pdf/EPA05207_athanasiana_2007_26.pdf", "https://epa.oszk.hu/05200/05207/00027/pdf/EPA05207_athanasiana_2008_27.pdf", "https://real.mtak.hu/123184/1/orcad_vilagossaga_angol.pdf"]
-note = "Revised against the Greek and expanded edition combining the 1882 and 1890 volumes, with the offices of the liturgical day, the Great Canon, dismissals, Sunday propers, calendar and a paschalion for 1921–1960. Its preface states that the canonical parts of the liturgies were printed in Greek as well, so that clergy could celebrate the essential part in the Church's original language until Greek liturgikons could be obtained from Rome (Athanasiana 27 (2008), printed p. 20, quoting the book's 'Emlékezetül', pp. 309–310). Distribution was announced by circular 1195 and the text made binding by circular 1021 of 1921. Open: do not date all public use from the private-use permission alone; book not acquired."
+note = "Revised against the Greek and expanded edition combining the 1882 and 1890 volumes, with the offices of the liturgical day, the Great Canon, dismissals, Sunday propers, calendar and a paschalion for 1921–1960. Its preface states that the canonical parts of the liturgies were printed in Greek as well, so that clergy could celebrate the essential part in the Church's original language until Greek liturgikons could be obtained from Rome (Athanasiana 27 (2008), printed p. 20, quoting the book's 'Emlékezetül', pp. 309–310). Distribution was announced by circular 1195 and the text made binding by circular 1021 of 1921. Open: do not date all public use from the private-use permission alone; book not acquired. Follow-up 2026-10-20: Ivancsó 2007, pp. 69–73, and Ivancsó 2008, pp. 19–25, re-inspected. The approval formula is permission for private use and must remain explicit. Dated circular 1021/1921 directs the revised book’s wording; circular 2351/1949 describes the heavily worn Chrysostom section of 1920 copies and orders a replacement extract. This documents operative local reception without establishing papal approval, public-use permission from 1920 alone, first celebration or universal compliance. The 1984 printing is reported as an unchanged reprint, not a new recension."
 date_basis = "Date identifies the event stated in chronology_kind (printing-approval-implementation-distinguished), not composition, approval of another book or a period of use."
 text_acquisition = "not-acquired"
 full_contents_examined = false
-research_priority = "reform-evidence-retained-original-composition-review"
+research_priority = "received-service-book-language; approval-scope-qualified"
 version_status = "revised-and-expanded-liturgikon-documented"
 acquisition_status = "not-acquired"
 transcription_status = "not-transcribed"
@@ -10944,11 +10957,11 @@ kind = "component-extract-format-variants"
 evidence = "church-academic-studies with title transcription"
 source_ids = ["byzantine-regional-src-ivancso2008", "byzantine-regional-src-ivancso2003", "byzantine-regional-src-ivancso2007"]
 source_urls = ["https://epa.oszk.hu/05200/05207/00027/pdf/EPA05207_athanasiana_2008_27.pdf", "https://epa.oszk.hu/05200/05207/00016/pdf/EPA05207_athanasiana_2003_16_041-074.pdf", "https://epa.oszk.hu/05200/05207/00026/pdf/EPA05207_athanasiana_2007_26.pdf"]
-note = "An extract of the 1920 Liturgikon containing only the Chrysostom liturgy, issued in two variants (one beginning with the midday service for binding into worn 1920 copies, one with its own title page) and omitting the variable intention formularies; 59 pages (Ivancsó 2008, printed pp. 21–22 and 24). The retained text is not a new full recension (Ivancsó 2003 and 2008). Open: book not acquired; the title-page permission number differs between Ivancsó 2003 and 2008; Dokumentáció I (2006), pp. 53–54, not seen."
+note = "An extract of the 1920 Liturgikon containing only the Chrysostom liturgy, issued in two variants (one beginning with the midday service for binding into worn 1920 copies, one with its own title page) and omitting the variable intention formularies; 59 pages (Ivancsó 2008, printed pp. 21–22 and 24). The retained text is not a new full recension (Ivancsó 2003 and 2008). Open: book not acquired; the title-page permission number differs between Ivancsó 2003 and 2008; Dokumentáció I (2006), pp. 53–54, not seen. Follow-up 2026-10-20: Ivancsó 2007, pp. 69–73, and Ivancsó 2008, pp. 19–25, re-inspected. The approval formula is permission for private use and must remain explicit. Dated circular 1021/1921 directs the revised book’s wording; circular 2351/1949 describes the heavily worn Chrysostom section of 1920 copies and orders a replacement extract. This documents operative local reception without establishing papal approval, public-use permission from 1920 alone, first celebration or universal compliance. The 1984 printing is reported as an unchanged reprint, not a new recension."
 date_basis = "Date identifies the event stated in chronology_kind (publication), not composition, approval of another book or a period of use."
 text_acquisition = "not-acquired"
 full_contents_examined = false
-research_priority = "deferred-translation-lane"
+research_priority = "received-service-book-language; approval-scope-qualified"
 version_status = "extract-of-1920; not-new-recension"
 acquisition_status = "not-acquired"
 transcription_status = "not-transcribed"
@@ -18804,3 +18817,364 @@ chronology_start = 1835
 chronology_end = 1835
 chronology_kind = "publication-year-reported"
 chronology_certainty = "secondary-report; title-page-and-catalogue-not-inspected"
+
+[[sources]]
+id = "albanian-src-trani2007-archive-census"
+url = "https://dgagaeta.cultura.gov.it/public/uploads/documents/Strumenti/Strumenti_CLXXIII.pdf"
+checked_on = "2026-10-20"
+evidence_type = "official-archive-finding-aid"
+title = "Silvia Trani (ed.), L’Unione fra l’Albania e l’Italia. Censimento delle fonti (1939-1945) conservate negli archivi pubblici e privati di Roma, Strumenti CLXXIII (DGA, 2007)"
+inspection = "Whole 586-page official-hosted PDF acquired. Title/copyright text and printed pp. 243-244, 373-374 and 496 read; printed pp. 244, 374 and 496 independently inspected as local page images (PDF pages 242, 372 and 494, counted from 1)."
+locus = "Printed p. 244 identifies Congregation Oriental archive headings Oriente-Affari generali and Oriente-Liturgia, then Rito bizantino / Albanesi dal 1928, 16 boxes of mission correspondence/accounts. Printed p. 374 identifies Scarpelli–Placide de Meester correspondence at the Greek College. Printed p. 496 identifies relevant Grottaferrata records."
+limitation = "Finding-aid evidence of archival holdings, not inspection of mission documents or a celebrant book. Access conditions describe the historical census, not present access. No title, imprint, approval, exemplar or dated book use is established."
+full_contents_examined = false
+text_acquisition = "complete-offered-file-acquired-in-research-scratch; proposed-storage-metadata-only"
+hash_state = "computed"
+sha256 = "e7ee7673921bd8f9087c384ecea620edbeeeecd49da0bdff578183105c7222e7"
+byte_size = 1388729
+
+[[sources]]
+id = "albanian-src-murzaku2007-scarpelli-leads"
+url = "https://jemi.it/articoli/archimandrita-pietro-scarpelli-chiesa-greco-cattolica/"
+checked_on = "2026-10-20"
+evidence_type = "scholarly-article-transcription-with-archival-citations"
+title = "Ines Angeli Murzaku, Archimandrita Pietro Scarpelli Chiesa Greco-Cattolica, Jemi transcription of Besa July–September 2007"
+inspection = "Whole served HTML acquired; article and archival footnotes read. Used only to identify uninspected original-document targets."
+locus = "Notes 5, 13 and the second sequence 1-7 identify ACCO Prot. 441/28, the Scarpelli report of 10 January 1930, and Cordignano’s 1929 Elbasan report."
+limitation = "Modern scholarly mediation. Original reports, letters and book holdings were not inspected. Its account of a celebration cannot establish which book was used."
+full_contents_examined = true
+text_acquisition = "complete-served-html-acquired-in-research-scratch; proposed-storage-metadata-only"
+hash_state = "computed"
+sha256 = "b16274cacceb88a9c25f1148d15dc2b9c2b0cca06ca6705c4b2e20fbe5ece4f6"
+byte_size = 41999
+
+[[sources]]
+id = "albanian-src-gori2021-archive-access"
+url = "https://www.osservatoreromano.va/it/news/2021-02/ponte-di-carita-e-di-dialogo.html"
+checked_on = "2026-10-20"
+evidence_type = "official-institutional-news-report"
+title = "Nicola Gori, Ponte di carità e di dialogo, L’Osservatore Romano, 15 February 2021"
+inspection = "Whole publicly served HTML acquired; article read, especially Memoria storica e servizio alla ricerca."
+locus = "Memoria storica e servizio alla ricerca reports access to the Congregation’s historical records through Pius XII (1862–1958), finding aids for users and digital reproduction service."
+limitation = "A dated 2021 institutional report, not a current admission guarantee or online delivery of the Albanian mission files. It does not identify a liturgical book or clear repository redistribution."
+full_contents_examined = true
+text_acquisition = "complete-served-html-acquired-in-research-scratch; proposed-storage-metadata-only"
+hash_state = "computed"
+sha256 = "564a212afd25a6062bf42bf3ddcf125d9de5733bd643b0d9ff43a59be1fe6e7a"
+byte_size = 104661
+
+[[sources]]
+id = "macedonian-src-eparchy-letter2023"
+url = "https://www.vaticannews.va/mk/church/news/2023-12/pastoralno-poslanie-na-episkopot-stojanov-5-godini-eparhija.html"
+checked_on = "2026-10-20"
+evidence_type = "official-pastoral-letter-republication"
+inspection = "whole-provider-HTML-acquired; complete-pastoral-letter-body-read"
+locus = "HTML lines 864–881, especially line 876; extracted derivative lines 209–225. Vatican News publication timestamp 4 December 2023, 08:27."
+text_acquisition = "complete-provider-resource-acquired-in-research-scratch; metadata-only-proposal"
+hash_state = "sha256-computed"
+sha256 = "a63192f3d3cac5abc408db7dde41a369c55cacc844f5c006ce9873dde54cc311"
+byte_size = 83472
+full_contents_examined = false
+rights_status = "unresolved"
+storage = "restricted"
+limitation = "The bishop invites clergy to celebrate thanksgiving liturgies on 3 December 2023. This is a requested celebration, not a report proving celebration, language, exact celebrant edition, source-language exemplar, or reception of the 2009 approved wording. The provider's whole HTML is retained only in disposable research scratch; no permission for Git redistribution was established."
+
+[[sources]]
+id = "macedonian-src-monograph-presentation2024"
+url = "https://www.vaticannews.va/mk/church/news/2024-09/14212.html"
+checked_on = "2026-10-20"
+evidence_type = "official-church-monograph-presentation-report"
+inspection = "whole-provider-HTML-acquired; complete-article-body-read"
+locus = "HTML lines 864–886: monograph title and authors at 865, authors' media work at 875, described scope at 876, printer acknowledgement at 884. Report published 6 September 2024, 13:29; presentation event 5 September 2024."
+text_acquisition = "complete-provider-resource-acquired-in-research-scratch; metadata-only-proposal"
+hash_state = "sha256-computed"
+sha256 = "b132791be0cd2c76d03047ab70f0d7d1a5b141b0ef957b30add74354199992b3"
+byte_size = 94754
+full_contents_examined = false
+rights_status = "unresolved"
+storage = "restricted"
+limitation = "Verifies the existence, title, named authors Goce Kostov and Zoran I. Stojanov, and presentation of the episcopal jubilee monograph. It neither reproduces the monograph's liturgical-book list nor identifies a 2009 altar-book imprint. The report's description of 15 thematic chapters and more than 250 photographs is not a contents census of any service book. The provider's whole HTML is retained only in disposable scratch; no permission for Git redistribution was established."
+
+[[sources]]
+id = "macedonian-src-monograph-extract-unverified-lead"
+url = "https://www.scribd.com/document/920700615/12"
+checked_on = "2026-10-20"
+evidence_type = "unauthenticated-third-party-text-upload; discovery-lead-only"
+inspection = "whole-public-HTML-response-acquired; displayed-publication-subsection-read; no-original-monograph-page-image-or-title-leaf-authenticated"
+locus = "Displayed document labelled 12, advertised as six pages; subsection Издаваштво / Литургиски книги; extracted derivative lines 181–250, target list at 245–250. No trustworthy original monograph page locus established."
+text_acquisition = "whole-public-response-acquired; neither-complete-monograph-nor-service-books-acquired"
+hash_state = "sha256-computed"
+sha256 = "fedaab0fa43ca1118613990dc978726ade1ccb71d9f3cfb42c3cf6baf4554b92"
+byte_size = 1261013
+full_contents_examined = false
+rights_status = "copyright-asserted; upload-authority-unverified"
+storage = "restricted"
+limitation = "Discovery lead only: uploader provenance is unauthenticated and the page asserts all rights reserved. The apparent extract lists Литургикон (2009), Евангелие и Апостол за литургиската година (2009), Обредник (2009), Божествена литургија за народот (2010), Тропари и кондаци (2022), and Велигденско тродневие (2020). Neither the years, imprint, rite of each title, exact contents, approval, nor actual use has been verified from original books. Bishop Stojanov's dual Latin and Byzantine jurisdiction prevents assigning every title to the Byzantine route. Keep as followup evidence only; no active or deferred catalogue candidate or stage is proposed from this list. The whole public response is scratch-only, and neither its bytes nor its source text is cleared for Git redistribution."
+
+[[sources]]
+id = "hungarian-next-src-choim1646"
+url = "https://choim.org/служебник-1646-року/"
+checked_on = "2026-10-20"
+title = "Chernihiv Historical Museum named for V. V. Tarnovskyi, Служебник 1646 року (8 February 2021), copy АЛ-674"
+evidence_type = "holding-museum-primary-book-photographs"
+inspection = "Museum article read; original-book photographs 1–6 acquired and visually inspected. Photograph 5 is the terminal colophon naming Lviv, Mihail Sliozka, 1646 and 23 August. Photograph 4 shows the end of Arsenii Zheliborskyi’s preface and an adjacent heading describing Chrysostom, Basil, Presanctified and the daily offices. Photograph 2 is a contents leaf with the museum shelfmark АЛ-674 visible on the facing endpaper; it is not the missing printed title."
+locus = "https://choim.org/wp-content/uploads/2021/02/5.jpg (colophon); /4.jpg (preface ending and scope heading); /2.jpg (copy identification and contents)"
+full_contents_examined = false
+limitation = "Only the article and six photographs were inspected, not a full volume. This museum copy is distinct from Nyírderzs M–920 and the Google Czech copy. Its colophon independently controls the edition imprint/date; no local Hungarian ownership, Catholic reception or complete text follows. No full original title leaf is supplied in the six photographs."
+text_acquisition = "six-offered-photographs-acquired-in-research-scratch"
+hash_state = "sha256-computed"
+rights_note = "Underlying 1646 book text is old public-domain matter; the museum photographs and modern article carry no inspected reuse grant, and the site reserves rights. No photograph or article text is proposed for Git distribution; metadata and original paraphrases only."
+
+[[sources]]
+id = "hungarian-next-src-google1646"
+url = "https://books.google.com/books?id=jr1nAAAAcAAJ"
+checked_on = "2026-10-20"
+title = "Leiturgiarion, Google Books jr1nAAAAcAAJ, digitized National Library of the Czech Republic copy"
+evidence_type = "library-copy-digital-discovery-and-bounded-page-inspection"
+inspection = "Public bibliographic page identifies typ. M. Sljozka, 1646, original from National Library of the Czech Republic, digitized 2 May 2016. Displayed images PP1 (cover), PP3, PP4, PP7 (blank preliminaries) and PA1 (first printed service heading, not the publication title) were acquired and inspected. The public page offers a PDF, whose attempted download returned HTTP 429. The complete scan and original imprint/date leaves were not acquired."
+locus = "About page https://books.google.com/books/about/Leiturgiarion.html?id=jr1nAAAAcAAJ; displayed page PA1; preliminary pages PP1, PP3, PP4 and PP7"
+full_contents_examined = false
+limitation = "A fuller digital-copy lead, not a verified whole 1646 scan or title-page identification. PP5 returned an image-not-available placeholder; it is excluded from source-image evidence. Page count from a delivery catalogue does not establish physical completeness. No relation to a Hungarian physical copy is established."
+text_acquisition = "bounded-displayed-images-only; offered-whole-pdf-rate-limited"
+hash_state = "sha256-computed-for-acquired-pages-only"
+rights_note = "No whole source-book or modern Google presentation is proposed for retention. Metadata only; independently identify exact library shelfmark, missing front matter and reproduction terms before retention."
+
+[[sources]]
+id = "hungarian-next-src-foldvari1992"
+url = "https://epa.oszk.hu/00000/00021/00349/pdf/MKSZ_EPA00021_1992_108_02_00349.pdf"
+checked_on = "2026-10-20"
+title = "Sándor Földvári, Adalékok az Egri Főegyházmegyei Könyvtár cirill és glagolita nyomtatványainak proveniencia-kérdéséhez, Magyar Könyvszemle 108/2 (1992), pp. 169–173"
+evidence_type = "library-specialist-copy-provenance-study"
+inspection = "Printed pp. 169–173 read in the acquired complete issue; pp. 170 and 173 visually inspected. At p. 170 and note 9 the Eger Sluzhebnik is identified as Uu.III.8, catalogue item 4 in Földvári–Ojtozi 1992. Its own title is missing; a foreign Vilnius 1692 title was bound in, causing older misidentification. At p. 173 the inserted title bears Lucas Habina’s ownership inscription. Requests for liturgical books in letters of 22 December 1768 are reported, but the author found no archival trace that the requests were fulfilled."
+locus = "Printed p. 170 and note 9 (PDF p. 80); printed p. 173 and notes 36–40 (PDF p. 83)"
+full_contents_examined = false
+limitation = "The physical book and the separate 1992 annotated catalogue were not acquired. The article calls the text block Supraśl 1695; the foreign 1692 title cannot independently authenticate that dating or a complete edition. Signature proves ownership, not altar use or a dated first possession. The study reports Habina changed to the Latin rite during his Eger years; do not erase that qualification when assigning confessional context."
+text_acquisition = "complete-offered-issue-acquired-in-research-scratch"
+hash_state = "sha256-computed"
+rights_note = "Modern 1992 scholarship; EPA reproduction permission not established. Restricted research bytes only; no modern article text or page images proposed for Git distribution."
+sha256 = "b561185479ca8b9c7d31ce4aefca55d4ab398f0497d70c712e7097cd1e8aad58"
+byte_size = 12186715
+
+[[sources]]
+id = "hungarian-next-src-foldvari2015"
+url = "https://real.mtak.hu/83534/1/Foldvari2015in_Magocsi_Festschrift_onSuprasl_u.pdf"
+checked_on = "2026-10-20"
+title = "Sándor Földvári, Лукас Габина, преподаватель русинских семинаристов в г. Эгер (Северная Венгрия) – владелец экземпляра первой книги типографии в Супрасле, in A Jubilee Collection: Essays in Honor of Professor Paul Robert Magocsi (2015), pp. 235–245"
+evidence_type = "specialist-copy-provenance-study-with-primary-title-photograph"
+inspection = "Acquired the complete offered 11-page PDF (two printed pages per image); visually inspected PDF pp. 1–2, 4–7 and 9–11, especially printed pp. 235–241 and the English abstract at p. 245. Printed p. 238 reproduces the inserted Vilnius 1692 title and Lucas Habina’s inscription. Printed pp. 237–239 report a 1775 estate inventory of 82 books, including 16 Church Slavonic books, and attribute its generic Missale Ruthenicum, folio item to this copy. The acquisition route is explicitly hypothetical."
+locus = "Printed pp. 236–239 (PDF pp. 5–6); image of title/signature at printed p. 238 (PDF p. 6); printed English abstract p. 245 (PDF p. 9); REAL item abstract https://real.mtak.hu/83534/"
+full_contents_examined = false
+limitation = "The 2015 body calls the printing/colophon 1696 and captions the book 1692–1696; its printed English abstract at p. 245 says both 1696 and 1695, while the REAL abstract and Földvári 1992 say 1695. Preserve this discrepancy. The 2015 treatment of the title/body as a combined Vilnius–Supraśl book differs from the 1992 claim that the title was foreign; neither attribution is independently adjudicated here. The original Eger colophon and 1775 estate document were not seen. The generic estate item is an authorial copy identification, not an exact native-title inventory entry or proof of liturgical use. The inserted title was already identified as foreign in Földvári 1992."
+text_acquisition = "complete-offered-file-acquired-in-research-scratch"
+hash_state = "sha256-computed"
+rights_note = "Modern 2015 study and original-book photographs embedded in that study, copyrighted volume; no reuse grant inspected. Restricted research bytes only; no modern article text or facsimile exported."
+sha256 = "f2ad4a7d98a2cf1aa3cfbe1d9292dd28a1856b32e35b0ad18eba291478085780"
+byte_size = 3948233
+
+[[records]]
+id = "hungarian-next-eger-uu-iii-8"
+family = "Byzantine"
+church_scope = "Eger copy once owned by Lucas Habina, former Greek Catholic parish priest and Eger Byzantine-rite teacher; Földvári 1992 reports a subsequent change to the Latin rite"
+book_label = "Eger, Egri Főegyházmegyei Könyvtár Uu.III.8: Sluzhebnik with Vilnius 1692 title, described as foreign in Földvári 1992"
+date = "Text block catalogued as Supraśl 1695 in Földvári 1992; 2015 body says 1696; ownership inscription undated; 1775 estate-item identification attributed"
+language = "Church Slavonic"
+kind = "copy-provenance-research-witness"
+evidence = "library-specialist studies; ownership signature reproduced in 2015"
+source_ids = ["hungarian-next-src-foldvari1992", "hungarian-next-src-foldvari2015"]
+source_urls = ["https://epa.oszk.hu/00000/00021/00349/pdf/MKSZ_EPA00021_1992_108_02_00349.pdf", "https://real.mtak.hu/83534/1/Foldvari2015in_Magocsi_Festschrift_onSuprasl_u.pdf"]
+note = "The exact physical witness is Eger Uu.III.8, identified in Földvári–Ojtozi 1992 catalogue item 4 as cited by Földvári 1992, p. 170 n. 9. Földvári 1992 says its own title is absent and a foreign Vilnius 1692 title was bound in; Földvári 2015 instead treats the Vilnius/Supraśl dates as one combined book. The title leaf bears Lucas Habina’s signature. The physical title-to-text-block relation was not independently checked. The 2015 author associates the generic Missale Ruthenicum, folio in Habina’s 1775 estate inventory with this copy, but does not reproduce the estate record. The 2015 body/caption says 1696/1692–1696, and its printed English abstract gives both 1696 and 1695, against the 1992 article and REAL abstract’s 1695. No original Eger colophon, date of ownership, specific altar use or continuous reception is established. Do not treat the inserted title as evidence that this text block is an exact copy of the registered NBUV 1692–1695 edition."
+date_basis = "Unpositioned because the dated printing attribution is discrepant and the ownership signature is undated; 1775 dates an attributed estate-inventory item, not first ownership or celebration."
+text_acquisition = "not-acquired; photograph of inserted title/signature only via 2015 study"
+full_contents_examined = false
+research_priority = "historical-copy-provenance"
+version_status = "not-a-new-edition; exact-text-block-attribution-needs-original-colophon"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Title-to-body relation attributed differently in 1992 and 2015; not independently authenticated for this copy"
+holding = "Eger, Egri Főegyházmegyei Könyvtár"
+shelfmark = "Uu.III.8"
+witness_limit = "Ownership only; edition attribution and 1775 estate identification remain source-qualified; no liturgical-use claim"
+
+[[sources]]
+id = "census-annuario-public-access-2026"
+url = "https://www.annuariopontificio.catholic/welcome"
+checked_on = "2026-10-20"
+evidence_type = "official-public-access-page"
+inspection_status = "inspected"
+inspection = "Official public welcome page rendered in Chromium and its complete DOM retained; subscription plans, registration/login and FAQ inspected. The page identifies the Secretariat of State and continuously updated statistics-office data. No named Eastern Church enumeration is exposed in this public welcome page."
+limitations = "No account, payment, subscription or restricted directory access attempted. The current named enumeration remains uninspected. Root HTML is an application shell; the retained rendered DOM is a browser derivative, not the Annuario contents."
+text_acquisition = "complete-public-rendered-DOM-research-copy; no-Annuario-directory-content"
+hash_state = "sha256-966705a5e1f67a683309bb9284d3ca0f3a99c2eac9279149dbc1fcd764261d21"
+sha256 = "966705a5e1f67a683309bb9284d3ca0f3a99c2eac9279149dbc1fcd764261d21"
+byte_count = 179281
+full_contents_examined = false
+rights_note = "Protected official public web presentation retained in scratch only; metadata proposal contains no subscriber content or source-text payload."
+
+[[sources]]
+id = "greek-reception-src-lungro2014"
+url = "https://www.eparchialungro.it/wp-content/uploads/sites/2/2020/06/Lajme-settembredicembre-2014.pdf"
+checked_on = "2026-10-20"
+evidence_type = "official-eparchial-retrospective"
+title = "Lajme / Notizie, September–December 2014"
+inspection = "PDF p. 49 directly inspected as raster; p.48 text layer read."
+locus = "Printed/PDF pp.48–49: inter-eparchial translation, reported 1967 printing; art.120; use in 29 Albanophone parishes"
+limitation = "The decree original and Assembly original were not inspected. Printed p. 49 misprints decree page range as 14–96; do not silently use that range. Reported 1967 printing conflicts with the 2015 report of 1968."
+full_contents_examined = false
+text_acquisition = "acquired-in-research-scratch; protected material not proposed for tracked retention"
+hash_state = "computed"
+sha256 = "2935d486f921c3312f38d865ec22c86aea725d92632dd914d194f821f56a27a8"
+byte_size = 4312136
+
+[[sources]]
+id = "greek-reception-src-lungro2023"
+url = "https://www.eparchialungro.it/wp-content/uploads/sites/2/2026/01/impaginato-2023-Vol-2-per-la-stampa-compresso.pdf"
+checked_on = "2026-10-20"
+evidence_type = "official-eparchial-retrospective"
+title = "Lajme / Notizie, July–December 2023; Antonio Bellusci on Stamati and the Bollettino"
+inspection = "Original bulletin PDF p. 104 directly inspected as raster; note 9 text layer read. The account paraphrases and quotes three operative points of the decree."
+locus = "Printed/PDF p. 104; note 9 at printed/PDF p.113 cites Bollettino 3 (1968), 14–16"
+limitation = "This is a 2023 retrospective, not the 1968 original. It gives decree publication 6 August 1968; the 2018 pastoral gives 13 October for decreed adoption. Preserve source-specific roles pending original."
+full_contents_examined = false
+text_acquisition = "acquired-in-research-scratch; protected material not proposed for tracked retention"
+hash_state = "computed"
+sha256 = "f0e42b449d7101c7a2a01ecb2988f19c1809d6530b000a909c773d663f620363"
+byte_size = 10110234
+
+[[sources]]
+id = "greek-reception-src-lungro-calendar-use2026"
+url = "https://www.eparchialungro.it/2026/01/20/imerologhion-2026-2/"
+checked_on = "2026-10-20"
+evidence_type = "official-local-implementation-announcement"
+title = "Imerologhion 2026, official Lungro announcement of 20 January 2026"
+inspection = "Complete short article read through the web reader: the eparchy has already circulated the Ordo regulating festive and daily Vespers, Orthros, Hours and Divine Liturgy; service is credited to the eparchial liturgical office."
+locus = "Opening paragraph below the dated title"
+limitation = "Does not identify a celebrant Hieratikon edition, first celebration or universal compliance."
+full_contents_examined = false
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+
+[[sources]]
+id = "greek-reception-src-piana2019"
+url = "https://irp-cdn.multiscreensite.com/89b1017e/files/uploaded/Imerologhion_PIANA_2019.pdf"
+checked_on = "2026-10-20"
+evidence_type = "primary-local-calendar-and-rubric-book"
+title = "Imerologhion 2019, Eparchy of Piana degli Albanesi"
+inspection = "Complete offered 327-page PDF acquired; original cover (PDF p.1), Curia/Ufficio Liturgico credits (p.3) and entire Note per l’uso (p.10) directly inspected as raster."
+locus = "PDF pp.1–3 identity/credits; printed p.11 (PDF p.10) Note per l’uso"
+limitation = "Source names reference books and a concrete local editorial/rubrical choice. It does not identify the Eucharistic celebrant book, first adoption date of the reference books, decree of approval, or actual practice in every parish. Rest of book not systematically inspected."
+full_contents_examined = false
+text_acquisition = "acquired-in-research-scratch; protected material not proposed for tracked retention"
+hash_state = "computed"
+sha256 = "1c0d3bd783971aeb4c869b698a80bd34fa9ed7395a95b98cc351e9052eb364de"
+byte_size = 7405010
+
+[[sources]]
+id = "greek-reception-src-piana-publisher2020"
+url = "https://valoreitalianobookstore.com/products/ημερολογιον-imerologhion-2020-2021"
+checked_on = "2026-10-20"
+evidence_type = "primary-co-publisher-catalogue"
+title = "Valore Italiano, Ημερολογιον | Imerologhion 2020–2021"
+inspection = "Publisher HTML directly acquired and product description read: Greek/Italian; coedition with Eparchy of Piana, 2020; ISBN 9788897789796; 384 pages reported; same two Anthologia reference sets and IX-ode explanation."
+locus = "Product description and embedded Product JSON-LD"
+limitation = "Primary publisher reports 384 pages, retail catalogues report 368; original 2020 volume/approval leaves not acquired. No extra dated stage proposed for an uncollated annual issue."
+full_contents_examined = false
+text_acquisition = "acquired-in-research-scratch; protected material not proposed for tracked retention"
+hash_state = "computed"
+sha256 = "f6fc8bd175913bc0834f97b01054d6e475636f4a9f162d2840eef96961fd3d0f"
+byte_size = 223198
+
+[[sources]]
+id = "greek-reception-src-athens-holyweek2026"
+url = "https://elcathex.gr/προγραμμα-τησ-μεγαλησ-εβδομαδοσ-2026/"
+checked_on = "2026-10-20"
+evidence_type = "primary-local-service-programme"
+title = "Greek Catholic Exarchate, Athens Holy Trinity cathedral/parish Holy Week programme 2026"
+inspection = "Official HTML acquired by curl after web-reader 403; full original JPEG inspected. Header identifies the Greek Catholic Exarchate and Athens Holy Trinity cathedral/parish. It schedules Presanctified 6–8 April and Vespers/Basil 9,11 April."
+locus = "Web article dated 24 March 2026; full linked original programme image, dates 5–12 April 2026"
+limitation = "A published programme attests intended local service/calendar arrangements. It does not prove each service occurred, identify an exact receiving book, establish the spoken language, or prove Roman 1950/1952 book adoption."
+full_contents_examined = false
+text_acquisition = "acquired-in-research-scratch; protected material not proposed for tracked retention"
+hash_state = "computed"
+sha256 = "1be3ee7d69312b29fed6a0aaa5c4572849fa780877af769630074f2e9626a4b2"
+byte_size = 225115
+
+[[sources]]
+id = "greek-reception-src-athens-trinity2026"
+url = "https://elcathex.gr/προγραμμα-αγιασ-τριαδοσ-2026/"
+checked_on = "2026-10-20"
+evidence_type = "primary-local-service-programme"
+title = "Greek Catholic Exarchate, Athens Holy Trinity Pentecost programme 2026"
+inspection = "Official HTML and full original JPEG acquired by curl and image directly inspected; Pentecost 31 May and Holy Spirit Monday 1 June with Divine Liturgy scheduled."
+locus = "Article dated 16 May 2026; full linked original image, dates 29 May–1 June"
+limitation = "Corroborates the published local calendar programme only; no receiving edition or completed celebration is proved."
+full_contents_examined = false
+text_acquisition = "acquired-in-research-scratch; protected material not proposed for tracked retention"
+hash_state = "computed"
+sha256 = "33d1917c3727e07021cbbe148890d9ef9187602035188b47274fc0116cd7a1f2"
+byte_size = 226007
+
+[[sources]]
+id = "greek-reception-src-grottaferrata-current"
+url = "https://www.abbaziasannilo.org/theotokos"
+checked_on = "2026-10-20"
+evidence_type = "official-monastery-local-practice-description"
+title = "Grottaferrata abbey, Theotokos page and current service/publication pages"
+inspection = "Official abbey pages read via web: local icon feast 22 August; Presanctified advertised Wednesdays/Fridays 18:15; annual dual Italo-Byzantine/Roman calendars are published. /typikon gives monastic rule spirituality, no service-book edition."
+locus = "Theotokos page final sentence; /doni-presantificati final paragraph; /pubblicazioni annual calendars paragraph"
+limitation = "Undated pages inspected 20 October 2026; present web descriptions cannot establish the date a book was adopted. No new Grottaferrata stage proposed and the exact current receiving books remain unknown."
+full_contents_examined = false
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+
+[[records]]
+id = "greek-reception-piana2019"
+family = "Byzantine"
+evidence = "original-page-images-inspected"
+date_basis = "Date bounds identify this published/attested document only, never duration of a use or inferred adoption of another book."
+text_acquisition = "complete-offered-file-acquired-in-research-scratch; rights-unresolved"
+full_contents_examined = false
+research_priority = "source-language-local-reception"
+version_status = "local-component-witness; substantive-edition-change-not-established"
+acquisition_status = "scratch-held; not-canonically-registered"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Original title or document header directly inspected"
+chronology_certainty = "explicit-in-inspected-primary-document"
+church_scope = "Eparchy of Piana degli Albanesi; local annual calendar/rubric book"
+book_label = "Imerologhion 2019 (Curia Vescovile; Ufficio Liturgico Diocesano)"
+date = "2019 issue"
+language = "Greek and Italian"
+kind = "local-calendar-and-rubric-witness"
+source_ids = ["greek-reception-src-piana2019"]
+source_urls = ["https://irp-cdn.multiscreensite.com/89b1017e/files/uploaded/Imerologhion_PIANA_2019.pdf"]
+note = "Its own Note per l’uso identifies the Roman Greek Anthologion 1967–1980 and the Italian Lipa Anthologhion 1999–2000 as reference books. The editors follow the Italian layout, with only ode IX indicated for certain saints on some Sundays, contrasting the generally I, VI, IX form of the Greek reference. This is source-described local calendrical/rubrical reception, not a collated textual descent, Eucharistic altar-book identity or universal local implementation."
+chronology_start = 2019
+chronology_end = 2019
+chronology_kind = "calendar-issue-year"
+
+[[records]]
+id = "greek-reception-athens-holyweek2026"
+family = "Byzantine"
+evidence = "original-page-images-inspected"
+date_basis = "Date bounds identify this published/attested document only, never duration of a use or inferred adoption of another book."
+text_acquisition = "complete-offered-file-acquired-in-research-scratch; rights-unresolved"
+full_contents_examined = false
+research_priority = "source-language-local-reception"
+version_status = "local-component-witness; substantive-edition-change-not-established"
+acquisition_status = "scratch-held; not-canonically-registered"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+source_title_status = "Original title or document header directly inspected"
+chronology_certainty = "explicit-in-inspected-primary-document"
+church_scope = "Greek Catholic Exarchate; Holy Trinity cathedral and parish, Athens only"
+book_label = "ΠΡΟΓΡΑΜΜΑ ΤΗΣ ΜΕΓΑΛΗΣ ΕΒΔΟΜΑΔΟΣ 2026"
+date = "Programme posted 24 March 2026 for 5–12 April 2026"
+language = "Greek (document); performed liturgical language not established"
+kind = "dated-local-service-programme"
+source_ids = ["greek-reception-src-athens-holyweek2026", "greek-reception-src-athens-trinity2026"]
+source_urls = ["https://elcathex.gr/προγραμμα-τησ-μεγαλησ-εβδομαδοσ-2026/", "https://elcathex.gr/wp-content/uploads/2026/03/Μεγάλη-Εβδομάδα-2026.jpg"]
+note = "Published primary programme schedules Presanctified 6–8 April; Vespers with Basil 9 April and 11 April; Paschal Orthros and Divine Liturgy at midnight before 12 April. The Pentecost programme separately schedules Pentecost 31 May and Holy Spirit Monday 1 June 2026. Announced arrangements are attested; actual completion, first introduction, exact receiving editions and uniform exarchate practice are not proved."
+chronology_start = 2026
+chronology_end = 2026
+chronology_kind = "programme-publication-year"

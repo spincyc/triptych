@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-collation",
+  "book_id": "cistercian-1606-offertory",
+  "title": "Paris 1606 Cistercian offertory constituent: independent original-image collation",
+  "status": "verified",
+  "independent": true,
+  "complete_extent_verified": true,
+  "reviewer": "Independent AI source reviewer (Paris 1606 original-image, complete offertory extent and native-unit collation)",
+  "checked_on": "2026-10-20",
+  "binding_sha256": "7dc837f08ecfca3eadd8c423bfe7f7907c13823bf5a8af7fedb8a4d3b5868e61",
+  "extent_sha256": "69f25569e7522048761ad2a1911413bf45b28b899271cfbdc2ef50b72ceda79e",
+  "witness_sha256": {
+    "cistercian-1606-bsb-p181": "2646b0f5aa0a2bb55fd1042680a673e6adb99ec66913f754a8ceeac0f14830d7"
+  },
+  "unit_sha256": {
+    "unit.cistercian-1606.offertory.opening-rubric": "af1d4573f87bf8b1bf34f68a1b525c81a35ecf5953af4f5ad59b548e4fe6663f",
+    "unit.cistercian-1606.offertory.suscipe-trinitas": "f4ef4201b6fd2a2d3b81da889d8706d698d73f6c14e36d2e7f73b291820b76ac",
+    "unit.cistercian-1606.offertory.in-spiritu-rubric": "1859bab0e308b9bf128db5da043cae4acf243528e164abac84328259094b3a28",
+    "unit.cistercian-1606.offertory.in-spiritu-humilitatis": "0571780570f988848e59713aca331785fe8cefcae85989bb7aa45cdbf2e1a2a7",
+    "unit.cistercian-1606.offertory.orate-rubric": "52a72fd9f26ac5d5d7d68d9ed83e520121ca6a2aff31381911b4c85e7a737ada",
+    "unit.cistercian-1606.offertory.orate-invitation": "e98e3dfe198f15c1191adccd2a03f4591549793fd6d51ca24d08e11879a3cf60",
+    "unit.cistercian-1606.offertory.dominus-response": "e253cd015066923a2b0ba212ff0d044b6e3e7eabff7d7199aee244834e9b73fc"
+  },
+  "scope": "Complete functional offertory constituent on printed p.181, right column, BSB canvas 235: the red Offertorio dicto instruction immediately after the Creed Amen through the final Amen of the Dominus sit response. The source running head is Præparationes ante Missam; offertory is a bounded functional description, not a claim that this is a separately printed chapter or the whole running-head section. Creed above and in the entire left column, page furniture, preceding preparations and all subsequent book divisions are excluded. Whole-book and complete-Ordinary coverage remain partial.",
+  "method": "Before reading the proposed transcript or binding, the independent reviewer inspected the unchanged registered original page and froze the opening, ending, exclusions and seven-block expected census. The reviewer then collated every word, accent, abbreviation, punctuation mark, ampersand, paragraph boundary and inline cue of all seven new or reused native units against the original at full retained resolution. The complete 33 printed lines were checked in order: opening rubric 1–2; Suscipe 3–16; In spiritu rubric 17–18; In spiritu prayer 19–23; Orate rubric 24; invitation 25–27; response 28–33. This included an independent fresh inspection of the reused Suscipe body, all three red standalone instructions, the red display initials, the red crossed-R/m. response cue, printed nasal suspensions and the unexpanded genufle. abbreviation. No printed crosses occur in the declared extent. The title image was separately inspected for the Cistercian title, Paris Marnef/Cavellat imprint and MDCVI date. Finally, exact binding, extent, image, normalized artifact and selected physical-line body hashes, edition identities, verified passage states and recorded publication bases were checked. This receipt affirms actual complete-extent image collation; schema parsing and hash checks alone did not supply acceptance.",
+  "normalization_limit": "Accepted disclosed normalized reading: long s to s, sentence-case merging of display initials, joining source wraps and line-end word divisions, and expansion of printed nasal suspension bars. Printed u/v, æ/œ, accents, abbreviations, punctuation, ampersands and actual short endings remain. The red response cue is represented as ℟m. without expansion; invitation and response remain separate source blocks. The source's Suscipe ends with Per ómnia sǽcula.; no additional Amen is supplied. Ink colours are accounted for in the census rather than reproduced in text. Glyph-diplomatic typography and chant notation are outside the claim.",
+  "findings_resolved": [
+    "The new binding's reused-Suscipe normalization initially repeated generic metadata about an absent 1657 alternative. The transcriber replaced that new-unit descriptor with an accurate 1606-specific statement before this binding hash was accepted. Existing checked source artifacts and passages remain unchanged."
+  ],
+  "review_limit": "Complete declared 1606 offertory constituent only. No complete missal, complete Ordinary, historical introduction date, textual parentage, inherited wording, modern liturgical approval or human specialist certification is asserted. Image-specific noncommercial conditions remain separate from the recorded United States public-domain basis of the historical Latin."
+}

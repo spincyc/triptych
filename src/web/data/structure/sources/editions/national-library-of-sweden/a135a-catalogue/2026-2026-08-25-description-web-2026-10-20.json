@@ -1,0 +1,59 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "tei-catalogue-description",
+   "byte_size": 13023,
+   "edition_owned": true,
+   "id": "artifact.national-library-of-sweden.a135a-catalogue.2026-08-25-description-web-2026-10-20.manuscripta-101123-3fca27c7",
+   "media_type": "application/xml",
+   "notes": "Whole A 135a TEI catalogue description, revised 25 August 2026. Third-party source bytes retain their own rights; no project CC BY offer is made over them.",
+   "page_count": null,
+   "retrieved": "2026-10-20",
+   "rights": "licensed",
+   "rights_basis": "Retain the whole exact small catalogue TEI or factual IIIF manifest. Description is expressly CC BY 4.0; factual technical metadata identify the declared image delivery. PDM is recorded as the images' status, not a fictitious licence over an unrelated wrapper. Attribution: Robin Böckerman (cataloguer), Patrik Granholm (editor), National Library of Sweden, A 135a catalogue description, revised 25 August 2026. CC BY 4.0. Rights evidence: https://www.manuscripta.se/ms/101123",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.manuscripta.se/ms/101123.xml",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "iiif-manifest",
+   "byte_size": 21748,
+   "edition_owned": true,
+   "id": "artifact.national-library-of-sweden.a135a-catalogue.2026-08-25-description-web-2026-10-20.manuscripta-101123-manifest-a5b940ed",
+   "media_type": "application/json",
+   "notes": "Whole IIIF manifest with ten canvases; only the two manuscript-side image deliveries are retained from this manifest. Mounting, folder and colour-card canvases are not claimed as acquired. Third-party source bytes retain their own rights; no project CC BY offer is made over them.",
+   "page_count": null,
+   "retrieved": "2026-10-20",
+   "rights": "licensed",
+   "rights_basis": "Retain the whole exact small catalogue TEI or factual IIIF manifest. Description is expressly CC BY 4.0; factual technical metadata identify the declared image delivery. PDM is recorded as the images' status, not a fictitious licence over an unrelated wrapper. Attribution: Robin Böckerman (cataloguer), Patrik Granholm (editor), National Library of Sweden, A 135a catalogue description, revised 25 August 2026. CC BY 4.0. Rights evidence: https://www.manuscripta.se/ms/101123",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.manuscripta.se/iiif/101123/manifest.json",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-08-25",
+  "editors": [],
+  "id": "edition.national-library-of-sweden.a135a-catalogue.2026-08-25-description-web-2026-10-20",
+  "jurisdiction": null,
+  "language": "en",
+  "publication": "Description revised 25 August 2026, delivered 20 October 2026; Robin Böckerman, cataloguer; Patrik Granholm, editor; National Library of Sweden",
+  "title": "Description revised 25 August 2026, delivered 20 October 2026",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Robin Böckerman, cataloguer; Patrik Granholm, editor; National Library of Sweden",
+  "category": "scholarly-catalogue",
+  "description": "Modern bibliographic description or catalogue. Source catalogue assertions are distinguished from independently established manuscript origin, contents and local use.",
+  "id": "work.national-library-of-sweden.a135a-catalogue",
+  "languages": [
+   "en"
+  ],
+  "title": "National Library of Sweden A 135a catalogue description"
+ }
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "triptych-source-factual-extract-v1",
+  "rights_notice": "Project-created selection of factual metadata, distributed under Triptych's CC BY 4.0 terms. The source's individual facts and titles are not claimed as project-authored expression. This file contains no liturgical body, host UI, user favorites/account identifiers or unselected descriptive prose.",
+  "source_artifact_id": "artifact.google-books.volumes-service-operational-responses.2026-10-20-response-states.raw-googlebooks-missale1634-90627e93",
+  "source_sha256": "90627e9382f65e764e3f435a95463f8bed348823777e11dee52f28f377f4a7e1",
+  "source_bytes": 1306,
+  "source_url": "https://www.googleapis.com/books/v1/volumes?q=intitle:missale+1634&maxResults=40",
+  "method": "GET",
+  "params": {},
+  "facts": {
+    "code": 429,
+    "status": "RESOURCE_EXHAUSTED"
+  }
+}

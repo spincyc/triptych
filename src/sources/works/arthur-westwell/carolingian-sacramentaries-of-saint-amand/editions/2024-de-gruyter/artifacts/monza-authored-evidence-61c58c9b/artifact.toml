@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.arthur-westwell.carolingian-sacramentaries-of-saint-amand.2024-de-gruyter.monza-authored-evidence-61c58c9b"
+edition_id = "edition.arthur-westwell.carolingian-sacramentaries-of-saint-amand.2024-de-gruyter"
+artifact_type = "authored-text-excerpt"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "licensed"
+license = "CC-BY-NC-ND-4.0"
+rights_basis = "The controlling PDF p.4 expressly licenses the authored work CC BY-NC-ND 4.0. Sections 2(a)(1)(A) and 2(a)(4) permit noncommercial reproduction in part and necessary technical format conversion without creating Adapted Material. Section 3 attribution and section 5 disclaimers remain attached. This artifact reproduces complete unchanged text-layer pages containing the author's Monza description; the separately credited illustration page and the later comparative discussion are excluded. Independent retention review accepted these exact 10,726 bytes and their four-page selection on 2026-10-20; it did not clear the whole illustrated PDF or any original manuscript image."
+source_url = "https://epub.uni-regensburg.de/59552/1/10.1515_9781501517563-1.pdf"
+provenance = "Technical derivative of the exact University of Regensburg published PDF, SHA-256 57d0319927d0dd7dd8a7705db3eeb29b19a6a2f6878ec79b384c5065934a4cf0. Whole PDF text layer extracted with pdftotext -layout; complete selected form-feed pages reproduced without model intervention, OCR repair, translation or content normalization."
+retrieved = "2026-10-20"
+sha256 = "61c58c9b71f9538f1105216d6786a0642845795c9cdca2e0282756269a171e7c"
+byte_size = 10726
+path = "src/sources/works/arthur-westwell/carolingian-sacramentaries-of-saint-amand/editions/2024-de-gruyter/artifacts/monza-authored-evidence-61c58c9b/monza-authored-evidence.txt"
+encoding = "utf-8"
+indexable = true
+derived_from = "artifact.arthur-westwell.carolingian-sacramentaries-of-saint-amand.2024-de-gruyter.university-pdf-57d03199"
+transformation = "Run pdftotext -layout on the complete controlling PDF. Split its UTF-8 output at U+000C, take 1-based PDF pages 32,445,446,447 in source order, and append U+000C after each selected page. Preserve every extracted character and line; apply no subsequent text edits."
+notes = "Arthur Westwell, The Carolingian Sacramentaries of Saint-Amand: Art, Script, and Liturgical Creativity in an Early Medieval Monastery (Berlin/Boston: Walter de Gruyter / Medieval Institute Publications, 2024), printed pp.6,419–421. © 2024 the author(s). Licensed CC BY-NC-ND 4.0 International, https://creativecommons.org/licenses/by-nc-nd/4.0/. Source: https://epub.uni-regensburg.de/59552/1/10.1515_9781501517563-1.pdf. Unchanged authored text from complete selected PDF text-layer pages, technically converted to plain text; no content edits. License disclaimer of warranties and limitation of liability, section 5, remain applicable. Figure A2.1 and all other separately credited illustrations are excluded. This source payload is excluded from the project's CC BY 4.0 offer; noncommercial and no-adaptation conditions remain attached. EXTENT: exact PDF pp.32,445–447, corresponding to printed pp.6,419–421. This is four non-contiguous selected text-layer pages, not a complete appendix, book or manuscript. Excludes PDF p.448 / printed p.422, the credited Figure A2.1 and caption; excludes appendix printed pp.423–425 and all other figures. The description is secondary manuscript evidence; isolated extracts do not establish original collation, local cathedral use or manuscript completeness."

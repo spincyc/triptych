@@ -164,6 +164,8 @@ assert spec is not None
 module = importlib.util.module_from_spec(spec)
 sys.modules[loader.name] = module
 loader.exec_module(module)
+if "PDF_REVIEW_TEST_ROOT" in os.environ:
+    module.ROOT = Path(os.environ["PDF_REVIEW_TEST_ROOT"])
 module.current_plan = lambda override=None: module.make_plan(
     8 * module.GIB, None, 4, override
 )
@@ -381,6 +383,51 @@ class RasterFidelityTests(unittest.TestCase):
 
 
 class ArtifactPathTests(unittest.TestCase):
+    def test_unmanaged_output_and_cache_accept_exact_repository_scratch_descendants(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            checkout = Path(temporary) / "checkout"
+            with mock.patch.object(review, "ROOT", checkout), mock.patch.dict(os.environ, {}, clear=True):
+                for validate in (review.validate_output_root, review.validate_cache_root):
+                    for value in (Path(".scratch/review"), checkout / ".scratch/cache", Path("build/review")):
+                        with self.subTest(option=validate.__name__, value=value):
+                            expected = value if value.is_absolute() else checkout / value
+                            self.assertEqual(validate(value), expected.resolve())
+
+    def test_scratch_does_not_authorize_checkout_roots_sources_or_other_dotted_directories(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            # The /tmp checkout need not exist: validation must refuse its
+            # source/root paths even when /tmp would otherwise be eligible.
+            checkouts = (Path(temporary) / "checkout", Path("/tmp") / (Path(temporary).name + "-checkout"))
+            for checkout in checkouts:
+                with mock.patch.object(review, "ROOT", checkout), mock.patch.dict(os.environ, {}, clear=True):
+                    for validate in (review.validate_output_root, review.validate_cache_root):
+                        for value in (checkout, Path(".scratch"), checkout / ".scratch", Path("src/review"),
+                                      Path(".other/review"), Path(".scratch/../build/review"),
+                                      Path(".scratch/run/../review")):
+                            with self.subTest(option=validate.__name__, value=checkout / value):
+                                with self.assertRaises(review.ReviewError):
+                                    validate(value)
+
+    def test_scratch_symlink_escapes_are_rejected_even_when_target_is_tmp(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            checkout = Path(temporary) / "checkout"
+            scratch = checkout / ".scratch"
+            scratch.mkdir(parents=True)
+            (scratch / "escape").symlink_to(Path("/tmp"), target_is_directory=True)
+            with mock.patch.object(review, "ROOT", checkout), mock.patch.dict(os.environ, {}, clear=True):
+                for validate in (review.validate_output_root, review.validate_cache_root):
+                    with self.subTest(option=validate.__name__):
+                        with self.assertRaises(review.ReviewError):
+                            validate(Path(".scratch/escape/review"))
+            (scratch / "escape").unlink()
+            scratch.rmdir()
+            scratch.symlink_to(Path("/tmp"), target_is_directory=True)
+            with mock.patch.object(review, "ROOT", checkout), mock.patch.dict(os.environ, {}, clear=True):
+                for validate in (review.validate_output_root, review.validate_cache_root):
+                    with self.subTest(option=validate.__name__):
+                        with self.assertRaises(review.ReviewError):
+                            validate(Path(".scratch/review"))
+
     def assert_managed_worker_accepts_only_a_tmpdir_subdirectory(
         self, markers: dict[str, str]
     ) -> None:
@@ -401,6 +448,26 @@ class ArtifactPathTests(unittest.TestCase):
                     review.validate_cache_root(managed_root)
                 with self.assertRaisesRegex(review.ReviewError, "managed TMPDIR"):
                     review.validate_output_root(Path("/tmp/unmanaged-review-output"))
+                for validate in (review.validate_output_root, review.validate_cache_root):
+                    with self.subTest(option=validate.__name__):
+                        with self.assertRaisesRegex(review.ReviewError, "managed TMPDIR"):
+                            validate(Path(".scratch/unmanaged-review"))
+
+    def test_managed_tmpdir_beneath_scratch_still_requires_the_exact_run_directory(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            checkout = Path(temporary) / "checkout"
+            run_id = "20260722t000000z-000000000000"
+            managed_root = checkout / ".scratch/tmp" / run_id
+            managed_root.mkdir(parents=True)
+            environment = {"TMPDIR": str(managed_root), "TMP": str(managed_root), "TEMP": str(managed_root),
+                           "TRIPTYCH_CODEX_ROLE": "worker", "TRIPTYCH_CODEX_RUN_ID": run_id}
+            with mock.patch.object(review, "ROOT", checkout), mock.patch.dict(os.environ, environment, clear=True):
+                for validate in (review.validate_output_root, review.validate_cache_root):
+                    self.assertEqual(validate(managed_root / "review"), (managed_root / "review").resolve())
+                    for value in (managed_root, checkout / ".scratch/another-run/review"):
+                        with self.subTest(option=validate.__name__, value=value):
+                            with self.assertRaisesRegex(review.ReviewError, "managed TMPDIR"):
+                                validate(value)
 
     def test_legacy_managed_worker_accepts_only_a_tmpdir_subdirectory(self) -> None:
         self.assert_managed_worker_accepts_only_a_tmpdir_subdirectory(
@@ -451,7 +518,7 @@ class ArtifactPathTests(unittest.TestCase):
 
 class PdfReviewCommandTests(unittest.TestCase):
     def setUp(self) -> None:
-        temporary_root = ROOT / "build/test-tmp"
+        temporary_root = Path(os.environ.get("TMPDIR", ROOT / "build/test-tmp"))
         temporary_root.mkdir(parents=True, exist_ok=True)
         self.temporary = tempfile.TemporaryDirectory(
             prefix="triptych-pdf-review-test-", dir=temporary_root
@@ -580,6 +647,22 @@ printf '%s\\n' "$PDF_REVIEW_TEST_FONT"
                 return [json.loads(line) for line in stream.read().splitlines()]
             finally:
                 fcntl.flock(stream.fileno(), fcntl.LOCK_UN)
+
+    def test_repository_scratch_output_and_cache_render_and_reuse_via_cli(self) -> None:
+        checkout = self.root / "checkout"
+        checkout.mkdir()
+        output, cache = checkout / ".scratch/review", checkout / ".scratch/cache"
+        pdf = self.pdfs(["scratch-review.pdf"])[0]
+        with mock.patch.dict(os.environ, {"PDF_REVIEW_TEST_ROOT": str(checkout)}):
+            first = self.invoke([pdf], jobs=1, output=output, cache=cache)
+            second = self.invoke([pdf], jobs=1, output=checkout / ".scratch/second-review", cache=cache)
+        self.assertEqual(first.returncode, 0, first.stderr)
+        self.assertEqual(second.returncode, 0, second.stderr)
+        self.assertTrue((output / review.RUN_MANIFEST_NAME).is_file())
+        self.assertTrue(any(output.rglob("pages/page-1.png")))
+        self.assertTrue(any(cache.rglob(review.METADATA_NAME)))
+        rasters = [row for row in self.records() if row["mode"] == "fake-pdftoppm" and row["args"] != ["-v"]]
+        self.assertEqual(len(rasters), 1, "second scratch output must reuse the exact content-addressed cache")
 
     def counter_state(self) -> dict[str, int]:
         with self.counter.open(encoding="utf-8") as stream:

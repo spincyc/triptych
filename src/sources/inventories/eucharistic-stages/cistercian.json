@@ -145,10 +145,16 @@
           "source_id": "cistercian-1606-1657-1606-book",
           "locus": "Printed 180–181, canvases 234–235",
           "claim": "Three bounded prayer units directly transcribed from page images."
+        },
+        {
+          "source_id": "cistercian-1606-1657-1606-book",
+          "locus": "Printed p. 181, BSB canvas 235",
+          "claim": "Complete bounded offertory constituent independently collated, including all intervening rubrics and response cues. The literal binding and extent census remain separate from partial whole-book text coverage."
         }
       ],
       "limitations": "This is already a revised state, not a proxy for all medieval Cistercian practice. The exact 1606 witness has now been split from the earlier broad printed-witness cluster. No claim that every decree of 1601 or 1605 was fully received locally.",
-      "reception": "The book identifies itself as for the Cistercian Order and invokes chapter authority; no monastery-by-monastery reception census has been made."
+      "reception": "The book identifies itself as for the Cistercian Order and invokes chapter authority; no monastery-by-monastery reception census has been made.",
+      "text_binding": "native-book:cistercian-1606-offertory"
     },
     {
       "tradition_id": "cistercian",
@@ -190,10 +196,16 @@
           "source_id": "cistercian-1606-1657-1657-book",
           "locus": "Printed pp. 169, 172–174; page-files 0231, 0234–0236",
           "claim": "Three complete paired prayers and their position in the offertory read from images."
+        },
+        {
+          "source_id": "cistercian-1606-1657-1657-book",
+          "locus": "Printed pp. 172–174, FIDES page-files 0234–0236",
+          "claim": "Complete bounded offertory constituent independently collated, including all intervening rubrics and response cues. The literal binding and extent census remain separate from partial whole-book text coverage."
         }
       ],
       "limitations": "The 1651 commission, 1655 mandate, and 1657 publication are distinct dates. The inspected 1655 instrument is not a universal effective-date decree. The Monitum historical catalogue of earlier defects must not all be assigned specifically to 1606.",
-      "reception": "The Cistercian superior authorizes the edition and printing monopoly; this is evidence of intended order use, not uniform local implementation."
+      "reception": "The Cistercian superior authorizes the edition and printing monopoly; this is evidence of intended order use, not uniform local implementation.",
+      "text_binding": "native-book:cistercian-1657-offertory"
     }
   ],
   "transitions": [
@@ -372,7 +384,8 @@
       "comparison_ids": [
         "cistercian-1606-1657-confiteor",
         "cistercian-1606-1657-suscipe-trinitas",
-        "cistercian-1606-1657-orate-response"
+        "cistercian-1606-1657-orate-response",
+        "cistercian-1606-1657-offertory-constituents"
       ],
       "historical_parentage": "attributed"
     }

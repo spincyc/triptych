@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.offertory-page-images-9fcb1be3"
+edition_id = "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657"
+artifact_type = "page-image-package"
+media_type = "application/zip"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Faithful bounded transcription or mechanical facsimile packaging of the original Latin Paris 1657 printing, whose United States publication term has expired. No modern translation or new critical reconstruction is included. The historical wording is distinct from delivery-image rights; the existing retained FIDES image manifests record the source object as public domain with unrestricted access. Third-party source text and mechanical source images are excluded from Triptych’s CC BY 4.0 grant. Scholarly availability does not authorize contemporary liturgical use."
+retrieved = "2026-10-20"
+sha256 = "9fcb1be3a3e8252990f0749767b1b94820305b5334297ce7dba3491469e11a84"
+byte_size = 3876758
+path = "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/offertory-page-images-9fcb1be3/pages.zip"
+indexable = false
+page_count = 3
+provenance = "Deterministic ZIP_STORED package containing exact already-retained complete FIDES JPEG derivatives for printed pp. 172–174, plus sequence.json identifying their canonical artifact IDs and SHA-256 hashes. All three image bytes are unchanged; this is a bounded package, not the full volume."
+support_artifacts = [{ artifact_id = "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0234-jpeg-ae2266c7", embedded_reference = "1657-page-0234.djvu.review.jpg" }, { artifact_id = "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0235-jpeg-f64508f8", embedded_reference = "1657-page-0235.djvu.review.jpg" }, { artifact_id = "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0236-jpeg-f461bff9", embedded_reference = "1657-page-0236.djvu.review.jpg" }]
+notes = "Each support reference is the exact archive member name. The first image has the preceding Creed and the last has the following preface heading below the boundary; those source areas are retained visibly and excluded from the literal constituent."

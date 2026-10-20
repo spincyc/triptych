@@ -1,0 +1,511 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "rome-originals-next-phase-2026-10-20",
+  "title": "Roman originals and component books: 1951 acquisition, complete March 1955 act inspection and bounded setting/title leads",
+  "lane": "rome-originals",
+  "side": "western",
+  "checked_on": "2026-10-20",
+  "reviewed_on": "2026-10-20",
+  "coverage_rows": [
+    "roman-modern"
+  ],
+  "target_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+  "review_files": {
+    "packet_sha256": "8398e90e4320e682f3a86b2de1c58363723a932da01b1077ca5269bb7bd9613f",
+    "frozen_index_sha256": "15425b678a2611b04516e8a8aa455eb5570546cac7ae0c26ffd71e3d93d7e8e5",
+    "independent_review_sha256": "6fc0daa365be59c02f8308d9da3e68e49492e484023339fd93f3ad583be12fc7",
+    "companions_verified": 72,
+    "verdict": "pass-bounded-metadata; no-required-source-corrections",
+    "storage": "Research companions and protected source deliveries remain outside Git."
+  },
+  "integration": {
+    "new_source_ids": [
+      "roman-next-1951-original-tpv",
+      "roman-next-1951-aas-original",
+      "roman-next-1955-march-aas-images",
+      "roman-next-1965-concelebration-public-title",
+      "roman-next-1635-sbn-pbee017510",
+      "roman-next-1635-sbn-um1e041839",
+      "roman-next-1635-sbn-um1e008100"
+    ],
+    "source_reuse": {
+      "roman-next-1968-preces-advertisement": "western-roman-preces-1968-primary"
+    },
+    "new_candidate_ids": [],
+    "updated_candidate_ids": [
+      "roman-concelebration-1965",
+      "roman-modern-019",
+      "roman-modern-021",
+      "roman-modern-1635-vatican-witness-lead",
+      "roman-preces-1968"
+    ],
+    "new_stages": 0,
+    "new_transitions": 0,
+    "canonical_metadata_records": [
+      {
+        "id": "edition.catholic-church.missale-romanum.vatican-ordo-sabbati-sancti-1951",
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/1951-vatican-ordo-sabbati-sancti/edition.toml",
+        "record_type": "edition"
+      },
+      {
+        "id": "artifact.catholic-church.missale-romanum.vatican-ordo-sabbati-sancti-1951.ia-searchable-pdf-3c9a9291",
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/1951-vatican-ordo-sabbati-sancti/artifacts/ia-searchable-pdf-3c9a9291/artifact.toml",
+        "record_type": "artifact"
+      },
+      {
+        "id": "edition.holy-see.acta-apostolicae-sedis.volume-43-1951",
+        "path": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/1951-volume-43/edition.toml",
+        "record_type": "edition"
+      },
+      {
+        "id": "artifact.holy-see.acta-apostolicae-sedis.volume-43-1951.vatican-ocr-pdf-4b80095b",
+        "path": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/1951-volume-43/artifacts/vatican-ocr-pdf-4b80095b/artifact.toml",
+        "record_type": "artifact"
+      },
+      {
+        "id": "edition.catholic-church.missale-romanum.vatican-concelebration-1965",
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/1965-vatican-concelebration/edition.toml",
+        "record_type": "edition"
+      },
+      {
+        "id": "artifact.catholic-church.missale-romanum.vatican-concelebration-1965.public-title-preview-d7534472",
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/1965-vatican-concelebration/artifacts/public-title-preview-d7534472/artifact.toml",
+        "record_type": "artifact"
+      }
+    ],
+    "act_update": "Only complete March 1955 act-reading metadata and the corresponding original-tracer scope description changed; departures, units, act dates/parents and all other act rows preserved.",
+    "root_act_metadata_review": "Accepted by coordinator after inspection of the exact bounded March 1955 act metadata diff; no act text, departure or effect-established assertion changed.",
+    "fingerprint_refresh": "Pending final reviewed input freeze.",
+    "post_integration_corrections": [
+      "Preserved the broader unresolved complete book/calendar progression from 1634 to 1920, including the limits of bounded 1860 and 1877 evidence, alongside the new exact Rome 1634 tasks."
+    ]
+  },
+  "uses": [
+    {
+      "source": "1951 TPV booklet",
+      "artifact": "3c9a92919264be624e9b9bc132a32a2f881af75f825434866317fd1cb88ca50c",
+      "pdf_pages": [
+        5,
+        7,
+        9,
+        10,
+        11,
+        36,
+        39,
+        41,
+        42,
+        43,
+        44
+      ],
+      "facts": [
+        "PDF 5 title identifies the Ordo Sabbati Sancti quando Vigilia Paschalis instaurata peragitur, TPV, MDCCCCLI (1951).",
+        "PDF 7 / printed 5 decree has 9 February 1951 dateline, Micara and Carinci signatures; local-Ordinary discretion and an experiment for that year, not a permanent whole-missal replacement.",
+        "PDF 9 / printed 7 is the Office component. PDF 10 / printed 8 gives the first new-fire prayer in full where AAS 131 references the existing missal instead.",
+        "PDF 11 / printed 9 includes the candle incision diagram with the 1951 digits and the processional chant notation. AAS prints the prescriptions but no corresponding sung notation.",
+        "PDF 36 / printed 34 contains the renewal of baptismal promises and the narrowly conditioned vernacular permission; compared against AAS 135-136.",
+        "PDF 39 / printed 37 prints the Mass opening and proper, whereas AAS 137 directs the reader to the existing missal except named changes.",
+        "PDF 41 / printed 39 ends the peculiar rubrics for the priest celebrating Easter Mass after the Vigil. PDF 42 is the index, PDF 43 blank, PDF 44 publisher advertisement."
+      ]
+    },
+    {
+      "source": "AAS 43 (1951)",
+      "artifact": "4b80095bae6d93901f28f30bae8f10ff7e3e362d9441695e5fbaf8c057070ebc",
+      "pdf_pages": [
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137
+      ],
+      "facts": [
+        "Entire published decree and following rubrics read on rendered pages, with surrounding unrelated material excluded at the start of 128.",
+        "Decree begins on 128 and ends on 129, 9 February 1951; rubrics 130-137 comprise Office; Vigil with eight chapters; solemn Vigil Mass.",
+        "The AAS rubric text uses references to the existing Missal and therefore cannot substitute for every prayer, reading or musical content in the physical 1951 booklet.",
+        "Selected direct checks against the acquired booklet: decree/date; Office pp 130 / booklet 7; new-fire rule AAS 131 / booklet 8; candle incisions AAS 131-132 / booklet 8-9; renewal AAS 135-136 / booklet 34; Mass AAS 137 / booklet 37 and 39. No word-for-word whole-book collation is claimed."
+      ]
+    },
+    {
+      "source": "AAS 47 (1955)",
+      "artifact": "87faf82170a12abb564990fb189f289258327b1279469768be4af4883eb74d58",
+      "pdf_pages": [
+        218,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225
+      ],
+      "facts": [
+        "Complete De rubricis ad simpliciorem formam redigendis read at printed/PDF 218-224; 225 begins the next AAS issue and is outside the act.",
+        "Dateline 23 March 1955 and commencement 1 January 1956 are distinct (p 219).",
+        "Title I general norms; Title II calendar changes; Title III commemorations; Title IV Breviary changes; Title V Missal changes. These cover more than Holy Week.",
+        "Title II pp 219-221 explicitly suppresses semidouble rank, most vigils and octaves except the enumerated survivals. Title V p 224 changes oration practice, the Dies irae condition, Credo, preface selection and the last Gospel.",
+        "This verifies the complete published act and named prescriptions, not a reconstructed operational Missal or a comparison of all before/after formularies."
+      ]
+    },
+    {
+      "source": "Notitiae 40 (1968)",
+      "artifact": "d479fe79149607367e07650bb7a731bd1fde4c399bccaeeee4cc31474f8897a4",
+      "pdf_pages": [
+        80
+      ],
+      "facts": [
+        "Unpaginated publisher advertisement on the final PDF page identifies the separate Preces Eucharisticae et Praefationes as 54 pages, 17 x 24 cm.",
+        "Advertisement distinguishes three additional Eucharistic Prayers and associated prefaces, initial selection norms, rubricated liturgical printing, and Gregorian melody for the parts that may be sung.",
+        "The notice confirms why the periodical pp 156-179 cannot certify the separate booklet's entire physical and musical contents. No separate 54-page booklet acquired."
+      ]
+    },
+    {
+      "source": "1965 concelebration booklet public preview",
+      "artifact": "d7534472c514a861e4402742cf81e8c3514b5a01357e8bb7bb297124f17b86b5",
+      "locus": "BookReader origIndex 4, leafNum 5; publicly viewable title leaf",
+      "facts": [
+        "Browser screenshot reads the full Latin title, editio typica, Typis Polyglottis Vaticanis and MCMLXV (1965).",
+        "BookReader response lists only leaves 1-5 and 108 as publicly viewable. The selected original title is within that offered preview; no login, borrowing or restricted-body request was used.",
+        "File PDF is marked private in IA metadata and the public reader requires Log In and Borrow for the body. 104-page book extent remains bibliographic, distinct from 108 reader entries and conflicting metadata image counts 108/110.",
+        "The direct preview transport was obfuscated and was not decoded; only the ordinary public browser display was inspected. Whole component remains unacquired."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "roman-next-1951-original-tpv",
+      "url": "https://archive.org/download/ordo-sabbati-sancti/Ordo%20Sabbati%20Sancti_text.pdf",
+      "type": "primary-book-secondary-public-scan",
+      "inspection": "1951 TPV title, dated decree, selected ritual loci, final printed p. 39, index and publisher back cover image-inspected in a complete offered 44-page PDF. No whole-text collation.",
+      "sha256": "3c9a92919264be624e9b9bc132a32a2f881af75f825434866317fd1cb88ca50c",
+      "limitations": "Public secondary scan; modern text and exact facsimile redistribution are not cleared. The download is whole provider file, not proof of ideal-edition completeness."
+    },
+    {
+      "id": "roman-next-1951-aas-original",
+      "url": "https://www.vatican.va/archive/aas/documents/AAS-43-1951-ocr.pdf",
+      "type": "primary-act-official-gazette",
+      "inspection": "AAS 43 (1951), printed/PDF 128-137, entire decree and published rubrics read from rendered page images; selected booklet loci compared.",
+      "sha256": "4b80095bae6d93901f28f30bae8f10ff7e3e362d9441695e5fbaf8c057070ebc",
+      "limitations": "The gazette prints rubrics with references to the Missal; not every physical booklet text or chant."
+    },
+    {
+      "id": "roman-next-1955-march-aas-images",
+      "url": "https://www.vatican.va/archive/aas/documents/AAS-47-1955-ocr.pdf",
+      "type": "primary-act-official-gazette",
+      "inspection": "AAS 47 (1955), printed/PDF 218-224, complete act read from rendered page images with the next-issue boundary at 225. Approval 23 March 1955; effective 1 January 1956.",
+      "source_library_edition_id": "edition.holy-see.acta-apostolicae-sedis.volume-47-1955",
+      "limitations": "Full published act inspected; not a reconstructed whole Missal or before/after collation of all affected prayers."
+    },
+    {
+      "id": "roman-next-1965-concelebration-public-title",
+      "url": "https://archive.org/details/bwb_W9-COP-443#page/n4/mode/1up",
+      "type": "primary-book-public-title-preview",
+      "inspection": "Public BookReader title leaf 5 / origIndex 4, browser image: Latin title, editio typica, TPV, MCMLXV.",
+      "sha256": "d7534472c514a861e4402742cf81e8c3514b5a01357e8bb7bb297124f17b86b5",
+      "limitations": "Title-only preview. Whole book is access-restricted; no body or 104-page extent independently acquired."
+    },
+    {
+      "id": "roman-next-1635-sbn-pbee017510",
+      "url": "https://opac.sbn.it/bid/PBEE017510",
+      "type": "institutional-union-catalogue",
+      "inspection": "Original provider JSON edition, imprint, physical description, signatures, fingerprint and holdings fields inspected. Edition field: Tertia editio in qua missae propriae de sanctis omnes ad longum positae sunt ad maiorem celebrantium commoditatem. Rome, Vatican press, 1635; extent [40], 448, lxxvj, [4] p. : ill. ; 2°; fingerprint m.o- 3130 ,&e. tiro (3) 1635 (R). Distinct setting/issue lead; no original title image or substantive textual identity established.",
+      "sha256": "f1f6ed195249e366b321a4a064e8756018c16075c0e3e5c07d8bd589e8c4f0e7",
+      "limitations": "Bibliography and physical-holding descriptions only; no original title image or textual collation. Setting identity across catalogues not established."
+    },
+    {
+      "id": "roman-next-1635-sbn-um1e041839",
+      "url": "https://opac.sbn.it/bid/UM1E041839",
+      "type": "institutional-union-catalogue",
+      "inspection": "Original provider JSON edition, imprint, physical description, signatures, fingerprint and holdings fields inspected. Edition field: Secunda editio, in qua Missae propriae de sanctis ... Rome, Vatican press, 1635; extent [40], 444, lxxvj p. : ill. calcogr. ; fol; fingerprint m.o- 3130 ,&e. tipr (C) 1635 (R). Distinct setting/issue lead; no original title image or substantive textual identity established.",
+      "sha256": "c0fdd53a9233ba462f301de7a88abba59ac1473470260f168178860a3d1ee698",
+      "limitations": "Bibliography and physical-holding descriptions only; no original title image or textual collation. Setting identity across catalogues not established."
+    },
+    {
+      "id": "roman-next-1635-sbn-um1e008100",
+      "url": "https://opac.sbn.it/bid/UM1E008100",
+      "type": "institutional-union-catalogue",
+      "inspection": "Original provider JSON edition, imprint, physical description, signatures, fingerprint and holdings fields inspected. No transcribed edition label. Rome, Vatican press, 1635; extent [56!, 572, xcvij, [3! p. : ill. calcogr. ; fol; fingerprint m.o- 3130 t,nc huDe (3) 1635 (R). Distinct setting/issue lead; no original title image or substantive textual identity established.",
+      "sha256": "bec91e4ca92eb1c1f408e2b7c523fb53dddbc79d80d2ce7e24fd029f5f922ab6",
+      "limitations": "Bibliography and physical-holding descriptions only; no original title image or textual collation. Setting identity across catalogues not established."
+    },
+    {
+      "id": "roman-next-1968-preces-advertisement",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1960/notitiae-04-%281968%29/Notitiae-040-1968.pdf",
+      "type": "contemporary-official-publication-notice",
+      "inspection": "Notitiae 40 (1968), unpaginated final PDF page 80 advertisement: separate 54-page booklet, rubricated printing, initial norms and Gregorian music.",
+      "source_library_edition_id": "edition.holy-see.notitiae.volume-4-number-40-1968",
+      "limitations": "Publication notice is not the separate booklet; original physical and musical extent remains unacquired."
+    }
+  ],
+  "versions": [
+    {
+      "id": "roman-modern-019",
+      "status": "original-component-scan-acquired-bounded-inspection",
+      "sources_to_add": [
+        "roman-next-1951-original-tpv",
+        "roman-next-1951-aas-original"
+      ],
+      "date_role": "book-imprint-1951; decree-approval-1951-02-09; optional-experiment-for-1951",
+      "qualification": "Complete offered 44-page scan of the 1951 TPV experimental Ordo acquired. Original title, 9 February decree, selected Office/Vigil/Mass loci, final printed p. 39 and index inspected. Its physical service-book contents exceed the AAS rubrics, which refer back to the existing Missal. Exact scan and modern body remain withheld; no whole-text collation or ideal-edition completeness claim.",
+      "acquisition_status": "complete-offered-44-page-booklet-pdf-acquired-to-restricted-scratch",
+      "transcription_status": "not-transcribed-for-publication",
+      "collation_status": "selected-original-image-loci-against-AAS; not-whole-book",
+      "chronology_start": 1951,
+      "chronology_end": 1951,
+      "chronology_kind": "publication",
+      "chronology_certainty": "title-imprint-image-verified"
+    },
+    {
+      "id": "roman-modern-021",
+      "status": "complete-published-act-image-inspected",
+      "sources_to_add": [
+        "roman-next-1955-march-aas-images"
+      ],
+      "date_role": "approval-1955-03-23; effectiveness-1956-01-01",
+      "qualification": "Own complete published act now image-read, AAS 47 (1955) 218-224, not merely cited in a later act. Five titles cover general norms, calendar, commemorations, Breviary and Missal; the Missal-specific prescriptions are at 224. Full operational Missal and exact before/after prayer collation remain unestablished.",
+      "acquisition_status": "official-container-pdf-acquired; exact-existing-artifact-reverified",
+      "collation_status": "complete-act-page-image-inspection; not-whole-missal"
+    },
+    {
+      "id": "roman-concelebration-1965",
+      "status": "original-title-public-preview-inspected",
+      "sources_to_add": [
+        "roman-next-1965-concelebration-public-title"
+      ],
+      "qualification": "Public original title preview confirms Latin title, editio typica, TPV and 1965. IA bwb_W9-COP-443 marks the body private/access-restricted; 104-page extent remains official bibliography, distinct from reader image counts. No complete original-book acquisition or content collation.",
+      "acquisition_status": "title-only-public-preview-inspected; complete-component-unacquired",
+      "collation_status": "title-only; body-not-collated"
+    },
+    {
+      "id": "roman-preces-1968",
+      "sources_to_add": [
+        "roman-next-1968-preces-advertisement"
+      ],
+      "qualification_append": "Contemporary Notitiae 40 final PDF page 80 advertisement independently confirms 54 pages, red/black liturgical printing, initial selection norms and Gregorian melody. It does not supply the separate booklet; full booklet/musical contents remain unacquired."
+    },
+    {
+      "id": "roman-modern-1635-vatican-witness-lead",
+      "sources_to_add": [
+        "roman-next-1635-sbn-pbee017510",
+        "roman-next-1635-sbn-um1e041839",
+        "roman-next-1635-sbn-um1e008100"
+      ],
+      "qualification_append": "SBN adds Rome Vatican bibliographic records for explicitly Secunda editio (UM1E041839: [40],444,LXXVI), Tertia editio (PBEE017510: [40],448,LXXVI,[4]), and a larger setting without a transcribed edition label (UM1E008100: catalogue displays [56!,572,XCVII,[3! pages). Preserve them as distinct setting/issue leads until original title and collation verify identity. No new recension/station or 1634/1635 parentage."
+    }
+  ],
+  "setting_leads": [
+    {
+      "bid": "PBEE017510",
+      "url": "https://opac.sbn.it/bid/PBEE017510",
+      "api_url": "https://opac.sbn.it/o/opac-api/title?id=PBEE017510&core=sbn",
+      "catalogue_fields": {
+        "Edizione": "Tertia editio in qua missae propriae de sanctis omnes ad longum positae sunt ad maiorem celebrantium commoditatem",
+        "Pubblicazione": "Romæ : ex typographia Vaticana, 1635",
+        "Descrizione fisica": "[40], 448, lxxvj, [4] p. : ill. ; 2°",
+        "Note generali": "Segn.: [croce]-2[croce]⁸ 3[croce]⁴ A-2N⁶ 2O⁸ a-f⁶ g⁴; Front. e testo inquadrati stampati in rosso e nero; Stemma calcogr. di papa Urbano VIII tra i santi Pietro e Paolo sul front; Musica a notazione quadrata su tetragramma",
+        "Impronta": "m.o- 3130 ,&e. tiro (3) 1635 (R)"
+      },
+      "holdings": [
+        "Biblioteca comunale Guglielmo Marconi, Roma (RM0635)",
+        "Biblioteca diocesana Mons. Alessandro Piazza, Albenga (SV0226)"
+      ]
+    },
+    {
+      "bid": "UM1E041839",
+      "url": "https://opac.sbn.it/bid/UM1E041839",
+      "api_url": "https://opac.sbn.it/o/opac-api/title?id=UM1E041839&core=sbn",
+      "catalogue_fields": {
+        "Edizione": "Secunda editio, in qua Missae propriae de sanctis ..",
+        "Pubblicazione": "Romæ : ex typographia Vaticana, 1635",
+        "Descrizione fisica": "[40], 444, lxxvj p. : ill. calcogr. ; fol",
+        "Note generali": "Stemma calcogr. di papa Urbano VIII tra i santi Pietro e Paolo sul front; Front. e testo inquadrati stampati in rosso e nero; Presenti partiture musicali; Segn.: [croce]-2[croce]⁸ 3[croce]⁴ A-2O⁶ a-f⁶ g²",
+        "Impronta": "m.o- 3130 ,&e. tipr (C) 1635 (R)"
+      },
+      "holdings": [
+        "Biblioteca comunale Tranquillo Graziani, Cascia (PG0023)"
+      ]
+    },
+    {
+      "bid": "UM1E008100",
+      "url": "https://opac.sbn.it/bid/UM1E008100",
+      "api_url": "https://opac.sbn.it/o/opac-api/title?id=UM1E008100&core=sbn",
+      "catalogue_fields": {
+        "Edizione": null,
+        "Pubblicazione": "Romæ : ex typographia Vaticana, 1635. (Romæ : ex typographia Vaticana, 1635)",
+        "Descrizione fisica": "[56!, 572, xcvij, [3! p. : ill. calcogr. ; fol",
+        "Note generali": "Stemma calcogr. di papa Urbano VIII sul front; Front. e testo inquadrati stampati in rosso e nero; Numerose cornici calcogr; Segn.: [croce!-2[croce!⁸ 3[croce!-4[croce!⁶ A-3A⁶ 3B⁴ a-g⁶ h⁸",
+        "Impronta": "m.o- 3130 t,nc huDe (3) 1635 (R)"
+      },
+      "holdings": [
+        "Veneranda Biblioteca Ambrosiana, Milano (MI0133)",
+        "Biblioteca comunale Carducci, Città di Castello (PG0032): lacks T-X6 and [croce]8",
+        "Biblioteca L. Jacobilli, Foligno (PG0040)",
+        "Biblioteca diocesana Beata Lucia Broccadelli, Narni (TR0059): lacks preliminary I-XXXVIII"
+      ]
+    }
+  ],
+  "searches": [
+    {
+      "host": "Internet Archive advanced search",
+      "url": "https://archive.org/advancedsearch.php?q=title%3Amissale+AND+year%3A%5B1633+TO+1635%5D&output=json&rows=100",
+      "query": "title:missale AND year:[1633 TO 1635]",
+      "receipt": {
+        "sha256": "7f0e736085376703f9409117c6ef9633179a41f37dc538d65c8c071596a22500",
+        "bytes": 1461
+      },
+      "result": "One result, dbc.wroc.pl.pl-wrzno--xvii-20336_1: Antwerp Plantiniana/Balthasar Moretus 1634. No Rome image acquired from this bounded query."
+    },
+    {
+      "host": "SBN national union catalogue",
+      "url": "https://opac.sbn.it/o/opac-api/titles-search-full-post",
+      "method": "POST form",
+      "params": {
+        "core": "sbn",
+        "monocampo": "Missale",
+        "filter:31:Anno_pubblicazione:4:4": "1634",
+        "filter:31:Anno_pubblicazione:2:4": "1634"
+      },
+      "receipt": {
+        "sha256": "347b439502b393b5370c599fcb1d1e72e1771c443be3d1a9069afb35ea9d3447",
+        "bytes": 2399
+      },
+      "result": "0 within the title/all-fields and exact-year bound. This is not a global holdings absence."
+    },
+    {
+      "host": "SBN national union catalogue",
+      "url": "https://opac.sbn.it/o/opac-api/titles-search-full-post",
+      "method": "POST form",
+      "params": {
+        "core": "sbn",
+        "monocampo": "Missale",
+        "filter:31:Anno_pubblicazione:4:4": "1635",
+        "filter:31:Anno_pubblicazione:2:4": "1635"
+      },
+      "receipt": {
+        "sha256": "8a407392994581f79077bc976983dd435c5d7468f6f6d054b4645fb3475a9ec0",
+        "bytes": 27430
+      },
+      "result": "10 records, including three Roman Vatican catalogue records detailed in this packet. Other Venice, Paris, Lyon and Dominican records are controls, not substitutes for Rome 1634."
+    },
+    {
+      "host": "SBN control",
+      "receipt": {
+        "sha256": "54a09762113f7d950d7defc9fae2bfd67adae862fa8f2fa5dd117a3ecf62e2ee",
+        "bytes": 153632
+      },
+      "result": "The same monocampo=Missale endpoint without year filters returns 3732 records; 1635 query returns 10. The year-bound 1634 zero is not based on an empty or unavailable endpoint."
+    },
+    {
+      "host": "Internet Archive advanced search",
+      "receipt": {
+        "sha256": "e5bdea267877e1f096d9fa3cdf605c7ca4d3b1b1ee657d191913102728982b50",
+        "bytes": 5192
+      },
+      "query": "title:\"ordo hebdomadae\" OR title:\"ordo sabbati\" OR title:\"preces eucharisticae\" OR title:\"ritus servandus\"",
+      "result": "4 records: 1951 Ordo publicly downloadable; 1956 Marietti Ordo and 1965 concelebration scan access-restricted; 1725 unrelated Ritus. No Preces booklet hit within this query."
+    },
+    {
+      "host": "Google Books API",
+      "receipt": {
+        "sha256": "90627e9382f65e764e3f435a95463f8bed348823777e11dee52f28f377f4a7e1",
+        "bytes": 1306
+      },
+      "result": "intitle:missale 1634 query returned HTTP 429 quota response; no holdings negative follows."
+    },
+    {
+      "host": "Web search discovery",
+      "aliases": [
+        "Missale Romanum 1634 Romae",
+        "Missale Romanum M.DC.XXXIV",
+        "Missale Brogiotto 1634",
+        "Missale Typographia Vaticana 1634",
+        "Ritus servandus in concelebratione 1965 pdf",
+        "Preces eucharisticae et praefationes pdf",
+        "Ordo Sabbati Sancti 1951 pdf"
+      ],
+      "result": "No exact Rome 1634 original image route surfaced. Barcelona article and non-Rome imprints are recurrent hits. Search-engine results are discovery leads, not acquired original-book testimony."
+    }
+  ],
+  "acquisitions": [
+    {
+      "sha256": "3c9a92919264be624e9b9bc132a32a2f881af75f825434866317fd1cb88ca50c",
+      "bytes": 21819494,
+      "source_url": "https://archive.org/download/ordo-sabbati-sancti/Ordo%20Sabbati%20Sancti_text.pdf",
+      "pdf_pages": 44,
+      "storage_proposal": "restricted",
+      "rights_status": "restricted",
+      "rights_basis": "Modern Vatican component obtained from a private-uploader public secondary host; availability is not permission to redistribute its facsimile or modern rubrics. Keep exact bytes and all OCR/raster derivatives out of Git and public projections."
+    },
+    {
+      "sha256": "4b80095bae6d93901f28f30bae8f10ff7e3e362d9441695e5fbaf8c057070ebc",
+      "bytes": 4270050,
+      "source_url": "https://www.vatican.va/archive/aas/documents/AAS-43-1951-ocr.pdf",
+      "pdf_pages": 938,
+      "storage_proposal": "restricted",
+      "rights_status": "restricted"
+    },
+    {
+      "sha256": "87faf82170a12abb564990fb189f289258327b1279469768be4af4883eb74d58",
+      "bytes": 4272421,
+      "source_url": "https://www.vatican.va/archive/aas/documents/AAS-47-1955-ocr.pdf",
+      "pdf_pages": 912,
+      "existing_artifact_id": "artifact.holy-see.acta-apostolicae-sedis.volume-47-1955.vatican-ocr-pdf-87faf821",
+      "storage_proposal": "restricted",
+      "rights_status": "restricted"
+    },
+    {
+      "sha256": "d479fe79149607367e07650bb7a731bd1fde4c399bccaeeee4cc31474f8897a4",
+      "bytes": 8098330,
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1960/notitiae-04-%281968%29/Notitiae-040-1968.pdf",
+      "pdf_pages": 80,
+      "existing_artifact_id": "artifact.holy-see.notitiae.volume-4-number-40-1968.official-pdf-d479fe79",
+      "storage_proposal": "restricted",
+      "rights_status": "restricted"
+    },
+    {
+      "sha256": "d7534472c514a861e4402742cf81e8c3514b5a01357e8bb7bb297124f17b86b5",
+      "bytes": 343361,
+      "source_url": "https://archive.org/details/bwb_W9-COP-443#page/n4/mode/1up",
+      "extent": "original title leaf only within ordinary public preview",
+      "storage_proposal": "restricted",
+      "rights_status": "restricted"
+    }
+  ],
+  "gap_dispositions": [
+    {
+      "id": "roman-stages-urbanian-to-pian-reform",
+      "disposition": "open",
+      "new_evidence": "SBN Missale exact-year 1634 query returned 0, positive 1635 control returned 10 including three Rome Vatican records. No original Rome 1634 image acquired.",
+      "remaining": "Independently dated original Rome 1634 title/colophon or a qualified re-identification of UB [1634?] from surviving preliminaries; complete-copy images and 1604/1634/1635 collation. Preserve UB title/Q1 defects and questioned date."
+    },
+    {
+      "id": "roman-stages-holyweek-components",
+      "disposition": "partially-advanced; not-closed",
+      "new_evidence": "1951 exact TPV booklet's whole offered scan acquired and selected original loci checked against complete AAS 128-137. 1955 March act image-read in full at AAS 218-224, including 1 January 1956 commencement.",
+      "remaining": "Complete image/text collation of the 1951 booklet; exact 1952/1953 relation; original 1956 TPV Holy Week book and full content checks; complete before/after Missal reconstruction."
+    },
+    {
+      "id": "roman-stages-transitional-books",
+      "disposition": "partially-advanced; not-closed",
+      "new_evidence": "1965 public original title preview confirms typical-edition identity and imprint; 1968 contemporary advertisement confirms 54pages and musical material.",
+      "remaining": "Whole 104-page 1965 concelebration component and separate 54-page 1968 Preces booklet; remaining 1965/1967 component collation. No modern fulltext export."
+    }
+  ],
+  "limits": [
+    "1951 provider whole-file acquisition is not complete native-book text coverage or independently verified ideal-edition completeness.",
+    "1955 act inspection does not establish every altered prayer or an operative whole Missal.",
+    "1965 title preview does not acquire its restricted body or independently verify104pages.",
+    "1635 catalogue setting labels and page totals do not prove substantive revision, shared setting, textual parentage, or any Rome 1634 identity.",
+    "No modern Latin fulltext, OCR, scan, screenshot or page raster is proposed for tracking/export."
+  ],
+  "remaining_gaps": [
+    "Public complete Rome 1634 original or provider evidence resolving UB's questioned imprint and missing leaves; no contact/request sent.",
+    "Public whole 1956 TPV Holy Week and 1968 Preces booklets; full 1965 concelebration scan outside credentialed/borrow-only route.",
+    "Independent complete-extent and word-level review before promoting any 1951 native text coverage; per-text lawful publication basis for modern additions."
+  ],
+  "semantics": "Whole offered 44-page 1951 delivery is not ideal-edition completeness or a native transcription. The complete 1955 act does not reconstruct an operational Missal. Three 1635 SBN setting/issue leads remain distinct. Rome 1634 remains unacquired; 1965 title preview and 1968 publication notice do not acquire those complete component books. No modern source payload was tracked."
+}

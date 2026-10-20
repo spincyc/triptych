@@ -2432,7 +2432,11 @@ def _library_cache_entry(root: Path, check_binding_fingerprints: bool) -> Path |
     # The flag changes which validations run, so it changes the errors and must
     # be part of the identity rather than an unrecorded assumption.
     suffix = "fp" if check_binding_fingerprints else "nofp"
-    return LIBRARY_CACHE_DIR / f"{LIBRARY_CACHE_VERSION}-{fingerprint}-{suffix}.json"
+    override = os.environ.get("TRIPTYCH_LIBRARY_CACHE_DIR")
+    directory = Path(override) if override else LIBRARY_CACHE_DIR
+    if not directory.is_absolute():
+        directory = root / directory
+    return directory / f"{LIBRARY_CACHE_VERSION}-{fingerprint}-{suffix}.json"
 
 
 def _library_as_json(library: Library) -> dict[str, Any]:
@@ -2520,7 +2524,11 @@ def load_library(
     differs from the one the loader would have built is precisely the
     reference that resolves successfully and wrongly.
 
-    `TRIPTYCH_LIBRARY_CACHE=0` disables it.
+    `TRIPTYCH_LIBRARY_CACHE_DIR` selects a dedicated cache directory instead of
+    the default `build/source-library`; relative paths resolve beneath *root*.
+    For example, `.scratch/source-library` keeps workspace transients in scratch.
+    An empty override retains the default. `TRIPTYCH_LIBRARY_CACHE=0` disables
+    caching even when a directory override is set.
     """
 
     root = root.resolve()

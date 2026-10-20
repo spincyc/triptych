@@ -1,0 +1,24 @@
+{
+  "schema": "triptych-source-factual-extract-v1",
+  "rights_notice": "Project-created selection of factual metadata, distributed under Triptych's CC BY 4.0 terms. The source's individual facts and titles are not claimed as project-authored expression. This file contains no liturgical body, host UI, user favorites/account identifiers or unselected descriptive prose.",
+  "source_artifact_id": "artifact.internet-archive.catalogue-and-reader-metadata.2026-10-20-response-states.raw-ia-missale1634-7f0e7360",
+  "source_sha256": "7f0e736085376703f9409117c6ef9633179a41f37dc538d65c8c071596a22500",
+  "source_bytes": 1461,
+  "source_url": "https://archive.org/advancedsearch.php?q=title%3Amissale+AND+year%3A%5B1633+TO+1635%5D&output=json&rows=100",
+  "method": "GET",
+  "params": {},
+  "facts": {
+    "query": "title:missale AND year:[1633 TO 1635]",
+    "numFound": 1,
+    "start": 0,
+    "results": [
+      {
+        "identifier": "dbc.wroc.pl.pl-wrzno--xvii-20336_1",
+        "title": "Missale Romanvm : Ex Decreto Sacrosancti Concilii Tridentini Restitvtvm, Pii V. Pont. Max. Ivssv Editvm, Et Clementis VIII. auctoritate recognitum [..]",
+        "year": 1634,
+        "date": "1634-08-14T00:00:00Z",
+        "publisher": "Plantiniana Officina. Wydawca;Moretus, Balthasar (1574-1641). Drukarz"
+      }
+    ]
+  }
+}

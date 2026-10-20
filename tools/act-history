@@ -129,13 +129,13 @@ MAP_MANIFEST = "index.json"
 # Sorted order would land a reader on `code-of-canon-law`, and alphabetical luck
 # is not a reason. The reason is that `latin-missal` is the only slice held here
 # that exercises the grammar this map was drawn for. Fifty-nine stations on
-# seventeen lines, of which fifteen are roots because the corpus holds no act
-# before them; five of those lines are ONE station and nothing more, which is a
+# seventeen lines and sixteen roots whose predecessors this corpus does not
+# establish; five of those lines are ONE station and nothing more, which is a
 # use standing as a terminus and is the emptiness the record is making visible.
 # Lines cross without an interchange, because they never rejoin. Both station
-# kinds are on the drawing at once -- twenty-six printed against thirty-three
+# kinds are on the drawing at once -- twenty-five printed against thirty-four
 # promulgated -- so the weaker claim is read beside the stronger rather than
-# wearing its clothes. And twelve edges rest on use-continuity, an edge kind no
+# wearing its clothes. And eleven edges rest on use-continuity, an edge kind no
 # other slice here uses.
 #
 # `roman-holy-week` is deeper in text per act and shows a reader a straight
@@ -381,40 +381,62 @@ EXAMPLES = {
             ),
             note="Writes a bounded witness comparison with ordered source members and an apparatus caveat; asserts no ancestry or introduction date.",
         ),
+        Example(
+            "tools/act-history compare --comparison roman-canon-memento-wilson-r-and-cummiskey-1861",
+            (
+                "{\"apparatus_caveat\":\"Wilson page 2 note 6 already reports pro quibus tibi offerimus vel in O (Ottobonianus 313). Its presence in Cummiskey and absence from Wilson's main text do not establish a nineteenth-century introduction. Printed editi... [+132392 chars]",
+            ),
+            note="Omitting --out prints the complete comparison, including its source members, diff and apparatus caveat.",
+        ),
     ),
     "catalogue": (
         Example(
             "tools/act-history catalogue --out .scratch/history-engine-expansion/example-catalogue.json",
             (
-                "wrote: 291 catalogue records",
+                "wrote: 1690 catalogue records",
                 "  -> .scratch/history-engine-expansion/example-catalogue.json",
             ),
             note="Derived discovery records; no new normative station or ancestry is admitted.",
+        ),
+        Example(
+            "tools/act-history catalogue --out .scratch/history-engine-expansion/example-catalogue.json --check",
+            (
+                "current: 1690 catalogue records",
+                "  -> .scratch/history-engine-expansion/example-catalogue.json",
+            ),
+            note="Checks the preceding projection against its current sources without writing.",
         ),
     ),
     "corpus": (
         Example(
             "tools/act-history corpus --out .scratch/history-engine-expansion/example-corpus",
             (
-                "wrote 1232 text units on 19 isolated reconstruction branches and 4 native text version branches to .scratch/history-engine-expansion/example-corpus",
+                "wrote 1280 text units on 22 isolated reconstruction branches and 7 native text version branches to .scratch/history-engine-expansion/example-corpus",
             ),
-            note="Writes a disposable bare repository with isolated, bounded reconstructions; no historical ancestry is asserted.",
+            note="Writes isolated, bounded reconstructions and native text versions whose parents require checked evidence receipts.",
+        ),
+        Example(
+            "tools/act-history corpus --source src/sources/inventories/catholic-eucharistic-history-v1.toml --out .scratch/history-engine-expansion/example-corpus-explicit",
+            (
+                "wrote 1280 text units on 22 isolated reconstruction branches and 7 native text version branches to .scratch/history-engine-expansion/example-corpus-explicit",
+            ),
+            note="Names the routing inventory explicitly and writes a separate disposable copy for reproducibility checks.",
         ),
     ),
     "structure": (
         Example(
             "tools/act-history structure --out .scratch/history-engine-expansion/example-browser-data",
             (
-                "wrote: 538 files for 3 slices, 118 stations on 23 lines",
+                "wrote: 542 files for 3 slices, 118 stations on 23 lines",
                 "  -> .scratch/history-engine-expansion/example-browser-data/structure/act-history",
-                "  updated: 538",
+                "  updated: 542",
             ),
             note="writes the complete projection into a disposable data root before the read-only check below",
         ),
         Example(
             "tools/act-history structure --check --out .scratch/history-engine-expansion/example-browser-data",
             (
-                "current: 538 files for 3 slices, 118 stations on 23 lines",
+                "current: 542 files for 3 slices, 118 stations on 23 lines",
                 "  -> .scratch/history-engine-expansion/example-browser-data/structure/act-history",
             ),
             note=(
@@ -489,7 +511,7 @@ EXAMPLES = {
                 "  -> .scratch/history-engine-expansion/example-plate/roman-holy-week.dot",
                 "  octilinearise: octi < .scratch/history-engine-expansion/example-plate/roman-holy-week.dot | transitmap > roman-holy-week.svg",
             ),
-            note="the default source is the Holy Week tracer: one fork, one reception, one terminus",
+            note="the default source is the Holy Week tracer, with its fork and documented two-parent reception",
         ),
     ),
     "check": (
@@ -562,8 +584,8 @@ EXAMPLES = {
                 "wrote 59 commits on 18 branches to .scratch/history-engine-expansion/example-latin-missal",
             ),
             note=(
-                "one branch a line and one commit an act, so `git log` on a branch is"
-                " that line's history and `commonality` reads it back"
+                "one commit per act; disconnected heads receive separate branches"
+                " so no recorded station disappears"
             ),
         ),
     ),

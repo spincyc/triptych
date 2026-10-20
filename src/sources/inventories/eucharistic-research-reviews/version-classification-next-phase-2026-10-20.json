@@ -1,0 +1,2048 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "version-classification-next-phase-2026-10-20",
+  "title": "Explicit substantive book and source-state classifications from reviewed component evidence",
+  "lane": "version-classification-next-phase",
+  "side": "cross-tradition",
+  "checked_on": "2026-10-20",
+  "reviewed_on": "2026-10-20",
+  "target_inventory": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
+  "coverage_rows": [],
+  "semantics": "Twenty-eight new book/source classifications and one replacement are integrated. The resulting 44 positive classifications describe bounded component differences, not 44 distinct whole books. Seven independently accepted act-component declarations are retained separately below so that normative acts do not inflate this book/source indicator.",
+  "review_files": {
+    "storage": "Disposable review packets remain outside Git; exact hashes pin their identities.",
+    "accepted_manifest_sha256": "cd8726c5293666fcc263bd9e106b707f0a40f6efaff446e89fa4e2c5d08d4fc9",
+    "research_manifest_sha256": "74ebcab87fc27808996418abd22e74f0dbba8a22a421eb46340a6ad1d4991005",
+    "accepted_fragment_sha256": {
+      "accepted-book-additions.toml": "32a79d7909110ade4b4ba94bc1007f830925c3f769d1a6c10fa952957add6975",
+      "accepted-act-additions.toml": "35f0f0c68dc1c350018c01ba1be6760b96224d84d8e4182760257441de4b371f",
+      "accepted-replacement-ambrosian-1981.toml": "92e8793c5f361761f49eb0aa3a6e6ab29fe850c62928ff7ea58b8ef21859bef0"
+    }
+  },
+  "uses": [
+    {
+      "id": "eastern:alex-coptic-1898",
+      "disposition": "bounded-substantive-component-established",
+      "scope": "Placement of the intercession in the Coptic-Arabic Eucharistic book; exact altered words and first introduction date remain unresolved.",
+      "basis": "Lietzmann explicitly contrasts Tuki 1736 with Cairo 1898: the intercession, printed within the earlier Cyril anaphora, is placed before all anaphoras with alterations. The original 1736 loci were checked; the 1898 arrangement is scholarly-described.",
+      "source_ref": "src/sources/inventories/eucharistic-stages/alexandrian.json#alexandrian-stages-lietzmann1926"
+    },
+    {
+      "id": "eastern:arm-1677-liturgia",
+      "disposition": "bounded-substantive-component-established",
+      "scope": "Creed structure in the celebrant Lyturgia, native p. 8; the complementary Ministerium is not promoted by this evidence.",
+      "basis": "The directly inspected 1642 Ordo passes from the Western-form Creed ending directly to the doxology; the 1677 Lyturgia prints the Armenian-form Creed and Nicene anathema before that doxology.",
+      "source_ref": "src/sources/inventories/eucharistic-stages/armenian.json#armenian-eucharistic-stages:ordo1642"
+    },
+    {
+      "id": "eastern:byz-sinai-slav-nf5",
+      "disposition": "bounded-substantive-component-established",
+      "scope": "Later-hand diptych layer of the Sinaitic Liturgiarium, not a second manuscript, Catholic approval, whole-book recension or admitted act-history station.",
+      "basis": "Miklas identifies a passage absent in the main Apollinaris copy and a later Demetrius diptych addition naming Mastal, Petrunia and Romald. This establishes a substantive prayer-layer difference within one dispersed manuscript witness, at scholarly-description level.",
+      "source_ref": "src/sources/inventories/eucharistic-stages/byzantine.json#byzantine-stages:miklas"
+    },
+    {
+      "id": "eastern:byz-greek-1873",
+      "disposition": "bounded-substantive-component-established",
+      "scope": "Added printed hymn and choir assignment at the Chrysostom Marian intercession; neither performance absence in 1754 nor first composition/introduction in 1873 follows.",
+      "basis": "The directly compared printed sequence has no hymn between the Marian commemoration and dead-diptychs rubric in 1754 p. 53; the 1873 pp. 65-66 print a choir assignment and Axion estin at that exact place.",
+      "source_ref": "src/sources/inventories/eucharistic-stages/byzantine.json#byzantine-stages:greek-book-1754"
+    },
+    {
+      "id": "eastern:byz-lviv1899-chrysostom-extract",
+      "disposition": "bounded-substantive-component-established",
+      "scope": "Preparation and church-entry directions in the identified 1899 extract; unidentified appended leaves are excluded.",
+      "basis": "The two identified extracts were directly compared at printed pp. 1-2. The 1899 directions add conscience, reconciliation, fasting and preparatory prayers, with specified crossings, bows, entry and altar reverences beyond the briefer 1842 rubric.",
+      "source_ref": "src/sources/inventories/eucharistic-stages/byzantine.json#byzantine-stages:lviv1842-book"
+    },
+    {
+      "id": "western:gilbertine-lincoln115",
+      "disposition": "bounded-substantive-component-established",
+      "scope": "The prefixed proper-collect layer of Lincoln MS 115; one physical manuscript with distinct textual layers, not a new order-wide recension.",
+      "basis": "Woolley distinguishes the earlier marginal common-for-a-martyr-bishop collect from a proper Thomas-of-Canterbury collect in the prefixed supplement. His edition prints the latter at volume II p. 21.",
+      "source_ref": "src/sources/inventories/eucharistic-stages/canonical-orders.json#canonical-orders:gilbertine-woolley1"
+    },
+    {
+      "id": "western:premon-1663",
+      "disposition": "bounded-substantive-component-established",
+      "scope": "Source-described sequence repertory, not an independent collation of complete printed sequence tables.",
+      "basis": "King describes a further sequence reduction after the 1660 chapter: of the non-Pian sequences retained after the earlier reform, only Laetabundus remains in the later repertory represented by the 1663 book.",
+      "source_ref": "src/sources/inventories/eucharistic-stages/canonical-orders.json#canonical-orders:king1955-canonical"
+    },
+    {
+      "id": "eastern:chald-1901",
+      "disposition": "bounded-substantive-component-established",
+      "scope": "One native intercession variant in the ordinary/anaphoral volume; the companion 1901 proper volume is not classified from this locus.",
+      "basis": "Directly compared original Addai-and-Mari intercession pages omit the life-giving Gospel phrase in Rome 1767 p. 284 and include it in Mosul 1901 p. 35.",
+      "source_ref": "src/sources/inventories/eucharistic-stages/chaldean.json#chaldean-east-syriac:rome1767-original"
+    },
+    {
+      "id": "eastern:chald-2014",
+      "disposition": "bounded-substantive-component-established",
+      "scope": "Bounded Syriac opening sequence of the 2014 Apostles order; no first universal deletion date or complete-book descent is inferred.",
+      "basis": "The original 1901 pp. 4-5 print the expanded Lord’s Prayer after the Gloria; the directly inspected native 2014 opening p. 8 proceeds to Peace be with us and the opening prayer without that sequence.",
+      "source_ref": "src/sources/inventories/eucharistic-stages/chaldean.json#chaldean-east-syriac:source-mosul1901"
+    },
+    {
+      "id": "eastern:chald-2020",
+      "disposition": "bounded-substantive-component-established",
+      "scope": "Source-described 2020 collection and its anaphoral repertoire, witnessed later in 2025; not an independent 2025 reform or retrojection of every reprint reading.",
+      "basis": "The identified 2014 booklet is the Apostles order. Sako describes the subsequent collection’s revised second anaphora and newly composed Thomas order; the inspected 2025 reprint contents and Thomas opening corroborate the reported expanded structure.",
+      "source_ref": "src/sources/inventories/eucharistic-stages/chaldean.json#chaldean-east-syriac:taksa2014"
+    },
+    {
+      "id": "western:cistercian-1606",
+      "disposition": "bounded-substantive-component-established",
+      "scope": "One Canon prayer locus; not the first historical introduction of the clauses, direct exemplar ancestry or full Ordinary collation.",
+      "basis": "The directly collated Memento adds omniumque fidelium and pro quibus tibi offerimus, vel in 1606 pp. 190-191, relative to the complete Memento on the inspected 1487 canvas 225.",
+      "source_ref": "src/sources/inventories/eucharistic-stages/cistercian.json#cistercian-1606-1657-1487-book"
+    },
+    {
+      "id": "western:cistercian-1657",
+      "disposition": "bounded-substantive-component-established",
+      "scope": "Named Ordinary units and specified Holy Saturday/Pentecost loci in the 1657 Cistercian missal, with complete prayer units independently image-reviewed.",
+      "basis": "Directly compared complete prayer units show expansion of Confiteor, replacement of Orate and its response, and revised wording and placement of Suscipe sancta Trinitas. The compared Holy Saturday ending and a paired Pentecost-Sunday example add bounded rubrical and appointment changes.",
+      "source_ref": "src/sources/inventories/eucharistic-stages/cistercian.json#cistercian-1606-1657-1606-book"
+    },
+    {
+      "id": "latin-missal:praedicatorum-xavierre-1604",
+      "disposition": "bounded-substantive-component-established",
+      "scope": "The 1604 Dominican book’s selected formulary, represented by the existing act-keyed catalogue row; 1604 is the witness date, not the dates of its reprinted 1602/1603 authorizations.",
+      "basis": "The directly compared Suscepimus Deus formularies change the collect from Deus cuius providentia to Largire nobis and the Gospel from Matthew 7 to Luke 16; the printed position changes from Dominica octava after Trinity to Dominica sexta after its octave.",
+      "source_ref": "src/sources/inventories/eucharistic-stages/latin-uses.json#latin-uses:dom1550"
+    },
+    {
+      "id": "latin-missal:carmelitarum-capitulum-1621",
+      "disposition": "bounded-substantive-component-established",
+      "scope": "Printed October calendar in the 1621 Carmelite book represented by the existing act-keyed catalogue row; handwritten changes and causal attribution to a chapter are excluded.",
+      "basis": "Directly compared printed October calendars show Teresa on October 5 in 1621 where 1574 is blank, and blanks on October 6 and 8 where the earlier calendar has named entries.",
+      "source_ref": "src/sources/inventories/eucharistic-stages/latin-uses.json#latin-uses:carm1574"
+    },
+    {
+      "id": "western:braga-1558",
+      "disposition": "bounded-substantive-component-established",
+      "scope": "Source-described 1558 Ordo additions and Palm Sunday arrangement; after-state remains scholarly-described, without Carmelite borrowing or exact book ancestry.",
+      "basis": "Carvalho reports fixed opening prayers with Ave Maria, additional offertory prayers and a final Salve Regina in the 1558 Ordo. The Palm Sunday account contrasts seven blessing prayers plus preface with six plus preface; the earlier count was directly checked in the 1538 book.",
+      "source_ref": "src/sources/inventories/eucharistic-stages/latin-uses.json#latin-uses:carvalho"
+    },
+    {
+      "id": "western:esztergom-1484",
+      "disposition": "bounded-substantive-component-established",
+      "scope": "Aggregate repertory and named prayer-content differences across the endpoints; not a single 1484 promulgation or immediate revision from the early witness. Preparation placement is not evidence of altered ritual order.",
+      "basis": "Deri’s critical comparison identifies omission of the Pentecost-octave Mass and Transfiguration grape blessing in the Paloczi and 1484 comparators relative to the earlier Missale notatum, alongside reduced special-proper and sequence repertories. These named liturgical-content changes support the classification; relocation of preparation material is separately a book-arrangement finding.",
+      "source_ref": "src/sources/inventories/eucharistic-stages/latin-uses.json#latin-uses:deri2009"
+    },
+    {
+      "id": "eastern:malabar-1946",
+      "disposition": "bounded-substantive-component-established",
+      "scope": "Editorial arrangement and specified additions documented in the preliminary leaves; no body collation or direct 1906-to-1946 descent.",
+      "basis": "The inspected 1946 foreword explicitly contrasts its Roman exemplar with collected and bracketed prayers/rubrics, feasts entered in the Proper, full server prayers and an appended Marian Huthama absent from that exemplar.",
+      "source_ref": "src/sources/inventories/eucharistic-stages/malabar.json#stages-malabar-1946"
+    },
+    {
+      "id": "eastern:malabar-1960-taksa",
+      "disposition": "bounded-substantive-component-established",
+      "scope": "Restricted printed repertoire compared with a consultation/approval programme; omission does not revoke approval of other anaphoras or identify the 1960 Supplementum as the same component.",
+      "basis": "Pallath contrasts three anaphoras in the 1955 study/1957 programme with the narrower printed 1960 Syriac ordinary containing only the simple Addai-and-Mari form.",
+      "source_ref": "src/sources/inventories/eucharistic-stages/malabar.json#stages-malabar-pallath-2023"
+    },
+    {
+      "id": "eastern:mar-1592-94",
+      "disposition": "bounded-substantive-component-established",
+      "scope": "Source-described anaphoral editing in the first Roman printing; no direct Syriac collation or exclusive editor attribution.",
+      "basis": "Jabbour’s manuscript-correction and first-printing study describes uniform Roman-derived institution wording and changed epiclesis petitions concerning benefit to communicants. Dib independently describes the changed object of the epiclesis.",
+      "source_ref": "src/sources/inventories/eucharistic-stages/maronite.json#maronite-jabbour2020"
+    },
+    {
+      "id": "eastern:mar-1716",
+      "disposition": "bounded-substantive-component-established",
+      "scope": "Named source-described Roman Church addition and Good Friday adaptation; no exact total, explicit Sharar-suppression claim or complete 1716 text is asserted.",
+      "basis": "Dib describes addition of the Roman Church anaphora and adaptation of Sharar prayers to a Good Friday Presanctified order. These named repertoire and service changes support the classification independently of the disputed total count; explicit Sharar suppression is not attributed to Dib here.",
+      "source_ref": "src/sources/inventories/eucharistic-stages/maronite.json#maronite-dib1928"
+    },
+    {
+      "id": "eastern:mar-1763",
+      "disposition": "bounded-substantive-component-established",
+      "scope": "Source-described repertory contraction only; exact counts and removed titles remain unresolved, with 1762 title and 1763 approbation distinguished.",
+      "basis": "The inspected historical descriptions agree that the 1762/1763 book carries a smaller anaphora selection than the 1716 line. Dib/Beggiani report nine while the official 1992 introduction reports eight. The current inventory also preserves a thirteen-versus-fourteen dispute for 1716, which does not erase the reported reduction.",
+      "source_ref": "src/sources/inventories/eucharistic-stages/maronite.json#maronite-dib1928"
+    },
+    {
+      "id": "eastern:mar-1973",
+      "disposition": "bounded-substantive-component-established",
+      "scope": "Source-described experimental abridgment; no transfer of the distinct 1972 proposal’s contents, original-book collation or new identification of its anaphora.",
+      "basis": "The official 1992 introduction identifies the experimental 1973 Simple Rite as a one-anaphora book, compared with the several-anaphora Dibs line.",
+      "source_ref": "src/sources/inventories/eucharistic-stages/maronite.json#maronite-1992-intro"
+    },
+    {
+      "id": "eastern:mar-1992",
+      "disposition": "bounded-substantive-component-established",
+      "scope": "Source-described 1992 anaphoral structure and repertoire; mixed earlier/current comparison remains scholarly-description and does not claim accomplishment of future Sharar or twenty-four-anaphora projects.",
+      "basis": "The contemporary commission introduction identifies removal of repeated Eastern prayers within the Western structure and a six-anaphora collection headed by Twelve Apostles, with shared institution wording based on that anaphora rather than the earlier Roman-derived formula.",
+      "source_ref": "src/sources/inventories/eucharistic-stages/maronite.json#maronite-1992-intro"
+    },
+    {
+      "id": "eastern:syr-1922",
+      "disposition": "bounded-substantive-component-established",
+      "scope": "Native repertoire labels only; matching Basil labels do not identify the same composition, and no complete anaphora-body collation follows.",
+      "basis": "Original 1843 anaphora headings and the independently checked native 1922 contents give different seven-title selections: the changed list includes Twelve Apostles, Mark, Eustathius and Cyril of Jerusalem in place of earlier attributed titles.",
+      "source_ref": "src/sources/inventories/eucharistic-stages/west-syriac.json#west-syriac-stages-rome1843-original"
+    },
+    {
+      "id": "western:roman-ordo-1965",
+      "disposition": "bounded-substantive-component-established",
+      "scope": "Opening sequence of an inserted component book; no complete independent 1965 missal is created.",
+      "basis": "The compared 1962 Ritus III.6 includes Psalm Judica with exceptions; the original 1965 Ordo opening proceeds from the introductory antiphon to Adiutorium and Confiteor without it.",
+      "source_ref": "src/sources/inventories/eucharistic-stages/roman.json#roman-stages-source-1965-ordo"
+    },
+    {
+      "id": "western:roman-holy-week-1965",
+      "disposition": "bounded-substantive-component-established",
+      "scope": "One Good Friday prayer in the 1965 Holy Week supplement; neither all Holy Week prayers nor a complete missal is claimed.",
+      "basis": "Direct comparison shows the seventh Good Friday solemn prayer changed from the earlier heretics-and-schismatics invitation to a prayer for all brothers believing in Christ and unity in faith and charity.",
+      "source_ref": "src/sources/inventories/eucharistic-stages/roman.json#roman-stages-source-1965-holyweek"
+    },
+    {
+      "id": "western:roman-variationes-1967",
+      "disposition": "bounded-substantive-component-established",
+      "scope": "Named Canon and concluding rubrics in the 1967 Variationes; the concluding exception for a following procession or absolution remains.",
+      "basis": "The official old/new synoptic columns permit an audible Canon in Mass with the people, change the opening gestures, and put blessing before dismissal while commending Placeat privately on return to the sacristy.",
+      "source_ref": "src/sources/inventories/eucharistic-stages/roman.json#roman-stages-source-1967-variationes"
+    },
+    {
+      "id": "western:roman-preces-1968",
+      "disposition": "bounded-substantive-component-established",
+      "scope": "Authorized supplementary Eucharistic Prayer repertoire; separate booklet’s complete physical/musical contents remain unacquired and later institution wording is not retrojected.",
+      "basis": "The inspected official decree and norms add three Eucharistic Prayers while retaining Canon I under the selection norms.",
+      "source_ref": "src/sources/inventories/eucharistic-stages/roman.json#roman-stages-source-1968-preces"
+    },
+    {
+      "id": "western:ambrosian-1981-latin",
+      "disposition": "bounded-substantive-component-established",
+      "scope": "Selected Latin Sanctoral prefaces in the 1981 published book; replaces the earlier unestablished classification, without dating first introduction to 1981.",
+      "basis": "Ward supplies edition-specific comparisons for the Latin 1981 Sanctoral prefaces: the Nativity-of-John preface is shortened and reordered, the Passion-of-John preface is replaced, and the Sebastian preface is replaced. His quoted predecessor and successor loci establish substantive prayer changes, rather than publication date alone.",
+      "source_ref": "src/sources/inventories/eucharistic-stages/ambrosian.json#ambrosian-ward-1996"
+    }
+  ],
+  "versions": [
+    {
+      "id": "eastern:alex-coptic-1898",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/alexandrian.json#alexandrian-stages-lietzmann1926",
+      "basis": "Lietzmann explicitly contrasts Tuki 1736 with Cairo 1898: the intercession, printed within the earlier Cyril anaphora, is placed before all anaphoras with alterations. The original 1736 loci were checked; the 1898 arrangement is scholarly-described.",
+      "scope": "Placement of the intercession in the Coptic-Arabic Eucharistic book; exact altered words and first introduction date remain unresolved.",
+      "evidence_level": "scholarly-description",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/alexandrian.json",
+      "stage_transition_ids": [
+        "alexandrian-stages-coptic1736-1898-intercession"
+      ],
+      "stage_source_ids": [
+        "alexandrian-stages-lietzmann1926",
+        "alexandrian-stages-tuki1736"
+      ],
+      "source_urls": [
+        "https://archive.org/details/MesseUndHerrenmahlEineStudieZurGeschichteDerLiturgie",
+        "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/253288"
+      ],
+      "locus": "Printed p. 12, opening paragraph; Part II pp. 272, 277, 282 and 287–290",
+      "limitations": "The original 1736 placement is checked at bounded pages, while the 1898 relocation and re-edition’s dependence on Tuki remain scholarly descriptions by Lietzmann and Chaîne. The mixed comparison is therefore classified at scholarly-description level. Exact altered words and the date when relocation first entered the line remain unproved.",
+      "source_inspection_dates": [
+        "alexandrian-stages-lietzmann1926 = 2026-10-16",
+        "alexandrian-stages-tuki1736 = 2026-10-17"
+      ]
+    },
+    {
+      "id": "eastern:arm-1677-liturgia",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/armenian.json#armenian-eucharistic-stages:ordo1642",
+      "basis": "The directly inspected 1642 Ordo passes from the Western-form Creed ending directly to the doxology; the 1677 Lyturgia prints the Armenian-form Creed and Nicene anathema before that doxology.",
+      "scope": "Creed structure in the celebrant Lyturgia, native p. 8; the complementary Ministerium is not promoted by this evidence.",
+      "evidence_level": "text-collated",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/armenian.json",
+      "stage_transition_ids": [
+        "armenian-eucharistic-stages:creed1642-1677"
+      ],
+      "stage_source_ids": [
+        "armenian-eucharistic-stages:ordo1642",
+        "armenian-eucharistic-stages:rome1677",
+        "armenian-eucharistic-stages:ohanjanyan2020"
+      ],
+      "source_urls": [
+        "https://books.google.com/books?id=ct5lAAAAcAAJ",
+        "https://books.google.com/books?id=ZYYB9ymm0iAC",
+        "https://societyforarmenianstudies.com/wp-content/uploads/2025/05/JSAS-Vol-27-1.pdf"
+      ],
+      "locus": "Printed p. 48; Native p. 8; p. 39, nn. 119–121",
+      "limitations": "This is a bounded comparison of published states. It does not prove that the entire 1677 edition was revised directly from the 1642 printing. Ohanjanyan’s 1646 citation remains a bibliographic discrepancy but is no longer the sole basis for the 1642 reading. Exact complete Creed transcription and normalization remain undone.",
+      "source_inspection_dates": [
+        "armenian-eucharistic-stages:ordo1642 = 2026-10-17",
+        "armenian-eucharistic-stages:rome1677 = 2026-10-17",
+        "armenian-eucharistic-stages:ohanjanyan2020 = 2026-10-16"
+      ]
+    },
+    {
+      "id": "eastern:byz-sinai-slav-nf5",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/byzantine.json#byzantine-stages:miklas",
+      "basis": "Miklas identifies a passage absent in the main Apollinaris copy and a later Demetrius diptych addition naming Mastal, Petrunia and Romald. This establishes a substantive prayer-layer difference within one dispersed manuscript witness, at scholarly-description level.",
+      "scope": "Later-hand diptych layer of the Sinaitic Liturgiarium, not a second manuscript, Catholic approval, whole-book recension or admitted act-history station.",
+      "evidence_level": "scholarly-description",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/byzantine.json",
+      "stage_transition_ids": [
+        "byzantine-stages:sinai-diptych-addition"
+      ],
+      "stage_source_ids": [
+        "byzantine-stages:miklas"
+      ],
+      "source_urls": [
+        "https://austriaca.at/0xc1aa5572%200x003e8cb3.pdf"
+      ],
+      "locus": "p. 223 and nn. 57–58",
+      "limitations": "No direct folio collation; reason for addition and name identifications remain attributed.",
+      "source_inspection_dates": [
+        "byzantine-stages:miklas = 2026-10-16"
+      ]
+    },
+    {
+      "id": "eastern:byz-greek-1873",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/byzantine.json#byzantine-stages:greek-book-1754",
+      "basis": "The directly compared printed sequence has no hymn between the Marian commemoration and dead-diptychs rubric in 1754 p. 53; the 1873 pp. 65-66 print a choir assignment and Axion estin at that exact place.",
+      "scope": "Added printed hymn and choir assignment at the Chrysostom Marian intercession; neither performance absence in 1754 nor first composition/introduction in 1873 follows.",
+      "evidence_level": "text-collated",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/byzantine.json",
+      "stage_transition_ids": [
+        "byzantine-stages:greek1754-to-1873-choir-printing"
+      ],
+      "stage_source_ids": [
+        "byzantine-stages:greek-book-1754",
+        "byzantine-stages:greek-book-1873"
+      ],
+      "source_urls": [
+        "https://books.google.com/books?id=B9BRAAAAcAAJ",
+        "https://books.google.com/books?id=m2TsEVn4SzcC"
+      ],
+      "locus": "Printed p. 53, PDF p. 69; Printed pp. 65–66, PDF pp. 72–73",
+      "limitations": "Revision means added printed content at this bounded locus. The 1754 omission does not establish absence in performance, and 1873 does not date introduction of the hymn. No assertion that the acquired 1754 copy was the direct exemplar; no whole-anaphora or whole-book identity claimed.",
+      "source_inspection_dates": [
+        "byzantine-stages:greek-book-1754 = 2026-10-17",
+        "byzantine-stages:greek-book-1873 = 2026-10-17"
+      ]
+    },
+    {
+      "id": "eastern:byz-lviv1899-chrysostom-extract",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/byzantine.json#byzantine-stages:lviv1842-book",
+      "basis": "The two identified extracts were directly compared at printed pp. 1-2. The 1899 directions add conscience, reconciliation, fasting and preparatory prayers, with specified crossings, bows, entry and altar reverences beyond the briefer 1842 rubric.",
+      "scope": "Preparation and church-entry directions in the identified 1899 extract; unidentified appended leaves are excluded.",
+      "evidence_level": "text-collated",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/byzantine.json",
+      "stage_transition_ids": [
+        "byzantine-stages:lviv-extract-preparation-expanded"
+      ],
+      "stage_source_ids": [
+        "byzantine-stages:lviv1842-book",
+        "byzantine-stages:lviv1899-book"
+      ],
+      "source_urls": [
+        "https://drive.google.com/file/d/1Gi_sCddZbPLm1MFO_4MvP5JX9qlXoX8W/view",
+        "https://drive.google.com/file/d/1sraMx-T22Bu1EgvpDbECY3o1-EAHfP91/view"
+      ],
+      "locus": "Printed pages 1–2",
+      "limitations": "This edge compares printed directions in two identified extracts. Direct revision of the 1842 setting by the 1899 editors and first promulgation of the added instructions are unestablished. Both witnesses retain handwashing before vesting and the shouldercloth prayer; those are continuity controls, not new changes.",
+      "source_inspection_dates": [
+        "byzantine-stages:lviv1842-book = 2026-10-17",
+        "byzantine-stages:lviv1899-book = 2026-10-17"
+      ]
+    },
+    {
+      "id": "western:gilbertine-lincoln115",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/canonical-orders.json#canonical-orders:gilbertine-woolley1",
+      "basis": "Woolley distinguishes the earlier marginal common-for-a-martyr-bishop collect from a proper Thomas-of-Canterbury collect in the prefixed supplement. His edition prints the latter at volume II p. 21.",
+      "scope": "The prefixed proper-collect layer of Lincoln MS 115; one physical manuscript with distinct textual layers, not a new order-wide recension.",
+      "evidence_level": "scholarly-description",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/canonical-orders.json",
+      "stage_transition_ids": [
+        "canonical-orders:gilbertine-thomas-proper"
+      ],
+      "stage_source_ids": [
+        "canonical-orders:gilbertine-woolley1",
+        "canonical-orders:gilbertine-woolley2"
+      ],
+      "source_urls": [
+        "https://archive.org/details/gilbertinerite01cath",
+        "https://archive.org/details/gilbertinerite02cath"
+      ],
+      "locus": "p. xv (PDF 19); p. 21 (PDF 37)",
+      "limitations": "Earlier margin not independently inspected in a manuscript image; evidence level stays scholarly-description.",
+      "source_inspection_dates": [
+        "canonical-orders:gilbertine-woolley1 = 2026-10-19",
+        "canonical-orders:gilbertine-woolley2 = 2026-10-19"
+      ]
+    },
+    {
+      "id": "western:premon-1663",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/canonical-orders.json#canonical-orders:king1955-canonical",
+      "basis": "King describes a further sequence reduction after the 1660 chapter: of the non-Pian sequences retained after the earlier reform, only Laetabundus remains in the later repertory represented by the 1663 book.",
+      "scope": "Source-described sequence repertory, not an independent collation of complete printed sequence tables.",
+      "evidence_level": "scholarly-description",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/canonical-orders.json",
+      "stage_transition_ids": [
+        "canonical-orders:premon-sequences"
+      ],
+      "stage_source_ids": [
+        "canonical-orders:king1955-canonical"
+      ],
+      "source_urls": [
+        "https://isidore.co/CalibreLibrary/King,%20Archdale%20A_/Liturgies%20of%20the%20Religious%20Orders%20(7874)/"
+      ],
+      "locus": "pp. 176–177 (PDF 200–201)",
+      "limitations": "Original printed sequence tables not collated. The earlier sequence selection follows the scholarly reform narrative, not an inspected inventory of the 1622 printing.",
+      "source_inspection_dates": [
+        "canonical-orders:king1955-canonical = 2026-10-19"
+      ]
+    },
+    {
+      "id": "eastern:chald-1901",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/chaldean.json#chaldean-east-syriac:rome1767-original",
+      "basis": "Directly compared original Addai-and-Mari intercession pages omit the life-giving Gospel phrase in Rome 1767 p. 284 and include it in Mosul 1901 p. 35.",
+      "scope": "One native intercession variant in the ordinary/anaphoral volume; the companion 1901 proper volume is not classified from this locus.",
+      "evidence_level": "text-collated",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/chaldean.json",
+      "stage_transition_ids": [
+        "chaldean-east-syriac:life-giving-gospel"
+      ],
+      "stage_source_ids": [
+        "chaldean-east-syriac:rome1767-original",
+        "chaldean-east-syriac:source-mosul1901",
+        "chaldean-east-syriac:macomber1966"
+      ],
+      "source_urls": [
+        "https://archive.org/download/bub_gb_PSttGL9Rf08C_2/bub_gb_PSttGL9Rf08C.pdf",
+        "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3058397",
+        "https://www.liturgia.it/content/addaicongress/studi/1Macomber.pdf"
+      ],
+      "locus": "Printed p. 284/PDF 339; Printed p. 35/PDF 67; p. 345 note 2; p. 366 line 53; p. 357 sigla",
+      "limitations": "The original pages establish this one variant between the two printed witnesses. Exact introduction date and direct 1767-to-1901 editorial dependence are unproved. The bounded phrase is not a complete prayer or book transcription.",
+      "source_inspection_dates": [
+        "chaldean-east-syriac:rome1767-original = 2026-10-17",
+        "chaldean-east-syriac:source-mosul1901 = 2026-10-17",
+        "chaldean-east-syriac:macomber1966 = 2026-10-16"
+      ]
+    },
+    {
+      "id": "eastern:chald-2014",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/chaldean.json#chaldean-east-syriac:source-mosul1901",
+      "basis": "The original 1901 pp. 4-5 print the expanded Lord’s Prayer after the Gloria; the directly inspected native 2014 opening p. 8 proceeds to Peace be with us and the opening prayer without that sequence.",
+      "scope": "Bounded Syriac opening sequence of the 2014 Apostles order; no first universal deletion date or complete-book descent is inferred.",
+      "evidence_level": "text-collated",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/chaldean.json",
+      "stage_transition_ids": [
+        "chaldean-east-syriac:opening-lord-prayer-removed"
+      ],
+      "stage_source_ids": [
+        "chaldean-east-syriac:source-mosul1901",
+        "chaldean-east-syriac:taksa2014"
+      ],
+      "source_urls": [
+        "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3058397",
+        "https://thecmsindia.org/StaticFiles/docs/pdf/Chaldean-catholic-holy-mass-text-with-arabic-and-syriac.pdf"
+      ],
+      "locus": "Printed pp. 4–5/PDF 97–96; Printed p. 8",
+      "limitations": "This is a bounded comparison of two native openings, not full-book collation or proof of direct descent. Later official account supplies reform context. The closing deletion and retained Communion prayer were source-described, not independently collated here. No claim that deletion first occurred everywhere on the book’s publication date.",
+      "source_inspection_dates": [
+        "chaldean-east-syriac:source-mosul1901 = 2026-10-17",
+        "chaldean-east-syriac:taksa2014 = 2026-10-16"
+      ]
+    },
+    {
+      "id": "eastern:chald-2020",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/chaldean.json#chaldean-east-syriac:taksa2014",
+      "basis": "The identified 2014 booklet is the Apostles order. Sako describes the subsequent collection’s revised second anaphora and newly composed Thomas order; the inspected 2025 reprint contents and Thomas opening corroborate the reported expanded structure.",
+      "scope": "Source-described 2020 collection and its anaphoral repertoire, witnessed later in 2025; not an independent 2025 reform or retrojection of every reprint reading.",
+      "evidence_level": "primary-description",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/chaldean.json",
+      "stage_transition_ids": [
+        "chaldean-east-syriac:expanded-collection2020"
+      ],
+      "stage_source_ids": [
+        "chaldean-east-syriac:taksa2014",
+        "chaldean-east-syriac:sako2025",
+        "chaldean-east-syriac:taksa2025"
+      ],
+      "source_urls": [
+        "https://thecmsindia.org/StaticFiles/docs/pdf/Chaldean-catholic-holy-mass-text-with-arabic-and-syriac.pdf",
+        "https://chaldeanpatriarchate.com/2025/08/27/القداس-الأول-لأدّاي-وماري-الأصالة-وال/",
+        "https://media.chaldeanpatriarchate.com/2025/11/%D9%83%D8%AA%D8%A7%D8%A8-%D8%A7%D9%84%D9%82%D8%AF%D8%A7%D8%B3-%D8%B7%D8%A8%D8%B9%D8%A9-%D8%AA1-2025.pdf"
+      ],
+      "locus": "Title p. 1; تجديد2014–2020; Contents PDF 173; printed p. 81/PDF 87; Contents PDF 173",
+      "limitations": "Evidence level applies to substantive original reform as described by its author; no complete 2014/2020 native-text collation. Do not treat Theodore’s absence from the 2014 Apostles booklet as its abolition, nor the new Thomas title as ancient apostolic authorship. Arabic wording changes alone are not native Syriac changes.",
+      "source_inspection_dates": [
+        "chaldean-east-syriac:taksa2014 = 2026-10-16",
+        "chaldean-east-syriac:sako2025 = 2026-10-16",
+        "chaldean-east-syriac:taksa2025 = 2026-10-16"
+      ]
+    },
+    {
+      "id": "western:cistercian-1606",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/cistercian.json#cistercian-1606-1657-1487-book",
+      "basis": "The directly collated Memento adds omniumque fidelium and pro quibus tibi offerimus, vel in 1606 pp. 190-191, relative to the complete Memento on the inspected 1487 canvas 225.",
+      "scope": "One Canon prayer locus; not the first historical introduction of the clauses, direct exemplar ancestry or full Ordinary collation.",
+      "evidence_level": "text-collated",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/cistercian.json",
+      "stage_transition_ids": [
+        "cistercian-1606-1657-1487-1606-comparison"
+      ],
+      "stage_source_ids": [
+        "cistercian-1606-1657-1487-book",
+        "cistercian-1606-1657-1606-book"
+      ],
+      "source_urls": [
+        "https://www.digitale-sammlungen.de/en/view/bsb00044164",
+        "https://www.digitale-sammlungen.de/en/view/bsb10496382"
+      ],
+      "locus": "BSB canvas 225, Memento; Printed pp. 190–191, canvases 244–245",
+      "limitations": "This bounded witness comparison is not a complete Ordinary collation. The 1487 printing is not established as the direct exemplar of 1606. Neither the first introduction of either clause nor an intermediate effective date is inferred. Latin excerpts normalize long-s, expand typographic abbreviations and omit accent marks for the bounded comparison.",
+      "source_inspection_dates": [
+        "cistercian-1606-1657-1487-book = 2026-10-17",
+        "cistercian-1606-1657-1606-book = 2026-10-17"
+      ]
+    },
+    {
+      "id": "western:cistercian-1657",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/cistercian.json#cistercian-1606-1657-1606-book",
+      "basis": "Directly compared complete prayer units show expansion of Confiteor, replacement of Orate and its response, and revised wording and placement of Suscipe sancta Trinitas. The compared Holy Saturday ending and a paired Pentecost-Sunday example add bounded rubrical and appointment changes.",
+      "scope": "Named Ordinary units and specified Holy Saturday/Pentecost loci in the 1657 Cistercian missal, with complete prayer units independently image-reviewed.",
+      "evidence_level": "text-collated",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/cistercian.json",
+      "stage_transition_ids": [
+        "cistercian-1606-1657-revision"
+      ],
+      "stage_source_ids": [
+        "cistercian-1606-1657-1606-book",
+        "cistercian-1606-1657-1657-book"
+      ],
+      "source_urls": [
+        "https://www.digitale-sammlungen.de/en/view/bsb10496382",
+        "https://digital.fides.org.pl/dlibra/publication/3978/edition/3755/content"
+      ],
+      "locus": "printed 180; printed 169; printed 181; printed 174; In vigilia Paschae, p. 115; Sabbato Sancto, p. 168; Printed pp. 149–150, canvases 201–202; Printed pp. 264–265, files 0330–0331; Monitum file 0009",
+      "limitations": "Text-collated applies to three complete prayer units, their local rubrics, and the Holy Saturday ending on the identified pages. The Holy Saturday quotations are bounded excerpts, not complete service transcriptions. Wider calendar, lectionary, and chant changes have primary-description evidence and have not been exhaustively collated. This is an institutional Cistercian revision relation, not proof that the 1657 typesetter directly copied this particular 1606 edition. All six complete prayer bodies have passed independent image review; one printed accent was corrected. The Holy Saturday rubrics remain a separate bounded review. A further bounded example directly compares 1606 Second Sunday and 1657 First Sunday after Pentecost: numbering and Gospel change, while the identified epistle and chant units are retained. These are descriptive incipits and appointments, not complete literal transcriptions of the propers. This supports one instance of the Monitum claim without verifying all Sundays or comparing every chant against a Roman exemplar.",
+      "source_inspection_dates": [
+        "cistercian-1606-1657-1606-book = 2026-10-17",
+        "cistercian-1606-1657-1657-book = 2026-10-17"
+      ]
+    },
+    {
+      "id": "latin-missal:praedicatorum-xavierre-1604",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/latin-uses.json#latin-uses:dom1550",
+      "basis": "The directly compared Suscepimus Deus formularies change the collect from Deus cuius providentia to Largire nobis and the Gospel from Matthew 7 to Luke 16; the printed position changes from Dominica octava after Trinity to Dominica sexta after its octave.",
+      "scope": "The 1604 Dominican book’s selected formulary, represented by the existing act-keyed catalogue row; 1604 is the witness date, not the dates of its reprinted 1602/1603 authorizations.",
+      "evidence_level": "text-collated",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/latin-uses.json",
+      "stage_transition_ids": [
+        "latin-uses:dominican-suscepimus-recombination"
+      ],
+      "stage_source_ids": [
+        "latin-uses:dom1550",
+        "latin-uses:dom1604"
+      ],
+      "source_urls": [
+        "https://archive.org/details/bub_gb_FqVWqqFkUDsC",
+        "https://archive.org/details/bub_gb_lefoIUlq2sgC"
+      ],
+      "locus": "1550 fols 125r–125v (PDF 289–290), Suscepimus Deus; 1604 pp. 238–239 (PDF 314–315), Suscepimus Deus",
+      "limitations": "This pairs the Suscepimus formulary, not an asserted identical modern Sunday. Introit, Debitores sumus epistle, Esto mihi gradual, Populum humilem offertory and Gustate communion persist in the inspected pair; secret and postcommunion also differ but are not encoded here. Intermediate Bettini and Castrucci revisions prevent an unsupported immediate 1550→1604 printing genealogy.",
+      "source_inspection_dates": [
+        "latin-uses:dom1550 = 2026-10-16",
+        "latin-uses:dom1604 = 2026-10-16"
+      ]
+    },
+    {
+      "id": "latin-missal:carmelitarum-capitulum-1621",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/latin-uses.json#latin-uses:carm1574",
+      "basis": "Directly compared printed October calendars show Teresa on October 5 in 1621 where 1574 is blank, and blanks on October 6 and 8 where the earlier calendar has named entries.",
+      "scope": "Printed October calendar in the 1621 Carmelite book represented by the existing act-keyed catalogue row; handwritten changes and causal attribution to a chapter are excluded.",
+      "evidence_level": "text-collated",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/latin-uses.json",
+      "stage_transition_ids": [
+        "latin-uses:carmelite-october-calendar"
+      ],
+      "stage_source_ids": [
+        "latin-uses:carm1574",
+        "latin-uses:carm1621"
+      ],
+      "source_urls": [
+        "https://archive.org/details/ARes10417",
+        "https://archive.org/details/bub_gb_PUEgJFAvalgC"
+      ],
+      "locus": "October calendar, PDF 20; October calendar, PDF 22",
+      "limitations": "The result is a bounded calendar comparison. Blank dates do not prove complete suppression elsewhere. No causal connection to a particular chapter act is established; 1621 is the witness date, and the 1584 reprinted brief predates it.",
+      "source_inspection_dates": [
+        "latin-uses:carm1574 = 2026-10-16",
+        "latin-uses:carm1621 = 2026-10-16"
+      ]
+    },
+    {
+      "id": "western:braga-1558",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/latin-uses.json#latin-uses:carvalho",
+      "basis": "Carvalho reports fixed opening prayers with Ave Maria, additional offertory prayers and a final Salve Regina in the 1558 Ordo. The Palm Sunday account contrasts seven blessing prayers plus preface with six plus preface; the earlier count was directly checked in the 1538 book.",
+      "scope": "Source-described 1558 Ordo additions and Palm Sunday arrangement; after-state remains scholarly-described, without Carmelite borrowing or exact book ancestry.",
+      "evidence_level": "scholarly-description",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/latin-uses.json",
+      "stage_transition_ids": [
+        "latin-uses:braga-limpo-ordo"
+      ],
+      "stage_source_ids": [
+        "latin-uses:carvalho",
+        "latin-uses:braga1538-primary"
+      ],
+      "source_urls": [
+        "https://ciencia.ucp.pt/ws/files/43665339/1852_article_3991_1_10_20191019.pdf",
+        "https://purl.pt/14877"
+      ],
+      "locus": "p. 164; p. 164, note 141; Fol. 42r–v, PDF 97–98",
+      "limitations": "The earlier Palm blessing count now has direct primary-page verification. The 1558 comparison remains a scholarly description; exact source-text ancestry is unestablished. No direct dependence on a Carmelite missal is asserted.",
+      "source_inspection_dates": [
+        "latin-uses:carvalho = 2026-10-16",
+        "latin-uses:braga1538-primary = 2026-10-17"
+      ]
+    },
+    {
+      "id": "western:esztergom-1484",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/latin-uses.json#latin-uses:deri2009",
+      "basis": "Deri’s critical comparison identifies omission of the Pentecost-octave Mass and Transfiguration grape blessing in the Paloczi and 1484 comparators relative to the earlier Missale notatum, alongside reduced special-proper and sequence repertories. These named liturgical-content changes support the classification; relocation of preparation material is separately a book-arrangement finding.",
+      "scope": "Aggregate repertory and named prayer-content differences across the endpoints; not a single 1484 promulgation or immediate revision from the early witness. Preparation placement is not evidence of altered ritual order.",
+      "evidence_level": "scholarly-description",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/latin-uses.json",
+      "stage_transition_ids": [
+        "latin-uses:esztergom-medieval-repertory-change"
+      ],
+      "stage_source_ids": [
+        "latin-uses:deri2009"
+      ],
+      "source_urls": [
+        "https://vallastudomany.elte.hu/sites/default/files/kiadvanyok/MRH/MRH01_Missale%20Strigoniense%201484.pdf"
+      ],
+      "locus": "p. XLIII (PDF 53); p. XLV (PDF 55); p. XLI (PDF 51)",
+      "limitations": "This is an aggregate endpoint change across about 150 years, not a single 1484 promulgation, an immediate parent-child edge, or proof that every omitted item ceased to be celebrated. Preparation placement concerns the book’s arrangement, not the sequence of actions during Mass.",
+      "source_inspection_dates": [
+        "latin-uses:deri2009 = 2026-10-17"
+      ]
+    },
+    {
+      "id": "eastern:malabar-1946",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/malabar.json#stages-malabar-1946",
+      "basis": "The inspected 1946 foreword explicitly contrasts its Roman exemplar with collected and bracketed prayers/rubrics, feasts entered in the Proper, full server prayers and an appended Marian Huthama absent from that exemplar.",
+      "scope": "Editorial arrangement and specified additions documented in the preliminary leaves; no body collation or direct 1906-to-1946 descent.",
+      "evidence_level": "primary-description",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/malabar.json",
+      "stage_transition_ids": [
+        "stages-malabar-roman-exemplar-to-1946"
+      ],
+      "stage_source_ids": [
+        "stages-malabar-1946"
+      ],
+      "source_urls": [
+        "https://thecmsindia.org/StaticFiles/docs/pdf/Ordo-Chaldaicus-Rituum-Et-Lectionum-001.pdf"
+      ],
+      "locus": "Physical PDF 3, foreword; Physical PDF 4, contents",
+      "limitations": "The Roman edition is unidentified. No 1906→1946 direct descent is claimed; the 1906 direction places Rogation readings in situ, whereas this book reports an appendix.",
+      "source_inspection_dates": [
+        "stages-malabar-1946 = 2026-10-16"
+      ]
+    },
+    {
+      "id": "eastern:malabar-1960-taksa",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/malabar.json#stages-malabar-pallath-2023",
+      "basis": "Pallath contrasts three anaphoras in the 1955 study/1957 programme with the narrower printed 1960 Syriac ordinary containing only the simple Addai-and-Mari form.",
+      "scope": "Restricted printed repertoire compared with a consultation/approval programme; omission does not revoke approval of other anaphoras or identify the 1960 Supplementum as the same component.",
+      "evidence_level": "scholarly-description",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/malabar.json",
+      "stage_transition_ids": [
+        "stages-malabar-study-to-restoration-publications"
+      ],
+      "stage_source_ids": [
+        "stages-malabar-pallath-2023"
+      ],
+      "source_urls": [
+        "https://pvpkottayam.in/wp-content/uploads/2024/03/Eastern-Legal-Thought-2023-October.pdf"
+      ],
+      "locus": "Printed/physical 24–27, §§ 2.1–2.2",
+      "limitations": "Descriptive scholarship rather than original page comparison. Omission from the Syriac book does not rescind approval of the other two anaphoras; companion books are not serial revisions.",
+      "source_inspection_dates": [
+        "stages-malabar-pallath-2023 = 2026-10-16"
+      ]
+    },
+    {
+      "id": "eastern:mar-1592-94",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/maronite.json#maronite-jabbour2020",
+      "basis": "Jabbour’s manuscript-correction and first-printing study describes uniform Roman-derived institution wording and changed epiclesis petitions concerning benefit to communicants. Dib independently describes the changed object of the epiclesis.",
+      "scope": "Source-described anaphoral editing in the first Roman printing; no direct Syriac collation or exclusive editor attribution.",
+      "evidence_level": "scholarly-description",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/maronite.json",
+      "stage_transition_ids": [
+        "maronite-edit1594"
+      ],
+      "stage_source_ids": [
+        "maronite-jabbour2020",
+        "maronite-dib1928"
+      ],
+      "source_urls": [
+        "https://www.researchgate.net/publication/351617405_L'identite_religieuse_des_Maronites_du_Mont-Liban_au_XVIe_siecle_au_prisme_du_premier_missel_maronite_imprime_a_Rome",
+        "https://fr.wikisource.org/wiki/Page:Alfred_Vacant_-_Dictionnaire_de_th%C3%A9ologie_catholique,_1908,_Tome_10.1.djvu/72"
+      ],
+      "locus": "pp 70–72; pp 73–75; col 129",
+      "limitations": "Manuscript ancestry remains a scholarly reconstruction with supplementary sources. No direct before/after Syriac collation was performed. Do not attribute all changes solely to an editor on the strength of the approval colophon.",
+      "source_inspection_dates": [
+        "maronite-jabbour2020 = 2026-10-16",
+        "maronite-dib1928 = 2026-10-16"
+      ]
+    },
+    {
+      "id": "eastern:mar-1716",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/maronite.json#maronite-dib1928",
+      "basis": "Dib describes addition of the Roman Church anaphora and adaptation of Sharar prayers to a Good Friday Presanctified order. These named repertoire and service changes support the classification independently of the disputed total count; explicit Sharar suppression is not attributed to Dib here.",
+      "scope": "Named source-described Roman Church addition and Good Friday adaptation; no exact total, explicit Sharar-suppression claim or complete 1716 text is asserted.",
+      "evidence_level": "scholarly-description",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/maronite.json",
+      "stage_transition_ids": [
+        "maronite-roster1716"
+      ],
+      "stage_source_ids": [
+        "maronite-dib1928"
+      ],
+      "source_urls": [
+        "https://fr.wikisource.org/wiki/Page:Alfred_Vacant_-_Dictionnaire_de_th%C3%A9ologie_catholique,_1908,_Tome_10.1.djvu/72"
+      ],
+      "locus": "col 129",
+      "limitations": "Exact 1716 text and full roster not inspected. Edge compares documented states; intermediate 1608 variants are not silently treated as its exclusive parent.",
+      "source_inspection_dates": [
+        "maronite-dib1928 = 2026-10-16"
+      ]
+    },
+    {
+      "id": "eastern:mar-1763",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/maronite.json#maronite-dib1928",
+      "basis": "The inspected historical descriptions agree that the 1762/1763 book carries a smaller anaphora selection than the 1716 line. Dib/Beggiani report nine while the official 1992 introduction reports eight. The current inventory also preserves a thirteen-versus-fourteen dispute for 1716, which does not erase the reported reduction.",
+      "scope": "Source-described repertory contraction only; exact counts and removed titles remain unresolved, with 1762 title and 1763 approbation distinguished.",
+      "evidence_level": "scholarly-description",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/maronite.json",
+      "stage_transition_ids": [
+        "maronite-reduction1763"
+      ],
+      "stage_source_ids": [
+        "maronite-dib1928",
+        "maronite-1992-intro"
+      ],
+      "source_urls": [
+        "https://fr.wikisource.org/wiki/Page:Alfred_Vacant_-_Dictionnaire_de_th%C3%A9ologie_catholique,_1908,_Tome_10.1.djvu/72",
+        "https://www.stmaron.org/qurbono"
+      ],
+      "locus": "col 129; Succeeding Editions",
+      "limitations": "Reduction is documented despite unresolved count. No list of deletions is invented. 1762/1763 are source-reported date bounds, not an inferred period of validity.",
+      "classification_review_caveat": "The dossier’s unqualified fourteen-anaphora baseline is narrower than the later inventory qualification; no exact 1716 count is adopted here.",
+      "source_inspection_dates": [
+        "maronite-dib1928 = 2026-10-16",
+        "maronite-1992-intro = 2026-10-16"
+      ]
+    },
+    {
+      "id": "eastern:mar-1973",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/maronite.json#maronite-1992-intro",
+      "basis": "The official 1992 introduction identifies the experimental 1973 Simple Rite as a one-anaphora book, compared with the several-anaphora Dibs line.",
+      "scope": "Source-described experimental abridgment; no transfer of the distinct 1972 proposal’s contents, original-book collation or new identification of its anaphora.",
+      "evidence_level": "scholarly-description",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/maronite.json",
+      "stage_transition_ids": [
+        "maronite-simple1973-repertoire"
+      ],
+      "stage_source_ids": [
+        "maronite-1992-intro"
+      ],
+      "source_urls": [
+        "https://www.stmaron.org/qurbono"
+      ],
+      "locus": "Succeeding Editions",
+      "limitations": "Source-described comparison, not a claim of direct textual parentage. 1972 Roman proposal and 1973 patriarchal text must still be compared.",
+      "source_inspection_dates": [
+        "maronite-1992-intro = 2026-10-16"
+      ]
+    },
+    {
+      "id": "eastern:mar-1992",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/maronite.json#maronite-1992-intro",
+      "basis": "The contemporary commission introduction identifies removal of repeated Eastern prayers within the Western structure and a six-anaphora collection headed by Twelve Apostles, with shared institution wording based on that anaphora rather than the earlier Roman-derived formula.",
+      "scope": "Source-described 1992 anaphoral structure and repertoire; mixed earlier/current comparison remains scholarly-description and does not claim accomplishment of future Sharar or twenty-four-anaphora projects.",
+      "evidence_level": "scholarly-description",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/maronite.json",
+      "stage_transition_ids": [
+        "maronite-reform1992"
+      ],
+      "stage_source_ids": [
+        "maronite-1992-intro",
+        "maronite-beggiani1998"
+      ],
+      "source_urls": [
+        "https://www.stmaron.org/qurbono",
+        "https://thehiddenpearl.org/wp-content/uploads/2022/08/The-Divine-Liturgy-of-the-Maronite-Church-History-and-Commentary-Chorbishop-Seely-J-Beggiani.pdf"
+      ],
+      "locus": "Western Syriac Anaphora; Six Anaphoras of the New Text; pp 20–21",
+      "limitations": "The 1992 side is a contemporary primary description; the earlier side is a scholarly retrospective. The edge uses their lowest shared evidence level. No paired textual collation was performed. Sharar restoration and a twenty-four-anaphora collection were future projects, not accomplished 1992 contents.",
+      "source_inspection_dates": [
+        "maronite-1992-intro = 2026-10-16",
+        "maronite-beggiani1998 = 2026-10-16"
+      ]
+    },
+    {
+      "id": "eastern:syr-1922",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/west-syriac.json#west-syriac-stages-rome1843-original",
+      "basis": "Original 1843 anaphora headings and the independently checked native 1922 contents give different seven-title selections: the changed list includes Twelve Apostles, Mark, Eustathius and Cyril of Jerusalem in place of earlier attributed titles.",
+      "scope": "Native repertoire labels only; matching Basil labels do not identify the same composition, and no complete anaphora-body collation follows.",
+      "evidence_level": "text-collated",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/west-syriac.json",
+      "stage_transition_ids": [
+        "west-syriac-stages-anaphora-selection1922"
+      ],
+      "stage_source_ids": [
+        "west-syriac-stages-rome1843-original",
+        "west-syriac-stages-missal1922"
+      ],
+      "source_urls": [
+        "https://books.google.com/books?jscmd=download&vid=AoxG4JWD4VkC&output=pdf",
+        "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3097402"
+      ],
+      "locus": "1843 original section openings: printed 103, 119, 128, 138, 146, 155, 168/PDF 134, 150, 159, 169, 177, 186, 199; Native contents PDF 23",
+      "limitations": "This is a comparison of native repertoire labels, not complete anaphora texts. A shared Basil title does not identify the same composition: the 1922 editor expressly rejects the 1843 Basil attribution. No general manuscript ancestry follows.",
+      "source_inspection_dates": [
+        "west-syriac-stages-rome1843-original = 2026-10-17",
+        "west-syriac-stages-missal1922 = 2026-10-17"
+      ]
+    },
+    {
+      "id": "western:roman-ordo-1965",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/roman.json#roman-stages-source-1965-ordo",
+      "basis": "The compared 1962 Ritus III.6 includes Psalm Judica with exceptions; the original 1965 Ordo opening proceeds from the introductory antiphon to Adiutorium and Confiteor without it.",
+      "scope": "Opening sequence of an inserted component book; no complete independent 1965 missal is created.",
+      "evidence_level": "text-collated",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/roman.json",
+      "stage_transition_ids": [
+        "roman-stages-omit-judica"
+      ],
+      "stage_source_ids": [
+        "roman-stages-source-1965-ordo",
+        "roman-stages-source-1962"
+      ],
+      "source_urls": [
+        "https://portal.christ-net.sk/node/3410",
+        "https://media.churchmusicassociation.org/pdf/missale62.pdf"
+      ],
+      "locus": "Decree p 5; Ordo §§ 1–2, p 7; Ritus servandus III.6, printed LV / PDF 57",
+      "limitations": "Comparison is limited to the opening sequence, not all 1962/1965 text. The 1962 Joseph amendment does not affect this locus.",
+      "source_inspection_dates": [
+        "roman-stages-source-1965-ordo = 2026-10-19",
+        "roman-stages-source-1962 = 2026-10-16"
+      ]
+    },
+    {
+      "id": "western:roman-holy-week-1965",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/roman.json#roman-stages-source-1965-holyweek",
+      "basis": "Direct comparison shows the seventh Good Friday solemn prayer changed from the earlier heretics-and-schismatics invitation to a prayer for all brothers believing in Christ and unity in faith and charity.",
+      "scope": "One Good Friday prayer in the 1965 Holy Week supplement; neither all Holy Week prayers nor a complete missal is claimed.",
+      "evidence_level": "text-collated",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/roman.json",
+      "stage_transition_ids": [
+        "roman-stages-recast-christian-unity-prayer"
+      ],
+      "stage_source_ids": [
+        "roman-stages-source-1965-holyweek",
+        "roman-stages-source-1962"
+      ],
+      "source_urls": [
+        "https://portal.christ-net.sk/node/3412",
+        "https://media.churchmusicassociation.org/pdf/missale62.pdf"
+      ],
+      "locus": "Decree pp 5–6; seventh prayer pp 20–21; Good Friday seventh solemn prayer, printed 173 / PDF 254",
+      "limitations": "Only this prayer is compared. Neither the entire Holy Week book nor an immediate complete-book predecessor is established.",
+      "source_inspection_dates": [
+        "roman-stages-source-1965-holyweek = 2026-10-19",
+        "roman-stages-source-1962 = 2026-10-16"
+      ]
+    },
+    {
+      "id": "western:roman-variationes-1967",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/roman.json#roman-stages-source-1967-variationes",
+      "basis": "The official old/new synoptic columns permit an audible Canon in Mass with the people, change the opening gestures, and put blessing before dismissal while commending Placeat privately on return to the sacristy.",
+      "scope": "Named Canon and concluding rubrics in the 1967 Variationes; the concluding exception for a following procession or absolution remains.",
+      "evidence_level": "text-collated",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/roman.json",
+      "stage_transition_ids": [
+        "roman-stages-revise-1965-order"
+      ],
+      "stage_source_ids": [
+        "roman-stages-source-1967-variationes"
+      ],
+      "source_urls": [
+        "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1960/notitiae-03-%281967%29/Notitiae-030-1967.pdf"
+      ],
+      "locus": "Notitiae 198–199, §§ 32, 36–37; 210–211, concluding rubrics",
+      "limitations": "The compared columns are the official old/new excerpts, not a fresh full-book collation. Procession or absolution following Mass has its own concluding exception.",
+      "source_inspection_dates": [
+        "roman-stages-source-1967-variationes = 2026-10-19"
+      ]
+    },
+    {
+      "id": "western:roman-preces-1968",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/roman.json#roman-stages-source-1968-preces",
+      "basis": "The inspected official decree and norms add three Eucharistic Prayers while retaining Canon I under the selection norms.",
+      "scope": "Authorized supplementary Eucharistic Prayer repertoire; separate booklet’s complete physical/musical contents remain unacquired and later institution wording is not retrojected.",
+      "evidence_level": "primary-description",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/roman.json",
+      "stage_transition_ids": [
+        "roman-stages-add-three-eucharistic-prayers"
+      ],
+      "stage_source_ids": [
+        "roman-stages-source-1968-preces"
+      ],
+      "source_urls": [
+        "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1960/notitiae-04-%281968%29/Notitiae-040-1968.pdf"
+      ],
+      "locus": "Printed 156–157 and 168 / PDF 26–27, 38",
+      "limitations": "Bounded repertoire change across supplements, not complete-book succession. No statement that all institution formulas already match the 1970 missal.",
+      "source_inspection_dates": [
+        "roman-stages-source-1968-preces = 2026-10-19"
+      ]
+    },
+    {
+      "id": "western:ambrosian-1981-latin",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/ambrosian.json#ambrosian-ward-1996",
+      "basis": "Ward supplies edition-specific comparisons for the Latin 1981 Sanctoral prefaces: the Nativity-of-John preface is shortened and reordered, the Passion-of-John preface is replaced, and the Sebastian preface is replaced. His quoted predecessor and successor loci establish substantive prayer changes, rather than publication date alone.",
+      "scope": "Selected Latin Sanctoral prefaces in the 1981 published book; replaces the earlier unestablished classification, without dating first introduction to 1981.",
+      "evidence_level": "scholarly-description",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/ambrosian.json",
+      "stage_transition_ids": [
+        "ambrosian-nativity-preface-revision"
+      ],
+      "stage_source_ids": [
+        "ambrosian-ward-1996"
+      ],
+      "source_urls": [
+        "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1990/notitiae-32-(1996)/Notitiae-357-1996.pdf"
+      ],
+      "locus": "pp. 242–244; pp 241–242/PDF 63–64; pp 266–267/PDF 88–89",
+      "limitations": "Three selected Sanctoral preface comparisons are described by Ward; none is an independent collation of the original altar books. No immediate 1902-to-1981 whole-book succession, complete-book inheritance or first-introduction date is established. Ward distinguishes 1902 abstersit from 1954 abstulit, so the quoted 1954 predecessor must not be silently labelled 1902 wording. The Nativity-of-John preface is shortened/reordered; the Passion-of-John preface is replaced; Sebastian’s replacement is distinct from reuse of older related material as a Common-of-Martyrs collect. The source receipt and corrected transition record article-page image inspection on 2026-10-17.",
+      "classification_review_caveat": "The article-page image check on 2026-10-17 establishes the scholarly description; independent altar-book collation remains open.",
+      "source_inspection_dates": [
+        "ambrosian-ward-1996 = 2026-10-17"
+      ]
+    }
+  ],
+  "acquisitions": [],
+  "searches": [
+    {
+      "scope": "All 76 recorded stage transitions at the reviewed checkpoint",
+      "method": "Evidence and exact-target classification review; original inspection dates retained.",
+      "limitations": "No new complete-book collation or exhaustive historical version census."
+    }
+  ],
+  "independent_review": {
+    "verdict": "accepted-with-corrections-applied",
+    "initial_proposals": 39,
+    "integrated_book_source_changes": 29,
+    "optional_act_changes_kept_separate": 7,
+    "deferred_ids": [
+      "eastern:malabar-1959-ordo",
+      "eastern:mar-dibs-1888",
+      "latin-missal:rubricarum-instructum-1960"
+    ],
+    "dispositions": [
+      {
+        "transition_id": "alexandrian-stages-coptic1736-1898-intercession",
+        "dossier": "src/sources/inventories/eucharistic-stages/alexandrian.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [
+          "eastern:alex-coptic-1898"
+        ],
+        "disposition": "proposed-book-or-source-state",
+        "rationale": "eastern:alex-coptic-1898"
+      },
+      {
+        "transition_id": "alexandrian-stages-geez1945-2025-chant-provisional",
+        "dossier": "src/sources/inventories/eucharistic-stages/alexandrian.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "primary-description",
+        "after_witness_ids": [
+          "eastern:alex-geez-2025"
+        ],
+        "disposition": "defer",
+        "rationale": "New integrated notation is documented, but no altered prayer, rubric, calendar, liturgical order or melody is demonstrated. Editorial replacement plus notation alone does not establish a substantive liturgical revision."
+      },
+      {
+        "transition_id": "alexandrian-stages-geez1890-1913",
+        "dossier": "src/sources/inventories/eucharistic-stages/alexandrian.json",
+        "kind": "witness-succession",
+        "status": "documented",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [],
+        "disposition": "no-new-substantive-claim",
+        "rationale": "This is attributed printing succession; neither whole-book identity nor absence of other textual changes is established. Bibliographic succession, reception or coexistence does not by itself establish an altered liturgical component."
+      },
+      {
+        "transition_id": "alexandrian-stages-geez1913-1945",
+        "dossier": "src/sources/inventories/eucharistic-stages/alexandrian.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [
+          "eastern:alex-geez-1945"
+        ],
+        "disposition": "already-established",
+        "rationale": "eastern:alex-geez-1945 is already substantive-established. The source-described repertory/table adds bounded corroboration, not another catalogue version."
+      },
+      {
+        "transition_id": "ambrosian-veronica-removal",
+        "dossier": "src/sources/inventories/eucharistic-stages/ambrosian.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [],
+        "disposition": "defer-no-exact-catalogue-record",
+        "rationale": "1594 after-state has no witness_id. Do not promote the 1475 or 1499 earlier witness as the 1594 removal, or substitute the 1640 printing."
+      },
+      {
+        "transition_id": "ambrosian-1751-to-1902",
+        "dossier": "src/sources/inventories/eucharistic-stages/ambrosian.json",
+        "kind": "revision",
+        "status": "provisional",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [
+          "western:ambrosian-1751-1902"
+        ],
+        "disposition": "defer",
+        "rationale": "Provisional; exact altered unit remains unidentified and the single aggregate 1751-1902 catalogue row represents both states."
+      },
+      {
+        "transition_id": "ambrosian-nativity-preface-revision",
+        "dossier": "src/sources/inventories/eucharistic-stages/ambrosian.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [
+          "western:ambrosian-1981-latin"
+        ],
+        "disposition": "replace-existing-unestablished",
+        "rationale": "western:ambrosian-1981-latin"
+      },
+      {
+        "transition_id": "ambrosian-approval-to-publication",
+        "dossier": "src/sources/inventories/eucharistic-stages/ambrosian.json",
+        "kind": "witness-succession",
+        "status": "documented",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [
+          "western:ambrosian-1981-latin"
+        ],
+        "disposition": "no-new-substantive-claim",
+        "rationale": "No new substantive 1981 revision claimed and no exact identity certified. 1975 Eucharistic-prayer confirmation needs separate examination. Bibliographic succession, reception or coexistence does not by itself establish an altered liturgical component."
+      },
+      {
+        "transition_id": "ambrosian-second-recension",
+        "dossier": "src/sources/inventories/eucharistic-stages/ambrosian.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "primary-description",
+        "after_witness_ids": [
+          "western:ambrosian-2024",
+          "western:ambrosian-2026-latin"
+        ],
+        "disposition": "already-established-with-qualified-companion",
+        "rationale": "western:ambrosian-2024 already substantive-established. western:ambrosian-2026-latin remains unestablished as an independent substantive revision; principal changes incorporated does not prove full equivalence."
+      },
+      {
+        "transition_id": "armenian-eucharistic-stages:creed1642-1677",
+        "dossier": "src/sources/inventories/eucharistic-stages/armenian.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "text-collated",
+        "after_witness_ids": [
+          "eastern:arm-1677-liturgia",
+          "eastern:arm-1677-ministerium"
+        ],
+        "disposition": "proposed-book-or-source-state",
+        "rationale": "eastern:arm-1677-liturgia; arm-1677-ministerium deferred: no Creed locus in that complementary volume."
+      },
+      {
+        "transition_id": "armenian-eucharistic-stages:lviv-reception",
+        "dossier": "src/sources/inventories/eucharistic-stages/armenian.json",
+        "kind": "reception",
+        "status": "documented",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [],
+        "disposition": "defer-no-exact-catalogue-record",
+        "rationale": "The catalogue describes a concrete Annunciation calendar correction, but no exact manuscript catalogue record is linked to this stage. Generic Mass harmonization also lacks identified altered readings. Neither the 1636 composite-copy date nor 1677 publication dates the correction."
+      },
+      {
+        "transition_id": "armenian-eucharistic-stages:rome1677-venice1823-reception",
+        "dossier": "src/sources/inventories/eucharistic-stages/armenian.json",
+        "kind": "reception",
+        "status": "documented",
+        "evidence_level": "text-collated",
+        "after_witness_ids": [
+          "eastern:arm-1823"
+        ],
+        "disposition": "defer",
+        "rationale": "Both the incipit-bearing 1677 direction and the expanded 1823 Gospel bodies are inspected. Full display of already-directed Gospel texts does not establish new prayer content or a newly prescribed ritual; no distinct substantive state or complete sameness claim follows."
+      },
+      {
+        "transition_id": "byzantine-stages:sinai-diptych-addition",
+        "dossier": "src/sources/inventories/eucharistic-stages/byzantine.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [
+          "eastern:byz-sinai-slav-nf5"
+        ],
+        "disposition": "proposed-book-or-source-state",
+        "rationale": "eastern:byz-sinai-slav-nf5"
+      },
+      {
+        "transition_id": "byzantine-stages:vilnius-to-univ",
+        "dossier": "src/sources/inventories/eucharistic-stages/byzantine.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "text-collated",
+        "after_witness_ids": [
+          "eastern:byz-univ1733-read-liturgy"
+        ],
+        "disposition": "already-established",
+        "rationale": "eastern:byz-univ1733-read-liturgy is already classified. Original terminal-sequence/appendix comparison strengthens its prior declaration without adding a row."
+      },
+      {
+        "transition_id": "byzantine-stages:lviv-to-roman-rubrics",
+        "dossier": "src/sources/inventories/eucharistic-stages/byzantine.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "primary-description",
+        "after_witness_ids": [
+          "eastern:byz-ruthenian-chrysostom-1940"
+        ],
+        "disposition": "already-established",
+        "rationale": "eastern:byz-ruthenian-chrysostom-1940 already classified. Preserve the later Canadian-reprint and translated-circular evidence ceiling."
+      },
+      {
+        "transition_id": "byzantine-stages:greek-rubrics-received",
+        "dossier": "src/sources/inventories/eucharistic-stages/byzantine.json",
+        "kind": "reception",
+        "status": "documented",
+        "evidence_level": "primary-description",
+        "after_witness_ids": [
+          "eastern:byz-ruthenian-chrysostom-1940"
+        ],
+        "disposition": "no-new-substantive-claim",
+        "rationale": "Reception of a stated norm, not whole-book translation or proof of identical wording. Older Ruthenian readings are not dated here. Bibliographic succession, reception or coexistence does not by itself establish an altered liturgical component."
+      },
+      {
+        "transition_id": "byzantine-stages:ruth-components-to-volume",
+        "dossier": "src/sources/inventories/eucharistic-stages/byzantine.json",
+        "kind": "witness-succession",
+        "status": "documented",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [
+          "eastern:byz-ruthenian-1942"
+        ],
+        "disposition": "no-new-substantive-claim",
+        "rationale": "A packaging/completeness relationship, not a substantive revision edge. The 1941 intermediate components remain within this set rather than artificial successive versions. Bibliographic succession, reception or coexistence does not by itself establish an altered liturgical component."
+      },
+      {
+        "transition_id": "byzantine-stages:vulgata-components-to-volume",
+        "dossier": "src/sources/inventories/eucharistic-stages/byzantine.json",
+        "kind": "witness-succession",
+        "status": "documented",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [
+          "eastern:byz-vulgata-1942"
+        ],
+        "disposition": "no-new-substantive-claim",
+        "rationale": "A packaging/completeness relationship, not a substantive revision edge. The 1941 intermediate components remain within this set rather than artificial successive versions. Bibliographic succession, reception or coexistence does not by itself establish an altered liturgical component."
+      },
+      {
+        "transition_id": "byzantine-stages:vulgata-calendar-addition",
+        "dossier": "src/sources/inventories/eucharistic-stages/byzantine.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [
+          "eastern:byz-vulgata-1953"
+        ],
+        "disposition": "already-established",
+        "rationale": "eastern:byz-vulgata-1953 already classified. The stage source correctly remains scholarly-description rather than independent book collation."
+      },
+      {
+        "transition_id": "byzantine-stages:roman-books-lviv-reception",
+        "dossier": "src/sources/inventories/eucharistic-stages/byzantine.json",
+        "kind": "reception",
+        "status": "documented",
+        "evidence_level": "primary-description",
+        "after_witness_ids": [],
+        "disposition": "no-new-substantive-claim",
+        "rationale": "No uniform territorial compliance or exact printing identity is inferred. This edge records reception, not a new text state. Bibliographic succession, reception or coexistence does not by itself establish an altered liturgical component."
+      },
+      {
+        "transition_id": "byzantine-stages:greek1754-to-1873-choir-printing",
+        "dossier": "src/sources/inventories/eucharistic-stages/byzantine.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "text-collated",
+        "after_witness_ids": [
+          "eastern:byz-greek-1873"
+        ],
+        "disposition": "proposed-book-or-source-state",
+        "rationale": "eastern:byz-greek-1873"
+      },
+      {
+        "transition_id": "byzantine-stages:lviv-extract-preparation-expanded",
+        "dossier": "src/sources/inventories/eucharistic-stages/byzantine.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "text-collated",
+        "after_witness_ids": [
+          "eastern:byz-lviv1899-chrysostom-extract"
+        ],
+        "disposition": "proposed-book-or-source-state",
+        "rationale": "eastern:byz-lviv1899-chrysostom-extract"
+      },
+      {
+        "transition_id": "canonical-orders:gilbertine-add-readings",
+        "dossier": "src/sources/inventories/eucharistic-stages/canonical-orders.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [
+          "western:gilbertine-lincoln115"
+        ],
+        "disposition": "included-same-record",
+        "rationale": "western:gilbertine-lincoln115 is proposed once for its specific proper-collect layer; the appended lessons are additional evidence of supplementation, not another physical witness or order-wide edition."
+      },
+      {
+        "transition_id": "canonical-orders:gilbertine-thomas-proper",
+        "dossier": "src/sources/inventories/eucharistic-stages/canonical-orders.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [
+          "western:gilbertine-lincoln115"
+        ],
+        "disposition": "proposed-book-or-source-state",
+        "rationale": "western:gilbertine-lincoln115"
+      },
+      {
+        "transition_id": "canonical-orders:premon-paten-rubric",
+        "dossier": "src/sources/inventories/eucharistic-stages/canonical-orders.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [],
+        "disposition": "defer-no-exact-catalogue-record",
+        "rationale": "1739 ordinal after-state lacks a catalogue witness. Do not label the earlier 1578 missal as the changed ordinal."
+      },
+      {
+        "transition_id": "canonical-orders:premon-sequences",
+        "dossier": "src/sources/inventories/eucharistic-stages/canonical-orders.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [
+          "western:premon-1663"
+        ],
+        "disposition": "proposed-book-or-source-state",
+        "rationale": "western:premon-1663"
+      },
+      {
+        "transition_id": "canonical-orders:windesheim-print-succession",
+        "dossier": "src/sources/inventories/eucharistic-stages/canonical-orders.json",
+        "kind": "witness-succession",
+        "status": "documented",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [
+          "western:windesheim-1521"
+        ],
+        "disposition": "defer",
+        "rationale": "A printed calendar is a concrete book-structure addition, but no changed feast, rank or occurrence rule is identified. Compare calendar content before treating it as a substantive liturgical change."
+      },
+      {
+        "transition_id": "chaldean-east-syriac:written-kushshaphe",
+        "dossier": "src/sources/inventories/eucharistic-stages/chaldean.json",
+        "kind": "witness-succession",
+        "status": "documented",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [],
+        "disposition": "defer-no-exact-catalogue-record",
+        "rationale": "The critical comparison describes a real written-prayer difference, despite the witness-succession type. The Diarbekir after-state has no exact catalogue witness. Written absence is not proof of absent oral prayer or a universal introduction date."
+      },
+      {
+        "transition_id": "chaldean-east-syriac:life-giving-gospel",
+        "dossier": "src/sources/inventories/eucharistic-stages/chaldean.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "text-collated",
+        "after_witness_ids": [
+          "eastern:chald-1901",
+          "eastern:chald-proper-1901"
+        ],
+        "disposition": "proposed-book-or-source-state",
+        "rationale": "eastern:chald-1901; chald-proper-1901 deferred: intercession is in ordinary/anaphoral volume."
+      },
+      {
+        "transition_id": "chaldean-east-syriac:institution-repositioned",
+        "dossier": "src/sources/inventories/eucharistic-stages/chaldean.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [],
+        "disposition": "defer-no-exact-catalogue-record",
+        "rationale": "2007 reform after-state has no exact catalogue witness. Existing 2014 book cannot be substituted; its relation and reception are separate questions."
+      },
+      {
+        "transition_id": "chaldean-east-syriac:opening-lord-prayer-removed",
+        "dossier": "src/sources/inventories/eucharistic-stages/chaldean.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "text-collated",
+        "after_witness_ids": [
+          "eastern:chald-2014"
+        ],
+        "disposition": "proposed-book-or-source-state",
+        "rationale": "eastern:chald-2014"
+      },
+      {
+        "transition_id": "chaldean-east-syriac:expanded-collection2020",
+        "dossier": "src/sources/inventories/eucharistic-stages/chaldean.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "primary-description",
+        "after_witness_ids": [
+          "eastern:chald-2020",
+          "eastern:chald-2025-reprint"
+        ],
+        "disposition": "proposed-book-or-source-state",
+        "rationale": "eastern:chald-2020; chald-2025-reprint deferred as new revision: reprint corrections do not prove a separate substantive state or exact wording equality."
+      },
+      {
+        "transition_id": "cistercian-1606-1657-1487-1606-comparison",
+        "dossier": "src/sources/inventories/eucharistic-stages/cistercian.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "text-collated",
+        "after_witness_ids": [
+          "western:cistercian-1606"
+        ],
+        "disposition": "proposed-book-or-source-state",
+        "rationale": "western:cistercian-1606"
+      },
+      {
+        "transition_id": "cistercian-1606-1657-revision",
+        "dossier": "src/sources/inventories/eucharistic-stages/cistercian.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "text-collated",
+        "after_witness_ids": [
+          "western:cistercian-1657"
+        ],
+        "disposition": "proposed-book-or-source-state",
+        "rationale": "western:cistercian-1657"
+      },
+      {
+        "transition_id": "latin-uses:dominican-suscepimus-recombination",
+        "dossier": "src/sources/inventories/eucharistic-stages/latin-uses.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "text-collated",
+        "after_witness_ids": [
+          "latin-missal:praedicatorum-xavierre-1604"
+        ],
+        "disposition": "proposed-book-or-source-state",
+        "rationale": "latin-missal:praedicatorum-xavierre-1604"
+      },
+      {
+        "transition_id": "latin-uses:carmelite-october-calendar",
+        "dossier": "src/sources/inventories/eucharistic-stages/latin-uses.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "text-collated",
+        "after_witness_ids": [
+          "latin-missal:carmelitarum-capitulum-1621"
+        ],
+        "disposition": "proposed-book-or-source-state",
+        "rationale": "latin-missal:carmelitarum-capitulum-1621"
+      },
+      {
+        "transition_id": "latin-uses:braga-limpo-ordo",
+        "dossier": "src/sources/inventories/eucharistic-stages/latin-uses.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [
+          "western:braga-1558"
+        ],
+        "disposition": "proposed-book-or-source-state",
+        "rationale": "western:braga-1558"
+      },
+      {
+        "transition_id": "latin-uses:braga-1558-1924-succession",
+        "dossier": "src/sources/inventories/eucharistic-stages/latin-uses.json",
+        "kind": "witness-succession",
+        "status": "documented",
+        "evidence_level": "bibliographic-only",
+        "after_witness_ids": [
+          "latin-missal:inter-multiplices-gravesque-curas-1924",
+          "latin-missal:decretum-missalis-bracarensis-1924"
+        ],
+        "disposition": "no-new-substantive-claim",
+        "rationale": "This edge records chronology only. The 1924 future-adaptation rule is described in its stage; no unsupported before/after rule change is inferred. Bibliographic succession, reception or coexistence does not by itself establish an altered liturgical component."
+      },
+      {
+        "transition_id": "latin-uses:carthusian-1603-1627-witnesses",
+        "dossier": "src/sources/inventories/eucharistic-stages/latin-uses.json",
+        "kind": "witness-succession",
+        "status": "documented",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [
+          "western:carthusian-1627",
+          "latin-missal:cartusiense-1620"
+        ],
+        "disposition": "no-new-substantive-claim",
+        "rationale": "Succession and a retained phrase do not establish direct descent or that the remaining book was unchanged. Bibliographic succession, reception or coexistence does not by itself establish an altered liturgical component."
+      },
+      {
+        "transition_id": "latin-uses:esztergom-medieval-repertory-change",
+        "dossier": "src/sources/inventories/eucharistic-stages/latin-uses.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [
+          "western:esztergom-1484"
+        ],
+        "disposition": "proposed-book-or-source-state",
+        "rationale": "western:esztergom-1484"
+      },
+      {
+        "transition_id": "stages-malabar-1775-to-reported-1845",
+        "dossier": "src/sources/inventories/eucharistic-stages/malabar.json",
+        "kind": "witness-succession",
+        "status": "provisional",
+        "evidence_level": "primary-description",
+        "after_witness_ids": [
+          "eastern:malabar-1845-reported-exemplar"
+        ],
+        "disposition": "no-new-substantive-claim",
+        "rationale": "No substantive revision established. The first stage includes a complementary 1774 ordinary, while the permission explicitly names 1775. Bibliographic succession, reception or coexistence does not by itself establish an altered liturgical component."
+      },
+      {
+        "transition_id": "stages-malabar-exemplar-to-1906",
+        "dossier": "src/sources/inventories/eucharistic-stages/malabar.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "primary-description",
+        "after_witness_ids": [
+          "eastern:malabar-1906"
+        ],
+        "disposition": "already-established",
+        "rationale": "eastern:malabar-1906 already classified. Exact added section/approval and arrangement evidence does not create extra versions."
+      },
+      {
+        "transition_id": "stages-malabar-roman-exemplar-to-1946",
+        "dossier": "src/sources/inventories/eucharistic-stages/malabar.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "primary-description",
+        "after_witness_ids": [
+          "eastern:malabar-1946"
+        ],
+        "disposition": "proposed-book-or-source-state",
+        "rationale": "eastern:malabar-1946"
+      },
+      {
+        "transition_id": "stages-malabar-study-to-restoration-publications",
+        "dossier": "src/sources/inventories/eucharistic-stages/malabar.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [
+          "eastern:malabar-1959-ordo",
+          "eastern:malabar-1960-supplementum",
+          "eastern:malabar-1960-taksa"
+        ],
+        "disposition": "proposed-book-or-source-state",
+        "rationale": "eastern:malabar-1960-taksa; malabar-1959-ordo deferred: the 1955 study already contained church/vestment instructions, and the description of revised/additional 1959 rubrics identifies no concrete changed rule. malabar-1960-supplementum deferred: no separately identified changed proper is established. Only the specifically narrower 1960 printed anaphora repertoire is proposed."
+      },
+      {
+        "transition_id": "stages-malabar-restoration-to-reception",
+        "dossier": "src/sources/inventories/eucharistic-stages/malabar.json",
+        "kind": "reception",
+        "status": "documented",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [
+          "eastern:malabar-1962"
+        ],
+        "disposition": "no-new-substantive-claim",
+        "rationale": "The approved 1962 bilingual service book is in scope as received language. The cited changes describe introduction of the already restricted restoration and non-reception of two other approved anaphoras; no exact fresh change from the 1960 printed ordinary is identified."
+      },
+      {
+        "transition_id": "maronite-edit1594",
+        "dossier": "src/sources/inventories/eucharistic-stages/maronite.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [
+          "eastern:mar-1592-94"
+        ],
+        "disposition": "proposed-book-or-source-state",
+        "rationale": "eastern:mar-1592-94"
+      },
+      {
+        "transition_id": "maronite-commemorations1608",
+        "dossier": "src/sources/inventories/eucharistic-stages/maronite.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [],
+        "disposition": "defer-no-exact-catalogue-record",
+        "rationale": "The beta-group after-state lacks a witness_id. No evidence identifies the specific BnF catalogue copy as beta; never generalize to all 1608 copies."
+      },
+      {
+        "transition_id": "maronite-roster1716",
+        "dossier": "src/sources/inventories/eucharistic-stages/maronite.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [
+          "eastern:mar-1716"
+        ],
+        "disposition": "proposed-book-or-source-state",
+        "rationale": "eastern:mar-1716"
+      },
+      {
+        "transition_id": "maronite-reduction1763",
+        "dossier": "src/sources/inventories/eucharistic-stages/maronite.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [
+          "eastern:mar-1763"
+        ],
+        "disposition": "proposed-book-or-source-state",
+        "rationale": "eastern:mar-1763"
+      },
+      {
+        "transition_id": "maronite-reorder1888",
+        "dossier": "src/sources/inventories/eucharistic-stages/maronite.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [
+          "eastern:mar-dibs-1888",
+          "eastern:mar-dibs-1908"
+        ],
+        "disposition": "defer",
+        "rationale": "Beggiani identifies Roman Church replacing Second Peter as first in the printed anaphora sequence, but this does not by itself show altered prayer content, prescribed ritual order or default use. The exact wording changes and relation between 1888/1908 remain unchecked; both records stay unestablished."
+      },
+      {
+        "transition_id": "maronite-simple1973-repertoire",
+        "dossier": "src/sources/inventories/eucharistic-stages/maronite.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [
+          "eastern:mar-1973"
+        ],
+        "disposition": "proposed-book-or-source-state",
+        "rationale": "eastern:mar-1973"
+      },
+      {
+        "transition_id": "maronite-reform1992",
+        "dossier": "src/sources/inventories/eucharistic-stages/maronite.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [
+          "eastern:mar-1992"
+        ],
+        "disposition": "proposed-book-or-source-state",
+        "rationale": "eastern:mar-1992"
+      },
+      {
+        "transition_id": "hispano-mozarabic-1500-to-1755",
+        "dossier": "src/sources/inventories/eucharistic-stages/mozarabic.json",
+        "kind": "witness-succession",
+        "status": "documented",
+        "evidence_level": "primary-description",
+        "after_witness_ids": [
+          "latin-missal:mozarabicum-lesley-1755"
+        ],
+        "disposition": "no-new-substantive-claim",
+        "rationale": "The later witness adds scholarly apparatus and a separately labelled appendix. No new operative Mass prayer or prescription relative to the 1500 liturgical body is established; the checked bread blessing retains its lexical content apart from spelling."
+      },
+      {
+        "transition_id": "hispano-mozarabic-1755-to-1804",
+        "dossier": "src/sources/inventories/eucharistic-stages/mozarabic.json",
+        "kind": "witness-succession",
+        "status": "documented",
+        "evidence_level": "text-collated",
+        "after_witness_ids": [
+          "western:mozarabic-1804"
+        ],
+        "disposition": "no-new-substantive-claim",
+        "rationale": "The directly checked bread blessing moves within the printed book while its prayer and sprinkling sequence persist. This establishes changed book placement, not changed ritual order. The cited Advent IV rubric also agrees; unspecified corrections do not supply a concrete substantive delta."
+      },
+      {
+        "transition_id": "hispano-mozarabic-1804-to-critical",
+        "dossier": "src/sources/inventories/eucharistic-stages/mozarabic.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "primary-description",
+        "after_witness_ids": [
+          "western:hispano-mozarabic-1991-1994"
+        ],
+        "disposition": "already-established",
+        "rationale": "western:hispano-mozarabic-1991-1994 already classified as a complementary reformed corpus, not separate successive editions."
+      },
+      {
+        "transition_id": "regional-variants:poland1986-to-2009-10",
+        "dossier": "src/sources/inventories/eucharistic-stages/regional-variants.json",
+        "kind": "revision",
+        "status": "provisional",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [],
+        "disposition": "defer",
+        "rationale": "Provisional stage, no exact catalogue witness, unresolved imprint/approval/extent and language controls; no new substantive declaration follows."
+      },
+      {
+        "transition_id": "roman-stages-expand-burchard",
+        "dossier": "src/sources/inventories/eucharistic-stages/roman.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "scholarly-description",
+        "after_witness_ids": [
+          "western:burchard-ordo-1502"
+        ],
+        "disposition": "already-established",
+        "rationale": "Both western:roman-1501-liechtenstein-burchard and western:burchard-ordo-1502 already classified; no extra row for the same component comparison."
+      },
+      {
+        "transition_id": "roman-stages-clementine-correction",
+        "dossier": "src/sources/inventories/eucharistic-stages/roman.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "text-collated",
+        "after_witness_ids": [],
+        "disposition": "proposed-act-component",
+        "rationale": "latin-missal:cum-sanctissimum-1604"
+      },
+      {
+        "transition_id": "roman-stages-urbanian-correction",
+        "dossier": "src/sources/inventories/eucharistic-stages/roman.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "primary-description",
+        "after_witness_ids": [],
+        "disposition": "defer",
+        "rationale": "Si quid est states general rubric/scriptural correction policy but no particular altered passage is established. Documentary revision type is not sufficient for positive component classification."
+      },
+      {
+        "transition_id": "roman-stages-restore-holyweek",
+        "dossier": "src/sources/inventories/eucharistic-stages/roman.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "primary-description",
+        "after_witness_ids": [],
+        "disposition": "proposed-act-component",
+        "rationale": "latin-missal:maxima-redemptionis-1955"
+      },
+      {
+        "transition_id": "roman-stages-new-rubrics",
+        "dossier": "src/sources/inventories/eucharistic-stages/roman.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "primary-description",
+        "after_witness_ids": [],
+        "disposition": "defer",
+        "rationale": "The act establishes replacement of named rubrical corpora and the 1962 book reports accommodation to the new code, but this dossier does not identify a concrete changed rule. Preserve the new-code stage while deferring positive catalogue classification until exact before/after rule evidence is supplied."
+      },
+      {
+        "transition_id": "roman-stages-insert-joseph",
+        "dossier": "src/sources/inventories/eucharistic-stages/roman.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "primary-description",
+        "after_witness_ids": [],
+        "disposition": "defer-no-exact-catalogue-record",
+        "rationale": "Exact amendment is documented, but no Joseph-amendment catalogue row exists. June 1962 approval row cannot stand for the December amended state."
+      },
+      {
+        "transition_id": "roman-stages-postconciliar-reform",
+        "dossier": "src/sources/inventories/eucharistic-stages/roman.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "primary-description",
+        "after_witness_ids": [],
+        "disposition": "proposed-act-component",
+        "rationale": "latin-missal:missale-romanum-1969"
+      },
+      {
+        "transition_id": "roman-stages-second-typical",
+        "dossier": "src/sources/inventories/eucharistic-stages/roman.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "primary-description",
+        "after_witness_ids": [],
+        "disposition": "proposed-act-component",
+        "rationale": "latin-missal:de-editione-typica-altera-1975"
+      },
+      {
+        "transition_id": "roman-stages-third-typical",
+        "dossier": "src/sources/inventories/eucharistic-stages/roman.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "primary-description",
+        "after_witness_ids": [],
+        "disposition": "proposed-act-component",
+        "rationale": "latin-missal:de-editione-typica-tertia-2000"
+      },
+      {
+        "transition_id": "roman-stages-third-emended",
+        "dossier": "src/sources/inventories/eucharistic-stages/roman.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "primary-description",
+        "after_witness_ids": [],
+        "disposition": "proposed-act-component",
+        "rationale": "latin-missal:reimpressio-emendata-2008"
+      },
+      {
+        "transition_id": "roman-stages-third-joseph",
+        "dossier": "src/sources/inventories/eucharistic-stages/roman.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "primary-description",
+        "after_witness_ids": [],
+        "disposition": "defer-no-exact-catalogue-record",
+        "rationale": "Paternas vices is a documented exact amendment, but no matching catalogue record exists. Do not relabel the 2000/2002 third-edition row as 2013."
+      },
+      {
+        "transition_id": "roman-stages-additional-prefaces",
+        "dossier": "src/sources/inventories/eucharistic-stages/roman.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "primary-description",
+        "after_witness_ids": [],
+        "disposition": "defer-no-exact-catalogue-record",
+        "rationale": "Quo magis has an exact optional-repertoire addition but no matching catalogue row; do not invent a complete 2020 missal or use the 1962 approval row."
+      },
+      {
+        "transition_id": "roman-stages-omit-judica",
+        "dossier": "src/sources/inventories/eucharistic-stages/roman.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "text-collated",
+        "after_witness_ids": [
+          "western:roman-ordo-1965"
+        ],
+        "disposition": "proposed-book-or-source-state",
+        "rationale": "western:roman-ordo-1965"
+      },
+      {
+        "transition_id": "roman-stages-recast-christian-unity-prayer",
+        "dossier": "src/sources/inventories/eucharistic-stages/roman.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "text-collated",
+        "after_witness_ids": [
+          "western:roman-holy-week-1965"
+        ],
+        "disposition": "proposed-book-or-source-state",
+        "rationale": "western:roman-holy-week-1965"
+      },
+      {
+        "transition_id": "roman-stages-revise-1965-order",
+        "dossier": "src/sources/inventories/eucharistic-stages/roman.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "text-collated",
+        "after_witness_ids": [
+          "western:roman-variationes-1967"
+        ],
+        "disposition": "proposed-book-or-source-state",
+        "rationale": "western:roman-variationes-1967"
+      },
+      {
+        "transition_id": "roman-stages-add-three-eucharistic-prayers",
+        "dossier": "src/sources/inventories/eucharistic-stages/roman.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "primary-description",
+        "after_witness_ids": [
+          "western:roman-preces-1968"
+        ],
+        "disposition": "proposed-book-or-source-state",
+        "rationale": "western:roman-preces-1968"
+      },
+      {
+        "transition_id": "roman-stages-first-reprint-corrections",
+        "dossier": "src/sources/inventories/eucharistic-stages/roman.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "primary-description",
+        "after_witness_ids": [],
+        "disposition": "proposed-act-component",
+        "rationale": "latin-missal:reimpressio-emendata-1971"
+      },
+      {
+        "transition_id": "roman-stages-extend-optional-saints",
+        "dossier": "src/sources/inventories/eucharistic-stages/roman.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "primary-description",
+        "after_witness_ids": [],
+        "disposition": "defer-no-exact-catalogue-record",
+        "rationale": "Cum sanctissima changes specified optional-celebration rules but has no matching catalogue row. Future Supplementum identity and text remain open."
+      },
+      {
+        "transition_id": "west-syriac-stages-anaphora-selection1922",
+        "dossier": "src/sources/inventories/eucharistic-stages/west-syriac.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "text-collated",
+        "after_witness_ids": [
+          "eastern:syr-1922"
+        ],
+        "disposition": "proposed-book-or-source-state",
+        "rationale": "eastern:syr-1922"
+      },
+      {
+        "transition_id": "west-syriac-stages-rome1843-to-sharfeh1922",
+        "dossier": "src/sources/inventories/eucharistic-stages/west-syriac.json",
+        "kind": "revision",
+        "status": "documented",
+        "evidence_level": "primary-description",
+        "after_witness_ids": [
+          "eastern:syr-1922"
+        ],
+        "disposition": "included-same-record",
+        "rationale": "eastern:syr-1922 is proposed once for directly checked repertoire labels. The entrance-prayer restoration and Presanctified replacement supply additional primary-description evidence, not an extra edition or a higher collation level."
+      }
+    ]
+  },
+  "separately_reviewed_act_components": [
+    {
+      "id": "latin-missal:cum-sanctissimum-1604",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/roman.json#roman-stages-source-1570-rome",
+      "basis": "The directly compared Rome 1570 and Rome 1604 Ordo passages show an expanded final-blessing instruction: explicit single blessing, including solemn Mass, and separate pontifical three-blessing provision in the later book.",
+      "scope": "One printed rubric in the book issued under this act; not first introduction of single blessing or a full Clementine collation.",
+      "evidence_level": "text-collated",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/roman.json",
+      "stage_transition_ids": [
+        "roman-stages-clementine-correction"
+      ],
+      "stage_source_ids": [
+        "roman-stages-source-1570-rome",
+        "roman-stages-source-1604"
+      ],
+      "source_urls": [
+        "https://bc.dominikanie.pl/dlibra/publication/170/edition/176",
+        "https://archive.org/download/bub_gb_aaPpAuHRY9IC/bub_gb_aaPpAuHRY9IC.pdf"
+      ],
+      "locus": "Scan 174, printed 291, right column after Placeat; Printed 259 / PDF 357, after Placeat",
+      "limitations": "A bounded textual expansion/clarification in the Ordo, not proof that Clement VIII first introduced the single blessing or suppressed a Roman 1570 generic triple blessing. The earlier Ritus already has a single ordinary blessing. The Venice 1570 paragraph is a distinct witness reading, not the before-text for this Roman edge. No full-book collation or exhaustive Clementine delta is established.",
+      "source_inspection_dates": [
+        "roman-stages-source-1570-rome = 2026-10-20",
+        "roman-stages-source-1604 = 2026-10-16"
+      ]
+    },
+    {
+      "id": "latin-missal:maxima-redemptionis-1955",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/roman.json#roman-stages-source-1955",
+      "basis": "The original AAS decree contrasts prevailing morning celebrations with prescribed Thursday-evening Mass, Friday-afternoon action and nocturnal Easter Vigil.",
+      "scope": "Legislated Holy Week celebration times and restored-order component, not a complete new 1955/1956 missal or full Holy Week text.",
+      "evidence_level": "primary-description",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/roman.json",
+      "stage_transition_ids": [
+        "roman-stages-restore-holyweek"
+      ],
+      "stage_source_ids": [
+        "roman-stages-source-1955"
+      ],
+      "source_urls": [
+        "https://www.vatican.va/archive/aas/documents/AAS-47-1955-ocr.pdf"
+      ],
+      "locus": "838–841",
+      "limitations": "1920 stage supplies earlier missal context only: no exact 1920 page collation. 1951 experimental Vigil intervenes; 1955 March simplification separate. Partial Holy Week successor, not replacement of whole missal.",
+      "source_inspection_dates": [
+        "roman-stages-source-1955 = 2026-10-16"
+      ]
+    },
+    {
+      "id": "latin-missal:missale-romanum-1969",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/roman.json#roman-stages-source-1969",
+      "basis": "The inspected constitution expressly describes expanded Eucharistic Prayer repertoire and a Sunday three-year reading arrangement with an additional reading, relative to the earlier missal framework.",
+      "scope": "Cumulative reform legislation described by the act; intervening 1965, 1967 and 1968 components are not counted as newly introduced in 1969.",
+      "evidence_level": "primary-description",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/roman.json",
+      "stage_transition_ids": [
+        "roman-stages-postconciliar-reform"
+      ],
+      "stage_source_ids": [
+        "roman-stages-source-1969"
+      ],
+      "source_urls": [
+        "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html"
+      ],
+      "locus": "Eucharistic Prayer paragraphs; reading reform paragraph",
+      "limitations": "Cumulative 1962 → 1970 relation, not immediate whole-book succession. Separate bounded stages now represent the 1965 Order/Holy Week, 1967 Variationes and 1968 Eucharistic Prayer expansion; they do not establish complete intermediate missals or full component collation.",
+      "source_inspection_dates": [
+        "roman-stages-source-1969 = 2026-10-16"
+      ]
+    },
+    {
+      "id": "latin-missal:de-editione-typica-altera-1975",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/roman.json#roman-stages-source-1970-2002",
+      "basis": "The decree, read in an identified secondary reproduction, replaces GIRM subdeacon directions with acolyte/lector functions and specifies completed antiphons and additional dedication, reconciliation and Marian formularies.",
+      "scope": "Named ministry directions and formularies; evidence is the reproduced decree, not a fully inspected original 1975 altar book.",
+      "evidence_level": "primary-description",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/roman.json",
+      "stage_transition_ids": [
+        "roman-stages-second-typical"
+      ],
+      "stage_source_ids": [
+        "roman-stages-source-1970-2002"
+      ],
+      "source_urls": [
+        "https://media.musicasacra.com/books/latin_missal2002.pdf"
+      ],
+      "locus": "1975 decree paragraph 2; 1975 decree paragraph 3",
+      "limitations": "1971 emended reprint intervenes; original 1975 book unavailable, changes established from decree, not full collation.",
+      "source_inspection_dates": [
+        "roman-stages-source-1970-2002 = 2026-10-16"
+      ]
+    },
+    {
+      "id": "latin-missal:de-editione-typica-tertia-2000",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/roman.json#roman-stages-source-1970-2002",
+      "basis": "The decree, read in an identified secondary reproduction, identifies new GIRM chapter IX and daily Lenten prayers over the people as additions.",
+      "scope": "Named new instruction and proper-prayer components; 2000 approval/decree and 2002 publication are separate events.",
+      "evidence_level": "primary-description",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/roman.json",
+      "stage_transition_ids": [
+        "roman-stages-third-typical"
+      ],
+      "stage_source_ids": [
+        "roman-stages-source-1970-2002"
+      ],
+      "source_urls": [
+        "https://media.musicasacra.com/books/latin_missal2002.pdf"
+      ],
+      "locus": "third-edition decree opening; third-edition decree middle",
+      "limitations": "2000 approval/decree, 2002 publication. Intervening additions are not assigned first composition dates by this transition.",
+      "source_inspection_dates": [
+        "roman-stages-source-1970-2002 = 2026-10-16"
+      ]
+    },
+    {
+      "id": "latin-missal:reimpressio-emendata-1971",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/roman.json#roman-stages-source-1971-corrections",
+      "basis": "The official first-reprint list directs a deletion in the January 7 collect, alleluia additions at named antiphons, and deletion of erectus in a named position rubric. A separate official bibliography dates this reprint to 1971.",
+      "scope": "Listed substantive prayer and rubric corrections only; the following ALIAE EMENDATIONES INDUCENDAE section with later changes is excluded.",
+      "evidence_level": "primary-description",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/roman.json",
+      "stage_transition_ids": [
+        "roman-stages-first-reprint-corrections"
+      ],
+      "stage_source_ids": [
+        "roman-stages-source-1971-corrections",
+        "roman-stages-source-1971-date"
+      ],
+      "source_urls": [
+        "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-09-%281973%29/Notitiae-079-1973.pdf",
+        "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-21-%281985%29/Notitiae-228-229-1985.pdf"
+      ],
+      "locus": "Printed 41–42 / PDF 46–47, before ALIAE EMENDATIONES INDUCENDAE; Printed 398 / PDF 46",
+      "limitations": "Primary correction instructions establish only these deltas; no complete 1970/1971 collation. Later 1972 GIRM changes below the ALIAE EMENDATIONES INDUCENDAE heading are excluded.",
+      "source_inspection_dates": [
+        "roman-stages-source-1971-corrections = 2026-10-19",
+        "roman-stages-source-1971-date = 2026-10-19"
+      ]
+    },
+    {
+      "id": "latin-missal:reimpressio-emendata-2008",
+      "substantive_status": "substantive-established",
+      "source_ref": "src/sources/inventories/eucharistic-stages/roman.json#roman-stages-source-2008",
+      "basis": "The official notice expressly omits the children’s Eucharistic Prayers from this Latin reprint and permits additional dismissals relative to the inspected 2002 Ite, missa est locus.",
+      "scope": "Named Latin-volume repertoire and dismissal options; no universal abolition of vernacular children’s prayers or substantive status for every typographic correction.",
+      "evidence_level": "primary-description",
+      "stage_dossier_ref": "src/sources/inventories/eucharistic-stages/roman.json",
+      "stage_transition_ids": [
+        "roman-stages-third-emended"
+      ],
+      "stage_source_ids": [
+        "roman-stages-source-2008",
+        "roman-stages-source-1970-2002"
+      ],
+      "source_urls": [
+        "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/2000/notitiae-44-(2008)/Notitiae-503-504-2008.pdf",
+        "https://media.musicasacra.com/books/latin_missal2002.pdf"
+      ],
+      "locus": "367; PDF 370, Ordo Missae § 144",
+      "limitations": "No inference that omission universally abolishes authorized vernacular children’s prayers. Not every typographic adjustment counts as a substantive state change.",
+      "source_inspection_dates": [
+        "roman-stages-source-2008 = 2026-10-16",
+        "roman-stages-source-1970-2002 = 2026-10-16"
+      ]
+    }
+  ],
+  "remaining_gaps": [
+    "Unclassified witnesses and unexamined repertoire ranges remain open.",
+    "Positive classifications do not establish complete contents or exact historical parentage.",
+    "Deferred 1959 Malabar, 1888 Dibs and 1960 rubric-code distinctions require concrete changed loci."
+  ],
+  "limits": "This review changes metadata only and adds no catalogue object, historical edge or complete book.",
+  "post_acceptance_corrections": [
+    {
+      "id": "western:ambrosian-1981-latin",
+      "scope": "Limitations and classification_review_caveat only",
+      "reason": "The owning Ambrosian transition now correctly records the successful 2026-10-17 article image inspection and three selected preface findings; remove references to its superseded failed-image sentence. Historical classification, source identity and original-book collation limits remain unchanged."
+    }
+  ]
+}

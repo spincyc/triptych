@@ -1,0 +1,455 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "next-phase-coverage-consistency-2026-10-20",
+  "title": "Reviewed next-phase owning input freeze and bounded coverage consistency repairs",
+  "lane": "next-phase-coverage-consistency",
+  "side": "both",
+  "checked_on": "2026-10-20",
+  "reviewed_on": "2026-10-20",
+  "coverage_rows": [],
+  "target_inventory": "src/sources/inventories/eucharistic-stage-coverage-v1.json",
+  "review_files": {
+    "accepted_receipts": [
+      {
+        "path": "src/sources/inventories/eucharistic-research-reviews/albanian-elbasan-next-phase-2026-10-20.json",
+        "sha256": "a5c9485d6ac1325d6b800959446444863e116cd336edc671e36b4a9ab805a2a0"
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-research-reviews/armenian-facsimile-next-phase-2026-10-20.json",
+        "sha256": "c689b9a9761280c5c016b679b96929c00ebeceb48edf9048c4b183785ef333e7"
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-research-reviews/coverage-universe-next-phase-2026-10-20.json",
+        "sha256": "80089f75f838312b6f104e8494f5a3d1d9228c47c1f3c8b9b404d0f628eda802"
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-research-reviews/greek-italo-local-reception-next-phase-2026-10-20.json",
+        "sha256": "d1192cdc5423c860f18b66e5d05a45388cc5e195accb17872b141f10b7ce1f7c"
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-research-reviews/hungarian-reception-next-phase-2026-10-20.json",
+        "sha256": "153407f15df0b98b2fa42237e8e5171ceae331ba55cb6136a8695374a10c204f"
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-research-reviews/macedonian-exact-book-next-phase-2026-10-20.json",
+        "sha256": "b8d9ae3695af0660a886e1229dab270631ddb204ac471d072ba37a27fc8b7867"
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-research-reviews/monza-local-next-2026-10-20.json",
+        "sha256": "94932cc153730f79a10292986982fa0a99c2344be9405a694eaf4338c6ea445f"
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-research-reviews/ocso-next-phase-2026-10-20.json",
+        "sha256": "ae1d618b1a14689ebd01e873342436c5aa1f68a6c6105f8a0b61bbc1dbbf0436"
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-research-reviews/padua-local-round3-2026-10-20.json",
+        "sha256": "58c844daf4f323a51125166264ad8133dfe058371af6e88f3e341ad6ecbe656a"
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-research-reviews/ravenna-fragments-next-phase-2026-10-20.json",
+        "sha256": "aba33e866df60b970e23a824f0e04ae257e94bb6142fcbee0409aba7b6bf8a7b"
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-research-reviews/regional-permissions-next-phase-2026-10-20.json",
+        "sha256": "7f20c2e839da65d8c5c64376db0e8f1c2f8c384b85dcfe532db2c3949d80af9d"
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-research-reviews/rome-originals-next-phase-2026-10-20.json",
+        "sha256": "199f3f7a3a1bb54fca6e7f900b512d1ceac7fff3f04b51c2e9e890f5b1e6e12b"
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-research-reviews/source-retention-next-phase-2026-10-20.json",
+        "sha256": "74f50bef630e6b08a6350b3d3267299804d2801b89e1b53b2635e17e9c703a72"
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-research-reviews/version-classification-next-phase-2026-10-20.json",
+        "sha256": "a5833e7d3d6ba5bc8a45f07bde631d5f1b7b569538864eb84bca3f63140a6541"
+      }
+    ]
+  },
+  "semantics": "A consistency repair of reviewed owning metadata; it creates no historical claim, stage, transition or completed book text. Nine witness snapshots follow canonical structured chronology, including deliberate nulls. Historical dated wave counters elsewhere are preserved.",
+  "witness_date_repairs": [
+    {
+      "side": "eastern",
+      "coverage_id": "melkite",
+      "candidate_id": "byz-melkite-pdf-lead",
+      "prior_start_year": null,
+      "prior_end_year": null,
+      "current_start_year": 2009,
+      "current_end_year": 2009,
+      "owning_inventory": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
+      "basis": {
+        "note": "Web tool refused 60,542,258-byte PDF. Filename 2009 and URL path 2012 are not authenticated edition dates. The whole 60,542,258-byte PDF (159 pages, SHA-256 1b1378688df94b28eb22b8095fbbe4d73c2c10422f6b9b51d972bd6600689a51) was later acquired in research scratch. Its pages 2–3 carry the decree of Archbishop Cyril Bustros of 27 January 2009, effective 15 February 2009 and valid to 31 October 2010, so the lead is an English translation of the Newton eparchy, not the undated Greek–Arabic Liturgikon.",
+        "date_basis": "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable.",
+        "chronology_start": 2009,
+        "chronology_end": 2009,
+        "chronology_kind": "approval-and-effective-year",
+        "chronology_certainty": "explicit-in-inspected-decree"
+      },
+      "disposition": "Canonical structured chronology only; absent structured chronology deliberately yields null/null. Authored date_role remains unchanged."
+    },
+    {
+      "side": "western",
+      "coverage_id": "roman-ancient",
+      "candidate_id": "gelasian-stgall348",
+      "prior_start_year": null,
+      "prior_end_year": null,
+      "current_start_year": 796,
+      "current_end_year": 824,
+      "owning_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+      "basis": {
+        "qualification": "Exact shelfmark verified. Separate copying from contemporary episcopal addition; do not convert bishop dates into copying bounds. Supersedes one member of generic later-gelasian-rheinau-stgall cluster. ELMSS 1398 inspected (2026-10-19): VIII ex–IX in (796–824) copying date, most probably Chur; not composition or universal adoption.",
+        "chronology_start": 796,
+        "chronology_end": 824,
+        "chronology_kind": "manuscript-copying",
+        "chronology_certainty": "catalogue-numeric-century-range"
+      },
+      "disposition": "Canonical structured chronology only; absent structured chronology deliberately yields null/null. Authored date_role remains unchanged."
+    },
+    {
+      "side": "western",
+      "coverage_id": "roman-ancient",
+      "candidate_id": "gelasian-rheinau30",
+      "prior_start_year": null,
+      "prior_end_year": null,
+      "current_start_year": 780,
+      "current_end_year": 820,
+      "owning_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+      "basis": {
+        "qualification": "Exact shelfmark resolved; origin/date need current holding catalogue. Do not turn Fintan provenance legend into copying date. Supersedes second member of generic cluster. ELMSS 1290 inspected (2026-10-19): VIII–IX (780–820), written in Switzerland probably under Rhaetian influence; the Fintan connection is called doubtful; copying date only.",
+        "chronology_start": 780,
+        "chronology_end": 820,
+        "chronology_kind": "manuscript-copying",
+        "chronology_certainty": "catalogue-numeric-century-range"
+      },
+      "disposition": "Canonical structured chronology only; absent structured chronology deliberately yields null/null. Authored date_role remains unchanged."
+    },
+    {
+      "side": "western",
+      "coverage_id": "roman-ancient",
+      "candidate_id": "gelasian-stgall350",
+      "prior_start_year": 701,
+      "prior_end_year": 900,
+      "current_start_year": 780,
+      "current_end_year": 820,
+      "owning_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+      "basis": {
+        "qualification": "Broad numeric envelope follows catalogue fields; prose narrower estimate preserved. Chur place uncertain; no direct-copy relationship to 348. ELMSS 1401 inspected (2026-10-19): VIII–IX, numeric 780–820, written in the Rhaetian scriptorium that produced St Gall 348; copying date only, not composition or universal adoption. The earlier 701–900 envelope is superseded by the catalogue's own range.",
+        "chronology_start": 780,
+        "chronology_end": 820,
+        "chronology_kind": "manuscript-copying",
+        "chronology_certainty": "catalogue-numeric-century-range"
+      },
+      "disposition": "Canonical structured chronology only; absent structured chronology deliberately yields null/null. Authored date_role remains unchanged."
+    },
+    {
+      "side": "western",
+      "coverage_id": "gallican-insular",
+      "candidate_id": "gallicanum-vetus-pal493",
+      "prior_start_year": 675,
+      "prior_end_year": 725,
+      "current_start_year": null,
+      "current_end_year": null,
+      "owning_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+      "basis": {
+        "qualification": "Uncertain place of origin. 1958 critical edition is a modern presentation of the witness, not a new liturgical version. ELMSS 104/105 separate two sacramentaries with different copy dates (701–750 and 751–800); ff. 100–106 (Decretum Gelasianum) are not a third sacramentary. The former single 675–725 coordinate does not fit the composite. The layers are proposed as latin-early-elmss-104 and latin-early-elmss-105, which carry the copying coordinates; this composite row has none, because the two copyings are distinct events and the date at which the parts were bound together is not established."
+      },
+      "disposition": "Canonical structured chronology only; absent structured chronology deliberately yields null/null. Authored date_role remains unchanged."
+    },
+    {
+      "side": "western",
+      "coverage_id": "roman-curial",
+      "candidate_id": "franciscan-1482-1483",
+      "prior_start_year": 1482,
+      "prior_end_year": 1483,
+      "current_start_year": null,
+      "current_end_year": null,
+      "owning_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+      "basis": {
+        "qualification": "Discovery group retained for continuity only, superseded by latin-early-scotus1482 and latin-early-aarau1483-main. USUARIUM 5840 is the 1482 printing by Octavianus Scotus (Venice) of the missal 'secundum morem Romanae ecclesiae' revised by Philip de Rotingo of Mantua, OFM Obs. (BnF B-27921, fragmentary). USUARIUM 4153 is Aarau, Aargauer Kantonsbibliothek, MsMurQ 6, a manuscript dated 1483 by its main hand at f. 86r, not a printing. The former statement that both are printings is withdrawn. Neither date alone proves a distinct recension; substantive differences and the relationship to the Roman 1474 printing remain open. The group has no coordinate because it mixes a publication date and a copying date; the individual rows carry them."
+      },
+      "disposition": "Canonical structured chronology only; absent structured chronology deliberately yields null/null. Authored date_role remains unchanged."
+    },
+    {
+      "side": "western",
+      "coverage_id": "hispano-mozarabic",
+      "candidate_id": "old-hispanic-bl30846",
+      "prior_start_year": 975,
+      "prior_end_year": 1025,
+      "current_start_year": null,
+      "current_end_year": null,
+      "owning_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+      "basis": {
+        "qualification": "Incomplete Eastertide Mass/Office witness. BL describes two interleaved mistici, but MúsicaHispanica questions whether layout differences represent separatebooks;f75vcombineslayouts. Preserve competing copyingdates and sourceattributedA identification,withoutassertingSiloscopyingprovenance."
+      },
+      "disposition": "Canonical structured chronology only; absent structured chronology deliberately yields null/null. Authored date_role remains unchanged."
+    },
+    {
+      "side": "western",
+      "coverage_id": "lyon",
+      "candidate_id": "lyon-medieval",
+      "prior_start_year": 1000,
+      "prior_end_year": 1210,
+      "current_start_year": 1000,
+      "current_end_year": 1250,
+      "owning_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+      "basis": {
+        "qualification": "BM537(457) is a layered Gregorian/Aniane sacramentary with Lyon additions, not a complete wholly local recension. BM5139 is a different missal; Amiet 1998 no.157 dates it to 1225–1250, while USUARIUM reports 1200–1210.",
+        "chronology_start": 1000,
+        "chronology_end": 1250,
+        "chronology_kind": "manuscript-copying",
+        "chronology_certainty": "catalogue-reported-approximate"
+      },
+      "disposition": "Canonical structured chronology only; absent structured chronology deliberately yields null/null. Authored date_role remains unchanged."
+    },
+    {
+      "side": "western",
+      "coverage_id": "lyon",
+      "candidate_id": "lyon-later-series",
+      "prior_start_year": 1620,
+      "prior_end_year": 1868,
+      "current_start_year": 1620,
+      "current_end_year": 1956,
+      "owning_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+      "basis": {
+        "qualification": "Printing series, not revision series. Fontaine 1980 OCR says 1825 changed introduction formulas and 1844 reprinted it; Bohatta 1846 may misdate 1844. 1904/1956 bibliographic leads and 1868 relation to 1866 remain uncollated; Amiet 1979 complete print census unavailable.",
+        "chronology_start": 1620,
+        "chronology_end": 1956,
+        "chronology_kind": "publication-witness-cluster",
+        "chronology_certainty": "catalogue-reported-years"
+      },
+      "disposition": "Canonical structured chronology only; absent structured chronology deliberately yields null/null. Authored date_role remains unchanged."
+    }
+  ],
+  "reviewed_input_changes": [
+    {
+      "path": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
+      "prior_sha256": "a6113dd126060c08bb641659cf2149d6264e4ab74fa2642c2c401082331dfe88",
+      "current_sha256": "8df354dd19f0ea60437b2a5d6e0ffc938f8ccd30d076fb94c1d52558f57bc421",
+      "basis": "Coordinator accepted 28 book/source classifications plus Ambrosian replacement (44 positive book/source records), two complete bounded Cistercian native constituents and their comparison, and all new family aliases (159 groups). Seven optional acts remain separately documented, not promoted as book/source positives."
+    },
+    {
+      "path": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
+      "prior_sha256": "37ab865ea94afa60b2437c5d3469945829b7c3143d8984242b5769d5644f5786",
+      "current_sha256": "aaf99fb725ad870d1e01c5bb10967f3e0c3711d19bed4837bcca543da3c54adb",
+      "basis": "Accepted Albanian, Macedonian, Hungarian, Greek/Italo and census source metadata; 19 new sources, three new witnesses; received-language membership, exact date roles, required disposable-path scrub and current count prose are reviewed. No original book text is admitted by this inventory."
+    },
+    {
+      "path": "src/sources/inventories/eucharistic-stages/ambrosian.json",
+      "prior_sha256": "48e0e1c8cc8a1c75ca226c25d3fd0891c7d1a43bde49c22e2d73a313f457609e",
+      "current_sha256": "beb74ea19c8deab1eaa6534328adce296525d10b9370bf5adee8c2c3cf933bd7",
+      "basis": "Coordinator corrected only the Ward transition limitation: three article-described preface findings, images checked 17 October 2026; underlying books uncollated, no immediate succession or first-introduction claim."
+    },
+    {
+      "path": "src/sources/inventories/eucharistic-stages/armenian.json",
+      "prior_sha256": "0e32e1b88d73ef4219d4a8fa004d2a5632677ae55aa228ae4a74806153958a10",
+      "current_sha256": "aab1be485e4e466296f14a708352157a30d62655e0c848d158287763e7d5f8a7",
+      "basis": "Accepted EAP acquisition and separate-setting evidence adds only source limitation and gap-1823 wording; 18 capped frames differ from the registered Google setting, rights/legibility/native-detail and exact identity remain open; no stage, binding or transcription promotion."
+    },
+    {
+      "path": "src/sources/inventories/eucharistic-stages/cistercian.json",
+      "prior_sha256": "ae068309aa209dfba791d4c24463f3ddffa6c861880336080502ccb28e15473a",
+      "current_sha256": "0fab5fe1ae79c38a521c99384036521630e8404432bf6344ec83128d53c9749c",
+      "basis": "Coordinator binds the two accepted native offertory constituents and their real comparison; whole Missals and complete Ordinary remain partial, no historical ancestry inferred."
+    },
+    {
+      "path": "src/sources/inventories/eucharistic-stages/eastern-local-round2.json",
+      "prior_sha256": "082283e5d11fcbdc26101723f48243fdcc8b1f04803dded23be9c7fd60236eaa",
+      "current_sha256": "19d21c08f0c825c143b6cc7447f881cbdf323cb33bd75ba80aced9676d43198b",
+      "basis": "Accepted Hungarian gap update plus Greek/Italo-Albanian gap wording only; original IDs, unrelated traditions/stages and all unresolved early local reception/source-book gaps remain."
+    },
+    {
+      "path": "src/sources/inventories/eucharistic-stages/greek-italo-local-reception.json",
+      "prior_sha256": null,
+      "current_sha256": "cf0b8b788a85dc0aa3cd9a26aa06694cbcede0931fe6410f993eed71a7f37d0d",
+      "basis": "Accepted four bounded local language/calendar/programme states, three gaps and no transitions; independently checked colophon correction distinguishes December 2025 printing, 2026 issue and 20 January 2026 circulation attestation."
+    },
+    {
+      "path": "src/sources/inventories/eucharistic-stages/hungarian-reception.json",
+      "prior_sha256": null,
+      "current_sha256": "d54f53b8e1c57f6292b8623855d267731c9753cfb1e5728fb349ed833e4fe495",
+      "basis": "Accepted revision 2: two bounded received-book states, one scholarly witness-succession, explicit private-use approval and original-instrument gaps; 1921 attestation distinct from 1920 imprint/permission."
+    },
+    {
+      "path": "src/sources/inventories/eucharistic-stages/italian-local-round2.json",
+      "prior_sha256": "8912dc0bb34f64e219a05fa21d58eff980180d14a39c05bddd018647ceaa4a9f",
+      "current_sha256": "23a7cc45b3d7c8d0e3aeb04d930581ad2bd295a2448ccac84421cd81056ea4f5",
+      "basis": "Accepted Monza, Ravenna and Padua gap wording only, plus specifically authorized Monza tradition note acknowledging bounded H14 admission; unrelated traditions and existing stages unchanged."
+    },
+    {
+      "path": "src/sources/inventories/eucharistic-stages/monza-local-next.json",
+      "prior_sha256": null,
+      "current_sha256": "47dcb83a520ae81cab766376dfc94ac00c3df9d46a99ce452122e2a0bf9fdecd",
+      "basis": "Accepted one H14 local annual order attestation, 1101–1300; erased title-word qualification and independently corroborated H14 identity; no complete Missal or transition."
+    },
+    {
+      "path": "src/sources/inventories/eucharistic-stages/ocso-next.json",
+      "prior_sha256": null,
+      "current_sha256": "259643b64d9cfd57fa19984da7cbf4e4b9000544ad1002b591b33773ddd46c2d",
+      "basis": "Accepted three bounded component states and moved tradition; 1892–1971 gap, OCist/OCSO beneficiaries and confirmation/publication roles remain explicit; zero edges."
+    },
+    {
+      "path": "src/sources/inventories/eucharistic-stages/other-orders-round2.json",
+      "prior_sha256": "1a7ad52eeaa7338fa2e474e37164780c668498b379f35072b204ef98268eb175",
+      "current_sha256": "904a61d641f13cbed54276250bf1129edb6abbe8769a5542afa7d9e458763292",
+      "basis": "Accepted OCSO empty tradition ownership move and superseded gap removal, with narrowly qualified old OCSO retrospective limitation; unrelated order content unchanged."
+    },
+    {
+      "path": "src/sources/inventories/eucharistic-stages/padua-local-round3.json",
+      "prior_sha256": null,
+      "current_sha256": "324e8b8be5d02e32ff8b24a8ef23be579b3e8edfee88678a2c0ab2f9936ff612",
+      "basis": "Accepted two source-described states; D30 date conflict remains null/unpositioned, E57 local rubrics do not supply a complete Missal, tentative Cholet attribution remains explicit."
+    },
+    {
+      "path": "src/sources/inventories/eucharistic-stages/ravenna-fragments.json",
+      "prior_sha256": null,
+      "current_sha256": "380de2749f35ad1d7b2ed587cc5f5f16a69329caebced64bdb54bb2332475778",
+      "basis": "Accepted three physical fragment attestations, competing dates retained; canonical Ravenna local-use route remains empty and related-dossier-only, archive011 holding-only and Rotulus Advent/Office scope remain."
+    },
+    {
+      "path": "src/sources/inventories/eucharistic-stages/roman.json",
+      "prior_sha256": "be420b68c502c0d2ee28dfb48de89aff7d81dd1e889cd0a3ebc1bf76e296693f",
+      "current_sha256": "0803cb8241d49b82b796db94403c2f05756fa607b86d3a9e89b85a8627aaf0ec",
+      "basis": "Accepted Rome source inspections and three gap wording updates, preserving the full 1634–1920 progression and complete 1956/1965/1968 book gaps; stages/transitions unchanged."
+    },
+    {
+      "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+      "prior_sha256": "82ff67a6126bc841f472e9704ed74d332ccca3c3ce3914f18b79d24757bf9991",
+      "current_sha256": "0fe0cf0c1f8978d2fcca683aaeb7400f95b9ba34be49fd853af93dad60a654d6",
+      "basis": "Accepted Monza, Ravenna, Padua, OCSO, Rome, permissions and census packets: 60 new sources, 27 new candidates, five coverage routes; bounded Cistercian native constituent declarations retain all older bindings; Frisi/Ebner canonical exact-artifact links now resolve."
+    }
+  ],
+  "snapshot_changes": {
+    "prior_count_semantics": {
+      "eastern_census_slots": 23,
+      "western_coverage_trajectories": 73,
+      "eastern_candidates": 440,
+      "western_candidates": 1161,
+      "presentation_groups": 128,
+      "eastern_empty_candidate_slots_at_input": [
+        "albanian",
+        "macedonian"
+      ],
+      "western_empty_candidate_slots_at_input": 2,
+      "warning": "These count different objects. Western trajectories include composite and overlapping discovery buckets. Presentation groups are display categories. Neither candidate linkage nor a dossier certifies complete coverage."
+    },
+    "current_count_semantics": {
+      "eastern_census_slots": 23,
+      "western_coverage_trajectories": 78,
+      "eastern_candidates": 443,
+      "western_candidates": 1188,
+      "presentation_groups": 159,
+      "eastern_empty_candidate_slots_at_input": [
+        "albanian",
+        "macedonian"
+      ],
+      "western_empty_candidate_slots_at_input": 1,
+      "warning": "These count different objects. Western trajectories include composite and overlapping discovery buckets. Presentation groups are display categories. Neither candidate linkage nor a dossier certifies complete coverage."
+    },
+    "prior_dossier_count": 29,
+    "current_dossier_count": 35,
+    "prior_tradition_count": 142,
+    "current_tradition_count": 149,
+    "prior_coverage_status_counts": {
+      "no-new-researched-stage-sequence": 2,
+      "selected-stages-available": 85,
+      "related-dossier-only-local-reception-unresearched": 9
+    },
+    "current_coverage_status_counts": {
+      "no-new-researched-stage-sequence": 7,
+      "selected-stages-available": 91,
+      "related-dossier-only-local-reception-unresearched": 3
+    }
+  },
+  "integration": {
+    "new_eastern_sources": 19,
+    "new_western_sources": 60,
+    "new_eastern_candidates": 3,
+    "new_western_candidates": 27,
+    "new_western_coverage_rows": 5,
+    "new_stages": 15,
+    "new_transitions": 1,
+    "new_transition_kind": "scholarly-described-witness-succession",
+    "new_substantive_revision_claims": 0,
+    "new_complete_book_texts": 0,
+    "native_constituents": {
+      "cistercian-1606-offertory": 7,
+      "cistercian-1657-offertory": 25
+    },
+    "retained_payloads": 63,
+    "retained_payload_bytes": 139548459,
+    "retention_exact_artifacts": 389,
+    "retention_deferred": 324,
+    "retention_non_sources": 2,
+    "original_80_decisions_preserved": true
+  },
+  "verification": {
+    "source_library": {
+      "command": "tools/source-library validate",
+      "exit_code": 0,
+      "result": "source-library valid: artifact=3296 corpus=5 edition=1182 passage=5489 segment=110 work=1009 bindings=3955",
+      "output_sha256": "cdc2689f1fe8f72199559b3fc0166bb4824f1967d7d74abf1e9cd0593b86b931"
+    },
+    "coverage_reconciliation": {
+      "command": "tools/missal-coverage-reconciliation --json",
+      "exit_code": 0,
+      "status": "ok",
+      "findings": [],
+      "result_sha256": "516866e8c3514fd4bdcf33dd4fa93864e97a92bf31e60e5abac0c32510b4a174",
+      "actual": {
+        "count_semantics": {
+          "eastern_candidates": 443,
+          "eastern_census_slots": 23,
+          "eastern_empty_candidate_slots_at_input": [
+            "albanian",
+            "macedonian"
+          ],
+          "presentation_groups": 159,
+          "western_candidates": 1188,
+          "western_coverage_trajectories": 78,
+          "western_empty_candidate_slots_at_input": 1
+        },
+        "coverage_status_counts": {
+          "no-new-researched-stage-sequence": 7,
+          "related-dossier-only-local-reception-unresearched": 3,
+          "selected-stages-available": 91
+        },
+        "eastern": {
+          "candidates": 443,
+          "canonical_edition_links": 26,
+          "coverage_rows": 23,
+          "sources": 392
+        },
+        "stage_history": {
+          "dossiers": 35,
+          "gaps": 195,
+          "stage_status_counts": {
+            "documented": 276,
+            "provisional": 11
+          },
+          "stages": 287,
+          "text_coverage_counts": {
+            "not-transcribed": 271,
+            "partial": 16
+          },
+          "traditions": 149,
+          "transitions": 77
+        },
+        "western": {
+          "candidates": 1188,
+          "canonical_edition_links": 28,
+          "coverage_rows": 78,
+          "sources": 959
+        }
+      }
+    },
+    "whitespace": "git diff --check passed.",
+    "scope": "These checks validate exact metadata/reference/rights envelopes and coherent snapshots; they do not close historical gaps, grant new source rights or establish complete book text."
+  },
+  "uses": [],
+  "searches": [],
+  "versions": [],
+  "acquisitions": []
+}

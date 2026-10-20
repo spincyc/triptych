@@ -1,0 +1,405 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "regional-permissions-next-phase-2026-10-20",
+  "title": "Broome authority and dated use; Indian concessions, dated use and anaphora control",
+  "lane": "regional-permissions-next",
+  "side": "western",
+  "checked_on": "2026-10-20",
+  "reviewed_on": "2026-10-20",
+  "target_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+  "coverage_rows": [
+    "modern-source-adaptations"
+  ],
+  "review_files": {
+    "accepted_manifest_sha256": "ba600ead96875771ef81caf0ffaedb953aa24c6f5b729a365ee79334be46ffd6",
+    "findings_sha256": "2789d752851692be38d04c8033406247accdb89db3907ac3476e9f0f56d6d2d0",
+    "sources_sha256": "1fc76d1cec67b6571bf2ecef8d85a31c70562514d1c93dd17e73005ef9395c1d",
+    "acquisitions_sha256": "2260795b64669fd49539de68da17cf351118862d3a9f5e34d59ba090a8eaed4a",
+    "independent_review_sha256": "3db07e9a93266137be064b66dbf142705f81b17a59e496b01f36b74179193dfa",
+    "verdict": "pass-corrected-final-set-only"
+  },
+  "integration": {
+    "new_source_ids": [
+      "permissions-followup-src-broome-acbc2024",
+      "permissions-followup-src-broome-plenary2024",
+      "permissions-followup-src-broome-use2026",
+      "permissions-followup-src-india1970-use",
+      "permissions-followup-src-india1970-clarification",
+      "permissions-followup-src-india1973-report"
+    ],
+    "candidate_updates": [
+      "roman-adaptations-india1969",
+      "roman-adaptations-india1971",
+      "roman-adaptations-india-anaphora-early",
+      "roman-adaptations-broome2024"
+    ],
+    "new_candidates": 0,
+    "new_stages": 0,
+    "new_transitions": 0,
+    "permission_replacement_ids": [
+      "broome-2024",
+      "india-1969"
+    ],
+    "permission_identities_preserved": 49,
+    "register_counts": {
+      "permissions": 49,
+      "non_admissions": 4,
+      "uses": 7
+    },
+    "review_corrections": [
+      "Walking Together volume 13 prints June 2026 on its cover; July belongs to its archive and upload route."
+    ],
+    "fingerprint_refresh": "Pending final reviewed input freeze."
+  },
+  "semantics": "Conference approval, Roman recognitio, publication, exact book identity and actual use are separate events. No modern source payload or liturgical body is tracked. The existing 49 permission identities remain unchanged.",
+  "permissions": [
+    {
+      "id": "broome-2024",
+      "class": "conference-approved-adaptation-roman-recognitio-unverified",
+      "authority": "Australian Catholic Bishops Conference; earlier diocesan experimental permission reported by that conference",
+      "date": "2024-05-07 conference vote; May 1973 diocesan experimental permission reported retrospectively; 2018 publication reported by conference",
+      "scope": "The 2024 conference vote concerns the Diocese of Broome, Western Australia; it does not itself grant an Australia-wide use",
+      "book_or_component": "Missa Terra Spiritus Sancti / Mass of the Land of the Holy Spirit; the original conference release identifies a Liturgy Brisbane 2018 publication and a printed copy presented at the 2024 plenary; full submitted book not acquired",
+      "established": "The conference's original 7 May release and plenary summary distinguish its approval from subsequent submission for Roman recognitio. The release also reports the 2018 book's liturgical presentation and Warmun celebration. A diocesan 2026 newsletter directly attests the Missa at Pentecost 2026 with Bishop Tim concelebrating.",
+      "limit": "Roman recognitio, its exact annex and effective date remain unverified in this bounded follow-up. Current local celebration does not supply that instrument. The original 1973 permission and the 2018 title/approval/copyright leaves, precise Eucharistic components and textual continuity into the 2024 submission and 2026 celebration remain uninspected.",
+      "source_url": "https://s3.ap-southeast-2.amazonaws.com/acbcwebsite/Articles/Media%20Releases/2024-05-07%20Bishops%20approve%20Mass%20of%20the%20Land%20of%20the%20Holy%20Spirit.pdf",
+      "locus": "ACBC media release, 7 May 2024, PDF p.1 approval/subsequent submission and reported 1973 permission, p.2 Liturgy Brisbane 2018 and Warmun presentation/celebration; ACBC May plenary summary PDF p.3, Liturgy; https://broomediocese.org/wp-content/uploads/2026/07/Walking-Together-13-Part1.pdf, PDF p.3, Pentecost 2026 – Warmun",
+      "actual_use_state": "Named local adaptation's actual use attested in the conference's report and directly in the diocesan Pentecost 2026 report; exact submitted printing and Roman recognitio remain unverified."
+    },
+    {
+      "id": "india-1969",
+      "class": "regional-ritual-permission-with-dated-celebration",
+      "authority": "Consilium, Cardinal Benno Gut, protocol 802/69; later optional-implementation clarification reported from Cardinal Valerian Gracias, CBCI president",
+      "date": "1969-04-25 permission; March 1970 conference reaffirmation reported; 1970-02-15 dated celebration",
+      "scope": "Indian ritual concessions for priests and faithful, introduced by the conference and local hierarchies where and to the extent judged fitting; dated use attested at Rome's Propaganda Fide college with its Indian community",
+      "book_or_component": "Twelve permissions for posture, gestures, peace, incense, vesture, liturgical materials, preparatory ceremonial, universal prayer and arati; no new anaphora text approved by this printed letter",
+      "established": "The original printed permission delegates local introduction after catechesis. The 1970 clarification calls adoption optional, whole or partial, gradual and preceded by preparation. Notitiae's contemporary notice expressly reports use of the 25 April 1969 concessions at Archbishop Simon Lourdusamy's 15 February 1970 concelebration.",
+      "limit": "The celebration notice does not itemize which of the twelve concessions were enacted. No complete approved Indian altar Missal, exact service copy, parish-by-parish implementation or new Indian Eucharistic Prayer follows. The English-language Roman Order/Holy Week/Lectionary implementation reported for November 1971 and the proposed Indian anaphora must remain separate.",
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1960/notitiae-05-%281969%29/Notitiae-048-1969.pdf",
+      "locus": "Notitiae 5 (1969), printed pp.365–366 / PDF pp.39–40, protocol 802/69; https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-06-%281970%29/Notitiae-052-1970.pdf, printed p.89 / PDF p.15; https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-06-%281970%29/Notitiae-056-1970.pdf, printed p.282 / PDF p.24",
+      "actual_use_state": "Use of the permitted ceremonial directly attested at the named Rome celebration, 15 February 1970; exact approved local printing and territorial adoption pattern unverified."
+    }
+  ],
+  "non_admissions": [
+    {
+      "id": "india-anaphora-1972-1973-control",
+      "finding": "The official 1973 journal's account of the April 1972 Madras meeting reports support by 60 of 81 present bishops for a proposed Indian anaphora. Its editorial footnote quotes the 30 May 1972 reply invoked for a present-members threshold, then the 24 July 1972 correction requiring two thirds of all bishops entitled to vote. The footnote also reports that the required pre-conference submission for Roman study apparently had not occurred. These passages attest a proposal and procedural dispute, not Roman approval of a new Indian anaphora or a complete 1971 Indian Order.",
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-09-%281973%29/Notitiae-080-1973.pdf",
+      "locus": "Notitiae 9 (1973), printed pp.75–77 / PDF pp.33–35; III.5 spanning pp.76–77 and p.77 n.1",
+      "bound": "The footnote's contemporary apparently-not-submitted statement is retained as such. It does not prove absence of later approval or identify the complete experimental printed order."
+    }
+  ],
+  "uses": [
+    {
+      "permission_id": "india-1969",
+      "state": "permitted-ceremonial-at-dated-celebration",
+      "evidence": "The contemporary official journal reports Archbishop Lourdusamy's 15 February 1970 Mass at the Pontifical College of Propaganda Fide with the Indian concessions of 25 April 1969. It describes decoration, gestures, ceremony, song and instruments within the new Order of Mass; exact service copy, enacted subset of the twelve points and any new prayer text are not identified.",
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-06-%281970%29/Notitiae-052-1970.pdf",
+      "locus": "Notitiae 6 (1970), printed p.89 / PDF p.15, Peculiaritates liturgicae pro India"
+    },
+    {
+      "permission_id": "broome-2024",
+      "state": "local-adaptation-celebrated-exact-submitted-printing-unverified",
+      "evidence": "The diocesan newsletter directly reports Fr Brian presiding at the Missa Terra Spiritus Sancti for Pentecost 2026 at Warmun, with Bishop Tim concelebrating; it does not identify the service copy or a Roman recognitio.",
+      "source_url": "https://broomediocese.org/wp-content/uploads/2026/07/Walking-Together-13-Part1.pdf",
+      "locus": "Walking Together volume 13, printed June 2026 (cover PDF p.1; July archive/upload), Part1 PDF p.3, Pentecost 2026 – Warmun"
+    }
+  ],
+  "versions": [
+    {
+      "id": "roman-adaptations-india1969",
+      "retain_id_kind_date": true,
+      "append_sources": [
+        "permissions-followup-src-india1970-use",
+        "permissions-followup-src-india1970-clarification"
+      ],
+      "qualification": "Original printed permission covers twelve ritual points. Optional and prepared introduction is reiterated in 1970; dated use of the permitted ceremonial is directly reported on 15 February 1970. No new anaphora or complete Indian altar Missal is authenticated.",
+      "source_locus_append": "Notitiae 6 (1970) printed p.89 / PDF p.15, named 15 February 1970 celebration; printed p.282 / PDF p.24, optional whole/partial episcopal or regional implementation after preparation."
+    },
+    {
+      "id": "roman-adaptations-india1971",
+      "retain_id_kind_date": true,
+      "title": "Indian Order of Mass: reported experimental preparation",
+      "append_sources": [
+        "permissions-followup-src-india1973-report"
+      ],
+      "qualification": "The 1971 preparation remains participant-history evidence pending original book. Notitiae 9 (1973) pp.76–77 distinguishes English Roman Order implementation from the proposed Indian anaphora and prints a Roman voting-threshold correction plus the apparently unmet prior-submission requirement. Do not present the candidate as an approved complete Indian Mass order.",
+      "source_locus_append": "Notitiae 9 (1973) printed p.76 II.1 (required English Lectionary, Order and Holy Week use from 28 November 1971), III.5 and p.77 n.1 (separate Indian anaphora proposal and Roman procedural correction)."
+    },
+    {
+      "id": "roman-adaptations-india-anaphora-early",
+      "retain_id_kind_date": true,
+      "append_sources": [
+        "permissions-followup-src-india1973-report"
+      ],
+      "qualification_append": "The 1973 official journal describes the 1972 proposal and prints Roman procedural qualifications; it does not authenticate Roman approval or exact complete printing. Do not convert its record of 60 votes out of 81 present into a successful approval without the full voting body and governing threshold."
+    },
+    {
+      "id": "roman-adaptations-broome2024",
+      "retain_id_kind_date": true,
+      "append_sources": [
+        "permissions-followup-src-broome-acbc2024",
+        "permissions-followup-src-broome-plenary2024",
+        "permissions-followup-src-broome-use2026"
+      ],
+      "qualification": "Conference approval and named diocesan celebrations are evidenced; Roman recognitio remains unverified. The original conference release identifies a Liturgy Brisbane 2018 publication, but the 2018 original book and submitted 2024 annex are unacquired. Dated 2026 use is reception evidence for the named adaptation, not proof of an unchanged exact printing or issued Roman instrument.",
+      "source_locus_append": "Original ACBC release, 7 May 2024, PDF pp.1–2; May 2024 plenary summary, PDF p.3, Liturgy; Walking Together volume 13 (printed June 2026; July archive/upload), Part1 PDF pp.1,3."
+    }
+  ],
+  "sources": [
+    {
+      "id": "permissions-followup-src-broome-acbc2024",
+      "url": "https://s3.ap-southeast-2.amazonaws.com/acbcwebsite/Articles/Media%20Releases/2024-05-07%20Bishops%20approve%20Mass%20of%20the%20Land%20of%20the%20Holy%20Spirit.pdf",
+      "type": "original-conference-media-release",
+      "title": "ACBC, Bishops approve Mass of the Land of the Holy Spirit, 7 May 2024",
+      "inspection": "Whole delivered two-page original release acquired and extracted; both pages read. Page 1 distinguishes conference approval and subsequent Roman recognitio submission and reports May 1973 experimental permission; page 2 identifies Liturgy Brisbane 2018 publication and Warmun presentation and celebration.",
+      "limitations": "No signed recognitio or exact 2018 book supplied. This institutional release's historical account is not the original 1973 diocesan instrument. Modern source retained only in scratch.",
+      "inspected_on": "2026-10-20"
+    },
+    {
+      "id": "permissions-followup-src-broome-plenary2024",
+      "url": "https://s3.ap-southeast-2.amazonaws.com/acbcwebsite/Plenary%20Meetings/Summary%20of%20Bishops%20Plenary%20-%20May%202024%20b.pdf",
+      "type": "official-conference-plenary-summary",
+      "title": "ACBC General Secretariat, Summary of Bishops Plenary, May 2024",
+      "inspection": "Whole four-page delivered PDF acquired; PDF p.3 Liturgy paragraph read, confirming conference approval for Broome and subsequent submission for recognitio.",
+      "limitations": "Summary is not the signed conference motion, submitted annex or Roman recognitio. PDF metadata generation in October 2024 does not redate the May meeting. Modern source retained only in scratch.",
+      "inspected_on": "2026-10-20"
+    },
+    {
+      "id": "permissions-followup-src-broome-use2026",
+      "url": "https://broomediocese.org/wp-content/uploads/2026/07/Walking-Together-13-Part1.pdf",
+      "type": "official-diocesan-contemporary-use-report",
+      "title": "Diocese of Broome, Walking Together volume 13 (printed June 2026; July archive/upload), Part 1: Pentecost 2026 – Warmun",
+      "inspection": "Whole delivered six-page PDF acquired; text searched, PDF pp.1,3 read and visually checked. Cover explicitly gives June 2026 and volume 13, while the archive label and upload URL use July. The article directly names the Missa Terra Spiritus Sancti, Fr Brian presiding and Bishop Tim concelebrating at Pentecost 2026.",
+      "limitations": "Names adaptation but not exact service-copy imprint, complete components or Roman instrument. Celebration date expressed as Pentecost 2026, without an inferred civil day; July archive/upload does not redate the June printed issue. Modern source retained only in scratch.",
+      "inspected_on": "2026-10-20"
+    },
+    {
+      "id": "permissions-followup-src-india1970-use",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-06-%281970%29/Notitiae-052-1970.pdf",
+      "type": "official-contemporary-celebration-notice",
+      "title": "Peculiaritates liturgicae pro India, Notitiae 6 (1970), p.89",
+      "inspection": "Whole delivered 40-page PDF acquired; printed p.89 / PDF p.15 read in extracted text and visually. Notice explicitly links the 15 February 1970 Rome concelebration by Archbishop Simon Lourdusamy to the 25 April 1969 concessions.",
+      "limitations": "No exact service copy or new anaphora is identified; the notice is not a territorial extension decree. Modern journal retained only in scratch.",
+      "inspected_on": "2026-10-20"
+    },
+    {
+      "id": "permissions-followup-src-india1970-clarification",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-06-%281970%29/Notitiae-056-1970.pdf",
+      "type": "official-contemporary-implementation-report",
+      "title": "Aptatio liturgiae in India, Notitiae 6 (1970), p.282",
+      "inspection": "Whole delivered 48-page PDF acquired; printed p.282 / PDF p.24 read in extracted text and visually. March 1970 episcopal reaffirmation and optional, whole/partial, gradual introduction after preparation reported, citing Cardinal Gracias and Word and Worship 3 (1970), pp.192–193.",
+      "limitations": "Original conference minute and Gracias communication not independently acquired; this report does not approve a new Indian anaphora or exact complete altar book. Modern journal retained only in scratch.",
+      "inspected_on": "2026-10-20"
+    },
+    {
+      "id": "permissions-followup-src-india1973-report",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-09-%281973%29/Notitiae-080-1973.pdf",
+      "type": "official-journal-meeting-report-and-roman-letter-excerpts",
+      "title": "India: CBCI Madras meeting, 6–14 April 1972, Notitiae 9 (1973), pp.75–77",
+      "inspection": "Whole delivered 48-page image-only PDF acquired. Printed pp.75–77 / PDF pp.33–35 visually read. Page 76 II.1 gives 28 November 1971 obligatory English Lectionary/Order/Holy Week implementation; III.5 and p.77 n.1 distinguish the Indian anaphora proposal, voting dispute, 30 May and 24 July 1972 Roman replies and apparently unmet prior Roman-study submission requirement.",
+      "limitations": "Meeting report credits D.S. Amalorpavadass, Word and Worship 5 (1972), pp.223–242; editorial footnote supplies qualifications. Neither full original letter nor complete experimental order acquired. No post-1973 approval absence asserted. Modern journal retained only in scratch.",
+      "inspected_on": "2026-10-20"
+    }
+  ],
+  "searches": [
+    {
+      "scope": "Broome official authority and current reception",
+      "inspected": "Original ACBC 7 May 2024 release, ACBC May plenary summary Liturgy paragraph, Broome council report body, Broome Walking Together archive links, full extracted text of volume 13 parts 1 and 2 (printed June 2026; July archive/upload), visual cover date and Pentecost 2026 article.",
+      "result": "Conference action and local actual use verified. No recognitio instrument identified. The newsletter printed June 2026 contains a specific Mass report, but no matching recognitio in the searched text. Its July archive/upload route does not redate the printed issue.",
+      "unexamined": "Roman correspondence and approval annexes; exact 2018 book; every intermediate diocesan newsletter; every later ACBC plenary or private record. Search failure is not an absence claim."
+    },
+    {
+      "scope": "Indian original and contemporary records",
+      "inspected": "Notitiae 1969 printed pp.365–366, 1970 p.89 and p.282, 1973 pp.75–77 with visual n.1; 1965–1975 index India/adaptation loci searched; 1975 nos.105 and 108–109 text layers searched for Indian anaphora/reply leads.",
+      "result": "Original concession, optional conditions and dated use verified; 1973 procedural qualification verified. No exact approved 1971 book identified.",
+      "unexamined": "Other 1969 and 1970 issue pages beyond relevant loci; 1973 report's cited original Word and Worship 5 (1972) pp.223–242; full 1972 letters; original experimental order; purported May 1975 reply. Notitiae 106–107 text layer was searched without an Indian-anaphora match; its image pages were not reviewed, so this is only a text-search bound."
+    }
+  ],
+  "leads_not_promoted": [
+    {
+      "id": "india-1975-reply-lead",
+      "route": "Search results for a 23 May 1975 Roman reply concerning the Indian anaphora; polemical reprints and later participant histories refer to it.",
+      "disposition": "No original signed reply or official full text acquired; do not import the reprints' legal conclusion or purported quotations as verified."
+    },
+    {
+      "id": "broome-rome-visit-2025-lead",
+      "route": "https://www.aucklandcatholic.org.nz/2025/10/20/the-travel-journal-of-natsicc-assembly-2025-pilgrims-of-hope-across-the-ditch/",
+      "disposition": "Official diocesan search result describes the elders' Rome trip to present and gain approval. Page not acquired or fully inspected in this lane; its phrasing does not identify an issued recognitio or protocol."
+    },
+    {
+      "id": "india-experimental-order-reprint-lead",
+      "route": "https://irgu.unigoa.ac.in/drs/bitstream/handle/unigoa/3931/thomas_l_2002.pdf?isAllowed=y&sequence=1",
+      "disposition": "University-hosted thesis search result reproduces an order at appendix p.322. No original book/imprint/approval leaf acquired; reprint is not substituted for the original."
+    }
+  ],
+  "acquisitions": [
+    {
+      "url": "https://s3.ap-southeast-2.amazonaws.com/acbcwebsite/Articles/Media%20Releases/2024-05-07%20Bishops%20approve%20Mass%20of%20the%20Land%20of%20the%20Holy%20Spirit.pdf",
+      "retrieved_on": "2026-10-20",
+      "sha256": "f2972a98b7700b74a91284e4894699aa17d477d34d4a2575d6c2eb6176b9548d",
+      "bytes": 163477,
+      "extent": "Complete delivered response retained; no assertion that delivery is the complete intellectual work.",
+      "inspected": "Both pages read in extracted text; title, stated date, approval, proposed recognitio submission, 1973 retrospective permission and 2018 book/use paragraphs checked.",
+      "rights": "Modern institutional source; redistribution permission not established. Research-only scratch copy and derivatives; proposed tracked use is text-free citation metadata and factual paraphrase.",
+      "storage_proposal": "restricted/hash-only metadata if integrated; payload remains scratch",
+      "delivered_pdf_pages": 2
+    },
+    {
+      "url": "https://s3.ap-southeast-2.amazonaws.com/acbcwebsite/Plenary%20Meetings/Summary%20of%20Bishops%20Plenary%20-%20May%202024%20b.pdf",
+      "retrieved_on": "2026-10-20",
+      "sha256": "8a3a5f3f8c2a307686653dc2e37d4d09497ff27d9f5befa7c19c3b53774243be",
+      "bytes": 187448,
+      "extent": "Complete delivered response retained; no assertion that delivery is the complete intellectual work.",
+      "inspected": "PDF p.3, Liturgy paragraph; remainder not substantively reviewed.",
+      "rights": "Modern institutional source; redistribution permission not established. Research-only scratch copy and derivatives; proposed tracked use is text-free citation metadata and factual paraphrase.",
+      "storage_proposal": "restricted/hash-only metadata if integrated; payload remains scratch",
+      "delivered_pdf_pages": 4
+    },
+    {
+      "url": "https://broomediocese.org/a-new-voice-for-the-kimberley-church/",
+      "retrieved_on": "2026-10-20",
+      "sha256": "203bcb11b2333a4bf9c6c9227d4d38a9c70f052a906134531928f6d29e7ee765",
+      "bytes": 121932,
+      "extent": "Complete delivered response retained; no assertion that delivery is the complete intellectual work.",
+      "inspected": "Article body read in raw HTML, including Bishop Tim's actual Mass using the Missa; page itself gives last weekend of March without year in the article body. 2025 upload routes are contextual, not substituted for a dated act.",
+      "rights": "Modern institutional source; redistribution permission not established. Research-only scratch copy and derivatives; proposed tracked use is text-free citation metadata and factual paraphrase.",
+      "storage_proposal": "restricted/hash-only metadata if integrated; payload remains scratch"
+    },
+    {
+      "url": "https://broomediocese.org/walking-together/",
+      "retrieved_on": "2026-10-20",
+      "sha256": "af3231e3452900bc6982e11cba9cc3c5108f7feb53d9b44db272eb930c9a72b7",
+      "bytes": 124325,
+      "extent": "Complete delivered response retained; no assertion that delivery is the complete intellectual work.",
+      "inspected": "Archive issue list and exact PDF links, including volume 13 parts 1 and 2 labelled July 2026 in the archive; Part1 cover instead prints June 2026. Other issues not opened in this lane.",
+      "rights": "Modern institutional source; redistribution permission not established. Research-only scratch copy and derivatives; proposed tracked use is text-free citation metadata and factual paraphrase.",
+      "storage_proposal": "restricted/hash-only metadata if integrated; payload remains scratch"
+    },
+    {
+      "url": "https://broomediocese.org/wp-content/uploads/2026/07/Walking-Together-13-Part1.pdf",
+      "retrieved_on": "2026-10-20",
+      "sha256": "8fbc0a18fecfa251581f7597b2fe6e79a60692fed79d714c5ea2e2570f674d77",
+      "bytes": 1793843,
+      "extent": "Complete delivered response retained; no assertion that delivery is the complete intellectual work.",
+      "inspected": "Full extracted text searched; PDF p.1 cover visually confirms printed June 2026 and volume 13, distinct from July archive/upload; PDF p.3 Pentecost 2026 – Warmun read and visually checked. Other pages not collated or reviewed for general accuracy.",
+      "rights": "Modern institutional source; redistribution permission not established. Research-only scratch copy and derivatives; proposed tracked use is text-free citation metadata and factual paraphrase.",
+      "storage_proposal": "restricted/hash-only metadata if integrated; payload remains scratch",
+      "delivered_pdf_pages": 6
+    },
+    {
+      "url": "https://broomediocese.org/wp-content/uploads/2026/07/Walking-Together-13-Part2.pdf",
+      "retrieved_on": "2026-10-20",
+      "sha256": "00c826d857e8f74c22255d3329e20d1f6efbe59e4442fee638cb05dd7db7dee7",
+      "bytes": 1474941,
+      "extent": "Complete delivered response retained; no assertion that delivery is the complete intellectual work.",
+      "inspected": "Full extracted text searched for Missa, recognitio, Rome and Vatican. No matching recognitio notice located; image-only text and private records outside this negative.",
+      "rights": "Modern institutional source; redistribution permission not established. Research-only scratch copy and derivatives; proposed tracked use is text-free citation metadata and factual paraphrase.",
+      "storage_proposal": "restricted/hash-only metadata if integrated; payload remains scratch",
+      "delivered_pdf_pages": 2
+    },
+    {
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1960/notitiae-05-%281969%29/Notitiae-048-1969.pdf",
+      "retrieved_on": "2026-10-20",
+      "sha256": "f31becd3adaba007d9509c5c1d78b6546da7331e52eb3686277cc9cfb64c2f8e",
+      "bytes": 7146389,
+      "extent": "Complete delivered response retained; no assertion that delivery is the complete intellectual work.",
+      "inspected": "Printed pp.365–366 / PDF pp.39–40, permission and implementation clause, read in text and visually. Other pages not collated.",
+      "rights": "Modern institutional source; redistribution permission not established. Research-only scratch copy and derivatives; proposed tracked use is text-free citation metadata and factual paraphrase.",
+      "storage_proposal": "restricted/hash-only metadata if integrated; payload remains scratch",
+      "delivered_pdf_pages": 84
+    },
+    {
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-06-%281970%29/Notitiae-052-1970.pdf",
+      "retrieved_on": "2026-10-20",
+      "sha256": "37a13a45cbb28959ecb5fda2699a01a57d9b8ddf7f4ce178ae2baf01c12694e9",
+      "bytes": 3712295,
+      "extent": "Complete delivered response retained; no assertion that delivery is the complete intellectual work.",
+      "inspected": "Printed p.89 / PDF p.15, Peculiaritates liturgicae pro India, text and visual check. Other pages not substantively reviewed.",
+      "rights": "Modern institutional source; redistribution permission not established. Research-only scratch copy and derivatives; proposed tracked use is text-free citation metadata and factual paraphrase.",
+      "storage_proposal": "restricted/hash-only metadata if integrated; payload remains scratch",
+      "delivered_pdf_pages": 40
+    },
+    {
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-06-%281970%29/Notitiae-056-1970.pdf",
+      "retrieved_on": "2026-10-20",
+      "sha256": "a1ba25c31a33dade79d137bae8b3bdcdf3e6126812b7b908aff7abc198c8c76f",
+      "bytes": 3571778,
+      "extent": "Complete delivered response retained; no assertion that delivery is the complete intellectual work.",
+      "inspected": "Printed p.282 / PDF p.24, Aptatio liturgiae in India, text and visual check. Adjacent Indian/Santali and Pakistan/Urdu decree summaries seen in search, not added as new candidates.",
+      "rights": "Modern institutional source; redistribution permission not established. Research-only scratch copy and derivatives; proposed tracked use is text-free citation metadata and factual paraphrase.",
+      "storage_proposal": "restricted/hash-only metadata if integrated; payload remains scratch",
+      "delivered_pdf_pages": 48
+    },
+    {
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-09-%281973%29/Notitiae-080-1973.pdf",
+      "retrieved_on": "2026-10-20",
+      "sha256": "b95b99e22639b627a8e4bb32e1c5e9d663239ff2b971e33bf887db20b3977c54",
+      "bytes": 8591355,
+      "extent": "Complete delivered response retained; no assertion that delivery is the complete intellectual work.",
+      "inspected": "Printed pp.75–77 / PDF pp.33–35 read visually, especially p.76 II.1, III.5, p.77 n.1. Page 74 was also viewed while locating the report. Text layer empty; no full-issue searchable-text claim.",
+      "rights": "Modern institutional source; redistribution permission not established. Research-only scratch copy and derivatives; proposed tracked use is text-free citation metadata and factual paraphrase.",
+      "storage_proposal": "restricted/hash-only metadata if integrated; payload remains scratch",
+      "delivered_pdf_pages": 48
+    },
+    {
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-11-%281975%29/Notitiae-105-1975.pdf",
+      "retrieved_on": "2026-10-20",
+      "sha256": "1931a326ee3518c215f0843d9736c6514ada339e4b8568040f78edf575c31eb7",
+      "bytes": 5259864,
+      "extent": "Complete delivered response retained; no assertion that delivery is the complete intellectual work.",
+      "inspected": "Whole text layer searched for India, anaphora and May 23 reply leads; found May 23 unrelated visit notice, not the Indian reply. No page-by-page scan review.",
+      "rights": "Modern institutional source; redistribution permission not established. Research-only scratch copy and derivatives; proposed tracked use is text-free citation metadata and factual paraphrase.",
+      "storage_proposal": "restricted/hash-only metadata if integrated; payload remains scratch",
+      "delivered_pdf_pages": 48
+    },
+    {
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-11-%281975%29/Notitiae-106-107-1975.pdf",
+      "retrieved_on": "2026-10-20",
+      "sha256": "748d1845afbcd831e8be436f2936ba8eeec7b37e4642eeda884657fc79cf82c0",
+      "bytes": 11294966,
+      "extent": "Complete delivered response retained; no assertion that delivery is the complete intellectual work.",
+      "inspected": "Whole delivered text layer searched for India, anaphora and May 23 reply terms without a matching Indian-anaphora passage. No substantive image-page inspection; no broad absence conclusion.",
+      "rights": "Modern institutional source; redistribution permission not established. Research-only scratch copy and derivatives; proposed tracked use is text-free citation metadata and factual paraphrase.",
+      "storage_proposal": "restricted/hash-only metadata if integrated; payload remains scratch",
+      "delivered_pdf_pages": 52
+    },
+    {
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-11-%281975%29/Notitiae-108-109-1975.pdf",
+      "retrieved_on": "2026-10-20",
+      "sha256": "6d10019470e720c8cbb46c86ff59b06c384604bc0701a955e16ab49d99cf45e5",
+      "bytes": 5800254,
+      "extent": "Complete delivered response retained; no assertion that delivery is the complete intellectual work.",
+      "inspected": "Whole text layer searched for Indian anaphora/reply leads; printed p.229 Indian language-translation summaries and p.240 Italian Eucharistic-prayer notice read. Neither treated as the Indian 1975 reply. No page-by-page scan review.",
+      "rights": "Modern institutional source; redistribution permission not established. Research-only scratch copy and derivatives; proposed tracked use is text-free citation metadata and factual paraphrase.",
+      "storage_proposal": "restricted/hash-only metadata if integrated; payload remains scratch",
+      "delivered_pdf_pages": 56
+    },
+    {
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-12-%281976%29/Notitiae-113-1976-indice-1965-1975.pdf",
+      "retrieved_on": "2026-10-20",
+      "sha256": "7564ca822c61c5672b419fb5b09ec298f363000b79e3b8476cb97eda096f03e8",
+      "bytes": 15283242,
+      "extent": "Complete delivered response retained; no assertion that delivery is the complete intellectual work.",
+      "inspected": "India/adaptation/anaphora index hits read, especially printed p.201 India continuation and printed pp.163–164 adaptation entries; used as a locator, not as substantive original approval evidence. Remainder not examined exhaustively.",
+      "rights": "Modern institutional source; redistribution permission not established. Research-only scratch copy and derivatives; proposed tracked use is text-free citation metadata and factual paraphrase.",
+      "storage_proposal": "restricted/hash-only metadata if integrated; payload remains scratch",
+      "delivered_pdf_pages": 237
+    }
+  ],
+  "failed_routes": [
+    {
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-09-%281973%29/Notitiae-078-1973.pdf",
+      "result": "HTTP 404; incorrect issue-year guess, corrected from the official journal index."
+    },
+    {
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-11-%281975%29/Notitiae-106-107-1975.pdf",
+      "result": "Initial network failure; a later retrieval delivered the complete response."
+    }
+  ],
+  "remaining_work": [
+    "Broome: acquire the original 1973 permission, exact 2018 Liturgy Brisbane book title/approval/copyright leaves and 2024 submission annex; locate any issued Roman recognitio and effective date. Pentecost 2026 use is directly attested but does not supply those identities or instruments.",
+    "India: acquire the original experimental order, the 1972 procedural letters and any authentic later Roman decision. Keep the 1969 twelve ritual concessions and their dated 1970 use distinct from mandatory English Roman books from 28 November 1971 and the unapproved experimental Indian anaphora proposal."
+  ]
+}

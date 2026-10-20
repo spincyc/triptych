@@ -1,0 +1,739 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "armenian-facsimile-next-phase-2026-10-20",
+  "title": "Armenian 1677 EAP acquisition and separate-setting boundary",
+  "lane": "armenian-facsimile-next",
+  "side": "eastern",
+  "checked_on": "2026-10-20",
+  "reviewed_on": "2026-10-20",
+  "coverage_rows": [
+    "armenian"
+  ],
+  "target_inventory": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
+  "review_files": {
+    "accepted_manifest_sha256": "e75021e659c2285235bdc01bff1020fd78e542f0ea468a95559ef305e943291e",
+    "research_receipt_sha256": "d862f50ae32c3da8f1d63a1ce999dd636c09ff8047754e74a9b59cb0f628be86",
+    "independent_review_sha256": "beaf903fbdc4672676e95128445d0a61c029059f389cd1cc706e6eea351c03c1",
+    "mechanical_review_sha256": "c42f0e40e70e0bb38b3a48f61da02fbdaf4b95ef0bd60f30f678605ebbf1d829",
+    "verified_file_count": 55
+  },
+  "integration": {
+    "new_inventory_sources": 0,
+    "new_candidates": 0,
+    "new_stages": 0,
+    "new_transitions": 0,
+    "canonical_payloads_admitted": 0,
+    "existing_dossier_changes": "Only the Google 1677 source limitation and gap-1823 missing/next-source wording changed; all IDs, stages, transitions and original text/rights/edition bindings remain unchanged.",
+    "fingerprint_refresh": "Pending final reviewed owning input freeze."
+  },
+  "semantics": "Retained public catalogue, all 18 catalogue-declared image frames at their delivered resolution, 18 IIIF metadata records, bounded native-region probe, exact bytes/dimensions and demonstrable pagination differences. This closes this bounded research/acquisition substep only.",
+  "baseline": {
+    "artifact_id": "artifact.armenian-church.armenian-eucharistic-books-bound-volume.1677-rome-propaganda-bound-copy.google-pdf-5f0b9eb9",
+    "sha256": "5f0b9eb92edbc3b2028e72e5017158be1942d89603917e1c00feca490f4462bc",
+    "page_count": 96,
+    "map": "Lyturgia title at container 41, illustration 42; printed 1–20 at 43–64 with repeated scans of 4–5 at 48–49; blanks 65–66; separate Ministerium at 67–96.",
+    "original_dense_page_sha256": "a70d2a09e85cd89058118ffeefb36593971f550a86c642ba8a60f4b194e4fd3d",
+    "original_dense_page_byte_size": 109856,
+    "original_dense_page_dimensions": [
+      575,
+      883
+    ]
+  },
+  "eap_identity": {
+    "catalogue_url": "https://searcharchives.bl.uk/catalog/040-002717290",
+    "item_url": "https://eap.bl.uk/archive-file/EAP180-1-1-12",
+    "shelfmark": "EAP180/1/1/12",
+    "catalogue_extent": "18 TIFF images; retained deliveries are capped JPEG derivatives, not TIFF/JP2 masters.",
+    "title_imprint": "Frame 2 right: LYTVRGIA ARMENA; ROMAE; Typis Sacrae Congregationis de Propaganda Fide; MDCLXXVII.",
+    "image_count": 18,
+    "full_frame_image_bytes": 5395585,
+    "page_map": "Frame 3 right printed 1; frames 4 through 12 successive spreads printed 2 through 19; frame 12 right printed 19 has terminal text and ornament. Frame 13 left is an unnumbered blank verso, right printed 21 has CORRECTIONES OFFICII DIVINI ARMENORUM. Frames 14 through 17 continue printed 22 through 29; frame 18 left printed 30 has terminal text and ornament, right blank.",
+    "exact_edition_limit": "The EAP candidate differs visibly in pagination and printed-page-8 layout/initials from the retained Google witness. The Google container has Lyturgia title 41, illustration 42, printed 1 through 20 at 43 through 64 with duplicate scans of printed 4 and 5 at 48 and 49, blanks 65 and 66, and a separate Ministerium title at 67. Matching title, printer and year do not establish identical edition/setting or textual equivalence.",
+    "resolution_limit": "Maximum dimension is 1200 pixels for every retained full frame; advertised native dimensions exceed these deliveries.",
+    "native_region": {
+      "url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/7.jp2/400,600,1200,1200/full/0/default.jpg",
+      "sha256": "b45fef010334bb11a32edf4e69cb9e0bc9532f3086642f1c991f6e0b5875ead6",
+      "byte_size": 408936,
+      "dimensions": [
+        1200,
+        1200
+      ],
+      "bounds": "Frame 7 only, source pixels 400,600,1200,1200; genuinely finer partial detail, not a complete native-resolution book."
+    }
+  },
+  "image_roster": [
+    {
+      "image": 1,
+      "byte_size": 242818,
+      "sha256": "bc7c312c257a0cef5f148e377abf7a96cd885ae35738a82ed9bdc04168797afe",
+      "width": 856,
+      "height": 1200,
+      "url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/1.jp2/full/full/0/default.jpg",
+      "native_width_advertised": 2380,
+      "native_height_advertised": 3336,
+      "metadata_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/1.jp2/info.json"
+    },
+    {
+      "image": 2,
+      "byte_size": 181058,
+      "sha256": "e03aca5f93e0aa82910bce9515ab41da7ed46a402d482d4b9f030dc648c0f9fc",
+      "width": 1200,
+      "height": 1022,
+      "url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/2.jp2/full/full/0/default.jpg",
+      "native_width_advertised": 3448,
+      "native_height_advertised": 2936,
+      "metadata_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/2.jp2/info.json"
+    },
+    {
+      "image": 3,
+      "byte_size": 276838,
+      "sha256": "f4780564807317297d6fd885397252993e452f88c2b609f0c367330685dd16d3",
+      "width": 1200,
+      "height": 964,
+      "url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/3.jp2/full/full/0/default.jpg",
+      "native_width_advertised": 3580,
+      "native_height_advertised": 2876,
+      "metadata_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/3.jp2/info.json"
+    },
+    {
+      "image": 4,
+      "byte_size": 312742,
+      "sha256": "ad94da932a21909c2c06afad53b76090a17d0d5010d458e9ac16685959d632e3",
+      "width": 1200,
+      "height": 1051,
+      "url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/4.jp2/full/full/0/default.jpg",
+      "native_width_advertised": 3488,
+      "native_height_advertised": 3056,
+      "metadata_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/4.jp2/info.json"
+    },
+    {
+      "image": 5,
+      "byte_size": 356293,
+      "sha256": "b4ffd4f0fddb7cf4bef0c512cc4236be9d0dabb3ed6c1d806b2f2c5f95a66cfa",
+      "width": 1200,
+      "height": 1063,
+      "url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/5.jp2/full/full/0/default.jpg",
+      "native_width_advertised": 3388,
+      "native_height_advertised": 3000,
+      "metadata_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/5.jp2/info.json"
+    },
+    {
+      "image": 6,
+      "byte_size": 335610,
+      "sha256": "e9577d14257cef51284f8ac1924c7d5c76c94aae2357616d45e11bbe85f93133",
+      "width": 1200,
+      "height": 1052,
+      "url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/6.jp2/full/full/0/default.jpg",
+      "native_width_advertised": 3400,
+      "native_height_advertised": 2980,
+      "metadata_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/6.jp2/info.json"
+    },
+    {
+      "image": 7,
+      "byte_size": 326611,
+      "sha256": "2210410cc8d3b006c7b1585ba21bfe5f24572e4458a01c786d8b1aa6441af217",
+      "width": 1200,
+      "height": 1021,
+      "url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/7.jp2/full/full/0/default.jpg",
+      "native_width_advertised": 3468,
+      "native_height_advertised": 2952,
+      "metadata_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/7.jp2/info.json"
+    },
+    {
+      "image": 8,
+      "byte_size": 316136,
+      "sha256": "80a8faa89ef17f437ff67a9977db5cdec36ccf35b61427dddbf9829707694857",
+      "width": 1200,
+      "height": 1048,
+      "url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/8.jp2/full/full/0/default.jpg",
+      "native_width_advertised": 3352,
+      "native_height_advertised": 2928,
+      "metadata_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/8.jp2/info.json"
+    },
+    {
+      "image": 9,
+      "byte_size": 330091,
+      "sha256": "37343fddb5a62aa17eb910894060dbb41598b945f545751139d927c5f24ed07a",
+      "width": 1200,
+      "height": 1084,
+      "url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/9.jp2/full/full/0/default.jpg",
+      "native_width_advertised": 3344,
+      "native_height_advertised": 3020,
+      "metadata_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/9.jp2/info.json"
+    },
+    {
+      "image": 10,
+      "byte_size": 329796,
+      "sha256": "d51cfddaad5d286a3cbe9a38f710748665085cd1751fb605b58ff3402c7888dc",
+      "width": 1200,
+      "height": 1043,
+      "url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/10.jp2/full/full/0/default.jpg",
+      "native_width_advertised": 3388,
+      "native_height_advertised": 2944,
+      "metadata_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/10.jp2/info.json"
+    },
+    {
+      "image": 11,
+      "byte_size": 317849,
+      "sha256": "6a57c5d76f8c5d9e1faf74f8768de9f4621cf1abd4e7f7fb6cb25c3f4e965ecb",
+      "width": 1200,
+      "height": 1071,
+      "url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/11.jp2/full/full/0/default.jpg",
+      "native_width_advertised": 3380,
+      "native_height_advertised": 3016,
+      "metadata_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/11.jp2/info.json"
+    },
+    {
+      "image": 12,
+      "byte_size": 266106,
+      "sha256": "8eb032b9b2af8a5c694e22dc689c26ad1e9bf40a2ce338d1d38b1d1c780425ea",
+      "width": 1200,
+      "height": 1021,
+      "url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/12.jp2/full/full/0/default.jpg",
+      "native_width_advertised": 3400,
+      "native_height_advertised": 2892,
+      "metadata_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/12.jp2/info.json"
+    },
+    {
+      "image": 13,
+      "byte_size": 255583,
+      "sha256": "eb44de14d237dbb9e532a4ef8d2a2ee63e9f94e93b74c51a999ada377d0c24b1",
+      "width": 1200,
+      "height": 1068,
+      "url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/13.jp2/full/full/0/default.jpg",
+      "native_width_advertised": 3452,
+      "native_height_advertised": 3072,
+      "metadata_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/13.jp2/info.json"
+    },
+    {
+      "image": 14,
+      "byte_size": 363310,
+      "sha256": "2825c11d5309e118b248115ef5a42e8ba5fedc510fdef6fe65d4fd74dc668ad5",
+      "width": 1200,
+      "height": 1037,
+      "url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/14.jp2/full/full/0/default.jpg",
+      "native_width_advertised": 3388,
+      "native_height_advertised": 2928,
+      "metadata_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/14.jp2/info.json"
+    },
+    {
+      "image": 15,
+      "byte_size": 328309,
+      "sha256": "e525e3608a6299a76113818fe53ebda27d7e08e5ef061551a45b63db0f8a6b19",
+      "width": 1200,
+      "height": 1034,
+      "url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/15.jp2/full/full/0/default.jpg",
+      "native_width_advertised": 3388,
+      "native_height_advertised": 2920,
+      "metadata_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/15.jp2/info.json"
+    },
+    {
+      "image": 16,
+      "byte_size": 335938,
+      "sha256": "a5d7d4cefabcda9ef0223207684ede14606bf2f37c472e66e3c0da0278cf41ce",
+      "width": 1200,
+      "height": 1001,
+      "url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/16.jp2/full/full/0/default.jpg",
+      "native_width_advertised": 3424,
+      "native_height_advertised": 2856,
+      "metadata_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/16.jp2/info.json"
+    },
+    {
+      "image": 17,
+      "byte_size": 331260,
+      "sha256": "4044e8031f9e9870889a9ef14ae5d3cdb0c668ba2cce4ad2062f789d6c8392f0",
+      "width": 1200,
+      "height": 1015,
+      "url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/17.jp2/full/full/0/default.jpg",
+      "native_width_advertised": 3424,
+      "native_height_advertised": 2896,
+      "metadata_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/17.jp2/info.json"
+    },
+    {
+      "image": 18,
+      "byte_size": 189237,
+      "sha256": "724fb8c6d06681818bb0c4e3286539c1460e5a4716bddf1e287ae425290b2672",
+      "width": 1200,
+      "height": 993,
+      "url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/18.jp2/full/full/0/default.jpg",
+      "native_width_advertised": 3496,
+      "native_height_advertised": 2892,
+      "metadata_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/18.jp2/info.json"
+    }
+  ],
+  "searches": [
+    {
+      "recorded_queries": [
+        "\"Lyturgia Armena\" 1677",
+        "\"Liturgia Armena\" \"1677\" digital",
+        "\"ZYYB9ymm0iAC\"",
+        "\"EAP180/1/1/12\" images",
+        "\"EAP180\" \"Liturgia\"",
+        "\"Lyturgia Armena\" gallica",
+        "\"g_JlAAAAcAAJ\""
+      ],
+      "method": "Web search used for discovery only. Complete British Library catalogue HTML and publicly offered image/metadata bytes retrieved with curl and locally inspected; no model-produced source text retained as a witness.",
+      "bounds": "Two batched search calls, three initial target opens, direct institutional catalogue/EAP/IIIF endpoints. No IA advanced-search campaign, Propaganda institutional catalogue sweep or exhaustive Google/BNF census performed in this bounded lane.",
+      "unexamined_leads": [
+        {
+          "url": "https://books.google.com/books?id=g_JlAAAAcAAJ",
+          "lead": "Liturgia armena1677; Google Play discovery reports64pages. No exact scan acquired/authenticated."
+        },
+        {
+          "url": "https://play.google.com/store/books/details?id=-NQaEX8eIPkC",
+          "lead": "Xorhrdatetr Pataragin Hayoc. Lyturgia armena1677. Discovery only."
+        },
+        {
+          "url": "https://bub.unibo.it/it/bub-digitale/frontespizi-libri-armeni/aula-magna?bid=UBO7867253",
+          "lead": "Bologna frontispiece collection links onward to Lyturgia. No whole scan authenticated."
+        },
+        {
+          "url": "https://catalog.etoncollege.com/B44637",
+          "lead": "Catalogue discovery explicitly lacks native Lyturgia; Latin Codex only; not a replacement."
+        }
+      ],
+      "access_limit": "EAP item UI returned an HTTP 202 challenge with no body. No rights terms or original masters were obtained from that route; no challenge bypass or absence claim follows."
+    }
+  ],
+  "admissibility_limits": {
+    "physical_volume_complete": false,
+    "complete_native_resolution_facsimile_acquired": false,
+    "exact_registered_google_edition_replacement_admitted": false,
+    "canonical_artifact_proposal_admitted": false,
+    "qualified_armenian_legibility_certified": false,
+    "whole_book_transcription_authorized_or_completed": false,
+    "historical_parentage_or_git_ancestry_established": false,
+    "rights": "Public access and the 1677 printing date do not settle rights for these exact EAP image deliveries. Item-page retrieval was challenged; no delivery-specific redistribution basis was obtained. Keep this packet in scratch and preserve the registered Google artifact decision without extending it to EAP photographs.",
+    "script_expertise": "Reviewer claims no qualified Armenian orthographic or paleographic expertise; no literal Armenian transcription is approved by this review."
+  },
+  "remaining_work": [
+    "Authenticate the EAP physical copy and setting against the registered 20-page Google witness; classify any distinct edition/issue explicitly before binding.",
+    "Resolve delivery-specific EAP rights and retention conditions before any tracked artifact proposal.",
+    "Retain a complete documented native-detail facsimile or systematically bounded regions with an exhaustive page/region map.",
+    "Obtain qualified Armenian representative-page legibility and orthographic assessment before production transcription, followed by independent literal collation of the whole declared extent."
+  ],
+  "acquisitions": [
+    {
+      "artifact_label": "bl-catalogue.html",
+      "sha256": "dbb11237bded02a8c5fb1fc914eefb733c2d93f47c5900587ddad0de0e68ab90",
+      "byte_size": 43791,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://searcharchives.bl.uk/catalog/040-002717290"
+    },
+    {
+      "artifact_label": "eap-image-01.jpg",
+      "sha256": "bc7c312c257a0cef5f148e377abf7a96cd885ae35738a82ed9bdc04168797afe",
+      "byte_size": 242818,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/1.jp2/full/full/0/default.jpg"
+    },
+    {
+      "artifact_label": "eap-image-02-info.json",
+      "sha256": "e7d6deb9cc3678dc7e425feb4922f64f284871f093f87d2669024a03f03ab8b9",
+      "byte_size": 710,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/2.jp2/info.json"
+    },
+    {
+      "artifact_label": "eap-image-02.jpg",
+      "sha256": "e03aca5f93e0aa82910bce9515ab41da7ed46a402d482d4b9f030dc648c0f9fc",
+      "byte_size": 181058,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/2.jp2/full/full/0/default.jpg"
+    },
+    {
+      "artifact_label": "eap-image-03.jpg",
+      "sha256": "f4780564807317297d6fd885397252993e452f88c2b609f0c367330685dd16d3",
+      "byte_size": 276838,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/3.jp2/full/full/0/default.jpg"
+    },
+    {
+      "artifact_label": "eap-image-04.jpg",
+      "sha256": "ad94da932a21909c2c06afad53b76090a17d0d5010d458e9ac16685959d632e3",
+      "byte_size": 312742,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/4.jp2/full/full/0/default.jpg"
+    },
+    {
+      "artifact_label": "eap-image-05.jpg",
+      "sha256": "b4ffd4f0fddb7cf4bef0c512cc4236be9d0dabb3ed6c1d806b2f2c5f95a66cfa",
+      "byte_size": 356293,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/5.jp2/full/full/0/default.jpg"
+    },
+    {
+      "artifact_label": "eap-image-06.jpg",
+      "sha256": "e9577d14257cef51284f8ac1924c7d5c76c94aae2357616d45e11bbe85f93133",
+      "byte_size": 335610,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/6.jp2/full/full/0/default.jpg"
+    },
+    {
+      "artifact_label": "eap-image-07-info.json",
+      "sha256": "99209431a39186d9c12f614fa461ecbe7676f025c30d35fb01e522d622b99b52",
+      "byte_size": 710,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/7.jp2/info.json"
+    },
+    {
+      "artifact_label": "eap-image-07-native-region.jpg",
+      "sha256": "b45fef010334bb11a32edf4e69cb9e0bc9532f3086642f1c991f6e0b5875ead6",
+      "byte_size": 408936,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/7.jp2/400,600,1200,1200/full/0/default.jpg"
+    },
+    {
+      "artifact_label": "eap-image-07.jpg",
+      "sha256": "2210410cc8d3b006c7b1585ba21bfe5f24572e4458a01c786d8b1aa6441af217",
+      "byte_size": 326611,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/7.jp2/full/full/0/default.jpg"
+    },
+    {
+      "artifact_label": "eap-image-08.jpg",
+      "sha256": "80a8faa89ef17f437ff67a9977db5cdec36ccf35b61427dddbf9829707694857",
+      "byte_size": 316136,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/8.jp2/full/full/0/default.jpg"
+    },
+    {
+      "artifact_label": "eap-image-09.jpg",
+      "sha256": "37343fddb5a62aa17eb910894060dbb41598b945f545751139d927c5f24ed07a",
+      "byte_size": 330091,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/9.jp2/full/full/0/default.jpg"
+    },
+    {
+      "artifact_label": "eap-image-10.jpg",
+      "sha256": "d51cfddaad5d286a3cbe9a38f710748665085cd1751fb605b58ff3402c7888dc",
+      "byte_size": 329796,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/10.jp2/full/full/0/default.jpg"
+    },
+    {
+      "artifact_label": "eap-image-11.jpg",
+      "sha256": "6a57c5d76f8c5d9e1faf74f8768de9f4621cf1abd4e7f7fb6cb25c3f4e965ecb",
+      "byte_size": 317849,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/11.jp2/full/full/0/default.jpg"
+    },
+    {
+      "artifact_label": "eap-image-12.jpg",
+      "sha256": "8eb032b9b2af8a5c694e22dc689c26ad1e9bf40a2ce338d1d38b1d1c780425ea",
+      "byte_size": 266106,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/12.jp2/full/full/0/default.jpg"
+    },
+    {
+      "artifact_label": "eap-image-13.jpg",
+      "sha256": "eb44de14d237dbb9e532a4ef8d2a2ee63e9f94e93b74c51a999ada377d0c24b1",
+      "byte_size": 255583,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/13.jp2/full/full/0/default.jpg"
+    },
+    {
+      "artifact_label": "eap-image-14.jpg",
+      "sha256": "2825c11d5309e118b248115ef5a42e8ba5fedc510fdef6fe65d4fd74dc668ad5",
+      "byte_size": 363310,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/14.jp2/full/full/0/default.jpg"
+    },
+    {
+      "artifact_label": "eap-image-15.jpg",
+      "sha256": "e525e3608a6299a76113818fe53ebda27d7e08e5ef061551a45b63db0f8a6b19",
+      "byte_size": 328309,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/15.jp2/full/full/0/default.jpg"
+    },
+    {
+      "artifact_label": "eap-image-16.jpg",
+      "sha256": "a5d7d4cefabcda9ef0223207684ede14606bf2f37c472e66e3c0da0278cf41ce",
+      "byte_size": 335938,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/16.jp2/full/full/0/default.jpg"
+    },
+    {
+      "artifact_label": "eap-image-17.jpg",
+      "sha256": "4044e8031f9e9870889a9ef14ae5d3cdb0c668ba2cce4ad2062f789d6c8392f0",
+      "byte_size": 331260,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/17.jp2/full/full/0/default.jpg"
+    },
+    {
+      "artifact_label": "eap-image-18.jpg",
+      "sha256": "724fb8c6d06681818bb0c4e3286539c1460e5a4716bddf1e287ae425290b2672",
+      "byte_size": 189237,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/18.jp2/full/full/0/default.jpg"
+    },
+    {
+      "artifact_label": "eap-image-info.json",
+      "sha256": "6ec7615ae13f5242d6b5a919d21dbcd8ed316c8818ce0808cf05b3f7194f816d",
+      "byte_size": 710,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made."
+    },
+    {
+      "artifact_label": "eap-image-roster.json",
+      "sha256": "a6e1ced0aff3f5566bd9f9f72095200fd3bfccd25900974268e8724c58c182f0",
+      "byte_size": 8660,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made."
+    },
+    {
+      "artifact_label": "eap-info-01.json",
+      "sha256": "6ec7615ae13f5242d6b5a919d21dbcd8ed316c8818ce0808cf05b3f7194f816d",
+      "byte_size": 710,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/1.jp2/info.json"
+    },
+    {
+      "artifact_label": "eap-info-02.json",
+      "sha256": "e7d6deb9cc3678dc7e425feb4922f64f284871f093f87d2669024a03f03ab8b9",
+      "byte_size": 710,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/2.jp2/info.json"
+    },
+    {
+      "artifact_label": "eap-info-03.json",
+      "sha256": "4d9eed7d485eb393f3cb3225cbf1bdfb954d69974d5e3e5c2ee50a06048bd3b4",
+      "byte_size": 710,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/3.jp2/info.json"
+    },
+    {
+      "artifact_label": "eap-info-04.json",
+      "sha256": "077d4bbf6296b1abb8f53d5f2f3e5e6768d504f892e258c2ed22db0958d64e9e",
+      "byte_size": 710,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/4.jp2/info.json"
+    },
+    {
+      "artifact_label": "eap-info-05.json",
+      "sha256": "4c0f0a294421c86b75ab93a5b9d65c1ae0cd5ef0e4fd842b6de5b9eb3cc22e55",
+      "byte_size": 710,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/5.jp2/info.json"
+    },
+    {
+      "artifact_label": "eap-info-06.json",
+      "sha256": "19d8394f53303a1e767008f95f9f73a5f5ad77a48b0518f60b02e3bd825c8cd4",
+      "byte_size": 710,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/6.jp2/info.json"
+    },
+    {
+      "artifact_label": "eap-info-07.json",
+      "sha256": "99209431a39186d9c12f614fa461ecbe7676f025c30d35fb01e522d622b99b52",
+      "byte_size": 710,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/7.jp2/info.json"
+    },
+    {
+      "artifact_label": "eap-info-08.json",
+      "sha256": "29bb7a1265b1fe7eedf55027517364290f833cb5294aa2abc8ce8e5d5ec65789",
+      "byte_size": 710,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/8.jp2/info.json"
+    },
+    {
+      "artifact_label": "eap-info-09.json",
+      "sha256": "50ae5654dd44664c4c5c3871bc6dc601eda13d9ca438d36813f9b8c67d767011",
+      "byte_size": 710,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/9.jp2/info.json"
+    },
+    {
+      "artifact_label": "eap-info-10.json",
+      "sha256": "f59235140f6fcb5b6c73df5dbdba745224187326dd7b4ccdd17619ad26e3b0dc",
+      "byte_size": 711,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/10.jp2/info.json"
+    },
+    {
+      "artifact_label": "eap-info-11.json",
+      "sha256": "c056463524cf0e223357d475d0032933a815bb09106129c2637b80ab39a25a41",
+      "byte_size": 711,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/11.jp2/info.json"
+    },
+    {
+      "artifact_label": "eap-info-12.json",
+      "sha256": "af497c4ab53acf35ae0ed3a26e9846823c20bbbaddbd35055b6ca06e0fef7e69",
+      "byte_size": 711,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/12.jp2/info.json"
+    },
+    {
+      "artifact_label": "eap-info-13.json",
+      "sha256": "5c71ae647311d674df356702397c4e9d4e2a70e52f80289fa6800f095f265eac",
+      "byte_size": 711,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/13.jp2/info.json"
+    },
+    {
+      "artifact_label": "eap-info-14.json",
+      "sha256": "9a3d5f3edc665774841490e7d54b5cbbf7e6eb2ffd4e9d98a9d730d837f19634",
+      "byte_size": 711,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/14.jp2/info.json"
+    },
+    {
+      "artifact_label": "eap-info-15.json",
+      "sha256": "b5095c694a2e7cec8ae56d052629459a95559c30ad83132fef7c9ad32196e444",
+      "byte_size": 711,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/15.jp2/info.json"
+    },
+    {
+      "artifact_label": "eap-info-16.json",
+      "sha256": "1d83b95a2f988981e83a2733876571f0fcd5aa1d0c098063a2b561f569961d05",
+      "byte_size": 711,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/16.jp2/info.json"
+    },
+    {
+      "artifact_label": "eap-info-17.json",
+      "sha256": "7ca742e62d8fdd83efd031cf11bdf00d5f34ccd200573c198708ee26142709d5",
+      "byte_size": 711,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/17.jp2/info.json"
+    },
+    {
+      "artifact_label": "eap-info-18.json",
+      "sha256": "c3d2515e5e8f7e21278ce5d02cebd27e71db8aa04d29b347719d5620d3d6d123",
+      "byte_size": 711,
+      "decision": "defer",
+      "rights_status": "exact-delivery-redistribution-basis-unresolved",
+      "reason": "The reviewed packet establishes public acquisition, not an exact EAP image or web-response repository redistribution basis; the 1677 text date does not license modern targets, annotations or provider presentation. No payload is admitted.",
+      "offline_access_limitation": "An offline checkout retains this exact identity, hash, dimensions and boundary account, plus the separately registered Google witness; it cannot reopen this EAP delivery until an affirmative exact-artifact retention decision is made.",
+      "source_url": "https://images.eap.bl.uk/EAP180/EAP180_1_1_12/18.jp2/info.json"
+    }
+  ],
+  "rights": "No exact EAP payload, raster, text or derivative is admitted to Git. Existing Google source-library rights remain separately owned and do not transfer to the EAP object.",
+  "uses": [],
+  "versions": []
+}

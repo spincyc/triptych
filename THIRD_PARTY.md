@@ -655,6 +655,116 @@ governs its reuse; it is excluded from Triptych's CC BY 4.0 grant.
 Its figures, references and original notices remain intact. No endorsement
 by the author or publisher is implied.
 
+Acquisitions registered 20 October 2026 (monza-historical):
+
+
+Antonio Francesco Frisi, Memorie storiche di Monza e sua corte, tomo III (Milano: Stamperia di Gaetano Motta, 1794). University of Illinois Urbana-Champaign copy, Internet Archive digitization memoriestoriched03fris. Underlying 1794 edition and faithful scan treated as public domain in the United States. No project CC BY claim is made over external source material; provider attribution is retained as provenance.
+
+
+Adalbert Ebner, Quellen und Forschungen zur Geschichte und Kunstgeschichte des Missale Romanum im Mittelalter: Iter Italicum (Freiburg im Breisgau: Herder, 1896). PIMS / University of Toronto copy, Internet Archive digitization quellenundforsch00ebne. Underlying 1896 edition and faithful scan treated as public domain in the United States. No project CC BY claim is made over external source material; provider attribution is retained as provenance.
+
+Acquisitions registered 20 October 2026 (ravenna):
+
+
+Earlier Latin Manuscripts Project, Mark Stansbury and contributors, University of Galway, public catalogue state acquired 20 October 2026. Complete CSV and seven catalogue HTML deliveries retain CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/); source grant: https://elmss.universityofgalway.ie/about#license. The HTML derivatives replace one ephemeral request-token input with an explanatory comment and preserve all source-bearing content. Original token-bearing delivery bytes are excluded. Attribution, noncommercial restriction and change notice apply; these bytes are excluded from the project's CC BY offer.
+
+
+Robin Böckerman, cataloguer; Patrik Granholm, editor; National Library of Sweden, A 135a catalogue description, revised 25 August 2026 (https://www.manuscripta.se/ms/101123). Complete TEI and factual IIIF metadata delivery retained under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Modern catalogue metadata are separate from the historical manuscript images. No changes to these two exact deliveries; no project relicensing.
+
+
+Anonymous historical scribes, Gelasian sacramentary fragments: National Library of Sweden, A 135a, recto and verso; University Library of Wrocław, Akc. 1955/3, recto and verso. Four complete side images of the surviving two strips, not a complete codex. The holding libraries identify the object images as Public Domain Mark 1.0 (https://creativecommons.org/publicdomain/mark/1.0/). Delivery metadata: https://www.manuscripta.se/iiif/101123/manifest.json and https://bibliotekacyfrowa.pl/publication/84013. Historical work and faithful two-dimensional images treated as public domain in the United States; institutional attribution retained as provenance.
+
+
+Anonymous historical scribes, Stuttgart Württembergische Landesbibliothek Cod. fragm. 100A and Montecassino Archivio della Badia 271, palimpsest old 2. Complete catalogue sample images delivered by Earlier Latin Manuscripts, University of Galway (CLA IX 1361 and CLA III 376). Ancient handwriting and faithful mechanical two-dimensional facsimiles treated as public domain in the United States under Copyright Office Compendium 313.4(A). No Galway PDM grant or complete-codex acquisition is asserted; the sample images include the palimpsest objects and do not establish complete undertexts.
+
+
+USUARIUM: A Digital Library and Database for the Study of Latin Liturgical History in the Middle Ages and Early Modern Period, built by Miklós István Földváry et al., ELTE Research Group of Liturgical History, from 2015 onwards (https://usuarium.elte.hu/). Twelve derivatives preserve all factual catalogue tables and headings: names, titles, shelfmarks, identifiers, dates, genre and physical description, with attribution and exact raw-parent SHA-256. Individual bibliographic facts and short labels are treated as unprotected in the United States; no site wrapper, modern literary article or private Collection image is retained. No fictitious CC grant is asserted.
+
+
+University Library of Wrocław, Akc. 1955/3, complete institutional DC metadata and two-canvas mechanical IIIF manifest, acquired 20 October 2026 (https://bibliotekacyfrowa.pl/publication/84013; https://glam.uwr.edu.pl/iiif/RKP_AKC_1955_3_30045/manifest). Individual factual metadata and technical identifiers are treated as unprotected in the United States. The DC-only derivative decodes entities and records the exact raw HTML SHA-256; the complete technical manifest is unchanged. Its 701–800 date is not silently substituted for the catalogue's 701–750. No dLibra wrapper is retained and no CC licence is invented.
+
+
+Andrzej Suski, Łacińskie rękopisy liturgiczne zachowane jako palimpsesty. Katalog, Liturgia Sacra (2022), pp. 163–205, DOI 10.25167/ls.4803 (https://czasopisma.uni.opole.pl/index.php/ls/article/view/4803). Whole 43-page, 416,203-byte publisher PDF retained unchanged under the exact article's CC BY-NC-SA 4.0 grant (https://creativecommons.org/licenses/by-nc-sa/4.0/). Attribution, noncommercial and share-alike requirements apply; the source is excluded from the project's CC BY offer. This article is a modern catalogue, not an original manuscript collation.
+
+Acquisitions registered 20 October 2026 (monza-westwell):
+
+
+Arthur Westwell, The Carolingian Sacramentaries of Saint-Amand: Art, Script, and Liturgical Creativity in an Early Medieval Monastery (Berlin/Boston: Walter de Gruyter / Medieval Institute Publications, 2024), printed pp.6,419–421. © 2024 the author(s). Licensed CC BY-NC-ND 4.0 International, https://creativecommons.org/licenses/by-nc-nd/4.0/. Source: https://epub.uni-regensburg.de/59552/1/10.1515_9781501517563-1.pdf. Unchanged authored text from complete selected PDF text-layer pages, technically converted to plain text; no content edits. License disclaimer of warranties and limitation of liability, section 5, remain applicable. Figure A2.1 and all other separately credited illustrations are excluded. This source payload is excluded from the project's CC BY 4.0 offer; noncommercial and no-adaptation conditions remain attached.
+
+Acquisitions registered 20 October 2026 (ravenna-westwell):
+
+
+Arthur Westwell, The Carolingian Sacramentaries of Saint-Amand: Art, Script, and Liturgical Creativity in an Early Medieval Monastery (Berlin/Boston: De Gruyter, 2024), DOI 10.1515/9781501517563. © 2024 the author(s). CC BY-NC-ND 4.0. Four exact unchanged author-text excerpts; third-party material remains excluded. No endorsement is implied. Retained exact spans: printed p. 42 n. 121; p. 56 n. 180; initial part of the p. 59 Ravenna paragraph ending 'govern this process.'; final authored part of p. 62 n. 201 beginning 'Gamber attempted to date'. https://creativecommons.org/licenses/by-nc-nd/4.0/ Creative Commons license terms for re-use do not apply to any content that is not part of the Open Access publication (such as graphs, figures, photos, excerpts, etc.). These may require obtaining further permission from the rights holder. The obligation to research and clear permission lies solely with the party re-using the material. The complete illustrated PDF and full 514-page text layer remain excluded. These third-party bytes are excluded from the project's CC BY offer.
+
+Acquisitions registered 20 October 2026 (hungarian):
+
+
+Acquisitions registered 20 October 2026 (Hungarian historical-book control):
+
+Four exact Google Books flat JPEGs, volume `jr1nAAAAcAAJ`, page IDs PA1, PP3,
+PP4 and PP7, from a volume catalogued as *Leiturgiarion* (Lviv: Mihail Sliozka,
+1646), holding attributed to the National Library of the Czech Republic.
+PA1 is a printed service heading; the other three images are blank preliminary
+leaves. Original title/date leaves, a physical shelfmark and complete-volume
+acquisition were not established. These exact 184,888 bytes preserve Google's
+unchanged digitizer watermark. The historical flat content and mechanical
+reproductions have an artifact-specific United States public-domain/originality
+basis; Google's stamp retains its own status under
+`src/sources/inventories/google-usage-guidelines-rights-v1.toml`. No project
+CC BY 4.0 grant is made over these external bytes or Google's marks. Google's
+additional terms for purchased Digital Content are contextual information,
+not an affirmative licence for these free images. No modern provider HTML,
+undated binding-cover image, placeholder or museum object photograph is included.
+
+
+Acquisitions registered 20 October 2026 (padua):
+
+
+### Padua research sources retained on 20 October 2026
+
+The complete [Calendaria.org metadata dataset](https://www.calendaria.org/data/calendaria.json),
+version 0.1 (2026-01-30), edited by Luca Avellis, Università degli Studi di Bari
+Aldo Moro, was retrieved on 20 October 2026 and is retained unchanged under
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), according to the
+project's [dataset license](https://www.calendaria.org/license.txt). The retained
+JSON contains all 2507 metadata records; it includes no linked manuscript images.
+Images, logos and other third-party content retain their separate rights. The
+dataset's own license governs these bytes independently of Triptych's license.
+
+Anna Vildera's “Formulari processionali per il canto del vangelo Liber
+generationis,” *De musica disserenda* 9(1–2) (2013), pp. 139–155,
+[DOI 10.3986/dmd09.1-2.08](https://doi.org/10.3986/dmd09.1-2.08), is retained as
+the complete unchanged publisher PDF, retrieved on 20 October 2026. ZRC SAZU is
+the original publisher. The article's linked [publisher rights policy](https://ojs.zrc-sazu.si/dmd/prispevki)
+explicitly licenses articles through volume 19 no. 2 (2023) under
+[CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).
+This file is excluded from Triptych's CC BY 4.0 license. Its unchanged
+noncommercial distribution retains attribution, source, DOI and license;
+adapted articles and translations are not permitted by this grant. The
+publisher excludes third-party material from its grant. Existing PDF technical
+permission flags remain unchanged; Triptych has added no DRM.
+
+
+### Roman acquisition factual metadata and U.S. Copyright Office references (20 October 2026)
+
+The retained `facts.json` artifacts under `src/sources/works/iccu/sbn-catalogue/`,
+`src/sources/works/internet-archive/catalogue-and-reader-metadata/`, and
+`src/sources/works/google-books/volumes-service-operational-responses/` are
+project-created, bounded factual selections. Their own file-level notice applies
+the project's CC BY 4.0 terms to the selection and provenance metadata. Individual
+facts, source titles and identifiers are not claimed as project-authored words.
+The exact raw host responses remain withheld and hash-identified; no licence over
+their databases, host UI, user notes or descriptions is asserted. Internet Archive
+account/favorites collection identifiers and modern liturgical bodies are omitted.
+
+The two exact `source.html` artifacts under
+`src/sources/works/united-states-copyright-office/automated-databases/` and
+`src/sources/works/united-states-copyright-office/37-cfr-202-1-material-not-subject-to-copyright/`
+are official U.S. Government guidance/regulatory HTML, public domain in the United
+States under 17 U.S.C. 105. They are excluded from the project's CC BY 4.0 offer.
+The grant does not reach external linked resources, which are not retained here.
+Their artifact manifests preserve exact source URLs, dates, byte sizes and hashes.
+
 ## Reuse and Contributions
 
 Before reusing an excluded passage, consult its citation, the nearby research

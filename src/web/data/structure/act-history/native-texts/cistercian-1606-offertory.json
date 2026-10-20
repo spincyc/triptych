@@ -1,0 +1,383 @@
+{
+  "adapter_id": "native-book:cistercian-1606-offertory",
+  "binding_sha256": "7dc837f08ecfca3eadd8c423bfe7f7907c13823bf5a8af7fedb8a4d3b5868e61",
+  "catalogue_witness_ids": [
+    "western:cistercian-1606"
+  ],
+  "counts": {
+    "languages": {
+      "la": 7
+    },
+    "units": 7,
+    "whitespace_tokens": 164
+  },
+  "id": "cistercian-1606-offertory",
+  "schema": "triptych-eucharistic-native-text/v1",
+  "scope": {
+    "complete_declared_extent": true,
+    "description": "Complete functional offertory constituent within the native Præparationes ante Missam division, Paris 1606 printed p.181 right column (BSB canvas 235): from the red Offertorio dicto, eleuatis patena cum pane, & calice, & genufle. dicat. instruction through the final Amen of the Dominus sit response. Includes all three standalone red rubrics, the complete Suscipe Trinitas and In spiritu humilitatis prayers, the Orate invitation, printed red response cue and complete Dominus response. Offertory names a bounded function introduced by the source wording, not a separately printed chapter title. Creed above and in the left column, subsequent prefaces and all other book divisions remain outside this constituent. Whole-book and complete-Ordinary text coverage remain partial; no text is inherited from another edition.",
+    "extent_kind": "constituent",
+    "known_extent_pages": 1,
+    "known_extent_units": 7,
+    "omitted_book_divisions": [
+      "The Creed above the opening instruction and in the left column of printed p.181",
+      "Other material of Præparationes ante Missam before the Offertorio dicto opening",
+      "The following prefaces, Canon, communion and all other Ordinary outside the stated bounds",
+      "Calendar, propers, lectionary, chant and all other missal divisions",
+      "Page furniture, running head, signature q, show-through and glyph-diplomatic typography"
+    ],
+    "status": "complete-native-constituent",
+    "whole_book_complete": false
+  },
+  "sources": [
+    {
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00235-2646b0f5",
+      "record_type": "artifact",
+      "rights_basis": "The identified 1606 printed text is public domain by expiration of its publication term. This particular Bayerische Staatsbibliothek digital image is supplied under No Copyright - Non-Commercial Use Only 1.0, https://rightsstatements.org/vocab/NoC-NC/1.0/ ; this is a rights statement, not a Creative Commons license. The provider notice permits noncommercial copying and redistribution subject to its noncommercial condition. Retained here for noncommercial scholarly source comparison with attribution: München, Bayerische Staatsbibliothek, 2 Liturg. 205 a, bsb10496382. Image restrictions are not attributed to the underlying historical Latin text. These source images are excluded from Triptych’s CC BY 4.0 license; no unrestricted image reuse is asserted.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "permission",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10496382_00235/full/1500,/0/default.jpg"
+    },
+    {
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-checked-latin-9c003023",
+      "record_type": "artifact",
+      "rights_basis": "Faithful bounded transcription of original Latin from the identified Paris 1606 printing, whose United States publication term has expired. No modern translation or critical reconstruction is imported. The historical wording is separate from the provider’s particular image rights: the exact BSB image retains its No Copyright - Non-Commercial Use Only 1.0 condition and attribution to München, Bayerische Staatsbibliothek, 2 Liturg. 205 a, bsb10496382. Third-party historical text is excluded from Triptych’s CC BY 4.0 license. Scholarly availability does not authorize contemporary liturgical use.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "transformation": "Direct reading normalization of retained BSB canvas 235, printed p.181 right column: long s becomes s; display initials merge in sentence case; line-end word divisions and printed line wraps are joined within each semantic block; printed nasal suspension bars are expanded (including chorum, dicens, meum and sacrifícium); printed u/v, æ/œ, accents, abbreviations, punctuation and ampersands are retained. The stylized red crossed-R response cue followed by m. is represented as ℟m., without expanding the abbreviation. No absent Amen, prayer ending or familiar Roman wording is supplied. Six NFC UTF-8 physical lines, each a complete semantic block, end in LF. The Orate invitation and Dominus response retain their distinct source paragraph boundary. The spoken wording of those two blocks is byte-identical to the corresponding spans of existing checked orate-response-checked-latin-2bab0892; this broader source-derived selection restores the printed response cue omitted by that narrower spoken-only comparison. The separately bound Suscipe Trinitas reuses its existing checked passage unchanged. Rubrics are separate lines/units; their red ink, and red initials in the prayers, are recorded in the extent census rather than encoded as colour. This is a normalized reading transcription, not a glyph-diplomatic facsimile."
+    },
+    {
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.suscipe-trinitas-checked-latin-0c61e53d",
+      "record_type": "artifact",
+      "rights_basis": "Faithful bounded transcription of original Latin from the identified Paris 1606 printing, whose United States publication term has expired. This contains no modern translation or new critical reconstruction. The historical text is separate from the provider’s particular image rights; the BSB source image retains its NoC-NC condition and attribution. Third-party text is excluded from Triptych’s CC BY 4.0 license. Scholarly availability does not authorize contemporary liturgical use.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "transformation": "Manual transcription of the exact retained image SHA-256 2646b0f5aa0a2bb55fd1042680a673e6adb99ec66913f754a8ceeac0f14830d7 at Cistercian missal 1606, printed p. 181, right column; BSB canvas 00235. Normalize long s to s; merge display initials with the following letters in sentence case; remove line wraps and line-end word division; expand printed nasal suspension bars; retain printed u/v, æ/œ, accents, B. abbreviations, punctuation and the 1657 (vel meis) alternative. Separate standalone and intervening red rubrics from the spoken body, recording their source positions below; omit response cue glyphs from spoken text. Preserve the 1657 inline alternative (vel meis), including its red vel, as printed textual evidence. Join spoken blocks with one space. Preserve the source’s actual short endings rather than expanding them from other editions. Write one NFC UTF-8 line followed by one LF. These disclosed reading conventions make this a normalized transcription, not a diplomatic reproduction. Spoken block metadata (zero-based half-open Unicode codepoint ranges in the NFC body, excluding terminal LF): [{\"block\":1,\"codepoint_range\":[0,440],\"speaker\":\"priest\",\"incipit\":\"Súscipe Sancta Trínitas vnus\"}]. Separate source rubric context: Offertorio dicto, eleuatis patena cum pane, & calice, & genufle. dicat. Rubric words and positions checked independently; English labels are editorial wrappers. Typography and punctuation of context remain accessible in the retained source image."
+    },
+    {
+      "authority": "Cistercian Order",
+      "date": "1606",
+      "id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "language": "la",
+      "publication": "Parisiis, In Officina H. de Marnef, apud Dionysiam Cauellat, 1606",
+      "record_type": "edition",
+      "title": "Missale ad vsum sacri Ordinis Cisterciensis. Iuxta decreta Capituli Generalis dicti ordinis, Romano conformius redditum, primo accentibus ornatum & auctum"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-checked-latin-9c003023",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-dominus-response",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-checked-latin-9c003023",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-in-spiritu-humilitatis",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-checked-latin-9c003023",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-in-spiritu-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-checked-latin-9c003023",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-opening-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-checked-latin-9c003023",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-orate-invitation",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-checked-latin-9c003023",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-orate-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.suscipe-trinitas-checked-latin-0c61e53d",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.suscipe-trinitas",
+      "record_type": "passage"
+    }
+  ],
+  "stage_ids": [
+    "cistercian-1606-1657-1606"
+  ],
+  "title": "Cistercian 1606, Præparationes ante Missam: complete offertory constituent",
+  "units": [
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "opening-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-checked-latin-9c003023",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-checked-latin-9c003023",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-opening-rubric",
+      "source_locator": "Paris 1606 Cistercian missal, printed p.181 right column; BSB canvas 235; normalized physical line 1.",
+      "source_order": 1,
+      "text": "Offertorio dicto, eleuatis patena cum pane, & calice, & genufle. dicat.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "af1d4573f87bf8b1bf34f68a1b525c81a35ecf5953af4f5ad59b548e4fe6663f",
+      "unit_id": "unit.cistercian-1606.offertory.opening-rubric",
+      "witness_id": "cistercian-1606-bsb-p181",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "suscipe-trinitas"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.suscipe-trinitas-checked-latin-0c61e53d",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.suscipe-trinitas-checked-latin-0c61e53d",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.suscipe-trinitas",
+      "source_locator": "Cistercian missal 1606, printed p. 181, right column; BSB canvas 00235.",
+      "source_order": 2,
+      "text": "Súscipe Sancta Trínitas vnus Deus hanc oblatiónem: quam tibi offérimus in memóriam beátæ passiónis, resurrectiónis, & ascensiónis Dómini nostri Iésu Christi, & in honórem beátæ Maríæ semper Vírginis genitrícis eiúsdem Dómini nostri, & ómnium Sanctórum & Sanctárum, cœléstium virtútum, & viuíficæ Crucis: vt eam acceptáre dignéris pro nobis peccatóribus, & pro animábus ómnium fidélium defunctórum. Qui viuis & regnas Deus. Per ómnia sǽcula.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "f4ef4201b6fd2a2d3b81da889d8706d698d73f6c14e36d2e7f73b291820b76ac",
+      "unit_id": "unit.cistercian-1606.offertory.suscipe-trinitas",
+      "witness_id": "cistercian-1606-bsb-p181",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "in-spiritu-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-checked-latin-9c003023",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-checked-latin-9c003023",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-in-spiritu-rubric",
+      "source_locator": "Paris 1606 Cistercian missal, printed p.181 right column; BSB canvas 235; normalized physical line 2.",
+      "source_order": 3,
+      "text": "Hanc sequentem orationem dicat Sacerdos incuruus ante altare post offerendam.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "1859bab0e308b9bf128db5da043cae4acf243528e164abac84328259094b3a28",
+      "unit_id": "unit.cistercian-1606.offertory.in-spiritu-rubric",
+      "witness_id": "cistercian-1606-bsb-p181",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "in-spiritu-humilitatis"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-checked-latin-9c003023",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-checked-latin-9c003023",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-in-spiritu-humilitatis",
+      "source_locator": "Paris 1606 Cistercian missal, printed p.181 right column; BSB canvas 235; normalized physical line 3.",
+      "source_order": 4,
+      "text": "In spíritu humilitátis & in ánimo contríto suscipiámur, Dómine, à te, & sic fiat sacrifícium nostrum, vt à te suscipiátur hódie, & pláceat tibi Dómine Deus.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "0571780570f988848e59713aca331785fe8cefcae85989bb7aa45cdbf2e1a2a7",
+      "unit_id": "unit.cistercian-1606.offertory.in-spiritu-humilitatis",
+      "witness_id": "cistercian-1606-bsb-p181",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "orate-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-checked-latin-9c003023",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-checked-latin-9c003023",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-orate-rubric",
+      "source_locator": "Paris 1606 Cistercian missal, printed p.181 right column; BSB canvas 235; normalized physical line 4.",
+      "source_order": 5,
+      "text": "Postea erectus vertat se versus chorum dicens.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "52a72fd9f26ac5d5d7d68d9ed83e520121ca6a2aff31381911b4c85e7a737ada",
+      "unit_id": "unit.cistercian-1606.offertory.orate-rubric",
+      "witness_id": "cistercian-1606-bsb-p181",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "invitation",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "orate-invitation"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-checked-latin-9c003023",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-checked-latin-9c003023",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-orate-invitation",
+      "source_locator": "Paris 1606 Cistercian missal, printed p.181 right column; BSB canvas 235; normalized physical line 5.",
+      "source_order": 6,
+      "text": "Oráte, fratres, pro me peccatóre: vt meum páriter ac vestrum in conspéctu Dómini acceptábile fiat sacrifícium.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "e98e3dfe198f15c1191adccd2a03f4591549793fd6d51ca24d08e11879a3cf60",
+      "unit_id": "unit.cistercian-1606.offertory.orate-invitation",
+      "witness_id": "cistercian-1606-bsb-p181",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "response-with-cue",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "offertory",
+        "dominus-response"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-checked-latin-9c003023",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-checked-latin-9c003023",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.offertory-dominus-response",
+      "source_locator": "Paris 1606 Cistercian missal, printed p.181 right column; BSB canvas 235; normalized physical line 6.",
+      "source_order": 7,
+      "text": "℟m. Dóminus sit in corde tuo & in lábiis tuis, suscipiátque de mánibus tuis sacrifícium istud: & oratiónes tuæ ascéndant in memóriam ante Deum pro nostra, & totíus pópuli salúte. Amen.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "e253cd015066923a2b0ba212ff0d044b6e3e7eabff7d7199aee244834e9b73fc",
+      "unit_id": "unit.cistercian-1606.offertory.dominus-response",
+      "witness_id": "cistercian-1606-bsb-p181",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    }
+  ],
+  "witnesses": [
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00235-2646b0f5",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "cistercian-1606-bsb-p181",
+      "scope_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    }
+  ]
+}

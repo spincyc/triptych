@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.arthur-westwell.carolingian-sacramentaries-of-saint-amand.2024-de-gruyter.ravenna-authored-printed-62-note-201-authored-part-fd924f51"
+edition_id = "edition.arthur-westwell.carolingian-sacramentaries-of-saint-amand.2024-de-gruyter"
+artifact_type = "unchanged-authored-text-excerpt"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "licensed"
+license = "CC-BY-NC-ND-4.0"
+rights_basis = "The author's exact CC BY-NC-ND 4.0 grant permits noncommercial sharing in whole or part, subject to attribution and notices (2(a)(1)); necessary technical format changes are not Adapted Material (2(a)(4)). These four inspected spans are unchanged Westwell-authored prose and catalogue notes. The selected footnotes contain bibliographic names/titles/identifiers, not the separately authored modern literary quotation identified in note 194. No blanket clearance of other excerpts is asserted."
+source_url = "https://epub.uni-regensburg.de/59552/1/10.1515_9781501517563-1.pdf"
+retrieved = "2026-10-20"
+sha256 = "fd924f51128b2cc1d91d948aac101959da0a7ac2f0738ae9de63e1a96b64dea6"
+byte_size = 659
+path = "src/sources/works/arthur-westwell/carolingian-sacramentaries-of-saint-amand/editions/2024-de-gruyter/artifacts/ravenna-authored-printed-62-note-201-authored-part-fd924f51/printed-62-note-201-authored-part.txt"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.arthur-westwell.carolingian-sacramentaries-of-saint-amand.2024-de-gruyter.university-pdf-57d03199"
+transformation = "Mechanically extract the PDF text layer with pdftotext -layout, then retain this exact contiguous UTF-8 byte range unchanged. No spelling, wording, punctuation, extraction-character or line-break normalization; no raster figure copied. Exact intermediate text-layer SHA-256 17c2a6b78de833cabe7e62bb09d21e6b8029a1d696674da66be4f7cc45b8faf9; zero-based half-open UTF-8 byte range [226182, 226841]. The complete intermediate text is excluded from retention."
+provenance = "Arthur Westwell, De Gruyter 2024 book, university repository delivery. Exact PDF SHA-256 57d0319927d0dd7dd8a7705db3eeb29b19a6a2f6878ec79b384c5065934a4cf0. Source bytes were mechanically extracted and sliced without model mediation. Shared work, edition and raw PDF records are supplied by the separately reviewed Monza proposal."
+notes = "Contiguous authored final part of note 201 on Stockholm/Wrocław strips and the limits of palaeographic dating; preceding quoted CLA labels and bibliography are excluded. PDF page 88, printed page 62, note 201. Arthur Westwell, The Carolingian Sacramentaries of Saint-Amand: Art, Script, and Liturgical Creativity in an Early Medieval Monastery (Berlin/Boston: De Gruyter, 2024), DOI 10.1515/9781501517563. © 2024 the author(s). CC BY-NC-ND 4.0. Four exact unchanged author-text excerpts; third-party material remains excluded. No endorsement is implied. Creative Commons license terms for re-use do not apply to any content that is not part of the Open Access publication (such as graphs, figures, photos, excerpts, etc.). These may require obtaining further permission from the rights holder. The obligation to research and clear permission lies solely with the party re-using the material. Only this exact span is retained; no complete chapter, book, source witness or separately authored literary quotation is admitted."

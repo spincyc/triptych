@@ -1,0 +1,40 @@
+{
+  "schema": "triptych-source-factual-extract-v1",
+  "rights_notice": "Project-created selection of factual metadata, distributed under Triptych's CC BY 4.0 terms. The source's individual facts and titles are not claimed as project-authored expression. This file contains no liturgical body, host UI, user favorites/account identifiers or unselected descriptive prose.",
+  "source_artifact_id": "artifact.iccu.sbn-catalogue.2026-10-20-response-states.raw-sbn-missale-control-54a09762",
+  "source_sha256": "54a09762113f7d950d7defc9fae2bfd67adae862fa8f2fa5dd117a3ecf62e2ee",
+  "source_bytes": 153632,
+  "source_url": "https://opac.sbn.it/o/opac-api/titles-search-full-post",
+  "method": "POST form",
+  "params": {
+    "core": "sbn",
+    "monocampo": "Missale"
+  },
+  "facts": {
+    "total": 3732,
+    "query": "%28any_notitle%3AMissale%29",
+    "returned_result_count": 20,
+    "returned_identifiers": [
+      "ITICCUCNCE059339",
+      "ITICCUCNCE011564",
+      "ITICCUMSM0116906",
+      "ITICCUUSM1977177",
+      "1053435",
+      "1732809",
+      "1154497",
+      "1154861",
+      "1154866",
+      "954192",
+      "942448",
+      "942452",
+      "942515",
+      "1151901",
+      "942548",
+      "1002391",
+      "1162549",
+      "922324",
+      "1118464",
+      "1118472"
+    ]
+  }
+}

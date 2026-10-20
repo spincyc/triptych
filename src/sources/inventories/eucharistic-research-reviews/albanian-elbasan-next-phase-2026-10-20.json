@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "albanian-elbasan-next-phase-2026-10-20",
+  "title": "Elbasan Catholic celebrant-book search: exact archival targets and unresolved book identity",
+  "lane": "albanian-elbasan",
+  "side": "eastern",
+  "checked_on": "2026-10-20",
+  "reviewed_on": "2026-10-20",
+  "coverage_rows": [
+    "albanian"
+  ],
+  "target_inventory": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
+  "semantics": "Project-created source and review metadata only. The sources identify archive series and uninspected original targets; no celebrant title, candidate, stage, transition, local receipt or complete text is established.",
+  "review_files": {
+    "storage": "Disposable research packet and independent review remain outside Git; exact hashes identify the reviewed evidence.",
+    "packet_sha256": "eaf24bcbd4110130664615b91cca2319263228a78c8b84c6b73dde64b406f0f4",
+    "independent_review_sha256": "3ff1adaa7557d591e998cc6e4f71351baafe499537d32682f703f75ab3416eed",
+    "inventory_proposal_sha256": "3dcb835d8b72277880cbc33e2e96644fea00f1045545eaed657fdd73cfd1e427",
+    "coverage_proposal_sha256": "eedf68d1d82a70bca7bda77d81878295e50e178359ec974930464e71b964e8d7",
+    "search_extent_sha256": "538976343d3dca29f4218b03b4f535f4bff0723e633f3b2e336a7d5e75a5672a",
+    "verdict": "accept-bounded-source-findings-with-explicit-integration-correction"
+  },
+  "integration": {
+    "new_source_ids": [
+      "albanian-src-trani2007-archive-census",
+      "albanian-src-murzaku2007-scarpelli-leads",
+      "albanian-src-gori2021-archive-access"
+    ],
+    "new_candidate_ids": [],
+    "new_stage_ids": [],
+    "new_transition_ids": [],
+    "source_url_duplicates_added": 0,
+    "review_corrections": [
+      {
+        "id": "ALB-INT-001",
+        "disposition": "applied",
+        "action": "Removed all three research_artifact_path fields before tracking; retained exact acquired hashes, sizes, source URLs and dated limits."
+      }
+    ],
+    "coverage_update": "Albanian route and inventory now name exact archive series, protocols, report date and page targets while retaining empty candidate and stage arrays.",
+    "fingerprint_refresh": "Deferred to final reviewed input freeze; this receipt grants no automatic fingerprint acceptance."
+  },
+  "uses": [
+    {
+      "id": "albanian",
+      "disposition": "exact-local-book-unidentified",
+      "inspected_sources": [
+        "albanian-src-trani2007-archive-census",
+        "albanian-src-murzaku2007-scarpelli-leads",
+        "albanian-src-gori2021-archive-access"
+      ],
+      "checked_source_loci": [
+        {
+          "source_id": "albanian-src-trani2007-archive-census",
+          "loci": [
+            "DGA 2007 printed p. 244 / PDF p. 242: Rito bizantino / Albanesi from 1928, 16 boxes",
+            "printed p. 374 / PDF p. 372: de Meester–Scarpelli correspondence at Greek College",
+            "printed p. 496 / PDF p. 494: Grottaferrata holdings and then-stated access limits"
+          ],
+          "ceiling": "Archive finding aid; no mission original or liturgical book inspected."
+        },
+        {
+          "source_id": "albanian-src-murzaku2007-scarpelli-leads",
+          "loci": [
+            "Murzaku, Jemi transcription of Besa July–September 2007, notes 5, 13–14 and second sequence 1–7"
+          ],
+          "ceiling": "Modern scholarly mediation; its references identify originals that remain uninspected."
+        },
+        {
+          "source_id": "albanian-src-gori2021-archive-access",
+          "loci": [
+            "15 February 2021, Memoria storica e servizio alla ricerca"
+          ],
+          "ceiling": "Dated institutional description of records through 1958, finding aids and reproduction service; no present-access guarantee."
+        }
+      ],
+      "next_originals": [
+        "ACCO Prot. 441/28, Nr. X: Scarpelli, Terza Relazione, 10 January 1930, pp. 37–50; identified through Murzaku, not inspected.",
+        "ACCO Prot. 441/28, Nr. III p. 19, 29 August 1929 letter; Nr. IV p. 20, 8 September 1929 report; Nr. VI p. 26, 10 November 1929 letter; all mediated and uninspected.",
+        "AVPSJ, Albania II, Corrispondenza Epistolare dei Nostri, 1914–1944, fasc. 1926–1929: Cordignano's 1929 Relazione Intorno alla Chiesa Unita di Elbasan, p. 1; mediated and uninspected.",
+        "Greek College de Meester–Scarpelli correspondence and any Elbasan Catholic sacristy or library inventory naming title, imprint, approbation, source exemplar and dated use."
+      ],
+      "rejected_transfers": [
+        "Orthodox Albanian books",
+        "Italo-Albanian books",
+        "Buzuku Roman-related witness"
+      ],
+      "census_limit": "Current census classification remains separate and unresolved."
+    }
+  ],
+  "searches": [
+    {
+      "scope": "One research pass over 39 exact query strings. Search-result pages, cited public pages and downloaded complete files are the search boundary; no exhaustive library, archive, manuscript or Church census is asserted. No paid or credentialed content, no contacts, no private data sources.",
+      "endpoint": "General web search with recorded site-filter queries; publicly served pages and complete offered files.",
+      "query_count": 39,
+      "exact_queries": [
+        "Elbasan \"Scarpelli\" liturgia libri",
+        "Elbasan \"Papamihali\" libri liturgici",
+        "\"Albania\" \"rito bizantino\" \"libri\" \"Elbasan\"",
+        "\"Elbasan\" \"liturgical\" books Catholic",
+        "\"Elbasan\" \"Skarpeli\" \"liturgji\"",
+        "\"Scarpelli\" \"messale\"",
+        "\"Elbasan\" \"libri liturgici\"",
+        "\"Elbasan\" \"messa\" \"albanese\" \"cattolica\"",
+        "\"Pietro Scarpelli\" \"liturgia\"",
+        "\"Pjet\" \"Skarpeli\" \"lib\"",
+        "\"Elbasan\" \"messale\" cattolica",
+        "\"Elbasan\" \"eucologio\"",
+        "\"Scarpelli\" \"liturgica\" albanese",
+        "\"Elbasan\" \"Liturgy\" \"Albanian\" \"Basilian\"",
+        "\"Elbasan\" \"liturgia\" \"lingua\" \"1929\"",
+        "\"Per una conoscenza dei frati Minori Conventuali di rito bizantino-greco\"",
+        "\"Munarini\" \"La Missione d’Albania\" libri",
+        "\"Elbasan\" \"liturgici\" \"basiliani\"",
+        "\"Scarpelli\" \"liturgikon\"",
+        "\"Elbasan\" \"liturgical books\" \"Catholic\"",
+        "\"Scarpelli\" \"books\" \"liturgy\"",
+        "\"Scarpelli\" \"messali\"",
+        "\"Elbasan\" \"Hieratikon\"",
+        "site.orientchurch.va archivio storico accesso archivio Pio XII inventari",
+        "site.abbaziagreca.it archivio missioni Albania Elbasan",
+        "\"Scarpelli\" \"Relazione sulle\"",
+        "\"Elbasan\" \"libri\" \"Sincero\"",
+        "\"\"Relazione con Sommario\"\" \"Albania\"",
+        "\"\"441/28\"\" \"Scarpelli\"",
+        "\"\"Elbasan\"\" \"\"liturgici\"\"",
+        "\"\"Elbasan\"\" \"\"Euchologion\"\"",
+        "\"Albania\" \"Scarpelli\" \"libri greci\"",
+        "\"Elbasan\" \"Greco-cattolica\" \"libri\"",
+        "site.catalogo.pusc.it Scarpelli liturgia",
+        "site.opac.sbn.it \"Scarpelli\" \"Pietro\"",
+        "\"Elbasan\" \"grek\" \"katolike\" \"libra\"",
+        "\"Elbasan\" \"katolik\" \"meshar\"",
+        "\"Elbasan\" \"bizantine\" \"liturgjia\"",
+        "\"Papamihali\" \"meshar\""
+      ],
+      "repertoires": [
+        {
+          "repertoire": "Italian DGA official source census",
+          "disposition": "Complete file acquired and hashed; page images 242, 372, 494 inspected. Exact next archives established. No primary mission item or service book inspected.",
+          "url": "https://dgagaeta.cultura.gov.it/public/uploads/documents/Strumenti/Strumenti_CLXXIII.pdf"
+        },
+        {
+          "repertoire": "Jemi transcription of Murzaku’s Besa conference article",
+          "disposition": "Complete served page read and retained in scratch. Useful only for exact uninspected ACCO/AVPSJ targets.",
+          "url": "https://jemi.it/articoli/archimandrita-pietro-scarpelli-chiesa-greco-cattolica/"
+        },
+        {
+          "repertoire": "OSZK-hosted complete institutional journal issue",
+          "disposition": "Whole 145-page issue acquired. Relevant article text checked; Elbasan narrative mediated through Murzaku; no new Elbasan book candidate.",
+          "url": "https://epa.oszk.hu/05300/05319/00004/pdf/EPA05319_eastern_theological_journal_2016_2.pdf"
+        },
+        {
+          "repertoire": "L’Osservatore Romano archive description",
+          "disposition": "Complete served HTML read and acquired. Dated 2021 description qualifies historical access limits.",
+          "url": "https://www.osservatoreromano.va/it/news/2021-02/ponte-di-carita-e-di-dialogo.html"
+        },
+        {
+          "repertoire": "Google Books record for Murzaku, Returning Home to Rome (2009)",
+          "disposition": "Public bibliographic record opened, no full book or source locus acquired; remains a lead.",
+          "url": "https://books.google.com/books/about/Returning_Home_to_Rome.html?id=y2EPFRL-XJQC"
+        },
+        {
+          "repertoire": "General-web site queries for SBN and PUSC",
+          "disposition": "No pertinent exact celebrant title authenticated. These are general-search site queries, not searches of those catalogues’ complete databases."
+        },
+        {
+          "repertoire": "Albanian-language and Italian-language general results",
+          "disposition": "Biography, Orthodox translation, manuscript and later mission reports did not authenticate an Elbasan Catholic celebrant book. Unopened results are leads only; no negative historical conclusion."
+        }
+      ],
+      "unexamined_ranges": [
+        "All ACCO, AVPSJ, Greek College and Grottaferrata original files.",
+        "Community sacristy/library holdings, inventories, loan or supply registers.",
+        "Full 2009 Murzaku monograph and any unpublished archival appendices.",
+        "Vatican/SBN/PUSC full native catalogue databases, shelf lists and undigitized catalogue cards.",
+        "Archival items not indexed by general web search, alternate Albanian spellings beyond the stated aliases, unread photographs or ownership notes."
+      ],
+      "bounded_negative": "No exact Catholic Elbasan Eucharistic celebrant book, received exemplar, approbation or dated use of a particular book was authenticated within this stated boundary. This is not evidence that no such book or record exists."
+    }
+  ],
+  "versions": [],
+  "acquisitions": [
+    {
+      "source_id": "albanian-src-trani2007-archive-census",
+      "url": "https://dgagaeta.cultura.gov.it/public/uploads/documents/Strumenti/Strumenti_CLXXIII.pdf",
+      "sha256": "e7ee7673921bd8f9087c384ecea620edbeeeecd49da0bdff578183105c7222e7",
+      "byte_size": 1388729,
+      "proposed_storage": "metadata-only; research bytes remain outside Git",
+      "rights": "No repository redistribution basis established for the modern PDF or HTML; no protected source payload tracked."
+    },
+    {
+      "source_id": "albanian-src-murzaku2007-scarpelli-leads",
+      "url": "https://jemi.it/articoli/archimandrita-pietro-scarpelli-chiesa-greco-cattolica/",
+      "sha256": "b16274cacceb88a9c25f1148d15dc2b9c2b0cca06ca6705c4b2e20fbe5ece4f6",
+      "byte_size": 41999,
+      "proposed_storage": "metadata-only; research bytes remain outside Git",
+      "rights": "No repository redistribution basis established for the modern PDF or HTML; no protected source payload tracked."
+    },
+    {
+      "source_id": "albanian-src-gori2021-archive-access",
+      "url": "https://www.osservatoreromano.va/it/news/2021-02/ponte-di-carita-e-di-dialogo.html",
+      "sha256": "564a212afd25a6062bf42bf3ddcf125d9de5733bd643b0d9ff43a59be1fe6e7a",
+      "byte_size": 104661,
+      "proposed_storage": "metadata-only; research bytes remain outside Git",
+      "rights": "No repository redistribution basis established for the modern PDF or HTML; no protected source payload tracked."
+    }
+  ],
+  "independent_review": {
+    "verdict": "accept-bounded-source-findings-with-explicit-integration-correction",
+    "checked_source_loci": "DGA printed 244, 374 and 496 independently image-checked; retained article and institutional HTML read and all three hashes and sizes confirmed.",
+    "expectation_dispositions": [
+      {
+        "expectation": "Exact Elbasan Catholic celebrant-book identity and local receipt",
+        "disposition": "remains open; no title or book state invented"
+      },
+      {
+        "expectation": "Community mission inventories and original documents as next inputs",
+        "disposition": "advanced to exact archive series, protocol numbers, report dates and page targets"
+      },
+      {
+        "expectation": "Albanian census classification separate from book history",
+        "disposition": "preserved unresolved"
+      },
+      {
+        "expectation": "No transfer of Orthodox Albanian, Italo-Albanian or Buzuku books",
+        "disposition": "preserved"
+      },
+      {
+        "expectation": "Public-only access and bounded negatives",
+        "disposition": "39 recorded general-search queries and unexamined ranges support only the packet's bounded negative"
+      }
+    ]
+  },
+  "remaining_gaps": [
+    "All ACCO, AVPSJ, Greek College and Grottaferrata original files.",
+    "Community sacristy/library holdings, inventories, loan or supply registers.",
+    "Full 2009 Murzaku monograph and any unpublished archival appendices.",
+    "Vatican/SBN/PUSC full native catalogue databases, shelf lists and undigitized catalogue cards.",
+    "Archival items not indexed by general web search, alternate Albanian spellings beyond the stated aliases, unread photographs or ownership notes.",
+    "Exact Catholic Elbasan celebrant-book identity, title/imprint, approval, exemplar and dated use.",
+    "Current census classification is not resolved by book research."
+  ],
+  "limits": "No historical absence, current closure, public access guarantee, whole-book acquisition for publication, local adoption or transcription claim follows from this metadata advance."
+}

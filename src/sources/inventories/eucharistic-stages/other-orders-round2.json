@@ -38,13 +38,6 @@
       "family": "latin",
       "scope": "A corrected 1553 printed-missal catalogue identity and the 1987 Latin proper with lectionary.",
       "coverage_note": "The owning BnF catalogue rejects the former 1551 date for its B-320 copy. The medieval local books and later 2005 proper remain without a checked original-text sequence."
-    },
-    {
-      "id": "ocso-round2",
-      "label": "Cistercians of the Strict Observance (OCSO)",
-      "family": "latin",
-      "scope": "The OCSO order's postconciliar Cistercian saint proper and its relation to the Roman Missal base, kept distinct from the older shared Cistercian missal history.",
-      "coverage_note": "The order's official liturgy page dates proper-prayer approval to 1983; original decrees, Latin edition, and house-level reception remain open."
     }
   ],
   "sources": [
@@ -166,7 +159,7 @@
       "inspection": "Order page directly read on 2026-10-20, Missal paragraph: prayers for Mass and Divine Office proper of Cistercian calendar approved for use in 1983, with later saints added. History and Calendar paragraphs distinguish older shared Cistercian liturgy and postconciliar variations.",
       "checked_on": "2026-10-20",
       "status": "inspected",
-      "limitations": "The page does not identify a dated original decree, first Latin printing, precise text or every subsequent addition. It supplies no complete OCSO missal independent of the Roman base."
+      "limitations": "The page does not identify a dated original decree, first Latin printing, precise text or every subsequent addition. It supplies no complete OCSO missal independent of the Roman base. The exact bounded continuation in ocso-next independently records OCSO 1975 and OCist 1977 confirmations plus a 1983 publication; this retrospective's general 1983 approval remains a discrepancy requiring its original instrument. The empty OCSO tradition and superseded gap have moved to that dossier."
     },
     {
       "id": "other-orders:ocso-norms",
@@ -497,14 +490,6 @@
       "missing": "Original 1553 leaves, relations among local Hospitaller manuscripts and prints, 1987 proper text, 2005 second edition and house use.",
       "next_source": "Inspect BnF B-320 and other copy shelfmarks, DLI 19078 or order archive 1987 volume, and the 2005 second edition's approval and text.",
       "consequence": "No 1551 edition, general medieval recension, whole-book revision or 1987-to-2005 text transition is asserted."
-    },
-    {
-      "id": "other-orders:ocso-gap",
-      "tradition_id": "ocso-round2",
-      "period": "1892–present",
-      "missing": "Original 1983 approval, dated Latin proper and lectionary, later additions and concrete OCSO house reception.",
-      "next_source": "Order liturgy archive's missal and lectionary files, original approval and General Chapter norms, with page-collated comparison to the Roman base and shared OCist books.",
-      "consequence": "No separate complete OCSO missal or automatic inheritance from the Cistercian whole-missal line is claimed."
     }
   ]
 }

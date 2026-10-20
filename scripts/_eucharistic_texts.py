@@ -1053,6 +1053,21 @@ def _native_evidence(sources: _Sources, evidence) -> None:
             raise AdapterError("native book evidence is not inspected")
 
 
+def _native_segment(sources: _Sources, segment_id: str, edition_id: str) -> tuple[dict, dict]:
+    """Resolve constituent identity without transferring its container's ownership."""
+    segment = sources.use(segment_id)
+    if (segment.get("record_type") != "segment" or type(segment.get("schema")) is not int
+            or segment["schema"] != 2 or segment.get("edition_id") != edition_id
+            or not {"inspected", "verified"} & set(segment.get("states", []))):
+        raise AdapterError("native book segment requires an inspected exact-edition constituent controller")
+    artifact = sources.use(_native_string(segment, "artifact_id"))
+    if (artifact.get("record_type") != "artifact"
+            or not re.fullmatch(r"[a-f0-9]{64}", segment.get("artifact_sha256", ""))
+            or segment["artifact_sha256"] != artifact.get("sha256")):
+        raise AdapterError("native book segment does not pin its exact container artifact hash")
+    return segment, artifact
+
+
 def _native_facsimile(sources: _Sources, artifact: dict) -> bool:
     direct_types = {"scan", "scan-pdf", "facsimile", "facsimile-image"}
     if artifact.get("artifact_type") in direct_types:
@@ -1179,21 +1194,41 @@ def _native_book(sources: _Sources, identifier: str) -> dict:
     witnesses = book.get("witnesses")
     if not isinstance(witnesses, list) or not witnesses:
         raise AdapterError("native book requires identified complete witnesses")
-    by_witness, witness_hashes, in_scope = {}, {}, {}
+    by_witness, witness_hashes, in_scope, census_pages, witness_extents = {}, {}, {}, {}, []
     for witness in witnesses:
         key = _native_string(witness, "id")
         if key in by_witness:
             raise AdapterError("duplicate native book witness")
         edition = sources.use(_native_string(witness, "edition_id"))
         artifact = sources.use(_native_string(witness, "artifact_id"))
+        segment = None
+        if "segment_id" in witness:
+            segment, controller = _native_segment(sources, _native_string(witness, "segment_id"), edition["id"])
+            if controller["id"] != artifact["id"]:
+                raise AdapterError("native book witness segment has a different container artifact")
         if (edition["record_type"] != "edition" or artifact["record_type"] != "artifact"
-                or artifact.get("edition_id") != edition["id"] or artifact.get("storage") != "tracked"
+                or (segment is None and artifact.get("edition_id") != edition["id"])
+                or artifact.get("storage") != "tracked"
                 or not _native_facsimile(sources, artifact)
                 or type(artifact.get("page_count")) is not int or artifact["page_count"] < 1):
             raise AdapterError("native book witness requires exact retained facsimile and page count")
         _native_evidence(sources, witness.get("completeness_evidence"))
         in_scope[key] = _native_pages(witness.get("scope_pages"), artifact["page_count"])
-        if extent_kind == "whole-book" and in_scope[key] != set(range(1, artifact["page_count"] + 1)):
+        # A segment's physical container pages are the witness census. Other
+        # works in that container are neither book contents nor excluded book divisions.
+        census_pages[key] = (_native_pages(segment.get("artifact_page_ranges"), artifact["page_count"])
+                             if segment is not None else set(range(1, artifact["page_count"] + 1)))
+        if not in_scope[key] <= census_pages[key]:
+            raise AdapterError("native book witness scope extends outside its controlling segment")
+        if segment is not None:
+            if (extent_kind == "whole-book" and (segment.get("segment_type") != "constituent-work"
+                    or "verified" not in segment.get("states", []) or not segment.get("verified_on"))):
+                raise AdapterError("whole native book requires a verified constituent-work segment boundary")
+            witness_extents.append({"witness_id": key, "segment_id": segment["id"], "artifact_id": artifact["id"],
+                                    "artifact_sha256": artifact["sha256"],
+                                    "artifact_page_ranges": segment["artifact_page_ranges"],
+                                    "census_boundary": "segment-artifact-page-ranges"})
+        if extent_kind == "whole-book" and in_scope[key] != census_pages[key]:
             raise AdapterError("whole native book requires every witness page in scope")
         by_witness[key] = (witness, artifact)
         witness_hashes[key] = artifact["sha256"]
@@ -1231,11 +1266,19 @@ def _native_book(sources: _Sources, identifier: str) -> dict:
             raise AdapterError("native book unit has unknown witness")
         witness, facsimile = by_witness[witness_id]
         unit_pages[key] = (witness_id, _native_pages(chosen.get("witness_pages"), facsimile["page_count"]))
+        if not unit_pages[key][1] <= in_scope[witness_id]:
+            raise AdapterError("native book unit loci extend outside the declared witness scope")
         passage = sources.use(_native_string(chosen, "passage_id"))
-        artifact = sources.use(passage.get("artifact_id", ""))
+        literal_segment = None
+        if "segment_id" in passage:
+            if "artifact_id" in passage or type(passage.get("schema")) is not int or passage["schema"] != 2:
+                raise AdapterError("native book literal passage requires exactly one schema-2 segment controller")
+            literal_segment, artifact = _native_segment(sources, _native_string(passage, "segment_id"), witness["edition_id"])
+        else:
+            artifact = sources.use(passage.get("artifact_id", ""))
         if (passage["record_type"] != "passage" or "verified" not in passage.get("states", [])
                 or not passage.get("verified_on") or passage.get("edition_id") != witness["edition_id"]
-                or artifact.get("edition_id") != witness["edition_id"]
+                or (literal_segment is None and artifact.get("edition_id") != witness["edition_id"])
                 or artifact.get("artifact_type") != "normalized-text"
                 or passage.get("artifact_sha256") != artifact.get("sha256")):
             raise AdapterError("native book requires a verified exact-edition literal passage")
@@ -1249,11 +1292,23 @@ def _native_book(sources: _Sources, identifier: str) -> dict:
         # Match source-library physical-line locators: only LF splits a line.
         lines = [line.decode("utf-8").rstrip("\r\n") for line in io.BytesIO(sources.payload(artifact))]
         selected = _native_pages(passage.get("physical_line_ranges"), len(lines))
+        if literal_segment is not None:
+            segment_lines = _native_pages(literal_segment.get("physical_line_ranges"), len(lines))
+            if not selected <= segment_lines:
+                raise AdapterError("native book literal passage lines extend outside its controlling segment")
+            if "artifact_page_ranges" in passage:
+                page_count = artifact.get("page_count")
+                if type(page_count) is not int or page_count < 1:
+                    raise AdapterError("native book literal page ranges require an exact container page count")
+                if not _native_pages(passage["artifact_page_ranges"], page_count) <= _native_pages(
+                        literal_segment.get("artifact_page_ranges"), page_count):
+                    raise AdapterError("native book literal passage pages extend outside its controlling segment")
         text = "\n".join(lines[index - 1] for index in sorted(selected))
         if not text.strip() or _sha(text.encode()) != chosen.get("text_sha256"):
             raise AdapterError("native book literal passage differs from reviewed text hash")
         unit_hashes[key] = chosen["text_sha256"]
         units.append({**chosen, "text": text, "text_edition_id": witness["edition_id"],
+                      **({"source_segment_id": literal_segment["id"]} if literal_segment is not None else {}),
                       "target_edition_id": witness["edition_id"], "source_id": passage["id"],
                       "source_artifact_id": artifact["id"], "source_artifact_sha256": artifact["sha256"],
                       "provenance": {"status": "independently-collated-native-unit", "reviewed_on": checked_on,
@@ -1276,6 +1331,8 @@ def _native_book(sources: _Sources, identifier: str) -> dict:
         if witness_id not in by_witness:
             raise AdapterError("native book page account has unknown witness")
         pages = _native_pages(account.get("ranges"), by_witness[witness_id][1]["page_count"])
+        if not pages <= census_pages[witness_id]:
+            raise AdapterError("native book page account extends outside its controlling segment")
         if accounted[witness_id] & pages:
             raise AdapterError("native book page accounts overlap")
         accounted[witness_id].update(pages)
@@ -1303,8 +1360,7 @@ def _native_book(sources: _Sources, identifier: str) -> dict:
             _native_string(account, "description")
         else:
             raise AdapterError("native book page account must distinguish text from non-text")
-    if any(accounted[key] != set(range(1, artifact["page_count"] + 1))
-           for key, (_, artifact) in by_witness.items()):
+    if any(accounted[key] != census_pages[key] for key in by_witness):
         raise AdapterError("native book extent leaves witness pages unaccounted for")
     if any(represented[key] != pages for key, (_, pages) in unit_pages.items()):
         raise AdapterError("native book extent leaves unit loci unaccounted for")
@@ -1320,7 +1376,8 @@ def _native_book(sources: _Sources, identifier: str) -> dict:
                              "extent_path": book["extent_path"], "extent_sha256": extent_hash,
                              "collation_path": book["collation_path"], "collation_sha256": review_hash,
                              "stage_ids": book["stage_ids"], "catalogue_witness_ids": book["catalogue_witness_ids"],
-                             "components": book["components"], "witnesses": witnesses},
+                             "components": book["components"], "witnesses": witnesses,
+                             **({"witness_extents": witness_extents} if witness_extents else {})},
             "scope": {"status": "complete-native-" + extent_kind, "description": book["scope"],
                       "whole_book_complete": extent_kind == "whole-book", "complete_declared_extent": True,
                       "extent_kind": extent_kind, "omitted_book_divisions": excluded, "known_extent_units": len(expected),

@@ -44,7 +44,7 @@
       "label": "Monza Mass-book leads",
       "family": "latin",
       "scope": "Monza-related sacramentary, chant and order-book records requiring provenance and Mass-use tests.",
-      "coverage_note": "An archive holding is not a Monza Eucharistic use; no Western local candidate is admitted."
+      "coverage_note": "A bounded local annual ceremonial order is admitted from H14, with a documented 1101–1300 attestation in monza-local-next.json; its ff. 47–74 do not supply a complete Missal or Ordinary. F.1/101 and Berengar treasury 98/89 remain separately identified holdings without established Monza liturgical use. Full original texts, reception and sequence remain open."
     },
     {
       "id": "italian-local-round2:ravenna",
@@ -604,25 +604,25 @@
       "id": "italian-local-round2:padua-local",
       "tradition_id": "italian-local-round2:padua",
       "period": "medieval to post-Tridentine",
-      "missing": "No exact Western candidate for a Padua local Eucharistic book; D47 copying location and E57 order-book Mass loci need attribution.",
-      "next_source": "Inspect Padua E57 Mass loci, D47 origin and local books outside Usuarium origin 899; distinguish Patavinus from Passau Pataviense.",
-      "consequence": "A Padua shelfmark or ritual title cannot be projected as a Padua Missal state."
+      "missing": "E.57's full original Eucharistic rubrics and later layers, D.30's disputed copying date and local use, and complete earlier/later local Mass books remain uncollated; the bounded source-described E.57 and D.30 states are now owned by padua-local-round3.",
+      "next_source": "See padua-local-round3 source loci and gaps; inspect E.57 ff. 89v–95r, edited sections 127g/140e and D.30 calendar/colophon. Keep D.47 Gregorian transmission separate, B.31 Roman-Franciscan and Paris Cholet volumes separate from local Padua recension.",
+      "consequence": "Identified local rubrics do not certify a complete Padua Missal; custody or Pataviense labeling cannot prove a local recension."
     },
     {
       "id": "italian-local-round2:monza-local",
       "tradition_id": "italian-local-round2:monza",
       "period": "medieval to early modern",
-      "missing": "No exact Western candidate proving Monza Eucharistic recension or normative use.",
-      "next_source": "Identify and inspect Monza sacramentary F.1/101, gradual and Ordo with shelfmark, origin, Mass loci and authority context.",
-      "consequence": "Monza-held Ambrosian or Roman books cannot silently become a Monza local stage."
+      "missing": "H14 local order is identified and partially edited, but original leaf collation, exact links to F.1/101 and treasury 98/89, complete Mass-text reconstruction and later reception remain unresolved.",
+      "next_source": "Collate H14 ff. 47–74 and Dell’Oro–Mambretti (2001), volume A critical text pp. 431–541; identify all Mass-book cross-references and layers. Separate F.1/101 chant, sacramentary, Ambrosian formularies and lectionary; resolve its constituent dating. Resolve Berengar treasury 98/89, 846–855 versus the 860s, before 867, and Monza holding versus northeastern-French manufacture. Inspect original 1578 instruments and f-05/109, f-12/108 leaves before any local reception or substantive transition.",
+      "consequence": "The local-order stage does not turn Monza-held Ambrosian/Roman sacramentaries or two late missals into a continuous local recension."
     },
     {
       "id": "italian-local-round2:ravenna-local",
       "tradition_id": "italian-local-round2:ravenna",
       "period": "early medieval to early modern",
-      "missing": "No exact Western candidate for a complete Ravenna Missal; fragments and Rotulus require attribution.",
-      "next_source": "Identify each Ravenna fragment and Rotulus physical witness; inspect original Mass loci and use context.",
-      "consequence": "A Ravenna holding or hypothesized archetype cannot serve as a dated local book state."
+      "missing": "Exact physical fragment identities are now bounded in ravenna-fragments, but Ravenna copying-place and church-use evidence, complete Mass/Canon extent and later reception remain unproved. Archive 011 remains an origin-unassigned, holding-only missal-calendar; the Rotulus is Advent prayer evidence with Office-use interpretation.",
+      "next_source": "Collate the exact sacramentary undertexts and surviving strips against their named critical editions; obtain archive 011 calendar, colophon, Ordinary/Canon and use notes, and establish each witness's provenance and actual local reception. Keep the Rotulus recto prayers separate from later verso letters and from an annual Mass-book claim.",
+      "consequence": "The three fragment attestations and present Ravenna holdings do not establish a local recension, continuous Mass-book history, complete Eucharistic prayer or normative adoption."
     }
   ]
 }
