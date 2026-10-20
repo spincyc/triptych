@@ -9,8 +9,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "gpt-f01-context-and-scope"
   criterion = "The exact provider and identity are authorized; governing edition, occurrence, full appointed inventory, seasonal variants and local limits are verified in source records."
-  status = "open"
-  evidence = ["guidance/liturgy/propers-production-plan.md", "workflows/reviews/gpt-1962-f01-production-2026-10-19/CYCLES.md"]
+  status = "pass"
+  evidence = ["guidance/liturgy/propers-production-plan.md", "workflows/reviews/gpt-1962-f01-production-2026-10-19/CYCLES.md", "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/8d637d6f2f9160aa/resolve-context-0000.json"]
 
   [[deliverables.requirements]]
   id = "gpt-f01-workflow-and-artifacts"
@@ -37,8 +37,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "gpt-f01-full-material-workflow"
   criterion = "A fresh proper-study run reaches ACCEPTED with the complete appointed Latin and independently sourced historical English required by the 1962 profile, verified full source material, three independently reviewed documents and canonical web edition installed and cataloged, and native run evidence archived; locator-only commentary does not satisfy this requirement."
-  status = "open"
-  evidence = ["workflows/reviews/gpt-1962-f01-production-2026-10-19/CYCLES.md"]
+  status = "blocked"
+  evidence = ["workflows/reviews/gpt-1962-f01-production-2026-10-19/CYCLES.md", "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/8d637d6f2f9160aa/terminal-status.json"]
 
   [[deliverables.requirements]]
   id = "gpt-f01-validation-and-main"

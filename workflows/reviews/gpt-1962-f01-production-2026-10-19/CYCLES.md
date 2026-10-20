@@ -376,4 +376,28 @@ collation. The driver recorded native intervention `0000` to draw the actual
 boundary: do not replay that response, but independently examine the registered
 public-domain AAS witness, the 1962 collation pages and historical English
 witnesses for the fresh full-material run. The intervention changes no packet
-or PASS criterion. Research remains underway.
+or PASS criterion. Research remained underway at that checkpoint.
+
+The fresh research worker inspected page images from the authenticated 1925
+*Acta Apostolicae Sedis* microfilm, the controlling 1962 Missal and Lasance's
+historical English missal, and checked additional Augustine, Chrysostom and
+Bellarmine loci. While preparing the full appointed-text records, its output
+stream received a second HTTP 400 `safety_violation` with the message
+`regurg plugin blocked the output stream`. The rejected content and the
+precise triggering text are not visible. The worker did not save
+`propers/retrieved.txt` or `propers/verified.md`. It was explicitly stopped
+from regenerating or reconstructing the rejected output. Its only tracked
+changes were regenerated chronology records matching the merged calendar's
+`Psalms 28:10-11` citation; those passed both proper-chronology checks,
+the scripture chronology corpus check, source-library validation and
+`git diff --check`, and were committed and feature-pushed as `6f7a45b4d`.
+
+The worker returned a truthful `BLOCKED` result for research iteration 0.
+The native engine advanced run `8d637d6f2f9160aa` to terminal `BLOCKED` after
+three packets and three results, with one intervention. Scope and context
+passed; research did not pass, and no later authoring, review, artifact or
+publication stage ran. The separate Claude edition on current `main` remains
+live, but its acceptance cannot supply this GPT run's missing PASS. The
+maintainer's full-material requirement is still open; a locator-only study
+is not an authorized substitute. No GPT publication or push to `main` was
+attempted from this run.

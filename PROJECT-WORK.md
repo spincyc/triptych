@@ -19,10 +19,10 @@ The calendar computation places this feast ahead of the Twenty-second Sunday
 after Pentecost; the workflow must verify the appointment in the governing
 Missal and a dated occurrence witness. No unspecified local overlay is assumed.
 
-State: full-material production remains unfinished; independent evidence has
-been consolidated. The workspace remains on
-`feature/propers/codex`; `main` was incorporated through `6dad4a7a3`. No completed
-publication, main push or live deployment is claimed.
+State: GPT full-material production remains unfinished after a second research
+output rejection; independent evidence has been consolidated. The workspace
+remains on `feature/propers/codex`; `main` was incorporated through
+`6dad4a7a3`. No GPT publication, main push or live deployment is claimed.
 
 The original version-12 run `3c11005c63dcd584` passed scope and context but
 terminated BLOCKED after repeated research-response output rejection. Its partial
@@ -65,10 +65,19 @@ production and push it to `main`. Current `main` through `6dad4a7a3` was merged
 into this workspace at `0b318d400`; it includes an independently accepted Claude
 F01 publication and a registered 1925 first-printing witness. Those are source
 leads, not acceptance of the GPT leaf. A fresh GPT `proper-study` v13 run,
-`8d637d6f2f9160aa`, is in progress under full-material scope. Its scope gate
-passed; context and research still require their own work and reviews. The
-earlier model-output incident remains documented, without a blanket prohibition
-on ordinary independent source verification.
+`8d637d6f2f9160aa`, used full-material scope. Its scope and context stages
+passed. Research independently inspected the authenticated AAS microfilm,
+1962 Missal and historical English page images, but a second
+`regurg plugin blocked the output stream` rejection occurred before complete
+appointed-text records were saved. The rejected content is unavailable; no
+reconstruction or replay was attempted. The worker returned BLOCKED and the
+native run terminated BLOCKED, archived in the GPT leaf. Its only tracked
+research changes were current chronology projections, committed and
+feature-pushed as `6f7a45b4d`. No authoring, review or publication stage
+passed in that run. The separate Claude F01 edition remains accepted and
+published on `main`; it is not GPT acceptance. Full GPT source material and
+its three deliverables still require a safe path consistent with the
+maintainer's rejection of locator-only output.
 
 ## Claude 1962 Christ the King three documents, 2026-10-19
 
