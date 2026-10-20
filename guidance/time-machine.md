@@ -601,6 +601,12 @@ in scope even where their texts originated through translation. The deferred
 work is independent vernacular and lay translation histories, not the removal
 of a tradition's received service-book language. One evidenced recension may
 serve several Churches; a census of Churches is not a count of different books.
+Clarified 2026-10-19: a Church's own approved, operative service books in a
+modern language are received service-book language, not deferred translations.
+The Syro-Malabar and Syro-Malankara Malayalam Qurbana books are an example. A
+book is admitted as a candidate when its approval and its use by that Church are
+evidenced. Versions in other languages for diaspora or study remain deferred
+translations.
 
 “Sufficiently distinct” means a substantive change to prayers, rubrics, calendar,
 or liturgical order. A printer, year, reprint, rescan, orthographic convention,

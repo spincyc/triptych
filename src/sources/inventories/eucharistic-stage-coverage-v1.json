@@ -9,7 +9,7 @@
     {
       "id": "eastern",
       "path": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
-      "sha256": "2240ca84ec755ae52454b8714a4fc637b445a84faba9f9f395c33e715bed2a70"
+      "sha256": "f940a3705b68bb52a5db06aa7a37fbb0a7ebdb8335269af56de58b77f02bf776"
     },
     {
       "id": "western",
@@ -100,7 +100,7 @@
   "count_semantics": {
     "eastern_census_slots": 23,
     "western_coverage_trajectories": 54,
-    "eastern_candidates": 252,
+    "eastern_candidates": 439,
     "western_candidates": 281,
     "presentation_groups": 54,
     "eastern_empty_candidate_slots_at_input": [
@@ -3910,7 +3910,10 @@
       "coverage_unit": "Church-or-tradition-census-slot",
       "inventory_status": "historical-or-local-candidate; chronology-incomplete",
       "candidate_ids": [
-        "byz-vilnius-suprasl1692-95"
+        "byz-vilnius-suprasl1692-95",
+        "byzantine-slavic-suprasl1727-1732",
+        "byzantine-slavic-suprasl1758",
+        "byzantine-slavic-vilnius1617-mamonych"
       ],
       "proposed_tradition_ids": [
         "byzantine-ruthenian"
@@ -3969,7 +3972,9 @@
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
         "byz-barberini336",
-        "byz-striatyn1604"
+        "byz-striatyn1604",
+        "byzantine-slavic-borgia-illyr-13-14",
+        "byzantine-slavic-vat-slav14"
       ],
       "canonical_tradition_ids": [
         "byzantine-ruthenian"
@@ -4539,9 +4544,10 @@
       "coverage_unit": "Church-or-tradition-census-slot",
       "inventory_status": "historical-editions-identified; local-receipt-and-chronology-incomplete",
       "candidate_ids": [
-        "byz-vulgata-chrysostom-1940",
         "byz-vulgata-1942",
-        "byz-vulgata-1953"
+        "byz-vulgata-1953",
+        "byz-vulgata-chrysostom-1940",
+        "byzantine-slavic-vulgata1983"
       ],
       "proposed_tradition_ids": [
         "byzantine-vulgata"
@@ -4615,7 +4621,8 @@
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
         "byz-barberini336",
-        "byz-striatyn1604"
+        "byz-striatyn1604",
+        "byzantine-slavic-vat-slav14"
       ],
       "canonical_tradition_ids": [
         "byzantine-vulgata"
@@ -4723,7 +4730,8 @@
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
         "byz-barberini336",
-        "byz-striatyn1604"
+        "byz-striatyn1604",
+        "byzantine-slavic-vat-slav14"
       ],
       "deferred_or_origin_review_candidate_ids": [
         "byz-pittsburgh-1964-65",
@@ -4741,7 +4749,10 @@
       "coverage_unit": "Church-or-tradition-census-slot",
       "inventory_status": "shared-book-reception-source-described; original-language-chronology-incomplete",
       "candidate_ids": [
-        "byz-lviv-1905"
+        "byz-lviv-1905",
+        "byz-ruthenian-1942",
+        "byz-ruthenian-chrysostom-1940",
+        "byzantine-slavic-archieratikon1973"
       ],
       "proposed_tradition_ids": [
         "byzantine-ruthenian"
@@ -4819,12 +4830,16 @@
       "inventory_status": "incomplete",
       "candidate_ids": [
         "byz-lviv-1905",
+        "byz-lviv1929",
         "byz-ruthenian-1942",
         "byz-ruthenian-chrysostom-1940",
         "byz-ruthenian-ordo-1944",
+        "byz-ruthenian-ordo-1953",
         "byz-univ1733-read-liturgy",
-        "byz-lviv1929",
-        "byz-ruthenian-ordo-1953"
+        "byzantine-slavic-archieratikon1973",
+        "byzantine-slavic-lviv1930-mikron",
+        "byzantine-slavic-pochaiv1788",
+        "byzantine-slavic-zhovkva1927"
       ],
       "proposed_tradition_ids": [
         "byzantine-ruthenian"
@@ -4946,7 +4961,9 @@
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
         "byz-barberini336",
-        "byz-striatyn1604"
+        "byz-striatyn1604",
+        "byzantine-slavic-borgia-illyr-13-14",
+        "byzantine-slavic-vat-slav14"
       ],
       "deferred_or_origin_review_candidate_ids": [
         "byz-ugcc-2024"
@@ -5020,7 +5037,14 @@
       "candidate_ids": [
         "alex-coptic-1736",
         "alex-coptic-1898",
-        "alex-coptic-1934"
+        "alex-coptic-1934",
+        "alex-coptic-1971",
+        "coptic-basil-printings-1987",
+        "coptic-basil-revision-1990",
+        "coptic-deacon-1875",
+        "coptic-deacon-1898",
+        "coptic-ms-bnf-arabe5969",
+        "coptic-ms-cm-lit265"
       ],
       "proposed_tradition_ids": [
         "coptic-catholic"
@@ -5098,11 +5122,15 @@
       },
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
-        "alex-sahidic-or6877",
+        "alex-coptic-vat17",
         "alex-coptic1902-comparison",
-        "alex-mark-bodleian-e5-gen153",
         "alex-mark-bodleian-e11",
-        "alex-coptic-vat17"
+        "alex-mark-bodleian-e5-gen153",
+        "alex-sahidic-or6877",
+        "coptic-ms-monb-vd",
+        "coptic-ms-monb-ve",
+        "coptic-ms-monb-vf",
+        "coptic-ms-monb-vg"
       ],
       "canonical_tradition_ids": [
         "coptic-catholic"
@@ -5183,8 +5211,10 @@
       },
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
+        "alex-geez-aksumite-um039",
         "alex-geez-eap385",
-        "alex-geez-aksumite-um039"
+        "geez-1548-rome-tasfa-seyon",
+        "geez-bl-or545-missal-cold"
       ],
       "finding_id": "coverage-focus-geez",
       "canonical_tradition_ids": [
@@ -5198,6 +5228,8 @@
       "coverage_unit": "Church-or-tradition-census-slot",
       "inventory_status": "incomplete",
       "candidate_ids": [
+        "alex-geez-1913",
+        "alex-geez-1945",
         "alex-geez-2025"
       ],
       "proposed_tradition_ids": [
@@ -5254,8 +5286,10 @@
       },
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
+        "alex-geez-aksumite-um039",
         "alex-geez-eap385",
-        "alex-geez-aksumite-um039"
+        "geez-1548-rome-tasfa-seyon",
+        "geez-bl-or545-missal-cold"
       ],
       "finding_id": "coverage-focus-geez",
       "canonical_tradition_ids": [
@@ -5269,10 +5303,27 @@
       "coverage_unit": "Church-or-tradition-census-slot",
       "inventory_status": "incomplete",
       "candidate_ids": [
+        "arm-1642-ordo",
         "arm-1677-liturgia",
         "arm-1677-ministerium",
         "arm-1823",
-        "arm-1642-ordo"
+        "armenian-catholic-1994",
+        "armenian-lowmass-server-books",
+        "armenian-marshall106",
+        "armenian-rome1777-chashots",
+        "armenian-rome1777-khorhrdatetr",
+        "armenian-spasaworutiwn-1783-1803",
+        "armenian-trieste1803",
+        "armenian-venice-celebrant-clerks",
+        "armenian-venice-kargh-dprutean",
+        "armenian-venice-rome-exemplar-reprints",
+        "armenian-venice1741",
+        "armenian-venice1809",
+        "armenian-vienna1858",
+        "armenian-vienna1877-deacons",
+        "armenian-vienna1879",
+        "armenian-vienna1879-deacons",
+        "armenian-vienna1904"
       ],
       "proposed_tradition_ids": [
         "armenian-catholic"
@@ -5361,7 +5412,16 @@
       },
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
-        "arm-khorhrdatetr1686"
+        "arm-khorhrdatetr1686",
+        "armenian-constantinople1568-cold",
+        "armenian-gatrchean1897",
+        "armenian-lambronatsi-commentary",
+        "armenian-lyon-or15",
+        "armenian-meghapart1513",
+        "armenian-munich-arm6",
+        "armenian-newjulfa1641",
+        "armenian-sanlazzaro-arm1411",
+        "armenian-xosrov-commentary"
       ],
       "canonical_tradition_ids": [
         "armenian-eucharistic-stages:catholic",
@@ -5379,7 +5439,13 @@
         "mar-1716",
         "mar-1763",
         "mar-dibs-1888",
-        "mar-dibs-1908"
+        "mar-dibs-1908",
+        "maronite-liber-ministri-1596",
+        "maronite-qozhaya-1816",
+        "maronite-qozhaya-1838",
+        "maronite-qozhaya-1855",
+        "maronite-qozhaya-1872",
+        "maronite-rome1608-reissue-cold"
       ],
       "proposed_tradition_ids": [
         "maronite"
@@ -5485,6 +5551,13 @@
       },
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
+        "maronite-ms-aleppo619-1490",
+        "maronite-ms-bnf-syr438-1706-cold",
+        "maronite-ms-bnf-syr71-1454",
+        "maronite-ms-bnf-syr73-1509",
+        "maronite-ms-bnf-syr78",
+        "maronite-ms-bnf-syr79",
+        "maronite-ms-vat-sir431",
         "syr-add14523-james",
         "syr-add14690-anaphoras"
       ],
@@ -5504,9 +5577,14 @@
       "coverage_unit": "Church-or-tradition-census-slot",
       "inventory_status": "incomplete",
       "candidate_ids": [
-        "syr-mosul-1881",
         "syr-1922",
-        "syr-rome-1843"
+        "syr-mosul-1881",
+        "syr-rome-1843",
+        "syriac-malankara-syr-beirut-1926",
+        "syriac-malankara-syr-mosul-1877-calendar",
+        "syriac-malankara-syr-sharfeh-1901-pericopes",
+        "syriac-malankara-syr-sharfeh-1905",
+        "syriac-malankara-syr-sharfeh-1912-gospels"
       ],
       "proposed_tradition_ids": [
         "syriac-catholic"
@@ -5586,7 +5664,10 @@
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
         "syr-add14523-james",
-        "syr-add14690-anaphoras"
+        "syr-add14690-anaphoras",
+        "syriac-malankara-add14493",
+        "syriac-malankara-add14615-lower-cold",
+        "syriac-malankara-add17128"
       ],
       "canonical_tradition_ids": [
         "syriac-catholic-auxiliary",
@@ -5600,7 +5681,9 @@
       "coverage_unit": "Church-or-tradition-census-slot",
       "inventory_status": "historical-bibliographic-witness; original-scan-and-chronology-incomplete",
       "candidate_ids": [
-        "malankara-pampakuda-1934"
+        "malankara-pampakuda-1934",
+        "syriac-malankara-mal-tiruvalla-1960",
+        "syriac-malankara-mal-tiruvalla-1965"
       ],
       "proposed_tradition_ids": [
         "syro-malankara"
@@ -5679,13 +5762,22 @@
       "coverage_unit": "Church-or-tradition-census-slot",
       "inventory_status": "incomplete",
       "candidate_ids": [
-        "chald-1901",
-        "chald-proper-1901",
-        "east-urmia-1876",
         "chald-1767",
+        "chald-1901",
         "chald-2014",
         "chald-2020",
-        "chald-2025-reprint"
+        "chald-2025-reprint",
+        "chald-proper-1901",
+        "chaldean-baghdad1971",
+        "chaldean-mosul1900-lections",
+        "chaldean-mosul1936-reprint",
+        "chaldean-ms-vat-sir-43",
+        "chaldean-ms-vat-sir-44",
+        "chaldean-ms-vat-sir-491",
+        "chaldean-paris1982",
+        "chaldean-reform2006-2007",
+        "chaldean-st-peter-2013",
+        "east-urmia-1876"
       ],
       "proposed_tradition_ids": [
         "chaldean"
@@ -5805,6 +5897,13 @@
       },
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
+        "chaldean-ms-borg-sir-150",
+        "chaldean-ms-diarbekir-hudra",
+        "chaldean-ms-mar-eshaya",
+        "chaldean-ms-mardin22",
+        "chaldean-ms-vat-sir-303",
+        "chaldean-ms-vat-sir-42",
+        "chaldean-urmia1890-liturgy",
         "syr-add14669-fragments"
       ],
       "deferred_or_origin_review_candidate_ids": [
@@ -5821,17 +5920,24 @@
       "coverage_unit": "Church-or-tradition-census-slot",
       "inventory_status": "incomplete",
       "candidate_ids": [
-        "malabar-1898",
-        "malabar-1906",
         "malabar-1774",
         "malabar-1775-rituum",
         "malabar-1845-reported-exemplar",
+        "malabar-1898",
+        "malabar-1906",
+        "malabar-1946",
+        "malabar-1955-study",
         "malabar-1959-ordo",
         "malabar-1960-supplementum",
         "malabar-1960-taksa",
-        "malabar-1946",
-        "malabar-1955-study",
-        "malabar-2003"
+        "malabar-1962",
+        "malabar-2003",
+        "malabar-mannanam-1928-cold",
+        "malabar-ms-roz-1603-cold",
+        "malabar-puthempally-1929-cold",
+        "malabar-raza-mannanam-1925-cold",
+        "malabar-sacrum-apostolorum-1912-cold",
+        "malabar-syriac-typica-2018-lead"
       ],
       "proposed_tradition_ids": [
         "syro-malabar"
@@ -5989,8 +6095,11 @@
       },
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
-        "syr-add14669-fragments",
-        "malabar-gouvea-1606"
+        "malabar-gouvea-1606",
+        "malabar-ms-vat-sir-2-3",
+        "malabar-ms-vat-sir-22",
+        "malabar-ms-vat-sir-66",
+        "syr-add14669-fragments"
       ],
       "deferred_or_origin_review_candidate_ids": [
         "malabar-1962",
