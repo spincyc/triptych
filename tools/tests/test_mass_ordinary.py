@@ -343,6 +343,15 @@ class OrdinaryStructure(unittest.TestCase):
             for key in ['praeparatio/adjutorium-nostrum', 'praeparatio/deus-tu-conversus', 'praeparatio/ostende-nobis', 'praeparatio/domine-exaudi', 'praeparatio/dominus-vobiscum', 'praeparatio/misereatur-tui', 'praeparatio/misereatur-vestri', 'praeparatio/indulgentiam', 'praeparatio/kyrie-eleison', 'praeparatio/christe-eleison', 'praeparatio/kyrie-eleison-repetitio', 'praeparatio/dominus-vobiscum-post-gloriam', 'oblatio/dominus-vobiscum-ante-evangelium', 'oblatio/dominus-vobiscum-ante-offertorium', 'conclusio/dominus-vobiscum-ante-postcommunionem', 'canon/per-omnia-saecula', 'communio/pater-noster', 'communio/per-omnia-saecula-post-libera-nos', 'conclusio/requiescant-in-pace', 'conclusio/initium-sancti-evangelii']
             for lang in ("en", "la")
         }
+        # C26 joins are independently checked single-actor Latin bodies;
+        # Cummiskey's source-owned English has no new turn partition here.
+        expected |= {
+            ("roman-1962", "oblatio/" + key, "la")
+            for key in ("munda-cor-meum", "dominus-sit-in-corde-meo", "per-evangelica-dicta")
+        }
+        # C26 optional source presentation: English has one source-grounded
+        # priest-with-assistants turn; the separate Latin remains priest only.
+        expected.add(("roman-1962", "oblatio/per-evangelica-dicta", "en"))
         self.assertEqual(reached, expected)
         # Postconciliar: speakers priest/all; roles only where the 2002
         # Praefationes print versicle and response marks, none for the Pax.
@@ -462,7 +471,7 @@ class OrdinaryStructure(unittest.TestCase):
                 # Easter and Pentecost Hanc igitur are held; the continuation's
                 # and the Pentecost head's English are typed variants.
                 "communicantes-continuation-english-lacks-1962-clause": 1,
-                "no-facing-latin": 8,
+                "no-facing-latin": 5,
                 "not-in-the-1962-ordo": 0,
                 "preface-not-in-witness": 2,
                 "proper-canon-form-not-held": 8,
@@ -470,7 +479,7 @@ class OrdinaryStructure(unittest.TestCase):
                 "witness-own-english": 63,
             },
         )
-        self.assertEqual(sum(row["count"] for row in roman["absences"]), 89)
+        self.assertEqual(sum(row["count"] for row in roman["absences"]), 86)
         by_key = {element["key"]: element for element in elements(roman)}
         self.assertEqual(
             by_key["oblatio/accendat-in-nobis"]["absent"]["latin"],
@@ -957,7 +966,7 @@ class OrdinaryTool(unittest.TestCase):
             # 2026-10-19 (C3): the Holy Spirit Preface's opening occurrence,
             # the Pentecost Communicantes head, the shared continuation and the
             # Easter and Pentecost Hanc igitur.
-            [("en", 186, 10), ("la", 117, 79)],
+            [("en", 186, 10), ("la", 120, 76)],
         )
         self.assertEqual(
             [one["key"] for one in roman["exclusions"]],
@@ -2351,7 +2360,7 @@ process.stdout.write(JSON.stringify({
         self.assertEqual(
             [one["held"] for one in report["languages"]["postconciliar"]], [0, 20])
         self.assertEqual(
-            [one["held"] for one in report["languages"]["roman-1962"]], [186, 117])
+            [one["held"] for one in report["languages"]["roman-1962"]], [186, 120])
         # The Latin the 1962 file does not hold is exactly the elements the
         # preamble's reasons partition; the next test asserts those counts from
         # the other side. Since 2026-10-19 (C2 G5/G6): six more source rows are
@@ -2360,7 +2369,7 @@ process.stdout.write(JSON.stringify({
         elements = report["languages"]["roman-1962"][1]["elements"]
         # 2026-10-19 (C3): two more elements (the Preface opening and the
         # Communicantes continuation), and four more held Latin texts.
-        self.assertEqual(elements - 117, 79)
+        self.assertEqual(elements - 120, 76)
 
         pater = report["kyrie_in_each"]
         self.assertNotIn("Our Father, who art in heaven", pater["en"])
@@ -2414,7 +2423,7 @@ process.stdout.write(JSON.stringify({
         report = self.run_harness()
         preamble = report["preamble_1962"]
         self.assertIn("The 1861 witness prints this block only in English", preamble)
-        self.assertIn("8 of 196 elements", preamble)
+        self.assertIn("5 of 196 elements", preamble)
         self.assertIn("This older oration is outside the 1962 Ordinary", preamble)
         self.assertIn("0 of 196 elements", preamble)
         self.assertIn("The 1861 lay witness supplies its own English heading or rubric", preamble)

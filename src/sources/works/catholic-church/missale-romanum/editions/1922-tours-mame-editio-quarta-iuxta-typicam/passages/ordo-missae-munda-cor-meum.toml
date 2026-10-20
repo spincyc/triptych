@@ -1,0 +1,12 @@
+schema = 1
+record_type = "passage"
+id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordo-missae-munda-cor-meum"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordo-gospel-preparation-la-checked-03c65abd"
+artifact_sha256 = "03c65abd2608e0b5fb0084cce71a4db271cc1fc0c6026b667645bc82f1fb8596"
+locus = "Ordo Missae, munda-cor-meum; checked transcription artifact physical line 2, seq 1; Mame printed p. 274, original PDF artifact p. 388, IA leaf n387; retained two-page facsimile p. 1; explicit priest reuse on printed p. 275, original PDF p. 389, retained facsimile p. 2"
+physical_line_ranges = [[2, 2]]
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Complete Munda cor meum prayer in the 1922 Mame, printed in the solemn-Mass deacon context and explicitly reused for the priest at Mass without deacon and subdeacon."
+verified_on = "2026-10-20"
+notes = "The exact full TSV row at the declared physical line, including its source metadata, is controlled by the named text artifact and its hash. Its latin cell is the selected prayer body. The artifact derives only from the retained Mame facsimile, whose derivation pins the complete original PDF. This passage duplicates no text cell and makes no raw-line text claim over an image or PDF. Whole black prayer body at the lower right of printed p. 274, following the rubric for the deacon at solemn Mass; printed p. 275 explicitly reuses Munda cor meum ut supra for the priest celebrating without deacon and subdeacon. The following Jube, domne, benedicere request is separate and excluded. The drop initial and following small capitals are joined as MUNDA. No cross or dialogue head mark is printed inside this body."

@@ -651,6 +651,57 @@ zero divergence and zero tracked writes. The preview build and integrity
 verification also pass. These checks cover the combined implementation; final
 source-frozen print review and performance measurements remain pending.
 
+The next source checkpoint fills three existing Latin prayer gaps from the
+registered Mame 1922 witness: Munda cor meum, Dominus sit in corde meo and Per
+evangelica dicta. Two immutable artifacts and three bounded passages retain
+the checked source pages and transcription. The additive inventory join
+requires independent witness, rights, extent and exact spoken-turn accounting;
+it cannot replace an existing language or inherit another witness's actor.
+The 196-element frame and English wording stay unchanged. Latin availability
+rises from 117 to 120 elements; Cummiskey's own facing-column absences remain
+true. Munda's priest cue is limited to the source's explicit Low Mass reuse;
+Latin Per evangelica is Priest while the English witness assigns it to the
+priest with assistants. A separate one-turn English partition now exposes that
+source's All cue, without changing its words or assigning a target dialogue
+role.
+
+Eleven further Latin collation findings cover ten held Prefaces and the common
+Hanc igitur. Only the complete Common Preface and common Hanc receive new
+word-agreement findings. Trinity and eight other abbreviated Prefaces retain
+their literal source cues, variants and missing assembly, without a whole-row
+target-wording grade. No new Trinity opening event or ritual placement is
+inferred. The source-only Gloria heading and unplaced pre-Postcommunion
+greeting remain uncollated. The catalog audit checks all 10,516 existing
+canonical records unchanged and exactly five additions; family screening stays
+at zero completed and 161 pending units. The general source reader lists the
+three structured TSV passages as non-prose; it does not turn row keys and
+pagination into prayer text.
+
+The integrated source stack passes 80 focused tests, the stable Ordinary CLI
+shell gate, source/publication checks, and preview integrity. The extended real
+Chromium probe passes 44 groups with 38 accessibility-tree and 38 native-copy
+records, including the independent Latin Priest / English All cues. Its waits
+now check the requested selection and committed render. Rubrics-off assertions
+apply to Day; Propers has no such URL control. The older summary/count pins
+were migrated to the reviewed source findings, retaining grade refusals and
+explicitly prohibiting exact-target promotion of the nine partial Prefaces.
+
+All seven full browser tests and 217 static tests pass on this stack. The
+first full example replay found only two research-staleness elision counts,
+each increased by the five new canonical records; the six owning examples
+pass after actual recapture, without rebaselining any research disposition.
+The annual module passes all six tests in 524.598 seconds: 4,380 matrix renders
+plus six language sentinels. Its broader recorder correctly fails its worktree
+freeze guard because a root scratch-capture helper unexpectedly wrote those
+two example constants through the owning API's global tool directory. That
+failed guard is retained. A separate audit hashes all 34,830 scoped files,
+confirms the other 34,829 blobs and modes unchanged, proves executable AST
+parity outside EXAMPLES, and confirms that tool is outside the annual runtime
+path. The annual result is therefore qualified against unchanged consumed
+inputs; it is not a pass of the broader frozen-worktree wrapper. All annual
+descendants are closed. The final full `make check` rerun passes: 259 captured
+examples, 250 replayed, zero divergence and zero tracked writes.
+
 A parallel witness audit found no publishable English witness for the 1962
 Pentecost Lesson's printed `discipuli` wording. [Cabrol 1921](https://catalog.hathitrust.org/Record/100567132)
 is an inaccessible page-image lead, not a text source. An

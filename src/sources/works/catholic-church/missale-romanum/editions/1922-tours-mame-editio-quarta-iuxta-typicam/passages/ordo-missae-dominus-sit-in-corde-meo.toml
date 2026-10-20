@@ -1,0 +1,12 @@
+schema = 1
+record_type = "passage"
+id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordo-missae-dominus-sit-in-corde-meo"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordo-gospel-preparation-la-checked-03c65abd"
+artifact_sha256 = "03c65abd2608e0b5fb0084cce71a4db271cc1fc0c6026b667645bc82f1fb8596"
+locus = "Ordo Missae, dominus-sit-in-corde-meo; checked transcription artifact physical line 4, seq 3; Mame printed p. 275, original PDF artifact p. 389, IA leaf n388; retained two-page facsimile p. 2"
+physical_line_ranges = [[4, 4]]
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Complete first-person Dominus sit in corde meo prayer of the priest celebrating without sacred ministers in the 1922 Mame; distinct from the second-person blessing of the deacon."
+verified_on = "2026-10-20"
+notes = "The exact full TSV row at the declared physical line, including its source metadata, is controlled by the named text artifact and its hash. Its latin cell is the selected prayer body. The artifact derives only from the retained Mame facsimile, whose derivation pins the complete original PDF. This passage duplicates no text cell and makes no raw-line text claim over an image or PDF. Whole black first-person prayer at the lower left of printed p. 275, under the rubric for the priest celebrating without deacon and subdeacon. The separate Jube, Domine, benedicere request above it and the upper-left second-person Dominus sit in corde tuo blessing of the deacon are excluded. No cross or dialogue head mark is printed inside this body."

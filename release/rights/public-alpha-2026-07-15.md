@@ -14155,7 +14155,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/documents/corpus.json` | `56070f77c5f99cef1be7724266aab28b89c9bf3fb045478247ad92c5d6bfe9e1` |
 | `src/web/data/structure/ordinary/index.json` | `d42c3482d78158b8d1a0d51b65ce6d5704b5d634f8833bc46f2a8a65b3a73816` |
 | `src/web/data/structure/ordinary/postconciliar.json` | `53b1322024937c579069b998af29911c08ce9e4b51cd5da96372ea56fbd64004` |
-| `src/web/data/structure/ordinary/roman-1962.json` | `8bda8aada6f53037944f8f6602503c1cb4833e9587f3b0e84cee464442ca93ac` |
+| `src/web/data/structure/ordinary/roman-1962.json` | `696c787ec7c46bb2901bab50016be2c08f0d628db3e2ccdb709b33097907c27d` |
 | `src/web/data/structure/ordinary/roman-pre-1955.json` | `0148747d78f061dda74c9b4d77e1c4b6d67b0c222cb4e034a29c642b84bead44` |
 | `src/web/data/structure/paragraphs/catholic-public-domain-version/01-gen/001.json` | `4f79beb5afe32b8fe6bad5133cf93ad8a3c27f7a6e1fcbfd583d4943c42ab2ee` |
 | `src/web/data/structure/paragraphs/catholic-public-domain-version/01-gen/002.json` | `baff1b94da49a490aad58ef3eda8c76fcbae8eb5852ca5d7953af6c8f81f746e` |
@@ -20436,7 +20436,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/catholic-church/missale-romanum/1862-pustet-ratisbon-1862.json` | `de8c86e1fb26a3fe9567d0bc68465269e05e37b2091a9cf7900168ac815cfe38` |
 | `src/web/data/structure/sources/editions/catholic-church/missale-romanum/1889-1889-tournai-desclee-leo-xiii-recognitum.json` | `c502cb632cd3824158e4c4b9c3e687987cd7932f5e460abae710beea5e7257e8` |
 | `src/web/data/structure/sources/editions/catholic-church/missale-romanum/1920-vatican-typica-1920.json` | `a7fc47516338793f660690321d2a29737c165d6273c024cf4785591f9fbfbd19` |
-| `src/web/data/structure/sources/editions/catholic-church/missale-romanum/1922-1922-tours-mame-editio-quarta-iuxta-typicam.json` | `f0fe95839998b5cd7603c978994bdf052c97614b672840af57e5fde9bf2ed32a` |
+| `src/web/data/structure/sources/editions/catholic-church/missale-romanum/1922-1922-tours-mame-editio-quarta-iuxta-typicam.json` | `78d6030e0fa84ab613e9f40035ec079e4e176753636cc1138b528e63b2604388` |
 | `src/web/data/structure/sources/editions/catholic-church/missale-romanum/1942-unidentified-pre-1955-witness-ia-1947.json` | `786b2e8e49d706fcf413e75d42d33bc4f446b3fef47c2a09b712e986d2b3be32` |
 | `src/web/data/structure/sources/editions/catholic-church/missale-romanum/1962-benziger-iuxta-typicam-1962.json` | `bbb24b1f1fd9b5ab014d3d990a0dcce789e0cdb3ce2468a6c6137f9a8239b1a7` |
 | `src/web/data/structure/sources/editions/catholic-church/missale-romanum/1962-vatican-typica-1962.json` | `ea37887fd9e969ccaf0dce62ed1083b4c7f6028649e425e025a2b146d986a778` |
@@ -21304,7 +21304,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/william-williams/guide-me-o-thou-great-jehovah/2026-hymnal-of-praise-1913-hymnary-web-2026-07-29.json` | `0c387edabb7fcde38b30186316a98931754e5184bea07b1c3f437c3192f8e195` |
 | `src/web/data/structure/sources/editions/world-health-organization/icd-11-clinical-descriptions-and-diagnostic-requirements/2024-english-who-2024.json` | `97b5a08dc7e0a83a6c4da5990e21e8fcc2e4356d569903f09b8b97d34f1672aa` |
 | `src/web/data/structure/sources/editions/world-intellectual-property-organization/wipo-lex-berne-contracting-parties/2026-web-2026-08-01.json` | `ffaf08c0f47cd6ab1d4761546a9e290ce69420b185c891d67395fcc17d5d9d5e` |
-| `src/web/data/structure/sources/index.json` | `45c12a80e50709da2501ab0ea995ae95be13b28d0396fc4438b536f6da841ebf` |
+| `src/web/data/structure/sources/index.json` | `9889a292c6e8bb062f3972a60ade559fb3196bdb1de31a8d6b137a6ebf136036` |
 | `src/web/data/structure/sources/text/passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.1.json` | `bf80df77e273500e8769a0a0613d4bb907a736fafce970a0e62804eda1219c58` |
 | `src/web/data/structure/sources/text/passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.10.json` | `14700390dab93606af7e6e934d457e2ed524f13977f64bb6ede3f04daea4521d` |
 | `src/web/data/structure/sources/text/passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.100.json` | `c9b31161f4c7f56ea4c89bfaa550e47bc6327f5b8db9f685dc5bf2a4d73d1de2` |

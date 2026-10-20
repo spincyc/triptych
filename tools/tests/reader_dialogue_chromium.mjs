@@ -19,6 +19,10 @@ const KEYS = ['praeparatio/deus-tu-conversus', 'praeparatio/ostende-nobis',
   'oblatio/dominus-vobiscum-ante-offertorium', 'conclusio/dominus-vobiscum-ante-postcommunionem',
   'canon/per-omnia-saecula', 'communio/pater-noster', 'communio/per-omnia-saecula-post-libera-nos',
   'conclusio/requiescant-in-pace', 'conclusio/initium-sancti-evangelii'];
+const GOSPEL_PRAYERS = ['oblatio/munda-cor-meum', 'oblatio/dominus-sit-in-corde-meo',
+  'oblatio/per-evangelica-dicta'];
+const MAME = 'edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam';
+const CUMMISKEY = 'edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861';
 const KYRIE = KEYS.filter(key => /(?:kyrie|christe)-eleison/.test(key));
 const clean = value => value.replace(/\s+/g, ' ').trim();
 const eventSelector = key => `[data-semantic-event-id="ordinary-element/${key}"]`;
@@ -126,20 +130,35 @@ async function viewport(cdp, width, height = 852, scale = 1) {
     mobile:width < 768,screenWidth:width,screenHeight:height});
   await cdp.send('Emulation.setPageScaleFactor', {pageScaleFactor:scale});
 }
-function route(entrance, lang, {requiem=false,rubrics=true,location=null} = {}) {
+function route(entrance, lang, {requiem=false,rubrics=true,location=null,textDisplay=null} = {}) {
   const params = new URLSearchParams({missal:'roman-1962', bible:'douay-rheims', orations:'la',
-    mode:'missal',ordinary:'1','ordinary-lang':lang,rubrics:rubrics ? '1':'0',
+    mode:'missal','ordinary-lang':lang,
     mass:requiem ? 'commemoratione-omnium-fidelium-defunctorum' : entrance === 'day' ? 'pentecost-10':'pentecost'});
-  if (entrance === 'day') params.set('date',requiem ? '2026-11-02':'2026-08-02');
+  if (entrance === 'day') {
+    params.set('date',requiem ? '2026-11-02':'2026-08-02');
+    params.set('ordinary','1');params.set('rubrics',rubrics ? '1':'0');
+  }
   else params.set('type',requiem ? 'sanctoral':'seasonal');
   if (requiem) params.set('form','first');
   if (location) params.set('location',location);
+  if (textDisplay) params.set('text-display',textDisplay);
   return '/src/web/browser/liturgy/' + (entrance === 'day' ? 'day.html':'index.html') + '?data=/src/web/data#' + params;
 }
 async function visit(cdp, base, entrance, lang, options={}) {
-  await cdp.send('Page.navigate',{url:base+route(entrance,lang,options)});
+  const destination=route(entrance,lang,options);
+  const requested=new URLSearchParams(destination.split('#')[1]);
+  await cdp.send('Page.navigate',{url:base+destination});
   await waitFor(cdp, `window.${entrance}ReaderReady === true && window.${entrance}ReaderDebug?.state &&
     window.${entrance}ReaderDebug?.state.requestedMode === 'missal' &&
+    window.${entrance}ReaderDebug.state.languages.ordinary === ${JSON.stringify(lang)} &&
+    (window.${entrance}ReaderDebug.state.textDisplay || 'selected') === ${JSON.stringify(options.textDisplay || 'selected')} &&
+    ${entrance === 'day' ? `window.dayReaderDebug.state.apparatus?.rubrics === ${requested.get('rubrics') === '1'}` : 'true'} &&
+    ${entrance === 'day'
+      ? `window.dayReaderDebug.state.civilDate === ${JSON.stringify(requested.get('date'))} &&
+         window.dayReaderDebug.state.selectedReadableFormulary?.id === ${JSON.stringify(requested.get('mass'))}`
+      : `window.propersReaderDebug.state.formulary?.id === ${JSON.stringify(requested.get('mass'))}`} &&
+    (window.${entrance}ReaderDebug.state.form || null) === ${JSON.stringify(requested.get('form'))} &&
+    document.getElementById('reader-document').getAttribute('aria-busy') === 'false' &&
     document.querySelector('#reader-document [data-semantic-event-id]')`, entrance+' '+lang+' ready');
   return evaluate(cdp, `({outcome:${entrance}ReaderDebug.outcome,error:${entrance}ReaderDebug.error,
     events:${entrance}ReaderDebug.semantic?.events?.map(row=>row.id) || null,hash:location.hash})`);
@@ -238,12 +257,13 @@ async function verifyRows(cdp,entrance,lang) {
   assert.ok(sourceOnly.turns.every(turn=>!turn.dialogue_role),'source-only Postcommunion gains no target dialogue role');
   return {count,ids:semantic.ids};
 }
-async function axRows(cdp,key) {
+async function axRows(cdp,key,lang=null) {
   const {nodes}=await cdp.send('Accessibility.getFullAXTree');
   const byId=new Map(nodes.map(node=>[node.nodeId,node]));
   const {root}=await cdp.send('DOM.getDocument',{depth:0});
   const rows=await observedRows(cdp,key), result=[];
   for (let index=0;index<rows.length;index++) {
+    if (lang && rows[index].lang!==lang) continue;
     const {nodeId}=await cdp.send('DOM.querySelector',{nodeId:root.nodeId,
       selector:eventSelector(key)+` [data-dialogue-probe="${index}"]`});
     const {node}=await cdp.send('DOM.describeNode',{nodeId});
@@ -258,9 +278,10 @@ async function axRows(cdp,key) {
   }
   return result;
 }
-async function verifyAX(cdp,entrance,lang) {
-  for(const key of [...KYRIE,'praeparatio/misereatur-tui','praeparatio/misereatur-vestri','communio/pater-noster']) {
-    const actual=await axRows(cdp,key),expected=turns(key,lang);
+async function verifyAX(cdp,entrance,lang,keys=[...KYRIE,'praeparatio/misereatur-tui','praeparatio/misereatur-vestri','communio/pater-noster']) {
+  for(const key of keys) {
+    const actual=await axRows(cdp,key,lang),expected=turns(key,lang);
+    assert.equal(actual.length,expected.length,key+' '+lang+' exact AX row count');
     actual.forEach((row,index)=>{
       const turn=expected[index];
       assert.deepEqual(row.text,turn.gloss?[turn.text]:[cue(turn).label,words(turn)],key+' AX label plus exact body');
@@ -270,16 +291,16 @@ async function verifyAX(cdp,entrance,lang) {
     accessibility.push({entrance,lang,key,rows:actual});
   }
 }
-async function verifyCopy(cdp,entrance,lang) {
+async function verifyCopy(cdp,entrance,lang,keys=[...KYRIE,'praeparatio/misereatur-tui']) {
   await cdp.send('Page.bringToFront');
   await cdp.send('Emulation.setFocusEmulationEnabled',{enabled:true});
-  for(const key of [...KYRIE,'praeparatio/misereatur-tui']) {
+  for(const key of keys) {
     const copied=await evaluate(cdp, `(async()=>{
       const event=document.querySelector(${JSON.stringify(eventSelector(key))});
       event.scrollIntoView({block:'center',behavior:'instant'});event.focus({preventScroll:true});
       const rows=event.querySelectorAll('.ordinary-turn'), selection=getSelection();
       selection.removeAllRanges();const range=document.createRange();
-      range.selectNodeContents(event.querySelector('.ordinary-dialogue'));selection.addRange(range);
+      range.selectNodeContents(event.querySelector('.ordinary-dialogue[lang="${lang}"]'));selection.addRange(range);
       const selected=selection.toString(),ok=document.execCommand('copy');
       await new Promise(done=>setTimeout(done,50));
       const text=await navigator.clipboard.readText();selection.removeAllRanges();
@@ -293,6 +314,63 @@ async function verifyCopy(cdp,entrance,lang) {
     assert.equal(copied.text,copied.selected,key+' native clipboard preserves actual selection');
     assert.doesNotMatch(copied.text,/(?:^|\n)\s*[PR]\.\s/,key+' no duplicate source marker');
   }
+}
+async function verifyGospelPrayers(cdp,entrance,paired) {
+  const witness=data.translations.find(row=>row.source_id===MAME);
+  assert.equal(witness?.held,3,'exact additional Latin witness extent');
+  assert.match(witness.caution,/priest cue is limited.*without deacon and subdeacon/);
+  assert.match(witness.caution,/solemn-Mass occurrence belongs to the deacon/);
+  const page=await evaluate(cdp,`document.querySelector('#reader-document').innerText`);
+  assert.ok(clean(page).includes(clean(witness.label)),'Mame witness visibly identified');
+  assert.ok(clean(page).includes(clean(witness.caution)),'Munda actor qualification remains visible');
+  for (const key of GOSPEL_PRAYERS) {
+    const element=elements.get(key),latin=element.translations.find(row=>row.lang==='la');
+    const english=element.translations.find(row=>row.lang==='en');
+    assert.equal(latin.source_id,MAME,key+' independent Latin source');
+    assert.equal(english.source_id,CUMMISKEY,key+' original English source');
+    assert.equal(latin.target_wording,'word-exact',key+' bounded collation');
+    assert.ok(latin.note.includes('Cummiskey 1861 prints this existing block in English only'),key+' source-specific absence retained');
+    const expected=turns(key,'la');assert.equal(expected.length,1,key+' one Latin priest turn');
+    assert.deepEqual([expected[0].speaker,expected[0].dialogue_role,expected[0].printed_marker],['priest',null,null]);
+    const rows=await observedRows(cdp,key),actual=rows.filter(row=>row.lang==='la');
+    assert.equal(actual.length,1,key+' exact rendered Latin extent');
+    const row=actual[0];
+    assert.equal(row.text,latin.text,key+' exact source body');
+    assert.deepEqual([row.speaker,row.dialogueRole,row.marker],['priest',null,null],key+' source actor without inferred role or marker');
+    assert.deepEqual([row.labels,row.glyphs,row.decorative],[['Priest'],['P'],['true']],key+' one priest cue');
+    assert.equal(row.cueLanguage,'en');assert.equal(row.visible,true);assert.equal(row.overflow,false);
+    const facts=await evaluate(cdp,`(() => {
+      const event=document.querySelector(${JSON.stringify(eventSelector(key))});
+      const semantic=${entrance}ReaderDebug.semantic.events.find(row=>row.id===${JSON.stringify('ordinary-element/'+key)});
+      return {source:semantic?.selected?.sourceId,
+        headings:[...event.querySelectorAll('.proper-name,.ordinary-head')].map(node=>node.textContent.trim()),
+        sides:[...event.querySelectorAll('.text-pair > .text-side')].map(side=>({
+          lang:side.dataset.textLanguage,source:side.dataset.textSourceId,rights:side.dataset.textRights,
+          label:side.querySelector('.text-side-label')?.textContent,
+          credit:side.querySelector(':scope > .composed-note')?.textContent}))};
+    })()`);
+    assert.ok(!facts.headings.includes('All'),key+' no inherited All heading');
+    if (paired) {
+      assert.deepEqual(facts.sides.map(side=>[side.lang,side.source,side.rights]),[['la',MAME,'public-domain'],['en',CUMMISKEY,'public-domain']],key+' independently attributed language sides');
+      assert.ok(facts.sides[0].credit.includes(witness.label),key+' Latin source credit');
+    } else {
+      assert.equal(facts.source,MAME,key+' selected Latin semantic source');
+      assert.deepEqual(rows.map(row=>row.lang),['la'],key+' selected Latin only');
+    }
+    if (key==='oblatio/per-evangelica-dicta') {
+      assert.equal(element.speaker,'all','Cummiskey base actor remains all');
+      assert.equal(english.turns.length,1,'one source-supported English turn');
+      assert.deepEqual([english.turns[0].speaker,english.turns[0].dialogue_role,english.turns[0].printed_marker],['all',null,null]);
+      assert.doesNotMatch(latin.text,/Amen/,'no added Per evangelica Amen');
+      if (paired) {
+        assert.deepEqual(rows.map(one=>[one.lang,one.speaker,one.labels,one.glyphs]),[
+          ['la','priest',['Priest'],['P']],['en','all',['All'],['All']]],'Latin Priest and English All remain independent');
+        assert.equal(rows[1].text,english.text,'exact unchanged English body');
+        assert.equal(rows[1].dialogueRole,null);assert.equal(rows[1].marker,null);
+      }
+    }
+  }
+  const layout=await reflow(cdp);assert.equal(layout.page,true);assert.equal(layout.rows,true);
 }
 async function capture(cdp,name) {
   await evaluate(cdp,`document.querySelector('${eventSelector('praeparatio/kyrie-eleison')}').scrollIntoView({block:'center',behavior:'instant'})`);
@@ -376,6 +454,22 @@ try {
     });
   }
   for(const entrance of ['day','propers']) {
+    for(const paired of [false,true]) for(const width of [1440,393]) {
+      await check(`${entrance}-gospel-prayers-${paired?'paired':'latin'}-${width}`,async()=>{
+        await viewport(cdp,width,width===1440?900:852);
+        await visit(cdp,base,entrance,paired?'en':'la',{
+          textDisplay:paired?'latin-and-selected':null,rubrics:width===1440});
+        await verifyGospelPrayers(cdp,entrance,paired);
+        if(width===393) {
+          await verifyAX(cdp,entrance,'la',GOSPEL_PRAYERS);
+          await verifyCopy(cdp,entrance,'la',GOSPEL_PRAYERS);
+          if(paired) {
+            await verifyAX(cdp,entrance,'en',['oblatio/per-evangelica-dicta']);
+            await verifyCopy(cdp,entrance,'en',['oblatio/per-evangelica-dicta']);
+          }
+        }
+      });
+    }
     await viewport(cdp,393,852);
     await check(`${entrance}-semantic-location-and-focus`,async()=>{
       await visit(cdp,base,entrance,'en');
@@ -395,7 +489,7 @@ try {
         return row.getBoundingClientRect().bottom>0 && row.getBoundingClientRect().top<innerHeight;})()`,'deep-linked Kyrie parent is visible');
       assert.equal(await evaluate(cdp,`document.querySelectorAll('[data-gloss] [data-reader-location], [data-gloss][data-semantic-location]').length`),0);
     });
-    await check(`${entrance}-rubrics-hidden-200-percent-text`,async()=>{
+    await check(`${entrance}-${entrance==='day'?'rubrics-hidden':'source-notes'}-200-percent-text`,async()=>{
       await visit(cdp,base,entrance,'en',{rubrics:false});
       await evaluate(cdp,`document.documentElement.style.fontSize='200%'`);
       const actual=await reflow(cdp);assert.equal(actual.page,true);assert.equal(actual.rows,true);
@@ -441,7 +535,7 @@ finally {
 }
 const report={status:failures.length||consoleProblems.length||failedRequests.length||httpProblems.length?'fail':'pass',
   checks:assertions.length,assertions,failures,consoleProblems,failedRequests,httpProblems,expectedHttpProblems:[],
-  clipboard,accessibility,pdfs,acceptance:{realAccessibilityTree:accessibility.length===24,nativeClipboard:clipboard.length===24,
+  clipboard,accessibility,pdfs,acceptance:{realAccessibilityTree:accessibility.length===38,nativeClipboard:clipboard.length===38,
     screenReader:false,manualPrintReview:false,literalBrowserZoom:false,
     reason:'Real AX, native copy, CSS viewport equivalence and automated PDF checks were run; assistive technology, literal desktop zoom and complete human print review were not run.'}};
 await writeFile(resolve(SCRATCH,'dialogue-evidence.json'),JSON.stringify(report,null,2)+'\n');

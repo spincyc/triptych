@@ -992,7 +992,40 @@ pending. The cumulative declared script/style gzip6 increase against
 `aa39475c5` is 9,252 bytes for Day and 10,645 for Propers, with 29 direct resources
 each. These measurements do not establish latency or independent acceptance.
 
+Further source work on 2026-10-20 adds three independently identified Mame
+1922 Latin prayer bodies to existing English-only elements, preserving the
+196-element frame and source-specific Cummiskey absence findings. Overall
+Latin availability becomes 120 held / 76 missing; English remains 186 / 10.
+The optional additive inventory join requires a source-owned exact turn
+partition and basis for every spoken side, so Latin cannot inherit an English
+actor. Munda's priest attribution is limited to the express Low Mass reuse;
+Per evangelica retains independent Latin Priest and English priest-with-
+assistants assignments. Its separately checked English one-turn partition
+exposes the source All cue without changing words or adding a dialogue role.
+
+Eleven bounded Latin collation findings cover the Common Preface, Trinity,
+eight other held Prefaces and the common Hanc igitur. Only Common and Hanc gain
+new word-agreement findings. The nine partial Prefaces keep their literal cues,
+variants and unassembled opening/conclusion limits, without a whole-row
+target-wording grade. No new Trinity opening event is added. The source-only
+Gloria heading and unplaced pre-Postcommunion greeting remain uncollated.
+These are source-qualified implementation slices; complete corpus wording,
+source-owned finer bilingual alignment and independent C2–C6 acceptance remain
+open.
+
 ### Verification and completion gates
+
+The integrated 2026-10-20 source checkpoint passes 80 focused source tests,
+the stable Ordinary shell contract, 44 Chromium dialogue groups (38 actual
+AX-tree and native-copy records each), all seven full browser tests, 217
+static tests, source/publication checks, preview integrity, and the final full
+`make check` replay (250 examples, zero divergence or tracked writes). The
+annual module passes 4,380 matrix renders plus six language sentinels. Its
+broader worktree-freeze wrapper remains failed because two example-count
+constants were edited during the run; an independent full-blob audit confirms
+unchanged consumed CLI/source/data inputs and executable AST. This is a
+qualified annual result, not a pass of that broader wrapper. Final print,
+performance and independent acceptance remain open.
 
 Recovery checks actually run on the baseline:
 

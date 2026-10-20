@@ -627,6 +627,25 @@ This classification is local to the target recension: a 1962 finding does not
 propagate into the pre-1955 projection of the same witness. Target-recension
 exclusions remain separate accounting and never erase the source-side finding.
 
+
+**Additional text retains its own witness.** An artifact-backed Ordinary section
+may declare `additional_texts` for one missing language of an existing emitted
+source element. Each entry names `element` and exactly one `english` or `latin`
+source block using the existing witness/artifact/elements/column and provenance
+contract. It cannot replace a held side, introduce or reorder an element, target
+an exclusion or inserted occurrence, or change source-owned metadata. The base
+artifact's specific absence declaration stays true and is validated before the
+join; the new witness's own qualification identifies both that lack and the
+additional source. Overall language absence clears only where that separately
+identified text is available, and witness counts keep their separate owners.
+Optional language-local source-row turns use the existing exact partition
+contract and require a stated reading basis, including for a single actor.
+Every additional prayer, form or dialogue must carry a nonempty exact partition,
+including a single actor-unknown turn where the source does not establish one;
+the renderer must never inherit the base witness's actor for the new language.
+This is an additive Ordinary-v1 inventory field; generated JSON continues to use
+the existing translation/turn fields and source-library schemas are unchanged.
+
 **Source fragments remain language-local.** An optional `turns` list partitions
 already selected artifact rows in their source order; it adds no text or
 semantic destination. `gloss = true` in the Ordinary v1 model identifies a
