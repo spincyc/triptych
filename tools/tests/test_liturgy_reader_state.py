@@ -275,6 +275,12 @@ if (input.op === 'fixture-validate') {
       structure: read(base + 'propers/' + request.edition.id + '.json')
     }));
   }
+} else if (input.op === 'adapt-propers-missal') {
+  const request = input.request;
+  const id = request.edition.id;
+  const structure = read(base + 'propers/' + id + '.json');
+  const ordinary = input.omitOrdinary ? null : read(base + 'ordinary/' + id + '.json');
+  output = resultProjection(A.adaptPropers({request, structure, ordinary}));
 } else if (input.op === 'adapt-cycle-fixture') {
   const fixture = input.fixture;
   const request = JSON.parse(JSON.stringify(fixture.requested));
@@ -1059,7 +1065,8 @@ class ContractTests(unittest.TestCase):
         self.assertEqual(
             propers["hash"],
             ["missal", "type", "mass", "bible", "orations", "form", "cycle",
-             "alternative", "translation-witness", "mode", "location"],
+             "alternative", "translation-witness", "mode", "location",
+             "ordinary-lang", "penitential-act", "creed", "eucharistic-prayer"],
         )
         self.assertEqual(day["query"], ["data"])
         self.assertEqual(propers["query"], ["data", "missals"])
@@ -1587,6 +1594,95 @@ class UrlContractTests(unittest.TestCase):
         self.assertNotIn("navigator", source)
         self.assertNotIn("localStorage", source)
         self.assertNotIn("sessionStorage", source)
+
+
+class PropersMissalTests(unittest.TestCase):
+    @staticmethod
+    def state(edition: str, mass: str, kind: str, *, form: str | None = None,
+              mode: str = "missal") -> dict:
+        state = {
+            "schema": "triptych-liturgy-reader-state/v1",
+            "entrance": "propers", "civilDate": None,
+            "edition": {"id": edition},
+            "formulary": {"id": mass, "type": kind},
+            "bible": {"id": "douay-rheims", "numbering": "vulgate"},
+            "languages": {"orations": "la", "ordinary": "la"},
+            "requestedMode": mode,
+            "options": {"ordinary": mode == "missal", "legitimate": {}},
+            "coverage": [], "unresolvedChoices": [], "sourceHooks": [],
+        }
+        if form:
+            state["form"] = form
+        return state
+
+    def test_url_round_trip_preserves_latent_ordinary_language_and_options(self) -> None:
+        context = node_call({"op": "context", "entrance": "propers",
+                             "id": "postconciliar", "includeOrdinary": True})
+        defaults = {"missal": "postconciliar", "bible": "douay-rheims",
+                    "orations": "la", "ordinary-lang": "en"}
+        basis = "#missal=postconciliar&type=seasonal&mass=advent-1&bible=douay-rheims&orations=la"
+        for mode in ("read", "missal"):
+            with self.subTest(mode=mode):
+                result = node_call({
+                    "op": "url", "entrance": "propers",
+                    "hash": basis + "&mode=" + mode + "&ordinary-lang=la&eucharistic-prayer=ep-ii",
+                    "variantKeys": ["penitential-act", "creed", "eucharistic-prayer"],
+                    "context": context, "defaults": defaults,
+                })
+                self.assertTrue(result["normalized"]["ok"], result["normalized"]["errors"])
+                state = result["normalized"]["state"]
+                self.assertEqual(state["languages"]["ordinary"], "la")
+                self.assertEqual(state["options"], {
+                    "ordinary": mode == "missal",
+                    "legitimate": {"eucharistic-prayer": "ep-ii"},
+                })
+                self.assertEqual(result["renormalized"]["state"], state)
+                self.assertIn("ordinary-lang=la", result["serialized"])
+                self.assertIn("eucharistic-prayer=ep-ii", result["serialized"])
+        invalid = node_call({
+            "op": "url", "entrance": "propers",
+            "hash": basis + "&mode=missal&ordinary-lang=not-held",
+            "context": context, "defaults": defaults,
+        })
+        self.assertFalse(invalid["normalized"]["ok"])
+
+    def test_1962_pentecost_proper_identities_survive_ordinary_seating(self) -> None:
+        request = self.state("roman-1962", "pentecost", "seasonal")
+        missal = node_call({"op": "adapt-propers-missal", "request": request})
+        read = copy.deepcopy(request)
+        read["requestedMode"] = "read"
+        read["options"]["ordinary"] = False
+        proper_only = node_call({"op": "adapt-propers-missal", "request": read})
+        kinds = [row["kind"] for row in missal["events"]]
+        self.assertEqual(len(missal["events"]), 179)
+        self.assertEqual(kinds.count("ordinary-section"), 6)
+        self.assertEqual(kinds.count("ordinary-element"), 163)
+        self.assertEqual(kinds.count("proper"), 10)
+        self.assertEqual(missal["calendarResult"], None)
+        self.assertEqual(
+            [row["id"] for row in missal["events"] if row["kind"] == "proper"],
+            [row["id"] for row in proper_only["events"] if row["kind"] == "proper"],
+        )
+        self.assertTrue(all(row["sourceHooks"] for row in missal["events"]))
+
+    def test_postconciliar_date_unknown_conditions_and_nonfull_frame_are_typed(self) -> None:
+        request = self.state("postconciliar", "pentecost", "seasonal", form="day")
+        result = node_call({"op": "adapt-propers-missal", "request": request})
+        self.assertIsNone(result["calendarResult"])
+        self.assertEqual(result["resolved"]["form"], "day")
+        self.assertTrue(any(row["kind"] == "proper-choice" for row in result["events"]))
+        unresolved = {row["element"] for row in result["ordinaryUnresolved"]}
+        self.assertIn("ritus-initiales/gloria-in-excelsis", unresolved)
+        self.assertIn("symbolum/symbolum-nicaenum", unresolved)
+        good_friday = node_call({
+            "op": "adapt-propers-missal",
+            "request": self.state("postconciliar", "good-friday", "seasonal"),
+        })
+        self.assertFalse(any(row["kind"].startswith("ordinary") for row in good_friday["events"]))
+        frame = next(row for row in good_friday["coverage"]
+                     if row["scope"] == "ordinary-frame:postconciliar")
+        self.assertEqual(frame["state"], "absent")
+        self.assertEqual(frame["reasons"][0]["applicability"], "none")
 
 
 class ParityTests(unittest.TestCase):

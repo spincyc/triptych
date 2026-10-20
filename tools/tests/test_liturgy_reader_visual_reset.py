@@ -94,9 +94,11 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
             [
                 "../shared/browser-core.js",
                 "ordinary-seating.js",
+                "day.js",
                 "reader-state.js",
                 "reader-state-adapters.js",
                 "reader-shell.js",
+                "propers-events.js",
                 "propers-reader.js",
                 "reader-visual-reset.js",
             ],
@@ -104,6 +106,10 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
         source = held(PROPERS)
         self.assertEqual(source.count('data-mode="read"'), 1)
         self.assertNotIn('data-mode="missal"', source)
+        self.assertIn(
+            'document.querySelector(\'[data-mode="missal"]\')?.addEventListener',
+            held(LITURGY / "propers-reader.js"),
+        )
         self.assertNotIn("Study", source)
         self.assertNotIn("Compare", source)
 
@@ -338,13 +344,16 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
     def test_compatibility_closure_uses_public_propers_state_and_day_owned_apparatus(self) -> None:
         state = held(LITURGY / "reader-state.js")
         propers = held(LITURGY / "propers-reader.js")
+        proper_events = held(LITURGY / "propers-events.js")
         day = held(LITURGY / "day-reader.js")
         self.assertIn("'cycle', 'alternative', 'translation-witness'", state)
         self.assertIn("const PUBLIC_KEYS = Object.freeze", propers)
         self.assertIn("const LEGACY_KEYS = Object.freeze", propers)
         self.assertIn("publicKeys: PUBLIC_KEYS", propers)
         self.assertIn("legacyInputAliases: LEGACY_KEYS", propers)
-        self.assertIn("row[PUBLIC_KEYS.cycle] = alternative.cycle", propers)
+        self.assertIn("publicKeys: PUBLIC_KEYS", propers)
+        self.assertIn("const PUBLIC_KEYS = dependencies.publicKeys", proper_events)
+        self.assertIn("row[PUBLIC_KEYS.cycle] = alternative.cycle", proper_events)
         self.assertIn("updates[PUBLIC_KEYS.translationWitness]", propers)
         self.assertIn("function reasoningApparatus(branch, rubrics, structure, result, ordinary)", day)
         self.assertIn("appendProperReasoning(body, branch, rubrics, structure, result)", day)
@@ -361,7 +370,7 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
     def test_visual_oracle_is_exactly_unchanged(self) -> None:
         expected = {
             "reader-visual-reset-day.html": "ff734f07b797e5706c7e62a4c890f47c32c0fbfd78bfc855f421a4123273c18d",
-            "reader-visual-reset-propers.html": "638a816e189ab14b2c38dce83e8998a8cc440ebc38c025e920677a6bf8594312",
+            "reader-visual-reset-propers.html": "e6f9afa33589068ba81585b15f288b154ad55e180f9ed2faa291e24cfc9c5ee3",
             "reader-visual-reset.css": "850e1acacb6f487a5c2f3118388b3fce7b96f9db667e783ba35cdef7d9918b48",
             "reader-visual-reset.js": "eb1c1dd5c0c9c7076b74f2187627dc56e39963429212c0a51872df0ea98a9679",
         }

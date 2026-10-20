@@ -528,34 +528,14 @@
     };
   }
 
-  // The controls that DERIVE from a resolved day follow the outcome; the
-  // controls that LEAVE a day do not.
-  //
-  // A failed outcome used to disable this surface entire, which is right about
-  // stale state and wrong about escape: the date box, the missal select, Apply
-  // and all three step buttons were the only things on the page that could
-  // reach a different day, so a reader who stepped to a day that would not
-  // render was left with a dead surface and no way out but the URL bar. That is
-  // what "selecting a previous day makes the date box unresponsive" is.
-  //
-  // What the failure rule actually protects is that no PRIOR SELECTION shows
-  // through a failure, and that is kept: `resetDateSurface` still empties the
-  // date and every derived select, so these controls stay live holding nothing.
-  // Previous and Next need a resolved day to step from and so follow `enabled`;
-  // Today needs none, because today is a constant and not prior state, and it
-  // is the guaranteed way back.
+  // A failed day clears derived selections, but date, missal, Apply, and Today
+  // remain live so the reader can leave it. Previous/Next require a valid day.
   function setDateSurfaceEnabled(enabled) {
     [bibleSelect, orationsSelect, formularySelect,
       ordinaryLangSelect, ordinaryOptionSelect].forEach(function (control) {
       control.disabled = !enabled;
     });
-    // NEVER gated on runtime state. The first cut of this tied them to
-    // `runtime.missals`, which `loadManifests()` fills, so any paint before that
-    // landed disabled the date box, the missal select, Apply and Today at once —
-    // the whole surface frozen, which is the opposite of the escape this exists
-    // to guarantee. A control that can only ever navigate away is safe to leave
-    // live: the step handlers already refuse when there is no resolved day, and
-    // an empty missal select selects nothing.
+    // These escape controls also stay live before manifests finish loading.
     dateInput.disabled = false;
     missalSelect.disabled = false;
     dateForm.querySelector('.surface-apply').disabled = false;

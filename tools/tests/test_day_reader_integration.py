@@ -28,7 +28,7 @@ FROZEN_SOURCE_HASHES = {
     "src/web/browser/liturgy/reader-visual-reset-day.html":
         "ff734f07b797e5706c7e62a4c890f47c32c0fbfd78bfc855f421a4123273c18d",
     "src/web/browser/liturgy/reader-visual-reset-propers.html":
-        "638a816e189ab14b2c38dce83e8998a8cc440ebc38c025e920677a6bf8594312",
+        "e6f9afa33589068ba81585b15f288b154ad55e180f9ed2faa291e24cfc9c5ee3",
     "src/web/browser/liturgy/reader-visual-reset.css":
         "850e1acacb6f487a5c2f3118388b3fce7b96f9db667e783ba35cdef7d9918b48",
     "src/web/browser/liturgy/reader-visual-reset.js":

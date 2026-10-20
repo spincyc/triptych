@@ -1566,7 +1566,7 @@
     const language = chosenLanguage(file);
     body.appendChild(T.el('p', 'entry-meta', [
       file.edition_short || file.edition,
-      'the frame the day’s propers are set into',
+      'the frame the appointed propers are set into',
       language ? 'read in ' + T.languageName(language.lang) : null
     ].filter(Boolean).join(' · ')));
 

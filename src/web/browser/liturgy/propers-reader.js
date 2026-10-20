@@ -6,12 +6,14 @@
   const Contract = window.LiturgyReaderState;
   const Adapters = window.LiturgyReaderStateAdapters;
   const Shell = window.TriptychReaderShell;
+  const OrdinaryRenderer = window.TriptychOrdinaryRenderer;
 
-  if (!T || !Contract || !Adapters || !Shell) {
-    throw new Error('Propers reader requires production browser, state, adapter, and shell modules');
+  if (!T || !Contract || !Adapters || !Shell || !OrdinaryRenderer) {
+    throw new Error('Propers reader requires production browser, state, adapter, shell, and Ordinary renderer modules');
   }
 
   const PROPERS_INDEX = 'structure/propers/index.json';
+  const ORDINARY_INDEX = 'structure/ordinary/index.json';
   const PREFERENCES_KEY = 'triptych:liturgy:preferences:v1';
   const LEGACY_PROPERS_PREFERENCES_KEY = 'triptych:liturgy:propers';
   const PUBLIC_KEYS = Object.freeze({
@@ -58,6 +60,7 @@
     missals: [],
     bibles: [],
     structure: null,
+    ordinary: null,
     groups: [],
     normalized: null,
     result: null,
@@ -74,6 +77,17 @@
     draftStructure: null,
     draftGroups: []
   };
+
+  const ProperEvents = window.TriptychPropersEvents.create({
+    navigate: navigate,
+    sourceIndex: sourceIndex,
+    publicKeys: PUBLIC_KEYS,
+    legacyKeys: LEGACY_KEYS,
+    getStructure: function () { return runtime.structure; },
+    getOrdinary: function () { return runtime.ordinary; }
+  });
+  const { renderEvent, renderProperChoiceEvent, typedUnplacedSeat,
+    properChoiceLabel } = ProperEvents;
 
   window.propersReaderDebug = {
     candidate: true,
@@ -103,6 +117,10 @@
     return 'structure/propers/' + id + '.json';
   }
 
+  function ordinaryPath(id) {
+    return 'structure/ordinary/' + id + '.json';
+  }
+
   function described(entry) {
     if (typeof entry === 'string') return { id: entry, label: T.titleCase(entry), edition: null };
     return {
@@ -123,7 +141,7 @@
 
   async function loadManifests() {
     if (runtime.manifests) return runtime.manifests;
-    const loaded = await Promise.all([T.loadBibles(), load(PROPERS_INDEX)]);
+    const loaded = await Promise.all([T.loadBibles(), load(PROPERS_INDEX), load(ORDINARY_INDEX)]);
     if (!loaded[0].ok) throw new Error(loaded[0].message);
     runtime.bibles = loaded[0].bibles;
     runtime.missals = allowedMissals(loaded[1]);
@@ -135,7 +153,8 @@
       bibles: { bibles: runtime.bibles },
       properIndex: { default: landing, missals: runtime.missals.map(function (row) {
         return { id: row.id, edition: row.edition, edition_short: row.label };
-      }) }
+      }) },
+      ordinaryIndex: loaded[2]
     };
     return runtime.manifests;
   }
@@ -211,6 +230,20 @@
     const rows = (parts || []).filter(Boolean);
     sourceLine.textContent = rows.join(' · ');
     sourceLine.hidden = !rows.length;
+  }
+
+  function setModePresentation(mode) {
+    const label = mode === 'missal' ? 'Missal' : 'Read';
+    shellRoot.dataset.readerMode = mode;
+    const context = shellRoot.querySelector('.reader-context');
+    if (context) context.textContent = 'Propers · ' + label;
+    const masthead = shellRoot.querySelector('.reader-place > span:nth-child(3)');
+    if (masthead) masthead.textContent = label;
+    const action = shellRoot.querySelector('[data-reader-action="mode"] .action-state');
+    if (action) action.textContent = label;
+    shellRoot.querySelectorAll('[data-mode]').forEach(function (button) {
+      button.setAttribute('aria-checked', String(button.dataset.mode === mode));
+    });
   }
 
   function explicitValues(key) {
@@ -330,6 +363,37 @@
         message: 'the requested edition has no matching production Proper structure'
       }] };
     }
+    const requestedMode = Object.prototype.hasOwnProperty.call(parsed.recognized, 'mode')
+      ? parsed.recognized.mode : 'read';
+    const wantsOrdinary = requestedMode === 'missal' ||
+      parsed.present.indexOf('ordinary-lang') >= 0 ||
+      (parsed.variantKeys || []).some(function (key) { return parsed.present.indexOf(key) >= 0; });
+    let ordinary = null;
+    if (wantsOrdinary) {
+      const entry = (manifests.ordinaryIndex.calendars || []).find(function (row) {
+        return row.calendar === missal;
+      });
+      if (!entry) {
+        return { ok: false, errors: [{
+          code: 'ordinary-missing', path: 'missal',
+          message: 'the selected edition has no production Ordinary'
+        }] };
+      }
+      try {
+        ordinary = await load(ordinaryPath(missal));
+      } catch (error) {
+        return { ok: false, errors: [{
+          code: 'candidate-load', path: 'ordinary', message: String(error.message || error)
+        }] };
+      }
+      if (serial !== runtime.serial) return { superseded: true };
+      if (!ordinary || ordinary.calendar !== missal) {
+        return { ok: false, errors: [{
+          code: 'unsupported-edition', path: 'ordinary',
+          message: 'the requested edition has no matching production Ordinary structure'
+        }] };
+      }
+    }
     const languages = T.orationLanguagesOf(structure);
     const orations = choosePreference(
       parsed, remembered, defaults, 'orations',
@@ -382,6 +446,7 @@
     return {
       ok: true, parsed: parsed, remembered: remembered, defaults: defaults,
       missal: missal, bible: bible, orations: orations, structure: structure,
+      ordinary: ordinary,
       groups: groups, preferredType: preferredType,
       browse: !hasMass || !hasType
     };
@@ -390,15 +455,38 @@
   function validationContext(prepared, manifests) {
     const structures = {};
     structures[prepared.missal] = prepared.structure;
+    const ordinaries = {};
+    if (prepared.ordinary) ordinaries[prepared.missal] = prepared.ordinary;
     return Adapters.validationContext({
       entrance: 'propers', bibles: manifests.bibles,
-      properIndex: manifests.properIndex, structures: structures, ordinaries: {}
+      properIndex: manifests.properIndex, ordinaryIndex: manifests.ordinaryIndex,
+      structures: structures, ordinaries: ordinaries
     });
   }
 
   function browseState(prepared, context) {
     const requestedMode = Object.prototype.hasOwnProperty.call(prepared.parsed.recognized, 'mode')
       ? prepared.parsed.recognized.mode : 'read';
+    const ordinaryLanguage = Object.prototype.hasOwnProperty.call(
+      prepared.parsed.recognized, 'ordinary-lang'
+    ) ? prepared.parsed.recognized['ordinary-lang'] : (requestedMode === 'missal' ? 'en' : null);
+    const ordinaryLanguages = context.missals[prepared.missal] &&
+      context.missals[prepared.missal].ordinaryLanguages || [];
+    if (ordinaryLanguage && ordinaryLanguages.indexOf(ordinaryLanguage) < 0) {
+      return { ok: false, errors: [{
+        code: 'invalid-explicit-value', path: 'ordinary-lang',
+        message: 'the selected edition does not hold this Ordinary language'
+      }] };
+    }
+    const variants = (prepared.parsed.variantKeys || []).filter(function (key) {
+      return prepared.parsed.present.indexOf(key) >= 0;
+    });
+    if (variants.length) {
+      return { ok: false, errors: [{
+        code: 'incomplete-explicit-identity', path: variants[0],
+        message: 'an Ordinary option requires an exact formulary'
+      }] };
+    }
     const state = {
       schema: Contract.STATE_SCHEMA,
       entrance: 'propers',
@@ -411,10 +499,12 @@
       },
       languages: { orations: prepared.orations },
       requestedMode: requestedMode,
+      options: { ordinary: requestedMode === 'missal', legitimate: {} },
       coverage: [],
       unresolvedChoices: [],
       sourceHooks: []
     };
+    if (ordinaryLanguage) state.languages.ordinary = ordinaryLanguage;
     if (Object.prototype.hasOwnProperty.call(prepared.parsed.recognized, 'location')) {
       state.semanticLocation = { eventId: prepared.parsed.recognized.location };
     }
@@ -427,7 +517,9 @@
     const normalized = Contract.normalizeLegacy(prepared.parsed, {
       context: context,
       remembered: prepared.remembered,
-      defaults: prepared.defaults
+      defaults: Object.assign({}, prepared.defaults,
+        prepared.ordinary && prepared.parsed.recognized.mode === 'missal'
+          ? { 'ordinary-lang': 'en' } : {})
     });
     if (!normalized.ok) return normalized;
     const cycle = explicitSemanticValue('cycle', errors);
@@ -477,6 +569,9 @@
           editionSlotLabel: event.editionSlotLabel || null,
           selected: event.selected || null,
           seat: event.seat || null,
+          speaker: event.speaker || null,
+          action: event.action === true,
+          locus: event.locus || null,
           sourceHooks: event.sourceHooks || []
         };
         if (event.kind === 'proper-choice') {
@@ -504,7 +599,8 @@
       }),
       coverage: result.coverage || [],
       explicitAbsences: result.explicitAbsences || [],
-      unresolvedChoices: result.unresolvedChoices || []
+      unresolvedChoices: result.unresolvedChoices || [],
+      ordinaryUnresolved: result.ordinaryUnresolved || []
     };
   }
 
@@ -513,6 +609,7 @@
     runtime.result = null;
     runtime.mass = null;
     runtime.structure = null;
+    runtime.ordinary = null;
     runtime.groups = [];
     runtime.preferredType = null;
     runtime.draftStructure = null;
@@ -524,6 +621,7 @@
     window.propersReaderDebug.semantic = null;
     window.propersReaderDebug.legacy = null;
     window.propersReaderDebug.outcome = outcome;
+    setModePresentation('read');
   }
 
   function replaceReading(node) {
@@ -609,6 +707,24 @@
     return location && location.kind === 'event' && location.id ? location.id : null;
   }
 
+  function nearestProperLocation(location) {
+    const id = eventLocation(location);
+    if (!id || /^(?:proper|proper-choice)\//.test(id)) return location;
+    const events = runtime.result && runtime.result.events || [];
+    const at = events.findIndex(function (row) { return row.id === id; });
+    if (at < 0) return { kind: 'top', id: null };
+    let best = null;
+    events.forEach(function (row, index) {
+      if (row.kind !== 'proper' && row.kind !== 'proper-choice') return;
+      const distance = Math.abs(index - at);
+      if (!best || distance < best.distance ||
+          (distance === best.distance && index < best.index)) {
+        best = { id: row.id, distance: distance, index: index };
+      }
+    });
+    return best ? { kind: 'event', id: best.id } : { kind: 'top', id: null };
+  }
+
   function canonicalAddress(normalized) {
     return Contract.canonicalRoute('propers', window.location.pathname) +
       window.location.search + Contract.serializeLegacy(normalized);
@@ -628,6 +744,19 @@
   }
 
   function focusCommittedResult(intent, location) {
+    if (intent && intent.kind === 'ordinary-option') {
+      const fieldset = Array.from(reading.querySelectorAll('[data-option-group]')).find(
+        function (node) { return node.dataset.optionGroup === intent.group; }
+      );
+      const input = fieldset && Array.from(fieldset.querySelectorAll('input[type="radio"]')).find(
+        function (node) { return node.value === intent.option; }
+      );
+      if (input) {
+        input.focus({ preventScroll: true });
+        fieldset.scrollIntoView({ block: 'start', behavior: 'auto' });
+      }
+      return;
+    }
     if (intent === 'event' && eventLocation(location)) {
       const target = Array.from(reading.querySelectorAll('[data-semantic-event-id]')).find(
         function (row) { return row.dataset.semanticEventId === eventLocation(location); }
@@ -636,6 +765,7 @@
       return;
     }
     if (intent === 'title') title.focus();
+    if (intent === 'mode') shellRoot.querySelector('[data-reader-action="mode"]').focus();
   }
 
   function navigate(updates, removals) {
@@ -659,213 +789,6 @@
       Contract.canonicalRoute('propers', window.location.pathname) +
       window.location.search + canonicalHash);
     renderCandidate();
-  }
-
-  function cycleChoice(event, proper, bible, fragments, state, options) {
-    const held = options || {};
-    const wrapper = T.el('section', 'cycle-choice');
-    wrapper.tabIndex = -1;
-    wrapper.appendChild(T.el(held.heading || 'h2', null,
-      event.editionSlotLabel || proper.name || 'Proper'));
-    wrapper.appendChild(T.el('p', 'cycle-choice-note',
-      'Several cycles are held. They remain separate below until one is chosen.'));
-    const controls = T.el('div', 'cycle-choice-controls');
-    controls.setAttribute('role', 'group');
-    controls.setAttribute('aria-label', 'Choose a cycle for ' + (event.editionSlotLabel || proper.name || 'this Proper'));
-    event.selected.alternatives.forEach(function (alternative) {
-      const button = T.el('button', null, T.cycleLabel(alternative.cycle));
-      button.type = 'button';
-      button.addEventListener('click', function () {
-        const target = held.locationEvent || event;
-        navigate((function () {
-          const row = {}; row[PUBLIC_KEYS.cycle] = alternative.cycle; return row;
-        }()), [LEGACY_KEYS.cycle], {
-          location: { kind: 'event', id: target.id }, focus: 'event'
-        });
-      });
-      controls.appendChild(button);
-    });
-    wrapper.appendChild(controls);
-    event.selected.alternatives.forEach(function (alternative) {
-      const rendered = T.renderProper(proper, bible, fragments, {
-        numbering: runtime.structure.numbering || null,
-        orations: state.languages.orations,
-        translationWitness: state.languages.translationWitness || null,
-        heading: 'h2', cycle: alternative.cycle
-      });
-      const redundant = rendered.querySelector(':scope > .proper-name');
-      if (redundant) redundant.remove();
-      rendered.classList.add('cycle-alternative');
-      rendered.dataset.cycle = alternative.cycle;
-      wrapper.appendChild(rendered);
-    });
-    return wrapper;
-  }
-
-  function eventHasTranslationChoice(event) {
-    if (!event || !event.selected) return false;
-    if (event.selected.kind !== 'cycle-alternatives') {
-      return event.selected.availability === 'choice-required' &&
-        (event.selected.unresolvedWitnesses || []).length > 1;
-    }
-    return event.selected.alternatives.some(function (row) {
-      return row.material.availability === 'choice-required' &&
-        (row.material.unresolvedWitnesses || []).length > 1;
-    });
-  }
-
-  function renderProperMaterial(event, proper, bible, fragments, state, heading, locationEvent) {
-    if (event.selected && event.selected.kind === 'cycle-alternatives') {
-      return cycleChoice(event, proper, bible, fragments, state, {
-        heading: heading || 'h2', locationEvent: locationEvent || event
-      });
-    }
-    const selectedCycle = event.selected && event.selected.cycle || null;
-    const translationChoice = eventHasTranslationChoice(event);
-    const section = T.renderProper(proper, bible, fragments, {
-      numbering: runtime.structure.numbering || null,
-      orations: translationChoice ? T.SOURCE_LANGUAGE : state.languages.orations,
-      translationWitness: state.languages.translationWitness || null,
-      heading: heading || 'h2', cycle: selectedCycle
-    });
-    if (translationChoice) {
-      section.appendChild(T.el('p', 'composed-note',
-        'More than one translation witness is held. Choose a witness in Browse & edition; missing portions will remain explicit.'));
-    }
-    return section;
-  }
-
-  function typedUnplacedSeat(event) {
-    const seat = event && event.seat;
-    return event && event.kind === 'proper' && seat &&
-      seat.placement === 'unseated' && /^unplaced\//.test(seat.id || '') &&
-      ['before-frame', 'after-frame'].indexOf(seat.region) >= 0 &&
-      typeof seat.basis === 'string' && Boolean(seat.basis.trim());
-  }
-
-  function decorateUnplacedProper(section, event) {
-    if (!typedUnplacedSeat(event)) return section;
-    const region = event.seat.region;
-    section.classList.add('proper-unplaced', 'proper-unplaced-' + region);
-    section.dataset.unplacedRegion = region;
-    section.dataset.unplacedBasis = event.seat.basis;
-    const position = region === 'before-frame' ? 'before' : 'after';
-    const note = T.el('p', 'composed-note proper-unplaced-note',
-      'Exceptional source placement: the source assigns this Proper ' + position +
-      ' the ordinary Mass frame. It remains here in source order; no Ordinary seat is invented.');
-    note.setAttribute('role', 'note');
-    const heading = section.querySelector(':scope > .proper-name');
-    if (heading) heading.after(note);
-    else section.prepend(note);
-    return section;
-  }
-
-  function renderEvent(event, proper, bible, fragments, state) {
-    if (event.seat && event.seat.placement === 'unseated' && !typedUnplacedSeat(event)) {
-      throw new Error('a source Proper has an invalid unseated disposition: ' + event.id);
-    }
-    const section = renderProperMaterial(event, proper, bible, fragments, state, 'h2');
-    decorateUnplacedProper(section, event);
-    section.dataset.semanticLocation = event.id;
-    section.dataset.semanticEventId = event.id;
-    section.tabIndex = -1;
-    return section;
-  }
-
-  function validateProperChoiceEvent(event) {
-    if (!event || event.kind !== 'proper-choice' || typeof event.group !== 'string' ||
-        !event.group || typeof event.choiceBasis !== 'string' || !event.choiceBasis.trim() ||
-        !event.selection || !Array.isArray(event.options) ||
-        event.options.length < 2) {
-      throw new Error('a Proper choice needs a stable group, selection, and at least two options');
-    }
-    const selected = event.selection.option;
-    if ((event.selection.state === 'required' && selected !== null) ||
-        (event.selection.state === 'selected' &&
-          (typeof selected !== 'string' || !selected)) ||
-        ['required', 'selected'].indexOf(event.selection.state) < 0) {
-      throw new Error('a Proper choice has an invalid explicit selection state: ' + event.id);
-    }
-    const optionIds = event.options.map(function (option) { return option && option.id; });
-    if (optionIds.some(function (id) { return typeof id !== 'string' || !id; }) ||
-        new Set(optionIds).size !== optionIds.length ||
-        (selected !== null && optionIds.indexOf(selected) < 0)) {
-      throw new Error('a Proper choice has invalid or duplicate option identities: ' + event.id);
-    }
-    const memberIds = [];
-    event.options.forEach(function (option) {
-      if (!Array.isArray(option.events) || !option.events.length ||
-          option.events.some(function (member) {
-            if (!member || member.kind !== 'proper' || typeof member.id !== 'string' || !member.id) {
-              return true;
-            }
-            memberIds.push(member.id);
-            return false;
-          })) {
-        throw new Error('every Proper choice option must retain its source Proper events: ' + event.id);
-      }
-    });
-    if (new Set(memberIds).size !== memberIds.length) {
-      throw new Error('a source Proper occurs in more than one choice option: ' + event.id);
-    }
-    return selected;
-  }
-
-  function properChoiceLabel(event) {
-    return 'Source Proper choice: ' + T.titleCase(String(event.group).replace(/[-_]+/g, ' '));
-  }
-
-  function renderProperChoiceEvent(event, mass, bible, fragments, state) {
-    const selected = validateProperChoiceEvent(event);
-    const wrapper = T.el('section', 'proper-choice');
-    wrapper.dataset.semanticLocation = event.id;
-    wrapper.dataset.semanticEventId = event.id;
-    wrapper.dataset.properChoice = event.group;
-    wrapper.dataset.choiceState = event.selection.state;
-    wrapper.tabIndex = -1;
-    if (selected) wrapper.dataset.choiceSelection = selected;
-    const heading = T.el('h2', 'proper-choice-title', properChoiceLabel(event));
-    heading.id = 'proper-choice-title-' + event.id.replace(/[^a-z0-9]+/gi, '-');
-    wrapper.setAttribute('aria-labelledby', heading.id);
-    wrapper.appendChild(heading);
-    wrapper.appendChild(T.el('p', 'proper-choice-note', selected
-      ? 'The selected source option is shown first. Other source options remain collapsed and are not cumulative.'
-      : 'The source appoints one of these alternatives here. None is selected; the option groups below are not cumulative.'));
-    wrapper.appendChild(T.el('p', 'composed-note proper-choice-basis',
-      'Source basis: ' + event.choiceBasis));
-    const options = T.el('div', 'proper-choice-options');
-    event.options.forEach(function (option) {
-      const isSelected = selected === option.id;
-      const optionName = T.titleCase(String(option.id).replace(/[-_]+/g, ' '));
-      const optionNode = selected && !isSelected
-        ? document.createElement('details') : T.el('section', 'proper-choice-option');
-      optionNode.classList.add('proper-choice-option');
-      optionNode.dataset.properChoiceOption = option.id;
-      optionNode.dataset.choiceStatus = isSelected ? 'selected' :
-        (selected ? 'not-selected' : 'available');
-      if (isSelected) optionNode.setAttribute('aria-current', 'true');
-      const label = (isSelected ? 'Selected option: ' :
-        (selected ? 'Other source option: ' : 'Option: ')) + optionName;
-      if (optionNode.tagName === 'DETAILS') {
-        optionNode.appendChild(T.el('summary', 'proper-choice-option-title', label + ' (not selected)'));
-      } else {
-        optionNode.appendChild(T.el('h3', 'proper-choice-option-title', label));
-      }
-      (option.events || []).forEach(function (member) {
-        const index = sourceIndex(member);
-        const proper = index === null ? null : (mass.propers || [])[index];
-        if (!proper || T.isPlaceholder(proper)) {
-          throw new Error('Proper choice member has no production Proper at ' + member.id);
-        }
-        const node = renderProperMaterial(member, proper, bible, fragments, state, 'h4', event);
-        node.classList.add('proper-choice-member');
-        node.dataset.properChoiceMemberEvent = member.id;
-        optionNode.appendChild(node);
-      });
-      options.appendChild(optionNode);
-    });
-    wrapper.appendChild(options);
-    return wrapper;
   }
 
   function materialCoverageMessage(result) {
@@ -914,9 +837,13 @@
     const recension = recensionContext(structure, mass);
     const report = T.summarizeCoverage(T.selectedCoverageUnits(result, structure));
     const languages = result.request && result.request.languages || {};
+    const ordinary = result.request && result.request.requestedMode === 'missal' && runtime.ordinary
+      ? (detail ? T.coverageSummaryText : T.coverageNoticeText)(
+        T.summarizeCoverage(T.selectedOrdinaryCoverageUnits(result, runtime.ordinary)),
+        languages.ordinary || 'en', languages.ordinaryWitness, 'Ordinary') : null;
     return [recension && recension.notice, materialCoverageMessage(result),
       (detail ? T.coverageSummaryText : T.coverageNoticeText)(report,
-        languages.orations || 'la', languages.translationWitness)]
+        languages.orations || 'la', languages.translationWitness), ordinary]
       .filter(Boolean).join(' ') || null;
   }
 
@@ -949,7 +876,9 @@
     replaceReading(section);
     title.textContent = mass.name || mass.key;
     typeLine.textContent = 'Source-appointed form required';
-    metaLine.textContent = 'Propers · choice unresolved';
+    metaLine.textContent = 'Propers · ' +
+      (runtime.normalized.state.requestedMode === 'missal' ? 'Missal' : 'Read') +
+      ' · choice unresolved';
     const recension = recensionContext(runtime.structure, mass);
     setSourceContext(recension ? [
       recension.boundaryLabel && 'Historical boundary — stands before: ' + recension.boundaryLabel,
@@ -989,6 +918,34 @@
     const fragment = document.createDocumentFragment();
     const contents = [];
     const uncompiled = T.massIsUncompiled(mass) ? T.uncompiledNote(mass) : null;
+    const state = runtime.normalized.state;
+    const missalMode = state.requestedMode === 'missal';
+    const ordinaryEvents = (result.events || []).some(function (event) {
+      return event.kind === 'ordinary-section' || event.kind === 'ordinary-element';
+    });
+    if (missalMode && ordinaryEvents) {
+      ProperEvents.renderMissal({
+        fragment: fragment, contents: contents, result: result, mass: mass, bible: bible,
+        fragments: held.fragments, state: state
+      });
+    } else {
+      if (missalMode) {
+        const frame = (result.coverage || []).find(function (row) {
+          return row.scope === 'ordinary-frame:' + state.edition.id;
+        });
+        const basis = frame && (frame.reasons || []).find(function (row) {
+          return row && row.basis && ['none', 'unavailable'].indexOf(row.applicability) >= 0;
+        });
+        if (!basis) throw new Error('Missal mode has no Ordinary events or source-defined frame boundary');
+        const note = T.el('section', 'missal-frame-limitation candidate-limitation');
+        note.appendChild(T.el('h2', null, basis.applicability === 'none'
+          ? 'This source rite has no ordinary Mass frame'
+          : 'The Ordinary frame is unavailable for this source rite'));
+        note.appendChild(T.el('p', null,
+          'The appointed Propers remain below in source order. No Ordinary seats were invented.'));
+        note.appendChild(T.el('p', 'composed-note missal-frame-basis', 'Source basis: ' + basis.basis));
+        fragment.appendChild(note);
+      }
     (result.events || []).forEach(function (event, eventOrdinal) {
       if (event.kind === 'proper-choice') {
         const choice = renderProperChoiceEvent(
@@ -1023,6 +980,7 @@
         element: section
       });
     });
+    }
     const semanticIds = renderedSemanticInventory(contents, fragment);
     if (eventLocation(location) && semanticIds.indexOf(eventLocation(location)) < 0) {
       return { invalidLocation: true, semanticIds: semanticIds };
@@ -1031,7 +989,6 @@
     reading.setAttribute('aria-busy', 'false');
     readerShell.setContents(contents);
 
-    const state = runtime.normalized.state;
     const missal = missalRow(state.edition.id);
     const group = groupRow(state.formulary.type);
     const selectedForm = formRow(mass, result.resolved && result.resolved.form);
@@ -1045,6 +1002,8 @@
       missal && (missal.edition || missal.label),
       bible.label,
       T.languageName(state.languages.orations) + ' orations',
+      state.requestedMode === 'missal' && state.languages.ordinary &&
+        T.languageName(state.languages.ordinary) + ' Ordinary',
       selectedForm && 'Form: ' + (selectedForm.name || selectedForm.id),
       cycle
     ].filter(Boolean).join(' · ');
@@ -1073,7 +1032,7 @@
     document.title = [
       mass.name || mass.key,
       selectedForm && (selectedForm.name || selectedForm.id),
-      'Propers', 'Triptych'
+      state.requestedMode === 'missal' ? 'Missal' : 'Propers', 'Triptych'
     ].filter(Boolean).join(' — ');
     return { semanticIds: semanticIds };
   }
@@ -1429,7 +1388,12 @@
     try {
       const manifests = await loadManifests();
       if (serial !== runtime.serial) return;
-      const parsed = Contract.parseLegacy('propers', window.location.hash);
+      const variantKeys = Array.from(new Set(
+        ((manifests.ordinaryIndex && manifests.ordinaryIndex.calendars) || [])
+          .flatMap(function (row) { return row.variants || []; })
+      ));
+      const parsed = Contract.parseLegacy('propers', window.location.hash,
+        { variantKeys: variantKeys });
       const prepared = await prepare(parsed, manifests, serial);
       if (prepared.superseded || serial !== runtime.serial) return;
       if (!prepared.ok) {
@@ -1441,6 +1405,7 @@
         return;
       }
       runtime.structure = prepared.structure;
+      runtime.ordinary = prepared.ordinary;
       runtime.groups = prepared.groups;
       runtime.preferredType = prepared.preferredType;
       const context = validationContext(prepared, manifests);
@@ -1471,9 +1436,10 @@
         kind: 'event', id: normalized.state.semanticLocation.eventId
       }) || null;
       runtime.normalized = normalized;
+      setModePresentation(normalized.state.requestedMode);
       window.propersReaderDebug.state = normalized.state;
       window.propersReaderDebug.legacy = normalized.legacy;
-      if (normalized.state.requestedMode !== 'read') {
+      if (['read', 'missal'].indexOf(normalized.state.requestedMode) < 0) {
         if (eventLocation(location)) {
           renderFailure([{
             code: 'invalid-semantic-location', path: 'location',
@@ -1484,7 +1450,7 @@
         canonicalize(normalized, location, pendingLocationSet);
         renderFailure([{
           code: 'unsupported-mode', path: 'mode',
-          message: 'this Propers surface currently renders Read mode only'
+          message: 'this Propers surface does not render the requested mode'
         }]);
         return;
       }
@@ -1507,7 +1473,8 @@
       try {
         result = Adapters.adaptPropers({
           request: normalized.state,
-          structure: prepared.structure
+          structure: prepared.structure,
+          ordinary: prepared.ordinary
         });
       } catch (error) {
         renderFailure([{
@@ -1649,6 +1616,14 @@
     if (!browseKeepsCurrentFormulary()) {
       removals.push('form', PUBLIC_KEYS.cycle, PUBLIC_KEYS.alternative);
     }
+    const current = runtime.normalized && runtime.normalized.state;
+    if (!current || current.edition.id !== missalSelect.value) {
+      removals.push('ordinary-lang');
+      (((runtime.manifests && runtime.manifests.ordinaryIndex || {}).calendars) || [])
+        .forEach(function (row) {
+          (row.variants || []).forEach(function (key) { removals.push(key); });
+        });
+    }
     readerShell.close({ restoreFocus: false });
     navigate(updates, removals, {
       location: null, focus: 'title', rememberPreferences: true
@@ -1665,12 +1640,32 @@
   });
 
   document.querySelector('[data-mode="read"]').addEventListener('click', function () {
-    readerShell.close();
+    const current = runtime.normalized && runtime.normalized.state;
+    if (!current || current.requestedMode === 'read') {
+      readerShell.close();
+      return;
+    }
+    const location = nearestProperLocation(readerShell.captureSemanticLocation());
+    readerShell.close({ restoreFocus: false });
+    navigate({ mode: 'read' }, [], { location: location, focus: 'mode' });
+  });
+
+  document.querySelector('[data-mode="missal"]')?.addEventListener('click', function () {
+    const current = runtime.normalized && runtime.normalized.state;
+    if (!current || current.requestedMode === 'missal') {
+      readerShell.close();
+      return;
+    }
+    const location = readerShell.captureSemanticLocation();
+    readerShell.close({ restoreFocus: false });
+    navigate({ mode: 'missal' }, [], { location: location, focus: 'mode' });
   });
 
   let historyQueued = false;
   function historyRender(event) {
-    if (event && event.type === 'popstate') {
+    const explicitLocation = new URLSearchParams(window.location.hash.replace(/^#/, '')).has('location');
+    if (event && event.type === 'popstate' && !explicitLocation &&
+        event.state && Object.prototype.hasOwnProperty.call(event.state, 'propersReaderLocation')) {
       runtime.pendingLocation = event.state && event.state.propersReaderLocation || null;
       runtime.pendingLocationSet = true;
     } else if (!historyQueued) {

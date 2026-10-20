@@ -386,7 +386,11 @@ class OrdinaryStructure(unittest.TestCase):
             if calendar.startswith("roman-") and key in roman_elements:
                 self.assertEqual(len(turns), 1, (calendar, key, lang))
                 self.assertEqual(turns[0]["speaker"], roman_elements[key])
-                self.assertIsNone(turns[0]["dialogue_role"])
+                self.assertEqual(
+                    turns[0]["dialogue_role"],
+                    "response" if (calendar, key)
+                    == ("roman-1962", "conclusio/deo-gratias") else None,
+                )
                 # The book's P. marks the priest's row and R. the server's;
                 # declaring either never supplies a dialogue role.
                 self.assertEqual(
@@ -2588,7 +2592,7 @@ process.stdout.write(JSON.stringify({
         """
         report = self.run_harness()
         dialogues = report["real_dialogues"]
-        self.assertEqual(len(dialogues), 31)
+        self.assertEqual(len(dialogues), 33)
         priest_server = [("P", "Priest", "P."), ("S", "Server", "R.")]
         versicle_response = [("℣", "Versicle — Priest", "P."), ("℟", "Response — Server", "R.")]
         expected_cues = {
@@ -2620,6 +2624,7 @@ process.stdout.write(JSON.stringify({
                 ("℣", "Versicle — Priest", None), ("℟", "Response — Server", "R."),
                 ("P", "Priest", None), ("℟", "Response — Server", "R."),
             ],
+            "conclusio/deo-gratias": [("℟", "Response — Server", "R.")],
             "prex-eucharistica/praefationis-dialogus": [
                 ("℣", "Versicle — Priest", "P."), ("℟", "Response — All", "R."),
             ] * 3,
@@ -3372,7 +3377,7 @@ for (const lang of ['en', 'la']) {
     'praeparatio/gloria-patri', 'praeparatio/introibo-ad-altare-dei-repetitio',
     'praeparatio/adjutorium-nostrum',
     'oblatio/per-omnia-saecula', 'oblatio/sursum-corda', 'communio/pax-domini',
-    'conclusio/dominus-vobiscum-ite-missa-est']) {
+    'conclusio/dominus-vobiscum-ite-missa-est', 'conclusio/deo-gratias']) {
     realDialogues['roman-1962 ' + key + ' ' + lang] = realTurns(tlm, key, lang);
   }
 }

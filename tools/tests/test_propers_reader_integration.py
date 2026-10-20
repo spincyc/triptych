@@ -13,6 +13,7 @@ LITURGY = ROOT / "src/web/browser/liturgy"
 HTML = LITURGY / "propers-reader.html"
 INDEX_HTML = LITURGY / "index.html"
 JS = LITURGY / "propers-reader.js"
+EVENTS_JS = LITURGY / "propers-events.js"
 CSS = LITURGY / "propers-reader.css"
 SHELL_JS = LITURGY / "reader-shell.js"
 SHELL_CSS = LITURGY / "reader-shell.css"
@@ -123,7 +124,7 @@ class PropersReaderIntegrationTests(unittest.TestCase):
         self.assertIn("restoreSemanticLocation", source)
 
     def test_candidate_crosses_m1_and_production_renderer_boundaries(self) -> None:
-        source = text(JS)
+        source = text(JS) + text(EVENTS_JS)
         for token in (
             "Contract.parseLegacy('propers'", "Contract.normalizeLegacy",
             "Contract.validateReaderState", "Adapters.validationContext",
@@ -180,7 +181,7 @@ class PropersReaderIntegrationTests(unittest.TestCase):
         )
 
     def test_public_state_keys_are_stable_and_legacy_aliases_are_input_only(self) -> None:
-        source = text(JS)
+        source = text(JS) + text(EVENTS_JS)
         contract = text(LITURGY / "reader-state.js")
         for key in ("missal", "type", "mass", "bible", "orations"):
             self.assertIn(key, source)
@@ -224,7 +225,7 @@ class PropersReaderIntegrationTests(unittest.TestCase):
         self.assertIn("placeholder(formularySelect, 'Choose a formulary…')", source)
 
     def test_cycles_and_alternatives_remain_independent(self) -> None:
-        source = text(JS)
+        source = text(JS) + text(EVENTS_JS)
         self.assertIn("event.selected.kind === 'cycle-alternatives'", source)
         self.assertIn("event.selected.alternatives.forEach", source)
         self.assertIn("cycle: alternative.cycle", source)
@@ -244,8 +245,8 @@ class PropersReaderIntegrationTests(unittest.TestCase):
             self.assertIn(f'data-reader-action="{action}"', source)
             self.assertIn(f'class="action-label">{label}</span>', source)
         self.assertIn('data-mode="read"', source)
-        self.assertEqual(source.count('aria-disabled="true"'), 3)
-        self.assertEqual(source.count(' disabled>'), 3)
+        self.assertEqual(source.count('aria-disabled="true"'), 2)
+        self.assertEqual(source.count(' disabled>'), 2)
         for name, description in (
             ("Read", "Continuous reading of the appointed texts."),
             ("Missal", "Continuous Ordinary with appointed propers in place."),
@@ -362,7 +363,7 @@ class PropersReaderIntegrationTests(unittest.TestCase):
         self.assertIn("coverageMessage(result, mass, runtime.structure)", source)
 
     def test_state_changing_controls_have_live_status_focus_and_canonical_location(self) -> None:
-        source = text(JS)
+        source = text(JS) + text(EVENTS_JS)
         for page in (HTML, INDEX_HTML):
             markup = text(page)
             self.assertIn('id="formulary-title" class="celebration-title" tabindex="-1"', markup)
@@ -494,6 +495,7 @@ class PropersReaderIntegrationTests(unittest.TestCase):
         # Source-authored alternatives now render as atomic, accessible groups
         # with conserved member identities; retain a concrete 74 KiB ceiling.
         self.assertLess(JS.stat().st_size, 74 * 1024)
+        self.assertLess(EVENTS_JS.stat().st_size, 24 * 1024)
         self.assertLess(CSS.stat().st_size, SHELL_CSS.stat().st_size)
         self.assertNotIn(text(SHELL_JS), text(JS))
 

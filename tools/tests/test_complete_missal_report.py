@@ -194,6 +194,38 @@ def fixture_reports() -> tuple[dict, dict, dict]:
 
 
 class CompleteMissalReportTests(unittest.TestCase):
+    def test_bounded_form_evidence_is_reported_without_resolving_whole_families(self) -> None:
+        propers, placement, ordinary = fixture_reports()
+        row = {
+            "calendar": "roman-1962", "mass": "pentecost", "form": "main",
+            "scope": "inventoried-source-text-slots-for-joined-form",
+            "denominator_state": "bounded", "expected": 13, "lower_bound": 13,
+            "represented": 11, "not_represented": 2, "unresolved": 0,
+            "source_slices": [{"id": "roman-1962-temporal-easter-through-last-sunday",
+                               "enumeration_state": "complete-within-slice"}],
+            "whole_form_state": "unresolved",
+        }
+        propers["bounded_form_text_slots"] = [row]
+        report = REPORT.build_report(propers, placement, ordinary)
+        self.assertEqual(report["bounded_form_text_slots"], [row])
+        self.assertEqual(report["check"]["unresolved_dimension_cells"], 39)
+        self.assertEqual(report["status"], "unresolved")
+        with contextlib.redirect_stdout(io.StringIO()) as output:
+            REPORT.render_text(report)
+        self.assertIn("1/1 form counts exact within inventoried source scope", output.getvalue())
+        self.assertIn("whole-form extent unresolved", output.getvalue())
+
+        incomplete = copy.deepcopy(row)
+        incomplete["source_slices"][0]["enumeration_state"] = "partial"
+        propers["bounded_form_text_slots"] = [incomplete]
+        with self.assertRaisesRegex(REPORT.Refused, "incomplete source slices cannot claim"):
+            REPORT.build_report(propers, placement, ordinary)
+        incomplete["denominator_state"] = "unresolved"
+        incomplete["expected"] = None
+        report = REPORT.build_report(propers, placement, ordinary)
+        self.assertIsNone(report["bounded_form_text_slots"][0]["expected"])
+        self.assertEqual(report["check"]["unresolved_dimension_cells"], 39)
+
     def test_every_family_has_exactly_the_fifteen_warrant_dimensions(self) -> None:
         report = REPORT.build_report(*fixture_reports())
         self.assertEqual(report["schema"], "triptych-complete-missal-completeness/v1")
@@ -550,6 +582,12 @@ class CompleteMissalReportTests(unittest.TestCase):
     def test_real_corpus_preserves_effective_common_and_ledger_evidence(self) -> None:
         report = REPORT.build_report(*REPORT.owning_reports())
         families = {row["calendar"]: row for row in report["families"]}
+        pentecost = next(row for row in report["bounded_form_text_slots"]
+                         if (row["calendar"], row["mass"], row["form"]) ==
+                         ("roman-1962", "pentecost", "main"))
+        self.assertEqual((pentecost["expected"], pentecost["represented"]), (13, 13))
+        self.assertEqual(pentecost["whole_form_state"], "unresolved")
+        self.assertEqual(report["check"]["unresolved_dimension_cells"], 39)
 
         pre_1955 = families["roman-pre-1955"]
         expected = pre_1955["structural"]["expected_celebrations"]
