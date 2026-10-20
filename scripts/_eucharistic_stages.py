@@ -91,6 +91,15 @@ def component_list(row: dict, context: str) -> list[str]:
     return result
 
 
+def text_binding_ids(row: dict, context: str) -> list[str]:
+    """An explicit ordered constituent list or the compatible single binding."""
+    if "text_binding" in row and "text_bindings" in row:
+        raise StageError(f"{context}: choose text_binding or text_bindings, not both")
+    if "text_bindings" in row:
+        return strings(row, "text_bindings", context, nonempty=True)
+    return [string(row, "text_binding", context)] if "text_binding" in row else []
+
+
 def _object(pairs: list[tuple]) -> dict:
     result = {}
     for key, value in pairs:
@@ -220,7 +229,7 @@ def load(root: Path, *, catalogue_ids: set[str], comparisons: dict[str, dict], f
             for row in values:
                 fields(row, FIELDS[table], f"{owner} {table}",
                        "git_ancestry text_inheritance" if table == "transitions" else
-                       "text_binding" if table == "stages" else "")
+                       "text_binding text_bindings" if table == "stages" else "")
                 key = string(row, "id", owner)
                 if not IDENTIFIER.fullmatch(key) or key in seen_ids:
                     raise StageError(f"duplicate or invalid stage-history id {key!r}")
@@ -269,16 +278,17 @@ def load(root: Path, *, catalogue_ids: set[str], comparisons: dict[str, dict], f
         choice(row, "date_kind", {"attestation", "publication", "approval", "effective", "reconstruction"}, context)
         status = choice(row, "status", {"documented", "provisional"}, context)
         choice(row, "text_coverage", {"not-transcribed", "partial", "complete"}, context)
-        if row["text_coverage"] == "complete" and "text_binding" not in row:
+        binding_ids = text_binding_ids(row, context)
+        if row["text_coverage"] == "complete" and not binding_ids:
             raise StageError(f"{context}: complete coverage requires a coordinated full-text binding and scope denominator")
         component_list(row, context)
         for identifier in strings(row, "witness_ids", context):
             if identifier not in catalogue_ids:
                 raise StageError(f"{context}: unresolved witness_id {identifier}")
         evidence(row, sources, context, inspected=status == "documented")
-        if "text_binding" in row:
+        projections = []
+        for binding_id in binding_ids:
             from _eucharistic_texts import load_adapter, AdapterError, NATIVE_BOOK_PREFIX
-            binding_id = string(row, "text_binding", context)
             if not binding_id.startswith(NATIVE_BOOK_PREFIX):
                 raise StageError(f"{context}: full-text binding must identify a native book")
             try:
@@ -286,6 +296,11 @@ def load(root: Path, *, catalogue_ids: set[str], comparisons: dict[str, dict], f
             except AdapterError as error:
                 raise StageError(f"{context}: full-text binding: {error}") from error
             binding = payload["book_binding"]
+            if "text_bindings" in row and (row["text_coverage"] != "partial"
+                    or payload["scope"].get("complete_declared_extent") is not True
+                    or payload["scope"].get("extent_kind") != "constituent"
+                    or payload["scope"]["whole_book_complete"] is not False):
+                raise StageError(f"{context}: text_bindings require complete declared constituents and partial stage coverage")
             if (row["text_coverage"] != ("complete" if payload["scope"]["whole_book_complete"] else "partial") or status != "documented"
                     or context not in binding["stage_ids"]
                     or set(row["witness_ids"]) != set(binding["catalogue_witness_ids"])
@@ -305,6 +320,12 @@ def load(root: Path, *, catalogue_ids: set[str], comparisons: dict[str, dict], f
                 if stamp["path"] in bound_inputs and stamp != bound_inputs[stamp["path"]]:
                     raise StageError(f"{context}: full-text binding input changed")
                 bound_inputs[stamp["path"]] = stamp
+            if "text_bindings" in row:
+                projections.append({"text_binding": binding_id, "title": payload["title"],
+                                    "text_projection_path": "native-texts/" + binding["id"] + ".json",
+                                    "text_binding_sha256": binding["sha256"]})
+        if "text_bindings" in row:
+            row["text_projections"] = projections
     for row in rows["transitions"]:
         context = row["id"]
         for field in ("summary", "limitations"):

@@ -777,3 +777,51 @@ Contributors must identify third-party material and record its known author,
 source, attribution, license, permission, public-domain basis, or applicable
 legal exception. Do not submit material that Triptych is not permitted to
 distribute.
+
+### Cistercian Paris 1606 strict Canon facsimile and Latin
+
+The BSB bsb10496382 copy (München, Bayerische Staatsbibliothek, 2 Liturg. 205 a) supplies the eight photographed pages of the strict Canon. Its images and the lossless facsimile PDF retain the provider’s [No Copyright - Non-Commercial Use Only 1.0](https://rightsstatements.org/vocab/NoC-NC/1.0/) condition and attribution. They are excluded from the project’s CC BY 4.0 license; no unrestricted image reuse is asserted. The complete provider scan was acquired and hashed but is remote-only canonical metadata because its 672,254,859 bytes exceeds 100 MiB. The faithful original Latin transcription is public domain in the United States by expiration of the 1606 publication term, is also excluded from the project license, and imports no modern translation or other edition’s text. This historical scholarly transcription does not authorize contemporary liturgical use.
+
+### Armenian EAP180/1/1/12 native facsimile (20 October 2026)
+
+Armenian Khorhrdatetr, British Library EAP180/1/1/12 (checked 20 October 2026). The exact eighteen offered frames are held by the Fundamental Scientific Library (FSL), Yerevan, Armenia, A/711, and were digitised by the Fundamental Scientific Library of the Academy of Sciences. Delivery: British Library Endangered Archives Programme; digitisation funded by EAP supported by Arcadia. Source: https://eap.bl.uk/archive-file/EAP180-1-1-12; exact licence-bearing manifest: https://eap.bl.uk/archive-file/EAP180-1-1-12/manifest, SHA-256 f5ef86cb4089a5a402b3251ebe13c88f7ec01dd5e9933faf591dc995ee4047de. The source images and facsimile derivatives retain Creative Commons Attribution-NonCommercial 4.0 International, https://creativecommons.org/licenses/by-nc/4.0/, and are excluded from Triptych's CC BY 4.0 offer. Retain attribution, source/licence links, required notices and identification of changes; no endorsement or commercial permission is implied. Original JPEG tile responses are unchanged. The project-created source ZIP preserves all 159 responses and 18 metadata files with coordinates and hashes. Its viewing PDF places the original JPEGs at native coordinates without resampling or retouching and adds a modern attribution page: nineteen PDF pages comprise eighteen source frames and that notice. Original TIFF/JP2 master bytes were not acquired; physical-volume completeness, Armenian wording and historical ancestry are not established. The material is provided as-is under the licence's disclaimer of warranties and limitation of liability. Keep ATTRIBUTION.txt with the source package and the notice page with the PDF; standalone image display/downloads also require accessible accompanying credit.
+
+### Policy-source text derivatives (20 October 2026)
+
+Policy-source text derivatives retained for offline rights review
+Retrieved and mechanically converted 2026-10-20.
+
+Creative Commons, Attribution-NonCommercial 4.0 International legal code.
+https://creativecommons.org/licenses/by-nc/4.0/legalcode.en
+The licence text itself is dedicated to the public domain under CC0:
+https://creativecommons.org/publicdomain/zero/1.0/
+The remaining Creative Commons-authored page text is offered by the source
+footer under CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
+Derivative: cc-by-nc-4-legalcode.txt, complete HTML-to-plain-text conversion
+by pandoc; markup, interface artwork and executable website code are omitted.
+No licence wording has been edited. No Creative Commons endorsement is implied.
+
+Creative Commons, Frequently Asked Questions.
+https://creativecommons.org/faq/
+Source footer: except where otherwise noted, site content is CC BY 4.0.
+https://creativecommons.org/licenses/by/4.0/
+Derivative: cc-faq.txt, complete HTML-to-plain-text conversion by pandoc;
+markup, interface artwork and executable website code are omitted. No FAQ
+wording has been deliberately edited. No Creative Commons endorsement is implied.
+
+GitHub, GitHub Terms of Service, effective April 27, 2026.
+https://docs.github.com/en/site-policy/github-terms/github-terms-of-service
+Section G.3 dedicates the Agreement under CC0:
+https://creativecommons.org/publicdomain/zero/1.0/
+Derivative: github-agreement.txt, complete Agreement text from the heading
+'The GitHub Terms of Service' through the end of the Agreement, mechanically
+converted from HTML by pandoc. Preceding interface navigation, markup, artwork
+and executable website code are omitted. No Agreement wording has been edited.
+GitHub site design remains separate; no GitHub endorsement is implied.
+
+The source terms, dedications and licences above remain attached. These texts
+are not newly relicensed by Triptych; public-domain elements remain public domain.
+
+### Cistercian Paris 1657 Canon and prefatory proper forms (20 October 2026)
+
+The Paris Cramoisy 1657 Cistercian Canon is additionally retained as a checked declared constituent with its proper forms printed in the preceding prefaces. Forty exact native DjVu pages preserve the full preface-census and Canon/cutoff source boundary; eighteen complete page-image derivatives, a page-image package and viewing PDF carry the selected readable facsimile. The native files retain their separately manifested shared annotation dependency. The historical Latin and faithful mechanical images have the recorded United States public-domain basis and are excluded from Triptych’s CC BY 4.0 licence. The reader images are explicit lossy mechanical derivatives, distinct from the unchanged retained native sources. The seven proper-form paragraphs, their governing rubrics and the main Canon remain in original source order and at their exact physical loci; source accents, spelling, printed referrals and apparent printing errors are preserved. This is a complete declared discontiguous constituent with partial whole-book text coverage, not a complete missal, proof of a direct exemplar, or authorization for contemporary ritual use. The earlier accepted offertory constituent is unchanged.

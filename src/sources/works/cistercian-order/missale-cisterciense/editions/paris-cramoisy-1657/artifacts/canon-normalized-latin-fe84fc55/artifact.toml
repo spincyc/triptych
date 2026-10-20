@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55"
+edition_id = "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Faithful mechanical source images or a bounded checked transcription of the original Latin Paris 1657 printing, whose United States publication term has expired. The FIDES edition 3755 holding page, re-read on 2026-10-20, marks the Krzeszów Benedictine abbey copy Domena publiczna (Public domain) and access Dla wszystkich bez ograniczeń. The historical wording and mechanical images are excluded from Triptych’s CC BY 4.0 grant. No modern translation, critical reconstruction, or newly composed prayer is supplied. Historical availability does not authorize contemporary liturgical use."
+retrieved = "2026-10-20"
+sha256 = "fe84fc55cab4c323370a8f0bc02ef513d3ed3121819a5d76ab6a2717604b1ba0"
+byte_size = 9711
+path = "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/canon-normalized-latin-fe84fc55/text.txt"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-facsimile-699075c0"
+provenance = "Direct page-image transcription and independent source collation of the exact bounded Canon and prefatory proper forms. No OCR, Roman text from memory or later missal supplied wording. Separate source-block and collation audits identify every physical locus and correction."
+transformation = "NFC UTF-8; long s becomes s; unambiguous printed abbreviation signs expand as listed in the source-block audit; physical wraps and line-end division hyphens disappear. Source u/v, i/j, æ/œ, accents, case including display initials, punctuation, &c., alternatives, every included rubric and spoken cue remain. Pattée crosses are represented by ✠ and the response cue by ℟.; word-separating spaces are regularized. Each stored line is one consecutive source block or paragraph, with source page/column/baseline and ink classes retained separately. No heading, quotation wrapper, modern translation, or explanatory material is inserted into literal text. Proper forms retain their discontiguous prefatory locations and are not relocated into the main Canon."
+notes = "Preserves printed Nativity móriam and Ascension vnítam, the unexpanded &c. referrals, source rubric order and other edition-specific spellings. A printed referral remains a referral; no omitted continuation is supplied from the familiar Canon."

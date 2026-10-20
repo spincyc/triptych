@@ -42,9 +42,9 @@ def expected_file_count() -> int:
 
 def native_text_paths() -> set[str]:
     dossiers = ROOT / "src/sources/inventories/eucharistic-stages"
-    return {"native-texts/" + stage["text_binding"].removeprefix("native-book:") + ".json"
+    return {"native-texts/" + binding.removeprefix("native-book:") + ".json"
             for path in dossiers.glob("*.json") for stage in json.loads(path.read_text())["stages"]
-            if stage.get("text_binding")}
+            for binding in stage.get("text_bindings", [stage["text_binding"]] if stage.get("text_binding") else [])}
 
 
 def load_tool():
@@ -102,13 +102,12 @@ class ActHistoryStructureTests(unittest.TestCase):
         self.assertEqual(native_text_paths(), {path.relative_to(TRACKED).as_posix()
                                               for path in (TRACKED / "native-texts").rglob("*.json")})
         for stage in catalogue["stage_history"]["stages"]:
-            if not stage.get("text_binding"):
-                continue
-            native = json.loads((TRACKED / stage["text_projection_path"]).read_text())
-            self.assertEqual(stage["text_binding"], native["adapter_id"])
-            self.assertEqual(stage["text_binding_sha256"], native["binding_sha256"])
-            self.assertIn(stage["id"], native["stage_ids"])
-            self.assertTrue(native["units"])
+            for binding in stage.get("text_projections", [stage] if stage.get("text_binding") else []):
+                native = json.loads((TRACKED / binding["text_projection_path"]).read_text())
+                self.assertEqual(binding["text_binding"], native["adapter_id"])
+                self.assertEqual(binding["text_binding_sha256"], native["binding_sha256"])
+                self.assertIn(stage["id"], native["stage_ids"])
+                self.assertTrue(native["units"])
         for declaration in catalogue["comparisons"]:
             comparison = json.loads((TRACKED / declaration["projection_path"]).read_text())
             self.assertEqual(comparison["id"], declaration["id"])

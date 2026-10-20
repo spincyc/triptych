@@ -1,0 +1,843 @@
+{
+  "schema_version": 1,
+  "record_type": "public-derivative-source-acceptance",
+  "recorded_on": "2026-10-20",
+  "status": "accepted-for-source-scope-only",
+  "derivative_notice": "Public derivative of the named original accepted receipts. It selects and reformats their accepted facts; it is not a byte-identical copy of either original. Originals remain unchanged.",
+  "intended_integration_path": "workflows/reviews/missal-batch2-2026-10-20/source.json",
+  "original_accepted_receipts": [
+    {
+      "name": "installed-source-review",
+      "sha256": "25cab193c33276e00a8a6b5b0c116c3f96b8c9c8a8c80baa0877d53fc2347982",
+      "passed_checks": 576
+    },
+    {
+      "name": "retention-containment-closure",
+      "sha256": "d40fdb24effb01c6e6d9b5e1628db20a0e0dee1ee07fd727213a3268377c4166",
+      "passed_checks": 368
+    }
+  ],
+  "method": {
+    "total_passed_checks": 944,
+    "installed_source_comparison": "Compared canonical payload hashes and sizes, exact source/native files, ordered bindings and source-status claims against independently accepted frozen packets and approved metadata addenda.",
+    "central_closure": "Bound final retention and containment owners to the exact independently accepted ledger and source-owner freeze; preserved historical decisions and public disclosure boundaries.",
+    "prior_evidence_reuse": "Existing source-library and focused containment validation, independent source-word collation and extent evidence were reused by exact identity. No full graph, old-payload baseline or source-image collation was repeated.",
+    "derivative_preparation": "Read accepted receipt and inventory metadata only. No payload rehash, source research, code/data change or new validation is represented by this derivative."
+  },
+  "accepted_packet_pins": {
+    "cistercian1606_source_packet_sha256": "41b50d5137341cacc6ca5953a14fb4c9958d8c6f9baec6f5be9d58b41fa77e29",
+    "cistercian1606_approved_metadata_addendum_sha256": "e07ba6acea1c8d0118df049baa6cd78ff5f1cb59e75de0a3d050ac8f2d68fbf7",
+    "armenian_source_freeze_sha256": "b462b1a3f77d5d7cd6a23b710e100474970d6094f5b02b64f9d1b47d48955309",
+    "cistercian1657_final_manifest_sha256": "5f39a8e7f2e12b64fdf18224434a397f4e845d012f48e30e4a3cc5e39bfabd2b"
+  },
+  "source_owned_resource_binding": {
+    "original_manifest_sha256": "4be638e7098ce9d5a9407101041725cb53e164acd8ebc84973a629fd547ee0df",
+    "resource_count": 268,
+    "new_count": 261,
+    "modified_count": 7,
+    "compact_binding_digest": {
+      "algorithm": "SHA-256",
+      "sha256": "db6a927ff96575f205f6b5981d1e82093bc4177927a821266ff7796c3badaaae",
+      "row_fields": [
+        "path",
+        "sha256",
+        "byte_size"
+      ],
+      "serialization": "UTF-8 JSON array; rows sorted by path; object keys sorted; comma/colon separators without spaces; non-ASCII unescaped; no trailing newline."
+    }
+  },
+  "audit_owner_freeze": {
+    "original_manifest_sha256": "89d96a9506827a4e48bd0598a9b35df8f17f88c82e523cdc9845cc73fa0936ea",
+    "owner_count": 39,
+    "owners": [
+      {
+        "id": "presentation",
+        "path": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
+        "sha256": "3329af01a75effba48bc1b53847f444ca0f5ed2f2408d0bad0733a5a9eb5fbbf"
+      },
+      {
+        "id": "eastern",
+        "path": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
+        "sha256": "4bbfb4daada712037b418f1e55986d3369a639b8a1823947c906434b3487cbaa"
+      },
+      {
+        "id": "dossier:alexandrian-stages",
+        "path": "src/sources/inventories/eucharistic-stages/alexandrian.json",
+        "sha256": "f47a20513aef0ca65452902da493c5239894e7e7ef9f46df74a4dd76ec334f9a"
+      },
+      {
+        "id": "dossier:ambrosian",
+        "path": "src/sources/inventories/eucharistic-stages/ambrosian.json",
+        "sha256": "beb74ea19c8deab1eaa6534328adce296525d10b9370bf5adee8c2c3cf933bd7"
+      },
+      {
+        "id": "dossier:armenian-eucharistic-stages",
+        "path": "src/sources/inventories/eucharistic-stages/armenian.json",
+        "sha256": "1834b5a154119038cf42b0a899dd5bc562cb5153b3432958445b14ebdc622153"
+      },
+      {
+        "id": "dossier:bursfelde",
+        "path": "src/sources/inventories/eucharistic-stages/bursfelde.json",
+        "sha256": "acfe5cbc563a73e9a65862e5f07eae729b058ac8109be6e2406c8b0e91c6a2d2"
+      },
+      {
+        "id": "dossier:byzantine-stages",
+        "path": "src/sources/inventories/eucharistic-stages/byzantine.json",
+        "sha256": "fcf1afcc469c3cacb1b8daaa0e4cdfb3df2e3fd7a9b426adc2dfdb8492e21544"
+      },
+      {
+        "id": "dossier:canonical-orders",
+        "path": "src/sources/inventories/eucharistic-stages/canonical-orders.json",
+        "sha256": "b968a4d049e327f1f5b5c9fa76230fb60bcd99682259c31f6ab7cc7d828f85e0"
+      },
+      {
+        "id": "dossier:central-europe-round3",
+        "path": "src/sources/inventories/eucharistic-stages/central-europe-round3.json",
+        "sha256": "0dd08cd209a64e2f0f9b4eddc6c982b86322d1f7a3e03d097eff0fd09f119746"
+      },
+      {
+        "id": "dossier:chaldean-east-syriac",
+        "path": "src/sources/inventories/eucharistic-stages/chaldean.json",
+        "sha256": "c117f0343b5fb8e91ab8dbb070ae907f71318f30b822628a2751400c7926efb0"
+      },
+      {
+        "id": "dossier:cistercian-1606-1657",
+        "path": "src/sources/inventories/eucharistic-stages/cistercian.json",
+        "sha256": "191d4bb6175142691f0d2c45029247a7ec15fd3cb39fca03408555088359bdcc"
+      },
+      {
+        "id": "dossier:early-western-round2",
+        "path": "src/sources/inventories/eucharistic-stages/early-western-round2.json",
+        "sha256": "9e6df55da5942db905df222d9f690e0d0695789df9f6a8df2df8a6dfca86f8e1"
+      },
+      {
+        "id": "dossier:eastern-local-round2",
+        "path": "src/sources/inventories/eucharistic-stages/eastern-local-round2.json",
+        "sha256": "19d21c08f0c825c143b6cc7447f881cbdf323cb33bd75ba80aced9676d43198b"
+      },
+      {
+        "id": "dossier:evora",
+        "path": "src/sources/inventories/eucharistic-stages/evora.json",
+        "sha256": "6bda1d2551caa7405e7e3db7d47c5cad484bcaa62734013c310d1b02bc3c282d"
+      },
+      {
+        "id": "dossier:french-local-round2",
+        "path": "src/sources/inventories/eucharistic-stages/french-local-round2.json",
+        "sha256": "01433657b83458c95d77cb31f2cc08e0c581f46aec2ca948bd253583819ad3a7"
+      },
+      {
+        "id": "dossier:german-regional",
+        "path": "src/sources/inventories/eucharistic-stages/german-regional.json",
+        "sha256": "514155850a7227b28296c52710c7c460e175e6ea0ce73cfcf05ae5487fc2b085"
+      },
+      {
+        "id": "dossier:greek-italo-local-reception",
+        "path": "src/sources/inventories/eucharistic-stages/greek-italo-local-reception.json",
+        "sha256": "cf0b8b788a85dc0aa3cd9a26aa06694cbcede0931fe6410f993eed71a7f37d0d"
+      },
+      {
+        "id": "dossier:hungarian-reception",
+        "path": "src/sources/inventories/eucharistic-stages/hungarian-reception.json",
+        "sha256": "d54f53b8e1c57f6292b8623855d267731c9753cfb1e5728fb349ed833e4fe495"
+      },
+      {
+        "id": "dossier:italian-local-round2",
+        "path": "src/sources/inventories/eucharistic-stages/italian-local-round2.json",
+        "sha256": "23a7cc45b3d7c8d0e3aeb04d930581ad2bd295a2448ccac84421cd81056ea4f5"
+      },
+      {
+        "id": "dossier:latin-uses",
+        "path": "src/sources/inventories/eucharistic-stages/latin-uses.json",
+        "sha256": "25774a79a5e66dc22aaa4af1b7b3166b0a7aa21b014fc81a1f01b8b5c958b4c5"
+      },
+      {
+        "id": "dossier:stages-malabar",
+        "path": "src/sources/inventories/eucharistic-stages/malabar.json",
+        "sha256": "18dc67367728a9af0cdf919b0eb34b2304da8b44b39b98fcde26756f3e8a18c2"
+      },
+      {
+        "id": "dossier:maronite",
+        "path": "src/sources/inventories/eucharistic-stages/maronite.json",
+        "sha256": "78bcaa7f4b123694e121dcabaa523cde7431477821fde2e619fda81eaeb42965"
+      },
+      {
+        "id": "dossier:monza-local-next",
+        "path": "src/sources/inventories/eucharistic-stages/monza-local-next.json",
+        "sha256": "47dcb83a520ae81cab766376dfc94ac00c3df9d46a99ce452122e2a0bf9fdecd"
+      },
+      {
+        "id": "dossier:hispano-mozarabic",
+        "path": "src/sources/inventories/eucharistic-stages/mozarabic.json",
+        "sha256": "51c4c8cbbdab189a3ddff30600d110bd73a537b39c85614bff17a8a35de20d6b"
+      },
+      {
+        "id": "dossier:northern-central-regional",
+        "path": "src/sources/inventories/eucharistic-stages/northern-central-regional.json",
+        "sha256": "855b6ff82eb9af3e3bba3dfaa3cf3430186311d51cd2ee3caa8b8d942c207dd3"
+      },
+      {
+        "id": "dossier:northwest-round2",
+        "path": "src/sources/inventories/eucharistic-stages/northwest-round2.json",
+        "sha256": "5d13abbb9e35948d145852e27a1bfdde219a7ecaf5f202a6d923cca136b565d2"
+      },
+      {
+        "id": "dossier:ocso-next",
+        "path": "src/sources/inventories/eucharistic-stages/ocso-next.json",
+        "sha256": "259643b64d9cfd57fa19984da7cbf4e4b9000544ad1002b591b33773ddd46c2d"
+      },
+      {
+        "id": "dossier:other-orders",
+        "path": "src/sources/inventories/eucharistic-stages/other-orders-round2.json",
+        "sha256": "904a61d641f13cbed54276250bf1129edb6abbe8769a5542afa7d9e458763292"
+      },
+      {
+        "id": "dossier:padua-local-round3",
+        "path": "src/sources/inventories/eucharistic-stages/padua-local-round3.json",
+        "sha256": "324e8b8be5d02e32ff8b24a8ef23be579b3e8edfee88678a2c0ab2f9936ff612"
+      },
+      {
+        "id": "dossier:ravenna-fragments",
+        "path": "src/sources/inventories/eucharistic-stages/ravenna-fragments.json",
+        "sha256": "380de2749f35ad1d7b2ed587cc5f5f16a69329caebced64bdb54bb2332475778"
+      },
+      {
+        "id": "dossier:regional-variants",
+        "path": "src/sources/inventories/eucharistic-stages/regional-variants.json",
+        "sha256": "1b8d0c5b530452d6ad2c107f315f546b1ea38ff10239b27443045f290f25c8ab"
+      },
+      {
+        "id": "dossier:residual-orders-round3",
+        "path": "src/sources/inventories/eucharistic-stages/residual-orders-round3.json",
+        "sha256": "01b6657c5f670a6e7300316e08b30d8f683266def1ca717e0c3c0f70b7b07dea"
+      },
+      {
+        "id": "dossier:residual-western-round3",
+        "path": "src/sources/inventories/eucharistic-stages/residual-western-round3.json",
+        "sha256": "262117f9dade135eb75310b3423344c0bb2a1a9e34a0447094cb2eab13eb6f8f"
+      },
+      {
+        "id": "dossier:roman-stages",
+        "path": "src/sources/inventories/eucharistic-stages/roman.json",
+        "sha256": "0803cb8241d49b82b796db94403c2f05756fa607b86d3a9e89b85a8627aaf0ec"
+      },
+      {
+        "id": "dossier:romanian-blaj",
+        "path": "src/sources/inventories/eucharistic-stages/romanian-blaj.json",
+        "sha256": "f59e5da265728d0dd6c1f1f048c2045d1e9e95ad15b3b2e37e45f88f0356c42b"
+      },
+      {
+        "id": "dossier:slavonic-roman",
+        "path": "src/sources/inventories/eucharistic-stages/slavonic-roman.json",
+        "sha256": "680df02025d8b9d66165a0c0bd878b5c3a6758e9ac21c203e59d676cbe7563b8"
+      },
+      {
+        "id": "dossier:west-syriac-stages",
+        "path": "src/sources/inventories/eucharistic-stages/west-syriac.json",
+        "sha256": "5af5b77cfacbce6570a8abf8b7d3060070301fe8be43afcd3409bd6d9fb71587"
+      },
+      {
+        "id": "legacy_latin",
+        "path": "src/sources/inventories/latin-missal-acts-v1.toml",
+        "sha256": "917895b2fc23efa60665c5210714b6737e741b177507b0e877fcd0aef9fc1174"
+      },
+      {
+        "id": "western",
+        "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+        "sha256": "29eedc87429c1671986df872623e877f5a8b44c10dc6cc22bd1feb15d1404251"
+      }
+    ]
+  },
+  "retained_payloads": {
+    "count": 69,
+    "byte_size": 175560887,
+    "entries": [
+      {
+        "artifact_id": "artifact.armenian-church.lyturgia-armena.1677-rome-propaganda-19-page-setting.eap-native-facsimile-e3c221aa",
+        "path": "src/sources/works/armenian-church/lyturgia-armena/editions/1677-rome-propaganda-19-page-setting/artifacts/eap-native-facsimile-e3c221aa/eap180-1-1-12-native-facsimile.pdf",
+        "sha256": "e3c221aa50bd46721be3cfe337c8f2b183a8ae4003bc78dd410019e1daa8fa12",
+        "byte_size": 37739568
+      },
+      {
+        "artifact_id": "artifact.armenian-church.lyturgia-armena.1677-rome-propaganda-19-page-setting.eap-native-regions-ccc95907",
+        "path": "src/sources/works/armenian-church/lyturgia-armena/editions/1677-rome-propaganda-19-page-setting/artifacts/eap-native-regions-ccc95907/eap180-1-1-12-native-regions.zip",
+        "sha256": "ccc95907382a7a496c9fcb0f0beb9b7d1238d2350e6af3e4d271a0770ae58e16",
+        "byte_size": 38048319
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-facsimile-699075c0",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/canon-facsimile-699075c0/canon-pages.pdf",
+        "sha256": "699075c0b381275337c6b38e7df39d6ad6dcb7a4a1625b679233887f637a1a56",
+        "byte_size": 17545954
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/canon-normalized-latin-fe84fc55/text.txt",
+        "sha256": "fe84fc55cab4c323370a8f0bc02ef513d3ed3121819a5d76ab6a2717604b1ba0",
+        "byte_size": 9711
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-page-images-6294ab9f",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/canon-page-images-6294ab9f/pages.zip",
+        "sha256": "6294ab9fc708932745e6dd13d846d88b0661e5891808bccc7c82e6ca0e890e06",
+        "byte_size": 17549492
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-indirect-index-08cff013",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-indirect-index-08cff013/1657-indirect-index.djvu",
+        "sha256": "08cff0130a6891a46a4c9a247be3f5392424da24d5f76548c43c5b5627db779f",
+        "byte_size": 813
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0237-djvu-5656b180",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0237-djvu-5656b180/1657-page-0237.djvu",
+        "sha256": "5656b1807d4d477703219f771e94c25e472d857d3bbf056eeb4121f494c206bb",
+        "byte_size": 868261
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0238-canon-jpeg-221f8968",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0238-canon-jpeg-221f8968/1657-page-0238.jpg",
+        "sha256": "221f896842fb36b888169badd7b395ba7cd8b7e916deb8944a930e5bc18d405d",
+        "byte_size": 997353
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0238-djvu-5418c796",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0238-djvu-5418c796/1657-page-0238.djvu",
+        "sha256": "5418c796540d87da694789ba037d3a123ad72435f4de0e10bdcc342b9a9b2dad",
+        "byte_size": 808922
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0239-canon-jpeg-366920cc",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0239-canon-jpeg-366920cc/1657-page-0239.jpg",
+        "sha256": "366920cc652334ab562b3eee5efee78df6f9f324ad944b5d1be625e5e8927228",
+        "byte_size": 1040457
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0239-djvu-c4a09b3a",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0239-djvu-c4a09b3a/1657-page-0239.djvu",
+        "sha256": "c4a09b3a31c33e5da4207f28bd9a8a02ee90cd1ac7fa739bca28e840d80668b6",
+        "byte_size": 932020
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0240-djvu-10a5155b",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0240-djvu-10a5155b/1657-page-0240.djvu",
+        "sha256": "10a5155bff55a278aab5073bff7397c05fd24a73d31285ab091ae744c0e12334",
+        "byte_size": 798573
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0241-djvu-de242302",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0241-djvu-de242302/1657-page-0241.djvu",
+        "sha256": "de2423022f4caa99a66ec21dbed4554cea7ce0bdbfa8c12a06eb176359a1dba9",
+        "byte_size": 913956
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0242-djvu-71baadd7",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0242-djvu-71baadd7/1657-page-0242.djvu",
+        "sha256": "71baadd7a613c20e7e823b304daf569d5c65246cae6335358f1316eaecafdeb0",
+        "byte_size": 816892
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0243-canon-jpeg-9d4678d8",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0243-canon-jpeg-9d4678d8/1657-page-0243.jpg",
+        "sha256": "9d4678d8a8da7f0b6c2ac97b5445e6d27cf5a92811526e430bed0a2b4982f4a3",
+        "byte_size": 994215
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0243-djvu-577110a1",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0243-djvu-577110a1/1657-page-0243.djvu",
+        "sha256": "577110a1657d69f856f76a3dc92121020fabac72a357d41c5497c74a89ef5c5c",
+        "byte_size": 943092
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0244-djvu-78e4b45f",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0244-djvu-78e4b45f/1657-page-0244.djvu",
+        "sha256": "78e4b45fda16ec3038d7b9703573ded44038601a6c4057c6b5dd2c82a3abd2fb",
+        "byte_size": 789625
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0245-canon-jpeg-81b6d20f",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0245-canon-jpeg-81b6d20f/1657-page-0245.jpg",
+        "sha256": "81b6d20fb0dcbeaf1e44e05eaa27811c2b100a1e117ed88cb40b7089d1fcf581",
+        "byte_size": 1025461
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0245-djvu-6fa64e0e",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0245-djvu-6fa64e0e/1657-page-0245.djvu",
+        "sha256": "6fa64e0eab49c041b5c85b44224e8002e9696dedc43e85c11f6b1d80dfac58f5",
+        "byte_size": 914152
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0246-canon-jpeg-b3801109",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0246-canon-jpeg-b3801109/1657-page-0246.jpg",
+        "sha256": "b3801109066bd5ce1d2303672e1f1036cf29c3c7367b70a3214a1d62aeb8ac4c",
+        "byte_size": 1007175
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0246-djvu-9ed3721e",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0246-djvu-9ed3721e/1657-page-0246.djvu",
+        "sha256": "9ed3721e9bd02fb3d5aeeee645bc5b7452a319473cda00b6a28a6808035cb911",
+        "byte_size": 814785
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0247-djvu-5ab4cbf2",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0247-djvu-5ab4cbf2/1657-page-0247.djvu",
+        "sha256": "5ab4cbf22a8b251fc200089b029f10a55c546d9a0ffaf489fc9cf489eca35d6e",
+        "byte_size": 897302
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0248-djvu-6d438e9a",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0248-djvu-6d438e9a/1657-page-0248.djvu",
+        "sha256": "6d438e9a3d504f47a6e8db524be0344252a1a67189494a3efda1888616e32e6b",
+        "byte_size": 851797
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0249-djvu-9fd36729",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0249-djvu-9fd36729/1657-page-0249.djvu",
+        "sha256": "9fd367293b09d198bcf878ccbd02c7f3662b9fc219b875069b94b823440e069b",
+        "byte_size": 882390
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0250-djvu-dac6b73d",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0250-djvu-dac6b73d/1657-page-0250.djvu",
+        "sha256": "dac6b73d2a7939cbd8535d4290a63fafb4a237b67caf74feb8ddb6ff24b631b8",
+        "byte_size": 830811
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0251-djvu-589cf523",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0251-djvu-589cf523/1657-page-0251.djvu",
+        "sha256": "589cf52332a593d80ae2af89fc3b91363bd0cd7e9662749790b6bcf895d6a718",
+        "byte_size": 893566
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0252-djvu-b5925725",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0252-djvu-b5925725/1657-page-0252.djvu",
+        "sha256": "b59257256ad83283c74389f0e0c807ca6c73089ce5d741d82910525ad24610c8",
+        "byte_size": 784282
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0253-djvu-ce906da1",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0253-djvu-ce906da1/1657-page-0253.djvu",
+        "sha256": "ce906da19c34ef7283fa3d310afa80c07ac85d3ae7e3d126402cc399872cf32e",
+        "byte_size": 895799
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0254-djvu-0270e891",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0254-djvu-0270e891/1657-page-0254.djvu",
+        "sha256": "0270e89172ca8f57f28c4f16f4fcf88a0f05c5092d30ebbc95c28a287bade06c",
+        "byte_size": 798990
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0255-djvu-311776ed",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0255-djvu-311776ed/1657-page-0255.djvu",
+        "sha256": "311776ed2823428fb351cde3093e74709122d8ff7bf01d272a8347bb4a5d93e1",
+        "byte_size": 916060
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0256-djvu-178613db",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0256-djvu-178613db/1657-page-0256.djvu",
+        "sha256": "178613db37ab89bf7fa2f5df57467893b7fbfc46cb5813288dc46af33c379924",
+        "byte_size": 846195
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0257-djvu-5d77325e",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0257-djvu-5d77325e/1657-page-0257.djvu",
+        "sha256": "5d77325eb92d80c9f3fc9876a8ddec7d9246db592e2606261dff808e603cf1d7",
+        "byte_size": 938291
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0258-djvu-860a1179",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0258-djvu-860a1179/1657-page-0258.djvu",
+        "sha256": "860a11790e36fb9e57cf8e889599c68c912c9f0db6bd1804775002d7b3a24398",
+        "byte_size": 862570
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0259-djvu-98f29f02",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0259-djvu-98f29f02/1657-page-0259.djvu",
+        "sha256": "98f29f02f840c8bd3db50128a857fdc6366511c44eefa5b8046d8d7d84e805b9",
+        "byte_size": 953984
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0260-djvu-17f252a8",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0260-djvu-17f252a8/1657-page-0260.djvu",
+        "sha256": "17f252a8ddbe4cb9f0699b9a5a33a06068eabef4f78c643a9fee3ed2a3f0bf9a",
+        "byte_size": 843280
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0261-djvu-697c2578",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0261-djvu-697c2578/1657-page-0261.djvu",
+        "sha256": "697c2578f63be37334bb127553f4e79daa84c89f0f18e1dcc71101b6e08eda96",
+        "byte_size": 939428
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0262-djvu-2c0a13a9",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0262-djvu-2c0a13a9/1657-page-0262.djvu",
+        "sha256": "2c0a13a9eb41bd702182276655cc2f628bd4a7a6b8d4e33e2a8264ff830539f3",
+        "byte_size": 891758
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0263-canon-jpeg-7a31307d",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0263-canon-jpeg-7a31307d/1657-page-0263.jpg",
+        "sha256": "7a31307d798afd32fd0e0c4b55e7dc7937da1b39570d60086194260d14f7b8fe",
+        "byte_size": 824844
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0263-djvu-316cad7d",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0263-djvu-316cad7d/1657-page-0263.djvu",
+        "sha256": "316cad7d09c21fc8b45875cf8dce1554514ef99917ba5e8fea7ac40dd43ce5a9",
+        "byte_size": 754325
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0264-canon-jpeg-8e53e60f",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0264-canon-jpeg-8e53e60f/1657-page-0264.jpg",
+        "sha256": "8e53e60f461fc425afdc5213c036984f27b05a577287ad17cafa8ba2f9995b63",
+        "byte_size": 1160667
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0264-djvu-edb082c5",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0264-djvu-edb082c5/1657-page-0264.djvu",
+        "sha256": "edb082c5d1565f406d12421af9660460637b45b36cc9b30c00c3f6423cce14cd",
+        "byte_size": 1207311
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0265-canon-jpeg-db3cb60a",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0265-canon-jpeg-db3cb60a/1657-page-0265.jpg",
+        "sha256": "db3cb60a2c9d36fed3e42534080bb6e74cbd19260e3665123313254e5eea4882",
+        "byte_size": 990188
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0265-djvu-3c419b1b",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0265-djvu-3c419b1b/1657-page-0265.djvu",
+        "sha256": "3c419b1b216809835b57415f7f4583bce432bae011830b7bf10c7d67fb0912ef",
+        "byte_size": 930183
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0266-canon-jpeg-36bd8dae",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0266-canon-jpeg-36bd8dae/1657-page-0266.jpg",
+        "sha256": "36bd8dae2d995a9269fae3fbc6a68faa9a63370ae3b9e75a12ef42d711e76d59",
+        "byte_size": 938396
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0266-djvu-bf1ad4b3",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0266-djvu-bf1ad4b3/1657-page-0266.djvu",
+        "sha256": "bf1ad4b340775c252e3d679843a938bd789c3009b85e114bf1cc77b5bc8b8920",
+        "byte_size": 788927
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0267-canon-jpeg-f833a2e2",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0267-canon-jpeg-f833a2e2/1657-page-0267.jpg",
+        "sha256": "f833a2e2ed559841afb88825f80303427922a4bd10925501f8d9a4245f6f9185",
+        "byte_size": 965142
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0267-djvu-19fde1b0",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0267-djvu-19fde1b0/1657-page-0267.djvu",
+        "sha256": "19fde1b007e335ca93cf6b7ec2d02a4a8acc39e1b5d25b0fc4883931272b1b0b",
+        "byte_size": 886419
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0268-canon-jpeg-5f3d7a34",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0268-canon-jpeg-5f3d7a34/1657-page-0268.jpg",
+        "sha256": "5f3d7a34f5a536eff426f32e3becb7a28518da2cb9d7ec26a76d4cc31683dd9e",
+        "byte_size": 958776
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0268-djvu-79f3696b",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0268-djvu-79f3696b/1657-page-0268.djvu",
+        "sha256": "79f3696bd0c4b7febe223df2bc7d99b1318e2e09f1d2ed6653342b9cc8bb8d09",
+        "byte_size": 853427
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0269-canon-jpeg-c201b27e",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0269-canon-jpeg-c201b27e/1657-page-0269.jpg",
+        "sha256": "c201b27ec5687880f42f35fdbb34d0cd549064850085a20f0aed3b145185e5d0",
+        "byte_size": 981730
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0269-djvu-2ff6a7fb",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0269-djvu-2ff6a7fb/1657-page-0269.djvu",
+        "sha256": "2ff6a7fbe5a9e51e39b23e563c54ba77410f63f3d8b4c760c069ed6951a73574",
+        "byte_size": 866218
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0270-canon-jpeg-4cdfb931",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0270-canon-jpeg-4cdfb931/1657-page-0270.jpg",
+        "sha256": "4cdfb931d6afc3c2f324d01e2050cbfcfe5897d73dea68fe09881764f71dccad",
+        "byte_size": 939964
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0270-djvu-de9a964b",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0270-djvu-de9a964b/1657-page-0270.djvu",
+        "sha256": "de9a964beb04ce9f38a3b8386d78af1cffcf9cddb2544ae983fca79adcdb28d3",
+        "byte_size": 843883
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0271-canon-jpeg-56066cbd",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0271-canon-jpeg-56066cbd/1657-page-0271.jpg",
+        "sha256": "56066cbded74a772dda9034d4d73b9d28489bd30e47f9b6197e5ab6e7d9c6d99",
+        "byte_size": 936599
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0271-djvu-940bb02c",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0271-djvu-940bb02c/1657-page-0271.djvu",
+        "sha256": "940bb02c841c6caae9fb7992899f426fc3c8dad27d8b1464aaa21ed0fca8d8f1",
+        "byte_size": 890844
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0272-canon-jpeg-bda92ecf",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0272-canon-jpeg-bda92ecf/1657-page-0272.jpg",
+        "sha256": "bda92ecf01fb5a72702a7529dc3d78f76cd62cadbba0e70fe73d29e77c2f280a",
+        "byte_size": 925889
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0272-djvu-ee78692f",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0272-djvu-ee78692f/1657-page-0272.djvu",
+        "sha256": "ee78692f9ae5960c6b8721fb9a2bf6a4bfef65291104a95b3c3fb94f95973df5",
+        "byte_size": 799083
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0273-canon-jpeg-6865e3bc",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0273-canon-jpeg-6865e3bc/1657-page-0273.jpg",
+        "sha256": "6865e3bc4f2633fb8abe43218524ba9310be4c145ec847769622718fd8cd3e2c",
+        "byte_size": 951503
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0273-djvu-97c3691d",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0273-djvu-97c3691d/1657-page-0273.djvu",
+        "sha256": "97c3691df78d9f3de18265ec8bbe2dda3c61b0d1bf01293222f491e9bb529eea",
+        "byte_size": 876703
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0274-canon-jpeg-a767bdf1",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0274-canon-jpeg-a767bdf1/1657-page-0274.jpg",
+        "sha256": "a767bdf1a48472dcfdb7e4740d6c666e509fdfa4d907250a7751b1d4721eeaf0",
+        "byte_size": 937752
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0274-djvu-293efcee",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0274-djvu-293efcee/1657-page-0274.djvu",
+        "sha256": "293efcee72fc7965b20a84856ef45d3aacda50d2076f3d9636764c254ce4fc61",
+        "byte_size": 819132
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0275-canon-jpeg-f8cc5ad4",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0275-canon-jpeg-f8cc5ad4/1657-page-0275.jpg",
+        "sha256": "f8cc5ad48a21cbd0ee2f000d2c9f05fe4452dde6c261fd978a1565fdf8c0a5cb",
+        "byte_size": 961399
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0275-djvu-2b1ce57e",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0275-djvu-2b1ce57e/1657-page-0275.djvu",
+        "sha256": "2b1ce57e4b96df444b07eacc88a24850aa0fdfa291705b5aa6972863a200abd5",
+        "byte_size": 857486
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0276-djvu-34a9ced2",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0276-djvu-34a9ced2/1657-page-0276.djvu",
+        "sha256": "34a9ced2d6b12f42d0d45f4810ef74c379655bff174b3803f7daf41b76be7a81",
+        "byte_size": 848105
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/canon-checked-latin-ffa3e1be/text.txt",
+        "sha256": "ffa3e1be8edb198a983a22e69ffb9fc5a4d30de38f6d79bb17ebeb39c310a83f",
+        "byte_size": 6134
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/canon-facsimile-dc62364f/facsimile.pdf",
+        "sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+        "byte_size": 12067925
+      },
+      {
+        "artifact_id": "artifact.creative-commons.attribution-noncommercial-4-0-international.2026-10-20-web-state.plain-text-ad8dba19",
+        "path": "src/sources/works/creative-commons/attribution-noncommercial-4-0-international/editions/2026-10-20-web-state/artifacts/plain-text-ad8dba19/cc-by-nc-4-legalcode.txt",
+        "sha256": "ad8dba198834fb2a84cad97f4fda90651548d061052a82be7a4ec52f177b376b",
+        "byte_size": 19466
+      },
+      {
+        "artifact_id": "artifact.creative-commons.frequently-asked-questions.2026-10-20-web-state.plain-text-9f76ee47",
+        "path": "src/sources/works/creative-commons/frequently-asked-questions/editions/2026-10-20-web-state/artifacts/plain-text-9f76ee47/cc-faq.txt",
+        "sha256": "9f76ee4789a99a06e1563fae20ae26aa98f1fd0aca8de2dd6c4e0e0e1ecf935d",
+        "byte_size": 143727
+      },
+      {
+        "artifact_id": "artifact.github.terms-of-service.2026-10-20-web-state.plain-text-906d6ce3",
+        "path": "src/sources/works/github/terms-of-service/editions/2026-10-20-web-state/artifacts/plain-text-906d6ce3/github-agreement.txt",
+        "sha256": "906d6ce38cced67153245093cb47382f8b3f18ad63c3f7bb5f5cc974663d6b76",
+        "byte_size": 43441
+      }
+    ]
+  },
+  "central_retention": {
+    "owner": {
+      "path": "src/sources/inventories/eucharistic-source-retention-decision-v1.toml",
+      "sha256": "f495bf863b46c41275575e061513a9a4e1de045687f15e66be49030e97be660c"
+    },
+    "public_review": {
+      "path": "src/sources/inventories/eucharistic-research-reviews/source-retention-batch2-2026-10-20.json",
+      "sha256": "456111896e5beff5bed9b4484b0f3c2500997243d575447d9afbbe5969e5a592"
+    },
+    "independent_acceptance_sha256": "89bd18ae9b8d18a04a03b505e8d0a1daaafc5d1d191689896166aedfd7453f42",
+    "exact_sha_decisions": 910,
+    "selected_top_level": 69,
+    "selected_package_responses": 178,
+    "deferred": 663,
+    "top_level_payload_bytes": 175560887,
+    "historical_decisions_preserved": {
+      "initial_count": 80,
+      "next_phase_count": 389,
+      "unchanged": true
+    },
+    "count_limit": "Counts describe source-byte retention decisions, not distinct books or substantive versions."
+  },
+  "containment": {
+    "owner": {
+      "path": "src/sources/inventories/source-containment-v1.toml",
+      "sha256": "f6d011088327f206059a59083bbf70d0c85b15db454b447d15715bd20da2fc38"
+    },
+    "not_container_count": 35,
+    "new_exclusions": 2,
+    "independent_acceptance_sha256": "d0cabac1593a24d2ec3f6ef10dcc46b40984555fd10ba7be7718b60dd34cbdb6",
+    "scope": "New exclusions cover the single-missal 1657 image ZIP and indirect directory; no anthology, second work or whole-book completeness is inferred."
+  },
+  "native_source_scope": {
+    "cistercian1606": {
+      "binding": {
+        "path": "src/sources/inventories/eucharistic-books/cistercian-1606-canon.json",
+        "sha256": "78aacfe63bc9e2306147439eb89c5f2ff5db136b6a6c102c04f8aacff7210a69"
+      },
+      "extent": {
+        "path": "src/sources/inventories/eucharistic-books/support/cistercian-1606-canon-extent.json",
+        "sha256": "4293f83ddae07116998c8066dfaef881f4eb8844a597067d3be8d4617bc36dbc"
+      },
+      "collation": {
+        "path": "src/sources/inventories/eucharistic-books/support/cistercian-1606-canon-review.json",
+        "sha256": "ddc36edaf33ce024b466245ac08c9941406401148283b66b95f7624714cb437a"
+      },
+      "unit_count": 35,
+      "normalized_whitespace_tokens": 817,
+      "retained_facsimile_pages": 8,
+      "declared_extent": "Strict Canon from its opening heading through final Per omnia/Amen, before Oremus; all printed seasonal forms and governing rubrics included.",
+      "source_acquisition": "Complete 415-page provider PDF acquired and hashed; its 672254859 bytes are remote-only canonical metadata. The eight-page retained facsimile is a lossless bounded extraction.",
+      "rights": {
+        "historical_latin": "United States public domain",
+        "source_images": "Recorded BSB No Copyright - Non-Commercial Use Only 1.0 condition and attribution retained; a rights statement, not a Creative Commons licence.",
+        "image_rights_status": "permission",
+        "excluded_from_project_license": true
+      },
+      "prior_offertory_unchanged": true,
+      "complete_declared_constituent": true,
+      "whole_book_text_complete": false,
+      "complete_ordinary_text": false,
+      "physical_volume_complete": "not-established",
+      "historical_parentage_authorized": false,
+      "text_inheritance": false
+    },
+    "cistercian1657": {
+      "binding": {
+        "path": "src/sources/inventories/eucharistic-books/cistercian-1657-canon.json",
+        "sha256": "bd694b265fcdbcbe6b5b035fe689b0c290b25bdcac8d1c033e465208c5dca31b"
+      },
+      "extent": {
+        "path": "src/sources/inventories/eucharistic-books/support/cistercian-1657-canon-extent.json",
+        "sha256": "39a6003303bbc2b2f89bbd50ab4d20a5430aec8f306c0c134a4fdc8af8e9d641"
+      },
+      "collation": {
+        "path": "src/sources/inventories/eucharistic-books/support/cistercian-1657-canon-review.json",
+        "sha256": "06cdeef2b7b05a682be59426e1bd95818c42929e00604550e79eb25f13908607"
+      },
+      "unit_count": 52,
+      "normalized_whitespace_tokens": 1322,
+      "literal_lines": 103,
+      "retained_native_pages": 40,
+      "viewing_facsimile_pages": 18,
+      "declared_extent": "Seven proper Canon forms with governing headings and rubrics on printed pages 176, 177, 181, 183 and 184; original source order retained, followed by Canon title/Crucifixion and main Canon on pages 203-213 through final Amen and adjacent Iungit manus, before Oremus.",
+      "preface_census": {
+        "printed_page_range": [
+          175,
+          200
+        ],
+        "page_count": 26,
+        "scope": "All other preface text, chant and rubrics excluded from this declared constituent.",
+        "exact_independent_acceptance_sha256": "9ff712937023d3dd477b17d107dbb5a7543f5bfe4d484cb57d439335eb8fb2cd"
+      },
+      "source_acquisition": "Dated 17 October receipt documents 740 separately delivered native pages. The original review matched the 40 newly retained native pages and 813-byte indirect directory to that receipt; it did not rehash all 740 pages. The directory is not embedded whole-book imagery.",
+      "native_dependency": {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.djvu-shared-annotation-af707c77",
+        "sha256": "af707c77503377397fabd114a5775918b8a83962045aa2cb7a19bc6b9bd5cd7d",
+        "byte_size": 83,
+        "status": "Existing exact companion reused for all retained INCL references."
+      },
+      "derivative_limit": "Reader JPEGs are explicitly lossy; the PDF preserves those exact JPEG streams, not original native DjVu pixels or photographic masters.",
+      "rights": {
+        "historical_latin_and_faithful_mechanical_images": "Recorded United States public-domain basis and exact FIDES holding/rights/access facts.",
+        "modern_provider_html": "Whole wrapper redistribution basis unestablished; deferred. Public control data contains selected facts and delivery identity only.",
+        "excluded_from_project_license": true
+      },
+      "duplicate_review_rasters": {
+        "deferred_count": 26,
+        "deferred_byte_size": 89897900,
+        "limit": "Exact native parents retained; bit-identical recreation of old intermediate raster wrappers is not promised."
+      },
+      "prior_offertory_unchanged": true,
+      "complete_declared_constituent": true,
+      "whole_book_text_complete": false,
+      "complete_ordinary_text": false,
+      "physical_volume_complete": "not-established",
+      "historical_parentage_authorized": false,
+      "text_inheritance": false
+    },
+    "prior_native_bindings": {
+      "count": 7,
+      "unit_count": 76,
+      "unchanged": true
+    },
+    "stage_binding_limit": "Each Cistercian stage has two separately complete constituents, offertory and Canon; whole-book coverage remains partial."
+  },
+  "armenian_scope": {
+    "edition_id": "edition.armenian-church.lyturgia-armena.1677-rome-propaganda-19-page-setting",
+    "identity": "Distinct Rome 1677 FSL A/711 setting; liturgy ends at printed 19, followed by an unnumbered blank and corrections 21-30. It does not replace the Google 20-page setting or Ministerium.",
+    "source_frames": 18,
+    "source_jpeg_responses": 159,
+    "source_zip_members": 187,
+    "pdf_pages": 19,
+    "modern_notice_pages": 1,
+    "image_license": "CC-BY-NC-4.0",
+    "reuse_scope": "Stated noncommercial research source repository/ZIP, free noncommercial PDF/display and internal noncommercial research, with recorded attribution, source/licence links and change notices.",
+    "required_credit": "FSL Yerevan original holder and digitizer, British Library EAP delivery, EAP/Arcadia funding; no endorsement.",
+    "commercial_reuse_cleared": false,
+    "excluded_from_project_license": true,
+    "original_google_source_tree_unchanged": true,
+    "new_native_text_binding": false,
+    "new_stage": false,
+    "qualified_armenian_transcription": false,
+    "physical_volume_complete": "not-established",
+    "photographic_master_identity": "not-established"
+  },
+  "lineage_limit": {
+    "sole_new_authorized_native_edge": {
+      "parent": "mozarabic-1500-benedictio-panis",
+      "child": "mozarabic-1755-benedictio-panis",
+      "kind": "republication",
+      "complete_constituent_units": 9,
+      "evidence_path": "src/sources/inventories/eucharistic-books/support/mozarabic-1500-1755-benedictio-panis-parentage.json"
+    },
+    "scope": "Edition-level republication only; no whole-book genealogy or identified physical donor copy.",
+    "text_inheritance": false,
+    "other_native_roots_preserved": true
+  },
+  "disclosure": {
+    "frozen_utf8_files_checked": 236,
+    "new_private_paths_or_credentials_found": 0,
+    "new_central_records_clear": true,
+    "legacy_relative_research_locators": "Inherited unchanged; no new private operational locator published.",
+    "provider_wrapper_and_transport_boundary": "Modern whole HTML wrapper stays deferred. Public control facts omit its private local locator; raw transport headers and cookies remain excluded.",
+    "project_license_boundary": "Each source retains its recorded public-domain, permission or licence basis; project licensing does not override third-party terms.",
+    "current_ritual_authorization": false
+  },
+  "outside_this_acceptance": {
+    "git_export": "pending-root-gate",
+    "browser": "pending-root-gate",
+    "print": "pending-root-gate",
+    "projection_and_publication": "not-decided-by-source-acceptance"
+  }
+}

@@ -1398,7 +1398,7 @@ label = "Complete Mozarabic bread blessing: 1500 and 1755"
 kind = "same-prayer-witness-comparison"
 membership_status = "established"
 basis = "Independent complete-constituent image collation covers all nine units of Benedictio panis in both identified editions. The 1500 presbiter becomes 1755 presbyter; the lexical rite is unchanged under the separately declared reading normalization."
-apparatus_caveat = "This comparison covers only the complete source-defined bread blessing. It does not establish substantive liturgical revision, whole-book textual completeness or a physical exemplar. Edition republication and apparatus dependence are separately documented; they do not establish the immediate transmission of this unchanged constituent. Native snapshots are independent roots with no Git parent or inherited text."
+apparatus_caveat = "This comparison covers only the complete source-defined bread blessing. It does not establish substantive liturgical revision, whole-book textual completeness or a particular physical donor. Separate independently reviewed primary evidence in Lesley's Preface identifies and uses the 1500 edition, including this complete constituent; its exact parentage receipt authorizes a 1500-to-1755 edition-level republication parent. The particular Castilla-La Mancha copy is not identified as the donor. Each native snapshot materializes its own checked wording, without text inheritance. The comparison alone supplies no ancestry authorization."
 source_refs = ["passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-extent", "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-extent"]
 [comparisons.left]
 text_set = "mozarabic-1500-benedictio-panis"
@@ -1415,7 +1415,7 @@ label = "Complete Mozarabic bread blessing: 1755 and 1804"
 kind = "same-prayer-witness-comparison"
 membership_status = "established"
 basis = "Independent complete-constituent image collation covers all nine units of Benedictio panis in both identified editions. The 1755 e spellings become 1804 ae spellings in several words; the lexical rite agrees under the separately declared reading normalization. The prayer stands at 1755 p. 471 and in the 1804 preliminary blessings, p. XVI."
-apparatus_caveat = "This comparison covers only the complete source-defined bread blessing. It does not establish substantive liturgical revision, whole-book textual completeness or a physical exemplar. Edition republication and apparatus dependence are separately documented; they do not establish the immediate transmission of this unchanged constituent. Native snapshots are independent roots with no Git parent or inherited text."
+apparatus_caveat = "This comparison covers only the complete source-defined bread blessing. It does not establish substantive liturgical revision, whole-book textual completeness or a particular physical donor. The 1755 snapshot has a separately authorized 1500-edition republication parent; neither that finding nor the 1804 editor's use of Lesley's apparatus identifies the immediate source of the 1804 blessing. No 1755-to-1804 constituent parent is authorized. The 1804 snapshot remains an isolated root, and every snapshot materializes its own checked wording without text inheritance."
 source_refs = ["passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-extent", "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.benedictio-extent"]
 [comparisons.left]
 text_set = "mozarabic-1755-benedictio-panis"
@@ -1444,7 +1444,7 @@ parents = []
 [[text_versions]]
 id = "mozarabic-1755-benedictio-panis"
 text_set = "mozarabic-1755-benedictio-panis"
-parents = []
+parents = [{ version_id = "mozarabic-1500-benedictio-panis", evidence_path = "src/sources/inventories/eucharistic-books/support/mozarabic-1500-1755-benedictio-panis-parentage.json" }]
 
 [[text_versions]]
 id = "mozarabic-1804-benedictio-panis"
@@ -2137,3 +2137,475 @@ unit_ids = ["unit.cistercian-1606.offertory.opening-rubric", "unit.cistercian-16
 text_set = "cistercian-1657-offertory"
 record_id = "western:cistercian-1657"
 unit_ids = ["unit.cistercian-1657.offertory.opening-dialogue-rubric", "unit.cistercian-1657.offertory.suscipe-sancte-pater", "unit.cistercian-1657.offertory.host-deposition-water-rubric", "unit.cistercian-1657.offertory.deus-qui-humanae", "unit.cistercian-1657.offertory.chalice-offering-rubric", "unit.cistercian-1657.offertory.offerimus-tibi", "unit.cistercian-1657.offertory.in-spiritu-rubric", "unit.cistercian-1657.offertory.in-spiritu-humilitatis", "unit.cistercian-1657.offertory.veni-sanctificator-rubric", "unit.cistercian-1657.offertory.veni-sanctificator", "unit.cistercian-1657.offertory.incense-blessing-rubric", "unit.cistercian-1657.offertory.per-intercessionem", "unit.cistercian-1657.offertory.oblata-incensing-rubric", "unit.cistercian-1657.offertory.incensum-istud", "unit.cistercian-1657.offertory.altar-incensing-rubric", "unit.cistercian-1657.offertory.dirigatur-domine", "unit.cistercian-1657.offertory.thurible-return-rubric", "unit.cistercian-1657.offertory.accendat-in-nobis", "unit.cistercian-1657.offertory.lavabo-rubric", "unit.cistercian-1657.offertory.lavabo-doxology", "unit.cistercian-1657.offertory.suscipe-trinitas-rubric", "unit.cistercian-1657.offertory.suscipe-trinitas", "unit.cistercian-1657.offertory.orate-rubric", "unit.cistercian-1657.offertory.orate-response", "unit.cistercian-1657.offertory.secreta-preface-transition-rubric"]
+
+[[presentation_groups]]
+id = "historic-angers-use"
+label = "Angers Mass book witnesses"
+families = ["historic-angers-use"]
+note = "Catalogue-attributed book grouping only; local reception, independent original-book collation and substantive version boundaries remain open."
+
+[[presentation_groups]]
+id = "historic-autun-use"
+label = "Autun Mass book witnesses"
+families = ["historic-autun-use"]
+note = "Catalogue-attributed book grouping only; local reception, independent original-book collation and substantive version boundaries remain open."
+
+[[presentation_groups]]
+id = "historic-troyes-use"
+label = "Troyes Mass book witnesses"
+families = ["historic-troyes-use"]
+note = "Catalogue-attributed book grouping only; local reception, independent original-book collation and substantive version boundaries remain open."
+
+[[presentation_groups]]
+id = "historic-beauvais-use"
+label = "Beauvais Mass book witnesses"
+families = ["historic-beauvais-use"]
+note = "Catalogue-attributed book grouping only; local reception, independent original-book collation and substantive version boundaries remain open."
+
+[[presentation_groups]]
+id = "historic-nantes-use"
+label = "Nantes Mass book witnesses"
+families = ["historic-nantes-use"]
+note = "Catalogue-attributed book grouping only; local reception, independent original-book collation and substantive version boundaries remain open."
+
+[[presentation_groups]]
+id = "historic-perigueux-use"
+label = "Périgueux Mass book witnesses"
+families = ["historic-perigueux-use"]
+note = "Catalogue-attributed book grouping only; local reception, independent original-book collation and substantive version boundaries remain open."
+
+[[presentation_groups]]
+id = "historic-vienne-use"
+label = "Vienne Mass book witnesses"
+families = ["historic-vienne-use"]
+note = "Catalogue-attributed book grouping only; local reception, independent original-book collation and substantive version boundaries remain open."
+
+[[presentation_groups]]
+id = "historic-cahors-use"
+label = "Cahors Mass book witnesses"
+families = ["historic-cahors-use"]
+note = "Catalogue-attributed book grouping only; local reception, independent original-book collation and substantive version boundaries remain open."
+
+[[presentation_groups]]
+id = "historic-elne-use"
+label = "Elne Mass book witnesses"
+families = ["historic-elne-use"]
+note = "Catalogue-attributed book grouping only; local reception, independent original-book collation and substantive version boundaries remain open."
+
+[[presentation_groups]]
+id = "historic-beziers-use"
+label = "Béziers Mass book witnesses"
+families = ["historic-beziers-use"]
+note = "Catalogue-attributed book grouping only; local reception, independent original-book collation and substantive version boundaries remain open."
+
+[[presentation_groups]]
+id = "historic-condom-use"
+label = "Condom Mass book witnesses"
+families = ["historic-condom-use"]
+note = "Catalogue-attributed book grouping only; local reception, independent original-book collation and substantive version boundaries remain open."
+
+[[presentation_groups]]
+id = "historic-lavaur-use"
+label = "Lavaur Mass book witnesses"
+families = ["historic-lavaur-use"]
+note = "Catalogue-attributed book grouping only; local reception, independent original-book collation and substantive version boundaries remain open."
+
+[[presentation_groups]]
+id = "historic-macon-use"
+label = "Mâcon Mass book witnesses"
+families = ["historic-macon-use"]
+note = "Catalogue-attributed book grouping only; local reception, independent original-book collation and substantive version boundaries remain open."
+
+[[presentation_groups]]
+id = "historic-saint-papoul-use"
+label = "Saint-Papoul Mass book witnesses"
+families = ["historic-saint-papoul-use"]
+note = "Catalogue-attributed book grouping only; local reception, independent original-book collation and substantive version boundaries remain open."
+
+[[presentation_groups]]
+id = "historic-sisteron-use"
+label = "Sisteron Mass book witnesses"
+families = ["historic-sisteron-use"]
+note = "Catalogue-attributed book grouping only; local reception, independent original-book collation and substantive version boundaries remain open."
+
+[[presentation_groups]]
+id = "historic-besancon-use"
+label = "Besançon Mass book witnesses"
+families = ["historic-besancon-use"]
+note = "Catalogue-attribution finding-aid group only. This label does not establish an independent local use, actual reception, liturgical succession or substantive version. Documentary reports of lost books remain distinct from extant witnesses."
+
+[[presentation_groups]]
+id = "historic-bayeux-use"
+label = "Bayeux Mass book witnesses"
+families = ["historic-bayeux-use"]
+note = "Catalogue-attribution finding-aid group only. This label does not establish an independent local use, actual reception, liturgical succession or substantive version. Documentary reports of lost books remain distinct from extant witnesses."
+
+[[presentation_groups]]
+id = "historic-evreux-use"
+label = "Évreux Mass book witnesses"
+families = ["historic-evreux-use"]
+note = "Catalogue-attribution finding-aid group only. This label does not establish an independent local use, actual reception, liturgical succession or substantive version. Documentary reports of lost books remain distinct from extant witnesses."
+
+[[presentation_groups]]
+id = "historic-le-puy-en-velay-use"
+label = "Le Puy-en-Velay Mass book witnesses"
+families = ["historic-le-puy-en-velay-use"]
+note = "Catalogue-attribution finding-aid group only. This label does not establish an independent local use, actual reception, liturgical succession or substantive version. Documentary reports of lost books remain distinct from extant witnesses."
+
+[[presentation_groups]]
+id = "historic-auxerre-use"
+label = "Auxerre Mass book witnesses"
+families = ["historic-auxerre-use"]
+note = "Catalogue-attribution finding-aid group only. This label does not establish an independent local use, actual reception, liturgical succession or substantive version. Documentary reports of lost books remain distinct from extant witnesses."
+
+[[presentation_groups]]
+id = "historic-lucon-use"
+label = "Luçon Mass book witnesses"
+families = ["historic-lucon-use"]
+note = "Catalogue-attribution finding-aid group only. This label does not establish an independent local use, actual reception, liturgical succession or substantive version. Documentary reports of lost books remain distinct from extant witnesses."
+
+[[presentation_groups]]
+id = "historic-soissons-use"
+label = "Soissons Mass book witnesses"
+families = ["historic-soissons-use"]
+note = "Catalogue-attribution finding-aid group only. This label does not establish an independent local use, actual reception, liturgical succession or substantive version. Documentary reports of lost books remain distinct from extant witnesses."
+
+[[presentation_groups]]
+id = "historic-arras-use"
+label = "Arras Mass book witnesses"
+families = ["historic-arras-use"]
+note = "Catalogue-attribution finding-aid group only. This label does not establish an independent local use, actual reception, liturgical succession or substantive version. Documentary reports of lost books remain distinct from extant witnesses."
+
+[[presentation_groups]]
+id = "historic-carcassonne-use"
+label = "Carcassonne Mass book witnesses"
+families = ["historic-carcassonne-use"]
+note = "Catalogue-attribution finding-aid group only. This label does not establish an independent local use, actual reception, liturgical succession or substantive version. Documentary reports of lost books remain distinct from extant witnesses."
+
+[[presentation_groups]]
+id = "historic-lodeve-use"
+label = "Lodève Mass book witnesses"
+families = ["historic-lodeve-use"]
+note = "Catalogue-attribution finding-aid group only. This label does not establish an independent local use, actual reception, liturgical succession or substantive version. Documentary reports of lost books remain distinct from extant witnesses."
+
+[[presentation_groups]]
+id = "historic-couserans-use"
+label = "Couserans Mass book witnesses"
+families = ["historic-couserans-use"]
+note = "Catalogue-attribution finding-aid group only. This label does not establish an independent local use, actual reception, liturgical succession or substantive version. Documentary reports of lost books remain distinct from extant witnesses."
+
+[[presentation_groups]]
+id = "historic-lescar-use"
+label = "Lescar Mass book witnesses"
+families = ["historic-lescar-use"]
+note = "Catalogue-attribution finding-aid group only. This label does not establish an independent local use, actual reception, liturgical succession or substantive version. Documentary reports of lost books remain distinct from extant witnesses."
+
+[[presentation_groups]]
+id = "historic-nimes-use"
+label = "Nîmes Mass book witnesses"
+families = ["historic-nimes-use"]
+note = "Catalogue-attribution finding-aid group only. This label does not establish an independent local use, actual reception, liturgical succession or substantive version. Documentary reports of lost books remain distinct from extant witnesses."
+
+[[presentation_groups]]
+id = "historic-saint-pol-de-leon-use"
+label = "Saint-Pol-de-Léon Mass book witnesses"
+families = ["historic-saint-pol-de-leon-use"]
+note = "Catalogue-attribution finding-aid group only. This label does not establish an independent local use, actual reception, liturgical succession or substantive version. Documentary reports of lost books remain distinct from extant witnesses."
+
+[[presentation_groups]]
+id = "historic-tarbes-use"
+label = "Tarbes Mass book witnesses"
+families = ["historic-tarbes-use"]
+note = "Catalogue-attribution finding-aid group only. This label does not establish an independent local use, actual reception, liturgical succession or substantive version. Documentary reports of lost books remain distinct from extant witnesses."
+
+[[presentation_groups]]
+id = "historic-rennes-use"
+label = "Rennes Mass book witnesses"
+families = ["historic-rennes-use"]
+note = "Bibliographic witness grouping; no common recension, complete historical census, local adoption or book-to-book descent inferred."
+
+[[presentation_groups]]
+id = "historic-amiens-use"
+label = "Amiens Mass book witnesses"
+families = ["historic-amiens-use"]
+note = "Bibliographic witness grouping; no common recension, complete historical census, local adoption or book-to-book descent inferred."
+
+[[presentation_groups]]
+id = "historic-mende-use"
+label = "Mende Mass book witnesses"
+families = ["historic-mende-use"]
+note = "Bibliographic witness grouping; no common recension, complete historical census, local adoption or book-to-book descent inferred."
+
+[[presentation_groups]]
+id = "historic-sees-use"
+label = "Sées Mass book witnesses"
+families = ["historic-sees-use"]
+note = "Bibliographic witness grouping; no common recension, complete historical census, local adoption or book-to-book descent inferred."
+
+[[presentation_groups]]
+id = "historic-bazas-use"
+label = "Bazas Mass book witnesses"
+families = ["historic-bazas-use"]
+note = "Bibliographic witness grouping; no common recension, complete historical census, local adoption or book-to-book descent inferred."
+
+[[presentation_groups]]
+id = "historic-meaux-use"
+label = "Meaux Mass book witnesses"
+families = ["historic-meaux-use"]
+note = "Bibliographic witness grouping; no common recension, complete historical census, local adoption or book-to-book descent inferred."
+
+[[presentation_groups]]
+id = "historic-therouanne-use"
+label = "Thérouanne Mass book witnesses"
+families = ["historic-therouanne-use"]
+note = "Bibliographic witness grouping; no common recension, complete historical census, local adoption or book-to-book descent inferred."
+
+[[presentation_groups]]
+id = "historic-avranches-use"
+label = "Avranches Mass book witnesses"
+families = ["historic-avranches-use"]
+note = "Bibliographic witness grouping; no common recension, complete historical census, local adoption or book-to-book descent inferred."
+
+[[presentation_groups]]
+id = "historic-chalons-en-champagne-use"
+label = "Châlons-en-Champagne Mass book witnesses"
+families = ["historic-chalons-en-champagne-use"]
+note = "Bibliographic witness grouping; no common recension, complete historical census, local adoption or book-to-book descent inferred."
+
+[[presentation_groups]]
+id = "historic-noyon-use"
+label = "Noyon Mass book witnesses"
+families = ["historic-noyon-use"]
+note = "Bibliographic witness grouping; no common recension, complete historical census, local adoption or book-to-book descent inferred."
+
+[[presentation_groups]]
+id = "historic-frejus-use"
+label = "Fréjus Mass book witnesses"
+families = ["historic-frejus-use"]
+note = "Bibliographic witness grouping; no common recension, complete historical census, local adoption or book-to-book descent inferred."
+
+[[presentation_groups]]
+id = "historic-lombez-use"
+label = "Lombez Mass book witnesses"
+families = ["historic-lombez-use"]
+note = "Bibliographic witness grouping; no common recension, complete historical census, local adoption or book-to-book descent inferred."
+
+[[presentation_groups]]
+id = "historic-rieux-use"
+label = "Rieux Mass book witnesses"
+families = ["historic-rieux-use"]
+note = "Bibliographic witness grouping; no common recension, complete historical census, local adoption or book-to-book descent inferred."
+
+[[presentation_groups]]
+id = "historic-saintes-use"
+label = "Saintes Mass book witnesses"
+families = ["historic-saintes-use"]
+note = "Bibliographic witness grouping; no common recension, complete historical census, local adoption or book-to-book descent inferred."
+
+[[presentation_groups]]
+id = "historic-tarentaise-use"
+label = "Tarentaise Mass book witnesses"
+families = ["historic-tarentaise-use"]
+note = "Bibliographic witness grouping; no common recension, complete historical census, local adoption or book-to-book descent inferred."
+
+[[presentation_groups]]
+id = "french-toul"
+label = "Toul Mass book witnesses"
+families = ["historic-toul-use"]
+note = "Catalogue finding aid only; original-book collation, local reception and substantive version boundaries remain unresolved."
+
+[[presentation_groups]]
+id = "french-toulouse"
+label = "Toulouse Mass book witnesses"
+families = ["historic-toulouse-use"]
+note = "Catalogue finding aid only; original-book collation, local reception and substantive version boundaries remain unresolved."
+
+[[presentation_groups]]
+id = "french-tours"
+label = "Tours Mass book witnesses"
+families = ["historic-tours-use"]
+note = "Catalogue finding aid only; original-book collation, local reception and substantive version boundaries remain unresolved."
+
+[[presentation_groups]]
+id = "french-verdun"
+label = "Verdun Mass book witnesses"
+families = ["historic-verdun-use"]
+note = "Catalogue finding aid only; original-book collation, local reception and substantive version boundaries remain unresolved."
+
+[[presentation_groups]]
+id = "french-lisieux"
+label = "Lisieux Mass book witnesses"
+families = ["historic-lisieux-use"]
+note = "Catalogue finding aid only; original-book collation, local reception and substantive version boundaries remain unresolved."
+
+[[presentation_groups]]
+id = "french-montauban"
+label = "Montauban Mass book witnesses"
+families = ["historic-montauban-use"]
+note = "Catalogue finding aid only; original-book collation, local reception and substantive version boundaries remain unresolved."
+
+[[presentation_groups]]
+id = "french-vannes"
+label = "Vannes Mass book witnesses"
+families = ["historic-vannes-use"]
+note = "Catalogue finding aid only; original-book collation, local reception and substantive version boundaries remain unresolved."
+
+[[presentation_groups]]
+id = "french-bayonne"
+label = "Bayonne Mass book witnesses"
+families = ["historic-bayonne-use"]
+note = "Catalogue finding aid only; original-book collation, local reception and substantive version boundaries remain unresolved."
+
+[[presentation_groups]]
+id = "french-comminges"
+label = "Comminges Mass book witnesses"
+families = ["historic-comminges-use"]
+note = "Catalogue finding aid only; original-book collation, local reception and substantive version boundaries remain unresolved."
+
+[[presentation_groups]]
+id = "french-bordeaux"
+label = "Bordeaux Mass book witnesses"
+families = ["historic-bordeaux-use"]
+note = "Catalogue finding aid only; original-book collation, local reception and substantive version boundaries remain unresolved."
+
+[[presentation_groups]]
+id = "french-chalon-sur-saone"
+label = "Chalon-sur-Saône Mass book witnesses"
+families = ["historic-chalon-sur-saone-use"]
+note = "Catalogue finding aid only; original-book collation, local reception and substantive version boundaries remain unresolved."
+
+[[presentation_groups]]
+id = "french-grenoble"
+label = "Grenoble Mass book witnesses"
+families = ["historic-grenoble-use"]
+note = "Catalogue finding aid only; original-book collation, local reception and substantive version boundaries remain unresolved."
+
+[[presentation_groups]]
+id = "french-mirepoix"
+label = "Mirepoix Mass book witnesses"
+families = ["historic-mirepoix-use"]
+note = "Catalogue finding aid only; original-book collation, local reception and substantive version boundaries remain unresolved."
+
+[[presentation_groups]]
+id = "french-saint-omer"
+label = "Saint-Omer Mass book witnesses"
+families = ["historic-saint-omer-use"]
+note = "Catalogue finding aid only; original-book collation, local reception and substantive version boundaries remain unresolved."
+
+[[presentation_groups]]
+id = "french-sarlat-la-caneda"
+label = "Sarlat-la-Canéda Mass book witnesses"
+families = ["historic-sarlat-la-caneda-use"]
+note = "Catalogue finding aid only; original-book collation, local reception and substantive version boundaries remain unresolved."
+
+[[presentation_groups]]
+id = "french-tulle"
+label = "Tulle Mass book witnesses"
+families = ["historic-tulle-use"]
+note = "Catalogue finding aid only; original-book collation, local reception and substantive version boundaries remain unresolved."
+
+[[text_sets]]
+id = "cistercian-1606-canon"
+adapter = "native-book:cistercian-1606-canon"
+
+[[text_versions]]
+id = "cistercian-1606-canon"
+text_set = "cistercian-1606-canon"
+parents = []
+
+[[presentation_groups]]
+id = "historic-tournai-use"
+label = "Tournai Mass book witnesses"
+families = ["historic-tournai-use"]
+note = "Catalogue-attributed book grouping only; local reception, independent original-book collation and substantive version boundaries remain open."
+
+[[presentation_groups]]
+id = "historic-liege-use"
+label = "Liège Mass book witnesses"
+families = ["historic-liege-use"]
+note = "Catalogue-attributed book grouping only; local reception, independent original-book collation and substantive version boundaries remain open."
+
+[[presentation_groups]]
+id = "historic-halberstadt-use"
+label = "Halberstadt Mass book witnesses"
+families = ["historic-halberstadt-use"]
+note = "Catalogue-attributed book grouping only; local reception, independent original-book collation and substantive version boundaries remain open."
+
+[[presentation_groups]]
+id = "historic-lubeck-use"
+label = "Lübeck Mass book witnesses"
+families = ["historic-lubeck-use"]
+note = "Catalogue-attributed book grouping only; local reception, independent original-book collation and substantive version boundaries remain open."
+
+[[presentation_groups]]
+id = "historic-merseburg-use"
+label = "Merseburg Mass book witnesses"
+families = ["historic-merseburg-use"]
+note = "Catalogue-attributed book grouping only; local reception, independent original-book collation and substantive version boundaries remain open."
+
+[[presentation_groups]]
+id = "historic-zaragoza-use"
+label = "Zaragoza Mass book witnesses"
+families = ["historic-zaragoza-use"]
+note = "Catalogue-attributed book grouping only; local reception, independent original-book collation and substantive version boundaries remain open."
+
+[[presentation_groups]]
+id = "historic-tarragona-use"
+label = "Tarragona Mass book witnesses"
+families = ["historic-tarragona-use"]
+note = "Catalogue-attributed book grouping only; local reception, independent original-book collation and substantive version boundaries remain open."
+
+[[presentation_groups]]
+id = "historic-valencia-use"
+label = "Valencia Mass book witnesses"
+families = ["historic-valencia-use"]
+note = "Catalogue-attributed book grouping only; local reception, independent original-book collation and substantive version boundaries remain open."
+
+[[presentation_groups]]
+id = "historic-tarazona-use"
+label = "Tarazona Mass book witnesses"
+families = ["historic-tarazona-use"]
+note = "Catalogue-attributed book grouping only; local reception, independent original-book collation and substantive version boundaries remain open."
+
+[[presentation_groups]]
+id = "historic-urgell-use"
+label = "Urgell Mass book witnesses"
+families = ["historic-urgell-use"]
+note = "Catalogue-attributed book grouping only; local reception, independent original-book collation and substantive version boundaries remain open."
+
+[[presentation_groups]]
+id = "historic-huesca-use"
+label = "Huesca Mass book witnesses"
+families = ["historic-huesca-use"]
+note = "Catalogue-attributed book grouping only; local reception, independent original-book collation and substantive version boundaries remain open."
+
+[[presentation_groups]]
+id = "unassigned-eucharistic-catalogue-witnesses"
+label = "Unassigned Eucharistic catalogue witnesses"
+families = ["unassigned-eucharistic-catalogue-witnesses"]
+note = "Catalogue witnesses with unresolved origin; grouping supplies no country, Church, rite, local use, edition equivalence or textual ancestry."
+
+[[text_sets]]
+id = "cistercian-1657-canon"
+adapter = "native-book:cistercian-1657-canon"
+
+[[text_versions]]
+id = "cistercian-1657-canon"
+text_set = "cistercian-1657-canon"
+parents = []
+
+[[comparisons]]
+id = "cistercian-1606-1657-canon-constituents"
+kind = "parallel-liturgical-unit-comparison"
+membership_status = "established"
+basis = "Complete declared Canon constituents in the independently collated 1606 and 1657 witnesses. The 1606 strict Canon span contains its five seasonal Communicantes forms and Easter/Pentecost Hanc igitur; the 1657 selection includes five Communicantes and two separately printed Hanc igitur forms, their headings and governing cues from the preceding preface section, followed by the main Canon. Each side retains its own physical source order and complete declared wording, including rubrics. This aligns a liturgical function without treating every rubric or paragraph division as the same composition."
+apparatus_caveat = "The 1606 extent is printed sequence 190–197 (the fourth page is misnumbered 192); the 1657 extent is discontiguous proper-form blocks on printed 176, 177, 181, 183, 184 plus the Canon title and main 203–213, ending before Oremus/Pater. Other preface texts and all other book divisions are excluded. Different physical placement does not establish abolition of the seasonal forms. Source spelling, accents, punctuation and rubric segmentation retain their declared normalizations; unequal unit counts do not establish substantive ritual revision or an introduction date. Both native Canon versions remain parentless: Roman reception and institutional revision do not yet identify the exact predecessor textual states. No whole-book completeness or text inheritance is claimed."
+source_refs = ["passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-heading", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-te-igitur", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-memento-vivorum", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-communicantes-opening", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-communicantes-nativity-rubric", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-communicantes-nativity", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-communicantes-epiphany-rubric", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-communicantes-epiphany", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-communicantes-easter-rubric", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-communicantes-easter", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-communicantes-ascension-rubric", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-communicantes-ascension", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-communicantes-pentecost-rubric", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-communicantes-pentecost", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-communicantes-continuation", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-hanc-igitur", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-hanc-igitur-easter-pentecost-rubric", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-hanc-igitur-easter-pentecost", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-quam-oblationem", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-qui-pridie", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-hoc-est-enim", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-simili-modo", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-hic-est-enim", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-haec-quotiescumque", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-unde-et-memores", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-supra-quae", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-supplices", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-memento-defunctorum", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-ipsis-domine", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-nobis-quoque", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-intra-quorum", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-per-quem", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-per-ipsum", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-omnis-honor", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-per-omnia-amen", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-nativity-infra-actionem", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-nativity-communicantes", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-nativity-usage", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-epiphany-infra-actionem", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-epiphany-communicantes", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-epiphany-usage", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-easter-infra-actionem", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-easter-communicantes", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-easter-sequitur", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-easter-hanc-igitur", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-easter-usage", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-ascension-infra-actionem", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-ascension-communicantes", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-ascension-usage", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-pentecost-infra-actionem", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-pentecost-communicantes", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-pentecost-sequitur", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-pentecost-hanc-igitur", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-pentecost-usage", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-standalone-title", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-body-heading", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-opening-rubric", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-te-igitur", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-commemoratio-pro-viuis-heading", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-memento-viuorum", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-infra-actionem-heading", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-communicantes", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-hanc-igitur-rubric", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-hanc-igitur", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-quam-oblationem", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-qui-pridie", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-hostia-consecrationis-rubric", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-hoc-est-corpus-meum", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-hostia-post-consecrationem-rubric", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-simili-modo", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-calix-consecrationis-rubric", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-hic-est-calix", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-calix-depositio-rubric", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-haec-quotiescumque", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-calix-post-consecrationem-rubric", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-unde-et-memores", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-supra-quae-rubric", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-supra-quae", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-supplices-rubric", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-supplices-te-rogamus", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-memento-defunctorum-heading", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-memento-defunctorum", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-nobis-quoque-rubric", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-nobis-quoque-peccatoribus", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-per-quem-haec-omnia", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-per-ipsum-doxology", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-per-omnia-amen"]
+[comparisons.left]
+text_set = "cistercian-1606-canon"
+record_id = "western:cistercian-1606"
+unit_ids = ["unit.cistercian-1606.canon.heading", "unit.cistercian-1606.canon.te-igitur", "unit.cistercian-1606.canon.memento-vivorum", "unit.cistercian-1606.canon.communicantes-opening", "unit.cistercian-1606.canon.communicantes-nativity-rubric", "unit.cistercian-1606.canon.communicantes-nativity", "unit.cistercian-1606.canon.communicantes-epiphany-rubric", "unit.cistercian-1606.canon.communicantes-epiphany", "unit.cistercian-1606.canon.communicantes-easter-rubric", "unit.cistercian-1606.canon.communicantes-easter", "unit.cistercian-1606.canon.communicantes-ascension-rubric", "unit.cistercian-1606.canon.communicantes-ascension", "unit.cistercian-1606.canon.communicantes-pentecost-rubric", "unit.cistercian-1606.canon.communicantes-pentecost", "unit.cistercian-1606.canon.communicantes-continuation", "unit.cistercian-1606.canon.hanc-igitur", "unit.cistercian-1606.canon.hanc-igitur-easter-pentecost-rubric", "unit.cistercian-1606.canon.hanc-igitur-easter-pentecost", "unit.cistercian-1606.canon.quam-oblationem", "unit.cistercian-1606.canon.qui-pridie", "unit.cistercian-1606.canon.hoc-est-enim", "unit.cistercian-1606.canon.simili-modo", "unit.cistercian-1606.canon.hic-est-enim", "unit.cistercian-1606.canon.haec-quotiescumque", "unit.cistercian-1606.canon.unde-et-memores", "unit.cistercian-1606.canon.supra-quae", "unit.cistercian-1606.canon.supplices", "unit.cistercian-1606.canon.memento-defunctorum", "unit.cistercian-1606.canon.ipsis-domine", "unit.cistercian-1606.canon.nobis-quoque", "unit.cistercian-1606.canon.intra-quorum", "unit.cistercian-1606.canon.per-quem", "unit.cistercian-1606.canon.per-ipsum", "unit.cistercian-1606.canon.omnis-honor", "unit.cistercian-1606.canon.per-omnia-amen"]
+[comparisons.right]
+text_set = "cistercian-1657-canon"
+record_id = "western:cistercian-1657"
+unit_ids = ["unit.cistercian-1657.canon.prefatory-proper-forms.nativity-infra-actionem", "unit.cistercian-1657.canon.prefatory-proper-forms.nativity-communicantes", "unit.cistercian-1657.canon.prefatory-proper-forms.nativity-usage", "unit.cistercian-1657.canon.prefatory-proper-forms.epiphany-infra-actionem", "unit.cistercian-1657.canon.prefatory-proper-forms.epiphany-communicantes", "unit.cistercian-1657.canon.prefatory-proper-forms.epiphany-usage", "unit.cistercian-1657.canon.prefatory-proper-forms.easter-infra-actionem", "unit.cistercian-1657.canon.prefatory-proper-forms.easter-communicantes", "unit.cistercian-1657.canon.prefatory-proper-forms.easter-sequitur", "unit.cistercian-1657.canon.prefatory-proper-forms.easter-hanc-igitur", "unit.cistercian-1657.canon.prefatory-proper-forms.easter-usage", "unit.cistercian-1657.canon.prefatory-proper-forms.ascension-infra-actionem", "unit.cistercian-1657.canon.prefatory-proper-forms.ascension-communicantes", "unit.cistercian-1657.canon.prefatory-proper-forms.ascension-usage", "unit.cistercian-1657.canon.prefatory-proper-forms.pentecost-infra-actionem", "unit.cistercian-1657.canon.prefatory-proper-forms.pentecost-communicantes", "unit.cistercian-1657.canon.prefatory-proper-forms.pentecost-sequitur", "unit.cistercian-1657.canon.prefatory-proper-forms.pentecost-hanc-igitur", "unit.cistercian-1657.canon.prefatory-proper-forms.pentecost-usage", "unit.cistercian-1657.canon.main.standalone-title", "unit.cistercian-1657.canon.main.body-heading", "unit.cistercian-1657.canon.main.opening-rubric", "unit.cistercian-1657.canon.main.te-igitur", "unit.cistercian-1657.canon.main.commemoratio-pro-viuis-heading", "unit.cistercian-1657.canon.main.memento-viuorum", "unit.cistercian-1657.canon.main.infra-actionem-heading", "unit.cistercian-1657.canon.main.communicantes", "unit.cistercian-1657.canon.main.hanc-igitur-rubric", "unit.cistercian-1657.canon.main.hanc-igitur", "unit.cistercian-1657.canon.main.quam-oblationem", "unit.cistercian-1657.canon.main.qui-pridie", "unit.cistercian-1657.canon.main.hostia-consecrationis-rubric", "unit.cistercian-1657.canon.main.hoc-est-corpus-meum", "unit.cistercian-1657.canon.main.hostia-post-consecrationem-rubric", "unit.cistercian-1657.canon.main.simili-modo", "unit.cistercian-1657.canon.main.calix-consecrationis-rubric", "unit.cistercian-1657.canon.main.hic-est-calix", "unit.cistercian-1657.canon.main.calix-depositio-rubric", "unit.cistercian-1657.canon.main.haec-quotiescumque", "unit.cistercian-1657.canon.main.calix-post-consecrationem-rubric", "unit.cistercian-1657.canon.main.unde-et-memores", "unit.cistercian-1657.canon.main.supra-quae-rubric", "unit.cistercian-1657.canon.main.supra-quae", "unit.cistercian-1657.canon.main.supplices-rubric", "unit.cistercian-1657.canon.main.supplices-te-rogamus", "unit.cistercian-1657.canon.main.memento-defunctorum-heading", "unit.cistercian-1657.canon.main.memento-defunctorum", "unit.cistercian-1657.canon.main.nobis-quoque-rubric", "unit.cistercian-1657.canon.main.nobis-quoque-peccatoribus", "unit.cistercian-1657.canon.main.per-quem-haec-omnia", "unit.cistercian-1657.canon.main.per-ipsum-doxology", "unit.cistercian-1657.canon.main.per-omnia-amen"]

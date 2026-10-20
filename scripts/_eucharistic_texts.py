@@ -1111,7 +1111,7 @@ def native_parentage(root: Path, relative: str, parent: dict, child: dict) -> di
     if (type(row.get("schema_version")) is not int or row.get("schema_version") != 1 or row.get("record_type") != "eucharistic-text-parentage"
             or row.get("status") != "verified" or row.get("historical_parentage") != "established"
             or row.get("git_parent_authorized") is not True or row.get("text_inheritance") is not False
-            or row.get("kind") not in {"revision", "recension-branch"}
+            or row.get("kind") not in ("revision", "recension-branch", "republication")
             or row.get("parent_binding_sha256") != parent["book_binding"]["sha256"]
             or row.get("child_binding_sha256") != child["book_binding"]["sha256"]):
         raise AdapterError("native book parentage lacks exact reviewed authorization")

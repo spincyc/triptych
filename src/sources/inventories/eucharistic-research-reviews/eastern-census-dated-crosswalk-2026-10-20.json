@@ -1,0 +1,3057 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "eastern-census-dated-crosswalk-2026-10-20",
+  "title": "Dated Eastern named censuses, research-slot crosswalk and Albanian territorial evidence",
+  "lane": "eastern-census",
+  "side": "eastern",
+  "checked_on": "2026-10-20",
+  "reviewed_on": "2026-10-20",
+  "target_inventory": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
+  "coverage_rows": [
+    "albanian",
+    "belarusian",
+    "bulgarian",
+    "croatia-serbia",
+    "greek",
+    "melkite",
+    "italo-albanian",
+    "macedonian",
+    "romanian",
+    "russian",
+    "ruthenian",
+    "slovak",
+    "ukrainian",
+    "hungarian",
+    "coptic",
+    "ethiopian",
+    "eritrean",
+    "armenian",
+    "maronite",
+    "syriac",
+    "syro-malankara",
+    "chaldean",
+    "syro-malabar"
+  ],
+  "review_files": {
+    "accepted_manifest_sha256": "8767ed066d50d3fb06bf08288f19d356d90e8933b8e7da93b76c18f2cd8cf39c",
+    "accepted_proposal_manifest_sha256": "2b1ccb7372bdb8ac01d663f4974639ef94d533c27f1dbd1193be7ff573588014",
+    "independent_source_findings_sha256": "3000a0aec4a98eee35aa98eb5daf248b12178d7bac2af053e7f28aeb1f793b2a",
+    "independent_source_receipt_sha256": "8eb4b0507ff10257e10bf0b2736dfd7c86c947b0e0fbeb1bce46d22cff6f2cee",
+    "independent_proposal_review_sha256": "fbb76184213618ee0f524b8bfa1faaa5cae0136cda35136fde9ee7b8cdd15f62",
+    "independent_proposal_review_markdown_sha256": "32a9f1d13d5e4ccaed0f5d723f758771c7b9677212d651b8289097eb57998eb3",
+    "supplemental_explanation_sha256": "82953ef1622a2360fe9cb8ee76f34e11ce7f924a313df3ad41b0cdf8831754ba",
+    "verdict": "approved-with-no-blocking-correction for the 31 accepted inventory metadata changes; no current-taxonomy, book-graph or payload admission",
+    "portability_scope": "This owner normalizes the accepted source findings and crosswalk without a new source claim. Its exact canonical bytes receive a separate portability review and coordinator acceptance."
+  },
+  "integration": {
+    "new_source_ids": [
+      "census-holy-see-2010",
+      "census-sico-2016-july",
+      "census-sico-2016-november",
+      "albania-inter-regiones-1939",
+      "albania-appointment-2026"
+    ],
+    "accepted_inventory_metadata_changes": 31,
+    "new_coverage_rows": 0,
+    "new_candidate_ids": [],
+    "new_stages": 0,
+    "new_transitions": 0,
+    "new_substantive_versions": 0,
+    "raw_source_payloads_admitted": 0,
+    "preserved_coverage_slot_count": 23,
+    "coverage_statuses_unchanged": true,
+    "candidate_and_ancestry_linkages_unchanged": true,
+    "preintegration_inventory_sha256": "aaf99fb725ad870d1e01c5bb10967f3e0c3711d19bed4837bcca543da3c54adb",
+    "baseline_commit": "ffb1be7cf5d77434a6945c198fcefd95095adb96"
+  },
+  "semantics": "The 23 rows are project research coverage slots. Dated source labels, Church categories, territorial jurisdictions and present canonical classification remain distinct. A named census does not count operative service books, textual states, recensions or graph stations. No suppression, extinction, personal ascription, unchanged present boundaries or current incumbency follows from an omission, territorial instrument or dated appointment.",
+  "source_identity_model": {
+    "sico_container_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+    "sico_container_sha256": "f23588eb62dead02bf033c3e1a7c3d28baedad0075a16044c6bb802b41f96d04",
+    "sico_container_byte_size": 3426678,
+    "intentionally_distinct_speech_source_ids": [
+      "census-sico-2016-july",
+      "census-sico-2016-november"
+    ],
+    "explanation": "These inventory source rows identify two distinct dated speech/locus scopes in one exact acquired volume. They share a container URL/hash intentionally and do not assert two acquired byte identities, two copies of the volume or duplicate source-library container catalogue identities. Any later canonical source-library admission must model the one volume and its bounded constituents truthfully."
+  },
+  "sources": [
+    {
+      "id": "census-holy-see-2010",
+      "title": "Holy See Press Office, 7 October 2010, Eastern Church and particular-law fact sheets 01356–01357",
+      "url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2010/10/07/0602/01352.pdf",
+      "checked_on": "2026-10-20",
+      "evidence_type": "dated-official-institutional-source",
+      "inspection": "Complete 14-page PDF and parallel whole HTML acquired. Original page images 9–13 inspected. First sheet names 22 Eastern Churches plus Latin in 23 total, expressly labels Albanese sui iuris and qualifies Serbia/Montenegro. Adjacent sheet opens with 23 in Eastern-code/five-tradition scope but enumerates 6+4+3+9=22.",
+      "locus": "PDF pp. 9–12 (first fact sheet 01356-01.02); pp. 12–13 (adjacent sheet 01357-01.01); p. 14 closing bulletin code",
+      "text_acquisition": "whole-source-research-copy; no-canonical-payload-import",
+      "hash_state": "sha256-4836610cbd14fc6e9a8077c35c1e297bc2e5c08d4f96f248a3a0fb079163556b",
+      "sha256": "4836610cbd14fc6e9a8077c35c1e297bc2e5c08d4f96f248a3a0fb079163556b",
+      "byte_count": 248772,
+      "full_contents_examined": false,
+      "inspection_status": "inspected",
+      "limitations": "Dated 2010 institutional fact sheets, not legislation or a current named census. The Annuario statement is mediated by this source; no direct Annuario inspection. Preserve inconsistent adjacent-sheet total/scope. No service-book inference.",
+      "rights_note": "No affirmative repository redistribution basis established for this exact delivery. Complete research copy remains only in disposable scratch; propose text-free identity, hash, dated factual paraphrase and citation. Raw payload and image/HTML wrappers deferred. Underlying act rights are a separate question, not cleared by official status.",
+      "source_date": "2010-10-07",
+      "pdf_pages": 14
+    },
+    {
+      "id": "census-sico-2016-july",
+      "title": "Cardinal Leonardo Sandri, Summer School Diritto canonico orientale e statuto personale libanese, 19 July 2016; SICO 2015–2016",
+      "url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+      "checked_on": "2026-10-20",
+      "evidence_type": "dated-official-institutional-source",
+      "inspection": "Complete 536-page volume acquired; original pp. 264–266 and imprint PDF p. 4 inspected. Paragraph gives 6 patriarchal + 4 major archiepiscopal + 5 metropolitan + 7 other structured units + 2 without adequate structure = 24 named units (computed total, not a source-stated grand total). It omits Albania, separately names Czech Republic/Serbia/Croatia, and labels Rutena USA.",
+      "locus": "Printed/PDF pp. 264–266; categories pp. 265–266; imprint PDF p. 4",
+      "text_acquisition": "whole-source-research-copy; no-canonical-payload-import",
+      "hash_state": "sha256-f23588eb62dead02bf033c3e1a7c3d28baedad0075a16044c6bb802b41f96d04",
+      "sha256": "f23588eb62dead02bf033c3e1a7c3d28baedad0075a16044c6bb802b41f96d04",
+      "byte_count": 3426678,
+      "full_contents_examined": false,
+      "inspection_status": "inspected",
+      "limitations": "Speech date 2016-07-19; issue 2015–2016; printed April 2018. Unit labels and scope differ from both 2010 and the same volume's November 2016 list. Crosswalk is bounded research placement, not current Church taxonomy, a canonical merger, or extinction evidence.",
+      "rights_note": "No affirmative repository redistribution basis established for this exact delivery. Complete research copy remains only in disposable scratch; propose text-free identity, hash, dated factual paraphrase and citation. Raw payload and image/HTML wrappers deferred. Underlying act rights are a separate question, not cleared by official status.",
+      "source_date": "2016-07-19",
+      "edition_date": "2018-04",
+      "pdf_pages": 536
+    },
+    {
+      "id": "census-sico-2016-november",
+      "title": "Cardinal Leonardo Sandri, El Concilio y los Orientales y Notas sobre la atención de los católicos orientales en la diáspora, 15 November 2016; SICO 2015–2016",
+      "url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+      "checked_on": "2026-10-20",
+      "evidence_type": "dated-official-institutional-source",
+      "inspection": "Complete 536-page volume acquired; original pp. 317, 325 and imprint PDF p. 4 inspected. Named list contains 6 patriarchal + 4 major archiepiscopal + 5 metropolitan + 8 other entries = 23 (all counts computed; no subtotals or grand total printed). Includes Albanesa, combines Croacia y Serbia, and does not separately list Czech Republic. These 23 labels crosswalk to the existing 23 research slots.",
+      "locus": "Printed/PDF p. 317 (opening/date), p. 325 (list and footnote 21); imprint PDF p. 4",
+      "text_acquisition": "whole-source-research-copy; no-canonical-payload-import",
+      "hash_state": "sha256-f23588eb62dead02bf033c3e1a7c3d28baedad0075a16044c6bb802b41f96d04",
+      "sha256": "f23588eb62dead02bf033c3e1a7c3d28baedad0075a16044c6bb802b41f96d04",
+      "byte_count": 3426678,
+      "full_contents_examined": false,
+      "inspection_status": "inspected",
+      "limitations": "Dated 15 November 2016 speech printed April 2018; not a 2026 census. Footnote 21's 2000 book and 2016 CNEWA/Annuario-derived chart remain uninspected. Preserve the contrary July 2016 unit list and Parenti 2022 omission; do not infer present Albanian classification, book reception or version counts.",
+      "rights_note": "No affirmative repository redistribution basis established for this exact delivery. Complete research copy remains only in disposable scratch; propose text-free identity, hash, dated factual paraphrase and citation. Raw payload and image/HTML wrappers deferred. Underlying act rights are a separate question, not cleared by official status.",
+      "source_date": "2016-11-15",
+      "edition_date": "2018-04",
+      "pdf_pages": 536
+    },
+    {
+      "id": "albania-inter-regiones-1939",
+      "title": "Pius XII, Inter regiones, 11 November 1939, AAS 32 (1940) 139–140",
+      "url": "https://www.vatican.va/archive/aas/documents/AAS-32-1940-ocr.pdf",
+      "checked_on": "2026-10-20",
+      "evidence_type": "official-apostolic-constitution",
+      "inspection": "Whole 650-page AAS volume acquired; both original act pages 139–140 inspected. Creates Administratio Apostolica Albaniae Australis from southern Dyrrachian territory within Elbassan, Korea, Berat, Valona, Argyrocastro; subjects it to the Oriental Congregation and gives its administrator jurisdiction over existing/future Latin and Byzantine parishes/missions and all faithful of both rites within its bounds.",
+      "locus": "AAS 32 (1940), printed/PDF pp. 139–140; act dated 11 November 1939 on p. 140",
+      "text_acquisition": "whole-source-research-copy; no-canonical-payload-import",
+      "hash_state": "sha256-ebfbeb2296c2af413f9c2a6cbdc76bc38b8a386a715fc844431e17135a9acdc1",
+      "sha256": "ebfbeb2296c2af413f9c2a6cbdc76bc38b8a386a715fc844431e17135a9acdc1",
+      "byte_count": 3562252,
+      "full_contents_examined": false,
+      "inspection_status": "inspected",
+      "limitations": "Historical territorial constitution; act date 1939-11-11 differs from AAS volume year 1940. Does not itself adjudicate current Church ascription, create a modern CCEO sui iuris category, establish suppression or identify any celebrant book. The old territory/jurisdiction is not automatically a current statement.",
+      "rights_note": "No affirmative repository redistribution basis established for this exact delivery. Complete research copy remains only in disposable scratch; propose text-free identity, hash, dated factual paraphrase and citation. Raw payload and image/HTML wrappers deferred. Underlying act rights are a separate question, not cleared by official status.",
+      "source_date": "1939-11-11",
+      "edition_date": "1940",
+      "pdf_pages": 650
+    },
+    {
+      "id": "albania-appointment-2026",
+      "title": "Holy See Press Office, Rinunce e nomine, 25 April 2026, Southern Albania appointment 00681-IT.01",
+      "url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2026/04/25/0334/00676.html",
+      "checked_on": "2026-10-20",
+      "evidence_type": "official-appointment-announcement",
+      "inspection": "Whole HTML acquired and appointment section read in context. Announces appointment of Flavio Cavallini, O.F.M., as Apostolic Administrator of Southern Albania without episcopal character; biography was read as context.",
+      "locus": "Bulletin B0334; Nomina dell’Amministratore Apostolico dell’Albania Meridionale; item 00681-IT.01; delivery URL ends 00676.html",
+      "text_acquisition": "whole-source-research-copy; no-canonical-payload-import",
+      "hash_state": "sha256-4e7fa83b6474961af6447ed8def0ee39f93daec0ac84466e84f6b4002b17c9c3",
+      "sha256": "4e7fa83b6474961af6447ed8def0ee39f93daec0ac84466e84f6b4002b17c9c3",
+      "byte_count": 16956,
+      "full_contents_examined": false,
+      "inspection_status": "inspected",
+      "limitations": "Evidence for the appointment on the announced date, not a complete named Church census or current ascription ruling. Appointee's background/non-episcopal character does not establish Church ascription, suppression, extinction or book reception. This delivery's URL 00676 is not the specific appointment's item number 00681.",
+      "rights_note": "No affirmative repository redistribution basis established for this exact delivery. Complete research copy remains only in disposable scratch; propose text-free identity, hash, dated factual paraphrase and citation. Raw payload and image/HTML wrappers deferred. Underlying act rights are a separate question, not cleared by official status.",
+      "source_date": "2026-04-25"
+    }
+  ],
+  "dated_named_lists": [
+    {
+      "id": "holy-see-2010-01356",
+      "source_date": "2010-10-07",
+      "locus": "PDF9–12; fact sheet01356-01.02",
+      "source_stated_counts": {
+        "all_sui_iuris_including_latin": 23,
+        "eastern": 22,
+        "latin": 1
+      },
+      "computed_named_eastern_entries": 22,
+      "groups": [
+        {
+          "source_category": "Alessandrina",
+          "computed_entry_count": 2,
+          "entries": [
+            {
+              "source_label": "Copta",
+              "research_slot": "coptic",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Etiopica",
+              "research_slot": "ethiopian",
+              "source_entity_type": "metropolitan sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ]
+        },
+        {
+          "source_category": "Antiochena",
+          "computed_entry_count": 3,
+          "entries": [
+            {
+              "source_label": "Sira",
+              "research_slot": "syriac",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Maronita",
+              "research_slot": "maronite",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Siro-Malankarese",
+              "research_slot": "syro-malankara",
+              "source_entity_type": "major archiepiscopal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ]
+        },
+        {
+          "source_category": "Armena",
+          "computed_entry_count": 1,
+          "entries": [
+            {
+              "source_label": "Armena",
+              "research_slot": "armenian",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ]
+        },
+        {
+          "source_category": "Caldea",
+          "computed_entry_count": 2,
+          "entries": [
+            {
+              "source_label": "Caldea",
+              "research_slot": "chaldean",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Siro-Malabarese",
+              "research_slot": "syro-malabar",
+              "source_entity_type": "major archiepiscopal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ]
+        },
+        {
+          "source_category": "Bizantina",
+          "computed_entry_count": 14,
+          "entries": [
+            {
+              "source_label": "Melkita",
+              "research_slot": "melkite",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Ucraina",
+              "research_slot": "ukrainian",
+              "source_entity_type": "major archiepiscopal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Romena",
+              "research_slot": "romanian",
+              "source_entity_type": "major archiepiscopal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Rutena",
+              "research_slot": "ruthenian",
+              "source_entity_type": "metropolitan sui iuris Church (source category)",
+              "mapping_limit": "The 2010 paragraph includes Mukacheve, Pittsburgh with three suffragans, and the Czech Apostolic Exarchate; broader than July 2016 Rutena USA."
+            },
+            {
+              "source_label": "Slovacca",
+              "research_slot": "slovak",
+              "source_entity_type": "metropolitan sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Albanese",
+              "research_slot": "albanian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Bielorussa",
+              "research_slot": "belarusian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Bulgara",
+              "research_slot": "bulgarian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Croata",
+              "research_slot": "croatia-serbia",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Partial name/scope match to the broader project Croatia-and-Serbia slot. The opening separately qualifies Serbia/Montenegro as an exarchate not listed among sui iuris Churches in the Annuario then described."
+            },
+            {
+              "source_label": "Greca",
+              "research_slot": "greek",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Italo-Albanese",
+              "research_slot": "italo-albanian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Macedone",
+              "research_slot": "macedonian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Russa",
+              "research_slot": "russian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Ungherese",
+              "research_slot": "hungarian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ]
+        }
+      ],
+      "qualifications": [
+        "The source reports that Serbia/Montenegro's Apostolic Exarchate is not among the Annuario's sui iuris Churches, while noting some treat it as such. The Annuario itself was not inspected.",
+        "Eritrea is described within Ethiopian institutional history, not separately enumerated as a Church in this 2010 list."
+      ],
+      "source_id": "census-holy-see-2010",
+      "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2010/10/07/0602/01352.pdf"
+    },
+    {
+      "id": "holy-see-2010-01357",
+      "source_date": "2010-10-07",
+      "locus": "PDF12–13; adjacent particular-law fact sheet01357-01.01",
+      "source_stated_opening_count": 23,
+      "computed_named_entries": 22,
+      "source_stated_group_counts": [
+        6,
+        4,
+        3,
+        9
+      ],
+      "groups": [
+        {
+          "source_category": "patriarchal",
+          "computed_entry_count": 6,
+          "entries": [
+            {
+              "source_label": "Copta",
+              "research_slot": "coptic",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Sira",
+              "research_slot": "syriac",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Maronita",
+              "research_slot": "maronite",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Armena",
+              "research_slot": "armenian",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Caldea",
+              "research_slot": "chaldean",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Melkita",
+              "research_slot": "melkite",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ]
+        },
+        {
+          "source_category": "major archiepiscopal",
+          "computed_entry_count": 4,
+          "entries": [
+            {
+              "source_label": "Siro-Malancarese",
+              "research_slot": "syro-malankara",
+              "source_entity_type": "major archiepiscopal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Siro-Malabarese",
+              "research_slot": "syro-malabar",
+              "source_entity_type": "major archiepiscopal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Ucraina",
+              "research_slot": "ukrainian",
+              "source_entity_type": "major archiepiscopal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Romena",
+              "research_slot": "romanian",
+              "source_entity_type": "major archiepiscopal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ]
+        },
+        {
+          "source_category": "metropolitan",
+          "computed_entry_count": 3,
+          "entries": [
+            {
+              "source_label": "Etiopica",
+              "research_slot": "ethiopian",
+              "source_entity_type": "metropolitan sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Rutena",
+              "research_slot": "ruthenian",
+              "source_entity_type": "metropolitan sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Slovacca",
+              "research_slot": "slovak",
+              "source_entity_type": "metropolitan sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ]
+        },
+        {
+          "source_category": "nine Byzantine sui iuris Churches",
+          "computed_entry_count": 9,
+          "entries": [
+            {
+              "source_label": "Albanese",
+              "research_slot": "albanian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Bielorussa",
+              "research_slot": "belarusian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Bulgara",
+              "research_slot": "bulgarian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Croata",
+              "research_slot": "croatia-serbia",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Greca",
+              "research_slot": "greek",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Italo-Albanese",
+              "research_slot": "italo-albanian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Macedone",
+              "research_slot": "macedonian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Russa",
+              "research_slot": "russian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Ungherese",
+              "research_slot": "hungarian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ]
+        }
+      ],
+      "qualifications": [
+        "Opening wording assigns 23 to the Eastern-code/five-tradition scope, but the ensuing 6+4+3+9 categories name 22. Preserve the discrepancy; do not rewrite it as the first sheet's Latin-inclusive 23 or silently add Serbia."
+      ],
+      "source_id": "census-holy-see-2010",
+      "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2010/10/07/0602/01352.pdf"
+    },
+    {
+      "id": "sico-2016-07-19",
+      "source_date": "2016-07-19",
+      "issue_years": "2015–2016",
+      "imprint_date": "2018-04",
+      "locus": "PDF/printed264–266; categories265–266; imprintPDF4",
+      "source_stated_group_counts": [
+        6,
+        4,
+        5,
+        7,
+        2
+      ],
+      "source_stated_grand_total": null,
+      "computed_named_units": 24,
+      "computed_matched_research_slots": 22,
+      "groups": [
+        {
+          "source_category": "patriarchal",
+          "computed_entry_count": 6,
+          "entries": [
+            {
+              "source_label": "copta",
+              "research_slot": "coptic",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "maronita",
+              "research_slot": "maronite",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "melkita",
+              "research_slot": "melkite",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "sira",
+              "research_slot": "syriac",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "caldea",
+              "research_slot": "chaldean",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "armena",
+              "research_slot": "armenian",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ]
+        },
+        {
+          "source_category": "major archiepiscopal",
+          "computed_entry_count": 4,
+          "entries": [
+            {
+              "source_label": "Ucraina",
+              "research_slot": "ukrainian",
+              "source_entity_type": "major archiepiscopal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Malabarese",
+              "research_slot": "syro-malabar",
+              "source_entity_type": "major archiepiscopal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Malankarese",
+              "research_slot": "syro-malankara",
+              "source_entity_type": "major archiepiscopal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Romena",
+              "research_slot": "romanian",
+              "source_entity_type": "major archiepiscopal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ]
+        },
+        {
+          "source_category": "metropolitan sui iuris",
+          "computed_entry_count": 5,
+          "entries": [
+            {
+              "source_label": "Rutena USA",
+              "research_slot": "ruthenian",
+              "source_entity_type": "metropolitan sui iuris Church (source category)",
+              "mapping_limit": "Explicit USA scope. Does not silently absorb the separately listed Czech unit or determine Mukacheve's classification."
+            },
+            {
+              "source_label": "Slovacca",
+              "research_slot": "slovak",
+              "source_entity_type": "metropolitan sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Etiope",
+              "research_slot": "ethiopian",
+              "source_entity_type": "metropolitan sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Eritrea",
+              "research_slot": "eritrean",
+              "source_entity_type": "metropolitan sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Ungherese",
+              "research_slot": "hungarian",
+              "source_entity_type": "metropolitan sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ]
+        },
+        {
+          "source_category": "other: seven units with hierarchical structure",
+          "computed_entry_count": 7,
+          "entries": [
+            {
+              "source_label": "Grecia",
+              "research_slot": "greek",
+              "source_entity_type": "named unit with hierarchical structure in other-Church category",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Macedonia",
+              "research_slot": "macedonian",
+              "source_entity_type": "named unit with hierarchical structure in other-Church category",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Repubblica Ceca",
+              "research_slot": "ruthenian",
+              "source_entity_type": "named unit with hierarchical structure in other-Church category",
+              "mapping_limit": "Research-placement crosswalk only, informed by the 2010 Rutena paragraph. This source lists it separately; no 2016 canonical ascription or equivalence to Rutena USA is inferred."
+            },
+            {
+              "source_label": "Serbia",
+              "research_slot": "croatia-serbia",
+              "source_entity_type": "named unit with hierarchical structure in other-Church category",
+              "mapping_limit": "Geographic research-placement crosswalk only; separately named from Croazia in this source."
+            },
+            {
+              "source_label": "Bulgaria",
+              "research_slot": "bulgarian",
+              "source_entity_type": "named unit with hierarchical structure in other-Church category",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Croazia",
+              "research_slot": "croatia-serbia",
+              "source_entity_type": "named unit with hierarchical structure in other-Church category",
+              "mapping_limit": "Geographic research-placement crosswalk only; separately named from Serbia in this source."
+            },
+            {
+              "source_label": "Italo-Albanesi",
+              "research_slot": "italo-albanian",
+              "source_entity_type": "named unit with hierarchical structure in other-Church category",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ]
+        },
+        {
+          "source_category": "other: two without adequate hierarchical/administrative structure",
+          "computed_entry_count": 2,
+          "entries": [
+            {
+              "source_label": "Bielorussia",
+              "research_slot": "belarusian",
+              "source_entity_type": "named unit without adequate hierarchical/administrative structure in other-Church category",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Russia",
+              "research_slot": "russian",
+              "source_entity_type": "named unit without adequate hierarchical/administrative structure in other-Church category",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ]
+        }
+      ],
+      "qualifications": [
+        "Albania is not named in this paragraph. Czech Republic, Serbia and Croatia are separately listed; Rutena is explicitlyUSA. This is not a simple Albania-off-by-one list.",
+        "Category wording speaks of Churches and then units; preserve that wording boundary without treating geographic research mapping as a canonical merger."
+      ],
+      "source_id": "census-sico-2016-july",
+      "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf"
+    },
+    {
+      "id": "sico-2016-11-15",
+      "source_date": "2016-11-15",
+      "issue_years": "2015–2016",
+      "imprint_date": "2018-04",
+      "locus": "OpeningPDF/printed317; list325 and footnote21; imprintPDF4",
+      "source_stated_grand_total": null,
+      "computed_named_entries": 23,
+      "computed_group_counts": [
+        6,
+        4,
+        5,
+        8
+      ],
+      "groups": [
+        {
+          "source_category": "patriarcales",
+          "computed_entry_count": 6,
+          "entries": [
+            {
+              "source_label": "Copta",
+              "research_slot": "coptic",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Melquita",
+              "research_slot": "melkite",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Siria",
+              "research_slot": "syriac",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Maronita",
+              "research_slot": "maronite",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Caldea",
+              "research_slot": "chaldean",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Armenia",
+              "research_slot": "armenian",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ]
+        },
+        {
+          "source_category": "arzobispales mayores",
+          "computed_entry_count": 4,
+          "entries": [
+            {
+              "source_label": "Ucraniana",
+              "research_slot": "ukrainian",
+              "source_entity_type": "major archiepiscopal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Malabar",
+              "research_slot": "syro-malabar",
+              "source_entity_type": "major archiepiscopal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Malankar",
+              "research_slot": "syro-malankara",
+              "source_entity_type": "major archiepiscopal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Rumana",
+              "research_slot": "romanian",
+              "source_entity_type": "major archiepiscopal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ]
+        },
+        {
+          "source_category": "Metropolitanas sui iuris",
+          "computed_entry_count": 5,
+          "entries": [
+            {
+              "source_label": "Etíope",
+              "research_slot": "ethiopian",
+              "source_entity_type": "metropolitan sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Rutena",
+              "research_slot": "ruthenian",
+              "source_entity_type": "metropolitan sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Eslovaca",
+              "research_slot": "slovak",
+              "source_entity_type": "metropolitan sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Eritrea",
+              "research_slot": "eritrean",
+              "source_entity_type": "metropolitan sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Húngara",
+              "research_slot": "hungarian",
+              "source_entity_type": "metropolitan sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ]
+        },
+        {
+          "source_category": "otras",
+          "computed_entry_count": 8,
+          "entries": [
+            {
+              "source_label": "Griega",
+              "research_slot": "greek",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Ítalo-albanesa",
+              "research_slot": "italo-albanian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Rusa",
+              "research_slot": "russian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Bielorrusa",
+              "research_slot": "belarusian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Macedonia",
+              "research_slot": "macedonian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Búlgara",
+              "research_slot": "bulgarian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "Albanesa",
+              "research_slot": "albanian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            },
+            {
+              "source_label": "la de Croacia y Serbia",
+              "research_slot": "croatia-serbia",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ]
+        }
+      ],
+      "qualifications": [
+        "Includes Albanesa; names Croacia y Serbia as one entry; Czech Republic is not separately listed. Its 23 labels crosswalk one-to-one to the existing research slots, which does not establish their present canonical status.",
+        "Footnote 21 points to González-Montes 2000 and a 2016 CNEWA statistical chart based on Annuario; neither cited authority was independently inspected in this review."
+      ],
+      "source_id": "census-sico-2016-november",
+      "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf"
+    }
+  ],
+  "slot_crosswalk": [
+    {
+      "research_slot": "albanian",
+      "project_name": "Albanian Greek Catholic tradition",
+      "holy_see_2010": [
+        {
+          "source_label": "Albanese",
+          "research_slot": "albanian",
+          "source_entity_type": "other sui iuris Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_july": [],
+      "sico_2016_november": [
+        {
+          "source_label": "Albanesa",
+          "research_slot": "albanian",
+          "source_entity_type": "other sui iuris Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ]
+    },
+    {
+      "research_slot": "belarusian",
+      "project_name": "Belarusian Greek Catholic Church",
+      "holy_see_2010": [
+        {
+          "source_label": "Bielorussa",
+          "research_slot": "belarusian",
+          "source_entity_type": "other sui iuris Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_july": [
+        {
+          "source_label": "Bielorussia",
+          "research_slot": "belarusian",
+          "source_entity_type": "named unit without adequate hierarchical/administrative structure in other-Church category",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_november": [
+        {
+          "source_label": "Bielorrusa",
+          "research_slot": "belarusian",
+          "source_entity_type": "other sui iuris Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ]
+    },
+    {
+      "research_slot": "bulgarian",
+      "project_name": "Bulgarian Greek Catholic Church",
+      "holy_see_2010": [
+        {
+          "source_label": "Bulgara",
+          "research_slot": "bulgarian",
+          "source_entity_type": "other sui iuris Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_july": [
+        {
+          "source_label": "Bulgaria",
+          "research_slot": "bulgarian",
+          "source_entity_type": "named unit with hierarchical structure in other-Church category",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_november": [
+        {
+          "source_label": "Búlgara",
+          "research_slot": "bulgarian",
+          "source_entity_type": "other sui iuris Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ]
+    },
+    {
+      "research_slot": "croatia-serbia",
+      "project_name": "Byzantine Catholic Church of Croatia and Serbia (historical SICO label: Križevci)",
+      "holy_see_2010": [
+        {
+          "source_label": "Croata",
+          "research_slot": "croatia-serbia",
+          "source_entity_type": "other sui iuris Church (source category)",
+          "mapping_limit": "Partial name/scope match to the broader project Croatia-and-Serbia slot. The opening separately qualifies Serbia/Montenegro as an exarchate not listed among sui iuris Churches in the Annuario then described."
+        }
+      ],
+      "sico_2016_july": [
+        {
+          "source_label": "Serbia",
+          "research_slot": "croatia-serbia",
+          "source_entity_type": "named unit with hierarchical structure in other-Church category",
+          "mapping_limit": "Geographic research-placement crosswalk only; separately named from Croazia in this source."
+        },
+        {
+          "source_label": "Croazia",
+          "research_slot": "croatia-serbia",
+          "source_entity_type": "named unit with hierarchical structure in other-Church category",
+          "mapping_limit": "Geographic research-placement crosswalk only; separately named from Serbia in this source."
+        }
+      ],
+      "sico_2016_november": [
+        {
+          "source_label": "la de Croacia y Serbia",
+          "research_slot": "croatia-serbia",
+          "source_entity_type": "other sui iuris Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ]
+    },
+    {
+      "research_slot": "greek",
+      "project_name": "Greek Byzantine Catholic Church",
+      "holy_see_2010": [
+        {
+          "source_label": "Greca",
+          "research_slot": "greek",
+          "source_entity_type": "other sui iuris Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_july": [
+        {
+          "source_label": "Grecia",
+          "research_slot": "greek",
+          "source_entity_type": "named unit with hierarchical structure in other-Church category",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_november": [
+        {
+          "source_label": "Griega",
+          "research_slot": "greek",
+          "source_entity_type": "other sui iuris Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ]
+    },
+    {
+      "research_slot": "melkite",
+      "project_name": "Melkite Greek Catholic Church",
+      "holy_see_2010": [
+        {
+          "source_label": "Melkita",
+          "research_slot": "melkite",
+          "source_entity_type": "patriarchal Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_july": [
+        {
+          "source_label": "melkita",
+          "research_slot": "melkite",
+          "source_entity_type": "patriarchal Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_november": [
+        {
+          "source_label": "Melquita",
+          "research_slot": "melkite",
+          "source_entity_type": "patriarchal Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ]
+    },
+    {
+      "research_slot": "italo-albanian",
+      "project_name": "Byzantine Catholic Church in Italy / Italo-Albanian",
+      "holy_see_2010": [
+        {
+          "source_label": "Italo-Albanese",
+          "research_slot": "italo-albanian",
+          "source_entity_type": "other sui iuris Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_july": [
+        {
+          "source_label": "Italo-Albanesi",
+          "research_slot": "italo-albanian",
+          "source_entity_type": "named unit with hierarchical structure in other-Church category",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_november": [
+        {
+          "source_label": "Ítalo-albanesa",
+          "research_slot": "italo-albanian",
+          "source_entity_type": "other sui iuris Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ]
+    },
+    {
+      "research_slot": "macedonian",
+      "project_name": "Macedonian Greek Catholic Church",
+      "holy_see_2010": [
+        {
+          "source_label": "Macedone",
+          "research_slot": "macedonian",
+          "source_entity_type": "other sui iuris Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_july": [
+        {
+          "source_label": "Macedonia",
+          "research_slot": "macedonian",
+          "source_entity_type": "named unit with hierarchical structure in other-Church category",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_november": [
+        {
+          "source_label": "Macedonia",
+          "research_slot": "macedonian",
+          "source_entity_type": "other sui iuris Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ]
+    },
+    {
+      "research_slot": "romanian",
+      "project_name": "Romanian Greek Catholic Church",
+      "holy_see_2010": [
+        {
+          "source_label": "Romena",
+          "research_slot": "romanian",
+          "source_entity_type": "major archiepiscopal Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_july": [
+        {
+          "source_label": "Romena",
+          "research_slot": "romanian",
+          "source_entity_type": "major archiepiscopal Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_november": [
+        {
+          "source_label": "Rumana",
+          "research_slot": "romanian",
+          "source_entity_type": "major archiepiscopal Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ]
+    },
+    {
+      "research_slot": "russian",
+      "project_name": "Russian Greek Catholic Church",
+      "holy_see_2010": [
+        {
+          "source_label": "Russa",
+          "research_slot": "russian",
+          "source_entity_type": "other sui iuris Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_july": [
+        {
+          "source_label": "Russia",
+          "research_slot": "russian",
+          "source_entity_type": "named unit without adequate hierarchical/administrative structure in other-Church category",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_november": [
+        {
+          "source_label": "Rusa",
+          "research_slot": "russian",
+          "source_entity_type": "other sui iuris Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ]
+    },
+    {
+      "research_slot": "ruthenian",
+      "project_name": "Ruthenian Greek Catholic tradition",
+      "holy_see_2010": [
+        {
+          "source_label": "Rutena",
+          "research_slot": "ruthenian",
+          "source_entity_type": "metropolitan sui iuris Church (source category)",
+          "mapping_limit": "The 2010 paragraph includes Mukacheve, Pittsburgh with three suffragans, and the Czech Apostolic Exarchate; broader than July 2016 Rutena USA."
+        }
+      ],
+      "sico_2016_july": [
+        {
+          "source_label": "Rutena USA",
+          "research_slot": "ruthenian",
+          "source_entity_type": "metropolitan sui iuris Church (source category)",
+          "mapping_limit": "Explicit USA scope. Does not silently absorb the separately listed Czech unit or determine Mukacheve's classification."
+        },
+        {
+          "source_label": "Repubblica Ceca",
+          "research_slot": "ruthenian",
+          "source_entity_type": "named unit with hierarchical structure in other-Church category",
+          "mapping_limit": "Research-placement crosswalk only, informed by the 2010 Rutena paragraph. This source lists it separately; no 2016 canonical ascription or equivalence to Rutena USA is inferred."
+        }
+      ],
+      "sico_2016_november": [
+        {
+          "source_label": "Rutena",
+          "research_slot": "ruthenian",
+          "source_entity_type": "metropolitan sui iuris Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ]
+    },
+    {
+      "research_slot": "slovak",
+      "project_name": "Slovak Greek Catholic Church",
+      "holy_see_2010": [
+        {
+          "source_label": "Slovacca",
+          "research_slot": "slovak",
+          "source_entity_type": "metropolitan sui iuris Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_july": [
+        {
+          "source_label": "Slovacca",
+          "research_slot": "slovak",
+          "source_entity_type": "metropolitan sui iuris Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_november": [
+        {
+          "source_label": "Eslovaca",
+          "research_slot": "slovak",
+          "source_entity_type": "metropolitan sui iuris Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ]
+    },
+    {
+      "research_slot": "ukrainian",
+      "project_name": "Ukrainian Greek Catholic Church",
+      "holy_see_2010": [
+        {
+          "source_label": "Ucraina",
+          "research_slot": "ukrainian",
+          "source_entity_type": "major archiepiscopal Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_july": [
+        {
+          "source_label": "Ucraina",
+          "research_slot": "ukrainian",
+          "source_entity_type": "major archiepiscopal Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_november": [
+        {
+          "source_label": "Ucraniana",
+          "research_slot": "ukrainian",
+          "source_entity_type": "major archiepiscopal Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ]
+    },
+    {
+      "research_slot": "hungarian",
+      "project_name": "Hungarian Greek Catholic Church",
+      "holy_see_2010": [
+        {
+          "source_label": "Ungherese",
+          "research_slot": "hungarian",
+          "source_entity_type": "other sui iuris Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_july": [
+        {
+          "source_label": "Ungherese",
+          "research_slot": "hungarian",
+          "source_entity_type": "metropolitan sui iuris Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_november": [
+        {
+          "source_label": "Húngara",
+          "research_slot": "hungarian",
+          "source_entity_type": "metropolitan sui iuris Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ]
+    },
+    {
+      "research_slot": "coptic",
+      "project_name": "Coptic Catholic Church",
+      "holy_see_2010": [
+        {
+          "source_label": "Copta",
+          "research_slot": "coptic",
+          "source_entity_type": "patriarchal Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_july": [
+        {
+          "source_label": "copta",
+          "research_slot": "coptic",
+          "source_entity_type": "patriarchal Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_november": [
+        {
+          "source_label": "Copta",
+          "research_slot": "coptic",
+          "source_entity_type": "patriarchal Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ]
+    },
+    {
+      "research_slot": "ethiopian",
+      "project_name": "Ethiopian Catholic Church",
+      "holy_see_2010": [
+        {
+          "source_label": "Etiopica",
+          "research_slot": "ethiopian",
+          "source_entity_type": "metropolitan sui iuris Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_july": [
+        {
+          "source_label": "Etiope",
+          "research_slot": "ethiopian",
+          "source_entity_type": "metropolitan sui iuris Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_november": [
+        {
+          "source_label": "Etíope",
+          "research_slot": "ethiopian",
+          "source_entity_type": "metropolitan sui iuris Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ]
+    },
+    {
+      "research_slot": "eritrean",
+      "project_name": "Eritrean Catholic Church",
+      "holy_see_2010": [],
+      "sico_2016_july": [
+        {
+          "source_label": "Eritrea",
+          "research_slot": "eritrean",
+          "source_entity_type": "metropolitan sui iuris Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_november": [
+        {
+          "source_label": "Eritrea",
+          "research_slot": "eritrean",
+          "source_entity_type": "metropolitan sui iuris Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ]
+    },
+    {
+      "research_slot": "armenian",
+      "project_name": "Armenian Catholic Church",
+      "holy_see_2010": [
+        {
+          "source_label": "Armena",
+          "research_slot": "armenian",
+          "source_entity_type": "patriarchal Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_july": [
+        {
+          "source_label": "armena",
+          "research_slot": "armenian",
+          "source_entity_type": "patriarchal Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_november": [
+        {
+          "source_label": "Armenia",
+          "research_slot": "armenian",
+          "source_entity_type": "patriarchal Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ]
+    },
+    {
+      "research_slot": "maronite",
+      "project_name": "Maronite Church",
+      "holy_see_2010": [
+        {
+          "source_label": "Maronita",
+          "research_slot": "maronite",
+          "source_entity_type": "patriarchal Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_july": [
+        {
+          "source_label": "maronita",
+          "research_slot": "maronite",
+          "source_entity_type": "patriarchal Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_november": [
+        {
+          "source_label": "Maronita",
+          "research_slot": "maronite",
+          "source_entity_type": "patriarchal Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ]
+    },
+    {
+      "research_slot": "syriac",
+      "project_name": "Syriac Catholic Church",
+      "holy_see_2010": [
+        {
+          "source_label": "Sira",
+          "research_slot": "syriac",
+          "source_entity_type": "patriarchal Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_july": [
+        {
+          "source_label": "sira",
+          "research_slot": "syriac",
+          "source_entity_type": "patriarchal Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_november": [
+        {
+          "source_label": "Siria",
+          "research_slot": "syriac",
+          "source_entity_type": "patriarchal Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ]
+    },
+    {
+      "research_slot": "syro-malankara",
+      "project_name": "Syro-Malankara Catholic Church",
+      "holy_see_2010": [
+        {
+          "source_label": "Siro-Malankarese",
+          "research_slot": "syro-malankara",
+          "source_entity_type": "major archiepiscopal Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_july": [
+        {
+          "source_label": "Malankarese",
+          "research_slot": "syro-malankara",
+          "source_entity_type": "major archiepiscopal Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_november": [
+        {
+          "source_label": "Malankar",
+          "research_slot": "syro-malankara",
+          "source_entity_type": "major archiepiscopal Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ]
+    },
+    {
+      "research_slot": "chaldean",
+      "project_name": "Chaldean Catholic Church",
+      "holy_see_2010": [
+        {
+          "source_label": "Caldea",
+          "research_slot": "chaldean",
+          "source_entity_type": "patriarchal Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_july": [
+        {
+          "source_label": "caldea",
+          "research_slot": "chaldean",
+          "source_entity_type": "patriarchal Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_november": [
+        {
+          "source_label": "Caldea",
+          "research_slot": "chaldean",
+          "source_entity_type": "patriarchal Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ]
+    },
+    {
+      "research_slot": "syro-malabar",
+      "project_name": "Syro-Malabar Catholic Church",
+      "holy_see_2010": [
+        {
+          "source_label": "Siro-Malabarese",
+          "research_slot": "syro-malabar",
+          "source_entity_type": "major archiepiscopal Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_july": [
+        {
+          "source_label": "Malabarese",
+          "research_slot": "syro-malabar",
+          "source_entity_type": "major archiepiscopal Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ],
+      "sico_2016_november": [
+        {
+          "source_label": "Malabar",
+          "research_slot": "syro-malabar",
+          "source_entity_type": "major archiepiscopal Church (source category)",
+          "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+        }
+      ]
+    }
+  ],
+  "uses": [
+    {
+      "id": "albanian",
+      "name": "Albanian Greek Catholic tradition",
+      "scope": "Existing research coverage slot, not a newly adjudicated canonical Church identity or a count of books.",
+      "source_ids": [
+        "census-holy-see-2010",
+        "census-sico-2016-july",
+        "census-sico-2016-november"
+      ],
+      "dated_mappings": [
+        {
+          "source_id": "census-holy-see-2010",
+          "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2010/10/07/0602/01352.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Albanese",
+              "research_slot": "albanian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-july",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": false
+        },
+        {
+          "source_id": "census-sico-2016-november",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Albanesa",
+              "research_slot": "albanian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        }
+      ],
+      "disposition": "retain-existing-slot-and-book-coverage-status",
+      "limitations": "Source attachment records considered evidence, including omission and partial or many-to-one research placement; it must not be rendered as positive enumeration by every source. No local book use, version, text or parentage follows."
+    },
+    {
+      "id": "belarusian",
+      "name": "Belarusian Greek Catholic Church",
+      "scope": "Existing research coverage slot, not a newly adjudicated canonical Church identity or a count of books.",
+      "source_ids": [
+        "census-holy-see-2010",
+        "census-sico-2016-july",
+        "census-sico-2016-november"
+      ],
+      "dated_mappings": [
+        {
+          "source_id": "census-holy-see-2010",
+          "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2010/10/07/0602/01352.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Bielorussa",
+              "research_slot": "belarusian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-july",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Bielorussia",
+              "research_slot": "belarusian",
+              "source_entity_type": "named unit without adequate hierarchical/administrative structure in other-Church category",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-november",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Bielorrusa",
+              "research_slot": "belarusian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        }
+      ],
+      "disposition": "retain-existing-slot-and-book-coverage-status",
+      "limitations": "Source attachment records considered evidence, including omission and partial or many-to-one research placement; it must not be rendered as positive enumeration by every source. No local book use, version, text or parentage follows."
+    },
+    {
+      "id": "bulgarian",
+      "name": "Bulgarian Greek Catholic Church",
+      "scope": "Existing research coverage slot, not a newly adjudicated canonical Church identity or a count of books.",
+      "source_ids": [
+        "census-holy-see-2010",
+        "census-sico-2016-july",
+        "census-sico-2016-november"
+      ],
+      "dated_mappings": [
+        {
+          "source_id": "census-holy-see-2010",
+          "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2010/10/07/0602/01352.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Bulgara",
+              "research_slot": "bulgarian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-july",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Bulgaria",
+              "research_slot": "bulgarian",
+              "source_entity_type": "named unit with hierarchical structure in other-Church category",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-november",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Búlgara",
+              "research_slot": "bulgarian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        }
+      ],
+      "disposition": "retain-existing-slot-and-book-coverage-status",
+      "limitations": "Source attachment records considered evidence, including omission and partial or many-to-one research placement; it must not be rendered as positive enumeration by every source. No local book use, version, text or parentage follows."
+    },
+    {
+      "id": "croatia-serbia",
+      "name": "Byzantine Catholic Church of Croatia and Serbia (historical SICO label: Križevci)",
+      "scope": "Existing research coverage slot, not a newly adjudicated canonical Church identity or a count of books.",
+      "source_ids": [
+        "census-holy-see-2010",
+        "census-sico-2016-july",
+        "census-sico-2016-november"
+      ],
+      "dated_mappings": [
+        {
+          "source_id": "census-holy-see-2010",
+          "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2010/10/07/0602/01352.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Croata",
+              "research_slot": "croatia-serbia",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Partial name/scope match to the broader project Croatia-and-Serbia slot. The opening separately qualifies Serbia/Montenegro as an exarchate not listed among sui iuris Churches in the Annuario then described."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-july",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Serbia",
+              "research_slot": "croatia-serbia",
+              "source_entity_type": "named unit with hierarchical structure in other-Church category",
+              "mapping_limit": "Geographic research-placement crosswalk only; separately named from Croazia in this source."
+            },
+            {
+              "source_label": "Croazia",
+              "research_slot": "croatia-serbia",
+              "source_entity_type": "named unit with hierarchical structure in other-Church category",
+              "mapping_limit": "Geographic research-placement crosswalk only; separately named from Serbia in this source."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-november",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "la de Croacia y Serbia",
+              "research_slot": "croatia-serbia",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        }
+      ],
+      "disposition": "retain-existing-slot-and-book-coverage-status",
+      "limitations": "Source attachment records considered evidence, including omission and partial or many-to-one research placement; it must not be rendered as positive enumeration by every source. No local book use, version, text or parentage follows."
+    },
+    {
+      "id": "greek",
+      "name": "Greek Byzantine Catholic Church",
+      "scope": "Existing research coverage slot, not a newly adjudicated canonical Church identity or a count of books.",
+      "source_ids": [
+        "census-holy-see-2010",
+        "census-sico-2016-july",
+        "census-sico-2016-november"
+      ],
+      "dated_mappings": [
+        {
+          "source_id": "census-holy-see-2010",
+          "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2010/10/07/0602/01352.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Greca",
+              "research_slot": "greek",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-july",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Grecia",
+              "research_slot": "greek",
+              "source_entity_type": "named unit with hierarchical structure in other-Church category",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-november",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Griega",
+              "research_slot": "greek",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        }
+      ],
+      "disposition": "retain-existing-slot-and-book-coverage-status",
+      "limitations": "Source attachment records considered evidence, including omission and partial or many-to-one research placement; it must not be rendered as positive enumeration by every source. No local book use, version, text or parentage follows."
+    },
+    {
+      "id": "melkite",
+      "name": "Melkite Greek Catholic Church",
+      "scope": "Existing research coverage slot, not a newly adjudicated canonical Church identity or a count of books.",
+      "source_ids": [
+        "census-holy-see-2010",
+        "census-sico-2016-july",
+        "census-sico-2016-november"
+      ],
+      "dated_mappings": [
+        {
+          "source_id": "census-holy-see-2010",
+          "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2010/10/07/0602/01352.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Melkita",
+              "research_slot": "melkite",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-july",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "melkita",
+              "research_slot": "melkite",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-november",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Melquita",
+              "research_slot": "melkite",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        }
+      ],
+      "disposition": "retain-existing-slot-and-book-coverage-status",
+      "limitations": "Source attachment records considered evidence, including omission and partial or many-to-one research placement; it must not be rendered as positive enumeration by every source. No local book use, version, text or parentage follows."
+    },
+    {
+      "id": "italo-albanian",
+      "name": "Byzantine Catholic Church in Italy / Italo-Albanian",
+      "scope": "Existing research coverage slot, not a newly adjudicated canonical Church identity or a count of books.",
+      "source_ids": [
+        "census-holy-see-2010",
+        "census-sico-2016-july",
+        "census-sico-2016-november"
+      ],
+      "dated_mappings": [
+        {
+          "source_id": "census-holy-see-2010",
+          "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2010/10/07/0602/01352.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Italo-Albanese",
+              "research_slot": "italo-albanian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-july",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Italo-Albanesi",
+              "research_slot": "italo-albanian",
+              "source_entity_type": "named unit with hierarchical structure in other-Church category",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-november",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Ítalo-albanesa",
+              "research_slot": "italo-albanian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        }
+      ],
+      "disposition": "retain-existing-slot-and-book-coverage-status",
+      "limitations": "Source attachment records considered evidence, including omission and partial or many-to-one research placement; it must not be rendered as positive enumeration by every source. No local book use, version, text or parentage follows."
+    },
+    {
+      "id": "macedonian",
+      "name": "Macedonian Greek Catholic Church",
+      "scope": "Existing research coverage slot, not a newly adjudicated canonical Church identity or a count of books.",
+      "source_ids": [
+        "census-holy-see-2010",
+        "census-sico-2016-july",
+        "census-sico-2016-november"
+      ],
+      "dated_mappings": [
+        {
+          "source_id": "census-holy-see-2010",
+          "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2010/10/07/0602/01352.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Macedone",
+              "research_slot": "macedonian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-july",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Macedonia",
+              "research_slot": "macedonian",
+              "source_entity_type": "named unit with hierarchical structure in other-Church category",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-november",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Macedonia",
+              "research_slot": "macedonian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        }
+      ],
+      "disposition": "retain-existing-slot-and-book-coverage-status",
+      "limitations": "Source attachment records considered evidence, including omission and partial or many-to-one research placement; it must not be rendered as positive enumeration by every source. No local book use, version, text or parentage follows."
+    },
+    {
+      "id": "romanian",
+      "name": "Romanian Greek Catholic Church",
+      "scope": "Existing research coverage slot, not a newly adjudicated canonical Church identity or a count of books.",
+      "source_ids": [
+        "census-holy-see-2010",
+        "census-sico-2016-july",
+        "census-sico-2016-november"
+      ],
+      "dated_mappings": [
+        {
+          "source_id": "census-holy-see-2010",
+          "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2010/10/07/0602/01352.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Romena",
+              "research_slot": "romanian",
+              "source_entity_type": "major archiepiscopal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-july",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Romena",
+              "research_slot": "romanian",
+              "source_entity_type": "major archiepiscopal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-november",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Rumana",
+              "research_slot": "romanian",
+              "source_entity_type": "major archiepiscopal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        }
+      ],
+      "disposition": "retain-existing-slot-and-book-coverage-status",
+      "limitations": "Source attachment records considered evidence, including omission and partial or many-to-one research placement; it must not be rendered as positive enumeration by every source. No local book use, version, text or parentage follows."
+    },
+    {
+      "id": "russian",
+      "name": "Russian Greek Catholic Church",
+      "scope": "Existing research coverage slot, not a newly adjudicated canonical Church identity or a count of books.",
+      "source_ids": [
+        "census-holy-see-2010",
+        "census-sico-2016-july",
+        "census-sico-2016-november"
+      ],
+      "dated_mappings": [
+        {
+          "source_id": "census-holy-see-2010",
+          "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2010/10/07/0602/01352.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Russa",
+              "research_slot": "russian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-july",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Russia",
+              "research_slot": "russian",
+              "source_entity_type": "named unit without adequate hierarchical/administrative structure in other-Church category",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-november",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Rusa",
+              "research_slot": "russian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        }
+      ],
+      "disposition": "retain-existing-slot-and-book-coverage-status",
+      "limitations": "Source attachment records considered evidence, including omission and partial or many-to-one research placement; it must not be rendered as positive enumeration by every source. No local book use, version, text or parentage follows."
+    },
+    {
+      "id": "ruthenian",
+      "name": "Ruthenian Greek Catholic tradition",
+      "scope": "Existing research coverage slot, not a newly adjudicated canonical Church identity or a count of books.",
+      "source_ids": [
+        "census-holy-see-2010",
+        "census-sico-2016-july",
+        "census-sico-2016-november"
+      ],
+      "dated_mappings": [
+        {
+          "source_id": "census-holy-see-2010",
+          "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2010/10/07/0602/01352.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Rutena",
+              "research_slot": "ruthenian",
+              "source_entity_type": "metropolitan sui iuris Church (source category)",
+              "mapping_limit": "The 2010 paragraph includes Mukacheve, Pittsburgh with three suffragans, and the Czech Apostolic Exarchate; broader than July 2016 Rutena USA."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-july",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Rutena USA",
+              "research_slot": "ruthenian",
+              "source_entity_type": "metropolitan sui iuris Church (source category)",
+              "mapping_limit": "Explicit USA scope. Does not silently absorb the separately listed Czech unit or determine Mukacheve's classification."
+            },
+            {
+              "source_label": "Repubblica Ceca",
+              "research_slot": "ruthenian",
+              "source_entity_type": "named unit with hierarchical structure in other-Church category",
+              "mapping_limit": "Research-placement crosswalk only, informed by the 2010 Rutena paragraph. This source lists it separately; no 2016 canonical ascription or equivalence to Rutena USA is inferred."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-november",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Rutena",
+              "research_slot": "ruthenian",
+              "source_entity_type": "metropolitan sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        }
+      ],
+      "disposition": "retain-existing-slot-and-book-coverage-status",
+      "limitations": "Source attachment records considered evidence, including omission and partial or many-to-one research placement; it must not be rendered as positive enumeration by every source. No local book use, version, text or parentage follows."
+    },
+    {
+      "id": "slovak",
+      "name": "Slovak Greek Catholic Church",
+      "scope": "Existing research coverage slot, not a newly adjudicated canonical Church identity or a count of books.",
+      "source_ids": [
+        "census-holy-see-2010",
+        "census-sico-2016-july",
+        "census-sico-2016-november"
+      ],
+      "dated_mappings": [
+        {
+          "source_id": "census-holy-see-2010",
+          "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2010/10/07/0602/01352.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Slovacca",
+              "research_slot": "slovak",
+              "source_entity_type": "metropolitan sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-july",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Slovacca",
+              "research_slot": "slovak",
+              "source_entity_type": "metropolitan sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-november",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Eslovaca",
+              "research_slot": "slovak",
+              "source_entity_type": "metropolitan sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        }
+      ],
+      "disposition": "retain-existing-slot-and-book-coverage-status",
+      "limitations": "Source attachment records considered evidence, including omission and partial or many-to-one research placement; it must not be rendered as positive enumeration by every source. No local book use, version, text or parentage follows."
+    },
+    {
+      "id": "ukrainian",
+      "name": "Ukrainian Greek Catholic Church",
+      "scope": "Existing research coverage slot, not a newly adjudicated canonical Church identity or a count of books.",
+      "source_ids": [
+        "census-holy-see-2010",
+        "census-sico-2016-july",
+        "census-sico-2016-november"
+      ],
+      "dated_mappings": [
+        {
+          "source_id": "census-holy-see-2010",
+          "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2010/10/07/0602/01352.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Ucraina",
+              "research_slot": "ukrainian",
+              "source_entity_type": "major archiepiscopal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-july",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Ucraina",
+              "research_slot": "ukrainian",
+              "source_entity_type": "major archiepiscopal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-november",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Ucraniana",
+              "research_slot": "ukrainian",
+              "source_entity_type": "major archiepiscopal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        }
+      ],
+      "disposition": "retain-existing-slot-and-book-coverage-status",
+      "limitations": "Source attachment records considered evidence, including omission and partial or many-to-one research placement; it must not be rendered as positive enumeration by every source. No local book use, version, text or parentage follows."
+    },
+    {
+      "id": "hungarian",
+      "name": "Hungarian Greek Catholic Church",
+      "scope": "Existing research coverage slot, not a newly adjudicated canonical Church identity or a count of books.",
+      "source_ids": [
+        "census-holy-see-2010",
+        "census-sico-2016-july",
+        "census-sico-2016-november"
+      ],
+      "dated_mappings": [
+        {
+          "source_id": "census-holy-see-2010",
+          "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2010/10/07/0602/01352.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Ungherese",
+              "research_slot": "hungarian",
+              "source_entity_type": "other sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-july",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Ungherese",
+              "research_slot": "hungarian",
+              "source_entity_type": "metropolitan sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-november",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Húngara",
+              "research_slot": "hungarian",
+              "source_entity_type": "metropolitan sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        }
+      ],
+      "disposition": "retain-existing-slot-and-book-coverage-status",
+      "limitations": "Source attachment records considered evidence, including omission and partial or many-to-one research placement; it must not be rendered as positive enumeration by every source. No local book use, version, text or parentage follows."
+    },
+    {
+      "id": "coptic",
+      "name": "Coptic Catholic Church",
+      "scope": "Existing research coverage slot, not a newly adjudicated canonical Church identity or a count of books.",
+      "source_ids": [
+        "census-holy-see-2010",
+        "census-sico-2016-july",
+        "census-sico-2016-november"
+      ],
+      "dated_mappings": [
+        {
+          "source_id": "census-holy-see-2010",
+          "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2010/10/07/0602/01352.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Copta",
+              "research_slot": "coptic",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-july",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "copta",
+              "research_slot": "coptic",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-november",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Copta",
+              "research_slot": "coptic",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        }
+      ],
+      "disposition": "retain-existing-slot-and-book-coverage-status",
+      "limitations": "Source attachment records considered evidence, including omission and partial or many-to-one research placement; it must not be rendered as positive enumeration by every source. No local book use, version, text or parentage follows."
+    },
+    {
+      "id": "ethiopian",
+      "name": "Ethiopian Catholic Church",
+      "scope": "Existing research coverage slot, not a newly adjudicated canonical Church identity or a count of books.",
+      "source_ids": [
+        "census-holy-see-2010",
+        "census-sico-2016-july",
+        "census-sico-2016-november"
+      ],
+      "dated_mappings": [
+        {
+          "source_id": "census-holy-see-2010",
+          "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2010/10/07/0602/01352.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Etiopica",
+              "research_slot": "ethiopian",
+              "source_entity_type": "metropolitan sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-july",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Etiope",
+              "research_slot": "ethiopian",
+              "source_entity_type": "metropolitan sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-november",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Etíope",
+              "research_slot": "ethiopian",
+              "source_entity_type": "metropolitan sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        }
+      ],
+      "disposition": "retain-existing-slot-and-book-coverage-status",
+      "limitations": "Source attachment records considered evidence, including omission and partial or many-to-one research placement; it must not be rendered as positive enumeration by every source. No local book use, version, text or parentage follows."
+    },
+    {
+      "id": "eritrean",
+      "name": "Eritrean Catholic Church",
+      "scope": "Existing research coverage slot, not a newly adjudicated canonical Church identity or a count of books.",
+      "source_ids": [
+        "census-holy-see-2010",
+        "census-sico-2016-july",
+        "census-sico-2016-november"
+      ],
+      "dated_mappings": [
+        {
+          "source_id": "census-holy-see-2010",
+          "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2010/10/07/0602/01352.pdf",
+          "dated_entries": [],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": false
+        },
+        {
+          "source_id": "census-sico-2016-july",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Eritrea",
+              "research_slot": "eritrean",
+              "source_entity_type": "metropolitan sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-november",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Eritrea",
+              "research_slot": "eritrean",
+              "source_entity_type": "metropolitan sui iuris Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        }
+      ],
+      "disposition": "retain-existing-slot-and-book-coverage-status",
+      "limitations": "Source attachment records considered evidence, including omission and partial or many-to-one research placement; it must not be rendered as positive enumeration by every source. No local book use, version, text or parentage follows."
+    },
+    {
+      "id": "armenian",
+      "name": "Armenian Catholic Church",
+      "scope": "Existing research coverage slot, not a newly adjudicated canonical Church identity or a count of books.",
+      "source_ids": [
+        "census-holy-see-2010",
+        "census-sico-2016-july",
+        "census-sico-2016-november"
+      ],
+      "dated_mappings": [
+        {
+          "source_id": "census-holy-see-2010",
+          "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2010/10/07/0602/01352.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Armena",
+              "research_slot": "armenian",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-july",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "armena",
+              "research_slot": "armenian",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-november",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Armenia",
+              "research_slot": "armenian",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        }
+      ],
+      "disposition": "retain-existing-slot-and-book-coverage-status",
+      "limitations": "Source attachment records considered evidence, including omission and partial or many-to-one research placement; it must not be rendered as positive enumeration by every source. No local book use, version, text or parentage follows."
+    },
+    {
+      "id": "maronite",
+      "name": "Maronite Church",
+      "scope": "Existing research coverage slot, not a newly adjudicated canonical Church identity or a count of books.",
+      "source_ids": [
+        "census-holy-see-2010",
+        "census-sico-2016-july",
+        "census-sico-2016-november"
+      ],
+      "dated_mappings": [
+        {
+          "source_id": "census-holy-see-2010",
+          "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2010/10/07/0602/01352.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Maronita",
+              "research_slot": "maronite",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-july",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "maronita",
+              "research_slot": "maronite",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-november",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Maronita",
+              "research_slot": "maronite",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        }
+      ],
+      "disposition": "retain-existing-slot-and-book-coverage-status",
+      "limitations": "Source attachment records considered evidence, including omission and partial or many-to-one research placement; it must not be rendered as positive enumeration by every source. No local book use, version, text or parentage follows."
+    },
+    {
+      "id": "syriac",
+      "name": "Syriac Catholic Church",
+      "scope": "Existing research coverage slot, not a newly adjudicated canonical Church identity or a count of books.",
+      "source_ids": [
+        "census-holy-see-2010",
+        "census-sico-2016-july",
+        "census-sico-2016-november"
+      ],
+      "dated_mappings": [
+        {
+          "source_id": "census-holy-see-2010",
+          "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2010/10/07/0602/01352.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Sira",
+              "research_slot": "syriac",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-july",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "sira",
+              "research_slot": "syriac",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-november",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Siria",
+              "research_slot": "syriac",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        }
+      ],
+      "disposition": "retain-existing-slot-and-book-coverage-status",
+      "limitations": "Source attachment records considered evidence, including omission and partial or many-to-one research placement; it must not be rendered as positive enumeration by every source. No local book use, version, text or parentage follows."
+    },
+    {
+      "id": "syro-malankara",
+      "name": "Syro-Malankara Catholic Church",
+      "scope": "Existing research coverage slot, not a newly adjudicated canonical Church identity or a count of books.",
+      "source_ids": [
+        "census-holy-see-2010",
+        "census-sico-2016-july",
+        "census-sico-2016-november"
+      ],
+      "dated_mappings": [
+        {
+          "source_id": "census-holy-see-2010",
+          "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2010/10/07/0602/01352.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Siro-Malankarese",
+              "research_slot": "syro-malankara",
+              "source_entity_type": "major archiepiscopal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-july",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Malankarese",
+              "research_slot": "syro-malankara",
+              "source_entity_type": "major archiepiscopal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-november",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Malankar",
+              "research_slot": "syro-malankara",
+              "source_entity_type": "major archiepiscopal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        }
+      ],
+      "disposition": "retain-existing-slot-and-book-coverage-status",
+      "limitations": "Source attachment records considered evidence, including omission and partial or many-to-one research placement; it must not be rendered as positive enumeration by every source. No local book use, version, text or parentage follows."
+    },
+    {
+      "id": "chaldean",
+      "name": "Chaldean Catholic Church",
+      "scope": "Existing research coverage slot, not a newly adjudicated canonical Church identity or a count of books.",
+      "source_ids": [
+        "census-holy-see-2010",
+        "census-sico-2016-july",
+        "census-sico-2016-november"
+      ],
+      "dated_mappings": [
+        {
+          "source_id": "census-holy-see-2010",
+          "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2010/10/07/0602/01352.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Caldea",
+              "research_slot": "chaldean",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-july",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "caldea",
+              "research_slot": "chaldean",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-november",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Caldea",
+              "research_slot": "chaldean",
+              "source_entity_type": "patriarchal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        }
+      ],
+      "disposition": "retain-existing-slot-and-book-coverage-status",
+      "limitations": "Source attachment records considered evidence, including omission and partial or many-to-one research placement; it must not be rendered as positive enumeration by every source. No local book use, version, text or parentage follows."
+    },
+    {
+      "id": "syro-malabar",
+      "name": "Syro-Malabar Catholic Church",
+      "scope": "Existing research coverage slot, not a newly adjudicated canonical Church identity or a count of books.",
+      "source_ids": [
+        "census-holy-see-2010",
+        "census-sico-2016-july",
+        "census-sico-2016-november"
+      ],
+      "dated_mappings": [
+        {
+          "source_id": "census-holy-see-2010",
+          "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2010/10/07/0602/01352.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Siro-Malabarese",
+              "research_slot": "syro-malabar",
+              "source_entity_type": "major archiepiscopal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-july",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Malabarese",
+              "research_slot": "syro-malabar",
+              "source_entity_type": "major archiepiscopal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        },
+        {
+          "source_id": "census-sico-2016-november",
+          "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+          "dated_entries": [
+            {
+              "source_label": "Malabar",
+              "research_slot": "syro-malabar",
+              "source_entity_type": "major archiepiscopal Church (source category)",
+              "mapping_limit": "Dated source label mapped to an existing research slot; no present classification or book reception follows."
+            }
+          ],
+          "absence_scope": "No source omission is interpreted as suppression, extinction or a current taxonomy ruling.",
+          "has_named_mapping_entry": true
+        }
+      ],
+      "disposition": "retain-existing-slot-and-book-coverage-status",
+      "limitations": "Source attachment records considered evidence, including omission and partial or many-to-one research placement; it must not be rendered as positive enumeration by every source. No local book use, version, text or parentage follows."
+    }
+  ],
+  "searches": [
+    {
+      "method": "Complete acquired delivery hash/size replay; local text discovery aids followed by direct inspection of the identified original PDF page images and complete appointment HTML context; separate independent source findings frozen before proposal review.",
+      "source_ids": [
+        "census-holy-see-2010",
+        "census-sico-2016-july",
+        "census-sico-2016-november",
+        "albania-inter-regiones-1939",
+        "albania-appointment-2026"
+      ],
+      "bounds": [
+        "Fact sheets 01356-01.02 and 01357-01.01, including their opening totals and named categories; parallel PDF pp. 9–13",
+        "PDF pp. 9–12: first fact sheet; pp. 12–13: adjacent particular-law sheet; p. 14: closing bulletin code",
+        "PDF p. 4: April 2018 imprint; p. 205: Sandri's 2016 section attribution; pp. 264–266: 19 July speech; pp. 317 and 325: 15 November opening and named list",
+        "Printed/PDF pp. 139–140: complete Inter regiones act, including jurisdiction over Latin and Byzantine parishes/missions/faithful and act date",
+        "Nomina dell’Amministratore Apostolico dell’Albania Meridionale, item 00681-IT.01, within the bulletin delivered at URL ending 00676.html"
+      ],
+      "queries_and_limits": "This record reports the acquired-source and exact-locus review actually performed. It is not an exhaustive archive search, a whole-volume semantic examination, or a new query of current Annuario contents.",
+      "unexamined": "Current named Annuario contents; the 2000 book and CNEWA 2016 chart cited in SICO p. 325 footnote 21; historical files cited through DGA/ACCO; an exact Elbasan celebrant book or dated operative use."
+    }
+  ],
+  "versions": [],
+  "acquisitions": [
+    {
+      "identity": "Holy See Press Office, 7 October 2010, complete HTML bulletin B0602 containing fact sheets 01356 and 01357",
+      "source_ids": [
+        "census-holy-see-2010"
+      ],
+      "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2010/10/07/0602/01352.html",
+      "sha256": "1189190b77dece4326ab4b222f1f22a4b20d333e9afffea40651bece8555da7c",
+      "byte_size": 69758,
+      "media_type": "text/html",
+      "retrieved_on": "2026-10-20",
+      "retrieved_extent": "complete delivery at the named public URL; not a claim that all contents were inspected",
+      "complete_delivery": true,
+      "checked_locus": "Fact sheets 01356-01.02 and 01357-01.01, including their opening totals and named categories; parallel PDF pp. 9–13",
+      "decision": "defer",
+      "current_storage": "not-registered",
+      "proposed_storage": "project-authored-metadata-only; no exact source payload admission",
+      "distribution_surface": "public Git, static bundles and publication exports",
+      "rights_status": "unresolved-exact-artifact-redistribution",
+      "rights_evidence": "No affirmative repository redistribution basis was established for this exact delivery. Public reachability and official status do not establish permission. Retain only this project-authored source identity, exact hash/size, bounded factual findings and public citation; do not admit the raw PDF/HTML, bulk extraction, source page images or wrappers. The underlying 1939 legal act and its later scan/container are separate rights questions.",
+      "decision_reason": "Exact-artifact redistribution rights were not affirmatively established; measured size is not the reason for deferral.",
+      "measured_size_is_blocker": false,
+      "offline_substitute": "src/sources/inventories/eucharistic-research-reviews/eastern-census-dated-crosswalk-2026-10-20.json#acquisitions[0] records identity, exact delivery hash/size, public URL, inspection scope and a factual access limitation. The named-list and slot findings are retained in this same project-authored review; they are not a source transcription.",
+      "access_limitation": "The complete raw delivery, its exact prose and source images are not available in an ordinary offline checkout. Checking original wording requires the cited public provider URL, whose future availability is not guaranteed. Research copies are disposable and are not repository payloads.",
+      "what_would_change_decision": "An affirmative distribution basis covering the exact material and planned public Git/export surface, or a separately authenticated distributable witness. A determination about an underlying act would not automatically clear later wrapper or volume contributions."
+    },
+    {
+      "identity": "Holy See Press Office, 7 October 2010, complete 14-page PDF bulletin B0602 containing fact sheets 01356 and 01357",
+      "source_ids": [
+        "census-holy-see-2010"
+      ],
+      "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2010/10/07/0602/01352.pdf",
+      "sha256": "4836610cbd14fc6e9a8077c35c1e297bc2e5c08d4f96f248a3a0fb079163556b",
+      "byte_size": 248772,
+      "media_type": "application/pdf",
+      "retrieved_on": "2026-10-20",
+      "retrieved_extent": "complete delivery at the named public URL; not a claim that all contents were inspected",
+      "complete_delivery": true,
+      "checked_locus": "PDF pp. 9–12: first fact sheet; pp. 12–13: adjacent particular-law sheet; p. 14: closing bulletin code",
+      "decision": "defer",
+      "current_storage": "not-registered",
+      "proposed_storage": "project-authored-metadata-only; no exact source payload admission",
+      "distribution_surface": "public Git, static bundles and publication exports",
+      "rights_status": "unresolved-exact-artifact-redistribution",
+      "rights_evidence": "No affirmative repository redistribution basis was established for this exact delivery. Public reachability and official status do not establish permission. Retain only this project-authored source identity, exact hash/size, bounded factual findings and public citation; do not admit the raw PDF/HTML, bulk extraction, source page images or wrappers. The underlying 1939 legal act and its later scan/container are separate rights questions.",
+      "decision_reason": "Exact-artifact redistribution rights were not affirmatively established; measured size is not the reason for deferral.",
+      "measured_size_is_blocker": false,
+      "offline_substitute": "src/sources/inventories/eucharistic-research-reviews/eastern-census-dated-crosswalk-2026-10-20.json#acquisitions[1] records identity, exact delivery hash/size, public URL, inspection scope and a factual access limitation. The named-list and slot findings are retained in this same project-authored review; they are not a source transcription.",
+      "access_limitation": "The complete raw delivery, its exact prose and source images are not available in an ordinary offline checkout. Checking original wording requires the cited public provider URL, whose future availability is not guaranteed. Research copies are disposable and are not repository payloads.",
+      "what_would_change_decision": "An affirmative distribution basis covering the exact material and planned public Git/export surface, or a separately authenticated distributable witness. A determination about an underlying act would not automatically clear later wrapper or volume contributions."
+    },
+    {
+      "identity": "Congregation for the Eastern Churches, SICO issue 2015–2016, printed April 2018, complete 536-page PDF containing Sandri's July and November 2016 speeches",
+      "source_ids": [
+        "census-sico-2016-july",
+        "census-sico-2016-november"
+      ],
+      "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+      "sha256": "f23588eb62dead02bf033c3e1a7c3d28baedad0075a16044c6bb802b41f96d04",
+      "byte_size": 3426678,
+      "media_type": "application/pdf",
+      "retrieved_on": "2026-10-20",
+      "retrieved_extent": "complete delivery at the named public URL; not a claim that all contents were inspected",
+      "complete_delivery": true,
+      "checked_locus": "PDF p. 4: April 2018 imprint; p. 205: Sandri's 2016 section attribution; pp. 264–266: 19 July speech; pp. 317 and 325: 15 November opening and named list",
+      "decision": "defer",
+      "current_storage": "not-registered",
+      "proposed_storage": "project-authored-metadata-only; no exact source payload admission",
+      "distribution_surface": "public Git, static bundles and publication exports",
+      "rights_status": "unresolved-exact-artifact-redistribution",
+      "rights_evidence": "No affirmative repository redistribution basis was established for this exact delivery. Public reachability and official status do not establish permission. Retain only this project-authored source identity, exact hash/size, bounded factual findings and public citation; do not admit the raw PDF/HTML, bulk extraction, source page images or wrappers. The underlying 1939 legal act and its later scan/container are separate rights questions.",
+      "decision_reason": "Exact-artifact redistribution rights were not affirmatively established; measured size is not the reason for deferral.",
+      "measured_size_is_blocker": false,
+      "offline_substitute": "src/sources/inventories/eucharistic-research-reviews/eastern-census-dated-crosswalk-2026-10-20.json#acquisitions[2] records identity, exact delivery hash/size, public URL, inspection scope and a factual access limitation. The named-list and slot findings are retained in this same project-authored review; they are not a source transcription.",
+      "access_limitation": "The complete raw delivery, its exact prose and source images are not available in an ordinary offline checkout. Checking original wording requires the cited public provider URL, whose future availability is not guaranteed. Research copies are disposable and are not repository payloads.",
+      "what_would_change_decision": "An affirmative distribution basis covering the exact material and planned public Git/export surface, or a separately authenticated distributable witness. A determination about an underlying act would not automatically clear later wrapper or volume contributions."
+    },
+    {
+      "identity": "Acta Apostolicae Sedis 32 (1940), complete 650-page PDF containing Pius XII's Inter regiones of 11 November 1939 at pp. 139–140",
+      "source_ids": [
+        "albania-inter-regiones-1939"
+      ],
+      "source_url": "https://www.vatican.va/archive/aas/documents/AAS-32-1940-ocr.pdf",
+      "sha256": "ebfbeb2296c2af413f9c2a6cbdc76bc38b8a386a715fc844431e17135a9acdc1",
+      "byte_size": 3562252,
+      "media_type": "application/pdf",
+      "retrieved_on": "2026-10-20",
+      "retrieved_extent": "complete delivery at the named public URL; not a claim that all contents were inspected",
+      "complete_delivery": true,
+      "checked_locus": "Printed/PDF pp. 139–140: complete Inter regiones act, including jurisdiction over Latin and Byzantine parishes/missions/faithful and act date",
+      "decision": "defer",
+      "current_storage": "not-registered",
+      "proposed_storage": "project-authored-metadata-only; no exact source payload admission",
+      "distribution_surface": "public Git, static bundles and publication exports",
+      "rights_status": "unresolved-exact-artifact-redistribution",
+      "rights_evidence": "No affirmative repository redistribution basis was established for this exact delivery. Public reachability and official status do not establish permission. Retain only this project-authored source identity, exact hash/size, bounded factual findings and public citation; do not admit the raw PDF/HTML, bulk extraction, source page images or wrappers. The underlying 1939 legal act and its later scan/container are separate rights questions.",
+      "decision_reason": "Exact-artifact redistribution rights were not affirmatively established; measured size is not the reason for deferral.",
+      "measured_size_is_blocker": false,
+      "offline_substitute": "src/sources/inventories/eucharistic-research-reviews/eastern-census-dated-crosswalk-2026-10-20.json#acquisitions[3] records identity, exact delivery hash/size, public URL, inspection scope and a factual access limitation. The named-list and slot findings are retained in this same project-authored review; they are not a source transcription.",
+      "access_limitation": "The complete raw delivery, its exact prose and source images are not available in an ordinary offline checkout. Checking original wording requires the cited public provider URL, whose future availability is not guaranteed. Research copies are disposable and are not repository payloads.",
+      "what_would_change_decision": "An affirmative distribution basis covering the exact material and planned public Git/export surface, or a separately authenticated distributable witness. A determination about an underlying act would not automatically clear later wrapper or volume contributions."
+    },
+    {
+      "identity": "Holy See Press Office, 25 April 2026, complete HTML bulletin B0334; Southern Albania appointment is internal item 00681-IT.01",
+      "source_ids": [
+        "albania-appointment-2026"
+      ],
+      "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2026/04/25/0334/00676.html",
+      "sha256": "4e7fa83b6474961af6447ed8def0ee39f93daec0ac84466e84f6b4002b17c9c3",
+      "byte_size": 16956,
+      "media_type": "text/html",
+      "retrieved_on": "2026-10-20",
+      "retrieved_extent": "complete delivery at the named public URL; not a claim that all contents were inspected",
+      "complete_delivery": true,
+      "checked_locus": "Nomina dell’Amministratore Apostolico dell’Albania Meridionale, item 00681-IT.01, within the bulletin delivered at URL ending 00676.html",
+      "decision": "defer",
+      "current_storage": "not-registered",
+      "proposed_storage": "project-authored-metadata-only; no exact source payload admission",
+      "distribution_surface": "public Git, static bundles and publication exports",
+      "rights_status": "unresolved-exact-artifact-redistribution",
+      "rights_evidence": "No affirmative repository redistribution basis was established for this exact delivery. Public reachability and official status do not establish permission. Retain only this project-authored source identity, exact hash/size, bounded factual findings and public citation; do not admit the raw PDF/HTML, bulk extraction, source page images or wrappers. The underlying 1939 legal act and its later scan/container are separate rights questions.",
+      "decision_reason": "Exact-artifact redistribution rights were not affirmatively established; measured size is not the reason for deferral.",
+      "measured_size_is_blocker": false,
+      "offline_substitute": "src/sources/inventories/eucharistic-research-reviews/eastern-census-dated-crosswalk-2026-10-20.json#acquisitions[4] records identity, exact delivery hash/size, public URL, inspection scope and a factual access limitation. The named-list and slot findings are retained in this same project-authored review; they are not a source transcription.",
+      "access_limitation": "The complete raw delivery, its exact prose and source images are not available in an ordinary offline checkout. Checking original wording requires the cited public provider URL, whose future availability is not guaranteed. Research copies are disposable and are not repository payloads.",
+      "what_would_change_decision": "An affirmative distribution basis covering the exact material and planned public Git/export surface, or a separately authenticated distributable witness. A determination about an underlying act would not automatically clear later wrapper or volume contributions."
+    }
+  ],
+  "institutional_findings": [
+    {
+      "id": "southern-albania-1939-territorial-foundation",
+      "source_id": "albania-inter-regiones-1939",
+      "source_url": "https://www.vatican.va/archive/aas/documents/AAS-32-1940-ocr.pdf",
+      "locus": "AAS 32 (1940), pp. 139–140",
+      "act_date": "1939-11-11",
+      "edition_year": 1940,
+      "finding": "Pius XII separates southern Dyrrachian territory within the civil provinces named Elbassan, Korea, Berat, Valona and Argyrocastro, creates the Apostolic Administration Albaniae Australis, subjects it to the Oriental Congregation and grants its administrator jurisdiction over existing/future Latin and Byzantine parishes/missions and all faithful of both rites within its bounds.",
+      "limit": "A historical territorial act with jurisdiction for both rites does not itself settle modern CCEO Church classification or personal ascription; the old boundaries and legal state are not silently made current. It identifies no celebrant book."
+    },
+    {
+      "id": "southern-albania-2026-appointment",
+      "source_id": "albania-appointment-2026",
+      "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2026/04/25/0334/00676.html",
+      "locus": "Bulletin B0334, internal item 00681-IT.01; whole delivery URL ends 00676.html",
+      "announcement_date": "2026-04-25",
+      "finding": "The Holy See announces Flavio Cavallini, O.F.M., as Apostolic Administrator of Southern Albania without episcopal character.",
+      "limit": "Evidence for the announced appointment, not a present named census, suppression decision, personal ascription determination or proof of unchanged incumbency on 20 October 2026. The biographical context does not supply those conclusions."
+    }
+  ],
+  "prior_reviewed_evidence": [
+    {
+      "source_id": "census-sico-2007",
+      "source_url": "https://www.vatican.va/roman_curia/congregations/orientchurch/sico/SICO_PDF/SICO%202007.pdf",
+      "locus": "Printed p. 187 / PDF p. 186, footnote 9",
+      "source_clock": "Issue 2007, printed 2008",
+      "finding": "The existing reviewed inventory records 22 names, including Albanian and preceding the Eritrean establishment.",
+      "inspection_provenance": "Inherited reviewed inventory evidence, not original-source reinspection in this recovery lane."
+    },
+    {
+      "source_id": "census-parenti-2022",
+      "source_url": "https://www.ppoomm.va/content/dam/ppoomm/documentazioni/pubblicazioni/pubblicazioni-pum/libri/the-mission-of-the-universal-church-an-oriental-perspective/The-Mission-of-the-Universal-Church-An-Oriental-PerspectiveUUP.pdf",
+      "locus": "Printed pp. 122–123 / PDF pp. 123–124; footnote 4 cites Annuario Pontificio 2022 pp. 1126–1129",
+      "source_clock": "2022 scholarly chapter",
+      "finding": "The existing reviewed inventory records 22 names, including Eritrean and omitting Albanian. The Annuario citation is mediated and was not independently inspected.",
+      "inspection_provenance": "Inherited reviewed inventory evidence, not original-source reinspection in this recovery lane."
+    },
+    {
+      "source_id": "census-vatican-news-2025",
+      "source_url": "https://www.vaticannews.va/en/church/news/2025-05/rome-hosts-jubilee-of-eastern-churches-may.html",
+      "locus": "The Eastern Catholic Churches section",
+      "source_clock": "2025 official news report",
+      "finding": "Reports 23 without a complete named enumeration.",
+      "inspection_provenance": "Inherited reviewed inventory evidence, not new whole-article inspection in this recovery lane."
+    }
+  ],
+  "currentness_and_remaining_gaps": [
+    "No current authoritative named Annuario census was obtained or inspected. The 2010 and 2016 lists retain their own dates, entity scopes and disagreements; the present canonical classification of the Albanian tradition remains unresolved.",
+    "The 2010 adjacent sheets' 22-versus-23 scope tension and the same author's July 2016 24-unit versus November 2016 23-name enumerations remain explicit. The 2022 scholarly list's Albanian omission is contrary dated evidence, not suppression proof.",
+    "No exact Elbasan Catholic celebrant book or approved operative use is established. Existing DGA pp. 244/374/496 archival targets and the mediated ACCO 441/28, 10 January 1930, Nr. X reference remain discovery leads with originals uninspected; this record adds no book evidence.",
+    "The exact complete source deliveries and derived image/text bodies have no affirmative redistribution basis in this record; all five payload decisions remain deferred. The retained project-authored factual notes are not literal source substitutes."
+  ],
+  "rights": "No affirmative repository redistribution basis was established for this exact delivery. Public reachability and official status do not establish permission. Retain only this project-authored source identity, exact hash/size, bounded factual findings and public citation; do not admit the raw PDF/HTML, bulk extraction, source page images or wrappers. The underlying 1939 legal act and its later scan/container are separate rights questions."
+}

@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "record_type": "missal-batch-central-verification",
+  "recorded_on": "2026-10-20",
+  "status": "pass",
+  "derivative_notice": "Public summary of exact executed gates. Private environment/cache locations omitted; original source-gate and example receipts are identified by digest.",
+  "source_gate": {
+    "command": [
+      "make",
+      "check-sources"
+    ],
+    "exit_status": 0,
+    "receipt_sha256": "53576fa3a84c98c23031ee8aa9adbc0b1f2f7187091f6920696fefb8fd564ea6",
+    "log_sha256": "c174d1937b488846dac7ea60b7859a77ee662722f0ee6c60a4c3ae032113bc6e",
+    "cache_validator_content_identity": [
+      {
+        "path": "tools/source-library",
+        "sha256": "6167f4618afa0223424bfeba3af31c98aca3209643c78ea082a4fef8dbe05ac8"
+      },
+      {
+        "path": "scripts/_tooling.py",
+        "sha256": "8fdb58d4cb4146a54fb1cc4f378e5174c84b3ae0e8e45955044f7dbb6c1ddf57"
+      }
+    ],
+    "exact_frozen_source_runtime_input_files_verified": 42170,
+    "read_only_proof_sha256": "73e53f2e853b507fc2122a505ba9d56d63d414c65728ab40baed9b118d149a4f",
+    "proof_pass": true,
+    "qualification": "Executed before the separately documented browser-acceptance helper correction. Source, projection, actual source validators and production runtime are held byte-identical; the test-helper transfer is recorded by browser acceptance."
+  },
+  "captured_examples": {
+    "command_count": 21,
+    "all_exit_statuses_zero": true,
+    "pre_refresh_matches": 12,
+    "stale_stdout_tuples_refreshed": 9,
+    "comparisons_after_refresh": 21,
+    "tracked_writes_during_execution": 0,
+    "guard_checks": 23,
+    "receipt_sha256": "57ca27be604d609f2cf5d1581b86c0730a47079afaa6293c521bbefb365e1224",
+    "final_tools": {
+      "act-history": {
+        "sha256": "d353fcef509d79657525767e613e733b8f44a40525235f13552e3ec5c77f75c4",
+        "byte_size": 255816
+      },
+      "missal-coverage-reconciliation": {
+        "sha256": "55082a21ce97241d5a1d0c3c33eb46d740cf9f62607c16f57a618829e4421fb9",
+        "byte_size": 28949
+      }
+    },
+    "outside_captured_output_bytes_unchanged": true
+  },
+  "deferred_structure_tests": {
+    "command": [
+      "python3",
+      "-B",
+      "-m",
+      "unittest",
+      "tools.tests.test_act_history_structure.ActHistoryStructureTests.test_the_tracked_projection_is_a_fresh_complete_derivation",
+      "tools.tests.test_act_history_structure.ActHistoryStructureTests.test_full_writer_repairs_drift_and_prunes_only_its_owned_directory",
+      "tools.tests.test_act_history_structure.ActHistoryStructureTests.test_writer_rejects_success_if_held_structure_parent_was_detached"
+    ],
+    "run": 3,
+    "passed": 3,
+    "exit_status": 0,
+    "log_sha256": "3653a9281062565edcc96161c23aecfa46ce57798e94bd4095b1ae36446a9858",
+    "disposition": "Supersedes the earlier stale-projection equality failure and source-mutation interruption. All three pass on the frozen final source/projection state."
+  },
+  "other_commands": [
+    {
+      "command": [
+        "tools/source-reader",
+        "structure",
+        "--strict",
+        "--check",
+        "--json"
+      ],
+      "exit_status": 0,
+      "result": {
+        "artifacts": 3372,
+        "current": "src/web/data/structure/sources",
+        "editions": 1187,
+        "files": 4460,
+        "passages": 5581,
+        "readable": 3272,
+        "status": "ok",
+        "v": 1,
+        "works": 1013
+      }
+    },
+    {
+      "command": [
+        "tools/release-bindings",
+        "status"
+      ],
+      "exit_status": 0,
+      "result": "exact: 0 stale binding(s)"
+    },
+    {
+      "command": [
+        "tmt",
+        "check"
+      ],
+      "exit_status": 0
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_status": 0
+    }
+  ],
+  "source_family": {
+    "accepted_families": 0,
+    "pending_review_units": 161,
+    "atomic_citation_coverage": false,
+    "only_two_refresh_scalars_changed": true
+  },
+  "limits": [
+    "No broad promised-deliverables rerun; the preceding checkpoint retains 32 inherited missing installed-PDF findings.",
+    "Whole all-rite historical/text/map/generated-history completion and physical production acceptance remain open."
+  ]
+}

@@ -384,7 +384,7 @@ EXAMPLES = {
         Example(
             "tools/act-history compare --comparison roman-canon-memento-wilson-r-and-cummiskey-1861",
             (
-                "{\"apparatus_caveat\":\"Wilson page 2 note 6 already reports pro quibus tibi offerimus vel in O (Ottobonianus 313). Its presence in Cummiskey and absence from Wilson's main text do not establish a nineteenth-century introduction. Printed editi... [+132392 chars]",
+                "{\"apparatus_caveat\":\"Wilson page 2 note 6 already reports pro quibus tibi offerimus vel in O (Ottobonianus 313). Its presence in Cummiskey and absence from Wilson's main text do not establish a nineteenth-century introduction. Printed editi... [+183999 chars]",
             ),
             note="Omitting --out prints the complete comparison, including its source members, diff and apparatus caveat.",
         ),
@@ -393,7 +393,7 @@ EXAMPLES = {
         Example(
             "tools/act-history catalogue --out .scratch/history-engine-expansion/example-catalogue.json",
             (
-                "wrote: 1690 catalogue records",
+                "wrote: 1954 catalogue records",
                 "  -> .scratch/history-engine-expansion/example-catalogue.json",
             ),
             note="Derived discovery records; no new normative station or ancestry is admitted.",
@@ -401,7 +401,7 @@ EXAMPLES = {
         Example(
             "tools/act-history catalogue --out .scratch/history-engine-expansion/example-catalogue.json --check",
             (
-                "current: 1690 catalogue records",
+                "current: 1954 catalogue records",
                 "  -> .scratch/history-engine-expansion/example-catalogue.json",
             ),
             note="Checks the preceding projection against its current sources without writing.",
@@ -411,14 +411,14 @@ EXAMPLES = {
         Example(
             "tools/act-history corpus --out .scratch/history-engine-expansion/example-corpus",
             (
-                "wrote 1280 text units on 22 isolated reconstruction branches and 7 native text version branches to .scratch/history-engine-expansion/example-corpus",
+                "wrote 1367 text units on 24 isolated reconstruction branches and 9 native text version branches to .scratch/history-engine-expansion/example-corpus",
             ),
             note="Writes isolated, bounded reconstructions and native text versions whose parents require checked evidence receipts.",
         ),
         Example(
             "tools/act-history corpus --source src/sources/inventories/catholic-eucharistic-history-v1.toml --out .scratch/history-engine-expansion/example-corpus-explicit",
             (
-                "wrote 1280 text units on 22 isolated reconstruction branches and 7 native text version branches to .scratch/history-engine-expansion/example-corpus-explicit",
+                "wrote 1367 text units on 24 isolated reconstruction branches and 9 native text version branches to .scratch/history-engine-expansion/example-corpus-explicit",
             ),
             note="Names the routing inventory explicitly and writes a separate disposable copy for reproducibility checks.",
         ),
@@ -427,16 +427,16 @@ EXAMPLES = {
         Example(
             "tools/act-history structure --out .scratch/history-engine-expansion/example-browser-data",
             (
-                "wrote: 542 files for 3 slices, 118 stations on 23 lines",
+                "wrote: 545 files for 3 slices, 118 stations on 23 lines",
                 "  -> .scratch/history-engine-expansion/example-browser-data/structure/act-history",
-                "  updated: 542",
+                "  updated: 545",
             ),
             note="writes the complete projection into a disposable data root before the read-only check below",
         ),
         Example(
             "tools/act-history structure --check --out .scratch/history-engine-expansion/example-browser-data",
             (
-                "current: 542 files for 3 slices, 118 stations on 23 lines",
+                "current: 545 files for 3 slices, 118 stations on 23 lines",
                 "  -> .scratch/history-engine-expansion/example-browser-data/structure/act-history",
             ),
             note=(

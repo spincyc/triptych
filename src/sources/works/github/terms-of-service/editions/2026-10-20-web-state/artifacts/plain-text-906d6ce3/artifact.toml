@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.github.terms-of-service.2026-10-20-web-state.plain-text-906d6ce3"
+edition_id = "edition.github.terms-of-service.2026-10-20-web-state"
+artifact_type = "policy-text-derivative"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "licensed"
+license = "CC0-1.0"
+rights_basis = "GitHub, GitHub Terms of Service. Section G.3 expressly CC0 for Agreement; G.1 separately reserves website HTML/CSS/JavaScript/design. Complete Agreement text omits interface navigation/design and remains readable offline. Source: https://docs.github.com/en/site-policy/github-terms/github-terms-of-service. Licence: https://creativecommons.org/publicdomain/zero/1.0/. No substantive policy wording was deliberately edited; conversion omits navigation, footer, HTML markup and interface artwork/code. Supplied source/licence notices are restored in this adjacent manifest and the dated THIRD_PARTY entry. No endorsement is implied. Retain creator, source, licence and conversion notice with redistribution. These third-party terms retain their own licences/dedications and are not newly relicensed by Triptych."
+source_url = "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service"
+retrieved = "2026-10-20"
+sha256 = "906d6ce38cced67153245093cb47382f8b3f18ad63c3f7bb5f5cc974663d6b76"
+byte_size = 43441
+path = "src/sources/works/github/terms-of-service/editions/2026-10-20-web-state/artifacts/plain-text-906d6ce3/github-agreement.txt"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.github.terms-of-service.2026-10-20-web-state.web-html-08761279"
+transformation = "Mechanical Pandoc HTML-to-plain-text conversion. Retain the complete Agreement from The GitHub Terms of Service heading through its ending; preceding interface navigation and markup/design/code are omitted."
+notes = "Direct independent rights review checked the source's express licence/dedication and this exact derivative hash. It is a searchable text derivative, not exact HTML or an independently revised policy. Source text and its legal effect remain the source institution's; this repository records a bounded reuse assessment."

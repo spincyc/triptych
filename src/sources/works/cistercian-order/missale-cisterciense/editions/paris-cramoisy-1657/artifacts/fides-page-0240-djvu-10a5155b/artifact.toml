@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0240-djvu-10a5155b"
+edition_id = "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657"
+artifact_type = "facsimile-djvu"
+media_type = "image/vnd.djvu"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Faithful mechanical source images or a bounded checked transcription of the original Latin Paris 1657 printing, whose United States publication term has expired. The FIDES edition 3755 holding page, re-read on 2026-10-20, marks the Krzeszów Benedictine abbey copy Domena publiczna (Public domain) and access Dla wszystkich bez ograniczeń. The historical wording and mechanical images are excluded from Triptych’s CC BY 4.0 grant. No modern translation, critical reconstruction, or newly composed prayer is supplied. Historical availability does not authorize contemporary liturgical use."
+retrieved = "2026-10-17"
+sha256 = "10a5155bff55a278aab5073bff7397c05fd24a73d31285ab091ae744c0e12334"
+byte_size = 798573
+path = "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0240-djvu-10a5155b/1657-page-0240.djvu"
+indexable = false
+page_count = 1
+source_url = "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0240.djvu"
+provenance = "Exact complete native FIDES page delivery. Its exact SHA-256 matches the documented acquisition receipt dated 2026-10-17. The prior complete 740-page local collection was recovered and this page rehashed on 2026-10-20; the retained payload reuses that identified historical delivery. The whole-download endpoint separately returned HTTP 404 on 2026-10-20, which does not negate the earlier acquired separate native page delivery. No OCR controls the reading."
+support_artifacts = [{ artifact_id = "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.djvu-shared-annotation-af707c77", embedded_reference = "shared_anno.iff" }]
+notes = "One complete source page, not a complete book. The constituent and the source areas excluded from it are fixed by the separate extent census."

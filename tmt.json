@@ -260,6 +260,17 @@
       "stage": "draft",
       "usage": "harvest {propers,plan,ask,record,aliases,harvest,promote} | harvest ask --corpus F --dry-run"
     },
+    "history-browser-acceptance": {
+      "idempotent": false,
+      "json": true,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Run scoped, source-pinned Chromium checks of the liturgical chronology reader.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "tools/history-browser-acceptance --url URL --catalogue PATH --out SCRATCH --plan JSON [--root DIR] [--site DIR]"
+    },
     "index-bible": {
       "idempotent": true,
       "json": true,

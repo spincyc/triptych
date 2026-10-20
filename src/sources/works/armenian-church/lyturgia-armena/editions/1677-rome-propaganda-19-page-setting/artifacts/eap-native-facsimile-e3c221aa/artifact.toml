@@ -1,0 +1,21 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.armenian-church.lyturgia-armena.1677-rome-propaganda-19-page-setting.eap-native-facsimile-e3c221aa"
+edition_id = "edition.armenian-church.lyturgia-armena.1677-rome-propaganda-19-page-setting"
+artifact_type = "facsimile-pdf-derivative"
+media_type = "application/pdf"
+storage = "tracked"
+rights_status = "licensed"
+license = "CC-BY-NC-4.0"
+rights_basis = "Exact item-specific CC BY-NC 4.0: https://eap.bl.uk/archive-file/EAP180-1-1-12/manifest, retrieved 2026-10-20, SHA-256 f5ef86cb4089a5a402b3251ebe13c88f7ec01dd5e9933faf591dc995ee4047de, declares https://creativecommons.org/licenses/by-nc/4.0/ and its required attribution statement for all 18 image canvases; all 159 region URLs match those image services. Noncommercial source-Git distribution, free PDF download and free research display are covered subject to attribution, source/licence links, change notice, no endorsement and the licence disclaimer. Original held by FSL Yerevan A/711; digitised by Fundamental Scientific Library of the Academy of Sciences; delivery by British Library EAP; digitisation funded by EAP supported by Arcadia. Retain ATTRIBUTION.txt and the PDF notice page. These images and facsimile derivatives are excluded from Triptych's CC BY 4.0 offer. No commercial reuse permission or exclusive modern copyright assignment is claimed. The underlying 1677 historical text has a separate United States public-domain basis, which does not displace the exact image-delivery licence. The item-specific express licence governs over generic BL/EAP wording that permits more specific licences; public reachability and silent item User Conditions are not the basis."
+source_url = "https://eap.bl.uk/archive-file/EAP180-1-1-12/manifest"
+retrieved = "2026-10-20"
+sha256 = "e3c221aa50bd46721be3cfe337c8f2b183a8ae4003bc78dd410019e1daa8fa12"
+byte_size = 37739568
+path = "src/sources/works/armenian-church/lyturgia-armena/editions/1677-rome-propaganda-19-page-setting/artifacts/eap-native-facsimile-e3c221aa/eap180-1-1-12-native-facsimile.pdf"
+indexable = false
+page_count = 19
+derived_from = "artifact.armenian-church.lyturgia-armena.1677-rome-propaganda-19-page-setting.eap-native-regions-ccc95907"
+transformation = "Extract the exact parent package and run its REBUILD.py. Place each of the 159 original RGB JPEG byte streams unchanged in a PDF /DCTDecode image object, at its original dimensions and exhaustive native x/y coordinates within the matching frame canvas; page dimensions in points equal source pixel dimensions. No re-encoding, resampling, cropping, enhancement, restoration, source overlay or textual reconstruction. Source frames 1–18 remain PDF pages 1–18. Append a clearly marked modern attribution/licence/change-notice page as PDF page 19; it is not a historical source page. All 159 JPEG streams must be independently recovered byte-identically with pdfimages and all page dimensions/coordinates checked."
+provenance = "Mechanical noncommercial research facsimile derived from the exact retained source-tile ZIP, whose member receipts bind every image byte, source URL and coordinate. Original JP2/TIFF masters were not acquired."
+notes = "19 artifact pages = 18 offered source frames plus one modern attribution page. Source pages are photographed openings, not one-to-one printed pages. The liturgy closes at printed 19; corrections at 21–30 include a new heading at 25. Frame 13 left is an unnumbered blank, positionally [20]. Damaged page numerals 6 and 13 are mapped positionally. No exterior rear-cover frame is offered. This distinct 1677 setting does not replace the Google 20-page witness and establishes no Armenian wording or historical parentage."

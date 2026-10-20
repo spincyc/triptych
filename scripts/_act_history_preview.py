@@ -15,6 +15,7 @@ import re
 import shutil
 import subprocess
 import textwrap
+import unicodedata
 import xml.etree.ElementTree as ET
 from urllib.parse import quote, urlsplit, urlunsplit
 
@@ -27,7 +28,8 @@ NS = "http://www.w3.org/2000/svg"
 ET.register_namespace("", NS)
 ATTR = re.compile(r'(\w+)=("(?:[^"\\]|\\.)*")')
 ROW = re.compile(r'^  ("(?:[^"\\]|\\.)*")(?: -- ("(?:[^"\\]|\\.)*"))? \[(.*)\];$')
-RTL_RUN = re.compile(r'[\u0590-\u08ff][\u0590-\u08ff\s0-9–—,:;./-]*')
+# Semicolon-separated phrases belong to the surrounding English source list.
+RTL_RUN = re.compile(r'[\u0590-\u08ff][\u0590-\u08ff\s0-9–—,:./-]*')
 BROWSER_GEOMETRY = r"""
 const fs = require('node:fs');
 const vm = require('node:vm');
@@ -136,10 +138,28 @@ def text(parent, x, y, value, size=27, weight="normal", anchor="start",
          family="DejaVu Sans"):
     # Isolate a source-language title from adjacent English date punctuation.
     # Numeric ranges remain left-to-right inside an otherwise RTL quotation.
+    url_spans = [(match.start(), match.end()) for match in re.finditer(r'https?://\S+', value)]
+
     def isolate(match):
         run = match.group(0)
         body = run.rstrip(" \t\n–—,:;./-")
         tail = run[len(body):]
+        # Source titles sometimes join a word and a Western year. Add only a
+        # display gap; keep the original source bytes and date punctuation.
+        def rtl_letter(character):
+            return ('\u0590' <= character <= '\u08ff'
+                    and unicodedata.category(character)[0] in 'LM')
+        spaced = []
+        for index, character in enumerate(body):
+            if index:
+                previous = body[index - 1]
+                joined_year = ((rtl_letter(previous) and character in '0123456789')
+                               or (previous in '0123456789' and rtl_letter(character)))
+                in_url = any(start <= match.start() + index < end for start, end in url_spans)
+                if joined_year and not in_url:
+                    spaced.append('\u202f')
+            spaced.append(character)
+        body = ''.join(spaced)
         body = re.sub(r'[0-9]+(?:[–—/-][0-9]+)*', lambda number: '\u2066' + number.group(0) + '\u2069', body)
         return '\u2067' + body + '\u2069' + tail
     display = RTL_RUN.sub(isolate, value)
@@ -1077,7 +1097,8 @@ def _stage_map_pages(history, models, slice_id):
         element(marker, "path", d="M 0 0 L 12 6 L 0 12 Z", fill="#3a5266")
         clip_group = element(page, "g", clip_path="url(#stage-band-" + key + ")")
         chart = element(clip_group, "g", transform=f"translate(0,{top - place['top']:g})")
-        edge_key_labels = []
+        edge_key_labels, port_groups, arrow_paths = [], [], []
+        drawn_edges = 0
         for edge in model["edges"]:
             # Each transition is drawn on its target sheet, or its dated source
             # sheet if the target itself cannot be positioned.
@@ -1086,20 +1107,32 @@ def _stage_map_pages(history, models, slice_id):
             if owner not in member_ids:
                 continue
             style = edge["style"]
+            if drawn_edges:
+                # A white casing marks an overpass instead of a false junction.
+                # The browser's route and its endpoints remain unchanged.
+                element(chart, "path", d=edge["path"], fill="none", stroke="white",
+                        stroke_width=style["width"] + 6, data_transition_casing=edge["id"])
             path = element(chart, "path", d=edge["path"], fill="none", stroke="#3a5266",
-                           stroke_width=style["width"], marker_end="url(#stage-arrow-" + key + ")",
+                           stroke_width=style["width"],
                            data_transition=edge["id"], data_from_stage=edge["from"], data_to_stage=edge["to"],
                            data_evidence_level=edge["transition"]["evidence_level"],
                            data_transition_kind=edge["transition"]["kind"])
             if style["dash"]:
                 path.set("stroke-dasharray", style["dash"])
+            arrow_paths.append((edge["id"], edge["path"]))
+            drawn_edges += 1
             if edge.get("keyLabel"):
                 edge_key_labels.append((edge["keyLabel"], edge["key"]))
             for endpoint, outside, point in (("from", "fromOutside", "fromPoint"), ("to", "toOutside", "toPoint")):
                 if not edge[outside] or not edge.get(point):
                     continue
                 at, stage_id = edge[point], edge[endpoint]
-                element(chart, "circle", cx=at["x"], cy=at["y"], r=4, fill="white", stroke="#3a5266", stroke_width=1)
+                # Paint all ports after all routes, with clearance from unrelated
+                # lines. Otherwise a later edge can appear to join this port.
+                port = ET.Element("{" + NS + "}g", {"data-off-sheet-stage": stage_id})
+                port_groups.append(port)
+                element(port, "circle", cx=at["x"], cy=at["y"], r=8, fill="white")
+                element(port, "circle", cx=at["x"], cy=at["y"], r=4, fill="white", stroke="#3a5266", stroke_width=1)
                 source_stage = stages[stage_id]
                 bounds = ("unpositioned" if source_stage.get("start_year") is None else
                           str(source_stage["start_year"]) if source_stage["start_year"] == source_stage["end_year"] else
@@ -1124,8 +1157,14 @@ def _stage_map_pages(history, models, slice_id):
                         else:
                             anchor, label_x = "start", max(label_x, key_at["x"] + 12)
                 for line_index, line in enumerate(lines):
-                    text(chart, label_x, at["y"] - 24 - (len(lines) - line_index - 1) * 15,
+                    text(port, label_x, at["y"] - 24 - (len(lines) - line_index - 1) * 15,
                          line, 11, "normal", anchor)
+        # A later route's casing must not erase an incoming arrow on a shared stem.
+        for transition_id, route in arrow_paths:
+            element(chart, "path", d=route, fill="none", stroke="none",
+                    marker_end="url(#stage-arrow-" + key + ")", data_transition_arrow=transition_id)
+        for port in port_groups:
+            chart.append(port)
         for label, transition_key in edge_key_labels:
             element(chart, "rect", x=label["x"] - 43, y=label["y"] - 13,
                     width=46, height=16, fill="white")
@@ -1144,7 +1183,13 @@ def _stage_map_pages(history, models, slice_id):
             if stage["status"] == "provisional":
                 mark.set("stroke-dasharray", "2 2")
             key_on_left = node["x"] > 1500
-            text(group, node["x"] + (-14 if key_on_left else 14), node["y"] - 10,
+            key_x, key_y = node["x"] + (-14 if key_on_left else 14), node["y"] - 10
+            if drawn_edges:
+                key_width = len(node["key"]) * 10 + 6
+                element(group, "rect", x=key_x - key_width + 3 if key_on_left else key_x - 3,
+                        y=key_y - 15, width=key_width, height=19, fill="white",
+                        data_stage_key_background=node["id"])
+            text(group, key_x, key_y,
                  node["key"], 14, "bold", "end" if key_on_left else "start")
             element(group, "rect", x=node["labelX"] - 5, y=node["labelY"] - 17,
                     width=node["cardWidth"] + 10, height=node["cardHeight"], fill="white", fill_opacity=".96")
@@ -1168,7 +1213,10 @@ def _stage_map_pages(history, models, slice_id):
         for index, line in enumerate(continuation_lines):
             text(page, 42, legend_y - 42 - extra_footer + index * 18, line, 13, "bold")
         element(page, "line", x1=42, y1=legend_y - 20, x2=1558, y2=legend_y - 20, stroke="#9ca6af")
-        text(page, 42, legend_y, "● Documented state     ○ Provisional lead     |—●—| Date bounds = uncertainty, not duration of use", 15)
+        bounds_key = ("Date bounds = uncertainty; dot = interval midpoint, not duration of use"
+                      if any(node["xStart"] != node["xEnd"] for node in members) else
+                      "Date bounds = uncertainty, not duration of use")
+        text(page, 42, legend_y, "● Documented state     ○ Provisional lead     |—●—| " + bounds_key, 15)
         text(page, 42, legend_y + 26,
              "Transition evidence: solid thick = text collated; solid thin = primary description; dashed = scholarly; dotted = bibliographic or provisional.", 14)
         text(page, 42, legend_y + 52,
@@ -1208,9 +1256,10 @@ def _stage_map_pages(history, models, slice_id):
     for tradition in indexed_traditions:
         members = [row for row in history.get("stages", []) if row["tradition_id"] == tradition["id"]]
         sheets = list(dict.fromkeys(key for row in members for key in stage_sheets.get(row["id"], [])))
+        provisional = sum(row['status'] == 'provisional' for row in members)
         blocks = [tradition["label"], "Sheets: " + (", ".join(sheets) or "No recorded stage"),
                   f"States: {sum(row['status'] == 'documented' for row in members)} documented; "
-                  f"{sum(row['status'] == 'provisional' for row in members)} provisional leads."]
+                  f"{provisional} provisional {'lead' if provisional == 1 else 'leads'}."]
         height_needed = sum(len(textwrap.wrap(value, 90)) * 17 for value in blocks) + 24
         if index_page is None or y + height_needed > 1020:
             index_page = _page("Traditions and dated sheets", f"I{len(index_pages) + 1:03d}", slice_id,
@@ -1312,6 +1361,18 @@ def _render_chronology(history, geometry, spine, catalogue, out_dir, parts, plat
     return audit
 
 
+def _evidence_lines(value, width=94):
+    """Keep a locator with its label only when ordinary wrapping separates it."""
+    value = " ".join(str(value).split())
+    rows = textwrap.wrap(value, width, break_on_hyphens=False) or [""]
+    labels = ("Chronology sheet:", "§", "§§", "p.", "pp.", " CD")
+    if any(row.endswith(labels) for row in rows[:-1]):
+        value = re.sub(r"(?:Chronology sheet:|§{1,2}|\bpp?\.|\bCD)\s+\S+",
+                       lambda match: match.group(0).replace(" ", "\u00a0"), value)
+        rows = textwrap.wrap(value, width, break_on_hyphens=False) or [""]
+    return [row.replace("\u00a0", " ") for row in rows]
+
+
 def _stage_evidence(history, parts, slice_id, stage_sheets, catalogue_url):
     """Print full recorded claims, with shared citations rather than raw JSON."""
     keys = _stage_keys(history)
@@ -1321,7 +1382,7 @@ def _stage_evidence(history, parts, slice_id, stage_sheets, catalogue_url):
     pages, page, y = [], None, 120
 
     def lines(value, width=94):
-        return textwrap.wrap(" ".join(str(value).split()), width, break_on_hyphens=False) or [""]
+        return _evidence_lines(value, width)
 
     def new_page():
         nonlocal page, y
@@ -1333,18 +1394,23 @@ def _stage_evidence(history, parts, slice_id, stage_sheets, catalogue_url):
     def record(heading, blocks):
         nonlocal y
         heading_rows = lines(heading, 83)
-        rows = [(value, True) for value in heading_rows]
-        rows += [(line, False) for value in blocks for line in lines(value)]
+        rows = [(value, True, None) for value in heading_rows]
+        for value in blocks:
+            citation = re.match(r"Evidence C\d+", value)
+            rows += [(line, False, citation.group(0) if citation else None) for line in lines(value)]
         if page is None or (y > 120 and y + len(rows) * 16 + 20 > 1025):
             new_page()
         # Keep a terminal record identifier with at least two preceding body lines.
         has_record_id = blocks and blocks[-1].startswith(("Tradition record: ", "Stage record: ",
                                                          "Transition record: ", "Source record: "))
         tail_size = min(len(rows) - len(heading_rows), len(lines(blocks[-1])) + 2) if has_record_id else 0
-        for index, (line, bold) in enumerate(rows):
+        for index, (line, bold, citation) in enumerate(rows):
             if y > 1020 or (index == len(rows) - tail_size and y + (tail_size - 1) * 16 > 1020):
                 new_page()
-                for continuation in lines(heading + " — continued", 83):
+                continued = heading + " — continued"
+                if citation and not line.startswith(citation + ":"):
+                    continued += " · " + citation
+                for continuation in lines(continued, 83):
                     text(page, 45, y, continuation, 12, "bold")
                     y += 16
                 y += 8
@@ -1388,8 +1454,9 @@ def _stage_evidence(history, parts, slice_id, stage_sheets, catalogue_url):
     ])
     for tradition in history.get("traditions", []):
         blocks = field(tradition, "scope") + field(tradition, "coverage_note", "Coverage and limits")
-        blocks += ["Stages: " + ", ".join(keys["stages"][row["id"]] for row in history.get("stages", [])
-                                         if row["tradition_id"] == tradition["id"])]
+        stage_list = ", ".join(keys["stages"][row["id"]] for row in history.get("stages", [])
+                               if row["tradition_id"] == tradition["id"])
+        blocks += ["Stages: " + (stage_list or "none indexed")]
         blocks.append("Tradition record: " + tradition["id"])
         record(tradition["label"], blocks)
     for row in history.get("stages", []):

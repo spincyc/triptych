@@ -1855,6 +1855,20 @@ binding dependency is pinned in the stage projection. Neither binding type
 silently resolves a dossier gap or claims that complementary service books
 have been transcribed.
 
+A stage may instead declare ordered, distinct `text_bindings` native-book IDs
+for several independently checked constituents. It must choose that array or
+the compatible single `text_binding`, never both. Each member independently
+passes the same exact stage, catalogue witness, edition, component, extent,
+rights and dependency checks. The array admits only complete declared
+constituents and requires `text_coverage = "partial"`; adding their contents
+does not establish a whole-book denominator. A coordinated complete whole-book
+binding continues to use the single field. Missing, stale or duplicate bindings
+are refused, and no member supplies another member's text or historical ancestry.
+Distinct bindings may have overlapping reviewed extents or stable unit IDs;
+unit identity is local to each binding, so a shared prayer does not invalidate
+either independently reviewed selection. Each disclosure retains its own
+receipt. Such overlap is not a union of contents or a whole-book denominator.
+
 A native witness may additionally name `segment_id` alongside its exact
 `artifact_id`. The schema-2 segment belongs to the witness edition, pins the
 container artifact and hash, carries inspected or verified evidence, and
@@ -1876,9 +1890,11 @@ controllers establish neither historical ancestry nor text inheritance.
 
 The complete `structure` projection emits one
 `structure/act-history/native-texts/<slug>.json` per accepted stage binding.
-The catalogue advertises each stage's exact `text_projection_path` and binding
-hash; the reader
-fetches that constituent only when its source-text disclosure is opened. Both
+The catalogue preserves the exact legacy `text_projection_path` and binding
+hash for a single binding. An array projects ordered `text_projections`, each
+naming its binding, exact path and hash, and source-owned title; the public
+field contract is recorded in `guidance/web-data.md`. The reader fetches each
+constituent only when its own source-text disclosure is opened. Both
 chart and list selections use the same evidence panel. The payload reuses the
 publication-checked adapter and exposes literal units in source order, language
 and direction, exact locus and edition, rights basis, normalization, complete
@@ -1904,8 +1920,13 @@ have a verified complete declared extent. Every edge needs a schema-1
 `eucharistic-text-parentage` receipt with exact parent/child binding hashes,
 inspected evidence and scope, reviewer and review date, established historical
 parentage, explicit Git-parent authorization, no text inheritance, and kind
-`revision` or `recension-branch`. A chronological sequence, shared prayer,
-reception claim or stage edge cannot substitute for that receipt. Cycles and
+`revision`, `recension-branch` or `republication`. Republication requires
+inspected evidence that the exact child edition republishes the complete
+declared constituent from the exact parent edition; matching wording or date
+order is insufficient. An edition-level republication establishes neither a
+substantive ritual revision nor a particular donor copy. A chronological
+sequence, shared prayer, reception claim or stage edge cannot substitute for
+that receipt. Cycles and
 impossible same-event date sequences are refused; different event roles retain
 their distinct meanings.
 

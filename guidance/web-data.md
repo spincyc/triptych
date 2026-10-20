@@ -585,6 +585,21 @@ Check the directory listing against this block rather than the reverse: each
 name under `src/web/data/structure/` has exactly one writer, and a directory
 with no line here is a writer nobody recorded.
 
+The act-history catalogue keeps a stage's legacy single `text_binding`,
+`text_projection_path` and `text_binding_sha256` unchanged. A stage with authored
+`text_bindings` retains that ordered ID array and adds equally ordered
+`text_projections`, whose entries contain exactly `text_binding`,
+`text_projection_path`, `text_binding_sha256` and the native binding's `title`.
+Each path is `native-texts/<binding-slug>.json`; the catalogue's `native_texts`
+index names each distinct payload once even when several stages use it.
+No literal text enters the stage catalogue. The reader opens a separate lazy
+disclosure for every descriptor and checks its own ID, hash, title, stage
+membership, extent and literal-publication basis before displaying wording.
+Ambiguous, duplicate, missing or mismatched descriptors fail visibly without
+fetching an unowned route. Adding constituents neither preloads them nor joins
+them into a complete book. `guidance/act-histories.md` owns their evidence and
+partial-coverage requirements.
+
 The fragments are the exception, and deliberately so. They live beside the
 edition that owns them, at `src/sources/bibles/<edition>/chapters/`, because
 that is where `index-bible` checks them for staleness and orphans. Copying them

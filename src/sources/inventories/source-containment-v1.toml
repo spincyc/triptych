@@ -3735,3 +3735,22 @@ reason = "One 30,439-byte JPEG of provider page PP4, 575 by 676 pixels, shows a 
 id = "artifact.lviv-orthodox-eparchy.leiturgiarion.1646-lviv-mihail-sliozka.google-jr1n-pp7-jpeg-9d467f01"
 manifest_sha256 = "177e6244b41acffa051dcda192c6eecfda441dd47db1b7f95085e5db1c787a13"
 reason = "One 39,880-byte JPEG of provider page PP7, 575 by 689 pixels, shows a single blank preliminary leaf, with no separately identified work, historical title or publication-date evidence. The unchanged artifact notes explicitly deny whole-volume acquisition; that denial triggers the container-shape pattern but does not describe additional works inside this one-page image. No conclusion about the unacquired book's remaining constituents is made."
+
+# Bounded Cistercian Canon source acquisition reviewed 2026-10-20.
+
+[[not_containers]]
+id = "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-whole-pdf-1032ee07"
+manifest_sha256 = "fb0c138857940a250deb72fe65cbb9a078aba82bb802e83e78c996b094377b0b"
+reason = "This whole-volume scan is the identified 1606 Cistercian missal alone; its native prayers and propers are divisions of that one registered work, not separately registered works held in an anthology. Full acquisition is measured; only the bounded strict Canon derivative is retained, and no whole-book collation is claimed."
+
+# Cistercian1657 bounded package and indirect directory reviewed 2026-10-20.
+
+[[not_containers]]
+id = "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-page-images-6294ab9f"
+manifest_sha256 = "7e2ee97e0fd1c594fa274f9ec1b11d8f6d6d5383f5f619c48605ec0bbe9d18f5"
+reason = "This project-created ZIP contains eighteen complete page-image derivatives and their sequence metadata from the one registered Paris 1657 Cistercian missal: five prefatory proper-form pages, the Canon title and Crucifixion, and eleven main Canon pages. Its nineteen members contain no separately identified work. The quoted whole-volume phrase denies whole-volume coverage; the package preserves a bounded discontiguous selection and explicitly excludes non-Canon areas from transcription. It does not establish physical-volume or complete-book text coverage."
+
+[[not_containers]]
+id = "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-indirect-index-08cff013"
+manifest_sha256 = "d2b5e23234e52db2d10091fad1ccc006c373d0fa665702b8dc014b5f2c4ca88a"
+reason = "The exact 813-byte indirect DjVu directory references the separately delivered pages of the one identified Paris 1657 Cistercian missal. It contains directory metadata rather than embedded page imagery or a whole-volume facsimile; the accepted decoder report identifies 740 referenced positions with isBundled=0. The whole-volume phrase explicitly denies a whole-volume facsimile. This index is neither an anthology nor a second textual work, and no physical-volume or complete-book textual coverage is inferred."

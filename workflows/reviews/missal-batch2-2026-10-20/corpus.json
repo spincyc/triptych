@@ -1,0 +1,264 @@
+{
+  "schema_version": 1,
+  "record_type": "missal-batch-canonical-git-review",
+  "recorded_on": "2026-10-20",
+  "status": "pass",
+  "derivative_notice": "Public summary of independent canonical-object/source review. Operational file locations omitted; the exact original receipt is identified by digest.",
+  "original_receipt_sha256": "00eb71b834e85e2707566fc62610291161f29256d6db232828f78d89a331abf6",
+  "repositories_identical": true,
+  "accepted_code_sha256": {
+    "scripts/_eucharistic_stages.py": "2d7d31f31b319c0d9320f3b686fff4fab9b1dde4129592b475290fb2b741eab7",
+    "scripts/_eucharistic_texts.py": "eb8c24e995b228f8fdda3c84a512ec90b1812eadef672678772870beb863ecc9",
+    "scripts/_eucharistic_history.py": "0b0d74a48979ed4034b4caf91f459c339615f8a2c2d7fec85983a0614b55954a",
+    "src/web/browser/history/history.js": "4701008094602752d120f6db99452bae825c9560df96f9d8fcaf71da88d2bf59"
+  },
+  "unique_current_input_files": 2119,
+  "current_input_manifest_sha256": "e6e187f510705235be5a009bdfdfaede3ae4e16db624cc59b450aa3feca33f0b",
+  "repos": [
+    {
+      "fsck_full_strict": "pass",
+      "objects": 6130,
+      "reconstructions": 24,
+      "reconstruction_units": 1367,
+      "native_units": 163,
+      "parent_edges": [
+        [
+          "mozarabic-1500-benedictio-panis",
+          "mozarabic-1755-benedictio-panis"
+        ]
+      ],
+      "native_roots": 8,
+      "checked_input_records": 2601,
+      "checked_tool_records": 273,
+      "actual_reachable_commits": 33,
+      "ref_count": 33,
+      "refs": {
+        "refs/heads/reconstruction/brightman-1896-greek-basil": "0abf0b71259e86afe7545354ba8aa522e5aaf146",
+        "refs/heads/reconstruction/brightman-1896-greek-chrysostom": "31d934a7ff944dabdc09cfcdc7ce85adc87243c9",
+        "refs/heads/reconstruction/brightman-1896-greek-james": "03acabaccb0d6cfced1bf9212cd44f24884a1b65",
+        "refs/heads/reconstruction/carmelite-1574-october-calendar": "fd77bab0300d3d9177c8b66ffd8e27f8ca65ca0d",
+        "refs/heads/reconstruction/carmelite-1621-october-calendar": "cf70966c13dc957f03b422482621d44458bc5324",
+        "refs/heads/reconstruction/cistercian-1606-canon": "9f524661b3a8a6e2d76a2de75143596da007aa93",
+        "refs/heads/reconstruction/cistercian-1606-latin-ordinary": "7c4f771e48c248ec3cf0f1ac60e6dcdcceaf0da6",
+        "refs/heads/reconstruction/cistercian-1606-offertory": "df0a145e9dda9d2b2424fbd14768c3b2df80894f",
+        "refs/heads/reconstruction/cistercian-1657-canon": "5813e268ba2893ef2a6f502ccc52a413f1305321",
+        "refs/heads/reconstruction/cistercian-1657-latin-ordinary": "c2ce58c05ff0b6cc3f00e84b6dafee078d2ae1b2",
+        "refs/heads/reconstruction/cistercian-1657-offertory": "5c843dca3d9574e16e52826c2a27c342046c768a",
+        "refs/heads/reconstruction/cummiskey-1861-latin-ordinary": "aabdb82e3b2f6e53ff862673fe893b10532e630d",
+        "refs/heads/reconstruction/dominican-1550-suscepimus": "9f67bea922a4d799b60d3c5a734e5d64bfc37bed",
+        "refs/heads/reconstruction/dominican-1604-suscepimus": "7549c63370d6376b90197112801d9bd4a945f32c",
+        "refs/heads/reconstruction/mozarabic-1500-benedictio-panis": "282d91371064ef616ad0f3f07fb19d3a4660eb3f",
+        "refs/heads/reconstruction/mozarabic-1755-benedictio-panis": "c298afa88be6b3f4bc24b5dfbb27a168d88fbe68",
+        "refs/heads/reconstruction/mozarabic-1804-benedictio-panis": "6939113f533e4920dea331a2d823f89c96311394",
+        "refs/heads/reconstruction/roman-1570-canon-missae": "092781f614d1fa5e81978d9102efaa9ca4a55dec",
+        "refs/heads/reconstruction/roman-1962-proper-projection": "f53382f781cf16946f912a7732144543c318288e",
+        "refs/heads/reconstruction/tuki-1736-arabic-creed": "ea49f6ec3b75e72249ba4b3c69bba6c599800bb0",
+        "refs/heads/reconstruction/warner-1915-stowe-mass-prayers": "fee92745438929d8b8e1d9dddeb4cacc10abe3ef",
+        "refs/heads/reconstruction/wilson-1894-gelasian-canon-prayers": "0c2f6125b476bb029b7c7ebb00c1273491460a61",
+        "refs/heads/reconstruction/wilson-1915-gregorian-canon-memento": "96713525d995ff144765ef2f4244ea3ff88a39af",
+        "refs/heads/reconstruction/wilson-1915-gregorian-canon-prayers": "fad70ef33eefcee6e66b4a67cb4872158f880768",
+        "refs/heads/version/cistercian-1606-canon": "604168581d9bd4e086ab0421755f184addc5fc98",
+        "refs/heads/version/cistercian-1606-offertory": "ba719e110ea4c1e302a38a98679bf946d2ab820d",
+        "refs/heads/version/cistercian-1657-canon": "888e2e637c11f9c4255dc083b554cd3b30e63738",
+        "refs/heads/version/cistercian-1657-offertory": "b34daab970f581a4bc237e96beb90224a5e72b19",
+        "refs/heads/version/mozarabic-1500-benedictio-panis": "9abe1664eab546f8e8b6d6ec42cc55d406507eea",
+        "refs/heads/version/mozarabic-1755-benedictio-panis": "8f99435a532d36773bce87da0dfd292b12979fd7",
+        "refs/heads/version/mozarabic-1804-benedictio-panis": "120c00d5f27b05e30a103418dcd5e067115d850d",
+        "refs/heads/version/roman-1570-canon-missae": "a9653a0c3d8295a74601869fc55fb0ab36d85cc8",
+        "refs/heads/version/tuki-1736-arabic-creed": "bb5d73cede0c6a5340bc794847a25f0aff6094d1"
+      },
+      "trees": {
+        "refs/heads/reconstruction/brightman-1896-greek-basil": "aa7fafffe9cd1fa9beb7487afdb5ea2cbddeed20",
+        "refs/heads/reconstruction/brightman-1896-greek-chrysostom": "88b52e3ab6ef8993de223ef67e80bbd00cad62b8",
+        "refs/heads/reconstruction/brightman-1896-greek-james": "4757b521806794930b262c934256a26f380f20dd",
+        "refs/heads/reconstruction/carmelite-1574-october-calendar": "9925f9f0bde64774a4d943068ba0c00d9a9905e9",
+        "refs/heads/reconstruction/carmelite-1621-october-calendar": "8cac689f3cea2a75a1ab7f409489a6b6b65ee3f5",
+        "refs/heads/reconstruction/cistercian-1606-canon": "95c9540bfe5d479c082ee8b572d8fc81e73646fc",
+        "refs/heads/reconstruction/cistercian-1606-latin-ordinary": "1cc915ebff77b7a5f79ae315c9fdd3bf3a86c8af",
+        "refs/heads/reconstruction/cistercian-1606-offertory": "2be65c63e1755019e1f136b2066423605cbc5de7",
+        "refs/heads/reconstruction/cistercian-1657-canon": "7eff2308cbc7ce9e093a5d1ef03564d24a593cf3",
+        "refs/heads/reconstruction/cistercian-1657-latin-ordinary": "0884cebe4e490808008b51aec138bc61f451a34b",
+        "refs/heads/reconstruction/cistercian-1657-offertory": "356d5cb58195a18f5bc91e206f087b0192cbc5d3",
+        "refs/heads/reconstruction/cummiskey-1861-latin-ordinary": "b71f86ea18031fc6029b1dca455cc8ca792d63ff",
+        "refs/heads/reconstruction/dominican-1550-suscepimus": "e55f29c9ac3797da55b1f48e2947fbcfdd303069",
+        "refs/heads/reconstruction/dominican-1604-suscepimus": "9097232a478e5f83d655040d3ccb2e80bd7efbbe",
+        "refs/heads/reconstruction/mozarabic-1500-benedictio-panis": "881c6e3ba557ff00180fb5f9194b50914d62d0e6",
+        "refs/heads/reconstruction/mozarabic-1755-benedictio-panis": "eb1b51659cf538a0d8c56b68d67a0af337d98af9",
+        "refs/heads/reconstruction/mozarabic-1804-benedictio-panis": "c19c692d29251531ed7aff979d4322d0a3c93a8e",
+        "refs/heads/reconstruction/roman-1570-canon-missae": "7c5159877154382b245dfaa6655beab141bedb17",
+        "refs/heads/reconstruction/roman-1962-proper-projection": "b5c2158dfe51b03410dc617c5f1870a35dfed97a",
+        "refs/heads/reconstruction/tuki-1736-arabic-creed": "eda5a15eb4defea7232cff534e1021e769d86b4b",
+        "refs/heads/reconstruction/warner-1915-stowe-mass-prayers": "95d22257fefe6723fe0adfc76a5971ef1bb64a30",
+        "refs/heads/reconstruction/wilson-1894-gelasian-canon-prayers": "071de524f9207100679481b97a8bd44aab3dd3bd",
+        "refs/heads/reconstruction/wilson-1915-gregorian-canon-memento": "9d38231c2b90385b0a61ccd48887125119369f4f",
+        "refs/heads/reconstruction/wilson-1915-gregorian-canon-prayers": "3dc8173b84407db5eb928a9a8fc97b974d4456b7",
+        "refs/heads/version/cistercian-1606-canon": "cd5b4b11051daf126f0f54cf6add31d6ee71a9fe",
+        "refs/heads/version/cistercian-1606-offertory": "1075fd4dd22715f6f0b53df7a08daf67b6304c7d",
+        "refs/heads/version/cistercian-1657-canon": "620799a4b62442d184c5143c1ff689545d3414eb",
+        "refs/heads/version/cistercian-1657-offertory": "8d57d98cdd98010b0754c44dd0ad6cacca9f4ddb",
+        "refs/heads/version/mozarabic-1500-benedictio-panis": "c4cedf5837a83957678a224719ac14973275ffe5",
+        "refs/heads/version/mozarabic-1755-benedictio-panis": "110353ed070a471fd5a91421d5d8c75cf36c744e",
+        "refs/heads/version/mozarabic-1804-benedictio-panis": "8782f950a3e94e29a6dfa1c41cf4cde84e1a1fd1",
+        "refs/heads/version/roman-1570-canon-missae": "0eba6d963ea1d844da1ce444c00fc652c921b90b",
+        "refs/heads/version/tuki-1736-arabic-creed": "138bda34add4f90f5f3419d0a50485ca04ac01d0"
+      },
+      "object_manifest_sha256": "61ae649e56677fdc5149c1405dcb2b767e0c0cc6c0d6c2390d53460b5ce15285"
+    },
+    {
+      "fsck_full_strict": "pass",
+      "objects": 6130,
+      "reconstructions": 24,
+      "reconstruction_units": 1367,
+      "native_units": 163,
+      "parent_edges": [
+        [
+          "mozarabic-1500-benedictio-panis",
+          "mozarabic-1755-benedictio-panis"
+        ]
+      ],
+      "native_roots": 8,
+      "checked_input_records": 2601,
+      "checked_tool_records": 273,
+      "actual_reachable_commits": 33,
+      "ref_count": 33,
+      "refs": {
+        "refs/heads/reconstruction/brightman-1896-greek-basil": "0abf0b71259e86afe7545354ba8aa522e5aaf146",
+        "refs/heads/reconstruction/brightman-1896-greek-chrysostom": "31d934a7ff944dabdc09cfcdc7ce85adc87243c9",
+        "refs/heads/reconstruction/brightman-1896-greek-james": "03acabaccb0d6cfced1bf9212cd44f24884a1b65",
+        "refs/heads/reconstruction/carmelite-1574-october-calendar": "fd77bab0300d3d9177c8b66ffd8e27f8ca65ca0d",
+        "refs/heads/reconstruction/carmelite-1621-october-calendar": "cf70966c13dc957f03b422482621d44458bc5324",
+        "refs/heads/reconstruction/cistercian-1606-canon": "9f524661b3a8a6e2d76a2de75143596da007aa93",
+        "refs/heads/reconstruction/cistercian-1606-latin-ordinary": "7c4f771e48c248ec3cf0f1ac60e6dcdcceaf0da6",
+        "refs/heads/reconstruction/cistercian-1606-offertory": "df0a145e9dda9d2b2424fbd14768c3b2df80894f",
+        "refs/heads/reconstruction/cistercian-1657-canon": "5813e268ba2893ef2a6f502ccc52a413f1305321",
+        "refs/heads/reconstruction/cistercian-1657-latin-ordinary": "c2ce58c05ff0b6cc3f00e84b6dafee078d2ae1b2",
+        "refs/heads/reconstruction/cistercian-1657-offertory": "5c843dca3d9574e16e52826c2a27c342046c768a",
+        "refs/heads/reconstruction/cummiskey-1861-latin-ordinary": "aabdb82e3b2f6e53ff862673fe893b10532e630d",
+        "refs/heads/reconstruction/dominican-1550-suscepimus": "9f67bea922a4d799b60d3c5a734e5d64bfc37bed",
+        "refs/heads/reconstruction/dominican-1604-suscepimus": "7549c63370d6376b90197112801d9bd4a945f32c",
+        "refs/heads/reconstruction/mozarabic-1500-benedictio-panis": "282d91371064ef616ad0f3f07fb19d3a4660eb3f",
+        "refs/heads/reconstruction/mozarabic-1755-benedictio-panis": "c298afa88be6b3f4bc24b5dfbb27a168d88fbe68",
+        "refs/heads/reconstruction/mozarabic-1804-benedictio-panis": "6939113f533e4920dea331a2d823f89c96311394",
+        "refs/heads/reconstruction/roman-1570-canon-missae": "092781f614d1fa5e81978d9102efaa9ca4a55dec",
+        "refs/heads/reconstruction/roman-1962-proper-projection": "f53382f781cf16946f912a7732144543c318288e",
+        "refs/heads/reconstruction/tuki-1736-arabic-creed": "ea49f6ec3b75e72249ba4b3c69bba6c599800bb0",
+        "refs/heads/reconstruction/warner-1915-stowe-mass-prayers": "fee92745438929d8b8e1d9dddeb4cacc10abe3ef",
+        "refs/heads/reconstruction/wilson-1894-gelasian-canon-prayers": "0c2f6125b476bb029b7c7ebb00c1273491460a61",
+        "refs/heads/reconstruction/wilson-1915-gregorian-canon-memento": "96713525d995ff144765ef2f4244ea3ff88a39af",
+        "refs/heads/reconstruction/wilson-1915-gregorian-canon-prayers": "fad70ef33eefcee6e66b4a67cb4872158f880768",
+        "refs/heads/version/cistercian-1606-canon": "604168581d9bd4e086ab0421755f184addc5fc98",
+        "refs/heads/version/cistercian-1606-offertory": "ba719e110ea4c1e302a38a98679bf946d2ab820d",
+        "refs/heads/version/cistercian-1657-canon": "888e2e637c11f9c4255dc083b554cd3b30e63738",
+        "refs/heads/version/cistercian-1657-offertory": "b34daab970f581a4bc237e96beb90224a5e72b19",
+        "refs/heads/version/mozarabic-1500-benedictio-panis": "9abe1664eab546f8e8b6d6ec42cc55d406507eea",
+        "refs/heads/version/mozarabic-1755-benedictio-panis": "8f99435a532d36773bce87da0dfd292b12979fd7",
+        "refs/heads/version/mozarabic-1804-benedictio-panis": "120c00d5f27b05e30a103418dcd5e067115d850d",
+        "refs/heads/version/roman-1570-canon-missae": "a9653a0c3d8295a74601869fc55fb0ab36d85cc8",
+        "refs/heads/version/tuki-1736-arabic-creed": "bb5d73cede0c6a5340bc794847a25f0aff6094d1"
+      },
+      "trees": {
+        "refs/heads/reconstruction/brightman-1896-greek-basil": "aa7fafffe9cd1fa9beb7487afdb5ea2cbddeed20",
+        "refs/heads/reconstruction/brightman-1896-greek-chrysostom": "88b52e3ab6ef8993de223ef67e80bbd00cad62b8",
+        "refs/heads/reconstruction/brightman-1896-greek-james": "4757b521806794930b262c934256a26f380f20dd",
+        "refs/heads/reconstruction/carmelite-1574-october-calendar": "9925f9f0bde64774a4d943068ba0c00d9a9905e9",
+        "refs/heads/reconstruction/carmelite-1621-october-calendar": "8cac689f3cea2a75a1ab7f409489a6b6b65ee3f5",
+        "refs/heads/reconstruction/cistercian-1606-canon": "95c9540bfe5d479c082ee8b572d8fc81e73646fc",
+        "refs/heads/reconstruction/cistercian-1606-latin-ordinary": "1cc915ebff77b7a5f79ae315c9fdd3bf3a86c8af",
+        "refs/heads/reconstruction/cistercian-1606-offertory": "2be65c63e1755019e1f136b2066423605cbc5de7",
+        "refs/heads/reconstruction/cistercian-1657-canon": "7eff2308cbc7ce9e093a5d1ef03564d24a593cf3",
+        "refs/heads/reconstruction/cistercian-1657-latin-ordinary": "0884cebe4e490808008b51aec138bc61f451a34b",
+        "refs/heads/reconstruction/cistercian-1657-offertory": "356d5cb58195a18f5bc91e206f087b0192cbc5d3",
+        "refs/heads/reconstruction/cummiskey-1861-latin-ordinary": "b71f86ea18031fc6029b1dca455cc8ca792d63ff",
+        "refs/heads/reconstruction/dominican-1550-suscepimus": "e55f29c9ac3797da55b1f48e2947fbcfdd303069",
+        "refs/heads/reconstruction/dominican-1604-suscepimus": "9097232a478e5f83d655040d3ccb2e80bd7efbbe",
+        "refs/heads/reconstruction/mozarabic-1500-benedictio-panis": "881c6e3ba557ff00180fb5f9194b50914d62d0e6",
+        "refs/heads/reconstruction/mozarabic-1755-benedictio-panis": "eb1b51659cf538a0d8c56b68d67a0af337d98af9",
+        "refs/heads/reconstruction/mozarabic-1804-benedictio-panis": "c19c692d29251531ed7aff979d4322d0a3c93a8e",
+        "refs/heads/reconstruction/roman-1570-canon-missae": "7c5159877154382b245dfaa6655beab141bedb17",
+        "refs/heads/reconstruction/roman-1962-proper-projection": "b5c2158dfe51b03410dc617c5f1870a35dfed97a",
+        "refs/heads/reconstruction/tuki-1736-arabic-creed": "eda5a15eb4defea7232cff534e1021e769d86b4b",
+        "refs/heads/reconstruction/warner-1915-stowe-mass-prayers": "95d22257fefe6723fe0adfc76a5971ef1bb64a30",
+        "refs/heads/reconstruction/wilson-1894-gelasian-canon-prayers": "071de524f9207100679481b97a8bd44aab3dd3bd",
+        "refs/heads/reconstruction/wilson-1915-gregorian-canon-memento": "9d38231c2b90385b0a61ccd48887125119369f4f",
+        "refs/heads/reconstruction/wilson-1915-gregorian-canon-prayers": "3dc8173b84407db5eb928a9a8fc97b974d4456b7",
+        "refs/heads/version/cistercian-1606-canon": "cd5b4b11051daf126f0f54cf6add31d6ee71a9fe",
+        "refs/heads/version/cistercian-1606-offertory": "1075fd4dd22715f6f0b53df7a08daf67b6304c7d",
+        "refs/heads/version/cistercian-1657-canon": "620799a4b62442d184c5143c1ff689545d3414eb",
+        "refs/heads/version/cistercian-1657-offertory": "8d57d98cdd98010b0754c44dd0ad6cacca9f4ddb",
+        "refs/heads/version/mozarabic-1500-benedictio-panis": "c4cedf5837a83957678a224719ac14973275ffe5",
+        "refs/heads/version/mozarabic-1755-benedictio-panis": "110353ed070a471fd5a91421d5d8c75cf36c744e",
+        "refs/heads/version/mozarabic-1804-benedictio-panis": "8782f950a3e94e29a6dfa1c41cf4cde84e1a1fd1",
+        "refs/heads/version/roman-1570-canon-missae": "0eba6d963ea1d844da1ce444c00fc652c921b90b",
+        "refs/heads/version/tuki-1736-arabic-creed": "138bda34add4f90f5f3419d0a50485ca04ac01d0"
+      },
+      "object_manifest_sha256": "61ae649e56677fdc5149c1405dcb2b767e0c0cc6c0d6c2390d53460b5ce15285"
+    }
+  ],
+  "canonical_parentage": {
+    "path": "src/sources/inventories/eucharistic-books/support/mozarabic-1500-1755-benedictio-panis-parentage.json",
+    "sha256": "2f01535b1935b644da6b06b28dc802047a22a1efb82890e077267d0a7ea1852e",
+    "kind": "republication",
+    "real_library_gate": "pass",
+    "source_packet_pins": {
+      "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/preface-1500-exemplars.toml": {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/preface-1500-exemplars.toml",
+        "sha256": "5a85587d235d375fc7a1877da6b416fcde26cd08fccaf2571508bf595d0c11e5",
+        "byte_size": 1491
+      },
+      "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/publisher-republication.toml": {
+        "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/publisher-republication.toml",
+        "sha256": "fd54f9af2310b54babbdbc61e9a3620b1c32b8f0759f949956cff6a69763d372",
+        "byte_size": 1218
+      },
+      "src/sources/inventories/eucharistic-books/support/mozarabic-1500-1755-benedictio-panis-parentage.json": {
+        "path": "src/sources/inventories/eucharistic-books/support/mozarabic-1500-1755-benedictio-panis-parentage.json",
+        "sha256": "2f01535b1935b644da6b06b28dc802047a22a1efb82890e077267d0a7ea1852e",
+        "byte_size": 2809
+      },
+      "src/sources/inventories/eucharistic-research-reviews/native-ancestry-2026-10-20.json": {
+        "path": "src/sources/inventories/eucharistic-research-reviews/native-ancestry-2026-10-20.json",
+        "sha256": "315404783f0bf229dabf9c21a9b97a426b8079b831c8423015a2de1c0c9d734e",
+        "byte_size": 50440
+      }
+    },
+    "evidence_input_count": 14,
+    "narrative_summary_prose_update": {
+      "prior_sha256": "3bcc9dff35629f76d9a73049132f7d90507b9dac820fbd031e939e2b65e37399",
+      "final": {
+        "path": "src/sources/inventories/eucharistic-research-reviews/native-ancestry-2026-10-20.json",
+        "sha256": "315404783f0bf229dabf9c21a9b97a426b8079b831c8423015a2de1c0c9d734e",
+        "byte_size": 50440
+      },
+      "changed_locus_or_finding_fields": 15,
+      "all_other_data_identical": true
+    },
+    "child_specific_literal_units": [
+      {
+        "path": "text/native/benedictio-panis/closing-greeting.txt",
+        "parent_literal_sha256": "1c01a3d41bb44c1ad76f7a529b1055fd48aa8e862f8f19060fc3719ee22e7671",
+        "child_literal_sha256": "809ad94e107dfebffdb029b4fa86c11fefa1de0418ada0f64946a8a615e14038"
+      },
+      {
+        "path": "text/native/benedictio-panis/opening-greeting.txt",
+        "parent_literal_sha256": "5a8e6e16448ac1b863d4da1d8a68c5c0e51327c4ec9a3f135ee84e02544a3148",
+        "child_literal_sha256": "40ef017cdc47ca1a7d1eb49338631cf9a5fc80215a8b5a60414ae385dd750921"
+      }
+    ]
+  },
+  "limits": [
+    "Read-only inspection of released corpora; no regeneration, source writes or index writes.",
+    "Transfers prior independent image collation by exact source pins; makes no new historical claim.",
+    "Complete declared constituents remain partial whole-book coverage; republication does not identify a physical donor copy."
+  ],
+  "source_specific_latin_texts_independently_materialized": true,
+  "stale_scratch_assertion_disposition": "A preliminary verifier stopped before Git inspection on an outdated narrative-summary pin. Exactly fifteen locus/finding prose fields had changed; all controlling parentage/binding/passage data were unchanged. The corrected verifier pins that final frozen summary separately. Both final full runs passed.",
+  "transport_bundle": {
+    "sha256": "fe4d4ac0431270c2af58e0eb5214ec2ab99a77f304a2b6b17e0bef86be212f2a",
+    "byte_size": 2048033,
+    "self_contained": true,
+    "prerequisites": [],
+    "restored_refs": 33,
+    "restored_objects": 6130,
+    "refs_and_objects_identical": true
+  }
+}

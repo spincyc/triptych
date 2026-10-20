@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be"
+edition_id = "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Faithful bounded reading transcription of original Latin from the identified Paris 1606 printing, whose United States publication term has expired. No modern translation, critical reconstruction or wording from another edition is imported. The historical wording is separate from the provider’s image-specific No Copyright - Non-Commercial Use Only 1.0 condition and attribution to München, Bayerische Staatsbibliothek, 2 Liturg. 205 a, bsb10496382. Third-party historical text is excluded from Triptych’s CC BY 4.0 license. Scholarly availability does not authorize contemporary liturgical use."
+provenance = "Direct original-image transcription made 2026-10-20 from all eight retained BSB scan pages; every word and source block within the strict Canon was read. Prepared independently of the 1657 text; familiar Roman wording and old unreviewed scratch transcripts are not source authority. Complete independent source-image collation is separately required and pinned by the native-book review receipt."
+retrieved = "2026-10-20"
+sha256 = "ffa3e1be8edb198a983a22e69ffb9fc5a4d30de38f6d79bb17ebeb39c310a83f"
+byte_size = 6134
+path = "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/canon-checked-latin-ffa3e1be/text.txt"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f"
+transformation = "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+notes = "Complete strict Canon constituent only, including all six seasonal insertion blocks with their rubrics and the final sung words. Existing accepted offertory and all prior checked passages remain unchanged. No complete Ordinary, whole missal, text parentage or historical introduction-date claim."
