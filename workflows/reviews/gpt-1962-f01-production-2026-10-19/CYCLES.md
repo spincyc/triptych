@@ -367,3 +367,13 @@ Fresh GPT `proper-study` v13 run `8d637d6f2f9160aa` was seeded from
 `0b318d400` for 25 October 2026 under ordinary full-material authorization.
 Its scope gate passed. The next native packet is `resolve-context-0000`; no
 context, research, document or publication PASS is claimed at this checkpoint.
+
+`resolve-context-0000` then passed after fresh Missal page and dated Ordo
+checks; its source plan kept full material and named eleven active elements and
+two inactive branches. At research, the worker interpreted the old warning
+against replaying an unknown rejected response as a bar on every new full-text
+collation. The driver recorded native intervention `0000` to draw the actual
+boundary: do not replay that response, but independently examine the registered
+public-domain AAS witness, the 1962 collation pages and historical English
+witnesses for the fresh full-material run. The intervention changes no packet
+or PASS criterion. Research remains underway.

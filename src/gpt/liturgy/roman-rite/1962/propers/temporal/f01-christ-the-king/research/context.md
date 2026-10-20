@@ -1,6 +1,8 @@
+appointed_text_completeness = "complete"
+
 # Christ the King: context and text inventory
 
-Resolved 19 October 2026 for the requested occurrence of 25 October 2026.
+Resolved afresh 20 October 2026 for the requested occurrence of 25 October 2026.
 The canonical owner is this GPT 1962 proper leaf, permanent identity **F01**,
 calendar key `christ-the-king`. The intended audience is an adult parish
 assembly. No preliminary research handoff was supplied.
@@ -9,7 +11,8 @@ The maintainer restored the requirement for full sourced appointed material on
 19 October 2026 and withdrew the temporary reference-only exception. The
 appointment evidence below remains available for independent verification.
 The earlier reference-only production is terminal BLOCKED and provides no
-research acceptance. The full appointed-text records remain incomplete. A
+research acceptance. The declaration above names the required publication
+mode, not completed collation. The full appointed-text records remain incomplete. A
 research response was rejected during the earlier work, but the diagnostic
 does not expose its text or identify a source passage. Independent evidence
 work can continue; that incident does not show the witnesses are unavailable.
@@ -40,14 +43,14 @@ dated witness.
 
 The **Fraternité Sacerdotale Saint-Pierre, Province de France**, official
 institutional [Ordo du mois](https://www.fssp.fr/ordo-du-mois/), October 2026,
-entry for Sunday 25 October, was independently opened and read on 19 October
+entry for Sunday 25 October, was independently opened and read on 20 October
 2026. It appoints Christ the King, first class, white. The registered complete
 HTML snapshot was independently rehashed and its October 25 entry reread
 (169,687 bytes; SHA-256
 `4eb6a52bd3e6b2b5d294035133c01b14dc1dc0ca42ac9953e167e443a991af04`).
-A fresh complete retrieval the same day independently confirms the same entry
-(169,685 bytes; SHA-256
-`2ca3b1c647864c561428b88ee1879ba008b93748ad2a6616ccb481acfcaea995`).
+A fresh complete retrieval on 20 October independently confirms the same entry
+(169,686 bytes; SHA-256
+`a8b61f142291b4e5c21f0c5b6f3d63406e238b7a972d648ac701165257b25c26`).
 The two deliveries are distinct artifacts; the existing binding remains to
 the registered snapshot, not silently to the new bytes. Its October section
 is the controlling dated corroboration; the mutable page also contains
@@ -76,8 +79,8 @@ SHA-256 `648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a`.
 The source has 1,088 digital pages. Printed pp. 697–698 correspond to
 one-based PDF pages 778–779; printed p. 291 is PDF page 372.
 
-Fresh page images were generated through the repository's `pdf-review`
-tool and individually opened on 19 October: one-based PDF pages 10, 16, 17,
+Fresh page images from the authenticated complete facsimile were individually
+opened on 20 October: one-based PDF pages 10, 16, 17,
 29, 372, 778, and 779. That inspection establishes the
 heading, rank, ordered inventory, biblical loci, seasonal substitution rules,
 three exclusions of Sunday commemoration, proper-Preface appointment, and
@@ -147,6 +150,58 @@ come from the same 1962 rubrics. No seasonal branch is activated in the dated
 study. The full source record must preserve these branches and label their status;
 the main interpretation and concise opening must not represent their additional
 verses as readings appointed on October 25.
+
+The Introit's Paschal addition is a further conditional framing rule, not a
+third lesson or chant choice: General Rubrics of the Missal 429, printed
+p. XXXI (PDF 29), adds the double Alleluia to the Introit antiphon in Paschal
+time when it does not already have it. This is inactive for the October feast.
+The printed abbreviated conclusions of all three orations are controlled by
+General Rubrics 115(c), p. XIX (PDF 17); expansion must use that received
+witness and remain distinguishable from the printed abbreviation.
+
+## Element-specific source plan
+
+The inventory above supplies the exact controlling Latin locus for every
+active element and closed seasonal branch. The following routes were checked
+in the existing source-library records on 20 October before any new source
+acquisition. Their earlier verification labels do not substitute for the
+research stage's direct examination.
+
+| Elements | Independent study-text route | Remaining verification |
+| --- | --- | --- |
+| Introit, Gradual, Alleluia, Offertory and Communion | Registered Douay–Rheims/Challoner American 1899 Bible, Psalms, Daniel and Apocalypse artifacts already named in `source-bindings.toml`; compare the exact scriptural loci in the inventory above. | Check Vulgate verse numbering, the Psalm 71 title/verse offset, the Introit's composite selection, and the Communion's selected clauses from both verses. Bible quotations must be identified as biblical study text rather than a newly rendered translation of the Missal's adaptations. |
+| Epistle and Gospel | The same registered Bible's Colossians and John artifacts, Colossians 1:12–20 and John 18:33–37. | Read the complete surrounding units and distinguish the Bible's wording from the Missal's introduction and concluding adaptation. |
+| Collect, Secret and Postcommunion | Lasance and Walsh, *The New Roman Missal*, revised 1945 edition, feast of Christ the King, printed pp. 1257–1260 (PDF 1258–1261), in the registered `internet-archive-facsimile-pdf-6cf3c3d0` artifact. | Independently inspect the historical English and Latin antecedent, collate the whole prayers and conclusions, and record differences from 1962. The earlier book's Sunday commemoration does not enter this inventory. |
+| Proper Preface | The same Lasance/Walsh witness, Preface of Christ the King, printed pp. 813–814 (PDF 812–813), compared with 1962 p. 291 (PDF 372). | Check the full received dialogue, opening, proper body, conclusion and Sanctus boundary rather than supplying a remembered or generated expansion. |
+| Inactive Tract and Paschal Alleluia | Registered Bible, Psalm 88 (89):27–28, 30 and Daniel 7:14 with Apocalypse 19:16; governing 1962 p. 698. | Retain conditional status and exact selection; independently verify any publishable Latin antecedent and the seasonal Introit framing before retaining full liturgical forms. |
+
+The Lasance artifact is the revised 1945 body in a later printing, despite its
+delivery URL's `1937` label. The source record distinguishes the underlying
+historical text from excluded later lettered inserts and the whole scan.
+Its recorded U.S. publication basis is owned by
+`src/sources/inventories/lasance-new-roman-missal-rights-v1.toml`; the separate
+1962 facsimile basis is owned by
+`src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml`.
+This stage identifies those routes; it does not newly adjudicate rights or
+establish word-for-word identity.
+
+Two already registered alternatives remain specific leads: Husslein,
+*Christ the King*, seventh printing of the 1926 work, printed pp. 29–31
+(PDF 31–33), supplies his expressly identified English rendering; Schott,
+*Das vollständige Römische Meßbuch*, second revised edition, 1929 printing,
+printed pp. 1104–1108 (PDF 1174–1178), supplies the Latin Mass and inline
+Preface. Read their edition records and
+`src/sources/inventories/christ-the-king-early-witnesses-rights-v1.toml`
+before adopting either. Their pages were not reinspected in this context
+stage, and neither lead is authority for the 1962 rubrics or an assumed
+witness to every seasonal branch.
+
+The research stage owns completion of `propers/retrieved.txt`,
+`propers/verified.md`, `research/scope.md`, `research/interpretations.md`,
+generated chronology and the controlling source-binding/dependency chain.
+The first two records are presently absent. The complete inventory and this
+source plan are the resolve-context deliverable; their existence does not
+certify any downstream research, authoring or review stage.
 
 ## Full-material source work still required
 
