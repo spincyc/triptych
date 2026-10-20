@@ -639,3 +639,13 @@ corrected witness link and reader-facing review limit into its apparatus
 without altering the comparative arguments or chronology. Its new 10-page,
 4,149-word proof passed build, component and content preflight, with all
 pages inspected. A fresh concise review is pending.
+
+The fresh xhigh concise reviewer independently checked the corrected Jerome
+link and exact Daniel loci, compared the companion with the accepted study,
+rebuilt the sealed source to the same ten-page PDF hash, and returned `PASS`
+with no findings. The engine emitted `derive-homily-0002`. The homily author
+reread the two revised studies and reception witnesses and retained the
+supported spoken body, including the repaired Secret distinction. Only its
+terminal delivery estimate, generation metadata and audit were refreshed.
+The three-page proof passed native build, component and content checks, with
+every page inspected. A fresh homily review is pending.

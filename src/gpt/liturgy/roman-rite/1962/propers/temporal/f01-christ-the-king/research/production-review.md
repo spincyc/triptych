@@ -636,3 +636,73 @@ no forwarded findings and no new upstream defect was identified. No PDF or web
 edition was installed. The parent driver owns global source-inventory checks,
 workflow advancement, integration, commits and publication; the dependent
 homily derivation and final common build must use the resulting shared metadata.
+
+# Homily reentry: revised studies and delivery estimate
+
+`derive-homily` iteration 2 completed on 20 October 2026 for `proper-study`
+v13, run `095fe00a9fe8cfee`. Both revised studies, their appointed texts and
+interpretation audit were read against the complete homily. The upstream
+apparatus changes do not require a different spoken argument. The body still
+correctly identifies the Father addressed by the Secret and the sacrificial
+Son as giver of unity and peace. It remains unchanged. The terminal delivery
+note now states the calculated duration precisely: **1,280 spoken words** at
+**110–125 words per minute** yield **10.2–11.6 minutes**. The word count was
+repeated over the prose-only component with `wc -w`.
+
+The audience remains an adult parish assembly. The principal interpretation is
+the King making a people capable of hearing, joined compatibly to the second
+reading's sacrificial peace and its demand upon chosen enmity. John 18:36
+provides the decisive change of understanding: a kingdom originating elsewhere
+still has subjects living here. Augustine's explanation turns the opening
+question about a prisoner's apparent power into a question about the life that
+enables obedient hearing within ordinary responsibilities. John 18:37 and
+Colossians 1:12–20 then identify hearing as a response enabled by grace, while
+the Collect and Secret locate conversion within healed division and received
+peace. The Communion and Postcommunion sustain perseverance and hope. Replacing
+these readings with unrelated passages would remove that exegetical sequence.
+
+The retained reception witnesses were reopened at Augustine, *Tractates on
+John* 115.1–4 and *Expositions of the Psalms* 28.10–11 (NPNF heading Psalm 29),
+and Chrysostom, *Homilies on Colossians* II on 1:12–15 and III on 1:15–20
+and its peace-and-feud application. These readings support the homily's existing
+attributions; no new research claim or source binding was added. This was
+inspection of historical-text deliveries, not fresh facsimile collation.
+The complete speech was read silently for sense, transitions and oral clarity.
+No audible rehearsal, timed human delivery or new prayer is claimed.
+
+The entrypoint and manifest already conform: the three shared imports occur
+in order, only the spoken import lies inside `properhomily`, and apparatus
+follows its closing page break. Shared generation provenance remains exactly
+that of the packet; the finalization timestamp is `2026-10-20T14:42:53Z`,
+with the actual reentry contribution appended.
+
+The prescribed homily build, artifact component check and complete homily
+content preflight passed. Its settled log contains no warnings, undefined
+references or overfull/underfull boxes. The proof has **3 physical pages** and
+**246,082 bytes**, correct PDF title, subject and revision metadata, and ten
+embedded Latin Modern font subsets with Unicode mapping. All three reference
+entries are used. The size remains about 82,027 bytes per page, above the
+short-document review trigger because of the embedded font subsets; the total
+is below 1 MiB and the PDF contains no images. No independent PDF transformation
+was made.
+
+All three full-page rasters were inspected. The full-width title and
+two-column speech remain legible; the speech ends on page 2. Page 3 holds the
+source/delivery note, References, timestamp and readable rights colophon,
+without clipping, overlap or a rights-only spill. Extracted text confirms the
+precise timing statement and corrected Secret distinction.
+
+Built proof:
+`build/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-homily.pdf`.
+SHA-256:
+`6fd2de7f383669af1dec0db71f8b2530a2b66793ae00927032e0abdbe70df724`.
+A byte-identical proof, build and preflight logs, settled TeX log and extracted
+text are retained in the driver's assigned scratch area. The registered
+raster helper's destination is
+`build/tpt-runs/095fe00a9fe8cfee/artifacts/derive-homily-0002/rasters/`.
+
+This records author verification, not independent homily or final visual
+acceptance. No forwarded finding or new upstream defect was identified.
+No accepted study component or research evidence was changed, and no PDF or
+web edition was installed. The parent driver owns global source-inventory
+checks, the final common build, workflow advancement, integration and publication.
