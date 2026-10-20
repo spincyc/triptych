@@ -1,9 +1,10 @@
-"""Cross-surface event and absence checks for the 1962 Pentecost exemplar.
+"""Cross-surface event and absence checks for the Pentecost exemplars.
 
 The ten Proper names and three variable appointments are an independent,
 source-reviewed oracle recorded in guidance/liturgy-browser-roadmap.md C2.
-The full frame is compared by event ID between generated structure and a real
-rendered browser DOM; the CLI's human reading view supplies ordered landmarks.
+The full frame is compared by event ID between the expanded CLI stream and
+real rendered browser DOMs; the CLI's human reading view supplies independent
+source-reviewed landmarks.
 """
 
 from __future__ import annotations
@@ -94,6 +95,16 @@ class MissalExemplarParityTests(unittest.TestCase):
             "--calendar", "roman-1962", "--expanded", "--bible", "douay-rheims",
         )
         cls.cli_json = json.loads(run(*base, "--format", "json"))
+        cls.post_cli_json = json.loads(run(
+            "tools/mass-today", "show", "--date", "2026-05-24",
+            "--calendar", "postconciliar", "--form", "day", "--expanded",
+            "--bible", "douay-rheims", "--format", "json",
+        ))
+        cls.pre_cli_json = json.loads(run(
+            "tools/mass-today", "show", "--date", "2026-05-24",
+            "--calendar", "roman-pre-1955", "--expanded",
+            "--bible", "douay-rheims", "--format", "json",
+        ))
         cls.cli_latin = run(*base, "--lang", "la", "--plain")
         cls.cli_english = run(*base, "--lang", "en", "--plain")
         cls.browser = json.loads(run(
@@ -113,6 +124,34 @@ class MissalExemplarParityTests(unittest.TestCase):
                              in cls.mass["ordinary_appointments"].items()},
         }
         cls.structural = structure_events(cls.ordinary, cls.mass, context)
+
+    @staticmethod
+    def expanded_mass(payload: dict) -> dict:
+        day = payload["days"][0]
+        return next(row for row in day["masses"] if row["key"] == "pentecost")
+
+    def assert_full_event_parity(self, cli_mass: dict, browser_name: str) -> list[str]:
+        cli_events = cli_mass["expanded_events"]
+        browser = self.browser[browser_name]
+        ids = [event["id"] for event in cli_events]
+        self.assertEqual(len(ids), len(set(ids)))
+        self.assertEqual(
+            [(event["id"], event["kind"]) for event in cli_events],
+            [(event["id"], event["kind"]) for event in browser["events"]],
+        )
+        self.assertEqual(browser["domIds"], ids)
+        self.assertNotIn("_proper_source_indices", cli_mass)
+        for event in cli_events:
+            if event["kind"] == "proper":
+                self.assertEqual(
+                    event["id"].rsplit("/", 1)[-1],
+                    f"{event['source_index'] + 1:03d}",
+                )
+                self.assertEqual(event["form_id"], cli_mass["selected_form"])
+            elif event["kind"] == "proper-choice":
+                self.assertEqual(event["form_id"], cli_mass["selected_form"])
+                self.assertTrue(event["options"])
+        return ids
 
     def test_identity_propers_and_appointed_variables(self) -> None:
         self.assertEqual(self.browser["problems"], [])
@@ -144,8 +183,8 @@ class MissalExemplarParityTests(unittest.TestCase):
         self.assertEqual(self.structural["unresolved"], [])
         self.assertEqual(self.structural["appointments"], APPOINTMENTS)
         self.assertEqual(len(expected), 179)
-        self.assertEqual([event["id"] for event in browser["events"]], expected)
-        self.assertEqual(browser["domIds"], expected)
+        self.assertEqual(self.assert_full_event_parity(self.cli_mass, "dayMissal"), expected)
+        self.assertEqual(self.assert_full_event_parity(self.cli_mass, "propersMissal"), expected)
         self.assertEqual(
             [event["name"] for event in self.structural["events"] if "name" in event],
             list(PROPER_NAMES),
@@ -174,6 +213,61 @@ class MissalExemplarParityTests(unittest.TestCase):
             "ordinary-element/canon/communicantes-pentecoste"])
         self.assertIn("quos regenerare dignatus es", shown[
             "ordinary-element/canon/hanc-igitur-pascha-pentecoste"])
+
+    def test_postconciliar_day_and_pre_1955_full_event_parity(self) -> None:
+        post = self.expanded_mass(self.post_cli_json)
+        post_ids = self.assert_full_event_parity(post, "postDayMissal")
+        self.assertEqual(len(post_ids), 71)
+        self.assertEqual(post["selected_form"], "day")
+        self.assertEqual(post["ordinary_appointments"], {
+            "dismissal": "paschal-double-alleluia", "preface": "pentecost",
+        })
+        choices = [event for event in post["expanded_events"]
+                   if event["kind"] == "proper-choice"]
+        self.assertEqual(choices, [{
+            "id": "proper-choice/postconciliar/pentecost/day/entrance-antiphon",
+            "kind": "proper-choice", "source_index": 14, "form_id": "day",
+            "options": [
+                {"id": "spiritus-domini", "events": ["proper/postconciliar/pentecost/015"]},
+                {"id": "caritas-dei", "events": ["proper/postconciliar/pentecost/016"]},
+            ],
+        }])
+        self.assertEqual(
+            [(row["id"], [option["id"] for option in row["options"]])
+             for row in self.browser["postDayMissal"]["events"]
+             if row["kind"] == "proper-choice"],
+            [(choices[0]["id"], ["spiritus-domini", "caritas-dei"])],
+        )
+        # Propers has no civil date.  Its two date-conditioned Ordinary rows
+        # therefore remain unresolved instead of inheriting Day's predicate.
+        post_propers = self.browser["postPropersMissal"]
+        self.assertEqual(post_propers["calendarResult"], None)
+        self.assertEqual(
+            {row["element"] for row in post_propers["ordinaryUnresolved"]},
+            {"ritus-initiales/gloria-in-excelsis", "symbolum/symbolum-nicaenum"},
+        )
+        self.assertEqual(
+            set(post_ids) - set(event["id"] for event in post_propers["events"]),
+            {"ordinary-element/ritus-initiales/gloria-in-excelsis",
+             "ordinary-element/symbolum/symbolum-nicaenum"},
+        )
+        self.assertEqual(
+            [event["id"] for event in post_propers["events"]],
+            [event_id for event_id in post_ids if event_id not in {
+                "ordinary-element/ritus-initiales/gloria-in-excelsis",
+                "ordinary-element/symbolum/symbolum-nicaenum",
+            }],
+        )
+        self.assertEqual(post_propers["domIds"],
+                         [event["id"] for event in post_propers["events"]])
+
+        pre = self.expanded_mass(self.pre_cli_json)
+        pre_ids = self.assert_full_event_parity(pre, "preDayMissal")
+        self.assertEqual(len(pre_ids), 181)
+        self.assertEqual(self.assert_full_event_parity(pre, "prePropersMissal"), pre_ids)
+        self.assertEqual(pre["ordinary_appointments"], APPOINTMENTS)
+        self.assertEqual(pre["recension_coverage"]["status"], "structural-only")
+        self.assertIn("inherited", self.browser["preDayMissal"]["coverageNotice"].lower())
 
     def test_cli_printed_landmarks_follow_browser_event_order(self) -> None:
         browser_ids = [event["id"] for event in self.browser["dayMissal"]["events"]]

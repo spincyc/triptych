@@ -335,6 +335,13 @@ CLI event-ID parity and independent acceptance remain open. Ordinary absence
 notices now use concise reader labels instead of storage keys. A print pass
 reduced both 1962 Pentecost English Read PDFs from ten to seven pages without
 changing their extracted text; long witness notes remain for C4 composition.
+The CLI now exposes text-free expanded event IDs from the same seating model.
+A source-served Chromium probe checks full event-ID and kind order against
+Day and Propers for the 1962 Pentecost (179 events) and pre-1955 Pentecost
+(181 events) examples, and against Day for postconciliar Pentecost (71 events).
+Date-free postconciliar Propers intentionally omits two unresolved Ordinary
+appointments. These checks establish representative semantic parity; source
+wording and independent C2 acceptance still require review.
 The 400% Contents jump now leaves its Canon destination wholly in the readable
 band above the bottom action dock. The source-served ritual-flow harness passes
 28/28 assertions after accounting for the intentional C2 claim typography;

@@ -477,7 +477,13 @@ A focused Pentecost parity check now compares all 179 generated Missal events
 with browser semantic and DOM order, and thirteen ordered CLI landmarks with
 the same browser sequence. The CLI still has no machine-readable expanded
 event stream for full event-ID parity. This is additional C2 evidence, not
-independent acceptance.
+independent acceptance. The follow-up CLI projection now exposes ordered,
+text-free expanded event IDs. A source-served browser probe matches all 179
+1962 Pentecost and 181 pre-1955 Pentecost event IDs and kinds against Day and
+Propers, plus 71 postconciliar Day events. Date-free postconciliar Propers
+retains its two typed unresolved Ordinary appointments. This closes the
+exemplar event-order check; word-exact seating and independent C2 acceptance
+remain open.
 
 A second 2026-10-20 Sanctoral citation pass added twelve source-checked roles.
 The effective Roman 1962 text-slot states are now 3,194 represented, 166 not

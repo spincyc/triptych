@@ -116,6 +116,9 @@ async function observe(cdp, url, debug) {
     return {
       outcome: debug.outcome, resolved: debug.semantic.resolved,
       events: debug.semantic.events, domIds: ids,
+      unresolvedChoices: debug.semantic.unresolvedChoices || [],
+      ordinaryUnresolved: debug.semantic.ordinaryUnresolved || [],
+      calendarResult: debug.semantic.calendarResult || null,
       title: document.querySelector('.celebration-title')?.textContent || '',
       lesson: document.querySelector('[data-semantic-event-id="proper/roman-1962/pentecost/003"]')?.innerText || '',
       variableNodes: [...document.querySelectorAll('#reader-document [data-semantic-event-id]')]
@@ -172,6 +175,14 @@ async function main() {
       'date=2026-05-24&missal=roman-1962&bible=douay-rheims&orations=la&mass=pentecost';
     const propers = `${base}/src/web/browser/liturgy/index.html?data=/src/web/data#` +
       'missal=roman-1962&type=seasonal&mass=pentecost&bible=douay-rheims&orations=la';
+    const postDay = `${base}/src/web/browser/liturgy/day.html?data=/src/web/data#` +
+      'date=2026-05-24&missal=postconciliar&bible=douay-rheims&orations=la&mass=pentecost&form=day';
+    const preDay = `${base}/src/web/browser/liturgy/day.html?data=/src/web/data#` +
+      'date=2026-05-24&missal=roman-pre-1955&bible=douay-rheims&orations=la&mass=pentecost';
+    const postPropers = `${base}/src/web/browser/liturgy/index.html?data=/src/web/data#` +
+      'missal=postconciliar&type=seasonal&mass=pentecost&form=day&bible=douay-rheims&orations=la';
+    const prePropers = `${base}/src/web/browser/liturgy/index.html?data=/src/web/data#` +
+      'missal=roman-pre-1955&type=seasonal&mass=pentecost&bible=douay-rheims&orations=la';
     const tagged = (url, tag) => url.replace('?data=/src/web/data#',
       `?data=/src/web/data&parity=${tag}#`);
     const result = {
@@ -179,9 +190,24 @@ async function main() {
       dayMissal: await observe(cdp,
         tagged(day + '&ordinary=1&ordinary-lang=la', 'day-missal'), 'dayReaderDebug'),
       propersRead: await observe(cdp, tagged(propers, 'propers-read'), 'propersReaderDebug'),
+      propersMissal: await observe(cdp,
+        tagged(propers + '&mode=missal&ordinary-lang=la', 'propers-missal'),
+        'propersReaderDebug'),
       dayEnglish: await observe(cdp,
         tagged(day.replace('orations=la', 'orations=en') + '&ordinary=0', 'day-english'),
-        'dayReaderDebug')
+        'dayReaderDebug'),
+      postDayMissal: await observe(cdp,
+        tagged(postDay + '&ordinary=1&ordinary-lang=en', 'post-day-missal'),
+        'dayReaderDebug'),
+      postPropersMissal: await observe(cdp,
+        tagged(postPropers + '&mode=missal&ordinary-lang=en', 'post-propers-missal'),
+        'propersReaderDebug'),
+      preDayMissal: await observe(cdp,
+        tagged(preDay + '&ordinary=1&ordinary-lang=en', 'pre-day-missal'),
+        'dayReaderDebug'),
+      prePropersMissal: await observe(cdp,
+        tagged(prePropers + '&mode=missal&ordinary-lang=en', 'pre-propers-missal'),
+        'propersReaderDebug')
     };
     result.problems = problems;
     process.stdout.write(JSON.stringify(result));
