@@ -56,13 +56,16 @@ class PropersReaderIntegrationTests(unittest.TestCase):
         for asset in (
             "reader-shell.js", "reader-shell.css", "reader-state.js",
             "reader-state-adapters.js", "propers-reader.js", "propers-reader.css",
-            "reader-instrument.css", "reader-comparison.js", "reader-compare-view.js",
+            "reader-instrument.css", "reader-optional-runtime.js",
             "reader-compare-view.css", "propers-compare.js", "proper-search-controller.js",
-            "reader-study-view.js", "reader-study-view.css", "propers-study.js",
+            "reader-study-view.css", "propers-study.js",
             "reader-proper-payload.js", "propers-read-payload.js",
             "reader-text-size.js", "reader-text-size.css",
         ):
             self.assertIn(asset, html)
+
+        for asset in ("reader-comparison.js", "reader-compare-view.js", "reader-study-view.js"):
+            self.assertNotIn(f'<script src="{asset}"></script>', html)
 
         linked_from = []
         for page in LITURGY.glob("*.html"):
