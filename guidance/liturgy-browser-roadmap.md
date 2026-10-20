@@ -1044,6 +1044,20 @@ full repository check passes 250 example replays with zero divergence or
 tracked writes. Latency remains pending; byte savings alone do not establish
 a performance result.
 
+A twelve-sample HTTP/2 follow-up holds this checkpoint constant across the
+committed build, original early-loading pilot and two-HTML priority revision.
+Day LCP medians are 4.582 / 3.442 / 4.092 s on August 2 and
+4.600 / 3.452 / 4.100 s on the independent September 5 fixture. Native Low
+body priorities are honored, but delay core/controller completion by about
+one second; the second Bible-metadata request then determines readiness.
+The revision fails both unchanged value conditions and stays off branch.
+Text/state/events/URL and response identities match; diagnostics are clean
+and all experiment processes close. The original pilot also remains outside
+the 3.0 s integration limit, so its 101-year expansion stays held. Removing
+the duplicate Bible wait alone cannot meet either the original integration
+limit or the 2.5 s release target. Future work must address the measured
+serial data path or competing transfers rather than repeat priority guesses.
+
 ### Verification and completion gates
 
 The integrated 2026-10-20 source checkpoint passes 80 focused source tests,
