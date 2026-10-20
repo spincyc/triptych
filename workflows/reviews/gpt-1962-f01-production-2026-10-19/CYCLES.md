@@ -598,3 +598,11 @@ snapshotted the exact render inputs and all three PDF hashes and generated
 committed and feature-pushed as `b295887bf`; native artifact gates passed.
 A fresh xhigh visual reviewer is inspecting the sealed pages. No visual, web
 or terminal publication PASS is claimed yet.
+
+The fresh xhigh visual reviewer opened all 36 individual page rasters and
+their four contact sheets and returned `PASS` with no findings. It verified
+the 23/10/3-page artifact hashes, PDF/readability details, the concise
+physical-page opening and legible chronology, and the homily's separate
+speech/apparatus layout. This is visual acceptance of the sealed PDFs, not
+web or deployment acceptance. The engine emitted `generate-web-0000` for the
+canonical GPT study's web edition.
