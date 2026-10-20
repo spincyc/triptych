@@ -95,12 +95,12 @@ label = "The Roman Missal translated into the English language for the use of th
 rights = "public-domain"
 caution = "A pre-1955 lay hand missal, not an approved liturgical translation and never an altar book. Its rubrics and its seasonal second orations are not those of 1962, and its spelling is its own. Nothing here may be used for recitation."
 artifacts = [
-  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-2",
-  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-complete-2026-10-20",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en",
-  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en",
-  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en-turn-divided",
-  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en-turn-divided",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en-turn-divided-2026-10-20",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en-turn-divided-complete-2026-10-20",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en-turn-divided-complete-2026-10-20",
 ]
 
 # The same printing, witnessing its other column. `id` is the edition's real
@@ -114,12 +114,12 @@ label = "The Roman Missal translated into the English language for the use of th
 rights = "public-domain"
 caution = "The Latin of a pre-1955 lay hand missal's facing column: never an altar book, and nothing here may be used for recitation. It is the 1861 printing's own text and NOT the 1962 typical edition's. Its Canon prints the Communicantes without the clause naming St Joseph that later legislation inserted; its seasonal second orations and rubrics are the discipline in force before the 1955 and 1960 reforms; and its orthography, j and the ae/oe ligatures, is its own. Collation against the 1962 book is asserted only on the elements whose own provenance says so."
 artifacts = [
-  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la-turn-divided-2",
-  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la-turn-divided",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la-turn-divided-complete-2026-10-20",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la-turn-divided-complete-2026-10-20",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-la",
-  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la",
-  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la-turn-divided",
-  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-la-turn-divided",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la-turn-divided-2026-10-20",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la-turn-divided-complete-2026-10-20",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-la-turn-divided-complete-2026-10-20",
 ]
 
 # The Canon's proper forms are printed by no row of the 1861 Ordinary, and the
@@ -366,10 +366,221 @@ locus = "The Mass of the Lord's Supper prints its own Communicantes and Hanc igi
 [[sections]]
 key = "praeparatio"
 name = "The Priest at the Foot of the Altar"
-artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-2"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-complete-2026-10-20"
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la-turn-divided-2"
+artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la-turn-divided-complete-2026-10-20"
 absent_latin = "witness-own-english"
+
+# Source-owned remaining dialogue fragments (2026-10-20). Printed source
+# markers, independently checked target roles, and nonspoken source glosses
+# are distinct. Parent source text and all target qualifications remain.
+[[sections.turn_partitions]]
+element = "misereatur-tui"
+lang = "en"
+basis = "Source 1861 Cummiskey printed p. xvi, IA leaf n26, artifact PDF p. 27; target 1962 Ordo Missae n. 1018, printed p. 216 (preceding page of printed 217), artifact PDF p. 297; both page images read at 200 and 400 dpi on 2026-10-20. Ministri respondent introduces the minister's Misereatur; Sacerdos dicit: Amen, et erigit se states the priest's Amen. Neither turn prints V. or R.; rubric supplies speaker only."
+parts = [
+  { key = "server-1", seq = [1301], speaker = "server", printed_marker = "R." },
+  { key = "priest-1", seq = [1302], speaker = "priest", printed_marker = "P." },
+]
+
+[[sections.turn_partitions]]
+element = "misereatur-tui"
+lang = "la"
+basis = "Source 1861 Cummiskey printed p. xvi, IA leaf n26, artifact PDF p. 27; target 1962 Ordo Missae n. 1018, printed p. 216 (preceding page of printed 217), artifact PDF p. 297; both page images read at 200 and 400 dpi on 2026-10-20. Ministri respondent introduces the minister's Misereatur; Sacerdos dicit: Amen, et erigit se states the priest's Amen. Neither turn prints V. or R.; rubric supplies speaker only."
+parts = [
+  { key = "server-1", seq = [1301], speaker = "server", printed_marker = "R." },
+  { key = "priest-1", seq = [1302], speaker = "priest", printed_marker = "P." },
+]
+
+[[sections.turn_partitions]]
+element = "misereatur-vestri"
+lang = "en"
+basis = "Source 1861 Cummiskey printed p. xvii, IA leaf n27, artifact PDF p. 28; target 1962 Ordo Missae n. 1019, printed p. 217, artifact PDF p. 298; both page images read at 200 and 400 dpi on 2026-10-20. Prayer opens with a drop capital and no V. marker. Amen is explicitly preceded by R. The preceding rubric identifies the priest's prayer."
+parts = [
+  { key = "priest-1", seq = [1501], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [1502], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "misereatur-vestri"
+lang = "la"
+basis = "Source 1861 Cummiskey printed p. xvii, IA leaf n27, artifact PDF p. 28; target 1962 Ordo Missae n. 1019, printed p. 217, artifact PDF p. 298; both page images read at 200 and 400 dpi on 2026-10-20. Prayer opens with a drop capital and no V. marker. Amen is explicitly preceded by R. The preceding rubric identifies the priest's prayer."
+parts = [
+  { key = "priest-1", seq = [1501], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [1502], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "indulgentiam"
+lang = "en"
+basis = "Source 1861 Cummiskey printed p. xvii, IA leaf n27, artifact PDF p. 28; target 1962 Ordo Missae n. 1020, printed p. 217, artifact PDF p. 298; both page images read at 200 and 400 dpi on 2026-10-20. Prayer opens with a drop capital and no V. marker. Amen is explicitly preceded by R. The preceding rubric identifies the priest's prayer."
+parts = [
+  { key = "priest-1", seq = [1601], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [1602], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "indulgentiam"
+lang = "la"
+basis = "Source 1861 Cummiskey printed p. xvii, IA leaf n27, artifact PDF p. 28; target 1962 Ordo Missae n. 1020, printed p. 217, artifact PDF p. 298; both page images read at 200 and 400 dpi on 2026-10-20. Prayer opens with a drop capital and no V. marker. Amen is explicitly preceded by R. The preceding rubric identifies the priest's prayer."
+parts = [
+  { key = "priest-1", seq = [1601], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [1602], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "deus-tu-conversus"
+lang = "en"
+basis = "1962 Ordo Missae n. 1021, printed p. 217, artifact PDF p. 298 of the registered CMAA facsimile, read on the page images at 200 and 400 dpi on 2026-10-20: each of the four priest lines carries V. and each ministers' answer carries R. These are dialogue roles, distinct from the 1861 witness's P./R. speaker letters on printed pp. xvii-xviii (IA leaves n27-n28, artifact PDF pp. 28-29), checked on the page images at the same resolutions."
+parts = [
+  { key = "priest-1", seq = [1701], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "server-1", seq = [1702], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "deus-tu-conversus"
+lang = "la"
+basis = "1962 Ordo Missae n. 1021, printed p. 217, artifact PDF p. 298 of the registered CMAA facsimile, read on the page images at 200 and 400 dpi on 2026-10-20: each of the four priest lines carries V. and each ministers' answer carries R. These are dialogue roles, distinct from the 1861 witness's P./R. speaker letters on printed pp. xvii-xviii (IA leaves n27-n28, artifact PDF pp. 28-29), checked on the page images at the same resolutions."
+parts = [
+  { key = "priest-1", seq = [1701], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "server-1", seq = [1702], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "ostende-nobis"
+lang = "en"
+basis = "1962 Ordo Missae n. 1021, printed p. 217, artifact PDF p. 298 of the registered CMAA facsimile, read on the page images at 200 and 400 dpi on 2026-10-20: each of the four priest lines carries V. and each ministers' answer carries R. These are dialogue roles, distinct from the 1861 witness's P./R. speaker letters on printed pp. xvii-xviii (IA leaves n27-n28, artifact PDF pp. 28-29), checked on the page images at the same resolutions."
+parts = [
+  { key = "priest-1", seq = [1801], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "server-1", seq = [1802], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "ostende-nobis"
+lang = "la"
+basis = "1962 Ordo Missae n. 1021, printed p. 217, artifact PDF p. 298 of the registered CMAA facsimile, read on the page images at 200 and 400 dpi on 2026-10-20: each of the four priest lines carries V. and each ministers' answer carries R. These are dialogue roles, distinct from the 1861 witness's P./R. speaker letters on printed pp. xvii-xviii (IA leaves n27-n28, artifact PDF pp. 28-29), checked on the page images at the same resolutions."
+parts = [
+  { key = "priest-1", seq = [1801], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "server-1", seq = [1802], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "domine-exaudi"
+lang = "en"
+basis = "1962 Ordo Missae n. 1021, printed p. 217, artifact PDF p. 298 of the registered CMAA facsimile, read on the page images at 200 and 400 dpi on 2026-10-20: each of the four priest lines carries V. and each ministers' answer carries R. These are dialogue roles, distinct from the 1861 witness's P./R. speaker letters on printed pp. xvii-xviii (IA leaves n27-n28, artifact PDF pp. 28-29), checked on the page images at the same resolutions."
+parts = [
+  { key = "priest-1", seq = [1901], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "server-1", seq = [1902], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "domine-exaudi"
+lang = "la"
+basis = "1962 Ordo Missae n. 1021, printed p. 217, artifact PDF p. 298 of the registered CMAA facsimile, read on the page images at 200 and 400 dpi on 2026-10-20: each of the four priest lines carries V. and each ministers' answer carries R. These are dialogue roles, distinct from the 1861 witness's P./R. speaker letters on printed pp. xvii-xviii (IA leaves n27-n28, artifact PDF pp. 28-29), checked on the page images at the same resolutions."
+parts = [
+  { key = "priest-1", seq = [1901], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "server-1", seq = [1902], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "dominus-vobiscum"
+lang = "en"
+basis = "1962 Ordo Missae n. 1021, printed p. 217, artifact PDF p. 298 of the registered CMAA facsimile, read on the page images at 200 and 400 dpi on 2026-10-20: each of the four priest lines carries V. and each ministers' answer carries R. These are dialogue roles, distinct from the 1861 witness's P./R. speaker letters on printed pp. xvii-xviii (IA leaves n27-n28, artifact PDF pp. 28-29), checked on the page images at the same resolutions."
+parts = [
+  { key = "priest-1", seq = [2001], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "server-1", seq = [2002], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "dominus-vobiscum"
+lang = "la"
+basis = "1962 Ordo Missae n. 1021, printed p. 217, artifact PDF p. 298 of the registered CMAA facsimile, read on the page images at 200 and 400 dpi on 2026-10-20: each of the four priest lines carries V. and each ministers' answer carries R. These are dialogue roles, distinct from the 1861 witness's P./R. speaker letters on printed pp. xvii-xviii (IA leaves n27-n28, artifact PDF pp. 28-29), checked on the page images at the same resolutions."
+parts = [
+  { key = "priest-1", seq = [2001], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "server-1", seq = [2002], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "kyrie-eleison"
+lang = "en"
+basis = "Source 1861 Cummiskey printed p. xviii, IA leaf n28, artifact PDF p. 29; target 1962 Ordo Missae n. 1024, printed p. 217, artifact PDF p. 298; both page images read at 200 and 400 dpi on 2026-10-20. Nine acclamations are printed as three triplets below alternatim cum ministris dicit. None of the nine carries V. or R.; no English gloss occurs in this Latin target. The source's final italic, unmarked English translation follows its three roman acclamations across the full measure; it is a nonspoken source gloss, not another recitation or an action. The Latin artifact deliberately contains no copy of that English gloss."
+parts = [
+  { key = "priest-1", seq = [2601], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [2602], speaker = "server", printed_marker = "R." },
+  { key = "priest-2", seq = [2603], speaker = "priest", printed_marker = "P." },
+  { key = "source-gloss", seq = [2604], gloss = true },
+]
+
+[[sections.turn_partitions]]
+element = "kyrie-eleison"
+lang = "la"
+basis = "Source 1861 Cummiskey printed p. xviii, IA leaf n28, artifact PDF p. 29; target 1962 Ordo Missae n. 1024, printed p. 217, artifact PDF p. 298; both page images read at 200 and 400 dpi on 2026-10-20. Nine acclamations are printed as three triplets below alternatim cum ministris dicit. None of the nine carries V. or R.; no English gloss occurs in this Latin target."
+parts = [
+  { key = "priest-1", seq = [2601], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [2602], speaker = "server", printed_marker = "R." },
+  { key = "priest-2", seq = [2603], speaker = "priest", printed_marker = "P." },
+]
+
+[[sections.turn_partitions]]
+element = "christe-eleison"
+lang = "en"
+basis = "Source 1861 Cummiskey printed p. xviii, IA leaf n28, artifact PDF p. 29; target 1962 Ordo Missae n. 1024, printed p. 217, artifact PDF p. 298; both page images read at 200 and 400 dpi on 2026-10-20. Nine acclamations are printed as three triplets below alternatim cum ministris dicit. None of the nine carries V. or R.; no English gloss occurs in this Latin target. The source's final italic, unmarked English translation follows its three roman acclamations across the full measure; it is a nonspoken source gloss, not another recitation or an action. The Latin artifact deliberately contains no copy of that English gloss."
+parts = [
+  { key = "server-1", seq = [2701], speaker = "server", printed_marker = "R." },
+  { key = "priest-1", seq = [2702], speaker = "priest", printed_marker = "P." },
+  { key = "server-2", seq = [2703], speaker = "server", printed_marker = "R." },
+  { key = "source-gloss", seq = [2704], gloss = true },
+]
+
+[[sections.turn_partitions]]
+element = "christe-eleison"
+lang = "la"
+basis = "Source 1861 Cummiskey printed p. xviii, IA leaf n28, artifact PDF p. 29; target 1962 Ordo Missae n. 1024, printed p. 217, artifact PDF p. 298; both page images read at 200 and 400 dpi on 2026-10-20. Nine acclamations are printed as three triplets below alternatim cum ministris dicit. None of the nine carries V. or R.; no English gloss occurs in this Latin target."
+parts = [
+  { key = "server-1", seq = [2701], speaker = "server", printed_marker = "R." },
+  { key = "priest-1", seq = [2702], speaker = "priest", printed_marker = "P." },
+  { key = "server-2", seq = [2703], speaker = "server", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "kyrie-eleison-repetitio"
+lang = "en"
+basis = "Source 1861 Cummiskey printed p. xix, IA leaf n29, artifact PDF p. 30; target 1962 Ordo Missae n. 1024, printed p. 217, artifact PDF p. 298; both page images read at 200 and 400 dpi on 2026-10-20. Nine acclamations are printed as three triplets below alternatim cum ministris dicit. None of the nine carries V. or R.; no English gloss occurs in this Latin target. The source's final italic, unmarked English translation follows its three roman acclamations across the full measure; it is a nonspoken source gloss, not another recitation or an action. The Latin artifact deliberately contains no copy of that English gloss."
+parts = [
+  { key = "priest-1", seq = [2801], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [2802], speaker = "server", printed_marker = "R." },
+  { key = "priest-2", seq = [2803], speaker = "priest", printed_marker = "P." },
+  { key = "source-gloss", seq = [2804], gloss = true },
+]
+
+[[sections.turn_partitions]]
+element = "kyrie-eleison-repetitio"
+lang = "la"
+basis = "Source 1861 Cummiskey printed p. xix, IA leaf n29, artifact PDF p. 30; target 1962 Ordo Missae n. 1024, printed p. 217, artifact PDF p. 298; both page images read at 200 and 400 dpi on 2026-10-20. Nine acclamations are printed as three triplets below alternatim cum ministris dicit. None of the nine carries V. or R.; no English gloss occurs in this Latin target."
+parts = [
+  { key = "priest-1", seq = [2801], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [2802], speaker = "server", printed_marker = "R." },
+  { key = "priest-2", seq = [2803], speaker = "priest", printed_marker = "P." },
+]
+
+[[sections.turn_partitions]]
+element = "dominus-vobiscum-post-gloriam"
+lang = "en"
+basis = "Source 1861 Cummiskey printed p. xix, IA leaf n29, artifact PDF p. 30, read at 200 and 400 dpi on 2026-10-20. Target 1962 Ordo Missae, rubric after n. 1025, left column, printed p. 219, artifact PDF p. 300, read at both resolutions on 2026-10-20. The greeting and answer visibly carry the versicle and response marks inside the rubric."
+parts = [
+  { key = "priest-1", seq = [3201], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "server-1", seq = [3202], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "dominus-vobiscum-post-gloriam"
+lang = "la"
+basis = "Source 1861 Cummiskey printed p. xix, IA leaf n29, artifact PDF p. 30, read at 200 and 400 dpi on 2026-10-20. Target 1962 Ordo Missae, rubric after n. 1025, left column, printed p. 219, artifact PDF p. 300, read at both resolutions on 2026-10-20. The greeting and answer visibly carry the versicle and response marks inside the rubric."
+parts = [
+  { key = "priest-1", seq = [3201], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "server-1", seq = [3202], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
 
 [sections.english]
 relation = "antecedent"
@@ -766,10 +977,54 @@ note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey
 [[sections]]
 key = "oblatio"
 name = "The Lessons and the Offertory"
-artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20"
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la-turn-divided"
+artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la-turn-divided-complete-2026-10-20"
 absent_latin = "witness-own-english"
+
+# Source-owned remaining dialogue fragments (2026-10-20). Printed source
+# markers, independently checked target roles, and nonspoken source glosses
+# are distinct. Parent source text and all target qualifications remain.
+[[sections.turn_partitions]]
+element = "dominus-vobiscum-ante-evangelium"
+lang = "en"
+basis = "Source 1861 Cummiskey printed p. xxi, IA leaf n31, artifact PDF p. 32, read at 200 and 400 dpi on 2026-10-20. Target 1962 Ordo Missae, rubrics after n. 1027 and n. 1028, right column, printed p. 219, artifact PDF p. 300, read at both resolutions on 2026-10-20. Both solemn and priest-without-sacred-ministers Gospel greetings visibly carry V./R. marks. The announcement follows Et pronuntians without a mark. Gloria tibi, Domine occurs in the solemn rubric after ministri respondent without a response mark. Do not infer marks for the third or fourth source turn."
+parts = [
+  { key = "priest-1", seq = [801], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "server-1", seq = [802], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+  { key = "priest-2", seq = [803], speaker = "priest", printed_marker = "P." },
+  { key = "server-2", seq = [804], speaker = "server", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "dominus-vobiscum-ante-evangelium"
+lang = "la"
+basis = "Source 1861 Cummiskey printed p. xxi, IA leaf n31, artifact PDF p. 32, read at 200 and 400 dpi on 2026-10-20. Target 1962 Ordo Missae, rubrics after n. 1027 and n. 1028, right column, printed p. 219, artifact PDF p. 300, read at both resolutions on 2026-10-20. Both solemn and priest-without-sacred-ministers Gospel greetings visibly carry V./R. marks. The announcement follows Et pronuntians without a mark. Gloria tibi, Domine occurs in the solemn rubric after ministri respondent without a response mark. Do not infer marks for the third or fourth source turn."
+parts = [
+  { key = "priest-1", seq = [801], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "server-1", seq = [802], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+  { key = "priest-2", seq = [803], speaker = "priest", printed_marker = "P." },
+  { key = "server-2", seq = [804], speaker = "server", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "dominus-vobiscum-ante-offertorium"
+lang = "en"
+basis = "Source 1861 Cummiskey printed p. xxii, IA leaf n32, artifact PDF p. 33, read at 200 and 400 dpi on 2026-10-20. Target 1962 Ordo Missae, rubric after n. 1029, right column, printed p. 220, artifact PDF p. 301, read at both resolutions on 2026-10-20. The greeting and answer visibly carry V./R. marks. The following Oremus after Postea dicit is unmarked, and belongs to the already separate source seq 20 rather than this parent block."
+parts = [
+  { key = "priest-1", seq = [1801], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "server-1", seq = [1802], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "dominus-vobiscum-ante-offertorium"
+lang = "la"
+basis = "Source 1861 Cummiskey printed p. xxii, IA leaf n32, artifact PDF p. 33, read at 200 and 400 dpi on 2026-10-20. Target 1962 Ordo Missae, rubric after n. 1029, right column, printed p. 220, artifact PDF p. 301, read at both resolutions on 2026-10-20. The greeting and answer visibly carry V./R. marks. The following Oremus after Postea dicit is unmarked, and belongs to the already separate source seq 20 rather than this parent block."
+parts = [
+  { key = "priest-1", seq = [1801], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "server-1", seq = [1802], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
 
 [sections.english]
 relation = "antecedent"
@@ -1391,10 +1646,32 @@ note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey
 [[sections]]
 key = "canon"
 name = "The Canon of the Mass"
-artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en-turn-divided-2026-10-20"
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la"
+artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la-turn-divided-2026-10-20"
 absent_latin = "witness-own-english"
+
+# Source-owned remaining dialogue fragments (2026-10-20). Printed source
+# markers, independently checked target roles, and nonspoken source glosses
+# are distinct. Parent source text and all target qualifications remain.
+[[sections.turn_partitions]]
+element = "per-omnia-saecula"
+lang = "en"
+basis = "Source 1861 Cummiskey printed p. xxxix, IA leaf n49; target 1962 Ordo Missae before nn. 1113 and 1115, printed pp. 312, 314, artifact PDF pp. 393, 395; both source and target page images read at 200 and 400 dpi on 2026-10-20. Both chant settings begin Per omnia without a V. mark and print R. immediately before Amen. The first setting follows dicit intellegibili voce vel cantat. The second is the alternative tone bounded by its own rubric at printed p. 314."
+parts = [
+  { key = "priest-1", seq = [3001], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [3002], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "per-omnia-saecula"
+lang = "la"
+basis = "Source 1861 Cummiskey printed p. xxxix, IA leaf n49; target 1962 Ordo Missae before nn. 1113 and 1115, printed pp. 312, 314, artifact PDF pp. 393, 395; both source and target page images read at 200 and 400 dpi on 2026-10-20. Both chant settings begin Per omnia without a V. mark and print R. immediately before Amen. The first setting follows dicit intellegibili voce vel cantat. The second is the alternative tone bounded by its own rubric at printed p. 314."
+parts = [
+  { key = "priest-1", seq = [3001], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [3002], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
 
 [sections.english]
 relation = "antecedent"
@@ -1743,10 +2020,52 @@ note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey
 [[sections]]
 key = "communio"
 name = "The Communion"
-artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en-turn-divided"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en-turn-divided-complete-2026-10-20"
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la-turn-divided"
+artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la-turn-divided-complete-2026-10-20"
 absent_latin = "witness-own-english"
+
+# Source-owned remaining dialogue fragments (2026-10-20). Printed source
+# markers, independently checked target roles, and nonspoken source glosses
+# are distinct. Parent source text and all target qualifications remain.
+[[sections.turn_partitions]]
+element = "pater-noster"
+lang = "en"
+basis = "Source 1861 Cummiskey printed p. xxxix, IA leaf n49; target 1962 Ordo Missae nn. 1114 and 1116, printed pp. 312, 313, 314, 315, artifact PDF pp. 393, 394, 395, 396; both source and target page images read at 200 and 400 dpi on 2026-10-20. Both settings begin Pater noster without V.; the final petition remains unmarked. Each prints R. before Sed libera nos a malo. Each then prints Sacerdos secrete dicit: Amen. The Amen has neither V. nor R., despite being expressly assigned to the priest. Primary setting: n. 1114, pp. 312-313. Alternative tone: n. 1116, pp. 314-315; the rubric names ferias, vigils II and III class, votive Masses IV class, and Masses of the dead. No separate prose recitation printing was inspected; the preceding direction covers saying audibly or singing."
+parts = [
+  { key = "priest-1", seq = [301], speaker = "priest" },
+  { key = "server-1", seq = [302], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+  { key = "priest-2", seq = [303], speaker = "priest", printed_marker = "P." },
+]
+
+[[sections.turn_partitions]]
+element = "pater-noster"
+lang = "la"
+basis = "Source 1861 Cummiskey printed p. xxxix, IA leaf n49; target 1962 Ordo Missae nn. 1114 and 1116, printed pp. 312, 313, 314, 315, artifact PDF pp. 393, 394, 395, 396; both source and target page images read at 200 and 400 dpi on 2026-10-20. Both settings begin Pater noster without V.; the final petition remains unmarked. Each prints R. before Sed libera nos a malo. Each then prints Sacerdos secrete dicit: Amen. The Amen has neither V. nor R., despite being expressly assigned to the priest. Primary setting: n. 1114, pp. 312-313. Alternative tone: n. 1116, pp. 314-315; the rubric names ferias, vigils II and III class, votive Masses IV class, and Masses of the dead. No separate prose recitation printing was inspected; the preceding direction covers saying audibly or singing."
+parts = [
+  { key = "priest-1", seq = [301], speaker = "priest" },
+  { key = "server-1", seq = [302], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+  { key = "priest-2", seq = [303], speaker = "priest", printed_marker = "P." },
+]
+
+[[sections.turn_partitions]]
+element = "per-omnia-saecula-post-libera-nos"
+lang = "en"
+basis = "Source 1861 Cummiskey printed p. xl, IA leaf n50; target 1962 Ordo Missae immediately before n. 1118, printed pp. 317, artifact PDF pp. 398; both source and target page images read at 200 and 400 dpi on 2026-10-20. After dicit intellegibili voce vel cantat, the notated Per omnia begins without V. and the concluding Amen prints R."
+parts = [
+  { key = "priest-1", seq = [501], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [502], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "per-omnia-saecula-post-libera-nos"
+lang = "la"
+basis = "Source 1861 Cummiskey printed p. xl, IA leaf n50; target 1962 Ordo Missae immediately before n. 1118, printed pp. 317, artifact PDF pp. 398; both source and target page images read at 200 and 400 dpi on 2026-10-20. After dicit intellegibili voce vel cantat, the notated Per omnia begins without V. and the concluding Amen prints R."
+parts = [
+  { key = "priest-1", seq = [501], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [502], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
 
 [sections.english]
 relation = "antecedent"
@@ -1940,10 +2259,74 @@ note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey
 [[sections]]
 key = "conclusio"
 name = "The Ablutions and the Last Gospel"
-artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en-turn-divided"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en-turn-divided-complete-2026-10-20"
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-la-turn-divided"
+artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-la-turn-divided-complete-2026-10-20"
 absent_latin = "witness-own-english"
+
+# Source-owned remaining dialogue fragments (2026-10-20). Printed source
+# markers, independently checked target roles, and nonspoken source glosses
+# are distinct. Parent source text and all target qualifications remain.
+[[sections.turn_partitions]]
+element = "dominus-vobiscum-ante-postcommunionem"
+lang = "en"
+basis = "Source 1861 Cummiskey printed p. xliii, IA leaf n53, artifact PDF p. 54, read at 200 and 400 dpi on 2026-10-20. Source-only element under the existing inventory. No independent 1962 placement or dialogue-role assertion is added. The source prints its greeting and Oremus unmarked; priest is the source-context speaker, distinct from a printed P. claim."
+parts = [
+  { key = "priest-1", seq = [501], speaker = "priest" },
+  { key = "server-1", seq = [502], speaker = "server", printed_marker = "R." },
+  { key = "priest-2", seq = [503], speaker = "priest" },
+]
+
+[[sections.turn_partitions]]
+element = "dominus-vobiscum-ante-postcommunionem"
+lang = "la"
+basis = "Source 1861 Cummiskey printed p. xliii, IA leaf n53, artifact PDF p. 54, read at 200 and 400 dpi on 2026-10-20. Source-only element under the existing inventory. No independent 1962 placement or dialogue-role assertion is added. The source prints its greeting and Oremus unmarked; priest is the source-context speaker, distinct from a printed P. claim."
+parts = [
+  { key = "priest-1", seq = [501], speaker = "priest" },
+  { key = "server-1", seq = [502], speaker = "server", printed_marker = "R." },
+  { key = "priest-2", seq = [503], speaker = "priest" },
+]
+
+[[sections.turn_partitions]]
+element = "requiescant-in-pace"
+lang = "en"
+basis = "Source 1861 Cummiskey printed p. xliv, IA leaf n54; target 1962 Ordo Missae n. 1133, printed pp. 323, artifact PDF pp. 404; both source and target page images read at 200 and 400 dpi on 2026-10-20. Beneath In Missis defunctorum dicit, the text prints V. Requiescant in pace. and a separate R. Amen."
+parts = [
+  { key = "priest-1", seq = [1401], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "server-1", seq = [1402], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "requiescant-in-pace"
+lang = "la"
+basis = "Source 1861 Cummiskey printed p. xliv, IA leaf n54; target 1962 Ordo Missae n. 1133, printed pp. 323, artifact PDF pp. 404; both source and target page images read at 200 and 400 dpi on 2026-10-20. Beneath In Missis defunctorum dicit, the text prints V. Requiescant in pace. and a separate R. Amen."
+parts = [
+  { key = "priest-1", seq = [1401], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "server-1", seq = [1402], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "initium-sancti-evangelii"
+lang = "en"
+basis = "Source 1861 Cummiskey printed p. xliv-xlv, IA leaf n54-55; target 1962 Ordo Missae after n. 1138 and before n. 1139, printed pp. 326, 327, artifact PDF pp. 407, 408; both source and target page images read at 200 and 400 dpi on 2026-10-20. At the foot of p. 326, the greeting prints V. Dominus vobiscum. R. Et cum spiritu tuo. At p. 327 the announcement has an initial cross glyph and no V./R. mark. R. Gloria tibi, Domine. follows the intervening rubric for another Gospel. The p. 327 alternative Sequentia sancti Evangelii etc. stands between the John announcement and R. Gloria; it is not present in the held source parent row and is not a new source turn. The source has P. before the John announcement, which remains a source speaker marker, not a target versicle mark."
+parts = [
+  { key = "priest-1", seq = [1901], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "server-1", seq = [1902], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+  { key = "priest-2", seq = [1903], speaker = "priest", printed_marker = "P." },
+  { key = "server-2", seq = [1904], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "initium-sancti-evangelii"
+lang = "la"
+basis = "Source 1861 Cummiskey printed p. xliv-xlv, IA leaf n54-55; target 1962 Ordo Missae after n. 1138 and before n. 1139, printed pp. 326, 327, artifact PDF pp. 407, 408; both source and target page images read at 200 and 400 dpi on 2026-10-20. At the foot of p. 326, the greeting prints V. Dominus vobiscum. R. Et cum spiritu tuo. At p. 327 the announcement has an initial cross glyph and no V./R. mark. R. Gloria tibi, Domine. follows the intervening rubric for another Gospel. The p. 327 alternative Sequentia sancti Evangelii etc. stands between the John announcement and R. Gloria; it is not present in the held source parent row and is not a new source turn. The source has P. before the John announcement, which remains a source speaker marker, not a target versicle mark."
+parts = [
+  { key = "priest-1", seq = [1901], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "server-1", seq = [1902], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+  { key = "priest-2", seq = [1903], speaker = "priest", printed_marker = "P." },
+  { key = "server-2", seq = [1904], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
 
 [sections.english]
 relation = "antecedent"

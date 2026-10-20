@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la-turn-divided-complete-2026-10-20"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The underlying 1861 Philadelphia printing is public domain in the United States. This is a word-preserving, source-fragment derivative of the exact tracked parent transcription, retaining its source words, printed letters, pointing and known misprints. The parent's United States public-domain basis applies; no modern protected text or apparatus is added."
+derived_from = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la-turn-divided-2"
+transformation = "From exact parent artifact artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la-turn-divided-2, sha256 fbbe4cbfb83020735b13cce4ea8307fdd9f24cfd913bd098512d214ab7f27106, copy every TSV row byte for byte except the page-checked divisions: seq 13 into 1301-1302, zero-based single-space token boundaries [0, 14, 16]; seq 15 into 1501-1502, zero-based single-space token boundaries [0, 14, 16]; seq 16 into 1601-1602, zero-based single-space token boundaries [0, 13, 15]; seq 17 into 1701-1702, zero-based single-space token boundaries [0, 6, 13]; seq 18 into 1801-1802, zero-based single-space token boundaries [0, 6, 12]; seq 19 into 1901-1902, zero-based single-space token boundaries [0, 5, 12]; seq 20 into 2001-2002, zero-based single-space token boundaries [0, 3, 8]; seq 26 into 2601-2603, zero-based single-space token boundaries [0, 3, 6, 9]; seq 27 into 2701-2703, zero-based single-space token boundaries [0, 3, 6, 9]; seq 28 into 2801-2803, zero-based single-space token boundaries [0, 3, 6, 9]; seq 32 into 3201-3202, zero-based single-space token boundaries [0, 3, 8]. Child rows are seq*100+n. Each first child retains the parent's metadata with an appended division note; later children retain its page and element identity while notes and any element-level speaker/incipit cells are blank. Joining each parent's child text cells with one ASCII space exactly recovers that parent's text cell. All other rows and the parent artifact remain unchanged."
+retrieved = "2026-10-20"
+sha256 = "2c5f7a2e4faf87599b1bf47643c2e777d023a0d5e818e4146104d0c6913ddf15"
+byte_size = 14061
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-praeparatio-la-turn-divided-complete-2026-10-20/ordinarium-praeparatio-la-turn-divided-complete-2026-10-20.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "The source's own page images were read at 200 and 400 dpi on 2026-10-20. These rows hold only the 1861 lay witness, never a transcription of the 1962 typical edition. P./R. remains source speaker evidence; target dialogue roles are independently declared with their exact page basis in the 1962 inventory. Any English Kyrie translation gloss is a separately declared nonspoken source fragment, with no speaker, dialogue role or cue; the Latin artifact has no copy of that English gloss. The original source qualifications, variants and absences remain unchanged."

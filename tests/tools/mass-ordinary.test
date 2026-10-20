@@ -79,7 +79,7 @@ for path in files:
         assert forbidden not in serialized, (path.name, forbidden)
 
     for absence in payload["absences"]:
-        assert set(absence) == {"key", "count", "state", "kind"}, absence
+        assert set(absence) == {"key", "count", "state", "kind", "label"}, absence
         # 2026-10-19: rights-unresolved -> unresolved joins the table, the
         # tool's ABSENCE_STATES, now that C2 G5's postconciliar
         # appointed-text-printed-with-formulary is the first key of that kind.
@@ -266,7 +266,8 @@ for path in files:
                 turn = row["turns"][0]
                 assert turn["key"] == key.rsplit("/", 1)[1], (key, turn)
                 assert turn["speaker"] == speaker, (key, turn)
-                assert turn["dialogue_role"] is None and turn["action"] is None, (key, turn)
+                expected_role = "response" if (payload["calendar"], key) == ("roman-1962", "conclusio/deo-gratias") else None
+                assert turn["dialogue_role"] == expected_role and turn["action"] is None, (key, turn)
                 assert turn["text"] == row["text"], (key, row["lang"])
                 # The book's head letter is a reviewed, separated marker; it is
                 # kept in the row text and supplies no dialogue role.
@@ -301,15 +302,37 @@ for path in files:
             ]),
         }
         roles_here = payload["calendar"] == "roman-1962"
+        if roles_here:
+            divided["praeparatio/adjutorium-nostrum"] = (11, [("priest", "P.", V), ("server", "R.", R)])
+            divided['praeparatio/deus-tu-conversus'] = (17, [('priest', 'P.', 'versicle'), ('server', 'R.', 'response')])
+            divided['praeparatio/ostende-nobis'] = (18, [('priest', 'P.', 'versicle'), ('server', 'R.', 'response')])
+            divided['praeparatio/domine-exaudi'] = (19, [('priest', 'P.', 'versicle'), ('server', 'R.', 'response')])
+            divided['praeparatio/dominus-vobiscum'] = (20, [('priest', 'P.', 'versicle'), ('server', 'R.', 'response')])
+            divided['praeparatio/misereatur-tui'] = (13, [('server', 'R.', None), ('priest', 'P.', None)])
+            divided['praeparatio/misereatur-vestri'] = (15, [('priest', 'P.', None), ('server', 'R.', 'response')])
+            divided['praeparatio/indulgentiam'] = (16, [('priest', 'P.', None), ('server', 'R.', 'response')])
+            divided['praeparatio/kyrie-eleison'] = (26, [('priest', 'P.', None), ('server', 'R.', None), ('priest', 'P.', None)])
+            divided['praeparatio/christe-eleison'] = (27, [('server', 'R.', None), ('priest', 'P.', None), ('server', 'R.', None)])
+            divided['praeparatio/kyrie-eleison-repetitio'] = (28, [('priest', 'P.', None), ('server', 'R.', None), ('priest', 'P.', None)])
+            divided['praeparatio/dominus-vobiscum-post-gloriam'] = (32, [('priest', 'P.', 'versicle'), ('server', 'R.', 'response')])
+            divided['oblatio/dominus-vobiscum-ante-evangelium'] = (8, [('priest', 'P.', 'versicle'), ('server', 'R.', 'response'), ('priest', 'P.', None), ('server', 'R.', None)])
+            divided['oblatio/dominus-vobiscum-ante-offertorium'] = (18, [('priest', 'P.', 'versicle'), ('server', 'R.', 'response')])
+            divided['conclusio/dominus-vobiscum-ante-postcommunionem'] = (5, [('priest', None, None), ('server', 'R.', None), ('priest', None, None)])
+            divided['canon/per-omnia-saecula'] = (30, [('priest', 'P.', None), ('server', 'R.', 'response')])
+            divided['communio/pater-noster'] = (3, [('priest', None, None), ('server', 'R.', 'response'), ('priest', 'P.', None)])
+            divided['communio/per-omnia-saecula-post-libera-nos'] = (5, [('priest', 'P.', None), ('server', 'R.', 'response')])
+            divided['conclusio/requiescant-in-pace'] = (14, [('priest', 'P.', 'versicle'), ('server', 'R.', 'response')])
+            divided['conclusio/initium-sancti-evangelii'] = (19, [('priest', 'P.', 'versicle'), ('server', 'R.', 'response'), ('priest', 'P.', None), ('server', 'R.', 'response')])
         for key, (parent, expected) in divided.items():
             rows = elements[key]["translations"]
             assert {row["lang"] for row in rows} == {"en", "la"}, (key, rows)
             for row in rows:
                 turns = row["turns"]
-                assert len(turns) == len(expected), (key, row["lang"], turns)
+                wanted = expected + [(None, None, None)] if row["lang"] == "en" and key in {"praeparatio/kyrie-eleison", "praeparatio/christe-eleison", "praeparatio/kyrie-eleison-repetitio"} else expected
+                assert len(turns) == len(wanted), (key, row["lang"], turns)
                 assert "\n".join(turn["text"] for turn in turns) == row["text"], key
-                assert row["text"].count("\n") == len(expected) - 1, (key, row["lang"])
-                for turn, (speaker, marker, role) in zip(turns, expected):
+                assert row["text"].count("\n") == len(wanted) - 1, (key, row["lang"])
+                for turn, (speaker, marker, role) in zip(turns, wanted):
                     assert turn["speaker"] == speaker, (key, turn)
                     assert turn["printed_marker"] == marker, (key, turn)
                     assert turn["dialogue_role"] == (role if roles_here else None), (key, turn)
@@ -365,7 +388,8 @@ for path in files:
             exact = {key for key, row in collated_la.items() if row.get("target_wording") == "word-exact"}
             assert set(collated_la) - exact == not_exact, sorted(set(collated_la) - exact)
             assert len(exact) == 92 and len(collated_la) == 104, (len(exact), len(collated_la))
-            assert set(divided) <= exact, sorted(set(divided) - exact)
+            antecedent_only = {"praeparatio/indulgentiam", "conclusio/dominus-vobiscum-ante-postcommunionem"}
+            assert set(divided) - antecedent_only <= exact, sorted(set(divided) - antecedent_only - exact)
             for key, row in collated_la.items():
                 assert row["collation_finding"].startswith(
                     "passage.catholic-church.missale-romanum."), (key, row["collation_finding"])
@@ -406,7 +430,9 @@ for path in files:
             "conclusio/requiescant-in-pace",
             "conclusio/initium-sancti-evangelii",
         }
-        assert len(opaque) == 20 and opaque <= set(elements), opaque - set(elements)
+        if roles_here:
+            opaque.difference_update(divided)
+        assert len(opaque) == (0 if roles_here else 20) and opaque <= set(elements), opaque - set(elements)
         for key in opaque:
             rows = elements[key]["translations"]
             assert {row["lang"] for row in rows} == {"en", "la"}, (key, rows)
