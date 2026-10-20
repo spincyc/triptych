@@ -32,9 +32,16 @@ state = "in_progress"
 
   [[deliverables.requirements]]
   id = "execution-through-completion"
-  criterion = "The 2026-10-17 continuation executes the underlying historical, text, generated-history and reader requirements without another handoff package; completed implementation and source work are integrated and verified, and any genuinely unavailable external input is documented separately from runnable unfinished work."
+  criterion = "The continuation executes the underlying historical, text, generated-history and reader requirements; completed implementation and source work are integrated and verified, and any genuinely unavailable external input is documented separately from runnable unfinished work. The clean-agent handoff requested on 2026-10-20 is a transfer checkpoint and does not satisfy the underlying completion requirements."
   status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  evidence = ["PROJECT-WORK.md", "src/sources/inventories/missal-timeline-handoff-2026-10-20.md"]
+
+  [[deliverables.requirements]]
+  id = "clean-agent-handoff-2026-10-20"
+  criterion = "The requested tracked handoff identifies the pushed research checkpoint, evidence owners, completed verification, open historical and textual requirements, concrete next inputs and continuation commands without relying on chat, scratch packets or prior agent state."
+  status = "pass"
+  evidence = ["src/sources/inventories/missal-timeline-handoff-2026-10-20.md", "PROJECT-WORK.md"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "recovery"
@@ -74,7 +81,7 @@ state = "in_progress"
 
   [[deliverables.requirements]]
   id = "coverage-reconciliation"
-  criterion = "The coverage audit preserves all 77 Eastern and Western discovery rows, verifies exact owner fingerprints and candidate, witness, stage, artifact and segment identities, and refuses stale or inconsistent mappings without treating gaps as completed research."
+  criterion = "The coverage audit preserves all 96 current Eastern and Western discovery rows, verifies exact owner fingerprints and candidate, witness, stage, artifact and segment identities, and refuses stale or inconsistent mappings without treating gaps as completed research."
   status = "pass"
   evidence = ["src/sources/inventories/eucharistic-stage-coverage-v1.json", "tools/missal-coverage-reconciliation", "tools/tests/test_missal_coverage_reconciliation.py"]
 
