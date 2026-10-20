@@ -957,6 +957,13 @@ label = "Military Order of Santiago"
 families = ["Santiago military"]
 note = "USUARIUM origin 890 indexes Santiago books; IEC study printed p. 73 calls the 1560 print the third missal and cites a 1536 authorization letter and 1541 Uclés inventory for an earlier edition. The Andalusian thesis p. 116 supplies the BNE MS 931 manuscript lead. Earlier print exemplars and the direct BNE record remain uninspected. Source IDs: additional-orders-src-santiago-usuarium, additional-orders-src-santiago-iec, additional-orders-src-santiago-thesis. Presentation grouping only; no independent recension or parentage asserted."
 
+# Add alongside existing presentation_groups; navigation only.
+[[presentation_groups]]
+id = "regular-canons-local"
+label = "Canons Regular: local congregations and houses"
+families = ["regular-canonical-uses"]
+note = "Navigation only. Windesheim, Grand-Saint-Bernard, Saint-Ruf and other local houses are not one rite or recension."
+
 # Bounded collect and calendar comparisons in exact Dominican/Carmelite witnesses.
 [[text_sets]]
 id = "dominican-1550-suscepimus"
@@ -1095,3 +1102,17 @@ parents = []
 id = "mozarabic-1804-benedictio-panis"
 text_set = "mozarabic-1804-benedictio-panis"
 parents = []
+
+# Scratch-only insertion into catholic-eucharistic-history-v1.toml presentation_groups.
+[[presentation_groups]]
+id = "trinitarian-order"
+label = "Trinitarian Order Eucharistic books"
+families = ["trinitarian"]
+note = "Navigation for two catalogue-backed order-labelled witnesses. Membership does not assert a separate liturgical recension, textual lineage, normative adoption or use duration."
+
+# Hospitaller scratch-only proposed presentation alias; navigation, not rite/recension admission.
+
+[[presentation_groups]]
+id = "hospitaller-order-of-malta"
+label = "Hospitaller Order of St John of Jerusalem, Rhodes and Malta"
+families = ["Hospitaller Order of St John of Jerusalem (OMel)"]

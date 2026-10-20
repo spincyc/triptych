@@ -1,0 +1,1910 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "scandinavian-2026-10-20",
+  "title": "Scandinavian Eucharistic books: qualified research review, 2026-10-20",
+  "lane": "scandinavian",
+  "side": "western",
+  "checked_on": "2026-10-20",
+  "reviewed_on": "2026-10-20",
+  "coverage_rows": [
+    "nidaros",
+    "danish-uses",
+    "scandinavian-other-uses",
+    "schleswig",
+    "turku",
+    "iceland-mass-witnesses",
+    "danish-unassigned",
+    "norwegian-local-reception"
+  ],
+  "target_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+  "semantics": "Bibliographic witnesses, components, reconstructed groups and labelled repertoire fragments. Neither record count nor year order is a count of substantive revisions, normative stages, whole texts or Git parents.",
+  "review_files": {
+    "storage": "untracked workspace scratch, pinned here by SHA-256 only",
+    "packet_sha256": "2fc96f8c3f06ae3e2839ea5573cce16a1ca7c696710bb77d244aff2b27fe1955",
+    "cold_verdict_sha256": "963fa49a0d1c6480352e45779f5f5fa86c814544150e4d67ce7fd97519c07447",
+    "identity_addendum_sha256": "ccac43fb186b02df3ecc855d74645355856e839de8b42be023160dada5191615",
+    "cold_initial_sha256": "015b936cedbf0f34f6544c9b896c49a48e31775a2f622787c565f2a969c7f1dd",
+    "cold_expanded_sha256": "2a936d946dbf1de0ab568dd5cef52ab6c4d0486d2a8b91433ff8e146cf991c18",
+    "integration_fragment_sha256": "911e811050ad4ecc223e4db49d812a1931e459b28d05f2812fd15cb4d5451158",
+    "cold_verdict": "accepted-with-corrections-for-metadata-only-integration",
+    "release_hold_sha256": "23de539816928548bad4ede872203210dfe36cd4ee106ecf0bf457c73faf60da",
+    "first_fragment_sha256": "9980f6aa17a890f4b0aa82aababb14b0a9b5b1535f63faba6cdeabbbf6d52520",
+    "first_receipt_sha256": "be24154c7775d0f279e7c1ea60311914037b7e50c7ca2923285d47c68f8d1172",
+    "cold_release_clearance_sha256": "ba3942889e30596679eb81a32a1adea3381aeeb6f744e717da2f908022a324ec"
+  },
+  "integration": {
+    "new_sources": [
+      "aarhus-leaves",
+      "aboense1488-scan",
+      "bjorkvall2015",
+      "danish-survey",
+      "fragmentarium-odense-1501",
+      "gw-m2439810",
+      "hafniense1484-scan",
+      "hafniense1510-scan",
+      "iceland-fragments-repertoire",
+      "iceland-illuminations",
+      "lindberg1923",
+      "lund387",
+      "magnus-iceland-components",
+      "manuscripta-a6",
+      "manuscripta-a97",
+      "nidaros-icelandic",
+      "nidaros-printed",
+      "nidaros1519-nb",
+      "nordfjord",
+      "oripaa1",
+      "oripaa2",
+      "ottoniense1483-catalog",
+      "ottoniense1501-fragment-scan",
+      "schleswig",
+      "skara-alvin-route",
+      "skara-municipality",
+      "strangnense1487-scan",
+      "thorlakr-component",
+      "turku-early",
+      "turku-group",
+      "turku-print",
+      "usuarium-book-277",
+      "usuarium-book-47",
+      "usuarium-book-510",
+      "usuarium-book-870",
+      "vallentuna",
+      "weale1928"
+    ],
+    "new_records": [
+      "aarhus-missal-leaves",
+      "hafniense-1510",
+      "ottoniense-1483",
+      "ottoniense-novum-1501",
+      "roscildense-c1484",
+      "roskilde-canon-1522",
+      "viburgense-1500",
+      "lundense-1514",
+      "linkoping-a97",
+      "skara-missal-c1150",
+      "strengnense-1487",
+      "upsalense-vetus-1484",
+      "upsalense-novum-1513",
+      "arosiense-graduale-1493",
+      "slesvicense-1486",
+      "aboense-1488",
+      "danicum-notatum-1400s",
+      "cold-linkoping-c415",
+      "cold-linkoping-c420",
+      "cold-linkoping-c427",
+      "cold-linkoping-c430",
+      "cold-linkoping-ordinal1",
+      "cold-linkoping-ordinal2",
+      "cold-uppsala-a94",
+      "cold-uppsala-a95",
+      "cold-uppsala-a96",
+      "cold-vallentuna1198",
+      "cold-swedish-a6",
+      "cold-nidaros-icelandic1250",
+      "cold-bergen-nordfjord",
+      "cold-turku-group-i",
+      "cold-turku-group-ii",
+      "cold-turku-group-iii",
+      "cold-turku-group-iv",
+      "cold-turku-group-v",
+      "cold-turku-group-vi",
+      "cold-turku-group-vii",
+      "cold-turku-group-viii",
+      "cold-turku-early-i26",
+      "cold-oripaa1",
+      "cold-oripaa2",
+      "cold-lund387",
+      "cold-iceland-scardense",
+      "cold-iceland-gufudalense",
+      "cold-iceland-thorlakr",
+      "cold-iceland-magnus-supplement",
+      "iceland-fragment-group-01",
+      "iceland-fragment-group-02",
+      "iceland-fragment-group-03",
+      "iceland-fragment-group-04",
+      "iceland-fragment-group-05",
+      "iceland-fragment-group-06",
+      "iceland-fragment-group-07",
+      "iceland-fragment-group-08",
+      "iceland-fragment-group-09",
+      "iceland-fragment-group-10",
+      "iceland-fragment-group-11",
+      "iceland-fragment-group-12",
+      "iceland-fragment-group-13",
+      "iceland-fragment-group-14",
+      "iceland-fragment-group-15"
+    ],
+    "existing_candidate_update": "nidaros-1519 now includes nidaros-printed and nidaros1519-nb source refs with original refs preserved, plus explicit printed-copy extent and non-normative witness qualification.",
+    "new_coverage": [
+      "schleswig",
+      "turku",
+      "iceland-mass-witnesses",
+      "danish-unassigned",
+      "norwegian-local-reception"
+    ],
+    "existing_coverage_updates": {
+      "nidaros": {
+        "append_candidate_ids": [
+          "cold-nidaros-icelandic1250"
+        ],
+        "append_source_ids": [
+          "nidaros-printed",
+          "nidaros1519-nb"
+        ],
+        "preserve_existing": true
+      },
+      "danish-uses": {
+        "append_candidate_ids": [
+          "aarhus-missal-leaves",
+          "hafniense-1510",
+          "ottoniense-1483",
+          "ottoniense-novum-1501",
+          "roscildense-c1484",
+          "roskilde-canon-1522",
+          "viburgense-1500"
+        ],
+        "append_source_ids": [
+          "aarhus-leaves",
+          "danish-survey",
+          "fragmentarium-odense-1501",
+          "gw-m2439810",
+          "hafniense1484-scan",
+          "hafniense1510-scan",
+          "ottoniense1483-catalog",
+          "ottoniense1501-fragment-scan",
+          "usuarium-book-47",
+          "usuarium-book-510",
+          "usuarium-book-870",
+          "weale1928"
+        ],
+        "preserve_existing": true
+      },
+      "scandinavian-other-uses": {
+        "append_candidate_ids": [
+          "lundense-1514",
+          "linkoping-a97",
+          "skara-missal-c1150",
+          "strengnense-1487",
+          "upsalense-vetus-1484",
+          "upsalense-novum-1513",
+          "arosiense-graduale-1493",
+          "cold-linkoping-c415",
+          "cold-linkoping-c420",
+          "cold-linkoping-c427",
+          "cold-linkoping-c430",
+          "cold-linkoping-ordinal1",
+          "cold-linkoping-ordinal2",
+          "cold-uppsala-a94",
+          "cold-uppsala-a95",
+          "cold-uppsala-a96",
+          "cold-vallentuna1198",
+          "cold-swedish-a6",
+          "cold-lund387"
+        ],
+        "append_source_ids": [
+          "bjorkvall2015",
+          "danish-survey",
+          "lindberg1923",
+          "lund387",
+          "manuscripta-a6",
+          "manuscripta-a97",
+          "skara-alvin-route",
+          "skara-municipality",
+          "strangnense1487-scan",
+          "vallentuna",
+          "weale1928"
+        ],
+        "preserve_existing": true
+      },
+      "german-diocesan-uses": {
+        "remove_title_member": "Schleswig",
+        "reason": "Named Schleswig route is represented once in new coverage row; preserve other German uses."
+      }
+    },
+    "rejected_alias": "hafniense-vetus-1484 → roscildense-c1484; no separate row",
+    "source_corrections": [
+      "roskilde-usuarium /book/870 rejected for 1484; GW M2439810 + USUARIUM 510 for 1484, USUARIUM 870 for 1522",
+      "danicum-notatum-1400s → USUARIUM 277",
+      "skara-missal-c1150 → Skara municipality + Alvin route (Alvin viewer uninspected)",
+      "Fragmentarium F-lcqd has two pieces, while further Odense 1501 fragments survive elsewhere",
+      "viburgense-1500 now cites directly inspected USUARIUM book 47 alongside Weale–Bohatta"
+    ],
+    "stage_or_text_changes": 0,
+    "counts": {
+      "new_sources": 37,
+      "new_records": 61,
+      "new_coverage": 5,
+      "deferred_leads": 3,
+      "rejected_duplicate": 1
+    },
+    "structured_range_corrections": {
+      "aarhus-missal-leaves": [
+        1350,
+        1400
+      ],
+      "cold-linkoping-c415": [
+        1422,
+        1448
+      ],
+      "cold-iceland-scardense": [
+        1450,
+        1478
+      ],
+      "cold-iceland-gufudalense": [
+        1450,
+        1470
+      ]
+    },
+    "state": "applied-to-western-inventory",
+    "western_inventory_preimage_sha256": "9a7a9d50976921ae6566ba2c2060029eb146ba1047d22427cd86d70940e97552",
+    "western_inventory_result_sha256": "261ef59827d71b1ce842c591f6f1edbc1e49395f7b1581cf2841c1a5eec555b3",
+    "western_inventory_result_counts": {
+      "sources": 496,
+      "candidates": 625,
+      "coverage": 64
+    }
+  },
+  "record_decisions": [
+    {
+      "id": "nidaros-1519",
+      "verdict": "accept",
+      "integration_disposition": "existing-candidate-update",
+      "reason": "Accept only as a printed-standardization-witness at 1519; Intent for province is source-described; actual local use and complete copy collation differ."
+    },
+    {
+      "id": "aarhus-missal-leaves",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a manuscript-fragment-witness at 1350–1400; Leaves include one de angelis and a possible preparation/Ordo; no complete missal or independent revision."
+    },
+    {
+      "id": "hafniense-vetus-1484",
+      "verdict": "reject",
+      "integration_disposition": "alias-only-rejected",
+      "reason": "GW M2439810 explicitly identifies the acquired Hafniense vetus Copenhagen fragment as Missale Roschildense c.1484, ISTC im00717700. Do not add a second edition/candidate; attach the 74-image artifact to roscildense-c1484."
+    },
+    {
+      "id": "hafniense-1510",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a printed-witness at 1510; The title does not establish independent Copenhagen diocesan use or substantive difference from 1484."
+    },
+    {
+      "id": "ottoniense-1483",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a printed-fragment-witness at 1483; Selected views only; Weale says surviving copies are imperfect."
+    },
+    {
+      "id": "ottoniense-novum-1501",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a printed-fragment-witness at 1501; Fragmentary survival; no whole text."
+    },
+    {
+      "id": "roscildense-c1484",
+      "verdict": "correct",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Retain one Roskilde c.1484 printing, replacing the erroneous /book/870 citation with GW M2439810 and USUARIUM /book/510; alias Hafniense vetus. The copies are fragmentary and uncollated."
+    },
+    {
+      "id": "roskilde-canon-1522",
+      "verdict": "correct",
+      "integration_disposition": "new-candidate-row",
+      "reason": "The packet cites only the general survey. Bind USUARIUM /book/870 directly: 1522 Canon, some Masses, Common of Saints, not an annual missal."
+    },
+    {
+      "id": "viburgense-1500",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a printed-missal-witness at 1500; Weale bibliography and USUARIUM metadata; original copy not acquired."
+    },
+    {
+      "id": "lundense-1494-lead",
+      "verdict": "defer",
+      "integration_disposition": "deferred-open-lead",
+      "reason": "Weale–Bohatta #564* prints a bare 1494 Missale Lundense with B. Rosenkr. F 2 and no holding copy. No edition or textual revision can be counted until a copy or independent original title evidence is found."
+    },
+    {
+      "id": "lundense-1514",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a printed-missal-witness at 1514; Original full book not acquired; missal revision relative to manuscript stratum uncollated."
+    },
+    {
+      "id": "linkoping-a97",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a manuscript-missal-witness at second half 15th century; No complete text collation."
+    },
+    {
+      "id": "skara-missal-c1150",
+      "verdict": "correct",
+      "integration_disposition": "new-candidate-row",
+      "reason": "The cited 2013 newsletter is not the saved inspected Skara municipality page. Bind the institution catalogue and Alvin record 431873; municipality says the complete manuscript is digitized, so acquisition and artifact rights remain open."
+    },
+    {
+      "id": "strengnense-1487",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a printed-missal-witness at 1487; Original copy may have losses; no full collation."
+    },
+    {
+      "id": "upsalense-vetus-1484",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a printed-missal-witness at c.1484; Original scan not acquired; exact calendar/prayer contents uncollated."
+    },
+    {
+      "id": "upsalense-novum-1513",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Lindberg pp.31–32 identifies concrete calendar, sanctoral, common, votive, sequence and rubric differences from c.1484, and quotes the 1513 colophon. This supports a bounded textual-state candidate, not a fully collated or promulgated normative stage."
+    },
+    {
+      "id": "arosiense-graduale-1493",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a mass-chant-component at c.1493; Attribution to Västerås and printed date require exact copy check; not a missal."
+    },
+    {
+      "id": "slesvicense-1486",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a printed-missal-witness at 1486; Original complete book not acquired; 1512 missal unconfirmed."
+    },
+    {
+      "id": "aboense-1488",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a printed-missal-witness at after 17 August 1488; Dominican-based typesetting shared; isolated leaves may be confused with Dominican edition."
+    },
+    {
+      "id": "danicum-notatum-1400s",
+      "verdict": "correct",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Bind USUARIUM /book/277 directly for RA 4613, 1400–1500 fragment; generic news survey is insufficient for this exact shelfmark."
+    },
+    {
+      "id": "cold-linkoping-c415",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a manuscript-witness at 1422–1448; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-linkoping-c420",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a composite-manuscript-witness at 15th century; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-linkoping-c427",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a composite-manuscript-witness at c1500; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-linkoping-c430",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a gradual-component-witness at late15th century; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-linkoping-ordinal1",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a ordinal-component-witness at c1390 (1384 in older citations); Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-linkoping-ordinal2",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a layered-ordinal-component-witness at c1450; later1514/1530annotations; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-uppsala-a94",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a gradual-component-witness at 1503; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-uppsala-a95",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a gradual-component-witness at c1500; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-uppsala-a96",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a gradual-component-witness at early16c (older1520–1530attribution); Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-vallentuna1198",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a missal-calendar-fragment-witness at 1198; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-swedish-a6",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a manuscript-witness at 14th century;1422reception; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-nidaros-icelandic1250",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a mixed-breviary-missal-fragment-witness at c1250; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-bergen-nordfjord",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a imported-missal-fragment-witness at firsthalf12c; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-turku-group-i",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Cantus F.m.I.248 description explicitly reconstructs eight books and lists this group; accept one manuscript witness group, not a separate approved recension or one book per fragment."
+    },
+    {
+      "id": "cold-turku-group-ii",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Cantus F.m.I.248 description explicitly reconstructs eight books and lists this group; accept one manuscript witness group, not a separate approved recension or one book per fragment."
+    },
+    {
+      "id": "cold-turku-group-iii",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Cantus F.m.I.248 description explicitly reconstructs eight books and lists this group; accept one manuscript witness group, not a separate approved recension or one book per fragment."
+    },
+    {
+      "id": "cold-turku-group-iv",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Cantus F.m.I.248 description explicitly reconstructs eight books and lists this group; accept one manuscript witness group, not a separate approved recension or one book per fragment."
+    },
+    {
+      "id": "cold-turku-group-v",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Cantus F.m.I.248 description explicitly reconstructs eight books and lists this group; accept one manuscript witness group, not a separate approved recension or one book per fragment."
+    },
+    {
+      "id": "cold-turku-group-vi",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Cantus F.m.I.248 description explicitly reconstructs eight books and lists this group; accept one manuscript witness group, not a separate approved recension or one book per fragment."
+    },
+    {
+      "id": "cold-turku-group-vii",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Cantus F.m.I.248 description explicitly reconstructs eight books and lists this group; accept one manuscript witness group, not a separate approved recension or one book per fragment."
+    },
+    {
+      "id": "cold-turku-group-viii",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Cantus F.m.I.248 description explicitly reconstructs eight books and lists this group; accept one manuscript witness group, not a separate approved recension or one book per fragment."
+    },
+    {
+      "id": "cold-turku-early-i26",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a imported-missal-fragment-witness at late12c/early13c; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-oripaa1",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a manuscript-witness at 14th century; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-oripaa2",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a composite-votive-missal-witness at 15th century; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-lund387",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a summer-missal-manuscript-witness at late13c (olderdatingconflict); Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-nidaros-ordo",
+      "verdict": "defer",
+      "integration_disposition": "deferred-open-lead",
+      "reason": "Secondary repertoire names four AM shelfmarks, but institutional descriptions and Marner 2021 were not inspected; retain as a family lead outside the edition sequence."
+    },
+    {
+      "id": "cold-vaxjo971",
+      "verdict": "defer",
+      "integration_disposition": "deferred-open-lead",
+      "reason": "Björkvall p.51 gives a tentative Växjö attribution to Codex 971, not an assured local missal or diocesan edition."
+    },
+    {
+      "id": "cold-iceland-scardense",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a reconstructed-manuscript-witness at 1450–1478; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-iceland-gufudalense",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a gradual-component-witness at 1450–1470; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-iceland-thorlakr",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a mass-proper-component-witness at c1400; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-iceland-magnus-supplement",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a missal-supplement-witness at late15th century; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "iceland-fragment-group-01",
+      "verdict": "correct",
+      "integration_disposition": "new-candidate-row",
+      "reason": "The repertoire leaves open whether this is part of the same gradual as group 12. Preserve the fragment label but do not count two independent books or liturgical revisions."
+    },
+    {
+      "id": "iceland-fragment-group-02",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Ingólfsson tables identify this Mass-book fragment group. Retain it as repertoire/source evidence, outside the count of distinct editions or certified independent books."
+    },
+    {
+      "id": "iceland-fragment-group-03",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Ingólfsson tables identify this Mass-book fragment group. Retain it as repertoire/source evidence, outside the count of distinct editions or certified independent books."
+    },
+    {
+      "id": "iceland-fragment-group-04",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Ingólfsson tables identify this Mass-book fragment group. Retain it as repertoire/source evidence, outside the count of distinct editions or certified independent books."
+    },
+    {
+      "id": "iceland-fragment-group-05",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Ingólfsson tables identify this Mass-book fragment group. Retain it as repertoire/source evidence, outside the count of distinct editions or certified independent books."
+    },
+    {
+      "id": "iceland-fragment-group-06",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Ingólfsson tables identify this Mass-book fragment group. Retain it as repertoire/source evidence, outside the count of distinct editions or certified independent books."
+    },
+    {
+      "id": "iceland-fragment-group-07",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Ingólfsson tables identify this Mass-book fragment group. Retain it as repertoire/source evidence, outside the count of distinct editions or certified independent books."
+    },
+    {
+      "id": "iceland-fragment-group-08",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Ingólfsson tables identify this Mass-book fragment group. Retain it as repertoire/source evidence, outside the count of distinct editions or certified independent books."
+    },
+    {
+      "id": "iceland-fragment-group-09",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Ingólfsson tables identify this Mass-book fragment group. Retain it as repertoire/source evidence, outside the count of distinct editions or certified independent books."
+    },
+    {
+      "id": "iceland-fragment-group-10",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Ingólfsson tables identify this Mass-book fragment group. Retain it as repertoire/source evidence, outside the count of distinct editions or certified independent books."
+    },
+    {
+      "id": "iceland-fragment-group-11",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Ingólfsson tables identify this Mass-book fragment group. Retain it as repertoire/source evidence, outside the count of distinct editions or certified independent books."
+    },
+    {
+      "id": "iceland-fragment-group-12",
+      "verdict": "correct",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Four leaves form one group and may belong with group 01. Preserve the join question and avoid a second independent-book count."
+    },
+    {
+      "id": "iceland-fragment-group-13",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Ingólfsson tables identify this Mass-book fragment group. Retain it as repertoire/source evidence, outside the count of distinct editions or certified independent books."
+    },
+    {
+      "id": "iceland-fragment-group-14",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Ingólfsson tables identify this Mass-book fragment group. Retain it as repertoire/source evidence, outside the count of distinct editions or certified independent books."
+    },
+    {
+      "id": "iceland-fragment-group-15",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Ingólfsson tables identify this Mass-book fragment group. Retain it as repertoire/source evidence, outside the count of distinct editions or certified independent books."
+    }
+  ],
+  "deferred_leads": [
+    {
+      "id": "lundense-1494-lead",
+      "reason": "Weale–Bohatta #564* prints a bare 1494 Missale Lundense with B. Rosenkr. F 2 and no holding copy. No edition or textual revision can be counted until a copy or independent original title evidence is found.",
+      "source_refs": [
+        "weale1928"
+      ],
+      "off_year_axis": true
+    },
+    {
+      "id": "cold-nidaros-ordo",
+      "reason": "Secondary repertoire names four AM shelfmarks, but institutional descriptions and Marner 2021 were not inspected; retain as a family lead outside the edition sequence.",
+      "source_refs": [],
+      "off_year_axis": true,
+      "packet_local_sources": [
+        {
+          "id": "nidaros-ordo-repertoire",
+          "url": "https://bibliotekanauki.pl/articles/29432107.pdf",
+          "title": "Suski: Editions of medieval libriordinarii",
+          "inspected_locus": "Items67–70",
+          "finding": "Names Nidaros ordinal witnesses AM678 4°, AM679 4°, AM680a 4° and AM791 4°. Thirteenth/fourteenth-century manuscript dates differ from the1968 critical edition. Verify current custody with institutional catalogues."
+        },
+        {
+          "id": "nidaros-modern-reappraisal",
+          "url": "https://ims.leeds.ac.uk/wp-content/uploads/sites/29/2023/11/LMS3_2023.pdf",
+          "title": "Leeds Medieval Studies3(2023),review ofDominican Resonances",
+          "inspected_locus": "Review pp144ff",
+          "finding": "Marner2021 reexamines plurality in the Nidaros ordinal tradition. Do not impose uniform medieval provincial practice from the Gjerløw edition alone. The underlying chapter remains unexamined."
+        }
+      ],
+      "source_reference_scope": "Packet-local evidence only; not inventory source IDs. Original institutional manuscript records and Marner 2021 chapter remain uninspected."
+    },
+    {
+      "id": "cold-vaxjo971",
+      "reason": "Björkvall p.51 gives a tentative Växjö attribution to Codex 971, not an assured local missal or diocesan edition.",
+      "source_refs": [
+        "bjorkvall2015"
+      ],
+      "off_year_axis": true
+    }
+  ],
+  "use_dispositions": [
+    {
+      "use": "Nidaros",
+      "approval": "1519 title and Bokselskap describe provincial standardization intent; no original decree inspected.",
+      "reception": "The c.1250 mixed Icelandic fragment shows earlier Nidaros-use text; actual adoption of the 1519 printing in every province locality is unproved.",
+      "substantive_state": "No complete comparison of manuscript and 1519 states; printed year is not alone a reform date.",
+      "candidate_ids": [
+        "nidaros-1519",
+        "cold-nidaros-icelandic1250"
+      ],
+      "deferred_ids": [
+        "cold-nidaros-ordo"
+      ]
+    },
+    {
+      "use": "Aarhus",
+      "approval": "No missal approval instrument inspected.",
+      "reception": "Cathedral report says two leaves were found there; original use and whether both belonged to one codex remain unproved.",
+      "substantive_state": "One fragment group, no compared revision.",
+      "candidate_ids": [
+        "aarhus-missal-leaves"
+      ],
+      "deferred_ids": []
+    },
+    {
+      "use": "Copenhagen",
+      "approval": "Copenhagen is a printing/title place, not a medieval diocese.",
+      "reception": "The old c.1484 Hafniense label belongs to Roskilde c.1484; 1510 local diocesan attribution remains qualified.",
+      "substantive_state": "1510 versus c.1484 textual differences not collated.",
+      "candidate_ids": [
+        "hafniense-1510"
+      ],
+      "deferred_ids": []
+    },
+    {
+      "use": "Odense",
+      "approval": "No 1483 or 1501 approval act inspected.",
+      "reception": "The 1501 fragments are attributed to Odense by Fragmentarium; 1483 survival is fragmentary.",
+      "substantive_state": "The two printings are witnesses; substantive change not established.",
+      "candidate_ids": [
+        "ottoniense-1483",
+        "ottoniense-novum-1501"
+      ],
+      "deferred_ids": []
+    },
+    {
+      "use": "Ribe",
+      "approval": "No independent approval or use instrument identified.",
+      "reception": "Former Ripense 1504 identification is now Odense 1501; the independent Ribe gap stays open.",
+      "substantive_state": "No distinct Ribe source state established.",
+      "candidate_ids": [],
+      "deferred_ids": []
+    },
+    {
+      "use": "Roskilde",
+      "approval": "No promulgating act inspected.",
+      "reception": "GW classifies the c.1484 printing as Roskilde; the 1522 Canon title explicitly names Roskilde use. Actual breadth of reception is unmeasured.",
+      "substantive_state": "c.1484 missal and 1522 Canon are different extents; neither proves a whole annual revision.",
+      "candidate_ids": [
+        "hafniense-1510",
+        "roscildense-c1484",
+        "roskilde-canon-1522"
+      ],
+      "deferred_ids": []
+    },
+    {
+      "use": "Viborg",
+      "approval": "No act inspected.",
+      "reception": "1500 missal title and catalogue associate the print with Viborg; Riga copy not directly opened.",
+      "substantive_state": "No predecessor or successor collation.",
+      "candidate_ids": [
+        "viburgense-1500"
+      ],
+      "deferred_ids": []
+    },
+    {
+      "use": "Lund",
+      "approval": "No original approval act inspected.",
+      "reception": "1514 printed book and attributed Bratislava summer manuscript are separate witnesses; 1494 remains a copyless lead.",
+      "substantive_state": "1514 versus manuscript content and 1494 distinctness unproved.",
+      "candidate_ids": [
+        "lundense-1514",
+        "cold-lund387"
+      ],
+      "deferred_ids": [
+        "lundense-1494-lead"
+      ]
+    },
+    {
+      "use": "Linköping",
+      "approval": "No promulgating act inspected.",
+      "reception": "A97 is catalogued for secular Linköping use; other manuscripts and ordinals have specific or contested attributions; Oripää I later Finnish custody does not prove Turku origin.",
+      "substantive_state": "Layered C427/C428 additions are not automatic normative revisions.",
+      "candidate_ids": [
+        "linkoping-a97",
+        "cold-linkoping-c415",
+        "cold-linkoping-c420",
+        "cold-linkoping-c427",
+        "cold-linkoping-c430",
+        "cold-linkoping-ordinal1",
+        "cold-linkoping-ordinal2",
+        "cold-oripaa1"
+      ],
+      "deferred_ids": []
+    },
+    {
+      "use": "Skara",
+      "approval": "No medieval approval act inspected.",
+      "reception": "Skara municipality reports medieval cathedral use of the c.1150 manuscript; KB A6 is disputed Skara/Uppsala attribution.",
+      "substantive_state": "The 2006 facsimile reproduces the old witness; no new medieval recension follows.",
+      "candidate_ids": [
+        "skara-missal-c1150",
+        "cold-swedish-a6"
+      ],
+      "deferred_ids": []
+    },
+    {
+      "use": "Strängnäs",
+      "approval": "No act inspected.",
+      "reception": "1487 Ghotan printed witness; exact local performance beyond the book title is unmeasured.",
+      "substantive_state": "No original-book comparison with manuscripts.",
+      "candidate_ids": [
+        "strengnense-1487"
+      ],
+      "deferred_ids": []
+    },
+    {
+      "use": "Uppsala",
+      "approval": "No original approval act inspected.",
+      "reception": "Printed 1484 and 1513 titles represent Uppsala; graduals and Vallentuna are components/local reception, while KB A6 attribution is disputed.",
+      "substantive_state": "Lindberg pp.31–32 supports bounded 1513 textual changes, not a complete sequence.",
+      "candidate_ids": [
+        "upsalense-vetus-1484",
+        "upsalense-novum-1513",
+        "cold-linkoping-c427",
+        "cold-uppsala-a94",
+        "cold-uppsala-a95",
+        "cold-uppsala-a96",
+        "cold-vallentuna1198",
+        "cold-swedish-a6"
+      ],
+      "deferred_ids": []
+    },
+    {
+      "use": "Västerås",
+      "approval": "No act inspected.",
+      "reception": "The c.1493 Graduale is a Mass music component; diocesan assignment needs direct copy check.",
+      "substantive_state": "No full missal or substantive revision established.",
+      "candidate_ids": [
+        "arosiense-graduale-1493"
+      ],
+      "deferred_ids": []
+    },
+    {
+      "use": "Schleswig/Slesvig",
+      "approval": "No act inspected.",
+      "reception": "1486 missal catalogue associates the edition with Schleswig; historical Danish/German geography is not a second use.",
+      "substantive_state": "1512 missal unconfirmed; no delta compared.",
+      "candidate_ids": [
+        "slesvicense-1486"
+      ],
+      "deferred_ids": []
+    },
+    {
+      "use": "Turku/Åbo",
+      "approval": "No 1488 approval act inspected; 17 August is prefatory terminus, not certain printing day.",
+      "reception": "1488 print intended for Turku; eight reconstructed manuscripts and Oripää later custody have separate production/reception limits.",
+      "substantive_state": "Dominican typesetting relation and manuscript variation do not prove eight official revisions.",
+      "candidate_ids": [
+        "aboense-1488",
+        "cold-turku-group-i",
+        "cold-turku-group-ii",
+        "cold-turku-group-iii",
+        "cold-turku-group-iv",
+        "cold-turku-group-v",
+        "cold-turku-group-vi",
+        "cold-turku-group-vii",
+        "cold-turku-group-viii",
+        "cold-turku-early-i26",
+        "cold-oripaa1",
+        "cold-oripaa2"
+      ],
+      "deferred_ids": []
+    },
+    {
+      "use": "Unidentified Denmark",
+      "approval": "No act or authority context inspected.",
+      "reception": "RA 4613 is only catalogued as Denmark, not assigned to a diocese.",
+      "substantive_state": "Fragment has no compared revision.",
+      "candidate_ids": [
+        "danicum-notatum-1400s"
+      ],
+      "deferred_ids": []
+    },
+    {
+      "use": "Växjö",
+      "approval": "No act inspected.",
+      "reception": "Codex 971 attribution is tentative and no assured diocesan missal is established.",
+      "substantive_state": "Deferred lead, off year axis.",
+      "candidate_ids": [],
+      "deferred_ids": [
+        "cold-vaxjo971"
+      ]
+    },
+    {
+      "use": "Iceland / Skálholt / Hólar",
+      "approval": "No separate Skálholt or Hólar approval act inspected.",
+      "reception": "Named fragments show Icelandic Mass content and some Nidaros-use affiliation; production and later custody differ.",
+      "substantive_state": "Fifteen repertoire labels are not fifteen independent books; groups 01/12 may join.",
+      "candidate_ids": [
+        "cold-nidaros-icelandic1250",
+        "cold-iceland-scardense",
+        "cold-iceland-gufudalense",
+        "cold-iceland-thorlakr",
+        "cold-iceland-magnus-supplement",
+        "iceland-fragment-group-01",
+        "iceland-fragment-group-02",
+        "iceland-fragment-group-03",
+        "iceland-fragment-group-04",
+        "iceland-fragment-group-05",
+        "iceland-fragment-group-06",
+        "iceland-fragment-group-07",
+        "iceland-fragment-group-08",
+        "iceland-fragment-group-09",
+        "iceland-fragment-group-10",
+        "iceland-fragment-group-11",
+        "iceland-fragment-group-12",
+        "iceland-fragment-group-13",
+        "iceland-fragment-group-14",
+        "iceland-fragment-group-15"
+      ],
+      "deferred_ids": []
+    },
+    {
+      "use": "Bergen / Oslo / Hamar / Stavanger",
+      "approval": "No local act inspected.",
+      "reception": "Nordfjord fragment was produced in France and probably received near Bergen; no independent original-use evidence for the other named sees.",
+      "substantive_state": "No compared local recension.",
+      "candidate_ids": [
+        "cold-bergen-nordfjord"
+      ],
+      "deferred_ids": []
+    }
+  ],
+  "searched_repertoires": [
+    {
+      "repertoire": "Frozen reviewer initial searches",
+      "examined": "17 named uses and eight listed USUARIUM destinations; institutional catalogues enumerated in cold-initial.json",
+      "unexamined": "All unlinked origin records and books; USUARIUM book 510 failed; full download requires access request and was not attempted."
+    },
+    {
+      "repertoire": "Lindberg 1923 Swedish Missals",
+      "examined": "Entire source catalogue pp.27–63, pp.19 and 31–32, via exact PDF and OCR",
+      "unexamined": "Rest of 478-page monograph not exhaustively read; Lindberg says manuscript list itself is not exhaustive."
+    },
+    {
+      "repertoire": "Weale–Bohatta 1928 printed bibliography",
+      "examined": "Named Scandinavian entries and adjacent pages in retained OCR: Hafnia p.73, Lunda p.98, Odense p.126, Ribe p.146, plus Strängnäs/Uppsala/Viborg lines",
+      "unexamined": "All other Nordic and post-Reformation entries; OCR is discovery evidence until images checked."
+    },
+    {
+      "repertoire": "Icelandic Mass-fragment study",
+      "examined": "Tables 1–3, pp.278,279,296, plus associated descriptions, 15 named fragment groups",
+      "unexamined": "Full Accessoria 7 set of 19 reconstructed Icelandic Mass songbooks, the wider 144-book reconstruction, Andersen 2008 and original images."
+    },
+    {
+      "repertoire": "Finnish/Turku fragment grouping",
+      "examined": "Cantus FIN-HyF.m.I.248 eight reconstructed groups and FIN-HyF.m.I.26; Oripää I/II catalogue metadata",
+      "unexamined": "Haapanen 1922 Missalia, remainder of Finnish fragment corpus and full text of eight reconstructed books; 13 URN endpoints returned HTTP 403."
+    },
+    {
+      "repertoire": "Institutional original image deliveries",
+      "examined": "Nidaros 613, KB A6 383, KB A97 354, Oripää I 184, Oripää II 89 images downloaded and hash checked; selected named original PDF views saved",
+      "unexamined": "Folio-by-folio transcription and collation of every page; catalogue completeness is not independently certified."
+    },
+    {
+      "repertoire": "Internet Archive advanced-search aliases",
+      "examined": "Five final queries and responses in ia-searches-final.json: Haapanen, Slesvicense, Viburgense, Roscildensis",
+      "unexamined": "Other aliases, other hosts and manuscript collections; zero IA hits prove nothing beyond exact queries at that endpoint."
+    }
+  ],
+  "acquisitions": [
+    {
+      "id": "hafniense1510-original",
+      "path": ".scratch/full-research-20261019/scandinavian/research/hafniense1510-original.pdf",
+      "url": "https://archive.org/details/den-kbd-pil-130018151139-001",
+      "bytes": 1103371578,
+      "sha256": "804624badd75fe6970332142be7cf738e055887c1d6949bfe52a4260d0e35d01",
+      "extent": "638 PDF pages; physical-copy completeness not certified",
+      "rights": "Pre-1931 historical underlying text; host scan/interface terms and exact artifact distribution still require review.",
+      "proposed_storage": "deferred-rights-review",
+      "evidence_role": "exact acquired PDF"
+    },
+    {
+      "id": "bednarikova-lund387",
+      "path": ".scratch/full-research-20261019/scandinavian/research/bednarikova-lund387.pdf",
+      "url": "https://www.peterlang.com/document/1285147",
+      "bytes": 265919,
+      "sha256": "425e61df1fafcb3a8eb13d24508d6180636ea7ec432de5279a5824f1c082e959",
+      "extent": "18 PDF pages; physical-copy completeness not certified",
+      "rights": "Modern scholarly/editorial work; scratch only pending explicit permission.",
+      "proposed_storage": "restricted",
+      "evidence_role": "exact acquired PDF"
+    },
+    {
+      "id": "hafniense1484-original",
+      "path": ".scratch/full-research-20261019/scandinavian/research/hafniense1484-original.pdf",
+      "url": "https://archive.org/details/den-kbd-pil-130018162076-001",
+      "bytes": 96369172,
+      "sha256": "f56e57b9913218b8e9d8e7970e1f4905e4068ad6cd04965b7e65eb543fae6cd7",
+      "extent": "74 PDF scan pages of Copenhagen fragment copy LN 178a 2° copy 1, not 74 surviving missal leaves or a complete book; one c.1484 Roskilde edition.",
+      "rights": "Pre-1931 historical underlying text; host scan/interface terms and exact artifact distribution still require review.",
+      "proposed_storage": "deferred-rights-review",
+      "evidence_role": "exact acquired PDF"
+    },
+    {
+      "id": "ottoniense1483-threeviews",
+      "path": ".scratch/full-research-20261019/scandinavian/research/ottoniense1483-threeviews.pdf",
+      "url": "https://archive.org/details/MissaleOttoniense1483",
+      "bytes": 591742,
+      "sha256": "944cde1ada98b7ab6f9bfec222b9dc2b5426d19a4f092bb75d246872bf62a3ed",
+      "extent": "3 PDF pages; physical-copy completeness not certified",
+      "rights": "Pre-1931 historical underlying text; host scan/interface terms and exact artifact distribution still require review.",
+      "proposed_storage": "deferred-rights-review",
+      "evidence_role": "exact acquired PDF"
+    },
+    {
+      "id": "strangnense1487-original",
+      "path": ".scratch/full-research-20261019/scandinavian/research/strangnense1487-original.pdf",
+      "url": "https://digitalt.kb.se/dark-29503498",
+      "bytes": 1290882413,
+      "sha256": "e56d480ddce97adafa8a79fee0cb1f177c6553fc8b692c16f8f4ecaa3874e50d",
+      "extent": "561 PDF pages; physical-copy completeness not certified",
+      "rights": "KB digital metadata declares Public Domain Mark 1.0; 1.29 GB size and exact storage still await whole-wave retention decision.",
+      "proposed_storage": "deferred-rights-review",
+      "evidence_role": "exact acquired PDF"
+    },
+    {
+      "id": "palandri-nidaros2024",
+      "path": ".scratch/full-research-20261019/scandinavian/research/palandri-nidaros2024.pdf",
+      "url": "https://www.nature.com/articles/s40494-024-01255-9",
+      "bytes": 3883354,
+      "sha256": "ab653acf17f744ee83d859945240aa85954d4f44a964ddf4ddcff4f923c71f75",
+      "extent": "18 PDF pages; physical-copy completeness not certified",
+      "rights": "Modern scholarly/editorial work; scratch only pending explicit permission.",
+      "proposed_storage": "restricted",
+      "evidence_role": "exact acquired PDF"
+    },
+    {
+      "id": "ottoniense1501-old-ripense-fragments",
+      "path": ".scratch/full-research-20261019/scandinavian/research/ottoniense1501-old-ripense-fragments.pdf",
+      "url": "https://archive.org/details/FragmentaMissaleRipense1504",
+      "bytes": 3596061,
+      "sha256": "0d27932699631f81d71b4a3665e8a088217b016de1acebd37eba59b8321d81d1",
+      "extent": "72 PDF pages; physical-copy completeness not certified",
+      "rights": "Pre-1931 historical underlying text; host scan/interface terms and exact artifact distribution still require review.",
+      "proposed_storage": "deferred-rights-review",
+      "evidence_role": "exact acquired PDF"
+    },
+    {
+      "id": "bokselskap-missale-2019",
+      "path": ".scratch/full-research-20261019/scandinavian/research/bokselskap-missale-2019.pdf",
+      "url": "https://www.bokselskap.no/boker/missale/introduction",
+      "bytes": 5282747,
+      "sha256": "09976678be94e2e146db7c780ff33b1273c3071753e38cf2b368f049bcd011dd",
+      "extent": "542 PDF pages; physical-copy completeness not certified",
+      "rights": "Modern scholarly/editorial work; scratch only pending explicit permission.",
+      "proposed_storage": "restricted",
+      "evidence_role": "exact acquired PDF"
+    },
+    {
+      "id": "aboense1488-ia-full",
+      "path": ".scratch/full-research-20261019/scandinavian/research/aboense1488-ia-full.pdf",
+      "url": "https://archive.org/details/missale-aboense",
+      "bytes": 269847664,
+      "sha256": "50aa2e68ee64b695df444bdc579beb6a44606a6a3a4b148be7c7bd2a967acf17",
+      "extent": "396 PDF pages; physical-copy completeness not certified",
+      "rights": "Pre-1931 historical underlying text; host scan/interface terms and exact artifact distribution still require review.",
+      "proposed_storage": "deferred-rights-review",
+      "evidence_role": "exact acquired PDF"
+    },
+    {
+      "id": "hafniense1510-full-text-image",
+      "path": ".scratch/full-research-20261019/scandinavian/research/hafniense1510-full-text-image.pdf",
+      "url": "https://archive.org/details/den-kbd-pil-130018151139-001",
+      "bytes": 140853270,
+      "sha256": "026eed4044966b1ee5262d5219b24c6d940a175f546545f6a094587562b1e9a1",
+      "extent": "638 PDF pages; physical-copy completeness not certified",
+      "rights": "Pre-1931 historical underlying text; host scan/interface terms and exact artifact distribution still require review.",
+      "proposed_storage": "deferred-rights-review",
+      "evidence_role": "exact acquired PDF"
+    },
+    {
+      "id": "dieschwedischenm00lind",
+      "path": ".scratch/full-research-20261019/scandinavian/cold/dieschwedischenm00lind.pdf",
+      "url": "https://archive.org/download/dieschwedischenm00lind/dieschwedischenm00lind.pdf",
+      "bytes": 34707497,
+      "sha256": "52efb2401024fbbd998b168441aac212b08bbfe7fdb5f37214dd970a6278b1f9",
+      "extent": "478 PDF pages",
+      "rights": "Published1923, in the US public domain. The report paraphrases bibliographic facts.",
+      "proposed_storage": "deferred-rights-review",
+      "evidence_role": "cold-review acquisition"
+    },
+    {
+      "id": "dieschwedischenm00lind_djvu",
+      "path": ".scratch/full-research-20261019/scandinavian/cold/dieschwedischenm00lind_djvu.txt",
+      "url": "https://archive.org/download/dieschwedischenm00lind/dieschwedischenm00lind_djvu.txt",
+      "bytes": 985394,
+      "sha256": "1f0844b008c476c4b5028e0519e8ca88d73f705a2a864468e0aef4cda79820c8",
+      "extent": "Complete publicly offered derivative",
+      "rights": "Published1923, in the US public domain. The report paraphrases bibliographic facts.",
+      "proposed_storage": "deferred-rights-review",
+      "evidence_role": "cold-review acquisition"
+    },
+    {
+      "id": "dieschwedischenm00lind_scandata",
+      "path": ".scratch/full-research-20261019/scandinavian/cold/dieschwedischenm00lind_scandata.xml",
+      "url": "https://archive.org/download/dieschwedischenm00lind/dieschwedischenm00lind_scandata.xml",
+      "bytes": 627429,
+      "sha256": "10c45b2193177f2f204a3689d8b62298cb7c63ccdea5402c31bc5eccbd442aed",
+      "extent": "Complete publicly offered derivative",
+      "rights": "Published1923, in the US public domain. The report paraphrases bibliographic facts.",
+      "proposed_storage": "deferred-rights-review",
+      "evidence_role": "cold-review acquisition"
+    },
+    {
+      "id": "ingolfsson-catholic-fragments",
+      "path": ".scratch/full-research-20261019/scandinavian/cold/ingolfsson-catholic-fragments.pdf",
+      "url": "https://gripla.arnastofnun.is/index.php/gripla/article/download/586/478/511",
+      "bytes": 7655852,
+      "sha256": "3bf298dc24b7328fa79b15bf33d3e2987110a42d1b15e8ebcbf4e94646e5de4c",
+      "extent": "36 PDF pages",
+      "rights": "Modern scholarly paper from the official journal. Scratch research retention only; metadata report paraphrases facts.",
+      "proposed_storage": "restricted",
+      "evidence_role": "cold-review acquisition"
+    },
+    {
+      "id": "linkoping-a97-images",
+      "path": ".scratch/full-research-20261019/scandinavian/research/linkoping-a97-images/delivery.json",
+      "receipt_sha256": "1934a60c7a88ef8a5bc6215a1b7ecc5b811b2150dc23450d667ac764c63a72e8",
+      "manifest_path": ".scratch/full-research-20261019/scandinavian/research/linkoping-a97-manifest.json",
+      "manifest_sha256": "627554ad150ecfe0b28f5bc87d508415d301013391fbcfc10ef1d3a4d64af7f6",
+      "image_count": 354,
+      "total_image_bytes": 2698075302,
+      "extent": "all enumerated delivery pages; physical manuscript completeness as catalogued, not independently certified",
+      "rights": "Institutional IIIF images; no affirmative redistribution permission established. Scratch only.",
+      "proposed_storage": "restricted-pending-rights-review",
+      "evidence_role": "full offered IIIF image delivery, per-page SHA-256 in delivery.json"
+    },
+    {
+      "id": "nidaros1519-images",
+      "path": ".scratch/full-research-20261019/scandinavian/research/nidaros1519-images/delivery.json",
+      "receipt_sha256": "ba06a8adf26579721c7129859016e4b7b0246fec35d4efeb80b239f4c2b2f6eb",
+      "manifest_path": ".scratch/full-research-20261019/scandinavian/research/nb-manifest.json",
+      "manifest_sha256": "99defabd0a782a7a37e2e700bdc407d320f5e11f1cc3f0382c3b7ab9863908d8",
+      "image_count": 613,
+      "total_image_bytes": 1486044699,
+      "extent": "613 offered IIIF images of a printed 1519 book; no claim of manuscript folios, physical-copy completeness or full text collation.",
+      "rights": "National Library of Norway metadata marks this item public domain; local retention still awaits whole-wave decision.",
+      "proposed_storage": "deferred-size-and-retention-review",
+      "evidence_role": "full offered IIIF image delivery, per-page SHA-256 in delivery.json"
+    },
+    {
+      "id": "oripaa1-images",
+      "path": ".scratch/full-research-20261019/scandinavian/research/oripaa1-images/delivery.json",
+      "receipt_sha256": "0078485ff15529505135f8d79cc003d294a146876a128a04221cdce5f2217846",
+      "manifest_path": ".scratch/full-research-20261019/scandinavian/research/oripaa1-full-download-manifest.json",
+      "manifest_sha256": "4e7f49ed047e4eb4edff4f9aa68f989d6a8c2cdb415a559ed09df8a44e84dda2",
+      "image_count": 184,
+      "total_image_bytes": 285852719,
+      "extent": "all enumerated delivery pages; physical manuscript completeness as catalogued, not independently certified",
+      "rights": "Institutional IIIF images; no affirmative redistribution permission established. Scratch only.",
+      "proposed_storage": "restricted-pending-rights-review",
+      "evidence_role": "full offered IIIF image delivery, per-page SHA-256 in delivery.json"
+    },
+    {
+      "id": "oripaa2-images",
+      "path": ".scratch/full-research-20261019/scandinavian/research/oripaa2-images/delivery.json",
+      "receipt_sha256": "852d412cc004e37c3a804d7b670bf3732fd8ac704bbd1cf0bdc8648f415824b8",
+      "manifest_path": ".scratch/full-research-20261019/scandinavian/research/oripaa2-full-download-manifest.json",
+      "manifest_sha256": "df15569564bb11b7569af84ecfac85c6a9c70c05044a351fcf6de881b04df994",
+      "image_count": 89,
+      "total_image_bytes": 264306953,
+      "extent": "all enumerated delivery pages; physical manuscript completeness as catalogued, not independently certified",
+      "rights": "Institutional IIIF images; no affirmative redistribution permission established. Scratch only.",
+      "proposed_storage": "restricted-pending-rights-review",
+      "evidence_role": "full offered IIIF image delivery, per-page SHA-256 in delivery.json"
+    },
+    {
+      "id": "swedish-a6-images",
+      "path": ".scratch/full-research-20261019/scandinavian/research/swedish-a6-images/delivery.json",
+      "receipt_sha256": "d184d813b11cc2c4b21c49eabf7b53fd6a6dc588ac4d3e50a10cfbd872f1bb4f",
+      "manifest_path": ".scratch/full-research-20261019/scandinavian/research/swedish-a6-manifest.json",
+      "manifest_sha256": "26e75aa679a62e5b2fca6cc925789c43951e97ecac9a3e828604feb68ee8b200",
+      "image_count": 383,
+      "total_image_bytes": 2934177133,
+      "extent": "all enumerated delivery pages; physical manuscript completeness as catalogued, not independently certified",
+      "rights": "Institutional IIIF images; no affirmative redistribution permission established. Scratch only.",
+      "proposed_storage": "restricted-pending-rights-review",
+      "evidence_role": "full offered IIIF image delivery, per-page SHA-256 in delivery.json"
+    }
+  ],
+  "rights_and_access_gaps": [
+    "Modern Bokselskap 2019, Palandri 2024, Bednáriková Lund research, and Ingólfsson papers are scholarly/editorial evidence; scratch retention only absent artifact-specific redistribution basis.",
+    "A6, A97 and Oripää institutional IIIF images lack affirmative reuse grants in the packet. National Library of Norway item is catalogue-marked public domain, but the 1.49 GB retention decision is open.",
+    "Historical text public domain does not itself settle host scan rights. Hafniense 1510 1.10 GB, Strängnäs 1487 1.29 GB, and other PDFs need artifact rights and size/storage decisions before tracked retention.",
+    "USUARIUM complete-book PDFs require an access request; thirteen Turku URN endpoints returned 403. Direct ISTC im00717700 returned bot challenge, although GW provides the ID and links the exact scan.",
+    "Skara municipality reports a complete Alvin digitization, but the packet has only catalogue/newsletter evidence; obtain and hash the offered scan or record a precise access/rights blocker."
+  ],
+  "remaining_evidence_blockers": [
+    "No complete-book textual collation or original approval/effectiveness acts for these local uses; Lindberg pp.31–32 supports only a bounded Uppsala 1513 textual-state case.",
+    "Lund 1494 Weale #564* remains copyless; do not count a second Lund edition.",
+    "The full Swedish fragment repertoire, Haapanen 1922 Missalia, nineteen Icelandic reconstructed Mass songbooks and wider Accessoria 7 corpus were not completely checked.",
+    "Nidaros ordinal manuscript catalogue and Marner 2021 comparison remain unread; original-use attribution and layered manuscripts need direct shelfmark checks.",
+    "Independent local-use searches remain open for Ribe, Växjö, Børglum, Hólar, Skálholt, Kirkjubøur, Oslo, Hamar and Stavanger."
+  ],
+  "frozen_reconciliation": {
+    "initial_expected_uses": 17,
+    "matched_initial_uses": 17,
+    "expanded_expected_ids": 31,
+    "matched_expanded_ids": 31,
+    "inventory_at_checkpoint": "Western inventory has 541 candidates, 58 coverage rows; Scandinavian baseline rows include nidaros, danish-uses, scandinavian-other-uses. New regional route rows remain necessary."
+  },
+  "uses": [
+    {
+      "use": "Nidaros",
+      "approval": "1519 title and Bokselskap describe provincial standardization intent; no original decree inspected.",
+      "reception": "The c.1250 mixed Icelandic fragment shows earlier Nidaros-use text; actual adoption of the 1519 printing in every province locality is unproved.",
+      "substantive_state": "No complete comparison of manuscript and 1519 states; printed year is not alone a reform date.",
+      "candidate_ids": [
+        "nidaros-1519",
+        "cold-nidaros-icelandic1250"
+      ],
+      "deferred_ids": [
+        "cold-nidaros-ordo"
+      ]
+    },
+    {
+      "use": "Aarhus",
+      "approval": "No missal approval instrument inspected.",
+      "reception": "Cathedral report says two leaves were found there; original use and whether both belonged to one codex remain unproved.",
+      "substantive_state": "One fragment group, no compared revision.",
+      "candidate_ids": [
+        "aarhus-missal-leaves"
+      ],
+      "deferred_ids": []
+    },
+    {
+      "use": "Copenhagen",
+      "approval": "Copenhagen is a printing/title place, not a medieval diocese.",
+      "reception": "The old c.1484 Hafniense label belongs to Roskilde c.1484; 1510 local diocesan attribution remains qualified.",
+      "substantive_state": "1510 versus c.1484 textual differences not collated.",
+      "candidate_ids": [
+        "hafniense-1510"
+      ],
+      "deferred_ids": []
+    },
+    {
+      "use": "Odense",
+      "approval": "No 1483 or 1501 approval act inspected.",
+      "reception": "The 1501 fragments are attributed to Odense by Fragmentarium; 1483 survival is fragmentary.",
+      "substantive_state": "The two printings are witnesses; substantive change not established.",
+      "candidate_ids": [
+        "ottoniense-1483",
+        "ottoniense-novum-1501"
+      ],
+      "deferred_ids": []
+    },
+    {
+      "use": "Ribe",
+      "approval": "No independent approval or use instrument identified.",
+      "reception": "Former Ripense 1504 identification is now Odense 1501; the independent Ribe gap stays open.",
+      "substantive_state": "No distinct Ribe source state established.",
+      "candidate_ids": [],
+      "deferred_ids": []
+    },
+    {
+      "use": "Roskilde",
+      "approval": "No promulgating act inspected.",
+      "reception": "GW classifies the c.1484 printing as Roskilde; the 1522 Canon title explicitly names Roskilde use. Actual breadth of reception is unmeasured.",
+      "substantive_state": "c.1484 missal and 1522 Canon are different extents; neither proves a whole annual revision.",
+      "candidate_ids": [
+        "hafniense-1510",
+        "roscildense-c1484",
+        "roskilde-canon-1522"
+      ],
+      "deferred_ids": []
+    },
+    {
+      "use": "Viborg",
+      "approval": "No act inspected.",
+      "reception": "1500 missal title and catalogue associate the print with Viborg; Riga copy not directly opened.",
+      "substantive_state": "No predecessor or successor collation.",
+      "candidate_ids": [
+        "viburgense-1500"
+      ],
+      "deferred_ids": []
+    },
+    {
+      "use": "Lund",
+      "approval": "No original approval act inspected.",
+      "reception": "1514 printed book and attributed Bratislava summer manuscript are separate witnesses; 1494 remains a copyless lead.",
+      "substantive_state": "1514 versus manuscript content and 1494 distinctness unproved.",
+      "candidate_ids": [
+        "lundense-1514",
+        "cold-lund387"
+      ],
+      "deferred_ids": [
+        "lundense-1494-lead"
+      ]
+    },
+    {
+      "use": "Linköping",
+      "approval": "No promulgating act inspected.",
+      "reception": "A97 is catalogued for secular Linköping use; other manuscripts and ordinals have specific or contested attributions; Oripää I later Finnish custody does not prove Turku origin.",
+      "substantive_state": "Layered C427/C428 additions are not automatic normative revisions.",
+      "candidate_ids": [
+        "linkoping-a97",
+        "cold-linkoping-c415",
+        "cold-linkoping-c420",
+        "cold-linkoping-c427",
+        "cold-linkoping-c430",
+        "cold-linkoping-ordinal1",
+        "cold-linkoping-ordinal2",
+        "cold-oripaa1"
+      ],
+      "deferred_ids": []
+    },
+    {
+      "use": "Skara",
+      "approval": "No medieval approval act inspected.",
+      "reception": "Skara municipality reports medieval cathedral use of the c.1150 manuscript; KB A6 is disputed Skara/Uppsala attribution.",
+      "substantive_state": "The 2006 facsimile reproduces the old witness; no new medieval recension follows.",
+      "candidate_ids": [
+        "skara-missal-c1150",
+        "cold-swedish-a6"
+      ],
+      "deferred_ids": []
+    },
+    {
+      "use": "Strängnäs",
+      "approval": "No act inspected.",
+      "reception": "1487 Ghotan printed witness; exact local performance beyond the book title is unmeasured.",
+      "substantive_state": "No original-book comparison with manuscripts.",
+      "candidate_ids": [
+        "strengnense-1487"
+      ],
+      "deferred_ids": []
+    },
+    {
+      "use": "Uppsala",
+      "approval": "No original approval act inspected.",
+      "reception": "Printed 1484 and 1513 titles represent Uppsala; graduals and Vallentuna are components/local reception, while KB A6 attribution is disputed.",
+      "substantive_state": "Lindberg pp.31–32 supports bounded 1513 textual changes, not a complete sequence.",
+      "candidate_ids": [
+        "upsalense-vetus-1484",
+        "upsalense-novum-1513",
+        "cold-linkoping-c427",
+        "cold-uppsala-a94",
+        "cold-uppsala-a95",
+        "cold-uppsala-a96",
+        "cold-vallentuna1198",
+        "cold-swedish-a6"
+      ],
+      "deferred_ids": []
+    },
+    {
+      "use": "Västerås",
+      "approval": "No act inspected.",
+      "reception": "The c.1493 Graduale is a Mass music component; diocesan assignment needs direct copy check.",
+      "substantive_state": "No full missal or substantive revision established.",
+      "candidate_ids": [
+        "arosiense-graduale-1493"
+      ],
+      "deferred_ids": []
+    },
+    {
+      "use": "Schleswig/Slesvig",
+      "approval": "No act inspected.",
+      "reception": "1486 missal catalogue associates the edition with Schleswig; historical Danish/German geography is not a second use.",
+      "substantive_state": "1512 missal unconfirmed; no delta compared.",
+      "candidate_ids": [
+        "slesvicense-1486"
+      ],
+      "deferred_ids": []
+    },
+    {
+      "use": "Turku/Åbo",
+      "approval": "No 1488 approval act inspected; 17 August is prefatory terminus, not certain printing day.",
+      "reception": "1488 print intended for Turku; eight reconstructed manuscripts and Oripää later custody have separate production/reception limits.",
+      "substantive_state": "Dominican typesetting relation and manuscript variation do not prove eight official revisions.",
+      "candidate_ids": [
+        "aboense-1488",
+        "cold-turku-group-i",
+        "cold-turku-group-ii",
+        "cold-turku-group-iii",
+        "cold-turku-group-iv",
+        "cold-turku-group-v",
+        "cold-turku-group-vi",
+        "cold-turku-group-vii",
+        "cold-turku-group-viii",
+        "cold-turku-early-i26",
+        "cold-oripaa1",
+        "cold-oripaa2"
+      ],
+      "deferred_ids": []
+    },
+    {
+      "use": "Unidentified Denmark",
+      "approval": "No act or authority context inspected.",
+      "reception": "RA 4613 is only catalogued as Denmark, not assigned to a diocese.",
+      "substantive_state": "Fragment has no compared revision.",
+      "candidate_ids": [
+        "danicum-notatum-1400s"
+      ],
+      "deferred_ids": []
+    },
+    {
+      "use": "Växjö",
+      "approval": "No act inspected.",
+      "reception": "Codex 971 attribution is tentative and no assured diocesan missal is established.",
+      "substantive_state": "Deferred lead, off year axis.",
+      "candidate_ids": [],
+      "deferred_ids": [
+        "cold-vaxjo971"
+      ]
+    },
+    {
+      "use": "Iceland / Skálholt / Hólar",
+      "approval": "No separate Skálholt or Hólar approval act inspected.",
+      "reception": "Named fragments show Icelandic Mass content and some Nidaros-use affiliation; production and later custody differ.",
+      "substantive_state": "Fifteen repertoire labels are not fifteen independent books; groups 01/12 may join.",
+      "candidate_ids": [
+        "cold-nidaros-icelandic1250",
+        "cold-iceland-scardense",
+        "cold-iceland-gufudalense",
+        "cold-iceland-thorlakr",
+        "cold-iceland-magnus-supplement",
+        "iceland-fragment-group-01",
+        "iceland-fragment-group-02",
+        "iceland-fragment-group-03",
+        "iceland-fragment-group-04",
+        "iceland-fragment-group-05",
+        "iceland-fragment-group-06",
+        "iceland-fragment-group-07",
+        "iceland-fragment-group-08",
+        "iceland-fragment-group-09",
+        "iceland-fragment-group-10",
+        "iceland-fragment-group-11",
+        "iceland-fragment-group-12",
+        "iceland-fragment-group-13",
+        "iceland-fragment-group-14",
+        "iceland-fragment-group-15"
+      ],
+      "deferred_ids": []
+    },
+    {
+      "use": "Bergen / Oslo / Hamar / Stavanger",
+      "approval": "No local act inspected.",
+      "reception": "Nordfjord fragment was produced in France and probably received near Bergen; no independent original-use evidence for the other named sees.",
+      "substantive_state": "No compared local recension.",
+      "candidate_ids": [
+        "cold-bergen-nordfjord"
+      ],
+      "deferred_ids": []
+    }
+  ],
+  "searches": [
+    {
+      "repertoire": "Frozen reviewer initial searches",
+      "examined": "17 named uses and eight listed USUARIUM destinations; institutional catalogues enumerated in cold-initial.json",
+      "unexamined": "All unlinked origin records and books; USUARIUM book 510 failed; full download requires access request and was not attempted."
+    },
+    {
+      "repertoire": "Lindberg 1923 Swedish Missals",
+      "examined": "Entire source catalogue pp.27–63, pp.19 and 31–32, via exact PDF and OCR",
+      "unexamined": "Rest of 478-page monograph not exhaustively read; Lindberg says manuscript list itself is not exhaustive."
+    },
+    {
+      "repertoire": "Weale–Bohatta 1928 printed bibliography",
+      "examined": "Named Scandinavian entries and adjacent pages in retained OCR: Hafnia p.73, Lunda p.98, Odense p.126, Ribe p.146, plus Strängnäs/Uppsala/Viborg lines",
+      "unexamined": "All other Nordic and post-Reformation entries; OCR is discovery evidence until images checked."
+    },
+    {
+      "repertoire": "Icelandic Mass-fragment study",
+      "examined": "Tables 1–3, pp.278,279,296, plus associated descriptions, 15 named fragment groups",
+      "unexamined": "Full Accessoria 7 set of 19 reconstructed Icelandic Mass songbooks, the wider 144-book reconstruction, Andersen 2008 and original images."
+    },
+    {
+      "repertoire": "Finnish/Turku fragment grouping",
+      "examined": "Cantus FIN-HyF.m.I.248 eight reconstructed groups and FIN-HyF.m.I.26; Oripää I/II catalogue metadata",
+      "unexamined": "Haapanen 1922 Missalia, remainder of Finnish fragment corpus and full text of eight reconstructed books; 13 URN endpoints returned HTTP 403."
+    },
+    {
+      "repertoire": "Institutional original image deliveries",
+      "examined": "Nidaros 613, KB A6 383, KB A97 354, Oripää I 184, Oripää II 89 images downloaded and hash checked; selected named original PDF views saved",
+      "unexamined": "Folio-by-folio transcription and collation of every page; catalogue completeness is not independently certified."
+    },
+    {
+      "repertoire": "Internet Archive advanced-search aliases",
+      "examined": "Five final queries and responses in ia-searches-final.json: Haapanen, Slesvicense, Viburgense, Roscildensis",
+      "unexamined": "Other aliases, other hosts and manuscript collections; zero IA hits prove nothing beyond exact queries at that endpoint."
+    }
+  ],
+  "versions": [
+    {
+      "id": "nidaros-1519",
+      "verdict": "accept",
+      "integration_disposition": "existing-candidate-update",
+      "reason": "Accept only as a printed-standardization-witness at 1519; Intent for province is source-described; actual local use and complete copy collation differ."
+    },
+    {
+      "id": "aarhus-missal-leaves",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a manuscript-fragment-witness at 1350–1400; Leaves include one de angelis and a possible preparation/Ordo; no complete missal or independent revision."
+    },
+    {
+      "id": "hafniense-vetus-1484",
+      "verdict": "reject",
+      "integration_disposition": "alias-only-rejected",
+      "reason": "GW M2439810 explicitly identifies the acquired Hafniense vetus Copenhagen fragment as Missale Roschildense c.1484, ISTC im00717700. Do not add a second edition/candidate; attach the 74-image artifact to roscildense-c1484."
+    },
+    {
+      "id": "hafniense-1510",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a printed-witness at 1510; The title does not establish independent Copenhagen diocesan use or substantive difference from 1484."
+    },
+    {
+      "id": "ottoniense-1483",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a printed-fragment-witness at 1483; Selected views only; Weale says surviving copies are imperfect."
+    },
+    {
+      "id": "ottoniense-novum-1501",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a printed-fragment-witness at 1501; Fragmentary survival; no whole text."
+    },
+    {
+      "id": "roscildense-c1484",
+      "verdict": "correct",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Retain one Roskilde c.1484 printing, replacing the erroneous /book/870 citation with GW M2439810 and USUARIUM /book/510; alias Hafniense vetus. The copies are fragmentary and uncollated."
+    },
+    {
+      "id": "roskilde-canon-1522",
+      "verdict": "correct",
+      "integration_disposition": "new-candidate-row",
+      "reason": "The packet cites only the general survey. Bind USUARIUM /book/870 directly: 1522 Canon, some Masses, Common of Saints, not an annual missal."
+    },
+    {
+      "id": "viburgense-1500",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a printed-missal-witness at 1500; Weale bibliography and USUARIUM metadata; original copy not acquired."
+    },
+    {
+      "id": "lundense-1494-lead",
+      "verdict": "defer",
+      "integration_disposition": "deferred-open-lead",
+      "reason": "Weale–Bohatta #564* prints a bare 1494 Missale Lundense with B. Rosenkr. F 2 and no holding copy. No edition or textual revision can be counted until a copy or independent original title evidence is found."
+    },
+    {
+      "id": "lundense-1514",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a printed-missal-witness at 1514; Original full book not acquired; missal revision relative to manuscript stratum uncollated."
+    },
+    {
+      "id": "linkoping-a97",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a manuscript-missal-witness at second half 15th century; No complete text collation."
+    },
+    {
+      "id": "skara-missal-c1150",
+      "verdict": "correct",
+      "integration_disposition": "new-candidate-row",
+      "reason": "The cited 2013 newsletter is not the saved inspected Skara municipality page. Bind the institution catalogue and Alvin record 431873; municipality says the complete manuscript is digitized, so acquisition and artifact rights remain open."
+    },
+    {
+      "id": "strengnense-1487",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a printed-missal-witness at 1487; Original copy may have losses; no full collation."
+    },
+    {
+      "id": "upsalense-vetus-1484",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a printed-missal-witness at c.1484; Original scan not acquired; exact calendar/prayer contents uncollated."
+    },
+    {
+      "id": "upsalense-novum-1513",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Lindberg pp.31–32 identifies concrete calendar, sanctoral, common, votive, sequence and rubric differences from c.1484, and quotes the 1513 colophon. This supports a bounded textual-state candidate, not a fully collated or promulgated normative stage."
+    },
+    {
+      "id": "arosiense-graduale-1493",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a mass-chant-component at c.1493; Attribution to Västerås and printed date require exact copy check; not a missal."
+    },
+    {
+      "id": "slesvicense-1486",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a printed-missal-witness at 1486; Original complete book not acquired; 1512 missal unconfirmed."
+    },
+    {
+      "id": "aboense-1488",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a printed-missal-witness at after 17 August 1488; Dominican-based typesetting shared; isolated leaves may be confused with Dominican edition."
+    },
+    {
+      "id": "danicum-notatum-1400s",
+      "verdict": "correct",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Bind USUARIUM /book/277 directly for RA 4613, 1400–1500 fragment; generic news survey is insufficient for this exact shelfmark."
+    },
+    {
+      "id": "cold-linkoping-c415",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a manuscript-witness at 1422–1448; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-linkoping-c420",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a composite-manuscript-witness at 15th century; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-linkoping-c427",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a composite-manuscript-witness at c1500; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-linkoping-c430",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a gradual-component-witness at late15th century; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-linkoping-ordinal1",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a ordinal-component-witness at c1390 (1384 in older citations); Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-linkoping-ordinal2",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a layered-ordinal-component-witness at c1450; later1514/1530annotations; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-uppsala-a94",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a gradual-component-witness at 1503; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-uppsala-a95",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a gradual-component-witness at c1500; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-uppsala-a96",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a gradual-component-witness at early16c (older1520–1530attribution); Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-vallentuna1198",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a missal-calendar-fragment-witness at 1198; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-swedish-a6",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a manuscript-witness at 14th century;1422reception; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-nidaros-icelandic1250",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a mixed-breviary-missal-fragment-witness at c1250; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-bergen-nordfjord",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a imported-missal-fragment-witness at firsthalf12c; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-turku-group-i",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Cantus F.m.I.248 description explicitly reconstructs eight books and lists this group; accept one manuscript witness group, not a separate approved recension or one book per fragment."
+    },
+    {
+      "id": "cold-turku-group-ii",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Cantus F.m.I.248 description explicitly reconstructs eight books and lists this group; accept one manuscript witness group, not a separate approved recension or one book per fragment."
+    },
+    {
+      "id": "cold-turku-group-iii",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Cantus F.m.I.248 description explicitly reconstructs eight books and lists this group; accept one manuscript witness group, not a separate approved recension or one book per fragment."
+    },
+    {
+      "id": "cold-turku-group-iv",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Cantus F.m.I.248 description explicitly reconstructs eight books and lists this group; accept one manuscript witness group, not a separate approved recension or one book per fragment."
+    },
+    {
+      "id": "cold-turku-group-v",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Cantus F.m.I.248 description explicitly reconstructs eight books and lists this group; accept one manuscript witness group, not a separate approved recension or one book per fragment."
+    },
+    {
+      "id": "cold-turku-group-vi",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Cantus F.m.I.248 description explicitly reconstructs eight books and lists this group; accept one manuscript witness group, not a separate approved recension or one book per fragment."
+    },
+    {
+      "id": "cold-turku-group-vii",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Cantus F.m.I.248 description explicitly reconstructs eight books and lists this group; accept one manuscript witness group, not a separate approved recension or one book per fragment."
+    },
+    {
+      "id": "cold-turku-group-viii",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Cantus F.m.I.248 description explicitly reconstructs eight books and lists this group; accept one manuscript witness group, not a separate approved recension or one book per fragment."
+    },
+    {
+      "id": "cold-turku-early-i26",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a imported-missal-fragment-witness at late12c/early13c; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-oripaa1",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a manuscript-witness at 14th century; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-oripaa2",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a composite-votive-missal-witness at 15th century; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-lund387",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a summer-missal-manuscript-witness at late13c (olderdatingconflict); Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-nidaros-ordo",
+      "verdict": "defer",
+      "integration_disposition": "deferred-open-lead",
+      "reason": "Secondary repertoire names four AM shelfmarks, but institutional descriptions and Marner 2021 were not inspected; retain as a family lead outside the edition sequence."
+    },
+    {
+      "id": "cold-vaxjo971",
+      "verdict": "defer",
+      "integration_disposition": "deferred-open-lead",
+      "reason": "Björkvall p.51 gives a tentative Växjö attribution to Codex 971, not an assured local missal or diocesan edition."
+    },
+    {
+      "id": "cold-iceland-scardense",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a reconstructed-manuscript-witness at 1450–1478; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-iceland-gufudalense",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a gradual-component-witness at 1450–1470; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-iceland-thorlakr",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a mass-proper-component-witness at c1400; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "cold-iceland-magnus-supplement",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Accept only as a missal-supplement-witness at late15th century; Identity and scope from cited catalogue or study; original text not fully collated."
+    },
+    {
+      "id": "iceland-fragment-group-01",
+      "verdict": "correct",
+      "integration_disposition": "new-candidate-row",
+      "reason": "The repertoire leaves open whether this is part of the same gradual as group 12. Preserve the fragment label but do not count two independent books or liturgical revisions."
+    },
+    {
+      "id": "iceland-fragment-group-02",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Ingólfsson tables identify this Mass-book fragment group. Retain it as repertoire/source evidence, outside the count of distinct editions or certified independent books."
+    },
+    {
+      "id": "iceland-fragment-group-03",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Ingólfsson tables identify this Mass-book fragment group. Retain it as repertoire/source evidence, outside the count of distinct editions or certified independent books."
+    },
+    {
+      "id": "iceland-fragment-group-04",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Ingólfsson tables identify this Mass-book fragment group. Retain it as repertoire/source evidence, outside the count of distinct editions or certified independent books."
+    },
+    {
+      "id": "iceland-fragment-group-05",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Ingólfsson tables identify this Mass-book fragment group. Retain it as repertoire/source evidence, outside the count of distinct editions or certified independent books."
+    },
+    {
+      "id": "iceland-fragment-group-06",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Ingólfsson tables identify this Mass-book fragment group. Retain it as repertoire/source evidence, outside the count of distinct editions or certified independent books."
+    },
+    {
+      "id": "iceland-fragment-group-07",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Ingólfsson tables identify this Mass-book fragment group. Retain it as repertoire/source evidence, outside the count of distinct editions or certified independent books."
+    },
+    {
+      "id": "iceland-fragment-group-08",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Ingólfsson tables identify this Mass-book fragment group. Retain it as repertoire/source evidence, outside the count of distinct editions or certified independent books."
+    },
+    {
+      "id": "iceland-fragment-group-09",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Ingólfsson tables identify this Mass-book fragment group. Retain it as repertoire/source evidence, outside the count of distinct editions or certified independent books."
+    },
+    {
+      "id": "iceland-fragment-group-10",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Ingólfsson tables identify this Mass-book fragment group. Retain it as repertoire/source evidence, outside the count of distinct editions or certified independent books."
+    },
+    {
+      "id": "iceland-fragment-group-11",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Ingólfsson tables identify this Mass-book fragment group. Retain it as repertoire/source evidence, outside the count of distinct editions or certified independent books."
+    },
+    {
+      "id": "iceland-fragment-group-12",
+      "verdict": "correct",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Four leaves form one group and may belong with group 01. Preserve the join question and avoid a second independent-book count."
+    },
+    {
+      "id": "iceland-fragment-group-13",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Ingólfsson tables identify this Mass-book fragment group. Retain it as repertoire/source evidence, outside the count of distinct editions or certified independent books."
+    },
+    {
+      "id": "iceland-fragment-group-14",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Ingólfsson tables identify this Mass-book fragment group. Retain it as repertoire/source evidence, outside the count of distinct editions or certified independent books."
+    },
+    {
+      "id": "iceland-fragment-group-15",
+      "verdict": "accept",
+      "integration_disposition": "new-candidate-row",
+      "reason": "Ingólfsson tables identify this Mass-book fragment group. Retain it as repertoire/source evidence, outside the count of distinct editions or certified independent books."
+    }
+  ]
+}

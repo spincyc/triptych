@@ -60,9 +60,23 @@
     "coverage_candidate_addition": [
       "premon-1936"
     ],
-    "deferred_crsa_inventory_rows": 41,
+    "deferred_crsa_inventory_rows": 40,
     "new_presentation_route_required": false,
-    "tracked_payload_registered": false
+    "tracked_payload_registered": false,
+    "additional_metadata_integrations": [
+      {
+        "finding_id": "GS-002",
+        "source_ids": [
+          "canonical-gsb-ms08-owning-gallery",
+          "canonical-gsb-ms08-usuarium4064"
+        ],
+        "candidate_id": "canonical-gsb-ms08-1523",
+        "coverage_row_id": "regular-canonical-uses",
+        "presentation_group_id": "regular-canons-local",
+        "scope": "one manuscript missal witness only; no recension, station or image payload",
+        "cold_verdict_sha256": "bdf222d8f40810036e40a0d775428725b2cf31030aab05eee161b55643d6d5e6"
+      }
+    ]
   },
   "accepted_claim_evidence": {
     "claim_id": "premon-1936-publication",
@@ -236,15 +250,27 @@
       "expected_id": "cold-canonical-usu-4064",
       "disposition": "retained-candidate-or-lead",
       "research_version_id": "cold-canonical-usu-4064",
-      "record_class": "catalogued-witness-or-component-candidate",
+      "record_class": "manuscript-missal-witness",
       "date_label": "1523",
-      "date_role": "catalogue-reported age; event role unverified",
+      "date_role": "1523 manuscript copying and painting as owning-congregation-catalogue-reported; date not read in image 0013",
       "source_locus": "https://usuarium.elte.hu/book/4064/view",
-      "source_refs": [],
-      "existing_inventory_candidate_ids": [],
+      "source_refs": [
+        "canonical-gsb-ms08-owning-gallery",
+        "canonical-gsb-ms08-usuarium4064"
+      ],
+      "existing_inventory_candidate_ids": [
+        "canonical-gsb-ms08-1523"
+      ],
       "proposed_inventory_candidate_ids": [],
-      "acquisition_ids": [],
-      "limit": "Not established by this catalogue row; check manuscript layers, duplicates, house reception and substantive content before counting a version."
+      "acquisition_ids": [
+        "canonical-acq-bundle-gsb-ms08"
+      ],
+      "limit": "315 offered images end mid-text and are a partial view of a 256-folio codex. No full collation, distinct recension, order-wide reception, stage or image reuse permission.",
+      "source_loci": [
+        "https://gsbernard.ch/6/64/643-1/man08/index.html, owning gallery heading and original image 0013",
+        "https://usuarium.elte.hu/book/4064/view, item title and Mass contents index"
+      ],
+      "current_status": "integrated-as-one-qualified-metadata-witness"
     },
     {
       "expected_id": "cold-canonical-usu-4037",
@@ -4134,15 +4160,26 @@
       "tradition_or_use": "Switzerland Grand-Saint-Bernard Monastery (CRSA) Congregatio Sanctorum Nicolai et Bernardi Montis Iovis, Congrégation des chanoines réguliers des saints Nicolas et Bernard de Mont-Joux, Congrégation des chanoines réguliers du Grand-Saint-Bernard, Ordo Canonicorum Regularium Sancti Augustini Congregationis Sanctorum Nicolai et Bernardi Montis Iovis, Canons Regular of the Hospitaller Congregation of Great Saint Bernard Sancti Bernardi Montis Iovis",
       "coverage_row": "regular-canonical-uses",
       "date_label": "1523",
-      "date_role": "catalogue-reported age; event role unverified",
+      "date_role": "1523 manuscript copying and painting as owning-congregation-catalogue-reported; not independently dated from image 0013",
       "record_class": "catalogued-witness-or-component-candidate",
       "distinctness_basis": "Not established by this catalogue row; check manuscript layers, duplicates, house reception and substantive content before counting a version.",
       "source_locus": "https://usuarium.elte.hu/book/4064/view",
-      "source_refs": [],
-      "existing_candidate_ids": [],
-      "acquisition_ids": [],
+      "source_refs": [
+        "canonical-gsb-ms08-owning-gallery",
+        "canonical-gsb-ms08-usuarium4064"
+      ],
+      "existing_candidate_ids": [
+        "canonical-gsb-ms08-1523"
+      ],
+      "acquisition_ids": [
+        "canonical-acq-bundle-gsb-ms08"
+      ],
       "cold_control_origin": "cold-initial.json",
-      "review_status": "frozen expectation reconciled as a candidate or lead; independent verdict pending"
+      "review_status": "qualified-metadata-witness-integrated-after-scope-cold-review",
+      "source_loci_current": [
+        "owning Ms. 08 catalogue/gallery image 0013",
+        "USUARIUM book 4064 item page"
+      ]
     },
     {
       "id": "cold-canonical-usu-4037",
@@ -7277,17 +7314,28 @@
       "tradition_or_use": "Grand-Saint-Bernard / specifiedlocaluse",
       "coverage_row": "regular-canonical-uses",
       "date_label": "1523",
-      "date_role": "manuscript copying or attestation range; source qualification applies",
+      "date_role": "1523 manuscript copying and painting as owning-congregation-catalogue-reported; not independently dated from image 0013",
       "record_class": "manuscript-missal",
       "distinctness_basis": "Retained research identifies this witness or component. Its relationship to a substantive revision remains to be tested against the cited original.",
       "source_locus": "retained-regular-research.json#/versions/32/evidence",
       "distinctness_evidence_locus": "retained-regular-research.json#/versions/32/distinctness",
-      "source_refs": [],
-      "existing_candidate_ids": [],
-      "acquisition_ids": [],
+      "source_refs": [
+        "canonical-gsb-ms08-owning-gallery",
+        "canonical-gsb-ms08-usuarium4064"
+      ],
+      "existing_candidate_ids": [
+        "canonical-gsb-ms08-1523"
+      ],
+      "acquisition_ids": [
+        "canonical-acq-bundle-gsb-ms08"
+      ],
       "research_record_id": "gsb-ms08",
       "research_detail_path": ".scratch/full-research-20261019/canonical/research/regular-canons/research.json",
-      "review_status": "research lead retained; independent verdict pending"
+      "review_status": "qualified-metadata-witness-integrated-after-scope-cold-review",
+      "source_loci_current": [
+        "owning Ms. 08 catalogue/gallery image 0013",
+        "USUARIUM book 4064 item page"
+      ]
     },
     {
       "id": "canonical-research-gsb-frag01",
@@ -9720,25 +9768,6 @@
       "next_check": "Acquire or inspect the exact item page and original shelfmark before inventory promotion."
     },
     {
-      "id": "crsa-usu-4064",
-      "label": "Switzerland Grand-Saint-Bernard 1523 Missal Grand St. Bernard Bourg-St-Pierre Ms. 08 4064",
-      "use": "Switzerland Grand-Saint-Bernard Monastery (CRSA) Congregatio Sanctorum Nicolai et Bernardi Montis Iovis, Congrégation des chanoines réguliers des saints Nicolas et Bernard de Mont-Joux, Congrégation des chanoines réguliers du Grand-Saint-Bernard, Ordo Canonicorum Regularium Sancti Augustini Congregationis Sanctorum Nicolai et Bernardi Montis Iovis, Canons Regular of the Hospitaller Congregation of Great Saint Bernard Sancti Bernardi Montis Iovis",
-      "coverage_row": "regular-canonical-uses",
-      "book_class": "missal",
-      "source_reported_age": "1523",
-      "date_role": "manuscript copying or attestation, 1523 as catalogue-reported",
-      "candidate_status": "explicit-lead; not proposed for this bounded integration",
-      "source_item_url": "https://usuarium.elte.hu/book/4064/view",
-      "origin_url": "https://usuarium.elte.hu/origin/1138/view",
-      "inspected_locus": "retained-regular-research.json#/uses/6/records/4; institutional Ms 8 gallery and bundle receipt",
-      "item_page_state": "Catalogue table plus Grand-Saint-Bernard institutional gallery; all 315 offered images acquired, but physical codex incompletely digitized.",
-      "distinctness": "No substantive revision or house reception inferred from this catalogue row.",
-      "acquisition_ids": [
-        "canonical-acq-bundle-gsb-ms08"
-      ],
-      "next_check": "Acquire or inspect the exact item page and original shelfmark before inventory promotion."
-    },
-    {
       "id": "crsa-usu-4037",
       "label": "Germany Attendorn 1471 Missal Missale 4037",
       "use": "Germany Attendorn (CRSA) Ewig, Ewich",
@@ -10455,18 +10484,6 @@
       "limit": "Original 1529 leaves unavailable in retained pass; no claim of new substantive text."
     },
     {
-      "claim_id": "grand-saint-bernard-ms8",
-      "candidate_id": null,
-      "source_id": "canonical-src-gsbofficial",
-      "exact_locus": "Grand-Saint-Bernard MS 8 gallery; 315 offered images in gsb-ms08 receipt",
-      "finding": "1523 manuscript missal witness at Bourg-Saint-Pierre; online gallery is only a subset of physical codex.",
-      "evidence_level": "institutional gallery and image acquisition",
-      "acquisition_ids": [
-        "canonical-acq-bundle-gsb-ms08"
-      ],
-      "limit": "No complete physical codex or full Mass text collation."
-    },
-    {
       "claim_id": "zagan-manuscripts",
       "candidate_id": null,
       "source_id": "canonical-src-suski2013",
@@ -10533,7 +10550,7 @@
     "status": "named cross-lane scope census action remains open; frozen lead retained without transfer completion"
   },
   "routing_resolution": {
-    "decision": "Do not propose the 41 local CRSA catalogue rows for automatic integration in this packet. Preserve them as typed leads with direct URLs and source limits.",
+    "decision": "One Grand-Saint-Bernard Ms. 08 local Canons Regular manuscript witness is accepted for metadata integration; the other 40 CRSA catalogue leads remain deferred.",
     "current_integration_warning_count": 0,
     "future_routing_target": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
     "future_presentation_group": {
@@ -10544,7 +10561,7 @@
       ],
       "note": "Navigation group only. Windesheim, Saint-Ruf, Saint-Victor, Grand-Saint-Bernard, Coimbra and local houses are not one rite or recension."
     },
-    "condition": "Add the route only with the first independently accepted regular-canonical-uses candidate, then validate the generated catalogue and reader."
+    "condition": "The regular-canons-local navigation route accompanies the first accepted regular-canonical-uses candidate; later houses remain separately evidenced witnesses."
   },
   "remaining_bounded_gaps": [
     "This packet retains candidate identities, components, and witnesses; counts do not represent distinct revisions.",
@@ -10553,7 +10570,7 @@
     "The frozen cold controls are cited as expectations; this packet does not offer an independent verdict.",
     "Institutional rights, permissions and source-library retention remain unadjudicated.",
     "Inspect the original 1900/1902 predecessor title pages and full 1936 text changes.",
-    "Inspect 41 CRSA individual item pages and local use/provenance before inventory admission.",
+    "Inspect 40 deferred CRSA item pages and local use/provenance before inventory admission; for Ms. 08 acquire missing folios and compare original Mass texts and calendar.",
     "Assign Wrocław I F 352 to a named cross-lane owner; current owner is null."
   ],
   "record_counts": {
@@ -10561,8 +10578,224 @@
     "uses": 56,
     "versions_and_leads": 226,
     "acquisitions": 105,
-    "deferred_crsa_leads": 41,
-    "crsa_attribution_holds": 9
+    "deferred_crsa_leads": 40,
+    "crsa_attribution_holds": 9,
+    "promoted_crsa_witnesses": 1
   },
-  "scope_limit": "The 226 research register rows are not a distinct-revision count; 41 CRSA leads and all 105 acquired objects remain outside accepted inventory and tracked source payloads."
+  "scope_limit": "The 226 research register rows are not a distinct-revision count. Forty CRSA leads remain deferred and one Ms. 08 witness is integrated as metadata only; all 105 acquired objects remain outside tracked source payloads.",
+  "promoted_crsa_candidates": [
+    {
+      "id": "crsa-usu-4064",
+      "label": "Switzerland Grand-Saint-Bernard 1523 Missal Grand St. Bernard Bourg-St-Pierre Ms. 08 4064",
+      "use": "Switzerland Grand-Saint-Bernard Monastery (CRSA) Congregatio Sanctorum Nicolai et Bernardi Montis Iovis, Congrégation des chanoines réguliers des saints Nicolas et Bernard de Mont-Joux, Congrégation des chanoines réguliers du Grand-Saint-Bernard, Ordo Canonicorum Regularium Sancti Augustini Congregationis Sanctorum Nicolai et Bernardi Montis Iovis, Canons Regular of the Hospitaller Congregation of Great Saint Bernard Sancti Bernardi Montis Iovis",
+      "coverage_row": "regular-canonical-uses",
+      "book_class": "missal",
+      "source_reported_age": "1523",
+      "date_role": "1523 manuscript copying and painting as owning-congregation-catalogue-reported; image 0013 does not date the codex",
+      "candidate_status": "promoted-qualified-metadata-witness-after-cold-review",
+      "source_item_url": "https://usuarium.elte.hu/book/4064/view",
+      "origin_url": "https://usuarium.elte.hu/origin/1138/view",
+      "inspected_locus": "Grand-Saint-Bernard Ms. 08 owning catalogue and gallery heading; original image 0013 opening rubric; USUARIUM item 4064 title, genre, age, shelfmark and Mass index",
+      "item_page_state": "Direct Usuarium 4064 item page inspected; owner catalogue and original image 0013 inspected; all 315 offered gallery images hash-verified, but image 0315 ends mid-text and gallery is a partial codex view.",
+      "distinctness": "One physical manuscript witness; no independent recension, rite, textual ancestry, act-history station or order-wide reception established.",
+      "acquisition_ids": [
+        "canonical-acq-bundle-gsb-ms08"
+      ],
+      "next_check": "Acquire missing original folios and compare Mass texts, calendar, rubrics and neighboring Valais/Canons Regular books; resolve image reuse rights before any payload registration.",
+      "source_refs": [
+        "canonical-gsb-ms08-owning-gallery",
+        "canonical-gsb-ms08-usuarium4064"
+      ],
+      "inventory_candidate_ids": [
+        "canonical-gsb-ms08-1523"
+      ]
+    }
+  ],
+  "accepted_claim_evidence_additional": [
+    {
+      "claim_id": "grand-saint-bernard-ms8",
+      "candidate_id": "canonical-gsb-ms08-1523",
+      "source_id": "canonical-gsb-ms08-owning-gallery",
+      "exact_locus": "Grand-Saint-Bernard Ms. 08 owning catalogue and gallery; original image 0013 opening rubric; image 0315 ends mid-text",
+      "finding": "One 1523 Liddes manuscript missal witness under Grand-Saint-Bernard collection, date reported by owner; partial 315-image gallery.",
+      "evidence_level": "owning-congregation catalogue and original opening-rubric image inspected",
+      "acquisition_ids": [
+        "canonical-acq-bundle-gsb-ms08"
+      ],
+      "limit": "Only a metadata witness: missing folios, full Mass text comparison, order-wide reception and image reuse rights remain open.",
+      "status": "integrated-qualified-metadata-witness"
+    }
+  ],
+  "gsb_ms08_accepted_evidence": {
+    "owner_gallery_url": "https://gsbernard.ch/6/64/643-1/man08/index.html",
+    "owner_catalogue_url": "https://gsbernard.ch/6/64/643-1.php",
+    "usuarium_item_url": "https://usuarium.elte.hu/book/4064/view",
+    "identity": "Grand-Saint-Bernard Ms. 08, old 9737, USUARIUM book 4064, one physical manuscript",
+    "date_role": "1523 manuscript copying/painting as owner-catalogue-reported",
+    "physical_extent": "256 parchment folios as owner-catalogue-reported",
+    "offered_gallery_extent": "315 images, 101746906 bytes, scratch study only; image 0315 ends mid-text, so gallery is partial",
+    "image_0013_sha256": "45e6347a360514fd6a9a3f382c153780d279bde65cb52db7ca767b6e9113f061",
+    "image_0315_sha256": "692ccc398ec9577da953dc524982d2387d07d14107d16ef95025c8d2851c5653",
+    "image_manifest_sha256": "4673ce7388cd47b148a183c26f7055cc6fd9c1e459381aaf4b8f23d707a3d74d",
+    "owner_gallery_html_sha256": "76617a661d3eadd730a759b8b3d4e802e445d9965cae8aa701bae8341ac43429",
+    "usuarium_item_html_sha256": "1cfa9140bbc37e3e419775ca81b5ea21cf16b0ece1fd6d470b633473f9e52a14",
+    "rights": "Owner page states copyright Maison Hospitalière du Gd-St-Bernard; no image reuse license established. Metadata/citation only; USUARIUM attribution applies.",
+    "limit": "No complete facsimile, collation, independent recension, act-history station, parentage or order-wide reception."
+  },
+  "historical_packet_baseline": {
+    "research_packet_sha256": "f52648c2cc8d84b3a25d7c2642782a8dc32988cb75b4b6a4526a60eb6f1e6f2d",
+    "prior_receipt_sha256": "281fc38c20e6f79dd95acc990b629f7f3ea422f23c08e8df64b2a4b8f7aad8c8",
+    "original_deferred_crsa_count": 41,
+    "original_frozen_id_count": 175,
+    "status": "immutable research packet and prior receipt snapshots retained as historical baseline; current integration statuses above supersede their pending labels",
+    "original_4064_packet_deferred_entry": {
+      "id": "crsa-usu-4064",
+      "label": "Switzerland Grand-Saint-Bernard 1523 Missal Grand St. Bernard Bourg-St-Pierre Ms. 08 4064",
+      "use": "Switzerland Grand-Saint-Bernard Monastery (CRSA) Congregatio Sanctorum Nicolai et Bernardi Montis Iovis, Congrégation des chanoines réguliers des saints Nicolas et Bernard de Mont-Joux, Congrégation des chanoines réguliers du Grand-Saint-Bernard, Ordo Canonicorum Regularium Sancti Augustini Congregationis Sanctorum Nicolai et Bernardi Montis Iovis, Canons Regular of the Hospitaller Congregation of Great Saint Bernard Sancti Bernardi Montis Iovis",
+      "coverage_row": "regular-canonical-uses",
+      "book_class": "missal",
+      "source_reported_age": "1523",
+      "date_role": "manuscript copying or attestation, 1523 as catalogue-reported",
+      "candidate_status": "explicit-lead; not proposed for this bounded integration",
+      "source_item_url": "https://usuarium.elte.hu/book/4064/view",
+      "origin_url": "https://usuarium.elte.hu/origin/1138/view",
+      "inspected_locus": "retained-regular-research.json#/uses/6/records/4; institutional Ms 8 gallery and bundle receipt",
+      "item_page_state": "Catalogue table plus Grand-Saint-Bernard institutional gallery; all 315 offered images acquired, but physical codex incompletely digitized.",
+      "distinctness": "No substantive revision or house reception inferred from this catalogue row.",
+      "acquisition_ids": [
+        "canonical-acq-bundle-gsb-ms08"
+      ],
+      "next_check": "Acquire or inspect the exact item page and original shelfmark before inventory promotion."
+    },
+    "original_4064_packet_version_entry": {
+      "id": "cold-canonical-usu-4064",
+      "label": "Switzerland Grand-Saint-Bernard 1523 Missal Grand St. Bernard Bourg-St-Pierre Ms. 08 4064",
+      "tradition_or_use": "Switzerland Grand-Saint-Bernard Monastery (CRSA) Congregatio Sanctorum Nicolai et Bernardi Montis Iovis, Congrégation des chanoines réguliers des saints Nicolas et Bernard de Mont-Joux, Congrégation des chanoines réguliers du Grand-Saint-Bernard, Ordo Canonicorum Regularium Sancti Augustini Congregationis Sanctorum Nicolai et Bernardi Montis Iovis, Canons Regular of the Hospitaller Congregation of Great Saint Bernard Sancti Bernardi Montis Iovis",
+      "coverage_row": "regular-canonical-uses",
+      "date_label": "1523",
+      "date_role": "catalogue-reported age; event role unverified",
+      "record_class": "catalogued-witness-or-component-candidate",
+      "distinctness_basis": "Not established by this catalogue row; check manuscript layers, duplicates, house reception and substantive content before counting a version.",
+      "source_locus": "https://usuarium.elte.hu/book/4064/view",
+      "source_refs": [],
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "cold_control_origin": "cold-initial.json",
+      "review_status": "frozen expectation reconciled as a candidate or lead; independent verdict pending"
+    },
+    "prior_receipt_4064_snapshot": {
+      "frozen_disposition": {
+        "expected_id": "cold-canonical-usu-4064",
+        "disposition": "retained-candidate-or-lead",
+        "research_version_id": "cold-canonical-usu-4064",
+        "record_class": "catalogued-witness-or-component-candidate",
+        "date_label": "1523",
+        "date_role": "catalogue-reported age; event role unverified",
+        "source_locus": "https://usuarium.elte.hu/book/4064/view",
+        "source_refs": [],
+        "existing_inventory_candidate_ids": [],
+        "proposed_inventory_candidate_ids": [],
+        "acquisition_ids": [],
+        "limit": "Not established by this catalogue row; check manuscript layers, duplicates, house reception and substantive content before counting a version."
+      },
+      "deferred_lead": {
+        "id": "crsa-usu-4064",
+        "label": "Switzerland Grand-Saint-Bernard 1523 Missal Grand St. Bernard Bourg-St-Pierre Ms. 08 4064",
+        "use": "Switzerland Grand-Saint-Bernard Monastery (CRSA) Congregatio Sanctorum Nicolai et Bernardi Montis Iovis, Congrégation des chanoines réguliers des saints Nicolas et Bernard de Mont-Joux, Congrégation des chanoines réguliers du Grand-Saint-Bernard, Ordo Canonicorum Regularium Sancti Augustini Congregationis Sanctorum Nicolai et Bernardi Montis Iovis, Canons Regular of the Hospitaller Congregation of Great Saint Bernard Sancti Bernardi Montis Iovis",
+        "coverage_row": "regular-canonical-uses",
+        "book_class": "missal",
+        "source_reported_age": "1523",
+        "date_role": "manuscript copying or attestation, 1523 as catalogue-reported",
+        "candidate_status": "explicit-lead; not proposed for this bounded integration",
+        "source_item_url": "https://usuarium.elte.hu/book/4064/view",
+        "origin_url": "https://usuarium.elte.hu/origin/1138/view",
+        "inspected_locus": "retained-regular-research.json#/uses/6/records/4; institutional Ms 8 gallery and bundle receipt",
+        "item_page_state": "Catalogue table plus Grand-Saint-Bernard institutional gallery; all 315 offered images acquired, but physical codex incompletely digitized.",
+        "distinctness": "No substantive revision or house reception inferred from this catalogue row.",
+        "acquisition_ids": [
+          "canonical-acq-bundle-gsb-ms08"
+        ],
+        "next_check": "Acquire or inspect the exact item page and original shelfmark before inventory promotion."
+      },
+      "frozen_version": {
+        "id": "cold-canonical-usu-4064",
+        "label": "Switzerland Grand-Saint-Bernard 1523 Missal Grand St. Bernard Bourg-St-Pierre Ms. 08 4064",
+        "tradition_or_use": "Switzerland Grand-Saint-Bernard Monastery (CRSA) Congregatio Sanctorum Nicolai et Bernardi Montis Iovis, Congrégation des chanoines réguliers des saints Nicolas et Bernard de Mont-Joux, Congrégation des chanoines réguliers du Grand-Saint-Bernard, Ordo Canonicorum Regularium Sancti Augustini Congregationis Sanctorum Nicolai et Bernardi Montis Iovis, Canons Regular of the Hospitaller Congregation of Great Saint Bernard Sancti Bernardi Montis Iovis",
+        "coverage_row": "regular-canonical-uses",
+        "date_label": "1523",
+        "date_role": "catalogue-reported age; event role unverified",
+        "record_class": "catalogued-witness-or-component-candidate",
+        "distinctness_basis": "Not established by this catalogue row; check manuscript layers, duplicates, house reception and substantive content before counting a version.",
+        "source_locus": "https://usuarium.elte.hu/book/4064/view",
+        "source_refs": [],
+        "existing_candidate_ids": [],
+        "acquisition_ids": [],
+        "cold_control_origin": "cold-initial.json",
+        "review_status": "frozen expectation reconciled as a candidate or lead; independent verdict pending"
+      },
+      "research_version": {
+        "id": "canonical-research-gsb-ms08",
+        "label": "Missale adusum Montis Iovis adopusparochiae St Georgii Liddes",
+        "tradition_or_use": "Grand-Saint-Bernard / specifiedlocaluse",
+        "coverage_row": "regular-canonical-uses",
+        "date_label": "1523",
+        "date_role": "manuscript copying or attestation range; source qualification applies",
+        "record_class": "manuscript-missal",
+        "distinctness_basis": "Retained research identifies this witness or component. Its relationship to a substantive revision remains to be tested against the cited original.",
+        "source_locus": "retained-regular-research.json#/versions/32/evidence",
+        "distinctness_evidence_locus": "retained-regular-research.json#/versions/32/distinctness",
+        "source_refs": [],
+        "existing_candidate_ids": [],
+        "acquisition_ids": [],
+        "research_record_id": "gsb-ms08",
+        "research_detail_path": ".scratch/full-research-20261019/canonical/research/regular-canons/research.json",
+        "review_status": "research lead retained; independent verdict pending"
+      },
+      "claim_lead": {
+        "claim_id": "grand-saint-bernard-ms8",
+        "candidate_id": null,
+        "source_id": "canonical-src-gsbofficial",
+        "exact_locus": "Grand-Saint-Bernard MS 8 gallery; 315 offered images in gsb-ms08 receipt",
+        "finding": "1523 manuscript missal witness at Bourg-Saint-Pierre; online gallery is only a subset of physical codex.",
+        "evidence_level": "institutional gallery and image acquisition",
+        "acquisition_ids": [
+          "canonical-acq-bundle-gsb-ms08"
+        ],
+        "limit": "No complete physical codex or full Mass text collation."
+      },
+      "routing_resolution": {
+        "decision": "Do not propose the 41 local CRSA catalogue rows for automatic integration in this packet. Preserve them as typed leads with direct URLs and source limits.",
+        "current_integration_warning_count": 0,
+        "future_routing_target": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
+        "future_presentation_group": {
+          "id": "regular-canons-local",
+          "label": "Canons Regular: local congregations and houses",
+          "families": [
+            "regular-canonical-uses"
+          ],
+          "note": "Navigation group only. Windesheim, Saint-Ruf, Saint-Victor, Grand-Saint-Bernard, Coimbra and local houses are not one rite or recension."
+        },
+        "condition": "Add the route only with the first independently accepted regular-canonical-uses candidate, then validate the generated catalogue and reader."
+      },
+      "scope_limit": "The 226 research register rows are not a distinct-revision count; 41 CRSA leads and all 105 acquired objects remain outside accepted inventory and tracked source payloads.",
+      "remaining_bounded_gaps": [
+        "This packet retains candidate identities, components, and witnesses; counts do not represent distinct revisions.",
+        "Whole-source acquisition and gallery completeness do not establish item collation or a full reconstructed book.",
+        "Modern English, German, French and other approved proper translations require their own language-role review.",
+        "The frozen cold controls are cited as expectations; this packet does not offer an independent verdict.",
+        "Institutional rights, permissions and source-library retention remain unadjudicated.",
+        "Inspect the original 1900/1902 predecessor title pages and full 1936 text changes.",
+        "Inspect 41 CRSA individual item pages and local use/provenance before inventory admission.",
+        "Assign Wrocław I F 352 to a named cross-lane owner; current owner is null."
+      ],
+      "record_counts": {
+        "frozen_ids": 175,
+        "uses": 56,
+        "versions_and_leads": 226,
+        "acquisitions": 105,
+        "deferred_crsa_leads": 41,
+        "crsa_attribution_holds": 9
+      }
+    }
+  }
 }

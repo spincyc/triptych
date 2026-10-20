@@ -14,12 +14,12 @@
     {
       "id": "western",
       "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
-      "sha256": "878a7783af7949a239b26f6a2d7a9040148c81f9a552b9fdb67581b7194e0a47"
+      "sha256": "dde38671887437e481498ad890f9f8a3b7ace867041c312ecc01ce9ab0cd023d"
     },
     {
       "id": "presentation",
       "path": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
-      "sha256": "403a9bd11b4bf67ac0459ae1234f4a1b5f27fca0946a63b4bb5b78c0cf61553f"
+      "sha256": "65e4a926a821e57ccf2fce06ac4860d833c12db1871b41ea47ba44b895aeb9f7"
     },
     {
       "id": "legacy_latin",
@@ -99,15 +99,15 @@
   ],
   "count_semantics": {
     "eastern_census_slots": 23,
-    "western_coverage_trajectories": 58,
+    "western_coverage_trajectories": 66,
     "eastern_candidates": 439,
-    "western_candidates": 541,
-    "presentation_groups": 61,
+    "western_candidates": 641,
+    "presentation_groups": 64,
     "eastern_empty_candidate_slots_at_input": [
       "albanian",
       "macedonian"
     ],
-    "western_empty_candidate_slots_at_input": 18,
+    "western_empty_candidate_slots_at_input": 16,
     "warning": "These count different objects. Western trajectories include composite and overlapping discovery buckets. Presentation groups are display categories. Neither candidate linkage nor a dossier certifies complete coverage."
   },
   "findings": [
@@ -6919,7 +6919,8 @@
         "roman-modern-extra-043",
         "roman-modern-extra-044",
         "roman-modern-extra-045",
-        "roman-modern-extra-046"
+        "roman-modern-extra-046",
+        "roman-modern-1635-vatican-witness-lead"
       ],
       "proposed_tradition_ids": [
         "roman-general"
@@ -7880,24 +7881,40 @@
           "end_year": 1970,
           "date_role": "volume-I-imprint-1970",
           "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-1635-vatican-witness-lead",
+          "label": "Rome 1635 Vatican Missale Romanum: bibliographic witnesses after Urban VIII revision",
+          "start_year": 1635,
+          "end_year": 1635,
+          "date_role": "imprint-year",
+          "status": "inventory-witness-candidate-not-a-stage"
         }
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "The reviewed Roman modern inventory adds 107 in-scope book, component, witness and unresolved-lead records to the seven prior candidates. These are research placements, not 107 new revisions or stages. Complete the intervening 1634–1920 book/calendar progression, experimental and restored Holy Week witnesses, 1965–1968 component collation, 1971/1975/2008 whole-book checks, and the 2020 Supplementum. Distinguish approval, publication and effectiveness from an inferred continuous use.",
+      "missing_stage_chain": "The reviewed Roman modern inventory adds 107 in-scope book, component, witness and unresolved-lead records to the seven prior candidates. These are research placements, not 107 new revisions or stages. Complete the intervening 1634–1920 book/calendar progression, experimental and restored Holy Week witnesses, 1965–1968 component collation, 1971/1975/2008 whole-book checks, and the 2020 Supplementum. Distinguish approval, publication and effectiveness from an inferred continuous use. Review the bounded Roman modern research receipt for 117 book, component, witness and lead dispositions; its 107 new in-scope candidate IDs join the seven baseline IDs here. The Communion-outside-Mass adjacent ritual roman-modern-extra-035 remains outside this coverage row. Complete the packet-listed original acquisitions, rights review and before/after collation before treating any candidate as a substantive revision or adding a station. The exact 1884 typical-edition claim, 1900 original impression, 1975 altar book, 1965 Latin Order, 1965 concelebration, 1968 Preces and 2020 Supplementum still have the receipt-specific limitations. Request the exact UB Rome 1634 copy keyed to Torra no. 120; obtain Rusca L-77 original images and resolve Asachiana pagination before comparing any 1635 text with 1634. The 1635 lead is a witness, not a new recension or station.",
       "next_sources": {
         "inventory_source_ids": [
           "notitiae-book-bibliography-1985",
           "western-roman-ordo-1965-primary",
           "western-roman-holy-week-1965-primary",
           "western-roman-variationes-1967-primary",
-          "western-roman-preces-1968-primary"
+          "western-roman-preces-1968-primary",
+          "roman-modern-1635-rusca-l77",
+          "roman-modern-1635-asachiana-iasi"
         ],
         "source_urls": [
-          "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-21-(1985)/Notitiae-228-229-1985.pdf"
+          "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-21-(1985)/Notitiae-228-229-1985.pdf",
+          "https://gofile.me/3HKfk/aTpRapnPq",
+          "https://gofile.me/3HKfk/oqnX4tKks",
+          "https://gofile.me/3HKfk/UxU0cLZ9z",
+          "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1960/notitiae-04-%281968%29/Notitiae-040-1968.pdf",
+          "https://www.centrorusca.it/sites/all/modules/sacerdoti/doc/LANZADA.pdf",
+          "https://bjiasi.ro/wp-content/uploads/2014/01/asachiana-19-2023.pdf"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Use the dated Roman modern research receipt and its acquisition references to inspect missing exact originals, delimit component books and reprints, and collate named text changes before extending stages or text parentage. Prioritize the experimental/restored Holy Week books, 1965–1968 components, 1971/1975/2008 books and 2020 Supplementum; resolve the adjacent Communion-outside-Mass ritual's scope separately."
+        "target": "Use the dated Roman modern research receipt and its acquisition references to inspect missing exact originals, delimit component books and reprints, and collate named text changes before extending stages or text parentage. Prioritize the experimental/restored Holy Week books, 1965–1968 components, 1971/1975/2008 books and 2020 Supplementum; resolve the adjacent Communion-outside-Mass ritual's scope separately. Review the bounded Roman modern research receipt for 117 book, component, witness and lead dispositions; its 107 new in-scope candidate IDs join the seven baseline IDs here. The Communion-outside-Mass adjacent ritual roman-modern-extra-035 remains outside this coverage row. Complete the packet-listed original acquisitions, rights review and before/after collation before treating any candidate as a substantive revision or adding a station. The exact 1884 typical-edition claim, 1900 original impression, 1975 altar book, 1965 Latin Order, 1965 concelebration, 1968 Preces and 2020 Supplementum still have the receipt-specific limitations. Request the exact UB Rome 1634 copy keyed to Torra no. 120; obtain Rusca L-77 original images and resolve Asachiana pagination before comparing any 1635 text with 1634. The 1635 lead is a witness, not a new recension or station."
       },
       "caveat": "The 114 research candidates include whole books, components, print witnesses and unresolved leads. Catalogue or receipt placement does not make them distinct revisions, stages, a complete chronological sequence, or evidence of local adoption; roman-modern-extra-035 remains outside this coverage row pending scope review.",
       "canonical_tradition_ids": [
@@ -8243,7 +8260,7 @@
       "id": "ambrosian",
       "label": "Ambrosian sacramentaries, missals and reform stages",
       "coverage_unit": "trajectory-or-discovery-bucket",
-      "inventory_status": "selected-primary-reform-instruments-and-publications-documented",
+      "inventory_status": "bounded-repertoire-and-selected-primary-acts-reviewed; full-recension-census-open",
       "candidate_ids": [
         "ambrosian-1475",
         "ambrosian-1751-1902",
@@ -8254,7 +8271,16 @@
         "ambrosian-2020-ordo",
         "ambrosian-2024",
         "ambrosian-1974-latin-reform",
-        "ambrosian-2026-latin"
+        "ambrosian-2026-latin",
+        "ambrosian-1499-print",
+        "ambrosian-1640-print",
+        "ambrosian-1954-fifth",
+        "ambrosian-1965-latin-italian",
+        "ambrosian-1975-prayers",
+        "ambrosian-2010-sanctoral",
+        "ambrosian-2011-evangeliario",
+        "ambrosian-2016-short-readings",
+        "ambrosian-1986-update"
       ],
       "proposed_tradition_ids": [
         "ambrosian-milan"
@@ -8371,27 +8397,126 @@
           "end_year": 2026,
           "date_role": "publication",
           "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "ambrosian-1499-print",
+          "label": "Ambrosian 1499 Print",
+          "start_year": 1499,
+          "end_year": 1499,
+          "date_role": "publication-or-qualified-lead",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "ambrosian-1640-print",
+          "label": "Ambrosian 1640 Print",
+          "start_year": 1640,
+          "end_year": 1640,
+          "date_role": "publication-or-qualified-lead",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "ambrosian-1954-fifth",
+          "label": "Ambrosian 1954 Fifth",
+          "start_year": 1954,
+          "end_year": 1954,
+          "date_role": "publication-or-qualified-lead",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "ambrosian-1965-latin-italian",
+          "label": "Ambrosian 1965 Latin Italian",
+          "start_year": 1965,
+          "end_year": 1965,
+          "date_role": "publication-or-qualified-lead",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "ambrosian-1975-prayers",
+          "label": "Ambrosian 1975 Prayers",
+          "start_year": 1975,
+          "end_year": 1975,
+          "date_role": "Latin prayer-component confirmation on 1975-09-01; publication and first use unverified",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "ambrosian-2010-sanctoral",
+          "label": "Ambrosian 2010 Sanctoral",
+          "start_year": 2010,
+          "end_year": 2010,
+          "date_role": "publication-or-qualified-lead",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "ambrosian-2011-evangeliario",
+          "label": "Ambrosian 2011 Evangeliario",
+          "start_year": 2011,
+          "end_year": 2011,
+          "date_role": "publication-or-qualified-lead",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "ambrosian-2016-short-readings",
+          "label": "Ambrosian 2016 Short Readings",
+          "start_year": 2016,
+          "end_year": 2016,
+          "date_role": "lectionary-amendment authorization on 2016-01-25; publication and first use unverified",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "ambrosian-1986-update",
+          "label": "1986 update of the first Italian Ambrosian Missal edition",
+          "start_year": 1986,
+          "end_year": 1986,
+          "date_role": "official-retrospective-update-year; original-book-publication-and-use-unverified",
+          "status": "inventory-witness-candidate-not-a-stage"
         }
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Medieval manuscripts and 1582/1588 remain unresearched. Latin source priority is established for 1974 and 2023 approvals; inspect 1975 prayer exemplar, 1981/1990 books, 2008 lectionary and 2020 supplement before counting intermediate versions. Compare Latin 1981/2026 and full signed current acts.",
+      "missing_stage_chain": "Medieval manuscripts and 1582/1588 remain unresearched. Latin source priority is established for 1974 and 2023 approvals; inspect 1975 prayer exemplar, 1981/1990 books, 2008 lectionary and 2020 supplement before counting intermediate versions. Compare Latin 1981/2026 and full signed current acts. Inspect 1640 revision letter; pre-1902 and post-typical front matter; 1965 book/fascicles and possible 1966 printing; 1972 experiment; 1975 prayers; 1981 changed passages; original 1986 update and 1990 updated reprint; 2008–2016 lectionary parts; 2020 order; Latin 1981/2026 collation. 2024 Italian files are consultation only.",
       "next_sources": {
         "inventory_source_ids": [
           "milan-publisher-2024",
           "ambrosian-latin-approval-1974",
           "ambrosian-second-approval-2023",
           "ambrosian-promulgation-excerpt-2024",
-          "ambrosian-latin-publisher-2026"
+          "ambrosian-latin-publisher-2026",
+          "ambrosian-src-amiet-1960",
+          "ambrosian-src-amiet-1995",
+          "ambrosian-src-usuarium-404",
+          "ambrosian-src-notitiae-1965",
+          "ambrosian-src-1981",
+          "ambrosian-frontmatter-route-2024",
+          "ambrosian-src-1499",
+          "ambrosian-src-1640",
+          "ambrosian-src-1954",
+          "ambrosian-prayers-confirmation-1975",
+          "ambrosian-src-2010-sanctoral",
+          "ambrosian-src-2011-evangeliario",
+          "ambrosian-src-lectionary-service"
         ],
         "source_urls": [
           "https://www.itl-libri.com/wp-content/uploads/2024/02/MESSALE-AMBROSIANO-2024.pdf",
           "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-11-(1975)/Notitiae-102-1975.pdf",
           "https://www.cultodivino.va/content/dam/cultodivino/documenti/Index-decretorum-anni-MMXXIII.pdf",
-          "https://www.chiesadiconcorezzo.it/nuovo-messale-ambrosiano/"
+          "https://www.chiesadiconcorezzo.it/nuovo-messale-ambrosiano/",
+          "https://www.itl-libri.com/prodotto/missale-ambrosianum",
+          "https://www.persee.fr/doc/scrip_0036-9772_1960_num_14_1_3036",
+          "https://www.persee.fr/doc/scrip_0036-9772_1995_num_49_1_1719",
+          "https://usuarium.elte.hu/origin/404/view",
+          "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1960/notitiae-01-%281965%29/Notitiae-006-1965.pdf",
+          "https://archive.org/details/missale-ambrosianum-1981",
+          "https://www.chiesadimilano.it/wp-content/uploads/sites/83/2024/11/Premesse_praenotanda_portale.pdf",
+          "https://archive.org/details/OEXV698",
+          "https://archive.org/details/bub_gb_6ApfhlfCMksC",
+          "https://archive.org/details/missale-ambrosianum-1954",
+          "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-11-(1975)/Notitiae-111-112-1975.pdf",
+          "https://www.chiesadimilano.it/wp-content/uploads/sites/83/2024/11/MI7-2024-11-10.pdf",
+          "https://www.chiesadimilano.it/news/arte-cultura/il-nuovo-evangeliario-ambrosiano-presentato-nella-solennita-di-san-carlo-33001.html",
+          "https://www.chiesadimilano.it/servizioperlapastoraleliturgica/"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Medieval manuscripts and 1582/1588 remain unresearched. Latin source priority is established for 1974 and 2023 approvals; inspect 1975 prayer exemplar, 1981/1990 books, 2008 lectionary and 2020 supplement before counting intermediate versions. Compare Latin 1981/2026 and full signed current acts."
+        "target": "Medieval manuscripts and 1582/1588 remain unresearched. Latin source priority is established for 1974 and 2023 approvals; inspect 1975 prayer exemplar, 1981/1990 books, 2008 lectionary and 2020 supplement before counting intermediate versions. Compare Latin 1981/2026 and full signed current acts. Inspect 1640 revision letter; pre-1902 and post-typical front matter; 1965 book/fascicles and possible 1966 printing; 1972 experiment; 1975 prayers; 1981 changed passages; original 1986 update and 1990 updated reprint; 2008–2016 lectionary parts; 2020 order; Latin 1981/2026 collation. 2024 Italian files are consultation only."
       },
       "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence.",
       "existing_catalogue_ids": [
@@ -8891,7 +9016,8 @@
       "coverage_unit": "trajectory-or-discovery-bucket",
       "inventory_status": "selected-witness-census-documented",
       "candidate_ids": [
-        "nidaros-1519"
+        "nidaros-1519",
+        "cold-nidaros-icelandic1250"
       ],
       "proposed_tradition_ids": [
         "nidaros"
@@ -8915,20 +9041,34 @@
           "end_year": 1519,
           "date_role": "publication",
           "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cold-nidaros-icelandic1250",
+          "label": "Icelandic Breviary-Missal, Nidaros use",
+          "start_year": 1250,
+          "end_year": 1250,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
         }
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Deduplicate catalogue records, extend witness census, acquire cleared complete witnesses and compare prayers, rubrics, calendar and order before promoting distinct versions.",
+      "missing_stage_chain": "Deduplicate catalogue records, extend witness census, acquire cleared complete witnesses and compare prayers, rubrics, calendar and order before promoting distinct versions. 1519 printed standardization intent and an earlier c.1250 Icelandic Nidaros-use fragment are documented. Deduplicate printed-copy catalogues; inspect approval, local reception and complete original text before claiming a normative revision or universal adoption.",
       "next_sources": {
         "inventory_source_ids": [
-          "nidaros-usuarium"
+          "nidaros-usuarium",
+          "nidaros-printed",
+          "nidaros1519-nb",
+          "nidaros-icelandic"
         ],
         "source_urls": [
-          "https://usuarium.elte.hu/origin/435/view"
+          "https://usuarium.elte.hu/origin/435/view",
+          "https://www.bokselskap.no/boker/missale/introduction",
+          "https://api.nb.no/catalog/v1/items/URN:NBN:no-nb_digibok_2014081128001",
+          "https://fragment.uib.no/index2.asp?id=26675&k=4643"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Deduplicate catalogue records, extend witness census, acquire cleared complete witnesses and compare prayers, rubrics, calendar and order before promoting distinct versions."
+        "target": "Deduplicate catalogue records, extend witness census, acquire cleared complete witnesses and compare prayers, rubrics, calendar and order before promoting distinct versions. 1519 printed standardization intent and an earlier c.1250 Icelandic Nidaros-use fragment are documented. Deduplicate printed-copy catalogues; inspect approval, local reception and complete original text before claiming a normative revision or universal adoption."
       },
       "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence.",
       "canonical_tradition_ids": []
@@ -9024,10 +9164,22 @@
       "id": "lyon",
       "label": "Lyon trajectory",
       "coverage_unit": "trajectory-or-discovery-bucket",
-      "inventory_status": "selected-witness-census-documented",
+      "inventory_status": "44-entry diocesan repertoire screened, selected print witnesses located; revision census open",
       "candidate_ids": [
         "lyon-medieval",
-        "lyon-later-series"
+        "lyon-later-series",
+        "lyon-bm537",
+        "lyon-bm5139",
+        "lyon-bm1391",
+        "lyon-bm5129",
+        "lyon-bm5947",
+        "lyon-lost-montbrison",
+        "lyon-1487-missal",
+        "lyon-1737-missal",
+        "lyon-1771-missal",
+        "lyon-1825-missal",
+        "lyon-1844-missal",
+        "lyon-1866-missal"
       ],
       "proposed_tradition_ids": [
         "lyon"
@@ -9059,20 +9211,124 @@
           "end_year": 1868,
           "date_role": "publication-witness-cluster",
           "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "lyon-bm537",
+          "label": "Lyon BM 537 (457), Gregorian sacramentary with Lyon additions",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copying",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "lyon-bm5139",
+          "label": "Lyon BM 5139, Saint-Just missal",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copying",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "lyon-bm1391",
+          "label": "Lyon BM 1391, Masso composite missal",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copying",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "lyon-bm5129",
+          "label": "Lyon BM 5129, Machard manuscript copy of 1487 print",
+          "start_year": 1491,
+          "end_year": 1491,
+          "date_role": "manuscript-copying",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "lyon-bm5947",
+          "label": "Lyon BM 5947, Saint-Saturnin missal",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copying",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "lyon-lost-montbrison",
+          "label": "Lost Montbrison collegiate missal, known through excerpts",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copying",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "lyon-1487-missal",
+          "label": "Lyon 1487 Missal",
+          "start_year": 1487,
+          "end_year": 1487,
+          "date_role": "publication-or-qualified-lead",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "lyon-1737-missal",
+          "label": "Lyon 1737 Missal",
+          "start_year": 1737,
+          "end_year": 1737,
+          "date_role": "publication-or-qualified-lead",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "lyon-1771-missal",
+          "label": "Lyon 1771 Missal",
+          "start_year": 1771,
+          "end_year": 1771,
+          "date_role": "publication-or-qualified-lead",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "lyon-1825-missal",
+          "label": "Lyon 1825 Missal",
+          "start_year": 1825,
+          "end_year": 1825,
+          "date_role": "publication-or-qualified-lead",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "lyon-1844-missal",
+          "label": "Lyon 1844 Missal",
+          "start_year": 1844,
+          "end_year": 1844,
+          "date_role": "publication-or-qualified-lead",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "lyon-1866-missal",
+          "label": "Lyon 1866 Missal",
+          "start_year": 1866,
+          "end_year": 1866,
+          "date_role": "publication-or-qualified-lead",
+          "status": "inventory-witness-candidate-not-a-stage"
         }
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Deduplicate catalogue records, extend witness census, acquire cleared complete witnesses and compare prayers, rubrics, calendar and order before promoting distinct versions.",
+      "missing_stage_chain": "Deduplicate catalogue records, extend witness census, acquire cleared complete witnesses and compare prayers, rubrics, calendar and order before promoting distinct versions. Read Amiet 1979 and Buenner pp.294–296; acquire original 1771/1825/1844/1868/1904/1956 books; compare to 802-page 1866 scan; resolve 1844/1846 alias and Lyon use versus Roman, monastic and printing-place contexts.",
       "next_sources": {
         "inventory_source_ids": [
-          "lyon-usuarium"
+          "lyon-usuarium",
+          "lyon-src-amiet-1998",
+          "lyon-src-cmn",
+          "lyon-src-fontaine-1980",
+          "lyon-src-numelyo-1866"
         ],
         "source_urls": [
-          "https://usuarium.elte.hu/origin/211/view"
+          "https://usuarium.elte.hu/origin/211/view",
+          "https://www.persee.fr/doc/dirht_0073-8212_1998_edc_43_2",
+          "https://www.musmed.fr/CMN/FLYm.htm",
+          "https://fr.scribd.com/document/252818225/La-Maison-Dieu-n-141-1980",
+          "https://numelyo.bm-lyon.fr/f_view/BML:BML_00GOO0100137001100082762"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Deduplicate catalogue records, extend witness census, acquire cleared complete witnesses and compare prayers, rubrics, calendar and order before promoting distinct versions."
+        "target": "Deduplicate catalogue records, extend witness census, acquire cleared complete witnesses and compare prayers, rubrics, calendar and order before promoting distinct versions. Read Amiet 1979 and Buenner pp.294–296; acquire original 1771/1825/1844/1868/1904/1956 books; compare to 802-page 1866 scan; resolve 1844/1846 alias and Lyon use versus Roman, monastic and printing-place contexts."
       },
       "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence.",
       "existing_catalogue_ids": [
@@ -10329,7 +10585,7 @@
     },
     {
       "id": "german-diocesan-uses",
-      "label": "Freising, Hildesheim, Konstanz, Magdeburg, Meissen, Münster, Passau, Regensburg, Schleswig, Speyer, Trier and Würzburg",
+      "label": "Freising, Hildesheim, Konstanz, Magdeburg, Meissen, Münster, Passau, Regensburg, Speyer, Trier and Würzburg",
       "coverage_unit": "trajectory-or-discovery-bucket",
       "inventory_status": "index-discovery-only",
       "candidate_ids": [],
@@ -10366,8 +10622,16 @@
       "id": "danish-uses",
       "label": "Aarhus, Copenhagen, Odense, Ribe, Roskilde and Viborg",
       "coverage_unit": "trajectory-or-discovery-bucket",
-      "inventory_status": "index-discovery-only",
-      "candidate_ids": [],
+      "inventory_status": "selected-witness-census-documented",
+      "candidate_ids": [
+        "aarhus-missal-leaves",
+        "hafniense-1510",
+        "ottoniense-1483",
+        "ottoniense-novum-1501",
+        "roscildense-c1484",
+        "roskilde-canon-1522",
+        "viburgense-1500"
+      ],
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
@@ -10380,19 +10644,100 @@
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": []
       },
-      "witnesses": [],
+      "witnesses": [
+        {
+          "candidate_id": "aarhus-missal-leaves",
+          "label": "Cathedral missal leaves",
+          "start_year": 1350,
+          "end_year": 1400,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "hafniense-1510",
+          "label": "Missale Hafniense",
+          "start_year": 1510,
+          "end_year": 1510,
+          "date_role": "printed-witness-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "ottoniense-1483",
+          "label": "Missale Ottoniense",
+          "start_year": 1483,
+          "end_year": 1483,
+          "date_role": "printed-witness-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "ottoniense-novum-1501",
+          "label": "Missale Ottoniense novum, formerly Ripense",
+          "start_year": 1501,
+          "end_year": 1501,
+          "date_role": "printed-witness-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roscildense-c1484",
+          "label": "Missale Roscildense",
+          "start_year": 1484,
+          "end_year": 1484,
+          "date_role": "printed-witness-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roskilde-canon-1522",
+          "label": "Canon secundum usum ecclesiae Roschildensis",
+          "start_year": 1522,
+          "end_year": 1522,
+          "date_role": "printed-witness-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "viburgense-1500",
+          "label": "Liber missalis / Missale Viburgense",
+          "start_year": 1500,
+          "end_year": 1500,
+          "date_role": "printed-witness-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        }
+      ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness.",
+      "missing_stage_chain": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. Printed and fragmentary witnesses are identified for named Danish uses; the independent Ribe missal gap remains. Original approval, local reception, full text and relationships between copies remain uncollated. Copenhagen is a printing/title place, not a separate medieval diocese.",
       "next_sources": {
         "inventory_source_ids": [
-          "usuarium-origins-100"
+          "usuarium-origins-100",
+          "aarhus-leaves",
+          "danish-survey",
+          "fragmentarium-odense-1501",
+          "gw-m2439810",
+          "hafniense1484-scan",
+          "hafniense1510-scan",
+          "ottoniense1483-catalog",
+          "ottoniense1501-fragment-scan",
+          "usuarium-book-47",
+          "usuarium-book-510",
+          "usuarium-book-870",
+          "weale1928"
         ],
         "source_urls": [
-          "https://usuarium.elte.hu/origins?offset=100"
+          "https://usuarium.elte.hu/origins?offset=100",
+          "https://aarhusdomkirke.dk/dom-kunstvaerker-en-600-aarig-hilsen-fra-domkirken/",
+          "https://usuarium.elte.hu/news",
+          "https://fragmentarium.ms/description/F-lcqd/63214",
+          "https://www.gesamtkatalogderwiegendrucke.de/docs/M2439810.htm",
+          "https://archive.org/details/den-kbd-pil-130018162076-001",
+          "https://archive.org/details/den-kbd-pil-130018151139-001",
+          "https://archive.org/details/MissaleOttoniense1483",
+          "https://archive.org/details/FragmentaMissaleRipense1504",
+          "https://usuarium.elte.hu/book/47/view",
+          "https://usuarium.elte.hu/book/510/view",
+          "https://usuarium.elte.hu/book/870/view",
+          "https://usuarium.elte.hu/catalogue/87/view"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness."
+        "target": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. Printed and fragmentary witnesses are identified for named Danish uses; the independent Ribe missal gap remains. Original approval, local reception, full text and relationships between copies remain uncollated. Copenhagen is a printing/title place, not a separate medieval diocese."
       },
       "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence.",
       "canonical_tradition_ids": []
@@ -10615,8 +10960,28 @@
       "id": "scandinavian-other-uses",
       "label": "Lund, Linköping, Skara, Strängnäs, Uppsala and Västerås",
       "coverage_unit": "trajectory-or-discovery-bucket",
-      "inventory_status": "index-discovery-only",
-      "candidate_ids": [],
+      "inventory_status": "selected-witness-census-documented",
+      "candidate_ids": [
+        "lundense-1514",
+        "linkoping-a97",
+        "skara-missal-c1150",
+        "strengnense-1487",
+        "upsalense-vetus-1484",
+        "upsalense-novum-1513",
+        "arosiense-graduale-1493",
+        "cold-linkoping-c415",
+        "cold-linkoping-c420",
+        "cold-linkoping-c427",
+        "cold-linkoping-c430",
+        "cold-linkoping-ordinal1",
+        "cold-linkoping-ordinal2",
+        "cold-uppsala-a94",
+        "cold-uppsala-a95",
+        "cold-uppsala-a96",
+        "cold-vallentuna1198",
+        "cold-swedish-a6",
+        "cold-lund387"
+      ],
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
@@ -10629,19 +10994,194 @@
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": []
       },
-      "witnesses": [],
+      "witnesses": [
+        {
+          "candidate_id": "lundense-1514",
+          "label": "Missale Lundense",
+          "start_year": 1514,
+          "end_year": 1514,
+          "date_role": "printed-witness-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "linkoping-a97",
+          "label": "KB A 97",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "skara-missal-c1150",
+          "label": "Skaramissalet",
+          "start_year": 1150,
+          "end_year": 1159,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "strengnense-1487",
+          "label": "Missale Strengnense",
+          "start_year": 1487,
+          "end_year": 1487,
+          "date_role": "printed-witness-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "upsalense-vetus-1484",
+          "label": "Missale Upsalense vetus",
+          "start_year": 1484,
+          "end_year": 1484,
+          "date_role": "printed-witness-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "upsalense-novum-1513",
+          "label": "Missale Upsalense novum",
+          "start_year": 1513,
+          "end_year": 1513,
+          "date_role": "printed-witness-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "arosiense-graduale-1493",
+          "label": "Graduale Suecicum/Arosiense",
+          "start_year": 1493,
+          "end_year": 1493,
+          "date_role": "printed-witness-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cold-linkoping-c415",
+          "label": "UUB C 415, Linköping missal fragment",
+          "start_year": 1422,
+          "end_year": 1448,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cold-linkoping-c420",
+          "label": "UUB C 420, composite missal",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cold-linkoping-c427",
+          "label": "UUB C 427, layered Linköping missal",
+          "start_year": 1500,
+          "end_year": 1500,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cold-linkoping-c430",
+          "label": "UUB C 430, Linköping gradual",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cold-linkoping-ordinal1",
+          "label": "Skokloster I,2 4°, Linköping ordinal",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cold-linkoping-ordinal2",
+          "label": "UUB C 428, layered Linköping ordinal",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cold-uppsala-a94",
+          "label": "KB A 94, Uppsala gradual",
+          "start_year": 1503,
+          "end_year": 1503,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cold-uppsala-a95",
+          "label": "KB A 95, Uppsala gradual",
+          "start_year": 1500,
+          "end_year": 1500,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cold-uppsala-a96",
+          "label": "KB A 96, Uppsala gradual",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cold-vallentuna1198",
+          "label": "Vallentuna Missal/calendar fragment, SHM 21288",
+          "start_year": 1198,
+          "end_year": 1198,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cold-swedish-a6",
+          "label": "KB A 6, disputed Swedish-use missal",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cold-lund387",
+          "label": "Bratislava 387, Missale notatum Lundense summer volume",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        }
+      ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness.",
+      "missing_stage_chain": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. Printed books, manuscripts and Mass components are distinguished. Lund 1494 and Växjö Codex 971 remain deferred; Skara Alvin images and several original texts remain uninspected. Approval, reception and substantive revisions need further evidence.",
       "next_sources": {
         "inventory_source_ids": [
-          "usuarium-origins-700"
+          "usuarium-origins-700",
+          "bjorkvall2015",
+          "danish-survey",
+          "lindberg1923",
+          "lund387",
+          "manuscripta-a6",
+          "manuscripta-a97",
+          "skara-alvin-route",
+          "skara-municipality",
+          "strangnense1487-scan",
+          "vallentuna",
+          "weale1928"
         ],
         "source_urls": [
-          "https://usuarium.elte.hu/origins?offset=700"
+          "https://usuarium.elte.hu/origins?offset=700",
+          "https://vitterhetsakademien.ekvist.se/sd-document/pdf/split-by-product?productId=217&title=Liturgical+Sequences+in+Medieval+Manuscript+Fragments+in+the+Swedish+National+Archives+%3A+Repertorial+Investigation%2C+Inventory%2C+and+Reconstruction+of+the+Sources",
+          "https://usuarium.elte.hu/news",
+          "https://archive.org/details/dieschwedischenm00lind",
+          "https://www.peterlang.com/document/1285147",
+          "https://www.manuscripta.se/ms/101061",
+          "https://www.manuscripta.se/ms/101105",
+          "https://www.alvin-portal.org/alvin/view.jsf?pid=alvin-record:431873",
+          "https://www.skara.se/upplevaochgora/bibliotek/forskaravdelningen/skaramissalet.skaramissalet.html",
+          "https://digitalt.kb.se/dark-29503498",
+          "https://vitterhetsakad.bokorder.se/en-us/article/1338/vallentuna-anno-domini-1198",
+          "https://usuarium.elte.hu/catalogue/87/view"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness."
+        "target": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. Printed books, manuscripts and Mass components are distinguished. Lund 1494 and Växjö Codex 971 remain deferred; Skara Alvin images and several original texts remain uninspected. Approval, reception and substantive revisions need further evidence."
       },
       "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence.",
       "canonical_tradition_ids": []
@@ -10845,7 +11385,8 @@
       "inventory_status": "source-backed-states-and-scoped-changes-documented",
       "candidate_ids": [
         "windesheim-pal479",
-        "windesheim-1521"
+        "windesheim-1521",
+        "canonical-gsb-ms08-1523"
       ],
       "proposed_tradition_ids": [],
       "mapping_strength": "bounded-canonical-traditions-within-discovery-bucket",
@@ -10885,22 +11426,34 @@
           "end_year": 1521,
           "date_role": "publication",
           "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "canonical-gsb-ms08-1523",
+          "label": "Missale ad usum Montis Iovis for Saint George, Liddes, Grand-Saint-Bernard Ms. 08",
+          "start_year": 1523,
+          "end_year": 1523,
+          "date_role": "manuscript-copying",
+          "status": "inventory-witness-candidate-not-a-stage"
         }
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Inspect the Windesheim originals and complete Mass comparisons; identify other Canons Regular congregations separately. Windesheim evidence cannot fill the broader discovery bucket.",
+      "missing_stage_chain": "Inspect the Windesheim originals and complete Mass comparisons; identify other Canons Regular congregations separately. Windesheim evidence cannot fill the broader discovery bucket. Inspect the missing Ms. 08 folios and compare its Mass texts and calendar with neighboring diocesan and Canons Regular witnesses before naming a distinct local recension. Preserve Windesheim and other Canons Regular congregations as separate uses; no complete genealogy or reception sequence is established.",
       "next_sources": {
         "inventory_source_ids": [
           "usuarium-origins-600",
-          "usuarium-origins-700"
+          "usuarium-origins-700",
+          "canonical-gsb-ms08-owning-gallery",
+          "canonical-gsb-ms08-usuarium4064"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/origins?offset=600",
-          "https://usuarium.elte.hu/origins?offset=700"
+          "https://usuarium.elte.hu/origins?offset=700",
+          "https://gsbernard.ch/6/64/643-1/man08/index.html",
+          "https://usuarium.elte.hu/book/4064/view"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Inspect the Windesheim originals and complete Mass comparisons; identify other Canons Regular congregations separately. Windesheim evidence cannot fill the broader discovery bucket."
+        "target": "Inspect the Windesheim originals and complete Mass comparisons; identify other Canons Regular congregations separately. Windesheim evidence cannot fill the broader discovery bucket. Inspect the missing Ms. 08 folios and compare its Mass texts and calendar with neighboring diocesan and Canons Regular witnesses before naming a distinct local recension. Preserve Windesheim and other Canons Regular congregations as separate uses; no complete genealogy or reception sequence is established."
       },
       "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence.",
       "canonical_tradition_ids": [
@@ -11184,41 +11737,6 @@
         "gilbertine",
         "pauline"
       ]
-    },
-    {
-      "id": "trinitarian-ocso",
-      "label": "Trinitarian and Cistercian of the Strict Observance",
-      "coverage_unit": "trajectory-or-discovery-bucket",
-      "inventory_status": "index-discovery-only",
-      "candidate_ids": [],
-      "proposed_tradition_ids": [],
-      "mapping_strength": "research-grouping-not-recension-proof",
-      "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
-        "provisional_stage_ids": [],
-        "text_coverage_counts": {},
-        "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
-      },
-      "witnesses": [],
-      "component_profile": "western",
-      "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness.",
-      "next_sources": {
-        "inventory_source_ids": [
-          "usuarium-origins-400"
-        ],
-        "source_urls": [
-          "https://usuarium.elte.hu/origins?offset=400"
-        ],
-        "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness."
-      },
-      "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence.",
-      "canonical_tradition_ids": []
     },
     {
       "id": "teutonic",
@@ -12526,6 +13044,868 @@
       },
       "caveat": "Order-level presentation groups are catalogue routes for heterogeneous books and components. Print date, ownership, translation and title do not establish textual parentage, independent recension or a complete chronology. The reviewed receipt records rights and access limits.",
       "canonical_tradition_ids": []
+    },
+    {
+      "id": "danish-unassigned",
+      "label": "Unassigned Danish Mass-book witnesses",
+      "coverage_unit": "trajectory-or-discovery-bucket",
+      "inventory_status": "selected-witness-census-documented",
+      "candidate_ids": [
+        "danicum-notatum-1400s"
+      ],
+      "proposed_tradition_ids": [],
+      "mapping_strength": "research-grouping-not-recension-proof",
+      "dossier_coverage": {
+        "status": "no-new-researched-stage-sequence",
+        "dossier_ids": [],
+        "stage_ids": [],
+        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "provisional_stage_ids": [],
+        "text_coverage_counts": {},
+        "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
+        "gap_ids": []
+      },
+      "witnesses": [
+        {
+          "candidate_id": "danicum-notatum-1400s",
+          "label": "Missale notatum Danicum, RA 4613",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        }
+      ],
+      "component_profile": "western",
+      "component_coverage": "incomplete-not-certified",
+      "missing_stage_chain": "Original-book text, approval and local reception remain uncollated; see Scandinavian 2026-10-20 review receipt.",
+      "next_sources": {
+        "inventory_source_ids": [
+          "usuarium-book-277"
+        ],
+        "source_urls": [
+          "https://usuarium.elte.hu/book/277/view"
+        ],
+        "inspection": "Canonical inventory and dated reviewed receipt checked for this crosswalk; underlying source inspections and limits remain in those records.",
+        "target": "Original-book text, approval and local reception remain uncollated; see Scandinavian 2026-10-20 review receipt."
+      },
+      "caveat": "The witness remains geographically or institutionally unassigned within Danish uses. Its route is a research control, not a new historical recension.",
+      "canonical_tradition_ids": []
+    },
+    {
+      "id": "hospitaller-order-of-malta",
+      "label": "Hospitaller Order of St John of Jerusalem, Rhodes and Malta Eucharistic books",
+      "coverage_unit": "trajectory-or-discovery-bucket",
+      "inventory_status": "bounded-bibliographic-candidates-documented",
+      "candidate_ids": [
+        "additional-orders-hospitaller-fribourg-l91",
+        "additional-orders-hospitaller-bnf-nal1689",
+        "additional-orders-hospitaller-aosta-ms1",
+        "additional-orders-hospitaller-strasbourg-1505",
+        "additional-orders-hospitaller-haarlem-1511",
+        "additional-orders-hospitaller-sixena-1528",
+        "additional-orders-hospitaller-lyon-1553",
+        "additional-orders-hospitaller-haarlem-gradual-184c7",
+        "additional-orders-hospitaller-zittau-gradual-av",
+        "additional-orders-hospitaller-turin-gradual-fiii17",
+        "additional-orders-hospitaller-cologne-gradual-262",
+        "additional-orders-hospitaller-proper-1987",
+        "additional-orders-hospitaller-proper-2005"
+      ],
+      "proposed_tradition_ids": [],
+      "mapping_strength": "research-grouping-not-recension-proof",
+      "dossier_coverage": {
+        "status": "no-new-researched-stage-sequence",
+        "dossier_ids": [],
+        "stage_ids": [],
+        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "provisional_stage_ids": [],
+        "text_coverage_counts": {},
+        "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
+        "gap_ids": []
+      },
+      "witnesses": [
+        {
+          "candidate_id": "additional-orders-hospitaller-fribourg-l91",
+          "label": "Fribourg L 91 Hospitaller missal",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "copying range",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-hospitaller-bnf-nal1689",
+          "label": "BnF nouv. acq. lat. 1689 adapted missal",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "copying range",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-hospitaller-aosta-ms1",
+          "label": "Aosta Seminario Maggiore ms I missal",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "conflicting scholarly manuscript dates",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-hospitaller-strasbourg-1505",
+          "label": "Strasbourg Johannes Prüss Hospitaller missal",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "reported publication year",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-hospitaller-haarlem-1511",
+          "label": "Haarlem 184 C 1 Hospitaller missal",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "reported copying/completion year",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-hospitaller-sixena-1528",
+          "label": "Sigena/Sixena convent missal, Zaragoza Jorge Coci",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "reported publication year",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-hospitaller-lyon-1553",
+          "label": "Lyon heirs of Jacques Giunta/Cornelius Hospitaller missal",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "catalogue/reported publication year",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-hospitaller-haarlem-gradual-184c7",
+          "label": "Haarlem 184 C 7 gradual",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "copying range",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-hospitaller-zittau-gradual-av",
+          "label": "Zittau ms A.V gradual",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "colophon copying year",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-hospitaller-turin-gradual-fiii17",
+          "label": "Turin F.III.17 gradual-prosary",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "scholarly copying estimate",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-hospitaller-cologne-gradual-262",
+          "label": "Cologne Dom-Hs. 262 gradual",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "scholarly copying range",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-hospitaller-proper-1987",
+          "label": "Proprium Missarum una cum Lectionario Ordinis Sancti Ioannis Hierosolymitani",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "Latin approval 4 July 1987 and catalogued publication year",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-hospitaller-proper-2005",
+          "label": "Proprium Missarum una cum Lectionario, second edition lead",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "Order bibliography second-edition year",
+          "status": "inventory-witness-candidate-not-a-stage"
+        }
+      ],
+      "component_profile": "western",
+      "component_coverage": "incomplete-not-certified",
+      "missing_stage_chain": "Resolve separate 1551 report only through independent primary holding; inspect 1505 and confirmed 1553 originals, Aosta manuscript date, Sigena lost-book evidence, four gradual repertoires, 1987/2005 Latin front matter and lectionary. USUARIUM 9950 physical copy/edition state remains open. Four modern translations remain deferred expressions; Office-only and ownership-only controls remain excluded. No independent recension, normative stage, full-book descent or Holy Sepulchre parentage established.",
+      "next_sources": {
+        "inventory_source_ids": [
+          "additional-orders-src-hospitaller-usuarium-origin-889",
+          "additional-orders-src-hospitaller-usuarium-7877",
+          "additional-orders-src-hospitaller-usuarium-9950",
+          "additional-orders-src-hospitaller-google-9950",
+          "additional-orders-src-hospitaller-order-status",
+          "additional-orders-src-hospitaller-dondi-v1",
+          "additional-orders-src-hospitaller-dondi-v2",
+          "additional-orders-src-hospitaller-sigena-study",
+          "additional-orders-src-hospitaller-notitiae-1987",
+          "additional-orders-src-hospitaller-notitiae-1990",
+          "additional-orders-src-hospitaller-notitiae-1991",
+          "additional-orders-src-hospitaller-notitiae-1995",
+          "additional-orders-src-hospitaller-dli-1987",
+          "additional-orders-src-hospitaller-order-regulations",
+          "additional-orders-src-hospitaller-order-calendar",
+          "additional-orders-src-hospitaller-bnf-cb36827961c"
+        ],
+        "source_urls": [
+          "https://usuarium.elte.hu/origin/889/view",
+          "https://usuarium.elte.hu/book/7877/view",
+          "https://usuarium.elte.hu/book/9950/view",
+          "https://books.google.com/books?id=VoKaTSVGB80C",
+          "https://www.orderofmalta.int/about-the-order-of-malta/spiritual-commitment/",
+          "https://kclpure.kcl.ac.uk/ws/portalfiles/portal/2930621/340388_vol1.pdf",
+          "https://kclpure.kcl.ac.uk/ws/portalfiles/portal/2930622/340388_vol2.pdf",
+          "https://culturadearagon.es/wp-content/uploads/2023/04/Regla_de_Sigena_facsimil_web.pdf",
+          "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-23-%281987%29/Notitiae-255-1987.pdf",
+          "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1990/notitiae-26-%281990%29/Notitiae-293-1990.pdf",
+          "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1990/notitiae-27-%281991%29/Notitiae-304-1991.pdf",
+          "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1990/notitiae-31-%281995%29/Notitiae-347-1995.pdf",
+          "https://dli.institute/dlibib/dlibibkatwp.php?layout=dbk&ausgabe=1&nummer=19078&Bestand=c&NurSchweiz=0",
+          "https://www.orderofmaltafederal.org/library/public/Regulations-and-Commentary/regulationsandcommentary--2011.pdf",
+          "https://www.orderofmaltafederal.org/library/public/AWebsite/SMOM_Calendar-of-Liturgical-Celebrations.pdf",
+          "https://catalogue.bnf.fr/ark:/12148/cb36827961c"
+        ],
+        "inspection": "Canonical inventory and dated reviewed receipt checked for this crosswalk; underlying source inspections and limits remain in those records.",
+        "target": "Resolve separate 1551 report only through independent primary holding; inspect 1505 and confirmed 1553 originals, Aosta manuscript date, Sigena lost-book evidence, four gradual repertoires, 1987/2005 Latin front matter and lectionary. USUARIUM 9950 physical copy/edition state remains open. Four modern translations remain deferred expressions; Office-only and ownership-only controls remain excluded. No independent recension, normative stage, full-book descent or Holy Sepulchre parentage established."
+      },
+      "caveat": "The reviewed receipt admits bounded bibliographic witnesses only. The alleged 1551 edition is deferred, the 9950 record is unresolved, and no independent recension, stage, whole-book text or descent edge is established.",
+      "canonical_tradition_ids": []
+    },
+    {
+      "id": "iceland-mass-witnesses",
+      "label": "Icelandic Mass-book witnesses and components",
+      "coverage_unit": "trajectory-or-discovery-bucket",
+      "inventory_status": "selected-witness-census-documented",
+      "candidate_ids": [
+        "cold-nidaros-icelandic1250",
+        "cold-iceland-scardense",
+        "cold-iceland-gufudalense",
+        "cold-iceland-thorlakr",
+        "cold-iceland-magnus-supplement",
+        "iceland-fragment-group-01",
+        "iceland-fragment-group-02",
+        "iceland-fragment-group-03",
+        "iceland-fragment-group-04",
+        "iceland-fragment-group-05",
+        "iceland-fragment-group-06",
+        "iceland-fragment-group-07",
+        "iceland-fragment-group-08",
+        "iceland-fragment-group-09",
+        "iceland-fragment-group-10",
+        "iceland-fragment-group-11",
+        "iceland-fragment-group-12",
+        "iceland-fragment-group-13",
+        "iceland-fragment-group-14",
+        "iceland-fragment-group-15"
+      ],
+      "proposed_tradition_ids": [],
+      "mapping_strength": "research-grouping-not-recension-proof",
+      "dossier_coverage": {
+        "status": "no-new-researched-stage-sequence",
+        "dossier_ids": [],
+        "stage_ids": [],
+        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "provisional_stage_ids": [],
+        "text_coverage_counts": {},
+        "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
+        "gap_ids": []
+      },
+      "witnesses": [
+        {
+          "candidate_id": "cold-nidaros-icelandic1250",
+          "label": "Icelandic Breviary-Missal, Nidaros use",
+          "start_year": 1250,
+          "end_year": 1250,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cold-iceland-scardense",
+          "label": "Missale Scardense, AM Acc. 7 Hs 1",
+          "start_year": 1450,
+          "end_year": 1478,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cold-iceland-gufudalense",
+          "label": "Graduale Gufudalense, AM Acc. 7 Hs 2",
+          "start_year": 1450,
+          "end_year": 1470,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cold-iceland-thorlakr",
+          "label": "AM 241a II fol, Þorlákr Mass items",
+          "start_year": 1400,
+          "end_year": 1400,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cold-iceland-magnus-supplement",
+          "label": "AM 98 II 8°, Icelandic Mass supplement",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "iceland-fragment-group-01",
+          "label": "Thott14944to",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "iceland-fragment-group-02",
+          "label": "Add14to",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "iceland-fragment-group-03",
+          "label": "Isl.papp.4:o10",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "iceland-fragment-group-04",
+          "label": "Isl.papp.4:o18",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "iceland-fragment-group-05",
+          "label": "Isl.papp.4:o19",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "iceland-fragment-group-06",
+          "label": "Isl.papp.4:o26",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "iceland-fragment-group-07",
+          "label": "Isl.papp.4:o27",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "iceland-fragment-group-08",
+          "label": "Isl.papp.4:o34",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "iceland-fragment-group-09",
+          "label": "Isl.papp.8:o2",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "iceland-fragment-group-10",
+          "label": "UUBR717",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "iceland-fragment-group-11",
+          "label": "AM80b8vo",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "iceland-fragment-group-12",
+          "label": "Lbsfragm46+Þjms30+716+3411",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "iceland-fragment-group-13",
+          "label": "AM241bIVfol",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "iceland-fragment-group-14",
+          "label": "Lbsfragm45+Þjms8276",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "iceland-fragment-group-15",
+          "label": "Þjms4126",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        }
+      ],
+      "component_profile": "western",
+      "component_coverage": "incomplete-not-certified",
+      "missing_stage_chain": "Original-book text, approval and local reception remain uncollated; see Scandinavian 2026-10-20 review receipt.",
+      "next_sources": {
+        "inventory_source_ids": [
+          "iceland-fragments-repertoire",
+          "iceland-illuminations",
+          "magnus-iceland-components",
+          "nidaros-icelandic",
+          "thorlakr-component"
+        ],
+        "source_urls": [
+          "https://gripla.arnastofnun.is/index.php/gripla/article/download/586/478/511",
+          "https://gripla.arnastofnun.is/index.php/gripla/article/download/147/97/97",
+          "https://www.scottishmusicreview.org/Articles/5/Whitworth%3A%20Can%20we%20reconstruct%20the%20medieval%20liturgy%20of%20St%20Magnus%3F.pdf",
+          "https://fragment.uib.no/index2.asp?id=26675&k=4643",
+          "https://www.lhi.is/thraedir/thraedir-tolublad-9/thorlakstidir-og-tonlistarlif-midalda-a-islandi/"
+        ],
+        "inspection": "Canonical inventory and dated reviewed receipt checked for this crosswalk; underlying source inspections and limits remain in those records.",
+        "target": "Original-book text, approval and local reception remain uncollated; see Scandinavian 2026-10-20 review receipt."
+      },
+      "caveat": "Fragments, components and reconstructed groupings are inventory witnesses, not twenty complete missals or independent recensions. Original-use attribution, physical extent and textual relationships require inspection.",
+      "canonical_tradition_ids": []
+    },
+    {
+      "id": "norwegian-local-reception",
+      "label": "Norwegian local reception outside the Nidaros provincial printing",
+      "coverage_unit": "trajectory-or-discovery-bucket",
+      "inventory_status": "selected-witness-census-documented",
+      "candidate_ids": [
+        "cold-bergen-nordfjord"
+      ],
+      "proposed_tradition_ids": [],
+      "mapping_strength": "research-grouping-not-recension-proof",
+      "dossier_coverage": {
+        "status": "no-new-researched-stage-sequence",
+        "dossier_ids": [],
+        "stage_ids": [],
+        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "provisional_stage_ids": [],
+        "text_coverage_counts": {},
+        "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
+        "gap_ids": []
+      },
+      "witnesses": [
+        {
+          "candidate_id": "cold-bergen-nordfjord",
+          "label": "UBB MS 1550.5, Nordfjord missal fragment",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        }
+      ],
+      "component_profile": "western",
+      "component_coverage": "incomplete-not-certified",
+      "missing_stage_chain": "Original-book text, approval and local reception remain uncollated; see Scandinavian 2026-10-20 review receipt.",
+      "next_sources": {
+        "inventory_source_ids": [
+          "nordfjord"
+        ],
+        "source_urls": [
+          "https://marcus.uib.no/instance/fragment/ubb-ms-1550-5.html"
+        ],
+        "inspection": "Canonical inventory and dated reviewed receipt checked for this crosswalk; underlying source inspections and limits remain in those records.",
+        "target": "Original-book text, approval and local reception remain uncollated; see Scandinavian 2026-10-20 review receipt."
+      },
+      "caveat": "This local witness is separate from the Nidaros provincial printing. It does not establish a distinct normative Norwegian recension or full textual lineage.",
+      "canonical_tradition_ids": []
+    },
+    {
+      "id": "ocso",
+      "label": "Cistercians of the Strict Observance / Trappists",
+      "coverage_unit": "trajectory-or-discovery-bucket",
+      "inventory_status": "order-evidence-and-original-Latin-book-leads-open",
+      "candidate_ids": [],
+      "proposed_tradition_ids": [],
+      "mapping_strength": "research-grouping-not-recension-proof",
+      "dossier_coverage": {
+        "status": "no-new-researched-stage-sequence",
+        "dossier_ids": [],
+        "stage_ids": [],
+        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "provisional_stage_ids": [],
+        "text_coverage_counts": {},
+        "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
+        "gap_ids": []
+      },
+      "witnesses": [],
+      "component_profile": "western",
+      "component_coverage": "incomplete-not-certified",
+      "missing_stage_chain": "The monastic receipt records shared historical Cistercian books and separately attested OCSO reception, including 1983 proper prayers with order-specific variations. Obtain original Latin Missal, propers, lectionary and decrees; check later saints and branch reception. Do not infer a medieval OCSO identity from retrospective catalogue labels. This coverage row is distinct from the Trinitarian order.",
+      "next_sources": {
+        "inventory_source_ids": [
+          "monastic-src-ocso-official-liturgy"
+        ],
+        "source_urls": [
+          "https://www.ocso.org/resources/liturgy/"
+        ],
+        "inspection": "Canonical inventory and dated reviewed receipt checked for this crosswalk; underlying source inspections and limits remain in those records.",
+        "target": "The monastic receipt records shared historical Cistercian books and separately attested OCSO reception, including 1983 proper prayers with order-specific variations. Obtain original Latin Missal, propers, lectionary and decrees; check later saints and branch reception. Do not infer a medieval OCSO identity from retrospective catalogue labels. This coverage row is distinct from the Trinitarian order."
+      },
+      "caveat": "This order route has no admitted original Latin book candidate here. Retrospective Cistercian history and order-specific propers do not supply an OCSO medieval book or a complete stage sequence.",
+      "canonical_tradition_ids": []
+    },
+    {
+      "id": "roman-historical-vernacular-witness-controls",
+      "label": "Identified historical Roman-rite vernacular translation and mixed-book witnesses",
+      "coverage_unit": "trajectory-or-discovery-bucket",
+      "inventory_status": "reviewed-identity-only-translation-history-deferred",
+      "candidate_ids": [
+        "roman-adaptations-buzuku1555"
+      ],
+      "proposed_tradition_ids": [],
+      "mapping_strength": "research-grouping-not-recension-proof",
+      "dossier_coverage": {
+        "status": "no-new-researched-stage-sequence",
+        "dossier_ids": [],
+        "stage_ids": [],
+        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "provisional_stage_ids": [],
+        "text_coverage_counts": {},
+        "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
+        "gap_ids": []
+      },
+      "witnesses": [
+        {
+          "candidate_id": "roman-adaptations-buzuku1555",
+          "label": "Gjon Buzuku, Meshari: surviving 1555 Albanian Roman-related liturgical compilation",
+          "start_year": 1555,
+          "end_year": 1555,
+          "date_role": "reported colophon completion 5 January 1555; bracketed printing year from afterword",
+          "status": "inventory-witness-candidate-not-a-stage"
+        }
+      ],
+      "component_profile": "western",
+      "component_coverage": "incomplete-not-certified",
+      "missing_stage_chain": "Acquire authorized Vatican item record or facsimile access, inspect actual surviving Mass sections and leaf losses, compare Latin exemplars, establish printer/place, formal authorization and reception. Do not infer full missal, separate source recension, normative state or Byzantine Albanian ownership from geographic label.",
+      "next_sources": {
+        "inventory_source_ids": [
+          "roman-adaptations-src-buzuku-bksh92035",
+          "roman-adaptations-src-buzuku-vn2020",
+          "roman-adaptations-src-buzuku-vn2026",
+          "roman-adaptations-src-buzuku-vr2012",
+          "roman-adaptations-src-buzuku-bnf1958",
+          "roman-adaptations-src-buzuku-torrossa1958",
+          "roman-adaptations-src-buzuku-titus2003",
+          "roman-adaptations-src-buzuku-usuarium9559"
+        ],
+        "source_urls": [
+          "https://bksh.al/cgi-bin/alis/opac-detail.pl?biblionumber=92035",
+          "https://www.vaticannews.va/sq/kisha/news/2020-01/zef-chiaramonte-meshari-i-gjon-buzukut-1555-nje-hapax.html",
+          "https://www.vaticannews.va/sq/bota/news/2026-01/me-5-janar-bie-pervjetori-i-se-shkruomi-te-mesharit-te-dom-g.html",
+          "https://www.archivioradiovaticana.va/storico/2012/11/07/meshari_1555_i_dom_gjon_buzukut_t%C3%AB_diel%C3%ABn_mb%C3%ABrrin_n%C3%AB_shqip%C3%ABri/alb-636783",
+          "https://catalogue.bnf.fr/ark:/12148/cb318947626",
+          "https://www.torrossa.com/it/resources/an/3179797",
+          "https://titus.uni-frankfurt.de/texte/etcs/alban/buzuku/buzuk001.htm",
+          "https://usuarium.elte.hu/book/9559/view"
+        ],
+        "inspection": "Canonical inventory and dated reviewed receipt checked for this crosswalk; underlying source inspections and limits remain in those records.",
+        "target": "Acquire authorized Vatican item record or facsimile access, inspect actual surviving Mass sections and leaf losses, compare Latin exemplars, establish printer/place, formal authorization and reception. Do not infer full missal, separate source recension, normative state or Byzantine Albanian ownership from geographic label."
+      },
+      "caveat": "The 1555 date is reported composition completion and a bracketed printing attribution. This damaged mixed Albanian book is a bounded Roman-rite identity-control witness; authorization, operative use, Latin exemplar relation and independent translation history remain unverified. It is not a Roman source recension or stage.",
+      "canonical_tradition_ids": []
+    },
+    {
+      "id": "schleswig",
+      "label": "Schleswig/Slesvig historical local use",
+      "coverage_unit": "trajectory-or-discovery-bucket",
+      "inventory_status": "selected-witness-census-documented",
+      "candidate_ids": [
+        "slesvicense-1486"
+      ],
+      "proposed_tradition_ids": [],
+      "mapping_strength": "research-grouping-not-recension-proof",
+      "dossier_coverage": {
+        "status": "no-new-researched-stage-sequence",
+        "dossier_ids": [],
+        "stage_ids": [],
+        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "provisional_stage_ids": [],
+        "text_coverage_counts": {},
+        "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
+        "gap_ids": []
+      },
+      "witnesses": [
+        {
+          "candidate_id": "slesvicense-1486",
+          "label": "Missale Slesvicense",
+          "start_year": 1486,
+          "end_year": 1486,
+          "date_role": "printed-witness-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        }
+      ],
+      "component_profile": "western",
+      "component_coverage": "incomplete-not-certified",
+      "missing_stage_chain": "Original-book text, approval and local reception remain uncollated; see Scandinavian 2026-10-20 review receipt.",
+      "next_sources": {
+        "inventory_source_ids": [
+          "schleswig"
+        ],
+        "source_urls": [
+          "https://usuarium.elte.hu/book/46/view"
+        ],
+        "inspection": "Canonical inventory and dated reviewed receipt checked for this crosswalk; underlying source inspections and limits remain in those records.",
+        "target": "Original-book text, approval and local reception remain uncollated; see Scandinavian 2026-10-20 review receipt."
+      },
+      "caveat": "A qualified 1486 printed witness supports a separate local-use route; it does not establish a complete Schleswig sequence or a second 1512 edition. The older German discovery bucket is not an additional book.",
+      "canonical_tradition_ids": []
+    },
+    {
+      "id": "trinitarian-order",
+      "label": "Trinitarian Eucharistic books",
+      "coverage_unit": "trajectory-or-discovery-bucket",
+      "inventory_status": "selected-catalogue-witnesses; original-text-comparison-open",
+      "candidate_ids": [
+        "monastic-usuarium-trinitarian-3126",
+        "monastic-usuarium-trinitarian-2548"
+      ],
+      "proposed_tradition_ids": [],
+      "mapping_strength": "research-grouping-not-recension-proof",
+      "dossier_coverage": {
+        "status": "no-new-researched-stage-sequence",
+        "dossier_ids": [],
+        "stage_ids": [],
+        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "provisional_stage_ids": [],
+        "text_coverage_counts": {},
+        "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
+        "gap_ids": []
+      },
+      "witnesses": [
+        {
+          "candidate_id": "monastic-usuarium-trinitarian-3126",
+          "label": "Breviarium et missale ad usum Fratrum Sanctae Trinitatis, BnF Latin 1022",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copying-range; later Trinitarian calendar adaptation separately attested",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "monastic-usuarium-trinitarian-2548",
+          "label": "Missale ad usum fratrum Ordinis Sanctae Trinitatis de Redemptione Captivorum, Provins Impr. XVI a 8",
+          "start_year": 1529,
+          "end_year": 1529,
+          "date_role": "catalogue-reported-print-publication-year",
+          "status": "inventory-witness-candidate-not-a-stage"
+        }
+      ],
+      "component_profile": "western",
+      "component_coverage": "incomplete-not-certified",
+      "missing_stage_chain": "Inspect Latin 1022's Mass folios and later calendar/use layers; check the 1529 Provins original title, colophon and reproduction completeness; acquire order acts and intervening books and compare text. The thirteenth-century copying window does not date Trinitarian adoption, and 1529 is a catalogue print year, not a reform date. No lineage, independent recension or complete text is established.",
+      "next_sources": {
+        "inventory_source_ids": [
+          "monastic-src-usuarium-trinitarian-896",
+          "trinitarian-src-bnf-latin-1022",
+          "trinitarian-src-irht-latin-1022",
+          "trinitarian-src-usuarium-3126",
+          "trinitarian-src-arca-provins-1529",
+          "trinitarian-src-usuarium-2548"
+        ],
+        "source_urls": [
+          "https://usuarium.elte.hu/origin/896/view",
+          "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc589354",
+          "https://telma.irht.cnrs.fr/outils/liturgie/notice97/",
+          "https://usuarium.elte.hu/book/3126/view",
+          "https://arca.irht.cnrs.fr/ark%3A/63955/md23hx121454",
+          "https://usuarium.elte.hu/book/2548/view"
+        ],
+        "inspection": "Canonical inventory and dated reviewed receipt checked for this crosswalk; underlying source inspections and limits remain in those records.",
+        "target": "Inspect Latin 1022's Mass folios and later calendar/use layers; check the 1529 Provins original title, colophon and reproduction completeness; acquire order acts and intervening books and compare text. The thirteenth-century copying window does not date Trinitarian adoption, and 1529 is a catalogue print year, not a reform date. No lineage, independent recension or complete text is established."
+      },
+      "caveat": "The two catalogue-backed witnesses are distinct from OCSO. Catalogue dates do not prove order adoption, a reform, manuscript-to-print lineage, complete texts or an independent recension.",
+      "canonical_tradition_ids": []
+    },
+    {
+      "id": "turku",
+      "label": "Turku/Åbo and received Finnish Mass books",
+      "coverage_unit": "trajectory-or-discovery-bucket",
+      "inventory_status": "selected-witness-census-documented",
+      "candidate_ids": [
+        "aboense-1488",
+        "cold-turku-group-i",
+        "cold-turku-group-ii",
+        "cold-turku-group-iii",
+        "cold-turku-group-iv",
+        "cold-turku-group-v",
+        "cold-turku-group-vi",
+        "cold-turku-group-vii",
+        "cold-turku-group-viii",
+        "cold-turku-early-i26",
+        "cold-oripaa1",
+        "cold-oripaa2"
+      ],
+      "proposed_tradition_ids": [],
+      "mapping_strength": "research-grouping-not-recension-proof",
+      "dossier_coverage": {
+        "status": "no-new-researched-stage-sequence",
+        "dossier_ids": [],
+        "stage_ids": [],
+        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "provisional_stage_ids": [],
+        "text_coverage_counts": {},
+        "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
+        "gap_ids": []
+      },
+      "witnesses": [
+        {
+          "candidate_id": "aboense-1488",
+          "label": "Missale Aboense",
+          "start_year": 1488,
+          "end_year": 1488,
+          "date_role": "printed-witness-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cold-turku-group-i",
+          "label": "Turku reconstructed missal I: F.m.I.243 + I.251",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cold-turku-group-ii",
+          "label": "Turku reconstructed missal II: F.m.I.244 + I.252",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cold-turku-group-iii",
+          "label": "Turku reconstructed missal III: F.m.I.240 + I.248 + I.254",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cold-turku-group-iv",
+          "label": "Turku reconstructed missal IV: F.m.I.235 + I.255",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cold-turku-group-v",
+          "label": "Turku reconstructed missal V: F.m.I.242",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cold-turku-group-vi",
+          "label": "Turku reconstructed missal VI: F.m.I.234",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cold-turku-group-vii",
+          "label": "Turku reconstructed missal VII: F.m.I.250",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cold-turku-group-viii",
+          "label": "Turku reconstructed missal VIII: Swedish National Archives Codex 994",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cold-turku-early-i26",
+          "label": "F.m.I.26, early Turku-received missal fragments",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cold-oripaa1",
+          "label": "Oripään missale I, C.ö.IV.7",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cold-oripaa2",
+          "label": "Oripään missale II, C.ö.IV.9",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copy-or-repertoire-date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        }
+      ],
+      "component_profile": "western",
+      "component_coverage": "incomplete-not-certified",
+      "missing_stage_chain": "Original-book text, approval and local reception remain uncollated; see Scandinavian 2026-10-20 review receipt.",
+      "next_sources": {
+        "inventory_source_ids": [
+          "aboense1488-scan",
+          "oripaa1",
+          "oripaa2",
+          "turku-early",
+          "turku-group",
+          "turku-print"
+        ],
+        "source_urls": [
+          "https://archive.org/details/missale-aboense",
+          "https://doria.fi/handle/10024/113064",
+          "https://www.codicesfennici.fi/items/show/34",
+          "https://cantusdatabase.org/source/711225/",
+          "https://cantusdatabase.org/source/1000045/",
+          "https://www.themorgan.org/incunables/134976"
+        ],
+        "inspection": "Canonical inventory and dated reviewed receipt checked for this crosswalk; underlying source inspections and limits remain in those records.",
+        "target": "Original-book text, approval and local reception remain uncollated; see Scandinavian 2026-10-20 review receipt."
+      },
+      "caveat": "The candidate set mixes printed, fragment-group and manuscript witnesses. Group placement and dates do not establish distinct editions, adoption, or a complete local sequence; shared typesetting is not whole-book parentage.",
+      "canonical_tradition_ids": []
     }
   ],
   "component_profiles": {
@@ -12958,7 +14338,8 @@
         "regular-canonical-uses",
         "orders-other",
         "gilbertines-paulines",
-        "trinitarian-ocso",
+        "trinitarian-order",
+        "ocso",
         "teutonic",
         "iberian-index-gap"
       ],
@@ -13074,7 +14455,7 @@
   "validation": {
     "result": "passed",
     "checks": [
-      "23 Eastern and 58 Western rows preserved exactly once",
+      "23 Eastern and 66 Western rows preserved exactly once",
       "candidate and contextual-ancestry membership reconciled to each owning inventory row",
       "witness labels and chronological bounds read from exact candidate owners",
       "canonical tradition and dossier snapshots match their current owners",
@@ -13085,7 +14466,7 @@
       "no absolute or scratch paths in deliverable"
     ],
     "coverage_status_counts": {
-      "no-new-researched-stage-sequence": 45,
+      "no-new-researched-stage-sequence": 53,
       "selected-stages-available": 32,
       "related-dossier-only-local-reception-unresearched": 4
     },

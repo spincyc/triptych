@@ -279,7 +279,45 @@ content blocker (verdict SHA-256 prefixes `c4e9817b`, `5b0b5265`,
 reconciliation reports zero findings; these verdicts do not close the full
 historical-catalogue or complete-text requirements.
 
-Open from this wave:
+**Western follow-up research checkpoint, 2026-10-20.** Subsequent cold-reviewed
+metadata adds [Ambrosian and Lyon](src/sources/inventories/eucharistic-research-reviews/ambrosian-lyon-2026-10-20.json),
+the [Buzuku Roman-vernacular witness](src/sources/inventories/eucharistic-research-reviews/roman-adaptations-buzuku-2026-10-20.json),
+the [Rome 1634/1635 holding correction](src/sources/inventories/eucharistic-research-reviews/roman-1634-1635-followup-2026-10-20.json),
+[Scandinavian uses](src/sources/inventories/eucharistic-research-reviews/scandinavian-2026-10-20.json),
+Grand-Saint-Bernard Ms. 08 in the canonical-order receipt, and the
+[Trinitarian/OCSO](src/sources/inventories/eucharistic-research-reviews/monastic-trinitarian-followup-2026-10-20.json)
+and [Hospitaller](src/sources/inventories/eucharistic-research-reviews/hospitaller-2026-10-20.json)
+follow-ups. The Western inventory now has **521 source records, 641 candidate or
+witness records, and 66 coverage rows**. With 439 Eastern and 59 legacy records,
+the generated catalogue has **1,139 entries**; the presentation registry has
+**64 navigation groups**. These counts describe research objects, not distinct
+liturgical revisions or fully transcribed books.
+
+The 1634 Roman original remains an unacquired gap; the 1635 lead is separately
+identified. The Grand-Saint-Bernard manuscript is a qualified witness, with the
+other Canons Regular leads still deferred. The combined Trinitarian/OCSO route
+has been split: the Trinitarian books have two qualified witnesses and OCSO has
+no candidate. BnF corrects the Hospitaller B-320 printing date to 1553; a
+separate 1551 edition and four translations remain deferred. The Scandinavian
+1484 Hafniense/Roskilde record is one printing identity. None of these records
+admits a new act-history station, a textual parent, complete-book coverage, or
+redistribution rights. Independent selected-row reviews accepted the
+Ambrosian/Lyon, Scandinavian and Trinitarian/OCSO integrations, while the other
+follow-ups retain their release and acquisition qualifications in their receipts.
+The refreshed coverage crosswalk reconciles all **89** discovery rows: 23
+Eastern and 66 Western. Thirty-two select researched stage sequences, four
+refer to related dossiers without verified local reception, and 53 have no new
+researched sequence. Sixteen Western rows still have no candidate. The
+reconciliation tool reports zero mechanical findings; this does not claim an
+exhaustive historical census.
+The source-library and `make check-sources` gates pass, the catalogue and all
+538 generated history files reproduce exactly, and the focused catalogue suite
+runs 54 tests (53 pass, one optional test skipped). `tmt check`, release-binding
+status, public-alpha policy, and the rebuilt public preview verifier pass.
+The feature-branch checkpoint does not deploy this research to the default
+branch or settle source-payload rights.
+
+Still open from these waves:
 
 - **Rights rulings for retention.** ONB non-commercial images, arar.sci.am
   downloads, Gallica-derived files and GPURA scans without a stated licence

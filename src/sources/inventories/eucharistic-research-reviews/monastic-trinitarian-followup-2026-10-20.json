@@ -1,0 +1,344 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "monastic-trinitarian-followup-2026-10-20",
+  "title": "Trinitarian mixed codex and 1529 print; distinct order coverage from OCSO",
+  "lane": "monastic",
+  "side": "western",
+  "checked_on": "2026-10-20",
+  "coverage_rows": [
+    "trinitarian-order",
+    "ocso"
+  ],
+  "target_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+  "review_files": {
+    "research_packet_sha256": "7f7496706bf028587e29d3bc8f78bd5d80d4675394ee59530fd6635a97974069",
+    "initial_cold_verdict_sha256": "3830adc36f26c9b7604af95053b1a5eee1d4c4e372accf80d4195449698fcfe9",
+    "cold_release_verdict_sha256": "bc268bc44fe205b3acc221dda25275ffaf006ea857cb7a23358a071235b27446",
+    "western_fragment_sha256": "441592c18a7db505a045f3b5b008faf6f8a2955a30d010602d7e30e0aab4fef5",
+    "presentation_fragment_sha256": "a921798414fd4ae4a258b664bca9897c1c09e4d262ac48bbeee2bd9b2e6de969",
+    "prior_monastic_receipt_sha256": "7e7a00f60a0d674fb301082ac174d0bdc650070bfdcff2011470f5916cf0b519"
+  },
+  "uses": [
+    {
+      "id": "trinitarian",
+      "coverage_row": "trinitarian-order",
+      "disposition": "two-catalogue-backed-witness-leads; no distinct recension or adoption date"
+    },
+    {
+      "id": "ocso",
+      "coverage_row": "ocso",
+      "disposition": "separate order evidence from prior monastic review; no new candidate"
+    }
+  ],
+  "searches": [
+    {
+      "id": "bnf-latin-1022",
+      "disposition": "catalogue HTML acquired; original-derived Gallica and IIIF routes returned 403"
+    },
+    {
+      "id": "provins-impr-xvi-a-8",
+      "disposition": "ARCA search-indexed record and USUARIUM detail; original print pages not acquired"
+    }
+  ],
+  "versions": [
+    {
+      "id": "monastic-usuarium-trinitarian-3126",
+      "family": "trinitarian",
+      "title": "Breviarium et missale ad usum Fratrum Sanctae Trinitatis, BnF Latin 1022",
+      "date": "thirteenth-century copying; IRHT proposes after 1247/before 1255",
+      "date_role": "manuscript-copying-range; later Trinitarian calendar adaptation separately attested",
+      "kind": "mixed-breviary-missal-manuscript-component-witness",
+      "status": "checked-catalogue-metadata; original-folio-layers-open",
+      "sources": [
+        "trinitarian-src-bnf-latin-1022",
+        "trinitarian-src-irht-latin-1022",
+        "trinitarian-src-usuarium-3126"
+      ],
+      "source_locus": "BnF Latin 1022 contents: Office ff. 7–232, Missal ff. 233–384v, f. 1 altered calendar, f. 385 later Corpus Christi; IRHT notice 97 proposed copying window",
+      "qualification": "A 390-folio mixed Office/Mass codex catalogued for Trinitarian use. Its calendar records adaptation from Saint-Victor and later alterations; original Mass folios and use layers are uninspected. The copying date does not date Trinitarian adoption or prove a separate recension, complete standalone Missal, or lineage to the 1529 print.",
+      "scope_disposition": "in-scope-original-book-or-historical-witness",
+      "version_status": "catalogue-witness-not-yet-collated",
+      "chronology_layout": "unpositioned-pending-original-folio-layer-review"
+    },
+    {
+      "id": "monastic-usuarium-trinitarian-2548",
+      "family": "trinitarian",
+      "title": "Missale ad usum fratrum Ordinis Sanctae Trinitatis de Redemptione Captivorum, Provins Impr. XVI a 8",
+      "date": "1529",
+      "date_role": "catalogue-reported-print-publication-year",
+      "kind": "catalogue-only-printed-missal-witness",
+      "status": "checked-concordant-catalogues; original-pages-open",
+      "sources": [
+        "monastic-src-usuarium-trinitarian-896",
+        "trinitarian-src-arca-provins-1529",
+        "trinitarian-src-usuarium-2548"
+      ],
+      "source_locus": "USUARIUM origin 896 Books row 2548 and book 2548 metadata/index; ARCA Provins Impr. XVI a 8 object record",
+      "qualification": "The unchanged pending ninth item in the 2026-10-20 monastic receipt. The two catalogues describe the same Provins copy; their metadata independence is not established. ARCA reports 272 physical folios and 279 digital views; USUARIUM's index reaches p. 551. Original title, colophon, images and complete text uninspected. The catalogue year proves no revision, approval, adoption or descent from BnF Latin 1022.",
+      "scope_disposition": "in-scope-original-book-or-historical-witness",
+      "version_status": "catalogue-witness-not-yet-collated",
+      "chronology_start": 1529,
+      "chronology_end": 1529,
+      "chronology_kind": "catalogue-print-publication-year",
+      "chronology_certainty": "concordant-catalogue-records-for-one-Provins-copy; title-image-uninspected"
+    }
+  ],
+  "acquisitions": [
+    {
+      "path": ".scratch/full-research-20261019/monastic/continuation-agent/trinitarian-followup/bnf-latin1022-catalogue.html",
+      "url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc589354",
+      "sha256": "4e20295b3616a14ab3c8ebce23fc1aab548d879afd87da807700b1d5d8280481",
+      "bytes": 25614,
+      "delivered_extent": "complete delivered BnF catalogue HTML, not manuscript images",
+      "storage": "scratch-only catalogue capture"
+    },
+    {
+      "path": ".scratch/full-research-20261019/monastic/continuation-agent/trinitarian-followup/usuarium-3126.html",
+      "url": "https://usuarium.elte.hu/book/3126/view",
+      "sha256": "64199567c4d80b4881e3cc3f20d325013d1a5baddc77c504a0e1c133cd153cea",
+      "bytes": 17993,
+      "delivered_extent": "complete delivered USUARIUM book-detail HTML, no full PDF",
+      "storage": "scratch-only catalogue capture"
+    },
+    {
+      "path": ".scratch/full-research-20261019/monastic/continuation-agent/trinitarian-followup/usuarium-2548.html",
+      "url": "https://usuarium.elte.hu/book/2548/view",
+      "sha256": "0b5c2d21fb074db7a57d8c02643fe4d4af5f4e78305b68aadcb10c743bb6e793",
+      "bytes": 48580,
+      "delivered_extent": "complete delivered USUARIUM book-detail HTML with indexed sections, no scan images",
+      "storage": "scratch-only catalogue capture"
+    }
+  ],
+  "integration_status": "two bounded catalogue leads integrated after independent cold release; no stage or source text integrated",
+  "trigger": {
+    "scope_finding": "GS-003",
+    "source_path": ".scratch/full-research-20261019/global_scope/continuation-agent/scope-findings.json",
+    "source_sha256": "1694cd5e11886423bfe77fa2bedb21eb7e7bebab62bf933ecb2db17f24995972"
+  },
+  "prior_monastic_receipt": {
+    "path": "src/sources/inventories/eucharistic-research-reviews/monastic-2026-10-20.json",
+    "sha256": "7e7a00f60a0d674fb301082ac174d0bdc650070bfdcff2011470f5916cf0b519",
+    "pending_ninth_item_preserved_exactly": {
+      "id": "monastic-usuarium-trinitarian-2548",
+      "coverage_row": "trinitarian-ocso",
+      "tradition_or_use": "trinitarian",
+      "record_class": "catalogue-only-print-witness",
+      "date": "1529",
+      "date_role": "catalogue-publication-year",
+      "title": "Missale Trinitarium",
+      "source_ref": "retained-usuarium-trinitarian",
+      "source_locus": "USUARIUM origin 896 complete retained Books table, ID 2548",
+      "proposed_source": {
+        "id": "monastic-src-usuarium-trinitarian-896",
+        "url": "https://usuarium.elte.hu/origin/896/view",
+        "type": "complete-retained-catalogue-table",
+        "inspection": "Books table row 2548: 1529 Missale Trinitarium. Physical title, colophon and text uninspected."
+      },
+      "family_decision": "pending-distinct-Trinitarian-presentation-family-or-alias",
+      "reason": "The present inventory has no Trinitarian family alias. Resolve routing and add a ninth explicitly catalogue-only row; the physical title, colophon, text, revision and adoption remain unverified."
+    },
+    "resolution": "The existing pending 1529 item is now one catalogue-only Provins copy under the same ID; no second 1529 witness is created. The prior dated receipt remains unchanged."
+  },
+  "independent_review": {
+    "research_packet_sha256": "7f7496706bf028587e29d3bc8f78bd5d80d4675394ee59530fd6635a97974069",
+    "initial_cold_verdict_sha256": "3830adc36f26c9b7604af95053b1a5eee1d4c4e372accf80d4195449698fcfe9",
+    "release_verdict_sha256": "bc268bc44fe205b3acc221dda25275ffaf006ea857cb7a23358a071235b27446",
+    "release_decision": "release-prepared-fragments-for-coordinated-bounded-integration",
+    "limits": "Acceptance covers two catalogue-backed leads and route split only; it does not establish recension, adoption, lineage, full text, or book-image reuse."
+  },
+  "integration": {
+    "western_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+    "western_preimage_sha256": "f6ca05b841b2fddb89acd2d1b5c34d44d69851ee29ac6f0b51a461e69530228d",
+    "western_postimage_sha256": "ad531a9609a1ef47458e378e4124829157c1972913edf272ae4464aa954b5d42",
+    "western_preimage_counts": {
+      "sources": 498,
+      "candidates": 626,
+      "coverage_rows": 64
+    },
+    "western_postimage_counts": {
+      "sources": 505,
+      "candidates": 628,
+      "coverage_rows": 65
+    },
+    "presentation_inventory": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
+    "presentation_preimage_sha256": "18a3bee66b08ed0d400b59fb608f3d87a037589fbdac4cfc37e4317ccf91f41d",
+    "presentation_postimage_sha256": "efb2afe5ceb3df21dde2c1cb66d91b0111079bbd7d8998e47abc9ae9ed2c5ec8",
+    "presentation_preimage_groups": 62,
+    "presentation_postimage_groups": 63,
+    "western_fragment_sha256": "441592c18a7db505a045f3b5b008faf6f8a2955a30d010602d7e30e0aab4fef5",
+    "presentation_fragment_sha256": "a921798414fd4ae4a258b664bca9897c1c09e4d262ac48bbeee2bd9b2e6de969",
+    "removed_coverage_id": "trinitarian-ocso",
+    "added_source_ids": [
+      "monastic-src-usuarium-trinitarian-896",
+      "trinitarian-src-bnf-latin-1022",
+      "trinitarian-src-irht-latin-1022",
+      "trinitarian-src-usuarium-3126",
+      "trinitarian-src-arca-provins-1529",
+      "trinitarian-src-usuarium-2548",
+      "monastic-src-ocso-official-liturgy"
+    ],
+    "added_candidate_ids": [
+      "monastic-usuarium-trinitarian-3126",
+      "monastic-usuarium-trinitarian-2548"
+    ],
+    "added_coverage_ids": [
+      "trinitarian-order",
+      "ocso"
+    ],
+    "added_presentation_group_id": "trinitarian-order",
+    "crosswalk_note": "Derived eucharistic-stage-coverage-v1.json and catalogue projections are coordinator-owned follow-up; they must replace the retired trinitarian-ocso key with trinitarian-order and ocso and refresh Western/presentation input hashes. This integration edits no derived files."
+  },
+  "source_records": [
+    {
+      "id": "monastic-src-usuarium-trinitarian-896",
+      "url": "https://usuarium.elte.hu/origin/896/view",
+      "type": "complete-retained-catalogue-table",
+      "inspection": "Books row 2548: 1529 Missale Trinitarium. This is the unchanged proposed source of the monastic receipt's pending ninth item; original title, colophon and text uninspected."
+    },
+    {
+      "id": "trinitarian-src-bnf-latin-1022",
+      "url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc589354",
+      "type": "holding-library-manuscript-catalogue",
+      "inspection": "BnF catalogue retrieved 2026-10-20, attributed to Bibliothèque nationale de France, Latin 1022: title/codicology HTML lines 343–347; access 318 and 351–365; contents 449–464; use labels 530–540. Mixed 390-folio codex, Office ff. 7–232, Mass ff. 233–384v, later f. 385 Corpus Christi; calendar alterations from Saint-Victor to Trinitarian use. Catalogue metadata only; original folios uninspected."
+    },
+    {
+      "id": "trinitarian-src-irht-latin-1022",
+      "url": "https://telma.irht.cnrs.fr/outils/liturgie/notice97/",
+      "type": "scholarly-manuscript-notice-search-indexed",
+      "inspection": "CNRS-IRHT notice 97, search-indexed Identification: proposed copying after 1247/before 1255, perhaps Saint-Victor. Direct page access failed; proposal is not an adoption or Mass-text-layer date."
+    },
+    {
+      "id": "trinitarian-src-usuarium-3126",
+      "url": "https://usuarium.elte.hu/book/3126/view",
+      "type": "scholarly-book-catalogue",
+      "inspection": "Book 3126 metadata, retrieved 2026-10-20: title, OTrin, dual Missal/Breviary genres, manuscript age 1200–1300, BnF Lat. 01022. HTML acquired; PDF returned 401; no folio image or complete text."
+    },
+    {
+      "id": "trinitarian-src-arca-provins-1529",
+      "url": "https://arca.irht.cnrs.fr/ark%3A/63955/md23hx121454",
+      "type": "holding-object-catalogue-search-indexed",
+      "inspection": "CNRS-IRHT ARCA Provins Impr. XVI a 8 search-indexed record: Paris, Nicolaum Prevost, 1529; 272 physical folios, 279 catalogued digital views. Direct ARCA/BVMM access timed out; title image, colophon and scan completeness unverified. Same Provins copy as USUARIUM 2548; metadata independence not established."
+    },
+    {
+      "id": "trinitarian-src-usuarium-2548",
+      "url": "https://usuarium.elte.hu/book/2548/view",
+      "type": "scholarly-book-catalogue",
+      "inspection": "Book 2548 metadata and contents index, retrieved 2026-10-20: 1529 Missale for Trinitarian order, Provins Impr. XVI a 8; index title p. 6 through colophon p. 551. Index is not original-page transcription or proof of complete scan; PDF returned 401."
+    },
+    {
+      "id": "monastic-src-ocso-official-liturgy",
+      "url": "https://www.ocso.org/resources/liturgy/",
+      "type": "order-primary-prior-review-control",
+      "inspection": "Order liturgy page, History, Calendar, Missal and Lectionary sections, as independently recorded in the 2026-10-20 monastic research receipt. Shared Cistercian history, 1983 proper prayers and later variants require original Latin books and decrees; this follow-up did not acquire them. Source supports a separate OCSO coverage lead only."
+    }
+  ],
+  "coverage_placements": [
+    {
+      "id": "trinitarian-order",
+      "title": "Trinitarian Eucharistic books",
+      "status": "selected-catalogue-witnesses; original-text-comparison-open",
+      "sources": [
+        "monastic-src-usuarium-trinitarian-896",
+        "trinitarian-src-bnf-latin-1022",
+        "trinitarian-src-irht-latin-1022",
+        "trinitarian-src-usuarium-3126",
+        "trinitarian-src-arca-provins-1529",
+        "trinitarian-src-usuarium-2548"
+      ],
+      "candidate_ids": [
+        "monastic-usuarium-trinitarian-3126",
+        "monastic-usuarium-trinitarian-2548"
+      ],
+      "remaining_work": "Inspect Latin 1022's Mass folios and later calendar/use layers; check the 1529 Provins original title, colophon and reproduction completeness; acquire order acts and intervening books and compare text. The thirteenth-century copying window does not date Trinitarian adoption, and 1529 is a catalogue print year, not a reform date. No lineage, independent recension or complete text is established.",
+      "scope": "western-original-source-trajectory"
+    },
+    {
+      "id": "ocso",
+      "title": "Cistercians of the Strict Observance / Trappists",
+      "status": "order-evidence-and-original-Latin-book-leads-open",
+      "sources": [
+        "monastic-src-ocso-official-liturgy"
+      ],
+      "candidate_ids": [],
+      "remaining_work": "The monastic receipt records shared historical Cistercian books and separately attested OCSO reception, including 1983 proper prayers with order-specific variations. Obtain original Latin Missal, propers, lectionary and decrees; check later saints and branch reception. Do not infer a medieval OCSO identity from retrospective catalogue labels. This coverage row is distinct from the Trinitarian order.",
+      "scope": "western-original-source-trajectory"
+    }
+  ],
+  "presentation_placement": {
+    "id": "trinitarian-order",
+    "label": "Trinitarian Order Eucharistic books",
+    "families": [
+      "trinitarian"
+    ],
+    "note": "Navigation for two catalogue-backed order-labelled witnesses. Membership does not assert a separate liturgical recension, textual lineage, normative adoption or use duration."
+  },
+  "date_and_extent_limits": {
+    "monastic-usuarium-trinitarian-3126": "BnF broad thirteenth-century copying and IRHT proposed after-1247/before-1255 window apply to codex production only. Later f. 1 calendar alterations and Trinitarian use are separate; no Mass-text layer or adoption date assigned. Candidate is unpositioned.",
+    "monastic-usuarium-trinitarian-2548": "1529 is catalogue-reported print publication year; ARCA and USUARIUM describe the same Provins shelfmark, so their metadata independence is not established. No original title, colophon, approval, recension or adoption checked.",
+    "physical_and_index_extents": {
+      "monastic-usuarium-trinitarian-3126": "BnF 390 folios, Office ff. 7–232, Missal ff. 233–384v; later Corpus Christi f. 385. Catalogue HTML acquired, Gallica original-derived image/IIIF and microfilm-derived viewer returned 403; physical original requires motivated authorization. No folio images.",
+      "monastic-usuarium-trinitarian-2548": "ARCA 272 physical folios and 279 catalogued digital views; USUARIUM index to p. 551. Measures differ and do not establish scan completeness. USUARIUM PDF 401; ARCA/BVMM timeout. No original print pages."
+    }
+  },
+  "source_access": {
+    "catalogue_html_acquired": [
+      {
+        "path": ".scratch/full-research-20261019/monastic/continuation-agent/trinitarian-followup/bnf-latin1022-catalogue.html",
+        "url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc589354",
+        "sha256": "4e20295b3616a14ab3c8ebce23fc1aab548d879afd87da807700b1d5d8280481",
+        "bytes": 25614,
+        "delivered_extent": "complete delivered BnF catalogue HTML, not manuscript images",
+        "storage": "scratch-only catalogue capture"
+      },
+      {
+        "path": ".scratch/full-research-20261019/monastic/continuation-agent/trinitarian-followup/usuarium-3126.html",
+        "url": "https://usuarium.elte.hu/book/3126/view",
+        "sha256": "64199567c4d80b4881e3cc3f20d325013d1a5baddc77c504a0e1c133cd153cea",
+        "bytes": 17993,
+        "delivered_extent": "complete delivered USUARIUM book-detail HTML, no full PDF",
+        "storage": "scratch-only catalogue capture"
+      },
+      {
+        "path": ".scratch/full-research-20261019/monastic/continuation-agent/trinitarian-followup/usuarium-2548.html",
+        "url": "https://usuarium.elte.hu/book/2548/view",
+        "sha256": "0b5c2d21fb074db7a57d8c02643fe4d4af5f4e78305b68aadcb10c743bb6e793",
+        "bytes": 48580,
+        "delivered_extent": "complete delivered USUARIUM book-detail HTML with indexed sections, no scan images",
+        "storage": "scratch-only catalogue capture"
+      }
+    ],
+    "attempts_receipt_sha256": "83e4f5defe3683f96f8ddfb7d05940906857ec3f892dec43c7f40f91fc698cd1",
+    "catalogue_capture_receipt_sha256": "f1d86954b5e3b7dcd84860f8b608c74628e811ae73baba6e1c9c64104b55ec47",
+    "original_page_images_acquired": 0,
+    "complete_original_texts_collated": 0
+  },
+  "rights": {
+    "bnf_metadata": "Attribute Bibliothèque nationale de France and the Latin 1022 catalogue URL; retrieved 2026-10-20. BnF data reuse terms: https://www.bnf.fr/fr/conditions-de-reutilisations-des-donnees-de-la-bnf. Metadata terms do not grant Gallica image reuse.",
+    "bnf_images": "No images acquired; item-specific Gallica image terms and any request conditions remain to be checked.",
+    "usuarium": "Catalogue metadata paraphrased with USUARIUM attribution; no PDF or scan redistributed.",
+    "arca_irht": "ARCA search-index labels underlying historic print public domain, but IRHT image-host item terms unresolved; no image or full text acquired.",
+    "ocso": "Official order page supports a metadata lead; no modern page prose or book payload copied into tracked source text."
+  },
+  "cold_corrections_applied": [
+    "2548 chronology certainty now says concordant catalogue records for one Provins copy; title image uninspected",
+    "Trinitarian coverage source list includes IRHT notice 97 for its narrower proposed copying window",
+    "BnF catalogue source and rights receipt retain attribution and 2026-10-20 retrieval date",
+    "OCSO receives distinct coverage row and order-primary prior-review source; no OCSO candidate is invented"
+  ],
+  "negative_findings": [
+    "BnF Latin 1022 original folios were inaccessible via tested Gallica routes; no Mass-text layer or Trinitarian adoption date was established.",
+    "ARCA and USUARIUM describe one Provins Impr. XVI a 8 copy; their metadata independence and the 1529 title/colophon have not been established from original pages.",
+    "The 272 physical folios, 279 catalogued digital views and USUARIUM index through p. 551 are different extent measures; none proves reproduction completeness.",
+    "No independent Trinitarian recension, textual parentage from Latin 1022 to the 1529 print, approval, promulgation or effective date was established.",
+    "OCSO order evidence is separated into its own coverage row without creating an unevidenced OCSO candidate or backdating institutional identity."
+  ],
+  "remaining_work": [
+    "Original Latin 1022 folio layers and use of Mass component uninspected",
+    "Original 1529 title, colophon and complete reproduction uninspected",
+    "No relationship between 13th-century manuscript and 1529 print established",
+    "OCSO Latin books, decree and later proper texts require direct acquisition",
+    "Image-host reuse rights remain unverified",
+    "Update derived stage coverage crosswalk and regenerate affected catalogue/coverage projections under coordinator ownership."
+  ]
+}
