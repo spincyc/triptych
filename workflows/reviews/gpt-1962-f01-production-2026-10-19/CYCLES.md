@@ -420,3 +420,17 @@ cross-provider data contribution, and inherit no Claude acceptance. It must
 not retry or reconstruct unknown rejected model output. A fresh high-effort
 research worker has the exact native packet and intervention; no research
 PASS or later-stage result is claimed yet.
+
+The worker saved an explicitly incomplete, provenance-labelled source-data
+checkpoint after rehashing and reading the 1962, AAS and Lasance page images.
+Its GPT `propers/verified.md` now carries all thirteen 1962 Latin units and
+four historical English composed texts; `propers/retrieved.txt` retains the
+unedited AAS pull as a finding aid. The Latin starting data came from the
+already published Claude collation and were independently compared with the
+primary images; the cross-provider transcription contribution is disclosed.
+The two source records were committed and feature-pushed as `8b693dc86`.
+The exact AAS binding and explicit Claude-source dependency validated with
+4,155 source-library bindings and were committed and feature-pushed as
+`1649a5864`. Complete English biblical selections, framing, research
+reconciliation and independent cold review remain pending; there has been
+no new output rejection at this checkpoint.
