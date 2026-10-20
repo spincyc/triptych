@@ -484,3 +484,14 @@ accepted by run `095fe00a9fe8cfee`, which emitted fresh high-effort
 independently checked, source-bound modern qualifications alongside the
 traditional chronology, without replacing the generated dates by an
 unsupported publication-local choice.
+
+The repair registered dated metadata-only USCCB introduction artifacts for
+John and Colossians, bound their exact hashed deliveries, and added the
+authorship, final-formation and writing-place alternatives to the historical
+appendix plan. It preserved the generated chronology and interpretive lanes.
+Source-library, chronology, inventory and family-ledger checks passed. The
+research repair and native preflight passed; the second fresh xhigh reviewer
+then returned `PASS` with `RES-HIS-001` resolved. The engine has entered
+`author-study-0000`; its fresh high-effort author is producing the expansive
+study. The completed research repair was committed and feature-pushed as
+`64270731b`. No study, artifact, web or publication PASS exists yet.
