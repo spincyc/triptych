@@ -317,6 +317,49 @@ status, public-alpha policy, and the rebuilt public preview verifier pass.
 The feature-branch checkpoint does not deploy this research to the default
 branch or settle source-payload rights.
 
+**Western regional research wave, 2026-10-20.** Six further dated, independently
+reviewed packets are integrated as qualified inventory metadata:
+[British and Irish](src/sources/inventories/eucharistic-research-reviews/british-irish-2026-10-20.json),
+[Italian](src/sources/inventories/eucharistic-research-reviews/italian-2026-10-20.json),
+[Iberian](src/sources/inventories/eucharistic-research-reviews/iberian-2026-10-20.json),
+[Central European](src/sources/inventories/eucharistic-research-reviews/central-europe-2026-10-20.json),
+[French local uses](src/sources/inventories/eucharistic-research-reviews/french-local-uses-2026-10-20.json),
+and [German and Swiss](src/sources/inventories/eucharistic-research-reviews/german-swiss-2026-10-20.json).
+The Western inventory now has **868 source records, 1,135 candidate or witness
+records, and 73 coverage rows**. With 439 Eastern and 59 legacy records, the
+catalogue projects **1,633 entries**. The presentation registry has **128
+navigation groups**. These are research and reader-routing counts, not counts
+of distinct liturgical revisions or complete texts. The seven new Western
+coverage rows name qualified Italian local uses; 30 existing crosswalk rows
+were refreshed. The crosswalk retains 23 Eastern and 73 Western routes and
+reconciles to its owners without a mechanical finding.
+
+The British 1497 BPL scan is complete as delivered, while that physical copy
+lacks 26 leaves; the separate BIM scan is truncated. Fourteen cold-reviewed
+British navigation labels route previously unmapped candidates without
+claiming complete local recensions. Italian 6286 is a later layer, and Messina
+remains bounded by its inspected evidence. The Iberian 1988 partial approval
+and 1989 inaugural celebration are events, not new book stages. Central
+Europe's 1520 ordinal is a component, while Wrocław I F 352 remains unassigned
+amid competing attribution. French Metz manuscript No. 407 and German Trier
+manuscript No. 406 are distinct physical books. The German/Swiss packet reuses
+the existing 1486 Schleswig printing for its three catalogued copies; it adds
+no duplicate missal or 1512 edition. Langres and Uzès retain their specified
+textual-reception evidence, and Paris 1481 remains represented. The packets
+preserve acquisition hashes, searched limits, deferred leads and independent
+review dispositions. No original payload was registered in this metadata wave;
+rights, exact extents and retention are being adjudicated once across the
+completed lane set, as the maintainer requested on 2026-10-19.
+
+The six installed packets and the 37 changed crosswalk rows pass independent
+postimage review; the final crosswalk verdict has SHA-256
+`314d5cbf651b03409c308d166dac59685def6a13fea1cd68d0a37cb9cabe338f`.
+That review corrected a stale Seville 1565 gap sentence: its original title
+and preface have been inspected, while its full text and predecessor remain
+uncollated. The source gate passes, the 54 focused catalogue tests have one
+optional skip and no failure, all 538 history files reproduce, release
+bindings are exact, and the private public-alpha preview builds and verifies.
+
 Still open from these waves:
 
 - **Rights rulings for retention.** ONB non-commercial images, arar.sci.am
