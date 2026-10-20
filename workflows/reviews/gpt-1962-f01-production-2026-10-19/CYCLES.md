@@ -525,3 +525,15 @@ the reviewer judged replacing it here would not correct a reader-facing
 misunderstanding and would disturb settled pagination. The native engine
 accepted the review and emitted `derive-synthesis-0000`. Companions, artifact
 and publication gates remain open.
+
+The concise author produced a 10-page, 4,139-word standalone comparison from
+the accepted expansive study. Its physical opening has inventory and four
+senses on page 1, generated orientation chronology alone on page 2, themes on
+pages 3–4 and developed interleaved commentary beginning on page 5. The draft
+was checkpointed as `c059f2886`; final proof and audit corrections were
+committed and feature-pushed as `46aa14226`. Component checks and native
+synthesis preflight passed. A fresh xhigh reviewer then inspected all ten
+matching PDF pages, rechecked the principal witness and chronology claims,
+compared both readings with the accepted study, and returned `PASS` with no
+findings. The engine emitted `derive-homily-0000`; homily and publication
+acceptance remain pending.
