@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "syriac-malankara-malayalam-scope-2026-10-20",
+  "title": "Syro-Malankara Malayalam service-book scope reconciliation, 2026-10-20",
+  "lane": "syriac_malankara_malayalam_scope",
+  "side": "eastern",
+  "checked_on": "2026-10-20",
+  "reviewed_on": "2026-10-20",
+  "coverage_rows": ["syro-malankara"],
+  "target_inventory": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
+  "semantics": "Dated scope and evidence-threshold review under guidance/time-machine.md §11, clarified 2026-10-19. This note supplements, and does not replace or alter, the syriac-malankara.json research-lane receipt of 2026-10-19. Origin-review retention is not a substantive transition, act-history station, complete text, current obligation, Git parent or textual ancestry.",
+  "review_files": {
+    "storage": "untracked workspace scratch; implementation packet pinned here by SHA-256 only",
+    "packet_sha256": "615bf0b9a82d927959c944e8fcc4a83945b02a7de709bd98a23c0aed7b09379b",
+    "packet_status": "initial candidate-promotion proposal superseded by final pending-use disposition",
+    "cold_review_findings_sha256": "ed543c3eb38ccaa706927bc5457e18008a65c3ef6a58031ca2b50a05e501e899",
+    "cold_review_verdict": "accepted-after-correction"
+  },
+  "uses": [
+    {
+      "id": "syro-malankara",
+      "disposition": "two-approval-backed-books-retained-in-origin-review-pending-use",
+      "candidate_ids": [],
+      "finding": "The Church's issued, hierarchically approved 1966 Malayalam Taksa and the synod-approved Malayalam Taksa released in October 2007 are approval-backed service-book witnesses. Intended use and release do not independently document actual liturgical use of either book; guidance/time-machine.md §11 therefore keeps both in origin review pending that evidence.",
+      "limit": "Neither witness establishes direct descent from the 1934, 1960, 1965 or 1987 books, an effective date, or a complete liturgical text. The separate February 2007 Qurbonokramam remains in language/origin review."
+    }
+  ],
+  "searches": [],
+  "versions": [
+    {
+      "id": "malankara-1966-taksa",
+      "disposition": "retain-origin-review-pending-use",
+      "basis": "Original 1966 Malayalam title and imprint identify Liturgical Committee preparation and publication with hierarchical approval; the Trivandrum and Tiruvalla hierarchs sign a 1 January 1966 preface.",
+      "source_ids": ["malankara-1966-primary"],
+      "loci": ["original PDF 2 title/imprint", "original PDF 7, printed iv, episcopal preface"],
+      "limits": "Separate approval instrument, actual liturgical use of this printing, body collation and textual predecessor not established. Its issuance for intended use does not satisfy the §11 candidate-use threshold."
+    },
+    {
+      "id": "malankara-2007-taksa",
+      "disposition": "retain-origin-review-pending-use",
+      "basis": "The 2006 Holy Episcopal Synod approved a Malayalam revised Takso and ordered publication; the Catholicos released the new Taksa at the October 2007 synod. The Church's 2023 English preface identifies its 2007 Malayalam Takso.",
+      "source_ids": ["syriac-malankara-src-synod2006", "malankara-synod-2007", "syriac-malankara-src-english2023"],
+      "loci": ["2006 report printed/physical 30–31 and Decision II.6 printed/physical 46", "2007 report printed/physical 24–25", "2023 English translation original PDF 4 preface"],
+      "limits": "Actual liturgical use, original 2007 printed book, exact wording, textual predecessor and effective date not established; October 2007 concelebration directions are separate. Synodal approval and release do not satisfy the §11 candidate-use threshold alone."
+    },
+    {
+      "id": "syriac-malankara-mal-2007-qurbonokramam",
+      "disposition": "retain-origin-review",
+      "basis": "The 2006 synod approved a Qurbonokramam; a February 2007 pastoral letter reports publication and eparchial availability of a renewed Holy Qurbono order with Qyomto/Sleebo prayers, and the October report names an already published Qurbonakramam separately from the newly released Taksa.",
+      "source_ids": ["syriac-malankara-src-synod2006", "syriac-malankara-src-bulletin-feb2007", "malankara-synod-2007"],
+      "loci": ["2006 Decision II.6 printed/physical 46", "pastoral letter 15 February 2007, printed/physical 163", "2007 report printed/physical 25"],
+      "limits": "Own printed language and actual use not directly checked. The February letter's English 2005 synod year conflicts with the official 2006 decision and Malayalam letter page 159. Do not identify this book as the October Taksa."
+    }
+  ],
+  "acquisitions": [],
+  "remaining_gap": "Document actual liturgical use of the 1966 and October 2007 Taksa books, then assess §11 candidate admission; acquire and collate both books and the distinct February Qurbonokramam, whose language and use remain unchecked. Stage-sequence expansion remains a separate review."
+}

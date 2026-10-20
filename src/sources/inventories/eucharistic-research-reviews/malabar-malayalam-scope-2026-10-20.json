@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "malabar-malayalam-scope-2026-10-20",
+  "title": "Syro-Malabar Malayalam service-book scope reconciliation, 2026-10-20",
+  "lane": "malabar_malayalam_scope",
+  "side": "eastern",
+  "checked_on": "2026-10-20",
+  "reviewed_on": "2026-10-20",
+  "coverage_rows": ["syro-malabar"],
+  "target_inventory": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
+  "semantics": "Dated reclassification under guidance/time-machine.md §11, clarified 2026-10-19. This note supplements and does not alter the malabar.json research review of 2026-10-19. Candidate status is not an act-history station, a collated textual transition, a complete book, current obligation, or asserted ancestry. Complementary and component books are not successive whole-Taksa editions.",
+  "review_files": {
+    "storage": "untracked workspace scratch; proposal pinned here by SHA-256 only",
+    "packet_sha256": "09f0a8b9a196285ba28475faf0100397dda7d20b3b6c52c94fa4de4a8481d0ef",
+    "cold_review_findings_sha256": "ed543c3eb38ccaa706927bc5457e18008a65c3ef6a58031ca2b50a05e501e899",
+    "cold_review_verdict": "accepted-after-correction"
+  },
+  "uses": [
+    {
+      "id": "syro-malabar",
+      "disposition": "twelve-malayalam-service-book-candidates",
+      "candidate_ids": ["malabar-1962", "malabar-1968", "malabar-1985-86", "malabar-1989", "malabar-propria-2005", "malabar-feast-rites-2009", "malabar-taksa-propria-2011", "malabar-theodore-experimental-2013", "malabar-lectionary-2013", "malabar-nestorius-2018", "malabar-2021", "malabar-feast-rites-2025"],
+      "finding": "The Church's approved operative Malayalam Qurbana books and complementary/component service books are received service-book-language candidates. The 1962 bilingual book was already a candidate; eleven further IDs move from origin review. The 2005 Propria and 2011 selected-propria Taksa have secondary/contextual Malayalam attribution and are qualified research candidates with original copies uninspected.",
+      "limit": "No full-book collation, uninterrupted-use interval, direct textual descent, new stage, rights permission, or completed 1968–2025 state sequence follows from this reclassification."
+    }
+  ],
+  "searches": [],
+  "versions": [
+    {
+      "id": "malabar-1962",
+      "disposition": "received-bilingual-service-book-candidate-already-listed",
+      "basis": "The seven bishops' imprimatur and their decision put the partly Malayalam book into force on 3 July 1962.",
+      "source_ids": ["malabar-src-gpura-1962", "malabar-pallath2023"],
+      "loci": ["1962 scan PDF 7–8, title and imprimatur", "Pallath 2023 p. 26 and n. 47"],
+      "limits": "The 20 January 1962 instruction promulgated the 1960 Syriac missal, not this Malayalam book. Its separately paginated Syriac section witnesses that restored text; no distinct Syriac revision is claimed without collation."
+    },
+    {
+      "id": "malabar-1968",
+      "disposition": "received-service-book-language-candidate",
+      "basis": "The bishops' 20 May 1968 imprimatur, reported Roman experimental permission from 15 August, and reported diocesan use establish approval and operation; the later decree describes partial renewal besides translation.",
+      "source_ids": ["malabar-src-gpura-1968", "malabar-aas-1985-decree", "malabar-pallath2023"],
+      "loci": ["1968 scan PDF 7–8", "AAS 78 (1986) 588–589", "Pallath 2023 pp. 26–27"],
+      "limits": "The original 1968 permission instrument and affected passages are unlocated; the order is uncollated with 1962 and the 1974 reimprimatur."
+    },
+    {
+      "id": "malabar-1985-86",
+      "disposition": "received-service-book-language-candidate",
+      "basis": "The 19 December 1985 decree approved the most solemn Raza; the Malayalam book carries 8 February 1986 imprimaturs and reports first use at Kottayam that day.",
+      "source_ids": ["malabar-aas-1985-decree", "malabar-src-gpura-1986", "malabar-pallath2023"],
+      "loci": ["AAS 78 (1986) 588–589", "1986 scan PDF 7–10", "Pallath 2023 p. 29"],
+      "limits": "No prayer or rubric collation; the November 1984 and January 1985 texts are study drafts, not this operative book."
+    },
+    {
+      "id": "malabar-1989",
+      "disposition": "received-service-book-language-candidate-on-reported-edition",
+      "basis": "Pallath reports decree approval on 3 April 1989 and liturgical use from 3 July; n. 57 names a Malayalam Order of Raza containing the decree.",
+      "source_ids": ["malabar-pallath2023"],
+      "loci": ["Pallath 2023 pp. 29–30 and n. 57", "Pallath 2023 p. 35, English typical edition report"],
+      "limits": "The Malayalam volume and decree have not been directly inspected. The same study also reports an English typical text; its relation to the Malayalam expression and to 1986 remains uncollated."
+    },
+    {
+      "id": "malabar-propria-2005",
+      "disposition": "qualified-received-language-component-candidate",
+      "basis": "Pallath reports synodal approval, 10 July recognitio, 1 November decree, effectiveness from 27 November 2005 and four volumes; the commission's retrospective lists the published Propria.",
+      "source_ids": ["malabar-pallath2023", "malabar-src-formation-2018"],
+      "loci": ["Pallath 2023 pp. 30–31 and nn. 59–60", "Formation of Syro-Malabar Liturgical Texts, opening context and §2 item 3"],
+      "limits": "Malayalam attribution is secondary/contextual, not an inspected original-language title or text page. Four original volumes and printed decree uninspected; reported new proper items are not collated."
+    },
+    {
+      "id": "malabar-feast-rites-2009",
+      "disposition": "received-language-component-candidate",
+      "basis": "Decree 622/2009 promulgated Christmas and Great Week booklets effective 14 September 2009 and abrogated earlier texts for these rites; a later Christmas printing carries the decree.",
+      "source_ids": ["malabar-src-piravithirunal-2009", "malabar-pallath2023"],
+      "loci": ["Christmas booklet PDF 2–3", "Pallath 2023 pp. 32–33"],
+      "limits": "The 2009 Great Week booklet is not acquired; the Christmas witness is a 2016/2017 reprint. Neither body is collated."
+    },
+    {
+      "id": "malabar-taksa-propria-2011",
+      "disposition": "qualified-received-language-component-candidate",
+      "basis": "Pallath reports authorization to select prayers for community use, 2009 synodal approval of 24 selected propria, and publication of a Taksa and people's text in 2011.",
+      "source_ids": ["malabar-pallath2023"],
+      "loci": ["Pallath 2023 p. 32, including Synodal News reference n. 62"],
+      "limits": "Malayalam attribution is secondary/contextual; no original 2011 title or text page inspected. Selection and placement are identified, but the 24 prayers are not all claimed as new compositions or a separate whole-Taksa state."
+    },
+    {
+      "id": "malabar-theodore-experimental-2013",
+      "disposition": "received-language-component-candidate",
+      "basis": "The 2018 reprint prints the 2013 first-print imprimatur and a decree explicitly saying the Church had begun using the Second Qudasha on 15 August 2013.",
+      "source_ids": ["malabar-src-theodore-2018", "malabar-pallath2023"],
+      "loci": ["2018 booklet PDF 2–3, decree 2108/2018", "Pallath 2023 p. 33"],
+      "limits": "The 2013 original printing is uninspected. The 2018 definitive decree and reprint do not by themselves prove a distinct textual revision."
+    },
+    {
+      "id": "malabar-lectionary-2013",
+      "disposition": "received-language-complementary-book-candidate",
+      "basis": "Pallath reports synodal approval of three Malayalam proclamation volumes, 10 October 2013 decree and use effective 1 December; the commission lists them as published.",
+      "source_ids": ["malabar-pallath2023", "malabar-src-formation-2018"],
+      "loci": ["Pallath 2023 pp. 33–34 and nn. 68–70", "Formation of Syro-Malabar Liturgical Texts §2 item 10"],
+      "limits": "The volumes and decree are not directly inspected. Scripture wording is drawn from the KCBC Malayalam Bible; the Church's appointed reading order is the service-book arrangement."
+    },
+    {
+      "id": "malabar-nestorius-2018",
+      "disposition": "received-language-component-candidate",
+      "basis": "The Malayalam Third Qudasha booklet prints the 2018 imprimatur, synodal approval, Roman recognitio, decree and 8 September effective date.",
+      "source_ids": ["malabar-src-nestorius-2018"],
+      "loci": ["2018 booklet PDF 1–3"],
+      "limits": "The body and relation to earlier anaphora witnesses remain uncollated."
+    },
+    {
+      "id": "malabar-2021",
+      "disposition": "received-language-typical-book-candidate",
+      "basis": "The official book prints recognitio of the Malayalam Raza Taksa as a new editio typica and decree 0775/2021 promulgating the definitive text for Raza, solemn and simple forms effective 28 November 2021.",
+      "source_ids": ["malabar-2021", "malabar-src-changes-2021"],
+      "loci": ["2021 book PDF 5 and 7", "Commission explanation, numbered changes"],
+      "limits": "No independent collation with the 1989 Malayalam book; the 2021 body text layer has legacy-font corruption, and publication rights are unresolved."
+    },
+    {
+      "id": "malabar-feast-rites-2025",
+      "disposition": "received-language-component-revision-candidate",
+      "basis": "Decree 0224/2025 promulgated the revised Malayalam Great Week rites effective 13 April 2025; two presentations contain the same decree.",
+      "source_ids": ["malabar-src-holy-week-2025-hours", "malabar-src-holy-week-2025-plain"],
+      "loci": ["2025 with-Hours PDF 2–4", "2025 without-Hours PDF 2–4"],
+      "limits": "The two presentations count once. The Christmas text named by the decree is unlocated and the 2009-to-2025 changed passages remain uncollated."
+    }
+  ],
+  "acquisitions": [],
+  "negative_findings": [
+    "The 1971 solemn booklet has an episcopal imprimatur, but a concrete use or effective-date record has not been identified.",
+    "The 1971 sung Requiem is marked experimental, but no issuing authority or imprimatur was identified on the inspected leaves.",
+    "The 1974 reimprimatur and 2018 Theodore reprint do not establish separate changed texts. Drafts and unapproved adaptations remain outside the approved-operative candidate set.",
+    "The 1868 and 1926 Tukasa ceremonial books have reported authorization or later obligation, but their original books and acts remain uninspected; the 1868 publication reports conflict."
+  ],
+  "remaining_gap": "Acquire and collate the 1989 Malayalam Order, 2005 four-volume Propria, 2011 Taksa, 2013 lectionary and original Theodore printing; establish the original title/language of the 2005 and 2011 books. Acquire earlier Syriac and bilingual books and inspect the Tukasa acts. Determine concrete component changes and relationships before adding book-state stages or act-history stations."
+}

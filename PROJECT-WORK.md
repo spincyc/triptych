@@ -214,13 +214,37 @@ Among the reviewed corrections:
 - The "Rome 1970" Ruthenian Chrysostom is qualified as a probable later
   printing of the 1940 book, not a new edition.
 
+**Malayalam service-book scope reconciled, 2026-10-20.** Under the
+[received-language scope](guidance/time-machine.md#11-historical-and-language-scope-agreed-2026-10-16),
+the Syro-Malabar row now has 29 candidates: 11 Church-approved Malayalam Qurbana
+and complementary books moved from origin review, alongside the 1962 Malayalam
+book already in candidates. The Syro-Malankara row retains three candidates.
+Its issued, hierarchically approved 1966 Malayalam Taksa and the Malayalam
+Taksa approved in 2006 and released in October 2007 remain in origin review:
+neither intended use nor release independently documents actual liturgical use
+of either book, required by the scope rule for candidate admission. The
+February 2007 Qurbonokramam remains a separate origin-review record because
+its own language and actual use are not directly checked. The [Malabar](src/sources/inventories/eucharistic-research-reviews/malabar-malayalam-scope-2026-10-20.json)
+and [Malankara](src/sources/inventories/eucharistic-research-reviews/syriac-malankara-malayalam-scope-2026-10-20.json)
+dated notes preserve the source loci and limits without rewriting the 2026-10-19
+lane receipts. This is candidate classification and evidence review, not a new
+stage, textual transition, historical parent or complete text. The Eastern
+inventory remains 439 records.
+
+**Roman modern inventory subwave, 2026-10-20.** A [reviewed research
+packet](src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json)
+adds 52 source records and 108 candidate or witness records, bringing the
+Western inventory to 301 sources and 389 records and the catalogue to 887
+entries. The packet pins 72 acquisition receipts. The independent
+post-integration audit (SHA-256
+`face596ea5f96735490e7334a076d0aead967c50e199f555fdb1cf2a5e04b955`)
+reconciles all 117 packet records, the 108 new inventory rows, 52 sources,
+114 Roman coverage links and all six earlier corrections, with no blocker.
+Original books, rights, textual collation and stage admission still require
+separate checks; the Roman lane and full project remain in progress.
+
 Open from this wave:
-- **Malayalam books.** The maintainer decided that the Church-approved
-  operative Malayalam books of the Syro-Malankara and Syro-Malabar Churches are
-  received liturgical-language books
-  ([scope](guidance/time-machine.md#11-historical-and-language-scope-agreed-2026-10-16)).
-  Both reviewers had left them in origin review. Moving each one with evidenced
-  approval and use into candidates is the next step for those two rows.
+
 - **Rights rulings for retention.** ONB non-commercial images, arar.sci.am
   downloads, Gallica-derived files and GPURA scans without a stated licence
   each need a ruling.
