@@ -10,6 +10,7 @@
   const OrdinaryRenderer = window.TriptychOrdinaryRenderer;
   const DayCompare = window.TriptychDayCompare;
   const DayStudy = window.TriptychDayStudy;
+  const DayReadPayload = window.TriptychDayReadPayload;
 
   if (!T || !Model || !Contract || !Adapters || !Shell || !OrdinaryRenderer) {
     throw new Error('Day reader requires production browser, assembly, Ordinary renderer, state, adapter, and shell modules');
@@ -500,8 +501,7 @@
       (requestedMode === 'study' && parsed.recognized.ordinary === '1') || explicitOrdinary;
     const paths = [
       'structure/rubrics/' + missal + '.json',
-      'structure/calendar/' + missal + '/' + year + '.json',
-      'structure/propers/' + missal + '.json'
+      'structure/calendar/' + missal + '/' + year + '.json'
     ];
     if (needsOrdinary) paths.push('structure/ordinary/' + missal + '.json');
     const peer = requestedMode === 'compare' ? parsed.recognized['peer-missal'] : null;
@@ -514,11 +514,15 @@
       derivations.set(derivationKey, derived);
       window.dayReaderDebug.derivations += 1;
     }
+    const structure = DayReadPayload ? await DayReadPayload.loadStructure({
+      load: load, index: manifests.propersIndex, missal: missal,
+      parsed: parsed, derived: derived, mode: requestedMode, needsOrdinary: needsOrdinary
+    }) : await load('structure/propers/' + missal + '.json');
     const structures = {};
-    structures[missal] = rows[2];
-    if (peer) structures[peer] = rows[needsOrdinary ? 4 : 3];
+    structures[missal] = structure;
+    if (peer) structures[peer] = rows[needsOrdinary ? 3 : 2];
     const ordinaries = {};
-    if (needsOrdinary && rows[3]) ordinaries[missal] = rows[3];
+    if (needsOrdinary && rows[2]) ordinaries[missal] = rows[2];
     const context = Adapters.validationContext({
       entrance: 'day',
       bibles: manifests.bibles,
@@ -532,9 +536,9 @@
     return {
       derived: derived,
       rubrics: rows[0],
-      structure: rows[2],
+      structure: structure,
       structures: structures,
-      ordinary: needsOrdinary ? rows[3] : null,
+      ordinary: needsOrdinary ? rows[2] : null,
       context: context
     };
   }

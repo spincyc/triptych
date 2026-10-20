@@ -20,6 +20,7 @@ const SOURCE_PROPERS = (process.env.TRIPTYCH_SOURCE_PROPERS ||
   'src/web/data/structure/propers').replace(/^\/+|\/+$/g, '');
 const CYCLE_UNTRANSLATED_DATA = DATA + '-cycle-untranslated';
 const NO_WITNESS_DATA = DATA + '-no-witness';
+const BAD_SPLIT_DATA = DATA + '-bad-split';
 const captureAt = process.argv.indexOf('--capture-dir');
 const captureDir = captureAt >= 0 ? resolve(process.argv[captureAt + 1]) : null;
 const chromeBinary = process.env.TRIPTYCH_CHROME || '/usr/bin/google-chrome-stable';
@@ -149,6 +150,10 @@ function server() {
       const corrupt = relative.startsWith(DATA.slice(1) + '-failure/');
       if (corrupt) {
         relative = relative.replace(DATA.slice(1) + '-failure/', DATA.slice(1) + '/');
+        if (relative.endsWith('/structure/propers/catalog/roman-1962.json')) {
+          response.writeHead(200, { 'content-type': 'application/json', 'cache-control': 'no-store' });
+          response.end('{"schema":"invalid"}'); return;
+        }
         if (relative.endsWith('/structure/propers/roman-1962.json')) {
           response.writeHead(200, { 'content-type': 'application/json', 'cache-control': 'no-store' });
           response.end('{'); return;
@@ -169,6 +174,8 @@ function server() {
           ? relative.replace('/data-no-witness/', '/data/')
           : relative.replace('/browse-no-witness/', '/browse/');
       }
+      const badSplit = relative.startsWith(BAD_SPLIT_DATA.slice(1) + '/');
+      if (badSplit) relative = relative.replace(BAD_SPLIT_DATA.slice(1) + '/', DATA.slice(1) + '/');
       if (SOURCE_ONLY && /^src\/web\/data\/[^/]+\/chapters\//.test(relative)) {
         relative = relative.replace(/^src\/web\/data\//, 'src/sources/bibles/');
       }
@@ -183,6 +190,16 @@ function server() {
       }
       if (noWitness && relative.endsWith('/structure/propers/roman-1962.json')) {
         body = Buffer.from(JSON.stringify(withoutWitness(body.toString('utf8'))));
+      }
+      if (noWitness && relative.endsWith('/structure/propers/index.json')) {
+        const index = JSON.parse(body);
+        delete index.missals.find(row => row.id === 'roman-1962').read_payload;
+        body = Buffer.from(JSON.stringify(index));
+      }
+      if (badSplit && /\/structure\/propers\/mass\/roman-1962\/[^/]+\.json$/.test(relative)) {
+        const envelope = JSON.parse(body);
+        envelope.generation = '0'.repeat(64);
+        body = Buffer.from(JSON.stringify(envelope));
       }
       response.writeHead(200, {
         'content-type': mime(file), 'cache-control': 'no-store',
@@ -747,6 +764,10 @@ async function assertions(cdp, base) {
 
   await check('valid deep link uses the shared calm shell and reports typed material coverage', async () => {
     const value = await snapshot(cdp);
+    const splitLoads = await evaluate(cdp, 'propersReaderDebug.loads');
+    assert.equal(splitLoads['structure/propers/catalog/roman-1962.json'], 1);
+    assert.equal(splitLoads['structure/propers/mass/roman-1962/advent-1.json'], 1);
+    assert.equal(splitLoads['structure/propers/roman-1962.json'] || 0, 0);
     assert.equal(value.title, 'First Sunday of Advent', JSON.stringify(value));
     assert.equal(value.outcome, 'ready');
     // Held bodies do not establish target fidelity or exact Scripture wording.
@@ -1222,6 +1243,64 @@ async function assertions(cdp, base) {
     assert.deepEqual(await evaluate(cdp, 'propersReaderDebug.semantic'), candidateProjection);
   });
   if (process.env.TRIPTYCH_P0_ONLY === '1') return;
+
+  await check('C6 resolved 1962 Read uses one Mass payload with form and witness fidelity', async () => {
+    for (const [route, mass, form] of [
+      [STATES.romanChristmasNight, 'nativitate-domini-octave', 'night'],
+      [STATES.englishWitness, 'commemoratione-omnium-fidelium-defunctorum', 'first']
+    ]) {
+      await candidate(cdp, base, route);
+      const value = await evaluate(cdp, `({ outcome: propersReaderDebug.outcome,
+        state: propersReaderDebug.state,
+        semantic: propersReaderDebug.semantic,
+        loads: propersReaderDebug.loads,
+        dom: [...document.querySelectorAll('#reader-document [data-semantic-event-id]')]
+          .map(row => row.dataset.semanticEventId) })`);
+      assert.equal(value.outcome, 'ready');
+      assert.equal(value.semantic.resolved.formulary, mass);
+      assert.equal(value.semantic.resolved.form, form);
+      assert.equal(value.loads['structure/propers/catalog/roman-1962.json'], 1);
+      assert.equal(value.loads[`structure/propers/mass/roman-1962/${mass}.json`], 1);
+      assert.equal(value.loads['structure/propers/roman-1962.json'] || 0, 0);
+      assert.deepEqual(value.dom, value.semantic.events.map(row => row.id));
+      if (route === STATES.englishWitness) {
+        assert.equal(value.state.languages.translationWitness, MULTIPLE_TRANSLATION_WITNESS);
+      }
+    }
+  });
+
+  await check('C6 malformed split Mass falls back to the monolith with identical Read evidence', async () => {
+    await candidate(cdp, base, STATES.roman);
+    const baseline = await snapshot(cdp);
+    await candidate(cdp, base, STATES.roman, BAD_SPLIT_DATA);
+    const fallback = await snapshot(cdp);
+    const loads = await evaluate(cdp, 'propersReaderDebug.loads');
+    assert.equal(fallback.outcome, 'ready');
+    assert.deepEqual(fallback.semantic, baseline.semantic);
+    assert.deepEqual(fallback.texts, baseline.texts);
+    assert.equal(fallback.notice, baseline.notice);
+    assert.equal(loads['structure/propers/catalog/roman-1962.json'], 1);
+    assert.equal(loads['structure/propers/mass/roman-1962/advent-1.json'], 1);
+    assert.equal(loads['structure/propers/roman-1962.json'], 1);
+  });
+
+  await check('C6 Browse, apparatus modes, unresolved form, and cross-Mass Commons use the monolith', async () => {
+    const cases = [
+      [STATES.missing, 'browse'],
+      [STATES.roman + '&mode=missal', 'ready'],
+      [STATES.roman + '&mode=study', 'ready'],
+      [STATES.roman + '&mode=compare&compare=oration-language&peer-orations=en', 'ready'],
+      [STATES.romanChristmasForms, 'unresolved'],
+      [hash({ missal: 'roman-1962', type: 'sanctoral', mass: 'comm-s-telesphori-papae-martyris', bible: 'douay-rheims', orations: 'la' }), 'ready']
+    ];
+    for (const [route, outcome] of cases) {
+      await candidate(cdp, base, route);
+      const value = await evaluate(cdp, `({ outcome: propersReaderDebug.outcome,
+        loads: propersReaderDebug.loads })`);
+      assert.equal(value.outcome, outcome);
+      assert.equal(value.loads['structure/propers/roman-1962.json'], 1);
+    }
+  });
 
   await check('C5 Propers Compare independently resolves two languages on one date-free formulary', async () => {
     const route = STATES.roman + '&mode=compare&compare=oration-language&peer-orations=en';
@@ -1806,7 +1885,7 @@ async function assertions(cdp, base) {
     })()`);
     // Hold the new missal so the placeholder-only document is painted, then
     // let the taller identity block and its coverage notice arrive above it.
-    const gate = armGate((path) => path.endsWith('/structure/propers/roman-1962.json'));
+    const gate = armGate((path) => path.endsWith('/structure/propers/catalog/roman-1962.json'));
     await cdp.send('Runtime.evaluate', {
       expression: `location.hash=${JSON.stringify(STATES.englishWitness.slice(1))}` });
     await waitGate(gate);
@@ -1985,7 +2064,7 @@ async function assertions(cdp, base) {
   });
 
   await check('Details opened during load refreshes only from the committed Propers result', async () => {
-    const gate = armGate((path) => path.endsWith('/structure/propers/roman-1962.json'));
+    const gate = armGate((path) => path.endsWith('/structure/propers/catalog/roman-1962.json'));
     await cdp.send('Page.navigate', { url: candidateUrl(base, STATES.roman) });
     await waitGate(gate);
     await waitFor(cdp, `window.propersReaderDebug && propersReaderDebug.outcome === 'loading'`,
@@ -2282,7 +2361,7 @@ async function assertions(cdp, base) {
 
   await check('superseded slow valid cannot overwrite fast valid or fast invalid', async () => {
     for (const [next, expected] of [[STATES.fast, 'visitation-blessed-virgin-mary'], [STATES.invalid, null]]) {
-      const gate = armGate((path) => path.endsWith('/structure/propers/roman-1962.json'));
+      const gate = armGate((path) => path.endsWith('/structure/propers/catalog/roman-1962.json'));
       const target = `${base}${CANDIDATE}?data=${DATA}&race=${Math.random()}${STATES.roman}`;
       await cdp.send('Page.navigate', { url: target }); await waitGate(gate);
       await evaluate(cdp, `location.hash=${JSON.stringify(next.slice(1))}`);
@@ -2304,7 +2383,7 @@ async function assertions(cdp, base) {
   });
 
   await check('Back and Forward cannot revive an older pending render', async () => {
-    const gate = armGate((path) => path.endsWith('/structure/propers/roman-1962.json'));
+    const gate = armGate((path) => path.endsWith('/structure/propers/catalog/roman-1962.json'));
     const target = `${base}${CANDIDATE}?data=${DATA}&history-race=${Math.random()}${STATES.roman}`;
     await cdp.send('Page.navigate', { url: target }); await waitGate(gate);
     await evaluate(cdp, `location.hash=${JSON.stringify(STATES.fast.slice(1))}`);

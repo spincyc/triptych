@@ -10,6 +10,7 @@
   const SearchController = window.TriptychProperSearchController;
   const Compare = window.TriptychPropersCompare;
   const Study = window.TriptychPropersStudy;
+  const ReadPayload = window.TriptychPropersReadPayload;
 
   if (!T || !Contract || !Adapters || !Shell || !OrdinaryRenderer) {
     throw new Error('Propers reader requires production browser, state, adapter, shell, and Ordinary renderer modules');
@@ -156,6 +157,7 @@
       ? declared : runtime.missals[0].id;
     runtime.manifests = {
       bibles: { bibles: runtime.bibles },
+      properIndexRaw: loaded[1],
       properIndex: { default: landing, missals: runtime.missals.map(function (row) {
         return { id: row.id, edition: row.edition, edition_short: row.label };
       }) },
@@ -356,7 +358,9 @@
 
     let structure;
     try {
-      structure = await load(structurePath(missal));
+      structure = ReadPayload ? await ReadPayload.load({ parsed: parsed, calendar: missal,
+        index: manifests.properIndexRaw, load: load, monolith: structurePath(missal) })
+        : await load(structurePath(missal));
     } catch (error) {
       return { ok: false, errors: [{
         code: 'candidate-load', path: 'missal', message: String(error.message || error)

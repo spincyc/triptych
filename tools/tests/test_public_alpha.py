@@ -120,6 +120,67 @@ class PublicAlphaTest(unittest.TestCase):
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(data)
 
+    def make_propers_read_fixture(self, *, rights: str = "public-domain") -> dict:
+        """A tiny source with two Masses binds every Read projection by hash."""
+        prefix = "src/web/data/structure/propers/"
+        masses = [
+            {
+                "key": key, "name": name, "kind": "temporal", "season": "easter",
+                "date": None, "coverage": {"available": 1},
+                "common_from": None, "common_sets": [], "registry": [],
+                "takes_from": None, "text_status": "available",
+                "forms": [{"id": "mass", "name": "Mass", "ordinal": 1}],
+                "propers": [{"name": "Introit", "text": name, "rights": rights}],
+            }
+            for key, name in (("pentecost-sunday", "Pentecost"),
+                              ("trinity-sunday", "Trinity"))
+        ]
+        structure = {
+            "schema": "triptych-propers-structure/v1", "calendar": "roman-1962",
+            "edition": "1962 Missal", "edition_short": "1962",
+            "numbering": {}, "translations": [], "languages": [],
+            "coverage": {}, "masses": masses,
+        }
+        raw = (json.dumps(structure, sort_keys=True) + "\n").encode()
+        self.write(prefix + "roman-1962.json", raw)
+        generation = digest(raw)
+        index = {
+            "default": "roman-1962",
+            "missals": [{
+                "id": "roman-1962", "edition": "1962 Missal",
+                "edition_short": "1962",
+                "read_payload": {
+                    "catalog": "structure/propers/catalog/roman-1962.json",
+                    "mass_prefix": "structure/propers/mass/roman-1962/",
+                },
+            }],
+        }
+        self.write(prefix + "index.json", (json.dumps(index) + "\n").encode())
+        catalog = {
+            "schema": "triptych-propers-read-catalog/v1",
+            "calendar": "roman-1962", "generation": generation,
+            "structure": {key: value for key, value in structure.items()
+                          if key != "masses"},
+            "masses": [{
+                field: mass[field] for field in
+                ("key", "name", "kind", "season", "date", "coverage", "forms")
+            } for mass in masses],
+        }
+        self.write(prefix + "catalog/roman-1962.json",
+                   (json.dumps(catalog) + "\n").encode())
+        for mass in masses:
+            envelope = {
+                "schema": "triptych-propers-read-mass/v1",
+                "calendar": "roman-1962", "generation": generation,
+                "mass": mass,
+            }
+            self.write(prefix + f"mass/roman-1962/{mass['key']}.json",
+                       (json.dumps(envelope) + "\n").encode())
+        return {"index": index, "catalog": catalog, "structure": structure}
+
+    def write_json(self, relative: str, payload: object) -> None:
+        self.write(relative, (json.dumps(payload) + "\n").encode())
+
     def test_page_classes_are_semantic_and_stable(self) -> None:
         self.assertEqual(
             self.tool.page_classes("README.md", "index.html"),
@@ -1865,6 +1926,100 @@ class PublicAlphaTest(unittest.TestCase):
             any(catena_projection in error and "does not match" in error for error in errors),
             errors,
         )
+
+    def test_1962_read_split_is_copied_only_when_exact_and_public_safe(self) -> None:
+        self.make_propers_read_fixture()
+        self.write_json("src/web/data/bibles.json", {
+            "bibles": [{"id": "offered", "numbering": "vulgate"}],
+        })
+        self.write("src/sources/bibles/offered/chapters/Ps/1.json", b"{}\n")
+        self.write("src/web/browser/shared/browser-core.js", b"// fixture\n")
+        for entrance in self.tool.WEB_BROWSER_ENTRANCES:
+            self.write(f"src/web/browser/{entrance}/index.html", b"<main>fixture</main>\n")
+
+        copied = self.tool.web_data_files()
+        for relative in (
+            "structure/propers/catalog/roman-1962.json",
+            "structure/propers/mass/roman-1962/pentecost-sunday.json",
+            "structure/propers/mass/roman-1962/trinity-sunday.json",
+        ):
+            self.assertIn((self.tool.SITE_DATA_ROOT / relative).as_posix(), copied)
+
+        envelope_path = "src/web/data/structure/propers/mass/roman-1962/pentecost-sunday.json"
+        envelope = json.loads((self.root / envelope_path).read_text())
+        envelope["mass"]["propers"][0]["rights"] = "permission"
+        self.write_json(envelope_path, envelope)
+        with self.assertRaisesRegex(self.tool.ReleaseError, "permission-scoped rights"):
+            self.tool.web_data_files()
+
+        self.make_propers_read_fixture()
+        envelope = json.loads((self.root / envelope_path).read_text())
+        envelope["mass"]["propers"][0]["text"] = self.quarantine_marker
+        self.write_json(envelope_path, envelope)
+        with self.assertRaisesRegex(self.tool.ReleaseError, "quarantined English body"):
+            self.tool.web_data_files()
+
+    def test_1962_read_split_rejects_unsafe_paths_drift_and_orphans(self) -> None:
+        prefix = "src/web/data/structure/propers/"
+        data_root = self.root / "src/web/data"
+        cases = (
+            ("traversal", "index.json", lambda value: value["missals"][0]["read_payload"].update(
+                {"mass_prefix": "../private/"}), "paths must name"),
+            ("unsafe-index-field", "index.json", lambda value: value["missals"][0].update(
+                {"private_source": "secret"}), "unexpected fields"),
+            ("catalog-schema", "catalog/roman-1962.json", lambda value: value.update(
+                {"schema": "private-catalog/v1"}), "catalog schema"),
+            ("catalog-extra", "catalog/roman-1962.json", lambda value: value.update(
+                {"source_rights_note": "secret"}), "catalog envelope"),
+            ("descriptor-text", "catalog/roman-1962.json", lambda value: value["masses"][0].update(
+                {"body": "unbound text"}), "catalog descriptor"),
+            ("descriptor-order", "catalog/roman-1962.json", lambda value: value["masses"].reverse(),
+             "catalog descriptor"),
+            ("wrong-generation", "mass/roman-1962/pentecost-sunday.json",
+             lambda value: value.update({"generation": "0" * 64}), "envelope differs"),
+            ("mass-extra", "mass/roman-1962/pentecost-sunday.json",
+             lambda value: value.update({"source_private": "secret"}), "envelope has unexpected"),
+            ("mass-drift", "mass/roman-1962/pentecost-sunday.json",
+             lambda value: value["mass"].update({"name": "Changed"}), "envelope differs"),
+        )
+        for label, relative, change, expected in cases:
+            with self.subTest(label=label):
+                self.make_propers_read_fixture()
+                path = prefix + relative
+                payload = json.loads((self.root / path).read_text())
+                change(payload)
+                self.write_json(path, payload)
+                with self.assertRaisesRegex(self.tool.ReleaseError, expected):
+                    self.tool.validate_propers_read_payload_sources(data_root)
+
+        self.make_propers_read_fixture()
+        (self.root / (prefix + "mass/roman-1962/trinity-sunday.json")).unlink()
+        with self.assertRaisesRegex(self.tool.ReleaseError, "missing or unsafe file"):
+            self.tool.validate_propers_read_payload_sources(data_root)
+
+        self.make_propers_read_fixture()
+        self.write(prefix + "mass/roman-1962/private-extra.json", b"{}\n")
+        with self.assertRaisesRegex(self.tool.ReleaseError, "orphaned"):
+            self.tool.validate_propers_read_payload_sources(data_root)
+
+        self.make_propers_read_fixture()
+        self.write(prefix + "catalog/other-calendar.json", b"{}\n")
+        with self.assertRaisesRegex(self.tool.ReleaseError, "orphaned"):
+            self.tool.validate_propers_read_payload_sources(data_root)
+
+        self.make_propers_read_fixture()
+        mass_path = self.root / (prefix + "mass/roman-1962/pentecost-sunday.json")
+        mass_path.unlink()
+        mass_path.symlink_to(self.root / (prefix + "roman-1962.json"))
+        with self.assertRaisesRegex(self.tool.ReleaseError, "symlink in split source"):
+            self.tool.validate_propers_read_payload_sources(data_root)
+
+    def test_1962_read_split_requires_index_binding(self) -> None:
+        fixture = self.make_propers_read_fixture()
+        del fixture["index"]["missals"][0]["read_payload"]
+        self.write_json("src/web/data/structure/propers/index.json", fixture["index"])
+        with self.assertRaisesRegex(self.tool.ReleaseError, "orphan split files"):
+            self.tool.validate_propers_read_payload_sources(self.root / "src/web/data")
 
     def test_verifier_rejects_tampered_copied_browser_asset_with_fresh_checksums(
         self,
