@@ -195,6 +195,7 @@ try {
   const located = await visit(cdp, base, DAY, studyState + '&location=' + encodeURIComponent(first));
   assert.equal(located.outcome, 'ready');
   assert.equal(located.state.semanticLocation.eventId, first);
+  await waitFor(cdp, 'window.scrollY > 0', 'Study semantic location scroll');
   assert.ok(await evaluate(cdp, 'window.scrollY > 0'));
   checks += 1;
 

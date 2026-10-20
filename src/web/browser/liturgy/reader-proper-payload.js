@@ -44,6 +44,49 @@
     };
   }
 
+  function warm(load, path) {
+    try {
+      const pending = load(path);
+      // A speculative failure is handled by the ordinary validated load path.
+      pending.catch(function () {});
+      return pending;
+    } catch (_error) { return null; }
+  }
+
+  function warmDay(input) {
+    const parsed = input.parsed;
+    const present = parsed && parsed.present || [];
+    const rows = input.index && input.index.missals;
+    const row = (Array.isArray(rows) ? rows : []).find(function (one) {
+      return one.id === 'roman-1962';
+    });
+    if (input.missal !== 'roman-1962' || input.mode !== 'read' ||
+        input.needsOrdinary || !row || !row.read_payload ||
+        row.read_payload.catalog !== 'structure/propers/catalog/roman-1962.json' ||
+        !parsed || !parsed.recognized || (parsed.duplicates || []).length ||
+        parsed.recognized.why === '1' ||
+        ['mass', 'form', 'territory', 'compare', 'peer-missal'].some(function (key) {
+          return present.includes(key);
+        })) return null;
+    return warm(input.load, row.read_payload.catalog);
+  }
+
+  function warmPropers(load, rawHash) {
+    const params = new URLSearchParams(String(rawHash || '').replace(/^#/, ''));
+    const keys = Array.from(params.keys());
+    const allowed = new Set([
+      'missal', 'type', 'mass', 'form', 'bible', 'orations', 'mode',
+      'cycle', 'alternative', 'translation-witness', 'location'
+    ]);
+    if (params.get('missal') !== 'roman-1962' ||
+        !['seasonal', 'christological', 'marian', 'sanctoral'].includes(params.get('type')) ||
+        !ID.test(params.get('mass') || '') ||
+        (params.has('mode') && params.get('mode') !== 'read') ||
+        keys.some(function (key) { return !allowed.has(key); }) ||
+        new Set(keys).size !== keys.length) return null;
+    return warm(load, 'structure/propers/catalog/roman-1962.json');
+  }
+
   async function load(input) {
     if (!object(input) || typeof input.load !== 'function' ||
         !ID.test(input.calendar || '') || !ID.test(input.massKey || '')) {
@@ -58,7 +101,9 @@
         paths.mass_prefix !== 'structure/propers/mass/' + calendar + '/') {
       fail('the index row has no matching bounded payload paths');
     }
-    const catalog = await input.load(paths.catalog);
+    const [catalog, envelope] = await Promise.all([
+      input.load(paths.catalog), input.load(paths.mass_prefix + key + '.json')
+    ]);
     if (!object(catalog) || catalog.schema !== CATALOG_SCHEMA ||
         catalog.calendar !== calendar || !SHA.test(catalog.generation || '') ||
         !object(catalog.structure) || catalog.structure.calendar !== calendar ||
@@ -83,7 +128,6 @@
       seen.add(descriptor.key);
     });
     if (!seen.has(key)) fail('requested Mass is absent from the catalog');
-    const envelope = await input.load(paths.mass_prefix + key + '.json');
     if (!object(envelope) || envelope.schema !== MASS_SCHEMA ||
         envelope.calendar !== calendar || envelope.generation !== catalog.generation ||
         !object(envelope.mass) || envelope.mass.key !== key ||
@@ -98,5 +142,6 @@
     });
   }
 
-  return Object.freeze({ load: load, CATALOG_SCHEMA: CATALOG_SCHEMA, MASS_SCHEMA: MASS_SCHEMA });
+  return Object.freeze({ load: load, warmDay: warmDay, warmPropers: warmPropers,
+    CATALOG_SCHEMA: CATALOG_SCHEMA, MASS_SCHEMA: MASS_SCHEMA });
 }));

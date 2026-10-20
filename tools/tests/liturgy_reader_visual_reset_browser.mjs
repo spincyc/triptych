@@ -912,7 +912,7 @@ async function runAssertions(cdp, base) {
     }
   });
 
-  await check('Day Study Mode modal wraps Tab from Compare to Close and restores Mode on Escape', async () => {
+  await check('Day Study Mode modal wraps its selected radio and restores Mode on Escape', async () => {
     await viewport(cdp, 393, 852);
     await productionFresh(cdp, productionUrl(base, 'day', STATES.dayStudy), 'day');
     await evaluate(cdp, `document.querySelector('[data-reader-action="mode"]').focus()`);
@@ -930,18 +930,16 @@ async function runAssertions(cdp, base) {
     })()`);
     let value = await focused();
     assert.equal(value.close, true, JSON.stringify(value));
-    for (const mode of ['read', 'missal', 'study', 'compare']) {
-      for (const type of ['keyDown', 'keyUp']) {
-        await cdp.send('Input.dispatchKeyEvent', {
-          type, key: 'Tab', code: 'Tab', windowsVirtualKeyCode: 9, nativeVirtualKeyCode: 9
-        });
-      }
-      value = await focused();
-      assert.equal(value.mode, mode, JSON.stringify(value));
-      assert.equal(value.inside, true);
-      assert.equal(value.visible, true);
-      assert.equal(value.outline, 'solid');
+    for (const type of ['keyDown', 'keyUp']) {
+      await cdp.send('Input.dispatchKeyEvent', {
+        type, key: 'Tab', code: 'Tab', windowsVirtualKeyCode: 9, nativeVirtualKeyCode: 9
+      });
     }
+    value = await focused();
+    assert.equal(value.mode, 'study', JSON.stringify(value));
+    assert.equal(value.inside, true);
+    assert.equal(value.visible, true);
+    assert.equal(value.outline, 'solid');
     for (const type of ['keyDown', 'keyUp']) {
       await cdp.send('Input.dispatchKeyEvent', {
         type, key: 'Tab', code: 'Tab', windowsVirtualKeyCode: 9, nativeVirtualKeyCode: 9
@@ -950,6 +948,15 @@ async function runAssertions(cdp, base) {
     value = await focused();
     assert.equal(value.close, true, JSON.stringify(value));
     assert.equal(value.visible, true);
+    for (const type of ['keyDown', 'keyUp']) {
+      await cdp.send('Input.dispatchKeyEvent', {
+        type, key: 'Tab', code: 'Tab', modifiers: 8,
+        windowsVirtualKeyCode: 9, nativeVirtualKeyCode: 9
+      });
+    }
+    value = await focused();
+    assert.equal(value.mode, 'study', JSON.stringify(value));
+    assert.equal(value.inside, true);
     await escape(cdp);
     const restored = await evaluate(cdp, `({
       open: document.querySelector('#mode-surface').open,
