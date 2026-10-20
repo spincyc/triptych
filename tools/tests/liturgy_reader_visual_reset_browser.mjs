@@ -10,6 +10,7 @@ import { mkdtemp, mkdir, readFile, stat, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { extname, join, resolve, sep } from 'node:path';
 import process from 'node:process';
+import { fileURLToPath } from 'node:url';
 
 const ROOT = resolve(process.env.TRIPTYCH_REVIEW_ROOT || resolve(import.meta.dirname, '../..'));
 const PREVIEW = '/build/public-alpha/preview/liturgy/';
@@ -1273,7 +1274,7 @@ async function runAssertions(cdp, base) {
   });
 }
 
-async function captureOne(cdp, base, directory, row) {
+async function captureOne(cdp, base, directory, row, options = {}) {
   const { file, entrance, design, state, width, height, action = null, deep = false,
     enlargement = false, media = null, keyboard = false, reasoning = false,
     surfaceEnd = false, scrollSelector = null, semanticLocation = null,
@@ -1288,7 +1289,9 @@ async function captureOne(cdp, base, directory, row) {
   await viewport(cdp, width, height);
   if (media) await cdp.send('Emulation.setEmulatedMedia', { media: 'screen', features: media });
   const target = variant === 'production'
-    ? productionUrl(base, entrance, STATES[state])
+    ? options.canonicalArtifact
+      ? `${base}/liturgy/${entrance === 'day' ? 'day.html' : 'index.html'}${STATES[state]}`
+      : productionUrl(base, entrance, STATES[state])
     : prototypeUrl(base, entrance, design, STATES[state]);
   if (variant === 'production') await productionFresh(cdp, target, entrance);
   else await fresh(cdp, target, entrance);
@@ -1329,6 +1332,7 @@ async function captureOne(cdp, base, directory, row) {
       await stableFrames(cdp);
     }
   }
+  if (options.observe) await options.observe('positioned', await metrics(cdp));
   const openedAction = contentsMap ? 'contents' : action;
   if (openedAction) {
     await click(cdp, `[data-reader-action="${openedAction}"]`);
@@ -1372,7 +1376,14 @@ async function captureOne(cdp, base, directory, row) {
   await stableFrames(cdp);
   await shot(cdp, join(directory, file));
   const measured = await metrics(cdp);
-  if (openedAction || keyboard) await escape(cdp);
+  if (options.observe) await options.observe('captured', measured);
+  if (openedAction || keyboard) {
+    await escape(cdp);
+    if (options.observe) {
+      await stableFrames(cdp);
+      await options.observe('dismissed', await metrics(cdp));
+    }
+  }
   if (enlargement) await evaluate(cdp, `document.documentElement.style.fontSize = ''`);
   if (media) await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
   return { ...row, variant, target, measured,
@@ -1381,8 +1392,7 @@ async function captureOne(cdp, base, directory, row) {
     httpErrors: httpProblems.slice(problemStart.http).length };
 }
 
-async function captureRitualFlowMatrix(cdp, base, directory) {
-  await mkdir(directory, { recursive: true });
+export function ritualFlowRows() {
   const rows = [];
   const add = (file, entrance, state, width, height, extras = {}) => rows.push({
     file, entrance, design: 'instrument', state, width, height,
@@ -1460,11 +1470,18 @@ async function captureRitualFlowMatrix(cdp, base, directory) {
       { semanticLocation, expectedCurrent, contentsMap: true, enlargement });
   }
 
+  return rows;
+}
+
+async function captureRitualFlowMatrix(cdp, base, directory) {
+  await mkdir(directory, { recursive: true });
   const evidence = [];
-  for (const row of rows) evidence.push(await captureOne(cdp, base, directory, row));
+  for (const row of ritualFlowRows()) evidence.push(await captureOne(cdp, base, directory, row));
   await writeFile(join(directory, 'capture-metadata.json'), JSON.stringify(evidence, null, 2) + '\n');
   return evidence;
 }
+
+export { captureOne as captureRitualFlowCase, metrics as ritualFlowMetrics, STATES as ritualFlowStates };
 
 async function captureMatrix(cdp, base, directory) {
   await mkdir(directory, { recursive: true });
@@ -1680,4 +1697,4 @@ async function main() {
   }
 }
 
-await main();
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) await main();

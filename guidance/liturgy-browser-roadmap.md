@@ -1111,6 +1111,17 @@ Fresh final-artifact execution and every-image review remain pending, along
 with representative assistive technology, manual touch and independent WCAG
 and product disposition.
 
+The final ritual-flow evidence audit preserves the planned 88 images and adds
+44 existing named representatives absent from that plan: sustained Roman and
+postconciliar reading, Why and territorial views, typed partial/Browse states,
+and current Contents geometry through deep, narrow and enlarged-text states.
+Historical captures have different consumed inputs. The registered visual test
+helper exposes the same source-owned fixtures and capture/measurement functions
+for a selective artifact-bound adapter, with its default CLI behavior retained.
+Eleven offline adapter checks pass; no final images or acceptance follow from
+this preparation. Current-row centering or proved boundary clamping, focus,
+inertness, source parity and every-image inspection remain required.
+
 ### Verification and completion gates
 
 The integrated 2026-10-20 source checkpoint passes 80 focused source tests,
