@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-antonii-offertory-28fd4214"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych created this bounded transcription and collation record and offers its editorial contributions under CC BY 4.0. The entire antiphon's spoken words stand in the public-domain 1922 Tours Mame Common of Abbots, appointed for St Anthony on 17 January. The 1962 target contributes no new word; no page image, layout, heading, citation or marginal number is reproduced."
+rights_jurisdiction = "United States"
+provenance = "Created by Triptych on 2026-10-20 after visually reading the hash-checked registered Mame 1922 PDF at printed pp. 506 and 32* / artifact pp. 620 and 910, and the 1962 CMAA facsimile at printed p. 446 no. 1946 / artifact p. 527."
+retrieved = "2026-10-20"
+sha256 = "28fd421413e4c729c7d4e071e5d5135289a2edd8346b6bf7c92f61ec644c613a"
+byte_size = 143
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/s-antonii-offertory-28fd4214/s-antonii-offertory-28fd4214.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Select the complete Offertory from the 1922 Common appointed on Jan 17; join line wraps, remove stress accents, normalize ejus to the 1962 eius, and apply target punctuation. The Missals print animae and only the latter portion of Psalm 20:4; no word is supplied from Bible reconstruction."
+indexable = true
+encoding = "utf-8"
+notes = "The three physical lines reproduce the Roman-1962 calendar body exactly. The antecedent and target remain separate historical passage records."

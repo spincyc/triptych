@@ -17862,6 +17862,32 @@ publication_evidence = "The wording is preexisting material of the 1962 typical 
 [[entries]]
 mass = "s-antonii-abbatis"
 form = ""
+proper = "Offertory"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "28fd421413e4c729c7d4e071e5d5135289a2edd8346b6bf7c92f61ec644c613a"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-antonii-offertory"
+source_date = "2026-10-20 project editorial projection; antecedent Mame Tours 1922"
+locator = "editorial-projection artifact physical lines 1-3; antecedent Mame Tours 1922 Common of Abbots printed p. 32*, artifact PDF p. 910, appointed by Jan 17 referral at p. 506, artifact p. 620"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.s-antonii-abbatis-offertory"
+verification_locator = "printed p. 446, no. 1946; artifact PDF p. 527"
+transformations = ["join printed line wraps", "remove stress accents", "normalise Mame ejus to the target eius", "apply the target printing's punctuation", "omit the printed heading, citation and marginal number"]
+provenance_evidence = "The project passage reproduces the calendar body hash exactly. Hash-checked page images of the Mame 1922 Jan 17 referral, its Common of Abbots Offertory, and the controlling 1962 target were read visually. Both antiphons have all the same spoken words, including animae and the omission of Psalm 20:4's first half; Mame's ejus and accents were normalized to target orthography. A complete Bible reconstruction is not this Missal antiphon."
+provenance_authority = "Triptych editorial projection verified against the 1962 page and the Mame 1922 appointed Common"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-antonii-offertory-28fd4214", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "Mame Tours 1922 printed pp. 506 and 32*, registered artifact PDF pp. 620 and 910; artifact rights_status public-domain"
+publication_evidence = "The Offertory wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which grants no exclusive right in material that edition did not contribute. The complete wording is appointed and printed in the independently registered public-domain Mame 1922. The repository-wide position is settled at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml; this row claims no publication right from the 1962 facsimile."
+
+[[entries]]
+mass = "s-antonii-abbatis"
+form = ""
 proper = "Collect"
 course = ""
 cycle = ""
@@ -24020,6 +24046,32 @@ surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
 publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-4-orations-219ac7b1", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
 publication_locator = "Tours Mame 1922, Mame Tours 1922, printed p. 725; artifact PDF p. 839; artifact rights_status public-domain"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
+
+[[entries]]
+mass = "dedicatione-s-michaelis-archangeli"
+form = ""
+proper = "Introit"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "dfe07c307ea3c845795f8808ad7178cd221e95e847b0e30fb89d30abd880c070"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-michaelis-introit"
+source_date = "2026-10-20 project editorial projection; antecedent Mame Tours 1922"
+locator = "editorial-projection artifact physical lines 1-4; Mame Tours 1922 May 8 Introit printed p. 592, artifact PDF p. 706, and Sep 29 referral printed p. 726, artifact p. 840"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.dedicatione-s-michaelis-introit"
+verification_locator = "printed p. 670, no. 3726; artifact PDF p. 751"
+transformations = ["apply Mame's September 29 appointment to its May 8 Introit", "omit the May Easter alleluias for the September target", "join printed line wraps", "remove stress accents", "normalise Mame ejus to the target eius", "apply the target printing's punctuation", "omit the printed heading, citations and marginal number"]
+provenance_evidence = "The project passage reproduces the calendar body hash exactly. Hash-checked page images of Mame 1922 May 8, its September 29 referral, and the controlling 1962 target were read visually. After omitting the Easter alleluias, every spoken word of the 1962 antiphon, Psalm 102:1 verse and Gloria Patri cue is present in Mame, including facitis verbum ejus/eius. The Clementine Bible instead has facientes verbum illius and is not this Introit."
+provenance_authority = "Triptych editorial projection verified against the 1962 page and Mame 1922 body and seasonal appointment"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-michaelis-introit-dfe07c30", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "Mame Tours 1922 printed pp. 592 and 726, registered artifact PDF pp. 706 and 840; artifact rights_status public-domain"
+publication_evidence = "The Introit wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which grants no exclusive right in material that edition did not contribute. Every spoken word appears in the public-domain Mame 1922 Introit, and that edition's September appointment explains the Easter alleluia omission. The repository-wide position is settled at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml; this row claims no publication right from the 1962 facsimile."
 
 [[entries]]
 mass = "dedicatione-s-michaelis-archangeli"

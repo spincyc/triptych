@@ -66,12 +66,13 @@
 
   const DAY_KEYS = Object.freeze([
     'date', 'missal', 'bible', 'orations', 'why', 'ordinary',
-    'ordinary-lang', 'rubrics', 'mass', 'form', 'translation-witness', 'mode', 'location'
+    'ordinary-lang', 'rubrics', 'mass', 'form', 'translation-witness', 'mode', 'location',
+    'compare', 'peer-missal', 'territory'
   ]);
   const PROPERS_KEYS = Object.freeze([
     'missal', 'type', 'mass', 'bible', 'orations',
     'form', 'cycle', 'alternative', 'translation-witness', 'mode', 'location',
-    'ordinary-lang'
+    'ordinary-lang', 'compare', 'peer-orations'
   ]);
   const URL_INVENTORY = Object.freeze({
     day: Object.freeze({
@@ -862,6 +863,47 @@
           'Day Compare anchor must equal the reader state civil date'
         ));
       }
+      const sides = value.comparison.sides;
+      if (object(value.comparison.anchor) && Array.isArray(sides) && sides.length === 2 &&
+          value.comparison.dimension === 'recension' && value.entrance === 'day') {
+        const left = sides[0];
+        const right = sides[1];
+        const territory = value.calendar && value.calendar.territory &&
+          value.calendar.territory.id || 'universal';
+        if (!object(left) || !object(right) || !object(left.edition) ||
+            !object(left.calendar) || !object(right.edition) ||
+            left.edition.id !== (value.edition && value.edition.id) ||
+            left.calendar.id !== (value.calendar && value.calendar.id) ||
+            right.edition.id === left.edition.id ||
+            value.comparison.anchor.territorialContext !== territory) {
+          errors.push(issue(
+            'day-compare-primary-state', 'comparison.sides',
+            'Day Compare left identity and territorial anchor must match the reader state'
+          ));
+        }
+      }
+      if (object(value.comparison.anchor) && Array.isArray(sides) && sides.length === 2 &&
+          value.comparison.dimension === 'oration-language' &&
+          value.entrance === 'propers') {
+        const left = sides[0];
+        const right = sides[1];
+        if (!object(left) || !object(right) || !object(left.edition) ||
+            !object(right.edition) || !object(left.formulary) ||
+            !object(right.formulary) || !object(left.languages) ||
+            !object(right.languages) ||
+            left.edition.id !== (value.edition && value.edition.id) ||
+            right.edition.id !== left.edition.id ||
+            left.formulary.id !== (value.formulary && value.formulary.id) ||
+            right.formulary.id !== left.formulary.id ||
+            left.languages.orations !== (value.languages && value.languages.orations) ||
+            right.languages.orations === left.languages.orations ||
+            value.comparison.anchor.correspondingFormulary !== left.formulary.id) {
+          errors.push(issue(
+            'propers-compare-primary-state', 'comparison.sides',
+            'oration-language Compare must hold one date-independent formulary across distinct languages'
+          ));
+        }
+      }
     }
     if (value.requestedMode === 'compare' &&
         (!has(value, 'comparison') || value.comparison === null)) {
@@ -875,6 +917,13 @@
       errors.push(issue(
         'comparison-mode-state', 'requestedMode',
         'a comparison request requires Compare mode'
+      ));
+    }
+    if (value.requestedMode === 'compare' && object(value.options) &&
+        value.options.ordinary === true) {
+      errors.push(issue(
+        'compare-ordinary-unsupported', 'options.ordinary',
+        'this Proper comparison does not include the Ordinary'
       ));
     }
     if (object(value.options) && value.options.ordinary === true &&
@@ -1182,6 +1231,100 @@
       }
     }
 
+    // Compare peers are never taken from preferences or manifest order. A
+    // shared URL identifies the left side with the existing entrance keys and
+    // names the second side and comparison anchor with these additive keys.
+    const comparisonKeys = parsed.entrance === 'day'
+      ? ['compare', 'peer-missal', 'territory'] : ['compare', 'peer-orations'];
+    const compared = comparisonKeys.filter(function (key) {
+      return has(parsed.recognized, key);
+    });
+    if (state.requestedMode === 'compare' && (parsed.unknown || []).some(function (row) {
+      return row.key === (parsed.entrance === 'day' ? 'peer-orations' : 'peer-missal') ||
+        row.key === 'territory' && parsed.entrance === 'propers';
+    })) {
+      errors.push(issue(
+        'comparison-key-entrance', 'compare',
+        'a comparison key belongs to the other entrance', 'url'
+      ));
+    }
+    if (state.requestedMode !== 'compare' && compared.length) {
+      errors.push(issue(
+        'comparison-mode-state', compared[0],
+        'comparison URL keys require Compare mode', 'url'
+      ));
+    }
+    if (state.requestedMode === 'compare') {
+      comparisonKeys.forEach(function (key) {
+        if (!has(parsed.recognized, key) || !nonempty(parsed.recognized[key])) {
+          errors.push(issue(
+            'required-comparison-value', key,
+            'Compare requires an explicit ' + key + ' URL value', 'url'
+          ));
+        }
+      });
+      if (errors.length === 0 && parsed.entrance === 'day') {
+        const peer = parsed.recognized['peer-missal'];
+        const territory = parsed.recognized.territory;
+        if (parsed.recognized.compare !== 'recension') {
+          errors.push(issue(
+            'comparison-dimension', 'compare',
+            'Day Compare currently supports recension only', 'url'
+          ));
+        } else if (!knownId(context.missals, peer) || peer === missal) {
+          errors.push(issue(
+            'invalid-comparison-peer', 'peer-missal',
+            'the peer must be a distinct held edition', 'url'
+          ));
+        } else {
+          if (territory !== 'universal') {
+            state.calendar.territory = { id: territory };
+          }
+          state.comparison = {
+            dimension: 'recension',
+            anchor: { civilDate: state.civilDate, territorialContext: territory },
+            sides: [
+              { id: missal, edition: { id: missal }, calendar: { id: state.calendar.id } },
+              { id: peer, edition: { id: peer }, calendar: {
+                id: context.missals[peer].calendar || peer
+              } }
+            ]
+          };
+        }
+      } else if (errors.length === 0) {
+        const peer = parsed.recognized['peer-orations'];
+        if (parsed.recognized.compare !== 'oration-language') {
+          errors.push(issue(
+            'comparison-dimension', 'compare',
+            'Propers Compare currently supports oration language only', 'url'
+          ));
+        } else if (!valuesOf(missalContext.orationLanguages).includes(peer) ||
+                   peer === state.languages.orations) {
+          errors.push(issue(
+            'invalid-comparison-peer', 'peer-orations',
+            'the peer must be a distinct held oration language', 'url'
+          ));
+        } else if (!state.formulary || !state.formulary.id) {
+          errors.push(issue(
+            'comparison-formulary-required', 'mass',
+            'Propers Compare needs an exact formulary', 'url'
+          ));
+        } else {
+          const formulary = { id: state.formulary.id };
+          state.comparison = {
+            dimension: 'oration-language',
+            anchor: { correspondingFormulary: formulary.id },
+            sides: [
+              { id: state.languages.orations, edition: { id: missal },
+                formulary: formulary, languages: { orations: state.languages.orations } },
+              { id: peer, edition: { id: missal },
+                formulary: { id: formulary.id }, languages: { orations: peer } }
+            ]
+          };
+        }
+      }
+    }
+
     const validated = validateReaderState(state);
     errors.push.apply(errors, validated.errors);
     return { ok: errors.length === 0, state: state, legacy: legacy, errors: errors };
@@ -1201,6 +1344,11 @@
       pairs.push(['bible', state.bible.id]);
       pairs.push(['orations', state.languages.orations]);
       pairs.push(['mode', state.requestedMode || (state.options.ordinary ? 'missal' : 'read')]);
+      if (state.comparison) {
+        pairs.push(['compare', state.comparison.dimension]);
+        pairs.push(['peer-missal', state.comparison.sides[1].edition.id]);
+        pairs.push(['territory', state.comparison.anchor.territorialContext]);
+      }
       if (state.requestedMode && ['read', 'missal'].indexOf(state.requestedMode) < 0) {
         pairs.push(['ordinary', state.options.ordinary ? '1' : '0']);
       }
@@ -1226,6 +1374,10 @@
       pairs.push(['bible', state.bible.id]);
       pairs.push(['orations', state.languages.orations]);
       pairs.push(['mode', state.requestedMode || 'read']);
+      if (state.comparison) {
+        pairs.push(['compare', state.comparison.dimension]);
+        pairs.push(['peer-orations', state.comparison.sides[1].languages.orations]);
+      }
       if (state.languages.ordinary) pairs.push(['ordinary-lang', state.languages.ordinary]);
       if (state.semanticLocation) pairs.push(['location', state.semanticLocation.eventId]);
       if (state.form) pairs.push(['form', state.form]);

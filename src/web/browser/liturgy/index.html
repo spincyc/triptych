@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="liturgy.css">
 <link rel="stylesheet" href="reader-shell.css">
 <link rel="stylesheet" href="propers-reader.css">
+<link rel="stylesheet" href="reader-compare-view.css">
 <link rel="stylesheet" href="reader-instrument.css">
 </head>
 <body class="propers-reader-candidate">
@@ -75,6 +76,17 @@
       <button type="button" class="surface-close" data-reader-close aria-label="Close Browse and edition">×</button>
     </header>
     <div class="surface-body">
+      <form id="proper-search-form" class="proper-search-form surface-field" role="search">
+        <label for="proper-search-input">Find a formulary in this missal</label>
+        <div class="proper-search-controls">
+          <input id="proper-search-input" type="search" autocomplete="off"
+                 placeholder="Title, incipit, citation, fixed MM-DD, witness…">
+          <button class="surface-apply" type="submit">Search</button>
+        </div>
+      </form>
+      <p id="proper-search-status" class="surface-note" role="status" aria-live="polite" aria-atomic="true"></p>
+      <p id="proper-search-caveat" class="surface-note proper-search-caveat" hidden></p>
+      <div id="proper-search-results"></div>
       <form id="browse-form" class="surface-fields">
         <div class="surface-field">
           <label for="reader-missal">Missal</label>
@@ -137,10 +149,21 @@
       <button type="button" role="radio" aria-checked="false" aria-disabled="true" data-mode="study" disabled>
         <strong>Study</strong><span>Expanded notes and apparatus.</span>
       </button>
-      <button type="button" role="radio" aria-checked="false" aria-disabled="true" data-mode="compare" disabled>
-        <strong>Compare</strong><span>Parallel editions and recensions.</span>
+      <button type="button" role="radio" aria-checked="false" data-mode="compare"
+              aria-controls="compare-setup" aria-expanded="false">
+        <strong>Compare</strong><span>Parallel oration languages for one formulary.</span>
       </button>
     </div>
+    <form id="compare-setup" class="surface-body surface-fields" hidden>
+      <div class="surface-field">
+        <label for="reader-compare-orations">Other oration language</label>
+        <select id="reader-compare-orations" required>
+          <option value="">Choose another language</option>
+        </select>
+      </div>
+      <p id="compare-setup-note" class="surface-note" role="status"></p>
+      <button class="surface-apply" type="submit">Compare this formulary</button>
+    </form>
   </dialog>
 
   <dialog id="details-surface" class="reader-surface details-surface"
@@ -164,8 +187,13 @@
 <script src="day.js"></script>
 <script src="reader-state.js"></script>
 <script src="reader-state-adapters.js"></script>
+<script src="reader-comparison.js"></script>
+<script src="reader-compare-view.js"></script>
 <script src="reader-shell.js"></script>
 <script src="propers-events.js"></script>
+<script src="proper-search.js"></script>
+<script src="proper-search-controller.js"></script>
+<script src="propers-compare.js"></script>
 <script src="propers-reader.js"></script>
 </body>
 </html>

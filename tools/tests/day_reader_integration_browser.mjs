@@ -1700,7 +1700,8 @@ async function runAssertions(cdp, base) {
       assert.match(direct.metadata, metadata, label + ' direct metadata');
       assert.deepEqual(direct.modes, [
         { mode: 'read', checked: String(mode === 'read') },
-        { mode: 'missal', checked: String(mode === 'missal') }
+        { mode: 'missal', checked: String(mode === 'missal') },
+        { mode: 'compare', checked: 'false' }
       ]);
       assert.equal(direct.modeMetadata, mode === 'read' ? 'Read' : mode === 'missal' ? 'Missal' : 'Unavailable');
       assert.equal(direct.context, 'Day · ' + (mode === 'read' ? 'Read' : mode === 'missal' ? 'Missal' : 'Mode unavailable'));
@@ -1736,7 +1737,8 @@ async function runAssertions(cdp, base) {
       assert.equal(direct.modeMetadata, 'Unavailable');
       assert.deepEqual(direct.modes, [
         { mode: 'read', checked: 'false' },
-        { mode: 'missal', checked: 'false' }
+        { mode: 'missal', checked: 'false' },
+        { mode: 'compare', checked: 'false' }
       ]);
       assert.equal(direct.title, 'Selection unavailable');
       assert.equal(direct.date, '');
@@ -2868,7 +2870,7 @@ async function runAssertions(cdp, base) {
       `document.querySelector('[data-reader-locus]').textContent.trim()`), /Canon/i);
   });
 
-  await test('Read and Missal are selectable while Details stays lazy and human-facing', async () => {
+  await test('Read, Missal and Compare controls keep Details lazy and human-facing', async () => {
     await navigateCandidate(cdp, base);
     const buildsBefore = await evaluate(cdp, 'dayReaderDebug.detailsBuilds');
     assert.match(await evaluate(cdp, 'document.querySelector("[data-reader-details]").innerText'),
@@ -2882,7 +2884,7 @@ async function runAssertions(cdp, base) {
       { name: 'Read', disabled: false, checked: 'true' },
       { name: 'Missal', disabled: false, checked: 'false' },
       { name: 'Study', disabled: true, checked: 'false' },
-      { name: 'Compare', disabled: true, checked: 'false' }
+      { name: 'Compare', disabled: false, checked: 'false' }
     ]);
     await escape(cdp);
     await click(cdp, '[data-reader-action="details"]');
@@ -3490,6 +3492,93 @@ async function runAssertions(cdp, base) {
   });
 
   await c4Step2DialogueTurns(cdp, base);
+
+  await test('C4 dialogue glyphs keep readable red structure at 320px, 400-percent text and in print', async () => {
+    // This short, source-divided exchange carries both printed roles. The
+    // earlier C4 checks cover its accessible names and real clipboard copy;
+    // here the actual CSS boxes and generated glyphs must also survive reflow.
+    try {
+      for (const [name, width, height, textSize, media] of [
+        ['320px', 320, 852, '', 'screen'],
+        ['400-percent', 1280, 900, '400%', 'screen'],
+        ['print', 1024, 768, '', 'print']
+      ]) {
+        await viewport(cdp, width, height);
+        await navigateCandidate(cdp, base, STATES.romanMissal);
+        if (textSize) await evaluate(cdp,
+          `document.documentElement.style.fontSize = ${JSON.stringify(textSize)}`);
+        await cdp.send('Emulation.setEmulatedMedia', { media });
+        const measured = await evaluate(cdp, `(() => {
+          const event = document.querySelector(
+            '[data-semantic-event-id="ordinary-element/praeparatio/adjutorium-nostrum"]');
+          event.scrollIntoView({ behavior: 'instant', block: 'center' });
+          const eventBox = event.getBoundingClientRect();
+          const colorProbe = document.createElement('span');
+          colorProbe.style.color = 'var(--instrument-accent)';
+          event.appendChild(colorProbe);
+          const accent = getComputedStyle(colorProbe).color;
+          colorProbe.remove();
+          return {
+            accent,
+            overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+            eventBox: { top: eventBox.top, bottom: eventBox.bottom },
+            viewportHeight: innerHeight,
+            rows: [...event.querySelectorAll('.ordinary-turn[data-dialogue-role]')].map((row) => {
+              const cue = row.querySelector('.ordinary-turn-cue');
+              const mark = cue.querySelector('.cue-mark');
+              const words = row.querySelector('.ordinary-turn-text');
+              const cueBox = cue.getBoundingClientRect();
+              const wordsBox = words.getBoundingClientRect();
+              const rowBox = row.getBoundingClientRect();
+              const style = getComputedStyle(mark);
+              return {
+                role: row.dataset.dialogueRole,
+                markCount: row.querySelectorAll('.cue-mark').length,
+                glyph: getComputedStyle(mark, '::before').content.replace(/^"|"$/g, ''),
+                hidden: mark.getAttribute('aria-hidden'),
+                markText: mark.textContent,
+                color: style.color,
+                fontFamily: style.fontFamily,
+                fontSize: parseFloat(style.fontSize),
+                wordsSize: parseFloat(getComputedStyle(words).fontSize),
+                cueBox: { left: cueBox.left, right: cueBox.right, bottom: cueBox.bottom },
+                wordsBox: { left: wordsBox.left, right: wordsBox.right },
+                rowBox: { left: rowBox.left, right: rowBox.right, bottom: rowBox.bottom }
+              };
+            })
+          };
+        })()`);
+        assert.equal(measured.overflow <= 1, true, `${name} page overflow ${measured.overflow}px`);
+        assert.ok(measured.eventBox.bottom > 0 && measured.eventBox.top < measured.viewportHeight,
+          `${name} dialogue visible in viewport`);
+        assert.deepEqual(measured.rows.map((row) => row.role), ['versicle', 'response'],
+          `${name} source roles`);
+        measured.rows.forEach((row, index) => {
+          const where = `${name} turn ${index}`;
+          assert.equal(row.markCount, 1, where + ' one visible mark');
+          assert.equal(row.glyph, index ? '℟' : '℣', where + ' role glyph');
+          assert.equal(row.hidden, 'true', where + ' decorative mark silent');
+          assert.equal(row.markText, '', where + ' generated mark stays out of copy');
+          assert.equal(row.color, measured.accent, where + ' rubric red');
+          assert.match(row.fontFamily, /Noto Sans Symbols 2.*Segoe UI Symbol.*DejaVu Sans/,
+            where + ' symbol font fallback');
+          assert.ok(row.fontSize >= row.wordsSize * 0.9, where + ' near body size');
+          assert.ok(row.cueBox.left >= row.rowBox.left - 1, where + ' cue inside row');
+          assert.ok(row.cueBox.right <= row.wordsBox.left + 1, where + ' cue clear of words');
+          assert.ok(row.cueBox.bottom <= row.rowBox.bottom + 1, where + ' cue fits row');
+          assert.ok(row.wordsBox.right <= row.rowBox.right + 1, where + ' words fit row');
+        });
+        if (captureDir && media === 'screen') {
+          await mkdir(captureDir, { recursive: true });
+          await shot(cdp, join(captureDir, `c4-dialogue-glyph-${name}.png`));
+        }
+      }
+    } finally {
+      await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
+      await evaluate(cdp, `document.documentElement.style.fontSize = ''`);
+      await viewport(cdp, 1024, 768);
+    }
+  });
 
   if (!SOURCE_ONLY) await test(
     'normal preview build contains a noindex candidate but no candidate navigation link', async () => {

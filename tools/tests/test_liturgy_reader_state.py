@@ -1060,13 +1060,15 @@ class ContractTests(unittest.TestCase):
             day["hash"],
             ["date", "missal", "bible", "orations", "why", "ordinary",
              "ordinary-lang", "rubrics", "mass", "form", "translation-witness",
-             "mode", "location", "eucharistic-prayer"],
+             "mode", "location", "compare", "peer-missal", "territory",
+             "eucharistic-prayer"],
         )
         self.assertEqual(
             propers["hash"],
             ["missal", "type", "mass", "bible", "orations", "form", "cycle",
              "alternative", "translation-witness", "mode", "location",
-             "ordinary-lang", "penitential-act", "creed", "eucharistic-prayer"],
+             "ordinary-lang", "compare", "peer-orations", "penitential-act",
+             "creed", "eucharistic-prayer"],
         )
         self.assertEqual(day["query"], ["data"])
         self.assertEqual(propers["query"], ["data", "missals"])
@@ -1230,6 +1232,123 @@ class UrlContractTests(unittest.TestCase):
         else:
             defaults.update({"type": request["formulary"]["type"], "mass": request["formulary"]["id"]})
         return defaults
+
+    def test_day_compare_url_names_both_editions_and_a_fixed_territory(self) -> None:
+        context = copy.deepcopy(self.day_context)
+        context["missals"].update(self.post_context["missals"])
+        result = node_call({
+            "op": "url", "entrance": "day", "context": context,
+            "hash": (
+                "#date=2026-11-22&missal=roman-1962&bible=douay-rheims&"
+                "orations=la&mode=compare&compare=recension&"
+                "peer-missal=postconciliar&territory=universal"
+            ),
+            "defaults": {"date": "2026-11-22", "missal": "roman-1962",
+                         "bible": "douay-rheims", "orations": "la"},
+        })
+        self.assertTrue(result["normalized"]["ok"], result["normalized"]["errors"])
+        state = result["normalized"]["state"]
+        self.assertEqual(state["requestedMode"], "compare")
+        self.assertEqual(state["comparison"], {
+            "dimension": "recension",
+            "anchor": {"civilDate": "2026-11-22", "territorialContext": "universal"},
+            "sides": [
+                {"id": "roman-1962", "edition": {"id": "roman-1962"},
+                 "calendar": {"id": "roman-1962"}},
+                {"id": "postconciliar", "edition": {"id": "postconciliar"},
+                 "calendar": {"id": "postconciliar"}},
+            ],
+        })
+        self.assertNotIn("territory", state["calendar"])
+        self.assertEqual(result["parsed"]["unknown"], [])
+        self.assertIn("ordinary=0", result["serialized"])
+        self.assertEqual(result["serialized"], result["reserialized"])
+        self.assertEqual(result["renormalized"]["state"], state)
+
+        territorial = node_call({
+            "op": "url", "entrance": "day", "context": context,
+            "hash": (
+                "#date=2026-11-22&missal=roman-1962&bible=douay-rheims&"
+                "orations=la&mode=compare&compare=recension&"
+                "peer-missal=postconciliar&territory=us"
+            ),
+            "defaults": {"date": "2026-11-22", "missal": "roman-1962",
+                         "bible": "douay-rheims", "orations": "la"},
+        })
+        self.assertTrue(territorial["normalized"]["ok"], territorial["normalized"]["errors"])
+        self.assertEqual(territorial["normalized"]["state"]["calendar"]["territory"],
+                         {"id": "us"})
+        self.assertEqual(territorial["serialized"], territorial["reserialized"])
+
+    def test_propers_compare_url_uses_one_date_free_formulary_and_two_languages(self) -> None:
+        result = node_call({
+            "op": "url", "entrance": "propers", "context": self.propers_context,
+            "hash": (
+                "#missal=roman-1962&type=seasonal&mass=advent-1&"
+                "bible=douay-rheims&orations=la&mode=compare&"
+                "compare=oration-language&peer-orations=en"
+            ),
+            "defaults": {"missal": "roman-1962", "type": "seasonal",
+                         "mass": "advent-1", "bible": "douay-rheims", "orations": "la"},
+        })
+        self.assertTrue(result["normalized"]["ok"], result["normalized"]["errors"])
+        state = result["normalized"]["state"]
+        self.assertEqual(state["civilDate"], None)
+        self.assertEqual(state["comparison"]["dimension"], "oration-language")
+        self.assertEqual(state["comparison"]["anchor"],
+                         {"correspondingFormulary": "advent-1"})
+        self.assertEqual([one["languages"]["orations"]
+                          for one in state["comparison"]["sides"]], ["la", "en"])
+        self.assertEqual(result["parsed"]["unknown"], [])
+        self.assertEqual(result["serialized"], result["reserialized"])
+        self.assertEqual(result["renormalized"]["state"], state)
+
+    def test_compare_url_requires_explicit_supported_peer_and_dimension(self) -> None:
+        context = copy.deepcopy(self.day_context)
+        context["missals"].update(self.post_context["missals"])
+        day_base = (
+            "#date=2026-11-22&missal=roman-1962&bible=douay-rheims&"
+            "orations=la&mode=compare&compare=recension&"
+            "peer-missal=postconciliar&territory=universal"
+        )
+        day_defaults = {"date": "2026-11-22", "missal": "roman-1962",
+                        "bible": "douay-rheims", "orations": "la"}
+        bad_day = [
+            day_base.replace("&peer-missal=postconciliar", ""),
+            day_base.replace("&territory=universal", ""),
+            day_base.replace("compare=recension", "compare=cycle"),
+            day_base.replace("peer-missal=postconciliar", "peer-missal=roman-1962"),
+            day_base.replace("peer-missal=postconciliar", "peer-missal=missing"),
+            day_base.replace("mode=compare", "mode=read"),
+            day_base + "&peer-missal=postconciliar",
+            day_base + "&peer-orations=en",
+            day_base + "&ordinary=1",
+        ]
+        for url in bad_day:
+            result = node_call({"op": "url", "entrance": "day", "hash": url,
+                                "context": context, "defaults": day_defaults})
+            self.assertFalse(result["normalized"]["ok"], url)
+
+        propers_base = (
+            "#missal=roman-1962&type=seasonal&mass=advent-1&"
+            "bible=douay-rheims&orations=la&mode=compare&"
+            "compare=oration-language&peer-orations=en"
+        )
+        propers_defaults = {"missal": "roman-1962", "type": "seasonal",
+                            "mass": "advent-1", "bible": "douay-rheims", "orations": "la"}
+        bad_propers = [
+            propers_base.replace("&peer-orations=en", ""),
+            propers_base.replace("compare=oration-language", "compare=recension"),
+            propers_base.replace("peer-orations=en", "peer-orations=la"),
+            propers_base.replace("peer-orations=en", "peer-orations=xx"),
+            propers_base.replace("mode=compare", "mode=read"),
+            propers_base + "&peer-orations=en",
+            propers_base + "&territory=universal",
+        ]
+        for url in bad_propers:
+            result = node_call({"op": "url", "entrance": "propers", "hash": url,
+                                "context": self.propers_context, "defaults": propers_defaults})
+            self.assertFalse(result["normalized"]["ok"], url)
 
     def test_mode_location_routes_and_bible_default_are_canonical_and_order_free(self) -> None:
         rows = [{"id": "world-english-bible-catholic"}, {"id": "douay-rheims"}]

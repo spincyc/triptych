@@ -229,11 +229,13 @@ class DayReaderIntegrationTests(unittest.TestCase):
             self.assertIn(f'class="action-label">{label}</span>', source)
         self.assertIn('data-mode="read"', source)
         self.assertIn('data-mode="missal"', source)
-        self.assertEqual(source.count('aria-disabled="true" disabled'), 2)
+        self.assertEqual(source.count('aria-disabled="true" disabled'), 1)
         self.assertIn("Continuous reading of the appointed texts.", source)
         self.assertIn("Continuous Ordinary with appointed propers in place.", source)
         self.assertIn("<strong>Study</strong><span>Expanded notes and apparatus.</span>", source)
         self.assertIn("<strong>Compare</strong><span>Parallel editions and recensions.</span>", source)
+        self.assertIn('data-mode="compare"', source)
+        self.assertIn('id="compare-setup"', source)
 
     def test_why_uses_source_derived_apparatus_without_a_self_link(self) -> None:
         source = text(DAY_JS)
@@ -244,7 +246,7 @@ class DayReaderIntegrationTests(unittest.TestCase):
             "return mode === 'study' ? ['mode=' + mode] : [];",
             source,
         )
-        self.assertIn("Compare deliberately does not", source)
+        self.assertIn("DayCompare.present", source)
         self.assertNotIn("recognized.why === '1'", source)
         self.assertNotIn("recognized.rubrics === '1'", source)
         self.assertNotIn("const ordinaryActive = recognized.ordinary === '1'", source)
@@ -274,7 +276,7 @@ class DayReaderIntegrationTests(unittest.TestCase):
         self.assertNotIn("Open this selection in the current Day reader", source)
         self.assertIn("window.dayReaderDebug.legacy = normalized.legacy", source)
 
-    def test_all_held_territorial_branches_render_without_a_public_locality_key(self) -> None:
+    def test_read_shows_held_branches_and_compare_requires_explicit_territory(self) -> None:
         source = text(DAY_JS)
         for token in (
             "function resultStateForBranch(state, branch, multiple)",
@@ -291,8 +293,10 @@ class DayReaderIntegrationTests(unittest.TestCase):
         self.assertIn("All held territorial branches are shown; no locality is inferred.", text(HTML))
 
         day_keys = text(STATE_JS).split("const DAY_KEYS", 1)[1].split("]);", 1)[0]
-        self.assertNotIn("territory", day_keys)
+        self.assertIn("'territory'", day_keys)
         self.assertNotIn("locality", day_keys)
+        self.assertIn("if (state.requestedMode === 'compare')", text(STATE_JS))
+        self.assertIn("'Compare requires an explicit ' + key + ' URL value'", text(STATE_JS))
 
     def test_each_render_clears_selection_state_before_validation(self) -> None:
         source = text(DAY_JS)
@@ -354,7 +358,7 @@ class DayReaderIntegrationTests(unittest.TestCase):
             "readerShell.setContents([",
             "focus: { kind: 'day-choice-result' }",
             "reading.querySelector('[data-semantic-event-id]')",
-            "if (readable.length > 1 && runtime.outcome !== 'unresolved')",
+            "if (readable.length > 1 && runtime.outcome !== 'unresolved' && runtime.mode !== 'compare')",
             "['Mass form', state.form ||",
         ):
             self.assertIn(token, source)

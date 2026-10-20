@@ -47,6 +47,7 @@ PREVIEW = ROOT / PREVIEW_ROOT
 # Adding or removing a harness assertion is a deliberate contract change; a
 # partial result, a new unaccounted assertion, or a nonzero exit all fail here.
 ASSERTION_COUNTS = {
+    "day_reader_compare_browser.mjs": 10,
     "day_reader_choices_browser.mjs": 8,
     "liturgy_reader_preferences_browser.mjs": 11,
     "pentecost_witness_chooser_browser.mjs": 5,
@@ -56,13 +57,14 @@ ASSERTION_COUNTS = {
     # appointment check (2026-10-19), plus the C4 step-2 divided-dialogue check
     # (Ordinary lane) and three C2 G14 / G9 follow-up checks: stanzas and the
     # inline rubric, real-clipboard copy, and the mixed-unit Bible-text claim
-    # (2026-10-19). A source-only run executes one fewer.
-    "day_reader_integration_browser.mjs": 56,
+    # (2026-10-19), plus the C4 dialogue-glyph reflow/print check. A
+    # source-only run executes one fewer.
+    "day_reader_integration_browser.mjs": 57,
     "liturgy_reader_shell_browser.mjs": 18,
     "liturgy_reader_visual_reset_browser.mjs": 28,
     # Plus the C2 G9 both-entrances Bible-reconstruction claim check, and the
     # three C2 G14 / G9 follow-up checks on 1962 Pentecost (2026-10-19).
-    "propers_reader_integration_browser.mjs": 56,
+    "propers_reader_integration_browser.mjs": 63,
 }
 
 # Review-only prototype harnesses serve the tracked tree directly rather than
@@ -75,6 +77,7 @@ PROTOTYPE_HARNESSES = frozenset({
     "missal_exemplar_parity_browser.mjs",
 })
 SOURCE_SERVED_HARNESSES = frozenset({
+    "day_reader_compare_browser.mjs",
     "liturgy_reader_preferences_browser.mjs",
     "pentecost_witness_chooser_browser.mjs",
 })

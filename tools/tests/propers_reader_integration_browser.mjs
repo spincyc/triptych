@@ -17,7 +17,7 @@ const CURRENT = '/src/web/browser/liturgy/index.html';
 const SOURCE_ONLY = process.env.TRIPTYCH_SOURCE_ONLY === '1';
 const DATA = SOURCE_ONLY ? '/src/web/data' : '/build/public-alpha/preview/browse';
 const SOURCE_PROPERS = (process.env.TRIPTYCH_SOURCE_PROPERS ||
-  '.scratch/propers-source-structure/structure/propers').replace(/^\/+|\/+$/g, '');
+  'src/web/data/structure/propers').replace(/^\/+|\/+$/g, '');
 const CYCLE_UNTRANSLATED_DATA = DATA + '-cycle-untranslated';
 const NO_WITNESS_DATA = DATA + '-no-witness';
 const captureAt = process.argv.indexOf('--capture-dir');
@@ -798,6 +798,107 @@ async function assertions(cdp, base) {
         ['proper-original:la', 'unavailable']]);
   });
 
+  await check('Proper search loads only on demand and links a titled incipit to its exact edition', async () => {
+    await candidate(cdp, base, STATES.roman);
+    assert.equal(await evaluate(cdp,
+      `propersReaderDebug.loads['structure/propers/search/roman-1962.json'] || 0`), 0);
+    await click(cdp, '[data-reader-action="browse"]');
+    await evaluate(cdp, `(() => {
+      document.querySelector('#proper-search-input').value = 'Spiritus Domini';
+      document.querySelector('#proper-search-form').requestSubmit();
+    })()`);
+    await waitFor(cdp, `document.querySelectorAll('.proper-search-results li').length > 0`,
+      '1962 search results');
+    const found = await evaluate(cdp, `(() => ({
+      status: document.querySelector('#proper-search-status').textContent,
+      first: document.querySelector('.proper-search-results li').textContent,
+      href: document.querySelector('.proper-search-results a').href,
+      loads: propersReaderDebug.loads['structure/propers/search/roman-1962.json']
+    }))()`);
+    assert.match(found.status, /1962 Missal/);
+    assert.match(found.first, /Spiritus Domini/);
+    assert.match(found.first, /Represented non-Scripture Proper units only/);
+    assert.match(found.href, /missal=roman-1962/);
+    assert.match(found.href, /mass=pentecost/);
+    assert.equal(found.loads, 1);
+    assert.ok(!found.href.includes('Spiritus+Domini'));
+  });
+
+  await check('Proper search preserves all three All Souls forms and opens the chosen form', async () => {
+    await candidate(cdp, base, STATES.missing);
+    await evaluate(cdp, `(() => {
+      document.querySelector('#proper-search-input').value = '11-02 Requiem';
+      document.querySelector('#proper-search-form').requestSubmit();
+    })()`);
+    await waitFor(cdp, `document.querySelectorAll('.proper-search-results a').length >= 3`,
+      'All Souls form results');
+    const forms = await evaluate(cdp, `[...document.querySelectorAll('.proper-search-results a')]
+      .filter(row => row.href.includes('commemoratione-omnium-fidelium-defunctorum'))
+      .map(row => new URL(row.href).hash).map(hash => new URLSearchParams(hash.slice(1)).get('form'))`);
+    assert.deepEqual(forms, ['first', 'second', 'third']);
+    await evaluate(cdp, `[...document.querySelectorAll('.proper-search-results a')]
+      .find(row => new URLSearchParams(new URL(row.href).hash.slice(1)).get('form') === 'second').click()`);
+    await waitFor(cdp, `propersReaderDebug.ready && propersReaderDebug.semantic?.resolved?.form === 'second'`,
+      'second All Souls Mass');
+    assert.equal(await evaluate(cdp, 'location.pathname'), CURRENT);
+    assert.equal(await evaluate(cdp,
+      `new URLSearchParams(location.hash.slice(1)).get('form')`), 'second');
+    assert.equal(await evaluate(cdp,
+      `new URLSearchParams(location.hash.slice(1)).get('mode')`), 'read');
+  });
+
+  await check('Proper search states the inherited recension limit and rejects civil-date inference', async () => {
+    await candidate(cdp, base, STATES.pre1955Advent);
+    await click(cdp, '[data-reader-action="browse"]');
+    await evaluate(cdp, `(() => {
+      document.querySelector('#proper-search-input').value = 'advent-1';
+      document.querySelector('#proper-search-form').requestSubmit();
+    })()`);
+    await waitFor(cdp, `document.querySelectorAll('.proper-search-results a').length > 0`,
+      'pre-1955 search result');
+    assert.match(await evaluate(cdp,
+      `document.querySelector('#proper-search-caveat').textContent`), /Inherited material/);
+    await evaluate(cdp, `(() => {
+      document.querySelector('#proper-search-input').value = '2026-11-02';
+      document.querySelector('#proper-search-form').requestSubmit();
+    })()`);
+    await waitFor(cdp, `document.querySelector('#proper-search-status').textContent.startsWith('No results')`,
+      'scoped no-result message');
+    assert.match(await evaluate(cdp,
+      `document.querySelector('#proper-search-status').textContent`), /does not resolve civil dates/);
+    assert.equal(await evaluate(cdp,
+      `document.querySelectorAll('.proper-search-results a').length`), 0);
+  });
+
+  await check('Proper search re-scopes to a chosen missal and reflows at 320 pixels', async () => {
+    await candidate(cdp, base, STATES.roman);
+    await click(cdp, '[data-reader-action="browse"]');
+    await select(cdp, '#reader-missal', 'postconciliar');
+    await waitFor(cdp,
+      `document.querySelector('#reader-formulary').disabled === false && ` +
+      `document.querySelector('#reader-missal').value === 'postconciliar'`,
+      'postconciliar Browse selection');
+    await viewport(cdp, 320, 720);
+    const width = await evaluate(cdp, `(() => ({
+      page: document.documentElement.scrollWidth,
+      viewport: innerWidth,
+      input: document.querySelector('#proper-search-input').getBoundingClientRect().right
+    }))()`);
+    assert.ok(width.page <= width.viewport, JSON.stringify(width));
+    assert.ok(width.input <= width.viewport, JSON.stringify(width));
+    await evaluate(cdp, `(() => {
+      document.querySelector('#proper-search-input').value = 'Transfiguration';
+      document.querySelector('#proper-search-form').requestSubmit();
+    })()`);
+    await waitFor(cdp, `document.querySelectorAll('.proper-search-results a').length > 0`,
+      'postconciliar search result');
+    const href = await evaluate(cdp, `document.querySelector('.proper-search-results a').href`);
+    assert.match(href, /missal=postconciliar/);
+    assert.match(href, /mass=transfiguration-lord/);
+    assert.ok(!href.includes('missal=roman-1962'));
+    await viewport(cdp, 393, 852);
+  });
+
   await check('form without exact formulary fails closed and is not canonicalized into Browse', async () => {
     await candidate(cdp, base, STATES.formWithoutMass);
     const value = await snapshot(cdp);
@@ -1121,6 +1222,92 @@ async function assertions(cdp, base) {
     assert.deepEqual(await evaluate(cdp, 'propersReaderDebug.semantic'), candidateProjection);
   });
   if (process.env.TRIPTYCH_P0_ONLY === '1') return;
+
+  await check('C5 Propers Compare independently resolves two languages on one date-free formulary', async () => {
+    const route = STATES.roman + '&mode=compare&compare=oration-language&peer-orations=en';
+    await candidate(cdp, base, route);
+    const value = await evaluate(cdp, `(() => ({
+      outcome: propersReaderDebug.outcome,
+      state: propersReaderDebug.state,
+      semantic: propersReaderDebug.semantic,
+      dom: [...document.querySelectorAll('#reader-document [data-semantic-event-id]')]
+        .map(row => row.dataset.semanticEventId),
+      contents: [...document.querySelectorAll('[data-reader-contents] [data-reader-location]')]
+        .map(row => row.dataset.readerLocation),
+      sides: [...document.querySelectorAll('#reader-document .compare-unit')]
+        .map(row => [...row.querySelectorAll('.compare-side')]
+          .map(side => [side.dataset.compareSide, side.dataset.compareStatus])),
+      ordinaryLoads: propersReaderDebug.loads['structure/ordinary/roman-1962.json'] || 0,
+      hash: location.hash
+    }))()`);
+    assert.equal(value.outcome, 'ready');
+    assert.equal(value.state.requestedMode, 'compare');
+    assert.equal(value.state.civilDate, null);
+    assert.equal(value.semantic.anchor.correspondingFormulary, 'advent-1');
+    assert.equal(value.semantic.calendarResults, null);
+    assert.equal(value.semantic.units.length, 10);
+    assert.deepEqual(value.semantic.sides.map(row => row.id), ['la', 'en']);
+    assert.deepEqual(value.dom, value.semantic.units.map(row => 'compare/proper/' + row.semanticSlot));
+    assert.deepEqual(value.contents, value.dom);
+    assert.ok(value.sides.every(row => row.length === 2));
+    assert.deepEqual(value.semantic.units.find(row => row.semanticSlot === 'collect').sides
+      .map(row => row.status), ['text-held', 'text-unavailable']);
+    assert.equal(value.ordinaryLoads, 0);
+    assert.match(value.hash, /compare=oration-language/);
+    assert.match(value.hash, /peer-orations=en/);
+    const projection = value.semantic;
+    await current(cdp, base, route);
+    assert.deepEqual(await evaluate(cdp, 'propersReaderDebug.semantic'), projection);
+  });
+
+  await check('C5 Propers Compare controls retain the Proper location on return to Read', async () => {
+    await candidate(cdp, base, STATES.roman + '&location=proper%2Froman-1962%2Fadvent-1%2F002');
+    await waitFor(cdp,
+      `window.TriptychReaderShell && document.querySelector('#reader-document [data-semantic-location="proper/roman-1962/advent-1/002"]')?.getBoundingClientRect().top <= 300`,
+      'initial Proper location scroll');
+    await click(cdp, '[data-reader-action="mode"]');
+    await click(cdp, '[data-mode="compare"]');
+    await select(cdp, '#reader-compare-orations', 'en');
+    await click(cdp, '#compare-setup .surface-apply');
+    await waitFor(cdp, `propersReaderDebug.ready && propersReaderDebug.state?.requestedMode === 'compare'`, 'Propers Compare mode');
+    const compared = await evaluate(cdp, `({
+      outcome: propersReaderDebug.outcome,
+      location: propersReaderDebug.state.semanticLocation?.eventId,
+      hash: location.hash,
+      active: document.activeElement?.dataset.readerAction
+    })`);
+    assert.equal(compared.outcome, 'ready');
+    assert.equal(compared.location, 'compare/proper/collect');
+    assert.match(compared.hash, /location=compare%2Fproper%2Fcollect/);
+    assert.equal(compared.active, 'mode');
+    await waitFor(cdp,
+      `document.querySelector('#reader-document [data-semantic-location="compare/proper/collect"]')?.getBoundingClientRect().top <= 300`,
+      'Compare location scroll');
+    await click(cdp, '[data-reader-action="mode"]');
+    await click(cdp, '[data-mode="read"]');
+    await waitFor(cdp, `propersReaderDebug.ready && propersReaderDebug.state?.requestedMode === 'read'`, 'Read return from Compare');
+    const read = await evaluate(cdp, `({
+      outcome: propersReaderDebug.outcome,
+      location: propersReaderDebug.state.semanticLocation?.eventId,
+      hash: location.hash,
+      active: document.activeElement?.dataset.readerAction
+    })`);
+    assert.equal(read.outcome, 'ready');
+    assert.equal(read.location, 'proper/roman-1962/advent-1/002');
+    assert.doesNotMatch(read.hash, /(?:compare|peer-orations)=/);
+    assert.equal(read.active, 'mode');
+  });
+
+  await check('C5 Propers Compare rejects absent locations and unresolved source choices', async () => {
+    await candidate(cdp, base, STATES.roman +
+      '&mode=compare&compare=oration-language&peer-orations=en&location=compare%2Fproper%2Fnot-held');
+    assert.equal(await evaluate(cdp, 'propersReaderDebug.outcome'), 'invalid');
+    assert.equal(await evaluate(cdp, 'propersReaderDebug.error?.[0]?.code'), 'invalid-semantic-location');
+    await candidate(cdp, base, STATES.postPentecostDay +
+      '&mode=compare&compare=oration-language&peer-orations=en');
+    assert.equal(await evaluate(cdp, 'propersReaderDebug.outcome'), 'invalid');
+    assert.equal(await evaluate(cdp, 'propersReaderDebug.error?.[0]?.code'), 'unsupported-comparison');
+  });
 
   await check('C5 1962 Propers Missal seats the production Ordinary with exact event and Contents order', async () => {
     await candidate(cdp, base, STATES.romanPentecost + '&mode=missal');
@@ -1822,7 +2009,7 @@ async function assertions(cdp, base) {
       { mode: 'read', disabled: false, checked: 'true' },
       { mode: 'missal', disabled: false, checked: 'false' },
       { mode: 'study', disabled: true, checked: 'false' },
-      { mode: 'compare', disabled: true, checked: 'false' }
+      { mode: 'compare', disabled: false, checked: 'false' }
     ]);
     await escape(cdp); await click(cdp, '[data-reader-action="details"]');
     const details = await evaluate(cdp, `({

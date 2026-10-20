@@ -337,9 +337,13 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
             for copy in (
                 "Continuous reading of the appointed texts.",
                 "Expanded notes and apparatus.",
-                "Parallel editions and recensions.",
             ):
                 self.assertIn(copy, source)
+            self.assertIn(
+                "Parallel editions and recensions." if path == PRODUCTION_DAY else
+                "Parallel oration languages for one formulary.",
+                source,
+            )
 
     def test_compatibility_closure_uses_public_propers_state_and_day_owned_apparatus(self) -> None:
         state = held(LITURGY / "reader-state.js")

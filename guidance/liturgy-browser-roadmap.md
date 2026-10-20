@@ -520,6 +520,12 @@ gap. The printed `honorati` differs from the Bible's `honorificati`; proposed
 St Anthony Offertory and St Michael Introit Bible joins were likewise held
 when their antiphon wording did not match. Whole-family text coverage remains
 unresolved.
+Their later page collation found the exact Missal chants in the public-domain
+1922 Mame printing and the controlling 1962 pages. Both are now represented
+as mixed source-bound Latin bodies with text-free English gaps, while their
+Bible citations remain structural. Effective 1962 target states are 4,020
+represented, 164 not represented and 3,806 unresolved. The whole-family
+text denominator is still unresolved.
 
 An exemplar passes C2 when:
 
@@ -785,6 +791,17 @@ represented appointments, while its whole-form extent and all 39 whole-family
 completeness cells remain unresolved. A source-printed 1962 final `Deo gratias`
 response now has its English and Latin dialogue role. Neither the structural
 slot joins nor Bible reconstructions assert word-exact Missal wording.
+
+The next source-served C5 checkpoint exposes the form-qualified search in
+both Propers entrances and loads its index only on a query. Day Compare
+resolves both calendar outcomes independently for an explicit date and shared
+territory; Propers Compare holds one date-independent formulary and Bible while
+adapting two oration languages. Paired functional slots distinguish a missing
+event from unavailable text, and mode/location links round-trip. Chromium
+passed 10/10 Day Compare and 63/63 Propers Read/Missal/Search/Compare checks
+after the latest source regeneration. All seven registered built-preview
+browser harnesses pass. Study, independent visual acceptance,
+and the full C5 scope remain open.
 
 ### Verification and completion gates
 

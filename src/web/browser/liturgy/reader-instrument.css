@@ -452,8 +452,14 @@ body:has(.reader-instrument) > .site-footer,
   min-width: 0;
 }
 .reader-instrument .reader-document .ordinary-turn[data-dialogue-role] .cue-mark {
-  font-family: var(--instrument-serif);
-  font-size: 1.08em;
+  /* The printed dialogue role is a full-size mark beside the spoken words.
+     The glyph itself remains the structural cue if red is unavailable. */
+  color: var(--instrument-accent);
+  font-family: "Noto Sans Symbols 2", "Segoe UI Symbol", "Apple Symbols", "DejaVu Sans", var(--instrument-serif);
+  font-size: 1.12rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
 }
 .reader-instrument .reader-document .ordinary-turn.is-action[data-action="true"] > .ordinary-turn-text {
   margin-block: 0.2rem;

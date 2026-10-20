@@ -26429,7 +26429,7 @@ sections:
         prints for this day, the Collect, the Secret and the Postcommunion, carry published Latin
         bodies collated to the controlling 1962 edition, each on the public-domain witness its row in
         src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml names. Identity, rank and
-        the printed citations were read on 2026-08-01 from the embedded text layer of
+        the previously recorded printed citations were read on 2026-08-01 from the embedded text layer of
         the CMAA facsimile of the controlling edition at printed p. 445 (digital p.
         526), not from the facsimile images, and that reading was not visually
         collated.'
@@ -26515,6 +26515,31 @@ sections:
               chapter: 12
               verse: 40
           ref: Luke 12:35-40
+      - name: Offertory
+        source: mixed
+        notes: >-
+          The complete antiphon was read on the page image of the controlling
+          1962 edition, printed p. 446, no. 1946 (artifact PDF p. 527), and
+          collated against the public-domain Mame 1922 Common of Abbots,
+          printed p. 32* (artifact PDF p. 910), appointed for 17 January by
+          its printed p. 506 (artifact PDF p. 620). The spoken words agree;
+          the Missals print animae and only the second half of Psalm 20:4,
+          so the citation is not a Bible-text reconstruction. The Latin
+          body has separate exact-target provenance.
+        verses:
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 20
+              verse: 3
+            end:
+              chapter: 20
+              verse: 4
+          ref: Psalms 20:3-4
+        text: |
+          Desiderium animae eius tribuisti ei, Domine, et voluntate labiorum
+          eius non fraudasti eum: posuisti in capite eius coronam de lapide
+          pretioso.
       - name: Secret
         source: composed
         notes: >-
@@ -45809,11 +45834,47 @@ sections:
         prints for this day, the Collect, the Secret and the Postcommunion, carry published Latin
         bodies collated to the controlling 1962 edition, each on the public-domain witness its row in
         src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml names. Identity, rank and
-        the printed citations were read on 2026-08-01 from the embedded text layer of
+        the previously recorded printed citations were read on 2026-08-01 from the embedded text layer of
         the CMAA facsimile of the controlling edition at printed p. 670 (digital p.
         751), not from the facsimile images, and that reading was not visually
         collated.'
       propers:
+      - name: Introit
+        source: mixed
+        notes: >-
+          The whole Introit was read on the controlling 1962 page image,
+          printed p. 670, no. 3726 (artifact PDF p. 751). Public-domain
+          Mame 1922 prints the same antiphon and Psalm verse at its May 8
+          Mass, printed p. 592 (artifact PDF p. 706), and its September 29
+          entry, printed p. 726 (artifact PDF p. 840), appoints that Mass
+          outside Eastertide. The May Easter alleluias are absent in the
+          September target. The Missal's facitis verbum eius differs from
+          the Clementine Bible expansion; the Latin body has separate
+          exact-target provenance.
+        verses:
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 102
+              verse: 20
+            end:
+              chapter: 102
+              verse: 20
+          ref: Psalms 102:20
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 102
+              verse: 1
+            end:
+              chapter: 102
+              verse: 1
+          ref: Psalms 102:1
+        text: |
+          Benedicite Dominum, omnes Angeli eius: potentes virtute, qui facitis
+          verbum eius, ad audiendam vocem sermonum eius. Benedic, anima mea,
+          Domino: et omnia, quae intra me sunt, nomini sancto eius. V. Gloria
+          Patri.
       - name: Collect
         source: composed
         notes: >-

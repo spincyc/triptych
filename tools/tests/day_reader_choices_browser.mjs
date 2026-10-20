@@ -666,7 +666,8 @@ async function testDeferredModeContract(cdp, base) {
   const compare = await snapshot(cdp);
   assert.equal(compare.outcome, 'invalid');
   assert.equal(compare.eventCount, 0);
-  assert.equal(compare.error[0].code, 'compare-mode-state');
+  assert.ok(compare.error.some((row) => row.code === 'invalid-explicit-value' &&
+    row.path === 'peer-missal'));
 }
 
 async function main() {

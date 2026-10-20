@@ -142,6 +142,11 @@ FROZEN_PROPERS_KEYS = [
   "missal", "type", "mass", "bible", "orations", "form", "cycle", "alternative",
   "translation-witness", "mode", "location",
 ]
+# The reader-state module extends the retained page hashes with explicit
+# comparison state; these keys are not read by the old day.js/liturgy.js pages.
+READER_DAY_ADDITIONS = ["compare", "peer-missal", "territory"]
+READER_PROPERS_ADDITIONS = ["ordinary-lang", "compare", "peer-orations"]
+READER_PROPERS_VARIANT_KEYS = ["penitential-act", "creed", "eucharistic-prayer"]
 
 
 # ---------------------------------------------------------------------------
@@ -1248,9 +1253,12 @@ class FrozenInventoryTest(unittest.TestCase):
   @needs_node
   def test_the_reader_state_module_exports_exactly_the_frozen_inventory(self):
     inventory = probe(probe="urlInventory")
-    self.assertEqual(inventory["day"]["hash"], FROZEN_DAY_KEYS + FROZEN_DAY_VARIANT_KEYS)
+    self.assertEqual(inventory["day"]["hash"],
+                     FROZEN_DAY_KEYS + READER_DAY_ADDITIONS + FROZEN_DAY_VARIANT_KEYS)
     self.assertEqual(inventory["day"]["query"], ["data"])
-    self.assertEqual(inventory["propers"]["hash"], FROZEN_PROPERS_KEYS)
+    self.assertEqual(inventory["propers"]["hash"],
+                     FROZEN_PROPERS_KEYS + READER_PROPERS_ADDITIONS +
+                     READER_PROPERS_VARIANT_KEYS)
     self.assertEqual(inventory["propers"]["query"], ["data", "missals"])
 
   def test_the_deployed_day_page_reads_the_frozen_day_keys(self):
