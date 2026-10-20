@@ -322,6 +322,30 @@ final-page tinted frame bleed without changing those page counts. Long
 translation notes still dominate English print. C4 print work and the full
 C2 acceptance matrix remain open.
 
+The next 2026-10-20 checkpoint expands the Roman 1962 expected text-slot join:
+the served structure now classifies 3,182 of 6,285 slots represented, 178 not
+represented, and 2,925 unresolved. The 178 are effective Sanctoral role gaps;
+229 raw Mass gaps resolve from appointed Commons. Three page-checked Scripture
+appointments and seven Common oration joins closed ten gaps; St Stanislaus's
+printed C 2 selection also reduces inherited unresolved Common choices in
+both 1962 and pre-1955 from seven to six. Structural joins do not
+establish word agreement. A focused C2 test matches all 179 generated Pentecost
+Missal events to browser order and checks thirteen CLI landmarks; exhaustive
+CLI event-ID parity and independent acceptance remain open. Ordinary absence
+notices now use concise reader labels instead of storage keys. A print pass
+reduced both 1962 Pentecost English Read PDFs from ten to seven pages without
+changing their extracted text; long witness notes remain for C4 composition.
+The 400% Contents jump now leaves its Canon destination wholly in the readable
+band above the bottom action dock. The source-served ritual-flow harness passes
+28/28 assertions after accounting for the intentional C2 claim typography;
+the built-preview rerun and independent visual disposition remain open.
+Day and Propers now share validated missal, Bible and oration-language
+preferences, written only after successful Date or Browse Apply. URLs retain
+precedence, and bad or blocked storage falls back without affecting explicit
+state. A dedicated source-served Chromium run passes 11/11; Day and Propers
+regressions pass 55/55 and 49/49. This is a bounded C5 capability, with
+independent acceptance and the remaining modes still open.
+
 ## Daily Missal reader recovery and completion plan, 2026-10-19
 
 <!-- promised-deliverable: missal-reader-completion-plan-2026-10-19 -->

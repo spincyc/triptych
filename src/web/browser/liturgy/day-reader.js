@@ -78,8 +78,43 @@
     pendingLocation: null,
     pendingModeFocus: false,
     pendingFocus: null,
-    modeStartedAt: null
+    modeStartedAt: null,
+    pendingPreferences: false
   };
+
+  const PREFERENCES_KEY = 'triptych:liturgy:preferences:v1';
+  const LEGACY_PROPERS_PREFERENCES_KEY = 'triptych:liturgy:propers';
+
+  function rememberedPreferences() {
+    try {
+      const storage = window.localStorage;
+      const raw = storage.getItem(PREFERENCES_KEY) ||
+        storage.getItem(LEGACY_PROPERS_PREFERENCES_KEY);
+      if (!raw) return {};
+      const value = JSON.parse(raw);
+      if (!value || typeof value !== 'object' || Array.isArray(value)) return {};
+      const remembered = {};
+      ['missal', 'bible', 'orations'].forEach(function (key) {
+        if (typeof value[key] === 'string' && value[key]) remembered[key] = value[key];
+      });
+      return remembered;
+    } catch (_error) {
+      // Storage is optional, including when merely accessing it is denied.
+      return {};
+    }
+  }
+
+  function savePreferences(state) {
+    try {
+      window.localStorage.setItem(PREFERENCES_KEY, JSON.stringify({
+        missal: state.edition.id,
+        bible: state.bible.id,
+        orations: state.languages.orations
+      }));
+    } catch (_error) {
+      // The canonical URL contains the complete selection without storage.
+    }
+  }
 
   window.dayReaderDebug = {
     candidate: true,
@@ -419,9 +454,12 @@
     return errors;
   }
 
-  function preflightSelection(parsed, manifests) {
+  function preflightSelection(parsed, manifests, remembered) {
+    const storedMissal = remembered && remembered.missal;
+    const fallbackMissal = runtime.missals.some(function (row) { return row.id === storedMissal; })
+      ? storedMissal : manifests.propersIndex.default;
     const wantedMissal = Object.prototype.hasOwnProperty.call(parsed.recognized, 'missal')
-      ? parsed.recognized.missal : manifests.propersIndex.default;
+      ? parsed.recognized.missal : fallbackMissal;
     const wantedDate = Object.prototype.hasOwnProperty.call(parsed.recognized, 'date')
       ? parsed.recognized.date : todayISO();
     const errors = [];
@@ -2337,6 +2375,8 @@
   async function renderCandidate() {
     const serial = ++runtime.serial;
     const pendingNavigation = takePendingNavigation();
+    const pendingPreferences = runtime.pendingPreferences;
+    runtime.pendingPreferences = false;
     const modeStartedAt = runtime.modeStartedAt;
     runtime.modeStartedAt = null;
     const initialParsed = Contract.parseLegacy('day', window.location.hash, { variantKeys: [] });
@@ -2372,7 +2412,8 @@
       if (serial !== runtime.serial) return;
       const keys = variantKeys(manifests.ordinaryIndex);
       const parsed = Contract.parseLegacy('day', window.location.hash, { variantKeys: keys });
-      const preliminary = preflightSelection(parsed, manifests);
+      const remembered = rememberedPreferences();
+      const preliminary = preflightSelection(parsed, manifests, remembered);
       if (!preliminary.ok) {
         renderFailure(preliminary.errors, { mode: requestedMode });
         return;
@@ -2390,7 +2431,7 @@
 
       const normalized = Contract.normalizeLegacy(parsed, {
         context: assembled.context,
-        remembered: {},
+        remembered: remembered,
         defaults: Object.assign({
           date: preliminary.date,
           missal: preliminary.missal,
@@ -2545,6 +2586,7 @@
           populateDateSurface();
           window.dayReaderDebug.semantic = semanticProjection(unresolved[0].result);
           restorePendingNavigation(pendingNavigation);
+          if (pendingPreferences) savePreferences(normalized.state);
           if (modeStartedAt !== null) {
             window.dayReaderDebug.lastModeSwitchMs = performance.now() - modeStartedAt;
           }
@@ -2576,6 +2618,7 @@
         })
         : semanticProjection(rendered[0].result);
       restorePendingNavigation(pendingNavigation);
+      if (pendingPreferences) savePreferences(normalized.state);
       if (modeStartedAt !== null) {
         window.dayReaderDebug.lastModeSwitchMs = performance.now() - modeStartedAt;
       }
@@ -2626,6 +2669,7 @@
 
   function navigate(updates, removals) {
     const navigation = arguments.length > 2 && arguments[2] || {};
+    runtime.pendingPreferences = navigation.rememberPreferences === true;
     const currentLocation = readerShell.captureSemanticLocation();
     history.replaceState(
       Object.assign({}, history.state || {}, { dayReaderLocation: currentLocation }),
@@ -2759,7 +2803,7 @@
     if (changedEdition) removals.push.apply(removals,
       variantKeys(runtime.manifests && runtime.manifests.ordinaryIndex));
     readerShell.close({ restoreFocus: false });
-    navigate(updates, removals);
+    navigate(updates, removals, { rememberPreferences: true });
   });
 
   document.getElementById('previous-date').addEventListener('click', function () {

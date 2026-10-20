@@ -1140,14 +1140,11 @@
    * How an element names the reason it is silent.
    *
    * The reason itself is stated once, in the preamble, with how many elements
-   * it covers; here the element names it and no more. Printing the reason in
+   * it covers; here the element uses its short reader label. Printing the reason in
    * full at every element put a 700-character paragraph on the page 39 times
    * over the postconciliar frame, and would have put a 400-character one there
    * 195 times the moment a reader asked the 1962 Ordinary for its Latin. Each
-   * key names the typed blocker for this element and language — for example,
-   * `approved-english-publication-restriction` or
-   * `official-exemplar-not-carried` — and is the handle a reader can carry
-   * back to the account above.
+   * key stays on the source row as a stable identifier, not reading prose.
    */
   function absenceWord(file, key) {
     if (!key) {
@@ -1156,8 +1153,15 @@
     }
     const found = (file.absences || []).find((one) => one.key === key);
     return found
-      ? 'Withheld under “' + key + '”, which is stated above.'
-      : 'Withheld under “' + key + '”.';
+      ? absenceLabel(found) + ' (' + String(found.kind || 'unavailable').replace(/-/g, ' ') + ').'
+      : 'The reason for this absence is not recorded.';
+  }
+
+  function absenceLabel(row) {
+    // A cached older Ordinary may lack labels while this script is newer.
+    // Keep the silence explicit without exposing the storage key or `undefined`.
+    return row && typeof row.label === 'string' && row.label.trim()
+      ? row.label : 'This text is not shown here';
   }
 
   /**
@@ -1583,11 +1587,11 @@
     // account is on the page exactly once and every silence points at it.
     for (const absence of file.absences || []) {
       const line = T.el('p', 'row-meta ordinary-absence');
-      line.appendChild(T.el('span', 'ordinary-absence-key', absence.key));
+      line.appendChild(T.el('span', 'ordinary-absence-key', absenceLabel(absence)));
       const kind = String(absence.kind || 'unavailable').replace(/-/g, ' ');
       const state = String(absence.state || 'unavailable').replace(/-/g, ' ');
       line.appendChild(document.createTextNode(
-        absence.count + ' of ' + frameSize(file) + ' elements · ' + kind +
+        ' — ' + absence.count + ' of ' + frameSize(file) + ' elements · ' + kind +
         ' · ' + state + '.'));
       body.appendChild(line);
     }

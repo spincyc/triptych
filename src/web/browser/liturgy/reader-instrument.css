@@ -221,7 +221,9 @@ body:has(.reader-instrument) > .site-footer,
 .reader-instrument .reader-document .proper-choice,
 .reader-instrument .reader-document .ordinary-element,
 .reader-instrument .reader-document .ordinary-division {
-  scroll-margin-block: 5rem calc(var(--reader-shell-height) + 1rem);
+  /* The root already supplies 5rem above scroll targets for the masthead.
+     Duplicating it here pushes a Contents jump under the dock at 400% zoom. */
+  scroll-margin-block: 0 calc(var(--reader-shell-height) + 1rem);
 }
 
 .reader-instrument .reader-document .proper {
@@ -933,11 +935,21 @@ body:has(.reader-instrument) > .site-footer,
   .reader-instrument .reader-identity { width: auto; padding: 0 0 0.2in; text-align: left; }
   .reader-instrument .reader-identity .celebration-title { margin: 0; font-size: 22pt; }
   .reader-instrument .reader-document { width: auto; padding: 0; background: #fff; }
-  .reader-instrument .reader-document .proper { max-width: none; margin: 0 0 0.24in; break-inside: avoid; }
-  /* A Sequence paginates by strophe rather than as one unbreakable block. */
-  .reader-instrument .reader-document .proper:has(.composed-stanzas) { break-inside: auto; }
+  /* A complete Proper can exceed the page once its witness account is included.
+     Let the section flow, while keeping each heading and claim with its text. */
+  .reader-instrument .reader-document .proper { max-width: none; margin: 0 0 0.24in; break-inside: auto; }
   .reader-instrument .reader-document .composed-stanzas > .stanza { break-inside: avoid; }
   .reader-instrument .reader-document .proper-name { margin-left: 0; padding-left: 0; break-after: avoid; }
+  .reader-instrument .reader-document .unit-claim { break-after: avoid; }
+  .reader-instrument .reader-document .proper > .composed:not(:has(.composed-stanzas)) { break-inside: avoid; }
+  .reader-instrument[data-reader-mode="read"] .reader-document .passage,
+  .reader-instrument[data-reader-mode="read"] .reader-document .composed { font-size: 12pt; line-height: 1.5; }
+  .reader-instrument .reader-document .passage,
+  .reader-instrument .reader-document .composed,
+  .reader-instrument .reader-document .composed-note { orphans: 3; widows: 3; }
+  /* Give the source account more room than on screen, without overly long lines. */
+  .reader-instrument .reader-document .composed-note,
+  .reader-instrument .reader-document .element-apparatus { max-width: 90ch; }
   .reader-instrument .reader-document .proper-choice { max-width: none; margin: 0 0 0.3in; padding-left: 0.12in; }
   .reader-instrument .reader-document .proper-choice-option { break-before: avoid; }
   .reader-instrument .reader-document .ordinary-frame > .ordinary-element { display: block; }

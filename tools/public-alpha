@@ -185,9 +185,9 @@ RESTRICTED_PROJECTION_FIELDS = frozenset(("target", "lang", "state"))
 RESTRICTED_TARGET_FIELDS = frozenset(
     ("mass", "form_id", "proper", "cycle", "occurrence", "extent")
 )
-ORDINARY_ABSENCE_FIELDS = frozenset(("key", "count", "state", "kind"))
+ORDINARY_ABSENCE_FIELDS = frozenset(("key", "label", "count", "state", "kind"))
 ORDINARY_LANGUAGE_ABSENCE_FIELDS = frozenset(
-    ("key", "lang", "count", "state", "kind")
+    ("key", "label", "lang", "count", "state", "kind")
 )
 ORDINARY_ABSENCE_KINDS = frozenset(
     (
@@ -203,6 +203,10 @@ ORDINARY_ABSENCE_KINDS = frozenset(
 SAFE_TYPED_KEY_RE = re.compile(r"^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$")
 NON_NEUTRAL_ABSENCE_KEY_PARTS = (
     "artifact", "copyright", "ellc", "icel", "permission", "source"
+)
+UNSAFE_ABSENCE_LABEL_RE = re.compile(
+    r"\b(?:icel|permission|copyright)\b|(?:src/|artifact\.)",
+    re.IGNORECASE,
 )
 ORDINARY_ABSENCE_LOCATION_RE = re.compile(r"^\$\.absences\[[0-9]+\]$")
 ORDINARY_LANGUAGE_ABSENCE_LOCATION_RE = re.compile(
@@ -1487,9 +1491,9 @@ def validate_liturgical_public_data(path: Path) -> None:
                 "language absence" if ordinary_language_absence else "absence catalog"
             )
             expected_field_label = (
-                "key, lang, count, state and kind"
+                "key, label, lang, count, state and kind"
                 if ordinary_language_absence
-                else "key, count, state and kind"
+                else "key, label, count, state and kind"
             )
             if fields != expected_fields:
                 raise ReleaseError(
@@ -1497,6 +1501,7 @@ def validate_liturgical_public_data(path: Path) -> None:
                     f"contain exactly {expected_field_label}"
                 )
             key = value.get("key")
+            reader_label = value.get("label")
             count = value.get("count")
             kind = value.get("kind")
             state = value.get("state")
@@ -1509,6 +1514,19 @@ def validate_liturgical_public_data(path: Path) -> None:
                 raise ReleaseError(
                     f"{label} {location}: public Ordinary absence key must be a "
                     "neutral typed key"
+                )
+            if (
+                not isinstance(reader_label, str)
+                or not reader_label.strip()
+                or len(reader_label) > 120
+                or "\n" in reader_label
+                or "http://" in reader_label.casefold()
+                or "https://" in reader_label.casefold()
+                or UNSAFE_ABSENCE_LABEL_RE.search(reader_label)
+            ):
+                raise ReleaseError(
+                    f"{label} {location}: public Ordinary absence label must be "
+                    "concise public prose"
                 )
             if not isinstance(count, int) or isinstance(count, bool) or count < 0:
                 raise ReleaseError(

@@ -565,7 +565,12 @@ def expectations(path: Path, calendar: str, masses: list[dict]) -> dict:
             state = "not-represented"
         else:
             state = "represented"
-            form_id = target.get("form_id")
+            # A printed text slot inherits the independently inventoried
+            # parent form. Otherwise a missing long/Vigil form could borrow
+            # the same-named Proper in the short/Day form.
+            form_id = target.get("form_id") or (
+                parent.get("form_id") if target["kind"] == "text-slot" else None
+            )
             forms = mass.get("forms") or []
             form_ids = {form.get("id") for form in forms} if forms else {"main"}
             if form_id and form_id not in form_ids:
@@ -575,8 +580,8 @@ def expectations(path: Path, calendar: str, masses: list[dict]) -> dict:
                 if form_id and forms:
                     selected_propers = next((form.get("propers") or [] for form in forms
                                              if form.get("id") == form_id), [])
-                if not any(proper.get("name") == target["calendar_proper_name"]
-                           for proper in selected_propers):
+                if sum(proper.get("name") == target["calendar_proper_name"]
+                       for proper in selected_propers) != 1:
                     state = "not-represented"
             elif target.get("calendar_ordinary_appointment"):
                 appointed = (mass.get("ordinary_appointments") or {}).get(

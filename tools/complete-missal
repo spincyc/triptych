@@ -351,10 +351,13 @@ def ordinary_absences(
         where = f"mass-ordinary.coverage.{calendar}.absent[{index}]"
         if not isinstance(reason, dict):
             raise Refused(f"{where} must be an object")
-        exact_fields(reason, {"key", "count", "state", "kind"}, where)
+        exact_fields(reason, {"key", "label", "count", "state", "kind"}, where)
         key = reason.get("key")
         if not isinstance(key, str) or not key:
             raise Refused(f"{where}.key must be a non-empty string")
+        label = reason.get("label")
+        if not isinstance(label, str) or not label.strip():
+            raise Refused(f"{where}.label must be a non-empty string")
         if key in absences:
             raise Refused(f"mass-ordinary {calendar} repeats absence {key!r}")
         count = integer(reason.get("count"), f"{where}.count")
@@ -365,7 +368,7 @@ def ordinary_absences(
         if state != expected_absence_state(kind):
             raise Refused(f"{where}.state is inconsistent with kind {kind!r}")
         normalized.append(dict(reason))
-        absences[key] = {"count": count, "kind": kind, "state": state}
+        absences[key] = {"count": count, "kind": kind, "state": state, "label": label}
 
     language_absences = row.get("language_absences")
     if not isinstance(language_absences, list):
@@ -380,7 +383,7 @@ def ordinary_absences(
         where = f"mass-ordinary.coverage.{calendar}.language_absences[{index}]"
         if not isinstance(language_row, dict):
             raise Refused(f"{where} must be an object")
-        exact_fields(language_row, {"key", "lang", "count", "state", "kind"}, where)
+        exact_fields(language_row, {"key", "label", "lang", "count", "state", "kind"}, where)
         key = language_row.get("key")
         language = language_row.get("lang")
         if not isinstance(key, str) or key not in absences:
@@ -398,6 +401,7 @@ def ordinary_absences(
         if (
             language_row.get("kind") != parent["kind"]
             or language_row.get("state") != parent["state"]
+            or language_row.get("label") != parent["label"]
         ):
             raise Refused(f"{where} does not retain its absence type")
         by_key[key] += count

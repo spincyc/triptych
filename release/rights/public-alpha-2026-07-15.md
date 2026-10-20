@@ -1757,7 +1757,7 @@ release attachment, announcement, or promotion.
 | `THIRD_PARTY.md` | `5c500dab142f3790393f07bf8f0b007dd98c8433c84ffccd7f3d7775e4e7bd5e` |
 | `docs/bibles.md` | `af32df1cd8bbc1d0799e98065f1428dc9ecdb3e2753f8bd4cd6b4d595ec74a01` |
 | `docs/reading-and-commentary.md` | `b0861dd1b6ce0a81b62ab2158b20d093664381cc3c93d9e62f53cdb2b1a84e32` |
-| `docs/the-mass.md` | `978b352ff13fbaa08d1d819be8ffcdeaeda82b2368ed6a907ea10099b532da9d` |
+| `docs/the-mass.md` | `6859897e1a94a511f6dcbf735105f0dc772239b122dd3e006f7793fbcc355e5d` |
 | `library/biographies.md` | `c2de5d8013c126500ec283334fd3311fb907c826e3a3a800145d575347be21ab` |
 | `library/catholic-exorcism.md` | `cb8dc01280320b0377bd2d48e0013379b8acee3ede3d6255beaa37356c7c63db` |
 | `library/curriculums.md` | `4d6deabc3129f825c1f11677e6ac9f0afcdf62df68fb9965f0e9f2468e95ea32` |
@@ -11368,10 +11368,10 @@ release attachment, announcement, or promotion.
 | `src/web/browser/liturgy/day-missal.css` | `218d8a97a7ab034891f178ec83ef5d9dc980c407fc12b0106797798fc64f41aa` |
 | `src/web/browser/liturgy/day-reader.css` | `695de63e1ae82091248515a849de5354389a551e4f589504d2faa1ae46b0b2e0` |
 | `src/web/browser/liturgy/day-reader.html` | `98be6b375533bd452589d49ace8315d674067a7bb34d25e5ed7a81930d8897bc` |
-| `src/web/browser/liturgy/day-reader.js` | `c1268194a13e6a7045aa3fc99e475002d79b01e83a6a6d5f173e2ad00d9cc244` |
+| `src/web/browser/liturgy/day-reader.js` | `ae8eb05df8e920175f8ed13dfee22a6e2e657f47eac983f2f6ea1b5ace78a6ab` |
 | `src/web/browser/liturgy/day.css` | `93ef9f44ee5d6488cb95a1587e856bd75488ea6b34b6ff723a01a437a75b6ed1` |
 | `src/web/browser/liturgy/day.html` | `fae86f1a2da5984599f5a346e4494b741e06361644f66e9d18426752aeaaedea` |
-| `src/web/browser/liturgy/day.js` | `a6dc5fd34bf1c054ae9d6028206065b74fab2829fc747a64cad37c2abb7c04ea` |
+| `src/web/browser/liturgy/day.js` | `86e050c59fc65f3062f980aa9dc7c456e7409077d3772a50e6574bfb4f9fe85d` |
 | `src/web/browser/liturgy/index.html` | `d82223f0c8415dcfdbcecec3ab66c832f43823daaf77fc4104c14dcfb668ac94` |
 | `src/web/browser/liturgy/liturgy.css` | `5333873c3fbcdabb5cd10b1d92897feaa27fad7d532e70c17fd2130088f936b6` |
 | `src/web/browser/liturgy/liturgy.js` | `b6a2ca7e2bf3b5966855312569092a3b6c3f32435cf73e4d04cf14fc801feabf` |
@@ -11379,8 +11379,8 @@ release attachment, announcement, or promotion.
 | `src/web/browser/liturgy/proper-placement-notes.js` | `dd02a28ab4a922adbac69b26e53566e0dde23610f09359cd4377893b37f5fe6b` |
 | `src/web/browser/liturgy/propers-reader.css` | `93651fe00f97beaa55c581bb5066da0467a0245fd06bb02f7a5988b059e92ae9` |
 | `src/web/browser/liturgy/propers-reader.html` | `b8547c6fd5251e9987bfb933df2ad27e2e99195f40d18d6252d7339dc285e5c6` |
-| `src/web/browser/liturgy/propers-reader.js` | `4dfd122a81a69c0b38c30d3916dad86eaae0f684fd1b4c8f23d3d874dc5b8f42` |
-| `src/web/browser/liturgy/reader-instrument.css` | `0fffe839ff35a8e1ccb221264d7310a7b5e3a7de6f6166ce874546751ff32e8a` |
+| `src/web/browser/liturgy/propers-reader.js` | `625354a84c16786c158f924341e7643daaa0ce703d5a9bef70787562fa682c5e` |
+| `src/web/browser/liturgy/reader-instrument.css` | `f779a038bfedb0608e34f67e1b4701d6619421ed25090fb8358a3498a96c2bf5` |
 | `src/web/browser/liturgy/reader-shell.css` | `e7195cd86ed4fc4a8455e97369702239eb22d709a13d3d8462d7759c01fe814a` |
 | `src/web/browser/liturgy/reader-shell.js` | `68d52d714c39abeb21c517a98df69d17eb6032d661c87442fb196f3cabbb8b7b` |
 | `src/web/browser/liturgy/reader-state-adapters.js` | `2a08d63e3a030947cc3238290eef69f08ee91e53bb93dfed4772ee207a0f78cc` |
@@ -14133,9 +14133,9 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-6.json` | `54408d9f5e1c8b684850b05976d6e3ac9ee3b88b6194c37c7e1cf83d52256d28` |
 | `src/web/data/structure/documents/corpus.json` | `56070f77c5f99cef1be7724266aab28b89c9bf3fb045478247ad92c5d6bfe9e1` |
 | `src/web/data/structure/ordinary/index.json` | `d42c3482d78158b8d1a0d51b65ce6d5704b5d634f8833bc46f2a8a65b3a73816` |
-| `src/web/data/structure/ordinary/postconciliar.json` | `57923aea6fce2397f5d79c3171e4a7645866f4d0b0fcd7e0b42f3b84b582483e` |
-| `src/web/data/structure/ordinary/roman-1962.json` | `8faecac1f6df0e737f4b4778947dc6b041aafae250fbb4a87aa39276d9a0406c` |
-| `src/web/data/structure/ordinary/roman-pre-1955.json` | `b436f56d27c66ee3c1a268e793fec211b9a7cf96d36afe0370f6a55ed4e3996b` |
+| `src/web/data/structure/ordinary/postconciliar.json` | `92f700d466f17a4cd8554bfb486f24ce31a774c60af3ce32105c373e63e88ef3` |
+| `src/web/data/structure/ordinary/roman-1962.json` | `1c57daf6b77b7814998430b4157e78b0b417a9c5f579de88a6d9a0012b1868f8` |
+| `src/web/data/structure/ordinary/roman-pre-1955.json` | `0148747d78f061dda74c9b4d77e1c4b6d67b0c222cb4e034a29c642b84bead44` |
 | `src/web/data/structure/paragraphs/catholic-public-domain-version/01-gen/001.json` | `4f79beb5afe32b8fe6bad5133cf93ad8a3c27f7a6e1fcbfd583d4943c42ab2ee` |
 | `src/web/data/structure/paragraphs/catholic-public-domain-version/01-gen/002.json` | `baff1b94da49a490aad58ef3eda8c76fcbae8eb5852ca5d7953af6c8f81f746e` |
 | `src/web/data/structure/paragraphs/catholic-public-domain-version/01-gen/003.json` | `03a5f328f300a581f2481fd1604dfba736652d99ed76d1a18db25a981cca844c` |
@@ -19685,9 +19685,9 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/paragraphs/world-english-bible-catholic/73-apoc/021.json` | `f8f88417560529269645c36c33f66b6177323f18aed2fc95e817720ef31841fd` |
 | `src/web/data/structure/paragraphs/world-english-bible-catholic/73-apoc/022.json` | `b38cf221de030ad24aba0c1dd88f0823bcb4a721a25bc35fa8f94e1a903b4097` |
 | `src/web/data/structure/propers/index.json` | `ed462d89e5777f12b009cb962ebe1a59d4a2082a552489198f54feb8067c9536` |
-| `src/web/data/structure/propers/postconciliar.json` | `3369745c5f49b1f58d5413106ae055975fdb11d8700ed80d3569eb2362cfe130` |
-| `src/web/data/structure/propers/roman-1962.json` | `dd00430656bfe4d9b59e32ade2ca1589f903374a05de9899ec3502325887ef31` |
-| `src/web/data/structure/propers/roman-pre-1955.json` | `f7bedfa1593534d32f567e7b8851c8882257ef9c50a122545c123b5c7bcfd5ef` |
+| `src/web/data/structure/propers/postconciliar.json` | `0f19657026001c5cf92de24823d5c76d2123e353e0228cbf4fa39b8eeeeeb981` |
+| `src/web/data/structure/propers/roman-1962.json` | `4824f49ab4d24d88a63a77d2bdf1f0469467f90fd94f901aab54b873a9670b28` |
+| `src/web/data/structure/propers/roman-pre-1955.json` | `671ebc79bbae086f82ac2d2402aa6d5c612af52afefae7bdd4ad7e34ff2bab49` |
 | `src/web/data/structure/readings/narrative-spine.json` | `9be6d97c206bc3544905f354090567f00f0f08a0b879b79f1d61499cc59db452` |
 | `src/web/data/structure/rubrics/index.json` | `61f18bea60e8f821891efc243a86e01bc140b65b40b3c65c8930e430d69058dc` |
 | `src/web/data/structure/rubrics/postconciliar.json` | `fb9dd1594412905efad869b4ea7031b989cdb9bf445283176f5b905a49d14be9` |
@@ -23881,7 +23881,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/text/passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.visitatione-beatae-mariae-virginis-secret.json` | `8d37bcfd80e14d1980f3ff2d4b3f20e519da9e5c72783ce07ce5125b17247739` |
 | `src/web/data/structure/sources/text/passage.westcott-and-hort.the-new-testament-in-the-original-greek.introduction-and-appendix-1882.appendix-p71-lk-24.12.json` | `199d42eced334a709244d53f41cafdd57ee93cd352aad1273287b48ce5ba6bf7` |
 | `src/web/data/structure/sources/text/passage.william-smith.dictionary-of-greek-and-roman-antiquities.1875-lacuscurtius-web-2026-07-25.sv-mantele.json` | `5e9590fc1d25d8018dc0fc12d78e539d017b66527b2857a5ba554aa026979736` |
-| `tools/public-alpha` | `64be4b04c123497d05bcedea80b3f87793620820bb4e16821c20dabbb0a4eb23` |
+| `tools/public-alpha` | `ff459a62a79572742dfeec0c3932f02f984caa196fb9580d7e2e69e567826a60` |
 | `web/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.md` | `6349355c26491b0292f854a8ac2da3fceba601432e92770d3db57c3821bca039` |
 | `web/claude/articles/canon-law/natural-positive-divine-human-law.md` | `75a6f9e454d09e5597d3089f0397eb30310d36790a048599e4f19ff3448a301b` |
 | `web/claude/articles/faith/against-the-instrumentalists.md` | `309ab5bf2c00ce7ad98bec3200025af2bb88f5a0717e353e89547ef88a3e4be1` |

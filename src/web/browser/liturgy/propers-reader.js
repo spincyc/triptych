@@ -12,6 +12,8 @@
   }
 
   const PROPERS_INDEX = 'structure/propers/index.json';
+  const PREFERENCES_KEY = 'triptych:liturgy:preferences:v1';
+  const LEGACY_PROPERS_PREFERENCES_KEY = 'triptych:liturgy:propers';
   const PUBLIC_KEYS = Object.freeze({
     cycle: 'cycle', alternative: 'alternative', translationWitness: 'translation-witness'
   });
@@ -67,6 +69,7 @@
     pendingLocation: null,
     pendingLocationSet: false,
     pendingFocus: null,
+    pendingPreferences: false,
     preferredType: null,
     draftStructure: null,
     draftGroups: []
@@ -240,12 +243,34 @@
   }
 
   function safePreferences() {
-    const held = Contract.safeRemembered(window.localStorage, 'propers');
-    return {
-      missal: held.missal,
-      bible: held.bible,
-      orations: held.orations
-    };
+    try {
+      const storage = window.localStorage;
+      const raw = storage.getItem(PREFERENCES_KEY) ||
+        storage.getItem(LEGACY_PROPERS_PREFERENCES_KEY);
+      if (!raw) return {};
+      const held = JSON.parse(raw);
+      if (!held || typeof held !== 'object' || Array.isArray(held)) return {};
+      const remembered = {};
+      ['missal', 'bible', 'orations'].forEach(function (key) {
+        if (typeof held[key] === 'string' && held[key]) remembered[key] = held[key];
+      });
+      return remembered;
+    } catch (_error) {
+      // Storage is optional, including when merely accessing it is denied.
+      return {};
+    }
+  }
+
+  function savePreferences(state) {
+    try {
+      window.localStorage.setItem(PREFERENCES_KEY, JSON.stringify({
+        missal: state.edition.id,
+        bible: state.bible.id,
+        orations: state.languages.orations
+      }));
+    } catch (_error) {
+      // The canonical URL contains the complete selection without storage.
+    }
   }
 
   function choosePreference(parsed, remembered, defaults, key, valid, errors) {
@@ -615,6 +640,7 @@
 
   function navigate(updates, removals) {
     const navigation = arguments.length > 2 && arguments[2] || {};
+    runtime.pendingPreferences = navigation.rememberPreferences === true;
     const currentLocation = readerShell.captureSemanticLocation();
     const currentState = history.state && typeof history.state === 'object' ? history.state : {};
     history.replaceState(
@@ -1374,6 +1400,8 @@
 
   async function renderCandidate() {
     const serial = ++runtime.serial;
+    const pendingPreferences = runtime.pendingPreferences;
+    runtime.pendingPreferences = false;
     const pendingLocation = runtime.pendingLocation;
     const pendingLocationSet = runtime.pendingLocationSet;
     const pendingFocus = runtime.pendingFocus;
@@ -1514,6 +1542,7 @@
         window.propersReaderDebug.semantic = semanticProjection(result);
         populateBrowseSurface();
         refreshDetailsAfterOutcome();
+        if (pendingPreferences) savePreferences(normalized.state);
         return;
       }
       runtime.outcome = 'ready';
@@ -1540,6 +1569,7 @@
       canonicalize(normalized, location, pendingLocationSet);
       focusCommittedResult(pendingFocus, location);
       refreshDetailsAfterOutcome();
+      if (pendingPreferences) savePreferences(normalized.state);
     } catch (error) {
       if (serial !== runtime.serial) return;
       renderFailure([{
@@ -1604,13 +1634,6 @@
       witnessSelect.focus();
       return;
     }
-    try {
-      window.localStorage.setItem('triptych:liturgy:propers', JSON.stringify({
-        missal: missalSelect.value, bible: bibleSelect.value, orations: orationsSelect.value
-      }));
-    } catch (_error) {
-      // Storage is optional; the explicit URL remains sufficient.
-    }
     const updates = {
       missal: missalSelect.value,
       type: typeSelect.value,
@@ -1627,7 +1650,9 @@
       removals.push('form', PUBLIC_KEYS.cycle, PUBLIC_KEYS.alternative);
     }
     readerShell.close({ restoreFocus: false });
-    navigate(updates, removals, { location: null, focus: 'title' });
+    navigate(updates, removals, {
+      location: null, focus: 'title', rememberPreferences: true
+    });
   });
 
   contentsList.addEventListener('click', function (event) {

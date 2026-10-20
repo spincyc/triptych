@@ -2824,19 +2824,19 @@ class ParityTests(unittest.TestCase):
             for event in lawrence["events"]
         ))
 
-        stanislaus = node_call({
+        boniface = node_call({
             "op": "source-claim-coverage", "id": "roman-1962",
-            "mass": "s-stanislai-episcopi-martyris",
+            "mass": "comm-s-bonifatii-martyris",
         })
         common_choice = next(
-            row for row in stanislaus["unresolvedChoices"]
+            row for row in boniface["unresolvedChoices"]
             if row["id"].startswith("common-set:")
         )
         self.assertEqual([option["id"] for option in common_choice["options"]],
                          ["c3", "c4"])
-        self.assertEqual(stanislaus["coverage"][0]["completeness"], "partial")
+        self.assertEqual(boniface["coverage"][0]["completeness"], "partial")
         self.assertIn("unresolved-choice", {
-            reason["kind"] for reason in stanislaus["coverage"][0]["reasons"]
+            reason["kind"] for reason in boniface["coverage"][0]["reasons"]
         })
 
     def test_source_claim_statuses_and_common_set_dispositions_fail_closed(self) -> None:
@@ -2844,7 +2844,7 @@ class ParityTests(unittest.TestCase):
             ("postconciliar", "our-lady-fatima", "mass-status"),
             ("roman-1962", "s-laurentii-brundusio-confessoris-ecclesiae-doctoris",
              "proper-status"),
-            ("roman-1962", "s-stanislai-episcopi-martyris", "common-set"),
+            ("roman-1962", "comm-s-bonifatii-martyris", "common-set"),
         )
         for edition, mass, mutation in malformed:
             with self.subTest(mutation=mutation), self.assertRaises(AssertionError):
