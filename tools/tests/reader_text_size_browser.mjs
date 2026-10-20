@@ -178,6 +178,54 @@ try {
     await evaluate(cdp, 'new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))');
   }
 
+  async function nativeKey(name) {
+    const code = {Tab:9,Enter:13,End:35,Home:36,Escape:27}[name];
+    for (const type of ['keyDown', 'keyUp']) {
+      await cdp.send('Input.dispatchKeyEvent', {type, key:name, code:name,
+        windowsVirtualKeyCode:code, nativeVirtualKeyCode:code,
+        ...(type === 'keyDown' && name === 'Enter' ? {text:'\r'} : {})});
+    }
+  }
+
+  async function tabTo(selector) {
+    for (let attempt = 0; attempt < 100; attempt += 1) {
+      if (await evaluate(cdp, `document.activeElement === document.querySelector(${JSON.stringify(selector)})`)) return;
+      await nativeKey('Tab');
+    }
+    throw new Error('Native Tab could not reach ' + selector);
+  }
+
+  async function openWithKeyboard(name) {
+    await tabTo('[data-reader-action=' + JSON.stringify(name) + ']');
+    await nativeKey('Enter'); await settled();
+    const activation = await evaluate(cdp, `(() => {
+      const surface=document.querySelector(${JSON.stringify('[data-reader-surface=' + JSON.stringify(name) + ']')});
+      const active=document.activeElement;
+      return {open:surface.open,focus:{tag:active.tagName,id:active.id,
+        close:active.hasAttribute('data-reader-close'),
+        surface:active.closest('[data-reader-surface]')?.dataset.readerSurface||null}};
+    })()`);
+    await writeFile(resolve(SCRATCH, activeCase + '-' + name + '-activation.json'),
+      JSON.stringify(activation,null,2)+'\n');
+    assert.equal(activation.open, true, JSON.stringify(activation));
+    assert.equal(activation.focus.surface, name, JSON.stringify(activation));
+    assert.equal(activation.focus.close, true, JSON.stringify(activation));
+  }
+
+  async function scrollSettled() {
+    const observed = await evaluate(cdp, `new Promise(resolve => {
+      const start=performance.now(); let previous=scrollY, stable=0;
+      function sample(now) {
+        stable=Math.abs(scrollY-previous)<.1 ? stable+1 : 0; previous=scrollY;
+        const settled=now-start>=150 && stable>=6;
+        if(settled || now-start>=3000) resolve({settled,elapsed:now-start,stable});
+        else requestAnimationFrame(sample);
+      }
+      requestAnimationFrame(sample);
+    })`);
+    assert.equal(observed.settled, true, JSON.stringify(observed));
+  }
+
   async function viewport(width, height, scale = 1) {
     await cdp.send('Emulation.setDeviceMetricsOverride', {
       width, height, deviceScaleFactor: scale, mobile: false
@@ -198,6 +246,26 @@ try {
     let target = nodes[0];
     for (const node of nodes) { if(node.getBoundingClientRect().top <= line) target=node; else break; }
     return target?.dataset.semanticLocation;
+  })()`;
+
+  const controlGeometry = `(() => {
+    const select=document.getElementById('reader-text-size'), surface=select.closest('dialog');
+    const box=select.getBoundingClientRect(), panel=surface.getBoundingClientRect();
+    const style=getComputedStyle(select), header=surface.querySelector('.surface-head');
+    const extent=style.outlineStyle==='none' ? 0 : Math.max(0,
+      (parseFloat(style.outlineWidth)||0)+(parseFloat(style.outlineOffset)||0));
+    const port={left:Math.max(0,panel.left+surface.clientLeft),
+      right:Math.min(innerWidth,panel.left+surface.clientLeft+surface.clientWidth),
+      top:Math.max(0,panel.top+surface.clientTop),
+      bottom:Math.min(innerHeight,panel.top+surface.clientTop+surface.clientHeight)};
+    if(header && getComputedStyle(header).position==='sticky')
+      port.top=Math.max(port.top,header.getBoundingClientRect().bottom);
+    const hit=document.elementFromPoint(box.left+box.width/2,box.top+box.height/2);
+    return {value:select.value,active:document.activeElement===select,
+      focusVisible:select.matches(':focus-visible'),unobscured:hit===select||select.contains(hit),
+      rect:{left:box.left,right:box.right,top:box.top,bottom:box.bottom},port,extent,
+      outline:{style:style.outlineStyle,width:style.outlineWidth,offset:style.outlineOffset},
+      modeScrollTop:surface.scrollTop,windowScrollY:scrollY,url:location.href};
   })()`;
 
   for (const entrance of ['day', 'propers']) {
@@ -287,6 +355,53 @@ try {
     await waitFor(cdp, `${entrance}ReaderDebug.ready && ${entrance}ReaderDebug.state.requestedMode === 'study'`, 'Study rerender');
     assert.equal(await evaluate(cdp, `getComputedStyle(document.documentElement).fontSize`), '32px');
     assert.equal(await evaluate(cdp, `document.querySelectorAll('section[data-reader-text-size]').length`), 1);
+    assertions.push({name:activeCase,status:'pass'});
+  }
+
+  for (const entrance of ['day', 'propers']) {
+    activeCase = entrance + '-native-short-viewport-text-size-focus';
+    await viewport(780,437);
+    await evaluate(cdp, `localStorage.removeItem(TriptychReaderTextSize.PREFERENCE_KEY)`);
+    await navigate(entrance);
+    assert.equal(await evaluate(cdp, `document.getElementById('reader-text-size').value`), '100');
+    // Reach a semantic unit and Mode using native keys. No focus()/scroll repair
+    // follows the size change: End/Home must leave the actual select exposed.
+    await openWithKeyboard('contents');
+    const target = await evaluate(cdp, `document.querySelectorAll('[data-reader-location]')[2].dataset.readerLocation`);
+    await tabTo('[data-reader-location=' + JSON.stringify(target) + ']');
+    await nativeKey('Enter'); await scrollSettled();
+    await waitFor(cdp, `new URLSearchParams(location.hash.slice(1)).get('location')===${JSON.stringify(target)}`,
+      'native Contents URL location');
+    const before = await evaluate(cdp, currentLocation);
+    const url = await evaluate(cdp, 'location.href');
+    await openWithKeyboard('mode');
+    await tabTo('#reader-text-size');
+    for (const [key,value] of [['End','200'],['Home','100']]) {
+      await nativeKey(key); await settled();
+      const geometry = await evaluate(cdp, controlGeometry);
+      const location = await evaluate(cdp, currentLocation);
+      const screenshot = await cdp.send('Page.captureScreenshot', {format:'png'});
+      const stem = entrance + '-native-text-' + value + '-780x437';
+      await writeFile(resolve(SCRATCH, stem + '.json'), JSON.stringify({geometry,location},null,2)+'\n');
+      await writeFile(resolve(SCRATCH, stem + '.png'), Buffer.from(screenshot.data,'base64'));
+      assert.equal(geometry.value, value);
+      assert.equal(geometry.active, true);
+      assert.equal(geometry.focusVisible, true);
+      assert.equal(geometry.unobscured, true);
+      assert.ok(geometry.extent > 0, JSON.stringify(geometry));
+      const {rect,port,extent} = geometry;
+      assert.ok(rect.left-extent>=port.left && rect.right+extent<=port.right &&
+        rect.top-extent>=port.top && rect.bottom+extent<=port.bottom, JSON.stringify(geometry));
+      assert.equal(geometry.url, url);
+      assert.equal(location, before);
+    }
+    const beforeCloseY = await evaluate(cdp, 'scrollY');
+    await nativeKey('Escape'); await settled();
+    assert.equal(await evaluate(cdp, `document.getElementById('mode-surface').open`), false);
+    assert.equal(await evaluate(cdp, `document.activeElement.dataset.readerAction`), 'mode');
+    assert.equal(await evaluate(cdp, currentLocation), before);
+    assert.equal(await evaluate(cdp, 'location.href'), url);
+    assert.ok(Math.abs(await evaluate(cdp, 'scrollY') - beforeCloseY) <= 2);
     assertions.push({name:activeCase,status:'pass'});
   }
 

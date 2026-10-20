@@ -122,11 +122,31 @@
       doc.documentElement.dataset.readerTextSize = String(size);
       doc.documentElement.style.setProperty('--reader-text-size', size + '%');
     }
-    function restoreAfterLayout() {
+    function restoreAfterLayout(revealControl) {
+      const heldLocation = location;
       if (pending !== null) win.cancelAnimationFrame(pending);
       pending = win.requestAnimationFrame(function () {
         pending = null;
         restoreLocation(win, reading, location);
+        if (!revealControl || location !== heldLocation || !surface.open ||
+            !surface.isConnected || !select.isConnected || doc.activeElement !== select) return;
+        // Root rem sizing also reflows this dialog. Reveal only its still-active
+        // control, inside its own scrollport, without moving focus or the page.
+        const box = select.getBoundingClientRect();
+        const panel = surface.getBoundingClientRect();
+        const style = win.getComputedStyle(select);
+        const extent = style.outlineStyle === 'none' ? 0 : Math.max(0,
+          (parseFloat(style.outlineWidth) || 0) + (parseFloat(style.outlineOffset) || 0));
+        let top = Math.max(0, panel.top + surface.clientTop);
+        const bottom = Math.min(win.innerHeight, panel.top + surface.clientTop + surface.clientHeight);
+        const header = surface.querySelector('.surface-head');
+        if (header && win.getComputedStyle(header).position === 'sticky') {
+          top = Math.max(top, header.getBoundingClientRect().bottom);
+        }
+        const delta = box.top - extent < top ? box.top - extent - top :
+          Math.max(0, box.bottom + extent - bottom);
+        // Leave one CSS pixel for scrollTop rounding; the actual outline must fit.
+        if (delta && bottom > top) surface.scrollTop += delta + Math.sign(delta);
       });
     }
     apply(size);
@@ -139,9 +159,8 @@
       const remembered = writePreference(win, next);
       status.textContent = 'Text size ' + next + '%.' +
         (remembered ? '' : ' This setting lasts for this visit.');
-      // The selected control keeps focus. Only the document's semantic place
-      // moves to account for the larger line boxes.
-      restoreAfterLayout();
+      // Keep focus and both the reading place and active control visible after reflow.
+      restoreAfterLayout(true);
     });
     surface.addEventListener('close', function () {
       // The shell restores its opening scroll pixels synchronously. A size

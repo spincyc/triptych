@@ -812,6 +812,31 @@ path remains intact. Eleven offline adapter checks pass. Final capture, every
 image's inspection and current-row/scroller, focus and source assertions remain
 pending; capture counts alone do not close the ritual-flow promise.
 
+The bounded catalog/presentation startup prototype saves 18,579 gzip6 bytes
+across each of four complete 45-response ledgers, retaining the 4,000/300-byte
+kernel/authentication caps. Its corrected browser run passes 81 of 84 groups,
+including all ten native Retry focus boundaries and full-outline visibility.
+The run then finds an inherited shared Text Size defect: native enlargement
+to 200% keeps the Mode select active but moves it outside the visible dialog.
+The run is partial, all processes are closed, and timing and integration stay
+pending; earlier passing groups do not discharge the remaining three.
+
+The Text Size correction is integrated separately. Its existing coalesced
+layout callback now reveals the still-focused select within Mode's own scroll
+port after enlargement or shrinkage, preserving the existing semantic reading
+restore. Open/connected/active and held-location guards prevent a closed,
+reopened or moved-focus visit from claiming the reveal. Actual outline and
+sticky-header geometry determine the visible interval, with one nominal CSS
+pixel for scroll rounding. Seven Node tests pass. The native browser regression
+reproduces the original clipping and then passes all five groups on both
+entrances, with full outline, URL, reading-place, Escape, print and narrow
+reflow checks. All eight corrected screenshots are inspected; diagnostics are
+empty and browser resources close. An earlier regression setup failure lacked
+Enter's character text and is retained separately from the actual reproduction.
+This source-served result does not close the final-artifact zoom or independent
+accessibility gates. Startup generation, byte and timing proofs must be renewed
+with this shared correction present in both comparison variants.
+
 A parallel witness audit found no publishable English witness for the 1962
 Pentecost Lesson's printed `discipuli` wording. [Cabrol 1921](https://catalog.hathitrust.org/Record/100567132)
 is an inaccessible page-image lead, not a text source. An
