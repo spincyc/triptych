@@ -871,7 +871,8 @@ def propers_of(
     forms_by_id = {one["id"]: one for one in forms}
 
     entries = []
-    for row in payload.get("appointed") or []:
+    source_indices: dict[int, int] = {}
+    for source_index, row in enumerate(payload.get("appointed") or []):
         if not isinstance(row, dict) or not isinstance(row.get("proper"), dict):
             continue
         proper = dict(row["proper"])
@@ -913,6 +914,7 @@ def propers_of(
             }
         else:
             form_id = "main"
+        source_indices[id(proper)] = source_index
         proper["form"] = form_name
         proper["form_id"] = form_id
         proper["taken_from"] = row.get("taken_from")
@@ -988,6 +990,10 @@ def propers_of(
         # forms never concatenate into it: without a selector their ordered
         # payloads remain inspectable only under `forms`.
         "propers": selected_propers,
+        # Private until the expanded event projection is made.  A selected
+        # form is a subsequence of the full appointed source list: numbering
+        # its own rows would silently turn Day's 015-026 into 001-012.
+        "_proper_source_indices": [source_indices[id(p)] for p in selected_propers],
         "forms": forms,
         "selected_form": selected_form,
         "form_choice_required": bool(forms and selected_form is None),
@@ -1454,6 +1460,26 @@ def run_show(arguments: argparse.Namespace) -> dict:
                     "error": str(error),
                 })
 
+    machine_events = arguments.expanded and (
+        arguments.json or arguments.format in {"json", "yaml"}
+    )
+    for row in days:
+        for mass in row.get("masses") or []:
+            source_indices = mass.pop("_proper_source_indices", [])
+            if not machine_events or mass.get("key") != row.get("selected_mass"):
+                continue
+            ordinary = row.get("ordinary")
+            if (
+                row.get("ordinary_suppressed")
+                or not isinstance(ordinary, dict)
+                or ordinary.get("refused")
+            ):
+                continue
+            mass["expanded_events"] = expanded_event_projection(
+                str(row["calendar"]), mass, ordinary, source_indices,
+                ordinary_predicate_context_for(row, mass, when),
+            )
+
     bible = chosen_bible or indexed_bible(arguments.bible)
     language = language_account(days, arguments.lang, bible)
 
@@ -1563,7 +1589,10 @@ def ordinary_selection_map(
 def ordinary_predicates(propers: list[dict]) -> dict[str, bool]:
     """Positive applicability facts carried by this selected formulary."""
     predicates: dict[str, bool] = {}
-    if any(proper.get("name") == "Second Reading" for proper in propers):
+    if any(
+        (proper.get("proper") or proper).get("name") == "Second Reading"
+        for proper in propers
+    ):
         predicates["second-reading-appointed"] = True
     # No Preface row proves nothing: this corpus says Prefaces are unmodelled.
     # `mass-has-no-proper-preface` needs a future positive source binding.
@@ -1625,6 +1654,93 @@ def mass_events(
     ):
         raise Refused("the Ordinary seating model returned no typed resolution")
     return result
+
+
+def ordinary_predicate_context_for(day: dict, mass: dict, date: str) -> dict:
+    """The same date and appointment facts for text and machine readings."""
+    branch = next(
+        (one for one in day.get("branches") or [] if one.get("selected")),
+        None,
+    )
+    winner = branch.get("winner") if isinstance(branch, dict) else None
+    return {
+        "settled": branch.get("settled") if isinstance(branch, dict) else False,
+        "weekday": day.get("weekday"),
+        "season": day.get("season"),
+        "nature": winner.get("nature") if isinstance(winner, dict) else None,
+        "date": date,
+        "anchors": day.get("anchors"),
+        # A borrowed formulary's own variables are not today's appointments.
+        "appointments": (
+            {} if mass.get("borrowed") else mass.get("ordinary_appointments") or {}
+        ),
+    }
+
+
+def expanded_event_projection(
+    calendar: str,
+    mass: dict,
+    ordinary: dict,
+    source_indices: list[int],
+    predicate_context: dict,
+) -> list[dict]:
+    """Publish only the ordered identities of the CLI's seated event stream."""
+    propers = mass.get("propers") or []
+    if (
+        len(source_indices) != len(propers)
+        or any(not isinstance(index, int) or index < 0 for index in source_indices)
+        or source_indices != sorted(set(source_indices))
+    ):
+        raise Refused("the selected Proper rows lost their full source ordinals")
+    rows = [
+        {"proper": proper, "sourceIndex": index}
+        for proper, index in zip(propers, source_indices)
+    ]
+    stream = mass_events(ordinary, rows, None, predicate_context)["events"]
+    mass_key = str(mass["key"])
+
+    def proper_id(index: int) -> str:
+        return f"proper/{calendar}/{mass_key}/{index + 1:03d}"
+
+    events: list[dict] = []
+    for event in stream:
+        kind = event.get("kind")
+        if kind == "begin_section":
+            events.append({
+                "id": "ordinary-section/" + str(event["section"]["key"]),
+                "kind": "ordinary-section",
+            })
+        elif kind == "ordinary_element":
+            events.append({
+                "id": "ordinary-element/" + str(event["element"]["key"]),
+                "kind": "ordinary-element",
+            })
+        elif kind == "proper":
+            events.append({
+                "id": proper_id(event["sourceIndex"]), "kind": "proper",
+                "source_index": event["sourceIndex"],
+                "form_id": str(event["proper"].get("form_id") or "main"),
+            })
+        elif kind == "proper_choice":
+            form_id = str(event["formId"])
+            events.append({
+                "id": f"proper-choice/{calendar}/{mass_key}/{form_id}/{event['group']}",
+                "kind": "proper-choice", "source_index": event["sourceIndex"],
+                "form_id": form_id,
+                "options": [
+                    {
+                        "id": option["id"],
+                        "events": [proper_id(row["sourceIndex"]) for row in option["rows"]],
+                    }
+                    for option in event["options"]
+                ],
+            })
+        else:
+            raise Refused(f"the seated event stream has unknown kind {kind!r}")
+    ids = [event["id"] for event in events]
+    if len(ids) != len(set(ids)):
+        raise Refused("the expanded event stream repeats a semantic identity")
+    return events
 
 
 def proper_head(proper: dict) -> str:
@@ -1966,30 +2082,6 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
         # choice and made the next arm claim that an Ordinary had been printed
         # above when none had been enacted at all.
         framed = day.get("selected_mass")
-        selected_branch = next(
-            (
-                branch
-                for branch in day.get("branches") or []
-                if branch.get("selected")
-            ),
-            None,
-        )
-        winner = (
-            selected_branch.get("winner")
-            if isinstance(selected_branch, dict)
-            and isinstance(selected_branch.get("winner"), dict)
-            else {}
-        )
-        ordinary_predicate_context = {
-            "settled": selected_branch.get("settled")
-            if isinstance(selected_branch, dict)
-            else False,
-            "weekday": day.get("weekday"),
-            "season": day.get("season"),
-            "nature": winner.get("nature"),
-            "date": payload.get("date"),
-            "anchors": day.get("anchors"),
-        }
         for mass in ordered:
             rank = f" ({mass['rank']})" if mass.get("rank") else ""
             mark = ""
@@ -2024,14 +2116,8 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
                 render_expanded_mass(
                     mass, day.get("ordinary"), arguments, style,
                     frame=mass["key"] == framed,
-                    predicate_context=dict(
-                        ordinary_predicate_context,
-                        # A borrowed formulary's own appointments are not the
-                        # day's (RGMR 501); see formularyAppointments.
-                        appointments=(
-                            {} if mass.get("borrowed")
-                            else mass.get("ordinary_appointments") or {}
-                        ),
+                    predicate_context=ordinary_predicate_context_for(
+                        day, mass, str(payload.get("date")),
                     ),
                 )
                 if mass["placeholders"] and (
