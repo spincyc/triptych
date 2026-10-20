@@ -649,3 +649,13 @@ supported spoken body, including the repaired Secret distinction. Only its
 terminal delivery estimate, generation metadata and audit were refreshed.
 The three-page proof passed native build, component and content checks, with
 every page inspected. A fresh homily review is pending.
+
+The fresh xhigh homily reviewer returned `PASS` with no findings after
+checking the sealed inputs. The shared build then regenerated the three PDFs
+without changing accepted prose: study 23 pages, SHA-256
+`d51e0a4fb26291b9066d5dec99690bf75e9e2b7f10648a12360805407947be94`;
+concise 10 pages, `995bdbb133024e9856b9a48b2a41fc3e0ee7591840d863fd7f124beee002eeed`;
+homily three pages, `6fd2de7f383669af1dec0db71f8b2530a2b66793ae00927032e0abdbe70df724`.
+Its build, font, structure, extraction and pagination checks passed and it
+generated 36 page rasters. Native artifact gates passed. A fresh visual
+review is inspecting the new sealed set; earlier PDF hashes are superseded.

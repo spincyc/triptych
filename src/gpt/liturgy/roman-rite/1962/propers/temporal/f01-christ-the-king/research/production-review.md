@@ -706,3 +706,62 @@ acceptance. No forwarded finding or new upstream defect was identified.
 No accepted study component or research evidence was changed, and no PDF or
 web edition was installed. The parent driver owns global source-inventory
 checks, the final common build, workflow advancement, integration and publication.
+
+# Final three-artifact rebuild after apparatus revisions
+
+`build-artifacts` iteration 1 completed on 20 October 2026 for `proper-study`
+v13, run `095fe00a9fe8cfee`. All three prescribed `make doc` targets passed
+with the shared finalization timestamp `2026-10-20T14:42:53Z`. No rendered
+source, layout, evidence or generation-metadata change was needed, and no
+content-review seal was refreshed.
+
+The final outputs are under
+`build/gpt/liturgy/roman-rite/1962/propers/temporal/`:
+
+| Artifact | Physical pages | Bytes | SHA-256 |
+| --- | ---: | ---: | --- |
+| `f01-christ-the-king.pdf` | 23 | 480091 | `d51e0a4fb26291b9066d5dec99690bf75e9e2b7f10648a12360805407947be94` |
+| `f01-christ-the-king-synthesis.pdf` | 10 | 406508 | `995bdbb133024e9856b9a48b2a41fc3e0ee7591840d863fd7f124beee002eeed` |
+| `f01-christ-the-king-homily.pdf` | 3 | 246082 | `6fd2de7f383669af1dec0db71f8b2530a2b66793ae00927032e0abdbe70df724` |
+
+The three settled TeX logs contain no fatal errors, warnings, undefined
+references, overfull or underfull boxes. The Makefile's metadata and applicable
+anchor/component checks passed, and a separate artifact component check
+passed for each of the three editions. The study and concise extents meet
+the required 20–50 and 10–12 physical-page ranges. The concise auxiliary
+absolute-page labels place the inventory, overview and all four sense rows on
+page 1, chronology on page 2, themes on pages 3–4, and developed commentary
+at the beginning of page 5.
+
+`pdfinfo` reads all three as unencrypted, letter-size PDF 1.7 files with the
+expected titles, subjects and declared revision time. Ghostscript's
+`nullpage` device processed every page without diagnostics. `pdffonts`
+reports every listed font subset embedded with Unicode mapping. All three
+complete `pdftotext -layout` extractions were read: the appointed text and
+study sequence, concise opening and interleaved argument, separate homily
+delivery note, revised terminal apparatus, and final timestamp and rights
+colophon remain present. Layout extraction puts the homily's two columns
+side by side; this is not its spoken reading order.
+
+The homily is approximately 82,027 bytes per page, above the 75 KiB size
+review trigger. It embeds ten font subsets, has no embedded images, and
+totals less than 1 MiB. The other PDFs are below both size triggers; all
+three `pdfimages -list` reports are empty. No independent PDF transformation
+was applied.
+
+The prescribed snapshot helper replaced `research/artifacts.json` with the
+exact final PDF and declared render-input hashes and the study/concise
+auxiliary evidence. The final `.aux` and `.log` files remain beside the
+PDFs. Byte-identical proof copies, build logs, complete text extractions,
+font and metadata reports, and structure-check reports are retained in the
+driver's assigned scratch area. The registered raster helper generated all
+36 bounded page rasters and contact sheets under
+`build/tpt-runs/095fe00a9fe8cfee/artifacts/build-artifacts-0001/rasters/`;
+that replaceable directory contains only the helper's output.
+
+These are build, structure and extraction checks, not independent visual
+acceptance. The following fresh reviewer must inspect every rendered page
+after the upstream-seal and artifact gates pass. No new semantic defect was
+identified, no source or layout edit needs routing upstream, and no PDF was
+installed. The parent driver owns workflow advancement, global source checks,
+integration and publication.
