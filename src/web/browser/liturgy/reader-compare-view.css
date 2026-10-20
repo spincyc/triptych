@@ -91,6 +91,17 @@
   outline-offset: 0.35rem;
 }
 
+/* The wide action rail is outside the normal 56rem reading plane. Give
+   Compare its wider measure to the rail's right, bounded by the viewport.
+   Language pairs already move their rail to the outer edge. */
+@media screen and (min-width: 72rem) {
+  .reader-instrument[data-reader-mode="compare"] .reader-document:not(:has(.text-pair)) {
+    --compare-rail-inset: calc(max(0.75rem, calc(50% - 33rem)) + 5rem);
+    width: min(calc(100% - var(--compare-rail-inset) - 1.5rem), 70rem);
+    margin-inline: var(--compare-rail-inset) 1.5rem;
+  }
+}
+
 @media (max-width: 52rem) {
   .reader-instrument[data-reader-mode="compare"] .reader-document {
     width: 100%;

@@ -837,6 +837,50 @@ This source-served result does not close the final-artifact zoom or independent
 accessibility gates. Startup generation, byte and timing proofs must be renewed
 with this shared correction present in both comparison variants.
 
+Both startup variants were then regenerated with the committed Text Size fix.
+All 5,540 actual-kernel checks pass, preserving equal paths and the six genuine
+source gaps per side. The four staged 45-route ledgers save
+18,574 / 18,574 / 18,577 / 18,577 gzip6 bytes; the shared fix is charged equally.
+The corrected browser run passes all 84 groups. All ten Retry focus images are
+individually inspected, fourteen native completion records are reviewed, and
+all three browser phases close. A preceding 39/84 run is retained separately:
+its supplemental harness compared four traversed trees with a five-tree
+admission map before allocating that phase. The bounded comparison correction
+preserves complete five-tree admission and every browser assertion.
+
+The subsequent eight cold HTTP/2 samples reject this candidate too. Against
+committed runtime `a29df844d`, August 2 LCP is 4.592/4.588 → 3.048/3.016 s and
+September 5 is 4.600/4.592 → 3.028/3.032 s. Median gains are 1.558 and 1.566 s,
+but every candidate misses the unchanged 3.0 s pilot and 2.5 s release limits.
+Reader text/state/events/URL, response identity and script/Bible/warm reuse
+checks pass; diagnostics and foreign-browser boundaries are clean. Preflight,
+probe, analysis and closure exit 0, with all sixteen driver/server handles and
+observed browser descendants closed. Neither this lossless catalog/presentation
+prototype nor the 101-year expansion is integrated. Final C1–C5 visual, native
+zoom and print review proceeds against the verified committed reader; the
+performance failure does not close C6 or block those other review gates.
+The candidate traces contain 46 bodies across 45 unique routes: the icon is
+fetched twice, adding 229 gzip bytes beyond each staged route ledger. Data,
+scripts and Bible responses are not duplicated. Measured totals retain that
+extra icon body; the untimed R2 cost control does not establish matching icon
+multiplicity, so the staged net is not a complete paired measured-transfer net.
+
+The first artifact-bound review of committed `a29df844d` then finds a desktop
+Compare defect on both entrances: the centered 70rem body crosses the fixed
+action rail. All eight native 400% cases pass their machine guards, but actual
+inspection of all 48 images catches the 100% baseline collision; the separate
+88-image review confirms six affected wide Compare frames. A screen-only rule
+now reserves the unchanged rail at widths of at least 72rem, retaining Compare's
+70rem cap where it fits and limiting its width to the available viewport.
+Paired-language rail placement, the narrow dock and print rules stay scoped to
+their existing owners. The new browser geometry check reproduces seven text
+collisions before the fix and passes afterward; the full 33-group visual
+harness, default registry checks, locked preview build and integrity checks
+pass. Two browser-launch setup failures and a corrected viewport-versus-shell
+dock measurement remain separate from the actual reproduction. Final screen,
+print and independent acceptance are still open; the first captures remain
+diagnostic evidence, and bounded print attachment defects are being repaired.
+
 A parallel witness audit found no publishable English witness for the 1962
 Pentecost Lesson's printed `discipuli` wording. [Cabrol 1921](https://catalog.hathitrust.org/Record/100567132)
 is an inaccessible page-image lead, not a text source. An

@@ -11389,7 +11389,7 @@ release attachment, announcement, or promotion.
 | `src/web/browser/liturgy/propers-reader.html` | `b655fec4c26d96147bafd58e12600a4d2b356b5a4a701a9ca4e2433d6c99d6ec` |
 | `src/web/browser/liturgy/propers-reader.js` | `b0996a5ea61582bb8747d49e666791148a6f250fac90584e3b7582094be87ac4` |
 | `src/web/browser/liturgy/propers-study.js` | `75bc604e0fcb7553e13bd8068e23320652d8c0096e9d47622c4f0d65dfdf0e24` |
-| `src/web/browser/liturgy/reader-compare-view.css` | `7dbebb3478e5978064c6f38bd299d85323bde5b91c3a6a7ccb39eb1627e784e7` |
+| `src/web/browser/liturgy/reader-compare-view.css` | `ffd083ad1954bcf1c90a2accb9d3a16ddfdc2e6d57def11f9e7c52efa24c5249` |
 | `src/web/browser/liturgy/reader-compare-view.js` | `a17daa04bca64178947164100a3711243a50bb085addcccd3cb62f78ddf5db31` |
 | `src/web/browser/liturgy/reader-comparison.js` | `4b402415fa4968aebadf12403b9e7887f1c72e951d6c99322c09b1a7ab1f22ca` |
 | `src/web/browser/liturgy/reader-instrument.css` | `6006dd3c09b1a3586dfc2627d7bb02e87ae892f05475ec24628a55cb0041ee5f` |
