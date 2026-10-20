@@ -1,0 +1,442 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-stages",
+  "dossier_id": "regional-variants",
+  "title": "Bounded regional Eucharistic book states and approved component sets",
+  "traditions": [
+    {
+      "id": "lyon-romano-lugdunense",
+      "label": "Roman–Lyonese missal",
+      "family": "latin",
+      "scope": "The 1866 Latin Romano-Lyonese missal and its expressly named local substitutions; no continuous descent from earlier Lyon-use books is asserted.",
+      "coverage_note": "The title names three substitutive components under Apostolic See authority; exact prayers, rubrics, donor printing, and 1864 permission terms remain uncollated."
+    },
+    {
+      "id": "polish-diocesan-roman",
+      "label": "Roman Missal for the dioceses of Poland",
+      "family": "latin",
+      "scope": "Approved Polish-language diocesan service books and their regional calendar and Eucharistic components, distinct from the Latin typical edition and older Polish local uses.",
+      "coverage_note": "The 1986 book is contemporary-described after separate 1983 approval and 1984 Roman confirmation; later expanded printings are retrospective descriptions pending original leaves."
+    },
+    {
+      "id": "pittsburgh-divine-liturgies",
+      "label": "Pittsburgh Byzantine Catholic Divine Liturgies",
+      "family": "byzantine",
+      "scope": "The Metropolia of Pittsburgh's English Chrysostom and Basil service set for four eparchies, with the acquired 2006 people's book distinguished from two unacquired clergy Liturgikons.",
+      "coverage_note": "The people's book itself gives 2007 promulgation and required-use dates; 1964/65, Parma 1970, and Passaic 1996 predecessors are not collapsed into one text."
+    },
+    {
+      "id": "zaire-roman-adaptation",
+      "label": "Roman Missal for the dioceses of Zaire",
+      "family": "latin",
+      "scope": "French original-language Roman adaptation approved for the dioceses of then-Zaire, not an Africa-wide recension.",
+      "coverage_note": "The 1988 official decree and selected order and prayer excerpts are inspected; a complete approved bound missal and its publication and effective-use dates are not."
+    },
+    {
+      "id": "ordinariate-divine-worship",
+      "label": "Divine Worship: The Missal for the personal ordinariates",
+      "family": "latin",
+      "scope": "The 2015 Prayer Book English Roman Rite missal approved for the three personal ordinariates, distinct from the 2014 non-Eucharistic Occasional Services.",
+      "coverage_note": "The bishops' official account identifies the book, approval month, use date, and bounded components; the original approval leaf and 2003-to-2015 collation are outstanding."
+    }
+  ],
+  "sources": [
+    {
+      "id": "regional-variants:lyon1866-source",
+      "title": "Missale romano-lugdunense (A. Le Clere et Soc., 1866)",
+      "url": "https://books.google.co.uk/books?id=Z9T7c1doCiwC",
+      "kind": "institutional-catalogue",
+      "inspection": "Original-book title and Lyon Public Library provenance read from Google Books portal on 2026-10-20; repository's Numelyo source record reports first eleven leaves inspected, but no body comparison in this packet.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Portal transcription is title-level evidence; the 1864 papal brief and original 1866 prefatory act have not been read here."
+    },
+    {
+      "id": "regional-variants:poland1987-source",
+      "title": "F. Małaczyński, Missale Romanum dioecesium Poloniae, Notitiae 23 (1987)",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-23-(1987)/Notitiae-257-1987.pdf",
+      "kind": "scholarship",
+      "inspection": "Exact PDF in Northern lane scratch read at printed pp. 1254–1260: 1979 excerpt, bishops' 1983 approval, Roman 1984 confirmation, 1986 printing, calendar, Holy Week, prefaces and Eucharistic prayers.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Article describes the printed book and acts; neither the original decrees nor 1986 book leaves were independently inspected."
+    },
+    {
+      "id": "regional-variants:poland2023-source",
+      "title": "Teodor Puszcz, Polskie wydanie Mszału Pawła VI, Anamnesis 115 (2023)",
+      "url": "https://liturgia.episkopat.pl/file_get.php?fid=1750",
+      "kind": "scholarship",
+      "inspection": "PDF acquired and extracted in this scratch lane; printed pp. 54–57 describe 2009/2010 and 2013 expanded reprints and distinguish their added calendars and proper texts.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Retrospective comparison, not original printed leaves. Its discussion of the nominal 2013 printing also lists later saints and missing texts; exact 2013 physical content must be checked before dating any individual later addition to 2013."
+    },
+    {
+      "id": "regional-variants:pittsburgh2006-source",
+      "title": "The Divine Liturgies of Our Holy Fathers John Chrysostom and Basil the Great: Responses and Hymns (Pittsburgh, 2006)",
+      "url": "https://www.mci.archpitt.org/servicebooks/DivineLiturgies.pdf",
+      "kind": "primary-book",
+      "inspection": "Exact 467-page people's book acquired in Byzantine regional lane (SHA-256 92cb4335a127df5cb69c6f7f772f56eab585434183bfbce076dce2380ca3e676); printed pp. 1–3, cover, contents and signed foreword read directly.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Copyright 2006, all rights reserved; research copy only. This is a people's/cantor book, not either clergy Liturgikon; no predecessor text collation."
+    },
+    {
+      "id": "regional-variants:pittsburgh2007-account-source",
+      "title": "Metropolitan Cantor Institute, The New Service Books: Introduction",
+      "url": "https://mci.archpitt.org/NewServiceBooks.html",
+      "kind": "official-retrospective",
+      "inspection": "HTML lines 59–83 inspected directly on 2026-10-20; identifies four-eparchy distribution, predecessor streams, and 29 June 2007 required use.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Describes clergy Liturgikons but does not supply their exact pages or resolve which earlier book is the textual exemplar."
+    },
+    {
+      "id": "regional-variants:zaire1988-source",
+      "title": "Zairensium Dioecesium, decree and excerpts, Notitiae 24 (1988)",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-24-%281988%29/Notitiae-264-1988.pdf",
+      "kind": "primary-act",
+      "inspection": "Exact official PDF acquired in Roman mission lane (SHA-256 94ed1405c1b02fe23f9d18eb753ea0de8a231aba43829e5c05df2ecb69c56fdf); decree printed p. 457 and selected order/prayer excerpts pp. 458–465 inspected.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The bound complete missal, full calendar and propers, imprint, and effective date remain uninspected."
+    },
+    {
+      "id": "regional-variants:divineworship2015-source",
+      "title": "USCCB Committee on Divine Worship Newsletter 51 (October 2015), pp. 37–39",
+      "url": "https://www.usccb.org/resources/newsletter-2015-10.pdf",
+      "kind": "official-retrospective",
+      "inspection": "PDF pp. 1–3 read directly 2026-10-20: May 2015 Holy See approval, First Sunday of Advent use, three-ordinariate scope, and selected calendar, Ordinary and euchological components.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Signed original approval and complete source missal uninspected; 2003 Book of Divine Worship relation described only as a forerunner, not a collated ancestor."
+    }
+  ],
+  "stages": [
+    {
+      "id": "regional-variants:lyon1866",
+      "tradition_id": "lyon-romano-lugdunense",
+      "label": "1866 Romano-Lyonese missal",
+      "date_label": "1866 printing",
+      "start_year": 1866,
+      "end_year": 1866,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Original title's three named Roman-to-Lyonese local substitutions: final Triduum, Order of Mass and Pentecost Vigil.",
+      "components": [
+        "propers",
+        "ordinary",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:lyon-1866-missal"
+      ],
+      "witness_label": "Missale romano-lugdunense, Lyon Public Library copy, 1866",
+      "summary": "The Roman missal title explicitly says Lyonese rites replace Roman rites in their proper locations for the final Triduum, Order of Mass and Pentecost Vigil by Apostolic See authority.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "regional-variants:lyon1866-source",
+          "locus": "1866 title as transcribed by original-book portal",
+          "claim": "Names the three substitutions and Apostolic See authorization."
+        }
+      ],
+      "limitations": "Printed title establishes a positive scoped state, not exact texts or the date substitutions began. Earlier 1825/1844 Lyon books and the claimed 17 March 1864 brief need original comparison; no act-history station or predecessor parent follows from this record.",
+      "reception": "Authorization is named on the title; actual parish-level use and effective date are not established."
+    },
+    {
+      "id": "regional-variants:poland1986",
+      "tradition_id": "polish-diocesan-roman",
+      "label": "1986 Roman Missal for the dioceses of Poland",
+      "date_label": "1986 printing; approved 1983 and confirmed 1984",
+      "start_year": 1986,
+      "end_year": 1986,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Polish diocesan calendar, Holy Week, Order of Mass, prefaces and Eucharistic Prayers as contemporaneously described.",
+      "components": [
+        "calendar",
+        "rubrics",
+        "ordinary",
+        "anaphoras",
+        "propers"
+      ],
+      "witness_ids": [],
+      "witness_label": "Mszał rzymski dla diecezji polskich, first edition, Poznań 1986; original copy not acquired",
+      "summary": "Polish bishops approved the complete translation on 1 December 1983, Rome confirmed it on 28 April 1984, and Pallottinum printed it in 1986. The contemporary account specifies regional calendar, Holy Week sepulchre and Resurrection rites, five extra local prefaces, Eucharistic Prayer V variants, Reconciliation and children's prayers.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "regional-variants:poland1987-source",
+          "locus": "printed pp. 1255–1258",
+          "claim": "Separates approvals and printing and lists named regional components in the 1986 book."
+        },
+        {
+          "source_id": "regional-variants:poland1987-source",
+          "locus": "printed p. 1259, Introductio Novi Missalis",
+          "claim": "Contemporary account describes introduction of the new missal into use, preceded by the bishops’ December 1986 pastoral letter and March 1987 clerical instruction."
+        }
+      ],
+      "limitations": "1986 is publication, not the first date of Polish vernacular Mass or effective date of every component. The 1974 calendar approval, 1979 Warsaw partial study book, 1983 bishops' approval and 1984 Roman confirmation are distinct events. Original decrees and book leaves remain uninspected; no predecessor transition is asserted.",
+      "reception": "Contemporary 1987 account describes introduction of the new missal into use in Poland; the first dated celebration from a particular copy and nationwide parish-by-parish uptake are not established."
+    },
+    {
+      "id": "regional-variants:poland2009-10",
+      "tradition_id": "polish-diocesan-roman",
+      "label": "Expanded Polish missal printings of 2009/2010",
+      "date_label": "2009 or 2010 printing identity unresolved",
+      "start_year": 2009,
+      "end_year": 2010,
+      "date_kind": "publication",
+      "status": "provisional",
+      "scope": "Added Polish sanctoral collects and some complete Mass formularies, plus updated calendar and 2004 General Instruction.",
+      "components": [
+        "calendar",
+        "propers",
+        "rubrics"
+      ],
+      "witness_ids": [],
+      "witness_label": "Mszał rzymski dla diecezji polskich, expanded second edition, 2009/2010; exact impressions uninspected",
+      "summary": "The episcopal journal quotes the edition's own statement that it reprints the 1986 missal while adding saint Mass texts, the updated calendar and 2004 General Instruction. Its comparison reports new collects and sometimes complete Mass formularies with proper prefaces.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "regional-variants:poland2023-source",
+          "locus": "printed pp. 54–56",
+          "claim": "Quotes the reprint's declared scope and compares calendars and saint proper content."
+        }
+      ],
+      "limitations": "2009 and 2010 may be separate impressions of one expanded state; bounds express unresolved printing year, not duration. Exact approval and effectiveness, individual printed leaves and the article's comparison need direct checking.",
+      "reception": "Edition described in bishops' journal; no separate first-use date established."
+    },
+    {
+      "id": "regional-variants:poland2013",
+      "tradition_id": "polish-diocesan-roman",
+      "label": "Polish supplemented missal identified as 2013",
+      "date_label": "2013 nominal printing; exact contents unverified",
+      "start_year": 2013,
+      "end_year": 2013,
+      "date_kind": "publication",
+      "status": "provisional",
+      "scope": "Reported inclusion of St Joseph in Eucharistic Prayers II–IV and further calendar/proper supplementation.",
+      "components": [
+        "anaphoras",
+        "calendar",
+        "propers"
+      ],
+      "witness_ids": [],
+      "witness_label": "Mszał rzymski dla diecezji polskich, expanded and supplemented 2013 edition; original copy uninspected",
+      "summary": "The episcopal journal identifies a 2013 expanded printing and reports that the available Polish missal includes St Joseph in Eucharistic Prayers II–IV. It also describes calendar and proper supplementation, without securing each item to the original 2013 physical impression.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "regional-variants:poland2023-source",
+          "locus": "printed pp. 56–58",
+          "claim": "Names nominal 2013 reprint and St Joseph inclusion; notes gaps in printed Mass texts."
+        }
+      ],
+      "limitations": "The article's discussion names saints recognized after 2013 while describing the 2013 reprint. Do not assign those later additions to the 2013 impression until the original book is inspected. No automatic 2009/2010-to-2013 revision edge.",
+      "reception": "An identified reprint, not a proved new nationwide effective date."
+    },
+    {
+      "id": "regional-variants:pittsburgh2007",
+      "tradition_id": "pittsburgh-divine-liturgies",
+      "label": "Pittsburgh 2007 approved Divine Liturgies",
+      "date_label": "2006 printing; 6 January 2007 promulgation; 29 June 2007 required use",
+      "start_year": 2006,
+      "end_year": 2006,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "People's book: Chrysostom/Basil ordinary responses and hymns, Basil anaphora, vigil, seasonal and saint propers, commons and special services.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byz-pittsburgh-2006-07"
+      ],
+      "witness_label": "The Divine Liturgies of Our Holy Fathers John Chrysostom and Basil the Great, Responses and Hymns, Pittsburgh 2006",
+      "summary": "The book's signed foreword approves and promulgates the new English text and music on 6 January 2007 and names 29 June 2007 as required-use date across the Pittsburgh metropolia. It identifies translation from Greek compared with Slavonic; official account identifies four-eparchy distribution.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "regional-variants:pittsburgh2006-source",
+          "locus": "printed pp. 1–3",
+          "claim": "Title, contents, translation basis, signatures, promulgation and required-use date appear in the acquired book."
+        },
+        {
+          "source_id": "regional-variants:pittsburgh2007-account-source",
+          "locus": "HTML lines 62–81",
+          "claim": "Identifies four-eparchy book distribution, required use, and a DVD of an actual celebration using the new text; earlier English book streams remain distinct."
+        }
+      ],
+      "limitations": "The available witness is the people's/cantor book; clergy Liturgikons and predecessors have not been collated. The 2006–2007 dates are distinct event dates, not uncertainty or a duration of use. No claim that 1942 Slavonic was the sole exact exemplar. The separately approved 2010 English Presanctified books remain a permission lead pending evidence of actual use under the received-language admission rule.",
+      "reception": "Signed foreword requires metropolia-wide use from 29 June 2007; the official account reports copies sent to every parish, mission and religious house and a filmed Divine Liturgy using the new text."
+    },
+    {
+      "id": "regional-variants:zaire1988",
+      "tradition_id": "zaire-roman-adaptation",
+      "label": "Approved Zaire Roman missal order",
+      "date_label": "30 April 1988 approval",
+      "start_year": 1988,
+      "end_year": 1988,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Approved French regional Mass order, introduction, calendar and proper Masses; decree and selected approved passages only are directly inspected.",
+      "components": [
+        "ordinary",
+        "rubrics",
+        "calendar",
+        "propers"
+      ],
+      "witness_ids": [
+        "western:roman-zaire-1988"
+      ],
+      "witness_label": "Zairensium Dioecesium decree with approved excerpts in Notitiae 24 (1988)",
+      "summary": "The Roman congregation approved a distinct diocesan Roman Missal after the Zairean bishops' request. Official excerpts establish a local order and ceremonial, including a penitential act after the homily and peace before the universal prayer.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "regional-variants:zaire1988-source",
+          "locus": "printed p. 457 and pp. 458–465",
+          "claim": "Dated approval decree and selected order and prayer text establish a bounded approved adaptation."
+        }
+      ],
+      "limitations": "Approval is not the book's unknown printing or first-use date; no complete missal or full local proper has been examined. No direct parent edition or Africa-wide reception is asserted.",
+      "reception": "Permission for then-Zaire's dioceses; actual local rollout remains to document."
+    },
+    {
+      "id": "regional-variants:divineworship2015",
+      "tradition_id": "ordinariate-divine-worship",
+      "label": "Divine Worship: The Missal, 2015",
+      "date_label": "May 2015 approval; printed 2015; use from 29 November 2015",
+      "start_year": 2015,
+      "end_year": 2015,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Prayer Book English Roman Rite missal for three personal ordinariates, including proper time, Mass order, Eucharistic Prayers, sanctoral, and regional calendars.",
+      "components": [
+        "calendar",
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:divine-worship-2015"
+      ],
+      "witness_label": "Divine Worship: The Missal, 2015 printing, described by USCCB",
+      "summary": "Holy See approval in May 2015 and use from the First Sunday of Advent are officially reported. The bishops' account identifies pre-Lent and time after Epiphany, Collect for Purity, penitential rite after the Word, offertory options, Prayer of Humble Access, normative Roman Canon and bounded alternative Eucharistic Prayer.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "regional-variants:divineworship2015-source",
+          "locus": "printed pp. 37–39",
+          "claim": "Names approval, printed availability, jurisdiction and specified order/calendar/prayer components."
+        }
+      ],
+      "limitations": "An approved original English adaptation, not simply an English translation of a Latin printing. The 2003 Book of Divine Worship is called a forerunner, but no 2003-to-2015 textual transition, exact donor editions, original signed approval day or whole-book text binding follows.",
+      "reception": "Approved for the three ordinariates from 29 November 2015 under the described personal-use limits; Roman Rite books also remain available."
+    }
+  ],
+  "transitions": [
+    {
+      "id": "regional-variants:poland1986-to-2009-10",
+      "from_stage": "regional-variants:poland1986",
+      "to_stage": "regional-variants:poland2009-10",
+      "kind": "revision",
+      "status": "provisional",
+      "evidence_level": "scholarly-description",
+      "summary": "The expanded print declares itself a 1986 reprint with added saint Mass texts, updated calendar and 2004 General Instruction; the article reports new collects and sometimes complete formularies with prefaces.",
+      "components": [
+        "calendar",
+        "propers",
+        "rubrics"
+      ],
+      "changes": [
+        {
+          "component": "propers",
+          "before": "1986 saint proper as printed in the first edition; exact entries not collated here.",
+          "after": "New saint collects and, in some cases, full Mass formularies with proper prefaces in expanded printings.",
+          "locus_before": "1986 edition described by Puszcz",
+          "locus_after": "2009/2010 edition declaration as quoted by Puszcz, printed pp. 54–55",
+          "evidence": [
+            {
+              "source_id": "regional-variants:poland2023-source",
+              "locus": "printed pp. 54–55",
+              "claim": "Quotes reprint statement and describes changed saint proper content."
+            }
+          ]
+        },
+        {
+          "component": "calendar",
+          "before": "1986 Polish diocesan calendar.",
+          "after": "Updated calendar with additional saint celebrations, described by retrospective comparison.",
+          "locus_before": "1986 calendar in Puszcz comparison",
+          "locus_after": "2009/2010 calendar in Puszcz comparison",
+          "evidence": [
+            {
+              "source_id": "regional-variants:poland2023-source",
+              "locus": "printed pp. 54–56",
+              "claim": "Compares 1986, 2009 and 2010 calendar witnesses."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "regional-variants:poland2023-source",
+          "locus": "printed pp. 54–56",
+          "claim": "Identifies 1986 reprint relationship and bounded added components."
+        }
+      ],
+      "limitations": "Original 1986, 2009 and 2010 leaves are uncollated, so no exact entry-by-entry delta or claim that 2009 and 2010 are distinct recensions. The 2004 General Instruction's insertion is not a 2009 promulgation of that instruction.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed"
+    }
+  ],
+  "gaps": [
+    {
+      "id": "regional-variants:lyon-gap",
+      "tradition_id": "lyon-romano-lugdunense",
+      "period": "1825–1866",
+      "missing": "Exact prior Lyon text, 1864 permission, 1866 preface and paired Ordinary/Triduum/Pentecost leaves.",
+      "next_source": "Original 1825/1844 and Numelyo 1866 missals; Pius IX brief of 17 March 1864 and original 1866 prefatory act.",
+      "consequence": "1866 is an evidenced regional state, not a dated transition from an assigned Lyon or Roman donor edition."
+    },
+    {
+      "id": "regional-variants:poland-gap",
+      "tradition_id": "polish-diocesan-roman",
+      "period": "1968–2025",
+      "missing": "Original 1968 bilingual, 1979 Warsaw partial, 1986, 2009, 2010, 2013 and 2021/2025 supplement title, approval and text leaves; exact date/content identity of nominal 2013 issue.",
+      "next_source": "The named Pallottinum books, 1983 bishops' act, 1984 Roman confirmation and original supplement approvals; compare Holy Week, prefaces, Eucharistic Prayers and named saint propers.",
+      "consequence": "Approval, partial study printing, operative core missal, expanded reprint and complementary supplements stay separate; no invented all-text parent chain."
+    },
+    {
+      "id": "regional-variants:pittsburgh-gap",
+      "tradition_id": "pittsburgh-divine-liturgies",
+      "period": "1964–2007",
+      "missing": "Two 2007 priest Liturgikons and three earlier English book streams, exact source exemplar and bounded before/after collation.",
+      "next_source": "Original 1964/65, Parma 1970, Passaic 1996 and 2007 clergy books and dated approval leaves.",
+      "consequence": "The people's book documents the approved operative local state, but no specific predecessor edge or clergy-text identity."
+    },
+    {
+      "id": "regional-variants:zaire-gap",
+      "tradition_id": "zaire-roman-adaptation",
+      "period": "1988 onward",
+      "missing": "Exact bound approved French missal, complete calendar and propers, first printing, effectiveness and later revisions.",
+      "next_source": "Approved Missel romain pour les diocèses du Zaïre with front matter and 1988 decree attachment; compare selected components against an identified Roman book.",
+      "consequence": "1988 approval does not date printing or prove a parent edition or Africa-wide implementation."
+    },
+    {
+      "id": "regional-variants:divineworship-gap",
+      "tradition_id": "ordinariate-divine-worship",
+      "period": "2003–2015 and later",
+      "missing": "Original 2015 approval leaf and complete printed missal, 2003 Book of Divine Worship collation, exact source borrowings and later dated updates.",
+      "next_source": "2015 Divine Worship: The Missal with Rubrical Directory; 2003 Book of Divine Worship and later issues' front matter.",
+      "consequence": "2015 state is documented by official description, but no 2003-to-2015 revision edge, donor identity or subsequent update stage is inferred."
+    }
+  ]
+}

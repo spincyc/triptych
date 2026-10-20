@@ -645,12 +645,16 @@ Two rows nobody asked for:
   characters [verified]. The Roman rite, officially, in another language and
   another script. Whole and publishable.
 - **A Chinese Roman Missal of 1670**, indexed as *Missale Romanum Sinice* in the
-  Usuarium database [verified].
+  Usuarium database [verified as a printed translation]. A 1615 faculty
+  authorized preparation of a Chinese translation, but the printed book's
+  approval and liturgical use are not established here. A study in [*Notitiae*
+  48 (2011), pp. 552–554](https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/2010/notitiae-47-(2011)/Notitiae-541-542-2011.pdf)
+  reports that renewed approval failed in 1680.
 
-Neither is a use exempted by *Quo primum* and neither is a lay translation. Both
-are official Roman-rite altar books that a search for Latin titles will never
-return — which is direct evidence that "all missals for all churches in communion
-with Rome" has members this project has not yet named. **Usuarium**
+Neither is a use exempted by *Quo primum* and neither is a lay translation. The
+Glagolitic book is an official Roman-rite altar book; the Chinese printing is a
+mission translation witness whose permission and reception still need original
+evidence. Both escape a search restricted to Latin titles. **Usuarium**
 (`https://usuarium.elte.hu/`, live [verified]) is the right instrument for
 finding them, because it is organised by *use*, which no scan repository is.
 

@@ -2,14 +2,14 @@
 # Coverage slots, witnesses, substantive versions, translations and acquisition are distinct.
 audit_schema = 1
 record_type = "eastern-eucharistic-books-timeline-research"
-recorded_on = "2026-10-16"
+recorded_on = "2026-10-20"
 research_scope = "agreed-current-traditions-shared-ancestry-extinct-local-uses"
 completeness = "systematic-coverage-census-with-incomplete-edition-chronologies"
-text_acquisition = "six-canonical-historical-service-book-scans; one-critical-edition-scan-with-bounded-Greek-passages; one-deferred-Malayalam-scan-in-scratch; remainder-metadata-only"
+text_acquisition = "six-canonical-historical-service-book-scans; one-critical-edition-scan-with-bounded-Greek-passages; deferred-Malayalam-and-protected-Keren-Blin-Ge'ez-scans-in-scratch; remainder-metadata-only"
 source_schema_manifest = false
 station_assignments = "not-made"
 scope = "Eastern coverage census for present-day Catholic traditions, shared ancestry and extinct local uses; original liturgical-language service books first; not a complete edition catalogue"
-evidence_ceiling = "Six historical service books (2,024 PDF pages) remain canonically registered. One 714-page public-domain critical edition supplies three mediated Greek comparison witnesses and six bounded reviewed passages, also registered. A 160-page Malayalam 1966 scan is scratch-only with redistribution rights unresolved. No complete book transcription or whole-book collation."
+evidence_ceiling = "Six historical service books (2,024 PDF pages) remain canonically registered. One 714-page public-domain critical edition supplies three mediated Greek comparison witnesses and six bounded reviewed passages, also registered. A 160-page Malayalam 1966 scan and Keren's protected bilingual service PDFs are scratch-only, with redistribution rights unresolved. No complete book transcription or whole-book collation."
 identity_model = "Church, rite family, recension, anaphora, translation, edition, printing, artifact and promulgating act are separate objects. These candidate IDs identify research rows, not canonical source works or history stations."
 rights = "Project-created metadata and paraphrase only. Specific provider notices are recorded for acquisition candidates; they do not authorize publication of unrelated sources or modern editorial layers."
 currentness_limit = "Checked on the recorded date; this is not a declaration that a book is currently obligatory in every territory or that no later edition exists."
@@ -23,7 +23,7 @@ scope_questions_remaining = "Scope agreed. Exact manuscript transmission paths, 
 coverage_definition = "A version requires evidence of substantive changes to prayers, rubrics, calendar or order. A manuscript witness, printing date, script change, Church union, or institutional erection alone is not a new version. Keep historical liturgical-language books first; approved vernacular and lay translations form later independent work. Modern-language original composition remains in scope and must be distinguished from translation."
 source_library_manifest_limit = "This inventory links canonical source-library identities; it is not itself a source artifact manifest. Scan acquisition does not establish checked transcription, complete structured contents, a substantive version boundary or edition-to-edition descent."
 
-record_count_note = "87 candidate records, 23 Church/tradition coverage slots and 94 source records are research objects, not distinct versions. Source-book printings, study texts, reprints and provisional leads remain separately qualified."
+record_count_note = "440 candidate records, 23 Church/tradition coverage slots and 372 source records are research objects, not distinct versions. Source-book printings, study texts, reprints and provisional leads remain separately qualified."
 
 [[sources]]
 id = "ziade-syriac-diaconicon-1941"
@@ -70,12 +70,24 @@ hash_state = "not-computed"
 full_contents_examined = false
 
 [[sources]]
+id = "mci-2006-peoples-book"
+url = "https://www.mci.archpitt.org/servicebooks/DivineLiturgies.pdf"
+checked_on = "2026-10-20"
+evidence_type = "original-approved-peoples-service-book"
+inspection = "467-page PDF acquired in research scratch; original title, contents, copyright and four-hierarch foreword directly inspected at printed pp. 1–3; body not collated"
+locus = "printed pp. 1–3 / PDF pp. 1–3: 2006 book title, 2007 approval and required-use dates, four named hierarchs"
+text_acquisition = "complete-provider-pdf-acquired-in-research-scratch; protected text not retained in source library"
+hash_state = "sha256-92cb4335a127df5cb69c6f7f772f56eab585434183bfbce076dce2380ca3e676"
+full_contents_examined = false
+rights_note = "Printed p. 2 reserves text and music rights to the Byzantine Catholic Metropolitan Church Sui Juris of Pittsburgh; citation and bounded research only."
+
+[[sources]]
 id = "mci-2010"
 url = "https://www.mci.archpitt.org/NewPresanctifiedBooks.html"
-checked_on = "2026-10-16"
-evidence_type = "search-result-only"
-inspection = "search-result-only"
-locus = "Indexed introduction; direct web open failed"
+checked_on = "2026-10-20"
+evidence_type = "official-service-book-description-and-component-comparison"
+inspection = "Full Metropolitan Cantor Institute page directly read; source describes approval and three-volume division, then names changes against Levkulic and Passaic books. Original 2010 books not acquired."
+locus = "Using the New Books, lines 59–65; Features, lines 93–169, especially propers, antiphonal psalms, Prayer of Saint Ephrem and litanies"
 text_acquisition = "not-acquired"
 hash_state = "not-computed"
 full_contents_examined = false
@@ -1114,25 +1126,25 @@ date = "2006 publication; 2007-01-06 promulgation; 2007-06-29 required use"
 language = "English"
 kind = "revised-translation-and-rubrics"
 evidence = "official-publication-announcement-inspected"
-source_ids = ["mci-2007", "mci-text"]
+source_ids = ["mci-2007", "mci-text", "mci-2006-peoples-book"]
 note = "Distinguish two clergy Liturgikons from the people's response/music book. Changes concern wording, translation, and rubrics; not a universal Byzantine reform."
 book_route = "https://mci.archpitt.org/servicebooks/DivineLiturgies.pdf"
-source_urls = ["https://mci.archpitt.org/NewServiceBooks.html", "https://mci.archpitt.org/NewServiceBooks2.html"]
+source_urls = ["https://mci.archpitt.org/NewServiceBooks.html", "https://mci.archpitt.org/NewServiceBooks2.html", "https://www.mci.archpitt.org/servicebooks/DivineLiturgies.pdf"]
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
-text_acquisition = "not-acquired"
+text_acquisition = "2006-peoples-book-acquired-in-research-scratch; two-priest-liturgikons-not-acquired"
 full_contents_examined = false
-research_priority = "deferred-translation-lane"
-version_status = "substantive-difference-not-established"
-scope_note = "Retained prior research; independent vernacular/lay translation work is deferred. Rubrical or original-composition evidence may later justify a separately sourced version claim."
+research_priority = "approved-operative-regional-book; clergy-volumes-and-predecessors-for-collation"
+version_status = "local-text-and-rubric-revision-officially-described; exact-deltas-uncollated"
+scope_note = "The signed 2006 people's book foreword and Metropolitan Cantor Institute account identify the approved text and mandated 2007 use across four eparchies, including missions. The MCI account also describes a filmed celebration using the new text. This is a bounded Pittsburgh expression, not a new universal Byzantine recension; the two clergy Liturgikons and 1964, Parma 1970 and Passaic 1996 comparators remain unacquired."
 chronology_start = 2006
 chronology_end = 2007
 chronology_kind = "publication-through-promulgation"
 chronology_certainty = "reported-event-dates; see-date-basis-and-evidence-type"
 authority_act_ids = ["pittsburgh-promulgation-2007"]
-acquisition_status = "not-acquired"
+acquisition_status = "peoples-book-research-scratch-only; clergy-volumes-not-acquired"
 transcription_status = "not-transcribed"
 collation_status = "not-collated"
-source_title_status = "Bibliographic label as supplied by cited source; native-script title and exact title-page transcription not independently established unless stated"
+source_title_status = "2006 people's-book English title directly read; clergy-volume titles not independently transcribed"
 
 [[records]]
 id = "byz-pittsburgh-2010-presanctified"
@@ -1142,20 +1154,20 @@ book_label = "The Divine Liturgy of the Presanctified Gifts"
 date = "2010"
 language = "English"
 kind = "associated-service-book"
-evidence = "search-result-only-direct-open-failed"
+evidence = "official-description-and-bounded-comparison-directly-inspected"
 source_ids = ["mci-2010"]
-note = "Clergy book and people's books with/without music. Mark as communion from previously consecrated gifts, not an additional Eucharistic anaphora."
+note = "The 2010 approved set comprises a clergy Liturgikon and people's books with and without music. The official comparison names changed propers, psalm assignments, posture rubrics, Prayer of Saint Ephrem placement and litany provision against Levkulic and Passaic regional books. Mark as communion from previously consecrated gifts, not an additional Eucharistic anaphora."
 source_urls = ["https://www.mci.archpitt.org/NewPresanctifiedBooks.html"]
 date_basis = "Source and evidence type named in this row; publication, approval, effective date and retrospective attribution are not interchangeable."
 text_acquisition = "not-acquired"
 full_contents_examined = false
-research_priority = "deferred-translation-lane"
-version_status = "substantive-difference-not-established"
-scope_note = "Retained prior research; independent vernacular/lay translation work is deferred. Rubrical or original-composition evidence may later justify a separately sourced version claim."
+research_priority = "approved-regional-service-book; original-volumes-and-predecessors-for-collation"
+version_status = "specific-content-and-rubric-differences-officially-described; original-pages-uncollated"
+scope_note = "The official MCI account approves a regional Presanctified set and compares named components with Levkulic and Passaic books. It says the Council promulgated the books for 2010 but did not require adoption that year throughout the Metropolia; the implementation advice presumes parishes may adopt them. Neither an actual celebration using these exact books nor an original 2010 volume was inspected, so this remains an approval/book-state lead under the approval-and-use admission threshold."
 chronology_start = 2010
 chronology_end = 2010
 chronology_kind = "publication-or-edition-year-reported"
-chronology_certainty = "indexed-announcement-only; direct-access-failed"
+chronology_certainty = "directly-inspected-official-description; original-imprint-and-act-unread"
 acquisition_status = "not-acquired"
 transcription_status = "not-transcribed"
 collation_status = "not-collated"
@@ -2910,6 +2922,34 @@ source_title_status = "Cited source label; independent original title or manuscr
 note = "Seventeen-anaphora Catholic edition. Bishop Kidane Yebio identifies it as the source of a literal Blin translation, establishing bounded Eritrean reception. A Keren 2009 Tigrinya study compares a specific Spirit invocation across 1890, 1913 and 1945 and lists three added anaphoras; the table does not mean earlier books lacked every epiclesis. The publisher’s signed 2024 note explicitly says the new edition replaces 1945. Exact original 1945 pages and editorial decree remain unacquired. The Encyclopaedia Aethiopica (mirror) says the Vatican press prepared it under Arnold van Lantschoot to correct earlier editions and lists 17 anaphoras: Apostles, Our Lord, Mary I, Mary II, John the Evangelist, James the Lord's brother, Mark, 318 Orthodox, Athanasius, Basil, Gregory of Nyssa, Epiphanius, John Chrysostom, Cyril, Jacob of Serug, Gregory and Dioscorus; it adds that the book's index (p. 7) does not name the last explicitly as Dioscorus of Alexandria but calls it the anaphora with which the missal ends. The Enciclopedia Cattolica (vol. VII, 1951, 'Libri liturgici', third-party transcription) instead reports 18 anaphoras for the Rome 1945 book; the count stays unreconciled until the book is inspected. Compared with the inspected Asmara headings, the 17-anaphora list is consistent with the Keren study's three additions; equivalence of the Asmara Dionysius and Däbrä Zäyt headings with 1945 titles is unverified. Revision documents of 1940 and 1944 are recorded separately (geez-congregatio-orientalis-1940-1944-revision-documents)."
 
 [[records]]
+id = "alex-keren-blin-geez-mass-2008"
+family = "Alexandrian/Ge'ez"
+church_scope = "Catholic Eparchy of Keren in present-day Eritrea; local received Blin/Ge'ez service book, without asserted use throughout the Eritrean Catholic Church or Ethiopia"
+book_label = "Keren Blin/Ge'ez Mass, issued as cover, preamble, three consecutively paginated Mass parts and a separate deacon/people volume"
+date = "Eparchial imprimatur 27 April 2008; Keren Mass-in-Blin use attested by June 2010"
+chronology_start = 2008
+chronology_end = 2008
+chronology_kind = "local-eparchial-imprimatur-date; not first-use-or-publication-date"
+language = "Blin and Ge'ez in parallel columns"
+kind = "approved-local-service-book-with-attested-Blin-use"
+source_ids = ["keren-blin-geez-book-index-2008", "keren-blin-geez-cover-2008", "keren-blin-mass-history-2009", "keren-blin-official-use-2010"]
+source_urls = ["http://www.eparchyofkeren.com/liturgy.php", "http://www.eparchyofkeren.com/liturgy/Blin-Geez-Mass-cover.pdf", "http://www.eparchyofkeren.com/liturgy/Blin-Geez%20Mass%20Preamble.pdf", "http://www.eparchyofkeren.com/liturgy/Blin-Mass%20Part-1%20(Web).pdf", "http://www.eparchyofkeren.com/liturgy/Blin-Mass%20Part-2%20(Web).pdf", "http://www.eparchyofkeren.com/liturgy/Blin-Mass%20Part-3%20(Web).pdf", "http://www.eparchyofkeren.com/liturgy/Blin-Geez-deacon%20and%20people.pdf", "http://www.eparchyofkeren.com/topics/History.Blin.Mass.pdf", "http://www.eparchyofkeren.com/topics/Kiflemariam.pdf"]
+research_pdf_sha256 = ["cover=67ef55d6fc8903dabcdc1ab98831b47b69c06bd2be761615b5d9eab3862eaa5b", "preamble=95b4e601876156d811c9007b666b113c88f5048c5f50805d962d1176c5b1cbf5", "main-part-1=673b3e3b1421279f394702b5cb7c4aadc09968b3e71d90c598a41114dd8b4c1d", "main-part-2=8841d20900ec6326574319cc1bd8728838d085cdf5042c42aee1fe2e0d1a07d4", "main-part-3=750fa164ee3253f1a3725cc303f65942058e2f93fc4f49389d72501fc9855bf8", "deacon-people=923c352f15906ec2788f5385bed965f556cce6d51cae1323f3c31e92628364e3"]
+source_locus = "Cover PDF p. 2 / printed ii, imprimatur; main book printed pp. 1–442; deacon/people printed pp. 1–100; Kiflemariam 2010 PDF p. 5, §V, actual official Blin Mass use"
+evidence = "original-eparchial-book-frontmatter-and-firsthand-eparchy-hosted-use-account-inspected"
+version_status = "local-received-translation; source-language-ritual-revision-unestablished"
+text_acquisition = "six-protected-provider-pdfs-acquired-in-research-scratch-only"
+full_contents_examined = false
+research_priority = "received-local-service-book-language"
+acquisition_status = "research-copy-only; not-registered-for-distribution"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+chronology_certainty = "imprimatur-read-on-original-page; local-use-attested-separately-by-2010"
+source_title_status = "Official eparchial English link label; native cover title requires qualified Blin/Ge'ez transcription"
+rights_note = "Catholic Eparchy of Keren reserves copyright on printed cover p. ii. Public research access does not grant redistribution of the book or prayers."
+note = "Bishop Kidane Yebio's 2009 account identifies the 1945 Ge'ez missal as the translation base. The official Keren index presents this six-part bilingual service set, and its cover bears the bishop's 27 April 2008 imprimatur. A Keren-hosted firsthand 2010 conference account describes official Mass celebrations in Blin; it does not identify a particular 2008 copy at a dated service. The 1973 Blin Mass recollection in that account belongs to an earlier translation episode, not to this printed edition. No complete comparison of named prayers, rubrics, order or anaphoras against the 1945 base has been made. Do not infer a new Ge'ez recension, a ritual transition, or adoption across the Eritrean Church."
+
+[[records]]
 id = "malabar-1774"
 family = "East Syriac/Syro-Malabar"
 church_scope = "Syro-Malabar Catholic Church"
@@ -3755,11 +3795,11 @@ id = "ruthenian"
 name = "Ruthenian Greek Catholic tradition"
 family = "Byzantine"
 census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025"]
-candidate_ids = ["byz-lviv-1905", "byz-ruthenian-1942", "byz-ruthenian-chrysostom-1940", "byz-ruthenian-ordo-1944"]
+candidate_ids = ["byz-lviv-1905", "byz-ruthenian-1942", "byz-ruthenian-chrysostom-1940", "byz-ruthenian-ordo-1944", "byz-pittsburgh-2006-07"]
 ancestry_candidate_ids = ["byz-barberini336", "byz-striatyn1604", "byzantine-slavic-vat-slav14"]
-deferred_or_origin_review_candidate_ids = ["byz-pittsburgh-1964-65", "byz-pittsburgh-2006-07", "byz-pittsburgh-2010-presanctified", "byzantine-slavic-lviv1930-mikron", "byzantine-slavic-rome1929-bishops-conference", "byzantine-slavic-archieratikon1973", "byzantine-slavic-buda1835-cold"]
+deferred_or_origin_review_candidate_ids = ["byz-pittsburgh-1964-65", "byz-pittsburgh-2010-presanctified", "byzantine-slavic-lviv1930-mikron", "byzantine-slavic-rome1929-bishops-conference", "byzantine-slavic-archieratikon1973", "byzantine-slavic-buda1835-cold"]
 coverage_status = "incomplete"
-missing_chronology = "Acquire 1940/1941 and 1942 printed witnesses and 1944 Ordo; establish region-specific receipt and supplements. The 1941 act permits exceptions, so publication is not universal replacement. Slavic-lane addition (byzantine_slavic, 2026-10-19): Locate the acts of the Rome meeting of October 1929 attended by the Mukachevo, Pittsburgh and Philadelphia bishops (reported in the 1930 Lviv small Liturgikon), the Mukachevo 1944 reprint of the 1941 Chrysostom (Keleher) and the Pittsburgh 1954/1955 English Ordo."
+missing_chronology = "Acquire 1940/1941 and 1942 printed witnesses and 1944 Ordo; establish region-specific receipt and supplements. The 1941 act permits exceptions, so publication is not universal replacement. Pittsburgh's 2006 English people's book and official MCI account document a regionally approved and used 2007 text, while the clergy Liturgikons and predecessor books remain uncollated. The officially approved 2010 Pittsburgh Presanctified set remains an origin/use review candidate because optional adoption was announced but an actual celebration with the exact books has not been identified. Slavic-lane addition (byzantine_slavic, 2026-10-19): Locate the acts of the Rome meeting of October 1929 attended by the Mukachevo, Pittsburgh and Philadelphia bishops (reported in the 1930 Lviv small Liturgikon), the Mukachevo 1944 reprint of the 1941 Chrysostom (Keleher) and the Pittsburgh 1954/1955 English Ordo."
 relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
 
 [[church_coverage]]
@@ -3840,11 +3880,11 @@ id = "eritrean"
 name = "Eritrean Catholic Church"
 family = "Alexandrian"
 census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025", "eritrea-2015-act"]
-candidate_ids = ["alex-geez-2025", "alex-geez-1913", "alex-geez-1945"]
+candidate_ids = ["alex-geez-2025", "alex-geez-1913", "alex-geez-1945", "alex-keren-blin-geez-mass-2008"]
 ancestry_candidate_ids = ["alex-geez-eap385", "alex-geez-aksumite-um039", "geez-1548-rome-tasfa-seyon", "geez-bl-or545-missal-cold"]
 deferred_or_origin_review_candidate_ids = ["alex-geez-1890", "geez-1549-rome-latin-rendering", "geez-paez-era-two-anaphora-missal-lead", "geez-touvier-revised-anaphoras-lead", "geez-congregatio-orientalis-1940-1944-revision-documents", "geez-1870-touvier-faculties-lead-cold"]
 coverage_status = "incomplete"
-missing_chronology = "Shared 2025 publication does not fill earlier Geez chronology. Need 1945 witness, pre-2015 territorial use, local printing/revision sequence and 2025 authority front matter. The Asmara book (imprimatur of the Vicar Apostolic of Eritrea, 12 April 1913; imprint 1914/15) is now acquired and linked; Keren 1890 and Vatican 1945 originals and post-1915 Eritrean printings remain open."
+missing_chronology = "Shared 2025 publication does not fill earlier Geez chronology. Need 1945 witness, pre-2015 territorial use, local printing/revision sequence and 2025 authority front matter. The Asmara book (imprimatur of the Vicar Apostolic of Eritrea, 12 April 1913; imprint 1914/15) is now acquired and linked; Keren 1890 and Vatican 1945 originals remain open. The locally approved Keren 2008 Blin/Ge'ez Mass set is linked on distinct approval and by-2010 actual-use evidence; obtain the exact edition's implementation record and compare its named components with the 1945 base before asserting a ritual revision or wider reception."
 relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
 
 [[church_coverage]]
@@ -3906,9 +3946,9 @@ id = "chaldean"
 name = "Chaldean Catholic Church"
 family = "East Syriac"
 census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025"]
-candidate_ids = ["chald-1901", "chald-proper-1901", "east-urmia-1876", "chald-1767", "chald-2014", "chald-2020", "chald-2025-reprint", "chaldean-ms-vat-sir-491", "chaldean-ms-vat-sir-44", "chaldean-ms-vat-sir-43", "chaldean-mosul1900-lections", "chaldean-mosul1936-reprint", "chaldean-baghdad1971", "chaldean-reform2006-2007", "chaldean-st-peter-2013", "chaldean-paris1982"]
+candidate_ids = ["chald-1901", "chald-proper-1901", "chald-1767", "chald-2014", "chald-2020", "chald-2025-reprint", "chaldean-ms-vat-sir-491", "chaldean-ms-vat-sir-44", "chaldean-ms-vat-sir-43", "chaldean-mosul1900-lections", "chaldean-mosul1936-reprint", "chaldean-baghdad1971", "chaldean-reform2006-2007", "chaldean-st-peter-2013", "chaldean-paris1982"]
 ancestry_candidate_ids = ["syr-add14669-fragments", "chaldean-ms-mar-eshaya", "chaldean-ms-diarbekir-hudra", "chaldean-ms-mardin22", "chaldean-ms-borg-sir-150", "chaldean-ms-vat-sir-42", "chaldean-ms-vat-sir-303", "chaldean-urmia1890-liturgy"]
-deferred_or_origin_review_candidate_ids = ["chald-arabic-by-2022", "chaldean-saigh1936"]
+deferred_or_origin_review_candidate_ids = ["chald-arabic-by-2022", "chaldean-saigh1936", "east-urmia-1876"]
 coverage_status = "incomplete"
 missing_chronology = "Extend collation of the retained 1767 and 1901 books beyond the checked Addai and Mari intercession; acquire the original 2020 impression/confirmation and compare complementary lections and the 2014 trial. The 2025 reprint is not a separately established reform; Urmia 1876 remains a collateral ritual boundary. Chaldean lane (2026-10-19): the 2020 decree (No. 31, 17 February 2020; recognition 21 November 2019; effective 5 April 2020) is now inspected; the 1773, 1936, 1971, 1982 and 2006 books remain unacquired and the Chaldean manuscript tradition (Vat. sir. 491, 44, 43) is labelled but not collated."
 relationship_limit = "Candidate linkage establishes research relevance only; it does not establish universal adoption, present obligation, or completeness."
@@ -5392,6 +5432,54 @@ text_acquisition = "whole-research-source-only; original-book-not-acquired"
 hash_state = "exact-digest-recorded-in-inspection"
 full_contents_examined = false
 limitations = "Same author as the 2009 history, not independent corroboration. No original missal pages or complete archival shelfmarks. Its bibliography/body disagree on the year of the Marian study (1927/1937), and p. 2 calls 1548 a Ge’ez-calendar date; those chronologies are not adopted. Research-only acquisition; no modern source payload or prayer text is republished."
+
+[[sources]]
+id = "keren-blin-geez-book-index-2008"
+url = "http://www.eparchyofkeren.com/liturgy.php"
+checked_on = "2026-10-20"
+evidence_type = "official-eparchial-book-index"
+inspection = "Official Keren liturgy index and six linked PDFs acquired for research; cover, preamble, deacon/people, and three consecutively paginated Mass parts identified; first and last pages of each Mass part visually inspected, not the whole text."
+locus = "Blin Geez Mass links; main book printed pp. 1–442, complementary deacon/people volume printed pp. 1–100"
+text_acquisition = "six-protected-provider-pdfs-acquired-in-research-scratch-only"
+hash_state = "exact-file-digests-recorded-in-candidate"
+full_contents_examined = false
+limitations = "The index links identify a Keren service-book set, not a newly revised Ge'ez original or whole Eritrean Church adoption. The source is available by HTTP; HTTPS retrieval failed local certificate verification."
+
+[[sources]]
+id = "keren-blin-geez-cover-2008"
+url = "http://www.eparchyofkeren.com/liturgy/Blin-Geez-Mass-cover.pdf"
+checked_on = "2026-10-20"
+evidence_type = "original-local-approved-service-book-frontmatter"
+inspection = "Whole five-page PDF acquired in research scratch; printed page ii visually inspected."
+locus = "PDF p. 2 / printed p. ii: imprimatur by Bishop Kidane Yebio of Keren, 27 April 2008; eparchial copyright"
+text_acquisition = "complete-protected-provider-pdf-acquired-in-research-scratch-only"
+hash_state = "sha256-67ef55d6fc8903dabcdc1ab98831b47b69c06bd2be761615b5d9eab3862eaa5b"
+full_contents_examined = false
+limitations = "An eparchial imprimatur establishes local approved publication; it does not alone document actual use, metropolitan approval, or a source-language ritual reform."
+
+[[sources]]
+id = "keren-blin-mass-history-2009"
+url = "http://www.eparchyofkeren.com/topics/History.Blin.Mass.pdf"
+checked_on = "2026-10-20"
+evidence_type = "official-eparchial-history-by-bishop"
+inspection = "Whole Keren-hosted PDF acquired; dated heading and selected historical paragraphs inspected."
+locus = "Bishop Kidane Yebio, 16 June 2009, PDF pp. 1 and 4: translation history, printed Blin Mass book and pastoral recommendation"
+text_acquisition = "complete-provider-pdf-acquired-in-research-scratch-only"
+hash_state = "sha256-66a72e7cd853f7358b1476d03d53344169ee87abd02e63b1f7441750f9d2ee2d"
+full_contents_examined = false
+limitations = "The bishop's account establishes that the printed Blin Mass book had reached Keren and urges its use; it does not identify a physical copy used at a dated celebration."
+
+[[sources]]
+id = "keren-blin-official-use-2010"
+url = "http://www.eparchyofkeren.com/topics/Kiflemariam.pdf"
+checked_on = "2026-10-20"
+evidence_type = "firsthand-eparchy-hosted-use-testimony"
+inspection = "Whole six-page PDF acquired and checked; the author's historical account and contemporary-use paragraph directly inspected."
+locus = "Kiflemariam Hamde, conference paper for 11–13 June 2010, PDF pp. 4–5, §§III and V: 1973 Blin Mass recollection and contemporary official Blin Mass celebrations"
+text_acquisition = "complete-provider-pdf-acquired-in-research-scratch-only"
+hash_state = "sha256-d4988eaaef170f9a3ddc8dc9f5ae5ec606decb36ccc720fabdbc02335ab79020"
+full_contents_examined = true
+limitations = "First-person testimony supports actual Blin use in Keren by 2010; it is not an episcopal promulgation decree, and it does not prove that a specific 2008 exemplar was on the altar."
 
 [[records]]
 id = "alex-geez-1890"
@@ -13741,7 +13829,7 @@ date_basis = "Decree date read on the decree page as reproduced in the 2012 Engl
 text_acquisition = "not-acquired (2012 bilingual witness acquired in scratch)"
 research_priority = "reform-evidence-retained-original-composition-review"
 version_status = "substantive-revision-reported (two added anaphoras relative to 1992); exact-textual-difference-unverified"
-scope_note = "Determine which material was newly composed in Arabic and which is Syriac, as for mar-1992, before promoting source-book coverage."
+scope_note = "The 2005 decree proves approval and prescribed use, while the later 2012 book identifies its Arabic/Syriac base. Dated actual liturgical use of this exact 2005 expression remains unverified under guidance/time-machine.md §11, as does which material was newly composed in Arabic rather than Syriac; retain origin review pending both checks."
 chronology_start = 2005
 chronology_end = 2005
 chronology_kind = "promulgation-decree-date"

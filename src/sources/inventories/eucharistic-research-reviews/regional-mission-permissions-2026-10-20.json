@@ -1,0 +1,558 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "regional-mission-permissions-2026-10-20",
+  "title": "Regional, religious-order, and mission Eucharistic permissions: bounded cross-tradition review, 2026-10-20",
+  "lane": "regional-mission-permissions",
+  "side": "cross-tradition",
+  "checked_on": "2026-10-20",
+  "reviewed_on": "2026-10-20",
+  "target_inventory": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml; src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+  "coverage_rows": [
+    "modern-source-adaptations",
+    "british-other-uses",
+    "portuguese-other-uses",
+    "polish-uses",
+    "lyon",
+    "carmelite",
+    "dominican",
+    "servites",
+    "ocso",
+    "trinitarian-order",
+    "armenian",
+    "eritrean",
+    "coptic",
+    "maronite",
+    "syro-malabar",
+    "syro-malankara",
+    "ruthenian",
+    "melkite"
+  ],
+  "semantics": "A dated permission is an authority event scoped to its named people and place; a printing is a book witness; an actual celebration or directly attested operative rule is reception evidence. None alone proves a new rite, substantive textual transition, universal adoption, or ancestry. This receipt records verified bounded findings and leads, not a complete permission census for every diocese, order, mission, or historical century.",
+  "review_files": {
+    "storage": "untracked research packets, pinned by SHA-256; claims retained below repeat public source URL and locus",
+    "roman_mission_permits_packet_sha256": "8cb286cada534c5634a6904892000f448248c91eddfb7008ea2d847912473733",
+    "orders_variants_packet_sha256": "7fcf24a051bdc659ec1a96514ded9e45eb433f1ba63ea546640e47187eadb07c",
+    "global_permission_audit_sha256": "8930dd259f8814ca6ca4db175ed3311e4806d857a03d0f20662e4ad1a7963c3b",
+    "byzantine_regional_packet_sha256": "9e70d745db52e3ab496897e254b80961cf33bf5eee1391432211296082bfe8af",
+    "alexandrian_armenian_packet_sha256": "4940bf52e70ca1dbd573d07fcdcc0ba8dc9096f837ecd8d83871318efea147cb",
+    "alexandrian_armenian_cold_verdict_sha256": "523e629c2494f87897ad27a85f8e996e960e7baf8ddc9c866535be12dfdfe46b",
+    "syriac_regional_findings_sha256": "82e6c008d6dfdb43d61915018533be49df2f9d523273d4375aa971fa15f6c74e",
+    "northern_central_west_packet_sha256": "cdf007440a35de9f5702edd55bc415de260f778dcb63740d28015f340555ac00",
+    "mediterranean_west_packet_sha256": "3fc3f235d81b6eadd7221485348ba36659da10e10671feaad0eafd6daa9ff8f6",
+    "german_swiss_west_packet_sha256": "98f1263639fca863f8f8aaaf2c101228dae853d086ae6d40ebce1d96a62dc139"
+  },
+  "rules_checked": [
+    {
+      "id": "latin-adaptation-versus-translation",
+      "finding": "Conference-approved new ritual elements require Apostolic See recognitio; translations require confirmatio. An individual conference vote is not itself the later Roman recognitio, and approval for one territory does not transfer to another.",
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/2020/notitiae-57-%282021%29/Notitiae-598-NS-006-2021.pdf",
+      "locus": "Postquam Summus Pontifex, 22 October 2021, printed pp. 173-174 nn. 7-12, pp. 179-181 nn. 38-43",
+      "state": "directly inspected official decree"
+    },
+    {
+      "id": "proper-is-adjunct",
+      "finding": "A diocesan or religious Proprium Missarum attaches to a Roman Missal; the decree says it is not a separate liturgical book. Count its approved components without multiplying whole-book rites.",
+      "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2021/10/22/0683/01452.html",
+      "locus": "Dicastery decree 22 October 2021, nn. 50(a), 54-55",
+      "state": "directly inspected official decree"
+    }
+  ],
+  "permissions": [
+    {
+      "id": "zaire-1988",
+      "class": "approved-regional-order-and-book",
+      "authority": "Congregation for Divine Worship, protocol 1520/85",
+      "date": "1988-04-30",
+      "scope": "Dioceses of then-Zaire",
+      "book_or_component": "Le Missel Romain pour les diocèses du Zaïre; approved presentation, order and selected prayers printed with decree",
+      "established": "Roman approval of regional Mass order, local ceremonial and proper euchology",
+      "limit": "Complete approved bound exemplar, publication date, first use and component-by-component predecessor collation not inspected; approval does not extend to every African diocese.",
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-24-%281988%29/Notitiae-264-1988.pdf",
+      "locus": "Notitiae 24 (1988), printed p. 457 decree and pp. 458-465 selected approved text",
+      "actual_use_state": "Approval established; first dated use of the exact approved printing not established."
+    },
+    {
+      "id": "india-1969",
+      "class": "regional-ritual-permission",
+      "authority": "Consilium, Cardinal Benno Gut, protocol 802/69",
+      "date": "1969-04-25",
+      "scope": "Catholic Bishops' Conference of India, with local choices of place and extent",
+      "book_or_component": "Twelve permissions for Mass gestures, ceremonial, materials and vesture",
+      "established": "Specific concessions include anjali-hasta, panchanga pranam, preparatory welcome and lamp, and arati at stated points.",
+      "limit": "No complete approved Indian altar Missal or actual local implementation is identified by the letter; the 1971 Indian Order of Mass needs its own approval and book check.",
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1960/notitiae-05-%281969%29/Notitiae-048-1969.pdf",
+      "locus": "Notitiae 5 (1969), printed pp. 365-366, INDIA, twelve numbered concessions",
+      "actual_use_state": "Permission established; local selections and actual implementation not established."
+    },
+    {
+      "id": "ordinariates-2015",
+      "class": "approved-personal-ordinariate-book",
+      "authority": "Holy See approval reported by USCCB in October 2015",
+      "date": "2015-05 approval month; 2015-11-29 effective use",
+      "scope": "Three personal ordinariates and authorized pastoral substitution under their norms",
+      "book_or_component": "Divine Worship: The Missal",
+      "established": "Official account distinguishes the 2015 Eucharistic Missal from 2014 Occasional Services and describes Prayer Book English prayers, calendar and Mass-order elements.",
+      "limit": "Signed approval leaf and full 2015/2003 book collation uninspected; it is a restricted Latin Church form, not a separate sui iuris Church.",
+      "source_url": "https://www.usccb.org/resources/newsletter-2015-10.pdf",
+      "locus": "USCCB Committee on Divine Worship Newsletter 51 (October 2015), printed pp. 37-39",
+      "actual_use_state": "Official effective date established; no particular celebration independently checked in this receipt."
+    },
+    {
+      "id": "chiapas-2024",
+      "class": "recognized-local-order-adaptations",
+      "authority": "Mexican Episcopal Conference and Dicastery for Divine Worship, as reported by conference protocol 04/24",
+      "date": "2024-11-22 explanatory note; original recognitio date uninspected",
+      "scope": "Named Tseltal, Tsotsil, Chol, Tojolabal and Zoque communities in Mexico",
+      "book_or_component": "Optional Order of Mass adaptations: assembly prayer invitation, incense minister, and limited rhythmic movement after Communion",
+      "established": "Conference's official explanation describes limited recognized adaptations.",
+      "limit": "The original recognitio instrument, approved booklet, exact first use and wider territorial reach are uninspected; no general Mayan rite is inferred.",
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/pdf/EXPLANATORY-NOTE-ON-APPROVED-LITURGICAL-ADAPTATIONS-CEM.pdf",
+      "locus": "Mexican Episcopal Conference protocol 04/24, 22 November 2024, PDF pp. 1-2, sections 1-5",
+      "actual_use_state": "Recognized adaptations reported; exact first use not established."
+    },
+    {
+      "id": "broome-2024",
+      "class": "conference-vote-pending-roman-recognitio",
+      "authority": "Australian Catholic Bishops Conference",
+      "date": "2024-05-07 conference vote",
+      "scope": "Diocese of Broome, Australia",
+      "book_or_component": "Missa Terra Spiritus Sancti / Missa Kimberley submitted in printed form",
+      "established": "Conference approval and stated intent to seek Roman recognitio.",
+      "limit": "No issued recognitio, approved Roman book, exact Eucharistic components or effective-use date verified; do not date Roman permission to conference vote.",
+      "source_url": "https://www.osservatoreromano.va/en/news/2024-05/ing-019/mass-of-the-land-of-the-holy-spirit-approved.html",
+      "locus": "L'Osservatore Romano, 10 May 2024, first four paragraphs",
+      "actual_use_state": "Conference vote only; Roman recognitio and operative use not established."
+    },
+    {
+      "id": "china-1615-1670-1680",
+      "class": "mission-language-faculty-and-unproved-book-use",
+      "authority": "Holy Office decree and Paul V brief as reported in later official-journal history",
+      "date": "1615-03-26 decree; 1615-06-27 brief; 1670 printing; 1680 renewed approval unsuccessful",
+      "scope": "Chinese mission, literary Chinese translation",
+      "book_or_component": "Ludovico Buglio's Missale Romanum Sinice redditum, Princeton Scheide 46.1",
+      "established": "Reported translation faculty and an identified printed Chinese Missal witness with Mass order, prefaces and Canon in its catalogue.",
+      "limit": "Original 1615 acts and 1670 approval leaves uninspected; authorization or actual use of the printed Buglio edition is not established. Translation alone does not show a new source-language Roman recension.",
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/2010/notitiae-47-%282011%29/Notitiae-541-542-2011.pdf",
+      "locus": "Notitiae 48 (2011), printed pp. 552-554; book catalogue https://usuarium.elte.hu/book/8263/view, title and contents entries pp. 4, 23-25",
+      "actual_use_state": "Faculty and printing reported; approval and use of the 1670 copy not established."
+    },
+    {
+      "id": "china-1949",
+      "class": "reported-mission-translation-indult",
+      "authority": "Holy Office, reported by later official-journal history",
+      "date": "1949-04-12 reported indult",
+      "scope": "Literary Chinese Roman Mass translation, exact beneficiaries unverified",
+      "book_or_component": "Reported Chinese Missal approval outside the Latin Canon",
+      "established": "Later official history reports an indult; it separates this decision from the 1615 faculty and 1670 printing.",
+      "limit": "Original indult, exact approved edition and use uninspected. Bilingual or devotional aids from 1954/1956 do not establish an operative altar copy under this indult.",
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/2010/notitiae-47-%282011%29/Notitiae-541-542-2011.pdf",
+      "locus": "Notitiae 48 (2011), printed pp. 561-562 and n. 56",
+      "actual_use_state": "Indult reported; exact approved book and use not established."
+    },
+    {
+      "id": "english-mission-1615-1626",
+      "class": "mission-book-witnesses-with-bounded-superior-permission",
+      "authority": "1615 book title states Permissu Superiorum; exact superior and act uninspected",
+      "date": "1615, 1623 and 1626 printings",
+      "scope": "Itinerant English Catholic mission priests; later title also names Scotland and Ireland",
+      "book_or_component": "Missae aliquot and Missale parvum, selections from Roman Missal with practical mission material",
+      "established": "The 1615 title records superior permission; a historical scan reports physical possession of a 1623 copy at Brewood mission.",
+      "limit": "Holding is not use at a particular Mass; 1615/1623/1626 textual deltas uncollated, and the 1626 Folger/BnF imprint assignments conflict. Mission purpose does not make the books a Sarum continuation.",
+      "source_url": "https://folgerpedia.folger.edu/List_of_vault_material_acquired_in_2017/18",
+      "locus": "Folger acquisition entry for Catholic Church Missae aliquot (1615); Brewood evidence in Old English Catholic Missions printed p. xvii, PDF p. 21, https://upload.wikimedia.org/wikipedia/commons/8/83/Old_English_Catholic_missions_%28IA_oldenglishcathol00payn%29.pdf",
+      "actual_use_state": "Mission copy possession reported; use of exact contents at a Mass not established."
+    },
+    {
+      "id": "evora-1565",
+      "class": "local-use-mandate-for-existing-use",
+      "authority": "Archdiocese of Évora synodal constitutions",
+      "date": "1565 printed constitutions",
+      "scope": "Every church of the Évora archdiocese",
+      "book_or_component": "Missals of the Évora custom, requiring enough copies in each church",
+      "established": "Original printed legislation directly requires local Évora-use Missals in the archdiocese.",
+      "limit": "This use mandate neither proves a new 1565 Missal edition nor continuity after 1570; the existing 1509-colophon/probable-1519 printing is a separate witness.",
+      "source_url": "https://purl.pt/13348/7/res-2787-v_PDF/res-2787-v_PDF_24-C-R0150/res-2787-v_0000_capa-capa_t24-C-R0150.pdf",
+      "locus": "BNP RES.2787 V, Title XXVII chapter I, printed fol. lxxv recto-verso, PDF pp. 169-170",
+      "actual_use_state": "Diocesan use mandate established; implementation in each church not independently checked."
+    },
+    {
+      "id": "lyon-1866",
+      "class": "regional-book-title-claims-apostolic-authorization",
+      "authority": "Apostolic See authority asserted by the printed book title; instrument not inspected",
+      "date": "1866 printing",
+      "scope": "Lyon Roman-based local use; precise diocesan implementation not verified",
+      "book_or_component": "Missale romano-lugdunense, substituting Lyon rites at the final Triduum, Order of Mass and Pentecost Vigil",
+      "established": "The original scan front leaves and full bibliographic title identify a bounded 1866 regional component state.",
+      "limit": "Exact permission act, replaced text, local effective date and relationship to 1825/1844 are uninspected; title authority claim is not independently verified.",
+      "source_url": "https://books.google.co.uk/books?id=Z9T7c1doCiwC",
+      "locus": "Full bibliographic title of Lyon Public Library copy; original Numelyo 802-page scan first 11 leaves at https://numelyo.bm-lyon.fr/f_view/BML:BML_00GOO0100137001100082762",
+      "actual_use_state": "No dated celebration or implementation record identified for the 1866 printing."
+    },
+    {
+      "id": "poland-1986",
+      "class": "approved-territorial-missal",
+      "authority": "Polish Bishops' Conference and Congregation for Divine Worship",
+      "date": "1983-12-01 conference approval; 1984-04-28 Roman confirmation; 1986 printing",
+      "scope": "Dioceses of Poland",
+      "book_or_component": "Polish Roman Missal with calendar, Holy Week rites, prefaces and Eucharistic prayers described in contemporary official journal",
+      "established": "Dated approval and confirmation reported contemporaneously; identifiable printed book state.",
+      "limit": "Original decree leaves and full book uninspected; subsequent 2009/2010 and 2013 supplement claims require original leaves and exact component comparison.",
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-23-(1987)/Notitiae-257-1987.pdf",
+      "locus": "Notitiae 23 (1987), printed pp. 1254-1260, especially 1255-1259",
+      "actual_use_state": "Contemporary 1987 account describes introduction of the new missal into use after the 1986 bishops’ letter and March 1987 clerical instruction; no first dated celebration from a particular copy checked."
+    },
+    {
+      "id": "norway-yugoslavia-1981",
+      "class": "two-separate-territorial-component-permissions",
+      "authority": "Congregation for Divine Worship",
+      "date": "1981-09-30 Yugoslavia; 1981-10-08 Norway",
+      "scope": "Yugoslav Rogation Mass; separately enumerated Norwegian-language Roman Missal parts",
+      "book_or_component": "Latin Rogation Mass and Norwegian translated parts, respectively",
+      "established": "Official journal prints separate decree summaries, CD 376/80 and CD 682/81.",
+      "limit": "No complete books or actual local reception established; the two grants cannot be merged into one regional Missal.",
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-17-(1981)/Notitiae-185-1981.pdf",
+      "locus": "Notitiae 17 (1981), printed p. 585, PDF p. 10",
+      "actual_use_state": "Two permissions recorded; exact local implementation not established."
+    },
+    {
+      "id": "ocarm-dominican-1965",
+      "class": "religious-order-interim-rubrics-and-conditional-components",
+      "authority": "Sacred Congregation of Rites",
+      "date": "1965-02-13, 1965-02-15, 1965-03-08",
+      "scope": "Carmelite Masses with people in host dioceses, pending next General Chapter; Dominican Missal and conditional Masses in own churches",
+      "book_or_component": "OCarm may use diocesan revised Ordo Missae with four listed rubric variations; Dominican rubrics adapted and Roman Confiteor/Misereatur/Indulgentiam conditionally permitted",
+      "established": "Named protocol decisions state precise substitutions and scope.",
+      "limit": "Temporary or conditional permissions do not establish whole-order new Missal editions or parish-by-parish use.",
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1960/notitiae-01-%281965%29/Notitiae-006-1965.pdf",
+      "locus": "Notitiae 1 (1965), printed pp. 159-160, protocols O.16/965, O.14/965, O.17/965, O.29/965",
+      "actual_use_state": "Bounded permissions recorded; actual house use of each option not established."
+    },
+    {
+      "id": "ocso-1971-and-house-choices",
+      "class": "order-rule-with-monastery-and-region-components",
+      "authority": "Sacred Congregation for Divine Worship reply protocol 525/70, cited in OCSO norms",
+      "date": "1971-06-08 Roman reply; later norms undated in inspected copy",
+      "scope": "OCSO Mass, monastery calendar, Holy See-approved regional prayer options",
+      "book_or_component": "Roman Missal base with four listed Cistercian ceremonial customs, local patron/dedication/founder celebrations and bounded regional choices",
+      "established": "Order norms identify the Roman base and permissible local components.",
+      "limit": "No independently revised whole OCSO Missal or automatic permission for every Eucharistic prayer is established; original 1971 reply and exact regional approvals remain to obtain.",
+      "source_url": "https://ocso.org/download-attachment/24078",
+      "locus": "OCSO General Norms, sections I.B, III.A.1 and III.D, PDF pp. 1-2, 11-12, 15",
+      "actual_use_state": "Operative norms describe allowed choices; individual monastery and region uptake unverified."
+    },
+    {
+      "id": "servite-todi-foligno-1971-1973",
+      "class": "site-specific-votive-permissions",
+      "authority": "Sacred Congregation for Divine Worship",
+      "date": "1971-04-06 Todi; 1973-06-22 Foligno",
+      "scope": "Todi monastery pilgrim Masses for five years, with precedence exclusions; Foligno St James parish during relic visit",
+      "book_or_component": "Votive Mass of St Philip Benizi under stated conditions",
+      "established": "Two geographically and temporally bounded permissions.",
+      "limit": "Neither grant establishes an order-wide Servite recension, revised formulary or complete Missal.",
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-07-%281971%29/Notitiae-065-1971.pdf",
+      "locus": "Notitiae 7 (1971), printed pp. 261-262, protocol 866/71; Foligno in Notitiae 9 (1973), printed p. 262, https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-09-%281973%29/Notitiae-085-1973.pdf",
+      "actual_use_state": "Site-specific permissions recorded; exact Mass celebrations not independently checked."
+    },
+    {
+      "id": "trinitarian-1975",
+      "class": "religious-order-proper-confirmation",
+      "authority": "Sacred Congregation for Divine Worship",
+      "date": "1975-10-18 and 1975-10-27",
+      "scope": "Trinitarian proper and Vincent Grossi Mass",
+      "book_or_component": "Latin Mass and Hours proper",
+      "established": "Official journal records confirmations CD 172/75 and CD 400/75.",
+      "limit": "A proper is an adjunct; these confirmations do not establish a distinct complete Trinitarian Missal.",
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-11-%281975%29/Notitiae-111-112-1975.pdf",
+      "locus": "Notitiae 11 (1975), printed p. 343, PDF p. 60",
+      "actual_use_state": "Proper confirmation established; actual celebration from exact printing not established."
+    },
+    {
+      "id": "armenian-western-armenian-2007",
+      "class": "approved-experimental-translation-without-use-attestation",
+      "authority": "Armenian Catholic Patriarch Nerses Bedros XIX after synodal acceptance",
+      "date": "2006-11-07 directive; 2007 printing; three-year experiment",
+      "scope": "Patriarchal parish churches, not all Armenian Catholic jurisdictions",
+      "book_or_component": "168-page Western Armenian vernacular Patarag translation",
+      "established": "Original title, decree and introduction directly identify approved trial direction and book.",
+      "limit": "No dated celebration from this exact edition or post-trial continuation found; retain as book witness, not received operative candidate or substantive source-language revision.",
+      "source_url": "https://armeniancatholic.org/wp-content/uploads/2017/07/Khorhrtadedre-Sourp-Badaraki.pdf",
+      "locus": "PDF pp. 3, 6, 8-9; patriarchal protocol 279/06",
+      "actual_use_state": "No dated celebration from exact 2007 trial book found in bounded search."
+    },
+    {
+      "id": "keren-blin-geez-2008-2010",
+      "class": "locally-approved-and-used-bilingual-service-book",
+      "authority": "Catholic Eparchy of Keren, Bishop Kidane Yebio",
+      "date": "2008-04-27 eparchial imprimatur; 2009 reported inauguration; use attested by June 2010",
+      "scope": "Eparchy of Keren, Blin and Ge'ez Mass",
+      "book_or_component": "442-page bilingual service text in three parts, with separate deacon/people volume",
+      "established": "Original book cover supplies imprimatur; a firsthand eparchy-hosted 2010 report expressly describes celebrating the Mass in Blin.",
+      "limit": "Exact copy at a dated service, wider Eritrean reception, superior authority file and any Ge'ez source-text revision are unverified.",
+      "source_url": "http://www.eparchyofkeren.com/liturgy.php",
+      "locus": "Blin Geez Mass book links; cover PDF page ii at http://www.eparchyofkeren.com/liturgy/Blin-Geez-Mass-cover.pdf; Kiflemariam Hamde 2010 paper section V/PDF p. 5 at http://www.eparchyofkeren.com/topics/Kiflemariam.pdf",
+      "actual_use_state": "Local Blin Mass celebration expressly attested by firsthand 2010 eparchy-hosted account; exact exemplar at a service unidentified."
+    },
+    {
+      "id": "coptic-multilingual-1952-2002",
+      "class": "retrospective-book-printing-and-permission-leads",
+      "authority": "1952 Patriarch Mark II printing permission reported; later entries name patriarchal administrations",
+      "date": "1952, 1963, 1992 and 2002 reported print years",
+      "scope": "Cairo Coptic Catholic Basil Mass books in Arabic, French, English and other languages",
+      "book_or_component": "Several translated Basil Mass printings",
+      "established": "Church-hosted list identifies printings and a 1952 permission to print.",
+      "limit": "Original books and decrees uninspected; no diaspora permission, exact altar-book role, actual use or Coptic/Arabic source-text change follows from the list.",
+      "source_url": "https://coptcatholic.net/11243/",
+      "locus": "Numbered entries 36, 38-39, 54-55",
+      "actual_use_state": "Printings listed; actual use of exact copies and diaspora reception not established."
+    },
+    {
+      "id": "maronite-bkerke-2005",
+      "class": "approved-prescribed-book-with-exact-use-gap",
+      "authority": "Holy See approval cited in Patriarchal decree 1512/2005",
+      "date": "2005-04-17 cited Roman letter; 2005-06-29 patriarchal decree; November 2005 prescribed start",
+      "scope": "Maronite Patriarchate with prescribed worldwide use",
+      "book_or_component": "Arabic/Syriac Book of Offering underlying authorized 2012 English edition",
+      "established": "2012 issued book reproduces the 2005 decree and identifies the original book's mandate.",
+      "limit": "Original 2005 book, Roman letter and a dated celebration from that exact Arabic/Syriac edition remain uninspected; keep operative candidate under origin review pending actual-use evidence.",
+      "source_url": "https://storage.googleapis.com/msgsndr/4i0JNb0UR6ufHm8Td6cd/media/659cd443def5729e659b3923.pdf",
+      "locus": "2012 English Book of Offering PDF pp. 3-5, decree 1512/2005 reproduced in English and Arabic",
+      "actual_use_state": "Prescribed universal use established; dated celebration from exact 2005 Arabic/Syriac edition not yet identified."
+    },
+    {
+      "id": "maronite-spanish-2017",
+      "class": "translation-publication-and-approval-claim-lead",
+      "authority": "Patriarchal decree 41/2017 reported by eparchy-affiliated distributor",
+      "date": "2017 reported",
+      "scope": "Spanish-speaking Maronite eparchies named in catalogue",
+      "book_or_component": "Eight seasonal volumes of Spanish Bkerke translation",
+      "established": "Distributor lists a translation set and approval claim.",
+      "limit": "Underlying decree, all volume title leaves and actual local celebrations uninspected; eight volumes are divisions of one set, not eight recensions.",
+      "source_url": "https://www.maronitas.org/product-page/colecci%C3%B3n-misal-maronita-en-espa%C3%B1ol",
+      "locus": "Product-page translation/decree description and eight-volume list",
+      "actual_use_state": "Distribution claim established; actual local celebration from exact translation not established."
+    },
+    {
+      "id": "malabar-theodore-nestorius-2018",
+      "class": "approved-book-with-expression-specific-use-gap",
+      "authority": "Syro-Malabar Major Archiepiscopal Church; Roman recognitio reported in signed decree",
+      "date": "2018-06-19 recognitio; 2018-12-12 promulgation; 2019-01-06 prescribed effective date",
+      "scope": "Syro-Malabar Church, English component edition",
+      "book_or_component": "English Second Qudasha of Mar Theodore and experimental Third Qudasha of Mar Nestorius",
+      "established": "Original commission book directly distinguishes final Theodore and experimental Nestorius approval statuses.",
+      "limit": "2013 use of Theodore generally does not prove use of this 2018 English printing; exact English-expression celebration and source-language component collation remain open.",
+      "source_url": "https://www.syromalabarliturgy.org/assets/uploads/pdfs/Mar_Theo__Nes__Eng__Taksa_18-1-2019.pdf",
+      "locus": "Original official book PDF pp. 1-3 and 5-10",
+      "actual_use_state": "General Theodore use since 2013 reported; actual use of exact 2018 English expression not established."
+    },
+    {
+      "id": "malabar-bharatheeya-1974",
+      "class": "experimental-printing-with-approval-unproved",
+      "authority": "Ernakulam Liturgical Centre printer; competent approval instrument not found",
+      "date": "1974-03-31 on inspected pro-manuscripto copy; 1973-08 earlier issue reported",
+      "scope": "Reported experimentation centres, not established Church-wide permission",
+      "book_or_component": "Bharatheeya Pooja",
+      "established": "Original 47-page scan front leaves identify date and pro-manuscripto status.",
+      "limit": "Inspected pp. 1-6 have no approbation; remaining leaves and any local permission need inspection. Experimental circulation is not general approved use.",
+      "source_url": "https://artifacts.keraladigitalarchive.org/public/1974-bharatheeya-pooja/1974-bharatheeya-pooja.pdf",
+      "locus": "Original scan PDF pp. 3 and 5, with pp. 1-6 visually inspected",
+      "actual_use_state": "Experimental-centre distribution reported; authorization and actual use of exact copy not established."
+    },
+    {
+      "id": "malankara-1966-2007",
+      "class": "approved-and-released-books-with-use-gap",
+      "authority": "Syro-Malankara hierarchy and synod",
+      "date": "1966 preface; 2006 synodal approval; February and October 2007 distinct releases",
+      "scope": "Syro-Malankara Catholic Church",
+      "book_or_component": "1966 Malayalam Taksa; February 2007 Qurbonokramam; October 2007 revised Taksa",
+      "established": "Original 1966 front leaves and synodal reports establish the three distinct book or decision states.",
+      "limit": "No dated celebration using either exact Taksa edition found; their relationship and text deltas are uncollated, so received-book and transition admission remain pending.",
+      "source_url": "https://malankaracatholicchurch.in/admin/pdf/Vol_2_No_2.pdf",
+      "locus": "Synodal Acts and Voice 2.2, printed pp. 30-31 and decision II.6 p. 46; 2007 pastoral letter https://malankaracatholicchurch.in/admin/pdf/Vol_2_No_3.pdf pp. 160-163; fifth synod https://malankaracatholicchurch.in/admin/pdf/Vol_3_No_2.pdf pp. 24-25, 40",
+      "actual_use_state": "Approval and release states established; dated celebrations with either exact Taksa book not established."
+    },
+    {
+      "id": "pittsburgh-2007-2010",
+      "class": "metropolitan-operative-book-and-later-limited-revision",
+      "authority": "Byzantine Catholic Metropolia of Pittsburgh",
+      "date": "2007-01-06 promulgation; 2007-06-29 required use; 2010 Presanctified books",
+      "scope": "Four Pittsburgh metropolitan eparchies and their missions; Presanctified book within same metropolia",
+      "book_or_component": "2006 printed people's Divine Liturgies book; 2010 approved three-volume Presanctified set",
+      "established": "Signed foreword in the people's book prescribes operative use; official MCI account describes concrete Presanctified propers, psalm, rubric and prayer differences.",
+      "limit": "Two clergy Liturgikons and 2010 title/approval leaves unacquired; do not infer source-exemplar identity or a new anaphora from the Presanctified change.",
+      "source_url": "https://www.mci.archpitt.org/servicebooks/DivineLiturgies.pdf",
+      "locus": "2006 people's book printed pp. 1-3, foreword and contents; official 2010 Presanctified account https://www.mci.archpitt.org/NewPresanctifiedBooks.html",
+      "actual_use_state": "Signed 2007 foreword mandates operative use; 2010 official account describes new books; individual celebrations not checked."
+    },
+    {
+      "id": "byzantine-russian-german-czech-2006-2013",
+      "class": "unassigned-translation-approvals",
+      "authority": "Congregation for the Eastern Churches approval register",
+      "date": "2006-07-15 Czech; 2010-12-03 German; 2013-10-02 Russian five-year experiment",
+      "scope": "Recipient Churches, dioceses and exact receiving missions unspecified in register",
+      "book_or_component": "Updated Czech and German Chrysostom translations; modern Russian Chrysostom and Basil translations",
+      "established": "Official register provides bounded approval dates and language labels.",
+      "limit": "No original notices, title/approval leaves, local promulgations or actual use yet; do not assign the Russian permit to the Russian Greek Catholic Church or extend the five-year trial past expiry.",
+      "source_url": "https://press.vatican.va/roman_curia/congregations/orientchurch/documents/rc_con_corient_doc_20070601_liturgical-texts_it.html",
+      "locus": "Eastern Dicastery liturgical-text approval register, entries dated 15 July 2006, 3 December 2010, 2 October 2013",
+      "actual_use_state": "Approvals registered, but recipients, books and actual use not established."
+    },
+    {
+      "id": "melkite-newton-2009",
+      "class": "eparchial-limited-translation-permission",
+      "authority": "Melkite Eparchy of Newton",
+      "date": "2009-02-15 to 2010-10-31 bounded obligation",
+      "scope": "Eparchy of Newton English use",
+      "book_or_component": "English Divine Liturgy book",
+      "established": "Existing source review records local approval and fixed implementation interval.",
+      "limit": "Do not extend the permission beyond its stated term or infer an Arabic/Greek Church-wide recension; original post-2010 renewal and replacement book remain uninspected.",
+      "source_url": "https://melkite.org/wp-content/uploads/2012/02/LITURGY2009.pdf",
+      "locus": "Eparchial decree of 27 January 2009 in book front matter PDF pp. 2-3, as recorded in existing inventory and rechecked source extract",
+      "actual_use_state": "Limited eparchial obligation established for 2009-2010; individual celebrations and renewal after term not checked."
+    }
+  ],
+  "non_admissions": [
+    {
+      "id": "amazonian-2019",
+      "finding": "The 2019 synod proposed a commission to study a possible Amazonian rite; no approved Eucharistic book follows from that proposal.",
+      "source_url": "https://www.vatican.va/roman_curia/synod/documents/rc_synod_doc_20191026_sinodo-amazzonia_en.html",
+      "locus": "Final Document n. 119"
+    },
+    {
+      "id": "china-rites-1939",
+      "finding": "Plane compertum concerns civil honors to Confucius and ancestors and the earlier oath, not approval of a Chinese Mass order.",
+      "source_url": "https://www.vatican.va/archive/aas/documents/AAS-32-1940-ocr.pdf",
+      "locus": "AAS 32 (1940), printed pp. 24-25"
+    },
+    {
+      "id": "eastern-diaspora-jurisdictions",
+      "finding": "An ordinary for Eastern faithful without their own hierarchy is a jurisdictional arrangement, not a new Church or book; exact received service books must be established separately.",
+      "source_url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2024/10/22/241022d.html",
+      "locus": "22 October 2024 appointments naming ordinaries for Spain, France and Argentina"
+    }
+  ],
+  "uses": [
+    {
+      "permission_id": "keren-blin-geez-2008-2010",
+      "state": "approved-local-book-and-celebration-attested",
+      "evidence": "A firsthand eparchy-hosted conference paper expressly describes official Mass celebration in Blin by June 2010; exact service copy is not identified.",
+      "source_url": "http://www.eparchyofkeren.com/topics/Kiflemariam.pdf",
+      "locus": "2010 conference paper, section V, PDF p. 5"
+    },
+    {
+      "permission_id": "pittsburgh-2007-2010",
+      "state": "normative-use-required",
+      "evidence": "Signed 2007 foreword orders this 2006 printed people/cantor text and music as sole metropolitan version from 29 June 2007; no individual celebration checked here.",
+      "source_url": "https://www.mci.archpitt.org/servicebooks/DivineLiturgies.pdf",
+      "locus": "Printed p. 3, foreword signed by four metropolitan hierarchs"
+    },
+    {
+      "permission_id": "evora-1565",
+      "state": "diocesan-use-required",
+      "evidence": "Original diocesan legislation requires Missals of Évora use in every archdiocesan church; compliance for each church and duration after 1570 are unverified.",
+      "source_url": "https://purl.pt/13348/7/res-2787-v_PDF/res-2787-v_PDF_24-C-R0150/res-2787-v_0000_capa-capa_t24-C-R0150.pdf",
+      "locus": "Title XXVII chapter I, printed fol. lxxv recto-verso, PDF pp. 169-170"
+    },
+    {
+      "permission_id": "armenian-western-armenian-2007",
+      "state": "approval-and-trial-direction-without-actual-use-witness",
+      "evidence": "Patriarchal instruction orders an experimental translation, while bounded searches found no dated celebration from exact printing.",
+      "source_url": "https://armeniancatholic.org/wp-content/uploads/2017/07/Khorhrtadedre-Sourp-Badaraki.pdf",
+      "locus": "PDF pp. 6, 8-9"
+    }
+  ],
+  "searches": [
+    {
+      "scope": "2007 Western Armenian trial on official patriarchal site",
+      "result": "Book, decree and landing page checked; no dated exact-edition celebration or post-trial continuation found in bounded 2007/2010 queries. This is not an absence claim for all parishes."
+    },
+    {
+      "scope": "2005 Maronite Arabic/Syriac book in original/decree and 2012 issued English book",
+      "result": "Normative worldwide direction established; original 2005 book and a dated celebration from that exact edition not acquired."
+    },
+    {
+      "scope": "2018 Syro-Malabar English Theodore/Nestorius component",
+      "result": "Original English decree/book checked; 2013 Theodore use refers to the rite before this printing, and exact English-copy use was not established."
+    },
+    {
+      "scope": "1966 and 2007 Syro-Malankara Taksa approvals",
+      "result": "Original front leaves and official synodal reports checked as bounded in Syriac packet; exact-printing celebrations not located."
+    },
+    {
+      "scope": "unassigned Eastern Dicastery Czech, German and Russian approval register entries",
+      "result": "Approval dates found; exact recipient, original notice, printed book, local promulgation and actual-use records not found in register."
+    }
+  ],
+  "versions": [
+    {
+      "permission_id": "zaire-1988",
+      "status": "dated-approved-regional-order; complete-book-and-predecessor-collation-open"
+    },
+    {
+      "permission_id": "lyon-1866",
+      "status": "regional-component-substitution-named-by-book-title; underlying-act-and-text-collation-open"
+    },
+    {
+      "permission_id": "keren-blin-geez-2008-2010",
+      "status": "received-local-bilingual-service-book; source-language-Ge-ez-revision-unproved"
+    },
+    {
+      "permission_id": "armenian-western-armenian-2007",
+      "status": "approved-trial-translation-witness; received-use-and-source-language-revision-unproved"
+    },
+    {
+      "permission_id": "china-1615-1670-1680",
+      "status": "historical-translation-witness; printed-copy-approval-and-actual-use-unproved"
+    }
+  ],
+  "acquisitions": [
+    {
+      "permission_id": "keren-blin-geez-2008-2010",
+      "url": "http://www.eparchyofkeren.com/liturgy/Blin-Geez-Mass-cover.pdf",
+      "sha256": "67ef55d6fc8903dabcdc1ab98831b47b69c06bd2be761615b5d9eab3862eaa5b",
+      "extent": "complete delivered five-page cover/imprimatur PDF; other five book PDFs separately pinned in Alexandrian/Armenian packet",
+      "rights": "eparchy copyright; scratch research copy only"
+    },
+    {
+      "permission_id": "armenian-western-armenian-2007",
+      "url": "https://armeniancatholic.org/wp-content/uploads/2017/07/Khorhrtadedre-Sourp-Badaraki.pdf",
+      "sha256": "0ae51fefe1924c6e677cdb5a4d7c640840e887ada099b26c66032d9369f2b48b",
+      "extent": "complete delivered 168-page PDF; front matter inspected, full body not collated",
+      "rights": "modern patriarchal book, redistribution permission unverified"
+    },
+    {
+      "permission_id": "malabar-theodore-nestorius-2018",
+      "url": "https://www.syromalabarliturgy.org/assets/uploads/pdfs/Mar_Theo__Nes__Eng__Taksa_18-1-2019.pdf",
+      "sha256": "fa2be6865e529997562ec518fc9cbaa9c9a0dbada6ce193c37a8ccb54f1ff6e9",
+      "extent": "complete delivered 72-page PDF; front matter and introduction inspected, body not collated",
+      "rights": "Syro-Malabar Bishops Synod copyright; scratch research copy only"
+    },
+    {
+      "permission_id": "pittsburgh-2007-2010",
+      "url": "https://www.mci.archpitt.org/servicebooks/DivineLiturgies.pdf",
+      "sha256": "92cb4335a127df5cb69c6f7f772f56eab585434183bfbce076dce2380ca3e676",
+      "extent": "complete delivered 467-page people/cantor PDF; cover/foreword inspected, clergy books not acquired",
+      "rights": "metropolitan Church copyright; scratch research copy only"
+    },
+    {
+      "permission_id": "poland-1986",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-23-(1987)/Notitiae-257-1987.pdf",
+      "sha256": "1afbf76eaa952bce2f720aa176bb023186e22d17b59dcdb0be51c3ffc1a972d1",
+      "extent": "complete delivered official-journal PDF, contemporary article inspected; original Missal not acquired",
+      "rights": "official journal research copy; no full text republished"
+    },
+    {
+      "permission_id": "evora-1565",
+      "url": "https://purl.pt/13348/7/res-2787-v_PDF/res-2787-v_PDF_24-C-R0150/res-2787-v_0000_capa-capa_t24-C-R0150.pdf",
+      "sha256": "32ee9e75396492e2d47fa336e3a8f182cafd542295018da2a31f9cb3a2826ca5",
+      "extent": "complete delivered 208-page original-scan PDF; Title XXVII chapter I inspected",
+      "rights": "historical text likely public domain; scan terms not cleared for redistribution"
+    }
+  ],
+  "remaining_work": [
+    "Acquire original approval instruments and exact title/approval leaves where only official reports or catalogues were inspected.",
+    "Find dated actual-use evidence for the exact Armenian 2007, Maronite 2005, Syro-Malabar English 2018 and Malankara 1966/2007 expressions before received-book admission.",
+    "Collate named before/after prayers, rubrics, calendars and order components before asserting substantive transitions, source ancestry or independent recensions.",
+    "Build a separate component-level census of diocesan and religious Propers, and a local-reception crosswalk for mission and diaspora jurisdictions; this receipt is a bounded sample, not closure of either census."
+  ]
+}
