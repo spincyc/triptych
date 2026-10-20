@@ -2874,8 +2874,123 @@ id = "roman-modern"
 title = "Roman general missal reforms and supplements"
 status = "existing-inventories-plus-additions"
 sources = ["notitiae-book-bibliography-1985", "western-roman-ordo-1965-primary", "western-roman-holy-week-1965-primary", "western-roman-variationes-1967-primary", "western-roman-preces-1968-primary"]
-candidate_ids = ["roman-1884", "roman-1900", "roman-ordo-1965", "roman-holy-week-1965", "roman-concelebration-1965", "roman-variationes-1967", "roman-preces-1968"]
-remaining_work = "Use the Latin and Holy Week act inventories for the continuing Roman history. Complete 1965 Order, 1965 Holy Week and 1967 Variationes component scans now support bounded original inspection; acquire the exact 1965 concelebration and 1968 Preces booklets, complete original comparisons for the experimental Vigil and separate 1969 Order, and distinguish supplements, permissions and calendar provisions from whole-missal revisions."
+candidate_ids = [
+  "roman-1884",
+  "roman-1900",
+  "roman-ordo-1965",
+  "roman-holy-week-1965",
+  "roman-concelebration-1965",
+  "roman-variationes-1967",
+  "roman-preces-1968",
+  "roman-modern-001",
+  "roman-modern-002",
+  "roman-modern-003",
+  "roman-modern-004",
+  "roman-modern-005",
+  "roman-modern-006",
+  "roman-modern-007",
+  "roman-modern-010",
+  "roman-modern-011",
+  "roman-modern-012",
+  "roman-modern-013",
+  "roman-modern-014",
+  "roman-modern-015",
+  "roman-modern-016",
+  "roman-modern-017",
+  "roman-modern-018",
+  "roman-modern-019",
+  "roman-modern-020",
+  "roman-modern-021",
+  "roman-modern-022",
+  "roman-modern-023",
+  "roman-modern-024",
+  "roman-modern-025",
+  "roman-modern-026",
+  "roman-modern-027",
+  "roman-modern-028",
+  "roman-modern-033",
+  "roman-modern-035",
+  "roman-modern-036",
+  "roman-modern-037",
+  "roman-modern-038",
+  "roman-modern-039",
+  "roman-modern-040",
+  "roman-modern-041",
+  "roman-modern-042",
+  "roman-modern-043",
+  "roman-modern-044",
+  "roman-modern-045",
+  "roman-modern-046",
+  "roman-modern-047",
+  "roman-modern-048",
+  "roman-modern-049",
+  "roman-modern-050",
+  "roman-modern-051",
+  "roman-modern-052",
+  "roman-modern-053",
+  "roman-modern-054",
+  "roman-modern-055",
+  "roman-modern-056",
+  "roman-modern-057",
+  "roman-modern-058",
+  "roman-modern-059",
+  "roman-modern-060",
+  "roman-modern-061",
+  "roman-modern-062",
+  "roman-modern-063",
+  "roman-modern-064",
+  "roman-modern-065",
+  "roman-modern-066",
+  "roman-modern-067",
+  "roman-modern-068",
+  "roman-modern-069",
+  "roman-modern-070",
+  "roman-modern-071",
+  "roman-modern-extra-001",
+  "roman-modern-extra-002",
+  "roman-modern-extra-003",
+  "roman-modern-extra-004",
+  "roman-modern-extra-005",
+  "roman-modern-extra-006",
+  "roman-modern-extra-007",
+  "roman-modern-extra-008",
+  "roman-modern-extra-009",
+  "roman-modern-extra-010",
+  "roman-modern-extra-011",
+  "roman-modern-extra-012",
+  "roman-modern-extra-013",
+  "roman-modern-extra-014",
+  "roman-modern-extra-015",
+  "roman-modern-extra-016",
+  "roman-modern-extra-017",
+  "roman-modern-extra-018",
+  "roman-modern-extra-019",
+  "roman-modern-extra-020",
+  "roman-modern-extra-021",
+  "roman-modern-extra-022",
+  "roman-modern-extra-023",
+  "roman-modern-extra-024",
+  "roman-modern-extra-025",
+  "roman-modern-extra-026",
+  "roman-modern-extra-027",
+  "roman-modern-extra-028",
+  "roman-modern-extra-029",
+  "roman-modern-extra-030",
+  "roman-modern-extra-031",
+  "roman-modern-extra-032",
+  "roman-modern-extra-033",
+  "roman-modern-extra-036",
+  "roman-modern-extra-038",
+  "roman-modern-extra-039",
+  "roman-modern-extra-040",
+  "roman-modern-extra-041",
+  "roman-modern-extra-042",
+  "roman-modern-extra-043",
+  "roman-modern-extra-044",
+  "roman-modern-extra-045",
+  "roman-modern-extra-046",
+]
+remaining_work = "Review the bounded Roman modern research receipt for 117 book, component, witness and lead dispositions; its 107 new in-scope candidate IDs join the seven baseline IDs here. The Communion-outside-Mass adjacent ritual roman-modern-extra-035 remains outside this coverage row. Complete the packet-listed original acquisitions, rights review and before/after collation before treating any candidate as a substantive revision or adding a station. The exact 1884 typical-edition claim, 1900 original impression, 1975 altar book, 1965 Latin Order, 1965 concelebration, 1968 Preces and 2020 Supplementum still have the receipt-specific limitations."
 scope = "western-original-source-trajectory"
 existing_inventories = ["src/sources/inventories/latin-missal-acts-v1.toml", "src/sources/inventories/roman-holy-week-acts-v1.toml", "src/sources/inventories/missal-acquisition-audit-v1.toml"]
 
@@ -8377,3 +8492,2676 @@ version_status = "witness-or-component-candidate-not-proven-recension"
 scope_disposition = "in-scope-original-book-or-historical-witness"
 transcription_status = "no-new-verified-transcription"
 collation_status = "no-new-complete-collation"
+
+# Roman modern reviewed research integration, 2026-10-20.
+# Bibliographic candidates, components, witnesses and leads; no station or parentage claims.
+[[sources]]
+id = "roman-modern-src-6a39f3fc4665"
+url = "https://www.szukajwarchiwach.gov.pl/de/jednostka/-/jednostka/32601310"
+type = "reviewer-cited-external-source"
+inspection = "Roman-modern reviewed packet locus: finding 1759-trinity-preface; Polish State Archives catalogue, Archiwum Państwowe w Bydgoszczy, shelfmark 6/437/0/3.2/243, dated 1759, four scans.. State: independent-reviewer-finding."
+limitations = "Review finding and locus retained; underlying original page needs case-specific inspection."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-2597023e3a49"
+url = "https://www.vatican.va/archive/aas/documents/AAS-11-1919-ocr.pdf"
+type = "reviewer-cited-external-source"
+inspection = "Roman-modern reviewed packet locus: finding 1919-two-prefaces; Printed 190–191; both headings and both decrees independently read in extracted text.. State: independent-reviewer-finding."
+limitations = "Review finding and locus retained; underlying original page needs case-specific inspection."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-a3ef4e5f4d8a"
+url = "https://www.vatican.va/archive/aas/documents/AAS-34-1942-ocr.pdf"
+type = "reviewer-cited-external-source"
+inspection = "Roman-modern reviewed packet locus: finding 1942-common-popes; AAS 34 (1942),105–111; Mass 107–111; approval decree 111. State: independent-reviewer-finding."
+limitations = "Review finding and locus retained; underlying original page needs case-specific inspection."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-1f6352bea739"
+url = "https://www.vatican.va/archive/aas/documents/AAS-44-1952-ocr.pdf"
+type = "reviewer-cited-external-source"
+inspection = "Roman-modern reviewed packet locus: finding 1952-vigil-distinct; AAS 44 (1952), printed 48–63; decree 48–49; ordinationes 50–52; revised rubrics 53–63. State: independent-reviewer-finding."
+limitations = "Review finding and locus retained; underlying original page needs case-specific inspection."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-20264aac87dc"
+url = "https://archive.org/download/CalendariumRomanum1969/Calendarium%20Romanum%20%281969%29.pdf"
+type = "acquired-or-cited-witness"
+inspection = "Roman-modern reviewed packet locus: .scratch/full-research-20261019/roman_modern/research/Calendarium Romanum (1969).pdf. State: acquired-source-route."
+limitations = "Acquisition or citation does not establish a complete source text, rights clearance or normative change."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-ab0eee07d8dc"
+url = "https://www.cultodivino.va/it/formazione/pubblicazioni/libri-liturgici/missale/ordo-lectionum-missae.html"
+type = "official-publication-or-documentary-bibliography"
+inspection = "Roman-modern reviewed packet locus: historical predecessor identified on current OLM page. State: official-publication-page."
+limitations = "Names a book or component at the cited locus; does not establish whole-book text or textual descent."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-7f598c3fcee8"
+url = "https://archive.org/download/OLM1969/Ordo%20lectionum%20Missae%20%28editio%20typica%2C%201969%29.pdf"
+type = "acquired-or-cited-witness"
+inspection = "Roman-modern reviewed packet locus: .scratch/full-research-20261019/roman_modern/research/Ordo lectionum Missae (editio typica, 1969).pdf. State: acquired-source-route."
+limitations = "Acquisition or citation does not establish a complete source text, rights clearance or normative change."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-a193828aaa80"
+url = "https://archive.org/download/missale-romanum-pauli-pp-vi-1970-concilii-vaticno-ii/Missale%20Romanum%20Pauli%20PP%20VI%201970%20Concilii%20Vaticno%20II.pdf"
+type = "acquired-or-cited-witness"
+inspection = "Roman-modern reviewed packet locus: .scratch/full-research-20261019/roman_modern/research/Missale Romanum Pauli PP VI 1970 Concilii Vaticno II.pdf. State: acquired-source-route."
+limitations = "Acquisition or citation does not establish a complete source text, rights clearance or normative change."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-fb6d22b294d0"
+url = "https://archive.org/download/OLM1981/Ordo%20lectionum%20Missae%20%28editio%20typica%20altera%2C%201981%29.pdf"
+type = "acquired-or-cited-witness"
+inspection = "Roman-modern reviewed packet locus: .scratch/full-research-20261019/roman_modern/research/Ordo lectionum Missae (editio typica altera, 1981).pdf. State: acquired-source-route."
+limitations = "Acquisition or citation does not establish a complete source text, rights clearance or normative change."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-a349b8d7bbd1"
+url = "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-19-(1983)/Notitiae-206-1983.pdf"
+type = "reviewer-cited-external-source"
+inspection = "Roman-modern reviewed packet locus: finding 1983-igmr-code-variations; Printed 540–555, decree 12 September 1983; official indexed text checked.. State: independent-reviewer-finding."
+limitations = "Review finding and locus retained; underlying original page needs case-specific inspection."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-09750b44d847"
+url = "https://www.cultodivino.va/it/formazione/pubblicazioni/libri-liturgici/aliae/collectio-missarum-de-beata-maria-virgine.html"
+type = "official-publication-or-documentary-bibliography"
+inspection = "Roman-modern reviewed packet locus: 1987 Collectio editio typica. State: official-publication-page."
+limitations = "Names a book or component at the cited locus; does not establish whole-book text or textual descent."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-50a5a5f2d5ff"
+url = "https://www.cultodivino.va/it/formazione/pubblicazioni/libri-liturgici/aliae/lectionarium-pro-missis-de-beata-maria-virgine.html"
+type = "official-publication-or-documentary-bibliography"
+inspection = "Roman-modern reviewed packet locus: 1987 Lectionarium editio typica. State: official-publication-page."
+limitations = "Names a book or component at the cited locus; does not establish whole-book text or textual descent."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-ff42eb70ab44"
+url = "https://archive.org/download/CMBMV1987/Collectio%20Missarum%20de%20Beata%20Maria%20Virgine%20%281987%29.pdf"
+type = "acquired-or-cited-witness"
+inspection = "Roman-modern reviewed packet locus: .scratch/full-research-20261019/roman_modern/research/Collectio Missarum de Beata Maria Virgine (1987).pdf. State: acquired-source-route."
+limitations = "Acquisition or citation does not establish a complete source text, rights clearance or normative change."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-4bf42a4e8ad9"
+url = "https://www.cultodivino.va/it/formazione/pubblicazioni/libri-liturgici/missale/ordo-cantus-missae.html"
+type = "official-publication-or-documentary-bibliography"
+inspection = "Roman-modern reviewed packet locus: editio typica altera labelled 1988. State: official-publication-page."
+limitations = "Names a book or component at the cited locus; does not establish whole-book text or textual descent."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-4bb7d737f4d0"
+url = "https://archive.org/download/OCMissae/Ordo%20cantus%20Missae%20%281988%29.pdf"
+type = "acquired-or-cited-witness"
+inspection = "Roman-modern reviewed packet locus: .scratch/full-research-20261019/roman_modern/research/Ordo cantus Missae (1988).pdf. State: acquired-source-route."
+limitations = "Acquisition or citation does not establish a complete source text, rights clearance or normative change."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-1947c7e61f7c"
+url = "https://www.liturgie.de/liturgie/pub/o_p/dok/download/ah77_2015.pdf"
+type = "reviewer-cited-external-source"
+inspection = "Roman-modern reviewed packet locus: finding 1991-universal-ep; Printed 253–254, decree 6 August 1991, protocol CD 511/91; independently inspected extracted text of both pages.. State: independent-reviewer-finding."
+limitations = "Review finding and locus retained; underlying original page needs case-specific inspection."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-8141f3f0fdf4"
+url = "https://www.cultodivino.va/en/formazione/pubblicazioni/libri-liturgici/missale/missale-romanum.html"
+type = "official-publication-or-documentary-bibliography"
+inspection = "Roman-modern reviewed packet locus: 2002 third typical edition; 2008 corrected reprint. State: official-publication-page."
+limitations = "Names a book or component at the cited locus; does not establish whole-book text or textual descent."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-f5cabca488b7"
+url = "https://www.vatican.va/roman_curia/secretariat_state/2008/documents/rc_seg-st_20080204_nota-missale-romanum_it.html"
+type = "reviewer-cited-external-source"
+inspection = "Roman-modern reviewed packet locus: finding 2008-good-friday-1962; Complete official notice 4 February 2008. State: independent-reviewer-finding."
+limitations = "Review finding and locus retained; underlying original page needs case-specific inspection."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-a4b705f72134"
+url = "http://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20130501_san-giuseppe_lt.html"
+type = "acquired-or-cited-witness"
+inspection = "Roman-modern reviewed packet locus: .scratch/full-research-20261019/roman_modern/research/official-rc_con_ccdds_doc_20130501_san-giuseppe_lt.html. State: acquired-source-route."
+limitations = "Acquisition or citation does not establish a complete source text, rights clearance or normative change."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-d7d246ba038f"
+url = "https://www.vatican.va/roman_curia/congregations/ccdds/notitiae/2015/olm-additiones.pdf"
+type = "reviewer-cited-external-source"
+inspection = "Roman-modern reviewed packet locus: finding 2015-olm-additions; All nine delivered pages independently read in extracted text; archive labels original journal locus Notitiae 2015,349–360.. State: independent-reviewer-finding."
+limitations = "Review finding and locus retained; underlying original page needs case-specific inspection."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-f1ce6c2af003"
+url = "http://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20160106_decreto-lavanda-piedi_la.pdf"
+type = "acquired-or-cited-witness"
+inspection = "Roman-modern reviewed packet locus: .scratch/full-research-20261019/roman_modern/research/official-rc_con_ccdds_doc_20160106_decreto-lavanda-piedi_la.pdf. State: acquired-source-route."
+limitations = "Acquisition or citation does not establish a complete source text, rights clearance or normative change."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-32061204f764"
+url = "http://www.vatican.va/roman_curia/congregations/ccdds/documents/sanctae-m-magdalenae-decretum_en.pdf"
+type = "acquired-or-cited-witness"
+inspection = "Roman-modern reviewed packet locus: .scratch/full-research-20261019/roman_modern/research/official-sanctae-m-magdalenae-decretum_en.pdf. State: acquired-source-route."
+limitations = "Acquisition or citation does not establish a complete source text, rights clearance or normative change."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-75ca7c447406"
+url = "http://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20180211_decreto-mater-ecclesiae_la.html"
+type = "acquired-or-cited-witness"
+inspection = "Roman-modern reviewed packet locus: .scratch/full-research-20261019/roman_modern/research/official-rc_con_ccdds_doc_20180211_decreto-mater-ecclesiae_la.html. State: acquired-source-route."
+limitations = "Acquisition or citation does not establish a complete source text, rights clearance or normative change."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-21f84846e2ed"
+url = "https://www.cultodivino.va/content/dam/cultodivino/documenti/Ecclesiae-Matris-Adnexus-2.pdf"
+type = "acquired-or-cited-witness"
+inspection = "Roman-modern reviewed packet locus: .scratch/full-research-20261019/roman_modern/research/official-Ecclesiae-Matris-Adnexus-2.pdf. State: acquired-source-route."
+limitations = "Acquisition or citation does not establish a complete source text, rights clearance or normative change."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-cb5020ff9dfb"
+url = "http://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20190125_decreto-celebrazione-paolovi_la.html"
+type = "acquired-or-cited-witness"
+inspection = "Roman-modern reviewed packet locus: .scratch/full-research-20261019/roman_modern/research/official-rc_con_ccdds_doc_20190125_decreto-celebrazione-paolovi_la.html. State: acquired-source-route."
+limitations = "Acquisition or citation does not establish a complete source text, rights clearance or normative change."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-affbe69603f0"
+url = "http://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20191007_decreto-celebrazione-verginediloreto_la.html"
+type = "acquired-or-cited-witness"
+inspection = "Roman-modern reviewed packet locus: .scratch/full-research-20261019/roman_modern/research/official-rc_con_ccdds_doc_20191007_decreto-celebrazione-verginediloreto_la.html. State: acquired-source-route."
+limitations = "Acquisition or citation does not establish a complete source text, rights clearance or normative change."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-9aabf7a4560f"
+url = "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20200222_decreto-cum-sanctissima_la.html"
+type = "acquired-or-cited-witness"
+inspection = "Roman-modern reviewed packet locus: .scratch/full-research-20261019/roman_modern/research/cum-sanctissima-2020.html. State: acquired-source-route."
+limitations = "Acquisition or citation does not establish a complete source text, rights clearance or normative change."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-70f466461c4d"
+url = "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20200222_nota-decreto-cumsanctissima_it.html"
+type = "acquired-or-cited-witness"
+inspection = "Roman-modern reviewed packet locus: .scratch/full-research-20261019/roman_modern/research/cum-sanctissima-note-2020.html. State: acquired-source-route."
+limitations = "Acquisition or citation does not establish a complete source text, rights clearance or normative change."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-68f1dbae804a"
+url = "http://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20200518_decreto-celebrazione-santafaustina_la.html"
+type = "acquired-or-cited-witness"
+inspection = "Roman-modern reviewed packet locus: .scratch/full-research-20261019/roman_modern/research/official-rc_con_ccdds_doc_20200518_decreto-celebrazione-santafaustina_la.html. State: acquired-source-route."
+limitations = "Acquisition or citation does not establish a complete source text, rights clearance or normative change."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-676c4905009f"
+url = "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2025/02/11/0125/00250.html"
+type = "reviewer-cited-external-source"
+inspection = "Roman-modern reviewed packet locus: finding teresa-2024-2025; Official bulletin including Latin decree 24 December 2024 and annex, published 11 February 2025. State: independent-reviewer-finding."
+limitations = "Review finding and locus retained; underlying original page needs case-specific inspection."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-f0e7a4854a75"
+url = "https://www.vatican.va/content/dam/romancuria/culto-divino/Missa%20pro%20custodia%20creationis%20-%20Exemplar%20originale.pdf"
+type = "reviewer-cited-external-source"
+inspection = "Roman-modern reviewed packet locus: finding creation-2025; Four-page original Latin PDF; decree 8 June 2025, insertion instructions and formulary/readings. State: independent-reviewer-finding."
+limitations = "Review finding and locus retained; underlying original page needs case-specific inspection."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-a560f85967b0"
+url = "https://www.vatican.va/content/romancuria/it/dicasteri/dicastero-culto-divino-e-disciplina-sacramenti/documenti/20251109-decreto-iscrizione-newman-la.html"
+type = "reviewer-cited-external-source"
+inspection = "Roman-modern reviewed packet locus: finding newman-2025-2026; Decree 9 November 2025; annex calendar, Mass, OLM 655bis, LH, Martyrology; publication 3 February 2026. State: independent-reviewer-finding."
+limitations = "Review finding and locus retained; underlying original page needs case-specific inspection."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-f5014e3aac51"
+url = "https://www.vatican.va/content/benedict-xv/la/bulls/documents/hf_ben-xv_bulls_19150810_incruentum-altaris.html"
+type = "reviewer-cited-external-source"
+inspection = "Roman-modern reviewed packet locus: finding 1915-all-souls-three-masses; Complete official Latin text, especially section III; 10 August 1915.. State: independent-reviewer-finding."
+limitations = "Review finding and locus retained; underlying original page needs case-specific inspection."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-30a99a7b89f9"
+url = "https://www.vatican.va/archive/aas/documents/AAS-12-1920-ocr.pdf"
+type = "reviewer-cited-external-source"
+inspection = "Roman-modern reviewed packet locus: finding 1920-memoriale-rituum; Printed 448, decree 14 January 1920; extracted text independently examined.. State: independent-reviewer-finding."
+limitations = "Review finding and locus retained; underlying original page needs case-specific inspection."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-016a2aeb01ae"
+url = "https://archive.org/download/graduale_simplex/graduale_simplex.pdf"
+type = "acquired-or-cited-witness"
+inspection = "Roman-modern reviewed packet locus: .scratch/full-research-20261019/roman_modern/research/graduale_simplex.pdf. State: acquired-source-route."
+limitations = "Acquisition or citation does not establish a complete source text, rights clearance or normative change."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-b007563437b2"
+url = "https://archive.org/download/kyriale_simplex_1965/kyriale_simplex_1965.pdf"
+type = "acquired-or-cited-witness"
+inspection = "Roman-modern reviewed packet locus: .scratch/full-research-20261019/roman_modern/research/kyriale_simplex_1965.pdf. State: acquired-source-route."
+limitations = "Acquisition or citation does not establish a complete source text, rights clearance or normative change."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-cfa60ea4206b"
+url = "https://ia601606.us.archive.org/1/items/graduale-simplex-1967/Graduale%20Simplex%20%281967%29.pdf"
+type = "acquired-or-cited-witness"
+inspection = "Roman-modern reviewed packet locus: .scratch/full-research-20261019/roman_modern/research/Graduale Simplex (1967).pdf. State: acquired-source-route."
+limitations = "Acquisition or citation does not establish a complete source text, rights clearance or normative change."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-e0da48da2914"
+url = "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-25-(1989)/Notitiae-275-1989.pdf"
+type = "reviewer-cited-external-source"
+inspection = "Roman-modern reviewed packet locus: finding 1989-calendar-repertoire; Printed 489–503, intro and all monthly notes independently read in extracted text; occurrence table 504–505 not fully inspected.. State: independent-reviewer-finding."
+limitations = "Review finding and locus retained; underlying original page needs case-specific inspection."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-9a46a247d441"
+url = "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1990/notitiae-27-(1991)/Notitiae-298-1991.pdf"
+type = "reviewer-cited-external-source"
+inspection = "Roman-modern reviewed packet locus: finding 1990-calendar-norms; Printed 233, reference to decree 22 April 1990 and Notitiae 26 (1990),160–165.. State: independent-reviewer-finding."
+limitations = "Review finding and locus retained; underlying original page needs case-specific inspection."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-a83eb2988b66"
+url = "https://www.cultodivino.va/it/formazione/pubblicazioni/libri-liturgici/missale/evangeliarium.html"
+type = "official-publication-or-documentary-bibliography"
+inspection = "Roman-modern reviewed packet locus: official page: 2000 edition based on 1981 OLM. State: official-publication-page."
+limitations = "Names a book or component at the cited locus; does not establish whole-book text or textual descent."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-6a98915ec594"
+url = "https://archive.org/download/MissaleRomanumCumLectionibus1977Vol34/Missale%20Romanum%20cum%20lectionibus%201977%20Vol%201-4.pdf"
+type = "acquired-or-cited-witness"
+inspection = "Roman-modern reviewed packet locus: .scratch/full-research-20261019/roman_modern/research/Missale Romanum cum lectionibus 1977 Vol 1-4.pdf. State: acquired-source-route."
+limitations = "Acquisition or citation does not establish a complete source text, rights clearance or normative change."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-e6dafdeaaded"
+url = "https://archive.org/download/MissaleRomanumCumLectionibus1977Vol34/Missale%20Romanum%20cum%20lectionibus%201977%20Vol%202-4.pdf"
+type = "acquired-or-cited-witness"
+inspection = "Roman-modern reviewed packet locus: .scratch/full-research-20261019/roman_modern/research/Missale Romanum cum lectionibus 1977 Vol 2-4.pdf. State: acquired-source-route."
+limitations = "Acquisition or citation does not establish a complete source text, rights clearance or normative change."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-65b392a0a980"
+url = "https://archive.org/download/MissaleRomanumCumLectionibus1977Vol34/Missale%20Romanum%20cum%20lectionibus%201977%20Vol%203-4.pdf"
+type = "acquired-or-cited-witness"
+inspection = "Roman-modern reviewed packet locus: .scratch/full-research-20261019/roman_modern/research/Missale Romanum cum lectionibus 1977 Vol 3-4.pdf. State: acquired-source-route."
+limitations = "Acquisition or citation does not establish a complete source text, rights clearance or normative change."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-caa79502d24a"
+url = "https://archive.org/download/MissaleRomanumCumLectionibus1977Vol34/Missale%20Romanum%20cum%20lectionibus%201977%20Vol%204-4.pdf"
+type = "acquired-or-cited-witness"
+inspection = "Roman-modern reviewed packet locus: .scratch/full-research-20261019/roman_modern/research/Missale Romanum cum lectionibus 1977 Vol 4-4.pdf. State: acquired-source-route."
+limitations = "Acquisition or citation does not establish a complete source text, rights clearance or normative change."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-d170b4063db7"
+url = "https://www.libreriaeditricevaticana.va/img/cms/Catalogo/Catalogo%20generale%202020%20web.pdf"
+type = "reviewer-cited-external-source"
+inspection = "Roman-modern reviewed packet locus: finding lev-catalogue-complements; Printed 120, all Mass-book entries examined in extracted text.. State: independent-reviewer-finding."
+limitations = "Review finding and locus retained; underlying original page needs case-specific inspection."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-de1f5794560b"
+url = "https://www.cultodivino.va/it/formazione/pubblicazioni/libri-liturgici/aliae/graduale-simplex.html"
+type = "official-publication-or-documentary-bibliography"
+inspection = "Roman-modern reviewed packet locus: official page: 1975 second typical; 2007 reprint. State: official-publication-page."
+limitations = "Names a book or component at the cited locus; does not establish whole-book text or textual descent."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-ac59def775f9"
+url = "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20211022_decreto-can838-cdc_la.html"
+type = "acquired-or-cited-witness"
+inspection = "Roman-modern reviewed packet locus: .scratch/full-research-20261019/roman_modern/research/postquam-2021.html. State: acquired-source-route."
+limitations = "Acquisition or citation does not establish a complete source text, rights clearance or normative change."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-210d4e03fe07"
+url = "https://liturgia.episkopat.pl/file_get.php?fid=1855"
+type = "acquired-or-cited-witness"
+inspection = "Roman-modern reviewed packet locus: .scratch/full-research-20261019/roman_modern/research/continentiam-2023.pdf. State: acquired-source-route."
+limitations = "Acquisition or citation does not establish a complete source text, rights clearance or normative change."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-b0f08ebb8feb"
+url = "https://www.teologiatorino.it/wp-content/uploads/sites/2/2021/04/Bollettino-novit%C3%A0-settembre_dicembre_2019-nuovo.pdf"
+type = "reviewer-cited-external-source"
+inspection = "Roman-modern reviewed packet locus: finding 1924-claimed-typical; Seminary library acquisition catalogue, entry L 2C 61.. State: independent-reviewer-finding."
+limitations = "Review finding and locus retained; underlying original page needs case-specific inspection."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-dfa1c2f74fd8"
+url = "https://ia600903.us.archive.org/12/items/CMBMV1987Lectionary/Lectionarium%20pro%20Missis%20de%20Beata%20Maria%20Virgine%20%281987%29.pdf"
+type = "acquired-or-cited-witness"
+inspection = "Roman-modern reviewed packet locus: .scratch/full-research-20261019/roman_modern/research/Lectionarium pro Missis de Beata Maria Virgine (1987).pdf. State: acquired-source-route."
+limitations = "Acquisition or citation does not establish a complete source text, rights clearance or normative change."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-c2ff542591a9"
+url = "https://archive.org/download/ordo-missae-1965/Ordo%20Missae%201965.pdf"
+type = "primary-book-page-image"
+inspection = "Roman-modern reviewed packet locus: PDF image pp. 1-3: title, episcopal approval/imprimatur, opening Ritus. State: original-images-directly-inspected."
+limitations = "Only named page images inspected; no complete book collation."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+
+[[sources]]
+id = "roman-modern-src-993e9c3c3a71"
+url = "https://archive.org/download/MissaleRomanum1975OrdoMissae/OrdoMissae1975.pdf"
+type = "acquired-or-cited-witness"
+inspection = "Roman-modern reviewed packet locus: complete delivered PDF, 1975 Ordo excerpt. State: acquired-not-whole-body-collated."
+limitations = "Acquisition or citation does not establish a complete source text, rights clearance or normative change."
+inspected_on = "2026-10-20"
+integration_review = "Independent cold revision verdict accepted bounded inventory integration; receipt roman-modern-2026-10-20.json."
+[[candidates]]
+id = "roman-modern-001"
+family = "roman"
+title = "Missale Romanum of Pius V"
+date = "1570"
+kind = "whole-book-edition"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: whole-book edition; research disposition: whole-book-typical-or-revised-edition."
+date_role = "promulgation"
+version_status = "whole-book-typical-or-revised-edition"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed p.395 n.2, Quo primum 14 July 1570; stage roman-stages-1570"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+chronology_start = 1570
+chronology_end = 1570
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-002"
+family = "roman"
+title = "Gregorian calendar adoption in Roman missal calendar apparatus"
+date = "1582"
+kind = "calendar-component"
+status = "unresolved-lead-retained"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: calendar component; research disposition: unresolved-bibliographic-lead. Primary edition or act locus remains to verify; do not create a station from this row."
+date_role = "act-or-publication-as-qualified-in-source"
+version_status = "unresolved-bibliographic-lead"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "expected_versions cold-roman-002"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+
+[[candidates]]
+id = "roman-modern-003"
+family = "roman"
+title = "Missale Romanum revised under Clement VIII"
+date = "1604"
+kind = "whole-book-edition"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: whole-book edition; research disposition: whole-book-typical-or-revised-edition."
+date_role = "typical-book-publication"
+version_status = "whole-book-typical-or-revised-edition"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "stage roman-stages-1604"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+
+[[candidates]]
+id = "roman-modern-004"
+family = "roman"
+title = "Missale Romanum revised under Urban VIII"
+date = "1634"
+kind = "whole-book-edition"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: whole-book edition; research disposition: whole-book-typical-or-revised-edition."
+date_role = "typical-book-publication"
+version_status = "whole-book-typical-or-revised-edition"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "stage roman-stages-1634"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+
+[[candidates]]
+id = "roman-modern-005"
+family = "roman"
+title = "Trinity preface appointed for Sundays lacking a proper preface"
+date = "1759"
+kind = "component-rule"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: component rule; research disposition: substantive-component-change-candidate."
+date_role = "decree-year-catalogued"
+version_status = "substantive-component-change-candidate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "finding 1759-trinity-preface; Polish State Archives catalogue, Archiwum Państwowe w Bydgoszczy, shelfmark 6/437/0/3.2/243, dated 1759, four scans."
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-6a39f3fc4665"]
+chronology_start = 1759
+chronology_end = 1759
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-006"
+family = "roman"
+title = "Imperial-prayer changes"
+date = "1860"
+kind = "component-revision"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: component revision; research disposition: substantive-component-change-candidate."
+date_role = "decree"
+version_status = "substantive-component-change-candidate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "stage roman-stages-1860-imperial-prayers"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+
+[[candidates]]
+id = "roman-modern-007"
+family = "roman"
+title = "General missal corrections"
+date = "1877"
+kind = "component-revision"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: component revision; research disposition: substantive-component-change-candidate."
+date_role = "decree"
+version_status = "substantive-component-change-candidate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "stage roman-stages-1877-corrections"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+
+[[candidates]]
+id = "roman-modern-010"
+family = "roman"
+title = "Vatican chant revision / revised missal tones"
+date = "1908"
+kind = "chant-component"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: chant component; research disposition: substantive-component-change-candidate."
+date_role = "approval-1907-publication-1908"
+version_status = "substantive-component-change-candidate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed p.399 note on Graduale 1908; approval 7 August 1907"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+chronology_start = 1908
+chronology_end = 1908
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-011"
+family = "roman"
+title = "Divino afflatu changes affecting Mass rubrics and calendar"
+date = "1911"
+kind = "component-revision"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: component revision; research disposition: substantive-component-change-candidate."
+date_role = "act-or-publication-as-qualified-in-source"
+version_status = "substantive-component-change-candidate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "act divino-afflatu-1911; cited by name in 1920 decree"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+
+[[candidates]]
+id = "roman-modern-012"
+family = "roman"
+title = "Abhinc duos annos and Additiones et variationes in rubricis Missalis"
+date = "1913"
+kind = "component-revision"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: component revision; research disposition: substantive-component-change-candidate."
+date_role = "act-or-publication-as-qualified-in-source"
+version_status = "substantive-component-change-candidate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "act abhinc-duos-annos-1913; cited by name in 1920 decree"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+
+[[candidates]]
+id = "roman-modern-013"
+family = "roman"
+title = "New prefaces of Saint Joseph and the Dead"
+date = "1919"
+kind = "component-addition"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: component addition; research disposition: substantive-component-change-candidate."
+date_role = "act-or-publication-as-qualified-in-source"
+version_status = "substantive-component-change-candidate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "finding 1919-two-prefaces; Printed 190–191; both headings and both decrees independently read in extracted text."
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-2597023e3a49"]
+chronology_start = 1919
+chronology_end = 1919
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-014"
+family = "roman"
+title = "Missale Romanum under Benedict XV"
+date = "1920"
+kind = "whole-book-typical-edition"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: whole-book typical edition; research disposition: whole-book-typical-or-revised-edition."
+date_role = "typical-book-publication"
+version_status = "whole-book-typical-or-revised-edition"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed p.395 note: preceding 1962 typical edition lineage; stage roman-stages-1920"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+chronology_start = 1920
+chronology_end = 1920
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-015"
+family = "roman"
+title = "Christ the King proper and preface"
+date = "1925"
+kind = "component-addition"
+status = "unresolved-lead-retained"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: component addition; research disposition: unresolved-bibliographic-lead. Primary edition or act locus remains to verify; do not create a station from this row."
+date_role = "act-or-publication-as-qualified-in-source"
+version_status = "unresolved-bibliographic-lead"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "expected_versions cold-roman-015"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+
+[[candidates]]
+id = "roman-modern-016"
+family = "roman"
+title = "Revised Sacred Heart proper and preface"
+date = "1928"
+kind = "component-revision"
+status = "unresolved-lead-retained"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: component revision; research disposition: unresolved-bibliographic-lead. Primary edition or act locus remains to verify; do not create a station from this row."
+date_role = "act-or-publication-as-qualified-in-source"
+version_status = "unresolved-bibliographic-lead"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "expected_versions cold-roman-016"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+
+[[candidates]]
+id = "roman-modern-017"
+family = "roman"
+title = "Common of one or more Supreme Pontiffs"
+date = "1942"
+kind = "component-addition"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: component addition; research disposition: substantive-component-change-candidate."
+date_role = "act-or-publication-as-qualified-in-source"
+version_status = "substantive-component-change-candidate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "finding 1942-common-popes; AAS 34 (1942),105–111; Mass 107–111; approval decree 111"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-a3ef4e5f4d8a"]
+chronology_start = 1942
+chronology_end = 1942
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-018"
+family = "roman"
+title = "Revised Assumption formulary after definition"
+date = "1950"
+kind = "component-revision"
+status = "unresolved-lead-retained"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: component revision; research disposition: unresolved-bibliographic-lead. Primary edition or act locus remains to verify; do not create a station from this row."
+date_role = "act-or-publication-as-qualified-in-source"
+version_status = "unresolved-bibliographic-lead"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "expected_versions cold-roman-018"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+
+[[candidates]]
+id = "roman-modern-019"
+family = "roman"
+title = "Ordo Sabbati sancti quando vigilia paschalis instaurata peragitur"
+date = "1951"
+kind = "experimental-component-book"
+status = "unresolved-lead-retained"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: experimental component book; research disposition: unresolved-bibliographic-lead. Primary edition or act locus remains to verify; do not create a station from this row."
+date_role = "experimental-book-publication"
+version_status = "unresolved-bibliographic-lead"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "expected_versions cold-roman-019"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+
+[[candidates]]
+id = "roman-modern-020"
+family = "roman"
+title = "Ordo Sabbati sancti, editio altera with ordinationes and rubricarum variationes"
+date = "1952"
+kind = "revised-experimental-component-book"
+status = "reviewed-bounded-metadata"
+qualification = "1952 second edition changes rubrics, not merely permission to repeat 1951 experiment. Record class: revised experimental component book; research disposition: distinct-complementary-or-component-book."
+date_role = "revised-book-approval-and-publication"
+version_status = "distinct-complementary-or-component-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "scratch-evidence-only; see dated research receipt"
+source_locus = "finding 1952-vigil-distinct; AAS 44 (1952), printed 48–63; decree 48–49; ordinationes 50–52; revised rubrics 53–63"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-1f6352bea739"]
+chronology_start = 1952
+chronology_end = 1952
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-021"
+family = "roman"
+title = "Cum nostra hac aetate simplification of calendar and rubrics"
+date = "1955"
+kind = "component-revision"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: component revision; research disposition: substantive-component-change-candidate."
+date_role = "act-or-publication-as-qualified-in-source"
+version_status = "substantive-component-change-candidate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "act de-rubricis-simpliciorem-1955, 23 March 1955"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+
+[[candidates]]
+id = "roman-modern-022"
+family = "roman"
+title = "Ordo Hebdomadae Sanctae instauratus"
+date = "1955/1956"
+kind = "component-typical-edition"
+status = "reviewed-bounded-metadata"
+qualification = "1955 approval and 1956 effective use must be separate. 1956 complete Ordo remains unacquired. Record class: component typical edition; research disposition: distinct-complementary-or-component-book."
+date_role = "approval-1955-effectiveness-1956"
+version_status = "distinct-complementary-or-component-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed p.395 introductory book list: Ordo Hebdomadae Sanctae instauratus 1955; stage roman-stages-1956-holyweek"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+
+[[candidates]]
+id = "roman-modern-023"
+family = "roman"
+title = "Saint Joseph the Worker and Queenship of Mary calendar/formulary changes"
+date = "1955/1956"
+kind = "components;-split-exact-acts"
+status = "unresolved-lead-retained"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: components; split exact acts; research disposition: unresolved-bibliographic-lead. Primary edition or act locus remains to verify; do not create a station from this row."
+date_role = "act-or-publication-as-qualified-in-source"
+version_status = "unresolved-bibliographic-lead"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "expected_versions cold-roman-023"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+
+[[candidates]]
+id = "roman-modern-024"
+family = "roman"
+title = "Good Friday prayer wording changes"
+date = "1959"
+kind = "component-revision"
+status = "unresolved-lead-retained"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: component revision; research disposition: unresolved-bibliographic-lead. Primary edition or act locus remains to verify; do not create a station from this row."
+date_role = "act-or-publication-as-qualified-in-source"
+version_status = "unresolved-bibliographic-lead"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "expected_versions cold-roman-024"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+
+[[candidates]]
+id = "roman-modern-025"
+family = "roman"
+title = "Rubricarum instructum and Codex rubricarum"
+date = "1960/1961"
+kind = "rubrical-component;-approval-effect-distinct"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: rubrical component; approval/effect distinct; research disposition: substantive-component-change-candidate."
+date_role = "act-or-publication-as-qualified-in-source"
+version_status = "substantive-component-change-candidate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "acts rubricarum-instructum-1960 and codex-rubricarum-1960"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+
+[[candidates]]
+id = "roman-modern-026"
+family = "roman"
+title = "Missale Romanum declared typical 23 June 1962"
+date = "1962-06"
+kind = "whole-book-typical-edition"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: whole-book typical edition; research disposition: whole-book-typical-or-revised-edition."
+date_role = "typical-declaration-1962-06-23"
+version_status = "whole-book-typical-or-revised-edition"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed p.395 n.2: 1962 typical Missal and decree 23 June 1962; stage roman-stages-1962-june"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+
+[[candidates]]
+id = "roman-modern-027"
+family = "roman"
+title = "Saint Joseph inserted in Roman Canon"
+date = "1962-11/12"
+kind = "component-revision;-act-effect-distinct"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: component revision; act/effect distinct; research disposition: substantive-component-change-candidate."
+date_role = "act-1962-11-effectiveness-1962-12"
+version_status = "substantive-component-change-candidate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "stage roman-stages-1962-december"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+
+[[candidates]]
+id = "roman-modern-028"
+family = "roman"
+title = "Inter Oecumenici and implementing Ordo Missae"
+date = "1964/1965"
+kind = "instruction-then-component-edition"
+status = "unresolved-lead-retained"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: instruction then component edition; research disposition: unresolved-bibliographic-lead. Primary edition or act locus remains to verify; do not create a station from this row."
+date_role = "act-or-publication-as-qualified-in-source"
+version_status = "unresolved-bibliographic-lead"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "expected_versions cold-roman-028"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+
+[[candidates]]
+id = "roman-modern-033"
+family = "roman"
+title = "Missa normativa demonstrated to Synod"
+date = "1967"
+kind = "experimental-witness,-not-universal-typical-edition"
+status = "unresolved-lead-retained"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: experimental witness, not universal typical edition; research disposition: unresolved-bibliographic-lead. Primary edition or act locus remains to verify; do not create a station from this row."
+date_role = "act-or-publication-as-qualified-in-source"
+version_status = "unresolved-bibliographic-lead"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "expected_versions cold-roman-033"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+
+[[candidates]]
+id = "roman-modern-035"
+family = "roman"
+title = "Ordo Missae / original Institutio generalis"
+date = "1969"
+kind = "component-typical-book"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: component typical book; research disposition: distinct-complementary-or-component-book."
+date_role = "component-publication"
+version_status = "distinct-complementary-or-component-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed p.397 I.1.1.4: 1969 Ordo Missae, 174 pp.; original IGMR"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+chronology_start = 1969
+chronology_end = 1969
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-036"
+family = "roman"
+title = "Calendarium Romanum / Mysterii paschalis"
+date = "1969"
+kind = "calendar-component"
+status = "reviewed-bounded-metadata"
+qualification = "Calendarium is a separate component; current scan has checked front images only. Record class: calendar component; research disposition: distinct-complementary-or-component-book."
+date_role = "calendar-book-publication"
+version_status = "distinct-complementary-or-component-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "scratch-evidence-only; see dated research receipt"
+source_locus = "stage roman-stages-1969-1970; distinct Calendarium 1969"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-20264aac87dc"]
+
+[[candidates]]
+id = "roman-modern-037"
+family = "roman"
+title = "Ordo lectionum Missae"
+date = "1969"
+kind = "lectionary-order-component"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: lectionary-order component; research disposition: distinct-complementary-or-component-book."
+date_role = "approval-1969-05-25-book-publication-1969"
+version_status = "distinct-complementary-or-component-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "scratch-evidence-only; see dated research receipt"
+source_locus = "printed p.398 I.2: OLM 1969, XXV + 434/5 pp.; decree 25 May; historical predecessor identified on current OLM page"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985", "roman-modern-src-ab0eee07d8dc", "roman-modern-src-7f598c3fcee8"]
+chronology_start = 1969
+chronology_end = 1969
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-038"
+family = "roman"
+title = "Missale Romanum editio typica"
+date = "1970"
+kind = "whole-altar-book"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: whole altar book; research disposition: whole-book-typical-or-revised-edition."
+date_role = "approval-1970-03-26-book-publication-1970"
+version_status = "whole-book-typical-or-revised-edition"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "scratch-evidence-only; see dated research receipt"
+source_locus = "printed p.395 I.1: first typical Missal, 966 pp.; decree 26 March 1970; stage roman-stages-1969-1970"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985", "roman-modern-src-a193828aaa80"]
+chronology_start = 1970
+chronology_end = 1970
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-039"
+family = "roman"
+title = "Missale Romanum, Lectionarium, original three-volume corpus"
+date = "1970-1972 volume imprints"
+kind = "complementary-component-corpus"
+status = "reviewed-bounded-metadata"
+qualification = "One three-volume Lectionarium corpus with separately dated volume imprints; details below are not three independent Roman Missal recensions or descent edges. Record class: complementary component corpus; research disposition: distinct-complementary-or-component-book. Packet role: aggregate-multivolume-corpus."
+date_role = "volume I 1970; volume II 1971; volume III 1972; decree 1970-09-30"
+version_status = "distinct-complementary-or-component-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed p.398 I.2: Lectionarium I 1970 982 pp.; II 1971 964 pp.; III 1972 973 pp.; decree 30 September 1970"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+related_candidate_ids = ["roman-modern-extra-046", "roman-modern-extra-040", "roman-modern-extra-041"]
+overlap_note = "Aggregate/detail or witness relationship only; no independent revision count or textual descent."
+
+[[candidates]]
+id = "roman-modern-040"
+family = "roman"
+title = "Missale parvum e Missali Romano et Lectionario excerptum (1970)"
+date = "1970"
+kind = "excerpt-books;-not-presumed-new-recension"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: excerpt books; not presumed new recension; research disposition: excerpt-witness-not-new-recension."
+date_role = "excerpt-book-publication"
+version_status = "excerpt-witness-not-new-recension"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed p.398 I.3-I.4: two Missale parvum forms, each 172 pp., iuxta typicam"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+chronology_start = 1970
+chronology_end = 1970
+chronology_kind = "publication-witness-date"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-041"
+family = "roman"
+title = "Reimpressio emendata of Missale Romanum"
+date = "1971"
+kind = "corrected-reprint-with-substantive-emendations-to-identify"
+status = "reviewed-bounded-metadata"
+qualification = "1971 corrigenda require actual before/after collation; corrected reprint is not automatically an entirely new recension. Record class: corrected reprint with substantive emendations to identify; research disposition: corrected-reprint-change-candidate."
+date_role = "corrected-reprint-publication"
+version_status = "corrected-reprint-change-candidate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed p.398 I.1.2(d): 1971 first corrected reprint and further emendations; stage roman-stages-1971-reprint"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+chronology_start = 1971
+chronology_end = 1971
+chronology_kind = "publication-witness-date"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-042"
+family = "roman"
+title = "Ordo cantus Missae"
+date = "1972"
+kind = "chant-order-component"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: chant-order component; research disposition: distinct-complementary-or-component-book."
+date_role = "approval-1972-06-24-book-publication-1972"
+version_status = "distinct-complementary-or-component-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed p.398 I.5: 1972 Ordo cantus, 246 pp.; decree 24 June"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+chronology_start = 1972
+chronology_end = 1972
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-043"
+family = "roman"
+title = "Variationes in Institutionem generalem and further emendations"
+date = "1972/1973"
+kind = "component-revision;-act-publication-distinct"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: component revision; act/publication distinct; research disposition: substantive-component-change-candidate."
+date_role = "act-1972-12-23-print-1973"
+version_status = "substantive-component-change-candidate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed pp.397-398 I.1.2(c): 23 December 1972 IGMR variations; Notitiae 9 (1973) 34-38"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+
+[[candidates]]
+id = "roman-modern-044"
+family = "roman"
+title = "Directorium de Missis cum pueris"
+date = "1973"
+kind = "rubrical-adaptation-component"
+status = "unresolved-lead-retained"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: rubrical adaptation component; research disposition: unresolved-bibliographic-lead. Primary edition or act locus remains to verify; do not create a station from this row."
+date_role = "act-or-publication-as-qualified-in-source"
+version_status = "unresolved-bibliographic-lead"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "expected_versions cold-roman-044"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+
+[[candidates]]
+id = "roman-modern-045"
+family = "roman"
+title = "Preces eucharisticae pro Missis cum pueris et de reconciliatione"
+date = "1974/1975"
+kind = "supplementary-prayers"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: supplementary prayers; research disposition: distinct-complementary-or-component-book."
+date_role = "experimental-approval-1974-11-01-with-later-extensions"
+version_status = "distinct-complementary-or-component-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed p.397 I.1.1.3(a-c): children/reconciliation prayers, 1974 experimental and 1977/1980 extensions"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+
+[[candidates]]
+id = "roman-modern-046"
+family = "roman"
+title = "Missale Romanum editio typica altera"
+date = "1975"
+kind = "whole-book-typical-edition"
+status = "reviewed-bounded-metadata"
+qualification = "1975 second typical edition attested by decree and bibliography; exact complete altar book not acquired. The 1975 Ordo excerpt and 1977 four-volume iuxta-typicam printing are partial/parallel witnesses only. Record class: whole-book typical edition; research disposition: whole-book-typical-or-revised-edition."
+date_role = "approval-1975-03-27-book-publication-1975"
+version_status = "whole-book-typical-or-revised-edition"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed p.395 note: 1975 second typical edition, decree 27 March; stage roman-stages-1975"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+related_candidate_ids = ["roman-modern-extra-026", "roman-modern-extra-045"]
+overlap_note = "Aggregate/detail or witness relationship only; no independent revision count or textual descent."
+source_availability = "original complete 1975 typical altar book unacquired"
+
+[[candidates]]
+id = "roman-modern-047"
+family = "roman"
+title = "Ordo lectionum Missae editio typica altera"
+date = "1981"
+kind = "component-typical-edition"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: component typical edition; research disposition: distinct-complementary-or-component-book."
+date_role = "approval-1981-01-21-book-publication-1981"
+version_status = "distinct-complementary-or-component-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "scratch-evidence-only; see dated research receipt"
+source_locus = "printed p.398 I.2 note: 1981 OLM second typical edition, LIV + 546 pp.; decree 21 January; editio typica altera 1981"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985", "roman-modern-src-ab0eee07d8dc", "roman-modern-src-fb6d22b294d0"]
+chronology_start = 1981
+chronology_end = 1981
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-048"
+family = "roman"
+title = "Variationes in libros liturgicos after new Code; IGMR affected"
+date = "1983"
+kind = "component-revision"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: component revision; research disposition: substantive-component-change-candidate."
+date_role = "act-or-publication-as-qualified-in-source"
+version_status = "substantive-component-change-candidate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "finding 1983-igmr-code-variations; Printed 540–555, decree 12 September 1983; official indexed text checked."
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-a349b8d7bbd1"]
+chronology_start = 1983
+chronology_end = 1983
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-049"
+family = "roman"
+title = "Collectio Missarum de Beata Maria Virgine (1987)"
+date = "1987"
+kind = "complementary-supplementary-books"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: complementary supplementary books; research disposition: complementary-typical-book."
+date_role = "book-publication-1987"
+version_status = "complementary-typical-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "scratch-evidence-only; see dated research receipt"
+source_locus = "1987 Collectio editio typica; 1987 Lectionarium editio typica"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-09750b44d847", "roman-modern-src-50a5a5f2d5ff", "roman-modern-src-ff42eb70ab44"]
+chronology_start = 1987
+chronology_end = 1987
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-050"
+family = "roman"
+title = "Ordo cantus Missae editio typica altera"
+date = "1986 decree; 1987 imprint; 1988 catalogue label"
+kind = "chant-order-component"
+status = "reviewed-bounded-metadata"
+qualification = "The decree declares the second edition typical on 22 November 1986; the title imprint is 1987; the dicastery catalogue labels it 1988. Exact release/publication date remains unproved. Record class: chant-order component; research disposition: complementary-typical-book."
+date_role = "typica declaration 1986-11-22; title imprint 1987; catalogue label 1988; actual publication date unresolved"
+version_status = "complementary-typical-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "scratch-evidence-only; see dated research receipt"
+source_locus = "editio typica altera labelled 1988; ocm88-008.png: 22 November 1986 decree declares edition typical; ocm88-005.png: title page MCMLXXXVII"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-4bf42a4e8ad9", "roman-modern-src-4bb7d737f4d0"]
+date_status = "1986 typica decree; 1987 title imprint; 1988 catalogue label; publication day unproved"
+
+[[candidates]]
+id = "roman-modern-051"
+family = "roman"
+title = "Eucharistic prayer for various needs, Latin form and four variants"
+date = "1991"
+kind = "supplementary-prayer"
+status = "reviewed-bounded-metadata"
+qualification = "1991 universal Latin prayer has Swiss 1974 and Brazil 1975 antecedents; no unproved textual inheritance. Record class: supplementary prayer; research disposition: substantive-component-change-candidate."
+date_role = "universal-latin-approval-1991"
+version_status = "substantive-component-change-candidate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "finding 1991-universal-ep; Printed 253–254, decree 6 August 1991, protocol CD 511/91; independently inspected extracted text of both pages."
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-1947c7e61f7c"]
+chronology_start = 1991
+chronology_end = 1991
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-052"
+family = "roman"
+title = "Missale Romanum editio typica tertia; IGMR issued earlier"
+date = "2000/2002"
+kind = "approval-component-publication-dates-distinct"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: approval/component/publication dates distinct; research disposition: whole-book-typical-or-revised-edition."
+date_role = "third-typical-book-publication-2002"
+version_status = "whole-book-typical-or-revised-edition"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "2002 third typical edition; 2008 corrected reprint; stage roman-stages-2002"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-8141f3f0fdf4"]
+
+[[candidates]]
+id = "roman-modern-053"
+family = "roman"
+title = "Missale Romanum editio typica tertia reimpressio emendata"
+date = "2008"
+kind = "corrected-whole-book-printing-with-named-changes"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: corrected whole-book printing with named changes; research disposition: corrected-reprint-change-candidate."
+date_role = "corrected-reprint-publication-2008"
+version_status = "corrected-reprint-change-candidate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "2008 reimpressio emendata; stage roman-stages-2008"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-8141f3f0fdf4"]
+chronology_start = 2008
+chronology_end = 2008
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-054"
+family = "roman"
+title = "Revised Oremus et pro Iudaeis for use with 1962 missal"
+date = "2008"
+kind = "component-revision-in-continuing-1962-line"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: component revision in continuing 1962 line; research disposition: continuing-1962-branch-component."
+date_role = "effective-for-1962-use-2008"
+version_status = "continuing-1962-branch-component"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "finding 2008-good-friday-1962; Complete official notice 4 February 2008"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-f5cabca488b7"]
+chronology_start = 2008
+chronology_end = 2008
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-055"
+family = "roman"
+title = "Saint Joseph in Eucharistic Prayers II-IV"
+date = "2013"
+kind = "component-revision"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: component revision; research disposition: substantive-component-change-candidate."
+date_role = "act-or-publication-as-qualified-in-source"
+version_status = "substantive-component-change-candidate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "scratch-evidence-only; see dated research receipt"
+source_locus = "2013 Paternas vices indexed; stage roman-stages-2013-joseph"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-8141f3f0fdf4", "roman-modern-src-a4b705f72134"]
+chronology_start = 2013
+chronology_end = 2013
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-056"
+family = "roman"
+title = "John XXIII and John Paul II universal optional memorials"
+date = "2014"
+kind = "calendar-formulary-components"
+status = "reviewed-bounded-metadata"
+qualification = "Aggregate of the two named saint components below; not a third change or a parent in textual descent. Record class: calendar/formulary components; research disposition: substantive-component-change-candidate. Packet role: aggregate."
+date_role = "act-or-publication-as-qualified-in-source"
+version_status = "substantive-component-change-candidate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "2014 Pastor aeternus indexed"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-8141f3f0fdf4"]
+related_candidate_ids = ["roman-modern-extra-042", "roman-modern-extra-043"]
+overlap_note = "Aggregate/detail or witness relationship only; no independent revision count or textual descent."
+
+[[candidates]]
+id = "roman-modern-057"
+family = "roman"
+title = "2015 consolidated readings to add to the 1981 Ordo lectionum Missae"
+date = "2015"
+kind = "component-update"
+status = "reviewed-bounded-metadata"
+qualification = "One compilation of readings for celebrations added after 1981. It is not a new whole Ordo lectionum edition, and does not date each underlying saint addition to 2015. Record class: component update; research disposition: substantive-component-change-candidate. Packet role: single-compilation-component."
+date_role = "consolidated-update-publication-2015"
+version_status = "substantive-component-change-candidate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "scratch-evidence-only; see dated research receipt"
+source_locus = "finding 2015-olm-additions; All nine delivered pages independently read in extracted text; archive labels original journal locus Notitiae 2015,349–360.; 2015 OLM additions indexed"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-d7d246ba038f", "roman-modern-src-ab0eee07d8dc"]
+chronology_start = 2015
+chronology_end = 2015
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-058"
+family = "roman"
+title = "In Missa in Cena Domini, washing-of-feet rubric"
+date = "2016-01"
+kind = "component-revision"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: component revision; research disposition: substantive-component-change-candidate."
+date_role = "act-or-publication-as-qualified-in-source"
+version_status = "substantive-component-change-candidate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "scratch-evidence-only; see dated research receipt"
+source_locus = "2016 In Missa in Cena Domini indexed"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-8141f3f0fdf4", "roman-modern-src-f1ce6c2af003"]
+
+[[candidates]]
+id = "roman-modern-059"
+family = "roman"
+title = "Mary Magdalene feast and proper preface"
+date = "2016-06"
+kind = "calendar-and-text-revision"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: calendar and text revision; research disposition: substantive-component-change-candidate."
+date_role = "act-or-publication-as-qualified-in-source"
+version_status = "substantive-component-change-candidate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "scratch-evidence-only; see dated research receipt"
+source_locus = "2016 Magdalene change indexed"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-8141f3f0fdf4", "roman-modern-src-32061204f764"]
+
+[[candidates]]
+id = "roman-modern-060"
+family = "roman"
+title = "Mary Mother of the Church memorial"
+date = "2018"
+kind = "calendar-and-proper-component"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: calendar and proper component; research disposition: substantive-component-change-candidate."
+date_role = "act-or-publication-as-qualified-in-source"
+version_status = "substantive-component-change-candidate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "scratch-evidence-only; see dated research receipt"
+source_locus = "2018 Mater Ecclesiae additions indexed"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-8141f3f0fdf4", "roman-modern-src-75ca7c447406", "roman-modern-src-21f84846e2ed"]
+chronology_start = 2018
+chronology_end = 2018
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-061"
+family = "roman"
+title = "Paul VI optional memorial"
+date = "2019-01"
+kind = "calendar-and-proper-component"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: calendar and proper component; research disposition: substantive-component-change-candidate."
+date_role = "act-or-publication-as-qualified-in-source"
+version_status = "substantive-component-change-candidate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "scratch-evidence-only; see dated research receipt"
+source_locus = "2019 Paul VI additions indexed"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-8141f3f0fdf4", "roman-modern-src-cb5020ff9dfb"]
+
+[[candidates]]
+id = "roman-modern-062"
+family = "roman"
+title = "Our Lady of Loreto optional memorial"
+date = "2019-10"
+kind = "calendar-and-proper-component"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: calendar and proper component; research disposition: substantive-component-change-candidate."
+date_role = "act-or-publication-as-qualified-in-source"
+version_status = "substantive-component-change-candidate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "scratch-evidence-only; see dated research receipt"
+source_locus = "2019 Loreto additions indexed"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-8141f3f0fdf4", "roman-modern-src-affbe69603f0"]
+
+[[candidates]]
+id = "roman-modern-063"
+family = "roman"
+title = "Quo magis seven optional prefaces for 1962 Missal"
+date = "2020"
+kind = "optional-component-supplement"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: optional component supplement; research disposition: optional-1962-supplement."
+date_role = "decree-2020-02-22-effective-2020-03-19"
+version_status = "optional-1962-supplement"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "stage roman-stages-2020-prefaces"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+
+[[candidates]]
+id = "roman-modern-064"
+family = "roman"
+title = "Cum sanctissima / Supplementum for new saints in 1962 use"
+date = "2020"
+kind = "optional-component-rules-book;-published-supplement-not-assumed"
+status = "reviewed-bounded-metadata"
+qualification = "Cum sanctissima decree/rules and note are retained; approved Supplementum exact booklet and scope not verified. Record class: optional component rules/book; published supplement not assumed; research disposition: optional-1962-rules-approved-Supplementum-unlocated."
+date_role = "decree-2020-02-22-effective-2020-03-19"
+version_status = "optional-1962-rules-approved-Supplementum-unlocated"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "scratch-evidence-only; see dated research receipt"
+source_locus = "stage roman-stages-2020-saints"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-9aabf7a4560f", "roman-modern-src-70f466461c4d"]
+
+[[candidates]]
+id = "roman-modern-065"
+family = "roman"
+title = "Missa in tempore universalis contagii"
+date = "2020"
+kind = "votive-component"
+status = "unresolved-lead-retained"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: votive component; research disposition: unresolved-bibliographic-lead. Primary edition or act locus remains to verify; do not create a station from this row."
+date_role = "act-or-publication-as-qualified-in-source"
+version_status = "unresolved-bibliographic-lead"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "expected_versions cold-roman-065"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+
+[[candidates]]
+id = "roman-modern-066"
+family = "roman"
+title = "Faustina Kowalska optional memorial"
+date = "2020-05"
+kind = "calendar-and-proper-component"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: calendar and proper component; research disposition: substantive-component-change-candidate."
+date_role = "act-or-publication-as-qualified-in-source"
+version_status = "substantive-component-change-candidate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "scratch-evidence-only; see dated research receipt"
+source_locus = "2020 Faustina additions indexed"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-8141f3f0fdf4", "roman-modern-src-68f1dbae804a"]
+
+[[candidates]]
+id = "roman-modern-067"
+family = "roman"
+title = "Gregory of Narek, John of Avila, Hildegard of Bingen optional memorials"
+date = "2021-01-25"
+kind = "calendar-proper-components"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: calendar/proper components; research disposition: substantive-component-change-candidate."
+date_role = "act-or-publication-as-qualified-in-source"
+version_status = "substantive-component-change-candidate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "2021 doctors additions indexed"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-8141f3f0fdf4"]
+
+[[candidates]]
+id = "roman-modern-068"
+family = "roman"
+title = "Martha, Mary and Lazarus memorial replaces Martha alone"
+date = "2021-01-26"
+kind = "calendar-and-proper-revision"
+status = "reviewed-bounded-metadata"
+qualification = "Only the named edition or component and cited locus have been identified. Record class: calendar and proper revision; research disposition: substantive-component-change-candidate."
+date_role = "act-or-publication-as-qualified-in-source"
+version_status = "substantive-component-change-candidate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "2021 Martha/Mary/Lazarus additions indexed"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-8141f3f0fdf4"]
+
+[[candidates]]
+id = "roman-modern-069"
+family = "roman"
+title = "Teresa of Calcutta optional memorial"
+date = "2024-12/2025-02"
+kind = "decree-publication-distinct"
+status = "reviewed-bounded-metadata"
+qualification = "Decree 24 Dec 2024; bulletin publication 11 Feb 2025. Record class: decree/publication distinct; research disposition: substantive-component-change-candidate."
+date_role = "decree-2024-12-24-publication-2025-02-11"
+version_status = "substantive-component-change-candidate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "scratch-evidence-only; see dated research receipt"
+source_locus = "finding teresa-2024-2025; Official bulletin including Latin decree 24 December 2024 and annex, published 11 February 2025"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-676c4905009f"]
+
+[[candidates]]
+id = "roman-modern-070"
+family = "roman"
+title = "Missa pro custodia creationis"
+date = "2025-06/07"
+kind = "decree-publication-distinct;-new-formulary"
+status = "reviewed-bounded-metadata"
+qualification = "Decree 8 Jun 2025; presentation 3 Jul 2025. Formulary and readings. Record class: decree/publication distinct; new formulary; research disposition: substantive-component-change-candidate."
+date_role = "decree-2025-06-08-public-presentation-2025-07-03"
+version_status = "substantive-component-change-candidate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "scratch-evidence-only; see dated research receipt"
+source_locus = "finding creation-2025; Four-page original Latin PDF; decree 8 June 2025, insertion instructions and formulary/readings"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-f0e7a4854a75"]
+
+[[candidates]]
+id = "roman-modern-071"
+family = "roman"
+title = "John Henry Newman optional memorial"
+date = "2025-11/2026-02"
+kind = "decree-publication-distinct;-new-formulary"
+status = "reviewed-bounded-metadata"
+qualification = "Decree 9 Nov 2025; publication 3 Feb 2026. Annex includes Mass and OLM 655bis. Record class: decree/publication distinct; new formulary; research disposition: substantive-component-change-candidate."
+date_role = "decree-2025-11-09-publication-2026-02-03"
+version_status = "substantive-component-change-candidate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "scratch-evidence-only; see dated research receipt"
+source_locus = "finding newman-2025-2026; Decree 9 November 2025; annex calendar, Mass, OLM 655bis, LH, Martyrology; publication 3 February 2026"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-a560f85967b0"]
+
+[[candidates]]
+id = "roman-modern-extra-001"
+family = "roman"
+title = "Incruentum altaris; three All Souls Masses"
+date = "1915"
+kind = "component-permission"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: component-permission; research disposition: component-permission."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "component-permission"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "finding 1915-all-souls-three-masses; Complete official Latin text, especially section III; 10 August 1915."
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-f5014e3aac51"]
+chronology_start = 1915
+chronology_end = 1915
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-002"
+family = "roman"
+title = "Memoriale Rituum revised typical edition"
+date = "1920"
+kind = "complementary-ceremonial-book"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: complementary-ceremonial-book; research disposition: complementary-ceremonial-book."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "complementary-ceremonial-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "finding 1920-memoriale-rituum; Printed 448, decree 14 January 1920; extracted text independently examined."
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-30a99a7b89f9"]
+chronology_start = 1920
+chronology_end = 1920
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-003"
+family = "roman"
+title = "Rubricae in Missali Romano emendandae"
+date = "1965"
+kind = "rubric-amendment"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: rubric-amendment; research disposition: rubric-amendment."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "rubric-amendment"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "finding 1965-additional-rubrics; Printed 396, footnote 7"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+chronology_start = 1965
+chronology_end = 1965
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-004"
+family = "roman"
+title = "Graduale simplex editio typica altera"
+date = "1975"
+kind = "complementary-chant-book"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: complementary-chant-book; research disposition: complementary-chant-book."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "complementary-chant-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "scratch-evidence-only; see dated research receipt"
+source_locus = "printed p.399 note: decree 22 November 1974; 1975 XII+516 pp."
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985", "roman-modern-src-016a2aeb01ae"]
+chronology_start = 1975
+chronology_end = 1975
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-005"
+family = "roman"
+title = "Kyriale sive Ordinarium Missae"
+date = "1905"
+kind = "complementary-chant-book"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: complementary-chant-book; research disposition: complementary-chant-book."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "complementary-chant-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed pp.395,399"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+chronology_start = 1905
+chronology_end = 1905
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-006"
+family = "roman"
+title = "Graduale Romanum Pius X typical book"
+date = "1908"
+kind = "complementary-chant-book"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: complementary-chant-book; research disposition: complementary-chant-book."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "complementary-chant-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed p.399 last note; decree 7 August 1907"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+chronology_start = 1908
+chronology_end = 1908
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-007"
+family = "roman"
+title = "Cantorinus seu Toni communes"
+date = "1911"
+kind = "complementary-chant-book"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: complementary-chant-book; research disposition: complementary-chant-book."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "complementary-chant-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed p.395 historical list"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+chronology_start = 1911
+chronology_end = 1911
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-008"
+family = "roman"
+title = "Officium pro defunctis with Mass material"
+date = "1909"
+kind = "complementary-chant-book"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: complementary-chant-book; research disposition: complementary-chant-book."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "complementary-chant-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed p.395 historical list"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+chronology_start = 1909
+chronology_end = 1909
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-009"
+family = "roman"
+title = "Office and Mass of the Nativity chant"
+date = "1926"
+kind = "complementary-chant-book"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: complementary-chant-book; research disposition: complementary-chant-book."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "complementary-chant-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed p.395 historical list"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+chronology_start = 1926
+chronology_end = 1926
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-010"
+family = "roman"
+title = "Cantus gregoriani Ordinis Hebdomadae Sanctae instaurati"
+date = "1956"
+kind = "complementary-chant-book"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: complementary-chant-book; research disposition: complementary-chant-book."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "complementary-chant-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed p.395 historical list"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+chronology_start = 1956
+chronology_end = 1956
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-011"
+family = "roman"
+title = "Ritus pontificalis Ordinis Hebdomadae Sanctae instaurati"
+date = "1957"
+kind = "complementary-ceremonial-book"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: complementary-ceremonial-book; research disposition: complementary-ceremonial-book."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "complementary-ceremonial-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed p.395 historical list"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+chronology_start = 1957
+chronology_end = 1957
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-012"
+family = "roman"
+title = "Ritus simplex Ordinis Hebdomadae Sanctae instaurati"
+date = "1957"
+kind = "complementary-ceremonial-book"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: complementary-ceremonial-book; research disposition: complementary-ceremonial-book."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "complementary-ceremonial-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed p.395 historical list"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+chronology_start = 1957
+chronology_end = 1957
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-013"
+family = "roman"
+title = "Cantus Historiae Passionis"
+date = "1957"
+kind = "complementary-chant-book"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: complementary-chant-book; research disposition: complementary-chant-book."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "complementary-chant-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed p.395 historical list"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+chronology_start = 1957
+chronology_end = 1957
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-014"
+family = "roman"
+title = "Officium Hebdomadae Sanctae et Octavae Paschae cum cantu"
+date = "1959"
+kind = "complementary-chant-book"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: complementary-chant-book; research disposition: complementary-chant-book."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "complementary-chant-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed p.395 historical list"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+chronology_start = 1959
+chronology_end = 1959
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-015"
+family = "roman"
+title = "Kyriale simplex editio typica"
+date = "1965"
+kind = "complementary-chant-book"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: complementary-chant-book; research disposition: complementary-chant-book."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "complementary-chant-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "scratch-evidence-only; see dated research receipt"
+source_locus = "printed p.399(a), 48 pp., decree 14 December 1964"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985", "roman-modern-src-b007563437b2"]
+chronology_start = 1965
+chronology_end = 1965
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-016"
+family = "roman"
+title = "Cantus qui in Missali Romano desiderantur, ad experimentum"
+date = "1965"
+kind = "experimental-chant-book"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: experimental-chant-book; research disposition: experimental-chant-book."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "experimental-chant-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed p.399(b), 36 pp., decree 14 December 1964"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+chronology_start = 1965
+chronology_end = 1965
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-017"
+family = "roman"
+title = "Graduale simplex editio typica"
+date = "1967"
+kind = "complementary-chant-book"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: complementary-chant-book; research disposition: complementary-chant-book."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "complementary-chant-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "scratch-evidence-only; see dated research receipt"
+source_locus = "printed p.399(c), XI+432 pp., decree 3 September 1967"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985", "roman-modern-src-cfa60ea4206b"]
+chronology_start = 1967
+chronology_end = 1967
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-018"
+family = "roman"
+title = "Praefationes in cantu"
+date = "1972"
+kind = "complementary-chant-book"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: complementary-chant-book; research disposition: complementary-chant-book."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "complementary-chant-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed p.399(d), Solesmes, 215+IV pp."
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+chronology_start = 1972
+chronology_end = 1972
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-019"
+family = "roman"
+title = "Graduale Romanum arranged to Ordo cantus Missae"
+date = "1974"
+kind = "complementary-chant-book"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: complementary-chant-book; research disposition: complementary-chant-book."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "complementary-chant-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed p.399(e), Solesmes, 918 pp."
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+chronology_start = 1974
+chronology_end = 1974
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-020"
+family = "roman"
+title = "Ordo Missae in cantu"
+date = "1975"
+kind = "complementary-chant-book"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: complementary-chant-book; research disposition: complementary-chant-book."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "complementary-chant-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed p.399(f), Solesmes"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+chronology_start = 1975
+chronology_end = 1975
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-021"
+family = "roman"
+title = "Graduale triplex"
+date = "1979"
+kind = "complementary-chant-witness"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: complementary-chant-witness; research disposition: complementary-chant-witness."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "complementary-chant-witness"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed p.400(g), Solesmes, 918 pp.; expanded neume apparatus, no new Roman Missal recension inferred"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+chronology_start = 1979
+chronology_end = 1979
+chronology_kind = "publication-witness-date"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-022"
+family = "roman"
+title = "Calendar alterations cumulative repertoire"
+date = "1989"
+kind = "calendar-control"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: calendar-control; research disposition: calendar-control."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "calendar-control"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "scratch-evidence-only; see dated research receipt"
+source_locus = "finding 1989-calendar-repertoire; Printed 489–503, intro and all monthly notes independently read in extracted text; occurrence table 504–505 not fully inspected."
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-e0da48da2914"]
+chronology_start = 1989
+chronology_end = 1989
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-023"
+family = "roman"
+title = "Universal calendar norms amendments"
+date = "1990"
+kind = "calendar-rule-component"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: calendar-rule-component; research disposition: calendar-rule-component."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "calendar-rule-component"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "finding 1990-calendar-norms; Printed 233, reference to decree 22 April 1990 and Notitiae 26 (1990),160–165."
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-9a46a247d441"]
+chronology_start = 1990
+chronology_end = 1990
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-024"
+family = "roman"
+title = "Variationes et textus inserendi Missal supplement"
+date = "1991"
+kind = "compilation-supplement"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: compilation-supplement; research disposition: compilation-supplement."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "compilation-supplement"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "scratch-evidence-only; see dated research receipt"
+source_locus = "finding 1991-missal-supplement; Printed 233–234; complete extracted text inspected."
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-9a46a247d441"]
+chronology_start = 1991
+chronology_end = 1991
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-025"
+family = "roman"
+title = "Evangeliarium for Sundays and feasts"
+date = "2000"
+kind = "complementary-gospel-book"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: complementary-Gospel-book; research disposition: complementary-Gospel-book."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "complementary-Gospel-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "official page: 2000 edition based on 1981 OLM"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-a83eb2988b66"]
+chronology_start = 2000
+chronology_end = 2000
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-026"
+family = "roman"
+title = "Missale Romanum cum lectionibus, four volumes"
+date = "1977"
+kind = "iuxta-typicam-witness"
+status = "reviewed-bounded-metadata"
+qualification = "All four volumes print editio iuxta typicam alteram. Volume I following leaf attests concordance with the approved original on 21 November 1975. They witness 1975 content but do not constitute the original 1975 typical altar book. Record class: iuxta-typicam-witness; research disposition: iuxta-typicam-witness. Packet role: parallel-publication-witness. Parallel or partial witness to roman-modern-046; not the original book."
+date_role = "1977 title imprint; concordance with approved original attested 1975-11-21"
+version_status = "iuxta-typicam-witness"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "scratch-evidence-only; see dated research receipt"
+source_locus = "1977 four volume title pages and 21 Nov 1975 concordance statement; missal77v1-0001.png title and missal77v1-0002.png concordance leaf"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-6a98915ec594", "roman-modern-src-e6dafdeaaded", "roman-modern-src-65b392a0a980", "roman-modern-src-caa79502d24a"]
+overlap_note = "Parallel/partial witness only; not a new whole-book typical edition or direct textual parent."
+related_candidate_ids = ["roman-modern-046"]
+chronology_start = 1977
+chronology_end = 1977
+chronology_kind = "publication-witness-date"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-027"
+family = "roman"
+title = "Missale parvum iuxta typicam alteram"
+date = "1977"
+kind = "excerpt-witness"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: excerpt-witness; research disposition: excerpt-witness."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "excerpt-witness"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "finding lev-catalogue-complements; Printed 120, all Mass-book entries examined in extracted text."
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-d170b4063db7"]
+chronology_start = 1977
+chronology_end = 1977
+chronology_kind = "publication-witness-date"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-028"
+family = "roman"
+title = "Graduale simplex reprint of second typical edition"
+date = "2007"
+kind = "reprint-witness"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: reprint-witness; research disposition: reprint-witness."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "reprint-witness"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "scratch-evidence-only; see dated research receipt"
+source_locus = "official page: 1975 second typical; 2007 reprint"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-de1f5794560b", "roman-modern-src-016a2aeb01ae"]
+chronology_start = 2007
+chronology_end = 2007
+chronology_kind = "publication-witness-date"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-029"
+family = "roman"
+title = "IGMR excerpt and eight-page Supplementum"
+date = "2008"
+kind = "excerpt-witness"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: excerpt-witness; research disposition: excerpt-witness."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "excerpt-witness"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "finding lev-catalogue-complements; Printed 120, all Mass-book entries examined in extracted text."
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-d170b4063db7"]
+chronology_start = 2008
+chronology_end = 2008
+chronology_kind = "publication-witness-date"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-030"
+family = "roman"
+title = "Preces eucharisticae pro concelebratione"
+date = "2009"
+kind = "complementary-prayer-book-lead"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: complementary-prayer-book-lead; research disposition: complementary-prayer-book-lead."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "complementary-prayer-book-lead"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "finding lev-catalogue-complements; Printed 120, all Mass-book entries examined in extracted text."
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-d170b4063db7"]
+chronology_start = 2009
+chronology_end = 2009
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-031"
+family = "roman"
+title = "1962 typical Missal reprint"
+date = "2010"
+kind = "reprint-witness"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: reprint-witness; research disposition: reprint-witness."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "reprint-witness"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "finding lev-catalogue-complements; Printed 120, all Mass-book entries examined in extracted text."
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-d170b4063db7"]
+chronology_start = 2010
+chronology_end = 2010
+chronology_kind = "publication-witness-date"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-032"
+family = "roman"
+title = "Postquam Summus Pontifex variations"
+date = "2021"
+kind = "liturgical-book-component-change"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: liturgical-book-component-change; research disposition: liturgical-book-component-change."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "liturgical-book-component-change"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "scratch-evidence-only; see dated research receipt"
+source_locus = "official page indexes 21 October 2021 act"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-8141f3f0fdf4", "roman-modern-src-ac59def775f9"]
+chronology_start = 2021
+chronology_end = 2021
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-033"
+family = "roman"
+title = "Readings for Mass ad postulandam continentiam"
+date = "2023"
+kind = "lectionary-component-change"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: lectionary-component-change; research disposition: lectionary-component-change."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "lectionary-component-change"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "scratch-evidence-only; see dated research receipt"
+source_locus = "official page indexes decree 20 March 2023"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-ab0eee07d8dc", "roman-modern-src-210d4e03fe07"]
+chronology_start = 2023
+chronology_end = 2023
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-035"
+family = "roman"
+title = "De sacra Communione et de cultu mysterii eucharistici extra Missam"
+date = "1973"
+kind = "adjacent-eucharistic-ritual-outside-mass"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: adjacent-Eucharistic-ritual-outside-Mass; research disposition: adjacent-Eucharistic-ritual-outside-Mass."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "adjacent-Eucharistic-ritual-outside-Mass"
+scope_disposition = "adjacent-Eucharistic-ritual-outside-Mass"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed p.401 II.2, 70 pp., decree 21 June 1973"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+chronology_start = 1973
+chronology_end = 1973
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-036"
+family = "roman"
+title = "Alleged new Missale Romanum typical edition"
+date = "1924"
+kind = "unresolved-bibliographic-lead"
+status = "unresolved-lead-retained"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: unresolved-bibliographic-lead; research disposition: unresolved-bibliographic-lead. Primary edition or act locus remains to verify; do not create a station from this row."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "unresolved-bibliographic-lead"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "finding 1924-claimed-typical; Seminary library acquisition catalogue, entry L 2C 61."
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-b0f08ebb8feb"]
+
+[[candidates]]
+id = "roman-modern-extra-038"
+family = "roman"
+title = "Missale parvum ad usum sacerdotis itinerantis"
+date = "1970"
+kind = "excerpt-witness"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: excerpt-witness; research disposition: excerpt-witness."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "excerpt-witness"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed p.398 I.4, 172 pp., iuxta typicam"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+chronology_start = 1970
+chronology_end = 1970
+chronology_kind = "publication-witness-date"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-039"
+family = "roman"
+title = "Lectionarium pro Missis de Beata Maria Virgine"
+date = "1987"
+kind = "complementary-typical-book"
+status = "reviewed-bounded-metadata"
+qualification = "Separate evidence-bearing book or component; no new Roman altar Missal recension inferred. Record class: complementary-typical-book; research disposition: complementary-typical-book."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "complementary-typical-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "scratch-evidence-only; see dated research receipt"
+source_locus = "1987 Lectionarium editio typica"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-50a5a5f2d5ff", "roman-modern-src-dfa1c2f74fd8"]
+chronology_start = 1987
+chronology_end = 1987
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-040"
+family = "roman"
+title = "Missale Romanum, Lectionarium volume II"
+date = "1971"
+kind = "complementary-typical-volume"
+status = "reviewed-bounded-metadata"
+qualification = "Volume detail of the 1970-1972 Lectionarium corpus, not an independent whole Missal revision. Record class: complementary-typical-volume; research disposition: complementary-typical-volume. Packet role: volume-detail. Detail of roman-modern-039; no extra independent revision."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "complementary-typical-volume"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed p.398 I.2, volume II 1971, 964 pp."
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+related_candidate_ids = ["roman-modern-039"]
+chronology_start = 1971
+chronology_end = 1971
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-041"
+family = "roman"
+title = "Missale Romanum, Lectionarium volume III"
+date = "1972"
+kind = "complementary-typical-volume"
+status = "reviewed-bounded-metadata"
+qualification = "Volume detail of the 1970-1972 Lectionarium corpus, not an independent whole Missal revision. Record class: complementary-typical-volume; research disposition: complementary-typical-volume. Packet role: volume-detail. Detail of roman-modern-039; no extra independent revision."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "complementary-typical-volume"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "printed p.398 I.2, volume III 1972, 973 pp."
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+related_candidate_ids = ["roman-modern-039"]
+chronology_start = 1972
+chronology_end = 1972
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-042"
+family = "roman"
+title = "John XXIII universal optional memorial"
+date = "2014"
+kind = "calendar-and-proper-component"
+status = "reviewed-bounded-metadata"
+qualification = "Detail of cold-roman-056; actual component act and date require their own source verification before a distinct transition is asserted. Record class: calendar-and-proper-component; research disposition: calendar-and-proper-component. Packet role: detail. Detail of roman-modern-056; no extra independent revision."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "calendar-and-proper-component"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "2014 Pastor aeternus indexed"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-8141f3f0fdf4"]
+related_candidate_ids = ["roman-modern-056"]
+chronology_start = 2014
+chronology_end = 2014
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-043"
+family = "roman"
+title = "John Paul II universal optional memorial"
+date = "2014"
+kind = "calendar-and-proper-component"
+status = "reviewed-bounded-metadata"
+qualification = "Detail of cold-roman-056; actual component act and date require their own source verification before a distinct transition is asserted. Record class: calendar-and-proper-component; research disposition: calendar-and-proper-component. Packet role: detail. Detail of roman-modern-056; no extra independent revision."
+date_role = "publication-or-act-as-qualified-in-cited-source"
+version_status = "calendar-and-proper-component"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "finding 2015-olm-additions; All nine delivered pages independently read in extracted text; archive labels original journal locus Notitiae 2015,349–360."
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-d7d246ba038f"]
+related_candidate_ids = ["roman-modern-056"]
+chronology_start = 2014
+chronology_end = 2014
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-044"
+family = "roman"
+title = "Messale Romano Latino-Italiano per le domeniche e feste"
+date = "1965"
+kind = "approved-bilingual-translation-excerpt-witness"
+status = "reviewed-bounded-metadata"
+qualification = "The page-2 notice reserves reproduction rights in the texts to the Italian episcopal liturgy commission. Original Latin component separately registered. Record class: approved-bilingual-translation-excerpt-witness; research disposition: translation-and-excerpt-witness-not-Latin-typical-component. Packet role: witness."
+date_role = "Italian episcopal imprimatur 1965-03-12; publication date not independently established"
+version_status = "translation-and-excerpt-witness-not-Latin-typical-component"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "scratch-evidence-only; see dated research receipt"
+source_locus = "PDF image pp. 1-3: title, episcopal approval/imprimatur, opening Ritus"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-c2ff542591a9"]
+language_priority = "deferred-approved-Italian-translation-excerpt"
+overlap_note = "Parallel/partial witness only; not a new whole-book typical edition or direct textual parent."
+related_candidate_ids = ["roman-ordo-1965"]
+source_availability = "32-page bilingual PDF in scratch; page 2 reserves reproduction rights in texts"
+chronology_start = 1965
+chronology_end = 1965
+chronology_kind = "publication-witness-date"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-045"
+family = "roman"
+title = "Ordo Missae 1975 excerpt of the second typical Missal"
+date = "1975"
+kind = "partial-ordo-witness"
+status = "reviewed-bounded-metadata"
+qualification = "Preserve separately from the missing 1975 whole book. Record class: partial-Ordo-witness; research disposition: excerpt-witness-not-complete-typical-altar-book. Packet role: witness. Parallel or partial witness to roman-modern-046; not the original book."
+date_role = "booklet/excerpt publication year; exact day unresolved"
+version_status = "excerpt-witness-not-complete-typical-altar-book"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "scratch-evidence-only; see dated research receipt"
+source_locus = "complete delivered PDF, 1975 Ordo excerpt"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["roman-modern-src-993e9c3c3a71"]
+overlap_note = "Parallel/partial witness only; not a new whole-book typical edition or direct textual parent."
+related_candidate_ids = ["roman-modern-046"]
+chronology_start = 1975
+chronology_end = 1975
+chronology_kind = "publication-witness-date"
+chronology_certainty = "source-qualified; see date_role"
+
+[[candidates]]
+id = "roman-modern-extra-046"
+family = "roman"
+title = "Missale Romanum, Lectionarium volume I"
+date = "1970"
+kind = "complementary-typical-volume"
+status = "reviewed-bounded-metadata"
+qualification = "Volume detail, not a separate whole Missal recension. Record class: complementary-typical-volume; research disposition: volume-detail-within-1970-1972-Lectionarium-corpus. Packet role: volume-detail. Detail of roman-modern-039; no extra independent revision."
+date_role = "volume-I-imprint-1970"
+version_status = "volume-detail-within-1970-1972-Lectionarium-corpus"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+transcription_status = "not-whole-book-transcribed"
+collation_status = "bounded-evidence-only; not-whole-book"
+acquisition_status = "exact-original-not-acquired-or-not-linked"
+source_locus = "Notitiae 21 (1985), printed p.398 I.2, volume I 1970, 982 pages"
+existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
+sources = ["notitiae-book-bibliography-1985"]
+related_candidate_ids = ["roman-modern-039"]
+chronology_start = 1970
+chronology_end = 1970
+chronology_kind = "publication"
+chronology_certainty = "source-qualified; see date_role"

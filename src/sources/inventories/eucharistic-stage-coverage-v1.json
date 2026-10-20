@@ -3,18 +3,18 @@
   "record_type": "eucharistic-book-stage-coverage-audit",
   "audit_id": "stage-coverage-v1",
   "title": "Coverage limits and next evidence for the Eucharistic book-stage chronology",
-  "checked_on": "2026-10-19",
+  "checked_on": "2026-10-20",
   "scope": "Coverage crosswalk of the canonical candidate inventories and stage dossiers at the input hashes below. This audit reconciles their declared evidence, witnesses and gaps; it creates no stages, transitions, local reception claims or text-completion claims.",
   "inputs": [
     {
       "id": "eastern",
       "path": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
-      "sha256": "f940a3705b68bb52a5db06aa7a37fbb0a7ebdb8335269af56de58b77f02bf776"
+      "sha256": "84a0bc685bf4503db905919d44f2c4d1942d471c53fd7520c0eda1dd992cddda"
     },
     {
       "id": "western",
       "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
-      "sha256": "a5792ea81dca15ddea926af646529f1946c5b02a48469ecde5f857167cf0ca8c"
+      "sha256": "561a4ca002809df33189164293a6d03b8194a1ec95de7893e226d9c4a0db875e"
     },
     {
       "id": "presentation",
@@ -69,7 +69,7 @@
     {
       "id": "dossier:stages-malabar",
       "path": "src/sources/inventories/eucharistic-stages/malabar.json",
-      "sha256": "2cedafadabfdecd955c811bbd3b0e7946caf326516ddd4963da5a8b19ead42d0"
+      "sha256": "18dc67367728a9af0cdf919b0eb34b2304da8b44b39b98fcde26756f3e8a18c2"
     },
     {
       "id": "dossier:maronite",
@@ -94,14 +94,14 @@
     {
       "id": "dossier:west-syriac-stages",
       "path": "src/sources/inventories/eucharistic-stages/west-syriac.json",
-      "sha256": "a09f4a30cc0b1e25d2e897ca8679858c1f12f09ea036c1d131ea7b32ca388df4"
+      "sha256": "5af5b77cfacbce6570a8abf8b7d3060070301fe8be43afcd3409bd6d9fb71587"
     }
   ],
   "count_semantics": {
     "eastern_census_slots": 23,
     "western_coverage_trajectories": 54,
     "eastern_candidates": 439,
-    "western_candidates": 281,
+    "western_candidates": 389,
     "presentation_groups": 54,
     "eastern_empty_candidate_slots_at_input": [
       "albanian",
@@ -3012,7 +3012,7 @@
       "id": "syro-malankara",
       "label": "Syro-Malankara Eucharistic books",
       "family": "West Syriac",
-      "scope": "Original Syriac books and Catholic reception; predecessor confessional identity must remain visible.",
+      "scope": "Syriac books and approval-backed Malayalam service-book witnesses in origin review pending use evidence; predecessor confessional identity must remain visible.",
       "mapping_status": "canonical-traditions-identified-coverage-bounded",
       "canonical_tradition_ids": [
         "syro-malankara-catholic"
@@ -3032,7 +3032,7 @@
       "id": "syro-malabar",
       "label": "Syro-Malabar Eucharistic books",
       "family": "East Syriac",
-      "scope": "Distinct local source-book reform and reception; complementary volumes are not successive whole books.",
+      "scope": "Distinct local Syriac and received Malayalam service-book reform and reception; complementary volumes are not successive whole books.",
       "mapping_status": "canonical-traditions-identified-coverage-bounded",
       "canonical_tradition_ids": [
         "stages-malabar-tradition"
@@ -5725,20 +5725,26 @@
       ],
       "component_profile": "syriac",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Locate 1934 Pampakuda title, approval and prayer leaves; verify 1931/1934 anaphora selection. Establish 1966 translation source and 2007 Taksa language/text independently of synodal concelebration decisions.",
+      "missing_stage_chain": "Locate 1934 Pampakuda title, approval and prayer leaves; verify 1931/1934 anaphora selection. The approved, issued 1966 Malayalam Taksa and the approved, released October 2007 Malayalam Taksa remain in origin review until actual liturgical use is evidenced for each. Establish their textual sources and collate their printings; verify the separate February 2007 Qurbonokramam's own language and use. No stage or textual parent follows from approval or release alone.",
       "next_sources": {
         "inventory_source_ids": [
           "tisserant-malankara-books",
+          "malankara-1966-primary",
           "cms-malankara-1966",
-          "malankara-synod-2007"
+          "syriac-malankara-src-synod2006",
+          "malankara-synod-2007",
+          "syriac-malankara-src-english2023"
         ],
         "source_urls": [
           "https://fr.wikisource.org/wiki/Dictionnaire_de_th%C3%A9ologie_catholique/SYRO-MALABARE_(%C3%89glise)",
+          "https://archive.malankaralibrary.com/ImageUpload/c4c664b902ed1f65cd1fcd4e40c1ae9d.pdf",
           "https://thecmsindia.org/resources/resources-for-researchers/no-350-to-301/syro-malankara-qurbana-thaksa",
-          "https://malankaracatholicchurch.in/admin/pdf/Vol_3_No_2.pdf"
+          "https://malankaracatholicchurch.in/admin/pdf/Vol_2_No_2.pdf",
+          "https://malankaracatholicchurch.in/admin/pdf/Vol_3_No_2.pdf",
+          "https://archive.malankaralibrary.com/ImageUpload/258457d35ed706e153ca5ee7ab629a09.pdf"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Locate 1934 Pampakuda title, approval and prayer leaves; verify 1931/1934 anaphora selection. Establish 1966 translation source and 2007 Taksa language/text independently of synodal concelebration decisions."
+        "target": "Document actual liturgical use of the 1966 and October 2007 Malayalam Taksa books before candidate admission; acquire and collate both printings and identify textual predecessors. Find the separate February 2007 Qurbonokramam to verify its language and use. Retain the 1934 Syriac original and anaphora-selection gaps."
       },
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
@@ -5749,7 +5755,17 @@
         "malankara-2012-takso",
         "malankara-2012-people",
         "malankara-1966-taksa",
-        "malankara-2007-taksa"
+        "malankara-2007-taksa",
+        "syriac-malankara-mal-pampakuda-1886",
+        "syriac-malankara-mal-pampakuda-1931",
+        "syriac-malankara-mal-trivandrum-ms23",
+        "syriac-malankara-mal-tiruvalla-ms30",
+        "syriac-malankara-mal-1987-takso",
+        "syriac-malankara-mal-2007-qurbonokramam",
+        "syriac-malankara-mal-2020-kannada",
+        "syriac-malankara-mal-2022-german",
+        "syriac-malankara-mal-2023-english",
+        "syriac-malankara-mal-kunnamkulam-1920-malayalam-cold"
       ],
       "canonical_tradition_ids": [
         "syro-malankara-catholic"
@@ -5931,13 +5947,24 @@
         "malabar-1960-supplementum",
         "malabar-1960-taksa",
         "malabar-1962",
+        "malabar-1968",
+        "malabar-1985-86",
+        "malabar-1989",
         "malabar-2003",
+        "malabar-2021",
+        "malabar-feast-rites-2009",
+        "malabar-feast-rites-2025",
+        "malabar-lectionary-2013",
         "malabar-mannanam-1928-cold",
         "malabar-ms-roz-1603-cold",
+        "malabar-nestorius-2018",
+        "malabar-propria-2005",
         "malabar-puthempally-1929-cold",
         "malabar-raza-mannanam-1925-cold",
         "malabar-sacrum-apostolorum-1912-cold",
-        "malabar-syriac-typica-2018-lead"
+        "malabar-syriac-typica-2018-lead",
+        "malabar-taksa-propria-2011",
+        "malabar-theodore-experimental-2013"
       ],
       "proposed_tradition_ids": [
         "syro-malabar"
@@ -6069,7 +6096,7 @@
       ],
       "component_profile": "east-syriac",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Acquire original 1774/1775 and 1960 books, complete 1946 source and 1955 consultation study; resolve 1844/1845 identity and 2003 substantive predecessor comparison. Keep study, approval and reception dates distinct.",
+      "missing_stage_chain": "Acquire original 1774/1775 and 1960 books, complete the 1946 source and 1955 consultation study, and resolve the 1844/1845 identity and 2003 predecessor comparison. Approved Malayalam Qurbana and complementary books are received-language candidates, including held 1962, 1968 and 1986 scans; most later original books and their textual relations remain uncollated. No 1968–2025 stage sequence or text parent is established. Keep study, approval, reception and effectiveness dates distinct.",
       "next_sources": {
         "inventory_source_ids": [
           "bonn-mal1898",
@@ -6082,16 +6109,26 @@
           "malabar-catechesis-2015",
           "malabar-book-1946-prelims",
           "malabar-pallath2023",
-          "malabar-book-2003-prelims"
+          "malabar-book-2003-prelims",
+          "malabar-src-gpura-1962",
+          "malabar-src-gpura-1968",
+          "malabar-src-gpura-1986",
+          "malabar-src-changes-2021",
+          "malabar-src-holy-week-2025-plain"
         ],
         "source_urls": [
           "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/6834153",
           "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/6834153",
           "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3724391",
-          "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3724391"
+          "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3724391",
+          "https://kerala-digital-archive.sgp1.digitaloceanspaces.com/original/8b9c6fcb0593877910a6cd8e89790717181ea303.pdf",
+          "https://artifacts.keraladigitalarchive.org/public/1968-syro-malabar-sabhayude-kurbanakramam/1968-syro-malabar-sabhayude-kurbanakramam.pdf",
+          "https://artifacts.keraladigitalarchive.org/public/1986-syro-malabar-aghoshapoorvamaya-rasakramam/1986-syro-malabar-aghoshapoorvamaya-rasakramam.pdf",
+          "https://www.syromalabarliturgy.org/assets/uploads/pdfs/cd752-changes-in-the-qurbana.pdf",
+          "https://www.syromalabarliturgy.org/assets/uploads/pdfs/af41c-2-great-week-holy-week-2025-edition-book-without-yamaprarthanakal.pdf"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Acquire original 1774/1775 and 1960 books, complete 1946 source and 1955 consultation study; resolve 1844/1845 identity and 2003 substantive predecessor comparison. Keep study, approval and reception dates distinct."
+        "target": "Acquire missing original 1774/1775, 1959/1960, 1989, 2005, 2011 and 2013 books; collate the held 1962, 1968 and 1986 Malayalam scans and 2021 official book, identify the later complementary volumes, and review a 1968–2025 stage sequence separately. Preserve 1844/1845 identity and 2003 predecessor gaps and distinguish approval, release, effectiveness and reception."
       },
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
@@ -6102,11 +6139,22 @@
         "syr-add14669-fragments"
       ],
       "deferred_or_origin_review_candidate_ids": [
-        "malabar-1962",
-        "malabar-1968",
-        "malabar-1985-86",
-        "malabar-1989",
-        "malabar-2021"
+        "malabar-draft-1967-09-14",
+        "malabar-solemn-1971",
+        "malabar-requiem-sung-1971",
+        "malabar-reimprimatur-1974",
+        "malabar-dharmaram-indian-order-1974",
+        "malabar-raza-study-draft-1984",
+        "malabar-qurbana-study-text-1985",
+        "malabar-theodore-definitive-2018",
+        "chaldean-ms-borg-sir-36",
+        "malabar-tukasa-1868-cold",
+        "malabar-tukasa-1926-cold",
+        "malabar-mini-mass-ernakulam-1974-cold",
+        "malabar-bharatheeya-pooja-1973-cold",
+        "malabar-abel-forms-cold",
+        "malabar-draft-1981-cold",
+        "malabar-north-india-missions-1970-cold"
       ],
       "canonical_tradition_ids": [
         "stages-malabar-tradition"
@@ -6764,7 +6812,114 @@
         "roman-holy-week-1965",
         "roman-concelebration-1965",
         "roman-variationes-1967",
-        "roman-preces-1968"
+        "roman-preces-1968",
+        "roman-modern-001",
+        "roman-modern-002",
+        "roman-modern-003",
+        "roman-modern-004",
+        "roman-modern-005",
+        "roman-modern-006",
+        "roman-modern-007",
+        "roman-modern-010",
+        "roman-modern-011",
+        "roman-modern-012",
+        "roman-modern-013",
+        "roman-modern-014",
+        "roman-modern-015",
+        "roman-modern-016",
+        "roman-modern-017",
+        "roman-modern-018",
+        "roman-modern-019",
+        "roman-modern-020",
+        "roman-modern-021",
+        "roman-modern-022",
+        "roman-modern-023",
+        "roman-modern-024",
+        "roman-modern-025",
+        "roman-modern-026",
+        "roman-modern-027",
+        "roman-modern-028",
+        "roman-modern-033",
+        "roman-modern-035",
+        "roman-modern-036",
+        "roman-modern-037",
+        "roman-modern-038",
+        "roman-modern-039",
+        "roman-modern-040",
+        "roman-modern-041",
+        "roman-modern-042",
+        "roman-modern-043",
+        "roman-modern-044",
+        "roman-modern-045",
+        "roman-modern-046",
+        "roman-modern-047",
+        "roman-modern-048",
+        "roman-modern-049",
+        "roman-modern-050",
+        "roman-modern-051",
+        "roman-modern-052",
+        "roman-modern-053",
+        "roman-modern-054",
+        "roman-modern-055",
+        "roman-modern-056",
+        "roman-modern-057",
+        "roman-modern-058",
+        "roman-modern-059",
+        "roman-modern-060",
+        "roman-modern-061",
+        "roman-modern-062",
+        "roman-modern-063",
+        "roman-modern-064",
+        "roman-modern-065",
+        "roman-modern-066",
+        "roman-modern-067",
+        "roman-modern-068",
+        "roman-modern-069",
+        "roman-modern-070",
+        "roman-modern-071",
+        "roman-modern-extra-001",
+        "roman-modern-extra-002",
+        "roman-modern-extra-003",
+        "roman-modern-extra-004",
+        "roman-modern-extra-005",
+        "roman-modern-extra-006",
+        "roman-modern-extra-007",
+        "roman-modern-extra-008",
+        "roman-modern-extra-009",
+        "roman-modern-extra-010",
+        "roman-modern-extra-011",
+        "roman-modern-extra-012",
+        "roman-modern-extra-013",
+        "roman-modern-extra-014",
+        "roman-modern-extra-015",
+        "roman-modern-extra-016",
+        "roman-modern-extra-017",
+        "roman-modern-extra-018",
+        "roman-modern-extra-019",
+        "roman-modern-extra-020",
+        "roman-modern-extra-021",
+        "roman-modern-extra-022",
+        "roman-modern-extra-023",
+        "roman-modern-extra-024",
+        "roman-modern-extra-025",
+        "roman-modern-extra-026",
+        "roman-modern-extra-027",
+        "roman-modern-extra-028",
+        "roman-modern-extra-029",
+        "roman-modern-extra-030",
+        "roman-modern-extra-031",
+        "roman-modern-extra-032",
+        "roman-modern-extra-033",
+        "roman-modern-extra-036",
+        "roman-modern-extra-038",
+        "roman-modern-extra-039",
+        "roman-modern-extra-040",
+        "roman-modern-extra-041",
+        "roman-modern-extra-042",
+        "roman-modern-extra-043",
+        "roman-modern-extra-044",
+        "roman-modern-extra-045",
+        "roman-modern-extra-046"
       ],
       "proposed_tradition_ids": [
         "roman-general"
@@ -6835,7 +6990,7 @@
           "label": "Ordo Missae, Ritus servandus in celebratione Missae et De defectibus",
           "start_year": 1965,
           "end_year": 1965,
-          "date_role": "publication",
+          "date_role": "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date",
           "status": "inventory-witness-candidate-not-a-stage"
         },
         {
@@ -6843,7 +6998,7 @@
           "label": "Variationes in Ordinem Hebdomadae sanctae inducendae",
           "start_year": 1965,
           "end_year": 1965,
-          "date_role": "publication",
+          "date_role": "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date",
           "status": "inventory-witness-candidate-not-a-stage"
         },
         {
@@ -6851,7 +7006,7 @@
           "label": "Ritus servandus in concelebratione Missae et Ritus Communionis sub utraque specie",
           "start_year": 1965,
           "end_year": 1965,
-          "date_role": "publication",
+          "date_role": "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date",
           "status": "inventory-witness-candidate-not-a-stage"
         },
         {
@@ -6859,7 +7014,7 @@
           "label": "Variationes in Ordinem Missae inducendae",
           "start_year": 1967,
           "end_year": 1967,
-          "date_role": "publication",
+          "date_role": "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date",
           "status": "inventory-witness-candidate-not-a-stage"
         },
         {
@@ -6867,13 +7022,869 @@
           "label": "Preces eucharisticae et praefationes",
           "start_year": 1968,
           "end_year": 1968,
-          "date_role": "publication",
+          "date_role": "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-001",
+          "label": "Missale Romanum of Pius V",
+          "start_year": 1570,
+          "end_year": 1570,
+          "date_role": "promulgation",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-002",
+          "label": "Gregorian calendar adoption in Roman missal calendar apparatus",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "act-or-publication-as-qualified-in-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-003",
+          "label": "Missale Romanum revised under Clement VIII",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "typical-book-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-004",
+          "label": "Missale Romanum revised under Urban VIII",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "typical-book-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-005",
+          "label": "Trinity preface appointed for Sundays lacking a proper preface",
+          "start_year": 1759,
+          "end_year": 1759,
+          "date_role": "decree-year-catalogued",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-006",
+          "label": "Imperial-prayer changes",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "decree",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-007",
+          "label": "General missal corrections",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "decree",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-010",
+          "label": "Vatican chant revision / revised missal tones",
+          "start_year": 1908,
+          "end_year": 1908,
+          "date_role": "approval-1907-publication-1908",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-011",
+          "label": "Divino afflatu changes affecting Mass rubrics and calendar",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "act-or-publication-as-qualified-in-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-012",
+          "label": "Abhinc duos annos and Additiones et variationes in rubricis Missalis",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "act-or-publication-as-qualified-in-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-013",
+          "label": "New prefaces of Saint Joseph and the Dead",
+          "start_year": 1919,
+          "end_year": 1919,
+          "date_role": "act-or-publication-as-qualified-in-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-014",
+          "label": "Missale Romanum under Benedict XV",
+          "start_year": 1920,
+          "end_year": 1920,
+          "date_role": "typical-book-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-015",
+          "label": "Christ the King proper and preface",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "act-or-publication-as-qualified-in-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-016",
+          "label": "Revised Sacred Heart proper and preface",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "act-or-publication-as-qualified-in-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-017",
+          "label": "Common of one or more Supreme Pontiffs",
+          "start_year": 1942,
+          "end_year": 1942,
+          "date_role": "act-or-publication-as-qualified-in-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-018",
+          "label": "Revised Assumption formulary after definition",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "act-or-publication-as-qualified-in-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-019",
+          "label": "Ordo Sabbati sancti quando vigilia paschalis instaurata peragitur",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "experimental-book-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-020",
+          "label": "Ordo Sabbati sancti, editio altera with ordinationes and rubricarum variationes",
+          "start_year": 1952,
+          "end_year": 1952,
+          "date_role": "revised-book-approval-and-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-021",
+          "label": "Cum nostra hac aetate simplification of calendar and rubrics",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "act-or-publication-as-qualified-in-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-022",
+          "label": "Ordo Hebdomadae Sanctae instauratus",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "approval-1955-effectiveness-1956",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-023",
+          "label": "Saint Joseph the Worker and Queenship of Mary calendar/formulary changes",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "act-or-publication-as-qualified-in-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-024",
+          "label": "Good Friday prayer wording changes",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "act-or-publication-as-qualified-in-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-025",
+          "label": "Rubricarum instructum and Codex rubricarum",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "act-or-publication-as-qualified-in-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-026",
+          "label": "Missale Romanum declared typical 23 June 1962",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "typical-declaration-1962-06-23",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-027",
+          "label": "Saint Joseph inserted in Roman Canon",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "act-1962-11-effectiveness-1962-12",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-028",
+          "label": "Inter Oecumenici and implementing Ordo Missae",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "act-or-publication-as-qualified-in-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-033",
+          "label": "Missa normativa demonstrated to Synod",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "act-or-publication-as-qualified-in-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-035",
+          "label": "Ordo Missae / original Institutio generalis",
+          "start_year": 1969,
+          "end_year": 1969,
+          "date_role": "component-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-036",
+          "label": "Calendarium Romanum / Mysterii paschalis",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "calendar-book-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-037",
+          "label": "Ordo lectionum Missae",
+          "start_year": 1969,
+          "end_year": 1969,
+          "date_role": "approval-1969-05-25-book-publication-1969",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-038",
+          "label": "Missale Romanum editio typica",
+          "start_year": 1970,
+          "end_year": 1970,
+          "date_role": "approval-1970-03-26-book-publication-1970",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-039",
+          "label": "Missale Romanum, Lectionarium, original three-volume corpus",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "volume I 1970; volume II 1971; volume III 1972; decree 1970-09-30",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-040",
+          "label": "Missale parvum e Missali Romano et Lectionario excerptum (1970)",
+          "start_year": 1970,
+          "end_year": 1970,
+          "date_role": "excerpt-book-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-041",
+          "label": "Reimpressio emendata of Missale Romanum",
+          "start_year": 1971,
+          "end_year": 1971,
+          "date_role": "corrected-reprint-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-042",
+          "label": "Ordo cantus Missae",
+          "start_year": 1972,
+          "end_year": 1972,
+          "date_role": "approval-1972-06-24-book-publication-1972",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-043",
+          "label": "Variationes in Institutionem generalem and further emendations",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "act-1972-12-23-print-1973",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-044",
+          "label": "Directorium de Missis cum pueris",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "act-or-publication-as-qualified-in-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-045",
+          "label": "Preces eucharisticae pro Missis cum pueris et de reconciliatione",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "experimental-approval-1974-11-01-with-later-extensions",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-046",
+          "label": "Missale Romanum editio typica altera",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "approval-1975-03-27-book-publication-1975",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-047",
+          "label": "Ordo lectionum Missae editio typica altera",
+          "start_year": 1981,
+          "end_year": 1981,
+          "date_role": "approval-1981-01-21-book-publication-1981",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-048",
+          "label": "Variationes in libros liturgicos after new Code; IGMR affected",
+          "start_year": 1983,
+          "end_year": 1983,
+          "date_role": "act-or-publication-as-qualified-in-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-049",
+          "label": "Collectio Missarum de Beata Maria Virgine (1987)",
+          "start_year": 1987,
+          "end_year": 1987,
+          "date_role": "book-publication-1987",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-050",
+          "label": "Ordo cantus Missae editio typica altera",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "typica declaration 1986-11-22; title imprint 1987; catalogue label 1988; actual publication date unresolved",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-051",
+          "label": "Eucharistic prayer for various needs, Latin form and four variants",
+          "start_year": 1991,
+          "end_year": 1991,
+          "date_role": "universal-latin-approval-1991",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-052",
+          "label": "Missale Romanum editio typica tertia; IGMR issued earlier",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "third-typical-book-publication-2002",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-053",
+          "label": "Missale Romanum editio typica tertia reimpressio emendata",
+          "start_year": 2008,
+          "end_year": 2008,
+          "date_role": "corrected-reprint-publication-2008",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-054",
+          "label": "Revised Oremus et pro Iudaeis for use with 1962 missal",
+          "start_year": 2008,
+          "end_year": 2008,
+          "date_role": "effective-for-1962-use-2008",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-055",
+          "label": "Saint Joseph in Eucharistic Prayers II-IV",
+          "start_year": 2013,
+          "end_year": 2013,
+          "date_role": "act-or-publication-as-qualified-in-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-056",
+          "label": "John XXIII and John Paul II universal optional memorials",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "act-or-publication-as-qualified-in-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-057",
+          "label": "2015 consolidated readings to add to the 1981 Ordo lectionum Missae",
+          "start_year": 2015,
+          "end_year": 2015,
+          "date_role": "consolidated-update-publication-2015",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-058",
+          "label": "In Missa in Cena Domini, washing-of-feet rubric",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "act-or-publication-as-qualified-in-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-059",
+          "label": "Mary Magdalene feast and proper preface",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "act-or-publication-as-qualified-in-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-060",
+          "label": "Mary Mother of the Church memorial",
+          "start_year": 2018,
+          "end_year": 2018,
+          "date_role": "act-or-publication-as-qualified-in-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-061",
+          "label": "Paul VI optional memorial",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "act-or-publication-as-qualified-in-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-062",
+          "label": "Our Lady of Loreto optional memorial",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "act-or-publication-as-qualified-in-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-063",
+          "label": "Quo magis seven optional prefaces for 1962 Missal",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "decree-2020-02-22-effective-2020-03-19",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-064",
+          "label": "Cum sanctissima / Supplementum for new saints in 1962 use",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "decree-2020-02-22-effective-2020-03-19",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-065",
+          "label": "Missa in tempore universalis contagii",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "act-or-publication-as-qualified-in-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-066",
+          "label": "Faustina Kowalska optional memorial",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "act-or-publication-as-qualified-in-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-067",
+          "label": "Gregory of Narek, John of Avila, Hildegard of Bingen optional memorials",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "act-or-publication-as-qualified-in-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-068",
+          "label": "Martha, Mary and Lazarus memorial replaces Martha alone",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "act-or-publication-as-qualified-in-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-069",
+          "label": "Teresa of Calcutta optional memorial",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "decree-2024-12-24-publication-2025-02-11",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-070",
+          "label": "Missa pro custodia creationis",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "decree-2025-06-08-public-presentation-2025-07-03",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-071",
+          "label": "John Henry Newman optional memorial",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "decree-2025-11-09-publication-2026-02-03",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-001",
+          "label": "Incruentum altaris; three All Souls Masses",
+          "start_year": 1915,
+          "end_year": 1915,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-002",
+          "label": "Memoriale Rituum revised typical edition",
+          "start_year": 1920,
+          "end_year": 1920,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-003",
+          "label": "Rubricae in Missali Romano emendandae",
+          "start_year": 1965,
+          "end_year": 1965,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-004",
+          "label": "Graduale simplex editio typica altera",
+          "start_year": 1975,
+          "end_year": 1975,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-005",
+          "label": "Kyriale sive Ordinarium Missae",
+          "start_year": 1905,
+          "end_year": 1905,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-006",
+          "label": "Graduale Romanum Pius X typical book",
+          "start_year": 1908,
+          "end_year": 1908,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-007",
+          "label": "Cantorinus seu Toni communes",
+          "start_year": 1911,
+          "end_year": 1911,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-008",
+          "label": "Officium pro defunctis with Mass material",
+          "start_year": 1909,
+          "end_year": 1909,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-009",
+          "label": "Office and Mass of the Nativity chant",
+          "start_year": 1926,
+          "end_year": 1926,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-010",
+          "label": "Cantus gregoriani Ordinis Hebdomadae Sanctae instaurati",
+          "start_year": 1956,
+          "end_year": 1956,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-011",
+          "label": "Ritus pontificalis Ordinis Hebdomadae Sanctae instaurati",
+          "start_year": 1957,
+          "end_year": 1957,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-012",
+          "label": "Ritus simplex Ordinis Hebdomadae Sanctae instaurati",
+          "start_year": 1957,
+          "end_year": 1957,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-013",
+          "label": "Cantus Historiae Passionis",
+          "start_year": 1957,
+          "end_year": 1957,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-014",
+          "label": "Officium Hebdomadae Sanctae et Octavae Paschae cum cantu",
+          "start_year": 1959,
+          "end_year": 1959,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-015",
+          "label": "Kyriale simplex editio typica",
+          "start_year": 1965,
+          "end_year": 1965,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-016",
+          "label": "Cantus qui in Missali Romano desiderantur, ad experimentum",
+          "start_year": 1965,
+          "end_year": 1965,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-017",
+          "label": "Graduale simplex editio typica",
+          "start_year": 1967,
+          "end_year": 1967,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-018",
+          "label": "Praefationes in cantu",
+          "start_year": 1972,
+          "end_year": 1972,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-019",
+          "label": "Graduale Romanum arranged to Ordo cantus Missae",
+          "start_year": 1974,
+          "end_year": 1974,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-020",
+          "label": "Ordo Missae in cantu",
+          "start_year": 1975,
+          "end_year": 1975,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-021",
+          "label": "Graduale triplex",
+          "start_year": 1979,
+          "end_year": 1979,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-022",
+          "label": "Calendar alterations cumulative repertoire",
+          "start_year": 1989,
+          "end_year": 1989,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-023",
+          "label": "Universal calendar norms amendments",
+          "start_year": 1990,
+          "end_year": 1990,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-024",
+          "label": "Variationes et textus inserendi Missal supplement",
+          "start_year": 1991,
+          "end_year": 1991,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-025",
+          "label": "Evangeliarium for Sundays and feasts",
+          "start_year": 2000,
+          "end_year": 2000,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-026",
+          "label": "Missale Romanum cum lectionibus, four volumes",
+          "start_year": 1977,
+          "end_year": 1977,
+          "date_role": "1977 title imprint; concordance with approved original attested 1975-11-21",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-027",
+          "label": "Missale parvum iuxta typicam alteram",
+          "start_year": 1977,
+          "end_year": 1977,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-028",
+          "label": "Graduale simplex reprint of second typical edition",
+          "start_year": 2007,
+          "end_year": 2007,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-029",
+          "label": "IGMR excerpt and eight-page Supplementum",
+          "start_year": 2008,
+          "end_year": 2008,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-030",
+          "label": "Preces eucharisticae pro concelebratione",
+          "start_year": 2009,
+          "end_year": 2009,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-031",
+          "label": "1962 typical Missal reprint",
+          "start_year": 2010,
+          "end_year": 2010,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-032",
+          "label": "Postquam Summus Pontifex variations",
+          "start_year": 2021,
+          "end_year": 2021,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-033",
+          "label": "Readings for Mass ad postulandam continentiam",
+          "start_year": 2023,
+          "end_year": 2023,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-036",
+          "label": "Alleged new Missale Romanum typical edition",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-038",
+          "label": "Missale parvum ad usum sacerdotis itinerantis",
+          "start_year": 1970,
+          "end_year": 1970,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-039",
+          "label": "Lectionarium pro Missis de Beata Maria Virgine",
+          "start_year": 1987,
+          "end_year": 1987,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-040",
+          "label": "Missale Romanum, Lectionarium volume II",
+          "start_year": 1971,
+          "end_year": 1971,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-041",
+          "label": "Missale Romanum, Lectionarium volume III",
+          "start_year": 1972,
+          "end_year": 1972,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-042",
+          "label": "John XXIII universal optional memorial",
+          "start_year": 2014,
+          "end_year": 2014,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-043",
+          "label": "John Paul II universal optional memorial",
+          "start_year": 2014,
+          "end_year": 2014,
+          "date_role": "publication-or-act-as-qualified-in-cited-source",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-044",
+          "label": "Messale Romano Latino-Italiano per le domeniche e feste",
+          "start_year": 1965,
+          "end_year": 1965,
+          "date_role": "Italian episcopal imprimatur 1965-03-12; publication date not independently established",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-045",
+          "label": "Ordo Missae 1975 excerpt of the second typical Missal",
+          "start_year": 1975,
+          "end_year": 1975,
+          "date_role": "booklet/excerpt publication year; exact day unresolved",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-modern-extra-046",
+          "label": "Missale Romanum, Lectionarium volume I",
+          "start_year": 1970,
+          "end_year": 1970,
+          "date_role": "volume-I-imprint-1970",
           "status": "inventory-witness-candidate-not-a-stage"
         }
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Complete the intervening 1634–1920 book/calendar progression, experimental and restored Holy Week witnesses, full 1965–1968 component collation, 1971/1975/2008 complete book checks and the approved 2020 Supplementum. Bounded official changes do not supply a complete history or text.",
+      "missing_stage_chain": "The reviewed Roman modern inventory adds 107 in-scope book, component, witness and unresolved-lead records to the seven prior candidates. These are research placements, not 107 new revisions or stages. Complete the intervening 1634–1920 book/calendar progression, experimental and restored Holy Week witnesses, 1965–1968 component collation, 1971/1975/2008 whole-book checks, and the 2020 Supplementum. Distinguish approval, publication and effectiveness from an inferred continuous use.",
       "next_sources": {
         "inventory_source_ids": [
           "notitiae-book-bibliography-1985",
@@ -6886,9 +7897,9 @@
           "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-21-(1985)/Notitiae-228-229-1985.pdf"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Complete the intervening 1634–1920 book/calendar progression, experimental and restored Holy Week witnesses, full 1965–1968 component collation, 1971/1975/2008 complete book checks and the approved 2020 Supplementum. Bounded official changes do not supply a complete history or text."
+        "target": "Use the dated Roman modern research receipt and its acquisition references to inspect missing exact originals, delimit component books and reprints, and collate named text changes before extending stages or text parentage. Prioritize the experimental/restored Holy Week books, 1965–1968 components, 1971/1975/2008 books and 2020 Supplementum; resolve the adjacent Communion-outside-Mass ritual's scope separately."
       },
-      "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence.",
+      "caveat": "The 114 research candidates include whole books, components, print witnesses and unresolved leads. Catalogue or receipt placement does not make them distinct revisions, stages, a complete chronological sequence, or evidence of local adoption; roman-modern-extra-035 remains outside this coverage row pending scope review.",
       "canonical_tradition_ids": [
         "roman-stages-pian",
         "roman-stages-postconciliar"
