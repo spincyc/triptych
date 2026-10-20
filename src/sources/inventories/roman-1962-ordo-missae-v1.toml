@@ -136,7 +136,7 @@ what = "Seventy-one English-only blocks are the 1861 printer's own headings or r
 [[absences]]
 key = "appointment-not-established"
 kind = "model-gap"
-what = "Nothing in this repository yet establishes which text the day appoints here: no reading of the celebrated formulary's own direction is recorded, no dated span stated by the 1962 book covers the date, and no sourced default applies. RGMR 482 resolves the Preface as the Mass's proper Preface, else the Preface de Tempore, else the common Preface, and the first step needs each formulary's printed direction, which is recorded so far for the Pentecost Masses only. The stand-in replaces printing every Preface the witness holds, which claimed all of them were said."
+what = "Nothing in this repository yet establishes which text the day appoints here: no reading of the celebrated formulary's own direction is recorded, no dated span stated by the 1962 book covers the date, and no sourced default applies. For the Preface this is now only a date the declared spans cannot be evaluated on (no civil date or year anchors reach the frame); RGMR 482's three steps are otherwise all declared: the formulary's printed direction, the de Tempore spans of RGMR 484-493 and the common default of RGMR 482 and 498. The stand-in replaces printing every Preface the witness holds, which claimed all of them were said."
 
 [[absences]]
 key = "preface-not-in-witness"
@@ -157,7 +157,7 @@ what = "The day appoints a proper Communicantes or Hanc igitur, which the 1962 M
 [[appointments]]
 variable = "preface"
 name = "The Preface"
-what = "Which of the sixteen Prefaces of RGMR 484-499 the day takes: RGMR 482, the Preface proper to the Mass, failing it the Preface de Tempore, otherwise the common Preface, and RGMR 483, no commemoration brings in a proper Preface. Step one is each formulary's own printed direction, recorded in src/sources/calendars/roman-1962/propers.yaml as `ordinary_appointments`; no dated span or default is declared, so a day whose formulary records none is unappointed."
+what = "Which of the sixteen Prefaces of RGMR 484-499 the day takes: RGMR 482, the Preface proper to the Mass, failing it the Preface de Tempore, otherwise the common Preface, and RGMR 483, no commemoration brings in a proper Preface. Step one is the celebrated formulary's own printed direction, recorded in src/sources/calendars/roman-1962/propers.yaml as `ordinary_appointments` (a feria borrowing a formulary does not take it). Step two is the Preface de Tempore, stated below as the dated spans of the b) clauses of RGMR 484-493: it reaches every Mass of its window that prints no direction, which is RGMR's 'in ceteris Missis ... quae praefatione propria carent'. RGMR 494 b), the Trinity Preface on Sundays, is carried by the Sunday formularies' own printed directions and not by a span, because its reach is the Mass of the Sunday and not every Mass said on one. Step three is the common Preface (RGMR 482, 498)."
 options = [
   { id = "communis", name = "Common Preface" },
   { id = "trinitate", name = "Preface of the Most Holy Trinity" },
@@ -176,6 +176,68 @@ options = [
   { id = "sancto-ioseph", name = "Preface of St Joseph" },
   { id = "defunctis", name = "Preface of the Dead" },
 ]
+default = "communis"
+default_basis = "RGMR 482: 'Praefatio dicitur quae cuique Missae propria est; qua deficiente, dicitur praefatio de Tempore, secus communis'; RGMR 498: 'Praefatio communis dicitur in Missis quae praefatione propria carent, nec sumere debent praefationem de Tempore' (Rubricae generales Missalis (RGMR), front matter of the registered CMAA facsimile of the 1962 typical edition, artifact PDF p. 32, printed xxxiv, read on the page image at 400 dpi on 2026-10-19). The Proprium de tempore says the same of the Advent ferias at its head (artifact PDF p. 83, printed p. 2; expected-target row roman-1962.temporal.advent-1:ferial-common-preface). The default reaches only a Mass whose formulary records no direction and whose date no span below covers, so a formulary whose printed direction is not yet recorded would show the common Preface: the recorded directions are the expected-target inventory's Preface rows, joined to their formularies on 2026-10-19."
+
+[[appointments.spans]]
+option = "trinitate"
+from = "12-24"
+to = "12-24"
+weekday = "sunday"
+locus = "The Vigil of the Nativity prints the common Preface 'nisi dominica', and the Trinity Preface when the Vigil falls on a Sunday (Proprium de tempore, artifact PDF p. 97, printed p. 16; expected-target rows roman-1962.temporal.nativity-vigil:preface-common and :preface-trinity-sunday); RGMR 494 b), the Trinity Preface 'in dominicis Adventus'"
+
+[[appointments.spans]]
+option = "nativitate"
+from = "12-25"
+to = "01-01"
+locus = "RGMR 484 b): the Nativity Preface 'tamquam de Tempore, infra octavam Nativitatis Domini' (Rubricae generales Missalis (RGMR), front matter of the registered CMAA facsimile of the 1962 typical edition, artifact PDF p. 32, printed xxxiv, read on the page image at 400 dpi on 2026-10-19)"
+
+[[appointments.spans]]
+option = "nativitate"
+from = "01-02"
+to = "01-05"
+locus = "RGMR 484 b): '... et a die 2 ad 5 ianuarii' (Rubricae generales Missalis (RGMR), front matter of the registered CMAA facsimile of the 1962 typical edition, artifact PDF p. 32, printed xxxiv, read on the page image at 400 dpi on 2026-10-19); the ferias of 2-5 January take the Mass of 1 January 'with Gloria and Nativity Preface' (artifact PDF p. 115, printed p. 34; expected-target row roman-1962.temporal.january-2-5-ferias:form-referral)"
+
+[[appointments.spans]]
+option = "epiphania"
+from = "01-07"
+to = "01-13"
+locus = "RGMR 485 b): the Epiphany Preface 'tamquam de Tempore diebus a 7 ad 13 ianuarii' (Rubricae generales Missalis (RGMR), front matter of the registered CMAA facsimile of the 1962 typical edition, artifact PDF p. 32, printed xxxiv, read on the page image at 400 dpi on 2026-10-19); the ferias of 7-12 January take the Epiphany Mass 'with Gloria and Epiphany Preface' (artifact PDF p. 120, printed p. 39; expected-target row roman-1962.temporal.january-7-12-before-sunday:form-referral)"
+
+[[appointments.spans]]
+option = "quadragesima"
+anchor = "easter"
+from = -46
+to = -15
+locus = "RGMR 486: the Lent Preface 'a feria IV cinerum usque ad sabbatum ante dominicam I Passionis', proper in the Masses de Tempore (a) and de Tempore 'in ceteris Missis quae celebrantur eodem tempore, et praefatione propria carent' (b) (Rubricae generales Missalis (RGMR), front matter of the registered CMAA facsimile of the 1962 typical edition, artifact PDF p. 32, printed xxxiv, read on the page image at 400 dpi on 2026-10-19)"
+
+[[appointments.spans]]
+option = "sancta-cruce"
+anchor = "easter"
+from = -14
+to = -4
+locus = "RGMR 487 b): the Holy Cross Preface 'tamquam de Tempore in omnibus Missis a dominica I Passionis usque ad feriam IV Hebdomadae sanctae, quae praefatione propria carent' (Rubricae generales Missalis (RGMR), front matter of the registered CMAA facsimile of the 1962 typical edition, artifact PDF p. 32, printed xxxiv, read on the page image at 400 dpi on 2026-10-19); repeated before Dominica I Passionis (artifact PDF p. 200, printed p. 119; expected-target row roman-1962:temporal:referral:passiontide:holy-cross-preface-scope)"
+
+[[appointments.spans]]
+option = "paschalis"
+anchor = "easter"
+from = -1
+to = 38
+locus = "RGMR 489: the Paschal Preface 'a Missa Vigiliae paschalis usque ad vigiliam Ascensionis Domini', proper in the Masses de Tempore (a) and de Tempore in the other Masses of that time lacking a proper Preface (b) (Rubricae generales Missalis (RGMR), front matter of the registered CMAA facsimile of the 1962 typical edition, artifact PDF p. 32, printed xxxiv, read on the page image at 400 dpi on 2026-10-19); the Vigil of the Ascension itself prints the Easter Preface (expected-target row roman-1962.temporal.ascension-vigil, Easter Preface)"
+
+[[appointments.spans]]
+option = "ascensione"
+anchor = "easter"
+from = 40
+to = 47
+locus = "RGMR 490 b): the Ascension Preface 'tamquam de Tempore in omnibus Missis a feria VI post Ascensionem usque ad feriam VI ante vigiliam Pentecostes, quae praefatione propria carent' (Rubricae generales Missalis (RGMR), front matter of the registered CMAA facsimile of the 1962 typical edition, artifact PDF p. 32, printed xxxiv, read on the page image at 400 dpi on 2026-10-19); the ferias of that week take the Ascension Mass 'with Gloria and Ascension Preface' (physical PDF p. 433, printed p. 352; expected-target row roman-1962.temporal.ascension-ferias)"
+
+[[appointments.spans]]
+option = "spiritu-sancto"
+anchor = "pentecost"
+from = -1
+to = 6
+locus = "RGMR 493: the Holy Spirit Preface 'a vigilia Pentecostes usque ad subsequens sabbatum', proper in the Masses de Tempore (a) and de Tempore in the other Masses of that time lacking a proper Preface (b) (Rubricae generales Missalis (RGMR), front matter of the registered CMAA facsimile of the 1962 typical edition, artifact PDF p. 32, printed xxxiv, read on the page image at 400 dpi on 2026-10-19); Holy Spirit Preface footer n. 1081, printed p. 292"
 
 [[appointments]]
 variable = "communicantes"

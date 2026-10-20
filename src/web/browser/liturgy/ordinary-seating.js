@@ -183,9 +183,19 @@
     return facts;
   }
 
+  const WEEKDAYS = [
+    'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'
+  ];
+
   function spanCovers(span, context) {
     const date = context && context.date;
     if (typeof date !== 'string') return null;
+    // A span narrowed to one weekday covers only that weekday of its dates.
+    if (span.weekday) {
+      const day = isoDay(date);
+      if (day === null) return null;
+      if (WEEKDAYS[new Date(day).getUTCDay()] !== span.weekday) return false;
+    }
     if (span.anchor) {
       const offset = offsetFrom(context.anchors, span.anchor, date);
       if (offset === null) return null;

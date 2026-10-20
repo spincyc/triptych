@@ -1447,7 +1447,10 @@ async function runAssertions(cdp, base) {
       // 2026-10-19 (C2 G5/G6): Pentecost X shows one Preface stand-in for
       // the 25 unappointed Preface rows and loses the six excluded
       // second-Postcommunion and Et famulos rows.
-      [STATES.romanMissal, 175, 6, 159, 10, 'proper/roman-1962/pentecost-10/010'],
+      // 2026-10-19 (C2 Preface directions): Pentecost X seats its printed
+      // Trinity Preface (with the 1861 asterisk note and heading) in place of
+      // the one typed stand-in, so two more Ordinary events.
+      [STATES.romanMissal, 177, 6, 161, 10, 'proper/roman-1962/pentecost-10/010'],
       [STATES.postMissal, 58, 7, 41, 10, 'proper/postconciliar/advent-1/010']
     ];
     for (const [state, total, sections, ordinary, propers, lastProper] of cases) {
@@ -1682,10 +1685,12 @@ async function runAssertions(cdp, base) {
       'document.querySelector("#reader-document").innerText');
     assert.match(unavailableLatin, /Withheld under “no-facing-latin”/);
     // 2026-10-19 (C2 G6): both not-in-the-1962-ordo orations are excluded,
-    // so that reason no longer stands at any emitted element; the proper
-    // Canon forms' and the unappointed Preface's typed reasons do instead.
+    // so that reason no longer stands at any emitted element.
     assert.doesNotMatch(unavailableLatin, /Withheld under “not-in-the-1962-ordo”/);
-    assert.match(unavailableLatin, /Withheld under “appointment-not-established”/);
+    // 2026-10-19 (C2 Preface directions): the Sunday's printed Trinity
+    // Preface is appointed, so no typed "appointment not established" stands.
+    assert.doesNotMatch(unavailableLatin, /Withheld under “appointment-not-established”/);
+    assert.match(unavailableLatin, /Qui cum unigenito Filio tuo/);
     assert.match(unavailableLatin, /Withheld under “witness-own-english”/);
     assert.equal(await evaluate(cdp, 'document.querySelector("#coverage-notice").hidden'), false);
     await navigateCandidate(cdp, base, STATES.partial);

@@ -124,7 +124,7 @@ what = "The 1861 book sets this block across the full measure in English only an
 [[absences]]
 key = "appointment-not-established"
 kind = "model-gap"
-what = "Nothing in this repository yet establishes which text the day appoints here: no reading of the celebrated formulary's own direction is recorded, no dated span stated by the accepted pre-1955 witness covers the date, and no sourced default applies. The Preface is recorded so far only for the Pentecost Masses, inherited uncollated from the 1962 index and corroborated for those Masses by the Bonn reimpressio (artifact pp. 494-511). The stand-in replaces printing every Preface the 1861 witness holds, which claimed all of them were said."
+what = "Nothing in this repository yet establishes which text the day appoints here: no reading of the celebrated formulary's own direction is recorded, no dated span stated by the accepted pre-1955 witness covers the date, and no sourced default applies. A formulary's Preface is recorded only where the Bonn witness prints it (the `attested_appointments` of src/sources/calendars/roman-pre-1955/propers.yaml), and no span or default is declared: the witness's general rubrics (Additiones et variationes tit. VIII, artifact p. 59*) let a commemorated feast's proper Preface or an octave's displace the de Tempore and common Prefaces, and commemorations and octaves are not modelled in this recension. The stand-in replaces printing every Preface the 1861 witness holds, which claimed all of them were said."
 
 [[absences]]
 key = "preface-not-in-witness"
@@ -145,7 +145,7 @@ what = "The day appoints a proper Communicantes or Hanc igitur, which the accept
 [[appointments]]
 variable = "preface"
 name = "The Preface"
-what = "Which Preface the day takes. The formulary's own printed direction is recorded in the roman-1962 mass index as `ordinary_appointments` and reaches this recension by its uncollated inheritance; for the Pentecost Masses the Bonn witness prints the same direction (artifact pp. 494-511). No dated span or default is declared, so a day whose formulary records none is unappointed."
+what = "Which Preface the day takes. The formulary's own printed direction, as the Bonn witness prints it: src/sources/calendars/roman-pre-1955/propers.yaml records it under `attested_appointments` for each inherited formulary, with the expected-target row and page that locate it, and an inherited formulary takes no 1962 direction (2026-10-19; the 1962 index's directions are the 1962 book's rubric, not evidence of this one). No dated span or default is declared. The Bonn general rubrics state the rule (Rubricae generales tit. XII nn. 2-5, artifact p. 42*-43*; Additiones et variationes tit. VIII, artifact p. 59*, read on the text layer as leads): the Mass's proper Preface, failing it that of the first commemorated Mass or Office having one, then the Preface of a common octave or de Tempore, then the common Preface, with the Nativity octave and other exceptions. Its second and third steps turn on commemorations and octaves, which this recension does not model, so a day whose formulary records none is unappointed rather than given a de Tempore or common Preface the rubric might displace."
 options = [
   { id = "communis", name = "Common Preface" },
   { id = "trinitate", name = "Preface of the Most Holy Trinity" },

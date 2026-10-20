@@ -8,6 +8,8 @@ import json
 from pathlib import Path
 import sys
 import tempfile
+import tomllib
+from collections import Counter
 import unittest
 from unittest import mock
 
@@ -544,6 +546,52 @@ state = "unenumerated"
                 {"form_id": "day", "cycles": {"A": {"coverage": coverage.unit({}, target_id="t", occurrence_id="o", cycle="A", cycle_family="cycles")}}},
             ]}
             self.assertEqual(coverage.expectations(path, "roman-1962", [mass])["targets"][0]["state"], "not-represented")
+
+    def test_form_id_is_only_a_calendar_form_join(self):
+        """`form_id` once also named a parent target; that use is `parent_id` now.
+
+        Decision 2026-10-19: the validator reads `form_id` beside
+        `calendar_mass_key` as a form of the held Mass, so a parent reference in
+        the same field would be misread the moment its row gained a join. The
+        13,926 parent references moved to `parent_id` and the 1,175 source-local
+        formulary keys to `source_form_key`; `form_id` without a join is refused.
+        """
+        parent = ('\n[[targets]]\nid="slot"\nslice_id="fixed"\nkind="text-slot"\n'
+                  'identity_state="established"\n')
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "inventory.toml"
+            for extra in (parent + 'form_id="feast"\n', parent + 'parent_id="nowhere"\n',
+                          parent + 'parent_id="slot"\n'):
+                path.write_text(self.inventory() + extra)
+                with self.subTest(extra=extra), self.assertRaises(ValueError):
+                    coverage.expectations(path, "roman-1962", [{"key": "feast"}])
+            path.write_text(self.inventory() + parent + 'parent_id="feast"\nsource_form_key="1.A"\n')
+            report = coverage.expectations(path, "roman-1962", [{"key": "feast"}])
+        self.assertEqual([row["state"] for row in report["targets"]], ["represented", "unresolved"])
+
+    def test_tracked_inventory_joins_formularies_without_the_parent_hazard(self):
+        path = ROOT / "src/sources/inventories/missal-expected-targets-v1.toml"
+        document = tomllib.loads(path.read_text(encoding="utf-8"))
+        ids = {row["id"] for row in document["targets"]}
+        self.assertFalse([row["id"] for row in document["targets"]
+                          if "form_id" in row and "calendar_mass_key" not in row])
+        self.assertFalse([row["id"] for row in document["targets"]
+                          if "parent_id" in row and row["parent_id"] not in ids])
+        propers = tool("mass-propers")
+        root = ROOT / "src/sources/calendars"
+        # The formulary-level join (G4), pinned 2026-10-19: every joined form
+        # row names a held Mass (and form). Update these counts only with the
+        # inventory's own join rows, never to absorb a not-represented target.
+        for calendar, joined in (("roman-1962", 488), ("roman-pre-1955", 463)):
+            masses = [mass for _, mass in propers.masses_of(propers.load_calendar(root, calendar))]
+            for mass in masses:
+                if mass.get("forms"):
+                    mass["forms"] = [{"id": form.get("id")} for form in mass["forms"]]
+            report = coverage.expectations(path, calendar, masses)
+            forms = Counter(row["state"] for row in report["targets"] if row["kind"] == "form")
+            with self.subTest(calendar=calendar):
+                self.assertEqual(forms["represented"], joined)
+                self.assertEqual(forms["not-represented"], 0)
 
     def test_source_calendar_keeps_missing_christmas_commemoration_visible(self):
         propers = tool("mass-propers")

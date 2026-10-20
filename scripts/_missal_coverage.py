@@ -480,9 +480,22 @@ def expectations(path: Path, calendar: str, masses: list[dict]) -> dict:
                 if section == "targets":
                     if row.get("identity_state") not in {"established", "target-correspondence-unresolved"}:
                         raise ValueError("unknown expected Missal identity state")
-                    for field in ("calendar_mass_key", "form_id", "cycle", "cycle_family"):
+                    for field in ("calendar_mass_key", "form_id", "cycle", "cycle_family",
+                                  "parent_id", "source_form_key"):
                         if field in row and (not isinstance(row[field], str) or not row[field]):
                             raise ValueError(f"invalid expected Missal {field} join")
+                    # Three relations once shared `form_id` (2026-10-19). Each
+                    # now has its own field, so a join can never be read as a
+                    # parent reference or the reverse: `form_id` names a form
+                    # of the joined calendar mass and exists only beside
+                    # `calendar_mass_key`; `parent_id` names the containing
+                    # target in this inventory; `source_form_key` is a
+                    # source-local formulary key that joins nothing.
+                    if "form_id" in row and "calendar_mass_key" not in row:
+                        raise ValueError(
+                            "expected Missal form_id joins a calendar mass's form and "
+                            "requires calendar_mass_key; a parent reference is parent_id"
+                        )
                     if row.get("cycle") and row["cycle"] not in {"A", "B", "C", "ABC", "I", "II", "I-II"}:
                         raise ValueError("unknown expected Missal cycle")
                     if row.get("cycle_family") and row["cycle_family"] not in {"sunday", "weekday", "cycles", "weekday_cycles"}:
@@ -491,7 +504,14 @@ def expectations(path: Path, calendar: str, masses: list[dict]) -> dict:
                     raise ValueError("unknown expected Missal boundary state")
         if section == "slices":
             slice_ids = ids
-    slices = [row for row in document.get("slices", []) if row.get("calendar") == calendar]
+        if section == "targets":
+            for row in document[section]:
+                parent = row.get("parent_id")
+                if parent is not None and (parent == row["id"] or parent not in ids):
+                    raise ValueError(
+                        f"expected Missal target {row['id']} names no other target as parent_id"
+                    )
+    slices =[row for row in document.get("slices", []) if row.get("calendar") == calendar]
     selected = {row["id"] for row in slices}
     by_key = {str(row["key"]): row for row in masses}
     by_registry = {str(row.get("registry")): row for row in masses if row.get("registry")}

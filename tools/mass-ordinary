@@ -442,7 +442,13 @@ APPOINTMENT_FIELDS = {
     "variable", "name", "what", "options", "default", "default_basis", "spans",
 }
 APPOINTMENT_OPTION_FIELDS = {"id", "name"}
-APPOINTMENT_SPAN_FIELDS = {"option", "withheld", "from", "to", "anchor", "locus"}
+APPOINTMENT_SPAN_FIELDS = {"option", "withheld", "from", "to", "anchor", "locus", "weekday"}
+# A span may be narrowed to one weekday of its dates, where the book's own
+# rubric is conditional on it (the 1962 Vigil of the Nativity takes the Trinity
+# Preface only when it falls on a Sunday, Proprium p. 16).
+APPOINTMENT_WEEKDAYS = (
+    "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday",
+)
 # The movable anchors a span may count from, exactly as the calendar layer's
 # year files name them (`liturgical_years[].anchors`).
 APPOINTMENT_ANCHORS = ("easter", "pentecost", "ascension_thursday_form")
@@ -962,6 +968,11 @@ def appointment_table(source: dict, name: str) -> dict[str, dict]:
                 )
             if not isinstance(span["locus"], str) or not span["locus"].strip():
                 raise SourceError(f"{name}: a span of {variable} cites no locus")
+            if "weekday" in span and span["weekday"] not in APPOINTMENT_WEEKDAYS:
+                raise SourceError(
+                    f"{name}: a span of {variable} names weekday {span['weekday']!r}; "
+                    f"one of {', '.join(APPOINTMENT_WEEKDAYS)} is required"
+                )
             anchor = span.get("anchor")
             if anchor is None:
                 if not all(

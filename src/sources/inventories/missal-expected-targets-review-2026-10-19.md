@@ -478,15 +478,15 @@ and of the Proper of Saints are form-level targets, distinct from the
 fixed-calendar celebration identities. This follows the postconciliar
 precedent, where calendar rows and 2002 body forms coexist.
 
-`form_id` here names the parent target, as in the 2002 sanctoral core-slot
-slice. On rows without a calendar join it is inert in the coverage validator.
-No row carries both `form_id` and `calendar_mass_key`. Bare local keys were
+A child row names its parent target with `parent_id`, as in the 2002
+sanctoral core-slot slice. (This field was written `form_id` until the
+formulary join below; see that section for the migration.) Bare local keys were
 mapped to their parent row, and self-references were dropped. So was the value
 `main` on sanctoral form rows: it is meaningful only as a join to a held Mass.
-No calendar joins were added. The only kinds with a joining precedent are
-celebration, commemoration and exceptional rite. Five Holy Week day headings
-correspond by name to held Masses, but the correspondence is not mechanically
-checkable. Holy Thursday and Holy Saturday do not correspond one to one.
+No calendar joins were added in this pass. The only kinds with a joining
+precedent were celebration, commemoration and exceptional rite; the formulary
+join of the later section adds `form`. Holy Thursday and Holy Saturday do not
+correspond one to one.
 
 ### Limits
 
@@ -538,9 +538,84 @@ normalized. The kind `common` holds four additional-reading pools, while the
 Common Masses are `form`. Holy Week
 days carry both a `celebration` and a `form` target, while other temporal days
 carry only `form`. Three identifier styles coexist. None of these is summed
-across kinds. The parent-row use of `form_id` remains a latent schema hazard:
-the coverage validator reads that field as a join to a held Mass's forms, so a
-future row carrying both `form_id` and `calendar_mass_key` would be misread.
+across kinds. The former parent-row use of `form_id` was a latent schema
+hazard and is retired; the formulary join section below records how.
+
+## Formulary joins and Preface directions, 19 October 2026 (C2 G4)
+
+A later pass joined the 1962 and pre-1955 Mass formularies to held calendar
+Masses and used the Preface rows to record each formulary's printed direction.
+It added no identity except the four below.
+
+**One field, one relation.** `form_id` had carried three relations: a parent
+target (13,926 rows, every value another target's ID), a source-local formulary
+key shared by a 2002 form and its slots or by the rubric n. 271 taxonomy (1,175
+rows, no value a target ID), and, through `expectations()` in
+`scripts/_missal_coverage.py`, a form of the held Mass a `calendar_mass_key`
+joins. A parent reference would have been read as a missing Mass form the
+moment its row gained a join, and a slot-level join (G4's text-slot follow-up)
+needs exactly that pair. The two non-join relations were therefore renamed
+mechanically, by whether the value names a target: `parent_id` and
+`source_form_key`. The rename changed no other byte of any row. The validator
+now refuses `form_id` without `calendar_mass_key` and a `parent_id` naming no
+other target; `source_form_key` joins nothing.
+`tools/tests/test_missal_coverage.py` holds both rules and the tracked file.
+
+**The join.** `calendar_mass_key`, and `form_id` where the held Mass has forms,
+now stand on every `form` row whose held Mass was identified exactly:
+
+| Calendar | Form rows | Joined, represented | Ambiguous | No held Mass |
+| --- | ---: | ---: | ---: | ---: |
+| roman-1962 | 630 | 488 | 3 | 139 |
+| roman-pre-1955 | 627 | 463 | 15 | 149 |
+
+The joins are mechanical where they can be: the temporal cycles by a printed
+heading to calendar Mass table; the sanctoral by aligning the book's page order
+with the calendar's date order on normalized names, the saint's own name
+required on both sides, then a second pass inside each pair of aligned dates;
+the Commons and Saturday Masses by printed ordinal. Matches below a full name
+score were read individually. Joined by name instead: three 1962 forms (Seven
+Sorrows in Passion Week, the Holy Name of Mary, Christ the King) and nineteen
+pre-1955 forms (six whose Bonn date differs from the 1962 one, thirteen post-1922
+additions). Three alignments were rejected and left unmatched: the votive Mass
+of St Peter in both books and a pre-1955 day within the octave of Peter and
+Paul aligned onto the Visitation. Before this pass no `form` row was joined (1962:
+335 represented and 1 not-represented targets, all calendar identities;
+pre-1955: none). Afterwards 1962 has 823 represented and the same one
+not-represented target, and pre-1955 has 463 represented. No joined form is
+not-represented.
+
+Not joined, and why: the 1962 Thomas Becket proper Mass (the calendar holds the
+29 December commemoration only), the Paschal Vigil Mass (the held entry
+bundles the Vigil, the Mass and Lauds) and the one Commune Doctorum (the
+calendar holds two entries); the pre-1955 Ember Saturdays (one Bonn Mass against
+the inherited longer and shorter forms), octave days, vigils and renamed
+formularies the inherited 1962 calendar does not hold one to one; and every
+votive, Mass for the dead, local proper and devotional entry, for which no
+calendar Mass exists. A pre-1955 join names the inherited Mass that serves the
+identity. It asserts that correspondence, not that the inherited text is the
+Bonn witness's.
+
+**Four added rows.** A text-layer search of the 1962 facsimile for every Preface
+marker, compared with the existing rows, found four directions the earlier OCR
+pass missed because the marker was misread. Each was read on the page image on
+19 October 2026 and added beside its siblings: the Annunciation (artifact p.
+577, printed p. 496, `Ptaefatio` in the text layer), Saturday of Our Lady IV
+(p. 855, printed [47]), the votive Mass of all the Apostles (p. 863, printed
+[55]) and the Mass on the day of death or burial (p. 926, printed [118]). The
+sanctoral Preface slice stays `partial`.
+
+**Directions recorded.** The Preface, Communicantes and Hanc igitur rows of
+joined formularies became `ordinary_appointments` in
+`src/sources/calendars/roman-1962/propers.yaml` (176 Masses or forms), each
+citing its row and locus. Rows a rubric makes conditional (the Vigil of the
+Nativity on a Sunday, the Epiphany I feria after 13 January, a feria resuming
+a Sunday) are carried by the Ordinary inventory's dated spans and default
+instead. For pre-1955 the Bonn rows became `attested_appointments` in
+`src/sources/calendars/roman-pre-1955/propers.yaml` (161 Masses), because an
+inherited 1962 direction is not evidence of the older book: the Bonn witness
+gives the Transfiguration and Corpus Christi the Nativity Preface where 1962
+gives the common one.
 
 ## Twenty 2002 appointments positively named by the 2008 variation list
 
