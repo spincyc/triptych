@@ -120,14 +120,10 @@ EXAMPLES = {
                 "  -> build/example-propers/structure/propers/postconciliar.json",
                 "  -> build/example-propers/structure/propers/search/postconciliar.json",
                 "  -> build/example-propers/structure/propers/roman-1962.json",
-                "  -> build/example-propers/structure/propers/search/roman-1962.json",
-                "  -> build/example-propers/structure/propers/roman-pre-1955.json",
-                "  -> build/example-propers/structure/propers/search/roman-pre-1955.json",
-                "  -> build/example-propers/structure/propers/index.json",
-                "  Latin withheld from publication: 1793",
-                "  refused: 24",
+                "  -> build/example-propers/structure/propers/catalog/roman-1962.json",
+                "... 497 more lines",
             ),
-            "WRITES one structure and search file per missal plus the manifest. --out here is untracked; the default writes tracked src/web/data",
+            "WRITES structure and search files per missal, the 1962 catalog and exact Mass files, plus the manifest. --out here is untracked; the default writes tracked src/web/data",
         ),
         Example(
             "tools/mass-propers structure --check",
@@ -135,7 +131,7 @@ EXAMPLES = {
                 "postconciliar: 619 masses, 3626 citations",
                 "roman-1962: 491 masses, 4375 citations",
                 "roman-pre-1955: 489 masses, 4310 citations",
-                "  7 tracked file(s) are current",
+                "  499 tracked file(s) are current",
             ),
             "writes nothing: exits 1 naming each tracked file the sources no longer produce. The calendar-Mass check target runs this",
         ),
@@ -3366,6 +3362,56 @@ def _serialise_structure(payload: dict) -> str:
     return "{\n" + ",\n".join(lines) + "\n}\n"
 
 
+READ_CATALOG_SCHEMA = "triptych-propers-read-catalog/v1"
+READ_MASS_SCHEMA = "triptych-propers-read-mass/v1"
+READ_MASS_KEY = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
+
+
+def read_payloads(structure: dict, generation: str) -> tuple[dict, dict[str, dict]]:
+    """Project one public 1962 structure into a small index and exact Masses.
+
+    Descriptors are for navigation and validation only. A rendered Mass always
+    comes from its complete source-filtered object, never a second projection.
+    """
+    if structure["calendar"] != "roman-1962":
+        raise ValueError("resolved Read payloads are limited to roman-1962")
+    descriptors = []
+    mass_payloads = {}
+    for mass in structure["masses"]:
+        key = mass["key"]
+        if not isinstance(key, str) or not READ_MASS_KEY.fullmatch(key):
+            raise ValueError(f"unsafe resolved Read Mass key: {key!r}")
+        if key in mass_payloads:
+            raise ValueError(f"duplicate resolved Read Mass key: {key!r}")
+        descriptors.append({
+            "key": key,
+            "name": mass.get("name"),
+            "kind": mass.get("kind"),
+            "season": mass.get("season"),
+            "date": mass.get("date"),
+            "coverage": mass.get("coverage"),
+            "forms": [
+                {"id": form.get("id"), "name": form.get("name"),
+                 "ordinal": form.get("ordinal")}
+                for form in mass.get("forms") or []
+            ],
+        })
+        mass_payloads[key] = {
+            "schema": READ_MASS_SCHEMA,
+            "calendar": structure["calendar"],
+            "generation": generation,
+            "mass": mass,
+        }
+    catalog = {
+        "schema": READ_CATALOG_SCHEMA,
+        "calendar": structure["calendar"],
+        "generation": generation,
+        "structure": {key: value for key, value in structure.items() if key != "masses"},
+        "masses": descriptors,
+    }
+    return catalog, mass_payloads
+
+
 def search_structure(structure: dict) -> dict:
     """Project public, form-qualified discovery facts from the served structure.
 
@@ -3475,6 +3521,10 @@ def run_structure(arguments: argparse.Namespace) -> dict:
     refuse_symlink_output(out, propers_dir)
     search_dir = propers_dir / "search"
     refuse_symlink_output(out, search_dir)
+    catalog_dir = propers_dir / "catalog"
+    mass_dir = propers_dir / "mass"
+    refuse_symlink_output(out, catalog_dir)
+    refuse_symlink_output(out, mass_dir)
     root = Path(arguments.root)
     tokens = book_tokens()
     names = [arguments.calendar] if arguments.calendar else calendars(root)
@@ -3516,8 +3566,23 @@ def run_structure(arguments: argparse.Namespace) -> dict:
         # files under `structure/`.
         path = propers_dir / f"{name}.json"
         refuse_symlink_output(out, path)
-        files[path] = _serialise_structure(built)
+        structure_body = _serialise_structure(built)
+        files[path] = structure_body
         written.append(str(path))
+        if name == "roman-1962":
+            generation = hashlib.sha256(structure_body.encode("utf-8")).hexdigest()
+            catalog, mass_payloads = read_payloads(built, generation)
+            catalog_path = catalog_dir / f"{name}.json"
+            refuse_symlink_output(out, catalog_path)
+            files[catalog_path] = _serialise_structure(catalog)
+            written.append(str(catalog_path))
+            calendar_mass_dir = mass_dir / name
+            refuse_symlink_output(out, calendar_mass_dir)
+            for key, payload in mass_payloads.items():
+                mass_path = calendar_mass_dir / f"{key}.json"
+                refuse_symlink_output(out, mass_path)
+                files[mass_path] = _compact(payload) + "\n"
+                written.append(str(mass_path))
         search_path = search_dir / f"{name}.json"
         refuse_symlink_output(out, search_path)
         files[search_path] = _serialise(search_structure(built))
@@ -3555,13 +3620,18 @@ def run_structure(arguments: argparse.Namespace) -> dict:
         if where not in files and not where.exists():
             continue
         document = load_calendar(root, name)
-        listed.append(
-            {
-                "id": name,
-                "edition": document.get("edition"),
-                "edition_short": document.get("edition_short"),
+        entry = {
+            "id": name,
+            "edition": document.get("edition"),
+            "edition_short": document.get("edition_short"),
+        }
+        catalog_path = catalog_dir / f"{name}.json"
+        if name == "roman-1962" and (catalog_path in files or catalog_path.is_file()):
+            entry["read_payload"] = {
+                "catalog": "structure/propers/catalog/roman-1962.json",
+                "mass_prefix": "structure/propers/mass/roman-1962/",
             }
-        )
+        listed.append(entry)
     listed.sort(key=lambda entry: (entry["id"] != LANDING_MISSAL, entry["id"]))
     manifest = out.joinpath(*MISSAL_MANIFEST)
     refuse_symlink_output(out, manifest)
@@ -3589,7 +3659,7 @@ def run_structure(arguments: argparse.Namespace) -> dict:
         expected = set(files)
         orphaned = sorted(
             path
-            for directory in (propers_dir, search_dir)
+            for directory in (propers_dir, search_dir, catalog_dir, mass_dir)
             if directory.is_dir()
             for path in (directory.glob("*.json") if directory == propers_dir
                          else directory.rglob("*.json"))

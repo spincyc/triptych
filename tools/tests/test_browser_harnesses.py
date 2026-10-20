@@ -48,6 +48,7 @@ PREVIEW = ROOT / PREVIEW_ROOT
 # partial result, a new unaccounted assertion, or a nonzero exit all fail here.
 ASSERTION_COUNTS = {
     "day_reader_compare_browser.mjs": 10,
+    "day_reader_read_payload_browser.mjs": 9,
     "day_reader_study_browser.mjs": 10,
     "day_reader_choices_browser.mjs": 8,
     "liturgy_reader_preferences_browser.mjs": 11,
@@ -65,7 +66,7 @@ ASSERTION_COUNTS = {
     "liturgy_reader_visual_reset_browser.mjs": 30,
     # Plus the C2 G9 both-entrances Bible-reconstruction claim check, and the
     # three C2 G14 / G9 follow-up checks on 1962 Pentecost (2026-10-19).
-    "propers_reader_integration_browser.mjs": 66,
+    "propers_reader_integration_browser.mjs": 69,
 }
 
 # Review-only prototype harnesses serve the tracked tree directly rather than
@@ -79,6 +80,7 @@ PROTOTYPE_HARNESSES = frozenset({
 })
 SOURCE_SERVED_HARNESSES = frozenset({
     "day_reader_compare_browser.mjs",
+    "day_reader_read_payload_browser.mjs",
     "day_reader_study_browser.mjs",
     "liturgy_reader_preferences_browser.mjs",
     "pentecost_witness_chooser_browser.mjs",

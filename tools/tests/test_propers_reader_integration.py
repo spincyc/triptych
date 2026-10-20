@@ -59,6 +59,7 @@ class PropersReaderIntegrationTests(unittest.TestCase):
             "reader-instrument.css", "reader-comparison.js", "reader-compare-view.js",
             "reader-compare-view.css", "propers-compare.js", "proper-search-controller.js",
             "reader-study-view.js", "reader-study-view.css", "propers-study.js",
+            "reader-proper-payload.js", "propers-read-payload.js",
         ):
             self.assertIn(asset, html)
 

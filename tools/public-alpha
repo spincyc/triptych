@@ -75,7 +75,7 @@ EXAMPLES = {
                 "  \"notice\": \"PREPARATION ONLY — NOT AN APPROVAL OR AUTHORIZATION. These hashes report current files and do not... [+281 chars]",
                 "  \"pdfs\": [",
                 "    {",
-                "... 90488 more lines",
+                "... 92468 more lines",
             ),
             "prepare prints a candidate hash inventory only; it records no approval and changes no release file",
         ),
@@ -1774,6 +1774,159 @@ def validate_proper_search_payload(payload: object, label: str, calendar: str) -
                 fail(here, "coverage counts do not reconcile")
 
 
+def validate_propers_read_payload_sources(data_root: Path) -> None:
+    """Require the 1962 Read split to be an exact projection of its public source.
+
+    The per-file rights gate runs for every copied JSON file in the caller.
+    Here the index is the only authority for split paths, the monolith binds
+    every field of the projection, and its bytes bind the generation token.
+    """
+    proper_root = data_root / "structure/propers"
+    index_path = proper_root / "index.json"
+    catalog_root = proper_root / "catalog"
+    mass_root = proper_root / "mass"
+    catalog_relative = "structure/propers/catalog/roman-1962.json"
+    mass_prefix = "structure/propers/mass/roman-1962/"
+
+    def fail(reason: str) -> None:
+        raise ReleaseError(f"1962 Proper Read payload: {reason}")
+
+    # A skipped symlink must never make a referenced or orphaned source vanish
+    # from the copy map. No other calendar currently has a split Read payload.
+    for ancestor in (data_root, data_root / "structure", proper_root):
+        if ancestor.is_symlink():
+            fail(f"symlink in source path {ancestor.relative_to(data_root)}")
+    split_paths = set()
+    for split_root in (catalog_root, mass_root):
+        if split_root.is_symlink():
+            fail(f"symlink in split source {split_root.relative_to(data_root)}")
+        if not split_root.exists():
+            continue
+        for path in split_root.rglob("*"):
+            if path.is_symlink():
+                fail(f"symlink in split source {path.relative_to(data_root)}")
+            if path.is_file():
+                split_paths.add(path.relative_to(data_root).as_posix())
+
+    if not index_path.exists():
+        if split_paths:
+            fail("orphan files exist without a Proper index")
+        return
+    if index_path.is_symlink() or not index_path.is_file():
+        fail("index must be a regular JSON file")
+
+    def read(path: Path) -> tuple[object, bytes]:
+        if path.is_symlink() or not path.is_file():
+            fail(f"missing or unsafe file {path.relative_to(data_root)}")
+        try:
+            raw = path.read_bytes()
+            return json.loads(raw.decode("utf-8")), raw
+        except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+            fail(f"invalid JSON at {path.relative_to(data_root)}: {exc}")
+
+    index, _ = read(index_path)
+    if (not isinstance(index, dict) or set(index) != {"default", "missals"}
+            or not isinstance(index["missals"], list)):
+        fail("index must contain only default and missals")
+    if any(not isinstance(row, dict) for row in index["missals"]):
+        fail("index contains a non-object missal")
+    rows = [row for row in index["missals"]
+            if isinstance(row, dict) and row.get("id") == "roman-1962"]
+    if len(rows) > 1:
+        fail("index duplicates roman-1962")
+    if any(isinstance(row, dict) and row.get("id") != "roman-1962"
+           and "read_payload" in row for row in index["missals"]):
+        fail("only roman-1962 may declare a split Read payload")
+    binding = rows[0].get("read_payload") if rows else None
+    if not rows or "read_payload" not in rows[0]:
+        if split_paths:
+            fail("orphan split files exist without a read_payload binding")
+        return
+    if set(rows[0]) != {"id", "edition", "edition_short", "read_payload"}:
+        fail("roman-1962 index row has unexpected fields")
+    if binding != {"catalog": catalog_relative, "mass_prefix": mass_prefix}:
+        fail("read_payload paths must name the fixed 1962 catalog and Mass prefix")
+
+    monolith_path = proper_root / "roman-1962.json"
+    monolith, monolith_raw = read(monolith_path)
+    if (not isinstance(monolith, dict)
+            or set(monolith) != {
+                "schema", "calendar", "edition", "edition_short", "numbering",
+                "translations", "languages", "coverage", "masses",
+            }
+            or monolith.get("calendar") != "roman-1962"
+            or monolith.get("schema") != "triptych-propers-structure/v1"
+            or not isinstance(monolith.get("masses"), list)):
+        fail("roman-1962 structure has an invalid schema or Mass list")
+    generation = hashlib.sha256(monolith_raw).hexdigest()
+    catalog, _ = read(data_root / catalog_relative)
+    if not isinstance(catalog, dict) or set(catalog) != {
+        "schema", "calendar", "generation", "structure", "masses",
+    }:
+        fail("catalog envelope has unexpected fields")
+    if (catalog["schema"] != "triptych-propers-read-catalog/v1"
+            or catalog["calendar"] != "roman-1962"
+            or catalog["generation"] != generation):
+        fail("catalog schema, calendar, or generation does not match its source")
+    if catalog["structure"] != {key: value for key, value in monolith.items()
+                               if key != "masses"}:
+        fail("catalog structure differs from the public source")
+
+    masses = monolith["masses"]
+    descriptors = catalog["masses"]
+    if not isinstance(descriptors, list) or len(descriptors) != len(masses):
+        fail("catalog Mass descriptors do not cover the public source")
+    expected_paths = {catalog_relative}
+    seen_keys = set()
+    for ordinal, (mass, descriptor) in enumerate(zip(masses, descriptors)):
+        common_mass_fields = {
+            "common_from", "common_sets", "coverage", "date", "key", "kind",
+            "name", "propers", "registry", "season", "takes_from", "text_status",
+        }
+        optional_mass_fields = {"forms", "ordinary_appointments", "ordinary_frame"}
+        if (not isinstance(mass, dict)
+                or not common_mass_fields <= set(mass)
+                or not set(mass) <= common_mass_fields | optional_mass_fields):
+            fail(f"source Mass {ordinal} has unbound fields")
+        key = mass.get("key")
+        if (not isinstance(key, str)
+                or re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", key) is None
+                or key in seen_keys):
+            fail(f"source Mass {ordinal} has an unsafe or duplicate key")
+        seen_keys.add(key)
+        forms = mass.get("forms") or []
+        if not isinstance(forms, list) or any(not isinstance(form, dict) for form in forms):
+            fail(f"source Mass {key} has invalid forms")
+        expected_descriptor = {
+            "key": key,
+            "name": mass.get("name"),
+            "kind": mass.get("kind"),
+            "season": mass.get("season"),
+            "date": mass.get("date"),
+            "coverage": mass.get("coverage"),
+            "forms": [{"id": form.get("id"), "name": form.get("name"),
+                       "ordinal": form.get("ordinal")} for form in forms],
+        }
+        if descriptor != expected_descriptor:
+            fail(f"catalog descriptor {ordinal} differs from public Mass {key}")
+        relative = f"{mass_prefix}{key}.json"
+        expected_paths.add(relative)
+        envelope, _ = read(data_root / relative)
+        if not isinstance(envelope, dict) or set(envelope) != {
+            "schema", "calendar", "generation", "mass",
+        }:
+            fail(f"Mass {key} envelope has unexpected fields")
+        if (envelope["schema"] != "triptych-propers-read-mass/v1"
+                or envelope["calendar"] != "roman-1962"
+                or envelope["generation"] != generation
+                or envelope["mass"] != mass):
+            fail(f"Mass {key} envelope differs from its public source")
+    if split_paths != expected_paths:
+        fail(f"split files are missing or orphaned: missing "
+             f"{sorted(expected_paths - split_paths)!r}; extra "
+             f"{sorted(split_paths - expected_paths)!r}")
+
+
 def is_bound_web_data_source(path: Path) -> bool:
     """Whether this generated-data input belongs to the approval closure.
 
@@ -1896,6 +2049,7 @@ def _scan_web_data_files() -> dict[str, Path]:
         validate_liturgical_public_data(path)
         relative = path.relative_to(data_root).as_posix()
         files[(SITE_DATA_ROOT / relative).as_posix()] = path
+    validate_propers_read_payload_sources(data_root)
 
     offered = offered_bible_ids()
     for bible_id in offered:
