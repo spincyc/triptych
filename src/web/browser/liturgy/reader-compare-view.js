@@ -65,12 +65,18 @@
     const seen = new Set();
     const units = view.units.map(function (unit) {
       const slot = unit && unit.semanticSlot;
-      if (!SLOT_LABELS[slot] || seen.has(slot) ||
-          unit.relation !== 'functional-slot-only' ||
+      const coordinate = unit && unit.sourceCoordinate;
+      const sameSource = view.entrance === 'propers' && ['translation-witness', 'bible-edition'].includes(view.dimension) && unit.relation === 'same-source-event';
+      const identity = sameSource && coordinate ? coordinate.eventId : slot;
+      if ((sameSource ? !coordinate || !coordinate.eventId || !unit.label ||
+          coordinate.edition !== view.sides[0].result.resolved.edition ||
+          coordinate.formulary !== view.anchor.correspondingFormulary ||
+          coordinate.form !== (view.sides[0].result.resolved.form || 'main') :
+          !SLOT_LABELS[slot] || unit.relation !== 'functional-slot-only') || seen.has(identity) ||
           !Array.isArray(unit.sides) || unit.sides.length !== 2) {
         fail('units must be distinct mapped functional Proper slots');
       }
-      seen.add(slot);
+      seen.add(identity);
       const cells = unit.sides.map(function (cell, index) {
         if (!cell || cell.id !== ids[index] ||
             ['text-held', 'no-event-in-selected-formulary', 'text-unavailable',
@@ -78,11 +84,23 @@
             (cell.status === 'no-event-in-selected-formulary') !== (cell.event === null)) {
           fail('a unit cell has an inconsistent side, event, or status');
         }
-        return { id: cell.id, status: cell.status, event: cell.event };
+        if (sameSource && cell.event && (cell.event.id !== coordinate.eventId ||
+            !(cell.event.sourceHooks || []).some(function (hook) {
+              return hook.kind === 'proper-structure' && hook.id === coordinate.properStructureId;
+            }))) fail('same-source unit cell disagrees with its source coordinate');
+        if (view.dimension === 'bible-edition' && (!Array.isArray(cell.bibleCitations) ||
+            cell.bibleCitations.some(function (citation) {
+              return !citation || citation.reference !== null && typeof citation.reference !== 'string' ||
+                !['resolved', 'refused'].includes(citation.state) ||
+                (citation.state === 'resolved' ? citation.reason !== null :
+                  typeof citation.reason !== 'string' || !citation.reason);
+            }))) fail('Bible comparison needs precise per-citation resolution evidence');
+        return Object.assign(cell.bibleCitations ? { bibleCitations: cell.bibleCitations } : {},
+          { id: cell.id, status: cell.status, event: cell.event });
       });
       return {
-        slot: slot, label: SLOT_LABELS[slot],
-        location: 'compare/proper/' + slot, sides: cells
+        slot: slot, label: sameSource ? unit.label : SLOT_LABELS[slot],
+        location: sameSource ? 'compare/source/' + coordinate.eventId : 'compare/proper/' + slot, sides: cells
       };
     });
     return {
@@ -116,7 +134,9 @@
     const sides = input && input.sides;
     if (!Array.isArray(sides) || sides.length !== 2 || sides.some(function (side, index) {
       return !side || side.id !== projected.sideIds[index] || !side.structure ||
-        !side.mass || !side.bible || !(side.fragments instanceof Map);
+        !side.mass || !side.bible || !(side.fragments instanceof Map) ||
+        projected.dimension === 'bible-edition' && (side.bible.id !== input.view.sides[index].result.request.bible.id ||
+          (side.bible.numbering || null) !== input.view.sides[index].result.request.bible.numbering);
     })) fail('each side needs its matching structure, Mass, Bible, and fragments');
 
     const fragment = root.document.createDocumentFragment();
@@ -124,7 +144,11 @@
     const intro = T.el('section', 'compare-intro');
     intro.appendChild(T.el('h2', null, 'Compare corresponding Propers'));
     intro.appendChild(T.el('p', null,
-      'Pairs follow functional liturgical slots. A shared slot does not by itself establish identical wording or a historical change.'));
+      projected.dimension === 'bible-edition'
+        ? 'Pairs show the same source occurrences in two Bible editions. Each cited rendering keeps its own numbering and availability; exact Missal or Lectionary wording is not established.'
+        : projected.dimension === 'translation-witness'
+        ? 'Pairs show the same appointed unit from one source formulary. Translation differences do not establish a historical change.'
+        : 'Pairs follow functional liturgical slots. A shared slot does not by itself establish identical wording or a historical change.'));
     if (projected.entrance === 'day') {
       intro.appendChild(T.el('p', 'compare-anchor',
         'Fixed date: ' + projected.anchor.civilDate +
@@ -132,6 +156,19 @@
     } else {
       intro.appendChild(T.el('p', 'compare-anchor',
         'Date-independent formulary: ' + projected.anchor.correspondingFormulary));
+    }
+    if (projected.dimension === 'bible-edition') sides.forEach(function (side) {
+      intro.appendChild(T.el('p', 'compare-evidence',
+        'Bible: ' + side.bible.id + ' · ' + side.bible.edition + ' · ' +
+        T.numberingLabel(side.bible) + ' · Rights: ' + side.bible.rights));
+    });
+    if (['translation-witness', 'bible-edition'].includes(projected.dimension)) {
+      const formId = input.view.sides[0].result.resolved.form || 'main';
+      const form = (sides[0].mass.forms || []).find(function (one) { return one.id === formId; });
+      intro.appendChild(T.el('p', 'compare-anchor', 'Edition: ' + sides[0].structure.calendar +
+        ' · Form: ' + (form && form.name || formId) + ' · Bible: ' +
+        (sides[0].bible.name || sides[0].bible.label || sides[0].bible.id) +
+        ' · Orations: ' + input.view.sides[0].result.request.languages.orations));
     }
     fragment.appendChild(intro);
 
@@ -179,12 +216,26 @@
         column.dataset.compareSide = cell.id;
         column.dataset.compareStatus = cell.status;
         column.appendChild(T.el('h3', 'compare-side-title', side.label || side.id));
-        if (cell.status === 'text-held') {
+        if (projected.dimension === 'bible-edition') {
+          column.dataset.bibleEdition = side.bible.id;
+          column.appendChild(T.el('p', 'compare-evidence',
+            ((cell.bibleCitations || []).length ? 'Bible rendering · ' : 'Bible context (no citation in this unit) · ') + T.numberingLabel(side.bible) +
+            (side.bible.psalter ? ' · ' + side.bible.psalter + ' psalter' : '') +
+            ' · ' + T.languageName(side.bible.language) + ' · Rights: ' + side.bible.rights));
+          const refused = (cell.bibleCitations || []).filter(function (citation) { return citation.state === 'refused'; });
+          column.dataset.bibleCitations = !(cell.bibleCitations || []).length ? 'not-scriptural' : refused.length ? 'refused' : 'resolved';
+          if (refused.length) column.appendChild(T.el('p', 'compare-status',
+            'Some cited Bible text cannot be rendered in this edition; the precise reason is stated with the passage.'));
+        }
+        if (cell.status === 'text-held' || cell.status === 'text-unavailable' &&
+            (input.view.sides[index].result.request.textDisplay === 'latin-and-selected' ||
+              input.view.sides[index].result.request.scriptureCompanion)) {
           const proper = properFor(side, cell.event);
           const selected = cell.event.selected;
-          column.appendChild(T.renderProper(proper, side.bible, side.fragments, {
+          column.appendChild(T.renderProper(proper, side.bible, { fragments: side.fragments, companion: side.companion }, {
             numbering: side.structure.numbering || null,
             orations: input.view.sides[index].result.request.languages.orations,
+            textDisplay: input.view.sides[index].result.request.textDisplay,
             translationWitness: input.view.sides[index].result.request.languages.translationWitness || null,
             heading: 'h4', cycle: selected.cycle || null
           }));
@@ -196,6 +247,10 @@
           const facts = [
             cell.event.editionSlotLabel && 'Edition slot: ' + cell.event.editionSlotLabel,
             selected && selected.language && 'Language: ' + selected.language,
+            side.witness && 'Witness: ' + side.witness.id,
+            side.witness && 'Target relationship: ' + (side.witness.relationships || []).join(', '),
+            side.witness && 'Target collation: ' + (side.witness.collations || []).join(', '),
+            side.witness && 'Publication basis: ' + (side.witness.publication_bases || []).join(', '),
             selected && selected.reason && 'Availability reason: ' + selected.reason,
             selected && typeof selected.rights === 'string' && 'Rights: ' + selected.rights,
             (cell.event.sourceHooks || []).length && 'Source records: ' +

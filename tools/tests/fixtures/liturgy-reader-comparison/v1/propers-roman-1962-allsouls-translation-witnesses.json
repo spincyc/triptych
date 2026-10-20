@@ -1,0 +1,63 @@
+{
+  "schema": "triptych-liturgy-reader-comparison-fixture/v1",
+  "id": "propers-roman-1962-allsouls-translation-witnesses",
+  "basis": {
+    "kind": "tracked-production-data",
+    "paths": [
+      "src/web/data/structure/propers/roman-1962.json",
+      "src/sources/calendars/roman-1962/propers.yaml",
+      "src/sources/works/edward-caswall/lyra-catholica/editions/london-1849/artifacts/missal-sequences-en/artifact.toml",
+      "src/sources/works/hymns-ancient-and-modern-proprietors/hymns-ancient-and-modern/editions/london-complete-edition-1890/artifacts/dies-irae-irons-en/artifact.toml"
+    ],
+    "qualification": "Existing source records hold two English Sequence witnesses. Caswall is a historical antecedent; the Irons version as printed in Hymns Ancient and Modern has unresolved target relationship. Both target collations remain unresolved. Exact coordinates within this one held source revision establish the paired appointed unit, not cross-edition equivalence or a historical change."
+  },
+  "selection": {
+    "form": "first",
+    "bible": "douay-rheims",
+    "orations": "en"
+  },
+  "comparison": {
+    "dimension": "translation-witness",
+    "anchor": { "correspondingFormulary": "commemoratione-omnium-fidelium-defunctorum" },
+    "sides": [
+      {
+        "id": "edition.edward-caswall.lyra-catholica.london-1849",
+        "edition": { "id": "roman-1962" },
+        "formulary": { "id": "commemoratione-omnium-fidelium-defunctorum" },
+        "languages": {
+          "orations": "en",
+          "translationWitness": "edition.edward-caswall.lyra-catholica.london-1849"
+        }
+      },
+      {
+        "id": "edition.hymns-ancient-and-modern-proprietors.hymns-ancient-and-modern.london-complete-edition-1890",
+        "edition": { "id": "roman-1962" },
+        "formulary": { "id": "commemoratione-omnium-fidelium-defunctorum" },
+        "languages": {
+          "orations": "en",
+          "translationWitness": "edition.hymns-ancient-and-modern-proprietors.hymns-ancient-and-modern.london-complete-edition-1890"
+        }
+      }
+    ]
+  },
+  "expected": {
+    "calendar": null,
+    "unitCount": 11,
+    "relation": "same-source-event",
+    "sequence": {
+      "eventId": "proper/roman-1962/commemoratione-omnium-fidelium-defunctorum/006",
+      "ordinal": 6,
+      "semanticSlot": null,
+      "statuses": ["text-held", "text-held"],
+      "relationships": [["historical-antecedent"], ["unresolved"]],
+      "collations": [["unresolved"], ["unresolved"]],
+      "publicationBases": [["public-domain"], ["public-domain"]]
+    },
+    "partialPeer": {
+      "id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "sequenceStatuses": ["text-held", "text-unavailable"],
+      "collectStatuses": ["text-unavailable", "text-held"],
+      "unavailableReason": "absent-in-witness"
+    }
+  }
+}

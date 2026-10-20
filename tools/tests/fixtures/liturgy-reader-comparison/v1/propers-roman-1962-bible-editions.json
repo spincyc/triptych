@@ -1,0 +1,37 @@
+{
+  "schema": "triptych-liturgy-reader-comparison-fixture/v1",
+  "id": "propers-roman-1962-bible-editions",
+  "basis": {
+    "kind": "tracked-production-data",
+    "paths": [
+      "src/web/data/bibles.json",
+      "src/web/data/structure/propers/roman-1962.json",
+      "src/sources/bibles/douay-rheims/chapters/Ps/24.json",
+      "src/sources/bibles/king-james-version/chapters/Ps/25.json"
+    ],
+    "qualification": "One unchanged held source formulary supplies exact occurrence coordinates. Existing edition-specific loci select independent Bible fragments; these renderings establish neither exact Missal wording nor approved Lectionary wording. The actual Epiphany numbering refusal is retained without a fallback."
+  },
+  "positive": {
+    "hash": "#missal=roman-1962&type=seasonal&mass=advent-1&bible=douay-rheims&orations=la&mode=compare&compare=bible-edition&peer-bible=king-james-version",
+    "sourceEventId": "proper/roman-1962/advent-1/006",
+    "units": 10,
+    "bibles": [
+      {
+        "id": "douay-rheims",
+        "numbering": "vulgate"
+      },
+      {
+        "id": "king-james-version",
+        "numbering": "hebrew"
+      }
+    ]
+  },
+  "negative": {
+    "hash": "#missal=roman-1962&type=christological&mass=epiphania-domini&bible=douay-rheims&orations=la&mode=compare&compare=bible-edition&peer-bible=king-james-version",
+    "sourceEventId": "proper/roman-1962/epiphania-domini/007",
+    "reference": "Psalms 71:10-11",
+    "bible": "king-james-version",
+    "state": "refused",
+    "reason": "English Bibles divide Psalm 72 differently from the Hebrew numbering, and no verse-for-verse correspondence is recorded for it"
+  }
+}

@@ -49,7 +49,7 @@ class PropersReaderIntegrationTests(unittest.TestCase):
             "Continuous reading of the appointed texts.",
             "Continuous Ordinary with appointed propers in place.",
             "Expanded notes and apparatus.",
-            "Languages, cycles or reading alternatives for one formulary.",
+            "Translation witnesses, Bible editions, languages or readings for one formulary.",
         ):
             self.assertEqual(html.count(description), 1)
         self.assertNotIn("prototypes/reader-shell", html)
@@ -143,11 +143,16 @@ class PropersReaderIntegrationTests(unittest.TestCase):
 
     def test_explicit_propers_entrance_and_browse_sentinel_are_constructed(self) -> None:
         source = text(JS)
+        self.assertIn("const browseState = Adapters.browseState;", source)
+        self.assertIn("normalized = browseState(prepared, context)", source)
+        adapters = text(LITURGY / "reader-state-adapters.js")
+        start = adapters.index("  function browseState(prepared, context)")
+        projection = adapters[start:adapters.index("\n  function validationContext(", start)]
         for token in (
             "entrance: 'propers'", "civilDate: null",
             "browse: { kind: 'browse-entry' }", "requestedMode: requestedMode",
         ):
-            self.assertIn(token, source)
+            self.assertIn(token, projection)
         self.assertIn("!hasMass || !hasType", source)
         self.assertIn("No liturgical text is selected by list order", source)
         self.assertNotIn("state.masses[0].key", source)
@@ -261,7 +266,7 @@ class PropersReaderIntegrationTests(unittest.TestCase):
             ("Read", "Continuous reading of the appointed texts."),
             ("Missal", "Continuous Ordinary with appointed propers in place."),
             ("Study", "Expanded notes and apparatus."),
-            ("Compare", "Languages, cycles or reading alternatives for one formulary."),
+            ("Compare", "Translation witnesses, Bible editions, languages or readings for one formulary."),
         ):
             self.assertIn(f"<strong>{name}</strong><span>{description}</span>", source)
 

@@ -1455,21 +1455,53 @@
     }
   }
 
-  function renderElement(element, file) {
+  function renderPairedElement(element, file, language) {
+    const section = T.el('section', 'proper ordinary-element is-' + element.kind);
+    const heading = elementHeading(element);
+    if (heading) section.appendChild(heading);
+    const pair = T.el('div', 'text-pair');
+    for (const lang of ['la', language.lang]) {
+      const selected = window.LiturgyReaderStateAdapters.selectOrdinaryTranslation(element, file, lang, null);
+      const raw = selected.availability === 'held' && (element.translations || []).find(function (row) {
+        return row.lang === lang && (row.source_id || row.source || null) === selected.sourceId && row.text === selected.text;
+      });
+      const witness = raw && witnessNote(file, raw.source_id);
+      const side = T.textSide(lang, {
+        sourceId: selected.sourceId, rights: selected.rights,
+        relationship: raw && (raw.coverage_relationship || raw.relation),
+        collation: selected.collation, availability: selected.availability
+      });
+      const body = renderElement(element, file, { language: lang, held: raw || null,
+        selected: selected, suppressHeading: true, suppressIncipit: lang !== 'la' });
+      side.appendChild(body);
+      if (raw && witness) side.appendChild(T.el('p', 'composed-note',
+        'Source: ' + (witness.label || raw.source_id)));
+      pair.appendChild(side);
+    }
+    section.appendChild(pair);
+    return section;
+  }
+
+  function renderElement(element, file, options) {
     // The kind rides on the class, because how a missal sets an element is
     // decided by what kind of thing it is: a rubric in italic, a head across
     // the measure, a prayer in the reading face. Who says it is on the heading,
     // where the reader is looking when they want to know.
-    const section = T.el('section', 'proper ordinary-element is-' + element.kind);
+    const explicit = options || {};
+    const requested = chosenLanguage(file);
+    if (!options && state.textDisplay === 'latin-and-selected' && requested && requested.lang !== 'la') {
+      return renderPairedElement(element, file, requested);
+    }
+    const section = T.el('section', (options ? 'text-side-body is-' : 'proper ordinary-element is-') + element.kind);
 
-    const heading = elementHeading(element);
+    const heading = explicit.suppressHeading ? null : elementHeading(element);
     if (heading) section.appendChild(heading);
 
-    const language = chosenLanguage(file);
+    const language = explicit.language ? { lang: explicit.language } : chosenLanguage(file);
     const translations = element.translations || [];
-    const held = language
+    const held = options ? explicit.held : (language
       ? translations.find((one) => one.lang === language.lang) || null
-      : null;
+      : null);
     if (held) {
       // No label above the words. "Composed text — not scripture" is true of
       // every element of an Ordinary, so saying it 195 times said nothing 194
@@ -1513,7 +1545,7 @@
     // it is not already the heading: an element the artifact names by its own
     // incipit carries one string in both fields, and printing it twice says the
     // same thing twice under two settings.
-    if (!held && element.latin_incipit && element.latin_incipit !== element.name) {
+    if (!held && !explicit.suppressIncipit && element.latin_incipit && element.latin_incipit !== element.name) {
       const incipit = T.el('p', 'proper-incipit', element.latin_incipit);
       incipit.lang = 'la';
       section.appendChild(incipit);
@@ -1528,8 +1560,18 @@
     // nothing in any language at all; there the reader is looking at an incipit and is owed the entire
     // account of why, and everywhere else the count stands in the preamble
     // rather than under 195 elements that do have their words.
+    const choice = explicit.selected && explicit.selected.availability === 'choice-required';
+    if (choice) section.appendChild(T.el('p', 'composed-note unit-absence',
+      'Several ' + T.languageName(explicit.language) + ' Ordinary witnesses are held; no witness was selected.'));
+    if (options && !held && !choice) {
+      const note = T.notice('its ' + T.languageName(explicit.language) + '. ' +
+        absenceWord(file, explicit.selected.absenceKey));
+      note.setAttribute('data-text-absence', explicit.language + ':' + explicit.selected.reason);
+      section.appendChild(note);
+    }
     const anywhere = translations.length > 0;
     for (const one of languagesOf(file)) {
+      if (options) continue;
       if (translations.some((row) => row.lang === one.lang)) continue;
       if (anywhere && (!language || one.lang !== language.lang)) continue;
       section.appendChild(T.notice(
@@ -1738,6 +1780,9 @@
     const held = options || {};
     if (Object.prototype.hasOwnProperty.call(held, 'ordinaryLang')) {
       state.ordinaryLang = held.ordinaryLang;
+    }
+    if (Object.prototype.hasOwnProperty.call(held, 'textDisplay')) {
+      state.textDisplay = held.textDisplay;
     }
     if (Object.prototype.hasOwnProperty.call(held, 'variants')) {
       state.variants = Object.assign({}, held.variants || {});

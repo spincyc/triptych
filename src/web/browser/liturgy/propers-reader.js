@@ -474,54 +474,7 @@
     });
   }
 
-  function browseState(prepared, context) {
-    const requestedMode = Object.prototype.hasOwnProperty.call(prepared.parsed.recognized, 'mode')
-      ? prepared.parsed.recognized.mode : 'read';
-    const ordinaryLanguage = Object.prototype.hasOwnProperty.call(
-      prepared.parsed.recognized, 'ordinary-lang'
-    ) ? prepared.parsed.recognized['ordinary-lang'] : (requestedMode === 'missal' ? 'en' : null);
-    const ordinaryLanguages = context.missals[prepared.missal] &&
-      context.missals[prepared.missal].ordinaryLanguages || [];
-    if (ordinaryLanguage && ordinaryLanguages.indexOf(ordinaryLanguage) < 0) {
-      return { ok: false, errors: [{
-        code: 'invalid-explicit-value', path: 'ordinary-lang',
-        message: 'the selected edition does not hold this Ordinary language'
-      }] };
-    }
-    const variants = (prepared.parsed.variantKeys || []).filter(function (key) {
-      return prepared.parsed.present.indexOf(key) >= 0;
-    });
-    if (variants.length) {
-      return { ok: false, errors: [{
-        code: 'incomplete-explicit-identity', path: variants[0],
-        message: 'an Ordinary option requires an exact formulary'
-      }] };
-    }
-    const state = {
-      schema: Contract.STATE_SCHEMA,
-      entrance: 'propers',
-      civilDate: null,
-      edition: { id: prepared.missal },
-      browse: { kind: 'browse-entry' },
-      bible: {
-        id: prepared.bible,
-        numbering: context.bibles[prepared.bible] && context.bibles[prepared.bible].numbering || null
-      },
-      languages: { orations: prepared.orations },
-      requestedMode: requestedMode,
-      options: { ordinary: requestedMode === 'missal', legitimate: {} },
-      coverage: [],
-      unresolvedChoices: [],
-      sourceHooks: []
-    };
-    if (ordinaryLanguage) state.languages.ordinary = ordinaryLanguage;
-    if (Object.prototype.hasOwnProperty.call(prepared.parsed.recognized, 'location')) {
-      state.semanticLocation = { eventId: prepared.parsed.recognized.location };
-    }
-    return { ok: Contract.validateReaderState(state).ok, state: state, legacy: {
-      sources: {}, unknown: (prepared.parsed.unknown || []).slice(), inert: [], variants: {}
-    }, errors: Contract.validateReaderState(state).errors };
-  }
+  const browseState = Adapters.browseState;
 
   function normalizedState(prepared, context, errors) {
     const normalized = Contract.normalizeLegacy(prepared.parsed, {
@@ -906,7 +859,7 @@
   }
 
   async function renderResult(result, mass, bible, serial, location) {
-    const held = await T.fetchFragments(bible, T.citationsOf(mass));
+    const held = await T.fetchFragments(bible, T.citationsOf(mass), runtime.normalized.state, runtime.bibles);
     if (serial !== runtime.serial) return false;
     const fragment = document.createDocumentFragment();
     const contents = [];
@@ -919,7 +872,7 @@
     if (missalMode && ordinaryEvents) {
       ProperEvents.renderMissal({
         fragment: fragment, contents: contents, result: result, mass: mass, bible: bible,
-        fragments: held.fragments, state: state
+        fragments: held, state: state
       });
     } else {
       if (missalMode) {
@@ -942,7 +895,7 @@
     (result.events || []).forEach(function (event, eventOrdinal) {
       if (event.kind === 'proper-choice') {
         const choice = renderProperChoiceEvent(
-          event, mass, bible, held.fragments, runtime.normalized.state
+          event, mass, bible, held, runtime.normalized.state
         );
         choice.id = 'reader-event-' + String(eventOrdinal + 1).padStart(3, '0');
         choice.dataset.readerLocusMajor = 'Source alternatives';
@@ -959,7 +912,7 @@
       const index = sourceIndex(event);
       const proper = index === null ? null : (mass.propers || [])[index];
       if (!proper || T.isPlaceholder(proper)) return;
-      const section = renderEvent(event, proper, bible, held.fragments, runtime.normalized.state);
+      const section = renderEvent(event, proper, bible, held, runtime.normalized.state);
       section.id = 'reader-event-' + String(index + 1).padStart(3, '0');
       section.dataset.readerLocusMajor = 'Propers';
       if (typedUnplacedSeat(event)) {
@@ -1088,7 +1041,10 @@
       const languages = Object.assign({}, current.languages, { orations: language });
       delete languages.translationWitness;
       try {
-        const probe = Adapters.adaptPropers({ request: Object.assign({}, current, { languages: languages }), structure: structure, ordinary: runtime.ordinary });
+        const request = Object.assign({}, current, { languages: languages });
+        delete request.comparison;
+        if (request.requestedMode === 'compare') request.requestedMode = 'read';
+        const probe = Adapters.adaptPropers({ request: request, structure: structure, ordinary: runtime.ordinary });
         report = T.summarizeCoverage(T.selectedCoverageUnits(probe, structure));
       } catch (_error) {
         return { deterministic: null, choices: [], held: [] };

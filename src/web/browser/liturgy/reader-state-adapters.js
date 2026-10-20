@@ -2434,10 +2434,75 @@
     };
   }
 
+  function browseState(prepared, context) {
+    const requestedMode = Object.prototype.hasOwnProperty.call(prepared.parsed.recognized, 'mode')
+      ? prepared.parsed.recognized.mode : 'read';
+    const ordinaryLanguage = Object.prototype.hasOwnProperty.call(
+      prepared.parsed.recognized, 'ordinary-lang'
+    ) ? prepared.parsed.recognized['ordinary-lang'] : (requestedMode === 'missal' ? 'en' : null);
+    const ordinaryLanguages = context.missals[prepared.missal] &&
+      context.missals[prepared.missal].ordinaryLanguages || [];
+    if (ordinaryLanguage && ordinaryLanguages.indexOf(ordinaryLanguage) < 0) {
+      return { ok: false, errors: [{
+        code: 'invalid-explicit-value', path: 'ordinary-lang',
+        message: 'the selected edition does not hold this Ordinary language'
+      }] };
+    }
+    const variants = (prepared.parsed.variantKeys || []).filter(function (key) {
+      return prepared.parsed.present.indexOf(key) >= 0;
+    });
+    if (variants.length) {
+      return { ok: false, errors: [{
+        code: 'incomplete-explicit-identity', path: variants[0],
+        message: 'an Ordinary option requires an exact formulary'
+      }] };
+    }
+    const state = {
+      schema: Contract.STATE_SCHEMA,
+      entrance: 'propers',
+      civilDate: null,
+      edition: { id: prepared.missal },
+      browse: { kind: 'browse-entry' },
+      bible: {
+        id: prepared.bible,
+        numbering: context.bibles[prepared.bible] && context.bibles[prepared.bible].numbering || null
+      },
+      languages: { orations: prepared.orations },
+      requestedMode: requestedMode,
+      options: { ordinary: requestedMode === 'missal', legitimate: {} },
+      coverage: [],
+      unresolvedChoices: [],
+      sourceHooks: []
+    };
+    if (Object.prototype.hasOwnProperty.call(prepared.parsed.recognized, 'text-display')) {
+      state.textDisplay = prepared.parsed.recognized['text-display'];
+    }
+    if (Object.prototype.hasOwnProperty.call(prepared.parsed.recognized, 'scripture-companion')) {
+      const id = prepared.parsed.recognized['scripture-companion'];
+      const bible = context.bibles[id];
+      if (!bible || bible.language !== 'la') return { ok: false, errors: [{
+        code: 'invalid-explicit-value', path: 'scripture-companion',
+        message: 'the companion must name a held Latin Bible edition'
+      }] };
+      state.scriptureCompanion = { id: id, numbering: bible.numbering || null };
+    }
+    if ((prepared.parsed.duplicates || []).some(function (row) {
+      return row.key === 'scripture-companion';
+    })) return { ok: false, errors: [{ code: 'duplicate-explicit-key',
+      path: 'scripture-companion', message: 'a semantic URL key may not occur more than once' }] };
+    if (ordinaryLanguage) state.languages.ordinary = ordinaryLanguage;
+    if (Object.prototype.hasOwnProperty.call(prepared.parsed.recognized, 'location')) {
+      state.semanticLocation = { eventId: prepared.parsed.recognized.location };
+    }
+    return { ok: Contract.validateReaderState(state).ok, state: state, legacy: {
+      sources: {}, unknown: (prepared.parsed.unknown || []).slice(), inert: [], variants: {}
+    }, errors: Contract.validateReaderState(state).errors };
+  }
+
   function validationContext(input) {
     const context = { missals: {}, bibles: {} };
     for (const bible of (input.bibles && input.bibles.bibles) || []) {
-      context.bibles[bible.id] = { numbering: bible.numbering || null };
+      context.bibles[bible.id] = { numbering: bible.numbering || null, language: bible.language || null };
     }
     const dayCalendars = new Set(
       ((input.rubricsIndex && input.rubricsIndex.calendars) || []).map(function (one) {
@@ -2506,6 +2571,8 @@
 
   return Object.freeze({
     properEventId: properEventId,
+    browseState: browseState,
+    selectOrdinaryTranslation: ordinaryTranslation,
     validationContext: validationContext,
     adaptDay: adaptDay,
     adaptPropers: adaptPropers,

@@ -1520,7 +1520,7 @@
     });
     if (!mass) throw new Error('the validated resolved formulary is absent from production Proper data');
     const bible = bibleRow(state.bible.id);
-    const fragments = await T.fetchFragments(bible, T.citationsOf(mass));
+    const fragments = await T.fetchFragments(bible, T.citationsOf(mass), state, runtime.bibles);
     if (!isCurrent()) return false;
     const documentFragment = document.createDocumentFragment();
     const contents = [];
@@ -1535,19 +1535,19 @@
       if (hasOrdinaryFrame) {
         renderMissalDocument(
           documentFragment, contents, result, mass, structure, bible,
-          fragments.fragments, state, ordinary, prefix, branchLocus
+          fragments, state, ordinary, prefix, branchLocus
         );
       } else {
         renderUnframedMissalDocument(
           documentFragment, contents, result, mass, structure, bible,
-          fragments.fragments, state, prefix, branchLocus
+          fragments, state, prefix, branchLocus
         );
       }
     } else {
       (result.events || []).forEach(function (event, eventOrdinal) {
         if (event.kind === 'proper-choice') {
           const choice = renderProperChoiceEvent(
-            event, mass, structure, bible, fragments.fragments, state,
+            event, mass, structure, bible, fragments, state,
             'h2', 'h4', prefix, result, eventOrdinal, false
           );
           exposeReaderLocus(choice,
@@ -1567,7 +1567,7 @@
         const proper = index === null ? null : (mass.propers || [])[index];
         if (!proper || T.isPlaceholder(proper)) return;
         const section = renderProperEvent(event, proper, index, structure, bible,
-          fragments.fragments, state, 'h2', prefix, result);
+          fragments, state, 'h2', prefix, result);
         const unplaced = typedUnplacedSeat(event);
         const region = unplaced && event.seat.region === 'before-frame'
           ? 'Before Ordinary frame' : (unplaced ? 'After Ordinary frame' : 'Propers');
@@ -1797,6 +1797,7 @@
     const section = T.renderProper(proper, bible, fragments, {
       numbering: structure.numbering || null,
       orations: state.languages.orations,
+      textDisplay: state.textDisplay,
       translationWitness: state.languages.translationWitness || null,
       heading: heading,
       cycle: event.selected && event.selected.cycle || null
@@ -2079,7 +2080,7 @@
     window.dayReaderDebug.ordinaryPresentations += 1;
 
     OrdinaryRenderer.configure({
-      ordinaryLang: state.languages.ordinary || null,
+      ordinaryLang: state.languages.ordinary || null, textDisplay: state.textDisplay || 'selected',
       variants: state.options && state.options.legitimate || {},
       why: false
     });

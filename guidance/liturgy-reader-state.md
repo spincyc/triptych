@@ -161,7 +161,8 @@ Propers Compare fixes corresponding edition-qualified formularies and rejects
 a civil-date anchor.
 
 The integrated Propers comparison dimensions are `oration-language`,
-`lectionary-cycle`, and `reading-alternative`. A cycle comparison names both
+`lectionary-cycle`, `reading-alternative`, `translation-witness`, and
+`bible-edition`. A cycle comparison names both
 held cycles explicitly. A reading-alternative comparison uses full source
 option identities from one held choice group, such as
 `proper-choice/postconciliar/presentation-lord/main/gospel/longer`. It selects
@@ -169,7 +170,41 @@ that option without discarding the other source evidence or resolving another
 choice group. Each comparison holds the other semantic selections fixed;
 equal, missing, unknown, cross-group, or mixed-dimension peers refuse. Bible
 expansions retain their reconstruction qualifications and establish no civil
-date applicability. Day's recension comparison remains independently resolved
+date applicability. A translation-witness comparison explicitly names the primary
+`translation-witness` and `peer-witness` in the same selected language; aliases
+of one canonical witness cannot form two sides. Partial witnesses are the union
+of held selected-unit coverage, and each missing witness body stays unavailable.
+This axis uses `same-source-event` correspondence only within one identical held
+structure object and edition/formulary/form revision. Every event must match its
+unique `proper-structure` hook and exact source owner; duplicate, mismatched or
+missing coordinates refuse comparison. Units carry a `sourceCoordinate` and
+`compare/source/<Proper-event-id>` location, including units without a proved
+cross-edition semantic slot. Display labels and input array order never define
+correspondence. Other comparison axes retain their mapped functional-slot guard;
+this source-coordinate rule grants no cross-edition equivalence.
+
+A Bible-edition comparison explicitly names both `bible` and `peer-bible` from
+the currently publishable Bible manifest. The peers must be distinct and keep
+the manifest's own numbering. Edition, source formulary/form, Proper language,
+translation witness, cycle, reading alternative, legitimate options, and
+`textDisplay` stay fixed. Each side fetches and renders its own fragments through
+the existing citation/locus conversion. It uses the same checked source-coordinate
+rule as witness comparison; a label, an array position, or a cross-edition slot
+never substitutes for source membership.
+
+Each Bible cell carries `bibleCitations` evidence: citation reference, coordinate
+resolution `resolved` or `refused`, and the precise refusal reason. Resolved
+coordinates do not guarantee complete fragments: the existing renderer retains
+chapter-load failures and missing-verse notices. This evidence describes the selected
+Bible independently of the adapter's structural Proper availability. A mixed
+Proper may retain held composed text while a cited Bible passage refuses; a
+held passage in the other Bible cannot supply a replacement. Empty citation
+lists mean that the source unit is not scriptural. Existing Bible reconstruction
+and numbering qualifications remain visible, including in print. These renderings
+establish neither exact Missal wording nor approved Lectionary wording, date
+applicability, a new source correspondence, or new publication rights.
+
+Day's recension comparison remains independently resolved
 for its explicit date and territorial context.
 
 ## Legacy URL compatibility
@@ -178,8 +213,8 @@ The v1 inventory is:
 
 | Route | Hash keys | Query keys |
 | --- | --- | --- |
-| Day | `date`, `missal`, `bible`, `orations`, `why`, `ordinary`, `ordinary-lang`, `rubrics`, `mass`, `form`, `translation-witness`, `mode`, `location`, `compare`, `peer-missal`, `territory`, and manifest-declared Ordinary variant keys | `data` |
-| Propers | `missal`, `type`, `mass`, `bible`, `orations`, `form`, `cycle`, `alternative`, `translation-witness`, `mode`, `location`, `ordinary-lang`, `compare`, `peer-orations`, `peer-cycle`, `peer-alternative` | `data`, `missals` |
+| Day | `date`, `missal`, `bible`, `orations`, `why`, `ordinary`, `ordinary-lang`, `rubrics`, `mass`, `form`, `translation-witness`, `mode`, `location`, `text-display`, `scripture-companion`, `compare`, `peer-missal`, `territory`, and manifest-declared Ordinary variant keys | `data` |
+| Propers | `missal`, `type`, `mass`, `bible`, `orations`, `form`, `cycle`, `alternative`, `translation-witness`, `mode`, `location`, `text-display`, `scripture-companion`, `ordinary-lang`, `compare`, `peer-orations`, `peer-cycle`, `peer-alternative`, `peer-witness`, `peer-bible` | `data`, `missals` |
 
 The contract preserves current spelling and canonical route order. Unknown
 legacy pairs remain in a compatibility envelope and round-trip with both key
@@ -247,3 +282,47 @@ Propers routes have since integrated the contract, adapters, visible reader
 modes, and semantic-location restoration. Comparison UI remains outside this
 contract; calendar, source, and recension changes still require their own
 evidence and review.
+
+
+## Latin accompaniment presentation
+
+The optional v1 `textDisplay` field and additive `text-display` hash key accept
+`selected` and `latin-and-selected`. Absence preserves the existing selected
+language presentation and legacy canonical URL. An explicitly requested value
+round-trips in both entrances; invalid or duplicated values fail closed. It is
+not a remembered preference or a fifth mode. Comparison holds it fixed.
+
+“Show Latin alongside translated prayers” pairs held composed and Missal bodies
+within their existing Proper, selected cycle, or Ordinary element. A selected
+Latin component appears once. Each side keeps its witness, rights, relationship,
+checked internal structure and precise absence. The normalized primary selection
+and event/Contents order are unchanged. Scripture remains the selected Bible
+edition unless the separate companion selection below is requested. Source and
+translation stanza/turn arrays are never zipped; source-owned alignment below an
+element needs its own evidence.
+
+
+## Latin Bible companion presentation
+
+The optional v1 `scriptureCompanion: {id, numbering}` descriptor and additive
+`scripture-companion=<Bible ID>` hash key name one held Latin Bible alongside
+the primary selected Bible. Absence preserves the existing state, canonical URL,
+requests and liturgical DOM. Explicit empty, unknown, non-Latin or duplicate URL selections
+fail closed. This is separate from prayer `textDisplay`, is not remembered, and
+stays fixed across every Compare axis. The primary Bible selection, event,
+source hooks, coverage, semantic location and Contents order remain unchanged.
+
+“Show Latin alongside the selected Bible” explicitly selects
+`scripture-companion=clementine-vulgate`, the current publishable Latin edition.
+Each citation pairs that edition with the selected Bible, identifying language,
+edition witness, numbering, psalter and public rights state. A primary selection
+of the same edition appears once. Each side independently reads the generated
+`loci`, `edition_loci` and `refused` through the existing loader and renderer.
+A refused or missing side does not suppress or borrow the other edition's text.
+Bible reconstruction and exact-Missal-wording qualifications remain visible.
+
+The citation is the common semantic fragment. Its loci, verses and paragraphs
+retain their edition's order; there is no array zipping or runtime numbering
+conversion. Finer verse, stanza or turn correspondence needs an exact
+source-owned mapping or an explicit inexact/refused outcome. This presentation
+does not claim such alignment or repair gaps in the held text.
