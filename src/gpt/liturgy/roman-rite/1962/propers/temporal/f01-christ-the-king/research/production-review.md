@@ -319,3 +319,66 @@ The same stage directory retains build, component, preflight and web-probe
 logs, extracted text, source-transfer and word-count evidence, and replaceable
 rasters. No new upstream defect was identified; shared inventory refresh,
 integration checks and final publication remain with the parent driver.
+
+# Concise study reentry: Secret addressee
+
+`derive-synthesis` iteration 1 completed on 20 October 2026 for `proper-study`
+v13, run `095fe00a9fe8cfee`. The concise inventory, thematic movement and
+comparative commentary now distinguish the Father addressed by the Secret from
+the sacrificial Son who gives unity and peace. The change derives from the
+accepted expansive study's corrected detailed commentary and both interpretive
+lanes, and the corrected research summaries. All remaining concise references
+to the Secret were checked for consistency. No new evidence-dependent claim or
+upstream revision was introduced.
+
+The two interpretations, their comparative reasoning, four senses, source
+qualifications, generated chronology and six synthesis-only components remain
+intact. The existing manifest accurately declares their modes and presentation
+roles; the entrypoint retains literal unconditional imports of the shared
+formats and its components. The shared generation timestamp is
+`2026-10-20T13:46:08Z`, with this contribution appended to the existing record.
+
+The settled proof has **10 physical pages**, **406,474 bytes**, and **4,149
+substantive words** by the previous concise proof's Pandoc method. The component
+counts are 173 for the inventory, 74 for the overview, 958 for themes, and 2,944
+for developed commentary. Chronology, footnotes, terminal apparatus and the
+generation colophon are excluded as before.
+
+The specified synthesis `make doc` build, synthesis artifact component check,
+and complete synthesis content preflight passed. The settled log has no
+warnings, undefined references or overfull/underfull boxes. All listed Latin
+Modern fonts are embedded; title, subject and revision metadata are correct.
+The auxiliary evidence retains inventory and all four overview rows on physical
+page 1, chronology on page 2, themes on pages 3–4, and commentary beginning on
+page 5. The nine generated orientation rows and their dates, relation labels,
+alternatives and unresolved states are unchanged.
+
+All ten pages were visually inspected in the regenerated contact sheet, with
+full-size inspection of pages 1, 2, 4, 7 and 10. The three corrected passages
+are readable without clipping or overlap. The page-2 lookup still pairs John
+18:33–37's Jerusalem interrogation with its unresolved event date, separately
+from the Gospel's composition alternatives; Colossians distinguishes the
+traditional Roman prison from Colossae; and the Introit's Apocalypse passages
+remain distinct from its Psalm. The final page keeps scope, references,
+timestamp and readable rights colophon together. Extracted text confirms the
+Father/Son distinction at all three revised locations.
+
+Built PDF:
+`build/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-synthesis.pdf`.
+The byte-identical retained proof and associated evidence are under
+`build/tpt-runs/095fe00a9fe8cfee/artifacts/derive-synthesis-0001/`:
+
+| File | SHA-256 |
+| --- | --- |
+| `author-proof.pdf` | `8f15120552c8c72f5ade7fb43eb310cc94978580a86021ea147f55c2a384f026` |
+| `author-proof.aux` | `fc869f5656388d79f742546941ab414e9338201a0da760450138901cfa54054a` |
+| `author-proof.log` | `988803800ddccc120a2f33c2f30b99003a1c6607ed7d289bb0bcdd798589ec2f` |
+
+That directory retains build, component and preflight logs, extracted text,
+font and metadata reports, hashes and word-count evidence. Raster evidence
+occupies its replaceable `rasters/` child. This is author verification, not cold
+concise acceptance or final three-document visual review. There were no
+forwarded findings, and no new upstream defect was identified. No PDF or web
+edition was installed. The parent driver owns global source-inventory checks,
+integration, commits and publication; the later homily derivation and final
+common build must use the resulting shared metadata.
