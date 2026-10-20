@@ -472,3 +472,15 @@ accepted by the engine; the same program preflight passed as the next native
 gate. The eight-file reconciliation was committed and feature-pushed as
 `6532cd1ee`. A fresh xhigh cold research reviewer has the sealed packet;
 research review, authoring and publication remain pending.
+
+The first cold research review independently checked the full-text collation
+against the 1962 Missal, Lasance and AAS images, the nine generated chronology
+rows, and the principal Augustinian, Hieronymian, Chrysostomic and Bellarminian
+interpretive loci. It returned `CHANGES_REQUIRED` on one research-owned finding,
+`RES-HIS-001`: the planned historical appendix lacked a modern critical
+authorship and composition horizon for John and Colossians. The result was
+accepted by run `095fe00a9fe8cfee`, which emitted fresh high-effort
+`research-0001`; no study-authoring stage has started. The repair is limited to
+independently checked, source-bound modern qualifications alongside the
+traditional chronology, without replacing the generated dates by an
+unsupported publication-local choice.
