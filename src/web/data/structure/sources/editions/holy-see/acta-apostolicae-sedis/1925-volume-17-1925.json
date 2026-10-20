@@ -1,0 +1,47 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "official-gazette-fascicle-scan-pdf",
+   "byte_size": 30625498,
+   "edition_owned": true,
+   "id": "artifact.holy-see.acta-apostolicae-sedis.volume-17-1925.ia-microfilm-issue-15-pdf-9cb9e63b",
+   "media_type": "application/pdf",
+   "notes": "Extent: fascicle n. 15 only, opening with its cover (PDF p. 1: 'Annus XVII - Vol. XVII, 28 Decembris 1925, Num. 15') and its index (PDF p. 2); printed p. 593, the fascicle's first page of Acta, with the opening of Quas primas, is PDF p. 5 (located on the text layer, not read). Artifact PDF page = printed page minus 588 over the stretch read here: PDF p. 78 = printed p. 666 (the AD MISSAM heading, Introit, Oratio and Epistle to inhabitare), PDF p. 79 = printed p. 667 (Epistle end through Secreta), PDF p. 80 = printed p. 668 (Praefatio, Communio, Postcommunio, the Martyrology elogium, and the Urbis et Orbis decree dated 12 December 1925); PDF p. 81 opens printed p. 669, Diarium Romanae Curiae. The mapping was read off the printed folios of those four pages only and is not asserted elsewhere. Wording was read on images rendered from these bytes at 200 and 400 dpi; the OCR text layer was used only to find the pages and is a finding aid, not a reading.",
+   "page_count": 141,
+   "retrieved": "2026-10-19",
+   "rights": "public-domain",
+   "rights_basis": "The underlying fascicle is Acta Apostolicae Sedis 17, n. 15, dated 28 December 1925 and printed at the Vatican Polyglot Press: a work first published outside the United States before 1931, which is in the United States public domain on the line this repository records and dates at guidance/missals.md section 5 (Cornell's chart, current as of 1 January 2026: first published abroad 'Before 1931 | None | In the public domain'). That line goes stale every January and is not restated here as a standing rule. The bytes are a faithful mechanical microfilm reproduction made by the Internet Archive, in which no new copyright subsists (the Bridgeman reasoning recorded at src/sources/inventories/lasance-new-roman-missal-rights-v1.toml and src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml). Nothing rests on the item's availability, on the Internet Archive's metadata, or on any rights representation by the host; the item carries no rights field. The payload is not retained: storage is remote, so this record licenses no redistribution of the scan itself, only the identification of the exact bytes read.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/sim_acta-apostolicae-sedis_1925-12-28_17_15/sim_acta-apostolicae-sedis_1925-12-28_17_15.pdf",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1925",
+  "editors": [
+   "Holy See"
+  ],
+  "id": "edition.holy-see.acta-apostolicae-sedis.volume-17-1925",
+  "jurisdiction": null,
+  "language": "mul",
+  "publication": "Acta Apostolicae Sedis: Commentarium Officiale, annus XVII, volume XVII (1925), issued in numbered fascicles; fascicle n. 15 is dated 28 Decembris 1925. Typis Polyglottis Vaticanis.",
+  "title": "Acta Apostolicae Sedis, volume 17",
+  "translators": [],
+  "year": 1925
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "AAS",
+   "Acta Apostolicae Sedis: Commentarium Officiale"
+  ],
+  "author": "Holy See",
+  "category": "official-gazette",
+  "description": "The official gazette of the Holy See. Annual-volume editions and exact delivery artifacts remain container identities distinct from the constitutions, decrees, notifications, rescripts, and other acts printed within them.",
+  "id": "work.holy-see.acta-apostolicae-sedis",
+  "languages": [],
+  "title": "Acta Apostolicae Sedis"
+ }
+}

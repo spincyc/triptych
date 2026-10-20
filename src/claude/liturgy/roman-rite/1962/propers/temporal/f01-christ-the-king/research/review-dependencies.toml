@@ -1,0 +1,87 @@
+# Controlling external evidence this research reads outside its leaf and that
+# registered source bindings do not already seal (research/source-bindings.toml
+# seals every bound record and its ancestry, including the AAS 1925 edition and
+# artifact registered by this stage). Declared on 2026-10-19 in the research
+# stage of run 7397c12187517ff2 and extended in its iterations 1 and 2. Every
+# path is a tracked record under src/ in the roman-1962 family or the
+# provider-neutral source library.
+#
+# Rights, ledgers, standing and joins
+# - missale-romanum-1962-facsimile-rights-v1.toml: the repository holding (17
+#   U.S.C. 103(b) plus a public-domain witness) on which the Latin's publication
+#   basis rests, with the 1925 first publication as the witness
+#   (propers/verified.md, The publication basis of the Latin; research/scope.md
+#   section 9).
+# - lasance-new-roman-missal-rights-v1.toml: the nonrenewal record on which the
+#   Lasance English of the orations and the Preface rests, and its excluded
+#   ranges, which the cited pages avoid.
+# - roman-1962-proper-latin-provenance-v1.toml and
+#   roman-1962-proper-translations-v1.toml: same-family ledgers whose absence of
+#   rows for this formulary research/scope.md section 10 reports.
+# - author-standing-v1.toml: the standing of every author the readings name,
+#   of every carrying author, and the missing rows that keep four witnesses
+#   from carrying (research/interpretations.md; research/scope.md section 4).
+# - source-containment-v1.toml and commentary/passage-commentary-index.yaml: the
+#   joins behind the holdings `commentary-work-index discover` reported for
+#   every appointed passage (research/scope.md section 3).
+# - commentary/formulary-loci.yaml: the liturgical commentators' element
+#   comparison, whose empty result for this Mass research/scope.md section 3.1
+#   reports.
+# - calendars/roman-1962/propers.yaml and rubrics.yaml: the computation inputs
+#   research/context.md adopts for occurrence and precedence (finding aids), and
+#   the citations the chronology wiring and `mass-propers show` resolve,
+#   including the Communion range corrected in commit aa94dd3b4.
+#
+# Ordinary marginal numbers (added in iteration 1)
+# - The five 1962 Ordo Missae passage records whose marginal numbers
+#   research/context.md, "Other text-bearing parts of this Mass", cites
+#   (ordo-missae-ad-gradum, -kyrie-gloria, -credo, -conclusio, and the Ordo ad
+#   aspergendam aquam benedictam). They are not bound by source ID, so they are
+#   declared here.
+#
+# A chronology audit record (added in iteration 1)
+# - research/scope.md section 8.1 also rests on the orientation-v2 check in
+#   tools/check-content-preflight (_orientation_tables). This declaration admits
+#   only source owners under src/, so the tool is named here and not listed; it
+#   is the repository's own gate, not external evidence.
+# - src/sources/chronology/final-acceptance-findings.tsv: the audit row (FA-067)
+#   whose verbatim extraction of the Daniel article research/scope.md section
+#   8.4 quotes for the Daniel qualification.
+#
+# Commentary records and holdings checked in iteration 2
+# - commentary/book-audit-ledger.yaml and commentary/work-aliases.yaml: the
+#   Colossians row for Cassiodorus's Complexiones and its title, on which the
+#   corrected negative of research/scope.md sections 3.5 and 7 rests.
+# - The Cornelius a Lapide Pauline commentary's tracked OCR artifact (Antwerp
+#   1614), searched whole for research/scope.md section 3.5's finding that the
+#   held item stops at Galatians.
+# - The Athanasius Expositiones in Psalmos (PG 27) artifact records, whose
+#   holdings research/scope.md sections 3.9 and 7 describe.
+#
+# The Scripture chronology corpus
+# research/chronology.toml and research/chronology-annotations.tex were generated
+# with tools/tpt proper-chronology (research/scope.md section 8). The engine
+# seals every file that computation opens outside the leaf and every source the
+# record cites; those need no declaration and are not repeated here.
+paths = [
+  "src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml",
+  "src/sources/inventories/lasance-new-roman-missal-rights-v1.toml",
+  "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+  "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+  "src/sources/inventories/author-standing-v1.toml",
+  "src/sources/inventories/source-containment-v1.toml",
+  "src/sources/commentary/formulary-loci.yaml",
+  "src/sources/commentary/passage-commentary-index.yaml",
+  "src/sources/calendars/roman-1962/propers.yaml",
+  "src/sources/calendars/roman-1962/rubrics.yaml",
+  "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ordo-missae-ad-gradum.toml",
+  "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ordo-missae-kyrie-gloria.toml",
+  "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ordo-missae-credo.toml",
+  "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ordo-missae-conclusio.toml",
+  "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ordo-ad-aspergendam-aquam-benedictam.toml",
+  "src/sources/chronology/final-acceptance-findings.tsv",
+  "src/sources/commentary/book-audit-ledger.yaml",
+  "src/sources/commentary/work-aliases.yaml",
+  "src/sources/works/cornelius-a-lapide/commentaria-in-omnes-divi-pauli-epistolas/editions/antwerp-1614/artifacts/ia-djvu-text-197365b2",
+  "src/sources/works/athanasius-of-alexandria/expositiones-in-psalmos/editions/migne-pg-27-paris/artifacts",
+]

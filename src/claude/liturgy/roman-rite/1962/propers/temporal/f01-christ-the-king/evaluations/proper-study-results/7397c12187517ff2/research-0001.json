@@ -1,0 +1,25 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/interpretations.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-001",
+      "note": "scope.md sections 3.1-3.9 record each work, edition, locus and outcome (bounded negatives included: Aquinas has no Ps 71, Basil no homily on Pss 2 or 71). New differences kept in sections 5-6 (Ps 2:7 eternal vs resurrection vs humanity; Ps 71:1 literal sense, Bellarmine vs Augustine/Cassiodorus/Theodoret; Ps 28:10 diluvium and when he sits, Bellarmine's judgment-centred reading vs Augustine's). Readings A (Aquinas now carrying, two-rights answer to Chrysostom) and C (Communion's session begun in the cleansed soul per Basil, completed after judgment per Bellarmine) revised. Schuster found in volume V and read on page images. Limits stated: O'Sullivan Bellarmine abridged, Latin not read; PG text layers for parts of Theodoret.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-002",
+      "note": "scope.md 3.4 now records Augustine En. in Ps. 71.13 (kings' authority leads men into the Church) and 71.14, plus Letter 185.19-20 (king serves God as king; on Ps 2:10-11 and Ps 71:11), En. in Ps. 2.8-9, Bellarmine on Ps 2:10-12 and 71:11, Theodoret, Cassiodorus, Aquinas Super Ps. 2 n. 9 and Schuster. Section 5.2 tests the difficulty against them; Reading B's controlling claim, moral sense and strongest difficulty restated (free conversion, service of rulers as rulers, completion at judgment; no rival to Caesar), compatible with Quas primas nn. 17-20, 32. Section 3.13 and the register list every Quas primas number relied on (7, 11, 13, 15-20, 28, 32). Augustine's Donatist occasion and Schuster's papal-deposition paragraph are flagged as not adopted (scope 6.9).",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-003",
+      "note": "Second branch, per the driver's recorded intervention; calendar entry unchanged, chronology files unchanged and confirmed current (record --check, annotations --check). scope.md 8.1 states that orientation-v2's _orientation_tables gate prints every generated row once with no authored table content, so both Tract rows print; 8.2 gives the sourced label from rubric no. 3943 (printed for votive Masses after Septuagesima, never said on this feast); 8.3 records that Apoc 19:16 has no chronology answer and that page 2 accounts for the paschal Alleluia in the Alleluia row's phrase, with the full account in the expansive appendix. Section 10, interpretations.md section 6 and context.md updated to match.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "notes": "Files changed (all inside the leaf): research/scope.md (rewritten), research/interpretations.md (rewritten), research/source-bindings.toml (Augustine loci/context updated; 11 bindings added; tools/tpt source-library validate passes), research/review-dependencies.toml (five Ordo Missae passage records and src/sources/chronology/final-acceptance-findings.tsv declared; tools/check-content-preflight could not be declared because the declaration admits only src/ owners, so it is named in a comment), research/context.md (one appended correction). No source registered, no shared file touched; research-preflight check passes. Advisories: RES-004 cleared (verified index-bible check exit 0 and mass-propers show prints Ps 28:10-11 under both bibles; item marked resolved naming 0fc5dce93); RES-005 cleared (Bede construction corrected; Secret echo re-sourced to the calendar finding aid; Quas primas numbers listed, note 20 reads 'In huc. x.'; Marcellus identification attributed to the NPNF editor's note 1950; Ordo Missae records declared); RES-006 cleared (Hilary/Augustine Ps 2:7 difference in 5.1, 6.1 and Reading A); RES-007 cleared (sourced occurrence/place phrase for every generated row, Daniel qualification, reports to the chronology owner). For owners (section 10): calendar christ-the-king lacks votive/paschal encoding (schema change); chronology corpus has no event for Jn 18:33-37, no visible Daniel qualification, no Dan 7:1 or Ps 28 title rows; Schuster vol. V, Augustine Letter 185, Theodoret In Col. (PG 82), Aquinas Super Col. (Corpus Thomisticum) and the newer monumenta Cassiodorus pages are unregistered. Next stage: the research review should read scope.md 3.1-3.9, 5-6, 8 and interpretations.md readings A-C in full; carrying authors are now A Hilary/Aquinas/Bede, B Augustine/Chrysostom/Bellarmine, C Augustine/Hilary.",
+  "stage": "research",
+  "summary": "Repaired the three research-owned blocking findings: a bounded sweep of Bellarmine, Cassiodorus, Aquinas (Super Psalmos 2 and 28, Super Col.), Basil and Theodoret on Ps 2:8, 28:10-11, 71:1, 8, 11 and Col 1:12-20, plus Blessed Schuster's commentary on this Mass (Sacramentary V, 1930, pp. 200-204), carried into the difficulty tests, disagreements and all three readings; Augustine En. in Ps. 71.13 and Letter 185.19-20 now answer Reading B's subjection difficulty; chronology notes rewritten on the driver's second branch (gate prints every row; Tract label; paschal Alleluia has no row)."
+}

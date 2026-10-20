@@ -1,8 +1,8 @@
 classification_schema = 1
 record_type = "publication-source-classification-review"
-audited_on = "2026-10-16"
-publication_snapshot = "sha256:d676d58835508640de13f85af4a825153f92953ea9af88f3d04df7551c8d0edf"
-classification_snapshot = "sha256:764ecd6c37c5acd443b52d3104cfba2a647c5f2f02115fe8d792bd2a791fcd48"
+audited_on = "2026-10-19"
+publication_snapshot = "sha256:dc5a5949d6087e92ff7d92bc7314e70bd9038b395236a02c69de2c499de42f15"
+classification_snapshot = "sha256:066a93449c675b465749442871f711521d7439660994b8ea00644042b7d72019"
 
 [[classifications]]
 document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -171,6 +171,10 @@ source_categories = ["finding-aid", "historical-primary", "institutional-current
 [[classifications]]
 document = "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"
 source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
 
 [[classifications]]
 document = "liturgy/roman-rite/1962/reference/assembling-the-mass"

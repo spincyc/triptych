@@ -1,0 +1,517 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "STU-001",
+      "location": "sections/40-kingdom-handed-over.tex l.172 and l.100-102; sections/30-kingdom-not-from-hence.tex l.143-146, l.192-193 and l.209-210; sections/10-each-element.tex l.285 and l.225-227; sections/20-lamb-receives-the-kingdom.tex l.90-91; sections/50-comparison.tex l.73-74",
+      "problem": "Many authoring instructions in research/interpretations.md and research/scope.md (\"the reading gives both, attributed\", \"cite Letter 185 with its Donatist occasion stated\", \"the studies must not make the Gospel a political claim\", \"Augustine must not be cited as supporting Hilary on v. 7\", \"the two loci must not be merged into one Augustinian position\") have been carried into the reader-facing body as statements of the study's own discipline. guidance/editorial.md, 'State the finding, not the process that produced it', names this defect (\"Prose that says a difference was retained ... is narrating compliance\"). Each instance is short, but there are enough of them to make a habit: (1) 40 l.172 \"Both are kept here, each under its own witness.\" (2) 30 l.192 \"The checked witnesses hold both statements of Augustine together\" uses a verification word as the subject. (3) 30 l.209-210 \"The Gospel is not made a political claim; the kings' service is not made optional\" is the study's restraint, put in the passive. (4) 30 l.143-146 \"The letter's occasion ... is part of the locus. What the Mass's texts take from it is the distinction it states\" turns the study's selection into an act of the Mass's texts, and 'locus' is the record's own term. (5) 10 l.285 \"Schuster is the one witness read who comments on this Preface as a text\" reports a negative result as the search that found it. (6) 40 l.100-102 \"Both carrying witnesses of this reading\" uses the manifest's authority-contract term in the body. (7) 20 l.90-91 \"Augustine is no witness for Hilary's reading of verse 7\", and the pair 10 l.225-227 / 50 l.73-74 \"...are not one position\", come after the positions have already been stated. They tell the reader what not to conclude, which is the research's citation rule in the reader's hearing. The house-voice screen passed all of these, and the guidance says its passing does not make the prose compliant.",
+      "repair_target": "study",
+      "required_result": "Rewrite each listed sentence so that it states the material and nothing about the study's handling of it. Attribute the two positions on the Communion's session to Augustine and Bellarmine. State Augustine's Letter 185 distinction, with its Donatist occasion, as Augustine's. Say what the witnesses and Quas primas hold, not what the study declines to make of them. Give Schuster's position as a fact about the commentary, with no reference to reading. Name Augustine and Hilary without the apparatus term. Say once, positively, what Augustine holds on Ps 2:7 and on Jn 18:37. Remove no difference, occasion, attribution or bound: the repair changes the grammatical subject and keeps the content.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-002",
+      "location": "sections/50-comparison.tex: table row 'Strongest objection' (l.37-43, third column); paragraph l.46-58; paragraph l.70-75",
+      "problem": "Four comparative claims are not true of the three readings as the study writes them. This is the component the concise study must interleave from. (a) l.70-75 says that 'the difference between the first and second readings is sharpest at Jn 18:37', and then gives Augustine's temporal reading of 'For this was I born' (Tract. in Io. 115.4) against Chrysostom's eternal one (Hom. in Io. 83.4). Both men are carrying witnesses of the second reading. The second reading never mentions this split (30-kingdom-not-from-hence.tex names only the narrower regnum-as-people / regnum-as-power difference, l.212-215). The first reading grants Chrysostom's premise and sets him up only as its objection (20-lamb-receives-the-kingdom.tex l.181-193). The paragraph never says which reading takes which answer or what changes if it does. Its next sentence explains why Augustine is consistent with himself, not how A differs from B. (b) In the table, the third reading's 'Strongest objection' is given as 'Hilary and Augustine on the Son's subjection; Augustine and Bellarmine on when he sits'. Those are internal differences that the reading keeps (40-kingdom-handed-over.tex l.104-114, l.166-172). The objection it actually answers is the view that Christ's reign ends with the handing over, which Cyril of Jerusalem opposes (Catech. 15.27-32, checked in the tracked NPNF II.7 text) and Jerome answers from Dan 7:14 (40 l.13-47). The research record labelled this column 'Witness against it, kept', and renaming it 'Strongest objection' has made it wrong. (c) l.46-53 says 'All three place the cross at the centre', and for the second reading that the cross 'is the place where the King testifies before Pilate'. The trial in the praetorium is not the cross. The second reading's centre is Jn 18:36 and the kings' service, and the cross enters it only through Schuster's note on the Postcommunion standard and its moral sense. (d) l.57-58 says 'St Hilary contributes to the first and the third'. The second reading also relies on Hilary, Tract. in Ps. 2.42, for the Postcommunion (30 l.265-268), and the manifest lists him among its authors.",
+      "repair_target": "study",
+      "required_result": "Make every claim in the comparison true of the readings as written. (a) Either state the real difference between the first and second readings, and where it is sharpest, saying which reading takes which answer and why it matters, or drop the Jn 18:37 claim. Wherever Jn 18:37 is used, say that its split runs between the second reading's own carrying witnesses and is where the first reading meets its objection. (b) Make the third reading's strongest-objection cell the view that the reign ends, with Cyril of Jerusalem, and place the internal differences under a label that says what they are. (c) State accurately what the cross is in the second reading, or limit the shared claim to what all three readings share. (d) Correct the count of Hilary's contributions.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-003",
+      "location": "sections/20-lamb-receives-the-kingdom.tex l.26-30 (the question), l.59-66 (Hilary, Tract. in Ps. 2.33), l.208-210 (Introit contribution)",
+      "problem": "The first reading's opening question is 'If the Lamb is the eternal Son, how can he receive divinity?' (Introit, accipere ... divinitatem). Its answer is developed through Ps 2:7-8 and Dan 7:14 and is sound: the servant is raised into the glory the Word always had. But the Introit's own word is never answered in its own terms, and the Introit contribution moves to 'Ipsi gloria et imperium is what he receives'. The Hilary sentence the study quotes (eique hoc petenti, id est, ut esset, quod fuerat ante, donatur) comes straight after 'in deum namque, quia nullum ultra deum nomen est, prouehitur' (CSEL 22 p. 62, ll. 26-27; IA page image n91, SHA-256 b05f0c26..., checked). There the exalted servant is raised to the name of God. That clause would let the reading say what the Lamb's receiving divinity means without implying that the Lamb becomes divine.",
+      "required_result": "State once, in the Hilary subsection or in the Introit contribution, what receiving divinitatem means on this reading. Mark it as the study's application of Hilary's and Bede's reasoning, since no witness read comments on the verb of Apoc 5:12.",
+      "severity": "advisory"
+    },
+    {
+      "id": "STU-004",
+      "location": "sections/10-each-element.tex l.213-215 (Gospel)",
+      "problem": "'His reply distinguishes two things the English \"of this world\" and \"from hence\" render: de hoc mundo and ex hoc mundo, and then hinc' does not parse: it announces two things and lists three Latin terms. It also suggests that the reply distinguishes de from ex, which are the Vulgate's variation for one Greek phrase. The distinction the study goes on to develop is Augustine's 'of' against 'in' and 'from hence' against 'here' (30-kingdom-not-from-hence.tex l.50-56), and that is correct.",
+      "required_result": "Rewrite the sentence so that it says what Jn 18:36 denies, how the Latin words it, and that the distinction of 'of' from 'in' and of 'from hence' from 'here' is Augustine's.",
+      "severity": "advisory"
+    },
+    {
+      "id": "STU-005",
+      "location": "sections/10-each-element.tex against the three readings: Schuster on the Postcommunion standard (10 l.347-350; 30 l.268-269; 20 l.251-252); Schuster on the Communion (10 l.331-333; 40 l.160-164); Schuster de jure/de facto (10 l.155-156; 30 l.179-181); Augustine 'Carnal thyself' (10 l.215-217; 30 l.64-66); Jerome on Dan 7:13-14 by Phil 2 (10 l.179-186; 20 l.32-37); Augustine En. in Ps. 28.10 (10 l.322-324; 40 l.77-83); Augustine/Chrysostom on natus sum (10 l.218-227; 50 l.70-75); Chrysostom Hom. in Col. 3 (10 l.71-73; 40 l.193-194); Aquinas and Bellarmine on Ps 28 (10 l.315-330; 40 l.142-155)",
+      "problem": "The element-by-element section gives the same quotations, often word for word, that the readings then give again as their own development. A reader meets Schuster's Postcommunion note three times and about ten other quotations twice. The profile asks that each substantial argument have one fullest home. The repetition is not padding (the study is 32 pages, well above the minimum), but it reads as recapitulation.",
+      "required_result": "Give each repeated quotation one fullest home. Where a reading develops a witness, let the element section name him and point forward in a clause rather than quote him in full.",
+      "severity": "advisory"
+    },
+    {
+      "id": "STU-006",
+      "location": "sections/40-kingdom-handed-over.tex l.199-201 and l.116-120; sections/10-each-element.tex l.345-346; sections/30-kingdom-not-from-hence.tex l.261-262",
+      "problem": "Three small precision problems. (a) 40 l.199-201 says the Introit's 'in saecula saeculorum closes the doxology of the ages, sung by the heavenly liturgy around the Lamb'. The words are Apoc 1:6, from John's greeting, as the study itself says (05-appointed-texts.tex l.57-61; 10 l.22-26), and not the song of Apoc 5. (b) 10 l.345-346 and 30 l.261 call the Postcommunion's figure 'the only (one) military figure in the Mass'. The Preface printed in the study closes 'cumque omni militia caelestis exercitus' (05 l.262-263). What is unique to the Postcommunion is that it figures the faithful as soldiers. (c) 40 l.116-120 says 'Hilary's reading of the Offertory's psalm joins the two ends of the Mass's movement in his own terms ... What is given to the Son is what the Son gives to the Father.' Tract. in Ps. 2.31 (CSEL 22 pp. 60-61, checked on page image n89) defines the inheritance and says nothing of handing it to the Father. The identity joins it to De Trin. XI.39 and is the study's own, and Hilary joins no elements of a Mass.",
+      "required_result": "(a) Assign the Introit's doxology to Apoc 1:6. (b) Narrow the uniqueness claim to the faithful as soldiers. (c) Cite Hilary's two statements separately and present their identification, and its tie between Offertory and Preface, as the reading's own.",
+      "severity": "advisory"
+    },
+    {
+      "id": "STU-007",
+      "location": "sections/80-date-location.tex l.15 (row-6c43dd5e0531017f), l.23 (row-98256791fb1a09b1), l.19 and l.57-65 (row-3bd03395c37c5ada)",
+      "problem": "(a) The row covering Pss 71, 2 and 28 opens 'Royal psalms of the king and the king's son'. That fits Ps 71, and in part Ps 2, but not Ps 28, a hymn to the Lord's voice and his session as King. (b) 'The book of Daniel, a youth of Juda carried to Babylon (Dan 1:1-6)' makes the book the youth. (c) The Tract's historical-setting row and its note present the destruction under Sedecias as the setting the record gives to Ps 88:39-45, with no qualification. The corpus binding takes that occasion from one proposal, and the Haydock note it cites keeps Worthington's Davidic alternative and the Fathers' reading of Christ's kingdom beside it (research-review advisory RES-014). The research record does not yet hold that qualification, so the appendix cannot cite it. The rubric's label on the row limits the effect.",
+      "required_result": "(a) Word the shared phrase so that it is true of all three psalms. (b) Repair the appositive, for example 'the book that presents Daniel, a youth of Juda carried to Babylon'. (c) Once research/scope.md section 8.4 records the qualification, state it briefly in the Tract note.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "observations": [
+    {
+      "location": "rendered study (own build, SHA-256 2d4e34d5...), physical pages 14, 23, 26 and 30",
+      "note": "Each of these pages carries the running head of a section that begins lower on the page, while the page opens with the previous section's text; e.g. p. 14 opens with 'Communion: the Lord shall sit King for ever' under the head 'The Lamb Receives the Kingdom'. This is first-mark behaviour of the shared head and is left to the visual evaluation."
+    },
+    {
+      "location": "sections/20-lamb-receives-the-kingdom.tex l.70-73; Hilary, Tract. in Ps. 2.28-29 (CSEL 22 pp. 58-59)",
+      "note": "The study rightly says that at 2.31 Hilary is expounding the psalm and not the Epistle, but Hilary's own use of Col 1:15-18 on Ps 2:7 just before it (p. 59 ll. 1-3 on page image n88: 'idcirco primogenitus ex mortuis, ut maneret primogenitus creaturae') is a witness's own connection the study does not use. It stands as part of the research advisory RES-013(c)."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/00-opening.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/context.md",
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "appointed-texts",
+          "kind": "appointed-text",
+          "path": "sections/05-appointed-texts.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/context.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "appointed-texts"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "each-element",
+          "kind": "proper-treatment",
+          "path": "sections/10-each-element.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/context.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "lamb-receives-the-kingdom",
+          "kind": "interpretive-lane",
+          "path": "sections/20-lamb-receives-the-kingdom.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "kingdom-not-from-hence",
+          "kind": "interpretive-lane",
+          "path": "sections/30-kingdom-not-from-hence.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "kingdom-handed-over",
+          "kind": "interpretive-lane",
+          "path": "sections/40-kingdom-handed-over.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "lamb-receives-the-kingdom",
+            "kingdom-not-from-hence",
+            "kingdom-handed-over"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "comparison",
+          "kind": "front-matter",
+          "path": "sections/50-comparison.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "scriptural-date-location",
+          "kind": "front-matter",
+          "path": "sections/80-date-location.tex",
+          "references": [
+            "format.tex",
+            "research/chronology-annotations.tex",
+            "research/chronology.toml",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "study-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/90-apparatus.tex",
+          "references": [
+            "propers/verified.md",
+            "research/context.md",
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "preface",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Hilary of Poitiers",
+            "Thomas Aquinas",
+            "Bede",
+            "Augustine of Hippo",
+            "Robert Bellarmine",
+            "Jerome",
+            "John Chrysostom",
+            "Cyril of Alexandria",
+            "Cassiodorus",
+            "Theodoret of Cyrus",
+            "Victorinus of Pettau",
+            "Alfredo Ildefonso Schuster",
+            "Pius XI"
+          ],
+          "carrying_authors": [
+            "Hilary of Poitiers",
+            "Thomas Aquinas",
+            "Bede"
+          ],
+          "component_keys": [
+            "lamb-receives-the-kingdom"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "lamb-receives-the-kingdom",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Robert Bellarmine",
+            "Thomas Aquinas",
+            "Hilary of Poitiers",
+            "Cyril of Alexandria",
+            "Theodoret of Cyrus",
+            "Cassiodorus",
+            "Alfredo Ildefonso Schuster",
+            "Pius XI"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "kingdom-not-from-hence"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "kingdom-not-from-hence",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Hilary of Poitiers",
+            "Basil of Caesarea",
+            "Robert Bellarmine",
+            "Thomas Aquinas",
+            "Jerome",
+            "John Chrysostom",
+            "Cyril of Jerusalem",
+            "Hippolytus",
+            "Cassiodorus",
+            "Theodoret of Cyrus",
+            "Alfredo Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Hilary of Poitiers"
+          ],
+          "component_keys": [
+            "kingdom-handed-over"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "kingdom-handed-over",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/format.tex": "cc33d5765188cce6fa31b8e4dc43155d4532bac6751ac97dfb9b8aaf5ca72e99",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/main.tex": "313f962fc7d34bf77ba4f6345407b3f6dc5415e2e1dc446e58ed139d7b8093ee",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/propers/verified.md": "9143952738783440066980eb86f88120339fb9adbf345bec4917acdd15867082",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/chronology-annotations.tex": "af2c35d8036178cb960e10ecd6b0aa4257bda8546627fad01626cde3d19b99ac",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/chronology.toml": "27873806725ed5b4bc8b87f199400f654b42689ec1a4afb95c5e8e94919d50cb",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/context.md": "72e53b7b2d0f6faae9e7664eaf9f3fea9782ba2a4af6f000edec205bed9b532b",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/interpretations.md": "6240046d9e42933f0635eb030ba6176fc8885d40bff415655658b4e09462034d",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/scope.md": "1d7d17bd9b988011888eb261ea23de73b5812a893e8902de1c34a44bd4a6f405",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/source-bindings.toml": "c866c1f0d020bcce4110578ff89d7e81b3e6be2087d8a0e7b603af0ab408602f",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/00-opening.tex": "8971343959096f53bfd05224d88eecc84cb9a7a5a2edce7a475c193963b8383d",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/05-appointed-texts.tex": "cea43837f14d27d14f7877e0dee53ba1d332e872e2e6bba60dd0bfec34050aa1",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/10-each-element.tex": "5c03784aa8fa7712cf3d85947e902904bad38d680865746b879aceb04c83e24d",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/20-lamb-receives-the-kingdom.tex": "96ede080ffb40510bf01d16d0d9b0a8f037865868c4751fe2b21ebb24ce39e58",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/30-kingdom-not-from-hence.tex": "693269866deb079f22cce8574c2d069134bae0afbe25247b34d4116475a92c68",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/40-kingdom-handed-over.tex": "c567fd0db8c6137b4569fd0e7638cc37c146b2fd6200843233544a110f314246",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/50-comparison.tex": "398f9d5592f6f09d01d7728618463e27f8da60e7d29e0d6a6412b8958ce75e16",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/80-date-location.tex": "dee9272aadc7eac673fff8e24dc24da3ba113e6adc9f0f7437eb4f16ab4002c0",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/90-apparatus.tex": "e1520d4540f9ff9368a6c50297e8bd18f2181113f18a854aa926d6fde1595db0",
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "12",
+            "e6d49782e4c62eb282fbb9ce1e18a27f1e74c81170f26533f5efea288ebf4ff5",
+            "7397c12187517ff2",
+            "9b87d598b34870344f3df756982af1ff5990d993",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "Artifact: the expansive study main.tex of liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king, built in this reviewer's scratch directory: 32 physical pages, byte-identical to the author's proof (SHA-256 2d4e34d5...), no overfull or undefined-reference warnings, all review-input hashes matched. Checked evidence: three readings, each covering all eleven said elements, with its own four senses and a developed contribution from its carrying witnesses. The quotations behind each reading's consequential difficulty were checked at their loci in hash-matched copies: Hilary Tract. in Ps. 2.30-33 on the CSEL 22 page images (n88-n91); Aquinas Super Ps. 2 nn. 5-6 and 9, and Super Io. 18 lect. 6; Augustine En. in Ps. 2.6-9, 28.10-11 and 71.11-14, Tract. in Io. 115.1-4, Letter 185.19-20, De Trin. I.8.15-17 and I.10.20-21; Chrysostom Hom. in Io. 83.4 and 84.1, and Hom. in Col. 2-3; Hilary De Trin. XI.39-40; Cyril of Alexandria In Io. XII; Cyril of Jerusalem Catech. 15.27-31; Bellarmine on Pss 28 and 71; Cassiodorus on Pss 2 and 71; Bede (Marshall) on Apoc 1:5-6 and 5:6-7; Schuster pp. 200-204. All are accurately quoted. Difficulty tests: (A) Ps 2:7-8 against Chrysostom's 'nothing received in addition'. The prose teaches the question and Hilary's and Aquinas's inferences, and states the narrower disagreement truly; divinitatem itself is left implicit (STU-003). (B) Jn 18:36 against Ps 71:11, Ps 2:10-11 and the Collect, through Augustine 115.2, 71.13-14 and Letter 185, Chrysostom and Bellarmine: passes. (C) The Preface's traderet against Dan 7:14 and Ps 28:10, through Augustine and Hilary: passes. Limits: the Greek of Basil and Theodoret and the PL 93 Latin of Bede were not re-read; Quas primas was not re-read. Verdict: CHANGES_REQUIRED. Two study-owned blocking defects: research-record compliance instructions recur in the reader-facing prose (STU-001), and the comparison misstates the readings' differences and objections (STU-002). There are five advisories."
+}

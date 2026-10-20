@@ -1,0 +1,19 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/main.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "STU-001",
+      "note": "Rewrote all seven listed instances. Removed the same habit in two more places: 40 'The difference between them is real and narrow. Neither formulation belongs to the other' and 20 'that narrower disagreement stands'. The table row 'Carrying witnesses' was renamed 'Principal witnesses'.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-002",
+      "note": "(a) Rewrote the A/B paragraph and added the Jn 18:37 split to 30's narrower-difference paragraph. (b) Objection cell now reads the reign ends (Cyril of Jerusalem, Jerome), and internal differences are in a new row. (c) The cross is described per reading. (d) Hilary is counted in all three readings.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "stage": "author-study",
+  "summary": "Repaired STU-001 by rewriting the process-narrating sentences in sections 10, 20, 30, 40 and 50 so that they state the material: attributions, Augustine's Letter 185 distinction with its Donatist occasion, what the witnesses and Quas primas hold, and Augustine on Ps 2:7 and Jn 18:37 stated once and positively. Repaired STU-002 by making the comparison true of the readings: the A/B difference is placed at the Gospel, the Jn 18:37 split is assigned to B's own witnesses and shown as A's objection, the third reading's objection is the teaching that the reign ends (Cyril of Jerusalem, Jerome), there is a new 'Differences among its witnesses' row, the claim about the cross is stated per reading, and Hilary is counted in all three readings. Cleared advisories STU-003 to STU-006 and STU-007 (a, b). STU-007 (c) waits on a research-record gap (RES-014). research/interpretations.md section 5 still carries the comparison wording the review found untrue; it is reported for the cold reviewer and not repaired. Author proof build/tpt-runs/7397c12187517ff2/artifacts/author-study-0001/proof/f01-christ-the-king.pdf, 33 pages, SHA-256 0af471dc75d583ebd1aa9a00db65ff9881976dc5f2f3b044ed1c94f36f97699f. All study-preflight checks and the web probe pass."
+}

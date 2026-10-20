@@ -1,0 +1,397 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"
+
+# Publication-local record of how this leaf's research used the reusable source
+# library. It supplements, and does not replace, propers/verified.md (the text
+# control), research/scope.md (reception matrix, witness register, negative
+# results and bounds) and research/interpretations.md.
+#
+# States describe what the research stage of run 7397c12187517ff2 did with each
+# record on 2026-10-19. `inspected` means this stage read the bound locus itself
+# in the bytes named; `verified` is claimed only for the 1962 page images, the
+# 1925 first publication collated against them, and the Lasance English read on
+# its scan's page images. Remote artifacts were fetched whole and matched to their
+# registered digests before any page was read; nothing remote was retained. One
+# edition and one artifact were registered by this stage (the AAS 1925 fascicle).
+# No `searched` or `negative-search` binding appears: the negative results in
+# research/scope.md rest on reading or on ad hoc literal matching, each stated
+# with its bound. Sources read outside the library (Chrysostom's Homilies on John
+# 83-84, Augustine's De Trinitate I and Victorinus at New Advent; Aquinas, Super
+# Ioannem 18 at Corpus Thomisticum; Bede's Explanatio Apocalypsis in Marshall's
+# English and in PL 93 at the Internet Archive; CSEL 22 page images) are named in
+# research/scope.md with their hashes; those whose work or edition the library
+# registers are bound below at catalog level, the rest are cited in References in
+# the ordinary way. Fingerprints were taken from tools/tpt source-library
+# fingerprint on 2026-10-19.
+
+# --- Text control ------------------------------------------------------------
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+loci = [
+  "D. N. Iesu Christi Regis, printed pp. 697-698 = artifact PDF pp. 778-779, marginal nos. 3938-3949, heading and rank on p. 697",
+  "Praefatio de D. N. Iesu Christo Rege, Praefationes sine cantu, printed p. 291 = PDF p. 372, no. 1080",
+]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-19"
+source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76"
+context = "The exact remote facsimile controls every Latin form, heading, citation, marginal number and boundary of the formulary and its Preface. The copy held by this run's resolve-context stage was re-hashed before use; SHA-256 and byte length matched. PDF pp. 778-779 were read whole at 200 dpi and in 400-dpi quarter crops covering every column section of the formulary; PDF p. 372 whole at 200 and 400 dpi. propers/verified.md records the readings. The formulary's outer boundaries (nos. 3937 and 3950) were read by the resolve-context stage and are recorded in research/context.md."
+
+# --- Rights control: the Latin -------------------------------------------------
+
+[[bindings]]
+source_id = "artifact.holy-see.acta-apostolicae-sedis.volume-17-1925.ia-microfilm-issue-15-pdf-9cb9e63b"
+loci = [
+  "AAS 17 (1925), fascicle n. 15 of 28 December 1925, printed pp. 666-668 = artifact PDF pp. 78-80: AD MISSAM (Introitus through Postcommunio, with the Praefatio printed in place), the Martyrology elogium, and the S.R.C. Urbis et Orbis decree of 12 December 1925",
+]
+role = "rights-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-19"
+source_fingerprint = "sha256:4128b3a624e25b3d00099f3374ec3d1c3d2208ea6f2111a9fd7a4a361a8b35e0"
+context = "The formulary's first publication, registered by this stage and fetched whole from its source_url; SHA-256, byte size, SHA-1 and MD5 matched before any page was read. Pages read whole at 200 dpi, with 400-dpi crops of the Collect, the Epistle's opening and the stretch from the Epistle's close through the paschal Alleluia. Collated word for word with the 1962 page images: every word of every element and of the Preface's body stands here, except the full conclusions (abbreviated Qui tecum.), the common Preface closing (printed Et ideo...), and the final Alleluia of the paschal Alleluia (not said). On this witness and 17 U.S.C. 103(b) the Latin is published (propers/verified.md, The publication basis of the Latin). The 1925 rubrics are the pre-1960 order and are not cited as the 1962 order."
+
+[[bindings]]
+source_id = "edition.holy-see.acta-apostolicae-sedis.volume-17-1925"
+loci = [
+  "volume 17 (1925), fascicle n. 15; Quas primas from printed p. 593, located only",
+]
+role = "bibliographic"
+states = ["cataloged"]
+context = "The edition record registered with the artifact above. It also records why the Holy See's own volume PDF (an OCR reconstruction with misreadings at pp. 666-667) was rejected as a reading witness."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+loci = [
+  "physical lines 40225-40250 (Praefatio de Nativitate, with its closing Et ideo cum Angelis et Archangelis, cum Thronis et Dominationibus, cumque omni militia coelestis exercitus, hymnum gloriae tuae canimus, sine fine dicentes, lines 40238-40243)",
+]
+role = "rights-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:efd4426beabe5385be4e5df4542255c488fe460dee069ab999231255702d5b0f"
+context = "Read on the tracked text layer only, to show that the common Preface closing which the 1962 page prints after the proper body, and which the 1925 page abbreviates as Et ideo..., stands in a public-domain typical-edition printing. Not read on the 1862 page images; the reading is of a fixed common formula and changes no verdict."
+
+# --- English ---------------------------------------------------------------------
+
+[[bindings]]
+source_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+loci = [
+  "Feast of Our Lord Jesus Christ, King, printed pp. 1257-1260 = artifact PDF pp. 1258-1261: Collect (p. 1257), Secret and Postcommunion (p. 1260), with the Latin column and the pre-1960 rubrics",
+  "10. Preface of Jesus Christ, King, printed pp. 813-814 = PDF pp. 812-813",
+]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-19"
+source_fingerprint = "sha256:376ca4e5db5bd3291c6c11b085c73dafdd1a09a8a7af523652257183cc25d645"
+context = "The copy held by the resolve-context stage matched the registered SHA-256. Pages rendered at 200 dpi and read; the English of the Collect, Secret, Postcommunion and Preface is transcribed in propers/verified.md, including the page's misprint 'familes'. Ordinary pages only; neither excluded lettered range of the rights record is touched. The pre-1960 rubrics (Double of the First Class; commemoration of the occurring Sunday) are disclosed and not the 1962 order."
+
+[[bindings]]
+source_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.new-roman-missal-text-80b34759"
+loci = [
+  "physical lines 136381-136833 (Feast of Our Lord Jesus Christ, King)",
+  "physical lines 86322-86443 (10. Preface of Jesus Christ, King)",
+]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:244feaa4640a598b268f6a3c82130d020246340db5f96e6b147ce2ba800e4c88"
+context = "The tracked, insert-excluded OCR derivative that carries the Lasance English's affirmative publication basis. Its lines were used to locate the pages; wording was read on the scan's page images (binding above)."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+loci = ["Ps.2.1-13", "Ps.28.1-10", "Ps.71.1-20", "Ps.88.20-38"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
+context = "Whole psalms read for context; the elements use Ps 2:8, 28:10 (this text's single row carrying the words of Vulgate 28:10-11), 71:2a (the Missal's 71:1), 71:8 and 11, and the not-said Tract's 88:27-28 and 30. The English of the psalm elements, read in the verse text and through tools/tpt mass-propers show --bible douay-rheims. The Introit verse is this text's 71:2a; the Communion's two half-verses stand in its single 28:10 row (research/scope.md section 10)."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-58-colossians-d17592ce"
+loci = ["Col.1.9-23"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:5cf6c513d39ffc83a9faab86e624dd181f93dfa845f96437b40365ff711ed0ca"
+context = "The Epistle's English and its literary context. The Missal's Fratres: and closing in Christo Iesu Domino nostro have no Douay words (propers/verified.md, English routes)."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-50-john-27b8f3ed"
+loci = ["John.18.28-19.16"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:4498ea55e49e3577649969ed0bcf456423b8aec2f9edda55586c37190dfe77a4"
+context = "The Gospel's English and its literary context; the liturgical opening In illo tempore has no Douay words."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-32-daniel-8954f60d"
+loci = ["Dan.7.1-27"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:d0b3ef2c7944402acdaed457d921aff389826a39dc2ec7ada6adc53ff9feadac"
+context = "The Alleluia verse's English (the second half of 7:14) and its context, including the vision's dating at 7:1."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-73-apocalypse-9ae5c352"
+loci = ["Apoc.1.4-8", "Apoc.4.1-5.14", "Apoc.19.11-16"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:b28bde358a8ffc3aa2486baeeeda9bb23021b0bab1a8dccd447d33b2f7225cdb"
+context = "The Introit's English for the parts of 5:12 and 1:6 the Missal selects, and their literary context."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.psalm-numbering-ee3c7757"
+loci = ["Ps.2.1-13", "Ps.28.1-11", "Ps.71.1-20", "Ps.88.1-53"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c3702f219d6641eb66186bd7d3d557375aec2843467d0d54aabe3397ec7e8fb7"
+context = "The psalm concordance, read for the Hebrew numbers given in parentheses and for its record that Vulgate 71:1 and 88:1 are inscriptions and that this printing's Ps 28 has 10 verses against 11."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-21-psalms-d20e21f8"
+loci = ["Ps.2.1-13", "Ps.28.1-11", "Ps.71.1-20", "Ps.88.20-38"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:1481d71b5253d2bf9644408f82c40a7cd90fce2191d6586d9fa24b0f62d49130"
+context = "Wording comparison of the psalm elements with the Clementine (propers/verified.md, under each element) and the psalms' literary context and titles."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-58-colossians-f1d99c90"
+loci = ["Col.1.9-23"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:06c3c5e04fba34cae98e1467242b5e3fc63bbef88a55a37845bf7527b33da821"
+context = "Wording comparison of the Epistle (gratias agentes at v. 12; no in Christo Iesu Domino nostro at v. 20)."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-50-john-1542486b"
+loci = ["John.18.28-40", "John.19.1-16"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c270c6a7cd8dcc3b81e1a00becf4d7749677c846e7c0f8abfa315e1b11bf210d"
+context = "Wording comparison of the Gospel (the liturgical opening at v. 33)."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-32-daniel-3ca259b5"
+loci = ["Dan.7.1", "Dan.7.13-14", "Dan.7.17-18"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:ae0e4b0004c2512a90fde4b632b6cfa2a0d608a71f9cd58c98d54d3aa0904cb6"
+context = "Wording comparison of the Alleluia verse (the second half of 7:14 only)."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-73-apocalypse-8f990cb5"
+loci = ["Apoc.1.5-6", "Apoc.5.12", "Apoc.19.16"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:1e09288828e4aec305ad49b08772c911f0d6a98526f66f7a5c47ed359ecad92b"
+context = "Wording comparison of the Introit cento and of the paschal Alleluia's second verse."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-aliases-52634891"
+loci = ["Ps.71.1"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:fc5cfd44c9d49310718254aba3140ea5aba4d86177f866927796e08136975a01"
+context = "No alias row exists for this locus. Checked for a redirect of the Missal's Ps 71:1 to the Clementine's 71:2; none exists (research/scope.md section 10)."
+
+# --- Reception ---------------------------------------------------------------------
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-7.ccel-web-2026-09-17.ccel-text-266502c9"
+loci = ["Augustine, Tractates on John 115.1-5, physical lines 34853-35057"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:10294711891b3ca7163bf578e02d0a027dbd110257bdaf2fb0b89b65ffe858de"
+context = "Direct exegesis of Jn 18:33-37; Augustine's own joining of Jn 18:36 to Col 1:13 and Ps 2:6. Carries reading B; research/scope.md section 3.7."
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950"
+loci = ["2.5-9", "28.1", "28.10-11", "71.1-3", "71.11-14", "88.25-28"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573856782e822f37"
+context = "Loci are Vulgate psalm and NPNF section: Psalm II sections 5-9 at physical lines 583-760 (iteration 1 added sections 8-9, on vv. 9-11); Psalm XXIX (Vulgate 28) title, section 1 and sections 10-11 at lines 7348-7432; Psalm LXXII (Vulgate 71) sections 1-3 and 11-14 at lines 33638-33700 and 33930-34010; Psalm LXXXIX (Vulgate 88), the second discourse, sections 25-28 at lines 44345-44385. Direct exegesis of the Offertory's, Communion's, Introit verse's and Gradual's psalms (and of the not-said Tract's). Supports reading A (Ps 2.6-7: v. 7 eternal, v. 8 temporal), carries B (Ps 71.11-14, including 71.13 on the authority of kings, and Ps 2.8-9 on the kings of v. 10) and C (Ps 28.10); research/scope.md sections 3.3, 3.4, 3.8, 3.9, 3.10, 5.1, 5.2."
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-13.english-ccel-web-2026-09-05.ccel-npnf113-text-54274dd9"
+loci = ["John Chrysostom, Homilies on Colossians 2 (on 1:9-13) and 3 (on 1:15-20), physical lines 23765-24515"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:374d296602c0a52e4c252ad0e7704b9c9952d06f6b66b891bb391c8509c390db"
+context = "Direct exegesis of the Epistle; Chrysostom's own joining of Col 1:20 to Eph 1:10. Supports reading C; research/scope.md section 3.5."
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-7.ccel-web-2026-10-06.ccel-text-56d84cfa"
+loci = ["Cyril of Jerusalem, Catechetical Lecture XV, sections 27-33, physical lines 16725-16835"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:1f357ee73bda8276cc25eb0133278376e91529929c0187de2d364f9c3b192261"
+context = "Dan 7:13-14 and 1 Cor 15:25-28 on the endless kingdom. Supports reading C; no standing row, so it carries no reading; research/scope.md section 3.6."
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-9.1898-edinburgh-ccel.ccel-complete-859ba34c"
+loci = ["Hilary of Poitiers, De Trinitate XI.21 and 39-40, physical lines 24580-24600 and 24930-24990"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:4b493efcadaaaffe58256d8c1f349d082079813a8d8450d43610fc5f97fb4d6d"
+context = "1 Cor 15:24-28 on the delivering of the kingdom, illuminating the Preface. Carries reading C with Augustine; research/scope.md sections 3.12, 5.3."
+
+[[bindings]]
+source_id = "artifact.ante-nicene-fathers.volume-5.ccel-web-2026-10-13.ccel-text-a02b61c3"
+loci = ["Hippolytus (scholia transmitted under his name), on Daniel 7:13-14, physical lines 19007-19030"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:2734f36495223970e22cee6bcc810142a01d0e91785405ceebecc202c3a92e46"
+context = "Direct exegesis of the Alleluia verse. Supports reading C; no standing row; research/scope.md section 3.6."
+
+[[bindings]]
+source_id = "artifact.jerome.commentaria-in-danielem.migne-pl-25-wikisource-1845.latin-text-3fe4ba4f"
+loci = ["In Danielem II, on 7:11-18, PL 25 cols. 670-671, physical line 38 (Vers. 13-14) and the following line (Vers. 17)"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:dab9057a0dc93c8f7e968498dc2c41949281b7c7b59b8d746f86eb80b992a6d8"
+context = "Direct exegesis of Dan 7:14: the receiving read by Phil 2:6-8, and the power without end. Supports readings A and C; research/scope.md section 3.6. Read in the transcription, not on PL page images."
+
+[[bindings]]
+source_id = "artifact.cyril-of-alexandria.commentary-on-john.english-pusey-randell-lfc-1874-1885.tertullian-org-book12-ec1fa9b7"
+loci = ["12"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:b2f87015226b2211e33b4cb85df20b341820b62a03718f59eded3a1a72e47c1e"
+context = "Book XII, on John 18:33-37, LFC 48 pp. 599-601. Fetched whole on 2026-10-19; SHA-256 and byte size matched the registered record. Direct exegesis of the Gospel: kingship by nature, not added from without. Supports reading B and is the counter-witness to reading A; no standing row; research/scope.md sections 3.7, 5.1."
+
+[[bindings]]
+source_id = "artifact.hilary-of-poitiers.tractatus-super-psalmos.csel-22-zingerle-1891.ia-djvu-ocr-shilariiepiscopi22hilauoft"
+loci = ["2.29-33", "2.42-43"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:270b160fa7bcdcdcc2553168c73f3cc4f1c72448c47c7ceb1e47a0942f69a540"
+context = "Tractatus in Psalmum II, 29-33 and 42-43, CSEL 22 pp. 59-62 and 70 (OCR physical lines 3780-3962 and 4330-4365). Fetched whole and matched its registered SHA-256; used to locate the pages. The Latin was read on Internet Archive page images of the same item, unregistered and hashed: n88 6ede3da358e2c785e06d4003cbbd82992d1f02a94f78f9df00ed87bcc38da672 (p. 59), n89 cafe43322967686b9e53ad9fc0c23bbbfa6e58d4fdb523ccfed5522529103fa1 (p. 60), n90 ffdac4a53d34b3d4d9f20b034c16f5858ad31cf881b4b690abb7830253c8bd47 (p. 61), n91 b05f0c26be469311d40fb6e5fb2e5099aff67d7ef7d4e4fb10b35f2d3908b540 (p. 62), n99 09c447af9425fdccf46f03db67cdab7fdfd7f6b23316297be7d5b391550c355d (p. 70). Direct exegesis of Ps 2:8. Carries reading A; research/scope.md sections 3.8, 5.1."
+
+# --- Catalog-level: read outside the registered artifacts ---------------------------
+
+[[bindings]]
+source_id = "edition.john-chrysostom.homilies-on-john.english-npnf1-14-new-advent-web-2026-09-05"
+loci = ["83", "84"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Homily 83, section 4, on John 18:33-37, and Homily 84, section 1, on John 18:37. Read on 2026-10-19 on New Advent pages fetched whole over HTTPS and hashed but not registered: 240183.htm SHA-256 c210c0089e1fb41c2079dbc7c16fda1dbc7816dfd812a1394627ff5311ccbf3e (44,830 bytes), 240184.htm 7d7b2893471c00fb111a8a4e9dcc890d3ab4bbc7e126b09573949577fdebdbd1 (29,729 bytes). Marriott's NPNF I.14 translation, as this edition names it. Carries reading B; counter-witness to reading A. Catalog-level binding; no central fingerprint replay is claimed."
+
+[[bindings]]
+source_id = "edition.thomas-aquinas.super-evangelium-ioannis-lectura.latin-corpusthomisticum-web-2026-07-25"
+loci = ["18.6"]
+role = "reception"
+states = ["cataloged"]
+context = "Super Io. cap. 18 lect. 6, paragraph [87545] and following. Read on 2026-10-19 on cih18.html fetched whole and hashed but not registered: SHA-256 ed660055d0c0db268918e9f42583fa770a86b7ff1cc108f0ba92976657a05ce3 (130,526 bytes). Medieval reception of Jn 18:33-38 presenting Augustine's and Chrysostom's readings and citing Dan 7:14 and Ps 2:8. Supports reading B (Aquinas carries reading A from Super Psalmos 2, bound below). Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.augustine.de-trinitate.1887-haddan-english-web-2026-09-29"
+loci = ["I.8.15", "I.8.16", "I.8.17", "I.10.20", "I.10.21"]
+role = "reception"
+states = ["cataloged"]
+context = "This edition's registered artifact is Book III; Book I was read on 2026-10-19 on New Advent page 130101.htm fetched whole and hashed but not registered: SHA-256 e815d76feeb60a8afdf35c47131cbbc5110f4b0afd30f7efdb9049e9eca3995c. 1 Cor 15:24-28, illuminating the Preface. Carries reading C. Catalog-level binding."
+
+[[bindings]]
+source_id = "work.bede.explanatio-apocalypsis"
+loci = ["I on Apoc 1:5-6 (PL 93 cols. 135-136)", "I on Apoc 5:5-14 (PL 93, Explanatio book I; column number not legible in the OCR)", "III on Apoc 19:16"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The work is cataloged with no edition. Read on 2026-10-19 in two Internet Archive OCR texts fetched whole and hashed but not registered: Marshall's English of 1878, item explanationapoc00bedegoog, SHA-256 738afa825b4646d27ad35508904a679993301c51b97f4842bc7f410ebb7b72a6; and Migne's Latin, PL 93, item patrologiaecur93mign, SHA-256 36b5deebb9113be1ff84c870e7ffac254bc0e1b19f9e5722a5a8d281c4f11aa0. The Latin of 1:6 and 5:6-7 was read on that OCR, not on page images. Negative result: no comment on 5:12 itself. Carries reading A. Catalog-level binding."
+
+# --- Iteration 1: the bounded sweep of the psalms and the Epistle -------------------
+# Added in the research stage's iteration 1 of run 7397c12187517ff2 on
+# 2026-10-19, answering research review finding RES-001 (and RES-002). Every
+# remote artifact below was fetched whole and matched to its registered digest
+# before any page was read; nothing remote was retained.
+
+[[bindings]]
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1"
+loci = [
+  "Psalm 2, paragraphs 7-8 and 10-12, physical lines 113-125",
+  "Psalm 28, paragraphs on vv. 10-11, physical lines 1009-1013",
+  "Psalm 71, paragraphs 1, 4, 7, 10 and 11, physical lines 2533, 2537, 2543, 2549, 2551",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:85b019a495120f1320c91743bdd127eef0ccb54126e0247bcb0298f9fb7c3344"
+context = "O'Sullivan's 1866 English, which the edition record says is expressly abridged; tracked text re-hashed and matched before reading. Ps 2:7-8: the natural Son's just right to ask under three generations; Ps 2:10-12: kings exhorted to subject themselves freely; Ps 28:10: on the second interpretation the eternal session follows the judgment, all power swept away; Ps 71:1: the literal sense is David's prayer for Solomon, just anointed king; Ps 71:11: fulfilled partly in converted princes, to the letter at the judgment, always in his actual power with or without their consent (Mt 28:18; Apoc 1:5; Apoc 19:16). Carries reading B, supports A and C; research/scope.md sections 3.3, 3.4, 3.8, 3.9, 5.1-5.3, 6.1, 6.7-6.9."
+
+[[bindings]]
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.commons-ia-facsimile-78b290d4"
+loci = [
+  "PDF p. 14 = printed p. 4 (Ps 2:7-8)",
+  "PDF p. 82 = printed p. 72 (Ps 28:10)",
+  "PDF p. 224 = printed p. 214 (Ps 71:1)",
+  "PDF p. 226 = printed p. 216 (Ps 71:8-12)",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:6221c39e003611f5ca8e53a39ee29224a806934ad8bbe85d5bf3d122911a1ac6"
+context = "The facsimile that controls quotation of the O'Sullivan English. Fetched whole on 2026-10-19; SHA-256 matched. The wording quoted in research/scope.md was checked on its PDF text layer at all four pages and on the page image of PDF p. 226. Not retained."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.super-psalmos.latin-corpusthomisticum-web-2026-09-05.cps02-html-73a0a0c2"
+loci = ["2.n5", "2.n6", "2.n7", "2.n8", "2.n9"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:b4e98982d6e79ec9d8cce7e35f0679f0717ea5f9b9afa406bf9c000bbb6bc607"
+context = "Loci are psalm and Corpus Thomisticum number (paragraphs [86793]-[86797]). Restricted artifact: fetched whole from its source_url on 2026-10-19; SHA-256 and byte size matched; not retained. Ps 2:7-8: dominion over the nations by a double right, hereditary (the eternal generation) and meritorious (the asking, by prayer and passion); Ps 2:10-11, reporting Augustine: the king serves God as man by living justly and as king by laws. Carries reading A, supports B; research/scope.md sections 3.8, 5.1, 5.2, 6.1, 6.9."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.super-psalmos.latin-corpusthomisticum-web-2026-07-28.cps21-html-5e8fdbbe"
+loci = ["28.n5", "28.n8"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:d7e2f9d87d27ac76392972b00af3983181d6071724944573eae45a7c370b68dd"
+context = "Loci are psalm and Corpus Thomisticum number (paragraphs [87042] and [87045]). Restricted artifact: fetched whole from its source_url on 2026-10-19; SHA-256 and byte size matched; not retained. Ps 28:10-11: the Hebrew plain sense (God's judgments from the beginning, the deluge) and three mystical senses (the Church in the ark, the converted world brought into the temple, the baptismal waters); strength for progress, peace for the end. Supports reading C; research/scope.md sections 3.9, 5.3, 6.8."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.in-omnes-pauli-epistolas-commentaria.dessain-volume-2-1857.book-ocr-2b7b11dc"
+loci = ["Super Col. cap. 1 lect. 3, on Col 1:13, printed p. 409, physical line 43530"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:fc0fe651fc1f34b1d124831a6538442a81cd47acb7ec6161c19a7bfb4269aadf"
+context = "Tracked OCR re-hashed and matched. Used to check one locus of Aquinas's lectures on Colossians, read whole (cap. 1 lect. 3-5) in the Corpus Thomisticum web text ccl.html, fetched whole on 2026-10-19 and hashed but not registered (SHA-256 d055308fedb2d8b3223e2be943faf1182715c7672331731e03fa1f101142ddda): on 1:13, transtulit ... ut essemus regnum Dei, with Jn 18:36 and Apoc 5:10, stands here in the same words. Supports readings A and B; research/scope.md section 3.5."
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-graeca-volume-29.1860-paris.full-text-layer-2898b217"
+loci = [
+  "Basil, Homilia in Psalmum XXVIII 8, cols. 303-306, physical lines 38413-38500 (located)",
+  "Ordo rerum of the volume, physical lines 56880-56915 (the homilies the volume carries)",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c01a641a0e2ea2179ad2a3e00f02bc7f5df561c4e866320498d07a77ffd231e6"
+context = "Tracked text layer re-hashed and matched; used to locate Basil's homily on Ps 28 and to bound the absence of homilies on Pss 2 and 71. The Greek of Hom. in Ps. 28.8, cols. 304C-305A, was read on Internet Archive page images n562 and n563 of patrologiae_cursus_completus_gr_vol_029, fetched and hashed but not registered (SHA-256 2ae578465132b9cfa2f86cf13e3f3590557074e18b5a3758818a096675f6e150 and 2b782dbfda2a98bd9bc4ef2e83532698f2c10c26825c0188504e1e1318ac3d84): the grace of baptism called a deluge; the soul shining from it made God's throne. Supports reading C; research/scope.md sections 3.3, 3.9, 5.3, 6.8."
+
+[[bindings]]
+source_id = "edition.basil-of-caesarea.homiliae-in-psalmos.migne-pg-29-paris"
+loci = ["Homilia in Psalmum XXVIII 8 (PG 29 cols. 304C-305A)"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The edition of the homily read through the PG 29 text layer and page images bound above. Catalog-level binding."
+
+[[bindings]]
+source_id = "artifact.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.wikimedia-pdf-72ee8714"
+loci = [
+  "Ps 2:7-8, PG 80 cols. 879-880, PDF p. 466 (page image read)",
+  "Ps 28:10-11, PG 80 cols. 1069-1070, PDF p. 569 (text layer)",
+  "Ps 71 title and v. 1, PG 80 cols. 1429-1430, PDF pp. 752-753 (page images read)",
+  "Ps 71:8-13, PG 80 cols. 1433-1436, PDF pp. 755-756 (v. 11 on the page image; vv. 8, 12-13 on the text layer)",
+]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f431d1af4d23e9bc63a710fdaa7d8198d2aba0ac1853cde486c5307cbc031b66"
+context = "Remote facsimile fetched whole on 2026-10-19; SHA-256 and byte size matched; not retained. Theodoret stands as an ecclesiastical writer and carries no reading. Ps 2:7 said of him as man; Ps 2:8 Lord by nature as God, receiving the lordship as man (with Col 1:16); Ps 28:10-11 a new creation after the torrent of lawlessness, the martyrs' victory and the churches' peace; Ps 71 not applicable to Solomon at all, authority had as God and received as man; Ps 71:11 some willingly now, all after the resurrection. Supports readings A, B and C; research/scope.md sections 3.3, 3.4, 3.8, 3.9, 5.1-5.3, 6.1, 6.6-6.8."
+
+[[bindings]]
+source_id = "work.cassiodorus.expositio-psalmorum"
+loci = ["2.14-23", "28.15-17", "71.1", "71.3", "71.5-6", "71.12-16"]
+role = "reception"
+states = ["cataloged"]
+context = "Loci are Vulgate psalm and the transcription's numbered section: Ps 2 sections 14-23 (Vers. 7-12), Ps 28 sections 15-17 (Vers. 8-10 in Migne's numbering, the Missal's 28:9-11), Ps 71 sections 1, 3, 5-6 and 12-16 (title, division, Vers. 1-2, 8-12). Read on 2026-10-19 in the Corpus Corporum/monumenta.ch Latin (Migne's text, hide_apparatus=0 view), at the addressing rule the registered monumenta edition records state, fetched whole and hashed but not registered as a new dated state: Ps 2 SHA-256 30366668f5e7859e789c28d7150c9248dcf9679de6746b579a437201c3bfdda2, Ps 28 89d21e00fa06e2ce732348bdd4cfc64251c791c0e9b1832a9f6a542c33d6b734, Ps 71 374b3e17853dfe655608c5d9b13a29e38b74f6c623cfb55e9d0348d96b4e1ae9. The pages carry no PL 70 column marker. Cassiodorus stands as an ecclesiastical writer and carries no reading. Supports readings A, B and C; research/scope.md sections 3.3, 3.4, 3.8, 3.9. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927"
+loci = ["Volume V (London, 1930), Sunday before the Feast of All Saints: Feast of the Kingship of Our Lord Jesus Christ, printed pp. 200-204"]
+role = "reception"
+states = ["cataloged"]
+context = "The registered edition holds only volume III. Volume V was read on 2026-10-19 in the Internet Archive item LiberSacramentorum: its PDF fetched whole, SHA-1 17781eccb490253de0c18ebb1d4b942de3b116b0 matching the item listing, SHA-256 016b212d15005d6d4b62304f94e57e06c051a39f875a7c58ee5723b8179a9d00, page images of PDF pp. 220-224; its OCR, SHA-1 c413fcbeb1508b779315e224b92db88d58e156bd, SHA-256 65192aa15fd9e6e676bc0f58166ed70718b14e1bad667fb7d91f5202211b9a11. Neither is registered. Volumes I-IV were searched and carry nothing on the feast. Blessed Schuster's commentary on this Mass as a Mass: liturgical reception supporting readings A, B and C; the p. 203 paragraph on medieval papal deposition of kings is not adopted. research/scope.md section 3.1. Catalog-level binding."

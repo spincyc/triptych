@@ -21,7 +21,7 @@ Missal and a dated occurrence witness. No unspecified local overlay is assumed.
 
 State: full-material production remains unfinished; independent evidence has
 been consolidated. The workspace remains on
-`feature/propers/codex`; `main` was incorporated at `c6da24eda`. No completed
+`feature/propers/codex`; `main` was incorporated through `6dad4a7a3`. No completed
 publication, main push or live deployment is claimed.
 
 The original version-12 run `3c11005c63dcd584` passed scope and context but
@@ -60,6 +60,62 @@ reviews, installation, main publication and live verification remain required.
 The driver record is
 `workflows/reviews/gpt-1962-f01-production-2026-10-19/CYCLES.md`.
 
+## Claude 1962 Christ the King three documents, 2026-10-19
+
+<!-- promised-deliverable: claude-1962-f01-christ-the-king-three-documents-2026-10-19 -->
+
+The maintainer asked on 2026-10-19 for the TLM propers workflow for the
+upcoming Sunday, 25 October 2026, to be driven to completion and pushed to
+`main`, with subagents permitted. The maintainer also confirmed the provider
+authorization explicitly. `tools/mass-today --date 2026-10-25 --calendar
+roman-1962` resolves the feast of Our Lord Jesus Christ the King
+(*D. N. Iesu Christi Regis*), first class, which the general rubrics assign
+perpetually to the last Sunday of October. It displaces the Twenty-second
+Sunday after Pentecost (Easter 5 April 2026, Pentecost 24 May, twenty-two
+weeks to 25 October), and `tools/calendar-rubrics day` also lists the
+commemoration of Ss. Chrysanthus and Daria as displaced. The target is
+provider `claude`, identity
+`liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king`. That is the
+profile's `F01`, the first `F`-series leaf either provider has produced. It
+runs under the current `proper-study` three-document contract: a 20–50-page
+expansive study, a 10–12-page concise study, a standalone homily for an
+adult parish assembly, and the canonical study's web edition. The production
+plan records this exact scope opening. No GPT publication existed when that
+independent Claude production began,
+and this independent Claude production borrows from no other leaf.
+
+**Complete: accepted, pushed to `main` and verified live.** Run
+`7397c12187517ff2` (`proper-study` v12) reached ACCEPTED at its publication
+gates with no escalation: 33 packets, 33 accepted results, four
+interventions. Every agent stage ran as a fresh `claude-opus-5-5[1m]` subagent
+at its packet's declared effort, and every review was a fresh worker. Four
+cycles were real defects that cold reviews found and repaired. Two were in
+research: held commentaries not read, Augustine's own Ps 71 reading omitted
+and the not-said Tract's page-2 rows unaccounted for; then Schuster credited
+with links he never makes. One was in the study, where research instructions
+reached reader prose and the comparison misstated the readings. One was in the
+concise study, which misplaced the Communion's unsung flood clause. The Latin
+of this 1925 formulary rests on its first printing in *Acta Apostolicae Sedis*
+17 (1925), collated against the 1962 pages; the orations and Preface take the
+Lasance 1945 English. Before research sealed it, the driver corrected the
+shared calendar's Communion citation to Ps 28:10–11, with the maintainer's
+authorization. The driver's verification of that change missed the four Bible
+indexes and two release bindings it staled. Both were repaired within the
+production. The installed family is a 33-page expansive study, a 12-page
+concise study, a four-page homily (about 1,460 spoken words) and the canonical
+web edition. The run is archived in the leaf under
+`evaluations/proper-study-results/7397c12187517ff2/`. The driver's account
+covers every cycle, the 15 standing advisories and 2 accepted findings, and
+what is left for other owners, notably the calendar's inability to say when a
+proper is said:
+[CYCLES.md](workflows/reviews/claude-1962-f01-production-2026-10-19/CYCLES.md).
+The three local deploy gates passed, and `c71314375` reached `main` by
+fast-forward. Pages run 39345282406 succeeded. The three PDFs, their catalog
+aliases, the web edition, the Traditional Latin Mass catalog page and the
+browser's corpus and 1962 propers data are each byte-identical live to the
+verified local site, as
+[deployment-evidence.json](workflows/reviews/claude-1962-f01-production-2026-10-19/deployment-evidence.json)
+records.
 
 ## Claude postconciliar Twenty-ninth Sunday revision, 2026-10-16
 
