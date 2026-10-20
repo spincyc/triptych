@@ -49,9 +49,9 @@ provider = "gpt"
 run_id = "095fe00a9fe8cfee"
 workflow = "proper-study"
 workflow_version = 13
-stage = "homily-review"
-iteration = 0
-disposition = "CHANGES_REQUIRED"
+stage = "research-review"
+iteration = 2
+disposition = "PASS"
 standing = 1
 accepted_count = 1
 advisory_count = 0
@@ -71,7 +71,7 @@ observation_count = 0
 
 [[stages]]
 stage = "research-review"
-iteration = 1
+iteration = 2
 disposition = "PASS"
 run_id = "095fe00a9fe8cfee"
 workflow = "proper-study"
