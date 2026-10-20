@@ -14,7 +14,7 @@
     {
       "id": "western",
       "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
-      "sha256": "8b0c7453e3774a1eebfc189c386ea2486f10346b360a8e5a85a2b72cd8e74caa"
+      "sha256": "b56b8b5c897b1b403365dc3b268a41ab9acde37612bb89e40e52f012e730ca5e"
     },
     {
       "id": "presentation",
@@ -7057,7 +7057,7 @@
           "label": "Missale Romanum revised under Urban VIII",
           "start_year": null,
           "end_year": null,
-          "date_role": "typical-book-publication",
+          "date_role": "act-approval-year; catalogue-imprint-year-questioned",
           "status": "inventory-witness-candidate-not-a-stage"
         },
         {
@@ -7895,7 +7895,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "The reviewed Roman modern inventory adds 107 in-scope book, component, witness and unresolved-lead records to the seven prior candidates. These are research placements, not 107 new revisions or stages. Complete the intervening 1634–1920 book/calendar progression, experimental and restored Holy Week witnesses, 1965–1968 component collation, 1971/1975/2008 whole-book checks, and the 2020 Supplementum. Distinguish approval, publication and effectiveness from an inferred continuous use. Review the bounded Roman modern research receipt for 117 book, component, witness and lead dispositions; its 107 new in-scope candidate IDs join the seven baseline IDs here. The Communion-outside-Mass adjacent ritual roman-modern-extra-035 remains outside this coverage row. Complete the packet-listed original acquisitions, rights review and before/after collation before treating any candidate as a substantive revision or adding a station. The exact 1884 typical-edition claim, 1900 original impression, 1975 altar book, 1965 Latin Order, 1965 concelebration, 1968 Preces and 2020 Supplementum still have the receipt-specific limitations. Request the exact UB Rome 1634 copy keyed to Torra no. 120; obtain Rusca L-77 original images and resolve Asachiana pagination before comparing any 1635 text with 1634. The 1635 lead is a witness, not a new recension or station.",
+      "missing_stage_chain": "The reviewed Roman modern inventory adds 107 in-scope book, component, witness and unresolved-lead records to the seven prior candidates. These are research placements, not 107 new revisions or stages. Complete the intervening 1634–1920 book/calendar progression, experimental and restored Holy Week witnesses, 1965–1968 component collation, 1971/1975/2008 whole-book checks, and the 2020 Supplementum. Distinguish approval, publication and effectiveness from an inferred continuous use. Review the bounded Roman modern research receipt for 117 book, component, witness and lead dispositions; its 107 new in-scope candidate IDs join the seven baseline IDs here. A separately reviewed 1635 bibliographic witness lead adds one more, for 115 current candidates. The Communion-outside-Mass adjacent ritual roman-modern-extra-035 remains outside this coverage row. Complete the packet-listed original acquisitions, rights review and before/after collation before treating any candidate as a substantive revision or adding a station. The exact 1884 typical-edition claim, 1900 original impression, 1975 altar book, 1965 Latin Order, 1965 concelebration, 1968 Preces and 2020 Supplementum still have the receipt-specific limitations. Request surviving preliminaries, any colophon and usable shelfmark for UB Alma MMS 991002308499706708, whose probable Rome imprint is dated [1634?] and whose title page and Q1 are missing; seek an independently dated complete Rome copy. Obtain Rusca L-77 original images and resolve Asachiana pagination before comparing any 1635 text with 1634. The 1635 lead is a witness, not a new recension or station.",
       "next_sources": {
         "inventory_source_ids": [
           "notitiae-book-bibliography-1985",
@@ -7903,6 +7903,7 @@
           "western-roman-holy-week-1965-primary",
           "western-roman-variationes-1967-primary",
           "western-roman-preces-1968-primary",
+          "roman-modern-1634-ub-alma",
           "roman-modern-1635-rusca-l77",
           "roman-modern-1635-asachiana-iasi"
         ],
@@ -7912,13 +7913,14 @@
           "https://gofile.me/3HKfk/oqnX4tKks",
           "https://gofile.me/3HKfk/UxU0cLZ9z",
           "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1960/notitiae-04-%281968%29/Notitiae-040-1968.pdf",
+          "https://csuc-ub.alma.exlibrisgroup.com/permalink/34CSUC_UB/18sfiok/alma991002308499706708",
           "https://www.centrorusca.it/sites/all/modules/sacerdoti/doc/LANZADA.pdf",
           "https://bjiasi.ro/wp-content/uploads/2014/01/asachiana-19-2023.pdf"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Use the dated Roman modern research receipt and its acquisition references to inspect missing exact originals, delimit component books and reprints, and collate named text changes before extending stages or text parentage. Prioritize the experimental/restored Holy Week books, 1965–1968 components, 1971/1975/2008 books and 2020 Supplementum; resolve the adjacent Communion-outside-Mass ritual's scope separately. Review the bounded Roman modern research receipt for 117 book, component, witness and lead dispositions; its 107 new in-scope candidate IDs join the seven baseline IDs here. The Communion-outside-Mass adjacent ritual roman-modern-extra-035 remains outside this coverage row. Complete the packet-listed original acquisitions, rights review and before/after collation before treating any candidate as a substantive revision or adding a station. The exact 1884 typical-edition claim, 1900 original impression, 1975 altar book, 1965 Latin Order, 1965 concelebration, 1968 Preces and 2020 Supplementum still have the receipt-specific limitations. Request the exact UB Rome 1634 copy keyed to Torra no. 120; obtain Rusca L-77 original images and resolve Asachiana pagination before comparing any 1635 text with 1634. The 1635 lead is a witness, not a new recension or station."
+        "target": "Use the dated Roman modern research receipt and its acquisition references to inspect missing exact originals, delimit component books and reprints, and collate named text changes before extending stages or text parentage. Prioritize the experimental/restored Holy Week books, 1965–1968 components, 1971/1975/2008 books and 2020 Supplementum; resolve the adjacent Communion-outside-Mass ritual's scope separately. Review the bounded Roman modern research receipt for 117 book, component, witness and lead dispositions; its 107 new in-scope candidate IDs join the seven baseline IDs here. A separately reviewed 1635 bibliographic witness lead adds one more, for 115 current candidates. The Communion-outside-Mass adjacent ritual roman-modern-extra-035 remains outside this coverage row. Complete the packet-listed original acquisitions, rights review and before/after collation before treating any candidate as a substantive revision or adding a station. The exact 1884 typical-edition claim, 1900 original impression, 1975 altar book, 1965 Latin Order, 1965 concelebration, 1968 Preces and 2020 Supplementum still have the receipt-specific limitations. Request surviving preliminaries, any colophon and usable shelfmark for UB Alma MMS 991002308499706708, whose probable Rome imprint is dated [1634?] and whose title page and Q1 are missing; seek an independently dated complete Rome copy. Obtain Rusca L-77 original images and resolve Asachiana pagination before comparing any 1635 text with 1634. The 1635 lead is a witness, not a new recension or station."
       },
-      "caveat": "The 114 research candidates include whole books, components, print witnesses and unresolved leads. Catalogue or receipt placement does not make them distinct revisions, stages, a complete chronological sequence, or evidence of local adoption; roman-modern-extra-035 remains outside this coverage row pending scope review.",
+      "caveat": "The 115 current research candidates include whole books, components, print witnesses and unresolved leads. Catalogue or receipt placement does not make them distinct revisions, stages, a complete chronological sequence, or evidence of local adoption; roman-modern-extra-035 remains outside this coverage row pending scope review.",
       "canonical_tradition_ids": [
         "roman-stages-pian",
         "roman-stages-postconciliar"

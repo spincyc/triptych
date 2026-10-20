@@ -117858,7 +117858,7 @@
       "title": "Missale Romanum revised under Clement VIII"
     },
     {
-      "acquisition_status": "exact-Rome-1634-original-not-acquired; UB-holdings-list-only",
+      "acquisition_status": "UB-Alma-MARC-acquired; original-Rome-1634-book-images-not-acquired",
       "act_ref": null,
       "chronology": null,
       "collation_status": "bounded-evidence-only; not-whole-book",
@@ -117871,6 +117871,11 @@
           "kind": "evidence",
           "label": "roman-modern-1634-ub-torra",
           "url": "https://publicacions.iec.cat/repository/pdf/00000086/00000073.pdf"
+        },
+        {
+          "kind": "evidence",
+          "label": "roman-modern-1634-ub-alma",
+          "url": "https://csuc-ub.alma.exlibrisgroup.com/permalink/34CSUC_UB/18sfiok/alma991002308499706708"
         }
       ],
       "origin": {
@@ -117886,19 +117891,20 @@
       "record_kind": "whole-book-edition",
       "relationship_ids": [],
       "source_record": {
-        "acquisition_status": "exact-Rome-1634-original-not-acquired; UB-holdings-list-only",
+        "acquisition_status": "UB-Alma-MARC-acquired; original-Rome-1634-book-images-not-acquired",
         "collation_status": "bounded-evidence-only; not-whole-book",
         "date": "1634",
-        "date_role": "typical-book-publication",
+        "date_role": "act-approval-year; catalogue-imprint-year-questioned",
         "existing_inventory": "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json",
         "family": "roman",
         "id": "roman-modern-004",
         "kind": "whole-book-edition",
-        "qualification": "Urban VIII revision/approval belongs to the separately sourced Si quid est 1634 act. Torra Miró p. 188 no. 120 attests a UB-held Rome 1634 Typographia Vaticana/Andrea Brogiotto Missale Romanum printing. This short holdings entry does not provide its original title page, completeness, pagination or text. Exact 1634 copy remains unacquired; no whole-book collation.",
+        "qualification": "The separately sourced Si quid est act dates Urban VIII approval to 1634. Torra Miró p. 188 no. 120 lists a UB Rome 1634 Typographia Vaticana/Andrea Brogiotto missal; UB Alma MMS 991002308499706708 is a strong likely match, not an explicit item crosswalk. Its supplied [Missale Romanum] title and bracketed [Roma : Andrea Brogiotto : Typographia Vaticana, 1634?] imprint are catalogue metadata; the probable imprint is said to derive from preliminaries without identifying a dated leaf. The reported [51], 563, XCV, [3] pages and [11] illustrations do not establish completeness: the held copy lacks its title page and Q1 and binds a separate 1764 addition. Original-book images and 1634/1635 text collation remain unacquired.",
         "scope_disposition": "in-scope-original-book-or-historical-witness",
-        "source_locus": "roman-stages-1634 for Urban VIII act-backed revision; Torra Miró printed p. 188 no. 120 for UB Rome 1634 printing",
+        "source_locus": "roman-stages-1634 for Urban VIII act approval; Torra Miró printed p. 188 no. 120 for bibliographic lead; UB Alma MMS 991002308499706708 MARC 245/260/300/500/501/993 for questioned imprint and defective likely matching copy",
         "sources": [
-          "roman-modern-1634-ub-torra"
+          "roman-modern-1634-ub-torra",
+          "roman-modern-1634-ub-alma"
         ],
         "status": "reviewed-bounded-metadata",
         "title": "Missale Romanum revised under Urban VIII",
@@ -117911,6 +117917,12 @@
           "inspection": "Torra Miró printed p. 188 no. 120 / PDF p. 10: Missale romanum, Roma, Typ. Vaticana/A. Brogiotto, 1634; inspected article page and neighbouring Antwerp 1634/Rome 1647 entries.",
           "label": "roman-modern-1634-ub-torra",
           "url": "https://publicacions.iec.cat/repository/pdf/00000086/00000073.pdf"
+        },
+        {
+          "id": "roman-modern-1634-ub-alma",
+          "inspection": "UB Alma MMS 991002308499706708, legacy .b24364526; provider SRU MARC 245/260/300/500/501/993: supplied [Missale Romanum], probable bracketed Rome/Brogiotto/Vaticana imprint with [1634?], [51], 563, XCV, [3] p. and [11] illustrations; held copy lacks title page and Q1 and includes a separately printed 1764 addition. Archived catalogue XML: 11177 bytes, SHA-256 2a9809d8db07d8eb77bf9dc8e096a425c8edcfa54785545e03df56684324d281.",
+          "label": "roman-modern-1634-ub-alma",
+          "url": "https://csuc-ub.alma.exlibrisgroup.com/permalink/34CSUC_UB/18sfiok/alma991002308499706708"
         }
       ],
       "substantive_status": "unestablished",
@@ -128145,9 +128157,9 @@
       "sha256": "cfbc951ec40071d5eb78c55d9453811ee194647b57893b7aa3b4768abadea9bb"
     },
     {
-      "byte_size": 1690864,
+      "byte_size": 1692799,
       "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
-      "sha256": "8b0c7453e3774a1eebfc189c386ea2486f10346b360a8e5a85a2b72cd8e74caa"
+      "sha256": "b56b8b5c897b1b403365dc3b268a41ab9acde37612bb89e40e52f012e730ca5e"
     },
     {
       "byte_size": 2595,

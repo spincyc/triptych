@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "roman-1634-ub-catalogue-followup-2026-10-20",
+  "title": "University of Barcelona probable Rome 1634 missal catalogue follow-up",
+  "lane": "roman_modern",
+  "side": "western",
+  "checked_on": "2026-10-20",
+  "status": "catalogue-metadata-integrated; original-book-unacquired",
+  "target_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+  "prior_receipt": "src/sources/inventories/eucharistic-research-reviews/roman-1634-1635-followup-2026-10-20.json",
+  "research_packet_sha256": "d46db499b71800a37a7eefafe8522009b182064a618833165d240b62c3fcc3fb",
+  "independent_verdict_sha256": "c9b152173fa2167b000e867f40117634370c7ca0ce8588b797ed783efc0d17e9",
+  "review_files": {
+    "research_packet_sha256": "d46db499b71800a37a7eefafe8522009b182064a618833165d240b62c3fcc3fb",
+    "independent_verdict_sha256": "c9b152173fa2167b000e867f40117634370c7ca0ce8588b797ed783efc0d17e9"
+  },
+  "coverage_rows": ["roman-modern"],
+  "uses": [],
+  "searches": [],
+  "versions": [],
+  "acquisitions": [],
+  "source_id": "roman-modern-1634-ub-alma",
+  "candidate_id": "roman-modern-004",
+  "catalogue": {
+    "institution": "Universitat de Barcelona, CRAI Biblioteca de Fons Antic",
+    "permalink": "https://csuc-ub.alma.exlibrisgroup.com/permalink/34CSUC_UB/18sfiok/alma991002308499706708",
+    "sru_marc_url": "https://csuc-ub.alma.exlibrisgroup.com/view/sru/34CSUC_UB?version=1.2&operation=searchRetrieve&query=alma.mms_id%3D991002308499706708&recordSchema=marcxml&maximumRecords=10",
+    "mms_id": "991002308499706708",
+    "legacy_id": "(ES-BaCBU).b24364526",
+    "archived_xml_sha256": "2a9809d8db07d8eb77bf9dc8e096a425c8edcfa54785545e03df56684324d281",
+    "archived_xml_bytes": 11177,
+    "archive_kind": "bibliographic MARC XML; not original-book images",
+    "fields": {
+      "245_a": "[Missale Romanum]",
+      "260": "[Roma : Andrea Brogiotto : Typographia Vaticana, 1634?]",
+      "300_a": "[51], 563, XCV, [3] p., [11] il.",
+      "500_imprint_note": "Probable peu d'impr. deduït dels liminars",
+      "993_copy_note": "ex. sense port., f. Q1 arrencat",
+      "501_addition": "A separately printed Barcelona 1764 St Camillus Mass, two pages, bound with the missal"
+    },
+    "interpretation": "The title is supplied. The whole imprint is bracketed and 1634 is questioned. The probable imprint derives from preliminary matter, but the catalogue identifies no precise dated leaf. This held copy lacks its title page and Q1; the reported extent does not establish a complete original edition. The 1764 item is a later bound addition.",
+    "torra_match": "Strong likely match to Torra Miró printed p. 188 no. 120 based on title, place, printer and date, but neither record supplies an explicit item crosswalk.",
+    "digital_original": "No MARC 856 link or original-book image bytes acquired; absence of a linked scan does not establish that no unlinked scan exists.",
+    "local_call_number_limit": "MARC 993 c:86/3/20 and r:R. 25980 are recorded, but their usable shelfmark roles require provider confirmation."
+  },
+  "chronology": {
+    "act_year": "The separately sourced Si quid est act is dated 2 September 1634; this is the approval year for roman-stages-1634.",
+    "book_year": "The UB copy is catalogued [1634?], not independently dated from an inspected original title or colophon.",
+    "candidate_date_role": "act-approval-year; catalogue-imprint-year-questioned",
+    "new_stage_or_parentage": false
+  },
+  "search_limits": "UB's 1634 title/date index returned this questioned Rome record and a separate Antwerp Moretus 1634 record. BSB's digitized 1634 hit is Antwerp; ONB's matching title/date query returned none; BnF's seven 1630s title hits supplied no Rome 1634 copy. These bounded catalogue results are not a global holdings census. Vatican and Gallica automated search endpoints were inaccessible.",
+  "remaining_gaps": [
+    "Directly inspect a dated original Rome 1634 title or colophon in another complete copy, or independently verify this UB copy's questioned imprint year.",
+    "Confirm UB's usable shelfmark, the basis of the probable imprint from surviving preliminaries, and whether a full unlinked facsimile exists.",
+    "Check copy completeness and whether the catalogue extent describes an ideal edition or this defective copy.",
+    "Acquire original-book images with reuse terms, then collate 1634 and 1635 text without presuming revision or parentage."
+  ],
+  "next_access_request": {
+    "recipient": "CRAI Biblioteca de Fons Antic, Universitat de Barcelona",
+    "reference": "Alma MMS 991002308499706708; legacy (ES-BaCBU).b24364526; Torra Miró printed p. 188 no. 120 as a likely match",
+    "request": "Confirm the usable shelfmark, whether an unlinked facsimile exists, and which surviving preliminary evidence supports the probable Rome/Brogiotto/Vaticana imprint and questioned 1634 year. Advise research reproductions of the preliminaries, any surviving colophon, Si quid est or privilege, Q-neighbor leaves and representative text, with completeness and rights terms. Identify a complete independently dated Rome 1634 copy if known. This copy's title page is missing; no request for its title-page image is made.",
+    "route": "https://crai.ub.edu/serveis-i-recursos/reproduccio-documents",
+    "request_sent": false
+  },
+  "counting_rule": "Catalogue metadata improves a likely holding identification; it is not an original-book acquisition, complete text, new stage, 1635 recension, or textual parentage."
+}

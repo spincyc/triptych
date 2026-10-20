@@ -6224,7 +6224,7 @@ candidate_ids = [
   "roman-modern-extra-046",
   "roman-modern-1635-vatican-witness-lead",
 ]
-remaining_work = "Review the bounded Roman modern research receipt for 117 book, component, witness and lead dispositions; its 107 new in-scope candidate IDs join the seven baseline IDs here. The Communion-outside-Mass adjacent ritual roman-modern-extra-035 remains outside this coverage row. Complete the packet-listed original acquisitions, rights review and before/after collation before treating any candidate as a substantive revision or adding a station. The exact 1884 typical-edition claim, 1900 original impression, 1975 altar book, 1965 Latin Order, 1965 concelebration, 1968 Preces and 2020 Supplementum still have the receipt-specific limitations. Request the exact UB Rome 1634 copy keyed to Torra no. 120; obtain Rusca L-77 original images and resolve Asachiana pagination before comparing any 1635 text with 1634. The 1635 lead is a witness, not a new recension or station."
+remaining_work = "Review the bounded Roman modern research receipt for 117 book, component, witness and lead dispositions; its 107 new in-scope candidate IDs join the seven baseline IDs here. The Communion-outside-Mass adjacent ritual roman-modern-extra-035 remains outside this coverage row. Complete the packet-listed original acquisitions, rights review and before/after collation before treating any candidate as a substantive revision or adding a station. The exact 1884 typical-edition claim, 1900 original impression, 1975 altar book, 1965 Latin Order, 1965 concelebration, 1968 Preces and 2020 Supplementum still have the receipt-specific limitations. Request reproductions of the surviving preliminaries and any colophon for UB Alma MMS 991002308499706708, whose probable Rome imprint is dated [1634?] and whose title page and Q1 are missing; seek an independently dated complete Rome copy. Obtain Rusca L-77 original images and resolve Asachiana pagination before comparing any 1635 text with 1634. The 1635 lead is a witness, not a new recension or station."
 scope = "western-original-source-trajectory"
 existing_inventories = ["src/sources/inventories/latin-missal-acts-v1.toml", "src/sources/inventories/roman-holy-week-acts-v1.toml", "src/sources/inventories/missal-acquisition-audit-v1.toml"]
 
@@ -12283,15 +12283,15 @@ title = "Missale Romanum revised under Urban VIII"
 date = "1634"
 kind = "whole-book-edition"
 status = "reviewed-bounded-metadata"
-qualification = "Urban VIII revision/approval belongs to the separately sourced Si quid est 1634 act. Torra Miró p. 188 no. 120 attests a UB-held Rome 1634 Typographia Vaticana/Andrea Brogiotto Missale Romanum printing. This short holdings entry does not provide its original title page, completeness, pagination or text. Exact 1634 copy remains unacquired; no whole-book collation."
-date_role = "typical-book-publication"
+qualification = "The separately sourced Si quid est act dates Urban VIII approval to 1634. Torra Miró p. 188 no. 120 lists a UB Rome 1634 Typographia Vaticana/Andrea Brogiotto missal; UB Alma MMS 991002308499706708 is a strong likely match, not an explicit item crosswalk. Its supplied [Missale Romanum] title and bracketed [Roma : Andrea Brogiotto : Typographia Vaticana, 1634?] imprint are catalogue metadata; the probable imprint is said to derive from preliminaries without identifying a dated leaf. The reported [51], 563, XCV, [3] pages and [11] illustrations do not establish completeness: the held copy lacks its title page and Q1 and binds a separate 1764 addition. Original-book images and 1634/1635 text collation remain unacquired."
+date_role = "act-approval-year; catalogue-imprint-year-questioned"
 version_status = "whole-book-typical-or-revised-edition"
 scope_disposition = "in-scope-original-book-or-historical-witness"
 transcription_status = "not-whole-book-transcribed"
 collation_status = "bounded-evidence-only; not-whole-book"
-acquisition_status = "exact-Rome-1634-original-not-acquired; UB-holdings-list-only"
-source_locus = "roman-stages-1634 for Urban VIII act-backed revision; Torra Miró printed p. 188 no. 120 for UB Rome 1634 printing"
-sources = ["roman-modern-1634-ub-torra"]
+acquisition_status = "UB-Alma-MARC-acquired; original-Rome-1634-book-images-not-acquired"
+source_locus = "roman-stages-1634 for Urban VIII act approval; Torra Miró printed p. 188 no. 120 for bibliographic lead; UB Alma MMS 991002308499706708 MARC 245/260/300/500/501/993 for questioned imprint and defective likely matching copy"
+sources = ["roman-modern-1634-ub-torra", "roman-modern-1634-ub-alma"]
 existing_inventory = "src/sources/inventories/eucharistic-research-reviews/roman-modern-2026-10-20.json"
 
 [[candidates]]
@@ -19026,6 +19026,15 @@ inspection = "Torra Miró printed p. 188 no. 120 / PDF p. 10: Missale romanum, R
 limitations = "A UB holdings-list match only: exact copy shelfmark, title image, completeness, pagination and text unexamined. Urban VIII approval is sourced separately in Si quid est."
 inspected_on = "2026-10-20"
 integration_review = "Cold verdict 728cf40e0b1d9845411faea18b274eb79e8a670e2fefb1ea43dc41ee93847bbe; scratch follow-up receipt."
+
+[[sources]]
+id = "roman-modern-1634-ub-alma"
+url = "https://csuc-ub.alma.exlibrisgroup.com/permalink/34CSUC_UB/18sfiok/alma991002308499706708"
+type = "institutional-holdings-catalogue"
+inspection = "UB Alma MMS 991002308499706708, legacy .b24364526; provider SRU MARC 245/260/300/500/501/993: supplied [Missale Romanum], probable bracketed Rome/Brogiotto/Vaticana imprint with [1634?], [51], 563, XCV, [3] p. and [11] illustrations; held copy lacks title page and Q1 and includes a separately printed 1764 addition. Archived catalogue XML: 11177 bytes, SHA-256 2a9809d8db07d8eb77bf9dc8e096a425c8edcfa54785545e03df56684324d281."
+limitations = "Strong likely match to Torra Miró p. 188 no. 120, with no explicit item crosswalk. MARC 500 says the probable imprint derives from preliminaries but identifies no dated leaf; the 1634 year remains questioned. No original-book image or 856 facsimile link acquired; catalogue extent does not prove complete-copy extent, and local call-number roles require provider confirmation."
+inspected_on = "2026-10-20"
+integration_review = "Independent acquisition verdict c9b152173fa2167b000e867f40117634370c7ca0ce8588b797ed783efc0d17e9; roman-1634-ub-catalogue-followup-2026-10-20.json."
 
 [[sources]]
 id = "roman-modern-1635-rusca-l77"
