@@ -803,6 +803,15 @@ opt-in; its default checks pass two tests and explicitly skip Chromium. Its
 full eight-case final-artifact run and review remain pending. This smoke does
 not establish assistive-technology, manual-touch or WCAG acceptance.
 
+The final evidence audit retains the planned 88 captures and identifies 44
+additional existing ritual-flow representatives requiring fresh artifact-bound
+images and geometry. Historical images have different consumed inputs. The
+registered visual helper now exposes its existing fixture rows, capture and
+measurement functions for a selective artifact-bound adapter; its default CLI
+path remains intact. Eleven offline adapter checks pass. Final capture, every
+image's inspection and current-row/scroller, focus and source assertions remain
+pending; capture counts alone do not close the ritual-flow promise.
+
 A parallel witness audit found no publishable English witness for the 1962
 Pentecost Lesson's printed `discipuli` wording. [Cabrol 1921](https://catalog.hathitrust.org/Record/100567132)
 is an inaccessible page-image lead, not a text source. An
