@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-10-19.
+Last reconciled: 2026-10-20.
 
 ## Missal reader C1 truthful coverage, 2026-10-19
 
@@ -222,11 +222,9 @@ the 1962 typica's printed marks, and headings without printed cues.
 
 Remaining:
 
-- Introibo/Judica, Sursum corda, Pax and the dismissal need reviewed per-turn
-  source rows and dialogue roles. The postconciliar dismissal holds no text in
-  either language.
-- Element headings still print P./R. from their incipits.
+- Twenty opaque dialogue blocks still need review and division.
 - ℣/℟ typography and turn-row layout belong to later C4 steps.
+- The postconciliar dismissal still has no sourced text.
 
 ## Missal reader C3 1962 Pentecost text, 2026-10-19
 
@@ -245,7 +243,7 @@ reaches only that clause.
 pass remains.**
 
 - Pentecost Latin is 10/10 exact-target.
-- English is bound for 8 of 10 units, with the Lesson a typed gap.
+- English is bound for 9 of 10 units, with the Lesson a typed gap.
 - Missal mode seats the whole Holy Spirit Preface and the proper Hanc igitur
   and Communicantes.
 
@@ -309,6 +307,19 @@ Two open questions were settled from existing guidance: the 2026-09-03
 word-agreement rule makes collated word-exact projections `exact-target`, and
 the vision's stable semantic anchors make Read-mode Contents jumps URL
 `location`.
+
+The 2026-10-20 continuation joined the 1962 Pentecost exemplar's ten Proper
+and three appointed Ordinary text slots to their independently inventoried
+targets. The coverage check reports all thirteen represented and marks a
+removed Lesson or mismatched Preface option `not-represented`. This does not
+join the remaining whole-book slots or close the C2 acceptance pass.
+Fresh source-served Chromium runs passed 55 Day and 49 Propers assertion
+groups with no console or request failures. The 1962 exemplar was captured
+at 1440, 393 and 320 CSS pixels without horizontal overflow, and its print
+was inspected. Both English Read prints occupy ten pages; the Latin Day
+Missal print occupies 25. A tinted empty panel remains after the last text
+and long translation notes dominate English print. C4 print work and the full
+C2 acceptance matrix remain open.
 
 ## Daily Missal reader recovery and completion plan, 2026-10-19
 

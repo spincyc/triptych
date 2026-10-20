@@ -561,6 +561,16 @@ now refuses `form_id` without `calendar_mass_key` and a `parent_id` naming no
 other target; `source_form_key` joins nothing.
 `tools/tests/test_missal_coverage.py` holds both rules and the tracked file.
 
+**Pentecost text-slot join, 20 October 2026.** The thirteen text slots under
+`roman-1962.temporal.pentecost` now name their held unit explicitly: ten join
+the calendar Proper by its role name, and the Preface, Communicantes, and Hanc
+igitur join the Mass's printed Ordinary appointment by key and option. The
+parent form supplies the Mass identity. All thirteen are represented; removing
+the Lesson or changing the Preface option makes only that target
+`not-represented` in the coverage check. This is an identity and appointment
+join, not a new text collation or a whole-book text-slot denominator. Other
+text-slot targets without an evidenced unit join remain unresolved.
+
 **The join.** `calendar_mass_key`, and `form_id` where the held Mass has forms,
 now stand on every `form` row whose held Mass was identified exactly:
 

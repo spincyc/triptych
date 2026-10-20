@@ -19686,7 +19686,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/paragraphs/world-english-bible-catholic/73-apoc/022.json` | `b38cf221de030ad24aba0c1dd88f0823bcb4a721a25bc35fa8f94e1a903b4097` |
 | `src/web/data/structure/propers/index.json` | `ed462d89e5777f12b009cb962ebe1a59d4a2082a552489198f54feb8067c9536` |
 | `src/web/data/structure/propers/postconciliar.json` | `3369745c5f49b1f58d5413106ae055975fdb11d8700ed80d3569eb2362cfe130` |
-| `src/web/data/structure/propers/roman-1962.json` | `827048669c0eb73211dc5776b69d782b3662542c47b1e5064af5b2f7295c2df1` |
+| `src/web/data/structure/propers/roman-1962.json` | `dd00430656bfe4d9b59e32ade2ca1589f903374a05de9899ec3502325887ef31` |
 | `src/web/data/structure/propers/roman-pre-1955.json` | `f7bedfa1593534d32f567e7b8851c8882257ef9c50a122545c123b5c7bcfd5ef` |
 | `src/web/data/structure/readings/narrative-spine.json` | `9be6d97c206bc3544905f354090567f00f0f08a0b879b79f1d61499cc59db452` |
 | `src/web/data/structure/rubrics/index.json` | `61f18bea60e8f821891efc243a86e01bc140b65b40b3c65c8930e430d69058dc` |

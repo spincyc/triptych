@@ -663,6 +663,31 @@ state = "unenumerated"
                 self.assertEqual(forms["represented"], joined)
                 self.assertEqual(forms["not-represented"], 0)
 
+    def test_1962_pentecost_text_slots_join_their_appointed_units(self):
+        path = ROOT / "src/sources/inventories/missal-expected-targets-v1.toml"
+        propers = tool("mass-propers")
+        document = propers.load_calendar(ROOT / "src/sources/calendars", "roman-1962")
+        masses = [mass for _, mass in propers.masses_of(document)]
+
+        def slots(rows):
+            return {row["id"]: row["state"] for row in coverage.expectations(
+                path, "roman-1962", rows)["targets"]
+                if row["id"].startswith("roman-1962.temporal.pentecost:")}
+
+        joined = slots(masses)
+        self.assertEqual(len(joined), 13)
+        self.assertEqual(set(joined.values()), {"represented"})
+
+        changed = copy.deepcopy(masses)
+        pentecost = next(mass for mass in changed if mass["key"] == "pentecost")
+        pentecost["propers"] = [row for row in pentecost["propers"] if row["name"] != "Lesson"]
+        pentecost["ordinary_appointments"]["preface"]["option"] = "trinitate"
+        damaged = slots(changed)
+        self.assertEqual({key for key, state in damaged.items() if state == "not-represented"}, {
+            "roman-1962.temporal.pentecost:reading:1",
+            "roman-1962.temporal.pentecost:preface:1",
+        })
+
     def test_source_calendar_keeps_missing_christmas_commemoration_visible(self):
         propers = tool("mass-propers")
         document = propers.load_calendar(ROOT / "src/sources/calendars", "roman-1962")

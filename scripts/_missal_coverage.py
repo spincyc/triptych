@@ -449,6 +449,12 @@ def expectations(path: Path, calendar: str, masses: list[dict]) -> dict:
              "ordinary-option", "form", "exceptional-rite", "exceptional-rite-unit",
              "prayer-set", "collect-category", "form-referral", "text-slot"}
     slice_ids = set()
+    if not isinstance(document.get("targets"), list):
+        raise ValueError("expected Missal inventory requires targets array")
+    if any(not isinstance(row, dict) or not isinstance(row.get("id"), str) or not row["id"]
+           for row in document["targets"]):
+        raise ValueError("expected Missal targets require nonempty IDs")
+    inventory_targets = {row["id"]: row for row in document["targets"]}
     for section in ("slices", "targets", "boundaries"):
         if not isinstance(document.get(section), list):
             raise ValueError(f"expected Missal inventory requires {section} array")
@@ -496,6 +502,27 @@ def expectations(path: Path, calendar: str, masses: list[dict]) -> dict:
                             "expected Missal form_id joins a calendar mass's form and "
                             "requires calendar_mass_key; a parent reference is parent_id"
                         )
+                    proper_name = row.get("calendar_proper_name")
+                    appointment = row.get("calendar_ordinary_appointment")
+                    option = row.get("calendar_ordinary_option")
+                    if any(value is not None for value in (proper_name, appointment, option)):
+                        if row["kind"] != "text-slot" or bool(proper_name) == bool(appointment):
+                            raise ValueError("expected Missal text-slot requires one calendar unit join")
+                        if proper_name is not None and (not isinstance(proper_name, str) or not proper_name):
+                            raise ValueError("invalid expected Missal calendar_proper_name")
+                        if appointment is not None and (not isinstance(appointment, str) or not appointment):
+                            raise ValueError("invalid expected Missal calendar_ordinary_appointment")
+                        if bool(option) != bool(appointment) or (option is not None and not isinstance(option, str)):
+                            raise ValueError("expected Missal ordinary appointment requires its option")
+                        parent = inventory_targets.get(row.get("parent_id"))
+                        if not row.get("calendar_mass_key") and not (parent and parent.get("calendar_mass_key")):
+                            raise ValueError("expected Missal calendar unit join requires a joined Mass")
+                        if parent and parent.get("kind") != "form":
+                            raise ValueError("expected Missal calendar unit join requires a parent form")
+                        if parent and row.get("calendar_mass_key") and (
+                            row["calendar_mass_key"] != parent.get("calendar_mass_key")
+                        ):
+                            raise ValueError("expected Missal calendar unit join disagrees with its parent form")
                     if row.get("cycle") and row["cycle"] not in {"A", "B", "C", "ABC", "I", "II", "I-II"}:
                         raise ValueError("unknown expected Missal cycle")
                     if row.get("cycle_family") and row["cycle_family"] not in {"sunday", "weekday", "cycles", "weekday_cycles"}:
@@ -524,7 +551,11 @@ def expectations(path: Path, calendar: str, masses: list[dict]) -> dict:
         if not isinstance(key, str) or not key or key in seen:
             raise ValueError("expected Missal targets require unique nonempty IDs")
         seen.add(key)
-        lookup = str(target.get("calendar_mass_key") or "")
+        parent = inventory_targets.get(target.get("parent_id")) or {}
+        lookup = str(target.get("calendar_mass_key") or (
+            parent.get("calendar_mass_key") if target["kind"] == "text-slot" and (
+                target.get("calendar_proper_name") or target.get("calendar_ordinary_appointment"))
+            else "") or "")
         mass = by_key.get(lookup) or by_registry.get(lookup)
         if target.get("identity_state") != "established":
             state = "unresolved"
@@ -539,6 +570,19 @@ def expectations(path: Path, calendar: str, masses: list[dict]) -> dict:
             form_ids = {form.get("id") for form in forms} if forms else {"main"}
             if form_id and form_id not in form_ids:
                 state = "not-represented"
+            elif target.get("calendar_proper_name"):
+                selected_propers = mass.get("propers") or []
+                if form_id and forms:
+                    selected_propers = next((form.get("propers") or [] for form in forms
+                                             if form.get("id") == form_id), [])
+                if not any(proper.get("name") == target["calendar_proper_name"]
+                           for proper in selected_propers):
+                    state = "not-represented"
+            elif target.get("calendar_ordinary_appointment"):
+                appointed = (mass.get("ordinary_appointments") or {}).get(
+                    target["calendar_ordinary_appointment"])
+                if not isinstance(appointed, dict) or appointed.get("option") != target["calendar_ordinary_option"]:
+                    state = "not-represented"
             elif target.get("cycle"):
                 selected_mass = dict(mass)
                 if form_id:

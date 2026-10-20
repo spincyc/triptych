@@ -386,7 +386,11 @@ regression before the next begins:
      `parent_id`, and its source-local formulary keys became
      `source_form_key`, so `form_id` now means only a held-Mass form join.
    - Four OCR-missed inventory rows were added after image checks.
-   - Follow-up: the text-slot join;
+   - The first text-slot join, 2026-10-20: all thirteen 1962 Pentecost slots
+     now join their held Proper role or printed Ordinary appointment through
+     the independently inventoried parent form. A missing Lesson or a changed
+     Preface option is reported as `not-represented`; other unjoined slots stay
+     unresolved. The whole-book text-slot join remains a follow-up;
 3. the appointment and sequence model (G5–G8), implemented 2026-10-19:
    - The Preface, Communicantes, Hanc igitur and postconciliar dismissal are
      `[[appointments]]` in the Ordinary inventories, and formularies record
@@ -440,6 +444,19 @@ regression before the next begins:
 5. the internal-structure data contract (G14), handing rendering to C4;
 6. exemplar evidence: harness states, a CLI/structure/browser event-order
    parity test, the viewport and print matrix, and an external-review handoff.
+
+Checkpoint, 2026-10-20: the 1962 Pentecost inventory's ten Proper and three
+Ordinary-variable slots are now explicitly joined and represented. A removed
+Lesson and a wrong Preface appointment fail separately. Day and Propers select
+the same ten Proper roles in the same order; Day adds their ritual seats. Fresh
+source-served Chromium runs passed 55 Day and 49 Propers assertion groups with
+no console or request failures. Captures at 1440, 393 and 320 CSS pixels have
+no horizontal overflow. The Latin Day Missal print is 25 pages; English Read
+is ten pages in both entrances. A final-page tinted empty panel is visible in
+the captured prints, and extensive translation notes dominate the English
+print. These are open C4 print-presentation findings. Full CLI/structure/browser
+event-order parity, the complete viewport and print matrix, and independent
+acceptance remain open; this checkpoint does not close C2 or C3.
 
 An exemplar passes C2 when:
 
@@ -623,17 +640,11 @@ Confiteor, Suscipiat, and postconciliar Orate fratres before extending checked
 turns through Introibo/Judica, Sursum corda, Pax, and dismissal. Preserve
 language-local turn boundaries, source text, and event order throughout.
 
-Progress, 2026-10-19: the first two steps are implemented. The opening-cue
-loss is repaired. Ordinary turns may declare a generator-validated
-`printed_marker`, so each verified turn of those three dialogues shows one
-visible cue, and the Orate-fratres CSS exception is removed. The
-[work register](../PROJECT-WORK.md) records the evidence. The extension needs
-reviewed per-turn source rows, because 1962 holds whole exchanges in single
-rows of the 1861 artifacts and postconciliar holds only Latin antecedents. It
-also needs a reviewed basis for each ℣/℟ role, a decision on Judica's
-alternating verses, protection of "Anth.", and sourced text for the
-postconciliar dismissal. Element headings still show printed P./R. from their
-incipits until a reviewed derivative replaces them.
+Progress, 2026-10-19: the opening-cue loss is repaired. Ordinary turns may
+declare a generator-validated `printed_marker`, so each verified turn of the
+Confiteor, Suscipiat and Orate fratres shows one visible cue; the
+Orate-fratres CSS exception is removed. The [work register](../PROJECT-WORK.md)
+records the evidence. The next extension is recorded below.
 
 Step 2, 2026-10-19:
 
