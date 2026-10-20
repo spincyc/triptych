@@ -317,7 +317,7 @@ the calendars, and nothing else on this page states a figure it gives.
 | roman-1962 | seasonal | 128 | 1354 | 0 |
 | roman-1962 | christological | 8 | 96 | 0 |
 | roman-1962 | marian | 18 | 125 | 0 |
-| roman-1962 | sanctoral | 307 | 1527 | 0 |
+| roman-1962 | sanctoral | 307 | 1528 | 0 |
 | roman-1962 | common | 30 | 358 | 0 |
 | postconciliar | seasonal | 390 | 2116 | 0 |
 | postconciliar | christological | 7 | 69 | 0 |

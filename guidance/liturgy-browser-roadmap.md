@@ -506,6 +506,15 @@ Propers search index and a two-side functional-slot Compare core pass focused
 tests; search controls, Compare mode, and independent C5 acceptance remain
 open.
 
+The next bounded C3 repair collates the St Thomas Apostle Introit against the
+1962 typica and public-domain 1922 Mame printing. Its complete antiphon,
+Psalm verse and Gloria Patri cue are exact-target Latin, raising the count to
+1,075 of 1,204 represented composed targets. English has a typed no-exemplar
+gap. The printed `honorati` differs from the Bible's `honorificati`; proposed
+St Anthony Offertory and St Michael Introit Bible joins were likewise held
+when their antiphon wording did not match. Whole-family text coverage remains
+unresolved.
+
 An exemplar passes C2 when:
 
 - every expected text slot is joined and classified;
