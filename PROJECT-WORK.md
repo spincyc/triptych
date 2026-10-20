@@ -287,15 +287,21 @@ the [Rome 1634/1635 holding correction](src/sources/inventories/eucharistic-rese
 Grand-Saint-Bernard Ms. 08 in the canonical-order receipt, and the
 [Trinitarian/OCSO](src/sources/inventories/eucharistic-research-reviews/monastic-trinitarian-followup-2026-10-20.json)
 and [Hospitaller](src/sources/inventories/eucharistic-research-reviews/hospitaller-2026-10-20.json)
-follow-ups. The Western inventory now has **521 source records, 641 candidate or
-witness records, and 66 coverage rows**. With 439 Eastern and 59 legacy records,
-the generated catalogue has **1,139 entries**; the presentation registry has
-**64 navigation groups**. These counts describe research objects, not distinct
-liturgical revisions or fully transcribed books.
+follow-ups. At that checkpoint the Western inventory had **521 source records,
+641 candidate or witness records, and 66 coverage rows**. With 439 Eastern and
+59 legacy records, the generated catalogue had **1,139 entries**; the
+presentation registry had **64 navigation groups**. These counts describe
+research objects, not distinct liturgical revisions or fully transcribed books.
 
 The 1634 Roman original remains an unacquired gap; the 1635 lead is separately
-identified. The Grand-Saint-Bernard manuscript is a qualified witness, with the
-other Canons Regular leads still deferred. The combined Trinitarian/OCSO route
+identified. A later [UB catalogue follow-up](src/sources/inventories/eucharistic-research-reviews/roman-1634-ub-catalogue-followup-2026-10-20.json)
+found a strong likely match to Torra's Rome holding, catalogued with a supplied
+title and a questioned `[1634?]` imprint. UB says its probable imprint derives
+from preliminaries, but identifies no specific dated leaf; the copy lacks its
+title page and Q1. Its reported extent is not proof of a complete original, and
+no original-book images were acquired. The 1634 stage retains its separate
+approval-act basis. The Grand-Saint-Bernard manuscript is a qualified witness;
+the other Canons Regular leads remain deferred. The combined Trinitarian/OCSO route
 has been split: the Trinitarian books have two qualified witnesses and OCSO has
 no candidate. BnF corrects the Hospitaller B-320 printing date to 1553; a
 separate 1551 edition and four translations remain deferred. The Scandinavian
@@ -325,7 +331,7 @@ reviewed packets are integrated as qualified inventory metadata:
 [Central European](src/sources/inventories/eucharistic-research-reviews/central-europe-2026-10-20.json),
 [French local uses](src/sources/inventories/eucharistic-research-reviews/french-local-uses-2026-10-20.json),
 and [German and Swiss](src/sources/inventories/eucharistic-research-reviews/german-swiss-2026-10-20.json).
-The Western inventory now has **868 source records, 1,135 candidate or witness
+The Western inventory now has **869 source records, 1,135 candidate or witness
 records, and 73 coverage rows**. With 439 Eastern and 59 legacy records, the
 catalogue projects **1,633 entries**. The presentation registry has **128
 navigation groups**. These are research and reader-routing counts, not counts
