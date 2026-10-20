@@ -390,6 +390,13 @@ as do all 39 whole-family completeness cells. The printed 1962 closing
 `Deo gratias` also now carries the English and Latin response role without
 changing the source words.
 
+St Lucy's collated Communion is now explicitly marked as lacking an English
+antiphon witness in the translation inventory; inherited pre-1955 coverage
+carries the same typed absence. Both English inventories have zero unaccounted
+Proper slots. The Latin substitution audit exempts only the source-verified
+`gratis` in that Communion, leaving zero page-image candidates; it does not
+substitute the differing Bible expansion for the Missal wording.
+
 ## Daily Missal reader recovery and completion plan, 2026-10-19
 
 <!-- promised-deliverable: missal-reader-completion-plan-2026-10-19 -->

@@ -819,19 +819,16 @@ objects, release bindings, artifacts, and the deployed revision at release.
 
 ### Execution order and next action
 
-Start with C1's coverage vocabulary and denominators, then deliver C2's audited
-representative pattern. Content acquisition and typography prototypes can run
-in parallel with distinct ownership; integration waits for the shared text,
-turn, and coverage contracts. Expand C3 and C4 in tested slices, implement C5
-on those same contracts, and use C6 to accept the named scope. Additional
+C1's coverage vocabulary and denominators are implemented within their
+inventoried bounds. The next acceptance checkpoint is **the audited
+representative-Mass pattern for each principal missal**, including full
+event-ID parity, source and absence review, and browser/print evidence. Expand
+C3 and C4 in tested slices while C5 uses those same text, turn and coverage
+contracts. C6 accepts only a named, independently reviewed scope. Additional
 recension expansion must not delay repair of the daily reader's current claims.
-
-The next implementation checkpoint is **truthful availability controls plus
-the representative-Mass pattern for each principal missal**. Record exact
-textual limitations for any partial exemplar. Completing this planning
-deliverable does not close ritual-flow, corpus, or full-product requirements.
-Resume through this section and the current source tree, not the historical
-takeover commands below.
+The planning deliverable does not close ritual-flow, corpus, or full-product
+requirements. Resume through this section and the current source tree, not
+the historical takeover commands below.
 
 ## Historical deployed baseline, 2026-08-03
 

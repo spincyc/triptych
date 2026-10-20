@@ -19688,8 +19688,8 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/paragraphs/world-english-bible-catholic/73-apoc/022.json` | `b38cf221de030ad24aba0c1dd88f0823bcb4a721a25bc35fa8f94e1a903b4097` |
 | `src/web/data/structure/propers/index.json` | `ed462d89e5777f12b009cb962ebe1a59d4a2082a552489198f54feb8067c9536` |
 | `src/web/data/structure/propers/postconciliar.json` | `0f19657026001c5cf92de24823d5c76d2123e353e0228cbf4fa39b8eeeeeb981` |
-| `src/web/data/structure/propers/roman-1962.json` | `cc83ca985fddc8b7401608a6443aca82e63445428f61dd9bcc5f8ae0485d7810` |
-| `src/web/data/structure/propers/roman-pre-1955.json` | `5127af32710b80aacd5b852962fc05b3ef044fbbc0709d9da37cd6cfb1e43c27` |
+| `src/web/data/structure/propers/roman-1962.json` | `1193ec3ff550ba740aca1adf739dda332261342470f79bf07f4f5ea51ae8313d` |
+| `src/web/data/structure/propers/roman-pre-1955.json` | `804c019c3b2391799a2154028dc70b1e4c9a229baffb39d73ab3d465b147b6e6` |
 | `src/web/data/structure/propers/search/postconciliar.json` | `1cce16203e3fca4690bb952143cded574c3e63596b92a218a656bdd62802add5` |
 | `src/web/data/structure/propers/search/roman-1962.json` | `1c819c2331055fc096d4bb887f829b1b0ff5ce7e9575dc665c772d7de1e8434a` |
 | `src/web/data/structure/propers/search/roman-pre-1955.json` | `9dee9956ff0db1003f8edef2de476527903f235c7282347dab7a51282049af17` |

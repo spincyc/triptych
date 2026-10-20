@@ -79,6 +79,10 @@ READ_ON_THE_PAGE = {
     # 1962 page image (printed p. 591, no. 3092) and on the 1862's (p. 492)
     # on 2026-10-01; not a damaged filius.
     ("comm-ss-symphorosae-septem-eius-filiorum", "Postcommunion", "filiis"),
+    # "Principes persecuti sunt me gratis" -- without cause. Both the 1962
+    # target (printed p. 440, no. 1898; PDF p. 521) and public-domain Mame
+    # 1922 (printed p. 497; PDF p. 611) print gratis, not gratiae.
+    ("s-luciae-virginis-martyris", "Communion", "gratis"),
 }
 # Settled on grammar rather than on the page, which is weaker and is recorded as
 # such: `beatae Monicae pias lacrimas` is an accusative plural agreeing with its
