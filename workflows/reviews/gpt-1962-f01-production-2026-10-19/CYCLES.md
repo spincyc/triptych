@@ -446,3 +446,29 @@ updated. Source-library validation passed with 4,156 bindings, and the four
 files were committed and feature-pushed as `6d8e443ca`. This is a research
 checkpoint, not a research gate or review PASS; reception reconciliation and
 the native cold evidence review remain required.
+
+Research found that `work.ante-nicene-fathers.volume-7` had no containment
+row despite being shaped as an anthology and used for Victorinus. Driver
+intervention `0001` authorized a partial row limited to the directly read
+Victorinus constituent. The containment validator, source-library validator
+and whitespace checks passed; the correction was committed and feature-pushed
+as `446807a1a`.
+
+The first research preflight then refused a declared dependency on the Claude
+F01 liturgical leaf: the validator deliberately bars another provider's
+liturgical content as a sealed source owner. Driver intervention `0002` kept
+that guard. Because the Claude file was an untrusted transcription lead whose
+adopted wording was independently checked against the primary witnesses, it
+was removed from `research/review-dependencies.toml` while its exact path and
+source-data contribution remained disclosed in the GPT provenance and scope
+records. AAS 1925, the 1962 Missal, Lasance and Pustet remained controlling,
+bound source owners. No authored content or acceptance crossed providers.
+
+The research worker reconciled context, scope, reception, interpretations,
+chronology and bindings. Source-library validation passed with 4,156 bindings,
+containment passed, chronology records were current, `git diff --check` passed,
+and the native research check passed. Its research-iteration-0 PASS result was
+accepted by the engine; the same program preflight passed as the next native
+gate. The eight-file reconciliation was committed and feature-pushed as
+`6532cd1ee`. A fresh xhigh cold research reviewer has the sealed packet;
+research review, authoring and publication remain pending.
