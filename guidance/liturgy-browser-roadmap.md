@@ -1098,6 +1098,43 @@ A bounded lossless catalog/private-presentation prototype must first prove
 its complete net byte reduction and source/API contracts; it has no measured
 value or 101-year rollout authorization.
 
+The lossless catalog/private-presentation prototype now has fresh paired
+source/generation evidence with the separately committed Text Size fix on both
+sides. Both actual-kernel proofs pass (5,540 checks total), and four complete
+45-route ledgers save 18,574–18,577 gzip6 bytes within the unchanged kernel
+and authentication caps. All 84 browser groups pass, including ten inspected
+Retry focus images, fourteen native completion records and the previously
+failing 200% text-size control. An earlier 39/84 supplemental-harness setup
+failure and its exact four-tree comparison repair remain separately preserved;
+complete five-tree admission and the full assertion matrix remain intact.
+
+Its eight cold HTTP/2 samples nevertheless fail the unchanged value gate.
+Against committed runtime `a29df844d`, baseline/candidate LCP medians are
+4.590/3.032 s on August 2 and 4.596/3.030 s on September 5. All four gains exceed
+1.5 s, but all four candidates miss 3.0 s by 16–48 ms and the 2.5 s release
+budget by 516–548 ms. Exact reader and response/reuse checks pass; diagnostics
+and foreign-browser boundaries are clean. Preflight, probe, analysis and
+closure exit 0 with all experiment resources closed. The prototype stays
+outside the branch, the full-span expansion remains held, and the thresholds
+are unchanged. This C6 failure does not block final C1–C5 review of the verified
+committed reader, including fresh artifact-bound visual, zoom and print checks.
+The measured candidate has 46 bodies over 45 unique routes because the icon is
+fetched twice (229 extra gzip bytes). The staged route-ledger net remains
+separate from complete measured transfer; there is no paired timing proof of
+R2 icon multiplicity. Required data, script and Bible bodies remain unique.
+
+The first committed-artifact review subsequently identifies a real desktop
+Compare/rail collision on both entrances. The eight native 400% cases pass,
+but their 48 inspected images expose the 100% baseline problem; the 88-image
+matrix confirms six affected wide Compare frames. A screen-only wide-layout
+rule reserves the existing rail and limits Compare to available viewport
+space, preserving its 70rem cap where it fits. Paired-language and narrow
+layouts retain their existing rules. The focused browser test reproduces seven
+rendered-text collisions before correction and passes afterward; all 33 full
+visual assertions, default registry checks, preview build and integrity checks
+pass. These captures remain diagnostic, with final source-frozen screen/print
+review and independent acceptance still required.
+
 Native Chromium browser zoom is now verified for one Day Read smoke on the
 existing C29 artifact: the API reports 400% within conversion precision,
 physical window/pixel dimensions remain fixed, CSS width quarters and DPR

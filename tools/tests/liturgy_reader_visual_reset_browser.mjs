@@ -459,7 +459,133 @@ async function metrics(cdp) {
   })()`);
 }
 
+async function compareRailGeometry(cdp) {
+  return evaluate(cdp, `(() => {
+    const shell = document.querySelector('.reader-instrument');
+    const reading = document.querySelector('#reader-document');
+    const actions = document.querySelector('.reader-actions');
+    const box = node => {
+      const r = node.getBoundingClientRect();
+      return { left: r.left, right: r.right, top: r.top, bottom: r.bottom,
+        width: r.width, height: r.height };
+    };
+    const rail = box(actions);
+    const overlap = r => Math.min(r.right, rail.right) > Math.max(r.left, rail.left) + 0.5 &&
+      Math.min(r.bottom, rail.bottom) > Math.max(r.top, rail.top) + 0.5;
+    const leftContent = [...reading.querySelectorAll(
+      '.compare-intro, .compare-calendar-results, .compare-unit, ' +
+      '.compare-pair > .compare-side:first-child, .compare-calendar-pair > :first-child'
+    )].map(node => ({ className: node.className, ...box(node) }));
+    const glyphCollisions = [];
+    const walker = document.createTreeWalker(reading, NodeFilter.SHOW_TEXT);
+    const range = document.createRange();
+    let node;
+    while ((node = walker.nextNode())) {
+      if (!node.nodeValue.trim()) continue;
+      range.selectNodeContents(node);
+      if ([...range.getClientRects()].some(overlap)) {
+        glyphCollisions.push(node.parentElement.className);
+      }
+    }
+    return { wideRail: matchMedia('(min-width: 72rem)').matches,
+      rem: parseFloat(getComputedStyle(document.documentElement).fontSize),
+      viewport: { width: document.documentElement.clientWidth, height: innerHeight },
+      shell: box(shell), reading: box(reading), rail, leftContent, glyphCollisions,
+      paired: Boolean(reading.querySelector('.text-pair')),
+      pairs: [...reading.querySelectorAll('.compare-pair, .compare-calendar-pair')].map(pair =>
+        [...pair.children].map(box)),
+      overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth };
+  })()`);
+}
+
+async function runCompareRailAssertions(cdp, base) {
+  const cases = [
+    ['day', STATES.dayCompare],
+    ['propers', STATES.propers + '&mode=compare&compare=oration-language&peer-orations=en']
+  ];
+  await check('production Compare body and rendered left content clear the unchanged wide action rail', async () => {
+    for (const [width, height] of [[1280, 900], [1440, 900], [1024, 768]]) {
+      await viewport(cdp, width, height);
+      for (const [entrance, state] of cases) {
+        await productionFresh(cdp, productionUrl(base, entrance, state), entrance);
+        const value = await compareRailGeometry(cdp);
+        assert.ok(value.leftContent.length > 2, `${entrance}: Compare content absent`);
+        assert.ok(value.overflow <= 1, JSON.stringify({ entrance, width, ...value }));
+        assert.ok(value.reading.right <= value.shell.right + 1);
+        if (value.wideRail) {
+          // Preserve the accepted rail and the full 70rem measure when it fits.
+          const railLeft = Math.max(0.75 * value.rem, value.shell.width / 2 - 33 * value.rem);
+          assert.ok(Math.abs(value.rail.left - railLeft) <= 1, JSON.stringify(value));
+          assert.ok(Math.abs(value.rail.width - 4.25 * value.rem) <= 1);
+          assert.ok(value.reading.left >= value.rail.right + value.rem * 0.5, JSON.stringify(value));
+          value.leftContent.forEach(node => assert.ok(node.left >= value.rail.right + value.rem * 0.5,
+            `${entrance} ${width}px ${node.className}: ${JSON.stringify(value)}`));
+          assert.deepEqual(value.glyphCollisions, [], JSON.stringify(value));
+          assert.ok(value.reading.width > 56 * value.rem, 'Compare lost its wider reading measure');
+          if (width === 1440) assert.ok(value.reading.width >= 70 * value.rem - 1);
+        } else {
+          assert.ok(Math.abs(value.rail.width - value.viewport.width) <= 1,
+            '1024px dock must span the layout viewport: ' + JSON.stringify(value));
+          assert.ok(Math.abs(value.rail.bottom - value.viewport.height) <= 1,
+            '1024px dock must remain at the viewport bottom: ' + JSON.stringify(value));
+        }
+      }
+    }
+  });
+
+  await check('production paired Compare keeps its existing outer rail clear of content', async () => {
+    await viewport(cdp, 1280, 900);
+    for (const [entrance, state] of cases) {
+      await productionFresh(cdp, productionUrl(base, entrance,
+        state + '&scripture-companion=clementine-vulgate'), entrance);
+      const value = await compareRailGeometry(cdp);
+      assert.equal(value.paired, true);
+      assert.ok(value.reading.left >= value.rail.right + value.rem * 0.5, JSON.stringify(value));
+      assert.deepEqual(value.glyphCollisions, [], JSON.stringify(value));
+      assert.ok(value.overflow <= 1);
+    }
+  });
+
+  await check('production Compare retains 320px pairs, Contents focus and unobscured destinations', async () => {
+    await viewport(cdp, 320, 852);
+    for (const [entrance, state] of cases) {
+      await productionFresh(cdp, productionUrl(base, entrance, state), entrance);
+      const value = await compareRailGeometry(cdp);
+      assert.equal(value.wideRail, false);
+      assert.ok(value.overflow <= 1);
+      assert.ok(value.pairs.length > 0);
+      for (const pair of value.pairs) {
+        assert.equal(pair.length, 2);
+        assert.ok(Math.abs(pair[0].left - pair[1].left) <= 1, JSON.stringify(pair));
+        assert.ok(pair[1].top >= pair[0].bottom - 1, JSON.stringify(pair));
+      }
+      await click(cdp, '[data-reader-action="contents"]');
+      await waitFor(cdp, 'document.querySelector("#contents-surface").open', 'Compare Contents');
+      const location = await evaluate(cdp,
+        `document.querySelector('[data-reader-location^="compare/"]').dataset.readerLocation`);
+      await click(cdp, `[data-reader-location=${JSON.stringify(location)}]`);
+      await stableFrames(cdp, `[data-semantic-location=${JSON.stringify(location)}]`);
+      const landing = await evaluate(cdp, `(() => {
+        const target = [...document.querySelectorAll('[data-semantic-location]')]
+          .find(node => node.dataset.semanticLocation === ${JSON.stringify(location)});
+        const heading = target.querySelector(':scope > h2, :scope > h3') || target;
+        const rect = heading.getBoundingClientRect();
+        return { focus: document.activeElement.dataset.semanticLocation,
+          top: rect.top, bottom: rect.bottom,
+          masthead: document.querySelector('.reader-masthead').getBoundingClientRect().bottom,
+          dock: document.querySelector('.reader-actions').getBoundingClientRect().top,
+          open: document.querySelector('#contents-surface').open };
+      })()`);
+      assert.equal(landing.focus, location, JSON.stringify(landing));
+      assert.equal(landing.open, false);
+      assert.ok(landing.top >= landing.masthead - 1 && landing.bottom <= landing.dock + 1,
+        JSON.stringify(landing));
+    }
+  });
+}
+
 async function runAssertions(cdp, base) {
+  await runCompareRailAssertions(cdp, base);
   await viewport(cdp, 1440, 900);
 
   await check('three directions preserve one Roman Day semantic document', async () => {
@@ -1648,7 +1774,8 @@ async function main() {
       if (held.status >= 400) httpProblems.push({ status: held.status, url: held.url });
     });
 
-    await runAssertions(cdp, base);
+    if (process.argv.includes('--compare-rail-only')) await runCompareRailAssertions(cdp, base);
+    else await runAssertions(cdp, base);
     const captures = captureDir ? await captureMatrix(cdp, base, captureDir) : [];
     const ritualFlowCaptures = ritualFlowDir
       ? await captureRitualFlowMatrix(cdp, base, ritualFlowDir) : [];
