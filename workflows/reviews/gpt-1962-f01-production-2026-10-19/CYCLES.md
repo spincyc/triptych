@@ -537,3 +537,16 @@ matching PDF pages, rechecked the principal witness and chronology claims,
 compared both readings with the accepted study, and returned `PASS` with no
 findings. The engine emitted `derive-homily-0000`; homily and publication
 acceptance remain pending.
+
+The homily author drafted a 1,276-word, three-page sermon with a calculated
+10.2–11.6-minute delivery range. Its draft was checkpointed as `6d4955692`;
+final proof and audit were committed and feature-pushed as `6564c50f5`.
+Homily preflight passed. The first fresh xhigh homily reviewer found a factual
+addressee error in the Secret that had been inherited by the research summaries
+and both dependent studies: the prayer addresses the Father and asks that the
+offered Son grant unity and peace. It returned `CHANGES_REQUIRED` with
+research-owned `HOM-001`. The engine routed to high-effort `research-0002`;
+the verified appointed wording and page-image source already establish the
+correction. Prior content reviews remain historical results, but dependent
+documents will be rederived and reviewed after research repair. No homily or
+publication PASS is claimed.
