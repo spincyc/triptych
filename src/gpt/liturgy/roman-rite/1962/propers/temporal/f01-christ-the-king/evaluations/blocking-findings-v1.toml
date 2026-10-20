@@ -49,10 +49,10 @@ provider = "gpt"
 run_id = "095fe00a9fe8cfee"
 workflow = "proper-study"
 workflow_version = 13
-stage = "homily-review"
-iteration = 1
-disposition = "PASS"
-standing = 0
+stage = "web-review"
+iteration = 0
+disposition = "CHANGES_REQUIRED"
+standing = 2
 accepted_count = 0
 advisory_count = 0
 observation_count = 0
@@ -104,3 +104,45 @@ standing = 0
 accepted_count = 0
 advisory_count = 0
 observation_count = 0
+
+[[stages]]
+stage = "visual-review"
+iteration = 0
+disposition = "PASS"
+run_id = "095fe00a9fe8cfee"
+workflow = "proper-study"
+workflow_version = 13
+standing = 0
+accepted_count = 0
+advisory_count = 0
+observation_count = 0
+
+[[stages]]
+stage = "web-review"
+iteration = 0
+disposition = "CHANGES_REQUIRED"
+run_id = "095fe00a9fe8cfee"
+workflow = "proper-study"
+workflow_version = 13
+standing = 2
+accepted_count = 0
+advisory_count = 0
+observation_count = 0
+
+[[findings]]
+stage = "web-review"
+id = "WEB-001"
+severity = "blocking"
+location = "sections/90-study-apparatus.tex:8,12; generated canonical Markdown lines 513 and 517, Appendix: Scope and Qualifications"
+problem = "The rendered scope appendix exposes internal production history: the GPT/Claude transcription handoff, the statement that prose was not borrowed from another provider, the deterministic transfer of a reviewed GPT record, and the author-proof workflow pointer. This prose is present in the canonical source and research PDF as well as the web edition. The web-review fragment requires absence of exposed production metadata, and guidance/editorial.md, Audit records and generation metadata, reserves model contribution and internal production history for tracked audit records. The defect concerns that narration, not the profile-permitted pointers to propers/verified.md and research/scope.md or substantive source-verification and review limits."
+required_result = "Remove the provider handoff, deterministic-transfer and author-proof workflow narration from reader-facing study prose, retaining necessary source provenance, edition/text qualifications and truthful review limits. Keep any needed operational detail in the existing research and generation audit records, then rebuild and regenerate the canonical web edition from the corrected source without editing generated Markdown by hand."
+repair_target = "study"
+
+[[findings]]
+stage = "web-review"
+id = "WEB-002"
+severity = "blocking"
+location = "sections/90-study-apparatus.tex:24; generated canonical Markdown line 527, References—Jerome, Latin witness link"
+problem = "The published Latin witness URL https://la.wikisource.org/wiki/Commentaria_in_Danielem returns HTTP 404. The registered source acquisition names Commentaria in Danielem (Hieronymus), and the author-qualified page opens successfully and identifies the Migne 1845 Latin witness. The incorrect target is authored in the canonical source, so conversion faithfully preserves a broken reference to a principal witness."
+required_result = "Correct the canonical source link to the verified author-qualified witness, https://la.wikisource.org/wiki/Commentaria_in_Danielem_(Hieronymus), or another verified exact delivery of the same cited witness. Preserve the native Daniel VII verse loci, rebuild/regenerate the outputs and confirm that the rendered source link reaches the intended text."
+repair_target = "study"

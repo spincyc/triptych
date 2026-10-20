@@ -37,8 +37,9 @@ historical-English blocks passed after whitespace and typographic normalization
 (TeX escaping, cross glyph, response markers and emphasis). No new translation
 was generated. The source record discloses an earlier Claude source-data
 transcription lead independently checked against primary images; no other
-provider's authored study prose or interpretation was reused. That provenance is
-also disclosed in the printed scope appendix.
+provider's authored study prose or interpretation was reused. That provenance was
+also disclosed in the initial printed scope appendix; the iteration-2 repair
+below confines the operational history to the existing audit records.
 
 The full-text mode follows the reviewed research: manifest completeness is
 `complete` and the canonical label is `Full PDF`. The source scope distinguishes
@@ -506,3 +507,60 @@ acceptance. That reviewer must inspect every page after the upstream-seal and
 artifact gates pass. No PDF was installed, and no new semantic defect was
 identified in this build inspection. The parent driver retains the global
 source checks, workflow advancement, integration and publication.
+
+# Expansive study reentry: reader-facing apparatus and Jerome link
+
+`author-study` iteration 2 completed on 20 October 2026 for `proper-study`
+v13, run `095fe00a9fe8cfee`. WEB-001 is repaired in
+`sections/90-study-apparatus.tex`: the provider transcription handoff,
+non-borrowing statement, deterministic-transfer narration and author-proof
+workflow pointer have been removed from the reader-facing scope appendix.
+The source-verification, edition, rights, reception and review qualifications,
+including the pointers to `propers/verified.md` and `research/scope.md`, remain.
+The operational provenance remains in this audit and the existing research
+and generation records; no reviewed research evidence was changed.
+
+WEB-002 is repaired in the same component. Jerome's Latin witness link now
+targets `https://la.wikisource.org/wiki/Commentaria_in_Danielem_(Hieronymus)`.
+The delivery was opened on 20 October 2026 and returned HTTP 200, identifying
+Jerome's commentary and the Migne 1845 edition. The native Daniel VII verse
+loci and PL column references remain unchanged. The regenerated web edition's
+link was checked after rendering with pinned Python Markdown 3.10.3 and
+retains that exact target.
+
+The complete-text scope, two interpretations and source limits remain as
+recorded above. Repeating the established Pandoc count gives **7,628
+substantive words**; only terminal apparatus changed. All thirteen Latin and
+thirteen historical-English blocks still match the reviewed source record
+under the previously documented typographic normalization. The shared
+generation timestamp is `2026-10-20T14:23:44Z`, and the actual repair
+contribution has been appended.
+
+The prescribed study build, research artifact component check, complete
+research content preflight and canonical web probe passed. The settled PDF
+has **23 physical pages**, **480,091 bytes**, correct title, subject and
+revision metadata, and embedded Latin Modern font subsets. Its settled log
+contains no warnings, undefined references or overfull/underfull boxes.
+All 23 pages were visually inspected in regenerated contact sheets; pages
+22 and 23 were also inspected at full size. The revised apparatus is readable,
+the references continue normally, and the timestamp and rights colophon remain
+together on the final page without clipping, overlap or a rights-only spill.
+Extracted PDF text and generated Markdown confirm the removal of the
+production narration while retaining the substantive qualifications.
+
+Built PDF:
+`build/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.pdf`.
+Byte-identical retained proof:
+`build/tpt-runs/095fe00a9fe8cfee/artifacts/author-study-0002/author-proof.pdf`.
+SHA-256:
+`bf68f44adda3ff295d76f76e1eeb3efaba5d0274acf9854ed337b66932c0f9c5`.
+That stage directory retains build, component, preflight, web-probe and
+link-verification evidence, extracted text and word-count/source-transfer
+results; rasters occupy its replaceable `rasters/` child.
+
+This is author verification, not independent study, visual or web acceptance.
+No PDF or web edition was installed, no companion prose or upstream evidence
+was changed, and no new upstream defect was identified. The workflow must
+rederive and review the dependent companions and perform the later common
+build and publication stages. Global source-inventory checks, integration,
+commits and publication remain with the parent driver.

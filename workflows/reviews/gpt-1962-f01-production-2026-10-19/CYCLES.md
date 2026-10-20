@@ -606,3 +606,27 @@ physical-page opening and legible chronology, and the homily's separate
 speech/apparatus layout. This is visual acceptance of the sealed PDFs, not
 web or deployment acceptance. The engine emitted `generate-web-0000` for the
 canonical GPT study's web edition.
+
+The canonical web converter generated the complete study Markdown with a
+recorded SHA-256 and a current conversion receipt. Its pinned Markdown 3.10.3
+dependency was used after the host's newer version failed the declared
+dependency check. The converter's metadata-only `\\hypersetup` word-run false
+positive was corrected in `tools/web-edition` with a focused regression test;
+all 146 converter tests then passed. The web snapshot was committed and
+feature-pushed as `dc22211c0`. A fresh xhigh web reviewer compared the web
+edition with the accepted PDF and source, inspected the pinned renderer at
+desktop and mobile widths, and checked all external links. It returned
+`CHANGES_REQUIRED`: `WEB-001` identified internal provider-transfer and
+author-proof production history in the reader-facing scope appendix, while
+`WEB-002` identified a Jerome Latin-witness URL returning 404. Both are
+study-owned source defects. The engine routed to `author-study-0002`; prior
+web and artifact receipts remain historical, not acceptance of the revised
+source.
+
+The study author removed the internal production narration, retained the
+substantive witness, rights and review qualifications, and corrected Jerome's
+link to the verified author-qualified Migne 1845 delivery. The new 23-page,
+7,628-word proof has SHA-256 `bf68f44adda3ff295d76f76e1eeb3efaba5d0274acf9854ed337b66932c0f9c5`.
+Native build, component, content-preflight and pinned web-probe checks passed;
+the author inspected the page contact sheets and changed terminal pages at
+full size. A fresh study review and all dependent stages remain pending.
