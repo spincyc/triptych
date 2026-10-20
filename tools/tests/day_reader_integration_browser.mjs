@@ -1701,6 +1701,7 @@ async function runAssertions(cdp, base) {
       assert.deepEqual(direct.modes, [
         { mode: 'read', checked: String(mode === 'read') },
         { mode: 'missal', checked: String(mode === 'missal') },
+        { mode: 'study', checked: 'false' },
         { mode: 'compare', checked: 'false' }
       ]);
       assert.equal(direct.modeMetadata, mode === 'read' ? 'Read' : mode === 'missal' ? 'Missal' : 'Unavailable');
@@ -1738,6 +1739,7 @@ async function runAssertions(cdp, base) {
       assert.deepEqual(direct.modes, [
         { mode: 'read', checked: 'false' },
         { mode: 'missal', checked: 'false' },
+        { mode: 'study', checked: 'false' },
         { mode: 'compare', checked: 'false' }
       ]);
       assert.equal(direct.title, 'Selection unavailable');
@@ -2870,7 +2872,7 @@ async function runAssertions(cdp, base) {
       `document.querySelector('[data-reader-locus]').textContent.trim()`), /Canon/i);
   });
 
-  await test('Read, Missal and Compare controls keep Details lazy and human-facing', async () => {
+  await test('Read, Missal, Study and Compare controls keep Details lazy and human-facing', async () => {
     await navigateCandidate(cdp, base);
     const buildsBefore = await evaluate(cdp, 'dayReaderDebug.detailsBuilds');
     assert.match(await evaluate(cdp, 'document.querySelector("[data-reader-details]").innerText'),
@@ -2883,7 +2885,7 @@ async function runAssertions(cdp, base) {
     assert.deepEqual(modes, [
       { name: 'Read', disabled: false, checked: 'true' },
       { name: 'Missal', disabled: false, checked: 'false' },
-      { name: 'Study', disabled: true, checked: 'false' },
+      { name: 'Study', disabled: false, checked: 'false' },
       { name: 'Compare', disabled: false, checked: 'false' }
     ]);
     await escape(cdp);

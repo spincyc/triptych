@@ -9,6 +9,7 @@
   const Shell = window.TriptychReaderShell;
   const OrdinaryRenderer = window.TriptychOrdinaryRenderer;
   const DayCompare = window.TriptychDayCompare;
+  const DayStudy = window.TriptychDayStudy;
 
   if (!T || !Model || !Contract || !Adapters || !Shell || !OrdinaryRenderer) {
     throw new Error('Day reader requires production browser, assembly, Ordinary renderer, state, adapter, and shell modules');
@@ -342,7 +343,8 @@
 
   function deferredState(parsed) {
     const mode = requestedModeOf(parsed);
-    return mode === 'study' ? ['mode=' + mode] : [];
+    return mode === 'study' && parsed.recognized.ordinary === '1'
+      ? ['mode=study', 'ordinary=1'] : [];
   }
 
   function requestedModeOf(parsed) {
@@ -1314,13 +1316,6 @@
   function validateExplicitSemanticLocation(state, derived, structure, ordinary) {
     const wanted = state.semanticLocation && state.semanticLocation.eventId || null;
     if (!wanted) return [];
-    if (state.requestedMode === 'study') {
-      return [{
-        code: 'invalid-semantic-location', path: 'location',
-        message: 'the requested mode renders no semantic event at this location'
-      }];
-    }
-
     const multiple = (derived.options || []).length > 1;
     const held = new Set();
     let adapted = false;
@@ -1337,7 +1332,7 @@
         if (!result.resolved || primaryDayChoice(result, branch)) return;
         const prefix = locationPrefix(branch, multiple);
         (result.events || []).forEach(function (event) {
-          if (state.requestedMode === 'read' &&
+          if (['read', 'study'].indexOf(state.requestedMode) >= 0 &&
               ['proper', 'proper-choice'].indexOf(event.kind) < 0) return;
           held.add(prefix + event.id);
         });
@@ -2579,7 +2574,7 @@
       }
       const unresolved = rendered.filter(function (row) { return row.unresolved; });
       if (unresolved.length) {
-        if (rendered.length === 1 && !branchFailures) {
+        if (rendered.length === 1 && !branchFailures && runtime.mode !== 'study') {
           runtime.branches = [{
             branch: unresolved[0].branch,
             result: unresolved[0].result,
@@ -2605,6 +2600,9 @@
           ));
         });
       }
+      if (runtime.mode === 'study') rendered.forEach(function (row) {
+        if (row.result && row.fragment) DayStudy.attach(row);
+      });
       runtime.branches = rendered.map(function (row) {
         return { branch: row.branch, result: row.result, prefix: row.prefix };
       });
@@ -2733,7 +2731,7 @@
     if (runtime.mode === 'compare') {
       return DayCompare.fromCompareLocation(location, runtime.result);
     }
-    if (runtime.mode === 'missal' && targetMode === 'read') {
+    if (runtime.mode === 'missal' && targetMode !== 'missal') {
       return nearestProperLocation(location, runtime.result && runtime.result.events);
     }
     return location;
@@ -2831,29 +2829,18 @@
       ['mass', 'form', 'translation-witness', 'location']);
   });
 
-  document.querySelector('[data-mode="read"]').addEventListener('click', function () {
-    if (runtime.mode === 'read') {
-      readerShell.close();
-      return;
-    }
-    const location = captureModeLocation('read');
-    readerShell.close({ restoreFocus: false, restoreScroll: false });
-    window.dayReaderDebug.modeSwitches += 1;
-    runtime.modeStartedAt = performance.now();
-    navigate({ mode: 'read' }, ['ordinary', 'compare', 'peer-missal', 'territory'],
-      { location: location, modeFocus: true });
-  });
-  document.querySelector('[data-mode="missal"]').addEventListener('click', function () {
-    if (runtime.mode === 'missal') {
-      readerShell.close();
-      return;
-    }
-    const location = captureModeLocation('missal');
-    readerShell.close({ restoreFocus: false, restoreScroll: false });
-    window.dayReaderDebug.modeSwitches += 1;
-    runtime.modeStartedAt = performance.now();
-    navigate({ mode: 'missal' }, ['ordinary', 'compare', 'peer-missal', 'territory'],
-      { location: location, modeFocus: true });
+  ['read', 'missal', 'study'].forEach(function (mode) {
+    const button = document.querySelector('[data-mode="' + mode + '"]');
+    if (!button) return;
+    button.addEventListener('click', function () {
+      if (runtime.mode === mode) { readerShell.close(); return; }
+      const location = captureModeLocation(mode);
+      readerShell.close({ restoreFocus: false, restoreScroll: false });
+      window.dayReaderDebug.modeSwitches += 1;
+      runtime.modeStartedAt = performance.now();
+      navigate({ mode: mode }, ['ordinary', 'compare', 'peer-missal', 'territory'],
+        { location: location, modeFocus: true });
+    });
   });
   if (DayCompare) DayCompare.bindControls({
     runtime: runtime, T: T, Model: Model, load: load,

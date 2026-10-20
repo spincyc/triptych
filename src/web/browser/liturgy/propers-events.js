@@ -17,6 +17,23 @@
       get structure() { return dependencies.getStructure(); },
       get ordinary() { return dependencies.getOrdinary(); }
     };
+  function nearestProperLocation(location, result) {
+    const id = location && location.kind === 'event' && location.id;
+    if (!id || /^(?:proper|proper-choice)\//.test(id)) return location;
+    const events = result && result.events || [];
+    const at = events.findIndex(function (row) { return row.id === id; });
+    if (at < 0) return { kind: 'top', id: null };
+    let best = null;
+    events.forEach(function (row, index) {
+      if (row.kind !== 'proper' && row.kind !== 'proper-choice') return;
+      const distance = Math.abs(index - at);
+      if (!best || distance < best.distance ||
+          (distance === best.distance && index < best.index)) {
+        best = { id: row.id, distance: distance, index: index };
+      }
+    });
+    return best ? { kind: 'event', id: best.id } : { kind: 'top', id: null };
+  }
   function cycleChoice(event, proper, bible, fragments, state, options) {
     const held = options || {};
     const wrapper = T.el('section', 'cycle-choice');
@@ -378,6 +395,7 @@
       renderProperChoiceEvent: renderProperChoiceEvent,
       typedUnplacedSeat: typedUnplacedSeat,
       properChoiceLabel: properChoiceLabel,
+      nearestProperLocation: nearestProperLocation,
       renderMissal: renderMissal
     });
   }
