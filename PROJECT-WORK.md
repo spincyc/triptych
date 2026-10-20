@@ -736,6 +736,23 @@ guard; the corrected locked-environment run passes all 250 example replays
 with zero divergence or tracked writes. These are byte and correctness
 measurements; new timing remains pending.
 
+The subsequent twelve-sample HTTP/2 run holds this mode-loading change fixed
+across committed, original-pilot and priority-revised variants. For August 2,
+Day LCP medians are 4.582 / 3.442 / 4.092 s; for the independently selected
+September 5 fixture they are 4.600 / 3.452 / 4.100 s. Chromium honors the
+revised one-High-helper/fourteen-Low-body priorities. The helper arrives
+about 345 ms sooner, but mandatory core/controller responses arrive about
+one second later. A second 571-byte gzip Bible manifest finishes near 4.0 s
+and becomes the final wait. All twelve samples retain exact text, state,
+semantic-event and URL parity, clean diagnostics and frozen response bytes;
+all experiment processes close. The priority revision fails both the 3.0 s
+limit and 1.0 s gain test and remains excluded. The original pilot still
+fails 3.0 s; neither permits the 101-year expansion. Shared Bible-response
+reuse is a measured next investigation, but its roughly 570 ms wait alone
+cannot rescue the revision or establish the 2.5 s release target. Another
+priority mix has no supporting measurement; the next architectural proposal
+must address the serial authenticated data path or its competing transfers.
+
 A parallel witness audit found no publishable English witness for the 1962
 Pentecost Lesson's printed `discipuli` wording. [Cabrol 1921](https://catalog.hathitrust.org/Record/100567132)
 is an inaccessible page-image lead, not a text source. An
