@@ -274,3 +274,48 @@ commits and publication. No forwarded findings or upstream defects arose.
 
 Exact homily author-proof SHA-256:
 `c80c025401979949296f42f28597c5b679a0f3783120ffb6489460f17b10fc08`.
+
+# Expansive study reentry: Secret addressee
+
+Author-stage iteration 1 completed on 20 October 2026 for `proper-study` v13,
+run `095fe00a9fe8cfee`, after the research correction prompted by HOM-001.
+The revised research distinguishes the Father addressed by the Secret from
+the sacrificial Son who gives the requested unity and peace. The detailed
+commentary and both interpretive lanes now express that distinction. The
+source prayer, research evidence, appointed-text mode, chronology, manifest
+and other supported arguments remain unchanged. The shared generation record
+was finalized at `2026-10-20T13:37:56Z`; the companions require their subsequent
+workflow derivation and review.
+
+The revised study has **7,628 substantive words** by the same Pandoc method
+recorded above: component counts are 607, 1,615, 1,946, 1,975, 381 and 1,104.
+Its full-text scope and source limits remain those stated above. Comparison
+against the reviewed record again confirmed all thirteen Latin and thirteen
+historical-English blocks after the documented typographic normalization.
+
+`make doc` completed with **23 physical pages**, 481,236 bytes, correct title,
+subject and revision metadata, and all listed Latin Modern fonts embedded.
+The settled log has no warnings, undefined references or overfull/underfull
+boxes. The research artifact component check and all research content-preflight
+checks passed. The web probe passed with Pandoc and pinned Python Markdown
+3.10.3; an initial invocation using the host's 3.11.2 was correctly refused,
+then rerun with the pinned dependency without changing source or converter.
+
+All 23 rendered pages were inspected in regenerated contact sheets. Full-size
+inspection of corrected pages 9, 12 and 14 and final page 23 confirmed readable
+paragraphs, ordinary continuations, unclipped footnotes, and the timestamp and
+rights colophon together on the last page. Text extraction confirms the revised
+Father/Son distinction in all three corrected passages. No new layout defect
+was observed. This is author proof, not independent content, visual or web
+acceptance; no PDF or web edition was installed by this stage.
+
+Exact built PDF:
+`build/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.pdf`.
+Byte-identical retained proof:
+`build/tpt-runs/095fe00a9fe8cfee/artifacts/author-study-0001/author-proof.pdf`.
+SHA-256:
+`d8f12b25001f80cda0cb083c0b94669493bce24bafde1806b31f90046cd9c09c`.
+The same stage directory retains build, component, preflight and web-probe
+logs, extracted text, source-transfer and word-count evidence, and replaceable
+rasters. No new upstream defect was identified; shared inventory refresh,
+integration checks and final publication remain with the parent driver.
