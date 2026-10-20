@@ -1,0 +1,2350 @@
+{
+ "schema_version": 1,
+ "record_type": "eucharistic-research-lane-review",
+ "id": "coptic",
+ "title": "Full research pass review of the coptic lane, 2026-10-19",
+ "lane": "coptic",
+ "side": "eastern",
+ "checked_on": "2026-10-19",
+ "reviewed_on": "2026-10-19",
+ "coverage_rows": [
+  "coptic"
+ ],
+ "target_inventory": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
+ "semantics": "Project-created review metadata. Versions include witnesses, components, translations and unresolved leads; their count is not a count of substantive revisions. Acquisition does not establish transcription, collation, normative revision or local reception. No ancestry is asserted.",
+ "review_files": {
+  "storage": "untracked workspace scratch; pinned here by SHA-256 only",
+  "packet_sha256": "aecc750bbba37cee8bbe5d155380e30b1fee65c7b7c7cec439092176c84b8569",
+  "superseded_packet_sha256": null,
+  "cold_final_sha256": "71bbe5fcf50b49d3b690b3b11520904e2d1874852ed6274f58d4498163860ef1",
+  "cold_verdict": "ready-with-corrections"
+ },
+ "integration": {
+  "new_sources": [
+   "coptic-src-1902-bonn-pdf",
+   "coptic-src-atanassova-2014",
+   "coptic-src-basil-reform-article",
+   "coptic-src-bcep-catalogue",
+   "coptic-src-hathi-1898",
+   "coptic-src-heritage-article",
+   "coptic-src-kammerer",
+   "coptic-src-mikhail-paul-2026",
+   "coptic-src-paul-2026",
+   "coptic-src-sahidic-euchologia",
+   "coptic-src-synodus-1898",
+   "coptic-src-vat17-iiif-images"
+  ],
+  "new_records": [
+   "coptic-basil-1956-iskandar",
+   "coptic-basil-1966-wafa",
+   "coptic-basil-1980-kabes",
+   "coptic-basil-people-1974",
+   "coptic-basil-printings-1987",
+   "coptic-basil-revision-1990",
+   "coptic-deacon-1875",
+   "coptic-deacon-1898",
+   "coptic-eastern-catholic-liturgies-1941",
+   "coptic-ms-bnf-arabe5969",
+   "coptic-ms-cm-lit265",
+   "coptic-ms-monb-vd",
+   "coptic-ms-monb-ve",
+   "coptic-ms-monb-vf",
+   "coptic-ms-monb-vg"
+  ],
+  "updates": [
+   "alex-coptic-1898",
+   "alex-coptic-1934",
+   "alex-coptic-1971",
+   "alex-coptic-vat17",
+   "alex-coptic1902-comparison"
+  ],
+  "corrected_by_review": [
+   "alex-coptic-1971",
+   "alex-coptic-vat17",
+   "alex-coptic1902-comparison",
+   "coptic-deacon-1898",
+   "coptic-eastern-catholic-liturgies-1941",
+   "coptic-ms-monb-vd",
+   "coptic-src-bcep-catalogue",
+   "coptic-src-kammerer",
+   "coptic-src-mikhail-paul-2026",
+   "coptic-src-paul-2026",
+   "coptic-src-sahidic-euchologia",
+   "coptic-src-vat17-iiif-images"
+  ],
+  "added_by_review": [
+   "coptic-nativity-liturgy-undated-cold",
+   "coptic-tahta-prayers-basil-undated-cold"
+  ],
+  "rejected_by_review": []
+ },
+ "uses": [
+  {
+   "id": "coptic-catholic",
+   "coverage_row": "coptic",
+   "label": "Coptic Catholic Church (Patriarchate of Alexandria of the Copts)",
+   "disposition": "researched-with-explicit-gaps",
+   "finding": "The Church's own retrospective book list (1736–2009, 68 numbered entries, one number skipped) identifies the 1736 Tuki three-anaphora book, the Cairo 1898 Euchologion, the Rome 1971 Euchologion, deacon's books of 1875 and 1898, Cairo lectionaries from 1900 onward and a series of separately printed Basil liturgies from 1952 to 2009. A church-hosted comparison article reports a postconciliar revision of the Basil text: a proposal in April 1975, a synodal commission in May 1976, a provisional text circulated for comment and a final text issued on 25 February 1990 under Patriarch Stephanos II, with before/after prayer texts. The public manuscript catalogue of the Bohairic Coptic Euchologia Project identifies two manuscript Euchologia as Coptic Catholic by their contents (Coptic Museum Liturgy 265 and BnF Arabe 5969), one of them with a later correction layer. A full-view public-domain copy of the 1898 Euchologion is catalogued at HathiTrust but could not be retrieved.",
+   "limit": "No original 1898, 1934, 1971, 1987 or 1990 book was acquired or inspected; the 1990 revision rests on a church-hosted 2013 article quoting the patriarchal preface. The church list disclaims completeness and stops in 2009. Catholic attribution of the two manuscripts rests on a 2026 autoptic catalogue entry, not on images inspected in this pass.",
+   "next_sources": [
+    "HathiTrust oxu1.308011427 (1898 Euchologion, full view) through an interactive or institutional route",
+    "Original 1971 Rome Euchologion and the 1990 Basil liturgy with its patriarchal preface (Coptic Catholic Patriarchate, Cairo; Pontifical Oriental Institute library)",
+    "Synodus Alexandrina Coptorum 1898 (Rome 1899), HathiTrust record 103390316, for liturgical decrees bearing on the 1898 books",
+    "Gallica images of BnF Arabe 5969 and Coptic Museum images of Liturgy 265",
+    "Coptic Catholic publications after 2009"
+   ],
+   "review_disposition": "accepted-with-corrections",
+   "review_remaining_gap": "No Coptic Catholic printed book after 1736 inspected in the original; 1898 full view at HathiTrust refused (HTTP 403, also on this reviewer's single probe); 1934 Catholic book unlocated beyond Hammerschmidt; 1971, 1987–2009 and 1990 books unseen; provisional 1976–1990 text unidentified; list ends 2009 and disclaims completeness."
+  },
+  {
+   "id": "coptic-bohairic-shared",
+   "coverage_row": "coptic",
+   "label": "Bohairic Coptic manuscript tradition (shared ancestry and collateral witnesses)",
+   "disposition": "comparison-and-ancestry-only",
+   "finding": "Vat. copt. 17 (dated 1288) is now held as the complete offered image sequence. The BCEP autoptic record describes its contents (Basil, Gregory and Cyril with pre-anaphora and occasional prayers), its production at the Monastery of St Antony, a later binding bearing Roman Catholic arms with the Latin spine title 'Liturgia Copta', and a Latin marginal direction at the institution narrative in Gregory (ff. 81r–v). Image 0082 (ff. 80v–81r) was viewed and shows that Latin marginal note beside the bread words. The 2026 manuscript surveys describe a repertoire of roughly 320 to 375 Bohairic Euchologia with variable celebrant prayers.",
+   "limit": "A Latin marginal note and a later binding show Western readers or owners, not Catholic liturgical reception. No manuscript is shown to be Tuki's exemplar. The manuscript repertoire is labelled as a lead, not as recensions.",
+   "next_sources": [
+    "Full BCEP catalogue observations and manuscript images for the Asyut-associated family and Catholic-period manuscripts",
+    "Chaîne 1912 p. 228 n. 2 versus Vat. copt. 17 and Vat. copt. 18 contents for Tuki's exemplar"
+   ],
+   "review_disposition": "accepted-with-corrections",
+   "review_remaining_gap": "Observations of 317 BCEP documents not read individually by the researcher; no images of the Paris, Huntington or Cairo anchors; Tuki's exemplar open (Vat. copt. 18 and BnF Copt. 26 with Ascari's 1736 note are leads)."
+  },
+  {
+   "id": "coptic-sahidic-white-monastery",
+   "coverage_row": "coptic",
+   "label": "Southern Egyptian (Sahidic) Eucharistic use of the White Monastery, extinct",
+   "disposition": "extinct-local-use-witnesses-labelled",
+   "finding": "Four fragmentary Sahidic Euchologia (MONB.VD, MONB.VE, MONB.VF and MONB.VG) are presented by the Göttingen Sahidic Euchologia project with images and diplomatic transcriptions; all publicly offered images and all transcriptions were acquired. MONB.VE is Lanne's Great Euchologion, which preserves fragments of thirteen anaphoras and is dated to the end of the tenth century through a scribal hand matched to a colophon of 990. The project places the four codices before the reform of Patriarch Gabriel II ibn Turaik (1131–1145), which it says reduced the formularies to Basil, Gregory and Cyril.",
+   "limit": "Fragmentary manuscripts; dates are palaeographic and the sources disagree for MONB.VF and MONB.VG. No lineal relationship to any Catholic book is asserted. 87 page slots were provider placeholders (not extant or protected).",
+   "next_sources": [
+    "Atanassova and Elhage-Mensching 2023, codicological survey (TSCB 4)",
+    "Lanne 1958, Patrologia Orientalis 28/2",
+    "Suciu 2011 dating study"
+   ],
+   "review_disposition": "accepted-with-corrections",
+   "review_remaining_gap": "Fragmentary codices; 87 placeholder slots; no relation to Catholic books asserted; Lanne 1958 and Suciu 2011 not acquired."
+  },
+  {
+   "id": "coptic-orthodox-collateral",
+   "coverage_row": "coptic",
+   "label": "Coptic Orthodox printed Euchologia (collateral, not Catholic)",
+   "disposition": "collateral-not-catholic-no-reception-claim",
+   "finding": "The Cairo 1902 Euchologion of 'Abd al-Masih Salib al-Mas'udi is now held whole (793-page Bonn PDF); its title page calls it the first edition, printed at the 'Ayn Shams press in 1618 of the Martyrs (1902). Kammerer and Hammerschmidt list further Orthodox editions of 1887, 1921, 1924, 1926, 1927, 1932, 1934 and 1936; Störk (reported by the reviewer) adds 1960 and 1984 and doubts a separate 1904 Labib edition.",
+   "limit": "These books are comparison controls only. A shared title or a shared Cairo press does not establish Catholic use.",
+   "next_sources": [
+    "VOHD XXI/2 (Störk 1995) p. 30, once retrievable"
+   ],
+   "review_disposition": "accepted",
+   "review_remaining_gap": "1887 books, 1921–1936 editions, 1960 and 1984 uninspected; Labib 1904 existence unresolved; Störk p. 30 only as indexed text."
+  },
+  {
+   "id": "coptic-egyptian-greek",
+   "coverage_row": "coptic",
+   "label": "Greek-language Egyptian Euchologia in the Coptic manuscript tradition",
+   "disposition": "discovered-lead-labelled-only",
+   "finding": "The reviewer's BCEP export lists Greek-in-Coptic-script and Greek–Arabic Euchologia (for example BnF Grec 325 and Kacmarcik MS 6, both fourteenth century by palaeography). Early Greek Mark witnesses are already in the inventory.",
+   "limit": "Not examined in this pass; Greek language does not imply Byzantine ecclesial use.",
+   "next_sources": [
+    "BCEP records 608279 and 608321 and their image routes"
+   ],
+   "review_disposition": "gap-recorded",
+   "review_remaining_gap": "All images and observations of the Greek-language Egyptian euchologia."
+  }
+ ],
+ "searches": [
+  {
+   "repository": "Coptic Catholic Church website (coptcatholic.net)",
+   "queries": [
+    "لائحة بالكتب الطقسية",
+    "خولاجي كنيسة الإسكندرية",
+    "الخولاجي الكاثوليكي 1971 1934 1898",
+    "قداس القديس باسيليوس الكبير"
+   ],
+   "url": "https://coptcatholic.net/11243/",
+   "checked_on": "2026-10-19",
+   "outcome": "Whole book-list article fetched (entries 1–68, number 56 absent). Related articles 30600, 1385, 1329 and 1403 fetched whole.",
+   "extent_examined": "All numbered entries of the list; the reform section and footnotes of article 1329; the Euchologion and deacon-book paragraphs of article 1403.",
+   "unexamined_range": "The rest of the church site, publications after 2009, and the patriarchate's printed catalogue, if any."
+  },
+  {
+   "repository": "The Online Books Page (University of Pennsylvania), author 'Coptic Church'",
+   "queries": [
+    "lookupname?key=Coptic Church"
+   ],
+   "url": "https://onlinebooks.library.upenn.edu/webbin/book/lookupname?key=Coptic%20Church",
+   "checked_on": "2026-10-19",
+   "outcome": "14 HathiTrust records listed, including the 1898 Euchologion (record 103390672), the Theotokia of 1764 and the Synodus Alexandrina Coptorum of 1898 (printed 1899).",
+   "extent_examined": "The whole author page as delivered.",
+   "unexamined_range": "HathiTrust records not attributed to the corporate author 'Coptic Church'."
+  },
+  {
+   "repository": "HathiTrust catalogue API and reader",
+   "queries": [
+    "recordnumber/103390672",
+    "pt?id=oxu1.308011427",
+    "imgsrv/image?id=oxu1.308011427",
+    "imgsrv/download/pdf?id=oxu1.308011427"
+   ],
+   "url": "https://catalog.hathitrust.org/Record/103390672",
+   "checked_on": "2026-10-19",
+   "outcome": "API: one Oxford item, rights code pd, Full view. Reader and image/PDF routes returned HTTP 403 with a browser challenge (prior researcher and again in this pass); the catalogue web page also returned 403.",
+   "extent_examined": "Catalogue metadata only.",
+   "unexamined_range": "All page images of the 1898 book."
+  },
+  {
+   "repository": "ULB Bonn digital collections",
+   "queries": [
+    "titleinfo/1703331",
+    "i3f/v20/1703331/manifest",
+    "download/pdf/1703331",
+    "topic/titles/17261?max=100"
+   ],
+   "url": "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/1703331",
+   "checked_on": "2026-10-19",
+   "outcome": "Complete 1902 PDF (793 pages) and 792-canvas manifest acquired. The topic page 17261 returned 'Keine Einträge vorhanden', so it is not a Coptic-collection listing.",
+   "extent_examined": "1902 title page and cover inspected; manifest structure read.",
+   "unexamined_range": "Other Bonn Coptic holdings beyond the 1736 and 1902 books."
+  },
+  {
+   "repository": "Kammerer, A Coptic Bibliography (1950; Kraus reprint 1969)",
+   "queries": [
+    "Euchologion",
+    "Tuki",
+    "Uniat",
+    "khidmat al-shammas",
+    "1898",
+    "1934"
+   ],
+   "url": "https://de.cdn-website.com/3e823bf7e8654767a06a86d670bf72af/files/uploaded/Kammerer-Bibliography.pdf",
+   "checked_on": "2026-10-19",
+   "outcome": "Liturgy section entries 1410–1499 read in the OCR text; Catholic items 1410, 1411, 1416, 1418, 1477 and 1494–1496 and Orthodox items 1412–1415 and 1460 identified.",
+   "extent_examined": "Printed pp. 81–85 (OCR, two-column layout partly scrambled).",
+   "unexamined_range": "Other sections of the bibliography and any post-1950 publications."
+  },
+  {
+   "repository": "Göttingen Coptic OT VMR, Sahidic Euchologia project",
+   "queries": [
+    "monb.vd",
+    "monb.ve",
+    "monb.vf",
+    "monb.vg",
+    "metadata/manuscript/get/?gaNum=monb.<n>"
+   ],
+   "url": "https://coptot.manuscriptroom.com/web/sahidic-euchologia/home",
+   "checked_on": "2026-10-19",
+   "outcome": "Metadata for all four codices; 75 offered images and 109 transcriptions fetched with HTTP 200; 87 slots were placeholders (48 'folio not extant', 39 'protected').",
+   "extent_examined": "Every page slot listed by the four metadata records.",
+   "unexamined_range": "Protected images, and fragments outside the four project codices."
+  },
+  {
+   "repository": "DigiVatLib (Vatican Library)",
+   "queries": [
+    "MSS_Vat.copt.17/manifest.json"
+   ],
+   "url": "https://digi.vatlib.it/iiif/MSS_Vat.copt.17/manifest.json",
+   "checked_on": "2026-10-19",
+   "outcome": "133 canvases; all 133 full-size images fetched with HTTP 200 and hashed.",
+   "extent_examined": "Images 0001, 0082, 0086 and 0133 viewed in this pass.",
+   "unexamined_range": "The remaining images were not read."
+  },
+  {
+   "repository": "Bohairic Coptic Euchologia Project (BCEP) public API",
+   "queries": [
+    "manuscript/get/?docID=608006",
+    "manuscript/get/?docID=608263"
+   ],
+   "url": "https://coptot.manuscriptroom.com/community/vmr/api/metadata/manuscript/get/?docID=608006&format=json",
+   "checked_on": "2026-10-19",
+   "outcome": "Per-document records (page structure only, no feature data). Feature data (dates, contents, observations) were read from the reviewer's retained full export of 320 documents.",
+   "extent_examined": "Feature records for documents 608001, 608006 and 608263.",
+   "unexamined_range": "The other 317 documents' observations; no BCEP images."
+  },
+  {
+   "repository": "Gallica (BnF)",
+   "queries": [
+    "ark:/12148/btv1b10030981r manifest",
+    "f1.item.pdf",
+    "services/Pagination"
+   ],
+   "url": "https://gallica.bnf.fr/ark:/12148/btv1b10030981r",
+   "checked_on": "2026-10-19",
+   "outcome": "HTTP 403 with a browser challenge for every route tried (prior researcher and again in this pass).",
+   "extent_examined": "None.",
+   "unexamined_range": "All images of BnF Arabe 5969."
+  },
+  {
+   "repository": "Internet Archive advanced search",
+   "queries": [
+    "title:euchologion OR title:khulaji OR title:khūlājī"
+   ],
+   "url": "https://archive.org/advancedsearch.php?q=%28title%3Aeuchologion+OR+title%3Akhulaji+OR+title%3Akhu%CC%84la%CC%84ji%CC%84%29&output=json&rows=100",
+   "checked_on": "2026-10-19",
+   "outcome": "29 hits; the only Coptic one is 'Khūlājī al-Muqaddas: al qudasat al-thalatha' dated 1984 (item khulajialmuqadda0000copt), an Orthodox lead. No Catholic Euchologion.",
+   "extent_examined": "All 29 result rows (title metadata only).",
+   "unexamined_range": "Searches by Arabic script, 'Coptic liturgy' subject terms and lending-library items."
+  },
+  {
+   "repository": "General web search (prior researcher)",
+   "queries": [
+    "Coptic Catholic euchologion editions 1736 1898 1934 1971",
+    "خولاجي كاثوليك 1971 1934 1898 طبعة",
+    "\"Euchologium Ecclesiae Alexandrinae\" 1934",
+    "\"Eucologio\" \"copto\" \"1971\"",
+    "\"Khulagi\" \"1934\" Coptic Catholic",
+    "\"Bishai\" \"1875\" liturgy"
+   ],
+   "url": "https://www.google.com/",
+   "checked_on": "2026-10-19",
+   "outcome": "Snippets only: a Spanish article cites 'Eucologio de la Iglesia Alejandrina (en copto y árabe), Roma, 1971'; a German seminar text lists 'Pieuchologion (ed. Hanna Malak), Rom 1971'; Nicolotti 2023 (Italian) names Catholic editions of 1736, '1897' and 1971. None of the three was retained; the Nicolotti PDF returned 403. No copy of a Catholic 1934 book was found.",
+   "extent_examined": "Search result snippets.",
+   "unexamined_range": "Union catalogues (WorldCat, SBN, Bibliotheca Orientalis of PIO) for 1934 and 1971."
+  },
+  {
+   "repository": "De Gruyter Brill (Archiv für Papyrusforschung 70/2)",
+   "queries": [
+    "doi/10.1515/apf-2024-0020/pdf?licenseType=open-access",
+    "doi/10.1515/apf-2024-0020/pdf"
+   ],
+   "url": "https://www.degruyterbrill.com/document/doi/10.1515/apf-2024-0020/pdf",
+   "checked_on": "2026-10-19",
+   "outcome": "HTTP 202 with zero bytes on both attempts; the zero-byte file is not an acquisition.",
+   "extent_examined": "None.",
+   "unexamined_range": "The whole open-access article."
+  },
+  {
+   "repository": "Other blocked routes",
+   "queries": [
+    "lla.ulb.be AtanassovaCopticLiturgy2012-2022.pdf",
+    "rep.adw-goe.de VOHD XXI/2 PDF",
+    "iris.unito.it Nicolotti 2023",
+    "googleapis books Eukhologion 1898"
+   ],
+   "url": "https://lla.ulb.be/pdf/AtanassovaCopticLiturgy2012-2022.pdf",
+   "checked_on": "2026-10-19",
+   "outcome": "lla.ulb.be failed TLS certificate verification (Python and curl exit 60); VOHD and Nicolotti returned HTTP 403; Google Books API returned 429.",
+   "extent_examined": "None.",
+   "unexamined_range": "All four documents."
+  }
+ ],
+ "versions": [
+  {
+   "id": "coptic-v-1736",
+   "label": "Kitāb al-thalātha quddāsāt (Tuki), catalogued as Missale copto arabicum, Rome 1736",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "1736 (colophon 13 June 1736)",
+   "date_role": "publication",
+   "record_class": "printed-edition",
+   "distinctness_basis": "First printed Catholic three-anaphora Euchologion; held whole in the source library. No change in this pass.",
+   "existing_candidate_ids": [
+    "alex-coptic-1736"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Tuki's manuscript exemplar remains unidentified; Kammerer 1496 gives the extent as two paginations (OCR reads 588 or 288, and 479).",
+   "inventory_ids": [
+    "alex-coptic-1736"
+   ]
+  },
+  {
+   "id": "coptic-v-1898",
+   "label": "Khūlājī al-kanīsah al-Iskandarīyah / Eukhologion ǹte tiekklēsia nalexandrinē, Cairo, Catholic St Mark press, 1898",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "1898 (catalogues and book list); 1899 (heritage article)",
+   "date_role": "publication-year-reported",
+   "record_class": "printed-edition-source-described",
+   "distinctness_basis": "Kammerer 1410 calls it a revision of Tuki's edition for the Uniat Copts edited by Cyril II; Lietzmann and Chaîne describe changed intercession placement. Substantive change is source-described, not collated here.",
+   "existing_candidate_ids": [
+    "alex-coptic-1898"
+   ],
+   "acquisition_ids": [
+    "coptic-acq-hathi-full-json",
+    "coptic-acq-hathi-reader-challenge"
+   ],
+   "unresolved": "A full-view public-domain copy exists (HathiTrust oxu1.308011427) but was not retrievable. The 1898/1899 date difference and Nicolotti's '1897' (search snippet only) are unresolved citations of one edition, not separate versions.",
+   "inventory_ids": [
+    "alex-coptic-1898"
+   ]
+  },
+  {
+   "id": "coptic-v-synod-1898",
+   "label": "Synodus Alexandrina Coptorum, habita Cairi anno 1898 (acts printed Rome 1899)",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "Synod opened 18 January 1898; acts printed 1899",
+   "date_role": "synod-and-publication",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Possible authority context for the 1898 books; liturgical decrees not inspected.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "coptic-acq-penn-html"
+   ],
+   "unresolved": "Unexamined range: the whole printed acts (HathiTrust record 103390316).",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-1934",
+   "label": "Euchologium Ecclesiae Alexandrinae continens liturgias S. Basilii et S. Gregorii, Cairo 1934",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "1934",
+   "date_role": "publication-year-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Listed by Hammerschmidt as Catholic; absent from the church book list; Kammerer's only 1934 Euchologion is the Orthodox Sarkis edition (543 pages).",
+   "existing_candidate_ids": [
+    "alex-coptic-1934"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Unexamined range: union catalogues and Catholic patriarchal holdings for a 1934 Cairo Catholic printing; it must not be merged with Sarkis 1934 without evidence.",
+   "inventory_ids": [
+    "alex-coptic-1934"
+   ]
+  },
+  {
+   "id": "coptic-v-synod-1957",
+   "label": "Common ritual directions for the three liturgies prepared at the second Alexandrian synod (opened 12 March 1957)",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "1957",
+   "date_role": "synod-work-reported",
+   "record_class": "reform-context",
+   "distinctness_basis": "Reported as the source of the common directions printed in the 1971 Euchologion; held inside the existing 1971 record.",
+   "existing_candidate_ids": [
+    "alex-coptic-1971"
+   ],
+   "acquisition_ids": [
+    "coptic-acq-synod-html"
+   ],
+   "unresolved": "Synodal acts in Arabic and French not inspected.",
+   "inventory_ids": [
+    "alex-coptic-1971"
+   ]
+  },
+  {
+   "id": "coptic-v-1971",
+   "label": "خولاجي كنيسة الإسكندرية (Khūlājī Kanīsat al-Iskandariyya), Rome 1971, printed by order of Patriarch Stephanos I",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "1971",
+   "date_role": "publication",
+   "record_class": "printed-edition-source-described",
+   "distinctness_basis": "Church sources tie it to the 1957 common directions; editorship by Hanna Malak is attributed only in secondary snippets.",
+   "existing_candidate_ids": [
+    "alex-coptic-1971"
+   ],
+   "acquisition_ids": [
+    "coptic-acq-booklist-html"
+   ],
+   "unresolved": "Original book uninspected; the existing record is missing from the coverage row's candidate list.",
+   "inventory_ids": [
+    "alex-coptic-1971"
+   ]
+  },
+  {
+   "id": "coptic-v-basil-reform-1975",
+   "label": "Proposal (27 April 1975) and synodal commission (18 May 1976) for revising the Basil liturgy",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "1975-04-27; 1976-05-18",
+   "date_role": "proposal-and-commission",
+   "record_class": "reform-context",
+   "distinctness_basis": "Process events, not a book.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "coptic-acq-reform-article-html"
+   ],
+   "unresolved": "Synod minutes not inspected.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-basil-provisional",
+   "label": "Provisional Basil text circulated for consultation before the final 1990 text",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "between 1976 and 1990",
+   "date_role": "issue-date-unknown",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "The article says a non-final text was issued for comment; no title, date or printing is given.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Whether the 1980 or 1987 Basil printings are this provisional text is unexamined.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-basil-1990",
+   "label": "قداس القديس باسيليوس الكبير, final text of the Coptic Catholic liturgical commission, issued 25 February 1990 under Patriarch Stephanos II",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "1990-02-25 (issuance of final text, as reported)",
+   "date_role": "issuance-reported",
+   "record_class": "substantive-revision-reported",
+   "distinctness_basis": "The before/after table shows reworded preparation and thanksgiving prayers (the latter reduced from three sections with responses to one paragraph), a shortened anaphora opening and a reworded epiclesis; ritual actions are said to be unchanged.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "coptic-acq-reform-article-html"
+   ],
+   "unresolved": "Book uninspected; the 'before' column comes from an Orthodox edition, so the exact Catholic pre-1990 text is not established.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-basil-1987",
+   "label": "قداس القديس باسيليوس الكبير, Cairo 1987 under Stephanos II; ninth printing 2009",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "1987; ninth printing 2009",
+   "date_role": "publication-and-reprint",
+   "record_class": "printing-series",
+   "distinctness_basis": "Book-list entry 52 says the text was printed several times, the ninth under Antonios Naguib in 2009.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "coptic-acq-booklist-html"
+   ],
+   "unresolved": "Relation to the 1990 final text is unknown: a 1987 printing predates it. Intervening printings are unlisted.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-basil-1956",
+   "label": "قداس القديس باسيليوس الكبير, Bishop Alexandros Iskandar of Lycopolis (Asyut), Cairo 1956; second edition 1963",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "1956; 1963",
+   "date_role": "publication-and-second-edition",
+   "record_class": "printed-book-distinctness-unresolved",
+   "distinctness_basis": "Book-list entries 37 and 40.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Whether an altar book or a participation booklet, and its text basis, are unknown.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-basil-1966",
+   "label": "قداس القديس باسيليوس الكبير أسقف قيصرية حسب طقس كنيسة الإسكندرية للأقباط الكاثوليك, Cairo, al-Wafa press, 1966",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "1966",
+   "date_role": "publication",
+   "record_class": "printed-book-distinctness-unresolved",
+   "distinctness_basis": "Book-list entry 42.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Contents and role unknown.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-basil-1980",
+   "label": "قداس القديس باسيليوس الكبير, Cairo 1980 (two list entries; one prepared by Fr Maximos Kabes)",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "1980",
+   "date_role": "publication",
+   "record_class": "printed-book-distinctness-unresolved",
+   "distinctness_basis": "Book-list entries 49 and 50, same press and year.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "The two entries may describe one book; relation to the provisional reform text unknown.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-basil-1974-people",
+   "label": "صلوات لخدمة المؤمنين: القداس الإلهي للقديس باسيليوس الكبير بحسب الطقس الإسكندري, Fr Maurice Martin SJ, Minya 1974",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "1974",
+   "date_role": "publication-with-episcopal-permission",
+   "record_class": "congregational-book",
+   "distinctness_basis": "Book-list entry 46; printing authorised by Bishop Ishaq Ghattas of Minya.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Contents unseen.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-1941-compendium",
+   "label": "Book containing the Eastern Catholic liturgies, including the Coptic Catholic Basil liturgy, Lebanon 1941",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "1941",
+   "date_role": "publication",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Book-list entry 31; title, language and editor not given.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Exact title and language unknown; a multi-rite compendium may be a translation.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-basil-1952-arfr",
+   "label": "القداس الباسيلي, Arabic and French, Cairo 1952",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "1952",
+   "date_role": "publication",
+   "record_class": "translation-witness-deferred",
+   "distinctness_basis": "Book-list entry 36; bilingual Arabic/French.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "The Arabic layer stays in scope; the French translation history is deferred.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-basil-1963-fr",
+   "label": "القداس الباسيلي, French, Cairo 1963",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "1963",
+   "date_role": "publication",
+   "record_class": "translation-witness-deferred",
+   "distinctness_basis": "Book-list entry 38.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Deferred translation history.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-basil-1963-arfr",
+   "label": "القداس الباسيلي, Arabic and French, Cairo 1963",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "1963",
+   "date_role": "publication",
+   "record_class": "translation-witness-deferred",
+   "distinctness_basis": "Book-list entry 39.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "The Arabic layer stays in scope; the French translation history is deferred.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-basil-1992-en",
+   "label": "قداس القديس باسيليوس الكبير, English, Cairo 1992",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "1992",
+   "date_role": "publication",
+   "record_class": "translation-witness-deferred",
+   "distinctness_basis": "Book-list entry 54.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Deferred translation history.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-basil-2002-multi",
+   "label": "قداس القديس باسيليوس الكبير in Arabic, English, French, Italian, German and Spanish, Cairo 2002",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "2002",
+   "date_role": "publication",
+   "record_class": "translation-witness-deferred",
+   "distinctness_basis": "Book-list entry 55.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Deferred translation history; relation to the 1990 text unexamined.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-deacon-1875",
+   "label": "Deacon's service book (Coptic) of Agapios Bishai, titular bishop of Kariopolis, Rome, Propaganda press, 1875",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "1875",
+   "date_role": "publication",
+   "record_class": "complementary-volume",
+   "distinctness_basis": "Book-list entry 7 and the heritage article: doxologies, the deacon's part at evening and morning incense and at the liturgy, and prayers at the offering.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Original uninspected.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-kammerer-1411",
+   "label": "Undated Propaganda 'Coptic manual of the liturgy (Uniat)' (Kammerer 1411)",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "undated",
+   "date_role": "undated",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Kammerer's title transcription is OCR-damaged; it may or may not be the 1875 deacon's book.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "coptic-acq-kammerer-pdf"
+   ],
+   "unresolved": "Identity unresolved; search Propaganda Fide imprint catalogues.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-deacon-1898",
+   "label": "خدمة الشماس (deacon's service), Cairo, Catholic St Mark press, under Cyril II",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "1898 (book list); 1899 (heritage article; Kammerer 1418)",
+   "date_role": "publication-year-reported-conflicting",
+   "record_class": "complementary-volume",
+   "distinctness_basis": "Coptic and Arabic reprint of the deacon's service; Kammerer 1418 gives 19, 572 and 36 pages.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Title-page year and whether this is the same book as Kammerer's 1899 entry are unresolved.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-tuki-1763",
+   "label": "Kitāb khidmat al-asrār al-muqaddasa wa-tajānīz al-mawtā wa-l-hūsāt wa-l-qaṭamāras al-shahrī (Tuki), Rome 1763",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "1763",
+   "date_role": "publication",
+   "record_class": "complementary-volume",
+   "distinctness_basis": "Sacraments other than the Eucharist and Holy Orders, burial, psalmody and the monthly Katameros (Kammerer 1495, 706 pages).",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Only its lectionary component bears on the Eucharist; not proposed as a record.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-katameros-1900-1902",
+   "label": "قطمارس قبطي (Coptic Katameros for days, Sundays and feasts) in two parts, 'Ayn Shams press, 1900 and 1902, with an index (Kitāb al-dalāl) of 1902",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "Part 1: 1900; part 2 and index: 1902",
+   "date_role": "complementary-volume-completion",
+   "record_class": "complementary-volume",
+   "distinctness_basis": "Book-list entries 14, 16 and 17; one lectionary set completed over two years.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Not proposed as a record in this pass; contents and language distribution unseen.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-lectionaries-1915-1965",
+   "label": "Later Catholic lectionaries: daily Epistles (Arabic, 1915); Gospels (Arabic, 1930, two titles); Sunday and feast Gospels (Coptic and Arabic, 1931); Sunday and feast Epistles (Coptic and Arabic, 1932); daily Epistles (Arabic, 1932 and 1948); annual Katameros of Fr Maximos Kabes (1965)",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "1915–1965",
+   "date_role": "publication",
+   "record_class": "complementary-volume",
+   "distinctness_basis": "Book-list entries 18, 21–25, 32 and 41; separate lectionary books, not Euchologion revisions.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Each still needs title-page and contents checks; not proposed as records in this pass.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-priest-manuals",
+   "label": "استعمال الخوري (Priest's usage, Arabic, Cairo 1932) and خدمة الراعي (Pastor's service, Cairo 1978)",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "1932; 1978",
+   "date_role": "publication",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Book-list entries 26 and 48; possible rubric books.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Eucharistic rubric content unknown.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-basil-chant-1974",
+   "label": "ألحان القداس القبطي للقديس باسيليوس (deacon and people's responses in musical notation), Sr Françoise Khalil Ghattas, Cairo 1974; second edition 1996; third 2006",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "1974; 1996; 2006",
+   "date_role": "publication-and-editions",
+   "record_class": "complementary-volume",
+   "distinctness_basis": "Book-list entry 47.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Whether the 1996 edition follows the 1990 text is unknown; not proposed as a record.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-calendar-1991",
+   "label": "التقويم القبطي للكنيسة القبطية الكاثوليكية (Coptic calendar of the Coptic Catholic Church), Cairo 1991",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "1991",
+   "date_role": "publication",
+   "record_class": "calendar-component",
+   "distinctness_basis": "Book-list entry 53.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Calendar contents unseen; a substantive calendar change is not established.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-holy-week",
+   "label": "Holy Week (Pascha) books: Arabic and Coptic Pascha books and a Holy Week order (Kitāb dalāl), 1900; Ordo hebdomadae sanctae, 1900 (Kammerer 1477); Arabic readings 1933; Holy Week order 1998; two collections of 2005",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "1900; 1933; 1998; 2005",
+   "date_role": "publication",
+   "record_class": "out-of-eucharistic-scope-labelled",
+   "distinctness_basis": "Book-list entries 11–13, 27, 59, 65 and 66; Holy Week offices, not Eucharistic books.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Eucharistic content of the Holy Thursday and Easter services not examined.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-non-eucharistic",
+   "label": "Other Catholic Coptic service books: Agpeya 1750, 1930 (two) and 2002; ordinations and consecrations 1761–1762; Theotokia 1764; sacraments 1900; unction 1933; burial 1934; Lakan and prostration 1938; marriage 1994; baptism and confirmation 1997",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "1750–2002",
+   "date_role": "publication",
+   "record_class": "out-of-eucharistic-scope-labelled",
+   "distinctness_basis": "Book-list entries 2–4, 6, 15, 19–20, 28–30, 57, 58 and 62; Kammerer 1416 and 1494.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Not Eucharistic books; listed so that the census of the church list is complete.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-post-2009",
+   "label": "Coptic Catholic liturgical publishing after 2009",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "after 2009",
+   "date_role": "unknown",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "The church list ends in 2009 and the reviewer's later web queries found no newer edition.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Unexamined range: patriarchal publications from 2010 to the present.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-cm265-catholic",
+   "label": "Cairo, Coptic Museum, Liturgy 265 (BCEP Boe 6; Graf 685; Simaika 263): Coptic Catholic Basil Euchologion, original layer",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "undated (paper; no Date feature)",
+   "date_role": "manuscript-attestation-undated",
+   "record_class": "manuscript-witness",
+   "distinctness_basis": "Catalogue: Filioque in the Creed and omission of non-Chalcedonian saints; full priestly rubrics in Coptic and Arabic; congregational hymns and reading formulae.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "coptic-acq-bcep-608006"
+   ],
+   "unresolved": "Images not seen; relation to the 1736 and 1898 prints unknown.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-cm265-correction",
+   "label": "Coptic Museum Liturgy 265, later correction layer: Filioque struck through in Coptic and Arabic (f. 120r)",
+   "tradition_or_use": "Later corrector; affiliation unknown",
+   "date_label": "undated; before purchase in Cairo, August 1929 (f. 258v)",
+   "date_role": "manuscript-layer-undated",
+   "record_class": "manuscript-layer",
+   "distinctness_basis": "A distinct later hand alters the Creed; recorded as a layer of the same witness.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "coptic-acq-bcep-608006"
+   ],
+   "unresolved": "Who made the correction and when is unknown; the 1929 purchase note dates only the sale.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-bnf-arabe5969",
+   "label": "Paris, BnF, Arabe 5969 (BCEP Boe 263): Coptic Catholic Gregory Euchologion with the unction service",
+   "tradition_or_use": "Coptic Catholic",
+   "date_label": "before 1859 (ownership note of the priest Ibrahim Bishai)",
+   "date_role": "terminus-ante-quem",
+   "record_class": "manuscript-witness",
+   "distinctness_basis": "Catalogue: words of institution in large script; commemoration without Severus and Dioscorus and with the Council of Chalcedon.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "coptic-acq-bcep-608263"
+   ],
+   "unresolved": "Gallica images blocked (HTTP 403). The catalogue rejects the older sixteenth-century date; its observation placing f. 44v in Basil conflicts with its own contents label (Gregory, ff. 1r–70v).",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-vat17",
+   "label": "Vatican, BAV, Vat. copt. 17: Bohairic and Arabic Euchologion of Basil, Gregory and Cyril, colophon AM 1004 (1288)",
+   "tradition_or_use": "Coptic (pre-union Bohairic manuscript)",
+   "date_label": "1288 (colophon f. 131v)",
+   "date_role": "manuscript-attestation",
+   "record_class": "manuscript-witness",
+   "distinctness_basis": "Dated three-anaphora witness; now held as complete offered images.",
+   "existing_candidate_ids": [
+    "alex-coptic-vat17"
+   ],
+   "acquisition_ids": [
+    "coptic-acq-vat17-zip",
+    "coptic-acq-vat17-manifest"
+   ],
+   "unresolved": "No link to Tuki's exemplar is shown.",
+   "inventory_ids": [
+    "alex-coptic-vat17"
+   ]
+  },
+  {
+   "id": "coptic-v-vat17-latin-layer",
+   "label": "Vat. copt. 17, Latin marginal directions in Gregory (ff. 81r–v) and later binding with Roman Catholic arms ('Liturgia Copta')",
+   "tradition_or_use": "Western readers or owners",
+   "date_label": "undated later layers",
+   "date_role": "manuscript-layer-undated",
+   "record_class": "manuscript-layer",
+   "distinctness_basis": "The Latin note beside the bread words was seen on image 0082 (f. 81r); the binding is described by BCEP.",
+   "existing_candidate_ids": [
+    "alex-coptic-vat17"
+   ],
+   "acquisition_ids": [
+    "coptic-acq-vat17-zip"
+   ],
+   "unresolved": "Date and author of the Latin notes unknown; no liturgical reception claim.",
+   "inventory_ids": [
+    "alex-coptic-vat17"
+   ]
+  },
+  {
+   "id": "coptic-v-bohairic-repertoire",
+   "label": "Bohairic Euchologia repertoire of the thirteenth to twentieth centuries (BCEP export of 320 documents; Paul 2026 survey of about 375 codices)",
+   "tradition_or_use": "Coptic manuscript tradition",
+   "date_label": "13th–20th centuries",
+   "date_role": "repertoire",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "A repertoire with variable celebrant prayers, not a set of recensions.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Unexamined range: observations and images of all but three BCEP documents; Catholic-period manuscripts beyond Liturgy 265 and Arabe 5969 may exist.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-asyut-family",
+   "label": "Asyut-associated variable-prayer manuscripts (al-Muharraq 14B9 of 1773–1774 and two others named by Paul)",
+   "tradition_or_use": "Coptic manuscript tradition",
+   "date_label": "1773–1774 and later",
+   "date_role": "manuscript-attestation",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Shared distinctive prayer repertoire reported by Paul 2026; prayer selection is a witness difference, not a recension.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Catholic reception unproved; images unseen.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-suryan-1659",
+   "label": "Monastery of the Syrians, Liturgy 472 and 473 (same scribe, 1659)",
+   "tradition_or_use": "Coptic manuscript tradition",
+   "date_label": "1659",
+   "date_role": "manuscript-attestation",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Reported differing prayer selections from one scribe.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Not inspected.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-inaudible-prayers",
+   "label": "Books of Inaudible (secret) Prayers: manuscripts (al-Suryan Liturgy 460 of 1944 and 725) and the Orthodox print of Metropolitan Yu'annis (Cairo 1924)",
+   "tradition_or_use": "Coptic component books",
+   "date_label": "1924; 1944; undated",
+   "date_role": "component-attestation",
+   "record_class": "component-witness",
+   "distinctness_basis": "Priest's secret prayers issued separately from the Euchologion.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Collateral; no Catholic edition of this component is known.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-rubric-texts",
+   "label": "Medieval regulatory texts (Guide to Beginners, the diataxis of Gabriel V, Ibn Kabar, Ibn Sabbāʿ)",
+   "tradition_or_use": "Coptic manuscript tradition",
+   "date_label": "13th–15th centuries",
+   "date_role": "text-attestation",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Rubrical and commentary witnesses; Ibn Sabbāʿ reports the reduction to three liturgies.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Not inspected by this lane.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-greek-egyptian",
+   "label": "Egyptian Greek Euchologia (BnF Grec 325; Kacmarcik MS 6; Coptic Patriarchate Liturgy 172, 175 and 184)",
+   "tradition_or_use": "Greek-language Egyptian tradition",
+   "date_label": "14th century to 1600",
+   "date_role": "manuscript-attestation",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Listed in the reviewer's BCEP export.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Not inspected; not to be equated with Byzantine use.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-monb-ve",
+   "label": "MONB.VE, the Great Euchologion of the White Monastery (Lanne's 'Grand euchologe'); leaves in Cairo, Paris, London and the Vatican",
+   "tradition_or_use": "Sahidic, White Monastery",
+   "date_label": "end of the 10th century (scribe matched to a colophon of 25 January 990)",
+   "date_role": "manuscript-palaeographic-copy-date",
+   "record_class": "fragmentary-manuscript-witness",
+   "distinctness_basis": "Fragments of thirteen anaphoras, including Thomas; a distinct pre-reform Southern repertoire.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "coptic-acq-monb-ve-zip",
+    "coptic-acq-monb-ve-meta"
+   ],
+   "unresolved": "56 page slots are placeholders; Lanne 1958 is an edition date, not a rite date.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-monb-vd",
+   "label": "MONB.VD, Sahidic Euchologion fragments (Paris Copte 129(20); London Or. 3580 A.14–16)",
+   "tradition_or_use": "Sahidic, White Monastery",
+   "date_label": "10th–11th century (VMR)",
+   "date_role": "manuscript-palaeographic-copy-date",
+   "record_class": "fragmentary-manuscript-witness",
+   "distinctness_basis": "Separate codex in the project's four-codex set.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "coptic-acq-monb-vd-zip",
+    "coptic-acq-monb-vd-meta"
+   ],
+   "unresolved": "Seven slots are placeholders.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-monb-vf",
+   "label": "MONB.VF, Sahidic Euchologion fragments (Paris, London, Vatican Borg. copt. 109 fasc. 110, Leiden)",
+   "tradition_or_use": "Sahidic, White Monastery",
+   "date_label": "10th–11th century (VMR and project page); 9th–10th century (Atanassova 2014)",
+   "date_role": "manuscript-palaeographic-copy-date",
+   "record_class": "fragmentary-manuscript-witness",
+   "distinctness_basis": "Twelve surviving leaves; quire 7 numbered; regular pagination.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "coptic-acq-monb-vf-zip",
+    "coptic-acq-monb-vf-meta"
+   ],
+   "unresolved": "Datings conflict; 20 slots are placeholders.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-monb-vg",
+   "label": "MONB.VG, Sahidic Euchologion fragments (Cairo IFAO Inv. 277; Berlin Ms. or. fol. 1609)",
+   "tradition_or_use": "Sahidic, White Monastery",
+   "date_label": "7th–8th century (VMR); 10th century (Atanassova 2014)",
+   "date_role": "manuscript-palaeographic-copy-date",
+   "record_class": "fragmentary-manuscript-witness",
+   "distinctness_basis": "Smallest of the four codices.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "coptic-acq-monb-vg-zip",
+    "coptic-acq-monb-vg-meta"
+   ],
+   "unresolved": "Datings conflict; four slots are placeholders.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-or6877",
+   "label": "London, BL Or. 6877, fragmentary Sahidic anaphora",
+   "tradition_or_use": "Sahidic",
+   "date_label": "probably 6th–7th century",
+   "date_role": "manuscript-palaeographic-copy-date",
+   "record_class": "fragmentary-manuscript-witness",
+   "distinctness_basis": "Existing record; no change.",
+   "existing_candidate_ids": [
+    "alex-sahidic-or6877"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "No new inspection.",
+   "inventory_ids": [
+    "alex-sahidic-or6877"
+   ]
+  },
+  {
+   "id": "coptic-v-mark-greek",
+   "label": "Early Greek Mark witnesses (Bodl. MS. Gr. th. e. 5 with P.Gen. IV 153; Bodl. MS. Gr. th. e. 11)",
+   "tradition_or_use": "Greek Egyptian",
+   "date_label": "5th–6th century",
+   "date_role": "manuscript-date-range",
+   "record_class": "fragmentary-manuscript-witness",
+   "distinctness_basis": "Existing records; no change.",
+   "existing_candidate_ids": [
+    "alex-mark-bodleian-e5-gen153",
+    "alex-mark-bodleian-e11"
+   ],
+   "acquisition_ids": [
+    "coptic-acq-apf-zero-byte"
+   ],
+   "unresolved": "PDF route still delivers zero bytes.",
+   "inventory_ids": [
+    "alex-mark-bodleian-e5-gen153",
+    "alex-mark-bodleian-e11"
+   ]
+  },
+  {
+   "id": "coptic-v-orth-1902",
+   "label": "Pi-ǧōm nte pieukhologion ethouab / Kitāb al-Khūlājī al-muqaddas, Hegumen 'Abd al-Masih Salib, Cairo, 'Ayn Shams press, 1618 AM (1902), first edition",
+   "tradition_or_use": "Coptic Orthodox (collateral)",
+   "date_label": "1902",
+   "date_role": "publication",
+   "record_class": "collateral-non-catholic-witness",
+   "distinctness_basis": "Title page inspected; the received Orthodox three-anaphora edition.",
+   "existing_candidate_ids": [
+    "alex-coptic1902-comparison"
+   ],
+   "acquisition_ids": [
+    "coptic-acq-1902-pdf",
+    "coptic-acq-1902-manifest"
+   ],
+   "unresolved": "No Catholic reception claim.",
+   "inventory_ids": [
+    "alex-coptic1902-comparison"
+   ]
+  },
+  {
+   "id": "coptic-v-orth-1887",
+   "label": "Khūlājī al-qiddīs Bāsīliyūs (Basil and Gregory anaphoras with the incense prayers, 423 + 10 pages) and the companion diaconicon Kitāb mā yajibu ʿalā al-shamāmisa (191 pages), both edited by Hegumen Philotheos, Cairo 1887",
+   "tradition_or_use": "Coptic Orthodox (collateral)",
+   "date_label": "1887 (diaconicon catalogued by HathiTrust as 1886)",
+   "date_role": "publication",
+   "record_class": "collateral-non-catholic-witness",
+   "distinctness_basis": "Kammerer 1460 and 1462 and Hammerschmidt item 1; two complementary books.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "coptic-acq-penn-html"
+   ],
+   "unresolved": "Not inspected; the diaconicon's 1886/1887 date is unresolved.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-orth-labib-1904",
+   "label": "Alleged separate Labib Euchologion, Cairo 1904",
+   "tradition_or_use": "Coptic Orthodox (collateral)",
+   "date_label": "1904",
+   "date_role": "publication-claimed",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Hammerschmidt lists it; Störk (reviewer-reported) doubts it exists.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Existence unresolved.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-orth-1921-1936",
+   "label": "Orthodox editions of 1921 (Hanna Gibriyal), 1924 (Yu'annis, secret prayers), 1926 and 1934 (Nashid Sarkis, 543 pages), 1927 (Habib Girgis, Basil), 1927 and 1936 (Abna' al-Kanisa, 889 pages in 1936) and 1932 (Gabriyal 'Abd al-Masih and 'Abd al-Masih Mikha'il, 653 pages)",
+   "tradition_or_use": "Coptic Orthodox (collateral)",
+   "date_label": "1921–1936",
+   "date_role": "publication",
+   "record_class": "collateral-non-catholic-witness",
+   "distinctness_basis": "Kammerer 1412, 1413 and 1415; Hammerschmidt items 4–9.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Not inspected; Sarkis 1934 is not the Catholic 1934 book.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-orth-1960-1984",
+   "label": "Orthodox reprint of 1960 (Abna' al-Kanisa) and the 1984 Beni Suef/Behnesa edition of Salib's text",
+   "tradition_or_use": "Coptic Orthodox (collateral)",
+   "date_label": "1960; 1984",
+   "date_role": "publication",
+   "record_class": "collateral-non-catholic-witness",
+   "distinctness_basis": "Reviewer-reported from Störk; Internet Archive item khulajialmuqadda0000copt is dated 1984.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "coptic-acq-ia-search-json"
+   ],
+   "unresolved": "Identity of the 1984 Internet Archive item with the Störk edition is unproved.",
+   "inventory_ids": []
+  },
+  {
+   "id": "coptic-v-translations-historical",
+   "label": "Historical translations: Scialach (Augsburg 1604), Renaudot (1716; 1847), Rodwell (1870), Malan (1872–1875) and Bute (1882; 1908)",
+   "tradition_or_use": "Translation controls",
+   "date_label": "1604–1908",
+   "date_role": "publication",
+   "record_class": "translation-witness-deferred",
+   "distinctness_basis": "Translations; deferred. Their underlying manuscripts may matter separately.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Deferred translation history.",
+   "inventory_ids": []
+  }
+ ],
+ "acquisitions": [
+  {
+   "id": "coptic-acq-1902-pdf",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/1703331",
+   "sha256": "4f7e97cd090512510e748ca29ee010242593fe6cca957f141af640399526be30",
+   "bytes": 125137934,
+   "pages": 793,
+   "delivered_extent": "Complete provider PDF: 793 pages, a ULB Bonn cover sheet followed by the 792 canvases of the IIIF manifest (covers, endpapers, title, errata, four text sections, back cover).",
+   "identity_inspection": "This pass viewed PDF page 8 (title page: Coptic title of the Euchologion of the three anaphoras; Arabic 'Kitāb al-Khūlājī al-muqaddas'; correction by Hegumen 'Abd al-Masih Salib; 'first edition'; 'Ayn Shams press, 1618 of the Martyrs = 1902) and page 7 (cover/endpaper). The prior researcher rendered pages 1, 8, 786–788 and 793 (PNG files in research/).",
+   "rights_basis": "Underlying book printed in Cairo in 1902: public domain in the United States (first published before 1931). Provider: ULB Bonn marks the digital copy 'Public Domain Mark 1.0' (https://creativecommons.org/publicdomain/mark/1.0/deed.de) on https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/1703331.",
+   "proposed_storage": "remote",
+   "storage_reason": "Measured 125,137,934 bytes, above the 100 MB single-file limit of the Git host; lawful to distribute, so selected page images could be retained as derivatives later. Stable public route at ULB Bonn.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-1902-manifest",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/i3f/v20/1703331/manifest",
+   "sha256": "1efc11d7021134474a611fd530d44d182874946692da57052f1f2e0ca281ee59",
+   "bytes": 645188,
+   "pages": null,
+   "delivered_extent": "Complete IIIF presentation manifest: 792 canvases and the provider's structure ranges.",
+   "identity_inspection": "Read as JSON: label, metadata (title, editor, Cairo 1618 [=1902], 778 pages, Coptic and Arabic) and structure labels.",
+   "rights_basis": "Factual provider metadata for a public-domain book; ULB Bonn states no separate licence for the manifest.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Delivery map only; derivable again from the public route and summarised in the source row.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-1902-html",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/1703331",
+   "sha256": "7963116dbc9f5595cc09e138707932f6cd0c10f602033d2b1872a3e0ce619a63",
+   "bytes": 23233,
+   "pages": null,
+   "delivered_extent": "One HTML catalogue page.",
+   "identity_inspection": "Read: title, editor, imprint, extent and the 'Lizenz-/Rechtehinweis' (Public Domain Mark 1.0).",
+   "rights_basis": "Modern catalogue page of ULB Bonn; no reuse licence stated for the page itself.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No affirmative redistribution basis for this modern page or metadata; its evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-vat17-zip",
+   "original_url": "https://digi.vatlib.it/iiif/MSS_Vat.copt.17/manifest.json",
+   "sha256": "5a8ea131da6dfb311d0aa91ba614282a29fb0a96a5e042eb82e811e8bd668015",
+   "bytes": 56331879,
+   "pages": null,
+   "delivered_extent": "ZIP of all 133 full-size JPEG images (1572 × 1198 pixel openings) offered by the manifest, in canvas order; every image hash matches the per-image receipt vat17-images-receipt.json; the unpacked images are in vat17-images/.",
+   "identity_inspection": "Viewed in this pass: 0001 (shelfmark card 'Vat. Copt. 17'), 0082 (ff. 80v–81r, Latin marginal note on f. 81r), 0086 (ff. 84v–85r, two-column Coptic and Arabic) and 0133 (an Arabic text page, not transcribed).",
+   "rights_basis": "Underlying manuscript of 1288 is public domain as a text. Provider: the manifest attribution reads 'Images Copyright Biblioteca Apostolica Vaticana' and each image is watermarked 'ALL RIGHTS RESERVED' (https://digi.vatlib.it/iiif/MSS_Vat.copt.17/manifest.json); no separate terms page was retrieved.",
+   "proposed_storage": "restricted",
+   "storage_reason": "The Vatican Library reserves copyright in the images; no distribution basis. Bytes stay in research scratch.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-vat17-manifest",
+   "original_url": "https://digi.vatlib.it/iiif/MSS_Vat.copt.17/manifest.json",
+   "sha256": "26dafc5d631eb1ab1bdc5cbb130ede69ff43dc328ae545c54d2f72cd3fbbfbe2",
+   "bytes": 161861,
+   "pages": null,
+   "delivered_extent": "Complete IIIF manifest: 133 canvases, shelfmark metadata only.",
+   "identity_inspection": "Read as JSON: label, attribution and canvas list.",
+   "rights_basis": "Provider metadata carrying the Vatican Library copyright attribution.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No affirmative redistribution basis for this modern page or metadata; its evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-monb-vd-zip",
+   "original_url": "https://coptot.manuscriptroom.com/web/sahidic-euchologia/monb.vd",
+   "sha256": "c8b3cac82634db0e3b3c040fc0cca1705753fa997635422b71d43addb06a7ac7",
+   "bytes": 8829304,
+   "pages": null,
+   "delivered_extent": "All publicly offered items for MONB.VD: 8 images and 15 transcriptions (seven slots were placeholders).",
+   "identity_inspection": "Contents checked against monb-acquisition-receipts.json (every hash matches).",
+   "rights_basis": "Underlying manuscript public domain as a text. Images: BnF Gallica ('Source: gallica.bnf.fr', non-commercial reuse conditions at https://gallica.bnf.fr/edit/und/conditions-dutilisation-des-contenus-de-gallica, not retrieved in this pass) and British Library; transcriptions are modern scholarly work of the Göttingen project.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Mixed holding-library image conditions and modern transcriptions; no affirmative distribution basis.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-monb-ve-zip",
+   "original_url": "https://coptot.manuscriptroom.com/web/sahidic-euchologia/monb.ve",
+   "sha256": "ca3dc1158d3e10f994f065602cfa7547cc12e52bdb39eab8d17308e11f49a0a8",
+   "bytes": 50323578,
+   "pages": null,
+   "delivered_extent": "All publicly offered items for MONB.VE: 55 images and 64 transcriptions (56 slots were placeholders).",
+   "identity_inspection": "Viewed pageID 210 (Borg. copt. 109 fasc. 100 f. 1r, a Sahidic parchment leaf); contents checked against the receipt hashes.",
+   "rights_basis": "Images from the Vatican Library ('Copyright © Biblioteca Apostolica Vaticana'), BnF Gallica and others; transcriptions modern scholarly work.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Vatican and other image copyrights; no distribution basis.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-monb-vf-zip",
+   "original_url": "https://coptot.manuscriptroom.com/web/sahidic-euchologia/monb.vf",
+   "sha256": "c5930a7ea2671ef7c9e7291fad247f8810a98746e1096e2c44ded297e650d8cb",
+   "bytes": 12269417,
+   "pages": null,
+   "delivered_extent": "All publicly offered items for MONB.VF: 10 images and 24 transcriptions (20 slots were placeholders).",
+   "identity_inspection": "Contents checked against the receipt hashes.",
+   "rights_basis": "Images from the Rijksmuseum van Oudheden (CC0), BnF Gallica and the Vatican Library; transcriptions modern scholarly work.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Mixed image conditions; only the four RMO images are CC0. No distribution basis for the package as a whole.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-monb-vg-zip",
+   "original_url": "https://coptot.manuscriptroom.com/web/sahidic-euchologia/monb.vg",
+   "sha256": "3f51f839b63ea21f5ae73cd9040255df40499b23eee521baeaae3d9edf4f4343",
+   "bytes": 1231130,
+   "pages": null,
+   "delivered_extent": "All publicly offered items for MONB.VG: 2 images and 6 transcriptions (four slots were placeholders).",
+   "identity_inspection": "Contents checked against the receipt hashes.",
+   "rights_basis": "Images 'Copyright © Institut français d'archéologie orientale du Caire'; transcriptions modern scholarly work.",
+   "proposed_storage": "restricted",
+   "storage_reason": "IFAO image copyright; no distribution basis.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-monb-vd-meta",
+   "original_url": "https://coptot.manuscriptroom.com/community/vmr/api/metadata/manuscript/get/?gaNum=monb.vd&format=json",
+   "sha256": "e9e82779dd8fa19dca20122e3ef34bd3348f7e1bc3ec1ded3520306694b681d4",
+   "bytes": 14857,
+   "pages": null,
+   "delivered_extent": "Complete VMR metadata record for MONB.VD listing 15 page slots with shelf, image and transcription links.",
+   "identity_inspection": "Read as JSON: shelf instances, origin-year fields and page list.",
+   "rights_basis": "Modern project metadata of the Göttingen VMR; no reuse licence stated.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No affirmative redistribution basis for this modern page or metadata; its evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-monb-vd-html",
+   "original_url": "https://coptot.manuscriptroom.com/web/sahidic-euchologia/monb.vd",
+   "sha256": "0b8b60447984a49f454782aca407b7d24c0555ba397c8804f26ebad962d4093b",
+   "bytes": 30575,
+   "pages": null,
+   "delivered_extent": "One HTML codex page.",
+   "identity_inspection": "Read: codicological description and quire table.",
+   "rights_basis": "Modern project web page.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No affirmative redistribution basis for this modern page or metadata; its evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-monb-ve-meta",
+   "original_url": "https://coptot.manuscriptroom.com/community/vmr/api/metadata/manuscript/get/?gaNum=monb.ve&format=json",
+   "sha256": "c34e8e9160a88aaf190517e4b4f308d73cb200f0ff8d714cf37beb25e8990299",
+   "bytes": 94334,
+   "pages": null,
+   "delivered_extent": "Complete VMR metadata record for MONB.VE listing 110 page slots with shelf, image and transcription links.",
+   "identity_inspection": "Read as JSON: shelf instances, origin-year fields and page list.",
+   "rights_basis": "Modern project metadata of the Göttingen VMR; no reuse licence stated.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No affirmative redistribution basis for this modern page or metadata; its evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-monb-ve-html",
+   "original_url": "https://coptot.manuscriptroom.com/web/sahidic-euchologia/monb.ve",
+   "sha256": "dbb61edd8142cc1ae334a13ff8be18049fb845f776a0d71f1f4b5422602e2b7b",
+   "bytes": 29004,
+   "pages": null,
+   "delivered_extent": "One HTML codex page.",
+   "identity_inspection": "Read: codicological description and quire table.",
+   "rights_basis": "Modern project web page.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No affirmative redistribution basis for this modern page or metadata; its evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-monb-vf-meta",
+   "original_url": "https://coptot.manuscriptroom.com/community/vmr/api/metadata/manuscript/get/?gaNum=monb.vf&format=json",
+   "sha256": "129da2d123a436e95954b6db8a1926febc04d5b77a05acc8b2b499fc3fd44851",
+   "bytes": 27897,
+   "pages": null,
+   "delivered_extent": "Complete VMR metadata record for MONB.VF listing 30 page slots with shelf, image and transcription links.",
+   "identity_inspection": "Read as JSON: shelf instances, origin-year fields and page list.",
+   "rights_basis": "Modern project metadata of the Göttingen VMR; no reuse licence stated.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No affirmative redistribution basis for this modern page or metadata; its evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-monb-vf-html",
+   "original_url": "https://coptot.manuscriptroom.com/web/sahidic-euchologia/monb.vf",
+   "sha256": "1f6b21b994829e80ae0ed208af06c663c2f741b3f92acc124f8938bfd87895eb",
+   "bytes": 29585,
+   "pages": null,
+   "delivered_extent": "One HTML codex page.",
+   "identity_inspection": "Read: codicological description and quire table.",
+   "rights_basis": "Modern project web page.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No affirmative redistribution basis for this modern page or metadata; its evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-monb-vg-meta",
+   "original_url": "https://coptot.manuscriptroom.com/community/vmr/api/metadata/manuscript/get/?gaNum=monb.vg&format=json",
+   "sha256": "949dea58c796d822ce6fe71307a16687739df4c8a8a4cb824c2dccbb1b0b4874",
+   "bytes": 6335,
+   "pages": null,
+   "delivered_extent": "Complete VMR metadata record for MONB.VG listing 6 page slots with shelf, image and transcription links.",
+   "identity_inspection": "Read as JSON: shelf instances, origin-year fields and page list.",
+   "rights_basis": "Modern project metadata of the Göttingen VMR; no reuse licence stated.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No affirmative redistribution basis for this modern page or metadata; its evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-monb-vg-html",
+   "original_url": "https://coptot.manuscriptroom.com/web/sahidic-euchologia/monb.vg",
+   "sha256": "8a9bc44baf446b4181cda1a2b79db97b8d102857c856fa662a73ca6f5e994f00",
+   "bytes": 28705,
+   "pages": null,
+   "delivered_extent": "One HTML codex page.",
+   "identity_inspection": "Read: codicological description and quire table.",
+   "rights_basis": "Modern project web page.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No affirmative redistribution basis for this modern page or metadata; its evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-sahidic-home",
+   "original_url": "https://coptot.manuscriptroom.com/web/sahidic-euchologia/home",
+   "sha256": "4ff4c4fe031629c95b5925b457b02c9dd98cff2d4a570b4bab3c5d6f6fdd818e",
+   "bytes": 30790,
+   "pages": null,
+   "delivered_extent": "One HTML project page.",
+   "identity_inspection": "Read: project history, the four codices and the dating range before the Gabriel II reform.",
+   "rights_basis": "Modern project web page.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No affirmative redistribution basis for this modern page or metadata; its evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-vmr-ve-html",
+   "original_url": "https://coptot.manuscriptroom.com/community/vmr/api/projects/coptot/mssview/?docID=690021",
+   "sha256": "c7d4b311f285302797054afacf2bf82af281030ad71614d0ee8ef7bf1980bf62",
+   "bytes": 49132,
+   "pages": null,
+   "delivered_extent": "One HTML quire view for MONB.VE.",
+   "identity_inspection": "Read: quire table with contents labels (for example the Anaphora of St Thomas).",
+   "rights_basis": "Modern project web page.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No affirmative redistribution basis for this modern page or metadata; its evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-atanassova-pdf",
+   "original_url": "https://copt-ot.adw-goe.de/documents/16029/0/Atanassova%2C%2BPrimary%2BSources.pdf/ab513d70-ca67-4297-819a-b23f6bb3eef3?version=1.0",
+   "sha256": "2900403aaa40d45fed9e87d9039dac528184c28943cf7d5bd4b8d12bfee9e481",
+   "bytes": 1090655,
+   "pages": 54,
+   "delivered_extent": "Complete author offprint, 54 PDF pages (volume front matter and the chapter pp. 47–96).",
+   "identity_inspection": "Text extracted; first page shows the Peeters offprint notice and volume title; section 3.5 and the table on pp. 70–73 read.",
+   "rights_basis": "Modern scholarly chapter, copyright Peeters Publishers (offprint notice on PDF page 1); hosted by the Göttingen academy project.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Publisher copyright; research use only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-kammerer-pdf",
+   "original_url": "https://de.cdn-website.com/3e823bf7e8654767a06a86d670bf72af/files/uploaded/Kammerer-Bibliography.pdf",
+   "sha256": "1144db2304bd42116e7dc7a8adfa915fe55e8b1f714cf55d09bbe06ed217a386",
+   "bytes": 6961246,
+   "pages": 215,
+   "delivered_extent": "Complete 215-page scan with OCR layer.",
+   "identity_inspection": "Title leaf text: University of Michigan General Library Publications 7, Ann Arbor 1950, Kraus reprint New York 1969; liturgy section pp. 81–85 read.",
+   "rights_basis": "Copyright 1950 University of Michigan Press; renewal not checked; third-party web host with no stated licence.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Copyright status unresolved; research use only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-booklist-html",
+   "original_url": "https://coptcatholic.net/11243/",
+   "sha256": "2c39e9c8078f650af91e93622ea261b5932cd38cdb47f6f78a56bad52a9bb308",
+   "bytes": 197223,
+   "pages": null,
+   "delivered_extent": "One HTML page with the complete numbered list (entries 1–68, number 56 absent).",
+   "identity_inspection": "Whole list read in the cleaned text coptic-books-clean.txt.",
+   "rights_basis": "Underlying content is a modern church-hosted web article (coptcatholic.net), copyrighted; the site states no reuse licence in the fetched page. Terms URL: none found on https://coptcatholic.net/.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No affirmative redistribution basis for this modern page or metadata; its evidential facts are carried in the source rows. This fetch (sha256 2c39e9…) differs from the digest recorded in the inventory source (3bef1f…); the page is dynamic.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-synod-html",
+   "original_url": "https://coptcatholic.net/30600/",
+   "sha256": "ed92e165aac0773c9af587d6938b95895ee0fdb7f9eedd55079117b048dc7ab6",
+   "bytes": 135991,
+   "pages": null,
+   "delivered_extent": "One HTML article.",
+   "identity_inspection": "Read: synod dates 1898, 1957 and 1997 and the work-list item placing the 1957 directions in the 1971 book.",
+   "rights_basis": "Underlying content is a modern church-hosted web article (coptcatholic.net), copyrighted; the site states no reuse licence in the fetched page. Terms URL: none found on https://coptcatholic.net/.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No affirmative redistribution basis for this modern page or metadata; its evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-tasted-html",
+   "original_url": "https://coptcatholic.net/1385/",
+   "sha256": "5206692911b96c6661787de64e2299c2d3abede8e7b95373c8f3e34b2552615c",
+   "bytes": 157268,
+   "pages": null,
+   "delivered_extent": "One HTML article.",
+   "identity_inspection": "Not re-read in this pass beyond identity; previously inspected for the inventory source.",
+   "rights_basis": "Underlying content is a modern church-hosted web article (coptcatholic.net), copyrighted; the site states no reuse licence in the fetched page. Terms URL: none found on https://coptcatholic.net/.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No affirmative redistribution basis for this modern page or metadata; its evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-reform-article-html",
+   "original_url": "https://coptcatholic.net/1329/",
+   "sha256": "295c5d8fac44150f11d48a45f5a7e17547411e9e9d6cdd189b59e07f62a97114",
+   "bytes": 169000,
+   "pages": null,
+   "delivered_extent": "One HTML article (fetched in this pass).",
+   "identity_inspection": "Read: reform history, quoted 1990 preface, before/after table and footnotes.",
+   "rights_basis": "Underlying content is a modern church-hosted web article (coptcatholic.net), copyrighted; the site states no reuse licence in the fetched page. Terms URL: none found on https://coptcatholic.net/.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No affirmative redistribution basis for this modern page or metadata; its evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-heritage-article-html",
+   "original_url": "https://coptcatholic.net/1403/",
+   "sha256": "6ed52cd57c93698f89303991b98c80d7cb1bd879d24c63388fa2f8600e28ecd5",
+   "bytes": 118331,
+   "pages": null,
+   "delivered_extent": "One HTML article (fetched in this pass).",
+   "identity_inspection": "Read: Euchologion and deacon-book paragraphs.",
+   "rights_basis": "Underlying content is a modern church-hosted web article (coptcatholic.net), copyrighted; the site states no reuse licence in the fetched page. Terms URL: none found on https://coptcatholic.net/.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No affirmative redistribution basis for this modern page or metadata; its evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-hathi-full-json",
+   "original_url": "https://catalog.hathitrust.org/api/volumes/full/recordnumber/103390672.json",
+   "sha256": "d090b9ffd4cfc7e3660730b80a7fbd32fb75f9fa5145a274254da6a5b52d5417",
+   "bytes": 4841,
+   "pages": null,
+   "delivered_extent": "Complete catalogue API response with MARC XML and one item.",
+   "identity_inspection": "Read: MARC title, imprint, extent, language note and item rights code pd.",
+   "rights_basis": "Catalogue metadata from HathiTrust; terms not retrieved.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No affirmative redistribution basis for this modern page or metadata; its evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-hathi-brief-json",
+   "original_url": "https://catalog.hathitrust.org/api/volumes/brief/recordnumber/103390672.json",
+   "sha256": "6bed24c28c5603835c5a4c241731e0ee39740971dffe8d21ba83c6ae0f2425ba",
+   "bytes": 483,
+   "pages": null,
+   "delivered_extent": "Complete brief API response.",
+   "identity_inspection": "Read: title, date and item list.",
+   "rights_basis": "Catalogue metadata from HathiTrust.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No affirmative redistribution basis for this modern page or metadata; its evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-hathi-reader-challenge",
+   "original_url": "https://babel.hathitrust.org/cgi/pt?id=oxu1.308011427",
+   "sha256": "b812dad20d6fd9a153978141fb18eeb93c7f18d0239d81c5dd05c30e27e342bf",
+   "bytes": 5487,
+   "pages": null,
+   "delivered_extent": "A 5,487-byte browser-challenge page ('Just a moment…'), not the book.",
+   "identity_inspection": "Read: confirms the reader route was refused; no book content.",
+   "rights_basis": "Provider challenge page; no content rights at issue.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Failure receipt only; it holds no source text.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-penn-html",
+   "original_url": "https://onlinebooks.library.upenn.edu/webbin/book/lookupname?key=Coptic%20Church",
+   "sha256": "9a346961d631d61ea0af8881269a259e72f0443a810b8a45cbb96c5c629a5a2b",
+   "bytes": 8625,
+   "pages": null,
+   "delivered_extent": "One HTML author page listing 14 HathiTrust records.",
+   "identity_inspection": "Read all 14 entries.",
+   "rights_basis": "Modern index page of the Online Books Page.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No affirmative redistribution basis for this modern page or metadata; its evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-bonn-topic-html",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/topic/titles/17261?max=100",
+   "sha256": "ba7f3788ab6befe6f287bb0ba3a435daaaacb97fdb5465b65629a827bcf7cbed",
+   "bytes": 12346,
+   "pages": null,
+   "delivered_extent": "One HTML listing page that reports 'Keine Einträge vorhanden' (no entries).",
+   "identity_inspection": "Read: the topic ID does not list Coptic titles; a failed discovery route.",
+   "rights_basis": "Modern catalogue page.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Failure receipt only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-ia-search-json",
+   "original_url": "https://archive.org/advancedsearch.php?q=%28title%3Aeuchologion+OR+title%3Akhulaji+OR+title%3Akhu%CC%84la%CC%84ji%CC%84%29&output=json&rows=100",
+   "sha256": "cd17d0fa00123b5081f4b42407e72bae4803688b9fada94012da5bf5d4a362b1",
+   "bytes": 34599,
+   "pages": null,
+   "delivered_extent": "Complete search response: 29 hits.",
+   "identity_inspection": "Read all rows; one Coptic Orthodox item dated 1984.",
+   "rights_basis": "Search metadata from the Internet Archive.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No affirmative redistribution basis for this modern page or metadata; its evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-bcep-608006",
+   "original_url": "https://coptot.manuscriptroom.com/community/vmr/api/metadata/manuscript/get/?docID=608006&format=json",
+   "sha256": "f4f2e0ae710304091ef33431736b57d95e37f39ecdd8b332a656292fcb9edf62",
+   "bytes": 3910,
+   "pages": null,
+   "delivered_extent": "Complete per-document record (page structure for 27 slots; no feature data, no images).",
+   "identity_inspection": "Read: shelf Coptic Museum Lit 265, siglum Boe 6.",
+   "rights_basis": "Modern project metadata.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No affirmative redistribution basis for this modern page or metadata; its evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-bcep-608263",
+   "original_url": "https://coptot.manuscriptroom.com/community/vmr/api/metadata/manuscript/get/?docID=608263&format=json",
+   "sha256": "7bb76ad02e9b5033a2947e08d5766af890b4ccabadc312386538eadf7f0ae1af",
+   "bytes": 1964,
+   "pages": null,
+   "delivered_extent": "Complete per-document record (page structure for 10 slots; no feature data, no images).",
+   "identity_inspection": "Read: shelf BnF Ar. 5969, siglum Boe 263.",
+   "rights_basis": "Modern project metadata.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No affirmative redistribution basis for this modern page or metadata; its evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "coptic-acq-apf-zero-byte",
+   "original_url": "https://www.degruyterbrill.com/document/doi/10.1515/apf-2024-0020/pdf?licenseType=open-access",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "bytes": 0,
+   "pages": null,
+   "delivered_extent": "Zero bytes: the publisher answered HTTP 202 with an empty body (prior attempt and again in this pass).",
+   "identity_inspection": "Nothing to inspect.",
+   "rights_basis": "The article states CC BY 4.0 (existing inventory source); no bytes were obtained.",
+   "proposed_storage": "unavailable",
+   "storage_reason": "No bytes obtained; the zero-length file is a failure marker, not an artifact.",
+   "existing_canonical_identity": null
+  }
+ ],
+ "expected_list_reconciliation": [
+  {
+   "expected_id": "cold-coptic-1736",
+   "expected_label": "Tuki three-anaphora Euchologion, Rome 1736",
+   "matched_packet_ids": [
+    "coptic-v-1736"
+   ],
+   "outcome": "matched",
+   "evidence": "Mapped to existing alex-coptic-1736; exemplar gap kept. Book-list entry 1 checked."
+  },
+  {
+   "expected_id": "cold-coptic-1898",
+   "expected_label": "Cyril II (Makar) Alexandrian Euchologion, Cairo 1898",
+   "matched_packet_ids": [
+    "coptic-v-1898"
+   ],
+   "outcome": "matched",
+   "evidence": "Update to alex-coptic-1898. HathiTrust MARC 260 reads Cairo, Catholic St Mark press, 1898 (hathi-full.json); Kammerer 1410 calls it a revision of Tuki for the Uniat Copts; heritage article 1403 gives 1899 for the same reprint. Kept as one edition."
+  },
+  {
+   "expected_id": "cold-coptic-1934",
+   "expected_label": "Catholic Euchologium Ecclesiae Alexandrinae (Basil, Gregory), Cairo 1934",
+   "matched_packet_ids": [
+    "coptic-v-1934"
+   ],
+   "outcome": "matched",
+   "evidence": "Update to alex-coptic-1934 keeps it a lead distinct from Kammerer 1415 (Sarkis, Orthodox, 543 pp.)."
+  },
+  {
+   "expected_id": "cold-coptic-1971",
+   "expected_label": "Rome 1971 Euchologion under Stephanos I",
+   "matched_packet_ids": [
+    "coptic-v-1971",
+    "coptic-v-synod-1957"
+   ],
+   "outcome": "matched",
+   "evidence": "Book-list entry 44 checked; existing alex-coptic-1971 now placed in the row's candidate_ids."
+  },
+  {
+   "expected_id": "cold-coptic-deacon1875",
+   "expected_label": "Agapios Bishai deacon's book, Rome 1875",
+   "matched_packet_ids": [
+    "coptic-v-deacon-1875",
+    "coptic-v-kammerer-1411"
+   ],
+   "outcome": "matched",
+   "evidence": "Book-list entry 7 and heritage article 1403 checked; proposed record coptic-deacon-1875."
+  },
+  {
+   "expected_id": "cold-coptic-deacon1898-99",
+   "expected_label": "Cyril II deacon's service, 1898/1899",
+   "matched_packet_ids": [
+    "coptic-v-deacon-1898"
+   ],
+   "outcome": "matched",
+   "evidence": "Book-list entry 10 (1898); heritage article (1899). Kammerer 1418 (Cairo 1899) is probably the same book but names no press or Church; corrected below."
+  },
+  {
+   "expected_id": "cold-coptic-pascha1900",
+   "expected_label": "Pascha books and Holy Week order, 1900",
+   "matched_packet_ids": [
+    "coptic-v-holy-week"
+   ],
+   "outcome": "matched",
+   "evidence": "Book-list entries 11–13; labelled out of Eucharistic scope with Holy Thursday/Easter content unexamined."
+  },
+  {
+   "expected_id": "cold-coptic-katameros1900-02",
+   "expected_label": "Annual Katameros in two parts with index, 1900–1902",
+   "matched_packet_ids": [
+    "coptic-v-katameros-1900-1902"
+   ],
+   "outcome": "matched",
+   "evidence": "Entries 14, 16 and 17; completion year not treated as a revision."
+  },
+  {
+   "expected_id": "cold-coptic-epistles1915",
+   "expected_label": "Daily Epistle lectionary, 1915",
+   "matched_packet_ids": [
+    "coptic-v-lectionaries-1915-1965"
+   ],
+   "outcome": "matched",
+   "evidence": "Entry 18."
+  },
+  {
+   "expected_id": "cold-coptic-gospels1930-31",
+   "expected_label": "Gospel lectionaries, 1930 and 1931",
+   "matched_packet_ids": [
+    "coptic-v-lectionaries-1915-1965"
+   ],
+   "outcome": "matched",
+   "evidence": "Entries 21–23."
+  },
+  {
+   "expected_id": "cold-coptic-epistles1932",
+   "expected_label": "Sunday/feast and daily Epistle lectionaries, 1932",
+   "matched_packet_ids": [
+    "coptic-v-lectionaries-1915-1965"
+   ],
+   "outcome": "matched",
+   "evidence": "Entries 24–25."
+  },
+  {
+   "expected_id": "cold-coptic-pastor1932",
+   "expected_label": "Priest's usage manual, 1932",
+   "matched_packet_ids": [
+    "coptic-v-priest-manuals"
+   ],
+   "outcome": "matched",
+   "evidence": "Entry 26."
+  },
+  {
+   "expected_id": "cold-coptic-pascha1933",
+   "expected_label": "Arabic Pascha readings, 1933",
+   "matched_packet_ids": [
+    "coptic-v-holy-week"
+   ],
+   "outcome": "matched",
+   "evidence": "Entry 27."
+  },
+  {
+   "expected_id": "cold-coptic-epistles1948",
+   "expected_label": "Daily Epistle lectionary, 1948",
+   "matched_packet_ids": [
+    "coptic-v-lectionaries-1915-1965"
+   ],
+   "outcome": "matched",
+   "evidence": "Entry 32."
+  },
+  {
+   "expected_id": "cold-coptic-basil1952",
+   "expected_label": "Arabic/French Basil liturgy, 1952",
+   "matched_packet_ids": [
+    "coptic-v-basil-1952-arfr"
+   ],
+   "outcome": "matched",
+   "evidence": "Entry 36; Arabic layer stated to stay in scope; no record proposed (packet limits)."
+  },
+  {
+   "expected_id": "cold-coptic-basil1956-63",
+   "expected_label": "Bishop Alexandros Iskandar Basil liturgy, 1956; second edition 1963",
+   "matched_packet_ids": [
+    "coptic-v-basil-1956"
+   ],
+   "outcome": "matched",
+   "evidence": "Entries 37 and 40; proposed record coptic-basil-1956-iskandar."
+  },
+  {
+   "expected_id": "cold-coptic-basil1963",
+   "expected_label": "French and Arabic/French Basil liturgies, 1963",
+   "matched_packet_ids": [
+    "coptic-v-basil-1963-fr",
+    "coptic-v-basil-1963-arfr"
+   ],
+   "outcome": "matched",
+   "evidence": "Entries 38 and 39."
+  },
+  {
+   "expected_id": "cold-coptic-katameros1965",
+   "expected_label": "Maximos Kabes annual Katameros, 1965",
+   "matched_packet_ids": [
+    "coptic-v-lectionaries-1915-1965"
+   ],
+   "outcome": "matched",
+   "evidence": "Entry 41."
+  },
+  {
+   "expected_id": "cold-coptic-basil1966",
+   "expected_label": "Basil liturgy, al-Wafa press, 1966",
+   "matched_packet_ids": [
+    "coptic-v-basil-1966"
+   ],
+   "outcome": "matched",
+   "evidence": "Entry 42; proposed record coptic-basil-1966-wafa."
+  },
+  {
+   "expected_id": "cold-coptic-basil1974",
+   "expected_label": "Maurice Martin people's Basil liturgy, Minya 1974",
+   "matched_packet_ids": [
+    "coptic-v-basil-1974-people"
+   ],
+   "outcome": "matched",
+   "evidence": "Entry 46; proposed record coptic-basil-people-1974."
+  },
+  {
+   "expected_id": "cold-coptic-chant1974-2006",
+   "expected_label": "Basil chant book, 1974; 1996; 2006",
+   "matched_packet_ids": [
+    "coptic-v-basil-chant-1974"
+   ],
+   "outcome": "matched",
+   "evidence": "Entry 47."
+  },
+  {
+   "expected_id": "cold-coptic-pastor1978",
+   "expected_label": "Pastor's service book, 1978",
+   "matched_packet_ids": [
+    "coptic-v-priest-manuals"
+   ],
+   "outcome": "matched",
+   "evidence": "Entry 48."
+  },
+  {
+   "expected_id": "cold-coptic-basil1980",
+   "expected_label": "Basil liturgy, 1980 (two list entries)",
+   "matched_packet_ids": [
+    "coptic-v-basil-1980"
+   ],
+   "outcome": "matched",
+   "evidence": "Entries 49 and 50 (same press and year; 50 names Fr Maximos Kabes); one record coptic-basil-1980-kabes, possible duplicate listing kept explicit."
+  },
+  {
+   "expected_id": "cold-coptic-basil1987-2009",
+   "expected_label": "Basil liturgy printing series, 1987 to ninth printing 2009",
+   "matched_packet_ids": [
+    "coptic-v-basil-1987"
+   ],
+   "outcome": "matched",
+   "evidence": "Entry 52; printing series, not counted as versions."
+  },
+  {
+   "expected_id": "cold-coptic-calendar1991",
+   "expected_label": "Coptic Catholic calendar, 1991",
+   "matched_packet_ids": [
+    "coptic-v-calendar-1991"
+   ],
+   "outcome": "matched",
+   "evidence": "Entry 53."
+  },
+  {
+   "expected_id": "cold-coptic-basil1992-2002",
+   "expected_label": "English (1992) and six-language (2002) Basil books",
+   "matched_packet_ids": [
+    "coptic-v-basil-1992-en",
+    "coptic-v-basil-2002-multi"
+   ],
+   "outcome": "matched",
+   "evidence": "Entries 54 and 55; deferred translation witnesses (the 2002 book also carries Arabic)."
+  },
+  {
+   "expected_id": "cold-coptic-pascha1998",
+   "expected_label": "Paulos Zikri Holy Week order, 1998",
+   "matched_packet_ids": [
+    "coptic-v-holy-week"
+   ],
+   "outcome": "matched",
+   "evidence": "Entry 59."
+  },
+  {
+   "expected_id": "cold-coptic-shared-bohairic",
+   "expected_label": "Medieval Bohairic euchologia anchors",
+   "matched_packet_ids": [
+    "coptic-v-vat17",
+    "coptic-v-vat17-latin-layer",
+    "coptic-v-bohairic-repertoire"
+   ],
+   "outcome": "matched",
+   "evidence": "Vat. copt. 17 images acquired; colophon (image 0133) and Latin note (image 0082) checked in this review. Paris, Huntington and Cairo anchors remain inside the repertoire lead."
+  },
+  {
+   "expected_id": "cold-coptic-asyut-family",
+   "expected_label": "Asyut-associated variable-prayer family",
+   "matched_packet_ids": [
+    "coptic-v-asyut-family"
+   ],
+   "outcome": "matched",
+   "evidence": "Paul 2026 (AML14B9, WBaL319, WSL496) confirmed in retained text."
+  },
+  {
+   "expected_id": "cold-coptic-suryan-1659",
+   "expected_label": "Suryan Liturgy 472 and 473 (1659)",
+   "matched_packet_ids": [
+    "coptic-v-suryan-1659"
+   ],
+   "outcome": "matched",
+   "evidence": "Mikhail–Paul 2026 confirms both dated 1659, same scribe."
+  },
+  {
+   "expected_id": "cold-coptic-greek-egyptian",
+   "expected_label": "Egyptian Greek euchologia (BnF Grec 325, Kacmarcik 6)",
+   "matched_packet_ids": [
+    "coptic-v-greek-egyptian"
+   ],
+   "outcome": "matched",
+   "evidence": "Labelled; not examined; no Byzantine equation."
+  },
+  {
+   "expected_id": "cold-coptic-white-monastery",
+   "expected_label": "Great Euchologion of the White Monastery",
+   "matched_packet_ids": [
+    "coptic-v-monb-ve",
+    "coptic-v-monb-vd",
+    "coptic-v-monb-vf",
+    "coptic-v-monb-vg"
+   ],
+   "outcome": "matched",
+   "evidence": "Atanassova 2014 p. 68 (Suciu: scribe matched to a colophon of 25 January 990) separates copy date from Lanne 1958."
+  },
+  {
+   "expected_id": "cold-coptic-or6877",
+   "expected_label": "BL Or. 6877 Sahidic anaphora fragment",
+   "matched_packet_ids": [
+    "coptic-v-or6877"
+   ],
+   "outcome": "matched",
+   "evidence": "Existing alex-sahidic-or6877 unchanged."
+  },
+  {
+   "expected_id": "cold-coptic-manuscript-rubrics",
+   "expected_label": "Guide to Beginners, Gabriel V diataxis, Ibn Kabar, Ibn Sabba",
+   "matched_packet_ids": [
+    "coptic-v-rubric-texts"
+   ],
+   "outcome": "matched",
+   "evidence": "Labelled lead."
+  },
+  {
+   "expected_id": "cold-coptic-orthodox1887",
+   "expected_label": "Philotheos Basil-and-Gregory Euchologion plus diaconicon, 1887",
+   "matched_packet_ids": [
+    "coptic-v-orth-1887"
+   ],
+   "outcome": "matched",
+   "evidence": "Kammerer 1460 (Basil and Gregory with the incense prayers, 423 + 10 pp.) and 1462 (diaconicon, 191 pp.) confirmed; the Online Books Page lists the diaconicon at HathiTrust as Matba'at al-Watan, 1886. The initial list already meant one Euchologion plus one diaconicon; packet and reviewer agree."
+  },
+  {
+   "expected_id": "cold-coptic-orthodox1902",
+   "expected_label": "Abd al-Masih Salib three-anaphora Euchologion, 1902",
+   "matched_packet_ids": [
+    "coptic-v-orth-1902"
+   ],
+   "outcome": "matched",
+   "evidence": "Title page re-rendered and read in this review: first edition, 'Ayn Shams press, 1618 of the Martyrs with 1902 printed beneath."
+  },
+  {
+   "expected_id": "cold-coptic-orthodox1921-34",
+   "expected_label": "Hanna Gibriyal and Nashid Sarkis editions",
+   "matched_packet_ids": [
+    "coptic-v-orth-1921-1936"
+   ],
+   "outcome": "matched",
+   "evidence": "Kammerer 1415 confirmed (Sarkis 1934, 543 pp.)."
+  },
+  {
+   "expected_id": "cold-coptic-orthodox1924",
+   "expected_label": "Yu'annis secret-prayer book, 1924",
+   "matched_packet_ids": [
+    "coptic-v-orth-1921-1936",
+    "coptic-v-inaudible-prayers"
+   ],
+   "outcome": "matched",
+   "evidence": "Component book labelled."
+  },
+  {
+   "expected_id": "cold-coptic-orthodox1927-60",
+   "expected_label": "Abna' al-Kanisa Euchologion 1927, 1936, 1960",
+   "matched_packet_ids": [
+    "coptic-v-orth-1921-1936",
+    "coptic-v-orth-1960-1984"
+   ],
+   "outcome": "matched",
+   "evidence": "Kammerer 1413 (1936 second edition, revised text, 889 pp.) confirmed; 1960 rests on Störk indexed text."
+  },
+  {
+   "expected_id": "cold-coptic-orthodox1932",
+   "expected_label": "Gabriyal 'Abd al-Masih and 'Abd al-Masih Mikha'il edition, 1932",
+   "matched_packet_ids": [
+    "coptic-v-orth-1921-1936"
+   ],
+   "outcome": "matched",
+   "evidence": "Kammerer 1412 (653 pp.) confirmed."
+  },
+  {
+   "expected_id": "cold-coptic-orthodox1984",
+   "expected_label": "Beni Suef/Behnesa Salib edition, 1984",
+   "matched_packet_ids": [
+    "coptic-v-orth-1960-1984"
+   ],
+   "outcome": "matched",
+   "evidence": "Störk indexed text only; IA item identity unproved."
+  },
+  {
+   "expected_id": "cold-coptic-labib1904",
+   "expected_label": "Alleged Labib Euchologion, 1904",
+   "matched_packet_ids": [
+    "coptic-v-orth-labib-1904"
+   ],
+   "outcome": "matched",
+   "evidence": "Kept as a disputed lead (Störk p. 30 doubts it; cites Hammerschmidt p. 3)."
+  },
+  {
+   "expected_id": "cold-coptic-translations",
+   "expected_label": "Scialach, Renaudot, Rodwell, Malan, Bute",
+   "matched_packet_ids": [
+    "coptic-v-translations-historical"
+   ],
+   "outcome": "matched",
+   "evidence": "Deferred translations."
+  },
+  {
+   "expected_id": "cold-coptic-catholic-cm265",
+   "expected_label": "Coptic Museum Liturgy 265 with later correction layer",
+   "matched_packet_ids": [
+    "coptic-v-cm265-catholic",
+    "coptic-v-cm265-correction"
+   ],
+   "outcome": "matched",
+   "evidence": "BCEP 608006 observations re-read: Filioque in the Creed, non-Chalcedonian saints omitted, Filioque struck by a later hand in both languages (f. 120r), 1929 purchase note (f. 258v). Layers kept distinct."
+  },
+  {
+   "expected_id": "cold-coptic-catholic-bnf5969",
+   "expected_label": "BnF Arabe 5969, Catholic Gregory Euchologion",
+   "matched_packet_ids": [
+    "coptic-v-bnf-arabe5969"
+   ],
+   "outcome": "matched",
+   "evidence": "BCEP 608263 re-read: before 1859 (owner Ibrahim Bishai); Chalcedon added, Severus and Dioscorus removed; Gregory ff. 1r–70v; 'Anointing of the Sick' ff. 71r–112v (prose of the contents feature); Gallica 403 receipts in fetch-receipts-5.json."
+  },
+  {
+   "expected_id": "cold-coptic-basil-reform1975-76",
+   "expected_label": "1975 proposal and 1976 synodal commission",
+   "matched_packet_ids": [
+    "coptic-v-basil-reform-1975"
+   ],
+   "outcome": "matched",
+   "evidence": "coptcatholic.net/1329 reform section re-read in this review."
+  },
+  {
+   "expected_id": "cold-coptic-basil-experimental",
+   "expected_label": "Provisional Basil text circulated for comment",
+   "matched_packet_ids": [
+    "coptic-v-basil-provisional"
+   ],
+   "outcome": "matched",
+   "evidence": "Article says a non-final text was issued for comment; no date or title; identity with 1980/1987 left open."
+  },
+  {
+   "expected_id": "cold-coptic-basil1990",
+   "expected_label": "Final revised Basil text, 25 February 1990",
+   "matched_packet_ids": [
+    "coptic-v-basil-1990"
+   ],
+   "outcome": "matched",
+   "evidence": "Proposed record coptic-basil-revision-1990; issuance date as reported."
+  },
+  {
+   "expected_id": "cold-supplement-bcep-608003",
+   "expected_label": "Coptic Museum Lit 16 (Arabic; Basil plus Syriac anaphora material; 1928–1942 by patriarch)",
+   "matched_packet_ids": [
+    "coptic-v-bohairic-repertoire"
+   ],
+   "outcome": "matched",
+   "evidence": "Not named by the packet; falls inside the bounded 320-document BCEP repertoire lead. Collateral modern witness; its Syriac anaphora material is a separate lead (remaining gaps)."
+  },
+  {
+   "expected_id": "cold-supplement-bcep-608035",
+   "expected_label": "Coptic Patriarchate Lit 172 (Greek in Coptic script and Arabic, 1600)",
+   "matched_packet_ids": [
+    "coptic-v-greek-egyptian"
+   ],
+   "outcome": "matched",
+   "evidence": "Named in the version label."
+  },
+  {
+   "expected_id": "cold-supplement-bcep-608038",
+   "expected_label": "Coptic Patriarchate Lit 175 (Greek in Coptic script and Arabic)",
+   "matched_packet_ids": [
+    "coptic-v-greek-egyptian"
+   ],
+   "outcome": "matched",
+   "evidence": "Named in the version label."
+  },
+  {
+   "expected_id": "cold-supplement-bcep-608046",
+   "expected_label": "Coptic Patriarchate Lit 184 (Greek in Coptic script and Arabic)",
+   "matched_packet_ids": [
+    "coptic-v-greek-egyptian"
+   ],
+   "outcome": "matched",
+   "evidence": "Named in the version label."
+  },
+  {
+   "expected_id": "cold-supplement-bcep-608055",
+   "expected_label": "Coptic Patriarchate Lit 408 (Arabic, 1873)",
+   "matched_packet_ids": [
+    "coptic-v-bohairic-repertoire"
+   ],
+   "outcome": "matched",
+   "evidence": "Not named by the packet; inside the bounded repertoire lead; distinctness unproved."
+  },
+  {
+   "expected_id": "cold-supplement-bcep-608201",
+   "expected_label": "Suryan Lit 460 (Book of Inaudible Prayers, 1944)",
+   "matched_packet_ids": [
+    "coptic-v-inaudible-prayers"
+   ],
+   "outcome": "matched",
+   "evidence": "Named."
+  },
+  {
+   "expected_id": "cold-supplement-bcep-608251",
+   "expected_label": "Suryan Lit 725 (Book of Inaudible Prayers)",
+   "matched_packet_ids": [
+    "coptic-v-inaudible-prayers"
+   ],
+   "outcome": "matched",
+   "evidence": "Named."
+  },
+  {
+   "expected_id": "cold-supplement-bcep-608279",
+   "expected_label": "BnF Grec 325 (Greek and Arabic, 14th century)",
+   "matched_packet_ids": [
+    "coptic-v-greek-egyptian"
+   ],
+   "outcome": "matched",
+   "evidence": "Named."
+  },
+  {
+   "expected_id": "cold-supplement-bcep-608321",
+   "expected_label": "Kacmarcik MS 6 (Greek in Coptic script and Arabic, 14th century; 1283/4 is the exemplar date)",
+   "matched_packet_ids": [
+    "coptic-v-greek-egyptian"
+   ],
+   "outcome": "matched",
+   "evidence": "Named."
+  }
+ ],
+ "acquisition_spot_checks": [
+  {
+   "acquisition_id": "coptic-acq-reform-article-html",
+   "check": "Reform dates, provisional text, final date, source of the 'before' column",
+   "result": "confirmed",
+   "detail": "27 April 1975 (Nouier's announcement), 18 May 1976 (synodal commission), a non-final text for comment, final text 25 February 1990 under Stephanos II; footnote [4] Holy Euchologion, al-Muharraq edition; note 5: ritual actions unchanged."
+  },
+  {
+   "acquisition_id": "coptic-acq-booklist-html",
+   "check": "Entries supporting new records and the author",
+   "result": "confirmed",
+   "detail": "Entries 7, 9, 10, 31, 36–40, 42, 44, 46, 47, 49, 50, 52–55 match the packet; sign-off Fr Isṭifānūs Dāniyāl Jirjis. Numbering 1–68 without 56. Entries 8, 33–35, 43, 45, 51, 60, 61, 63, 64, 67, 68 were not labelled by the packet (labelling omission, not a bytes problem)."
+  },
+  {
+   "acquisition_id": "coptic-acq-heritage-article-html",
+   "check": "1899 date for the Euchologion and deacon's reprints; 1875 deacon's service",
+   "result": "confirmed",
+   "detail": "Cyril II Makar reprinted the Euchologion in 1899 at the Catholic St Mark press and the deacon's service in Coptic and Arabic in 1899; Agapios Bishai printed the first Coptic deacon's service in Rome in 1875."
+  },
+  {
+   "acquisition_id": "coptic-acq-hathi-full-json",
+   "check": "1898 identity and rights",
+   "result": "confirmed",
+   "detail": "MARC 260: al-Qāhirah, al-Maṭbaʿah al-Kāthūlīkīyah al-Marqusīyah, 1898; 300: 1 v. various pagings, 28 cm; 546: parallel Arabic and Coptic; item oxu1.308011427 rights pd, Full view."
+  },
+  {
+   "acquisition_id": "coptic-acq-hathi-reader-challenge",
+   "check": "Negative bound for 1898 images",
+   "result": "confirmed",
+   "detail": "Challenge page only. Reviewer's single probe of imgsrv/image and ssd routes on 2026-10-19 also returned HTTP 403 (cold/probe-hathi/); no further attempts."
+  },
+  {
+   "acquisition_id": "coptic-acq-bcep-608006",
+   "check": "Catholic attribution and layers of Coptic Museum Liturgy 265",
+   "result": "confirmed",
+   "detail": "Per-document record gives shelf and siglum; features in the reviewer export state the Filioque, omitted non-Chalcedonian saints, later strike-through (f. 120r) and 1929 purchase (f. 258v)."
+  },
+  {
+   "acquisition_id": "coptic-acq-bcep-608263",
+   "check": "Catholic attribution, date and contents of BnF Arabe 5969",
+   "result": "confirmed",
+   "detail": "Before 1859 (owner Ibrahim Bishai), Chalcedon added, Severus and Dioscorus removed, Gregory ff. 1r–70v, 'Anointing of the Sick' ff. 71r–112v, 1880 gift to Schefer. BCEP also places a reader's note of 1876 at the Monastery of Shenoute (not in the row)."
+  },
+  {
+   "acquisition_id": "coptic-acq-vat17-zip",
+   "check": "Image 0082: folio and Latin note",
+   "result": "confirmed",
+   "detail": "Right page foliated 81; short Latin note in the outer margin beside the bread words of a second-person institution narrative (Gregory), matching BCEP ff. 81r–v."
+  },
+  {
+   "acquisition_id": "coptic-acq-vat17-zip",
+   "check": "Image 0133: colophon",
+   "result": "confirmed",
+   "detail": "Left page (f. 131v) is the Arabic colophon: completion in Amshir, year 1004 of the Martyrs; scribe Butrus; patron deacon Nafis of Isna. The packet called it an untranscribed Arabic page; corrected in the update."
+  },
+  {
+   "acquisition_id": "coptic-acq-1902-pdf",
+   "check": "Title page identity, edition statement and date",
+   "result": "confirmed",
+   "detail": "PDF page 8: Book of the Holy Euchologion, the three liturgies of Basil, Gregory and Cyril; corrected and arranged by Hegumen 'Abd al-Masih Salib; 'first edition, printing rights reserved'; 'Ayn Shams press, 1618 of the Martyrs; '(1902 Frankish)'."
+  },
+  {
+   "acquisition_id": "coptic-acq-1902-html",
+   "check": "Rights statement",
+   "result": "confirmed",
+   "detail": "Lizenz-/Rechtehinweis: Creative Commons Public Domain Mark 1.0."
+  },
+  {
+   "acquisition_id": "coptic-acq-monb-ve-meta",
+   "check": "MONB.VE dating",
+   "result": "confirmed",
+   "detail": "VMR originYear 'X'; Atanassova p. 68 reports the 990 colophon match."
+  },
+  {
+   "acquisition_id": "coptic-acq-monb-vd-html",
+   "check": "MONB.VD dating",
+   "result": "confirmed",
+   "detail": "Codex page dates MONB.VD to the 11th century (MONB.CQ, 1058); VMR metadata X–XI. Range in the row holds; wording and sources corrected."
+  },
+  {
+   "acquisition_id": "coptic-acq-monb-vf-html",
+   "check": "MONB.VF dating",
+   "result": "confirmed",
+   "detail": "Codex page: 10th–11th century by comparison with Edfu manuscripts."
+  },
+  {
+   "acquisition_id": "coptic-acq-monb-vg-html",
+   "check": "MONB.VG dating",
+   "result": "confirmed",
+   "detail": "Codex page: end of 7th or beginning of 8th century."
+  },
+  {
+   "acquisition_id": "coptic-acq-sahidic-home",
+   "check": "Pre-reform placement",
+   "result": "confirmed",
+   "detail": "Four codices span 7th/8th to 11th century, before Gabriel II ibn Turaik (1131–1145)."
+  },
+  {
+   "acquisition_id": "coptic-acq-atanassova-pdf",
+   "check": "Bibliographic identity and table",
+   "result": "confirmed",
+   "detail": "Peeters offprint, Eastern Christian Studies 22 (2014); chapter title confirmed; table assigns leaves to MONB.VE, VF, VG (not VD)."
+  },
+  {
+   "acquisition_id": "coptic-acq-kammerer-pdf",
+   "check": "Entries 1410–1418, 1460, 1462",
+   "result": "confirmed",
+   "detail": "1410 (1898, Uniat revision of Tuki), 1411 (undated Propaganda manual), 1412 (1932), 1413 (1936), 1414 (1902, 778 pp.), 1415 (Sarkis 1934), 1418 (Cairo 1899 deacon's service, no press or Church named), 1460 (Basil and Gregory, 1887), 1462 (diaconicon, 1887)."
+  },
+  {
+   "acquisition_id": "coptic-acq-penn-html",
+   "check": "1886 diaconicon and 1899 synod acts",
+   "result": "confirmed",
+   "detail": "Kitāb mā yajibu ʿalá al-shamāmisah ... (Maṭbaʿat al-Waṭan, 1886) and Synodus Alexandrina Coptorum (Typographia Polyglotta, 1899) listed with HathiTrust page images."
+  }
+ ],
+ "remaining_bounded_gaps": [
+  "No Coptic Catholic printed book after 1736 was inspected in the original: 1898 (HathiTrust full view refused, HTTP 403), 1934 (unlocated beyond Hammerschmidt), 1971, the 1987–2009 series and the 1990 book.",
+  "Provisional Basil text (between 1976 and 1990) unidentified; whether the 1980 or 1987 books carry it is open.",
+  "Church book list (1736–2009) disclaims completeness and stops in 2009; post-2009 patriarchal publishing unexamined.",
+  "Book-list entries labelled here, not by the packet, and not proposed as records: 8 (Agapios Bishai's Coptic reading primer, Rome 1884, pp. 15–41 Catholic devotional prayers with deacon and people responses; possible Mass responses, unexamined); 34 (Kanz al-Masīḥī, prayers of the Coptic Church, Bishop Alexandros Iskandar, 1950, 1954, 1958; contents unknown); 33 (al-Manāra, commentary on the Mass, 1949, 1964) and 51 (commentary on the Basil liturgy, 1981), commentaries out of scope; 35, 43, 45, 60, 61, 63, 64 (Gospel and Epistle commentaries, homilies, meditations), out of scope.",
+  "Translation-bearing Basil books of 1952, 1963 (two), 1992 and 2002 are labelled as versions only; other lanes keep comparable books as deferred records, so root may promote them to deferred_or_origin_review for consistency.",
+  "BCEP: catalogue-wide term search bounds Catholic attribution to documents 608006 and 608263; manuscripts not so described could still be Catholic. Images of both are unseen (Gallica 403; Coptic Museum images not public).",
+  "BCEP 608003 (Coptic Museum Lit 16, Arabic, Basil with Syriac anaphora material, 1928–1942) is a separate collateral lead not named by the packet.",
+  "Tuki's 1736 exemplar: Vat. copt. 18 (BCEP 608002, ubiquitous Latin notes) and BnF Copt. 26 (BCEP 608266, Latin note of Joseph Ascari dated 1736) are concrete leads besides Chaîne 1912 p. 228 n. 2.",
+  "Störk, VOHD XXI/2 p. 30, known only from search-indexed text (PDF HTTP 403); 1960 and 1984 Orthodox editions and the Labib 1904 question rest on it.",
+  "Kammerer 1418 identity with the Catholic 1898 deacon's book unconfirmed; the 1898/1899 title-page year unresolved.",
+  "Greek-language Egyptian euchologia and the medieval rubrical texts are labelled leads only.",
+  "No claim that every Coptic Catholic or shared Coptic book or recension is now known."
+ ],
+ "blocking_items": [],
+ "discovered_unassigned_uses": [
+  {
+   "id": "coptic-sahidic-white-monastery",
+   "label": "Southern Egyptian (Sahidic) use of the White Monastery, extinct",
+   "reason": "Pre-reform local repertoire with many anaphoras; shared ancestry only, with no current Church row of its own."
+  },
+  {
+   "id": "coptic-egyptian-greek",
+   "label": "Greek-language Egyptian Euchologia in the Coptic manuscript tradition",
+   "reason": "Distinct language layer listed in BCEP; not examined."
+  }
+ ],
+ "next_sources": [
+  {
+   "target": "Cairo 1898 Catholic Euchologion",
+   "identifier": "HathiTrust oxu1.308011427",
+   "url": "https://babel.hathitrust.org/cgi/pt?id=oxu1.308011427",
+   "limit": "Public domain, full view; automated retrieval refused with HTTP 403."
+  },
+  {
+   "target": "Acts of the 1898 Alexandrian Coptic Catholic synod",
+   "identifier": "HathiTrust record 103390316",
+   "url": "https://catalog.hathitrust.org/Record/103390316",
+   "limit": "Record not opened."
+  },
+  {
+   "target": "1990 Basil liturgy and its patriarchal preface",
+   "identifier": "Coptic Catholic liturgical commission, قداس القديس باسيليوس الكبير, p. 3",
+   "url": "https://coptcatholic.net/1329/",
+   "limit": "Book not publicly located."
+  },
+  {
+   "target": "BnF Arabe 5969 images",
+   "identifier": "ark:/12148/btv1b10030981r",
+   "url": "https://gallica.bnf.fr/ark:/12148/btv1b10030981r",
+   "limit": "HTTP 403 browser challenge."
+  },
+  {
+   "target": "Rome 1971 Euchologion and Cairo 1934 Euchologium",
+   "identifier": "Union catalogues and the Pontifical Oriental Institute library",
+   "url": "https://search.worldcat.org/title/560963690",
+   "limit": "Not searched in this pass beyond the reviewer's WorldCat record for 1898."
+  },
+  {
+   "target": "Störk, VOHD XXI/2, p. 30",
+   "identifier": "rep.adw-goe.de handle 11858/2334",
+   "url": "https://rep.adw-goe.de/bitstream/handle/11858/2334/2424_VOHD_XXI2.pdf?sequence=5",
+   "limit": "HTTP 403."
+  }
+ ],
+ "limits": [
+  "No Coptic Catholic printed book after 1736 was acquired or inspected in the original. The 1898 book exists in full view at HathiTrust but every automated route returned HTTP 403 with a browser challenge; the lane did not try to get round it.",
+  "The 1990 Basil revision rests on a 2013 church-hosted article that quotes the patriarchal preface; its 'before' column is an Orthodox text. The record is labelled source-described.",
+  "Catholic attribution of Coptic Museum Liturgy 265 and BnF Arabe 5969 rests on the 2026 BCEP autoptic catalogue read in the reviewer's retained export; no images of either manuscript were seen.",
+  "Shared books and manuscripts (Vat. copt. 17, the Sahidic codices, the 1902 Orthodox Euchologion) carry no Catholic reception claim. A Latin marginal note and a Catholic binding on Vat. copt. 17 show Western readers or owners only.",
+  "Prayer-selection differences among Bohairic manuscripts are treated as witness differences, not recensions; no source establishes more.",
+  "Lectionaries after 1902, the 1932 and 1978 priest's books, the chant book, the 1991 calendar and translation-bearing Basil books are labelled as versions but not proposed as records; the root may promote them once contents are checked.",
+  "New record fields used are all present in the target [[records]] table (holding_shelfmark, related_candidate_ids, limitations, evidence_loci, ancestry_status). New source rows use existing [[sources]] fields only.",
+  "Stage dossier note for the root (not edited): in src/sources/inventories/eucharistic-stages/alexandrian.json the stage alexandrian-stages-coptic1971 has empty witness_ids although inventory record alex-coptic-1971 exists; the gap alexandrian-stages-gap-coptic1898 could cite HathiTrust oxu1.308011427 as the next source; a 1990 Basil revision stage (coptic-basil-revision-1990) is a candidate once the book is inspected.",
+  "Coverage JSON note for the root (not edited): the coptic row of src/sources/inventories/eucharistic-stage-coverage-v1.json lists candidate witnesses 1736, 1898 and 1934 but not 1971 or the 1990 revision.",
+  "The Ge'ez lane is separate; no Ethiopian or Eritrean records are proposed here.",
+  "No claim is made that every Coptic Catholic or Coptic historical book is now known. The church list disclaims completeness and ends in 2009; BCEP is still growing.",
+  "Storage: nothing is registered now. The 1902 PDF is proposed remote by measured size; Vatican, Sahidic project, Kammerer and Atanassova bytes are restricted; modern web pages and metadata are scratch-only."
+ ],
+ "coverage_placements": {
+  "coptic": {
+   "candidate_ids": [
+    "alex-coptic-1971",
+    "coptic-basil-revision-1990",
+    "coptic-basil-printings-1987",
+    "coptic-ms-cm-lit265",
+    "coptic-ms-bnf-arabe5969",
+    "coptic-deacon-1875",
+    "coptic-deacon-1898"
+   ],
+   "ancestry_candidate_ids": [
+    "coptic-ms-monb-ve",
+    "coptic-ms-monb-vd",
+    "coptic-ms-monb-vf",
+    "coptic-ms-monb-vg"
+   ],
+   "deferred_or_origin_review_candidate_ids": [
+    "coptic-basil-1956-iskandar",
+    "coptic-basil-1966-wafa",
+    "coptic-basil-1980-kabes",
+    "coptic-basil-people-1974",
+    "coptic-eastern-catholic-liturgies-1941",
+    "coptic-nativity-liturgy-undated-cold",
+    "coptic-tahta-prayers-basil-undated-cold"
+   ],
+   "fields_replaced": [
+    "followup_note",
+    "missing_chronology"
+   ]
+  }
+ },
+ "unlinked_new_records": []
+}

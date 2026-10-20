@@ -1,0 +1,1414 @@
+{
+ "schema_version": 1,
+ "record_type": "eucharistic-research-lane-review",
+ "id": "geez",
+ "title": "Full research pass review of the geez lane, 2026-10-19",
+ "lane": "geez",
+ "side": "eastern",
+ "checked_on": "2026-10-19",
+ "reviewed_on": "2026-10-19",
+ "coverage_rows": [
+  "ethiopian",
+  "eritrean"
+ ],
+ "target_inventory": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
+ "semantics": "Project-created review metadata. Versions include witnesses, components, translations and unresolved leads; their count is not a count of substantive revisions. Acquisition does not establish transcription, collation, normative revision or local reception. No ancestry is asserted.",
+ "review_files": {
+  "storage": "untracked workspace scratch; pinned here by SHA-256 only",
+  "packet_sha256": "177b8be9edaba75ae613f368fdac5d95dd2b53543544379841a7d2fc715ef109",
+  "superseded_packet_sha256": null,
+  "cold_final_sha256": "e5b406f98bcf839911992b71513c6fc1e7bd55a416b6fa4f48eb74db99479ce5",
+  "cold_verdict": "ready-with-corrections"
+ },
+ "integration": {
+  "new_sources": [
+   "geez-asmara-missal-bonn-scan",
+   "geez-bausi-eae-qeddase-mirror",
+   "geez-giraudo-bibliographies-2011",
+   "geez-hammerschmidt-anaphoras-preview",
+   "geez-nce-omahoney-ethiopian-catholic",
+   "geez-tasfa-seyon-1548-google-images"
+  ],
+  "new_records": [
+   "geez-1548-rome-tasfa-seyon",
+   "geez-1549-rome-latin-rendering",
+   "geez-2002-english-weekday-missal",
+   "geez-congregatio-orientalis-1940-1944-revision-documents",
+   "geez-paez-era-two-anaphora-missal-lead",
+   "geez-touvier-revised-anaphoras-lead"
+  ],
+  "updates": [
+   "alex-geez-1890",
+   "alex-geez-1913",
+   "alex-geez-1945"
+  ],
+  "corrected_by_review": [
+   "alex-geez-1890",
+   "alex-geez-1913",
+   "alex-geez-1945",
+   "geez-1548-rome-tasfa-seyon",
+   "geez-1549-rome-latin-rendering",
+   "geez-2002-english-weekday-missal",
+   "geez-asmara-missal-bonn-scan",
+   "geez-hammerschmidt-anaphoras-preview",
+   "geez-tasfa-seyon-1548-google-images"
+  ],
+  "added_by_review": [
+   "geez-1870-touvier-faculties-lead-cold",
+   "geez-bl-or545-catalogue-cold",
+   "geez-bl-or545-missal-cold",
+   "geez-enciclopedia-cattolica-libri-liturgici-cold"
+  ],
+  "rejected_by_review": []
+ },
+ "uses": [
+  {
+   "id": "ethiopian",
+   "label": "Ethiopian Catholic Church",
+   "disposition": "examined-incomplete",
+   "finding": "Present book: the joint 2024 edition (alex-geez-2025) replacing 1945. Historical Catholic Ge'ez books: Keren 1890 (unacquired), Asmara 1914/15 (acquired; approved 1913 for priests of the rite received in Abyssinia), Rome 1945 (unacquired). Earlier Catholic use of Ethiopian-rite books is reported for the Paez era and from 1847, without identified books. The 2002 English weekday missal is a deferred translation.",
+   "limit": "No original 1890 or 1945 book; Ethiopian (as distinct from Eritrean) reception of the Asmara book is not shown by its imprimatur, which is Eritrean.",
+   "next_sources": [
+    "Vatican 1945 Missale aethiopicum (LEV code 0927-8, 234 pp.)",
+    "O'Mahoney, The Ebullient Phoenix",
+    "Congregatio Orientalis 1940 and 1944 documents"
+   ],
+   "review_disposition": "accepted-with-corrections",
+   "review_remaining_gap": "Ethiopian-territory reception of the 1890 and Asmara books; 1945 original and decree; 2024 approval and implementation; post-1945 Ethiopian Catholic printings; Catholic lectionary."
+  },
+  {
+   "id": "eritrean",
+   "label": "Eritrean Catholic Church",
+   "disposition": "examined-incomplete",
+   "finding": "The Asmara book carries the imprimatur of the Vicar Apostolic of Eritrea (12 April 1913) and was printed at the Catholic press in Asmara: direct historical authorization within the predecessor jurisdiction. The 1945 edition has bounded Eritrean reception through the Blin translation (existing record note). The 2024 edition is joint.",
+   "limit": "Ecclesial separation (2015) creates no new text; post-1915 Eritrean printings of the Catholic book are unsearched.",
+   "next_sources": [
+    "Eparchy of Keren and Archeparchy of Asmara publications",
+    "Keren 1890 original"
+   ],
+   "review_disposition": "accepted-with-corrections",
+   "review_remaining_gap": "Eritrean reception of 1890 shown only regionally; post-1915 Eritrean printings unsearched; 2024 implementation in Asmara; Blin and Tigrinya translations deferred."
+  },
+  {
+   "id": "geez-catholic-shared-historical",
+   "label": "Shared historical Catholic Ge'ez use (Vicariates of Abyssinia and Eritrea; Jesuit-era mission)",
+   "disposition": "examined-with-leads",
+   "finding": "Book sequence: Paez-era two-anaphora missal (lead), pre-1888 revised anaphoras (lead), Keren 1890, Asmara 1914/15, Rome 1945, joint 2024. The 1890 decree for a Ge'ez Roman rite is a separate, apparently unrealized translation project.",
+   "limit": "Early stages known only from a reference work.",
+   "next_sources": [
+    "Beccari, Rerum Aethiopicarum scriptores occidentales",
+    "Propaganda Fide archives (not online)"
+   ],
+   "review_disposition": "not-separately-disposed",
+   "review_remaining_gap": null
+  },
+  {
+   "id": "geez-orthodox-comparator",
+   "label": "Ethiopian and Eritrean Orthodox Tewahedo Mäṣḥafä qəddase (comparison only)",
+   "disposition": "comparison-witnesses-not-merged",
+   "finding": "Rome 1548 print, seventeenth-century and later manuscripts, Addis Ababa printings from 1918 E.C. and Asmara 1993 with Tigrinya are comparison witnesses. None is merged into a Catholic record.",
+   "limit": "No reception evidence into Catholic books beyond the general statement that Catholic editors used the Ethiopian rite.",
+   "next_sources": [
+    "EMML and Ethio-SPaRe catalogues",
+    "BL Or. 545 to 548"
+   ],
+   "review_disposition": "not-separately-disposed",
+   "review_remaining_gap": null
+  }
+ ],
+ "searches": [
+  {
+   "repository": "ULB Bonn digital collections (Goussen library, Ethiopian group)",
+   "queries": [
+    "Sĕr'āta qĕdāsie",
+    "Missale <äthiop.>",
+    "item 3222909"
+   ],
+   "url": "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3222909",
+   "checked_on": "2026-10-19",
+   "outcome": "Complete public-domain scan of the Asmara Catholic missal acquired and front matter inspected. The Ethiopian group topic index page returned 'No Entries are available' on the prior researcher's open, so the group was not browsed.",
+   "extent_examined": "One item: catalogue, manifest and whole PDF.",
+   "unexamined_range": "Other Goussen Ethiopian holdings (for example a Keren 1890 copy) not browsed; group index view empty."
+  },
+  {
+   "repository": "Google Books; LILLIT and EDIT16; OCLC union catalogue",
+   "queries": [
+    "Testamentum Novum 1548 jXZRAAAAcAAJ",
+    "Testamentum Nouum cum epistola Pauli ad Hebreos",
+    "Missale Tasfa 1549",
+    "Tasfā Sejōn"
+   ],
+   "url": "https://books.google.com/books?id=jXZRAAAAcAAJ",
+   "checked_on": "2026-10-19",
+   "outcome": "All 486 roster images of copy jXZRAAAAcAAJ acquired; PDF download route returned HTTP 429. A second copy (Napoli, N0sAHdb4ANIC) identified through LILLIT CNCE 005934; OCLC record 165683064 gives Doricus, Rome 1548 [1549].",
+   "extent_examined": "One complete copy; title, liturgical section headers and colophon inspected.",
+   "unexamined_range": "Napoli copy images; the 1549 Latin rendering; the 1879 Lisbon reprint."
+  },
+  {
+   "repository": "Web search and reference works",
+   "queries": [
+    "Missale aethiopicum 1945 1890 1913",
+    "Ethiopic missal 1548 1549",
+    "ሥርዓተ ቅዳሴ ካቶሊክ 1945",
+    "Coulbeaux missel 1890",
+    "Messale etiopico 1890 1913",
+    "Maṣḥafa qəddāse edition history",
+    "መጽሐፈ ቅዳሴ ካቶሊክ",
+    "Documenti relativi al Rito Etiopico"
+   ],
+   "url": "https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/ethiopian-geez-catholic-church",
+   "checked_on": "2026-10-19",
+   "outcome": "New Catholic Encyclopedia article (fetched by curl after the earlier 403) and an EAE mirror supplied the Paez, Touvier, Crouzet, 1913 and 1945 leads; LEV catalogue snippet lists Meshàfé Keddasie, Missale aethiopicum, 1945, 234 pp. (scribd mirror, not retained).",
+   "extent_examined": "Search results plus the two articles read in full.",
+   "unexamined_range": "Printed EAE volume; O'Mahoney, The Ebullient Phoenix; Beccari, Rerum Aethiopicarum scriptores; Jesuit sources on the Paez-era missal; van Lantschoot 1937 and 1946."
+  },
+  {
+   "repository": "Beta maṣāḥǝft (web and GitHub TEI)",
+   "queries": [
+    "BNFet67",
+    "LIT1960Mashaf",
+    "Maṣḥafa qǝddāse",
+    "PULet024",
+    "MR-014b",
+    "UM-039"
+   ],
+   "url": "https://betamasaheft.awhamburg.de/",
+   "checked_on": "2026-10-19",
+   "outcome": "Records for BnF Éth. 67, Princeton Eth. 24, MR-014b and the work LIT1960 identified; Gallica manifest and PDF for BnF Éth. 67 returned HTTP 403.",
+   "extent_examined": "Five records.",
+   "unexamined_range": "Hundreds of catalogued Mäṣḥafä qəddase manuscripts (EMML, Ethio-SPaRe, BL, BnF, Vatican) not swept."
+  },
+  {
+   "repository": "British Library EAP and Search Archives",
+   "queries": [
+    "EAP286/1/1/385"
+   ],
+   "url": "https://eap.bl.uk/archive-file/EAP286-1-1-385",
+   "checked_on": "2026-10-19",
+   "outcome": "Browser verification page; zero bytes.",
+   "extent_examined": "None.",
+   "unexamined_range": "EAP 286 images; BL Or. 545, 546, 547, 548 records (cold reviewer's leads) not opened by this lane."
+  },
+  {
+   "repository": "liturgia.it Addai and Mari bibliographies",
+   "queries": [
+    "Congregatio Orientalis 1940 1944 Etiopi",
+    "Ethiopian Rite Missal 2002"
+   ],
+   "url": "https://www.liturgia.it/content/addaicongress/bib/biblio1_it.pdf",
+   "checked_on": "2026-10-19",
+   "outcome": "1940 and 1944 revision documents and 2002 English missal identified bibliographically.",
+   "extent_examined": "Both bibliographies whole.",
+   "unexamined_range": "The documents themselves (Vatican archives or Congregation libraries)."
+  },
+  {
+   "repository": "Catholic Bishops' Conference of Ethiopia",
+   "queries": [
+    "liturgical calendar ordo"
+   ],
+   "url": "https://cbce-gs.org/liturgical-calendar-ordo/",
+   "checked_on": "2026-10-19",
+   "outcome": "Two annual calendars acquired; no missal edition named.",
+   "extent_examined": "Two calendars, text layer.",
+   "unexamined_range": "Implementation notices for the 2024 edition; Eritrean Catholic (Asmara) diocesan publications not searched."
+  },
+  {
+   "repository": "Internet Archive",
+   "queries": [
+    "ethiopicliturgyi00mercuoft",
+    "Mercer Ethiopic liturgy"
+   ],
+   "url": "https://archive.org/details/ethiopicliturgyi00mercuoft",
+   "checked_on": "2026-10-19",
+   "outcome": "Whole Mercer 1915 acquired.",
+   "extent_examined": "Title leaves and comparison chapter.",
+   "unexamined_range": "Facsimile plates not inspected; other IA Ethiopic liturgical items not searched in this pass."
+  },
+  {
+   "repository": "Other routes tried",
+   "queries": [
+    "saveriani.it rito ghe'ez questione aperta",
+    "sedos bulletin 4405",
+    "Gallica btv1b100998352"
+   ],
+   "url": "https://www.saveriani.it/missioneoggi/item/rito-ghe-ez-questione-aperta",
+   "checked_on": "2026-10-19",
+   "outcome": "saveriani.it HTTP 403 to urllib; SEDOS PDF HTTP 404 at two URLs; Gallica manifest and PDF HTTP 403.",
+   "extent_examined": "None.",
+   "unexamined_range": "These three documents remain unread by this lane."
+  }
+ ],
+ "versions": [
+  {
+   "id": "geez-v-aksumite",
+   "label": "Aksumite Collection Euchologion, UM-039",
+   "tradition_or_use": "shared ancient Ge'ez",
+   "date_label": "codex 13th century or earlier; translations 5th to 7th century",
+   "date_role": "attestation",
+   "record_class": "manuscript-layer-ancestry",
+   "distinctness_basis": "Existing record; early Eucharistic layer including Mark.",
+   "existing_candidate_ids": [
+    "alex-geez-aksumite-um039"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Unchanged; no Catholic reception.",
+   "inventory_ids": [
+    "alex-geez-aksumite-um039"
+   ]
+  },
+  {
+   "id": "geez-v-sinodos-strata",
+   "label": "Anaphora of the Apostles in the Senodos and Testamentum Domini strata",
+   "tradition_or_use": "shared ancient Ge'ez",
+   "date_label": "undated",
+   "date_role": "composition-unresolved",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Component layer named by the EAE article, not a book.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "geez-acq-eae-mirror"
+   ],
+   "unresolved": "Unexamined range: Senodos and Kidan editions; no dated station.",
+   "inventory_ids": []
+  },
+  {
+   "id": "geez-v-1548",
+   "label": "Testamentum Novum ... Missale (Rome, 1548; colophon 1549), Ge'ez liturgical section ff. 158r to 176v",
+   "tradition_or_use": "shared Ge'ez, printed in Rome",
+   "date_label": "title 1548; colophon 1549",
+   "date_role": "publication",
+   "record_class": "printed-constituent",
+   "distinctness_basis": "Earliest printed Ordo communis with three anaphoras (Apostles, Our Lord, Mary by Cyriacus); distinct printed witness.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "geez-acq-tasfa-zip"
+   ],
+   "unresolved": "Contents of ff. 175 to 176 and holding copy unidentified; not collated.",
+   "inventory_ids": []
+  },
+  {
+   "id": "geez-v-1549-latin",
+   "label": "Petrus Aethiops, Latin rendering of the Ethiopic Mass (Rome, 1549)",
+   "tradition_or_use": "translation of shared Ge'ez text",
+   "date_label": "1549",
+   "date_role": "publication-secondary-report",
+   "record_class": "deferred-translation",
+   "distinctness_basis": "Latin translation, further Latinized (invocation curtailed, Filioque inserted) per the EAE article.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Original not acquired; exact title unverified.",
+   "inventory_ids": []
+  },
+  {
+   "id": "geez-v-1879-reprint",
+   "label": "Bullarium Patronatus Portugalliae Regum, Appendix (Lisbon, 1879): reprint of the 1548 anaphoras",
+   "tradition_or_use": "reprint of shared Ge'ez text",
+   "date_label": "1879",
+   "date_role": "publication-secondary-report",
+   "record_class": "reprint-witness",
+   "distinctness_basis": "Reprint; not a new textual state.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Not acquired.",
+   "inventory_ids": []
+  },
+  {
+   "id": "geez-v-paez-missal",
+   "label": "Ge'ez missal used by Ethiopian Catholic priests in Paez's time, reported to retain two anaphoras purged of anti-Chalcedonian wording (Leo named in place of Dioscorus)",
+   "tradition_or_use": "Jesuit-era Ethiopian Catholic",
+   "date_label": "c. 1603 to 1622 (Paez's residence); book date unknown",
+   "date_role": "use-period-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Reported substantive reduction and revision of the anaphoral repertoire and diptychs.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "geez-acq-nce"
+   ],
+   "unresolved": "No original witness. Unexamined range: Jesuit letters and Beccari volumes, Paez Historia de Ethiopia, Mendes and Almeida; manuscript catalogues for Catholic-revised anaphoras.",
+   "inventory_ids": []
+  },
+  {
+   "id": "geez-v-paez-portuguese",
+   "label": "Paez, Historia de Ethiopia book 2 chapter 11: Portuguese translation of the pre-anaphora and Anaphora of the Apostles (ed. Beccari, Rome 1905, pp. 439 to 453)",
+   "tradition_or_use": "translation",
+   "date_label": "written before 1622; edited 1905",
+   "date_role": "composition-and-edition",
+   "record_class": "deferred-translation",
+   "distinctness_basis": "Translation, kept separate from the reported revised Ge'ez missal.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Not acquired.",
+   "inventory_ids": []
+  },
+  {
+   "id": "geez-v-roman-in-geez",
+   "label": "Roman rite in Ge'ez: Mendes's Latinization from 1625 and the decree of 10 July 1890 that the Latin rite translated into Ge'ez replace the Ethiopian rite",
+   "tradition_or_use": "Roman-missal translation project (separate)",
+   "date_label": "1625 to 1632; 1890 decree",
+   "date_role": "event-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "A Roman-missal translation project, not an Ethiopian-rite book; the NCE says nothing came of the 1890 decision.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "geez-acq-nce"
+   ],
+   "unresolved": "Whether any Ge'ez Roman missal was printed is unestablished; belongs with Latin-rite translation histories, which are deferred.",
+   "inventory_ids": []
+  },
+  {
+   "id": "geez-v-1847-use",
+   "label": "Ethiopian-rite books used by de Jacobis's Catholic clergy under the permissions of 6 July 1847 and 21 April 1850",
+   "tradition_or_use": "Vicariate of Abyssinia",
+   "date_label": "1847 to 1880s",
+   "date_role": "use-period-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Use of Ethiopian-rite (manuscript) books; no Catholic edition identified.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "geez-acq-nce"
+   ],
+   "unresolved": "Books used are unidentified.",
+   "inventory_ids": []
+  },
+  {
+   "id": "geez-v-touvier",
+   "label": "Thirteen anaphoras revised and considered 'catholic' before 1888 (Vicar Apostolic Touvier)",
+   "tradition_or_use": "Vicariate of Abyssinia",
+   "date_label": "before August 1888",
+   "date_role": "revision-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Reported revision of anaphoras preceding the 1889 to 1890 commission.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "geez-acq-nce"
+   ],
+   "unresolved": "No witness identified; manuscript or lithograph form unknown.",
+   "inventory_ids": []
+  },
+  {
+   "id": "geez-v-1890",
+   "label": "Keren Catholic missal, 1890 (fourteen anaphoras)",
+   "tradition_or_use": "Catholic Ge'ez (Vicariate of Abyssinia, Keren press)",
+   "date_label": "1890",
+   "date_role": "publication",
+   "record_class": "printed-edition-original-unacquired",
+   "distinctness_basis": "Existing record. NCE: Crouzet reported on 8 November 1891 that fourteen revised anaphoras dated 1890 had been printed and circulated without his imprimatur, for interim use.",
+   "existing_candidate_ids": [
+    "alex-geez-1890"
+   ],
+   "acquisition_ids": [
+    "geez-acq-nce"
+   ],
+   "unresolved": "Original not located online; Bonn's catalogue title quotes a Keren 1890 imprint formula for the Asmara book, possibly an earlier-imprint statement not found on inspected pages.",
+   "inventory_ids": [
+    "alex-geez-1890"
+   ]
+  },
+  {
+   "id": "geez-v-asmara",
+   "label": "ሥርዓተ፡ ቅዳሴ፡ ዘቤተ፡ ክርስቲያን፡ ካቶሊካዊት፡ እንተ፡ በኢትዮጵያ። Asmara, Ethiopian year 1907 (1914/15); approved 25 February 1913",
+   "tradition_or_use": "Catholic Ge'ez (Vicariate Apostolic of Eritrea)",
+   "date_label": "approval 1913; imprimatur 12 April 1913; imprint ፲፱፻፯ = 1914/15",
+   "date_role": "publication (approval and imprimatur dates distinct)",
+   "record_class": "printed-edition-verified",
+   "distinctness_basis": "Approved as 'rite revisum et mendis expurgatum'; fourteen numbered anaphoras by headings, one ascribed to Dionysius; order of Communion repeated.",
+   "existing_candidate_ids": [
+    "alex-geez-1913"
+   ],
+   "acquisition_ids": [
+    "geez-acq-asmara-pdf",
+    "geez-acq-asmara-manifest"
+   ],
+   "unresolved": "Difference from 1890 cannot be measured without the 1890 original; not transcribed.",
+   "inventory_ids": [
+    "alex-geez-1913"
+   ]
+  },
+  {
+   "id": "geez-v-1940-1944",
+   "label": "Congregatio Orientalis: Documenti relativi al Rito Etiopico I to II (1940); Notationes atque animadversiones de Anaphoris Ritus Aethiopici (1940); Liturgia-Etiopi, Revisione e ristampa del Messale Etiopico, Allegato I to II (1944)",
+   "tradition_or_use": "revision dossier for 1945",
+   "date_label": "1940; 1944",
+   "date_role": "document-publication",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Preparatory documents, not altar books; potential evidence for 1945 changes.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "geez-acq-giraudo-1"
+   ],
+   "unresolved": "Documents not located online.",
+   "inventory_ids": []
+  },
+  {
+   "id": "geez-v-1945",
+   "label": "Maṣḥafa qǝddāse / Missale aethiopicum, Vatican 1945",
+   "tradition_or_use": "Catholic Ge'ez",
+   "date_label": "1945",
+   "date_role": "publication",
+   "record_class": "printed-revision-original-unacquired",
+   "distinctness_basis": "Existing record; EAE: prepared under van Lantschoot, 17 anaphoras (Apostles, Our Lord, Mary I, Mary II, John the Evangelist, James the Lord's brother, Mark, 318, Athanasius, Basil, Gregory of Nyssa, Epiphanius, Chrysostom, Cyril, Jacob of Serug, Gregory, Dioscorus).",
+   "existing_candidate_ids": [
+    "alex-geez-1945"
+   ],
+   "acquisition_ids": [
+    "geez-acq-eae-mirror"
+   ],
+   "unresolved": "Original 1945 book and decree not acquired.",
+   "inventory_ids": [
+    "alex-geez-1945"
+   ]
+  },
+  {
+   "id": "geez-v-blin",
+   "label": "Blin translation based on the 1945 Vatican missal (Eparchy of Keren)",
+   "tradition_or_use": "translation",
+   "date_label": "1990s (committee 1990 to 1991 per existing dossier)",
+   "date_role": "translation-reported",
+   "record_class": "deferred-translation",
+   "distinctness_basis": "Vernacular translation; establishes bounded Eritrean reception of 1945.",
+   "existing_candidate_ids": [
+    "alex-geez-1945"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Translation itself not acquired.",
+   "inventory_ids": [
+    "alex-geez-1945"
+   ]
+  },
+  {
+   "id": "geez-v-2002-english",
+   "label": "The Ethiopian Rite Missal for Weekday Celebrations of the Eucharist with seven Anaphoras, English edition ad experimentum (Addis Ababa, 2002)",
+   "tradition_or_use": "translation",
+   "date_label": "2002",
+   "date_role": "publication",
+   "record_class": "deferred-translation",
+   "distinctness_basis": "English adaptation by Fritsch and Cogavin; deferred.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "geez-acq-giraudo-3"
+   ],
+   "unresolved": "Not acquired.",
+   "inventory_ids": []
+  },
+  {
+   "id": "geez-v-2024",
+   "label": "Missal in the Ge'ez language, 2024 edition (presented 27 May 2025)",
+   "tradition_or_use": "Catholic Ge'ez, joint Ethiopian and Eritrean",
+   "date_label": "2024",
+   "date_role": "publication",
+   "record_class": "printed-revision",
+   "distinctness_basis": "Existing record; unchanged.",
+   "existing_candidate_ids": [
+    "alex-geez-2025"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Native title page and full text not acquired.",
+   "inventory_ids": [
+    "alex-geez-2025"
+   ]
+  },
+  {
+   "id": "geez-v-or545",
+   "label": "British Library Or. 545, Mäṣḥafä qəddase, 1670 to 1675",
+   "tradition_or_use": "Orthodox comparison",
+   "date_label": "1670 to 1675",
+   "date_role": "attestation",
+   "record_class": "manuscript-witness",
+   "distinctness_basis": "Earliest dated Mäṣḥafä qəddase examples per EAE; Brightman's base.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Catalogue not opened by this lane.",
+   "inventory_ids": []
+  },
+  {
+   "id": "geez-v-or546-548",
+   "label": "British Library Or. 546 (1730 to 1737) and Or. 548 (19th century)",
+   "tradition_or_use": "Orthodox comparison",
+   "date_label": "18th and 19th century",
+   "date_role": "attestation",
+   "record_class": "manuscript-witness",
+   "distinctness_basis": "Separate witnesses named by the cold reviewer and Mercer.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "geez-acq-mercer-pdf"
+   ],
+   "unresolved": "Not opened.",
+   "inventory_ids": []
+  },
+  {
+   "id": "geez-v-mkl008",
+   "label": "Ethio-SPaRe MKL-008, Läqay Kidanä Məḥrät, 1650 to 1660",
+   "tradition_or_use": "Orthodox comparison",
+   "date_label": "1650 to 1660",
+   "date_role": "attestation",
+   "record_class": "manuscript-witness",
+   "distinctness_basis": "Eleven surviving anaphoras; damaged.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "geez-acq-nosnitsin"
+   ],
+   "unresolved": "Not a recension claim.",
+   "inventory_ids": []
+  },
+  {
+   "id": "geez-v-bnfet67",
+   "label": "BnF Éthiopien 67, 18th century",
+   "tradition_or_use": "Orthodox comparison",
+   "date_label": "1700 to 1799",
+   "date_role": "attestation",
+   "record_class": "manuscript-witness",
+   "distinctness_basis": "Catalogue notes divergence from the 1549 Latin and agreement of one prayer with 1548.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "geez-acq-bnfet67"
+   ],
+   "unresolved": "Gallica images refused (403).",
+   "inventory_ids": []
+  },
+  {
+   "id": "geez-v-other-mss",
+   "label": "Other catalogued witnesses: Princeton Eth. 24 (1939 to 1945 E.C.), Ethio-SPaRe MR-014b (1865 to 1890), EMML 1434 (1680), EMML 4190 and 2811, Vatican Comboni B 30 and S 7, Tanasee 68 and 156, Mercer MS Eth. 3, EAP 286/1/1/385",
+   "tradition_or_use": "Orthodox comparison",
+   "date_label": "17th to 20th century",
+   "date_role": "attestation",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Witness succession; no version distinctness established.",
+   "existing_candidate_ids": [
+    "alex-geez-eap385"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Unexamined range: hundreds of catalogued manuscripts.",
+   "inventory_ids": [
+    "alex-geez-eap385"
+   ]
+  },
+  {
+   "id": "geez-v-orthodox-prints",
+   "label": "Ethiopian Orthodox printed Mäṣḥafä qəddase: Addis Ababa 1918 E.C. (1925/26, first EOTC printing), later Addis Ababa editions including 1926 E.C., 1942 E.C., 1951 and 1957 keys, 1959 with Amharic, 1962 E.C.; Asmara 1993 with Tigrinya",
+   "tradition_or_use": "Orthodox comparison",
+   "date_label": "1925/26 onward",
+   "date_role": "publication",
+   "record_class": "comparator-edition-reception-gap",
+   "distinctness_basis": "Orthodox editions; not Catholic and not merged.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "None acquired; several dates reported only by the cold reviewer and need checking.",
+   "inventory_ids": []
+  },
+  {
+   "id": "geez-v-complementary",
+   "label": "Complementary books: Catholic annual calendars 2018 and 2019 E.C.; lectionary (Maṣḥafa gəṣṣāwe) and chant books",
+   "tradition_or_use": "Catholic Ge'ez complementary",
+   "date_label": "2025 to 2027 calendars",
+   "date_role": "publication",
+   "record_class": "complementary-book-witness",
+   "distinctness_basis": "Calendars are annual implementation witnesses, not missal revisions.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "geez-acq-ordo-2018",
+    "geez-acq-ordo-2019"
+   ],
+   "unresolved": "Catholic lectionary editions unexamined.",
+   "inventory_ids": []
+  },
+  {
+   "id": "geez-v-1931-ritual",
+   "label": "1931 provisional restoration under van Lantschoot and the 1910 Roman ritual in Ge'ez",
+   "tradition_or_use": "identity check",
+   "date_label": "1910; 1931",
+   "date_role": "publication",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Likely ritual or office books, not Eucharistic.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Identity unverified; exclude from the missal line until checked.",
+   "inventory_ids": []
+  }
+ ],
+ "acquisitions": [
+  {
+   "id": "geez-acq-asmara-pdf",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3222909",
+   "sha256": "b126e66ae9150799dac65757a503d7d9ebad0ac0368110a1c07847d315dd7c01",
+   "bytes": 46325166,
+   "pages": 181,
+   "delivered_extent": "Whole provider PDF, 181 pages: one ULB Bonn identification sheet plus 180 page images matching the 180 canvases of the IIIF manifest (covers, endpapers, frontispiece, title, Ge'ez permission, Latin approbation, printed pp. 5 to 162, rear endpapers and cover). File size equals the 44.18 MB advertised on the catalogue page.",
+   "identity_inspection": "Inspected 2026-10-19 on renders made from this file: PDF p. 10 title page (ሥርዓተ፡ ቅዳሴ፡ ዘቤተ፡ ክርስቲያን፡ ካቶሊካዊት፡ እንተ፡ በኢትዮጵያ። Imprint: ተኀትመ፡ በሀገረ፡ አሥመራ፡ በማኅተመ፡ ካቶሊካውያን፡ በ፲፱፻፯ ዓመት፡ እምልደተ፡ እግዚእነ። The imprint numeral reads ፲፱፻፯, Ethiopian-reckoning year 1907, which Hammerschmidt and the Encyclopaedia Aethiopica both equate with 1914/15). PDF p. 12 Ge'ez permission (መባሕት) dated 25 Yakkatit and 1913 by Roman reckoning, signed for the Congregation by Cardinal Gotti and secretary Rolleri. PDF p. 13 Latin approbation: the Missale Aethiopicum according to the rite received in Abyssinia, described as duly revised and purged of errors, approved and permitted to be printed for priests of that rite, Rome, Propaganda Fide pro negotiis Ritus Orientalis, 25 February 1913; imprimatur Asmara, 12 April 1913, Fr. C. Carrara, Vicar Apostolic of Eritrea. PDF p. 175 printed p. 162 ends with a doxology and no colophon. Flyleaf shelf notes read Goussen 1665. Section starts by PDF page (Bonn structural ranges, headings read on page images): 14 ሥርዓታት፡ ወጸሎታት፡ (preparatory orders and prayers); 22 ግብዓተ፡ ግብር፡ ዘቅዳሴ፡ (order of the service, reading of first word uncertain); 40 Anaphora of the Apostles; 50 ሥርዓተ፡ ተመጥዎተ፡ ቍርባን፡ (order of Communion); 56 no. 2 Our Lord; 66 no. 3 Our Lady Mary; 74 no. 4 John son of Thunder; 84 no. 5 the 318 Orthodox; 94 no. 6 Athanasius; 104 no. 7 Basil; 112 no. 8 Gregory of Nyssa; 118 no. 9 Epiphanius; 126 no. 10 John Chrysostom; 132 no. 11 Cyril of Alexandria; 138 no. 12 Dionysius, great archbishop of Alexandria; 150 no. 13 heading ዘደብረ፡ ዘይት፡ ወዘጳጕሜን፡; 158 order of Communion repeated; 164 no. 14 Gregory of Armenia. Headpiece numerals were read at reduced resolution; the anaphora attributed elsewhere to Dioscorus is headed for Dionysius here. The prior researcher also viewed PDF pp. 5, 7 to 13 and 178 at full resolution.",
+   "rights_basis": "Underlying text: anonymous official Ge'ez liturgical book printed 1913 to 1915, public domain in the United States by publication date. Digitization: ULB Bonn marks this exact item Public Domain Mark 1.0 at https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3222909 (Lizenz-/Rechtehinweis: Public Domain Mark 1.0, https://creativecommons.org/publicdomain/mark/1.0/), checked 2026-10-19.",
+   "proposed_storage": "tracked",
+   "storage_reason": "Lawful public-domain mechanical scan, 46,325,166 bytes; same provider and size class as Bonn scans already tracked in the source library (for example the 81,237,265-byte 1901 Mosul proprium). Retention is deferred by the maintainer until integration.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-asmara-manifest",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/i3f/v20/3222909/manifest",
+   "sha256": "1f303fe266e2b45f47121e308b0dcaa5c9fdc5dfd20579e743fe0f2a080dcee0",
+   "bytes": 152288,
+   "pages": null,
+   "delivered_extent": "Complete IIIF 2.0 manifest: 180 canvases and a structural table of contents with 24 ranges (Vorsatz, Frontispiz, Titelblatt, Unsicher, Approbatio. Imprimatur, 18 untitled Abschnitt ranges, rear Vorsatz).",
+   "identity_inspection": "Metadata read in full: title transliteration, Missale <äthiop.>, Ašmarā 1907 [erschienen] 1913, [2. Aufl.], 162 S., note that the imprimatur year is 1913. Byte-identical to the cold reviewer's independently fetched copy.",
+   "rights_basis": "Provider metadata; ULB Bonn terms at https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3222909 (Lizenz-/Rechtehinweis: Public Domain Mark 1.0, https://creativecommons.org/publicdomain/mark/1.0/). No separate licence stated for manifest metadata.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Provenance support only; its hash and the range structure are recorded in this packet. No distribution basis is recorded for provider metadata.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-bonn-catalogue",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3222909",
+   "sha256": "c6ec54f27aab01db0f54cdc899d170931c4e21e9dfeca7c644108debe64910d0",
+   "bytes": 20469,
+   "pages": null,
+   "delivered_extent": "Whole catalogue HTML page for item 3222909.",
+   "identity_inspection": "Bibliographic metadata and the Public Domain Mark statement read; PDF and IIIF links taken from it.",
+   "rights_basis": "Provider web page; the page itself carries no licence beyond the item rights statement.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue page retained as provenance; hash recorded for the tracked scan's provenance.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-tasfa-zip",
+   "original_url": "https://books.google.com/books?id=jXZRAAAAcAAJ",
+   "sha256": "ae42d82db123742934aa854640f728416b4413924186ae14a18c407b51cd286c",
+   "bytes": 56497780,
+   "pages": null,
+   "delivered_extent": "Stored ZIP of all 486 distinct page IDs in the public full-view roster (PP1, PP5 to PP32, PA1 to PA226 with -IA1 versos and two extra PA176 inserts, PT1 to PT3, PT7): 484 JPEG and 2 PNG images, 56,214,722 image bytes, plus acquisition.json listing each member's URL and SHA-256. The roster offers no PP2 to PP4 or PT4 to PT6. Google Play labels the book 452 pages; the catalogue collation is [12], 226 leaves.",
+   "identity_inspection": "Inspected 2026-10-19: PP7 Latin title page (Testamentum Novum cum Epistola Pauli ad Hebreos tantum, cum concordantijs Euangelistarum Eusebij & numeratione omnium verborum eorundem. Missale cum benedictione incensi cerae et c. Alphabetum in lingua gheez ... quae omnia Fr Petrus Ethyops ... imprimi curavit. Anno salutis M.D.XLVIII), papal arms, manuscript ex libris of a Collegium de Propaganda Fide; PA158 headed INTROITVS MISSE with Ge'ez text beginning በስመ፡ አብ; header contact sheet of ff. 156r to 179v showing a decorated headpiece opening new sections at ff. 168r and 170r, rubricated liturgical text through f. 176v and the Epistle to the Romans opening at f. 177r; PA226 and PT1 Latin afterword and colophon dated Anno Domini 1549 and Ethiopian reckoning 6586, naming Petrus Tesfa Zeon Malezo of the monastery of S. Stephen in the Vatican and helpers Petrus Paulus Gualterius Aretinus and Marianus Victorius Reatinus. Holding library not named on the Google pages read; a small stamp on PT1 was not legible.",
+   "rights_basis": "Underlying text: Rome 1548 to 1549 printing, public domain. Digitization: mechanical facsimile images delivered in public full view; Google Books Terms of Service at https://books.google.com/intl/en/googlebooks/tos.html (as applied by the repository rights record src/sources/inventories/google-usage-guidelines-rights-v1.toml, not re-checked in this pass).",
+   "proposed_storage": "tracked",
+   "storage_reason": "Public-domain facsimile; follows the precedent of Google page-image ZIPs already tracked for the 1677 and 1823 Armenian books. 56,497,780 bytes. The tesfa-1548-pages directory holds byte-identical extracted members (verified member by member) and should not be retained separately.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-tasfa-roster",
+   "original_url": "https://books.google.com/books?jscmd=click3&id=jXZRAAAAcAAJ&pg=PA1&sig=&edge=0",
+   "sha256": "7d6bb3064a5708780f556895d8435e5fa5416c53482e9e98f9e7f628b38da422",
+   "bytes": 235946,
+   "pages": null,
+   "delivered_extent": "Per-image acquisition receipt for all 486 roster IDs: URL, path, bytes, SHA-256 and media type; no errors.",
+   "identity_inspection": "Read in full; byte-identical to acquisition.json inside the ZIP.",
+   "rights_basis": "Repository-authored receipt over public provider URLs.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Embedded in the ZIP; a separate copy is redundant.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-tasfa-roster-pa1",
+   "original_url": "https://books.google.com/books?jscmd=click3&id=jXZRAAAAcAAJ&pg=PA1&sig=&edge=0",
+   "sha256": "ca7b9d3b17f71f428452e8a0082e5733c4e8918aeea0cd6b08b877b7bdaf8615",
+   "bytes": 9472,
+   "pages": null,
+   "delivered_extent": "Provider page roster JSON listing 486 page IDs and the first image URLs.",
+   "identity_inspection": "Read; supplied the roster used by acquire-google1548.py.",
+   "rights_basis": "Provider JSON; https://books.google.com/intl/en/googlebooks/tos.html.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Acquisition provenance only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-tasfa-roster-pp10",
+   "original_url": "https://books.google.com/books?jscmd=click3&id=jXZRAAAAcAAJ&pg=PP10&sig=&edge=0",
+   "sha256": "2beb001d2a2a8542936f37b5e8053d93c2bddf5a53ab5fd1dc65d4458ef712f2",
+   "bytes": 9461,
+   "pages": null,
+   "delivered_extent": "Provider roster JSON with front-matter image URLs.",
+   "identity_inspection": "Read for URLs only.",
+   "rights_basis": "Provider JSON; https://books.google.com/intl/en/googlebooks/tos.html.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Acquisition provenance only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-tasfa-roster-pa158",
+   "original_url": "https://books.google.com/books?jscmd=click3&id=jXZRAAAAcAAJ&pg=PA158&sig=&edge=0",
+   "sha256": "27efe5f2f33b55fca373cb5a6fcb45e01ba435d179a6c53a75b01a353825c74b",
+   "bytes": 9499,
+   "pages": null,
+   "delivered_extent": "Provider roster JSON with image URLs around f. 158.",
+   "identity_inspection": "Read for URLs only.",
+   "rights_basis": "Provider JSON; https://books.google.com/intl/en/googlebooks/tos.html.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Acquisition provenance only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-tasfa-links",
+   "original_url": "https://books.google.com/books?jscmd=click3&id=jXZRAAAAcAAJ",
+   "sha256": "6f7a0f611afd1c6cc65e840808eb2585b5642f7fc74c7df8eb16ca4bc702e7d8",
+   "bytes": 75384,
+   "pages": null,
+   "delivered_extent": "Repository-generated map of 486 page IDs to public image URLs; no lookup errors.",
+   "identity_inspection": "Read.",
+   "rights_basis": "Repository-authored provenance file.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Provenance only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-tasfa-html",
+   "original_url": "https://books.google.com/books?id=jXZRAAAAcAAJ&printsec=frontcover",
+   "sha256": "97a34b05e368b69d6a368fb1d8ee5dd161d67eda8c2e1d8b4b91a2effe71cad7",
+   "bytes": 51997,
+   "pages": null,
+   "delivered_extent": "Google Books landing HTML for jXZRAAAAcAAJ.",
+   "identity_inspection": "Read: offers EPUB, PDF and plain-text downloads; the PDF route returned HTTP 429 on 2026-10-19 (prior researcher).",
+   "rights_basis": "Provider page; https://books.google.com/intl/en/googlebooks/tos.html.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Provenance only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-tasfa-napoli-html",
+   "original_url": "https://books.google.it/books?id=N0sAHdb4ANIC&printsec=frontcover",
+   "sha256": "c53b8b8ab4e49e4b1ffe5533ca5de0338db192546ffd8c07f7a79177d44cbfd9",
+   "bytes": 45047,
+   "pages": null,
+   "delivered_extent": "Google Books landing HTML for the Biblioteca nazionale di Napoli copy N0sAHdb4ANIC named by the LILLIT record (EDIT16 CNCE 005934).",
+   "identity_inspection": "Landing page only; no images of this second copy acquired.",
+   "rights_basis": "Provider page; https://books.google.com/intl/en/googlebooks/tos.html.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Second-copy lead; provenance only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-tasfa-pp9",
+   "original_url": "https://books.google.com/books?id=jXZRAAAAcAAJ&pg=PP9",
+   "sha256": "6e29ebbd2dadef4c24c449b7dcb634eef141c27b2fd2dd3d74b22a6ad161b966",
+   "bytes": 115519,
+   "pages": null,
+   "delivered_extent": "Single page image PP9.",
+   "identity_inspection": "Byte-identical to ZIP member PP9.jpg; front matter viewed by the prior researcher.",
+   "rights_basis": "As geez-acq-tasfa-zip.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Duplicate of a ZIP member; do not retain twice.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-tasfa-pp10",
+   "original_url": "https://books.google.com/books?id=jXZRAAAAcAAJ&pg=PP10",
+   "sha256": "3237ee3fa093a13778703a785eb3b16f1497ca11c358e97729d3b3b15ed256a6",
+   "bytes": 72797,
+   "pages": null,
+   "delivered_extent": "Single page image PP10.",
+   "identity_inspection": "Byte-identical to ZIP member PP10.jpg; front matter viewed by the prior researcher.",
+   "rights_basis": "As geez-acq-tasfa-zip.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Duplicate of a ZIP member; do not retain twice.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-tasfa-pp11",
+   "original_url": "https://books.google.com/books?id=jXZRAAAAcAAJ&pg=PP11",
+   "sha256": "0f7a432014dbf6d8af51a3b606e70e7d0abf26e9ae592be09e1bea95f9270769",
+   "bytes": 90896,
+   "pages": null,
+   "delivered_extent": "Single page image PP11.",
+   "identity_inspection": "Byte-identical to ZIP member PP11.jpg; front matter viewed by the prior researcher.",
+   "rights_basis": "As geez-acq-tasfa-zip.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Duplicate of a ZIP member; do not retain twice.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-tasfa-pp12",
+   "original_url": "https://books.google.com/books?id=jXZRAAAAcAAJ&pg=PP12",
+   "sha256": "61fcf005be1c5fbb65e53f09146ce8651f66359ef2ccb7164033d266196fdd57",
+   "bytes": 106609,
+   "pages": null,
+   "delivered_extent": "Single page image PP12.",
+   "identity_inspection": "Byte-identical to ZIP member PP12.jpg; front matter viewed by the prior researcher.",
+   "rights_basis": "As geez-acq-tasfa-zip.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Duplicate of a ZIP member; do not retain twice.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-tasfa-pa158",
+   "original_url": "https://books.google.com/books?id=jXZRAAAAcAAJ&pg=PA158",
+   "sha256": "4008f1b4b88fccc3ff2969505883131c6db112e1515cb9e7c67e16aed4952d0c",
+   "bytes": 135934,
+   "pages": null,
+   "delivered_extent": "Single page image PA158.",
+   "identity_inspection": "Byte-identical to ZIP member PA158.jpg; opening of the Ge’ez Introitus Missae section viewed by the prior researcher.",
+   "rights_basis": "As geez-acq-tasfa-zip.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Duplicate of a ZIP member; do not retain twice.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-tasfa-pa158-ia1",
+   "original_url": "https://books.google.com/books?id=jXZRAAAAcAAJ&pg=PA158-IA1",
+   "sha256": "740fef1314d28299185194f6793059e15001948f01d484c7f6bbe3c1be79294b",
+   "bytes": 119780,
+   "pages": null,
+   "delivered_extent": "Single page image PA158-IA1.",
+   "identity_inspection": "Byte-identical to ZIP member PA158-IA1.jpg; verso of f. 158 viewed by the prior researcher.",
+   "rights_basis": "As geez-acq-tasfa-zip.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Duplicate of a ZIP member; do not retain twice.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-mercer-pdf",
+   "original_url": "https://archive.org/download/ethiopicliturgyi00mercuoft/ethiopicliturgyi00mercuoft.pdf",
+   "sha256": "aaee45cf7a2434c8e880771e61e4f9a8bfe6bc69b9263506a21f7bad8e022bae",
+   "bytes": 31559448,
+   "pages": 512,
+   "delivered_extent": "Whole Internet Archive PDF, 512 pages, of S. A. B. Mercer, The Ethiopic Liturgy (Milwaukee and London, 1915); byte size equals the IA file listing.",
+   "identity_inspection": "Prior researcher viewed PDF pp. 7 to 9 (title leaves). Text layer searched for the Tasfa Sion comparison passage (printed pp. 289 to 290).",
+   "rights_basis": "Underlying 1915 book public domain in the United States; IA item metadata records NOT_IN_COPYRIGHT; IA terms https://archive.org/about/terms.php.",
+   "proposed_storage": "tracked",
+   "storage_reason": "Public-domain scan, 31,559,448 bytes; contains a facsimile and English translation of Mercer MS Eth. 3 (Ordo communis and Anaphora of the Apostles), a native-text comparison witness.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-mercer-txt",
+   "original_url": "https://archive.org/download/ethiopicliturgyi00mercuoft/ethiopicliturgyi00mercuoft_djvu.txt",
+   "sha256": "2f8e1c09f0d72765891a1a07348efe67c8069709a3a4686c1cbad28d1f2b61f0",
+   "bytes": 683204,
+   "pages": null,
+   "delivered_extent": "Whole IA OCR text layer, 683,204 bytes.",
+   "identity_inspection": "Searched for Tasfa Sion, 1548 and manuscript sigla; OCR is a discovery aid only.",
+   "rights_basis": "OCR of a public-domain book; IA terms https://archive.org/about/terms.php.",
+   "proposed_storage": "tracked",
+   "storage_reason": "Small reusable text derivative of a public-domain book supplied by the host.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-mercer-meta",
+   "original_url": "https://archive.org/metadata/ethiopicliturgyi00mercuoft",
+   "sha256": "3a48c20c08556dda895a3803c14ddbdf3ec11cf611f13403d6d99d1bede250a5",
+   "bytes": 95764,
+   "pages": null,
+   "delivered_extent": "Whole IA metadata JSON.",
+   "identity_inspection": "Read: title, 1915, Trinity College Toronto copy, 516 images, NOT_IN_COPYRIGHT evidence.",
+   "rights_basis": "IA metadata; https://archive.org/about/terms.php.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Provenance only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-hammerschmidt",
+   "original_url": "https://api.pageplace.de/preview/DT0400.9783112717677_A49166721/preview-9783112717677_A49166721.pdf",
+   "sha256": "a18435f7a88a9dc3921b210e304ed1a44da79af1544b4e48ab1743d98e8cf130",
+   "bytes": 1589720,
+   "pages": 20,
+   "delivered_extent": "Publisher preview, 20 PDF pages, of E. Hammerschmidt, Studies in the Ethiopic Anaphoras, second revised edition (Akademie-Verlag, Berlin; title page 1988 in the text layer, copyright line 1961). Front matter, contents, abbreviations and text through printed p. 18 only; the 'Editions for practical use' section (p. 34) is not included.",
+   "identity_inspection": "Prior researcher viewed title leaves (PDF pp. 2 to 3). Text layer read for pp. 13 to 18: 1548/49 Rome edition with Apostles ff. 158 to 167, Our Lord ff. 168f. and Mary by Cyriacus ff. 170 to 174; 1879 Lisbon reprint; Paez Portuguese translation; Asmara 1907 A. Mis. = 1914/15 Uniat book ascribing the D anaphora to Dionysius; Addis Ababa 1918 A. Mis. Orthodox edition.",
+   "rights_basis": "Modern copyrighted monograph; free publisher preview.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Modern publication or web page; no reuse licence or distribution basis established for this repository.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-nosnitsin",
+   "original_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/37A3D04A985C6C74F854011CC8E78B32/S0041977X1900034Xa.pdf/an-old-amharic-poem-from-northern-ethiopia-one-more-text-on-condemning-glory.pdf",
+   "sha256": "6fff7703818e947f8280e9a8f54f4c20873bf20fce6ff309e6b3e8e20601f27c",
+   "bytes": 1047249,
+   "pages": 36,
+   "delivered_extent": "Whole article PDF, 36 pages (BSOAS 2019).",
+   "identity_inspection": "Text layer read for section I on MS MKL-008 (contents, anaphora set, 1650 to 1660 caption).",
+   "rights_basis": "Modern article; Cambridge terms https://www.cambridge.org/core/terms not reviewed and any open-access licence unverified.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Modern publication or web page; no reuse licence or distribution basis established for this repository.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-bnfet67",
+   "original_url": "https://raw.githubusercontent.com/BetaMasaheft/Manuscripts/master/ParisBNF/et/BNFet67.xml",
+   "sha256": "c1462d6603e86062341fb818d75a7f5d74baa1a53ff7bcd468bbf2af56760d65",
+   "bytes": 51906,
+   "pages": null,
+   "delivered_extent": "Whole Beta maṣāḥǝft TEI record for BnF Éthiopien 67.",
+   "identity_inspection": "Read: 1700 to 1799; Gallica facsimile link; notes that its text differs considerably from the 1549 Latin rendering and agrees in one prayer with the 1548 print.",
+   "rights_basis": "Beta maṣāḥǝft research data; licence not verified in this pass.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue record; licence unverified.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-lit1960",
+   "original_url": "https://raw.githubusercontent.com/BetaMasaheft/Works/master/1001-2000/LIT1960Mashaf.xml",
+   "sha256": "fb221446ba3c18398103e4cf5f52d03add61922dfde27b1a06be4628d2bfb49f",
+   "bytes": 48845,
+   "pages": null,
+   "delivered_extent": "Whole Beta maṣāḥǝft work record for መጽሐፈ፡ ቅዳሴ፡ (Maṣḥafa qǝddāse).",
+   "identity_inspection": "Read: edition key 1951Qeddase; secondary key Bausi 2010 Encyclopaedia Aethiopica article.",
+   "rights_basis": "Beta maṣāḥǝft research data; licence not verified.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue record; licence unverified.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-lit4859",
+   "original_url": "https://raw.githubusercontent.com/BetaMasaheft/Works/master/4001-5000/LIT4859Litany.xml",
+   "sha256": "162e3f7df991e01c52877b7e64fcfede6c1c0a8cdace45a21da3e2d443f6c3f4",
+   "bytes": 8856,
+   "pages": null,
+   "delivered_extent": "Whole Beta maṣāḥǝft work record for a litany.",
+   "identity_inspection": "Read: edition keys for a 1960 Ṣalota kidān edition (pp. 14 to 15) and 1957Qeddase (pp. 187 to 188).",
+   "rights_basis": "Beta maṣāḥǝft research data; licence not verified.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue record.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-bm-tree",
+   "original_url": "https://api.github.com/repos/BetaMasaheft/Manuscripts/git/trees/master?recursive=1",
+   "sha256": "a48f13f839c813263acd84033b06eb75fe17e108e3a42f6eb37ed2f5cc580c3e",
+   "bytes": 5113540,
+   "pages": null,
+   "delivered_extent": "GitHub API recursive tree listing of the Beta maṣāḥǝft Manuscripts repository.",
+   "identity_inspection": "Used only to locate BNFet67.xml.",
+   "rights_basis": "API listing.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Tooling output.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-bm-worktree",
+   "original_url": "https://api.github.com/repos/BetaMasaheft/Works/git/trees/master?recursive=1",
+   "sha256": "41dddc15103ab1cd495e84693bb267d95d71bf9a542c25b2db1aff5c825c7d41",
+   "bytes": 2676782,
+   "pages": null,
+   "delivered_extent": "GitHub API recursive tree listing of the Beta maṣāḥǝft Works repository.",
+   "identity_inspection": "Used only to locate LIT1960 and LIT4859.",
+   "rights_basis": "API listing.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Tooling output.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-giraudo-1",
+   "original_url": "https://www.liturgia.it/content/addaicongress/bib/biblio1_it.pdf",
+   "sha256": "586994f5b321d3872844a3d6d466910bcd753568116aecbeb5df3467a924b92c",
+   "bytes": 101046,
+   "pages": 3,
+   "delivered_extent": "Whole 3-page bibliography (Addai and Mari congress, before 1966), dated 21 June 2011.",
+   "identity_inspection": "Read entries 12 to 16: Congregatio Orientalis 1940 Documenti relativi al Rito Etiopico I to II; 1940 Notationes atque animadversiones de Anaphoris Ritus Aethiopici; 1944 Liturgia-Etiopi, Revisione e ristampa del Messale Etiopico, Allegato I to II.",
+   "rights_basis": "Modern bibliography.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Modern publication or web page; no reuse licence or distribution basis established for this repository.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-giraudo-3",
+   "original_url": "https://www.liturgia.it/content/addaicongress/en/bib/biblio3_en.pdf",
+   "sha256": "27397b98109770a535a527d1e0189709d5b605774156944afcb37841d8ac9eab",
+   "bytes": 113805,
+   "pages": 6,
+   "delivered_extent": "Whole 6-page bibliography (after 2001).",
+   "identity_inspection": "Read entry 10: The Ethiopian Rite Missal for Weekday Celebrations of the Eucharist with seven Anaphoras, English language edition ad experimentum, Addis Ababa 2002.",
+   "rights_basis": "Modern bibliography.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Modern publication or web page; no reuse licence or distribution basis established for this repository.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-cbce-page",
+   "original_url": "https://cbce-gs.org/liturgical-calendar-ordo/",
+   "sha256": "20f38070a1539c2af63cd24b49d8ddda8aced328685c0c55bb0cc61368916704",
+   "bytes": 68228,
+   "pages": null,
+   "delivered_extent": "Whole Catholic Bishops' Conference of Ethiopia liturgical calendar page.",
+   "identity_inspection": "Read for the Ordo download links.",
+   "rights_basis": "Modern publication or web page; no reuse licence or distribution basis established for this repository.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Modern publication or web page; no reuse licence or distribution basis established for this repository.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-ordo-2018",
+   "original_url": "https://cbce-gs.org/wp-content/uploads/2025/07/Ordo-2018-1-1.pdf",
+   "sha256": "e22a5d62ef8f46fe4baba419ac037e8154d92ea55bd3555ba23b83ecf443d8a1",
+   "bytes": 2935270,
+   "pages": 64,
+   "delivered_extent": "Whole 64-page Ethiopian Catholic Church Liturgical Calendar 2018 E.C. (2025 to 2026), Bishops' Conference Liturgical Commission.",
+   "identity_inspection": "Cover text read via text layer (title, commission, Pope Leo XIV). Text search found Ge'ez and Latin rite columns and lectionary references but no named missal edition; Amharic is in a legacy font and was not searchable.",
+   "rights_basis": "Modern publication or web page; no reuse licence or distribution basis established for this repository.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Modern publication or web page; no reuse licence or distribution basis established for this repository.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-ordo-2019",
+   "original_url": "https://cbce-gs.org/wp-content/uploads/2026/09/Ordo-2019-Ethiopia-Final.pdf",
+   "sha256": "4242e57bcf25d319d46e970c52d6a1c15e5047dad86b9391ba558550803a5a82",
+   "bytes": 3077137,
+   "pages": 64,
+   "delivered_extent": "Whole 64-page Ethiopian Catholic Church Liturgical Calendar 2019 E.C. (2026 to 2027).",
+   "identity_inspection": "As the 2018 E.C. calendar; no named missal edition found by text search.",
+   "rights_basis": "Modern publication or web page; no reuse licence or distribution basis established for this repository.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Modern publication or web page; no reuse licence or distribution basis established for this repository.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-tzadua",
+   "original_url": "https://www.ethiopianorthodox.org/english/church/divineliturgydoc.html",
+   "sha256": "06c6441bab4169decde457007adddd28769e52aea5c37045ec68797afcba80b6",
+   "bytes": 68271,
+   "pages": null,
+   "delivered_extent": "Whole HTML page: Paulos Tzadua, The Divine Liturgy according to the Rite of the Ethiopian (Ge'ez) Church.",
+   "identity_inspection": "Read anaphora list: Orthodox accept anaphoras 1 to 14; the latest Sacred Congregation edition used by Catholics adds nos. 15 to 17.",
+   "rights_basis": "Modern publication or web page; no reuse licence or distribution basis established for this repository.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Modern publication or web page; no reuse licence or distribution basis established for this repository.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-csmc",
+   "original_url": "https://www.csmc.uni-hamburg.de/publications/aom/mom/44-en.html",
+   "sha256": "d198356e2d9b154001e8e5ec68c082a9d3d99975191ae173d5bf3cd8548d1729",
+   "bytes": 41709,
+   "pages": null,
+   "delivered_extent": "Whole CSMC Hamburg web page on the Aksumite Collection.",
+   "identity_inspection": "Context only for existing record alex-geez-aksumite-um039.",
+   "rights_basis": "Modern publication or web page; no reuse licence or distribution basis established for this repository.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Modern publication or web page; no reuse licence or distribution basis established for this repository.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-eap385",
+   "original_url": "https://eap.bl.uk/archive-file/EAP286-1-1-385",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "bytes": 0,
+   "pages": null,
+   "delivered_extent": "Zero-byte file: the EAP viewer returned a script-based robot-verification page and no content.",
+   "identity_inspection": "Nothing to inspect.",
+   "rights_basis": "Not applicable.",
+   "proposed_storage": "unavailable",
+   "storage_reason": "No bytes delivered (empty response behind a browser challenge on 2026-10-19). Existing record alex-geez-eap385 keeps its catalogue-search evidence.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-nce",
+   "original_url": "https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/ethiopian-geez-catholic-church",
+   "sha256": "5514605cee7c614e95093ad120feb075687aa6b01d502f34d80a349cb8e58db3",
+   "bytes": 74581,
+   "pages": null,
+   "delivered_extent": "Whole HTML page reproducing the New Catholic Encyclopedia article 'Ethiopian (Ge'ez) Catholic Church' signed K. O'Mahoney, with bibliography. Fetched 2026-10-19 by curl with a browser user agent (the prior urllib attempt received HTTP 403).",
+   "identity_inspection": "Read the liturgical-history passages: 1548 printing; Paez-era Catholic use of a Ge'ez missal retaining two anaphoras purged of anti-Chalcedonian wording; Mendes's Latinization from 1625; 1847 and 1850 permissions; Touvier's thirteen revised anaphoras; 10 July 1890 decree for the Latin rite in Ge'ez; Crouzet's report of 8 November 1891 on fourteen anaphoras dated 1890; Carrara's reprint and the dispatch of 25 February 1913.",
+   "rights_basis": "Modern encyclopedia text hosted by Encyclopedia.com; terms not reviewed.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Modern publication or web page; no reuse licence or distribution basis established for this repository.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "geez-acq-eae-mirror",
+   "original_url": "https://en.sewasew.com/p/ma-shafa-qe-ddase-%28%E1%88%98%E1%8C%BD%E1%88%90%E1%8D%88-%E1%89%85%E1%8B%B3%E1%88%B4%29",
+   "sha256": "4921550316ff2a82aa2387928a8c98bd4bd7dacb11ac50bc096cfeddae7b1229",
+   "bytes": 91516,
+   "pages": null,
+   "delivered_extent": "Whole HTML page of a third-party mirror reproducing the Encyclopaedia Aethiopica article 'Mäṣḥafä qəddase' (attributed by Beta maṣāḥǝft to Bausi 2010); the underlying EAE volume was not consulted.",
+   "identity_inspection": "Read the edition-history paragraphs: 1548 ff. 158 to 167 and 1549 Latin; Orthodox first printing Addis Ababa 1918 E.C.; Catholic Keren editions from 1890, Asmara 1914/15; 1945 Vatican edition under van Lantschoot with a 17-anaphora contents list; earliest dated manuscripts 1660 to 1690s.",
+   "rights_basis": "Modern encyclopedia text on an unlicensed mirror.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Modern publication or web page; no reuse licence or distribution basis established for this repository. Mirror fidelity to the printed EAE text is unverified.",
+   "existing_canonical_identity": null
+  }
+ ],
+ "expected_list_reconciliation": [
+  {
+   "expected_id": "cold-geez-early-church-order-anaphoras",
+   "expected_label": "Ge'ez Sinodos and Testament of Our Lord Eucharistic strata",
+   "matched_packet_ids": [
+    "geez-v-sinodos-strata",
+    "geez-v-aksumite"
+   ],
+   "outcome": "matched",
+   "evidence": "Kept as an undated component lead (Encyclopaedia Aethiopica mirror names the Senodos and Kidan layers) beside the existing record alex-geez-aksumite-um039. No station or chronology claimed, as expected."
+  },
+  {
+   "expected_id": "cold-geez-1548",
+   "expected_label": "Tasfa Seyon (Petrus Aethiops), Rome 1548/49 New Testament liturgical constituent",
+   "matched_packet_ids": [
+    "geez-v-1548",
+    "geez-v-1549-latin",
+    "geez-v-1879-reprint",
+    "geez-1548-rome-tasfa-seyon",
+    "geez-1549-rome-latin-rendering"
+   ],
+   "outcome": "matched",
+   "evidence": "Cold check of the retained images: title PP7 reads ANNO SALUTIS M.D.XLVIII under Paul III; f. 158r is headed INTROITVS MISSE; headpieces open new sections at ff. 168r and 170r; f. 169v ends with an ornament band; Romans begins f. 177r; colophon PT1 is dated 1549 with Ethiopian reckoning 6586. The 1549 Latin rendering and the 1879 Lisbon reprint stay separate, as the frozen list required."
+  },
+  {
+   "expected_id": "cold-geez-or545",
+   "expected_label": "British Library Or 545",
+   "matched_packet_ids": [
+    "geez-v-or545"
+   ],
+   "outcome": "matched",
+   "evidence": "Matched only at version level; the researcher did not open the catalogue. The cold reviewer re-fetched BL record 032-003430108 (1670-1675, ff. 3r-138r, digitised) and adds it as a comparison witness (required addition geez-bl-or545-missal-cold)."
+  },
+  {
+   "expected_id": "cold-geez-or546",
+   "expected_label": "British Library Or 546",
+   "matched_packet_ids": [
+    "geez-v-or546-548"
+   ],
+   "outcome": "matched",
+   "evidence": "Version-level lead only; not opened by either side in this pass. Recorded as a bounded manuscript gap."
+  },
+  {
+   "expected_id": "cold-geez-or548",
+   "expected_label": "British Library Or 548",
+   "matched_packet_ids": [
+    "geez-v-or546-548"
+   ],
+   "outcome": "matched",
+   "evidence": "As Or 546."
+  },
+  {
+   "expected_id": "cold-geez-mkl008",
+   "expected_label": "Ethio-SPaRe MKL-008, Laqay Kidana Mehrat",
+   "matched_packet_ids": [
+    "geez-v-mkl008"
+   ],
+   "outcome": "matched",
+   "evidence": "Nosnitsin 2019 acquired whole; recorded as a damaged witness with eleven surviving anaphoras, not a recension. The 1650-1660 date is the article's figure caption; the frozen note that palaeography is broader still applies. Left at version level."
+  },
+  {
+   "expected_id": "cold-geez-1890",
+   "expected_label": "Keren Catholic Ser'ata qeddase, 1890",
+   "matched_packet_ids": [
+    "geez-v-1890",
+    "alex-geez-1890"
+   ],
+   "outcome": "matched",
+   "evidence": "Existing record kept and updated with the New Catholic Encyclopedia account (verified in the fetched page: commission from July 1889; Crouzet's report of 8 November 1891 that fourteen anaphoras dated 1890 were revised, printed and circulated, used ad interim without his imprimatur). Original still unlocated."
+  },
+  {
+   "expected_id": "cold-geez-1913",
+   "expected_label": "Asmara Catholic Ser'ata qeddase, catalogued as second edition, 1907/1913",
+   "matched_packet_ids": [
+    "geez-v-asmara",
+    "alex-geez-1913"
+   ],
+   "outcome": "matched",
+   "evidence": "The frozen dating conflict is resolved on the book itself. Full-resolution IIIF crop of the title page (canvas 3222919) reads the imprint Asmara, Catholic press, year ፲፱፻፯ 'from the birth of our Lord'; the fifth glyph is the zeta-derived seven. The Ge'ez permission leaf dates the Roman approval 25 Yakkatit 1913 'according to the reckoning of Rome', so the unqualified title year is Ethiopian reckoning, 1914/15, as Hammerschmidt (printed p. 19) and the EAE also state. Bonn's 1907 is that Ethiopian year read as Gregorian and its 1913 is the approval year. One book, not two editions; no separate 1913 impression is evidenced."
+  },
+  {
+   "expected_id": "cold-geez-1945",
+   "expected_label": "Missale aethiopicum / Mashafa qeddase, Vatican 1945",
+   "matched_packet_ids": [
+    "geez-v-1945",
+    "alex-geez-1945",
+    "geez-v-1940-1944"
+   ],
+   "outcome": "matched",
+   "evidence": "Update adds the EAE description (van Lantschoot; 17 named anaphoras). The frozen 17/18 conflict is not carried by the packet: the Enciclopedia Cattolica (vol. VII, 1951, p. 782, re-fetched by the cold reviewer) reports 18 anaphoras for the Rome 1945 book. Correction preserves the disagreement."
+  },
+  {
+   "expected_id": "cold-geez-2024",
+   "expected_label": "Mashafa Qeddase, 2024 edition, ISBN 9791281584242",
+   "matched_packet_ids": [
+    "geez-v-2024",
+    "alex-geez-2025"
+   ],
+   "outcome": "matched",
+   "evidence": "Existing record unchanged; approval instrument and implementation remain open, and the two Ethiopian Catholic calendars acquired name no missal edition."
+  },
+  {
+   "expected_id": "cold-geez-orthodox-print-control",
+   "expected_label": "Ethiopian Orthodox printed Mashafa qeddase witnesses (Addis Ababa 1918, 1926, 1942 E.C.; Dire Dawa 1925/26)",
+   "matched_packet_ids": [
+    "geez-v-orthodox-prints"
+   ],
+   "outcome": "matched",
+   "evidence": "Recorded as comparison editions with a reception gap and not merged into any Catholic record. Minor omission inside the version: the Dire Dawa 1925/26 printing (Enciclopedia Cattolica) is not listed. No inventory row is needed for Orthodox printings."
+  },
+  {
+   "expected_id": "cold-geez-lectionaries",
+   "expected_label": "Mashafa gessawe lectionary history and Catholic annual ordines",
+   "matched_packet_ids": [
+    "geez-v-complementary"
+   ],
+   "outcome": "matched",
+   "evidence": "Two official 2018 and 2019 E.C. calendars acquired; the Catholic lectionary sequence is an explicit unexamined range."
+  },
+  {
+   "expected_id": "cold-geez-translations",
+   "expected_label": "1549 Latin; Brightman/Ball 1896; Mercer 1915; Harden 1928; Daoud 1954",
+   "matched_packet_ids": [
+    "geez-v-1549-latin",
+    "geez-v-paez-portuguese",
+    "geez-v-blin",
+    "geez-v-2002-english",
+    "geez-1549-rome-latin-rendering",
+    "geez-2002-english-weekday-missal"
+   ],
+   "outcome": "matched",
+   "evidence": "All labelled as deferred translations (1549 and 2002 proposed as records; the rest named in the packet limits). Mercer's native facsimile is kept apart under geez-v-other-mss."
+  },
+  {
+   "expected_id": "cold-geez-not-missal-1931",
+   "expected_label": "1931 provisional restoration; 1910 Roman ritual in Ge'ez",
+   "matched_packet_ids": [
+    "geez-v-1931-ritual"
+   ],
+   "outcome": "matched",
+   "evidence": "Kept out of the missal line pending identity check, as the frozen list asked."
+  },
+  {
+   "expected_id": "cold-geez-drafting-documents",
+   "expected_label": "Congregatio Orientalis 1940 notes and 1944 revision appendices",
+   "matched_packet_ids": [
+    "geez-v-1940-1944",
+    "geez-congregatio-orientalis-1940-1944-revision-documents"
+   ],
+   "outcome": "matched",
+   "evidence": "Giraudo bibliography entries 14 to 16 confirmed in the retained PDF; recorded as an unplotted document lead."
+  }
+ ],
+ "acquisition_spot_checks": [
+  {
+   "acquisition_id": "geez-acq-asmara-pdf",
+   "check": "sha256 recomputed; PDF pp. 9, 10, 12, 13 rendered; full-resolution IIIF crops of the title imprint (canvas 3222919), permission date line (3222921) and frontispiece caption (3222918); every anaphora heading (PDF 40-164) and p. 175 rendered",
+   "result": "confirmed",
+   "detail": "Hash b126e66a... matches. Title ሥርዓተ፡ ቅዳሴ፡ ዘቤተ፡ ክርስቲያን፡ ካቶሊካዊት፡ እንተ፡ በኢትዮጵያ። Imprint: Asmara, Catholic press, ፲፱፻፯ 'from the birth of our Lord' (fifth glyph is seven). Permission: 25 Yakkatit, 1913 'according to the reckoning of Rome', Gotti and Rolleri. Approbatio: 'Missale Aethiopicum ... juxta morem in Abyssinia receptum, rite revisum et mendis expurgatum', Propaganda Fide pro Negotiis Ritus Orientalis, 25 February 1913; Imprimatur Asmara 12 April 1913, Carrara, Vic. Ap. Erythraeae. Numbered anaphoras 2-14 read with names (12 Dionysius of Alexandria; 13 'of Däbrä Zäyt and Ṗagʷəmen'; 14 Gregory of Armenia); Communion order at PDF 50 and 158; p. 175 ends 'ስብሐት፡ ለእግዚአብሔር።' with no colophon. Owner note reads 'Asmara 1907 (14 Liturgien)' with 'AD 1913'. No Keren 1890 statement on any front-matter leaf."
+  },
+  {
+   "acquisition_id": "geez-acq-asmara-manifest",
+   "check": "cmp against cold/bonn-3222909-manifest.json; ranges mapped to PDF pages",
+   "result": "confirmed",
+   "detail": "Byte-identical; 24 ranges map to the PDF pages the packet gives."
+  },
+  {
+   "acquisition_id": "geez-acq-tasfa-zip",
+   "check": "sha256 recomputed; members listed; PP7, PA158, PA167-IA1 to PA177 headers and PT1 viewed",
+   "result": "confirmed",
+   "detail": "Hash ae42d82d... matches; 487 members (486 images plus receipt). Title M.D.XLVIII, Paul III, Propaganda Fide ex libris; INTROITVS MISSE f. 158; headpieces at ff. 168r and 170r; Romans f. 177r; colophon 1549 and 6586 with Tesfa Zeon, Gualterius and Victorius. Stamp on PT1, called illegible by the packet, reads 'B S B / MÜNCHEN'."
+  },
+  {
+   "acquisition_id": "geez-acq-hammerschmidt",
+   "check": "sha256 recomputed; text layer read by PDF page",
+   "result": "confirmed",
+   "detail": "Statements present, but the Asmara 1907 A. Mis. = 1914/15 and Coulbeaux/Dionysius statements are on printed p. 19 (packet says p. 18) and the preview runs to p. 20; locus corrected."
+  },
+  {
+   "acquisition_id": "geez-acq-nce",
+   "check": "sha256 recomputed; text searched for each claim used",
+   "result": "confirmed",
+   "detail": "Paez-era missal, 1847/1850 permissions, 1870 faculties, Touvier, 1889-1891 events and the 1913 dispatch all present; the 1870 faculties were not carried into the packet."
+  },
+  {
+   "acquisition_id": "geez-acq-eae-mirror",
+   "check": "sha256 recomputed; edition paragraphs read",
+   "result": "confirmed",
+   "detail": "All quoted facts present, including index p. 7 and 'Fritsch - Cogavin 2001: 147-56'."
+  },
+  {
+   "acquisition_id": "geez-acq-giraudo-1",
+   "check": "text layer read",
+   "result": "confirmed",
+   "detail": "Entries 14-16 as cited (the packet's version list says 12 to 16; the proposed source correctly says 14 to 16)."
+  },
+  {
+   "acquisition_id": "geez-acq-giraudo-3",
+   "check": "text layer read",
+   "result": "confirmed",
+   "detail": "Entry 10 gives title, ad experimentum, Addis Ababa 2002, no author."
+  },
+  {
+   "acquisition_id": "all-37-packet-acquisitions",
+   "check": "sha256 recomputed for every listed path",
+   "result": "confirmed",
+   "detail": "37 of 37 hashes match; eap385.html is the recorded zero-byte robot page."
+  }
+ ],
+ "remaining_bounded_gaps": [
+  "Keren 1890 original unlocated: Bonn Goussen Ethiopian group not browsed (the cold reviewer's quick-search URL returned no listing, probably script-rendered); Vatican Library and BnF catalogues unsearched; Hammerschmidt's editions list pp. 34-36 (p. 35 no. 11, cited for Coulbeaux's Catholic edition) unread.",
+  "Asmara versus 1890: whole-book collation impossible without 1890. Stage dossier (root): alexandrian-stages-geez1913 should take witness eastern:alex-geez-1913, separate approval 1913 from imprint 1914/15 and drop 'no original copy acquired'; transition alexandrian-stages-geez1890-1913 may stay witness-succession, since the approbation formula and the NCE reprint report do not establish a substantive revision.",
+  "1945: original title page, index, decree and the 1940-1944 dossier unseen; anaphora count 17 (Fritsch, EAE list) against 18 (Enciclopedia Cattolica); the frozen cold note that Tzadua's Marienlexikon entry gives 'editio romana prima' with Ethiopian-calendar 1938 (=1945/46) is unverified, so the 1945 integer bound stays source-reported.",
+  "2024: native title page, approval instrument, effective date and implementation in Addis Ababa and Asmara unestablished.",
+  "Reception: Ethiopian-territory use of the 1890 and Asmara books is not evidenced (Asmara approbation rite-wide, imprimatur Eritrean; 1890 interim use reported for the undivided Vicariate); post-1915 Eritrean and post-1945 Catholic reprints unsearched.",
+  "Pre-1890 Catholic layer: Paez-era two-anaphora missal, Touvier's thirteen revised anaphoras and the 1847, 1850 and 1870 instruments have no inspected witness (Beccari, Paez's Historia, Jesuit letters, O'Mahoney, Propaganda Fide archives). Roman rite in Ge'ez (1625-1632; 1890 decree) deferred to Latin translation history.",
+  "Manuscripts: EMML, Ethio-SPaRe, Beta masaheft, BnF, Vatican Comboni and BL Or 546-548 unswept; MKL-008 (eleven surviving anaphoras, damaged, date from a figure caption) and BnF Éthiopien 67 left at version level.",
+  "Orthodox printed comparators (Addis Ababa from 1918 E.C.; Dire Dawa 1925/26, missing from the packet's version list; Asmara 1993) unacquired; none merged into Catholic records.",
+  "1548: Napoli copy images, ff. 175-176 contents, BSB shelfmark, the 1549 Latin original and the 1879 Lisbon reprint unseen.",
+  "Complementary and non-Eucharistic books: Catholic lectionary and chant books unexamined; funeral (1908) and ordination (1939) books and the 1931 provisional restoration / 1910 ritual remain identity checks outside the missal line.",
+  "Deferred translations: Paez Portuguese, Ball in Brightman 1896, Mercer 1915, Harden 1928, Daoud 1954, Blin, Tigrinya, English 2002.",
+  "Storage (flag, not blocking; retention deferred by the maintainer): Asmara PDF 46,325,166 bytes, Public Domain Mark, tracked proposal sound. Rome 1548 ZIP 56,497,780 bytes from Google Books; rights rest on the repository's Google usage record, not re-checked in this pass; extracted page JPGs must not also be retained. Mercer 1915 PDF 31,559,448 bytes plus OCR are proposed tracked although no proposed or existing inventory row cites them: register a source row first or keep them in scratch."
+ ],
+ "blocking_items": [],
+ "discovered_unassigned_uses": [
+  {
+   "use": "Latin-rite Catholics in Ethiopia and Eritrea (Latin vicariates; the Ordo carries a Latin rite column)",
+   "note": "Roman Missal users; belongs to the Roman lane, not this one."
+  },
+  {
+   "use": "Roman rite in Ge'ez (1625 to 1632 imposition; 1890 decree)",
+   "note": "Roman-missal translation project kept separate as version geez-v-roman-in-geez; no printed book identified."
+  },
+  {
+   "use": "Blin and Tigrinya Catholic vernacular use",
+   "note": "Deferred translation histories (Eparchy of Keren)."
+  }
+ ],
+ "next_sources": [
+  "Vatican 1945 Maṣḥafa qǝddāse / Missale aethiopicum (LEV code 0927-8, 234 pp.): any library scan or title-page image.",
+  "Keren 1890 printing: ULB Bonn Goussen Ethiopian group browse; Vatican Library and Bibliothèque nationale catalogues under Sǝrʿata qǝddase and Coulbeaux.",
+  "Printed Encyclopaedia Aethiopica vol. 4 article 'Mäṣḥafä qəddase' to verify the mirror.",
+  "Beccari, Rerum Aethiopicarum scriptores occidentales, vol. 2 (Paez) and later volumes (Mendes, Almeida) for the Paez-era missal.",
+  "O'Mahoney, The Ebullient Phoenix (1982 to 1992), for the Touvier, Crouzet and Carrara documents.",
+  "Hammerschmidt, Studies in the Ethiopic Anaphoras p. 34 'Editions for practical use'.",
+  "Brightman 1896 vol. 1 pp. lxii and following (already in the source library) for the 1548 divisions and editions list.",
+  "Native title page and approval page of the 2024 edition."
+ ],
+ "limits": [
+  "No research.json existed; claims carried from the prior log were re-checked against retained files or marked as reported.",
+  "Asmara book: the conversion of Ethiopian-year 1907 to 1914/15 is inferred and corroborated by Hammerschmidt and the EAE mirror; the numeral was read at 500 dpi from the scan and could in principle be misread. Anaphora numerals were read at reduced resolution.",
+  "Stage dossier alexandrian.json needs root revision (not edited here): stage alexandrian-stages-geez1913 should gain witness eastern:alex-geez-1913 with the original scan, its date_label should separate approval 1913 from imprint 1914/15, and its label 'no original copy acquired' is obsolete; transition alexandrian-stages-geez1890-1913 is typed witness-succession, but the 1913 approbation calls the book revised and purged of errors, so a revision of unknown extent cannot be excluded; gap alexandrian-stages-gap-geez1890-1913 is now half resolved (Asmara original acquired, Keren 1890 still missing); gap alexandrian-stages-gap-geez-ancient-reception can cite the acquired 1548 print.",
+  "The ID alex-geez-1913 is retained for reference stability although its plotted chronology becomes 1914 to 1915.",
+  "Proposed record fields approval_note and book_route already exist in the target table; no genuinely new field is introduced.",
+  "Orthodox comparator editions and manuscripts are recorded only as versions, not as proposed inventory records, to avoid implying Catholic reception.",
+  "Deferred translations named but not proposed as records: Paez's Portuguese (Beccari 1905), Ball's English in Brightman 1896, Mercer 1915, Harden 1928, Daoud 1954, the Blin translation of 1945.",
+  "The Ethiopian and Eritrean coverage rows are linked separately; the Asmara book is linked as a candidate only for the Eritrean row because its imprimatur is Eritrean, and as deferred for the Ethiopian row.",
+  "Three routes failed: saveriani.it (HTTP 403 to urllib, prior log), SEDOS bulletin 4405 (HTTP 404 at two URLs), Gallica btv1b100998352 manifest and PDF (HTTP 403); EAP viewer returned an empty robot check. The Google Books PDF route returned HTTP 429.",
+  "Storage: retention is deferred by the maintainer; proposed_storage values are proposals only and no bytes were moved."
+ ],
+ "coverage_placements": {
+  "eritrean": {
+   "candidate_ids": [
+    "alex-geez-1913",
+    "alex-geez-1945"
+   ],
+   "ancestry_candidate_ids": [
+    "geez-1548-rome-tasfa-seyon",
+    "geez-bl-or545-missal-cold"
+   ],
+   "deferred_or_origin_review_candidate_ids": [
+    "alex-geez-1890",
+    "geez-1549-rome-latin-rendering",
+    "geez-paez-era-two-anaphora-missal-lead",
+    "geez-touvier-revised-anaphoras-lead",
+    "geez-congregatio-orientalis-1940-1944-revision-documents",
+    "geez-1870-touvier-faculties-lead-cold"
+   ],
+   "fields_replaced": [
+    "missing_chronology"
+   ]
+  },
+  "ethiopian": {
+   "ancestry_candidate_ids": [
+    "geez-1548-rome-tasfa-seyon",
+    "geez-bl-or545-missal-cold"
+   ],
+   "deferred_or_origin_review_candidate_ids": [
+    "alex-geez-1890",
+    "alex-geez-1913",
+    "geez-1549-rome-latin-rendering",
+    "geez-paez-era-two-anaphora-missal-lead",
+    "geez-touvier-revised-anaphoras-lead",
+    "geez-congregatio-orientalis-1940-1944-revision-documents",
+    "geez-2002-english-weekday-missal",
+    "geez-1870-touvier-faculties-lead-cold"
+   ],
+   "fields_replaced": [
+    "missing_chronology"
+   ]
+  }
+ },
+ "unlinked_new_records": []
+}

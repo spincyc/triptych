@@ -1,0 +1,2900 @@
+{
+ "schema_version": 1,
+ "record_type": "eucharistic-research-lane-review",
+ "id": "maronite",
+ "title": "Full research pass review of the maronite lane, 2026-10-19",
+ "lane": "maronite",
+ "side": "eastern",
+ "checked_on": "2026-10-19",
+ "reviewed_on": "2026-10-19",
+ "coverage_rows": [
+  "maronite"
+ ],
+ "target_inventory": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
+ "semantics": "Project-created review metadata. Versions include witnesses, components, translations and unresolved leads; their count is not a count of substantive revisions. Acquisition does not establish transcription, collation, normative revision or local reception. No ancestry is asserted.",
+ "review_files": {
+  "storage": "untracked workspace scratch; pinned here by SHA-256 only",
+  "packet_sha256": "86ea85fe37aa2e4d80b9b96a425a86b9a21701a88f02717e339479202cca7686",
+  "superseded_packet_sha256": null,
+  "cold_final_sha256": "26b0dd4785b9d1c3933193bb23b3cf76e519d43cf00739861445278c5220c01b",
+  "cold_verdict": "ready-with-corrections"
+ },
+ "integration": {
+  "new_sources": [
+   "maronite-src-brightman1896",
+   "maronite-src-english2012",
+   "maronite-src-feulner2000",
+   "maronite-src-gemayel1965",
+   "maronite-src-irht-syr71",
+   "maronite-src-irht-syr73",
+   "maronite-src-irht-syr78",
+   "maronite-src-irht-syr79",
+   "maronite-src-onb1762",
+   "maronite-src-riosanchez-aleppo",
+   "maronite-src-seminary-library",
+   "maronite-src-vat431"
+  ],
+  "new_records": [
+   "maronite-bkerke-2005",
+   "maronite-english-2012",
+   "maronite-liber-ministri-1596",
+   "maronite-ms-aleppo619-1490",
+   "maronite-ms-bnf-syr71-1454",
+   "maronite-ms-bnf-syr73-1509",
+   "maronite-ms-bnf-syr78",
+   "maronite-ms-bnf-syr79",
+   "maronite-ms-vat-sir431",
+   "maronite-qozhaya-1816",
+   "maronite-qozhaya-1838",
+   "maronite-qozhaya-1855",
+   "maronite-qozhaya-1872",
+   "maronite-sharar-2008"
+  ],
+  "updates": [
+   "mar-1716",
+   "mar-1763",
+   "mar-1973",
+   "mar-dibs-1888",
+   "syr-add14690-anaphoras"
+  ],
+  "corrected_by_review": [
+   "mar-1763",
+   "mar-1973",
+   "maronite-bkerke-2005",
+   "maronite-ms-aleppo619-1490",
+   "maronite-ms-bnf-syr71-1454",
+   "maronite-ms-vat-sir431",
+   "maronite-qozhaya-1855",
+   "maronite-src-brightman1896",
+   "maronite-src-english2012",
+   "maronite-src-gemayel1965",
+   "maronite-src-irht-syr71",
+   "maronite-src-onb1762"
+  ],
+  "added_by_review": [
+   "maronite-ms-bnf-syr438-1706-cold",
+   "maronite-rome1608-reissue-cold",
+   "maronite-src-bnf1608-cold",
+   "maronite-src-irht-syr438-cold",
+   "maronite-src-jabbour2020-cold",
+   "maronite-src-nestle1889-cold"
+  ],
+  "rejected_by_review": []
+ },
+ "uses": [
+  {
+   "id": "maronite",
+   "coverage_row": "maronite",
+   "label": "Maronite Church (Antiochene Syriac Maronite Qurbono)",
+   "disposition": "researched-with-explicit-bounds",
+   "finding": "Printed sequence corroborated and extended: 1592/1594, 1608 variant, 1716, 1762 title with 1763 approbation (ONB copy acquired whole), Qozhaya 1816, 1838, 1855 and 1872, Beirut 1888 and 1908, Jounieh 1959, 1973 experiment (decree 43/1973), 1992 reform, and the 2005 second edition (decree 1512/2005) with eight anaphoras; complementary minister's books from 1596 and a 2008 Sharar booklet; dated manuscripts from 1454 onward identified through Gemayel 1965 and IRHT notices.",
+   "limit": "No collation of any two printed books; 1716, Qozhaya, 1888, 1959, 1973, 1992 and 2005 originals not acquired; manuscript images of BnF syr. 71-79 blocked; anaphora count of 1762/1763 unresolved.",
+   "next_sources": [
+    "Count anaphora headings in the acquired ONB 1762 images (canvases 5-415)",
+    "Original 2005 Kitab al-Quddas (seminary Tl 188 Ar) title, decree and contents pages",
+    "A copy of the 1716 Missale Syriacum (Braidense GERLI.0740 or another holding)",
+    "Gallica images of BnF syr. 71 and 73 through the browser viewer",
+    "Lebanese library catalogues for 1959, 1973 and 1992 originals"
+   ],
+   "review_disposition": "not-separately-disposed",
+   "review_remaining_gap": null
+  },
+  {
+   "id": "maronite-shared-west-syriac",
+   "coverage_row": "maronite",
+   "label": "Shared West Syriac (Syriac Orthodox) ancestry used for comparison",
+   "disposition": "comparison-only-no-reception",
+   "finding": "BnF syr. 72 (1462), syr. 74 (1516) and BL Add. 14690 (1182) are Syriac Orthodox books that Maronite scholarship uses for comparison; they are kept apart from Maronite Catholic books.",
+   "limit": "No descent or Maronite reception is asserted; ownership by the syriac_malankara lane is respected.",
+   "next_sources": [
+    "syriac_malankara lane records for the shared manuscripts"
+   ],
+   "review_disposition": "not-separately-disposed",
+   "review_remaining_gap": null
+  }
+ ],
+ "searches": [
+  {
+   "repository": "Open web search (previous agent's search tool)",
+   "queries": [
+    "\"Missale Syriacum\" \"1716\"",
+    "\"Maronite\" \"1763\" missal",
+    "\"كتاب القداس\" \"2005\" المارونية",
+    "\"Maronite\" \"missal\" \"1816\" \"1838\""
+   ],
+   "url": null,
+   "checked_on": "2026-10-19",
+   "outcome": "Braidense OPAC record MILE040858 (Rome 1716, [84],[500] p.) and the Maronite Patriarchal Seminary catalogue (2005 Kitab al-Quddas, 1117 pp.; 2008 Sharar booklet).",
+   "extent_examined": "Returned result snippets only.",
+   "unexamined_range": "Braidense record not opened stably (dynamic redirect); no other Italian SBN holdings checked."
+  },
+  {
+   "repository": "Open web search",
+   "queries": [
+    "\"كتاب القداس\" \"المارونية\" filetype:pdf",
+    "\"Qurbono\" \"2005\" pdf",
+    "\"Maronite\" missal manuscripts \"1454\"",
+    "\"Missale Syriacum\" \"1763\" OR \"1762\""
+   ],
+   "url": null,
+   "checked_on": "2026-10-19",
+   "outcome": "Brooklyn eparchy introduction; De Luca 2023 dissertation (unrelated Arabic manuscripts); no public 2005 original PDF.",
+   "extent_examined": "Result snippets.",
+   "unexamined_range": "No public full scan of the 2005 or 1992 Arabic/Syriac books located; parish and diocesan PDF hosts not swept."
+  },
+  {
+   "repository": "Open web search",
+   "queries": [
+    "\"Missale\" \"Maronitarum\" \"1762\"",
+    "\"Syriaque 71\" missel",
+    "\"Missale syriacum\" \"1762\" Komarek",
+    "\"Missale syriacum\" \"Z221480402\""
+   ],
+   "url": "https://kulturpool.at/en/objects/0768fff1-e777-4cf9-8227-d1eba71cb708",
+   "checked_on": "2026-10-19",
+   "outcome": "Kulturpool and ONB record of the 1762 Komarek printing (barcode +Z221480402); Biblioteca Nacional (Brazil) printed catalogue snippet listing a 1762 Maronite missal; Near East School of Theology rare-book inventory listing 'Missale Syriacum; Syrorum Maronitarum', Rome 1762.",
+   "extent_examined": "Snippets plus the ONB manifest and complete image sequence.",
+   "unexamined_range": "No search for other 1762/1763 copies to test for variant issues (e.g. a 1763-dated title)."
+  },
+  {
+   "repository": "Open web search",
+   "queries": [
+    "\"Avant-Messe maronite\" pdf",
+    "\"كتاب القداس\" \"1888\"",
+    "\"كتاب القداس\" \"1959\" مارونية",
+    "\"Maronite\" \"1972\" \"Ordo\" missae",
+    "\"كتاب القداس\" \"1973\"",
+    "\"كتاب القداس\" \"1992\" بكركي"
+   ],
+   "url": "https://commons.ptsem.edu/id/avantmessemaroni0000pier",
+   "checked_on": "2026-10-19",
+   "outcome": "Gemayel 1965 located at Theological Commons and the Internet Archive and acquired whole; no public 1888, 1959, 1972, 1973 or 1992 book located.",
+   "extent_examined": "Snippets and the Theological Commons item page.",
+   "unexamined_range": "Lebanese library catalogues (USEK/Kaslik, NDU, AUB, Saint-Joseph) for 1959, 1973 and 1992 originals not searched."
+  },
+  {
+   "repository": "Open web search",
+   "queries": [
+    "\"كتاب القداس\" \"2005\" pdf مارونية",
+    "\"الماروني\" \"شرر\" \"2008\" كتاب",
+    "\"القداس\" \"2008\" \"بكركي\" كتاب",
+    "\"Maronite\" \"missal\" \"1888\" catalogue"
+   ],
+   "url": null,
+   "checked_on": "2026-10-19",
+   "outcome": "Seminary catalogue entries for 2005 (Tl 188 Ar) and the 2008 Sharar booklet (Tl 191 Ar); a 2005 parish excerpt of Sfeir's introduction.",
+   "extent_examined": "Snippets.",
+   "unexamined_range": "The 2005 original impression and any later reimpressions (a three-part retail listing reported by the cold reviewer) not examined."
+  },
+  {
+   "repository": "Austrian National Library IIIF",
+   "queries": [
+    "ABO_+Z221480402"
+   ],
+   "url": "https://api.onb.ac.at/iiif/presentation/v3/manifest/ABO_+Z221480402",
+   "checked_on": "2026-10-19",
+   "outcome": "Complete manifest and all 434 images acquired; title and approbation leaves read.",
+   "extent_examined": "Whole provider sequence acquired; selected leaves read; running heads of canvases 5-428 rendered.",
+   "unexamined_range": "Body not collated; anaphora headings not enumerated (Serto running heads not reliably read at the rendered size)."
+  },
+  {
+   "repository": "Vatican Library digital collections IIIF (digi.vatlib.it)",
+   "queries": [
+    "MSS_Vat.sir.309",
+    "MSS_Vat.sir.431"
+   ],
+   "url": "https://digi.vatlib.it/iiif/",
+   "checked_on": "2026-10-19",
+   "outcome": "Vat.sir.431: manifest and all 67 images acquired. Vat.sir.309: HTTP 404 (urllib, and curl re-probe on 2026-10-19).",
+   "extent_examined": "Two shelfmarks.",
+   "unexamined_range": "Florence BNCF Cl. III.74, III.75, III.79 (other parts of manuscript O), Vat.sir.29, 31, 32, 434 and Borgia manuscripts not sought."
+  },
+  {
+   "repository": "IRHT-CNRS Catalogue de manuscrits (Syriac)",
+   "queries": [
+    "62892",
+    "62902",
+    "62914",
+    "62925",
+    "62939",
+    "62950",
+    "62985",
+    "63018"
+   ],
+   "url": "https://syriac.msscatalog.irht.cnrs.fr/",
+   "checked_on": "2026-10-19",
+   "outcome": "Notices for BnF syr. 71, 72, 73, 74 and 79 retrieved; the identifiers tried for syr. 75-77 returned empty templates; cold reviewer separately retrieved syr. 78 (63000) and syr. 438 (65000).",
+   "extent_examined": "Seven identifiers by direct URL; no catalogue-wide search.",
+   "unexamined_range": "Correct notices for BnF syr. 75, 76, 77, 80 and 85 (Gemayel's Maronite missals) and all other BnF Syriac liturgical notices."
+  },
+  {
+   "repository": "Gallica (BnF)",
+   "queries": [
+    "btv1b10086508p",
+    "btv1b100902866",
+    "btv1b10528605x",
+    "btv1b10086175q"
+   ],
+   "url": "https://gallica.bnf.fr/",
+   "checked_on": "2026-10-19",
+   "outcome": "All manifest requests HTTP 403 (urllib by the previous agent; curl IIIF path re-probed by the finisher, also 403).",
+   "extent_examined": "Four arks linked from the IRHT notices.",
+   "unexamined_range": "Images of BnF syr. 71-74 not seen."
+  },
+  {
+   "repository": "Internet Archive advanced search",
+   "queries": [
+    "title:(missale syriacum) OR title:(maronite liturgy) OR title:(quddas)"
+   ],
+   "url": "https://archive.org/advancedsearch.php",
+   "checked_on": "2026-10-19",
+   "outcome": "5 hits; none is a Maronite missal edition.",
+   "extent_examined": "Complete response (rows=100).",
+   "unexamined_range": "Alternate forms not tried: 'Missale Chaldaicum', 'Liber oblationis', 'qurbono', 'Diaconale', Syriac and Arabic titles."
+  },
+  {
+   "repository": "Syrische Anaphoren project",
+   "queries": [
+    "feulner_1.pdf"
+   ],
+   "url": "https://syriac-anaphoras.org/catalogue/pdf/feulner_1.pdf",
+   "checked_on": "2026-10-19",
+   "outcome": "Whole bibliography acquired; anaphora counts per edition read.",
+   "extent_examined": "Whole 21-page file.",
+   "unexamined_range": "Other project catalogue excerpts besides Aleppo (read by the cold reviewer) and British Museum."
+  },
+  {
+   "repository": "Repository inventories and source library",
+   "queries": [
+    "gemayel",
+    "Z221480402",
+    "AC10127298",
+    "Vat.sir.431",
+    "feulner",
+    "659cd443def5729e659b3923",
+    "beggiani",
+    "maronite-church/qurbono"
+   ],
+   "url": null,
+   "checked_on": "2026-10-19",
+   "outcome": "Canonical Qurbono work with 1594 and 1908 editions only; Brightman 1896 vol. I canonical; no canonical identity for the 1762 book, Gemayel 1965, Vat.sir.431 or the 2005/2012 books.",
+   "extent_examined": "rg over src/sources (works and inventories).",
+   "unexamined_range": "None for this question."
+  }
+ ],
+ "versions": [
+  {
+   "id": "maronite-v-ms-paris71-1454",
+   "label": "Paris, BnF, syr. 71 (Anaphores et offices)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "5 December 1454",
+   "date_role": "manuscript-copying-colophon",
+   "record_class": "manuscript-witness",
+   "distinctness_basis": "Dated manuscript (copied by Georges of the village ḤDŠYT) listed by Gemayel among Maronite missals; a manuscript witness, not a promulgated version.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "maronite-acq-irht71"
+   ],
+   "unresolved": "Images blocked (Gallica 403); contents not collated. The 1992 introduction's 'Vat. 309' label for the 1454 manuscript conflicts with this identification.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-aleppo619-1490",
+   "label": "Aleppo, Maronite Archbishopric 619, missal",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1490",
+   "date_role": "manuscript-copying",
+   "record_class": "manuscript-witness",
+   "distinctness_basis": "Two independent routes (Gemayel 1965 p. IX; Río Sánchez excerpt) give 1490; anaphoras of John, Xystus, Peter, Dionysius, Twelve Apostles and Matthew.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Manuscript not seen; repertoire from catalogue excerpt only.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-paris73-1509",
+   "label": "Paris, BnF, syr. 73 (Recueil liturgique)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1509",
+   "date_role": "manuscript-copying-colophon",
+   "record_class": "manuscript-witness",
+   "distinctness_basis": "Dated manuscript copied for the monastery of Hawqa; listed by Gemayel among Maronite missals.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "maronite-acq-irht73"
+   ],
+   "unresolved": "Images blocked; contents not collated.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-paris79",
+   "label": "Paris, BnF, syr. 79 (Anaphores et liturgies)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1555 (Gemayel); sixteenth century, undated (IRHT)",
+   "date_role": "manuscript-copying-disputed",
+   "record_class": "manuscript-witness",
+   "distinctness_basis": "Xystus as first anaphora; Gemayel lists it as Maronite.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "maronite-acq-irht79"
+   ],
+   "unresolved": "Date conflict between Gemayel (1555) and the IRHT notice (undated, sixteenth century).",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-paris78-1573",
+   "label": "Paris, BnF, syr. 78 (Manuscrit liturgique avec anaphores)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1572-1578 (colophon probably 1573)",
+   "date_role": "manuscript-copying-colophon",
+   "record_class": "manuscript-witness",
+   "distinctness_basis": "Maronite colophon under Patriarch Mikhail Rizzi; 16-anaphora table.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Damaged colophon year; manuscript not seen.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-o-1566",
+   "label": "Mikhail al-Rizzi's manuscript O (Florence BNCF Cl. III.79 and III.74; Vatican Vat.sir.431)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1566",
+   "date_role": "manuscript-copying-reconstructed",
+   "record_class": "manuscript-witness",
+   "distinctness_basis": "Existing dossier stage maronite-ms1566 (Jabbour 2020). The lane acquired the Vat.sir.431 images, one of its reported parts.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "maronite-acq-vat431-images"
+   ],
+   "unresolved": "Vat.sir.431's membership in O and the 1566 date are Jabbour's reconstruction; Florence parts not sought. Gemayel lists BNCF III/79 as '1566?'.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-bkerke-115",
+   "label": "Bkerke 115, Maronite missal (Gemayel's list)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1501",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Listed by Gemayel 1965 (printed pp. IX-X) among Maronite manuscript missals before 1592; catalogue attestation only.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "maronite-acq-gemayel1965"
+   ],
+   "unresolved": "Holding-library record and images not sought; unexamined range: the holding library's own catalogue entry and digitization.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-bkerke-116",
+   "label": "Bkerke 116, Maronite missal (Gemayel's list)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "sixteenth century",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Listed by Gemayel 1965 (printed pp. IX-X) among Maronite manuscript missals before 1592; catalogue attestation only.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "maronite-acq-gemayel1965"
+   ],
+   "unresolved": "Holding-library record and images not sought; unexamined range: the holding library's own catalogue entry and digitization.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-bkerke-117",
+   "label": "Bkerke 117, Maronite missal (Gemayel's list)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "sixteenth century",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Listed by Gemayel 1965 (printed pp. IX-X) among Maronite manuscript missals before 1592; catalogue attestation only.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "maronite-acq-gemayel1965"
+   ],
+   "unresolved": "Holding-library record and images not sought; unexamined range: the holding library's own catalogue entry and digitization.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-bkerke-118",
+   "label": "Bkerke 118, Maronite missal (Gemayel's list)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1570",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Listed by Gemayel 1965 (printed pp. IX-X) among Maronite manuscript missals before 1592; catalogue attestation only.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "maronite-acq-gemayel1965"
+   ],
+   "unresolved": "Holding-library record and images not sought; unexamined range: the holding library's own catalogue entry and digitization.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-dimane-7",
+   "label": "Dimane 7, Maronite missal (Gemayel's list)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "fifteenth-sixteenth century",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Listed by Gemayel 1965 (printed pp. IX-X) among Maronite manuscript missals before 1592; catalogue attestation only.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "maronite-acq-gemayel1965"
+   ],
+   "unresolved": "Holding-library record and images not sought; unexamined range: the holding library's own catalogue entry and digitization.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-florence-laurenziana-or-409-olim-47",
+   "label": "Florence, Laurenziana Or. 409 (olim 47), Maronite missal (Gemayel's list)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "sixteenth century",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Listed by Gemayel 1965 (printed pp. IX-X) among Maronite manuscript missals before 1592; catalogue attestation only.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "maronite-acq-gemayel1965"
+   ],
+   "unresolved": "Holding-library record and images not sought; unexamined range: the holding library's own catalogue entry and digitization.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-florence-laurenziana-or-436-olim-54",
+   "label": "Florence, Laurenziana Or. 436 (olim 54), Maronite missal (Gemayel's list)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1543",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Listed by Gemayel 1965 (printed pp. IX-X) among Maronite manuscript missals before 1592; catalogue attestation only.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "maronite-acq-gemayel1965"
+   ],
+   "unresolved": "Holding-library record and images not sought; unexamined range: the holding library's own catalogue entry and digitization.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-munich-bayerische-staatsbibliothek-syr-5",
+   "label": "Munich, Bayerische Staatsbibliothek syr. 5, Maronite missal (Gemayel's list)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1548",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Listed by Gemayel 1965 (printed pp. IX-X) among Maronite manuscript missals before 1592; catalogue attestation only.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "maronite-acq-gemayel1965"
+   ],
+   "unresolved": "Holding-library record and images not sought; unexamined range: the holding library's own catalogue entry and digitization.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-paris-bnf-syr-77",
+   "label": "Paris, BnF, syr. 77, Maronite missal (Gemayel's list)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "fifteenth or sixteenth century",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Listed by Gemayel 1965 (printed pp. IX-X) among Maronite manuscript missals before 1592; catalogue attestation only.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "maronite-acq-gemayel1965"
+   ],
+   "unresolved": "Holding-library record and images not sought; unexamined range: the holding library's own catalogue entry and digitization.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-paris-bnf-syr-80",
+   "label": "Paris, BnF, syr. 80, Maronite missal (Gemayel's list)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1557",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Listed by Gemayel 1965 (printed pp. IX-X) among Maronite manuscript missals before 1592; catalogue attestation only.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "maronite-acq-gemayel1965"
+   ],
+   "unresolved": "Holding-library record and images not sought; unexamined range: the holding library's own catalogue entry and digitization.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-paris-bnf-syr-85",
+   "label": "Paris, BnF, syr. 85, Maronite missal (Gemayel's list)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "sixteenth century",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Listed by Gemayel 1965 (printed pp. IX-X) among Maronite manuscript missals before 1592; catalogue attestation only.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "maronite-acq-gemayel1965"
+   ],
+   "unresolved": "Holding-library record and images not sought; unexamined range: the holding library's own catalogue entry and digitization.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-vatican-vatsir29",
+   "label": "Vatican, Vat.sir.29, Maronite missal (Gemayel's list)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1535",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Listed by Gemayel 1965 (printed pp. IX-X) among Maronite manuscript missals before 1592; catalogue attestation only.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "maronite-acq-gemayel1965"
+   ],
+   "unresolved": "Holding-library record and images not sought; unexamined range: the holding library's own catalogue entry and digitization.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-vatican-vatsir31",
+   "label": "Vatican, Vat.sir.31, Maronite missal (Gemayel's list)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "fifteenth-sixteenth century (two parts, 31A and 31B 1576 in Gemayel's table)",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Listed by Gemayel 1965 (printed pp. IX-X) among Maronite manuscript missals before 1592; catalogue attestation only.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "maronite-acq-gemayel1965"
+   ],
+   "unresolved": "Holding-library record and images not sought; unexamined range: the holding library's own catalogue entry and digitization.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-vatican-vatsir32",
+   "label": "Vatican, Vat.sir.32, Maronite missal (Gemayel's list)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "fifteenth-sixteenth century (two parts)",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Listed by Gemayel 1965 (printed pp. IX-X) among Maronite manuscript missals before 1592; catalogue attestation only.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "maronite-acq-gemayel1965"
+   ],
+   "unresolved": "Holding-library record and images not sought; unexamined range: the holding library's own catalogue entry and digitization.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-vatican-vatsir434",
+   "label": "Vatican, Vat.sir.434, Maronite missal (Gemayel's list)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1541",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Listed by Gemayel 1965 (printed pp. IX-X) among Maronite manuscript missals before 1592; catalogue attestation only.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "maronite-acq-gemayel1965"
+   ],
+   "unresolved": "Holding-library record and images not sought; unexamined range: the holding library's own catalogue entry and digitization.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-venice-marciana-or-63",
+   "label": "Venice, Marciana Or. 63, Maronite missal (Gemayel's list)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1558",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Listed by Gemayel 1965 (printed pp. IX-X) among Maronite manuscript missals before 1592; catalogue attestation only.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "maronite-acq-gemayel1965"
+   ],
+   "unresolved": "Holding-library record and images not sought; unexamined range: the holding library's own catalogue entry and digitization.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-gemayel-diaconals",
+   "label": "Maronite manuscript diaconals: Florence Laurenziana 407 (before 1554), BnF syr. 87, Vat.sir.442, Borgia syr. 153",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "sixteenth to seventeenth century",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Complementary minister's books in manuscript, listed by Gemayel p. X.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "maronite-acq-gemayel1965"
+   ],
+   "unresolved": "Not sought in holding libraries.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-messe-assemani",
+   "label": "Assemani's eighteenth-century Mass project manuscripts (Vat.sir.298, 299, 459; Vat.ar.667; Maronite Hospice Rome 259)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "eighteenth century",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Gemayel lists them separately as 'Messe d'Assemani'; a scholarly or reform project, not shown to be an official book.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "maronite-acq-gemayel1965"
+   ],
+   "unresolved": "Nature, date and authority of the project not examined.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-aleppo602",
+   "label": "Aleppo, Maronite library 602",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "nineteenth century",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Eucharistic manuscript in the Río Sánchez catalogue excerpt (cold reviewer list).",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Catalogue excerpt only; anaphora selection, layers and use not examined; the full Aleppo catalogue beyond the excerpt is unexamined.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-aleppo603",
+   "label": "Aleppo, Maronite library 603",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "eighteenth century",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Eucharistic manuscript in the Río Sánchez catalogue excerpt (cold reviewer list).",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Catalogue excerpt only; anaphora selection, layers and use not examined; the full Aleppo catalogue beyond the excerpt is unexamined.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-aleppo604",
+   "label": "Aleppo, Maronite library 604",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1710",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Eucharistic manuscript in the Río Sánchez catalogue excerpt (cold reviewer list).",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Catalogue excerpt only; anaphora selection, layers and use not examined; the full Aleppo catalogue beyond the excerpt is unexamined.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-aleppo605",
+   "label": "Aleppo, Maronite library 605",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1688",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Eucharistic manuscript in the Río Sánchez catalogue excerpt (cold reviewer list).",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Catalogue excerpt only; anaphora selection, layers and use not examined; the full Aleppo catalogue beyond the excerpt is unexamined.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-aleppo606",
+   "label": "Aleppo, Maronite library 606",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "eighteenth century",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Eucharistic manuscript in the Río Sánchez catalogue excerpt (cold reviewer list).",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Catalogue excerpt only; anaphora selection, layers and use not examined; the full Aleppo catalogue beyond the excerpt is unexamined.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-aleppo607",
+   "label": "Aleppo, Maronite library 607",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1724",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Eucharistic manuscript in the Río Sánchez catalogue excerpt (cold reviewer list).",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Catalogue excerpt only; anaphora selection, layers and use not examined; the full Aleppo catalogue beyond the excerpt is unexamined.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-aleppo608",
+   "label": "Aleppo, Maronite library 608",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1727",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Eucharistic manuscript in the Río Sánchez catalogue excerpt (cold reviewer list).",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Catalogue excerpt only; anaphora selection, layers and use not examined; the full Aleppo catalogue beyond the excerpt is unexamined.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-aleppo611",
+   "label": "Aleppo, Maronite library 611",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1724",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Eucharistic manuscript in the Río Sánchez catalogue excerpt (cold reviewer list).",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Catalogue excerpt only; anaphora selection, layers and use not examined; the full Aleppo catalogue beyond the excerpt is unexamined.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-aleppo612",
+   "label": "Aleppo, Maronite library 612",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "eighteenth century",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Eucharistic manuscript in the Río Sánchez catalogue excerpt (cold reviewer list).",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Catalogue excerpt only; anaphora selection, layers and use not examined; the full Aleppo catalogue beyond the excerpt is unexamined.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-aleppo613",
+   "label": "Aleppo, Maronite library 613",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "eighteenth century",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Eucharistic manuscript in the Río Sánchez catalogue excerpt (cold reviewer list).",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Catalogue excerpt only; anaphora selection, layers and use not examined; the full Aleppo catalogue beyond the excerpt is unexamined.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-aleppo614",
+   "label": "Aleppo, Maronite library 614",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "nineteenth century",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Eucharistic manuscript in the Río Sánchez catalogue excerpt (cold reviewer list).",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Catalogue excerpt only; anaphora selection, layers and use not examined; the full Aleppo catalogue beyond the excerpt is unexamined.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-aleppo615",
+   "label": "Aleppo, Maronite library 615",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1681",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Eucharistic manuscript in the Río Sánchez catalogue excerpt (cold reviewer list).",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Catalogue excerpt only; anaphora selection, layers and use not examined; the full Aleppo catalogue beyond the excerpt is unexamined.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-aleppo617",
+   "label": "Aleppo, Maronite library 617",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "16[?]5",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Eucharistic manuscript in the Río Sánchez catalogue excerpt (cold reviewer list).",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Catalogue excerpt only; anaphora selection, layers and use not examined; the full Aleppo catalogue beyond the excerpt is unexamined.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-aleppo629",
+   "label": "Aleppo, Maronite library 629",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1607",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Eucharistic manuscript in the Río Sánchez catalogue excerpt (cold reviewer list).",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Catalogue excerpt only; anaphora selection, layers and use not examined; the full Aleppo catalogue beyond the excerpt is unexamined.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-aleppo630",
+   "label": "Aleppo, Maronite library 630",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1868",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Eucharistic manuscript in the Río Sánchez catalogue excerpt (cold reviewer list).",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Catalogue excerpt only; anaphora selection, layers and use not examined; the full Aleppo catalogue beyond the excerpt is unexamined.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-aleppo631",
+   "label": "Aleppo, Maronite library 631",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1737",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Eucharistic manuscript in the Río Sánchez catalogue excerpt (cold reviewer list).",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Catalogue excerpt only; anaphora selection, layers and use not examined; the full Aleppo catalogue beyond the excerpt is unexamined.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-aleppo1253",
+   "label": "Aleppo, Maronite library 1253",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1573",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Eucharistic manuscript in the Río Sánchez catalogue excerpt (cold reviewer list).",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Catalogue excerpt only; anaphora selection, layers and use not examined; the full Aleppo catalogue beyond the excerpt is unexamined.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-ms-paris438-1706",
+   "label": "Paris, BnF, syr. 438, Maronite Catholic missal",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "March 1706",
+   "date_role": "manuscript-copying-colophon",
+   "record_class": "manuscript-witness",
+   "distinctness_basis": "Post-print manuscript related by the catalogue to the 1594 printed missal with differences; witness to manuscript transmission after printing.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Catalogue only; differences from 1594 not examined.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-bkerke112-kreim",
+   "label": "Bkerke Patriarchal Library 112 and the Kreim (Lebanese Maronite Missionaries) anaphora collection",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "undated in inspected repertoire",
+   "date_role": "not-dated",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Cold supplement lead from the Syriac Anaphoras repertoire.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "AUB record b1299433 unreachable (DNS); no shelfmark, date or contents.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-paris72-1462",
+   "label": "Paris, BnF, syr. 72 (copied for Mar Dioscorus of Jerusalem)",
+   "tradition_or_use": "Shared West Syriac (Syriac Orthodox) comparison tradition; not a Maronite book",
+   "date_label": "26 June 1462",
+   "date_role": "manuscript-copying-colophon",
+   "record_class": "shared-ancestry-comparator",
+   "distinctness_basis": "Syriac Orthodox manuscript; Gemayel classes it as Jacobite. Keeps shared West Syriac ancestry distinct from Maronite books.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "maronite-acq-irht72"
+   ],
+   "unresolved": "Cross-lane (syriac_malankara); no Maronite reception inferred.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-paris74-1516",
+   "label": "Paris, BnF, syr. 74 (Recueil d'anaphores, Scetis)",
+   "tradition_or_use": "Shared West Syriac (Syriac Orthodox) comparison tradition; not a Maronite book",
+   "date_label": "1516",
+   "date_role": "manuscript-copying-colophon",
+   "record_class": "shared-ancestry-comparator",
+   "distinctness_basis": "Syriac Orthodox context (Deir al-Surian; priest of Damascus); not in Gemayel's Maronite list.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "maronite-acq-irht74"
+   ],
+   "unresolved": "Cross-lane; comparison only.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-add14690",
+   "label": "British Library Add. 14690, collection of anaphoras",
+   "tradition_or_use": "Shared West Syriac (Syriac Orthodox) comparison tradition; not a Maronite book",
+   "date_label": "1182",
+   "date_role": "manuscript-copying",
+   "record_class": "shared-ancestry-comparator",
+   "distinctness_basis": "Existing ancestry record; Gemayel 1965 (p. XI) uses it among Jacobite comparison missals in a Maronite study.",
+   "existing_candidate_ids": [
+    "syr-add14690-anaphoras"
+   ],
+   "acquisition_ids": [
+    "maronite-acq-gemayel1965"
+   ],
+   "unresolved": "Comparison status only; no Maronite reception or descent.",
+   "inventory_ids": [
+    "syr-add14690-anaphoras"
+   ]
+  },
+  {
+   "id": "maronite-v-add14523",
+   "label": "British Library Add. 14523 ff. 1-7, James fragments",
+   "tradition_or_use": "Shared West Syriac (Syriac Orthodox) comparison tradition; not a Maronite book",
+   "date_label": "eighth or ninth century",
+   "date_role": "manuscript-copying",
+   "record_class": "shared-ancestry-comparator",
+   "distinctness_basis": "Existing ancestry record; not among Gemayel's comparison manuscripts and no Maronite-specific evidence found in this lane.",
+   "existing_candidate_ids": [
+    "syr-add14523-james"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "No change proposed; Maronite relevance remains generic shared James ancestry.",
+   "inventory_ids": [
+    "syr-add14523-james"
+   ]
+  },
+  {
+   "id": "maronite-v-rome1592-1594",
+   "label": "Missale Chaldaicum iuxta ritum Ecclesiae nationis Maronitarum (Rome, Typographia Medicea)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1592 Syriac title; 1594 Latin title and colophon",
+   "date_role": "publication",
+   "record_class": "printed-edition-witness",
+   "distinctness_basis": "First printed Maronite missal; canonical scan; revision of institution and epiclesis described by Jabbour and Dib.",
+   "existing_candidate_ids": [
+    "mar-1592-94"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Body not collated; Feulner and Dib agree on 14 anaphoras.",
+   "inventory_ids": [
+    "mar-1592-94"
+   ]
+  },
+  {
+   "id": "maronite-v-rome1608-beta",
+   "label": "Missale Chaldaicum reissue with Du Perron preface, beta-group copies",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1608",
+   "date_role": "publication-reissue",
+   "record_class": "printed-reissue-variant",
+   "distinctness_basis": "Dossier stage maronite-rome1608-beta: changed commemorated names in Jabbour's beta copies; BnF RES M-B-3 notice reports textual changes.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "No 1608 copy acquired or collated; BnF copy's group unknown.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-1604-lead",
+   "label": "Reported Rome missal of 1604",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1604",
+   "date_role": "publication-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Cold reviewer's Nestle bibliography lead; possibly an alias of the 1608 reissue.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Not checked; unexamined range: Nestle's Syriac grammar bibliography p. 31 page image and any 1604-dated copy.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-rome1716",
+   "label": "Missale Syriacum juxta ritum Ecclesiae Antiochenae nationis Maronitarum (Rome, Propaganda Fide)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1716",
+   "date_role": "publication",
+   "record_class": "printed-edition-witness",
+   "distinctness_basis": "Second Roman edition; Roman anaphora added, Sharar removed (Dib, 1992 introduction). The 1762 approbation names this 1716 Propaganda Fide printing as the approved comparator.",
+   "existing_candidate_ids": [
+    "mar-1716"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "No copy acquired; anaphora count 14 (Dib, 1992 introduction) versus 13 (Feulner/Klampfl). Braidense MILE040858 remains a search-snippet lead.",
+   "inventory_ids": [
+    "mar-1716"
+   ]
+  },
+  {
+   "id": "maronite-v-diaconale-1596",
+   "label": "Liber ministri missae iuxta ritum Ecclesiae nationis Maronitarum (Rome)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1596",
+   "date_role": "publication",
+   "record_class": "complementary-volume",
+   "distinctness_basis": "Minister's (server and deacon) book complementary to the missal; Brightman and Gemayel independently list Rome 1596.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "No copy acquired; contents unexamined. Gemayel's added '1517' is not adopted as an edition.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-diaconale-1715",
+   "label": "Liber ministri missae, Rome",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1715",
+   "date_role": "publication-reported",
+   "record_class": "complementary-volume",
+   "distinctness_basis": "Brightman p. lvii lists Rome 1715.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Not acquired; possibly the source of Gemayel's '1517' (unproved). Unexamined range: holding-library catalogues.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-diaconale-1736",
+   "label": "Diaconale syriacum iuxta ritum Ecclesiae nationis Maronitarum, Rome",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1736",
+   "date_role": "publication-reported",
+   "record_class": "complementary-volume",
+   "distinctness_basis": "Brightman lists Rome 1736; Gemayel prints 'Qozhaya, 1736'. Place conflict preserved.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Place (Rome or Qozhaya) unresolved; not acquired.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-minister-1854",
+   "label": "Liber ministerii (Book of the Ministry), 1854",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1854",
+   "date_role": "publication-reported",
+   "record_class": "complementary-volume",
+   "distinctness_basis": "Gemayel lists Qozhaya 1854; the cold reviewer reports Nestle calling it the seventh edition.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Not acquired; Eucharistic extent and relation to ordination books unverified; Brightman says Qozhaya issued several editions, so further editions remain unlisted.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-minister-1870",
+   "label": "Liber ministerii (Book of the Ministry), 1870",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1870",
+   "date_role": "publication-reported",
+   "record_class": "complementary-volume",
+   "distinctness_basis": "Gemayel lists Tamish 1870.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Not acquired; Eucharistic extent and relation to ordination books unverified; Brightman says Qozhaya issued several editions, so further editions remain unlisted.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-minister-1888",
+   "label": "Liber ministerii (Book of the Ministry), 1888",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1888",
+   "date_role": "publication-reported",
+   "record_class": "complementary-volume",
+   "distinctness_basis": "Fortescue 1910 (cold supplement) lists a Beirut 1888 Book of the Minister.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Not acquired; Eucharistic extent and relation to ordination books unverified; Brightman says Qozhaya issued several editions, so further editions remain unlisted.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-minister-1896",
+   "label": "Liber ministerii (Book of the Ministry), 1896",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1896",
+   "date_role": "publication-reported",
+   "record_class": "complementary-volume",
+   "distinctness_basis": "Gemayel lists Qozhaya 1896; the synod text footnote 50 cites Qozhaya 1854 and 1896.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Not acquired; Eucharistic extent and relation to ordination books unverified; Brightman says Qozhaya issued several editions, so further editions remain unlisted.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-diaconale-1763-lead",
+   "label": "Reported revised Diaconale, 1763",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1763",
+   "date_role": "publication-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Cold reviewer lead from secondary search hits.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "No primary identification; unexamined range: Roman 1762-1763 imprints of the Typographia Linguarum Orientalium.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-rome1762-1763",
+   "label": "Missale Syriacum juxta ritum Ecclesiae Antiochenae nationis Syrorum Maronitarum (Rome, Typographia Linguarum Orientalium of Komarek)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "Title 1762; approbation 10 April 1763",
+   "date_role": "publication-title-imprint-and-approbation",
+   "record_class": "printed-edition-witness",
+   "distinctness_basis": "Third Roman edition. The ONB copy's title is dated MDCCLXII and its approbation 10 April 1763, so both dates are on the book itself. The approbation reports collation with and agreement with the 1716 missal, consistent with the 1992 introduction's statement that later editions copied 1716 apart from trimming.",
+   "existing_candidate_ids": [
+    "mar-1763"
+   ],
+   "acquisition_ids": [
+    "maronite-acq-onb1762-images",
+    "maronite-acq-onb1762-manifest"
+   ],
+   "unresolved": "Anaphora count (eight in the 1992 introduction; nine in Dib and Beggiani) still not counted from the acquired images. Whether some copies carry a 1763 title is unchecked. Brightman omits this edition.",
+   "inventory_ids": [
+    "mar-1763"
+   ]
+  },
+  {
+   "id": "maronite-v-qozhaya-1816",
+   "label": "Liber oblationis (Book of the Oblation), Qozhaya 1816",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1816",
+   "date_role": "publication-reported",
+   "record_class": "reported-printing-witness",
+   "distinctness_basis": "Qozhaya monastery printing reported by the 1992 introduction and Gemayel (and by Brightman for 1816, 1838, 1855); the introduction calls these copies of the second edition apart from trimming, while Brightman says the editions differ in the number and order of anaphoras.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "No copy acquired; distinctness unproved either way.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-qozhaya-1838",
+   "label": "Liber oblationis (Book of the Oblation), Qozhaya 1838",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1838",
+   "date_role": "publication-reported",
+   "record_class": "reported-printing-witness",
+   "distinctness_basis": "Qozhaya monastery printing reported by the 1992 introduction and Gemayel (and by Brightman for 1816, 1838, 1855); the introduction calls these copies of the second edition apart from trimming, while Brightman says the editions differ in the number and order of anaphoras. Brightman marks 1838 with a query for the placement of James.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "No copy acquired; distinctness unproved either way.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-qozhaya-1855",
+   "label": "Liber oblationis (Book of the Oblation), Qozhaya 1855",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1855",
+   "date_role": "publication-reported",
+   "record_class": "reported-printing-witness",
+   "distinctness_basis": "Qozhaya monastery printing reported by the 1992 introduction and Gemayel (and by Brightman for 1816, 1838, 1855); the introduction calls these copies of the second edition apart from trimming, while Brightman says the editions differ in the number and order of anaphoras. Brightman gives it a different title, 'The order of the oblation'.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "No copy acquired; distinctness unproved either way.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-qozhaya-1872",
+   "label": "Liber oblationis (Book of the Oblation), Qozhaya 1872",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1872",
+   "date_role": "publication-reported",
+   "record_class": "reported-printing-witness",
+   "distinctness_basis": "Qozhaya monastery printing reported by the 1992 introduction and Gemayel (and by Brightman for 1816, 1838, 1855); the introduction calls these copies of the second edition apart from trimming, while Brightman says the editions differ in the number and order of anaphoras. Not in Brightman.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "No copy acquired; distinctness unproved either way.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-lectionary-1841",
+   "label": "Qozhaya lectionary in Garshuni, 1841",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1841",
+   "date_role": "publication-reported",
+   "record_class": "complementary-volume",
+   "distinctness_basis": "Cold reviewer lead (Qatar National Library metadata; British Museum Arabic catalogue p. 960 also reported an 1855 Eucharist and Gospel edition).",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Not inspected; QNL page failed to open for the cold reviewer.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-dibs1888",
+   "label": "Beirut missal under Yusuf al-Dibs",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1888",
+   "date_role": "publication-reported",
+   "record_class": "printed-edition-witness",
+   "distinctness_basis": "Dibs reordered the anaphoras (Roman first) and amended the language (1992 introduction, Beggiani). Brightman and Gemayel independently list Beirut 1888.",
+   "existing_candidate_ids": [
+    "mar-dibs-1888"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "No copy acquired.",
+   "inventory_ids": [
+    "mar-dibs-1888"
+   ]
+  },
+  {
+   "id": "maronite-v-dibs1908",
+   "label": "Ketābā de-qurbānā (Beirut, Maronite Press, 1908, second printing)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1908",
+   "date_role": "publication",
+   "record_class": "printed-edition-witness",
+   "distinctness_basis": "Canonical Bonn scan; Feulner/Klampfl count 8 anaphoras.",
+   "existing_candidate_ids": [
+    "mar-dibs-1908"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "1888/1908 not compared.",
+   "inventory_ids": [
+    "mar-dibs-1908"
+   ]
+  },
+  {
+   "id": "maronite-v-jounieh1959",
+   "label": "Qurbono, first Arabic-alphabet edition (Jounieh, Lebanese Missionaries)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1959",
+   "date_role": "publication-reported",
+   "record_class": "printed-edition-witness",
+   "distinctness_basis": "Existing script-edition record.",
+   "existing_candidate_ids": [
+    "mar-1959"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Original not located; unexamined range: Lebanese library catalogues (Kaslik, NDU, Saint-Joseph).",
+   "inventory_ids": [
+    "mar-1959"
+   ]
+  },
+  {
+   "id": "maronite-v-experiment1972",
+   "label": "Roman experimental proposal (Congregation for the Eastern Churches)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1972",
+   "date_role": "attestation",
+   "record_class": "experimental-book",
+   "distinctness_basis": "Dossier provisional stage maronite-experiment1972 (Beggiani).",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Book and authorization missing.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-simple1973",
+   "label": "Simple Rite (abbreviated ritual), Maronite Patriarchate",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "decree 43/1973 of 13 April 1973",
+   "date_role": "approval-decree",
+   "record_class": "experimental-book",
+   "distinctness_basis": "The 2005 patriarchal introduction (read in the 2012 bilingual witness) gives the decree number and date and the one-year experimental term.",
+   "existing_candidate_ids": [
+    "mar-1973"
+   ],
+   "acquisition_ids": [
+    "maronite-acq-english2012"
+   ],
+   "unresolved": "Original booklet and decree not seen; anaphora identity unverified.",
+   "inventory_ids": [
+    "mar-1973"
+   ]
+  },
+  {
+   "id": "maronite-v-bkerke1992",
+   "label": "Book of Offering (Qurbono/Quddas), Bkerke",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1992 (introduction dated 31 July 1992)",
+   "date_role": "publication",
+   "record_class": "patriarchal-reform-edition",
+   "distinctness_basis": "Six-anaphora reform described by its commission chairman.",
+   "existing_candidate_ids": [
+    "mar-1992"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Original book and decree not acquired.",
+   "inventory_ids": [
+    "mar-1992"
+   ]
+  },
+  {
+   "id": "maronite-v-rubrics2002",
+   "label": "Kitab al-Rubrikat (Boutros Gemayel), Patriarchal Liturgical Commission, Beirut",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "2002",
+   "date_role": "publication-catalogued",
+   "record_class": "complementary-component-lead",
+   "distinctness_basis": "Episcopal Mass rubrics booklet (64 pp.) per the seminary catalogue subjects.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Contents and approval not inspected.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-synod2003-2006",
+   "label": "Maronite Patriarchal Synod, Text 12 (Liturgy)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "2003-2006",
+   "date_role": "attestation",
+   "record_class": "synodal-act",
+   "distinctness_basis": "Dossier stage maronite-synod2003-2006: book-use and celebration prescriptions; not a book edition.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "No new edition inferred.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-lectionary2004",
+   "label": "Bkerke lectionary, 2004 edition",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "2004",
+   "date_role": "publication-reported",
+   "record_class": "complementary-volume",
+   "distinctness_basis": "Cold supplement lead from a parish order PDF.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Native title and identity unverified.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-bkerke2005",
+   "label": "كتاب القدّاس بحسب طقس الكنيسة الأنطاكيّة السريانيّة المارونيّة (Kitab al-Quddas, Bkerke 2005), second edition of the renewed ritual",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "Decree 1512/2005 of 29 June 2005; use from the first Sunday of November 2005",
+   "date_role": "approval-decree-and-effective-date",
+   "record_class": "patriarchal-reform-edition",
+   "distinctness_basis": "The 2005 introduction calls it the second edition of the revised ritual with added Syriac texts; contents list eight anaphoras, adding John Chrysostom and John Maron to the six of 1992. Congregation approval letter 381/2003 of 17 April 2005.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "maronite-acq-english2012"
+   ],
+   "unresolved": "Original 2005 impression not acquired; evidence is a 2012 bilingual reproduction plus catalogue (1117 pp.). Whether the people's volume and the celebrant volume differ, and the reported three-part retail issue, are unexamined.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-gospel2005",
+   "label": "Kitab al-Injil al-taqsi (liturgical Gospel book), Bkerke",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "2005",
+   "date_role": "publication-reported",
+   "record_class": "complementary-volume",
+   "distinctness_basis": "Cold reviewer lead; complementary reading book.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Not inspected.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-translation2007",
+   "label": "Maronite liturgical biblical translation, second edition",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "2007",
+   "date_role": "publication-reported",
+   "record_class": "translation-witness-deferred",
+   "distinctness_basis": "Cold reviewer lead; Scripture translation history is deferred.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Not inspected.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-sharar2008",
+   "label": "كتاب القدّاس ... نافور مار بطرس الرسول (شرر), Patriarchal Commission for Liturgical Affairs, Beirut",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "2008",
+   "date_role": "publication-catalogued",
+   "record_class": "complementary-volume",
+   "distinctness_basis": "A separately catalogued 61-page booklet for the Sharar anaphora, not a complete second 2008 Qurbono.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Booklet not inspected; approval and relation to the 2005 book unknown.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-english2012",
+   "label": "Book of Offering according to the Rite of the Antiochene Syriac Maronite Church (English-speaking eparchies)",
+   "tradition_or_use": "Maronite English translation (deferred translation history)",
+   "date_label": "Decree 108/2012 of 30 August 2012; use from 4 November 2012",
+   "date_role": "approval-decree-and-effective-date",
+   "record_class": "translation-witness-deferred",
+   "distinctness_basis": "Approved translation of the 2005 book; not a new source recension.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "maronite-acq-english2012"
+   ],
+   "unresolved": "Translation history deferred by scope.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-three-parts-lead",
+   "label": "Bkerke 2005 Qurbono in three parts (retail listing dated 2018)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "2005 text; 2018 retail date",
+   "date_role": "publication-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Cold supplement lead; likely a format or reimpression.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Not examined; no evidence of a distinct text.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-beith2021",
+   "label": "Syriac Maronite Book of Offering, Season of Nativity (Beith Souryoyé Morounoyé)",
+   "tradition_or_use": "Private source compilation",
+   "date_label": "2021",
+   "date_role": "publication-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Private compilation following the 2005 and 2008 books; not an authorized recension.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "maronite-acq-unavailable-beith-preview"
+   ],
+   "unresolved": "Preview fetch failed (HTTP 406); not an official book.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-guide2025",
+   "label": "Samir G. Georges, Guide to the Traditional Syriac Maronite Liturgical Year and Lectionary, vol. 1",
+   "tradition_or_use": "Private reference compilation",
+   "date_label": "2025",
+   "date_role": "publication-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Cold supplement; private reference work.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Out of scope as an official book; preview only.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-morel1678",
+   "label": "Morel, Messe des Chaldéens et des Maronites du mont Liban (Paris [1678])",
+   "tradition_or_use": "French translation (deferred)",
+   "date_label": "[1678]",
+   "date_role": "publication-reported",
+   "record_class": "translation-witness-deferred",
+   "distinctness_basis": "Brightman p. lvii; historical lay translation.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Deferred by scope; not sought.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-heinz1996",
+   "label": "A. Heinz, Die Heilige Messe nach dem Ritus der Syrisch-maronitischen Kirche (Trier 1996)",
+   "tradition_or_use": "German translation (deferred)",
+   "date_label": "1996",
+   "date_role": "publication-reported",
+   "record_class": "translation-witness-deferred",
+   "distinctness_basis": "Feulner/Klampfl list it with six anaphoras.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Deferred by scope.",
+   "inventory_ids": []
+  },
+  {
+   "id": "maronite-v-anaphora-count-lead",
+   "label": "Anaphora repertoire of the 1762/1763 missal (count)",
+   "tradition_or_use": "Maronite Antiochene Qurbono",
+   "date_label": "1762-1763",
+   "date_role": "publication",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Eight (1992 introduction) versus nine (Dib, Beggiani) remains open.",
+   "existing_candidate_ids": [
+    "mar-1763"
+   ],
+   "acquisition_ids": [
+    "maronite-acq-onb1762-images"
+   ],
+   "unresolved": "Unexamined range: the anaphora headings in ONB canvases 5-415 (the acquired copy). A finisher sweep of running heads was started but the Serto heads were not reliably legible at the rendered size; no count is asserted.",
+   "inventory_ids": [
+    "mar-1763"
+   ]
+  }
+ ],
+ "acquisitions": [
+  {
+   "id": "maronite-acq-onb1762-images",
+   "original_url": "https://api.onb.ac.at/iiif/presentation/v3/manifest/ABO_+Z221480402",
+   "sha256": "7f15c2445d92fa4f84e3e676d23515ee878e460e1522d259d4db1bf559a53700",
+   "bytes": 532830838,
+   "pages": null,
+   "delivered_extent": "Stored ZIP of all 434 full-size IIIF images listed by the ONB manifest (canvases 1-434), one JPEG per canvas, 434 members. The same 434 JPEGs are also present loose in research/onb1762-images/ (001.jpg-434.jpg, 532,791,756 bytes); the finisher rehashed every loose image against onb1762-acquisition.json (434 of 434 match) and compared every ZIP member byte-for-byte with its loose file (all identical). Provider sequence is complete against the manifest; physical completeness of the copy was not collated.",
+   "identity_inspection": "Finisher viewed canvas 430 (title: MISSALE SYRIACUM JUXTA RITUM ECCLESIAE ANTIOCHENAE NATIONIS SYRORUM MARONITARUM with a Syriac title, 'ROMAE MDCCLXII. EX TYPOGRAPHIA LINGUARUM ORIENTALIUM KOMAREK AD ORATORIUM SANCTI MARCELLI', 'Superiorum facultate'); canvas 432 (Latin half-title); canvas 3 (two 'Reimprimatur' formulas and an 'Approbatio' signed by J. S. Assemani, Prefect of the Vatican Library, dated in the Vatican Library 10 April 1763, stating that the missal was collated with the missal printed by Propaganda Fide in 1716 and found to agree with it); canvas 4 (a Syriac-script text page with ornaments, the catchword REIM. and the ONB stamp; text not read); canvases 5, 415, 424-428 (Syriac and Garshuni body pages, a two-column reading table and computus tables); contact sheets of all canvases and running-head strips of canvases 5-428. The previous agent viewed canvases 1, 4-6, 426-432.",
+   "rights_basis": "Underlying book printed at Rome in 1762 (approbation 1763): public domain everywhere by age. Digitization: Austrian National Library, Austrian Books Online (Google partnership); the IIIF manifest declares rights https://rightsstatements.org/vocab/NoC-NC/1.0/ and states that restrictions on commercial re-use of the digital object expire on 2031-03-11. Provider page: https://www.onb.ac.at/en/digital-offers/austrian-books-online. The repository's settled reading of Google-partnership usage requests is in src/sources/inventories/google-usage-guidelines-rights-v1.toml; the root must confirm whether it applies to this ONB NoC-NC statement.",
+   "proposed_storage": "remote",
+   "storage_reason": "Measured size 532,830,838 bytes for the ZIP (plus an identical 532,791,756 bytes of loose images): a size argument under guidance/sources.md. The provider route is a stable institutional IIIF manifest with per-image URLs recorded in onb1762-acquisition.json. If the root prefers retention, the title, approbation and contents leaves could be retained as a derivative once the NoC-NC reading is settled.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-onb1762-image-receipts",
+   "original_url": "https://api.onb.ac.at/iiif/presentation/v3/manifest/ABO_+Z221480402",
+   "sha256": "0394b78c0bf28b4f88ed709cbcdd22b87306ac811520ef47df9c43d6cc3833e2",
+   "bytes": 148318,
+   "pages": null,
+   "delivered_extent": "Per-image receipt list written by the previous agent: 434 entries with canvas number, image URL, local path, SHA-256 and bytes; all marked acquired.",
+   "identity_inspection": "Read in full by script; every entry rehashed by the finisher.",
+   "rights_basis": "Project-created research receipt written by the previous lane agent; no third-party content beyond URLs and hashes.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Project receipt superseded by this packet's acquisition record; no independent value once integrated.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-onb1762-manifest",
+   "original_url": "https://api.onb.ac.at/iiif/presentation/v3/manifest/ABO_+Z221480402",
+   "sha256": "4a6c3c9a869a6af572aa32e6411fd8acae2769a4db066a4ff3e8a4fa18489838",
+   "bytes": 798433,
+   "pages": null,
+   "delivered_extent": "Complete IIIF Presentation 3 manifest (434 canvases, viewing direction right-to-left) with metadata: title, publisher Komarek, place Romae, year 1762, shelfmark 22.D.32 ALT PRUNK, IDNR AC10127298, barcode +Z221480402, digitized 2016-01-11 with Google.",
+   "identity_inspection": "Metadata block and canvas list read by script.",
+   "rights_basis": "Underlying book printed at Rome in 1762 (approbation 1763): public domain everywhere by age. Digitization: Austrian National Library, Austrian Books Online (Google partnership); the IIIF manifest declares rights https://rightsstatements.org/vocab/NoC-NC/1.0/ and states that restrictions on commercial re-use of the digital object expire on 2031-03-11. Provider page: https://www.onb.ac.at/en/digital-offers/austrian-books-online. The repository's settled reading of Google-partnership usage requests is in src/sources/inventories/google-usage-guidelines-rights-v1.toml; the root must confirm whether it applies to this ONB NoC-NC statement.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Machine metadata whose evidential content is restated in this packet; no reuse terms were checked for the manifest itself.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-onb1762-manifest-duplicate",
+   "original_url": "https://api.onb.ac.at/iiif/presentation/v3/manifest/ABO_+Z221480402",
+   "sha256": "4a6c3c9a869a6af572aa32e6411fd8acae2769a4db066a4ff3e8a4fa18489838",
+   "bytes": 798433,
+   "pages": null,
+   "delivered_extent": "Byte-identical duplicate of onb1762.json (same SHA-256), written by an earlier curl call.",
+   "identity_inspection": "Hash comparison only.",
+   "rights_basis": "Underlying book printed at Rome in 1762 (approbation 1763): public domain everywhere by age. Digitization: Austrian National Library, Austrian Books Online (Google partnership); the IIIF manifest declares rights https://rightsstatements.org/vocab/NoC-NC/1.0/ and states that restrictions on commercial re-use of the digital object expire on 2031-03-11. Provider page: https://www.onb.ac.at/en/digital-offers/austrian-books-online. The repository's settled reading of Google-partnership usage requests is in src/sources/inventories/google-usage-guidelines-rights-v1.toml; the root must confirm whether it applies to this ONB NoC-NC statement.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Duplicate bytes; reuse onb1762.json.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-onb1762-viewer-shell",
+   "original_url": "https://data.onb.ac.at/ABO/%2BZ221480402",
+   "sha256": "7482180e43c247af54d7d832a6d75e2028ef5fb56d659f5c5cd9f0d1f5c3cd2c",
+   "bytes": 1667,
+   "pages": null,
+   "delivered_extent": "ONB viewer application shell only (redirect target https://viewer.onb.ac.at/ABO_+Z221480402); contains no book content.",
+   "identity_inspection": "Read as text: script-driven viewer page whose configuration names the IIIF manifest endpoint.",
+   "rights_basis": "ONB web application shell page (HTML and script references only); ONB site terms https://www.onb.ac.at/en/legal-notice ; no content of the book.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No evidential content.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-onb-pdf-service-shell",
+   "original_url": "https://pdf-service.onb.ac.at/1082C8FC",
+   "sha256": "1a5c0780df9dfd56a8034a3197292c8c3c78387e072cc518880943d16b464a41",
+   "bytes": 1089,
+   "pages": null,
+   "delivered_extent": "ONB PDF service application shell only; no PDF was delivered to a non-browser client (re-probed by the finisher with curl: HTTP 200, text/html).",
+   "identity_inspection": "Read as text: a script-driven download page; no PDF bytes.",
+   "rights_basis": "ONB web application shell page (HTML and script references only); ONB site terms https://www.onb.ac.at/en/legal-notice ; no content of the book.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No evidential content; the complete image sequence was taken from IIIF instead.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-vat431-images",
+   "original_url": "https://digi.vatlib.it/iiif/MSS_Vat.sir.431/manifest.json",
+   "sha256": "db07b3c7bd158d89e45dc5ec6e79e5c4325e19aeb540a7911e287ddb7cb4f0a7",
+   "bytes": 30194418,
+   "pages": null,
+   "delivered_extent": "Stored ZIP of all 67 images listed by the BAV IIIF manifest for Vat.sir.431 (requested at full/full), 67 members; the same JPEGs are loose in research/vat431-images/ (30,188,366 bytes). Image 1 is the BAV shelfmark card (684 x 985 px); images 2-67 are two-page openings (about 2061 x 1680 px). All 67 loose images rehashed against vat431-acquisition.json and all ZIP members byte-identical.",
+   "identity_inspection": "Finisher viewed a contact sheet of all 67 images: shelfmark card 'Vat.sir.431'; Syriac manuscript openings with red rubrics, decorated section headings and visible marginal corrections and cancellations on several openings. Jabbour's folio 45r epiclesis layer was not located or read; no colophon was identified on the inspected images.",
+   "rights_basis": "Underlying manuscript (sixteenth century, attributed to 1566 by Jabbour 2020) is public domain by age. Digitization: Biblioteca Apostolica Vaticana; the IIIF manifest carries the attribution 'Images Copyright Biblioteca Apostolica Vaticana' and every image carries a copyright banner. No reuse licence was found; BAV reproduction terms (https://www.vaticanlibrary.va/) were not retrieved in this pass.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Provider asserts copyright in the images; lawful scratch reading only. 30,194,418 bytes.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-vat431-image-receipts",
+   "original_url": "https://digi.vatlib.it/iiif/MSS_Vat.sir.431/manifest.json",
+   "sha256": "3e6bbe31c2a6644c9f7a19328cfbe075347296055278cb5fee0c9f0d7913a778",
+   "bytes": 22763,
+   "pages": null,
+   "delivered_extent": "Per-image receipt list (67 entries, all with SHA-256 and bytes).",
+   "identity_inspection": "Read in full by script; every entry rehashed.",
+   "rights_basis": "Project-created research receipt written by the previous lane agent; no third-party content beyond URLs and hashes.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Superseded by this packet.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-vat431-manifest",
+   "original_url": "https://digi.vatlib.it/iiif/MSS_Vat.sir.431/manifest.json",
+   "sha256": "674d2b70ffe2bc4a0acad5a3a29b27fb297f911e6824192a1b26b46f29641c7a",
+   "bytes": 81963,
+   "pages": null,
+   "delivered_extent": "Complete IIIF Presentation 2 manifest: label Vat.sir.431, 67 canvases, viewing direction right-to-left; no date or contents metadata.",
+   "identity_inspection": "Read by script.",
+   "rights_basis": "Underlying manuscript (sixteenth century, attributed to 1566 by Jabbour 2020) is public domain by age. Digitization: Biblioteca Apostolica Vaticana; the IIIF manifest carries the attribution 'Images Copyright Biblioteca Apostolica Vaticana' and every image carries a copyright banner. No reuse licence was found; BAV reproduction terms (https://www.vaticanlibrary.va/) were not retrieved in this pass.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Machine metadata; evidential content restated here.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-gemayel1965",
+   "original_url": "https://archive.org/download/avantmessemaroni0000pier/avantmessemaroni0000pier.pdf",
+   "sha256": "237b1d7ba682da76e7dc6711d997f80038c4dd969518b72316d49b42d145e62e",
+   "bytes": 25513177,
+   "pages": 384,
+   "delivered_extent": "Whole Internet Archive PDF, 384 pages; MD5 equals the IA file list value (2068ce7e2ebdccd4b854ed718cb00522), so the delivery is complete against the provider's stated file.",
+   "identity_inspection": "Finisher viewed PDF pages 3, 5 and 7 (ex-libris of the Beth Mardutho Library; half-title; title page: Orientalia Christiana Analecta 174, Pierre-Edmond Gemayel, Avant-Messe maronite: histoire et structure, Rome, Pont. Institutum Orientalium Studiorum, 1965), PDF 11 (printed IX, list of Maronite manuscript missals) and PDF 14 (printed XII, list of printed Maronite liturgical books). The previous agent and the cold reviewer also viewed PDF 11-13 and 62-65.",
+   "rights_basis": "Modern scholarly monograph (Rome, Pontificium Institutum Orientalium Studiorum, 1965; Orientalia Christiana Analecta 174), presumed in copyright. Digitized by Princeton Theological Seminary for Beth Mardutho and delivered by the Internet Archive; Theological Commons labels it 'Copyright Not Evaluated' (https://rightsstatements.org/vocab/CNE/1.0/) for education and research; Internet Archive terms https://archive.org/about/terms.php. No redistribution basis.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Modern in-copyright monograph without a redistribution basis; 25,513,177 bytes.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-gemayel1965-ocr",
+   "original_url": "https://archive.org/download/avantmessemaroni0000pier/avantmessemaroni0000pier_djvu.txt",
+   "sha256": "21a3c116ab2f709a3771e1e115ea28ab4b00c606da79501609d61f691f6f15c5",
+   "bytes": 755947,
+   "pages": null,
+   "delivered_extent": "Whole IA OCR text layer; MD5 equals the IA file list value (6057f97d345174350fe60c846165ea3f).",
+   "identity_inspection": "Searched for manuscript and edition lists; readings used here were checked on page images.",
+   "rights_basis": "Modern scholarly monograph (Rome, Pontificium Institutum Orientalium Studiorum, 1965; Orientalia Christiana Analecta 174), presumed in copyright. Digitized by Princeton Theological Seminary for Beth Mardutho and delivered by the Internet Archive; Theological Commons labels it 'Copyright Not Evaluated' (https://rightsstatements.org/vocab/CNE/1.0/) for education and research; Internet Archive terms https://archive.org/about/terms.php. No redistribution basis.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Derivative of an in-copyright work; discovery aid only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-gemayel1965-layout",
+   "original_url": "",
+   "sha256": "2746555a137dc7cd9faa9f0dbaa09979074580553cd3a74bc900b81e72437831",
+   "bytes": 736177,
+   "pages": null,
+   "delivered_extent": "Local pdftotext -layout derivative of gemayel1965.pdf made by the previous agent (form-feed separated pages).",
+   "identity_inspection": "Used only to locate pages.",
+   "rights_basis": "Modern scholarly monograph (Rome, Pontificium Institutum Orientalium Studiorum, 1965; Orientalia Christiana Analecta 174), presumed in copyright. Digitized by Princeton Theological Seminary for Beth Mardutho and delivered by the Internet Archive; Theological Commons labels it 'Copyright Not Evaluated' (https://rightsstatements.org/vocab/CNE/1.0/) for education and research; Internet Archive terms https://archive.org/about/terms.php. No redistribution basis.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Derivative made by the previous lane agent from a scratch-only parent; it inherits the parent's missing distribution basis.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-gemayel-ia-metadata",
+   "original_url": "https://archive.org/metadata/avantmessemaroni0000pier",
+   "sha256": "51b083fa59dd77908081e34a9c90e86e83d0b889694bbac2d3b95cf778298020",
+   "bytes": 72973,
+   "pages": null,
+   "delivered_extent": "Complete IA metadata response: title, creator, date 1965, publisher, imagecount 386, collections bethmardutho/Princeton, file list with sizes and checksums.",
+   "identity_inspection": "Read by script; used to confirm complete delivery of the PDF and OCR.",
+   "rights_basis": "Internet Archive metadata or search API response (factual bibliographic data); Internet Archive terms https://archive.org/about/terms.php.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Factual metadata restated here; retention unnecessary.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-english2012",
+   "original_url": "https://storage.googleapis.com/msgsndr/4i0JNb0UR6ufHm8Td6cd/media/659cd443def5729e659b3923.pdf",
+   "sha256": "bcf2db1c7acacf9f3817250fd6513055797e0632a1efb7a247212239213d1b41",
+   "bytes": 11029859,
+   "pages": 1936,
+   "delivered_extent": "Whole delivered PDF, 1,936 pages (InDesign export, created 7 September 2012, modified 29 November 2012): the English Book of Offering with parallel Arabic/Syriac, including the 2012 English decree, the 2005 Arabic and English decree, the 2005 patriarchal introduction, rules and the anaphora contents. The host does not state whether this is the complete published book; the internal contents and general index run to the end.",
+   "identity_inspection": "Finisher viewed PDF pages 1 (title: Book of Offering according to the Rite of the Antiochene Syriac Maronite Church, Arabic title Kitab al-Quddas, 'According to the Bkerke 2005 Edition', 2012), 2 (Patriarchal decree, Book of Records 108/2012, Bkerke 30 August 2012, English use from 4 November 2012), 4 (Protocol 1512/2005, English) and 5 (the same decree in Arabic, register of delegations 1512/2005, dated 29 June 2005, signed by Cardinal Sfeir). Introduction pages and the anaphora contents (PDF 1552) were read in the text layer; the cold reviewer viewed PDF 1552-1553 and 1701.",
+   "rights_basis": "Modern copyrighted liturgical translation (Book of Offering, 2012, English-speaking Maronite eparchies); the book itself reserves rights in the Revised Grail Psalms (2010, Conception Abbey/The Grail, GIA Publications). Hosted on a parish media store (storage.googleapis.com); no host terms page was located. No redistribution basis.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Modern copyrighted translation; no redistribution basis. 11,029,859 bytes.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-english2012-text",
+   "original_url": "",
+   "sha256": "a9447b04495d624139c37d37a44cae7fb01c09dee6b4cec1f07a890a508574a1",
+   "bytes": 5535162,
+   "pages": null,
+   "delivered_extent": "Local pdftotext -layout derivative of english2012.pdf (whole file).",
+   "identity_inspection": "Searched for decree, introduction and contents; checked against page images for the decrees.",
+   "rights_basis": "Modern copyrighted liturgical translation (Book of Offering, 2012, English-speaking Maronite eparchies); the book itself reserves rights in the Revised Grail Psalms (2010, Conception Abbey/The Grail, GIA Publications). Hosted on a parish media store (storage.googleapis.com); no host terms page was located. No redistribution basis.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Derivative made by the previous lane agent from a scratch-only parent; it inherits the parent's missing distribution basis.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-english2012-inspection",
+   "original_url": "",
+   "sha256": "f498a8a61076e296e1a61a34ff0e5296c5ebf3f2ee42eec6ad5593369c249f34",
+   "bytes": 43313579,
+   "pages": 18,
+   "delivered_extent": "Local 18-page extract (PDF pages 1-11, 1450, 1500, 1600, 1700, 1934-1936 of english2012.pdf) made with pdfseparate/pdfunite for viewing.",
+   "identity_inspection": "Rendered pages in research/visual/english2012-01..18.png were viewed by the previous agent and the cold reviewer.",
+   "rights_basis": "Modern copyrighted liturgical translation (Book of Offering, 2012, English-speaking Maronite eparchies); the book itself reserves rights in the Revised Grail Psalms (2010, Conception Abbey/The Grail, GIA Publications). Hosted on a parish media store (storage.googleapis.com); no host terms page was located. No redistribution basis.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Derivative made by the previous lane agent from a scratch-only parent; it inherits the parent's missing distribution basis.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-beggiani-inspection",
+   "original_url": "",
+   "sha256": "a3772a54d2c8ecaa44136748082ee8d5bb1dcb9b251b7d769b8534f009a768e3",
+   "bytes": 1573555,
+   "pages": 6,
+   "delivered_extent": "Local 6-page extract (pages 94-99) of an untracked workspace scratch copy (Beggiani 1998, an earlier lane's scratch download).",
+   "identity_inspection": "Rendered as research/visual/beggiani-1..6.png by the previous agent; the finisher did not rely on it for new claims.",
+   "rights_basis": "Modern copyrighted scholarship (Saint Maron Publications, 1998); no redistribution basis.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Derivative made by the previous lane agent from a scratch-only parent; it inherits the parent's missing distribution basis.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-stmaron-intro1992",
+   "original_url": "https://www.stmaron.org/qurbono",
+   "sha256": "59451afc69429ad5875a31197f621db71940a34f104a41ee1f19498074aed210",
+   "bytes": 167857,
+   "pages": null,
+   "delivered_extent": "Complete HTML response (167,857 bytes) of the eparchy page reproducing the English translation of the 1992 general introduction.",
+   "identity_inspection": "Finisher read the extracted text of the sections 'First Edition of the Book of the Maronite Qurbono', 'The Succeeding Editions', 'Projects of the Reform' and 'The Current Project'.",
+   "rights_basis": "Modern copyrighted English translation (1992 introduction by Boutros Gemayel, translated by Stephen Hector Doueihi) on the Eparchy of Saint Maron of Brooklyn website (https://www.stmaron.org/); no reuse licence found. Lawful reading only.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Copyright translation on a third-party site; lawful reading only. Existing inventory source 'maronite' already cites this URL.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-domus",
+   "original_url": "https://domvsdei.com/rites/maronite/",
+   "sha256": "f1c74170a977691f0247ff639145555b9ae2bcecdcec96ea352b5238cd8d4774",
+   "bytes": 640109,
+   "pages": null,
+   "delivered_extent": "Complete HTML response (640,109 bytes).",
+   "identity_inspection": "Read the source notes for the 2005 people's volume. Treated as a discovery lead only: the cold reviewer flagged it as potentially derived from this project's own research, and its page-level claims were not used without independent corroboration.",
+   "rights_basis": "Third-party website page (Domus Dei, https://domvsdei.com/rites/maronite/), modern copyrighted editorial text; no reuse licence found.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Third-party copyrighted page; discovery aid only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-feulner-klampfl",
+   "original_url": "https://syriac-anaphoras.org/catalogue/pdf/feulner_1.pdf",
+   "sha256": "98df38704beca55e46baa4a251790382b2a71f2f1fc153dfb7c832ab91006585",
+   "bytes": 135903,
+   "pages": 21,
+   "delivered_extent": "Whole delivered PDF, 21 pages: Thomas Klampfl's 2008 working bibliography for the Syrische Anaphoren project, based on Feulner 2000.",
+   "identity_inspection": "Finisher read the text layer: edition list with anaphora counts (Rome 1592-94, 14; Rome 1716, 13; Beirut 1908, 8) and the entry for the anaphora of John Maron (Beirut 1908, pp. 126-141).",
+   "rights_basis": "Modern working bibliography (Thomas Klampfl, 2008) distributed by the Syrische Anaphoren project (https://syriac-anaphoras.org/); summarizes Feulner 2000. No reuse licence found.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Modern working document; no reuse licence. 135,903 bytes.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-irht71",
+   "original_url": "https://syriac.msscatalog.irht.cnrs.fr/62892",
+   "sha256": "0a67849deaee042c784a8640130f99ce75691a8a7cbe0850a70d847da5dd39c1",
+   "bytes": 23104,
+   "pages": null,
+   "delivered_extent": "Complete HTML notice for Paris, BnF, syr. 071 (5 December 1454).",
+   "identity_inspection": "Finisher read the extracted text: shelfmark, date, contents, history and colophon sections.",
+   "rights_basis": "Modern catalogue notices of the IRHT-CNRS 'Catalogue de manuscrits' (Syriac); the notice names its author. No reuse licence was checked for the notice text (https://syriac.msscatalog.irht.cnrs.fr/). Only factual metadata and short paraphrase are used.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue notice without a checked reuse licence; factual content restated in this packet.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-irht71-text",
+   "original_url": "",
+   "sha256": "66367596001d63994d66b43647c5508ca794c618555cee619a659cbd814d75b0",
+   "bytes": 9940,
+   "pages": null,
+   "delivered_extent": "Local text extraction of irht71.html made by the previous agent.",
+   "identity_inspection": "Used for searching only.",
+   "rights_basis": "Modern catalogue notices of the IRHT-CNRS 'Catalogue de manuscrits' (Syriac); the notice names its author. No reuse licence was checked for the notice text (https://syriac.msscatalog.irht.cnrs.fr/). Only factual metadata and short paraphrase are used.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Derivative made by the previous lane agent from a scratch-only parent; it inherits the parent's missing distribution basis.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-irht72",
+   "original_url": "https://syriac.msscatalog.irht.cnrs.fr/62902",
+   "sha256": "227c4af5e4b485dd363f382b89c5fc81c5d8cb33ded284d5f073114ea6d69cdc",
+   "bytes": 23159,
+   "pages": null,
+   "delivered_extent": "Complete HTML notice for Paris, BnF, syr. 072 (1462).",
+   "identity_inspection": "Finisher read the extracted text: shelfmark, date, contents, history and colophon sections.",
+   "rights_basis": "Modern catalogue notices of the IRHT-CNRS 'Catalogue de manuscrits' (Syriac); the notice names its author. No reuse licence was checked for the notice text (https://syriac.msscatalog.irht.cnrs.fr/). Only factual metadata and short paraphrase are used.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue notice without a checked reuse licence; factual content restated in this packet.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-irht72-text",
+   "original_url": "",
+   "sha256": "e7dcc4eb8afdece2f0ea2c16af494fe3cac87a28793227b2982aa83409a5552b",
+   "bytes": 9843,
+   "pages": null,
+   "delivered_extent": "Local text extraction of irht72.html made by the previous agent.",
+   "identity_inspection": "Used for searching only.",
+   "rights_basis": "Modern catalogue notices of the IRHT-CNRS 'Catalogue de manuscrits' (Syriac); the notice names its author. No reuse licence was checked for the notice text (https://syriac.msscatalog.irht.cnrs.fr/). Only factual metadata and short paraphrase are used.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Derivative made by the previous lane agent from a scratch-only parent; it inherits the parent's missing distribution basis.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-irht73",
+   "original_url": "https://syriac.msscatalog.irht.cnrs.fr/62914",
+   "sha256": "2873468ad29c5eb8a02a47acbd9909603b67a5dd53cfeb974c3c506415c2060f",
+   "bytes": 19545,
+   "pages": null,
+   "delivered_extent": "Complete HTML notice for Paris, BnF, syr. 073 (1509).",
+   "identity_inspection": "Finisher read the extracted text: shelfmark, date, contents, history and colophon sections.",
+   "rights_basis": "Modern catalogue notices of the IRHT-CNRS 'Catalogue de manuscrits' (Syriac); the notice names its author. No reuse licence was checked for the notice text (https://syriac.msscatalog.irht.cnrs.fr/). Only factual metadata and short paraphrase are used.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue notice without a checked reuse licence; factual content restated in this packet.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-irht73-text",
+   "original_url": "",
+   "sha256": "eaac41469feca163b0f39597925d6c4b12ecdc87c5a5c26b2988305fa61b6f8b",
+   "bytes": 7653,
+   "pages": null,
+   "delivered_extent": "Local text extraction of irht73.html made by the previous agent.",
+   "identity_inspection": "Used for searching only.",
+   "rights_basis": "Modern catalogue notices of the IRHT-CNRS 'Catalogue de manuscrits' (Syriac); the notice names its author. No reuse licence was checked for the notice text (https://syriac.msscatalog.irht.cnrs.fr/). Only factual metadata and short paraphrase are used.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Derivative made by the previous lane agent from a scratch-only parent; it inherits the parent's missing distribution basis.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-irht74",
+   "original_url": "https://syriac.msscatalog.irht.cnrs.fr/62925",
+   "sha256": "eb446f13288cdc84101e0cbc8b7c1cf01816d42b55a4b062f609e6fb62cb76f8",
+   "bytes": 26065,
+   "pages": null,
+   "delivered_extent": "Complete HTML notice for Paris, BnF, syr. 074 (1516).",
+   "identity_inspection": "Finisher read the extracted text: shelfmark, date, contents, history and colophon sections.",
+   "rights_basis": "Modern catalogue notices of the IRHT-CNRS 'Catalogue de manuscrits' (Syriac); the notice names its author. No reuse licence was checked for the notice text (https://syriac.msscatalog.irht.cnrs.fr/). Only factual metadata and short paraphrase are used.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue notice without a checked reuse licence; factual content restated in this packet.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-irht74-text",
+   "original_url": "",
+   "sha256": "aa9eff54c03d87d1aab6275442c00c99027f7b638baea8259fa32bdc35ea8e41",
+   "bytes": 12248,
+   "pages": null,
+   "delivered_extent": "Local text extraction of irht74.html made by the previous agent.",
+   "identity_inspection": "Used for searching only.",
+   "rights_basis": "Modern catalogue notices of the IRHT-CNRS 'Catalogue de manuscrits' (Syriac); the notice names its author. No reuse licence was checked for the notice text (https://syriac.msscatalog.irht.cnrs.fr/). Only factual metadata and short paraphrase are used.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Derivative made by the previous lane agent from a scratch-only parent; it inherits the parent's missing distribution basis.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-irht79",
+   "original_url": "https://syriac.msscatalog.irht.cnrs.fr/63018",
+   "sha256": "062c654d120a2e019510f6e4b89fb48c926b50d95b0180913bcbf07c567d3c83",
+   "bytes": 23558,
+   "pages": null,
+   "delivered_extent": "Complete HTML notice for Paris, BnF, syr. 079 (sixteenth century). An earlier fetch-second receipt recorded this same response (same SHA-256) under the name irht72.html before that file was overwritten with the syr. 72 notice.",
+   "identity_inspection": "Finisher read the extracted text: undated, Zotenberg's sixteenth-century estimate, contents beginning with the first part of the Mass and the anaphora of Xystus.",
+   "rights_basis": "Modern catalogue notices of the IRHT-CNRS 'Catalogue de manuscrits' (Syriac); the notice names its author. No reuse licence was checked for the notice text (https://syriac.msscatalog.irht.cnrs.fr/). Only factual metadata and short paraphrase are used.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue notice without a checked reuse licence.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-irht75-empty",
+   "original_url": "https://syriac.msscatalog.irht.cnrs.fr/62939",
+   "sha256": "ae8ba94e795e6421e7c5df3438b508776fb62d00e3200a509c618c1ef2368651",
+   "bytes": 4511,
+   "pages": null,
+   "delivered_extent": "Empty notice template (4,511 bytes) with no shelfmark, date or contents: the guessed catalogue identifier does not correspond to BnF syr. 75.",
+   "identity_inspection": "Read as text; contains only interface labels.",
+   "rights_basis": "Modern catalogue notices of the IRHT-CNRS 'Catalogue de manuscrits' (Syriac); the notice names its author. No reuse licence was checked for the notice text (https://syriac.msscatalog.irht.cnrs.fr/). Only factual metadata and short paraphrase are used.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No evidential content. The correct notice identifiers for BnF syr. 75-77 remain to be found.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-irht75-empty-text",
+   "original_url": "",
+   "sha256": "9a6b94eecfdd8ff58385cb32ab9296ec29f38699de561c6a7b211be2d8cf0f2b",
+   "bytes": 999,
+   "pages": null,
+   "delivered_extent": "Text extraction of the empty irht75.html template.",
+   "identity_inspection": "Read; interface labels only.",
+   "rights_basis": "Modern catalogue notices of the IRHT-CNRS 'Catalogue de manuscrits' (Syriac); the notice names its author. No reuse licence was checked for the notice text (https://syriac.msscatalog.irht.cnrs.fr/). Only factual metadata and short paraphrase are used.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Derivative made by the previous lane agent from a scratch-only parent; it inherits the parent's missing distribution basis.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-irht76-empty",
+   "original_url": "https://syriac.msscatalog.irht.cnrs.fr/62950",
+   "sha256": "529471f0599d0d9d74bf8a09adc8f0238930e90242a3b147d72fa43ab852a072",
+   "bytes": 4511,
+   "pages": null,
+   "delivered_extent": "Empty notice template (4,511 bytes) with no shelfmark, date or contents: the guessed catalogue identifier does not correspond to BnF syr. 76.",
+   "identity_inspection": "Read as text; contains only interface labels.",
+   "rights_basis": "Modern catalogue notices of the IRHT-CNRS 'Catalogue de manuscrits' (Syriac); the notice names its author. No reuse licence was checked for the notice text (https://syriac.msscatalog.irht.cnrs.fr/). Only factual metadata and short paraphrase are used.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No evidential content. The correct notice identifiers for BnF syr. 75-77 remain to be found.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-irht76-empty-text",
+   "original_url": "",
+   "sha256": "2360695ec4b171374b1a52f7459981413df56d84e1015532599b5e23eaa43ae9",
+   "bytes": 999,
+   "pages": null,
+   "delivered_extent": "Text extraction of the empty irht76.html template.",
+   "identity_inspection": "Read; interface labels only.",
+   "rights_basis": "Modern catalogue notices of the IRHT-CNRS 'Catalogue de manuscrits' (Syriac); the notice names its author. No reuse licence was checked for the notice text (https://syriac.msscatalog.irht.cnrs.fr/). Only factual metadata and short paraphrase are used.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Derivative made by the previous lane agent from a scratch-only parent; it inherits the parent's missing distribution basis.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-irht77-empty",
+   "original_url": "https://syriac.msscatalog.irht.cnrs.fr/62985",
+   "sha256": "4567e217c7d1f3a196d80b8e02837259c9fd0de45431299e2e0c9b0e0755f564",
+   "bytes": 4511,
+   "pages": null,
+   "delivered_extent": "Empty notice template (4,511 bytes) with no shelfmark, date or contents: the guessed catalogue identifier does not correspond to BnF syr. 77.",
+   "identity_inspection": "Read as text; contains only interface labels.",
+   "rights_basis": "Modern catalogue notices of the IRHT-CNRS 'Catalogue de manuscrits' (Syriac); the notice names its author. No reuse licence was checked for the notice text (https://syriac.msscatalog.irht.cnrs.fr/). Only factual metadata and short paraphrase are used.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No evidential content. The correct notice identifiers for BnF syr. 75-77 remain to be found.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-irht77-empty-text",
+   "original_url": "",
+   "sha256": "eb88b9276c2ae7fe3d2cc30d6b16e8d23a97301ce6402cf2765a6ae608fd3980",
+   "bytes": 999,
+   "pages": null,
+   "delivered_extent": "Text extraction of the empty irht77.html template.",
+   "identity_inspection": "Read; interface labels only.",
+   "rights_basis": "Modern catalogue notices of the IRHT-CNRS 'Catalogue de manuscrits' (Syriac); the notice names its author. No reuse licence was checked for the notice text (https://syriac.msscatalog.irht.cnrs.fr/). Only factual metadata and short paraphrase are used.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Derivative made by the previous lane agent from a scratch-only parent; it inherits the parent's missing distribution basis.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-ia-search",
+   "original_url": "https://archive.org/advancedsearch.php?q=%28title%3A%28missale%20syriacum%29%20OR%20title%3A%28maronite%20liturgy%29%20OR%20title%3A%28quddas%29%29&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=date&rows=100&page=1&output=json",
+   "sha256": "e93aa3e77d682d03140dfbe91c8442adf1008c3cf58560f81f2e65def637d097",
+   "bytes": 1200,
+   "pages": null,
+   "delivered_extent": "Complete JSON response: 5 hits (two copies of Beggiani's Divine Liturgy, one Maronite Mass audio or text item, two unrelated Urdu items).",
+   "identity_inspection": "Read in full.",
+   "rights_basis": "Internet Archive metadata or search API response (factual bibliographic data); Internet Archive terms https://archive.org/about/terms.php.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Search receipt; restated in searches.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-receipt-fetch-initial",
+   "original_url": "",
+   "sha256": "314b2396c3dfa612465aa91de5c6b0207bf0962e188383cc0c9d5a4592ee91a0",
+   "bytes": 1603,
+   "pages": null,
+   "delivered_extent": "Previous agent's receipt: first fetch batch (6 URLs, 3 errors).",
+   "identity_inspection": "Read in full; hashes and sizes it records were re-verified against the retained files.",
+   "rights_basis": "Project-created research receipt written by the previous lane agent; no third-party content beyond URLs and hashes.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Superseded by this packet's acquisitions.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-receipt-fetch-second",
+   "original_url": "",
+   "sha256": "422fb600282ea42e9ff0be658ce379b03213043fb32288e872df37bd77ab0d40",
+   "bytes": 1360,
+   "pages": null,
+   "delivered_extent": "Previous agent's receipt: second fetch batch (5 URLs, 2 errors).",
+   "identity_inspection": "Read in full; hashes and sizes it records were re-verified against the retained files.",
+   "rights_basis": "Project-created research receipt written by the previous lane agent; no third-party content beyond URLs and hashes.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Superseded by this packet's acquisitions.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-receipt-fetch-third",
+   "original_url": "",
+   "sha256": "834f7e1fb6463248ac761d4aad51251a43b38d6c978e5bb8fd84430fd892012f",
+   "bytes": 5766,
+   "pages": null,
+   "delivered_extent": "Previous agent's receipt: IRHT notices and IA search batch (7 URLs).",
+   "identity_inspection": "Read in full; hashes and sizes it records were re-verified against the retained files.",
+   "rights_basis": "Project-created research receipt written by the previous lane agent; no third-party content beyond URLs and hashes.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Superseded by this packet's acquisitions.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-receipt-fetch-fourth",
+   "original_url": "",
+   "sha256": "729029c53fae67928bce18f8a5751f5057b927d4bd60a724dffe8b387061cb25",
+   "bytes": 833,
+   "pages": null,
+   "delivered_extent": "Previous agent's receipt: Gemayel PDF, OCR and syr. 79 notice batch (3 URLs).",
+   "identity_inspection": "Read in full; hashes and sizes it records were re-verified against the retained files.",
+   "rights_basis": "Project-created research receipt written by the previous lane agent; no third-party content beyond URLs and hashes.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Superseded by this packet's acquisitions.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-receipt-gallica-manifests",
+   "original_url": "",
+   "sha256": "192dd263edae496be892358db45493ff486f7bb6867b79590cac2d707ee9a069",
+   "bytes": 1066,
+   "pages": null,
+   "delivered_extent": "Previous agent's receipt: Gallica manifest attempts (7 requests, all HTTP 403).",
+   "identity_inspection": "Read in full; hashes and sizes it records were re-verified against the retained files.",
+   "rights_basis": "Project-created research receipt written by the previous lane agent; no third-party content beyond URLs and hashes.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Superseded by this packet's acquisitions.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-receipt-bundles",
+   "original_url": "",
+   "sha256": "d047b0c7ecc015348d1b6f186884a671825bf5641432fb3e02fa1af2a466b7b7",
+   "bytes": 502,
+   "pages": null,
+   "delivered_extent": "Previous agent's receipt: ZIP bundle hashes for the ONB and BAV image sets.",
+   "identity_inspection": "Read in full; hashes and sizes it records were re-verified against the retained files.",
+   "rights_basis": "Project-created research receipt written by the previous lane agent; no third-party content beyond URLs and hashes.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Superseded by this packet's acquisitions.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-unavailable-ndu-spirit35",
+   "original_url": "https://www.ndu.edu.lb/Library/Files/Spirit/arabic35.pdf",
+   "sha256": null,
+   "bytes": null,
+   "pages": null,
+   "delivered_extent": "Nothing delivered. Observed error: HTTP Error 404: Not Found (previous agent, urllib).",
+   "identity_inspection": "Not possible; no bytes.",
+   "rights_basis": "Not assessed; no bytes acquired.",
+   "proposed_storage": "unavailable",
+   "storage_reason": "Retrieval failed on 2026-10-19. Next route: NDU library site search for the Spirit series issue; not retried.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-unavailable-vat309",
+   "original_url": "https://digi.vatlib.it/iiif/MSS_Vat.sir.309/manifest.json",
+   "sha256": null,
+   "bytes": null,
+   "pages": null,
+   "delivered_extent": "Nothing delivered. Observed error: HTTP 404 (previous agent with urllib; re-probed by the finisher with curl on 2026-10-19: 404).",
+   "identity_inspection": "Not possible; no bytes.",
+   "rights_basis": "Not assessed; no bytes acquired.",
+   "proposed_storage": "unavailable",
+   "storage_reason": "Retrieval failed on 2026-10-19. Next route: Vatican Library digital collections shelfmark search https://digi.vatlib.it/mss/ for Vat.sir.309; the manuscript may not be digitized.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-unavailable-seminary159",
+   "original_url": "https://seminairemaronite.org/%D8%A7%D9%84%D9%85%D9%83%D8%AA%D8%A8%D8%A9/page/159/?orderby=popularity",
+   "sha256": null,
+   "bytes": null,
+   "pages": null,
+   "delivered_extent": "Nothing delivered. Observed error: HTTP Error 406: Not Acceptable (previous agent, default urllib client).",
+   "identity_inspection": "Not possible; no bytes.",
+   "rights_basis": "Not assessed; no bytes acquired.",
+   "proposed_storage": "unavailable",
+   "storage_reason": "Retrieval failed on 2026-10-19. Next route: Resolved by the cold reviewer, whose plain curl request returned the complete page (cold/seminary-page159.html, SHA-256 e020de96...); no lane re-download needed.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-unavailable-beith-preview",
+   "original_url": "https://beith-morounoye.org/Publication/preview/NewQurbonoNativity%20preview.pdf",
+   "sha256": null,
+   "bytes": null,
+   "pages": null,
+   "delivered_extent": "Nothing delivered. Observed error: HTTP Error 406: Not Acceptable (previous agent, default urllib client).",
+   "identity_inspection": "Not possible; no bytes.",
+   "rights_basis": "Not assessed; no bytes acquired.",
+   "proposed_storage": "unavailable",
+   "storage_reason": "Retrieval failed on 2026-10-19. Next route: Retry with a plain curl request; publisher preview only, the full book is commercial.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-unavailable-gallica-btv1b10086508p",
+   "original_url": "https://gallica.bnf.fr/ark:/12148/btv1b10086508p/manifest.json",
+   "sha256": null,
+   "bytes": null,
+   "pages": null,
+   "delivered_extent": "Nothing delivered. Observed error: HTTP 403 Forbidden for BnF syr. 71 (previous agent with urllib; finisher re-probed https://gallica.bnf.fr/iiif/ark:/12148/btv1b10086508p/manifest.json with curl on 2026-10-19: 403).",
+   "identity_inspection": "Not possible; no bytes.",
+   "rights_basis": "Not assessed; no bytes acquired.",
+   "proposed_storage": "unavailable",
+   "storage_reason": "Retrieval failed on 2026-10-19. Next route: Gallica viewer https://gallica.bnf.fr/ark:/12148/btv1b10086508p in a browser, or the BnF IIIF image service, without circumventing the block.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-unavailable-gallica-btv1b100902866",
+   "original_url": "https://gallica.bnf.fr/ark:/12148/btv1b100902866/manifest.json",
+   "sha256": null,
+   "bytes": null,
+   "pages": null,
+   "delivered_extent": "Nothing delivered. Observed error: HTTP 403 Forbidden for BnF syr. 72 (previous agent with urllib; finisher re-probed https://gallica.bnf.fr/iiif/ark:/12148/btv1b100902866/manifest.json with curl on 2026-10-19: 403).",
+   "identity_inspection": "Not possible; no bytes.",
+   "rights_basis": "Not assessed; no bytes acquired.",
+   "proposed_storage": "unavailable",
+   "storage_reason": "Retrieval failed on 2026-10-19. Next route: Gallica viewer https://gallica.bnf.fr/ark:/12148/btv1b100902866 in a browser, or the BnF IIIF image service, without circumventing the block.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-unavailable-gallica-btv1b10528605x",
+   "original_url": "https://gallica.bnf.fr/ark:/12148/btv1b10528605x/manifest.json",
+   "sha256": null,
+   "bytes": null,
+   "pages": null,
+   "delivered_extent": "Nothing delivered. Observed error: HTTP 403 Forbidden for BnF syr. 73 (previous agent with urllib; finisher re-probed https://gallica.bnf.fr/iiif/ark:/12148/btv1b10528605x/manifest.json with curl on 2026-10-19: 403).",
+   "identity_inspection": "Not possible; no bytes.",
+   "rights_basis": "Not assessed; no bytes acquired.",
+   "proposed_storage": "unavailable",
+   "storage_reason": "Retrieval failed on 2026-10-19. Next route: Gallica viewer https://gallica.bnf.fr/ark:/12148/btv1b10528605x in a browser, or the BnF IIIF image service, without circumventing the block.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "maronite-acq-unavailable-gallica-btv1b10086175q",
+   "original_url": "https://gallica.bnf.fr/ark:/12148/btv1b10086175q/manifest.json",
+   "sha256": null,
+   "bytes": null,
+   "pages": null,
+   "delivered_extent": "Nothing delivered. Observed error: HTTP 403 Forbidden for BnF syr. 74 (previous agent with urllib; finisher re-probed https://gallica.bnf.fr/iiif/ark:/12148/btv1b10086175q/manifest.json with curl on 2026-10-19: 403).",
+   "identity_inspection": "Not possible; no bytes.",
+   "rights_basis": "Not assessed; no bytes acquired.",
+   "proposed_storage": "unavailable",
+   "storage_reason": "Retrieval failed on 2026-10-19. Next route: Gallica viewer https://gallica.bnf.fr/ark:/12148/btv1b10086175q in a browser, or the BnF IIIF image service, without circumventing the block.",
+   "existing_canonical_identity": null
+  }
+ ],
+ "expected_list_reconciliation": [
+  {
+   "expected_id": "mar-cold-ms1566",
+   "expected_label": "Manuscript underlying the first print (reported)",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-ms-o-1566"
+   ],
+   "outcome": "matched",
+   "evidence": "Packet keeps Jabbour's manuscript-O reconstruction attributed and proposes Vat.sir.431 as a record (maronite-ms-vat-sir431); Florence parts remain unexamined."
+  },
+  {
+   "expected_id": "mar-cold-qurbono-1592-1594",
+   "expected_label": "Maronite Qurbono 1592-1594",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-rome1592-1594"
+   ],
+   "outcome": "matched",
+   "evidence": "Existing mar-1592-94 retained; Klampfl/Feulner list (feulner.pdf PDF p. 7) gives 14 anaphoras."
+  },
+  {
+   "expected_id": "mar-cold-qurbono-1716",
+   "expected_label": "Maronite Qurbono 1716",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-rome1716"
+   ],
+   "outcome": "matched",
+   "evidence": "mar-1716 update; ONB canvas 3 approbation names the 1716 Propaganda Fide missal; Klampfl/Feulner 13 versus 1992 introduction 14 preserved."
+  },
+  {
+   "expected_id": "mar-cold-qurbono-1762-1763",
+   "expected_label": "Maronite Qurbono 1762-1763",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-rome1762-1763",
+    "maronite-v-anaphora-count-lead"
+   ],
+   "outcome": "matched",
+   "evidence": "ONB canvas 430 (Romae MDCCLXII, Komarek) and canvas 3 (approbation 10 April 1763) viewed by this reviewer. Count remains a lead; canvas 4 Garshuni printer's note is unread (correction on mar-1763)."
+  },
+  {
+   "expected_id": "mar-cold-qurbono-1816",
+   "expected_label": "Maronite Qurbono 1816",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-qozhaya-1816"
+   ],
+   "outcome": "matched",
+   "evidence": "Record maronite-qozhaya-1816; 1992 introduction, Gemayel p. XII and Brightman p. lvii all give 1816 (Nestle 1889 p. 31 text layer also)."
+  },
+  {
+   "expected_id": "mar-cold-qurbono-1838",
+   "expected_label": "Maronite Qurbono 1838",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-qozhaya-1838"
+   ],
+   "outcome": "matched",
+   "evidence": "Record maronite-qozhaya-1838; same three routes."
+  },
+  {
+   "expected_id": "mar-cold-qurbono-1855",
+   "expected_label": "Maronite Qurbono 1855",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-qozhaya-1855"
+   ],
+   "outcome": "matched",
+   "evidence": "Record maronite-qozhaya-1855; Brightman gives a different title rendering ('The order of the oblation')."
+  },
+  {
+   "expected_id": "mar-cold-qurbono-1872",
+   "expected_label": "Maronite Qurbono 1872",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-qozhaya-1872"
+   ],
+   "outcome": "matched",
+   "evidence": "Record maronite-qozhaya-1872; 1992 introduction and Gemayel p. XII only (not in Brightman or Nestle)."
+  },
+  {
+   "expected_id": "mar-cold-qurbono-1888",
+   "expected_label": "Maronite Qurbono 1888",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-dibs1888"
+   ],
+   "outcome": "matched",
+   "evidence": "mar-dibs-1888 update adds Brightman and Gemayel corroboration."
+  },
+  {
+   "expected_id": "mar-cold-qurbono-1908",
+   "expected_label": "Maronite Qurbono 1908",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-dibs1908"
+   ],
+   "outcome": "matched",
+   "evidence": "Existing mar-dibs-1908 retained; Klampfl/Feulner 8 anaphoras."
+  },
+  {
+   "expected_id": "mar-cold-qurbono-1959",
+   "expected_label": "Maronite Qurbono 1959",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-jounieh1959"
+   ],
+   "outcome": "matched",
+   "evidence": "Existing mar-1959 retained unchanged; original not located."
+  },
+  {
+   "expected_id": "mar-cold-qurbono-1973",
+   "expected_label": "Maronite Qurbono 1973",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-simple1973",
+    "maronite-v-experiment1972"
+   ],
+   "outcome": "matched",
+   "evidence": "mar-1973 update: decree 43/1973 of 13 April 1973, one-year experiment, read by this reviewer on English 2012 PDF 6; 1972 proposal kept separate."
+  },
+  {
+   "expected_id": "mar-cold-qurbono-1992",
+   "expected_label": "Maronite Qurbono 1992",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-bkerke1992"
+   ],
+   "outcome": "matched",
+   "evidence": "Existing mar-1992 retained; original and decree not acquired."
+  },
+  {
+   "expected_id": "mar-cold-1608",
+   "expected_label": "Rome first-missal reissue with Du Perron preface",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-rome1608-beta"
+   ],
+   "outcome": "matched",
+   "evidence": "Matched as a packet version only. The inventory has no 1608 row although the dossier carries stage maronite-rome1608-beta and the BnF notice (re-read by this reviewer) reports textual modifications; required addition maronite-rome1608-reissue-cold supplies the record."
+  },
+  {
+   "expected_id": "mar-cold-1604",
+   "expected_label": "Reported Rome missal edition",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-1604-lead"
+   ],
+   "outcome": "matched",
+   "evidence": "Packet left it unchecked. This reviewer read Nestle 1889 p. 31 (IA text layer): 'alia editio + 4 ff. praef. arabice et latine. R. 1604' directly after the 1592/94 missal. Treated as a probable description of the Du Perron-preface reissue, folded into maronite-rome1608-reissue-cold, not promoted."
+  },
+  {
+   "expected_id": "mar-cold-diaconale-1596",
+   "expected_label": "Liber ministri Missae / Diaconale Syriacum 1596",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-diaconale-1596"
+   ],
+   "outcome": "matched",
+   "evidence": "Record maronite-liber-ministri-1596; Brightman, Gemayel and Nestle (Rom 596) agree."
+  },
+  {
+   "expected_id": "mar-cold-diaconale-1715",
+   "expected_label": "Liber ministri Missae / Diaconale Syriacum 1715",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-diaconale-1715"
+   ],
+   "outcome": "matched",
+   "evidence": "Version only; Brightman lists Rome 1715 for the Liber ministri, Nestle lists 'idem Romae 715' under the Diaconale."
+  },
+  {
+   "expected_id": "mar-cold-diaconale-1736",
+   "expected_label": "Liber ministri Missae / Diaconale Syriacum 1736",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-diaconale-1736"
+   ],
+   "outcome": "matched",
+   "evidence": "Version only; Rome (Brightman, Nestle) versus Qozhaya (Gemayel) conflict preserved."
+  },
+  {
+   "expected_id": "mar-cold-diaconale-1854",
+   "expected_label": "Liber ministri Missae / Diaconale Syriacum 1854",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-minister-1854"
+   ],
+   "outcome": "matched",
+   "evidence": "Version only; Nestle text layer confirms 'editio 7. Kozchayae 854'."
+  },
+  {
+   "expected_id": "mar-cold-diaconale-1763",
+   "expected_label": "Reported revised Diaconale",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-diaconale-1763-lead"
+   ],
+   "outcome": "matched",
+   "evidence": "Unresolved lead with stated unexamined range."
+  },
+  {
+   "expected_id": "mar-cold-lectionary-1841",
+   "expected_label": "Ḳeryānē dhe-yaumāthā pherīshē dhe-khullāh",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-lectionary-1841"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead; QNL record not opened by either side."
+  },
+  {
+   "expected_id": "mar-cold-bkerke2005",
+   "expected_label": "Bkerke renewed Book of the Qurbono, second edition",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-bkerke2005"
+   ],
+   "outcome": "matched",
+   "evidence": "Record maronite-bkerke-2005; decree 1512/2005 page (English 2012 PDF 4) viewed by this reviewer."
+  },
+  {
+   "expected_id": "mar-cold-bkerke2008",
+   "expected_label": "Bkerke Qurbono 2008 (reported)",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-sharar2008"
+   ],
+   "outcome": "matched",
+   "evidence": "Resolved: seminary Tl 191 Ar is a 61-page Sharar booklet (re-read in cold/seminary-page159.html), not a complete 2008 Qurbono."
+  },
+  {
+   "expected_id": "mar-cold-gospel2005",
+   "expected_label": "Kitāb al-Injīl al-ṭaqsī",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-gospel2005"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead, separate from the 2007 translation."
+  },
+  {
+   "expected_id": "mar-cold-translation2007",
+   "expected_label": "Maronite liturgical biblical translation, second edition",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-translation2007"
+   ],
+   "outcome": "matched",
+   "evidence": "Deferred translation witness."
+  },
+  {
+   "expected_id": "mar-cold-english2012",
+   "expected_label": "Book of Offering, English speaking eparchies",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-english2012"
+   ],
+   "outcome": "matched",
+   "evidence": "Record maronite-english-2012 in the deferred list; decree 108/2012 (PDF 2) viewed by this reviewer."
+  },
+  {
+   "expected_id": "mar-cold-syriac2021",
+   "expected_label": "Syriac Maronite Book of Offering, Season of Nativity",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-beith2021"
+   ],
+   "outcome": "matched",
+   "evidence": "Private compilation; not an authorized recension."
+  },
+  {
+   "expected_id": "mar-cold-bnf78",
+   "expected_label": "BnF syr. 78: anaphora manuscript",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-ms-paris78-1573"
+   ],
+   "outcome": "matched",
+   "evidence": "Record maronite-ms-bnf-syr78 with the catalogue range 1572-1578."
+  },
+  {
+   "expected_id": "mar-cold-bnf438",
+   "expected_label": "BnF syr. 438: Maronite Eucharistic missal",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-ms-paris438-1706"
+   ],
+   "outcome": "matched",
+   "evidence": "Matched as a packet version only; the packet records IRHT-noticed syr. 71, 73, 78 and 79 but not syr. 438 at the same evidence tier. Required addition maronite-ms-bnf-syr438-1706-cold supplies the record."
+  },
+  {
+   "expected_id": "mar-cold-aleppo-602",
+   "expected_label": "Bibliothèque des Maronites d’Alep 602",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-ms-aleppo602"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead version from the Río Sánchez excerpt, with the full Aleppo catalogue named as unexamined."
+  },
+  {
+   "expected_id": "mar-cold-aleppo-603",
+   "expected_label": "Bibliothèque des Maronites d’Alep 603",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-ms-aleppo603"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead version from the Río Sánchez excerpt, with the full Aleppo catalogue named as unexamined."
+  },
+  {
+   "expected_id": "mar-cold-aleppo-604",
+   "expected_label": "Bibliothèque des Maronites d’Alep 604",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-ms-aleppo604"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead version from the Río Sánchez excerpt, with the full Aleppo catalogue named as unexamined."
+  },
+  {
+   "expected_id": "mar-cold-aleppo-605",
+   "expected_label": "Bibliothèque des Maronites d’Alep 605",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-ms-aleppo605"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead version from the Río Sánchez excerpt, with the full Aleppo catalogue named as unexamined."
+  },
+  {
+   "expected_id": "mar-cold-aleppo-606",
+   "expected_label": "Bibliothèque des Maronites d’Alep 606",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-ms-aleppo606"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead version from the Río Sánchez excerpt, with the full Aleppo catalogue named as unexamined."
+  },
+  {
+   "expected_id": "mar-cold-aleppo-607",
+   "expected_label": "Bibliothèque des Maronites d’Alep 607",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-ms-aleppo607"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead version from the Río Sánchez excerpt, with the full Aleppo catalogue named as unexamined."
+  },
+  {
+   "expected_id": "mar-cold-aleppo-608",
+   "expected_label": "Bibliothèque des Maronites d’Alep 608",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-ms-aleppo608"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead version from the Río Sánchez excerpt, with the full Aleppo catalogue named as unexamined."
+  },
+  {
+   "expected_id": "mar-cold-aleppo-611",
+   "expected_label": "Bibliothèque des Maronites d’Alep 611",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-ms-aleppo611"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead version from the Río Sánchez excerpt, with the full Aleppo catalogue named as unexamined."
+  },
+  {
+   "expected_id": "mar-cold-aleppo-612",
+   "expected_label": "Bibliothèque des Maronites d’Alep 612",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-ms-aleppo612"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead version from the Río Sánchez excerpt, with the full Aleppo catalogue named as unexamined."
+  },
+  {
+   "expected_id": "mar-cold-aleppo-613",
+   "expected_label": "Bibliothèque des Maronites d’Alep 613",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-ms-aleppo613"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead version from the Río Sánchez excerpt, with the full Aleppo catalogue named as unexamined."
+  },
+  {
+   "expected_id": "mar-cold-aleppo-614",
+   "expected_label": "Bibliothèque des Maronites d’Alep 614",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-ms-aleppo614"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead version from the Río Sánchez excerpt, with the full Aleppo catalogue named as unexamined."
+  },
+  {
+   "expected_id": "mar-cold-aleppo-615",
+   "expected_label": "Bibliothèque des Maronites d’Alep 615",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-ms-aleppo615"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead version from the Río Sánchez excerpt, with the full Aleppo catalogue named as unexamined."
+  },
+  {
+   "expected_id": "mar-cold-aleppo-617",
+   "expected_label": "Bibliothèque des Maronites d’Alep 617",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-ms-aleppo617"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead version from the Río Sánchez excerpt, with the full Aleppo catalogue named as unexamined."
+  },
+  {
+   "expected_id": "mar-cold-aleppo-619",
+   "expected_label": "Bibliothèque des Maronites d’Alep 619",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-ms-aleppo619-1490"
+   ],
+   "outcome": "matched",
+   "evidence": "Record maronite-ms-aleppo619-1490; Gemayel p. IX and the Río Sánchez excerpt both give 1490 (re-read by this reviewer)."
+  },
+  {
+   "expected_id": "mar-cold-aleppo-629",
+   "expected_label": "Bibliothèque des Maronites d’Alep 629",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-ms-aleppo629"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead version from the Río Sánchez excerpt, with the full Aleppo catalogue named as unexamined."
+  },
+  {
+   "expected_id": "mar-cold-aleppo-630",
+   "expected_label": "Bibliothèque des Maronites d’Alep 630",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-ms-aleppo630"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead version from the Río Sánchez excerpt, with the full Aleppo catalogue named as unexamined."
+  },
+  {
+   "expected_id": "mar-cold-aleppo-631",
+   "expected_label": "Bibliothèque des Maronites d’Alep 631",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-ms-aleppo631"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead version from the Río Sánchez excerpt, with the full Aleppo catalogue named as unexamined."
+  },
+  {
+   "expected_id": "mar-cold-aleppo-1253",
+   "expected_label": "Bibliothèque des Maronites d’Alep 1253",
+   "source_list": "cold-initial (frozen)",
+   "matched_packet_ids": [
+    "maronite-v-ms-aleppo1253"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead version from the Río Sánchez excerpt, with the full Aleppo catalogue named as unexamined."
+  },
+  {
+   "expected_id": "mar-cold-minister1888",
+   "expected_label": "Book of the Minister, Beirut1888",
+   "source_list": "cold-supplement (post-initial, not blind)",
+   "matched_packet_ids": [
+    "maronite-v-minister-1888"
+   ],
+   "outcome": "matched",
+   "evidence": "Version only (Fortescue 1910)."
+  },
+  {
+   "expected_id": "mar-cold-bkerke112",
+   "expected_label": "Bkerke Patriarchate Library112, anaphora collection",
+   "source_list": "cold-supplement (post-initial, not blind)",
+   "matched_packet_ids": [
+    "maronite-v-bkerke112-kreim"
+   ],
+   "outcome": "matched",
+   "evidence": "Grouped lead with Kreim; AUB route unreachable."
+  },
+  {
+   "expected_id": "mar-cold-kreim-anaphoras",
+   "expected_label": "Kreim Lebanese Maronite Missionary Order anaphora collection",
+   "source_list": "cold-supplement (post-initial, not blind)",
+   "matched_packet_ids": [
+    "maronite-v-bkerke112-kreim"
+   ],
+   "outcome": "matched",
+   "evidence": "Grouped lead with Bkerke 112."
+  },
+  {
+   "expected_id": "mar-cold-rubrics2002",
+   "expected_label": "كتاب الروبريكات, Boutros Gemayel and Tony Gebran, Patriarchal Liturgical Commission Beirut2002",
+   "source_list": "cold-supplement (post-initial, not blind)",
+   "matched_packet_ids": [
+    "maronite-v-rubrics2002"
+   ],
+   "outcome": "matched",
+   "evidence": "Version only; seminary Tl 199 Ar re-read (64 pp., episcopal Mass rubrics)."
+  },
+  {
+   "expected_id": "mar-cold-sharar2008",
+   "expected_label": "كتاب القداس ... نافور مار بطرس الرسول (شرر), Patriarchal Liturgical Commission Beirut2008",
+   "source_list": "cold-supplement (post-initial, not blind)",
+   "matched_packet_ids": [
+    "maronite-v-sharar2008"
+   ],
+   "outcome": "matched",
+   "evidence": "Record maronite-sharar-2008."
+  },
+  {
+   "expected_id": "mar-cold-2005-three-parts-lead",
+   "expected_label": "Bkerke2005 Qurbono in3parts, retail catalogue2018 date",
+   "source_list": "cold-supplement (post-initial, not blind)",
+   "matched_packet_ids": [
+    "maronite-v-three-parts-lead"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead."
+  },
+  {
+   "expected_id": "mar-cold-lectionary2004",
+   "expected_label": "Bkerke Lectionary,2004edition",
+   "source_list": "cold-supplement (post-initial, not blind)",
+   "matched_packet_ids": [
+    "maronite-v-lectionary2004"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead."
+  },
+  {
+   "expected_id": "mar-cold-minister1896",
+   "expected_label": "Liber ministerii, Qozhaya1896",
+   "source_list": "cold-supplement (post-initial, not blind)",
+   "matched_packet_ids": [
+    "maronite-v-minister-1896"
+   ],
+   "outcome": "matched",
+   "evidence": "Version only; Gemayel p. XII viewed."
+  },
+  {
+   "expected_id": "mar-cold-minister1870",
+   "expected_label": "Liber ministerii, Tamish/Tamis1870",
+   "source_list": "cold-supplement (post-initial, not blind)",
+   "matched_packet_ids": [
+    "maronite-v-minister-1870"
+   ],
+   "outcome": "matched",
+   "evidence": "Version only; Gemayel p. XII viewed."
+  },
+  {
+   "expected_id": "mar-cold-guide2025",
+   "expected_label": "Samir G. Georges, Guide to the Traditional Syriac Maronite Liturgical Year and Lectionary, volume1",
+   "source_list": "cold-supplement (post-initial, not blind)",
+   "matched_packet_ids": [
+    "maronite-v-guide2025"
+   ],
+   "outcome": "matched",
+   "evidence": "Out-of-scope private reference, labelled."
+  }
+ ],
+ "acquisition_spot_checks": [
+  {
+   "acquisition_id": "maronite-acq-onb1762-images",
+   "check": "Canvas 430 rehashed (9cc80df6... matches receipt) and viewed",
+   "result": "confirmed",
+   "detail": "MISSALE SYRIACUM JUXTA RITUM ECCLESIAE ANTIOCHENAE NATIONIS SYRORUM MARONITARUM; ROMAE MDCCLXII; EX TYPOGRAPHIA LINGUARUM ORIENTALIUM KOMAREK AD ORATORIUM SANCTI MARCELLI; SUPERIORUM FACULTATE."
+  },
+  {
+   "acquisition_id": "maronite-acq-onb1762-images",
+   "check": "Canvas 3 rehashed (688f8302... matches) and viewed",
+   "result": "confirmed",
+   "detail": "Two Reimprimatur formulas and an Approbatio by J. S. Assemanus, Vatican Library prefect: collated with the missal printed by Propaganda Fide in 1716 and found to agree; dated 10 April 1763."
+  },
+  {
+   "acquisition_id": "maronite-acq-onb1762-images",
+   "check": "Canvas 4 viewed whole and at 2x crops",
+   "result": "inconclusive",
+   "detail": "The packet's description (ornamented Syriac-script page, catchword REIM., ONB stamp) is correct, but the text is a Garshuni printer's note naming Rome with month and year words; the numerals were not read with confidence. Not contradicted, but an unread primary date locus."
+  },
+  {
+   "acquisition_id": "maronite-acq-onb1762-images",
+   "check": "ZIP size and sha256",
+   "result": "confirmed",
+   "detail": "532,830,838 bytes; 7f15c2445d92fa4f84e3e676d23515ee878e460e1522d259d4db1bf559a53700."
+  },
+  {
+   "acquisition_id": "maronite-acq-onb1762-manifest",
+   "check": "Manifest rights and metadata read",
+   "result": "confirmed",
+   "detail": "rights NoC-NC 1.0; attribution Austrian National Library; Digitized with Google, 2016-01-11; commercial re-use restrictions expire 2031-03-11; shelfmark 22.D.32 ALT PRUNK, AC10127298."
+  },
+  {
+   "acquisition_id": "maronite-acq-english2012",
+   "check": "PDF 2, 4, 6 and 8 rendered at 80 dpi and viewed; PDF 1552 text layer",
+   "result": "confirmed",
+   "detail": "108/2012 of 30 August 2012 (use from 4 November 2012); 1512/2005 of 29 June 2005 citing 381/2003 of 17 April 2005, use from first Sunday of November 2005, prohibition from 25 December 2005; decree 43/1973 of 13 April 1973, one-year experiment; 'second edition'; eight anaphoras."
+  },
+  {
+   "acquisition_id": "maronite-acq-gemayel1965",
+   "check": "Printed pp. IX, X, XI, XII viewed",
+   "result": "confirmed",
+   "detail": "22 Maronite missal shelfmarks (all accounted for in packet versions), diaconals, Vat. syr. 309 (1296) under Pontificaux, Messe d'Assemani; syr. 72 and Add. 14.690 under Jacobites; printed-book list including Qozhaya 1816/1838/1855/1872, Beyrouth 1888/1908, Liber ministri 1596 'et 1517'."
+  },
+  {
+   "acquisition_id": "maronite-acq-irht71",
+   "check": "Notice text read",
+   "result": "confirmed",
+   "detail": "5 Kanun I 1765 AG (1454), Georges of ḤDŠYT; no twelfth-century leaves reported."
+  },
+  {
+   "acquisition_id": "maronite-acq-irht73",
+   "check": "Notice text read",
+   "result": "confirmed",
+   "detail": "1820 AG (1509), Bacchus son of Yuhanan of Ban, for Hawqa."
+  },
+  {
+   "acquisition_id": "maronite-acq-irht79",
+   "check": "Notice text read",
+   "result": "confirmed",
+   "detail": "Anonymous and undated; Zotenberg sixteenth century."
+  },
+  {
+   "acquisition_id": "maronite-acq-irht72",
+   "check": "Notice text read",
+   "result": "confirmed",
+   "detail": "26 Haziran 1773 AG (1462), for Mar Dioscorus of Jerusalem at Mar Moshe, Tenono: Syriac Orthodox comparator."
+  },
+  {
+   "acquisition_id": "maronite-acq-irht74",
+   "check": "Notice text read",
+   "result": "confirmed",
+   "detail": "1516, Deir al-Surian, under Patriarch Ignatius: Syriac Orthodox comparator."
+  },
+  {
+   "acquisition_id": "maronite-acq-vat431-images",
+   "check": "Image 1 rehashed and viewed; ZIP sha256",
+   "result": "confirmed",
+   "detail": "Shelfmark card Vat.sir.431 with BAV copyright banner; ZIP db07b3c7... matches."
+  },
+  {
+   "acquisition_id": "maronite-acq-feulner-klampfl",
+   "check": "Title leaf and edition list (text layer)",
+   "result": "confirmed",
+   "detail": "Klampfl 27.10.2008 after Feulner OCA 260; Maronite 1592-94 14, 1716 13, 1908 8 anaphoras; Heinz 1996 6."
+  },
+  {
+   "acquisition_id": "maronite-acq-stmaron-intro1992",
+   "check": "Captured HTML read",
+   "result": "confirmed",
+   "detail": "Ten pre-1992 editions; 1763 eight versus fourteen; Qozhaya 1816, 1838, 1855, 1872; six 1992 anaphoras; dated 31 July 1992. The '(Vat. 309)' parenthesis attaches to twelfth-century pages, so it is ambiguous rather than a label for the 1454 manuscript."
+  },
+  {
+   "acquisition_id": "cold capture seminary-page159.html (used by maronite-src-seminary-library)",
+   "check": "Rehashed and table rows parsed",
+   "result": "confirmed",
+   "detail": "Tl 188 Ar 2005 1117 pp.; Tl 191 Ar 2008 61 pp. Sharar; Tl 199 Ar 2002 64 pp. rubrics."
+  }
+ ],
+ "remaining_bounded_gaps": [
+  "1762/1763 anaphora count (eight in the 1992 introduction, nine in Dib and Beggiani): the ONB images are legible at full resolution, but the red Serto running heads and titles of canvases 5-428 need a Syriac-reading pass; neither the packet nor this review counted them.",
+  "ONB canvas 4 Garshuni printer's note: names Rome and a month and year; transcribe it to fix the completion date relative to the 1762 title and 10 April 1763 approbation.",
+  "1608 reissue: no copy acquired; BnF RES M-B-3 group (alpha or beta) unknown; Nestle's 1604 'alia editio' accepted only as a probable alias.",
+  "Original 1716 (Braidense GERLI.0740 lead), Qozhaya 1816/1838/1855/1872, Beirut 1888, Jounieh 1959, 1973 Simple Rite, 1992 and 2005 Bkerke books not acquired; 1888/1908 and Qozhaya contents uncompared.",
+  "Minister's books: 1715, 1736 (Rome versus Qozhaya), 1854 (Nestle's 'editio 7' implies unlisted earlier Qozhaya editions), 1870, 1888, 1896 and the reported 1763 Diaconale remain versions or leads without copies.",
+  "Manuscripts: Gallica images of BnF syr. 71-80, 85 and 438 not obtained (HTTP 403 on manifests); Bkerke 115-118, Dimane 7, Florence, Munich, Vatican and Venice entries are catalogue-list attestations only; full Aleppo catalogue, Kreim (AUB b1299433 unreachable) and Bkerke 112 unexamined.",
+  "Modern components: 2002 rubrics, 2004 lectionary, 2005 Gospel book, 2007 translation and the 2005 three-part retail listing are leads; the 2005 original impression and its decree pages were seen only in the 2012 bilingual reproduction.",
+  "Shared row syr-add14690-anaphoras: the maronite and syriac_malankara packets both replace 'note' from the same before_sha256; the second integration needs a root rebase preserving both appended sentences and the union of source_ids.",
+  "Diaspora vernacular books other than the English 2012 book (French, Spanish, Portuguese, German) are deferred translation histories and not enumerated here.",
+  "Coverage-row missing_chronology update (coverage-links field_updates) is accepted as written; the root may append the 1608 reissue and canvas 4 colophon gaps when it next edits that row."
+ ],
+ "blocking_items": [],
+ "discovered_unassigned_uses": [
+  {
+   "label": "Syriac Orthodox (West Syriac) manuscripts used as Maronite comparators (BnF syr. 72, 74; BL Add. 14690 and the other Jacobite missals in Gemayel p. XI)",
+   "owner": "syriac_malankara lane",
+   "note": "Recorded here as comparator versions only."
+  },
+  {
+   "label": "Assemani's Codex liturgicus and 'Messe d'Assemani' manuscripts",
+   "owner": "unassigned (scholarly reconstruction, not an official book)",
+   "note": "Lead only."
+  }
+ ],
+ "next_sources": [
+  "Count anaphora headings in the acquired ONB 1762 images (canvases 5-415) to settle eight versus nine.",
+  "A copy of the 1716 Missale Syriacum (Braidense GERLI.0740; SBN MILE040858; other holdings).",
+  "Qozhaya 1816, 1838, 1855, 1872 and Beirut 1888 copies in Lebanese, Vatican, BnF or Bodleian holdings.",
+  "Original 2005 Kitab al-Quddas (seminary Tl 188 Ar) and the 2008 Sharar booklet (Tl 191 Ar).",
+  "Original 1959 Jounieh, 1973 Simple Rite and 1992 Bkerke books and decrees.",
+  "Gallica images of BnF syr. 71, 73, 78 and 79 via the browser viewer; correct IRHT notices for syr. 75-77, 80, 85.",
+  "Florence BNCF Cl. III.74, III.75 and III.79 (other parts of manuscript O).",
+  "Liber ministri 1596 and 1715 and the Qozhaya ministry books."
+ ],
+ "limits": [
+  "Repertoire-bounded pass: Gemayel 1965, Brightman 1896, the 1992 introduction, Feulner/Klampfl, IRHT notices and the cold reviewer's catalogue captures. No claim that every Maronite book is now known.",
+  "No two printed books were collated; the only newly acquired printed book is the ONB 1762 copy, whose body was not transcribed or counted.",
+  "Stage dossier change for the root (not edited here): maronite-rome1762-1763 says 'primary title and colophon not inspected' and gap maronite-1763-count asks for title and colophon dates. The ONB copy (canvas 430 title Rome MDCCLXII, Komarek; canvas 3 approbation 10 April 1763 reporting agreement with the 1716 Propaganda Fide missal) now supplies both dates; the count remains open.",
+  "Stage dossier note for the root: maronite-simple1973 can cite decree 43/1973 of 13 April 1973 from the 2005 introduction (maronite-src-english2012, PDF 7-8); gap maronite-later2005 can cite the decree pages (PDF 4-5) as a later bilingual reproduction.",
+  "Conflict for the root: the 1992 introduction attaches 'Vat. 309' to the oldest 1454 Qurbono manuscript, while Gemayel lists Vat.sir.309 (1296) as a pontifical and BnF syr. 71 as the 1454 manuscript (IRHT notice: colophon 5 December 1454).",
+  "New fields used: none outside those already present in [[records]] and [[sources]] except 'storage' values with a '-proposed' suffix, which reuse the existing 'storage' field.",
+  "Shared candidates syr-add14523-james and syr-add14690-anaphoras: only an append-only qualification on syr-add14690; no change to syr-add14523 and no removal of other lanes' evidence.",
+  "Domus Dei is used only as a discovery lead because it may derive from this project's own research.",
+  "Rendered page images and contact sheets in research/visual/ and research/finish/views/ are derivative viewing aids of the receipted artifacts and are not separately receipted.",
+  "Modern restricted bytes (English 2012, Gemayel 1965, Vat.sir.431 images, web captures) stay in this lane's scratch; the ONB images are proposed remote by measured size."
+ ],
+ "coverage_placements": {
+  "maronite": {
+   "candidate_ids": [
+    "maronite-qozhaya-1816",
+    "maronite-qozhaya-1838",
+    "maronite-qozhaya-1855",
+    "maronite-qozhaya-1872",
+    "maronite-liber-ministri-1596",
+    "maronite-rome1608-reissue-cold"
+   ],
+   "ancestry_candidate_ids": [
+    "maronite-ms-bnf-syr71-1454",
+    "maronite-ms-aleppo619-1490",
+    "maronite-ms-bnf-syr73-1509",
+    "maronite-ms-bnf-syr79",
+    "maronite-ms-bnf-syr78",
+    "maronite-ms-vat-sir431",
+    "maronite-ms-bnf-syr438-1706-cold"
+   ],
+   "deferred_or_origin_review_candidate_ids": [
+    "maronite-bkerke-2005",
+    "maronite-sharar-2008",
+    "maronite-english-2012"
+   ],
+   "fields_replaced": [
+    "missing_chronology"
+   ]
+  }
+ },
+ "unlinked_new_records": []
+}

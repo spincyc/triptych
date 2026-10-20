@@ -1,0 +1,2491 @@
+{
+ "schema_version": 1,
+ "record_type": "eucharistic-research-lane-review",
+ "id": "chaldean",
+ "title": "Full research pass review of the chaldean lane, 2026-10-19",
+ "lane": "chaldean",
+ "side": "eastern",
+ "checked_on": "2026-10-19",
+ "reviewed_on": "2026-10-19",
+ "coverage_rows": [
+  "chaldean"
+ ],
+ "target_inventory": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
+ "semantics": "Project-created review metadata. Versions include witnesses, components, translations and unresolved leads; their count is not a count of substantive revisions. Acquisition does not establish transcription, collation, normative revision or local reception. No ancestry is asserted.",
+ "review_files": {
+  "storage": "untracked workspace scratch; pinned here by SHA-256 only",
+  "packet_sha256": "c8d6e1b88f1bd993f785e8edff91f844592b112eafc689ee49fc138899b61b4c",
+  "superseded_packet_sha256": null,
+  "cold_final_sha256": "7263cd5c55a2698fe690f251b6092a28d40d4e17d21a4838d5ca9b3de1b97cbb",
+  "cold_verdict": "ready-with-corrections"
+ },
+ "integration": {
+  "new_sources": [
+   "chaldean-src-2020-typical-pdf",
+   "chaldean-src-addai-bib",
+   "chaldean-src-assemani1758",
+   "chaldean-src-bonn-epistolae1900",
+   "chaldean-src-bonn-evangelia1900",
+   "chaldean-src-bonn-lectiones1900",
+   "chaldean-src-bonn-urmia1876",
+   "chaldean-src-bonn-urmia1890",
+   "chaldean-src-borg-sir150-images",
+   "chaldean-src-borg-sir36-images",
+   "chaldean-src-coakley-taylor",
+   "chaldean-src-cold-najm",
+   "chaldean-src-feulner-bib",
+   "chaldean-src-jammo2013-excerpt",
+   "chaldean-src-macomber1966-sigla",
+   "chaldean-src-mando2012",
+   "chaldean-src-vat-sir303-images",
+   "chaldean-src-vat-sir42-images",
+   "chaldean-src-vat-sir44-images",
+   "chaldean-src-vat-sir491-images",
+   "chaldean-src-vatican-opac"
+  ],
+  "new_records": [
+   "chaldean-baghdad1971",
+   "chaldean-mosul1900-lections",
+   "chaldean-mosul1936-reprint",
+   "chaldean-ms-borg-sir-150",
+   "chaldean-ms-borg-sir-36",
+   "chaldean-ms-diarbekir-hudra",
+   "chaldean-ms-mar-eshaya",
+   "chaldean-ms-mardin22",
+   "chaldean-ms-vat-sir-303",
+   "chaldean-ms-vat-sir-42",
+   "chaldean-ms-vat-sir-43",
+   "chaldean-ms-vat-sir-44",
+   "chaldean-ms-vat-sir-491",
+   "chaldean-paris1982",
+   "chaldean-reform2006-2007",
+   "chaldean-saigh1936",
+   "chaldean-st-peter-2013",
+   "chaldean-urmia1890-liturgy"
+  ],
+  "updates": [
+   "chald-1767",
+   "chald-1901",
+   "chald-2020",
+   "east-urmia-1876",
+   "syr-add14669-fragments"
+  ],
+  "corrected_by_review": [
+   "chald-1901",
+   "chald-2020",
+   "chaldean-baghdad1971",
+   "chaldean-mosul1900-lections",
+   "chaldean-mosul1936-reprint",
+   "chaldean-ms-vat-sir-43",
+   "chaldean-ms-vat-sir-491",
+   "chaldean-paris1982",
+   "chaldean-reform2006-2007",
+   "chaldean-src-2020-typical-pdf",
+   "chaldean-src-addai-bib",
+   "chaldean-src-assemani1758",
+   "chaldean-src-bonn-urmia1890",
+   "chaldean-src-coakley-taylor",
+   "chaldean-src-cold-najm",
+   "chaldean-src-jammo2013-excerpt",
+   "chaldean-src-macomber1966-sigla",
+   "chaldean-src-mando2012",
+   "chaldean-st-peter-2013",
+   "chaldean-urmia1890-liturgy",
+   "east-urmia-1876"
+  ],
+  "added_by_review": [
+   "chaldean-src-jammo2006-cold"
+  ],
+  "rejected_by_review": []
+ },
+ "uses": [
+  {
+   "id": "chaldean",
+   "coverage_row": "chaldean",
+   "label": "Chaldean Catholic Church",
+   "disposition": "researched-with-explicit-gaps",
+   "finding": "The Catholic book line is labelled from manuscript layers (Macomber's Chaldean manuscript tradition, including Vatican Syriac 491 of 1686, 44 of 1691, and 43, copied at Rome in 1701 by Patriarch Joseph I) through Rome 1767, a reported 1773 second edition, the Mosul 1900 three-volume lectionary set, the 1901 ordinary and proper, the 1936 Mosul reprint, the 1971 Baghdad first-anaphora Taksa, the 1982 Paris reprint with French translation, the 2005–2007 reform, the 2014 trial order and the 2020 typical edition. The 2020 typical edition is now acquired: its own decree (No. 31, 17 February 2020) cites a recognition letter of 21 November 2019 and makes the edition effective on 5 April 2020.",
+   "limit": "No complete collation of any two states. The 1773, 1936, 1971, 1982 and 2006 books, the Saigh 1936 booklet and the 2023 faithful's book were not acquired. Holdings-catalogue leads from the reviewer's Najm al-Mashriq reading remain unresolved identities, not versions.",
+   "next_sources": [
+    "Moussess, 'Les huit éditions du missel chaldéen', POC 1 (1951) 209–220",
+    "Delly, 'L'édition du Missel chaldéen de 1901', OCP 23 (1957) 159–170",
+    "Original 1971 Baghdad Taksa (Najm al-Mashriq T/404/66)"
+   ],
+   "review_disposition": "accepted-with-corrections",
+   "review_remaining_gap": "No two states collated; 1773, 1936, 1971, 1982 and 2006 books unacquired; 1936 differs from 1901 in at least two readings; Moussess 1951/1954/1955 and Delly 1957 unread; Arabic-section holdings unbucketed."
+  },
+  {
+   "id": "east-syriac-ancestral",
+   "coverage_row": "chaldean",
+   "label": "Earlier Church of the East manuscript heritage (shared ancestry before and beside the Catholic line)",
+   "disposition": "researched-as-shared-ancestry-only",
+   "finding": "Macomber 1966 lists dated witnesses of the Apostles' anaphora from the twelfth century onward and groups those from about 1570 into three traditions: Alqosh, Chaldean and Malabar. Vatican Syriac 42 (1603) and Borgia Syriac 150 (sixteenth century) are now acquired as complete image sets.",
+   "limit": "Shared heritage is not Catholic reception. No manuscript was collated here.",
+   "next_sources": [
+    "Macomber, 'A List of the Known Manuscripts of the Chaldean Hudra', OCP 36 (1970) 120–134",
+    "Webb, 'Variations dans les versions manuscrites de la liturgie nestorienne d'Addai et de Mari', Sacris Erudiri 18 (1967–68) 478–523"
+   ],
+   "review_disposition": "accepted-with-corrections",
+   "review_remaining_gap": "Theodore and Nestorius manuscript traditions (Vadakkel 1989, Naduthadam 1992), Gelston 1992, Macomber 1970 Hudra list and Webb 1967–68 unread; Macomber witnesses outside the traditions (a Khoshaba ritual 1664, w Berlin 41 1834, z McHardy codex 1908) and L Saigh hudra unlabelled; several Desreumaux ranges dropped."
+  },
+  {
+   "id": "assyrian-church-of-the-east-collateral",
+   "coverage_row": "chaldean",
+   "label": "Assyrian Church of the East and the Anglican Urmia mission books (collateral, not Catholic)",
+   "disposition": "kept-distinct-collateral",
+   "finding": "The Urmia 1889 lectionary table and the Urmia 1890 Liturgy of the Apostles were printed by the Archbishop of Canterbury's mission (title page and catalogue). Kelaita's Mosul 1928 Taksa is the Church of the East edition Macomber cites as Ke. None is linked to Chaldean Catholic reception.",
+   "limit": "No reception evidence links these books to the Chaldean Catholic Church.",
+   "next_sources": [
+    "Kelaita, The Liturgy of the Church of the East (Mosul 1928) original"
+   ],
+   "review_disposition": "accepted-with-corrections",
+   "review_remaining_gap": "Kelaita 1928 and its reported 1959 reissue unacquired; the Urmia second part (1891–1892) unidentified; Sako's Bedjan 1890 Urmia printing unresolved."
+  },
+  {
+   "id": "syro-malabar-shared",
+   "coverage_row": "chaldean",
+   "label": "Malabar manuscript tradition (routed to the malabar lane)",
+   "disposition": "routed-to-malabar-lane",
+   "finding": "Macomber assigns Borgia Syriac 36 (seventeenth or eighteenth century) to the Malabar tradition; it is acquired here because the prior researcher started it, and is labelled for the malabar lane.",
+   "limit": "No Chaldean reception is claimed for Malabar witnesses.",
+   "next_sources": [
+    "Malabar lane's cold review of Vatican Syriac 66 and Borgia Syriac 36"
+   ],
+   "review_disposition": "accepted-with-corrections",
+   "review_remaining_gap": "Borg. sir. 36 coverage moved to the Syro-Malabar row; Z and Vat. sir. 66 belong to the malabar lane."
+  },
+  {
+   "id": "chaldean-local-st-peter-eparchy",
+   "coverage_row": "chaldean",
+   "label": "Chaldean Eparchy of St Peter the Apostle (San Diego) local use of the 2007 reform",
+   "disposition": "labelled-local-use-with-gap",
+   "finding": "Jammo's 2006 account and Sako's 2025 account agree that the reformed text was used in St Peter's eparchy; a 2013 Syriac Taksa from that eparchy is offered only as a five-page excerpt.",
+   "limit": "The full 2013 book and its approval are not seen.",
+   "next_sources": [
+    "Full 2013 Syriac Taksa of the Eparchy of St Peter the Apostle"
+   ],
+   "review_disposition": "accepted-with-corrections",
+   "review_remaining_gap": "Whole 2013 book, its approval and its relation to the 2006 approved book unseen."
+  },
+  {
+   "id": "chaldean-local-amadiya-shamkan",
+   "coverage_row": "chaldean",
+   "label": "Local use of Amadiya and Shamkan (catalogue lead)",
+   "disposition": "unresolved-catalogue-lead",
+   "finding": "The reviewer read a Najm al-Mashriq holding (T/404/9, catalogued 2002) titled for this local use.",
+   "limit": "Original book unseen; local title does not prove a distinct recension.",
+   "next_sources": [
+    "Najm al-Mashriq library T/404/9"
+   ],
+   "review_disposition": "gap-recorded",
+   "review_remaining_gap": "Original unseen; distinctness unknown."
+  }
+ ],
+ "searches": [
+  {
+   "repository": "Web discovery (prior researcher's tool, log calls 19–49)",
+   "queries": [
+    "Chaldean missal 1936 1971 1890 Bedjan Taksa editions",
+    "Chaldean Taksa 1971 Hunana Hanuna missal",
+    "\"Chaldean\" \"1773\" missal",
+    "\"Missale Chaldaicum\" \"1773\"",
+    "\"Taksa\" \"1906\" Urmia",
+    "\"القداس\" \"1971\" \"حنونا\"",
+    "\"القداس\" \"2020\" \"pdf\" \"الكلداني\"",
+    "\"رتب القداس\" \"2020\" الكلداني",
+    "\"Les huit éditions du missel chaldéen\"",
+    "\"Chaldean Catholic Missal\" \"2020\" pdf"
+   ],
+   "url": "https://www.google.com/",
+   "checked_on": "2026-10-19",
+   "outcome": "Leads: Thalassery list of printed Taksas (1767, 1773, 1876, 1890, 1901, 1906, 1928, 1936), Mando's 2012 book list, Sako 2025 (MECC copy), the St Peter parish 2020 PDFs and the Addai congress bibliographies.",
+   "extent_examined": "Result snippets and opened pages recorded in the log digest; snippets are leads only.",
+   "unexamined_range": "No search reached an original 1773, 1936, 1971 or 2006 book."
+  },
+  {
+   "repository": "ULB Bonn Digitale Sammlungen (Goussen collection)",
+   "queries": [
+    "topic/view/17267",
+    "topic/titles/17267",
+    "content/titleinfo/37063",
+    "content/titleinfo/242487",
+    "content/titleinfo/240795",
+    "content/titleinfo/189937",
+    "content/titleinfo/310905",
+    "content/titleinfo/310760"
+   ],
+   "url": "https://digitale-sammlungen.ulb.uni-bonn.de/",
+   "checked_on": "2026-10-19",
+   "outcome": "Six complete PDFs acquired (1876, 1889, 1890 and the three 1900 lection volumes). Direct HTML list and title pages now return a browser-script proof-of-work challenge or an empty list ('Keine Einträge vorhanden'); the OAI-PMH MODS endpoint returned full records.",
+   "extent_examined": "MODS records for eight Bonn items (the six acquired plus the two canonical 1901 volumes).",
+   "unexamined_range": "The 254-title Syrian group list was read only through the prior web tool's rendered view (titles 101–200 page); offsets 1–100 and 201–254 were not captured as bytes."
+  },
+  {
+   "repository": "Digital Vatican Library IIIF and OPAC",
+   "queries": [
+    "MSS_Vat.sir.42",
+    "MSS_Vat.sir.43",
+    "MSS_Vat.sir.44",
+    "MSS_Vat.sir.83",
+    "MSS_Vat.sir.303",
+    "MSS_Vat.sir.491",
+    "MSS_Borg.sir.36",
+    "MSS_Borg.sir.150"
+   ],
+   "url": "https://digi.vatlib.it/",
+   "checked_on": "2026-10-19",
+   "outcome": "Six manifests and all 1,526 page images acquired; Vat. sir. 43 and 83 have no IIIF manifest (HTTP 404). OPAC records cite Macomber 1966 and Webb 1967–68 for all six.",
+   "extent_examined": "Manifests, OPAC bibliography lists and the shelfmark target or first leaf of each image set.",
+   "unexamined_range": "Folio-level identification of the anaphora in each image set; Vatican Syriac manuscripts outside these six."
+  },
+  {
+   "repository": "Assemani, Bibliothecae Apostolicae Vaticanae codicum manuscriptorum catalogus I.2 (1758), Internet Archive OCR",
+   "queries": [
+    "CODICES CHALDAICI",
+    "MISSALE cum Pontificali",
+    "Liturgia Beatorum Apostolorum",
+    "Josepho"
+   ],
+   "url": "https://archive.org/download/AssemaniBAVI2/Assemani_BAV_I-2_djvu.txt",
+   "checked_on": "2026-10-19",
+   "outcome": "Entries XLII, XLIII and XLIV read (OCR lines 20476–20960): XLII (1603, Gazarta) has the Apostles' liturgy at f. 25v without the words of institution; XLIII (Rome, August 1701, Patriarch Joseph of Amid) adds the words of institution on a slip from the Maronite Missal (Rome 1592) at f. 29 and the Johannine last Gospel; XLIV (same hand) writes the words of institution at f. 28v under a rubric.",
+   "extent_examined": "Three catalogue entries read in OCR; the page images were not checked.",
+   "unexamined_range": "The rest of the volume; codices after the Assemani series (303, 491) and the Borgia fund."
+  },
+  {
+   "repository": "syri.ac manuscript database",
+   "queries": [
+    "vat-sir-42",
+    "vat-sir-44",
+    "vat-sir-303",
+    "vat-sir-491",
+    "borg-sir-36",
+    "borg-sir-150",
+    "other-genres/rite-baptism"
+   ],
+   "url": "https://syri.ac/",
+   "checked_on": "2026-10-19",
+   "outcome": "Every direct request returned a browser-script challenge or HTTP 403.",
+   "extent_examined": "None.",
+   "unexamined_range": "All syri.ac descriptions of these shelfmarks."
+  },
+  {
+   "repository": "St Peter Chaldean parish files (files.ecatholic.com/32718)",
+   "queries": [
+    "01 Chaldean Dialect Mass - 2020 - St Peters.pdf",
+    "03 Arabic Mass - 2020 - St Peters.pdf",
+    "04 English Mass - 2020 - St Peters.pdf"
+   ],
+   "url": "https://files.ecatholic.com/32718/documents/2022/8/03%20Arabic%20Mass%20-%202020%20-%20St%20Peters.pdf?t=1659997972000",
+   "checked_on": "2026-10-19",
+   "outcome": "Python urllib received HTTP 403; curl succeeds. The root acquired the 03 file; on 2026-10-19 a HEAD request confirmed content-length 5237835 (equal to the retained file) and last-modified 3 December 2022. The 01 (1605405 bytes) and 04 (1672570 bytes) files exist and were not acquired.",
+   "extent_examined": "HTTP headers of the three files; the whole 03 file.",
+   "unexamined_range": "Contents of the 01 Sureth and 04 English files (deferred translations)."
+  },
+  {
+   "repository": "Chaldean Patriarchate and Middle East Council of Churches",
+   "queries": [
+    "القداس الأول لأدّاي وماري: الأصالة والتجديد",
+    "إعادة طبع رُتَب القدّاس"
+   ],
+   "url": "https://www.mecc.org/regionalar/2025/8/28/uxgh13vgene5wrvw2uzou2s880i79p",
+   "checked_on": "2026-10-19",
+   "outcome": "chaldeanpatriarchate.com refused urllib (HTTP 403); the complete MECC republication of Sako's 27 August 2025 article was acquired and its sections on editions, the 2005 reform and the 2014–2020 renewal read.",
+   "extent_examined": "Whole MECC page text.",
+   "unexamined_range": "Patriarchate original page bytes (the existing inventory source read it on 2026-10-16)."
+  },
+  {
+   "repository": "Ishtar TV (Nuri Isho Mando, liturgical books of the Chaldean Church of the East, 2012)",
+   "queries": [
+    "الكتب الطقسية في كنيسة المشرق الكلدانية"
+   ],
+   "url": "https://ishtartv.com/viewarticle,42052.html",
+   "checked_on": "2026-10-19",
+   "outcome": "Complete article acquired; manuscript and printed book lists read in full.",
+   "extent_examined": "Whole article.",
+   "unexamined_range": "Originals of every book it lists."
+  },
+  {
+   "repository": "Coakley and Taylor, Syriac books printed at the Dominican Press, Mosul (Scribd text view)",
+   "queries": [
+    "Lectiones",
+    "Missale",
+    "1936",
+    "Proprium"
+   ],
+   "url": "https://www.scribd.com/doc/179381429/Syriac-Books-Printed-at-the-Dominican-Press-Mosul-pdf",
+   "checked_on": "2026-10-19",
+   "outcome": "Entries 57 (three lection volumes, 1900) and 58 (Missale 1901, [ii], 406 pp. with proprium) read; entry 58 records the Mosul 1936 reprint (citing Delly 1957, p. 170), the Paris 1982 reprint of the 96-page ordinary with French and an Atour Publications reprint about 2005.",
+   "extent_examined": "The text layer delivered in one Scribd HTML page (98,684 characters extracted).",
+   "unexamined_range": "Whether the HTML text layer holds all 60 pages was not measured page by page."
+  },
+  {
+   "repository": "Syriac Anaphoras project bibliography extracts and Addai congress bibliographies",
+   "queries": [
+    "feulner_1.pdf",
+    "brock_1.pdf",
+    "biblio1_en.pdf",
+    "biblio2_en.pdf"
+   ],
+   "url": "https://syriac-anaphoras.org/catalogue/pdf/feulner_1.pdf",
+   "checked_on": "2026-10-19",
+   "outcome": "Controls name Rome 1767 with a second edition of 1773, Mosul 1901 and 1936, Urmia 1890, Baghdad 1971, Paris 1982, Moussess 1951/1954/1955, Macomber 1970/1977 and Connolly's edition of Add. 14669 as East Syrian.",
+   "extent_examined": "All four PDFs complete (3, 6, 14 and 21 pages).",
+   "unexamined_range": "The underlying books and articles."
+  },
+  {
+   "repository": "Journal of Assyrian Academic Studies (Macomber 1997, 1998)",
+   "queries": [
+    "jaas.org/edocs/v11n2/macomber.pdf",
+    "jaas.org/edocs/v12n1/macomber.pdf"
+   ],
+   "url": "http://www.jaas.org/edocs/v11n2/macomber.pdf",
+   "checked_on": "2026-10-19",
+   "outcome": "Host does not resolve (curl exit 6; urllib Errno -2). Wayback snapshots of 2 December 2021 return error pages ('Page cannot be displayed'), retained in finish/.",
+   "extent_examined": "Both URLs and their Wayback snapshots.",
+   "unexamined_range": "Both articles in any other copy (Worship 51 (1977) originals)."
+  },
+  {
+   "repository": "Peeters Online Journals",
+   "queries": [
+    "The Chaldean Mass-Puzzle"
+   ],
+   "url": "https://poj.peeters-leuven.be/content.php?id=3292803&journal_code=QL&url=article",
+   "checked_on": "2026-10-19",
+   "outcome": "Article metadata page only (Van Vossel, Questions Liturgiques 103 (2023)); full text is paywalled.",
+   "extent_examined": "Metadata page.",
+   "unexamined_range": "Article text; Van Vossel, The Chaldean Mass Over 50 Years (Baghdad 2025)."
+  },
+  {
+   "repository": "Aramaic Project (CMSI) resources",
+   "queries": [
+    "Chaldean-Missal-2013-1.pdf"
+   ],
+   "url": "https://aramaicproject.com/resources/the-rite-of-the-divine-mysteries-of-the-chaldean-church-of-east-syriac-version",
+   "checked_on": "2026-10-19",
+   "outcome": "A five-page excerpt (title, verso, printed pp. 1–3) is the whole file the host offers.",
+   "extent_examined": "Whole offered file.",
+   "unexamined_range": "The complete 2013 book."
+  },
+  {
+   "repository": "Wikisource (Dictionnaire de théologie catholique, Nestorienne liturgie)",
+   "queries": [
+    "NESTORIENNE (Eglise) XIV"
+   ],
+   "url": "https://fr.wikisource.org/wiki/Dictionnaire_de_th%C3%A9ologie_catholique/NESTORIENNE_(Eglise)_XIV._Liturgie_des_Eglises_nestorienne_et_chald%C3%A9enne",
+   "checked_on": "2026-10-19",
+   "outcome": "urllib returned HTTP 403; not retried.",
+   "extent_examined": "None.",
+   "unexamined_range": "The DTC article."
+  }
+ ],
+ "versions": [
+  {
+   "id": "chaldean-add14669",
+   "label": "British Library Add. 14669 ff. 20–21, anaphora fragments",
+   "tradition_or_use": "Church of the East manuscript heritage (shared ancestry)",
+   "date_label": "sixth century",
+   "date_role": "manuscript-attestation-approximate",
+   "record_class": "shared-ancestry-fragment",
+   "distinctness_basis": "Fragmentary witness; Connolly's edition (1925) and both bibliographic controls class it as East Syrian. A scholarly attribution, not Chaldean reception.",
+   "existing_candidate_ids": [
+    "syr-add14669-fragments"
+   ],
+   "acquisition_ids": [
+    "chaldean-acq-feulner-bib",
+    "chaldean-acq-addai-bib1"
+   ],
+   "unresolved": "Connolly's edition and the manuscript were not read.",
+   "inventory_ids": [
+    "syr-add14669-fragments"
+   ]
+  },
+  {
+   "id": "chaldean-ishoyahb-reform",
+   "label": "Reported seventh-century ordering of the anaphoras under Ishoʿyahb III",
+   "tradition_or_use": "Church of the East manuscript heritage (shared ancestry)",
+   "date_label": "649–659 (reported)",
+   "date_role": "literary-attribution",
+   "record_class": "historical-revision-hypothesis-not-book",
+   "distinctness_basis": "Literary testimony reported by Sako 2025; no book or manuscript state attests it.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "chaldean-acq-sako-mecc"
+   ],
+   "unresolved": "Not a book state; no date bounds assigned.",
+   "inventory_ids": []
+  },
+  {
+   "id": "chaldean-ms-mar-eshaya",
+   "label": "Mosul, Mar Eshaya Hudra (Macomber's base text): Apostles' anaphora",
+   "tradition_or_use": "Church of the East manuscript heritage (shared ancestry)",
+   "date_label": "tenth–eleventh century original portion",
+   "date_role": "manuscript-attestation-approximate",
+   "record_class": "manuscript-layer",
+   "distinctness_basis": "Oldest written state in the dossier (stage chaldean-east-syriac:mar-eshaya): no written private prayers and no institution narrative.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "chaldean-acq-macomber1966-images"
+   ],
+   "unresolved": "Manuscript images registered at HMML/CNMO are not accessible without registration.",
+   "inventory_ids": [
+    "chaldean-ms-mar-eshaya"
+   ]
+  },
+  {
+   "id": "chaldean-ms-diarbekir-hudra",
+   "label": "Diarbekir Hudra (Macomber A), surviving volume",
+   "tradition_or_use": "Church of the East manuscript heritage (shared ancestry)",
+   "date_label": "twelfth century",
+   "date_role": "manuscript-attestation-approximate",
+   "record_class": "manuscript-layer",
+   "distinctness_basis": "Writes the private prayers absent from Mar Eshaya (dossier transition written-kushshaphe).",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "chaldean-acq-macomber1966-images"
+   ],
+   "unresolved": "Current location unverified.",
+   "inventory_ids": [
+    "chaldean-ms-diarbekir-hudra"
+   ]
+  },
+  {
+   "id": "chaldean-ms-mardin22",
+   "label": "Mardin 22 Hudra (Macomber B)",
+   "tradition_or_use": "Church of the East manuscript heritage (shared ancestry)",
+   "date_label": "1287",
+   "date_role": "manuscript-attestation",
+   "record_class": "manuscript-layer",
+   "distinctness_basis": "Dated witness still without the private prayers; not a reform.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "chaldean-acq-macomber1966-images"
+   ],
+   "unresolved": "Current location unverified.",
+   "inventory_ids": [
+    "chaldean-ms-mardin22"
+   ]
+  },
+  {
+   "id": "chaldean-ms-15th-16th-pre-family",
+   "label": "Fifteenth- and sixteenth-century witnesses before the three traditions (Macomber C–Q)",
+   "tradition_or_use": "Church of the East manuscript heritage (shared ancestry)",
+   "date_label": "fifteenth–sixteenth centuries",
+   "date_role": "manuscript-attestation-approximate",
+   "record_class": "manuscript-witness-group",
+   "distinctness_basis": "Witnesses Macomber does not assign to a tradition; grouped, not counted as versions.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "chaldean-acq-macomber1966-images"
+   ],
+   "unresolved": "Individual identities beyond the Vatican items are unverified.",
+   "inventory_ids": []
+  },
+  {
+   "id": "chaldean-ms-borg-sir-150",
+   "label": "Vatican, Borg. sir. 150 (Macomber N)",
+   "tradition_or_use": "Church of the East manuscript heritage (shared ancestry)",
+   "date_label": "sixteenth century (Macomber)",
+   "date_role": "manuscript-attestation-approximate",
+   "record_class": "manuscript-witness",
+   "distinctness_basis": "Pre-family witness; OPAC also cites Macomber's Hudra list (1970), so it may be a Hudra.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "chaldean-acq-vat-borg150-images",
+    "chaldean-acq-vat-borg150-manifest"
+   ],
+   "unresolved": "Folio of the anaphora and the manuscript's genre not identified on the images.",
+   "inventory_ids": [
+    "chaldean-ms-borg-sir-150"
+   ]
+  },
+  {
+   "id": "chaldean-ms-vat-sir-42",
+   "label": "Vatican, Vat. sir. 42 (Macomber W): Order of Priests with the Apostles and Nestorius",
+   "tradition_or_use": "Church of the East manuscript heritage (shared ancestry)",
+   "date_label": "1603 (Assemani: November, Seleucid 1914)",
+   "date_role": "manuscript-colophon-reported",
+   "record_class": "manuscript-witness",
+   "distinctness_basis": "Copied at Gazarta; the Apostles' liturgy (f. 25v) lacks the words of institution (Assemani). Came from the library of Patriarch Joseph I (BYU description card, image 1).",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "chaldean-acq-vat-sir42-images",
+    "chaldean-acq-vat-sir42-manifest"
+   ],
+   "unresolved": "Colophon not read on the image; the BYU card's '165 folios' and 'completed in 1202' differ from Assemani's 169 folios and 1603.",
+   "inventory_ids": [
+    "chaldean-ms-vat-sir-42"
+   ]
+  },
+  {
+   "id": "chaldean-ms-vat-sir-303",
+   "label": "Vatican, Vat. sir. 303 (Macomber Y, Alqosh tradition)",
+   "tradition_or_use": "Church of the East manuscript heritage (shared ancestry)",
+   "date_label": "1608",
+   "date_role": "manuscript-attestation",
+   "record_class": "manuscript-witness",
+   "distinctness_basis": "Member of Macomber's Alqosh tradition.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "chaldean-acq-vat-sir303-images",
+    "chaldean-acq-vat-sir303-manifest"
+   ],
+   "unresolved": "Colophon and anaphora folio not identified.",
+   "inventory_ids": [
+    "chaldean-ms-vat-sir-303"
+   ]
+  },
+  {
+   "id": "chaldean-ms-alqosh-tradition",
+   "label": "Alqosh manuscript tradition (Macomber AQ: R 1570 to u 18th/19th c.)",
+   "tradition_or_use": "Church of the East manuscript heritage (shared ancestry)",
+   "date_label": "1570–19th century",
+   "date_role": "manuscript-family-range",
+   "record_class": "manuscript-tradition-layer",
+   "distinctness_basis": "Textual tradition defined by Macomber; a layer, not one version.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "chaldean-acq-macomber1966-images"
+   ],
+   "unresolved": "Members other than Vat. sir. 303 not acquired.",
+   "inventory_ids": []
+  },
+  {
+   "id": "chaldean-ms-chaldean-tradition",
+   "label": "Chaldean manuscript tradition (Macomber CH: f 1686 to y 1850)",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "1686–1850",
+   "date_role": "manuscript-family-range",
+   "record_class": "manuscript-tradition-layer",
+   "distinctness_basis": "Macomber's Chaldean tradition (f, g, h, l, m, o, q, r, x, y), the manuscript layer of the Catholic line; includes the Vatican items 491, 44 and 43.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "chaldean-acq-macomber1966-images"
+   ],
+   "unresolved": "Members outside the Vatican not acquired.",
+   "inventory_ids": []
+  },
+  {
+   "id": "chaldean-ms-vat-sir-491",
+   "label": "Vatican, Vat. sir. 491 (Macomber f, Chaldean tradition)",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "1686",
+   "date_role": "manuscript-attestation",
+   "record_class": "manuscript-witness",
+   "distinctness_basis": "Earliest dated member of Macomber's Chaldean tradition.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "chaldean-acq-vat-sir491-images",
+    "chaldean-acq-vat-sir491-manifest"
+   ],
+   "unresolved": "Colophon and anaphora not located on the images.",
+   "inventory_ids": [
+    "chaldean-ms-vat-sir-491"
+   ]
+  },
+  {
+   "id": "chaldean-ms-vat-sir-44",
+   "label": "Vatican, Vat. sir. 44 (Macomber h): baptism, Apostles' liturgy and Arabic Gospel lections",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "1691 (Macomber); hand of Patriarch Joseph of Amid (Assemani)",
+   "date_role": "manuscript-attestation",
+   "record_class": "manuscript-witness",
+   "distinctness_basis": "Writes the words of institution in the Apostles' liturgy at f. 28v under a rubric (Assemani), a Catholic supplement absent from Vat. sir. 42.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "chaldean-acq-vat-sir44-images",
+    "chaldean-acq-vat-sir44-manifest"
+   ],
+   "unresolved": "f. 28v not checked on the image; the 1691 date is Macomber's and Assemani gives no year.",
+   "inventory_ids": [
+    "chaldean-ms-vat-sir-44"
+   ]
+  },
+  {
+   "id": "chaldean-ms-vat-sir-43",
+   "label": "Vatican, Vat. sir. 43 (Macomber l): Missal with Pontifical, copied at Rome by Patriarch Joseph I",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "August 1701 (colophons as transcribed by Assemani)",
+   "date_role": "manuscript-colophon-reported",
+   "record_class": "manuscript-witness",
+   "distinctness_basis": "Assemani reports the words of institution supplied on a slip taken from the Maronite Missal (Rome 1592) and the Johannine last Gospel added after the liturgy: concrete Latinizing changes.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "chaldean-acq-assemani1758-ocr",
+    "chaldean-acq-vatlib-opac"
+   ],
+   "unresolved": "Not digitized (IIIF manifest HTTP 404; OPAC shows no digitization); images unavailable.",
+   "inventory_ids": [
+    "chaldean-ms-vat-sir-43"
+   ]
+  },
+  {
+   "id": "chaldean-ms-joseph1-1697",
+   "label": "Chaldean Patriarchate MS 38 (Macomber i, 1697) and Renaudot's reported Joseph I witness of 1697",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "1697",
+   "date_role": "manuscript-attestation",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Macomber places Chald. Patr. 38 in the Alqosh tradition; the dossier's Renaudot lead (Joseph I, 1697) is not shown to be the same book.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "chaldean-acq-macomber1966-images"
+   ],
+   "unresolved": "Identity of Renaudot's 1697 witness unresolved.",
+   "inventory_ids": []
+  },
+  {
+   "id": "chaldean-ms-malabar-tradition-borg36",
+   "label": "Vatican, Borg. sir. 36 (Macomber k, Malabar tradition)",
+   "tradition_or_use": "Syro-Malabar (routed to the malabar lane)",
+   "date_label": "seventeenth or eighteenth century",
+   "date_role": "manuscript-attestation-approximate",
+   "record_class": "shared-ancestry-origin-review",
+   "distinctness_basis": "Malabar tradition witness; no Chaldean reception claimed.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "chaldean-acq-vat-borg36-images",
+    "chaldean-acq-vat-borg36-manifest"
+   ],
+   "unresolved": "Malabar lane to dispose.",
+   "inventory_ids": []
+  },
+  {
+   "id": "chaldean-ms-vat-sir-66",
+   "label": "Vatican, Vat. sir. 66 (Macomber O), Malabar-associated codex",
+   "tradition_or_use": "Syro-Malabar (routed)",
+   "date_label": "main codex 1529; ownership note 1545; added leaves undated",
+   "date_role": "manuscript-attestation-disputed",
+   "record_class": "shared-ancestry-origin-review",
+   "distinctness_basis": "Reviewer and malabar cold reading of Assemani; the anaphora sits in an added tail.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Owned by the malabar lane; not acquired here.",
+   "inventory_ids": []
+  },
+  {
+   "id": "chaldean-ms-repertoire-ranges",
+   "label": "Catalogue ranges of East Syriac ritual manuscripts (Desreumaux 1991 extract; Macomber's Hudra list 1970)",
+   "tradition_or_use": "Church of the East manuscript heritage (shared ancestry)",
+   "date_label": "various",
+   "date_role": "catalogue-range",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Holdings ranges are not versions.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Exact Eucharistic subsets unresolved.",
+   "inventory_ids": []
+  },
+  {
+   "id": "chald-1767",
+   "label": "Missale Chaldaicum ex decreto Sacrae Congregationis de Propaganda Fide editum (Rome 1767)",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "1767",
+   "date_role": "publication",
+   "record_class": "printed-edition",
+   "distinctness_basis": "Existing record; Macomber's Cr (pp. 280–286); Sako names Confiteor, John prologue, a Maronite prayer and 'Mother of our Lord Jesus Christ' as Latin additions.",
+   "existing_candidate_ids": [
+    "chald-1767"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Sako's list of additions not checked against the 1767 pages.",
+   "inventory_ids": [
+    "chald-1767",
+    "chald-1767"
+   ]
+  },
+  {
+   "id": "chaldean-rome1773",
+   "label": "Missale Chaldaicum, second edition (Rome 1773), reported",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "1773 (reported)",
+   "date_role": "publication-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Two bibliographic routes (Feulner extract; Thalassery list) report it; changes unknown.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "chaldean-acq-feulner-bib"
+   ],
+   "unresolved": "No copy located.",
+   "inventory_ids": []
+  },
+  {
+   "id": "east-urmia-1876",
+   "label": "Rituel chaldéen (Urmia, Lazarist mission, 1876)",
+   "tradition_or_use": "Chaldean Catholic mission imprint (ritual)",
+   "date_label": "1876",
+   "date_role": "publication",
+   "record_class": "ritual-book-boundary",
+   "distinctness_basis": "Title page names it a ritual; first rite baptism. Not a Mass book in the pages inspected.",
+   "existing_candidate_ids": [
+    "east-urmia-1876"
+   ],
+   "acquisition_ids": [
+    "chaldean-acq-urmia1876"
+   ],
+   "unresolved": "Remaining pages not surveyed for Eucharistic texts.",
+   "inventory_ids": [
+    "east-urmia-1876",
+    "east-urmia-1876"
+   ]
+  },
+  {
+   "id": "chaldean-urmia1889-lectionary",
+   "label": "Qeryānē: šelīḥā we-ewangēlīyōnā (Urmia 1889)",
+   "tradition_or_use": "Assyrian Church of the East / Anglican Urmia mission (collateral)",
+   "date_label": "1889",
+   "date_role": "publication",
+   "record_class": "collateral-complementary-component",
+   "distinctness_basis": "Assyrian pericope table from the Anglican mission; not Catholic.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "chaldean-acq-qeryana1889"
+   ],
+   "unresolved": "No Catholic reception.",
+   "inventory_ids": []
+  },
+  {
+   "id": "chaldean-urmia1890-liturgy",
+   "label": "Liturgia sanctorum Apostolorum Adaei et Maris ... necnon ordo baptismi (Urmia 1890)",
+   "tradition_or_use": "Assyrian Church of the East / Anglican Urmia mission (collateral)",
+   "date_label": "1890",
+   "date_role": "publication",
+   "record_class": "collateral-printed-edition",
+   "distinctness_basis": "Anglican mission edition (Macomber's Ur); Sako links Bedjan to an 1890 Urmia text, not shown to be this book.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "chaldean-acq-urmia1890"
+   ],
+   "unresolved": "Second part reported by the reviewer (1890–1892) not identified.",
+   "inventory_ids": [
+    "chaldean-urmia1890-liturgy"
+   ]
+  },
+  {
+   "id": "chaldean-hudra1886",
+   "label": "Breviarium Chaldaicum (Hudra), Bedjan, three volumes (Paris 1886–1887)",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "1886–1887; reprints Rome 1938 and 2002, Detroit 1999",
+   "date_role": "publication-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Office book with Eucharistic propers; complementary, not a Mass book; reprints are not reforms.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "chaldean-acq-mando2012"
+   ],
+   "unresolved": "Eucharistic reach not inspected.",
+   "inventory_ids": []
+  },
+  {
+   "id": "chaldean-mosul1900-lections",
+   "label": "Lectiones / Epistolae / Sancta Evangelia ... in Missa leguntur (Mosul 1900), three volumes",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "1900",
+   "date_role": "publication",
+   "record_class": "complementary-lectionary",
+   "distinctness_basis": "Complementary lectionary set for the Mass with Catholic imprimatur; one set, not three versions.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "chaldean-acq-lectiones1900",
+    "chaldean-acq-epistolae1900",
+    "chaldean-acq-evangelia1900"
+   ],
+   "unresolved": "Pericope system not collated against 1901 proper or later lectionaries.",
+   "inventory_ids": [
+    "chaldean-mosul1900-lections"
+   ]
+  },
+  {
+   "id": "chaldean-mosul1900-arabic-lections",
+   "label": "Arabic companion editions of the 1900 lections (Mando); Kirkuk reprints 1979–1980",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "1900; 1979; 1980",
+   "date_role": "publication-reported",
+   "record_class": "deferred-translation",
+   "distinctness_basis": "Arabic translations; deferred.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "chaldean-acq-mando2012"
+   ],
+   "unresolved": "Not acquired.",
+   "inventory_ids": []
+  },
+  {
+   "id": "chald-1901",
+   "label": "Missale juxta ritum Ecclesiae Syrorum Orientalium id est Chaldaeorum (Mosul 1901)",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "1901",
+   "date_role": "publication",
+   "record_class": "printed-edition",
+   "distinctness_basis": "Existing record; Coakley gives [ii], 406 pp. including the proprium.",
+   "existing_candidate_ids": [
+    "chald-1901"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Delly 1957 unread.",
+   "inventory_ids": [
+    "chald-1901",
+    "chald-1901"
+   ]
+  },
+  {
+   "id": "chald-proper-1901",
+   "label": "Proprium missarum ... (Mosul 1901)",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "1901",
+   "date_role": "publication",
+   "record_class": "complementary-volume",
+   "distinctness_basis": "Existing record; complementary to the 1901 ordinary and the 1900 lections.",
+   "existing_candidate_ids": [
+    "chald-proper-1901"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "None new.",
+   "inventory_ids": [
+    "chald-proper-1901",
+    "chald-proper-1901"
+   ]
+  },
+  {
+   "id": "chaldean-urmia1906-lead",
+   "label": "Urmia 1906 Taksa 'similar to the Roman Taksa' (Thalassery list)",
+   "tradition_or_use": "unresolved Church",
+   "date_label": "1906 (reported)",
+   "date_role": "publication-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "The only Urmia 1906 book located (DDB/Bonn) is an Anglican office book, not a Mass book; the lead stays open.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "No original identified.",
+   "inventory_ids": []
+  },
+  {
+   "id": "chaldean-kelaita1928",
+   "label": "J. E. Y. Kelaita, Taksa (Mosul 1928)",
+   "tradition_or_use": "Assyrian Church of the East / Anglican Urmia mission (collateral)",
+   "date_label": "1928",
+   "date_role": "publication-reported",
+   "record_class": "collateral-printed-edition-lead",
+   "distinctness_basis": "Church of the East edition (Macomber's Ke).",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Not acquired.",
+   "inventory_ids": []
+  },
+  {
+   "id": "chaldean-mosul1936-reprint",
+   "label": "Missale juxta ritum Ecclesiae Chaldaeorum (Mosul 1936), reprint of the 1901 ordinary",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "1936",
+   "date_role": "publication-reported",
+   "record_class": "reprint-witness",
+   "distinctness_basis": "Coakley (citing Delly) and Sako call it a reprint; Macomber collates it as Cm36 on the same pp. 24–36.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Original not acquired; Najm T/404/65 holds three copies.",
+   "inventory_ids": [
+    "chaldean-mosul1936-reprint"
+   ]
+  },
+  {
+   "id": "chaldean-saigh1936",
+   "label": "Sulayman Saigh, al-Ibtihālāt al-qudsiyya (1936), Syriac–Arabic Apostles' liturgy booklet",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "1936",
+   "date_role": "publication-reported",
+   "record_class": "deferred-translation",
+   "distinctness_basis": "First Arabic translation (Sako); Syriac facing text; not the 1936 Taksa.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Not acquired.",
+   "inventory_ids": [
+    "chaldean-saigh1936"
+   ]
+  },
+  {
+   "id": "chaldean-miri1960",
+   "label": "Yusuf Miri, Ktawa d-teshmeshta d-raze (1960), classical Syriac and Garshuni issues",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "1960; Baghdad 1965 entry",
+   "date_role": "publication-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Service book; status and contents unknown.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Najm T/404/231, N/321/78 unseen.",
+   "inventory_ids": []
+  },
+  {
+   "id": "chaldean-najm1961",
+   "label": "Chaldean Taksa d-raze catalogued 1961 (Najm T/404/60)",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "1961 (catalogue)",
+   "date_role": "catalogue-date",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "May be an alias of 1971 or a separate book.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Front matter unseen.",
+   "inventory_ids": []
+  },
+  {
+   "id": "chaldean-baghdad1971",
+   "label": "Taksa d-raze with the first anaphora (Baghdad 1971), Patriarch Paul II Cheikho; copied by Toma Hanuna",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "1971",
+   "date_role": "publication-reported",
+   "record_class": "historical-revision-candidate",
+   "distinctness_basis": "Sako reports the synod removed some prayers; three independent bibliographic routes date it.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Removed prayers not identified; original unseen (Najm T/404/66).",
+   "inventory_ids": [
+    "chaldean-baghdad1971"
+   ]
+  },
+  {
+   "id": "chaldean-unattributed-taksa-1943-1973",
+   "label": "Unattributed native-script Taksa books catalogued 1943, 1960, 1965 and 1973",
+   "tradition_or_use": "unresolved Church",
+   "date_label": "1943–1973 (catalogue)",
+   "date_role": "catalogue-date",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Holdings; identity unknown.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Najm T/404/241, 30, 219, 16, 240.",
+   "inventory_ids": []
+  },
+  {
+   "id": "chaldean-gospels1977",
+   "label": "Alichoran, liturgical Gospels in Syriac (Paris 1977)",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "1977",
+   "date_role": "publication-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Reprint or new edition of the Gospel lectionary; unknown.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Not acquired.",
+   "inventory_ids": []
+  },
+  {
+   "id": "chaldean-francis-dawid",
+   "label": "Francis Dawid Taksa books (1981, 1986, undated)",
+   "tradition_or_use": "unresolved Church",
+   "date_label": "1981; 1986",
+   "date_role": "catalogue-date",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Native title says East Syrians; Church unproved.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Najm T/404/1, 8, 5, 51, 52.",
+   "inventory_ids": []
+  },
+  {
+   "id": "chaldean-paris1982",
+   "label": "Missel chaldéen: L'ordre des mystères avec les trois anaphores (Paris 1982), Alichoran",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "1982",
+   "date_role": "publication-reported",
+   "record_class": "reprint-with-deferred-translation",
+   "distinctness_basis": "Reprints the 1901 96-page ordinary (Coakley; Sako) with French; Syriac layer is a reprint, French deferred.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Not acquired.",
+   "inventory_ids": [
+    "chaldean-paris1982"
+   ]
+  },
+  {
+   "id": "chaldean-beqoma1989",
+   "label": "Raouf Beqoma, Mass and first anaphora; Christmas hymns (catalogued 1989)",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "1989",
+   "date_role": "catalogue-date",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Unknown relation.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Najm T/404/80, 81.",
+   "inventory_ids": []
+  },
+  {
+   "id": "chaldean-noufali",
+   "label": "Abdullah Hormiz Noufali, Chaldean Mass and first anaphora (1993; 2002)",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "1993; 2002",
+   "date_role": "catalogue-date",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Adaptation or translation unknown.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Najm T/404/68, N/321/212.",
+   "inventory_ids": []
+  },
+  {
+   "id": "chaldean-propers-2000-2001",
+   "label": "Mass proper supplements: Gallou (2000) and Chaldean Canada, Zora (2001)",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "2000; 2001",
+   "date_role": "catalogue-date",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Complementary propers; changes unknown.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Najm T/404/50, 109.",
+   "inventory_ids": []
+  },
+  {
+   "id": "chaldean-lectionaries-1962-2005",
+   "label": "Later lectionaries: Kirkuk Gospel 1962; Pauline readings 2001 and 2005; Sureth Epistles 2005",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "1962–2005",
+   "date_role": "catalogue-date",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Complementary lectionaries; language and authority unknown.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Najm T/404/94, 64, 102, 144.",
+   "inventory_ids": []
+  },
+  {
+   "id": "chaldean-amadiya-shamkan2002",
+   "label": "Taksa of the local use of Amadiya and Shamkan (catalogued 2002)",
+   "tradition_or_use": "Local use of Amadiya and Shamkan",
+   "date_label": "2002",
+   "date_role": "catalogue-date",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Named local use; distinctness unknown.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Najm T/404/9.",
+   "inventory_ids": []
+  },
+  {
+   "id": "chaldean-jammo-drafts-2002-2005",
+   "label": "Jammo's service of the Divine Mysteries (2002) and a 2005 pre-approval book",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "2002; 2005",
+   "date_role": "catalogue-date",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Drafts or editions before approval; not the approved book.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Najm T/404/230, 67.",
+   "inventory_ids": []
+  },
+  {
+   "id": "chaldean-reform2006-2007",
+   "label": "Reformed Taksa d-raze (synod 2005; recognitio 18 February 2006; effective 6 January 2007)",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "2006 book (catalogue); 2007 effective (Jammo)",
+   "date_role": "approval-and-effective-reported",
+   "record_class": "historical-reform-candidate",
+   "distinctness_basis": "Dossier stage reform2007 exists without an inventory row; Sako says only Jammo used it.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Native book and recognitio unseen (Najm T/404/82).",
+   "inventory_ids": [
+    "chaldean-reform2006-2007"
+   ]
+  },
+  {
+   "id": "chaldean-st-peter-2013",
+   "label": "Syriac Taksa of the Eparchy of St Peter the Apostle (2013)",
+   "tradition_or_use": "Chaldean Eparchy of St Peter the Apostle",
+   "date_label": "2013",
+   "date_role": "publication",
+   "record_class": "local-diocesan-book-witness",
+   "distinctness_basis": "Local book of the Jammo text; only an excerpt offered.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "chaldean-acq-jammo2013-excerpt"
+   ],
+   "unresolved": "Whole book and approval unseen; Najm T/404/61 may be the Baghdad trial instead.",
+   "inventory_ids": [
+    "chaldean-st-peter-2013"
+   ]
+  },
+  {
+   "id": "chald-2014",
+   "label": "رتبة القداس بحسب الطقس الكلداني (Baghdad 2014), trial order",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "2014",
+   "date_role": "publication",
+   "record_class": "printed-trial-order",
+   "distinctness_basis": "Existing record.",
+   "existing_candidate_ids": [
+    "chald-2014"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "None new.",
+   "inventory_ids": [
+    "chald-2014",
+    "chald-2014"
+   ]
+  },
+  {
+   "id": "chaldean-baghdad2018-second-mass",
+   "label": "Second Mass according to the Chaldean Church (Baghdad 2018)",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "2018",
+   "date_role": "catalogue-date",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Component precursor of the 2020 Second Mass; relation unknown.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Najm T/404/74, N/321/207.",
+   "inventory_ids": []
+  },
+  {
+   "id": "chald-2020",
+   "label": "رُتَب القداس بحسب الطقس الكلداني / Chaldean Catholic Missal (Baghdad 2020), typical edition",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "decree 17 February 2020; effective 5 April 2020",
+   "date_role": "approval-and-effective",
+   "record_class": "typical-edition",
+   "distinctness_basis": "Existing record; decree and contents now inspected in the acquired PDF.",
+   "existing_candidate_ids": [
+    "chald-2020"
+   ],
+   "acquisition_ids": [
+    "chaldean-acq-2020-typical-pdf"
+   ],
+   "unresolved": "Printed impression's pagination not compared.",
+   "inventory_ids": [
+    "chald-2020",
+    "chald-2020"
+   ]
+  },
+  {
+   "id": "chaldean-2020-sureth-english",
+   "label": "Sureth and English versions of the 2020 orders (St Peter parish files 01 and 04)",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "2020",
+   "date_role": "publication",
+   "record_class": "deferred-translation",
+   "distinctness_basis": "The decree includes Sureth in the typical edition; independent vernacular histories are deferred.",
+   "existing_candidate_ids": [
+    "chald-arabic-by-2022"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Files not acquired.",
+   "inventory_ids": [
+    "chald-arabic-by-2022"
+   ]
+  },
+  {
+   "id": "chaldean-faithful2023",
+   "label": "Faithful's book of the Mass orders (2023)",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "2023",
+   "date_role": "publication-reported",
+   "record_class": "deferred-translation",
+   "distinctness_basis": "Named in the 2025 reprint notice; congregational book.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Not acquired (Najm T/404/15, N/321/47).",
+   "inventory_ids": []
+  },
+  {
+   "id": "chald-2025-reprint",
+   "label": "رُتب القداس ... (Baghdad 2025) corrected reprint",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "2025",
+   "date_role": "publication",
+   "record_class": "reprint-witness",
+   "distinctness_basis": "Existing record; same section order as the 2020 PDF.",
+   "existing_candidate_ids": [
+    "chald-2025-reprint"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "None new.",
+   "inventory_ids": [
+    "chald-2025-reprint",
+    "chald-2025-reprint"
+   ]
+  },
+  {
+   "id": "chaldean-moussess-editions-control",
+   "label": "Moussess's eight editions survey (1951) and Delly's study of 1901 (1957)",
+   "tradition_or_use": "Chaldean Catholic Church",
+   "date_label": "1951; 1957",
+   "date_role": "bibliographic-control",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Repertoires that may name editions not labelled here.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "chaldean-acq-addai-bib1"
+   ],
+   "unresolved": "Unread.",
+   "inventory_ids": []
+  }
+ ],
+ "acquisitions": [
+  {
+   "id": "chaldean-acq-2020-typical-pdf",
+   "original_url": "https://files.ecatholic.com/32718/documents/2022/8/03%20Arabic%20Mass%20-%202020%20-%20St%20Peters.pdf?t=1659997972000",
+   "sha256": "c14144d8df98aa3d075affcd841775a7fc95b434d86df12abd978ecfe7a6cb74",
+   "bytes": 5237835,
+   "pages": 167,
+   "delivered_extent": "Whole file offered (167 PDF pages; HEAD content-length 5237835 equals the file). No contents page or colophon.",
+   "identity_inspection": "Rendered and viewed PDF 1 (title: Syriac and Arabic titles, 'Chaldean Catholic Missal', Baghdad 2020), 2 (decree No. 31, 17 February 2020, signed and sealed, Arabic and English), 4 (instructions citing the 2019 synod) and 111 (Second Mass title); text layer read for PDF 1–5, 49, 87, 111 and 153.",
+   "rights_basis": "Modern liturgical text of the Chaldean Patriarchate (2020); parish-hosted copy with no licence. Host terms: files.ecatholic.com publishes no reuse terms for this file.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Modern restricted text without a distribution basis; bytes stay in root scratch.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-macomber1966-images",
+   "original_url": "https://www.liturgia.it/content/addaicongress/studi/1Macomber.pdf",
+   "sha256": "3d70395b89d34471dc532ce166e181cec7ebbba83498e546537bc592c11c2606",
+   "bytes": 1674955,
+   "pages": 19,
+   "delivered_extent": "19 PDF pages of two-page openings (an earlier lane's acquisition of the offered file).",
+   "identity_inspection": "Viewed renders of printed pp. 354–357 and 362–363 on 2026-10-19.",
+   "rights_basis": "Modern copyrighted work; no affirmative redistribution basis recorded. OCP is published by the Pontifical Oriental Institute; liturgia.it states no reuse terms.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Modern copyrighted article; metadata and short citations only.",
+   "existing_canonical_identity": "Dossier source chaldean-east-syriac:macomber1966 (no source-library artifact)"
+  },
+  {
+   "id": "chaldean-acq-assemani1758-ocr",
+   "original_url": "https://archive.org/download/AssemaniBAVI2/Assemani_BAV_I-2_djvu.txt",
+   "sha256": "c9534b1ccae32b33d35f58520e36e4538c69f91eb1cf78480998fcd395d3aac5",
+   "bytes": 2036198,
+   "pages": null,
+   "delivered_extent": "Whole Internet Archive OCR text layer of the 1758 volume.",
+   "identity_inspection": "Entries XLII–XLIV read in OCR; page images not viewed.",
+   "rights_basis": "Underlying 1758 catalogue is public domain; OCR is machine-generated by the Internet Archive (terms https://archive.org/about/terms/).",
+   "proposed_storage": "tracked",
+   "storage_reason": "Small public-domain text; useful for repeated manuscript identification. Root to confirm.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-vatlib-opac",
+   "original_url": "https://opac.vatlib.it/mss/detail/Vat.sir.43",
+   "sha256": "514522842e942cac1f49916ad9244aa0c5f2e2f37053477eb172274b189e7f95",
+   "bytes": 15570,
+   "pages": null,
+   "delivered_extent": "One of seven OPAC HTML records (Vat. sir. 42, 43, 44, 303, 491; Borg. sir. 36, 150) retained in research/acquired; this receipt pins the Vat. sir. 43 record.",
+   "identity_inspection": "Read the bibliographic reference lists of all seven.",
+   "rights_basis": "Biblioteca Apostolica Vaticana viewer notice (https://digi.vatlib.it/view/MSS_Vat.sir.42, retained): free use of images only for personal use or study; rights must be requested for any printed or online publication; site contents 'All rights reserved'. IIIF manifests carry 'Images Copyright Biblioteca Apostolica Vaticana' and no licence.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Catalogue pages under 'All rights reserved'; facts recorded in source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-vatlib-viewer-terms",
+   "original_url": "https://digi.vatlib.it/view/MSS_Vat.sir.42",
+   "sha256": "cadb1bea32a84a8c8ed783b049ca8f6a34cc5c57081f19540529b316c1bf79a6",
+   "bytes": 18158,
+   "pages": null,
+   "delivered_extent": "Viewer page with the BAV image-use notice.",
+   "identity_inspection": "Read the use notice.",
+   "rights_basis": "Biblioteca Apostolica Vaticana viewer notice (https://digi.vatlib.it/view/MSS_Vat.sir.42, retained): free use of images only for personal use or study; rights must be requested for any printed or online publication; site contents 'All rights reserved'. IIIF manifests carry 'Images Copyright Biblioteca Apostolica Vaticana' and no licence.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Provider page kept only as terms evidence.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-vat-sir42-manifest",
+   "original_url": "https://digi.vatlib.it/iiif/MSS_Vat.sir.42/manifest.json",
+   "sha256": "567adec283e8850fd8884c5b054b01a2ef3807dea550ed0b593458dc7fd808f3",
+   "bytes": 406055,
+   "pages": null,
+   "delivered_extent": "Complete IIIF Presentation 2 manifest: 338 canvases; metadata gives only the shelfmark.",
+   "identity_inspection": "Read canvas count, image service and attribution.",
+   "rights_basis": "Biblioteca Apostolica Vaticana viewer notice (https://digi.vatlib.it/view/MSS_Vat.sir.42, retained): free use of images only for personal use or study; rights must be requested for any printed or online publication; site contents 'All rights reserved'. IIIF manifests carry 'Images Copyright Biblioteca Apostolica Vaticana' and no licence.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Provider metadata under BAV copyright notice.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-vat-sir42-images",
+   "original_url": "https://digi.vatlib.it/iiif/MSS_Vat.sir.42/manifest.json",
+   "sha256": "b92c509f4a87c769c254a75ff365a926cba3d85fb34e54cbc14481895a2afa88",
+   "bytes": 63207,
+   "pages": null,
+   "delivered_extent": "All 338 canvases fetched as full/full/0/default.jpg into research/Vat.sir.42/; this list file records each image's name, SHA-256, bytes and URL (finish/vatican-images.json holds the same). Images are 'Low Quality' microfilm-derived scans.",
+   "identity_inspection": "Viewed Vatican Syriac 42 (BYU description card image 1; Assemani entry image 2).",
+   "rights_basis": "Underlying manuscript is public domain. Biblioteca Apostolica Vaticana viewer notice (https://digi.vatlib.it/view/MSS_Vat.sir.42, retained): free use of images only for personal use or study; rights must be requested for any printed or online publication; site contents 'All rights reserved'. IIIF manifests carry 'Images Copyright Biblioteca Apostolica Vaticana' and no licence.",
+   "proposed_storage": "restricted",
+   "storage_reason": "BAV permits personal study use only; no publication right. Bytes stay in scratch.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-vat-sir44-manifest",
+   "original_url": "https://digi.vatlib.it/iiif/MSS_Vat.sir.44/manifest.json",
+   "sha256": "4eb924a8d1351615b46f91c97aadbf683dcc86a46de93d06094c380317f21d96",
+   "bytes": 218536,
+   "pages": null,
+   "delivered_extent": "Complete IIIF Presentation 2 manifest: 181 canvases; metadata gives only the shelfmark.",
+   "identity_inspection": "Read canvas count, image service and attribution.",
+   "rights_basis": "Biblioteca Apostolica Vaticana viewer notice (https://digi.vatlib.it/view/MSS_Vat.sir.42, retained): free use of images only for personal use or study; rights must be requested for any printed or online publication; site contents 'All rights reserved'. IIIF manifests carry 'Images Copyright Biblioteca Apostolica Vaticana' and no licence.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Provider metadata under BAV copyright notice.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-vat-sir44-images",
+   "original_url": "https://digi.vatlib.it/iiif/MSS_Vat.sir.44/manifest.json",
+   "sha256": "43c65e26aa5224eb65e22fb477336726954f57b116e6b833f51e3cecadbca947",
+   "bytes": 34028,
+   "pages": null,
+   "delivered_extent": "All 181 canvases fetched as full/full/0/default.jpg into research/Vat.sir.44/; this list file records each image's name, SHA-256, bytes and URL (finish/vatican-images.json holds the same). Images are 'Low Quality' microfilm-derived scans.",
+   "identity_inspection": "Viewed shelfmark target 'SIRIACO 44' (image 1); first 40 openings viewed as thumbnails.",
+   "rights_basis": "Underlying manuscript is public domain. Biblioteca Apostolica Vaticana viewer notice (https://digi.vatlib.it/view/MSS_Vat.sir.42, retained): free use of images only for personal use or study; rights must be requested for any printed or online publication; site contents 'All rights reserved'. IIIF manifests carry 'Images Copyright Biblioteca Apostolica Vaticana' and no licence.",
+   "proposed_storage": "restricted",
+   "storage_reason": "BAV permits personal study use only; no publication right. Bytes stay in scratch.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-vat-sir303-manifest",
+   "original_url": "https://digi.vatlib.it/iiif/MSS_Vat.sir.303/manifest.json",
+   "sha256": "afa3606c2e9ad2403d1d2b15004e68b4432fa7432d7e0e3aa3167ef9b7a7a906",
+   "bytes": 213934,
+   "pages": null,
+   "delivered_extent": "Complete IIIF Presentation 2 manifest: 176 canvases; metadata gives only the shelfmark.",
+   "identity_inspection": "Read canvas count, image service and attribution.",
+   "rights_basis": "Biblioteca Apostolica Vaticana viewer notice (https://digi.vatlib.it/view/MSS_Vat.sir.42, retained): free use of images only for personal use or study; rights must be requested for any printed or online publication; site contents 'All rights reserved'. IIIF manifests carry 'Images Copyright Biblioteca Apostolica Vaticana' and no licence.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Provider metadata under BAV copyright notice.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-vat-sir303-images",
+   "original_url": "https://digi.vatlib.it/iiif/MSS_Vat.sir.303/manifest.json",
+   "sha256": "fe5185a3d5746ccb47bea9a2ca627b5574f6e0d881799feae9b0f6a81315f8e7",
+   "bytes": 33616,
+   "pages": null,
+   "delivered_extent": "All 176 canvases fetched as full/full/0/default.jpg into research/Vat.sir.303/; this list file records each image's name, SHA-256, bytes and URL (finish/vatican-images.json holds the same). Images are 'Low Quality' microfilm-derived scans.",
+   "identity_inspection": "Viewed shelfmark target 'SIRIACO 303' (image 1).",
+   "rights_basis": "Underlying manuscript is public domain. Biblioteca Apostolica Vaticana viewer notice (https://digi.vatlib.it/view/MSS_Vat.sir.42, retained): free use of images only for personal use or study; rights must be requested for any printed or online publication; site contents 'All rights reserved'. IIIF manifests carry 'Images Copyright Biblioteca Apostolica Vaticana' and no licence.",
+   "proposed_storage": "restricted",
+   "storage_reason": "BAV permits personal study use only; no publication right. Bytes stay in scratch.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-vat-sir491-manifest",
+   "original_url": "https://digi.vatlib.it/iiif/MSS_Vat.sir.491/manifest.json",
+   "sha256": "a114157b094607f92d5743a11d89fd24cf0184445a4027fe67d2eba07160d1d3",
+   "bytes": 169127,
+   "pages": null,
+   "delivered_extent": "Complete IIIF Presentation 2 manifest: 139 canvases; metadata gives only the shelfmark.",
+   "identity_inspection": "Read canvas count, image service and attribution.",
+   "rights_basis": "Biblioteca Apostolica Vaticana viewer notice (https://digi.vatlib.it/view/MSS_Vat.sir.42, retained): free use of images only for personal use or study; rights must be requested for any printed or online publication; site contents 'All rights reserved'. IIIF manifests carry 'Images Copyright Biblioteca Apostolica Vaticana' and no licence.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Provider metadata under BAV copyright notice.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-vat-sir491-images",
+   "original_url": "https://digi.vatlib.it/iiif/MSS_Vat.sir.491/manifest.json",
+   "sha256": "cc61c2f90c85db3ab614bfc70f325e880344b9c16a3d04356054979ccf23d74c",
+   "bytes": 26549,
+   "pages": null,
+   "delivered_extent": "All 139 canvases fetched as full/full/0/default.jpg into research/Vat.sir.491/; this list file records each image's name, SHA-256, bytes and URL (finish/vatican-images.json holds the same). Images are 'Low Quality' microfilm-derived scans.",
+   "identity_inspection": "Viewed shelfmark target 'SIRIACO 491' (image 1).",
+   "rights_basis": "Underlying manuscript is public domain. Biblioteca Apostolica Vaticana viewer notice (https://digi.vatlib.it/view/MSS_Vat.sir.42, retained): free use of images only for personal use or study; rights must be requested for any printed or online publication; site contents 'All rights reserved'. IIIF manifests carry 'Images Copyright Biblioteca Apostolica Vaticana' and no licence.",
+   "proposed_storage": "restricted",
+   "storage_reason": "BAV permits personal study use only; no publication right. Bytes stay in scratch.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-vat-borg36-manifest",
+   "original_url": "https://digi.vatlib.it/iiif/MSS_Borg.sir.36/manifest.json",
+   "sha256": "ff97e68e2f8133469caff7e1d0d833a6e60c922224fdbc341fd8b394d4351c74",
+   "bytes": 258741,
+   "pages": null,
+   "delivered_extent": "Complete IIIF Presentation 2 manifest: 213 canvases; metadata gives only the shelfmark.",
+   "identity_inspection": "Read canvas count, image service and attribution.",
+   "rights_basis": "Biblioteca Apostolica Vaticana viewer notice (https://digi.vatlib.it/view/MSS_Vat.sir.42, retained): free use of images only for personal use or study; rights must be requested for any printed or online publication; site contents 'All rights reserved'. IIIF manifests carry 'Images Copyright Biblioteca Apostolica Vaticana' and no licence.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Provider metadata under BAV copyright notice.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-vat-borg36-images",
+   "original_url": "https://digi.vatlib.it/iiif/MSS_Borg.sir.36/manifest.json",
+   "sha256": "e7e0bc312690bc71d476270205f10e73d18da83c218a1713e81c07aaeef65101",
+   "bytes": 40683,
+   "pages": null,
+   "delivered_extent": "All 213 canvases fetched as full/full/0/default.jpg into research/Borg.sir.36/; this list file records each image's name, SHA-256, bytes and URL (finish/vatican-images.json holds the same). Images are 'Low Quality' microfilm-derived scans.",
+   "identity_inspection": "Viewed shelfmark target 'BORG. SIRIACO 36' (image 1).",
+   "rights_basis": "Underlying manuscript is public domain. Biblioteca Apostolica Vaticana viewer notice (https://digi.vatlib.it/view/MSS_Vat.sir.42, retained): free use of images only for personal use or study; rights must be requested for any printed or online publication; site contents 'All rights reserved'. IIIF manifests carry 'Images Copyright Biblioteca Apostolica Vaticana' and no licence.",
+   "proposed_storage": "restricted",
+   "storage_reason": "BAV permits personal study use only; no publication right. Bytes stay in scratch.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-vat-borg150-manifest",
+   "original_url": "https://digi.vatlib.it/iiif/MSS_Borg.sir.150/manifest.json",
+   "sha256": "dc6e7629d5af4e63fb2dc8b027f1616d3e26110478b09f3353416e989a220091",
+   "bytes": 584704,
+   "pages": null,
+   "delivered_extent": "Complete IIIF Presentation 2 manifest: 479 canvases; metadata gives only the shelfmark.",
+   "identity_inspection": "Read canvas count, image service and attribution.",
+   "rights_basis": "Biblioteca Apostolica Vaticana viewer notice (https://digi.vatlib.it/view/MSS_Vat.sir.42, retained): free use of images only for personal use or study; rights must be requested for any printed or online publication; site contents 'All rights reserved'. IIIF manifests carry 'Images Copyright Biblioteca Apostolica Vaticana' and no licence.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Provider metadata under BAV copyright notice.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-vat-borg150-images",
+   "original_url": "https://digi.vatlib.it/iiif/MSS_Borg.sir.150/manifest.json",
+   "sha256": "e0fce2958c72453130bd8ff0447b1e21ae077090d4a961eb4372cf5ce263b327",
+   "bytes": 92926,
+   "pages": null,
+   "delivered_extent": "All 479 canvases fetched as full/full/0/default.jpg into research/Borg.sir.150/; this list file records each image's name, SHA-256, bytes and URL (finish/vatican-images.json holds the same). Images are 'Low Quality' microfilm-derived scans.",
+   "identity_inspection": "Viewed shelfmark target 'BORG. SIRIACO 150' (image 1).",
+   "rights_basis": "Underlying manuscript is public domain. Biblioteca Apostolica Vaticana viewer notice (https://digi.vatlib.it/view/MSS_Vat.sir.42, retained): free use of images only for personal use or study; rights must be requested for any printed or online publication; site contents 'All rights reserved'. IIIF manifests carry 'Images Copyright Biblioteca Apostolica Vaticana' and no licence.",
+   "proposed_storage": "restricted",
+   "storage_reason": "BAV permits personal study use only; no publication right. Bytes stay in scratch.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-lectiones1900",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/37063",
+   "sha256": "e8cc9ce555a8dee9528a0f1dc81569bf1c80d452bfa3180aecedc77b871b36b8",
+   "bytes": 37491392,
+   "pages": 213,
+   "delivered_extent": "Whole provider PDF (one download; page count measured by pdfinfo).",
+   "identity_inspection": "Contact sheets of the first and last six pages viewed; Syriac title PDF 208, imprimatur PDF 209, Latin title PDF 210 ('Mausili, Typis Fratrum Praedicatorum, MDCCCC').",
+   "rights_basis": "Underlying printed book is a nineteenth- or early twentieth-century publication in the public domain (published before 1931; the scan is a mechanical facsimile carrying no new authorship). Bonn Digitale Sammlungen MODS record (OAI-PMH, retained in research/acquired) states access condition 'PDM 1.0' linking https://creativecommons.org/publicdomain/mark/1.0/; portal https://digitale-sammlungen.ulb.uni-bonn.de/",
+   "proposed_storage": "tracked",
+   "storage_reason": "Proposed tracked: provider marks the scan PDM 1.0 and the text is public domain; the Chaldean 1901 Bonn scans (25 and 81 MB) are already retained on the same basis. Root rights review decides.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-lectiones1900-mods",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/oai/?verb=GetRecord&metadataPrefix=mods&identifier=37063",
+   "sha256": "049b769c6fa7ca3f20822465ee264e46c1e018f0f334cfeceb375749402644eb",
+   "bytes": 3203,
+   "pages": null,
+   "delivered_extent": "Complete OAI-PMH MODS record.",
+   "identity_inspection": "Read title, imprint, extent, shelfmark and access condition.",
+   "rights_basis": "Library catalogue metadata; Bonn states no metadata licence in the record.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Metadata facts carried in source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-epistolae1900",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/240795",
+   "sha256": "a68fd728f792d23d4d476751d68c53acb5b8cc94860ea8cbc3b65d128eb83ffe",
+   "bytes": 20454205,
+   "pages": 127,
+   "delivered_extent": "Whole provider PDF (one download; page count measured by pdfinfo).",
+   "identity_inspection": "Contact sheets of the first and last six pages viewed; Syriac title PDF 122, imprimatur PDF 123, Latin title PDF 124.",
+   "rights_basis": "Underlying printed book is a nineteenth- or early twentieth-century publication in the public domain (published before 1931; the scan is a mechanical facsimile carrying no new authorship). Bonn Digitale Sammlungen MODS record (OAI-PMH, retained in research/acquired) states access condition 'PDM 1.0' linking https://creativecommons.org/publicdomain/mark/1.0/; portal https://digitale-sammlungen.ulb.uni-bonn.de/",
+   "proposed_storage": "tracked",
+   "storage_reason": "Proposed tracked: provider marks the scan PDM 1.0 and the text is public domain; the Chaldean 1901 Bonn scans (25 and 81 MB) are already retained on the same basis. Root rights review decides.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-epistolae1900-mods",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/oai/?verb=GetRecord&metadataPrefix=mods&identifier=240795",
+   "sha256": "44a5f7dcccc221d38e0cd4363646c46f58cf22084acfc2e1de4acb7f77bd510c",
+   "bytes": 3832,
+   "pages": null,
+   "delivered_extent": "Complete OAI-PMH MODS record.",
+   "identity_inspection": "Read title, imprint, extent, shelfmark and access condition.",
+   "rights_basis": "Library catalogue metadata; Bonn states no metadata licence in the record.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Metadata facts carried in source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-evangelia1900",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/242487",
+   "sha256": "b672ceff5f76fba099299799649901476dd510f3e9ec2e51eff2a183bfb43b19",
+   "bytes": 47563007,
+   "pages": 267,
+   "delivered_extent": "Whole provider PDF (one download; page count measured by pdfinfo).",
+   "identity_inspection": "Contact sheets of the first and last six pages viewed; Syriac title PDF 262, imprimatur PDF 263, Latin title PDF 264.",
+   "rights_basis": "Underlying printed book is a nineteenth- or early twentieth-century publication in the public domain (published before 1931; the scan is a mechanical facsimile carrying no new authorship). Bonn Digitale Sammlungen MODS record (OAI-PMH, retained in research/acquired) states access condition 'PDM 1.0' linking https://creativecommons.org/publicdomain/mark/1.0/; portal https://digitale-sammlungen.ulb.uni-bonn.de/",
+   "proposed_storage": "tracked",
+   "storage_reason": "Proposed tracked: provider marks the scan PDM 1.0 and the text is public domain; the Chaldean 1901 Bonn scans (25 and 81 MB) are already retained on the same basis. Root rights review decides.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-evangelia1900-mods",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/oai/?verb=GetRecord&metadataPrefix=mods&identifier=242487",
+   "sha256": "36f6e48d298ff8f0c9e7f323e1f9748545662e7037e8e7d2b14032d0abddf661",
+   "bytes": 3179,
+   "pages": null,
+   "delivered_extent": "Complete OAI-PMH MODS record.",
+   "identity_inspection": "Read title, imprint, extent, shelfmark and access condition.",
+   "rights_basis": "Library catalogue metadata; Bonn states no metadata licence in the record.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Metadata facts carried in source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-urmia1876",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/310760",
+   "sha256": "20c228141436f4fb3066413ef7befd17399d57811b358e2f1062862fca453f01",
+   "bytes": 20192567,
+   "pages": 143,
+   "delivered_extent": "Whole provider PDF (one download; page count measured by pdfinfo).",
+   "identity_inspection": "Contact sheets of the first and last six pages viewed; Title PDF 140 ('Rituel Chaldéen ... Ourmiah (Perse) 1876'); PDF 132–139 opening sections; baptism heading PDF 134.",
+   "rights_basis": "Underlying printed book is a nineteenth- or early twentieth-century publication in the public domain (published before 1931; the scan is a mechanical facsimile carrying no new authorship). Bonn Digitale Sammlungen MODS record (OAI-PMH, retained in research/acquired) states access condition 'PDM 1.0' linking https://creativecommons.org/publicdomain/mark/1.0/; portal https://digitale-sammlungen.ulb.uni-bonn.de/",
+   "proposed_storage": "tracked",
+   "storage_reason": "Proposed tracked: provider marks the scan PDM 1.0 and the text is public domain; the Chaldean 1901 Bonn scans (25 and 81 MB) are already retained on the same basis. Root rights review decides.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-urmia1876-mods",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/oai/?verb=GetRecord&metadataPrefix=mods&identifier=310760",
+   "sha256": "917b73949ea412ee207728826835a8bf4fbf07319746278f665b3e4cbf7ce185",
+   "bytes": 3173,
+   "pages": null,
+   "delivered_extent": "Complete OAI-PMH MODS record.",
+   "identity_inspection": "Read title, imprint, extent, shelfmark and access condition.",
+   "rights_basis": "Library catalogue metadata; Bonn states no metadata licence in the record.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Metadata facts carried in source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-urmia1890",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/189937",
+   "sha256": "7ce986c313d51f6d5075a7c43532a68f1ed4f3ef60b9fe6ac74a36996363f5b8",
+   "bytes": 20717649,
+   "pages": 177,
+   "delivered_extent": "Whole provider PDF (one download; page count measured by pdfinfo).",
+   "identity_inspection": "Contact sheets of the first and last six pages viewed; Syriac title PDF 172, Latin title PDF 174 (Urmiae, Typis Missionis Archiepiscopi Cantuariensis, MDCCCXC), inserted mission book list PDF 175.",
+   "rights_basis": "Underlying printed book is a nineteenth- or early twentieth-century publication in the public domain (published before 1931; the scan is a mechanical facsimile carrying no new authorship). Bonn Digitale Sammlungen MODS record (OAI-PMH, retained in research/acquired) states access condition 'PDM 1.0' linking https://creativecommons.org/publicdomain/mark/1.0/; portal https://digitale-sammlungen.ulb.uni-bonn.de/",
+   "proposed_storage": "tracked",
+   "storage_reason": "Proposed tracked: provider marks the scan PDM 1.0 and the text is public domain; the Chaldean 1901 Bonn scans (25 and 81 MB) are already retained on the same basis. Root rights review decides.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-urmia1890-mods",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/oai/?verb=GetRecord&metadataPrefix=mods&identifier=189937",
+   "sha256": "8de931bf12eb0b3e2a50ed701f93809bfbbf58ca8fd96445cfdf70ac982faea8",
+   "bytes": 3544,
+   "pages": null,
+   "delivered_extent": "Complete OAI-PMH MODS record.",
+   "identity_inspection": "Read title, imprint, extent, shelfmark and access condition.",
+   "rights_basis": "Library catalogue metadata; Bonn states no metadata licence in the record.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Metadata facts carried in source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-qeryana1889",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/310905",
+   "sha256": "5612a83344b2c2db2d9ed8659ed833d4c9ba463c93539fa6bb7cebf8f2319ce1",
+   "bytes": 2698453,
+   "pages": 27,
+   "delivered_extent": "Whole provider PDF (one download; page count measured by pdfinfo).",
+   "identity_inspection": "Contact sheets of the first and last six pages viewed; Pericope tables PDF 22–24; end leaves PDF 25–27.",
+   "rights_basis": "Underlying printed book is a nineteenth- or early twentieth-century publication in the public domain (published before 1931; the scan is a mechanical facsimile carrying no new authorship). Bonn Digitale Sammlungen MODS record (OAI-PMH, retained in research/acquired) states access condition 'PDM 1.0' linking https://creativecommons.org/publicdomain/mark/1.0/; portal https://digitale-sammlungen.ulb.uni-bonn.de/",
+   "proposed_storage": "tracked",
+   "storage_reason": "Proposed tracked: provider marks the scan PDM 1.0 and the text is public domain; the Chaldean 1901 Bonn scans (25 and 81 MB) are already retained on the same basis. Root rights review decides.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-qeryana1889-mods",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/oai/?verb=GetRecord&metadataPrefix=mods&identifier=310905",
+   "sha256": "3838ae991a73359488d76af7da661d14327f432e49d5f94d92aa0b9fa96a589a",
+   "bytes": 3403,
+   "pages": null,
+   "delivered_extent": "Complete OAI-PMH MODS record.",
+   "identity_inspection": "Read title, imprint, extent, shelfmark and access condition.",
+   "rights_basis": "Library catalogue metadata; Bonn states no metadata licence in the record.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Metadata facts carried in source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-coakley-taylor",
+   "original_url": "https://www.scribd.com/doc/179381429/Syriac-Books-Printed-at-the-Dominican-Press-Mosul-pdf",
+   "sha256": "5f52616d2a46d88292942a3d9e695da949a6f50c903f09516666b4152cba3c31",
+   "bytes": 1459858,
+   "pages": null,
+   "delivered_extent": "One Scribd HTML page with an embedded text layer (text extracted to coakley-mosul.txt).",
+   "identity_inspection": "Read entries 57 and 58 and the preface in the text layer.",
+   "rights_basis": "Modern copyrighted work; no affirmative redistribution basis recorded. Scribd terms https://www.scribd.com/terms.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Modern web page; facts recorded in source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-mando2012",
+   "original_url": "https://ishtartv.com/viewarticle,42052.html",
+   "sha256": "2a18f8ad0536431ea0b8598f0636763a585955c296d6906325295df338f42fa8",
+   "bytes": 132675,
+   "pages": null,
+   "delivered_extent": "Whole article page (text extracted to ishtar-books.txt).",
+   "identity_inspection": "Read the manuscript and printed book lists.",
+   "rights_basis": "Modern copyrighted work; no affirmative redistribution basis recorded. Ishtar TV states no reuse terms.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Modern web page; facts recorded in source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-sako-mecc",
+   "original_url": "https://www.mecc.org/regionalar/2025/8/28/uxgh13vgene5wrvw2uzou2s880i79p",
+   "sha256": "662e99235a8b44681c28c11a231cb3595716eeab304905244d694a58b5de1343",
+   "bytes": 270631,
+   "pages": null,
+   "delivered_extent": "Whole MECC page (text extracted to sako-mecc.txt).",
+   "identity_inspection": "Read the editions, 2005 and 2014–2020 sections.",
+   "rights_basis": "Modern copyrighted work; no affirmative redistribution basis recorded. MECC states no reuse terms.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Modern web page; facts recorded in source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-vossel-page",
+   "original_url": "https://poj.peeters-leuven.be/content.php?id=3292803&journal_code=QL&url=article",
+   "sha256": "58d2ebf4f97e80c8d71eb813b95a8e3df1316b389d4fccdea990e3ae45f7c8d2",
+   "bytes": 20039,
+   "pages": null,
+   "delivered_extent": "Article metadata page.",
+   "identity_inspection": "Read title, author and journal.",
+   "rights_basis": "Modern copyrighted work; no affirmative redistribution basis recorded. Peeters terms on site.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Modern web page; facts recorded in source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-vossel-download-page",
+   "original_url": "https://poj.peeters-leuven.be/content.php?id=3292803&journal_code=QL&url=article&download=yes",
+   "sha256": "a9f5a738c0105dc7400155cc26585423f02bb8a50533c959a9001d5d172bb977",
+   "bytes": 22441,
+   "pages": null,
+   "delivered_extent": "Same metadata page served for the download URL; no article text.",
+   "identity_inspection": "Read.",
+   "rights_basis": "Modern copyrighted work; no affirmative redistribution basis recorded. Peeters terms on site.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Modern web page; facts recorded in source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-feulner-bib",
+   "original_url": "https://syriac-anaphoras.org/catalogue/pdf/feulner_1.pdf",
+   "sha256": "98df38704beca55e46baa4a251790382b2a71f2f1fc153dfb7c832ab91006585",
+   "bytes": 135903,
+   "pages": 21,
+   "delivered_extent": "Whole offered PDF.",
+   "identity_inspection": "Read PDF pp. 5–6 (East Syriac editions and anaphoras).",
+   "rights_basis": "Modern copyrighted work; no affirmative redistribution basis recorded. Host states no reuse terms.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Modern copyrighted file; bibliographic facts only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-brock-bib",
+   "original_url": "https://syriac-anaphoras.org/catalogue/pdf/brock_1.pdf",
+   "sha256": "d8a66dc5a7b7549645642700132170662d1edcf98e03a2566c9313e9fd14d126",
+   "bytes": 106149,
+   "pages": 14,
+   "delivered_extent": "Whole offered PDF.",
+   "identity_inspection": "Read the manuscript catalogue section.",
+   "rights_basis": "Modern copyrighted work; no affirmative redistribution basis recorded. Host states no reuse terms.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Modern copyrighted file; bibliographic facts only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-addai-bib1",
+   "original_url": "https://www.liturgia.it/content/addaicongress/en/bib/biblio1_en.pdf",
+   "sha256": "7143a813f283a366527c2fba21a43d63b0ade03cae60f8e523398673d5518c1c",
+   "bytes": 116341,
+   "pages": 3,
+   "delivered_extent": "Whole offered PDF.",
+   "identity_inspection": "Read all three pages.",
+   "rights_basis": "Modern copyrighted work; no affirmative redistribution basis recorded. Host states no reuse terms.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Modern copyrighted file; bibliographic facts only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-addai-bib2",
+   "original_url": "https://www.liturgia.it/content/addaicongress/en/bib/biblio2_en.pdf",
+   "sha256": "4031afd962dfd245529d82231ba40da00d0562bfaa870824f6b4756a6f2c2546",
+   "bytes": 161376,
+   "pages": 6,
+   "delivered_extent": "Whole offered PDF.",
+   "identity_inspection": "Read items 1–60.",
+   "rights_basis": "Modern copyrighted work; no affirmative redistribution basis recorded. Host states no reuse terms.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Modern copyrighted file; bibliographic facts only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-jammo2013-excerpt",
+   "original_url": "https://aramaicproject.com/StaticFiles/docs/pdf/Chaldean-Missal-2013-1.pdf",
+   "sha256": "4ee24a7523d9dbc3af6d382d04696c3c694481899294cc19fd0e67ba8ac5ec58",
+   "bytes": 1755617,
+   "pages": 5,
+   "delivered_extent": "Whole offered PDF.",
+   "identity_inspection": "Viewed all five pages (title leaf dated 2013, verso, printed pp. 1–3).",
+   "rights_basis": "Modern copyrighted work; no affirmative redistribution basis recorded. Host states no reuse terms.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Modern copyrighted file; bibliographic facts only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-bonn-syriac-all",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/topic/view/17267?max=1000",
+   "sha256": "a4e47cc1d240c305a9845366a74d781e11260a21459c669b5a0fbbf404b74d1d",
+   "bytes": 12573,
+   "pages": null,
+   "delivered_extent": "Page shell only: the list reads 'Keine Einträge vorhanden' (no entries).",
+   "identity_inspection": "Text extracted and read; no titles present.",
+   "rights_basis": "Library portal page; no reuse terms stated.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Empty response with no evidential value beyond the failed capture.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-bonn-syriac1",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/topic/view/17267?max=100&offset=1",
+   "sha256": "a4e47cc1d240c305a9845366a74d781e11260a21459c669b5a0fbbf404b74d1d",
+   "bytes": 12573,
+   "pages": null,
+   "delivered_extent": "Page shell only: the list reads 'Keine Einträge vorhanden' (no entries).",
+   "identity_inspection": "Text extracted and read; no titles present.",
+   "rights_basis": "Library portal page; no reuse terms stated.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Empty response with no evidential value beyond the failed capture.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-bonn-syriac101",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/topic/view/17267?max=100&offset=101",
+   "sha256": "a4e47cc1d240c305a9845366a74d781e11260a21459c669b5a0fbbf404b74d1d",
+   "bytes": 12573,
+   "pages": null,
+   "delivered_extent": "Page shell only: the list reads 'Keine Einträge vorhanden' (no entries).",
+   "identity_inspection": "Text extracted and read; no titles present.",
+   "rights_basis": "Library portal page; no reuse terms stated.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Empty response with no evidential value beyond the failed capture.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-bonn-syriac201",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/topic/view/17267?max=100&offset=201",
+   "sha256": "a4e47cc1d240c305a9845366a74d781e11260a21459c669b5a0fbbf404b74d1d",
+   "bytes": 12573,
+   "pages": null,
+   "delivered_extent": "Page shell only: the list reads 'Keine Einträge vorhanden' (no entries).",
+   "identity_inspection": "Text extracted and read; no titles present.",
+   "rights_basis": "Library portal page; no reuse terms stated.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Empty response with no evidential value beyond the failed capture.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-bonn-titles1",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/topic/titles/17267?max=100&offset=1",
+   "sha256": "a37cb8803f898140c4e00fa432022289dde3cb7954ac028b8d0d4fc99af01115",
+   "bytes": 12343,
+   "pages": null,
+   "delivered_extent": "Page shell only: the list reads 'Keine Einträge vorhanden' (no entries).",
+   "identity_inspection": "Text extracted and read; no titles present.",
+   "rights_basis": "Library portal page; no reuse terms stated.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Empty response with no evidential value beyond the failed capture.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-bonn-titles101",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/topic/titles/17267?max=100&offset=101",
+   "sha256": "a37cb8803f898140c4e00fa432022289dde3cb7954ac028b8d0d4fc99af01115",
+   "bytes": 12343,
+   "pages": null,
+   "delivered_extent": "Page shell only: the list reads 'Keine Einträge vorhanden' (no entries).",
+   "identity_inspection": "Text extracted and read; no titles present.",
+   "rights_basis": "Library portal page; no reuse terms stated.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Empty response with no evidential value beyond the failed capture.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "chaldean-acq-bonn-titles201",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/topic/titles/17267?max=100&offset=201",
+   "sha256": "2d351ef5f8465c35a2549e0ce117f7f02a28398afda9dd777c483b19e9b29ff4",
+   "bytes": 12343,
+   "pages": null,
+   "delivered_extent": "Page shell only: the list reads 'Keine Einträge vorhanden' (no entries).",
+   "identity_inspection": "Text extracted and read; no titles present.",
+   "rights_basis": "Library portal page; no reuse terms stated.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Empty response with no evidential value beyond the failed capture.",
+   "existing_canonical_identity": null
+  }
+ ],
+ "expected_list_reconciliation": [
+  {
+   "expected_id": "cold-chald-early-fragments",
+   "expected_label": "Sixth-century East Syriac anaphora fragments",
+   "matched_packet_ids": [
+    "chaldean-add14669",
+    "syr-add14669-fragments"
+   ],
+   "outcome": "matched",
+   "evidence": "Labelled as a fragment with Connolly's East-Syrian classification; not called a missal."
+  },
+  {
+   "expected_id": "cold-chald-ishoyahb",
+   "expected_label": "Ishoʿyahb III reform",
+   "matched_packet_ids": [
+    "chaldean-ishoyahb-reform"
+   ],
+   "outcome": "matched",
+   "evidence": "Kept as a literary hypothesis with no bounds."
+  },
+  {
+   "expected_id": "cold-chald-mar-ishaya",
+   "expected_label": "Mar Ishaya Hudra",
+   "matched_packet_ids": [
+    "chaldean-ms-mar-eshaya"
+   ],
+   "outcome": "matched",
+   "evidence": "Critical-edition-mediated record; HMML/CNMO images remain registration-only (CAM MIC 00001 per the reviewer's search-delivered metadata)."
+  },
+  {
+   "expected_id": "cold-chald-medieval-manuscripts",
+   "expected_label": "Medieval and early-modern Addai–Mari, Theodore and Nestorius manuscript traditions",
+   "matched_packet_ids": [
+    "chaldean-ms-diarbekir-hudra",
+    "chaldean-ms-mardin22",
+    "chaldean-ms-15th-16th-pre-family",
+    "chaldean-ms-borg-sir-150",
+    "chaldean-ms-vat-sir-42",
+    "chaldean-ms-alqosh-tradition",
+    "chaldean-ms-chaldean-tradition",
+    "chaldean-ms-repertoire-ranges"
+   ],
+   "outcome": "matched",
+   "evidence": "Macomber's AQ/CH/ML traditions are labelled separately (confirmed p. 356). Theodore and Nestorius manuscript controls (Vadakkel 1989, Naduthadam 1992) and Gelston 1992 are not named; recorded as a bounded gap."
+  },
+  {
+   "expected_id": "cold-chald-vat66",
+   "expected_label": "Vatican Syriac 66",
+   "matched_packet_ids": [
+    "chaldean-ms-vat-sir-66"
+   ],
+   "outcome": "matched",
+   "evidence": "Routed to the malabar lane with the 1529/1545 dispute recorded."
+  },
+  {
+   "expected_id": "cold-chald-rome1767",
+   "expected_label": "Missale Chaldaicum, Rome 1767",
+   "matched_packet_ids": [
+    "chald-1767"
+   ],
+   "outcome": "matched",
+   "evidence": "Existing record kept; full contents survey deferred."
+  },
+  {
+   "expected_id": "cold-chald-rome1773",
+   "expected_label": "Reported 1773 second edition",
+   "matched_packet_ids": [
+    "chaldean-rome1773"
+   ],
+   "outcome": "matched",
+   "evidence": "Unresolved lead; Feulner confirms the report."
+  },
+  {
+   "expected_id": "cold-chald-urmia1876",
+   "expected_label": "Urmia 1876 Taksa",
+   "matched_packet_ids": [
+    "east-urmia-1876"
+   ],
+   "outcome": "matched",
+   "evidence": "Title page 'Rituel Chaldéen' and baptism opening confirmed; Mass absence bounded to inspected pages."
+  },
+  {
+   "expected_id": "cold-chald-urmia1890-92",
+   "expected_label": "Urmia 1890–1892 Taksa",
+   "matched_packet_ids": [
+    "chaldean-urmia1890-liturgy",
+    "chaldean-urmia1889-lectionary"
+   ],
+   "outcome": "matched",
+   "evidence": "Kept collateral; the reported second part remains unidentified (gap); institution-narrative insertion now recorded via correction."
+  },
+  {
+   "expected_id": "cold-chald-hudra1886-87",
+   "expected_label": "Bedjan Hudra 1886–1887 and reprints",
+   "matched_packet_ids": [
+    "chaldean-hudra1886"
+   ],
+   "outcome": "matched",
+   "evidence": "Labelled with 1938, 1999 and 2002 reprints as non-reforms; Macomber p. 353 n. 2 also cites Paris 1886–1887/Rome 1938."
+  },
+  {
+   "expected_id": "cold-chald-lections1900",
+   "expected_label": "Mosul 1900 lections, three volumes",
+   "matched_packet_ids": [
+    "chaldean-mosul1900-lections",
+    "chaldean-mosul1900-arabic-lections"
+   ],
+   "outcome": "matched",
+   "evidence": "One set record; Arabic editions deferred."
+  },
+  {
+   "expected_id": "cold-chald-mosul1901",
+   "expected_label": "Mosul 1901 Taksa",
+   "matched_packet_ids": [
+    "chald-1901"
+   ],
+   "outcome": "matched",
+   "evidence": "Existing record; 1902 issue date and 1900 imprimatur added by correction."
+  },
+  {
+   "expected_id": "cold-chald-proper1901",
+   "expected_label": "Mosul 1901 proper",
+   "matched_packet_ids": [
+    "chald-proper-1901"
+   ],
+   "outcome": "matched",
+   "evidence": "Kept complementary; Coakley shows it is pp. 97–406 of the same Missale."
+  },
+  {
+   "expected_id": "cold-chald-urmia1906",
+   "expected_label": "Urmia 1906 Taksa",
+   "matched_packet_ids": [
+    "chaldean-urmia1906-lead"
+   ],
+   "outcome": "matched",
+   "evidence": "Open lead; only an Anglican office book located."
+  },
+  {
+   "expected_id": "cold-chald-kelaita1928",
+   "expected_label": "Kelaita Mosul 1928 Taksa",
+   "matched_packet_ids": [
+    "chaldean-kelaita1928"
+   ],
+   "outcome": "matched",
+   "evidence": "Collateral, no ancestry; the reported 1959 reissue is not labelled (bounded gap)."
+  },
+  {
+   "expected_id": "cold-chald-mosul1936",
+   "expected_label": "Mosul 1936 Taksa with three anaphoras",
+   "matched_packet_ids": [
+    "chaldean-mosul1936-reprint"
+   ],
+   "outcome": "matched",
+   "evidence": "Record accepted with corrections: patriarchal press and two 1936-only readings in Macomber's apparatus."
+  },
+  {
+   "expected_id": "cold-chald-saigh1936",
+   "expected_label": "Saigh 1936 booklet",
+   "matched_packet_ids": [
+    "chaldean-saigh1936"
+   ],
+   "outcome": "matched",
+   "evidence": "Separate from the 1936 Taksa; deferred translation."
+  },
+  {
+   "expected_id": "cold-chald-miri1960",
+   "expected_label": "Miri 1960 service book",
+   "matched_packet_ids": [
+    "chaldean-miri1960"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead with Najm holdings."
+  },
+  {
+   "expected_id": "cold-chald-baghdad1971",
+   "expected_label": "Baghdad 1971 Taksa",
+   "matched_packet_ids": [
+    "chaldean-baghdad1971"
+   ],
+   "outcome": "matched",
+   "evidence": "Revision candidate with no asserted locus."
+  },
+  {
+   "expected_id": "cold-chald-gospels1977",
+   "expected_label": "Alichoran Paris 1977 Gospels",
+   "matched_packet_ids": [
+    "chaldean-gospels1977"
+   ],
+   "outcome": "matched",
+   "evidence": "The packet leaves it 'unknown'; Coakley (vol. 3 reprinted Paris 1977) and Mando (reprinting) resolve it as a reprint of the 1900 Gospel volume (correction carried in the lections record)."
+  },
+  {
+   "expected_id": "cold-chald-paris1982",
+   "expected_label": "Missel chaldéen Paris 1982",
+   "matched_packet_ids": [
+    "chaldean-paris1982"
+   ],
+   "outcome": "matched",
+   "evidence": "Syriac layer kept in scope; coverage moved to candidate_ids; pagination caveat added."
+  },
+  {
+   "expected_id": "cold-chald-reform2007",
+   "expected_label": "Reformed Taksa effective 2007",
+   "matched_packet_ids": [
+    "chaldean-reform2006-2007",
+    "chaldean-jammo-drafts-2002-2005"
+   ],
+   "outcome": "matched",
+   "evidence": "Dates kept apart by correction; Jammo source added."
+  },
+  {
+   "expected_id": "cold-chald-trial2014",
+   "expected_label": "Baghdad 2014 trial order",
+   "matched_packet_ids": [
+    "chald-2014"
+   ],
+   "outcome": "matched",
+   "evidence": "Existing record unchanged; Najm T/404/61 (2013) carries its Arabic title."
+  },
+  {
+   "expected_id": "cold-chald-baghdad2020",
+   "expected_label": "Baghdad 2020 Mass orders",
+   "matched_packet_ids": [
+    "chald-2020",
+    "chaldean-baghdad2018-second-mass",
+    "chaldean-2020-sureth-english"
+   ],
+   "outcome": "matched",
+   "evidence": "Decree, sections and absence of Nestorius confirmed on the acquired PDF."
+  },
+  {
+   "expected_id": "cold-chald-faithful2023",
+   "expected_label": "Faithful's book 2023",
+   "matched_packet_ids": [
+    "chaldean-faithful2023"
+   ],
+   "outcome": "matched",
+   "evidence": "Deferred, not merged with the altar book."
+  },
+  {
+   "expected_id": "cold-chald-reprint2025",
+   "expected_label": "Corrected reprint 2025",
+   "matched_packet_ids": [
+    "chald-2025-reprint"
+   ],
+   "outcome": "matched",
+   "evidence": "Reprint, not reform."
+  },
+  {
+   "expected_id": "chald-cold-najm-1961",
+   "expected_label": "Najm T/404/60 Taksa catalogued 1961",
+   "matched_packet_ids": [
+    "chaldean-najm1961"
+   ],
+   "outcome": "matched",
+   "evidence": "Same native title as T/404/66 (1971)."
+  },
+  {
+   "expected_id": "chald-cold-najm-1971",
+   "expected_label": "Najm T/404/66",
+   "matched_packet_ids": [
+    "chaldean-baghdad1971"
+   ],
+   "outcome": "matched",
+   "evidence": "Holding added to the record by correction."
+  },
+  {
+   "expected_id": "chald-cold-najm-2006",
+   "expected_label": "Najm T/404/82",
+   "matched_packet_ids": [
+    "chaldean-reform2006-2007"
+   ],
+   "outcome": "matched",
+   "evidence": "Cited as the book lead."
+  },
+  {
+   "expected_id": "chald-cold-najm-2013",
+   "expected_label": "Najm T/404/61",
+   "matched_packet_ids": [
+    "chald-2014",
+    "chaldean-st-peter-2013"
+   ],
+   "outcome": "matched",
+   "evidence": "Packet attaches it to the St Peter book; its Arabic title is the 2014 trial's (correction in the St Peter record)."
+  },
+  {
+   "expected_id": "chald-cold-najm-2018",
+   "expected_label": "Second Mass, Baghdad 2018",
+   "matched_packet_ids": [
+    "chaldean-baghdad2018-second-mass"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead."
+  },
+  {
+   "expected_id": "chald-cold-najm-2023",
+   "expected_label": "Chaldean Mass orders 2023",
+   "matched_packet_ids": [
+    "chaldean-faithful2023"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead."
+  },
+  {
+   "expected_id": "chald-cold-najm-francis-dawid",
+   "expected_label": "Francis Dawid Taksa books",
+   "matched_packet_ids": [
+    "chaldean-francis-dawid"
+   ],
+   "outcome": "matched",
+   "evidence": "Church unresolved."
+  },
+  {
+   "expected_id": "chald-cold-najm-amadiya",
+   "expected_label": "Amadiya and Shamkan Taksa",
+   "matched_packet_ids": [
+    "chaldean-amadiya-shamkan2002"
+   ],
+   "outcome": "matched",
+   "evidence": "Local-use lead."
+  },
+  {
+   "expected_id": "chald-cold-najm-noufali",
+   "expected_label": "Noufali Mass books",
+   "matched_packet_ids": [
+    "chaldean-noufali"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead."
+  },
+  {
+   "expected_id": "chald-cold-najm-beqoma",
+   "expected_label": "Beqoma books",
+   "matched_packet_ids": [
+    "chaldean-beqoma1989"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead."
+  },
+  {
+   "expected_id": "chald-cold-najm-jammo-2002",
+   "expected_label": "Jammo 2002 Service of the Divine Mysteries",
+   "matched_packet_ids": [
+    "chaldean-jammo-drafts-2002-2005"
+   ],
+   "outcome": "matched",
+   "evidence": "Its title matches the St Peter 2013 book."
+  },
+  {
+   "expected_id": "chald-cold-najm-2005",
+   "expected_label": "Najm T/404/67 (2005)",
+   "matched_packet_ids": [
+    "chaldean-jammo-drafts-2002-2005"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead."
+  },
+  {
+   "expected_id": "chald-cold-najm-propers-2000",
+   "expected_label": "Gallou proper supplement",
+   "matched_packet_ids": [
+    "chaldean-propers-2000-2001"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead."
+  },
+  {
+   "expected_id": "chald-cold-najm-propers-canada",
+   "expected_label": "Zora Canada proper supplement",
+   "matched_packet_ids": [
+    "chaldean-propers-2000-2001"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead; use listed as discovered."
+  },
+  {
+   "expected_id": "chald-cold-najm-1906",
+   "expected_label": "Najm T/404/103 (1906)",
+   "matched_packet_ids": [
+    "chaldean-urmia1906-lead"
+   ],
+   "outcome": "matched",
+   "evidence": "Named as unexamined range."
+  },
+  {
+   "expected_id": "chald-cold-najm-gospel-1962",
+   "expected_label": "Kirkuk Gospel 1962",
+   "matched_packet_ids": [
+    "chaldean-lectionaries-1962-2005"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead."
+  },
+  {
+   "expected_id": "chald-cold-najm-paul-2001",
+   "expected_label": "Pauline readings 2001",
+   "matched_packet_ids": [
+    "chaldean-lectionaries-1962-2005"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead."
+  },
+  {
+   "expected_id": "chald-cold-najm-paul-2005",
+   "expected_label": "Pauline reading books 2005",
+   "matched_packet_ids": [
+    "chaldean-lectionaries-1962-2005"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead."
+  },
+  {
+   "expected_id": "chald-cold-najm-miri",
+   "expected_label": "Miri service books 1960/1965",
+   "matched_packet_ids": [
+    "chaldean-miri1960"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead."
+  },
+  {
+   "expected_id": "chald-cold-najm-unattributed-taksa",
+   "expected_label": "Unattributed Taksa books 1943–1973",
+   "matched_packet_ids": [
+    "chaldean-unattributed-taksa-1943-1973"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead."
+  },
+  {
+   "expected_id": "chald-cold-najm-other-ranges",
+   "expected_label": "Supplement other_accounted_ranges: Arabic-section Mass books (N/321, 1956–2011), Turgama 1935/1968, Hudra and chant components",
+   "matched_packet_ids": [],
+   "outcome": "omission",
+   "evidence": "Not labelled in the packet, even as one bucket. Holdings, not versions: no record required, but the bucket and the 'no blanket Arabic deferral' instruction remain open (bounded gap)."
+  },
+  {
+   "expected_id": "chald-cold-repertoire-ranges",
+   "expected_label": "Desreumaux 1991 extract ranges",
+   "matched_packet_ids": [
+    "chaldean-ms-repertoire-ranges"
+   ],
+   "outcome": "omission",
+   "evidence": "The packet keeps the Iraqi and Turkish ranges but drops Cambridge Genizah, Chester Beatty 1 (719), St Petersburg (including a Chaldean/Latin Masses codex), Hall's New York manuscript, Rouen Or. 21, Strasbourg 4118/4120, CUA, Vienna and Freer, and cites the Najm catalogue instead of the Desreumaux extract (bounded gap)."
+  }
+ ],
+ "acquisition_spot_checks": [
+  {
+   "acquisition_id": "chaldean-acq-2020-typical-pdf",
+   "check": "Hash; render PDF 2; text layer of PDF 1, 3–5, 49, 87, 111, 153; script census; search for Nestorius",
+   "result": "confirmed",
+   "detail": "sha256 c14144d8… matches; decree No. 31, 17 February 2020, synods 2014/2016/2019, synod 3–11 August 2019, recognition letter 21 November 2019, effective 5 April 2020; sections at PDF 5, 49, 87, 111, 153 as stated; 136 pages carry Syriac beside Arabic; no Nestorius in Arabic or Syriac spelling. Host file name says 'Arabic Mass' (corrected in the source row)."
+  },
+  {
+   "acquisition_id": "chaldean-acq-vat-sir42-images; vat-sir44; vat-sir303; vat-sir491; vat-borg36; vat-borg150",
+   "check": "Count, JPEG type and SHA-256 of every image against the six image lists; prior log statuses",
+   "result": "confirmed",
+   "detail": "1,526 of 1,526 files are JPEGs whose hashes and sizes match the lists (338+181+176+139+213+479). The prior log vatican-acquisitions.json holds 1,526 failures: 1,474 HTTP 429, 50 'not JPEG' 387-byte stubs (Vat.sir.491) and 2 timeouts."
+  },
+  {
+   "acquisition_id": "chaldean-acq-vat-sir42-images",
+   "check": "View image 1 (description card)",
+   "result": "confirmed",
+   "detail": "BYU card: 165 folios, 1603, from Patriarch Joseph I's library, Liturgy of the Apostles f. 25b, Nestorius f. 51a, 'completed in 1202' (as the packet records)."
+  },
+  {
+   "acquisition_id": "chaldean-acq-assemani1758-ocr",
+   "check": "OCR XLII–XLIV and page images of printed pp. 292–293 (fetched into cold/assemani-pages)",
+   "result": "confirmed",
+   "detail": "XLII colophon (17 November, Greek 1914 = 1603, Gazarta, deacon Bahdin) and missing words of Christ; XLIII Rome August 1701 by Joseph of Amid; XLIV words of Christ at f. 28v under a rubric."
+  },
+  {
+   "acquisition_id": "chaldean-acq-assemani1758-ocr",
+   "check": "Packet claim that XLIII's institution words were 'added on a slip'",
+   "result": "contradicted",
+   "detail": "Page image p. 293: 'fol. 29. descripta sunt ex Missali Chaldaico Maronitarum, Romae an. 1592. impresso' — copied into the codex, not a slip. Corrected in the source row and the Vat. sir. 43 record."
+  },
+  {
+   "acquisition_id": "chaldean-acq-macomber1966-images",
+   "check": "View pp. 352–357 and apparatus pp. 358–370",
+   "result": "confirmed",
+   "detail": "Sigla (A Diarbekir, B Mardin 22 … l Vat. 43 1701), AQ/CH/ML membership, Cm01 and Cm36 at pp. 24–36 confirmed. The apparatus cites Cm36 apart from 1901 at line 2 (p. 358) and line 52 (p. 366), which the packet missed."
+  },
+  {
+   "acquisition_id": "chaldean-acq-lectiones1900; chaldean-acq-epistolae1900; chaldean-acq-evangelia1900",
+   "check": "Render imprimatur and Latin title pages; MODS",
+   "result": "confirmed",
+   "detail": "Each Latin title reads Mausili, Typis Fratrum Praedicatorum, MDCCCC; Altmayer imprimatur (undated) in vol. 1; Goussen 46 a–c; PDM 1.0. Epistolae extent (Bonn 110 pp., Coakley 151 pp.) not reconciled."
+  },
+  {
+   "acquisition_id": "chaldean-acq-urmia1876",
+   "check": "Render title PDF 140 and baptism heading PDF 134; contact sheets of PDF 100–139; section headings at PDF 102, 104, 110, 114",
+   "result": "confirmed",
+   "detail": "Title 'Rituel Chaldéen, Imprimerie de la Mission, Ourmiah (Perse) 1876'; PDF 134 heads the order of holy baptism."
+  },
+  {
+   "acquisition_id": "chaldean-acq-urmia1876",
+   "check": "Whether later sections include a Eucharistic order",
+   "result": "inconclusive",
+   "detail": "Further section headings (about printed pp. 21 and 31–33) were seen but could not be read reliably; the packet's 'no Mass in inspected pages' stands as bounded."
+  },
+  {
+   "acquisition_id": "chaldean-acq-urmia1890",
+   "check": "Render PDF 174–175",
+   "result": "confirmed",
+   "detail": "Urmiae, Typis Missionis Archiepiscopi Cantuariensis, MDCCCXC; inserted list states that the institution words were printed from 1 Corinthians 11."
+  },
+  {
+   "acquisition_id": "chaldean-acq-jammo2013-excerpt",
+   "check": "Hash; render title leaf at 150 dpi",
+   "result": "confirmed",
+   "detail": "Date 2013 and eparchy confirmed (supports the record date)."
+  },
+  {
+   "acquisition_id": "chaldean-acq-jammo2013-excerpt",
+   "check": "Packet title 'Syriac Taksa of the Apostles'",
+   "result": "contradicted",
+   "detail": "The title leaf reads Teshmeshta d-Raze Alahaye (Service of the Divine Mysteries); label corrected."
+  },
+  {
+   "acquisition_id": "chaldean-acq-coakley-taylor",
+   "check": "Entries for the 1900 lections and 1901 Missale in the text layer",
+   "result": "confirmed",
+   "detail": "Entry 58 as stated, plus the April 1902 issue, the 15 August 1900 Syriac imprimatur and continuous ordinary/proper pagination. The lections are entry 56, not 57 (corrected); vol. 3 reprinted Paris 1977."
+  },
+  {
+   "acquisition_id": "chaldean-acq-sako-mecc",
+   "check": "Editions, 2005 and 2014–2020 sections",
+   "result": "confirmed",
+   "detail": "20 November 2019 confirmation; 1936 reprint at the Chaldean press, Mosul; 1971 synodal removal of prayers in Toma Hanuna's hand; 1982 Alichoran reprint; Saigh 1936 first Arabic translation; Jammo printed the pre-2005 text and only he used it."
+  },
+  {
+   "acquisition_id": "chaldean-acq-mando2012",
+   "check": "Patriarchal-press list and reprint entries",
+   "result": "confirmed",
+   "detail": "1936 Taksa with three anaphoras listed under the Chaldean patriarchal press, Mosul; 1977 Paris Gospels described as a reprinting."
+  },
+  {
+   "acquisition_id": "chaldean-acq-feulner-bib; chaldean-acq-addai-bib1; chaldean-acq-addai-bib2",
+   "check": "Text layers for 1773, 1936, 1971, 1982 and Connolly",
+   "result": "confirmed",
+   "detail": "Feulner: Rome 1767, second edition 1773, Mosul 1901 and 1936, Paris 1982 Syriac pp. 27–37/57–67/71–87; Addai items 7, 13, 17, 33–39, 41 as cited."
+  },
+  {
+   "acquisition_id": "chaldean-acq-vatlib-opac",
+   "check": "Seven OPAC pages",
+   "result": "confirmed",
+   "detail": "Macomber cited in all seven; Webb in five; 'Low Quality' digitization in six; none for Vat. sir. 43."
+  },
+  {
+   "acquisition_id": "chaldean-acq-urmia1876-mods; chaldean-acq-urmia1890-mods; chaldean-acq-qeryana1889-mods",
+   "check": "MODS access condition",
+   "result": "confirmed",
+   "detail": "All three state PDM 1.0; 1876 imprint is the Catholic Lazarist press; 1889 statement of responsibility is the Assyrian Church of the East."
+  }
+ ],
+ "remaining_bounded_gaps": [
+  "Theodore and Nestorius manuscript traditions are unlabelled as controls: Vadakkel, The East Syrian Anaphora of Mar Theodore of Mopsuestia (Kottayam 1989); Naduthadam, L'Anaphore de Mar Nestorius (Paris 1992); Gelston, The Eucharistic Prayer of Addai and Mari (Oxford 1992).",
+  "Macomber witnesses outside his three traditions (a Khoshaba ritual 1664, w Berlin 41 1834, z McHardy codex 1908), L Saigh hudra and the ML witness Z Ming. Syr. 611 are unlabelled; Macomber 1970 (OCP 36) and Webb 1967–68 unread.",
+  "Desreumaux extract ranges dropped by the packet (Cambridge Genizah fragments; Chester Beatty 1, 719; St Petersburg Diettrich nos. 3, 4, 8 and a public-library codex of Chaldean and Latin Masses; Hall's New York manuscript; Rouen Or. 21; Strasbourg 4118/4120; CUA Syr. 1, 3, 4; Vienna Syr. 11; Freer) remain unexamined; source is cold/desreumaux-rit-extract.pdf (sha256 3f3ec911…), not the Najm catalogue.",
+  "Mosul 1936: Macomber records at least two readings apart from 1901 (p. 358 line 2; p. 366 line 52); the full extent of 1936 changes is uncollated and the original unacquired.",
+  "Paris 1982: Feulner's Syriac pagination differs from 1901; identity with 1901 is reported, not collated.",
+  "1971 Baghdad Taksa: removed prayers unidentified; Najm T/404/60 (1961, identical title) may be an alias or a separate printing.",
+  "2006 approved Taksa, the 18 February 2006 recognitio letter and Najm al-Mashriq 46 (2006) 161–163 unseen; Jammo and Sako disagree on acceptance.",
+  "2020: the printed impression and the Congregation's letter of 21 November 2019 are unseen; the Sureth (01) and English (04) parish files were not acquired.",
+  "Urmia 1876: sections after baptism not identified; Eucharistic content beyond the inspected pages unknown.",
+  "Urmia 1890–1892 second part, Kelaita 1928 and its reported 1959 reissue, and Sako's attribution of an 1890 Urmia printing to the Lazarist Bedjan remain open.",
+  "Najm al-Mashriq Arabic-section Mass books (N/321, catalogued 1956–2011), Turgama 1935/1968 and chant or Hudra component holdings are unlabelled as a bucket; originals unseen.",
+  "Epistolae 1900 extent conflict (Bonn 110 pp.; Coakley 151 pp.) unreconciled; whether the Bonn copy is complete is unknown.",
+  "Vat. sir. 491 colophon and Vat. sir. 44 f. 28v not read on the images; Vat. sir. 43 is not digitized.",
+  "Moussess 1951, 1954 and 1955 surveys, Delly 1957 and Van Vossel 2023/2025 unread; the Atour Publications reprint of about 2005 is labelled only in the chald-1901 note."
+ ],
+ "blocking_items": [],
+ "discovered_unassigned_uses": [
+  {
+   "id": "chaldean-local-amadiya-shamkan",
+   "label": "Local use of Amadiya and Shamkan",
+   "reason": "Named local Taksa title in the Najm al-Mashriq holdings (T/404/9); distinctness unknown."
+  },
+  {
+   "id": "chaldean-local-st-peter-eparchy",
+   "label": "Chaldean Eparchy of St Peter the Apostle",
+   "reason": "Local use of the 2007 reform text, distinct from patriarchal reception."
+  },
+  {
+   "id": "chaldean-local-canada",
+   "label": "Chaldean diaspora in Canada",
+   "reason": "Catalogue lead for a Canadian proper supplement (Najm T/404/109)."
+  }
+ ],
+ "next_sources": [
+  {
+   "target": "Moussess, Les huit éditions du missel chaldéen",
+   "identifier": "POC 1 (1951) 209–220",
+   "url": null,
+   "limit": "Not located online; Najm al-Mashriq A/200/260 may be a related item."
+  },
+  {
+   "target": "Delly, L'édition du Missel chaldéen de 1901",
+   "identifier": "OCP 23 (1957) 159–170",
+   "url": null,
+   "limit": "Would settle the 1936 reprint relation."
+  },
+  {
+   "target": "Macomber 1997 and 1998 JAAS articles",
+   "url": "http://www.jaas.org/edocs/v11n2/macomber.pdf",
+   "limit": "Host does not resolve; Wayback copies are error pages; Worship 51 (1977) originals not sought."
+  },
+  {
+   "target": "Vat. sir. 43",
+   "url": "https://opac.vatlib.it/mss/detail/Vat.sir.43",
+   "limit": "Not digitized."
+  },
+  {
+   "target": "Original 1971 Baghdad Taksa and the 2006 approved Taksa",
+   "url": "https://nagmalmasriq.org/مكتبة-نجم-المشرق/",
+   "limit": "Holdings only (T/404/66, T/404/82)."
+  }
+ ],
+ "limits": [
+  "No two book states were fully collated; acquisition is not transcription.",
+  "The Vatican image sets (about 545 MB) and the 2020 PDF stay in scratch under study-only or modern-rights terms.",
+  "Bonn scans are proposed tracked on PDM 1.0 and public-domain text; the root decides retention.",
+  "Najm al-Mashriq holdings were read by the cold reviewer; this lane did not re-read them and treats them as leads.",
+  "New records use only fields already present in the eastern inventory (shelfmark, approval_note, evidence_loci, ancestry_status, catholic_reception are existing optional fields).",
+  "Coverage: the chaldean coverage row should add the CH-tradition manuscripts and the 1900 to 2006 books as candidates, the medieval and Alqosh witnesses and collateral Urmia 1890 as ancestry, and Borg. sir. 36 and the deferred translations for origin review (see coverage-links.json).",
+  "Stage dossier chaldean.json: gap-2020-act can now cite decree No. 31 (PDF 2 of the 2020 PDF) with the 21 November 2019 recognition date and effective 5 April 2020; gap-early-catholic can cite Vat. sir. 43, 44 and 491. The root owns that edit.",
+  "Derivative text files (.txt) and renders under finish/render are local working files, not acquisitions.",
+  "download-receipts.json and vatican-acquisitions.json are the prior researcher's logs; superseded by these receipts."
+ ],
+ "coverage_placements": {
+  "chaldean": {
+   "candidate_ids": [
+    "chaldean-ms-vat-sir-491",
+    "chaldean-ms-vat-sir-44",
+    "chaldean-ms-vat-sir-43",
+    "chaldean-mosul1900-lections",
+    "chaldean-mosul1936-reprint",
+    "chaldean-baghdad1971",
+    "chaldean-reform2006-2007",
+    "chaldean-st-peter-2013",
+    "chaldean-paris1982"
+   ],
+   "ancestry_candidate_ids": [
+    "chaldean-ms-mar-eshaya",
+    "chaldean-ms-diarbekir-hudra",
+    "chaldean-ms-mardin22",
+    "chaldean-ms-borg-sir-150",
+    "chaldean-ms-vat-sir-42",
+    "chaldean-ms-vat-sir-303",
+    "chaldean-urmia1890-liturgy"
+   ],
+   "deferred_or_origin_review_candidate_ids": [
+    "chaldean-saigh1936"
+   ],
+   "fields_replaced": [
+    "missing_chronology"
+   ]
+  },
+  "syro-malabar": {
+   "deferred_or_origin_review_candidate_ids": [
+    "chaldean-ms-borg-sir-36"
+   ]
+  }
+ },
+ "unlinked_new_records": []
+}

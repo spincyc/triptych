@@ -188,6 +188,46 @@ Open from this wave:
   Andrieu's ordines XVII–L, the 1873–1902 Roman Greek series and any Serbian
   books.
 
+**Second wave closed, 2026-10-19.** The remaining Eastern lanes are integrated
+with the same final packets and independent cold reviews:
+- Coptic.
+- Geʽez, covering the Ethiopian and Eritrean rows.
+- Armenian, Maronite and Chaldean.
+- Syriac and Syro-Malankara.
+- Syro-Malabar.
+- Slavic Byzantine, covering the Russian, Ruthenian, Ukrainian, Belarusian and
+  Slovak rows.
+
+None of these lanes had left a packet, so each finisher built one from the
+retained files and a digest of the interrupted session's commands. The reviews
+made 137 corrections, added 38 rows and rejected none. Nothing was blocking.
+
+The Eastern inventory now holds 439 records and 367 sources, and the catalogue
+projects 779 entries. All 187 new Eastern rows are linked to coverage rows. The
+eight new receipts hold 148 unresolved leads and 692 acquisition receipts.
+
+Among the reviewed corrections:
+- The Asmara Ge'ez missal is plotted at its 1914/15 imprint, with the 1913
+  approval kept separately.
+- The 1762 Maronite missal carries Assemani's 1763 approbation in the same copy.
+- The Syriac deacon's book is dated 1905 from its own title page.
+- The "Rome 1970" Ruthenian Chrysostom is qualified as a probable later
+  printing of the 1940 book, not a new edition.
+
+Open from this wave:
+- **Malayalam books.** The maintainer decided that the Church-approved
+  operative Malayalam books of the Syro-Malankara and Syro-Malabar Churches are
+  received liturgical-language books
+  ([scope](guidance/time-machine.md#11-historical-and-language-scope-agreed-2026-10-16)).
+  Both reviewers had left them in origin review. Moving each one with evidenced
+  approval and use into candidates is the next step for those two rows.
+- **Rights rulings for retention.** ONB non-commercial images, arar.sci.am
+  downloads, Gallica-derived files and GPURA scans without a stated licence
+  each need a ruling.
+- **Stage-dossier text changes.** Packets propose changes, for example the
+  Chaldean manuscript sigla and the reissue status of the 1952 Ruthenian book.
+  These are recorded in the receipts but not yet applied.
+
 The [stage dossiers](src/sources/inventories/eucharistic-stages/) now cover
 43 traditions in 14 dossiers: 147 book-state records, 141 documented and six
 provisional. Attestation, publication, approval and effectiveness retain their
@@ -347,7 +387,8 @@ corpus as a search boundary. The GPT and Claude Thirteenth Sundays after
 Pentecost bind it, and so do the Claude Fifteenth and Eighteenth Sundays after
 Pentecost. Correcting the artifact's identity and rerunning those searches is
 separately scoped publication work. It has not been performed. The missal
-timeline pass does not depend on it.
+timeline pass does not depend on it. On 2026-10-19 the maintainer scheduled it
+for its own fix branch after the missal research waves.
 
 ## Wilson 1915 consumer corrections identified, 2026-10-16
 

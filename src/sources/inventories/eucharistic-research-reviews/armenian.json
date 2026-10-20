@@ -1,0 +1,2749 @@
+{
+ "schema_version": 1,
+ "record_type": "eucharistic-research-lane-review",
+ "id": "armenian",
+ "title": "Full research pass review of the armenian lane, 2026-10-19",
+ "lane": "armenian",
+ "side": "eastern",
+ "checked_on": "2026-10-19",
+ "reviewed_on": "2026-10-19",
+ "coverage_rows": [
+  {
+   "id": "armenian",
+   "label": "Armenian Catholic Church",
+   "family": "Armenian",
+   "existing_candidate_ids": [
+    "arm-1677-liturgia",
+    "arm-1677-ministerium",
+    "arm-1823",
+    "arm-1642-ordo"
+   ],
+   "existing_ancestry_candidate_ids": [
+    "arm-khorhrdatetr1686"
+   ]
+  }
+ ],
+ "target_inventory": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
+ "semantics": "Project-created review metadata. Versions include witnesses, components, translations and unresolved leads; their count is not a count of substantive revisions. Acquisition does not establish transcription, collation, normative revision or local reception. No ancestry is asserted.",
+ "review_files": {
+  "storage": "untracked workspace scratch; pinned here by SHA-256 only",
+  "packet_sha256": "34904b67037d1a6addec0387d59692ee82eb65de729c2724ac1075e9ca5f29a9",
+  "superseded_packet_sha256": null,
+  "cold_final_sha256": "0c73c35d17a8aa4386753cdb6dc61784bb5b783ac4f1582f55598f1305a8f6d6",
+  "cold_verdict": "ready-with-corrections"
+ },
+ "integration": {
+  "new_sources": [
+   "armenian-src-bib1512",
+   "armenian-src-bib1801",
+   "armenian-src-bib1851",
+   "armenian-src-bodleian1918",
+   "armenian-src-enccatt1951",
+   "armenian-src-gatrchean1897",
+   "armenian-src-handes-pricelists",
+   "armenian-src-lambronatsi1847",
+   "armenian-src-macler1908",
+   "armenian-src-mechitar669",
+   "armenian-src-nla-koha",
+   "armenian-src-tonanian2021",
+   "armenian-src-usuarium8323",
+   "armenian-src-venice1686",
+   "armenian-src-vienna1858",
+   "armenian-src-vienna1879",
+   "armenian-src-xosrov1869"
+  ],
+  "new_records": [
+   "armenian-avedichian-italian",
+   "armenian-catholic-1994",
+   "armenian-dominican-missal1728",
+   "armenian-gatrchean1897",
+   "armenian-lambronatsi-commentary",
+   "armenian-lowmass-server-books",
+   "armenian-lviv-sanlazzaro669",
+   "armenian-lyon-or15",
+   "armenian-marshall106",
+   "armenian-meghapart1513",
+   "armenian-munich-arm6",
+   "armenian-newjulfa1641",
+   "armenian-paris-dominican1337",
+   "armenian-paris-franciscan1344",
+   "armenian-rome1777-chashots",
+   "armenian-rome1777-khorhrdatetr",
+   "armenian-sanlazzaro-arm1411",
+   "armenian-spasaworutiwn-1783-1803",
+   "armenian-trieste1803",
+   "armenian-venice-celebrant-clerks",
+   "armenian-venice-kargh-dprutean",
+   "armenian-venice-rome-exemplar-reprints",
+   "armenian-venice1686-chashots",
+   "armenian-venice1690-italian",
+   "armenian-venice1741",
+   "armenian-venice1809",
+   "armenian-vienna1858",
+   "armenian-vienna1877-deacons",
+   "armenian-vienna1879",
+   "armenian-vienna1879-deacons",
+   "armenian-vienna1904",
+   "armenian-vienna1932-cantor",
+   "armenian-xosrov-commentary"
+  ],
+  "updates": [
+   "arm-1642-ordo",
+   "arm-1823",
+   "arm-khorhrdatetr1686"
+  ],
+  "corrected_by_review": [
+   "arm-khorhrdatetr1686",
+   "armenian-catholic-1994",
+   "armenian-lviv-sanlazzaro669",
+   "armenian-rome1777-chashots",
+   "armenian-rome1777-khorhrdatetr",
+   "armenian-src-bib1512",
+   "armenian-src-bib1801",
+   "armenian-src-bib1851",
+   "armenian-src-vienna1858",
+   "armenian-src-vienna1879",
+   "armenian-venice1686-chashots",
+   "armenian-vienna1858",
+   "armenian-vienna1879"
+  ],
+  "added_by_review": [
+   "armenian-constantinople1568-cold"
+  ],
+  "rejected_by_review": []
+ },
+ "uses": [
+  {
+   "id": "armenian-catholic-patriarchal",
+   "label": "Armenian Catholic Church: patriarchal (Cilician) books",
+   "disposition": "researched-with-explicit-gaps",
+   "finding": "The Vienna 1879 Խորհրդատետր սրբոյ Պատարագին carries a declaration signed by Anton Petros IX (Hassun), Patriarch of Cilicia, dated 6 January 1879, which ties the book to the 1847 Constantinople national assembly held with Holy See permission and to a later decision of the patriarchate's bishops on one uniform Mass book. The title page, declaration and the 388-page lection part were inspected in the acquired scan. A 1904 Vienna second printing in two forms (plenary with lections, and ordinary only) is reported by the Mekhitarist journal Handēs Amsōreay and by the Enciclopedia Cattolica (1951). A revised order effective at Pentecost 1994 is reported by an official retrospective.",
+   "limit": "The 174-page ordinary section of the 1879 book is not in the delivered scan; the 1904 forms, the 1932 cantor's book and the 1994 book and decree were not seen. No textual delta between 1677, 1879 and 1994 has been collated.",
+   "next_sources": [
+    "A complete copy of Vienna 1879 including its 174-page ordinary (Mekhitarist library, Vienna; NLA Yerevan)",
+    "Google Books jJIwAQAAMAAJ (Vienna 1904 plenary) and Handēs Amsōreay 1904 no. 12, bibliography entries 118-119",
+    "Աւետիք 1994, p. 365 (patriarchal decree) and the 1994 revised book"
+   ],
+   "review_disposition": "accepted-with-corrections",
+   "review_remaining_gap": "The 174-page part of 1879, the 1904 forms, the 1932 cantor's book, the 1994 decree (Աւետիք 1994, p. 365) and book, and any post-1994 book remain unseen; no 1677/1879/1994 collation."
+  },
+  {
+   "id": "armenian-roman-propaganda",
+   "label": "Roman (Propaganda Fide) editions for Armenians, 1642-1777",
+   "disposition": "researched-with-explicit-gaps",
+   "finding": "Besides the existing 1642 and 1677 rows, the national bibliography (1512-1800) records a Rome 1777 Khorhrdatetr of the priest's daily prayers, printed 'by command of the superiors', issued together with a 738-page Rome 1777 lectionary (Ճաշոց) into which the Khorhrdatetr is inserted. The bibliography's Rome 1670 entry reproduces the 1642 title and derives its date from Ghazikian citing Brightman, so it is not independent evidence of a 1670 edition.",
+   "limit": "The 1777 books were known here only through the bibliography and an NLA catalogue search snippet; no page images were seen. Brightman's 'Rome 1686' Uniat edition was not confirmed by any repertory searched.",
+   "next_sources": [
+    "NLA Yerevan and San Lazzaro copies of the Rome 1777 Khorhrdatetr and Ճաշոց",
+    "Propaganda Fide printing records for 1686 (Brightman's Rome 1686)"
+   ],
+   "review_disposition": "accepted-with-corrections",
+   "review_remaining_gap": "Rome 1777 books unseen; Brightman's Rome 1686 unresolved; Brightman p. xcviii also lists a Latin 'Ordo divinae missae Armenorum Romae 1632' among translations, not accounted for in the packet."
+  },
+  {
+   "id": "armenian-mekhitarist-venice-trieste",
+   "label": "Mekhitarist books of Venice (San Lazzaro) and Trieste",
+   "disposition": "researched-with-explicit-gaps",
+   "finding": "The national bibliographies record Venice and Trieste Mekhitarist printings whose titles state that they follow the Rome exemplar (Venice 1741, printed by Bortoli; Trieste 1803; Venice 1809; Venice 1823 in three issues; Venice 1874; Venice 1883 small format), and complementary ministrant books: Սպասաւորութիւն սրբոյ պատարագի (Trieste 1783, 1785, 1803; Venice 1785), low-Mass server books (Trieste 1786; Vienna 1854; Venice 1875, 1889), and the clerks' book Կարգ դպրութեան (Venice 1834, 1857, 1863, 1889), plus combined celebrant-and-clerks books (Venice 1826; third printing 1854).",
+   "limit": "Bibliographic evidence only, except for the already registered 1823 80-page witness. Several entries are marked by the compilers as not seen. Reprints are not counted as revisions; no collation was performed.",
+   "next_sources": [
+    "San Lazzaro library holdings of the Trieste 1803 and Venice 1809 books",
+    "Complete Mekhitarist catalogue of Venice publications (1934, 1960)"
+   ],
+   "review_disposition": "accepted",
+   "review_remaining_gap": "All books except arm-1823 unseen; Trieste 1808 (entry 115, unseen, citing Zarbhanalian p. 281 and Ghazikian) and Venice 1808 remain leads; Venice 1895 lead; Mekhitarist Venice catalogues 1934 and 1960 unexamined."
+  },
+  {
+   "id": "armenian-mekhitarist-vienna",
+   "label": "Vienna Mekhitarist books (before and after the 1879 patriarchal book)",
+   "disposition": "researched-with-explicit-gaps",
+   "finding": "The Vienna 1858 Khorhrdatetr, printed 'according to the exemplar printed in Rome', was acquired whole (84 images: 64 pages of the Mass order plus a separately paginated 15-page table of Mass lessons and Gospels). The bibliography 1851-1900 also records Vienna books for the low-Mass server (1854), an annual order for deacons and clerks (1877, 456 pages) and a Mass book for deacons and clerks (first printing 1879).",
+   "limit": "Only the 1858 book was seen. The Vienna 1879 deacons' book is known from a Mekhitarist catalogue cited by the bibliography (entry marked not seen); a publisher price list reports a date of 1880 for what may be the same book.",
+   "next_sources": [
+    "Vienna Mekhitarist library copies of the 1877 and 1879/1880 deacons' and clerks' books"
+   ],
+   "review_disposition": "accepted-with-corrections",
+   "review_remaining_gap": "1877 and 1879/1880 deacons' books unseen; Vienna 1880 ordinary and Vienna 1884 leads unresolved."
+  },
+  {
+   "id": "armenian-lviv-polish",
+   "label": "Lviv (Lwów) and Polish-Galician Armenian Catholics",
+   "disposition": "existing-dossier-retained-with-gap",
+   "finding": "The existing dossier's San Lazzaro MS 669 (1636 colophon, later corrections toward Rome 1677) is the only inspected Lviv witness. The cold reviewer reports a Galician Armenian Catholic ordinary in Vienna Mekhitarist MS arm. 18 (c. 1700).",
+   "limit": "No manuscript images were inspected in this pass; correcting hands remain undated. Vienna arm. 18 was not examined.",
+   "next_sources": [
+    "San Lazzaro MS 669 (old 1178), Mass at fol. 263",
+    "Dashian's 1895 catalogue of the Vienna Mekhitarist manuscripts, MS 18"
+   ],
+   "review_disposition": "accepted-with-corrections",
+   "review_remaining_gap": "No images; Mass section and correcting hands undated; Vienna arm. 18 (Dashian 1895) unexamined."
+  },
+  {
+   "id": "armenian-transylvanian",
+   "label": "Transylvanian Armenian Catholics (Gherla, Dumbrăveni, Gheorgheni)",
+   "disposition": "unresearched-lead",
+   "finding": "Named by the cold reviewer as a separate reception context. No book or manuscript of this use was located in this pass.",
+   "limit": "No repository was searched for this use. Reception of the Rome or Mekhitarist books in Transylvania is not inferred.",
+   "next_sources": [
+    "Gherla Armenian Catholic parish archives",
+    "Romanian national library catalogue (Armenian-script holdings)"
+   ],
+   "review_disposition": "gap-recorded",
+   "review_remaining_gap": "No Transylvanian book or manuscript identified; reception of Rome or Mekhitarist books there not inferred. Next sources: EAP1723 inventory, Dumbrăveni catalogue, Gherla ordinariate archive."
+  },
+  {
+   "id": "armenian-shared-ancestry",
+   "label": "Pre-union and shared Armenian manuscript and commentary ancestry",
+   "disposition": "researched-with-explicit-gaps",
+   "finding": "Brightman (1896, pp. xcvi-xcix) lists the Lyon Or. 15 (1314), Munich arm. 6 (1427) and San Lazzaro arm. 1411 manuscripts and ten liturgies or anaphoras no longer in use. Macler (1908) catalogues Paris supplément arménien 50 as an 1858 copy of the 1314 Lyon manuscript with the liturgies of Athanasius, Gregory the Illuminator, Basil, Gregory the Theologian, John Chrysostom and Sahak. The 1897 Vienna edition by Gatrčean and Tašean (Սրբազան Պատարագամատոյցք Հայոց), the Xosrov commentary (Venice 1869) and the Nersēs Lambronac‘i commentary (Venice 1847) were acquired whole.",
+   "limit": "No manuscript was inspected. The 1897 edition's apparatus and the commentaries' embedded liturgy texts were identified from their title pages but not collated. Winkler's and Feulner's critical editions were not acquired.",
+   "next_sources": [
+    "Feulner 2001 (Athanasius anaphora critical edition)",
+    "Winkler 2005, 2011, 2013 (Basil, Sahak, James editions)",
+    "Lyon, Bibliothèque municipale Or. 15 images"
+   ],
+   "review_disposition": "accepted-with-corrections",
+   "review_remaining_gap": "No manuscript inspected; Feulner and Winkler editions not acquired; 1177 Lambronac'i date and Step'anos text unexamined."
+  },
+  {
+   "id": "armenian-latin-rite-translations",
+   "label": "Latin-rite books in Armenian (Dominican, Franciscan, Fratres Unitores)",
+   "disposition": "identified-and-deferred",
+   "finding": "Macler (1908) catalogues two fourteenth-century Roman missals translated into Armenian: supplément arménien 71, translated in 1337 for the Dominicans of the province of Armenia, and ancien fonds arménien 22, translated by the Franciscan Boniface (completed at Avignon in 1344; copied at Bologna in 1381). USUARIUM records a printed Armenian Dominican missal of 1728. Bodleian MS Marshall Or. 106 (c. 1675) is a separate case: an Armenian-rite low-Mass extract for a Roman-Armenian priest.",
+   "limit": "These Latin-rite books are translations of Western uses; their histories are deferred and they are not counted as Armenian-rite versions. Paris supplément arménien 3 (ff. 109 onward) was not checked.",
+   "next_sources": [
+    "USUARIUM 8323 record and the Greenstone (Fundamental Scientific Library) copy of the 1728 Dominican missal"
+   ],
+   "review_disposition": "accepted",
+   "review_remaining_gap": "Paris suppl. arm. 3 unlocated; 1728 Dominican missal unopened; Brightman's modern translations (French Venice 1851, English Venice 1872, Italian Venice 1873, German Tübingen 1845, Latin Rome 1632) are not labelled as deferred witnesses."
+  },
+  {
+   "id": "armenian-apostolic-comparison",
+   "label": "Armenian Apostolic altar-book sequence (comparison only)",
+   "disposition": "comparison-only-not-a-catholic-use",
+   "finding": "The national bibliographies list Apostolic Khorhrdatetr printings from New Julfa 1641 and Venice 1686 through Constantinople, Smyrna, New Nakhichevan, Echmiadzin/Vagharshapat, Shushi, Tiflis and Jerusalem, up to 1894. Brightman uses Smyrna 1761 and Jerusalem 1873 as base texts.",
+   "limit": "Catholic reception of these books is not asserted. They are labelled here so that they are not mistaken for Catholic witnesses.",
+   "next_sources": [
+    "Collation of Venice 1686 against Rome 1677 (the 1686 images are now acquired)"
+   ],
+   "review_disposition": "accepted-with-corrections",
+   "review_remaining_gap": "Venice 1686 not collated with Rome 1677; Echmiadzin 1873 unresolved; Catholic reception of Apostolic books not asserted."
+  }
+ ],
+ "searches": [
+  {
+   "repository": "Pan-Armenian Digital Library (arar.sci.am)",
+   "queries": [
+    "Խորհրդատետր Սրբոյ պատարագին",
+    "Հայ գիրքը 1801-1850",
+    "Հայ գիրքը 1851-1900"
+   ],
+   "url": "https://arar.sci.am/dlibra/publication/292708/edition/268743",
+   "checked_on": "2026-10-19",
+   "outcome": "Located and downloaded whole the Vienna 1858 and Vienna 1879 books and the 1801-1850 and 1851-1900 national bibliographies. The library's viewer labels the two book editions 'Secured publication', while the PDF linked in the page metadata downloaded without credentials.",
+   "extent_examined": "Edition pages 268727 and 268743 and their metadata; bibliography editions 263055 and 263057.",
+   "unexamined_range": "Other arar.sci.am editions of the same titles (the edition lists name two sibling editions per title), and any 1904 Vienna copy."
+  },
+  {
+   "repository": "Հայ գիրքը 1512-1800 (Yerevan 1988), retained earlier in an untracked workspace scratch copy",
+   "queries": [
+    "ԽՈՐՀՐԴԱՏԵՏՐ",
+    "ՍՊԱՍԱՒՈՐՈՒԹԻՒՆ",
+    "ԿԵՐՊ ՍՊԱՍԱՒՈՐՈՒԹԵԱՆ",
+    "subject index: Խորհրդատետր, Սպասաւորութիւն"
+   ],
+   "url": "https://arar.sci.am/Content/263047/matenaget%2040.pdf",
+   "checked_on": "2026-10-19",
+   "outcome": "Title index and entry text read for entries 2, 31, 75, 103-104, 130, 144, 226, 460, 496, 590, 677-678, 756, 758, 760, 761, 780, 796, 815, 913 and the appendix note on 677-678. Page images were not re-rendered in this pass except as noted.",
+   "extent_examined": "OCR text of the whole volume searched; index pages PDF 899-908 and entries above read.",
+   "unexamined_range": "Entries 599, 1020 and 1088 cited by the index were not resolved (OCR numbering errors); the 1728 Dominican missal entry was located only through the index cross-reference."
+  },
+  {
+   "repository": "Հայ գիրքը 1801-1850 (Yerevan 1967), arar.sci.am",
+   "queries": [
+    "Խորհրդատետր",
+    "Կարգ դպրութեան",
+    "Սպասաւորութիւն",
+    "Liturgia"
+   ],
+   "url": "https://arar.sci.am/Content/263055/matenaget%2041.pdf",
+   "checked_on": "2026-10-19",
+   "outcome": "Entries 35, 37, 115, 120, 121, 204, 421-423, 435, 510, 511, 729, 800, 956, 1045, 1130 and 1284 read; entry 115 (Trieste 1808) carries the compilers' note that Brightman's 1808 may be an error for 1803.",
+   "extent_examined": "Whole OCR text searched; page images PDF 101, 118, 120, 196, 197, 219 and 274 rendered (PDF 118 viewed in this pass).",
+   "unexamined_range": "Entries whose OCR title is damaged beyond the search strings; no subject index search was done for this volume."
+  },
+  {
+   "repository": "Հայ գիրքը 1851-1900 (Yerevan 1999), arar.sci.am",
+   "queries": [
+    "Խորհրդատետր",
+    "Պատարագամատոյց",
+    "Կարգ դպրութեան",
+    "Սպասաւորութիւն",
+    "Ճաշոց",
+    "subject index: Խորհրդատետր"
+   ],
+   "url": "https://arar.sci.am/Content/263057/matenaget%2042.pdf",
+   "checked_on": "2026-10-19",
+   "outcome": "Subject index (PDF 899) lists Khorhrdatetr entries 272, 631, 839, 1199, 1529, 2519, 2520, 2665, 3385, 3572, 3573, 3574, 4123 and 4307; with the deacons', clerks' and server books 273, 320, 533, 1182, 1465, 2887, 3180, 3394, 5275 and 5356, all were read. Entries 3385 and 3394 (PDF 310-311) and 2519-2520 (PDF 242) were checked against page images.",
+   "extent_examined": "Whole OCR text and the subject and title indexes.",
+   "unexamined_range": "No Vienna 1884 or Venice 1895 Catholic Khorhrdatetr appears under the Khorhrdatetr subject heading; books catalogued under other headings were not exhaustively searched."
+  },
+  {
+   "repository": "National Library of Armenia Koha catalogue (haygirk.nla.am)",
+   "queries": [
+    "Խորհրդատետր (count=100, sort pubdate)",
+    "site search via web index: Խորհրդատետր 1777, 1686, 1879, 1904"
+   ],
+   "url": "https://haygirk.nla.am/cgi-bin/koha/opac-search.pl?q=%D4%BD%D5%B8%D6%80%D5%B0%D6%80%D5%A4%D5%A1%D5%BF%D5%A5%D5%BF%D6%80&count=100&sort_by=pubdate_asc",
+   "checked_on": "2026-10-19",
+   "outcome": "Direct OPAC queries returned HTTP 403 (both the previous researcher's urllib request and the cold reviewer's curl request). Search-engine copies of two catalogue records were read: Rome 1777 (35 pages) and Venice 1686 (Gaspar Sahratian, 40 pages).",
+   "extent_examined": "Two indexed record snippets only.",
+   "unexamined_range": "The full OPAC result list; the NLA PDF bibliography 1901-1940 (catalog_1918.pdf returned HTTP 403 on 2026-10-19)."
+  },
+  {
+   "repository": "Internet Archive advanced search",
+   "queries": [
+    "title:(patarag*)",
+    "(Gatrchean OR Gatrc OR Gatrch OR Gatirchean)",
+    "title:(khorhr* OR xorhr*)",
+    "title:(Catalogue des manuscrits arméniens)",
+    "title:(khorhrdatetr OR xorhrdatetr)",
+    "catalogueofarmen00bodl"
+   ],
+   "url": "https://archive.org/advancedsearch.php",
+   "checked_on": "2026-10-19",
+   "outcome": "Found and downloaded the 1897 Gatrčean-Tašean edition, the Xosrov (1869) and Lambronac‘i (1847) commentaries, Macler's 1908 Paris catalogue and (in this pass) the 1918 Bodleian Armenian catalogue. IA also holds the 1823 Venice book (already registered from Google) and an Apostolic Armenian-English Pataragamatoyc.",
+   "extent_examined": "All hits of the six queries (9, 3, 14, 2, 2 hits and one identifier).",
+   "unexamined_range": "Full-text search inside IA items; Armenian-script title search."
+  },
+  {
+   "repository": "Fundamental Scientific Library Greenstone collection (greenstone.flib.sci.am), via the Etchmiadzin library index of early printed books",
+   "queries": [
+    "xorhrdatetr1686",
+    "chashoc1686"
+   ],
+   "url": "http://greenstone.flib.sci.am/gsdl/collect/armenian/Books/xorhrdatetr1686/book/index.html",
+   "checked_on": "2026-10-19",
+   "outcome": "The previous researcher's HTTPS requests were refused (connection refused). In this pass the plain-HTTP route answered and all 44 page images of the Venice 1686 Khorhrdatetr were downloaded.",
+   "extent_examined": "The 1686 Khorhrdatetr viewer (44 leaves declared by the viewer configuration).",
+   "unexamined_range": "The companion 1686 Ճաշոց (chashoc1686) and the 1728 Dominican missal were not downloaded."
+  },
+  {
+   "repository": "Handēs Amsōreay archive (tert.nla.am)",
+   "queries": [
+    "Խորհրդատետր 1879 Վիեննա",
+    "Կարգ դպրութեան 1880",
+    "Խորհրդատետր 1904"
+   ],
+   "url": "https://tert.nla.am/archive/NLA%20AMSAGIR/Handesamsorya/1904/12_ocr.pdf",
+   "checked_on": "2026-10-19",
+   "outcome": "Search-engine text of the 1891 no. 3, 1893 no. 6, 1904 no. 12 and 1906 no. 8 issues was read; direct PDF requests return HTTP 403 (rechecked 2026-10-19, 5416-byte error page).",
+   "extent_examined": "Indexed snippets only.",
+   "unexamined_range": "The issues themselves."
+  },
+  {
+   "repository": "Bodleian Library Armenian catalogue (Baronian and Conybeare 1918), Internet Archive copy",
+   "queries": [
+    "Marshall",
+    "Low-Mass",
+    "Liturgy"
+   ],
+   "url": "https://archive.org/download/catalogueofarmen00bodl/catalogueofarmen00bodl.pdf",
+   "checked_on": "2026-10-19",
+   "outcome": "Whole PDF acquired in this pass; entry 20, MS Marshall (Or.) 106, read on page image PDF 22.",
+   "extent_examined": "Whole text searched for Marshall, Mass and Liturgy; entry 20 read in full.",
+   "unexamined_range": "Other liturgical entries (for example MS Arm. d. 10, 1674) were not individually assessed."
+  },
+  {
+   "repository": "Macler, Catalogue des manuscrits arméniens et géorgiens de la Bibliothèque nationale (1908), Internet Archive",
+   "queries": [
+    "Missel",
+    "liturgie",
+    "Supplément arménien 12",
+    "Franciscains",
+    "Dominicains"
+   ],
+   "url": "https://archive.org/download/cataloguedesmanu00fran/cataloguedesmanu00fran.pdf",
+   "checked_on": "2026-10-19",
+   "outcome": "Entries 86-91 (Armenian missals) and 105-108 (Latin-rite books translated into Armenian) read; page image PDF 80 viewed.",
+   "extent_examined": "Whole OCR searched; the 'Livres liturgiques' section read.",
+   "unexamined_range": "Supplément arménien 3 (ff. 109 onward), cited by the cold reviewer, was not located in this pass."
+  },
+  {
+   "repository": "Web search (multiple engines through the research tool)",
+   "queries": [
+    "Armenian Catholic missal 1879 1994 Pataragamadoyc",
+    "\"Խորհրդատետր\" \"1994\" կաթողիկէ",
+    "\"Tebratión\" Armenian",
+    "\"Tebrat\" \"1932\"",
+    "\"Դպրութիւն\" \"1932\" \"Վիեննա\"",
+    "\"Խորհրդատետր\" \"1884\"",
+    "\"Խորհրդատետր\" \"Սրբոյ\" \"1895\"",
+    "\"Feulner\" \"Anaphora\" \"Athanasius\" 2001"
+   ],
+   "url": "https://azioneromana.com/it/article/libri-liturgici",
+   "checked_on": "2026-10-19",
+   "outcome": "Enciclopedia Cattolica (1951) list of Armenian Catholic books located; Catholic Encyclopedia (1911) edition list located; Feulner 2001 bibliographic record located. No 1994 book, no 1932 cantor's book and no Catholic 1884 or 1895 book identified.",
+   "extent_examined": "First result pages of each query.",
+   "unexamined_range": "Library catalogues of the Mekhitarist congregations and of Bzommar; Armenian Catholic patriarchate publications after 1950."
+  }
+ ],
+ "versions": [
+  {
+   "id": "armenian-v-1642-ordo",
+   "label": "Կարգեալ սուրբ խորհուրդ պատարագի հայոց / Ordo divinae missae Armenorum (Rome 1642)",
+   "tradition_or_use": "Armenian Catholic (Roman and Mekhitarist line)",
+   "date_label": "1642",
+   "date_role": "publication",
+   "record_class": "existing-printed-witness",
+   "distinctness_basis": "Existing row; bounded Creed comparison with 1677 documented in the dossier.",
+   "existing_candidate_ids": [
+    "arm-1642-ordo"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Whole-book parentage and reception remain unverified; this pass added only the 1670 lead below.",
+   "inventory_ids": [
+    "arm-1642-ordo"
+   ]
+  },
+  {
+   "id": "armenian-v-rome1670-lead",
+   "label": "Ordo divinae missae Armenorum, reported Rome 1670 edition",
+   "tradition_or_use": "Armenian Catholic (Roman and Mekhitarist line)",
+   "date_label": "1670 (reported)",
+   "date_role": "publication-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Bibliography 1512-1800 entry 75 transcribes the 1642 title and derives the 1670 date from Ghazikian citing Brightman; not independent evidence.",
+   "existing_candidate_ids": [
+    "arm-1642-ordo"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Unexamined range: Propaganda Fide printing records and library holdings for a 1670 issue; Ghazikian's Haykakan nor matenagitutʻiwn column cited by entry 75.",
+   "inventory_ids": [
+    "arm-1642-ordo"
+   ]
+  },
+  {
+   "id": "armenian-v-1677-lyturgia",
+   "label": "Խորհրդատետր Պատարագին Հայոց / Lyturgia Armena (Rome 1677)",
+   "tradition_or_use": "Armenian Catholic (Roman and Mekhitarist line)",
+   "date_label": "1677",
+   "date_role": "publication",
+   "record_class": "existing-printed-witness",
+   "distinctness_basis": "Existing registered witness.",
+   "existing_candidate_ids": [
+    "arm-1677-liturgia"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "No new evidence in this pass.",
+   "inventory_ids": [
+    "arm-1677-liturgia"
+   ]
+  },
+  {
+   "id": "armenian-v-1677-ministerium",
+   "label": "Սպասաւորութիւն Պատարագի / Ministerium Missae (Rome 1677)",
+   "tradition_or_use": "Armenian Catholic (Roman and Mekhitarist line)",
+   "date_label": "1677",
+   "date_role": "publication",
+   "record_class": "existing-complementary-component",
+   "distinctness_basis": "Existing complementary deacons' book; companion, not a revision.",
+   "existing_candidate_ids": [
+    "arm-1677-ministerium"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "No new evidence in this pass.",
+   "inventory_ids": [
+    "arm-1677-ministerium"
+   ]
+  },
+  {
+   "id": "armenian-v-1677-latin-codex",
+   "label": "Codex mysterii missae Armenorum, seu Lyturgia Armena (Rome 1677, Latin)",
+   "tradition_or_use": "Armenian Catholic (Roman and Mekhitarist line)",
+   "date_label": "1677",
+   "date_role": "publication",
+   "record_class": "deferred-translation-component",
+   "distinctness_basis": "Latin companion in the same registered bound volume (artifact pages 1-40); a translation, held by the existing bound-volume artifact.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "No separate inventory row; Latin translation history deferred.",
+   "inventory_ids": []
+  },
+  {
+   "id": "armenian-v-rome1686-lead",
+   "label": "Brightman's 'Rome 1686' Armenian Catholic edition",
+   "tradition_or_use": "Armenian Catholic (Roman and Mekhitarist line)",
+   "date_label": "1686 (reported)",
+   "date_role": "publication-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Brightman lists Rome 1686 among Uniat editions; the 1512-1800 bibliography records Venice 1686 (an Apostolic-patronage printing) but no Rome 1686 Khorhrdatetr.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Unexamined range: Propaganda Fide archives and Roman library catalogues for 1686; possible confusion with Venice 1686 or the 1686 lectionary.",
+   "inventory_ids": []
+  },
+  {
+   "id": "armenian-v-venice1690-italian",
+   "label": "Թարգմանութիւն իտալական սրբազանի Խորհրդատետրն Հայոց (Venice 1690)",
+   "tradition_or_use": "Armenian Catholic (Roman and Mekhitarist line)",
+   "date_label": "1690",
+   "date_role": "publication",
+   "record_class": "deferred-translation",
+   "distinctness_basis": "Armenian-Italian translation book; facing Armenian is a witness, not a recension.",
+   "existing_candidate_ids": [
+    "armenian-venice1690-italian"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Book unseen.",
+   "inventory_ids": [
+    "armenian-venice1690-italian"
+   ]
+  },
+  {
+   "id": "armenian-v-venice1741",
+   "label": "Խորհրդատետր սրբոյ Պատարագին ... տպագրեցեալ ըստ օրինակին տպագրեցելոյ ի Հռոմ (Venice 1741)",
+   "tradition_or_use": "Armenian Catholic (Roman and Mekhitarist line)",
+   "date_label": "15 September 1741",
+   "date_role": "publication",
+   "record_class": "dependent-printing",
+   "distinctness_basis": "Title states conformity to the Rome exemplar; Brightman lists it as Uniat.",
+   "existing_candidate_ids": [
+    "armenian-venice1741"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Printer Bortoli is not a Mekhitarist press; Catholic commissioning and reception unverified; book unseen.",
+   "inventory_ids": [
+    "armenian-venice1741"
+   ]
+  },
+  {
+   "id": "armenian-v-rome1777-khorhrdatetr",
+   "label": "Խորհրդատետր սրբազան Պատարագի յորում կարգեալ կան օրըստօրական աղօթք քահանային (Rome 1777)",
+   "tradition_or_use": "Armenian Catholic (Roman and Mekhitarist line)",
+   "date_label": "1777",
+   "date_role": "publication",
+   "record_class": "printed-witness-new-discovery",
+   "distinctness_basis": "Roman celebrant's book issued with superiors' permission and bound into the 1777 lectionary; absent from Brightman's list.",
+   "existing_candidate_ids": [
+    "armenian-rome1777-khorhrdatetr"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "No page images seen; relation to the 1677 Lyturgia uncollated.",
+   "inventory_ids": [
+    "armenian-rome1777-khorhrdatetr"
+   ]
+  },
+  {
+   "id": "armenian-v-rome1777-chashots",
+   "label": "Ճաշոց (Rome 1777)",
+   "tradition_or_use": "Armenian Catholic (Roman and Mekhitarist line)",
+   "date_label": "1777",
+   "date_role": "publication",
+   "record_class": "complementary-lectionary",
+   "distinctness_basis": "Companion lectionary of the 1777 celebrant's book.",
+   "existing_candidate_ids": [
+    "armenian-rome1777-chashots"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "No page images seen.",
+   "inventory_ids": [
+    "armenian-rome1777-chashots"
+   ]
+  },
+  {
+   "id": "armenian-v-spasaworutiwn-family",
+   "label": "Սպասաւորութիւն սրբոյ Պատարագի (Trieste 1783, 1785, 1803; Venice 1785)",
+   "tradition_or_use": "Armenian Catholic (Roman and Mekhitarist line)",
+   "date_label": "1783-1803",
+   "date_role": "publication-range",
+   "record_class": "complementary-reprint-family",
+   "distinctness_basis": "Deacons' and servers' book printings; grouped, no revision asserted.",
+   "existing_candidate_ids": [
+    "armenian-spasaworutiwn-1783-1803"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Books unseen; relation to the 1677 Ministerium uncollated.",
+   "inventory_ids": [
+    "armenian-spasaworutiwn-1783-1803"
+   ]
+  },
+  {
+   "id": "armenian-v-lowmass-server-family",
+   "label": "Կերպ սպասաւորութեան թիւ պատարագի and related low-Mass server books (1786-1889)",
+   "tradition_or_use": "Armenian Catholic (Roman and Mekhitarist line)",
+   "date_label": "1786-1889",
+   "date_role": "publication-range",
+   "record_class": "complementary-reprint-family",
+   "distinctness_basis": "Server books for the low Mass, a Catholic adaptation; grouped printings.",
+   "existing_candidate_ids": [
+    "armenian-lowmass-server-books"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Vienna 1854 may be one book listed twice (entries 273 and 320); the place of the 1865 book is illegible in the OCR.",
+   "inventory_ids": [
+    "armenian-lowmass-server-books"
+   ]
+  },
+  {
+   "id": "armenian-v-marshall106",
+   "label": "Սպասաւորութիւն թիւ պատարագի, Bodleian MS Marshall (Or.) 106 (c. 1675)",
+   "tradition_or_use": "Armenian Catholic (Roman and Mekhitarist line)",
+   "date_label": "c. 1675 (note of 12 December 1674)",
+   "date_role": "manuscript-copying",
+   "record_class": "manuscript-witness",
+   "distinctness_basis": "Low-Mass extract for a Roman Armenian priest; the catalogue describes a form after Latin practice. Distinct use (low Mass) from the solemn Patarag; the cold reviewer's 'abridged for low Mass' description is confirmed by the catalogue.",
+   "existing_candidate_ids": [
+    "armenian-marshall106"
+   ],
+   "acquisition_ids": [
+    "armenian-acq-bodleian-pdf"
+   ],
+   "unresolved": "Manuscript not seen; its relation to Rome 1677 and to later low-Mass books is unestablished.",
+   "inventory_ids": [
+    "armenian-marshall106"
+   ]
+  },
+  {
+   "id": "armenian-v-trieste1803",
+   "label": "Խորհրդատետր ... ըստ օրինակին տպագրելոյ ի Հռովմ (Trieste 1803)",
+   "tradition_or_use": "Armenian Catholic (Roman and Mekhitarist line)",
+   "date_label": "1803",
+   "date_role": "publication",
+   "record_class": "dependent-printing",
+   "distinctness_basis": "Title follows the Rome exemplar.",
+   "existing_candidate_ids": [
+    "armenian-trieste1803"
+   ],
+   "acquisition_ids": [
+    "armenian-acq-bib1801-pdf"
+   ],
+   "unresolved": "Book unseen.",
+   "inventory_ids": [
+    "armenian-trieste1803"
+   ]
+  },
+  {
+   "id": "armenian-v-trieste1808-lead",
+   "label": "Brightman's 'Trieste 1808' edition",
+   "tradition_or_use": "Armenian Catholic (Roman and Mekhitarist line)",
+   "date_label": "1808 (reported)",
+   "date_role": "publication-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Bibliography 1801-1850 entry 115 lists it as unseen and quotes Ghazikian that Brightman's 1808 is probably an error for 1803.",
+   "existing_candidate_ids": [
+    "armenian-trieste1803"
+   ],
+   "acquisition_ids": [
+    "armenian-acq-bib1801-pdf"
+   ],
+   "unresolved": "Unexamined range: Trieste Mekhitarist printing lists for 1808; probably a ghost of 1803.",
+   "inventory_ids": [
+    "armenian-trieste1803"
+   ]
+  },
+  {
+   "id": "armenian-v-venice1809",
+   "label": "Խորհրդատետր սրբոյ պատարագին (Venice 1809; 20- and 80-page issues)",
+   "tradition_or_use": "Armenian Catholic (Roman and Mekhitarist line)",
+   "date_label": "1809",
+   "date_role": "publication",
+   "record_class": "dependent-printing",
+   "distinctness_basis": "Two Venice issues of the same year; relation to Brightman's 'Venice 1808' unresolved.",
+   "existing_candidate_ids": [
+    "armenian-venice1809"
+   ],
+   "acquisition_ids": [
+    "armenian-acq-bib1801-pdf"
+   ],
+   "unresolved": "Books unseen.",
+   "inventory_ids": [
+    "armenian-venice1809"
+   ]
+  },
+  {
+   "id": "armenian-v-venice1808-lead",
+   "label": "Brightman's 'Venice 1808' edition",
+   "tradition_or_use": "Armenian Catholic (Roman and Mekhitarist line)",
+   "date_label": "1808 (reported)",
+   "date_role": "publication-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "No Venice 1808 Khorhrdatetr in the 1801-1850 bibliography; Venice 1809 is the nearest.",
+   "existing_candidate_ids": [
+    "armenian-venice1809"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Unexamined range: San Lazzaro press catalogues 1808-1809.",
+   "inventory_ids": [
+    "armenian-venice1809"
+   ]
+  },
+  {
+   "id": "armenian-v-1823",
+   "label": "Venice 1823 80-page witness (existing)",
+   "tradition_or_use": "Armenian Catholic (Roman and Mekhitarist line)",
+   "date_label": "1823",
+   "date_role": "publication",
+   "record_class": "existing-printed-witness",
+   "distinctness_basis": "Existing registered witness; the bibliography adds two further 1823 issues (folio, third issue).",
+   "existing_candidate_ids": [
+    "arm-1823"
+   ],
+   "acquisition_ids": [
+    "armenian-acq-bib1801-pdf"
+   ],
+   "unresolved": "Folio and third issue unseen.",
+   "inventory_ids": [
+    "arm-1823"
+   ]
+  },
+  {
+   "id": "armenian-v-venice-reprints",
+   "label": "Venice San Lazzaro reprints of the Rome-1677 line (1823 folio and third issue, 1874, 1883)",
+   "tradition_or_use": "Armenian Catholic (Roman and Mekhitarist line)",
+   "date_label": "1823-1883",
+   "date_role": "publication-range",
+   "record_class": "complementary-reprint-family",
+   "distinctness_basis": "Reprints of one text; not revisions.",
+   "existing_candidate_ids": [
+    "armenian-venice-rome-exemplar-reprints"
+   ],
+   "acquisition_ids": [
+    "armenian-acq-bib1801-pdf",
+    "armenian-acq-bib1851-pdf"
+   ],
+   "unresolved": "Books unseen; the Catholic Encyclopedia's 'Venice 1874' corresponds.",
+   "inventory_ids": [
+    "armenian-venice-rome-exemplar-reprints"
+   ]
+  },
+  {
+   "id": "armenian-v-venice1895-lead",
+   "label": "Catholic Encyclopedia's 'Venice 1895' Armenian Catholic edition",
+   "tradition_or_use": "Armenian Catholic (Roman and Mekhitarist line)",
+   "date_label": "1895 (reported)",
+   "date_role": "publication-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Named by the Catholic Encyclopedia (1911) and King; absent from the 1851-1900 subject index under Խորհրդատետր.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "armenian-acq-bib1851-pdf"
+   ],
+   "unresolved": "Unexamined range: 1851-1900 entries under other headings; Mekhitarist Venice catalogues 1934 and 1960.",
+   "inventory_ids": []
+  },
+  {
+   "id": "armenian-v-venice-celebrant-clerks",
+   "label": "Խորհրդատետր ... եւ կարգ դպրութեան (Venice 1826; 1854)",
+   "tradition_or_use": "Armenian Catholic (Roman and Mekhitarist line)",
+   "date_label": "1826-1854",
+   "date_role": "publication-range",
+   "record_class": "complementary-reprint-family",
+   "distinctness_basis": "Combined format of celebrant's and clerks' parts.",
+   "existing_candidate_ids": [
+    "armenian-venice-celebrant-clerks"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Books unseen.",
+   "inventory_ids": [
+    "armenian-venice-celebrant-clerks"
+   ]
+  },
+  {
+   "id": "armenian-v-venice-kargh-dprutean",
+   "label": "Կարգ դպրութեան (Venice 1834, 1857, 1863, 1889)",
+   "tradition_or_use": "Armenian Catholic (Roman and Mekhitarist line)",
+   "date_label": "1834-1889",
+   "date_role": "publication-range",
+   "record_class": "complementary-reprint-family",
+   "distinctness_basis": "Clerks' book printings.",
+   "existing_candidate_ids": [
+    "armenian-venice-kargh-dprutean"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Page count rises from 275 (1834) to 427 (1857); cause unknown.",
+   "inventory_ids": [
+    "armenian-venice-kargh-dprutean"
+   ]
+  },
+  {
+   "id": "armenian-v-avedichian-italian",
+   "label": "Liturgia Armena trasportata in italiano (Venice 1826, 1832, 1854)",
+   "tradition_or_use": "Armenian Catholic (Roman and Mekhitarist line)",
+   "date_label": "1826-1854",
+   "date_role": "publication-range",
+   "record_class": "deferred-translation",
+   "distinctness_basis": "Translation with facing Armenian.",
+   "existing_candidate_ids": [
+    "armenian-avedichian-italian"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Italian translation history deferred; 1854 edition known from the cold reviewer's Eton record.",
+   "inventory_ids": [
+    "armenian-avedichian-italian"
+   ]
+  },
+  {
+   "id": "armenian-v-vienna1858",
+   "label": "Խորհրդատետր ... ըստ օրինակին տպելոյ ի Հռոմ (Vienna 1858)",
+   "tradition_or_use": "Armenian Catholic (Vienna Mekhitarist and patriarchal)",
+   "date_label": "1858",
+   "date_role": "publication",
+   "record_class": "dependent-printing",
+   "distinctness_basis": "Title states conformity to the Rome exemplar; acquired whole.",
+   "existing_candidate_ids": [
+    "armenian-vienna1858"
+   ],
+   "acquisition_ids": [
+    "armenian-acq-vienna1858-pdf"
+   ],
+   "unresolved": "Not collated with 1677 or 1823.",
+   "inventory_ids": [
+    "armenian-vienna1858"
+   ]
+  },
+  {
+   "id": "armenian-v-vienna1877-deacons",
+   "label": "Տարեւոր կարգ դպրութեան ... ի պէտս սարկաւագաց եւ դպրաց (Vienna 1877)",
+   "tradition_or_use": "Armenian Catholic (Vienna Mekhitarist and patriarchal)",
+   "date_label": "1877",
+   "date_role": "publication",
+   "record_class": "complementary-volume",
+   "distinctness_basis": "Annual deacons' and clerks' order.",
+   "existing_candidate_ids": [
+    "armenian-vienna1877-deacons"
+   ],
+   "acquisition_ids": [
+    "armenian-acq-bib1851-pdf"
+   ],
+   "unresolved": "Book unseen.",
+   "inventory_ids": [
+    "armenian-vienna1877-deacons"
+   ]
+  },
+  {
+   "id": "armenian-v-vienna1879-deacons",
+   "label": "Կարգ դպրութեան սրբոյ Պատարագի ... ի պէտս սարկաւագաց եւ դպրաց (Vienna 1879/1880)",
+   "tradition_or_use": "Armenian Catholic (Vienna Mekhitarist and patriarchal)",
+   "date_label": "1879 (bibliography); 1880 (publisher list)",
+   "date_role": "publication",
+   "record_class": "complementary-volume",
+   "distinctness_basis": "Deacons' and clerks' companion of the 1879 celebrant's book.",
+   "existing_candidate_ids": [
+    "armenian-vienna1879-deacons"
+   ],
+   "acquisition_ids": [
+    "armenian-acq-bib1851-pdf"
+   ],
+   "unresolved": "1879 versus 1880 date unresolved; book unseen.",
+   "inventory_ids": [
+    "armenian-vienna1879-deacons"
+   ]
+  },
+  {
+   "id": "armenian-v-vienna1879",
+   "label": "Խորհրդատետր սրբոյ Պատարագին ըստ արարողութեան Հայաստանեայց եկեղեցւոյ (Vienna 1879), patriarchal",
+   "tradition_or_use": "Armenian Catholic (Vienna Mekhitarist and patriarchal)",
+   "date_label": "1879 (declaration dated 6 January 1879)",
+   "date_role": "publication",
+   "record_class": "catholic-revised-proper-book",
+   "distinctness_basis": "Patriarchal declaration establishes it as the uniform Armenian Catholic Mass book; no longer printed 'according to the Rome exemplar'. Textual changes are reported by retrospective, not collated.",
+   "existing_candidate_ids": [
+    "armenian-vienna1879"
+   ],
+   "acquisition_ids": [
+    "armenian-acq-vienna1879-pdf"
+   ],
+   "unresolved": "The 174-page ordinary is missing from the delivered scan; the declaration was read in part; the 1 John 5:7 lection question (dossier gap-1879) was not checked.",
+   "inventory_ids": [
+    "armenian-vienna1879"
+   ]
+  },
+  {
+   "id": "armenian-v-vienna1880-lead",
+   "label": "Khorhrdatetr srboy Pataragi 1880 (Mekhitarist price list)",
+   "tradition_or_use": "Armenian Catholic (Vienna Mekhitarist and patriarchal)",
+   "date_label": "1880 (reported)",
+   "date_role": "publication-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "The 1891 price list offers a Khorhrdatetr dated 1880; the 1893 list gives '(1858) 1879'. Possibly a separate issue of the 1879 ordinary.",
+   "existing_candidate_ids": [
+    "armenian-vienna1879"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Unexamined range: the price-list issues themselves (HTTP 403) and the 1851-1900 bibliography under other headings.",
+   "inventory_ids": [
+    "armenian-vienna1879"
+   ]
+  },
+  {
+   "id": "armenian-v-vienna1884-lead",
+   "label": "Catholic Encyclopedia's 'Vienna 1884' Armenian Catholic edition",
+   "tradition_or_use": "Armenian Catholic (Vienna Mekhitarist and patriarchal)",
+   "date_label": "1884 (reported)",
+   "date_role": "publication-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Not under Խորհրդատետր in the 1851-1900 subject index; Jerusalem 1884 (Apostolic, entry 4307) may have been confused.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "armenian-acq-bib1851-pdf"
+   ],
+   "unresolved": "Unexamined range: Vienna Mekhitarist catalogues for 1884.",
+   "inventory_ids": []
+  },
+  {
+   "id": "armenian-v-echmiadzin1873-lead",
+   "label": "Entry 2519: Khorhrdatetr 'according to the exemplar printed in Rome', Echmiadzin 1873",
+   "tradition_or_use": "Armenian Apostolic (comparison only)",
+   "date_label": "1873 (reported)",
+   "date_role": "publication-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Unseen entry combining a Rome-exemplar title with an Echmiadzin imprint; its cited loci are those of Catholic printings. Treated as an unverified, probably erroneous record.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "armenian-acq-bib1851-pdf"
+   ],
+   "unresolved": "Unexamined range: Ghazikian column 1187 and Zarbhanalian p. 281.",
+   "inventory_ids": []
+  },
+  {
+   "id": "armenian-v-vienna1904",
+   "label": "Vienna 1904 second printing: plenary (4+745+6 pp.) and ordinary-only (4+73 pp.)",
+   "tradition_or_use": "Armenian Catholic (Vienna Mekhitarist and patriarchal)",
+   "date_label": "1904",
+   "date_role": "publication",
+   "record_class": "complementary-reprint-family",
+   "distinctness_basis": "Two forms of the Hassunian book; reprint unless collation shows change.",
+   "existing_candidate_ids": [
+    "armenian-vienna1904"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Unexamined: Google Books jJIwAQAAMAAJ (not accessible to the research tool) and Handēs Amsōreay 1904 no. 12 (HTTP 403).",
+   "inventory_ids": [
+    "armenian-vienna1904"
+   ]
+  },
+  {
+   "id": "armenian-v-vienna1932-cantor",
+   "label": "Tebratión, cantor's Mass book (Vienna 1932, reported)",
+   "tradition_or_use": "Armenian Catholic (Vienna Mekhitarist and patriarchal)",
+   "date_label": "1932 (reported)",
+   "date_role": "publication-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Reported only by the Enciclopedia Cattolica.",
+   "existing_candidate_ids": [
+    "armenian-vienna1932-cantor"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Unexamined range: Vienna Mekhitarist publications 1930-1935; native title unknown.",
+   "inventory_ids": [
+    "armenian-vienna1932-cantor"
+   ]
+  },
+  {
+   "id": "armenian-v-venice1686-chashots",
+   "label": "Ճաշոց (Venice 1686), reported in Armenian Catholic use in 1951",
+   "tradition_or_use": "Armenian Catholic (Roman and Mekhitarist line)",
+   "date_label": "1686",
+   "date_role": "publication",
+   "record_class": "shared-book-reception-unproven",
+   "distinctness_basis": "Shared book; Catholic use reported only by the encyclopedia.",
+   "existing_candidate_ids": [
+    "armenian-venice1686-chashots"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "The online copy (Greenstone chashoc1686) was not downloaded; reception date unknown.",
+   "inventory_ids": [
+    "armenian-venice1686-chashots"
+   ]
+  },
+  {
+   "id": "armenian-v-1994",
+   "label": "Revised Armenian Catholic order prescribed from Pentecost 1994",
+   "tradition_or_use": "Armenian Catholic (Vienna Mekhitarist and patriarchal)",
+   "date_label": "1994 (effective Pentecost)",
+   "date_role": "effective",
+   "record_class": "catholic-revision-reported",
+   "distinctness_basis": "Patriarchal prescription after the 1992 study; process milestones (1967-1968, 1987, 1992) are not editions.",
+   "existing_candidate_ids": [
+    "armenian-catholic-1994"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Unexamined range: Աւետիք 1994 p. 365 (decree), the 1994 book, and any later edition to the present.",
+   "inventory_ids": [
+    "armenian-catholic-1994"
+   ]
+  },
+  {
+   "id": "armenian-v-post1994-lead",
+   "label": "Armenian Catholic Patarag books after 1994",
+   "tradition_or_use": "Armenian Catholic (Vienna Mekhitarist and patriarchal)",
+   "date_label": "after 1994",
+   "date_role": "publication-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "No later original-language book identified.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Unexamined range: Bzommar and Catholicosate-Patriarchate publications 1994-2026; Mekhitarist presses after 1950.",
+   "inventory_ids": []
+  },
+  {
+   "id": "armenian-v-lviv-base",
+   "label": "San Lazzaro MS 669: 1636-colophon base layer (Lviv)",
+   "tradition_or_use": "Lviv Armenian Catholic local reception",
+   "date_label": "1636 (colophon)",
+   "date_role": "manuscript-copying",
+   "record_class": "manuscript-layer",
+   "distinctness_basis": "Base layer distinct from later corrections; colophon dates one component only.",
+   "existing_candidate_ids": [
+    "armenian-lviv-sanlazzaro669"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Images not inspected; Mass text of the base layer not reconstructed.",
+   "inventory_ids": [
+    "armenian-lviv-sanlazzaro669"
+   ]
+  },
+  {
+   "id": "armenian-v-lviv-corrections",
+   "label": "San Lazzaro MS 669: undated corrections toward Rome 1677",
+   "tradition_or_use": "Lviv Armenian Catholic local reception",
+   "date_label": "undated (after 1677 by target)",
+   "date_role": "attestation",
+   "record_class": "manuscript-layer",
+   "distinctness_basis": "Corrections toward a named printed exemplar form a separate layer.",
+   "existing_candidate_ids": [
+    "armenian-lviv-sanlazzaro669"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Hands and dates unidentified; no chronology bounds asserted.",
+   "inventory_ids": [
+    "armenian-lviv-sanlazzaro669"
+   ]
+  },
+  {
+   "id": "armenian-v-vienna-arm18-lead",
+   "label": "Vienna Mekhitarist MS arm. 18, Galician Armenian Catholic ordinary (c. 1700, reported)",
+   "tradition_or_use": "Lviv and Galician Armenian Catholics",
+   "date_label": "c. 1700 (reported)",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Reported by the cold reviewer as a separate Galician witness; not to be merged with MS 669.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Unexamined range: Dashian's 1895 Vienna catalogue entry and the manuscript.",
+   "inventory_ids": []
+  },
+  {
+   "id": "armenian-v-transylvanian-lead",
+   "label": "Transylvanian Armenian Catholic books and manuscripts",
+   "tradition_or_use": "Transylvanian Armenian Catholics",
+   "date_label": "undated",
+   "date_role": "unknown",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Named use with no located witness.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Unexamined range: Gherla, Dumbrăveni and Gheorgheni parish archives; Romanian library catalogues.",
+   "inventory_ids": []
+  },
+  {
+   "id": "armenian-v-lubeczyk1544",
+   "label": "Latin translation of the Armenian liturgy by Lubeczyk (Cracow 1544)",
+   "tradition_or_use": "Armenian Catholic (Roman and Mekhitarist line)",
+   "date_label": "1544 (reported)",
+   "date_role": "publication-reported",
+   "record_class": "deferred-translation",
+   "distinctness_basis": "Translation listed by Brightman.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Unexamined; translation history deferred.",
+   "inventory_ids": []
+  },
+  {
+   "id": "armenian-v-pidou1680",
+   "label": "Pidou de Saint-Olon, Latin Armenian liturgy with ministers' part (c. 1680; reprinted in Lebrun)",
+   "tradition_or_use": "Armenian Catholic (Roman and Mekhitarist line)",
+   "date_label": "c. 1680 (reported)",
+   "date_role": "publication-reported",
+   "record_class": "deferred-translation",
+   "distinctness_basis": "Translation made from a manuscript supplemented from the 1677 edition (Brightman; Lebrun excerpt seen in search results).",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Unexamined; translation history deferred.",
+   "inventory_ids": []
+  },
+  {
+   "id": "armenian-v-stepanos",
+   "label": "Synaxis described by Step‘anos Siwnec‘i (before 735)",
+   "tradition_or_use": "Shared pre-union Armenian ancestry",
+   "date_label": "before 735",
+   "date_role": "attestation",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Commentary-attested component state (cold reviewer, from ARAK29).",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Unexamined: the commentary text and its edition.",
+   "inventory_ids": []
+  },
+  {
+   "id": "armenian-v-xosrov",
+   "label": "Xosrov Anjewac‘i, commentary on the Patarag (tenth century; Venice 1869 edition)",
+   "tradition_or_use": "Shared pre-union Armenian ancestry",
+   "date_label": "10th century; edition 1869",
+   "date_role": "attestation",
+   "record_class": "commentary-attested-state",
+   "distinctness_basis": "Earliest text of the Athanasius anaphora according to the dossier.",
+   "existing_candidate_ids": [
+    "armenian-xosrov-commentary"
+   ],
+   "acquisition_ids": [
+    "armenian-acq-xosrov-pdf"
+   ],
+   "unresolved": "Embedded text not extracted; Cowe 1991 edition not acquired.",
+   "inventory_ids": [
+    "armenian-xosrov-commentary"
+   ]
+  },
+  {
+   "id": "armenian-v-lambronatsi",
+   "label": "Nersēs Lambronac‘i, commentary with the liturgy (twelfth century; Venice 1847 edition)",
+   "tradition_or_use": "Shared pre-union Armenian ancestry",
+   "date_label": "12th century; edition 1847",
+   "date_role": "attestation",
+   "record_class": "commentary-attested-state",
+   "distinctness_basis": "Liturgy text from manuscripts of 1306, 1332 and the late seventeenth century (Brightman).",
+   "existing_candidate_ids": [
+    "armenian-lambronatsi-commentary"
+   ],
+   "acquisition_ids": [
+    "armenian-acq-lambronatsi-pdf"
+   ],
+   "unresolved": "The exact 1177 date suggested by the cold reviewer was not checked.",
+   "inventory_ids": [
+    "armenian-lambronatsi-commentary"
+   ]
+  },
+  {
+   "id": "armenian-v-athanasius-mss-lead",
+   "label": "Athanasius anaphora: Matenadaran 442 (1269) and 179 (1292)",
+   "tradition_or_use": "Shared pre-union Armenian ancestry",
+   "date_label": "1269; 1292 (reported)",
+   "date_role": "manuscript-copying-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Manuscript witnesses reported via Taft from Feulner's critical edition; not two proved recensions.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Unexamined: Feulner 2001, manuscript list pp. 93-172.",
+   "inventory_ids": []
+  },
+  {
+   "id": "armenian-v-lyon-or15",
+   "label": "Lyon Or. 15 (1314)",
+   "tradition_or_use": "Shared pre-union Armenian ancestry",
+   "date_label": "1314",
+   "date_role": "manuscript-copying",
+   "record_class": "manuscript-witness",
+   "distinctness_basis": "Principal witness of the extinct Armenian liturgies.",
+   "existing_candidate_ids": [
+    "armenian-lyon-or15"
+   ],
+   "acquisition_ids": [
+    "armenian-acq-macler-pdf"
+   ],
+   "unresolved": "Manuscript unseen.",
+   "inventory_ids": [
+    "armenian-lyon-or15"
+   ]
+  },
+  {
+   "id": "armenian-v-munich-arm6",
+   "label": "Munich arm. 6 (1427; exemplar 1288)",
+   "tradition_or_use": "Shared pre-union Armenian ancestry",
+   "date_label": "1427",
+   "date_role": "manuscript-copying",
+   "record_class": "manuscript-witness",
+   "distinctness_basis": "Second witness group member.",
+   "existing_candidate_ids": [
+    "armenian-munich-arm6"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Manuscript unseen.",
+   "inventory_ids": [
+    "armenian-munich-arm6"
+   ]
+  },
+  {
+   "id": "armenian-v-sanlazzaro1411",
+   "label": "San Lazzaro Arm. 1411 (thirteenth century)",
+   "tradition_or_use": "Shared pre-union Armenian ancestry",
+   "date_label": "13th century",
+   "date_role": "manuscript-copying",
+   "record_class": "manuscript-witness",
+   "distinctness_basis": "Third witness group member.",
+   "existing_candidate_ids": [
+    "armenian-sanlazzaro-arm1411"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Manuscript unseen; modern shelfmark not checked.",
+   "inventory_ids": [
+    "armenian-sanlazzaro-arm1411"
+   ]
+  },
+  {
+   "id": "armenian-v-extinct-chrysostom",
+   "label": "Armenian Liturgy of St John Chrysostom",
+   "tradition_or_use": "Shared pre-union Armenian ancestry",
+   "date_label": "attested 13th-15th centuries (manuscripts)",
+   "date_role": "attestation",
+   "record_class": "extinct-component-witnessed-in-manuscripts",
+   "distinctness_basis": "From the Greek with preanaphoral adaptation; in Lyon, Munich and San Lazzaro (Brightman).",
+   "existing_candidate_ids": [
+    "armenian-lyon-or15",
+    "armenian-munich-arm6",
+    "armenian-sanlazzaro-arm1411"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Catholic reception not inferred; text edited in Gatrčean 1897, not collated.",
+   "inventory_ids": [
+    "armenian-lyon-or15",
+    "armenian-munich-arm6",
+    "armenian-sanlazzaro-arm1411"
+   ]
+  },
+  {
+   "id": "armenian-v-extinct-basil-later",
+   "label": "Armenian Liturgy of St Basil (later recension)",
+   "tradition_or_use": "Shared pre-union Armenian ancestry",
+   "date_label": "attested 13th-15th centuries (manuscripts)",
+   "date_role": "attestation",
+   "record_class": "extinct-component-witnessed-in-manuscripts",
+   "distinctness_basis": "From the Greek; Lyon, Munich, San Lazzaro (Brightman); Winkler distinguishes it from the older Basil attributed to Gregory.",
+   "existing_candidate_ids": [
+    "armenian-lyon-or15",
+    "armenian-munich-arm6",
+    "armenian-sanlazzaro-arm1411"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Winkler 2005 edition not acquired.",
+   "inventory_ids": [
+    "armenian-lyon-or15",
+    "armenian-munich-arm6",
+    "armenian-sanlazzaro-arm1411"
+   ]
+  },
+  {
+   "id": "armenian-v-extinct-presanctified",
+   "label": "Armenian Presanctified Liturgy",
+   "tradition_or_use": "Shared pre-union Armenian ancestry",
+   "date_label": "attested 13th-15th centuries (manuscripts)",
+   "date_role": "attestation",
+   "record_class": "extinct-component-witnessed-in-manuscripts",
+   "distinctness_basis": "From the Greek; Lyon and San Lazzaro (Brightman).",
+   "existing_candidate_ids": [
+    "armenian-lyon-or15",
+    "armenian-sanlazzaro-arm1411"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Not collated.",
+   "inventory_ids": [
+    "armenian-lyon-or15",
+    "armenian-sanlazzaro-arm1411"
+   ]
+  },
+  {
+   "id": "armenian-v-extinct-james",
+   "label": "Armenian Liturgy of St James",
+   "tradition_or_use": "Shared pre-union Armenian ancestry",
+   "date_label": "attested 13th-15th centuries (manuscripts)",
+   "date_role": "attestation",
+   "record_class": "extinct-component-witnessed-in-manuscripts",
+   "distinctness_basis": "Abridged from the Syriac (Brightman); Winkler: uses older Armenian Basil and a short Syriac James. Lyon only.",
+   "existing_candidate_ids": [
+    "armenian-lyon-or15"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Winkler 2013 edition not acquired.",
+   "inventory_ids": [
+    "armenian-lyon-or15"
+   ]
+  },
+  {
+   "id": "armenian-v-extinct-ignatius",
+   "label": "Armenian Anaphora of St Ignatius",
+   "tradition_or_use": "Shared pre-union Armenian ancestry",
+   "date_label": "attested 13th-15th centuries (manuscripts)",
+   "date_role": "attestation",
+   "record_class": "extinct-component-witnessed-in-manuscripts",
+   "distinctness_basis": "From the Syriac; Lyon only (Brightman).",
+   "existing_candidate_ids": [
+    "armenian-lyon-or15"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Not collated.",
+   "inventory_ids": [
+    "armenian-lyon-or15"
+   ]
+  },
+  {
+   "id": "armenian-v-extinct-roman",
+   "label": "Armenian 'Roman' Liturgy (from the Latin)",
+   "tradition_or_use": "Shared pre-union Armenian ancestry",
+   "date_label": "attested 13th-15th centuries (manuscripts)",
+   "date_role": "attestation",
+   "record_class": "extinct-component-witnessed-in-manuscripts",
+   "distinctness_basis": "From the Latin with adaptations at the beginning; Lyon, Munich, San Lazzaro (Brightman). Distinct from Latin-rite missals translated into Armenian.",
+   "existing_candidate_ids": [
+    "armenian-lyon-or15",
+    "armenian-munich-arm6",
+    "armenian-sanlazzaro-arm1411"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Not collated; Catholic reception not inferred from its Latin source.",
+   "inventory_ids": [
+    "armenian-lyon-or15",
+    "armenian-munich-arm6",
+    "armenian-sanlazzaro-arm1411"
+   ]
+  },
+  {
+   "id": "armenian-v-extinct-gregory-illuminator",
+   "label": "Armenian Anaphora of St Gregory the Illuminator (older Basil recension)",
+   "tradition_or_use": "Shared pre-union Armenian ancestry",
+   "date_label": "attested 13th-15th centuries (manuscripts)",
+   "date_role": "attestation",
+   "record_class": "extinct-component-witnessed-in-manuscripts",
+   "distinctness_basis": "Lyon and Munich (Brightman); Winkler identifies it as the older Armenian Basil, not an independent work.",
+   "existing_candidate_ids": [
+    "armenian-lyon-or15",
+    "armenian-munich-arm6"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Winkler 2005 not acquired.",
+   "inventory_ids": [
+    "armenian-lyon-or15",
+    "armenian-munich-arm6"
+   ]
+  },
+  {
+   "id": "armenian-v-extinct-gregory-nazianzen",
+   "label": "Armenian Anaphora of St Gregory Nazianzen",
+   "tradition_or_use": "Shared pre-union Armenian ancestry",
+   "date_label": "attested 13th-15th centuries (manuscripts)",
+   "date_role": "attestation",
+   "record_class": "extinct-component-witnessed-in-manuscripts",
+   "distinctness_basis": "Lyon only (Brightman).",
+   "existing_candidate_ids": [
+    "armenian-lyon-or15"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Not collated.",
+   "inventory_ids": [
+    "armenian-lyon-or15"
+   ]
+  },
+  {
+   "id": "armenian-v-extinct-cyril",
+   "label": "Armenian Anaphora of St Cyril of Alexandria",
+   "tradition_or_use": "Shared pre-union Armenian ancestry",
+   "date_label": "attested 13th-15th centuries (manuscripts)",
+   "date_role": "attestation",
+   "record_class": "extinct-component-witnessed-in-manuscripts",
+   "distinctness_basis": "Lyon only (Brightman).",
+   "existing_candidate_ids": [
+    "armenian-lyon-or15"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Not collated.",
+   "inventory_ids": [
+    "armenian-lyon-or15"
+   ]
+  },
+  {
+   "id": "armenian-v-extinct-sahak",
+   "label": "Armenian Anaphora of St Sahak (Isaac the Great)",
+   "tradition_or_use": "Shared pre-union Armenian ancestry",
+   "date_label": "attested 13th-15th centuries (manuscripts)",
+   "date_role": "attestation",
+   "record_class": "extinct-component-witnessed-in-manuscripts",
+   "distinctness_basis": "Lyon only (Brightman); Winkler 2011 edition.",
+   "existing_candidate_ids": [
+    "armenian-lyon-or15"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Winkler 2011 not acquired.",
+   "inventory_ids": [
+    "armenian-lyon-or15"
+   ]
+  },
+  {
+   "id": "armenian-v-gatrchean1897",
+   "label": "Սրբազան Պատարագամատոյցք Հայոց (Vienna 1897), Gatrčean and Tašean",
+   "tradition_or_use": "Shared pre-union Armenian ancestry",
+   "date_label": "1897",
+   "date_role": "critical-edition-publication",
+   "record_class": "critical-edition",
+   "distinctness_basis": "Edition date distinct from the states edited.",
+   "existing_candidate_ids": [
+    "armenian-gatrchean1897"
+   ],
+   "acquisition_ids": [
+    "armenian-acq-gatrchean-pdf"
+   ],
+   "unresolved": "Apparatus and manuscript sigla not examined.",
+   "inventory_ids": [
+    "armenian-gatrchean1897"
+   ]
+  },
+  {
+   "id": "armenian-v-winkler-feulner-lead",
+   "label": "Modern critical editions: Feulner 2001 (Athanasius); Winkler 2005 (Basil), 2011 (Sahak), 2013 (James)",
+   "tradition_or_use": "Shared pre-union Armenian ancestry",
+   "date_label": "2001-2013",
+   "date_role": "critical-edition-publication",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Editions of historical states; not themselves states.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Not acquired; their manuscript censuses are the unexamined range for medieval witnesses.",
+   "inventory_ids": []
+  },
+  {
+   "id": "armenian-v-meghapart1513",
+   "label": "Պատարագատետր (Venice 1513)",
+   "tradition_or_use": "Shared pre-union Armenian ancestry",
+   "date_label": "1513",
+   "date_role": "publication",
+   "record_class": "printed-witness",
+   "distinctness_basis": "Dossier stage lacking an inventory row.",
+   "existing_candidate_ids": [
+    "armenian-meghapart1513"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Book unseen in this pass.",
+   "inventory_ids": [
+    "armenian-meghapart1513"
+   ]
+  },
+  {
+   "id": "armenian-v-newjulfa1641",
+   "label": "Խորհրդատետր (New Julfa 1641)",
+   "tradition_or_use": "Armenian Apostolic (comparison only)",
+   "date_label": "1641",
+   "date_role": "publication",
+   "record_class": "printed-witness",
+   "distinctness_basis": "Apostolic printing before the first Roman edition; comparison only.",
+   "existing_candidate_ids": [
+    "armenian-newjulfa1641"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Book unseen; no Catholic reception.",
+   "inventory_ids": [
+    "armenian-newjulfa1641"
+   ]
+  },
+  {
+   "id": "armenian-v-venice1686",
+   "label": "Խորհրդատետր սրբազան Պատարագի (Venice: Gaspar Sahratian, 1686)",
+   "tradition_or_use": "Armenian Apostolic (comparison only)",
+   "date_label": "12 January 1686",
+   "date_role": "publication",
+   "record_class": "existing-printed-witness",
+   "distinctness_basis": "Printed under the patronage of Catholicos Eghiazar; Rome reportedly rejected it. Images now acquired.",
+   "existing_candidate_ids": [
+    "arm-khorhrdatetr1686"
+   ],
+   "acquisition_ids": [
+    "armenian-acq-venice1686-images"
+   ],
+   "unresolved": "Not collated against Rome 1677.",
+   "inventory_ids": [
+    "arm-khorhrdatetr1686"
+   ]
+  },
+  {
+   "id": "armenian-v-apostolic-family",
+   "label": "Armenian Apostolic Khorhrdatetr printings 1706-1894 (comparison family)",
+   "tradition_or_use": "Armenian Apostolic (comparison only)",
+   "date_label": "1706-1894",
+   "date_role": "publication-range",
+   "record_class": "out-of-scope-comparison-family",
+   "distinctness_basis": "Constantinople 1706, 1748, 1785, 1787, 1813, 1823, 1844; Smyrna 1761-62; Echmiadzin 1788, 1840; New Nakhichevan 1794; Shushi 1838; Jerusalem 1841, 1873, 1884; Tiflis 1860; Vagharshapat 1866, 1880 (third and fourth printings); London 1887 (Armenian-English). Not Catholic books.",
+   "existing_candidate_ids": [
+    "arm-khorhrdatetr1686"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "No inventory rows proposed; Catholic reception of any of them is not asserted.",
+   "inventory_ids": [
+    "arm-khorhrdatetr1686"
+   ]
+  },
+  {
+   "id": "armenian-v-paris-missals-lead",
+   "label": "Paris BnF Armenian altar manuscripts: Macler 87 (celebrant's book, 1655), 88, 89 (copied at the Bastille by Patriarch Awetikʻ, 1710), 90",
+   "tradition_or_use": "Armenian Apostolic (comparison only)",
+   "date_label": "1655-1710 (catalogue)",
+   "date_role": "manuscript-copying",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Catalogue entries only; affiliation and contents unassessed.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "armenian-acq-macler-pdf"
+   ],
+   "unresolved": "Unexamined: the manuscripts; their confessional context.",
+   "inventory_ids": []
+  },
+  {
+   "id": "armenian-v-loc1722-lead",
+   "label": "Library of Congress Sebastia missals of 1722 (dossier gap-1722)",
+   "tradition_or_use": "Armenian Apostolic (comparison only)",
+   "date_label": "1722",
+   "date_role": "manuscript-copying",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Existing dossier gap, not advanced in this pass.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Unexamined in this pass.",
+   "inventory_ids": []
+  },
+  {
+   "id": "armenian-v-dominican1337",
+   "label": "Roman missal translated into Armenian for the Dominicans (Paris suppl. arm. 71)",
+   "tradition_or_use": "Latin-rite book in Armenian (deferred)",
+   "date_label": "1337",
+   "date_role": "translation",
+   "record_class": "deferred-translation",
+   "distinctness_basis": "Latin-rite book.",
+   "existing_candidate_ids": [
+    "armenian-paris-dominican1337"
+   ],
+   "acquisition_ids": [
+    "armenian-acq-macler-pdf"
+   ],
+   "unresolved": "Belongs to the Dominican and Fratres Unitores history; deferred.",
+   "inventory_ids": [
+    "armenian-paris-dominican1337"
+   ]
+  },
+  {
+   "id": "armenian-v-franciscan1344",
+   "label": "Roman missal translated into Armenian by the Franciscan Boniface (Paris anc. fonds arm. 22)",
+   "tradition_or_use": "Latin-rite book in Armenian (deferred)",
+   "date_label": "1344",
+   "date_role": "translation",
+   "record_class": "deferred-translation",
+   "distinctness_basis": "Latin-rite book.",
+   "existing_candidate_ids": [
+    "armenian-paris-franciscan1344"
+   ],
+   "acquisition_ids": [
+    "armenian-acq-macler-pdf"
+   ],
+   "unresolved": "Deferred.",
+   "inventory_ids": [
+    "armenian-paris-franciscan1344"
+   ]
+  },
+  {
+   "id": "armenian-v-dominican1728",
+   "label": "Միսալ որ է Պատարագամատոյց ... Եղբարց Քարոզողաց (1728)",
+   "tradition_or_use": "Latin-rite book in Armenian (deferred)",
+   "date_label": "1728",
+   "date_role": "publication",
+   "record_class": "deferred-translation",
+   "distinctness_basis": "Printed Latin-rite book.",
+   "existing_candidate_ids": [
+    "armenian-dominican-missal1728"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Place of printing not recorded here; book unseen.",
+   "inventory_ids": [
+    "armenian-dominican-missal1728"
+   ]
+  },
+  {
+   "id": "armenian-v-paris-suppl3-lead",
+   "label": "Paris supplément arménien 3, ff. 109 onward (Roman use, reported)",
+   "tradition_or_use": "Latin-rite book in Armenian (deferred)",
+   "date_label": "undated",
+   "date_role": "unknown",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Cold reviewer's lead.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Not located in Macler in this pass.",
+   "inventory_ids": []
+  }
+ ],
+ "acquisitions": [
+  {
+   "id": "armenian-acq-xosrov-pdf",
+   "original_url": "https://archive.org/download/XosrovMeknutAghotitsPataragin/Xosrov_Meknut_aghotits_pataragin.pdf",
+   "sha256": "18afb2d9bc6fe823dcf0628c5de8ffb84023efaf35241a77d93525668a629461",
+   "bytes": 3933856,
+   "pages": 97,
+   "delivered_extent": "Complete IA PDF (Google scan of a University of Michigan copy): front cover to back, 97 images including Google's notice page.",
+   "identity_inspection": "PDF 6 title (Xosrov Anjewac‘i, Meknutʻiwn aghotʻicʻ Pataragin; Venice, San Lazzaro Mekhitarist press, 1869) viewed in this pass; PDF 8 dedication and PDF 9-12, 94, 96 rendered by the previous researcher.",
+   "rights_basis": "Underlying text: printed 1869, public domain. The scan is a faithful mechanical reproduction carrying no new authorship (Bridgeman reasoning, guidance/missals.md section 5). The Google-scan PDF's first page carries Google's usage guidelines (non-commercial use, keep attribution, no automated querying); these are requests attached to a public-domain reproduction, not a licence. Internet Archive terms: https://archive.org/about/terms.php",
+   "proposed_storage": "tracked",
+   "storage_reason": "3,933,856 bytes; public-domain historical edition needed for the tenth-century commentary state.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-xosrov-meta",
+   "original_url": "https://archive.org/metadata/XosrovMeknutAghotitsPataragin",
+   "sha256": "a6beb3b15765ef5a4938d9eba6a08388fa9ae8afd6d2390414f4c7df0d0b870f",
+   "bytes": 6250,
+   "pages": null,
+   "delivered_extent": "Complete IA metadata response.",
+   "identity_inspection": "Read: uploader-supplied title and creator; no date field.",
+   "rights_basis": "Factual metadata from Internet Archive; terms https://archive.org/about/terms.php",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retrieval provenance only; facts carried into the source row.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-lambronatsi-pdf",
+   "original_url": "https://archive.org/download/LambronatsiMeknutiwnPataraki/Lambronatsi_meknutiwn_pataraki.pdf",
+   "sha256": "2f9c01795240533b38e18ff5c138b8f5283f513c10efd130281903210aef36da",
+   "bytes": 13730516,
+   "pages": 611,
+   "delivered_extent": "Complete IA PDF, 611 images.",
+   "identity_inspection": "PDF 8 title (Nersēs Lambronacʻi, Xorhrdacutʻiwnkʻ i kargs ekeghecʻwoy ew Meknutʻiwn xorhrdoy Pataragin; Venice, San Lazzaro, 1847) viewed in this pass; PDF 9-10 and 608 rendered by the previous researcher.",
+   "rights_basis": "Underlying text: printed 1847, public domain. The scan is a faithful mechanical reproduction carrying no new authorship (Bridgeman reasoning, guidance/missals.md section 5). Internet Archive terms: https://archive.org/about/terms.php",
+   "proposed_storage": "tracked",
+   "storage_reason": "13,730,516 bytes; public-domain edition containing the liturgy text Brightman used.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-lambronatsi-meta",
+   "original_url": "https://archive.org/metadata/LambronatsiMeknutiwnPataraki",
+   "sha256": "606a5d1aee1d6fb2acd674a50ff4e7ea6dbe50480bfebe8090d1652bf275d356",
+   "bytes": 6467,
+   "pages": null,
+   "delivered_extent": "Complete IA metadata response.",
+   "identity_inspection": "Read.",
+   "rights_basis": "Factual metadata; terms https://archive.org/about/terms.php",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retrieval provenance only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-gatrchean-pdf",
+   "original_url": "https://archive.org/download/GatrcheanPatarag/Gatrchean_patarag.pdf",
+   "sha256": "bccf5e17715edd07088202ca86c31168adef8c7b0a7f4972695d6770adef417e",
+   "bytes": 21187636,
+   "pages": 776,
+   "delivered_extent": "Complete IA PDF (Google scan), 776 images; bibliography gives 21 + 746 + 6 pages.",
+   "identity_inspection": "PDF 8 title (Srbazan Pataragamatoycʻkʻ Hayocʻ; Vienna, Mekhitarist press, 1897; Gatrčean, published by Tašean) viewed in this pass; PDF 9-24 and 766-773 rendered by the previous researcher.",
+   "rights_basis": "Underlying text: printed 1897; Gatrčean died 1882 and Tašean 1933, so the text is public domain in the United States (pre-1931 publication) and in Austria (70 years after 1933). The scan is a faithful mechanical reproduction carrying no new authorship (Bridgeman reasoning, guidance/missals.md section 5). The Google-scan PDF's first page carries Google's usage guidelines (non-commercial use, keep attribution, no automated querying); these are requests attached to a public-domain reproduction, not a licence. Internet Archive terms: https://archive.org/about/terms.php",
+   "proposed_storage": "tracked",
+   "storage_reason": "21,187,636 bytes; the principal printed control for the extinct liturgies, public domain.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-gatrchean-meta",
+   "original_url": "https://archive.org/metadata/GatrcheanPatarag",
+   "sha256": "872f230d84a50519ad255ff617bce0963b35cb1b07ca40e90520f652ee73503a",
+   "bytes": 6626,
+   "pages": null,
+   "delivered_extent": "Complete IA metadata response.",
+   "identity_inspection": "Read.",
+   "rights_basis": "Factual metadata; terms https://archive.org/about/terms.php",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retrieval provenance only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-macler-pdf",
+   "original_url": "https://archive.org/download/cataloguedesmanu00fran/cataloguedesmanu00fran.pdf",
+   "sha256": "39c6a2a2674ddaed31e5b1a9b70063b1bb0a624b612cbfdd82105dfa20463e71",
+   "bytes": 13422501,
+   "pages": 252,
+   "delivered_extent": "Complete IA PDF of the 1908 catalogue, 252 images.",
+   "identity_inspection": "PDF 80 (entries 106-108) viewed in this pass; PDF 1, 5, 74-77, 80, 82 rendered by the previous researcher.",
+   "rights_basis": "Underlying text: Paris 1908; Macler died 1938, so public domain in France since 2009 and in the United States (pre-1931). The scan is a faithful mechanical reproduction carrying no new authorship (Bridgeman reasoning, guidance/missals.md section 5). Internet Archive terms: https://archive.org/about/terms.php",
+   "proposed_storage": "tracked",
+   "storage_reason": "13,422,501 bytes; public-domain catalogue evidencing the Lyon copy and the Latin-rite Armenian missals.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-macler-txt",
+   "original_url": "derived locally with pdftotext -layout from armenian-acq-macler-pdf",
+   "sha256": "b4b6403eef7c2cff700c428d1f1031e797ba20a8d6c9615e0387bb16b5405af2",
+   "bytes": 602843,
+   "pages": null,
+   "delivered_extent": "Whole text layer of the PDF.",
+   "identity_inspection": "Searched; OCR is noisy in Armenian script.",
+   "rights_basis": "Derivative of a public-domain catalogue.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Reproducible derivative; the IA djvu text is an alternative.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-macler-meta",
+   "original_url": "https://archive.org/metadata/cataloguedesmanu00fran",
+   "sha256": "1513f602e7e6eee498b58ffdbe6ecc48210d45743a9154f9b8b66622af4250b6",
+   "bytes": 48568,
+   "pages": null,
+   "delivered_extent": "Complete IA metadata response.",
+   "identity_inspection": "Read: 1908, Paris, Macler; University of Toronto copy.",
+   "rights_basis": "Factual metadata; terms https://archive.org/about/terms.php",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retrieval provenance only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-bodleian-pdf",
+   "original_url": "https://archive.org/download/catalogueofarmen00bodl/catalogueofarmen00bodl.pdf",
+   "sha256": "60c32f42b9186542adb228c41c91aadcf6652ba786027ae97b4a51c6a7609b54",
+   "bytes": 11690335,
+   "pages": 156,
+   "delivered_extent": "Complete IA PDF of the 1918 catalogue, 156 images (acquired in this finishing pass to resolve the cold reviewer's Marshall Or. 106 request).",
+   "identity_inspection": "PDF 22 (entry 20, MS Marshall (Or.) 106) viewed at 200 dpi.",
+   "rights_basis": "Underlying text: Oxford 1918; authors died 1904 and 1924; IA metadata marks NOT_IN_COPYRIGHT. The scan is a faithful mechanical reproduction carrying no new authorship (Bridgeman reasoning, guidance/missals.md section 5). Internet Archive terms: https://archive.org/about/terms.php",
+   "proposed_storage": "tracked",
+   "storage_reason": "11,690,335 bytes; public-domain catalogue evidencing the 1675 low-Mass manuscript.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-bodleian-txt",
+   "original_url": "derived locally with pdftotext -layout from armenian-acq-bodleian-pdf",
+   "sha256": "b00ce7966a01763e6334d45e412c96e39ea4f8c4bfb66727d6b30f94b7e39e49",
+   "bytes": 2006467,
+   "pages": null,
+   "delivered_extent": "Whole text layer.",
+   "identity_inspection": "Searched for Marshall, Mass and Liturgy.",
+   "rights_basis": "Derivative of a public-domain catalogue.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Reproducible derivative.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-bodleian-meta",
+   "original_url": "https://archive.org/metadata/catalogueofarmen00bodl",
+   "sha256": "1a509073b673f393d61b6f9530d8044a6d3074d13ee063842b5da3cc962ae3a1",
+   "bytes": 36909,
+   "pages": null,
+   "delivered_extent": "Complete IA metadata response.",
+   "identity_inspection": "Read: title, 1918, Clarendon Press, NOT_IN_COPYRIGHT.",
+   "rights_basis": "Factual metadata; terms https://archive.org/about/terms.php",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retrieval provenance only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-bib1801-pdf",
+   "original_url": "https://arar.sci.am/Content/263055/matenaget%2041.pdf",
+   "sha256": "faa2ccae7efa76e6cb8a04d175348933754b1b1342d20a8d4fc76812663364ba",
+   "bytes": 24377970,
+   "pages": 633,
+   "delivered_extent": "Complete PDF of Հայ գիրքը 1801-1850 թվականներին, 633 images.",
+   "identity_inspection": "PDF 1 and 5 (title and front matter) rendered by the previous researcher; PDF 118 (entry 115) viewed in this pass; PDF 101, 120, 196, 197, 219, 274 rendered.",
+   "rights_basis": "Modern copyrighted national bibliography published by the National Library of Armenia; no redistribution licence found. Provider terms: no reuse or terms page was located on arar.sci.am; the edition page labels the publication 'Secured publication ... unavailable to your account' (https://arar.sci.am/dlibra/publication/292708/edition/268743), while the PDF linked in the page's citation metadata downloaded without credentials.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Modern bibliography without a distribution basis; 24,377,970 bytes.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-bib1801-txt",
+   "original_url": "derived locally with pdftotext -layout from armenian-acq-bib1801-pdf",
+   "sha256": "85f7d88b80e654a389358b7feadf97ee502318d37825c65f8f378fb283ac7028",
+   "bytes": 1829068,
+   "pages": null,
+   "delivered_extent": "Whole text layer.",
+   "identity_inspection": "Searched for Mass-book titles.",
+   "rights_basis": "Modern copyrighted national bibliography published by the National Library of Armenia; no redistribution licence found.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Derivative of a restricted modern work.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-bib1851-pdf",
+   "original_url": "https://arar.sci.am/Content/263057/matenaget%2042.pdf",
+   "sha256": "c52187145da54d99ae71dfb19307157677c52738d12496ffe7839b7bee38d38b",
+   "bytes": 113069810,
+   "pages": 912,
+   "delivered_extent": "Complete PDF of Հայ գիրքը 1851-1900 թվականներին (1999), 912 images (library extent 860 pages).",
+   "identity_inspection": "PDF 242 and 310-311 viewed at 150 dpi in this pass; subject index PDF 899 read in the text layer.",
+   "rights_basis": "Modern copyrighted national bibliography published by the National Library of Armenia; no redistribution licence found. Provider terms: no reuse or terms page was located on arar.sci.am; the edition page labels the publication 'Secured publication ... unavailable to your account' (https://arar.sci.am/dlibra/publication/292708/edition/268743), while the PDF linked in the page's citation metadata downloaded without credentials.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Modern bibliography without a distribution basis; 113,069,810 bytes.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-bib1851-txt",
+   "original_url": "derived locally with pdftotext -layout from armenian-acq-bib1851-pdf",
+   "sha256": "8de1e1a7f13cfdfb8aa00762cfe92e32ee2d0fc8d4cfb511d9ba79202b47d0d1",
+   "bytes": 6053432,
+   "pages": null,
+   "delivered_extent": "Whole text layer.",
+   "identity_inspection": "Searched; entry windows extracted to finish/bib1851-entries.txt.",
+   "rights_basis": "Modern copyrighted national bibliography published by the National Library of Armenia; no redistribution licence found.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Derivative of a restricted modern work.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-bib1851-html",
+   "original_url": "https://arar.sci.am/dlibra/publication/286475/edition/263057?language=hye",
+   "sha256": "2f861db1c38cdf10c2e689b10d8023b5b18b2db7ed2dc1f6a12730daee6cb37e",
+   "bytes": 174704,
+   "pages": null,
+   "delivered_extent": "One HTML response (edition page).",
+   "identity_inspection": "Read: creators, 1999, 860 pages, ISBN 99930-65-02-1, citation PDF link.",
+   "rights_basis": "Library web page; no terms page located.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retrieval provenance only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-vienna1858-pdf",
+   "original_url": "https://arar.sci.am/Content/268727/xorhrdatetr1858.pdf",
+   "sha256": "35f6e0a284208deb3602bd9791180e4f178a98a3f1cdc13d56d0e64583c05d53",
+   "bytes": 68775752,
+   "pages": 84,
+   "delivered_extent": "Complete delivered PDF, 84 images: covers, title, 64 printed pages, 15-page lesson table, end leaves (contact sheet of all images viewed).",
+   "identity_inspection": "PDF 3 title (Vienna, Mekhitarist monastery of the Protecting Holy Mother of God, 1858; 'according to the exemplar printed in Rome') viewed; PDF 67 and 81 viewed in this pass.",
+   "rights_basis": "Underlying text: printed 1858, public domain. Provider terms: no reuse or terms page was located on arar.sci.am; the edition page labels the publication 'Secured publication ... unavailable to your account' (https://arar.sci.am/dlibra/publication/292708/edition/268743), while the PDF linked in the page's citation metadata downloaded without credentials.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Not proposed for Git: the provider's viewer marks the edition as a secured publication, so no affirmative redistribution basis is recorded; 68,775,752 bytes. A reader without the network has the title transcription and contents description in the source row.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-arar1858-html",
+   "original_url": "https://arar.sci.am/dlibra/publication/292692/edition/268727?language=hye",
+   "sha256": "1203d7dc0ca6e651851eedd7d0e8908bba2ebabaf71b721f6ef7ce65a7314d43",
+   "bytes": 135996,
+   "pages": null,
+   "delivered_extent": "One HTML response.",
+   "identity_inspection": "Read: 1858, Vienna, 64 + 15 pages, note 'Ըստ օրինակին տպելոյ ի Հռոմ', PDF link.",
+   "rights_basis": "Library web page; no terms page located.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retrieval provenance only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-vienna1879-pdf",
+   "original_url": "https://arar.sci.am/Content/268743/xorhrdatetr_srboy_1879.pdf",
+   "sha256": "b57d49313c53c9909f4adb590abb5eae4ec0fc4955339c7a13a8f049b42facd3",
+   "bytes": 281799510,
+   "pages": 228,
+   "delivered_extent": "Complete delivered PDF, 228 images of two-page spreads: covers, title, declaration, frontispieces and the lection part from printed p. 1 to the index (printed 378-379 at PDF 220). The 174-page ordinary that the library and the bibliography list is not present (contact sheets of all 228 images viewed).",
+   "identity_inspection": "PDF 5 title, PDF 6-7 declaration (signed Anton Petros IX, Patriarch of Cilicia, 6 January 1879), PDF 9-11 and 220 viewed in this pass; the previous researcher rendered PDF 1-10, 176, 178 and 180.",
+   "rights_basis": "Underlying text: printed 1879, public domain. Provider terms: no reuse or terms page was located on arar.sci.am; the edition page labels the publication 'Secured publication ... unavailable to your account' (https://arar.sci.am/dlibra/publication/292708/edition/268743), while the PDF linked in the page's citation metadata downloaded without credentials.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Not proposed for Git: provider marks the edition as secured (no redistribution basis), and 281,799,510 bytes is a size argument as well. The source row carries the title, declaration date and delivered extent.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-arar1879-html",
+   "original_url": "https://arar.sci.am/dlibra/publication/292708/edition/268743",
+   "sha256": "638476e7a592caff93382f4c31868fe2501e369c3a6c7ebe644c36fb8fe20c77",
+   "bytes": 127322,
+   "pages": null,
+   "delivered_extent": "One HTML response.",
+   "identity_inspection": "Read: 1879, Vienna, Mekhitarist press, 174 + 388 pages, PDF link.",
+   "rights_basis": "Library web page; no terms page located.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retrieval provenance only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-venice1686-images",
+   "original_url": "http://greenstone.flib.sci.am/gsdl/collect/armenian/Books/xorhrdatetr1686/book/index.html",
+   "sha256": "f443f6dedbc0d93556bae8e56b85196e7d808a9eb60df83c211452149b559078",
+   "bytes": 17006404,
+   "pages": null,
+   "delivered_extent": "All 44 images declared by the viewer (01.jpg-44.jpg, each 800 x 1140; 45.jpg returned 404), stored unaltered in an uncompressed zip made in this pass; per-image URLs and hashes in greenstone1686-manifest.json. Covers, a blank, title and 40 printed pages (the bibliography gives 4 unnumbered + 36 pages).",
+   "identity_inspection": "Image 03 (title: Khorhrdatetr srbazan Pataragi, printed for the house of Khoja Sahrat of Julfa under Catholicos Eghiazar, 1686, Venice, at the expense of Baron Gaspar) viewed; contact sheet of all 44 viewed.",
+   "rights_basis": "Underlying text: printed 1686, public domain. The scan is a faithful mechanical reproduction carrying no new authorship (Bridgeman reasoning, guidance/missals.md section 5). Provider terms: none located on greenstone.flib.sci.am (Fundamental Scientific Library of the National Academy of Sciences of Armenia).",
+   "proposed_storage": "tracked",
+   "storage_reason": "17,006,404 bytes; public-domain whole book that resolves the existing record arm-khorhrdatetr1686's 'not-acquired' state; root rights review still required.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-venice1686-manifest",
+   "original_url": "lane-made manifest of the Greenstone image retrieval",
+   "sha256": "3199b9f2c4cfe4a6771692e0e11b8ecdae8e24520f56d58a84a4b5d21257695c",
+   "bytes": 10281,
+   "pages": null,
+   "delivered_extent": "44 image entries with URL, bytes and SHA-256.",
+   "identity_inspection": "Generated in this pass.",
+   "rights_basis": "Project-created metadata.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Provenance of the zip; to be folded into an artifact manifest if registered.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-venice1686-viewer",
+   "original_url": "http://greenstone.flib.sci.am/gsdl/collect/armenian/Books/xorhrdatetr1686/book/index.html",
+   "sha256": "c6e389cc035a1ce79624dbae5380d077feeddc80bf8e06a37bc03382b6cb2abc",
+   "bytes": 1799,
+   "pages": null,
+   "delivered_extent": "One HTML response.",
+   "identity_inspection": "Read: viewer shell.",
+   "rights_basis": "Provider web page.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Retrieval provenance only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-venice1686-viewer-config",
+   "original_url": "http://greenstone.flib.sci.am/gsdl/collect/armenian/Books/xorhrdatetr1686/book/BookReaderJSSimple.js",
+   "sha256": "ee59b55fbc4e1998db5b71db8140d5f40e339d2f4845790775811b13d7ac3f55",
+   "bytes": 6362,
+   "pages": null,
+   "delivered_extent": "One script response (UTF-16).",
+   "identity_inspection": "Read: declares 44 leaves and the NN.jpg naming.",
+   "rights_basis": "Provider viewer configuration (AGPL viewer code).",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Evidence of the declared leaf count only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-etchmiadzin-index",
+   "original_url": "https://etchmiadzinlibrary.am/hy/books/armenian-ancient-book",
+   "sha256": "27e5658ab041b8d1630ffc9df9ba1c4254d4ea61d46ad75984f7524d965cab63",
+   "bytes": 30067,
+   "pages": null,
+   "delivered_extent": "One HTML response.",
+   "identity_inspection": "Read: links to the Greenstone 1686 Khorhrdatetr and Ճաշոց viewers.",
+   "rights_basis": "Library web page; no terms located.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Discovery provenance only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-ia-q-patarag",
+   "original_url": "https://archive.org/advancedsearch.php?q=title%3A%28patarag%2A%29&output=json&rows=100",
+   "sha256": "aec189e8e7508ab6e097cfd89e18a5e0024be5174d2c38d5d36166e4b40fe9d6",
+   "bytes": 1745,
+   "pages": null,
+   "delivered_extent": "Complete response, 9 hits.",
+   "identity_inspection": "Read.",
+   "rights_basis": "IA search response; terms https://archive.org/about/terms.php",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Search receipt.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-ia-q-gatrchean",
+   "original_url": "https://archive.org/advancedsearch.php?q=%28Gatrchean+OR+Gatrc+OR+Gatrch+OR+Gatirchean%29&output=json&rows=100",
+   "sha256": "71ae790a05e534acc5cd937875dd6a7c29bfcde313f7489b865edbc790c53226",
+   "bytes": 764,
+   "pages": null,
+   "delivered_extent": "Complete response, 3 hits.",
+   "identity_inspection": "Read.",
+   "rights_basis": "IA search response; terms https://archive.org/about/terms.php",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Search receipt.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-ia-q-khorhr",
+   "original_url": "https://archive.org/advancedsearch.php?q=title%3A%28khorhr%2A+OR+xorhr%2A%29&output=json&rows=100",
+   "sha256": "5005ee71a4dc852f4ea20ce112bc43124d685e6156121ce3797453ca5bd255bc",
+   "bytes": 2832,
+   "pages": null,
+   "delivered_extent": "Complete response, 14 hits.",
+   "identity_inspection": "Read.",
+   "rights_basis": "IA search response; terms https://archive.org/about/terms.php",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Search receipt.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-ia-q-macler",
+   "original_url": "https://archive.org/advancedsearch.php?q=title%3A%28Catalogue+des+manuscrits+arm%C3%A9niens%29&output=json&rows=100",
+   "sha256": "d8c91b6398503691d791a60ad9ebc3d376430b477418283953028c50fb59068c",
+   "bytes": 683,
+   "pages": null,
+   "delivered_extent": "Complete response, 2 hits.",
+   "identity_inspection": "Read.",
+   "rights_basis": "IA search response; terms https://archive.org/about/terms.php",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Search receipt.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-ia-q-xorhrdatetr",
+   "original_url": "https://archive.org/advancedsearch.php?q=title%3A%28khorhrdatetr+OR+xorhrdatetr%29&output=json&rows=100",
+   "sha256": "8c437f4e83e0b99dc03d05460ff46345d9e4684348611f163b42ad0c12b8a812",
+   "bytes": 802,
+   "pages": null,
+   "delivered_extent": "Complete response, 2 hits.",
+   "identity_inspection": "Read.",
+   "rights_basis": "IA search response; terms https://archive.org/about/terms.php",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Search receipt.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-receipt-log",
+   "original_url": "lane-made download log",
+   "sha256": "f57c16ac2593db71a2fa1e2dcc67c527a01712b1a99825979b4fa828470a1d0a",
+   "bytes": 2231,
+   "pages": null,
+   "delivered_extent": "Eight JSON lines written by the previous researcher (URL, path, bytes, SHA-256).",
+   "identity_inspection": "Compared in this pass: every recorded hash matches the file now present.",
+   "rights_basis": "Project-created metadata.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Provenance log.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-brightman-txt",
+   "original_url": "derived locally with pdftotext -layout from the canonical Brightman 1896 artifact",
+   "sha256": "6fab2f0206958ba4ddcfeedb9e4be837bff432eb29871d6e73c3b498030748ab",
+   "bytes": 2684326,
+   "pages": null,
+   "delivered_extent": "Whole text layer of the canonical PDF (byte-identical to the byzantine_greek lane's copy).",
+   "identity_inspection": "Armenian section (printed pp. xcvi-xcix) read in this pass.",
+   "rights_basis": "Derivative of the canonical public-domain artifact (Wellcome copy, Public Domain Mark 1.0).",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Duplicate derivative of a registered artifact; regenerate from the canonical PDF.",
+   "existing_canonical_identity": "artifact.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.ia-pdf-254f7d21 (derivative of)"
+  },
+  {
+   "id": "armenian-acq-gatrchean-txt",
+   "original_url": "derived locally with pdftotext -layout from the matching PDF",
+   "sha256": "91b8a976d124d3225c0943220bc3c36035fd44976bb5b1b2f3e265a91967951f",
+   "bytes": 3805,
+   "pages": null,
+   "delivered_extent": "Text layer only: Google's notice text or form feeds; the scans carry no usable OCR.",
+   "identity_inspection": "Opened; confirms absence of a usable text layer.",
+   "rights_basis": "Derivative of a public-domain scan.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No evidential content; kept only as proof that no text layer exists.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-xosrov-txt",
+   "original_url": "derived locally with pdftotext -layout from the matching PDF",
+   "sha256": "8905c576cb5b76a29a26a31b3784fae9b2d2a8740cdbe65c1d552404acd44874",
+   "bytes": 3126,
+   "pages": null,
+   "delivered_extent": "Text layer only: Google's notice text or form feeds; the scans carry no usable OCR.",
+   "identity_inspection": "Opened; confirms absence of a usable text layer.",
+   "rights_basis": "Derivative of a public-domain scan.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No evidential content; kept only as proof that no text layer exists.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-lambronatsi-txt",
+   "original_url": "derived locally with pdftotext -layout from the matching PDF",
+   "sha256": "4985e8e0e436d9fb84359c19e2853abe3368ef6d2b540a153fee7916070a22dd",
+   "bytes": 3640,
+   "pages": null,
+   "delivered_extent": "Text layer only: Google's notice text or form feeds; the scans carry no usable OCR.",
+   "identity_inspection": "Opened; confirms absence of a usable text layer.",
+   "rights_basis": "Derivative of a public-domain scan.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No evidential content; kept only as proof that no text layer exists.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-vienna1858-txt",
+   "original_url": "derived locally with pdftotext -layout from the matching PDF",
+   "sha256": "c9354451aacb0ebdebb0956528aab320c6060d57050e26c86d3c04890e921af0",
+   "bytes": 84,
+   "pages": null,
+   "delivered_extent": "Text layer only: Google's notice text or form feeds; the scans carry no usable OCR.",
+   "identity_inspection": "Opened; confirms absence of a usable text layer.",
+   "rights_basis": "Derivative of a public-domain scan.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No evidential content; kept only as proof that no text layer exists.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "armenian-acq-vienna1879-txt",
+   "original_url": "derived locally with pdftotext -layout from the matching PDF",
+   "sha256": "7bf2745d8c3e991726f60181c42d61ca0ed9c43d7a9592f9e95a1c4780b69c2c",
+   "bytes": 228,
+   "pages": null,
+   "delivered_extent": "Text layer only: Google's notice text or form feeds; the scans carry no usable OCR.",
+   "identity_inspection": "Opened; confirms absence of a usable text layer.",
+   "rights_basis": "Derivative of a public-domain scan.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "No evidential content; kept only as proof that no text layer exists.",
+   "existing_canonical_identity": null
+  }
+ ],
+ "expected_list_reconciliation": [
+  {
+   "expected_id": "cold-arm-basil-older",
+   "expected_label": "Older Armenian Basil anaphora attributed to Gregory the Illuminator",
+   "matched_packet_ids": [
+    "armenian-v-extinct-gregory-illuminator",
+    "armenian-lyon-or15",
+    "armenian-munich-arm6"
+   ],
+   "outcome": "matched",
+   "evidence": "Version records the older Basil identification from Winkler 2014 (pp. 42-45, cold image checks) and Brightman's Lyon and Munich witnesses (p. xcix)."
+  },
+  {
+   "expected_id": "cold-arm-basil-later",
+   "expected_label": "Later Armenian Basil anaphora",
+   "matched_packet_ids": [
+    "armenian-v-extinct-basil-later"
+   ],
+   "outcome": "matched",
+   "evidence": "Kept distinct from the older recension; Lyon, Munich and San Lazzaro per Brightman p. xcviii."
+  },
+  {
+   "expected_id": "cold-arm-sahak",
+   "expected_label": "Armenian anaphora of Sahak (Lyon 1314)",
+   "matched_packet_ids": [
+    "armenian-v-extinct-sahak",
+    "armenian-lyon-or15"
+   ],
+   "outcome": "matched",
+   "evidence": "Lyon only per Brightman p. xcix; Winkler 2011 edition kept as a lead."
+  },
+  {
+   "expected_id": "cold-arm-james",
+   "expected_label": "Armenian anaphora of James (Lyon 1314)",
+   "matched_packet_ids": [
+    "armenian-v-extinct-james",
+    "armenian-lyon-or15"
+   ],
+   "outcome": "matched",
+   "evidence": "Brightman p. xcviii; Winkler 2014 source relation recorded without reducing it to a Syriac edition."
+  },
+  {
+   "expected_id": "cold-arm-stepanos",
+   "expected_label": "Synaxis described by Step'anos Siwnec'i",
+   "matched_packet_ids": [
+    "armenian-v-stepanos"
+   ],
+   "outcome": "matched",
+   "evidence": "Carried as an unresolved commentary-attested lead with its unexamined range; no record proposed, which is appropriate."
+  },
+  {
+   "expected_id": "cold-arm-xosrov",
+   "expected_label": "Order described by Xosrov Anjewac'i",
+   "matched_packet_ids": [
+    "armenian-v-xosrov",
+    "armenian-xosrov-commentary"
+   ],
+   "outcome": "matched",
+   "evidence": "Venice 1869 edition acquired; title PDF 6 confirmed by the cold reviewer."
+  },
+  {
+   "expected_id": "cold-arm-lambron",
+   "expected_label": "Order described by Nerses Lambronac'i",
+   "matched_packet_ids": [
+    "armenian-v-lambronatsi",
+    "armenian-lambronatsi-commentary"
+   ],
+   "outcome": "matched",
+   "evidence": "Venice 1847 edition acquired; title PDF 8 confirmed. The 1177 composition date remains unchecked (bounded gap)."
+  },
+  {
+   "expected_id": "cold-arm-athanasius-1269-1292",
+   "expected_label": "Athanasius anaphora: Matenadaran 442 (1269) and 179 (1292)",
+   "matched_packet_ids": [
+    "armenian-v-athanasius-mss-lead"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead only; Feulner 2001 not acquired."
+  },
+  {
+   "expected_id": "cold-arm-1513",
+   "expected_label": "Pataragatetr, Venice 1513",
+   "matched_packet_ids": [
+    "armenian-v-meghapart1513",
+    "armenian-meghapart1513"
+   ],
+   "outcome": "matched",
+   "evidence": "Inventory row for the dossier stage meghapart1513 from bibliography entry 2."
+  },
+  {
+   "expected_id": "cold-arm-1568",
+   "expected_label": "Zhamagirk'-Pataragamatoyc', Constantinople 1568",
+   "matched_packet_ids": [],
+   "outcome": "omission",
+   "evidence": "The packet mentions it only in limits as 'not located under Khorhrdatetr'. The 1512-1800 bibliography indexes it under Ժամագիրք (title index line 'Ժամագիրք համառօտեալ աղաւթամատոյց - 9'); entry 9 (printed p. 10, PDF 66, image checked) describes a 1568 Constantinople octavo whose gatherings 9-13 are the Pataragamatoyc' with its own colophon of May 1568. Added as armenian-constantinople1568-cold."
+  },
+  {
+   "expected_id": "cold-arm-1641",
+   "expected_label": "Khorhrdatetr, New Julfa 1641",
+   "matched_packet_ids": [
+    "armenian-v-newjulfa1641",
+    "armenian-newjulfa1641"
+   ],
+   "outcome": "matched",
+   "evidence": "Comparison only."
+  },
+  {
+   "expected_id": "cold-arm-1642",
+   "expected_label": "Ordo divinae missae Armenorum, Rome 1642",
+   "matched_packet_ids": [
+    "armenian-v-1642-ordo"
+   ],
+   "outcome": "matched",
+   "evidence": "Existing row; update appends the 1670 note only."
+  },
+  {
+   "expected_id": "cold-arm-1670",
+   "expected_label": "Reported Rome 1670 edition",
+   "matched_packet_ids": [
+    "armenian-v-rome1670-lead"
+   ],
+   "outcome": "matched",
+   "evidence": "Entry 75 (PDF 118, cold image nla-entry75-118.png) transcribes the 1642 title and derives 1670 from Ghazikian citing Brightman; held as a probable ghost lead, not a version."
+  },
+  {
+   "expected_id": "cold-arm-1677-lyturgia",
+   "expected_label": "Lyturgia Armena, Rome 1677",
+   "matched_packet_ids": [
+    "armenian-v-1677-lyturgia"
+   ],
+   "outcome": "matched",
+   "evidence": "Existing row unchanged."
+  },
+  {
+   "expected_id": "cold-arm-1677-ministerium",
+   "expected_label": "Ministerium Missae, Rome 1677",
+   "matched_packet_ids": [
+    "armenian-v-1677-ministerium"
+   ],
+   "outcome": "matched",
+   "evidence": "Existing complementary row unchanged."
+  },
+  {
+   "expected_id": "cold-arm-1686",
+   "expected_label": "Brightman's Rome 1686 edition",
+   "matched_packet_ids": [
+    "armenian-v-rome1686-lead",
+    "armenian-v-venice1686"
+   ],
+   "outcome": "matched",
+   "evidence": "No Rome 1686 altar book in the 1512-1800 bibliography (cold OCR search for Rome imprints 1684-1688 also negative); kept as a lead beside the acquired Venice 1686 book."
+  },
+  {
+   "expected_id": "cold-arm-1690",
+   "expected_label": "Venice 1690 edition",
+   "matched_packet_ids": [
+    "armenian-v-venice1690-italian",
+    "armenian-venice1690-italian"
+   ],
+   "outcome": "matched",
+   "evidence": "Entry 144 (PDF 166, image checked): 51 pages, Armenian on even and Italian on odd pages, Italian title 'La dichiaratione della Liturgia Armena' by Giovanni Agop, missionario apostolico, Barboni 1690, 'con licenza de superiori'. Correctly a deferred translation with a facing Armenian witness."
+  },
+  {
+   "expected_id": "cold-arm-1741",
+   "expected_label": "Venice 1741 edition",
+   "matched_packet_ids": [
+    "armenian-v-venice1741",
+    "armenian-venice1741"
+   ],
+   "outcome": "matched",
+   "evidence": "Entry 460 (OCR read): title 'printed according to the exemplar printed in Rome', 15 September 1741, Antonio Bortoli."
+  },
+  {
+   "expected_id": "cold-arm-1808-venice",
+   "expected_label": "Venice 1808 edition",
+   "matched_packet_ids": [
+    "armenian-v-venice1808-lead",
+    "armenian-v-venice1809"
+   ],
+   "outcome": "matched",
+   "evidence": "No Venice 1808 Khorhrdatetr in the 1801-1850 bibliography (entry 113 is a 1808 calendar); Venice 1809 entries 120-121 (PDF 120, image checked) are the nearest."
+  },
+  {
+   "expected_id": "cold-arm-1808-trieste",
+   "expected_label": "Trieste 1808 edition",
+   "matched_packet_ids": [
+    "armenian-v-trieste1808-lead",
+    "armenian-v-trieste1803"
+   ],
+   "outcome": "matched",
+   "evidence": "Entry 115 (PDF 118, image checked) is a numbered but unseen entry citing Zarbhanalian p. 281 and Ghazikian col. 1165, with Ghazikian's opinion that 1808 seems an error for 1803. It stays a lead; the packet's 'rejected-with-evidence' wording overstates, but its versions correctly keep it as a lead."
+  },
+  {
+   "expected_id": "cold-arm-1823",
+   "expected_label": "Venice 1823 Rome-1677 exemplar printing",
+   "matched_packet_ids": [
+    "armenian-v-1823",
+    "armenian-v-venice-reprints"
+   ],
+   "outcome": "matched",
+   "evidence": "Entries 421-423 (PDF 196-197, images checked) confirm three 1823 issues."
+  },
+  {
+   "expected_id": "cold-arm-1858",
+   "expected_label": "Vienna 1858 edition",
+   "matched_packet_ids": [
+    "armenian-v-vienna1858",
+    "armenian-vienna1858"
+   ],
+   "outcome": "matched",
+   "evidence": "Whole scan acquired; title PDF 3 confirmed ('according to the exemplar printed in Rome', Vienna 1858)."
+  },
+  {
+   "expected_id": "cold-arm-1874",
+   "expected_label": "Venice 1874 edition",
+   "matched_packet_ids": [
+    "armenian-v-venice-reprints"
+   ],
+   "outcome": "matched",
+   "evidence": "Entry 2665 folded into the reprint family."
+  },
+  {
+   "expected_id": "cold-arm-1879",
+   "expected_label": "Hassunian book, Vienna 1879",
+   "matched_packet_ids": [
+    "armenian-v-vienna1879",
+    "armenian-vienna1879"
+   ],
+   "outcome": "matched",
+   "evidence": "Title PDF 5 and dated patriarchal declaration PDF 6-7 confirmed; delivered-extent description corrected (36-page low-Mass section also present)."
+  },
+  {
+   "expected_id": "cold-arm-1884",
+   "expected_label": "Vienna 1884 edition",
+   "matched_packet_ids": [
+    "armenian-v-vienna1884-lead"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead; absent from the 1851-1900 Khorhrdatetr subject index."
+  },
+  {
+   "expected_id": "cold-arm-1895",
+   "expected_label": "Venice 1895 edition",
+   "matched_packet_ids": [
+    "armenian-v-venice1895-lead"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead; absent from the 1851-1900 Khorhrdatetr subject index."
+  },
+  {
+   "expected_id": "cold-arm-1904",
+   "expected_label": "Vienna 1904 plenary and ordinary forms",
+   "matched_packet_ids": [
+    "armenian-v-vienna1904",
+    "armenian-vienna1904"
+   ],
+   "outcome": "matched",
+   "evidence": "Record from publisher-journal snippet and Enciclopedia Cattolica; images unavailable."
+  },
+  {
+   "expected_id": "cold-arm-1932-cantor",
+   "expected_label": "Vienna 1932 cantor's book",
+   "matched_packet_ids": [
+    "armenian-v-vienna1932-cantor",
+    "armenian-vienna1932-cantor"
+   ],
+   "outcome": "matched",
+   "evidence": "Reported-only candidate in the deferred list."
+  },
+  {
+   "expected_id": "cold-arm-1686-lectionary",
+   "expected_label": "Venice 1686 lectionary",
+   "matched_packet_ids": [
+    "armenian-v-venice1686-chashots",
+    "armenian-venice1686-chashots"
+   ],
+   "outcome": "matched",
+   "evidence": "Record corrected to cite bibliography entry 131 (PDF 153, image checked) rather than the Khorhrdatetr image source."
+  },
+  {
+   "expected_id": "cold-arm-1994",
+   "expected_label": "Modern Armenian Catholic revision (1994)",
+   "matched_packet_ids": [
+    "armenian-v-1994",
+    "armenian-catholic-1994",
+    "armenian-v-post1994-lead"
+   ],
+   "outcome": "matched",
+   "evidence": "Effective-date record from the official retrospective; chronology_kind corrected to an effective-date kind."
+  },
+  {
+   "expected_id": "cold-arm-lviv",
+   "expected_label": "Lviv manuscript and correction layers",
+   "matched_packet_ids": [
+    "armenian-v-lviv-base",
+    "armenian-v-lviv-corrections",
+    "armenian-lviv-sanlazzaro669"
+   ],
+   "outcome": "matched",
+   "evidence": "Layers kept separate; record corrected because the 1636 colophon belongs to the Apostolos component (fol. 396a) and the Mass at fol. 263 is not itself dated."
+  },
+  {
+   "expected_id": "cold-arm-1854-parallel",
+   "expected_label": "Liturgia della messa armena, Venice 1854 (1832, 1826)",
+   "matched_packet_ids": [
+    "armenian-v-avedichian-italian",
+    "armenian-avedichian-italian"
+   ],
+   "outcome": "matched",
+   "evidence": "Deferred translation family."
+  },
+  {
+   "expected_id": "armenian-cold-brightman-extinct-1",
+   "expected_label": "John Chrysostom",
+   "matched_packet_ids": [
+    "armenian-v-extinct-chrysostom"
+   ],
+   "outcome": "matched",
+   "evidence": "Manuscript membership matches Brightman pp. xcviii-xcix exactly; no Catholic reception inferred."
+  },
+  {
+   "expected_id": "armenian-cold-brightman-extinct-2",
+   "expected_label": "Basil",
+   "matched_packet_ids": [
+    "armenian-v-extinct-basil-later"
+   ],
+   "outcome": "matched",
+   "evidence": "Manuscript membership matches Brightman pp. xcviii-xcix exactly; no Catholic reception inferred."
+  },
+  {
+   "expected_id": "armenian-cold-brightman-extinct-3",
+   "expected_label": "Presanctified",
+   "matched_packet_ids": [
+    "armenian-v-extinct-presanctified"
+   ],
+   "outcome": "matched",
+   "evidence": "Manuscript membership matches Brightman pp. xcviii-xcix exactly; no Catholic reception inferred."
+  },
+  {
+   "expected_id": "armenian-cold-brightman-extinct-4",
+   "expected_label": "James",
+   "matched_packet_ids": [
+    "armenian-v-extinct-james"
+   ],
+   "outcome": "matched",
+   "evidence": "Manuscript membership matches Brightman pp. xcviii-xcix exactly; no Catholic reception inferred."
+  },
+  {
+   "expected_id": "armenian-cold-brightman-extinct-5",
+   "expected_label": "Ignatius",
+   "matched_packet_ids": [
+    "armenian-v-extinct-ignatius"
+   ],
+   "outcome": "matched",
+   "evidence": "Manuscript membership matches Brightman pp. xcviii-xcix exactly; no Catholic reception inferred."
+  },
+  {
+   "expected_id": "armenian-cold-brightman-extinct-6",
+   "expected_label": "Roman",
+   "matched_packet_ids": [
+    "armenian-v-extinct-roman"
+   ],
+   "outcome": "matched",
+   "evidence": "Manuscript membership matches Brightman pp. xcviii-xcix exactly; no Catholic reception inferred."
+  },
+  {
+   "expected_id": "armenian-cold-brightman-extinct-7",
+   "expected_label": "Gregory the Illuminator",
+   "matched_packet_ids": [
+    "armenian-v-extinct-gregory-illuminator"
+   ],
+   "outcome": "matched",
+   "evidence": "Manuscript membership matches Brightman pp. xcviii-xcix exactly; no Catholic reception inferred."
+  },
+  {
+   "expected_id": "armenian-cold-brightman-extinct-8",
+   "expected_label": "Gregory Nazianzen",
+   "matched_packet_ids": [
+    "armenian-v-extinct-gregory-nazianzen"
+   ],
+   "outcome": "matched",
+   "evidence": "Manuscript membership matches Brightman pp. xcviii-xcix exactly; no Catholic reception inferred."
+  },
+  {
+   "expected_id": "armenian-cold-brightman-extinct-9",
+   "expected_label": "Cyril of Alexandria",
+   "matched_packet_ids": [
+    "armenian-v-extinct-cyril"
+   ],
+   "outcome": "matched",
+   "evidence": "Manuscript membership matches Brightman pp. xcviii-xcix exactly; no Catholic reception inferred."
+  },
+  {
+   "expected_id": "armenian-cold-brightman-extinct-10",
+   "expected_label": "Isaac the Great / Sahak",
+   "matched_packet_ids": [
+    "armenian-v-extinct-sahak"
+   ],
+   "outcome": "matched",
+   "evidence": "Manuscript membership matches Brightman pp. xcviii-xcix exactly; no Catholic reception inferred."
+  },
+  {
+   "expected_id": "supplement-regional-vienna-arm18",
+   "expected_label": "Vienna Mekhitarist arm. 18, Galician ordinary c. 1700",
+   "matched_packet_ids": [
+    "armenian-v-vienna-arm18-lead"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead; Dashian 1895 not examined."
+  },
+  {
+   "expected_id": "supplement-regional-marshall106",
+   "expected_label": "Bodleian MS Marshall Or. 106, low Mass, 1675",
+   "matched_packet_ids": [
+    "armenian-v-marshall106",
+    "armenian-marshall106"
+   ],
+   "outcome": "matched",
+   "evidence": "Catalogue entry 20 (PDF 22, image checked) confirms the low-Mass extract and the 12 December 1674 note."
+  },
+  {
+   "expected_id": "supplement-parallel-paris-arm22",
+   "expected_label": "Paris arm. 22 (Franciscan)",
+   "matched_packet_ids": [
+    "armenian-v-franciscan1344",
+    "armenian-paris-franciscan1344"
+   ],
+   "outcome": "matched",
+   "evidence": "Macler 107 (PDF 80, image checked)."
+  },
+  {
+   "expected_id": "supplement-parallel-paris-suppl3",
+   "expected_label": "Paris arm. suppl. 3 ff. 109ff (Roman)",
+   "matched_packet_ids": [
+    "armenian-v-paris-suppl3-lead"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead; not located in Macler."
+  },
+  {
+   "expected_id": "supplement-parallel-paris-suppl71",
+   "expected_label": "Paris arm. suppl. 71 (Dominican)",
+   "matched_packet_ids": [
+    "armenian-v-dominican1337",
+    "armenian-paris-dominican1337"
+   ],
+   "outcome": "matched",
+   "evidence": "Macler 106 (PDF 80, image checked)."
+  },
+  {
+   "expected_id": "supplement-component-trieste1803",
+   "expected_label": "Trieste 1803 Rome-exemplar altar book",
+   "matched_packet_ids": [
+    "armenian-v-trieste1803",
+    "armenian-trieste1803"
+   ],
+   "outcome": "matched",
+   "evidence": "Entry 35 (PDF 101, image checked): 40 pages, NLA 4712."
+  },
+  {
+   "expected_id": "supplement-component-vienna1880-ordinary",
+   "expected_label": "Vienna 1880 ordinary book lead",
+   "matched_packet_ids": [
+    "armenian-v-vienna1880-lead"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead; price-list issues return HTTP 403."
+  },
+  {
+   "expected_id": "supplement-component-vienna1880-deacons",
+   "expected_label": "Vienna 1880 deacons' and clerks' book",
+   "matched_packet_ids": [
+    "armenian-v-vienna1879-deacons",
+    "armenian-vienna1879-deacons"
+   ],
+   "outcome": "matched",
+   "evidence": "Entry 3394 (PDF 311) first printing 1879; 1880 price-list date kept as a range."
+  },
+  {
+   "expected_id": "supplement-component-vienna1904-forms",
+   "expected_label": "Vienna 1904 plenary and ordinary-only forms",
+   "matched_packet_ids": [
+    "armenian-v-vienna1904",
+    "armenian-vienna1904"
+   ],
+   "outcome": "matched",
+   "evidence": "Two forms kept in one second-printing record."
+  }
+ ],
+ "acquisition_spot_checks": [
+  {
+   "acquisition_id": "armenian-acq-vienna1879-pdf",
+   "check": "sha256; title PDF 5; declaration PDF 6-7",
+   "result": "confirmed",
+   "detail": "Hash b57d4931... matches. Title: Khorhrdatetr srboy Pataragin, Vienna, Mekhitarist press, 1879. Declaration ends 'Pera, Constantinople, 6 January 1879', signed Anton Petros IX, Patriarch of the House of Cilicia; text names 1847 and the Holy See."
+  },
+  {
+   "acquisition_id": "armenian-acq-vienna1879-pdf",
+   "check": "delivered extent: 'only title, declaration and the 388-page lection part'; absence of the 174-page part",
+   "result": "contradicted",
+   "detail": "Running-header strips of PDF 8-228 and renders of PDF 95, 100, 114: lections pp. 1-379 with index (PDF 9-225), plates and guard leaves, plus a separately paginated 36-page Կանոնագրութիւն թիւ Պատարագի (low-Mass rubrics and chants, PDF 95-114) bound after lection p. 174. No 174-page sequence exists, so the 'ordinary absent' finding stands, but the 'only' claim is wrong and the 174-page part is not named as an ordinary by the library or bibliography."
+  },
+  {
+   "acquisition_id": "armenian-acq-arar1879-html",
+   "check": "Provider 'Secured publication' label; whether retention of arar.sci.am bytes is permissible",
+   "result": "contradicted",
+   "detail": "The text sits in a hidden 'modal fade modal--access' permission-request dialog present on all three retained arar pages (1858, 1879 and the openly downloaded 1851-1900 bibliography). Each edition page shows 'Show content' and a download button (Content/<id>/download/); the 1879 content viewer fetched without login on 2026-10-19 returned HTTP 200 and embeds the PDF; the PDF is served 'cache-control: public'. Reviewer view: no access control was bypassed and nothing marks these editions as restricted, so the 1858 and 1879 bytes may be retained. Canonical retention rests on the same public-domain and faithful-reproduction basis as the other scans, subject to root rights review and the size policy (1879 is 281,799,510 bytes). Flag, not block."
+  },
+  {
+   "acquisition_id": "armenian-acq-vienna1858-pdf",
+   "check": "sha256; title PDF 3; PDF 67, 81-82",
+   "result": "confirmed",
+   "detail": "Hash matches; title 'according to the exemplar printed in Rome', Vienna 1858; separate lesson-table title PDF 67; PDF 82 is a New Testament page index belonging to the table apparatus."
+  },
+  {
+   "acquisition_id": "armenian-acq-venice1686-images",
+   "check": "sha256; image 03 title",
+   "result": "confirmed",
+   "detail": "Zip hash matches; 44 entries; image 03 shows Khorhrdatetr srbazan pataragi, under Catholicos Eghiazar, January 12, 1686, Venice, at the expense of Baron Gaspar."
+  },
+  {
+   "acquisition_id": "armenian-acq-bib1801-pdf",
+   "check": "entries 35, 115, 120-121, 421-423 on images",
+   "result": "confirmed",
+   "detail": "Trieste 1803 (40 pp.), Trieste 1808 unseen with Ghazikian's doubt and a Zarbhanalian p. 281 citation, Venice 1809 20/80 pp., 1823 issues 80 pp. and folio 36 pp. plus an unillustrated third issue."
+  },
+  {
+   "acquisition_id": "armenian-acq-bib1851-pdf",
+   "check": "entries 2519-2520, 3180, 3385, 3394 on images",
+   "result": "confirmed",
+   "detail": "3385: Vienna 1879, 174, 388 pp., 1 plate. 3180: Vienna 1877, 456 pp. 2519: unseen Echmiadzin 1873 with Rome-exemplar title, same loci as Jerusalem 1873 (2520)."
+  },
+  {
+   "acquisition_id": "armenian-src-bib1512 (reused scratch PDF, sha256 2fb32ad2...)",
+   "check": "entries 9, 130-131, 144, 599, 677-678, appendix 1087ա-1087բ",
+   "result": "confirmed",
+   "detail": "Confirms 1568 composite (omitted by packet), Venice 1686 Khorhrdatetr and lectionary, 1690 bilingual translation and the Rome 1777 books; corrects 1777 press ('not named') and holding sigla (ՊՖ = Propaganda Fide library, Rome)."
+  },
+  {
+   "acquisition_id": "armenian-acq-bodleian-pdf",
+   "check": "PDF 22 entry 20",
+   "result": "confirmed",
+   "detail": "Marshall (Or.) 106, low-Mass book c. 1675, note of 12 December 1674."
+  },
+  {
+   "acquisition_id": "armenian-acq-macler-pdf",
+   "check": "PDF 80 entries 106-107",
+   "result": "confirmed",
+   "detail": "Suppl. arm. 71 (1337 Dominican) and anc. fonds arm. 22 (Boniface, 22 March 1344; copy 1381)."
+  },
+  {
+   "acquisition_id": "armenian-acq-gatrchean-pdf",
+   "check": "PDF 8 title",
+   "result": "confirmed",
+   "detail": "Vienna Mekhitarist press, 1897."
+  },
+  {
+   "acquisition_id": "armenian-acq-xosrov-pdf",
+   "check": "PDF 6 title",
+   "result": "confirmed",
+   "detail": "Venice, San Lazzaro, 1869."
+  },
+  {
+   "acquisition_id": "armenian-acq-lambronatsi-pdf",
+   "check": "PDF 8 title",
+   "result": "confirmed",
+   "detail": "Venice, San Lazzaro, 1847."
+  },
+  {
+   "acquisition_id": "tracked-storage-proposals",
+   "check": "Six tracked proposals (Xosrov 1869, Lambronac'i 1847, Gatrčean 1897, Macler 1908, Bodleian 1918, Venice 1686 zip)",
+   "result": "confirmed",
+   "detail": "Hashes match and identities confirmed; public-domain underlying texts. No objection; root rights review still required. The Venice 1686 zip is lane-made, so its 44-image manifest (per-image URL and sha256) should travel with it."
+  }
+ ],
+ "remaining_bounded_gaps": [
+  "Vienna 1879: the 174-page part (presumably the celebrant's order) is absent from the only scan; the 36-page low-Mass section is uncollated; lection pagination sampled, not checked page by page.",
+  "Rome 1777 Khorhrdatetr and lectionary unseen (bibliography only); Propaganda press not established.",
+  "Unconfirmed edition leads: Rome 1670 (probable ghost of 1642), Rome 1686, Venice 1808, Trieste 1808 (entry 115, unseen, Zarbhanalian p. 281 and Ghazikian), Vienna 1880 ordinary, Vienna 1884, Venice 1895, Echmiadzin 1873 (entry 2519; Brightman's Gregorian list also has Edchmiadzin 1873).",
+  "Brightman p. xcviii items not labelled in the packet: Latin 'Ordo divinae missae Armenorum Romae 1632' (lead, possibly related to the 1642 Ordo) and modern translations (French Venice 1851, English Venice 1872, Italian Venice 1873, German Tübingen 1845), all deferred witnesses.",
+  "Transylvanian use unsearched by the researcher; next sources: BL EAP1723 Gherla inventory (search snippets only; direct fetch HTTP 202 empty), Dumbrăveni Armenian Catholic library catalogue (mek.oszk.hu/11800/11869), Gherla ordinariate archive.",
+  "Lviv: San Lazzaro MS 669 images unseen; Mass section and correcting hands undated; Vienna Mekhitarist arm. 18 (Dashian 1895) unexamined.",
+  "1994: decree (Աւետիք 1994, p. 365) and revised book unseen; post-1994 original-language books unsearched beyond web queries.",
+  "Medieval: no manuscript inspected; Feulner 2001 and Winkler 2005/2011/2013 not acquired; Lambronac‘i 1177 date and Step‘anos commentary unexamined.",
+  "Venice 1686 lectionary and 1728 Dominican missal Greenstone copies not downloaded; Paris suppl. arm. 3 unlocated.",
+  "Access failures persisting: NLA OPAC (403), Handēs Amsōreay PDFs (403), Google Books jJIwAQAAMAAJ (not accessible), NLA 1901-1940 bibliography (403).",
+  "The packet's claim that the three national bibliographies were 'searched whole' is bounded by heading and subject-index searches (the 1568 omission came from indexing under Ժամագիրք); other headings remain unexamined."
+ ],
+ "blocking_items": [],
+ "discovered_unassigned_uses": [
+  {
+   "use": "Armenian Dominican (Fratres Unitores, Nakhchivan congregation) Latin-rite books in Armenian",
+   "evidence": "Macler 106 (1337 translation); USUARIUM 8323 (1728 printed missal)",
+   "suggested_owner": "Western Dominican (mendicant) lane; listed here as deferred translations."
+  },
+  {
+   "use": "Franciscan Roman missal in Armenian (1344)",
+   "evidence": "Macler 107",
+   "suggested_owner": "Western Roman or Franciscan lane; deferred translation."
+  },
+  {
+   "use": "Armenian Catholic low-Mass (թիւ պատարագ) form",
+   "evidence": "Bodleian Marshall Or. 106 (c. 1675); server books 1786-1889",
+   "suggested_owner": "This lane; a sub-use of the Armenian Catholic row rather than a separate Church."
+  }
+ ],
+ "next_sources": [
+  "Complete copy of Vienna 1879 including the 174-page ordinary (NLA Yerevan; Vienna Mekhitarists)",
+  "Google Books jJIwAQAAMAAJ (Vienna 1904) and Handēs Amsōreay 1904 no. 12 when not blocked",
+  "Աւետիք 1994, p. 365, and the 1994 revised book",
+  "Rome 1777 Khorhrdatetr and Ճաշոց copies (NLA, San Lazzaro, BnF)",
+  "Greenstone chashoc1686 and the 1728 Dominican missal (same plain-HTTP route that delivered the 1686 Khorhrdatetr)",
+  "Feulner 2001 and Winkler 2005, 2011, 2013 critical editions",
+  "Dashian 1895 Vienna manuscript catalogue (MS 18)",
+  "Transylvanian Armenian Catholic parish archives"
+ ],
+ "limits": [
+  "No research.json existed; everything here was rebuilt from retained files and re-checked. Bibliography entries are bibliographic evidence; only the 1858, 1879 and 1686 books and the four historical editions were opened.",
+  "Reprints, issues and complementary books (celebrant, deacons and clerks, low-Mass servers, lectionaries) are kept distinct and grouped into reprint families; none is counted as a revision without collation.",
+  "Armenian Catholic and Armenian Apostolic books are separated: Venice 1686, New Julfa 1641 and the 1706-1894 Apostolic printings are comparison witnesses only; the Venice 1686 lectionary's Catholic use rests only on the 1951 encyclopedia.",
+  "The arar.sci.am viewer labels the 1858 and 1879 editions 'Secured publication' although their PDFs downloaded without credentials from the page's own citation link. No credentials or circumvention were used, but the root should review whether these bytes may be retained at all; they are proposed restricted.",
+  "Vienna 1879 delivered scan lacks the 174-page ordinary; any claim about the 1879 ordinary text rests on the retrospective, not on this scan.",
+  "Unexamined: the 1568 Constantinople composite (cold-arm-1568) was not located under Խորհրդատետր in the 1512-1800 index; 1512-1800 index entries 599, 1020 and 1088 were not resolved because of OCR numbering errors (1020 is the undated low-Mass server book).",
+  "Stage dossier and coverage changes for the root (not edited here): the armenian dossier's vienna1879 stage can now cite the title page and the declaration of 6 January 1879 (armenian-src-vienna1879, PDF 5-7) and should record that the scan holds the lection part only; gap-1879 should add that the 1879 lectionary scan is acquired, so the 1 John 5:7 question can be checked at the Epiphany lections; the venice1686-state stage can cite armenian-src-venice1686; a Rome 1777 stage candidate exists (armenian-rome1777-khorhrdatetr).",
+  "New record fields: none outside fields already used by eastern [[records]] (approval_note, evidence_loci, holding, shelfmark, ancestry_status, acquisition_* are existing optional fields). New source rows use existing [[sources]] fields only.",
+  "Retention is deferred; proposed storage is per receipt. Tracked proposals (Xosrov 1869, Lambronac‘i 1847, Gatrčean 1897, Macler 1908, Bodleian 1918, Venice 1686 images) need the root's rights review."
+ ],
+ "coverage_placements": {
+  "armenian": {
+   "candidate_ids": [
+    "armenian-vienna1879",
+    "armenian-vienna1858",
+    "armenian-rome1777-khorhrdatetr",
+    "armenian-rome1777-chashots",
+    "armenian-venice1741",
+    "armenian-trieste1803",
+    "armenian-venice1809",
+    "armenian-venice-rome-exemplar-reprints",
+    "armenian-venice-celebrant-clerks",
+    "armenian-venice-kargh-dprutean",
+    "armenian-spasaworutiwn-1783-1803",
+    "armenian-lowmass-server-books",
+    "armenian-marshall106",
+    "armenian-vienna1877-deacons",
+    "armenian-vienna1879-deacons",
+    "armenian-vienna1904",
+    "armenian-catholic-1994"
+   ],
+   "ancestry_candidate_ids": [
+    "armenian-xosrov-commentary",
+    "armenian-lambronatsi-commentary",
+    "armenian-lyon-or15",
+    "armenian-munich-arm6",
+    "armenian-sanlazzaro-arm1411",
+    "armenian-gatrchean1897",
+    "armenian-meghapart1513",
+    "armenian-newjulfa1641",
+    "armenian-constantinople1568-cold"
+   ],
+   "deferred_or_origin_review_candidate_ids": [
+    "armenian-lviv-sanlazzaro669",
+    "armenian-vienna1932-cantor",
+    "armenian-venice1686-chashots",
+    "armenian-venice1690-italian",
+    "armenian-avedichian-italian",
+    "armenian-paris-dominican1337",
+    "armenian-paris-franciscan1344",
+    "armenian-dominican-missal1728"
+   ],
+   "fields_replaced": [
+    "missing_chronology"
+   ]
+  }
+ },
+ "unlinked_new_records": []
+}

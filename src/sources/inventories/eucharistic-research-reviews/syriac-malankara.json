@@ -1,0 +1,2736 @@
+{
+ "schema_version": 1,
+ "record_type": "eucharistic-research-lane-review",
+ "id": "syriac-malankara",
+ "title": "Full research pass review of the syriac malankara lane, 2026-10-19",
+ "lane": "syriac_malankara",
+ "side": "eastern",
+ "checked_on": "2026-10-19",
+ "reviewed_on": "2026-10-19",
+ "coverage_rows": [
+  "syriac",
+  "syro-malankara"
+ ],
+ "target_inventory": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
+ "semantics": "Project-created review metadata. Versions include witnesses, components, translations and unresolved leads; their count is not a count of substantive revisions. Acquisition does not establish transcription, collation, normative revision or local reception. No ancestry is asserted.",
+ "review_files": {
+  "storage": "untracked workspace scratch; pinned here by SHA-256 only",
+  "packet_sha256": "b387f577d059bc3ef625dcd43068a60790c1a7f9fc53eea5a74de7b63b0582e1",
+  "superseded_packet_sha256": null,
+  "cold_final_sha256": "5bef3ad298d333dc7c317bfe79dcb64267ff1c1a7230d7a8e8b58fdd93b25b8e",
+  "cold_verdict": "ready-with-corrections"
+ },
+ "integration": {
+  "new_sources": [
+   "syriac-malankara-src-bakoz-mass",
+   "syriac-malankara-src-bonn-diaconale1926",
+   "syriac-malankara-src-bonn-diaconicon-record",
+   "syriac-malankara-src-bonn-gospels1912",
+   "syriac-malankara-src-bonn-petit-manuel1923",
+   "syriac-malankara-src-brightman1896-lvi",
+   "syriac-malankara-src-bulletin-feb2007",
+   "syriac-malankara-src-calendar1877",
+   "syriac-malankara-src-calendar1887",
+   "syriac-malankara-src-cinii2015",
+   "syriac-malankara-src-diaconicon1905",
+   "syriac-malankara-src-enccatt-translation",
+   "syriac-malankara-src-english2012-scans",
+   "syriac-malankara-src-english2023",
+   "syriac-malankara-src-epl2-2012",
+   "syriac-malankara-src-german-bulletin2023",
+   "syriac-malankara-src-hayek-obituary",
+   "syriac-malankara-src-klampfl-notes",
+   "syriac-malankara-src-lugmayr2013",
+   "syriac-malankara-src-mdl-catalogue",
+   "syriac-malankara-src-musa-bibliography",
+   "syriac-malankara-src-paniker1991",
+   "syriac-malankara-src-pericopes1901",
+   "syriac-malankara-src-scher1909",
+   "syriac-malankara-src-seminary-catalogue",
+   "syriac-malankara-src-synod2006",
+   "syriac-malankara-src-synod2020",
+   "syriac-malankara-src-tiruvalla1960",
+   "syriac-malankara-src-tiruvalla1965",
+   "syriac-malankara-src-ziade-transcription"
+  ],
+  "new_records": [
+   "syriac-malankara-add14493",
+   "syriac-malankara-add17128",
+   "syriac-malankara-mal-1987-takso",
+   "syriac-malankara-mal-2007-qurbonokramam",
+   "syriac-malankara-mal-2020-kannada",
+   "syriac-malankara-mal-2022-german",
+   "syriac-malankara-mal-2023-english",
+   "syriac-malankara-mal-pampakuda-1886",
+   "syriac-malankara-mal-pampakuda-1931",
+   "syriac-malankara-mal-tiruvalla-1960",
+   "syriac-malankara-mal-tiruvalla-1965",
+   "syriac-malankara-mal-tiruvalla-ms30",
+   "syriac-malankara-mal-trivandrum-ms23",
+   "syriac-malankara-syr-beirut-1888",
+   "syriac-malankara-syr-beirut-1926",
+   "syriac-malankara-syr-charfe-1923-manuel",
+   "syriac-malankara-syr-hayek-1978",
+   "syriac-malankara-syr-hayek-1993",
+   "syriac-malankara-syr-hayek-2006",
+   "syriac-malankara-syr-mardin-1868-ms",
+   "syriac-malankara-syr-mosul-1868",
+   "syriac-malankara-syr-mosul-1877-calendar",
+   "syriac-malankara-syr-mosul-1887-calendar",
+   "syriac-malankara-syr-mosul-2015",
+   "syriac-malankara-syr-mosul-undated-reedition",
+   "syriac-malankara-syr-musa-2003",
+   "syriac-malankara-syr-sharfeh-1901-pericopes",
+   "syriac-malankara-syr-sharfeh-1905",
+   "syriac-malankara-syr-sharfeh-1912-gospels",
+   "syriac-malankara-syr-sharfeh-1925-epistles",
+   "syriac-malankara-syr-sharfeh-1931-booklet"
+  ],
+  "updates": [
+   "malankara-1966-taksa",
+   "malankara-2007-taksa",
+   "malankara-2012-takso",
+   "malankara-pampakuda-1934",
+   "syr-add14523-james",
+   "syr-add14690-anaphoras"
+  ],
+  "corrected_by_review": [
+   "syriac-malankara-mal-2007-qurbonokramam",
+   "syriac-malankara-mal-tiruvalla-1960",
+   "syriac-malankara-mal-tiruvalla-ms30",
+   "syriac-malankara-mal-trivandrum-ms23",
+   "syriac-malankara-src-bonn-diaconale1926",
+   "syriac-malankara-src-bonn-gospels1912",
+   "syriac-malankara-src-bonn-petit-manuel1923",
+   "syriac-malankara-src-calendar1887",
+   "syriac-malankara-src-diaconicon1905",
+   "syriac-malankara-src-klampfl-notes",
+   "syriac-malankara-src-pericopes1901",
+   "syriac-malankara-src-scher1909",
+   "syriac-malankara-syr-beirut-1888",
+   "syriac-malankara-syr-beirut-1926",
+   "syriac-malankara-syr-charfe-1923-manuel",
+   "syriac-malankara-syr-mosul-1887-calendar",
+   "syriac-malankara-syr-sharfeh-1901-pericopes",
+   "syriac-malankara-syr-sharfeh-1905",
+   "syriac-malankara-syr-sharfeh-1912-gospels"
+  ],
+  "added_by_review": [
+   "syriac-malankara-add14615-lower-cold",
+   "syriac-malankara-mal-kunnamkulam-1920-malayalam-cold",
+   "syriac-malankara-src-bl-add14615-cold",
+   "syriac-malankara-src-mdl-thaksa1920-cold"
+  ],
+  "rejected_by_review": []
+ },
+ "uses": [
+  {
+   "id": "syriac",
+   "coverage_row": "syriac",
+   "label": "Syriac Catholic Church",
+   "disposition": "researched-with-explicit-gaps",
+   "finding": "Celebrant missals 1843 and 1922 remain the documented altar-book states. The auxiliary deacon line is now labelled 1868, 1881, an undated reedition, 1905 (acquired; preface describes a manuscript-corrected text and a new propers part), 1926 and a reported 1931 booklet, with a dated 1868 Mardin manuscript and a Beirut 1888 minister's book beside it. Complementary calendars (1877, 1887), pericope table (1901) and lectionaries (1912, 1925) are labelled. Post-1922 books (Hayek 1978, 1993, 2006; Musa 2003; Mosul 2015) are named from catalogues and community bibliographies only.",
+   "limit": "No post-1922 celebrant book has been seen, so a reported 1978 order change is unverified; pre-1843 diocesan manuscripts are not enumerated.",
+   "next_sources": [
+    "Patriarchal library and seminary press lists at Sharfeh",
+    "Armalet, Catalogue des manuscrits de Charfet (1937)",
+    "Coakley and Taylor, Syriac Books Printed at the Dominican Press, Mosul (2009)",
+    "The 1978 Hayek order of the Mass and the 2015 Mosul book themselves"
+   ],
+   "review_disposition": "not-separately-disposed",
+   "review_remaining_gap": null
+  },
+  {
+   "id": "syro-malankara",
+   "coverage_row": "syro-malankara",
+   "label": "Syro-Malankara Catholic Church",
+   "disposition": "researched-with-explicit-gaps",
+   "finding": "Pampakuda 1886 and 1931 non-Catholic books are labelled with secondary reception reports; the 1934 two-anaphora book gains a reported institution-narrative change; Catholic-approved Syriac Xystus Taksa printings of 1960 and 1965 were acquired; the 1987 nine-anaphora book is reported; the 2006 synodal approval gives primary-described changes for the Malayalam Takso released in 2007, with a separate Qurbonokramam published by February 2007. Vernacular translations (1966 Malayalam, 2012 and 2023 English, 2020 Kannada, 2022 German, earlier English and German) are labelled as deferred.",
+   "limit": "The 1934, 1987 and 2007 books themselves are unseen; Catholic reception of the 1886 and 1931 books rests on secondary statements; the Syro-Malankara and Syriac Catholic uses are kept separate except where a manuscript copy from Sharfeh is attested.",
+   "next_sources": [
+    "Malankara Catholic archives at Trivandrum and Tiruvalla; van der Ploeg, The Christians of St. Thomas in South India and their Syriac Manuscripts (1983)",
+    "Madey, 'Die liturgischen Bücher der Syro-Malankara-Kirche', OS 22 (1973)",
+    "Printed 2007 Malayalam Takso and Thukasa",
+    "SEERI library, Kottayam"
+   ],
+   "review_disposition": "not-separately-disposed",
+   "review_remaining_gap": null
+  }
+ ],
+ "searches": [
+  {
+   "repository": "ULB Bonn digital collections, Goussen Syrian and Arabic groups",
+   "queries": [
+    "topic/titles/17267",
+    "topic/titles/16475",
+    "Šumlājā",
+    "Calendarium Syrorum",
+    "Evangelijon 1912"
+   ],
+   "url": "https://digitale-sammlungen.ulb.uni-bonn.de/topic/titles/17267",
+   "checked_on": "2026-10-19",
+   "outcome": "Five Syriac Catholic Eucharistic-related books downloaded (1877, 1887, 1901, 1905 and the Chaldean 1900 book); 1912 Gospel volume, 1926 Diakonale and 1923 manuel identified from title records. Earlier listing requests returned empty pages; repeated requests in this pass returned the full group.",
+   "extent_examined": "Syrian-group listing pages offsets 1, 101 and 201 (about 254 titles) parsed for Eucharistic titles; nine title records read.",
+   "unexamined_range": "Arabic group (461 titles) beyond the titles named; the General group."
+  },
+  {
+   "repository": "Dictionnaire de théologie catholique 14.2 (1941), Wikisource transcription",
+   "queries": [
+    "Le diaconicon",
+    "1905 Charfé",
+    "évangéliaire 1912",
+    "Calendarium 1877"
+   ],
+   "url": "https://fr.wikisource.org/wiki/Dictionnaire_de_th%C3%A9ologie_catholique/SYRIENNE_%28%C3%89glise%29",
+   "checked_on": "2026-10-19",
+   "outcome": "Ziadé's book list confirmed for the diaconicon, lectionary and calendar lines.",
+   "extent_examined": "Liturgical-books section of the article (transcription).",
+   "unexamined_range": "Page images beyond column 3026."
+  },
+  {
+   "repository": "Malankara Digital Library",
+   "queries": [
+    "Taksa",
+    "Qurbana",
+    "Qurbono",
+    "1934",
+    "1965",
+    "Syriac and Malayalam"
+   ],
+   "url": "https://www.malankaralibrary.com/catalog-index",
+   "checked_on": "2026-10-19",
+   "outcome": "1960, 1965 and 1966 Taksa scans, 2012 English partial scans, 2023 English book and Paniker 1991 acquired; no 1934 or 2007 Takso found.",
+   "extent_examined": "Catalogue index page and item pages for the acquired books.",
+   "unexamined_range": "Mini-library 'Liturgical texts' listing in full; the 1920 Qurbana Thaksa item; Hindi, Odia and Kannada items."
+  },
+  {
+   "repository": "Syro-Malankara Catholic Church, Malankara: Synodal Acts and Voice",
+   "queries": [
+    "Vol_2_No_2",
+    "Vol_2_No_3",
+    "Vol_3_No_2",
+    "Report_24_HES",
+    "Takso",
+    "Qurbonokramam"
+   ],
+   "url": "https://malankaracatholicchurch.in/admin/pdf/Vol_2_No_2.pdf",
+   "checked_on": "2026-10-19",
+   "outcome": "2006 approval report, February 2007 letter, October 2007 release and 2020 Kannada release read.",
+   "extent_examined": "Four whole PDFs, searched in their text layers.",
+   "unexamined_range": "Other issues of the bulletin (vol. 1, vol. 2 no. 1, vol. 3 no. 1 and later), Thukasa approval."
+  },
+  {
+   "repository": "Exarchate and eparchy circulars, USA",
+   "queries": [
+    "EPL-2-2012",
+    "EPL-3-2012",
+    "Takso"
+   ],
+   "url": "https://mccna.org/sites/default/files/epl/",
+   "checked_on": "2026-10-19",
+   "outcome": "Two 2012 circulars on the English Takso and people's book read.",
+   "extent_examined": "Two circulars.",
+   "unexamined_range": "Other circulars 2010 to 2023."
+  },
+  {
+   "repository": "Syriac Anaphoras project (Klampfl)",
+   "queries": [
+    "feulner_1",
+    "liste_anaphoren_1",
+    "desreumaux_1",
+    "katalog_britmus_1"
+   ],
+   "url": "https://syriac-anaphoras.org/",
+   "checked_on": "2026-10-19",
+   "outcome": "Edition list, manuscript leads (Trivandrum MS 23, Tiruvalla MS 30, Harrak 6470) and the Wright excerpt.",
+   "extent_examined": "Three PDFs and one HTML excerpt, searched in text.",
+   "unexamined_range": "Other catalogue excerpts on the site (Charfet, Vatican, Paris, HMML)."
+  },
+  {
+   "repository": "Journal asiatique 1909 (Scher, Musée Borgia)",
+   "queries": [
+    "Service de la messe",
+    "Syriens catholiques"
+   ],
+   "url": "https://www.tertullian.org/rpearse/pdf.articles/scher_borgia_catalogue.pdf",
+   "checked_on": "2026-10-19",
+   "outcome": "Entry 127, Mardin 1868 manuscript, read.",
+   "extent_examined": "Printed 275 to 278.",
+   "unexamined_range": "Remaining entries of Scher's catalogue not checked for Syriac Catholic Eucharistic manuscripts."
+  },
+  {
+   "repository": "Brightman 1896, canonical scan",
+   "queries": [
+    "Liber ministerii",
+    "Uniat"
+   ],
+   "url": "https://archive.org/details/b29353233",
+   "checked_on": "2026-10-19",
+   "outcome": "Beirut 1888 minister's book confirmed on p. lvi.",
+   "extent_examined": "PDF 50 to 66 text layer; PDF 58 image.",
+   "unexamined_range": "None for this question."
+  },
+  {
+   "repository": "Arabic web and library catalogues (Ghazir seminary, CiNii, community bibliographies)",
+   "queries": [
+    "رتبة القداس السريان الكاثوليك",
+    "حايك القداس 1978",
+    "كتاب القراءات حايك 2006",
+    "رتبة القداس السرياني 2003"
+   ],
+   "url": "https://ci.nii.ac.jp/ncid/BC11052671?l=en",
+   "checked_on": "2026-10-19",
+   "outcome": "2003, 2006 and 2015 books confirmed in catalogues or bibliographies; the Hayek obituary and Mass explanation pages returned HTTP 404 or 520.",
+   "extent_examined": "One catalogue page each; one bibliography page.",
+   "unexamined_range": "Syriac Catholic patriarchate publication lists; Iraqi and Lebanese national libraries; the OCLC union catalogue."
+  },
+  {
+   "repository": "Enciclopedia Cattolica, 'Libri liturgici' (English web rendering)",
+   "queries": [
+    "Syro-Western rite",
+    "1931",
+    "Pampakuda"
+   ],
+   "url": "https://azioneromana.com/article/libri-liturgici",
+   "checked_on": "2026-10-19",
+   "outcome": "1931 server booklet, 1912 and 1925 lectionaries and the 1934 Malankara additions reported.",
+   "extent_examined": "Section VII.3 of the rendering.",
+   "unexamined_range": "The Italian printed article."
+  }
+ ],
+ "versions": [
+  {
+   "id": "syr-rome-1843",
+   "label": "Missale syriacum juxta ritum ecclesiae Antiochenae Syrorum, Rome: Propaganda Fide, 1843",
+   "tradition_or_use": "Syriac Catholic Church",
+   "date_label": "1843 (patriarchal attestation 31 August 1840)",
+   "date_role": "publication-year-original-title",
+   "record_class": "existing-candidate-disposition",
+   "distinctness_basis": "Retained canonical celebrant missal; seven anaphoras checked by the earlier pass. No new evidence in this lane.",
+   "existing_candidate_ids": [
+    "syr-rome-1843"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Full native-text collation against 1922 remains open (stage gap west-syriac-stages-rome1843-collation).",
+   "inventory_ids": [
+    "syr-rome-1843",
+    "syr-rome-1843"
+   ]
+  },
+  {
+   "id": "syr-mosul-1881",
+   "label": "Ketābā de-tešmeštā de-qurābā ... (Service de la Messe selon le rit syrien, nouvelle édition), Mosul 1881",
+   "tradition_or_use": "Syriac Catholic Church",
+   "date_label": "1881 (approval 8 September 1880)",
+   "date_role": "publication-year",
+   "record_class": "existing-candidate-disposition",
+   "distinctness_basis": "Retained auxiliary deacon and server book; it is the second edition of the 1868 Mosul book and is now flanked by the separately labelled 1868, undated, 1905 and 1926 auxiliary books.",
+   "existing_candidate_ids": [
+    "syr-mosul-1881"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Comparison of the 1881 ordinary with the 1905 Sharfeh book has not been made.",
+   "inventory_ids": [
+    "syr-mosul-1881",
+    "syr-mosul-1881"
+   ]
+  },
+  {
+   "id": "syr-1922",
+   "label": "Missale iuxta ritum Ecclesiae Apostolicae Antiochenae Syrorum auctoritate recognitum, Sharfeh 1922",
+   "tradition_or_use": "Syriac Catholic Church",
+   "date_label": "1922 (patriarchal decree 8 December 1922)",
+   "date_role": "publication-year",
+   "record_class": "existing-candidate-disposition",
+   "distinctness_basis": "Retained revised celebrant missal. This pass re-read the reviewer's image of printed p. 13: its footnote cites British Museum Add. 17128 for the older Twelve Apostles commemorations, which supports the new Add. 17128 comparison record.",
+   "existing_candidate_ids": [
+    "syr-1922"
+   ],
+   "acquisition_ids": [],
+   "unresolved": "Later Syriac Catholic celebrant books (1978 and after) remain unacquired, so 1922 is not shown as final.",
+   "inventory_ids": [
+    "syr-1922",
+    "syr-1922"
+   ]
+  },
+  {
+   "id": "syriac-malankara-syr-mosul-1868",
+   "label": "Service de la messe privée selon le rite syrien, Mosul 1868 (Ziadé's title; first trial diaconicon)",
+   "tradition_or_use": "Syriac Catholic Church",
+   "date_label": "1868",
+   "date_role": "publication-year-reported",
+   "record_class": "auxiliary-minister-book",
+   "distinctness_basis": "First edition of the Mosul deacon and server book of which 1881 is the 'nouvelle édition'; a distinct printing whose textual difference from 1881 is unproved.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "No copy located; Coakley and Taylor's Dominican-press bibliography (2009) was not examined.",
+   "inventory_ids": [
+    "syriac-malankara-syr-mosul-1868"
+   ]
+  },
+  {
+   "id": "syriac-malankara-syr-mosul-undated-reedition",
+   "label": "Patriarchally approved undated reedition of the Mosul Service de la messe",
+   "tradition_or_use": "Syriac Catholic Church",
+   "date_label": "undated; after 1881 by Ziadé's sequence",
+   "date_role": "undated-reprint-reported",
+   "record_class": "reprint-witness",
+   "distinctness_basis": "Named by Ziadé as a further reedition approved by the patriarch; no year, place or textual change is reported, so it stays a reprint witness without chronology.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Year, imprint and identity unknown; it might coincide with another listed printing.",
+   "inventory_ids": [
+    "syriac-malankara-syr-mosul-undated-reedition"
+   ]
+  },
+  {
+   "id": "syriac-malankara-syr-mardin-1868-ms",
+   "label": "Borgia Syriac MS 127 (Scher's numbering): Service de la messe selon le rite des Syriens catholiques, edited by Mgr David, written at Mardin in 1868",
+   "tradition_or_use": "Syriac Catholic Church",
+   "date_label": "1868 (copying date)",
+   "date_role": "manuscript-date",
+   "record_class": "manuscript-witness",
+   "distinctness_basis": "A dated Catholic manuscript of the Mass service, Syriac text with Arabic rubrics, 519 pages; its relation to the Mosul 1868 print is unknown.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-scher1909"
+   ],
+   "unresolved": "Present Vatican shelfmark and contents unchecked; whether it is a deacon book or a celebrant book is not stated.",
+   "inventory_ids": [
+    "syriac-malankara-syr-mardin-1868-ms"
+   ]
+  },
+  {
+   "id": "syriac-malankara-syr-beirut-1888",
+   "label": "Liber ministerii (Syriac title rendered by Brightman as 'the book of the clerks used in the ecclesiastical ministries'), Beirut 1888, Syriac only",
+   "tradition_or_use": "Syriac Catholic Church",
+   "date_label": "1888",
+   "date_role": "publication-year-reported",
+   "record_class": "auxiliary-minister-book",
+   "distinctness_basis": "Listed by Brightman 1896 under the Syrian Uniat books as a separate minister's book; not identifiable with the Mosul line or the 1905 Sharfeh book on present evidence.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Book unlocated; a pencil note in the Bonn copy of the 1905 book names a first edition of 1884 (Beirut, Jesuit press, 44 pages), which may or may not be related.",
+   "inventory_ids": [
+    "syriac-malankara-syr-beirut-1888"
+   ]
+  },
+  {
+   "id": "syriac-malankara-syr-sharfeh-1905",
+   "label": "Kitāb khidmat al-quddās ḥasab ṭaqs al-kanīsa al-suryāniyya al-anṭākiyya (Šumlājā de-qurābā), collected and arranged by Patriarch Ignatius Ephrem II Rahmani, Sharfeh 1905",
+   "tradition_or_use": "Syriac Catholic Church",
+   "date_label": "1905 (printed title); Bonn catalogue gives 1912",
+   "date_role": "publication-year-on-title",
+   "record_class": "auxiliary-minister-book",
+   "distinctness_basis": "Ziadé's first complete diaconicon. Its preface describes concrete changes: the deacon's text corrected against old manuscripts, Arabic kept only for the Creed, Trisagion, diptychs, litanies and Lord's Prayer, a new second part with the variable chants of Sundays and feasts, appended Arabic fraction hymns, and a patriarchal order to follow the book.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-diaconicon1905",
+    "syriac-malankara-acq-bonn-record-3724368"
+   ],
+   "unresolved": "Preface claims are the editor's; no collation with 1881. The 1912 catalogue year is kept as a catalogue role only.",
+   "inventory_ids": [
+    "syriac-malankara-syr-sharfeh-1905"
+   ]
+  },
+  {
+   "id": "syriac-malankara-syr-beirut-1926",
+   "label": "Šumlājā de-qurābā āk ʿējādā de-ʿidtā qaddīštā d-Antiukājā de-Surjājē, Beirut: Syriac press, 1926 (63 pages)",
+   "tradition_or_use": "Syriac Catholic Church",
+   "date_label": "1926",
+   "date_role": "catalogue-publication-date",
+   "record_class": "auxiliary-minister-book",
+   "distinctness_basis": "A short (63-page) Syriac and Arabic deacon book catalogued separately from the 392-page 1905 book; contents unseen.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-bonn-record-4156832"
+   ],
+   "unresolved": "Not downloaded (13.87 MB public-domain scan offered). Relation to 1905 and to the 1931 server booklet unknown.",
+   "inventory_ids": [
+    "syriac-malankara-syr-beirut-1926"
+   ]
+  },
+  {
+   "id": "syriac-malankara-syr-sharfeh-1931-booklet",
+   "label": "Celebration of the oblation (Sharfeh 1931), deacon book recast as a server's booklet",
+   "tradition_or_use": "Syriac Catholic Church",
+   "date_label": "1931",
+   "date_role": "publication-year-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Reported by the Enciclopedia Cattolica (via an English web rendering) as a reduced server booklet after the fuller 1905 book.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-enccatt-translation"
+   ],
+   "unresolved": "Primary title and extent unseen; could be confused with the 1926 Beirut book. Unexamined range: the Italian article itself and the Sharfeh press list.",
+   "inventory_ids": [
+    "syriac-malankara-syr-sharfeh-1931-booklet"
+   ]
+  },
+  {
+   "id": "syriac-malankara-syr-mosul-1877-calendar",
+   "label": "Calendarium ad usum dioeceseos Mausiliensis Syrorum, approved by Archbishop Cyril Behnam Benni, Mosul 1877",
+   "tradition_or_use": "Syriac Catholic archdiocese of Mosul",
+   "date_label": "1877",
+   "date_role": "publication-year-on-title",
+   "record_class": "complementary-calendar-and-lection-table",
+   "distinctness_basis": "Diocesan calendar whose appendix includes a table of Mass readings (seen at printed 206), the earliest printed Syriac Catholic Mass-pericope table found here.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-calendar1877",
+    "syriac-malankara-acq-bonn-record-725112"
+   ],
+   "unresolved": "Table not mapped or compared with 1901.",
+   "inventory_ids": [
+    "syriac-malankara-syr-mosul-1877-calendar"
+   ]
+  },
+  {
+   "id": "syriac-malankara-syr-mosul-1887-calendar",
+   "label": "Calendarium juxta ritum Ecclesiae Antiochenae Syrorum, Mosul 1887",
+   "tradition_or_use": "Syriac Catholic Church",
+   "date_label": "1887",
+   "date_role": "publication-year-on-title",
+   "record_class": "complementary-calendar",
+   "distinctness_basis": "A second, rite-wide calendar title distinct from the 1877 diocesan calendar; Ziadé lists both.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-calendar1887",
+    "syriac-malankara-acq-bonn-record-598417"
+   ],
+   "unresolved": "Eucharistic content (readings, feast rank) not inspected.",
+   "inventory_ids": [
+    "syriac-malankara-syr-mosul-1887-calendar"
+   ]
+  },
+  {
+   "id": "syriac-malankara-syr-sharfeh-1901-pericopes",
+   "label": "Qūdīqūs of the readings of the Qurbono (Epistle and Gospel pericopes at Mass), Sharfeh: patriarchal press, 1901",
+   "tradition_or_use": "Syriac Catholic Church",
+   "date_label": "1901",
+   "date_role": "catalogue-publication-date",
+   "record_class": "complementary-lectionary-index",
+   "distinctness_basis": "A separate printed table of Mass pericopes for the year, beginning with the Sundays of Consecration and Renewal of the Church.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-pericopes1901",
+    "syriac-malankara-acq-bonn-record-3207188"
+   ],
+   "unresolved": "Imprint year from the catalogue; not compared with the 1877 table or the 1912 Gospel volume.",
+   "inventory_ids": [
+    "syriac-malankara-syr-sharfeh-1901-pericopes"
+   ]
+  },
+  {
+   "id": "syriac-malankara-syr-sharfeh-1912-gospels",
+   "label": "Ketābā de-qerjānē ... d-Evangelijon qeddīšā, part 1, Sharfeh: patriarchal press, 1912",
+   "tradition_or_use": "Syriac Catholic Church",
+   "date_label": "1912",
+   "date_role": "catalogue-publication-date",
+   "record_class": "complementary-lectionary",
+   "distinctness_basis": "First Gospel volume of the Mass lectionary (Ziadé; Bonn note 'Lesungen der Messe'); a complementary volume, not a missal state.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-bonn-record-3077091"
+   ],
+   "unresolved": "Not downloaded (85.81 MB offered); further Gospel volumes unknown.",
+   "inventory_ids": [
+    "syriac-malankara-syr-sharfeh-1912-gospels"
+   ]
+  },
+  {
+   "id": "syriac-malankara-syr-sharfeh-1925-epistles",
+   "label": "Sharfeh epistolary (Book of the Epistles for Mass), 1925",
+   "tradition_or_use": "Syriac Catholic Church",
+   "date_label": "1925",
+   "date_role": "publication-year-reported",
+   "record_class": "complementary-lectionary",
+   "distinctness_basis": "Separate epistle volume complementary to the 1912 Gospel volume.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "No catalogue record or copy located in this pass.",
+   "inventory_ids": [
+    "syriac-malankara-syr-sharfeh-1925-epistles"
+   ]
+  },
+  {
+   "id": "syriac-malankara-syr-charfe-1923-manuel",
+   "label": "Petit manuel de la messe syrienne, published by order of Patriarch Rahmani, Charfé 1923",
+   "tradition_or_use": "Syriac Catholic Church",
+   "date_label": "1923",
+   "date_role": "catalogue-publication-date",
+   "record_class": "deferred-vernacular-manual",
+   "distinctness_basis": "French-language manual issued after the 1922 missal; likely a lay explanation or translation, which the project defers.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-bonn-record-4268770"
+   ],
+   "unresolved": "Contents unseen (23.18 MB offered).",
+   "inventory_ids": [
+    "syriac-malankara-syr-charfe-1923-manuel"
+   ]
+  },
+  {
+   "id": "syriac-malankara-syr-hayek-1978",
+   "label": "Kitāb rutbat al-quddās ḥasab ṭaqs al-kanīsa al-suryāniyya al-kāthūlīkiyya (Patriarch Ignatius Antoine II Hayek), 1978",
+   "tradition_or_use": "Syriac Catholic Church",
+   "date_label": "1978 (reported publication and use)",
+   "date_role": "publication-year-reported",
+   "record_class": "reported-celebrant-book-revision",
+   "distinctness_basis": "Reported as the order of the Mass in use since 1978, with the two preparatory services reduced to one service of preparing the offerings: a reported order change after 1922.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-hayek-obituary",
+    "syriac-malankara-acq-bakoz-mass"
+   ],
+   "unresolved": "Both community pages were unreachable in this pass; book, language mix and approval act unseen.",
+   "inventory_ids": [
+    "syriac-malankara-syr-hayek-1978"
+   ]
+  },
+  {
+   "id": "syriac-malankara-syr-hayek-1972",
+   "label": "Kitāb al-khidam al-kahnūtiyya (Hayek), 1972",
+   "tradition_or_use": "Syriac Catholic Church",
+   "date_label": "1972",
+   "date_role": "publication-year-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Priestly services book; Eucharistic content not established, likely ritual.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-hayek-obituary"
+   ],
+   "unresolved": "Scope unknown; kept as a lead only.",
+   "inventory_ids": []
+  },
+  {
+   "id": "syriac-malankara-syr-hayek-1993",
+   "label": "Al-Injīl al-muqaddas wa-kitāb al-qirāʾāt fī al-quddās (Hayek), 1993",
+   "tradition_or_use": "Syriac Catholic Church",
+   "date_label": "1993",
+   "date_role": "publication-year-reported",
+   "record_class": "complementary-lectionary",
+   "distinctness_basis": "Reported Gospel and readings book for Mass.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-hayek-obituary"
+   ],
+   "unresolved": "Book unseen; language and volumes unknown.",
+   "inventory_ids": [
+    "syriac-malankara-syr-hayek-1993"
+   ]
+  },
+  {
+   "id": "syriac-malankara-syr-hayek-2006",
+   "label": "Kitāb al-qirāʾāt min rasāʾil Mār Būlus al-rasūl fī al-quddās (Hayek), first edition, Beirut: Maṭbaʿat Tūmā, 2006, 414 pages",
+   "tradition_or_use": "Syriac Catholic Church",
+   "date_label": "2006",
+   "date_role": "catalogue-publication-date",
+   "record_class": "complementary-lectionary",
+   "distinctness_basis": "Arabic Pauline lectionary for Mass; a vernacular reading book, so its history is deferred.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-seminary-catalogue"
+   ],
+   "unresolved": "Book unseen.",
+   "inventory_ids": [
+    "syriac-malankara-syr-hayek-2006"
+   ]
+  },
+  {
+   "id": "syriac-malankara-syr-musa-2003",
+   "label": "Rutbat al-quddās al-suryānī, prepared by George Qas Musa, Baghdad 2003",
+   "tradition_or_use": "Syriac Catholic Church",
+   "date_label": "2003",
+   "date_role": "publication-year-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Named service book of the order of the Syriac Mass (Iraq).",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-musa-bibliography"
+   ],
+   "unresolved": "Book unseen; language, approval and relation to 1978 and 2015 unknown.",
+   "inventory_ids": [
+    "syriac-malankara-syr-musa-2003"
+   ]
+  },
+  {
+   "id": "syriac-malankara-syr-mosul-2015",
+   "label": "Rutbat al-Quddās bi-ḥasab ṭaqs al-Kanīsah al-Suryānīyah al-Anṭākīyah, Mosul: Syriac Catholic archdiocese, 2015, 208 p.",
+   "tradition_or_use": "Syriac Catholic archdiocese of Mosul",
+   "date_label": "2015",
+   "date_role": "catalogue-publication-date",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Arabic and Syriac order of the Mass issued by a Catholic archdiocese.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-cinii2015"
+   ],
+   "unresolved": "Book unseen; whether original-language or translated content, and its relation to 2003, unknown.",
+   "inventory_ids": [
+    "syriac-malankara-syr-mosul-2015"
+   ]
+  },
+  {
+   "id": "syriac-malankara-syr-harrak-6470",
+   "label": "Liturgy of the Mass according to the Syriac Catholic rite (Iraqi Department of Antiquities manuscript no. 6470, Harrak 2011)",
+   "tradition_or_use": "Syriac Catholic Church",
+   "date_label": "undated",
+   "date_role": "manuscript-attestation-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "A catalogued Syriac Catholic Mass manuscript known only from a catalogue line.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-liste-anaphoren"
+   ],
+   "unresolved": "No date or extent; Harrak's catalogue not examined.",
+   "inventory_ids": []
+  },
+  {
+   "id": "syriac-malankara-syr-premodern-mss",
+   "label": "Pre-1843 Syriac Catholic diocesan manuscript missals (Ziadé: variable from diocese to diocese until 1843)",
+   "tradition_or_use": "Syriac Catholic Church",
+   "date_label": "before 1843",
+   "date_role": "manuscript-strata-unresolved",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "Known to exist as a class; no individual Catholic manuscript missal before 1843 is identified here.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Unexamined: Armalet's Charfet catalogue (1937), Vatican Borgia and other Vatican fonds, Paris, Damascus and HMML.",
+   "inventory_ids": []
+  },
+  {
+   "id": "syr-add14523-james",
+   "label": "British Library Add. 14523 ff. 1-7: James fragments (Wright 256)",
+   "tradition_or_use": "Shared West Syriac ancestry",
+   "date_label": "eighth or ninth century",
+   "date_role": "manuscript-copying-approximate-range",
+   "record_class": "existing-candidate-disposition",
+   "distinctness_basis": "Retained shared comparison witness; ff. 8 (Wright 257, eighth or ninth century) and 9 (Wright 258, tenth century) are separate catalogue entries of the same shelfmark and are not covered by this record.",
+   "existing_candidate_ids": [
+    "syr-add14523-james"
+   ],
+   "acquisition_ids": [
+    "syriac-malankara-acq-wright-excerpt"
+   ],
+   "unresolved": "Catholic reception unproved; manuscript images not inspected.",
+   "inventory_ids": [
+    "syr-add14523-james",
+    "syr-add14523-james"
+   ]
+  },
+  {
+   "id": "syriac-malankara-add14523-f8-f9",
+   "label": "British Library Add. 14523 f. 8 (Wright 257) and f. 9 (Wright 258): portions of the anaphora of St James",
+   "tradition_or_use": "Shared West Syriac ancestry",
+   "date_label": "f. 8 eighth or ninth century; f. 9 tenth century",
+   "date_role": "manuscript-copying-approximate-range",
+   "record_class": "shared-ancestry-manuscript-layer",
+   "distinctness_basis": "Separately catalogued leaves of the composite shelfmark; recorded as a qualification of syr-add14523-james rather than a new row.",
+   "existing_candidate_ids": [
+    "syr-add14523-james"
+   ],
+   "acquisition_ids": [
+    "syriac-malankara-acq-wright-excerpt"
+   ],
+   "unresolved": "Textual difference from ff. 1-7 unproved.",
+   "inventory_ids": [
+    "syr-add14523-james"
+   ]
+  },
+  {
+   "id": "syr-add14690-anaphoras",
+   "label": "British Library Add. 14690: collection of anaphoras (Wright 261)",
+   "tradition_or_use": "Shared West Syriac ancestry",
+   "date_label": "1182 (A. Gr. 1493)",
+   "date_role": "main-manuscript-copying-date",
+   "record_class": "existing-candidate-disposition",
+   "distinctness_basis": "Retained shared comparison collection; Wright gives 180 leaves, dated A. Gr. 1493 (AD 1182).",
+   "existing_candidate_ids": [
+    "syr-add14690-anaphoras"
+   ],
+   "acquisition_ids": [
+    "syriac-malankara-acq-wright-excerpt"
+   ],
+   "unresolved": "Catholic reception unproved.",
+   "inventory_ids": [
+    "syr-add14690-anaphoras",
+    "syr-add14690-anaphoras"
+   ]
+  },
+  {
+   "id": "syriac-malankara-add17128",
+   "label": "British Library Add. 17128: six anaphoras with year-cycle sedras (Wright 290), cited by Rahmani 1922",
+   "tradition_or_use": "Shared West Syriac ancestry; editorial use by the Syriac Catholic 1922 missal",
+   "date_label": "tenth or eleventh century (main hand; ff. 1-10, 66-70 and 183-192 later)",
+   "date_role": "manuscript-copying-approximate-range",
+   "record_class": "shared-ancestry-manuscript",
+   "distinctness_basis": "Rahmani's 1922 missal (printed 13, note 1) names 'Mus. Br. add. 17128' as an older codex for the Twelve Apostles commemorations: documented editorial use, not continuous Catholic use.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-wright-excerpt"
+   ],
+   "unresolved": "Wright entry 290 known from the reviewer's census of the excerpt; later layers not dated individually.",
+   "inventory_ids": [
+    "syriac-malankara-add17128"
+   ]
+  },
+  {
+   "id": "syriac-malankara-add14493",
+   "label": "British Library Add. 14493 (Wright 286): anaphoras including James in the recension of Jacob of Edessa and a revised Severus chalice blessing",
+   "tradition_or_use": "Shared West Syriac ancestry",
+   "date_label": "tenth century",
+   "date_role": "manuscript-copying-approximate-range",
+   "record_class": "shared-ancestry-manuscript",
+   "distinctness_basis": "Catalogue names a revised James recension, a distinct textual stratum worth comparison.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-wright-excerpt"
+   ],
+   "unresolved": "Attribution of the revision is the catalogue's; later additions in the volume not dated; Catholic reception unproved.",
+   "inventory_ids": [
+    "syriac-malankara-add14493"
+   ]
+  },
+  {
+   "id": "syriac-malankara-add14615-lower",
+   "label": "British Library Add. 14615 lower text: James and sedras",
+   "tradition_or_use": "Shared West Syriac ancestry",
+   "date_label": "eighth century (catalogue estimate)",
+   "date_role": "manuscript-palaeographic-copy-date",
+   "record_class": "shared-ancestry-manuscript-layer",
+   "distinctness_basis": "Palimpsest undertext named by the reviewer; the 1950 critical edition date is not the text-state date.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [],
+   "unresolved": "Not checked in this pass: the British Library Syriac site returned HTTP 403 to the reviewer; Wright no. 824 not examined.",
+   "inventory_ids": []
+  },
+  {
+   "id": "syriac-malankara-add14693-strata",
+   "label": "British Library Add. 14693: two collections (ff. 1-141, Wright 272; ff. 142-184, Wright 274)",
+   "tradition_or_use": "Shared West Syriac ancestry",
+   "date_label": "thirteenth or fourteenth century; fourteenth century",
+   "date_role": "manuscript-copying-approximate-range",
+   "record_class": "shared-ancestry-manuscript-layer",
+   "distinctness_basis": "Two strata of one codex with common order, anaphoras and sedras.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-wright-excerpt"
+   ],
+   "unresolved": "Recorded at packet level only; the rest of the reviewer's Wright census (entries 255 to 305) is likewise unpromoted.",
+   "inventory_ids": []
+  },
+  {
+   "id": "syriac-malankara-mal-pampakuda-1886",
+   "label": "Pampakuda Syriac missal (anaphora book), first edition, 1886",
+   "tradition_or_use": "Malankara Syriac tradition before and after the 1930 reunion",
+   "date_label": "1886",
+   "date_role": "publication-year-reported",
+   "record_class": "shared-book-reported-reception",
+   "distinctness_basis": "Non-Catholic Pampakuda edition that Madey (via Lugmayr 2013) says the Syro-Malankarese continued to use after 1930.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-lugmayr2013"
+   ],
+   "unresolved": "Book unseen; reception rests on secondary statements, not on a Catholic act.",
+   "inventory_ids": [
+    "syriac-malankara-mal-pampakuda-1886"
+   ]
+  },
+  {
+   "id": "syriac-malankara-mal-pampakuda-1931",
+   "label": "Pampakuda Syriac missal, new edition, 1931 (16 anaphoras per Lugmayr; 18 per the Enciclopedia Cattolica)",
+   "tradition_or_use": "Malankara Syriac tradition before and after the 1930 reunion",
+   "date_label": "1931",
+   "date_role": "publication-year-reported",
+   "record_class": "shared-book-reported-reception",
+   "distinctness_basis": "Non-Catholic new edition with a larger anaphora repertoire, reported as used by the Syro-Malankarese.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-lugmayr2013",
+    "syriac-malankara-acq-enccatt-translation"
+   ],
+   "unresolved": "Anaphora count conflicts (16 versus 18); book unseen; reception secondary.",
+   "inventory_ids": [
+    "syriac-malankara-mal-pampakuda-1931"
+   ]
+  },
+  {
+   "id": "malankara-pampakuda-1934",
+   "label": "Pampakuda Syro-Malankara missal, 1934 (two anaphoras)",
+   "tradition_or_use": "Syro-Malankara Catholic Church",
+   "date_label": "1934",
+   "date_role": "publication-year-reported",
+   "record_class": "existing-candidate-disposition",
+   "distinctness_basis": "Retained. New secondary evidence: Lugmayr says Mar Ivanios had only Xystus and James reprinted and the first anaphora's institution narrative assimilated to the second's direct form; the Enciclopedia Cattolica adds that prayers including an absolution formula were added.",
+   "existing_candidate_ids": [
+    "malankara-pampakuda-1934"
+   ],
+   "acquisition_ids": [
+    "syriac-malankara-acq-lugmayr2013",
+    "syriac-malankara-acq-enccatt-translation"
+   ],
+   "unresolved": "Original still unlocated; the changes are reported, not seen.",
+   "inventory_ids": [
+    "malankara-pampakuda-1934",
+    "malankara-pampakuda-1934"
+   ]
+  },
+  {
+   "id": "syriac-malankara-mal-trivandrum-ms23",
+   "label": "Trivandrum, Malankara Catholic archbishop's library MS 23 (Syrian Catholic, dated 1930)",
+   "tradition_or_use": "Syro-Malankara Catholic Church",
+   "date_label": "1930",
+   "date_role": "manuscript-date",
+   "record_class": "manuscript-witness",
+   "distinctness_basis": "A dated Syrian Catholic liturgical manuscript held by the Malankara Catholic archbishopric in the reunion year.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-desreumaux-1"
+   ],
+   "unresolved": "Contents unseen; van der Ploeg (1983), pp. 86-102, not examined.",
+   "inventory_ids": [
+    "syriac-malankara-mal-trivandrum-ms23"
+   ]
+  },
+  {
+   "id": "syriac-malankara-mal-tiruvalla-ms30",
+   "label": "Tiruvalla, Malankara bishop's house MS 30 (dated 1931, copied from a Sharfeh manuscript)",
+   "tradition_or_use": "Syro-Malankara Catholic Church",
+   "date_label": "1931",
+   "date_role": "manuscript-date",
+   "record_class": "manuscript-witness",
+   "distinctness_basis": "A Malankara copy of a Sharfeh (Syriac Catholic) manuscript, a possible channel of Syriac Catholic texts into Malankara use.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-desreumaux-1"
+   ],
+   "unresolved": "Contents unseen; van der Ploeg (1983), pp. 102-115, not examined.",
+   "inventory_ids": [
+    "syriac-malankara-mal-tiruvalla-ms30"
+   ]
+  },
+  {
+   "id": "syriac-malankara-mal-tiruvalla-1960",
+   "label": "Ṭeksā d-qurbānā (anaphora of Mar Xystus), Tiruvalla: St. Joseph's Printing House, 1960, re-imprimatur of Benedict Mar Gregorios 11 May 1960",
+   "tradition_or_use": "Syro-Malankara Catholic Church",
+   "date_label": "1960 (re-imprimatur 11 May 1960)",
+   "date_role": "publication-year-on-title",
+   "record_class": "printed-celebrant-book",
+   "distinctness_basis": "Catholic-approved Syriac service book with Malayalam rubrics and renderings; the re-imprimatur implies an earlier approved edition.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-tiruvalla1960",
+    "syriac-malankara-acq-mdl-1960-page"
+   ],
+   "unresolved": "Earlier edition unidentified; no comparison with 1934.",
+   "inventory_ids": [
+    "syriac-malankara-mal-tiruvalla-1960"
+   ]
+  },
+  {
+   "id": "syriac-malankara-mal-tiruvalla-1965",
+   "label": "Ṭeksā d-qurbānā, anaphora of Mar Xystus, Tiruvalla: St. Joseph's Printing House, 1965, imprimatur 2 February 1965",
+   "tradition_or_use": "Syro-Malankara Catholic Church",
+   "date_label": "1965 (imprimatur 2 February 1965)",
+   "date_role": "publication-year-on-title",
+   "record_class": "printed-celebrant-book",
+   "distinctness_basis": "A later approved printing of the same title; not shown to differ substantively from 1960.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-tiruvalla1965",
+    "syriac-malankara-acq-mdl-1965-page"
+   ],
+   "unresolved": "Not collated with 1960.",
+   "inventory_ids": [
+    "syriac-malankara-mal-tiruvalla-1965"
+   ]
+  },
+  {
+   "id": "malankara-1966-taksa",
+   "label": "Syro-Malankara Qurbana Taksa (Malayalam), 1966",
+   "tradition_or_use": "Syro-Malankara Catholic Church",
+   "date_label": "1966 (preface 1 January 1966)",
+   "date_role": "publication-year-reported",
+   "record_class": "existing-candidate-disposition",
+   "distinctness_basis": "Retained deferred Malayalam book; this pass confirms the joint preface signatories.",
+   "existing_candidate_ids": [
+    "malankara-1966-taksa"
+   ],
+   "acquisition_ids": [
+    "syriac-malankara-acq-taksa1966"
+   ],
+   "unresolved": "Translation source and original adaptations unresolved.",
+   "inventory_ids": [
+    "malankara-1966-taksa",
+    "malankara-1966-taksa"
+   ]
+  },
+  {
+   "id": "syriac-malankara-mal-1987-takso",
+   "label": "Order of the Holy Qurbono of the Syro-Malankara Church (Teksod-Qurobo), edition of 1987, nine anaphoras",
+   "tradition_or_use": "Syro-Malankara Catholic Church",
+   "date_label": "1987",
+   "date_role": "publication-year-reported",
+   "record_class": "reported-edition",
+   "distinctness_basis": "Reported nine-anaphora repertoire (Minor James, John the Apostle, Twelve Apostles, Dionysius, Ivanios, Peter, Xystus, Eustathius, the Doctors) against two in 1934.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-paniker1991"
+   ],
+   "unresolved": "Book unseen; language not stated (Malayalam or Syriac and Malayalam).",
+   "inventory_ids": [
+    "syriac-malankara-mal-1987-takso"
+   ]
+  },
+  {
+   "id": "syriac-malankara-mal-2006-approval",
+   "label": "Fourth Ordinary Holy Episcopal Synod (31 October to 3 November 2006): approval of the revised Takso and Qurbonokramam",
+   "tradition_or_use": "Syro-Malankara Catholic Church",
+   "date_label": "2006",
+   "date_role": "approval-year",
+   "record_class": "synodal-approval-act",
+   "distinctness_basis": "Approval with named changes: anaphora translations conformed to the Syriac; rubrics referred to the Thukasa except the three anaphora blessings; Syriac institution narrative and epiclesis printed with conforming Malayalam; St Thomas added to the intercessions; wording changes in two kukilions and the departed bovuto; a Julius anaphora, a long proemion-sedro and more huthomo held in abeyance.",
+   "existing_candidate_ids": [
+    "malankara-2007-taksa"
+   ],
+   "acquisition_ids": [
+    "syriac-malankara-acq-synod2006-report"
+   ],
+   "unresolved": "Recorded as approval evidence on malankara-2007-taksa, not as a separate row.",
+   "inventory_ids": [
+    "malankara-2007-taksa"
+   ]
+  },
+  {
+   "id": "syriac-malankara-mal-2007-qurbonokramam",
+   "label": "Renewed Order of the Holy Qurbono (Qurbonokramam) with the prayers of Qyomto and the season of Sleebo, published by 15 February 2007",
+   "tradition_or_use": "Syro-Malankara Catholic Church",
+   "date_label": "published by 15 February 2007",
+   "date_role": "publication-reported-in-act",
+   "record_class": "congregational-book",
+   "distinctness_basis": "The second book approved with the Takso in 2006; the October 2007 report names it separately from the released Takso.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-bulletin-feb2007",
+    "syriac-malankara-acq-synod2007-report"
+   ],
+   "unresolved": "Book unseen; Malayalam inferred from the synod's translation criteria, not seen.",
+   "inventory_ids": [
+    "syriac-malankara-mal-2007-qurbonokramam"
+   ]
+  },
+  {
+   "id": "malankara-2007-taksa",
+   "label": "Revised Order of the Holy Qurbono (Takso), Malankara Catholic Publications, released 9 to 12 October 2007",
+   "tradition_or_use": "Syro-Malankara Catholic Church",
+   "date_label": "2007 (approved 2006)",
+   "date_role": "reported-release-during-synod",
+   "record_class": "existing-candidate-disposition",
+   "distinctness_basis": "Retained and strengthened: approval criteria and named changes are now primary-described; the 2023 English preface says the Malayalam Takso (2007) prints nine anaphoras.",
+   "existing_candidate_ids": [
+    "malankara-2007-taksa"
+   ],
+   "acquisition_ids": [
+    "syriac-malankara-acq-synod2006-report",
+    "syriac-malankara-acq-synod2007-report",
+    "syriac-malankara-acq-english2023"
+   ],
+   "unresolved": "The printed book is still unacquired; changes are as reported, not collated.",
+   "inventory_ids": [
+    "malankara-2007-taksa",
+    "malankara-2007-taksa"
+   ]
+  },
+  {
+   "id": "malankara-2012-takso",
+   "label": "Qurbono Takso in English, Apostolic Exarchate in the USA, 2012",
+   "tradition_or_use": "Syro-Malankara Catholic Church",
+   "date_label": "2012",
+   "date_role": "reported-release-year",
+   "record_class": "existing-candidate-disposition",
+   "distinctness_basis": "Retained deferred translation. EPL 2/2012 adds that it is official, approved by the synod's liturgical commission and contains six anaphoras; the partial scans confirm the title year 2012 and the six-anaphora contents.",
+   "existing_candidate_ids": [
+    "malankara-2012-takso"
+   ],
+   "acquisition_ids": [
+    "syriac-malankara-acq-epl3-2012",
+    "syriac-malankara-acq-epl2-2012",
+    "syriac-malankara-acq-english2012-part1",
+    "syriac-malankara-acq-english2012-part2"
+   ],
+   "unresolved": "Only parts of the book are scanned.",
+   "inventory_ids": [
+    "malankara-2012-takso",
+    "malankara-2012-takso"
+   ]
+  },
+  {
+   "id": "malankara-2012-people",
+   "label": "Service Book of the Holy Mass (four columns), Apostolic Exarchate in the USA, 2012",
+   "tradition_or_use": "Syro-Malankara Catholic Church",
+   "date_label": "2012",
+   "date_role": "reported-release-year",
+   "record_class": "existing-candidate-disposition",
+   "distinctness_basis": "Retained deferred congregational book; no new evidence.",
+   "existing_candidate_ids": [
+    "malankara-2012-people"
+   ],
+   "acquisition_ids": [
+    "syriac-malankara-acq-epl3-2012"
+   ],
+   "unresolved": "Book unseen.",
+   "inventory_ids": [
+    "malankara-2012-people",
+    "malankara-2012-people"
+   ]
+  },
+  {
+   "id": "syriac-malankara-mal-2020-kannada",
+   "label": "Qurbono Taksa in Kannada (three anaphoras), released March 2020",
+   "tradition_or_use": "Syro-Malankara Catholic Church",
+   "date_label": "2020",
+   "date_role": "event-year",
+   "record_class": "deferred-translation",
+   "distinctness_basis": "Vernacular translation released by the Catholicos at the 24th synod.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-synod2020-report"
+   ],
+   "unresolved": "Book unseen.",
+   "inventory_ids": [
+    "syriac-malankara-mal-2020-kannada"
+   ]
+  },
+  {
+   "id": "syriac-malankara-mal-2022-german",
+   "label": "Qurbono Taksa in German, new edition released 1 January 2022",
+   "tradition_or_use": "Syro-Malankara Catholic community in Germany",
+   "date_label": "2022",
+   "date_role": "event-year",
+   "record_class": "deferred-translation",
+   "distinctness_basis": "Vernacular translation; earlier German versions (Madey 1968, third edition 1990, fourth 1995) also exist.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-german-bulletin2023",
+    "syriac-malankara-acq-lugmayr2013"
+   ],
+   "unresolved": "Book unseen.",
+   "inventory_ids": [
+    "syriac-malankara-mal-2022-german"
+   ]
+  },
+  {
+   "id": "syriac-malankara-mal-2023-english",
+   "label": "The Order of the Holy Qurbono of the Syro-Malankara Catholic Church, English Translation, Eparchy of USA and Canada, 15 August 2023",
+   "tradition_or_use": "Syro-Malankara Catholic Eparchy of St. Mary, Queen of Peace (USA and Canada)",
+   "date_label": "2023 (published 15 August 2023)",
+   "date_role": "publication-year-on-title",
+   "record_class": "deferred-translation",
+   "distinctness_basis": "Eparchial English translation of six of the nine anaphoras in the 2007 Malayalam Takso; succeeds the 2012 English book.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-english2023",
+    "syriac-malankara-acq-mdl-english2023-page"
+   ],
+   "unresolved": "Not compared with 2012.",
+   "inventory_ids": [
+    "syriac-malankara-mal-2023-english"
+   ]
+  },
+  {
+   "id": "syriac-malankara-mal-madey-german-1968",
+   "label": "Johannes Madey, German translation of the Syro-Antiochene and Malankara anaphoras, approved 1968 (third edition 1990, fourth Kottayam 1995)",
+   "tradition_or_use": "Syro-Malankara Catholic Church",
+   "date_label": "1968; 1990; 1995",
+   "date_role": "publication-year-reported",
+   "record_class": "deferred-translation",
+   "distinctness_basis": "Earlier vernacular translations named in later sources; their histories are deferred.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-lugmayr2013"
+   ],
+   "unresolved": "Books unseen; recorded at packet level only.",
+   "inventory_ids": []
+  },
+  {
+   "id": "syriac-malankara-mal-abraham-english-1984",
+   "label": "C. A. Abraham, English translation of the Holy Qurbono (1984)",
+   "tradition_or_use": "Syro-Malankara Catholic Church",
+   "date_label": "1984",
+   "date_role": "publication-year-reported",
+   "record_class": "deferred-translation",
+   "distinctness_basis": "Earlier vernacular translations named in later sources; their histories are deferred.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-english2023"
+   ],
+   "unresolved": "Books unseen; recorded at packet level only.",
+   "inventory_ids": []
+  },
+  {
+   "id": "syriac-malankara-mal-thaikkoottathil-english-2003",
+   "label": "Samuel Thaikkoottathil Remban, English translation of the Holy Qurbono (2003)",
+   "tradition_or_use": "Syro-Malankara Catholic Church",
+   "date_label": "2003",
+   "date_role": "publication-year-reported",
+   "record_class": "deferred-translation",
+   "distinctness_basis": "Earlier vernacular translations named in later sources; their histories are deferred.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-english2023"
+   ],
+   "unresolved": "Books unseen; recorded at packet level only.",
+   "inventory_ids": []
+  },
+  {
+   "id": "syriac-malankara-mal-1920-thaksa",
+   "label": "Qurbana Thaksa 1920 (Malankara Digital Library catalogue title)",
+   "tradition_or_use": "Malankara tradition, pre-reunion",
+   "date_label": "1920 (catalogue title)",
+   "date_role": "catalogue-title-year",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "A pre-reunion Qurbana Thaksa listed by the digital library; Church and language unknown.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-mdl-catalogue"
+   ],
+   "unresolved": "Item not opened; unexamined.",
+   "inventory_ids": []
+  },
+  {
+   "id": "syriac-malankara-mal-thukasa-draft",
+   "label": "Thukasa (book of rubrics) draft, Synodal Commission for Liturgy, 2007",
+   "tradition_or_use": "Syro-Malankara Catholic Church",
+   "date_label": "2007 (draft)",
+   "date_role": "draft-reported",
+   "record_class": "unresolved-bibliographic-lead",
+   "distinctness_basis": "A rubric book to which the 2006 criteria refer; reported in preparation in October 2007.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-synod2007-report"
+   ],
+   "unresolved": "Publication not traced.",
+   "inventory_ids": []
+  },
+  {
+   "id": "syriac-malankara-chaldean-lections-1900",
+   "label": "Lectiones quae per totum anni decursum ab Ecclesia Syrorum Orientalium id est Chaldaeorum in Missa adhiberi solent, Mosul 1900",
+   "tradition_or_use": "Chaldean Catholic Church (referral)",
+   "date_label": "1900",
+   "date_role": "publication-year-on-title",
+   "record_class": "out-of-lane-referral",
+   "distinctness_basis": "A Chaldean Mass lectionary acquired under a misleading file name; referred to the Chaldean lane.",
+   "existing_candidate_ids": [],
+   "acquisition_ids": [
+    "syriac-malankara-acq-chaldean-lections1900"
+   ],
+   "unresolved": "Ownership belongs to the Chaldean lane.",
+   "inventory_ids": []
+  }
+ ],
+ "acquisitions": [
+  {
+   "id": "syriac-malankara-acq-diaconicon1905",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3724368",
+   "sha256": "a6e0d3174445bfa192f6693bcfe78a838881f1d0a7fbc5f3596f5ecdfec9903f",
+   "bytes": 101944759,
+   "pages": 465,
+   "delivered_extent": "Complete provider PDF, 465 page images (binding, endpapers, Arabic-Syriac book read right to left from the back of the PDF). Byte size equals the 97.22 MB stated on the Bonn title record. The catalogue gives [14], 392, 48 printed pages.",
+   "identity_inspection": "Images re-read in this pass: PDF 2 (gilt spine lettering, partly covered by a shelf label, ending '...enum 1905', consistent with Diaconale Syro-Antiochenum), PDF 461 (Arabic title page: Kitāb khidmat al-quddās according to the Syriac Antiochene rite, collected and arranged by Patriarch Ignatius Ephrem II, printed at the Syriac patriarchal press at Sharfeh, 'sana 1905'; pencil note naming a first edition of 1884, Beirut Jesuit press, 44 pages), PDF 460 (Goussen stamp), PDF 459, 458, 457, 455 and 451 (Arabic preface: reprint needed; text corrected against old manuscripts; Syriac only except Arabic for the Creed, Trisagion, diptychs, litanies and Lord's Prayer; a second part with Sunday and feast propers; appended Arabic hymns for the fraction; the patriarch orders the book kept as the norm of the Mass service), PDF 449 to 450 (Syriac contents and end of preface, no date). The printed date 1905 controls; the Bonn catalogue year 1912 is a catalogue discrepancy.",
+   "rights_basis": "Underlying text: printed before 1931, so public domain in the United States by expired publication term. Provider: Bonn ULB title record 'Lizenz-/Rechtehinweis' marks the digitization Public Domain Mark 1.0 (https://creativecommons.org/publicdomain/mark/1.0/); rights statement read on the title record page.",
+   "proposed_storage": "tracked",
+   "storage_reason": "Public-domain 1905 book with a Public Domain Mark digitization. 101,944,759 bytes: if host limits require, store as split parts under one artifact; the 1881 Mosul scan's storage note already contemplates whole-PDF versus split-part storage.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-calendar1877",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/725112",
+   "sha256": "cd5e18fadef5869657d74aae7c554560629e96b965991b8cb94fb42d11c5b5bf",
+   "bytes": 54507979,
+   "pages": 263,
+   "delivered_extent": "Complete provider PDF, 263 page images; byte size equals the 51.98 MB on the Bonn title record (catalogue extent 254 printed pages). Image scan without a text layer (pdftotext yields 414 bytes).",
+   "identity_inspection": "PDF 260: Latin title 'Calendarium ad usum dioeceseos Mausiliensis Syrorum recognitum et approbatum ab ... D. Cyrillo Behnam Benni Archiepiscopo Mausiliensi Syrorum', Mausilii, Typis Fratrum Praedicatorum, 1877. PDF 55 (printed 206): Arabic table of readings headed for the Mass (lil-quddās) for Sundays after Epiphany and the Nineveh fast. PDF 1 to 4 and 259 to 263 were rendered by the previous agent; only PDF 260 and 262 (blank) were re-read here.",
+   "rights_basis": "Underlying text: printed before 1931, so public domain in the United States by expired publication term. Provider: Bonn ULB title record 'Lizenz-/Rechtehinweis' marks the digitization Public Domain Mark 1.0 (https://creativecommons.org/publicdomain/mark/1.0/); rights statement read on the title record page.",
+   "proposed_storage": "tracked",
+   "storage_reason": "Public-domain 1877 book with a Public Domain Mark digitization; 54,507,979 bytes is within the size the source library already retains.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-calendar1887",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/598417",
+   "sha256": "5297a5961d4308f9441a0fc4196b1f61714ffa814a1cdca988d25da5977e3b28",
+   "bytes": 28111691,
+   "pages": 162,
+   "delivered_extent": "Complete provider PDF, 162 page images; byte size equals the 26.81 MB on the Bonn title record (catalogue extent 140 printed pages).",
+   "identity_inspection": "PDF 157: Latin title 'Calendarium juxta ritum Ecclesiae Antiochenae Syrorum', Mausili, Typis Fratrum Praedicatorum, 1887; PDF 155 and 159 (cover): Arabic title Kalandār ḥasab ṭaqs al-kanīsa al-suryāniyya al-anṭākiyya, Mosul, Dominican press, 1887. The attribution to Clemens Joseph David is the catalogue's; it is not on the title page. Mass-reading content was not inspected.",
+   "rights_basis": "Underlying text: printed before 1931, so public domain in the United States by expired publication term. Provider: Bonn ULB title record 'Lizenz-/Rechtehinweis' marks the digitization Public Domain Mark 1.0 (https://creativecommons.org/publicdomain/mark/1.0/); rights statement read on the title record page.",
+   "proposed_storage": "tracked",
+   "storage_reason": "Public-domain 1887 book with a Public Domain Mark digitization; 28,111,691 bytes.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-pericopes1901",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3207188",
+   "sha256": "6ce9760efe907968925a2327a3764eb45722b741ed88ea31e19307be20c486fc",
+   "bytes": 15646640,
+   "pages": 105,
+   "delivered_extent": "Complete provider PDF, 105 page images; byte size equals the 14.92 MB on the Bonn title record (catalogue extent 95 printed pages, Arabic script with a Syriac title leaf).",
+   "identity_inspection": "PDF 101: Syriac title leaf (codex of the readings of the Qurbono, Apostle and Gospel), with a pencil note pointing to an earlier table by Clemens Joseph David in the appendix of the 1877 Mosul calendar, printed pages 202 and following. PDF 99 (printed 3): Arabic heading 'Epistle and Gospel pericopes read at Mass through the year according to the Syriac Antiochene rite', beginning with the Sundays of the Consecration and Renewal of the Church. Imprint (Sharfeh, patriarchal press, 1901) is the catalogue's; the Syriac imprint line on PDF 101 was not transcribed.",
+   "rights_basis": "Underlying text: printed before 1931, so public domain in the United States by expired publication term. Provider: Bonn ULB title record 'Lizenz-/Rechtehinweis' marks the digitization Public Domain Mark 1.0 (https://creativecommons.org/publicdomain/mark/1.0/); rights statement read on the title record page.",
+   "proposed_storage": "tracked",
+   "storage_reason": "Public-domain 1901 book with a Public Domain Mark digitization; 15,646,640 bytes.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-chaldean-lections1900",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/209788",
+   "sha256": "cf3d72e1fc06faea6f6a7c7f68936282532ed6ab79aafc9c61c6780e0a3f27ee",
+   "bytes": 29185268,
+   "pages": 231,
+   "delivered_extent": "Complete provider PDF, 231 page images; byte size equals the 27.83 MB on the Bonn title record (catalogue extent 212 pages).",
+   "identity_inspection": "PDF 228: Latin title 'Lectiones quae per totum anni decursum ab Ecclesia Syrorum Orientalium id est Chaldaeorum in Missa adhiberi solent', Mausili, Typis Fratrum Praedicatorum, 1900; PDF 227: imprimatur of Henricus Altmayer, Archbishop of Babylon, Apostolic Delegate. This is a Chaldean (East Syriac) Mass lectionary, not a Syriac Catholic book; the previous agent's file name was misleading.",
+   "rights_basis": "Underlying text: printed before 1931, so public domain in the United States by expired publication term. Provider: Bonn ULB title record 'Lizenz-/Rechtehinweis' marks the digitization Public Domain Mark 1.0 (https://creativecommons.org/publicdomain/mark/1.0/); rights statement read on the title record page.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Outside this lane: the distribution basis exists (public domain, Public Domain Mark), but registration belongs to the Chaldean lane, to which it is referred. 29,185,268 bytes kept in scratch until that lane decides.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-tiruvalla1960",
+   "original_url": "https://archive.malankaralibrary.com/ImageUpload/e409cd1acacfe8d12f994ec61edd79bf.pdf",
+   "sha256": "db3636f820b6086541b2ac89c936551e377cca8b543e70057d3de8333cb99cc9",
+   "bytes": 11661577,
+   "pages": 86,
+   "delivered_extent": "Complete offered PDF, 86 page images, with the Malankara Digital Library watermark; physical completeness not checked page by page.",
+   "identity_inspection": "PDF 1: Syriac title Ṭeksā d-qurbānā with a handwritten addition naming the anaphora of Mar Xystus, 'Printed at The St. Joseph's Printing House, Tiruvalla - 1960'. PDF 2: 'Re-imprimatur', Benedict Mar Gregorios, Archbishop-Metropolitan of Trivandrum, 11 May 1960. PDF 4: opening of the Syriac service. PDF 84 (printed 71): Syriac formulas with Malayalam rubrics and Malayalam renderings for receiving a priest into communion. Catalogue page labels it the Syro-Malankara Catholic Syriac and Malayalam Qurbana Thaksa, 1960.",
+   "rights_basis": "Underlying liturgical Syriac text is ancient, but this 1960 Indian edition (Malayalam rubrics and renderings, typography) has no established public-domain or licence basis. Provider: Malankara Digital Library footer: '© 2026 Malankara Digital Library. All rights reserved.' (https://www.malankaralibrary.com/catalog-index; policy page https://www.malankaralibrary.com/privacy); no reuse licence located.",
+   "proposed_storage": "restricted",
+   "storage_reason": "No redistribution basis: modern Indian edition and an 'all rights reserved' host. Bytes stay in research scratch; metadata and short bibliographic paraphrase only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-tiruvalla1965",
+   "original_url": "https://archive.malankaralibrary.com/ImageUpload/712968df3b834d53488fad4238de74bd.pdf",
+   "sha256": "6baea59bef005c1af9325f242d000a105eec92d65c318727c980ecd5129c79b0",
+   "bytes": 9252896,
+   "pages": 99,
+   "delivered_extent": "Complete offered PDF, 99 page images, with the library watermark; physical completeness not checked page by page.",
+   "identity_inspection": "PDF 2: Syriac title Ṭeksā d-qurbānā, anaphora of Mar Xystus, patriarch of Rome, 'Printed at The St. Joseph's Printing House, Tiruvalla - 1965'. PDF 3: 'Imprimatur', Benedict Mar Gregorios, Archbishop-Metropolitan of Trivandrum, 2 February 1965. PDF 98 to 99 rendered by the previous agent but not re-read here.",
+   "rights_basis": "As for the 1960 printing; no public-domain or licence basis for this 1965 edition. Provider: Malankara Digital Library footer: '© 2026 Malankara Digital Library. All rights reserved.' (https://www.malankaralibrary.com/catalog-index; policy page https://www.malankaralibrary.com/privacy); no reuse licence located.",
+   "proposed_storage": "restricted",
+   "storage_reason": "No redistribution basis: modern edition and an 'all rights reserved' host. Bytes stay in research scratch.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-taksa1966",
+   "original_url": "https://archive.malankaralibrary.com/ImageUpload/c4c664b902ed1f65cd1fcd4e40c1ae9d.pdf",
+   "sha256": "6a00bafe002e140fd1d5a02c17bbcc8585247c447e81e764283a9b1488f5e980",
+   "bytes": 8057506,
+   "pages": 160,
+   "delivered_extent": "Complete offered PDF, 160 page images. Identical bytes (same SHA-256) to the earlier scratch copy cited by inventory record malankara-1966-taksa (an untracked workspace scratch copy).",
+   "identity_inspection": "PDF 7 (printed iv): end of the Malayalam preface signed by Benedict Mar Gregorios, Metropolitan of Trivandrum, and Zacharias Mar Athanasios, Bishop of Tiruvalla, dated 1 January 1966. PDF 3 is a library logo leaf. The title leaf (PDF 2) was inspected by the earlier pass recorded in the inventory, not re-read here.",
+   "rights_basis": "Modern Malayalam translation; no public-domain or licence basis. Provider: Malankara Digital Library footer: '© 2026 Malankara Digital Library. All rights reserved.' (https://www.malankaralibrary.com/catalog-index; policy page https://www.malankaralibrary.com/privacy); no reuse licence located.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Duplicate of an existing scratch copy; modern translation without a redistribution basis. Keep one scratch copy; register metadata only. Related existing identity: Inventory record malankara-1966-taksa already cites this hash; no source-library artifact.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-english2012-part1",
+   "original_url": "https://archive.malankaralibrary.com/ImageUpload/a99fd8563050946c13f0356c4e4eaca7.pdf",
+   "sha256": "99123a2672d89331dbaf26c0a5a17a59ecd57c69012023f36ba6b9b831e760c0",
+   "bytes": 6878217,
+   "pages": 16,
+   "delivered_extent": "Partial scan: 16 PDF pages of two-page spreads (title, contents and printed pages 1 to 27 of the preparatory and public services). The library labels it Part One and dates it 2013; the book's own title says 2012. The rest of the book is not in this file.",
+   "identity_inspection": "PDF 1: Syriac and English title 'The Order of the Holy Qurbono of the Syro-Malankara Catholic Church, English Translation, 2012'. PDF 2: contents listing six anaphoras (Minor James, John the Evangelist, Twelve Apostles, Dionysius of Amid, Ivanios the Golden-Tongued, the M'kanashto) and appendices. PDF 3: Preparatory Service. PDF 16: printed 26 to 27 (Creed to the start of the anaphora).",
+   "rights_basis": "Modern English translation; no licence. Provider: Malankara Digital Library footer: '© 2026 Malankara Digital Library. All rights reserved.' (https://www.malankaralibrary.com/catalog-index; policy page https://www.malankaralibrary.com/privacy); no reuse licence located.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Modern copyrighted translation and partial scan; no redistribution basis.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-english2012-part1-copy",
+   "original_url": "https://www.catholicsandcultures.org/sites/default/files/documents/syro-malankara_holy_qurbono_part_1.pdf",
+   "sha256": "99123a2672d89331dbaf26c0a5a17a59ecd57c69012023f36ba6b9b831e760c0",
+   "bytes": 6878217,
+   "pages": 16,
+   "delivered_extent": "Byte-identical duplicate (same SHA-256) of the Malankara Digital Library Part One file, served by a second host.",
+   "identity_inspection": "Identity established by hash equality with syriac-malankara-acq-english2012-part1; no separate page inspection needed.",
+   "rights_basis": "Same as the Part One file; the second host (Catholics and Cultures) states no reuse licence for the document that was located.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Duplicate bytes; the second host only corroborates the same partial scan. Do not retain twice.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-english2012-part2",
+   "original_url": "https://archive.malankaralibrary.com/ImageUpload/0d7fa18763967343e76ede57f947310f.pdf",
+   "sha256": "47d3de0743ade3646f02dd92af9abba04b347dfd2cb48f7258d7faf95b164fe5",
+   "bytes": 6933682,
+   "pages": 13,
+   "delivered_extent": "Partial scan: 13 PDF pages of spreads holding printed pages 78 to about 99 (Anaphora of the Twelve Apostles) and 164 to 167 (concluding prayers). Labelled Part Two, 2013, by the library.",
+   "identity_inspection": "PDF 1 (printed 78 to 79), PDF 2 (printed 80 to 81, institution narrative), PDF 12 (printed 164 to 165) and PDF 13 (printed 166 to 167) viewed.",
+   "rights_basis": "Modern English translation; no licence. Provider: Malankara Digital Library footer: '© 2026 Malankara Digital Library. All rights reserved.' (https://www.malankaralibrary.com/catalog-index; policy page https://www.malankaralibrary.com/privacy); no reuse licence located.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Modern copyrighted translation and partial scan; no redistribution basis.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-english2023",
+   "original_url": "https://archive.malankaralibrary.com/ImageUpload/258457d35ed706e153ca5ee7ab629a09.pdf",
+   "sha256": "2878591ace056295121ae733d3c43ebec1e49d367bad9b8dda733105cede2e35",
+   "bytes": 3354080,
+   "pages": 346,
+   "delivered_extent": "Complete offered PDF, 346 pages with a text layer (pdftotext derivative malankara-full-english.txt kept alongside).",
+   "identity_inspection": "PDF 2: translated, prepared and published by the Commission for Sacred Liturgy of the St. Mary, Queen of Peace, Syro-Malankara Catholic Eparchy in USA and Canada; approved by Philipos Mar Stephanos; 'For Private Use only within the Eparchy'; published 15 August 2023; printed at St. Mary's Press, Pattom. PDF 4 (printed ii): preface stating that nine anaphoras are printed in the Malayalam Takso of the Syro-Malankara Catholic Church (2007), that six are translated here, and that earlier English translations by C. A. Abraham (1984) and Samuel Thaikkoottathil Remban (2003) were relied on. PDF 1 and 346 rendered by the previous agent.",
+   "rights_basis": "Modern copyrighted translation marked for private use within the eparchy. Provider: Malankara Digital Library footer: '© 2026 Malankara Digital Library. All rights reserved.' (https://www.malankaralibrary.com/catalog-index; policy page https://www.malankaralibrary.com/privacy); no reuse licence located.",
+   "proposed_storage": "restricted",
+   "storage_reason": "The book itself restricts use to the eparchy and the host reserves all rights; no redistribution basis.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-paniker1991",
+   "original_url": "https://archive.malankaralibrary.com/ImageUpload/fc50865f1a2dbdbdb2d71aca59a39255.pdf",
+   "sha256": "6402b3260adb81ff7faaf0b40c60f22bc81ae417dddf72905e1eb361aa0d4b3a",
+   "bytes": 10383578,
+   "pages": 56,
+   "delivered_extent": "Complete offered PDF, 56 page images of spreads with a damaged OCR layer (derivative paniker-1991.txt).",
+   "identity_inspection": "PDF 29 (printed 48 to 49) read from the image: the Order of the Holy Qurbono of the Syro-Malankara Church (Teksod-Qurobo) 'edited in 1987 contains nine anaphoras' and is the book then in use; the nine are listed. Title leaf not re-read; library catalogue gives Fr. Givergis Paniker Karichal, The Holy Qurbono in the Syro-Malankara Church, 1991.",
+   "rights_basis": "Modern copyrighted study. Provider: Malankara Digital Library footer: '© 2026 Malankara Digital Library. All rights reserved.' (https://www.malankaralibrary.com/catalog-index; policy page https://www.malankaralibrary.com/privacy); no reuse licence located.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Modern copyrighted study with no redistribution basis; cited for one bibliographic statement.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-lugmayr2013",
+   "original_url": "https://www.una-voce.de/uploads/1/2/8/3/12837883/03_h_4.pdf",
+   "sha256": "4c3e8093f0a68502a0b22417aa6e02675f4cbb7d12c2662bb5e3b8b381aacbad",
+   "bytes": 35066951,
+   "pages": 64,
+   "delivered_extent": "Complete offered PDF, 64 page images without a usable text layer (derivative lugmayr-2013.txt is 64 bytes). Journal issue section containing P. Martin Lugmayr's article on anaphoras without 'direct' institution words.",
+   "identity_inspection": "PDF 42 and 43 (printed 242 to 243) read from images: Pampakuda first missal 1886 and 1931 new edition with 16 anaphoras, both used by the Syro-Malankarese (citing Madey 1973); in 1934 Mar Ivanios had only two anaphoras (Xystus and James) reprinted at the Jacobite Pampakuda press, assimilating the institution narrative of the first to the second; a German translation approved in 1968 by Mar Gregorios (third edition 1990). PDF 1, 41 and 44 rendered by the previous agent.",
+   "rights_basis": "Modern copyrighted article (2013); the Una Voce Korrespondenz site states no reuse licence that was located.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Modern copyrighted article; cited for bounded secondary statements only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-synod2006-report",
+   "original_url": "https://malankaracatholicchurch.in/admin/pdf/Vol_2_No_2.pdf",
+   "sha256": "8da720470476331bc96b30a6015ef8ec50080ef334a31fc26b2b94f749225d7b",
+   "bytes": 1642768,
+   "pages": 136,
+   "delivered_extent": "Complete offered PDF, 136 pages with a text layer (derivative malankara-synod-vol2-2.txt). Malankara: Synodal Acts and Voice of the Syro-Malankara Catholic Church, vol. 2 no. 2, January 2007.",
+   "identity_inspection": "Text layer read and checked against the PDF 30 image rendered by the previous agent: Fourth Ordinary Holy Episcopal Synod, 31 October to 3 November 2006 (PDF 25), agenda item 7 on the revised draft of the Takso and Qurbonokramam (PDF 26), report of the translation criteria and changes and of the items held in abeyance (PDF 30 to 31), Decision II.6 to publish the approved Takso and Qurbonokramam (PDF 46, Malayalam PDF 47).",
+   "rights_basis": "Official church bulletin (2007), modern; no reuse licence located on malankaracatholicchurch.in.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Modern official publication without a stated redistribution licence. Metadata and short paraphrase only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-bulletin-feb2007",
+   "original_url": "https://malankaracatholicchurch.in/admin/pdf/Vol_2_No_3.pdf",
+   "sha256": "19f540df577c6fe5ed1a87e21fd7c1664b01ee39b348683dc9f7eb13f9f527af",
+   "bytes": 6693823,
+   "pages": 176,
+   "delivered_extent": "Complete offered PDF, 176 pages with a text layer. Same bytes as the hash recorded by stage-dossier source west-syriac-stages-malankara-feb2007.",
+   "identity_inspection": "Text layer read at PDF 160 to 163: pastoral letter Prot. ADM 2/2007 of 15 February 2007 by Geevarghese Mar Divannasios reports a published renewed text of the Order of the Holy Qurbono with the prayers of Qyomto and the season of Sleebo, per the fourth synod, which the English text misdates to 2005.",
+   "rights_basis": "Official church bulletin (2007), modern; no reuse licence located.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Modern official publication without a stated redistribution licence. Related existing identity: Stage dossier source west-syriac-stages-malankara-feb2007 records this hash; no source-library artifact.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-synod2007-report",
+   "original_url": "https://malankaracatholicchurch.in/admin/pdf/Vol_3_No_2.pdf",
+   "sha256": "7695cb42b13a26bdbf4b3d466ebdfa07cd74c2c5021c5da9b09bd225a5c2bc76",
+   "bytes": 939022,
+   "pages": 116,
+   "delivered_extent": "Complete offered PDF, 116 pages with a text layer. Identical bytes to an untracked workspace scratch copy",
+   "identity_inspection": "Text layer read at PDF 25 to 26 (release of the new revised Taksa; separate Common Prayer Book and Qurbonakramam with Qyomto and Sleebo prayers; Thukasa rubric book in draft; concelebration rubrics) and PDF 40 (Decision 5.i to iii).",
+   "rights_basis": "Official church bulletin (2008), modern; no reuse licence located.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Modern official publication without a stated redistribution licence; duplicate of an earlier scratch copy. Related existing identity: Inventory source malankara-synod-2007 cites the same URL; no source-library artifact.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-synod2020-report",
+   "original_url": "https://malankaracatholicchurch.in/admin/Church/Report_24_HES.pdf",
+   "sha256": "0a33461d1eea917f4caec22cfddb0ed9bd9dfba3845f912f1a9987eb90da69f1",
+   "bytes": 294028,
+   "pages": 13,
+   "delivered_extent": "Complete offered PDF, 13 pages with a text layer: report of the 24th Ordinary Holy Episcopal Synod, 2 to 5 March 2020.",
+   "identity_inspection": "Text layer read: the Catholicos released the Qurbono Taksa in Kannada with three anaphoras (text line 539); commission report on work in progress (lines 121 to 129). No image check.",
+   "rights_basis": "Official modern report; no reuse licence located.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Modern official publication without a stated redistribution licence.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-epl3-2012",
+   "original_url": "https://www.mccna.org/sites/default/files/epl/EPL-3-2012-web.pdf",
+   "sha256": "e4c9ca3ea86d0c220400d32c94d85d27575df71b25af18741a6ecc6260177189",
+   "bytes": 337129,
+   "pages": 2,
+   "delivered_extent": "Complete offered PDF, 2 pages with a text layer: pastoral letter EPL 3/2012 of the Apostolic Exarchate in the USA.",
+   "identity_inspection": "Text layer read: release of a new English Qurbono Takso at the August 2012 convention and of a four-column Service Book of the Holy Mass declared the official text in the exarchate.",
+   "rights_basis": "Modern official circular; no reuse licence located on mccna.org.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Modern official circular without a stated redistribution licence. Related existing identity: Inventory source malankara-2012 cites this URL (previously not acquired); no source-library artifact.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-epl2-2012",
+   "original_url": "https://mccna.org/sites/default/files/epl/EPL-2-2012-web.pdf",
+   "sha256": "a3023db493ff39963b80a09b24021d2f9b44c75dff106089168afd8d5d5869bb",
+   "bytes": 339538,
+   "pages": 2,
+   "delivered_extent": "Complete offered PDF, 2 pages with a text layer: pastoral letter EPL 2/2012 of the same exarchate. Fetched in this finishing pass to resolve the reviewer's citation.",
+   "identity_inspection": "Text layer read: an official English Qurbono Takso with six anaphoras and the variable proemion-sedros, approved by the Liturgical Commission of the Holy Episcopal Synod; the Catholicos declared other English translations out of use from 8 September 2012.",
+   "rights_basis": "Modern official circular; no reuse licence located.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Modern official circular without a stated redistribution licence.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-german-bulletin2023",
+   "original_url": "https://archive.malankaralibrary.com/ImageUpload/8141846ea423493c354b7084561ebcff.pdf",
+   "sha256": "38a441fc596df055ac7f92e07e6a22486576cb276ed4419235fa5c1640339053",
+   "bytes": 12790275,
+   "pages": 80,
+   "delivered_extent": "Complete offered PDF, 80 pages with a text layer: Malankara Vision news bulletin 2023, Germany. The reviewer's URL on malankaralibrary.com returned HTTP 404 on 2026-10-19; the archive host served the file.",
+   "identity_inspection": "Text layer read near line 1639: on 1 January 2022 the Catholicos released the new edition of the Qurbono Taksa and a new Gotteslob in German. No image check.",
+   "rights_basis": "Modern copyrighted bulletin. Provider: Malankara Digital Library footer: '© 2026 Malankara Digital Library. All rights reserved.' (https://www.malankaralibrary.com/catalog-index; policy page https://www.malankaralibrary.com/privacy); no reuse licence located.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Modern copyrighted bulletin; one statement cited.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-liturgy-study",
+   "original_url": "https://www.syromalabarliturgy.org/assets/uploads/pdfs/Malankara_Liturgy.pdf",
+   "sha256": "69c9aa707f4efa39966ac0753f48426e965f3fabba90c232a145f148b5d6c26b",
+   "bytes": 455106,
+   "pages": 5,
+   "delivered_extent": "Complete offered PDF, 5 pages with a text layer: anonymous overview 'Malankara Tradition'.",
+   "identity_inspection": "Text layer read: general history (1930 reunion, Antiochene liturgy retained) and liturgical-year outline. No book edition data; not relied on for any version claim.",
+   "rights_basis": "Modern copyrighted overview; no licence located.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Background only; no claim depends on it and no redistribution basis.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-scher1909",
+   "original_url": "https://www.tertullian.org/rpearse/pdf.articles/scher_borgia_catalogue.pdf",
+   "sha256": "ffcb1311bc02b068391e3135774a32e40980546934fed953e21913b528c3e81c",
+   "bytes": 5867479,
+   "pages": 115,
+   "delivered_extent": "Complete offered PDF, 115 page images (BnF-produced PDF of Addai Scher, 'Notice sur les manuscrits syriaques du Musée Borgia', Journal asiatique, March to April 1909); text layer absent.",
+   "identity_inspection": "PDF 1 (article title), PDF 27 (printed 275, entry 127: Service of the Mass according to the rite of the Syrian Catholics, edited by Mgr David, archbishop of Damascus; Syriac text with Arabic rubrics; 519 pages; written at Mardin in 1868) and PDF 30 (printed 278) viewed.",
+   "rights_basis": "Underlying article published 1909: public domain in the United States by expired term. Digitization by the Bibliothèque nationale de France (PDF metadata); Gallica's reuse conditions (https://gallica.bnf.fr/edit/und/conditions-dutilisation-des-contenus-de-gallica) permit non-commercial reuse with attribution; this copy is re-hosted by tertullian.org without further terms.",
+   "proposed_storage": "tracked",
+   "storage_reason": "Public-domain 1909 article in a faithful scan; 5,867,479 bytes. Root to confirm that Gallica's non-commercial condition does not bar retention; otherwise restricted.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-brightman-preview",
+   "original_url": "https://api.pageplace.de/preview/DT0400.9781463209896_A38590124/preview-9781463209896_A38590124.pdf",
+   "sha256": "f24d4fadd9d9b979f9e3a9e1a009349474567807d969d14d7a094e7f449d1b1f",
+   "bytes": 5405103,
+   "pages": 71,
+   "delivered_extent": "Publisher preview of the Gorgias reprint of Brightman, Eastern Liturgies (71 pages), not the whole book.",
+   "identity_inspection": "Preview PDF 56 corresponds to printed lvi; this pass verified the same page in the canonical 1896 scan instead (PDF 58).",
+   "rights_basis": "Modern reprint packaging by Gorgias Press; preview offered for reading only. The underlying 1896 text is public domain and already retained canonically.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Redundant partial preview of a book whose 1896 original is already registered (artifact.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.ia-pdf-254f7d21). Related existing identity: artifact.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.ia-pdf-254f7d21 holds the original edition; the preview is a different artifact.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-feulner-1",
+   "original_url": "https://syriac-anaphoras.org/catalogue/pdf/feulner_1.pdf",
+   "sha256": "98df38704beca55e46baa4a251790382b2a71f2f1fc153dfb7c832ab91006585",
+   "bytes": 135903,
+   "pages": 21,
+   "delivered_extent": "Complete offered PDF (21 pages, text layer; derivative feulner-1.txt): Klampfl's 2008 notes on Feulner's edition list.",
+   "identity_inspection": "Text layer read: edition list naming Rome 1843 and Sharfeh 1922 (7 anaphoras each) and Pampakuda 1986 (13 anaphoras, Syriac and Malayalam). Title leaf read in the text layer only.",
+   "rights_basis": "Modern copyrighted research notes on syriac-anaphoras.org; no reuse licence located.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Modern copyrighted specialist notes; used for discovery leads only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-liste-anaphoren",
+   "original_url": "https://syriac-anaphoras.org/catalogue/pdf/liste_anaphoren_1.pdf",
+   "sha256": "f739d9fe2858448b40921e332812fb27cba7b339ac0e57d8cb1a3976fa1c6a51",
+   "bytes": 310645,
+   "pages": 161,
+   "delivered_extent": "Complete offered PDF (161 pages, text layer; derivative liste-anaphoren.txt): Klampfl, Liste der Anaphoren v0.3 (2014).",
+   "identity_inspection": "Text layer read for manuscript leads: Harrak 2011 no. 6470 (Liturgy of the Mass according to the Syriac Catholic rite, Iraq) and Charfet and Trivandrum Malankara Catholic library shelfmarks. Title leaf read in the text layer only.",
+   "rights_basis": "Modern copyrighted research notes on syriac-anaphoras.org; no reuse licence located.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Modern copyrighted specialist notes; used for discovery leads only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-desreumaux-1",
+   "original_url": "https://syriac-anaphoras.org/catalogue/pdf/desreumaux_1.pdf",
+   "sha256": "3f3ec91186be447d59a20204dc12819894e6f4c734a9a2ee7f9b0f3663d83832",
+   "bytes": 111983,
+   "pages": 16,
+   "delivered_extent": "Complete offered PDF (16 pages, text layer; derivative desreumaux-1.txt): Klampfl's 2008 extract of the Desreumaux and Briquel-Chatonnet repertoire.",
+   "identity_inspection": "Text layer read at the Kerala entries: Trivandrum Malankara Catholic archbishopric MS 23 (Syrian Catholic, dated 1930) and Tiruvalla Malankara bishopric MS 30 (dated 1931, copied from a Sharfeh manuscript), both via van der Ploeg 1983. Title leaf read in the text layer only.",
+   "rights_basis": "Modern copyrighted research notes on syriac-anaphoras.org; no reuse licence located.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Modern copyrighted specialist notes; used for discovery leads only.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-wright-excerpt",
+   "original_url": "https://syriac-anaphoras.org/catalogue/html/katalog_britmus_1.html",
+   "sha256": "367fb15fb6250b436a2fa688879717d8b8716cb9c0a24705c70413148ef83129",
+   "bytes": 50246,
+   "pages": null,
+   "delivered_extent": "Complete HTML page: Klampfl's excerpt of Wright 1870, Missals 255 to 283 and Sacerdotals 284 to 305.",
+   "identity_inspection": "Read as text: entries 256 to 258 (Add. 14523 ff. 1 to 7, f. 8, f. 9) and 261 (Add. 14690, 180 leaves, 1182) checked for the shared-candidate qualifications.",
+   "rights_basis": "Modern web page (catalogue, transcription or publisher page); host terms not a redistribution licence. Factual metadata only.",
+   "proposed_storage": "restricted",
+   "storage_reason": "Modern copyrighted specialist page; no redistribution basis. Facts carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-ziade-transcription",
+   "original_url": "https://fr.wikisource.org/wiki/Dictionnaire_de_th%C3%A9ologie_catholique/SYRIENNE_%28%C3%89glise%29",
+   "sha256": "8a20efc0b9b526f8472005a13083d426d0b1a075a3090e011bc51fb79ed0cd60",
+   "bytes": 395004,
+   "pages": null,
+   "delivered_extent": "Complete HTML page of the Wikisource transcription of Ziadé, 'Syrienne (Église)', DTC 14.2 (1941).",
+   "identity_inspection": "Read as text: diaconicon paragraph (1868, 1881, undated reprint, 1905), lectionary paragraph (Gospel volume 1912, epistolary 1925) and calendar paragraph (1877, 1887). Transcription only; the canonical source row ziade-syriac-diaconicon-1941 holds the page-image check of column 3026.",
+   "rights_basis": "Modern web page (catalogue, transcription or publisher page); host terms not a redistribution licence. Factual metadata only.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue or transcription page kept as a retrieval receipt; no redistribution basis and the evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-cinii2015",
+   "original_url": "https://ci.nii.ac.jp/ncid/BC11052671?l=en",
+   "sha256": "cff53209dfce5b8b1b848d1ea09513c2ec708e0ce368097ac8d67284e2b77f3c",
+   "bytes": 50467,
+   "pages": null,
+   "delivered_extent": "Complete HTML catalogue record, NCID BC11052671.",
+   "identity_inspection": "Read: Rutbat al-Quddās bi-ḥasab ṭaqs al-Kanīsah al-Suryānīyah al-Anṭākīyah, Mosul, Syriac Catholic archdiocese, 2015, 208 p., Arabic and Syriac; held by the University of Tokyo, Komaba.",
+   "rights_basis": "Modern web page (catalogue, transcription or publisher page); host terms not a redistribution licence. Factual metadata only.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue or transcription page kept as a retrieval receipt; no redistribution basis and the evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-coakley-taylor",
+   "original_url": "https://www.gorgiaspress.com/syriac-books-printed-at-the-dominican-press-mosul",
+   "sha256": "e64c9b13234452f1cf524d067ee9dc946f8e8d2c6b65f8244f073494cd595aaf",
+   "bytes": 68602,
+   "pages": null,
+   "delivered_extent": "Complete HTML publisher product page for Coakley and Taylor, Syriac Books Printed at the Dominican Press, Mosul (2009).",
+   "identity_inspection": "Read as text: product page only; the handbook's entries are not on it. The handbook remains an unexamined bibliography.",
+   "rights_basis": "Modern web page (catalogue, transcription or publisher page); host terms not a redistribution licence. Factual metadata only.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue or transcription page kept as a retrieval receipt; no redistribution basis and the evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-mdl-catalogue",
+   "original_url": "https://www.malankaralibrary.com/catalog-index",
+   "sha256": "d362c6216273e0e35fb7479c946211c8d5190297c941765cc71230e5c4065f29",
+   "bytes": 56553,
+   "pages": null,
+   "delivered_extent": "Complete HTML catalogue index page of the Malankara Digital Library as served on 2026-10-19.",
+   "identity_inspection": "Read as text: titles including a 1920 Qurbana Thaksa, the 1965 Malayalam and Syriac Qurbana Taksa, the Syriac and Malayalam Qurbana Thaksa, and Hindi, Odia and other vernacular Qurbono books; rights footer.",
+   "rights_basis": "Modern web page (catalogue, transcription or publisher page); host terms not a redistribution licence. Factual metadata only.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue or transcription page kept as a retrieval receipt; no redistribution basis and the evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-mdl-1965-page",
+   "original_url": "https://malankaralibrary.com/book/qurbana-taksa-1965-malayalam-and-syriac",
+   "sha256": "0ff4656e4651e1ca6705db5f013d9d39df18aa9301252d5afafb6206d90a3fb8",
+   "bytes": 123513,
+   "pages": null,
+   "delivered_extent": "Complete HTML item page.",
+   "identity_inspection": "Structured data read: title 'Qurbana Taksa (1965) Malayalam and Syriac', year 1965, PDF link.",
+   "rights_basis": "Modern web page (catalogue, transcription or publisher page); host terms not a redistribution licence. Factual metadata only.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue or transcription page kept as a retrieval receipt; no redistribution basis and the evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-mdl-1960-page",
+   "original_url": "https://malankaralibrary.com/book/syro-malankara-catholic-church-syriac-and-malayalam-qurbana-thaksa",
+   "sha256": "f593e9965bf8891d85e9bad034f502649e6050991b44fa5825b0211d51e8fc14",
+   "bytes": 129847,
+   "pages": null,
+   "delivered_extent": "Complete HTML item page.",
+   "identity_inspection": "Structured data read: Syro-Malankara Catholic Church Syriac and Malayalam Qurbana Thaksa, year 1960, PDF link to the 1960 scan.",
+   "rights_basis": "Modern web page (catalogue, transcription or publisher page); host terms not a redistribution licence. Factual metadata only.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue or transcription page kept as a retrieval receipt; no redistribution basis and the evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-mdl-english2012-p1-page",
+   "original_url": "https://www.malankaralibrary.com/book/holy-qurbana-malankara-church-taksa-part-one-english",
+   "sha256": "40c8f7813768cf8fd37dadc3b7f84b35544f06093e02c7b764a973d66071f808",
+   "bytes": 107875,
+   "pages": null,
+   "delivered_extent": "Complete HTML item page.",
+   "identity_inspection": "Structured data read: Part One, English, catalogue year 2013, PDF link.",
+   "rights_basis": "Modern web page (catalogue, transcription or publisher page); host terms not a redistribution licence. Factual metadata only.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue or transcription page kept as a retrieval receipt; no redistribution basis and the evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-mdl-english2012-p2-page",
+   "original_url": "https://www.malankaralibrary.com/book/956e7f4c-6d48-11f1-9dc3-226aaf2dd39b",
+   "sha256": "93c76c6856c925370587a1ef8bb84fdb733d3ecad26faa032227970e0d41b13a",
+   "bytes": 107619,
+   "pages": null,
+   "delivered_extent": "Complete HTML item page.",
+   "identity_inspection": "Structured data read: Part Two, English, catalogue year 2013, PDF link.",
+   "rights_basis": "Modern web page (catalogue, transcription or publisher page); host terms not a redistribution licence. Factual metadata only.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue or transcription page kept as a retrieval receipt; no redistribution basis and the evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-mdl-english2023-page",
+   "original_url": "https://malankaralibrary.com/book/9572b4ea-6d48-11f1-9dc3-226aaf2dd39b",
+   "sha256": "39dde2bc51a49a4ee9cb3a4f6f7c9843453bd24d03d79f69ca714abf87707802",
+   "bytes": 132701,
+   "pages": null,
+   "delivered_extent": "Complete HTML item page.",
+   "identity_inspection": "Structured data read: The Order of the Holy Qurbono of the Syro Malankara Catholic Church, English Translation, catalogue year 2023, PDF link.",
+   "rights_basis": "Modern web page (catalogue, transcription or publisher page); host terms not a redistribution licence. Factual metadata only.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue or transcription page kept as a retrieval receipt; no redistribution basis and the evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-mdl-paniker-page",
+   "original_url": "https://malankaralibrary.com/book/the-holy-qurbono-in-the-syro-malankara-church",
+   "sha256": "400ebbd2530623f50b0aef7bb6c4b27c46aebf176db9fe2c10b2729cbc71a497",
+   "bytes": 82445,
+   "pages": null,
+   "delivered_extent": "Complete HTML item page.",
+   "identity_inspection": "Structured data read: author Fr. Givergis Paniker Karichal, year 1991, PDF link.",
+   "rights_basis": "Modern web page (catalogue, transcription or publisher page); host terms not a redistribution licence. Factual metadata only.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue or transcription page kept as a retrieval receipt; no redistribution basis and the evidential facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-bonn-syrian-empty-1",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/topic/titles/17267?max=100",
+   "sha256": "a37cb8803f898140c4e00fa432022289dde3cb7954ac028b8d0d4fc99af01115",
+   "bytes": 12343,
+   "pages": null,
+   "delivered_extent": "Complete HTTP response, but the listing came back empty or truncated: the five Syrian-group pages are byte-identical 'Keine Einträge vorhanden' pages, the Arabic page lists one title, and the quick search reports no hits.",
+   "identity_inspection": "Read as text. Non-evidential: the same listings fetched again in this pass returned the full group (see the finish/meta listing receipts), so these empty responses must not be read as absences.",
+   "rights_basis": "Modern catalogue pages; Bonn ULB site terms are not a licence for the page markup.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Failed listing responses kept only as a record of the transient failure.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-bonn-syrian-empty-2",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/topic/titles/17267?max=100&offset=101",
+   "sha256": "a37cb8803f898140c4e00fa432022289dde3cb7954ac028b8d0d4fc99af01115",
+   "bytes": 12343,
+   "pages": null,
+   "delivered_extent": "Complete HTTP response, but the listing came back empty or truncated: the five Syrian-group pages are byte-identical 'Keine Einträge vorhanden' pages, the Arabic page lists one title, and the quick search reports no hits.",
+   "identity_inspection": "Read as text. Non-evidential: the same listings fetched again in this pass returned the full group (see the finish/meta listing receipts), so these empty responses must not be read as absences.",
+   "rights_basis": "Modern catalogue pages; Bonn ULB site terms are not a licence for the page markup.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Failed listing responses kept only as a record of the transient failure.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-bonn-syrian-empty-3",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/topic/titles/17267?max=100&offset=201",
+   "sha256": "a37cb8803f898140c4e00fa432022289dde3cb7954ac028b8d0d4fc99af01115",
+   "bytes": 12343,
+   "pages": null,
+   "delivered_extent": "Complete HTTP response, but the listing came back empty or truncated: the five Syrian-group pages are byte-identical 'Keine Einträge vorhanden' pages, the Arabic page lists one title, and the quick search reports no hits.",
+   "identity_inspection": "Read as text. Non-evidential: the same listings fetched again in this pass returned the full group (see the finish/meta listing receipts), so these empty responses must not be read as absences.",
+   "rights_basis": "Modern catalogue pages; Bonn ULB site terms are not a licence for the page markup.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Failed listing responses kept only as a record of the transient failure.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-bonn-syrian-empty-de1",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/ulbbn/topic/titles/17267?lang=de&max=100",
+   "sha256": "a37cb8803f898140c4e00fa432022289dde3cb7954ac028b8d0d4fc99af01115",
+   "bytes": 12343,
+   "pages": null,
+   "delivered_extent": "Complete HTTP response, but the listing came back empty or truncated: the five Syrian-group pages are byte-identical 'Keine Einträge vorhanden' pages, the Arabic page lists one title, and the quick search reports no hits.",
+   "identity_inspection": "Read as text. Non-evidential: the same listings fetched again in this pass returned the full group (see the finish/meta listing receipts), so these empty responses must not be read as absences.",
+   "rights_basis": "Modern catalogue pages; Bonn ULB site terms are not a licence for the page markup.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Failed listing responses kept only as a record of the transient failure.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-bonn-syrian-empty-de201",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/ulbbn/topic/titles/17267?lang=de&max=100&offset=201",
+   "sha256": "a37cb8803f898140c4e00fa432022289dde3cb7954ac028b8d0d4fc99af01115",
+   "bytes": 12343,
+   "pages": null,
+   "delivered_extent": "Complete HTTP response, but the listing came back empty or truncated: the five Syrian-group pages are byte-identical 'Keine Einträge vorhanden' pages, the Arabic page lists one title, and the quick search reports no hits.",
+   "identity_inspection": "Read as text. Non-evidential: the same listings fetched again in this pass returned the full group (see the finish/meta listing receipts), so these empty responses must not be read as absences.",
+   "rights_basis": "Modern catalogue pages; Bonn ULB site terms are not a licence for the page markup.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Failed listing responses kept only as a record of the transient failure.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-bonn-arabic-partial",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/topic/titles/16475?max=100",
+   "sha256": "eff5a93b79b9d32bd0502eb60c41cfb451cf48f790fbe14819f2f41be8aea8ce",
+   "bytes": 14816,
+   "pages": null,
+   "delivered_extent": "Complete HTTP response listing a single title (Codices Carshunici Vaticani) instead of the 461-title group.",
+   "identity_inspection": "Read as text. Non-evidential: the same listings fetched again in this pass returned the full group (see the finish/meta listing receipts), so these empty responses must not be read as absences.",
+   "rights_basis": "Modern catalogue pages; Bonn ULB site terms are not a licence for the page markup.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Failed listing responses kept only as a record of the transient failure.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-bonn-quicksearch-empty",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/search/quick?query=%C5%A0uml%C4%81j%C4%81",
+   "sha256": "b7b91505a052d0ee6a16ae9eafeaffaca11f3433c627d054b651fd85072d278a",
+   "bytes": 11876,
+   "pages": null,
+   "delivered_extent": "Complete HTTP response, but the listing came back empty or truncated: the five Syrian-group pages are byte-identical 'Keine Einträge vorhanden' pages, the Arabic page lists one title, and the quick search reports no hits.",
+   "identity_inspection": "Read as text. Non-evidential: the same listings fetched again in this pass returned the full group (see the finish/meta listing receipts), so these empty responses must not be read as absences.",
+   "rights_basis": "Modern catalogue pages; Bonn ULB site terms are not a licence for the page markup.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Failed listing responses kept only as a record of the transient failure.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-bonn-syrian-list-1",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/topic/titles/17267?max=100&offset=1",
+   "sha256": "169a86a456b1e1a482a6dfffac1c1225a1193e83cb3fc32db2a5ed0bc80301e5",
+   "bytes": 113249,
+   "pages": null,
+   "delivered_extent": "Complete HTTP response: one page (up to 100 titles) of the Bonn Goussen Syrian-group listing, fetched in this finishing pass.",
+   "identity_inspection": "Parsed for title-record identifiers: 3077091 (Gospel lectionary 1912), 4156832 (Beirut Diakonale 1926), 4268770 (Petit manuel 1923), 3724210 (Liber ritualis 1922), 3724368 (diaconicon), 310934 (1881) and 3097402 (1922 missal).",
+   "rights_basis": "Modern catalogue page; no licence for the markup.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue listing receipt; the facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-bonn-syrian-list-101",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/topic/titles/17267?max=100&offset=101",
+   "sha256": "77aa1432c1573ca70e3b07dc8567fa98fc07a6f98c16bdbc48d052c951071746",
+   "bytes": 114108,
+   "pages": null,
+   "delivered_extent": "Complete HTTP response: one page (up to 100 titles) of the Bonn Goussen Syrian-group listing, fetched in this finishing pass.",
+   "identity_inspection": "Parsed for title-record identifiers: 3077091 (Gospel lectionary 1912), 4156832 (Beirut Diakonale 1926), 4268770 (Petit manuel 1923), 3724210 (Liber ritualis 1922), 3724368 (diaconicon), 310934 (1881) and 3097402 (1922 missal).",
+   "rights_basis": "Modern catalogue page; no licence for the markup.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue listing receipt; the facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-bonn-syrian-list-201",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/topic/titles/17267?max=100&offset=201",
+   "sha256": "59043f6960f4f0d6059bc7c4da866856367cb9b289208c18ab0d728c303f03a2",
+   "bytes": 83864,
+   "pages": null,
+   "delivered_extent": "Complete HTTP response: one page (up to 100 titles) of the Bonn Goussen Syrian-group listing, fetched in this finishing pass.",
+   "identity_inspection": "Parsed for title-record identifiers: 3077091 (Gospel lectionary 1912), 4156832 (Beirut Diakonale 1926), 4268770 (Petit manuel 1923), 3724210 (Liber ritualis 1922), 3724368 (diaconicon), 310934 (1881) and 3097402 (1922 missal).",
+   "rights_basis": "Modern catalogue page; no licence for the markup.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue listing receipt; the facts are carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-bonn-record-3724368",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3724368",
+   "sha256": "487aa9a6197bbd48880219d1d6348555f56435bc43cd4d8e92812a3a9a08a9fb",
+   "bytes": 21828,
+   "pages": null,
+   "delivered_extent": "Complete HTML title record fetched in this finishing pass: diaconicon (catalogue year 1912, Šarfa patriarchal press, [14], 392, 48 pages, 97.22 MB).",
+   "identity_inspection": "Read as text: title, imprint, extent, notes, download size and rights statement (Public Domain Mark 1.0).",
+   "rights_basis": "Modern catalogue page; the rights statement it carries applies to the digitized book, not to the page markup.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue receipt; facts carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-bonn-record-725112",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/725112",
+   "sha256": "5b49d6e1c73bcadb59890c99c3e9fe525cc57cd30d1330c04c8c44da06704485",
+   "bytes": 20665,
+   "pages": null,
+   "delivered_extent": "Complete HTML title record fetched in this finishing pass: 1877 Mosul diocesan calendar (254 pages, 51.98 MB).",
+   "identity_inspection": "Read as text: title, imprint, extent, notes, download size and rights statement (Public Domain Mark 1.0).",
+   "rights_basis": "Modern catalogue page; the rights statement it carries applies to the digitized book, not to the page markup.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue receipt; facts carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-bonn-record-598417",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/598417",
+   "sha256": "216a45033dab3c1335341798d2c743bbaae13abaf1383e81e8cf3075729c4dc1",
+   "bytes": 20090,
+   "pages": null,
+   "delivered_extent": "Complete HTML title record fetched in this finishing pass: 1887 Mosul calendar (140 pages, 26.81 MB).",
+   "identity_inspection": "Read as text: title, imprint, extent, notes, download size and rights statement (Public Domain Mark 1.0).",
+   "rights_basis": "Modern catalogue page; the rights statement it carries applies to the digitized book, not to the page markup.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue receipt; facts carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-bonn-record-3207188",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3207188",
+   "sha256": "559b71cfdb99268f6b75a06eff5a5077f3fb518cffc340282a60a13e2887da3c",
+   "bytes": 19878,
+   "pages": null,
+   "delivered_extent": "Complete HTML title record fetched in this finishing pass: 1901 Šarfa pericope book (95 pages, 14.92 MB).",
+   "identity_inspection": "Read as text: title, imprint, extent, notes, download size and rights statement (Public Domain Mark 1.0).",
+   "rights_basis": "Modern catalogue page; the rights statement it carries applies to the digitized book, not to the page markup.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue receipt; facts carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-bonn-record-209788",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/209788",
+   "sha256": "2d463d4f4d7879a745d925f4c7923183d00b171d8b71baa7a7cdbb16babf6546",
+   "bytes": 20169,
+   "pages": null,
+   "delivered_extent": "Complete HTML title record fetched in this finishing pass: 1900 Mosul lection book (212 pages, 27.83 MB).",
+   "identity_inspection": "Read as text: title, imprint, extent, notes, download size and rights statement (Public Domain Mark 1.0).",
+   "rights_basis": "Modern catalogue page; the rights statement it carries applies to the digitized book, not to the page markup.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue receipt; facts carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-bonn-record-3077091",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3077091",
+   "sha256": "70d59920cc9e58b055de059678f02a6944157fde93311110cd5e95db6ce791e1",
+   "bytes": 20699,
+   "pages": null,
+   "delivered_extent": "Complete HTML title record fetched in this finishing pass: 1912 Sharfeh Gospel lectionary, part 1 (405 pages, 85.81 MB; not downloaded).",
+   "identity_inspection": "Read as text: title, imprint, extent, notes, download size and rights statement (Public Domain Mark 1.0).",
+   "rights_basis": "Modern catalogue page; the rights statement it carries applies to the digitized book, not to the page markup.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue receipt; facts carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-bonn-record-4156832",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/4156832",
+   "sha256": "ca37fb91f2bc65f88877e06338695036808afdbb75ad943b1f97ec94d5e86538",
+   "bytes": 20252,
+   "pages": null,
+   "delivered_extent": "Complete HTML title record fetched in this finishing pass: 1926 Beirut Diakonale (63 pages, 13.87 MB; not downloaded).",
+   "identity_inspection": "Read as text: title, imprint, extent, notes, download size and rights statement (Public Domain Mark 1.0).",
+   "rights_basis": "Modern catalogue page; the rights statement it carries applies to the digitized book, not to the page markup.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue receipt; facts carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-bonn-record-4268770",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/4268770",
+   "sha256": "c761495f0b7adc56005b104e4e069d7b5e17ee72521ee47214303420b106eb3e",
+   "bytes": 20158,
+   "pages": null,
+   "delivered_extent": "Complete HTML title record fetched in this finishing pass: 1923 Charfé Petit manuel de la messe syrienne (88 pages, 23.18 MB; not downloaded).",
+   "identity_inspection": "Read as text: title, imprint, extent, notes, download size and rights statement (Public Domain Mark 1.0).",
+   "rights_basis": "Modern catalogue page; the rights statement it carries applies to the digitized book, not to the page markup.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue receipt; facts carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-bonn-record-3724210",
+   "original_url": "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3724210",
+   "sha256": "155e80700512c68ba811b73d9f95b82ea768901df296ea56f1da65b6a7e9f182",
+   "bytes": 21256,
+   "pages": null,
+   "delivered_extent": "Complete HTML title record fetched in this finishing pass: 1922 Liber ritualis (13, 277, 18 pages; not downloaded; ritual, outside Eucharistic scope).",
+   "identity_inspection": "Read as text: title, imprint, extent, notes, download size and rights statement (Public Domain Mark 1.0).",
+   "rights_basis": "Modern catalogue page; the rights statement it carries applies to the digitized book, not to the page markup.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue receipt; facts carried in the source rows.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-seminary-catalogue",
+   "original_url": "https://seminairemaronite.org/%D8%A7%D9%84%D9%85%D9%83%D8%AA%D8%A8%D8%A9/page/159/?orderby=popularity",
+   "sha256": "f7624bf9729c9b28f2242d4397acfb0d65cd12c8dea34b4b9034071b790f8b24",
+   "bytes": 300929,
+   "pages": null,
+   "delivered_extent": "Complete HTML page 159 of the Maronite Patriarchal Seminary (Ghazir) library catalogue, fetched in this pass (a first request with a browser user agent returned HTTP 406; a plain request succeeded).",
+   "identity_inspection": "Read as text: Kitāb al-qirāʾāt min rasāʾil Mār Būlus al-rasūl fī al-quddās, Ignatius Antoine II Hayek, first edition, Beirut, Maṭbaʿat Tūmā, 2006, 414 pages, Arabic, shelfmark Tl 141 Ar.",
+   "rights_basis": "Modern catalogue page; no licence.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Catalogue receipt; facts carried in the source row.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-musa-bibliography",
+   "original_url": "https://mylifeischrist.wordpress.com/category/%D8%B5%D9%81%D8%AD%D8%A9-%D9%85%D9%86-%D9%83%D8%AA%D8%A7%D8%A8/",
+   "sha256": "5eaa499c9df25c929c3948f4a66906c07a45d567e49b29b1bba05e1cdd6fb66a",
+   "bytes": 1423490,
+   "pages": null,
+   "delivered_extent": "Complete HTML category page of a community blog carrying Archbishop George Qas Musa's bibliography (post of 18 November 2022).",
+   "identity_inspection": "Read as text: under works prepared and presented, item 49 'Rutbat al-quddās al-suryānī (Baghdad 2003)', next to the Mosul Syriac Catholic diocesan directory (2002, 2008).",
+   "rights_basis": "Modern blog page; no licence.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Community-hosted bibliography receipt; facts carried in the source row.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-enccatt-translation",
+   "original_url": "https://azioneromana.com/article/libri-liturgici",
+   "sha256": "e923e2d09b6b6a93235142ff6f9e98f5628c93ed7b90340d39f5090ae58750b4",
+   "bytes": 79079,
+   "pages": null,
+   "delivered_extent": "Complete HTML page: an English rendering of the Enciclopedia Cattolica article 'Libri liturgici'.",
+   "identity_inspection": "Read as text, section on the Syro-Western rite: Sharfa 1922 missal; Celebration of the oblation (Sharfa 1931), a deacon book made into a server booklet, with a fuller 1905 edition; Lessons of the oblation (1912, Gospels in Syriac and Arabic); Epistles (1925); the Catholic Malankarese Order of the Oblation (Pampakuda 1934) with two anaphoras and added prayers including an absolution formula; the non-Catholic Pampakuda Book of the Oblation (1931) with 18 anaphoras.",
+   "rights_basis": "Modern web translation of a copyrighted encyclopedia article; no licence located.",
+   "proposed_storage": "scratch-only",
+   "storage_reason": "Secondary discovery page only; the underlying Italian article was not inspected.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-hayek-obituary",
+   "original_url": "https://bakhdida.ca/Churches/PatHaik.htm",
+   "sha256": null,
+   "bytes": null,
+   "pages": null,
+   "delivered_extent": "Not delivered: HTTP 520 for the previous agent and for an http:// retry on 2026-10-19; HTTP 404 for the https:// request on 2026-10-19.",
+   "identity_inspection": "No bytes. The page's content is known only from the search-engine excerpt captured in the previous agent's session log and from the reviewer's reading recorded in cold-supplement.json.",
+   "rights_basis": "Community-hosted modern web page; not assessed because nothing was delivered.",
+   "proposed_storage": "unavailable",
+   "storage_reason": "Host error; retry later or find the books themselves.",
+   "existing_canonical_identity": null
+  },
+  {
+   "id": "syriac-malankara-acq-bakoz-mass",
+   "original_url": "https://bakhdida.ca/BashirBakoz/SeriacMass.htm",
+   "sha256": null,
+   "bytes": null,
+   "pages": null,
+   "delivered_extent": "Not delivered: HTTP 520 for the previous agent and for an http:// retry on 2026-10-19; HTTP 404 for the https:// request on 2026-10-19.",
+   "identity_inspection": "No bytes. The page's content is known only from the search-engine excerpt captured in the previous agent's session log and from the reviewer's reading recorded in cold-supplement.json.",
+   "rights_basis": "Community-hosted modern web page; not assessed because nothing was delivered.",
+   "proposed_storage": "unavailable",
+   "storage_reason": "Host error; retry later or find the books themselves.",
+   "existing_canonical_identity": null
+  }
+ ],
+ "expected_list_reconciliation": [
+  {
+   "expected_id": "cold-syr-manuscripts",
+   "expected_label": "Pre-1843 diocesan manuscript missals",
+   "matched_packet_ids": [
+    "syriac-malankara-syr-premodern-mss"
+   ],
+   "outcome": "matched",
+   "evidence": "Packet-level gap; unexamined catalogues named. Cold adds Berkers 1962 (31 Charfet manuscripts with anaphoras) as a next source."
+  },
+  {
+   "expected_id": "cold-syr1843",
+   "expected_label": "Missale syriacum, Rome 1843",
+   "matched_packet_ids": [
+    "syr-rome-1843"
+   ],
+   "outcome": "matched",
+   "evidence": "Retained canonical row."
+  },
+  {
+   "expected_id": "cold-syr1868",
+   "expected_label": "Mosul Service de la messe privée 1868",
+   "matched_packet_ids": [
+    "syriac-malankara-syr-mosul-1868"
+   ],
+   "outcome": "matched",
+   "evidence": "New record; unlocated."
+  },
+  {
+   "expected_id": "cold-syr1881",
+   "expected_label": "Mosul service book second edition 1881",
+   "matched_packet_ids": [
+    "syr-mosul-1881"
+   ],
+   "outcome": "matched",
+   "evidence": "Retained as auxiliary deacon/server book, not a missal."
+  },
+  {
+   "expected_id": "cold-syr-undated",
+   "expected_label": "Undated patriarchally approved Mosul reedition",
+   "matched_packet_ids": [
+    "syriac-malankara-syr-mosul-undated-reedition"
+   ],
+   "outcome": "matched",
+   "evidence": "No chronology, as required."
+  },
+  {
+   "expected_id": "cold-syr1888",
+   "expected_label": "Liber ministerii, Beirut 1888",
+   "matched_packet_ids": [
+    "syriac-malankara-syr-beirut-1888"
+   ],
+   "outcome": "matched",
+   "evidence": "Corrected to carry the 1884 first-edition report from the Bonn 1905 copy's pencil note."
+  },
+  {
+   "expected_id": "cold-syr1905",
+   "expected_label": "Complete diaconicon, Sharfeh 1905",
+   "matched_packet_ids": [
+    "syriac-malankara-syr-sharfeh-1905"
+   ],
+   "outcome": "matched",
+   "evidence": "Acquired; 1905 on title; Bonn 1912 a catalogue error."
+  },
+  {
+   "expected_id": "cold-syr1912",
+   "expected_label": "Sharfeh Gospel lectionary, first volume, 1912",
+   "matched_packet_ids": [
+    "syriac-malankara-syr-sharfeh-1912-gospels"
+   ],
+   "outcome": "matched",
+   "evidence": "Title leaf checked by cold review."
+  },
+  {
+   "expected_id": "cold-syr1922",
+   "expected_label": "Rahmani missal, Sharfeh 1922",
+   "matched_packet_ids": [
+    "syr-1922"
+   ],
+   "outcome": "matched",
+   "evidence": "Retained; seven-anaphora correction already canonical."
+  },
+  {
+   "expected_id": "cold-syr1925",
+   "expected_label": "Sharfeh epistolary 1925",
+   "matched_packet_ids": [
+    "syriac-malankara-syr-sharfeh-1925-epistles"
+   ],
+   "outcome": "matched",
+   "evidence": "Reported, unlocated."
+  },
+  {
+   "expected_id": "cold-syr1931",
+   "expected_label": "Celebration of the oblation, Sharfa 1931",
+   "matched_packet_ids": [
+    "syriac-malankara-syr-sharfeh-1931-booklet"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead; not merged with 1926."
+  },
+  {
+   "expected_id": "cold-syr-cal1877",
+   "expected_label": "Mosul diocesan calendar 1877",
+   "matched_packet_ids": [
+    "syriac-malankara-syr-mosul-1877-calendar"
+   ],
+   "outcome": "matched",
+   "evidence": "Acquired; Mass-reading table confirmed."
+  },
+  {
+   "expected_id": "cold-syr-cal1887",
+   "expected_label": "Calendarium juxta ritum, Mosul 1887",
+   "matched_packet_ids": [
+    "syriac-malankara-syr-mosul-1887-calendar"
+   ],
+   "outcome": "matched",
+   "evidence": "Acquired; contents list shows no Mass-reading table."
+  },
+  {
+   "expected_id": "cold-syr2015",
+   "expected_label": "Rutbat al-Quddās, Mosul 2015",
+   "matched_packet_ids": [
+    "syriac-malankara-syr-mosul-2015"
+   ],
+   "outcome": "matched",
+   "evidence": "Catalogue lead."
+  },
+  {
+   "expected_id": "cold-mal1886",
+   "expected_label": "Pampakuda anaphora collection 1886",
+   "matched_packet_ids": [
+    "syriac-malankara-mal-pampakuda-1886"
+   ],
+   "outcome": "matched",
+   "evidence": "Secondary reception; origin review."
+  },
+  {
+   "expected_id": "cold-mal1931",
+   "expected_label": "Pampakuda anaphora collection 1931",
+   "matched_packet_ids": [
+    "syriac-malankara-mal-pampakuda-1931"
+   ],
+   "outcome": "matched",
+   "evidence": "Not called Syro-Malankara Catholic; reported use only."
+  },
+  {
+   "expected_id": "cold-mal1934",
+   "expected_label": "Pampakuda Syro-Malankara missal 1934",
+   "matched_packet_ids": [
+    "malankara-pampakuda-1934"
+   ],
+   "outcome": "matched",
+   "evidence": "Retained without scan; secondary change report appended."
+  },
+  {
+   "expected_id": "cold-mal1965",
+   "expected_label": "Teksō d-qurōbō, Xystus, Tiruvalla 1965",
+   "matched_packet_ids": [
+    "syriac-malankara-mal-tiruvalla-1965",
+    "syriac-malankara-mal-tiruvalla-1960"
+   ],
+   "outcome": "matched",
+   "evidence": "Catholic imprimaturs confirmed; 1960 re-imprimatur printing also found."
+  },
+  {
+   "expected_id": "cold-mal1966",
+   "expected_label": "Syro-Malankara Qurbana Thaksa 1966",
+   "matched_packet_ids": [
+    "malankara-1966-taksa"
+   ],
+   "outcome": "matched",
+   "evidence": "Retained deferred; signatories confirmed."
+  },
+  {
+   "expected_id": "cold-mal2007",
+   "expected_label": "Revised Order of the Holy Qurbono / Taksa 2007",
+   "matched_packet_ids": [
+    "malankara-2007-taksa",
+    "syriac-malankara-mal-2006-approval",
+    "syriac-malankara-mal-2007-qurbonokramam"
+   ],
+   "outcome": "matched",
+   "evidence": "Approval, Qurbonokramam and Takso release kept distinct."
+  },
+  {
+   "expected_id": "cold-mal2012",
+   "expected_label": "English Qurbono Takso and people's book 2012",
+   "matched_packet_ids": [
+    "malankara-2012-takso",
+    "malankara-2012-people"
+   ],
+   "outcome": "matched",
+   "evidence": "Deferred translations."
+  },
+  {
+   "expected_id": "cold-mal2022de",
+   "expected_label": "German Qurbono Taksa 2022",
+   "matched_packet_ids": [
+    "syriac-malankara-mal-2022-german"
+   ],
+   "outcome": "matched",
+   "evidence": "Deferred translation."
+  },
+  {
+   "expected_id": "cold-shared-james",
+   "expected_label": "James anaphora: Jacob of Edessa recension and eighth-century Add. 14615",
+   "matched_packet_ids": [
+    "syriac-malankara-add14493",
+    "syriac-malankara-add14615-lower",
+    "syr-add14523-james"
+   ],
+   "outcome": "matched",
+   "evidence": "Add. 14615 was packet-only and unchecked; cold verified it and adds record syriac-malankara-add14615-lower-cold."
+  },
+  {
+   "expected_id": "cold-syr1978",
+   "expected_label": "Hayek order of the Mass 1978 (supplement)",
+   "matched_packet_ids": [
+    "syriac-malankara-syr-hayek-1978"
+   ],
+   "outcome": "matched",
+   "evidence": "Reported revision; book unseen."
+  },
+  {
+   "expected_id": "cold-syr1993",
+   "expected_label": "Hayek Gospel and readings 1993 (supplement)",
+   "matched_packet_ids": [
+    "syriac-malankara-syr-hayek-1993"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead."
+  },
+  {
+   "expected_id": "cold-syr2003",
+   "expected_label": "Musa, Syriac order of the Mass, Baghdad 2003 (supplement)",
+   "matched_packet_ids": [
+    "syriac-malankara-syr-musa-2003"
+   ],
+   "outcome": "matched",
+   "evidence": "Lead."
+  },
+  {
+   "expected_id": "cold-syr2006lectionary",
+   "expected_label": "Hayek Pauline readings 2006 (supplement)",
+   "matched_packet_ids": [
+    "syriac-malankara-syr-hayek-2006"
+   ],
+   "outcome": "matched",
+   "evidence": "Deferred Arabic lectionary."
+  },
+  {
+   "expected_id": "cold-syr1972services",
+   "expected_label": "Hayek priestly services 1972 (supplement)",
+   "matched_packet_ids": [
+    "syriac-malankara-syr-hayek-1972"
+   ],
+   "outcome": "matched",
+   "evidence": "Packet-only lead; Eucharistic scope unknown."
+  },
+  {
+   "expected_id": "cold-add14523-f8",
+   "expected_label": "Add. 14523 f. 8 (supplement)",
+   "matched_packet_ids": [
+    "syriac-malankara-add14523-f8-f9",
+    "syr-add14523-james"
+   ],
+   "outcome": "matched",
+   "evidence": "Qualification appended to the existing row."
+  },
+  {
+   "expected_id": "cold-add14523-f9",
+   "expected_label": "Add. 14523 f. 9 (supplement)",
+   "matched_packet_ids": [
+    "syriac-malankara-add14523-f8-f9",
+    "syr-add14523-james"
+   ],
+   "outcome": "matched",
+   "evidence": "Qualification appended to the existing row."
+  },
+  {
+   "expected_id": "cold-add14615-lower",
+   "expected_label": "Add. 14615 lower text (supplement)",
+   "matched_packet_ids": [
+    "syriac-malankara-add14615-lower"
+   ],
+   "outcome": "matched",
+   "evidence": "Packet-only; cold required addition promotes it."
+  },
+  {
+   "expected_id": "cold-add17128",
+   "expected_label": "Add. 17128 (supplement)",
+   "matched_packet_ids": [
+    "syriac-malankara-add17128"
+   ],
+   "outcome": "matched",
+   "evidence": "Record; Rahmani 1922 citation verified."
+  },
+  {
+   "expected_id": "cold-add14693",
+   "expected_label": "Add. 14693 two strata (supplement)",
+   "matched_packet_ids": [
+    "syriac-malankara-add14693-strata"
+   ],
+   "outcome": "matched",
+   "evidence": "Packet-only; acceptable as a census witness."
+  },
+  {
+   "expected_id": "cold-add14493",
+   "expected_label": "Add. 14493 (supplement)",
+   "matched_packet_ids": [
+    "syriac-malankara-add14493"
+   ],
+   "outcome": "matched",
+   "evidence": "Record."
+  },
+  {
+   "expected_id": "cold-wright-census",
+   "expected_label": "Wright Missals 255-283 and Sacerdotals 284-305 (51 dispositions)",
+   "matched_packet_ids": [
+    "syr-add14523-james",
+    "syr-add14690-anaphoras",
+    "syriac-malankara-add17128",
+    "syriac-malankara-add14493",
+    "syriac-malankara-add14693-strata",
+    "syriac-malankara-add14523-f8-f9"
+   ],
+   "outcome": "matched",
+   "evidence": "Census used as discovery control; unpromoted entries stay witnesses in the census, not versions. Referrals (Add. 25874, Add. 14497, Harley 5512) listed under discovered_unassigned_uses."
+  }
+ ],
+ "acquisition_spot_checks": [
+  {
+   "acquisition_id": "syriac-malankara-acq-diaconicon1905",
+   "check": "PDF 461 title, pencil note; PDF 2 spine; PDF 459, 458, 457, 455, 451 preface",
+   "result": "confirmed",
+   "detail": "Arabic title: Kitāb khidmat al-quddās according to the Syriac Antiochene rite, collected and arranged by Ignatius Ephrem II, Syriac patriarchal press, Sharfeh, 1905. Spine lettering consistent ('...05'). Preface claims confirmed. Pencil note: first edition 1884, octavo, 44 pages, Jesuit press, Beirut, under the Syriac title Brightman gives for Beirut 1888."
+  },
+  {
+   "acquisition_id": "syriac-malankara-acq-bonn-record-3724368",
+   "check": "title record fields",
+   "result": "confirmed",
+   "detail": "Catalogue gives 1912 and [14], 392, 48 pages; the printed title contradicts the catalogue year."
+  },
+  {
+   "acquisition_id": "syriac-malankara-acq-calendar1877",
+   "check": "PDF 260 title; PDF 55 printed 206",
+   "result": "confirmed",
+   "detail": "Benni-approved Mosul diocesan calendar 1877; Arabic Mass readings for the Sundays after Denho and the Nineveh fast."
+  },
+  {
+   "acquisition_id": "syriac-malankara-acq-calendar1887",
+   "check": "PDF 157 title; PDF 7-10 contents",
+   "result": "confirmed",
+   "detail": "Title 1887. Contents list shows calendar, movable-feast tables, feast list and Office rules; no Mass-reading table."
+  },
+  {
+   "acquisition_id": "syriac-malankara-acq-pericopes1901",
+   "check": "PDF 101 title and imprint; PDF 99 heading",
+   "result": "confirmed",
+   "detail": "Imprint printed on the Syriac title leaf: Sharfeh patriarchal press, year 1901 in Syriac letters."
+  },
+  {
+   "acquisition_id": "syriac-malankara-acq-chaldean-lections1900",
+   "check": "PDF 228 title",
+   "result": "confirmed",
+   "detail": "Chaldean Mass lectionary, Mosul 1900; correctly referred out."
+  },
+  {
+   "acquisition_id": "syriac-malankara-acq-tiruvalla1960",
+   "check": "PDF 1, 2, 84",
+   "result": "confirmed",
+   "detail": "Title 1960, St Joseph's Tiruvalla; re-imprimatur 11 May 1960. Minor description errors: Xystus naming is printed, not handwritten; the appendix receives a person, with a further rubric for a priest."
+  },
+  {
+   "acquisition_id": "syriac-malankara-acq-tiruvalla1965",
+   "check": "PDF 2, 3",
+   "result": "confirmed",
+   "detail": "Title 1965; imprimatur 2 February 1965."
+  },
+  {
+   "acquisition_id": "syriac-malankara-acq-taksa1966",
+   "check": "PDF 7",
+   "result": "confirmed",
+   "detail": "Preface signed by Benedict Mar Gregorios and Zacharias Mar Athanasios, 1 January 1966."
+  },
+  {
+   "acquisition_id": "syriac-malankara-acq-scher1909",
+   "check": "PDF 27, printed 275",
+   "result": "confirmed",
+   "detail": "Entry 127 as reported (Mardin 1868, 519 pages, Syriac with Arabic rubrics)."
+  },
+  {
+   "acquisition_id": "canonical Brightman 1896 (source syriac-malankara-src-brightman1896-lvi)",
+   "check": "PDF 58, printed lvi",
+   "result": "confirmed",
+   "detail": "Syrian Uniat Liber ministerii, Beirut 1888, Syriac only."
+  },
+  {
+   "acquisition_id": "syriac-malankara-acq-lugmayr2013",
+   "check": "PDF 42-43",
+   "result": "confirmed",
+   "detail": "1886/1931 use by Syro-Malankarese (after Madey); 1934 Xystus and James reprint with assimilated institution narrative; 1968 German approval."
+  },
+  {
+   "acquisition_id": "syriac-malankara-acq-paniker1991",
+   "check": "PDF 29, printed 48",
+   "result": "confirmed",
+   "detail": "1987 Teksod-Qurobo with nine anaphoras, then in use."
+  },
+  {
+   "acquisition_id": "syriac-malankara-acq-synod2006-report",
+   "check": "PDF 25, 26, 46 text; printed 30-31 text",
+   "result": "confirmed",
+   "detail": "Fourth Ordinary Synod 31 October to 3 November 2006; agenda item 7; named criteria and changes; Decision II.6 to publish Takso and Qurbonokramam."
+  },
+  {
+   "acquisition_id": "syriac-malankara-acq-bulletin-feb2007",
+   "check": "PDF 162-163 text",
+   "result": "confirmed",
+   "detail": "Letter of 15 February 2007 reports the published renewed Order with Qyomto and Sleebo prayers; misdates the synod to 2005."
+  },
+  {
+   "acquisition_id": "syriac-malankara-acq-synod2007-report",
+   "check": "PDF 24-25 text",
+   "result": "confirmed",
+   "detail": "Takso released in October 2007; Common Prayer Book and Qurbonakramam with Qyomto and Sleebo prayers already published."
+  },
+  {
+   "acquisition_id": "syriac-malankara-acq-synod2020-report",
+   "check": "text line 539",
+   "result": "confirmed",
+   "detail": "Kannada Qurbono Taksa with three anaphoras released."
+  },
+  {
+   "acquisition_id": "syriac-malankara-acq-german-bulletin2023",
+   "check": "text line 1639",
+   "result": "confirmed",
+   "detail": "German Qurbono Taksa released 1 January 2022."
+  },
+  {
+   "acquisition_id": "syriac-malankara-acq-epl2-2012",
+   "check": "text lines 76-84",
+   "result": "confirmed",
+   "detail": "Official English Takso, six anaphoras, others out of use from 8 September 2012."
+  },
+  {
+   "acquisition_id": "syriac-malankara-acq-english2012-part1",
+   "check": "PDF 1-2",
+   "result": "confirmed",
+   "detail": "Title says 2012; six anaphoras in contents."
+  },
+  {
+   "acquisition_id": "syriac-malankara-acq-english2023",
+   "check": "PDF 2, 4 text",
+   "result": "confirmed",
+   "detail": "15 August 2023, private use within the eparchy; nine anaphoras in the 2007 Malayalam Takso, six translated."
+  },
+  {
+   "acquisition_id": "syriac-malankara-acq-desreumaux-1",
+   "check": "lines 9-13, 636-668",
+   "result": "confirmed",
+   "detail": "Entries as reported, but 'Rit' means liturgical books generally; Eucharistic contents of MS 23 and MS 30 not established (records corrected)."
+  },
+  {
+   "acquisition_id": "syriac-malankara-acq-liste-anaphoren",
+   "check": "lines 294-297",
+   "result": "confirmed",
+   "detail": "Harrak no. 6470, Syriac Catholic Mass liturgy."
+  },
+  {
+   "acquisition_id": "syriac-malankara-acq-wright-excerpt",
+   "check": "entries cclvi and cclxi",
+   "result": "confirmed",
+   "detail": "256 at p. 204; 261 at p. 205, 180 leaves, A. Gr. 1493 (AD 1182)."
+  },
+  {
+   "acquisition_id": "syriac-malankara-acq-bonn-record-4156832",
+   "check": "title record plus IIIF canvases 65-66",
+   "result": "confirmed",
+   "detail": "Beirut 1926; cold review adds the 15 May 1926 Rahmani declaration."
+  },
+  {
+   "acquisition_id": "syriac-malankara-acq-bonn-record-3077091",
+   "check": "title record plus IIIF canvas 418",
+   "result": "confirmed",
+   "detail": "Sharfeh 1912, part one, Gospel readings of the Qurbono."
+  },
+  {
+   "acquisition_id": "syriac-malankara-acq-bonn-record-4268770",
+   "check": "title record plus IIIF canvases 7, 9, 11",
+   "result": "confirmed",
+   "detail": "Charfé 1923 lay manual, preface signed G. S."
+  },
+  {
+   "acquisition_id": "syriac-malankara-acq-seminary-catalogue",
+   "check": "entry Tl 141 Ar",
+   "result": "confirmed",
+   "detail": "Hayek, Pauline readings at Mass, Beirut 2006, 414 pages."
+  },
+  {
+   "acquisition_id": "syriac-malankara-acq-musa-bibliography",
+   "check": "item 49",
+   "result": "confirmed",
+   "detail": "Rutbat al-quddās al-suryānī, Baghdad 2003."
+  },
+  {
+   "acquisition_id": "syriac-malankara-acq-cinii2015",
+   "check": "record",
+   "result": "confirmed",
+   "detail": "NCID BC11052671, Mosul 2015, 208 p."
+  },
+  {
+   "acquisition_id": "syriac-malankara-acq-hayek-obituary",
+   "check": "re-fetch 2026-10-19",
+   "result": "inconclusive",
+   "detail": "HTTP 404 on https and http; wording survives only as a search excerpt in the cold prior log."
+  },
+  {
+   "acquisition_id": "syriac-malankara-acq-bakoz-mass",
+   "check": "re-fetch 2026-10-19",
+   "result": "inconclusive",
+   "detail": "HTTP 404; 1978 statement survives only as a search excerpt in the cold prior log."
+  },
+  {
+   "acquisition_id": "cold: Malankara Digital Library 'Qurbana Thaksa 1920'",
+   "check": "PDF 1, 3-11 (cold acquisition, sha256 4ff9e394f00cd9f2dd697c37b01a5171ca9fdfe575452d3b1d18b65073081da5)",
+   "result": "confirmed",
+   "detail": "Packet's 'Church and language unknown' resolved: Malayalam translation of the James and Dionysius bar Salibi anaphoras, preface at Kunnamkulam; Fr. P. T. Geevarghese shared in the translation and revision; examined by order of the Malankara Metropolitan Mar Dionysius."
+  },
+  {
+   "acquisition_id": "cold: British Library Add. 14615",
+   "check": "https://bl.syriac.uk/ms/355 (sha256 c2f9bca3bc3f1a0f9b03b0de7bac434be4259e952954b4e4427e11294c43c75e)",
+   "result": "confirmed",
+   "detail": "Lower text: Estrangela, eighth century, Syriac sacerdotal with the anaphora of St James and sedras (Wright DCCCXXIV)."
+  }
+ ],
+ "remaining_bounded_gaps": [
+  "Post-1922 Syriac Catholic celebrant books (Hayek 1978; Musa, Baghdad 2003; Mosul 2015) unseen; patriarchal and diocesan publication lists, Coakley and Taylor 2009 and union catalogues unexamined.",
+  "Pre-1843 Syriac Catholic manuscripts not enumerated. Next sources: J. N. Berkers, catalogue of anaphora manuscripts in the Rahmani patriarchal collection at Charfet, POC 12/3 (1962) 224-242 (31 manuscripts; cited in the Desreumaux extract, not named by the packet); Armalet 1937; Vatican Borgia beyond Scher 127; Rücker and Raes 1939 manuscript list.",
+  "Beirut minister's book: the 1884 (pencil note) and 1888 (Brightman) dates may be one book or two printings; no copy located.",
+  "1926 Beirut deacon book body not compared with 1905; its relation to the reported Sharfeh 1931 booklet unresolved.",
+  "Mosul 1868 print versus the 1868 Mardin manuscript (Scher 127): relation unknown.",
+  "1934 Pampakuda Catholic book unseen; Madey, OS 22 (1973) 55-58 unread; the edition behind the 1960 re-imprimatur unidentified.",
+  "Unlabelled leads found by the cold review: Mar Ivanios's reported 1919 Malayalam Taksa translation and his 'Rubrics of the Malankara Mass' (Tiruvalla 1927), both cited in Kuttiyil's paper on Mar Ivanios and the Eucharist (Malankara Digital Library PDF db685dd523da3cc6e0746d36affdea10, p. 2 and n. 2). Tiruvalla MSS 11 (anaphoras, 1769), 12 (Mass, sacraments) and 13 (anaphoras, 1869) in the same Desreumaux extract are pre-reunion anaphora manuscripts now in a Catholic bishop's house, not yet labelled.",
+  "Scope decision for root or maintainer: whether the official Syro-Malankara Malayalam Takso line (1966, 1987, 2007) is a received service-book language or a deferred translation. The 2006 approval includes original additions (St Thomas in the intercessions), so it is not translation only.",
+  "Authority acts the root may add to [[authority_acts]], since the packet schema carries them only as notes: the 2006 synodal approval (Decision II.6, printed 46), Rahmani's 15 May 1926 declaration for the Beirut deacon book, the 1905 preface's patriarchal order (undated), the 1960 re-imprimatur and the 1965 imprimatur.",
+  "Trivandrum MS 23 and Tiruvalla MS 30: Eucharistic contents unestablished (van der Ploeg 1983, pp. 86-115).",
+  "Wright census: 51 entries dispositioned at discovery level; most remain unpromoted witnesses, and remaining Wright volumes and other libraries are unexhausted.",
+  "Storage flags, not blocking. (1) 1905 deacon book: 101,944,759 bytes (97.2 MiB), above 100 MB decimal but below GitHub's 100 MiB hard limit and above its 50 MiB warning; root to choose tracked, split parts (Toledo precedent) or remote (Carthusian precedent). (2) 1877 calendar (54.5 MB), 1887 calendar (28.1 MB) and 1901 pericope table (15.6 MB): Public Domain Mark, retention default applies; the 1887 calendar's Eucharistic relevance is calendar-only. (3) Scher 1909: a Gallica digitization re-hosted by a third party, with a non-commercial condition; precedent THIRD_PARTY.md retains noncommercial provider images with the condition recorded. (4) The Chaldean 1900 scratch copy (Bonn 209788) duplicates a book the Chaldean lane already holds from Bonn 37063; no storage in this lane. (5) Cold-acquired 1920 Malayalam PDF (16,456,484 bytes) is restricted scratch only."
+ ],
+ "blocking_items": [],
+ "discovered_unassigned_uses": [
+  {
+   "id": "chaldean",
+   "label": "Chaldean Catholic Church",
+   "reason": "The acquired 1900 Mosul lectionary (syriac-otlection-1900.pdf) is Chaldean (Latin title PDF 228); also the reviewer's Add. 25874 (1740 Chaldean Catholic order). Refer to the Chaldean lane."
+  },
+  {
+   "id": "byzantine-melkite-syriac",
+   "label": "Melkite Byzantine liturgy in Syriac",
+   "reason": "Reviewer's Add. 14497 (Chrysostom and Basil in Syriac); refer to the Byzantine Greek lane."
+  },
+  {
+   "id": "roman-in-syriac-script",
+   "label": "Roman Latin missal in Syriac characters",
+   "reason": "Reviewer's Harley 5512 (1549); refer to the Roman adaptations lane."
+  },
+  {
+   "id": "syro-malankara-diaspora",
+   "label": "Syro-Malankara eparchies and communities outside India",
+   "reason": "USA and Canada, Germany and the extra-territorial Indian communities have their own translated books (2012, 2022, 2023); not a separate coverage row, recorded under syro-malankara."
+  }
+ ],
+ "next_sources": [
+  {
+   "target": "Sharfeh Gospel lectionary part 1 (1912)",
+   "identifier": "Bonn ULB 3077091",
+   "url": "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3077091",
+   "limit": "Public-domain scan offered (85.81 MB); not downloaded in this finishing pass."
+  },
+  {
+   "target": "Beirut Diakonale (1926)",
+   "identifier": "Bonn ULB 4156832",
+   "url": "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/4156832",
+   "limit": "13.87 MB offered; compare with 1905."
+  },
+  {
+   "target": "Petit manuel de la messe syrienne (1923)",
+   "identifier": "Bonn ULB 4268770",
+   "url": "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/4268770",
+   "limit": "Check whether translation or explanation."
+  },
+  {
+   "target": "Hayek, order of the Mass (1978)",
+   "identifier": "Syriac Catholic patriarchate, Sharfeh library",
+   "url": "https://bakhdida.ca/Churches/PatHaik.htm",
+   "limit": "Only community pages; unreachable on 2026-10-19."
+  },
+  {
+   "target": "Coakley and Taylor, Syriac Books Printed at the Dominican Press, Mosul (2009)",
+   "identifier": "ISBN 978-1-60724-104-1",
+   "url": "https://www.gorgiaspress.com/syriac-books-printed-at-the-dominican-press-mosul",
+   "limit": "Commercial book; library access only."
+  },
+  {
+   "target": "van der Ploeg, Syriac manuscripts in South India (1983)",
+   "identifier": "Placid Lecture Series 3",
+   "url": "https://syriac-anaphoras.org/catalogue/pdf/desreumaux_1.pdf",
+   "limit": "For Trivandrum MS 23 and Tiruvalla MS 30."
+  },
+  {
+   "target": "Madey, Die liturgischen Bücher der Syro-Malankara-Kirche, OS 22 (1973) 55-58",
+   "identifier": "Ostkirchliche Studien 22",
+   "url": "https://www.una-voce.de/uploads/1/2/8/3/12837883/03_h_4.pdf",
+   "limit": "Primary bibliographic basis for the 1886, 1931 and 1934 reports."
+  },
+  {
+   "target": "Printed Malayalam Takso (2007) and Qurbonokramam (2007)",
+   "identifier": "Malankara Catholic Publications, Pattom",
+   "url": "https://malankaracatholicchurch.in/admin/pdf/Vol_3_No_2.pdf",
+   "limit": "Not online in the searched repositories."
+  }
+ ],
+ "limits": [
+  "No Church receives an invented book; leads are labelled as leads and dates as reported where the book is unseen.",
+  "Acquisition is not collation: none of the acquired books was transcribed or compared prayer by prayer.",
+  "The Syriac Catholic and Syro-Malankara uses are kept separate; the only cross-community evidence recorded is a 1931 Tiruvalla manuscript copied from a Sharfeh manuscript and a 1930 Syrian Catholic manuscript at Trivandrum, both unseen.",
+  "Proposed records and sources use only field names already present in the target tables (for example book_role, date_note, holding, shelfmark, approval_note, rights_status, catholic_reception, ancestry_status and the acquisition_* fields); catalogue_date_conflict is a packet-level version field only.",
+  "Coverage-JSON and stage-dossier changes for the root (not edited here): in src/sources/inventories/eucharistic-stages/west-syriac.json, gap west-syriac-stages-mosul-role-line can cite the acquired 1905 book (Bonn 3724368, printed title 1905, PDF 461) and the labelled 1868, undated, 1926 and 1931 items; gap west-syriac-stages-malankara2007-taksa can state that the synod report itself (Malankara 2.2, printed 25 and 46) dates the fourth synod 31 October to 3 November 2006, so the English letter's 2005 is an error, and that the February 2007 publication is the Qurbonokramam while the October 2007 release is the Takso (Malankara 3.2, printed 25); gap west-syriac-stages-later-syriac can name the reported 1978, 2003 and 2015 books; gap west-syriac-stages-malankara-presanctified is unaffected.",
+  "The previous agent's file name syriac-otlection-1900.pdf misidentified a Chaldean book; it is excluded from this lane's records.",
+  "The Malankara Digital Library dates the two English partial scans 2013; their title says 2012. The library's date is not used.",
+  "Coakley and Taylor's 2009 bibliography of the Dominican press, Armalet's Charfet catalogue, van der Ploeg 1983 and Harrak 2011 were not examined; the Mosul and Sharfeh print sequences are therefore not certified complete.",
+  "Community-hosted pages (bakhdida.ca, wordpress) are used only for leads; two were unreachable and are cited through captured search excerpts and the reviewer's reading."
+ ],
+ "coverage_placements": {
+  "syriac": {
+   "candidate_ids": [
+    "syriac-malankara-syr-sharfeh-1905",
+    "syriac-malankara-syr-mosul-1877-calendar",
+    "syriac-malankara-syr-sharfeh-1901-pericopes",
+    "syriac-malankara-syr-beirut-1926",
+    "syriac-malankara-syr-sharfeh-1912-gospels"
+   ],
+   "ancestry_candidate_ids": [
+    "syriac-malankara-add17128",
+    "syriac-malankara-add14493",
+    "syriac-malankara-add14615-lower-cold"
+   ],
+   "deferred_or_origin_review_candidate_ids": [
+    "syriac-malankara-syr-mosul-1868",
+    "syriac-malankara-syr-mosul-undated-reedition",
+    "syriac-malankara-syr-mardin-1868-ms",
+    "syriac-malankara-syr-beirut-1888",
+    "syriac-malankara-syr-sharfeh-1931-booklet",
+    "syriac-malankara-syr-mosul-1887-calendar",
+    "syriac-malankara-syr-sharfeh-1925-epistles",
+    "syriac-malankara-syr-charfe-1923-manuel",
+    "syriac-malankara-syr-hayek-1978",
+    "syriac-malankara-syr-hayek-1993",
+    "syriac-malankara-syr-hayek-2006",
+    "syriac-malankara-syr-musa-2003",
+    "syriac-malankara-syr-mosul-2015"
+   ],
+   "fields_replaced": [
+    "followup_note",
+    "followup_source_ids",
+    "missing_chronology"
+   ]
+  },
+  "syro-malankara": {
+   "candidate_ids": [
+    "syriac-malankara-mal-tiruvalla-1960",
+    "syriac-malankara-mal-tiruvalla-1965"
+   ],
+   "deferred_or_origin_review_candidate_ids": [
+    "syriac-malankara-mal-pampakuda-1886",
+    "syriac-malankara-mal-pampakuda-1931",
+    "syriac-malankara-mal-trivandrum-ms23",
+    "syriac-malankara-mal-tiruvalla-ms30",
+    "syriac-malankara-mal-1987-takso",
+    "syriac-malankara-mal-2007-qurbonokramam",
+    "syriac-malankara-mal-2020-kannada",
+    "syriac-malankara-mal-2022-german",
+    "syriac-malankara-mal-2023-english",
+    "syriac-malankara-mal-kunnamkulam-1920-malayalam-cold"
+   ],
+   "fields_replaced": [
+    "followup_note",
+    "followup_source_ids",
+    "missing_chronology",
+    "next_evidence_target",
+    "research_followup_status"
+   ]
+  }
+ },
+ "unlinked_new_records": []
+}
