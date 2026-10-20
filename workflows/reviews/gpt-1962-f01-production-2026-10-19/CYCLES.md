@@ -659,3 +659,12 @@ homily three pages, `6fd2de7f383669af1dec0db71f8b2530a2b66793ae00927032e0abdbe70
 Its build, font, structure, extraction and pagination checks passed and it
 generated 36 page rasters. Native artifact gates passed. A fresh visual
 review is inspecting the new sealed set; earlier PDF hashes are superseded.
+
+The fresh xhigh visual reviewer inspected all 36 revised PDF pages and
+returned `PASS` with no blocking finding. The native converter then
+regenerated the canonical web Markdown from the revised study using locked
+Markdown 3.10.3, with SHA-256
+`c4229d8989d11befd1d43fc50a680d258459bd806978cc7f42a50d1d513a7e7f`.
+A fresh xhigh web review of that new source and rendering is pending. The
+previous `WEB-001` and `WEB-002` repairs still require this review before
+publication.
