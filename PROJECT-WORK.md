@@ -473,9 +473,38 @@ cold LCP at 12.5–12.9 seconds for Day and Propers on a Slow-4G/4×-CPU
 profile, versus the 2.5-second vision target. Warm narrow loads were below
 0.61 seconds; desktop cold loads were 1.56–1.62 seconds. The 1962 Proper
 structure contributes about 1.23 MB gzipped and dominates the cold
-transfer. These are two-run lab samples, not field percentiles. A compact
-index plus selected-Mass fetch is the next C6 implementation candidate;
-it must retain source/coverage parity and URL behavior.
+transfer. These are two-run lab samples, not field percentiles.
+
+The first C6 load-time change is committed and pushed as `f671358ba`.
+Eligible resolved Roman 1962 Read links on Day and Propers now fetch a
+validated catalog and one of 491 exact Mass envelopes; unresolved choices,
+cross-Mass dependencies, other modes and editions, and split-data failures
+use the existing complete structure. The generator test reconstructs every
+Mass exactly, the public-preview gate checks generation, rights and source
+parity for all 491 files, and the built Chromium suite passed seven tests.
+The private preview was rebuilt and verified; this is not a production
+deployment or C6 release acceptance.
+
+On the same two-run Slow-4G/4×-CPU lab profile, cold mobile LCP became
+7.68–7.74 s for canonical Day Read and 7.01–7.02 s for Propers Read. Transfer
+fell from 1.49 MB to 319 KB on Day and from 1.43 MB to 269 KB on Propers;
+cold desktop LCP was 0.69–0.75 s. The Day comparison removes an explicit
+`mass=` parameter because a derived, settled Day choice is the safe split
+path; both links resolve to the same `pentecost-10` Mass. These lab samples
+remain above the 2.5 s mobile target and do not establish field p75. The
+remaining C6 work is page startup and request sequencing, followed by the
+complete C5/print/accessibility and independent release review.
+
+A parallel witness audit found no publishable English witness for the 1962
+Pentecost Lesson's printed `discipuli` wording. [Cabrol 1921](https://catalog.hathitrust.org/Record/100567132)
+is an inaccessible page-image lead, not a text source. An
+[ExtraordinaryForm.org Whit Thursday sheet](https://extraordinaryform.org/masses/PentecostWhitThursdayM20.pdf)
+has promising Communicantes wording but no verified republication grant or
+translation provenance; both English gaps remain typed as unwitnessed.
+For the authentic 1920 Vatican impression, [Verona](https://www.capitolareverona.it/catalogo/pmb/opac_css/index.php?id=6774&lvl=publisher_see)
+lists inventory 31843, shelf Gal B 1 5, and [Nicolet](https://archivesseminairenicolet.wordpress.com/wp-content/uploads/2020/11/liste-des-livres-par-ordre-alphabetique-auteur.pdf)
+lists call number 264.023 T964m. Neither is an inspected complete scan;
+pre-1955 remains a structural projection pending page images and reuse terms.
 
 ## Daily Missal reader recovery and completion plan, 2026-10-19
 
