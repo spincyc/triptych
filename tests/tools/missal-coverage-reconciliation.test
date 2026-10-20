@@ -1,0 +1,23 @@
+#!/bin/sh
+# Test the registered missal coverage gate against its current source owners.
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+mkdir -p "$repo/.scratch"
+tmp="$(mktemp -d "$repo/.scratch/missal-coverage-test.XXXXXX")"
+trap 'rm -rf "$tmp"' EXIT HUP INT TERM
+
+"$repo/tools/tpt" missal-coverage-reconciliation --json > "$tmp/report.json"
+
+python3 - "$tmp/report.json" <<'PY'
+import json
+import sys
+
+report = json.load(open(sys.argv[1], encoding="utf-8"))
+assert report["status"] == "ok", report["findings"]
+assert report["findings"] == [], report["findings"]
+actual = report["actual"]
+assert actual["eastern"]["coverage_rows"] == 23, actual
+assert actual["western"]["coverage_rows"] == 73, actual
+assert actual["stage_history"]["stages"] > 0, actual
+PY
