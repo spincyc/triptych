@@ -48,6 +48,8 @@ PREVIEW = ROOT / PREVIEW_ROOT
 # partial result, a new unaccounted assertion, or a nonzero exit all fail here.
 ASSERTION_COUNTS = {
     "day_reader_choices_browser.mjs": 8,
+    "liturgy_reader_preferences_browser.mjs": 11,
+    "pentecost_witness_chooser_browser.mjs": 5,
     # 45 declared at eeb17891d (the recorded 43 had drifted; a source-only run
     # executes 44 because one check needs the preview build) plus six C2
     # claim-local checks (G9-G13, G17), plus the C2 G5-G8 Pentecost
@@ -67,7 +69,15 @@ ASSERTION_COUNTS = {
 # the preview artifact, and each keeps its floor in its own test module
 # (test_corpus_foundation_prototype.py), so they are accounted for here without
 # a preview requirement or a duplicate contract.
-PROTOTYPE_HARNESSES = frozenset({"corpus_foundation_prototype_browser.mjs"})
+PROTOTYPE_HARNESSES = frozenset({
+    "corpus_foundation_prototype_browser.mjs",
+    # test_missal_exemplar_parity.py runs and checks this source-served probe.
+    "missal_exemplar_parity_browser.mjs",
+})
+SOURCE_SERVED_HARNESSES = frozenset({
+    "liturgy_reader_preferences_browser.mjs",
+    "pentecost_witness_chooser_browser.mjs",
+})
 
 # The diagnostic arrays a harness keeps beside its assertions. A console error,
 # a dead request or a non-200 is a defect in the page whoever ran the gate should
@@ -136,6 +146,10 @@ def assertion_counts(report: dict) -> tuple[int, int]:
         if isinstance(entries, list):
             passed = sum(1 for entry in entries if entry.get("status") == "pass")
             return passed, len(entries)
+    # The preferences harness stops at its first failed assertion, so its
+    # completed-check count is exact when it exits successfully.
+    if isinstance(report.get("checks"), int) and report.get("status") == "pass":
+        return report["checks"], report["checks"]
     return 0, 0
 
 
@@ -199,7 +213,7 @@ class BrowserHarnessStructureTest(unittest.TestCase):
 
     def test_every_harness_reads_the_preview_build(self) -> None:
         for name in discovered_harnesses():
-            if name in PROTOTYPE_HARNESSES:
+            if name in PROTOTYPE_HARNESSES | SOURCE_SERVED_HARNESSES:
                 continue
             with self.subTest(harness=name):
                 source = (TESTS / name).read_text(encoding="utf-8")

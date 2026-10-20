@@ -1599,6 +1599,14 @@
       });
     }
 
+    // The first Proper supplies focus recovery, but the witness choice governs
+    // the whole Mass and stands beside that Proper rather than inside its text.
+    for (const choice of documentFragment.querySelectorAll('.translation-witness-choice')) {
+      if (choice.closest('.proper-choice')) continue;
+      const proper = choice.closest('[data-semantic-event-id]');
+      if (proper) proper.after(choice);
+    }
+
     const notice = coverageMessage(result);
     return {
       branch: branch,
@@ -1756,27 +1764,25 @@
     if (!hasBody(event)) return null;
     const selectedWitness = result.request && result.request.languages && result.request.languages.translationWitness;
     if (selectedWitness) return null;
-    if (event.selected.availability !== 'choice-required') {
-      if (!witnessState.requiresChoice) return null;
-      const first = semanticProperEvents(result).find(hasBody);
-      if (first !== event) return null;
-    }
-    if (!witnessState.choices.length) {
-      const first = semanticProperEvents(result).find(function (row) {
-        return row.selected && row.selected.availability === 'choice-required';
+    const first = witnessState.requiresChoice
+      ? semanticProperEvents(result).find(hasBody)
+      : semanticProperEvents(result).find(function (row) {
+        return hasBody(row) && row.selected.availability === 'choice-required';
       });
-      if (first !== event) return null;
+    if (first !== event) return null;
+    if (!witnessState.choices.length) {
       const explanation = T.el('p', 'composed-note translation-witness-limitation',
         'No public translation witness is available for this selection.');
       explanation.dataset.translationWitnessLimitation = event.id;
       return explanation;
     }
     const fieldset = T.el('fieldset', 'ordinary-choice translation-witness-choice');
-    fieldset.dataset.translationWitnessChoice = event.id;
+    fieldset.dataset.translationWitnessChoice = 'mass/' + result.request.edition.id + '/' +
+      result.resolved.formulary;
     fieldset.appendChild(T.el('legend', null,
-      'Choose a translation witness for ' + (event.editionSlotLabel || 'this Proper')));
+      'Choose a translation witness for this Mass'));
     fieldset.appendChild(T.el('p', 'ordinary-choice-note',
-      'The selected witness supplies only its available portions. Missing text remains explicit; another witness is not substituted.'));
+      'This choice applies to every Proper in the Mass. Each witness supplies only its available portions; missing text remains explicit.'));
     const options = T.el('div', 'ordinary-choice-options');
     witnessState.choices.forEach(function (option) {
       const label = T.el('label', 'ordinary-choice-option');

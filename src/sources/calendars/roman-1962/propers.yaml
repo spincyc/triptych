@@ -24026,6 +24026,18 @@ sections:
               chapter: 44
               verse: 12
           ref: Psalms 44:5, 11, 12
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin:
+              chapter: 1
+              verse: 26
+            end:
+              chapter: 1
+              verse: 38
+          ref: Luke 1:26-38
       - name: Offertory
         source: scripture
         verses:
@@ -26270,6 +26282,18 @@ sections:
               chapter: 14
               verse: 6
           ref: Hosea 14:6
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin:
+              chapter: 11
+              verse: 25
+            end:
+              chapter: 11
+              verse: 30
+          ref: Matthew 11:25-30
       - name: Offertory
         source: scripture
         verses:
@@ -26693,6 +26717,18 @@ sections:
               chapter: 125
               verse: 6
           ref: Psalms 125:5-6
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin:
+              chapter: 24
+              verse: 3
+            end:
+              chapter: 24
+              verse: 13
+          ref: Matthew 24:3-13
       - name: Offertory
         source: scripture
         verses:
@@ -30853,6 +30889,18 @@ sections:
               chapter: 111
               verse: 3
           ref: Psalms 111:1-3
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin:
+              chapter: 1
+              verse: 18
+            end:
+              chapter: 1
+              verse: 21
+          ref: Matthew 1:18-21
       - name: Secret
         source: composed
         notes: >-
@@ -30920,7 +30968,11 @@ sections:
         the printed citations were read on 2026-08-01 from the embedded text layer of
         the CMAA facsimile of the controlling edition at printed p. 493 (digital p.
         574), not from the facsimile images, and that reading was not visually
-        collated.'
+        collated. On the page image at artifact p. 575 / printed p. 494, no. 2318,
+        the Gospel heading prints Luc. 2, 26-38, but the passage body is the
+        Annunciation in Luke 1:26-38. That role remains an unrepresented slot until
+        the divergent printed locator is explicitly disposed; Luke 2 must not be
+        served as its Gospel.'
       propers:
       - name: Introit
         source: scripture
@@ -36946,6 +36998,18 @@ sections:
               chapter: 12
               verse: 34
           ref: Luke 12:32-34
+      - name: Offertory
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 88
+              verse: 21
+            end:
+              chapter: 88
+              verse: 22
+          ref: Psalms 88:21-22
       - name: Secret
         source: composed
         notes: >-
@@ -38531,6 +38595,18 @@ sections:
               chapter: 123
               verse: 8
           ref: Psalms 123:7-8
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin:
+              chapter: 12
+              verse: 46
+            end:
+              chapter: 12
+              verse: 50
+          ref: Matthew 12:46-50
       - name: Offertory
         source: scripture
         verses:
@@ -39404,6 +39480,18 @@ sections:
               chapter: 36
               verse: 31
           ref: Psalms 36:30-31
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin:
+              chapter: 10
+              verse: 1
+            end:
+              chapter: 10
+              verse: 9
+          ref: Luke 10:1-9
       - name: Offertory
         source: scripture
         verses:
@@ -46091,6 +46179,18 @@ sections:
               chapter: 2
               verse: 12
           ref: Song of Songs 2:11-12
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin:
+              chapter: 18
+              verse: 1
+            end:
+              chapter: 18
+              verse: 4
+          ref: Matthew 18:1-4
       - name: Offertory
         source: scripture
         verses:
@@ -46804,6 +46904,18 @@ sections:
               chapter: 67
               verse: 4
           ref: Psalms 67:4
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin:
+              chapter: 12
+              verse: 1
+            end:
+              chapter: 12
+              verse: 8
+          ref: Luke 12:1-8
       - name: Offertory
         source: scripture
         verses:
@@ -47277,6 +47389,25 @@ sections:
               chapter: 8
               verse: 24
           ref: 2 Corinthians 8:16-24
+      - name: Gradual
+        source: scripture
+        notes: 'Facsimile artifact p. 771 / printed p. 690, no. 3885; verse order Psalm 18:5, then 18:2, image-checked 2026-10-20.'
+        verses:
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 18
+              verse: 5
+            end:
+              chapter: 18
+              verse: 5
+          - begin:
+              chapter: 18
+              verse: 2
+            end:
+              chapter: 18
+              verse: 2
+          ref: Psalms 18:5,2
       - name: Alleluia
         source: scripture
         verses:
@@ -48087,6 +48218,18 @@ sections:
               chapter: 125
               verse: 6
           ref: Psalms 125:5-6
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin:
+              chapter: 15
+              verse: 17
+            end:
+              chapter: 15
+              verse: 25
+          ref: John 15:17-25
       - name: Offertory
         source: scripture
         verses:
@@ -49593,6 +49736,18 @@ sections:
               chapter: 88
               verse: 23
           ref: Psalms 88:21-23
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin:
+              chapter: 10
+              verse: 11
+            end:
+              chapter: 10
+              verse: 16
+          ref: John 10:11-16
       - name: Secret
         source: composed
         notes: >-

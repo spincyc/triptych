@@ -1757,7 +1757,7 @@ release attachment, announcement, or promotion.
 | `THIRD_PARTY.md` | `5c500dab142f3790393f07bf8f0b007dd98c8433c84ffccd7f3d7775e4e7bd5e` |
 | `docs/bibles.md` | `af32df1cd8bbc1d0799e98065f1428dc9ecdb3e2753f8bd4cd6b4d595ec74a01` |
 | `docs/reading-and-commentary.md` | `b0861dd1b6ce0a81b62ab2158b20d093664381cc3c93d9e62f53cdb2b1a84e32` |
-| `docs/the-mass.md` | `6859897e1a94a511f6dcbf735105f0dc772239b122dd3e006f7793fbcc355e5d` |
+| `docs/the-mass.md` | `f8a93b853d4a91da06cd58711000d5c4806a305f3d7cc08bc592cafe822298d7` |
 | `library/biographies.md` | `c2de5d8013c126500ec283334fd3311fb907c826e3a3a800145d575347be21ab` |
 | `library/catholic-exorcism.md` | `cb8dc01280320b0377bd2d48e0013379b8acee3ede3d6255beaa37356c7c63db` |
 | `library/curriculums.md` | `4d6deabc3129f825c1f11677e6ac9f0afcdf62df68fb9965f0e9f2468e95ea32` |
@@ -11368,7 +11368,7 @@ release attachment, announcement, or promotion.
 | `src/web/browser/liturgy/day-missal.css` | `218d8a97a7ab034891f178ec83ef5d9dc980c407fc12b0106797798fc64f41aa` |
 | `src/web/browser/liturgy/day-reader.css` | `695de63e1ae82091248515a849de5354389a551e4f589504d2faa1ae46b0b2e0` |
 | `src/web/browser/liturgy/day-reader.html` | `98be6b375533bd452589d49ace8315d674067a7bb34d25e5ed7a81930d8897bc` |
-| `src/web/browser/liturgy/day-reader.js` | `ae8eb05df8e920175f8ed13dfee22a6e2e657f47eac983f2f6ea1b5ace78a6ab` |
+| `src/web/browser/liturgy/day-reader.js` | `d3a30b01f14a98db9d8e6099e2c3021384d9940724929b59e84e11c386cb2046` |
 | `src/web/browser/liturgy/day.css` | `93ef9f44ee5d6488cb95a1587e856bd75488ea6b34b6ff723a01a437a75b6ed1` |
 | `src/web/browser/liturgy/day.html` | `fae86f1a2da5984599f5a346e4494b741e06361644f66e9d18426752aeaaedea` |
 | `src/web/browser/liturgy/day.js` | `86e050c59fc65f3062f980aa9dc7c456e7409077d3772a50e6574bfb4f9fe85d` |
@@ -14134,7 +14134,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/documents/corpus.json` | `56070f77c5f99cef1be7724266aab28b89c9bf3fb045478247ad92c5d6bfe9e1` |
 | `src/web/data/structure/ordinary/index.json` | `d42c3482d78158b8d1a0d51b65ce6d5704b5d634f8833bc46f2a8a65b3a73816` |
 | `src/web/data/structure/ordinary/postconciliar.json` | `92f700d466f17a4cd8554bfb486f24ce31a774c60af3ce32105c373e63e88ef3` |
-| `src/web/data/structure/ordinary/roman-1962.json` | `1c57daf6b77b7814998430b4157e78b0b417a9c5f579de88a6d9a0012b1868f8` |
+| `src/web/data/structure/ordinary/roman-1962.json` | `34367a170cd7c0ce051cfa2f01c7160c5e792296a1ce0940414950aead87eae1` |
 | `src/web/data/structure/ordinary/roman-pre-1955.json` | `0148747d78f061dda74c9b4d77e1c4b6d67b0c222cb4e034a29c642b84bead44` |
 | `src/web/data/structure/paragraphs/catholic-public-domain-version/01-gen/001.json` | `4f79beb5afe32b8fe6bad5133cf93ad8a3c27f7a6e1fcbfd583d4943c42ab2ee` |
 | `src/web/data/structure/paragraphs/catholic-public-domain-version/01-gen/002.json` | `baff1b94da49a490aad58ef3eda8c76fcbae8eb5852ca5d7953af6c8f81f746e` |
@@ -19686,8 +19686,8 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/paragraphs/world-english-bible-catholic/73-apoc/022.json` | `b38cf221de030ad24aba0c1dd88f0823bcb4a721a25bc35fa8f94e1a903b4097` |
 | `src/web/data/structure/propers/index.json` | `ed462d89e5777f12b009cb962ebe1a59d4a2082a552489198f54feb8067c9536` |
 | `src/web/data/structure/propers/postconciliar.json` | `0f19657026001c5cf92de24823d5c76d2123e353e0228cbf4fa39b8eeeeeb981` |
-| `src/web/data/structure/propers/roman-1962.json` | `4824f49ab4d24d88a63a77d2bdf1f0469467f90fd94f901aab54b873a9670b28` |
-| `src/web/data/structure/propers/roman-pre-1955.json` | `671ebc79bbae086f82ac2d2402aa6d5c612af52afefae7bdd4ad7e34ff2bab49` |
+| `src/web/data/structure/propers/roman-1962.json` | `35e92c5fded730f32ccef3cd8d8eb39c4bc571228a13d074155884c06eb1df3c` |
+| `src/web/data/structure/propers/roman-pre-1955.json` | `06b0d7be72857402a49c2388211c56625590cd0ee2ed3bbd956ce6e1ea1b250f` |
 | `src/web/data/structure/readings/narrative-spine.json` | `9be6d97c206bc3544905f354090567f00f0f08a0b879b79f1d61499cc59db452` |
 | `src/web/data/structure/rubrics/index.json` | `61f18bea60e8f821891efc243a86e01bc140b65b40b3c65c8930e430d69058dc` |
 | `src/web/data/structure/rubrics/postconciliar.json` | `fb9dd1594412905efad869b4ea7031b989cdb9bf445283176f5b905a49d14be9` |

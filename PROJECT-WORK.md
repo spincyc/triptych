@@ -345,6 +345,18 @@ precedence, and bad or blocked storage falls back without affecting explicit
 state. A dedicated source-served Chromium run passes 11/11; Day and Propers
 regressions pass 55/55 and 49/49. This is a bounded C5 capability, with
 independent acceptance and the remaining modes still open.
+The English witness chooser now identifies itself as a Mass-wide choice
+beside the first Proper. Pentecost Chromium checks pass for the chooser and
+for Caswall's explicit Introit gap and held Sequence in Day and Propers;
+partial-witness deep links remain valid.
+An independently page-checked twelve-role Sanctoral batch brings the effective
+Roman 1962 text-slot inventory to 3,194 represented, 166 not represented and
+2,925 unresolved; all 7,990 target kinds now classify 4,017 / 167 / 3,806.
+These Gospel and chant citations remain labelled Bible reconstructions where
+Missal wording is unestablished. Eight other proposed chant joins were held
+back after printed wording checks; Gabriel's printed Luke locator discrepancy
+also remains open. An Adjutorium derivative now divides the printed 1962
+priest/answer dialogue into source-bound ℣/℟ turns without changing its words.
 
 ## Daily Missal reader recovery and completion plan, 2026-10-19
 

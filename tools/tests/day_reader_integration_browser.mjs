@@ -1282,6 +1282,7 @@ async function c4Step2DialogueTurns(cdp, base) {
         'praeparatio/confitebor-tibi-in-cithara': [P, S],
         'praeparatio/gloria-patri': [P, S],
         'praeparatio/introibo-ad-altare-dei-repetitio': [P, R],
+        'praeparatio/adjutorium-nostrum': [V, R],
         'oblatio/per-omnia-saecula': [V, R],
         'oblatio/sursum-corda': [V, R, V, R, V, R],
         'communio/pax-domini': [P, R],
