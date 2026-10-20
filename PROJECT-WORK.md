@@ -513,6 +513,26 @@ The added controls bring transfer to about 325 KB and 274 KB. These samples
 remain above the 2.5 s mobile target and do not establish field p75 or
 independent C5/C6 acceptance.
 
+The next C5 usability slice replaces the dock's Details action with direct
+Study on both entrances. Details remains in Mode and keeps source context,
+Share and Print reachable. Direct Study preserves the held semantic place and
+returns focus to its dock command; moving between modal surfaces returns to
+the visible Mode command. A native 100–200% text-size control remembers valid
+display preferences independently of semantic URL state, works without
+storage, preserves place and focus, and leaves print at its own size. Combined
+reduced-motion testing caught and fixed stale scroll restoration through
+Mode → enlargement → Details → close. The integrated focused probes pass
+eighteen keyboard checks, twelve direct-Study checks, three text-size cases
+and four Share/Print cases, with clean browser diagnostics.
+
+The print continuation tightens Study fact spacing and gives Compare paired
+columns while preserving unavailable-side protection and the final semantic
+pair. The four checked PDFs change from 10/12/8/9 pages to 7/9/7/6 for Day
+Study, Day Compare, Propers Study and Propers Compare. Extracted liturgical
+and source content is preserved; representative long-reading and final-page
+rasters were inspected. This bounded print evidence does not close the full
+C4 composition matrix or independent C5 acceptance.
+
 A parallel witness audit found no publishable English witness for the 1962
 Pentecost Lesson's printed `discipuli` wording. [Cabrol 1921](https://catalog.hathitrust.org/Record/100567132)
 is an inaccessible page-image lead, not a text source. An

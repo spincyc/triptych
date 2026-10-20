@@ -243,6 +243,7 @@
     const label = mode === 'missal' ? 'Missal' : (mode === 'compare' ? 'Compare' :
       (mode === 'study' ? 'Study' : 'Read'));
     shellRoot.dataset.readerMode = mode;
+    Study?.syncMode(mode);
     const context = shellRoot.querySelector('.reader-context');
     if (context) context.textContent = 'Propers · ' + label;
     const masthead = shellRoot.querySelector('.reader-place > span:nth-child(3)');
@@ -758,7 +759,7 @@
       return;
     }
     if (intent === 'title') title.focus();
-    if (intent === 'mode') shellRoot.querySelector('[data-reader-action="mode"]').focus();
+    if (['mode', 'study'].includes(intent)) shellRoot.querySelector('[data-reader-action="' + intent + '"]').focus({ preventScroll: true });
   }
 
   function navigate(updates, removals) {

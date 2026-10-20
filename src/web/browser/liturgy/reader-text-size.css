@@ -1,0 +1,56 @@
+/* Screen enlargement shares the reader's existing rem-based reflow rules. */
+@media screen {
+  html[data-reader-text-size] { font-size: var(--reader-text-size, 100%); }
+}
+
+.reader-instrument [data-reader-surface="mode"] { overflow-y: auto; }
+.reader-instrument [data-reader-surface="mode"] > .surface-head {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--instrument-panel);
+}
+.reader-instrument [data-reader-surface="mode"] > .surface-body {
+  max-height: none;
+  overflow: visible;
+}
+
+.reader-instrument .reader-text-size {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(6rem, 9rem);
+  align-items: center;
+  gap: 0.35rem 0.75rem;
+  border-top: 1px solid var(--instrument-line);
+}
+.reader-instrument .reader-text-size label {
+  color: var(--instrument-soft);
+  font: 650 0.8rem/1.4 var(--instrument-sans);
+}
+.reader-instrument .reader-text-size select {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.5rem;
+  border: 1px solid var(--instrument-control-line);
+  border-radius: 0.2rem;
+  background: var(--instrument-panel);
+  color: var(--instrument-ink);
+  font: 0.85rem/1.4 var(--instrument-sans);
+}
+.reader-instrument .reader-text-size .surface-note,
+.reader-instrument .reader-text-size-status { grid-column: 1 / -1; margin: 0; }
+.reader-instrument .reader-text-size-status {
+  color: var(--instrument-soft);
+  font: 0.76rem/1.5 var(--instrument-sans);
+}
+.reader-instrument .reader-text-size-status:empty { display: none; }
+
+@media (max-width: 30rem) {
+  .reader-instrument .reader-text-size { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-height: 30rem) {
+  /* A zoomed short viewport needs its full height for the focused control. */
+  .reader-instrument [data-reader-surface="mode"] > .surface-head { position: static; }
+}
+@media print {
+  .reader-text-size { display: none !important; }
+}

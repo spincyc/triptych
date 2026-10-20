@@ -379,6 +379,14 @@ async function click(cdp, selector) {
   await new Promise((done) => setTimeout(done, 50));
 }
 
+async function openSurface(cdp, name) {
+  if (name === 'details' && !await evaluate(cdp,
+    `document.querySelector('[data-reader-surface="mode"]').open`)) {
+    await click(cdp, '[data-reader-action="mode"]');
+  }
+  await click(cdp, `[data-reader-action="${name}"]`);
+}
+
 async function select(cdp, selector, value) {
   await evaluate(cdp, `(() => {
     const node = document.querySelector(${JSON.stringify(selector)});
@@ -791,8 +799,8 @@ async function assertions(cdp, base) {
     assert.deepEqual(semanticOrder.dom, semanticOrder.events);
     assert.deepEqual(semanticOrder.contents, semanticOrder.dom);
     assert.equal(new Set(semanticOrder.dom).size, semanticOrder.dom.length);
-    assert.deepEqual(await evaluate(cdp, `[...document.querySelectorAll('[data-reader-action]')].map(row => row.textContent.replace(/\\s+/g, ' ').trim())`),
-      ['Browse', 'Contents', 'Mode Read', 'Details']);
+    assert.deepEqual(await evaluate(cdp, `[...document.querySelectorAll('.reader-actions [data-reader-action]')].map(row => row.textContent.replace(/\\s+/g, ' ').trim())`),
+      ['Browse', 'Contents', 'Mode Read', 'Study']);
     const measured = await metrics(cdp);
     const duplicateResources = measured.resources.filter((row, index, all) => all.indexOf(row) !== index);
     performanceReport = {
@@ -1446,8 +1454,7 @@ async function assertions(cdp, base) {
     await waitFor(cdp,
       `document.querySelector('#reader-document [data-semantic-location="${proper}"]')?.getBoundingClientRect().top <= 300`,
       'Missal Proper location scroll');
-    await click(cdp, '[data-reader-action="mode"]');
-    await click(cdp, '[data-mode="study"]');
+    await click(cdp, '[data-reader-action="study"]');
     await waitFor(cdp, `propersReaderDebug.ready && propersReaderDebug.state?.requestedMode === 'study'`, 'Study mode');
     const studied = await evaluate(cdp, `({ outcome: propersReaderDebug.outcome,
       location: propersReaderDebug.state.semanticLocation?.eventId,
@@ -1458,7 +1465,7 @@ async function assertions(cdp, base) {
     assert.equal(studied.location, proper);
     assert.equal(studied.ordinaryLanguage, 'la');
     assert.equal(studied.ordinaryNodes, 0);
-    assert.equal(studied.active, 'mode');
+    assert.equal(studied.active, 'study');
     assert.match(studied.hash, /ordinary-lang=la/);
     await waitFor(cdp,
       `document.querySelector('#reader-document [data-semantic-location="${proper}"]')?.getBoundingClientRect().top <= 300`,
@@ -2069,7 +2076,7 @@ async function assertions(cdp, base) {
     await waitGate(gate);
     await waitFor(cdp, `window.propersReaderDebug && propersReaderDebug.outcome === 'loading'`,
       'Propers loading state');
-    await click(cdp, '[data-reader-action="details"]');
+    await openSurface(cdp, 'details');
     const loading = await evaluate(cdp,
       `document.querySelector('[data-reader-details]').textContent`);
     assert.match(loading, /still loading/);
@@ -2199,7 +2206,7 @@ async function assertions(cdp, base) {
       { mode: 'study', disabled: false, checked: 'false' },
       { mode: 'compare', disabled: false, checked: 'false' }
     ]);
-    await escape(cdp); await click(cdp, '[data-reader-action="details"]');
+    await openSurface(cdp, 'details');
     const details = await evaluate(cdp, `({
       text: document.querySelector('[data-reader-details]').innerText,
       links: [...document.querySelectorAll('[data-reader-details] a')]
@@ -2221,9 +2228,10 @@ async function assertions(cdp, base) {
         .map(row => row.textContent.trim())`), [
       'Selection', 'Related reader', 'Elsewhere in Triptych'
     ]);
-    assert.equal(await evaluate(cdp, `document.querySelectorAll('[data-reader-action]').length`), 4);
+    assert.equal(await evaluate(cdp, `document.querySelectorAll('.reader-actions [data-reader-action]').length`), 4);
     assert.equal(await evaluate(cdp, 'propersReaderDebug.detailsBuilds'), 1);
     await escape(cdp);
+    assert.equal(await evaluate(cdp, `document.activeElement.dataset.readerAction`), 'mode');
   });
 
   await check('Back and Forward restore candidate semantic choice', async () => {
@@ -2305,7 +2313,7 @@ async function assertions(cdp, base) {
   await check('320 CSS pixels and 200 percent zoom preserve page and surface overflow contracts', async () => {
     await viewport(cdp, 320, 852); await candidate(cdp, base, STATES.cycles);
     for (const action of ['browse', 'contents', 'mode', 'details']) {
-      await click(cdp, `[data-reader-action="${action}"]`);
+      await openSurface(cdp, action);
       const held = await metrics(cdp); assert.equal(held.pageOverflow, 0); assert.deepEqual(held.surfaceOverflow, []);
       await escape(cdp);
     }
@@ -2319,9 +2327,9 @@ async function assertions(cdp, base) {
       media: 'screen', features: [{ name: 'prefers-reduced-motion', value: 'reduce' }]
     });
     await candidate(cdp, base, STATES.roman);
-    assert.equal(await evaluate(cdp, `document.querySelectorAll('[data-reader-action]').length`), 4);
+    assert.equal(await evaluate(cdp, `document.querySelectorAll('.reader-actions [data-reader-action]').length`), 4);
     assert.equal(await evaluate(cdp, `document.querySelectorAll('#reader-document .proper').length`), 10);
-    await click(cdp, '[data-reader-action="details"]');
+    await openSurface(cdp, 'details');
     assert.equal(await evaluate(cdp, `document.querySelector('[data-reader-surface="details"]').contains(document.activeElement)`), true);
     await escape(cdp);
     await cdp.send('Emulation.setEmulatedMedia', { media: 'screen', features: [] });
@@ -2337,7 +2345,7 @@ async function assertions(cdp, base) {
       robots: document.querySelector('meta[name="robots"]').content,
       title: document.title,
       visible: document.body.innerText,
-      actions: document.querySelectorAll('[data-reader-action]').length
+      actions: document.querySelectorAll('.reader-actions [data-reader-action]').length
     })`);
     assert.equal(value.robots, 'noindex, nofollow, noarchive, nosnippet, noimageindex');
     assert.equal(value.actions, 4);
@@ -2441,7 +2449,7 @@ async function captures(cdp, base) {
   await candidate(cdp, base, STATES.post); await evaluate(cdp, 'scrollTo(0, document.documentElement.scrollHeight)');
   await shot(cdp, resolve(captureDir, 'propers-reader-deep-scroll-393x852.png'));
   for (const action of ['browse', 'contents', 'mode', 'details']) {
-    await click(cdp, `[data-reader-action="${action}"]`);
+    await openSurface(cdp, action);
     await shot(cdp, resolve(captureDir, `propers-reader-${action}-open-393x852.png`)); await escape(cdp);
   }
   for (const scheme of ['light', 'dark']) {
@@ -2454,7 +2462,7 @@ async function captures(cdp, base) {
   await viewport(cdp, 1440, 900); await candidate(cdp, base, STATES.roman);
   await click(cdp, '[data-reader-action="browse"]');
   await shot(cdp, resolve(captureDir, 'propers-reader-browse-open-1440x900.png')); await escape(cdp);
-  await click(cdp, '[data-reader-action="details"]');
+  await openSurface(cdp, 'details');
   await shot(cdp, resolve(captureDir, 'propers-reader-details-open-1440x900.png')); await escape(cdp);
   await shot(cdp, resolve(captureDir, 'propers-reader-valid-1440x900-paired.png'));
   await current(cdp, base, STATES.roman); await shot(cdp, resolve(captureDir, 'propers-current-valid-1440x900.png'));

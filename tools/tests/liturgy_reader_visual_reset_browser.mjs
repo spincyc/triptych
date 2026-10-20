@@ -259,6 +259,10 @@ async function click(cdp, selector) {
   await evaluate(cdp, `(() => {
     const node = document.querySelector(${JSON.stringify(selector)});
     if (!node) throw new Error('missing selector: ' + ${JSON.stringify(selector)});
+    const mode = node.closest('[data-reader-surface="mode"]');
+    if (mode && !mode.open && node.dataset.readerAction === 'details') {
+      document.querySelector('[data-reader-action="mode"]').click();
+    }
     node.click();
   })()`);
 }
@@ -912,7 +916,7 @@ async function runAssertions(cdp, base) {
     }
   });
 
-  await check('Day Study Mode modal wraps its selected radio and restores Mode on Escape', async () => {
+  await check('Day Study Mode modal wraps its radio and secondary controls and restores Mode on Escape', async () => {
     await viewport(cdp, 393, 852);
     await productionFresh(cdp, productionUrl(base, 'day', STATES.dayStudy), 'day');
     await evaluate(cdp, `document.querySelector('[data-reader-action="mode"]').focus()`);
@@ -925,6 +929,7 @@ async function runAssertions(cdp, base) {
     const focused = () => evaluate(cdp, `(() => {
       const node = document.activeElement;
       return { close: node.matches('#mode-surface [data-reader-close]'),
+        id: node.id, action: node.dataset.readerAction || null,
         mode: node.dataset.mode || null, inside: document.querySelector('#mode-surface').contains(node),
         visible: node.matches(':focus-visible'), outline: getComputedStyle(node).outlineStyle };
     })()`);
@@ -940,14 +945,18 @@ async function runAssertions(cdp, base) {
     assert.equal(value.inside, true);
     assert.equal(value.visible, true);
     assert.equal(value.outline, 'solid');
-    for (const type of ['keyDown', 'keyUp']) {
-      await cdp.send('Input.dispatchKeyEvent', {
-        type, key: 'Tab', code: 'Tab', windowsVirtualKeyCode: 9, nativeVirtualKeyCode: 9
-      });
+    for (const [property, expected] of [['id', 'reader-text-size'], ['action', 'details'], ['close', true]]) {
+      for (const type of ['keyDown', 'keyUp']) {
+        await cdp.send('Input.dispatchKeyEvent', {
+          type, key: 'Tab', code: 'Tab', windowsVirtualKeyCode: 9, nativeVirtualKeyCode: 9
+        });
+      }
+      value = await focused();
+      assert.equal(value[property], expected, JSON.stringify(value));
+      assert.equal(value.inside, true);
+      assert.equal(value.visible, true);
+      assert.equal(value.outline, 'solid');
     }
-    value = await focused();
-    assert.equal(value.close, true, JSON.stringify(value));
-    assert.equal(value.visible, true);
     for (const type of ['keyDown', 'keyUp']) {
       await cdp.send('Input.dispatchKeyEvent', {
         type, key: 'Tab', code: 'Tab', modifiers: 8,
@@ -955,7 +964,7 @@ async function runAssertions(cdp, base) {
       });
     }
     value = await focused();
-    assert.equal(value.mode, 'study', JSON.stringify(value));
+    assert.equal(value.action, 'details', JSON.stringify(value));
     assert.equal(value.inside, true);
     await escape(cdp);
     const restored = await evaluate(cdp, `({
@@ -996,7 +1005,7 @@ async function runAssertions(cdp, base) {
           outlineStyle: style.outlineStyle, outlineWidth: style.outlineWidth,
           outlineOffset: style.outlineOffset };
       })()`);
-      assert.equal(restored.action, 'details');
+      assert.equal(restored.action, 'mode');
       assert.equal(restored.visible, true);
       assert.equal(restored.outlineStyle, 'solid');
       assert.equal(restored.outlineWidth, '2px');
@@ -1030,7 +1039,7 @@ async function runAssertions(cdp, base) {
     assert.ok(production.firstText.bottom < production.actions.top,
       JSON.stringify({ text: production.firstText, dock: production.actions }));
     assert.ok(production.document.scrollWidth <= production.document.clientWidth + 1);
-    assert.deepEqual(production.actionButtons.map(row => row.label), ['Date', 'Contents', 'Mode', 'Details']);
+    assert.deepEqual(production.actionButtons.map(row => row.label), ['Date', 'Contents', 'Mode', 'Study']);
     // The governed browser uses the explicitly private public-alpha preview;
     // canonical source/public builds are separately required to be indexable.
     assert.match(production.robots, /noindex/);
@@ -1102,7 +1111,7 @@ async function runAssertions(cdp, base) {
       oracle.ready.semantic.events.map(row => row.id));
     assert.ok(Math.abs(production.reading.width - oracle.reading.width) <= 2,
       JSON.stringify({ production: production.reading, oracle: oracle.reading }));
-    assert.deepEqual(production.actionButtons.map(row => row.label), ['Browse', 'Contents', 'Mode', 'Details']);
+    assert.deepEqual(production.actionButtons.map(row => row.label), ['Browse', 'Contents', 'Mode', 'Study']);
     await productionFresh(cdp, productionUrl(base, 'propers', STATES.browse), 'propers');
     assert.equal(await evaluate(cdp, `document.querySelector('#browse-surface').open`), true);
     assert.equal(await evaluate(cdp, `propersReaderDebug.outcome`), 'browse');
@@ -1202,7 +1211,7 @@ async function runAssertions(cdp, base) {
         assert.equal(value.focus, 'Close Details');
         assert.ok(value.overflow <= 1);
         await escape(cdp);
-        assert.equal(await evaluate(cdp, 'document.activeElement.dataset.readerAction'), 'details');
+        assert.equal(await evaluate(cdp, 'document.activeElement.dataset.readerAction'), 'mode');
       }
     }
   });

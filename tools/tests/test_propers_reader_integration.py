@@ -60,6 +60,7 @@ class PropersReaderIntegrationTests(unittest.TestCase):
             "reader-compare-view.css", "propers-compare.js", "proper-search-controller.js",
             "reader-study-view.js", "reader-study-view.css", "propers-study.js",
             "reader-proper-payload.js", "propers-read-payload.js",
+            "reader-text-size.js", "reader-text-size.css",
         ):
             self.assertIn(asset, html)
 
@@ -241,12 +242,18 @@ class PropersReaderIntegrationTests(unittest.TestCase):
 
     def test_all_four_actions_and_available_modes_are_explicit(self) -> None:
         source = text(HTML)
+        dock = source.split('<nav class="reader-actions"', 1)[1].split('</nav>', 1)[0]
         for action, label in (
             ("browse", "Browse"), ("contents", "Contents"),
-            ("mode", "Mode"), ("details", "Details"),
+            ("mode", "Mode"), ("study", "Study"),
         ):
-            self.assertIn(f'data-reader-action="{action}"', source)
-            self.assertIn(f'class="action-label">{label}</span>', source)
+            self.assertIn(f'data-reader-action="{action}"', dock)
+            self.assertIn(f'class="action-label">{label}</span>', dock)
+        self.assertEqual(dock.count('data-reader-action='), 4)
+        self.assertNotIn('data-reader-action="details"', dock)
+        mode = source.split('data-reader-surface="mode"', 1)[1].split('</dialog>', 1)[0]
+        self.assertIn('data-reader-action="details"', mode)
+        self.assertIn('data-reader-secondary-actions', mode)
         self.assertIn('data-mode="read"', source)
         self.assertEqual(source.count('aria-disabled="true"'), 0)
         self.assertEqual(source.count(' disabled>'), 0)

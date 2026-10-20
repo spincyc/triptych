@@ -576,7 +576,7 @@ async function settleResponseGate(cdp, gate) {
 
 async function candidateOutcomeSnapshot(cdp) {
   const open = await evaluate(cdp, `document.querySelector('[data-reader-surface="details"]').open`);
-  if (!open) await click(cdp, '[data-reader-action="details"]');
+  if (!open) await openSurface(cdp, 'details');
   const value = await evaluate(cdp, `(() => ({
     title: document.querySelector('#celebration-title').textContent,
     date: document.querySelector('#celebration-date').textContent,
@@ -713,6 +713,15 @@ async function click(cdp, selector) {
     element.click(); return true;
   })()`);
   await new Promise((accept) => setTimeout(accept, 40));
+}
+
+async function openSurface(cdp, name) {
+  if (name === 'details') {
+    const open = await evaluate(cdp,
+      `document.querySelector('[data-reader-surface="mode"]').open`);
+    if (!open) await click(cdp, '[data-reader-action="mode"]');
+  }
+  await click(cdp, `[data-reader-action="${name}"]`);
 }
 
 async function escape(cdp) {
@@ -1101,7 +1110,7 @@ const ABSENCE_WORDS = Object.freeze({
 });
 
 async function detailsText(cdp) {
-  await click(cdp, '[data-reader-action="details"]');
+  await openSurface(cdp, 'details');
   const text = await evaluate(cdp, `document.querySelector('[data-reader-details]').innerText`);
   await escape(cdp);
   return text;
@@ -1468,7 +1477,7 @@ async function runAssertions(cdp, base) {
       noticeHidden: document.querySelector('#coverage-notice').hidden,
       notice: document.querySelector('#coverage-notice').textContent,
       events: [...document.querySelectorAll('[data-semantic-event-id]')].map(row => row.dataset.semanticEventId),
-      actions: [...document.querySelectorAll('[data-reader-action]')].map(row => row.textContent.trim()),
+      actions: [...document.querySelectorAll('.reader-actions [data-reader-action]')].map(row => row.textContent.trim()),
       shell: getComputedStyle(document.querySelector('.reader-actions')).position,
       first: document.querySelector('#reader-document .proper').getBoundingClientRect().top,
       viewport: innerHeight
@@ -1489,7 +1498,7 @@ async function runAssertions(cdp, base) {
     assert.match(value.notice, /Bible reconstructions/);
     assert.equal(value.events.length, 10);
     assert.deepEqual(value.actions.map(row => row.replace(/\s+/g, ' ')),
-      ['Date', 'Contents', 'Mode Read', 'Details']);
+      ['Date', 'Contents', 'Mode Read', 'Study']);
     assert.equal(value.shell, 'fixed');
     assert.ok(value.first < value.viewport, JSON.stringify(value));
   });
@@ -2393,7 +2402,7 @@ async function runAssertions(cdp, base) {
     // no prior selection; a disabled one shows no way back.
     assert.equal(invalidDate.escapable, true);
     await escape(cdp);
-    await click(cdp, '[data-reader-action="details"]');
+    await openSurface(cdp, 'details');
     const invalidDetails = await evaluate(cdp, `document.querySelector('[data-reader-details]').innerText`);
     assert.match(invalidDetails, /No validated selection.*invalid outcome/i);
     assert.doesNotMatch(invalidDetails, stalePattern);
@@ -2407,7 +2416,7 @@ async function runAssertions(cdp, base) {
     await transitionHash(cdp, STATES.loadFailure);
     assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'unrenderable');
     assert.equal(await evaluate(cdp, 'dayReaderDebug.state'), null);
-    await click(cdp, '[data-reader-action="details"]');
+    await openSurface(cdp, 'details');
     const failedDetails = await evaluate(cdp, `document.querySelector('[data-reader-details]').innerText`);
     assert.match(failedDetails, /No validated selection.*unrenderable outcome/i);
     assert.doesNotMatch(failedDetails, stalePattern);
@@ -2460,7 +2469,7 @@ async function runAssertions(cdp, base) {
       'slow territorial scripture fragment'
     );
     try {
-      await click(cdp, '[data-reader-action="details"]');
+      await openSurface(cdp, 'details');
       const loading = await evaluate(cdp,
         `document.querySelector('[data-reader-details]').textContent`);
       assert.match(loading, /still loading/);
@@ -2580,7 +2589,7 @@ async function runAssertions(cdp, base) {
     const start = await evaluate(cdp, 'window.scrollY');
     assert.ok(start > 500);
     for (const name of ['date', 'contents', 'mode', 'details']) {
-      await click(cdp, `[data-reader-action="${name}"]`);
+      await openSurface(cdp, name);
       const open = await evaluate(cdp, `(() => ({
         modal: document.querySelector('[data-reader-surface="${name}"]').matches(':modal'),
         focus: document.activeElement.hasAttribute('data-reader-close'),
@@ -2593,7 +2602,7 @@ async function runAssertions(cdp, base) {
         expanded: document.querySelector('[data-reader-action="${name}"]').getAttribute('aria-expanded'),
         scroll: window.scrollY
       }))()`);
-      assert.equal(closed.focus, name);
+      assert.equal(closed.focus, name === 'details' ? 'mode' : name);
       assert.equal(closed.expanded, 'false');
       assert.ok(Math.abs(closed.scroll - start) <= 2, JSON.stringify(closed));
     }
@@ -2889,7 +2898,7 @@ async function runAssertions(cdp, base) {
       { name: 'Compare', disabled: false, checked: 'false' }
     ]);
     await escape(cdp);
-    await click(cdp, '[data-reader-action="details"]');
+    await openSurface(cdp, 'details');
     const details = await evaluate(cdp, `({
       builds: dayReaderDebug.detailsBuilds,
       text: document.querySelector('[data-reader-details]').innerText,
@@ -2902,7 +2911,7 @@ async function runAssertions(cdp, base) {
     assert.equal(details.state, before);
     await escape(cdp);
     await navigateCandidate(cdp, base, STATES.postMissal);
-    await click(cdp, '[data-reader-action="details"]');
+    await openSurface(cdp, 'details');
     const missalDetails = await evaluate(cdp,
       `document.querySelector('[data-reader-details]').innerText`);
     assert.match(missalDetails, /Mode\s+Missal/i);
@@ -2915,7 +2924,7 @@ async function runAssertions(cdp, base) {
 
   await test('Details presents the counterpart first and preserves the accepted legacy destinations', async () => {
     await navigateCandidate(cdp, base, STATES.roman);
-    await click(cdp, '[data-reader-action="details"]');
+    await openSurface(cdp, 'details');
     const links = await evaluate(cdp, `[...document.querySelectorAll('[data-reader-details] a')]
       .map(row => ({ label: row.textContent.trim(), pathname: new URL(row.href).pathname }))`);
     assert.deepEqual(links.map(row => row.label), [
@@ -2929,7 +2938,7 @@ async function runAssertions(cdp, base) {
         .map(row => row.textContent.trim())`), [
       'Selection', 'Resolved Day result', 'Related reader', 'Elsewhere in Triptych'
     ]);
-    assert.equal(await evaluate(cdp, `document.querySelectorAll('[data-reader-action]').length`), 4);
+    assert.equal(await evaluate(cdp, `document.querySelectorAll('.reader-actions [data-reader-action]').length`), 4);
     await escape(cdp);
   });
 
@@ -3253,7 +3262,7 @@ async function runAssertions(cdp, base) {
       await viewport(cdp, width, height);
       await navigateCandidate(cdp, base);
       for (const name of ['date', 'contents', 'mode', 'details']) {
-        await click(cdp, `[data-reader-action="${name}"]`);
+        await openSurface(cdp, name);
         assert.deepEqual(await surfaceOverflow(cdp, name), [], `${name} ${width}x${height}`);
         await escape(cdp);
       }
@@ -3265,7 +3274,7 @@ async function runAssertions(cdp, base) {
     await navigateCandidate(cdp, base, STATES.multiple);
     await evaluate(cdp, `document.documentElement.style.fontSize = '200%'`);
     for (const name of ['date', 'contents', 'mode', 'details']) {
-      await click(cdp, `[data-reader-action="${name}"]`);
+      await openSurface(cdp, name);
       assert.deepEqual(await surfaceOverflow(cdp, name), [], `${name} at 200%`);
       await escape(cdp);
     }
@@ -3608,7 +3617,7 @@ async function runAssertions(cdp, base) {
       robots: document.querySelector('meta[name="robots"]').content,
       title: document.title,
       visible: document.body.innerText,
-      actions: document.querySelectorAll('[data-reader-action]').length
+      actions: document.querySelectorAll('.reader-actions [data-reader-action]').length
     })`);
     assert.equal(value.robots, 'noindex, nofollow, noarchive, nosnippet, noimageindex');
     assert.equal(value.actions, 4);
@@ -3675,7 +3684,7 @@ async function captureCandidate(cdp, base, state, kind) {
   } else if (kind === 'why') {
     await click(cdp, 'details.day-reasoning summary');
   } else if (['date', 'contents', 'mode', 'details'].includes(kind)) {
-    await click(cdp, `[data-reader-action="${kind}"]`);
+    await openSurface(cdp, kind);
   }
   const settlement = await waitForVisualSettlement(cdp);
   return { ...navigation, settlement };
@@ -3807,7 +3816,7 @@ async function captureMatrix(cdp, base, directory) {
   evidence.push(await captureEvidence(cdp, invalidDateFile, 'transition-invalid-date', navigation.path,
     { settlement: navigation.settlement }));
   await escape(cdp);
-  await click(cdp, '[data-reader-action="details"]');
+  await openSurface(cdp, 'details');
   const invalidDetailsFile = 'day-reader-missal-transition-invalid-details-393x852.png';
   await shot(cdp, join(directory, invalidDetailsFile));
   evidence.push(await captureEvidence(cdp, invalidDetailsFile, 'transition-invalid-details', navigation.path,
