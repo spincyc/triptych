@@ -506,6 +506,10 @@
     if (needsOrdinary) paths.push('structure/ordinary/' + missal + '.json');
     const peer = requestedMode === 'compare' ? parsed.recognized['peer-missal'] : null;
     if (peer) paths.push('structure/propers/' + peer + '.json');
+    window.LiturgyReaderProperPayload?.warmDay({
+      load, index: manifests.propersIndex, missal, parsed,
+      mode: requestedMode, needsOrdinary
+    });
     const rows = await Promise.all(paths.map(load));
     const derivationKey = missal + '/' + preliminary.date;
     let derived = derivations.get(derivationKey);

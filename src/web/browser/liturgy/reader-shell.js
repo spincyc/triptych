@@ -12,7 +12,7 @@
 
   function visibleTabStops(surface) {
     return Array.from(surface.querySelectorAll(FOCUSABLE_SELECTOR)).filter(function (node) {
-      return !node.hidden && node.getClientRects().length > 0;
+      return !node.hidden && node.tabIndex >= 0 && node.getClientRects().length > 0;
     });
   }
 

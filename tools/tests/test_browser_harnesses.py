@@ -52,6 +52,7 @@ ASSERTION_COUNTS = {
     "day_reader_study_browser.mjs": 10,
     "day_reader_choices_browser.mjs": 8,
     "liturgy_reader_preferences_browser.mjs": 11,
+    "liturgy_reader_share_print_browser.mjs": 2,
     "pentecost_witness_chooser_browser.mjs": 5,
     # 45 declared at eeb17891d (the recorded 43 had drifted; a source-only run
     # executes 44 because one check needs the preview build) plus six C2
@@ -83,6 +84,7 @@ SOURCE_SERVED_HARNESSES = frozenset({
     "day_reader_read_payload_browser.mjs",
     "day_reader_study_browser.mjs",
     "liturgy_reader_preferences_browser.mjs",
+    "liturgy_reader_share_print_browser.mjs",
     "pentecost_witness_chooser_browser.mjs",
 })
 

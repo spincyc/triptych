@@ -495,6 +495,24 @@ remain above the 2.5 s mobile target and do not establish field p75. The
 remaining C6 work is page startup and request sequencing, followed by the
 complete C5/print/accessibility and independent release review.
 
+The next C5 checkpoint adds shared Mode-radio keyboard behavior and secondary
+Share/Print actions on both entrances. The selected radio is the group's single
+Tab stop; Arrow, Home/End, Space and Enter use the same controller choices.
+Share sends a canonical reader URL and identity title without liturgical text,
+with a local-copy fallback. Oration-language comparisons name the peer
+language, while recension comparisons name the peer edition. Print uses the
+browser dialog and excludes the controls. The keyboard probe passes eighteen
+checks across both entrances; the built Chromium gate passes all seven tests.
+
+The second C6 change overlaps safe 1962 Read catalog loading with existing
+manifest/rubric requests and fetches the selected Mass alongside that catalog.
+Generation, path, identity and fallback validation still govern the result.
+On the same two-run Slow-4G/4×-CPU lab profile, cold mobile LCP is 7.34–7.35 s
+for Day and 6.36–6.37 s for Propers; cold desktop samples are 0.60–0.70 s.
+The added controls bring transfer to about 325 KB and 274 KB. These samples
+remain above the 2.5 s mobile target and do not establish field p75 or
+independent C5/C6 acceptance.
+
 A parallel witness audit found no publishable English witness for the 1962
 Pentecost Lesson's printed `discipuli` wording. [Cabrol 1921](https://catalog.hathitrust.org/Record/100567132)
 is an inaccessible page-image lead, not a text source. An

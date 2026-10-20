@@ -1409,6 +1409,7 @@
     detailsBody.replaceChildren(T.el('p', 'surface-note', 'Details load when this surface is opened.'));
 
     try {
+      window.LiturgyReaderProperPayload?.warmPropers(load, window.location.hash);
       const manifests = await loadManifests();
       if (serial !== runtime.serial) return;
       const variantKeys = Array.from(new Set(

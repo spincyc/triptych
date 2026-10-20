@@ -63,6 +63,68 @@ test('generated 1962 payload retains the selected exact Mass and every catalog i
     .every((row) => !Object.hasOwn(row, 'propers')));
 });
 
+test('catalog and selected Mass start together, then validate before rendering', async () => {
+  const parts = await fixture();
+  const requests = [];
+  const pending = new Map();
+  const loaded = Payload.load({
+    indexRow: chosen(parts.index), calendar, massKey: key,
+    load: (path) => {
+      requests.push(path);
+      return new Promise((resolve) => { pending.set(path, resolve); });
+    }
+  });
+  assert.deepEqual(requests, [catalogPath, massPath]);
+  pending.get(massPath)(parts.envelope);
+  pending.get(catalogPath)(parts.catalog);
+  const structure = await loaded;
+  assert.equal(structure.masses.find((row) => row.key === key).name,
+    parts.envelope.mass.name);
+});
+
+test('speculative catalog requests stay inside eligible Read state and reuse cache', async () => {
+  const parts = await fixture();
+  const requests = [];
+  const cache = new Map();
+  const load = (path) => {
+    if (!cache.has(path)) cache.set(path, loadFor(parts, requests)(path));
+    return cache.get(path);
+  };
+  const input = dayInput(parts, requests);
+  input.load = load;
+  await Payload.warmDay(input);
+  await Day.loadStructure(input);
+  assert.deepEqual(requests, [catalogPath, massPath]);
+
+  for (const change of [
+    (row) => { row.mode = 'missal'; },
+    (row) => { row.parsed.recognized.why = '1'; },
+    (row) => { row.parsed.present.push('mass'); },
+    (row) => { row.index.missals.find((one) => one.id === calendar).read_payload = null; }
+  ]) {
+    const candidate = dayInput(clone(parts), []);
+    change(candidate);
+    assert.equal(Payload.warmDay(candidate), null);
+  }
+
+  const good = '#missal=roman-1962&type=sanctoral&mass=' + key + '&mode=read';
+  const propersRequests = [];
+  await Payload.warmPropers((path) => {
+    propersRequests.push(path); return Promise.resolve(parts.catalog);
+  }, good);
+  assert.deepEqual(propersRequests, [catalogPath]);
+  for (const invalid of [
+    good + '&mode=read', good + '&unexpected=1',
+    good.replace('mode=read', 'mode=study'),
+    good.replace(key, '../escape'), good.replace('type=sanctoral', 'type=unknown')
+  ]) {
+    assert.equal(Payload.warmPropers((path) => {
+      propersRequests.push(path); return Promise.resolve(parts.catalog);
+    }, invalid), null);
+  }
+  assert.deepEqual(propersRequests, [catalogPath]);
+});
+
 test('untrusted paths, generation, and descriptor identity reject before rendering', async () => {
   const parts = await fixture();
   const requests = [];

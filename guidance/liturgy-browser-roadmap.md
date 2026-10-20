@@ -836,6 +836,22 @@ mobile 2.5 s gate still fails. Further startup and request work, independent
 C5 acceptance, full print/accessibility review, and release verification
 remain open. No production deployment has been made.
 
+The following C5 checkpoint adds shared Mode-radio keyboard behavior and
+secondary Share/Print actions on both entrances. One selected radio is in the
+Tab order; Arrow, Home/End, Enter and Space use controller-owned choices.
+Share sends the canonical reader URL and identity title with the comparison's
+actual peer edition or language. It sends no liturgical text and offers local
+copy when native sharing is unavailable. Print invokes the browser dialog and
+omits these controls. Eighteen real Chromium keyboard checks and all seven
+built browser tests pass; this remains an internal C5 slice.
+
+Safe 1962 Read catalog loading now overlaps existing manifest/rubric requests,
+and the selected Mass loads concurrently with its validated catalog. The same
+two-run Slow-4G/4×-CPU lab profile records cold mobile LCP at 7.34–7.35 s for
+Day and 6.36–6.37 s for Propers, with about 325 KB and 274 KB transferred.
+Cold desktop samples are 0.60–0.70 s. The 2.5 s mobile gate still fails; these
+local samples establish neither field p75 nor independent release acceptance.
+
 ### Verification and completion gates
 
 Recovery checks actually run on the baseline:
