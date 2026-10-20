@@ -382,3 +382,69 @@ forwarded findings, and no new upstream defect was identified. No PDF or web
 edition was installed. The parent driver owns global source-inventory checks,
 integration, commits and publication; the later homily derivation and final
 common build must use the resulting shared metadata.
+
+# Homily reentry: Secret addressee
+
+`derive-homily` iteration 1 completed on 20 October 2026 for `proper-study`
+v13, run `095fe00a9fe8cfee`. Both revised studies were read, together with the
+research scope, interpretation audit and appointed-text component. The spoken
+Secret paragraph now says that the prayer asks the Father that his Son give
+unity and peace among the nations. The following sentence still identifies
+the offered Son as the giver. The terminal source note states the same
+distinction. This supersedes the iteration-0 audit's description of the Secret
+as a petition addressed to the sacrificial giver. The Missal's no. 3947 remains
+the exact source locus, and no new source-dependent claim was introduced.
+
+The adult-parish audience, hearing-king argument and compatible sacrificial
+peace application remain intact. The decisive textual detail is still
+Augustine's reading of John 18:36: the kingdom's different origin does not
+remove its people from this world. That distinction changes an opening question
+about the prisoner's visible power into the question of grace-enabled hearing
+within ordinary responsibilities. John 18:37, Colossians 1:12–20, the Collect,
+Secret, Communion and Postcommunion carry the movement toward conversion and
+hope. Correctly identifying the Father addressed by the Secret preserves the
+Son's sacrificial gift within that movement.
+
+The revised body has **1,280 spoken words**, counted as whitespace-separated
+words in its prose-only component, four more than the previous version.
+At **110–125 words per minute**, the calculated duration is **10.2–11.6
+minutes**, still approximately 10–12 minutes. The entire speech was read
+silently for sense and oral clarity, including the revised sentence's reference
+to the Father and his Son. No audible rehearsal or timed human delivery is
+claimed. The practical applications and preaching conclusion remain unchanged;
+no newly composed prayer is supplied.
+
+The entrypoint and manifest needed no change. The three shared imports remain
+in their prescribed order; only the spoken import is inside `properhomily`,
+with the terminal apparatus after its page break. The generation record carries
+the packet's exact provenance, finalization time `2026-10-20T13:56:23Z`, and
+the added homily-revision contribution. No accepted study prose or research
+evidence was changed.
+
+The homily `make doc` build, artifact component check and complete homily content
+preflight passed. The settled PDF has **3 physical pages** and **246,092 bytes**.
+Its log has no warnings, undefined references or overfull/underfull boxes.
+Title, subject and revision metadata are correct, and all ten listed Latin
+Modern font subsets are embedded. The approximately 82,031 bytes per page
+again crosses the size-review trigger for a short document embedding ten font
+subsets; total size remains below 1 MiB, and no PDF transformation was applied.
+All three reference entries are used.
+
+All three full-page rasters were visually inspected. The full-width title and
+two-column speech remain readable; the corrected paragraph appears on page 2.
+The speech ends there, and page 3 holds the source/delivery note, References,
+timestamp and compact rights colophon without clipping, overlap or a spill.
+Text extraction confirms the revised sentence, the source-note distinction and
+the updated word count.
+
+Built proof:
+`build/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-homily.pdf`.
+SHA-256:
+`1ad22ec21d738d3028a7252b9d2d92b6b7f3dc9eac80249c87bc7116a7eb1af2`.
+An identical proof, logs and extraction are retained in the driver's assigned
+scratch area. The registered tool's raster destination is
+`build/tpt-runs/095fe00a9fe8cfee/artifacts/derive-homily-0001/rasters/`.
+This is author verification, not independent homily or final visual acceptance.
+There were no forwarded findings and no new upstream defect was identified.
+The parent driver owns source-inventory checks, the final common build,
+integration and publication; no PDF or web edition was installed here.
