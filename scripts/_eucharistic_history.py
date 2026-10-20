@@ -334,6 +334,32 @@ def record_links(row: dict, sources: list[dict]) -> list[dict]:
     return list({link["url"]: link for link in links}.values())
 
 
+def source_library_links(entries: list[dict], root: Path, inputs: dict) -> None:
+    """Only an exact canonical edition can supply this same-site route."""
+    library = None
+    for entry in entries:
+        row = entry["source_record"]
+        if "source_library_edition_id" not in row:
+            continue
+        identifier = row["source_library_edition_id"]
+        if not isinstance(identifier, str) or not re.fullmatch(r"edition\.[a-z0-9](?:[a-z0-9.-]*[a-z0-9])?", identifier):
+            raise HistoryError(f"{entry['id']}: invalid source-library edition id")
+        if library is None:
+            from _eucharistic_texts import _load_library, AdapterError
+            try:
+                library = _load_library(root)
+            except AdapterError as error:
+                raise HistoryError(f"source-library edition link: {error}") from error
+        record = library.records.get(identifier)
+        if record is None or record.record_type != "edition":
+            raise HistoryError(f"{entry['id']}: unresolved source-library edition {identifier}")
+        stamp = fingerprint(root, inside(root, record.path))
+        inputs[stamp["path"]] = stamp
+        entry["links"].append({"kind": "source-library-edition", "edition_id": identifier,
+                               "label": "Open edition in the Source Library",
+                               "url": "../sources/#edition=" + quote(identifier, safe="")})
+
+
 def catalogue(source: Path, root: Path, *, act_loader) -> dict:
     root = root.resolve()
     data, inputs = route(source, root)
@@ -392,6 +418,7 @@ def catalogue(source: Path, root: Path, *, act_loader) -> dict:
                 "source_record": row, "links": [],
                 "act_ref": {"slice": owner["id"], "station_id": row["id"]},
             })
+    source_library_links(entries, root, inputs)
     classifications = data.get("classifications", [])
     by_id = {entry["id"]: entry for entry in entries}
     if len(by_id) != len(entries):
@@ -447,6 +474,13 @@ def catalogue(source: Path, root: Path, *, act_loader) -> dict:
         inputs[stamp["path"]] = stamp
     native_texts = {}
     for stage in stage_history["stages"]:
+        if "text_bindings" in stage:
+            for projected in stage["text_projections"]:
+                identifier = projected["text_binding"].removeprefix("native-book:")
+                native_texts[identifier] = {"id": identifier, "adapter_id": projected["text_binding"],
+                                          "projection_path": projected["text_projection_path"],
+                                          "binding_sha256": projected["text_binding_sha256"]}
+            continue
         if "text_binding" not in stage:
             continue
         # The stage loader has checked the binding, extent, rights and exact

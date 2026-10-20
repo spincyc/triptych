@@ -74,7 +74,67 @@ with independent source and literal-text review before integration. All work
 remains on `feature/missal-timeline`; the all-rite completion criteria remain
 open, and neither a new hosted corpus nor deployment is part of this phase.
 
-**Current integration checkpoint, 2026-10-20.**
+**Current parallel batch, 2026-10-20: verified checkpoint.** The
+[batch review](workflows/reviews/missal-batch2-2026-10-20/REPORT.md) records the
+independent source, implementation, browser, print and canonical Git acceptance.
+All 678 offered Amiet rows are accounted for: 250 French, 271 complementary,
+143 prior-link, twelve previously selected and two genre controls. Detailed
+catalogue admissions do not establish historical discoveries, distinct
+recensions, original-book acquisition or a complete printed repertoire.
+The inventories now hold 444 Eastern and 1,451 Western candidates; including
+59 legacy records, the catalogue has 1,954 entries in 232 presentation groups,
+with no unmapped candidate family. The current coverage audit reconciles 174
+routes; 83 still lack mapped stages. Whole-book text coverage remains zero
+complete, sixteen partial and 271 not transcribed.
+
+Both Cistercian Canon constituents have independent extent and literal-text
+acceptance: 35 units for 1606, and 52 for 1657, including its nineteen prefatory
+proper-form/context units plus 33 title/main units. Each stage exposes its
+separate offertory and Canon bindings while retaining partial whole-book
+coverage. The distinct Armenian 1677 EAP/FSL setting is registered separately
+from the Google witness: eighteen offered source frames plus a modern notice
+page. The exact typed Source Library link reaches its existing edition and
+licensed retained-artifact metadata; no PDF-download interface was added.
+Qualified Armenian transcription, physical completeness and ancestry remain
+unestablished, and current Albanian classification remains unresolved.
+
+Installed-source/disclosure review passes 944 checks. The 69 retained files total
+175,560,887 bytes; the central decision also identifies 178 retained provider
+responses within the EAP package and 663 deferrals. Historical decisions and
+rights/status boundaries remain intact. The sole final source gate passes;
+all 21 real guarded CLI examples pass with nine stale stdout captures refreshed.
+Fresh projections contain 545 history files and 4,460 Sources files. Two fresh
+canonical exports have identical 6,130 objects, 33 refs/trees and 33 commits:
+24 reconstruction roots contain 1,367 units, and nine native versions contain
+163 units. Only the evidenced 1500→1755 Mozarabic bread-blessing republication
+has a native parent; eight native roots remain. The self-contained corpus bundle
+restores the exact refs and objects without text inheritance.
+
+Actual browser acceptance passes 940 registered, twenty focused and seven
+visible-metadata checks. The original two sibling-fold failures were reproduced
+as a test assumption, then corrected and verified with ten helper tests; source,
+production runtime and preview bytes stayed unchanged. Digital print acceptance
+covers all 570 freshly rasterized pages, including independent direct review of
+fifteen source-delta pages. Twenty-six retained observations are corrected and
+one margin allegation is independently withdrawn. Production and physical-print
+proof remain open. Reviewed publication and transport facts will follow the
+implementation checkpoint; the full project remains **in progress**.
+
+| Full-project area | Outstanding work |
+| --- | --- |
+| Historical coverage | Research the remaining routes and local reception; extend beyond the offered Amiet table and resolve printing, copy and substantive-version boundaries. |
+| Eastern census | Resolve the current named enumeration and Albanian classification against an edition-identified current authority; preserve the dated lists' different scopes. |
+| Original sources | Acquire and verify missing original books, exact editions and applicable reuse permissions; catalogue-card review is not book acquisition. |
+| Complete texts | Transcribe and independently collate complete edition-level books in their original languages. Complete bounded constituents do not close whole-book gaps. |
+| Textual ancestry | Establish the remaining exact edition or textual-state bridges. Similarity and institutional continuity alone do not select a native parent. |
+| Reader follow-up | Improve direct unit-source access and long-title narrow presentation; broaden accessibility and cross-browser review. |
+| Production acceptance | Complete production-sheet and physical-printer proof. |
+
+**Preceding verified checkpoint, 2026-10-20.** The measurements and acceptance
+results below identify the earlier delivered snapshot at
+`ffb1be7cf5d77434a6945c198fcefd95095adb96`; they are historical measurements,
+superseded by the current batch review above.
+
 The frozen [coverage audit](src/sources/inventories/eucharistic-stage-coverage-v1.json)
 reconciles **101 routes: 23 Eastern research slots and 78 Western trajectories**.
 Ninety-one routes have selected stages, three retain related dossiers without
@@ -745,13 +805,14 @@ cannot substitute for an identified received book.
 
 No stage yet has complete whole-book native text. Transcribe and independently
 check complete books in their native divisions, establish textual ancestry only
-from exact evidence, and keep the seven native versions parentless until such
-evidence exists. The 44 book/source classifications are bounded positive
+from exact evidence, and preserve the eight remaining native roots until such
+evidence exists; the bounded 1500→1755 republication is the sole authorized
+native parent. The 44 book/source classifications are bounded positive
 findings; unclassified witnesses and unexamined ranges remain open. Modern full
 text needs a defensible basis for each proposed distribution surface. All 161
-source-family review units remain pending. Finish the current source, browser
-and print gates above, then obtain the maintainer's reader acceptance; spoken
-screen-reader use remains untested. The all-rite historical census, whole-book
+source-family review units remain pending. The current digital source, browser
+and print gates pass; maintainer reader judgment, production and physical-print
+proof remain open, and spoken screen-reader use remains untested. The all-rite historical census, whole-book
 corpus and complete textual Git history remain **in progress**. Work stays on
 `feature/missal-timeline`; no new hosted corpus repository or site deployment is
 part of this continuation.

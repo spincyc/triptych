@@ -1,0 +1,707 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "native-ancestry-2026-10-20",
+  "title": "Exact native constituent ancestry: seven-version baseline and reviewed republication",
+  "lane": "strict-native-text-ancestry",
+  "side": "cross-tradition",
+  "checked_on": "2026-10-20",
+  "target_inventory": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
+  "coverage_rows": [
+    "roman",
+    "coptic",
+    "hispano-mozarabic",
+    "cistercian"
+  ],
+  "integration_status": "independently-reviewed-scoped-parentage-candidate",
+  "semantics": "Seven independently complete constituents, 76 native units, zero whole books; this audit reviews all 21 unordered baseline pairs. One edition-level republication is supported. An audit record itself grants neither Git parentage nor inherited text. New Canon constituents require a separate scope addendum.",
+  "review_files": {
+    "frozen_provisional_report_sha256": "0d04a6728a770152b534420cb22faeb1f2c4423caa6ff6e0b4e0181f1afd5064",
+    "superseding_evidence_review_sha256": "e7e4f61b9cf3f2dc977c94f92daaa5f3510a093d6f4ae8a3d1a4afb2576334ff",
+    "independent_primary_review_sha256": "a87ebcf536ffe35a472dfbc156f504f3e57fdb503e14ddcb171ee261979260b3",
+    "independent_review_judgment": "established-edition-level-republication",
+    "storage": "Primary facsimiles and canonical inspected passages are retained; review hashes pin the independent audit. Scratch reports are working receipts, not the source controlling any claim."
+  },
+  "superseded_assessment": "The prior zero-edge conclusion is superseded for 1500 → 1755 only, after new direct reading of Lesley Preface III–IV, sections 15–19, and publisher dedication PDF 15. Prior extent and unit collation bytes remain unchanged.",
+  "uses": [
+    {
+      "id": "native-version-pair-review",
+      "disposition": "One edition-level republication recommendation; twenty baseline pairs without native parent authorization."
+    }
+  ],
+  "searches": [],
+  "acquisitions": [],
+  "versions": [
+    {
+      "id": "roman-1570-canon-missae",
+      "binding_path": "src/sources/inventories/eucharistic-books/roman-1570-canon-missae.json",
+      "binding_sha256": "8cbb45f8fee8fad2522e928ac5598bfc184c7117747e3502f653f2cf0c5ba1dd",
+      "extent_path": "src/sources/inventories/eucharistic-books/support/roman-1570-canon-missae-extent.json",
+      "extent_sha256": "f1d97c3993c2d3545c6f1ce1f1c226886bcee876da71b633569715218f6303d8",
+      "collation_path": "src/sources/inventories/eucharistic-books/support/roman-1570-canon-missae-review.json",
+      "collation_sha256": "e862a73aee907aa4d9dcf89de254f34682d7b7ff3aaedd11a89e73a5af281316",
+      "edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "scope": "Complete strict Eucharistic Canon from opening 169 right printed p.281 red Sacerdos/Te igitur through opening 172 left p.286 Per omnia secula seculorum and R. Amen. Includes source prayer wording, three red headings, action rubrics and 25 printed crosses under declared selective reading normalization. Excludes p.280, p.287, the subsequent Pater and the running-head continuation to p.292; neither whole Missal nor diplomatic glyph/chant-pitch completeness is claimed.",
+      "native_units": 16
+    },
+    {
+      "id": "tuki-1736-arabic-creed",
+      "binding_path": "src/sources/inventories/eucharistic-books/tuki-1736-arabic-creed.json",
+      "binding_sha256": "1cabeaf38fae7ebf85c4b42f372347795c0012a397c784955d3cb936bedbc9ec",
+      "extent_path": "src/sources/inventories/eucharistic-books/support/tuki-1736-arabic-creed-extent.json",
+      "extent_sha256": "0233b7d5eee84cba778909f76a3bc2fdd3c37fdcaf83c26a1b687f8bf2c7c862",
+      "collation_path": "src/sources/inventories/eucharistic-books/support/tuki-1736-arabic-creed-review.json",
+      "collation_sha256": "6df851eef57eeb59017b4860b7364bf2710ab3b65404e2b06161740e0446b96c",
+      "edition_id": "edition.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki",
+      "scope": "The complete Arabic Creed, a source-defined spoken profession beginning after the red Creed rubric at part II p. 85 and ending with Amen at II p. 87 before the following red rubric. Every black Arabic body word in this expression is represented, with declared unvocalized reading normalization. This constituent excludes the parallel Coptic expression, rubrics, page furniture and all other book divisions; it is not the complete ordinary, missal or bilingual page.",
+      "native_units": 1
+    },
+    {
+      "id": "mozarabic-1500-benedictio-panis",
+      "binding_path": "src/sources/inventories/eucharistic-books/mozarabic-1500-benedictio-panis.json",
+      "binding_sha256": "e39bae86bdaf1dbd344a8f774b63b5d2e3f7c112a5ded703c453e97d09a21737",
+      "extent_path": "src/sources/inventories/eucharistic-books/support/mozarabic-1500-benedictio-panis-extent.json",
+      "extent_sha256": "afaeefa2fa521bf2d66dbc1a47519b71dfe4a5cc3af42830b33ad8d9913e58cf",
+      "collation_path": "src/sources/inventories/eucharistic-books/support/mozarabic-1500-benedictio-panis-review.json",
+      "collation_sha256": "33350c80e8ab57bb1d8ce1385e3f7c3cc19bafbd753fae29233d794219259065",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500",
+      "scope": "The complete Benedictio panis at viewer position 964: from its heading in the lower left column, continuing at the top of the right column, through the final sprinkling rubric. The index in the upper left column is excluded.",
+      "native_units": 9
+    },
+    {
+      "id": "mozarabic-1755-benedictio-panis",
+      "binding_path": "src/sources/inventories/eucharistic-books/mozarabic-1755-benedictio-panis.json",
+      "binding_sha256": "c094fd1bc024c5db9953850a6699089b3eaac9c0ef149f2bd538aa63d6e8ee57",
+      "extent_path": "src/sources/inventories/eucharistic-books/support/mozarabic-1755-benedictio-panis-extent.json",
+      "extent_sha256": "dce48dcbba896da0f509509f674f73fc068b4d54d1f635946b83a0f2415f961e",
+      "collation_path": "src/sources/inventories/eucharistic-books/support/mozarabic-1755-benedictio-panis-review.json",
+      "collation_sha256": "d9157cc97d1129c083fa0a8327c94056378cd63aa021842d3e583c8eed69fc3c",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "scope": "Complete Benedictio panis on printed p. 471, from its heading at the top of the left column through the final sprinkling rubric in the right column. The ornament below and the following publication colophon are excluded.",
+      "native_units": 9
+    },
+    {
+      "id": "mozarabic-1804-benedictio-panis",
+      "binding_path": "src/sources/inventories/eucharistic-books/mozarabic-1804-benedictio-panis.json",
+      "binding_sha256": "ad3d60bd19824466e8b337eb27b0da3a13c15916da82a000992386abde462f59",
+      "extent_path": "src/sources/inventories/eucharistic-books/support/mozarabic-1804-benedictio-panis-extent.json",
+      "extent_sha256": "15b31fa9e183bd80a6b6529be006b90ad15fda738f155b2bdbe0a01a5355d320",
+      "collation_path": "src/sources/inventories/eucharistic-books/support/mozarabic-1804-benedictio-panis-review.json",
+      "collation_sha256": "8c85bd0a75c7c6ce5111c49467b118c8c853fab6b90a5370383c88c3fed2c1d0",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804",
+      "scope": "The complete Benedictio panis on printed p. XVI, in the right column: from its heading below the water blessing through the final sprinkling rubric. All preceding water-blessing text on this page is excluded.",
+      "native_units": 9
+    },
+    {
+      "id": "cistercian-1606-offertory",
+      "binding_path": "src/sources/inventories/eucharistic-books/cistercian-1606-offertory.json",
+      "binding_sha256": "7dc837f08ecfca3eadd8c423bfe7f7907c13823bf5a8af7fedb8a4d3b5868e61",
+      "extent_path": "src/sources/inventories/eucharistic-books/support/cistercian-1606-offertory-extent.json",
+      "extent_sha256": "69f25569e7522048761ad2a1911413bf45b28b899271cfbdc2ef50b72ceda79e",
+      "collation_path": "src/sources/inventories/eucharistic-books/support/cistercian-1606-offertory-review.json",
+      "collation_sha256": "bbf709dff6d03e39d509aa7fe555b1e065c15e8961d0b8f15e920423e7aad114",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "scope": "Complete functional offertory constituent within the native Præparationes ante Missam division, Paris 1606 printed p.181 right column (BSB canvas 235): from the red Offertorio dicto, eleuatis patena cum pane, & calice, & genufle. dicat. instruction through the final Amen of the Dominus sit response. Includes all three standalone red rubrics, the complete Suscipe Trinitas and In spiritu humilitatis prayers, the Orate invitation, printed red response cue and complete Dominus response. Offertory names a bounded function introduced by the source wording, not a separately printed chapter title. Creed above and in the left column, subsequent prefaces and all other book divisions remain outside this constituent. Whole-book and complete-Ordinary text coverage remain partial; no text is inherited from another edition.",
+      "native_units": 7
+    },
+    {
+      "id": "cistercian-1657-offertory",
+      "binding_path": "src/sources/inventories/eucharistic-books/cistercian-1657-offertory.json",
+      "binding_sha256": "66c7a01e6e24eb7be66f1e1734c79105eaf48997cd9db7a593de9fcafd866afc",
+      "extent_path": "src/sources/inventories/eucharistic-books/support/cistercian-1657-offertory-extent.json",
+      "extent_sha256": "24e03070cd310cf56723c322e4566a30c38e984bbf052438b18b5700e51b1fa3",
+      "collation_path": "src/sources/inventories/eucharistic-books/support/cistercian-1657-offertory-review.json",
+      "collation_sha256": "05c82a972febb0a2fed74c56be9a9366b7003d7a1964c7ea44fbcb7ad60c35dd",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "scope": "Bounded functional offertory constituent within the native running head Ordo Missæ: from red Deinde osculatur Altare, & versus ad populum after the Creed on printed p. 172, through the complete Secreta/preface-transition rubric ending signum Crucis sibi producit à fronte ad pectus on p. 174, above the horizontal rule and ¶ Sequens Præfatio. Includes every intervening prayer, dialogue, black quoted incipit, sign and red rubric. This functional bound is not a printed native chapter heading. No earlier Creed or later preface belongs to the constituent.",
+      "native_units": 25
+    }
+  ],
+  "pair_matrix": [
+    {
+      "versions": [
+        "roman-1570-canon-missae",
+        "tuki-1736-arabic-creed"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "comparison_id": null,
+      "positive_evidence": [
+        "Each endpoint has its own independently collated complete declared constituent."
+      ],
+      "contrary_evidence_and_limits": [
+        "The current endpoint constituents cover different liturgical components.",
+        "No pair-specific source statement connecting these complete extents was identified in the inspected source and contextual-relationship boundary. This is bounded non-establishment, not a historical absence claim."
+      ],
+      "disposition": "No native parent recommendation for the presently different constituent scopes.",
+      "what_would_change": "Acquire and independently collate matching complete components of these exact editions, then establish a scoped donor/recipient, revision or republication relation through a primary account or independently diagnostic genetic evidence. Chronology, general Romanization and common formulae cannot bridge the current scope difference.",
+      "primary_evidence": [
+        "Exact binding, extent and collation records in versions[]; frozen contextual-relationship review"
+      ]
+    },
+    {
+      "versions": [
+        "roman-1570-canon-missae",
+        "mozarabic-1500-benedictio-panis"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "comparison_id": null,
+      "positive_evidence": [
+        "Each endpoint has its own independently collated complete declared constituent."
+      ],
+      "contrary_evidence_and_limits": [
+        "The current endpoint constituents cover different liturgical components.",
+        "No pair-specific source statement connecting these complete extents was identified in the inspected source and contextual-relationship boundary. This is bounded non-establishment, not a historical absence claim."
+      ],
+      "disposition": "No native parent recommendation for the presently different constituent scopes.",
+      "what_would_change": "Acquire and independently collate matching complete components of these exact editions, then establish a scoped donor/recipient, revision or republication relation through a primary account or independently diagnostic genetic evidence. Chronology, general Romanization and common formulae cannot bridge the current scope difference.",
+      "primary_evidence": [
+        "Exact binding, extent and collation records in versions[]; frozen contextual-relationship review"
+      ]
+    },
+    {
+      "versions": [
+        "roman-1570-canon-missae",
+        "mozarabic-1755-benedictio-panis"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "comparison_id": null,
+      "positive_evidence": [
+        "Each endpoint has its own independently collated complete declared constituent."
+      ],
+      "contrary_evidence_and_limits": [
+        "The current endpoint constituents cover different liturgical components.",
+        "No pair-specific source statement connecting these complete extents was identified in the inspected source and contextual-relationship boundary. This is bounded non-establishment, not a historical absence claim."
+      ],
+      "disposition": "No native parent recommendation for the presently different constituent scopes.",
+      "what_would_change": "Acquire and independently collate matching complete components of these exact editions, then establish a scoped donor/recipient, revision or republication relation through a primary account or independently diagnostic genetic evidence. Chronology, general Romanization and common formulae cannot bridge the current scope difference.",
+      "primary_evidence": [
+        "Exact binding, extent and collation records in versions[]; frozen contextual-relationship review"
+      ]
+    },
+    {
+      "versions": [
+        "roman-1570-canon-missae",
+        "mozarabic-1804-benedictio-panis"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "comparison_id": null,
+      "positive_evidence": [
+        "Each endpoint has its own independently collated complete declared constituent."
+      ],
+      "contrary_evidence_and_limits": [
+        "The current endpoint constituents cover different liturgical components.",
+        "No pair-specific source statement connecting these complete extents was identified in the inspected source and contextual-relationship boundary. This is bounded non-establishment, not a historical absence claim."
+      ],
+      "disposition": "No native parent recommendation for the presently different constituent scopes.",
+      "what_would_change": "Acquire and independently collate matching complete components of these exact editions, then establish a scoped donor/recipient, revision or republication relation through a primary account or independently diagnostic genetic evidence. Chronology, general Romanization and common formulae cannot bridge the current scope difference.",
+      "primary_evidence": [
+        "Exact binding, extent and collation records in versions[]; frozen contextual-relationship review"
+      ]
+    },
+    {
+      "versions": [
+        "roman-1570-canon-missae",
+        "cistercian-1606-offertory"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "comparison_id": null,
+      "positive_evidence": [
+        "Each endpoint has its own independently collated complete declared constituent."
+      ],
+      "contrary_evidence_and_limits": [
+        "The current endpoint constituents cover different liturgical components.",
+        "No pair-specific source statement connecting these complete extents was identified in the inspected source and contextual-relationship boundary. This is bounded non-establishment, not a historical absence claim."
+      ],
+      "disposition": "No native parent recommendation for the presently different constituent scopes.",
+      "what_would_change": "Acquire and independently collate matching complete components of these exact editions, then establish a scoped donor/recipient, revision or republication relation through a primary account or independently diagnostic genetic evidence. Chronology, general Romanization and common formulae cannot bridge the current scope difference.",
+      "primary_evidence": [
+        "Exact binding, extent and collation records in versions[]; frozen contextual-relationship review"
+      ]
+    },
+    {
+      "versions": [
+        "roman-1570-canon-missae",
+        "cistercian-1657-offertory"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "comparison_id": null,
+      "positive_evidence": [
+        "Each endpoint has its own independently collated complete declared constituent."
+      ],
+      "contrary_evidence_and_limits": [
+        "The current endpoint constituents cover different liturgical components.",
+        "No pair-specific source statement connecting these complete extents was identified in the inspected source and contextual-relationship boundary. This is bounded non-establishment, not a historical absence claim."
+      ],
+      "disposition": "No native parent recommendation for the presently different constituent scopes.",
+      "what_would_change": "Acquire and independently collate matching complete components of these exact editions, then establish a scoped donor/recipient, revision or republication relation through a primary account or independently diagnostic genetic evidence. Chronology, general Romanization and common formulae cannot bridge the current scope difference.",
+      "primary_evidence": [
+        "Exact binding, extent and collation records in versions[]; frozen contextual-relationship review"
+      ]
+    },
+    {
+      "versions": [
+        "tuki-1736-arabic-creed",
+        "mozarabic-1500-benedictio-panis"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "comparison_id": null,
+      "positive_evidence": [
+        "Each endpoint has its own independently collated complete declared constituent."
+      ],
+      "contrary_evidence_and_limits": [
+        "The current endpoint constituents cover different liturgical components.",
+        "No pair-specific source statement connecting these complete extents was identified in the inspected source and contextual-relationship boundary. This is bounded non-establishment, not a historical absence claim."
+      ],
+      "disposition": "No native parent recommendation for the presently different constituent scopes.",
+      "what_would_change": "Acquire and independently collate matching complete components of these exact editions, then establish a scoped donor/recipient, revision or republication relation through a primary account or independently diagnostic genetic evidence. Chronology, general Romanization and common formulae cannot bridge the current scope difference.",
+      "primary_evidence": [
+        "Exact binding, extent and collation records in versions[]; frozen contextual-relationship review"
+      ]
+    },
+    {
+      "versions": [
+        "tuki-1736-arabic-creed",
+        "mozarabic-1755-benedictio-panis"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "comparison_id": null,
+      "positive_evidence": [
+        "Each endpoint has its own independently collated complete declared constituent."
+      ],
+      "contrary_evidence_and_limits": [
+        "The current endpoint constituents cover different liturgical components.",
+        "No pair-specific source statement connecting these complete extents was identified in the inspected source and contextual-relationship boundary. This is bounded non-establishment, not a historical absence claim."
+      ],
+      "disposition": "No native parent recommendation for the presently different constituent scopes.",
+      "what_would_change": "Acquire and independently collate matching complete components of these exact editions, then establish a scoped donor/recipient, revision or republication relation through a primary account or independently diagnostic genetic evidence. Chronology, general Romanization and common formulae cannot bridge the current scope difference.",
+      "primary_evidence": [
+        "Exact binding, extent and collation records in versions[]; frozen contextual-relationship review"
+      ]
+    },
+    {
+      "versions": [
+        "tuki-1736-arabic-creed",
+        "mozarabic-1804-benedictio-panis"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "comparison_id": null,
+      "positive_evidence": [
+        "Each endpoint has its own independently collated complete declared constituent."
+      ],
+      "contrary_evidence_and_limits": [
+        "The current endpoint constituents cover different liturgical components.",
+        "No pair-specific source statement connecting these complete extents was identified in the inspected source and contextual-relationship boundary. This is bounded non-establishment, not a historical absence claim."
+      ],
+      "disposition": "No native parent recommendation for the presently different constituent scopes.",
+      "what_would_change": "Acquire and independently collate matching complete components of these exact editions, then establish a scoped donor/recipient, revision or republication relation through a primary account or independently diagnostic genetic evidence. Chronology, general Romanization and common formulae cannot bridge the current scope difference.",
+      "primary_evidence": [
+        "Exact binding, extent and collation records in versions[]; frozen contextual-relationship review"
+      ]
+    },
+    {
+      "versions": [
+        "tuki-1736-arabic-creed",
+        "cistercian-1606-offertory"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "comparison_id": null,
+      "positive_evidence": [
+        "Each endpoint has its own independently collated complete declared constituent."
+      ],
+      "contrary_evidence_and_limits": [
+        "The current endpoint constituents cover different liturgical components.",
+        "No pair-specific source statement connecting these complete extents was identified in the inspected source and contextual-relationship boundary. This is bounded non-establishment, not a historical absence claim."
+      ],
+      "disposition": "No native parent recommendation for the presently different constituent scopes.",
+      "what_would_change": "Acquire and independently collate matching complete components of these exact editions, then establish a scoped donor/recipient, revision or republication relation through a primary account or independently diagnostic genetic evidence. Chronology, general Romanization and common formulae cannot bridge the current scope difference.",
+      "primary_evidence": [
+        "Exact binding, extent and collation records in versions[]; frozen contextual-relationship review"
+      ]
+    },
+    {
+      "versions": [
+        "tuki-1736-arabic-creed",
+        "cistercian-1657-offertory"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "comparison_id": null,
+      "positive_evidence": [
+        "Each endpoint has its own independently collated complete declared constituent."
+      ],
+      "contrary_evidence_and_limits": [
+        "The current endpoint constituents cover different liturgical components.",
+        "No pair-specific source statement connecting these complete extents was identified in the inspected source and contextual-relationship boundary. This is bounded non-establishment, not a historical absence claim."
+      ],
+      "disposition": "No native parent recommendation for the presently different constituent scopes.",
+      "what_would_change": "Acquire and independently collate matching complete components of these exact editions, then establish a scoped donor/recipient, revision or republication relation through a primary account or independently diagnostic genetic evidence. Chronology, general Romanization and common formulae cannot bridge the current scope difference.",
+      "primary_evidence": [
+        "Exact binding, extent and collation records in versions[]; frozen contextual-relationship review"
+      ]
+    },
+    {
+      "versions": [
+        "mozarabic-1500-benedictio-panis",
+        "mozarabic-1755-benedictio-panis"
+      ],
+      "native_git_parent_recommended": true,
+      "missing_receipt_used_as_negative_evidence": false,
+      "comparison_id": "mozarabic-1500-1755-benedictio-panis",
+      "kind": "republication",
+      "direction": {
+        "from_version": "mozarabic-1500-benedictio-panis",
+        "to_version": "mozarabic-1755-benedictio-panis"
+      },
+      "positive_evidence": [
+        "P7: Lesley identifies Toledo 1500, explicitly uses two parchment copies and includes its bread blessing in the described terminal matter.",
+        "P8: Publisher explicitly explains republication of the rare older book.",
+        "Complete independent image collation covers every one of the nine units at both exact endpoints."
+      ],
+      "contrary_evidence_and_limits": [
+        "The particular Castilla-La Mancha source copy is not identified as a donor.",
+        "No blessing-specific setting-copy declaration was found; application of the edition statement to the entire blessing is a source-grounded inference supported by its explicit inclusion and complete collation.",
+        "No substantive ritual revision or whole-book completeness is established."
+      ],
+      "disposition": "Authorize edition-level republication after the distinct kind and exact-hash receipt are installed. Child wording remains independently materialized; no text inheritance.",
+      "what_would_change": "Contrary primary evidence identifying a different blessing source would require reconsidering this scoped parent. Unique physical-copy identity is not required for the present edition-level claim."
+    },
+    {
+      "versions": [
+        "mozarabic-1500-benedictio-panis",
+        "mozarabic-1804-benedictio-panis"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "comparison_id": "mozarabic-1500-1804-benedictio-panis",
+      "positive_evidence": [
+        "Complete nine-unit same-prayer comparison.",
+        "1804 title explicitly republishes the Cisneros book; Arévalo explicitly incorporates Lesley 1755 apparatus.",
+        "Blessing moves from terminal matter to preliminary p. XVI."
+      ],
+      "contrary_evidence_and_limits": [
+        "The inspected 1804 editorial account names apparatus reuse, but does not identify the exact exemplar of the blessing or main text.",
+        "Lexical agreement and the shared Bagembach colophon error permit several direct or mediated routes and do not choose an immediate parent."
+      ],
+      "disposition": "Broad printed-tradition descent is supported; immediate exact-edition native blessing parent remains unestablished, not disproved.",
+      "what_would_change": "A primary editorial or proof statement identifying the 1755 or 1500 edition as the 1804 blessing/main-text source, or independently diagnostic genetic evidence within this constituent. A unique physical copy need not be named.",
+      "primary_evidence": [
+        "P3",
+        "P4",
+        "P5",
+        "P6",
+        "P7"
+      ]
+    },
+    {
+      "versions": [
+        "mozarabic-1500-benedictio-panis",
+        "cistercian-1606-offertory"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "comparison_id": null,
+      "positive_evidence": [
+        "Each endpoint has its own independently collated complete declared constituent."
+      ],
+      "contrary_evidence_and_limits": [
+        "The current endpoint constituents cover different liturgical components.",
+        "No pair-specific source statement connecting these complete extents was identified in the inspected source and contextual-relationship boundary. This is bounded non-establishment, not a historical absence claim."
+      ],
+      "disposition": "No native parent recommendation for the presently different constituent scopes.",
+      "what_would_change": "Acquire and independently collate matching complete components of these exact editions, then establish a scoped donor/recipient, revision or republication relation through a primary account or independently diagnostic genetic evidence. Chronology, general Romanization and common formulae cannot bridge the current scope difference.",
+      "primary_evidence": [
+        "Exact binding, extent and collation records in versions[]; frozen contextual-relationship review"
+      ]
+    },
+    {
+      "versions": [
+        "mozarabic-1500-benedictio-panis",
+        "cistercian-1657-offertory"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "comparison_id": null,
+      "positive_evidence": [
+        "Each endpoint has its own independently collated complete declared constituent."
+      ],
+      "contrary_evidence_and_limits": [
+        "The current endpoint constituents cover different liturgical components.",
+        "No pair-specific source statement connecting these complete extents was identified in the inspected source and contextual-relationship boundary. This is bounded non-establishment, not a historical absence claim."
+      ],
+      "disposition": "No native parent recommendation for the presently different constituent scopes.",
+      "what_would_change": "Acquire and independently collate matching complete components of these exact editions, then establish a scoped donor/recipient, revision or republication relation through a primary account or independently diagnostic genetic evidence. Chronology, general Romanization and common formulae cannot bridge the current scope difference.",
+      "primary_evidence": [
+        "Exact binding, extent and collation records in versions[]; frozen contextual-relationship review"
+      ]
+    },
+    {
+      "versions": [
+        "mozarabic-1755-benedictio-panis",
+        "mozarabic-1804-benedictio-panis"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "comparison_id": "mozarabic-1755-1804-benedictio-panis",
+      "positive_evidence": [
+        "Complete nine-unit same-prayer comparison.",
+        "1804 title explicitly republishes the Cisneros book; Arévalo explicitly incorporates Lesley 1755 apparatus.",
+        "Blessing moves from terminal matter to preliminary p. XVI."
+      ],
+      "contrary_evidence_and_limits": [
+        "The inspected 1804 editorial account names apparatus reuse, but does not identify the exact exemplar of the blessing or main text.",
+        "Lexical agreement and the shared Bagembach colophon error permit several direct or mediated routes and do not choose an immediate parent."
+      ],
+      "disposition": "Broad printed-tradition descent is supported; immediate exact-edition native blessing parent remains unestablished, not disproved.",
+      "what_would_change": "A primary editorial or proof statement identifying the 1755 or 1500 edition as the 1804 blessing/main-text source, or independently diagnostic genetic evidence within this constituent. A unique physical copy need not be named.",
+      "primary_evidence": [
+        "P3",
+        "P4",
+        "P5",
+        "P6",
+        "P7"
+      ]
+    },
+    {
+      "versions": [
+        "mozarabic-1755-benedictio-panis",
+        "cistercian-1606-offertory"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "comparison_id": null,
+      "positive_evidence": [
+        "Each endpoint has its own independently collated complete declared constituent."
+      ],
+      "contrary_evidence_and_limits": [
+        "The current endpoint constituents cover different liturgical components.",
+        "No pair-specific source statement connecting these complete extents was identified in the inspected source and contextual-relationship boundary. This is bounded non-establishment, not a historical absence claim."
+      ],
+      "disposition": "No native parent recommendation for the presently different constituent scopes.",
+      "what_would_change": "Acquire and independently collate matching complete components of these exact editions, then establish a scoped donor/recipient, revision or republication relation through a primary account or independently diagnostic genetic evidence. Chronology, general Romanization and common formulae cannot bridge the current scope difference.",
+      "primary_evidence": [
+        "Exact binding, extent and collation records in versions[]; frozen contextual-relationship review"
+      ]
+    },
+    {
+      "versions": [
+        "mozarabic-1755-benedictio-panis",
+        "cistercian-1657-offertory"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "comparison_id": null,
+      "positive_evidence": [
+        "Each endpoint has its own independently collated complete declared constituent."
+      ],
+      "contrary_evidence_and_limits": [
+        "The current endpoint constituents cover different liturgical components.",
+        "No pair-specific source statement connecting these complete extents was identified in the inspected source and contextual-relationship boundary. This is bounded non-establishment, not a historical absence claim."
+      ],
+      "disposition": "No native parent recommendation for the presently different constituent scopes.",
+      "what_would_change": "Acquire and independently collate matching complete components of these exact editions, then establish a scoped donor/recipient, revision or republication relation through a primary account or independently diagnostic genetic evidence. Chronology, general Romanization and common formulae cannot bridge the current scope difference.",
+      "primary_evidence": [
+        "Exact binding, extent and collation records in versions[]; frozen contextual-relationship review"
+      ]
+    },
+    {
+      "versions": [
+        "mozarabic-1804-benedictio-panis",
+        "cistercian-1606-offertory"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "comparison_id": null,
+      "positive_evidence": [
+        "Each endpoint has its own independently collated complete declared constituent."
+      ],
+      "contrary_evidence_and_limits": [
+        "The current endpoint constituents cover different liturgical components.",
+        "No pair-specific source statement connecting these complete extents was identified in the inspected source and contextual-relationship boundary. This is bounded non-establishment, not a historical absence claim."
+      ],
+      "disposition": "No native parent recommendation for the presently different constituent scopes.",
+      "what_would_change": "Acquire and independently collate matching complete components of these exact editions, then establish a scoped donor/recipient, revision or republication relation through a primary account or independently diagnostic genetic evidence. Chronology, general Romanization and common formulae cannot bridge the current scope difference.",
+      "primary_evidence": [
+        "Exact binding, extent and collation records in versions[]; frozen contextual-relationship review"
+      ]
+    },
+    {
+      "versions": [
+        "mozarabic-1804-benedictio-panis",
+        "cistercian-1657-offertory"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "comparison_id": null,
+      "positive_evidence": [
+        "Each endpoint has its own independently collated complete declared constituent."
+      ],
+      "contrary_evidence_and_limits": [
+        "The current endpoint constituents cover different liturgical components.",
+        "No pair-specific source statement connecting these complete extents was identified in the inspected source and contextual-relationship boundary. This is bounded non-establishment, not a historical absence claim."
+      ],
+      "disposition": "No native parent recommendation for the presently different constituent scopes.",
+      "what_would_change": "Acquire and independently collate matching complete components of these exact editions, then establish a scoped donor/recipient, revision or republication relation through a primary account or independently diagnostic genetic evidence. Chronology, general Romanization and common formulae cannot bridge the current scope difference.",
+      "primary_evidence": [
+        "Exact binding, extent and collation records in versions[]; frozen contextual-relationship review"
+      ]
+    },
+    {
+      "versions": [
+        "cistercian-1606-offertory",
+        "cistercian-1657-offertory"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "comparison_id": "cistercian-1606-1657-offertory-constituents",
+      "positive_evidence": [
+        "1657 Monitum and 1655 Mandatum establish renewed institutional correction and conformity to a Roman archetype with exceptions.",
+        "Complete functional offertory collation shows concrete changes, from seven to twenty-five units."
+      ],
+      "contrary_evidence_and_limits": [
+        "The inspected instruments do not name the 1606 edition as the 1657 textual basis or identify an exact Roman donor.",
+        "A prior ten-year printing privilege may cover several service-book genres; it neither proves an intervening Missal printing nor refutes 1606 ancestry.",
+        "Functional alignment and shared semantic paths do not themselves identify textual parentage."
+      ],
+      "disposition": "Retain independent native roots for these offertory constituents; the institutional revision relation remains independently documented.",
+      "what_would_change": "A primary editorial instruction, proof or account identifying the 1606 edition as the 1657 offertory textual basis, followed by complete-scope collation. No independently required physical-copy shelfmark.",
+      "primary_evidence": [
+        "P1",
+        "P2a",
+        "P2b"
+      ]
+    }
+  ],
+  "primary_evidence": [
+    {
+      "id": "P1",
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0009-jpeg-9f894b68/1657-page-0009.djvu.review.jpg",
+      "locus": "1657 Monitum, FIDES file 0009",
+      "finding": "Direct image reading: the chapters of 1601 and following years, renewed revision in 1651, and conformity to a Roman archetype with a graduals exception. No 1606 edition is named as textual basis; no exact Roman donor edition is identified.",
+      "sha256": "9f894b687cb920b828b6696b9b17f60177d174f604fdf86290b5fbbf3b982119"
+    },
+    {
+      "id": "P2a",
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0007-jpeg-d111ceaa/1657-page-0007.djvu.review.jpg",
+      "locus": "1655 Vaussin Mandatum, first page, FIDES file 0007",
+      "finding": "Direct image reading: correction and reprinting under order authority, with earlier privileges for Cramoisy, Rocolet and Ballard covering multiple service-book genres. It does not identify a 1606 textual exemplar.",
+      "sha256": "d111ceaa842bb336b9090d3cbeda11f979ec44ac1cf81146ad1f35306126e232"
+    },
+    {
+      "id": "P2b",
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0008-jpeg-35e26c7c/1657-page-0008.djvu.review.jpg",
+      "locus": "1655 Vaussin Mandatum, continuation and subscription, FIDES file 0008",
+      "finding": "Direct image reading: the 1651 general-chapter editorial commission, renewal of an earlier ten-year printing privilege, and subscription on 3 July 1655. The privilege is not proof that any particular intervening Missal was actually printed.",
+      "sha256": "35e26c7c0c30fe0b1aebf0d43ad532faa251ab89b80e689ce0bc1931b6338145"
+    },
+    {
+      "id": "P3",
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/ia-pdf-225d6721/missale-mixtum-1755.pdf",
+      "locus": "PDF page 8: title; PDF page 15: publisher dedication; PDF page 592: reprinted 1500 colophon",
+      "finding": "Original pages rasterized and viewed: the 1755 title attributes the preface, notes and appendix to Lesley; the dedication explains reprinting a rare book; the reprinted colophon identifies Toledo 1500 and prints Bagembach. This supports republication and added apparatus, not a specifically revised Benedictio prayer.",
+      "sha256": "225d6721834132ba0a354db2a041029968efbe39e701e5b37615a2675caddc45"
+    },
+    {
+      "id": "P4",
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/artifacts/bsb-editor-canvas667/canvas-667.jpg",
+      "locus": "Arévalo Illustratio, columns 1145–1146, BSB canvas 667",
+      "finding": "Direct image reading: identifies Lesley, Rome 1755, Salomoni; Lorenzana adds Lesley’s preface or dissertation and notes to the new edition; Arévalo adds notes and investigates faulty or obscure readings, offering further work to manuscript holders. Apparatus dependence is explicit; no sentence identifies the 1755 Benedictio as the exemplar for this prayer.",
+      "sha256": "5519a1c0cc5e486d12d0e1c4f923dd5521c3ab5b8782f4987f3024c950bb1357"
+    },
+    {
+      "id": "P5",
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/artifacts/bsb-colophon-canvas666/canvas-666.jpg",
+      "locus": "1804, columns 1143–1144, bottom: Clausula editionis Toletanae, BSB canvas 666",
+      "finding": "Direct image reading: the 1500 colophon is reproduced, including Bagembach as in 1755. This corroborates paratextual dependence; a shared error alone does not identify immediate transmission of every prayer.",
+      "sha256": "fe403a7aada75700d6583f1cc60df184bb4477693a5ab19f1d3924074fcc064a"
+    },
+    {
+      "id": "P6",
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/artifacts/castilla-la-mancha-p965-992df6eb/position-965.jpg",
+      "locus": "Original 1500 colophon, Castilla-La Mancha position 965",
+      "finding": "Direct image reading: the original printer name Hagenbach differs from the 1755 and 1804 Bagembach; the original date is 9 January 1500. This controls the comparison of P3 and P5; it is not a native blessing parentage statement.",
+      "sha256": "992df6eb3f47b38c8e092454a224c11821e0f9ae4108457209af2975a6fe0df8"
+    },
+    {
+      "id": "P7",
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/ia-pdf-225d6721/missale-mixtum-1755.pdf",
+      "locus": "Lesley Praefatio, printed III–IV, sections 15–19; physical PDF pages 26–27",
+      "finding": "Section 15 identifies Toledo 1500. Section 16 reports three copies seen, one paper and two parchment, and explicitly says the two parchment copies were used (quibus duobus usus sum), from the Corsini and Silvio Valenti Gonzaga libraries. Sections 17–19 describe that old edition and include the bread blessing in terminal matter. Together with the publisher republication account and complete independent nine-unit collation, this supports edition-level republication of the entire Benedictio panis, without identifying the Castilla-La Mancha source copy as donor.",
+      "sha256": "225d6721834132ba0a354db2a041029968efbe39e701e5b37615a2675caddc45"
+    },
+    {
+      "id": "P8",
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/ia-pdf-225d6721/missale-mixtum-1755.pdf",
+      "locus": "Publisher dedication, physical PDF page 15",
+      "finding": "Original page directly read by both reviewers: scarcity and expense motivated committing the book to press again, ut praelo rursus committeretur. This corroborates republication; Preface sections 15–19 identify the older edition and its blessing context.",
+      "sha256": "225d6721834132ba0a354db2a041029968efbe39e701e5b37615a2675caddc45"
+    }
+  ],
+  "positive_scope": {
+    "parent_version": "mozarabic-1500-benedictio-panis",
+    "child_version": "mozarabic-1755-benedictio-panis",
+    "parent_binding_sha256": "e39bae86bdaf1dbd344a8f774b63b5d2e3f7c112a5ded703c453e97d09a21737",
+    "child_binding_sha256": "c094fd1bc024c5db9953850a6699089b3eaac9c0ef149f2bd538aa63d6e8ee57",
+    "kind": "republication",
+    "entire_declared_constituent_supported": true,
+    "inference_boundary": "The preface explicitly identifies and says it uses two parchment copies of Toledo 1500, and explicitly includes the bread blessing in that edition's tail. Application to this complete constituent combines those statements with direct complete-extent collation; it does not quote a nonexistent blessing-specific copy-setting declaration.",
+    "physical_donor_copy_established": false,
+    "substantive_liturgical_revision_established": false,
+    "whole_book_coverage_established": false,
+    "text_inheritance": false,
+    "required_parentage_record": "src/sources/inventories/eucharistic-books/support/mozarabic-1500-1755-benedictio-panis-parentage.json"
+  },
+  "independent_review": {
+    "judgment": "established-edition-level-republication",
+    "scope": "Complete nine-unit Mozarabic Benedictio panis constituent, edition-level textual republication only",
+    "inference_boundary": "The preface explicitly identifies and says it uses two parchment copies of Toledo 1500, and explicitly includes the bread blessing in that edition's tail. Application to this complete constituent combines those statements with direct complete-extent collation; it does not quote a nonexistent blessing-specific copy-setting declaration.",
+    "endpoint_verification": {
+      "independent_images_read": true,
+      "parent_image_path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/artifacts/castilla-la-mancha-p964-25d703c8/position-964.jpg",
+      "parent_image_sha256": "25d703c822248111e168eb9b494d4da54d6306927600407cb52ff7c2e015f6cb",
+      "child_image_path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/ia-jp2-page590/page-590.jp2",
+      "child_image_sha256": "06fa2cf519045e236e20d66bd64d6a1625625d22a6bacc97428f3da7a713fccf",
+      "same_nine_semantic_paths_and_order": true,
+      "matching_unit_hashes": 7,
+      "different_units": [
+        "opening-greeting",
+        "closing-greeting"
+      ],
+      "only_normalized_text_difference": "presbiter in 1500 becomes presbyter in 1755, in both Dicat rubrics",
+      "all_eighteen_unit_hashes_recomputed_and_verified": true,
+      "serialized_hashes_recomputed_and_verified": true,
+      "parent_serialized_text_sha256": "9c6cc4f80e9646a1af9b379087c4cba62a1c186d3cb71236e4e6076d2948f17a",
+      "child_serialized_text_sha256": "908b9a75de0a6d2d890779486551849e59ea7d20dc10fa98a76c4d94a7eee461",
+      "normalization_limit": "Reading transcriptions regularize abbreviations, letter forms, capitalization, punctuation and line wrapping. Agreement is not diplomatic identity."
+    },
+    "contrary_evidence_and_limits": [
+      "No blessing-specific setting-copy declaration was found in the inspected preface pages.",
+      "The retained 1500 Castilla-La Mancha copy is not identified as a 1755 donor.",
+      "Use of two 1500 parchment copies does not prove one exclusive physical exemplar or exclude press variants.",
+      "No whole-book collation, ritual-revision claim, or prayer-composition date is established.",
+      "Existing independent-root apparatus requires explicit supersession if this narrowly positive scope is adopted; its physical-copy and whole-book caveats remain applicable."
+    ],
+    "bounded_1804_sanity_check": {
+      "read_original_title_canvas7": true,
+      "read_original_editorial_canvas667_columns1145_1146": true,
+      "established": "Broad reprinting of the Cisneros book and explicit inclusion of Lesley's 1755 preface/dissertation and notes; Arevalo adds notes and investigates readings.",
+      "not_established": "An exact 1755 main-text exemplar or an immediate 1755-to-1804 parent for this complete blessing.",
+      "recommendation": "Keep immediate 1755-to-1804 constituent parentage unresolved, not disproved; seek explicit textual-exemplar evidence before authorizing a parent."
+    }
+  },
+  "limits": [
+    "The seventeen different-scope pairs are reviewed as the currently admitted constituents, not as whole books.",
+    "No exact immediate 1804 blessing exemplar or 1606-to-1657 offertory text basis is established by the inspected evidence.",
+    "A missing parentage receipt is not used as negative historical evidence.",
+    "New 1606/1657 strict Canon bindings are outside this frozen seven-version baseline and require a separate addendum."
+  ]
+}

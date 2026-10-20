@@ -1,0 +1,12 @@
+schema = 2
+record_type = "passage"
+id = "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-haec-quotiescumque"
+edition_id = "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657"
+artifact_id = "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55"
+artifact_sha256 = "fe84fc55cab4c323370a8f0bc02ef513d3ed3121819a5d76ab6a2717604b1ba0"
+locus = "FIDES 0270 (printed p. 208); exact column/baseline bounds are retained in the extent census."
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-20"
+context = "Complete declared Canon constituent: the five proper Communicantes paragraphs and two separately printed proper Hanc igitur paragraphs, their five Infra actionem headings, five governing usage rubrics and two Sequitur cues selected from the fully inspected preface section printed pp. 175–200; then the standalone CANON MISSÆ title (FIDES 0263), facing Crucifixion (0264), and all text under the body CANON MISSÆ heading on printed p. 203 through the final sung Per ómnia sæcula sæculórum, ℟. Amen. and adjacent Iungit manus on p. 213, stopping before Orémus. The proper forms occur on printed pp. 176, 177, 181, 183 and 184 and precede the main Canon in original source order. Every intervening preface text outside these selected blocks is excluded. The final cutoff is the stated Canon-proper boundary; the book continues the Canon Missæ running head over the following Pater. This is a complete declared constituent and partial whole-book coverage."
+notes = "NFC UTF-8; long s becomes s; unambiguous printed abbreviation signs expand as listed in the source-block audit; physical wraps and line-end division hyphens disappear. Source u/v, i/j, æ/œ, accents, case including display initials, punctuation, &c., alternatives, every included rubric and spoken cue remain. Pattée crosses are represented by ✠ and the response cue by ℟.; word-separating spaces are regularized. Each stored line is one consecutive source block or paragraph, with source page/column/baseline and ink classes retained separately. No heading, quotation wrapper, modern translation, or explanatory material is inserted into literal text. Proper forms retain their discontiguous prefatory locations and are not relocated into the main Canon."
+physical_line_ranges = [[65, 65]]

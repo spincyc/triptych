@@ -15,6 +15,7 @@ import shutil
 import subprocess
 import tempfile
 import unittest
+from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[2]
 NODE = shutil.which("node")
@@ -119,7 +120,8 @@ setImmediate(async () => {
       const button = all(nodes.get('catalogue-detail')).find(n => n.tagName === 'button');
       button.events.click();
     } else if (action.do === 'native-text') {
-      const fold=all(nodes.get('timeline-detail')).find(n=>(n.className || '').includes('native-text-fold'));
+      const folds=all(nodes.get('timeline-detail')).filter(n=>(n.className || '').includes('native-text-fold'));
+      const fold=action.binding ? folds.find(n=>n.attrs['data-text-binding']===action.binding) : folds[action.index || 0];
       fold.open=true; fold.events.toggle();
       await new Promise(resolve=>setImmediate(resolve));
     } else if (action.do === 'release-responses') {
@@ -390,6 +392,26 @@ def native_reading_fixture():
     return history, {"structure/act-history/"+stage["text_projection_path"]:payload}
 
 
+def multiple_native_reading_fixture():
+    history, fragments = native_reading_fixture()
+    stage = history["stages"][1]
+    first = next(iter(fragments.values()))
+    second = copy.deepcopy(first)
+    second.update(id="second-text", adapter_id="native-book:second-text", binding_sha256="b" * 64,
+                  title="Constructed Latin constituent")
+    for index, unit in enumerate(second["units"], 1):
+        unit.update(unit_id="second.unit." + str(index), text="Constructed second text " + str(index),
+                    language="la", direction="ltr", source_locator="Second constructed page " + str(index))
+    fragments["structure/act-history/native-texts/second-text.json"] = second
+    for key in ("text_binding", "text_projection_path", "text_binding_sha256"):
+        stage.pop(key)
+    stage["text_bindings"] = [first["adapter_id"], second["adapter_id"]]
+    stage["text_projections"] = [dict(text_binding=payload["adapter_id"], title=payload["title"],
+                                    text_projection_path="native-texts/" + payload["id"] + ".json",
+                                    text_binding_sha256=payload["binding_sha256"]) for payload in (first, second)]
+    return history, fragments
+
+
 @unittest.skipIf(NODE is None, "node is unavailable")
 class TimelineControllerTests(unittest.TestCase):
     def drive(self, history=None, **options):
@@ -495,6 +517,44 @@ class TimelineControllerTests(unittest.TestCase):
                     self.assertGreaterEqual(edge["keyLabel"]["x"]-34,model["axis"]["x0"])
                     self.assertLessEqual(edge["keyLabel"]["x"]+4,model["axis"]["x1"])
 
+    def test_overlapping_same_row_spans_get_separate_tracks_without_moving_nodes(self):
+        history = stage_fixture()
+        template = history["stages"][0]
+        history["stages"] = [dict(template, id="arc-" + str(i), label="Constructed arc state " + str(i),
+                                  start_year=1200 + i * 100, end_year=1200 + i * 100) for i in range(4)]
+        transition = history["transitions"][0]
+        history["transitions"] = []
+        before = stage_geometry(history, tradition="fixture-line", width=6000, compact=True, start=1200, end=1500)
+        history["transitions"] = [dict(transition, id="overlap-a", from_stage="arc-0", to_stage="arc-2"),
+                                  dict(transition, id="overlap-b", from_stage="arc-1", to_stage="arc-3")]
+        model = stage_geometry(history, tradition="fixture-line", width=6000, compact=True, start=1200, end=1500)
+        self.assertEqual([(n["id"], n["x"], n["y"], n["xStart"], n["xEnd"]) for lane in before["lanes"] for n in lane["nodes"]],
+                         [(n["id"], n["x"], n["y"], n["xStart"], n["xEnd"]) for lane in model["lanes"] for n in lane["nodes"]])
+        self.assertEqual([0, 1], [edge["arcTrack"] for edge in model["edges"]])
+        self.assertEqual(model["edges"][0]["fromPoint"]["y"], model["edges"][1]["fromPoint"]["y"])
+        self.assertEqual(24, model["edges"][0]["keyLabel"]["y"] - model["edges"][1]["keyLabel"]["y"])
+        for edge in model["edges"]:
+            self.assertGreaterEqual(edge["arcBounds"]["top"], edge["fromPoint"]["y"] - 80)
+            self.assertLessEqual(edge["arcBounds"]["bottom"], model["height"])
+        history["transitions"] = [dict(transition, id="disjoint-a", from_stage="arc-0", to_stage="arc-1"),
+                                  dict(transition, id="disjoint-b", from_stage="arc-2", to_stage="arc-3")]
+        disjoint = stage_geometry(history, tradition="fixture-line", width=6000, compact=True, start=1200, end=1500)
+        self.assertEqual([0, 0], [edge["arcTrack"] for edge in disjoint["edges"]])
+
+    def test_same_row_tracks_refuse_to_silently_exceed_the_shared_clearance_band(self):
+        history = stage_fixture()
+        history["stages"] = history["stages"][:2]
+        history["stages"][0].update(start_year=1200, end_year=1200)
+        history["stages"][1].update(start_year=1300, end_year=1300)
+        transition = history["transitions"][0]
+        history["transitions"] = [dict(transition, id="track-" + str(i)) for i in range(3)]
+        self.assertEqual([0, 1, 2], [edge["arcTrack"] for edge in stage_geometry(
+            history, tradition="fixture-line", compact=True, start=1200, end=1300)["edges"]])
+        history["transitions"].append(dict(transition, id="track-3"))
+        with self.assertRaises(subprocess.CalledProcessError) as refusal:
+            stage_geometry(history, tradition="fixture-line", compact=True, start=1200, end=1300)
+        self.assertIn("exceed the reserved row band", refusal.exception.stderr)
+
     def test_native_text_is_lazy_literal_ordered_and_bounded_in_chart_and_list(self):
         history,fragments=native_reading_fixture()
         payload=next(iter(fragments.values()))
@@ -514,6 +574,91 @@ class TimelineControllerTests(unittest.TestCase):
                     self.assertIn(value,shown["text"])
                 self.assertTrue(any(e["attrs"].get("role")=="status" and e["text"]=="Source text loaded." for e in shown["elements"]))
                 self.assertTrue(any(e["attrs"].get("aria-busy")=="false" for e in shown["elements"]))
+
+    def test_multiple_native_constituents_are_separate_ordered_lazy_disclosures(self):
+        history, fragments = multiple_native_reading_fixture()
+        bindings = history["stages"][1]["text_bindings"]
+        payloads = list(fragments.values())
+        for mobile in (False, True):
+            with self.subTest(mobile=mobile):
+                closed = self.drive(history, mobile=mobile, fragments=fragments, hash="#stage=second")
+                self.assertEqual(["structure/act-history/catalogue.json"], closed["calls"])
+                self.assertEqual(bindings, [e["attrs"]["data-text-binding"] for e in closed["timeline-detail"]["elements"]
+                                            if "data-text-binding" in e["attrs"]])
+                for payload in payloads:
+                    self.assertIn("Read available source text: " + payload["title"], closed["timeline-detail"]["text"])
+                only_second = self.drive(history, mobile=mobile, fragments=fragments, hash="#stage=second",
+                                         actions=[dict(do="native-text", binding=bindings[1])])
+                self.assertEqual(["structure/act-history/catalogue.json", list(fragments)[1]], only_second["calls"])
+                self.assertEqual([u["text"] for u in payloads[1]["units"]],
+                                 [u["text"] for u in only_second["timeline-detail"]["nativeTexts"]])
+                both = self.drive(history, mobile=mobile, fragments=fragments, hash="#stage=second",
+                                  actions=[dict(do="native-text", index=1), dict(do="native-text", index=0)])
+                self.assertEqual([u["text"] for p in payloads for u in p["units"]],
+                                 [u["text"] for u in both["timeline-detail"]["nativeTexts"]])
+                self.assertEqual(2, both["timeline-detail"]["text"].count("Whole-book text coverage: partial."))
+                self.assertIn("Text coverage: partial.", both["timeline-detail"]["text"])
+                self.assertNotIn("img", both["timeline-detail"]["tags"])
+
+    def test_multiple_native_routing_refuses_ambiguous_duplicate_or_missing_descriptors(self):
+        history, fragments = multiple_native_reading_fixture()
+        for defect in ("legacy-mixture", "duplicate", "missing", "reordered", "unowned", "title", "complete"):
+            with self.subTest(defect=defect):
+                changed = copy.deepcopy(history)
+                stage = changed["stages"][1]
+                if defect == "legacy-mixture": stage["text_binding"] = stage["text_bindings"][0]
+                elif defect == "duplicate": stage["text_bindings"][1] = stage["text_bindings"][0]
+                elif defect == "missing": stage["text_projections"].pop()
+                elif defect == "reordered": stage["text_projections"].reverse()
+                elif defect == "unowned": stage["text_projections"][1]["text_projection_path"] = "../../unsafe.json"
+                elif defect == "title": stage["text_projections"][1]["title"] = ""
+                else: stage["text_coverage"] = "complete"
+                got = self.drive(changed, fragments=fragments, hash="#stage=second")
+                self.assertEqual(["structure/act-history/catalogue.json"], got["calls"])
+                self.assertEqual([], got["timeline-detail"]["nativeTexts"])
+                self.assertIn("invalid routing metadata", got["timeline-detail"]["text"])
+
+    def test_separately_reviewed_constituents_can_repeat_unit_ids_without_combining_coverage(self):
+        history, fragments = multiple_native_reading_fixture()
+        first, second = fragments.values()
+        for original, overlapping in zip(first["units"], second["units"]):
+            overlapping["unit_id"] = original["unit_id"]
+        for mobile in (False, True):
+            with self.subTest(mobile=mobile):
+                shown = self.drive(history, mobile=mobile, fragments=fragments, hash="#stage=second",
+                                   actions=[dict(do="native-text", index=0), dict(do="native-text", index=1)])
+                self.assertEqual([u["text"] for payload in (first, second) for u in payload["units"]],
+                                 [u["text"] for u in shown["timeline-detail"]["nativeTexts"]])
+                self.assertEqual(2, shown["timeline-detail"]["text"].count("Whole-book text coverage: partial."))
+                self.assertIn("Text coverage: partial.", shown["timeline-detail"]["text"])
+
+    def test_every_native_constituent_checks_hash_membership_extent_and_rights_before_literal_display(self):
+        history, fragments = multiple_native_reading_fixture()
+        for index in (0, 1):
+            for defect in ("hash", "stage", "extent", "rights", "title", "missing"):
+                with self.subTest(index=index, defect=defect):
+                    changed = copy.deepcopy(fragments)
+                    path = list(changed)[index]
+                    payload = changed[path]
+                    if defect == "hash": payload["binding_sha256"] = "c" * 64
+                    elif defect == "stage": payload["stage_ids"] = ["unrelated-stage"]
+                    elif defect == "extent": payload["scope"]["whole_book_complete"] = True
+                    elif defect == "rights": payload["sources"][2]["rights_status"] = "unresolved"
+                    elif defect == "title": payload["title"] = "Wrong constituent title"
+                    else: changed.pop(path)
+                    got = self.drive(history, fragments=changed, hash="#stage=second",
+                                     actions=[dict(do="native-text", index=0), dict(do="native-text", index=1)])
+                    expected = list(fragments.values())[1 - index]["units"]
+                    self.assertEqual([u["text"] for u in expected], [u["text"] for u in got["timeline-detail"]["nativeTexts"]])
+                    self.assertIn("Source text could not be loaded.", got["timeline-detail"]["text"])
+
+    def test_multiple_native_late_responses_cannot_replace_new_selection(self):
+        history, fragments = multiple_native_reading_fixture()
+        got = self.drive(history, fragments=fragments, defer_native=True, hash="#stage=second",
+                         actions=[dict(do="native-text", index=0), dict(do="native-text", index=1),
+                                  dict(do="stage", id="first"), dict(do="release-responses")])
+        self.assertIn("Book state first", got["timeline-detail"]["text"])
+        self.assertEqual([], got["timeline-detail"]["nativeTexts"])
 
     def test_native_text_refuses_wrong_binding_extent_rights_and_unit_order_before_display(self):
         history,fragments=native_reading_fixture()
@@ -825,6 +970,54 @@ class CatalogueControllerTests(unittest.TestCase):
         self.assertIn("view=map", target)
         self.assertIn("slice=latin-missal#station=example-1500", target)
         self.assertIn("data=", target)
+
+    def test_exact_typed_source_library_edition_link_preserves_external_routes(self):
+        data = catalogue()
+        row = data["entries"][0]
+        identifier = "edition.armenian-fixture.venice-1823"
+        row["source_record"]["source_library_edition_id"] = identifier
+        route = "../sources/#edition=" + identifier
+        row["links"].append(dict(kind="source-library-edition", edition_id=identifier, url=route))
+        for mobile in (False, True):
+            with self.subTest(mobile=mobile):
+                got = self.drive(data, mobile=mobile, hash="#record=example")
+                links = got["catalogue-detail"]["links"]
+                self.assertEqual(1, sum(link["href"] == route for link in links))
+                self.assertTrue(any(link["text"] == "Open edition in the Source Library" for link in links))
+                self.assertTrue(any(link["href"] == row["sources"][0]["url"] for link in links))
+                self.assertEqual(["structure/act-history/catalogue.json"], got["calls"])
+
+    def test_source_library_route_requires_exact_type_identity_and_same_site_path(self):
+        identifier = "edition.armenian-fixture.venice-1823"
+        route = "../sources/#edition=" + identifier
+        for defect in ("untyped", "wrong-id", "non-edition", "missing-id", "traversal", "encoded", "newline", "uppercase",
+                       "remote", "protocol-relative", "other-path", "extra-query", "extra-hash"):
+            with self.subTest(defect=defect):
+                data = catalogue()
+                row = data["entries"][0]
+                row["source_record"]["source_library_edition_id"] = identifier
+                link = dict(kind="source-library-edition", edition_id=identifier, url=route)
+                if defect == "untyped": link.pop("kind")
+                elif defect == "wrong-id": link["edition_id"] = "edition.other"
+                elif defect == "non-edition": link["edition_id"] = "work.example"
+                elif defect == "missing-id": link.pop("edition_id")
+                elif defect == "traversal": link["edition_id"] = "edition.x/../../private"
+                elif defect == "encoded": link["edition_id"] = "edition.x%2fprivate"
+                elif defect == "newline": link["edition_id"] = "edition.x\n"
+                elif defect == "uppercase": link["edition_id"] = "edition.X"
+                elif defect == "remote": link["url"] = "https://example.org/sources/#edition=" + identifier
+                elif defect == "protocol-relative": link["url"] = "//example.org/sources/#edition=" + identifier
+                elif defect == "other-path": link["url"] = "../private/#edition=" + identifier
+                elif defect == "extra-query": link["url"] = "../sources/?url=bad#edition=" + identifier
+                else: link["url"] += "&edition=other"
+                if defect in ("non-edition", "traversal", "encoded", "newline", "uppercase"):
+                    row["source_record"]["source_library_edition_id"] = link["edition_id"]
+                    link["url"] = "../sources/#edition=" + quote(link["edition_id"], safe="")
+                row["links"] = [link]
+                got = self.drive(data, hash="#record=example")
+                self.assertEqual([row["sources"][0]["url"]],
+                                 [item["href"] for item in got["catalogue-detail"]["links"]])
+                self.assertIn("link unavailable", got["catalogue-detail"]["text"])
 
     def test_unknown_filters_and_records_are_explicit_and_do_not_broaden(self):
         got = self.drive(hash="#family=Unknown&record=missing")

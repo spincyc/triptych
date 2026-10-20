@@ -1,0 +1,2263 @@
+{
+  "adapter_id": "native-book:cistercian-1657-canon",
+  "binding_sha256": "bd694b265fcdbcbe6b5b035fe689b0c290b25bdcac8d1c033e465208c5dca31b",
+  "catalogue_witness_ids": [
+    "western:cistercian-1657"
+  ],
+  "counts": {
+    "languages": {
+      "la": 52
+    },
+    "units": 52,
+    "whitespace_tokens": 1322
+  },
+  "id": "cistercian-1657-canon",
+  "schema": "triptych-eucharistic-native-text/v1",
+  "scope": {
+    "complete_declared_extent": true,
+    "description": "Complete declared Canon constituent: the five proper Communicantes paragraphs and two separately printed proper Hanc igitur paragraphs, their five Infra actionem headings, five governing usage rubrics and two Sequitur cues selected from the fully inspected preface section printed pp. 175–200; then the standalone CANON MISSÆ title (FIDES 0263), facing Crucifixion (0264), and all text under the body CANON MISSÆ heading on printed p. 203 through the final sung Per ómnia sæcula sæculórum, ℟. Amen. and adjacent Iungit manus on p. 213, stopping before Orémus. The proper forms occur on printed pp. 176, 177, 181, 183 and 184 and precede the main Canon in original source order. Every intervening preface text outside these selected blocks is excluded. The final cutoff is the stated Canon-proper boundary; the book continues the Canon Missæ running head over the following Pater. This is a complete declared constituent and partial whole-book coverage.",
+    "extent_kind": "constituent",
+    "known_extent_pages": 18,
+    "known_extent_units": 52,
+    "omitted_book_divisions": [
+      "All front matter, calendar, general rubrics and earlier Ordo Missæ outside the named Canon selection",
+      "All preface chants, preface bodies and preface rubrics except the five named Infra actionem headings, seven proper Canon paragraphs, five governing usage rubrics and two Sequitur cues on printed pp. 176, 177, 181, 183 and 184",
+      "The Orémus/Pater introduction beginning on printed p. 213 and all subsequent material, including pages still bearing the running head Canon Missæ",
+      "The entire Temporale, Sanctorale, Commons, votive and other proper formularies and all other book divisions outside the declared constituent"
+    ],
+    "status": "complete-native-constituent",
+    "whole_book_complete": false
+  },
+  "sources": [
+    {
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-facsimile-699075c0",
+      "record_type": "artifact",
+      "rights_basis": "Faithful mechanical source images or a bounded checked transcription of the original Latin Paris 1657 printing, whose United States publication term has expired. The FIDES edition 3755 holding page, re-read on 2026-10-20, marks the Krzeszów Benedictine abbey copy Domena publiczna (Public domain) and access Dla wszystkich bez ograniczeń. The historical wording and mechanical images are excluded from Triptych’s CC BY 4.0 grant. No modern translation, critical reconstruction, or newly composed prayer is supplied. Historical availability does not authorize contemporary liturgical use.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "transformation": "Embed every parent JPEG stream unchanged as RGB PDF DCTDecode, with original image pixel dimensions as MediaBox points; no further resampling, cropping, text overlay, repair or timestamp. Every source JPEG is verified to occur byte-for-byte in the PDF."
+    },
+    {
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "record_type": "artifact",
+      "rights_basis": "Faithful mechanical source images or a bounded checked transcription of the original Latin Paris 1657 printing, whose United States publication term has expired. The FIDES edition 3755 holding page, re-read on 2026-10-20, marks the Krzeszów Benedictine abbey copy Domena publiczna (Public domain) and access Dla wszystkich bez ograniczeń. The historical wording and mechanical images are excluded from Triptych’s CC BY 4.0 grant. No modern translation, critical reconstruction, or newly composed prayer is supplied. Historical availability does not authorize contemporary liturgical use.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "transformation": "NFC UTF-8; long s becomes s; unambiguous printed abbreviation signs expand as listed in the source-block audit; physical wraps and line-end division hyphens disappear. Source u/v, i/j, æ/œ, accents, case including display initials, punctuation, &c., alternatives, every included rubric and spoken cue remain. Pattée crosses are represented by ✠ and the response cue by ℟.; word-separating spaces are regularized. Each stored line is one consecutive source block or paragraph, with source page/column/baseline and ink classes retained separately. No heading, quotation wrapper, modern translation, or explanatory material is inserted into literal text. Proper forms retain their discontiguous prefatory locations and are not relocated into the main Canon."
+    },
+    {
+      "authority": "Cistercian Order",
+      "date": "1657",
+      "id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "language": "la",
+      "publication": "Parisiis, Sumptibus Sebastiani Cramoisy et Gabrielis Cramoisy, 1657",
+      "record_type": "edition",
+      "title": "Missale Cisterciense iuxta Romani recogniti correctionem. Primo editum. Authoritate Superiorum"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-body-heading",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-calix-consecrationis-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-calix-depositio-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-calix-post-consecrationem-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-commemoratio-pro-viuis-heading",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-communicantes",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-haec-quotiescumque",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-hanc-igitur",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-hanc-igitur-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-hic-est-calix",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-hoc-est-corpus-meum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-hostia-consecrationis-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-hostia-post-consecrationem-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-infra-actionem-heading",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-memento-defunctorum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-memento-defunctorum-heading",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-memento-viuorum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-nobis-quoque-peccatoribus",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-nobis-quoque-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-opening-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-per-ipsum-doxology",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-per-omnia-amen",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-per-quem-haec-omnia",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-quam-oblationem",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-qui-pridie",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-simili-modo",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-standalone-title",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-supplices-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-supplices-te-rogamus",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-supra-quae",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-supra-quae-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-te-igitur",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-unde-et-memores",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-ascension-communicantes",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-ascension-infra-actionem",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-ascension-usage",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-easter-communicantes",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-easter-hanc-igitur",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-easter-infra-actionem",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-easter-sequitur",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-easter-usage",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-epiphany-communicantes",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-epiphany-infra-actionem",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-epiphany-usage",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-nativity-communicantes",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-nativity-infra-actionem",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-nativity-usage",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-pentecost-communicantes",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-pentecost-hanc-igitur",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-pentecost-infra-actionem",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-pentecost-sequitur",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-pentecost-usage",
+      "record_type": "passage"
+    }
+  ],
+  "stage_ids": [
+    "cistercian-1606-1657-1657"
+  ],
+  "title": "Cistercian missal 1657: Canon with its prefatory proper forms",
+  "units": [
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "heading",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-nativity-infra-actionem"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-nativity-infra-actionem",
+      "source_locator": "FIDES 0238 (printed p. 176); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 1,
+      "text": "Infra actionem.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "8fd63a58092ba1f65a2719529ea364dddef0124b42f9a50f8df3f04b6233b25a",
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.nativity-infra-actionem",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-nativity-communicantes"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-nativity-communicantes",
+      "source_locator": "FIDES 0238 (printed p. 176); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 2,
+      "text": "COmmunicántes, & diem sacratíssimum celebrántes, quo beátæ Maríæ intemerátæ virgínitas, huic mundo édidit Saluatórem. Sed & móriam venerántes, in primis eiúsdem gloriósæ semper vírginis Maríæ, genitrícis eiúsdem Dei & Dómini nostri Iesu Christi: sed & beatórum Apostolórum, &c.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "4c40ecec61230458f53d357b7d481ad90f1b735a3f7ae6d99b6c0b080d90fd50",
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.nativity-communicantes",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-nativity-usage"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-nativity-usage",
+      "source_locator": "FIDES 0238 (printed p. 176); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 3,
+      "text": "In prima verò Missa dicitur, noctem sacratíssimam celebrántes, qua deinde semper dicitur, diem sacratíssimum, quo vsque ad Octauam Natiuitatis Domini inclusiuè, & non vltrà.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "b9519991e9ac9f227c00cee810504979307cc46e597fcd713ca4869e59ac698f",
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.nativity-usage",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "heading",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-epiphany-infra-actionem"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-epiphany-infra-actionem",
+      "source_locator": "FIDES 0239 (printed p. 177); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 4,
+      "text": "Infra actionem.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "8fd63a58092ba1f65a2719529ea364dddef0124b42f9a50f8df3f04b6233b25a",
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.epiphany-infra-actionem",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-epiphany-communicantes"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-epiphany-communicantes",
+      "source_locator": "FIDES 0239 (printed p. 177); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 5,
+      "text": "COmmunicántes, & diem sacratíssimum celebrántes, quo Vnigénitus tuus in tua tecum glória coætérnus, in veritáte carnis nostræ visibíliter corporális appáruit. Sed & memóriam venerántes, in primis gloriósæ semper vírginis Maríæ, genitrícis eiúsdem Dei & Dómini nostri Iesu Christi: sed & beatórum Apostolórum, &c.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "172b49e8d0f036311e17372bf2c2b1b8393795094a10bd515452b28c5286cf0f",
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.epiphany-communicantes",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-epiphany-usage"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-epiphany-usage",
+      "source_locator": "FIDES 0239 (printed p. 177); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 6,
+      "text": "Et dicitur per totam Octauam.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "f57fcd93a2bd1b88f7c1ba1f4027398519be313ff3c3a473a078cc2537690c5f",
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.epiphany-usage",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "heading",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-easter-infra-actionem"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-easter-infra-actionem",
+      "source_locator": "FIDES 0243 (printed p. 181); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 7,
+      "text": "Infra actionem.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "8fd63a58092ba1f65a2719529ea364dddef0124b42f9a50f8df3f04b6233b25a",
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.easter-infra-actionem",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-easter-communicantes"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-easter-communicantes",
+      "source_locator": "FIDES 0243 (printed p. 181); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 8,
+      "text": "COmmunicántes, & diem sacratíssimum celebrántes Resurrectiónis Dómini nostri Iesu Christi secúndùm carnem. Sed & memóriam venerántes, in primis gloriósæ semper vírginis Maríæ, genitrícis eiúsdem Dei & Dómini nostri Iesu Christi: sed & beatórum Apostolórum, &c.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "95ce3b4a9f0dbdff68870f35f45144d43200e66e7d36066b9a05c9026b117bd1",
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.easter-communicantes",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-easter-sequitur"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-easter-sequitur",
+      "source_locator": "FIDES 0243 (printed p. 181); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 9,
+      "text": "sequitur",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "ffbbdace35f905879a7db919efdb2ac15a05898d605c874df280b5b07e24b95a",
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.easter-sequitur",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-easter-hanc-igitur"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-easter-hanc-igitur",
+      "source_locator": "FIDES 0243 (printed p. 181); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 10,
+      "text": "Hanc ígitur oblatiónem seruitútis nostræ, sed & cunctæ famíliæ tuæ, quam tibi offérimus pro his quoque, quos regeneráre dignátus es ex aqua & Spíritu sáncto, tríbuens eis remissiónem ómnium peccatórum, qúæsumus Dómine, vt placátus accípias, &c.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "6e3bfdaf8bacf8833215638c3102f4bad1c99fd562f442f44741705ecb1ec54d",
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.easter-hanc-igitur",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-easter-usage"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-easter-usage",
+      "source_locator": "FIDES 0243 (printed p. 181); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 11,
+      "text": "Sic dicitur à Vigilia Paschæ vsque ad Sabbatum in Albis inclusiuè. Sed in Missa Sabbati sancti dicitur, & noctem sacratíssimam celebrántes.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "246a5f49079dfc3fcd6dad11fe47afd61987fcfbfa5f3f8fe1dd6f7939ee8019",
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.easter-usage",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "heading",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-ascension-infra-actionem"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-ascension-infra-actionem",
+      "source_locator": "FIDES 0245 (printed p. 183); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 12,
+      "text": "Infra actionem.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "8fd63a58092ba1f65a2719529ea364dddef0124b42f9a50f8df3f04b6233b25a",
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.ascension-infra-actionem",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-ascension-communicantes"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-ascension-communicantes",
+      "source_locator": "FIDES 0245 (printed p. 183); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 13,
+      "text": "COmmunicántes, & diem sacratíssimum celebrántes, quo Dóminus noster, vnigénitus Fílius tuus, vnítam sibi fragilitátis nostræ substántiam, in glóriæ tuæ déxtera collocáuit. Sed & memóriam venerántes, in primis gloriósæ semper vírginis Maríæ, genitrícis eiúsdem Dei & Dómini nostri Iesu Christi: sed & beatórum Apostolórum ac Mártyrum tuórum, &c.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "bf04ca5cb48f4c35b48249ddbb556c600cb0da370343c8eec95a87b203875598",
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.ascension-communicantes",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-ascension-usage"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-ascension-usage",
+      "source_locator": "FIDES 0245 (printed p. 183); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 14,
+      "text": "Et dicitur per totam Octauam.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "f57fcd93a2bd1b88f7c1ba1f4027398519be313ff3c3a473a078cc2537690c5f",
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.ascension-usage",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "heading",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-pentecost-infra-actionem"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-pentecost-infra-actionem",
+      "source_locator": "FIDES 0246 (printed p. 184); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 15,
+      "text": "Infra actionem.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "8fd63a58092ba1f65a2719529ea364dddef0124b42f9a50f8df3f04b6233b25a",
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.pentecost-infra-actionem",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-pentecost-communicantes"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-pentecost-communicantes",
+      "source_locator": "FIDES 0246 (printed p. 184); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 16,
+      "text": "COmmunicántes, & diem sacratíssimum Pentecóstes celebrántes, quo Spíritus sanctus Apóstolis, innúmeris linguis appáruit. Sed & memóriam, &c.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "3d2a0a918b6861149986b6c8c968fdb99c8216eb1e7584d5759802cb079b1bbe",
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.pentecost-communicantes",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-pentecost-sequitur"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-pentecost-sequitur",
+      "source_locator": "FIDES 0246 (printed p. 184); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 17,
+      "text": "Sequitur.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "a4b5411449af1eca5a955ffdcac7308cdb0b72182770377b7eca838e1dbc7715",
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.pentecost-sequitur",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-pentecost-hanc-igitur"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-pentecost-hanc-igitur",
+      "source_locator": "FIDES 0246 (printed p. 184); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 18,
+      "text": "Hanc ígitur oblatiónem seruitútis nostræ, sed & cunctæ famíliæ tuæ, quam tibi offérimus pro his quoque, quos regeneráre dignátus es ex aqua & Spíritu sancto, tríbuens eis remissiónem ómnium peccatórum, quæsumus Dómine, vt placátus accípias, &c.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "2d82335479348176447009e263d7462b2729c7c266a2b6cdbe614c36ed80fcf0",
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.pentecost-hanc-igitur",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-pentecost-usage"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-pentecost-usage",
+      "source_locator": "FIDES 0246 (printed p. 184); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 19,
+      "text": "Et dicitur vsque ad sequens Sabbatum inclusiuè.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "56340d6861bc8c59d76ef8169a39799fbecdef2058373db686386c8f35f46843",
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.pentecost-usage",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "heading",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-standalone-title"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-standalone-title",
+      "source_locator": "FIDES 0263 (unnumbered title/context plate); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 20,
+      "text": "CANON MISSÆ.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "8406fdaf8f93b5f20af84eb4302fac263c83a9078c1cc90e4f3c292665861c77",
+      "unit_id": "unit.cistercian-1657.canon.main.standalone-title",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          6,
+          6
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "heading",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-body-heading"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-body-heading",
+      "source_locator": "FIDES 0265 (printed p. 203); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 21,
+      "text": "CANON MISSÆ.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "8406fdaf8f93b5f20af84eb4302fac263c83a9078c1cc90e4f3c292665861c77",
+      "unit_id": "unit.cistercian-1657.canon.main.body-heading",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          8,
+          8
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-opening-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-opening-rubric",
+      "source_locator": "FIDES 0265 (printed p. 203); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 22,
+      "text": "Sacerdos extendens & iungens manus, eleuans ad cælum oculos, & statim demittens, profundè inclinatus ante Altare, manibus super eo positis dicit:",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "533ce75b339629a467b202e3da75a76fb27a900b7e7afcb364be6255582d8739",
+      "unit_id": "unit.cistercian-1657.canon.main.opening-rubric",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          8,
+          8
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer-and-interleaved-rubrics",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-te-igitur"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-te-igitur",
+      "source_locator": "FIDES 0265 (printed p. 203); FIDES 0266 (printed p. 204); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 23,
+      "text": "TE ígitur, clementíssime Pater, per Iesum Christum Fílium tuum Dóminum nostrum, súpplices rogámus ac pétimus,\nOsculatur Altare,\nvti accépta hábeas, & benedícas,\nIungat manus, deinde signet ter super oblata\nhæc ✠ dona, hæc ✠ múnera, hæc ✠ sancta sacrificia illibáta,\nExtensis manibus prosequitur.\nin primis quæ tibi offérimus pro Ecclésia tua sancta Cathólica: quam pacificáre, custodíre, adunáre, & régere dignéris toto orbe terrárum: vnà cum fámulo tuo Papa nostro N. & Antístite nostro N. & Rege nostro N. & ómnibus orthodóxis, atque Cathólicæ & Apostólicæ fídei cultóribus.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "975561f168e8d9642cad6e39371960367c240320485a3462f7ace8eda53b8981",
+      "unit_id": "unit.cistercian-1657.canon.main.te-igitur",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          8,
+          9
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "heading",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-commemoratio-pro-viuis-heading"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-commemoratio-pro-viuis-heading",
+      "source_locator": "FIDES 0266 (printed p. 204); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 24,
+      "text": "Commemoratio pro viuis.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "8598296be8ba26426199c04bc160e3f1a176cd57de09031dd1efbbed01e2852f",
+      "unit_id": "unit.cistercian-1657.canon.main.commemoratio-pro-viuis-heading",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          9,
+          9
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer-and-interleaved-rubrics",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-memento-viuorum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-memento-viuorum",
+      "source_locator": "FIDES 0266 (printed p. 204); FIDES 0267 (printed p. 205); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 25,
+      "text": "MEménto Dómine, famulórum famularúmque tuárum N. & N.\nIungit manus, orat aliquantulùm pro quibus orare intendit: deinde manibus extensis prosequitur\nEt ómnium circumstántium, quorum tibi fides cógnita est, & nota deuótio, pro quibus tibi offérimus vel qui tibi ófferunt hoc sacrifícium laudis, pro se, suísque ómnibus: pro redemptióne animárum suárum, pro spe salútis & incolumitátis suæ: tibíque reddunt vota sua ætérno Deo, viuo & vero.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "b2807d4ac32688bb465860ce1ccc16a9cbaf019213f93915ae88e585a0ddfeb9",
+      "unit_id": "unit.cistercian-1657.canon.main.memento-viuorum",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          9,
+          10
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "heading",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-infra-actionem-heading"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-infra-actionem-heading",
+      "source_locator": "FIDES 0267 (printed p. 205); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 26,
+      "text": "Infra actionem.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "8fd63a58092ba1f65a2719529ea364dddef0124b42f9a50f8df3f04b6233b25a",
+      "unit_id": "unit.cistercian-1657.canon.main.infra-actionem-heading",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          10,
+          10
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer-and-interleaved-rubrics",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-communicantes"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-communicantes",
+      "source_locator": "FIDES 0267 (printed p. 205); FIDES 0268 (printed p. 206); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 27,
+      "text": "COmmunicantes, & memóriam venerántes, in primis gloriósæ semper vírginis Maríæ, genitrícis Dei & Dómini nostri Iesu Christi: sed & beatórum Apostolórum ac Mártyrum tuórum Petri & Pauli, Andréæ, Iacóbi, Ioánnis, Thomæ, Iacóbi, Philíppi, Bartholomǽi, Matthǽi, Simónis & Thaddæi: Lini, Cleti, Cleméntis, Xysti, Cornélij, Cypriáni: Lauréntij, Chrysógoni, Ioannis & Pauli, Cosmæ & Damiáni: & ómnium sanctórum tuórum, quorum méritis precibúsque concédas, vt in ómnibus protectiónis tuæ muniámur auxílio.\nIungit manus.\nPer eúmdem Christum Dóminum nostrum. Amen.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "27c2b12e3be3aa661c7cdc96374368f14d510b8c79b6ada01f8357586e312148",
+      "unit_id": "unit.cistercian-1657.canon.main.communicantes",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          10,
+          11
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-hanc-igitur-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-hanc-igitur-rubric",
+      "source_locator": "FIDES 0268 (printed p. 206); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 28,
+      "text": "Tenens manus expansas super oblata dicit.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "f704558f72f06eb444dddfa51bc68b3c804f2a9ecd9b06471471b0eb1c89e15a",
+      "unit_id": "unit.cistercian-1657.canon.main.hanc-igitur-rubric",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          11,
+          11
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer-and-interleaved-rubrics",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-hanc-igitur"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-hanc-igitur",
+      "source_locator": "FIDES 0268 (printed p. 206); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 29,
+      "text": "HAnc ígitur oblatiónem seruitútis nostræ, sed & cunctæ famíliæ tuæ, quæsumus Dómine, vt placátus accípias, diésque nostros in tua pace dispónas, atque ab ætérna damnatióne nos éripi, & in electórum tuórum iúbeas grege numerári.\nIungit manus.\nPer Christum Dóminum nostrum. Amen.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "2fd1d5d48d4b9a24370502f702c3575084dfa4d2c768bf1a1082e582e7e22444",
+      "unit_id": "unit.cistercian-1657.canon.main.hanc-igitur",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          11,
+          11
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer-and-interleaved-rubrics",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-quam-oblationem"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-quam-oblationem",
+      "source_locator": "FIDES 0268 (printed p. 206); FIDES 0269 (printed p. 207); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 30,
+      "text": "QVam oblatiónem tu Deus, in ómnibus, quæsumus,\nSignat ter super oblata,\nbene ✠. díctam, ascrí ✠ ptam, ra ✠ tam, rationábilem, acceptabilémque fácere dignéris:\nSignat semel super Hostiam, & semel super Calicem:\nvt nobis Cor ✠ pus, & San ✠ guis fiat dilectíssimi Fílij tui Dómini nostri Iesu Christi.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "b78454b062fdbd668812f9829cd83319769e9ed25eefb20223200ded8dca1b6b",
+      "unit_id": "unit.cistercian-1657.canon.main.quam-oblationem",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          11,
+          12
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer-and-interleaved-rubrics",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-qui-pridie"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-qui-pridie",
+      "source_locator": "FIDES 0269 (printed p. 207); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 31,
+      "text": "QVi prídie quàm paterétur,\nAccipit Hostiam\naccépit panem in sanctas ac venerábiles manus suas:\nEleuat oculos ad cælum:\n& eleuátis óculis in cælum, ad te Deum Patrem suum omnipoténtem: tibi grátias agens,\nSignat super Hostiam,\nbene ✠ díxit, fregit, dedítque discípulis suis, dicens: Accípite, & manducáte ex hoc omnes.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "8fd90959e7a493e00d9ec0e5df13cd3c8a55a12534a29320c98668e89fc262ff",
+      "unit_id": "unit.cistercian-1657.canon.main.qui-pridie",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          12,
+          12
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-hostia-consecrationis-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-hostia-consecrationis-rubric",
+      "source_locator": "FIDES 0269 (printed p. 207); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 32,
+      "text": "Tenens ambabus manibus Hostiam inter indices & pollices, profert verba consecrationis secretè, distinctè, & attentè.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "f1a8c385d46cb67231b053d6a6ee4ec84cd1e3c767866ae0530a5679034af093",
+      "unit_id": "unit.cistercian-1657.canon.main.hostia-consecrationis-rubric",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          12,
+          12
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-hoc-est-corpus-meum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-hoc-est-corpus-meum",
+      "source_locator": "FIDES 0269 (printed p. 207); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 33,
+      "text": "Hoc est enim corpus meum.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "c82c05b971fbc110eeae2d4999516d1567c514b3de6173273141cc00271ef250",
+      "unit_id": "unit.cistercian-1657.canon.main.hoc-est-corpus-meum",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          12,
+          12
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-hostia-post-consecrationem-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-hostia-post-consecrationem-rubric",
+      "source_locator": "FIDES 0269 (printed p. 207); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 34,
+      "text": "Prolatis verbis consecrationis, statim Hostiam consecratam genuflexus adorat: surgit, ostendit populo, reponit super Corporale, iterum adorat: & non disiungit pollices & indices, nisi quando Hostia tractanda est, vsque ad ablutionem digitorum. Tunc detecto Calice dicit.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "50b5ce8863cdc6a6625fabfaec1a2c2f393944eb83f357163fe213be47f707ed",
+      "unit_id": "unit.cistercian-1657.canon.main.hostia-post-consecrationem-rubric",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          12,
+          12
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer-and-interleaved-rubrics",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-simili-modo"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-simili-modo",
+      "source_locator": "FIDES 0270 (printed p. 208); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 35,
+      "text": "SImili modo postquam cœnátum est,\nAmbabus manibus accipit Calicem.\naccípiens & hunc præclárum Cálicem in sanctas ac venerábiles manus suas: item tibi grátias agens,\nSinistra tenens Calicem, dextera signat super eum,\nbene ✠ díxit, dedítque discípulis suis, dicens: Accípite & bíbite ex eo omnes.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "47444a1802321471a164cb8e776eb55c2ada584e7edb73a56fa8f5a2ff2029a6",
+      "unit_id": "unit.cistercian-1657.canon.main.simili-modo",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          13,
+          13
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-calix-consecrationis-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-calix-consecrationis-rubric",
+      "source_locator": "FIDES 0270 (printed p. 208); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 36,
+      "text": "Profert verba consecrationis secretè super Calicem, tenens illum parum eleuatum.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "367ddf7b4eda44430e705363a1b5c9e9b94a2f694910bd876c04ca32398f46ce",
+      "unit_id": "unit.cistercian-1657.canon.main.calix-consecrationis-rubric",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          13,
+          13
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-hic-est-calix"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-hic-est-calix",
+      "source_locator": "FIDES 0270 (printed p. 208); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 37,
+      "text": "Hic est enim Calix sánguinis mei, noui & ætérni testamenti: mystérium fídei: qui pro vobis & pro multis effundétur in remissiónem peccatórum.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "c50c864ac0187422c363c2a511cf3a11158ced288fec79c77eb00cfb5cdaf476",
+      "unit_id": "unit.cistercian-1657.canon.main.hic-est-calix",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          13,
+          13
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-calix-depositio-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-calix-depositio-rubric",
+      "source_locator": "FIDES 0270 (printed p. 208); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 38,
+      "text": "Prolatis verbis consecrationis, deponit Calicem super Corporale, & dicens secretò:",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "d487dcc97834686330088743920ea3fbb51c95e9f33af55fd506aed472773a50",
+      "unit_id": "unit.cistercian-1657.canon.main.calix-depositio-rubric",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          13,
+          13
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-haec-quotiescumque"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-haec-quotiescumque",
+      "source_locator": "FIDES 0270 (printed p. 208); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 39,
+      "text": "Hæc quotiescúmque fecéritis, in mei memóriam faciétis.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "343c0f1ea77dc0580513ccccd1ae477ef0c1c38ab30f39c249870289cb738857",
+      "unit_id": "unit.cistercian-1657.canon.main.haec-quotiescumque",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          13,
+          13
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-calix-post-consecrationem-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-calix-post-consecrationem-rubric",
+      "source_locator": "FIDES 0270 (printed p. 208); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 40,
+      "text": "genuflexus adorat: surgit, ostendit populo, deponit, cooperit, & iterum adorat. Deinde disiunctis manibus dicit.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "3bb9f32ef062cbda9f48e4810e1874768d864031d0614086ded08a13efd7ed20",
+      "unit_id": "unit.cistercian-1657.canon.main.calix-post-consecrationem-rubric",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          13,
+          13
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer-and-interleaved-rubrics",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-unde-et-memores"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-unde-et-memores",
+      "source_locator": "FIDES 0271 (printed p. 209); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 41,
+      "text": "VNdè & mémores, Dómine, nos serui tui, sed & plebs tua sancta, eiúsdem Christi Fílij tui Dómini nostri tam beátæ passiónis, nec non & ab ínferis resurrectiónis, sed & in cælos gloriósæ ascensiónis: offérimus præcláræ maiestáti tuæ de tuis donis ac datis,\nIungit manus, & signat ter super Hostiam & Calicem simul.\nHóstiam ✠ puram, hóstiam ✠ sanctam, hóstiam ✠ immaculátam,\nSignat semel super Hostiam, & semel super Calicem:\nPanem ✠ sanctum vitæ ætérnæ, & Cálicem ✠ salútis perpétuæ.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "c437451fa6662e5cd74601d9dba346fd70148955e2b131c384e63edcbdc9662a",
+      "unit_id": "unit.cistercian-1657.canon.main.unde-et-memores",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          14,
+          14
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-supra-quae-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-supra-quae-rubric",
+      "source_locator": "FIDES 0271 (printed p. 209); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 42,
+      "text": "Extensis manibus prosequitur.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "866a08fd56b526118f59ff0f5c94e73b180d3b17810b323555f29e1782ce857f",
+      "unit_id": "unit.cistercian-1657.canon.main.supra-quae-rubric",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          14,
+          14
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-supra-quae"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-supra-quae",
+      "source_locator": "FIDES 0271 (printed p. 209); FIDES 0272 (printed p. 210); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 43,
+      "text": "SVpra quæ propítio ac seréno vultu respícere dignéris: & accépta habére, sícuti accépta habére dignátus es múnera púeri tui iusti Abel, & sacrifícium Patriárchæ nostri Abrahæ: & quod tibi óbtulit summus sacérdos tuus Melchísedech, sanctum sacrifícium, immaculátam hóstiam.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "ea7f497462cfd237a2e292b09a60323e5b96493cbe61ff3e771115d7594ace72",
+      "unit_id": "unit.cistercian-1657.canon.main.supra-quae",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          14,
+          15
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-supplices-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-supplices-rubric",
+      "source_locator": "FIDES 0272 (printed p. 210); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 44,
+      "text": "Profundè inclinatus iunctis manibus, & super Altare positis dicit.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "c4249b127a447381b3db0dc2b4ebde1528d754f0a9cad31ffc2350fc4c0c2f8c",
+      "unit_id": "unit.cistercian-1657.canon.main.supplices-rubric",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          15,
+          15
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer-and-interleaved-rubrics",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-supplices-te-rogamus"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-supplices-te-rogamus",
+      "source_locator": "FIDES 0272 (printed p. 210); FIDES 0273 (printed p. 211); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 45,
+      "text": "SVpplices te rogámus, omnípotens Deus: iube hæc perférri per manus sancti Angeli tui in sublíme altáre tuum, in conspéctu diuínæ maiestátis tuæ: vt quotquot,\nosculatur Altare,\nex hac altáris participatióne, sacrosánctum Fílij tui,\nIungit manus, & signat semel super Hostiam, & semel super Calicem,\nCor ✠ pus, & Sán ✠ guinem sumpsérimus,\nSeipsum signat,\nomni benedictióne cælésti, & grátia repleámur. Per eúmdem Christum Dóminum nostrum. Amen.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "d4a63afa446300f26e98b3618f521754d5bc5b3bfa3190804c46031da01420c5",
+      "unit_id": "unit.cistercian-1657.canon.main.supplices-te-rogamus",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          15,
+          16
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "heading",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-memento-defunctorum-heading"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-memento-defunctorum-heading",
+      "source_locator": "FIDES 0273 (printed p. 211); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 46,
+      "text": "Commemoratio pro Defunctis.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "654c2a712d543c1cbf4447e4d074ce0ec2db49f9292559d4ccf87e3f00f43686",
+      "unit_id": "unit.cistercian-1657.canon.main.memento-defunctorum-heading",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          16,
+          16
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer-and-interleaved-rubrics",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-memento-defunctorum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-memento-defunctorum",
+      "source_locator": "FIDES 0273 (printed p. 211); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 47,
+      "text": "MÉménto étiam, Dómine, famulórum famularúmque tuárum N. & N. qui nos præcessérunt cum signo fídei, & dórmiunt in somno pacis.\nIungit manus, orat aliquantulùm pro iis defunctis, pro quibus orare intendit, deinde extensis manibus prosequitur.\nIpsis Dómine, & ómnibus in Christo quiescentibus, locum refrigérij, lucis & pacis, vt indúlgeas, deprecámur.\nIungit manus, & caput inclinat.\nPer eúmdem Christum Dóminum nostrum. Amen.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "6db3b6e52a32ae26fe35db85f54b1896afb61aa91c3affdcf710705365fed9ac",
+      "unit_id": "unit.cistercian-1657.canon.main.memento-defunctorum",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          16,
+          16
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-nobis-quoque-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-nobis-quoque-rubric",
+      "source_locator": "FIDES 0273 (printed p. 211); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 48,
+      "text": "Manu dexterâ percutit sibi pectus, elatâ parum voce dicens:",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "31e21942130b53137afde3f68db4968c144d95713d4cc643fa060fa56918617c",
+      "unit_id": "unit.cistercian-1657.canon.main.nobis-quoque-rubric",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          16,
+          16
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer-and-interleaved-rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-nobis-quoque-peccatoribus"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-nobis-quoque-peccatoribus",
+      "source_locator": "FIDES 0273 (printed p. 211); FIDES 0274 (printed p. 212); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 49,
+      "text": "NObis quoque peccatóribus fámulis tuis de multitúdine miseratiónum tuárum sperántibus, partem áliquam & societátem donáre dignéris, cum tuis sanctis Apóstolis & Martyribus: cum Ioánne, Stéphano, Mathía, Bárnaba, Ignátio, Alexándro, Marcellíno, Petro, Felicitáte, Perpétua, Agatha, Lúcia, Agnéte, Cæcília, Anastásia, & ómnibus sanctis tuis: intra quorum nos consórtium, non æstimátor mériti, sed véniæ, quǽsumus, largítor admítte.\nIungit manus.\nPer Christum Dóminum nostrum.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "50279dd6874c08b8c2f2d6785efb9030965fc2d3b0cb6f0443a067a898c7e9f0",
+      "unit_id": "unit.cistercian-1657.canon.main.nobis-quoque-peccatoribus",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          16,
+          17
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer-and-interleaved-rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-per-quem-haec-omnia"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-per-quem-haec-omnia",
+      "source_locator": "FIDES 0274 (printed p. 212); FIDES 0275 (printed p. 213); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 50,
+      "text": "PEr quem hæc ómnia, Dómine, semper bona creas,\nSignat ter super Hostiam & Calicem simul, dicens:\nsanctí ✠ ficas, viuí ✠ ficas, bene ✠ dícis, & præstas nobis.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "9c93bd32a914c963dbc927b7cb88e4b66a6a99e9447f853b048a543885b001ba",
+      "unit_id": "unit.cistercian-1657.canon.main.per-quem-haec-omnia",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          17,
+          18
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer-and-interleaved-rubrics",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-per-ipsum-doxology"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-per-ipsum-doxology",
+      "source_locator": "FIDES 0275 (printed p. 213); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 51,
+      "text": "Discooperit Calicem, genuflectit, accipit Sacramentum dextera, tenens sinistra Calicem: signat cum Hostia ter à labio ad labium Calicis, dicens\nPer ip ✠ sum, & cum ip ✠ so & in ip ✠ so,\nbis signat inter Calicem & pectus,\nest tibi Deo Patri ✠ omnipoténti, in vnitáte Spíritus ✠ sancti,\nEleuans parum Calicem cum Hostia, dicit:\nomnis honor & glória.\nReponit Hostiam, cooperit Calicem, genuflectit, surgit, & dicit.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "6c5dd1a055005a0957b43a0124717ab77ab7dea37f8c60e92eba66698e16080a",
+      "unit_id": "unit.cistercian-1657.canon.main.per-ipsum-doxology",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          18,
+          18
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "chanted-dialogue-and-rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-per-omnia-amen"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-normalized-latin-fe84fc55",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-per-omnia-amen",
+      "source_locator": "FIDES 0275 (printed p. 213); exact column/baseline bounds are retained in the extent census.",
+      "source_order": 52,
+      "text": "PEr ómnia sæcula sæculórum. ℟. Amen.\nIungit manus",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "89ebeb6b55287aa9752ced2c21aea11aff15030c7dca06f22760cd2a814325fa",
+      "unit_id": "unit.cistercian-1657.canon.main.per-omnia-amen",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          18,
+          18
+        ]
+      ]
+    }
+  ],
+  "witnesses": [
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-facsimile-699075c0",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "cistercian-1657-canon-pages",
+      "scope_pages": [
+        [
+          1,
+          18
+        ]
+      ]
+    }
+  ]
+}

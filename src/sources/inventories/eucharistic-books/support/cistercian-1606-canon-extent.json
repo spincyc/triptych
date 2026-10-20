@@ -1,0 +1,905 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-extent",
+  "book_id": "cistercian-1606-canon",
+  "title": "Paris 1606 complete strict Canon: exhaustive retained-page and semantic-unit census",
+  "status": "complete",
+  "unresolved": [],
+  "omitted": [],
+  "expected_unit_ids": [
+    "unit.cistercian-1606.canon.heading",
+    "unit.cistercian-1606.canon.te-igitur",
+    "unit.cistercian-1606.canon.memento-vivorum",
+    "unit.cistercian-1606.canon.communicantes-opening",
+    "unit.cistercian-1606.canon.communicantes-nativity-rubric",
+    "unit.cistercian-1606.canon.communicantes-nativity",
+    "unit.cistercian-1606.canon.communicantes-epiphany-rubric",
+    "unit.cistercian-1606.canon.communicantes-epiphany",
+    "unit.cistercian-1606.canon.communicantes-easter-rubric",
+    "unit.cistercian-1606.canon.communicantes-easter",
+    "unit.cistercian-1606.canon.communicantes-ascension-rubric",
+    "unit.cistercian-1606.canon.communicantes-ascension",
+    "unit.cistercian-1606.canon.communicantes-pentecost-rubric",
+    "unit.cistercian-1606.canon.communicantes-pentecost",
+    "unit.cistercian-1606.canon.communicantes-continuation",
+    "unit.cistercian-1606.canon.hanc-igitur",
+    "unit.cistercian-1606.canon.hanc-igitur-easter-pentecost-rubric",
+    "unit.cistercian-1606.canon.hanc-igitur-easter-pentecost",
+    "unit.cistercian-1606.canon.quam-oblationem",
+    "unit.cistercian-1606.canon.qui-pridie",
+    "unit.cistercian-1606.canon.hoc-est-enim",
+    "unit.cistercian-1606.canon.simili-modo",
+    "unit.cistercian-1606.canon.hic-est-enim",
+    "unit.cistercian-1606.canon.haec-quotiescumque",
+    "unit.cistercian-1606.canon.unde-et-memores",
+    "unit.cistercian-1606.canon.supra-quae",
+    "unit.cistercian-1606.canon.supplices",
+    "unit.cistercian-1606.canon.memento-defunctorum",
+    "unit.cistercian-1606.canon.ipsis-domine",
+    "unit.cistercian-1606.canon.nobis-quoque",
+    "unit.cistercian-1606.canon.intra-quorum",
+    "unit.cistercian-1606.canon.per-quem",
+    "unit.cistercian-1606.canon.per-ipsum",
+    "unit.cistercian-1606.canon.omnis-honor",
+    "unit.cistercian-1606.canon.per-omnia-amen"
+  ],
+  "scope": "Complete strict Eucharistic Canon constituent of the Paris 1606 Cistercian missal: from the printed CANON MISSÆ. heading and Te igitur on printed p.190, BSB canvas244/full-provider-PDF 245, through Per ómnia sǽcula sæculórum. Amen. on printed p.197 left, canvas251/PDF252, immediately before Orémus/Præcéptis/Pater noster. All five printed seasonal Communicantes insertions and the Pascha/Pentecost Hanc igitur insertion, their rubrics, continuation signs, name cues and 26 crosses are included in source order. The fourth page in this sequence is BSB-labelled193 but actually misprinted 192. The later Ordinary under the same Canon Missæ running head is explicitly outside this strict Canon. Whole-book and complete-Ordinary coverage remain partial; this constituent is independent of the unchanged accepted offertory and inherits no wording from another edition.",
+  "pages": [
+    {
+      "witness_id": "cistercian-1606-bsb-canon",
+      "ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.cistercian-1606.canon.heading",
+        "unit.cistercian-1606.canon.te-igitur",
+        "unit.cistercian-1606.canon.memento-vivorum"
+      ],
+      "description": "Opening CANON MISSÆ. heading; complete Te igitur (3 crosses/name cues) and living Memento beginning. Decorated initial is merged; catchword vel excluded.",
+      "source_pdf_page": 245,
+      "source_canvas": 244,
+      "source_sequence_page": 190,
+      "actual_printed_folio": 190,
+      "original_embedded_jpeg_sha256": "c39d85fd845e38679c3554c4a824be4022eb531a8067b8c41e4b1e0daabb50d8",
+      "original_embedded_jpeg_byte_size": 1619898
+    },
+    {
+      "witness_id": "cistercian-1606-bsb-canon",
+      "ranges": [
+        [
+          2,
+          2
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.cistercian-1606.canon.memento-vivorum",
+        "unit.cistercian-1606.canon.communicantes-opening",
+        "unit.cistercian-1606.canon.communicantes-nativity-rubric",
+        "unit.cistercian-1606.canon.communicantes-nativity",
+        "unit.cistercian-1606.canon.communicantes-epiphany-rubric",
+        "unit.cistercian-1606.canon.communicantes-epiphany",
+        "unit.cistercian-1606.canon.communicantes-easter-rubric",
+        "unit.cistercian-1606.canon.communicantes-easter",
+        "unit.cistercian-1606.canon.communicantes-ascension-rubric",
+        "unit.cistercian-1606.canon.communicantes-ascension",
+        "unit.cistercian-1606.canon.communicantes-pentecost-rubric",
+        "unit.cistercian-1606.canon.communicantes-pentecost",
+        "unit.cistercian-1606.canon.communicantes-continuation"
+      ],
+      "description": "LivingMemento continuation; Communicantes opening; five seasonal rubrics and inserts in column order; main continuation through first part of saint list. Stars and parenthetical eiúsdem retained. Three printed main-text paragraph blocks remain distinct: the starred remembrance, Sed & beatórum, and the Petri saint list.",
+      "source_pdf_page": 246,
+      "source_canvas": 245,
+      "source_sequence_page": 191,
+      "actual_printed_folio": 191,
+      "original_embedded_jpeg_sha256": "7616857a4248187f71caf0f3d1ac60d6a27f0bafe5d554f3bf219d5f40772c23",
+      "original_embedded_jpeg_byte_size": 1544514
+    },
+    {
+      "witness_id": "cistercian-1606-bsb-canon",
+      "ranges": [
+        [
+          3,
+          3
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.cistercian-1606.canon.communicantes-continuation",
+        "unit.cistercian-1606.canon.hanc-igitur",
+        "unit.cistercian-1606.canon.hanc-igitur-easter-pentecost-rubric",
+        "unit.cistercian-1606.canon.hanc-igitur-easter-pentecost",
+        "unit.cistercian-1606.canon.quam-oblationem"
+      ],
+      "description": "Communicantes continuation and ending; complete Hanc igitur; its starred red insertion rubric and Pascha/Pentecost insertion with abbreviated ending; Quam oblationem beginning. Catchword excluded.",
+      "source_pdf_page": 247,
+      "source_canvas": 246,
+      "source_sequence_page": 192,
+      "actual_printed_folio": 192,
+      "original_embedded_jpeg_sha256": "42bfb0b83421a489f55d5a70945170c9f6ea21159c7c75cb3cb3cd84332e81e0",
+      "original_embedded_jpeg_byte_size": 1532184
+    },
+    {
+      "witness_id": "cistercian-1606-bsb-canon",
+      "ranges": [
+        [
+          4,
+          4
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.cistercian-1606.canon.quam-oblationem",
+        "unit.cistercian-1606.canon.qui-pridie",
+        "unit.cistercian-1606.canon.hoc-est-enim",
+        "unit.cistercian-1606.canon.simili-modo"
+      ],
+      "description": "BSB label 193, actually printed192: Quam oblationem continuation; Qui pridie; Hoc est enim; complete Simili modo. All7 red crosses retained. Foliation error is recorded, not silently corrected.",
+      "source_pdf_page": 248,
+      "source_canvas": 247,
+      "source_sequence_page": 193,
+      "actual_printed_folio": 192,
+      "original_embedded_jpeg_sha256": "9fc06d79740d3a91e1c9cff66ce01221c520841cb12ecfe4b89b3706bf2ac3cd",
+      "original_embedded_jpeg_byte_size": 1396460
+    },
+    {
+      "witness_id": "cistercian-1606-bsb-canon",
+      "ranges": [
+        [
+          5,
+          5
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.cistercian-1606.canon.hic-est-enim",
+        "unit.cistercian-1606.canon.haec-quotiescumque",
+        "unit.cistercian-1606.canon.unde-et-memores",
+        "unit.cistercian-1606.canon.supra-quae"
+      ],
+      "description": "Hic est enim calix; Hæc quotiescunque; complete Unde et memores with5 crosses; Supra quæ beginning. Catchword Abel excluded.",
+      "source_pdf_page": 249,
+      "source_canvas": 248,
+      "source_sequence_page": 194,
+      "actual_printed_folio": 194,
+      "original_embedded_jpeg_sha256": "24f429b9f921ce1436fb9019444c5a34208745a90399a7c8dfd7420c2557a5cc",
+      "original_embedded_jpeg_byte_size": 1417697
+    },
+    {
+      "witness_id": "cistercian-1606-bsb-canon",
+      "ranges": [
+        [
+          6,
+          6
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.cistercian-1606.canon.supra-quae",
+        "unit.cistercian-1606.canon.supplices",
+        "unit.cistercian-1606.canon.memento-defunctorum",
+        "unit.cistercian-1606.canon.ipsis-domine"
+      ],
+      "description": "Supra quæ continuation; complete Supplices with3 crosses and actual duplicated & & at right column linebreak; dead Memento; Ipsis beginning.",
+      "source_pdf_page": 250,
+      "source_canvas": 249,
+      "source_sequence_page": 195,
+      "actual_printed_folio": 195,
+      "original_embedded_jpeg_sha256": "059f980acec301f262b6d43d64eb4357e77a54615fd566ca1a3a10a4fec98158",
+      "original_embedded_jpeg_byte_size": 1458418
+    },
+    {
+      "witness_id": "cistercian-1606-bsb-canon",
+      "ranges": [
+        [
+          7,
+          7
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.cistercian-1606.canon.ipsis-domine",
+        "unit.cistercian-1606.canon.nobis-quoque",
+        "unit.cistercian-1606.canon.intra-quorum",
+        "unit.cistercian-1606.canon.per-quem"
+      ],
+      "description": "Ipsis continuation; complete Nobis quoque and Intra quorum; Per quem beginning with3 crosses. Catchword præstas excluded.",
+      "source_pdf_page": 251,
+      "source_canvas": 250,
+      "source_sequence_page": 196,
+      "actual_printed_folio": 196,
+      "original_embedded_jpeg_sha256": "4158d58c6daf08c6000dce922e70a91e5543f12cc5925b7ea562c6292d287e30",
+      "original_embedded_jpeg_byte_size": 1362920
+    },
+    {
+      "witness_id": "cistercian-1606-bsb-canon",
+      "ranges": [
+        [
+          8,
+          8
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.cistercian-1606.canon.per-quem",
+        "unit.cistercian-1606.canon.per-ipsum",
+        "unit.cistercian-1606.canon.omnis-honor",
+        "unit.cistercian-1606.canon.per-omnia-amen"
+      ],
+      "description": "Only upper-left continuation of Per quem, Per ipsum (5 crosses), Omnis honor & glória, and sung Per omnia/Amen belong to strict Canon. Lower-left Orémus/Præcéptis/Pater noster and entire right column are outside. Musical notes, running head and furniture excluded; all sung Canon words retained.",
+      "source_pdf_page": 252,
+      "source_canvas": 251,
+      "source_sequence_page": 197,
+      "actual_printed_folio": 197,
+      "original_embedded_jpeg_sha256": "11f5ff81c01f5184d4c5668fe92ee8c0c5dfdb86165bb34de8fc3e9c6227639c",
+      "original_embedded_jpeg_byte_size": 1564526
+    }
+  ],
+  "source_boundary_audit": {
+    "native_heading": "CANON MISSÆ.",
+    "start": "Heading and decorated Te igitur on printed 190, derivative 1",
+    "end": "Sung Per omnia sæcula sæculorum. Amen., printed 197 left, derivative 8, immediately before Orémus",
+    "unit_count": 35,
+    "source_pdf_pages": [
+      245,
+      252
+    ],
+    "source_canvases": [
+      244,
+      251
+    ],
+    "retained_facsimile_pages": 8,
+    "whole_pdf_page_count": 415,
+    "printed_crosses": 26,
+    "seasonal_communicantes_insertions": 5,
+    "seasonal_hanc_insertions": 1,
+    "standalone_seasonal_rubrics": 6,
+    "printed_response_cues_inside_extent": [],
+    "final_amen": "Printed unlabelled sung Amen is retained; no response label supplied",
+    "folio_anomaly": "Fourth retained page is sequenced193 by BSB canvas247 but printed192, duplicating the preceding folio",
+    "boundary_rationale": "Strict Eucharistic Canon is selected rather than all matter under the continuing Canon Missæ running head. The source rubric/variant boxes interrupt the main Communicantes text; separate opening and continuation units retain physical reading order without reconstructing or silently relocating the proper forms.",
+    "facsimile_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c"
+  },
+  "serialization_line_classes": [
+    {
+      "unit_id": "unit.cistercian-1606.canon.heading",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "line_sha256": "8406fdaf8f93b5f20af84eb4302fac263c83a9078c1cc90e4f3c292665861c77",
+      "source_witness_pages": [
+        1
+      ],
+      "source_order": 1,
+      "printed_crosses": 0,
+      "ink": "red",
+      "native_source_block": "heading"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.te-igitur",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          2,
+          2
+        ]
+      ],
+      "line_sha256": "4894d6c14445e1bd8c8edea66e9989c2aadcb1f5693583d0590a6f687b3cbcc6",
+      "source_witness_pages": [
+        1
+      ],
+      "source_order": 2,
+      "printed_crosses": 3,
+      "ink": "black-with-red-initials-or-signs",
+      "native_source_block": "te-igitur"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.memento-vivorum",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          3,
+          3
+        ]
+      ],
+      "line_sha256": "c08fac1215cbde814fff4886c9199ae131c0c60d5fa6d71ebac9994d3f59fbae",
+      "source_witness_pages": [
+        1,
+        2
+      ],
+      "source_order": 3,
+      "printed_crosses": 0,
+      "ink": "black-with-red-initials-or-signs",
+      "native_source_block": "memento-vivorum"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.communicantes-opening",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          4,
+          4
+        ]
+      ],
+      "line_sha256": "07e1cc42d43c3753d45cf64efcab0703e24044a068a51929226a4c2ea239b085",
+      "source_witness_pages": [
+        2
+      ],
+      "source_order": 4,
+      "printed_crosses": 0,
+      "ink": "black-with-red-initials-or-signs",
+      "native_source_block": "communicantes-opening"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.communicantes-nativity-rubric",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          5,
+          5
+        ]
+      ],
+      "line_sha256": "a8a9c8b6b508bb5f38fdd3712afd274984fd0bd9185e8d554351418b79c1939b",
+      "source_witness_pages": [
+        2
+      ],
+      "source_order": 5,
+      "printed_crosses": 0,
+      "ink": "red",
+      "native_source_block": "communicantes-nativity-rubric"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.communicantes-nativity",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          6,
+          6
+        ]
+      ],
+      "line_sha256": "957dceb9548ead12d1aa3e2a596cdcf7778922bf9ddeb4b41ac3715eb2ae62c0",
+      "source_witness_pages": [
+        2
+      ],
+      "source_order": 6,
+      "printed_crosses": 0,
+      "ink": "black-with-red-initials-or-signs",
+      "native_source_block": "communicantes-nativity"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.communicantes-epiphany-rubric",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          7,
+          7
+        ]
+      ],
+      "line_sha256": "5834324c05af68d639e528a426a6f66aa42398781d70cb5a27fc3c57294314e0",
+      "source_witness_pages": [
+        2
+      ],
+      "source_order": 7,
+      "printed_crosses": 0,
+      "ink": "red",
+      "native_source_block": "communicantes-epiphany-rubric"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.communicantes-epiphany",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          8,
+          8
+        ]
+      ],
+      "line_sha256": "6da5d15c5a26cfe4eeeeffac24853ac90119850f049cf3359a287aebb432a43f",
+      "source_witness_pages": [
+        2
+      ],
+      "source_order": 8,
+      "printed_crosses": 0,
+      "ink": "black-with-red-initials-or-signs",
+      "native_source_block": "communicantes-epiphany"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.communicantes-easter-rubric",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          9,
+          9
+        ]
+      ],
+      "line_sha256": "c1e1f816892a34469f9814d306ab879c414c29d2fab8147634552256e7fefb76",
+      "source_witness_pages": [
+        2
+      ],
+      "source_order": 9,
+      "printed_crosses": 0,
+      "ink": "red",
+      "native_source_block": "communicantes-easter-rubric"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.communicantes-easter",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          10,
+          10
+        ]
+      ],
+      "line_sha256": "3297bba6e30e3403cd6e25d5955b1400ab86a0d786648672cad002ffcbe36f17",
+      "source_witness_pages": [
+        2
+      ],
+      "source_order": 10,
+      "printed_crosses": 0,
+      "ink": "black-with-red-initials-or-signs",
+      "native_source_block": "communicantes-easter"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.communicantes-ascension-rubric",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          11,
+          11
+        ]
+      ],
+      "line_sha256": "12f28b3633d0106cd33adfdc7cf51f33ccf07f0cd4f14d3ec9820e8ec564775f",
+      "source_witness_pages": [
+        2
+      ],
+      "source_order": 11,
+      "printed_crosses": 0,
+      "ink": "red",
+      "native_source_block": "communicantes-ascension-rubric"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.communicantes-ascension",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          12,
+          12
+        ]
+      ],
+      "line_sha256": "c2156eda2d956ec02ee1533027405277efec5a7c657c28a8f29977638f32c1c1",
+      "source_witness_pages": [
+        2
+      ],
+      "source_order": 12,
+      "printed_crosses": 0,
+      "ink": "black-with-red-initials-or-signs",
+      "native_source_block": "communicantes-ascension"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.communicantes-pentecost-rubric",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          13,
+          13
+        ]
+      ],
+      "line_sha256": "23a9937aba2827ba55800238cac89d36a926b9e14c8218eaf815e86c246dcc43",
+      "source_witness_pages": [
+        2
+      ],
+      "source_order": 13,
+      "printed_crosses": 0,
+      "ink": "red",
+      "native_source_block": "communicantes-pentecost-rubric"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.communicantes-pentecost",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          14,
+          14
+        ]
+      ],
+      "line_sha256": "00bb1019548866a6cee9001710e2bbea46a4f6462d959d15499b0ef8483cdf34",
+      "source_witness_pages": [
+        2
+      ],
+      "source_order": 14,
+      "printed_crosses": 0,
+      "ink": "black-with-red-initials-or-signs",
+      "native_source_block": "communicantes-pentecost"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.communicantes-continuation",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          15,
+          19
+        ]
+      ],
+      "line_sha256": "4232cdba59598162c22cf3a07ad076e8b7307e74137fe9be6de9118e69d41d7a",
+      "source_witness_pages": [
+        2,
+        3
+      ],
+      "source_order": 15,
+      "printed_crosses": 0,
+      "ink": "black-with-red-initials-or-signs",
+      "native_source_block": "communicantes-continuation"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.hanc-igitur",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          20,
+          20
+        ]
+      ],
+      "line_sha256": "21fad8787ba0974e4d7012ddd2e5f8aa61c2d80542f3f2ae42efaff5253a9572",
+      "source_witness_pages": [
+        3
+      ],
+      "source_order": 16,
+      "printed_crosses": 0,
+      "ink": "black-with-red-initials-or-signs",
+      "native_source_block": "hanc-igitur"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.hanc-igitur-easter-pentecost-rubric",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          21,
+          21
+        ]
+      ],
+      "line_sha256": "cb51fda6e56be550257d61a3132d5f42fc6fa1be1f106b239ef38813d3e5866c",
+      "source_witness_pages": [
+        3
+      ],
+      "source_order": 17,
+      "printed_crosses": 0,
+      "ink": "red",
+      "native_source_block": "hanc-igitur-easter-pentecost-rubric"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.hanc-igitur-easter-pentecost",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          22,
+          22
+        ]
+      ],
+      "line_sha256": "172df24ba989c518b045881e30616d76659aa2ef32c3b6ef6795a79e47e66d8a",
+      "source_witness_pages": [
+        3
+      ],
+      "source_order": 18,
+      "printed_crosses": 0,
+      "ink": "black-with-red-initials-or-signs",
+      "native_source_block": "hanc-igitur-easter-pentecost"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.quam-oblationem",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          23,
+          23
+        ]
+      ],
+      "line_sha256": "effa847e90d801950fc1f6f99ad02581a56f7f2a5a708251d6a9eef99950b25c",
+      "source_witness_pages": [
+        3,
+        4
+      ],
+      "source_order": 19,
+      "printed_crosses": 5,
+      "ink": "black-with-red-initials-or-signs",
+      "native_source_block": "quam-oblationem"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.qui-pridie",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          24,
+          24
+        ]
+      ],
+      "line_sha256": "48826b0934b541988544d6617bc696394597bef912215493a0b7ba616ae161bb",
+      "source_witness_pages": [
+        4
+      ],
+      "source_order": 20,
+      "printed_crosses": 1,
+      "ink": "black-with-red-initials-or-signs",
+      "native_source_block": "qui-pridie"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.hoc-est-enim",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          25,
+          25
+        ]
+      ],
+      "line_sha256": "c82c05b971fbc110eeae2d4999516d1567c514b3de6173273141cc00271ef250",
+      "source_witness_pages": [
+        4
+      ],
+      "source_order": 21,
+      "printed_crosses": 0,
+      "ink": "black-with-red-initials-or-signs",
+      "native_source_block": "hoc-est-enim"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.simili-modo",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          26,
+          26
+        ]
+      ],
+      "line_sha256": "b6010a89a3843ab911318d802a2c829ea6706bebf32b12f3f5d53109d73c4729",
+      "source_witness_pages": [
+        4
+      ],
+      "source_order": 22,
+      "printed_crosses": 1,
+      "ink": "black-with-red-initials-or-signs",
+      "native_source_block": "simili-modo"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.hic-est-enim",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          27,
+          27
+        ]
+      ],
+      "line_sha256": "22723417d94257618f85d6a71cb6c146e51c5e8c26fb97cf38198bfd04e06e98",
+      "source_witness_pages": [
+        5
+      ],
+      "source_order": 23,
+      "printed_crosses": 0,
+      "ink": "black-with-red-initials-or-signs",
+      "native_source_block": "hic-est-enim"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.haec-quotiescumque",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          28,
+          28
+        ]
+      ],
+      "line_sha256": "3351c1958557a5d7b4517ac7e8b83a4a9a8a9f5b512dd8acd61189020a508896",
+      "source_witness_pages": [
+        5
+      ],
+      "source_order": 24,
+      "printed_crosses": 0,
+      "ink": "black-with-red-initials-or-signs",
+      "native_source_block": "haec-quotiescumque"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.unde-et-memores",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          29,
+          29
+        ]
+      ],
+      "line_sha256": "b24642667204e9ae95fef417dc348c6d8234e85fcf6f896dbf103d279a59862d",
+      "source_witness_pages": [
+        5
+      ],
+      "source_order": 25,
+      "printed_crosses": 5,
+      "ink": "black-with-red-initials-or-signs",
+      "native_source_block": "unde-et-memores"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.supra-quae",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          30,
+          30
+        ]
+      ],
+      "line_sha256": "2e6fa1fd1b1290ec182783584d2978dc45e4cd398dc0107d36c12fa7f7e85113",
+      "source_witness_pages": [
+        5,
+        6
+      ],
+      "source_order": 26,
+      "printed_crosses": 0,
+      "ink": "black-with-red-initials-or-signs",
+      "native_source_block": "supra-quae"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.supplices",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          31,
+          31
+        ]
+      ],
+      "line_sha256": "669b75eae3c05e1f9d405dfee003d8307a10c83e2a4215627ef9c416558fefba",
+      "source_witness_pages": [
+        6
+      ],
+      "source_order": 27,
+      "printed_crosses": 3,
+      "ink": "black-with-red-initials-or-signs",
+      "native_source_block": "supplices"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.memento-defunctorum",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          32,
+          32
+        ]
+      ],
+      "line_sha256": "09aa679ffc498a470798a4d31b10812194be6e0df2fcbda0f382b944d6ecfc6a",
+      "source_witness_pages": [
+        6
+      ],
+      "source_order": 28,
+      "printed_crosses": 0,
+      "ink": "black-with-red-initials-or-signs",
+      "native_source_block": "memento-defunctorum"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.ipsis-domine",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          33,
+          33
+        ]
+      ],
+      "line_sha256": "706441591b6eada9b4ecbbd214bcf49284fa15c2113d40456bf6fc40079c411c",
+      "source_witness_pages": [
+        6,
+        7
+      ],
+      "source_order": 29,
+      "printed_crosses": 0,
+      "ink": "black-with-red-initials-or-signs",
+      "native_source_block": "ipsis-domine"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.nobis-quoque",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          34,
+          34
+        ]
+      ],
+      "line_sha256": "58046f5585bc5cd7f2b7356d4abc6c58f5697063db412792756ccb940efca5c2",
+      "source_witness_pages": [
+        7
+      ],
+      "source_order": 30,
+      "printed_crosses": 0,
+      "ink": "black-with-red-initials-or-signs",
+      "native_source_block": "nobis-quoque"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.intra-quorum",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          35,
+          35
+        ]
+      ],
+      "line_sha256": "8db728c01e577489856e097939738729956b1aa7e6eb6a685bd5ccb2f91e866f",
+      "source_witness_pages": [
+        7
+      ],
+      "source_order": 31,
+      "printed_crosses": 0,
+      "ink": "black-with-red-initials-or-signs",
+      "native_source_block": "intra-quorum"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.per-quem",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          36,
+          36
+        ]
+      ],
+      "line_sha256": "b9cdab6a1f5078dd0a0f4a2dc987b3491024c213c9d06c3f859d1b74eb6b1366",
+      "source_witness_pages": [
+        7,
+        8
+      ],
+      "source_order": 32,
+      "printed_crosses": 3,
+      "ink": "black-with-red-initials-or-signs",
+      "native_source_block": "per-quem"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.per-ipsum",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          37,
+          37
+        ]
+      ],
+      "line_sha256": "98284832f02f70f21c494b9e7a69106abadcf43d93d62051f042d62c6ea0a73e",
+      "source_witness_pages": [
+        8
+      ],
+      "source_order": 33,
+      "printed_crosses": 5,
+      "ink": "black-with-red-initials-or-signs",
+      "native_source_block": "per-ipsum"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.omnis-honor",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          38,
+          38
+        ]
+      ],
+      "line_sha256": "a9e85c4f0865103402aa331f490509102c5ac60cd01f2d46280c920f4aac8d0d",
+      "source_witness_pages": [
+        8
+      ],
+      "source_order": 34,
+      "printed_crosses": 0,
+      "ink": "black-with-red-initials-or-signs",
+      "native_source_block": "omnis-honor"
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.per-omnia-amen",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-checked-latin-ffa3e1be",
+      "physical_line_ranges": [
+        [
+          39,
+          39
+        ]
+      ],
+      "line_sha256": "41e9c77bf7bda91734587f42d4b902e982d1cd7061caae66f5f1b2ab1450e9ff",
+      "source_witness_pages": [
+        8
+      ],
+      "source_order": 35,
+      "printed_crosses": 0,
+      "ink": "black-with-red-initials-or-signs",
+      "native_source_block": "per-omnia-amen"
+    }
+  ]
+}

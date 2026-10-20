@@ -28,8 +28,8 @@
       "title": "Missale ad usum Sacri Ordinis Cisterciensis (Paris, 1606)",
       "url": "https://www.digitale-sammlungen.de/en/view/bsb10496382",
       "kind": "primary-book",
-      "inspection": "BSB 2 Liturg. 205 a, bsb 10496382: title canvas 1; Annotanda canvases 27–28; printed pp. 180–181, canvases 234–235; Good Friday p. 107, canvas 157; Easter p. 117, canvas 169. Holy Saturday printed pp. 114–115, canvases 166–167. Pentecost sequence printed pp. 149–150, canvases 201–202, visually compared with 1657 pp. 264–265; Canon Memento printed pp. 190–191, canvases 244–245, compared with 1487 canvas 225.",
-      "checked_on": "2026-10-17",
+      "inspection": "BSB 2 Liturg. 205 a, bsb 10496382: title canvas 1; Annotanda canvases 27–28; printed pp. 180–181, canvases 234–235; Good Friday p. 107, canvas 157; Easter p. 117, canvas 169. Holy Saturday printed pp. 114–115, canvases 166–167. Pentecost sequence printed pp. 149–150, canvases 201–202, visually compared with 1657 pp. 264–265; Canon Memento printed pp. 190–191, canvases 244–245, compared with 1487 canvas 225. On 2026-10-20 the complete strict Canon constituent was independently image-collated from CANON MISSÆ / Te igitur through the final Per omnia / Amen before Oremus and Pater noster: printed sequence 190–197, BSB canvases 244–251, provider PDF 245–252. The fourth page is misnumbered 192. Its five seasonal Communicantes forms, Easter/Pentecost Hanc igitur and intervening rubrics remain in source order. The separate complete offertory and Canon constituents do not constitute a complete Ordinary or Missal.",
+      "checked_on": "2026-10-20",
       "status": "inspected",
       "limitations": "Selected pages inspected; no complete-book collation."
     },
@@ -38,8 +38,8 @@
       "title": "Missale Cisterciense iuxta Romani recogniti correctionem (Paris, 1657)",
       "url": "https://digital.fides.org.pl/dlibra/publication/3978/edition/3755/content",
       "kind": "primary-book",
-      "inspection": "FIDES 3755: page-file 0005 title; 0007–0008 Vaussin mandate; 0009 Monitum; 0045 Ritus celebrandi; 0231 printed p. 169; 0234–0236 printed pp. 172–174; 0230 Holy Saturday p. 168; 0350 printed p. 284. Holy Saturday p. 168 specifically compared against 1606 p. 115. First Sunday after Pentecost printed pp. 264–265, page-files 0330–0331, visually compared with 1606 pp. 149–150.",
-      "checked_on": "2026-10-17",
+      "inspection": "FIDES 3755: page-file 0005 title; 0007–0008 Vaussin mandate; 0009 Monitum; 0045 Ritus celebrandi; 0231 printed p. 169; 0234–0236 printed pp. 172–174; 0230 Holy Saturday p. 168; 0350 printed p. 284. Holy Saturday p. 168 specifically compared against 1606 p. 115. First Sunday after Pentecost printed pp. 264–265, page-files 0330–0331, visually compared with 1606 pp. 149–150. On 2026-10-20 the complete declared Canon constituent was independently collated: five Communicantes and two Hanc igitur proper forms with their heading and usage cues on printed 176, 177, 181, 183, 184; title/crucifix FIDES 0263–0264; main Canon printed 203–213, FIDES 0265–0275, ending after Amen/Iungit manus before Oremus/Pater. A separate full preface census covers printed 175–200 and excludes all other preface text. Forty original native DjVu pages 237–276 and the index retain source/context evidence; the selected facsimile has 18 pages. These 52 units and the separate offertory are complete declared constituents, not a complete Ordinary or Missal.",
+      "checked_on": "2026-10-20",
       "status": "inspected",
       "limitations": "Selected pages inspected; no complete-book collation."
     },
@@ -150,11 +150,19 @@
           "source_id": "cistercian-1606-1657-1606-book",
           "locus": "Printed p. 181, BSB canvas 235",
           "claim": "Complete bounded offertory constituent independently collated, including all intervening rubrics and response cues. The literal binding and extent census remain separate from partial whole-book text coverage."
+        },
+        {
+          "source_id": "cistercian-1606-1657-1606-book",
+          "locus": "Canon printed sequence 190–197 (fourth page misnumbered 192); BSB canvases 244–251; provider PDF 245–252",
+          "claim": "Complete declared Canon constituent independently collated in 35 ordered units, including five seasonal Communicantes forms, Easter/Pentecost Hanc igitur and rubrics; excludes the following Oremus and Pater noster. Whole-book coverage remains partial."
         }
       ],
       "limitations": "This is already a revised state, not a proxy for all medieval Cistercian practice. The exact 1606 witness has now been split from the earlier broad printed-witness cluster. No claim that every decree of 1601 or 1605 was fully received locally.",
       "reception": "The book identifies itself as for the Cistercian Order and invokes chapter authority; no monastery-by-monastery reception census has been made.",
-      "text_binding": "native-book:cistercian-1606-offertory"
+      "text_bindings": [
+        "native-book:cistercian-1606-offertory",
+        "native-book:cistercian-1606-canon"
+      ]
     },
     {
       "tradition_id": "cistercian",
@@ -201,11 +209,19 @@
           "source_id": "cistercian-1606-1657-1657-book",
           "locus": "Printed pp. 172–174, FIDES page-files 0234–0236",
           "claim": "Complete bounded offertory constituent independently collated, including all intervening rubrics and response cues. The literal binding and extent census remain separate from partial whole-book text coverage."
+        },
+        {
+          "source_id": "cistercian-1606-1657-1657-book",
+          "locus": "Proper forms: printed 176, 177, 181, 183, 184 (full preface census 175–200); title/crucifix FIDES 0263–0264; main Canon printed 203–213, FIDES 0265–0275",
+          "claim": "Complete declared Canon constituent independently collated in 52 ordered units: 19 prefatory heading/prayer/rubric units and 33 title/main units. The final Amen and Iungit manus precede excluded Oremus/Pater; other preface text is excluded. Different placement of seasonal forms does not establish their abolition, and whole-book coverage remains partial."
         }
       ],
       "limitations": "The 1651 commission, 1655 mandate, and 1657 publication are distinct dates. The inspected 1655 instrument is not a universal effective-date decree. The Monitum historical catalogue of earlier defects must not all be assigned specifically to 1606.",
       "reception": "The Cistercian superior authorizes the edition and printing monopoly; this is evidence of intended order use, not uniform local implementation.",
-      "text_binding": "native-book:cistercian-1657-offertory"
+      "text_bindings": [
+        "native-book:cistercian-1657-offertory",
+        "native-book:cistercian-1657-canon"
+      ]
     }
   ],
   "transitions": [
@@ -380,12 +396,13 @@
           "claim": "The 1651 chapter ordered renewed revision; the editor claims a closer Roman form but retains differences in the graduals."
         }
       ],
-      "limitations": "Text-collated applies to three complete prayer units, their local rubrics, and the Holy Saturday ending on the identified pages. The Holy Saturday quotations are bounded excerpts, not complete service transcriptions. Wider calendar, lectionary, and chant changes have primary-description evidence and have not been exhaustively collated. This is an institutional Cistercian revision relation, not proof that the 1657 typesetter directly copied this particular 1606 edition. All six complete prayer bodies have passed independent image review; one printed accent was corrected. The Holy Saturday rubrics remain a separate bounded review. A further bounded example directly compares 1606 Second Sunday and 1657 First Sunday after Pentecost: numbering and Gospel change, while the identified epistle and chant units are retained. These are descriptive incipits and appointments, not complete literal transcriptions of the propers. This supports one instance of the Monitum claim without verifying all Sundays or comparing every chant against a Roman exemplar.",
+      "limitations": "Text-collated applies to three complete prayer units, their local rubrics, and the Holy Saturday ending on the identified pages. The Holy Saturday quotations are bounded excerpts, not complete service transcriptions. Wider calendar, lectionary, and chant changes have primary-description evidence and have not been exhaustively collated. This is an institutional Cistercian revision relation, not proof that the 1657 typesetter directly copied this particular 1606 edition. All six complete prayer bodies have passed independent image review; one printed accent was corrected. The Holy Saturday rubrics remain a separate bounded review. A further bounded example directly compares 1606 Second Sunday and 1657 First Sunday after Pentecost: numbering and Gospel change, while the identified epistle and chant units are retained. These are descriptive incipits and appointments, not complete literal transcriptions of the propers. This supports one instance of the Monitum claim without verifying all Sundays or comparing every chant against a Roman exemplar. A separate full declared-constituent Canon comparison now supplies both source-ordered readings, including the identified seasonal forms printed within the 1606 Canon and before the 1657 main Canon. That placement difference does not establish liturgical abolition. This added comparison does not itself establish a substantive Canon revision or identify the exact native predecessor state; both Canon snapshots remain parentless and materialize their own text.",
       "comparison_ids": [
         "cistercian-1606-1657-confiteor",
         "cistercian-1606-1657-suscipe-trinitas",
         "cistercian-1606-1657-orate-response",
-        "cistercian-1606-1657-offertory-constituents"
+        "cistercian-1606-1657-offertory-constituents",
+        "cistercian-1606-1657-canon-constituents"
       ],
       "historical_parentage": "attributed"
     }

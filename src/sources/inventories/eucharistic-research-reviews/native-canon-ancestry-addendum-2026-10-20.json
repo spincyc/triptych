@@ -1,0 +1,380 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "native-canon-ancestry-addendum-2026-10-20",
+  "title": "Separate ancestry scope review for the 1606 strict Canon and 1657 Canon with prefatory proper forms",
+  "lane": "strict-native-canon-ancestry",
+  "side": "western",
+  "checked_on": "2026-10-20",
+  "target_inventory": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
+  "coverage_rows": [
+    "roman",
+    "cistercian"
+  ],
+  "integration_status": "independently-reviewed-exact-scope-addendum",
+  "semantics": "This addendum adds two independently complete declared Canon constituents and reviews all fifteen newly introduced unordered pairs. The 1606 constituent contains its strict body and locally printed seasonal forms. The 1657 constituent combines nineteen ordered proper-form heading, prayer and rubric units from preceding preface pages 176, 177, 181, 183 and 184 with its title and Crucifixion context and Canon body on pages 203–213; its complete preface census covers pages 175–200. The 1657 constituent is discontiguous and is not limited to the strict body span. It does not inherit the earlier offertory verdict or change the independently established Mozarabic republication parent. Institutional revision and Roman Canon reception are positive historical findings; exact native predecessor states remain unestablished.",
+  "review_files": {
+    "baseline_seven_version_review_sha256": "e7e4f61b9cf3f2dc977c94f92daaa5f3510a093d6f4ae8a3d1a4afb2576334ff",
+    "independent_canon_source_policy_review_sha256": "fbea0835ef0be419b15e4017b06796b1c7fa0fb0c710ba351645be0a014ea90f",
+    "five_page_primary_source_check_sha256": "b981f788ce7a1014841c6918446aef717185644c31ac267fb6fca913fcd6b87e",
+    "independent_frozen_1657_scope_check_sha256": "97d78bf2215cb492b1f20069606dd72884a3d026cef920c4c636aab205cd0081",
+    "storage": "Exact original editorial images and new Canon source/extent/collation records are retained in their canonical owners; the review hashes pin independent scrutiny."
+  },
+  "uses": [
+    {
+      "id": "strict-canon-new-pairs",
+      "disposition": "No new native Git parent authorization; retain directed Roman reception and institutional revision continuity as positive contextual history."
+    }
+  ],
+  "searches": [],
+  "acquisitions": [],
+  "versions": [
+    {
+      "id": "cistercian-1606-canon",
+      "binding_path": "src/sources/inventories/eucharistic-books/cistercian-1606-canon.json",
+      "binding_sha256": "78aacfe63bc9e2306147439eb89c5f2ff5db136b6a6c102c04f8aacff7210a69",
+      "extent_path": "src/sources/inventories/eucharistic-books/support/cistercian-1606-canon-extent.json",
+      "extent_sha256": "4293f83ddae07116998c8066dfaef881f4eb8844a597067d3be8d4617bc36dbc",
+      "collation_path": "src/sources/inventories/eucharistic-books/support/cistercian-1606-canon-review.json",
+      "collation_sha256": "ddc36edaf33ce024b466245ac08c9941406401148283b66b95f7624714cb437a",
+      "scope": "Complete strict Eucharistic Canon constituent of the Paris 1606 Cistercian missal: from the printed CANON MISSÆ. heading and Te igitur on printed p.190, BSB canvas244/full-provider-PDF 245, through Per ómnia sǽcula sæculórum. Amen. on printed p.197 left, canvas251/PDF252, immediately before Orémus/Præcéptis/Pater noster. All five printed seasonal Communicantes insertions and the Pascha/Pentecost Hanc igitur insertion, their rubrics, continuation signs, name cues and 26 crosses are included in source order. The fourth page in this sequence is BSB-labelled193 but actually misprinted 192. The later Ordinary under the same Canon Missæ running head is explicitly outside this strict Canon. Whole-book and complete-Ordinary coverage remain partial; this constituent is independent of the unchanged accepted offertory and inherits no wording from another edition.",
+      "native_units": 35,
+      "catalogue_witness_ids": [
+        "western:cistercian-1606"
+      ],
+      "components": [
+        "ordinary",
+        "rubrics"
+      ],
+      "excluded_book_divisions": [
+        "All preceding preparations, Creed, offertory, prefaces and the illustration/preceding material on printed p.189",
+        "Printed p.197 below the final Canon Amen: Orémus, Præcéptis salutáribus and beginning of Pater noster; all of p.197 right column",
+        "Later Ordinary, Communion, closing prayers and the appended Suffragium on printed pp.198–200, despite their Canon Missæ running head",
+        "Sanctorale beginning printed p.201, calendar, propers, lectionary and every other book division",
+        "Running-head repetitions, foliation, catchwords, ornament, ink colour, page geometry and chant notation; sung words inside the bounds are retained"
+      ],
+      "recommended_parents": [],
+      "whole_book_complete": false,
+      "extent_review_status": "verified"
+    },
+    {
+      "id": "cistercian-1657-canon",
+      "binding_path": "src/sources/inventories/eucharistic-books/cistercian-1657-canon.json",
+      "binding_sha256": "bd694b265fcdbcbe6b5b035fe689b0c290b25bdcac8d1c033e465208c5dca31b",
+      "extent_path": "src/sources/inventories/eucharistic-books/support/cistercian-1657-canon-extent.json",
+      "extent_sha256": "39a6003303bbc2b2f89bbd50ab4d20a5430aec8f306c0c134a4fdc8af8e9d641",
+      "collation_path": "src/sources/inventories/eucharistic-books/support/cistercian-1657-canon-review.json",
+      "collation_sha256": "06cdeef2b7b05a682be59426e1bd95818c42929e00604550e79eb25f13908607",
+      "scope": "Complete declared Canon constituent: the five proper Communicantes paragraphs and two separately printed proper Hanc igitur paragraphs, their five Infra actionem headings, five governing usage rubrics and two Sequitur cues selected from the fully inspected preface section printed pp. 175–200; then the standalone CANON MISSÆ title (FIDES 0263), facing Crucifixion (0264), and all text under the body CANON MISSÆ heading on printed p. 203 through the final sung Per ómnia sæcula sæculórum, ℟. Amen. and adjacent Iungit manus on p. 213, stopping before Orémus. The proper forms occur on printed pp. 176, 177, 181, 183 and 184 and precede the main Canon in original source order. Every intervening preface text outside these selected blocks is excluded. The final cutoff is the stated Canon-proper boundary; the book continues the Canon Missæ running head over the following Pater. This is a complete declared constituent and partial whole-book coverage.",
+      "native_units": 52,
+      "catalogue_witness_ids": [
+        "western:cistercian-1657"
+      ],
+      "components": [
+        "ordinary",
+        "rubrics"
+      ],
+      "excluded_book_divisions": [
+        "All front matter, calendar, general rubrics and earlier Ordo Missæ outside the named Canon selection",
+        "All preface chants, preface bodies and preface rubrics except the five named Infra actionem headings, seven proper Canon paragraphs, five governing usage rubrics and two Sequitur cues on printed pp. 176, 177, 181, 183 and 184",
+        "The Orémus/Pater introduction beginning on printed p. 213 and all subsequent material, including pages still bearing the running head Canon Missæ",
+        "The entire Temporale, Sanctorale, Commons, votive and other proper formularies and all other book divisions outside the declared constituent"
+      ],
+      "recommended_parents": [],
+      "whole_book_complete": false,
+      "extent_review_status": "verified"
+    }
+  ],
+  "counts": {
+    "baseline_versions": 7,
+    "baseline_native_units": 76,
+    "new_versions": 2,
+    "new_native_units": 87,
+    "combined_versions": 9,
+    "combined_native_units": 163,
+    "new_pairs_reviewed": 15,
+    "combined_unordered_pairs_reviewed": 36,
+    "new_native_parents_recommended": 0,
+    "combined_republication_parents_recommended": 1,
+    "whole_books": 0
+  },
+  "pair_matrix": [
+    {
+      "versions": [
+        "roman-1570-canon-missae",
+        "cistercian-1606-canon"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "scope_reviewed_separately_from_offertory": true,
+      "positive_evidence": "Directed reception and deliberate conformity of the Cistercian Canon to a Roman Missal/Canon model are expressly established. A textual-state reception relation could be positive if the represented Roman endpoint were independently identified as that model's Canon state; a physical setting copy would not be necessary.",
+      "contrary_evidence_and_limits": "The inspected statement names the Roman Missal, not the 1570 edition or a uniquely identified 1570 Canon state. The 1606 publication follows the 1604 Roman revision, so date and the Pius V label do not choose the 1570 printing. No independent state-equivalence proof spanning the relevant Roman editions and the whole declared constituent was supplied or performed in this lane.",
+      "disposition": "Do not authorize this exact edition parent on these pages alone. Record an established directed Roman Canon reception/conformity relation at the identified tradition or normative-state scope, with the exact Roman edition unresolved.",
+      "what_would_change": "Identify the exact Roman edition or independently establish the adopted normative Canon state, including the relevant seasonal formulas and rubrics; prove that the held 1570 endpoint represents that state. A physical donor copy is unnecessary. Shared fixed prayer wording alone cannot choose the exact edition. The native constituents have distinct admitted seasonal/rubrical scopes, which must be aligned."
+    },
+    {
+      "versions": [
+        "roman-1570-canon-missae",
+        "cistercian-1657-canon"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "scope_reviewed_separately_from_offertory": true,
+      "positive_evidence": "The 1657 edition explicitly continues Romanization and claims a form much nearer to Rome; it therefore belongs to a positively documented reception and correction history, not an unrelated same-text root in the historical narrative.",
+      "contrary_evidence_and_limits": "Romano exemplari occurs in the comparison with the recently published Breviary, not as a direct identification of the Missal Canon's exemplar. Archetypo Romano specifically modifies the Sunday Mass sequence in the later list. Neither phrase identifies the 1570 edition, and neither should be detached from its grammatical scope and treated as a declaration naming the complete Canon's exact donor. No inspected sentence uniquely identifies a 1570 Canon state as the complete native constituent's parent.",
+      "disposition": "Do not authorize this exact edition parent on these pages alone. Preserve documented Roman reception and the distinction between model tradition, editorial standard and exact edition/state parent.",
+      "what_would_change": "Identify the exact Roman edition or independently establish the adopted normative Canon state, including the relevant seasonal formulas and rubrics; prove that the held 1570 endpoint represents that state. A physical donor copy is unnecessary. Shared fixed prayer wording alone cannot choose the exact edition. The native constituents have distinct admitted seasonal/rubrical scopes, which must be aligned."
+    },
+    {
+      "versions": [
+        "tuki-1736-arabic-creed",
+        "cistercian-1606-canon"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "scope_reviewed_separately_from_offertory": true,
+      "positive_evidence": "Each endpoint supplies an independently complete declared constituent with its own exact edition, extent and collation receipt.",
+      "contrary_evidence_and_limits": "The present endpoints cover different liturgical functions or textual constituents; no inspected pair-specific source connects those entire extents.",
+      "disposition": "No native parent recommendation at these declared scopes. This is bounded non-establishment, not a claim that the books lack reception or revision history.",
+      "what_would_change": "Acquire matching independently complete components for the exact editions and establish a scoped revision, republication or donor-recipient state relation through primary documentation or independently diagnostic genetic evidence. Chronology, a shared order label or general Romanization cannot bridge the current scope difference."
+    },
+    {
+      "versions": [
+        "tuki-1736-arabic-creed",
+        "cistercian-1657-canon"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "scope_reviewed_separately_from_offertory": true,
+      "positive_evidence": "Each endpoint supplies an independently complete declared constituent with its own exact edition, extent and collation receipt.",
+      "contrary_evidence_and_limits": "The present endpoints cover different liturgical functions or textual constituents; no inspected pair-specific source connects those entire extents.",
+      "disposition": "No native parent recommendation at these declared scopes. This is bounded non-establishment, not a claim that the books lack reception or revision history.",
+      "what_would_change": "Acquire matching independently complete components for the exact editions and establish a scoped revision, republication or donor-recipient state relation through primary documentation or independently diagnostic genetic evidence. Chronology, a shared order label or general Romanization cannot bridge the current scope difference."
+    },
+    {
+      "versions": [
+        "mozarabic-1500-benedictio-panis",
+        "cistercian-1606-canon"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "scope_reviewed_separately_from_offertory": true,
+      "positive_evidence": "Each endpoint supplies an independently complete declared constituent with its own exact edition, extent and collation receipt.",
+      "contrary_evidence_and_limits": "The present endpoints cover different liturgical functions or textual constituents; no inspected pair-specific source connects those entire extents.",
+      "disposition": "No native parent recommendation at these declared scopes. This is bounded non-establishment, not a claim that the books lack reception or revision history.",
+      "what_would_change": "Acquire matching independently complete components for the exact editions and establish a scoped revision, republication or donor-recipient state relation through primary documentation or independently diagnostic genetic evidence. Chronology, a shared order label or general Romanization cannot bridge the current scope difference."
+    },
+    {
+      "versions": [
+        "mozarabic-1500-benedictio-panis",
+        "cistercian-1657-canon"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "scope_reviewed_separately_from_offertory": true,
+      "positive_evidence": "Each endpoint supplies an independently complete declared constituent with its own exact edition, extent and collation receipt.",
+      "contrary_evidence_and_limits": "The present endpoints cover different liturgical functions or textual constituents; no inspected pair-specific source connects those entire extents.",
+      "disposition": "No native parent recommendation at these declared scopes. This is bounded non-establishment, not a claim that the books lack reception or revision history.",
+      "what_would_change": "Acquire matching independently complete components for the exact editions and establish a scoped revision, republication or donor-recipient state relation through primary documentation or independently diagnostic genetic evidence. Chronology, a shared order label or general Romanization cannot bridge the current scope difference."
+    },
+    {
+      "versions": [
+        "mozarabic-1755-benedictio-panis",
+        "cistercian-1606-canon"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "scope_reviewed_separately_from_offertory": true,
+      "positive_evidence": "Each endpoint supplies an independently complete declared constituent with its own exact edition, extent and collation receipt.",
+      "contrary_evidence_and_limits": "The present endpoints cover different liturgical functions or textual constituents; no inspected pair-specific source connects those entire extents.",
+      "disposition": "No native parent recommendation at these declared scopes. This is bounded non-establishment, not a claim that the books lack reception or revision history.",
+      "what_would_change": "Acquire matching independently complete components for the exact editions and establish a scoped revision, republication or donor-recipient state relation through primary documentation or independently diagnostic genetic evidence. Chronology, a shared order label or general Romanization cannot bridge the current scope difference."
+    },
+    {
+      "versions": [
+        "mozarabic-1755-benedictio-panis",
+        "cistercian-1657-canon"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "scope_reviewed_separately_from_offertory": true,
+      "positive_evidence": "Each endpoint supplies an independently complete declared constituent with its own exact edition, extent and collation receipt.",
+      "contrary_evidence_and_limits": "The present endpoints cover different liturgical functions or textual constituents; no inspected pair-specific source connects those entire extents.",
+      "disposition": "No native parent recommendation at these declared scopes. This is bounded non-establishment, not a claim that the books lack reception or revision history.",
+      "what_would_change": "Acquire matching independently complete components for the exact editions and establish a scoped revision, republication or donor-recipient state relation through primary documentation or independently diagnostic genetic evidence. Chronology, a shared order label or general Romanization cannot bridge the current scope difference."
+    },
+    {
+      "versions": [
+        "mozarabic-1804-benedictio-panis",
+        "cistercian-1606-canon"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "scope_reviewed_separately_from_offertory": true,
+      "positive_evidence": "Each endpoint supplies an independently complete declared constituent with its own exact edition, extent and collation receipt.",
+      "contrary_evidence_and_limits": "The present endpoints cover different liturgical functions or textual constituents; no inspected pair-specific source connects those entire extents.",
+      "disposition": "No native parent recommendation at these declared scopes. This is bounded non-establishment, not a claim that the books lack reception or revision history.",
+      "what_would_change": "Acquire matching independently complete components for the exact editions and establish a scoped revision, republication or donor-recipient state relation through primary documentation or independently diagnostic genetic evidence. Chronology, a shared order label or general Romanization cannot bridge the current scope difference."
+    },
+    {
+      "versions": [
+        "mozarabic-1804-benedictio-panis",
+        "cistercian-1657-canon"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "scope_reviewed_separately_from_offertory": true,
+      "positive_evidence": "Each endpoint supplies an independently complete declared constituent with its own exact edition, extent and collation receipt.",
+      "contrary_evidence_and_limits": "The present endpoints cover different liturgical functions or textual constituents; no inspected pair-specific source connects those entire extents.",
+      "disposition": "No native parent recommendation at these declared scopes. This is bounded non-establishment, not a claim that the books lack reception or revision history.",
+      "what_would_change": "Acquire matching independently complete components for the exact editions and establish a scoped revision, republication or donor-recipient state relation through primary documentation or independently diagnostic genetic evidence. Chronology, a shared order label or general Romanization cannot bridge the current scope difference."
+    },
+    {
+      "versions": [
+        "cistercian-1606-offertory",
+        "cistercian-1606-canon"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "scope_reviewed_separately_from_offertory": true,
+      "positive_evidence": "These are independently complete complementary constituents of the same identified printing and publication event.",
+      "contrary_evidence_and_limits": "An offertory and the separately declared Canon constituent are different components of that one edition; they do not form a temporal version succession. Shared edition identity is source context, not a parent between constituents.",
+      "disposition": "Keep separate native roots; no temporal parent from one component to the other.",
+      "what_would_change": "A separately identified source-to-recipient textual relation within matching complete components would be a new claim with its own scope. Merely adding another constituent of the same edition does not turn either component into a revision of the other."
+    },
+    {
+      "versions": [
+        "cistercian-1606-offertory",
+        "cistercian-1657-canon"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "scope_reviewed_separately_from_offertory": true,
+      "positive_evidence": "Each endpoint supplies an independently complete declared constituent with its own exact edition, extent and collation receipt.",
+      "contrary_evidence_and_limits": "The present endpoints cover different liturgical functions or textual constituents; no inspected pair-specific source connects those entire extents.",
+      "disposition": "No native parent recommendation at these declared scopes. This is bounded non-establishment, not a claim that the books lack reception or revision history.",
+      "what_would_change": "Acquire matching independently complete components for the exact editions and establish a scoped revision, republication or donor-recipient state relation through primary documentation or independently diagnostic genetic evidence. Chronology, a shared order label or general Romanization cannot bridge the current scope difference."
+    },
+    {
+      "versions": [
+        "cistercian-1657-offertory",
+        "cistercian-1606-canon"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "scope_reviewed_separately_from_offertory": true,
+      "positive_evidence": "Each endpoint supplies an independently complete declared constituent with its own exact edition, extent and collation receipt.",
+      "contrary_evidence_and_limits": "The present endpoints cover different liturgical functions or textual constituents; no inspected pair-specific source connects those entire extents.",
+      "disposition": "No native parent recommendation at these declared scopes. This is bounded non-establishment, not a claim that the books lack reception or revision history.",
+      "what_would_change": "Acquire matching independently complete components for the exact editions and establish a scoped revision, republication or donor-recipient state relation through primary documentation or independently diagnostic genetic evidence. Chronology, a shared order label or general Romanization cannot bridge the current scope difference."
+    },
+    {
+      "versions": [
+        "cistercian-1657-offertory",
+        "cistercian-1657-canon"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "scope_reviewed_separately_from_offertory": true,
+      "positive_evidence": "These are independently complete complementary constituents of the same identified printing and publication event.",
+      "contrary_evidence_and_limits": "An offertory and the separately declared Canon constituent are different components of that one edition; they do not form a temporal version succession. Shared edition identity is source context, not a parent between constituents.",
+      "disposition": "Keep separate native roots; no temporal parent from one component to the other.",
+      "what_would_change": "A separately identified source-to-recipient textual relation within matching complete components would be a new claim with its own scope. Merely adding another constituent of the same edition does not turn either component into a revision of the other."
+    },
+    {
+      "versions": [
+        "cistercian-1606-canon",
+        "cistercian-1657-canon"
+      ],
+      "native_git_parent_recommended": false,
+      "missing_receipt_used_as_negative_evidence": false,
+      "scope_reviewed_separately_from_offertory": true,
+      "positive_evidence": "The later book describes renewed correction of the Order's existing Missal under the same institutional Roman-conformity program initiated in 1601 and continued by later chapters. This is genuine institutional revision continuity, substantially stronger than shared prayers, date order or a generic Order label. It can support an attributed stage-level revision relation and a revision narrative now.",
+      "contrary_evidence_and_limits": "The 1606 printing is an embodiment of the 1601/1605 program, but the 1657 statements do not uniquely identify its exact textual state as the predecessor being corrected. The 1606 Annotanda names 1601 and 1605; the 1657 Monitum names 1601 and TWO subsequent chapters. Their relationship cannot be silently reduced to the same pair of acts. The mandate also has an earlier multi-book publication/privilege sequence. Those facts leave possible intermediate editorial states or printings open; they do not prove that such a distinct intermediate Missal existed.",
+      "disposition": "Retain the exact native edge as unestablished pending a documentary or independently reviewed textual-state bridge. Do not describe the entire institutional relationship as unknown, and do not demand a physical typesetter donor as the missing evidence.",
+      "what_would_change": "Establish a documentary or independently reviewed textual-state bridge identifying the earlier authorized Missal state revised in 1651/1657 and the 1606 endpoint as that state. The schema must explicitly account for any unrepresented transition. No unique typesetter donor copy is required. Whole-scope collation corroborates the identified relation but cannot create historical direction by similarity alone."
+    }
+  ],
+  "primary_evidence": [
+    {
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.annotanda-first-page",
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/bsb-canvas-00027-5ffde528/1606-page-27.jpg",
+      "sha256": "5ffde528e466f4d95e21c58cdb9111b4331ed64408e3d083f1905b6c30a5bcdf",
+      "direct_reading": [
+        "The opening paragraph explicitly names the general chapters of 1601 and 1605 and says they sanctioned complete conformity with the Roman Church in the sacred Canon of the Mass, and conformity elsewhere insofar as the Order's proper use permits.",
+        "Missali Romano perspecto says the Roman Missal was examined or consulted. This is positive evidence of a Roman textual/normative model, not just parallel liturgical ancestry.",
+        "The page explains the insertion of proper Communicantes formulas and their rubrics into the Canon, with smaller type and star continuation signs, to reduce distracting page turning."
+      ]
+    },
+    {
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.annotanda-second-page",
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/bsb-canvas-00028-e9916c53/1606-page-28.jpg",
+      "sha256": "e9916c534684e3fe607f591e557f40df7ba6ee8d796e69bab22becc424a89d57",
+      "direct_reading": [
+        "The continuation explains seasonal Hanc igitur insertion and addresses the proper Communicantes/Hanc igitur for Corpus Christi and Maundy Thursday.",
+        "It relates elevation of the consecrated host and chalice to the norm of the Roman Church and distinguishes the remaining rites to be sought in the Order's book of usages.",
+        "The editorial program reaches Canon text, seasonal formulas, rubrics and ritual arrangement; it is not merely a change of imprint."
+      ]
+    },
+    {
+      "source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0007-jpeg-d111ceaa",
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0007-jpeg-d111ceaa/1657-page-0007.djvu.review.jpg",
+      "sha256": "d111ceaa842bb336b9090d3cbeda11f979ec44ac1cf81146ad1f35306126e232",
+      "direct_reading": [
+        "Vaussin's mandate describes uniform books of the Order and an earlier program to purge books of faults and errors through the named Paris printers.",
+        "The list includes multiple service-book genres, including missals; the document is not confined to one identified earlier Missal edition."
+      ]
+    },
+    {
+      "source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0008-jpeg-35e26c7c",
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0008-jpeg-35e26c7c/1657-page-0008.djvu.review.jpg",
+      "sha256": "35e26c7c0c30fe0b1aebf0d43ad532faa251ab89b80e689ce0bc1931b6338145",
+      "direct_reading": [
+        "The mandate says closer review found further correction necessary; the general chapter of May 1651 empowered three learned and experienced men to improve the previously mentioned books.",
+        "It renews an expiring ten-year privilege for the printers and is dated 3 July 1655. This provides an institutional correction sequence and possible intervening publication context, but does not identify a 1645 Missal or select 1606 as a textual exemplar."
+      ]
+    },
+    {
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.monitum",
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0009-jpeg-9f894b68/1657-page-0009.djvu.review.jpg",
+      "sha256": "9f894b687cb920b828b6696b9b17f60177d174f604fdf86290b5fbbf3b982119",
+      "direct_reading": [
+        "The Monitum explicitly connects the 1601 general chapter and two subsequent chapters with adoption of Roman rites and ceremonies, and describes defects in the former use.",
+        "It says the earlier decree had not yet removed all defects and that the chapter of 1651 ordered the Missal and other ecclesiastical books to be corrected again: iterum Missale cum ceteris Ecclesiasticis libris repurgaretur.",
+        "It presents this new edition as more accurately corrected and much nearer to the Roman form. The retention of graduals prevents complete imitation of Rome; further listed changes include calendars, rubrics and rites, the Sunday sequence, chant settings, the Common of Saints and other material.",
+        "Its opening reference to the constitution of Pius V concerns coherence between liturgy and choir office. It does not itself name a 1570 Missal printing as the Canon's donor."
+      ]
+    }
+  ],
+  "positive_historical_findings": [
+    "The 1606 Annotanda explicitly declares Roman Canon conformity under the 1601 and 1605 general chapters, with a Roman Missal consulted.",
+    "The 1657 Monitum and 1655 mandate explicitly document renewed correction of the Order’s existing Missal and service books within the continuing Roman-conformity program.",
+    "An exact edition or identifiable textual state can suffice for a native parent. A physical typesetter donor is not required."
+  ],
+  "source_grammar_limits": [
+    "In the 1657 Monitum, Romano exemplari describes the recently published Breviary analogy, not a direct identification of the strict Canon exemplar.",
+    "Archetypo Romano modifies the Sunday Mass sequence; it does not by itself identify the strict Canon donor.",
+    "The graduals exception is outside the strict Canon and cannot disprove possible Canon-state parentage."
+  ],
+  "declared_scope_adjustment": "The independent five-page historical source-policy review was frozen before the 1657 combined constituent was finalized. This addendum applies its exact-edition/state reasoning to the now frozen 52-unit combined scope, including nineteen prefatory proper-form units. The independent minimal scope check pins that enlarged declared extent; no absence of proper forms from the strict body is treated as a whole-constituent omission or ritual deletion.",
+  "what_would_support_positive_exact_parentage": [
+    "A chapter/editorial record identifying the earlier authorized Missal state as the basis for the 1651/1657 correction, combined with evidence that the 1606 native endpoint faithfully represents that predecessor state.",
+    "A critically reviewed edition history or editorial documentation establishing the relation of 1606 and any intervening authorized states, with the native edge explicitly accounting for any unrepresented transition allowed by its schema.",
+    "For a Roman parent, identification or independent verification of the particular normative Canon state adopted, including the applicable seasonal formulas and rubrics; a 1570 witness could represent that state if the equivalence and historical direction are actually established.",
+    "Independent complete-extent collation can corroborate a documented state relation and test variants, but identical prayers or a normalized text match alone cannot select the donor edition."
+  ],
+  "limits": [
+    "No historical introduction dates are inferred from the print dates.",
+    "The 1606 strict span contains five seasonal Communicantes forms and one shared Pascha/Pentecost Hanc igitur insertion. The 1657 combined constituent includes five Communicantes forms and two separately printed Hanc igitur forms from the preceding preface section, as well as its strict body. The different locations and shared-versus-separate settings do not themselves establish ritual abolition, introduction or exact textual descent.",
+    "Neither unequal unit counts nor equality under spelling normalization alone proves or disproves parentage.",
+    "The earlier ten-year printing privilege proves neither a particular intervening Missal nor the absence of one.",
+    "This source-ancestry addendum does not repeat complete literal collation; the exact independent native collation receipts own that judgment."
+  ],
+  "verification": {
+    "all_five_original_editorial_images_read_by_two_reviewers": true,
+    "new_binding_extent_and_collation_hashes_checked": true,
+    "exhaustive_new_pair_matrix_checked": true,
+    "independent_1657_discontiguous_scope_check_passed": true,
+    "whole_book_or_text_inheritance_claimed": false
+  }
+}

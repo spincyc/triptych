@@ -451,7 +451,7 @@
           visibleCount:nodes.length,totalCount:inLanes.filter(function (s) { return s.tradition_id===tradition.id; }).length};
         top+=height; return lane;
       });
-      const edges = [], corridors=[];
+      const edges = [], corridors=[], arcRows=new Map();
       transitions.forEach(function (transition) {
         if (!options.includeProvisional && transition.status !== 'documented') return;
         const fromNode=nodeById.get(transition.from_stage),toNode=nodeById.get(transition.to_stage);
@@ -475,8 +475,19 @@
         const parallel=hasCorridor ? 0 : edges.filter(function (edge) {
           return pairKey(edge.from,edge.to)===pairKey(transition.from_stage,transition.to_stage);
         }).length;
-        const lift=Math.min(from.y,to.y)-28-parallel*32;
-        const keyLabel=hasCorridor ? {x:gutter-5,y:(from.y+to.y)/2} : {x:(from.x+to.x)/2,y:fromNode && toNode && from.y===to.y ? from.y-3-parallel*24 : lift-5};
+        const sameRow=fromNode && toNode && from.y===to.y;
+        let arcTrack=parallel;
+        if (sameRow) {
+          const tracks=arcRows.get(from.y) || [];
+          const span={left:Math.min(from.x,to.x),right:Math.max(from.x,to.x)};
+          let track=tracks.findIndex(function (ranges) {
+            return ranges.every(function (r) { return span.right<r.left || span.left>r.right; });
+          });
+          if (track<0) { track=tracks.length; tracks.push([]); }
+          tracks[track].push(span); arcRows.set(from.y,tracks); arcTrack=track;
+        }
+        const lift=Math.min(from.y,to.y)-28-arcTrack*32;
+        const keyLabel=hasCorridor ? {x:gutter-5,y:(from.y+to.y)/2} : {x:(from.x+to.x)/2,y:sameRow ? from.y-3-arcTrack*24 : lift-5};
         const pairCount=pairCounts.get(pairKey(transition.from_stage,transition.to_stage)) || 1;
         const externalParallel=(!fromNode || !toNode) && from.x===to.x && pairCount>1;
         const side=from.x-x0>x1-from.x ? -1 : 1;
@@ -494,10 +505,20 @@
             if (available(middle-offset)) { keyLabel.y=middle-offset; break; }
           }
         }
+        // Include the cubic extremum, key knockout and a four-unit paint margin.
+        const arcBounds=sameRow ? {
+          left:Math.min(from.x,to.x,keyLabel.x-43)-4,
+          right:Math.max(from.x,to.x,keyLabel.x+3)+4,
+          top:Math.min(from.y*.25+lift*.75-4,keyLabel.y-16),bottom:from.y+4
+        } : null;
+        // Three overlapping arcs fit the existing eighty-unit row band. Deeper
+        // stacks need shared browser/print extent work; never silently clip them.
+        if (arcBounds && arcBounds.top<from.y-80)
+          throw Error('Chronology same-row arc tracks exceed the reserved row band: '+transitionKeys.get(transition.id));
         edges.push({id:transition.id,key:transitionKeys.get(transition.id),transition:transition,
           from:transition.from_stage,to:transition.to_stage,fromKey:stageKeys.get(transition.from_stage),toKey:stageKeys.get(transition.to_stage),
           fromStage:fromStage,toStage:toStage,fromPoint:{x:from.x,y:from.y},toPoint:{x:to.x,y:to.y},fromOutside:!fromNode,toOutside:!toNode,external:!fromNode || !toNode,
-          keyLabel:keyLabel,
+          keyLabel:keyLabel,arcTrack:sameRow ? arcTrack : null,arcBounds:arcBounds,
           path:fromNode && toNode && from.y!==to.y
             ? 'M '+from.x+' '+from.y+' V '+(from.y-clearance)+' H '+gutter+' V '+(to.y-clearance)+' H '+to.x+' V '+to.y
             : externalParallel
@@ -1942,6 +1963,16 @@
     return link;
   }
 
+  function sourceLibraryLink(link, row) {
+    const id=link.edition_id, label='Open edition in the Source Library';
+    if (typeof id!=='string' || id!==id.trim() || !/^edition\.[a-z0-9](?:[a-z0-9.-]*[a-z0-9])?$/.test(id) ||
+        id!==row.source_record.source_library_edition_id || link.url!=='../sources/#edition='+encodeURIComponent(id))
+      return T.el('span',null,label+' — link unavailable');
+    const anchor=T.el('a',null,label);
+    anchor.href=link.url;
+    return anchor;
+  }
+
   function historyURL(view, slice, hash) {
     const query = new URLSearchParams(window.location.search);
     query.set('view', view);
@@ -2013,9 +2044,10 @@
       sources.appendChild(item);
     });
     row.links.forEach(function (link) {
-      if (row.sources.some(function (source) { return source.url === link.url; })) return;
+      if (link.kind!=='source-library-edition' && row.sources.some(function (source) { return source.url === link.url; })) return;
       const item = T.el('li', null);
-      item.appendChild(catalogueLink(link.url, link.label || link.kind || link.url));
+      item.appendChild(link.kind==='source-library-edition' ? sourceLibraryLink(link,row)
+        : catalogueLink(link.url, link.label || link.kind || link.url));
       sources.appendChild(item);
     });
     if (!sources.childNodes.length) sources.appendChild(T.el('li', null, 'No source access link is recorded.'));
@@ -2365,12 +2397,37 @@
     host.appendChild(sources);
   }
 
-  function nativeTextValid(payload, stage) {
+  function nativeTextBindings(stage) {
+    const routed=function (row) {
+      if (!row || typeof row.text_binding!=='string') return false;
+      const id=row.text_binding.replace(/^native-book:/,'');
+      return /^[a-z0-9][a-z0-9-]*$/.test(id) && row.text_binding==='native-book:'+id &&
+        row.text_projection_path==='native-texts/'+id+'.json' && /^[0-9a-f]{64}$/.test(row.text_binding_sha256);
+    };
+    if (Object.hasOwn(stage,'text_bindings')) {
+      if (Object.hasOwn(stage,'text_binding') || stage.text_coverage!=='partial' ||
+          !Array.isArray(stage.text_bindings) || !stage.text_bindings.length ||
+          new Set(stage.text_bindings).size!==stage.text_bindings.length ||
+          !Array.isArray(stage.text_projections) || stage.text_projections.length!==stage.text_bindings.length ||
+          !stage.text_projections.every(function (row,index) {
+            return routed(row) && row.text_binding===stage.text_bindings[index] &&
+              typeof row.title==='string' && row.title.trim().length>0;
+          })) throw Error('invalid native text routing metadata');
+      return stage.text_projections;
+    }
+    if (Object.hasOwn(stage,'text_projections') || (Object.hasOwn(stage,'text_binding') && !routed(stage)))
+      throw Error('invalid native text routing metadata');
+    return stage.text_binding ? [stage] : [];
+  }
+
+  function nativeTextValid(payload, stage, binding) {
+    binding=binding || stage;
     const strings=function (items) { return Array.isArray(items) && items.every(function (s) { return typeof s==='string' && s.length>0; }); };
     const unique=function (items) { return strings(items) && new Set(items).size===items.length; };
     if (!payload || payload.schema!=='triptych-eucharistic-native-text/v1' ||
-        payload.adapter_id!==stage.text_binding || payload.adapter_id!=='native-book:'+payload.id ||
-        !/^[0-9a-f]{64}$/.test(stage.text_binding_sha256) || payload.binding_sha256!==stage.text_binding_sha256 ||
+        payload.adapter_id!==binding.text_binding || payload.adapter_id!=='native-book:'+payload.id ||
+        !/^[0-9a-f]{64}$/.test(binding.text_binding_sha256) || payload.binding_sha256!==binding.text_binding_sha256 ||
+        (binding!==stage && payload.title!==binding.title) ||
         typeof payload.title!=='string' || !unique(payload.stage_ids) || !payload.stage_ids.includes(stage.id) ||
         !unique(payload.catalogue_witness_ids) || JSON.stringify(payload.catalogue_witness_ids.slice().sort())!==JSON.stringify(stage.witness_ids.slice().sort()) ||
         !payload.scope || payload.scope.complete_declared_extent!==true ||
@@ -2404,8 +2461,8 @@
     });
   }
 
-  function renderNativeText(host,payload,stage) {
-    if (!nativeTextValid(payload,stage)) throw Error('The source text is malformed or does not match this state’s accepted binding and extent.');
+  function renderNativeText(host,payload,stage,binding) {
+    if (!nativeTextValid(payload,stage,binding)) throw Error('The source text is malformed or does not match this state’s accepted binding and extent.');
     T.clear(host);
     const sources=new Map(payload.sources.map(function (s) { return [s.id,s]; }));
     const witnesses=new Map(payload.witnesses.map(function (w) { return [w.id,w]; }));
@@ -2786,17 +2843,16 @@
         detail.appendChild(T.el('p','panel-note',stage.start_year===null ? 'No year is positioned for this state.'
           : 'Date bounds: '+stage.start_year+'–'+stage.end_year+'. These date this attestation; they are not a period of validity.'));
         detail.appendChild(T.el('p','stage-coverage','Text coverage: '+words(stage.text_coverage)+'. This is independent of historical evidence.'));
-        if (stage.text_binding) {
-          const identifier=stage.text_binding.replace(/^native-book:/,'');
-          if (!/^[a-z0-9][a-z0-9-]*$/.test(identifier) || stage.text_binding!=='native-book:'+identifier ||
-              stage.text_projection_path!=='native-texts/'+identifier+'.json') {
-            detail.appendChild(T.el('p','error','The available source text has invalid routing metadata and cannot be opened.'));
-          } else {
-            const fold=lazyBlock('Read available source text','structure/act-history/'+stage.text_projection_path,
-              function (host,payload) { renderNativeText(host,payload,stage); });
-            fold.classList.add('native-text-fold'); fold.setAttribute('data-text-binding',stage.text_binding);
+        try {
+          nativeTextBindings(stage).forEach(function (binding) {
+            const label=binding===stage ? 'Read available source text' : 'Read available source text: '+binding.title;
+            const fold=lazyBlock(label,'structure/act-history/'+binding.text_projection_path,
+              function (host,payload) { renderNativeText(host,payload,stage,binding); });
+            fold.classList.add('native-text-fold'); fold.setAttribute('data-text-binding',binding.text_binding);
             detail.appendChild(fold);
-          }
+          });
+        } catch (error) {
+          detail.appendChild(T.el('p','error','The available source text has invalid routing metadata and cannot be opened.'));
         }
         detail.appendChild(T.el('p',null,stage.summary));
         detail.appendChild(T.el('p',null,'Scope: '+stage.scope));

@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 3296,
-  "editions": 1182,
-  "passages": 5489,
-  "readable": 3185,
-  "works": 1009
+  "artifacts": 3372,
+  "editions": 1187,
+  "passages": 5581,
+  "readable": 3272,
+  "works": 1013
  },
  "facets": {
   "authors": [
@@ -346,6 +346,10 @@
     "works": 1
    },
    {
+    "id": "British Library",
+    "works": 1
+   },
+   {
     "id": "Brooke Foss Westcott",
     "works": 1
    },
@@ -544,6 +548,10 @@
    {
     "id": "Council of Vienne under Clement V",
     "works": 1
+   },
+   {
+    "id": "Creative Commons",
+    "works": 2
    },
    {
     "id": "Crown Prosecution Service",
@@ -847,6 +855,10 @@
    },
    {
     "id": "Giovanni Domenico Mansi and continuators",
+    "works": 1
+   },
+   {
+    "id": "GitHub",
     "works": 1
    },
    {
@@ -2668,6 +2680,10 @@
     "works": 2
    },
    {
+    "id": "service-terms",
+    "works": 2
+   },
+   {
     "id": "targum",
     "works": 2
    },
@@ -3157,6 +3173,10 @@
    },
    {
     "id": "library-union-catalogue",
+    "works": 1
+   },
+   {
+    "id": "license",
     "works": 1
    },
    {
@@ -3710,11 +3730,15 @@
    {
     "id": "treaty-status-table",
     "works": 1
+   },
+   {
+    "id": "web-reference",
+    "works": 1
    }
   ],
   "languages": [
    {
-    "editions": 601,
+    "editions": 605,
     "id": "en"
    },
    {
@@ -3758,6 +3782,10 @@
     "id": "es"
    },
    {
+    "editions": 4,
+    "id": "hy"
+   },
+   {
     "editions": 3,
     "id": "arc"
    },
@@ -3768,10 +3796,6 @@
    {
     "editions": 3,
     "id": "grc-la"
-   },
-   {
-    "editions": 3,
-    "id": "hy"
    },
    {
     "editions": 2,
@@ -3874,7 +3898,7 @@
     "label": "16th century"
    },
    {
-    "editions": 28,
+    "editions": 29,
     "id": "1600",
     "label": "17th century"
    },
@@ -3894,30 +3918,30 @@
     "label": "20th century"
    },
    {
-    "editions": 614,
+    "editions": 618,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 1866,
+    "artifacts": 1929,
     "editions": 456,
     "id": "public-domain"
    },
    {
-    "artifacts": 809,
-    "editions": 415,
+    "artifacts": 811,
+    "editions": 417,
     "id": "restricted"
    },
    {
-    "artifacts": 365,
-    "editions": 174,
+    "artifacts": 369,
+    "editions": 177,
     "id": "unresolved"
    },
    {
-    "artifacts": 156,
-    "editions": 76,
+    "artifacts": 161,
+    "editions": 80,
     "id": "licensed"
    },
    {
@@ -3926,7 +3950,7 @@
     "id": "project-created"
    },
    {
-    "artifacts": 16,
+    "artifacts": 18,
     "editions": 4,
     "id": "permission"
    }
@@ -6688,7 +6712,7 @@
      "file": "1755-rome-monaldini-1755.json",
      "id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
      "language": "la",
-     "passages": 11,
+     "passages": 13,
      "readable": 9,
      "rights": [
       "public-domain"
@@ -6934,6 +6958,20 @@
    "category": "liturgical-book",
    "directory": "editions/armenian-church/lyturgia-armena/",
    "editions": [
+    {
+     "date": "1677",
+     "file": "1677-1677-rome-propaganda-19-page-setting.json",
+     "id": "edition.armenian-church.lyturgia-armena.1677-rome-propaganda-19-page-setting",
+     "language": "hy",
+     "passages": 1,
+     "readable": 0,
+     "rights": [
+      "licensed",
+      "unresolved"
+     ],
+     "title": "Lyturgia Armena: 19-page liturgy setting with correction appendices",
+     "year": 1677
+    },
     {
      "date": "1677",
      "file": "1677-1677-rome-propaganda-armenian.json",
@@ -9246,6 +9284,32 @@
     "en"
    ],
    "title": "BFI Screenonline"
+  },
+  {
+   "alternate_titles": [],
+   "author": "British Library",
+   "category": "service-terms",
+   "directory": "editions/british-library/terms-and-conditions/",
+   "editions": [
+    {
+     "date": "2026-10-20",
+     "file": "2026-2026-10-20-web-state.json",
+     "id": "edition.british-library.terms-and-conditions.2026-10-20-web-state",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "British Library Terms and Conditions: acquired web state, 20 October 2026",
+     "year": 2026
+    }
+   ],
+   "id": "work.british-library.terms-and-conditions",
+   "languages": [
+    "en"
+   ],
+   "title": "British Library Terms and Conditions"
   },
   {
    "alternate_titles": [
@@ -11899,8 +11963,8 @@
      "file": "1606-paris-marnef-cavellat-1606.json",
      "id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
      "language": "la",
-     "passages": 16,
-     "readable": 9,
+     "passages": 52,
+     "readable": 44,
      "rights": [
       "permission",
       "public-domain"
@@ -11913,8 +11977,8 @@
      "file": "1657-paris-cramoisy-1657.json",
      "id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
      "language": "la",
-     "passages": 37,
-     "readable": 27,
+     "passages": 90,
+     "readable": 79,
      "rights": [
       "public-domain"
      ],
@@ -13174,6 +13238,60 @@
     "la"
    ],
    "title": "Ad nostrum qui"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Creative Commons",
+   "category": "license",
+   "directory": "editions/creative-commons/attribution-noncommercial-4-0-international/",
+   "editions": [
+    {
+     "date": "2026-10-20",
+     "file": "2026-2026-10-20-web-state.json",
+     "id": "edition.creative-commons.attribution-noncommercial-4-0-international.2026-10-20-web-state",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "licensed",
+      "unresolved"
+     ],
+     "title": "Attribution-NonCommercial 4.0 International Public License: acquired web state, 20 October 2026",
+     "year": 2026
+    }
+   ],
+   "id": "work.creative-commons.attribution-noncommercial-4-0-international",
+   "languages": [
+    "en"
+   ],
+   "title": "Attribution-NonCommercial 4.0 International Public License"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Creative Commons",
+   "category": "web-reference",
+   "directory": "editions/creative-commons/frequently-asked-questions/",
+   "editions": [
+    {
+     "date": "2026-10-20",
+     "file": "2026-2026-10-20-web-state.json",
+     "id": "edition.creative-commons.frequently-asked-questions.2026-10-20-web-state",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "licensed",
+      "unresolved"
+     ],
+     "title": "Creative Commons Frequently Asked Questions: acquired web state, 20 October 2026",
+     "year": 2026
+    }
+   ],
+   "id": "work.creative-commons.frequently-asked-questions",
+   "languages": [
+    "en"
+   ],
+   "title": "Creative Commons Frequently Asked Questions"
   },
   {
    "alternate_titles": [],
@@ -16214,6 +16332,33 @@
     "la"
    ],
    "title": "Sacrorum conciliorum nova et amplissima collectio"
+  },
+  {
+   "alternate_titles": [],
+   "author": "GitHub",
+   "category": "service-terms",
+   "directory": "editions/github/terms-of-service/",
+   "editions": [
+    {
+     "date": "2026-10-20",
+     "file": "2026-2026-10-20-web-state.json",
+     "id": "edition.github.terms-of-service.2026-10-20-web-state",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "licensed",
+      "restricted"
+     ],
+     "title": "GitHub Terms of Service: acquired web state, 20 October 2026",
+     "year": 2026
+    }
+   ],
+   "id": "work.github.terms-of-service",
+   "languages": [
+    "en"
+   ],
+   "title": "GitHub Terms of Service"
   },
   {
    "alternate_titles": [],

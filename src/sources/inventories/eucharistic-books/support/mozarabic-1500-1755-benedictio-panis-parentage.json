@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-text-parentage",
+  "id": "mozarabic-1500-1755-benedictio-panis",
+  "title": "Toledo 1500 to Rome 1755: edition-level republication of Benedictio panis",
+  "status": "verified",
+  "historical_parentage": "established",
+  "git_parent_authorized": true,
+  "text_inheritance": false,
+  "kind": "republication",
+  "parent_binding_sha256": "e39bae86bdaf1dbd344a8f774b63b5d2e3f7c112a5ded703c453e97d09a21737",
+  "child_binding_sha256": "c094fd1bc024c5db9953850a6699089b3eaac9c0ef149f2bd538aa63d6e8ee57",
+  "reviewer": "AI native ancestry evidence reviewer, with independent primary source review",
+  "checked_on": "2026-10-20",
+  "basis": "Lesley identifies the Toledo 1500 Missal, explicitly says he used two parchment copies, and describes that edition including its terminal bread blessing. The publisher presents the rare older book anew, with Lesley apparatus. Independent complete collation covers all nine units in both exact endpoint editions. The supported genetic statement is edition-level republication; no substantive ritual revision or copying from the particular Castilla-La Mancha source copy is claimed.",
+  "scope": "Only the complete source-defined nine-unit Benedictio panis: 1500 viewer position 964 from heading through final sprinkling rubric; 1755 printed p. 471 from heading through final sprinkling rubric. Both snapshots materialize their own checked wording. All other book divisions, apparatus, whole-book coverage and automatic text inheritance remain outside this authorization.",
+  "evidence": [
+    {
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.preface-1500-exemplars",
+      "locus": "Lesley Praefatio, printed III–IV, sections 15–19; physical PDF 26–27: two 1500 parchment exemplars used and the bread-blessing context"
+    },
+    {
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.publisher-republication",
+      "locus": "Publisher dedication, physical PDF 15: rare older book committed to press again"
+    },
+    {
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.benedictio-extent",
+      "locus": "Original 1500 complete Benedictio panis, viewer position 964"
+    },
+    {
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.benedictio-extent",
+      "locus": "Original 1755 complete Benedictio panis, printed p. 471"
+    }
+  ],
+  "independent_review_sha256": "a87ebcf536ffe35a472dfbc156f504f3e57fdb503e14ddcb171ee261979260b3",
+  "independent_review_conclusion": "The entire nine-unit constituent supports edition-level republication; no blessing-specific setting-copy declaration or named physical donor is claimed."
+}

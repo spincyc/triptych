@@ -306,6 +306,53 @@ class ActHistoryPreviewTests(unittest.TestCase):
                                and node.get("font-weight") != "bold"]
                 self.assertGreaterEqual(len(body_before), 2, count)
 
+    def test_wrapping_keeps_detached_locator_labels_and_numbers_together(self):
+        for value, expected in (
+            ("A" * 76 + " Chronology sheet: H129", "Chronology sheet: H129"),
+            ("A" * 90 + " § 2.2.", "§ 2.2."),
+            ("A" * 89 + " pp. 27–28.", "pp. 27–28."),
+            ("A" * 90 + " CD 452/77", "CD 452/77"),
+        ):
+            lines = preview._evidence_lines(value)
+            self.assertTrue(any(expected in line for line in lines), lines)
+            self.assertEqual(" ".join(lines), value)
+        url = "https://example.org/" + "native-book-record-" * 18
+        rows = preview._evidence_lines(url)
+        self.assertGreater(len(rows), 2)
+        self.assertTrue(all(len(row) <= 94 for row in rows))
+        self.assertEqual("".join(rows), url, "wrapping must preserve every literal URI character")
+
+    def test_a_continuing_citation_repeats_its_source_key(self):
+        history = stage_fixture()
+        first = history["stages"][0]
+        first["evidence"] = copy.deepcopy(first["evidence"])
+        first["evidence"][0]["locus"] = " ".join(["locus-token"] * 350)
+        parts = self.root / "citation-continuation"
+        parts.mkdir()
+        paths = preview._stage_evidence(history, parts, "fixture", {}, "")
+        headings = [node.text for path in paths for node in ET.parse(path).getroot().findall(".//s:text", NS)
+                    if node.get("font-weight") == "bold"]
+        self.assertTrue(any("continued · Evidence C001" in heading for heading in headings))
+        words = " ".join(" ".join(ET.parse(path).getroot().itertext()) for path in paths)
+        self.assertEqual(words.count("locus-token"), 350)
+
+    def test_single_provisional_lead_and_empty_tradition_list_are_explicit(self):
+        history = stage_fixture()
+        history["traditions"].append({"id": "empty", "label": "Unestablished local reception",
+                                     "scope": "A constructed research slot.", "coverage_note": "No state admitted."})
+        geometry = preview.browser_geometry(self.spine, BROWSER, {"stage_history": history},
+                                            preview._stage_requests(history))
+        pages, sheets = preview._stage_map_pages(history, geometry["chronology"], "fixture")
+        words = " ".join(" ".join(page.itertext()) for page in pages)
+        self.assertIn("1 provisional lead.", words)
+        self.assertNotIn("1 provisional leads.", words)
+        self.assertIn("0 provisional leads.", words)
+        parts = self.root / "empty-stage-list"
+        parts.mkdir()
+        paths = preview._stage_evidence(history, parts, "fixture", sheets, "")
+        evidence = " ".join(" ".join(ET.parse(path).getroot().itertext()) for path in paths)
+        self.assertIn("Stages: none indexed", evidence)
+
     def test_local_changes_keep_late_caveats_and_recorded_limits(self):
         history = stage_fixture()
         caveat = "Shared title does not establish the same composition."
@@ -333,6 +380,46 @@ class ActHistoryPreviewTests(unittest.TestCase):
         self.assertIn("revision · primary description · provisional", words)
         arrows = [node for page in pages for node in page.findall('.//s:path[@data-transition="change-ab"]', NS)]
         self.assertEqual(len(arrows), 1)
+
+    def test_crossing_routes_and_off_sheet_ports_have_separate_paint_order(self):
+        history = stage_fixture()
+        history["stages"][0].update(start_year=700, end_year=700, date_label="700")
+        second = copy.deepcopy(history["transitions"][0])
+        second.update(id="change-ac", to_stage="state-c")
+        history["transitions"].append(second)
+        geometry = preview.browser_geometry(self.spine, BROWSER, {"stage_history": history},
+                                            preview._stage_requests(history, {"fixture-tradition"}))
+        pages, _ = preview._stage_map_pages(history, geometry["chronology"], "fixture")
+        examined = 0
+        for page in pages:
+            for chart in page.findall('.//s:g[@transform]', NS):
+                children = list(chart)
+                routes = [node for node in children if node.get("data-transition")]
+                if len(routes) < 2:
+                    continue
+                examined += 1
+                for route in routes[1:]:
+                    casing = children[children.index(route) - 1]
+                    self.assertEqual(casing.get("data-transition-casing"), route.get("data-transition"))
+                    self.assertEqual(casing.get("d"), route.get("d"))
+                    self.assertGreater(float(casing.get("stroke-width")), float(route.get("stroke-width")))
+                arrows = [node for node in children if node.get("data-transition-arrow")]
+                self.assertEqual({arrow.get("data-transition-arrow") for arrow in arrows},
+                                 {route.get("data-transition") for route in routes})
+                for arrow in arrows:
+                    self.assertGreater(children.index(arrow), max(children.index(route) for route in routes))
+                    route = next(route for route in routes
+                                 if route.get("data-transition") == arrow.get("data-transition-arrow"))
+                    self.assertEqual(arrow.get("d"), route.get("d"))
+                    self.assertTrue(arrow.get("marker-end"))
+                    self.assertEqual(arrow.get("stroke"), "none")
+                ports = [node for node in children if node.get("data-off-sheet-stage")]
+                self.assertTrue(ports)
+                for port in ports:
+                    self.assertGreater(children.index(port), max(children.index(route) for route in routes))
+                    circles = port.findall('s:circle', NS)
+                    self.assertGreater(float(circles[0].get("r")), float(circles[1].get("r")))
+        self.assertGreater(examined, 0, "the fixture must put crossing routes and an outside port on one sheet")
 
     def test_stage_keys_stay_in_source_order_and_dates_do_not_become_durations(self):
         history = stage_fixture()
@@ -362,6 +449,11 @@ class ActHistoryPreviewTests(unittest.TestCase):
             key_label = next(node for node in mark.findall('s:text', NS)
                              if node.text == mark.get("data-stage-key"))
             self.assertGreaterEqual(abs(float(key_label.get("x")) - float(circle.get("cx"))), 14)
+            background = mark.find('s:rect[@data-stage-key-background]', NS)
+            self.assertIsNotNone(background, "a route must not strike through a state key")
+            self.assertLess(float(background.get("y")), float(key_label.get("y")))
+            self.assertGreater(float(background.get("y")) + float(background.get("height")),
+                               float(key_label.get("y")))
         unpositioned = svg.findall('.//s:g[@data-unpositioned-stage]', NS)
         self.assertEqual([mark.get("data-unpositioned-stage") for mark in unpositioned], ["state-undated"])
         transitions = svg.findall('.//s:path[@data-transition]', NS)
@@ -369,7 +461,7 @@ class ActHistoryPreviewTests(unittest.TestCase):
         self.assertEqual(len(svg.findall('.//s:path[@data-date-bounds="uncertainty-not-duration"]', NS)), 1)
         words = " ".join(svg.itertext())
         for phrase in ("years increase left to right", "The rubric adds a second bow after", "Provisional lead",
-                       "not duration of use", "not-transcribed", "primary description"):
+                       "not duration of use", "not-transcribed", "primary description", "dot = interval midpoint"):
             self.assertIn(phrase, words)
         details = svg.findall('.//s:g[@data-change-detail="change-ab"]', NS)
         self.assertEqual(len(details), 1)
@@ -403,6 +495,20 @@ class ActHistoryPreviewTests(unittest.TestCase):
         self.assertIn("\u2069 / English title (27 August 2025)", node.text)
         self.assertIn("\u20662014–2020\u2069", node.text)
         self.assertEqual(node.text.translate(dict.fromkeys(map(ord, "\u2066\u2067\u2069"))), value)
+
+    def test_mixed_script_source_list_keeps_order_and_separates_joined_years(self):
+        value = "Inspection: طبعات الرتبة; تجديد2005; تجديد2014–2020; date 2025."
+        node = preview.text(ET.Element("g"), 0, 0, value)
+        self.assertEqual(node.text.count("\u2067"), 3, "separate source-list phrases must not reverse as one RTL run")
+        self.assertIn("تجديد\u202f\u20662005\u2069", node.text)
+        self.assertIn("تجديد\u202f\u20662014–2020\u2069", node.text)
+        self.assertIn("\u2069; ", node.text)
+        display_only = dict.fromkeys(map(ord, "\u2066\u2067\u2068\u2069\u202f"))
+        self.assertEqual(node.text.translate(display_only), value)
+        url = "Catalogue witness: https://example.org/تجديد2005"
+        uri_node = preview.text(ET.Element("g"), 0, 0, url)
+        self.assertNotIn("\u202f", uri_node.text, "display spacing must not change a literal URL")
+        self.assertEqual(uri_node.text.translate(display_only), url)
 
     def test_print_keeps_default_family_in_authored_recension_order(self):
         history = stage_fixture()

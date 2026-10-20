@@ -1386,3 +1386,26 @@ basis = "Two independently checked full bounded prayer comparisons in the same i
 limitations = "Symmetric textual comparison, not historical borrowing direction or lineage. Edition-mediated witnesses; no Catholic reception or original composition dates established. These are parallel liturgical functions, not a claim that the complete units are the same composition."
 evidence = [{source_id = "brightman-1896-greek-prayers", locus = "Chrysostom pp. 386–387 (PDF 492–493); James pp. 52–54 (PDF 158–160)"}]
 comparison_ids = ["brightman-1896-greek-chrysostom-james-anamnesis-oblation", "brightman-1896-greek-chrysostom-james-invocation-gifts"]
+
+[[sources]]
+id = "lesley-1755-republication-primary"
+title = "Lesley 1755 Preface and publisher dedication: Toledo 1500 exemplars and republication"
+url = "https://archive.org/download/bub_gb_hAJaQabODUYC/bub_gb_hAJaQabODUYC.pdf"
+inspection_status = "inspected"
+inspection = "Original PDF page 15 and printed III–IV, sections 15–19 (physical PDF 26–27), directly read; Preface and both complete blessing constituents independently reviewed. Retained canonical PDF SHA-256 225d6721834132ba0a354db2a041029968efbe39e701e5b37615a2675caddc45. Canonical passages are publisher-republication and preface-1500-exemplars under the Rome Monaldini 1755 edition."
+checked_on = "2026-10-20"
+
+[[relationships]]
+id = "mozarabic-1500-1755-benedictio-republication"
+kind = "edition-succession"
+label = "Bread blessing republished from the 1500 edition"
+from = "western:mozarabic-1500"
+to = "latin-missal:mozarabicum-lesley-1755"
+certainty = "sourced"
+scope = "Complete source-defined nine-unit Benedictio panis only, including its dialogue, prayer, blessing and final sprinkling rubric."
+basis = "Lesley identifies Toledo 1500 and says he used two parchment copies, then explicitly includes the bread blessing in that edition's terminal matter. The publisher explains republication of the rare older book. Both exact endpoint constituents have independent complete collation."
+limitations = "Edition-level republication; no claim that the particular Castilla-La Mancha source copy was a donor. The changed spelling does not establish substantive ritual revision. Neither whole-book completeness nor inherited text is claimed. This contextual row grants no Git ancestry; a separate exact-binding parentage receipt owns any native parent authorization."
+evidence = [{source_id = "lesley-1755-republication-primary", locus = "Publisher dedication physical PDF 15; Lesley Preface printed III–IV, sections 15–19, physical PDF 26–27"}]
+comparison_ids = ["mozarabic-1500-1755-benedictio-panis"]
+git_ancestry = false
+text_inheritance = false

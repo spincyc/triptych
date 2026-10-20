@@ -1,0 +1,928 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-native-book",
+  "id": "cistercian-1606-canon",
+  "title": "Cistercian 1606, Canon Missæ: complete strict Canon constituent",
+  "scope": "Complete strict Eucharistic Canon constituent of the Paris 1606 Cistercian missal: from the printed CANON MISSÆ. heading and Te igitur on printed p.190, BSB canvas244/full-provider-PDF 245, through Per ómnia sǽcula sæculórum. Amen. on printed p.197 left, canvas251/PDF252, immediately before Orémus/Præcéptis/Pater noster. All five printed seasonal Communicantes insertions and the Pascha/Pentecost Hanc igitur insertion, their rubrics, continuation signs, name cues and 26 crosses are included in source order. The fourth page in this sequence is BSB-labelled193 but actually misprinted 192. The later Ordinary under the same Canon Missæ running head is explicitly outside this strict Canon. Whole-book and complete-Ordinary coverage remain partial; this constituent is independent of the unchanged accepted offertory and inherits no wording from another edition.",
+  "transcribed_by": "AI original-image source transcriber (Paris 1606 strict Canon preparation)",
+  "stage_ids": [
+    "cistercian-1606-1657-1606"
+  ],
+  "catalogue_witness_ids": [
+    "western:cistercian-1606"
+  ],
+  "components": [
+    "ordinary",
+    "rubrics"
+  ],
+  "languages": [
+    "la"
+  ],
+  "extent_kind": "constituent",
+  "excluded_book_divisions": [
+    "All preceding preparations, Creed, offertory, prefaces and the illustration/preceding material on printed p.189",
+    "Printed p.197 below the final Canon Amen: Orémus, Præcéptis salutáribus and beginning of Pater noster; all of p.197 right column",
+    "Later Ordinary, Communion, closing prayers and the appended Suffragium on printed pp.198–200, despite their Canon Missæ running head",
+    "Sanctorale beginning printed p.201, calendar, propers, lectionary and every other book division",
+    "Running-head repetitions, foliation, catchwords, ornament, ink colour, page geometry and chant notation; sung words inside the bounds are retained"
+  ],
+  "date": {
+    "kind": "publication",
+    "label": "1606 Paris publication",
+    "start_year": 1606,
+    "end_year": 1606,
+    "evidence": [
+      {
+        "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.title-and-imprint",
+        "locus": "Unnumbered title page, BSB canvas1: Paris Marnef/Cavellat imprint1606"
+      }
+    ]
+  },
+  "extent_path": "src/sources/inventories/eucharistic-books/support/cistercian-1606-canon-extent.json",
+  "collation_path": "src/sources/inventories/eucharistic-books/support/cistercian-1606-canon-review.json",
+  "witnesses": [
+    {
+      "id": "cistercian-1606-bsb-canon",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "scope_pages": [
+        [
+          1,
+          8
+        ]
+      ],
+      "completeness_evidence": [
+        {
+          "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile",
+          "locus": "Eight complete source images, strict Canon from heading/Te igitur to final Per omnia/Amen; final-page lower-left and right-column Ordinary excluded"
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "unit.cistercian-1606.canon.heading",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "heading"
+      ],
+      "source_order": 1,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "heading",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-heading",
+      "text_sha256": "8406fdaf8f93b5f20af84eb4302fac263c83a9078c1cc90e4f3c292665861c77",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.te-igitur",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "te-igitur"
+      ],
+      "source_order": 2,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-te-igitur",
+      "text_sha256": "4894d6c14445e1bd8c8edea66e9989c2aadcb1f5693583d0590a6f687b3cbcc6",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.memento-vivorum",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "memento-vivorum"
+      ],
+      "source_order": 3,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-memento-vivorum",
+      "text_sha256": "c08fac1215cbde814fff4886c9199ae131c0c60d5fa6d71ebac9994d3f59fbae",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.communicantes-opening",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "communicantes-opening"
+      ],
+      "source_order": 4,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer-fragment",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-communicantes-opening",
+      "text_sha256": "07e1cc42d43c3753d45cf64efcab0703e24044a068a51929226a4c2ea239b085",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.communicantes-nativity-rubric",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "communicantes-nativity-rubric"
+      ],
+      "source_order": 5,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-communicantes-nativity-rubric",
+      "text_sha256": "a8a9c8b6b508bb5f38fdd3712afd274984fd0bd9185e8d554351418b79c1939b",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.communicantes-nativity",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "communicantes-nativity"
+      ],
+      "source_order": 6,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer-variant",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-communicantes-nativity",
+      "text_sha256": "957dceb9548ead12d1aa3e2a596cdcf7778922bf9ddeb4b41ac3715eb2ae62c0",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.communicantes-epiphany-rubric",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "communicantes-epiphany-rubric"
+      ],
+      "source_order": 7,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-communicantes-epiphany-rubric",
+      "text_sha256": "5834324c05af68d639e528a426a6f66aa42398781d70cb5a27fc3c57294314e0",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.communicantes-epiphany",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "communicantes-epiphany"
+      ],
+      "source_order": 8,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer-variant",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-communicantes-epiphany",
+      "text_sha256": "6da5d15c5a26cfe4eeeeffac24853ac90119850f049cf3359a287aebb432a43f",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.communicantes-easter-rubric",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "communicantes-easter-rubric"
+      ],
+      "source_order": 9,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-communicantes-easter-rubric",
+      "text_sha256": "c1e1f816892a34469f9814d306ab879c414c29d2fab8147634552256e7fefb76",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.communicantes-easter",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "communicantes-easter"
+      ],
+      "source_order": 10,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer-variant",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-communicantes-easter",
+      "text_sha256": "3297bba6e30e3403cd6e25d5955b1400ab86a0d786648672cad002ffcbe36f17",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.communicantes-ascension-rubric",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "communicantes-ascension-rubric"
+      ],
+      "source_order": 11,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-communicantes-ascension-rubric",
+      "text_sha256": "12f28b3633d0106cd33adfdc7cf51f33ccf07f0cd4f14d3ec9820e8ec564775f",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.communicantes-ascension",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "communicantes-ascension"
+      ],
+      "source_order": 12,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer-variant",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-communicantes-ascension",
+      "text_sha256": "c2156eda2d956ec02ee1533027405277efec5a7c657c28a8f29977638f32c1c1",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.communicantes-pentecost-rubric",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "communicantes-pentecost-rubric"
+      ],
+      "source_order": 13,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-communicantes-pentecost-rubric",
+      "text_sha256": "23a9937aba2827ba55800238cac89d36a926b9e14c8218eaf815e86c246dcc43",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.communicantes-pentecost",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "communicantes-pentecost"
+      ],
+      "source_order": 14,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer-variant",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-communicantes-pentecost",
+      "text_sha256": "00bb1019548866a6cee9001710e2bbea46a4f6462d959d15499b0ef8483cdf34",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.communicantes-continuation",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "communicantes-continuation"
+      ],
+      "source_order": 15,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer-fragment",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-communicantes-continuation",
+      "text_sha256": "4232cdba59598162c22cf3a07ad076e8b7307e74137fe9be6de9118e69d41d7a",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.hanc-igitur",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "hanc-igitur"
+      ],
+      "source_order": 16,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-hanc-igitur",
+      "text_sha256": "21fad8787ba0974e4d7012ddd2e5f8aa61c2d80542f3f2ae42efaff5253a9572",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.hanc-igitur-easter-pentecost-rubric",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "hanc-igitur-easter-pentecost-rubric"
+      ],
+      "source_order": 17,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-hanc-igitur-easter-pentecost-rubric",
+      "text_sha256": "cb51fda6e56be550257d61a3132d5f42fc6fa1be1f106b239ef38813d3e5866c",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.hanc-igitur-easter-pentecost",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "hanc-igitur-easter-pentecost"
+      ],
+      "source_order": 18,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer-variant",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-hanc-igitur-easter-pentecost",
+      "text_sha256": "172df24ba989c518b045881e30616d76659aa2ef32c3b6ef6795a79e47e66d8a",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.quam-oblationem",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "quam-oblationem"
+      ],
+      "source_order": 19,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-quam-oblationem",
+      "text_sha256": "effa847e90d801950fc1f6f99ad02581a56f7f2a5a708251d6a9eef99950b25c",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.qui-pridie",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "qui-pridie"
+      ],
+      "source_order": 20,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-qui-pridie",
+      "text_sha256": "48826b0934b541988544d6617bc696394597bef912215493a0b7ba616ae161bb",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.hoc-est-enim",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "hoc-est-enim"
+      ],
+      "source_order": 21,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "institution",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-hoc-est-enim",
+      "text_sha256": "c82c05b971fbc110eeae2d4999516d1567c514b3de6173273141cc00271ef250",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.simili-modo",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "simili-modo"
+      ],
+      "source_order": 22,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-simili-modo",
+      "text_sha256": "b6010a89a3843ab911318d802a2c829ea6706bebf32b12f3f5d53109d73c4729",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.hic-est-enim",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "hic-est-enim"
+      ],
+      "source_order": 23,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "institution",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-hic-est-enim",
+      "text_sha256": "22723417d94257618f85d6a71cb6c146e51c5e8c26fb97cf38198bfd04e06e98",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.haec-quotiescumque",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "haec-quotiescumque"
+      ],
+      "source_order": 24,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-haec-quotiescumque",
+      "text_sha256": "3351c1958557a5d7b4517ac7e8b83a4a9a8a9f5b512dd8acd61189020a508896",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.unde-et-memores",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "unde-et-memores"
+      ],
+      "source_order": 25,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-unde-et-memores",
+      "text_sha256": "b24642667204e9ae95fef417dc348c6d8234e85fcf6f896dbf103d279a59862d",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.supra-quae",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "supra-quae"
+      ],
+      "source_order": 26,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          6
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-supra-quae",
+      "text_sha256": "2e6fa1fd1b1290ec182783584d2978dc45e4cd398dc0107d36c12fa7f7e85113",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.supplices",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "supplices"
+      ],
+      "source_order": 27,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          6,
+          6
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-supplices",
+      "text_sha256": "669b75eae3c05e1f9d405dfee003d8307a10c83e2a4215627ef9c416558fefba",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.memento-defunctorum",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "memento-defunctorum"
+      ],
+      "source_order": 28,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          6,
+          6
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-memento-defunctorum",
+      "text_sha256": "09aa679ffc498a470798a4d31b10812194be6e0df2fcbda0f382b944d6ecfc6a",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.ipsis-domine",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "ipsis-domine"
+      ],
+      "source_order": 29,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          7
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-ipsis-domine",
+      "text_sha256": "706441591b6eada9b4ecbbd214bcf49284fa15c2113d40456bf6fc40079c411c",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.nobis-quoque",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "nobis-quoque"
+      ],
+      "source_order": 30,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          7,
+          7
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-nobis-quoque",
+      "text_sha256": "58046f5585bc5cd7f2b7356d4abc6c58f5697063db412792756ccb940efca5c2",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.intra-quorum",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "intra-quorum"
+      ],
+      "source_order": 31,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          7,
+          7
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-intra-quorum",
+      "text_sha256": "8db728c01e577489856e097939738729956b1aa7e6eb6a685bd5ccb2f91e866f",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.per-quem",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "per-quem"
+      ],
+      "source_order": 32,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-per-quem",
+      "text_sha256": "b9cdab6a1f5078dd0a0f4a2dc987b3491024c213c9d06c3f859d1b74eb6b1366",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.per-ipsum",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "per-ipsum"
+      ],
+      "source_order": 33,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          8,
+          8
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-per-ipsum",
+      "text_sha256": "98284832f02f70f21c494b9e7a69106abadcf43d93d62051f042d62c6ea0a73e",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.omnis-honor",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "omnis-honor"
+      ],
+      "source_order": 34,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          8,
+          8
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-omnis-honor",
+      "text_sha256": "a9e85c4f0865103402aa331f490509102c5ac60cd01f2d46280c920f4aac8d0d",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.canon.per-omnia-amen",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "per-omnia-amen"
+      ],
+      "source_order": 35,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "dialogue",
+      "witness_id": "cistercian-1606-bsb-canon",
+      "witness_pages": [
+        [
+          8,
+          8
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-per-omnia-amen",
+      "text_sha256": "41e9c77bf7bda91734587f42d4b902e982d1cd7061caae66f5f1b2ab1450e9ff",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f",
+      "verified_against_artifact_sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+      "normalization": "Direct source reading of original BSB 1606 scans: long s becomes s; split display initials merge in sentence case; source line wraps and line-end word divisions join inside semantic blocks. Printed nasal suspension bars, the standard -us brevigraph, -q;/-que suspension and Dñi contraction are expanded without adding absent accents. The marked vir- contraction in the Nativity insertion is expanded as unaccented virginis; no acute is inferred from the separately printed main Communicantes form. Printed u/v, j, æ/œ, actual accents, case within sentences, punctuation, parentheses, ampersands, N. placeholders and abbreviated rubric/variant endings remain. Red crosses are serialized as ✠, including crosses inside words; printed asterisks remain *. Rubrics are separate units. Communicantes opening and continuation remain separate around the five proper insertions, preserving column/source order. The source’s duplicated & & in Supplices and Easter diem sacratíssimam are retained. No familiar Roman wording or missing ending is supplied. The 35 UTF-8 NFC semantic units retain source order. The main Communicantes continuation preserves three source paragraphs, separated by a blank LF line; its selected physical-line range includes those two blank lines. Other units occupy one physical line. The complete artifact ends with LF; each unit selection hash excludes its terminating LF. Running heads after the opening title, page numbers, catchwords, ornament, type colour, line/column geometry and chant notes are recorded as facsimile/paratext rather than text; all sung words within the Canon, including its final Amen, remain. This is a normalized reading transcription, not a glyph-diplomatic or musical edition."
+    }
+  ]
+}

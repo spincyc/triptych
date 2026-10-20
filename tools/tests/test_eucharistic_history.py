@@ -8,11 +8,13 @@ import io
 import json
 import os
 from pathlib import Path
+import runpy
 import sys
 import tempfile
 import unittest
 from types import SimpleNamespace
 from unittest import mock
+from urllib.parse import urljoin
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -25,6 +27,21 @@ def owning_ventilator():
     module = importlib.util.module_from_spec(spec)
     loader.exec_module(module)
     return module.ventilate
+
+
+def library_edition(root, identifier):
+    """A minimal edition resolved by the real canonical source graph."""
+    (root / "src/gpt").mkdir(parents=True, exist_ok=True)
+    owner = root / "src/sources/works/test/library-link"
+    owner.mkdir(parents=True, exist_ok=True)
+    (owner / "work.toml").write_text('schema=1\nrecord_type="work"\nid="work.library-link"\n'
+                                     'title="Synthetic source work"\nresponsible="Test fixture"\nwork_type="fixture"\n')
+    edition = owner / "editions" / ("1600-" + identifier.removeprefix("edition.")) / "edition.toml"
+    edition.parent.mkdir(parents=True, exist_ok=True)
+    edition.write_text('schema=1\nrecord_type="edition"\nid=' + json.dumps(identifier) + '\n'
+                       'work_id="work.library-link"\ntitle="Synthetic edition"\nlanguage="la"\n'
+                       'publication="Synthetic fixture only"\n')
+    return edition
 
 
 class EucharisticHistoryTests(unittest.TestCase):
@@ -123,6 +140,47 @@ source_ids=["library"]
         entry = self.catalogue()["entries"][0]
         self.assertEqual("scan-acquired", entry["acquisition_status"])
         self.assertEqual("not-transcribed", entry["text_status"])
+
+    def test_source_library_link_resolves_exact_edition_and_keeps_upstream_access(self):
+        import _eucharistic_texts as texts
+        identifier = "edition.library-link.1600"
+        manifest = library_edition(self.root, identifier)
+        research = self.root / "research.toml"
+        research.write_text(research.read_text() + '\nsource_library_edition_id=' + json.dumps(identifier) + '\n'
+                            'route="https://example.org/book"\n[[records]]\nid="second-copy"\n'
+                            'source_library_edition_id=' + json.dumps(identifier) + '\n')
+        with mock.patch.object(texts, "_load_library", wraps=texts._load_library) as loader:
+            result = self.catalogue()
+        self.assertEqual(1, loader.call_count)
+        first = next(row for row in result["entries"] if row["id"] == "research:manuscript")
+        self.assertEqual(["https://example.org/book", "https://example.org/catalogue"],
+                         [link["url"] for link in first["links"] if link["kind"] != "source-library-edition"])
+        expected = dict(kind="source-library-edition", edition_id=identifier,
+                        label="Open edition in the Source Library", url="../sources/#edition=" + identifier)
+        self.assertTrue(all(expected in entry["links"] for entry in result["entries"]))
+        self.assertIn(history.fingerprint(self.root, manifest), result["inputs"])
+        self.assertTrue(all(entry["evidence_status"] == "candidate" and entry["act_ref"] is None
+                            for entry in result["entries"]))
+        self.assertIsNone(history.safe_url(expected["url"]))
+        pages = runpy.run_path(str(ROOT / "tools/public-alpha"), run_name="_history_library_route_test")["web_browser_pages"]()
+        for route in ("history/index.html", "sources/index.html"):
+            self.assertEqual(ROOT / "src/web/browser" / route, pages[route])
+        for prefix in ("", "triptych/"):
+            self.assertEqual("https://example.invalid/" + prefix + "sources/#edition=" + identifier,
+                             urljoin("https://example.invalid/" + prefix + "history/?view=catalogue", expected["url"]))
+
+    def test_source_library_link_rejects_missing_non_edition_and_malformed_ids(self):
+        library_edition(self.root, "edition.library-link.1600")
+        research = self.root / "research.toml"
+        baseline = research.read_text()
+        for identifier in ("edition.missing", "work.library-link", "artifact.library-link", "",
+                           "edition../sources", "edition.x/../../private", "edition.x%2fprivate",
+                           "edition.x#edition=other", "edition.x?url=bad", "edition.x\\private",
+                           "edition.X", "edition.x\n", ["edition.library-link.1600"]):
+            with self.subTest(identifier=identifier):
+                research.write_text(baseline + '\nsource_library_edition_id=' + json.dumps(identifier) + '\n')
+                with self.assertRaisesRegex(history.HistoryError, "source-library edition"):
+                    self.catalogue()
 
     def test_explicit_bounds_survive_without_changing_date_claim(self):
         with (self.root / "research.toml").open("a") as output:
@@ -588,6 +646,7 @@ unit_ids=["unit.fixture.collect","unit.fixture.second"]
         self.assertEqual(history.json_bytes(first), out.read_bytes())
 
     def test_comparison_record_binding_checks_actual_source_edition_not_target(self):
+        library_edition(self.root, "edition.claimed")
         research = self.root / "research.toml"
         research.write_text(research.read_text() + '\nsource_library_edition_id="edition.claimed"\n')
         self.source.write_text(self.source.read_text().replace(
@@ -605,6 +664,7 @@ unit_ids=["unit.fixture.collect","unit.fixture.second"]
             self.compare()
 
     def test_same_edition_cannot_substitute_another_explicitly_bound_passage(self):
+        library_edition(self.root, "edition.anthology")
         research = self.root / "research.toml"
         research.write_text(research.read_text() + '''
 source_library_edition_id="edition.anthology"
@@ -826,6 +886,30 @@ parents=[{version_id="earlier", evidence_path="src/sources/inventories/eucharist
         (self.root / self.texts.NATIVE_BOOK_DIRECTORY / "support/fixture-parentage.json").write_text(json.dumps({**self.receipt, "parent_binding_sha256": "0" * 64}))
         with self.assertRaisesRegex(history.HistoryError, "exact reviewed authorization"):
             self.emit()
+
+    def test_republication_keeps_its_kind_and_materializes_the_child_text(self):
+        self.receipt["kind"] = "republication"
+        self.save_receipt()
+        result = self.emit()
+        repo = self.root / "corpus"
+        earlier, later = (result["version_branches"][key] for key in ("earlier", "later"))
+        self.assertEqual(earlier, history.git(repo, "rev-parse", later + "^").decode().strip())
+        metadata = json.loads(history.git(repo, "show", later + ":reconstruction.json"))
+        self.assertEqual("republication", metadata["parents"][0]["record"]["kind"])
+        self.assertFalse(metadata["text_inheritance"])
+        self.assertEqual(b"Changed native fixture.\n", history.git(
+            repo, "show", later + ":text/native/native-division/unit-1.txt"))
+
+    def test_descriptive_or_malformed_relationship_kind_cannot_authorize_a_parent(self):
+        before = self.emit()["version_branches"]
+        for kind in ("edition-succession", "shared-text", "", None, True, ["republication"]):
+            with self.subTest(kind=kind):
+                self.receipt["kind"] = kind
+                self.save_receipt()
+                with self.assertRaisesRegex(history.HistoryError, "exact reviewed authorization"):
+                    self.emit()
+                held = json.loads((self.root / "corpus" / history.MARKER).read_text())
+                self.assertEqual(before, held["version_branches"])
 
     def test_scratch_parentage_receipt_is_not_a_canonical_authorization(self):
         path = self.root / ".scratch/fixture-parentage.json"

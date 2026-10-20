@@ -1,0 +1,1155 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-native-book",
+  "id": "cistercian-1657-canon",
+  "title": "Cistercian missal 1657: Canon with its prefatory proper forms",
+  "extent_kind": "constituent",
+  "excluded_book_divisions": [
+    "All front matter, calendar, general rubrics and earlier Ordo Missæ outside the named Canon selection",
+    "All preface chants, preface bodies and preface rubrics except the five named Infra actionem headings, seven proper Canon paragraphs, five governing usage rubrics and two Sequitur cues on printed pp. 176, 177, 181, 183 and 184",
+    "The Orémus/Pater introduction beginning on printed p. 213 and all subsequent material, including pages still bearing the running head Canon Missæ",
+    "The entire Temporale, Sanctorale, Commons, votive and other proper formularies and all other book divisions outside the declared constituent"
+  ],
+  "scope": "Complete declared Canon constituent: the five proper Communicantes paragraphs and two separately printed proper Hanc igitur paragraphs, their five Infra actionem headings, five governing usage rubrics and two Sequitur cues selected from the fully inspected preface section printed pp. 175–200; then the standalone CANON MISSÆ title (FIDES 0263), facing Crucifixion (0264), and all text under the body CANON MISSÆ heading on printed p. 203 through the final sung Per ómnia sæcula sæculórum, ℟. Amen. and adjacent Iungit manus on p. 213, stopping before Orémus. The proper forms occur on printed pp. 176, 177, 181, 183 and 184 and precede the main Canon in original source order. Every intervening preface text outside these selected blocks is excluded. The final cutoff is the stated Canon-proper boundary; the book continues the Canon Missæ running head over the following Pater. This is a complete declared constituent and partial whole-book coverage.",
+  "transcribed_by": "AI source transcription coordinator (1657 Cistercian Canon and prefatory proper forms)",
+  "stage_ids": [
+    "cistercian-1606-1657-1657"
+  ],
+  "catalogue_witness_ids": [
+    "western:cistercian-1657"
+  ],
+  "components": [
+    "ordinary",
+    "rubrics"
+  ],
+  "languages": [
+    "la"
+  ],
+  "date": {
+    "kind": "publication",
+    "label": "Paris Cramoisy printing of 1657; distinct from Vaussin’s mandate of 1655",
+    "start_year": 1657,
+    "end_year": 1657,
+    "evidence": [
+      {
+        "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.title-and-imprint",
+        "locus": "FIDES page-file 0005, title and 1657 imprint"
+      }
+    ]
+  },
+  "witnesses": [
+    {
+      "id": "cistercian-1657-canon-pages",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-facsimile-699075c0",
+      "completeness_evidence": [
+        {
+          "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-extent",
+          "locus": "Exact discontiguous prefatory-form and strict Canon bounds"
+        }
+      ],
+      "scope_pages": [
+        [
+          1,
+          18
+        ]
+      ]
+    }
+  ],
+  "extent_path": "src/sources/inventories/eucharistic-books/support/cistercian-1657-canon-extent.json",
+  "collation_path": "src/sources/inventories/eucharistic-books/support/cistercian-1657-canon-review.json",
+  "units": [
+    {
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.nativity-infra-actionem",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-nativity-infra-actionem"
+      ],
+      "source_order": 1,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "heading",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-nativity-infra-actionem",
+      "text_sha256": "8fd63a58092ba1f65a2719529ea364dddef0124b42f9a50f8df3f04b6233b25a"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.nativity-communicantes",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-nativity-communicantes"
+      ],
+      "source_order": 2,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-nativity-communicantes",
+      "text_sha256": "4c40ecec61230458f53d357b7d481ad90f1b735a3f7ae6d99b6c0b080d90fd50"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.nativity-usage",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-nativity-usage"
+      ],
+      "source_order": 3,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-nativity-usage",
+      "text_sha256": "b9519991e9ac9f227c00cee810504979307cc46e597fcd713ca4869e59ac698f"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.epiphany-infra-actionem",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-epiphany-infra-actionem"
+      ],
+      "source_order": 4,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "heading",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-epiphany-infra-actionem",
+      "text_sha256": "8fd63a58092ba1f65a2719529ea364dddef0124b42f9a50f8df3f04b6233b25a"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.epiphany-communicantes",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-epiphany-communicantes"
+      ],
+      "source_order": 5,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-epiphany-communicantes",
+      "text_sha256": "172b49e8d0f036311e17372bf2c2b1b8393795094a10bd515452b28c5286cf0f"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.epiphany-usage",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-epiphany-usage"
+      ],
+      "source_order": 6,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-epiphany-usage",
+      "text_sha256": "f57fcd93a2bd1b88f7c1ba1f4027398519be313ff3c3a473a078cc2537690c5f"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.easter-infra-actionem",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-easter-infra-actionem"
+      ],
+      "source_order": 7,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "heading",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-easter-infra-actionem",
+      "text_sha256": "8fd63a58092ba1f65a2719529ea364dddef0124b42f9a50f8df3f04b6233b25a"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.easter-communicantes",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-easter-communicantes"
+      ],
+      "source_order": 8,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-easter-communicantes",
+      "text_sha256": "95ce3b4a9f0dbdff68870f35f45144d43200e66e7d36066b9a05c9026b117bd1"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.easter-sequitur",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-easter-sequitur"
+      ],
+      "source_order": 9,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-easter-sequitur",
+      "text_sha256": "ffbbdace35f905879a7db919efdb2ac15a05898d605c874df280b5b07e24b95a"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.easter-hanc-igitur",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-easter-hanc-igitur"
+      ],
+      "source_order": 10,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-easter-hanc-igitur",
+      "text_sha256": "6e3bfdaf8bacf8833215638c3102f4bad1c99fd562f442f44741705ecb1ec54d"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.easter-usage",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-easter-usage"
+      ],
+      "source_order": 11,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-easter-usage",
+      "text_sha256": "246a5f49079dfc3fcd6dad11fe47afd61987fcfbfa5f3f8fe1dd6f7939ee8019"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.ascension-infra-actionem",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-ascension-infra-actionem"
+      ],
+      "source_order": 12,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "heading",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-ascension-infra-actionem",
+      "text_sha256": "8fd63a58092ba1f65a2719529ea364dddef0124b42f9a50f8df3f04b6233b25a"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.ascension-communicantes",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-ascension-communicantes"
+      ],
+      "source_order": 13,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-ascension-communicantes",
+      "text_sha256": "bf04ca5cb48f4c35b48249ddbb556c600cb0da370343c8eec95a87b203875598"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.ascension-usage",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-ascension-usage"
+      ],
+      "source_order": 14,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-ascension-usage",
+      "text_sha256": "f57fcd93a2bd1b88f7c1ba1f4027398519be313ff3c3a473a078cc2537690c5f"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.pentecost-infra-actionem",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-pentecost-infra-actionem"
+      ],
+      "source_order": 15,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "heading",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-pentecost-infra-actionem",
+      "text_sha256": "8fd63a58092ba1f65a2719529ea364dddef0124b42f9a50f8df3f04b6233b25a"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.pentecost-communicantes",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-pentecost-communicantes"
+      ],
+      "source_order": 16,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-pentecost-communicantes",
+      "text_sha256": "3d2a0a918b6861149986b6c8c968fdb99c8216eb1e7584d5759802cb079b1bbe"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.pentecost-sequitur",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-pentecost-sequitur"
+      ],
+      "source_order": 17,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-pentecost-sequitur",
+      "text_sha256": "a4b5411449af1eca5a955ffdcac7308cdb0b72182770377b7eca838e1dbc7715"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.pentecost-hanc-igitur",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-pentecost-hanc-igitur"
+      ],
+      "source_order": 18,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-pentecost-hanc-igitur",
+      "text_sha256": "2d82335479348176447009e263d7462b2729c7c266a2b6cdbe614c36ed80fcf0"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.prefatory-proper-forms.pentecost-usage",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "prefatory-pentecost-usage"
+      ],
+      "source_order": 19,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-prefatory-proper-forms-pentecost-usage",
+      "text_sha256": "56340d6861bc8c59d76ef8169a39799fbecdef2058373db686386c8f35f46843"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.standalone-title",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-standalone-title"
+      ],
+      "source_order": 20,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "heading",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          6,
+          6
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-standalone-title",
+      "text_sha256": "8406fdaf8f93b5f20af84eb4302fac263c83a9078c1cc90e4f3c292665861c77"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.body-heading",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-body-heading"
+      ],
+      "source_order": 21,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "heading",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          8,
+          8
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-body-heading",
+      "text_sha256": "8406fdaf8f93b5f20af84eb4302fac263c83a9078c1cc90e4f3c292665861c77"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.opening-rubric",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-opening-rubric"
+      ],
+      "source_order": 22,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          8,
+          8
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-opening-rubric",
+      "text_sha256": "533ce75b339629a467b202e3da75a76fb27a900b7e7afcb364be6255582d8739"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.te-igitur",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-te-igitur"
+      ],
+      "source_order": 23,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer-and-interleaved-rubrics",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          8,
+          9
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-te-igitur",
+      "text_sha256": "975561f168e8d9642cad6e39371960367c240320485a3462f7ace8eda53b8981"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.commemoratio-pro-viuis-heading",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-commemoratio-pro-viuis-heading"
+      ],
+      "source_order": 24,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "heading",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          9,
+          9
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-commemoratio-pro-viuis-heading",
+      "text_sha256": "8598296be8ba26426199c04bc160e3f1a176cd57de09031dd1efbbed01e2852f"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.memento-viuorum",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-memento-viuorum"
+      ],
+      "source_order": 25,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer-and-interleaved-rubrics",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          9,
+          10
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-memento-viuorum",
+      "text_sha256": "b2807d4ac32688bb465860ce1ccc16a9cbaf019213f93915ae88e585a0ddfeb9"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.infra-actionem-heading",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-infra-actionem-heading"
+      ],
+      "source_order": 26,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "heading",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          10,
+          10
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-infra-actionem-heading",
+      "text_sha256": "8fd63a58092ba1f65a2719529ea364dddef0124b42f9a50f8df3f04b6233b25a"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.communicantes",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-communicantes"
+      ],
+      "source_order": 27,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer-and-interleaved-rubrics",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          10,
+          11
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-communicantes",
+      "text_sha256": "27c2b12e3be3aa661c7cdc96374368f14d510b8c79b6ada01f8357586e312148"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.hanc-igitur-rubric",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-hanc-igitur-rubric"
+      ],
+      "source_order": 28,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          11,
+          11
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-hanc-igitur-rubric",
+      "text_sha256": "f704558f72f06eb444dddfa51bc68b3c804f2a9ecd9b06471471b0eb1c89e15a"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.hanc-igitur",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-hanc-igitur"
+      ],
+      "source_order": 29,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer-and-interleaved-rubrics",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          11,
+          11
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-hanc-igitur",
+      "text_sha256": "2fd1d5d48d4b9a24370502f702c3575084dfa4d2c768bf1a1082e582e7e22444"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.quam-oblationem",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-quam-oblationem"
+      ],
+      "source_order": 30,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer-and-interleaved-rubrics",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          11,
+          12
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-quam-oblationem",
+      "text_sha256": "b78454b062fdbd668812f9829cd83319769e9ed25eefb20223200ded8dca1b6b"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.qui-pridie",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-qui-pridie"
+      ],
+      "source_order": 31,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer-and-interleaved-rubrics",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          12,
+          12
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-qui-pridie",
+      "text_sha256": "8fd90959e7a493e00d9ec0e5df13cd3c8a55a12534a29320c98668e89fc262ff"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.hostia-consecrationis-rubric",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-hostia-consecrationis-rubric"
+      ],
+      "source_order": 32,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          12,
+          12
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-hostia-consecrationis-rubric",
+      "text_sha256": "f1a8c385d46cb67231b053d6a6ee4ec84cd1e3c767866ae0530a5679034af093"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.hoc-est-corpus-meum",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-hoc-est-corpus-meum"
+      ],
+      "source_order": 33,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          12,
+          12
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-hoc-est-corpus-meum",
+      "text_sha256": "c82c05b971fbc110eeae2d4999516d1567c514b3de6173273141cc00271ef250"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.hostia-post-consecrationem-rubric",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-hostia-post-consecrationem-rubric"
+      ],
+      "source_order": 34,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          12,
+          12
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-hostia-post-consecrationem-rubric",
+      "text_sha256": "50b5ce8863cdc6a6625fabfaec1a2c2f393944eb83f357163fe213be47f707ed"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.simili-modo",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-simili-modo"
+      ],
+      "source_order": 35,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer-and-interleaved-rubrics",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          13,
+          13
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-simili-modo",
+      "text_sha256": "47444a1802321471a164cb8e776eb55c2ada584e7edb73a56fa8f5a2ff2029a6"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.calix-consecrationis-rubric",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-calix-consecrationis-rubric"
+      ],
+      "source_order": 36,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          13,
+          13
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-calix-consecrationis-rubric",
+      "text_sha256": "367ddf7b4eda44430e705363a1b5c9e9b94a2f694910bd876c04ca32398f46ce"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.hic-est-calix",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-hic-est-calix"
+      ],
+      "source_order": 37,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          13,
+          13
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-hic-est-calix",
+      "text_sha256": "c50c864ac0187422c363c2a511cf3a11158ced288fec79c77eb00cfb5cdaf476"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.calix-depositio-rubric",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-calix-depositio-rubric"
+      ],
+      "source_order": 38,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          13,
+          13
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-calix-depositio-rubric",
+      "text_sha256": "d487dcc97834686330088743920ea3fbb51c95e9f33af55fd506aed472773a50"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.haec-quotiescumque",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-haec-quotiescumque"
+      ],
+      "source_order": 39,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          13,
+          13
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-haec-quotiescumque",
+      "text_sha256": "343c0f1ea77dc0580513ccccd1ae477ef0c1c38ab30f39c249870289cb738857"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.calix-post-consecrationem-rubric",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-calix-post-consecrationem-rubric"
+      ],
+      "source_order": 40,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          13,
+          13
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-calix-post-consecrationem-rubric",
+      "text_sha256": "3bb9f32ef062cbda9f48e4810e1874768d864031d0614086ded08a13efd7ed20"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.unde-et-memores",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-unde-et-memores"
+      ],
+      "source_order": 41,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer-and-interleaved-rubrics",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          14,
+          14
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-unde-et-memores",
+      "text_sha256": "c437451fa6662e5cd74601d9dba346fd70148955e2b131c384e63edcbdc9662a"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.supra-quae-rubric",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-supra-quae-rubric"
+      ],
+      "source_order": 42,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          14,
+          14
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-supra-quae-rubric",
+      "text_sha256": "866a08fd56b526118f59ff0f5c94e73b180d3b17810b323555f29e1782ce857f"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.supra-quae",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-supra-quae"
+      ],
+      "source_order": 43,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          14,
+          15
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-supra-quae",
+      "text_sha256": "ea7f497462cfd237a2e292b09a60323e5b96493cbe61ff3e771115d7594ace72"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.supplices-rubric",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-supplices-rubric"
+      ],
+      "source_order": 44,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          15,
+          15
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-supplices-rubric",
+      "text_sha256": "c4249b127a447381b3db0dc2b4ebde1528d754f0a9cad31ffc2350fc4c0c2f8c"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.supplices-te-rogamus",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-supplices-te-rogamus"
+      ],
+      "source_order": 45,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer-and-interleaved-rubrics",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          15,
+          16
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-supplices-te-rogamus",
+      "text_sha256": "d4a63afa446300f26e98b3618f521754d5bc5b3bfa3190804c46031da01420c5"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.memento-defunctorum-heading",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-memento-defunctorum-heading"
+      ],
+      "source_order": 46,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "heading",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          16,
+          16
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-memento-defunctorum-heading",
+      "text_sha256": "654c2a712d543c1cbf4447e4d074ce0ec2db49f9292559d4ccf87e3f00f43686"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.memento-defunctorum",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-memento-defunctorum"
+      ],
+      "source_order": 47,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer-and-interleaved-rubrics",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          16,
+          16
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-memento-defunctorum",
+      "text_sha256": "6db3b6e52a32ae26fe35db85f54b1896afb61aa91c3affdcf710705365fed9ac"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.nobis-quoque-rubric",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-nobis-quoque-rubric"
+      ],
+      "source_order": 48,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          16,
+          16
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-nobis-quoque-rubric",
+      "text_sha256": "31e21942130b53137afde3f68db4968c144d95713d4cc643fa060fa56918617c"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.nobis-quoque-peccatoribus",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-nobis-quoque-peccatoribus"
+      ],
+      "source_order": 49,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer-and-interleaved-rubric",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          16,
+          17
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-nobis-quoque-peccatoribus",
+      "text_sha256": "50279dd6874c08b8c2f2d6785efb9030965fc2d3b0cb6f0443a067a898c7e9f0"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.per-quem-haec-omnia",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-per-quem-haec-omnia"
+      ],
+      "source_order": 50,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer-and-interleaved-rubric",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          17,
+          18
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-per-quem-haec-omnia",
+      "text_sha256": "9c93bd32a914c963dbc927b7cb88e4b66a6a99e9447f853b048a543885b001ba"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.per-ipsum-doxology",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-per-ipsum-doxology"
+      ],
+      "source_order": 51,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer-and-interleaved-rubrics",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          18,
+          18
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-per-ipsum-doxology",
+      "text_sha256": "6c5dd1a055005a0957b43a0124717ab77ab7dea37f8c60e92eba66698e16080a"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.canon.main.per-omnia-amen",
+      "native_path": [
+        "ordinary",
+        "canon",
+        "main-per-omnia-amen"
+      ],
+      "source_order": 52,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "chanted-dialogue-and-rubric",
+      "witness_id": "cistercian-1657-canon-pages",
+      "witness_pages": [
+        [
+          18,
+          18
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.canon-main-per-omnia-amen",
+      "text_sha256": "89ebeb6b55287aa9752ced2c21aea11aff15030c7dca06f22760cd2a814325fa"
+    }
+  ]
+}

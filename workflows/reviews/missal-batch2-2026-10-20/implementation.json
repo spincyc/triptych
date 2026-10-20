@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "record_type": "missal-batch-implementation-review",
+  "recorded_on": "2026-10-20",
+  "status": "pass",
+  "scope": [
+    "Ordered native constituent binding arrays with compatible legacy scalar bindings; complete declared constituents retain partial whole-book coverage.",
+    "Evidence-authorized republication kind uses the existing exact native parentage contract.",
+    "Typed exact canonical Source Library edition navigation with preserved generic URL safety.",
+    "Print routing and wrapping corrections with shared source and geometry invariants.",
+    "Registered actual-browser acceptance with corrected preservation of already-open sibling folds."
+  ],
+  "accepted_files": [
+    {
+      "path": "scripts/_act_history_preview.py",
+      "sha256": "7dd9c0b871fe1f2103bde5d49175b2e0700e01e07b6ae8088242e06c1532bdf9"
+    },
+    {
+      "path": "scripts/_eucharistic_history.py",
+      "sha256": "0b0d74a48979ed4034b4caf91f459c339615f8a2c2d7fec85983a0614b55954a"
+    },
+    {
+      "path": "scripts/_eucharistic_stages.py",
+      "sha256": "2d7d31f31b319c0d9320f3b686fff4fab9b1dde4129592b475290fb2b741eab7"
+    },
+    {
+      "path": "scripts/_eucharistic_texts.py",
+      "sha256": "eb8c24e995b228f8fdda3c84a512ec90b1812eadef672678772870beb863ecc9"
+    },
+    {
+      "path": "scripts/_history_browser_acceptance.py",
+      "sha256": "2555cd6730d77eb91c0d307eb3bc2382e10889f826990c34a55dea953eb211eb"
+    },
+    {
+      "path": "src/web/browser/history/history.js",
+      "sha256": "4701008094602752d120f6db99452bae825c9560df96f9d8fcaf71da88d2bf59"
+    },
+    {
+      "path": "tools/act-history",
+      "sha256": "d353fcef509d79657525767e613e733b8f44a40525235f13552e3ec5c77f75c4"
+    },
+    {
+      "path": "tools/missal-coverage-reconciliation",
+      "sha256": "55082a21ce97241d5a1d0c3c33eb46d740cf9f62607c16f57a618829e4421fb9"
+    },
+    {
+      "path": "tools/history-browser-acceptance",
+      "sha256": "64fd8ce81513bcd78ed812c013490feb08bc420ef21c41e59000944b0542d6cf"
+    },
+    {
+      "path": "tools/history-browser-acceptance.test",
+      "sha256": "59fe24c5f34f3592a45b0ebcccd2ccd769ec1080a2614e8ed5a6e4e30a9fb622"
+    },
+    {
+      "path": "tools/tests/test_history_browser_acceptance.py",
+      "sha256": "dfd58937fcd5bfdfdc7a6da4f274b283f54ac75b3f77a1fb35e4fbcde3f4b3a6"
+    },
+    {
+      "path": "tools/tests/test_act_history_preview.py",
+      "sha256": "191c7de388c48237a6e9d2f85f7b02a5ee0ece0f97895a1309d3491ed508ac26"
+    },
+    {
+      "path": "tools/tests/test_act_history_structure.py",
+      "sha256": "2bfa1c141d9979d007f3912404dba485261a608f2ac389dff3514f98bedb896c"
+    },
+    {
+      "path": "tools/tests/test_eucharistic_history.py",
+      "sha256": "58142ca741fe61b809b22fd1324a3dab6fca844eb0a68da464c870f42a4e398f"
+    },
+    {
+      "path": "tools/tests/test_eucharistic_stages.py",
+      "sha256": "befde9a29df2da3c13737b425928720e4a841c0b3efa1eec26cf5d65f26b9feb"
+    },
+    {
+      "path": "tools/tests/test_history_catalogue.py",
+      "sha256": "48317d3c73ad005ab73e690dd12267a090c6a5a1c500cd4141e602760111aa2c"
+    },
+    {
+      "path": "tmt.json",
+      "sha256": "2058cdae472d72c748a75d7122f23e45d3b803ba6f1ab21325c74bf0fd8d4120"
+    },
+    {
+      "path": "guidance/act-histories.md",
+      "sha256": "807fc2b849ab63de15cefa5f03734ab228de4303c2ef0910978ef4dd0256f23a"
+    },
+    {
+      "path": "guidance/web-data.md",
+      "sha256": "1e449d3652a70b43cee78a8e37f2e5246c6012d7e64f39c10efdea9194cc9436"
+    }
+  ],
+  "component_tests": [
+    {
+      "run": 55,
+      "passed": 55,
+      "exit_status": 0,
+      "suite": "tools.tests.test_eucharistic_history",
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/tests",
+        "-p",
+        "test_eucharistic_history.py",
+        "-v"
+      ],
+      "log_sha256": "75f507c53bb555d5c24e1b845366fdf644bcfb919b01ec3846601fb22ae0de06"
+    },
+    {
+      "run": 39,
+      "passed": 39,
+      "exit_status": 0,
+      "suite": "tools.tests.test_eucharistic_stages",
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/tests",
+        "-p",
+        "test_eucharistic_stages.py",
+        "-v"
+      ],
+      "log_sha256": "53638832cf2e73f3ecd7e7ec87f8f086f30b50b3526e4f1d98ba9791e55fc811"
+    },
+    {
+      "run": 63,
+      "passed": 62,
+      "skipped": 1,
+      "exit_status": 0,
+      "qualification": "Existing optional real-browser test; fresh registered actual-site acceptance is recorded separately.",
+      "suite": "tools.tests.test_history_catalogue",
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/tests",
+        "-p",
+        "test_history_catalogue.py",
+        "-v"
+      ],
+      "log_sha256": "3ba12ec3c8545599259d143b4dcf7d3943da24b50c74555e4b8309d01ef8382c"
+    },
+    {
+      "run": 27,
+      "passed": 27,
+      "exit_status": 0,
+      "suite": "tools.tests.test_act_history_preview",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "tools.tests.test_act_history_preview"
+      ],
+      "log_sha256": "ce645ba0623bdf05f547246c08d5900cf6793c183caa7612a4622cda2e2cd6ca"
+    },
+    {
+      "run": 10,
+      "passed": 10,
+      "exit_status": 0,
+      "qualification": "Includes sibling-preservation regression after the actual-run harness defect was reproduced.",
+      "suite": "tools.tests.test_history_browser_acceptance",
+      "invocation_qualification": "Suite outcome transferred from the exact accepted owner receipt; full original invocation is not asserted here."
+    }
+  ],
+  "independent_acceptance_receipt_sha256": {
+    "formal-model-receipt.json": "e4fb3e51fb4a772a6de1df4de9f2dbfa0b1e7c75bcde556f34bc5fd5c919d929",
+    "reader-guards-receipt.json": "21d9e9c67cb590f18d0b763ddc3b231b3dd004526991fc7db2994c5af65d5dc4",
+    "acceptance.json": "00228cf43529ad688f12fb26c616016d576868dda1bd09fc44bf3114ee91d1c2"
+  },
+  "source_link_contract": {
+    "kind": "source-library-edition",
+    "edition_id": "exact declared canonical edition ID",
+    "url": "../sources/#edition=<encoded edition ID>",
+    "validation": "Real canonical source graph resolves an edition; malformed, missing and non-edition identities fail closed. The edition manifest is pinned. Browser requires the declared matching identity and exact typed same-site route. Generic HTTP(S) filters are unchanged."
+  },
+  "source_link_ui_boundary": "The link opens the existing Sources reader and retained artifact metadata. The delta adds no PDF or artifact download interface; existing Source Library presentation and rights behavior remain unchanged.",
+  "final_structure_output_regressions": {
+    "run": 3,
+    "passed": 3,
+    "exit_status": 0,
+    "log_sha256": "3653a9281062565edcc96161c23aecfa46ce57798e94bd4095b1ae36446a9858"
+  },
+  "limits": [
+    "These tests establish bounded implementation behavior; they do not supply historical completeness or unsupported ancestry.",
+    "Actual browser and final digital-preview print acceptance have separate records; physical production proof remains open."
+  ],
+  "accepted_output_dependency_transfer": {
+    "status": "pass",
+    "scope": "Accepted corpus and print dependency identity after the browser harness correction.",
+    "canonical_corpus_input_files": 2119,
+    "print_input_files": 466,
+    "all_accepted_input_hashes_current": true,
+    "browser_tool_only_paths": [
+      "scripts/_history_browser_acceptance.py",
+      "tools/tests/test_history_browser_acceptance.py"
+    ],
+    "overlap_with_accepted_corpus_or_print_inputs": [],
+    "source_and_production_runtime_changed": false,
+    "qualification": "The corrected browser helper and its test have no dependency overlap with the accepted corpus/print inputs. Their own validation and full actual browser run are recorded separately."
+  }
+}

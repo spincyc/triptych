@@ -1,0 +1,21 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f"
+edition_id = "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606"
+artifact_type = "facsimile-pdf-derivative"
+media_type = "application/pdf"
+storage = "tracked"
+rights_status = "permission"
+rights_jurisdiction = "United States"
+rights_basis = "The identified 1606 printed text is public domain by expiration of its publication term. The Bayerische Staatsbibliothek digital images are supplied under No Copyright - Non-Commercial Use Only 1.0, https://rightsstatements.org/vocab/NoC-NC/1.0/ ; this is a rights statement, not a Creative Commons license. Noncommercial copying and redistribution retain that condition and attribution: München, Bayerische Staatsbibliothek, 2 Liturg. 205 a, bsb10496382. These source images and their lossless PDF derivative are excluded from Triptych’s CC BY 4.0 license. No unrestricted image reuse is asserted; the image condition is distinct from the public-domain historical Latin."
+source_url = "https://www.digitale-sammlungen.de/en/view/bsb10496382?page=244"
+provenance = "Lossless bounded extraction from the exact full BSB scan; eight complete photographed pages are retained without cropping or raster recompression. All eight original embedded JPEGs were opened and read directly. Canon bounds were independently frozen before the reviewer read the draft. SHA-256 identity of each extracted original JPEG before/after PDF selection is recorded in the acquisition/census evidence; no OCR controls literal wording."
+retrieved = "2026-10-20"
+sha256 = "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c"
+byte_size = 12067925
+path = "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/canon-facsimile-dc62364f/facsimile.pdf"
+page_count = 8
+indexable = false
+derived_from = "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-whole-pdf-1032ee07"
+transformation = "pdfseparate -f 245 -l 252 of the exact provider scan, followed by pdfunite of the resulting eight one-page PDFs in ascending order. Original embedded JPEG bytes are unchanged; derivative pages 1–8 correspond to full PDF 245–252, BSB canvases 244–251, sequence printed 190–197 (fourth folio actually misprinted 192)."
+notes = "The complete eight retained pages witness the strict Canon from heading/Te igitur through concluding sung Per omnia/Amen. Only upper-left Canon text on the last page is in scope; all lower-left Orémus/Præcéptis/Pater noster text and the right column are outside. Acquisition is bounded and does not establish complete missal or complete Ordinary text coverage."

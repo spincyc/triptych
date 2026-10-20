@@ -440,6 +440,132 @@ class NativeStageBindingTests(unittest.TestCase):
             return stages.load(self.root, catalogue_ids={"research:first", "research:second"},
                                catalogue_records=self.catalogue_records, comparisons={}, fingerprint=history.fingerprint)
 
+    def constituents(self):
+        """Two independently receipted divisions of the same exact witness."""
+        books = []
+        for page, identifier in ((1, "fixture-book"), (2, "second-constituent")):
+            book, extent, review = copy.deepcopy((self.book, self.extent, self.review))
+            book.update(id=identifier, title="Synthetic constituent " + str(page), extent_kind="constituent",
+                        excluded_book_divisions=["The other synthetic division"],
+                        extent_path=self.texts.NATIVE_BOOK_DIRECTORY + "/support/" + identifier + "-extent.json",
+                        collation_path=self.texts.NATIVE_BOOK_DIRECTORY + "/support/" + identifier + "-review.json")
+            book["witnesses"][0]["scope_pages"] = [[page, page]]
+            book["units"] = [book["units"][page - 1]]
+            book["units"][0]["source_order"] = 1
+            extent.update(book_id=identifier, expected_unit_ids=[book["units"][0]["unit_id"]])
+            extent["pages"][2 - page].update(role="outside-constituent", unit_ids=[], description="Other synthetic division")
+            review.update(book_id=identifier, unit_sha256={book["units"][0]["unit_id"]: book["units"][0]["text_sha256"]})
+            path = self.root / self.texts.NATIVE_BOOK_DIRECTORY / (identifier + ".json")
+            path.write_text(json.dumps(book))
+            extent_path = self.root / book["extent_path"]
+            extent_path.write_text(json.dumps(extent))
+            review.update(binding_sha256=history.digest(path.read_bytes()), extent_sha256=history.digest(extent_path.read_bytes()))
+            (self.root / book["collation_path"]).write_text(json.dumps(review))
+            books.append(book)
+        stage = self.data["stages"][0]
+        stage.pop("text_binding")
+        stage.update(text_bindings=["native-book:" + book["id"] for book in books], text_coverage="partial")
+        return books
+
+    def test_multiple_constituents_keep_order_independent_hashes_and_partial_coverage(self):
+        books = self.constituents()
+        result = self.project()
+        stage = result["stages"][0]
+        self.assertNotIn("text_binding", stage)
+        self.assertEqual("partial", stage["text_coverage"])
+        self.assertEqual(stage["text_bindings"], [item["text_binding"] for item in stage["text_projections"]])
+        self.assertEqual([book["title"] for book in books], [item["title"] for item in stage["text_projections"]])
+        for book, projected in zip(books, stage["text_projections"]):
+            self.assertEqual("native-texts/" + book["id"] + ".json", projected["text_projection_path"])
+            self.assertEqual(history.digest((self.root / self.texts.NATIVE_BOOK_DIRECTORY / (book["id"] + ".json")).read_bytes()),
+                             projected["text_binding_sha256"])
+            self.assertTrue(any(stamp["path"] == book["collation_path"] for stamp in result["inputs"]))
+        self.assertFalse(result["transitions"][0]["text_inheritance"])
+        self.assertFalse(result["transitions"][0]["git_ancestry"])
+        (self.root / books[1]["collation_path"]).write_text("{}")
+        with self.assertRaisesRegex(stages.StageError, "stage input changed"):
+            stages.verify_inputs(self.root, result["inputs"], fingerprint=history.fingerprint)
+        with self.assertRaisesRegex(stages.StageError, "full-text binding"):
+            self.project()
+
+    def test_multiple_binding_declarations_refuse_duplicates_empty_and_legacy_mixture(self):
+        self.constituents()
+        stage = self.data["stages"][0]
+        original = stage["text_bindings"]
+        for value in ([], [original[0], original[0]], "native-book:fixture-book"):
+            with self.subTest(value=value):
+                stage["text_bindings"] = value
+                with self.assertRaisesRegex(stages.StageError, "distinct string array"):
+                    self.project()
+        stage["text_bindings"] = original
+        stage["text_binding"] = original[0]
+        with self.assertRaisesRegex(stages.StageError, "choose text_binding or text_bindings"):
+            self.project()
+
+    def test_catalogue_enumerates_every_constituent_without_legacy_aliases(self):
+        self.constituents()
+        self.project()
+        source = self.root / "routing.toml"
+        source.write_text('schema_version=1\nrecord_type="catholic-eucharistic-history"\nscope_ref="scope"\n'
+                          '[[catalogues]]\nid="research"\npath="research.toml"\ntable="records"\n')
+        (self.root / "research.toml").write_text('[[records]]\nid="first"\nsource_library_edition_id="edition.fixture-book"\n'
+                                                '[[records]]\nid="second"\n')
+        with patch.object(self.texts, "_load_library", return_value=self.library):
+            result = history.catalogue(source, self.root, act_loader=lambda path: {})
+        stage = result["stage_history"]["stages"][0]
+        self.assertEqual(set(stage["text_bindings"]), {item["adapter_id"] for item in result["native_texts"]})
+        self.assertNotIn("text_binding_sha256", stage)
+        self.assertNotIn("text_projection_path", stage)
+        self.assertEqual({item["text_projection_path"] for item in stage["text_projections"]},
+                         {item["projection_path"] for item in result["native_texts"]})
+
+    def test_each_constituent_must_exist_match_stage_and_keep_whole_book_partial(self):
+        books = self.constituents()
+        stage = self.data["stages"][0]
+        stage["text_bindings"][1] = "native-book:missing-book"
+        with self.assertRaisesRegex(stages.StageError, "Unknown Eucharistic text adapter"):
+            self.project()
+        stage["text_bindings"][1] = "native-book:" + books[1]["id"]
+        with patch.object(self.texts, "load_adapter", wraps=self.texts.load_adapter) as loader:
+            self.project()
+            self.assertEqual(stage["text_bindings"], [call.args[0] for call in loader.call_args_list])
+        stage["text_coverage"] = "complete"
+        with self.assertRaisesRegex(stages.StageError, "complete declared constituents and partial stage"):
+            self.project()
+        stage["text_coverage"] = "partial"
+        second_path = self.root / self.texts.NATIVE_BOOK_DIRECTORY / (books[1]["id"] + ".json")
+        books[1]["stage_ids"] = ["fixture.second"]
+        second_path.write_text(json.dumps(books[1]))
+        review_path = self.root / books[1]["collation_path"]
+        receipt = json.loads(review_path.read_text())
+        receipt["binding_sha256"] = history.digest(second_path.read_bytes())
+        review_path.write_text(json.dumps(receipt))
+        with self.assertRaisesRegex(stages.StageError, "scope mismatch"):
+            self.project()
+
+    def test_whole_book_binding_cannot_enter_constituent_list(self):
+        self.data["stages"][0].pop("text_binding")
+        self.data["stages"][0].update(text_bindings=["native-book:fixture-book"], text_coverage="partial")
+        with self.assertRaisesRegex(stages.StageError, "complete declared constituents and partial stage"):
+            self.project()
+
+    def test_distinct_receipted_bindings_may_overlap_without_unioning_coverage(self):
+        first, second = self.constituents()
+        overlap = {**copy.deepcopy(first), **{key: second[key] for key in ("id", "title", "extent_path", "collation_path")}}
+        book_path = self.root / self.texts.NATIVE_BOOK_DIRECTORY / (second["id"] + ".json")
+        book_path.write_text(json.dumps(overlap))
+        extent = json.loads((self.root / first["extent_path"]).read_text())
+        extent["book_id"] = second["id"]
+        extent_path = self.root / second["extent_path"]
+        extent_path.write_text(json.dumps(extent))
+        receipt = json.loads((self.root / first["collation_path"]).read_text())
+        receipt.update(book_id=second["id"], binding_sha256=history.digest(book_path.read_bytes()),
+                       extent_sha256=history.digest(extent_path.read_bytes()))
+        (self.root / second["collation_path"]).write_text(json.dumps(receipt))
+        stage = self.project()["stages"][0]
+        self.assertEqual("partial", stage["text_coverage"])
+        self.assertEqual(2, len(stage["text_projections"]))
+
     def test_complete_stage_binds_exact_native_scope_and_pins_all_inputs(self):
         result = self.project()
         self.assertEqual("complete", result["stages"][0]["text_coverage"])
