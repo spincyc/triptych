@@ -71,7 +71,7 @@
 
 schema = "triptych-source-containment/v1"
 record_type = "source-containment"
-audited_on = "2026-09-23"
+audited_on = "2026-10-20"
 numbering = "vulgate"
 
 [shapes]
@@ -3660,3 +3660,42 @@ title = "Notice of recognitio for the Macedonian versions of the Divine Liturgie
 locator = "S.I.C.O. 2009, printed p. 291 / PDF p. 290, Recognitio e approvazione dei testi liturgici, final bullet"
 extent_unresolved = "The bounded notice is represented by a factual paraphrase; no original act or approved liturgical text is retained. Its term recognitio is preserved without deciding equivalence to the separate register's approval wording."
 basis = "Passage passage.holy-see.sico.2009.macedonian-recognitio-2009-12-09 identifies the final bullet and its dated action. This is a descriptive constituent title, not an asserted source heading."
+
+[[containers]]
+id = "work.anonymous.karlsruhe-cod-aug-perg-253"
+manifest_sha256 = "5ebb8b663eab9959acc05736f44050249f89218514793657551360c49fb615d2"
+status = "partial"
+basis = "The host-codex work and its unchanged BLB 372-page PDF identify Karlsruhe Cod. Aug. perg. 253, chiefly a Jerome commentary. Four separately registered ELMSS 1567–1570 segments bind the catalogued liturgical palimpsest undertexts to bounded folios and exact PDF page ranges. The folio-to-PDF sequence was checked at folios 1, 10 and 144; the four undertext assignments come from the ELMSS research receipt, not a reading of the faint undertext in these images."
+unresolved = "The four catalogued liturgical undertexts are listed here; the codex's remaining textual and codicological constituents have not been exhaustively identified. Undertext wording, completeness and relationships to other sacramentaries remain uncollated. This host is not itself a complete missal."
+
+[[containers.constituents]]
+author = "Anonymous"
+title = "Sacramentary fragment, classification unsettled (ELMSS 1567)"
+work_id = "work.anonymous.karlsruhe-aug253-palimpsest-elmss-1567"
+locator = "Cod. Aug. perg. 253 fols. 10 and 17; PDF pp. 24–25 and 38–39"
+extent_unresolved = "Folio and image bounds are registered, but the undertext was not read or collated. ELMSS calls it Gelasian; Suski calls it Gallican."
+basis = "Segment segment.anonymous.karlsruhe-aug253-palimpsest-elmss-1567.medieval-undertext.bounded-folios pins the BLB artifact SHA and the two PDF page ranges; latin-early receipt version latin-early-elmss-1567 supplies the folio and classification lead."
+
+[[containers.constituents]]
+author = "Anonymous"
+title = "Oratio pro Regibus Francorum (ELMSS 1568)"
+work_id = "work.anonymous.karlsruhe-aug253-palimpsest-elmss-1568"
+locator = "Cod. Aug. perg. 253 fols. 11 and 16; PDF pp. 26–27 and 36–37"
+extent_unresolved = "Folio and image bounds are registered, but the single royal prayer's wording was not read or collated; it is not a complete Mass book."
+basis = "Segment segment.anonymous.karlsruhe-aug253-palimpsest-elmss-1568.medieval-undertext.bounded-folios pins the BLB artifact SHA and the two PDF page ranges; latin-early receipt version latin-early-elmss-1568 supplies the folio and separate-hand lead."
+
+[[containers.constituents]]
+author = "Anonymous"
+title = "Mone Masses, Gallican Mass libellus fragments (ELMSS 1569)"
+work_id = "work.anonymous.karlsruhe-aug253-palimpsest-elmss-1569"
+locator = "Cod. Aug. perg. 253 fols. 12, 15, 26, 28, 31, 33–34, 41–44, 47–51, 56–66, 68, 71, 73–81, 90, 92, 95, 97, 139 and 144; exact PDF ranges in the segment"
+extent_unresolved = "Catalogued folios are bounded, but text, number of Masses and relation to other Gallican witnesses were not collated."
+basis = "Segment segment.anonymous.karlsruhe-aug253-palimpsest-elmss-1569.medieval-undertext.bounded-folios pins 18 PDF ranges in the BLB artifact. The latin-early receipt and its Suski entry [47] identify ELMSS 1569 / CLA VIII 1102 as the Mone Masses, distinct from ELMSS 1570."
+
+[[containers.constituents]]
+author = "Anonymous"
+title = "Gallican sacramentary fragments (ELMSS 1570)"
+work_id = "work.anonymous.karlsruhe-aug253-palimpsest-elmss-1570"
+locator = "Cod. Aug. perg. 253 fols. 13–14, 18–25 and 96; PDF pp. 30–33, 40–55 and 196–197"
+extent_unresolved = "Folio and image bounds are registered, but the Mass components and text were not read or collated. This is not the Mone Masses."
+basis = "Segment segment.anonymous.karlsruhe-aug253-palimpsest-elmss-1570.medieval-undertext.bounded-folios pins the BLB artifact SHA and three PDF ranges; latin-early receipt version latin-early-elmss-1570 and its Suski entry [48] identify CLA VIII 1103 as a separate sacramentary layer."

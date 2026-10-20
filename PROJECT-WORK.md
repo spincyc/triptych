@@ -171,12 +171,12 @@ ranges. They also hold 40 unresolved leads, 222 acquisition receipts with
 hashes and proposed storage, and each reviewer's reconciliation. The packets
 and reviews stay in scratch, pinned by hash.
 
-Open from this wave:
-- **Retention.** Thirty-three acquisitions are proposed for tracked retention
-  and await source-library registration with per-artifact rights records.
+Open at this 2026-10-19 checkpoint (later dispositions appear below):
+- **Retention.** Thirty-three acquisitions were proposed for tracked retention
+  and awaited source-library registration with per-artifact rights records.
   On 2026-10-19 the maintainer deferred all registration until every lane is
-  integrated, so retention is decided once for the whole pass. Until then the
-  bytes stay in untracked scratch, identified by the receipts' hashes. Reviewers
+  integrated, so retention would be decided once for the whole pass. Until then
+  the bytes stayed in untracked scratch, identified by the receipts' hashes. Reviewers
   flagged three issues for that registration:
   - United States-only bases for Lowe 1920 and 1924, Bălan 1915 and Charon
     1908.
@@ -448,6 +448,27 @@ native version roots. Its browser projection has 539 files, including the new
 Canon text view. Source-library validation reports 3,182 artifacts and 5,457
 passages; the stage crosswalk reconciles to 132 not-transcribed and 15 partial
 stages with zero findings.
+
+**Research source retention, 2026-10-20.** Once all dated research lanes were
+integrated, the [exact-byte decision](src/sources/inventories/eucharistic-source-retention-decision-v1.toml)
+reviewed 80 distinct proposed payload identities. Eight unchanged PDFs are now
+registered under individual source-library works, editions and artifacts;
+72 have itemized deferrals. The retained files total 331,429,443 bytes. They
+include the Karlsruhe Cod. Aug. perg. 253 host scan, with four separately
+bounded palimpsest undertexts; five Bonn scans of Ge'ez and Syriac books or
+calendars; and two licensed scholarly articles. The 1887 calendar has 162 PDF
+pages, of which 157 are imaged and five blank. Article evidence remains
+scholarship, the Karlsruhe host remains a codex rather than a whole Missal,
+and the Asmara/Keren and Sharfeh 1905/Mosul 1881 relations remain uncollated.
+The source reader now has 4,316 files and registers 3,190 artifacts, including
+the eight new PDF owners. The Eastern source rows and four Karlsruhe candidate
+rows link to those retained identities. This registration does not add a
+transcribed stage or prove a revised liturgical text.
+Independent postimage review checked all 45 new source records and payload paths,
+the eight PDF hashes and page counts, and the 80 decisions; the corrected review
+has no blocker. `make check-sources`, source-library tests (55 passing), history
+structure and catalogue checks, coverage reconciliation, release bindings,
+tool registry validation, and the rebuilt private site preview all pass.
 
 Source review repaired eleven stale binding rows in ten publications after
 reconstructing the exact earlier fingerprints. Feltoe's edition description

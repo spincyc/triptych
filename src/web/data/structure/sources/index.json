@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 3182,
-  "editions": 1148,
+  "artifacts": 3190,
+  "editions": 1160,
   "passages": 5457,
   "readable": 3155,
-  "works": 978
+  "works": 990
  },
  "facets": {
   "authors": [
@@ -95,7 +95,7 @@
    },
    {
     "id": "Anonymous",
-    "works": 14
+    "works": 18
    },
    {
     "id": "Anonymous (transmitted under Augustine of Hippo's name)",
@@ -143,6 +143,10 @@
    },
    {
     "id": "Anonymous compilers, scribes, and illuminators",
+    "works": 1
+   },
+   {
+    "id": "Anonymous manuscript compilers; Jerome commentary in the host codex",
     "works": 1
    },
    {
@@ -662,6 +666,10 @@
     "works": 1
    },
    {
+    "id": "Ethiopian Catholic Church",
+    "works": 1
+   },
+   {
     "id": "Eusebius of Caesarea",
     "works": 3
    },
@@ -962,6 +970,10 @@
     "works": 1
    },
    {
+    "id": "Ilya Semenenko-Basin and Stefano Caprio",
+    "works": 1
+   },
+   {
     "id": "Institut du Christ Roi Souverain Prêtre, France",
     "works": 1
    },
@@ -1023,6 +1035,10 @@
    },
    {
     "id": "James Tauber and MorphGNT contributors",
+    "works": 1
+   },
+   {
+    "id": "Jan Dominik Bogataj",
     "works": 1
    },
    {
@@ -1798,8 +1814,24 @@
     "works": 1
    },
    {
+    "id": "Syriac Catholic Church",
+    "works": 1
+   },
+   {
     "id": "Syriac Catholic Church liturgical tradition",
     "works": 2
+   },
+   {
+    "id": "Syriac Catholic Church; Clemens Joseph David attributed by Bonn catalogue",
+    "works": 1
+   },
+   {
+    "id": "Syriac Catholic Church; approved by Cyril Behnam Benni, Archbishop of Mosul",
+    "works": 1
+   },
+   {
+    "id": "Syriac Catholic Church; arranged by Patriarch Ignatius Ephrem II",
+    "works": 1
    },
    {
     "id": "Syro-Malabar Catholic Church liturgical tradition",
@@ -2053,7 +2085,7 @@
    },
    {
     "id": "liturgical-book",
-    "works": 41
+    "works": 46
    },
    {
     "id": "patristic-treatise",
@@ -2232,6 +2264,10 @@
     "works": 4
    },
    {
+    "id": "manuscript-fragment",
+    "works": 4
+   },
+   {
     "id": "medieval-sermon",
     "works": 4
    },
@@ -2361,6 +2397,10 @@
    },
    {
     "id": "play",
+    "works": 3
+   },
+   {
+    "id": "scholarly-article",
     "works": 3
    },
    {
@@ -3108,6 +3148,10 @@
     "works": 1
    },
    {
+    "id": "manuscript-codex",
+    "works": 1
+   },
+   {
     "id": "martyr-act",
     "works": 1
    },
@@ -3452,10 +3496,6 @@
     "works": 1
    },
    {
-    "id": "scholarly-article",
-    "works": 1
-   },
-   {
     "id": "scholarly-database-article",
     "works": 1
    },
@@ -3582,7 +3622,7 @@
     "id": "en"
    },
    {
-    "editions": 341,
+    "editions": 346,
     "id": "la"
    },
    {
@@ -3602,16 +3642,16 @@
     "id": "it"
    },
    {
+    "editions": 15,
+    "id": "syr"
+   },
+   {
     "editions": 14,
     "id": "de"
    },
    {
     "editions": 12,
     "id": "he"
-   },
-   {
-    "editions": 11,
-    "id": "syr"
    },
    {
     "editions": 7,
@@ -3663,6 +3703,10 @@
    },
    {
     "editions": 1,
+    "id": "gez"
+   },
+   {
+    "editions": 1,
     "id": "hr"
    },
    {
@@ -3680,6 +3724,14 @@
    {
     "editions": 1,
     "id": "nah"
+   },
+   {
+    "editions": 1,
+    "id": "ru"
+   },
+   {
+    "editions": 1,
+    "id": "sl"
    },
    {
     "editions": 1,
@@ -3732,25 +3784,25 @@
     "label": "18th century"
    },
    {
-    "editions": 213,
+    "editions": 215,
     "id": "1800",
     "label": "19th century"
    },
    {
-    "editions": 253,
+    "editions": 256,
     "id": "1900",
     "label": "20th century"
    },
    {
-    "editions": 599,
+    "editions": 601,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 1826,
-    "editions": 440,
+    "artifacts": 1832,
+    "editions": 446,
     "id": "public-domain"
    },
    {
@@ -3764,8 +3816,8 @@
     "id": "unresolved"
    },
    {
-    "artifacts": 128,
-    "editions": 68,
+    "artifacts": 130,
+    "editions": 70,
     "id": "licensed"
    },
    {
@@ -4985,6 +5037,30 @@
    "title": "First Homily on the Annunciation to the Holy Virgin Mary"
   },
   {
+   "alternate_titles": [],
+   "author": "Anonymous",
+   "category": "manuscript-fragment",
+   "directory": "editions/anonymous/karlsruhe-aug253-palimpsest-elmss-1570/",
+   "editions": [
+    {
+     "date": "late seventh to early eighth century",
+     "file": "undated-medieval-undertext.json",
+     "id": "edition.anonymous.karlsruhe-aug253-palimpsest-elmss-1570.medieval-undertext",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [],
+     "title": "Gallican sacramentary fragments in Cod. Aug. perg. 253",
+     "year": null
+    }
+   ],
+   "id": "work.anonymous.karlsruhe-aug253-palimpsest-elmss-1570",
+   "languages": [
+    "la"
+   ],
+   "title": "Gallican sacramentary fragments (ELMSS 1570)"
+  },
+  {
    "alternate_titles": [
     "1Q20",
     "1QapGen",
@@ -5025,6 +5101,54 @@
     "en"
    ],
    "title": "Key of Heaven"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Anonymous",
+   "category": "manuscript-fragment",
+   "directory": "editions/anonymous/karlsruhe-aug253-palimpsest-elmss-1569/",
+   "editions": [
+    {
+     "date": "seventh century",
+     "file": "undated-medieval-undertext.json",
+     "id": "edition.anonymous.karlsruhe-aug253-palimpsest-elmss-1569.medieval-undertext",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [],
+     "title": "Mone Masses, Gallican Mass libellus fragments in Cod. Aug. perg. 253",
+     "year": null
+    }
+   ],
+   "id": "work.anonymous.karlsruhe-aug253-palimpsest-elmss-1569",
+   "languages": [
+    "la"
+   ],
+   "title": "Mone Masses, Gallican Mass libellus fragments (ELMSS 1569)"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Anonymous",
+   "category": "manuscript-fragment",
+   "directory": "editions/anonymous/karlsruhe-aug253-palimpsest-elmss-1568/",
+   "editions": [
+    {
+     "date": "first half of eighth century",
+     "file": "undated-medieval-undertext.json",
+     "id": "edition.anonymous.karlsruhe-aug253-palimpsest-elmss-1568.medieval-undertext",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [],
+     "title": "Oratio pro Regibus Francorum in Cod. Aug. perg. 253",
+     "year": null
+    }
+   ],
+   "id": "work.anonymous.karlsruhe-aug253-palimpsest-elmss-1568",
+   "languages": [
+    "la"
+   ],
+   "title": "Oratio pro Regibus Francorum (ELMSS 1568)"
   },
   {
    "alternate_titles": [],
@@ -5077,6 +5201,30 @@
     "fr"
    ],
    "title": "Récit veritable de ce qui s'est passé à Loudun contre maistre Urbain Grandier"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Anonymous",
+   "category": "manuscript-fragment",
+   "directory": "editions/anonymous/karlsruhe-aug253-palimpsest-elmss-1567/",
+   "editions": [
+    {
+     "date": "eighth century",
+     "file": "undated-medieval-undertext.json",
+     "id": "edition.anonymous.karlsruhe-aug253-palimpsest-elmss-1567.medieval-undertext",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [],
+     "title": "Sacramentary fragment, classification unsettled in Cod. Aug. perg. 253",
+     "year": null
+    }
+   ],
+   "id": "work.anonymous.karlsruhe-aug253-palimpsest-elmss-1567",
+   "languages": [
+    "la"
+   ],
+   "title": "Sacramentary fragment, classification unsettled (ELMSS 1567)"
   },
   {
    "alternate_titles": [
@@ -5632,6 +5780,32 @@
     "la"
    ],
    "title": "English Pontifical, Cambridge, Corpus Christi College, Parker Library MS 79"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Anonymous manuscript compilers; Jerome commentary in the host codex",
+   "category": "manuscript-codex",
+   "directory": "editions/anonymous/karlsruhe-cod-aug-perg-253/",
+   "editions": [
+    {
+     "date": "third third of seventh century",
+     "file": "undated-medieval-palimpsest-codex.json",
+     "id": "edition.anonymous.karlsruhe-cod-aug-perg-253.medieval-palimpsest-codex",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Cod. Aug. perg. 253, seventh-century host manuscript",
+     "year": null
+    }
+   ],
+   "id": "work.anonymous.karlsruhe-cod-aug-perg-253",
+   "languages": [
+    "la"
+   ],
+   "title": "Karlsruhe, Badische Landesbibliothek, Cod. Aug. perg. 253"
   },
   {
    "alternate_titles": [
@@ -14016,6 +14190,33 @@
    "title": "The History of Creation, Volume I"
   },
   {
+   "alternate_titles": [],
+   "author": "Ethiopian Catholic Church",
+   "category": "liturgical-book",
+   "directory": "editions/ethiopian-catholic-church/missale-aethiopicum-asmara/",
+   "editions": [
+    {
+     "date": "1914/15",
+     "file": "1914-1914-1915-asmara-ethiopian-1907.json",
+     "id": "edition.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara",
+     "language": "gez",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Missale Aethiopicum, Asmara, Ethiopian year 1907 (1914/15)",
+     "year": 1914
+    }
+   ],
+   "id": "work.ethiopian-catholic-church.missale-aethiopicum-asmara",
+   "languages": [
+    "gez",
+    "la"
+   ],
+   "title": "Missale Aethiopicum, Asmara printing"
+  },
+  {
    "alternate_titles": [
     "Proof of the Gospel"
    ],
@@ -17736,6 +17937,35 @@
   },
   {
    "alternate_titles": [
+    "Русские литургические памяти в славянском византо-католическом месяцеслове (Recensio Vulgata) середины XX в."
+   ],
+   "author": "Ilya Semenenko-Basin and Stefano Caprio",
+   "category": "scholarly-article",
+   "directory": "editions/ilya-semenenko-basin-and-stefano-caprio/russian-liturgical-memories-vulgata-menologion/",
+   "editions": [
+    {
+     "date": "2021",
+     "file": "2021-2021-slovene-10-1.json",
+     "id": "edition.ilya-semenenko-basin-and-stefano-caprio.russian-liturgical-memories-vulgata-menologion.slovene-10-1-2021",
+     "language": "ru",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "licensed"
+     ],
+     "title": "Russian Liturgical Memories in the Slavic Byzantine-Catholic Menologion (Recensio Vulgata) of the Mid-20th Century, Slověne 10/1 (2021)",
+     "year": 2021
+    }
+   ],
+   "id": "work.ilya-semenenko-basin-and-stefano-caprio.russian-liturgical-memories-vulgata-menologion",
+   "languages": [
+    "ru",
+    "en"
+   ],
+   "title": "Russian Liturgical Memories in the Slavic Byzantine-Catholic Menologion (Recensio Vulgata) of the Mid-20th Century"
+  },
+  {
+   "alternate_titles": [
     "French district ordo",
     "Monthly liturgical calendar"
    ],
@@ -18637,6 +18867,32 @@
     "grc"
    ],
    "title": "MorphGNT: SBLGNT Edition"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Jan Dominik Bogataj",
+   "category": "scholarly-article",
+   "directory": "editions/jan-dominik-bogataj/o-novem-slovenskem-prevodu-bozje-liturgije/",
+   "editions": [
+    {
+     "date": "2022",
+     "file": "2022-2022-edinost-77-2.json",
+     "id": "edition.jan-dominik-bogataj.o-novem-slovenskem-prevodu-bozje-liturgije.edinost-77-2-2022",
+     "language": "sl",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "licensed"
+     ],
+     "title": "O novem slovenskem prevodu Božje liturgije, Edinost in dialog 77/2 (2022)",
+     "year": 2022
+    }
+   ],
+   "id": "work.jan-dominik-bogataj.o-novem-slovenskem-prevodu-bozje-liturgije",
+   "languages": [
+    "sl"
+   ],
+   "title": "O novem slovenskem prevodu Božje liturgije"
   },
   {
    "alternate_titles": [
@@ -29489,6 +29745,33 @@
    "title": "Canons of the Synod of Laodicea"
   },
   {
+   "alternate_titles": [],
+   "author": "Syriac Catholic Church",
+   "category": "liturgical-book",
+   "directory": "editions/syriac-catholic-church/qudikus-qurbono-pericopes/",
+   "editions": [
+    {
+     "date": "1901",
+     "file": "1901-1901-sharfeh-patriarchal.json",
+     "id": "edition.syriac-catholic-church.qudikus-qurbono-pericopes.1901-sharfeh-patriarchal",
+     "language": "syr",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Qudikus Qurbono, Sharfeh patriarchal press, 1901",
+     "year": 1901
+    }
+   ],
+   "id": "work.syriac-catholic-church.qudikus-qurbono-pericopes",
+   "languages": [
+    "syr",
+    "ar"
+   ],
+   "title": "Qudikus Qurbono: table of Epistle and Gospel readings at Mass"
+  },
+  {
    "alternate_titles": [
     "Service de la Messe selon le rit syrien avec les prières qui se disent pour les morts",
     "Kitāb hidmat al-quddās",
@@ -29564,6 +29847,89 @@
     "la"
    ],
    "title": "Missale iuxta ritum Ecclesiae Apostolicae Antiochenae Syrorum"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Syriac Catholic Church; Clemens Joseph David attributed by Bonn catalogue",
+   "category": "liturgical-book",
+   "directory": "editions/syriac-catholic-church/calendar-juxta-ritum-antiochenum/",
+   "editions": [
+    {
+     "date": "1887",
+     "file": "1887-1887-mosul-dominican.json",
+     "id": "edition.syriac-catholic-church.calendar-juxta-ritum-antiochenum.1887-mosul-dominican",
+     "language": "syr",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Calendarium juxta ritum Ecclesiae Antiochenae Syrorum, Mosul 1887",
+     "year": 1887
+    }
+   ],
+   "id": "work.syriac-catholic-church.calendar-juxta-ritum-antiochenum",
+   "languages": [
+    "syr",
+    "ar",
+    "la"
+   ],
+   "title": "Calendarium juxta ritum Ecclesiae Antiochenae Syrorum"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Syriac Catholic Church; approved by Cyril Behnam Benni, Archbishop of Mosul",
+   "category": "liturgical-book",
+   "directory": "editions/syriac-catholic-church/mosul-diocesan-calendar-1877/",
+   "editions": [
+    {
+     "date": "1877",
+     "file": "1877-1877-mosul-dominican.json",
+     "id": "edition.syriac-catholic-church.mosul-diocesan-calendar-1877.1877-mosul-dominican",
+     "language": "syr",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Calendarium ad usum dioeceseos Mausiliensis Syrorum, Mosul 1877",
+     "year": 1877
+    }
+   ],
+   "id": "work.syriac-catholic-church.mosul-diocesan-calendar-1877",
+   "languages": [
+    "syr",
+    "ar",
+    "la"
+   ],
+   "title": "Calendarium ad usum dioeceseos Mausiliensis Syrorum"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Syriac Catholic Church; arranged by Patriarch Ignatius Ephrem II",
+   "category": "liturgical-book",
+   "directory": "editions/syriac-catholic-church/kitab-khidmat-al-quddas-1905/",
+   "editions": [
+    {
+     "date": "1905",
+     "file": "1905-1905-sharfeh-patriarchal.json",
+     "id": "edition.syriac-catholic-church.kitab-khidmat-al-quddas-1905.1905-sharfeh-patriarchal",
+     "language": "syr",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Kitāb khidmat al-quddās, Sharfeh title-page printing of 1905",
+     "year": 1905
+    }
+   ],
+   "id": "work.syriac-catholic-church.kitab-khidmat-al-quddas-1905",
+   "languages": [
+    "syr",
+    "ar"
+   ],
+   "title": "Kitāb khidmat al-quddās according to the Syriac Antiochene rite"
   },
   {
    "alternate_titles": [],
