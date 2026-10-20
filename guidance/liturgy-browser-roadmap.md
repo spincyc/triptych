@@ -452,9 +452,10 @@ the same ten Proper roles in the same order; Day adds their ritual seats. Fresh
 source-served Chromium runs passed 55 Day and 49 Propers assertion groups with
 no console or request failures. Captures at 1440, 393 and 320 CSS pixels have
 no horizontal overflow. The Latin Day Missal print is 25 pages; English Read
-is ten pages in both entrances. A final-page tinted empty panel is visible in
-the captured prints, and extensive translation notes dominate the English
-print. These are open C4 print-presentation findings. Full CLI/structure/browser
+is ten pages in both entrances. A follow-up print correction removes the
+final-page tinted frame bleed in both entrances without changing those page
+counts or the 25-page Latin Day Missal print. Extensive translation notes
+still dominate the English print, an open C4 presentation finding. Full CLI/structure/browser
 event-order parity, the complete viewport and print matrix, and independent
 acceptance remain open; this checkpoint does not close C2 or C3.
 
