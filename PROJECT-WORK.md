@@ -207,6 +207,19 @@ acceptance, physical-printer proof, spoken screen-reader review or deployment.
 Existing source advisories and all 161 pending semantic family review units
 remain explicit. Earlier passes below remain evidence for their named snapshots.
 
+**Verified review transport, 2026-10-20.** The reviewed implementation is
+committed and pushed as `2ea56bb214c72cdf9f079a5b539736f881645721` on
+`feature/missal-timeline`. The combined transport directory
+`.scratch/agent-handoffs/20261020T192447Z-missal-next-phases/` and sibling
+`.zip` were successfully created. All 82 files, 81 checksum entries, exact
+archive members and member-byte equality were verified; the ZIP CRC test passes.
+The 25,514,283-byte archive has SHA-256
+`f73c71b58c9fa631ddfd2d94ba513bc9d8adc0f2354499b5197f583eb67a0807`.
+It contains the two final print PDFs, selected real browser/print/source captures,
+focused source and implementation changes, gate receipts and explicit open
+limits. Its reviewed commit binds the accepted runtime bytes; this log records
+the verified transport.
+
 **Pre-phase clean-agent handoff, 2026-10-20.** The maintainer requested a persistent
 restart record after the regional, missionary and historical expansion.
 The [continuation handoff](src/sources/inventories/missal-timeline-handoff-2026-10-20.md)
