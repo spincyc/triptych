@@ -1084,6 +1084,33 @@ existing Day body scripts, preserving execution order, attributes and
 priorities. Runtime/kernel/table bytes remain fixed; complete HTML growth,
 browser behavior and measured value require fresh evidence.
 
+The derived-preload revision passes 58 static checks and 44 browser groups;
+all fifteen scripts retain one response and their original execution order.
+Complete Day HTML grows by 93 gzip bytes, its alias by 92. The subsequent eight
+cold samples restore concurrent script discovery and measure LCP medians
+3.054/3.072 s against 4.600/4.594 s. All gains exceed 1.5 s, but every candidate
+still fails the unchanged 3.0 s integration and 2.5 s release limits. Table
+responses near 2.27 s precede directed data near 2.96–2.99 s; core/catalog
+completion competes on the same path. Exact reader and script/data reuse
+checks pass, with late icon-event coverage explicitly qualified. Preflight,
+probe, analysis and teardown pass. The revision remains outside the branch.
+A bounded lossless catalog/private-presentation prototype must first prove
+its complete net byte reduction and source/API contracts; it has no measured
+value or 101-year rollout authorization.
+
+Native Chromium browser zoom is now verified for one Day Read smoke on the
+existing C29 artifact: the API reports 400% within conversion precision,
+physical window/pixel dimensions remain fixed, CSS width quarters and DPR
+quadruples without emulation or CSS scaling. Contents and Mode pass after
+observed smooth-scroll settlement; four images are inspected and diagnostics
+and handles are clear. Two prior harness failures remain recorded. The
+[registered native-zoom test](../tools/tests/test_reader_native_zoom.py)
+preserves the eight-case entrance/mode matrix with an explicit artifact-bound
+opt-in; two default tests pass and the expensive browser test is skipped.
+Fresh final-artifact execution and every-image review remain pending, along
+with representative assistive technology, manual touch and independent WCAG
+and product disposition.
+
 ### Verification and completion gates
 
 The integrated 2026-10-20 source checkpoint passes 80 focused source tests,

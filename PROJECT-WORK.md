@@ -777,6 +777,32 @@ test build-derived preloads for exactly the existing Day scripts without
 changing their execution order or priorities. Its value and the unchanged
 3.0 s / 1.0 s gain integration limits and 2.5 s release budget remain unproved.
 
+The native-preload revision restores concurrent requests for all fifteen
+existing scripts, retaining execution order and one response per script.
+Its 58 static checks and 44 browser groups pass; complete Day HTML grows by
+93 gzip bytes (92 for the alias). The next eight-sample comparison measures
+LCP medians 3.054 and 3.072 s, against 4.600 and 4.594 s. All four gains exceed
+1.5 s, but every candidate misses both unchanged absolute performance limits.
+Table responses finish near 2.27 s and directed data near 2.96–2.99 s while
+core/catalog transfers also compete. Preflight, probe and analysis exit 0;
+all experiment processes close. Late icon request events remain qualified;
+script/data response and exact reader-parity checks are complete. This
+revision remains unintegrated. A bounded catalog/presentation prototype must
+prove its net initial-byte saving and preserved contracts before browser work.
+
+A separate native Chromium 400% Day Read smoke passes against the existing
+verified C29 artifact. The tabs API reports 3.9999999999999996 with automatic
+browser scaling, fixed physical window/pixel dimensions, quarter CSS width,
+fourfold DPR, unchanged CSS zoom/font and no emulation. After actual smooth
+scroll settlement, Contents exposes the target heading and Mode restores
+visible focus/place without horizontal overflow. All four images are reviewed,
+diagnostics are empty and processes close. Two earlier harness failures remain
+retained. The portable [native-zoom regression](tools/tests/test_reader_native_zoom.py)
+now registers the eight entrance/mode cases behind an explicit artifact-bound
+opt-in; its default checks pass two tests and explicitly skip Chromium. Its
+full eight-case final-artifact run and review remain pending. This smoke does
+not establish assistive-technology, manual-touch or WCAG acceptance.
+
 A parallel witness audit found no publishable English witness for the 1962
 Pentecost Lesson's printed `discipuli` wording. [Cabrol 1921](https://catalog.hathitrust.org/Record/100567132)
 is an inaccessible page-image lead, not a text source. An
