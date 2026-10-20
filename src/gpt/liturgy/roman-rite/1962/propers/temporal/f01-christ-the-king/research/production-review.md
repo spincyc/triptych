@@ -193,3 +193,47 @@ text, font report and word-count record. The replaceable `rasters/` child holds
 all page images and the contact sheet. The stable proof and logs sit outside
 that child. The later homily's shared timestamp will require the final common
 build and visual review; these bytes remain the exact concise author proof.
+
+# Homily author proof
+
+Draft finalized 20 October 2026 for `proper-study` v13, run `095fe00a9fe8cfee`,
+`derive-homily`, iteration 0, with shared revision `2026-10-20T13:20:44Z`.
+The homily, *Learning to Hear the King*, addresses an adult parish assembly.
+The stable source checkpoint precedes author build and the independent reviews.
+
+## Argument, delivery and decisive detail
+
+The speech develops the accepted hearing-king interpretation, with its compatible
+sacrificial-peace application from reconciled-creation. It begins with Jesus and
+Pilate in the governor's hall and returns to that scene at the end. Augustine's
+distinction between a kingdom not *of* the world and one absent *from* it is the
+decisive textual detail: a hearer expecting kingship to mean the prisoner's
+ability to command a rescue is led instead to ask how grace makes people capable
+of obedient hearing within their existing responsibilities. John 18:37's order of
+belonging and hearing, Colossians' rescue and fitness for inheritance, and the
+Secret's petition to the sacrificial giver of peace carry the inference into
+conversion and Eucharistic participation. The practical response concerns a
+specific correction or resentment. The Communion and Postcommunion lead from
+received peace through adversity toward perseverance and shared reign.
+Replacing the readings with unrelated texts would remove the origin/presence
+distinction, truth/hearing order, rescue/fitness argument and sacrificial means
+that make this response intelligible.
+
+The body has **1,276 spoken words**, measured by whitespace-separated word count
+of the prose-only component; it contains no TeX commands, footnotes, headings or
+stage directions. At **110–125 words per minute**, calculated delivery is
+**10.2–11.6 minutes**, approximately 10–12 minutes. Silent reading checked sense,
+transitions, pronoun references and oral clarity. No audible rehearsal, timed
+human delivery, personal experience or clerical identity is claimed. Practical
+examples are applications, not historical anecdotes or patristic quotations.
+The ending is exhortation, with no newly composed recited prayer.
+
+Both accepted studies were read. Existing evidence was reused through reading
+the scope, interpretation and reception records and directly rereading the
+retained NPNF witnesses: Augustine, John 115.1–4; Psalm 28.10–11; Chrysostom,
+Colossians II on 1:12–15 and III on creative dependence, reconciliation and the
+peace application. No new research claim, source binding or accepted upstream
+prose was added. The declared manifest already provides the two homily-only
+components and all eleven informing element keys. The entrypoint uses the three
+shared imports in order, a full-width title, and only the literal spoken-body
+import within `properhomily`; sources and delivery notes follow its page break.
