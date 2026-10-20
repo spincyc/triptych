@@ -49,11 +49,11 @@ provider = "gpt"
 run_id = "095fe00a9fe8cfee"
 workflow = "proper-study"
 workflow_version = 13
-stage = "research-review"
-iteration = 1
+stage = "study-review"
+iteration = 0
 disposition = "PASS"
 standing = 0
-accepted_count = 0
+accepted_count = 1
 advisory_count = 0
 observation_count = 0
 
@@ -68,3 +68,24 @@ standing = 0
 accepted_count = 0
 advisory_count = 0
 observation_count = 0
+
+[[stages]]
+stage = "study-review"
+iteration = 0
+disposition = "PASS"
+run_id = "095fe00a9fe8cfee"
+workflow = "proper-study"
+workflow_version = 13
+standing = 0
+accepted_count = 1
+advisory_count = 0
+observation_count = 0
+
+[[accepted]]
+stage = "study-review"
+id = "STU-TEXT-001"
+severity = "accepted"
+location = "sections/10-appointed-text.tex, opening source notice and English scriptural elements; sections/85-seasonal-witnesses.tex, English seasonal scriptural alternatives"
+problem = "The study uses the continuously sourced Lasance–Walsh English for scriptural elements, whereas guidance/liturgy/roman-1962-propers.md, Published Text and English, prescribes Douay–Rheims–Challoner for those elements. The study accurately labels the actual historical witness and does not claim that these blocks are the bound American-1899 Bible text or an approved 1962 English liturgical translation."
+required_result = "No repair is required in this run. Any later decision to standardize these English witnesses should reconcile the profile with the retained, explicitly identified hand-missal wording or substitute the designated received Bible text with accurate treatment of the liturgical framing and adaptations; it must not silently relabel the current blocks."
+accepted_because = "This is a witness-selection discrepancy, not an identified mistranslation, invented text, or false attribution. The publication names Lasance at every English block and explains the source and differences; the inspected printed page 1258 corroborates the Epistle and Gradual wording. Replacing settled received text would alter pagination and its reviewed evidence trail without correcting a reader-facing misunderstanding or changing either interpretation, so the discrepancy does not warrant a repair round."

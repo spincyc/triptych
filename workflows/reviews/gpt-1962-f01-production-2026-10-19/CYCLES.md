@@ -513,3 +513,15 @@ title fields. The driver excluded `\\hypersetup` metadata from that run-only
 audit, preserving the visible title and the ordinary paragraph-loss check.
 All 146 conversion tests and a separate F01 web probe passed; this shared-tool
 repair was committed and feature-pushed as `1dcf44d08`.
+
+The fresh xhigh study reviewer returned `PASS` on the sealed 23-page guide,
+confirming the two distinct readings, four senses, complete appointments,
+chronology and central source inferences. It recorded `STU-TEXT-001` as an
+accepted witness-selection discrepancy: the full English scriptural blocks
+are explicitly labelled Lasance historical hand-missal text, while the 1962
+profile normally names Douay–Rheims–Challoner for Scripture. The reviewed
+wording is neither falsely attributed nor presented as approved 1962 English;
+the reviewer judged replacing it here would not correct a reader-facing
+misunderstanding and would disturb settled pagination. The native engine
+accepted the review and emitted `derive-synthesis-0000`. Companions, artifact
+and publication gates remain open.
