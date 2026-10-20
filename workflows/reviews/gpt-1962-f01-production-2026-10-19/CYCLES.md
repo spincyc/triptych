@@ -569,3 +569,13 @@ Native study preflight and a fresh xhigh cold review passed on the changed
 study and twenty sealed files, with the 1962 Secret page image checked again.
 The engine emitted `derive-synthesis-0001`; concise and homily repairs remain
 under their own new author/review stages.
+
+The concise repair changed three short passages to distinguish the Father
+addressed from the sacrificial Son as giver, preserving the ten-page opening
+and all chronology rows. Source corrections were committed as `2bcb2f31b`;
+the revised proof and audit were committed as `3a5d5d59d`. Native synthesis
+preflight passed. A fresh xhigh reviewer read all ten rendered pages,
+compared the revised claims with the accepted study and exact witnesses, and
+returned `PASS` with no findings. The engine emitted `derive-homily-0001` for
+the final dependent content correction. Artifact and publication review remain
+pending.
