@@ -814,9 +814,17 @@ async function bibleClaimAudit(cdp, debug, calendar) {
             (unit.languages || []).some(row => row.relationship === 'bible-reconstruction'));
       const node = document.querySelector('[data-proper-choice-member-event="' + event.id + '"]') ||
         document.querySelector('[data-semantic-event-id="' + event.id + '"]');
-      const claims = node ? [...node.querySelectorAll('[data-unit-claim="bible-reconstruction"]')] : [];
+      const claims = node ? [...node.querySelectorAll('[data-unit-claim]')] : [];
+      // A mixed unit whose Missal text is shown labels its passages as the
+      // cited text in the selected Bible; only a unit with no Missal text
+      // shown carries the reconstruction claim (G9 follow-up).
+      const mixed = T.selectedCoverageUnits({ events: [event] }, structure)
+        .some(unit => Boolean(unit.scripture_component));
+      const shown = Boolean(node && node.querySelector('.composed'));
       return {
         id: event.id, expected, found: Boolean(node), claims: claims.length,
+        expectedKind: mixed && shown ? 'bible-text' : 'bible-reconstruction',
+        kinds: claims.map(claim => claim.dataset.unitClaim),
         citations: node ? node.querySelectorAll('.citation').length : 0,
         ordered: claims.every(claim => claim.nextElementSibling &&
           claim.nextElementSibling.classList.contains('citation')),
@@ -835,12 +843,195 @@ function assertBibleClaims(rows, label) {
     if (row.expected) {
       assert.ok(row.claims >= 1 && row.claims <= row.citations, label + ' ' + JSON.stringify(row));
       assert.ok(row.ordered, label + ' claim not set before its passage: ' + JSON.stringify(row));
-      assert.ok(row.text.every(text => text === 'Bible reconstruction · Missal wording not established'),
+      assert.ok(row.kinds.every(kind => kind === row.expectedKind), label + ' ' + JSON.stringify(row));
+      assert.ok(row.text.every(text => row.expectedKind === 'bible-text'
+        ? /^Bible text · .+ · not the Missal’s wording$/.test(text)
+        : text === 'Bible reconstruction · Missal wording not established'),
         label + ' ' + JSON.stringify(row));
     } else {
       assert.equal(row.claims, 0, label + ' claim on a unit not typed as reconstruction: ' + row.id);
     }
   }
+}
+
+// C2 G14: every rendered Proper body against the structure's checked internal
+// structure. Stanza groups and rubric spans are read from the DOM; what they
+// must contain is read from the generated structure's own offsets.
+async function textStructureAudit(cdp, calendar, massKey) {
+  return evaluate(cdp, `(async () => {
+    const T = window.Triptych;
+    const structure = await T.loadJSON('structure/propers/${calendar}.json');
+    const mass = structure.masses.find(row => row.key === ${JSON.stringify(massKey)});
+    const clean = text => String(text || '').replace(/\\s+/g, ' ').trim();
+    const shown = node => {
+      const copy = node.cloneNode(true);
+      copy.querySelectorAll('.visually-hidden, .composed-label').forEach(one => one.remove());
+      return clean(copy.textContent).replace(/℣/g, 'V.').replace(/℟/g, 'R.')
+        .replace(/V\\. (?=\\S)/g, 'V. ').replace(/R\\. (?=\\S)/g, 'R. ');
+    };
+    const sections = [...document.querySelectorAll('#reader-document section.proper')];
+    return mass.propers.map(proper => {
+      const section = sections.find(one => {
+        const head = one.querySelector('.proper-name');
+        return head && clean(head.childNodes[0] && head.childNodes[0].textContent) === proper.name;
+      });
+      const composed = section && section.querySelector(':scope > .composed');
+      if (!composed) return { name: proper.name, found: Boolean(section), composed: false };
+      const lang = composed.lang;
+      const body = lang === 'la' ? proper : (proper.translations || []).find(row =>
+        row.lang === lang && row.text_structure) || {};
+      const held = body.text_structure || {};
+      const text = body.text || '';
+      const starts = held.stanzas || [];
+      const rubrics = [...composed.querySelectorAll('.inline-rubric')];
+      const principal = composed.cloneNode(true);
+      principal.querySelectorAll('.inline-rubric').forEach(one => one.remove());
+      return {
+        name: proper.name, found: true, composed: true, lang,
+        group: composed.classList.contains('composed-stanzas'),
+        stanzaNodes: [...composed.querySelectorAll(':scope > .stanza')].map(shown),
+        stanzas: starts.map((start, index) => clean(text.slice(start, starts[index + 1]))),
+        actions: (held.actions || []).map(action => clean(text.slice(action.start, action.end))),
+        rubrics: rubrics.map(node => ({
+          text: shown(node), kind: node.dataset.inlineAction,
+          italic: getComputedStyle(node).fontStyle, lang: node.closest('[lang]').lang,
+          labelLang: node.querySelector('.visually-hidden')?.lang || null
+        })),
+        principal: shown(principal)
+      };
+    });
+  })()`);
+}
+
+function assertTextStructure(rows, lang, label) {
+  const bodies = rows.filter(row => row.composed && row.lang === lang);
+  assert.ok(bodies.some(row => row.stanzas.length > 1), label + ' exercises stanzas: ' + JSON.stringify(rows));
+  assert.ok(bodies.some(row => row.actions.length > 0), label + ' exercises an inline action: ' + JSON.stringify(rows));
+  for (const row of rows.filter(one => one.composed)) {
+    const where = label + ' ' + row.name;
+    if (row.stanzas.length > 1) {
+      assert.equal(row.group, true, where + ' is a stanza group');
+      assert.deepEqual(row.stanzaNodes, row.stanzas, where + ' stanzas follow the checked offsets');
+    } else {
+      assert.equal(row.group, false, where + ' carries no unchecked stanzas');
+      assert.deepEqual(row.stanzaNodes, [], where);
+    }
+    assert.deepEqual(row.rubrics.map(one => one.text), row.actions, where + ' rubric spans');
+    for (const rubric of row.rubrics) {
+      assert.equal(rubric.kind, 'rubric', where);
+      assert.equal(rubric.italic, 'italic', where + ' rubric is set apart beyond colour');
+      assert.equal(rubric.lang, row.lang, where + ' rubric keeps the text language');
+      assert.equal(rubric.labelLang, 'en', where + ' rubric label is English interface text');
+    }
+    for (const action of row.actions) {
+      assert.ok(!row.principal.includes(action), where + ' rubric is not principal text');
+    }
+  }
+}
+
+// Real clipboard text of one Proper section, copied through the browser.
+async function copiedProper(cdp, name) {
+  return evaluate(cdp, `(async () => {
+    const section = [...document.querySelectorAll('#reader-document section.proper')].find(one => {
+      const head = one.querySelector('.proper-name');
+      return head && head.childNodes[0] && head.childNodes[0].textContent.trim() === ${JSON.stringify(name)};
+    });
+    if (!section) return null;
+    const selection = getSelection();
+    selection.removeAllRanges();
+    const range = document.createRange();
+    range.selectNodeContents(section);
+    selection.addRange(range);
+    const copied = document.execCommand('copy');
+    selection.removeAllRanges();
+    let text = null;
+    try { text = await navigator.clipboard.readText(); } catch (error) { text = 'ERROR ' + error; }
+    return {
+      copied, text,
+      glyphs: section.querySelectorAll('.vr-glyph').length,
+      verses: section.querySelectorAll('.verse').length,
+      rubrics: [...section.querySelectorAll('.inline-rubric')].map(node => {
+        const copy = node.cloneNode(true);
+        copy.querySelectorAll('.visually-hidden').forEach(one => one.remove());
+        return copy.textContent.trim();
+      }),
+      stanzas: [...section.querySelectorAll('.stanza')].map(node => {
+        const copy = node.cloneNode(true);
+        copy.querySelectorAll('.visually-hidden').forEach(one => one.remove());
+        return copy.textContent.replace(/\\s+/g, ' ').trim();
+      })
+    };
+  })()`);
+}
+
+const HIDDEN_LABELS = /Verse \d|Versicle\.|Response\.|Rubric:|Composed text|Missal text|Bible text|Bible reconstruction/;
+
+function assertCopied(row, label) {
+  assert.ok(row && row.copied === true, label + ' copy command: ' + JSON.stringify(row));
+  assert.doesNotMatch(row.text, /^ERROR /, label + ' clipboard read');
+  assert.doesNotMatch(row.text, HIDDEN_LABELS, label + ' copies no hidden label: ' + row.text);
+  assert.equal((row.text.match(/℣|℟/g) || []).length, row.glyphs, label + ' keeps every ℣/℟: ' + row.text);
+  for (const rubric of row.rubrics) assert.ok(row.text.includes(rubric), label + ' keeps the printed rubric');
+  if (row.stanzas.length) {
+    const blocks = row.text.split(/\n\n/).map(block => block.replace(/\s+/g, ' ').trim());
+    const first = blocks.indexOf(row.stanzas[0]);
+    assert.ok(first >= 0, label + ' copies the first stanza as a block: ' + row.text);
+    assert.deepEqual(blocks.slice(first, first + row.stanzas.length), row.stanzas, label + ' copies stanzas apart');
+  }
+}
+
+// G9 follow-up: in a mixed unit the citation passages under the Missal's own
+// text are the cited text in the selected Bible, and say so by name.
+async function mixedClaimAudit(cdp, calendar, massKey) {
+  return evaluate(cdp, `(async () => {
+    const T = window.Triptych;
+    const structure = await T.loadJSON('structure/propers/${calendar}.json');
+    const bibles = await T.loadJSON('bibles.json');
+    const wanted = new URLSearchParams(location.hash.slice(1)).get('bible');
+    const bible = bibles.bibles.find(row => row.id === wanted);
+    const mass = structure.masses.find(row => row.key === ${JSON.stringify(massKey)});
+    const sections = [...document.querySelectorAll('#reader-document section.proper')];
+    return {
+      label: bible && bible.label,
+      notice: document.querySelector('#coverage-notice')?.textContent || '',
+      rows: mass.propers.map(proper => {
+        const section = sections.find(one => {
+          const head = one.querySelector('.proper-name');
+          return head && head.childNodes[0] && head.childNodes[0].textContent.trim() === proper.name;
+        });
+        const claims = section ? [...section.querySelectorAll('[data-unit-claim]')] : [];
+        return {
+          name: proper.name, source: proper.source, found: Boolean(section),
+          shown: Boolean(section && section.querySelector(':scope > .composed')),
+          citations: section ? section.querySelectorAll('.citation').length : 0,
+          claims: claims.map(claim => [claim.dataset.unitClaim, claim.textContent.trim()]),
+          composedLabel: section?.querySelector(':scope > .composed > .composed-label')?.textContent || null
+        };
+      })
+    };
+  })()`);
+}
+
+function assertMixedClaims(value, label) {
+  assert.ok(value.label, label + ' selected Bible label');
+  const mixed = value.rows.filter(row => row.source === 'mixed');
+  assert.ok(mixed.length > 0, label + ' exemplar has mixed units');
+  for (const row of value.rows) {
+    const where = label + ' ' + row.name + ' ' + JSON.stringify(row);
+    assert.ok(row.found, where);
+    if (row.source === 'mixed') {
+      assert.equal(row.shown, true, where);
+      assert.match(row.composedLabel, /^Missal text/, where);
+      assert.deepEqual(row.claims, [['bible-text',
+        'Bible text · ' + value.label + ' · not the Missal’s wording']], where);
+      assert.ok(row.citations > 0, where);
+    } else {
+      assert.deepEqual(row.claims, [], where);
+    }
+  }
+  assert.doesNotMatch(value.notice, /Bible reconstructions/, label + ' notice: ' + value.notice);
+  assert.match(value.notice, new RegExp(mixed.length + ' cited Bible passages beside Missal texts'),
+    label + ' notice: ' + value.notice);
 }
 
 async function claimsSurvivePrint(cdp) {
@@ -1065,6 +1256,201 @@ async function modePerformance(cdp, base) {
     layoutShift: missal.layoutShift,
     loads: missal.loads
   };
+}
+
+/**
+ * C4 step 2 (2026-10-19): the dialogues held as reviewed per-turn child rows.
+ *
+ * Self-contained: the expected spoken words are read from the generated
+ * Ordinary data (each turn's row less its declared printed marker), so no
+ * liturgical text is restated here; the cue glyph and its accessible label
+ * come from the reviewed speakers and roles. Measures the visible generated
+ * cue, the accessibility tree, the selection and the real clipboard, and that
+ * element headings no longer print a cue letter.
+ */
+async function c4Step2DialogueTurns(cdp, base) {
+  await test('C4 step 2 divided dialogues expose one visible, announced and copied cue per turn', async () => {
+    const P = ['P', 'Priest'];
+    const S = ['S', 'Server'];
+    const V = ['℣', 'Versicle — Priest'];
+    const R = ['℟', 'Response — Server'];
+    const spec = {
+      'roman-1962': {
+        'praeparatio/introibo-ad-altare-dei': [P, S],
+        'praeparatio/judica-me-deus': [P, S],
+        'praeparatio/emitte-lucem-tuam': [P, S],
+        'praeparatio/confitebor-tibi-in-cithara': [P, S],
+        'praeparatio/gloria-patri': [P, S],
+        'praeparatio/introibo-ad-altare-dei-repetitio': [P, R],
+        'oblatio/per-omnia-saecula': [V, R],
+        'oblatio/sursum-corda': [V, R, V, R, V, R],
+        'communio/pax-domini': [P, R],
+        'conclusio/dominus-vobiscum-ite-missa-est': [V, R, P, R]
+      },
+      postconciliar: {
+        'prex-eucharistica/praefationis-dialogus': [
+          ['℣', 'Versicle — Priest'], ['℟', 'Response — All'],
+          ['℣', 'Versicle — Priest'], ['℟', 'Response — All'],
+          ['℣', 'Versicle — Priest'], ['℟', 'Response — All']
+        ],
+        'ritus-communionis/pax-domini': [P, ['All', 'All']]
+      }
+    };
+    const headed = [
+      'oblatio/dominus-vobiscum-ante-evangelium', 'oblatio/laus-tibi-christe',
+      'oblatio/dominus-vobiscum-ante-offertorium', 'oblatio/suscipiat-dominus',
+      'oblatio/per-omnia-saecula', 'oblatio/sursum-corda',
+      'communio/per-omnia-saecula-post-libera-nos', 'communio/pax-domini'
+    ];
+    const data = {};
+    for (const calendar of Object.keys(spec)) {
+      const file = JSON.parse(await readFile(
+        resolve(ROOT, 'src/web/data/structure/ordinary', calendar + '.json'), 'utf8'));
+      data[calendar] = new Map(file.sections.flatMap((section) =>
+        section.elements.map((element) => [element.key, element])));
+    }
+    const sourceTurns = (calendar, key, lang) => {
+      const held = (data[calendar].get(key).translations || []).find((one) => one.lang === lang);
+      assert.ok(held && Array.isArray(held.turns), `${calendar} ${key} ${lang} has turns`);
+      return held.turns.map((turn) => ({
+        marker: turn.printed_marker || null,
+        words: turn.printed_marker ? turn.text.slice(turn.printed_marker.length + 1) : turn.text
+      }));
+    };
+
+    await viewport(cdp, 1440, 900);
+    await cdp.send('Browser.grantPermissions', {
+      origin: base, permissions: ['clipboardReadWrite', 'clipboardSanitizedWrite']
+    });
+    await cdp.send('Emulation.setFocusEmulationEnabled', { enabled: true });
+    try {
+      for (const [state, calendar, lang] of [
+        [STATES.romanMissal, 'roman-1962', 'en'],
+        [STATES.romanLatinMissal, 'roman-1962', 'la'],
+        [STATES.postLatinMissal, 'postconciliar', 'la']
+      ]) {
+        await navigateCandidate(cdp, base, state);
+        if (calendar === 'roman-1962') {
+          const headings = await evaluate(cdp, `(() => ${JSON.stringify(headed)}.map((key) => {
+            const event = [...document.querySelectorAll('[data-semantic-event-id]')]
+              .find((node) => node.dataset.semanticEventId === 'ordinary-element/' + key);
+            const heading = event && event.querySelector('.proper-name');
+            return heading && heading.firstChild ? heading.firstChild.textContent : null;
+          }))()`);
+          headings.forEach((text, index) => {
+            assert.ok(text, headed[index] + ' heading rendered');
+            assert.doesNotMatch(text, /^(?:[PRVS]\.|[℣℟])/, headed[index] + ' heading prints no cue');
+          });
+        }
+        for (const [key, cues] of Object.entries(spec[calendar])) {
+          const eventId = 'ordinary-element/' + key;
+          const expected = sourceTurns(calendar, key, lang);
+          assert.equal(expected.length, cues.length, eventId + ' reviewed turn count');
+          const observed = await evaluate(cdp, `(async () => {
+            const event = [...document.querySelectorAll('[data-semantic-event-id]')]
+              .find((node) => node.dataset.semanticEventId === ${JSON.stringify(eventId)});
+            if (!event) return null;
+            event.scrollIntoView({ block: 'center' });
+            const turns = [...event.querySelectorAll('.ordinary-turn')].map((row, index) => {
+              row.setAttribute('data-c4s2-probe', String(index));
+              const words = row.querySelector('.ordinary-turn-text');
+              const label = row.querySelector('.speaker-tag .visually-hidden');
+              const selection = getSelection();
+              selection.removeAllRanges();
+              const range = document.createRange();
+              range.selectNodeContents(row);
+              selection.addRange(range);
+              const selected = selection.toString();
+              selection.removeAllRanges();
+              return {
+                generated: [...row.querySelectorAll('.cue-mark')]
+                  .map((mark) => getComputedStyle(mark, '::before').content)
+                  .filter((content) => content && content !== 'none' && content !== 'normal')
+                  .map((content) => content.replace(/^"|"$/g, '')),
+                cueHidden: [...row.querySelectorAll('.cue-mark')].map((mark) => mark.getAttribute('aria-hidden')),
+                cueLang: row.querySelector('.speaker-tag')?.lang || null,
+                label: label ? label.textContent : null,
+                printedMarker: row.dataset.printedMarker || null,
+                wordsLang: words ? words.lang : null,
+                words: words ? words.textContent : null,
+                selected
+              };
+            });
+            const body = event.querySelector('.ordinary-dialogue');
+            const selection = getSelection();
+            selection.removeAllRanges();
+            const range = document.createRange();
+            range.selectNodeContents(body);
+            selection.addRange(range);
+            const copiedOk = document.execCommand('copy');
+            selection.removeAllRanges();
+            let copied = null;
+            try { copied = await navigator.clipboard.readText(); } catch (error) { copied = 'ERROR ' + error; }
+            return { turns, copiedOk, copied };
+          })()`);
+          assert.ok(observed, 'rendered ' + eventId);
+          assert.equal(observed.turns.length, cues.length, eventId + ' turn rows');
+
+          const { nodes } = await cdp.send('Accessibility.getFullAXTree');
+          const byId = new Map(nodes.map((node) => [node.nodeId, node]));
+          const { root } = await cdp.send('DOM.getDocument', { depth: 0 });
+          const announced = [];
+          for (let index = 0; index < cues.length; index += 1) {
+            const { nodeId } = await cdp.send('DOM.querySelector', {
+              nodeId: root.nodeId,
+              selector: `[data-semantic-event-id="${eventId}"] [data-c4s2-probe="${index}"]`
+            });
+            const { node } = await cdp.send('DOM.describeNode', { nodeId });
+            const start = nodes.find((one) => one.backendDOMNodeId === node.backendNodeId);
+            assert.ok(start, eventId + ' turn ' + index + ' is in the accessibility tree');
+            const names = [];
+            (function walk(one) {
+              if (!one.ignored && one.role?.value === 'StaticText') {
+                names.push(one.name?.value || '');
+                return;
+              }
+              for (const child of one.childIds || []) {
+                const next = byId.get(child);
+                if (next) walk(next);
+              }
+            })(start);
+            announced.push(names);
+          }
+
+          observed.turns.forEach((turn, index) => {
+            const [glyph, label] = cues[index];
+            const where = `${calendar} ${eventId} ${lang} turn ${index}`;
+            assert.deepEqual(turn.generated, [glyph], where + ' sets exactly one visible cue');
+            assert.deepEqual(turn.cueHidden, ['true'], where + ' hides the decorative glyph');
+            assert.equal(turn.label, label, where + ' accessible cue');
+            assert.equal(turn.cueLang, 'en', where + ' cue language');
+            assert.equal(turn.wordsLang, lang, where + ' spoken language');
+            assert.equal(turn.printedMarker, expected[index].marker, where + ' separated printed marker');
+            assert.equal(turn.words, expected[index].words, where + ' spoken words are the source row');
+            assert.doesNotMatch(turn.words, /^(?:[PRVS]\.|[℣℟])/, where + ' no printed cue');
+            assert.deepEqual(announced[index], [label, turn.words], where + ' announcement');
+            assert.equal(announced[index].join(' ').match(/[℣℟]/g), null, where + ' glyph silent');
+            assert.equal(turn.selected.replace(/\s+/g, ' ').trim(), label + ' ' + turn.words,
+              where + ' selected text');
+          });
+          if (key === 'praeparatio/introibo-ad-altare-dei') {
+            // The antiphon label is printed matter, not a cue: it stays.
+            assert.match(observed.turns[0].words, /^Anth?\. /, eventId + ' keeps its antiphon label');
+          }
+          assert.equal(observed.copiedOk, true, eventId + ' copy command');
+          assert.equal(
+            observed.copied.replace(/\s+/g, ' ').trim(),
+            observed.turns.map((turn) => turn.label + ' ' + turn.words).join(' '),
+            eventId + ' copied text holds one cue per turn'
+          );
+        }
+      }
+    } finally {
+      await cdp.send('Emulation.setFocusEmulationEnabled', { enabled: false });
+      await cdp.send('Browser.resetPermissions', {});
+      await viewport(cdp, 1024, 768);
+    }
+  });
 }
 
 async function runAssertions(cdp, base) {
@@ -2235,6 +2621,68 @@ async function runAssertions(cdp, base) {
     assertBibleClaims(await bibleClaimAudit(cdp, 'dayReaderDebug', 'roman-1962'), 'Day 1962 Pentecost Missal');
   });
 
+  await test('C2 G9 follow-up: mixed units label their passages as Bible text, not a reconstruction', async () => {
+    for (const state of [STATES.pentecost1962, STATES.pentecost1962Missal]) {
+      await navigateCandidate(cdp, base, state);
+      assertMixedClaims(await mixedClaimAudit(cdp, 'roman-1962', 'pentecost'),
+        'Day 1962 Pentecost ' + await evaluate(cdp, 'dayReaderDebug.mode'));
+    }
+    const printed = await claimsSurvivePrint(cdp);
+    assert.ok(printed.length > 0 && printed.every(Boolean), JSON.stringify(printed));
+  });
+
+  await test('C2 G14: checked stanzas and the genuflection rubric render from the structure in Read, Missal and print', async () => {
+    for (const [state, lang] of [[STATES.pentecost1962, 'la'], [STATES.pentecost1962English, 'en'],
+      [STATES.pentecost1962Missal, 'la']]) {
+      await navigateCandidate(cdp, base, state);
+      const label = 'Day 1962 Pentecost ' + await evaluate(cdp, 'dayReaderDebug.mode') + ' ' + lang;
+      assertTextStructure(await textStructureAudit(cdp, 'roman-1962', 'pentecost'), lang, label);
+    }
+    await cdp.send('Emulation.setEmulatedMedia', { media: 'print' });
+    try {
+      const printed = await evaluate(cdp, `(() => {
+        const group = document.querySelector('#reader-document .composed-stanzas');
+        return {
+          stanzas: [...group.querySelectorAll(':scope > .stanza')].map(node =>
+            node.getClientRects().length > 0 && getComputedStyle(node).breakInside === 'avoid'),
+          section: getComputedStyle(group.closest('section.proper')).breakInside,
+          rubric: getComputedStyle(document.querySelector('#reader-document .inline-rubric')).fontStyle
+        };
+      })()`);
+      assert.ok(printed.stanzas.length > 1 && printed.stanzas.every(Boolean), JSON.stringify(printed));
+      assert.equal(printed.section, 'auto', 'a Sequence paginates by strophe');
+      assert.equal(printed.rubric, 'italic');
+    } finally {
+      await cdp.send('Emulation.setEmulatedMedia', { media: '' });
+    }
+  });
+
+  await test('C2 G14: copying a Proper keeps its ℣ and words, a printed rubric and stanza breaks, and no hidden label', async () => {
+    const before = await evaluate(cdp, '({ width: innerWidth, height: innerHeight })');
+    await viewport(cdp, 1440, 900);
+    await cdp.send('Browser.grantPermissions', {
+      origin: base, permissions: ['clipboardReadWrite', 'clipboardSanitizedWrite']
+    });
+    await cdp.send('Emulation.setFocusEmulationEnabled', { enabled: true });
+    try {
+      for (const state of [STATES.pentecost1962, STATES.pentecost1962English]) {
+        await navigateCandidate(cdp, base, state);
+        await cdp.send('Page.bringToFront');
+        for (const name of ['Introit', 'Alleluia', 'Sequence']) {
+          const row = await copiedProper(cdp, name);
+          assertCopied(row, 'Day ' + state + ' ' + name);
+          if (name === 'Introit') assert.ok(row.verses > 0, 'Introit copy exercises verse numbers');
+          if (name === 'Alleluia') assert.ok(row.glyphs > 0 && row.rubrics.length === 1, JSON.stringify(row));
+          if (name === 'Sequence') assert.ok(row.stanzas.length > 1, JSON.stringify(row));
+        }
+      }
+    } finally {
+      await cdp.send('Emulation.setFocusEmulationEnabled', { enabled: false });
+      await cdp.send('Browser.resetPermissions', {});
+      await viewport(cdp, before.width, before.height);
+    }
+  });
+
   await test('C2 G10: a missing translation leaves the held Latin original visible with its typed absence', async () => {
     await navigateCandidate(cdp, base, STATES.pentecost1962English);
     const rows = await unitAbsenceAudit(cdp, 'roman-1962');
@@ -2912,10 +3360,13 @@ async function runAssertions(cdp, base) {
           ['praeparatio/confiteor-ministrorum', [['S', 'Server', 'R.', 'Confiteor Deo omnipotenti, beatæ Mariæ']]],
           ['oblatio/suscipiat-dominus', [['S', 'Server', 'R.', 'Suscipiat Dominus sacrificium']]]
         ]],
+        // Speakers only since 2026-10-19 (C4): the 2002 Ordo n. 29 (artifact
+        // p. 310) prints rubrics naming the priest and the people and no
+        // versicle or response mark, so the unsupported ℣/℟ roles were withdrawn.
         [STATES.postLatinMissal, 'la', [
           ['praeparatio-donorum/orate-fratres', [
-            ['℣', 'Versicle — Priest', null, 'Orate Fratres: ut meum ac vestrum'],
-            ['℟', 'Response — All', 'R.', 'Suscipiat Dominus sacrificium de manibus tuis']
+            ['P', 'Priest', null, 'Orate Fratres: ut meum ac vestrum'],
+            ['All', 'All', 'R.', 'Suscipiat Dominus sacrificium de manibus tuis']
           ]]
         ]]
       ];
@@ -3023,34 +3474,10 @@ async function runAssertions(cdp, base) {
         }
       }
 
-      // The opening-cue regression: an `all` element announces no opening
-      // speaker, so its source P. remains the first line's only attribution.
-      await navigateCandidate(cdp, base, STATES.postLatinMissal);
-      for (const [key, first] of [
-        ['prex-eucharistica/praefationis-dialogus', 'Dominus vobiscum.'],
-        ['ritus-communionis/pax-domini', 'Pax Domini sit semper vobiscum.']
-      ]) {
-        const eventId = 'ordinary-element/' + key;
-        const opening = await evaluate(cdp, `(() => {
-          const event = [...document.querySelectorAll('[data-semantic-event-id]')]
-            .find((node) => node.dataset.semanticEventId === ${JSON.stringify(eventId)});
-          const body = event.querySelector('.composed');
-          const tags = [...body.querySelectorAll('.speaker-tag')];
-          return {
-            openingCues: event.querySelectorAll('.is-opening-cue').length,
-            firstTag: tags[0] ? tags[0].textContent : null,
-            firstTagLang: tags[0] ? tags[0].lang : null,
-            bodyLang: body.lang,
-            text: body.textContent.replace(/\\s+/g, ' ').trim()
-          };
-        })()`);
-        assert.equal(opening.openingCues, 0, eventId + ' has no generated opening cue');
-        assert.equal(opening.firstTag, 'Priest', eventId + ' keeps its opening attribution');
-        assert.equal(opening.firstTagLang, 'en', eventId + ' English label in Latin text');
-        assert.equal(opening.bodyLang, 'la');
-        assert.ok(opening.text.startsWith('Priest ' + first), eventId + ': ' + opening.text);
-        assert.doesNotMatch(opening.text, /Response(?=\S)/, eventId + ' no glued label');
-      }
+      // The opening-cue regression for an opaque `all` element ran here on the
+      // postconciliar Preface dialogue and Pax. Since C4 step 2 (2026-10-19)
+      // both are reviewed per-turn rows, checked in c4Step2DialogueTurns; the
+      // opaque path itself stays covered by test_mass_ordinary's fixture.
     } finally {
       await cdp.send('Emulation.setFocusEmulationEnabled', { enabled: false });
       await cdp.send('Browser.resetPermissions', {});
@@ -3058,6 +3485,8 @@ async function runAssertions(cdp, base) {
       await viewport(cdp, 1024, 768);
     }
   });
+
+  await c4Step2DialogueTurns(cdp, base);
 
   if (!SOURCE_ONLY) await test(
     'normal preview build contains a noindex candidate but no candidate navigation link', async () => {

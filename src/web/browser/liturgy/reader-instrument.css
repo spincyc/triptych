@@ -359,6 +359,30 @@ body:has(.reader-instrument) > .site-footer,
   letter-spacing: 0.01em;
   text-align: left;
 }
+/* Checked internal structure (C2 G14). A Sequence's strophes are the
+ * printed groups of one body, so they stand apart without a heading each; a
+ * rubric printed inside a prayer is set as a rubric -- italic as well as red,
+ * so its kind is never carried by colour alone. */
+.reader-instrument .reader-document .composed-stanzas > .stanza { margin: 0; }
+.reader-instrument .reader-document .composed-stanzas > .stanza + .stanza { margin-top: 0.62em; }
+.reader-instrument .reader-document .inline-rubric {
+  color: var(--instrument-accent);
+  font-style: italic;
+}
+@media (forced-colors: active) {
+  .reader-instrument .reader-document .inline-rubric { color: CanvasText; }
+}
+/* Selection in a Proper follows what a copy of it carries: the versicle glyph
+ * is text, while labels written for assistive technology and the reader's
+ * own claim lines about the text are not. (The Ordinary's dialogue rows keep
+ * their own cue contract.) */
+.reader-instrument .reader-document .proper .vr-mark,
+.reader-instrument .reader-document .proper .vr-glyph { user-select: text; }
+.reader-instrument .reader-document .proper .vr-mark > .visually-hidden,
+.reader-instrument .reader-document .proper .verse > .visually-hidden,
+.reader-instrument .reader-document .proper .inline-rubric > .visually-hidden,
+.reader-instrument .reader-document .proper .composed-label,
+.reader-instrument .reader-document .proper .unit-claim { user-select: none; }
 .reader-instrument .reader-document .composed-note,
 .reader-instrument .reader-document .element-apparatus {
   max-width: 60ch;
@@ -905,6 +929,9 @@ body:has(.reader-instrument) > .site-footer,
   .reader-instrument .reader-identity .celebration-title { margin: 0; font-size: 22pt; }
   .reader-instrument .reader-document { width: auto; padding: 0; }
   .reader-instrument .reader-document .proper { max-width: none; margin: 0 0 0.24in; break-inside: avoid; }
+  /* A Sequence paginates by strophe rather than as one unbreakable block. */
+  .reader-instrument .reader-document .proper:has(.composed-stanzas) { break-inside: auto; }
+  .reader-instrument .reader-document .composed-stanzas > .stanza { break-inside: avoid; }
   .reader-instrument .reader-document .proper-name { margin-left: 0; padding-left: 0; break-after: avoid; }
   .reader-instrument .reader-document .proper-choice { max-width: none; margin: 0 0 0.3in; padding-left: 0.12in; }
   .reader-instrument .reader-document .proper-choice-option { break-before: avoid; }

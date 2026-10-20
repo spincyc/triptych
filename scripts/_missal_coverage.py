@@ -593,12 +593,20 @@ def published_expectations(report: dict) -> dict:
     per-state totals, and the identity of each expected target that no held
     Mass represents, so a missing identity stays visible in the public data.
     The full classification remains `expectations()`'s return.
+
+    Slice `source_refs` stay in the tracked inventory and are not published:
+    they name repository records, including restricted editions' artifact
+    records, which public data must not carry as rights context.
     """
     targets = report.get("targets") or []
     states = Counter(row["state"] for row in targets)
     if set(states) - set(TARGET_STATES):
         raise ValueError("expected Missal target has an unknown state")
     projected = {key: value for key, value in report.items() if key != "targets"}
+    projected["slices"] = [
+        {key: value for key, value in row.items() if key != "source_refs"}
+        for row in report.get("slices") or []
+    ]
     projected["target_states"] = {state: states[state] for state in TARGET_STATES}
     projected["not_represented"] = [
         {"id": row["id"], "slice_id": row["slice_id"], "kind": row["kind"]}

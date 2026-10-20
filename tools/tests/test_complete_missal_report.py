@@ -570,8 +570,9 @@ class CompleteMissalReportTests(unittest.TestCase):
         # Removing precisely those thirteen entries reproduces the former 86.
         # 2026-10-19 (C3 1962 Pentecost): seven Pentecost entries (Cummiskey
         # Collect, Secret and Postcommunion; Lasance Introit, Gospel, Offertory
-        # and Communion) are inherited too, giving 106.
-        self.assertEqual(english["with_english"], 106)
+        # and Communion) are inherited too, giving 106; the Lasance Pentecost
+        # Alleluia bound the same day (G14 lane) gives 107.
+        self.assertEqual(english["with_english"], 107)
         self.assertEqual(
             english["translation_ledger_calendars"],
             ["roman-1962", "roman-pre-1955"],

@@ -357,7 +357,7 @@ truthful but not yet usable presentation.
 | G14 | Sequence stanzas flatten, the genuflection rubric sits in principal text, and copy loses ℣ but gains labels | inline-action and stanza data contract (C2); rendering and copy (C4) | C2/C4 |
 | G15–G16 | Repeated "Not shown" notes, untagged Latin headings, small form radios, a witness chooser offering a witness with no body for the unit | C4 surfaces | C4 |
 | G17 | Read-mode Contents jumps write no `location` | reader state | C2 |
-| G18–G20 | Missal pericope incipits and refrains; 1962 Ordinary collation; the basis of the postconciliar study Collect | calendar and fragment data; Ordinary inventory; translation review | C3 |
+| G18–G20 | Missal pericope incipits and refrains; 1962 Ordinary collation; the basis of the postconciliar study Collect | calendar and fragment data; Ordinary inventory; translation review | C3. G19 slice, 2026-10-19: the 99 exercised 1861 Latin elements were collated against the 1962 Ordo on page images. 85, plus the second Sanctus, are exact-target; 12 record variants or abbreviated bodies; 2 stay uncollated. The 1962 Ordinary has 104 collated Latin rows, 92 exact-target. |
 | G21 | Approved postconciliar English and Lectionary English are restricted, and no 2002/2008 Latin body is held | publication policy; participation-aid review due to begin by 2026-11-15 | C3, rights-blocked |
 | G22 | Pre-1955 needs witness loci, per-proper attestation, the Kalendarium and precedence | pre-1955 inventory | dependency |
 
@@ -432,7 +432,11 @@ regression before the next begins:
    - Details reports an explicit formulary or form and only what remains open;
    - Read and Missal Contents jumps record `location` by replacing the history
      entry, as Propers does (neither Day mode had written it).
-   Ordinary element absences keep their key-only wording, a C4 (G15) item;
+   Ordinary element absences keep their key-only wording, a C4 (G15) item.
+   The `mass-propers` reading view now states the same typed reasons, held
+   equal to the browser's table by test. Published inventory slices omit
+   `source_refs`, which name repository records including restricted
+   editions';
 5. the internal-structure data contract (G14), handing rendering to C4;
 6. exemplar evidence: harness states, a CLI/structure/browser event-order
    parity test, the viewport and print matrix, and an external-review handoff.
@@ -546,17 +550,23 @@ checked on page images:
   continuation. The English of the head and of the continuation are typed
   variant gaps.
 
-Remaining:
+- **Alleluia English** is bound from Lasance (printed p. 599), and its
+  genuflection is a typed rubric.
+- **G14 is implemented.** `text_structure` records hash-pinned stanza and
+  inline-action offsets, checked on page images; the Sequence is tied to 1862
+  Pustet witness lines. Both entrances and print render strophes and rubrics.
+- **Copy** keeps ℣ and drops hidden labels.
+- **Mixed units** label their Bible passages "Bible text · edition · not the
+  Missal's wording".
+- **G19 slice.** The exercised Ordinary is collated against the 1962 Ordo (see
+  the gap register).
 
-- the Alleluia English and the G14 contract;
-- the G19 collation of the exercised Ordinary dialogues;
-- the C2 acceptance checks.
+Remaining: the C2 acceptance checks for the exemplar.
 
 Follow-ups:
 
-- For `mixed` units, the shared renderer still labels the Bible expansion
-  "Missal wording not established" beneath the Missal's own text, which now
-  misdescribes it.
+- Structure for the other Sequences (Victimae paschali, Lauda Sion, Stabat
+  Mater, Dies irae), each checked on page images.
 - 102 more projection rows share the Mame/Pustet naming contradiction. The St
   Luke row rests on a weak text-layer reading.
 - Six merged notes cite two loci.
@@ -624,6 +634,29 @@ also needs a reviewed basis for each ℣/℟ role, a decision on Judica's
 alternating verses, protection of "Anth.", and sourced text for the
 postconciliar dismissal. Element headings still show printed P./R. from their
 incipits until a reviewed derivative replaces them.
+
+Step 2, 2026-10-19:
+
+- **Turn rows.** Introibo/Judica, the Preface dialogue, the Pax and the
+  dismissal are held as reviewed child rows of the 1861 artifacts, one per
+  printed turn, under new derived artifact identities. The originals stay
+  unchanged, as `guidance/sources.md` requires. Each language partitions the
+  rows with speaker and `printed_marker`.
+- **Roles.** A ℣/℟ role stands only where the 1962 typica prints the mark at
+  that turn (nn. 1015, 1080–1081, 1118, 1131–1132). The Judica verses, printed
+  S./M., carry speakers only. A partition that declares a role must state its
+  basis.
+- **Postconciliar.** The Latin antecedent Preface dialogue takes its roles from
+  the 2002 Praefationes; the Pax (n. 127) has speakers only. Both are split the
+  same way. The Orate fratres roles, which had no printed basis, are reviewed
+  under the same rule.
+- **Headings.** Reviewed incipit markers keep P./R. out of element headings.
+
+Remaining:
+
+- twenty opaque dialogue blocks;
+- ℣/℟ typography;
+- the postconciliar dismissal, which has no sourced text.
 
 ### Verification and completion gates
 

@@ -79,10 +79,10 @@ this repository and is recorded as an open item in the calendar's own \
 """
 
 not_decided_here = [
-  "What the 1962 typical edition prints. This is an 1861 witness to the same rite, not a transcription of the 1962 altar book, and the two are not collated element by element.",
+  "What the 1962 typical edition prints. This is an 1861 witness to the same rite, not a transcription of the 1962 altar book, and the two are collated element by element only where an element's own provenance says so: since 2026-10-19 (C2 gap G19) that is the Latin of every element the 1962 Pentecost Missal mode exercises, except the 1861's own Gloria heading and the Dominus vobiscum before the Postcommunion, which the 1962 Ordo prints at no place of its own.",
   "Which Preface, Communicantes or Hanc igitur a given formulary takes. The formulary's own printed direction is the mass index's `ordinary_appointments`; this file declares only what the frame shows for each appointed option, the dated spans and defaults the book's own Canon headings state (`[[appointments]]`), and a typed stand-in where nothing establishes the appointment.",
   "Anything about how the rite is performed. The rubrics transcribed here are the book's own, in its own words, and are evidence of what it printed in 1861 and of nothing else.",
-  "Whether any element's Latin is the wording the 1962 typical edition prints, except where an element's own provenance declares a collation. The Latin here is this 1861 book's own, transcribed from its facing column; the departures that are known are named on the elements that carry them and in the advisory above. Element-level collations (2026-10-19, `element_provenance` below) cover the Holy Spirit Preface and the head of the common Communicantes; every other 1861 element stays uncollated.",
+  "Whether any element's Latin is the wording the 1962 typical edition prints, except where an element's own provenance declares a collation. The Latin here is this 1861 book's own, transcribed from its facing column; the departures that are known are named on the elements that carry them and in the advisory above. Element-level collations (2026-10-19, `element_provenance` below) cover the Holy Spirit Preface, the head of the common Communicantes and, under C2 gap G19, the Latin of every other element the 1962 Pentecost Missal mode exercises: 85 of those agree word for word and are exact-target; twelve are recorded as variants or abbreviated bodies with their differences named, and stay antecedents. Every other 1861 element stays uncollated.",
   "Where a proper stands that the Ordo Missae does not place. A slot is declared only where the 1962 book states the position in terms; the oration super populum of the Lenten ferias, the chants of an Ember Saturday after the first, and the whole of Good Friday and the paschal Vigil are left unplaced, and a page that reads this file must show them in the missal's own order rather than guess at a seat for them.",
 ]
 
@@ -95,12 +95,12 @@ label = "The Roman Missal translated into the English language for the use of th
 rights = "public-domain"
 caution = "A pre-1955 lay hand missal, not an approved liturgical translation and never an altar book. Its rubrics and its seasonal second orations are not those of 1962, and its spelling is its own. Nothing here may be used for recitation."
 artifacts = [
-  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en",
-  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en",
-  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en",
-  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en-turn-divided",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en-turn-divided",
 ]
 
 # The same printing, witnessing its other column. `id` is the edition's real
@@ -114,12 +114,12 @@ label = "The Roman Missal translated into the English language for the use of th
 rights = "public-domain"
 caution = "The Latin of a pre-1955 lay hand missal's facing column: never an altar book, and nothing here may be used for recitation. It is the 1861 printing's own text and NOT the 1962 typical edition's. Its Canon prints the Communicantes without the clause naming St Joseph that later legislation inserted; its seasonal second orations and rubrics are the discipline in force before the 1955 and 1960 reforms; and its orthography, j and the ae/oe ligatures, is its own. Collation against the 1962 book is asserted only on the elements whose own provenance says so."
 artifacts = [
-  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la",
-  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la-turn-divided",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la-turn-divided",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-la",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la",
-  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la",
-  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-la",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la-turn-divided",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-la-turn-divided",
 ]
 
 # The Canon's proper forms are printed by no row of the 1861 Ordinary, and the
@@ -358,9 +358,9 @@ locus = "The Mass of the Lord's Supper prints its own Communicantes and Hanc igi
 [[sections]]
 key = "praeparatio"
 name = "The Priest at the Foot of the Altar"
-artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided"
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la"
+artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la-turn-divided"
 absent_latin = "witness-own-english"
 
 [sections.english]
@@ -402,12 +402,347 @@ element = "confiteor-ministrorum"
 lang = "la"
 parts = [{ key = "confiteor-ministrorum", seq = [14], speaker = "server", printed_marker = "R." }]
 
+# C4 step 2 (2026-10-19). Each block below is held as child rows, one per
+# printed turn (seq*100+n), in this section's `-turn-divided` artifacts: new
+# artifact records derived from the block-per-line transcriptions, which stay
+# unchanged, with the division record and its rejoin check in their notes;
+# each cut was checked on the 1861 page images. Speakers are the 1861
+# book's P./R. marks read as the priest and the server; a dialogue_role is
+# declared only where the 1962 typical edition prints a versicle or response
+# mark at that turn, and each partition's basis names the page. The 1861 Ant.
+# and Anth. labels are not cues and keep no printed_marker.
+[[sections.turn_partitions]]
+element = "introibo-ad-altare-dei"
+lang = "en"
+basis = "1962 Ordo Missae nn. 1014-1015, printed p. 216, artifact PDF p. 297 of the registered CMAA facsimile, read on the page image on 2026-10-19: the antiphon and its answer stand under rubrics naming the priest and the ministers with no versicle or response mark, and the psalm verses alternate under the letters S. and M., which name the priest and the ministers and are not versicle and response marks. Speakers only; no dialogue role."
+parts = [
+  { key = "priest-1", seq = [401], speaker = "priest" },
+  { key = "server-1", seq = [402], speaker = "server", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "introibo-ad-altare-dei"
+lang = "la"
+basis = "1962 Ordo Missae nn. 1014-1015, printed p. 216, artifact PDF p. 297 of the registered CMAA facsimile, read on the page image on 2026-10-19: the antiphon and its answer stand under rubrics naming the priest and the ministers with no versicle or response mark, and the psalm verses alternate under the letters S. and M., which name the priest and the ministers and are not versicle and response marks. Speakers only; no dialogue role."
+parts = [
+  { key = "priest-1", seq = [401], speaker = "priest" },
+  { key = "server-1", seq = [402], speaker = "server", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "judica-me-deus"
+lang = "en"
+basis = "1962 Ordo Missae nn. 1014-1015, printed p. 216, artifact PDF p. 297 of the registered CMAA facsimile, read on the page image on 2026-10-19: the antiphon and its answer stand under rubrics naming the priest and the ministers with no versicle or response mark, and the psalm verses alternate under the letters S. and M., which name the priest and the ministers and are not versicle and response marks. Speakers only; no dialogue role."
+parts = [
+  { key = "priest-1", seq = [601], speaker = "priest" },
+  { key = "server-1", seq = [602], speaker = "server", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "judica-me-deus"
+lang = "la"
+basis = "1962 Ordo Missae nn. 1014-1015, printed p. 216, artifact PDF p. 297 of the registered CMAA facsimile, read on the page image on 2026-10-19: the antiphon and its answer stand under rubrics naming the priest and the ministers with no versicle or response mark, and the psalm verses alternate under the letters S. and M., which name the priest and the ministers and are not versicle and response marks. Speakers only; no dialogue role."
+parts = [
+  { key = "priest-1", seq = [601], speaker = "priest" },
+  { key = "server-1", seq = [602], speaker = "server", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "emitte-lucem-tuam"
+lang = "en"
+basis = "1962 Ordo Missae nn. 1014-1015, printed p. 216, artifact PDF p. 297 of the registered CMAA facsimile, read on the page image on 2026-10-19: the antiphon and its answer stand under rubrics naming the priest and the ministers with no versicle or response mark, and the psalm verses alternate under the letters S. and M., which name the priest and the ministers and are not versicle and response marks. Speakers only; no dialogue role."
+parts = [
+  { key = "priest-1", seq = [701], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [702], speaker = "server", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "emitte-lucem-tuam"
+lang = "la"
+basis = "1962 Ordo Missae nn. 1014-1015, printed p. 216, artifact PDF p. 297 of the registered CMAA facsimile, read on the page image on 2026-10-19: the antiphon and its answer stand under rubrics naming the priest and the ministers with no versicle or response mark, and the psalm verses alternate under the letters S. and M., which name the priest and the ministers and are not versicle and response marks. Speakers only; no dialogue role."
+parts = [
+  { key = "priest-1", seq = [701], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [702], speaker = "server", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "confitebor-tibi-in-cithara"
+lang = "en"
+basis = "1962 Ordo Missae nn. 1014-1015, printed p. 216, artifact PDF p. 297 of the registered CMAA facsimile, read on the page image on 2026-10-19: the antiphon and its answer stand under rubrics naming the priest and the ministers with no versicle or response mark, and the psalm verses alternate under the letters S. and M., which name the priest and the ministers and are not versicle and response marks. Speakers only; no dialogue role."
+parts = [
+  { key = "priest-1", seq = [801], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [802], speaker = "server", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "confitebor-tibi-in-cithara"
+lang = "la"
+basis = "1962 Ordo Missae nn. 1014-1015, printed p. 216, artifact PDF p. 297 of the registered CMAA facsimile, read on the page image on 2026-10-19: the antiphon and its answer stand under rubrics naming the priest and the ministers with no versicle or response mark, and the psalm verses alternate under the letters S. and M., which name the priest and the ministers and are not versicle and response marks. Speakers only; no dialogue role."
+parts = [
+  { key = "priest-1", seq = [801], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [802], speaker = "server", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "gloria-patri"
+lang = "en"
+basis = "1962 Ordo Missae nn. 1014-1015, printed p. 216, artifact PDF p. 297 of the registered CMAA facsimile, read on the page image on 2026-10-19: the antiphon and its answer stand under rubrics naming the priest and the ministers with no versicle or response mark, and the psalm verses alternate under the letters S. and M., which name the priest and the ministers and are not versicle and response marks. Speakers only; no dialogue role."
+parts = [
+  { key = "priest-1", seq = [901], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [902], speaker = "server", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "gloria-patri"
+lang = "la"
+basis = "1962 Ordo Missae nn. 1014-1015, printed p. 216, artifact PDF p. 297 of the registered CMAA facsimile, read on the page image on 2026-10-19: the antiphon and its answer stand under rubrics naming the priest and the ministers with no versicle or response mark, and the psalm verses alternate under the letters S. and M., which name the priest and the ministers and are not versicle and response marks. Speakers only; no dialogue role."
+parts = [
+  { key = "priest-1", seq = [901], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [902], speaker = "server", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "introibo-ad-altare-dei-repetitio"
+lang = "en"
+basis = "1962 Ordo Missae n. 1015, printed p. 216, artifact PDF p. 297, right column, read on the page image on 2026-10-19: the answer to the repeated antiphon carries the response mark; the priest's line before it carries no versicle mark, so only the answer has a role."
+parts = [
+  { key = "priest-1", seq = [1001], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [1002], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "introibo-ad-altare-dei-repetitio"
+lang = "la"
+basis = "1962 Ordo Missae n. 1015, printed p. 216, artifact PDF p. 297, right column, read on the page image on 2026-10-19: the answer to the repeated antiphon carries the response mark; the priest's line before it carries no versicle mark, so only the answer has a role."
+parts = [
+  { key = "priest-1", seq = [1001], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [1002], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
+# C2 gap G19 (2026-10-19): element-level collation of the 1861 Latin the 1962
+# Pentecost Missal mode exercises, word by word against the 1962 Ordo on its
+# page images, under the 2026-09-03 words rule. Word-exact elements are
+# exact-target; the others record their differences and stay antecedents.
+[[sections.element_provenance]]
+element = "in-nomine-patris"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; n. 1013, printed p. 216, artifact PDF p. 297"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-praeparatio-la seq 3, printed p. xv, IA leaf 25), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1013, printed p. 216, artifact PDF p. 297, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "introibo-ad-altare-dei"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; n. 1014, printed p. 216, artifact PDF p. 297"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-praeparatio-la seq 401-402, printed p. xv, IA leaf 25), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1014, printed p. 216, artifact PDF p. 297, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing. Ant. label is the 1861's own; the 1962 sets the antiphon under rubrics."
+
+[[sections.element_provenance]]
+element = "judica-me-deus"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; n. 1015, printed p. 216, artifact PDF p. 297"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-praeparatio-la seq 601-602, printed p. xv, IA leaf 25), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1015, printed p. 216, artifact PDF p. 297, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing. 1962 prints erue, as the 1861; flagged opcodes were OCR (drop initial, broken letters)."
+
+[[sections.element_provenance]]
+element = "emitte-lucem-tuam"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; n. 1015, printed p. 216, artifact PDF p. 297"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-praeparatio-la seq 701-702, printed p. xv-xvi, IA leaf 25-26), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1015, printed p. 216, artifact PDF p. 297, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "confitebor-tibi-in-cithara"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; n. 1015, printed p. 216, artifact PDF p. 297"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-praeparatio-la seq 801-802, printed p. xvi, IA leaf 26), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1015, printed p. 216, artifact PDF p. 297, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "gloria-patri"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; n. 1015, printed p. 216, artifact PDF p. 297"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-praeparatio-la seq 901-902, printed p. xvi, IA leaf 26), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1015, printed p. 216, artifact PDF p. 297, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "introibo-ad-altare-dei-repetitio"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; n. 1015, printed p. 216, artifact PDF p. 297"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-praeparatio-la seq 1001-1002, printed p. xvi, IA leaf 26), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1015, printed p. 216, artifact PDF p. 297, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing. right column, after the psalm"
+
+[[sections.element_provenance]]
+element = "adjutorium-nostrum"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; n. 1016, printed p. 216, artifact PDF p. 297"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-praeparatio-la seq 11, printed p. xvi, IA leaf 26), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1016, printed p. 216, artifact PDF p. 297, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "confiteor-sacerdotis"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; n. 1017, printed p. 216, artifact PDF p. 297"
+note = "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-praeparatio-la seq 12, printed p. xvi, IA leaf 26), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1017, printed p. 216, artifact PDF p. 297, read on the page image. Under the 2026-09-03 words rule it is an abbreviated body, so this antecedent is not the 1962 wording: abbreviation at 1861 token 4: 1861 prints only the first three words and an &c.; the 1962 prints the whole priest's Confiteor. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing. Abbreviated body, not a conclusion cue."
+
+[[sections.element_provenance]]
+element = "misereatur-tui"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; n. 1018, printed p. 216, artifact PDF p. 297"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-praeparatio-la seq 13, printed p. xvi, IA leaf 26), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1018, printed p. 216, artifact PDF p. 297, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing. The closing Amen stands in a 1962 rubric (Sacerdos dicit)."
+
+[[sections.element_provenance]]
+element = "confiteor-ministrorum"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; n. 1017, printed p. 216, artifact PDF p. 297, as applied by the rubric before n. 1019, printed p. 217, artifact PDF p. 298"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-praeparatio-la seq 14, printed p. xvi-xvii, IA leaf 26-27), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1017, printed p. 216, artifact PDF p. 297, as applied by the rubric before n. 1019, printed p. 217, artifact PDF p. 298, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing. The 1962 does not print the ministers' Confiteor; its rubric directs n. 1017 with two substitutions, which are exactly the 1861's two differing places (tokens 22-23 and 58-59). Inline striking rubric is rubric."
+
+[[sections.element_provenance]]
+element = "misereatur-vestri"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; n. 1019, printed p. 217, artifact PDF p. 298"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-praeparatio-la seq 15, printed p. xvii, IA leaf 27), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1019, printed p. 217, artifact PDF p. 298, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "indulgentiam"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; n. 1020, printed p. 217, artifact PDF p. 298"
+note = "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-praeparatio-la seq 16, printed p. xvii, IA leaf 27), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1020, printed p. 217, artifact PDF p. 298, read on the page image. Under the 2026-09-03 words rule it is a variant, so this antecedent is not the 1962 wording: replace at 1861 token 9: 1861 misprint (m and n transposed), recorded in the artifact's row note; misprint only. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing. Every word otherwise agrees."
+
+[[sections.element_provenance]]
+element = "deus-tu-conversus"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; n. 1021, printed p. 217, artifact PDF p. 298"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-praeparatio-la seq 17, printed p. xvii, IA leaf 27), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1021, printed p. 217, artifact PDF p. 298, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "ostende-nobis"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; n. 1021, printed p. 217, artifact PDF p. 298"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-praeparatio-la seq 18, printed p. xvii, IA leaf 27), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1021, printed p. 217, artifact PDF p. 298, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "domine-exaudi"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; n. 1021, printed p. 217, artifact PDF p. 298"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-praeparatio-la seq 19, printed p. xviii, IA leaf 28), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1021, printed p. 217, artifact PDF p. 298, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "dominus-vobiscum"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; n. 1021, printed p. 217, artifact PDF p. 298"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-praeparatio-la seq 20, printed p. xviii, IA leaf 28), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1021, printed p. 217, artifact PDF p. 298, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "aufer-a-nobis"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; n. 1022, printed pp. 217-217, artifact PDF pp. 298-298"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-praeparatio-la seq 22, printed p. xviii, IA leaf 28), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1022, printed pp. 217-217, artifact PDF pp. 298-298, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing. continues to the top of the right column"
+
+[[sections.element_provenance]]
+element = "oramus-te-domine"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; n. 1023, printed p. 217, artifact PDF p. 298"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-praeparatio-la seq 24, printed p. xviii, IA leaf 28), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1023, printed p. 217, artifact PDF p. 298, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing. 1962 inline kissing rubric is rubric."
+
+[[sections.element_provenance]]
+element = "kyrie-eleison"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-kyrie-gloria; n. 1024, printed p. 217, artifact PDF p. 298"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-praeparatio-la seq 26, printed p. xviii, IA leaf 28), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1024, printed p. 217, artifact PDF p. 298, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "christe-eleison"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-kyrie-gloria; n. 1024, printed p. 217, artifact PDF p. 298"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-praeparatio-la seq 27, printed p. xviii, IA leaf 28), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1024, printed p. 217, artifact PDF p. 298, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "kyrie-eleison-repetitio"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-kyrie-gloria; n. 1024, printed p. 217, artifact PDF p. 298"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-praeparatio-la seq 28, printed p. xix, IA leaf 29), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1024, printed p. 217, artifact PDF p. 298, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "gloria-in-excelsis"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-kyrie-gloria; n. 1025, printed pp. 218-219, artifact PDF pp. 299-300"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-praeparatio-la seq 30, printed p. xix, IA leaf 29), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1025, printed pp. 218-219, artifact PDF pp. 299-300, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "dominus-vobiscum-post-gloriam"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-kyrie-gloria; rubric after n. 1025, printed p. 219, artifact PDF p. 300"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-praeparatio-la seq 32, printed p. xix, IA leaf 29), collated word by word on 2026-10-19 with the 1962 typical edition, rubric after n. 1025, printed p. 219, artifact PDF p. 300, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing. Formula printed inside the rubric."
+
 [[sections]]
 key = "oblatio"
 name = "The Lessons and the Offertory"
-artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided"
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la"
+artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la-turn-divided"
 absent_latin = "witness-own-english"
 
 [sections.english]
@@ -471,6 +806,336 @@ basis = "Source row artifact.eugene-cummiskey.roman-missal-english-laity.philade
 [[sections.exclusions]]
 element = "rubrica-secreta-concede"
 basis = "Source row artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en seq 56 explicitly records NOT IN THE 1962 ORDO MISSAE: this is a seasonal substitution rule for the second Secret."
+
+# C4 step 2 (2026-10-19). Each block below is held as child rows, one per
+# printed turn (seq*100+n), in this section's `-turn-divided` artifacts: new
+# artifact records derived from the block-per-line transcriptions, which stay
+# unchanged, with the division record and its rejoin check in their notes;
+# each cut was checked on the 1861 page images. Speakers are the 1861
+# book's P./R. marks read as the priest and the server; a dialogue_role is
+# declared only where the 1962 typical edition prints a versicle or response
+# mark at that turn, and each partition's basis names the page. The 1861 Ant.
+# and Anth. labels are not cues and keep no printed_marker.
+[[sections.turn_partitions]]
+element = "per-omnia-saecula"
+lang = "en"
+basis = "1962 Praefationes sine cantu, read on the page images on 2026-10-19: each Preface prints its dialogue with the versicle mark before every line of the priest and the response mark before every answer (n. 1080, printed p. 291, artifact PDF p. 372; n. 1081, the Holy Spirit Preface, printed p. 292, artifact PDF p. 373)."
+parts = [
+  { key = "priest-1", seq = [5701], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "server-1", seq = [5702], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "per-omnia-saecula"
+lang = "la"
+basis = "1962 Praefationes sine cantu, read on the page images on 2026-10-19: each Preface prints its dialogue with the versicle mark before every line of the priest and the response mark before every answer (n. 1080, printed p. 291, artifact PDF p. 372; n. 1081, the Holy Spirit Preface, printed p. 292, artifact PDF p. 373)."
+parts = [
+  { key = "priest-1", seq = [5701], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "server-1", seq = [5702], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "sursum-corda"
+lang = "en"
+basis = "1962 Praefationes sine cantu, read on the page images on 2026-10-19: each Preface prints its dialogue with the versicle mark before every line of the priest and the response mark before every answer (n. 1080, printed p. 291, artifact PDF p. 372; n. 1081, the Holy Spirit Preface, printed p. 292, artifact PDF p. 373)."
+parts = [
+  { key = "priest-1", seq = [5901], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "server-1", seq = [5902], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+  { key = "priest-2", seq = [5903], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "server-2", seq = [5904], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+  { key = "priest-3", seq = [5905], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "server-3", seq = [5906], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "sursum-corda"
+lang = "la"
+basis = "1962 Praefationes sine cantu, read on the page images on 2026-10-19: each Preface prints its dialogue with the versicle mark before every line of the priest and the response mark before every answer (n. 1080, printed p. 291, artifact PDF p. 372; n. 1081, the Holy Spirit Preface, printed p. 292, artifact PDF p. 373)."
+parts = [
+  { key = "priest-1", seq = [5901], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "server-1", seq = [5902], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+  { key = "priest-2", seq = [5903], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "server-2", seq = [5904], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+  { key = "priest-3", seq = [5905], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "server-3", seq = [5906], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
+# Reviewed incipit cues (C4 step 2, 2026-10-19): the artifact's latin_incipit
+# cell copies the Latin column's head letter; the heading is set without it.
+[[sections.incipit_markers]]
+element = "dominus-vobiscum-ante-evangelium"
+printed_marker = "P."
+
+[[sections.incipit_markers]]
+element = "laus-tibi-christe"
+printed_marker = "R."
+
+[[sections.incipit_markers]]
+element = "dominus-vobiscum-ante-offertorium"
+printed_marker = "P."
+
+[[sections.incipit_markers]]
+element = "suscipiat-dominus"
+printed_marker = "R."
+
+[[sections.incipit_markers]]
+element = "per-omnia-saecula"
+printed_marker = "P."
+
+[[sections.incipit_markers]]
+element = "sursum-corda"
+printed_marker = "P."
+
+# C2 gap G19 (2026-10-19): element-level collation of the 1861 Latin the 1962
+# Pentecost Missal mode exercises, word by word against the 1962 Ordo on its
+# page images, under the 2026-09-03 words rule. Word-exact elements are
+# exact-target; the others record their differences and stay antecedents.
+[[sections.element_provenance]]
+element = "dominus-vobiscum-ante-evangelium"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-credo; nn. 1027-1028 rubrics, printed p. 219, artifact PDF p. 300"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 8, printed p. xxi, IA leaf 31), collated word by word on 2026-10-19 with the 1962 typical edition, nn. 1027-1028 rubrics, printed p. 219, artifact PDF p. 300, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing; rubrical blank (secundum N. / &c.). The 1962 gives the greeting, the announcement and the response inside rubrics; the 1861's parenthetical alternative (vel) answers the rubric's sive and is not said."
+
+[[sections.element_provenance]]
+element = "laus-tibi-christe"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-credo; n. 1028 rubric, printed p. 219, artifact PDF p. 300"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 11, printed p. xxi, IA leaf 31), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1028 rubric, printed p. 219, artifact PDF p. 300, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing. Response printed inside the rubric."
+
+[[sections.element_provenance]]
+element = "credo-in-unum-deum"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-credo; n. 1029, printed p. 220, artifact PDF p. 301"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 15, printed p. xxi, IA leaf 31), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1029, printed p. 220, artifact PDF p. 301, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "et-in-unum-dominum"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-credo; n. 1029, printed p. 220, artifact PDF p. 301"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 16, printed p. xxi-xxii, IA leaf 31-32), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1029, printed p. 220, artifact PDF p. 301, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing. 1962 parenthetical genuflection rubric is rubric; the 1861 asterisk is its note sign."
+
+[[sections.element_provenance]]
+element = "et-in-spiritum-sanctum"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-credo; n. 1029, printed p. 220, artifact PDF p. 301"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 17, printed p. xxii, IA leaf 32), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1029, printed p. 220, artifact PDF p. 301, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing; expecto/exspecto (two received spellings)."
+
+[[sections.element_provenance]]
+element = "dominus-vobiscum-ante-offertorium"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-credo; rubric after n. 1029, printed p. 220, artifact PDF p. 301"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 18, printed p. xxii, IA leaf 32), collated word by word on 2026-10-19 with the 1962 typical edition, rubric after n. 1029, printed p. 220, artifact PDF p. 301, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing. Formula printed inside the rubric."
+
+[[sections.element_provenance]]
+element = "oremus-ante-offertorium"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-credo; rubric after n. 1029, printed p. 220, artifact PDF p. 301"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 20, printed p. xxiii, IA leaf 33), collated word by word on 2026-10-19 with the 1962 typical edition, rubric after n. 1029, printed p. 220, artifact PDF p. 301, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing. Printed inside the rubric."
+
+[[sections.element_provenance]]
+element = "suscipe-sancte-pater"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1030, printed p. 220, artifact PDF p. 301"
+note = "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 23, printed p. xxiii, IA leaf 33), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1030, printed p. 220, artifact PDF p. 301, read on the page image. Under the 2026-09-03 words rule it is a variant, so this antecedent is not the 1962 wording: insert at 1861 token 24: 1962 prints a conjunction before the second noun of the series that the 1861 lacks (one added word); 1861 checked on its image, pdf p. 34. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing; negligentiis/neglegentiis (spelling)."
+
+[[sections.element_provenance]]
+element = "deus-qui-humanae-substantiae"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1031, printed p. 221, artifact PDF p. 302"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 25, printed p. xxiii, IA leaf 33), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1031, printed p. 221, artifact PDF p. 302, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "offerimus-tibi-domine"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1032, printed p. 221, artifact PDF p. 302"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 27, printed p. xxiv, IA leaf 34), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1032, printed p. 221, artifact PDF p. 302, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "in-spiritu-humilitatis"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1033, printed p. 221, artifact PDF p. 302"
+note = "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 29, printed p. xxiv, IA leaf 34), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1033, printed p. 221, artifact PDF p. 302, read on the page image. Under the 2026-09-03 words rule it is a variant, so this antecedent is not the 1962 wording: replace at 1861 token 19: 1861 misprint of one letter, recorded in the artifact's row note; misprint only. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing. Every word otherwise agrees."
+
+[[sections.element_provenance]]
+element = "veni-sanctificator"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1034, printed p. 221, artifact PDF p. 302"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 31, printed p. xxiv, IA leaf 34), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1034, printed p. 221, artifact PDF p. 302, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing. 1962 inline blessing rubric is rubric."
+
+[[sections.element_provenance]]
+element = "per-intercessionem"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1035, printed pp. 221-221, artifact PDF pp. 302-302"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 33, printed p. xxiv, IA leaf 34), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1035, printed pp. 221-221, artifact PDF pp. 302-302, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing; dexteris/dextris (syncopated spelling of one word). The 1861 prints the unsyncopated form of one word where the 1962 prints it syncopated; that is classed as two received spellings of one word under the 2026-09-03 rule, and a reading that took the extra syllable for a different word would make this element a variant."
+
+[[sections.element_provenance]]
+element = "incensum-istud"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1036, printed p. 221, artifact PDF p. 302"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 35, printed p. xxv, IA leaf 35), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1036, printed p. 221, artifact PDF p. 302, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "dirigatur-domine"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1037, printed p. 221, artifact PDF p. 302"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 37, printed p. xxv, IA leaf 35), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1037, printed p. 221, artifact PDF p. 302, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "lavabo-inter-innocentes"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1039, printed p. 221, artifact PDF p. 302"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 41, printed p. xxv, IA leaf 35), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1039, printed p. 221, artifact PDF p. 302, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "ut-audiam-vocem-laudis"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1039, printed p. 221, artifact PDF p. 302"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 42, printed p. xxv, IA leaf 35), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1039, printed p. 221, artifact PDF p. 302, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "domine-dilexi-decorem"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1039, printed p. 221, artifact PDF p. 302"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 43, printed p. xxv, IA leaf 35), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1039, printed p. 221, artifact PDF p. 302, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "ne-perdas-cum-impiis"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1039, printed p. 221, artifact PDF p. 302"
+note = "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 44, printed p. xxv-xxvi, IA leaf 35-36), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1039, printed p. 221, artifact PDF p. 302, read on the page image. Under the 2026-09-03 words rule it is a variant, so this antecedent is not the 1962 wording: insert at 1861 token 4: 1962 adds a vocative after the first clause that the 1861 lacks (one added word); 1861 checked on its image, pdf p. 36. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "in-quorum-manibus"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1039, printed p. 221, artifact PDF p. 302"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 45, printed p. xxvi, IA leaf 36), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1039, printed p. 221, artifact PDF p. 302, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing. Flagged deletion was OCR; the last word is printed."
+
+[[sections.element_provenance]]
+element = "ego-autem-in-innocentia"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1039, printed p. 221, artifact PDF p. 302"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 46, printed p. xxvi, IA leaf 36), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1039, printed p. 221, artifact PDF p. 302, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "pes-meus-stetit"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1039, printed p. 222, artifact PDF p. 303"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 47, printed p. xxvi, IA leaf 36), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1039, printed p. 222, artifact PDF p. 303, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "gloria-patri"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1039, printed p. 222, artifact PDF p. 303"
+note = "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 48, printed p. xxvi, IA leaf 36), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1039, printed p. 222, artifact PDF p. 303, read on the page image. Under the 2026-09-03 words rule it is an abbreviated body, so this antecedent is not the 1962 wording: abbreviation at 1861 token 4: 1861 prints the first four words and &c.; the 1962 prints the whole doxology. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing. Abbreviated body."
+
+[[sections.element_provenance]]
+element = "suscipe-sancta-trinitas"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1040, printed p. 222, artifact PDF p. 303"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 50, printed p. xxvi, IA leaf 36), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1040, printed p. 222, artifact PDF p. 303, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing; conclusion length (1861 abbreviates with &c.)."
+
+[[sections.element_provenance]]
+element = "orate-fratres"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1041, printed p. 222, artifact PDF p. 303"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 52, printed p. xxvii, IA leaf 37), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1041, printed p. 222, artifact PDF p. 303, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "suscipiat-dominus"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1042, printed p. 222, artifact PDF p. 303"
+note = "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 53, printed p. xxvii, IA leaf 37), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1042, printed p. 222, artifact PDF p. 303, read on the page image. Under the 2026-09-03 words rule it is a variant, so this antecedent is not the 1962 wording: insert at 1861 token 7: 1962 adds a two-word parenthetical alternative after the possessive (for the priest answering himself); not in the 1861. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "per-omnia-saecula"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.praefatio-de-spiritu-sancto; n. 1081, printed p. 292, artifact PDF p. 373"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 5701-5702, printed p. xxvii, IA leaf 37), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1081, printed p. 292, artifact PDF p. 373, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing; the 1861 misprinted full stop inside the formula is pointing. Also printed identically at n. 1080, artifact p. 372."
+
+[[sections.element_provenance]]
+element = "sursum-corda"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.praefatio-de-spiritu-sancto; n. 1081, printed p. 292, artifact PDF p. 373"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 5901-5906, printed p. xxvii, IA leaf 37), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1081, printed p. 292, artifact PDF p. 373, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing. Also n. 1080, artifact p. 372."
 
 [[sections]]
 key = "praefatio"
@@ -675,6 +1340,28 @@ name = "Sanctus"
 note = "The 1861 book prints the Sanctus once, after the common Preface, and ends every proper Preface with the cue Holy, &c. (Latin Sanctus, &c.). This occurrence resolves that printed cue to the same printed row, praefationes-en seq 4 at p. xxviii; it adds no words."
 conditions = [{ kind = "appointed", variable = "preface", options = ["trinitate", "nativitate", "epiphania", "quadragesima", "sancta-cruce", "paschalis", "ascensione", "spiritu-sancto", "beata-maria-virgine", "apostolis", "missa-chrismatis", "sacro-corde", "christo-rege", "sancto-ioseph", "defunctis"], basis = "Stands after every Preface other than the common one, where the book's own cue Holy, &c. calls for the Sanctus." }]
 
+# C2 gap G19 (2026-10-19): element-level collation of the 1861 Latin the 1962
+# Pentecost Missal mode exercises, word by word against the 1962 Ordo on its
+# page images, under the 2026-09-03 words rule. Word-exact elements are
+# exact-target; the others record their differences and stay antecedents.
+[[sections.element_provenance]]
+element = "sanctus-post-praefationem"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.praefatio-de-spiritu-sancto; n. 1081, printed p. 292, artifact PDF p. 373"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (praefationes-la seq 4, printed p. xxviii, IA leaf 38), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1081, printed p. 292, artifact PDF p. 373, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing. Sanctus with Benedictus as printed after the Holy Spirit Preface sine cantu."
+
+[[sections.element_provenance]]
+element = "sanctus"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.praefatio-de-spiritu-sancto; n. 1081, printed p. 292, artifact PDF p. 373"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (praefationes-la seq 4, printed p. xxviii, IA leaf 38), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1081, printed p. 292, artifact PDF p. 373, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing. Sanctus with Benedictus as printed after the Holy Spirit Preface sine cantu. The same printed row as praefatio/sanctus-post-praefationem, whose collation this is."
+
 [[sections]]
 key = "canon"
 name = "The Canon of the Mass"
@@ -856,12 +1543,183 @@ absent_english = "appointment-not-established"
 absent_latin = "appointment-not-established"
 conditions = [{ kind = "unappointed", variable = "hanc_igitur", basis = "Shown only on a date a withheld span leaves unappointed." }]
 
+# C2 gap G19 (2026-10-19): element-level collation of the 1861 Latin the 1962
+# Pentecost Missal mode exercises, word by word against the 1962 Ordo on its
+# page images, under the 2026-09-03 words rule. Word-exact elements are
+# exact-target; the others record their differences and stay antecedents.
+[[sections.element_provenance]]
+element = "te-igitur"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-te-igitur; n. 1088, printed p. 301, artifact PDF p. 382"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (canon-missae-la seq 2, printed p. xxxiii, IA leaf 43), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1088, printed p. 301, artifact PDF p. 382, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing; imprimis/in primis (word division). 1962 inline rubrics are rubric."
+
+[[sections.element_provenance]]
+element = "te-igitur-cultoribus"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-te-igitur; n. 1088, printed p. 301, artifact PDF p. 382"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (canon-missae-la seq 3, printed p. xxxiii, IA leaf 43), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1088, printed p. 301, artifact PDF p. 382, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "memento-domine"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-communicantes; n. 1089, printed p. 301, artifact PDF p. 382"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (canon-missae-la seq 5, printed p. xxxiii, IA leaf 43), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1089, printed p. 301, artifact PDF p. 382, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "et-omnium-circumstantium"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-communicantes; n. 1089, printed pp. 301-302, artifact PDF pp. 382-383"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (canon-missae-la seq 7, printed p. xxxiii-xxxiv, IA leaf 43-44), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1089, printed pp. 301-302, artifact PDF pp. 382-383, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "quam-oblationem"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-communicantes; n. 1100, printed p. 305, artifact PDF p. 386"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (canon-missae-la seq 11, printed p. xxxv, IA leaf 45), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1100, printed p. 305, artifact PDF p. 386, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing. 1962 inline signing rubrics are rubric."
+
+[[sections.element_provenance]]
+element = "qui-pridie"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-consecratio; n. 1101, printed p. 306, artifact PDF p. 387"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (canon-missae-la seq 12, printed p. xxxv, IA leaf 45), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1101, printed p. 306, artifact PDF p. 387, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing. 1962 inline rubrics are rubric."
+
+[[sections.element_provenance]]
+element = "forma-corporis"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-consecratio; n. 1102, printed p. 306, artifact PDF p. 387"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (canon-missae-la seq 13, printed p. xxxv, IA leaf 45), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1102, printed p. 306, artifact PDF p. 387, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing. Flagged deletion was OCR."
+
+[[sections.element_provenance]]
+element = "simili-modo"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-consecratio; n. 1103, printed p. 307, artifact PDF p. 388"
+note = "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (canon-missae-la seq 15, printed p. xxxv-xxxvi, IA leaf 45-46), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1103, printed p. 307, artifact PDF p. 388, read on the page image. Under the 2026-09-03 words rule it is a variant, so this antecedent is not the 1962 wording: insert at 1861 token 24: element boundary only: the 1962 ends n. 1103 with the six-word invitation that the 1861 places at the head of its form row (forma-sanguinis); the two elements together agree word for word. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing; coenatum/cenatum (spelling). Boundary difference, not a wording difference."
+
+[[sections.element_provenance]]
+element = "forma-sanguinis"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-consecratio; n. 1104, printed p. 307, artifact PDF p. 388"
+note = "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (canon-missae-la seq 16, printed p. xxxvi, IA leaf 46), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1104, printed p. 307, artifact PDF p. 388, read on the page image. Under the 2026-09-03 words rule it is a variant, so this antecedent is not the 1962 wording: delete at 1861 token 0-5: element boundary only: the 1861 opens the form with the six-word invitation that the 1962 prints at the end of n. 1103; the rest agrees word for word. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing. Boundary difference, not a wording difference."
+
+[[sections.element_provenance]]
+element = "haec-quotiescumque"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-consecratio; n. 1105, printed p. 307, artifact PDF p. 388"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (canon-missae-la seq 17, printed p. xxxvi, IA leaf 46), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1105, printed p. 307, artifact PDF p. 388, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "unde-et-memores"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-anamnesis; n. 1106, printed p. 308, artifact PDF p. 389"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (canon-missae-la seq 19, printed p. xxxvi, IA leaf 46), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1106, printed p. 308, artifact PDF p. 389, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing; necnon/nec non (word division). Flagged deletions were OCR around printed crosses."
+
+[[sections.element_provenance]]
+element = "supra-quae"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-anamnesis; n. 1107, printed pp. 308-309, artifact PDF pp. 389-390"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (canon-missae-la seq 20, printed p. xxxvi-xxxvii, IA leaf 46-47), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1107, printed pp. 308-309, artifact PDF pp. 389-390, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "supplices"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-anamnesis; n. 1108, printed p. 309, artifact PDF p. 390"
+note = "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (canon-missae-la seq 21, printed p. xxxvii-xxxviii, IA leaf 47-48), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1108, printed p. 309, artifact PDF p. 390, read on the page image. Under the 2026-09-03 words rule it is a variant, so this antecedent is not the 1962 wording: replace at 1861 token 7: different verb: 1861 prefix prae- where the 1962 prints per- (a different word, not a spelling); 1861 checked on its image, pdf p. 48. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "memento-etiam"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-anamnesis; n. 1109, printed p. 309, artifact PDF p. 390"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (canon-missae-la seq 23, printed p. xxxviii, IA leaf 48), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1109, printed p. 309, artifact PDF p. 390, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "ipsis-domine"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-anamnesis; n. 1109, printed p. 310, artifact PDF p. 391"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (canon-missae-la seq 25, printed p. xxxviii, IA leaf 48), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1109, printed p. 310, artifact PDF p. 391, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "nobis-quoque"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-anamnesis; n. 1110, printed pp. 310-311, artifact PDF pp. 391-392"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (canon-missae-la seq 27, printed p. xxxviii, IA leaf 48), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1110, printed pp. 310-311, artifact PDF pp. 391-392, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "per-quem"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-anamnesis; n. 1111, printed p. 311, artifact PDF p. 392"
+note = "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (canon-missae-la seq 28, printed p. xxxviii, IA leaf 48), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1111, printed p. 311, artifact PDF p. 392, read on the page image. Under the 2026-09-03 words rule it is a variant, so this antecedent is not the 1962 wording: replace at 1861 token 7: 1861 misprint of the first letter, recorded in the artifact's row note; misprint only. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing. Every word otherwise agrees."
+
+[[sections.element_provenance]]
+element = "per-ipsum"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-anamnesis; n. 1112, printed p. 311, artifact PDF p. 392"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (canon-missae-la seq 29, printed p. xxxviii, IA leaf 48), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1112, printed p. 311, artifact PDF p. 392, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing. 1962 inline rubrics are rubric."
+
+[[sections.element_provenance]]
+element = "per-omnia-saecula"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-anamnesis; before n. 1113 (unnumbered), printed p. 312, artifact PDF p. 393"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (canon-missae-la seq 30, printed p. xxxix, IA leaf 49), collated word by word on 2026-10-19 with the 1962 typical edition, before n. 1113 (unnumbered), printed p. 312, artifact PDF p. 393, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing. Chant setting."
+
 [[sections]]
 key = "communio"
 name = "The Communion"
-artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en-turn-divided"
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la"
+artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la-turn-divided"
 absent_latin = "witness-own-english"
 
 [sections.english]
@@ -878,12 +1736,187 @@ note = "ANTECEDENT, NOT THE TARGET EDITION. This Latin is the facing column prin
 rubrica-commixtio = "no-facing-latin"
 rubrica-agnus-dei-in-missis-defunctorum = "no-facing-latin"
 
+# C4 step 2 (2026-10-19). Each block below is held as child rows, one per
+# printed turn (seq*100+n), in this section's `-turn-divided` artifacts: new
+# artifact records derived from the block-per-line transcriptions, which stay
+# unchanged, with the division record and its rejoin check in their notes;
+# each cut was checked on the 1861 page images. Speakers are the 1861
+# book's P./R. marks read as the priest and the server; a dialogue_role is
+# declared only where the 1962 typical edition prints a versicle or response
+# mark at that turn, and each partition's basis names the page. The 1861 Ant.
+# and Anth. labels are not cues and keep no printed_marker.
+[[sections.turn_partitions]]
+element = "pax-domini"
+lang = "en"
+basis = "1962 Ordo Missae n. 1118, printed p. 317, artifact PDF p. 398, read on the page image on 2026-10-19: the priest's line is set to chant under a drop initial with no versicle mark, and the answer carries the response mark, so only the answer has a role."
+parts = [
+  { key = "priest-1", seq = [601], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [602], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "pax-domini"
+lang = "la"
+basis = "1962 Ordo Missae n. 1118, printed p. 317, artifact PDF p. 398, read on the page image on 2026-10-19: the priest's line is set to chant under a drop initial with no versicle mark, and the answer carries the response mark, so only the answer has a role."
+parts = [
+  { key = "priest-1", seq = [601], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [602], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
+# Reviewed incipit cues (C4 step 2, 2026-10-19): the artifact's latin_incipit
+# cell copies the Latin column's head letter; the heading is set without it.
+[[sections.incipit_markers]]
+element = "per-omnia-saecula-post-libera-nos"
+printed_marker = "P."
+
+[[sections.incipit_markers]]
+element = "pax-domini"
+printed_marker = "P."
+
+# C2 gap G19 (2026-10-19): element-level collation of the 1861 Latin the 1962
+# Pentecost Missal mode exercises, word by word against the 1962 Ordo on its
+# page images, under the 2026-09-03 words rule. Word-exact elements are
+# exact-target; the others record their differences and stay antecedents.
+[[sections.element_provenance]]
+element = "oremus-ante-pater-noster"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; n. 1113, printed p. 312, artifact PDF p. 393"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-communio-la seq 1, printed p. xxxix, IA leaf 49), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1113, printed p. 312, artifact PDF p. 393, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "praeceptis-salutaribus"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; n. 1113, printed p. 312, artifact PDF p. 393"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-communio-la seq 2, printed p. xxxix, IA leaf 49), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1113, printed p. 312, artifact PDF p. 393, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "pater-noster"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; nn. 1113-1116 (two chant settings), printed pp. 312-315, artifact PDF pp. 393-396"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-communio-la seq 3, printed p. xxxix, IA leaf 49), collated word by word on 2026-10-19 with the 1962 typical edition, nn. 1113-1116 (two chant settings), printed pp. 312-315, artifact PDF pp. 393-396, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing; quotidianum/cotidianum (spelling). The closing Amen stands in a 1962 rubric."
+
+[[sections.element_provenance]]
+element = "libera-nos"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; n. 1117, printed pp. 316-317, artifact PDF pp. 397-398"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-communio-la seq 4, printed p. xxxix-xl, IA leaf 49-50), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1117, printed pp. 316-317, artifact PDF pp. 397-398, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing; Genitrice/Genetrice (spelling). Conclusion continues on p. 317; inline rubrics are rubric."
+
+[[sections.element_provenance]]
+element = "per-omnia-saecula-post-libera-nos"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; before n. 1118, printed p. 317, artifact PDF p. 398"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-communio-la seq 5, printed p. xl, IA leaf 50), collated word by word on 2026-10-19 with the 1962 typical edition, before n. 1118, printed p. 317, artifact PDF p. 398, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing. Chant setting."
+
+[[sections.element_provenance]]
+element = "pax-domini"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; n. 1118, printed p. 317, artifact PDF p. 398"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-communio-la seq 601-602, printed p. xl, IA leaf 50), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1118, printed p. 317, artifact PDF p. 398, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing. Chant setting; words read on the image."
+
+[[sections.element_provenance]]
+element = "agnus-dei"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; n. 1120, printed p. 318, artifact PDF p. 399"
+note = "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-communio-la seq 9, printed p. xl, IA leaf 50), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1120, printed p. 318, artifact PDF p. 399, read on the page image. Under the 2026-09-03 words rule it is an abbreviated body, so this antecedent is not the 1962 wording: abbreviation at 1861 token 6-12: 1861 prints the invocation once and marks the two repetitions by asterisks; the 1962 prints all three invocations in full. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing. Abbreviated body."
+
+[[sections.element_provenance]]
+element = "domine-jesu-christe-qui-dixisti"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; n. 1121, printed p. 318, artifact PDF p. 399"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-communio-la seq 12, printed p. xl-xli, IA leaf 50-51), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1121, printed p. 318, artifact PDF p. 399, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "domine-jesu-christe-fili-dei-vivi"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; n. 1123, printed p. 319, artifact PDF p. 400"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-communio-la seq 13, printed p. xli, IA leaf 51), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1123, printed p. 319, artifact PDF p. 400, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing; nunquam/numquam (spelling)."
+
+[[sections.element_provenance]]
+element = "perceptio-corporis-tui"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; n. 1124, printed p. 319, artifact PDF p. 400"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-communio-la seq 14, printed p. xli, IA leaf 51), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1124, printed p. 319, artifact PDF p. 400, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "panem-coelestem"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; n. 1125, printed p. 320, artifact PDF p. 401"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-communio-la seq 16, printed p. xli-xlii, IA leaf 51-52), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1125, printed p. 320, artifact PDF p. 401, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "domine-non-sum-dignus"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; n. 1126, printed p. 320, artifact PDF p. 401"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-communio-la seq 18, printed p. xlii, IA leaf 52), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1126, printed p. 320, artifact PDF p. 401, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing. 1962 inline rubric is rubric; both print the formula once (the 1962 rubric says thrice)."
+
+[[sections.element_provenance]]
+element = "corpus-domini-nostri"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; n. 1127, printed p. 320, artifact PDF p. 401"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-communio-la seq 20, printed p. xlii, IA leaf 52), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1127, printed p. 320, artifact PDF p. 401, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "quid-retribuam-domino"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; n. 1128, printed p. 321, artifact PDF p. 402"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-communio-la seq 22, printed p. xlii, IA leaf 52), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1128, printed p. 321, artifact PDF p. 402, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "sanguis-domini-nostri"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; n. 1129, printed p. 321, artifact PDF p. 402"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-communio-la seq 24, printed p. xlii, IA leaf 52), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1129, printed p. 321, artifact PDF p. 402, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
 [[sections]]
 key = "conclusio"
 name = "The Ablutions and the Last Gospel"
-artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en-turn-divided"
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-la"
+artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-la-turn-divided"
 absent_latin = "witness-own-english"
 
 [sections.english]
@@ -934,6 +1967,131 @@ parts = [{ key = "deo-gratias", seq = [23], speaker = "server", printed_marker =
 element = "deo-gratias"
 lang = "la"
 parts = [{ key = "deo-gratias", seq = [23], speaker = "server", printed_marker = "R." }]
+
+# C4 step 2 (2026-10-19). Each block below is held as child rows, one per
+# printed turn (seq*100+n), in this section's `-turn-divided` artifacts: new
+# artifact records derived from the block-per-line transcriptions, which stay
+# unchanged, with the division record and its rejoin check in their notes;
+# each cut was checked on the 1861 page images. Speakers are the 1861
+# book's P./R. marks read as the priest and the server; a dialogue_role is
+# declared only where the 1962 typical edition prints a versicle or response
+# mark at that turn, and each partition's basis names the page. The 1861 Ant.
+# and Anth. labels are not cues and keep no printed_marker.
+[[sections.turn_partitions]]
+element = "dominus-vobiscum-ite-missa-est"
+lang = "en"
+basis = "1962 Ordo Missae nn. 1131-1132, printed pp. 322-323, artifact PDF pp. 403-404, read on the page images on 2026-10-19: the greeting carries the versicle mark and its answer the response mark; the dismissal itself stands inside the rubric with no mark, and its answer carries the response mark."
+parts = [
+  { key = "priest-1", seq = [1201], speaker = "priest", dialogue_role = "versicle" },
+  { key = "server-1", seq = [1202], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+  { key = "priest-2", seq = [1203], speaker = "priest" },
+  { key = "server-2", seq = [1204], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "dominus-vobiscum-ite-missa-est"
+lang = "la"
+basis = "1962 Ordo Missae nn. 1131-1132, printed pp. 322-323, artifact PDF pp. 403-404, read on the page images on 2026-10-19: the greeting carries the versicle mark and its answer the response mark; the dismissal itself stands inside the rubric with no mark, and its answer carries the response mark."
+parts = [
+  { key = "priest-1", seq = [1201], speaker = "priest", dialogue_role = "versicle" },
+  { key = "server-1", seq = [1202], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+  { key = "priest-2", seq = [1203], speaker = "priest" },
+  { key = "server-2", seq = [1204], speaker = "server", dialogue_role = "response", printed_marker = "R." },
+]
+
+# C2 gap G19 (2026-10-19): element-level collation of the 1861 Latin the 1962
+# Pentecost Missal mode exercises, word by word against the 1962 Ordo on its
+# page images, under the 2026-09-03 words rule. Word-exact elements are
+# exact-target; the others record their differences and stay antecedents.
+[[sections.element_provenance]]
+element = "quod-ore-sumpsimus"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; n. 1130, printed p. 322, artifact PDF p. 403"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-conclusio-la seq 1, printed p. xlii-xliii, IA leaf 52-53), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1130, printed p. 322, artifact PDF p. 403, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "corpus-tuum-domine"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; n. 1131, printed p. 322, artifact PDF p. 403"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-conclusio-la seq 3, printed p. xliii, IA leaf 53), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1131, printed p. 322, artifact PDF p. 403, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "dominus-vobiscum-ite-missa-est"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; nn. 1131-1132, printed pp. 322-323, artifact PDF pp. 403-404"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-conclusio-la seq 1201-1204, printed p. xliv, IA leaf 54), collated word by word on 2026-10-19 with the 1962 typical edition, nn. 1131-1132, printed pp. 322-323, artifact PDF pp. 403-404, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing. The 1962 sets the dismissal and its alternative inside a rubric; the 1861 parenthetical (vel) matches the rubric's vel."
+
+[[sections.element_provenance]]
+element = "requiescant-in-pace"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-conclusio; n. 1133, printed p. 323, artifact PDF p. 404"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-conclusio-la seq 14, printed p. xliv, IA leaf 54), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1133, printed p. 323, artifact PDF p. 404, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "placeat-tibi-sancta-trinitas"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-conclusio; n. 1137, printed pp. 325-326, artifact PDF pp. 406-407"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-conclusio-la seq 16, printed p. xliv, IA leaf 54), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1137, printed pp. 325-326, artifact PDF pp. 406-407, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "initium-sancti-evangelii"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-conclusio; after n. 1138, printed pp. 326-327, artifact PDF pp. 407-408"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-conclusio-la seq 19, printed p. xliv-xlv, IA leaf 54-55), collated word by word on 2026-10-19 with the 1962 typical edition, after n. 1138, printed pp. 326-327, artifact PDF pp. 407-408, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing. Flagged deletion was the page break; the 1962 adds a rubric for another Gospel."
+
+[[sections.element_provenance]]
+element = "in-principio-erat-verbum"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-conclusio; n. 1139, printed p. 327, artifact PDF p. 408"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-conclusio-la seq 20, printed p. xlv, IA leaf 55), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1139, printed p. 327, artifact PDF p. 408, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "fuit-homo-missus-a-deo"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-conclusio; n. 1139, printed pp. 327-328, artifact PDF pp. 408-409"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-conclusio-la seq 21, printed p. xlv, IA leaf 55), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1139, printed pp. 327-328, artifact PDF pp. 408-409, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+[[sections.element_provenance]]
+element = "in-mundo-erat"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-conclusio; n. 1139, printed p. 328, artifact PDF p. 409"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-conclusio-la seq 22, printed p. xlv-xlvi, IA leaf 55-56), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1139, printed p. 328, artifact PDF p. 409, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing. 1962 genuflection rubric is rubric."
+
+[[sections.element_provenance]]
+element = "deo-gratias"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-conclusio; n. 1139, printed p. 328, artifact PDF p. 409"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-conclusio-la seq 23, printed p. xlvi, IA leaf 56), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1139, printed p. 328, artifact PDF p. 409, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
 
 # ---------------------------------------------------------------- slots
 #

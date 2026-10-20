@@ -11494,6 +11494,11 @@ sections:
           Alleluia, alleluia. V. Emitte Spiritum tuum, et creabuntur: et renovabis
           faciem terrae. Alleluia. (Hic genuflectitur) V. Veni, Sancte Spiritus, reple
           tuorum corda fidelium: et tui amoris in eis ignem accende.
+        text_structure:
+          text_sha256: 1b35189b382ec86f640dad61bd13148728cfca9bb3c823a77073520ab5976c79
+          checked: "Read 2026-10-19 on the registered 1962 facsimile page image at artifact p. 438 (printed p. 357), 200 and 400 dpi: the genuflection direction is printed in parentheses inside the Alleluia, between its first Alleluia and the versicle Veni. It is a rubric governing the action, not words said."
+          actions:
+          - {kind: rubric, offset: 98, text: "(Hic genuflectitur)"}
       - name: Sequence
         incipit: Veni, Sancte Spiritus
         source: composed
@@ -11512,6 +11517,22 @@ sections:
           est rigidum, fove quod est frigidum, rege quod est devium. Da tuis
           fidelibus, in te confidentibus, sacrum septenarium. Da virtutis meritum, da
           salutis exitum, da perenne gaudium. Amen. Alleluia.
+        text_structure:
+          text_sha256: 922760f2a1e7984182dadf6bc7730090259738a632f21fbb5c8af5de20f02c5f
+          checked: "Read 2026-10-19 on the registered 1962 facsimile page image at artifact p. 438 (printed p. 357), 200 and 400 dpi: the Sequence is printed as ten indented strophes, the tenth ending at Amen, and the closing Alleluia on an indented line of its own. Corroborated on the tracked Pustet 1862 leaf image n385 (printed p. 300), whose text-layer lines are the witness_line values (the closing Alleluia runs on at line 45916 there), and on Cummiskey 1861 artifact p. 385 (printed p. 376), which prints the same ten Latin strophes as paragraphs."
+          witness_artifact_id: artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf
+          stanzas:
+          - {offset: 0, opens: "Veni, Sancte", witness_line: 45888}
+          - {offset: 61, opens: "Veni, pater", witness_line: 45892}
+          - {offset: 125, opens: "Consolator optime,", witness_line: 45896}
+          - {offset: 185, opens: "In labore", witness_line: 45898}
+          - {offset: 243, opens: "O lux", witness_line: 45900}
+          - {offset: 298, opens: "Sine tuo", witness_line: 45902}
+          - {offset: 356, opens: "Lava quod", witness_line: 45904}
+          - {offset: 425, opens: "Flecte quod", witness_line: 45908}
+          - {offset: 496, opens: "Da tuis", witness_line: 45912}
+          - {offset: 556, opens: "Da virtutis", witness_line: 45914}
+          - {offset: 622, opens: "Alleluia.", witness_line: 45916}
       - name: Gospel
         source: mixed
         verses:

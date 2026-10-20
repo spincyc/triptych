@@ -201,7 +201,9 @@ After C1's acceptance checkpoint the maintainer asked for the next parallel
 steps. C4's first ordered step is the dialogue cue contract in the
 [roadmap](guidance/liturgy-browser-roadmap.md#c4-dialogue-typography-and-usability-contract).
 
-**In progress: step 1 implemented; the remaining dialogues are open.**
+**In progress: steps 1 and 2 implemented.** Step 2 gives Introibo/Judica, the
+Preface dialogue, the Pax and the dismissal reviewed per-turn rows, roles from
+the 1962 typica's printed marks, and headings without printed cues.
 
 - **Opening cue.** `spoken()` now keeps an all-speaker dialogue's printed
   opening attribution as a language-tagged "Priest" word label, so the
@@ -239,15 +241,17 @@ Joseph clause as a short phrase. That basis is recorded once in
 `src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml` and
 reaches only that clause.
 
-**In progress: Propers and Ordinary variables done.**
+**In progress: texts, structure and Ordinary collation done; the C2 acceptance
+pass remains.**
 
 - Pentecost Latin is 10/10 exact-target.
 - English is bound for 8 of 10 units, with the Lesson a typed gap.
 - Missal mode seats the whole Holy Spirit Preface and the proper Hanc igitur
   and Communicantes.
 
-The Alleluia English, the internal-structure contract (G14), and the Ordinary
-collation (G19) remain open.
+The Alleluia English (Lasance), the G14 stanza and inline-rubric contract, and
+the G19 collation of the exercised Ordinary followed, with 92 exact-target
+Latin rows.
 
 A full `unittest discover -s tools/tests` run on this checkpoint executed 4,593
 tests. Every failure had a known cause:
@@ -264,6 +268,20 @@ tests. Every failure had a known cause:
 
 `tests/tools/mass-ordinary.test` had been stale since `799988766`; it is
 re-pinned with dated causes.
+
+On the next checkpoint the whole suite was compared against an export of
+`26f192c68` run at the same time: 4,612 tests now and 4,526 then, with 210
+failures in each.
+
+- Eleven baseline failures are fixed, including `tests/tools/mass-propers.test`.
+- Three new failures were caused here and fixed: the published-inventory
+  shape, the shared core's scoped `copy` listener, and a transcript count.
+- The rest match the baseline by failure message, not only by test name:
+  - a reader-state parity test is load-sensitive and passes when run alone;
+  - the manifest-leaf count failure is the pre-existing 24 against 20, whose
+    class could not set up at baseline.
+- Thirteen diverged CLI example transcripts were recaptured, each traced to an
+  intended change. Twenty-nine examples diverge identically at baseline.
 
 ## Missal reader C2 representative Masses, 2026-10-19
 

@@ -14,6 +14,14 @@ calendar = "roman-1962"
 target = "src/sources/calendars/roman-1962/propers.yaml"
 recorded_on = "2026-08-02"
 merge = """
+C3 Pentecost structure lane, 2026-10-19 (C2 gap G14). The `no-exemplar` row for
+the Alleluia of `pentecost` became a positive Lasance entry, read on its page
+image at printed p. 599; its inline genuflection direction is marked a rubric
+by the entry's `text_structure`, and Cummiskey 1861 is recorded as a text-free
+second reading. Both alias rows of the Caswall Pentecost Sequence now carry
+`text_structure` stanza boundaries checked on the 1849 page images. 120
+positive entries and 1,082 `untranslated` records follow.
+
 C3 Pentecost lane, 2026-10-19. The three `no-exemplar` rows for the Collect,
 Secret and Postcommunion of `pentecost` became positive Cummiskey entries bound
 through roman-1962-pentecost-en (C2 gap G3); the Lasance readings of the Collect
@@ -2732,6 +2740,11 @@ Give them life with Thee on high;
 Give them joys which never end.
 '''
 
+[entries.translations.text_structure]
+text_sha256 = "ff2a76e3af33199f21e6e04b7035014d3f606c2d5191b041e32948ac937dbdcb"
+checked = "Read 2026-10-19 on the registered Caswall 1849 scan, re-downloaded and hashed to its recorded SHA-256, at artifact pp. 272-274 (IA leaves n271-n273, printed pp. 234-236), 150 dpi: ten three-line stanzas separated by space, the first on p. 234, the second through seventh on p. 235 and the eighth through tenth on p. 236; each stanza here opens where the page opens one."
+stanzas = [{ offset = 0, opens = "Holy Spirit!" }, { offset = 94, opens = "Come, Thou" }, { offset = 196, opens = "Thou, of" }, { offset = 286, opens = "Thou in" }, { offset = 378, opens = "Light immortal!" }, { offset = 470, opens = "If Thou" }, { offset = 562, opens = "Heal our" }, { offset = 661, opens = "Bend the" }, { offset = 761, opens = "Thou, on" }, { offset = 852, opens = "Give them" }]
+
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
@@ -2777,6 +2790,11 @@ Give them comfort when they die;
 Give them life with Thee on high;
 Give them joys which never end.
 '''
+
+[entries.translations.text_structure]
+text_sha256 = "ff2a76e3af33199f21e6e04b7035014d3f606c2d5191b041e32948ac937dbdcb"
+checked = "Read 2026-10-19 on the registered Caswall 1849 scan, re-downloaded and hashed to its recorded SHA-256, at artifact pp. 272-274 (IA leaves n271-n273, printed pp. 234-236), 150 dpi: ten three-line stanzas separated by space, the first on p. 234, the second through seventh on p. 235 and the eighth through tenth on p. 236; each stanza here opens where the page opens one."
+stanzas = [{ offset = 0, opens = "Holy Spirit!" }, { offset = 94, opens = "Come, Thou" }, { offset = 196, opens = "Thou, of" }, { offset = 286, opens = "Thou in" }, { offset = 378, opens = "Light immortal!" }, { offset = 470, opens = "If Thou" }, { offset = 562, opens = "Heal our" }, { offset = 661, opens = "Bend the" }, { offset = 761, opens = "Thou, on" }, { offset = 852, opens = "Give them" }]
 
 [[entries]]
 mass = "corpus-christi"
@@ -7596,18 +7614,6 @@ note = "No exact English exemplar is bound. A historical English lead from the p
 mass = "easter-5"
 form_id = "main"
 proper = "Greater Alleluia"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
-
-[[untranslated]]
-mass = "pentecost"
-form_id = "main"
-proper = "Alleluia"
 cycle = "all"
 occurrence = 1
 lang = "en"
@@ -18322,6 +18328,34 @@ verified_artifact_page = 384
 verified_on_page = "2026-10-19"
 verified_printed_page = "375-376"
 note = "Both public-domain English witnesses render the Vulgate's first verse, which lacks the 1962 Missal's discipuli: Cummiskey 1861 at printed pp. 375-376 (IA leaves n383-n384) and Lasance at printed pp. 598-599 (IA leaves n595-n596, passage passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.whitsunday-lesson). A dropped word is a variant, so neither is attached. Lasance also renders the heading; Cummiskey does not."
+
+[[entries]]
+mass = "pentecost"
+form_id = "main"
+proper = "Alleluia"
+cycle = "all"
+occurrence = 1
+incipit = "Emitte Spiritum tuum"
+witness = "lasance-1945"
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.whitsunday-alleluia"
+printed_page = "599"
+ia_leaf = 596
+ia_leaf_range = [596, 596]
+collated = "page-image, 2026-10-19"
+collation_result = "read-from-page"
+witness_note = "Printed p. 599 in the Mass of Whitsunday, facing Latin and English. The English renders every word of the 1962 body, with the same Alleluias; a printed scripture citation is omitted as in the Latin body and the versicle signs stand as the book prints them. The genuflection direction is printed in italic parentheses after the second versicle sign, where the 1962 prints it before; it is a rubric and not principal text, and is set as one. Read at 200 dpi, at the scan's native 300 dpi and at 400 dpi. Second reading: Cummiskey 1861 at printed p. 376 (IA leaf n384, artifact p. 385) also renders every word, but carries its direction as an asterisk keyed to a page-foot note rather than inline; it is recorded here, not served beside this body."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "Alleluia, alleluia. V. Send forth Thy Spirit, and they shall be created: and Thou shalt renew the face of the earth. Alleluia. V. (here all kneel). Come, O Holy Spirit, fill the hearts of Thy faithful: and kindle in them the fire of Thy love."
+
+[entries.translations.text_structure]
+text_sha256 = "909648091cfad966a1e68e0710537cedc52dab4e7f6c37204c64cc1267ed39c7"
+checked = "Read 2026-10-19 on the registered Lasance facsimile page image at artifact p. 597 (printed p. 599, IA leaf n596), 200, 300 and 400 dpi: the direction is set in italic within parentheses; the period after it is upright and stays principal punctuation."
+actions = [{ kind = "rubric", offset = 130, text = "(here all kneel)" }]
 
 [[untranslated]]
 mass = "christ-the-king"

@@ -312,8 +312,43 @@ class OrdinaryStructure(unittest.TestCase):
             # for the joining of the hands as an action turn.
             ("roman-1962", "canon/communicantes-continuatio", "la"),
             ("roman-1962", "canon/hanc-igitur-pascha-pentecoste", "la"),
+        } | {
+            # 2026-10-19 (C4 step 2): the reviewed child rows of ten printed
+            # dialogue blocks, in both 1861-derived frames and both columns,
+            # and the postconciliar Latin antecedent Preface dialogue and Pax.
+            (calendar, key, lang)
+            for calendar in ("roman-1962", "roman-pre-1955")
+            for key in (
+                "praeparatio/introibo-ad-altare-dei",
+                "praeparatio/judica-me-deus",
+                "praeparatio/emitte-lucem-tuam",
+                "praeparatio/confitebor-tibi-in-cithara",
+                "praeparatio/gloria-patri",
+                "praeparatio/introibo-ad-altare-dei-repetitio",
+                "oblatio/per-omnia-saecula",
+                "oblatio/sursum-corda",
+                "communio/pax-domini",
+                "conclusio/dominus-vobiscum-ite-missa-est",
+            )
+            for lang in ("en", "la")
+        } | {
+            ("postconciliar", "prex-eucharistica/praefationis-dialogus", "la"),
+            ("postconciliar", "ritus-communionis/pax-domini", "la"),
         }
         self.assertEqual(reached, expected)
+        # Postconciliar: speakers priest/all; roles only where the 2002
+        # Praefationes print versicle and response marks, none for the Pax.
+        by_reach = {(calendar, key, lang): turns for calendar, key, lang, turns in found}
+        self.assertEqual(
+            [(turn["speaker"], turn["dialogue_role"], turn["printed_marker"])
+             for turn in by_reach[("postconciliar", "prex-eucharistica/praefationis-dialogus", "la")]],
+            [("priest", "versicle", "P."), ("all", "response", "R.")] * 3,
+        )
+        self.assertEqual(
+            [(turn["speaker"], turn["dialogue_role"], turn["printed_marker"])
+             for turn in by_reach[("postconciliar", "ritus-communionis/pax-domini", "la")]],
+            [("priest", None, "P."), ("all", None, "R.")],
+        )
         post_turns = next(
             turns for calendar, key, lang, turns in found
             if (calendar, key, lang)
@@ -322,8 +357,12 @@ class OrdinaryStructure(unittest.TestCase):
         self.assertEqual(
             [(turn["key"], turn["speaker"], turn["dialogue_role"], turn["action"])
              for turn in post_turns],
-            [("priest-summons", "priest", "versicle", None),
-             ("people-response", "all", "response", None)],
+            # 2026-10-19 (C4): speakers only. The 2002 Ordo n. 29 (artifact
+            # p. 310) prints rubrics naming the priest and the people and no
+            # versicle or response mark, so the roles once declared here, which
+            # had no stated basis, were withdrawn; turns_basis records the page.
+            [("priest-summons", "priest", None, None),
+             ("people-response", "all", None, None)],
         )
         self.assertTrue(post_turns[1]["text"].startswith("R. Suscipiat"))
         self.assertEqual([turn["printed_marker"] for turn in post_turns], [None, "R."])
@@ -336,7 +375,9 @@ class OrdinaryStructure(unittest.TestCase):
                     (calendar, key, lang),
                 )
                 continue
-            if calendar.startswith("roman-"):
+            # The divided dialogue blocks are held to their partitions by
+            # tests/tools/mass-ordinary.test; these are the single-row turns.
+            if calendar.startswith("roman-") and key in roman_elements:
                 self.assertEqual(len(turns), 1, (calendar, key, lang))
                 self.assertEqual(turns[0]["speaker"], roman_elements[key])
                 self.assertIsNone(turns[0]["dialogue_role"])
@@ -361,7 +402,9 @@ class OrdinaryStructure(unittest.TestCase):
         for calendar in ("roman-1962", "roman-pre-1955"):
             opaque = next(
                 element for element in elements(self.files[calendar])
-                if element["key"] == "praeparatio/introibo-ad-altare-dei"
+                # Introibo became reviewed child rows on 2026-10-19 (C4 step
+                # 2); Adjutorium is still one opaque printed block.
+                if element["key"] == "praeparatio/adjutorium-nostrum"
             )
             for translation in opaque["translations"] or []:
                 self.assertNotIn("turns", translation, f"{calendar}: opaque {translation['lang']}")
@@ -1436,8 +1479,10 @@ class OrdinaryTool(unittest.TestCase):
                 "artifact_latin": latin_id,
                 "english": {"relation": "own"}, "latin": {"relation": "own"},
                 "turn_partitions": [
-                    {"element": "dialogue", "lang": "en", "parts": parts},
-                    {"element": "dialogue", "lang": "la", "parts": parts},
+                    {"element": "dialogue", "lang": "en", "parts": parts,
+                     "basis": "Synthetic book prints versicle and response marks."},
+                    {"element": "dialogue", "lang": "la", "parts": parts,
+                     "basis": "Synthetic book prints versicle and response marks."},
                 ],
             }
             built, exclusions = tool.from_artifact(
@@ -1462,6 +1507,132 @@ class OrdinaryTool(unittest.TestCase):
             ]
             with self.assertRaisesRegex(tool.SourceError, "does not exactly partition"):
                 tool.from_artifact(bad, witnesses, {}, {}, library, "synthetic.toml")
+
+            # A dialogue role is a reading of the controlling book's marks; a
+            # partition that declares one without saying where is refused,
+            # and an empty basis is no basis.
+            for basis, message in ((None, "dialogue role without a basis"),
+                                   ("  ", "empty basis")):
+                unbased = dict(section)
+                unbased["turn_partitions"] = [
+                    {key: value for key, value in partition.items() if key != "basis"}
+                    | ({} if basis is None else {"basis": basis})
+                    for partition in section["turn_partitions"]
+                ]
+                with self.subTest(basis=basis), self.assertRaisesRegex(tool.SourceError, message):
+                    tool.from_artifact(unbased, witnesses, {}, {}, library, "synthetic.toml")
+            # Speakers alone need no basis.
+            speakers_only = dict(section)
+            speakers_only["turn_partitions"] = [
+                {"element": "dialogue", "lang": lang, "parts": [
+                    {key: value for key, value in part.items() if key != "dialogue_role"}
+                    for part in parts
+                ]}
+                for lang in ("en", "la")
+            ]
+            built, _ = tool.from_artifact(
+                speakers_only, witnesses, {}, {}, library, "synthetic.toml"
+            )
+            self.assertTrue(all(
+                turn["dialogue_role"] is None
+                for translation in built[0]["translations"]
+                for turn in translation["turns"]
+            ))
+
+    def test_child_rows_split_turns_and_headings_lose_only_reviewed_cues(self) -> None:
+        """C4 step 2: reviewed child rows, labels that are not cues, headings."""
+        tool = self.tool_module
+        witness_id = "edition.synthetic.witness"
+        english_id = "artifact.synthetic.child-en"
+        latin_id = "artifact.synthetic.child-la"
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "english.tsv").write_text(
+                "element_key\tseq\tkind\tenglish\tlatin_incipit\tprinted_page\tspeaker\n"
+                "antiphon\t401\tdialogue\tAnth. Priest sings.\tAntiphona prima\t1\tpriest\n"
+                "antiphon\t402\tdialogue\tR. Server sings.\t\t1\t\n"
+                "headed\t5\tdialogue\tR. Server alone.\tR. Responsum solum\t1\tserver\n",
+                encoding="utf-8",
+            )
+            (root / "latin.tsv").write_text(
+                "element_key\tseq\tlatin\n"
+                "antiphon\t401\tAnt. Sacerdos canit.\n"
+                "antiphon\t402\tR. Minister canit.\n"
+                "headed\t5\tR. Responsum solum.\n",
+                encoding="utf-8",
+            )
+            library = {
+                english_id: {"id": english_id, "path": "english.tsv", "_source_root": root},
+                latin_id: {"id": latin_id, "path": "latin.tsv", "_source_root": root},
+            }
+            witnesses = {
+                (witness_id, "en"): {
+                    "lang": "en", "rights": "project-created", "artifacts": [english_id],
+                },
+                (witness_id, "la"): {
+                    "lang": "la", "rights": "project-created", "artifacts": [latin_id],
+                },
+            }
+            parts = [
+                {"key": "priest-1", "seq": [401], "speaker": "priest"},
+                {"key": "server-1", "seq": [402], "speaker": "server", "printed_marker": "R."},
+            ]
+            section = {
+                "key": "synthetic", "artifact": english_id, "witness": witness_id,
+                "artifact_latin": latin_id,
+                "english": {"relation": "own"}, "latin": {"relation": "own"},
+                "turn_partitions": [
+                    {"element": "antiphon", "lang": "en", "parts": parts},
+                    {"element": "antiphon", "lang": "la", "parts": parts},
+                ],
+                "incipit_markers": [{"element": "headed", "printed_marker": "R."}],
+            }
+            built, _ = tool.from_artifact(section, witnesses, {}, {}, library, "synthetic.toml")
+            antiphon, headed = built
+            # Several first-child-only element cells still give one element.
+            self.assertEqual(antiphon["speaker"], "priest")
+            self.assertEqual(antiphon["name"], "Antiphona prima")
+            self.assertNotIn("incipit_printed_marker", antiphon)
+            for translation in antiphon["translations"]:
+                first, second = translation["turns"]
+                # The antiphon label is printed matter, not a cue: no marker,
+                # kept in the text, and not refused as an undeclared cue.
+                self.assertIsNone(first["printed_marker"])
+                self.assertTrue(first["text"].startswith(("Ant. ", "Anth. ")))
+                self.assertEqual(second["printed_marker"], "R.")
+                self.assertEqual(translation["text"], first["text"] + "\n" + second["text"])
+            # The heading is set without the reviewed cue; the record keeps it.
+            self.assertEqual(headed["name"], "Responsum solum")
+            self.assertEqual(headed["latin_incipit"], "Responsum solum")
+            self.assertEqual(headed["incipit_printed_marker"], "R.")
+
+            undeclared = dict(section)
+            del undeclared["incipit_markers"]
+            with self.assertRaisesRegex(tool.SourceError, "undeclared printed cue"):
+                tool.from_artifact(undeclared, witnesses, {}, {}, library, "synthetic.toml")
+            for markers, message in (
+                ([{"element": "headed", "printed_marker": "P."}], "does not open with that marker"),
+                ([{"element": "headed", "printed_marker": "V."}], "one of P., R."),
+                ([{"element": "absent", "printed_marker": "R."}], "does not hold"),
+                ([{"element": "headed"}], "must carry exactly"),
+            ):
+                wrong = dict(section)
+                wrong["incipit_markers"] = markers
+                with self.subTest(markers=markers), self.assertRaisesRegex(tool.SourceError, message):
+                    tool.from_artifact(wrong, witnesses, {}, {}, library, "synthetic.toml")
+
+    def test_inline_turns_basis_is_a_stated_reading_or_nothing(self) -> None:
+        tool = self.tool_module
+        base = {"key": "dialogue", "kind": "dialogue", "speaker": "all",
+                "absent_english": "gap", "absent_latin": "gap"}
+        absences = {"gap": {"key": "gap", "kind": "witness-gap", "what": "Synthetic."}}
+        for extra, message in (
+            ({"turns_basis": " "}, "empty turns_basis"),
+            ({"turns_basis": "Synthetic page."}, "declares no turns"),
+        ):
+            section = {"key": "synthetic", "elements": [base | extra]}
+            with self.subTest(extra=extra), self.assertRaisesRegex(tool.SourceError, message):
+                tool.from_inventory(section, {}, {}, absences, {}, {}, "synthetic.toml")
 
     def test_alternatives_conditions_and_unresolved_rights_are_closed(self) -> None:
         tool = self.tool_module
@@ -1558,7 +1729,10 @@ class OrdinaryTool(unittest.TestCase):
                             "speaker": "priest", "dialogue_role": "response",
                         },
                         {"key": "bow", "seq": [30], "action": True},
-                    ]
+                    ],
+                    # A role states where the book prints its mark (C4,
+                    # 2026-10-19); without this the turns are refused below.
+                    "turns_basis": "Synthetic page, printing both marks.",
                 }
                 parent = "Server call.\nPriest response.\nBow."
                 turns = tool.structured_turns(
@@ -1644,6 +1818,10 @@ class OrdinaryTool(unittest.TestCase):
                         {"key": "absent-marker", "seq": [10, 20, 30],
                          "speaker": "server", "printed_marker": "R."},
                     ]}, "does not open with that marker"),
+                    # 2026-10-19 (C4): a dialogue role with no stated basis,
+                    # the shape the withdrawn Orate fratres roles had.
+                    ({"english_turns": entry["english_turns"]},
+                     "dialogue role in english_turns without a turns_basis"),
                 )
                 for bad_entry, message in invalid:
                     with self.subTest(message=message):
@@ -1692,7 +1870,7 @@ class OrdinaryTool(unittest.TestCase):
                              "printed_marker": "P."},
                             {"key": "answer", "seq": [20], "speaker": "server",
                              "dialogue_role": "response"},
-                        ]},
+                        ], "turns_basis": "Synthetic page, printing the mark."},
                         "english", library, marked_id, ["marked"], "text",
                         "synthetic/marked", "synthetic", marked_parent,
                     )
@@ -1977,14 +2155,26 @@ process.stdout.write(JSON.stringify({
         # whose English is the typed absence
         # communicantes-continuation-english-lacks-1962-clause. Every other
         # event's received text is byte-identical.
+        # Re-pinned 2026-10-19 (C4 step 2), diffed against HEAD 1107fdc1a: the
+        # sequence is unchanged and exactly 15 events' received text changed,
+        # each identical once cue labels, printed P./R. and whitespace are set
+        # aside: the ten divided dialogue blocks (their word labels and printed
+        # letters became one presentation-only cue per turn row) and five
+        # headings that lost a reviewed printed cue (Dominus vobiscum before
+        # the Gospel and the Offertory, Laus tibi, Suscipiat, and Per omnia
+        # before the Pax).
         expected = {
             "pentecost_10_text": (
                 178,
-                "603e21b11ced428088d95a3ca19d828edf714177a4814dee49397a2faddd7117",
+                "afb5d82df5e921d4fd26e0b68c53e55ef742407b487ccf08285e76119410fdaa",
             ),
+            # Re-pinned 2026-10-19 (C4 step 2), diffed against HEAD 1107fdc1a:
+            # the sequence is unchanged and only the Preface dialogue and the
+            # Pax changed, by losing their "Priest"/"Response" word labels now
+            # that each turn row carries one presentation-only cue.
             "ot_18_text": (
                 67,
-                "01b6b8f6895b452d0d511e3ca7230cc2a6be816dcd11c88380f3e1771a53d33d",
+                "f344433914b0769092526f681f724c438242fa65b1819c5d5244db77dc482b40",
             ),
         }
         for key, (count, wanted_digest) in expected.items():
@@ -2320,8 +2510,10 @@ process.stdout.write(JSON.stringify({
             [row["text"] for row in real["source_turns"]],
             real["source_text"].split("\n"),
         )
-        # The generated row keeps the printed `R.`; the reader sets the role's
-        # one cue and the spoken words, and records the separated marker.
+        # The generated row keeps the printed `R.`; the reader sets the
+        # speaker's one cue and the spoken words, and records the separated
+        # marker. Speakers only since 2026-10-19 (C4): the 2002 Ordo n. 29
+        # prints no versicle or response mark, so no role and no ℣/℟ cue.
         self.assertEqual(
             [
                 (row["printed_marker"] or "") + (" " if row["printed_marker"] else "")
@@ -2340,12 +2532,12 @@ process.stdout.write(JSON.stringify({
             ],
             [
                 (
-                    "priest", "versicle", ["Versicle — Priest"],
-                    [{"mark": "℣", "aria_hidden": "true"}],
+                    "priest", None, ["Priest"],
+                    [{"mark": "P", "aria_hidden": "true"}],
                 ),
                 (
-                    "all", "response", ["Response — All"],
-                    [{"mark": "℟", "aria_hidden": "true"}],
+                    "all", None, ["All"],
+                    [{"mark": "All", "aria_hidden": "true"}],
                 ),
             ],
         )
@@ -2382,16 +2574,46 @@ process.stdout.write(JSON.stringify({
         """
         report = self.run_harness()
         dialogues = report["real_dialogues"]
-        self.assertEqual(len(dialogues), 7)
+        self.assertEqual(len(dialogues), 29)
+        priest_server = [("P", "Priest", "P."), ("S", "Server", "R.")]
+        versicle_response = [("℣", "Versicle — Priest", "P."), ("℟", "Response — Server", "R.")]
         expected_cues = {
             "praeparatio/confiteor-sacerdotis": [("P", "Priest", "P.")],
             "praeparatio/confiteor-ministrorum": [("S", "Server", "R.")],
             "oblatio/suscipiat-dominus": [("S", "Server", "R.")],
+            # Speakers only since 2026-10-19 (C4): n. 29 of the 2002 Ordo
+            # prints no versicle or response mark, so no ℣/℟ cue is set.
             "praeparatio-donorum/orate-fratres": [
-                ("℣", "Versicle — Priest", None),
-                ("℟", "Response — All", "R."),
+                ("P", "Priest", None),
+                ("All", "All", "R."),
             ],
+            # C4 step 2 (2026-10-19). The antiphon's Ant./Anth. is a label and
+            # stays in the words; the Judica verses carry speakers only, as the
+            # 1962 prints S./M. there; ℣/℟ only where the 1962 prints them.
+            "praeparatio/introibo-ad-altare-dei": [("P", "Priest", None), ("S", "Server", "R.")],
+            "praeparatio/judica-me-deus": [("P", "Priest", None), ("S", "Server", "R.")],
+            "praeparatio/emitte-lucem-tuam": priest_server,
+            "praeparatio/confitebor-tibi-in-cithara": priest_server,
+            "praeparatio/gloria-patri": priest_server,
+            "praeparatio/introibo-ad-altare-dei-repetitio": [
+                ("P", "Priest", "P."), ("℟", "Response — Server", "R."),
+            ],
+            "oblatio/per-omnia-saecula": versicle_response,
+            "oblatio/sursum-corda": versicle_response * 3,
+            "communio/pax-domini": [("P", "Priest", "P."), ("℟", "Response — Server", "R.")],
+            "conclusio/dominus-vobiscum-ite-missa-est": [
+                ("℣", "Versicle — Priest", None), ("℟", "Response — Server", "R."),
+                ("P", "Priest", None), ("℟", "Response — Server", "R."),
+            ],
+            "prex-eucharistica/praefationis-dialogus": [
+                ("℣", "Versicle — Priest", "P."), ("℟", "Response — All", "R."),
+            ] * 3,
+            "ritus-communionis/pax-domini": [("P", "Priest", "P."), ("All", "All", "R.")],
         }
+        antiphon = dialogues["roman-1962 praeparatio/introibo-ad-altare-dei la"]
+        self.assertTrue(antiphon["rendered_turns"][0]["texts"][0]["text"].startswith("Ant. "))
+        antiphon = dialogues["roman-1962 praeparatio/introibo-ad-altare-dei en"]
+        self.assertTrue(antiphon["rendered_turns"][0]["texts"][0]["text"].startswith("Anth. "))
         for name, dialogue in dialogues.items():
             calendar, key, lang = name.split(" ")
             rows = dialogue["rendered_turns"]
@@ -3128,17 +3350,33 @@ function realTurns(file, key, lang) {
 const realDialogues = {};
 for (const lang of ['en', 'la']) {
   for (const key of ['praeparatio/confiteor-sacerdotis',
-    'praeparatio/confiteor-ministrorum', 'oblatio/suscipiat-dominus']) {
+    'praeparatio/confiteor-ministrorum', 'oblatio/suscipiat-dominus',
+    // C4 step 2 (2026-10-19): the reviewed child rows of the dialogues.
+    'praeparatio/introibo-ad-altare-dei', 'praeparatio/judica-me-deus',
+    'praeparatio/emitte-lucem-tuam', 'praeparatio/confitebor-tibi-in-cithara',
+    'praeparatio/gloria-patri', 'praeparatio/introibo-ad-altare-dei-repetitio',
+    'oblatio/per-omnia-saecula', 'oblatio/sursum-corda', 'communio/pax-domini',
+    'conclusio/dominus-vobiscum-ite-missa-est']) {
     realDialogues['roman-1962 ' + key + ' ' + lang] = realTurns(tlm, key, lang);
   }
 }
-realDialogues['postconciliar praeparatio-donorum/orate-fratres la'] =
-  realTurns(pc, 'praeparatio-donorum/orate-fratres', 'la');
+for (const key of ['praeparatio-donorum/orate-fratres',
+  'prex-eucharistica/praefationis-dialogus', 'ritus-communionis/pax-domini']) {
+  realDialogues['postconciliar ' + key + ' la'] = realTurns(pc, key, 'la');
+}
 
 /* Opaque `all` dialogues: no opening cue is set, so the leading P. is the
    first line's only attribution and must survive as its word label. */
 function opaqueCues(file, key, lang) {
-  const element = all(file).find((e) => e.key === key);
+  const found = all(file).find((e) => e.key === key);
+  // Since C4 step 2 no real `all` dialogue is opaque: the regression runs on
+  // the same element as its source block stood before the child-row division,
+  // the turns rejoined by the single spaces the division removed.
+  const element = Object.assign({}, found, {
+    translations: (found.translations || []).map((one) => one.turns
+      ? Object.assign({}, one, { text: one.turns.map((t) => t.text).join(' '), turns: undefined })
+      : one)
+  });
   P.state.ordinaryLang = lang;
   const rendered = P.renderElement(element, file);
   P.state.ordinaryLang = null;

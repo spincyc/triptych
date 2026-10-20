@@ -42,7 +42,7 @@ trap 'rm -rf "$sandbox"' EXIT INT TERM
 # the 1962 editorial projection Latin), and graded seven rows collated.
 summary="$(run_tool check --calendar roman-1962 | head -1)"
 case "$summary" in
-*"roman-1962: 6 sections, 196 elements, 4 witnesses, 0 variants, 9 slots; en 186 held/10 missing, la 117 held/79 missing; relations en antecedent/collated 1, en antecedent/uncollated 185, la antecedent/collated 6, la antecedent/uncollated 111; 12 target-recension exclusions"*) ;;
+*"roman-1962: 6 sections, 196 elements, 4 witnesses, 0 variants, 9 slots; en 186 held/10 missing, la 117 held/79 missing; relations en antecedent/collated 1, en antecedent/uncollated 185, la antecedent/collated 104, la antecedent/uncollated 13; 12 target-recension exclusions"*) ;;
 *)
 	echo "unexpected summary line: $summary" >&2
 	exit 1
@@ -58,7 +58,7 @@ if [ ! -d "$root" ]; then
 fi
 
 python3 - "$root" <<'PY'
-import json, pathlib, sys
+import json, pathlib, re, sys
 
 root = pathlib.Path(sys.argv[1])
 index = json.loads((root / "index.json").read_text(encoding="utf-8"))
@@ -278,16 +278,113 @@ for path in files:
             (key, lang) for key in partitioned for lang in ("en", "la")
         }, reached
 
-        # These 30 blocks contain internal speaker changes but each language's
+        # C4 step 2 (2026-10-19): ten printed blocks of dialogue are held as
+        # reviewed child rows, one per printed turn, numbered seq*100+n from the
+        # block they divide. Each language partitions those rows in order; the
+        # turns rejoin to the element's text. Speakers come from the 1861 P./R.
+        # marks; a dialogue role stands only where the 1962 typical edition
+        # prints a versicle or response mark at that turn, and never in the
+        # pre-1955 projection. Ant./Anth. is a label, never a printed cue.
+        V, R = "versicle", "response"
+        divided = {
+            "praeparatio/introibo-ad-altare-dei": (4, [("priest", None, None), ("server", "R.", None)]),
+            "praeparatio/judica-me-deus": (6, [("priest", None, None), ("server", "R.", None)]),
+            "praeparatio/emitte-lucem-tuam": (7, [("priest", "P.", None), ("server", "R.", None)]),
+            "praeparatio/confitebor-tibi-in-cithara": (8, [("priest", "P.", None), ("server", "R.", None)]),
+            "praeparatio/gloria-patri": (9, [("priest", "P.", None), ("server", "R.", None)]),
+            "praeparatio/introibo-ad-altare-dei-repetitio": (10, [("priest", "P.", None), ("server", "R.", R)]),
+            "oblatio/per-omnia-saecula": (57, [("priest", "P.", V), ("server", "R.", R)]),
+            "oblatio/sursum-corda": (59, [("priest", "P.", V), ("server", "R.", R)] * 3),
+            "communio/pax-domini": (6, [("priest", "P.", None), ("server", "R.", R)]),
+            "conclusio/dominus-vobiscum-ite-missa-est": (12, [
+                ("priest", None, V), ("server", "R.", R), ("priest", None, None), ("server", "R.", R),
+            ]),
+        }
+        roles_here = payload["calendar"] == "roman-1962"
+        for key, (parent, expected) in divided.items():
+            rows = elements[key]["translations"]
+            assert {row["lang"] for row in rows} == {"en", "la"}, (key, rows)
+            for row in rows:
+                turns = row["turns"]
+                assert len(turns) == len(expected), (key, row["lang"], turns)
+                assert "\n".join(turn["text"] for turn in turns) == row["text"], key
+                assert row["text"].count("\n") == len(expected) - 1, (key, row["lang"])
+                for turn, (speaker, marker, role) in zip(turns, expected):
+                    assert turn["speaker"] == speaker, (key, turn)
+                    assert turn["printed_marker"] == marker, (key, turn)
+                    assert turn["dialogue_role"] == (role if roles_here else None), (key, turn)
+                    assert turn["action"] is None, (key, turn)
+                    if marker:
+                        assert turn["text"].startswith(marker + " "), (key, turn)
+                    else:
+                        assert not turn["text"].startswith(("P. ", "R. ")), (key, turn)
+        # The antiphon's printed label survives as text in both columns.
+        antiphon = {
+            row["lang"]: row["turns"][0]["text"]
+            for row in elements["praeparatio/introibo-ad-altare-dei"]["translations"]
+        }
+        assert antiphon["la"].startswith("Ant. ") and antiphon["en"].startswith("Anth. "), antiphon
+
+        # Element headings set the incipit without the printed cue letter; the
+        # reviewed marker is recorded beside it and the artifact keeps the cell.
+        headed = {
+            "oblatio/dominus-vobiscum-ante-evangelium": "P.",
+            "oblatio/laus-tibi-christe": "R.",
+            "oblatio/dominus-vobiscum-ante-offertorium": "P.",
+            "oblatio/suscipiat-dominus": "R.",
+            "oblatio/per-omnia-saecula": "P.",
+            "oblatio/sursum-corda": "P.",
+            "communio/per-omnia-saecula-post-libera-nos": "P.",
+            "communio/pax-domini": "P.",
+        }
+        for key, element in elements.items():
+            assert element.get("incipit_printed_marker") == headed.get(key), (key, element.get("incipit_printed_marker"))
+            for field in ("name", "latin_incipit"):
+                value = element.get(field) or ""
+                assert not re.match(r"^(?:[PRVS]\.|[\u2123\u211f]\.?)\s", value), (key, field, value)
+
+        # C2 gap G19 (2026-10-19): the Latin the 1962 Pentecost Missal mode
+        # exercises is collated word by word against the 1962 Ordo. A
+        # word-exact element is exact-target; a variant or an abbreviated body
+        # is collated, names its differences and stays an antecedent. The
+        # pre-1955 projection of the same rows inherits no 1962 finding.
+        collated_la = {}
+        for key, element in elements.items():
+            for row in element["translations"] or []:
+                if row["lang"] == "la" and row.get("collation") == "collated":
+                    collated_la[key] = row
+        if payload["calendar"] == "roman-1962":
+            not_exact = {
+                "praeparatio/confiteor-sacerdotis", "praeparatio/indulgentiam",
+                "oblatio/suscipe-sancte-pater", "oblatio/in-spiritu-humilitatis",
+                "oblatio/ne-perdas-cum-impiis", "oblatio/gloria-patri",
+                "oblatio/suscipiat-dominus", "canon/simili-modo",
+                "canon/forma-sanguinis", "canon/supplices", "canon/per-quem",
+                "communio/agnus-dei",
+            }
+            exact = {key for key, row in collated_la.items() if row.get("target_wording") == "word-exact"}
+            assert set(collated_la) - exact == not_exact, sorted(set(collated_la) - exact)
+            assert len(exact) == 92 and len(collated_la) == 104, (len(exact), len(collated_la))
+            assert set(divided) <= exact, sorted(set(divided) - exact)
+            for key, row in collated_la.items():
+                assert row["collation_finding"].startswith(
+                    "passage.catholic-church.missale-romanum."), (key, row["collation_finding"])
+                if key in exact:
+                    assert row["coverage_relationship"] == "exact-target", key
+                    assert "COLLATED WORD-EXACT" in row["note"], key
+                else:
+                    assert "coverage_relationship" not in row, key
+                    assert "NOT WORD-EXACT" in row["note"], key
+            for key in ("praeparatio/gloria-in-excelsis-heading",
+                        "conclusio/dominus-vobiscum-ante-postcommunionem"):
+                assert key not in collated_la, key
+        else:
+            assert collated_la == {}, sorted(collated_la)
+
+        # These 20 blocks contain internal speaker changes but each language's
         # artifact still stores the whole printed block in one row. They stay
         # opaque until reviewed child rows exist; punctuation is not a boundary.
         opaque = {
-            "praeparatio/introibo-ad-altare-dei",
-            "praeparatio/judica-me-deus",
-            "praeparatio/emitte-lucem-tuam",
-            "praeparatio/confitebor-tibi-in-cithara",
-            "praeparatio/gloria-patri",
-            "praeparatio/introibo-ad-altare-dei-repetitio",
             "praeparatio/adjutorium-nostrum",
             "praeparatio/misereatur-tui",
             "praeparatio/misereatur-vestri",
@@ -302,18 +399,14 @@ for path in files:
             "praeparatio/dominus-vobiscum-post-gloriam",
             "oblatio/dominus-vobiscum-ante-evangelium",
             "oblatio/dominus-vobiscum-ante-offertorium",
-            "oblatio/per-omnia-saecula",
-            "oblatio/sursum-corda",
             "canon/per-omnia-saecula",
             "communio/pater-noster",
             "communio/per-omnia-saecula-post-libera-nos",
-            "communio/pax-domini",
             "conclusio/dominus-vobiscum-ante-postcommunionem",
-            "conclusio/dominus-vobiscum-ite-missa-est",
             "conclusio/requiescant-in-pace",
             "conclusio/initium-sancti-evangelii",
         }
-        assert len(opaque) == 30 and opaque <= set(elements), opaque - set(elements)
+        assert len(opaque) == 20 and opaque <= set(elements), opaque - set(elements)
         for key in opaque:
             rows = elements[key]["translations"]
             assert {row["lang"] for row in rows} == {"en", "la"}, (key, rows)
@@ -718,6 +811,25 @@ collated_rows = {
     },
     "roman-pre-1955": set(),
 }
+# 2026-10-19 (C2 gap G19): every other 1962 Latin row the Pentecost Missal
+# mode exercises is collated too, word-exact or with named differences. These
+# 13 Latin rows stay uncollated: the common Hanc igitur and ten Prefaces the
+# day does not say, the 1861's own Gloria heading, and the Dominus vobiscum
+# before the Postcommunion, which the 1962 Ordo prints at no place of its own.
+still_uncollated_1962 = {
+    "canon/hanc-igitur", "conclusio/dominus-vobiscum-ante-postcommunionem",
+    "praefatio/praefatio-communis", "praefatio/praefatio-de-apostolis",
+    "praefatio/praefatio-de-ascensione", "praefatio/praefatio-de-beata-maria-virgine",
+    "praefatio/praefatio-de-epiphania", "praefatio/praefatio-de-nativitate",
+    "praefatio/praefatio-de-quadragesima", "praefatio/praefatio-de-sancta-cruce",
+    "praefatio/praefatio-de-ss-trinitate", "praefatio/praefatio-paschalis",
+    "praeparatio/gloria-in-excelsis-heading",
+}
+collated_rows["roman-1962"] |= {
+    (key, "la") for key, element in by_key(old).items()
+    if side(element, "la") and key not in still_uncollated_1962
+}
+assert len({key for key, lang in collated_rows["roman-1962"] if lang == "la"}) == 104
 for payload in (old, pre):
     seen_collated = set()
     for element in by_key(payload).values():

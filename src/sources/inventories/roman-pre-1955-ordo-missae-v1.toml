@@ -87,12 +87,12 @@ label = "The Roman Missal translated into the English language for the use of th
 rights = "public-domain"
 caution = "A pre-1955 lay hand missal, not an approved liturgical translation and never an altar book. Its rubrics and seasonal second orations have not been collated against the 1920 typical edition, and its spelling is its own. Nothing here may be used for recitation."
 artifacts = [
-  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en",
-  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en",
-  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en",
-  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en-turn-divided",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en-turn-divided",
 ]
 
 # The same printing, witnessing its other column. `id` is the edition's real
@@ -106,12 +106,12 @@ label = "The Roman Missal translated into the English language for the use of th
 rights = "public-domain"
 caution = "The Latin of a pre-1955 lay hand missal's facing column: never an altar book, and nothing here may be used for recitation. It is the 1861 printing's own text and NOT the 1920 typical edition's. Its Canon prints the Communicantes without the clause naming St Joseph that later legislation inserted; its seasonal second orations and rubrics are the discipline in force before the 1955 and 1960 reforms; and its orthography, j and the ae/oe ligatures, is its own. No element-by-element collation against the 1920 book is asserted."
 artifacts = [
-  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la",
-  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la-turn-divided",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la-turn-divided",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-la",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la",
-  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la",
-  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-la",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la-turn-divided",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-la-turn-divided",
 ]
 
 # ---------------------------------------------------------------- absences
@@ -256,9 +256,9 @@ locus = "Feria V in Cena Domini prints its own Communicantes and Hanc igitur in 
 [[sections]]
 key = "praeparatio"
 name = "The Priest at the Foot of the Altar"
-artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided"
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la"
+artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la-turn-divided"
 absent_latin = "no-facing-latin"
 
 [sections.english]
@@ -297,12 +297,122 @@ element = "confiteor-ministrorum"
 lang = "la"
 parts = [{ key = "confiteor-ministrorum", seq = [14], speaker = "server", printed_marker = "R." }]
 
+# C4 step 2 (2026-10-19): the same reviewed child rows as roman-1962, with
+# speakers and printed markers only; see each partition's basis.
+[[sections.turn_partitions]]
+element = "introibo-ad-altare-dei"
+lang = "en"
+basis = "Speakers from the 1861 book's own P. and R. marks and the turns it prints (page images checked 2026-10-19). No dialogue role: no pre-1955 target printing has been read for versicle and response marks."
+parts = [
+  { key = "priest-1", seq = [401], speaker = "priest" },
+  { key = "server-1", seq = [402], speaker = "server", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "introibo-ad-altare-dei"
+lang = "la"
+basis = "Speakers from the 1861 book's own P. and R. marks and the turns it prints (page images checked 2026-10-19). No dialogue role: no pre-1955 target printing has been read for versicle and response marks."
+parts = [
+  { key = "priest-1", seq = [401], speaker = "priest" },
+  { key = "server-1", seq = [402], speaker = "server", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "judica-me-deus"
+lang = "en"
+basis = "Speakers from the 1861 book's own P. and R. marks and the turns it prints (page images checked 2026-10-19). No dialogue role: no pre-1955 target printing has been read for versicle and response marks."
+parts = [
+  { key = "priest-1", seq = [601], speaker = "priest" },
+  { key = "server-1", seq = [602], speaker = "server", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "judica-me-deus"
+lang = "la"
+basis = "Speakers from the 1861 book's own P. and R. marks and the turns it prints (page images checked 2026-10-19). No dialogue role: no pre-1955 target printing has been read for versicle and response marks."
+parts = [
+  { key = "priest-1", seq = [601], speaker = "priest" },
+  { key = "server-1", seq = [602], speaker = "server", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "emitte-lucem-tuam"
+lang = "en"
+basis = "Speakers from the 1861 book's own P. and R. marks and the turns it prints (page images checked 2026-10-19). No dialogue role: no pre-1955 target printing has been read for versicle and response marks."
+parts = [
+  { key = "priest-1", seq = [701], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [702], speaker = "server", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "emitte-lucem-tuam"
+lang = "la"
+basis = "Speakers from the 1861 book's own P. and R. marks and the turns it prints (page images checked 2026-10-19). No dialogue role: no pre-1955 target printing has been read for versicle and response marks."
+parts = [
+  { key = "priest-1", seq = [701], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [702], speaker = "server", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "confitebor-tibi-in-cithara"
+lang = "en"
+basis = "Speakers from the 1861 book's own P. and R. marks and the turns it prints (page images checked 2026-10-19). No dialogue role: no pre-1955 target printing has been read for versicle and response marks."
+parts = [
+  { key = "priest-1", seq = [801], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [802], speaker = "server", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "confitebor-tibi-in-cithara"
+lang = "la"
+basis = "Speakers from the 1861 book's own P. and R. marks and the turns it prints (page images checked 2026-10-19). No dialogue role: no pre-1955 target printing has been read for versicle and response marks."
+parts = [
+  { key = "priest-1", seq = [801], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [802], speaker = "server", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "gloria-patri"
+lang = "en"
+basis = "Speakers from the 1861 book's own P. and R. marks and the turns it prints (page images checked 2026-10-19). No dialogue role: no pre-1955 target printing has been read for versicle and response marks."
+parts = [
+  { key = "priest-1", seq = [901], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [902], speaker = "server", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "gloria-patri"
+lang = "la"
+basis = "Speakers from the 1861 book's own P. and R. marks and the turns it prints (page images checked 2026-10-19). No dialogue role: no pre-1955 target printing has been read for versicle and response marks."
+parts = [
+  { key = "priest-1", seq = [901], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [902], speaker = "server", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "introibo-ad-altare-dei-repetitio"
+lang = "en"
+basis = "Speakers from the 1861 book's own P. and R. marks and the turns it prints (page images checked 2026-10-19). No dialogue role: no pre-1955 target printing has been read for versicle and response marks."
+parts = [
+  { key = "priest-1", seq = [1001], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [1002], speaker = "server", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "introibo-ad-altare-dei-repetitio"
+lang = "la"
+basis = "Speakers from the 1861 book's own P. and R. marks and the turns it prints (page images checked 2026-10-19). No dialogue role: no pre-1955 target printing has been read for versicle and response marks."
+parts = [
+  { key = "priest-1", seq = [1001], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [1002], speaker = "server", printed_marker = "R." },
+]
+
 [[sections]]
 key = "oblatio"
 name = "The Lessons and the Offertory"
-artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided"
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la"
+artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la-turn-divided"
 absent_latin = "no-facing-latin"
 
 [sections.english]
@@ -354,6 +464,78 @@ conditions = [{ kind = "include-when-any", predicates = ["a-cunctis-season"], ba
 [[sections.element_conditions]]
 element = "rubrica-secreta-concede"
 conditions = [{ kind = "include-when-any", predicates = ["concede-season"], basis = "The paschal substitution Concede for the seasonal orations. Established as NOT said from Passion Sunday to Saturday in albis and through the octave of Pentecost, where a single oration contra persecutores is said instead (Bonn Additiones tit. VI n. 1 and 6), artifact pp. 56*-57*), and on the vigil of Pentecost, which omits the seasonal orations (tit. VI n. 1; Proprium printed p. 399). Elsewhere the rank of the day decides and it stays unresolved. Added 2026-10-19 (C2 gap G5)." }]
+
+# C4 step 2 (2026-10-19): the same reviewed child rows as roman-1962, with
+# speakers and printed markers only; see each partition's basis.
+[[sections.turn_partitions]]
+element = "per-omnia-saecula"
+lang = "en"
+basis = "Speakers from the 1861 book's own P. and R. marks and the turns it prints (page images checked 2026-10-19). No dialogue role: no pre-1955 target printing has been read for versicle and response marks."
+parts = [
+  { key = "priest-1", seq = [5701], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [5702], speaker = "server", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "per-omnia-saecula"
+lang = "la"
+basis = "Speakers from the 1861 book's own P. and R. marks and the turns it prints (page images checked 2026-10-19). No dialogue role: no pre-1955 target printing has been read for versicle and response marks."
+parts = [
+  { key = "priest-1", seq = [5701], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [5702], speaker = "server", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "sursum-corda"
+lang = "en"
+basis = "Speakers from the 1861 book's own P. and R. marks and the turns it prints (page images checked 2026-10-19). No dialogue role: no pre-1955 target printing has been read for versicle and response marks."
+parts = [
+  { key = "priest-1", seq = [5901], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [5902], speaker = "server", printed_marker = "R." },
+  { key = "priest-2", seq = [5903], speaker = "priest", printed_marker = "P." },
+  { key = "server-2", seq = [5904], speaker = "server", printed_marker = "R." },
+  { key = "priest-3", seq = [5905], speaker = "priest", printed_marker = "P." },
+  { key = "server-3", seq = [5906], speaker = "server", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "sursum-corda"
+lang = "la"
+basis = "Speakers from the 1861 book's own P. and R. marks and the turns it prints (page images checked 2026-10-19). No dialogue role: no pre-1955 target printing has been read for versicle and response marks."
+parts = [
+  { key = "priest-1", seq = [5901], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [5902], speaker = "server", printed_marker = "R." },
+  { key = "priest-2", seq = [5903], speaker = "priest", printed_marker = "P." },
+  { key = "server-2", seq = [5904], speaker = "server", printed_marker = "R." },
+  { key = "priest-3", seq = [5905], speaker = "priest", printed_marker = "P." },
+  { key = "server-3", seq = [5906], speaker = "server", printed_marker = "R." },
+]
+
+# Reviewed incipit cues (C4 step 2, 2026-10-19): the artifact's latin_incipit
+# cell copies the Latin column's head letter; the heading is set without it.
+[[sections.incipit_markers]]
+element = "dominus-vobiscum-ante-evangelium"
+printed_marker = "P."
+
+[[sections.incipit_markers]]
+element = "laus-tibi-christe"
+printed_marker = "R."
+
+[[sections.incipit_markers]]
+element = "dominus-vobiscum-ante-offertorium"
+printed_marker = "P."
+
+[[sections.incipit_markers]]
+element = "suscipiat-dominus"
+printed_marker = "R."
+
+[[sections.incipit_markers]]
+element = "per-omnia-saecula"
+printed_marker = "P."
+
+[[sections.incipit_markers]]
+element = "sursum-corda"
+printed_marker = "P."
 
 [[sections]]
 key = "praefatio"
@@ -615,9 +797,9 @@ conditions = [{ kind = "unappointed", variable = "hanc_igitur", basis = "Shown o
 [[sections]]
 key = "communio"
 name = "The Communion"
-artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en-turn-divided"
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la"
+artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la-turn-divided"
 absent_latin = "no-facing-latin"
 
 [sections.english]
@@ -630,12 +812,42 @@ relation = "antecedent"
 collation = "uncollated"
 note = "ANTECEDENT, NOT THE TARGET EDITION. This Latin is the facing column printed by the 1861 Cummiskey lay hand missal, not the text of the 1920 typical edition. UNCOLLATED: no element-by-element collation against the target edition is asserted."
 
+# C4 step 2 (2026-10-19): the same reviewed child rows as roman-1962, with
+# speakers and printed markers only; see each partition's basis.
+[[sections.turn_partitions]]
+element = "pax-domini"
+lang = "en"
+basis = "Speakers from the 1861 book's own P. and R. marks and the turns it prints (page images checked 2026-10-19). No dialogue role: no pre-1955 target printing has been read for versicle and response marks."
+parts = [
+  { key = "priest-1", seq = [601], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [602], speaker = "server", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "pax-domini"
+lang = "la"
+basis = "Speakers from the 1861 book's own P. and R. marks and the turns it prints (page images checked 2026-10-19). No dialogue role: no pre-1955 target printing has been read for versicle and response marks."
+parts = [
+  { key = "priest-1", seq = [601], speaker = "priest", printed_marker = "P." },
+  { key = "server-1", seq = [602], speaker = "server", printed_marker = "R." },
+]
+
+# Reviewed incipit cues (C4 step 2, 2026-10-19): the artifact's latin_incipit
+# cell copies the Latin column's head letter; the heading is set without it.
+[[sections.incipit_markers]]
+element = "per-omnia-saecula-post-libera-nos"
+printed_marker = "P."
+
+[[sections.incipit_markers]]
+element = "pax-domini"
+printed_marker = "P."
+
 [[sections]]
 key = "conclusio"
 name = "The Ablutions and the Last Gospel"
-artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en-turn-divided"
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-la"
+artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-la-turn-divided"
 absent_latin = "no-facing-latin"
 
 [sections.english]
@@ -669,6 +881,30 @@ conditions = [{ kind = "include-when-any", predicates = ["a-cunctis-season"], ba
 [[sections.element_conditions]]
 element = "rubrica-postcommunio-paschalis"
 conditions = [{ kind = "include-when-any", predicates = ["concede-season"], basis = "The paschal substitution Concede for the seasonal orations. Established as NOT said from Passion Sunday to Saturday in albis and through the octave of Pentecost, where a single oration contra persecutores is said instead (Bonn Additiones tit. VI n. 1 and 6), artifact pp. 56*-57*), and on the vigil of Pentecost, which omits the seasonal orations (tit. VI n. 1; Proprium printed p. 399). Elsewhere the rank of the day decides and it stays unresolved. Added 2026-10-19 (C2 gap G5)." }]
+
+# C4 step 2 (2026-10-19): the same reviewed child rows as roman-1962, with
+# speakers and printed markers only; see each partition's basis.
+[[sections.turn_partitions]]
+element = "dominus-vobiscum-ite-missa-est"
+lang = "en"
+basis = "Speakers from the 1861 book's own P. and R. marks and the turns it prints (page images checked 2026-10-19). No dialogue role: no pre-1955 target printing has been read for versicle and response marks."
+parts = [
+  { key = "priest-1", seq = [1201], speaker = "priest" },
+  { key = "server-1", seq = [1202], speaker = "server", printed_marker = "R." },
+  { key = "priest-2", seq = [1203], speaker = "priest" },
+  { key = "server-2", seq = [1204], speaker = "server", printed_marker = "R." },
+]
+
+[[sections.turn_partitions]]
+element = "dominus-vobiscum-ite-missa-est"
+lang = "la"
+basis = "Speakers from the 1861 book's own P. and R. marks and the turns it prints (page images checked 2026-10-19). No dialogue role: no pre-1955 target printing has been read for versicle and response marks."
+parts = [
+  { key = "priest-1", seq = [1201], speaker = "priest" },
+  { key = "server-1", seq = [1202], speaker = "server", printed_marker = "R." },
+  { key = "priest-2", seq = [1203], speaker = "priest" },
+  { key = "server-2", seq = [1204], speaker = "server", printed_marker = "R." },
+]
 
 # ---------------------------------------------------------------- slots
 #

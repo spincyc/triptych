@@ -696,12 +696,13 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
         # Later on 2026-10-19 (C3) three of those rows, the Pentecost Collect,
         # Secret and Postcommunion, became publication-bound entries, and the
         # Pentecost Lesson, a newly text-bearing slot, gained its typed
-        # witness gap: 949 -> 947.
+        # witness gap: 949 -> 947. The same day the Pentecost Alleluia became
+        # a page-bound Lasance entry (G14 lane): 947 -> 946.
         self.assertEqual(len(source_established), 65)
         self.assertEqual(len(expected), 136)
         self.assertTrue(expected.issubset(typed))
         quarantined = set(typed) - expected
-        self.assertEqual(len(quarantined), 947)
+        self.assertEqual(len(quarantined), 946)
         self.assertEqual(
             {
                 (
@@ -723,8 +724,9 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
             },
             {
                 # 934 and 13 since 2026-10-19 (C3): three Pentecost orations
-                # were bound, and the Pentecost Lesson gained a witness gap.
-                ("no-exemplar", None): 934,
+                # were bound, and the Pentecost Lesson gained a witness gap;
+                # 933 once the Pentecost Alleluia was bound (G14 lane).
+                ("no-exemplar", None): 933,
                 ("witness-gap", CUMMISKEY_SOURCE): 13,
             },
         )

@@ -13,6 +13,7 @@ import json
 import re
 import sys
 import textwrap
+from collections.abc import Callable
 from importlib.machinery import SourceFileLoader
 from importlib.util import module_from_spec, spec_from_loader
 from pathlib import Path
@@ -95,7 +96,7 @@ EXAMPLES = {
                 "  key: advent-1",
                 "  name: First Sunday of Advent",
                 "  registry: '01'",
-                "... 815 more lines",
+                "... 794 more lines",
             ),
         ),
     ),
@@ -120,7 +121,7 @@ EXAMPLES = {
                 "  -> build/example-propers/structure/propers/roman-1962.json",
                 "  -> build/example-propers/structure/propers/roman-pre-1955.json",
                 "  -> build/example-propers/structure/propers/index.json",
-                "  Latin withheld from publication: 1782",
+                "  Latin withheld from publication: 1787",
                 "  refused: 24",
             ),
             "WRITES one file per missal and the manifest naming them. --out here is untracked; the default writes tracked src/web/data",
@@ -140,8 +141,8 @@ EXAMPLES = {
         Example(
             "tools/mass-propers census",
             (
-                "# roman-pre-1955 English orations: 1149 slots appointed, 99 public-available, 0 held rights-restricted, 1050 ledgered untranslated, 0 unaccounted; 0 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
-                "# roman-1962 English orations: 1197 slots appointed, 112 public-available, 0 held rights-restricted, 1085 ledgered untranslated, 0 unaccounted; 0 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
+                "# roman-pre-1955 English orations: 1154 slots appointed, 107 public-available, 0 held rights-restricted, 1047 ledgered untranslated, 0 unaccounted; 0 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
+                "# roman-1962 English orations: 1202 slots appointed, 120 public-available, 0 held rights-restricted, 1082 ledgered untranslated, 0 unaccounted; 0 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
                 "# postconciliar English orations: 330 slots appointed, 113 public-available, 0 held rights-restricted, 217 ledgered untranslated, 0 unaccounted; 3 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
                 "# postconciliar Latin recension: 326 unique non-scriptural slots, 0 bodies resident; 0 explicitly antecedent substitutes, 0 other bodies with antecedent-relation metadata, 0 without per-slot Latin relation; direct target-edition artifact attestation not-represented",
                 "<!-- census:begin — derived; edit nothing between these markers -->",
@@ -558,6 +559,225 @@ def public_text_status(status: dict) -> dict:
         for key in ("state", "scope")
         if status.get(key) is not None
     }
+
+
+# ---------------------------------------------------------------------------
+# Internal text structure (C2 gap G14)
+#
+# A body's words are stored as one string, and the file's hard wraps are not
+# its lineation. Where a witness's page shows more -- a Sequence printed in
+# strophes, a rubric printed inside the text it governs -- that structure is
+# recorded beside the words, never by editing them: `text_structure` names
+# character offsets into the exact string, pins the string by its SHA-256, and
+# says on which page images the boundaries were checked. A changed string
+# therefore cannot keep an old structure, and the published text bytes are the
+# same with or without one. src/sources/calendars/README.md owns the shape;
+# guidance/web-data.md owns the public projection.
+# ---------------------------------------------------------------------------
+
+TEXT_STRUCTURE = "text_structure"
+TEXT_STRUCTURE_FIELDS = frozenset(
+    {"text_sha256", "checked", "witness_artifact_id", "stanzas", "actions"}
+)
+TEXT_STRUCTURE_STANZA_FIELDS = frozenset({"offset", "opens", "witness_line"})
+TEXT_STRUCTURE_ACTION_FIELDS = frozenset({"kind", "offset", "text"})
+# One kind today. A printed direction inside the principal text -- the
+# Pentecost Alleluia's genuflection -- is read and set as a rubric, never as
+# words said. Another kind is a schema decision, not a new string.
+TEXT_STRUCTURE_ACTION_KINDS = frozenset({"rubric"})
+
+
+def _plain_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
+def text_structure_problems(
+    text: object,
+    structure: object,
+    witness_lines: Callable[[str], int | str] | None = None,
+) -> list[str]:
+    """Every way `structure` fails to describe `text`, as sentences.
+
+    `witness_lines` resolves a `witness_artifact_id` to the number of physical
+    lines its exact, hash-checked bytes hold, or to a sentence saying why it
+    cannot; without it the tie to the witness is checked for shape only.
+    """
+    problems: list[str] = []
+    if not isinstance(structure, dict):
+        return [f"{TEXT_STRUCTURE} must be a mapping"]
+    if not isinstance(text, str) or not text.strip():
+        return [f"{TEXT_STRUCTURE} describes a text, and this owner carries none"]
+    unknown = sorted(set(structure) - TEXT_STRUCTURE_FIELDS, key=repr)
+    if unknown:
+        problems.append(f"{TEXT_STRUCTURE} carries unknown field(s) {unknown!r}")
+    digest = hashlib.sha256(text.encode("utf-8")).hexdigest()
+    if structure.get("text_sha256") != digest:
+        problems.append(
+            f"{TEXT_STRUCTURE}.text_sha256 does not pin this text (its SHA-256 is "
+            f"{digest}); offsets recorded against other bytes describe nothing"
+        )
+    checked = structure.get("checked")
+    if not isinstance(checked, str) or not checked.strip():
+        problems.append(
+            f"{TEXT_STRUCTURE}.checked must name the page images the boundaries "
+            "were read on, and when"
+        )
+    stanzas = structure.get("stanzas")
+    actions = structure.get("actions")
+    if stanzas is None and actions is None:
+        problems.append(f"{TEXT_STRUCTURE} records neither stanzas nor actions")
+    artifact = structure.get("witness_artifact_id")
+    line_count: int | None = None
+    if artifact is not None:
+        if not isinstance(artifact, str) or not artifact.strip():
+            problems.append(f"{TEXT_STRUCTURE}.witness_artifact_id must be a nonempty string")
+        elif witness_lines is not None:
+            resolved = witness_lines(artifact)
+            if isinstance(resolved, str):
+                problems.append(f"{TEXT_STRUCTURE}.witness_artifact_id: {resolved}")
+            else:
+                line_count = resolved
+    boundaries: list[int] = []
+    if stanzas is not None:
+        if not isinstance(stanzas, list) or len(stanzas) < 2:
+            problems.append(f"{TEXT_STRUCTURE}.stanzas must list at least two stanzas")
+            stanzas = []
+        previous_line = 0
+        for index, stanza in enumerate(stanzas):
+            where = f"{TEXT_STRUCTURE}.stanzas[{index}]"
+            if not isinstance(stanza, dict):
+                problems.append(f"{where} must be a mapping")
+                continue
+            strange = sorted(set(stanza) - TEXT_STRUCTURE_STANZA_FIELDS, key=repr)
+            if strange:
+                problems.append(f"{where} carries unknown field(s) {strange!r}")
+            offset = stanza.get("offset")
+            opens = stanza.get("opens")
+            if not _plain_int(offset) or not 0 <= offset < len(text):
+                problems.append(f"{where}.offset must be a character offset inside the text")
+                continue
+            if index == 0 and offset != 0:
+                problems.append(f"{where}.offset must be 0: the first stanza opens the text")
+            if boundaries and offset <= boundaries[-1]:
+                problems.append(f"{where}.offset must follow the stanza before it")
+            if offset and not text[offset - 1].isspace():
+                problems.append(f"{where}.offset must fall at the start of a word")
+            # Words, not whitespace: a file's hard wrap between two words is
+            # not part of what the stanza opens with.
+            if (
+                not isinstance(opens, str)
+                or not opens.strip()
+                or opens.split() != text[offset:].split()[: len(opens.split())]
+            ):
+                problems.append(
+                    f"{where}.opens must be the exact words the text has at that offset"
+                )
+            line = stanza.get("witness_line")
+            if artifact is None and "witness_line" in stanza:
+                problems.append(f"{where}.witness_line needs a witness_artifact_id")
+            elif artifact is not None:
+                if not _plain_int(line) or line < 1:
+                    problems.append(
+                        f"{where}.witness_line must be the one-based physical line of "
+                        "the witness artifact where this stanza begins"
+                    )
+                else:
+                    if line < previous_line:
+                        problems.append(f"{where}.witness_line runs backwards")
+                    if line_count is not None and line > line_count:
+                        problems.append(
+                            f"{where}.witness_line {line} is past the witness's "
+                            f"{line_count} lines"
+                        )
+                    previous_line = line
+            boundaries.append(offset)
+    if actions is not None:
+        if not isinstance(actions, list) or not actions:
+            problems.append(f"{TEXT_STRUCTURE}.actions must be a nonempty list")
+            actions = []
+        end = -1
+        for index, action in enumerate(actions):
+            where = f"{TEXT_STRUCTURE}.actions[{index}]"
+            if not isinstance(action, dict):
+                problems.append(f"{where} must be a mapping")
+                continue
+            strange = sorted(set(action) - TEXT_STRUCTURE_ACTION_FIELDS, key=repr)
+            if strange:
+                problems.append(f"{where} carries unknown field(s) {strange!r}")
+            if action.get("kind") not in TEXT_STRUCTURE_ACTION_KINDS:
+                problems.append(
+                    f"{where}.kind must be one of {sorted(TEXT_STRUCTURE_ACTION_KINDS)}"
+                )
+            offset = action.get("offset")
+            span = action.get("text")
+            if not _plain_int(offset) or not isinstance(span, str) or not span.strip():
+                problems.append(f"{where} needs an integer offset and the exact span text")
+                continue
+            if span != span.strip() or text[offset:offset + len(span)] != span:
+                problems.append(f"{where}.text is not the text's own span at that offset")
+                continue
+            if offset <= end:
+                problems.append(f"{where} overlaps or precedes the action before it")
+            stop = offset + len(span)
+            if any(offset < boundary < stop for boundary in boundaries):
+                problems.append(f"{where} straddles a stanza boundary")
+            end = stop - 1
+    return problems
+
+
+def utf16_offset(text: str, offset: int) -> int:
+    """A code-point offset as the browser's string index counts it."""
+
+    return len(text[:offset].encode("utf-16-le")) // 2
+
+
+def public_text_structure(text: object, structure: object) -> dict | None:
+    """The browser's projection: offsets only, in the page's own units.
+
+    The witness, its lines and the page-image record stay on the source side,
+    as an absence's evidence does. A structure that no longer describes the
+    words it is published beside is refused rather than dropped: the reader
+    would otherwise flatten a Sequence, or speak a rubric, with nothing saying
+    why.
+    """
+    if structure is None or not isinstance(text, str) or not text:
+        return None
+    problems = text_structure_problems(text, structure)
+    if problems:
+        raise ValueError("; ".join(problems))
+    projected: dict = {}
+    if structure.get("stanzas"):
+        projected["stanzas"] = [
+            utf16_offset(text, stanza["offset"]) for stanza in structure["stanzas"]
+        ]
+    if structure.get("actions"):
+        projected["actions"] = [
+            {
+                "kind": action["kind"],
+                "start": utf16_offset(text, action["offset"]),
+                "end": utf16_offset(text, action["offset"] + len(action["text"])),
+            }
+            for action in structure["actions"]
+        ]
+    return projected
+
+
+def publish_translation_structures(translations: list[dict] | None) -> list[dict] | None:
+    """Each published translation, with its structure in the public projection."""
+
+    if not translations:
+        return translations
+    published = []
+    for translation in translations:
+        if isinstance(translation, dict) and TEXT_STRUCTURE in translation:
+            translation = dict(translation)
+            projected = public_text_structure(
+                translation.get("text"), translation.pop(TEXT_STRUCTURE)
+            )
+            if projected:
+                translation[TEXT_STRUCTURE] = projected
+        published.append(translation)
+    return published
 
 
 def public_ordinary_appointments(value: object) -> dict:
@@ -1263,7 +1483,7 @@ LEDGER_TRANSLATION_RIGHTS = frozenset(
     {"public-domain", "licensed", "project-created", "permission"}
 )
 LEDGER_TRANSLATION_FIELDS = frozenset(
-    {"lang", "text", "rights", "source_id", "notice"}
+    {"lang", "text", "rights", "source_id", "notice", "text_structure"}
 )
 TRANSLATION_UNAVAILABLE_ANTECEDENT_FIELDS = frozenset(
     {"antecedent_calendar", "antecedent_mass", "antecedent_proper", "relation"}
@@ -1363,6 +1583,12 @@ def validate_translation_payload(
             not isinstance(notice, str) or not notice.strip()
         ):
             raise ValueError(f"{where} notice must be a nonempty string")
+        if TEXT_STRUCTURE in translation:
+            problems = text_structure_problems(
+                translation.get("text"), translation[TEXT_STRUCTURE]
+            )
+            if problems:
+                raise ValueError(f"{where}: " + "; ".join(problems))
         identity = (
             str(translation["lang"]),
             str(source_id) if isinstance(source_id, str) else None,
@@ -2511,6 +2737,34 @@ def unavailable_states_from_records(records: list[dict], cycle: str = CYCLE_ALL)
     ]
 
 
+def body_absence_kinds(
+    records: list[dict], cycle: str = CYCLE_ALL
+) -> dict[str, list[str]]:
+    """The typed source-side reasons behind each body absence, by language.
+
+    The public projection says only `unavailable`; coverage may say which
+    class of absence it is without exporting its evidence. `structure` feeds
+    these to `_missal_coverage.unit` and `show` to `_missal_coverage.absence`,
+    so the browser and the reading view classify one absence once.
+    """
+
+    kinds: dict[str, list[str]] = {}
+    for record in records:
+        if not isinstance(record, dict):
+            continue
+        reason = record.get("reason")
+        if (
+            str(record.get("cycle") or CYCLE_ALL) == cycle
+            and str(record.get("extent") or "body") == "body"
+            and isinstance(reason, dict)
+            and reason.get("kind")
+        ):
+            kinds.setdefault(str(record.get("lang") or "und"), []).append(
+                str(reason["kind"])
+            )
+    return kinds
+
+
 def translation_answers(entry: dict, proper: dict, language: str) -> bool:
     """A language body whose recorded incipit still matches the live slot."""
 
@@ -2776,7 +3030,9 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
                                 if isinstance(owner.get("text_status"), dict)
                                 else None
                             ),
-                            "translations": publishable_translations(owner),
+                            "translations": publish_translation_structures(
+                                publishable_translations(owner)
+                            ),
                             "unavailable_translations": (
                                 unavailable_translation_states(owner) + unavailable_states_from_records(
                                     cycle_absences, cycle
@@ -2833,7 +3089,9 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
                         if isinstance(carried.get("text_status"), dict)
                         else None
                     ),
-                    "translations": publishable_translations(carried),
+                    "translations": publish_translation_structures(
+                        publishable_translations(carried)
+                    ),
                     # A restricted translation is absent as WORDING, not absent
                     # from the model.  This text-free state prevents consumers
                     # from turning a rights decision into a false corpus gap.
@@ -2868,6 +3126,14 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
                     # can see that the words are the Common's.
                     "taken_from": taken_from or None,
                 }
+            # Stanzas and inline actions travel only beside the exact words
+            # they were checked against; a withheld body publishes neither.
+            if TEXT_STRUCTURE in carried and built_proper.get("text"):
+                projected = public_text_structure(
+                    built_proper["text"], carried[TEXT_STRUCTURE]
+                )
+                if projected:
+                    built_proper[TEXT_STRUCTURE] = projected
             if _calendars.ORDINARY_DISPOSITION in carried:
                 built_proper[_calendars.ORDINARY_DISPOSITION] = (
                     public_ordinary_disposition(
@@ -2905,21 +3171,7 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
                 )
                 source_owner = dict(owner)
                 source_owner["source"] = owner.get("source") or built_proper.get("source")
-                # The typed source-side reason behind each body absence. The
-                # public projection says only `unavailable`; coverage may say
-                # which class of absence it is without exporting its evidence.
-                absence_kinds: dict[str, list[str]] = {}
-                for record in absence_records:
-                    reason = record.get("reason")
-                    if (
-                        str(record.get("cycle") or CYCLE_ALL) == cycle
-                        and str(record.get("extent") or "body") == "body"
-                        and isinstance(reason, dict)
-                        and reason.get("kind")
-                    ):
-                        absence_kinds.setdefault(
-                            str(record.get("lang") or "und"), []
-                        ).append(str(reason["kind"]))
+                absence_kinds = body_absence_kinds(absence_records, cycle)
                 owner["coverage"] = _missal_coverage.unit(
                     source_owner,
                     target_id=_missal_coverage.identity(source_key, family or "all", cycle),
@@ -4266,6 +4518,7 @@ def run_show_one(arguments: argparse.Namespace) -> dict:
     )
     latin_records, _ = publication_records(Path(arguments.root), arguments.calendar)
     merged = []
+    absences: list[dict[str, str]] = []
     for form, proper, taken_from in arguments.appointed:
         key = overlay_key(payload["mass"], form, proper, taken_from)
         identity = source_slot_identity(
@@ -4326,7 +4579,19 @@ def run_show_one(arguments: argparse.Namespace) -> dict:
                 )
         carried = rights_safe_copy(carried)
         merged.append((form, carried, taken_from))
+        # Each absent language's coverage availability, the class the browser
+        # reads from the unit's `coverage` record: classified here, from the
+        # source-side reason kinds, and carried to the reading view only. The
+        # kinds and their evidence never reach the payload.
+        kinds = body_absence_kinds(records, CYCLE_ALL)
+        absences.append(
+            {
+                lang: _missal_coverage.absence(carried, lang, kinds.get(lang))
+                for lang in {*_missal_coverage.LANGUAGES, *kinds, arguments.lang}
+            }
+        )
     arguments.appointed = merged
+    arguments.absences = absences
     # `show --format json|yaml` carries the raw source mass as well as the
     # resolved appointed list.  Redact that copy recursively so nested forms or
     # source-local translations cannot bypass the appointed-list filter.
@@ -4480,10 +4745,13 @@ def render_reading(
     resolved: dict,
     witness: str | None = None,
     appointed: list[tuple[str, dict, dict | None]] | None = None,
+    absences: list[dict[str, str]] | None = None,
 ) -> int:
     mass = payload["mass"]
     if appointed is None:
         appointed = [(form, proper, None) for form, proper in propers_of(mass)]
+    if absences is None or len(absences) != len(appointed):
+        absences = [{} for _ in appointed]
     print(mass.get("name") or mass.get("key") or "(unnamed)")
     subtitle = " · ".join(
         str(part)
@@ -4503,7 +4771,7 @@ def render_reading(
             + (f", form {reference['form']}" if reference.get("form") else "")
             + (f" ({printed})" if printed else "")
         )
-    for form, proper, taken_from in appointed:
+    for (form, proper, taken_from), availability in zip(appointed, absences):
         heading = str(proper.get("name") or "(unnamed proper)")
         if form:
             heading = f"{heading} [{form}]"
@@ -4535,24 +4803,78 @@ def render_reading(
             ]
             if refs:
                 print(f"  {cycle}: {', '.join(refs)}")
-        for body, attribution, note in select_texts(proper, lang, witness):
+        for body, attribution, note in select_texts(
+            proper, lang, witness, availability
+        ):
             if body:
                 print()
                 if attribution:
                     print(f"  [{attribution}]")
-                print("\n".join(wrap(body, "  ")))
+                print("\n".join(wrap(stanza_paragraphs(body, proper), "  ")))
             if note:
                 print(f"\n  ({note})")
     return 0
 
 
+def stanza_paragraphs(body: str, proper: dict) -> str:
+    """A body set in its checked stanzas, as the browser sets it (G14).
+
+    The reading view wraps paragraph by paragraph, so a stanza boundary is a
+    blank line. Only a structure recorded against these exact words applies;
+    anything else leaves the body as it is.
+    """
+    owners = [proper] + [
+        row for row in proper.get("translations") or [] if isinstance(row, dict)
+    ]
+    for owner in owners:
+        structure = owner.get(TEXT_STRUCTURE)
+        if owner.get("text") != body or not isinstance(structure, dict):
+            continue
+        if text_structure_problems(body, structure) or not structure.get("stanzas"):
+            return body
+        starts = [row["offset"] for row in structure["stanzas"]] + [len(body)]
+        return "\n\n".join(
+            " ".join(body[start:end].split()) for start, end in zip(starts, starts[1:])
+        )
+    return body
+
+
+# The words a unit's typed absence is stated in, keyed by its coverage
+# availability. `ABSENCE_REASONS` in src/web/browser/shared/browser-core.js owns
+# them and tests/tools/mass-propers.test holds this copy to it, so the browser and
+# the terminal give one absence one reason. A rights restriction keeps the reading
+# view's shorter "rights restricted" (`absence_reason`).
+ABSENCE_REASONS = {
+    "inapplicable": "not part of this rite or branch",
+    "absent-in-witness": "not present in this witness",
+    "not-sourced": "not yet sourced",
+    "not-publishable": "not publishable here",
+    "unresolved": "not resolved",
+}
+
+
+def absence_reason(availability: object) -> str | None:
+    """The reading view's words for one coverage availability, if it is an absence."""
+
+    if availability == "not-publishable":
+        return "rights restricted"
+    return ABSENCE_REASONS.get(str(availability or ""))
+
+
 def select_texts(
-    proper: dict, lang: str, witness: str | None = None
+    proper: dict,
+    lang: str,
+    witness: str | None = None,
+    availability: dict[str, str] | None = None,
 ) -> list[tuple[str, str, str]]:
     """Which texts of a proper to print. The rule lives in `_calendars`.
 
     It was here, and the expanded daily-Mass renderer prints propers too; a second copy
     would have been a second answer to which text a Mass is said in.
+
+    `availability` is each absent language's unit coverage availability, which
+    `show` classifies from the source-side reason kinds the payload never
+    carries; without it the public states alone decide the note.
     """
     latin = proper.get("latin")
     latin_unavailable = (
@@ -4595,9 +4917,19 @@ def select_texts(
         if latin_unavailable:
             note += "; Latin text unavailable"
         return [("", "", note)]
+    # Every other ledgered absence states its typed reason, as the browser
+    # does (2026-10-19, C2 G3). Since C2 step 1 most English absences are
+    # `no-exemplar` -- a public-domain witness exists but no passage binding
+    # does -- and "deliberately" described them as a settled decision when they
+    # are work outstanding.
+    typed = absence_reason((availability or {}).get(lang))
     # When neither requested wording nor the Latin body is distributable and
-    # there is no more specific typed reason, report the combined absence.
+    # there is no rights restriction, report the combined absence.
     if latin_unavailable and witness is None:
+        if typed:
+            return [
+                ("", "", f"{lang} translation unavailable: {typed}; Latin text unavailable")
+            ]
         return [
             (
                 "",
@@ -4612,9 +4944,18 @@ def select_texts(
         for state in proper.get("untranslated") or []
     )
     if unavailable and not available:
+        if typed:
+            return [("", "", f"{lang} translation unavailable: {typed}")]
         return [("", "", f"no {lang} recorded, deliberately")]
     if witness is not None and not available:
-        return [("", "", f"no {lang} translation from {witness} recorded")]
+        return [
+            (
+                "",
+                "",
+                f"{lang} translation from {witness} unavailable: "
+                + ABSENCE_REASONS["absent-in-witness"],
+            )
+        ]
     return _calendars.texts_of(proper, lang, witness)
 
 
@@ -4806,6 +5147,7 @@ def main(argv: list[str] | None = None) -> int:
             getattr(arguments, "resolved_bible", {}),
             arguments.witness,
             getattr(arguments, "appointed", None),
+            getattr(arguments, "absences", None),
         )
 
     return run_verb_cli(

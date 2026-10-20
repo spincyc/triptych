@@ -1201,7 +1201,9 @@
    * mapped onto the ℣/℟ axis, and this renders each as the word it abbreviates.
    *
    * THE MARKS ARE NOT MERELY DROPPED, and this is the part that is easy to get
-   * wrong. 28 of the 39 marked elements hold a two-party dialogue inside ONE
+   * wrong. Where no reviewed child rows exist yet (C4 step 2, 2026-10-19,
+   * divided ten such blocks into per-turn rows; twenty remain), a marked
+   * element holds a two-party dialogue inside ONE
    * element — "P. The Lord be with you. R. And with thy spirit." carries
    * `speaker: priest`, which names the first line only. Drop every mark and the
    * server's responses are printed as the priest's words. So a LEADING mark,
