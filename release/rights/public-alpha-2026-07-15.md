@@ -11364,7 +11364,7 @@ release attachment, announcement, or promotion.
 | `src/web/browser/law/index.html` | `adfbe40b5ea62efffb7272414d1a7206dc37b477c5b2c7131d9495051d7687e5` |
 | `src/web/browser/law/law.css` | `57a2a758f4c3b01d73415c0f5ad1dc35e0ed3cbac03b607f43460a81cec0d9bc` |
 | `src/web/browser/law/law.js` | `3efb3f5fb3a981fd10158f65eb2d752d9d30c75856e38c477327622753f80443` |
-| `src/web/browser/liturgy/assembly-model.js` | `fb564e43cdf39c50926f5b73fec4ec7e4dc195c02b1a7f56d732b3cc0f7a5b8d` |
+| `src/web/browser/liturgy/assembly-model.js` | `08db5cd9d511f815ce2358ff444d83c62f8662c413e9f1f3826dfb22f8cf74eb` |
 | `src/web/browser/liturgy/day-missal.css` | `218d8a97a7ab034891f178ec83ef5d9dc980c407fc12b0106797798fc64f41aa` |
 | `src/web/browser/liturgy/day-reader.css` | `695de63e1ae82091248515a849de5354389a551e4f589504d2faa1ae46b0b2e0` |
 | `src/web/browser/liturgy/day-reader.html` | `98be6b375533bd452589d49ace8315d674067a7bb34d25e5ed7a81930d8897bc` |
@@ -11375,7 +11375,7 @@ release attachment, announcement, or promotion.
 | `src/web/browser/liturgy/index.html` | `d82223f0c8415dcfdbcecec3ab66c832f43823daaf77fc4104c14dcfb668ac94` |
 | `src/web/browser/liturgy/liturgy.css` | `5333873c3fbcdabb5cd10b1d92897feaa27fad7d532e70c17fd2130088f936b6` |
 | `src/web/browser/liturgy/liturgy.js` | `b6a2ca7e2bf3b5966855312569092a3b6c3f32435cf73e4d04cf14fc801feabf` |
-| `src/web/browser/liturgy/ordinary-seating.js` | `396fa2dc9ce88ea04541059bf241f11ad311ff806f85f6bbf60a91a5420b9bc8` |
+| `src/web/browser/liturgy/ordinary-seating.js` | `3ce2ed628c9c3414cfb6be43e03d3a68f919c2ee13e5ad19f501382c16810362` |
 | `src/web/browser/liturgy/proper-placement-notes.js` | `dd02a28ab4a922adbac69b26e53566e0dde23610f09359cd4377893b37f5fe6b` |
 | `src/web/browser/liturgy/propers-reader.css` | `93651fe00f97beaa55c581bb5066da0467a0245fd06bb02f7a5988b059e92ae9` |
 | `src/web/browser/liturgy/propers-reader.html` | `b8547c6fd5251e9987bfb933df2ad27e2e99195f40d18d6252d7339dc285e5c6` |
@@ -11383,7 +11383,7 @@ release attachment, announcement, or promotion.
 | `src/web/browser/liturgy/reader-instrument.css` | `a3dfc4abafe115f20e97b43bb466d77eac63e55009e6663d12e909689c716280` |
 | `src/web/browser/liturgy/reader-shell.css` | `e7195cd86ed4fc4a8455e97369702239eb22d709a13d3d8462d7759c01fe814a` |
 | `src/web/browser/liturgy/reader-shell.js` | `68d52d714c39abeb21c517a98df69d17eb6032d661c87442fb196f3cabbb8b7b` |
-| `src/web/browser/liturgy/reader-state-adapters.js` | `de74314c379d69f04716f6b4b88b3388bdc7ea2e23b75bffda2363396f41a0d6` |
+| `src/web/browser/liturgy/reader-state-adapters.js` | `2a08d63e3a030947cc3238290eef69f08ee91e53bb93dfed4772ee207a0f78cc` |
 | `src/web/browser/liturgy/reader-state.js` | `5711ce1ac425b43128977fcc7acdfcbebf552af7d76814b36291dbfc35251171` |
 | `src/web/browser/liturgy/reader-visual-reset-day.html` | `ff734f07b797e5706c7e62a4c890f47c32c0fbfd78bfc855f421a4123273c18d` |
 | `src/web/browser/liturgy/reader-visual-reset-propers.html` | `638a816e189ab14b2c38dce83e8998a8cc440ebc38c025e920677a6bf8594312` |
@@ -14132,10 +14132,10 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-5.json` | `61abb15daa555ada778b2eeb6137cbc6114102586c9cc2a27d5e4863521de0e3` |
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-6.json` | `54408d9f5e1c8b684850b05976d6e3ac9ee3b88b6194c37c7e1cf83d52256d28` |
 | `src/web/data/structure/documents/corpus.json` | `56070f77c5f99cef1be7724266aab28b89c9bf3fb045478247ad92c5d6bfe9e1` |
-| `src/web/data/structure/ordinary/index.json` | `b248eefcc0b073e43dd4c0d168007cd8d09fc5f28bd2fc633d98e2f4ba9e4846` |
-| `src/web/data/structure/ordinary/postconciliar.json` | `c4eef753d73ed364210eac9e7b709aa6d10043d1f7bd689718f0b7457c43aaab` |
-| `src/web/data/structure/ordinary/roman-1962.json` | `1f93359db3789c4492980d9707c77242734d7bb4269709292b85531929597706` |
-| `src/web/data/structure/ordinary/roman-pre-1955.json` | `3270e6285563a233379f8afb036cb621afee035e1034f129fed722c9ab4ff996` |
+| `src/web/data/structure/ordinary/index.json` | `5e4cfe1f5438c925b11485d3ed5009d24197ba21a96ccfd8c3c565f035170609` |
+| `src/web/data/structure/ordinary/postconciliar.json` | `38b084bdc75f6bf56a309abbd325009c30324d7bde3527a4770fbd430147b80f` |
+| `src/web/data/structure/ordinary/roman-1962.json` | `1cb601194003fef53b3da495fde2a7618b28978f527f05cf61b0b7adc6df32d0` |
+| `src/web/data/structure/ordinary/roman-pre-1955.json` | `41b1a891aef96f479e5ce2e200efb97c8a6bbb2cf8e8829455962dc557b34979` |
 | `src/web/data/structure/paragraphs/catholic-public-domain-version/01-gen/001.json` | `4f79beb5afe32b8fe6bad5133cf93ad8a3c27f7a6e1fcbfd583d4943c42ab2ee` |
 | `src/web/data/structure/paragraphs/catholic-public-domain-version/01-gen/002.json` | `baff1b94da49a490aad58ef3eda8c76fcbae8eb5852ca5d7953af6c8f81f746e` |
 | `src/web/data/structure/paragraphs/catholic-public-domain-version/01-gen/003.json` | `03a5f328f300a581f2481fd1604dfba736652d99ed76d1a18db25a981cca844c` |
@@ -19685,9 +19685,9 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/paragraphs/world-english-bible-catholic/73-apoc/021.json` | `f8f88417560529269645c36c33f66b6177323f18aed2fc95e817720ef31841fd` |
 | `src/web/data/structure/paragraphs/world-english-bible-catholic/73-apoc/022.json` | `b38cf221de030ad24aba0c1dd88f0823bcb4a721a25bc35fa8f94e1a903b4097` |
 | `src/web/data/structure/propers/index.json` | `ed462d89e5777f12b009cb962ebe1a59d4a2082a552489198f54feb8067c9536` |
-| `src/web/data/structure/propers/postconciliar.json` | `e6b424496137dcfa0d802debbc8ae58c447e45a70b3b8f2150a203d2818cd5a0` |
-| `src/web/data/structure/propers/roman-1962.json` | `028ca416807470040fe81fc36569b51db7ab49ea38aeb4f067bbd1be2e62cb8e` |
-| `src/web/data/structure/propers/roman-pre-1955.json` | `1ea4360a813508a3d7d5afbf5e3ccfb334eebcd85f28d8c035ed78a2a16233c7` |
+| `src/web/data/structure/propers/postconciliar.json` | `25a4aef9eafab26c702b647132684efb4bb4d39d33d02c62eb34d5a7734e8056` |
+| `src/web/data/structure/propers/roman-1962.json` | `6c17438ec4c3ec31caa6b2db1f0fb3284ded3d8b6b1d3d7221907666b4b367cd` |
+| `src/web/data/structure/propers/roman-pre-1955.json` | `912106a34c94907e2f97add923baa871df4c1995de5364f200681d1951161a2e` |
 | `src/web/data/structure/readings/narrative-spine.json` | `9be6d97c206bc3544905f354090567f00f0f08a0b879b79f1d61499cc59db452` |
 | `src/web/data/structure/rubrics/index.json` | `61f18bea60e8f821891efc243a86e01bc140b65b40b3c65c8930e430d69058dc` |
 | `src/web/data/structure/rubrics/postconciliar.json` | `fb9dd1594412905efad869b4ea7031b989cdb9bf445283176f5b905a49d14be9` |

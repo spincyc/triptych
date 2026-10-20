@@ -50,8 +50,6 @@ POSTCONCILIAR_EXCEPTIONAL_ORDINARY_FRAMES = {
     "mass-of-the-lords-supper": "unavailable",
     "good-friday": "none",
     "easter-vigil": "unavailable",
-    "easter-sunday": "unavailable",
-    "corpus-christi": "unavailable",
 }
 ROMAN_1962_EXCEPTIONAL_ORDINARY_FRAMES = {
     "advent-ember-wednesday": "unavailable",

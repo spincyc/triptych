@@ -504,10 +504,11 @@ class PostconciliarContentIntegrityTest(unittest.TestCase):
             "mass-of-the-lords-supper": "unavailable",
             "good-friday": "none",
             "easter-vigil": "unavailable",
-            "easter-sunday": "unavailable",
-            "corpus-christi": "unavailable",
         }
-        expected_forms = {("pentecost", "day"): "unavailable"}
+        # 2026-10-19 (C2 G7): IGMR 64 seats the Sequence before the Alleluia,
+        # so the Easter, Pentecost Day and Corpus Christi forms take the full
+        # frame and no longer withhold it.
+        expected_forms = {}
         source = {str(mass.get("key") or ""): mass for _, _, mass in self.rows}
         generated = propers_tool.calendar_structure(
             CALENDARS, "postconciliar", propers_tool.book_tokens()
@@ -550,7 +551,7 @@ class PostconciliarContentIntegrityTest(unittest.TestCase):
             self.assertTrue(str(frame.get("basis") or "").strip())
             self.assertEqual(emitted_form.get("ordinary_frame"), frame)
 
-        for key in ("chrism-mass",):
+        for key in ("chrism-mass", "easter-sunday", "corpus-christi"):
             self.assertNotIn("ordinary_frame", source[key], key)
             self.assertNotIn("ordinary_frame", emitted[key], key)
 

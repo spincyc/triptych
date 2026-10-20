@@ -185,9 +185,9 @@ EXAMPLES = {
         Example(
             "tools/mass-ordinary check",
             (
-                "postconciliar: 7 sections, 59 elements, 1 witness, 3 variants, 11 slots; en 0 held/59 missing, la 20 held/39 missing; relations la antecedent/collated 5, la antecedent/uncollated 15; 0 target-recension exclusions",
-                "roman-1962: 6 sections, 189 elements, 2 witnesses, 0 variants, 9 slots; en 189 held/0 missing, la 112 held/77 missing; relations en antecedent/uncollated 189, la antecedent/uncollated 112; 6 target-recension exclusions",
-                "roman-pre-1955: 6 sections, 195 elements, 2 witnesses, 0 variants, 9 slots; en 195 held/0 missing, la 112 held/83 missing; relations en antecedent/uncollated 195, la antecedent/uncollated 112; 0 target-recension exclusions",
+                "postconciliar: 7 sections, 61 elements, 1 witness, 3 variants, 12 slots; en 0 held/61 missing, la 20 held/41 missing; relations la antecedent/collated 5, la antecedent/uncollated 15; 0 target-recension exclusions",
+                "roman-1962: 6 sections, 194 elements, 2 witnesses, 0 variants, 9 slots; en 184 held/10 missing, la 113 held/81 missing; relations en antecedent/uncollated 184, la antecedent/uncollated 113; 12 target-recension exclusions",
+                "roman-pre-1955: 6 sections, 206 elements, 2 witnesses, 0 variants, 9 slots; en 196 held/10 missing, la 113 held/93 missing; relations en antecedent/uncollated 196, la antecedent/uncollated 113; 0 target-recension exclusions",
                 "the written files are current",
             ),
             "check reads the inventories, joins the artifacts, and reports whether the tracked output is current; it writes nothing",
@@ -195,7 +195,7 @@ EXAMPLES = {
         Example(
             "tools/mass-ordinary check --calendar roman-1962 --json",
             (
-                "{\"calendars\":[{\"absent\":0,\"calendar\":\"roman-1962\",\"elements\":189,\"exclusions\":6,\"language_cover... [+557 chars]",
+                "{\"calendars\":[{\"absent\":10,\"calendar\":\"roman-1962\",\"elements\":194,\"exclusions\":12,\"language_coverage... [+556 chars]",
             ),
         ),
     ),
@@ -219,7 +219,7 @@ EXAMPLES = {
                 "    IN the Name of the Father, and of the Son, and of the Holy Ghost. Amen.",
                 "",
                 "  Introibo ad altare Dei (priest)",
-                "... 744 more lines",
+                "... 607 more lines",
             ),
             "read-only; prints the same assembly `structure` writes for the browser",
         ),
@@ -243,7 +243,7 @@ EXAMPLES = {
                 "",
                 "  Penitential Act, form I (all)",
                 "    [absent: official-exemplar-not-carried]",
-                "... 204 more lines",
+                "... 205 more lines",
             ),
             "an element no witness reaches names the reason rather than printing a gap",
         ),
@@ -252,28 +252,28 @@ EXAMPLES = {
         Example(
             "tools/mass-ordinary coverage --calendar postconciliar",
             (
-                "postconciliar: 59 elements",
-                "  en coverage: 0 held, 59 missing",
-                "  la coverage: 20 held, 39 missing",
+                "postconciliar: 61 elements",
+                "  en coverage: 0 held, 61 missing",
+                "  la coverage: 20 held, 41 missing",
                 "  la provenance: antecedent/collated 5",
                 "  la provenance: antecedent/uncollated 15",
                 "  la  edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861  20 elements  public-domain",
-                "  absent: antecedent-diverges-at-named-words 3 rights-restricted/rights-withheld, antecedent-held-not-carried 1 unavailable/witness-gap, approved-english-publication-restriction 25 rights-restricted/rights-withheld, editio-typica-new-matter 13 rights-restricted/rights-withheld, element-spans-mixed-availability 3 unavailable/model-gap, element-spans-mixed-matter 7 unavailable/model-gap, no-antecedent-witness 3 unavailable/witness-gap, no-fixed-text 3 unavailable/not-applicable, not-a-text 12 unavailable/not-applicable, official-exemplar-not-carried 16 unavailable/witness-gap, priest-prayer-said-quietly 6 unavailable/no-exemplar, proper-text-outside-ordinary 6 unavailable/outside-layer",
+                "  absent: antecedent-diverges-at-named-words 3 rights-restricted/rights-withheld, antecedent-held-not-carried 1 unavailable/witness-gap, appointed-text-printed-with-formulary 2 unresolved/rights-unresolved, approved-english-publication-restriction 27 rights-restricted/rights-withheld, editio-typica-new-matter 13 rights-restricted/rights-withheld, element-spans-mixed-availability 3 unavailable/model-gap, element-spans-mixed-matter 7 unavailable/model-gap, no-antecedent-witness 3 unavailable/witness-gap, no-fixed-text 3 unavailable/not-applicable, not-a-text 12 unavailable/not-applicable, official-exemplar-not-carried 16 unavailable/witness-gap, priest-prayer-said-quietly 6 unavailable/no-exemplar, proper-text-outside-ordinary 6 unavailable/outside-layer",
             ),
             "read-only: what each publishable witness reaches and what is absent; restricted provenance remains source-only",
         ),
         Example(
             "tools/mass-ordinary coverage --calendar roman-1962",
             (
-                "roman-1962: 189 elements",
-                "  en coverage: 189 held, 0 missing",
-                "  la coverage: 112 held, 77 missing",
-                "  en provenance: antecedent/uncollated 189",
-                "  la provenance: antecedent/uncollated 112",
-                "  en  edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861  189 elements  public-domain",
-                "  la  edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861  112 elements  public-domain",
-                "  absent: no-facing-latin 8 unavailable/witness-gap, not-in-the-1962-ordo 2 unavailable/witness-gap, witness-own-english 67 unavailable/witness-gap",
-                "  target-recension exclusions: oblatio/a-cunctis, oblatio/nota-incarnationis, oblatio/rubrica-collecta-concede, oblatio/rubrica-secreta, oblatio/rubrica-secreta-concede, oblatio/secreta-ii",
+                "roman-1962: 194 elements",
+                "  en coverage: 184 held, 10 missing",
+                "  la coverage: 113 held, 81 missing",
+                "  en provenance: antecedent/uncollated 184",
+                "  la provenance: antecedent/uncollated 113",
+                "  en  edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861  184 elements  public-domain",
+                "  la  edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861  113 elements  public-domain",
+                "  absent: appointment-not-established 6 unavailable/model-gap, no-facing-latin 8 unavailable/witness-gap, not-in-the-1962-ordo 0 unavailable/witness-gap, preface-not-in-witness 2 unavailable/witness-gap, proper-canon-form-not-held 12 unavailable/witness-gap, witness-own-english 63 unavailable/witness-gap",
+                "  target-recension exclusions: conclusio/et-famulos, conclusio/oratio-et-famulos-heading, conclusio/postcommunio-mundet, conclusio/rubrica-oratio-addita, conclusio/rubrica-postcommunio-paschalis, conclusio/rubrica-postcommunio-secunda, oblatio/a-cunctis, oblatio/nota-incarnationis, oblatio/rubrica-collecta-concede, oblatio/rubrica-secreta, oblatio/rubrica-secreta-concede, oblatio/secreta-ii",
             ),
             "the 1962 Ordinary is held whole in English and partly in facing Latin; every remaining Latin absence is recorded, not inferred",
         ),
@@ -282,9 +282,9 @@ EXAMPLES = {
         Example(
             "tools/mass-ordinary check",
             (
-                "postconciliar: 7 sections, 59 elements, 1 witness, 3 variants, 11 slots; en 0 held/59 missing, la 20 held/39 missing; relations la antecedent/collated 5, la antecedent/uncollated 15; 0 target-recension exclusions",
-                "roman-1962: 6 sections, 189 elements, 2 witnesses, 0 variants, 9 slots; en 189 held/0 missing, la 112 held/77 missing; relations en antecedent/uncollated 189, la antecedent/uncollated 112; 6 target-recension exclusions",
-                "roman-pre-1955: 6 sections, 195 elements, 2 witnesses, 0 variants, 9 slots; en 195 held/0 missing, la 112 held/83 missing; relations en antecedent/uncollated 195, la antecedent/uncollated 112; 0 target-recension exclusions",
+                "postconciliar: 7 sections, 61 elements, 1 witness, 3 variants, 12 slots; en 0 held/61 missing, la 20 held/41 missing; relations la antecedent/collated 5, la antecedent/uncollated 15; 0 target-recension exclusions",
+                "roman-1962: 6 sections, 194 elements, 2 witnesses, 0 variants, 9 slots; en 184 held/10 missing, la 113 held/81 missing; relations en antecedent/uncollated 184, la antecedent/uncollated 113; 12 target-recension exclusions",
+                "roman-pre-1955: 6 sections, 206 elements, 2 witnesses, 0 variants, 9 slots; en 196 held/10 missing, la 113 held/93 missing; relations en antecedent/uncollated 196, la antecedent/uncollated 113; 0 target-recension exclusions",
                 "the written files are current",
             ),
             "read-only first: `check` validates the inventories and reports whether tracked output is current",
@@ -292,9 +292,9 @@ EXAMPLES = {
         Example(
             "tools/mass-ordinary structure --out build/example-ordinary",
             (
-                "postconciliar: 7 sections, 59 elements, 1 witness, 3 variants, 11 slots; en 0 held/59 missing, la 20 held/39 missing; relations la antecedent/collated 5, la antecedent/uncollated 15; 0 target-recension exclusions",
-                "roman-1962: 6 sections, 189 elements, 2 witnesses, 0 variants, 9 slots; en 189 held/0 missing, la 112 held/77 missing; relations en antecedent/uncollated 189, la antecedent/uncollated 112; 6 target-recension exclusions",
-                "roman-pre-1955: 6 sections, 195 elements, 2 witnesses, 0 variants, 9 slots; en 195 held/0 missing, la 112 held/83 missing; relations en antecedent/uncollated 195, la antecedent/uncollated 112; 0 target-recension exclusions",
+                "postconciliar: 7 sections, 61 elements, 1 witness, 3 variants, 12 slots; en 0 held/61 missing, la 20 held/41 missing; relations la antecedent/collated 5, la antecedent/uncollated 15; 0 target-recension exclusions",
+                "roman-1962: 6 sections, 194 elements, 2 witnesses, 0 variants, 9 slots; en 184 held/10 missing, la 113 held/81 missing; relations en antecedent/uncollated 184, la antecedent/uncollated 113; 12 target-recension exclusions",
+                "roman-pre-1955: 6 sections, 206 elements, 2 witnesses, 0 variants, 9 slots; en 196 held/10 missing, la 113 held/93 missing; relations en antecedent/uncollated 196, la antecedent/uncollated 113; 0 target-recension exclusions",
                 "wrote 4 files",
                 "  -> build/example-ordinary/structure/ordinary/index.json",
             ),
@@ -405,7 +405,23 @@ ALTERNATIVE_FIELDS = {"group", "option"}
 CONDITION_FIELDS = {
     "include-when-any": {"kind", "predicates", "basis"},
     "omit-when-option": {"kind", "group", "options", "basis"},
+    # An Ordinary variable the day APPOINTS rather than the celebrant chooses:
+    # the Preface, the proper Communicantes, the dismissal.  `appointed` shows
+    # the element only when the day's appointment of `variable` is one of
+    # `options`; `unappointed` shows it only when nothing appoints the variable
+    # at all, which is how a typed "appointment not established" stands in the
+    # appointed place instead of every Preface the book prints.  The variables
+    # and their options are declared in the inventory's `[[appointments]]`
+    # table; the day's appointment comes from the formulary, a dated span or
+    # a declared default, resolved once in `ordinary-seating.js`.
+    "appointed": {"kind", "variable", "options", "basis"},
+    "unappointed": {"kind", "variable", "basis"},
 }
+# `or_unappointed = true` also shows an `appointed` element when nothing
+# appoints the variable: the Sanctus printed after the common Preface stands on
+# a day whose Preface is not established, because whatever Preface is said the
+# Sanctus follows it.
+CONDITION_OPTIONAL_FIELDS = {"appointed": {"or_unappointed"}}
 CONDITION_PREDICATES = (
     "sunday-outside-advent-and-lent",
     "solemnity-or-feast",
@@ -413,7 +429,31 @@ CONDITION_PREDICATES = (
     "particular-celebration-of-more-solemn-character",
     "mass-has-no-proper-preface",
     "second-reading-appointed",
+    # The pre-1955 seasonal orations.  Each is established FALSE only outside
+    # the dates its rubric names (see `predicateFacts` in ordinary-seating.js
+    # for the windows and their loci) and is never established true: inside
+    # the window the rank of the day decides, which this layer does not hold.
+    "a-cunctis-season",
+    "concede-season",
 )
+
+# The fields of one `[[appointments]]` variable, its options and its spans.
+APPOINTMENT_FIELDS = {
+    "variable", "name", "what", "options", "default", "default_basis", "spans",
+}
+APPOINTMENT_OPTION_FIELDS = {"id", "name"}
+APPOINTMENT_SPAN_FIELDS = {"option", "withheld", "from", "to", "anchor", "locus"}
+# The movable anchors a span may count from, exactly as the calendar layer's
+# year files name them (`liturgical_years[].anchors`).
+APPOINTMENT_ANCHORS = ("easter", "pentecost", "ascension_thursday_form")
+APPOINTMENT_VARIABLE_RE = re.compile(r"^[a-z]+(?:_[a-z]+)*$")
+APPOINTMENT_OPTION_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
+MONTH_DAY_RE = re.compile(r"^(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$")
+INSERTED_FIELDS = {
+    "key", "before", "after", "kind", "speaker", "name", "latin_incipit",
+    "absent_english", "absent_latin", "note", "conditions", "text_of",
+}
+ELEMENT_CONDITION_FIELDS = {"element", "conditions"}
 
 # An artifact can contain matter which a later target recension does not.  A
 # declaration consumes that source row without relabelling it as target text.
@@ -829,8 +869,170 @@ def element_alternatives(entry: dict, options: dict[str, str], key: str,
     return None, held
 
 
+def appointment_table(source: dict, name: str) -> dict[str, dict]:
+    """The Ordinary variables a day appoints, with their options and spans.
+
+    A variable is not a celebrant's choice (that is `[[variants]]`) but a
+    decision the books make for the day: which Preface, which Communicantes.
+    It is declared here, beside the elements that print each option, so that a
+    formulary naming an option this frame cannot show is refused at build time
+    rather than rendered as nothing.  `default` is the option every Mass takes
+    that no formulary or span appoints otherwise, and it needs its own basis:
+    without one an unappointed day is UNRESOLVED, never the common form.
+    """
+    held: dict[str, dict] = {}
+    for entry in source.get("appointments") or []:
+        if not isinstance(entry, dict):
+            raise SourceError(f"{name}: an appointment variable is not a table")
+        unknown = set(entry) - APPOINTMENT_FIELDS
+        if unknown:
+            raise SourceError(
+                f"{name}: an appointment variable declares unknown fields "
+                f"{', '.join(sorted(unknown))}"
+            )
+        variable = entry.get("variable")
+        if not isinstance(variable, str) or not APPOINTMENT_VARIABLE_RE.fullmatch(variable):
+            raise SourceError(f"{name}: appointment variable {variable!r} is not a snake_case id")
+        if variable in held:
+            raise SourceError(f"{name}: appointment variable {variable} is declared twice")
+        for field in ("name", "what"):
+            if not isinstance(entry.get(field), str) or not entry[field].strip():
+                raise SourceError(f"{name}: appointment variable {variable} has no {field}")
+        options = entry.get("options")
+        if not isinstance(options, list) or not options:
+            raise SourceError(f"{name}: appointment variable {variable} offers no option")
+        ids: list[str] = []
+        for option in options:
+            if not isinstance(option, dict) or set(option) != APPOINTMENT_OPTION_FIELDS:
+                raise SourceError(
+                    f"{name}: an option of appointment variable {variable} must carry "
+                    "exactly id and name"
+                )
+            if not APPOINTMENT_OPTION_RE.fullmatch(str(option["id"])):
+                raise SourceError(
+                    f"{name}: appointment option {option['id']!r} is not a kebab-case id"
+                )
+            if not isinstance(option["name"], str) or not option["name"].strip():
+                raise SourceError(f"{name}: appointment option {option['id']} has no name")
+            if option["id"] in ids:
+                raise SourceError(
+                    f"{name}: appointment variable {variable} offers {option['id']} twice"
+                )
+            ids.append(option["id"])
+        default = entry.get("default")
+        if default is not None:
+            if default not in ids:
+                raise SourceError(
+                    f"{name}: appointment variable {variable} defaults to "
+                    f"{default!r}, which it does not offer"
+                )
+            if not isinstance(entry.get("default_basis"), str) or not entry["default_basis"].strip():
+                raise SourceError(
+                    f"{name}: appointment variable {variable} declares a default "
+                    "without default_basis; an unsourced default is a silent "
+                    "substitution"
+                )
+        elif "default_basis" in entry:
+            raise SourceError(
+                f"{name}: appointment variable {variable} has default_basis but no default"
+            )
+        spans = []
+        for span in entry.get("spans") or []:
+            if not isinstance(span, dict):
+                raise SourceError(f"{name}: a span of {variable} is not a table")
+            unknown = set(span) - APPOINTMENT_SPAN_FIELDS
+            missing = {"from", "to", "locus"} - set(span)
+            if unknown or missing:
+                raise SourceError(
+                    f"{name}: a span of {variable} has unknown fields "
+                    f"{sorted(unknown)} or misses {sorted(missing)}"
+                )
+            # A `withheld` span names dates on which the default must NOT be
+            # assumed and nothing has established the appointment: the day is
+            # unappointed there.  It appoints no option.
+            if ("option" in span) == (span.get("withheld") is True):
+                raise SourceError(
+                    f"{name}: a span of {variable} must carry exactly one of an "
+                    "option or withheld = true"
+                )
+            if "option" in span and span["option"] not in ids:
+                raise SourceError(
+                    f"{name}: a span of {variable} appoints {span['option']!r}, "
+                    "which the variable does not offer"
+                )
+            if not isinstance(span["locus"], str) or not span["locus"].strip():
+                raise SourceError(f"{name}: a span of {variable} cites no locus")
+            anchor = span.get("anchor")
+            if anchor is None:
+                if not all(
+                    isinstance(span[edge], str) and MONTH_DAY_RE.fullmatch(span[edge])
+                    for edge in ("from", "to")
+                ):
+                    raise SourceError(
+                        f"{name}: a fixed span of {variable} needs MM-DD from and to"
+                    )
+            else:
+                if anchor not in APPOINTMENT_ANCHORS:
+                    raise SourceError(
+                        f"{name}: a span of {variable} counts from {anchor!r}; one of "
+                        f"{', '.join(APPOINTMENT_ANCHORS)} is required"
+                    )
+                if not all(
+                    isinstance(span[edge], int) and not isinstance(span[edge], bool)
+                    for edge in ("from", "to")
+                ) or span["from"] > span["to"]:
+                    raise SourceError(
+                        f"{name}: an anchored span of {variable} needs integer day "
+                        "offsets with from <= to"
+                    )
+            spans.append(dict(span))
+        held[variable] = {
+            "variable": variable,
+            "name": entry["name"],
+            "what": entry["what"],
+            "options": [dict(option) for option in options],
+            "default": default,
+            "default_basis": entry.get("default_basis"),
+            "spans": spans,
+        }
+    return held
+
+
+def appointment_coverage(appointments: dict, sections: list[dict], name: str) -> None:
+    """Every appointable option must print SOMETHING, and so must no appointment.
+
+    An option no element answers would let a formulary appoint a text the
+    frame then drops in silence; a variable with no default and no
+    `unappointed` element would do the same on every day that appoints
+    nothing.  Both are refused here, where the inventory is read.
+    """
+    reached: dict[str, set[str]] = {key: set() for key in appointments}
+    unappointed: set[str] = set()
+    for section in sections:
+        for element in section["elements"]:
+            for condition in element.get("conditions") or []:
+                if condition.get("kind") == "appointed":
+                    reached[condition["variable"]].update(condition["options"])
+                elif condition.get("kind") == "unappointed":
+                    unappointed.add(condition["variable"])
+    for key, variable in appointments.items():
+        missing = [
+            one["id"] for one in variable["options"] if one["id"] not in reached[key]
+        ]
+        if missing:
+            raise SourceError(
+                f"{name}: appointment variable {key} offers {', '.join(missing)}, "
+                "which no element prints or stands in for"
+            )
+        if variable["default"] is None and key not in unappointed:
+            raise SourceError(
+                f"{name}: appointment variable {key} has no default and no element "
+                "for a day that appoints nothing"
+            )
+
+
 def element_conditions(entry: dict, options: dict[str, str], key: str,
-                       name: str) -> list[dict]:
+                       name: str, appointments: dict | None = None) -> list[dict]:
     """Closed positive/context conditions; never executable inventory prose."""
     declared = entry.get("conditions")
     if declared is None:
@@ -848,8 +1050,13 @@ def element_conditions(entry: dict, options: dict[str, str], key: str,
                 f"{name}: element {key} condition has kind {kind!r}; one of "
                 f"{', '.join(CONDITION_FIELDS)} is required"
             )
-        unknown = set(condition) - fields
+        optional = CONDITION_OPTIONAL_FIELDS.get(kind, set())
+        unknown = set(condition) - fields - optional
         missing = fields - set(condition)
+        if "or_unappointed" in condition and condition["or_unappointed"] is not True:
+            raise SourceError(
+                f"{name}: element {key} or_unappointed may only be true"
+            )
         if unknown or missing:
             detail = []
             if unknown:
@@ -862,7 +1069,28 @@ def element_conditions(entry: dict, options: dict[str, str], key: str,
         basis = condition.get("basis")
         if not isinstance(basis, str) or not basis.strip():
             raise SourceError(f"{name}: element {key} {kind} condition has no basis")
-        if kind == "include-when-any":
+        if kind in ("appointed", "unappointed"):
+            variable = condition["variable"]
+            declared_variable = (appointments or {}).get(variable)
+            if declared_variable is None:
+                raise SourceError(
+                    f"{name}: element {key} {kind} condition names undeclared "
+                    f"appointment variable {variable!r}"
+                )
+            if kind == "appointed":
+                offered = {one["id"] for one in declared_variable["options"]}
+                chosen = condition["options"]
+                if (
+                    not isinstance(chosen, list)
+                    or not chosen
+                    or any(one not in offered for one in chosen)
+                    or len(chosen) != len(set(chosen))
+                ):
+                    raise SourceError(
+                        f"{name}: element {key} appointed options must be a nonempty "
+                        f"duplicate-free subset of {variable}'s declared options"
+                    )
+        elif kind == "include-when-any":
             predicates = condition["predicates"]
             if (
                 not isinstance(predicates, list)
@@ -1288,9 +1516,159 @@ def consistent_artifact_field(rows: list[dict], field: str, artifact_id: str,
     return next(iter(values), "")
 
 
+def artifact_element_conditions(
+    section: dict, source_keys: set[str], excluded: dict, options: dict,
+    appointments: dict, name: str,
+) -> dict[str, list[dict]]:
+    """Applicability conditions on rows an artifact prints, by source row key.
+
+    The artifact owns the row; whether the row applies on a given day is a
+    later, sourced finding and therefore lives in the inventory, under the
+    same closed condition vocabulary inline elements use.
+    """
+    declared = section.get("element_conditions")
+    if declared is None:
+        return {}
+    if not isinstance(declared, list) or not declared:
+        raise SourceError(
+            f"{name}: section {section['key']} has empty or malformed element_conditions"
+        )
+    held: dict[str, list[dict]] = {}
+    for entry in declared:
+        if not isinstance(entry, dict) or set(entry) != ELEMENT_CONDITION_FIELDS:
+            raise SourceError(
+                f"{name}: section {section['key']} element_conditions rows carry "
+                "exactly element and conditions"
+            )
+        element = entry["element"]
+        if element not in source_keys:
+            raise SourceError(
+                f"{name}: section {section['key']} conditions {element!r}, which its "
+                "English artifact does not hold"
+            )
+        if element in excluded:
+            raise SourceError(
+                f"{name}: section {section['key']} conditions excluded element {element}"
+            )
+        if element in held:
+            raise SourceError(
+                f"{name}: section {section['key']} conditions {element} twice"
+            )
+        held[element] = element_conditions(
+            entry, options, section["key"] + "/" + element, name, appointments
+        )
+    return held
+
+
+def artifact_inserted(
+    section: dict, source_keys: set[str], excluded: dict, absences: dict,
+    options: dict, appointments: dict, name: str,
+) -> tuple[dict[str, list[dict]], dict[str, list[dict]]]:
+    """Text-free elements the inventory stands beside an artifact's rows.
+
+    They exist for one purpose: where a day appoints a text this witness does
+    not print (a proper Communicantes) or where nothing has established which
+    text is appointed (the Preface), the frame still owes the reader a typed
+    statement IN THE APPOINTED PLACE.  Each therefore carries no words, names
+    both absences, and must be conditioned on an appointment, so it can never
+    stand on a day it does not describe.
+    """
+    declared = section.get("inserted")
+    before: dict[str, list[dict]] = {}
+    after: dict[str, list[dict]] = {}
+    if declared is None:
+        return before, after
+    if not isinstance(declared, list) or not declared:
+        raise SourceError(f"{name}: section {section['key']} has empty or malformed inserted")
+    seen: set[str] = set()
+    for entry in declared:
+        if not isinstance(entry, dict):
+            raise SourceError(f"{name}: section {section['key']} has a non-table inserted row")
+        unknown = set(entry) - INSERTED_FIELDS
+        if unknown:
+            raise SourceError(
+                f"{name}: section {section['key']} inserted row declares unknown fields "
+                f"{', '.join(sorted(unknown))}"
+            )
+        key = entry.get("key")
+        if not isinstance(key, str) or not APPOINTMENT_OPTION_RE.fullmatch(key):
+            raise SourceError(f"{name}: section {section['key']} inserted row has no kebab-case key")
+        if key in source_keys or key in seen:
+            raise SourceError(
+                f"{name}: section {section['key']} inserted key {key} collides with a row"
+            )
+        seen.add(key)
+        sides = [one for one in ("before", "after") if entry.get(one)]
+        if len(sides) != 1:
+            raise SourceError(
+                f"{name}: inserted {key} must name exactly one of before or after"
+            )
+        target = entry[sides[0]]
+        if target not in source_keys or target in excluded:
+            raise SourceError(
+                f"{name}: inserted {key} stands {sides[0]} {target!r}, which is no "
+                "emitted row of this section"
+            )
+        kind = entry.get("kind")
+        if kind not in ELEMENT_KINDS:
+            raise SourceError(f"{name}: inserted {key} has kind {kind!r}")
+        conditions = element_conditions(
+            entry, options, section["key"] + "/" + key, name, appointments
+        )
+        if not any(one["kind"] in ("appointed", "unappointed") for one in conditions):
+            raise SourceError(
+                f"{name}: inserted {key} carries no appointment condition; a text-free "
+                "stand-in that is not tied to an appointment would print every day"
+            )
+        text_of = entry.get("text_of")
+        if text_of is not None:
+            # A second occurrence of a row the book prints once and then cues
+            # by incipit: the 1861 prints the Sanctus after the common Preface
+            # only and ends every proper Preface "Holy, &c.".  The occurrence
+            # carries that row's own text and absences, never new words.
+            if text_of not in source_keys or text_of in excluded:
+                raise SourceError(
+                    f"{name}: inserted {key} takes its text from {text_of!r}, which "
+                    "is no emitted row of this section"
+                )
+            if "absent_english" in entry or "absent_latin" in entry:
+                raise SourceError(
+                    f"{name}: inserted {key} takes the text of {text_of}; its "
+                    "absences are that row's and are not restated"
+                )
+            absent = {side: None for side in ABSENT_SIDES}
+        else:
+            absent = absent_pair(entry, {}, absences, key, name)
+            if any(absent[side] is None for side in ABSENT_SIDES):
+                raise SourceError(
+                    f"{name}: inserted {key} must name both absences; it carries no text"
+                )
+        if not isinstance(entry.get("name"), str) or not entry["name"].strip():
+            raise SourceError(f"{name}: inserted {key} has no name")
+        element = {
+            "key": section["key"] + "/" + key,
+            "kind": kind,
+            "speaker": entry.get("speaker") or None,
+            "name": entry["name"],
+            "latin_incipit": entry.get("latin_incipit") or None,
+            "locus": None,
+            "note": entry.get("note") or None,
+            "variant": None,
+            "alternatives": [],
+            "conditions": conditions,
+            "absent": absent,
+            "translations": None,
+        }
+        if text_of is not None:
+            element["occurrence_of"] = section["key"] + "/" + text_of
+        (before if sides[0] == "before" else after).setdefault(target, []).append(element)
+    return before, after
+
+
 def from_artifact(
     section: dict, witnesses: dict, restricted: dict, absences: dict,
-    library: dict, name: str
+    library: dict, name: str, options: dict | None = None,
+    appointments: dict | None = None,
 ) -> tuple[list[dict], list[dict]]:
     """The elements of a section whose text an artifact holds.
 
@@ -1336,11 +1714,19 @@ def from_artifact(
         section, set(source_groups), set(latin_rows), absences, name
     )
     partitions = artifact_turn_partition_table(section, name)
+    conditioned = artifact_element_conditions(
+        section, set(source_groups), excluded, options or {}, appointments or {}, name
+    )
+    inserted_before, inserted_after = artifact_inserted(
+        section, set(source_groups), excluded, absences, options or {},
+        appointments or {}, name,
+    )
 
     elements = []
     exclusions = []
     for key in source_order:
         rows = source_groups[key]
+        elements.extend(inserted_before.get(key, []))
         if key in excluded:
             if (key, "en") in partitions or (key, "la") in partitions:
                 raise SourceError(
@@ -1459,11 +1845,25 @@ def from_artifact(
                 ) or None,
                 "variant": None,
                 "alternatives": [],
-                "conditions": [],
+                "conditions": conditioned.get(key, []),
                 "absent": absent,
                 "translations": translations or None,
             }
         )
+        elements.extend(inserted_after.get(key, []))
+    by_key = {element["key"]: element for element in elements}
+    for element in elements:
+        source = element.get("occurrence_of")
+        if source:
+            held = by_key[source]
+            element["absent"] = dict(held["absent"])
+            element["translations"] = [
+                {key: value for key, value in row.items() if key != "turns"}
+                for row in held["translations"] or []
+            ] or None
+            element["locus"] = held["locus"]
+            if element["note"] is None:
+                element["note"] = held["note"]
     if latin_rows:
         raise SourceError(
             f"{name}: section {section['key']} carries Latin for "
@@ -1810,7 +2210,7 @@ def side_text(entry: dict, lang: str, witnesses: dict, restricted: dict, library
 
 def from_inventory(
     section: dict, witnesses: dict, restricted: dict, absences: dict,
-    options: dict, library: dict, name: str
+    options: dict, library: dict, name: str, appointments: dict | None = None,
 ) -> list[dict]:
     """The elements of a section the inventory states itself.
 
@@ -1828,7 +2228,7 @@ def from_inventory(
         if kind not in ELEMENT_KINDS:
             raise SourceError(f"{name}: element {key} has kind {kind!r}")
         variant, alternatives = element_alternatives(entry, options, key, name)
-        conditions = element_conditions(entry, options, key, name)
+        conditions = element_conditions(entry, options, key, name, appointments)
 
         held = [
             row
@@ -1913,6 +2313,7 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
         )
     absences = absence_table(source, name)
     variants, options = variant_table(source, name)
+    appointments = appointment_table(source, name)
 
     sections = []
     exclusions = []
@@ -1926,18 +2327,21 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
             raise SourceError(f"{name}: section {key} names both an artifact and inline elements")
         if "artifact" in section:
             elements, section_exclusions = from_artifact(
-                section, witnesses, restricted, absences, library, name
+                section, witnesses, restricted, absences, library, name,
+                options, appointments,
             )
         elif "elements" in section:
             for field in (
                 "exclusions", "turn_partitions", "absent_latin_by_element",
+                "element_conditions", "inserted",
             ):
                 if field in section:
                     raise SourceError(
                         f"{name}: inline section {key} declares artifact-only {field}"
                     )
             elements = from_inventory(
-                section, witnesses, restricted, absences, options, library, name
+                section, witnesses, restricted, absences, options, library, name,
+                appointments,
             )
             section_exclusions = []
         else:
@@ -1956,6 +2360,7 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
         sections.append({"key": key, "name": section.get("name") or key, "elements": elements})
 
     slots = slot_table(source, sections, name)
+    appointment_coverage(appointments, sections, name)
 
     offered = {
         (entry["group"], option["id"])
@@ -2099,9 +2504,13 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
                 reason = element["absent"][language["absent"]]
                 if reason:
                     disposition[language["lang"]] = coverage_absences[absences[reason]["kind"]]
-            identifier = _missal_coverage.identity(calendar, "ordinary", element["key"])
+            occurrence = _missal_coverage.identity(calendar, "ordinary", element["key"])
+            identifier = (
+                _missal_coverage.identity(calendar, "ordinary", element["occurrence_of"])
+                if element.get("occurrence_of") else occurrence
+            )
             element["coverage"] = _missal_coverage.unit(
-                element, target_id=identifier, occurrence_id=identifier,
+                element, target_id=identifier, occurrence_id=occurrence,
                 component="ordinary-body", witnesses=coverage_witnesses,
                 ordinary_absences=disposition,
             )
@@ -2135,6 +2544,7 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
         "language_coverage": language_coverage,
         "relation_coverage": relation_coverage,
         "variants": variants,
+        "appointments": [appointments[key] for key in sorted(appointments)],
         "slots": slots,
         "translations": manifest,
         "sections": sections,
@@ -2460,6 +2870,21 @@ def check_calendar_seating(ordinary: dict, propers_file: dict) -> dict:
             not isinstance(forms, list) or any(not isinstance(form, dict) for form in forms)
         ):
             raise SourceError(f"{calendar}/{key}: forms is not an array of mappings")
+        offered = {
+            row["variable"]: {one["id"] for one in row["options"]}
+            for row in ordinary.get("appointments") or []
+        }
+        for holder, where in [(mass, f"{calendar}/{key}")] + [
+            (form, f"{calendar}/{key}/{form.get('id')}") for form in forms or []
+        ]:
+            for variable, row in (holder.get("ordinary_appointments") or {}).items():
+                option = row.get("option") if isinstance(row, dict) else None
+                if option not in offered.get(variable, set()):
+                    raise SourceError(
+                        f"{where}: ordinary_appointments.{variable} appoints {option!r}, "
+                        "which this calendar's Ordinary does not declare; the frame "
+                        "would show nothing in the appointed place"
+                    )
         units = [(form, form.get("propers")) for form in forms] if forms else [
             (None, mass.get("propers"))
         ]
@@ -2598,8 +3023,16 @@ def selected_variants(built: list[dict], requested: list[str]) -> dict[str, dict
     return selections
 
 
-def element_applicability(element: dict, selected: dict[str, str]) -> tuple[bool, list[dict]]:
-    """Filter closed choices and retain unknown context as visible state."""
+def element_applicability(
+    element: dict, selected: dict[str, str], stand_ins: set[str] | None = None
+) -> tuple[bool, list[dict]]:
+    """Filter closed choices and retain unknown context as visible state.
+
+    `show` has no day, so no Ordinary variable is appointed: the same rule as
+    `conditionsResolve` in ordinary-seating.js then shows each variable's typed
+    stand-in and hides its options, or reports them unresolved where the file
+    declares no stand-in.
+    """
     if any(
         selected.get(alternative["group"]) != alternative["option"]
         for alternative in element.get("alternatives") or []
@@ -2610,6 +3043,14 @@ def element_applicability(element: dict, selected: dict[str, str]) -> tuple[bool
         if condition["kind"] == "omit-when-option":
             if selected.get(condition["group"]) in condition["options"]:
                 return False, []
+        elif condition["kind"] == "unappointed":
+            continue
+        elif condition["kind"] == "appointed":
+            if condition.get("or_unappointed") is True:
+                continue
+            if condition["variable"] in (stand_ins or set()):
+                return False, []
+            unresolved.append(condition)
         elif condition["kind"] == "include-when-any":
             # `show` has no day/rank/preface context.  Unknown applicability is
             # a first-class result, never a reason to include or omit silently.
@@ -2644,6 +3085,13 @@ def render_ordinary(
     selections = selected_variants(built, requested_variants or [])
     for one in built:
         selected = selections[one["calendar"]]
+        stand_ins = {
+            condition["variable"]
+            for section in one["sections"]
+            for element in section["elements"]
+            for condition in element.get("conditions") or []
+            if condition.get("kind") == "unappointed"
+        }
         for line in style.heading(one["title"], rule="="):
             print(line)
         if one.get("edition"):
@@ -2653,9 +3101,12 @@ def render_ordinary(
             for line in style.heading(str(section["name"]), rule="-"):
                 print(line)
             for element in section["elements"]:
-                visible, unresolved = element_applicability(element, selected)
+                visible, unresolved = element_applicability(element, selected, stand_ins)
                 for condition in unresolved:
-                    predicates = ", ".join(condition["predicates"])
+                    predicates = ", ".join(
+                        condition.get("predicates")
+                        or [f"{condition.get('variable')} appointed"]
+                    )
                     print(
                         f"  [{element.get('name') or element['key']}: "
                         f"applicability unresolved: {predicates}; "

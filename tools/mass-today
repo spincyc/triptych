@@ -862,6 +862,11 @@ def propers_of(
                 if "ordinary_frame" in source_form
                 else {}
             ),
+            **{
+                field: source_form[field]
+                for field in ("ordinary_appointments", "celebrated")
+                if field in source_form
+            },
         })
     forms_by_id = {one["id"]: one for one in forms}
 
@@ -931,6 +936,16 @@ def propers_of(
     selected_form = "main" if not forms else None
     if forms and requested_form in forms_by_id:
         selected_form = str(requested_form)
+    elif forms and len(forms) > 1 and requested_form is None:
+        # The same rule as `dayOfferedForms` in reader-state-adapters.js: a
+        # vigil Mass its book appoints for the evening BEFORE is not a coequal
+        # choice on the solemnity's own date (Normae universales n. 11).
+        own = [
+            one for one in forms
+            if (one.get("celebrated") or {}).get("when") != "evening-before"
+        ]
+        if len(own) == 1:
+            selected_form = own[0]["id"]
     selected_propers = (
         list(forms_by_id[selected_form]["propers"])
         if forms and selected_form is not None
@@ -987,6 +1002,15 @@ def propers_of(
         "common_from": common_from,
         "text_status": text_status,
         "ordinary_frame": ordinary_frame,
+        "ordinary_appointments": {
+            variable: row.get("option")
+            for holder in (
+                mass,
+                forms_by_id.get(selected_form) if selected_form in forms_by_id else None,
+            )
+            for variable, row in ((holder or {}).get("ordinary_appointments") or {}).items()
+            if isinstance(row, dict)
+        },
         "bible": payload.get("bible") and {
             "id": payload["bible"].get("id"),
             "edition": payload["bible"].get("edition"),
@@ -1118,6 +1142,7 @@ def run_show(arguments: argparse.Namespace) -> dict:
                 weekday=(held or {}).get("weekday"),
                 lectionary=liturgical_year.get("lectionary"),
                 unresolved=liturgical_year.get("unresolved") or [],
+                anchors=liturgical_year.get("anchors"),
             )
 
         proper_keys = [
@@ -1315,6 +1340,7 @@ def run_show(arguments: argparse.Namespace) -> dict:
         row = {
             "calendar": day.get("calendar"),
             "season": day.get("season"),
+            "anchors": day.get("anchors"),
             "week": day.get("week"),
             "weekday": day.get("weekday"),
             "ranked": day.get("ranked"),
@@ -1961,6 +1987,8 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
             "weekday": day.get("weekday"),
             "season": day.get("season"),
             "nature": winner.get("nature"),
+            "date": payload.get("date"),
+            "anchors": day.get("anchors"),
         }
         for mass in ordered:
             rank = f" ({mass['rank']})" if mass.get("rank") else ""
@@ -1996,7 +2024,15 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
                 render_expanded_mass(
                     mass, day.get("ordinary"), arguments, style,
                     frame=mass["key"] == framed,
-                    predicate_context=ordinary_predicate_context,
+                    predicate_context=dict(
+                        ordinary_predicate_context,
+                        # A borrowed formulary's own appointments are not the
+                        # day's (RGMR 501); see formularyAppointments.
+                        appointments=(
+                            {} if mass.get("borrowed")
+                            else mass.get("ordinary_appointments") or {}
+                        ),
+                    ),
                 )
                 if mass["placeholders"] and (
                     (mass.get("ordinary_frame") or {}).get("applicability", "full") == "full"

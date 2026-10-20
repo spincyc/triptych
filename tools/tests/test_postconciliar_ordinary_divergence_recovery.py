@@ -153,12 +153,14 @@ class PostconciliarOrdinaryDivergenceRecoveryTests(unittest.TestCase):
 
     def test_generated_structure_has_the_settled_coverage(self) -> None:
         structure = json.loads(STRUCTURE.read_text(encoding="utf-8"))
-        self.assertEqual(sum(len(section["elements"]) for section in structure["sections"]), 59)
+        # 2026-10-19 (C2 G5): the Preface and dismissal appointment seats are two
+        # text-free elements; the held Latin and its relations are unchanged.
+        self.assertEqual(sum(len(section["elements"]) for section in structure["sections"]), 61)
         self.assertEqual(
             structure["language_coverage"],
             [
-                {"absent": 59, "elements": 59, "held": 0, "lang": "en", "missing": 59},
-                {"absent": 39, "elements": 59, "held": 20, "lang": "la", "missing": 39},
+                {"absent": 61, "elements": 61, "held": 0, "lang": "en", "missing": 61},
+                {"absent": 41, "elements": 61, "held": 20, "lang": "la", "missing": 41},
             ],
         )
         self.assertEqual(

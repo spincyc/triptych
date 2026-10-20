@@ -742,10 +742,14 @@ Every artifact page belongs to a section slice or an explicit extent boundary.
 The 45 new slices hold 8,274 targets. All of them are `established` on the
 witness, and none carries a calendar join yet.
 
-**Post-1922 additions.** 322 targets in twelve `…-post-1922-additions` slices
+**Post-1922 additions.** 323 targets in twelve `…-post-1922-additions` slices
 have no counterpart in the 1922 control; each absence was confirmed on Mame
-page images or its printed index. "Addition" means the identity is new to that
-section, not necessarily new text. St Gabriel, St John Leonardi and St Margaret
+page images or its printed index. An addition has no counterpart in the
+corresponding universal part of the 1922 control; for local propers the
+comparison is with Mame's local supplement. A move within the 1922 universal
+book is a relocation, not an addition. A form whose formulary differs, such as
+the Sacred Heart, is classed by its formulary. An addition is not necessarily
+new text. St Gabriel, St John Leonardi and St Margaret
 Mary had Masses with the same Introit in Mame's local appendix before entering
 the universal Proper. The 1922 local Maternity Mass differs from Bonn's.
 
@@ -761,11 +765,13 @@ reach text first published in 1931 or later (`guidance/missals.md` §5).
 **Identities only in the 1922 control** are reported, not inventoried:
 
 - the Octave of the Assumption on 22 August;
-- the Christopher commemoration on 25 July;
+- Mame's separate *Pro S. Christophoro* heading on 25 July (p. 783). Bonn's
+  Kalendarium still prints *Com. S. Christophori*, and its body carries the
+  orations within St James (pp. 812–813);
 - Mame's Sacred Heart formularies *Miserebitur* and *Egredimini*;
 - Kalendarium commemorations of Agapitus, Melchiades, Anastasia and the Vigil
-  of the Immaculate Conception. Bonn's body still prints Anastasia,
-  Melchiades and the vigil.
+  of the Immaculate Conception. Bonn's body still prints all four:
+  Anastasia, Melchiades, Agapitus (p. 852) and the vigil.
 
 Some dates or ranks moved: Peter Nolasco, Hedwig and Gertrude; Agnes
 *secundo*; the Vigil of St Lawrence; and the Commemoration of the Supreme
@@ -781,8 +787,8 @@ Sacred Heart sit in Bonn's temporal but in Mame's sanctoral.
 - The 1861 Cummiskey Preface slice is kept as other-witness evidence. Its
   eleven Prefaces are a strict subset of the fifteen enumerated here and are
   never summed with them.
-- The whole-book slice stays `unresolved`, and every whole-book boundary stays
-  `unenumerated` until an independent page-image review, as for 1962.
+- The whole-book slice stays `unresolved`. The independent review below
+  retired its form and Preface boundaries; the others stay `unenumerated`.
 
 The four lane records follow as the next subsections. Counts in them are as
 each lane reported, except where integration changed them.
@@ -807,9 +813,9 @@ validator classifies all 739 targets as `unresolved`, as intended.
 
 | Slice | State | Targets by kind |
 | --- | --- | --- |
-| `kalendarium-fixed` | complete | celebration 285, commemoration 92 |
+| `kalendarium-fixed` | complete | celebration 284, commemoration 91 |
 | `kalendarium-movable` | complete | celebration 5, commemoration 3 |
-| `kalendarium-post-1922-additions` | complete | celebration 11 |
+| `kalendarium-post-1922-additions` | complete | celebration 12 |
 | `ordinary-text-blocks` | complete | slot 111, referral 13 |
 | `ordinary-canon-and-preface-options` | complete | ord-opt 26 |
 | `ordinary-musical-presentation-options` | complete | ord-opt 43 |
@@ -936,8 +942,8 @@ Kalendarium:
   Conception (12-07), of S. Melchiades (12-10) and of S. Anastasia in the
   second Christmas Mass (12-25).
 
-Three of these persist in the Bonn *body*: the Vigil rubric on p. 594,
-*Pro S. Melchiade* on p. 601, and Anastasia on p. 127. They are therefore
+Four of these persist in the Bonn *body*: the Vigil rubric on p. 594,
+*Pro S. Melchiade* on p. 601, Agapitus on p. 852, and Anastasia on p. 127. They are therefore
 omissions from the Kalendarium print, not lost identities. Their owning lanes
 should keep them.
 
@@ -1335,7 +1341,7 @@ Overrides, each checked by locus:
 | `roman-pre-1955-sanctoral-body-forms` | complete | form 327 |
 | `roman-pre-1955-sanctoral-printed-slots` | complete | slot 2130 |
 | `roman-pre-1955-sanctoral-form-referrals` | partial | referral 224 |
-| `roman-pre-1955-sanctoral-preface-appointments` | complete | slot 56 |
+| `roman-pre-1955-sanctoral-preface-appointments` | complete | slot 57 |
 | `roman-pre-1955-purification-rite` | complete | rite 1, rite-unit 3, slot 15 |
 | `roman-pre-1955-sanctoral-post-1922-additions` | complete | form 13, slot 126 (121 role, 5 Preface) |
 | `roman-pre-1955-sanctoral-referrals-post-1922-additions` | partial | referral 4 |
@@ -1519,7 +1525,7 @@ separately and must never be summed into a text total:
 | `body-marian-saturday-slots` | partial | slot 51, referral 6 |
 | `body-commons-forms-post-1922-additions` | complete | form 1, prayer-set 2 |
 | `body-commons-slots-post-1922-additions` | partial | slot 15, referral 1 |
-| `body-votives-forms` | complete | form 24, prayer-set 11 |
+| `body-votives-forms` | complete | form 26, prayer-set 9 |
 | `body-votives-slots` | partial | slot 323, referral 24 |
 | `body-votives-forms-post-1922-additions` | complete | form 1 |
 | `body-votives-slots-post-1922-additions` | partial | slot 12, referral 1 |
@@ -1605,7 +1611,7 @@ marginal unit numbers, so there is no analogue of the 1962 4175–5190 audit.
 | 1113, 1115 | holy water, then *Benedictiones diversae*; candles, then the episcopal blessings |
 | 1117 / 1118, 1122 | tabernacle blessing, then *Forma Confirmationis*; *Appendix* of Pontifical orations |
 | 1124 / 1125 | reconciliation prayers end; *Missae pro aliquibus locis* opener |
-| 1209 | Miraculous Medal ends; *Commune Sanctorum pro aliquibus locis* on the same page |
+| 1208/1209 | Miraculous Medal ends on p. 1208; *Commune Sanctorum pro aliquibus locis* opens on p. 1209 |
 | 1220 | last page of the artifact, ending with an ornament; no index follows |
 
 #### Comparison with Mame 1922
@@ -1626,7 +1632,7 @@ images.
 | Eucharistici Cordis Jesu (local) | pp. 1165–1167 [199]–[201] | absent from the *In honorem D. N. J. C.* section and from index i | not established |
 | S. Pii X (local) | pp. 1189–1191 [223]–[225] | absent from index k–l | 1954, as stated by the registered Bonn artifact record |
 
-Seven identities in this extent are printed in Mame 1922 but not in Bonn's
+Four identities in this extent are printed in Mame 1922 but not in Bonn's
 pp. 967–1220. They are reported here, not added as rows:
 
 - *Missa propria Sacratissimi Cordis Jesu* (*Egredimini*), Mame [3]–[4].
@@ -1649,11 +1655,14 @@ Everything else matches at identity level:
   heading in Mame's index except the High Priest. Those are the 24 Bonn votive
   forms and the consecration, ordination, Holy Spirit and thanksgiving prayer
   sets.
-- Prayers: Orationes diversae 1–35 and Orationes pro Defunctis 1–17.
-- Rites: the absolution, the holy-water *Ordo*, and the Easter-lamb and candle
-  blessings.
-- Local propers: 55 of the 57 local Masses, and all six local Commons. Mame
-  prints the same *juxta decretum S. R. C. diei 22 Maji 1914* heading.
+Everything else in the extent matches at identity level:
+
+- prayers: Orationes diversae 1–35 and Orationes pro Defunctis 1–17;
+- rites: the absolution, the holy-water *Ordo*, and the Easter-lamb and candle
+  blessings;
+- local propers: 55 of Mame's 59 local Masses (its index lists 10 + 21 + 28,
+  less the four above), and all six local Commons. Mame prints the same *juxta
+  decretum S. R. C. diei 22 Maji 1914* heading.
 
 Mame prints the Mediatrix Mass as an appendix at [94]–[96]; Bonn puts it at
 31 May.
@@ -1713,6 +1722,60 @@ local supplement. Bonn prints that Mass at p. 856, in the Proper of Saints, and
 this extent contains no Immaculate Heart Mass. The record needs correcting. A
 negative found only in the Mame OCR was always rechecked on Mame page images
 or in its printed index.
+
+### Independent review of the pre-1955 whole-book boundaries
+
+On 19 October 2026 an independent reviewer compared the pre-1955 targets with
+the witness. It used three self-derived checks over the typeset layer:
+
+- 946 bold and large heading clusters;
+- 418 Introit markers;
+- 395 date headings and 274 rank lines.
+
+It also checked the Kalendarium against the sanctoral, and viewed 151 Bonn page
+images (a seeded stratified sample of 62, every disagreement, the Kalendarium
+and the whole Preface section) and 31 Mame page images.
+
+It found no missing and no phantom formulary heading, and exactly fifteen
+Preface identities: 14 solemn, 15 ferial and 15 spoken headings, with every
+Preface appointment naming one of them. *Vere dignum* outside the Preface
+section occurs only in Holy Week rite texts: the palm blessing (p. 277), the
+Exsultet (p. 338) and the font blessing (p. 359).
+
+Corrections applied:
+
+- two votive referral headings (pp. 1065, 1075) are now `form`;
+- the two 3 May companion commemorations are merged into one;
+- Margaret Mary's Kalendarium row (10-17) moves to the post-1922 additions,
+  because Mame has Hedwig on 10-17 and Margaret Mary only in its local
+  supplement;
+- Hedwig's date move is recorded;
+- an Apostles' Preface appointment printed mid-line on p. 613 is added;
+- two locators move from p. 572 to p. 573.
+
+The whole-book **form** and **Preface** boundaries are therefore retired. The
+pre-1955 Mass-formulary denominator is 604 `form` rows across the temporal,
+sanctoral, Commons, Marian Saturday, votive, dead, local-proper and local-Common
+slices. The 23 preparation and thanksgiving entries share the kind but are not
+formularies. Celebration, commemoration, Common, Ordinary-option,
+exceptional-rite and text-slot boundaries stay `unenumerated`, each with a
+specific basis:
+
+- the body prints identities the Kalendarium omits;
+- occurrence-dependent commemorations are not enumerated;
+- inline directions outside the temporal are not enumerated;
+- rites referred to the Rituale or Pontificale are not enumerated;
+- the body slot slices are partial. The p. 613 miss shows that mid-line markers
+  can escape the line-start method.
+
+The review left these limits:
+
+- no wording collation;
+- no correspondence of this conformed printing to the 1920 typical edition;
+- a residual risk of a heading that escaped every check on an unviewed page,
+  since Bonn prints no index;
+- for 7 May to 10 July, Mame-side absence rests on its Proprium and index,
+  because its Kalendarium leaf is missing from the scan.
 
 ## Retrieval bounds and remaining work
 

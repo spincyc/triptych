@@ -50,8 +50,9 @@ ASSERTION_COUNTS = {
     "day_reader_choices_browser.mjs": 8,
     # 45 declared at eeb17891d (the recorded 43 had drifted; a source-only run
     # executes 44 because one check needs the preview build) plus six C2
-    # claim-local checks (G9-G13, G17).
-    "day_reader_integration_browser.mjs": 51,
+    # claim-local checks (G9-G13, G17), plus the C2 G5-G8 Pentecost
+    # appointment check (2026-10-19).
+    "day_reader_integration_browser.mjs": 52,
     "liturgy_reader_shell_browser.mjs": 18,
     "liturgy_reader_visual_reset_browser.mjs": 26,
     # Plus the C2 G9 both-entrances Bible-reconstruction claim check.

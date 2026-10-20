@@ -70,7 +70,22 @@
    * list is retained for old consumers, but it is never a selection mechanism:
    * a multi-form Mass must carry the additive ordered `forms` manifest.
    */
-  function properFormSelection(mass, request) {
+  /**
+   * The forms a Day may offer on the formulary's own date.  A form its book
+   * says is celebrated on the evening BEFORE (`celebrated.when`, the vigil
+   * Mass of a solemnity: Normae universales n. 11 and the Missal's rubric at
+   * the vigil itself) is not a coequal choice on the solemnity's date, so the
+   * Day entrance leaves it out there; it stays reachable by an explicit form.
+   * The Propers entrance is date-independent and offers every form.
+   */
+  function dayOfferedForms(forms) {
+    const own = forms.filter(function (form) {
+      return !(form.celebrated && form.celebrated.when === 'evening-before');
+    });
+    return own.length ? own : forms;
+  }
+
+  function properFormSelection(mass, request, dayEntrance) {
     const flat = (mass.propers || []).map(function (proper, sourceIndex) {
       return { proper: proper, sourceIndex: sourceIndex };
     });
@@ -141,6 +156,14 @@
     const wanted = hasOwn(request, 'form') ? request.form : null;
     if (wanted !== null && ids.indexOf(wanted) < 0) {
       throw new Error('unsupported form; valid form ids: ' + ids.join(', '));
+    }
+    const offered = dayEntrance ? dayOfferedForms(forms) : forms;
+    if (wanted === null && offered.length === 1 && forms.length > 1) {
+      const only = offered[0];
+      return {
+        id: only.id, rows: rowsById.get(only.id), choice: null, forms: forms,
+        form: only, appointedBy: 'celebrated'
+      };
     }
     if (wanted === null && forms.length > 1) {
       const choiceId = 'proper-form:' + request.edition.id + '/' + mass.key;
@@ -697,6 +720,29 @@
       availability: 'unavailable',
       text: null
     };
+  }
+
+  /**
+   * The formulary's own printed Ordinary appointments, for the seating's
+   * appointment context.  A form's rows replace the Mass's by variable.  A
+   * feria that BORROWS a formulary takes none of them: the proper
+   * Communicantes is said "suo loco in propriis Missis" (RGMR 501) and the
+   * Epiphany form "in festo tantum", so the borrowed day falls through to the
+   * dated spans and defaults the Ordinary declares.
+   */
+  function formularyAppointments(mass, form, winner) {
+    const borrowed = Boolean(winner && winner.formulary &&
+      winner.formulary.kind === 'borrowed' && winner.formulary.key === mass.key);
+    if (borrowed) return {};
+    const held = {};
+    [mass && mass.ordinary_appointments, form && form.ordinary_appointments].forEach(
+      function (rows) {
+        Object.keys(rows || {}).forEach(function (variable) {
+          const row = rows[variable];
+          if (row && typeof row.option === 'string') held[variable] = row.option;
+        });
+      });
+    return held;
   }
 
   function ordinarySelections(ordinary, request) {
@@ -1800,7 +1846,7 @@
     if (!readable) throw new Error('Day branch has no deterministic or explicitly selected formulary');
     const mass = (input.structure.masses || []).find(function (one) { return one.key === readable.key; });
     if (!mass) throw new Error('resolved Day formulary is absent from the selected edition structure');
-    const formSelection = properFormSelection(mass, request);
+    const formSelection = properFormSelection(mass, request, true);
     if (formSelection.choice) {
       if (request.languages && (request.languages.translationWitness ||
           request.languages.ordinaryWitness)) {
@@ -1824,7 +1870,10 @@
       mass, formSelection.rows, adaptedRequest, input.structure, ordinary, 'day',
       Seating.predicateFacts({
         settled: branch.settled, weekday: derived.weekday,
-        season: derived.season, nature: branch.winner && branch.winner.nature
+        season: derived.season, nature: branch.winner && branch.winner.nature,
+        date: derived.date,
+        anchors: derived.liturgicalYear && derived.liturgicalYear.anchors || null,
+        appointments: formularyAppointments(mass, formSelection.form, branch.winner)
       })
     );
     const events = seated.events;
@@ -2152,7 +2201,7 @@
       return one.key === mass.key;
     });
     if (!generatedMass) throw new Error('mass-today parity requires the matching generated formulary');
-    const formSelection = properFormSelection(generatedMass, request);
+    const formSelection = properFormSelection(generatedMass, request, true);
     if (formSelection.choice) {
       if (request.languages && (request.languages.translationWitness ||
           request.languages.ordinaryWitness)) {
@@ -2251,7 +2300,12 @@
         Seating.predicateFacts({
           settled: branch.settled, weekday: input.derived.weekday,
           season: input.derived.season,
-          nature: branch.winner && branch.winner.nature
+          nature: branch.winner && branch.winner.nature,
+          date: input.derived.date,
+          anchors: input.derived.liturgicalYear &&
+            input.derived.liturgicalYear.anchors || null,
+          appointments: formularyAppointments(
+            generatedMass, formSelection.form, branch.winner)
         })
       );
       ordinaryUnresolved = resolution.unresolved;

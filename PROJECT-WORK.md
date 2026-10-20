@@ -21,7 +21,8 @@ milestones. Existing ritual-flow and historical acceptance records retain
 their scope.
 
 **Complete on `feature/missal-reader`; no production deployment.** Every C1
-requirement passes. The maintainer made three decisions on 2026-10-19, recorded
+requirement passes. Completion was published as `ec0816c59`, and the remote
+`feature/missal-reader` ref was verified to match it. The maintainer made three decisions on 2026-10-19, recorded
 in the roadmap's C1 status:
 
 - **1920 witness.** The circulating "1920 typical edition" files are public
@@ -229,8 +230,11 @@ Remaining:
 
 <!-- promised-deliverable: missal-reader-c2-exemplars-2026-10-19 -->
 
-The same request starts C2. **In progress: exemplars chosen; steps 1 (truthful accounting) and 4
-(claim-local truth) implemented.** A read-only real-browser audit chose Pentecost Sunday,
+The same request starts C2. **In progress: exemplars chosen; steps 1 (truthful accounting), 3
+(appointments and sequence) and 4 (claim-local truth) implemented.** Step 3 has
+one visible consequence: most days other than Pentecost now show a typed
+Preface stand-in instead of every Preface unmarked, until their printed Preface
+directions are joined. That join is the next priority. A read-only real-browser audit chose Pentecost Sunday,
 2026-05-24, for all three missals and audited every unit against the six-part
 pattern. The pre-1955 audit is provisional until its witness inventory lands.
 It found 22 gaps, now recorded in the

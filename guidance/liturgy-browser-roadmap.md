@@ -379,8 +379,32 @@ regression before the next begins:
    - giving the Cummiskey and Lasance rows the same evidenced antecedent
      relation as Caswall;
 2. the expected-target join (G4), after the pre-1955 inventory lands;
-3. the appointment and sequence model (G5–G8); a proper Ordinary variable that
-   is not held seats a typed absence, never the common form;
+3. the appointment and sequence model (G5–G8), implemented 2026-10-19:
+   - The Preface, Communicantes, Hanc igitur and postconciliar dismissal are
+     `[[appointments]]` in the Ordinary inventories, and formularies record
+     their printed direction as `ordinary_appointments`.
+   - Resolution takes the formulary's direction, then a stated span, then a
+     sourced default. Otherwise a typed stand-in is shown, never the common
+     form.
+   - 1962 and pre-1955 Pentecost seat exactly the Holy Spirit Preface, with
+     typed proper Communicantes and Hanc igitur absences (RGMR 482/493/501;
+     Canon nn. 1093–1099; Bonn pp. 336–337).
+   - The 1962 frame excludes the second-Postcommunion regime and Et famulos
+     (Ordo nn. 1113–1139).
+   - Pre-1955 seasonal orations are not said outside their rubrical windows.
+   - The postconciliar frame seats the Sequence (IGMR 64).
+   - On a solemnity's own date the Day takes its Day form; the Vigil is for the
+     evening before (Missal 2002 p. 265; NUALC 11).
+   Follow-ups:
+   - Only Pentecost formularies record a Preface direction yet, so most other
+     days show the typed Preface stand-in until the roughly 216 printed 1962
+     directions held in the expected-target rows are joined. This is the next
+     priority.
+   - Placing a vigil on the preceding civil date needs `calendar-days` support.
+   - The postconciliar proper Communicantes for Eucharistic Prayer I is not
+     modelled.
+   - Whether the pre-1955 frame carries the 1861 book's *Et famulos* is
+     undecided;
 4. claim-local truth in both entrances (G9–G13, G17), implemented 2026-10-19.
    Both entrances state each unit's claim from its coverage record:
    - a Bible-reconstructed unit carries one quiet "Bible reconstruction ·

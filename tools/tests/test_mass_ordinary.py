@@ -167,8 +167,14 @@ class OrdinaryStructure(unittest.TestCase):
                 3, "rights-restricted", "rights-withheld"
             ),
             "antecedent-held-not-carried": (1, "unavailable", "witness-gap"),
+            # 2026-10-19 (C2 G5): the appointed Pentecost Preface and paschal
+            # dismissal stand-ins add two English rights absences and two
+            # Latin publication-unresolved absences.
+            "appointed-text-printed-with-formulary": (
+                2, "unresolved", "rights-unresolved"
+            ),
             "approved-english-publication-restriction": (
-                25, "rights-restricted", "rights-withheld"
+                27, "rights-restricted", "rights-withheld"
             ),
             "editio-typica-new-matter": (
                 13, "rights-restricted", "rights-withheld"
@@ -193,16 +199,19 @@ class OrdinaryStructure(unittest.TestCase):
             self.assertEqual(set(absence), {"key", "count", "state", "kind"})
             self.assertEqual(
                 absence["state"],
-                "rights-restricted"
-                if absence["kind"] == "rights-withheld"
-                else "unavailable",
+                {
+                    "rights-withheld": "rights-restricted",
+                    "rights-unresolved": "unresolved",
+                }.get(absence["kind"], "unavailable"),
             )
         affected = [
             element for element in elements(file)
             if element["absent"]["english"]
             == "approved-english-publication-restriction"
         ]
-        self.assertEqual(len(affected), 25)
+        # 27 since 2026-10-19 (C2 G5): the appointed Pentecost Preface and
+        # paschal dismissal stand-ins carry the same English restriction.
+        self.assertEqual(len(affected), 27)
         for element in affected:
             self.assertFalse(
                 any(row["lang"] == "en" for row in (element["translations"] or [])),
@@ -210,15 +219,16 @@ class OrdinaryStructure(unittest.TestCase):
             )
 
         languages = {one["lang"]: one for one in file["languages"]}
+        # 61 elements since 2026-10-19 (C2 G5: two appointed stand-ins).
         self.assertEqual((languages["en"]["held"], languages["en"]["elements"]),
-                         (0, 59))
+                         (0, 61))
         self.assertEqual((languages["la"]["held"], languages["la"]["elements"]),
-                         (20, 59))
-        self.assertEqual(languages["en"]["elements"] - languages["en"]["held"], 59)
-        self.assertEqual(languages["la"]["elements"] - languages["la"]["held"], 39)
+                         (20, 61))
+        self.assertEqual(languages["en"]["elements"] - languages["en"]["held"], 61)
+        self.assertEqual(languages["la"]["elements"] - languages["la"]["held"], 41)
         held_elements = [one for one in elements(file) if one["translations"]]
         wholly_absent = [one for one in elements(file) if not one["translations"]]
-        self.assertEqual((len(held_elements), len(wholly_absent)), (20, 39))
+        self.assertEqual((len(held_elements), len(wholly_absent)), (20, 41))
 
         self.assertEqual(len(source["witnesses"]), 1)
         self.assertEqual(source["witnesses"][0]["lang"], "la")
@@ -227,6 +237,9 @@ class OrdinaryStructure(unittest.TestCase):
             {
                 "model-gap", "no-exemplar", "not-applicable", "outside-layer",
                 "rights-withheld", "witness-gap",
+                # 2026-10-19 (C2 G5): a formulary's appointed Preface and
+                # dismissal, whose publication basis is not established.
+                "rights-unresolved",
             },
         )
         self.assertFalse(any("english" in element
@@ -364,21 +377,24 @@ class OrdinaryStructure(unittest.TestCase):
         self.assertEqual(
             {row["key"]: row["count"] for row in roman["absences"]},
             {
+                "appointment-not-established": 6,
                 "no-facing-latin": 8,
-                "not-in-the-1962-ordo": 2,
-                "witness-own-english": 67,
+                "not-in-the-1962-ordo": 0,
+                "preface-not-in-witness": 2,
+                "proper-canon-form-not-held": 12,
+                "witness-own-english": 63,
             },
         )
-        self.assertEqual(sum(row["count"] for row in roman["absences"]), 77)
+        self.assertEqual(sum(row["count"] for row in roman["absences"]), 91)
         by_key = {element["key"]: element for element in elements(roman)}
         self.assertEqual(
             by_key["oblatio/accendat-in-nobis"]["absent"]["latin"],
             "no-facing-latin",
         )
-        self.assertEqual(
-            by_key["conclusio/postcommunio-mundet"]["absent"]["latin"],
-            "not-in-the-1962-ordo",
-        )
+        # 2026-10-19 (C2 G6): both not-in-the-1962-ordo orations are excluded,
+        # so the class now accounts only for source rows, not emitted elements.
+        self.assertNotIn("conclusio/postcommunio-mundet", by_key)
+        self.assertNotIn("conclusio/et-famulos", by_key)
         self.assertEqual(
             by_key["praefatio/rubrica-nota-asterisci"]["absent"]["latin"],
             "witness-own-english",
@@ -387,7 +403,13 @@ class OrdinaryStructure(unittest.TestCase):
         pre = self.files["roman-pre-1955"]
         self.assertEqual(
             {row["key"]: row["count"] for row in pre["absences"]},
-            {"no-facing-latin": 83},
+            # 2026-10-19 (C2 G5): the recension's own appointment stand-ins.
+            {
+                "appointment-not-established": 6,
+                "no-facing-latin": 83,
+                "preface-not-in-witness": 2,
+                "proper-canon-form-not-held": 12,
+            },
         )
 
     def test_only_the_postconciliar_missal_offers_bounded_choices(self) -> None:
@@ -847,11 +869,19 @@ class OrdinaryTool(unittest.TestCase):
         self.assertEqual(
             [(one["lang"], one["held"], one["missing"])
              for one in roman["language_coverage"]],
-            [("en", 189, 0), ("la", 112, 77)],
+            [("en", 184, 10), ("la", 113, 81)],
         )
         self.assertEqual(
             [one["key"] for one in roman["exclusions"]],
             [
+                # 2026-10-19 (C2 G6): the second-Postcommunion regime and the
+                # added prayer Et famulos, on the verified 1962 Ordo passages.
+                "conclusio/et-famulos",
+                "conclusio/oratio-et-famulos-heading",
+                "conclusio/postcommunio-mundet",
+                "conclusio/rubrica-oratio-addita",
+                "conclusio/rubrica-postcommunio-paschalis",
+                "conclusio/rubrica-postcommunio-secunda",
                 "oblatio/a-cunctis",
                 "oblatio/nota-incarnationis",
                 "oblatio/rubrica-collecta-concede",
@@ -1729,10 +1759,19 @@ process.stdout.write(JSON.stringify({
         digest = hashlib.sha256(
             json.dumps(sequence, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
         ).hexdigest()
-        self.assertEqual(len(sequence), 205)
+        # Re-pinned 2026-10-19 (C2 gaps G5 and G6), diffed against the HEAD
+        # ec0816c59 harness: exactly 30 events left Pentecost X and one entered.
+        # The 25 Preface rows the 1861 witness prints (eleven Prefaces with
+        # their headings and notes) give way to the one typed stand-in
+        # praefatio/praefatio-diei, since no formulary, span or default yet
+        # appoints that Sunday's Preface; the Sanctus stays. The six conclusio
+        # rows of the second-Postcommunion regime and Et famulos are excluded.
+        # Every other event, and the common Communicantes and Hanc igitur, is
+        # unchanged and in the same order.
+        self.assertEqual(len(sequence), 175)
         self.assertEqual(
             digest,
-            "e43b1727e55428383661223497fcdc5e492026df58c00be90f16df023411cf8d",
+            "25826827edcaaf20007e8a80c69ed53c8c659de9c766780e0b201a954d07dc8e",
         )
 
         sequence = report["ot_18_sequence"]
@@ -1769,10 +1808,13 @@ process.stdout.write(JSON.stringify({
         # Re-pinned 2026-10-19 (C2 gap G3): only the Collect, Secret and
         # Postcommunion English absences of Pentecost X changed state, from
         # rights-restricted to unavailable; count and order are unchanged.
+        # Re-pinned 2026-10-19 (C2 gaps G5 and G6): the same 30 removals and
+        # one typed stand-in as the sequence pin above, diffed against HEAD
+        # ec0816c59; every retained event's received text is byte-identical.
         expected = {
             "pentecost_10_text": (
-                205,
-                "30d20acee086f4d87398e3d36f488bab7f509a8114ba1c296a6ec1b959835888",
+                175,
+                "ddfa9e794021e74244bca4bc5cb585d6cca9f9521fb9bb74a654521e302ee016",
             ),
             "ot_18_text": (
                 67,
@@ -1816,7 +1858,8 @@ process.stdout.write(JSON.stringify({
             "oblatio/credo-in-unum-deum",
             "Offertory",
             "Secret",
-            "praefatio/praefatio-communis",
+            # No formulary appointment for Easter Sunday is recorded yet, so
+            # its Preface is the typed stand-in, not the common Preface.
             "praefatio/sanctus",
             "canon/te-igitur",
             "canon/forma-corporis",
@@ -1897,12 +1940,14 @@ process.stdout.write(JSON.stringify({
         self.assertEqual(
             [one["held"] for one in report["languages"]["postconciliar"]], [0, 20])
         self.assertEqual(
-            [one["held"] for one in report["languages"]["roman-1962"]], [189, 112])
+            [one["held"] for one in report["languages"]["roman-1962"]], [184, 113])
         # The Latin the 1962 file does not hold is exactly the elements the
-        # preamble's three reasons partition; the next test asserts those counts
-        # from the other side.
+        # preamble's reasons partition; the next test asserts those counts from
+        # the other side. Since 2026-10-19 (C2 G5/G6): six more source rows are
+        # excluded, ten text-free appointment stand-ins are inserted, and the
+        # Sanctus after a proper Preface is a second occurrence of its row.
         elements = report["languages"]["roman-1962"][1]["elements"]
-        self.assertEqual(elements - 112, 77)
+        self.assertEqual(elements - 113, 81)
 
         pater = report["kyrie_in_each"]
         self.assertNotIn("Our Father, who art in heaven", pater["en"])
@@ -1956,11 +2001,14 @@ process.stdout.write(JSON.stringify({
         report = self.run_harness()
         preamble = report["preamble_1962"]
         self.assertIn("no-facing-latin", preamble)
-        self.assertIn("8 of 189 elements", preamble)
+        self.assertIn("8 of 194 elements", preamble)
         self.assertIn("not-in-the-1962-ordo", preamble)
-        self.assertIn("2 of 189 elements", preamble)
+        self.assertIn("0 of 194 elements", preamble)
         self.assertIn("witness-own-english", preamble)
-        self.assertIn("67 of 189 elements", preamble)
+        self.assertIn("63 of 194 elements", preamble)
+        self.assertIn("appointment-not-established6 of 194 elements", preamble)
+        self.assertIn("proper-canon-form-not-held12 of 194 elements", preamble)
+        self.assertIn("preface-not-in-witness2 of 194 elements", preamble)
         self.assertNotIn("undefined", preamble)
         self.assertIn("no-facing-latin", report["accendat_in_each"]["la"])
         self.assertNotIn("no-facing-latin", report["te_igitur_in_each"]["la"])
@@ -2698,13 +2746,32 @@ function dialogueReport(rendered) {
 /* The frame with a real formulary poured into it, as one flat sequence: a
    proper by its name, an element by its key. This is what the page renders, in
    the order it renders it. */
-function pour(file, calendar, key, formId) {
+/* The Day's appointment context for one formulary on one civil date, built
+   exactly as reader-state-adapters builds it: the formulary's own printed
+   Ordinary appointments (the form's replacing the Mass's), the date and the
+   owning liturgical year's anchors from the tracked calendar layer. */
+function dayPredicates(calendar, mass, form, date) {
+  const year = read('src/web/data/structure/calendar/' + calendar + '/' +
+    date.slice(0, 4) + '.json');
+  const owner = year.liturgical_years.find((one) => one.begins <= date && date <= one.ends);
+  const appointments = {};
+  [mass.ordinary_appointments, form && form.ordinary_appointments].forEach((rows) => {
+    Object.keys(rows || {}).forEach((variable) => { appointments[variable] = rows[variable].option; });
+  });
+  return global.window.OrdinarySeating.predicateFacts({
+    date: date, anchors: owner && owner.anchors || null, appointments: appointments
+  });
+}
+function pour(file, calendar, key, formId, date) {
   const mass = read('src/web/data/structure/propers/' + calendar + '.json')
     .masses.find((m) => m.key === key);
   const form = formId && (mass.forms || []).find((one) => one.id === formId);
   if (formId && !form) throw new Error('missing stable form ' + key + '/' + formId);
   const propers = form ? form.propers : mass.propers;
-  const frame = P.shownElements(file);
+  const frame = date
+    ? global.window.OrdinarySeating.resolveElements(
+      file, {}, dayPredicates(calendar, mass, form, date)).shown
+    : P.shownElements(file);
   const placed = P.seatPropers(propers || [], P.seats(file, frame));
   const events = P.massEvents(frame, placed);
   const out = [];
@@ -2774,13 +2841,13 @@ const MARKS = new Set(['praeparatio/kyrie-eleison', 'praeparatio/gloria-in-excel
   'canon/te-igitur', 'canon/forma-corporis', 'canon/forma-sanguinis',
   'communio/pater-noster', 'communio/agnus-dei',
   'conclusio/dominus-vobiscum-ite-missa-est']);
-const easter = pour(tlm, 'roman-1962', 'easter-sunday');
-const pentecost10 = pour(tlm, 'roman-1962', 'pentecost-10');
-const ot18 = pour(pc, 'postconciliar', 'ot-18');
+const easter = pour(tlm, 'roman-1962', 'easter-sunday', null, '2026-04-05');
+const pentecost10 = pour(tlm, 'roman-1962', 'pentecost-10', null, '2026-08-02');
+const ot18 = pour(pc, 'postconciliar', 'ot-18', null, '2026-08-02');
 const nativity = ['vigil', 'night', 'dawn', 'day'].map((id) => ({
-  id: id, result: pour(pc, 'postconciliar', 'nativity', id)
+  id: id, result: pour(pc, 'postconciliar', 'nativity', id, '2026-12-25')
 }));
-const collect = pour(pc, 'postconciliar', 'easter-sunday').order;
+const collect = pour(pc, 'postconciliar', 'easter-sunday', null, '2026-04-05').order;
 const seat = collect.indexOf('ritus-initiales/collecta');
 
 /* The same element read in each language the file declares, which is what the

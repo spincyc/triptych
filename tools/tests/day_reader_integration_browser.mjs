@@ -311,7 +311,9 @@ const STATES = Object.freeze({
   pentecost1962English: hash({ date: '2026-05-24', missal: 'roman-1962', bible: 'douay-rheims', orations: 'en', mass: 'pentecost' }),
   pentecost1962Missal: hash({ date: '2026-05-24', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'pentecost', ordinary: '1', 'ordinary-lang': 'en', rubrics: '1', why: '0' }),
   pentecostPostDayEnglish: hash({ date: '2026-05-24', missal: 'postconciliar', bible: 'douay-rheims', orations: 'en', mass: 'pentecost', form: 'day' }),
-  pentecostPre1955: hash({ date: '2026-05-24', missal: 'roman-pre-1955', bible: 'douay-rheims', orations: 'la', mass: 'pentecost' })
+  pentecostPre1955: hash({ date: '2026-05-24', missal: 'roman-pre-1955', bible: 'douay-rheims', orations: 'la', mass: 'pentecost' }),
+  pentecostPre1955Missal: hash({ date: '2026-05-24', missal: 'roman-pre-1955', bible: 'douay-rheims', orations: 'la', mass: 'pentecost', ordinary: '1', 'ordinary-lang': 'en', rubrics: '1', why: '0' }),
+  pentecostPostDefaultMissal: hash({ date: '2026-05-24', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', ordinary: '1', 'ordinary-lang': 'en', rubrics: '1', why: '0' })
 });
 
 const DUPLICATE_ORDINARY_STATES = Object.freeze({
@@ -1442,7 +1444,10 @@ async function runAssertions(cdp, base) {
 
   await test('both editions preserve production event order and seat every appointed Proper once', async () => {
     const cases = [
-      [STATES.romanMissal, 205, 6, 189, 10, 'proper/roman-1962/pentecost-10/010'],
+      // 2026-10-19 (C2 G5/G6): Pentecost X shows one Preface stand-in for
+      // the 25 unappointed Preface rows and loses the six excluded
+      // second-Postcommunion and Et famulos rows.
+      [STATES.romanMissal, 175, 6, 159, 10, 'proper/roman-1962/pentecost-10/010'],
       [STATES.postMissal, 58, 7, 41, 10, 'proper/postconciliar/advent-1/010']
     ];
     for (const [state, total, sections, ordinary, propers, lastProper] of cases) {
@@ -1549,24 +1554,30 @@ async function runAssertions(cdp, base) {
       ...Array.from({ length: 10 }, (_row, index) =>
         'proper/postconciliar/pentecost/' + String(index + 17).padStart(3, '0'))
     ];
+    // 2026-10-19 (C2 G7): IGMR 64 seats the Sequence before the Alleluia, so
+    // the Day form takes the full frame and every Proper is seated in order.
+    const properIds = pentecost.eventIds.filter(id => id.startsWith('proper'));
     assert.equal(pentecost.outcome, 'unresolved');
     assert.equal(pentecost.mode, 'missal');
     assert.equal(pentecost.formulary, 'pentecost');
     assert.equal(pentecost.form, 'day');
-    assert.deepEqual(pentecost.eventIds, pentecostIds);
-    assert.deepEqual(pentecost.domIds, pentecostIds);
-    assert.deepEqual(pentecost.eventKinds,
-      ['proper-choice', ...Array.from({ length: 10 }, () => 'proper')]);
-    assert.ok(pentecost.seats.every(row => row === null));
-    assert.equal(pentecost.ordinaryEvents, 0);
-    assert.equal(pentecost.ordinaryDom, 0);
-    assert.match(pentecost.frameLimitation, /Ordinary frame is unavailable/i);
-    assert.match(pentecost.frameLimitation, /source order.*not invented/is);
-    assert.equal(pentecost.frame.state, 'unavailable');
-    assert.equal(pentecost.frame.scope, 'ordinary-frame:postconciliar');
-    assert.deepEqual(pentecost.frame.reasons.map(row => [row.kind, row.applicability]),
-      [['text-not-held', 'unavailable']]);
-    assert.ok(pentecost.frame.reasons[0].basis.trim().length > 0);
+    assert.deepEqual(properIds, pentecostIds);
+    assert.deepEqual(pentecost.domIds, pentecost.eventIds);
+    assert.ok(pentecost.seats.every(row => row && row.id && row.placement === 'seated'));
+    assert.ok(pentecost.ordinaryEvents > 0);
+    assert.ok(pentecost.ordinaryDom > 0);
+    assert.equal(pentecost.frameLimitation, '');
+    assert.ok(!pentecost.frame || pentecost.frame.state !== 'unavailable');
+    const at = (id) => pentecost.eventIds.indexOf(id);
+    assert.ok(at('proper/postconciliar/pentecost/020') < at('proper/postconciliar/pentecost/021'));
+    assert.ok(at('proper/postconciliar/pentecost/021') <
+      at('ordinary-element/liturgia-verbi/acclamatio-ante-evangelium'));
+    assert.ok(at('ordinary-element/liturgia-verbi/acclamatio-ante-evangelium') <
+      at('proper/postconciliar/pentecost/022'));
+    assert.ok(at('ordinary-element/prex-eucharistica/praefatio-appointed') > 0);
+    assert.equal(at('ordinary-element/prex-eucharistica/praefatio'), -1);
+    assert.ok(at('ordinary-element/ritus-conclusionis/dimissio-appointed') > 0);
+    assert.equal(at('ordinary-element/ritus-conclusionis/dimissio'), -1);
     assert.deepEqual(pentecost.choice, {
       id: 'proper-choice/postconciliar/pentecost/day/entrance-antiphon',
       group: 'entrance-antiphon',
@@ -1585,10 +1596,6 @@ async function runAssertions(cdp, base) {
       members: ['proper/postconciliar/pentecost/015', 'proper/postconciliar/pentecost/016'],
       note: 'The source appoints one of these alternatives here. None is selected; the option groups below are not cumulative.'
     });
-    assert.ok(pentecost.eventIds.indexOf('proper/postconciliar/pentecost/020') <
-      pentecost.eventIds.indexOf('proper/postconciliar/pentecost/021'));
-    assert.ok(pentecost.eventIds.indexOf('proper/postconciliar/pentecost/021') <
-      pentecost.eventIds.indexOf('proper/postconciliar/pentecost/022'));
 
     await navigateCandidate(cdp, base, STATES.romanEmberLongerMissal);
     const ember = await evaluate(cdp, `(() => {
@@ -1637,13 +1644,48 @@ async function runAssertions(cdp, base) {
     ]);
   });
 
+  await test('C2 G5-G8: Pentecost seats exactly its appointed Ordinary variables in all three missals', async () => {
+    const read = () => evaluate(cdp, `(() => ({
+      outcome: dayReaderDebug.outcome,
+      form: dayReaderDebug.semantic && dayReaderDebug.semantic.resolved.form || null,
+      ids: dayReaderDebug.semantic ? dayReaderDebug.semantic.events.map(row => row.id) : [],
+      text: document.querySelector('#reader-document').innerText
+    }))()`);
+    for (const state of [STATES.pentecost1962Missal, STATES.pentecostPre1955Missal]) {
+      await navigateCandidate(cdp, base, state);
+      const day = await read();
+      const prefaces = day.ids.filter(id => /^ordinary-element\/praefatio\/praefatio/.test(id));
+      assert.deepEqual(prefaces, [
+        'ordinary-element/praefatio/praefatio-de-spiritu-sancto-heading',
+        'ordinary-element/praefatio/praefatio-de-spiritu-sancto'
+      ]);
+      assert.ok(day.ids.includes('ordinary-element/canon/communicantes-pentecoste'));
+      assert.ok(day.ids.includes('ordinary-element/canon/hanc-igitur-pascha-pentecoste'));
+      assert.ok(!day.ids.includes('ordinary-element/canon/communicantes'));
+      assert.ok(!day.ids.includes('ordinary-element/canon/hanc-igitur'));
+      assert.ok(!day.ids.includes('ordinary-element/oblatio/a-cunctis'));
+      assert.ok(!day.ids.includes('ordinary-element/conclusio/postcommunio-mundet'));
+      assert.match(day.text, /Withheld under “proper-canon-form-not-held”/);
+    }
+    await navigateCandidate(cdp, base, STATES.pentecostPostDefaultMissal);
+    const post = await read();
+    assert.equal(post.form, 'day');
+    assert.ok(post.ids.includes('ordinary-element/prex-eucharistica/praefatio-appointed'));
+    assert.ok(post.ids.indexOf('proper/postconciliar/pentecost/021') <
+      post.ids.indexOf('ordinary-element/liturgia-verbi/acclamatio-ante-evangelium'));
+  });
+
   await test('valid unavailable language, partial coverage, and typed before-frame rites remain honest', async () => {
     await navigateCandidate(cdp, base, STATES.romanLatinMissal);
     assert.equal(await evaluate(cdp, 'dayReaderDebug.state.languages.ordinary'), 'la');
     const unavailableLatin = await evaluate(cdp,
       'document.querySelector("#reader-document").innerText');
     assert.match(unavailableLatin, /Withheld under “no-facing-latin”/);
-    assert.match(unavailableLatin, /Withheld under “not-in-the-1962-ordo”/);
+    // 2026-10-19 (C2 G6): both not-in-the-1962-ordo orations are excluded,
+    // so that reason no longer stands at any emitted element; the proper
+    // Canon forms' and the unappointed Preface's typed reasons do instead.
+    assert.doesNotMatch(unavailableLatin, /Withheld under “not-in-the-1962-ordo”/);
+    assert.match(unavailableLatin, /Withheld under “appointment-not-established”/);
     assert.match(unavailableLatin, /Withheld under “witness-own-english”/);
     assert.equal(await evaluate(cdp, 'document.querySelector("#coverage-notice").hidden'), false);
     await navigateCandidate(cdp, base, STATES.partial);

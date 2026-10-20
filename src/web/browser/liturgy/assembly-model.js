@@ -1668,7 +1668,12 @@
             begins: owner.begins,
             ends: owner.ends,
             lectionary: owner.lectionary || null,
-            unresolved: calendarRefusals
+            unresolved: calendarRefusals,
+            // The year file's own movable anchors, passed through unchanged so
+            // the Ordinary seating can evaluate a dated span the book states
+            // (a proper Communicantes "a vigilia Pentecostes usque ad sequens
+            // sabbatum") without a second calendar derivation.
+            anchors: owner.anchors || null
           }
         : null,
       territorial: year.territorial || null,

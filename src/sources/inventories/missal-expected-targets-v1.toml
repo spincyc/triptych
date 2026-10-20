@@ -112,7 +112,7 @@ languages = ["la", "en"]
 date_range = "Historical edition snapshot; no civil-year occurrence claim"
 source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920/artifacts/ia-reimpressio-pdf-b676ce5c/artifact.toml", "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ia-scan-pdf-9873693a/artifact.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md", "src/sources/calendars/roman-pre-1955/propers.yaml"]
 enumeration_state = "unresolved"
-basis = "Accounting boundary for the pre-1955 recension. Its witness, accepted by maintainer decision on 2026-10-19, is the registered Bonn 2004 reimpressio of a conformed edition of about 1954 (artifact pp. 1-1220), with the 1922 Mame conformed printing as control. Every artifact page is assigned to a section slice or an explicit extent boundary (seam table in the source review), and identities absent from the 1922 control sit in separate post-1922-additions slices. Whole-book denominators for each dimension await an independent page-image review of the section enumeration, as the 1962 ones did. The positive slices remain subsets at their declared granularity; their union is not a text-slot denominator and this slice has no invented target count."
+basis = "Accounting boundary for the pre-1955 recension. Its witness, accepted by maintainer decision on 2026-10-19, is the registered Bonn 2004 reimpressio of a conformed edition of about 1954 (artifact pp. 1-1220), with the 1922 Mame conformed printing as control. Every artifact page is assigned to a section slice or an explicit extent boundary (seam table in the source review), and identities absent from the 1922 control sit in separate post-1922-additions slices. Mass formularies and Preface identities are enumerated across the whole book, confirmed by an independent page-image review on 2026-10-19. The whole-book Mass-formulary denominator is the form rows of the temporal, sanctoral, body Commons/Marian/votive/dead, local-proper and local-Commons slices, post-1922 slices included (604); the devotional preparation/thanksgiving entries (23) share the kind but are not formularies, and oration-only and rite headings are prayer-set and exceptional-rite rows. The Preface denominator is the 13 rows of roman-pre-1955-prefaces plus the 2 Preface rows of roman-pre-1955-ordinary-post-1922-additions (15); the 1861 Cummiskey slice is other-witness evidence and is never summed with them. Text slots, Ordinary options, celebrations, commemorations, Commons as a kind and exceptional rites are not enumerated across the whole book. The positive slices remain subsets at their declared granularity; their union is not a text-slot denominator and this slice has no invented target count."
 
 [[slices]]
 id = "roman-1962-prefaces"
@@ -783,7 +783,7 @@ languages = ["la", "en"]
 date_range = "Pre-1955 recension as printed in the Bonn reimpressio (conformed c. 1954); post-1922 additions are in separate -post-1922-additions slices; no civil-year occurrence claim"
 source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920/artifacts/ia-reimpressio-pdf-b676ce5c/artifact.toml", "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ia-scan-pdf-9873693a/artifact.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
 enumeration_state = "complete-within-slice"
-basis = "Every dated Kalendarium entry of the Bonn witness, artifact pp. 26-36 (printed 26*-36*), whose identity the Mame 1922 control witness also carries: one celebration per principal clause (vigils included), one commemoration per printed Com. clause, split at ac/et between distinct identities and never within one companion group, and the rankless 12-05 Commemoratio S. Sabbæ. Octave, vigil and feria commemorations are kept as identities, labelled with their bracketed owner. Ten dated Bonn identities with no 1922 counterpart are in the post-1922 additions slice. Movable entries printed inside the months are a separate slice. Labels normalize glyph losses (Purificatio, Transfiguratio, filiorum) and two misprints (Damiani, Alexandri). Mame's Kalendarium leaf for May 7-Jul 10 is missing from its scan; that range was compared against the Mame Proprium Sanctorum instead. Calendar identities only, not formularies, slots or text coverage; no calendar_mass_key joins are asserted."
+basis = "Every dated Kalendarium entry of the Bonn witness, artifact pp. 26-36 (printed 26*-36*), whose identity the Mame 1922 control witness also carries: one celebration per principal clause (vigils included), one commemoration per printed Com. clause, split at ac/et between distinct identities and never within one companion group, and the rankless 12-05 Commemoratio S. Sabbæ. Octave, vigil and feria commemorations are kept as identities, labelled with their bracketed owner. Eleven dated Bonn identities with no 1922 counterpart are in the post-1922 additions slice. Movable entries printed inside the months are a separate slice. Labels normalize glyph losses (Purificatio, Transfiguratio, filiorum) and two misprints (Damiani, Alexandri). Mame's Kalendarium leaf for May 7-Jul 10 is missing from its scan; that range was compared against the Mame Proprium Sanctorum instead. Calendar identities only, not formularies, slots or text coverage; no calendar_mass_key joins are asserted."
 
 [[slices]]
 id = "roman-pre-1955-kalendarium-movable"
@@ -805,7 +805,7 @@ languages = ["la", "en"]
 date_range = "Identities printed in the Bonn reimpressio (conformed c. 1954) with no counterpart in the Mame 1922 control witness; not covered by the 2026-10-19 public-domain decision for 1920 content; no civil-year occurrence claim"
 source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920/artifacts/ia-reimpressio-pdf-b676ce5c/artifact.toml", "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ia-scan-pdf-9873693a/artifact.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
 enumeration_state = "complete-within-slice"
-basis = "Bonn Kalendarium identities (artifact pp. 26-36) with no counterpart in the Mame 1922 Kalendarium (artifact pp. 40-49, image-checked) or, for 05-13, in its Proprium Sanctorum and index: John Bosco, Gabriel a Virgine Perdolente, Peter Canisius, Robert Bellarmine, John Mary Vianney, John Eudes, the Immaculate Heart, Teresa of the Child Jesus, the Maternity of the BVM, Albert the Great and Christ the King. Neither witness prints an institution date for any of them, so every row says date not established. Post-1930 content falls outside the 2026-10-19 public-domain decision."
+basis = "Bonn Kalendarium identities (artifact pp. 26-36) with no counterpart in the Mame 1922 Kalendarium (artifact pp. 40-49, image-checked) or, for 05-13, in its Proprium Sanctorum and index (Margaret Mary appears in Mame only in its local supplement, p. 1103; its 10-17 is Hedwig): John Bosco, Gabriel a Virgine Perdolente, Peter Canisius, Robert Bellarmine, John Mary Vianney, John Eudes, the Immaculate Heart, Teresa of the Child Jesus, the Maternity of the BVM, Albert the Great, Margaret Mary Alacoque and Christ the King. Neither witness prints an institution date for any of them, so every row says date not established. Post-1930 content falls outside the 2026-10-19 public-domain decision."
 
 [[slices]]
 id = "roman-pre-1955-ordinary-text-blocks"
@@ -1091,7 +1091,7 @@ languages = ["la", "en"]
 date_range = "Pre-1955 recension as printed in the Bonn reimpressio of the 28th edition iuxta typicam (a conformed printing of about 1954); historical edition snapshot; no civil-year occurrence claim"
 source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920/artifacts/ia-reimpressio-pdf-b676ce5c/artifact.toml", "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ia-scan-pdf-9873693a/artifact.toml"]
 enumeration_state = "complete-within-slice"
-basis = "Witness: Bonn reimpressio, accepted 2026-10-19 for the pre-1955 recension; its text layer is a 2003 digital typesetting. Each identity was compared with the 1922 Mame editio quarta iuxta typicam; Missae votivae and Missae votivae ad diversa, artifact pp. 1025–1076 / printed [59]–[110], except the High Priest votive. Every printed formulary heading, numbered prayer category and separately printed alternative prayer set in the extent. every identity in this slice is also printed in Mame 1922. Structural identity metadata only: no prayer bodies, no wording collation, English attestation or publication permission."
+basis = "Witness: Bonn reimpressio, accepted 2026-10-19 for the pre-1955 recension; its text layer is a 2003 digital typesetting. Each identity was compared with the 1922 Mame editio quarta iuxta typicam; Missae votivae and Missae votivae ad diversa, artifact pp. 1025–1076 / printed [59]–[110], except the High Priest votive. Every printed formulary heading, numbered prayer category and separately printed alternative prayer set in the extent. The referral headings Missa ad postulandam gratiam Spiritus Sancti and Missa pro gratiarum actione are forms, as referral headings are in the sanctoral and local slices (independent review, 2026-10-19); the consecration of a bishop and ordinations stay prayer-sets. every identity in this slice is also printed in Mame 1922. Structural identity metadata only: no prayer bodies, no wording collation, English attestation or publication permission."
 
 [[slices]]
 id = "roman-pre-1955-body-votives-slots"
@@ -107428,18 +107428,9 @@ identity_state = "established"
 id = "roman-pre-1955:kalendarium:05-03-comm-1"
 slice_id = "roman-pre-1955-kalendarium-fixed"
 kind = "commemoration"
-label = "Com. Ss. Alexandri I Papæ, Eventii et Theoduli Mm."
+label = "Com. Ss. Alexandri I Papæ, Eventii et Theoduli Mm., ac Juvenalis Ep. et Conf."
 source_record = "src/sources/works/catholic-church/missale-romanum/editions/2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920/artifacts/ia-reimpressio-pdf-b676ce5c/artifact.toml"
-source_locus = "Bonn 2004 reimpressio of the 28th edition iuxta typicam Vaticanam, Kalendarium artifact p. 29 (printed 29*); 05-03; attached commemoration 1; Mame 1922 Kalendarium artifact p. 43: present"
-identity_state = "established"
-
-[[targets]]
-id = "roman-pre-1955:kalendarium:05-03-comm-2"
-slice_id = "roman-pre-1955-kalendarium-fixed"
-kind = "commemoration"
-label = "Com. Juvenalis Ep. et Conf."
-source_record = "src/sources/works/catholic-church/missale-romanum/editions/2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920/artifacts/ia-reimpressio-pdf-b676ce5c/artifact.toml"
-source_locus = "Bonn 2004 reimpressio of the 28th edition iuxta typicam Vaticanam, Kalendarium artifact p. 29 (printed 29*); 05-03; attached commemoration 2; Mame 1922 Kalendarium artifact p. 43: present"
+source_locus = "Bonn 2004 reimpressio of the 28th edition iuxta typicam Vaticanam, Kalendarium artifact p. 29 (printed 29*); 05-03; attached commemoration 1 (one companion group: the Bonn body prints a single heading 'Pro Ss. Alexandro I Papa, Eventio et Theodulo Mm. ac Juvenale Ep. et C.' with one set of orations, artifact p. 708); Mame 1922 Kalendarium artifact p. 43: present as one clause"
 identity_state = "established"
 
 [[targets]]
@@ -109230,16 +109221,16 @@ slice_id = "roman-pre-1955-kalendarium-fixed"
 kind = "celebration"
 label = "S. Hedwigis Viduæ"
 source_record = "src/sources/works/catholic-church/missale-romanum/editions/2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920/artifacts/ia-reimpressio-pdf-b676ce5c/artifact.toml"
-source_locus = "Bonn 2004 reimpressio of the 28th edition iuxta typicam Vaticanam, Kalendarium artifact p. 34 (printed 34*); 10-16; semiduplex; Mame 1922 Kalendarium artifact p. 47: present"
+source_locus = "Bonn 2004 reimpressio of the 28th edition iuxta typicam Vaticanam, Kalendarium artifact p. 34 (printed 34*); 10-16; semiduplex; Mame 1922 Kalendarium artifact p. 47 prints S. Hedwigis on 10-17 (10-16 empty; image-checked): date moved"
 identity_state = "established"
 
 [[targets]]
 id = "roman-pre-1955:kalendarium:10-17"
-slice_id = "roman-pre-1955-kalendarium-fixed"
+slice_id = "roman-pre-1955-kalendarium-post-1922-additions"
 kind = "celebration"
 label = "S. Margaritæ Mariæ Alacoque Virg."
 source_record = "src/sources/works/catholic-church/missale-romanum/editions/2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920/artifacts/ia-reimpressio-pdf-b676ce5c/artifact.toml"
-source_locus = "Bonn 2004 reimpressio of the 28th edition iuxta typicam Vaticanam, Kalendarium artifact p. 34 (printed 34*); 10-17; duplex; Mame 1922 Kalendarium artifact p. 47: present"
+source_locus = "Bonn 2004 reimpressio of the 28th edition iuxta typicam Vaticanam, Kalendarium artifact p. 34 (printed 34*); 10-17; duplex; Mame 1922 Kalendarium artifact p. 47: no entry for this identity (10-16 empty, 10-17 is S. Hedwigis; image-checked); in Mame a Mass of S. Margarita Maria Alacoque is printed only among the Missae pro aliquibus locis, artifact p. 1103 [73]; date not established"
 identity_state = "established"
 
 [[targets]]
@@ -136254,7 +136245,7 @@ kind = "ordinary-option"
 label = "Dominica XXIII post Pentecosten — Credo (direction)"
 form_id = "roman-pre-1955:temporal:form:dominica-23-post-pentecosten"
 source_record = "src/sources/works/catholic-church/missale-romanum/editions/2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920/artifacts/ia-reimpressio-pdf-b676ce5c/artifact.toml"
-source_locus = "Bonn reimpressio Proprium de Tempore, artifact p. 572, printed p. 468"
+source_locus = "Bonn reimpressio Proprium de Tempore, artifact p. 573, printed p. 469"
 identity_state = "established"
 slice_id = "roman-pre-1955-temporal-easter-to-last-sunday"
 
@@ -136264,7 +136255,7 @@ kind = "text-slot"
 label = "Dominica XXIII post Pentecosten — Praefatio de Ssma Trinitate"
 form_id = "roman-pre-1955:temporal:form:dominica-23-post-pentecosten"
 source_record = "src/sources/works/catholic-church/missale-romanum/editions/2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920/artifacts/ia-reimpressio-pdf-b676ce5c/artifact.toml"
-source_locus = "Bonn reimpressio Proprium de Tempore, artifact p. 572, printed p. 468"
+source_locus = "Bonn reimpressio Proprium de Tempore, artifact p. 573, printed p. 469"
 identity_state = "established"
 slice_id = "roman-pre-1955-temporal-easter-to-last-sunday"
 
@@ -175580,8 +175571,8 @@ form_id = "roman-pre-1955:body:votive-mortality"
 [[targets]]
 id = "roman-pre-1955:body:votive-holy-spirit-grace"
 slice_id = "roman-pre-1955-body-votives-forms"
-kind = "prayer-set"
-label = "Missa votiva ad postulandam gratiam Spiritus Sancti: Holy Spirit Mass with own prayers"
+kind = "form"
+label = "Missa votiva ad postulandam gratiam Spiritus Sancti (Holy Spirit Mass with own prayers)"
 source_record = "src/sources/works/catholic-church/missale-romanum/editions/2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920/artifacts/ia-reimpressio-pdf-b676ce5c/artifact.toml"
 source_locus = "Bonn reimpressio, artifact p. 1065, printed [99]; raw text page line 63"
 identity_state = "established"
@@ -176364,8 +176355,8 @@ form_id = "roman-pre-1955:body:votive-any-necessity"
 [[targets]]
 id = "roman-pre-1955:body:votive-thanksgiving"
 slice_id = "roman-pre-1955-body-votives-forms"
-kind = "prayer-set"
-label = "Missa pro gratiarum actione: own prayers added to a chosen Mass"
+kind = "form"
+label = "Missa votiva pro gratiarum actione (chosen Mass with own prayers)"
 source_record = "src/sources/works/catholic-church/missale-romanum/editions/2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920/artifacts/ia-reimpressio-pdf-b676ce5c/artifact.toml"
 source_locus = "Bonn reimpressio, artifact p. 1075, printed [109]; raw text page line 63"
 identity_state = "established"
@@ -187872,6 +187863,16 @@ source_locus = "Bonn reimpressio, artifact p. 1218, printed [252]; raw text page
 identity_state = "established"
 form_id = "roman-pre-1955:local:common-many-women"
 
+[[targets]]
+id = "roman-pre-1955:sanctoral-form:p611-l33:preface:p613-l25"
+slice_id = "roman-pre-1955-sanctoral-preface-appointments"
+kind = "text-slot"
+label = "In Cathedra S. Petri Ap. Romæ — preface appointment"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920/artifacts/ia-reimpressio-pdf-b676ce5c/artifact.toml"
+source_locus = "Bonn 2004 reimpressio of the 28th edition iuxta typicam (1920); artifact p. 613 / printed p. 509, raw page-local line 25; marker: Præfatio de Apostolis. (printed mid-line after 'Deinde Commemoratio S. Priscæ.'; image-checked)"
+identity_state = "established"
+form_id = "roman-pre-1955:sanctoral-form:p611-l33"
+
 [[boundaries]]
 id = "roman-1962-fixed-calendar-text-slots"
 slice_id = "roman-1962-universal-fixed-calendar"
@@ -188061,48 +188062,32 @@ id = "roman-pre-1955-whole-celebration"
 slice_id = "roman-pre-1955-whole-book"
 kind = "celebration"
 state = "unenumerated"
-source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920/artifacts/ia-reimpressio-pdf-b676ce5c/artifact.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
-basis = "The Bonn witness is enumerated section by section (source review). A whole-book denominator for this dimension awaits an independent page-image review of that enumeration; bounded positive slices remain separately countable."
+source_refs = ["src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
+basis = "The Kalendarium celebrations (fixed, movable and post-1922 slices, pp. 26-36) are complete in their own slices and Holy Week days are separately enumerated, but movable temporal days are inventoried as formularies, not celebrations, and the body prints identities the Kalendarium omits (Vigil of the Immaculate Conception, Pudentiana, Agapitus, John Leonardi). No single whole-book celebration denominator is asserted."
 
 [[boundaries]]
 id = "roman-pre-1955-whole-common"
 slice_id = "roman-pre-1955-whole-book"
 kind = "common"
 state = "unenumerated"
-source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920/artifacts/ia-reimpressio-pdf-b676ce5c/artifact.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
-basis = "The Bonn witness is enumerated section by section (source review). A whole-book denominator for this dimension awaits an independent page-image review of that enumeration; bounded positive slices remain separately countable."
+source_refs = ["src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
+basis = "Common formularies are enumerated as forms in the Commons (including the post-1922 Commune Summorum Pontificum) and local-Commons slices; the kind common is used only for eight additional-reading pools. No whole-book denominator of this kind is asserted."
 
 [[boundaries]]
 id = "roman-pre-1955-whole-commemoration"
 slice_id = "roman-pre-1955-whole-book"
 kind = "commemoration"
 state = "unenumerated"
-source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920/artifacts/ia-reimpressio-pdf-b676ce5c/artifact.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
-basis = "The Bonn witness is enumerated section by section (source review). A whole-book denominator for this dimension awaits an independent page-image review of that enumeration; bounded positive slices remain separately countable."
-
-[[boundaries]]
-id = "roman-pre-1955-whole-preface"
-slice_id = "roman-pre-1955-whole-book"
-kind = "preface"
-state = "unenumerated"
-source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920/artifacts/ia-reimpressio-pdf-b676ce5c/artifact.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
-basis = "The Bonn witness is enumerated section by section (source review). A whole-book denominator for this dimension awaits an independent page-image review of that enumeration; bounded positive slices remain separately countable."
+source_refs = ["src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
+basis = "Kalendarium commemorations are complete in their own slices. Commemorations appointed in formularies appear as contextual oration slots or Pro N. forms (the local Espousals Mass keeps one commemoration row), and occurrence-dependent commemorations under the rubrics and Additiones are not enumerated."
 
 [[boundaries]]
 id = "roman-pre-1955-whole-ordinary-option"
 slice_id = "roman-pre-1955-whole-book"
 kind = "ordinary-option"
 state = "unenumerated"
-source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920/artifacts/ia-reimpressio-pdf-b676ce5c/artifact.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
-basis = "The Bonn witness is enumerated section by section (source review). A whole-book denominator for this dimension awaits an independent page-image review of that enumeration; bounded positive slices remain separately countable."
-
-[[boundaries]]
-id = "roman-pre-1955-whole-form"
-slice_id = "roman-pre-1955-whole-book"
-kind = "form"
-state = "unenumerated"
-source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920/artifacts/ia-reimpressio-pdf-b676ce5c/artifact.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
-basis = "The Bonn witness is enumerated section by section (source review). A whole-book denominator for this dimension awaits an independent page-image review of that enumeration; bounded positive slices remain separately countable."
+source_refs = ["src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
+basis = "The Ordo, Canon and Preface wording options, Ritus additions and musical presentations are complete in their slices. Credo, Gloria and dismissal directions are positive in the temporal slices only; inline directions in the sanctoral, Commons, votive and local formularies are not enumerated, nor are general-rubric and Additiones options (pp. 37-59)."
 
 [[boundaries]]
 id = "roman-pre-1955-whole-cycle"
@@ -188117,16 +188102,16 @@ id = "roman-pre-1955-whole-exceptional-rite"
 slice_id = "roman-pre-1955-whole-book"
 kind = "exceptional-rite"
 state = "unenumerated"
-source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920/artifacts/ia-reimpressio-pdf-b676ce5c/artifact.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
-basis = "The Bonn witness is enumerated section by section (source review). A whole-book denominator for this dimension awaits an independent page-image review of that enumeration; bounded positive slices remain separately countable."
+source_refs = ["src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
+basis = "Rites printed in the book are enumerated in their sections (ashes, Holy Week, candles, absolution, holy water, blessings, Pontifical excerpts), but rites referred to the Rituale or Pontificale and the excerpted scope of the Pontifical appendix do not establish a whole-book rite denominator."
 
 [[boundaries]]
 id = "roman-pre-1955-whole-text-slots"
 slice_id = "roman-pre-1955-whole-book"
 kind = "text-slots"
 state = "unenumerated"
-source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920/artifacts/ia-reimpressio-pdf-b676ce5c/artifact.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
-basis = "The Bonn witness is enumerated section by section (source review). A whole-book denominator for this dimension awaits an independent page-image review of that enumeration; bounded positive slices remain separately countable."
+source_refs = ["src/sources/inventories/missal-expected-targets-review-2026-10-19.md"]
+basis = "Own printed units are enumerated for the temporal, sanctoral, Ordinary, preparation, Commons/votive/dead and local sections, but the Commons/votive/dead slot slices and the referral slices are partial, inherited Common and referral appointments are not expanded, and rubric-derived appointments are not enumerated. An independent review found a line-start-marker miss (p. 613) and two page-locator errors (p. 573) in slot-level rows. No whole-book text-slot denominator is asserted."
 
 [[boundaries]]
 id = "postconciliar-2002-common-formularies-slots-and-alternatives"

@@ -79,6 +79,17 @@
    */
   function predicateFacts(context) {
     const facts = {};
+    // The appointment inputs travel with the facts so one call site feeds
+    // both: the formulary's printed appointments (null where the day borrows
+    // its formulary), the civil date and the owning year's anchors.
+    if (context && (context.appointments !== undefined || context.date !== undefined)) {
+      facts['appointment-context'] = {
+        appointments: context.appointments || null,
+        date: typeof context.date === 'string' ? context.date : null,
+        anchors: context.anchors || null
+      };
+    }
+    if (context) Object.assign(facts, seasonalOrationFacts(context));
     if (!context || context.settled !== true ||
         typeof context.nature !== 'string' || !context.nature) return facts;
     const weekday = context.weekday;
@@ -115,10 +126,142 @@
     return facts;
   }
 
-  function conditionsResolve(element, selected, predicates) {
+  const DAY_MS = 86400000;
+
+  function isoDay(value) {
+    return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value)
+      ? Date.UTC(Number(value.slice(0, 4)), Number(value.slice(5, 7)) - 1,
+        Number(value.slice(8, 10)))
+      : null;
+  }
+
+  function offsetFrom(anchors, name, date) {
+    const anchor = isoDay(anchors && anchors[name]);
+    const day = isoDay(date);
+    return anchor === null || day === null ? null : Math.round((day - anchor) / DAY_MS);
+  }
+
+  /**
+   * The pre-1955 seasonal orations, established FALSE only outside the dates
+   * their rubrics name, and never established true (inside, the rank of the
+   * day decides: Doubles take one oration, RG IX n. 1 of the Bonn witness).
+   *
+   *   a-cunctis-season - the 1861 witness's own rubrics (ordinarium-oblatio-en
+   *     seq 1 and 54, ordinarium-conclusio-en seq 6) and the Bonn reimpressio's
+   *     Additiones et Variationes tit. VI n. 1, 3) (artifact p. 56*) bound the
+   *     second oration A cunctis, with its Secret and Postcommunion, to
+   *     Candlemas through the day before Passion Sunday and Trinity Sunday
+   *     through the day before Advent. The union of the two books' windows is
+   *     used, so no day either book admits is excluded.
+   *   concede-season - Bonn tit. VI n. 1 and 6) (pp. 56*-57*): from Passion
+   *     Sunday to Saturday in albis and through the octave of Pentecost a
+   *     single seasonal oration contra persecutores is said, not Concede; and
+   *     the vigil of Pentecost omits them (n. 1; Proprium p. 399).
+   *
+   * Inputs are the civil date and the owning liturgical year's anchors; with
+   * either missing nothing is established.
+   */
+  function seasonalOrationFacts(context) {
+    const facts = {};
+    const anchors = context && context.anchors;
+    const date = context && context.date;
+    const easter = offsetFrom(anchors, 'easter', date);
+    const pentecost = offsetFrom(anchors, 'pentecost', date);
+    const trinity = offsetFrom(anchors, 'trinity', date);
+    const advent = offsetFrom(anchors, 'next_first_sunday_of_advent', date);
+    if (easter === null || pentecost === null || trinity === null || advent === null) {
+      return facts;
+    }
+    const candlemas = isoDay(date.slice(0, 4) + '-02-02');
+    const day = isoDay(date);
+    const inACunctis = (day >= candlemas && easter < -14) ||
+      (trinity >= 0 && advent < 0);
+    if (!inACunctis) facts['a-cunctis-season'] = false;
+    if ((easter >= -14 && easter <= 6) || (pentecost >= -1 && pentecost <= 6)) {
+      facts['concede-season'] = false;
+    }
+    return facts;
+  }
+
+  function spanCovers(span, context) {
+    const date = context && context.date;
+    if (typeof date !== 'string') return null;
+    if (span.anchor) {
+      const offset = offsetFrom(context.anchors, span.anchor, date);
+      if (offset === null) return null;
+      return offset >= span.from && offset <= span.to;
+    }
+    const monthDay = date.slice(5);
+    return span.from <= span.to
+      ? monthDay >= span.from && monthDay <= span.to
+      : monthDay >= span.from || monthDay <= span.to;
+  }
+
+  /**
+   * The day's appointment of every Ordinary variable the file declares.
+   *
+   * In order: what the celebrated formulary itself prints (only when it is the
+   * day's own Mass, never when a feria borrows it: RGMR 501 puts the proper
+   * Communicantes "suo loco in propriis Missis", and the Epiphany and
+   * Ascension forms are said "in festo tantum"); then a dated span the book's
+   * own heading states; then the variable's sourced default. Where none
+   * applies, or a span could not be evaluated, the variable is UNAPPOINTED
+   * (null) and the frame shows the typed stand-in, never the common form.
+   */
+  function appointmentsFor(file, context) {
+    const held = {};
+    const formulary = context && context.appointments || {};
+    for (const variable of (file && file.appointments) || []) {
+      const key = variable.variable;
+      if (Object.prototype.hasOwnProperty.call(formulary, key)) {
+        held[key] = formulary[key];
+        continue;
+      }
+      let decided = false;
+      let unknown = false;
+      for (const span of variable.spans || []) {
+        const covers = spanCovers(span, context);
+        if (covers === null) { unknown = true; break; }
+        if (covers) {
+          held[key] = span.withheld ? null : span.option;
+          decided = true;
+          break;
+        }
+      }
+      if (decided) continue;
+      held[key] = !unknown && variable.default && context && typeof context.date === 'string'
+        ? variable.default : null;
+    }
+    return held;
+  }
+
+  function conditionsResolve(element, selected, predicates, appointed) {
     let unresolved = null;
+    const appointments = appointed || {};
     for (const condition of element.conditions || []) {
-      if (condition.kind === 'include-when-any') {
+      if (condition.kind === 'appointed' || condition.kind === 'unappointed') {
+        const value = Object.prototype.hasOwnProperty.call(appointments, condition.variable)
+          ? appointments[condition.variable] : null;
+        if (condition.kind === 'unappointed') {
+          if (value !== null) return { show: false, unresolved: null };
+          continue;
+        }
+        if (value === null) {
+          if (condition.or_unappointed === true) continue;
+          // Where the file stands a typed "appointment not established"
+          // element in the appointed place, that element carries the open
+          // state once; every option's row is then simply not shown, rather
+          // than reported again as a separate unresolved element.
+          if (appointments.__standIns && appointments.__standIns.has(condition.variable)) {
+            return { show: false, unresolved: null };
+          }
+          unresolved = unresolved || condition;
+          continue;
+        }
+        if ((condition.options || []).indexOf(value) < 0) {
+          return { show: false, unresolved: null };
+        }
+      } else if (condition.kind === 'include-when-any') {
         const states = (condition.predicates || []).map(
           (key) => predicateState(predicates, key));
         if (states.some((state) => state === true)) continue;
@@ -140,8 +283,8 @@
       : { show: true, unresolved: null };
   }
 
-  function conditionsShow(element, selected, predicates) {
-    return conditionsResolve(element, selected, predicates).show;
+  function conditionsShow(element, selected, predicates, appointed) {
+    return conditionsResolve(element, selected, predicates, appointed).show;
   }
 
   function alternativeShows(element, file, selected) {
@@ -159,25 +302,43 @@
     return true;
   }
 
-  function elementResolution(element, file, selected, predicates) {
+  function elementResolution(element, file, selected, predicates, appointed) {
     if (!alternativeShows(element, file, selected)) {
       return { show: false, unresolved: null };
     }
-    return conditionsResolve(element, selected, predicates);
+    return conditionsResolve(element, selected, predicates, appointed);
+  }
+
+  function appointedIn(file, predicates) {
+    const context = predicates && predicates['appointment-context'];
+    const held = appointmentsFor(file, context && typeof context === 'object' ? context : null);
+    const standIns = new Set();
+    for (const section of (file && file.sections) || []) {
+      for (const element of section.elements || []) {
+        for (const condition of element.conditions || []) {
+          if (condition.kind === 'unappointed') standIns.add(condition.variable);
+        }
+      }
+    }
+    Object.defineProperty(held, '__standIns', { value: standIns, enumerable: false });
+    return held;
   }
 
   function elementShows(element, file, wanted, predicates) {
     return elementResolution(
-      element, file, selectionMap(file, wanted), predicates).show;
+      element, file, selectionMap(file, wanted), predicates,
+      appointedIn(file, predicates)).show;
   }
 
   function resolveElements(file, wanted, predicates) {
     const selected = selectionMap(file, wanted);
+    const appointed = appointedIn(file, predicates);
     const shown = [];
     const unresolved = [];
     for (const section of file.sections || []) {
       for (const element of section.elements || []) {
-        const resolution = elementResolution(element, file, selected, predicates);
+        const resolution = elementResolution(
+          element, file, selected, predicates, appointed);
         if (resolution.show) {
           shown.push({ section: section, element: element });
         } else if (resolution.unresolved) {
@@ -189,7 +350,9 @@
         }
       }
     }
-    return { selected: selected, shown: shown, unresolved: unresolved };
+    return {
+      selected: selected, shown: shown, unresolved: unresolved, appointed: appointed
+    };
   }
 
   function shownElements(file, wanted, predicates) {
@@ -519,6 +682,7 @@
     chosenOption: chosenOption,
     selectionMap: selectionMap,
     predicateFacts: predicateFacts,
+    appointmentsFor: appointmentsFor,
     conditionsShow: conditionsShow,
     resolveElements: resolveElements,
     elementShows: elementShows,
