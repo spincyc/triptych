@@ -142,8 +142,8 @@ immutable acceptance package. Reproduce them for any release review.
 The C-series below refines the existing W1–W9 workstreams. It does not replace
 M1–M6 or broaden any historical acceptance. C1 is **complete** on the feature branch: every
 requirement passes under the maintainer decisions below, and the pre-1955
-recension is enumerated from its accepted witness. C2, C3, C4 and C5 are **in
-progress**; C6 remains **planned**.
+recension is enumerated from its accepted witness. C2, C3, C4, C5 and C6 are
+**in progress**; C6 release acceptance remains open.
 
 Maintainer decisions, 2026-10-19:
 
@@ -819,9 +819,22 @@ and the complete C5 acceptance matrix remain open.
 The committed `eb8ac428b` preview's C6 lab sample measured 12.5–12.9 s
 narrow cold LCP on Slow 4G and 4× CPU, against the 2.5 s target; warm narrow
 and desktop cold samples passed. The 1962 Proper structure is about 1.23 MB
-gzipped and dominates transfer. A selected-Mass payload with a compact
-index is the next measured performance candidate, subject to full source and
-coverage parity. These local two-run measurements are not field percentiles.
+gzipped and dominates transfer. The selected-Mass change at `f671358ba`
+generates one catalog and 491 exact Mass files. Eligible settled 1962 Read
+links on both entrances fetch only the catalog and selected Mass; other modes,
+unresolved choices, cross-Mass references, and invalid split data use the
+monolith. Generation and public-preview gates prove all 491 Masses reproduce
+the source structure and pass the same public-data rights scan. Seven built
+Chromium harnesses and the verified private preview pass.
+
+The same two-run lab profile now records 7.68–7.74 s cold mobile Day LCP
+and 7.01–7.02 s Propers LCP, with transfer 319 KB and 269 KB respectively;
+the prior samples transferred 1.49 MB and 1.43 MB. Day uses the same resolved
+Mass with its safe derived-choice URL, without explicit `mass=`. Cold desktop
+LCP is 0.69–0.75 s. These are local samples, not field percentiles, and the
+mobile 2.5 s gate still fails. Further startup and request work, independent
+C5 acceptance, full print/accessibility review, and release verification
+remain open. No production deployment has been made.
 
 ### Verification and completion gates
 
