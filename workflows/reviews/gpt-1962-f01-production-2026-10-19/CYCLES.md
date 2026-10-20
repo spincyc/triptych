@@ -668,3 +668,40 @@ Markdown 3.10.3, with SHA-256
 A fresh xhigh web review of that new source and rendering is pending. The
 previous `WEB-001` and `WEB-002` repairs still require this review before
 publication.
+
+The fresh xhigh web reviewer checked the sealed Markdown and matching
+23-page study, all thirty notes, the two interpretations and eight sense
+entries, desktop and mobile rendering, internal anchors and external source
+links. It returned `PASS` with no findings; both earlier web findings are
+resolved. The install worker then ran all three normal `make install-doc`
+recipes and proved the installed PDF bytes match the accepted artifact hashes.
+It installed the canonical Markdown byte for byte, created three GPT alpha
+publication records, added GPT links and one GPT publication marker to the
+existing F01 catalog row while retaining the Claude links, and refreshed the
+document catalog, source inventories and exact scoped release bindings. The
+factual web-review date was recorded outside the accepted content seals.
+The release refresh included twelve exact committed upstream source paths
+from this F01 line and the incorporated Claude F01 history, not a blanket
+adoption. Source, catalog, publication, scoped public-alpha and release checks
+passed. Native `publication-gates-0000` then returned `ACCEPTED` with no
+escalations. The run `095fe00a9fe8cfee` was archived in the GPT leaf with
+fifty results, fifty packets and three interventions. Main integration and
+live Pages verification remain separate work.
+
+The first post-archive deployment-source check found the newly archived
+packet and record files absent from the earlier GPT source inventory. The
+owning `source-inventory refresh` added those exact files with the existing
+2026-10-20 audit date. The repeated deployment-source check passed; this
+inventory repair does not alter the accepted publication or its PDF/web
+bytes. Broader validation and main integration continue.
+
+`make check-sources` also required the source-family migration ledger's
+inventory and F01 review-unit snapshots to follow the new archive files;
+the owning refresh and repeated full check passed. This isolated clone lacked
+the three already-published Claude F01 PDFs, so the global public-site policy
+initially refused to build. Normal `make install-doc` recipes for that
+existing publication supplied them locally without tracked source changes.
+The GitHub Pages-target public site then built and verified. The outgoing
+catalog and release diff preserves the Claude F01 links; the archived run's
+108 files were screened for credential patterns with no match. Main push and
+live-route checks are still pending.

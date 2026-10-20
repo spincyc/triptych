@@ -1,0 +1,17 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 1,
+  "review_inputs": {
+    "document": "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king",
+    "files": {},
+    "provider": "gpt",
+    "review": "web",
+    "schema": 1,
+    "web": {
+      "build/web/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.md": "c4229d8989d11befd1d43fc50a680d258459bd806978cc7f42a50d1d513a7e7f"
+    }
+  },
+  "stage": "web-review",
+  "summary": "PASS for the complete canonical Christ the King web study, SHA-256 c4229d8989d11befd1d43fc50a680d258459bd806978cc7f42a50d1d513a7e7f from research/web-artifact.json, independently matched to the packet seal and compared with its canonical TeX and the 23-page research PDF (SHA-256 d51e0a4fb26291b9066d5dec99690bf75e9e2b7f10648a12360805407947be94): 26 quotation blocks, 30 exact source notes, both interpretations and all eight sense summaries are preserved, with readable headings, tables, notation, timestamp and rights notice, and no TeX or generation-provenance leakage. Chromium previews at 1280\u00d7900 and 390\u00d7844 showed working contents, element anchors and footnote returns, usable mobile inventory scrolling and chronology reflow; all 12 external references responded, and targeted retained-text checks at Augustine Tractate 115.2,4, Jerome on Daniel 7:13\u201318,27, Chrysostom Colossians III on 1:19\u201320 and its peace application, and Bellarmine Psalm 71 comment 10 supported the retained source notes; acceptance covers these exact conversion bytes and local preview, with no new facsimile collation or deployed-site review claimed."
+}

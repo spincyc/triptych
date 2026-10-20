@@ -1,0 +1,342 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 1,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/00-opening.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "appointed-text",
+          "kind": "appointed-text",
+          "path": "sections/10-appointed-text.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml",
+            "propers/verified.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "commentary",
+          "kind": "proper-treatment",
+          "path": "sections/20-commentary.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "hearing-king",
+          "kind": "interpretive-lane",
+          "path": "sections/30-hearing-king.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "reconciled-creation",
+          "kind": "interpretive-lane",
+          "path": "sections/40-reconciled-creation.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "comparison",
+          "kind": "front-matter",
+          "path": "sections/50-comparison.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "history",
+          "kind": "front-matter",
+          "path": "sections/70-history.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml",
+            "research/chronology-annotations.tex",
+            "research/chronology.toml",
+            "research/chronology-notes.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "seasonal-witnesses",
+          "kind": "terminal-apparatus",
+          "path": "sections/85-seasonal-witnesses.tex",
+          "references": [
+            "propers/verified.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "study-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/90-study-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "preface",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Jerome",
+            "Robert Bellarmine"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Jerome"
+          ],
+          "component_keys": [
+            "hearing-king"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "hearing-king",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/reception-verification.md"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Robert Bellarmine",
+            "Augustine of Hippo"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "reconciled-creation"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "reconciled-creation",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/reception-verification.md"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king",
+    "files": {
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/main.tex": "f2a150d833d8af17c32755241a7da312c15b0fccfc80512081fe93217e14a4ed",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/propers/verified.md": "66f22b6daf3611db9ace9656f61f5bd1e88865fcacd1705ca8da3de824c6d018",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/chronology-annotations.tex": "52a148e587cf657c2dea5a9f43214ba2b34f05eb7474589e37d9d18f53eda78e",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/chronology-notes.md": "4332cb00a32b926d092e84ca95f91b74245380a31632ffa55e63bffff847cf59",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/chronology.toml": "144544a0893a38c2d1ff4d2c22c566b2c18400fa9cfe6e69d24a3f5437055906",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/interpretations.md": "9928e8e45f2b12ddfd0ffa79954433ec5a90350a3eabc9de54b6bc3f48a5b5df",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/reception-verification.md": "2809bd8dd5beaa074b5fd367a209c97376f804b7ca2b91495be237929165f316",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/scope.md": "b33670b85cdaee91866529916cf32b9ec8ab3439ebb048292229a0b8ba65d065",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/source-bindings.toml": "82c23329ebe0357e896e2585d310c46a443e498527e91995de73aa783405f146",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/00-opening.tex": "1e6dccdd87dc4ff6e3c9031afb57e4e47b0fec9c8dd7a9f741bac9e4b0f93357",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/10-appointed-text.tex": "3b1db20796e369879efe4757391f6538d016ab57bccf7925e5ad84523a1d9940",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/20-commentary.tex": "8e13b4369762454cad041fe7ab7cfe2b0bbaf8d470846a79bfa02b46930fd9ed",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/30-hearing-king.tex": "a16d5a3b55749fe7f5c3fb08ef96f470b7a19752102a871e4de1d460c49338e3",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/40-reconciled-creation.tex": "5aa191b3fa59ffdf4e5781c657b4e8a40b0ca748ca803ca376e25cca3326cdda",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/50-comparison.tex": "8253e334965466bfaf54bb2705b447d365e8426b348832321e818475a704989e",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/70-history.tex": "e54d0d5bcaf3bd139fb7fd222a8cc26689c88379303f368831a1cf5a6efeef8d",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/85-seasonal-witnesses.tex": "37a69871418be120681b311947f1df27f6ee674f2685e98d6945cd6e8ced8622",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/90-study-apparatus.tex": "fe3a9b40aa94e493b2295fdabad37db31d0e025914f7ff7cbd38252e08f481f7"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "13",
+            "7568a7728ef8a16e5a7c65475e9a3ae0d24c695caab6faa5d0c0c7ec52621d16",
+            "095fe00a9fe8cfee",
+            "5b48292320cc04c0f174b6bb96ce1342c554d8a1",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "PASS for the 23-page expansive study of the 1962 Christ the King formulary: the complete study and research records sustain two distinct, substantive interpretations with their own four senses and all eleven elements, the complete-text manifest agrees with the production authorization, all 20 sealed file hashes match, and the current PDF is byte-identical to the author-study-0001 proof. Independent inspection of Missal printed page 698, no. 3947 confirms the corrected Secret's address to the Father and the offered Son's agency across the revised commentary, interpretations and research summaries; consequential-difficulty checks at Augustine's John 115.2,4, Jerome's Daniel VII on 13\u201318, Chrysostom's Colossians III on 1:15\u201320, and Bellarmine's Psalm 71 comment 10 confirm the intelligible arguments about grace-enabled hearing, received human dominion, heavenly reconciliation and incomplete willing homage, with the existing historical appendix retained and no fresh whole-text collation, companion acceptance or visual acceptance claimed."
+}

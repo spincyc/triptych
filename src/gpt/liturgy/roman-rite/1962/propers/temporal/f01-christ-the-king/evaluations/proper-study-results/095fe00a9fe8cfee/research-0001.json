@@ -1,0 +1,14 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/chronology-notes.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-HIS-001",
+      "note": "Added source-bound authorship, successive-formation and writing-place qualifications for John and Colossians, with exact paragraph and delivery loci and explicit historical-appendix instructions beside the retained traditional attribution and chronology. New artifact bindings seal both controlling sources and their dated ancestry; no publication-local date or replacement chronology was introduced.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "stage": "research",
+  "summary": "Repaired RES-HIS-001 in chronology-notes.md, reception-verification.md, scope.md and source-bindings.toml through independent inspection of both complete USCCB introductions, registering their exact dated metadata-only artifacts and refreshing source inventories while preserving the generated chronology and existing interpretations. Source-library validation, source-inventory check, source-family-migration check, both chronology currency checks and git diff --check passed; make check-sources stopped at the downstream document-catalogue requirement because this unfinished leaf has no web-edition.toml, and the protected source bodies remain untracked."
+}

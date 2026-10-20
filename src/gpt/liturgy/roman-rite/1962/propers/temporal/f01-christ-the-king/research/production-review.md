@@ -765,3 +765,38 @@ after the upstream-seal and artifact gates pass. No new semantic defect was
 identified, no source or layout edit needs routing upstream, and no PDF was
 installed. The parent driver owns workflow advancement, global source checks,
 integration and publication.
+
+## Reviewed installation, 20 October 2026
+
+The engine results for run `095fe00a9fe8cfee` record PASS at
+`research-review`, `study-review`, `synthesis-review` and `homily-review`
+iteration 2, followed by `visual-review` and `web-review` iteration 1.
+The visual result records inspection of every page of the 23-page study,
+10-page concise study and 3-page homily. The web result records source/PDF
+fidelity and desktop/mobile Chromium inspection of the canonical conversion.
+These are the recorded independent reviews, not new source collation or a
+timed human delivery.
+
+The current artifact snapshot passed immediately before installation.
+The ordinary `make install-doc` recipes, with their dependencies and checks,
+installed all three GPT outputs under
+`pdf/gpt/liturgy/roman-rite/1962/propers/temporal/`. Each build and installed
+file retained its visual review's exact SHA-256:
+
+| Installed file | SHA-256 |
+| --- | --- |
+| `f01-christ-the-king.pdf` | `d51e0a4fb26291b9066d5dec99690bf75e9e2b7f10648a12360805407947be94` |
+| `f01-christ-the-king-synthesis.pdf` | `995bdbb133024e9856b9a48b2a41fc3e0ee7591840d863fd7f124beee002eeed` |
+| `f01-christ-the-king-homily.pdf` | `6fd2de7f383669af1dec0db71f8b2530a2b66793ae00927032e0abdbe70df724` |
+
+The reviewed canonical Markdown was copied byte for byte to
+`web/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.md`
+and staged, retaining web-review SHA-256
+`c4229d8989d11befd1d43fc50a680d258459bd806978cc7f42a50d1d513a7e7f`.
+No source timestamp or review receipt was changed to perform installation.
+The three independent release records name their exact output IDs, the
+1962 catalog and standing authorization `perpetual-public-repository-2026`.
+The existing F01 row now links the GPT Full PDF, Synthesis PDF, Homily PDF
+and canonical Read edition in manifest order, preserving the Claude links.
+The terminal engine publication gate remains the acceptance boundary;
+installation is not deployment.

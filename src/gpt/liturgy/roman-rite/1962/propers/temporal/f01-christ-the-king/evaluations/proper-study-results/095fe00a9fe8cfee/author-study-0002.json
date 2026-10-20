@@ -1,0 +1,19 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/main.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "WEB-001",
+      "note": "Removed provider handoff, non-borrowing, deterministic-transfer and author-proof workflow narration from the canonical scope appendix; retained substantive source, rights and review qualifications and operational audit records. Rebuilt PDF and generated web probe contain the repaired text.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "WEB-002",
+      "note": "Corrected the canonical reference to https://la.wikisource.org/wiki/Commentaria_in_Danielem_(Hieronymus), verified HTTP 200 and the Migne 1845 witness identity, and confirmed the exact target in rendered pinned-Markdown output; native Daniel VII loci remain intact.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 2,
+  "stage": "author-study",
+  "summary": "Repaired WEB-001 by removing internal production narration from the study scope appendix while preserving source and review qualifications, and WEB-002 by correcting and verifying Jerome's author-qualified Latin witness link. The 23-page, 7,628-substantive-word study passes the prescribed build, research artifact component check, full content preflight and pinned-Markdown web probe; all pages were inspected in contact sheets and changed terminal pages at full size. Exact proof: build/tpt-runs/095fe00a9fe8cfee/artifacts/author-study-0002/author-proof.pdf, SHA-256 bf68f44adda3ff295d76f76e1eeb3efaba5d0274acf9854ed337b66932c0f9c5. Research and companion prose were not changed; later independent reviews and the common build remain required."
+}

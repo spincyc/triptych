@@ -1,0 +1,14 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "HOM-001",
+      "note": "The owning inventory and both interpretation rows now ask the Father that Christ bestow unity and peace. The scope records the exact grammatical evidence at Missale Romanum (1962), p. 698, no. 3947, one-based PDF page 779: Filius tuus and Qui tecum identify the addressee; ipse ... concedat identifies the Son as giver. Source text is unchanged; downstream prose is reserved to the rerun authoring stages.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 2,
+  "stage": "research",
+  "summary": "Repaired HOM-001 in research/scope.md and both Secret rows of research/interpretations.md after independently reading the retained 1962 printed p. 698 image and the verified Latin and English, distinguishing the Father addressed from the sacrificial Son whose gifts are sought; refreshed publications-v1.toml and source-family-migration-v1.toml and preserved the verified prayer text, bindings, chronology, and existing interpretation arguments. Source-library and source-inventory validation, source-family-migration check, research-seal compilation, tmt check and git diff --check passed; make check-sources stopped at existing document-catalogue drift, while dependent study, concise study, homily and their production receipts await their normal authoring and review stages."
+}

@@ -1,0 +1,186 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "HOM-001",
+      "location": "research/scope.md, Complete active inventory and bounds, Secret row; research/interpretations.md, reading A's Secret row; sections/20-commentary.tex, Secret subsection; sections/40-reconciled-creation.tex, paragraph beginning 'The Introit has made'; sections/concise/10-commentary.tex, paragraph beginning 'The Collect\u2019s wound'; sections/homily/10-body.tex, paragraph 14 beginning 'At the offering'",
+      "problem": "The homily says that the Secret 'asks Christ for unity and peace among the nations', carrying forward the same claim from the research summaries and both studies. The actual Secret addresses the Father: Missale Romanum (1962), printed p. 698, no. 3947, explicitly calls Jesus Christ 'Filius tuus' and closes 'Qui tecum'. Its petition asks the Father that the Son offered in sacrifice himself bestow unity and peace. The identification of Christ as the giver is correct, but it does not make him the prayer's addressee. This is a factual misdescription of an appointed prayer used to connect the sermon\u2019s argument to the Eucharist, rather than a stylistic preference.",
+      "repair_target": "research",
+      "required_result": "Correct the owning research summaries to distinguish the Father addressed from the Son whose gift is sought, retaining the supported connection between Christ's sacrifice and his gift of unity and peace. Carry that distinction into the dependent study, concise study and spoken homily through their normal authoring and review stages; an accurate formulation may say that the Secret asks the Father that Christ bestow unity and peace, or simply that it asks for these gifts from the sacrificial Christ without identifying Christ as the person addressed. The existing verified text and cited page image already supply the necessary evidence; preserve them and the rest of the supported argument.",
+      "severity": "blocking"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-body.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "homily-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "preface",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Jerome",
+            "Robert Bellarmine"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Jerome"
+          ],
+          "component_keys": [
+            "hearing-king"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "hearing-king",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/reception-verification.md"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Robert Bellarmine",
+            "Augustine of Hippo"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "reconciled-creation"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "reconciled-creation",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/reception-verification.md"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king",
+    "files": {
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/homily.tex": "dd4ec5204788387d38668079ab2d7bf878e544a14d4ff372982851749fd93871",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/interpretations.md": "37d9ba75031dcef24a54c3460cc2ae73eec5386e8d9e5441f29448be77173f60",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/scope.md": "1c80ec13ed53e0020694d0180cd30db831edbe6ef450b5a51bc5a40c901a29be",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/source-bindings.toml": "82c23329ebe0357e896e2585d310c46a443e498527e91995de73aa783405f146",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/homily/10-body.tex": "7bdd9368ef1fbb9424b2b6ca1f4956338abfbb8bf6070265b400d29c3143659f",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/homily/90-apparatus.tex": "afc95cf76d00834b0cf41aa17b6f2727ec341395d6b56d5b7eff4b1b992dcee7"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "13",
+            "7568a7728ef8a16e5a7c65475e9a3ae0d24c695caab6faa5d0c0c7ec52621d16",
+            "095fe00a9fe8cfee",
+            "5b48292320cc04c0f174b6bb96ce1342c554d8a1",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Read Learning to Hear the King continuously and compared its argument with the two study interpretations, independently checking Augustine, John 115.1\u20134 and Psalm 28.10\u201311, Chrysostom, Colossians II on 1:12\u201315 and III on creation, reconciliation and liturgical peace, and the 1962 Missal page images at printed 697\u2013698. The text-specific movement from royal power to grace-enabled hearing, practical reconciliation and Eucharistic hope is coherent and speakable; the measured 1,276 words support the stated calculated 10.2\u201311.6 minutes at 110\u2013125 words per minute, without certifying audible rehearsal or human delivery, but CHANGES_REQUIRED follows from one inherited misidentification of the Secret's addressee."
+}

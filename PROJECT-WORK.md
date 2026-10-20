@@ -19,10 +19,12 @@ The calendar computation places this feast ahead of the Twenty-second Sunday
 after Pentecost; the workflow must verify the appointment in the governing
 Missal and a dated occurrence witness. No unspecified local overlay is assumed.
 
-State: GPT full-material production remains unfinished after a second research
-output rejection; independent evidence has been consolidated. The workspace
-remains on `feature/propers/codex`; `main` was incorporated through
-`6dad4a7a3`. No GPT publication, main push or live deployment is claimed.
+State: the GPT full-material `proper-study` v13 run `095fe00a9fe8cfee` is
+`ACCEPTED` and archived. The complete Latin and historical English texts,
+expansive study, concise study, homily and canonical web edition are reviewed,
+installed and cataloged with exact artifact bytes. The workspace remains on
+`feature/propers/codex`; main integration and live deployment verification
+are pending.
 
 The original version-12 run `3c11005c63dcd584` passed scope and context but
 terminated BLOCKED after repeated research-response output rejection. Its partial
@@ -79,16 +81,18 @@ published on `main`; it is not GPT acceptance. Full GPT source material and
 its three deliverables still require a safe path consistent with the
 maintainer's rejection of locator-only output.
 
-A further full-material v13 run `095fe00a9fe8cfee` has passed scope and fresh
-context resolution. Its research is in progress. The worker independently
-rehashes and reads the primary page images, treating the already published
-Claude collation only as source-data lead and disclosing its transcription
-contribution. All thirteen 1962 Latin units and an unedited AAS source pull
-have been saved as a clearly incomplete GPT checkpoint; continuous historical
-English from Lasance is being checked for every element. The source checkpoint
-and AAS binding/dependency are feature-pushed at `8b693dc86` and `1649a5864`.
-No new output rejection has occurred in this run so far. The full English,
-research review, documents, artifacts and deployment remain unaccepted.
+A further full-material v13 run `095fe00a9fe8cfee` independently checked the
+1962 Missal, AAS 1925, Lasance historical English and contextual witnesses,
+using the already published Claude collation only as a disclosed source-data
+lead. It completed all thirteen printed Latin units and their historical
+English counterparts, including the two inactive seasonal variants, with
+source and rights evidence. Fresh research, study, concise, homily, visual
+and web reviews resolved their blocking findings. The 23-page study, ten-page
+concise work, three-page homily and canonical web edition were installed with
+accepted hashes; native publication gates passed. Its fifty-stage-result
+archive is at
+`src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/095fe00a9fe8cfee/`.
+The detailed repair and production chronology is in the driver record above.
 
 ## Claude 1962 Christ the King three documents, 2026-10-19
 

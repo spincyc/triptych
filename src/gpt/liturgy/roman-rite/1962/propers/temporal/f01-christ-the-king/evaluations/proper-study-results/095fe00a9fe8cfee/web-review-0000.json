@@ -1,0 +1,34 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "WEB-001",
+      "location": "sections/90-study-apparatus.tex:8,12; generated canonical Markdown lines 513 and 517, Appendix: Scope and Qualifications",
+      "problem": "The rendered scope appendix exposes internal production history: the GPT/Claude transcription handoff, the statement that prose was not borrowed from another provider, the deterministic transfer of a reviewed GPT record, and the author-proof workflow pointer. This prose is present in the canonical source and research PDF as well as the web edition. The web-review fragment requires absence of exposed production metadata, and guidance/editorial.md, Audit records and generation metadata, reserves model contribution and internal production history for tracked audit records. The defect concerns that narration, not the profile-permitted pointers to propers/verified.md and research/scope.md or substantive source-verification and review limits.",
+      "repair_target": "study",
+      "required_result": "Remove the provider handoff, deterministic-transfer and author-proof workflow narration from reader-facing study prose, retaining necessary source provenance, edition/text qualifications and truthful review limits. Keep any needed operational detail in the existing research and generation audit records, then rebuild and regenerate the canonical web edition from the corrected source without editing generated Markdown by hand.",
+      "severity": "blocking"
+    },
+    {
+      "id": "WEB-002",
+      "location": "sections/90-study-apparatus.tex:24; generated canonical Markdown line 527, References\u2014Jerome, Latin witness link",
+      "problem": "The published Latin witness URL https://la.wikisource.org/wiki/Commentaria_in_Danielem returns HTTP 404. The registered source acquisition names Commentaria in Danielem (Hieronymus), and the author-qualified page opens successfully and identifies the Migne 1845 Latin witness. The incorrect target is authored in the canonical source, so conversion faithfully preserves a broken reference to a principal witness.",
+      "repair_target": "study",
+      "required_result": "Correct the canonical source link to the verified author-qualified witness, https://la.wikisource.org/wiki/Commentaria_in_Danielem_(Hieronymus), or another verified exact delivery of the same cited witness. Preserve the native Daniel VII verse loci, rebuild/regenerate the outputs and confirm that the rendered source link reaches the intended text.",
+      "severity": "blocking"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "document": "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king",
+    "files": {},
+    "provider": "gpt",
+    "review": "web",
+    "schema": 1,
+    "web": {
+      "build/web/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.md": "d580a200e143bb5bcbbc9a2404c5cdcde7c7481b37ce707796647297e0e77ff8"
+    }
+  },
+  "stage": "web-review",
+  "summary": "Compared the complete canonical web conversion SHA-256 d580a200e143bb5bcbbc9a2404c5cdcde7c7481b37ce707796647297e0e77ff8, as recorded in research/web-artifact.json, with the reviewed research PDF and canonical sources: all appointed text, both interpretations and eight sense entries, nine chronology rows, and thirty exact source notes survive; independently checked Augustine John 115.2,4, Jerome Daniel VII on 13\u201318,27, Chrysostom Colossians III, and Bellarmine Psalm 71 comment 10. The actual pinned site renderer was inspected in Chromium at 1280\u00d7900 and 390\u00d7844, with working internal anchors, contents and note returns, usable tables and no TeX debris; CHANGES_REQUIRED for source-owned production-history exposure and one confirmed broken source link, with eleven other external links returning HTTP 200, and no claim of deployed-site review or a fresh exhaustive research audit."
+}
