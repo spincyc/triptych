@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-stages",
+  "dossier_id": "bursfelde",
+  "title": "Bursfelde Benedictine missal: a bounded 1498 book state",
+  "traditions": [
+    {
+      "id": "bursfelde-observance",
+      "label": "Bursfelde Benedictine observance",
+      "family": "latin",
+      "scope": "The printed missal expressly assigned to the Bursfelde union and observance, without treating other Benedictine congregations as one recension.",
+      "coverage_note": "One original title and Mass-opening leaf establish a scoped book witness. The mandate, house reception, wider text, and relation to earlier or later prints remain open."
+    }
+  ],
+  "sources": [
+    {
+      "id": "bursfelde:bsb-1498-book",
+      "title": "Missale ordinis sancti Benedicti, BSB 2 Inc.c.a. 3665 s",
+      "url": "https://daten.digitale-sammlungen.de/bsb00030079/image_19",
+      "kind": "primary-book",
+      "inspection": "Original BSB scan images 3 (title), 6 (Trithemius letter) and 19 (fol. 1r temporal Mass opening) visually inspected on 2026-10-20; the IIIF manifest identifies the 604-canvas object, shelfmark, printer and bracketed publication date.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Only selected leaves were read. The dated colophon and full Mass Ordinary, Canon, calendar and rubrics were not inspected. The scan manifest carries a Public Domain Mark; no historical text or image is republished here."
+    },
+    {
+      "id": "bursfelde:bsb-manifest",
+      "title": "Bayerische Staatsbibliothek IIIF manifest for bsb00030079",
+      "url": "https://api.digitale-sammlungen.de/iiif/presentation/v3/bsb00030079/manifest",
+      "kind": "institutional-catalogue",
+      "inspection": "Manifest metadata read on 2026-10-20: title Missale Benedictinum Bursfeldense; Speyer, Peter Drach; bracketed 1498-07-30 date; call number 2 Inc.c.a. 3665 s; 604 canvases; prefatory letter dated 1497-08-05.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The manifest's date is catalogue metadata. Its transcription of the colophon was not checked against that leaf."
+    },
+    {
+      "id": "bursfelde:usuarium-220",
+      "title": "USUARIUM 220, Missale Romano-Bursfeldense",
+      "url": "https://usuarium.elte.hu/book/220/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Full book record and contents index read on 2026-10-20; identifies the 1498 Speyer Bursfelde copy and indexed temporal, Ordinary, Canon, sanctoral, common, votive and rubrical sections.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The contents index is not page-level collation. It labels image 6 a decree, but the image is a prefatory letter. USUARIUM requests attribution for use of its dataset."
+    },
+    {
+      "id": "bursfelde:usuarium-469",
+      "title": "USUARIUM 469, Missale Benedictinum",
+      "url": "https://usuarium.elte.hu/book/469/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Full book record read on 2026-10-20: distinct 1481 Bamberg Johannes Sensenschmidt printing, OSB (IT), BSB 2 L.impr.membr. 71, Weale-Bohatta 1680.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Original 1481 leaves and any textual relation to the 1498 Bursfelde print were not inspected; the catalogue identity alone proves no ancestry. USUARIUM requests attribution for use of its dataset."
+    }
+  ],
+  "stages": [
+    {
+      "id": "bursfelde:1498",
+      "tradition_id": "bursfelde-observance",
+      "label": "1498 Bursfelde observance missal",
+      "date_label": "1498 Speyer printing; exact colophon date unverified",
+      "start_year": 1498,
+      "end_year": 1498,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "The inspected title and fol. 1r First Sunday of Advent Mass opening identify the printed temporal as according to the Bursfelde union and observance. The indexed whole-book contents are a finding aid, not a collated text.",
+      "components": [
+        "propers",
+        "lectionary",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:monastic-bursfelde-1498"
+      ],
+      "witness_label": "Missale ordinis sancti Benedicti, Speyer, Peter Drach, 1498; BSB 2 Inc.c.a. 3665 s",
+      "summary": "The first temporal Mass opening names the Bursfelde union and observance and gives the First Sunday of Advent formulary. This identifies a local Benedictine book state, with no claim that the book revises the 1481 Benedictine printing.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "bursfelde:bsb-1498-book",
+          "locus": "BSB image 3, title; image 19, fol. 1r, red temporal heading and First Advent opening",
+          "claim": "Original leaves identify a Benedictine missal whose temporal is assigned to the Bursfelde union and observance."
+        },
+        {
+          "source_id": "bursfelde:bsb-manifest",
+          "locus": "Title, Published, Date and Call number metadata",
+          "claim": "The library identifies the Speyer Peter Drach printing as 1498 and its copy as 2 Inc.c.a. 3665 s."
+        },
+        {
+          "source_id": "bursfelde:usuarium-220",
+          "locus": "Book 220 metadata and contents list, pp. 3, 19, 307, 331, 349, 409, 456 and 566",
+          "claim": "The index connects the inspected copy to a complete Missal with identifiable Mass components."
+        }
+      ],
+      "limitations": "The 1497 Trithemius leaf is a prefatory letter, not an inspected promulgation. The exact 1498 colophon leaf, general chapter authorization, full text, and differences from other Benedictine books are unexamined. The 1481 USUARIUM 469 printing is a distinct bibliographic witness, not an established predecessor.",
+      "reception": "The printed heading states intended Bursfelde use; actual celebration from this edition at any named house and uniform adoption throughout the union are not established."
+    }
+  ],
+  "transitions": [],
+  "gaps": [
+    {
+      "id": "bursfelde:authority-and-reception-gap",
+      "tradition_id": "bursfelde-observance",
+      "period": "1497–1498 and later house reception",
+      "missing": "Bursfelde chapter or other competent authorization and dated evidence of use of this exact printing at named houses.",
+      "next_source": "Inspect Bursfelde chapter records, ownership or use annotations, house inventories and accounts alongside the original prefatory leaves.",
+      "consequence": "The stage is a scoped book attestation, not an act-history station or proof of union-wide adoption."
+    },
+    {
+      "id": "bursfelde:textual-relation-gap",
+      "tradition_id": "bursfelde-observance",
+      "period": "1481–1534",
+      "missing": "Collated component differences among the 1481 Benedictine print, 1498 Bursfelde print and the catalogue-reported 1534 Bursfelde printing.",
+      "next_source": "Inspect original 1481 and 1534 copies and compare the Canon, Mass Ordinary, selected temporal and sanctoral formularies, calendar and rubrics with BSB bsb00030079.",
+      "consequence": "No revision, ancestry or successor transition is recorded from bibliography alone."
+    }
+  ]
+}

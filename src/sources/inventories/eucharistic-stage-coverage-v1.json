@@ -14,7 +14,7 @@
     {
       "id": "western",
       "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
-      "sha256": "6576391fe98ca2c13bd68353560f8319ac82da56510b0f954df418e21571bccd"
+      "sha256": "7c6ea6fe33a9782e6fd3e08ca904e04c615486a91e28198a81984153d8439813"
     },
     {
       "id": "presentation",
@@ -100,13 +100,38 @@
       "id": "dossier:west-syriac-stages",
       "path": "src/sources/inventories/eucharistic-stages/west-syriac.json",
       "sha256": "5af5b77cfacbce6570a8abf8b7d3060070301fe8be43afcd3409bd6d9fb71587"
+    },
+    {
+      "id": "dossier:bursfelde",
+      "path": "src/sources/inventories/eucharistic-stages/bursfelde.json",
+      "sha256": "acfe5cbc563a73e9a65862e5f07eae729b058ac8109be6e2406c8b0e91c6a2d2"
+    },
+    {
+      "id": "dossier:evora",
+      "path": "src/sources/inventories/eucharistic-stages/evora.json",
+      "sha256": "6bda1d2551caa7405e7e3db7d47c5cad484bcaa62734013c310d1b02bc3c282d"
+    },
+    {
+      "id": "dossier:german-regional",
+      "path": "src/sources/inventories/eucharistic-stages/german-regional.json",
+      "sha256": "514155850a7227b28296c52710c7c460e175e6ea0ce73cfcf05ae5487fc2b085"
+    },
+    {
+      "id": "dossier:northern-central-regional",
+      "path": "src/sources/inventories/eucharistic-stages/northern-central-regional.json",
+      "sha256": "855b6ff82eb9af3e3bba3dfaa3cf3430186311d51cd2ee3caa8b8d942c207dd3"
+    },
+    {
+      "id": "dossier:romanian-blaj",
+      "path": "src/sources/inventories/eucharistic-stages/romanian-blaj.json",
+      "sha256": "f59e5da265728d0dd6c1f1f048c2045d1e9e95ad15b3b2e37e45f88f0356c42b"
     }
   ],
   "count_semantics": {
     "eastern_census_slots": 23,
     "western_coverage_trajectories": 73,
     "eastern_candidates": 440,
-    "western_candidates": 1141,
+    "western_candidates": 1149,
     "presentation_groups": 128,
     "eastern_empty_candidate_slots_at_input": [
       "albanian",
@@ -126,7 +151,8 @@
     "No assigned new dossier covers the full early sacramentary corpus or all Sarum/York/Hereford/continental diocesan and monastic trajectories.",
     "Selected local-use, canonical-order and Slavonic Roman stages now resolve to their own dossiers. Composite discovery rows retain unmapped communities and incomplete periods; no dossier supplies whole-book text completeness.",
     "Complete native constituents count as partial book coverage. Recorded book states, optional rules and complementary volumes do not create a complete missal or authorize text inheritance.",
-    "The 2026-10-20 regional dossier adds seven bounded book states (two provisional) and one provisional source-described Polish printing transition; no whole-book text completion or unexamined first-use date follows."
+    "The 2026-10-20 regional dossier adds seven bounded book states (two provisional) and one provisional source-described Polish printing transition; no whole-book text completion or unexamined first-use date follows.",
+    "A second source-bounded review adds Bursfelde, Évora, Nidaros, Turku, Zagreb, Prague, Blaj and German diocesan book states; it adds no unverified revision transition or complete text."
   ],
   "sources": [
     {
@@ -3559,6 +3585,66 @@
       "id": "ordinariate-divine-worship",
       "label": "Divine Worship: The Missal for the personal ordinariates",
       "dossier_id": "regional-variants"
+    },
+    {
+      "id": "bursfelde-observance",
+      "label": "Bursfelde Benedictine observance",
+      "dossier_id": "bursfelde"
+    },
+    {
+      "id": "evora-use",
+      "label": "Évora diocesan use",
+      "dossier_id": "evora"
+    },
+    {
+      "id": "german-regional:salzburg",
+      "label": "Salzburg local Mass books",
+      "dossier_id": "german-regional"
+    },
+    {
+      "id": "german-regional:muenster",
+      "label": "Münster diocesan missal",
+      "dossier_id": "german-regional"
+    },
+    {
+      "id": "german-regional:swiss",
+      "label": "German-speaking Swiss diocesan propers",
+      "dossier_id": "german-regional"
+    },
+    {
+      "id": "german-regional:cologne",
+      "label": "Cologne postconciliar propers",
+      "dossier_id": "german-regional"
+    },
+    {
+      "id": "german-regional:speyer",
+      "label": "Speyer postconciliar propers",
+      "dossier_id": "german-regional"
+    },
+    {
+      "id": "nidaros-provincial-missal",
+      "label": "Nidaros provincial missal",
+      "dossier_id": "northern-central-regional"
+    },
+    {
+      "id": "turku-aboense-missal",
+      "label": "Turku diocesan Missale Aboense",
+      "dossier_id": "northern-central-regional"
+    },
+    {
+      "id": "zagreb-diocesan-missal",
+      "label": "Zagreb diocesan missal",
+      "dossier_id": "northern-central-regional"
+    },
+    {
+      "id": "prague-romano-bohemian-missal",
+      "label": "Roman-Bohemian missal",
+      "dossier_id": "northern-central-regional"
+    },
+    {
+      "id": "romanian-blaj:historical",
+      "label": "Blaj Romanian Greek Catholic book line",
+      "dossier_id": "romanian-blaj"
     }
   ],
   "dossier_snapshot": [
@@ -3922,6 +4008,109 @@
       "provisional_stage_count": 0,
       "text_coverage_counts": {
         "not-transcribed": 5
+      },
+      "status": "canonical-bounded-dossier-snapshot"
+    },
+    {
+      "dossier_id": "bursfelde",
+      "traditions": [
+        {
+          "id": "bursfelde-observance",
+          "label": "Bursfelde Benedictine observance"
+        }
+      ],
+      "documented_stage_count": 1,
+      "provisional_stage_count": 0,
+      "text_coverage_counts": {
+        "not-transcribed": 1
+      },
+      "status": "canonical-bounded-dossier-snapshot"
+    },
+    {
+      "dossier_id": "evora",
+      "traditions": [
+        {
+          "id": "evora-use",
+          "label": "Évora diocesan use"
+        }
+      ],
+      "documented_stage_count": 1,
+      "provisional_stage_count": 0,
+      "text_coverage_counts": {
+        "not-transcribed": 1
+      },
+      "status": "canonical-bounded-dossier-snapshot"
+    },
+    {
+      "dossier_id": "german-regional",
+      "traditions": [
+        {
+          "id": "german-regional:salzburg",
+          "label": "Salzburg local Mass books"
+        },
+        {
+          "id": "german-regional:muenster",
+          "label": "Münster diocesan missal"
+        },
+        {
+          "id": "german-regional:swiss",
+          "label": "German-speaking Swiss diocesan propers"
+        },
+        {
+          "id": "german-regional:cologne",
+          "label": "Cologne postconciliar propers"
+        },
+        {
+          "id": "german-regional:speyer",
+          "label": "Speyer postconciliar propers"
+        }
+      ],
+      "documented_stage_count": 7,
+      "provisional_stage_count": 1,
+      "text_coverage_counts": {
+        "not-transcribed": 8
+      },
+      "status": "canonical-bounded-dossier-snapshot"
+    },
+    {
+      "dossier_id": "northern-central-regional",
+      "traditions": [
+        {
+          "id": "nidaros-provincial-missal",
+          "label": "Nidaros provincial missal"
+        },
+        {
+          "id": "turku-aboense-missal",
+          "label": "Turku diocesan Missale Aboense"
+        },
+        {
+          "id": "zagreb-diocesan-missal",
+          "label": "Zagreb diocesan missal"
+        },
+        {
+          "id": "prague-romano-bohemian-missal",
+          "label": "Roman-Bohemian missal"
+        }
+      ],
+      "documented_stage_count": 4,
+      "provisional_stage_count": 0,
+      "text_coverage_counts": {
+        "not-transcribed": 4
+      },
+      "status": "canonical-bounded-dossier-snapshot"
+    },
+    {
+      "dossier_id": "romanian-blaj",
+      "traditions": [
+        {
+          "id": "romanian-blaj:historical",
+          "label": "Blaj Romanian Greek Catholic book line"
+        }
+      ],
+      "documented_stage_count": 2,
+      "provisional_stage_count": 0,
+      "text_coverage_counts": {
+        "not-transcribed": 2
       },
       "status": "canonical-bounded-dossier-snapshot"
     }
@@ -4553,15 +4742,25 @@
       ],
       "mapping_strength": "research-relevance-only-local-reception-separate",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
-        "reception_limit": "Mapped stages concern identified source books or relevant recensions. This crosswalk does not create a local adoption or continuous-use claim.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "romanian-blaj"
+        ],
+        "stage_ids": [
+          "romanian-blaj:1756-printing",
+          "romanian-blaj:1775-printing"
+        ],
+        "scope": "Two original Blaj printings are attested; no 1756-to-1775 substantive revision or uniform Romanian parish reception has been demonstrated.",
+        "reception_limit": "A selected book state or proper records only the authority and use expressly evidenced; it does not prove uniform adoption or continuous descent.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 2
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "romanian-blaj:early-collation-gap",
+          "romanian-blaj:later-book-line-gap"
+        ]
       },
       "witnesses": [
         {
@@ -4583,7 +4782,7 @@
       ],
       "component_profile": "byzantine",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Establish Slavonic/Greek predecessors, original composition versus translation in historical Romanian books, later Blaj revisions and twentieth-century normative sequence.",
+      "missing_stage_chain": "Establish Slavonic/Greek predecessors, original composition versus translation in historical Romanian books, later Blaj revisions and twentieth-century normative sequence. Additional selected book states are now assigned; the linked gaps preserve missing acts, exact use and paired text comparisons.",
       "next_sources": {
         "inventory_source_ids": [
           "blaj-cluj"
@@ -10090,14 +10289,23 @@
       ],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "northern-central-regional"
+        ],
+        "stage_ids": [
+          "northern-central-regional:nidaros1519"
+        ],
+        "scope": "The 1519 provincial book and standardization intent are attested; actual uptake across Norway, Iceland and Faroes is open.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 1
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "northern-central-regional:nidaros-reception"
+        ],
+        "reception_limit": "A selected book state or proper records only the authority and use expressly evidenced; it does not prove uniform adoption or continuous descent."
       },
       "witnesses": [
         {
@@ -10119,7 +10327,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Deduplicate catalogue records, extend witness census, acquire cleared complete witnesses and compare prayers, rubrics, calendar and order before promoting distinct versions. 1519 printed standardization intent and an earlier c.1250 Icelandic Nidaros-use fragment are documented. Deduplicate printed-copy catalogues; inspect approval, local reception and complete original text before claiming a normative revision or universal adoption.",
+      "missing_stage_chain": "Deduplicate catalogue records, extend witness census, acquire cleared complete witnesses and compare prayers, rubrics, calendar and order before promoting distinct versions. 1519 printed standardization intent and an earlier c.1250 Icelandic Nidaros-use fragment are documented. Deduplicate printed-copy catalogues; inspect approval, local reception and complete original text before claiming a normative revision or universal adoption. Additional selected book states are now assigned; the linked gaps preserve missing acts, exact use and paired text comparisons.",
       "next_sources": {
         "inventory_source_ids": [
           "nidaros-usuarium",
@@ -11227,14 +11435,23 @@
       ],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "northern-central-regional"
+        ],
+        "stage_ids": [
+          "northern-central-regional:prague1690"
+        ],
+        "scope": "The 1690 Roman-Bohemian title names local saint propers and archiepiscopal mandate; original concessions and page-level text remain uninspected.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 1
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "northern-central-regional:prague-original"
+        ],
+        "reception_limit": "A selected book state or proper records only the authority and use expressly evidenced; it does not prove uniform adoption or continuous descent."
       },
       "witnesses": [
         {
@@ -11344,7 +11561,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Deduplicate catalogue records, extend witness census, acquire cleared complete witnesses and compare prayers, rubrics, calendar and order before promoting distinct versions. Deduplicate catalogue records, extend witness census, acquire cleared complete witnesses and compare prayers, rubrics, calendar and order before promoting distinct versions. Utraquist/Hussite original-language witnesses and later Latin/modern original local propers remain unexamined; no claim complete Prague liturgical history.",
+      "missing_stage_chain": "Deduplicate Prague witnesses; inspect original-language Utraquist/Hussite books, the 1690 Roman-Bohemian title and later local propers; collate text and approval before identifying a revision sequence. Selected book states and linked dossier gaps document only the inspected portion of the route.",
       "next_sources": {
         "inventory_source_ids": [
           "prague-usuarium",
@@ -11385,7 +11602,7 @@
           "https://usuarium.elte.hu/book/5311/view"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Deduplicate catalogue records, extend witness census, acquire cleared complete witnesses and compare prayers, rubrics, calendar and order before promoting distinct versions. Deduplicate catalogue records, extend witness census, acquire cleared complete witnesses and compare prayers, rubrics, calendar and order before promoting distinct versions. Utraquist/Hussite original-language witnesses and later Latin/modern original local propers remain unexamined; no claim complete Prague liturgical history."
+        "target": "Deduplicate Prague witnesses; inspect original-language Utraquist/Hussite books, the 1690 Roman-Bohemian title and later local propers; collate text and approval before identifying a revision sequence."
       },
       "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence.",
       "canonical_tradition_ids": []
@@ -11407,14 +11624,23 @@
       ],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "northern-central-regional"
+        ],
+        "stage_ids": [
+          "northern-central-regional:zagreb1511"
+        ],
+        "scope": "The 1511 title reports Zagreb synod and chapter approval; its original act, text changes and actual diocesan uptake remain open.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 1
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "northern-central-regional:zagreb-acts"
+        ],
+        "reception_limit": "A selected book state or proper records only the authority and use expressly evidenced; it does not prove uniform adoption or continuous descent."
       },
       "witnesses": [
         {
@@ -11460,7 +11686,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Deduplicate catalogue records, extend witness census, acquire cleared complete witnesses and compare prayers, rubrics, calendar and order before promoting distinct versions. Deduplicate catalogue records, extend witness census, acquire cleared complete witnesses and compare prayers, rubrics, calendar and order before promoting distinct versions. Need primary authority for termination/replacement date and late local-proper sequence; no reliance on Wikipedia1788 claim.",
+      "missing_stage_chain": "Inspect the 1511 title approval against synodal acts, then collate manuscript and later print witnesses; establish the local termination or replacement date from primary authority. Selected book states and linked dossier gaps document only the inspected portion of the route.",
       "next_sources": {
         "inventory_source_ids": [
           "zagreb-usuarium",
@@ -11499,7 +11725,7 @@
           "https://usuarium.elte.hu/book/5183/view"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Deduplicate catalogue records, extend witness census, acquire cleared complete witnesses and compare prayers, rubrics, calendar and order before promoting distinct versions. Deduplicate catalogue records, extend witness census, acquire cleared complete witnesses and compare prayers, rubrics, calendar and order before promoting distinct versions. Need primary authority for termination/replacement date and late local-proper sequence; no reliance on Wikipedia1788 claim."
+        "target": "Inspect the 1511 title approval against synodal acts, then collate manuscript and later print witnesses; establish the local termination or replacement date from primary authority."
       },
       "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence.",
       "canonical_tradition_ids": []
@@ -12383,19 +12609,32 @@
       "candidate_ids": [
         "german-swiss-salzburg-witness-cluster",
         "german-swiss-gurk-witness-cluster",
-        "german-swiss-seckau-witness-cluster"
+        "german-swiss-seckau-witness-cluster",
+        "german-salzburg-1605",
+        "german-salzburg-propers-1642"
       ],
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
-        "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "german-regional"
+        ],
+        "stage_ids": [
+          "german-regional:salzburg-1605"
+        ],
+        "scope": "The Roman-based 1605 Salzburg book is source-described and a 1642 proper booklet is provisional; neither supplies a verified 1596 instrument or text-level revision edge.",
+        "provisional_stage_ids": [
+          "german-regional:salzburg-1642-propers"
+        ],
+        "text_coverage_counts": {
+          "not-transcribed": 2
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "german-regional:salzburg-collation"
+        ],
+        "reception_limit": "A selected book state or proper records only the authority and use expressly evidenced; it does not prove uniform adoption or continuous descent."
       },
       "witnesses": [
         {
@@ -12425,7 +12664,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. Resolve duplicate and disputed catalogue entries; acquire/inspect whole witnesses, compare prayers, readings, chants, Ordinary, calendar and rubrics; read approval and local reception evidence.",
+      "missing_stage_chain": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. Resolve duplicate and disputed catalogue entries; acquire/inspect whole witnesses, compare prayers, readings, chants, Ordinary, calendar and rubrics; read approval and local reception evidence. Additional selected book states are now assigned; the linked gaps preserve missing acts, exact use and paired text comparisons.",
       "next_sources": {
         "inventory_source_ids": [
           "usuarium-origins-0",
@@ -12464,19 +12703,29 @@
         "german-swiss-geneva-witness-cluster",
         "german-swiss-lausanne-witness-cluster",
         "german-swiss-sion-witness-cluster",
-        "german-swiss-st-gall-witness-cluster"
+        "german-swiss-st-gall-witness-cluster",
+        "german-swiss-propers-1976"
       ],
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "german-regional"
+        ],
+        "stage_ids": [
+          "german-regional:swiss-1976-propers"
+        ],
+        "scope": "The 1976 German-speaking Swiss Mass and lectionary propers are official regional adjuncts, not six separate whole missals.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 1
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "german-regional:swiss-propers"
+        ],
+        "reception_limit": "A selected book state or proper records only the authority and use expressly evidenced; it does not prove uniform adoption or continuous descent."
       },
       "witnesses": [
         {
@@ -12530,7 +12779,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. Resolve duplicate and disputed catalogue entries; acquire/inspect whole witnesses, compare prayers, readings, chants, Ordinary, calendar and rubrics; read approval and local reception evidence.",
+      "missing_stage_chain": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. Resolve duplicate and disputed catalogue entries; acquire/inspect whole witnesses, compare prayers, readings, chants, Ordinary, calendar and rubrics; read approval and local reception evidence. Additional selected book states are now assigned; the linked gaps preserve missing acts, exact use and paired text comparisons.",
       "next_sources": {
         "inventory_source_ids": [
           "usuarium-origins-0",
@@ -12758,19 +13007,29 @@
       "coverage_unit": "trajectory-or-discovery-bucket",
       "inventory_status": "selected-catalogue-witness-census-documented",
       "candidate_ids": [
-        "german-swiss-cologne-witness-cluster"
+        "german-swiss-cologne-witness-cluster",
+        "german-cologne-propers-2002"
       ],
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "german-regional"
+        ],
+        "stage_ids": [
+          "german-regional:cologne-2002-propers"
+        ],
+        "scope": "The 2002 Latin/German Cologne proper is officially named a binding adjunct to the Roman missal; earlier local-use descent is unproved.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 1
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "german-regional:cologne-propers"
+        ],
+        "reception_limit": "A selected book state or proper records only the authority and use expressly evidenced; it does not prove uniform adoption or continuous descent."
       },
       "witnesses": [
         {
@@ -12784,7 +13043,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. Resolve duplicate and disputed catalogue entries; acquire/inspect whole witnesses, compare prayers, readings, chants, Ordinary, calendar and rubrics; read approval and local reception evidence.",
+      "missing_stage_chain": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. Resolve duplicate and disputed catalogue entries; acquire/inspect whole witnesses, compare prayers, readings, chants, Ordinary, calendar and rubrics; read approval and local reception evidence. Additional selected book states are now assigned; the linked gaps preserve missing acts, exact use and paired text comparisons.",
       "next_sources": {
         "inventory_source_ids": [
           "usuarium-origins-100",
@@ -12821,19 +13080,36 @@
         "german-swiss-speyer-witness-cluster",
         "german-swiss-trier-witness-cluster",
         "german-swiss-wurzburg-witness-cluster",
-        "german-swiss-brixen-witness-cluster"
+        "german-swiss-brixen-witness-cluster",
+        "german-muenster-1632",
+        "german-muenster-supplement-1784",
+        "german-speyer-propers-1975",
+        "german-speyer-propers-2023"
       ],
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "german-regional"
+        ],
+        "stage_ids": [
+          "german-regional:muenster-1632",
+          "german-regional:muenster-1784-supplement",
+          "german-regional:speyer-1975-propers-approval",
+          "german-regional:speyer-2023-propers"
+        ],
+        "scope": "Selected Münster print and supplement states and Speyer approval/modern proper states; no complete German diocesan chronology or uninspected first use is inferred.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 4
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "german-regional:muenster-collation",
+          "german-regional:modern-propers"
+        ],
+        "reception_limit": "A selected book state or proper records only the authority and use expressly evidenced; it does not prove uniform adoption or continuous descent."
       },
       "witnesses": [
         {
@@ -12935,7 +13211,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. Resolve duplicate and disputed catalogue entries; acquire/inspect whole witnesses, compare prayers, readings, chants, Ordinary, calendar and rubrics; read approval and local reception evidence.",
+      "missing_stage_chain": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. Resolve duplicate and disputed catalogue entries; acquire/inspect whole witnesses, compare prayers, readings, chants, Ordinary, calendar and rubrics; read approval and local reception evidence. Additional selected book states are now assigned; the linked gaps preserve missing acts, exact use and paired text comparisons.",
       "next_sources": {
         "inventory_source_ids": [
           "usuarium-origins-100",
@@ -16099,21 +16375,30 @@
       "id": "portuguese-other-uses",
       "label": "Coimbra, Évora and Lisbon",
       "coverage_unit": "trajectory-or-discovery-bucket",
-      "inventory_status": "selected-original-witness-with-date-dispute-and-index-leads",
+      "inventory_status": "selected-original-witness-and-documented-1565-use-mandate",
       "candidate_ids": [
         "evora-elborense-1509-colophon-1519-probable"
       ],
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "evora"
+        ],
+        "stage_ids": [
+          "evora:printed-missal"
+        ],
+        "scope": "One printed Évora-use missal is attested with a 1509 colophon and probable 1519 printing; the 1565 use mandate is separate reception legislation.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 1
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "evora:sequence-gap"
+        ],
+        "reception_limit": "A selected book state or proper records only the authority and use expressly evidenced; it does not prove uniform adoption or continuous descent."
       },
       "witnesses": [
         {
@@ -16127,7 +16412,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. 2026-10-20 review: Add original Évora missal candidate with 1509 colophon/1519 probable date dispute; retain Coimbra diocesan versus Santa Cruz and Lisbon diocesan versus São Vicente de Fora separations.",
+      "missing_stage_chain": "Collate the original Évora missal (1509 colophon, probable 1519 printing), identify its approval and reception, and keep Coimbra diocesan/Santa Cruz and Lisbon diocesan/São Vicente de Fora lines distinct. Selected book states and linked dossier gaps document only the inspected portion of the route.",
       "next_sources": {
         "inventory_source_ids": [
           "usuarium-origins-700",
@@ -16140,7 +16425,7 @@
           "https://rpm-ns.pt/index.php/rpm/article/download/317/506/1066"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. 2026-10-20 review: Add original Évora missal candidate with 1509 colophon/1519 probable date dispute; retain Coimbra diocesan versus Santa Cruz and Lisbon diocesan versus São Vicente de Fora separations."
+        "target": "Collate the original Évora missal (1509 colophon, probable 1519 printing), identify its approval and reception, and keep Coimbra diocesan/Santa Cruz and Lisbon diocesan/São Vicente de Fora lines distinct."
       },
       "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence.",
       "canonical_tradition_ids": []
@@ -16224,14 +16509,24 @@
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "bursfelde"
+        ],
+        "stage_ids": [
+          "bursfelde:1498"
+        ],
+        "scope": "The original 1498 Bursfelde missal is attested as a distinct print witness, without a chapter act, house-use date or comparison with 1481 and 1534.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 1
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "bursfelde:authority-and-reception-gap",
+          "bursfelde:textual-relation-gap"
+        ],
+        "reception_limit": "A selected book state or proper records only the authority and use expressly evidenced; it does not prove uniform adoption or continuous descent."
       },
       "witnesses": [
         {
@@ -16277,7 +16572,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. The complete OSB origin 409 table identifies a 1481 Benedictine missal (ID 469) as a catalogue-only print witness; its title and text are unexamined. Direct title inspection identifies the Cassinese 1580 congregation printing and Monte Corona 1896 branch book with bounded title claims, while 1937 and 1923 Benedictine files are partial components with qualified dates. House, congregation and branch originals, approvals, later propers and reception require separate review; medieval Montecassino manuscripts are not the Cassinese print sequence.",
+      "missing_stage_chain": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. The complete OSB origin 409 table identifies a 1481 Benedictine missal (ID 469) as a catalogue-only print witness; its title and text are unexamined. Direct title inspection identifies the Cassinese 1580 congregation printing and Monte Corona 1896 branch book with bounded title claims, while 1937 and 1923 Benedictine files are partial components with qualified dates. House, congregation and branch originals, approvals, later propers and reception require separate review; medieval Montecassino manuscripts are not the Cassinese print sequence. Additional selected book states are now assigned; the linked gaps preserve missing acts, exact use and paired text comparisons.",
       "next_sources": {
         "inventory_source_ids": [
           "usuarium-origins-600",
@@ -18824,14 +19119,23 @@
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "northern-central-regional"
+        ],
+        "stage_ids": [
+          "northern-central-regional:turku1488"
+        ],
+        "scope": "The 1488 Turku diocesan print is attested; fragmentary copy structure and relation to Dominican/Roman texts need original comparison.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 1
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "northern-central-regional:turku-copies"
+        ],
+        "reception_limit": "A selected book state or proper records only the authority and use expressly evidenced; it does not prove uniform adoption or continuous descent."
       },
       "witnesses": [
         {
@@ -18933,7 +19237,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Original-book text, approval and local reception remain uncollated; see Scandinavian 2026-10-20 review receipt.",
+      "missing_stage_chain": "Original-book text, approval and local reception remain uncollated; see Scandinavian 2026-10-20 review receipt. Additional selected book states are now assigned; the linked gaps preserve missing acts, exact use and paired text comparisons.",
       "next_sources": {
         "inventory_source_ids": [
           "aboense1488-scan",
@@ -19646,8 +19950,8 @@
         "melkite",
         "romanian"
       ],
-      "state": "no-new-stage-dossier",
-      "question": "Identify exact original Greek/Arabic or Blaj books and distinguish original local reform from independent translations; compare later revisions.",
+      "state": "selected-Blaj-print-witnesses-Melkite-unresearched",
+      "question": "Identify exact original Melkite Greek/Arabic books; collate the documented Blaj 1756 and 1775 printings against predecessors and later revisions, distinguishing original local reform from translation.",
       "next_source_urls": [
         "https://bcs.edu/library-liturgikon/",
         "https://documente.bcucluj.ro/carti.html"
@@ -19845,9 +20149,9 @@
   "inspection_limits": {
     "inventory_rows": "All 23 Eastern and 73 Western route rows reconciled; selected new sources and pages were inspected in the dated 2026-10-20 research review.",
     "fresh_external_sources": "Dated 2026-10-20 primary, official and catalogue sources are distinguished in their inventory or dossier records; permission and first-use limits are retained.",
-    "new_source_book_acquisitions": 2,
+    "new_source_book_acquisitions": 5,
     "new_collated_transitions": 0,
-    "new_stages": 7,
+    "new_stages": 23,
     "new_transitions": 1,
     "negative_search_claim": "No exact Albanian or Macedonian source-language celebrant book is established by the current bounded records. Later Macedonian translation approval evidence does not identify that source book; no absence from history is claimed.",
     "reconciliation_basis": "Candidate membership and bibliographic bounds follow the inventories; canonical tradition, stage status, text coverage and declared gap references follow the pinned dossiers. Church-level mappings retain explicit local-reception limits."
@@ -19930,8 +20234,8 @@
       "no absolute or scratch paths in deliverable"
     ],
     "coverage_status_counts": {
-      "no-new-researched-stage-sequence": 57,
-      "selected-stages-available": 35,
+      "no-new-researched-stage-sequence": 46,
+      "selected-stages-available": 46,
       "related-dossier-only-local-reception-unresearched": 4
     },
     "limit": "Dossier presence is a canonical file snapshot. Exact tradition and stage references resolve, but no count is a completeness score or proof of local reception."

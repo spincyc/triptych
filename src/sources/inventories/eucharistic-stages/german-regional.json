@@ -1,0 +1,322 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-stages",
+  "dossier_id": "german-regional",
+  "title": "Salzburg and Münster books and German-speaking diocesan Mass propers",
+  "traditions": [
+    {
+      "id": "german-regional:salzburg",
+      "label": "Salzburg local Mass books",
+      "family": "latin",
+      "scope": "The 1605 Salzburg missal and later local Mass-proper printings, with the Roman basis and particular feasts kept distinct.",
+      "coverage_note": "The 1596 papal permission is reported by an archive museum; its original instrument, the 1605 body and exact replacement of preceding Salzburg texts remain to be checked."
+    },
+    {
+      "id": "german-regional:muenster",
+      "label": "Münster diocesan missal",
+      "family": "latin",
+      "scope": "The 1632 Münster missal and a bound 1784 supplement expressly addressed to it.",
+      "coverage_note": "Original 1632 decree and the 1784 supplement text remain unread; the indexed book states do not establish a complete revision sequence."
+    },
+    {
+      "id": "german-regional:swiss",
+      "label": "German-speaking Swiss diocesan propers",
+      "family": "latin",
+      "scope": "German local Mass and lectionary supplements to the postconciliar Roman books.",
+      "coverage_note": "St Gall identifies the 1976 volumes as current official local Mass texts; the original volumes and approval leaves have not been inspected."
+    },
+    {
+      "id": "german-regional:cologne",
+      "label": "Cologne postconciliar propers",
+      "family": "latin",
+      "scope": "Latin and German particular Mass and lectionary components of the Roman books for the Archdiocese of Cologne.",
+      "coverage_note": "The 2026 official directorium calls the 2002 components binding; original 2002 approval and book pages remain uninspected."
+    },
+    {
+      "id": "german-regional:speyer",
+      "label": "Speyer postconciliar propers",
+      "family": "latin",
+      "scope": "Particular calendar, Mass propers and lectionary components for the Diocese of Speyer.",
+      "coverage_note": "The 2023 lectionary reports separate 1971, 1972 and 1975 authority events; original instruments and the first proper book are not inspected."
+    }
+  ],
+  "sources": [
+    {
+      "id": "german-regional:salzburg-domquartier",
+      "title": "DomQuartier Salzburg, Die geistliche Musik an der Bischofskirche",
+      "url": "https://www.domquartier.at/musik/dom-zu-salzburg/",
+      "kind": "institutional-catalogue",
+      "inspection": "HTML section Wolf Dietrich räumt auf read 2026-10-20; archive object caption and paragraphs on 1596 permission, 1605 printing, Roman basis and local feasts checked.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Institutional retrospective and object caption, not the original 1596 instrument or complete 1605 missal. No original book-body collation or first-use date."
+    },
+    {
+      "id": "german-regional:salzburg-1642",
+      "title": "Missae Propriae cum propriis Sanctorum Archidioecesis Salisburgensis Officiis (1642), catalogue",
+      "url": "https://books.google.com/books/about/Missae_Propriae_Cum_Propriis_Sanctorvm_A.html?id=uNdJAAAAcAAJ",
+      "kind": "institutional-catalogue",
+      "inspection": "Catalogue title, 1642 date and 14-page extent read 2026-10-20; book pages not collated.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Bibliographic entry alone cannot establish which formularies differ from the 1605 book or whether and where the booklet was used."
+    },
+    {
+      "id": "german-regional:muenster-usu",
+      "title": "Usuarium 6490, Missale Monasteriense (1632)",
+      "url": "https://usuarium.elte.hu/book/6490/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Record title, date, shelfmark and contents index read 2026-10-20; original title and decree are indexed at images 7 and 11, but neither image text was transcribed.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Title claims Roman ceremonial accommodation and added saint offices; original 1632 decree and before/after Missal content remain uncollated. Usuarium remarks that the book represents the medieval use despite its title."
+    },
+    {
+      "id": "german-regional:muenster-archive",
+      "title": "Bistumsarchiv Münster, Findbuch der Handschriften und Druckschriften der Pfarrarchive",
+      "url": "https://www.bistum-muenster.de/fileadmin/user_upload/Website/Downloads/Bistum/BGV/S300-Kirche-in-Gesellschaft/320-KuK/Findbuecher-Bistumsarchiv/Pfarrarchive/findbuch-pfa-handschriften-und-druckschriften.pdf",
+      "kind": "institutional-catalogue",
+      "inspection": "PDF pp.37–38, DS 0212 and DS 1915–17 read 2026-10-20; title and 1784 supplement title/extent indexed there.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "An archive finding aid, not an image or transcription of the complete supplement; copy differences and individual directives require checking."
+    },
+    {
+      "id": "german-regional:stgallen",
+      "title": "Diocese of St Gall, Bistumsheilige and official local liturgical texts",
+      "url": "https://www.bistum-stgallen.ch/bistum/heilige/",
+      "kind": "official-retrospective",
+      "inspection": "Official diocesan page section Die offiziellen Texte für die liturgischen Feiern read 2026-10-20; it names 1976 Missal and Lectionary supplements and current local downloads.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Current use is attested by diocesan direction; the 1976 first publication, its approval leaves and exact texts have not been independently checked."
+    },
+    {
+      "id": "german-regional:cologne-directorium",
+      "title": "Archdiocese of Cologne, Directorium 2026, valid liturgical books",
+      "url": "https://www.erzbistum-koeln.de/export/sites/ebkportal/seelsorge_und_glaube/gottesdienst_liturgie/.content/.galleries/downloads/DIRECTORIUM_Einleitung_2026.pdf",
+      "kind": "official-retrospective",
+      "inspection": "PDF p.26, printed XXVIII, items h and m (continuing p.27) read 2026-10-20; particular Mass book and Lectionary are listed as binding.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "2026 book list reports a 2002 publication and current binding status, not the original 2002 decree, its effective date or the exact prayers."
+    },
+    {
+      "id": "german-regional:speyer-lectionary",
+      "title": "Diocese of Speyer, Messlektionar: Die Eigenfeiern des Bistums Speyer (2023)",
+      "url": "https://www.bistum-speyer.de/fileadmin/user_upload/1-0-0/Hauptabteilung_I/Downloads/Liturgie/Messlektionar.Eigenfeiern_Bistum_Speyer.pdf",
+      "kind": "primary-book",
+      "inspection": "Official 44-page lectionary PDF p.0 title, p.2 Approbation und Konfirmation, p.4 contents read 2026-10-20; date/protocol references and sample feast ranks checked.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "1971–1975 events are reported in a 2023 book, not original decree images. This is a lectionary, not an acquired copy of the companion second expanded 2023 Mass proper."
+    },
+    {
+      "id": "german-regional:speyer-books",
+      "title": "Diocese of Speyer, Eigenfeiern operative-book page",
+      "url": "https://www.bistum-speyer.de/seelsorge/seelsorge-vor-ort/liturgie/eigenfeiern/",
+      "kind": "official-retrospective",
+      "inspection": "Official diocesan page checked 2026-10-20; 2023 Missal second expanded edition and Lectionary first edition identified.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Page does not provide a collation of the second Missal edition against the first or original first-edition approval leaves."
+    }
+  ],
+  "stages": [
+    {
+      "id": "german-regional:salzburg-1605",
+      "tradition_id": "german-regional:salzburg",
+      "label": "Missale Salisburgense, Roman basis with Salzburg feasts",
+      "date_label": "1605 printed and distributed",
+      "start_year": 1605,
+      "end_year": 1605,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Salzburg missal as a local edition with Roman basis and particular feasts, according to an archive museum account.",
+      "components": ["calendar", "propers"],
+      "witness_ids": ["western:german-salzburg-1605"],
+      "witness_label": "Archive of the Archdiocese of Salzburg copy pictured by DomQuartier",
+      "summary": "Wolf Dietrich printed and distributed 1,228 copies. The institutional account identifies the Roman Missal as basis and says Salzburg local feasts were added. It separately reports Clement VIII's 1596 permission.",
+      "text_coverage": "not-transcribed",
+      "evidence": [{"source_id": "german-regional:salzburg-domquartier", "locus": "Wolf Dietrich räumt auf, archive-object caption and paragraphs following it", "claim": "The institution identifies the 1605 book, reports its circulation, Roman basis, local feasts and earlier papal permission."}],
+      "limitations": "The original 1596 act and full 1605 text are uninspected. Neither title nor retrospective description proves exact prayer changes or a direct descent from a particular Roman edition.",
+      "reception": "Reported publication and circulation in Salzburg, not a measured date of first or universal use."
+    },
+    {
+      "id": "german-regional:salzburg-1642-propers",
+      "tradition_id": "german-regional:salzburg",
+      "label": "Salzburg proper Masses with saints' offices",
+      "date_label": "1642 catalogue imprint",
+      "start_year": 1642,
+      "end_year": 1642,
+      "date_kind": "publication",
+      "status": "provisional",
+      "scope": "Identified local proper booklet component, not a complete Missal replacement.",
+      "components": ["propers"],
+      "witness_ids": ["western:german-salzburg-propers-1642"],
+      "witness_label": "1642 Salzburg proper booklet in Austrian National Library catalogue",
+      "summary": "The catalogue identifies a short printing of Salzburg saints' Mass propers with companion offices under archiepiscopal authority stated in its title.",
+      "text_coverage": "not-transcribed",
+      "evidence": [{"source_id": "german-regional:salzburg-1642", "locus": "Catalogue title, date and 14-page extent", "claim": "A particular Mass-proper booklet was printed in 1642."}],
+      "limitations": "Original title image, formularies and relationship to the 1605 missal have not been collated; the title claim of authority is not an inspected decree.",
+      "reception": "Printing is identified; actual diocesan use remains unverified."
+    },
+    {
+      "id": "german-regional:muenster-1632",
+      "tradition_id": "german-regional:muenster",
+      "label": "Missale sanctae Monasteriensis ecclesiae",
+      "date_label": "1632 printing",
+      "start_year": 1632,
+      "end_year": 1632,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Identified Münster diocesan Missal whose title claims accommodation to Roman ceremonial and added saint offices.",
+      "components": ["rubrics", "propers", "calendar", "ordinary", "anaphoras"],
+      "witness_ids": ["western:german-muenster-1632"],
+      "witness_label": "ULB Münster 51 FOL 13-1_2, as indexed in Usuarium 6490",
+      "summary": "The indexed title attributes the book to Bishop Ferdinand's command and describes Roman ceremonial accommodation and additional saints' offices; the index locates a decree, general rubrics, calendar, Ordinary and Canon.",
+      "text_coverage": "not-transcribed",
+      "evidence": [{"source_id": "german-regional:muenster-usu", "locus": "Record 6490, title/age/contents, images 7, 11, 20, 32, 280 and 337", "claim": "The title and contents identify a 1632 Münster Missal and its claimed component scope."}, {"source_id": "german-regional:muenster-archive", "locus": "PDF pp.37–38, DS 0212 and DS 1915", "claim": "Diocesan archive lists the 1632 Moretus printing in parish copies."}],
+      "limitations": "Title claims are uncollated against an earlier Münster Missal or Roman edition; original bishop's decree remains unread. The Usuarium classification retains the medieval use despite the Romanizing title.",
+      "reception": "Parish copies are catalogued, including a 1673 donation inscription in DS 0212; no first-use or complete diocesan adoption date is asserted."
+    },
+    {
+      "id": "german-regional:muenster-1784-supplement",
+      "tradition_id": "german-regional:muenster",
+      "label": "Supplementum Missalis Monasteriensis for the 1632 Missal",
+      "date_label": "1784 supplement printing",
+      "start_year": 1784,
+      "end_year": 1784,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Bound diocesan supplement giving observances after the correction of the Münster Breviary, expressly for the 1632 Missal.",
+      "components": ["rubrics", "propers"],
+      "witness_ids": ["western:german-muenster-supplement-1784"],
+      "witness_label": "Supplement in Münster diocesan archive copy DS 1915, printed pp.603–630",
+      "summary": "The archive catalogue transcribes a supplement title that attributes the 1784 correction to Bishop Maximilian Friedrich and directs subsequent observances for the Missal of 1632.",
+      "text_coverage": "not-transcribed",
+      "evidence": [{"source_id": "german-regional:muenster-archive", "locus": "PDF p.38, DS 1915–17, supplement title and pp.603–630", "claim": "The bounded supplement is addressed to the 1632 Missal and indexed in several copies."}],
+      "limitations": "The 1784 pages are not read; exact Mass formularies and directions cannot be specified, and no whole new Missal or substantive transition is inferred.",
+      "reception": "Several archived parish copies contain the supplement; this does not establish a first-use date or uniform diocesan application."
+    },
+    {
+      "id": "german-regional:swiss-1976-propers",
+      "tradition_id": "german-regional:swiss",
+      "label": "Diözesanproprien der deutschsprachigen Schweiz",
+      "date_label": "1976 Missal and Lectionary supplements named in current diocesan list",
+      "start_year": 1976,
+      "end_year": 1976,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "German local propers and readings as adjuncts to the Roman Missal and Lectionary for German-speaking Swiss dioceses.",
+      "components": ["propers", "lectionary", "calendar"],
+      "witness_ids": ["western:german-swiss-propers-1976"],
+      "witness_label": "1976 Einsiedeln Missal supplement and companion Lectionary cited by Diocese of St Gall",
+      "summary": "The diocese names the 1976 Missal supplement as the source of official Mass texts for saints in its diocesan calendar and lists a companion Lectionary supplement.",
+      "text_coverage": "not-transcribed",
+      "evidence": [{"source_id": "german-regional:stgallen", "locus": "Die offiziellen Texte für die liturgischen Feiern section", "claim": "The diocese directs readers to the 1976 Mass and Lectionary proper volumes for official local texts."}],
+      "limitations": "The original 1976 books, approval leaves and individual feasts are uncollated; St Gall's present guidance does not certify identical reception by every German-speaking Swiss diocese in 1976.",
+      "reception": "Current St Gall official-use direction is attested; initial and wider reception dates are not."
+    },
+    {
+      "id": "german-regional:cologne-2002-propers",
+      "tradition_id": "german-regional:cologne",
+      "label": "Eigenfeiern des Erzbistums Köln",
+      "date_label": "2002 publication as listed in 2026 Directorium",
+      "start_year": 2002,
+      "end_year": 2002,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Latin/German particular Mass propers and matching Lectionary component of the Roman books for Cologne.",
+      "components": ["propers", "lectionary", "calendar"],
+      "witness_ids": ["western:german-cologne-propers-2002"],
+      "witness_label": "2002 Cologne proper Missal and Lectionary named in Directorium 2026",
+      "summary": "The official directorium lists the 2002 Latin/German Mass-proper book as a binding part of the archdiocesan Missal and the 2002 Lectionary proper as a binding Lectionary component.",
+      "text_coverage": "not-transcribed",
+      "evidence": [{"source_id": "german-regional:cologne-directorium", "locus": "PDF p.26, printed XXVIII, item h; p.27 item m", "claim": "The 2026 authority list identifies the 2002 proper components and their binding diocesan status."}],
+      "limitations": "The original 2002 books, approval instruments, exact prayers and effective date are not inspected. This is a local component state, not a distinct whole Order of Mass or continuity claim from the historical Cologne use.",
+      "reception": "Binding status is documented for the archdiocese by 2026; first-use date not established."
+    },
+    {
+      "id": "german-regional:speyer-1975-propers-approval",
+      "tradition_id": "german-regional:speyer",
+      "label": "Speyer Mass and lectionary proper confirmation",
+      "date_label": "11 July 1975 confirmation after 1971 calendar approval and 1972 confirmation",
+      "start_year": 1975,
+      "end_year": 1975,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Particular calendar and proper texts for the first edition of Speyer's Missal and Lectionary adjuncts, as reported in a later official book.",
+      "components": ["calendar", "propers", "lectionary"],
+      "witness_ids": ["western:german-speyer-propers-1975"],
+      "witness_label": "Approval references on p.2 of the Diocese of Speyer's 2023 Lectionary",
+      "summary": "The 2023 book reports Bishop Wetter's calendar approval on 3 November 1971, Roman confirmation on 15 November 1972 (2069/71) and Roman confirmation of Mass/Lectionary proper texts on 11 July 1975 (697/75).",
+      "text_coverage": "not-transcribed",
+      "evidence": [{"source_id": "german-regional:speyer-lectionary", "locus": "PDF p.2, Approbation und Konfirmation, lines 5–14", "claim": "Official book gives the three dated and scoped approvals and protocol references."}],
+      "limitations": "These are retrospective references, not inspected original approval instruments or the first proper texts. No exact before/after change or first celebration is claimed.",
+      "reception": "Approval is attested; actual use of the first edition is not independently dated."
+    },
+    {
+      "id": "german-regional:speyer-2023-propers",
+      "tradition_id": "german-regional:speyer",
+      "label": "Speyer second expanded proper Missal and first Lectionary edition",
+      "date_label": "2023 publications",
+      "start_year": 2023,
+      "end_year": 2023,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Contemporary proper Mass-book and Lectionary components, with identified feast dates and ranks.",
+      "components": ["calendar", "propers", "lectionary"],
+      "witness_ids": ["western:german-speyer-propers-2023"],
+      "witness_label": "2023 Speyer Lectionary PDF and official page identifying the companion Missal",
+      "summary": "The official page identifies a second expanded Missal edition and first Lectionary edition in 2023; the Lectionary's title and contents identify the local feast set and rank distinctions.",
+      "text_coverage": "not-transcribed",
+      "evidence": [{"source_id": "german-regional:speyer-books", "locus": "Eigenfeiern page, Mass-book and Lectionary listing", "claim": "The diocese lists the 2023 paired editions."}, {"source_id": "german-regional:speyer-lectionary", "locus": "PDF pp.0, 2 and 4", "claim": "The Lectionary title, authority references and feast contents are directly checked."}],
+      "limitations": "The companion second expanded Missal body and first edition are not collated; 2023 is not inferred to be a new approval event or a proved substantive revision.",
+      "reception": "Official diocesan operative-book listing is checked; precise local first-use date is unestablished."
+    }
+  ],
+  "transitions": [],
+  "gaps": [
+    {
+      "id": "german-regional:salzburg-collation",
+      "tradition_id": "german-regional:salzburg",
+      "period": "1596–1642",
+      "missing": "Original papal permission and 1605/1642 book text, including the exact Salzburg local formularies and their earlier equivalents.",
+      "next_source": "Salzburg archdiocesan archive 1596 Ordo Romanus and 1605 missal; BSB digital bsb11057620; Austrian National Library copy of 1642 proper booklet.",
+      "consequence": "No act station for the 1596 permission or verified 1605-to-1642 text transition."
+    },
+    {
+      "id": "german-regional:muenster-collation",
+      "tradition_id": "german-regional:muenster",
+      "period": "1632–1784",
+      "missing": "Original 1632 decree image text; before/after Roman and local rubrics, saints' formularies; 1784 supplement pages and application.",
+      "next_source": "ULB Münster 51 FOL 13-1_2, image 11 and original Mass sections; diocesan archive DS 1915 pp.603–630 and copies without supplement.",
+      "consequence": "The book and supplement are bounded, but no substantive revision link or universal-use claim is demonstrated."
+    },
+    {
+      "id": "german-regional:modern-propers",
+      "tradition_id": "german-regional:speyer",
+      "period": "1971–2023",
+      "missing": "Original Speyer 1971, 1972 and 1975 instruments, first proper book, 2023 second Missal body, and prayer/reading collation.",
+      "next_source": "Speyer Prot. 2069/71 and 697/75, first edition Eigenfeiern and second expanded 2023 Missal.",
+      "consequence": "Approval and operative regional component states are distinguishable, but exact edition deltas and initial local reception remain unresolved."
+    },
+    {
+      "id": "german-regional:swiss-propers",
+      "tradition_id": "german-regional:swiss",
+      "period": "1976 onward",
+      "missing": "The original diocesan approval instruments, precise scope of each Swiss diocesan proper, later editions and first dated local use have not been collated.",
+      "next_source": "Original 1976 Eigenmessen and Eigenlesungen volumes and approval pages for Basel, Chur, St Gallen, Sion and Lausanne–Geneva–Fribourg; later diocesan directories and book editions.",
+      "consequence": "The attested regional adjunct does not establish a complete Swiss missal or uniform reception across the named dioceses."
+    },
+    {
+      "id": "german-regional:cologne-propers",
+      "tradition_id": "german-regional:cologne",
+      "period": "2002 onward",
+      "missing": "The 2002 Cologne proper's original approval pages, complete text, first dated use and later edition changes have not been collated.",
+      "next_source": "Original 2002 Proprium des Erzbistums Köln volume and decrees; annual Cologne Directorium statements for use and later changes.",
+      "consequence": "The binding adjunct status does not establish a separate whole missal or descent from an older Cologne use."
+    }
+  ]
+}
