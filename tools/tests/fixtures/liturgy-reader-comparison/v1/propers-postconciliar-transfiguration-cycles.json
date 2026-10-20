@@ -1,0 +1,64 @@
+{
+  "schema": "triptych-liturgy-reader-comparison-fixture/v1",
+  "id": "propers-postconciliar-transfiguration-cycles",
+  "basis": {
+    "kind": "tracked-production-data",
+    "paths": [
+      "src/sources/calendars/postconciliar/propers.yaml",
+      "src/web/data/structure/propers/postconciliar.json"
+    ],
+    "sourceRecord": "Ordo lectionum Missae, editio typica altera 1981; internet-archive-scan-pdf-ed4bc14e; artifact p. 354, printed p. 300, n. 614",
+    "qualification": "The source-recorded Gospel forms A, B and C use the repository cycles mapping. Displayed Bible passages retain their existing reconstruction qualifications."
+  },
+  "comparison": {
+    "dimension": "lectionary-cycle",
+    "anchor": {
+      "correspondingFormulary": "transfiguration-lord"
+    },
+    "sides": [
+      {
+        "id": "A",
+        "edition": {
+          "id": "postconciliar"
+        },
+        "formulary": {
+          "id": "transfiguration-lord"
+        },
+        "cycle": "A"
+      },
+      {
+        "id": "B",
+        "edition": {
+          "id": "postconciliar"
+        },
+        "formulary": {
+          "id": "transfiguration-lord"
+        },
+        "cycle": "B"
+      }
+    ]
+  },
+  "expected": {
+    "calendar": null,
+    "unitCount": 5,
+    "oneSided": {
+      "A": [],
+      "B": []
+    },
+    "textUnavailable": {
+      "A": [],
+      "B": []
+    },
+    "gospelSelections": {
+      "A": [
+        "Matthew 17:1-9"
+      ],
+      "B": [
+        "Mark 9:2-10"
+      ],
+      "C": [
+        "Luke 9:28b-36"
+      ]
+    }
+  }
+}

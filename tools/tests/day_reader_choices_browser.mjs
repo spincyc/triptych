@@ -648,13 +648,20 @@ async function testStudyModeContract(cdp, base) {
     date: '2026-08-02', mass: 'ot-18', mode: 'study', ordinary: '1'
   }));
   const studyOrdinary = await snapshot(cdp);
-  assert.equal(studyOrdinary.outcome, 'deferred');
-  assert.equal(await evaluate(cdp, `document.querySelectorAll('.study-overview, .study-event').length`), 0);
+  assert.equal(studyOrdinary.outcome, 'unresolved');
+  assert.ok(studyOrdinary.contents.includes('Source Proper choice: Communion Antiphon'));
+  assert.ok(studyOrdinary.semanticLocations.some(id => id.startsWith('ordinary-element/')));
+  assert.ok(await evaluate(cdp, `Boolean(document.querySelector('.study-overview') &&
+    document.querySelector('[data-study-event-id^="ordinary-element/"]'))`));
+  assert.deepEqual(await evaluate(cdp, 'dayReaderDebug.deferred'), []);
   const studyOrdinaryParams = new URLSearchParams(studyOrdinary.hash.slice(1));
+  assert.equal(studyOrdinaryParams.get('mode'), 'study');
   assert.equal(studyOrdinaryParams.get('ordinary'), '1');
   assert.equal(studyOrdinaryParams.get('ordinary-lang'), 'en');
   await navigate(cdp, base, studyOrdinary.hash);
-  assert.equal((await snapshot(cdp)).outcome, 'deferred');
+  const replayedStudyOrdinary = await snapshot(cdp);
+  assert.equal(replayedStudyOrdinary.outcome, 'unresolved');
+  assert.deepEqual(replayedStudyOrdinary.semanticLocations, studyOrdinary.semanticLocations);
 
   await navigate(cdp, base, state({
     date: '2026-08-02', mass: 'ot-18', mode: 'study',

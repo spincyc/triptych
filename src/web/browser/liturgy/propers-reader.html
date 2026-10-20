@@ -153,10 +153,25 @@
       </button>
       <button type="button" role="radio" aria-checked="false" data-mode="compare"
               aria-controls="compare-setup" aria-expanded="false">
-        <strong>Compare</strong><span>Parallel oration languages for one formulary.</span>
+        <strong>Compare</strong><span>Languages or held cycles for one formulary.</span>
       </button>
     </div>
     <form id="compare-setup" class="surface-body surface-fields" hidden>
+      <div class="surface-field">
+        <label for="reader-compare-dimension">Compare by</label>
+        <select id="reader-compare-dimension">
+          <option value="oration-language">Oration language</option>
+          <option value="lectionary-cycle">Lectionary cycle</option>
+        </select>
+      </div>
+      <div class="surface-field" hidden>
+        <label for="reader-compare-cycle">Primary cycle</label>
+        <select id="reader-compare-cycle"><option value="">Choose a held cycle</option></select>
+      </div>
+      <div class="surface-field" hidden>
+        <label for="reader-compare-peer-cycle">Other cycle</label>
+        <select id="reader-compare-peer-cycle"><option value="">Choose a held cycle</option></select>
+      </div>
       <div class="surface-field">
         <label for="reader-compare-orations">Other oration language</label>
         <select id="reader-compare-orations" required>

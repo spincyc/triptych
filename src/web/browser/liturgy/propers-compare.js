@@ -6,16 +6,17 @@
   if (typeof module === 'object' && module && module.exports) module.exports = api;
   else root.TriptychPropersCompare = api;
 }(typeof globalThis !== 'undefined' ? globalThis : this, function (root) {
+  const URL_KEYS = Object.freeze(['compare', 'peer-orations', 'peer-cycle']);
+
   function sideRequest(state, descriptor) {
     const request = Object.assign({}, state, {
-      languages: Object.assign({}, state.languages, {
-        orations: descriptor.languages.orations
-      }),
+      languages: Object.assign({}, state.languages, descriptor.languages || {}),
       requestedMode: 'read',
       options: { ordinary: false, legitimate: {} },
       unresolvedChoices: [],
       sourceHooks: []
     });
+    if (descriptor.cycle) request.cycle = descriptor.cycle;
     delete request.comparison;
     delete request.semanticLocation;
     return request;
@@ -58,12 +59,14 @@
   async function build(input) {
     const state = input.state;
     const comparison = state && state.comparison;
-    if (!comparison || comparison.dimension !== 'oration-language' ||
+    if (!comparison || ['oration-language', 'lectionary-cycle'].indexOf(comparison.dimension) < 0 ||
         comparison.sides.length !== 2 || state.options.ordinary) {
-      throw new Error('Propers Compare needs two explicit oration languages without the Ordinary');
+      throw new Error('Propers Compare needs two explicit supported peers without the Ordinary');
     }
     if (comparison.anchor.correspondingFormulary !== state.formulary.id ||
-        comparison.sides[0].languages.orations !== state.languages.orations ||
+        (comparison.dimension === 'oration-language' &&
+          comparison.sides[0].languages.orations !== state.languages.orations) ||
+        (comparison.dimension === 'lectionary-cycle' && comparison.sides[0].cycle !== state.cycle) ||
         comparison.sides[0].edition.id !== state.edition.id) {
       throw new Error('Propers Compare anchor or primary side disagrees with the selection');
     }
@@ -83,7 +86,9 @@
     if (!input.isCurrent()) return null;
     const sides = results.map(function (side) {
       return {
-        id: side.id, label: input.T.languageName(side.id) + ' orations',
+        id: side.id, label: comparison.dimension === 'lectionary-cycle'
+          ? state.edition.id + ' · Cycle ' + side.id
+          : input.T.languageName(side.id) + ' orations',
         structure: input.structure, mass: mass, bible: bible,
         fragments: loaded.fragments
       };
@@ -131,11 +136,12 @@
     input.reading.setAttribute('aria-busy', 'false');
     input.readerShell.setContents(built.rendered.contents);
     input.title.textContent = built.mass.name || built.mass.key;
-    input.typeLine.textContent = 'Date-independent oration languages';
+    const cycles = built.view.dimension === 'lectionary-cycle';
+    input.typeLine.textContent = cycles ? 'Date-independent lectionary cycles' : 'Date-independent oration languages';
     input.metaLine.textContent = input.state.edition.id + ' · ' +
       built.view.sides.map(function (side) {
-        return root.Triptych.languageName(side.id);
-      }).join(' / ') + ' orations · Compare';
+        return cycles ? 'Cycle ' + side.id : root.Triptych.languageName(side.id);
+      }).join(' / ') + (cycles ? ' · Compare' : ' orations · Compare');
     const incomplete = built.view.units.some(function (unit) {
       return unit.sides.some(function (cell) { return cell.status !== 'text-held'; });
     });
@@ -152,26 +158,57 @@
     const section = T.el('section', 'details-section');
     section.appendChild(T.el('h3', null, 'Compare selection'));
     section.appendChild(T.el('p', null,
-      'One date-independent formulary and Bible are held fixed. Each language side selects its own available text. Shared functional slots do not assert identical wording or a historical change.'));
+      'One date-independent formulary and Bible are held fixed. Each side resolves its explicit language or cycle. Shared functional slots do not assert identical wording or a historical change.'));
     section.appendChild(T.el('p', null,
       'Formulary: ' + input.view.anchor.correspondingFormulary +
-      ' · Orations: ' + input.view.sides.map(function (side) { return side.id; }).join(' / ')));
+      (input.view.dimension === 'lectionary-cycle' ? ' · Cycles: ' : ' · Orations: ') +
+      input.view.sides.map(function (side) { return side.id; }).join(' / ')));
     input.body.appendChild(section);
+  }
+
+  function heldCycles(structure, state) {
+    const mass = (structure && structure.masses || []).find(function (row) {
+      return state && state.formulary && row.key === state.formulary.id;
+    });
+    const values = new Set();
+    (mass && mass.propers || []).forEach(function (proper) {
+      if (state.form && proper.form_id && proper.form_id !== state.form) return;
+      ['cycles', 'weekday_cycles'].forEach(function (family) {
+        Object.keys(proper[family] || {}).forEach(function (cycle) { values.add(cycle); });
+      });
+    });
+    return Array.from(values).sort();
   }
 
   function bindControls(input) {
     const button = root.document.querySelector('[data-mode="compare"]');
     const setup = root.document.getElementById('compare-setup');
     const select = root.document.getElementById('reader-compare-orations');
+    const dimension = root.document.getElementById('reader-compare-dimension');
+    const primary = root.document.getElementById('reader-compare-cycle');
+    const peer = root.document.getElementById('reader-compare-peer-cycle');
     const note = root.document.getElementById('compare-setup-note');
-    if (!button || !setup || !select || !note) return;
+    if (!button || !setup || !select || !dimension || !primary || !peer || !note) return;
+    function fields() {
+      const cycles = dimension.value === 'lectionary-cycle';
+      select.closest('.surface-field').hidden = cycles;
+      select.required = !cycles;
+      [primary, peer].forEach(function (control) {
+        control.closest('.surface-field').hidden = !cycles;
+        control.required = cycles;
+      });
+      note.textContent = cycles
+        ? 'Choose both held cycles explicitly. Bible passages keep their edition and coverage qualifications.'
+        : 'The selected formulary will be resolved independently in each language.';
+    }
+    dimension.addEventListener('change', fields);
     button.addEventListener('click', function () {
       setup.hidden = false;
       button.setAttribute('aria-expanded', 'true');
       const state = input.runtime.normalized && input.runtime.normalized.state;
       select.replaceChildren(new Option('Choose another oration language', ''));
       if (!state || !state.formulary) {
-        note.textContent = 'Choose an exact formulary before comparing languages.';
+        note.textContent = 'Choose an exact formulary before comparing.';
         return;
       }
       const languages = ['la'].concat((input.runtime.structure.coverage &&
@@ -180,33 +217,47 @@
       })).filter(function (value, index, all) {
         return value && all.indexOf(value) === index && value !== state.languages.orations;
       });
-      languages.forEach(function (lang) {
-        select.appendChild(new Option(input.T.languageName(lang), lang));
+      languages.forEach(function (lang) { select.appendChild(new Option(input.T.languageName(lang), lang)); });
+      const cycles = heldCycles(input.runtime.structure, state);
+      const cycleOption = dimension.querySelector('[value="lectionary-cycle"]');
+      cycleOption.disabled = cycles.length < 2;
+      [primary, peer].forEach(function (control) {
+        control.replaceChildren(new Option('Choose a held cycle', ''));
+        cycles.forEach(function (cycle) { control.appendChild(new Option('Cycle ' + cycle, cycle)); });
       });
-      select.value = state.comparison && state.comparison.sides[1].languages.orations || '';
-      note.textContent = languages.length
-        ? 'The selected formulary will be resolved independently in each language.'
-        : 'This edition holds no second oration language for comparison.';
-      select.focus({ preventScroll: true });
+      dimension.value = state.comparison && state.comparison.dimension || 'oration-language';
+      select.value = state.comparison && state.comparison.dimension === 'oration-language'
+        ? state.comparison.sides[1].languages.orations : '';
+      primary.value = state.cycle || '';
+      peer.value = state.comparison && state.comparison.dimension === 'lectionary-cycle'
+        ? state.comparison.sides[1].cycle : '';
+      fields();
+      dimension.focus({ preventScroll: true });
     });
     setup.addEventListener('submit', function (event) {
       event.preventDefault();
-      if (!select.value || !input.runtime.normalized) return;
+      if (!input.runtime.normalized) return;
+      const cycles = dimension.value === 'lectionary-cycle';
+      if (cycles ? !primary.value || !peer.value || primary.value === peer.value : !select.value) {
+        note.textContent = cycles ? 'Choose two different held cycles.' : 'Choose another oration language.';
+        return;
+      }
       const captured = input.readerShell.captureSemanticLocation();
       const location = input.runtime.normalized.state.requestedMode === 'compare'
         ? captured : compareLocation(captured, input.runtime.result);
       input.readerShell.close({ restoreFocus: false, restoreScroll: false });
       setup.hidden = true;
       button.setAttribute('aria-expanded', 'false');
-      input.navigate({ mode: 'compare', compare: 'oration-language',
-        'peer-orations': select.value },
-      ['translation-witness', 'ordinary-lang'].concat(input.variantKeys()),
-      { location: location, focus: 'mode' });
+      input.navigate(cycles ? { mode: 'compare', compare: 'lectionary-cycle',
+        cycle: primary.value, 'peer-cycle': peer.value } :
+      { mode: 'compare', compare: 'oration-language', 'peer-orations': select.value },
+      ['translation-witness', 'ordinary-lang', cycles ? 'peer-orations' : 'peer-cycle']
+        .concat(input.variantKeys()), { location: location, focus: 'mode' });
     });
   }
 
   return Object.freeze({
-    sideRequest: sideRequest, preflight: preflight, build: build,
+    URL_KEYS: URL_KEYS, sideRequest: sideRequest, preflight: preflight, build: build, heldCycles: heldCycles,
     compareLocation: compareLocation, fromCompareLocation: fromCompareLocation,
     summary: summary, present: present, populateDetails: populateDetails,
     bindControls: bindControls

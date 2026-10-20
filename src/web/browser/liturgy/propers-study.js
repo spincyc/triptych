@@ -33,7 +33,7 @@
             ? input.Compare.fromCompareLocation(captured, input.runtime.result)
             : input.ProperEvents.nearestProperLocation(captured, input.runtime.result);
           input.readerShell.close({ restoreFocus: false });
-          input.navigate({ mode: 'study' }, ['compare', 'peer-orations'], {
+          input.navigate({ mode: 'study' }, input.Compare?.URL_KEYS, {
             location: location, focus: button.dataset.readerAction === 'study' ? 'study' : 'mode'
           });
         });

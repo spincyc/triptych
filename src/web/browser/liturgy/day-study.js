@@ -1,4 +1,4 @@
-/* Attach Study evidence to the already rendered Day Read document. */
+/* Attach Study evidence to the source-rendered Day Read or Missal document. */
 'use strict';
 
 (function (root) {
@@ -27,7 +27,9 @@
             const location = input.captureModeLocation(mode);
             input.readerShell.close({ restoreFocus: false, restoreScroll: false });
             input.onModeSwitch();
-            input.navigate({ mode: mode }, ['ordinary', 'compare', 'peer-missal', 'territory'], {
+            const state = input.runtime.normalized && input.runtime.normalized.state;
+            input.navigate({ mode: mode, ordinary: mode === 'study' &&
+              state && state.options.ordinary ? '1' : null }, ['compare', 'peer-missal', 'territory'], {
               location: location, modeFocus: true,
               focus: button.dataset.readerAction === 'study' ? { kind: 'study-action' } : null
             });

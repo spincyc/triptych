@@ -35,8 +35,10 @@
       const peer = state.comparison.sides && state.comparison.sides[1];
       const peerEdition = peer && peer.edition && peer.edition.id;
       const peerLanguage = peer && peer.languages && peer.languages.orations;
-      const peerLabel = state.comparison.dimension === 'oration-language'
-        ? peerLanguage : peerEdition || peerLanguage;
+      const peerLabel = state.comparison.dimension === 'lectionary-cycle'
+        ? peer && peer.cycle && 'Cycle ' + peer.cycle
+        : state.comparison.dimension === 'oration-language'
+          ? peerLanguage : peerEdition || peerLanguage;
       parts.push('Compare ' + state.comparison.dimension +
         (peerLabel ? ' with ' + peerLabel : ''));
       if (entrance === 'day' && state.comparison.anchor &&

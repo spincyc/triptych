@@ -290,6 +290,10 @@ try {
     const pages = pdfText.split('\f').filter((page) => page.trim());
     assert.ok(pages.length > 0 && pages.every((page) => page.trim().length > 80),
       'no detached or empty PDF page');
+    if (state.requestedMode === 'compare') {
+      assert.ok(pages.every((page) => !/^\s*Source records:/.test(page)),
+        'a printed source credit cannot begin a page by itself');
+    }
     assert.match(pages[0], new RegExp(entrance.toUpperCase() + ' · ' +
       state.requestedMode.toUpperCase()));
     assert.doesNotMatch(pdfText, /Share link|Print dialog opened/);

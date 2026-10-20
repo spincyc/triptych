@@ -127,7 +127,7 @@
     };
   }
 
-  // Attach to the very same source-rendered fragment used by Read. Study may
+  // Attach to the same source-rendered fragment used by Read or Missal. Study may
   // describe a held event, but it must never manufacture or replace its text.
   function attach(input) {
     const T = root.Triptych;
@@ -153,6 +153,15 @@
         fail('source Contents elements must belong to the supplied reading');
       }
       byId.set(row.id, row.element);
+    });
+    // Ordinary elements need not be separate Contents destinations. Attach to
+    // every rendered source event while keeping the source navigation intact.
+    Array.from(fragment.querySelectorAll('[data-semantic-event-id]')).forEach(function (host) {
+      const id = host.dataset.semanticLocation;
+      if (!nonempty(id) || byId.has(id) && byId.get(id) !== host) {
+        fail('source event DOM needs distinct semantic locations');
+      }
+      byId.set(id, host);
     });
     // A source placeholder can lack a Read node; its coverage remains in the
     // overview, while only rendered source events receive inline notes.
@@ -281,7 +290,10 @@
         fact(facts, 'Source record', hook.kind + ': ' + hook.id);
       });
       node.appendChild(facts);
-      host.appendChild(node);
+      // Ordinary divisions are heading events. Keep their apparatus adjacent
+      // so a heading never contains an aside or another heading.
+      if (/^H[1-6]$/.test(host.tagName || '')) host.after(node);
+      else host.appendChild(node);
     });
     fragment.insertBefore(overview, fragment.firstChild);
     return {

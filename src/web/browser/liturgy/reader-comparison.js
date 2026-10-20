@@ -60,8 +60,9 @@
     if (entrance === 'day' && dimension !== 'recension') {
       fail('Day comparison currently supports recension only');
     }
-    if (entrance === 'propers' && dimension !== 'oration-language') {
-      fail('Propers comparison currently supports oration language only');
+    if (entrance === 'propers' &&
+        ['oration-language', 'lectionary-cycle'].indexOf(dimension) < 0) {
+      fail('Propers comparison supports oration language or held lectionary cycles');
     }
 
     const sides = input.comparison.sides.map(function (descriptor, index) {
@@ -97,15 +98,18 @@
         }
       } else {
         const anchor = input.comparison.anchor;
-        if (!descriptor.languages || !descriptor.languages.orations ||
-            !result.request.languages) {
+        if (!result.request.languages || (dimension === 'oration-language' &&
+            (!descriptor.languages || !descriptor.languages.orations))) {
           fail('side ' + descriptor.id + ' needs an explicit oration language');
         }
         if (result.request.civilDate !== null || result.calendarResult !== null ||
             result.request.formulary.id !== descriptor.formulary.id ||
             result.resolved.formulary !== descriptor.formulary.id ||
             result.resolved.formulary !== anchor.correspondingFormulary ||
-            result.request.languages.orations !== descriptor.languages.orations) {
+            (dimension === 'oration-language' &&
+              result.request.languages.orations !== descriptor.languages.orations) ||
+            (dimension === 'lectionary-cycle' &&
+              (!descriptor.cycle || result.request.cycle !== descriptor.cycle))) {
           fail('side ' + descriptor.id + ' must use the anchored date-independent formulary and language');
         }
       }
@@ -115,24 +119,35 @@
     if (entrance === 'propers') {
       const left = sides[0].result;
       const right = sides[1].result;
+      const cycleComparison = dimension === 'lectionary-cycle';
       if (left.resolved.edition !== right.resolved.edition ||
           left.resolved.formulary !== right.resolved.formulary ||
           left.resolved.form !== right.resolved.form ||
           !same(left.request.bible, right.request.bible) ||
-          !same(withoutOrations(left.request.languages),
-            withoutOrations(right.request.languages)) ||
+          !(cycleComparison ? same(left.request.languages, right.request.languages) :
+            same(withoutOrations(left.request.languages), withoutOrations(right.request.languages))) ||
           !same(left.request.options, right.request.options) ||
-          left.request.cycle !== right.request.cycle ||
+          (cycleComparison ? left.request.cycle === right.request.cycle :
+            left.request.cycle !== right.request.cycle) ||
           left.request.form !== right.request.form ||
           left.request.alternative !== right.request.alternative ||
-          left.request.languages.orations === right.request.languages.orations) {
-        fail('oration language requires the same edition, form, formulary, Bible, and other selections on distinct languages');
+          (!cycleComparison && left.request.languages.orations === right.request.languages.orations)) {
+        fail(dimension + ' requires the same edition, form, formulary, Bible, and other selections on distinct peers');
       }
     } else if (!same(sides[0].result.request.bible, sides[1].result.request.bible) ||
                !same(sides[0].result.request.languages, sides[1].result.request.languages)) {
       fail('recension comparison requires the same Bible and language selections');
     } else if (sides[0].result.resolved.edition === sides[1].result.resolved.edition) {
       fail('recension comparison requires distinct editions');
+    }
+
+    if (dimension === 'lectionary-cycle') {
+      sides.forEach(function (side, index) {
+        const cycle = input.comparison.sides[index].cycle;
+        if (!side.result.events.some(function (event) {
+          return event.selected && event.selected.cycle === cycle;
+        })) fail('side ' + side.id + ' has no resolved material for its requested held cycle');
+      });
     }
 
     const indexed = sides.map(function (side) {

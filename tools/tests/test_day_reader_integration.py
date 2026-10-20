@@ -26,7 +26,7 @@ FROZEN_SOURCE_HASHES = {
     "src/web/browser/liturgy/reader-shell.css":
         "e7195cd86ed4fc4a8455e97369702239eb22d709a13d3d8462d7759c01fe814a",
     "src/web/browser/liturgy/reader-visual-reset-day.html":
-        "ff734f07b797e5706c7e62a4c890f47c32c0fbfd78bfc855f421a4123273c18d",
+        "9eaf989080af7458f8a028bdccc1ee8ab3af02501bb81917c24ca5d61dd3e290",
     "src/web/browser/liturgy/reader-visual-reset-propers.html":
         "e6f9afa33589068ba81585b15f288b154ad55e180f9ed2faa291e24cfc9c5ee3",
     "src/web/browser/liturgy/reader-visual-reset.css":
@@ -245,10 +245,6 @@ class DayReaderIntegrationTests(unittest.TestCase):
         for key in ("ordinary", "ordinary-lang", "rubrics", "why"):
             self.assertIn(key, source)
         self.assertIn("parsed.variantKeys", source)
-        self.assertIn(
-            "mode === 'study' && parsed.recognized.ordinary === '1'",
-            source,
-        )
         self.assertIn("DayCompare.present", source)
         self.assertIn("DayStudy.attach(row)", source)
         self.assertNotIn("recognized.why === '1'", source)
@@ -334,7 +330,7 @@ class DayReaderIntegrationTests(unittest.TestCase):
             "Contract.serializeLegacy(normalized)",
             "normalized.state.semanticLocation",
             "DayStudy.bindControls({ runtime: runtime, readerShell: readerShell, navigate: navigate",
-            "(removals || []).concat(['ordinary'])",
+            "(updates.mode || runtime.mode) === 'study' ? [] : ['ordinary']",
         ):
             self.assertIn(token, source)
         html = text(HTML)

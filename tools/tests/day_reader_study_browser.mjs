@@ -15,6 +15,7 @@ const SCRATCH = resolve(process.env.TRIPTYCH_BROWSER_SCRATCH ||
 const DAY = '/src/web/browser/liturgy/day.html';
 const CANDIDATE = '/src/web/browser/liturgy/day-reader.html';
 const PROTOTYPE = '/src/web/browser/liturgy/reader-visual-reset-day.html';
+let blockedPath = null;
 
 function mime(file) {
   return ({ '.css': 'text/css', '.html': 'text/html', '.js': 'text/javascript',
@@ -30,6 +31,7 @@ function server() {
       if (/^src\/web\/data\/[^/]+\/chapters\//.test(path)) {
         path = path.replace(/^src\/web\/data\//, 'src/sources/bibles/');
       }
+      if (path === blockedPath) { response.writeHead(404); response.end('fixture unavailable'); return; }
       const file = resolve(ROOT, path || 'README.md');
       if (!file.startsWith(ROOT + sep)) throw new Error('outside root');
       response.writeHead(200, { 'content-type': mime(file), 'cache-control': 'no-store' });
@@ -111,12 +113,27 @@ async function waitFor(cdp, expression, label) {
   throw new Error('Timed out waiting for ' + label);
 }
 
+async function settleScroll(cdp) {
+  assert.equal(await evaluate(cdp, `(async () => {
+    let previous = null, stable = 0;
+    for (let frame = 0; frame < 180; frame += 1) {
+      await new Promise(requestAnimationFrame);
+      const value = scrollY;
+      stable = previous !== null && Math.abs(value - previous) < 0.5 ? stable + 1 : 0;
+      if (stable >= 8) return true;
+      previous = value;
+    }
+    return false;
+  })()`), true, 'semantic location visually settled');
+}
+
 let sequence = 0;
 async function visit(cdp, base, path, hash) {
   const url = `${base}${path}?data=/src/web/data&study-test=${++sequence}${hash}`;
   await cdp.send('Page.navigate', { url });
   await waitFor(cdp, `performance.getEntriesByType('navigation')[0]?.name === ${JSON.stringify(url)} &&
     window.dayReaderReady === true`, path + ' ready');
+  await settleScroll(cdp);
   return evaluate(cdp, 'dayReaderDebug');
 }
 
@@ -216,10 +233,138 @@ try {
   assert.equal(await evaluate(cdp, `document.querySelectorAll('.study-overview').length`), 0);
   checks += 1;
 
-  const ordinary = await visit(cdp, base, DAY,
-    baseState + '&mode=study&ordinary=1');
-  assert.equal(ordinary.outcome, 'deferred');
-  assert.equal(await evaluate(cdp, `document.querySelectorAll('.study-overview, .study-event').length`), 0);
+  async function sourceSnapshot() {
+    return evaluate(cdp, `({
+      events: Array.isArray(dayReaderDebug.semantic) ? dayReaderDebug.semantic.map(row =>
+        ({ territory: row.territory, prefix: row.prefix, events: row.document.events })) : dayReaderDebug.semantic.events,
+      source: [...document.querySelectorAll('#reader-document [data-semantic-event-id]')]
+        .map(node => { const clone = node.cloneNode(true);
+          clone.querySelectorAll('.study-event').forEach(one => one.remove());
+          return [node.dataset.semanticEventId, node.dataset.semanticLocation, clone.textContent.trim()]; }),
+      absences: [...document.querySelectorAll('#reader-document .instrument-absence')]
+        .map(node => node.textContent.trim()),
+      choices: [...document.querySelectorAll('.ordinary-choice input')]
+        .map(node => [node.name, node.value, node.checked, node.disabled]),
+      coverage: Array.isArray(dayReaderDebug.semantic) ? dayReaderDebug.semantic.map(row =>
+        ({ territory: row.territory, coverage: row.document.coverage })) : dayReaderDebug.semantic.coverage,
+      unresolved: Array.isArray(dayReaderDebug.semantic) ? dayReaderDebug.semantic.map(row =>
+        ({ territory: row.territory, unresolved: row.document.unresolvedChoices })) : dayReaderDebug.semantic.unresolvedChoices
+    })`);
+  }
+  const fixtures = [
+    ['Pentecost', '#date=2026-05-24&missal=roman-1962&mass=pentecost'],
+    ['postconciliar EP II', '#date=2026-11-29&missal=postconciliar&mass=advent-1&eucharistic-prayer=ep-ii'],
+    ['postconciliar EP I', '#date=2026-11-29&missal=postconciliar&mass=advent-1&eucharistic-prayer=ep-i'],
+    ['Ash Wednesday', '#date=2026-02-18&missal=roman-1962&mass=ash-wednesday'],
+    ['unframed Ember Saturday', '#date=2026-12-19&missal=roman-1962&mass=advent-ember-saturday&form=longer'],
+    ['postconciliar Proper alternatives', '#date=2026-05-24&missal=postconciliar&mass=pentecost&form=day'],
+    ['all territorial branches', '#date=2026-01-04&missal=postconciliar&eucharistic-prayer=ep-ii']
+  ];
+  for (const [name, identity] of fixtures) {
+    const state = identity + '&bible=douay-rheims&orations=la&ordinary-lang=en';
+    const missal = await visit(cdp, base, DAY, state + '&mode=missal');
+    assert.ok(['ready', 'unresolved'].includes(missal.outcome), name + ': ' + JSON.stringify(missal.error));
+    const expected = await sourceSnapshot();
+    const study = await visit(cdp, base, DAY, state + '&mode=study&ordinary=1');
+    assert.equal(study.outcome, missal.outcome, name + ': ' + JSON.stringify(study.error));
+    assert.equal(study.state.options.ordinary, true);
+    assert.deepEqual(study.deferred, []);
+    assert.deepEqual(await sourceSnapshot(), expected, name + ' preserves source text, semantic events, options, absences and coverage');
+    assert.ok(await evaluate(cdp, `document.querySelectorAll('.study-overview').length > 0`));
+    assert.deepEqual(await evaluate(cdp, `[...document.querySelectorAll('.study-event')].map(node => node.dataset.studyEventId)`), expected.source.map(row => row[0]));
+    assert.equal(await evaluate(cdp, `document.querySelectorAll('h1 .study-event, h2 .study-event, h3 .study-event').length`), 0);
+    checks += 1;
+  }
+
+  const ordinaryState = '#date=2026-05-24&missal=roman-1962&mass=pentecost&bible=douay-rheims&orations=la&ordinary-lang=en';
+  await visit(cdp, base, DAY, ordinaryState + '&mode=missal');
+  const ordinaryLocation = 'ordinary-section/canon';
+  await evaluate(cdp, `(() => { document.querySelector('[data-reader-action="contents"]').click();
+    [...document.querySelectorAll('[data-reader-location]')].find(node =>
+      node.dataset.readerLocation === '${ordinaryLocation}').click(); })()`);
+  assert.equal(new URLSearchParams((await evaluate(cdp, 'location.hash')).slice(1)).get('location'), ordinaryLocation);
+  await waitFor(cdp, `document.querySelector('[data-semantic-event-id="${ordinaryLocation}"]').getBoundingClientRect().top < 280 && window.scrollY > 0`, 'Ordinary Contents landing');
+  await evaluate(cdp, `(async () => { for (let i = 0; i < 8; i += 1) await new Promise(requestAnimationFrame); })()`);
+  const expectedOrdinary = await sourceSnapshot();
+  await evaluate(cdp, `document.querySelector('[data-reader-action="study"]').click()`);
+  await waitFor(cdp, `dayReaderDebug.ready && dayReaderDebug.mode === 'study'`, 'Study keeps Ordinary');
+  assert.equal(await evaluate(cdp, 'dayReaderDebug.state.options.ordinary'), true);
+  assert.equal(await evaluate(cdp, 'document.activeElement.dataset.readerAction'), 'study');
+  assert.equal(await evaluate(cdp, 'dayReaderDebug.state.semanticLocation.eventId'), ordinaryLocation);
+  assert.deepEqual(await sourceSnapshot(), expectedOrdinary);
+  await settleScroll(cdp);
+  checks += 1;
+  const reloaded = await visit(cdp, base, DAY, await evaluate(cdp, 'location.hash'));
+  assert.equal(reloaded.outcome, 'ready');
+  assert.equal(reloaded.state.semanticLocation.eventId, ordinaryLocation);
+  assert.equal(reloaded.state.options.ordinary, true);
+  checks += 1;
+
+  await evaluate(cdp, `(() => { document.querySelector('[data-reader-action="mode"]').click();
+    document.querySelector('[data-mode="missal"]').click(); })()`);
+  await waitFor(cdp, `dayReaderDebug.ready && dayReaderDebug.mode === 'missal'`, 'Study to Missal');
+  assert.equal(await evaluate(cdp, 'dayReaderDebug.state.semanticLocation.eventId'), ordinaryLocation);
+  assert.equal(await evaluate(cdp, 'document.activeElement.dataset.readerAction'), 'mode');
+  assert.deepEqual(await sourceSnapshot(), expectedOrdinary);
+  await settleScroll(cdp);
+  checks += 1;
+  await evaluate(cdp, `document.querySelector('[data-reader-action="study"]').click()`);
+  await waitFor(cdp, `dayReaderDebug.ready && dayReaderDebug.mode === 'study'`, 'return Study Ordinary');
+  await settleScroll(cdp);
+  await evaluate(cdp, `(() => { document.querySelector('[data-reader-action="mode"]').click();
+    document.querySelector('[data-mode="read"]').click(); })()`);
+  await waitFor(cdp, `dayReaderDebug.ready && dayReaderDebug.mode === 'read'`, 'Study Ordinary to Read');
+  assert.equal(await evaluate(cdp, 'dayReaderDebug.state.options.ordinary'), false);
+  assert.equal(await evaluate(cdp, `document.querySelectorAll('.ordinary-element').length`), 0);
+  assert.match(await evaluate(cdp, 'dayReaderDebug.state.semanticLocation.eventId'), /^proper\//);
+  assert.equal(await evaluate(cdp, 'document.activeElement.dataset.readerAction'), 'mode');
+  checks += 1;
+
+  const postStudy = '#date=2026-11-29&missal=postconciliar&mass=advent-1&bible=douay-rheims&orations=la&ordinary-lang=en&mode=study&ordinary=1&eucharistic-prayer=ep-ii';
+  await visit(cdp, base, DAY, postStudy);
+  await evaluate(cdp, `(() => { const option = document.querySelector('.ordinary-choice input[value="ep-iii"]');
+    option.checked = true; option.dispatchEvent(new Event('change', { bubbles: true })); })()`);
+  await waitFor(cdp, `dayReaderDebug.ready && dayReaderDebug.mode === 'study' &&
+    dayReaderDebug.state.options.legitimate['eucharistic-prayer'] === 'ep-iii'`, 'Study Ordinary option');
+  assert.equal(await evaluate(cdp, 'dayReaderDebug.state.options.ordinary'), true);
+  assert.equal(await evaluate(cdp, 'document.activeElement.value'), 'ep-iii');
+  assert.ok(await evaluate(cdp, `document.querySelector('[data-semantic-event-id="ordinary-element/prex-eucharistica/prex-eucharistica-iii"]')`));
+  assert.equal(new URLSearchParams((await evaluate(cdp, 'location.hash')).slice(1)).get('ordinary'), '1');
+  checks += 1;
+  await evaluate(cdp, `(() => { document.querySelector('[data-reader-action="date"]').click();
+    document.querySelector('#reader-ordinary-lang').value = 'la';
+    document.querySelector('#date-form').requestSubmit(); })()`);
+  await waitFor(cdp, `dayReaderDebug.ready && dayReaderDebug.mode === 'study' &&
+    dayReaderDebug.state.languages.ordinary === 'la'`, 'Study Ordinary language');
+  assert.equal(await evaluate(cdp, 'dayReaderDebug.state.options.ordinary'), true);
+  assert.equal(await evaluate(cdp, "dayReaderDebug.state.options.legitimate['eucharistic-prayer']"), 'ep-iii');
+  checks += 1;
+
+  const individual = await visit(cdp, base, DAY, ordinaryState +
+    '&mode=study&ordinary=1&location=' + encodeURIComponent('ordinary-element/canon/canon-heading'));
+  assert.equal(individual.outcome, 'ready');
+  assert.equal(individual.state.semanticLocation.eventId, 'ordinary-element/canon/canon-heading');
+  assert.ok(await evaluate(cdp, `document.querySelector('[data-study-event-id="ordinary-element/canon/canon-heading"]')`));
+  checks += 1;
+
+  blockedPath = 'src/web/data/structure/ordinary/roman-1962.json';
+  const unavailable = await visit(cdp, base, DAY, ordinaryState + '&mode=study&ordinary=1');
+  blockedPath = null;
+  assert.equal(unavailable.outcome, 'unrenderable');
+  assert.equal(unavailable.state, null);
+  const unavailableHash = new URLSearchParams((await evaluate(cdp, 'location.hash')).slice(1));
+  assert.equal(unavailableHash.get('mode'), 'study');
+  assert.equal(unavailableHash.get('ordinary'), '1');
+  assert.equal(await evaluate(cdp, `document.querySelectorAll('.proper, .study-overview, .study-event').length`), 0);
+  assert.equal(httpProblems.length, 1);
+  assert.match(httpProblems.pop(), /404 .*structure\/ordinary\/roman-1962\.json/);
+  checks += 1;
+
+  const wrongOrdinary = await visit(cdp, base, DAY,
+    baseState + '&mode=study&ordinary=1&location=' + encodeURIComponent('ordinary-element/missing'));
+  assert.equal(wrongOrdinary.outcome, 'invalid');
+  assert.ok(wrongOrdinary.error.some(one => one.code === 'invalid-semantic-location'));
+  assert.equal(await evaluate(cdp, `document.querySelectorAll('.study-overview, .ordinary-element').length`), 0);
   checks += 1;
 
   await visit(cdp, base, DAY, studyState);
