@@ -186,7 +186,7 @@ EXAMPLES = {
             "tools/mass-ordinary check",
             (
                 "postconciliar: 7 sections, 61 elements, 1 witness, 3 variants, 12 slots; en 0 held/61 missing, la 20 held/41 missing; relations la antecedent/collated 5, la antecedent/uncollated 15; 0 target-recension exclusions",
-                "roman-1962: 6 sections, 194 elements, 2 witnesses, 0 variants, 9 slots; en 184 held/10 missing, la 113 held/81 missing; relations en antecedent/uncollated 184, la antecedent/uncollated 113; 12 target-recension exclusions",
+                "roman-1962: 6 sections, 196 elements, 4 witnesses, 0 variants, 9 slots; en 186 held/10 missing, la 117 held/79 missing; relations en antecedent/collated 1, en antecedent/uncollated 185, la antecedent/collated 104, la antecedent/uncollated 13; 12 target-recension exclusions",
                 "roman-pre-1955: 6 sections, 206 elements, 2 witnesses, 0 variants, 9 slots; en 196 held/10 missing, la 113 held/93 missing; relations en antecedent/uncollated 196, la antecedent/uncollated 113; 0 target-recension exclusions",
                 "the written files are current",
             ),
@@ -195,7 +195,7 @@ EXAMPLES = {
         Example(
             "tools/mass-ordinary check --calendar roman-1962 --json",
             (
-                "{\"calendars\":[{\"absent\":10,\"calendar\":\"roman-1962\",\"elements\":194,\"exclusions\":12,\"language_coverage... [+556 chars]",
+                "{\"calendars\":[{\"absent\":10,\"calendar\":\"roman-1962\",\"elements\":196,\"exclusions\":12,\"language_coverage... [+699 chars]",
             ),
         ),
     ),
@@ -243,7 +243,7 @@ EXAMPLES = {
                 "",
                 "  Penitential Act, form I (all)",
                 "    [absent: official-exemplar-not-carried]",
-                "... 205 more lines",
+                "... 204 more lines",
             ),
             "an element no witness reaches names the reason rather than printing a gap",
         ),
@@ -265,14 +265,18 @@ EXAMPLES = {
         Example(
             "tools/mass-ordinary coverage --calendar roman-1962",
             (
-                "roman-1962: 194 elements",
-                "  en coverage: 184 held, 10 missing",
-                "  la coverage: 113 held, 81 missing",
-                "  en provenance: antecedent/uncollated 184",
-                "  la provenance: antecedent/uncollated 113",
-                "  en  edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861  184 elements  public-domain",
-                "  la  edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861  113 elements  public-domain",
-                "  absent: appointment-not-established 6 unavailable/model-gap, no-facing-latin 8 unavailable/witness-gap, not-in-the-1962-ordo 0 unavailable/witness-gap, preface-not-in-witness 2 unavailable/witness-gap, proper-canon-form-not-held 12 unavailable/witness-gap, witness-own-english 63 unavailable/witness-gap",
+                "roman-1962: 196 elements",
+                "  en coverage: 186 held, 10 missing",
+                "  la coverage: 117 held, 79 missing",
+                "  en provenance: antecedent/collated 1",
+                "  en provenance: antecedent/uncollated 185",
+                "  la provenance: antecedent/collated 104",
+                "  la provenance: antecedent/uncollated 13",
+                "  en  edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861  185 elements  public-domain",
+                "  en  edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945  1 elements  public-domain",
+                "  la  edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861  114 elements  public-domain",
+                "  la  edition.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19  3 elements  project-created",
+                "  absent: appointment-not-established 6 unavailable/model-gap, communicantes-continuation-english-lacks-1962-clause 1 unavailable/witness-gap, no-facing-latin 8 unavailable/witness-gap, not-in-the-1962-ordo 0 unavailable/witness-gap, preface-not-in-witness 2 unavailable/witness-gap, proper-canon-form-not-held 8 unavailable/witness-gap, proper-communicantes-english-variant 1 unavailable/witness-gap, witness-own-english 63 unavailable/witness-gap",
                 "  target-recension exclusions: conclusio/et-famulos, conclusio/oratio-et-famulos-heading, conclusio/postcommunio-mundet, conclusio/rubrica-oratio-addita, conclusio/rubrica-postcommunio-paschalis, conclusio/rubrica-postcommunio-secunda, oblatio/a-cunctis, oblatio/nota-incarnationis, oblatio/rubrica-collecta-concede, oblatio/rubrica-secreta, oblatio/rubrica-secreta-concede, oblatio/secreta-ii",
             ),
             "the 1962 Ordinary is held whole in English and partly in facing Latin; every remaining Latin absence is recorded, not inferred",
@@ -283,7 +287,7 @@ EXAMPLES = {
             "tools/mass-ordinary check",
             (
                 "postconciliar: 7 sections, 61 elements, 1 witness, 3 variants, 12 slots; en 0 held/61 missing, la 20 held/41 missing; relations la antecedent/collated 5, la antecedent/uncollated 15; 0 target-recension exclusions",
-                "roman-1962: 6 sections, 194 elements, 2 witnesses, 0 variants, 9 slots; en 184 held/10 missing, la 113 held/81 missing; relations en antecedent/uncollated 184, la antecedent/uncollated 113; 12 target-recension exclusions",
+                "roman-1962: 6 sections, 196 elements, 4 witnesses, 0 variants, 9 slots; en 186 held/10 missing, la 117 held/79 missing; relations en antecedent/collated 1, en antecedent/uncollated 185, la antecedent/collated 104, la antecedent/uncollated 13; 12 target-recension exclusions",
                 "roman-pre-1955: 6 sections, 206 elements, 2 witnesses, 0 variants, 9 slots; en 196 held/10 missing, la 113 held/93 missing; relations en antecedent/uncollated 196, la antecedent/uncollated 113; 0 target-recension exclusions",
                 "the written files are current",
             ),
@@ -293,7 +297,7 @@ EXAMPLES = {
             "tools/mass-ordinary structure --out build/example-ordinary",
             (
                 "postconciliar: 7 sections, 61 elements, 1 witness, 3 variants, 12 slots; en 0 held/61 missing, la 20 held/41 missing; relations la antecedent/collated 5, la antecedent/uncollated 15; 0 target-recension exclusions",
-                "roman-1962: 6 sections, 194 elements, 2 witnesses, 0 variants, 9 slots; en 184 held/10 missing, la 113 held/81 missing; relations en antecedent/uncollated 184, la antecedent/uncollated 113; 12 target-recension exclusions",
+                "roman-1962: 6 sections, 196 elements, 4 witnesses, 0 variants, 9 slots; en 186 held/10 missing, la 117 held/79 missing; relations en antecedent/collated 1, en antecedent/uncollated 185, la antecedent/collated 104, la antecedent/uncollated 13; 12 target-recension exclusions",
                 "roman-pre-1955: 6 sections, 206 elements, 2 witnesses, 0 variants, 9 slots; en 196 held/10 missing, la 113 held/93 missing; relations en antecedent/uncollated 196, la antecedent/uncollated 113; 0 target-recension exclusions",
                 "wrote 4 files",
                 "  -> build/example-ordinary/structure/ordinary/index.json",
@@ -392,6 +396,22 @@ TURN_PRINTED_MARKERS = ("P.", "R.")
 TURN_MARKER_HEAD = re.compile(r"^(?:[PRVS]\.|[℣℟]\.?)\s")
 TURN_FIELDS = {"key", "seq", "speaker", "dialogue_role", "action", "printed_marker"}
 TURN_PARTITION_FIELDS = {"element", "lang", "parts"}
+# A dialogue role is a reviewed reading of where the controlling book prints
+# its versicle and response marks, never of the witness's P./R. column.  A
+# partition that declares any role must therefore state that basis (C4,
+# 2026-10-19); one that declares speakers and printed markers only may.
+TURN_PARTITION_OPTIONAL_FIELDS = {"basis"}
+
+# The element heading of an artifact row is its `latin_incipit` cell, which the
+# 1861 transcription copies from the head of the Latin column, cue letter and
+# all ("R. Suscipiat ...").  A declared incipit marker is the reviewed
+# presentation derivative that sets the heading without that printed cue: the
+# generator checks that the cell is exactly the marker, one space and words,
+# and emits `name` and `latin_incipit` without it, recording the marker as
+# `incipit_printed_marker`.  The artifact keeps the cell byte for byte.  An
+# undeclared cue at the head of an incipit is refused, so a heading can never
+# again print a speaker letter nobody reviewed.
+INCIPIT_MARKER_FIELDS = {"element", "printed_marker"}
 
 # Source inventories may state choices and applicability, but they do not get
 # to invent new boolean languages for each rite.  Alternatives always mean one
@@ -1493,7 +1513,7 @@ def artifact_turn_partition_table(section: dict, name: str) -> dict[tuple[str, s
             raise SourceError(
                 f"{name}: section {section['key']} has a non-table turn partition"
             )
-        unknown = set(partition) - TURN_PARTITION_FIELDS
+        unknown = set(partition) - TURN_PARTITION_FIELDS - TURN_PARTITION_OPTIONAL_FIELDS
         missing = TURN_PARTITION_FIELDS - set(partition)
         if unknown or missing:
             detail = []
@@ -1524,8 +1544,80 @@ def artifact_turn_partition_table(section: dict, name: str) -> dict[tuple[str, s
                 f"{name}: section {section['key']} turn partition for {element} "
                 f"in {lang} has empty or malformed parts"
             )
+        basis = partition.get("basis")
+        if basis is not None and (not isinstance(basis, str) or not basis.strip()):
+            raise SourceError(
+                f"{name}: section {section['key']} turn partition for {element} "
+                f"in {lang} has an empty basis"
+            )
+        roles = any(
+            isinstance(part, dict) and part.get("dialogue_role") is not None
+            for part in parts
+        )
+        if roles and basis is None:
+            raise SourceError(
+                f"{name}: section {section['key']} turn partition for {element} "
+                f"in {lang} declares a dialogue role without a basis; a role is "
+                "read from where the controlling book prints its versicle and "
+                "response marks, and the partition must say where"
+            )
         held[reach] = parts
     return held
+
+
+def artifact_incipit_markers(section: dict, source_keys: set[str], name: str) -> dict[str, str]:
+    """Reviewed incipit cue letters, by element; see INCIPIT_MARKER_FIELDS."""
+    declared = section.get("incipit_markers")
+    if declared is None:
+        return {}
+    if not isinstance(declared, list) or not declared:
+        raise SourceError(
+            f"{name}: section {section['key']} has empty or malformed incipit_markers"
+        )
+    held: dict[str, str] = {}
+    for entry in declared:
+        if not isinstance(entry, dict) or set(entry) != INCIPIT_MARKER_FIELDS:
+            raise SourceError(
+                f"{name}: section {section['key']} incipit marker must carry exactly "
+                f"{', '.join(sorted(INCIPIT_MARKER_FIELDS))}"
+            )
+        element, marker = entry["element"], entry["printed_marker"]
+        if element not in source_keys:
+            raise SourceError(
+                f"{name}: section {section['key']} declares an incipit marker for "
+                f"{element!r}, which its artifact does not hold"
+            )
+        if element in held:
+            raise SourceError(
+                f"{name}: section {section['key']} repeats incipit marker for {element}"
+            )
+        if marker not in TURN_PRINTED_MARKERS:
+            raise SourceError(
+                f"{name}: section {section['key']} incipit marker for {element} is "
+                f"{marker!r}; one of {', '.join(TURN_PRINTED_MARKERS)} is required"
+            )
+        held[element] = marker
+    return held
+
+
+def incipit_without_marker(incipit: str, marker: str | None, where: str,
+                           name: str) -> str:
+    """The incipit a heading may print, with a declared printed cue set apart."""
+    if marker is None:
+        if incipit and TURN_MARKER_HEAD.match(incipit):
+            raise SourceError(
+                f"{name}: {where} incipit opens with an undeclared printed cue; "
+                "declare its incipit_markers entry after review or the heading "
+                "would print the speaker letter"
+            )
+        return incipit
+    spoken = incipit[len(marker) + 1:]
+    if not incipit.startswith(marker + " ") or not spoken or spoken[0].isspace():
+        raise SourceError(
+            f"{name}: {where} declares incipit marker {marker!r}, but its incipit "
+            "does not open with that marker followed by one space and words"
+        )
+    return spoken
 
 
 def artifact_translation(
@@ -1546,6 +1638,7 @@ def artifact_translation(
         turns = structured_turns(
             {side + "_turns": parts}, side, library, artifact_id, [row_key],
             column, section["key"] + "/" + row_key, name, text,
+            role_basis_checked=True,
         )
         translation["turns"] = turns
     return translation
@@ -1979,6 +2072,7 @@ def from_artifact(
         section, set(source_groups), set(latin_rows), absences, name
     )
     partitions = artifact_turn_partition_table(section, name)
+    incipit_markers = artifact_incipit_markers(section, set(source_groups), name)
     conditioned = artifact_element_conditions(
         section, set(source_groups), excluded, options or {}, appointments or {}, name
     )
@@ -2048,7 +2142,11 @@ def from_artifact(
                 "the section must state absence once, not between source turns"
             )
         english = "\n".join(english_lines) if all(english_lines) else ""
-        incipit = consistent_artifact_field(rows, "latin_incipit", artifact_id, key)
+        incipit_marker = incipit_markers.pop(key, None)
+        incipit = incipit_without_marker(
+            consistent_artifact_field(rows, "latin_incipit", artifact_id, key),
+            incipit_marker, f"element {section['key']}/{key}", name,
+        )
         latin = (latin_rows.pop(key, {}) or {}).get("latin", "")
         absence_holder = {}
         if key in latin_absence_overrides:
@@ -2124,6 +2222,7 @@ def from_artifact(
                 "absent": absent,
                 "translations": translations or None,
             }
+            | ({"incipit_printed_marker": incipit_marker} if incipit_marker else {})
         )
         elements.extend(inserted_after.get(key, []))
     by_key = {element["key"]: element for element in elements}
@@ -2189,6 +2288,11 @@ def from_artifact(
         raise SourceError(
             f"{name}: section {section['key']} carries Latin for "
             f"{', '.join(sorted(latin_rows))}, which its English artifact does not hold"
+        )
+    if incipit_markers:
+        raise SourceError(
+            f"{name}: section {section['key']} declares an incipit marker for "
+            f"{sorted(incipit_markers)[0]}, which it does not emit"
         )
     if partitions:
         element, lang = sorted(partitions)[0]
@@ -2308,7 +2412,8 @@ def relation_of(block: dict, key: str, lang: str, name: str) -> dict:
 
 def structured_turns(entry: dict, side: str, library: dict, artifact_id: str,
                      named: list[str], column: str, key: str, name: str,
-                     parent_text: str) -> list[dict] | None:
+                     parent_text: str, *, role_basis_checked: bool = False,
+                     ) -> list[dict] | None:
     """Validate and project one side's explicit artifact-row turn partition.
 
     Turn boundaries are source row identities, never offsets or prose matches.
@@ -2322,7 +2427,6 @@ def structured_turns(entry: dict, side: str, library: dict, artifact_id: str,
         return None
     if not isinstance(declarations, list) or not declarations:
         raise SourceError(f"{name}: element {key} has an empty or malformed {field}")
-
     record = library.get(artifact_id)
     if record is None:
         raise SourceError(f"{name}: element {key} names unknown artifact {artifact_id}")
@@ -2442,6 +2546,23 @@ def structured_turns(entry: dict, side: str, library: dict, artifact_id: str,
                 "printed_marker": printed_marker,
                 "text": None,
             }
+        )
+
+    # The inline counterpart of the artifact partition's `basis` rule (C4,
+    # 2026-10-19): a dialogue role is a reviewed reading of where the
+    # controlling book prints its versicle and response marks, so a turn may
+    # declare one only where the element's `turns_basis` says where.  The
+    # Orate fratres roles, which predated the rule, were withdrawn on that
+    # date because the 2002 Ordo n. 29 prints speaker rubrics only.  An
+    # artifact turn partition has already been held to its own `basis` by
+    # artifact_turn_partition_table, and says so with role_basis_checked.
+    if not role_basis_checked and any(
+        turn["dialogue_role"] is not None for turn in turns
+    ) and not isinstance(entry.get("turns_basis"), str):
+        raise SourceError(
+            f"{name}: element {key} declares a dialogue role in {field} without a "
+            "turns_basis; a role is read from where the controlling book prints "
+            "its versicle and response marks, and the element must say where"
         )
 
     if declared_sequence != source_sequence:
@@ -2576,6 +2697,19 @@ def from_inventory(
             raise SourceError(f"{name}: element {key} has kind {kind!r}")
         variant, alternatives = element_alternatives(entry, options, key, name)
         conditions = element_conditions(entry, options, key, name, appointments)
+        # Where an inline element's turns carry a speaker or a dialogue role,
+        # `turns_basis` names the printing it was read from.  It is required
+        # wherever a turn declares a dialogue role (structured_turns refuses
+        # one without it) and optional for speakers alone; see
+        # TURN_PARTITION_OPTIONAL_FIELDS for the artifact rule.
+        turns_basis = entry.get("turns_basis")
+        if turns_basis is not None:
+            if not isinstance(turns_basis, str) or not turns_basis.strip():
+                raise SourceError(f"{name}: element {key} has an empty turns_basis")
+            if "latin_turns" not in entry and "english_turns" not in entry:
+                raise SourceError(
+                    f"{name}: element {key} states a turns_basis but declares no turns"
+                )
 
         held = [
             row
@@ -2680,7 +2814,7 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
         elif "elements" in section:
             for field in (
                 "exclusions", "turn_partitions", "absent_latin_by_element",
-                "element_conditions", "inserted", "junctions",
+                "element_conditions", "inserted", "junctions", "incipit_markers",
                 "element_provenance", "conditional_spans",
             ):
                 if field in section:

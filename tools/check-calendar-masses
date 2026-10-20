@@ -308,10 +308,14 @@ MASS_FIELDS = frozenset(
 # was dropped when unrecognised fields were first refused, which made every
 # inline translation a schema error and left that validator unreachable; no
 # calendar carries one today only because they are all still in the sidecars.
+# `text_structure` records checked stanza boundaries and typed inline actions
+# against the exact `text` beside it; `mass-propers` owns its validation and
+# public projection, and README.md its shape.
+TEXT_STRUCTURE = "text_structure"
 PROPER_FIELDS = frozenset(
     {"name", "source", "verses", "incipit", "text", "notes", "cycles",
      "weekday_cycles", "takes_from", "psalm_numbering", "translations",
-     "text_status", ORDINARY_DISPOSITION}
+     "text_status", ORDINARY_DISPOSITION, TEXT_STRUCTURE}
 )
 CYCLE_OWNER_FIELDS = frozenset(
     {
@@ -325,7 +329,9 @@ CYCLE_OWNER_FIELDS = frozenset(
         "text_status",
     }
 )
-TRANSLATION_FIELDS = frozenset({"lang", "text", "rights", "source_id", "notice"})
+TRANSLATION_FIELDS = frozenset(
+    {"lang", "text", "rights", "source_id", "notice", TEXT_STRUCTURE}
+)
 
 SOURCES = ("scripture", "composed", "mixed")
 CYCLES_KEY = "cycles"
@@ -352,7 +358,7 @@ WEEKDAY_CYCLES_SEASON = "ordinary-time"
 # list lives beside the resolver in `scripts/_calendars.py` and is extended here
 # rather than there, because the second reading course was added after it; the
 # key belongs in that tuple the next time the resolver is opened.
-PROPER_REFERENCE_EXCLUDES = REFERENCE_EXCLUDES
+PROPER_REFERENCE_EXCLUDES = (*REFERENCE_EXCLUDES, TEXT_STRUCTURE)
 KINDS = ("christological", "marian", "sanctoral", "seasonal")
 # The Commune Sanctorum is a section of formularies that no day owns. A Common
 # is placed by use, not by the year: it has neither a season nor a date, and
@@ -1126,6 +1132,11 @@ def check_proper(
     elif "verses" not in proper or ("text" not in proper and not has_body_status):
         problems.append(f"{where}: mixed proper needs both verses and text")
     check_verses(where, proper.get("verses"), problems)
+    if TEXT_STRUCTURE in proper:
+        problems.extend(
+            f"{where}: {problem}"
+            for problem in text_structure_problems(proper.get("text"), proper[TEXT_STRUCTURE])
+        )
     check_translations(where, proper, problems)
 
 
@@ -1232,6 +1243,11 @@ def check_translation_list(
                 "witness; establish the exact Lectionary edition, exemplar, and "
                 "publication basis instead"
             )
+        if TEXT_STRUCTURE in entry:
+            problems.extend(
+                f"{label}: {problem}"
+                for problem in text_structure_problems(entry.get("text"), entry[TEXT_STRUCTURE])
+            )
         lang = entry.get("lang")
         if isinstance(lang, str):
             key = (lang, source_id if isinstance(source_id, str) else None)
@@ -1270,6 +1286,52 @@ def source_records() -> tuple[dict | None, str | None]:
                 f"sources: {error}",
             )
     return _SOURCE_RECORDS
+
+
+_WITNESS_LINES: dict[str, int | str] = {}
+_MASS_PROPERS = None
+
+
+def witness_line_count(artifact_id: str) -> int | str:
+    """How many physical lines a tracked witness artifact's exact bytes hold.
+
+    A stanza boundary tied to a witness line is tied to bytes, so the bytes are
+    hashed against their record before their lines are counted: a line number
+    into a file that has since changed points at nothing.
+    """
+    if artifact_id in _WITNESS_LINES:
+        return _WITNESS_LINES[artifact_id]
+    records, trouble = source_records()
+    record = (records or {}).get(artifact_id)
+    data = getattr(record, "data", None)
+    if records is None:
+        answer: int | str = trouble or "the source library cannot be read"
+    elif record is None or getattr(record, "record_type", None) != "artifact":
+        answer = f"{artifact_id!r} is not a registered artifact"
+    elif not isinstance(data, dict) or data.get("storage") != "tracked" or not data.get("path"):
+        answer = f"{artifact_id!r} is not a tracked artifact with a path"
+    else:
+        path = Path(__file__).resolve().parents[1] / str(data["path"])
+        try:
+            payload = path.read_bytes()
+        except OSError as error:
+            answer = f"{artifact_id!r} cannot be read: {error}"
+        else:
+            if hashlib.sha256(payload).hexdigest() != data.get("sha256"):
+                answer = f"{artifact_id!r} bytes do not match its recorded sha256"
+            else:
+                answer = payload.count(b"\n") + (0 if payload.endswith(b"\n") else 1)
+    _WITNESS_LINES[artifact_id] = answer
+    return answer
+
+
+def text_structure_problems(text: object, structure: object) -> list[str]:
+    """`mass-propers`' own validation, with the witness tie resolved here."""
+
+    global _MASS_PROPERS
+    if _MASS_PROPERS is None:
+        _MASS_PROPERS = sibling("mass-propers")
+    return _MASS_PROPERS.text_structure_problems(text, structure, witness_line_count)
 
 
 def source_ids() -> tuple[set[str] | None, str | None]:

@@ -311,6 +311,28 @@ link them to the act history, but do not derive chronology, causation, or an
 unstated middle recension from their order. The absence of a row-level `act`
 remains meaningful and must not be filled from the aggregate boundary.
 
+A Proper body's checked internal structure is projected the same way
+(`mass-propers.public_text_structure`, C2 gap G14). Beside the exact `text` it
+describes -- the Latin body, or one published translation -- a
+`text_structure` carries only offsets:
+
+```json
+"text_structure": {"stanzas": [0, 61, 125],
+                   "actions": [{"kind": "rubric", "start": 98, "end": 117}]}
+```
+
+`stanzas` are stanza starts and each action a half-open `[start, end)` span,
+all counted in UTF-16 code units, which is how the browser indexes a string;
+the source records count code points and the generator converts. The source
+record's hash, page-image record, witness lines and `opens` words never cross
+this boundary. A structure that no longer describes its text fails the
+structure pass rather than being dropped, and a withheld body publishes no
+structure. The published text bytes are identical with or without one.
+`src/sources/calendars/README.md` owns the source shape. The shared renderer
+sets each stanza as its own paragraph inside one `.composed` group and each
+`rubric` as a rubric span, never as principal text; it applies a structure
+whole or not at all.
+
 A source-side translation-absence audit is richer than its public projection.
 Generated Proper absence rows expose exactly `{target, lang, state}`. `target`
 contains only `{mass, form_id, proper, cycle, occurrence, extent}`; `state` is
@@ -436,7 +458,10 @@ the one row per expected target with exact totals in `target_states`
 (`represented`, `not-represented`, `unresolved`) and with `not_represented`,
 the `{id, slice_id, kind}` of each expected target no held Mass represents.
 Those rows were 1.4 MB of the 1962 file and no page read them; a consumer that
-needs each target's classification calls `expectations()`.
+needs each target's classification calls `expectations()`. Slices are
+published without their `source_refs`. Those name repository records,
+including restricted editions' artifact records, which the tracked inventory
+keeps and public data must not carry as rights context.
 
 ## The calendar layer
 

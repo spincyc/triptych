@@ -1577,8 +1577,11 @@ window.Triptych = (function () {
     if (relationships.length) parts.push(relationships.map(function (value) {
       return row.relationships[value] + ' ' + (COVERAGE_RELATIONSHIPS[value] || value);
     }).join('; ') + '.');
-    if (row.scripture_occurrences) parts.push(row.scripture_occurrences +
+    const counts = bibleUseCounts(row);
+    if (counts.reconstructions) parts.push(counts.reconstructions +
       ' Scripture uses are Bible reconstructions, which do not establish exact Missal wording.');
+    if (counts.beside) parts.push(counts.beside +
+      ' Missal texts also show their cited passages in the selected Bible, which are not the Missal’s wording.');
     return parts.join(' ');
   }
 
@@ -1600,8 +1603,20 @@ window.Triptych = (function () {
     if (witnessId ? !witness || available < row.occurrences ||
         (witness.relationships || []).some(function (value) { return value !== 'exact-target'; })
       : row.exact_target < row.occurrences) parts.push('Exact target wording remains incomplete.');
-    if (row.scripture_occurrences) parts.push(row.scripture_occurrences + ' Bible reconstructions.');
+    const counts = bibleUseCounts(row);
+    if (counts.reconstructions) parts.push(counts.reconstructions + ' Bible reconstructions.');
+    if (counts.beside) parts.push(counts.beside + ' cited Bible passages beside Missal texts.');
     return parts.join(' ');
+  }
+
+  /**
+   * A `mixed` unit's citation expansion stands beside the Missal's own text
+   * and is not a reconstruction of it; only a Scripture-only unit is. The two
+   * are counted apart so the notice agrees with each unit's own claim.
+   */
+  function bibleUseCounts(row) {
+    const beside = Math.min(row.mixed_occurrences || 0, row.scripture_occurrences || 0);
+    return { reconstructions: (row.scripture_occurrences || 0) - beside, beside: beside };
   }
 
   /**
@@ -1745,24 +1760,219 @@ window.Triptych = (function () {
     return node;
   }
 
-  /** A text with its versicle and response marks set, as a fragment. */
-  function versicled(text) {
-    const fragment = document.createDocumentFragment();
-    const source = text === null || text === undefined ? '' : String(text);
-    let at = 0;
+  /** Where the versicle and response marks fall in a whole text. */
+  function versicleMarksIn(source) {
+    const marks = [];
     let found;
     VERSICLE_CANDIDATE.lastIndex = 0;
     while ((found = VERSICLE_CANDIDATE.exec(source)) !== null) {
       const before = source.slice(0, found.index);
       if (!OPENS_A_CLAUSE.test(before) || AN_INITIAL_BEFORE.test(before)) continue;
-      if (found.index > at) {
-        fragment.appendChild(document.createTextNode(source.slice(at, found.index)));
-      }
-      fragment.appendChild(versicleMark(found[1]));
-      at = found.index + found[0].length;
+      marks.push({ start: found.index, end: found.index + found[0].length, letter: found[1] });
     }
-    if (at < source.length) fragment.appendChild(document.createTextNode(source.slice(at)));
+    return marks;
+  }
+
+  /** One stretch [from, to) of `source`, its marks set, appended to `target`. */
+  function appendVersicled(target, source, from, to, marks) {
+    let at = from;
+    marks.forEach(function (mark) {
+      if (mark.start < from || mark.end > to) return;
+      if (mark.start > at) target.appendChild(document.createTextNode(source.slice(at, mark.start)));
+      target.appendChild(versicleMark(mark.letter));
+      at = mark.end;
+    });
+    if (at < to) target.appendChild(document.createTextNode(source.slice(at, to)));
+  }
+
+  /** A text with its versicle and response marks set, as a fragment. */
+  function versicled(text) {
+    const fragment = document.createDocumentFragment();
+    const source = text === null || text === undefined ? '' : String(text);
+    appendVersicled(fragment, source, 0, source.length, versicleMarksIn(source));
     return fragment;
+  }
+
+  /* ------------------------------------------------------------------------
+   * Checked internal structure (C2 gap G14)
+   *
+   * `text_structure` is the generator's projection of a body's checked
+   * stanza boundaries and typed inline actions, as offsets into the exact
+   * published string (`guidance/web-data.md`). The words are never edited to
+   * carry it: a stanza is a group of the text's own characters, and a rubric
+   * printed inside a prayer -- the Pentecost genuflection -- is set as a rubric
+   * span, not spoken text. A structure that does not fit its text is ignored
+   * whole rather than half applied.
+   * --------------------------------------------------------------------- */
+
+  function usableStructure(text, structure) {
+    if (!structure || typeof structure !== 'object') return null;
+    const length = text.length;
+    const stanzas = Array.isArray(structure.stanzas) ? structure.stanzas : [];
+    const actions = Array.isArray(structure.actions) ? structure.actions : [];
+    const ordered = stanzas.every(function (offset, index) {
+      return Number.isInteger(offset) && offset >= 0 && offset < length &&
+        (index === 0 ? offset === 0 : offset > stanzas[index - 1]);
+    });
+    let last = -1;
+    const spans = actions.every(function (action) {
+      const fits = action && action.kind === 'rubric' && Number.isInteger(action.start) &&
+        Number.isInteger(action.end) && action.start > last && action.end > action.start &&
+        action.end <= length;
+      if (fits) last = action.end - 1;
+      return fits;
+    });
+    if (!ordered || !spans || (!stanzas.length && !actions.length)) return null;
+    return { stanzas: stanzas, actions: actions };
+  }
+
+  /** One rubric printed inside the text, set as a rubric and named once. */
+  function inlineRubric(source, action, marks) {
+    const node = el('span', 'inline-rubric');
+    node.setAttribute('data-inline-action', action.kind);
+    // Assistive technology is told what the italic and the red say; the
+    // label is English interface text inside a paragraph of the text's own
+    // language, so it carries its own `lang`.
+    const label = el('span', 'visually-hidden', 'Rubric: ');
+    label.lang = 'en';
+    node.appendChild(label);
+    appendVersicled(node, source, action.start, action.end, marks);
+    return node;
+  }
+
+  /** Append [from, to) of the text, with its rubric spans, to `target`. */
+  function appendStructured(target, source, from, to, actions, marks) {
+    let at = from;
+    actions.forEach(function (action) {
+      if (action.start < from || action.end > to) return;
+      appendVersicled(target, source, at, action.start, marks);
+      target.appendChild(inlineRubric(source, action, marks));
+      at = action.end;
+    });
+    appendVersicled(target, source, at, to, marks);
+  }
+
+  /**
+   * The composed element for a body: a paragraph, or, where checked stanza
+   * boundaries are recorded, a group whose stanzas are paragraphs of their
+   * own. Either way the element carries the `composed` class, the language,
+   * and the label as its first child, so every consumer reads one shape.
+   */
+  function composedBody(text, structure, label) {
+    const source = String(text);
+    const usable = usableStructure(source, structure);
+    const marks = versicleMarksIn(source);
+    const stanzas = usable && usable.stanzas.length > 1 ? usable.stanzas : null;
+    const node = el(stanzas ? 'div' : 'p', stanzas ? 'composed composed-stanzas' : 'composed');
+    if (label) node.appendChild(label);
+    const actions = usable ? usable.actions : [];
+    if (!stanzas) {
+      appendStructured(node, source, 0, source.length, actions, marks);
+      return node;
+    }
+    node.setAttribute('data-stanzas', String(stanzas.length));
+    stanzas.forEach(function (start, index) {
+      const end = index + 1 < stanzas.length ? stanzas[index + 1] : source.length;
+      const stanza = el('p', 'stanza');
+      appendStructured(stanza, source, start, end, actions, marks);
+      // A boundary sits after whitespace; that whitespace is the gap the
+      // stanza break already shows.
+      const tail = stanza.lastChild;
+      if (tail && tail.nodeType === 3) tail.nodeValue = tail.nodeValue.replace(/\s+$/, '');
+      node.appendChild(stanza);
+    });
+    return node;
+  }
+
+  /* ------------------------------------------------------------------------
+   * Copying from the reader
+   *
+   * What a reader copies is the text they see: the ℣ and ℟ glyphs, the words,
+   * a rubric printed in the text, and a stanza or paragraph break where one is
+   * shown. Not the labels written for assistive technology ("Verse 7.",
+   * "Versicle."), and not the reader's apparatus lines about the text. The
+   * browser's own serialisation gets both wrong -- the glyph sits in an
+   * unselectable cue and the hidden words sit in selectable spans -- so the
+   * plain-text flavour is written here from the selection itself.
+   * --------------------------------------------------------------------- */
+
+  const COPY_SKIP = '.visually-hidden, .verse-num, .composed-label, .unit-claim, ' +
+    '.citation-numbering, [data-copy="skip"], button, select, input, textarea, ' +
+    'script, style, template, svg';
+  const PARAGRAPH_BLOCKS = new Set(['P', 'BLOCKQUOTE']);
+  // The Ordinary's dialogue rows set their cue in generated content and copy
+  // their accessible speaker label in its place; that is the Ordinary
+  // renderer's own contract, so a selection reaching one is left to the
+  // browser rather than serialised by these rules.
+  const COPY_DEFERS = '.ordinary-dialogue, .ordinary-turn, .speaker-tag, .cue-mark';
+
+  const DEFER = {};
+
+  function copyText(range) {
+    let text = '';
+    function newlines(count) {
+      if (!text) return;
+      const trailing = /\n*$/.exec(text)[0].length;
+      if (trailing < count) text = text.replace(/ +$/, '') + '\n'.repeat(count - trailing);
+    }
+    function walk(node) {
+      if (!range.intersectsNode(node)) return;
+      if (node.nodeType === 3) {
+        let value = node.nodeValue;
+        if (node === range.endContainer) value = value.slice(0, range.endOffset);
+        if (node === range.startContainer) value = value.slice(range.startOffset);
+        value = value.replace(/\s+/g, ' ');
+        if (!text || /\s$/.test(text)) value = value.replace(/^ /, '');
+        text += value;
+        return;
+      }
+      if (node.nodeType !== 1) return;
+      if (node.matches(COPY_DEFERS)) throw DEFER;
+      if (node.matches(COPY_SKIP) || node.hidden) return;
+      const style = getComputedStyle(node);
+      if (style.display === 'none' || style.visibility === 'hidden') return;
+      const parentStyle = node.parentElement ? getComputedStyle(node.parentElement) : null;
+      const block = !/^inline/.test(style.display) || node.tagName === 'BR';
+      const lines = PARAGRAPH_BLOCKS.has(node.tagName) ? 2 : 1;
+      if (block) newlines(lines);
+      else if (parentStyle && /flex|grid/.test(parentStyle.display) && text && !/\s$/.test(text)) {
+        // Flex items -- a heading's name beside its reference -- are laid
+        // out apart, so they are copied apart.
+        text += ' ';
+      }
+      if (node.tagName === 'BR') return;
+      node.childNodes.forEach(walk);
+      if (block) newlines(lines);
+    }
+    try {
+      const anchor = range.commonAncestorContainer;
+      const element = anchor.nodeType === 1 ? anchor : anchor.parentElement;
+      if (element && element.closest(COPY_DEFERS)) return null;
+      walk(anchor);
+    } catch (error) {
+      if (error === DEFER) return null;
+      throw error;
+    }
+    return text.replace(/[ \t]+\n/g, '\n').replace(/\n{3,}/g, '\n\n').trim();
+  }
+
+  function onReaderCopy(event) {
+    const selection = document.getSelection && document.getSelection();
+    if (!selection || selection.isCollapsed || !selection.rangeCount || !event.clipboardData) return;
+    const range = selection.getRangeAt(0);
+    const anchor = range.commonAncestorContainer;
+    const element = anchor.nodeType === 1 ? anchor : anchor.parentElement;
+    const inside = element && element.closest('.reader-document');
+    const around = element && element.querySelector && element.querySelector('.reader-document');
+    if (!inside && !around) return;
+    const text = copyText(range);
+    if (!text) return;
+    event.clipboardData.setData('text/plain', text);
+    event.preventDefault();
+  }
+
+  if (typeof document !== 'undefined' && document.addEventListener) {
+    document.addEventListener('copy', onReaderCopy);
   }
 
   /**
@@ -1798,7 +2008,10 @@ window.Triptych = (function () {
           unavailableState: 'unavailable', held: false
         };
       }
-      return { text: proper.text, lang: SOURCE_LANGUAGE, missing: false, source: null };
+      return {
+        text: proper.text, lang: SOURCE_LANGUAGE, missing: false, source: null,
+        structure: proper.text_structure || null
+      };
     }
     const rawCandidates = (proper.translations || []).filter((translation) => {
       return translation && translation.lang === asked && translation.text;
@@ -1826,6 +2039,7 @@ window.Triptych = (function () {
     if (found) {
       return {
         text: found.text,
+        structure: found.text_structure || null,
         lang: asked,
         missing: false,
         source: found.source_id || found.source || null,
@@ -1969,13 +2183,35 @@ window.Triptych = (function () {
   }
 
   /**
+   * The claim for citation passages set beneath the Missal's own text.
+   *
+   * A `mixed` unit prints the Missal's wording above and expands its citations
+   * below. Those passages are then not a reconstruction standing in for the
+   * Missal's words, which are shown; they are the cited text in the selected
+   * Bible edition, and that is what the line says (C2 G9 follow-up).
+   */
+  function bibleTextMarker(bible) {
+    const edition = bible && (bible.label || bible.id);
+    const node = el('p', 'unit-claim',
+      'Bible text' + (edition ? ' · ' + edition : '') + ' · not the Missal’s wording');
+    node.setAttribute('data-unit-claim', 'bible-text');
+    return node;
+  }
+
+  /** Which claim a unit's citation passages carry, given what was shown above. */
+  function citationClaim(owner, fallbackOwner, source, missalTextShown, bible) {
+    if (!isBibleReconstruction(owner, fallbackOwner)) return null;
+    return source === 'mixed' && missalTextShown ? bibleTextMarker(bible) : reconstructionMarker();
+  }
+
+  /**
    * One owner's composed words and the claim-local account of what is absent.
    *
    * A requested translation that is missing never suppresses the held original:
    * the Latin stays visible, labelled as Latin, beside the exact typed absence of
    * the translation. No other witness of the translation is borrowed.
    */
-  function renderOrationState(container, owner, held, scope) {
+  function renderOrationState(container, owner, held, scope, parentSource) {
     const asked = held.orations || SOURCE_LANGUAGE;
     const oration = orationFor(owner, asked, held.translationWitness || null);
     const latinHeld = Boolean(owner.text) && !(owner.latin && owner.latin.withheld);
@@ -1983,18 +2219,24 @@ window.Triptych = (function () {
       ? owner.text : null;
     const shown = oration.text || original;
     const shownLang = oration.text ? oration.lang : SOURCE_LANGUAGE;
+    // A Latin fallback is the owner's own text, and carries its structure;
+    // a structure travels only with the exact words it was checked against.
+    const structure = oration.text ? oration.structure : (owner.text_structure || null);
     if (shown) {
-      const composed = el('p', 'composed');
-      composed.appendChild(composedLabel('Composed text — not scripture' +
+      // A `mixed` body is the Missal's own wording of a scriptural text, so it
+      // is not labelled as a composition that is not scripture.
+      const kind = (owner.source || parentSource) === 'mixed'
+        ? 'Missal text' : 'Composed text — not scripture';
+      const composed = composedBody(shown, structure, composedLabel(kind +
         (shownLang !== SOURCE_LANGUAGE ? ' · ' + languageName(shownLang)
           : (asked !== SOURCE_LANGUAGE ? ' · ' + languageName(SOURCE_LANGUAGE) : ''))));
-      composed.appendChild(versicled(shown));
       composed.lang = shownLang;
       if (shownLang === SOURCE_LANGUAGE && asked !== SOURCE_LANGUAGE) {
         composed.setAttribute('data-unit-original', SOURCE_LANGUAGE);
       }
       container.appendChild(composed);
     }
+    oration.shown = Boolean(shown);
     if (!oration.missing) return oration;
 
     // Said where the translation would have been, not in a footnote: a reader
@@ -2099,8 +2341,10 @@ window.Triptych = (function () {
       (proper.untranslated || []).length > 0 ||
       Boolean(proper.latin && proper.latin.withheld) ||
       properBodyUnavailable(proper);
+    let missalTextShown = false;
     if (hasOrationState) {
       const oration = renderOrationState(section, proper, held, null);
+      missalTextShown = Boolean(oration.shown);
       // Whose English it is. A translation is someone's expression, and the
       // reader is entitled to know whose before weighing it.
       if (oration.source) {
@@ -2124,9 +2368,9 @@ window.Triptych = (function () {
 
     const citations = proper.citations || [];
     // One quiet claim before the passages it qualifies, never a note per verse.
-    if (citations.length && isBibleReconstruction(proper)) {
-      section.appendChild(reconstructionMarker());
-    }
+    const claim = citations.length
+      ? citationClaim(proper, null, proper.source, missalTextShown, bible) : null;
+    if (claim) section.appendChild(claim);
     for (const citation of citations) {
       section.appendChild(
         renderCitation(citation, bible, fragments, numbering, { showRef: false })
@@ -2148,14 +2392,16 @@ window.Triptych = (function () {
       const cycle = cycleOf(proper, key);
       const block = el('div', 'cycle');
       block.appendChild(el(under, 'cycle-name', cycleLabel(key)));
+      let cycleTextShown = false;
       if (cycle.text || cycle.translations.some((translation) => translation && translation.text) ||
           cycle.unavailable_translations.length || cycle.untranslated.length ||
           (cycle.latin && cycle.latin.withheld) || properBodyUnavailable(cycle)) {
-        renderOrationState(block, cycle, held, 'for this cycle');
+        cycleTextShown = Boolean(
+          renderOrationState(block, cycle, held, 'for this cycle', proper.source).shown);
       }
-      if (cycle.citations.length && isBibleReconstruction(cycle, proper)) {
-        block.appendChild(reconstructionMarker());
-      }
+      const cycleClaim = cycle.citations.length
+        ? citationClaim(cycle, proper, cycle.source || proper.source, cycleTextShown, bible) : null;
+      if (cycleClaim) block.appendChild(cycleClaim);
       for (const citation of cycle.citations) {
         block.appendChild(renderCitation(citation, bible, fragments, numbering));
       }
@@ -2251,6 +2497,7 @@ window.Triptych = (function () {
     absenceReasons: ABSENCE_REASONS,
     orationFor: orationFor,
     versicled: versicled,
+    composedBody: composedBody,
     renderProper: renderProper,
     uncompiledNote: uncompiledNote,
 

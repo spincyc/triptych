@@ -1086,7 +1086,9 @@ class KnownDefectsTest(unittest.TestCase):
     stepping = probe(probe="core", arrows=True, keys=[
       {"key": "ArrowRight"}, {"key": "ArrowRight"}, {"key": "ArrowLeft"},
     ])
-    self.assertEqual(stepping["documentEvents"], ["keydown"])
+    # 2026-10-19 (C2 G14): the shared core also listens for `copy`; its
+    # handler acts only on selections inside a liturgy `.reader-document`.
+    self.assertEqual(stepping["documentEvents"], ["copy", "keydown"])
     self.assertEqual(stepping["stepped"], [1, 1, -1])
     source = text_of("scripture/track.js")
     self.assertIn("T.onArrowStep((delta) => step(delta, { moveFocus: false }));", source)

@@ -464,6 +464,8 @@ class RealCorpusCoverageTests(unittest.TestCase):
                            "Gospel": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
                            "Offertory": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
                            "Communion": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+                           # Bound 2026-10-19 (G14 lane), its genuflection a typed rubric.
+                           "Alleluia": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
                            "Sequence": "edition.edward-caswall.lyra-catholica.london-1849"}
         for name, (_, english_row) in roman.items():
             with self.subTest(name=name, lang="en"):
@@ -474,18 +476,16 @@ class RealCorpusCoverageTests(unittest.TestCase):
                                      [english_witness[name]])
                     self.assertEqual([row["relationship"] for row in english_row["witnesses"]],
                                      ["historical-antecedent"])
-                elif name == "Lesson":
+                else:
                     # Both public-domain witnesses lack the Missal's discipuli:
                     # a typed witness gap, not a missing binding.
+                    self.assertEqual(name, "Lesson")
                     self.assertEqual(english_row["availability"], "unresolved")
                     self.assertEqual(english_row["witnesses"], [])
-                else:
-                    self.assertEqual(name, "Alleluia")
-                    self.assertEqual(english_row["availability"], "not-sourced")
         latin_summary, english_summary = mass("roman-1962")["coverage"]["languages"]
         self.assertEqual((latin_summary["targets"], latin_summary["exact_target"]), (10, 10))
         self.assertEqual((english_summary["available"],
-                          english_summary["relationships"]["historical-antecedent"]), (8, 8))
+                          english_summary["relationships"]["historical-antecedent"]), (9, 9))
         # Pre-1955 inherits 1962's bodies uncollated: never exact-target there.
         for name, (latin, english_row) in bodies("roman-pre-1955").items():
             with self.subTest(calendar="roman-pre-1955", name=name):
@@ -533,8 +533,9 @@ class RealCorpusCoverageTests(unittest.TestCase):
         self.assertEqual(len(withheld), 5)
         retyped = [row for row in ledger["untranslated"] if "(C2 gap G3)" in row["note"]]
         # 336 since 2026-10-19 (C3): the Pentecost Collect, Secret and
-        # Postcommunion were bound and left the untranslated ledger.
-        self.assertEqual(len(retyped), 336)
+        # Postcommunion were bound and left the untranslated ledger; 335 once
+        # the Pentecost Alleluia was bound the same day (G14 lane).
+        self.assertEqual(len(retyped), 335)
         self.assertEqual({row["reason"]["kind"] for row in retyped}, {"no-exemplar"})
         restricted = [unit for mass in self.files["roman-1962"]["masses"]
                       for unit in coverage.proper_units(mass)
@@ -696,10 +697,16 @@ state = "unenumerated"
                          {"represented": 1, "not-represented": 1, "unresolved": 1})
         self.assertEqual(published["not_represented"],
                          [{"id": "absent", "slice_id": "fixed", "kind": "commemoration"}])
-        # The slice summaries, boundaries and inventory state are carried whole.
+        # The boundaries and inventory state are carried whole, and the slice
+        # summaries whole except `source_refs` (2026-10-19): those name
+        # repository records, including restricted editions', which public
+        # data must not carry.
+        expected = {key: value for key, value in report.items() if key != "targets"}
+        expected["slices"] = [{key: value for key, value in row.items() if key != "source_refs"}
+                              for row in report["slices"]]
+        self.assertTrue(all("source_refs" in row for row in report["slices"]))
         self.assertEqual({key: value for key, value in published.items()
-                          if key not in {"target_states", "not_represented"}},
-                         {key: value for key, value in report.items() if key != "targets"})
+                          if key not in {"target_states", "not_represented"}}, expected)
         # Totals agree with the slice summaries a reader can also add up.
         totals = {}
         for row in published["slices"]:

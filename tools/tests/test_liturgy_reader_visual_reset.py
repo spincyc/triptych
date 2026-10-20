@@ -204,11 +204,15 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
             translation for translation in orate["translations"]
             if translation["lang"] == "la"
         )
+        # Selected by speaker: since 2026-10-19 (C4) the Orate fratres turns
+        # carry speakers only, because the 2002 Ordo n. 29 prints no versicle
+        # or response mark, so no turn has a dialogue role to select by.
         responses = [
             turn for turn in latin["turns"]
-            if turn.get("dialogue_role") == "response"
+            if turn.get("speaker") == "all"
         ]
         self.assertEqual(len(responses), 1)
+        self.assertIsNone(responses[0]["dialogue_role"])
         self.assertRegex(responses[0]["text"], r"^R\.\s")
         # The printed `R.` is a reviewed, separated marker, so the common turn
         # representation sets one cue. No event-specific rule may hide a

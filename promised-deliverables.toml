@@ -66,7 +66,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "c4-remaining-dialogues"
   criterion = "Introibo/Judica, Sursum corda, Pax and the dismissal carry reviewed per-turn source rows, speakers and dialogue roles in each held language, with one visible cue per turn and the same browser evidence; element headings no longer show printed P./R. except through a reviewed derivative."
-  status = "open"
+  status = "pass"
   evidence = ["guidance/liturgy-browser-roadmap.md"]
 
 [[deliverables]]
@@ -93,7 +93,7 @@ state = "in_progress"
   id = "c3-pentecost-remaining"
   criterion = "The Alleluia English, the G14 inline-action and stanza contract, the exercised Ordinary dialogues collated against the 1962 Ordo (G19), and the C2 acceptance checks for the exemplar pass."
   status = "open"
-  evidence = ["guidance/liturgy-browser-roadmap.md"]
+  evidence = ["guidance/liturgy-browser-roadmap.md", "tools/tests/test_proper_text_structure.py"]
 
 [[deliverables]]
 id = "missal-reader-c2-exemplars-2026-10-19"

@@ -106,6 +106,11 @@ artifacts = [
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-la",
+  # The turn-divided derivatives, read only by the elements whose Latin turns
+  # address one printed turn each (sursum-corda, pax-domini); every other
+  # element reads its parent above (2026-10-19).
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la-turn-divided",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la-turn-divided",
 ]
 
 # ICEL's own free chant library, Music for the Roman Missal, as the rightsholder
@@ -621,14 +626,17 @@ missal_number = "n. 29"
 # witness rows join to one element because the book sets the priest's summons
 # and the people's answer as separate blocks and the Missal sets them as one.
 absent_english = "approved-english-publication-restriction"
-# Row 53 keeps the antecedent witness's literal `R.` byte for byte, and the turn
-# records its explicit response role. `printed_marker` is the reviewed
-# derivative (2026-10-19) separating that printed cue from the spoken text, so
-# the reader sets one cue, the role's response glyph, rather than the glyph
-# plus the printed letter. The role is declared, never inferred from the `R.`.
+# Row 53 keeps the antecedent witness's literal `R.` byte for byte.
+# `printed_marker` is the reviewed derivative (2026-10-19) separating that
+# printed cue from the spoken text. The turns declare speakers only: the
+# versicle and response roles first declared here had no stated basis, and on
+# 2026-10-19 they were withdrawn under the C4 rule that a role stands only where
+# the controlling book prints the mark, because n. 29 prints rubrics naming the
+# priest and the people and no versicle or response mark (see turns_basis).
+turns_basis = "Missale Romanum 2002, the registered restricted artifact secondary-digital-pdf-0b458944 (sha256 0b458944...), Ordo Missae n. 29 (artifact PDF p. 310), read on the rendered page image on 2026-10-19: the priest's summons stands under a rubric naming him and the people's answer under a rubric naming the people, and neither carries a versicle or response mark. Speakers only; no dialogue role. No word of that artifact is carried here."
 latin_turns = [
-  { key = "priest-summons", seq = [52], speaker = "priest", dialogue_role = "versicle" },
-  { key = "people-response", seq = [53], speaker = "all", dialogue_role = "response", printed_marker = "R." },
+  { key = "priest-summons", seq = [52], speaker = "priest" },
+  { key = "people-response", seq = [53], speaker = "all", printed_marker = "R." },
 ]
 [sections.elements.latin]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
@@ -683,9 +691,20 @@ latin_incipit = "Dominus vobiscum. Sursum corda"
 missal_number = "n. 31"
 absent_english = "approved-english-publication-restriction"
 
+# C4 step 2 (2026-10-19): one turn per child row of the 1861 block; speakers
+# and roles from the target printing named in turns_basis. No English.
+turns_basis = "Missale Romanum 2002, the registered restricted artifact secondary-digital-pdf-0b458944, read in its rendered text on 2026-10-19: the Ordo Missae n. 31 (artifact PDF p. 310) sets the dialogue under rubrics naming the priest and the people, and each Preface of the Praefationes (artifact PDF p. 311 onward, passage ordo-missae-praefationes) prints it with the versicle mark before the priest's lines and the response mark before the people's. No word of that artifact is carried here."
+latin_turns = [
+  { key = "priest-1", seq = [5901], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "all-1", seq = [5902], speaker = "all", dialogue_role = "response", printed_marker = "R." },
+  { key = "priest-2", seq = [5903], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "all-2", seq = [5904], speaker = "all", dialogue_role = "response", printed_marker = "R." },
+  { key = "priest-3", seq = [5905], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "all-3", seq = [5906], speaker = "all", dialogue_role = "response", printed_marker = "R." },
+]
 [sections.elements.latin]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la-turn-divided"
 elements = ["sursum-corda"]
 column = "latin"
 relation = "antecedent"
@@ -1163,9 +1182,16 @@ latin_incipit = "Pax Domini sit semper vobiscum"
 missal_number = "n. 127"
 absent_english = "approved-english-publication-restriction"
 
+# C4 step 2 (2026-10-19): one turn per child row of the 1861 block; speakers
+# and roles from the target printing named in turns_basis. No English.
+turns_basis = "Missale Romanum 2002, the registered restricted artifact secondary-digital-pdf-0b458944, Ordo Missae n. 127 (artifact PDF p. 367), read in its rendered text on 2026-10-19: the priest's line and the people's answer stand under rubrics naming each, with no versicle or response mark. Speakers only; no dialogue role."
+latin_turns = [
+  { key = "priest-1", seq = [601], speaker = "priest", printed_marker = "P." },
+  { key = "all-1", seq = [602], speaker = "all", printed_marker = "R." },
+]
 [sections.elements.latin]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la-turn-divided"
 elements = ["pax-domini"]
 column = "latin"
 relation = "antecedent"

@@ -97,20 +97,56 @@ esac
 
 # A historical English lead without exact publication binding is a typed
 # unavailable translation, never a payload reachable through the reading view.
-# Advent I's Latin is published, so the restriction is the whole note and it
-# must not also claim the Latin is unavailable.
+# The note states the unit's typed reason in the browser's words (`absenceClause`
+# in src/web/browser/shared/browser-core.js). 2026-10-19, C2 G3: Advent I's
+# English was `rights-withheld` until C2 step 1 retyped it `no-exemplar` -- a
+# public-domain witness exists, no passage binding does -- so it is "not yet
+# sourced", not rights restricted and not "deliberately" absent. Advent I's
+# Latin is published, so the reason is the whole note and it must not also
+# claim the Latin is unavailable.
 english="$(run_tool --calendar roman-1962 --mass advent-1 --lang en)"
 case "$english" in
-*"(en translation unavailable: rights restricted)"*) ;;
-*) echo "withheld historical English did not report unavailability" >&2; exit 1 ;;
+*"(en translation unavailable: not yet sourced)"*) ;;
+*) echo "Advent I English did not state its typed reason" >&2; exit 1 ;;
 esac
-# Where the Latin is withheld as well, the note says both facts.
+case "$english" in
+*"rights restricted"*|*"deliberately"*)
+	echo "Advent I English misstated a no-exemplar absence" >&2
+	exit 1
+	;;
+esac
+# Where the Latin is withheld as well, the note says both facts, and a typed
+# rights restriction keeps its own words. St Anthony's Collect is now
+# no-exemplar over withheld Latin; St Pius V's Secret, from the Common of
+# Popes, is still rights-withheld English over withheld Latin.
 anthony_english="$(run_tool --calendar roman-1962 \
 	--mass s-antonii-padua-confessoris-ecclesiae-doctoris --lang en)"
 case "$anthony_english" in
+*"en translation unavailable: not yet sourced; Latin text unavailable"*) ;;
+*) echo "unsourced English over withheld Latin did not report both" >&2; exit 1 ;;
+esac
+pius_english="$(run_tool --calendar roman-1962 --mass s-pii-v-papae-confessoris --lang en)"
+case "$pius_english" in
 *"en translation unavailable: rights restricted; Latin text unavailable"*) ;;
 *) echo "withheld English over withheld Latin did not report both" >&2; exit 1 ;;
 esac
+# The reading view's words are the browser's, which own them.
+python3 - "$repo" <<'PY'
+import re, sys
+from importlib.machinery import SourceFileLoader
+from importlib.util import module_from_spec, spec_from_loader
+from pathlib import Path
+
+repo = Path(sys.argv[1])
+loader = SourceFileLoader("mass_propers", str(repo / "tools" / "mass-propers"))
+module = module_from_spec(spec_from_loader("mass_propers", loader))
+loader.exec_module(module)
+source = (repo / "src/web/browser/shared/browser-core.js").read_text(encoding="utf-8")
+block = re.search(r"const ABSENCE_REASONS = Object\.freeze\(\{(.*?)\}\);", source, re.S)
+assert block, "browser ABSENCE_REASONS not found"
+browser = dict(re.findall(r"'([a-z-]+)': '([^']+)'", block.group(1)))
+assert module.ABSENCE_REASONS == browser, (module.ABSENCE_REASONS, browser)
+PY
 case "$english" in
 *"Exert, we beseech thee, O Lord, thy power, and come"*)
 	echo "withheld historical English reached the reading view" >&2
@@ -127,9 +163,11 @@ collect = next(
     if row["proper"]["name"] == "Collect"
 )
 assert not collect.get("translations"), collect
-assert collect["unavailable_translations"] == [{
+# 2026-10-19, C2 G3: no-exemplar, so a typed `unavailable` and no restriction.
+assert not collect.get("unavailable_translations"), collect
+assert collect["untranslated"] == [{
     "lang": "en",
-    "state": "rights-restricted",
+    "state": "unavailable",
     "target": {
         "mass": "advent-1", "form_id": "main", "proper": "Collect",
         "cycle": "all", "occurrence": 1, "extent": "body",
@@ -144,9 +182,9 @@ case "$absent" in
 *) echo "expected a note when the requested language is absent" >&2; exit 1 ;;
 esac
 
-# A proper deliberately left without English remains a typed, text-free ledger
-# state in machine output even though the reading view uses one generic absence
-# sentence for Latin and English together.
+# A proper ledgered without English remains a typed, text-free ledger state in
+# machine output; the reading view states only its class (2026-10-19, C2 G3),
+# and the reason's witness, locator and note stay source-side.
 run_tool --calendar roman-1962 \
 	--mass commemoratione-omnium-fidelium-defunctorum \
 	--lang en --format json >deliberate-untranslated.json
@@ -695,7 +733,7 @@ esac
 # from whichever other witness happens to have the proper.
 missing="$(run_tool --root witness --calendar two --mass t --lang en --witness "$transcription")"
 case "$missing" in
-*"no en translation from $transcription recorded"*) ;;
+*"en translation from $transcription unavailable: not present in this witness"*) ;;
 *) echo "expected the missing witness to be named where the text would be" >&2; exit 1 ;;
 esac
 case "$missing" in
@@ -703,11 +741,12 @@ case "$missing" in
 esac
 
 # A historical hand-missal variant is not an exact translation of the 1962
-# slot. Its typed witness gap remains visible without serving either wording.
+# slot. Its typed witness gap remains visible without serving either wording;
+# since 2026-10-19 (C2 G3) the note gives a witness gap's class, "not resolved".
 vianney="$(run_tool --calendar roman-1962 \
 	--mass s-ioannis-mariae-vianney-confessoris --lang en)"
 case "$vianney" in
-*"no en translation recorded; Latin text unavailable"*) ;;
+*"en translation unavailable: not resolved; Latin text unavailable"*) ;;
 *) echo "Vianney witness gap did not report unavailability" >&2; exit 1 ;;
 esac
 for forbidden in "The New Roman Missal in Latin and English" \

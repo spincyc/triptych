@@ -51,12 +51,16 @@ ASSERTION_COUNTS = {
     # 45 declared at eeb17891d (the recorded 43 had drifted; a source-only run
     # executes 44 because one check needs the preview build) plus six C2
     # claim-local checks (G9-G13, G17), plus the C2 G5-G8 Pentecost
-    # appointment check (2026-10-19).
-    "day_reader_integration_browser.mjs": 52,
+    # appointment check (2026-10-19), plus the C4 step-2 divided-dialogue check
+    # (Ordinary lane) and three C2 G14 / G9 follow-up checks: stanzas and the
+    # inline rubric, real-clipboard copy, and the mixed-unit Bible-text claim
+    # (2026-10-19). A source-only run executes one fewer.
+    "day_reader_integration_browser.mjs": 56,
     "liturgy_reader_shell_browser.mjs": 18,
     "liturgy_reader_visual_reset_browser.mjs": 26,
-    # Plus the C2 G9 both-entrances Bible-reconstruction claim check.
-    "propers_reader_integration_browser.mjs": 46,
+    # Plus the C2 G9 both-entrances Bible-reconstruction claim check, and the
+    # three C2 G14 / G9 follow-up checks on 1962 Pentecost (2026-10-19).
+    "propers_reader_integration_browser.mjs": 49,
 }
 
 # Review-only prototype harnesses serve the tracked tree directly rather than

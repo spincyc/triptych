@@ -147,6 +147,54 @@ the likely Lectionary/CCD ownership plus a USCCB comparison supplies neither an
 exact redistributable witness nor permission. They remain `no-exemplar`, with
 no ICEL rights or witness metadata.
 
+## A body may record its checked internal structure
+
+A Proper's `text` is one string, and the hard wraps in this file are not its
+lineation. Where a witness's page shows more -- a Sequence printed in strophes,
+a rubric printed inside the prayer it governs -- that structure is recorded
+beside the words as `text_structure`, never by editing them. The same key may
+stand on a direct proper that carries `text` and on a translation, in the
+sidecar or inline; a proper carrying `takes_from` carries none, because the
+structure travels with the words it describes.
+
+```yaml
+text_structure:
+  text_sha256: <SHA-256 of the exact text string>
+  checked: "<the page images the boundaries were read on, at what resolution, and when>"
+  witness_artifact_id: <optional tracked text artifact the stanza lines index>
+  stanzas:
+  - {offset: 0, opens: "<first words>", witness_line: <one-based line>}
+  - {offset: 61, opens: "<first words>", witness_line: <line>}
+  actions:
+  - {kind: rubric, offset: 98, text: "<the exact span, parentheses included>"}
+```
+
+- `offset` counts Unicode code points into the exact `text`. `text_sha256`
+  pins that string, so an edited text cannot keep a structure recorded against
+  other bytes; re-derive the offsets from the page and the new string.
+- `stanzas` lists at least two stanza starts, the first at 0, each at the start
+  of a word and after the one before. `opens` repeats the stanza's first words
+  as the text has them (whitespace aside), so a reader of the record can see
+  where each falls. With `witness_artifact_id`, every stanza names the physical
+  line of that tracked, hash-checked artifact where it begins; the checker
+  hashes the artifact and refuses a line past its end or one that runs
+  backwards. A line is a tie to immutable bytes, not a reading: an OCR text
+  layer may damage the words on it, and the page image named in `checked` is
+  what establishes the boundary.
+- `actions` lists typed inline actions in text order, none overlapping and none
+  crossing a stanza boundary. `kind` is closed to `rubric`: a printed direction
+  inside the principal text, such as the Pentecost Alleluia's genuflection, set
+  as a rubric and never spoken. `text` is the exact span at `offset`.
+- A boundary or action is recorded only where it is mechanical and was checked
+  on a page image. File line breaks, sentence ends or a translation's blank lines
+  suggest a candidate; they are not the evidence.
+
+`check-calendar-masses` validates every `text_structure` through
+`mass-propers`' own `text_structure_problems`, and `mass-propers structure`
+publishes only offsets, as `guidance/web-data.md` describes; the witness, its
+lines, the page record and `opens` stay on the source side. The 1962 Pentecost
+Sequence and Alleluia, their Lasance and Caswall English, are the first users.
+
 ## Latin provenance and publication
 
 The Latin `text` in this index is a transcription lead. Its presence does not

@@ -304,8 +304,9 @@ class PageImageProvenanceGate(unittest.TestCase):
 
     def test_all_lasance_page_collations_resolve_exactly(self):
         # 36 since 2026-10-19 (C3): the Pentecost Introit, Gospel, Offertory
-        # and Communion, which now carry the Missal's own Latin.
-        self.assertEqual(len(self.bound), 36)
+        # and Communion, which now carry the Missal's own Latin; 37 with the
+        # Pentecost Alleluia bound the same day (G14 lane).
+        self.assertEqual(len(self.bound), 37)
         for row in self.bound:
             where = f"{row['mass']}/{row['proper']}"
             self.assertEqual(
@@ -634,8 +635,9 @@ class TheCorpusItself(unittest.TestCase):
         # to no-exemplar: the witness is public domain and only the binding is
         # missing. Each note still names this edition as the quarantined lead.
         # 332 since 2026-10-19 (C3): the Pentecost Collect, Secret and
-        # Postcommunion were bound through roman-1962-pentecost-en.
-        self.assertEqual(len(unavailable), 332)
+        # Postcommunion were bound through roman-1962-pentecost-en; 331 once
+        # the Pentecost Alleluia was bound from Lasance (G14 lane).
+        self.assertEqual(len(unavailable), 331)
         self.assertTrue(all("text" not in row for row in unavailable))
 
     def test_holy_week_is_outside_the_second_witness(self):
