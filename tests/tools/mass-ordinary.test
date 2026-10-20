@@ -40,9 +40,12 @@ trap 'rm -rf "$sandbox"' EXIT INT TERM
 # opening and the Communicantes continuation (196), held the Pentecost
 # Communicantes head and Hanc igitur from two new witnesses (Lasance English,
 # the 1962 editorial projection Latin), and graded seven rows collated.
+# C26 adds three missing Latin sides from one independent Mame witness and
+# eleven bounded Latin comparisons. No source element, English wording or
+# event enters; only Common/Hanc and the three new Mame sides gain exactness.
 summary="$(run_tool check --calendar roman-1962 | head -1)"
 case "$summary" in
-*"roman-1962: 6 sections, 196 elements, 4 witnesses, 0 variants, 9 slots; en 186 held/10 missing, la 117 held/79 missing; relations en antecedent/collated 1, en antecedent/uncollated 185, la antecedent/collated 104, la antecedent/uncollated 13; 12 target-recension exclusions"*) ;;
+*"roman-1962: 6 sections, 196 elements, 5 witnesses, 0 variants, 9 slots; en 186 held/10 missing, la 120 held/76 missing; relations en antecedent/collated 1, en antecedent/uncollated 185, la antecedent/collated 118, la antecedent/uncollated 2; 12 target-recension exclusions"*) ;;
 *)
 	echo "unexpected summary line: $summary" >&2
 	exit 1
@@ -180,7 +183,7 @@ for path in files:
         assert len(elements) == 196, len(elements)
         languages = {one["lang"]: one for one in payload["languages"]}
         assert (languages["en"]["held"], languages["en"]["missing"]) == (186, 10), languages
-        assert (languages["la"]["held"], languages["la"]["missing"]) == (117, 79), languages
+        assert (languages["la"]["held"], languages["la"]["missing"]) == (120, 76), languages
         # 2026-10-19: six conclusio exclusions join (C2 G6, the verified 1962
         # Ordo passages print no second Postcommunion or Et famulos).
         expected = {
@@ -217,18 +220,44 @@ for path in files:
         # (appointment-not-established, preface-not-in-witness,
         # proper-canon-form-not-held, both sides each); C3 held the Pentecost
         # Communicantes head and Hanc igitur (12 -> 8) and typed two English
-        # variants. The sum is now both sides' missing, 10 + 79.
+        # variants. C26 supplies three separately owned Latin sides: missing is now 10 + 76.
         assert absence_counts == {
             "appointment-not-established": 6,
             "communicantes-continuation-english-lacks-1962-clause": 1,
-            "no-facing-latin": 8,
+            "no-facing-latin": 5,
             "not-in-the-1962-ordo": 0,
             "preface-not-in-witness": 2,
             "proper-canon-form-not-held": 8,
             "proper-communicantes-english-variant": 1,
             "witness-own-english": 63,
         }, absence_counts
-        assert sum(absence_counts.values()) == 89, absence_counts
+        assert sum(absence_counts.values()) == 86, absence_counts
+
+        # The source-specific Cummiskey gap is not rewritten as facing Latin.
+        # Each new side owns its Mame provenance and an exact actor partition;
+        # Per evangelica's separate English source has priest with assistants.
+        mame = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+        cummiskey = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+        witnesses = {(one["source_id"], one["lang"]): one for one in payload["translations"]}
+        assert witnesses[(mame, "la")]["held"] == 3, witnesses
+        assert witnesses[(cummiskey, "la")]["held"] == 114, witnesses
+        for local in ("munda-cor-meum", "dominus-sit-in-corde-meo", "per-evangelica-dicta"):
+            element = elements["oblatio/" + local]
+            sides = {row["lang"]: row for row in element["translations"]}
+            assert sides["en"]["source_id"] == cummiskey, (local, sides)
+            latin = sides["la"]
+            assert latin["source_id"] == mame and latin["rights"] == "public-domain", (local, latin)
+            assert "English only" in latin["note"], (local, latin["note"])
+            assert element["absent"]["latin"] is None, local
+            assert len(latin["turns"]) == 1, (local, latin)
+            turn = latin["turns"][0]
+            assert (turn["speaker"], turn["dialogue_role"], turn["printed_marker"], turn["action"]) == ("priest", None, None, None), turn
+            assert turn["text"] == latin["text"], local
+        per = elements["oblatio/per-evangelica-dicta"]
+        english = next(row for row in per["translations"] if row["lang"] == "en")
+        assert per["speaker"] == "all" and len(english["turns"]) == 1, per
+        assert english["turns"][0]["speaker"] == "all", english
+        assert english["turns"][0]["dialogue_role"] is None, english
 
     elif payload["calendar"] == "roman-pre-1955":
         # No 1920 exclusion is inferred from notes that speak only about 1962.
@@ -385,20 +414,42 @@ for path in files:
                 "canon/forma-sanguinis", "canon/supplices", "canon/per-quem",
                 "communio/agnus-dei",
             }
+            # C26's nine partial Prefaces are compared, never silently
+            # expanded or promoted as complete exact target wording.
+            partial_prefaces = {
+                "praefatio/praefatio-de-ss-trinitate", "praefatio/praefatio-de-nativitate",
+                "praefatio/praefatio-de-epiphania", "praefatio/praefatio-de-quadragesima",
+                "praefatio/praefatio-de-sancta-cruce", "praefatio/praefatio-paschalis",
+                "praefatio/praefatio-de-ascensione", "praefatio/praefatio-de-beata-maria-virgine",
+                "praefatio/praefatio-de-apostolis",
+            }
+            not_exact |= partial_prefaces
+            bounded_findings = partial_prefaces | {"praefatio/praefatio-communis", "canon/hanc-igitur"}
             exact = {key for key, row in collated_la.items() if row.get("target_wording") == "word-exact"}
             assert set(collated_la) - exact == not_exact, sorted(set(collated_la) - exact)
-            assert len(exact) == 92 and len(collated_la) == 104, (len(exact), len(collated_la))
+            assert len(exact) == 97 and len(collated_la) == 118, (len(exact), len(collated_la))
             antecedent_only = {"praeparatio/indulgentiam", "conclusio/dominus-vobiscum-ante-postcommunionem"}
             assert set(divided) - antecedent_only <= exact, sorted(set(divided) - antecedent_only - exact)
             for key, row in collated_la.items():
-                assert row["collation_finding"].startswith(
-                    "passage.catholic-church.missale-romanum."), (key, row["collation_finding"])
+                if key in bounded_findings:
+                    # These independently page-checked findings use human
+                    # edition/locus citations. Existing source-bound findings
+                    # and the three Mame passages keep their passage IDs.
+                    assert row["collation_finding"].startswith(
+                        ("Missale Romanum, editio typica 1962;", "Missale Romanum, editio typica 1962,")), (key, row["collation_finding"])
+                else:
+                    assert row["collation_finding"].startswith(
+                        "passage.catholic-church.missale-romanum."), (key, row["collation_finding"])
                 if key in exact:
                     assert row["coverage_relationship"] == "exact-target", key
                     assert "COLLATED WORD-EXACT" in row["note"], key
                 else:
                     assert "coverage_relationship" not in row, key
-                    assert "NOT WORD-EXACT" in row["note"], key
+                    if key in partial_prefaces:
+                        assert "target_wording" not in row, key
+                        assert "COLLATED" in row["note"] or "COLLATION COMPLETE" in row["note"], key
+                    else:
+                        assert "NOT WORD-EXACT" in row["note"], key
             for key in ("praeparatio/gloria-in-excelsis-heading",
                         "conclusio/dominus-vobiscum-ante-postcommunionem"):
                 assert key not in collated_la, key
@@ -514,7 +565,7 @@ structures = pathlib.Path(sys.argv[2])
 old = coverage["roman-1962"]
 pre = coverage["roman-pre-1955"]
 # 2026-10-19: the six C2 G6 conclusio exclusions join; counts as in the
-# structure pins above (196 and 206 elements, en 186/10, la 117/79).
+# structure pins above (196 and 206 elements, en 186/10, la 120/76).
 expected = {
     "conclusio/et-famulos",
     "conclusio/oratio-et-famulos-heading",
@@ -540,7 +591,7 @@ assert languages["en"] == {
     "lang": "en", "elements": 196, "held": 186, "missing": 10, "absent": 10,
 }, languages
 assert languages["la"] == {
-    "lang": "la", "elements": 196, "held": 117, "missing": 79, "absent": 79,
+    "lang": "la", "elements": 196, "held": 120, "missing": 76, "absent": 76,
 }, languages
 assert pre["elements"] == 206 and pre["exclusions"] == [], pre
 assert coverage["postconciliar"]["exclusions"] == [], coverage["postconciliar"]
@@ -600,8 +651,8 @@ esac
 # a real reason, for the other text. Since the 1861 printing's
 # facing column was transcribed. As of 2026-10-19 (C2 G5/G6, C3) the pre-1955
 # projection carries Latin for 113 of 206 elements and names the other 93
-# absences. The 1962 projection carries 117 Latin blocks among 196 target
-# members; its remaining 79 are the witness's English-only blocks and the typed
+# absences. The 1962 projection carries 120 Latin blocks among 196 target
+# members; its remaining 76 are the witness's English-only blocks and the typed
 # appointment absences, after twelve explicit nonmembers are accounted
 # separately as recension exclusions rather than false target text.
 latin="$(run_tool show --calendar roman-1962 --lang la)"
@@ -837,25 +888,18 @@ collated_rows = {
     },
     "roman-pre-1955": set(),
 }
-# 2026-10-19 (C2 gap G19): every other 1962 Latin row the Pentecost Missal
-# mode exercises is collated too, word-exact or with named differences. These
-# 13 Latin rows stay uncollated: the common Hanc igitur and ten Prefaces the
-# day does not say, the 1861's own Gloria heading, and the Dominus vobiscum
-# before the Postcommunion, which the 1962 Ordo prints at no place of its own.
+# C26 adds eleven bounded findings and three independent Mame sides. The
+# remaining two uncollated Latin units are source paratext and an antecedent
+# greeting with no target place; neither is promoted to force completeness.
 still_uncollated_1962 = {
-    "canon/hanc-igitur", "conclusio/dominus-vobiscum-ante-postcommunionem",
-    "praefatio/praefatio-communis", "praefatio/praefatio-de-apostolis",
-    "praefatio/praefatio-de-ascensione", "praefatio/praefatio-de-beata-maria-virgine",
-    "praefatio/praefatio-de-epiphania", "praefatio/praefatio-de-nativitate",
-    "praefatio/praefatio-de-quadragesima", "praefatio/praefatio-de-sancta-cruce",
-    "praefatio/praefatio-de-ss-trinitate", "praefatio/praefatio-paschalis",
+    "conclusio/dominus-vobiscum-ante-postcommunionem",
     "praeparatio/gloria-in-excelsis-heading",
 }
 collated_rows["roman-1962"] |= {
     (key, "la") for key, element in by_key(old).items()
     if side(element, "la") and key not in still_uncollated_1962
 }
-assert len({key for key, lang in collated_rows["roman-1962"] if lang == "la"}) == 104
+assert len({key for key, lang in collated_rows["roman-1962"] if lang == "la"}) == 118
 for payload in (old, pre):
     seen_collated = set()
     for element in by_key(payload).values():
@@ -866,7 +910,15 @@ for payload in (old, pre):
                     seen_collated.add((element["key"], lang))
                     assert row["collation"] == "collated", (payload["calendar"], element["key"], lang)
                     assert (row.get("collation_finding") or "").strip(), (payload["calendar"], element["key"], lang)
-                    assert "COLLATED" in (row.get("note") or ""), (payload["calendar"], element["key"], lang)
+                    note = row.get("note") or ""
+                    bounded_note_keys = {
+                        "praefatio/praefatio-de-ss-trinitate", "praefatio/praefatio-de-quadragesima",
+                        "praefatio/praefatio-de-beata-maria-virgine", "praefatio/praefatio-de-apostolis",
+                    }
+                    assert "COLLATED" in note or (
+                        payload["calendar"] == "roman-1962" and lang == "la"
+                        and element["key"] in bounded_note_keys and "COLLATION COMPLETE" in note
+                    ), (payload["calendar"], element["key"], lang)
                     continue
                 assert row["collation"] == "uncollated", (payload["calendar"], element["key"], lang)
                 assert not row.get("collation_finding"), (payload["calendar"], element["key"], lang)

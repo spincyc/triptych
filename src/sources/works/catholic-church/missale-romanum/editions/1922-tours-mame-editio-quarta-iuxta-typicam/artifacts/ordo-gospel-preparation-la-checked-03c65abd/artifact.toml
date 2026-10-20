@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordo-gospel-preparation-la-checked-03c65abd"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Only the Latin words printed in the public-domain Tours Alfred Mame Missale Romanum of 1922 are transcribed. The exact parent facsimile records the United States publication-date and faithful mechanical-reproduction basis. Faithful transcription adds no new authorship in those source words; Triptych claims no exclusive right in them. The source Mame spelling, ligatures, accents, capitals and pointing are retained, with no reading or pointing supplied from the 1962 target or another witness."
+rights_jurisdiction = "United States"
+provenance = "Created on 2026-10-20 by selecting the three complete Mame prayer bodies on original PDF artifact pages 388-389, printed pages 274-275, from the exact retained two-page facsimile. Script transfer used local pdftotext -raw output as a locating and transfer aid; each complete body, every correction of that optical layer, its pointing and its excluded adjacent matter were checked directly on source page images at 200 and 400 dpi. The PDF and retained excerpt were hashed before use. No model retrieval or generated wording supplied source text."
+retrieved = "2026-10-20"
+sha256 = "03c65abd2608e0b5fb0084cce71a4db271cc1fc0c6026b667645bc82f1fb8596"
+byte_size = 1671
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordo-gospel-preparation-la-checked-03c65abd/ordo-gospel-preparation-la-checked-03c65abd.tsv"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordo-gospel-preparation-pages-274-275-d9014729"
+transformation = "Select only the full Munda cor meum body through Amen, the complete Per evangelica dicta sentence, and the first-person Dominus sit in corde meo body through Amen, in their printed source-block order. Join printed line wraps, removing only line-break hyphens; represent the Munda drop initial and following small capitals as MUNDA; preserve all source spelling, accents, ae ligatures, capitals, punctuation and French spacing before colons. Correct the extraction optical layer from the source images, including the lost initial M, accent and ligature losses and the optical misreading of Dominum; no source misprint is silently corrected and no target normalization is made. Retain no surrounding rubric, second-person blessing, Jube request, minister response, heading, page number or citation as prayer text. No cross or dialogue head glyph is printed within any selected body."
+encoding = "utf-8"
+indexable = true
+notes = "One header and three data rows, each on exactly one physical LF-delimited line; columns seq, element_key, printed_page, ia_leaf, latin, notes. Source order is seq 1 Munda cor meum, seq 2 Per evangelica dicta, seq 3 Dominus sit in corde meo. These are Mame source rows, not the Cummiskey rows and not target-edition editorial projections. The Munda full-print rubric names the deacon and the next page explicitly reuses that prayer for the priest without sacred ministers; no unconditional actor field is asserted in this artifact. The three bounded passage records control exact TSV physical lines without duplicating a text payload."

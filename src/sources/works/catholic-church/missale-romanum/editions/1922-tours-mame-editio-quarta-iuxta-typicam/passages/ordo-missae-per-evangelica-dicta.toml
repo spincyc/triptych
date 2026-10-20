@@ -1,0 +1,12 @@
+schema = 1
+record_type = "passage"
+id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordo-missae-per-evangelica-dicta"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordo-gospel-preparation-la-checked-03c65abd"
+artifact_sha256 = "03c65abd2608e0b5fb0084cce71a4db271cc1fc0c6026b667645bc82f1fb8596"
+locus = "Ordo Missae, per-evangelica-dicta; checked transcription artifact physical line 3, seq 2; Mame printed p. 275, original PDF artifact p. 389, IA leaf n388; retained two-page facsimile p. 2"
+physical_line_ranges = [[3, 3]]
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Complete Per evangelica dicta prayer sentence in the 1922 Mame, spoken by the priest kissing the Gospel; separately referred to for Mass without sacred ministers."
+verified_on = "2026-10-20"
+notes = "The exact full TSV row at the declared physical line, including its source metadata, is controlled by the named text artifact and its hash. Its latin cell is the selected prayer body. The artifact derives only from the retained Mame facsimile, whose derivation pins the complete original PDF. This passage duplicates no text cell and makes no raw-line text claim over an image or PDF. Whole black prayer sentence inside the left-column rubric describing the priest kissing the Gospel after its solemn proclamation. The right-column rubric for Mass without sacred ministers refers back to it ut supra. No Amen, cross or dialogue head mark is printed in this sentence; surrounding red rubrics and the minister response are excluded."

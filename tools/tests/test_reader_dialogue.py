@@ -26,7 +26,9 @@ class ReaderDialogueBrowserTest(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         report = json.loads(result.stdout.strip().splitlines()[-1])
         self.assertEqual(report["status"], "pass")
-        self.assertEqual(report["checks"], 36)
+        self.assertEqual(report["checks"], 44)
+        self.assertTrue(report["acceptance"]["realAccessibilityTree"])
+        self.assertTrue(report["acceptance"]["nativeClipboard"])
         for diagnostic in ("failures", "consoleProblems", "failedRequests",
                            "httpProblems", "expectedHttpProblems"):
             self.assertEqual(report[diagnostic], [])
