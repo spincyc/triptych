@@ -1,10 +1,11 @@
 # Independent reception and chronology verification
 
-Inspected 19 October 2026; recorded after the reference-only workflow stopped.
-This audit preserves substantive reading already completed. It is preparatory
-evidence for the requested full-material edition. The complete sourced Latin and
-received English text record remains unfinished. This audit is neither its
-replacement nor a workflow acceptance or finished publication.
+Independently reread 20 October 2026 in research run `095fe00a9fe8cfee`.
+This record distinguishes the fresh reading from the earlier context checks.
+Complete sourced Latin and continuous Lasance English are now recorded in
+`propers/verified.md`, with the unchanged extraction in `propers/retrieved.txt`.
+The present audit is evidence for cold review, not its acceptance or a claim of
+finished publication.
 
 ## Evidence and limits
 
@@ -13,14 +14,17 @@ are in `source-bindings.toml`. Native chapter, verse, tractate and exposition
 locators govern. Electronic line numbers below are finding aids for those exact
 deliveries. Reception texts were read without fresh printed-page collation.
 
-Fresh images of the governing 1962 Missal were inspected at PDF pages 10, 16, 17,
-29, 372, 778 and 779. The comparison witness was the registered Lasance
+The context worker inspected the governing 1962 Missal at PDF pages 10, 16, 17,
+29, 372, 778 and 779. This research independently rehashed the delivery and
+reread the feast and Preface images at 372, 778 and 779. The comparison witness was the registered Lasance
 revised-1945 edition family in its later printing, PDF pages 812–813 and
 1258–1261. Both complete PDFs matched their registered SHA-256s. The older
 Sunday-commemoration rubric does not govern the 1962 occurrence. At Pilate's
 second question, Lasance's present-tense reporting verb differs from the
 past-tense form in the 1962 image. These checks establish identity, boundaries
-and edition differences, not a completed transcription or new rights finding.
+and edition differences. The completed text record adds AAS 1925 and the 1862
+Pustet common Latin, and Lasance common English pages, with precise inspection
+and rights bounds. No whole-facsimile publication permission is inferred.
 
 ## Biblical contexts read in full
 
@@ -62,7 +66,7 @@ citation numbers.
 
 **Chrysostom, Homilies on Colossians II and III.** In NPNF I.13, the portion
 of II expounding 1:12–15 and beginning its practical application was read at
-lines 23905–24045. He distinguishes giving an inheritance from making recipients
+lines 23905–24065. He distinguishes giving an inheritance from making recipients
 fit, and rescue from darkness from transfer into the Son's kingdom. The transfer
 discussion retains the recipient's participation. This inspection did not cover
 all of II's exposition of 1:9–11 or its entire concluding address.
@@ -75,8 +79,10 @@ extended application to the Church's exchange of peace criticizes feuds among
 believers. NPNF's objections and variant discussions, especially at 1:18, belong
 to the editor; they are neither Chrysostom's argument nor a replacement Epistle.
 
-**Augustine, Enarrationes on Vulgate Psalms 2, 28 and 71.** Complete expositions
-were read: 2.1–11, 28.1–11 and 71.1–20. NPNF I.8 heads the latter two as
+**Augustine, Enarrationes on Vulgate Psalms 2, 28 and 71.** The complete received
+NPNF renditions were read: 2.1–11, 28.1–11 and 71.1–20. Printed ellipses in
+the received Psalm 71 rendition mean this is not a claim to have read the
+unabridged Latin exposition. NPNF I.8 heads the latter two as
 English Psalms 29 and 72 and identifies their Latin numbering. At 2.7, the
 Son's petition belongs to incarnate sacrifice and intercession. At 28.10–11,
 preservation amid the world's flood precedes final reign; peace in Christ does
@@ -86,11 +92,10 @@ and the beneficiaries' need for grace. Historical polemics and descriptions of
 peoples are not the study's own descriptions of living communities.
 
 **Bellarmine, Commentary on Psalms 2, 28 and 71, O'Sullivan English.** Psalm 2
-was read in full. Psalm 71's opening and argument through its closing praise,
-and Psalm 28's opening, natural/ecclesial alternatives and conclusion, were
-inspected. Intervening output was partly truncated; this audit does not certify
-a fresh uninterrupted reading of every line of Psalms 28 and 71. The following
-claims rest on passages actually visible.
+was read in full, as were the complete received expositions of Psalms 28 and 71.
+Bounded rereading on 20 October closed the earlier truncated-output gap:
+retained lines 95–130, 981–1016 and 2527–2568 respectively. The following
+claims rest on these actual passages, not an inventory entry.
 
 Psalm 2, comments on verses 7–10, relates the Son's identity to rightful
 inheritance and distinguishes corrective mercy from final judgment. Psalm 71's
@@ -121,10 +126,16 @@ the readings. No fresh uninterrupted reading of every paragraph is certified.
 
 ## Bounded discovery and limits
 
-Uncapped discovery was completed for John 18:33–37, Colossians 1:12–20,
-Daniel 7:14, Apocalypse 1:6 and 5:12, and the active Psalm loci, explicitly
-using Vulgate numbering. Additional queries covered Psalm 88:27–30 and
-Apocalypse 19:16. Broad query ranges do not change discontinuous appointments.
+Fresh separate `commentary-work-index discover` queries used Vulgate numbering
+and the default cap of 20. All returned fewer than that cap: Apocalypse 5:12
+(16), 1:6 (19), Psalm 71:1 (14), 71:8–11 (14), Colossians 1:12–20 (13),
+Daniel 7:14 (9), John 18:33–37 (18), Psalm 2:8 (19), Psalm 28:10–11 (15),
+Psalm 88:27–30 (17), and Apocalypse 19:16 (0). These are finding-aid counts,
+not numbers of inspected or verified arguments. Broad query ranges do not change
+discontinuous appointments. The query for PL 37 identified its Psalm 80–150
+extent; that container does not hold the active Psalm expositions needed here.
+The missing ANF VII containment row was repaired with only the inspected
+Victorinus extents, retaining partial status and explicit unresolved contents.
 
 Further witnesses include Aquinas on John and Colossians and medieval Apocalypse
 commentators. Their titles and holding states were inspected, not their passage
@@ -141,16 +152,17 @@ prayer phrase was newly composed then.
 
 ## Chronology passages rechecked
 
-These reads corroborate the existing discussion. This audit did not regenerate
-chronology records, alter the corpus or validate its current projection. The
-table analyzes evidence; it is not an alternative date generator.
+The canonical record and `orientation-v2` annotations write commands were run
+on 20 October and returned already current. Their actual nine rows and passage
+scopes were inspected. No corpus date, event binding or profile was changed.
+The table analyzes their evidence; it is not an alternative date generator.
 
 | Subject | Actual inspected passage and consequence |
 | --- | --- |
 | Davidic reference era | Corbett, *King David*, Catholic Encyclopedia IV, article 04642b, opening (retained line 3): conventional reign 1055–1015 B.C., with proposals 30–50 years later. It identifies the attributed figure, not an individual Psalm's date. |
 | Psalm composition | USCCB NABRE Psalms introduction, authenticated 19 October response, superscriptions/dating paragraph: a pre-Maccabean collection boundary coexists with uncertain individual dating. It does not place these poems near 165 B.C. This response corroborates, but is not identical to, the older registered bytes. |
-| Psalm occasion and attribution | Complete contexts and Bellarmine's Psalm 71 opening distinguish Solomon's title, an interpreted Davidic speaker and an interpreted accession occasion. Psalm 28's tabernacle title supplies no year. Acts 4:25 was identified in the existing binding but not separately reread; no new inspection claim is made for it. |
-| Daniel | Daniel 7:1 gives the vision's regnal setting. Gigot, *Book of Daniel*, Catholic Encyclopedia IV, article 04621b, authorship discussion (line 25), distinguishes traditional composition in 570–536 B.C. from the Maccabean theory. The seventy-year duration was read in the corpus's cited Jeremiah evidence, not freshly against a separate Jeremiah delivery. It cannot become a precise year for the vision or divine dominion. |
+| Psalm occasion and attribution | Complete contexts and Bellarmine's Psalm 71 opening distinguish Solomon's title, an interpreted Davidic speaker and an interpreted accession occasion. Psalm 28's tabernacle title supplies no year. Acts 4:24–28 was independently read in the registered American-1899 delivery; its Davidic attribution concerns Psalm 2, while its Passion application of verses 1–2 does not turn appointed verse 8 into a dated event. |
+| Daniel | Daniel 7:1 gives the vision's regnal setting. Gigot, *Book of Daniel*, Catholic Encyclopedia IV, article 04621b, authorship discussion (line 25), distinguishes traditional composition in 570–536 B.C. from the Maccabean theory. Jeremiah 25:11–12 was independently read in the registered American-1899 delivery for the seventy-year duration. It cannot become a precise year for the vision or divine dominion. |
 | Passion scene | John 18–19 places interrogation before sentence and execution. Howlett, *Biblical Chronology*, Catholic Encyclopedia III, article 03731a (line 207), retains 29, 30 and 33 as uncertain alternatives. They do not authorize attaching the Crucifixion's event binding to the interrogation. |
 | Gospel composition | *Gospel of St John*, Catholic Encyclopedia VIII, article 08438a (lines 95, 107, 109), lacks certainty, proposes 96 or a succeeding year within the last decade, and reports Ephesus. *New Testament*, XIV, article 14530a (line 35), gives approximately 90–100. Received composition tradition and narrated Jerusalem setting remain distinct. |
 | Colossians composition | *St Paul*, Catholic Encyclopedia XI, article 11567b (line 45), assigns 61; *Epistle to the Colossians*, IV, article 04131b, opening (line 3), gives 61–63 and Rome. Different precision need not mean contradiction. Colossae is the recipient location. Neither date concerns creation or reconciliation. |
@@ -172,7 +184,9 @@ exegetical scope despite shared Christological fulfillment. Coordination across
 eleven elements remains editorial synthesis, not a recovered ancient exposition
 of the complete feast.
 
-The complete sourced text record, its textual and publication checks, further
-direct reception needed by the final studies, and final chronology/publication
-validation remain open. This audit preserves usable evidence without replacing
-those requirements with locator records.
+The complete sourced text record and the current chronology projection are
+supplied for fresh review. No newly authored translation, stitched liturgical
+English or ancient whole-formulary attribution fills a source gap. Uninspected
+later reception and uncertain historical dates remain explicitly limited;
+additional authoring claims would require additional evidence. The final studies,
+publication checks and independent acceptance belong to subsequent stages.

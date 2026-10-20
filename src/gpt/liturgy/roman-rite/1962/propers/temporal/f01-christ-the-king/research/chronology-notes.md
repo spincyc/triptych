@@ -1,6 +1,6 @@
 # Chronology evidence and historical-appendix plan
 
-Inspected 19 October 2026. The canonical adapter generated `chronology.toml`
+Independently rechecked 20 October 2026. The canonical adapter generated `chronology.toml`
 and `chronology-annotations.tex` from this family's appointments; presentation is
 `orientation-v2`. These notes do not override a generated date or silently narrow
 an unresolved event. They supply the historically reviewed home from which the
@@ -30,7 +30,9 @@ historical article or substituted into an existing accepted fingerprint.
 
 ## Attribution is not occasion or composition
 
-The canonical binding added in this stage reaches only the exact F01 Psalm loci.
+The existing canonical binding, added in the earlier 19 October work, reaches
+only the exact F01 Psalm loci. Acts 4:24–28 and Jeremiah 25:11–12 were freshly
+read in the registered American-1899 delivery during this research boundary.
 Psalm28's attribution comes from its title. Psalm2 is attributed to David by the
 apostolic reception in Acts4:25 and by Bellarmine's exposition, although its own
 inspected title has no name. Psalm71's title concerns Solomon; the attribution
@@ -90,9 +92,11 @@ of each prayer's first composition.
 
 ## Effects and limitations
 
-Canonical files changed: the bounded additional attribution binding and derived
-chronology coverage. Existing event dates, profiles and composition claims were
-not changed. Other publications sharing any of these exact Psalm loci may acquire
+No canonical chronology files changed during this fresh research execution.
+The earlier work had added the bounded attribution binding and derived coverage.
+The record and annotations write commands returned already current; all nine
+orientation rows were inspected against their actual appointed passage scope.
+Existing event dates, profiles and composition claims were not changed. Other publications sharing any of these exact Psalm loci may acquire
 new attribution evidence on regeneration; none has been mechanically restamped,
 reaccepted or given refreshed bindings by this worker. This leaf's record and
 annotations were regenerated and checked against its actual appointments.

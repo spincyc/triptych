@@ -13,8 +13,8 @@ The maintainer restored the requirement for full sourced appointed material on
 appointment evidence below remains available for independent verification.
 The earlier reference-only production is terminal BLOCKED and provides no
 research acceptance. The declaration above names the required publication
-mode, not completed collation. The full appointed-text records remain incomplete. A
-research response was rejected during the earlier work, but the diagnostic
+mode. The research completion addendum below records the subsequently completed
+collation. A research response was rejected during the earlier work, but the diagnostic
 does not expose its text or identify a source passage. Independent evidence
 work can continue; that incident does not show the witnesses are unavailable.
 
@@ -87,8 +87,8 @@ heading, rank, ordered inventory, biblical loci, seasonal substitution rules,
 three exclusions of Sunday commemoration, proper-Preface appointment, and
 the rubric controls below. The scope of this check is appointment and
 boundaries; the research stage must independently examine every text and
-verify material textual and interpretive claims. Full appointed-text
-source records and publication remain unfinished. No liturgical body text is composed here.
+verify material textual and interpretive claims. At context resolution, full appointed-text source records and publication were
+unfinished; the research addendum below updates the source-record state. No liturgical body text is composed here.
 
 The additional inspected controls are General Rubrics 115(c), printed p. XIX
 (PDF 17), on the three prayers' conclusions; 120(a), on white for this feast
@@ -237,24 +237,25 @@ witness to every seasonal branch.
 The research stage owns completion of `propers/retrieved.txt`,
 `propers/verified.md`, `research/scope.md`, `research/interpretations.md`,
 generated chronology and the controlling source-binding/dependency chain.
-The first two records are presently absent. The complete inventory and this
+At context resolution the first two records were absent; both are now supplied
+by research, as recorded in the completion addendum. The complete inventory and this
 source plan are the resolve-context deliverable; their existence does not
 certify any downstream research, authoring or review stage.
 
-## Full-material source work still required
+## Source plan recorded at context resolution
 
 The ordinary 1962 source-record contract applies again. Complete appointed
 Latin and independently sourced historical English must be verified from
 identified human witnesses; original AI translation and locator-only commentary
-do not satisfy the restored request. No full-text source records or publication
-are claimed here. The complete witnesses are available. The prior output
+do not satisfy the restored request. The context-stage inspection alone claimed no full-text source records or
+publication; the later research addendum records completion of the former. The complete witnesses are available. The prior output
 rejection remains unresolved, and its text is not exposed; this record does
 not authorize retrying or reconstructing that rejected output through another
 tool or model, nor does it prohibit independent evidence work.
 
-A fresh production run must independently resolve and complete the following
-work. The analytical checks can be prepared independently of the unfinished
-full-text record; preparatory work provides no native acceptance:
+The context-stage handoff required the following work. Items 1–4 are now
+recorded in this leaf for fresh review; item 5 belongs to subsequent stages.
+The historical handoff itself provided no native acceptance:
 
 1. Establish the complete governing formulary, proper Preface and both inactive
    seasonal branches from the authenticated 1962 Missal. Preserve the original
@@ -290,3 +291,35 @@ chronology and rights evidence judgments and consistency of its source
 records. The existing `main.tex` source-owner reservation is preserved
 unchanged: it is unpublished scaffolding, not study prose or a reviewed
 artifact.
+
+## Research completion addendum, 20 October 2026
+
+The source plan above records the starting evidence state. Research run
+`095fe00a9fe8cfee` independently rehashed the complete 1962, AAS 1925, Lasance
+and 1862 Pustet deliveries and inspected their specified page images. The
+resulting `propers/verified.md` supplies all eleven active elements and both
+inactive seasonal units in Latin and continuous received Lasance English,
+including the sourced common framing. `propers/retrieved.txt` retains the
+unchanged bounded AAS extraction and Lasance OCR. The Bible remains a context
+witness; its verses are not stitched into the historical liturgical English.
+
+The AAS shared proper spans agree with the 1962 controller after the recorded
+orthographic and punctuation differences. AAS's abbreviated common conclusions
+and omitted final Paschal Alleluia are explicitly recorded. Pustet 1862 images
+supply the common Latin publication antecedent; Lasance supplies its own English
+framing and the seasonal conclusion. Lasance's printed errors are retained and
+annotated, and its older Sunday commemoration is excluded from the dated Mass.
+The exact adopted source-data contribution from the earlier Claude record is
+disclosed for review; the independently collated primary witnesses, rather than
+the transcription lead, are the sealed source owners; neither its prior approval nor any unknown
+rejected model text was reused as authority.
+
+`scope.md`, `reception-verification.md` and `interpretations.md` record the fresh
+biblical and reception reading, bounded discovery, two independently grounded
+whole-formulary proposals, and consequential difficulties. The canonical
+chronology record and orientation annotations were regenerated (already current)
+and their nine rows inspected, with the controlling historical passages reread.
+Source bindings and external review dependencies identify the evidence owners.
+The rights bases are specific to the adopted historical layers; no whole-scan
+redistribution claim or new approved English liturgical translation follows.
+Research review, authoring and all publication gates remain pending.

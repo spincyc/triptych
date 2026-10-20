@@ -1,11 +1,12 @@
 # Two defensible whole-formulary readings
 
-Research proposals, 19 October 2026. The arguments below are editorial
+Research proposals, independently rechecked 20 October 2026. The arguments below are editorial
 constructions from independently inspected sources. The Fathers and saints did
 not comment on this feast formulary as a whole. Institution of the feast in
 1925 does not establish the first composition date of each prayer. The complete
-sourced Latin and received English text record remains pending; the elemental
-assignments and biblical boundaries were checked against the 1962 page images.
+sourced Latin and received English text record is in `propers/verified.md`;
+the elemental assignments and biblical boundaries were checked against the
+1962 page images.
 `reception-verification.md` records the independent rereading and its limits.
 
 ## A. The King makes a people capable of hearing him
@@ -138,6 +139,22 @@ connection between cosmic lordship and the Secret's concrete request for unity
 and peace better than an isolated sequence of royal proof texts would.
 
 ## Consequential difficulties and actual comparisons
+
+The following appointed words anchor the numbered comparisons below. They are
+excerpts from the verified Latin, not newly generated liturgical English. The
+numbered discussion supplies each witness's inference and what it changes.
+
+| Comparison | Appointed words and consequential question |
+| --- | --- |
+| 1 | `Regnum meum non est de hoc mundo` and `non est hinc`: does different origin imply absence from this world? |
+| 2 | `omnis qui est ex veritáte, audit vocem meam`: does belonging to truth precede obedient hearing or result from independent merit? |
+| 3 | `primogénitus omnis creatúræ` with `ómnia per ipsum et in ipso creáta sunt`: is the Son a creature, or the source of all creatures? |
+| 4 | `reconciliáre ómnia in ipsum` and `sive quæ in cælis sunt`: who is estranged in heavenly reconciliation, and does universal scope mean automatic salvation? |
+| 5 | `Deus, iudícium tuum Regi da` and `adorábunt eum omnes reges terræ`: how does Solomon relate to Christ, and is universal homage already voluntary and complete? |
+| 6 | `Póstula a me, et dabo tibi gentes hereditátem tuam`: why does the Son ask, and what distinguishes rightful possession from saving obedience? |
+| 7 | `Sedébit Dóminus Rex in ætérnum` and `benedícet pópulo suo in pace`: does royal peace promise exemption from present adversity? |
+| 8 | `Dignus est Agnus, qui occísus est, accípere` and `divinitátem`; Preface `Sacerdótem ætérnum et universórum Regem`: does received acclamation mean acquisition of divine nature, and how does royal priesthood govern the reading? |
+
 
 1. **John 18:36, the kingdom's origin and location.** The appointed contrast is
    between a kingdom originating from this world and one that does not. Augustine

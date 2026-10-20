@@ -40,12 +40,17 @@ no whole-scan clearance or modern approved English translation is claimed.
 
 ## Provenance of the transcription
 
-The source quotations below were mechanically taken from the already
-published Claude leaf's `propers/verified.md` after independent comparison
-with the actual page images named above. This discloses that provider's
-transcription contribution. Its study, interpretation, evaluation and PASS
-status have not been adopted. This worker did not inspect, retry or reconstruct
-any unknown rejected model output.
+The initial Latin quotations and four composed English bodies were mechanically
+taken from the already published transcription lead
+`src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/propers/verified.md`
+after independent comparison with the actual page images named above. The
+remaining continuous English was transcribed directly from the Lasance images;
+the expanded common framing was checked against the separately identified
+historical pages. This discloses the earlier provider's source-data contribution.
+Its study, interpretation, evaluation and PASS status have not been adopted.
+The lead is not a controlling source owner: primary witnesses, independently
+collated here, supply the sealed authority. This worker did not inspect, retry
+or reconstruct any unknown rejected model output.
 
 The Latin quotations retain the 1962 accents and spelling, with typographic
 line breaks joined only where convenient. The proper bodies agree in words over the spans actually printed
