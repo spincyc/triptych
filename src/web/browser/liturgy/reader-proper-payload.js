@@ -127,6 +127,37 @@
     } catch (_error) { return []; }
   }
 
+  // Explicit Latin avoids reimplementing effective language or witness choices.
+  function framedRequest(parsed) {
+    return object(parsed) && object(parsed.recognized) && parsed.recognized.orations === 'la' &&
+      !(parsed.duplicates || []).length && !(parsed.unknown || []).length;
+  }
+
+  // A framed fast path needs one complete Mass and no second Mass's bodies.
+  function selfContainedMass(mass) {
+    if (!object(mass) || mass.takes_from || mass.common_from || mass.common_sets ||
+        (mass.forms || []).length > 1) return false;
+    const rows = (mass.propers || []).concat((mass.forms || []).flatMap(function (form) {
+      return form.propers || [];
+    }));
+    return !rows.some(function (proper) {
+      return proper && (proper.taken_from || proper.common_from);
+    });
+  }
+
+  function framedMass(mass, parsed) {
+    if (!selfContainedMass(mass) || !framedRequest(parsed)) return false;
+    const forms = mass.forms || [];
+    if ([mass].concat(forms).some(function (owner) {
+      return owner.ordinary_frame && owner.ordinary_frame.applicability !== 'full';
+    })) return false;
+    return (mass.propers || []).every(function (proper) {
+      return proper && proper.name !== 'Placeholder' && !proper.ordinary_disposition &&
+        !Object.keys(proper.cycles || {}).length &&
+        !Object.keys(proper.weekday_cycles || {}).length;
+    });
+  }
+
   async function load(input) {
     if (!object(input) || typeof input.load !== 'function' ||
         !ID.test(input.calendar || '') || !ID.test(input.massKey || '')) {
@@ -183,7 +214,7 @@
   }
 
   return Object.freeze({ load: load, warmDay: warmDay, warmPropers: warmPropers,
-    startupHints: startupHints,
+    startupHints: startupHints, selfContainedMass: selfContainedMass, framedRequest: framedRequest, framedMass: framedMass,
     CATALOG_SCHEMA: CATALOG_SCHEMA, MASS_SCHEMA: MASS_SCHEMA });
 }));
 

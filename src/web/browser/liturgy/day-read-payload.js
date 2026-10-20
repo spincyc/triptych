@@ -1,4 +1,4 @@
-/* Day policy for the bounded, resolved 1962 Read payload. */
+/* Day policy for the bounded, resolved 1962 reading payload. */
 'use strict';
 
 (function (root, factory) {
@@ -9,7 +9,11 @@
   function eligibleKey(input) {
     const parsed = input.parsed;
     const derived = input.derived;
-    if (input.missal !== 'roman-1962' || input.mode !== 'read' || input.needsOrdinary ||
+    const framed = input.needsOrdinary && (input.mode === 'missal' ||
+      input.mode === 'study' && parsed && parsed.recognized.ordinary === '1');
+    if (input.missal !== 'roman-1962' ||
+        ((input.mode !== 'read' || input.needsOrdinary) && !framed) ||
+        framed && !root.LiturgyReaderProperPayload?.framedRequest?.(parsed) ||
         !parsed || !derived || parsed.recognized.why === '1' ||
         ['mass', 'form', 'territory', 'compare', 'peer-missal'].some(function (key) {
           return parsed.present.indexOf(key) >= 0;
@@ -19,18 +23,14 @@
     if (branch.settled !== true || !branch.winner || said.length !== 1 ||
         !said[0].key || said[0].key !== branch.winner.key ||
         branch.winner.formulary && branch.winner.formulary.kind !== 'own') return null;
+    if (framed && ((branch.readable || []).some(function (one) {
+      return one.state !== 'said' && one.state !== 'displaced';
+    }) || Object.values(branch.orations || {}).some(function (series) {
+      return !Array.isArray(series) || series.some(function (row) {
+        return row.position !== 1 || row.of !== said[0].key;
+      });
+    }))) return null;
     return said[0].key;
-  }
-
-  function crossMassDependency(mass) {
-    if (mass.takes_from || mass.common_from || mass.common_sets ||
-        (mass.forms || []).length > 1) return true;
-    const rows = (mass.propers || []).concat((mass.forms || []).flatMap(function (form) {
-      return form.propers || [];
-    }));
-    return rows.some(function (proper) {
-      return proper && (proper.taken_from || proper.common_from);
-    });
   }
 
   async function loadStructure(input) {
@@ -46,7 +46,8 @@
         load: input.load, indexRow: row, calendar: input.missal, massKey: key
       });
       const mass = structure.masses.find(function (one) { return one.key === key; });
-      if (!mass || crossMassDependency(mass)) {
+      if (!reader.selfContainedMass(mass) || input.mode !== 'read' &&
+          !reader.framedMass(mass, input.parsed)) {
         throw new Error('selected Day Mass needs the complete structure');
       }
       return structure;

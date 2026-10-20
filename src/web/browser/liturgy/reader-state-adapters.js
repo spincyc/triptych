@@ -1674,9 +1674,34 @@
     return rows;
   }
 
+  function selectProperAlternative(events, request) {
+    if (!request.alternative) return events;
+    const id = request.alternative.id;
+    let selected = 0;
+    const resolved = events.map(function (event) {
+      if (event.kind !== 'proper-choice') return event;
+      const option = event.options.find(function (one) { return event.id + '/' + one.id === id; });
+      if (!option) return event;
+      selected += 1;
+      return Object.assign({}, event, {
+        selection: { state: 'selected', option: option.id },
+        options: event.options.map(function (one) {
+          if (one !== option) return one;
+          return Object.assign({}, one, { events: one.events.map(function (member) {
+            return Object.assign({}, member, { sourceHooks: member.sourceHooks.concat([
+              { kind: 'proper-choice-option', id: id }
+            ]) });
+          }) });
+        })
+      });
+    });
+    if (selected !== 1) throw new Error('explicit Propers alternative is not held by the exact selected formulary and form');
+    return resolved;
+  }
+
   function alternativeChoices(events) {
     return (events || []).filter(function (event) {
-      return event && event.kind === 'proper-choice';
+      return event && event.kind === 'proper-choice' && event.selection.state === 'required';
     }).map(function (event) {
       return Contract.unresolvedChoice(
         event.id,
@@ -1752,7 +1777,9 @@
     const properEvents = [];
     (events || []).forEach(function (event) {
       if (event && event.kind === 'proper-choice') {
-        (event.options || []).forEach(function (option) {
+        (event.options || []).filter(function (option) {
+          return event.selection.state !== 'selected' || event.selection.option === option.id;
+        }).forEach(function (option) {
           properEvents.push.apply(properEvents, option.events || []);
         });
       } else {
@@ -1930,11 +1957,11 @@
     if (request.formulary.type && request.formulary.type !== (mass.kind || null)) {
       throw new Error('requested Propers formulary type does not match the held object');
     }
-    if (hasOwn(request, 'alternative')) {
-      throw new Error('explicit Propers alternative has no held stable generated identity');
-    }
     const formSelection = properFormSelection(mass, request);
     if (formSelection.choice) {
+      if (hasOwn(request, 'alternative')) {
+        throw new Error('an explicit alternative requires an exact selected Mass form');
+      }
       if (request.languages && request.languages.translationWitness) {
         throw new Error('an explicit witness requires an exact selected Mass form');
       }
@@ -1977,12 +2004,13 @@
         appointments: formularyAppointments(mass, formSelection.form, null)
       })
     );
-    const events = seated.events;
+    const events = selectProperAlternative(seated.events, request);
     assertExplicitWitnesses(events, request, input.structure);
     const resolved = {
       edition: request.edition.id, formulary: mass.key, type: mass.kind || null
     };
     if (formSelection.id !== null) resolved.form = formSelection.id;
+    if (request.alternative) resolved.alternative = request.alternative.id;
     return {
       entrance: 'propers',
       request: request,

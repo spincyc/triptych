@@ -225,8 +225,21 @@ try {
   const missal = await visit(cdp, base, DAY,
     baseState + '&mode=missal&ordinary=1&ordinary-lang=en');
   assert.equal(missal.outcome, 'ready', JSON.stringify(missal.error));
-  assert.ok(missal.loads['structure/propers/roman-1962.json']);
-  assert.equal(missal.loads['structure/propers/catalog/roman-1962.json'], undefined);
+  assert.equal(missal.mode, 'missal');
+  assert.equal(missal.state.options.ordinary, true);
+  assert.equal(missal.loads['structure/propers/catalog/roman-1962.json'], 1);
+  assert.equal(missal.loads['structure/propers/mass/roman-1962/last-sunday-after-pentecost.json'], 1);
+  assert.equal(missal.loads['structure/propers/roman-1962.json'], undefined);
+  assert.equal(missal.loads['structure/ordinary/roman-1962.json'], 1);
+  assert.ok(await evaluate(cdp, `document.querySelectorAll('#reader-document .ordinary-element').length > 0`));
+
+  // The Visitation has commemorated Propers and keeps the full source structure.
+  const complex = await visit(cdp, base, DAY,
+    '#date=2026-07-02&missal=roman-1962&bible=douay-rheims&orations=la&mode=missal&ordinary=1&ordinary-lang=en');
+  assert.equal(complex.outcome, 'ready', JSON.stringify(complex.error));
+  assert.equal(complex.mode, 'missal');
+  assert.equal(complex.loads['structure/propers/roman-1962.json'], 1);
+  assert.equal(complex.loads['structure/propers/catalog/roman-1962.json'], undefined);
   checks += 1;
 
   const visual = await visit(cdp, base, PROTOTYPE,

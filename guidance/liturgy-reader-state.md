@@ -75,8 +75,8 @@ headings, control labels, DOM IDs, CSS classes, notice prose, and current
 disclosure state do not. `requestedMode`, semantic location, comparison, and
 other future state fields are representable now. The integrated public URL
 spellings are `mode` for `requestedMode` and `location` for an exact semantic
-event ID; comparison has no implicit public spelling and remains separately
-scoped.
+event ID. `compare` names an implemented comparison dimension; its explicit
+peer keys remain entrance-specific.
 
 The adapters accept resolved data; they do not fetch it. Day receives the
 existing `MassAssembly.derive()` result. Proper and Ordinary data remain the
@@ -160,14 +160,26 @@ resolves each edition side independently before comparing semantic units.
 Propers Compare fixes corresponding edition-qualified formularies and rejects
 a civil-date anchor.
 
+The integrated Propers comparison dimensions are `oration-language`,
+`lectionary-cycle`, and `reading-alternative`. A cycle comparison names both
+held cycles explicitly. A reading-alternative comparison uses full source
+option identities from one held choice group, such as
+`proper-choice/postconciliar/presentation-lord/main/gospel/longer`. It selects
+that option without discarding the other source evidence or resolving another
+choice group. Each comparison holds the other semantic selections fixed;
+equal, missing, unknown, cross-group, or mixed-dimension peers refuse. Bible
+expansions retain their reconstruction qualifications and establish no civil
+date applicability. Day's recension comparison remains independently resolved
+for its explicit date and territorial context.
+
 ## Legacy URL compatibility
 
 The v1 inventory is:
 
 | Route | Hash keys | Query keys |
 | --- | --- | --- |
-| Day | `date`, `missal`, `bible`, `orations`, `why`, `ordinary`, `ordinary-lang`, `rubrics`, `mass`, `form`, `translation-witness`, `mode`, `location`, and manifest-declared Ordinary variant keys (currently `eucharistic-prayer`) | `data` |
-| Propers | `missal`, `type`, `mass`, `bible`, `orations`, `form`, `cycle`, `alternative`, `translation-witness`, `mode`, `location` | `data`, `missals` |
+| Day | `date`, `missal`, `bible`, `orations`, `why`, `ordinary`, `ordinary-lang`, `rubrics`, `mass`, `form`, `translation-witness`, `mode`, `location`, `compare`, `peer-missal`, `territory`, and manifest-declared Ordinary variant keys | `data` |
+| Propers | `missal`, `type`, `mass`, `bible`, `orations`, `form`, `cycle`, `alternative`, `translation-witness`, `mode`, `location`, `ordinary-lang`, `compare`, `peer-orations`, `peer-cycle`, `peer-alternative` | `data`, `missals` |
 
 The contract preserves current spelling and canonical route order. Unknown
 legacy pairs remain in a compatibility envelope and round-trip with both key

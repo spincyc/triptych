@@ -206,7 +206,9 @@
     wrapper.appendChild(T.el('p', 'composed-note proper-choice-basis',
       'Source basis: ' + event.choiceBasis));
     const options = T.el('div', 'proper-choice-options');
-    event.options.forEach(function (option) {
+    const displayed = selected ? event.options.filter(function (option) { return option.id === selected; })
+      .concat(event.options.filter(function (option) { return option.id !== selected; })) : event.options;
+    displayed.forEach(function (option) {
       const isSelected = selected === option.id;
       const optionName = T.titleCase(String(option.id).replace(/[-_]+/g, ' '));
       const optionNode = selected && !isSelected

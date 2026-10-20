@@ -45,6 +45,18 @@
     return rest;
   }
 
+  function selectedPropers(result) {
+    return result.events.reduce(function (events, event) {
+      if (event && event.kind === 'proper') return events.concat([event]);
+      const selected = event && event.kind === 'proper-choice' && event.selection &&
+        event.selection.state === 'selected' && event.options.find(function (option) {
+          return option.id === event.selection.option;
+        });
+      if (!selected) fail('only resolved Proper events can be aligned in this slice');
+      return events.concat(selected.events);
+    }, []);
+  }
+
   function compare(input) {
     if (!input || !input.comparison || !Array.isArray(input.sides)) {
       fail('comparison and independently adapted sides are required');
@@ -61,8 +73,8 @@
       fail('Day comparison currently supports recension only');
     }
     if (entrance === 'propers' &&
-        ['oration-language', 'lectionary-cycle'].indexOf(dimension) < 0) {
-      fail('Propers comparison supports oration language or held lectionary cycles');
+        ['oration-language', 'lectionary-cycle', 'reading-alternative'].indexOf(dimension) < 0) {
+      fail('Propers comparison supports oration language, held cycles, or reading alternatives');
     }
 
     const sides = input.comparison.sides.map(function (descriptor, index) {
@@ -109,7 +121,10 @@
             (dimension === 'oration-language' &&
               result.request.languages.orations !== descriptor.languages.orations) ||
             (dimension === 'lectionary-cycle' &&
-              (!descriptor.cycle || result.request.cycle !== descriptor.cycle))) {
+              (!descriptor.cycle || result.request.cycle !== descriptor.cycle)) ||
+            (dimension === 'reading-alternative' && (!descriptor.alternative ||
+              !same(result.request.alternative, descriptor.alternative) ||
+              result.resolved.alternative !== descriptor.alternative.id))) {
           fail('side ' + descriptor.id + ' must use the anchored date-independent formulary and language');
         }
       }
@@ -120,18 +135,22 @@
       const left = sides[0].result;
       const right = sides[1].result;
       const cycleComparison = dimension === 'lectionary-cycle';
+      const alternativeComparison = dimension === 'reading-alternative';
+      const languageComparison = dimension === 'oration-language';
       if (left.resolved.edition !== right.resolved.edition ||
           left.resolved.formulary !== right.resolved.formulary ||
           left.resolved.form !== right.resolved.form ||
           !same(left.request.bible, right.request.bible) ||
-          !(cycleComparison ? same(left.request.languages, right.request.languages) :
-            same(withoutOrations(left.request.languages), withoutOrations(right.request.languages))) ||
+          !(languageComparison ?
+            same(withoutOrations(left.request.languages), withoutOrations(right.request.languages)) :
+            same(left.request.languages, right.request.languages)) ||
           !same(left.request.options, right.request.options) ||
           (cycleComparison ? left.request.cycle === right.request.cycle :
             left.request.cycle !== right.request.cycle) ||
           left.request.form !== right.request.form ||
-          left.request.alternative !== right.request.alternative ||
-          (!cycleComparison && left.request.languages.orations === right.request.languages.orations)) {
+          (alternativeComparison ? same(left.request.alternative, right.request.alternative) :
+            !same(left.request.alternative, right.request.alternative)) ||
+          (languageComparison && left.request.languages.orations === right.request.languages.orations)) {
         fail(dimension + ' requires the same edition, form, formulary, Bible, and other selections on distinct peers');
       }
     } else if (!same(sides[0].result.request.bible, sides[1].result.request.bible) ||
@@ -144,15 +163,32 @@
     if (dimension === 'lectionary-cycle') {
       sides.forEach(function (side, index) {
         const cycle = input.comparison.sides[index].cycle;
-        if (!side.result.events.some(function (event) {
+        if (!selectedPropers(side.result).some(function (event) {
           return event.selected && event.selected.cycle === cycle;
         })) fail('side ' + side.id + ' has no resolved material for its requested held cycle');
       });
     }
 
+    if (dimension === 'reading-alternative') {
+      const groups = sides.map(function (side, index) {
+        const identity = input.comparison.sides[index].alternative.id;
+        const group = side.result.events.find(function (event) {
+          return event.kind === 'proper-choice' && event.selection.state === 'selected' &&
+            event.id + '/' + event.selection.option === identity;
+        });
+        const selected = group && group.options.find(function (option) { return option.id === group.selection.option; });
+        if (!selected || selected.events.length !== 1 || !selected.events.every(function (event) {
+          return event.semanticSlot && event.semanticSlot.state === 'mapped' &&
+            ['reading-1', 'reading-2', 'gospel'].includes(event.semanticSlot.identity.id);
+        })) fail('reading-alternative requires one exact source reading option per side');
+        return group.id;
+      });
+      if (groups[0] !== groups[1]) fail('reading alternatives must belong to the same held source group');
+    }
+
     const indexed = sides.map(function (side) {
       const bySlot = new Map();
-      side.result.events.forEach(function (event) {
+      selectedPropers(side.result).forEach(function (event) {
         if (!event || event.kind !== 'proper') {
           fail('only resolved Proper events can be aligned in this slice');
         }
