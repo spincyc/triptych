@@ -1,0 +1,317 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-stages",
+  "dossier_id": "residual-western-round3",
+  "title": "Iberian and Cosenza local Missal witnesses, a Roman Latin lay-book comparison, and a deferred Albanian control",
+  "traditions": [
+    {
+      "id": "residual-western-round3:barcelona",
+      "label": "Barcelona local Mass books",
+      "family": "latin",
+      "scope": "The identified 1498 Barcelona Missal and its surviving fragment, not a complete diocesan recension.",
+      "coverage_note": "The extant copy is fragmentary and original pages have not been independently collated here."
+    },
+    {
+      "id": "residual-western-round3:salamanca",
+      "label": "Salamanca local Mass books",
+      "family": "latin",
+      "scope": "The 1533 Missale Salmanticense as an identified local printed book.",
+      "coverage_note": "Its title reports correction and augmentation, but the relevant predecessor and decree remain uninspected."
+    },
+    {
+      "id": "residual-western-round3:seville",
+      "label": "Seville local Mass books",
+      "family": "latin",
+      "scope": "The identified 1565 Missale Hispalense, including its inspected title and printer's preface.",
+      "coverage_note": "The printer's correction claim is not a component-level comparison or a normative decree."
+    },
+    {
+      "id": "residual-western-round3:toledo-roman",
+      "label": "Toledo Roman-type local Mass books",
+      "family": "latin",
+      "scope": "The identified 1551 Roman-type Toledo Missal, kept separate from the Hispano-Mozarabic books.",
+      "coverage_note": "Its title describes additions; original pages and predecessor comparison are uninspected."
+    },
+    {
+      "id": "residual-western-round3:cosenza",
+      "label": "Cosenza local Mass books",
+      "family": "latin",
+      "scope": "The catalogue-identified Missale Cosentinum of 1549 and its indexed Mass components.",
+      "coverage_note": "A local title and component inventory do not establish an ancient Gallican ancestry or a complete textual state."
+    },
+    {
+      "id": "residual-western-round3:roman-latin-lay",
+      "label": "Roman Latin Ordinary in identified lay books",
+      "family": "latin",
+      "scope": "Native Latin columns in the 1861 Cummiskey lay missal as a Roman comparison witness only.",
+      "coverage_note": "The English translation's independent history and any claim of an altar-book recension are outside this stage."
+    },
+    {
+      "id": "residual-western-round3:buzuku-control",
+      "label": "Buzuku Albanian historical witness control",
+      "family": "latin",
+      "scope": "Identity and reception questions for the 1555 Albanian mixed liturgical book; independent historical translation history is deferred.",
+      "coverage_note": "No original-language Roman book state or distinct Roman recension is admitted from this witness."
+    }
+  ],
+  "sources": [
+    {
+      "id": "residual-western-round3:barcelona-card",
+      "title": "Usuarium 48, Missale Barcinonense",
+      "url": "https://usuarium.elte.hu/book/48/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Read the original-title, 1498 date, printer, Barcelona Inc. 46-Fol. holding, fragment notice, and indexed Ordinary, Canon and local sanctoral entries.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The catalogue describes a fragment surviving from Holy Saturday to 25 January; original leaves, imprint and omitted extent were not directly checked."
+    },
+    {
+      "id": "residual-western-round3:salamanca-card",
+      "title": "Usuarium 55, Missale Salmanticense",
+      "url": "https://usuarium.elte.hu/book/55/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Read the 1533 bibliographic fields, title's claim of correction and augmentation, BG/18686 holding, and contents locations for episcopal front matter, temporal, Canon and colophon.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The catalogue transcribes the title and indexes a decree; original title, decree, colophon and predecessor text were not inspected."
+    },
+    {
+      "id": "residual-western-round3:seville-card",
+      "title": "Usuarium 57, Missale Hispalense",
+      "url": "https://usuarium.elte.hu/book/57/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Read the 1565 bibliographic fields, A Res. 10/1/06 holding and indexed printer's preface, temporal, Ordinary, Canon, sanctoral and colophon locations.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The indexed page labelled decree begins with the printer's name; the catalogue label is not evidence of episcopal promulgation."
+    },
+    {
+      "id": "residual-western-round3:seville-book",
+      "title": "Missale Hispalense, Seville 1565 original facsimile",
+      "url": "https://archive.org/details/ARes10106",
+      "kind": "primary-book",
+      "inspection": "Existing reviewed acquisition inspected original PDF pages 13 and 16: title and printer's preface, including its claim of correction; the repository source record identifies this exact facsimile.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Only named front pages have been inspected; no original predecessor, complete body collation or competent-authority act is established."
+    },
+    {
+      "id": "residual-western-round3:toledo-card",
+      "title": "Usuarium 60, Missale Toletanum",
+      "url": "https://usuarium.elte.hu/book/60/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Read the 1551 bibliographic fields, BM Lyon SJ L 013/14 holding, Roman-type Toledo warning, title's additions claim, and indexed Mass sections and colophon.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The Roman-type classification is the catalogue's; original title, appended rites, authorization and predecessor text were not checked directly."
+    },
+    {
+      "id": "residual-western-round3:cosenza-card",
+      "title": "Usuarium 5816, Missale Cosentinum",
+      "url": "https://usuarium.elte.hu/book/5816/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Read the local title, 1549 age, BL Legg88 holding, and indexed calendar, Ordinary, Canon, temporal, sanctoral and votive Mass components.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The catalogue's printer authority gives Peter Liechtenstein active 1497–1528 despite a 1549 book date; inspect the actual imprint and succession before assigning the printing firm. No whole-text collation was made."
+    },
+    {
+      "id": "residual-western-round3:cummiskey-latin",
+      "title": "Cummiskey 1861 Roman Missal for the laity, registered Latin Ordinary artifacts",
+      "url": "https://archive.org/details/romanmissaltran00churgoog",
+      "kind": "primary-book",
+      "inspection": "Read the repository's canonical Philadelphia 1861 edition manifest and six pre-existing native Latin Ordinary, Canon and preface artifact manifests; the earlier review verified the retained bytes against all six registered hashes and lengths.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The exact remote Google scan behind the landing page was not acquired in this pass; only the retained native Latin component transcriptions and edition identity support this stage."
+    },
+    {
+      "id": "residual-western-round3:buzuku-catalogue",
+      "title": "Biblioteka Kombëtare e Shqipërisë, Buzuku Meshari facsimile record 92035",
+      "url": "https://bksh.al/cgi-bin/alis/opac-detail.pl?biblionumber=92035",
+      "kind": "institutional-catalogue",
+      "inspection": "The existing reviewed research record read the facsimile catalogue heading and notes on the bracketed 1555 year, incomplete Vatican exemplar, missing leaves and undated handwritten Latin-source attribution.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The catalogue describes a derivative facsimile, not a directly collated surviving book; its Latin-source note is undated and does not establish a specific exemplar or approval."
+    }
+  ],
+  "stages": [
+    {
+      "id": "residual-western-round3:barcelona1498",
+      "tradition_id": "residual-western-round3:barcelona",
+      "label": "1498 Barcelona Missal fragment",
+      "date_label": "1498 printing, catalogue date",
+      "start_year": 1498,
+      "end_year": 1498,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Identity of a local Missal printing and indexed components surviving in a fragment.",
+      "components": ["ordinary", "propers", "calendar"],
+      "witness_ids": ["western:barcelona-1498"],
+      "witness_label": "Missale Barcinonense, Biblioteca de Catalunya Inc. 46-Fol.",
+      "summary": "The catalogue identifies a 1498 Missal for the Barcelona church and warns that the surviving copy begins at Holy Saturday.",
+      "text_coverage": "not-transcribed",
+      "evidence": [{"source_id": "residual-western-round3:barcelona-card", "locus": "bibliographic fields, Remark and Contents pp. 143–151", "claim": "A dated local Missal fragment contains indexed Ordinary, Canon and local sanctoral material."}],
+      "limitations": "The publication date is catalogue reported; neither missing earlier leaves nor any subsequent local use is reconstructed.",
+      "reception": "The title identifies intended Barcelona church use; actual local adoption and jurisdictional duration are unverified."
+    },
+    {
+      "id": "residual-western-round3:salamanca1533",
+      "tradition_id": "residual-western-round3:salamanca",
+      "label": "1533 Salamanca Missal print",
+      "date_label": "1533 printing, catalogue date",
+      "start_year": 1533,
+      "end_year": 1533,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Identity of a 1533 local Missal; title's correction claim is reported without a collated predecessor.",
+      "components": ["ordinary", "propers", "calendar"],
+      "witness_ids": ["western:salamanca-1533"],
+      "witness_label": "Missale Salmanticense, BU Salamanca BG/18686",
+      "summary": "The catalogue records the 1533 Salamanca Missal and transcribes a title claiming correction and added Masses and priestly instructions.",
+      "text_coverage": "not-transcribed",
+      "evidence": [{"source_id": "residual-western-round3:salamanca-card", "locus": "Original title, Age, holding and Contents pp. 5–7, 45, 355, 609", "claim": "The identified printing has a local title and indexed Mass-book components; its self-description claims improvement."}],
+      "limitations": "No specific before and after readings or episcopal decree text have been inspected, so a substantive revision and effective date remain open.",
+      "reception": "The book addresses Salamanca church use; actual extent of reception is not independently documented."
+    },
+    {
+      "id": "residual-western-round3:toledo1551",
+      "tradition_id": "residual-western-round3:toledo-roman",
+      "label": "1551 Roman-type Toledo Missal print",
+      "date_label": "1551 printing, catalogue date",
+      "start_year": 1551,
+      "end_year": 1551,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Identity of one Roman-type Toledo local Missal, not the Hispano-Mozarabic Missale mixtum.",
+      "components": ["ordinary", "propers", "calendar", "rubrics"],
+      "witness_ids": ["western:toledo-roman-1551"],
+      "witness_label": "Missale Toletanum, BM Lyon SJ L 013/14",
+      "summary": "The inspected catalogue identifies the 1551 Toledo book as Roman type and indexes its local Mass sections.",
+      "text_coverage": "not-transcribed",
+      "evidence": [{"source_id": "residual-western-round3:toledo-card", "locus": "Remark; title and Contents pp. 5–6, 25, 259–260, 443, 644, 659–679", "claim": "The source explicitly distinguishes the Roman-type Toledo witness from the Mozarabic Missal and locates its Mass and rubric sections."}],
+      "limitations": "The title's stated additions have no checked predecessor comparison; no competent act or complete text is established.",
+      "reception": "Local title and Roman-type classification are bibliographic evidence, not proof of a dated diocesan adoption."
+    },
+    {
+      "id": "residual-western-round3:seville1565",
+      "tradition_id": "residual-western-round3:seville",
+      "label": "1565 Seville Missal print",
+      "date_label": "1565 printing, original title inspected",
+      "start_year": 1565,
+      "end_year": 1565,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "One Seville local Missal printing with inspected original title and printer's prefatory correction claim.",
+      "components": ["ordinary", "propers", "calendar", "rubrics"],
+      "witness_ids": ["western:seville-1565"],
+      "witness_label": "Missale Hispalense, BU Sevilla A Res. 10/1/06",
+      "summary": "Original title and printer's preface identify the local 1565 book and report correction; indexed contents locate its Mass sections.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {"source_id": "residual-western-round3:seville-book", "locus": "original PDF pp. 13 and 16", "claim": "The original front pages name the local book and carry a printer's reported correction claim."},
+        {"source_id": "residual-western-round3:seville-card", "locus": "bibliographic fields and Contents pp. 14, 16, 35, 364, 393, 408, 682", "claim": "The catalogue dates and indexes the specific surviving copy."}
+      ],
+      "limitations": "The preface is a printer's address, not a demonstrated episcopal decree; no exact corrected readings or predecessor have been collated.",
+      "reception": "The title names Seville church custom; no independent dated mandate or full diocesan use span is established."
+    },
+    {
+      "id": "residual-western-round3:cosenza1549",
+      "tradition_id": "residual-western-round3:cosenza",
+      "label": "1549 Cosenza Missal print",
+      "date_label": "1549 printing, catalogue date",
+      "start_year": 1549,
+      "end_year": 1549,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Identity of an indexed Cosenza local Missal printing and its Mass-book components.",
+      "components": ["ordinary", "propers", "calendar"],
+      "witness_ids": ["western:cosenza-1549-burchard"],
+      "witness_label": "Missale Cosentinum, BL London Legg88",
+      "summary": "Usuarium catalogues a 1549 Cosenza Missal with local title and indexed Ordinary, Canon and Mass sections.",
+      "text_coverage": "not-transcribed",
+      "evidence": [{"source_id": "residual-western-round3:cosenza-card", "locus": "Original title, Age, BL Legg88 holding and Contents pp. 14–34, 305–314, 440", "claim": "The source identifies a dated local Missal and its indexed Eucharistic components."}],
+      "limitations": "The printer attribution conflicts with the catalogue's own activity dates and requires original imprint inspection; named Gallic custom and scholarly Burchard comparison do not establish whole-book ancestry.",
+      "reception": "The title describes Cosenza church custom; actual local authorization and period of use remain unverified."
+    },
+    {
+      "id": "residual-western-round3:cummiskey1861",
+      "tradition_id": "residual-western-round3:roman-latin-lay",
+      "label": "1861 Cummiskey lay-book Latin Ordinary",
+      "date_label": "1861 lay-book publication",
+      "start_year": 1861,
+      "end_year": 1861,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Only the book's own Latin Ordinary, Canon and preface columns, retained as partial Roman Latin comparison material.",
+      "components": ["ordinary", "anaphoras"],
+      "witness_ids": ["western:cummiskey-1861-latin-ordinary"],
+      "witness_label": "Cummiskey 1861 Philadelphia first revised lay missal",
+      "summary": "A dated lay book preserves native Latin Ordinary and Canon columns that can be compared with Roman altar books.",
+      "text_coverage": "partial",
+      "evidence": [{"source_id": "residual-western-round3:cummiskey-latin", "locus": "canonical 1861 edition manifest; six registered Latin component artifacts", "claim": "The identified first revised edition and checked Latin component transcriptions support a bounded comparison witness."}],
+      "limitations": "The retained columns are not a complete altar missal or proof of a distinct normative Roman recension; exact remote scan remains unresolved.",
+      "reception": "The title reports a Philadelphia bishop's approbation of a lay book; it does not grant authorization to celebrate from this edition."
+    }
+  ],
+  "transitions": [],
+  "gaps": [
+    {
+      "id": "residual-western-round3:barcelona-gaps",
+      "tradition_id": "residual-western-round3:barcelona",
+      "period": "before and after the 1498 printing",
+      "missing": "Original title and colophon checks, complete extent of the fragment, earlier and later Barcelona Mass books, local authority and direct text comparison.",
+      "next_source": "Inspect Biblioteca de Catalunya Inc. 46-Fol. images and find dated Barcelona missals for component-level collation.",
+      "consequence": "The catalogue's publication year does not date adoption or establish a revision sequence."
+    },
+    {
+      "id": "residual-western-round3:salamanca-gaps",
+      "tradition_id": "residual-western-round3:salamanca",
+      "period": "before and after the 1533 printing",
+      "missing": "Original title, bishop's front matter, colophon, claimed corrected readings and predecessor or successor witnesses.",
+      "next_source": "Read BU Salamanca BG/18686 original pages 5, 7 and 609 and collate matching Mass components against an earlier Salmanticense.",
+      "consequence": "The title's repair claim cannot yet be promoted to a documented substantive transition or effective date."
+    },
+    {
+      "id": "residual-western-round3:seville-gaps",
+      "tradition_id": "residual-western-round3:seville",
+      "period": "before and after the 1565 printing",
+      "missing": "A named predecessor, exact corrected Mass readings, full text and competent-authority permission or use record.",
+      "next_source": "Collate the acquired 1565 original against an earlier Hispalense at named Ordinary and proper loci; inspect authority leaves separately from the printer's preface.",
+      "consequence": "The correction notice supports a research lead, not a reform edge or universal-use claim."
+    },
+    {
+      "id": "residual-western-round3:toledo-gaps",
+      "tradition_id": "residual-western-round3:toledo-roman",
+      "period": "before and after the 1551 printing",
+      "missing": "Original title and appended rite pages, added sanctoral Mass readings, local authorization and a Roman-type Toledo predecessor.",
+      "next_source": "Inspect BM Lyon SJ L 013/14 or linked original facsimile, then compare Toledo Roman-type books without using Mozarabic volumes as predecessors.",
+      "consequence": "Neither the word mixtum nor a reported addition proves Hispanic-rite ancestry or a dated revision."
+    },
+    {
+      "id": "residual-western-round3:cosenza-gaps",
+      "tradition_id": "residual-western-round3:cosenza",
+      "period": "before and after the 1549 printing",
+      "missing": "Original imprint resolution, complete local text, earlier/later Cosenza witnesses, Burchard component loci and adoption evidence.",
+      "next_source": "Inspect BL London Legg88 facsimile or original and compare Legg's cited components with an identified donor book, then trace episcopal records.",
+      "consequence": "The catalogue date and Gallic title wording do not establish ancient descent or a local reform."
+    },
+    {
+      "id": "residual-western-round3:cummiskey-gaps",
+      "tradition_id": "residual-western-round3:roman-latin-lay",
+      "period": "1861 comparison horizon",
+      "missing": "Exact remote scan verification of retained Latin columns, complete Roman exemplar identification and component-level comparison beyond the partial artifacts.",
+      "next_source": "Acquire the exact Philadelphia 1861 scan and compare its Latin columns at named loci with an edition-identified Roman altar Missal.",
+      "consequence": "A lay publication and partial Latin transcription cannot count as a new normative Roman version or complete service-book text."
+    },
+    {
+      "id": "residual-western-round3:buzuku-deferred",
+      "tradition_id": "residual-western-round3:buzuku-control",
+      "period": "1554–1555 and later reception",
+      "missing": "Direct collation of the incomplete Vatican original or authorized facsimile, its Mass components and Latin exemplars, contemporary permission and actual liturgical use.",
+      "next_source": "Inspect Vatican R.G. Liturgia III, 194 and an authenticated facsimile with leaf-loss map; examine original Mass loci and contemporary diocesan records.",
+      "consequence": "An Albanian mixed liturgical witness remains identifiable, but its independent translation history is deferred and it cannot supply a Roman source recension or book-state stage here."
+    }
+  ]
+}

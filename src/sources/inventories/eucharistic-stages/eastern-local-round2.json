@@ -1,0 +1,239 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-stages",
+  "dossier_id": "eastern-local-round2",
+  "title": "Selected Melkite, Roman Greek and Italo-Greek Eucharistic book states; unresolved local reception",
+  "traditions": [
+    {
+      "id": "eastern-local-round2:melkite",
+      "label": "Melkite Greek Catholic liturgy books",
+      "family": "Byzantine",
+      "scope": "The Melkite patriarchal and synodal Book of the Divine Liturgy, issued in two complementary parts.",
+      "coverage_note": "The official retrospective identifies approval and a book; the original Arabic volumes and predecessor texts have not been collated."
+    },
+    {
+      "id": "eastern-local-round2:roman-greek",
+      "label": "Roman Greek celebrant books",
+      "family": "Byzantine",
+      "scope": "The Holy See approved Greek Hieratikon bearing a 1950 title date and a March 1952 printing colophon.",
+      "coverage_note": "A Roman Greek approved edition is attested. Neither printing at the Melkite Paulist press nor Greek language proves adoption by the Melkite Church, the Greek exarchates or Piana degli Albanesi."
+    },
+    {
+      "id": "eastern-local-round2:grottaferrata",
+      "label": "Italo-Greek Basilian use of Grottaferrata",
+      "family": "Byzantine",
+      "scope": "The 1601 Roman printing whose own title names the Italo-Greek Basilian monks and the Grottaferrata Typikon.",
+      "coverage_note": "The historical monastic use is distinguished from later use in the Italo-Albanian eparchies of Lungro and Piana."
+    },
+    {
+      "id": "eastern-local-round2:hungarian",
+      "label": "Hungarian Greek Catholic local book reception",
+      "family": "Byzantine",
+      "scope": "Hungarian territory and the historical Church Slavonic book witnesses held there.",
+      "coverage_note": "A 1646 Lviv printing has later local collection provenance, but no inspected record yet makes it a Hungarian Catholic liturgical-use state."
+    },
+    {
+      "id": "eastern-local-round2:bulgarian",
+      "label": "Bulgarian Greek Catholic local book reception",
+      "family": "Byzantine",
+      "scope": "Bulgarian service-book publication and possible reception of the Roman Slavonic Vulgata.",
+      "coverage_note": "Official local publication lists do not identify a source edition or verify receipt of the Vulgata."
+    },
+    {
+      "id": "eastern-local-round2:russian",
+      "label": "Russian Greek Catholic local book reception",
+      "family": "Byzantine",
+      "scope": "Russian Catholic holdings of Roman Slavonic books, separate from the Vulgata textual states already in the Byzantine dossier.",
+      "coverage_note": "A parish library list establishes possession of copies, not dated celebration with a specified edition."
+    }
+  ],
+  "sources": [
+    {
+      "id": "eastern-local-round2:melkite-letter",
+      "title": "Patriarch Gregorios III, Letter on the Liturgy, patriarchal website",
+      "url": "https://melkitepat.org/eng/gregorios/view/Letter-on-the-Liturgy",
+      "kind": "official-retrospective",
+      "inspection": "Foreword 3 and chapter 4, paragraphs 1–5, read on the patriarchal website. The page header reads 18 January 2010; the letter's own closing dateline is 7 March 2011. Chapter 4 reports definitive synodal agreement in 2001 and the appearance of the book in 2006, and directs use of the approved Liturgy books.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "An English presentation of the patriarchal letter; the Arabic book and underlying synodal acts were not acquired or collated. Its 2005–2008 range for the two parts is broad."
+    },
+    {
+      "id": "eastern-local-round2:melkite-catalogue",
+      "title": "German Liturgical Institute library, record 47966, Kitab al-Liturgiyat al-ilahiyah al muqaddasah",
+      "url": "https://dli.institute/dlibib/dlibibkatwp.php?layout=dbk&ausgabe=1&nummer=47966&Bestand=c&NurSchweiz=0",
+      "kind": "institutional-catalogue",
+      "inspection": "Record 47966 read: Patriarchal Liturgical Commission; Jounieh, Paulist press; part 1, Chrysostom, 2006, [8] + 907 pages; part 2, Basil and Presanctified, 2007, [8] + 367 pages.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The catalogue explicitly offers no digitized copy. Its language codes are not used to infer the language of every page; title and approval leaves remain uninspected."
+    },
+    {
+      "id": "eastern-local-round2:greek-hieratikon",
+      "title": "Ἱερατικόν, Rome 1950, Internet Archive copy",
+      "url": "https://archive.org/details/hieratikon_1950",
+      "kind": "primary-book",
+      "inspection": "Existing Eastern inventory records direct inspection of original title at PDF p. 3, Holy See approval at p. 4 and colophon at p. 343. This round rechecked the source record, not the 82 MB scan; the Archive landing page did not render through the web reader.",
+      "checked_on": "2026-10-19",
+      "status": "inspected",
+      "limitations": "No exact Greek exarchate, Italo-Albanian or Melkite reception is established. The title year 1950 and the March 1952 end of printing have different date roles; rights for modern editorial text are unresolved."
+    },
+    {
+      "id": "eastern-local-round2:grottaferrata1601",
+      "title": "Sacrae liturgiae, Rome 1601, photographed title leaves and antiquarian description",
+      "url": "https://dinter.de/buch/sacrae-liturgiae-rome-1601/",
+      "kind": "primary-book",
+      "inspection": "The original Latin title transcribed on the page names the Chrysostom, Basil and Presanctified liturgies, the Italo-Greek Basilian monks, the Typikon of Grottaferrata, and Aloysius Zannettus at Rome in 1601. The page identifies a second Greek title leaf and a 52-leaf quarto copy.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Only title photographs and an object description, not a whole-book scan. The stated audience does not document a particular monastery copy's use or later Lungro/Piana adoption."
+    },
+    {
+      "id": "eastern-local-round2:hungarian-catalogue",
+      "title": "Szent Atanáz Greek Catholic college old-books catalogue, Lviv 1646 Sluzhebnik",
+      "url": "https://real.mtak.hu/123139/1/terdik_katalogustetelek.pdf",
+      "kind": "institutional-catalogue",
+      "inspection": "Existing inventory identifies the incomplete Nyírderzs copy and its later college transfer, with a separate reported 1666 donation note whose named church is unresolved. The PDF catalogue was located online this round; original title and ownership leaves were not reexamined.",
+      "checked_on": "2026-10-20",
+      "status": "lead",
+      "limitations": "Local possession does not establish liturgical use, Catholic approval, or a Hungarian recension."
+    },
+    {
+      "id": "eastern-local-round2:bulgarian-exarchate",
+      "title": "Catholic Apostolic Exarchate, Burgas parish and publications pages",
+      "url": "https://www.kae-bg.org/?act=content&rec=41",
+      "kind": "institutional-catalogue",
+      "inspection": "The Burgas page's Издания section names a 2005 combined Sluzhebnik, Horologion and prayer book. The exarchate publications page https://www.kae-bg.org/?act=content&rec=136 names a 544-page Holy Week and Resurrection service collection of 2007.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The listings give no inspected title or approval leaves, exact source recension, or evidence that the 1942 Roman Vulgata was locally received."
+    },
+    {
+      "id": "eastern-local-round2:russian-library",
+      "title": "Russian Catholic parish of the Descent of the Holy Spirit, library catalogue",
+      "url": "https://soshestvie-rkcvo.ru/library-2/",
+      "kind": "institutional-catalogue",
+      "inspection": "The parish list identifies holdings of Roman Slavonic Chrysostom and Sluzhebnik printings, including a 1983 book labelled Recensione Volgata; the prior Eastern inventory enumerates catalogue entries 1465, 1467, 1487, 1504, 1646, 1900, 1902, 1993 and 2148.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The library list is neither an act of adoption nor evidence that a particular copy was used at the parish altar."
+    }
+  ],
+  "stages": [
+    {
+      "id": "eastern-local-round2:melkite-2006-2007",
+      "tradition_id": "eastern-local-round2:melkite",
+      "label": "Melkite Book of the Divine Liturgy, two complementary parts",
+      "date_label": "Part 1 catalogued 2006; part 2 catalogued 2007; synodal approval reported 2001",
+      "start_year": 2006,
+      "end_year": 2007,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "A Church-approved Eucharistic service-book corpus containing Chrysostom in part 1 and Basil and Presanctified in part 2; the two parts are one book state, not two revisions.",
+      "components": ["ordinary", "anaphoras", "rubrics"],
+      "witness_ids": ["eastern:byzantine-greek-liturgy2006"],
+      "witness_label": "Patriarchal book identified by the official Letter and DLI holding record 47966",
+      "summary": "The patriarchal letter reports definitive synodal agreement in 2001 and publication in 2006; the library distinguishes the 2006 Chrysostom and 2007 Basil/Presanctified parts. The patriarch's later decree requires the approved Liturgy books and withdraws other Liturgy books from use.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {"source_id": "eastern-local-round2:melkite-letter", "locus": "Foreword 3; chapter 4 §§2–4", "claim": "Identifies the approved two-part Eucharistic book and the patriarchal use rule."},
+        {"source_id": "eastern-local-round2:melkite-catalogue", "locus": "Record 47966, parts 1–2", "claim": "Supplies the separate publication years, contents and extents of the complementary parts."}
+      ],
+      "limitations": "The 2001 approval is not the date of these physical publications. Neither the Arabic text nor the 1992 experimental book was collated; no exact predecessor, component-level revision or first day of uniform use is asserted.",
+      "reception": "Patriarch Gregorios III's decree orders use of the approved Liturgy books in the Melkite Church; actual compliance in each eparchy is not measured."
+    },
+    {
+      "id": "eastern-local-round2:greek-1950",
+      "tradition_id": "eastern-local-round2:roman-greek",
+      "label": "Holy See approved Greek Hieratikon bearing a 1950 title",
+      "date_label": "Title: Rome 1950; printing completed March 1952",
+      "start_year": 1952,
+      "end_year": 1952,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Greek celebrant book with Vespers, Orthros and the Liturgies of Chrysostom, Basil and the Presanctified Gifts.",
+      "components": ["ordinary", "anaphoras", "rubrics"],
+      "witness_ids": ["eastern:byzantine-greek-rome1950"],
+      "witness_label": "Internet Archive copy of the Roman Greek Hieratikon, original title and approval leaves",
+      "summary": "An approved Roman Greek celebrant book is attested by its own title and approval leaves. The colophon records that printing was completed at Harissa in March 1952.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {"source_id": "eastern-local-round2:greek-hieratikon", "locus": "Original PDF pp. 3–4, 343, as inspected in the prior Eastern research", "claim": "Original title, approval and colophon identify this edition and distinguish title date from end of printing."}
+      ],
+      "limitations": "This is a Roman Greek edition state, not a Greek exarchate or Melkite reception state. The press location at Harissa cannot establish Melkite use. No comparison with the 1925 or other Roman Greek books has been made.",
+      "reception": "Holy See approval is printed in the book; named territorial implementation has not been verified."
+    },
+    {
+      "id": "eastern-local-round2:grottaferrata-1601",
+      "tradition_id": "eastern-local-round2:grottaferrata",
+      "label": "1601 liturgies printing for the Italo-Greek Basilians",
+      "date_label": "Rome imprint, 1601",
+      "start_year": 1601,
+      "end_year": 1601,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Printing expressly for the Italo-Greek Basilian monks following the Grottaferrata Typikon, with the three named Eucharistic liturgies.",
+      "components": ["ordinary", "anaphoras", "rubrics"],
+      "witness_ids": ["eastern:byzantine-greek-rome1601"],
+      "witness_label": "1601 Zannettus printing, Latin and Greek title leaves in public object photographs",
+      "summary": "The original title identifies a particular monastic use and printing audience, allowing a bounded local book state without assigning the edition to later Italo-Albanian eparchies.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {"source_id": "eastern-local-round2:grottaferrata1601", "locus": "Latin title and second Greek title leaf; object description lines 17–27", "claim": "Names the three liturgies, Italo-Greek Basilian audience, Grottaferrata Typikon and 1601 Rome imprint."}
+      ],
+      "limitations": "The title's declared audience is not a dated use record for a particular monastery, nor approval or reception in Lungro or Piana. No whole copy or exact predecessor has been inspected; its textual distinctness from 1683 remains unestablished.",
+      "reception": "The printing itself declares the Grottaferrata monastic use it serves; no broader territorial use is inferred."
+    }
+  ],
+  "transitions": [],
+  "gaps": [
+    {
+      "id": "eastern-local-round2:melkite-sequence",
+      "tradition_id": "eastern-local-round2:melkite",
+      "period": "Before the 2006–2007 corpus and afterward",
+      "missing": "Original Arabic title, approval and body leaves for the 1839–1900 Liturgikons, the 1992 experimental text and both parts of the approved book; component collation and eparchial implementation.",
+      "next_source": "Acquire the exact volumes named in the patriarchal letter and DLI record 47966, plus the 1991 and 2001 decrees and local use records.",
+      "consequence": "The approved book state is documented, but no predecessor or substantive transition is encoded."
+    },
+    {
+      "id": "eastern-local-round2:greek-reception",
+      "tradition_id": "eastern-local-round2:roman-greek",
+      "period": "1950 title / March 1952 completion onward",
+      "missing": "Identified Greek exarchate or Italo-Albanian celebrant copies and adoption evidence; full collation against earlier Roman Greek books.",
+      "next_source": "Inspect the Hieratikon and local exarchate or eparchial library inventories, title leaves, permissions and use records; compare bounded prayers and rubrics with the 1925 printing.",
+      "consequence": "The Roman edition cannot be placed as a locally received Greek, Piana or Melkite state."
+    },
+    {
+      "id": "eastern-local-round2:italo-albanian-eparchies",
+      "tradition_id": "eastern-local-round2:grottaferrata",
+      "period": "After the 1601 Grottaferrata printing",
+      "missing": "Exact altar books and dated use or approval for Lungro and Piana; whole-book comparison of the 1601 and 1683 Grottaferrata printings and local manuscripts.",
+      "next_source": "Locate copies and approval leaves in Grottaferrata, Lungro and Piana collections. Lungro's official 2026 account attests occasional Liturgy of Saint James without identifying its celebrant book: https://www.eparchialungro.it/2026/02/26/leparchia-di-lungro-nella-chiesa-italiana/",
+      "consequence": "Grottaferrata printing cannot be used as a surrogate for either modern eparchy or for the unidentified Saint James book."
+    },
+    {
+      "id": "eastern-local-round2:hungarian-use",
+      "tradition_id": "eastern-local-round2:hungarian",
+      "period": "Seventeenth to twentieth centuries",
+      "missing": "Inspected title and ownership leaves for the 1646 Nyírderzs copy, the identity of the church in its reported 1666 note, and dated liturgical-use records. The 1882, 1890 and 1920 Hungarian Liturgikons still need origin and approval review.",
+      "next_source": "Inspect Szent Atanáz catalogue II.16 and its copy M–920 (Ant 10467), then local parish inventories and the original circulars for the 1916–1919 reforms.",
+      "consequence": "A library provenance or a reported local reform cannot be promoted to a Hungarian Catholic book state or revision edge."
+    },
+    {
+      "id": "eastern-local-round2:bulgarian-receipt",
+      "tradition_id": "eastern-local-round2:bulgarian",
+      "period": "Roman Vulgata 1940–1953 through the Bulgarian books of 1985–2007",
+      "missing": "Proof of Bulgarian receipt of the Roman Vulgata and title, approval and source leaves of the 1985 Eldarov Sluzhebnik and the official 2005 and 2007 local books.",
+      "next_source": "Inspect the 1985 celebrant book rather than its bookseller's contents photographs, and obtain the exarchate-listed 2005 and 2007 volumes and their source statements: https://www.kae-bg.org/?act=content&rec=136",
+      "consequence": "An intended Bulgarian audience for Vulgata and a local publication listing do not identify a shared recension, exact Eucharistic text or local use of the Roman book."
+    },
+    {
+      "id": "eastern-local-round2:russian-use",
+      "tradition_id": "eastern-local-round2:russian",
+      "period": "Roman Vulgata 1940–1953 and later Russian Catholic holdings",
+      "missing": "Dated acts or parish records connecting a specific Roman Slavonic edition to Russian Catholic celebration, and original leaves resolving the 1953, 1956 and 1983 book identities.",
+      "next_source": "Match the parish library's item 1900 and other Roman books to inspected title/approval leaves and documented altar use; keep the textual Vulgata states in the existing Byzantine dossier.",
+      "consequence": "Library possession cannot create a Russian local-reception stage or a new Vulgata textual revision."
+    }
+  ]
+}

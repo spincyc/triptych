@@ -1,0 +1,699 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-stages",
+  "dossier_id": "french-local-round2",
+  "title": "French local-use missal book states: Paris, Rouen, Langres, Uzès and selected diocesan prints",
+  "traditions": [
+    {
+      "id": "french-local-round2-paris",
+      "label": "Paris diocesan missal",
+      "family": "latin",
+      "scope": "The named 1481 Paris Missale Parisiense as an original-language local Mass book; related diocesan series remain separate witnesses until compared.",
+      "coverage_note": "The 1481 print is bounded by inspected original leaves; 1738 is a catalogue-identified later edition with a scholarly described postcommunion. Intermediate text, first introduction and reception remain open."
+    },
+    {
+      "id": "french-local-round2-rouen",
+      "label": "Rouen diocesan missal",
+      "family": "latin",
+      "scope": "The named 1495 Rouen Missale Rothomagense as an original-language local Mass book; related diocesan series remain separate witnesses until compared.",
+      "coverage_note": "The 1495 print has page-level catalogue contents; a 1728 Lyon-held missal is bibliographically identified. No substantive change or duplicate resolution is established."
+    },
+    {
+      "id": "french-local-round2-langres",
+      "label": "Langres diocesan missal",
+      "family": "latin",
+      "scope": "The named 1520 Langres Missale Lingonense as an original-language local Mass book; related diocesan series remain separate witnesses until compared.",
+      "coverage_note": "One exact witness is documented at the stated evidence level. Whole-book transcription, substantive predecessor comparison and local reception remain open."
+    },
+    {
+      "id": "french-local-round2-uzes",
+      "label": "Uzès diocesan missal",
+      "family": "latin",
+      "scope": "The named 1495 Uzès Missale Uceciense as an original-language local Mass book; related diocesan series remain separate witnesses until compared.",
+      "coverage_note": "One exact witness is documented at the stated evidence level. Whole-book transcription, substantive predecessor comparison and local reception remain open."
+    },
+    {
+      "id": "french-local-round2-bourges",
+      "label": "Bourges diocesan missal",
+      "family": "latin",
+      "scope": "The named 1547 Bourges Missale Bituricense as an original-language local Mass book; related diocesan series remain separate witnesses until compared.",
+      "coverage_note": "One exact witness is documented at the stated evidence level. Whole-book transcription, substantive predecessor comparison and local reception remain open."
+    },
+    {
+      "id": "french-local-round2-cambrai",
+      "label": "Cambrai diocesan missal",
+      "family": "latin",
+      "scope": "The named 1507 Cambrai Missale Cameracense as an original-language local Mass book; related diocesan series remain separate witnesses until compared.",
+      "coverage_note": "One exact witness is documented at the stated evidence level. Whole-book transcription, substantive predecessor comparison and local reception remain open."
+    },
+    {
+      "id": "french-local-round2-chartres",
+      "label": "Chartres diocesan missal",
+      "family": "latin",
+      "scope": "The named 1490 Chartres Missale Carnotense as an original-language local Mass book; related diocesan series remain separate witnesses until compared.",
+      "coverage_note": "One exact witness is documented at the stated evidence level. Whole-book transcription, substantive predecessor comparison and local reception remain open."
+    },
+    {
+      "id": "french-local-round2-laon",
+      "label": "Laon diocesan missal",
+      "family": "latin",
+      "scope": "The named 1491 Laon Missale Laudunense as an original-language local Mass book; related diocesan series remain separate witnesses until compared.",
+      "coverage_note": "One exact witness is documented at the stated evidence level. Whole-book transcription, substantive predecessor comparison and local reception remain open."
+    },
+    {
+      "id": "french-local-round2-reims",
+      "label": "Reims diocesan missal",
+      "family": "latin",
+      "scope": "The named 1505 Reims Missale Remense as an original-language local Mass book; related diocesan series remain separate witnesses until compared.",
+      "coverage_note": "One exact witness is documented at the stated evidence level. Whole-book transcription, substantive predecessor comparison and local reception remain open."
+    },
+    {
+      "id": "french-local-round2-sens",
+      "label": "Sens diocesan missal",
+      "family": "latin",
+      "scope": "The named Undated Sens Missale Senonense, circa 1527 as an original-language local Mass book; related diocesan series remain separate witnesses until compared.",
+      "coverage_note": "One exact witness is documented at the stated evidence level. Whole-book transcription, substantive predecessor comparison and local reception remain open."
+    }
+  ],
+  "sources": [
+    {
+      "id": "french-local-round2-paris:source",
+      "title": "1481 Paris Missale Parisiense — original facsimile",
+      "url": "https://archive.org/details/OEXV228",
+      "kind": "primary-book",
+      "inspection": "Existing source-library record documents inspection of BSG OEXV 228 RES original images: PDF pp. 155–156 (Maundy Thursday) and 494 (colophon); the Usuarium book 79 catalogue was also checked for this study.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Inspection is bounded to the named leaves or bibliographic and contents fields; a catalogue index is not original-text collation."
+    },
+    {
+      "id": "french-local-round2-rouen:source",
+      "title": "1495 Rouen Missale Rothomagense — edition-identified catalogue record",
+      "url": "https://usuarium.elte.hu/book/81/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Read the edition-identified Usuarium book 81 record, BSG Paris OEXV 664 RES, its 1495 attribution and its contents index; original leaves were not collated.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Inspection is bounded to the named leaves or bibliographic and contents fields; a catalogue index is not original-text collation."
+    },
+    {
+      "id": "french-local-round2-langres:source",
+      "title": "1520 Langres Missale Lingonense — edition-identified catalogue record",
+      "url": "https://usuarium.elte.hu/book/318/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Read Usuarium book 318, BnF B-27888, including its long-title transcription and contents index; original title and Mass pages were not directly collated.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Inspection is bounded to the named leaves or bibliographic and contents fields; a catalogue index is not original-text collation."
+    },
+    {
+      "id": "french-local-round2-uzes:source",
+      "title": "1495 Uzès Missale Uceciense — edition-identified catalogue record",
+      "url": "https://usuarium.elte.hu/book/663/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Read Usuarium book 663, its BL IB.41819 holding identification and contents index; original leaves and Legg’s separately cited copy have not been collated in this lane.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Inspection is bounded to the named leaves or bibliographic and contents fields; a catalogue index is not original-text collation."
+    },
+    {
+      "id": "french-local-round2-bourges:source",
+      "title": "1547 Bourges Missale Bituricense — edition-identified catalogue record",
+      "url": "https://usuarium.elte.hu/book/74/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Read Usuarium book 74, BM Bourges Bya 20158 res, including title transcription, 1547 attribution and indexed contents; original book images were not collated.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Inspection is bounded to the named leaves or bibliographic and contents fields; a catalogue index is not original-text collation."
+    },
+    {
+      "id": "french-local-round2-cambrai:source",
+      "title": "1507 Cambrai Missale Cameracense — edition-identified catalogue record",
+      "url": "https://usuarium.elte.hu/book/88/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Read Usuarium book 88, BM Lyon SJ Inc. 317, including its original-title transcription and indexed contents; original leaves were not collated.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Inspection is bounded to the named leaves or bibliographic and contents fields; a catalogue index is not original-text collation."
+    },
+    {
+      "id": "french-local-round2-chartres:source",
+      "title": "1490 Chartres Missale Carnotense — edition-identified catalogue record",
+      "url": "https://usuarium.elte.hu/book/233/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Read Usuarium book 233, BnF Arsenal 4-T-846, its title attribution and contents; original Gallica leaves were not collated.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Inspection is bounded to the named leaves or bibliographic and contents fields; a catalogue index is not original-text collation."
+    },
+    {
+      "id": "french-local-round2-laon:source",
+      "title": "1491 Laon Missale Laudunense — edition-identified catalogue record",
+      "url": "https://usuarium.elte.hu/book/320/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Read Usuarium book 320, BnF FOL-T-689, its original-title transcription and contents; original leaves were not collated.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Inspection is bounded to the named leaves or bibliographic and contents fields; a catalogue index is not original-text collation."
+    },
+    {
+      "id": "french-local-round2-reims:source",
+      "title": "1505 Reims Missale Remense — edition-identified catalogue record",
+      "url": "https://usuarium.elte.hu/book/111/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Read Usuarium book 111, BnF B-27774, title transcription and contents index; original leaves and the stated church directions were not collated.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Inspection is bounded to the named leaves or bibliographic and contents fields; a catalogue index is not original-text collation."
+    },
+    {
+      "id": "french-local-round2-sens:source",
+      "title": "Undated Sens Missale Senonense, circa 1527 — edition-identified catalogue record",
+      "url": "https://bp16.bnf.fr/ark:/12148/cb41878482n/",
+      "kind": "institutional-catalogue",
+      "inspection": "Read BnF BP16_105469, especially full title, imprint, inferred circa-1527 dating rationale and Durham holding note; no complete original copy was inspected.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Inspection is bounded to the named leaves or bibliographic and contents fields; a catalogue index is not original-text collation."
+    },
+    {
+      "id": "french-local-round2:paris1738-catalogue",
+      "title": "Usuarium book 7371, Missale Parisiense, BnF B-178",
+      "url": "https://usuarium.elte.hu/book/7371/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Read the edition-identified Usuarium entry: Paris, Missale Parisiense, catalogue age 1738, BnF Paris B-178, Amiet 747. The linked original Gallica scan returned 403 in the earlier inventory research and has not been inspected here.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Bibliographic identity only; the original title, prayer bodies, date of first use and physical completeness have not been checked."
+    },
+    {
+      "id": "french-local-round2:paris1738-ward",
+      "title": "Anthony Ward, Euchology for the Mass In Cena Domini, Notitiae 44 (2008), 611–634",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/2000/notitiae-44-%282008%29/Notitiae-507-508-2008.pdf",
+      "kind": "scholarship",
+      "inspection": "Read printed pp. 633–634, PDF pp. 59–60, including Ward’s citation of 1738MP no. 1060 as the Maundy Thursday postcommunion and his source discussion. This is a modern scholarly description, not original 1738-image collation.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Ward’s description alone cannot date first introduction to 1738; the earlier Paris missal annotation requires direct examination of 1685 and 1705."
+    },
+    {
+      "id": "french-local-round2:paris1738-oconnor",
+      "title": "Gerard O’Connor, annotated orations of the 1738 Missale Parisiense",
+      "url": "https://www.clerus.org/clerus/dati/2004-09/13-13/CimPar1.htm",
+      "kind": "scholarship",
+      "inspection": "Read prayer index entry 1060 and the MP abbreviation as already recorded in the Western inventory; MP refers to Paris missals of 1685 and 1705 collectively. The web text is an edited concordance, not an original printing.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The aggregate MP notation does not by itself prove the exact wording in both 1685 and 1705 copies or the first edition carrying the prayer."
+    },
+    {
+      "id": "french-local-round2:rouen1728-catalogue",
+      "title": "Usuarium book 7090, Missale ecclesiae Rotomagensis, BM Lyon 20390",
+      "url": "https://usuarium.elte.hu/book/7090/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Read the edition-identified Usuarium entry: Rouen, original title Missale ecclesiae Rotomagensis, catalogue age 1728, BM Lyon 20390, Amiet 1364; compared the Amiet 1364 catalogue row also listing Usuarium 7461.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "No original book pages, printer, prayers, approval or use record inspected. Usuarium 7461 is a possible duplicate bibliographic representation, not an independently established textual version."
+    }
+  ],
+  "stages": [
+    {
+      "id": "french-local-round2-paris:book",
+      "tradition_id": "french-local-round2-paris",
+      "label": "1481 Paris Missale Parisiense",
+      "date_label": "Publication dated 22 September 1481 by colophon",
+      "start_year": 1481,
+      "end_year": 1481,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Identified book witness and the Eucharistic components supported by the cited original leaves or edition-identified contents index; no complete reconstructed missal.",
+      "components": [
+        "propers",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:paris-1481-dupre-huym"
+      ],
+      "witness_label": "1481 Paris Missale Parisiense",
+      "summary": "The 1481 Paris-use missal has a checked original colophon and bounded Maundy Thursday folios. Neither a first composition date for those prayers nor a predecessor relationship follows.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "french-local-round2-paris:source",
+          "locus": "Original scan PDF pp. 155–156, fol. lxix recto–verso, and p. 494 colophon; Usuarium book 79 contents pp. 152–180",
+          "claim": "Original folios identify bounded Maundy Thursday prayer/rubric material; the colophon dates the Dupré and Huym printing to 22 September 1481."
+        }
+      ],
+      "limitations": "The scan and selected leaves do not certify full physical or textual completeness; 1685, 1705 and 1738 originals are uncollated.",
+      "reception": "The local-use designation identifies the intended book tradition; actual adoption by every church and any continuing-use interval have not been established."
+    },
+    {
+      "id": "french-local-round2-rouen:book",
+      "tradition_id": "french-local-round2-rouen",
+      "label": "1495 Rouen Missale Rothomagense",
+      "date_label": "1495 catalogue-attributed printing",
+      "start_year": 1495,
+      "end_year": 1495,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Identified book witness and the Eucharistic components supported by the cited original leaves or edition-identified contents index; no complete reconstructed missal.",
+      "components": [
+        "calendar",
+        "propers",
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:french-rouen-usuarium-81"
+      ],
+      "witness_label": "1495 Rouen Missale Rothomagense",
+      "summary": "Martin Morin’s identified Rouen print supplies a dated book witness with a contents map; later 1604, 1690 and 1728 entries remain bibliographic successors only.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "french-local-round2-rouen:source",
+          "locus": "Book 81 identity lines 11–21; contents pp. 7, 9, 23, 148–195 and 289–437",
+          "claim": "The catalogue identifies a Rouen-use printed missal and indexes temporal and sanctoral Masses, Ordinary, prefaces, Canon and local ceremony entries."
+        }
+      ],
+      "limitations": "Catalogue page headings are not inspected prayer bodies or proof of a distinct revision or diocesan adoption.",
+      "reception": "The local-use designation identifies the intended book tradition; actual adoption by every church and any continuing-use interval have not been established."
+    },
+    {
+      "id": "french-local-round2-langres:book",
+      "tradition_id": "french-local-round2-langres",
+      "label": "1520 Langres Missale Lingonense",
+      "date_label": "1520 catalogue-attributed printing",
+      "start_year": 1520,
+      "end_year": 1520,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Identified book witness and the Eucharistic components supported by the cited original leaves or edition-identified contents index; no complete reconstructed missal.",
+      "components": [
+        "calendar",
+        "propers",
+        "ordinary",
+        "anaphoras",
+        "rubrics",
+        "chant"
+      ],
+      "witness_ids": [
+        "western:french-langres-usuarium-318"
+      ],
+      "witness_label": "1520 Langres Missale Lingonense",
+      "summary": "The 1520 Troyes printing identifies a Langres-use Mass book and advertises additions, but the title does not by itself prove exactly which texts changed against the circa 1492 witness.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "french-local-round2-langres:source",
+          "locus": "Book 318 original-title lines 11–21; contents pp. 7, 9, 21–37, 185–237, 357–363 and 618",
+          "claim": "The transcribed title advertises additional recent feasts and sequences; the contents locate general rubrics, Ordinary, Canon, Mass cycles and colophon."
+        }
+      ],
+      "limitations": "The older circa 1492 preparation excerpt edited by Legg is not a checked whole missal here; no direct comparison or borrowing direction is established.",
+      "reception": "The local-use designation identifies the intended book tradition; actual adoption by every church and any continuing-use interval have not been established."
+    },
+    {
+      "id": "french-local-round2-uzes:book",
+      "tradition_id": "french-local-round2-uzes",
+      "label": "1495 Uzès Missale Uceciense",
+      "date_label": "1495 catalogue-attributed printing",
+      "start_year": 1495,
+      "end_year": 1495,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Identified book witness and the Eucharistic components supported by the cited original leaves or edition-identified contents index; no complete reconstructed missal.",
+      "components": [
+        "calendar",
+        "propers",
+        "ordinary",
+        "anaphoras",
+        "rubrics",
+        "chant"
+      ],
+      "witness_ids": [
+        "western:french-uzes-usuarium-663"
+      ],
+      "witness_label": "1495 Uzès Missale Uceciense",
+      "summary": "The appended Mass order’s heading claims Roman ecclesiastical custom, but this witness does not establish papal court practice or the direction of borrowing.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "french-local-round2-uzes:source",
+          "locus": "Book 663 title and identity lines 11–23; contents pp. 1, 15, 127–165, 273–470",
+          "claim": "The catalogue identifies the Uzès-use 1495 print, with calendar, Mass cycles, prefaces, Canon, sequentional and an appended priestly Mass order."
+        }
+      ],
+      "limitations": "Usuarium lists BL IB.41819 while the earlier Legg-based inventory cites IB.41877 for the extracted Ordo; copy identity must be reconciled before treating the records as one physical witness.",
+      "reception": "The local-use designation identifies the intended book tradition; actual adoption by every church and any continuing-use interval have not been established."
+    },
+    {
+      "id": "french-local-round2-bourges:book",
+      "tradition_id": "french-local-round2-bourges",
+      "label": "1547 Bourges Missale Bituricense",
+      "date_label": "1547 catalogue-attributed printing",
+      "start_year": 1547,
+      "end_year": 1547,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Identified book witness and the Eucharistic components supported by the cited original leaves or edition-identified contents index; no complete reconstructed missal.",
+      "components": [
+        "calendar",
+        "propers",
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:french-bourges-usuarium-74"
+      ],
+      "witness_label": "1547 Bourges Missale Bituricense",
+      "summary": "A 1547 Bourges-use book state is identifiable from a named library copy and page-level contents.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "french-local-round2-bourges:source",
+          "locus": "Book 74 identity lines 11–21; contents pp. 13–39, 147–181, 313–341 and 375–565",
+          "claim": "The indexed title names Bourges church use and the contents identify a calendar, Mass cycles, Ordinary, prefaces, Canon and preparation texts."
+        }
+      ],
+      "limitations": "No original leaf readings, predecessor comparison, normative approval or reception interval is established.",
+      "reception": "The local-use designation identifies the intended book tradition; actual adoption by every church and any continuing-use interval have not been established."
+    },
+    {
+      "id": "french-local-round2-cambrai:book",
+      "tradition_id": "french-local-round2-cambrai",
+      "label": "1507 Cambrai Missale Cameracense",
+      "date_label": "1507 catalogue-attributed printing",
+      "start_year": 1507,
+      "end_year": 1507,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Identified book witness and the Eucharistic components supported by the cited original leaves or edition-identified contents index; no complete reconstructed missal.",
+      "components": [
+        "calendar",
+        "propers",
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:french-cambrai-usuarium-88"
+      ],
+      "witness_label": "1507 Cambrai Missale Cameracense",
+      "summary": "The 1507 printed Cambrai-use book is identifiable as a small missal; its form cannot be treated as the entire diocesan ceremonial corpus.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "french-local-round2-cambrai:source",
+          "locus": "Book 88 identity lines 11–21; contents pp. 9–31, 135–166, 285–305 and 457–528",
+          "claim": "The title specifies a small missal for Cambrai church use; the index locates calendar, Mass cycles, Ordinary, prefaces, Canon and colophon."
+        }
+      ],
+      "limitations": "Book size and indexed headings do not show a revision from earlier Cambrai sources or date actual use.",
+      "reception": "The local-use designation identifies the intended book tradition; actual adoption by every church and any continuing-use interval have not been established."
+    },
+    {
+      "id": "french-local-round2-chartres:book",
+      "tradition_id": "french-local-round2-chartres",
+      "label": "1490 Chartres Missale Carnotense",
+      "date_label": "1490 catalogue-attributed printing",
+      "start_year": 1490,
+      "end_year": 1490,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Identified book witness and the Eucharistic components supported by the cited original leaves or edition-identified contents index; no complete reconstructed missal.",
+      "components": [
+        "calendar",
+        "propers",
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:french-chartres-usuarium-233"
+      ],
+      "witness_label": "1490 Chartres Missale Carnotense",
+      "summary": "The identified Chartres print gives a bounded diocesan book state with indexed Eucharistic components.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "french-local-round2-chartres:source",
+          "locus": "Book 233 identity lines 11–22; contents pp. 9–21, 129–175, 252–303 and 349–412",
+          "claim": "The title describes Chartres church custom; the index records calendar, temporal and sanctoral Masses, an order of celebration, prefaces and Canon."
+        }
+      ],
+      "limitations": "No original-text comparison, first-use day or direct descent from a particular manuscript is established.",
+      "reception": "The local-use designation identifies the intended book tradition; actual adoption by every church and any continuing-use interval have not been established."
+    },
+    {
+      "id": "french-local-round2-laon:book",
+      "tradition_id": "french-local-round2-laon",
+      "label": "1491 Laon Missale Laudunense",
+      "date_label": "1491 catalogue-attributed printing",
+      "start_year": 1491,
+      "end_year": 1491,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Identified book witness and the Eucharistic components supported by the cited original leaves or edition-identified contents index; no complete reconstructed missal.",
+      "components": [
+        "calendar",
+        "propers",
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:french-laon-usuarium-320"
+      ],
+      "witness_label": "1491 Laon Missale Laudunense",
+      "summary": "The Du Pré printed Laon missal is a dated local book witness with a mapped Eucharistic core.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "french-local-round2-laon:source",
+          "locus": "Book 320 identity lines 11–22; contents pp. 5–17, 73–91, 149–161 and 221–256",
+          "claim": "The title names Laon use; the index locates a calendar, Mass-specific rubrics, temporal/sanctoral formularies, Ordinary, prefaces and Canon."
+        }
+      ],
+      "limitations": "The catalogue also indexes a decree but neither its text nor authority has been inspected; it cannot serve as a promulgation or transition act here.",
+      "reception": "The local-use designation identifies the intended book tradition; actual adoption by every church and any continuing-use interval have not been established."
+    },
+    {
+      "id": "french-local-round2-reims:book",
+      "tradition_id": "french-local-round2-reims",
+      "label": "1505 Reims Missale Remense",
+      "date_label": "1505 catalogue-attributed printing",
+      "start_year": 1505,
+      "end_year": 1505,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Identified book witness and the Eucharistic components supported by the cited original leaves or edition-identified contents index; no complete reconstructed missal.",
+      "components": [
+        "calendar",
+        "propers",
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:french-reims-usuarium-111"
+      ],
+      "witness_label": "1505 Reims Missale Remense",
+      "summary": "The 1505 Reims print is an identifiable local Mass book with a separately indexed directions section.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "french-local-round2-reims:source",
+          "locus": "Book 111 identity lines 11–21; contents pp. 5–21, 129–140, 215–233 and 417–436",
+          "claim": "The printed title names Reims church custom; indexed contents locate calendar, Mass cycles, Ordinary, Canon and directions derived from the ordinary and local custom."
+        }
+      ],
+      "limitations": "Title claims a recently refined edition; without a paired source this is not an established change or adoption date.",
+      "reception": "The local-use designation identifies the intended book tradition; actual adoption by every church and any continuing-use interval have not been established."
+    },
+    {
+      "id": "french-local-round2-sens:book",
+      "tradition_id": "french-local-round2-sens",
+      "label": "Undated Sens Missale Senonense, circa 1527",
+      "date_label": "Undated printing; BnF estimates circa 1527",
+      "start_year": null,
+      "end_year": null,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Identified book witness and the Eucharistic components supported by the cited original leaves or edition-identified contents index; no complete reconstructed missal.",
+      "components": [
+        "propers",
+        "anaphoras"
+      ],
+      "witness_ids": [
+        "western:french-sens-bp16-105469"
+      ],
+      "witness_label": "Undated Sens Missale Senonense, circa 1527",
+      "summary": "BnF identifies an undated Sens missal edition whose title advertises a Dedication preface; this establishes an edition claim, not its first textual appearance.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "french-local-round2-sens:source",
+          "locus": "BP16_105469, Full title, Address, Edition date, Notes and Localizations",
+          "claim": "The title advertises a Dedication preface after the Canon as never printed before; BnF dates this undated edition approximately from publishers and mark."
+        }
+      ],
+      "limitations": "The sole listed Durham copy is incomplete at the end; the preface, its placement and earlier Sens editions have not been collated. The approximate year is not an exact chronology point.",
+      "reception": "The local-use designation identifies the intended book tradition; actual adoption by every church and any continuing-use interval have not been established."
+    },
+    {
+      "id": "french-local-round2:paris1738",
+      "tradition_id": "french-local-round2-paris",
+      "label": "1738 Missale Parisiense, BnF B-178",
+      "date_label": "1738 catalogue-attributed publication",
+      "start_year": 1738,
+      "end_year": 1738,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Identified Paris-use missal edition and scholarly described Maundy Thursday postcommunion 1060; no original 1738 prayer body or whole-book text has been checked.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:paris-1738"
+      ],
+      "witness_label": "Missale Parisiense, 1738, BnF B-178; Usuarium book 7371",
+      "summary": "The exact BnF holding and year are catalogued. Ward discusses postcommunion 1060 in the 1738 Paris missal, while O’Connor’s MP annotation points to earlier Paris missals; neither establishes first introduction in 1738.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "french-local-round2:paris1738-catalogue",
+          "locus": "Usuarium book 7371, identity fields: title, origin, age, shelfmark and Amiet 747",
+          "claim": "Identifies a 1738 Paris missal edition and BnF B-178 holding."
+        },
+        {
+          "source_id": "french-local-round2:paris1738-ward",
+          "locus": "Notitiae 44 (2008), printed pp. 633–634, note 67: 1738MP 1060",
+          "claim": "Identifies the Maundy Thursday postcommunion as no. 1060 in the edited 1738 Paris missal."
+        },
+        {
+          "source_id": "french-local-round2:paris1738-oconnor",
+          "locus": "Annotated orations, entry 1060 and abbreviation MP",
+          "claim": "The aggregate MP source mark points to Paris missals of 1685 and 1705, leaving the first introduction unresolved."
+        }
+      ],
+      "limitations": "The original Gallica scan linked from Usuarium returned 403 in the earlier inventory research; the 1738 original and 1685/1705 comparators are uncollated. No prayer wording is transcribed here, no 1481-to-1738 revision is asserted, and the catalogue year is not an effective-use date.",
+      "reception": "Publication and later scholarly identification do not establish adoption in every Paris church, a first-use date or continued observance."
+    },
+    {
+      "id": "french-local-round2:rouen1728",
+      "tradition_id": "french-local-round2-rouen",
+      "label": "1728 Missale ecclesiae Rotomagensis, BM Lyon 20390",
+      "date_label": "1728 catalogue-attributed publication",
+      "start_year": 1728,
+      "end_year": 1728,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Bibliographically identified Rouen missal witness only; the component designation reflects its missal genre and no original prayer or rubric has been inspected.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:french-rouen-usuarium-7090"
+      ],
+      "witness_label": "Missale ecclesiae Rotomagensis, 1728, BM Lyon 20390; Usuarium book 7090",
+      "summary": "Usuarium identifies a 1728 Rouen missal at BM Lyon 20390 under Amiet 1364. A second Usuarium row, 7461, has the same title, year and Amiet number; this does not establish a second edition or independent textual state.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "french-local-round2:rouen1728-catalogue",
+          "locus": "Usuarium book 7090, identity fields: original title, origin, age, BM Lyon 20390 and Amiet 1364; Amiet catalogue row 1364 for books 7090 and 7461",
+          "claim": "Identifies the 1728 Rouen missal witness and exposes a possible duplicate catalogue row."
+        }
+      ],
+      "limitations": "No original 1728 book pages or paired 1495 text have been inspected. The book cannot establish a substantive reform, direct ancestry, text inheritance or actual diocesan uptake. Usuarium 7090 and 7461 may be duplicate descriptions; the physical relationship remains unresolved.",
+      "reception": "The Rouen designation is bibliographic; local approval, first use and parish reception have not been demonstrated."
+    }
+  ],
+  "transitions": [],
+  "gaps": [
+    {
+      "id": "french-local-round2-paris:sequence-gap",
+      "tradition_id": "french-local-round2-paris",
+      "period": "1481 through the identified 1738 edition and later reception",
+      "missing": "Original 1685, 1705 and 1738 prayer bodies and rubrics, first introduction of postcommunion 1060, component-by-component comparison, legal acts and local uptake.",
+      "next_source": "Resolve access to Gallica BnF B-178 and compare original Paris missals of 1685 and 1705 with the 1481 BSG print at Maundy Thursday and other named components.",
+      "consequence": "Two book states are recorded without a reform edge, a first-composition date, text inheritance or duration of use."
+    },
+    {
+      "id": "french-local-round2-rouen:sequence-gap",
+      "tradition_id": "french-local-round2-rouen",
+      "period": "1495 through the catalogue-identified 1728 printing and later reception",
+      "missing": "Original 1728 text and approval, 1495-to-1728 component collation, relation of Usuarium 7090 to 7461, and dated local uptake.",
+      "next_source": "Inspect BM Lyon 20390 and resolve Amiet 1364 records 7090/7461 against physical copies; collate with BSG OEXV 664 RES and intervening Rouen editions.",
+      "consequence": "The two book witnesses are shown as separate publication attestations, with no inferred substantive revision or second 1728 textual state."
+    },
+    {
+      "id": "french-local-round2-langres:sequence-gap",
+      "tradition_id": "french-local-round2-langres",
+      "period": "Before and after this witnessed printing",
+      "missing": "Original-book collation, exact predecessor and successor changes, legal acts and local reception dates.",
+      "next_source": "Inspect BnF B-27888 original title and added-feast loci; obtain the circa 1492 Langres book and compare the preparation, Mass prayers and sequences.",
+      "consequence": "No substantive revision, recension branch, direct ancestry, text inheritance or duration of use is asserted."
+    },
+    {
+      "id": "french-local-round2-uzes:sequence-gap",
+      "tradition_id": "french-local-round2-uzes",
+      "period": "Before and after this witnessed printing",
+      "missing": "Original-book collation, exact predecessor and successor changes, legal acts and local reception dates.",
+      "next_source": "Compare the original BL holdings and Legg’s edited Ordo with the 1495 volume; inspect later Uzès witnesses and exact ritual variants.",
+      "consequence": "No substantive revision, recension branch, direct ancestry, text inheritance or duration of use is asserted."
+    },
+    {
+      "id": "french-local-round2-bourges:sequence-gap",
+      "tradition_id": "french-local-round2-bourges",
+      "period": "Before and after this witnessed printing",
+      "missing": "Original-book collation, exact predecessor and successor changes, legal acts and local reception dates.",
+      "next_source": "Inspect BM Bourges Bya 20158 res original and compare earlier and later Bourges Mass books at named prayer and rubric loci.",
+      "consequence": "No substantive revision, recension branch, direct ancestry, text inheritance or duration of use is asserted."
+    },
+    {
+      "id": "french-local-round2-cambrai:sequence-gap",
+      "tradition_id": "french-local-round2-cambrai",
+      "period": "Before and after this witnessed printing",
+      "missing": "Original-book collation, exact predecessor and successor changes, legal acts and local reception dates.",
+      "next_source": "Inspect the Lyon copy, confirm its colophon and compare its Mass formularies with earlier and later Cambrai books.",
+      "consequence": "No substantive revision, recension branch, direct ancestry, text inheritance or duration of use is asserted."
+    },
+    {
+      "id": "french-local-round2-chartres:sequence-gap",
+      "tradition_id": "french-local-round2-chartres",
+      "period": "Before and after this witnessed printing",
+      "missing": "Original-book collation, exact predecessor and successor changes, legal acts and local reception dates.",
+      "next_source": "Inspect the BnF Arsenal copy and compare the Canon, Mass order, calendar and Holy Week sections with identified Chartres manuscripts.",
+      "consequence": "No substantive revision, recension branch, direct ancestry, text inheritance or duration of use is asserted."
+    },
+    {
+      "id": "french-local-round2-laon:sequence-gap",
+      "tradition_id": "french-local-round2-laon",
+      "period": "Before and after this witnessed printing",
+      "missing": "Original-book collation, exact predecessor and successor changes, legal acts and local reception dates.",
+      "next_source": "Inspect BnF FOL-T-689 title, decree and core Mass sections, then compare earlier and later Laon witnesses.",
+      "consequence": "No substantive revision, recension branch, direct ancestry, text inheritance or duration of use is asserted."
+    },
+    {
+      "id": "french-local-round2-reims:sequence-gap",
+      "tradition_id": "french-local-round2-reims",
+      "period": "Before and after this witnessed printing",
+      "missing": "Original-book collation, exact predecessor and successor changes, legal acts and local reception dates.",
+      "next_source": "Inspect the BnF print and its directions, then collate against an identified earlier Reims missal and later editions.",
+      "consequence": "No substantive revision, recension branch, direct ancestry, text inheritance or duration of use is asserted."
+    },
+    {
+      "id": "french-local-round2-sens:sequence-gap",
+      "tradition_id": "french-local-round2-sens",
+      "period": "Before and after this witnessed printing",
+      "missing": "Original-book collation, exact predecessor and successor changes, legal acts and local reception dates.",
+      "next_source": "Inspect a copy with the Canon and Dedication preface, compare earlier Sens printings, and seek a complete surviving book.",
+      "consequence": "No substantive revision, recension branch, direct ancestry, text inheritance or duration of use is asserted."
+    }
+  ]
+}

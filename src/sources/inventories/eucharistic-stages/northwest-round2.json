@@ -1,0 +1,817 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-stages",
+  "dossier_id": "northwest-round2",
+  "title": "British local, Danish, Icelandic, Schleswig and Norwegian Mass-book witnesses",
+  "traditions": [
+    {
+      "id": "westminster-local-missal",
+      "label": "Westminster Abbey missal",
+      "family": "latin",
+      "scope": "The Abbey's Litlyngton manuscript for its High Altar, not a general English diocesan rite.",
+      "coverage_note": "One locally commissioned manuscript is identified; its relation to other English uses is not collated."
+    },
+    {
+      "id": "arbuthnott-local-missal",
+      "label": "Arbuthnott and St Andrews manuscript use",
+      "family": "latin",
+      "scope": "The Arbuthnott manuscript witness associated with St Andrews; not every St Andrews church.",
+      "coverage_note": "A dated manuscript is known; the calendar and Mass texts need direct collation."
+    },
+    {
+      "id": "irish-carmelite-kilcormac",
+      "label": "Kilcormac Carmelite Mass witness",
+      "family": "latin",
+      "scope": "The Mass-book portion of Trinity College Dublin MS 82, distinguished from its separate antiphonal portion.",
+      "coverage_note": "The library identifies Irish Carmelite use; manuscript layers and textual relation to other Carmelite books are uncollated."
+    },
+    {
+      "id": "english-itinerant-mission",
+      "label": "English, Scottish and Irish itinerant mission book",
+      "family": "latin",
+      "scope": "Small Roman-derived Mass and ritual print intended for travelling priests in the named territories.",
+      "coverage_note": "The 1626 title and BnF copy establish a bounded book; distribution and use by particular priests are unknown."
+    },
+    {
+      "id": "odense-missal-prints",
+      "label": "Odense missal print witnesses",
+      "family": "latin",
+      "scope": "Identified 1483 and 1501 Odense printings, each with fragmentary survivors.",
+      "coverage_note": "The later book's former Ribe attribution is an alias, and no substantive change between the prints is established."
+    },
+    {
+      "id": "copenhagen-missal-print",
+      "label": "Copenhagen Missale Hafniense witness",
+      "family": "latin",
+      "scope": "The 1510 Copenhagen print, without an inferred separate diocesan rite.",
+      "coverage_note": "The holding library identifies one printing and copy; earlier printed-book relations remain uncollated."
+    },
+    {
+      "id": "roskilde-mass-books",
+      "label": "Roskilde Mass-book witnesses",
+      "family": "latin",
+      "scope": "The c.1484 missal and a separate 1522 Canon with selected Masses and Common.",
+      "coverage_note": "The 1522 item is a component book, not a complete annual missal or a documented revision of the c.1484 edition."
+    },
+    {
+      "id": "viborg-missal-print",
+      "label": "Viborg missal print",
+      "family": "latin",
+      "scope": "The 1500 Liber missalis catalogued for Viborg.",
+      "coverage_note": "The exact Riga copy and its body text have not been inspected directly."
+    },
+    {
+      "id": "schleswig-missal-print",
+      "label": "Schleswig Missale Slesvicense",
+      "family": "latin",
+      "scope": "The 1486 Schleswig-use missal printed by Stephan Arndes.",
+      "coverage_note": "Three identified Copenhagen copies belong to one printing, not three text states; no 1512 edition is established."
+    },
+    {
+      "id": "icelandic-nidaros-fragment",
+      "label": "Icelandic Nidaros-use breviary-missal",
+      "family": "latin",
+      "scope": "Five surviving leaves of a small Mass and Office manuscript associated with Iceland and Nidaros use.",
+      "coverage_note": "Production in Iceland or Norway is unresolved; the five leaves do not establish a complete local recension."
+    },
+    {
+      "id": "icelandic-scardense-missal",
+      "label": "Skarð missal manuscript",
+      "family": "latin",
+      "scope": "Surviving leaves of Missale Scardense, AM Acc. 7 Hs 1 with identified dispersed fragments.",
+      "coverage_note": "The reconstructed leaf group is one manuscript witness; it is not the Swedish Skara Missal."
+    },
+    {
+      "id": "icelandic-gufudal-gradual",
+      "label": "Gufudal Mass gradual manuscript",
+      "family": "latin",
+      "scope": "Surviving chant leaves of Graduale Gufudalense, AM Acc. 7 Hs 2 and identified dispersed leaves.",
+      "coverage_note": "This Mass-chant book is separate from Missale Scardense and does not attest a complete missal text."
+    },
+    {
+      "id": "bergen-nordfjord-fragment",
+      "label": "Nordfjord and probable Bergen reception witness",
+      "family": "latin",
+      "scope": "One French-origin Mass leaf reused in a 1570 Nordfjord diploma, with possible earlier Bergen-area use.",
+      "coverage_note": "The 1570 reuse is a provenance event, not a Mass-use date; Bergen reception remains attributed, not proven."
+    },
+    {
+      "id": "danish-unassigned-notated-fragment",
+      "label": "Unassigned Danish notated missal fragment",
+      "family": "latin",
+      "scope": "RA 4613, catalogued as a Danish notated missal fragment.",
+      "coverage_note": "No diocese, source codex extent or recension is established."
+    },
+    {"id":"skara-cathedral-missal","label":"Skara cathedral missal witness","family":"latin","scope":"Missale Scarense manuscript in the Skara diocesan and cathedral setting.","coverage_note":"Municipal library identifies a 1150s manuscript and cathedral use; import from England is reported as a belief, not proven textual ancestry."},
+    {"id":"linkoping-a97-missal","label":"Linköping secular missal witness","family":"latin","scope":"National Library of Sweden A 97, two-unit local Mass manuscript with losses.","coverage_note":"The holding catalogue maps calendar, temporal, Ordinary/Canon and fragmentary sanctoral; no complete text or exact copying year follows."},
+    {"id":"strangnas-print","label":"Strängnäs missal print","family":"latin","scope":"The 1487 Ghotan printed Missale Strengnense.","coverage_note":"One exact copy and print are identified; original leaves and local revision history are uncollated."},
+    {"id":"lund-print","label":"Lund missal print","family":"latin","scope":"The 1514 Hopyl printed Missale Lundense.","coverage_note":"The 1946 facsimile is a modern delivery witness, not a 1946 liturgical state."},
+    {"id":"uppsala-1513-print","label":"Uppsala missal print","family":"latin","scope":"The 1513 Basel printing according to Uppsala church rite.","coverage_note":"Its relation to the earlier Uppsala print is not claimed without direct compared loci."},
+    {"id":"canterbury-augustine-missal","label":"St Augustine's Abbey Canterbury missal","family":"latin","scope":"Corpus Christi College Cambridge MS 270, a manuscript Mass book for the Canterbury abbey.","coverage_note":"The 1896 Rule edition is a modern textual witness, not the manuscript copying date."},
+    {"id":"dublin-add24198-missal","label":"Dublin associated Mass manuscript","family":"latin","scope":"British Library Add. MS 24198, with Mass and other ceremonial material including an abbot blessing.","coverage_note":"A local St Thomas inscription is evidence of association; exact use throughout Dublin is not established."},
+    {"id":"aarhus-missal-leaves","label":"Aarhus Cathedral Mass-book leaves","family":"latin","scope":"Two surviving late-medieval notated leaves found reused in the cathedral pulpit.","coverage_note":"It is not established that the two leaves came from one codex; a 1519 Aarhus breviary is an Office book, not a second Mass-book witness."}
+  ],
+  "sources": [
+    {
+      "id": "northwest-round2:source-abbey",
+      "title": "Westminster Abbey, The Litlyngton Missal and Library collection",
+      "url": "https://www.westminster-abbey.org/learning/christianity-in-10-objects/the-litlyngton-missal",
+      "kind": "official-retrospective",
+      "inspection": "Read Abbey's object page on 2026-10-20: heading dates 1383–84; body identifies Litlyngton's High Altar commission and Abbey use. Its collection page independently identifies MS 37 and present two-volume binding.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The Abbey pages describe the manuscript; its original folios and Mass texts were not collated."
+    },
+    {
+      "id": "northwest-round2:source-abbey-library",
+      "title": "Westminster Abbey Library collection",
+      "url": "https://www.westminster-abbey.org/about/library-research/library-collection",
+      "kind": "institutional-catalogue",
+      "inspection": "Read illuminated-manuscript and bibliography paragraphs on 2026-10-20; they identify the Litlyngton Missal as MS 37, now in two bound volumes, and the 1891–96 edition as three editorial volumes.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Modern binding and edition volumes are not separate medieval Mass-book states."
+    },
+    {
+      "id": "northwest-round2:source-tcd",
+      "title": "Trinity College Dublin Library, Digitised Manuscripts",
+      "url": "https://www.tcd.ie/library/research-collections/projects/medieval/manuscripts.php",
+      "kind": "institutional-catalogue",
+      "inspection": "Read the MS 82 and MS 83 entries on 2026-10-20. MS 82 is identified as a Kilcormac Missal with music and Irish Carmelite use, dated broadly fourteenth–fifteenth century.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The collection list does not resolve each codicological layer or the 1458 date proposed in the western inventory; original folios were not checked."
+    },
+    {
+      "id": "northwest-round2:source-standrews",
+      "title": "University of St Andrews Collections, Arbuthnott Missal negatives",
+      "url": "https://collections.st-andrews.ac.uk/collection/a-collection-of-negatives-of-the-missal-of-arbuthnott/595107",
+      "kind": "institutional-catalogue",
+      "inspection": "Read holding description on 2026-10-20 identifying photographic negatives of the Arbuthnott manuscript as dated 1491.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Negatives and the 1864 edited text are separate modern evidence objects; source manuscript colophon and Mass contents remain uninspected."
+    },
+    {
+      "id": "northwest-round2:source-bnf-mission",
+      "title": "BnF FRBNF36817488, Missale parvum pro sacerdotibus itinerantibus",
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb36817488t",
+      "kind": "institutional-catalogue",
+      "inspection": "Read the holding record on 2026-10-20: title names itinerant priests in England, Scotland and Ireland, selected Mass and sacramental material, [Antwerp] 1626, copy B-2693.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The catalogue has a supplied place in brackets. Original title page, colophon, contents and actual mission circulation remain uninspected."
+    },
+    {
+      "id": "northwest-round2:source-odense1483",
+      "title": "Usuarium book 433, Missale Ottoniense",
+      "url": "https://usuarium.elte.hu/book/433/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Read bibliographic fields and contents on 2026-10-20: Odense 1483, Lucas Brandis, Landesarchiv Schleswig Abt. 400.6 Nr. 88, explicitly fragmentary; Mass cycles and sequences are indexed.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Fragmentary catalogue representation cannot establish the complete 1483 book or a transition to 1501."
+    },
+    {
+      "id": "northwest-round2:source-odense1501",
+      "title": "Fragmentarium F-lcqd, Missale Ottoniense Novum (Missale Ripense)",
+      "url": "https://fragmentarium.ms/description/F-lcqd/63214",
+      "kind": "institutional-catalogue",
+      "inspection": "Read shelfmark RARA Musik L 46, origin/date 1501, current extent two pieces, and history paragraphs on 2026-10-20. Catalogue explains superseded Ribe 1504 attribution and qualified Danish-use provenance.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Only two pieces at this shelfmark; the former host's date does not date printing or initial liturgical use."
+    },
+    {
+      "id": "northwest-round2:source-hafniense1510",
+      "title": "Royal Library Copenhagen scan metadata, Missale Hafniense",
+      "url": "https://archive.org/details/den-kbd-pil-130018151139-001",
+      "kind": "institutional-catalogue",
+      "inspection": "Read Royal Library-contributed item metadata on 2026-10-20: 1510 Copenhagen Brandis imprint, LN 179 2° copy 1, 310 leaves and 639 scan pages.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Original title/colophon images and the Mass text were not collated; catalogued completeness of this copy does not establish a distinct local rite."
+    },
+    {
+      "id": "northwest-round2:source-roskilde1522",
+      "title": "Usuarium book 870, Canon Roscildensis",
+      "url": "https://usuarium.elte.hu/book/870/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Read original-title, 1522 Nyborg Raeff imprint and Copenhagen Hielmst. 525 4° shelfmark on 2026-10-20; title explicitly limits contents to Canon, some Masses and Common of Saints.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "No full-book or substantive-revision claim follows from this component-book title."
+    },
+    {
+      "id": "northwest-round2:source-viborg1500",
+      "title": "Usuarium book 47, Liber missalis / Missale Viburgense",
+      "url": "https://usuarium.elte.hu/book/47/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Read 1500 age, Arndes printer, Riga Inc. 144 shelfmark and contents rows 4–235 on 2026-10-20, including ordinary, Canon, temporal, sanctoral and appended blessings.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "This is a research catalogue and not direct inspection of Riga original leaves."
+    },
+    {
+      "id": "northwest-round2:source-schleswig1486",
+      "title": "Usuarium book 46, Missale Slesvicense",
+      "url": "https://usuarium.elte.hu/book/46/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Read title, 1486 Arndes imprint, Copenhagen Hielmst. 41 2° copy 1 and contents rows 13–538 on 2026-10-20; title expressly names Schleswig church rite.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Contents indexing does not collate prayers or prove reception across every Schleswig church; other copy records are same-print witnesses."
+    },
+    {
+      "id": "northwest-round2:source-danicum",
+      "title": "Usuarium book 277, Missale notatum Danicum",
+      "url": "https://usuarium.elte.hu/book/277/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Read 1400–1500 manuscript age, RA 4613 shelfmark and explicit fragment remark on 2026-10-20.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Only Denmark is supplied as origin; diocesan attribution and contents are unestablished."
+    },
+    {
+      "id": "northwest-round2:source-iceland1250",
+      "title": "University of Bergen, Icelandic Breviary-Missal",
+      "url": "https://fragment.uib.no/index2.asp?id=26675&k=4643",
+      "kind": "institutional-catalogue",
+      "inspection": "Read exhibition description on 2026-10-20: five surviving leaves, ca. 1250 manuscript, Iceland or Norway production, Nidaros use, August Mass/Office material with song and readings.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The exhibition's likely production alternatives and hypothesized lost saints' material must not become definite contents or Icelandic diocesan independence."
+    },
+    {
+      "id": "northwest-round2:source-scardense",
+      "title": "Guðbjörg Kristjánsdóttir, Lýsingar í íslenskum handritum á 15. öld, Gripla 27 (2016)",
+      "url": "https://gripla.arnastofnun.is/index.php/gripla/article/download/147/97/97",
+      "kind": "scholarship",
+      "inspection": "Read section 6.1, printed p. 172: AM Acc. 7 Hs 1 survives in 65 leaves and is assigned 1450–1478; identified scribal leaf ranges and Easter Introit initial. Checked on 2026-10-20.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Dating is scholarly; printed 2016 date is not a historical book date. No complete original manuscript or liturgical collation is claimed."
+    },
+    {
+      "id": "northwest-round2:source-iceland-repertoire",
+      "title": "Árni Heimir Ingólfsson, Ekki er þetta kirkjunni að neinu gagni, Gripla",
+      "url": "https://gripla.arnastofnun.is/index.php/gripla/article/download/586/478/511",
+      "kind": "scholarship",
+      "inspection": "Acquired the 36-page edition PDF in scratch and read printed pp. 292–293 and fragment table on 2026-10-20. It assigns 65 surviving leaves to Scardense and 37 to the separate Gufudal gradual, the latter likely copied 1450–1470; SHA-256 3bf298dc24b7328fa79b15bf33d3e2987110a42d1b15e8ebcbf4e94646e5de4c.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Scholarly codicological reconstruction; original leaves and complete Mass text remain uncollated. The 1723 host volume is later reuse, not a Mass-book date."
+    },
+    {
+      "id": "northwest-round2:source-nordfjord",
+      "title": "University of Bergen Marcus, UBB MS 1550.5 Nordfjord missal fragment",
+      "url": "https://marcus.uib.no/instance/fragment/ubb-ms-1550-5.html",
+      "kind": "institutional-catalogue",
+      "inspection": "Read indexed holding description on 2026-10-20: one surviving Easter Tuesday/Wednesday Mass leaf, first-half-twelfth-century French-origin attribution, reuse in 24 June 1570 Nordfjord diploma, and Gjerløw's probable Bergen-area medieval use.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The holding page redirected repeatedly in the live browser; indexed catalogue text was readable. Production origin, possible Bergen reception and 1570 reuse are distinct claims; actual church and reception year unknown."
+    },
+    {"id":"northwest-round2:source-skara","title":"Skara municipality library, Skaramissalet","url":"https://www.skara.se/upplevaochgora/bibliotek/forskaravdelningen/skaramissalet.skaramissalet.html","kind":"official-retrospective","inspection":"Read municipal library page on 2026-10-20, especially first two paragraphs and digital-access section: manuscript dated to 1150s, medieval Skara cathedral use, possible English import, complete digital images advertised.","checked_on":"2026-10-20","status":"inspected","limitations":"The linked Alvin original images were not acquired or collated; English origin is reported as likely, not established ancestry."},
+    {"id":"northwest-round2:source-linkoping","title":"Manuscripta.se, National Library of Sweden A 97","url":"https://www.manuscripta.se/ms/101105","kind":"institutional-catalogue","inspection":"Read manuscript identity, two-unit physical description and content loci on 2026-10-20: calendar ff. 1r–3v, temporal ff. 4rb–106ra, Ordo/Canon ff. 106vb–110rb, fragmentary sanctoral ff. 110va–123vb.","checked_on":"2026-10-20","status":"inspected","limitations":"National catalogue's folio descriptions are not a complete independent collation; missing quires and calendar leaves prevent a whole-text claim."},
+    {"id":"northwest-round2:source-strangnas","title":"Usuarium book 104, Missale Strengnense","url":"https://usuarium.elte.hu/book/104/view","kind":"institutional-catalogue","inspection":"Read 1487 Ghotan and Stockholm Inkunabel 0734 fields, quoted colophon snippet and contents rows 2–276 on 2026-10-20.","checked_on":"2026-10-20","status":"inspected","limitations":"The original copy and complete colophon were not inspected; catalogue indexing only bounds represented contents."},
+    {"id":"northwest-round2:source-lund","title":"Usuarium book 45, Missale Lundense","url":"https://usuarium.elte.hu/book/45/view","kind":"institutional-catalogue","inspection":"Read 1514 Hopyl print identity, Copenhagen Hielmst. 43 2° shelfmark, 1946 facsimile identification and contents rows 10–560 on 2026-10-20.","checked_on":"2026-10-20","status":"inspected","limitations":"Indexed body uses a 1946 facsimile; no original-page collation or comparison with earlier Lund books was performed."},
+    {"id":"northwest-round2:source-uppsala","title":"Usuarium book 652, Missale secundum ritum ecclesiae Upsalensis","url":"https://usuarium.elte.hu/book/652/view","kind":"institutional-catalogue","inspection":"Read original title, Basel printer, 1513 age, Uppsala Sv. Rar. fol. 10:5 shelfmark and contents rows 2–209 on 2026-10-20.","checked_on":"2026-10-20","status":"inspected","limitations":"Original print images and 1484 predecessor were not compared, so indexed sections cannot substantiate a reform or immediate parentage."},
+    {"id":"northwest-round2:source-canterbury","title":"Usuarium book 224, Missale Cantuariense abbatiae sancti Augustini","url":"https://usuarium.elte.hu/book/224/view","kind":"institutional-catalogue","inspection":"Read manuscript age 1094–1095, Corpus Christi Cambridge MS 270 shelfmark and contents rows for Rule's 1896 edition on 2026-10-20; Ordinary, Canon, temporal and sanctoral are separately indexed.","checked_on":"2026-10-20","status":"inspected","limitations":"Page numbers are those of the 1896 critical edition; neither that publication nor its contents headings date original manuscript amendments."},
+    {"id":"northwest-round2:source-dublin","title":"Usuarium book 757, British Library Add. MS 24198","url":"https://usuarium.elte.hu/book/757/view","kind":"institutional-catalogue","inspection":"Read 1300–1325 manuscript dating, exact BL shelfmark, fol. 3r St Thomas near Dublin remark and indexed Mass/ceremonial contents on 2026-10-20.","checked_on":"2026-10-20","status":"inspected","limitations":"The St Thomas note names local association, not proof of general Dublin diocesan practice; original leaves remain uncollated."},
+    {"id":"northwest-round2:source-buckley","title":"Ann Buckley, Music in Medieval Ireland, A New History of Ireland I","url":"https://www.examenapium.it/cs/biblio/Buckley2005.pdf","kind":"scholarship","inspection":"Acquired 70-page PDF in scratch and read printed p. 785 plus n. 112 and p. 791 on 2026-10-20. It assigns Kilcormac missal to MS 82 ff. 1r–154v, reports f. 154 colophon naming 1458 copying, and distinguishes the separate c.1300 Irish Sarum antiphonal bound at ff. 156r–171v; SHA-256 15c6112bdc06e23c8dd38c66d6f472fdf389330cc65fb98e2581e399bddd9126.","checked_on":"2026-10-20","status":"inspected","limitations":"This is Buckley's report of the colophon and codicology, not direct examination of MS 82 images; printed modern PDF date does not date either medieval component."},
+    {"id":"northwest-round2:source-gw-roskilde","title":"Staatsbibliothek zu Berlin, Gesamtkatalog der Wiegendrucke M2439810","url":"https://www.gesamtkatalogderwiegendrucke.de/docs/M2439810.htm","kind":"institutional-catalogue","inspection":"Fetched and read GW exact incunable record on 2026-10-20. It lists Mainz Peter Schöffer c.1484, corrects old Missale Hafniense/Kopenhagen title to Missale Roschildense/Roskilde, identifies ISTC im00717700, and counts seven surviving copies/fragments including an 8-leaf Copenhagen digitization.","checked_on":"2026-10-20","status":"inspected","limitations":"Bibliographic attribution and copy census, not inspection of the original printed liturgical text; c.1484 is an estimated print date. Oslo holding alone does not prove Norway use."},
+    {"id":"northwest-round2:source-aarhus","title":"Aarhus Cathedral, En 600-årig hilsen fra Domkirken","url":"https://aarhusdomkirke.dk/dom-kunstvaerker-en-600-aarig-hilsen-fra-domkirken/","kind":"official-retrospective","inspection":"Read cathedral article paragraphs 1–6 on 2026-10-20: two manuscript Mass-book leaves dated 1350–1400 found in pulpit in 1955; one has de angelis chant, the other possibly preparation/Ordo with Aufer a nobis. The article says there is no complete Aarhus missal in the cathedral's possession.","checked_on":"2026-10-20","status":"inspected","limitations":"The second leaf's Ordo assignment is tentative; whether both leaves came from one codex is not established. Later pulpit reuse and the 1519 breviary do not date a Mass-book recension."}
+  ],
+  "stages": [
+    {
+      "id": "northwest-round2:westminster1384",
+      "tradition_id": "westminster-local-missal",
+      "label": "Litlyngton Missal for Westminster Abbey",
+      "date_label": "1383–1384 manuscript production",
+      "start_year": 1383,
+      "end_year": 1384,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Locally commissioned High Altar missal; the Abbey describes Mass instructions, readings and prayers.",
+      "components": [
+        "ordinary",
+        "propers",
+        "rubrics",
+        "lectionary"
+      ],
+      "witness_ids": [
+        "western:british-westminster-litlyngton"
+      ],
+      "witness_label": "Westminster Abbey MS 37, presently bound in two volumes",
+      "summary": "Abbot Nicholas Litlyngton commissioned this manuscript for the Abbey High Altar. The 1383–84 range dates the manuscript, not a general English reform.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "northwest-round2:source-abbey",
+          "locus": "Heading and Big picture paragraphs 1–3",
+          "claim": "Abbey identifies date, commission, local destination and Mass-book scope."
+        },
+        {
+          "source_id": "northwest-round2:source-abbey-library",
+          "locus": "Illuminated manuscripts and bibliography paragraphs",
+          "claim": "Abbey identifies MS 37 and separates the current two-volume binding from the three-volume modern edition."
+        }
+      ],
+      "limitations": "No before/after change or relation to a predecessor has been collated.",
+      "reception": "Commission for the Abbey High Altar is directly described; actual use in every Abbey service is not traced."
+    },
+    {
+      "id": "northwest-round2:arbuthnott1491",
+      "tradition_id": "arbuthnott-local-missal",
+      "label": "Arbuthnott manuscript missal",
+      "date_label": "1491 manuscript date as catalogued",
+      "start_year": 1491,
+      "end_year": 1491,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "A Scottish local manuscript Mass book associated with Arbuthnott and St Andrews, before direct folio collation.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:british-st-andrews-arbuthnott1491"
+      ],
+      "witness_label": "Arbuthnott Missal manuscript represented by University of St Andrews photographic negatives",
+      "summary": "The collection identifies the Arbuthnott Missal as a manuscript dated 1491; this dates the witness, not authorization of a diocese-wide change.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "northwest-round2:source-standrews",
+          "locus": "Collection title and description",
+          "claim": "Identifies the photographic subject as the 1491 Arbuthnott manuscript."
+        }
+      ],
+      "limitations": "The underlying original colophon and Mass texts were not inspected here; scope beyond the named manuscript remains unproved.",
+      "reception": "Its Arbuthnott association is evidenced at holding level; universal St Andrews reception is not."
+    },
+    {
+      "id": "northwest-round2:kilcormac-ms82",
+      "tradition_id": "irish-carmelite-kilcormac",
+      "label": "Kilcormac Carmelite missal component",
+      "date_label": "1458 missal copying, reported from fol. 154 colophon",
+      "start_year": 1458,
+      "end_year": 1458,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Mass-book portion of TCD MS 82 with music, labelled Irish Carmelite use by the holding library.",
+      "components": [
+        "propers",
+        "chant"
+      ],
+      "witness_ids": [
+        "western:british-kilcormac-tcd82"
+      ],
+      "witness_label": "Trinity College Dublin MS 82",
+      "summary": "The holding library labels MS 82 a Kilcormac Missal with Irish Carmelite use. Buckley reports a 1458 colophon for the Mass-book section and identifies the separately bound earlier Irish Sarum antiphonal.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "northwest-round2:source-tcd",
+          "locus": "Digitised Manuscripts list, MS 82 entry",
+          "claim": "Holding library identifies the manuscript as a Kilcormac missal with Irish Carmelite use and broad date."
+        },
+        {"source_id":"northwest-round2:source-buckley","locus":"Printed p. 785 and note 112; p. 791","claim":"Reports fol. 154 colophon dating missal copying to 1458; distinguishes ff. 1r–154v from earlier Irish Sarum antiphonal leaves bound with it."}
+      ],
+      "limitations": "1458 is a reported manuscript colophon date for the missal portion, not the date of the separately bound c.1300 antiphonal or a rite-wide change. Original fol. 154 was not directly inspected.",
+      "reception": "The catalogue's Irish Carmelite-use identification concerns this manuscript, not all Irish Carmelite houses."
+    },
+    {
+      "id": "northwest-round2:mission1626",
+      "tradition_id": "english-itinerant-mission",
+      "label": "Missale parvum for itinerant priests",
+      "date_label": "1626 printing as catalogued",
+      "start_year": 1626,
+      "end_year": 1626,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Small Latin Mass and sacramental book addressed to travelling priests in England, Scotland and Ireland.",
+      "components": [
+        "propers",
+        "ordinary",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:british-mission-1626"
+      ],
+      "witness_label": "BnF B-2693, Missale parvum, [Antwerp] 1626",
+      "summary": "The BnF title names the mission audience and includes a Mass book with an Order for administering sacraments. The bracketed Antwerp place is supplied catalogue metadata.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "northwest-round2:source-bnf-mission",
+          "locus": "FRBNF36817488 title, publication, copy fields",
+          "claim": "Identifies the 1626 printed witness, bounded contents and intended territories."
+        }
+      ],
+      "limitations": "Neither comparison to 1615/1623 prints nor actual distribution is established. The ritual material is distinct from the Mass-book scope.",
+      "reception": "Intended itinerant audience is in the title; actual use by named priests or missions remains unverified."
+    },
+    {
+      "id": "northwest-round2:odense1483",
+      "tradition_id": "odense-missal-prints",
+      "label": "Fragmentary 1483 Odense missal printing",
+      "date_label": "1483 print attribution",
+      "start_year": 1483,
+      "end_year": 1483,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Fragmentary Missale Ottoniense with indexed temporal, sanctoral, votive and sequence material.",
+      "components": [
+        "propers",
+        "chant"
+      ],
+      "witness_ids": [
+        "western:ottoniense-1483"
+      ],
+      "witness_label": "Landesarchiv Schleswig Abt. 400.6 Nr. 88 fragment of Lucas Brandis printing",
+      "summary": "Usuarium identifies a 1483 Odense missal by Lucas Brandis and explicitly calls this survivor a fragment.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "northwest-round2:source-odense1483",
+          "locus": "Book 433, bibliographic fields and contents rows 10–64",
+          "claim": "Identifies printing, shelfmark, fragmentary condition and bounded Mass components."
+        }
+      ],
+      "limitations": "Only the surviving fragment is indexed; complete book text and actual local distribution remain unknown.",
+      "reception": "Odense origin is catalogued; use at any particular church is unestablished."
+    },
+    {
+      "id": "northwest-round2:odense1501",
+      "tradition_id": "odense-missal-prints",
+      "label": "Fragmentary 1501 Missale Ottoniense Novum",
+      "date_label": "1501 print attribution",
+      "start_year": 1501,
+      "end_year": 1501,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Two surviving parchment pieces of an Odense Mass book printed by Matthäus Brandis.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:ottoniense-novum-1501"
+      ],
+      "witness_label": "Fragmentarium F-lcqd, Odense RARA Musik L 46",
+      "summary": "Fragmentarium's cataloguer assigns the print to Odense in 1501 and explains that Ribe 1504 is an older, superseded attribution.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "northwest-round2:source-odense1501",
+          "locus": "General Information; Current Condition; History, Remarks",
+          "claim": "Identifies the exact fragments, printer, date and attribution history."
+        }
+      ],
+      "limitations": "The fragments cannot substantiate a complete printed missal or a textual revision since 1483; the later host binding does not date liturgical use.",
+      "reception": "Catalogue judges Danish church use probable, perhaps Odense or a neighboring diocese; no exact church or date is established."
+    },
+    {
+      "id": "northwest-round2:hafniense1510",
+      "tradition_id": "copenhagen-missal-print",
+      "label": "1510 Copenhagen Missale Hafniense",
+      "date_label": "1510 Copenhagen imprint",
+      "start_year": 1510,
+      "end_year": 1510,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "One identifiable printed Mass book, Royal Library LN 179 2° copy 1.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:hafniense-1510"
+      ],
+      "witness_label": "Royal Library Copenhagen copy of Brandis 1510 print",
+      "summary": "The holding-library-contributed scan metadata supplies the Copenhagen Brandis 1510 imprint and 310-leaf copy identity.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "northwest-round2:source-hafniense1510",
+          "locus": "Publication, imprint, contributor, shelfmark and notes fields",
+          "claim": "Identifies one 1510 print and its surviving Royal Library copy."
+        }
+      ],
+      "limitations": "The original page images and earlier Roskilde print were not compared; title does not establish an independent Copenhagen diocesan rite.",
+      "reception": "Copenhagen imprint and holding do not by themselves prove use across a Copenhagen diocese."
+    },
+    {
+      "id": "northwest-round2:roskilde1522",
+      "tradition_id": "roskilde-mass-books",
+      "label": "1522 Canon secundum usum ecclesiae Roschildensis",
+      "date_label": "1522 Nyborg publication",
+      "start_year": 1522,
+      "end_year": 1522,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Canon of Mass, some Masses and Common of Saints explicitly named in the title.",
+      "components": [
+        "anaphoras",
+        "propers"
+      ],
+      "witness_ids": [
+        "western:roskilde-canon-1522"
+      ],
+      "witness_label": "Copenhagen Hielmst. 525 4° copy of Paulus Raeff print",
+      "summary": "The catalogued title identifies a Roskilde-use Canon and selected Mass material; it is a bounded component book.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "northwest-round2:source-roskilde1522",
+          "locus": "Book 870, Original title, Age, Printer, Shelfmark",
+          "claim": "Identifies scope and exact 1522 print witness."
+        }
+      ],
+      "limitations": "No complete annual missal, local reform or relation to the c.1484 Roskilde print follows from this title.",
+      "reception": "The title names Roskilde church use; circulation and implementation are unexamined."
+    },
+    {
+      "id": "northwest-round2:viborg1500",
+      "tradition_id": "viborg-missal-print",
+      "label": "1500 Viborg Liber missalis",
+      "date_label": "1500 print attribution",
+      "start_year": 1500,
+      "end_year": 1500,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Catalogued temporal, sanctoral, Ordinary, Canon, sequences and appended blessing sections.",
+      "components": [
+        "propers",
+        "ordinary",
+        "anaphoras",
+        "chant",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:viburgense-1500"
+      ],
+      "witness_label": "Riga Inc. 144, indexed by Usuarium book 47",
+      "summary": "Usuarium identifies an Arndes-printed Viborg missal and indexes the named Mass sections and appended blessings.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "northwest-round2:source-viborg1500",
+          "locus": "Book 47, identity fields and contents rows 4–235",
+          "claim": "Identifies the print, Riga copy and bounded book divisions."
+        }
+      ],
+      "limitations": "Catalogued age is not a read original colophon; the Riga original needs direct inspection before text or complete-book claims.",
+      "reception": "Viborg origin is catalogued; no parish-level use is established."
+    },
+    {
+      "id": "northwest-round2:schleswig1486",
+      "tradition_id": "schleswig-missal-print",
+      "label": "1486 Missale Slesvicense",
+      "date_label": "1486 Stephan Arndes printing",
+      "start_year": 1486,
+      "end_year": 1486,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Schleswig-church missal with catalogued calendar, Mass cycles, Ordinary, Canon, sequences and rubrics.",
+      "components": [
+        "calendar",
+        "propers",
+        "ordinary",
+        "anaphoras",
+        "chant",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:slesvicense-1486"
+      ],
+      "witness_label": "Copenhagen Hielmst. 41 2° copy 1, Usuarium book 46",
+      "summary": "The transcribed original title expressly names the Schleswig church's order and rite; the catalogue assigns Arndes and 1486.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "northwest-round2:source-schleswig1486",
+          "locus": "Book 46, Original title and contents rows 13–538",
+          "claim": "Identifies exact printing and bounded contents."
+        }
+      ],
+      "limitations": "Other Copenhagen copy records represent the same print. No separate 1512 Schleswig missal, textual revision or church-by-church reception is established.",
+      "reception": "Jurisdictional dedication appears in the title; local actual use remains untraced."
+    },
+    {
+      "id": "northwest-round2:danicum-ra4613",
+      "tradition_id": "danish-unassigned-notated-fragment",
+      "label": "Danish notated missal fragment RA 4613",
+      "date_label": "Fifteenth-century manuscript date range",
+      "start_year": 1400,
+      "end_year": 1500,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Fragment of a notated Mass book without named local jurisdiction.",
+      "components": [
+        "chant"
+      ],
+      "witness_ids": [
+        "western:danicum-notatum-1400s"
+      ],
+      "witness_label": "Statens Arkiver København RA 4613",
+      "summary": "Usuarium indexes RA 4613 as a Danish missal manuscript fragment dated 1400–1500.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "northwest-round2:source-danicum",
+          "locus": "Book 277, Origin, Age, Shelfmark and Remark fields",
+          "claim": "Identifies the fragment and its broad date without diocesan attribution."
+        }
+      ],
+      "limitations": "The period is manuscript-date uncertainty, not a century of use; the fragment is not assigned to any Danish diocesan lane.",
+      "reception": "No local use beyond the catalogue's country-level origin is asserted."
+    },
+    {
+      "id": "northwest-round2:iceland1250",
+      "tradition_id": "icelandic-nidaros-fragment",
+      "label": "Icelandic Nidaros-use breviary-missal leaves",
+      "date_label": "Circa 1250 manuscript copying",
+      "start_year": 1250,
+      "end_year": 1250,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Five leaves from a portable combined Mass and Office book, including named August feast materials.",
+      "components": [
+        "propers",
+        "chant",
+        "lectionary"
+      ],
+      "witness_ids": [
+        "western:cold-nidaros-icelandic1250"
+      ],
+      "witness_label": "University of Bergen virtual Icelandic Breviary-Missal",
+      "summary": "Bergen describes five surviving leaves with Mass and Office material and Nidaros use, copied around 1250 in Iceland or by an Icelandic scribe in Norway.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "northwest-round2:source-iceland1250",
+          "locus": "The Icelandic Breviary-Missal, Origin and two descriptive paragraphs",
+          "claim": "Identifies leaf count, contents, date uncertainty and Nidaros-use attribution."
+        }
+      ],
+      "limitations": "The positioned year follows the existing candidate coordinate for circa 1250, not a demonstrated exact copying date. Lost leaves and their contents are not reconstructed.",
+      "reception": "Icelandic association and Nidaros use are described; copying place and exact church of use are unresolved."
+    },
+    {
+      "id": "northwest-round2:scardense",
+      "tradition_id": "icelandic-scardense-missal",
+      "label": "Missale Scardense surviving manuscript",
+      "date_label": "1450–1478 scholarly copying range",
+      "start_year": 1450,
+      "end_year": 1478,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "65 surviving leaves of a Skarð missal; inspected research names Easter Introit and identified scribal portions.",
+      "components": [
+        "propers",
+        "chant"
+      ],
+      "witness_ids": [
+        "western:cold-iceland-scardense"
+      ],
+      "witness_label": "AM Acc. 7 Hs 1 plus identified dispersed leaves",
+      "summary": "Kristjánsdóttir dates the manuscript to 1450–1478 and identifies its 65 surviving leaves; Ingólfsson distinguishes it from the Gufudal gradual.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "northwest-round2:source-scardense",
+          "locus": "§6.1, printed p. 172, opening paragraph and note 52",
+          "claim": "Identifies manuscript, dating, surviving leaf count and Easter Introit example."
+        },
+        {
+          "source_id": "northwest-round2:source-iceland-repertoire",
+          "locus": "Printed p. 292 and fragment table following p. 293",
+          "claim": "Corroborates separate Scardense leaves and dispersed companions."
+        }
+      ],
+      "limitations": "Modern reconstructed leaf membership and scribal date are not a complete manuscript or a dated liturgical reform; no full text is collated.",
+      "reception": "The name locates association with Skarð; actual liturgical service dates are unknown."
+    },
+    {
+      "id": "northwest-round2:gufudal",
+      "tradition_id": "icelandic-gufudal-gradual",
+      "label": "Graduale Gufudalense Mass-chant leaves",
+      "date_label": "Likely 1450–1470 manuscript copying",
+      "start_year": 1450,
+      "end_year": 1470,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "37 surviving leaves of a Mass gradual, chiefly AM Acc. 7 Hs 2 with other identified leaves.",
+      "components": [
+        "chant"
+      ],
+      "witness_ids": [
+        "western:cold-iceland-gufudalense"
+      ],
+      "witness_label": "AM Acc. 7 Hs 2, AM 266 4to and one leaf in a later book binding",
+      "summary": "Ingólfsson assigns the separate Gufudal gradual to likely 1450–1470 copying and maps 37 surviving leaves.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "northwest-round2:source-iceland-repertoire",
+          "locus": "Printed p. 293, first paragraph and fragment table",
+          "claim": "Identifies gradual, date range and separate physical fragments."
+        }
+      ],
+      "limitations": "The 1723 host-book title dates later reuse, not this gradual; chant coverage is fragmentary and no whole missal is claimed.",
+      "reception": "The Gufudal association is scholarly; use at that church on a precise date is unverified."
+    },
+    {
+      "id": "northwest-round2:nordfjord",
+      "tradition_id": "bergen-nordfjord-fragment",
+      "label": "French-origin Nordfjord Mass leaf with probable Bergen reception",
+      "date_label": "First half of twelfth century manuscript production",
+      "start_year": 1100,
+      "end_year": 1150,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "One surviving leaf with Easter Tuesday/Wednesday Mass prayers and chants, later reused in a Nordfjord document.",
+      "components": [
+        "propers",
+        "lectionary",
+        "chant"
+      ],
+      "witness_ids": [
+        "western:cold-bergen-nordfjord"
+      ],
+      "witness_label": "University of Bergen UBB MS 1550.5",
+      "summary": "Bergen identifies a French-origin fragment and separates its possible medieval Bergen-area use from documented reuse in a 1570 Nordfjord diploma.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "northwest-round2:source-nordfjord",
+          "locus": "Description, History/Origin, contents for third and fourth Easter days, related diploma date",
+          "claim": "Identifies exact leaf, Mass scope, production attribution, possible reception and later reuse."
+        }
+      ],
+      "limitations": "French production is an attribution and Bergen use is probable in the holding account. The 1570 diploma proves survival/reuse, not celebration of Mass then.",
+      "reception": "Possible medieval Bergen-area use is reported as Gjerløw's attribution; no local church, adoption act or exact use year is established."
+    },
+    {"id":"northwest-round2:skara1150","tradition_id":"skara-cathedral-missal","label":"Twelfth-century Missale Scarense","date_label":"1150s manuscript copying, municipal-library dating","start_year":1150,"end_year":1159,"date_kind":"attestation","status":"documented","scope":"Skara missal manuscript, with the musical portion exhibited by its holding library.","components":["propers","chant"],"witness_ids":["western:skara-missal-c1150"],"witness_label":"Skara diocesan and county library Missale Scarense","summary":"The holding locality dates its manuscript to the 1150s and reports medieval cathedral use; English import remains a belief, not a directed ancestry claim.","text_coverage":"not-transcribed","evidence":[{"source_id":"northwest-round2:source-skara","locus":"Skaramissalet, opening paragraphs and Att se/Läsa missalet sections","claim":"Holding library identifies manuscript, date, Skara cathedral association and modern digital/facsimile routes."}],"limitations":"The existing inventory's c.1150 coordinate and the library's 1150s range are approximate dating formulations, not duration of use. No original image collation or English-exemplar link is supplied.","reception":"Municipal library reports medieval Skara cathedral use, without a precise service date or adoption act."},
+    {"id":"northwest-round2:linkoping-a97","tradition_id":"linkoping-a97-missal","label":"KB A 97 Linköping secular missal","date_label":"Second half of fifteenth century manuscript copying","start_year":1450,"end_year":1499,"date_kind":"attestation","status":"documented","scope":"Two manuscript units with July–December calendar fragment, temporal, Ordo and Canon, and incomplete sanctoral.","components":["calendar","propers","ordinary","anaphoras","chant","rubrics"],"witness_ids":["western:linkoping-a97"],"witness_label":"National Library of Sweden A 97, 124 leaves","summary":"The national manuscript catalogue identifies A 97 as a secular Linköping missal and gives exact component folios and missing leaves; its two units are one surviving object, not two dated recensions.","text_coverage":"not-transcribed","evidence":[{"source_id":"northwest-round2:source-linkoping","locus":"Header and Contents Unit 1 ff. 1r–3v, Unit 2 ff. 4rb–123vb; Collation and Condition","claim":"Identifies date, two-unit structure, Mass sections, notated chants and losses."}],"limitations":"The first three calendar leaves, one temporal bifolium and much of the sanctoral are missing; blanks in the present copy cannot prove absent historical observances.","reception":"The holding catalogue identifies secular Linköping use; no particular parish's possession or date of reception is established."},
+    {"id":"northwest-round2:strangnas1487","tradition_id":"strangnas-print","label":"1487 Missale Strengnense","date_label":"1487 Ghotan printing","start_year":1487,"end_year":1487,"date_kind":"publication","status":"documented","scope":"Strängnäs print with indexed calendar, Mass cycles, Ordinary, Canon and sequences.","components":["calendar","propers","ordinary","anaphoras","chant","rubrics"],"witness_ids":["western:strengnense-1487"],"witness_label":"National Library of Sweden Inkunabel 0734","summary":"Usuarium assigns the Strängnäs missal to Bartholomaeus Ghotan in 1487 and names a Stockholm holding; its quoted colophon describes a print run, not a promulgating act.","text_coverage":"not-transcribed","evidence":[{"source_id":"northwest-round2:source-strangnas","locus":"Book 104, identity, Remark and contents rows 2–276","claim":"Identifies exact print and bounded Mass-book components."}],"limitations":"The catalogue colophon excerpt and indexed contents are not an original-page collation. Neither original print run nor substantive relation to other Swedish books is independently verified here.","reception":"Strängnäs destination is catalogued; individual-church use remains untraced."},
+    {"id":"northwest-round2:lund1514","tradition_id":"lund-print","label":"1514 Missale Lundense","date_label":"1514 Paris printing","start_year":1514,"end_year":1514,"date_kind":"publication","status":"documented","scope":"Lund missal as indexed through an identified 1946 facsimile of the Hopyl print.","components":["calendar","propers","ordinary","anaphoras","rubrics"],"witness_ids":["western:lundense-1514"],"witness_label":"Copenhagen Hielmst. 43 2° print represented by 1946 facsimile","summary":"Usuarium identifies the 1514 Lund print, original holding and later facsimile separately; its contents include Mass cycles, Ordinary and Canon.","text_coverage":"not-transcribed","evidence":[{"source_id":"northwest-round2:source-lund","locus":"Book 45, identity fields, Edition and contents rows 10–560","claim":"Identifies the historical print and modern delivery edition without dating the book to 1946."}],"limitations":"The facsimile's order of pp. 538–560 is flagged as incorrect by the catalogue; original leaves and earlier Lund books remain uncollated.","reception":"Lund designation is bibliographic; local implementation cannot be inferred from the holding alone."},
+    {"id":"northwest-round2:uppsala1513","tradition_id":"uppsala-1513-print","label":"1513 Missale Upsalense","date_label":"1513 Basel printing","start_year":1513,"end_year":1513,"date_kind":"publication","status":"documented","scope":"Uppsala-rite print with catalogued calendar, temporal, Ordinary, Canon, sanctoral and votive material.","components":["calendar","propers","ordinary","anaphoras","rubrics"],"witness_ids":["western:upsalense-novum-1513"],"witness_label":"Uppsala University Library Sv. Rar. fol. 10:5","summary":"The title transcribed by Usuarium expressly names the Uppsala church's rite; the 1513 Basel printing is a bounded book state.","text_coverage":"not-transcribed","evidence":[{"source_id":"northwest-round2:source-uppsala","locus":"Book 652, original title, age, printer, shelfmark and contents rows 2–209","claim":"Identifies Uppsala-use printing and its indexed Mass components."}],"limitations":"No 1484 print is linked as immediate parent, and no before/after Uppsala revision is asserted from bibliographic succession.","reception":"Title identifies intended Uppsala rite; actual adoption across the diocese is unexamined."},
+    {"id":"northwest-round2:canterbury1095","tradition_id":"canterbury-augustine-missal","label":"St Augustine's Canterbury manuscript missal","date_label":"1094–1095 manuscript dating","start_year":1094,"end_year":1095,"date_kind":"attestation","status":"documented","scope":"CCCC MS 270 manuscript with catalogued Ordinary, Canon, temporal and sanctoral Mass material.","components":["ordinary","anaphoras","propers"],"witness_ids":["western:british-canterbury-cccc270"],"witness_label":"Corpus Christi College Cambridge MS 270","summary":"Usuarium links the 1094–95 Canterbury abbey manuscript to CCCC 270 and separately identifies Rule's 1896 edition used for indexed contents.","text_coverage":"not-transcribed","evidence":[{"source_id":"northwest-round2:source-canterbury","locus":"Book 224, manuscript identity and contents rows 201–367 of Rule edition","claim":"Identifies original manuscript's age and holding, and bounded represented Mass-book components."}],"limitations":"Edition page numbers are modern; no original folio or textual comparison establishes a 1090s liturgical reform.","reception":"The abbey association is catalogued for this manuscript only; wider Canterbury diocesan use is not inferred."},
+    {"id":"northwest-round2:dublin-add24198","tradition_id":"dublin-add24198-missal","label":"Dublin associated BL Add. MS 24198","date_label":"1300–1325 manuscript dating","start_year":1300,"end_year":1325,"date_kind":"attestation","status":"documented","scope":"Mass manuscript with Canon, Ordinary, Mass cycles, votives, sequences and an abbot blessing tied to St Thomas near Dublin.","components":["anaphoras","ordinary","propers","chant"],"witness_ids":["western:british-dublin-add24198"],"witness_label":"British Library Add. MS 24198","summary":"Usuarium identifies this manuscript and dates it 1300–1325; its indexed fol. 3r names the church of St Thomas the Martyr near Dublin in an abbot blessing.","text_coverage":"not-transcribed","evidence":[{"source_id":"northwest-round2:source-dublin","locus":"Book 757, age/shelfmark, fol. 3r remark and contents rows 3–268","claim":"Identifies the exact manuscript and local association while distinguishing Mass and other rites."}],"limitations":"The abbot blessing's local label does not demonstrate that the whole manuscript is an independent Dublin recension. Original folios are uncollated.","reception":"A St Thomas near Dublin association is reported, with no proof of adoption throughout the city or diocese."},
+    {"id":"northwest-round2:roskilde1484","tradition_id":"roskilde-mass-books","label":"Circa 1484 Roskilde missal print","date_label":"Circa 1484 Mainz printing attribution","start_year":1484,"end_year":1484,"date_kind":"publication","status":"documented","scope":"One identified incunable missal edition with fragmentary surviving copies; no entire Mass text is claimed.","components":["propers"],"witness_ids":["western:roscildense-c1484"],"witness_label":"GW M2439810 / ISTC im00717700, Peter Schöffer incunable","summary":"The GW record explicitly corrects older Missale Hafniense attribution to Roskilde for this same Mainz c.1484 printing. Copenhagen, Oslo and other fragments are copies of that edition, not separately dated recensions.","text_coverage":"not-transcribed","evidence":[{"source_id":"northwest-round2:source-gw-roskilde","locus":"GW M2439810 title, Anm., reproductions and holdings paragraphs","claim":"Identifies one c.1484 incunable, corrected Roskilde attribution, older Hafniense alias and fragmentary survivors."}],"limitations":"The estimated year is not a promulgation date. No original liturgical page was collated; an Oslo-held fragment does not establish use in Norway, and the 1522 Canon has no inferred textual parentage from this edition.","reception":"Roskilde destination is a bibliographic correction; actual church-by-church use remains unverified."},
+    {"id":"northwest-round2:aarhus-leaves","tradition_id":"aarhus-missal-leaves","label":"Two Aarhus Cathedral Mass-book leaves","date_label":"1350–1400 estimated manuscript-leaf date","start_year":1350,"end_year":1400,"date_kind":"attestation","status":"documented","scope":"Two notated leaves: one de angelis Mass chant and one tentatively assigned to preparation/Ordo of Mass.","components":["chant","ordinary"],"witness_ids":["western:aarhus-missal-leaves"],"witness_label":"Aarhus Cathedral leaves found reused in the pulpit","summary":"The cathedral dates the leaves to 1350–1400 and describes their liturgical content; they are one unresolved fragment group, not a demonstrated complete Missale Arosiense.","text_coverage":"not-transcribed","evidence":[{"source_id":"northwest-round2:source-aarhus","locus":"Article paragraphs 1–6, especially de angelis and Aufer a nobis descriptions","claim":"Identifies two leaves, estimated date, bounded content and 1955 rediscovery."}],"limitations":"Same-codex origin is unproved; the second leaf's Ordo attribution is qualified by the source. Pulpit reuse date and 1519 breviary do not date this Mass-book state.","reception":"Cathedral possession of reused leaves is documented; their original local celebration context is not."}
+  ],
+  "transitions": [],
+  "gaps": [
+    {
+      "id": "northwest-round2:british-local-gaps",
+      "tradition_id": "westminster-local-missal",
+      "period": "Medieval Britain and Ireland beyond the recorded local books",
+      "missing": "Direct source-page collation for other catalogued Aberdeen, Canterbury, Durham, Exeter, Lincoln, Winchester, Worcester, Dublin and Winchcombe candidates; layered dates and precise local reception.",
+      "next_source": "Read original manuscript folios and holding catalogues for the exact western inventory IDs, then compare named Mass components, especially annotated calendars and Ordinaries.",
+      "consequence": "No composite British discovery group becomes one rite, and no uninspected local change is encoded."
+    },
+    {
+      "id": "northwest-round2:irish-layer-gap",
+      "tradition_id": "irish-carmelite-kilcormac",
+      "period": "TCD MS 82 manuscript layers",
+      "missing": "Direct folio-level check of the reported 1458 colophon, Carmelite Mass portion and distinct c.1300 antiphonal section.",
+      "next_source": "TCD MS 82 digital object and codicological description, especially ff. 1r–154v and 156r–171v.",
+      "consequence": "A broad manuscript date and bounded Mass scope are retained without fabricating a single-date composite."
+    },
+    {
+      "id": "northwest-round2:danish-print-gap",
+      "tradition_id": "odense-missal-prints",
+      "period": "1483–1522 Danish printed witnesses",
+      "missing": "Direct print-image collation of Odense, Roskilde, Copenhagen and Viborg Mass components and original title/colophon verification for several copies; physical check whether the two Aarhus leaves belong to one codex.",
+      "next_source": "Compare original pages of Usuarium 433, Fragmentarium F-lcqd, Royal Library LN 179, Usuarium 47 and 870, plus the Copenhagen fragment linked by GW M2439810; inspect both Aarhus Cathedral leaves.",
+      "consequence": "Publication sequence remains bibliographic; no textual revision or shared textual parent is asserted."
+    },
+    {
+      "id": "northwest-round2:roskilde1484-gap",
+      "tradition_id": "roskilde-mass-books",
+      "period": "Circa 1484 Roskilde print",
+      "missing": "Original liturgical-page inspection and exact fragment concordance for the c.1484 edition; the 74-image Copenhagen scan was inaccessible in this pass.",
+      "next_source": "Inspect the Royal Library fragment linked by GW M2439810 and compare its printed contents with the 1522 Canon's original leaves.",
+      "consequence": "The two identified book states remain unlinked; an older Hafniense alias does not create a second c.1484 edition."
+    },
+    {
+      "id": "northwest-round2:iceland-extra-gap",
+      "tradition_id": "icelandic-scardense-missal",
+      "period": "Fourteenth–sixteenth century Icelandic Mass witnesses",
+      "missing": "Original leaf collation for Scardense, Gufudal, Þorlákr Mass items, Magnus supplement and fragment-group candidates; exact local use and textual relations.",
+      "next_source": "AM Acc. 7 Hs 1–2 images, AM 241a II fol., AM 98 II 8°, and the Icelandic fragment repertoire with physical leaf concordance.",
+      "consequence": "A reused leaf, supplement or later Árni Magnússon copy is not promoted into a separate medieval recension."
+    },
+    {
+      "id": "northwest-round2:norway-reception-gap",
+      "tradition_id": "bergen-nordfjord-fragment",
+      "period": "Twelfth-century production to sixteenth-century reuse",
+      "missing": "Direct evidence of Bergen church use and identification of other Norwegian-local Mass leaves; Nordland/Vesterålen reused fragments need their own inventory candidate.",
+      "next_source": "UBB MS 1550.5 image and Gjerløw 1970 pp. 102–104, 111; University of Bergen virtual missal fragment described at https://fragment.uib.no/no/?id=25716&k=4639.",
+      "consequence": "French-origin fragment and Norwegian archival reuse do not prove a continuous local liturgical recension or an adoption date."
+    },
+    {"id":"northwest-round2:swedish-sequence-gap","tradition_id":"uppsala-1513-print","period":"Twelfth–sixteenth-century Swedish Mass-book witnesses","missing":"Original-image comparison of early and late Uppsala prints, Skara and Linköping manuscripts, Strängnäs and Lund prints, and separate notated graduals; dates of component changes and local reception.","next_source":"Inspect the existing western candidates for c.1484 Uppsala, 1493 Arosiense gradual, UUB C 415 and other Linköping layers, and original print leaves for Usuarium 45, 104 and 652.","consequence":"Distinct bibliographic witnesses remain separate states without invented common rite, manuscript-to-print revision or reception links."}
+  ]
+}

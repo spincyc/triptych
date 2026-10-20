@@ -1,0 +1,510 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-stages",
+  "dossier_id": "other-orders",
+  "title": "Other Western religious orders: bounded missal and proper witnesses",
+  "traditions": [
+    {
+      "id": "osa-hermits-round2",
+      "label": "Augustinian Hermits (OSA)",
+      "family": "latin",
+      "scope": "Order-labelled Latin missal and Mass proper witnesses, distinct from Augustinian Canons Regular and Recollect translations.",
+      "coverage_note": "The early printing has conflicting bibliographic and colophon years; the directly seen 1926 book is a proper of Mass and Office. Neither supplies a continuous OSA missal sequence."
+    },
+    {
+      "id": "mercedarian-round2",
+      "label": "Order of Mercy (Mercedarians)",
+      "family": "latin",
+      "scope": "Mercedarian whole-missal bibliography and a separately approved Latin Mass proper.",
+      "coverage_note": "The 1560 Barcelona missal is an incomplete surviving copy, while the 1976 approval concerns only a proper. Intervening witnesses and text are not collated."
+    },
+    {
+      "id": "servite-round2",
+      "label": "Servite Order",
+      "family": "latin",
+      "scope": "The medieval Servite-use manuscript and the two complementary 1972 Latin Mass-proper volumes.",
+      "coverage_note": "The medieval codex is Roman Curia use for Servite friars. Its additions and the 1998 second typical edition need original-page review."
+    },
+    {
+      "id": "trinitarian-round2",
+      "label": "Order of the Most Holy Trinity (Trinitarians)",
+      "family": "latin",
+      "scope": "Mixed medieval Mass-book witness, a catalogued printed missal, and an approved modern proper, with their different evidence classes preserved.",
+      "coverage_note": "The manuscript Mass folios and 1529 printing remain uninspected; the 1975 official approval establishes a proper, not a complete missal."
+    },
+    {
+      "id": "hospitaller-round2",
+      "label": "Hospitaller Order of Saint John of Jerusalem, Rhodes and Malta",
+      "family": "latin",
+      "scope": "A corrected 1553 printed-missal catalogue identity and the 1987 Latin proper with lectionary.",
+      "coverage_note": "The owning BnF catalogue rejects the former 1551 date for its B-320 copy. The medieval local books and later 2005 proper remain without a checked original-text sequence."
+    },
+    {
+      "id": "ocso-round2",
+      "label": "Cistercians of the Strict Observance (OCSO)",
+      "family": "latin",
+      "scope": "The OCSO order's postconciliar Cistercian saint proper and its relation to the Roman Missal base, kept distinct from the older shared Cistercian missal history.",
+      "coverage_note": "The order's official liturgy page dates proper-prayer approval to 1983; original decrees, Latin edition, and house-level reception remain open."
+    }
+  ],
+  "sources": [
+    {
+      "id": "other-orders:osa1496",
+      "title": "Missale Ordinis Fratrum Eremitarum Sancti Augustini de observantia, BSB 2 Inc.c.a. 2591",
+      "url": "https://api.digitale-sammlungen.de/iiif/presentation/v3/bsb00032995/manifest",
+      "kind": "primary-book",
+      "inspection": "The source inventory reports BSB canvas 565 directly inspected for its 1496 colophon and the opening's Roman Curia order; BSB manifest metadata identifies shelfmark, 256 leaves and conflicting 1491 catalogue date. These identified leaves are used only at that extent.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The 1491/1496 conflict has not been reconciled against printer records or another copy. BSB marks the images Public Domain, but no scan or text is retained in this dossier."
+    },
+    {
+      "id": "other-orders:osa1926",
+      "title": "Proprium missarum et Officiorum Ordinis Eremitarum Sancti Augustini (1926)",
+      "url": "https://media.churchmusicassociation.org/pdf/augustinian/OSA_Proper_complete_1926.pdf",
+      "kind": "primary-book",
+      "inspection": "Existing dated inventory review acquired the 252-page PDF and inspected PDF pp. 1–2: order title and Prior General publication formula, 5 August 1926 concordance certificate and separate 9 August Tournai imprimatur.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Mass and Office proper, not a complete missal. Rights to the host's scan or transcription have not been affirmed for redistribution; only metadata and limited findings are recorded."
+    },
+    {
+      "id": "other-orders:merced1560",
+      "title": "USUARIUM 8574, ACA Barcelona XXVI.1.1, Mercedarian missal (1560)",
+      "url": "https://usuarium.elte.hu/book/8574/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Existing dated inventory review inspected the book metadata and contents table identifying the incomplete 1560 missal and a separately bound proper at images 579–609 dated 1641.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Original title, body and missing final folios have not been seen; the 1641 supplement must not be dated 1560. USUARIUM page access requires approval and its dataset requests attribution."
+    },
+    {
+      "id": "other-orders:merced1976",
+      "title": "Sacred Congregation for Divine Worship, Mercedarian proper confirmation, Notitiae 14 (1978)",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-14-%281978%29/Notitiae-143-144-1978.pdf",
+      "kind": "primary-act",
+      "inspection": "Official journal entry inspected in the existing dated research packet at printed pp. 289–290: Latin Proprium Missarum confirmation dated 1 July 1976, protocol CD 268/76; 1976 publication distinguished from 1977 Italian and Spanish versions.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Approval notice and publication statement only. The complete Latin proper, approval text and reception by individual houses are not acquired."
+    },
+    {
+      "id": "other-orders:servite505",
+      "title": "BAV Pal. lat. 505, Missale Romanum ad usum fratrum Servorum Mariae",
+      "url": "https://digi.ub.uni-heidelberg.de/diglit/bav_pal_lat_505",
+      "kind": "institutional-catalogue",
+      "inspection": "Heidelberg manuscript description and BAV IIIF metadata reviewed in the existing dated inventory: southwestern German manuscript, second half of the fourteenth century; main missal ff. 1ra–321rb and later Mass additions ff. 321rb–322v. Two BAV images were acquired in that review.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The original Mass folios and added formulary layer have not been read through. BAV images assert copyright; this dossier retains no image bytes."
+    },
+    {
+      "id": "other-orders:servite1971",
+      "title": "Sacred Congregation for Divine Worship, Servite calendar and Mass proper confirmations, Notitiae 9 (1973)",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-09-%281973%29/Notitiae-085-1973.pdf",
+      "kind": "primary-act",
+      "inspection": "Official entry inspected in the existing dated inventory at printed pp. 284–286/PDF pp. 41–43: 6 February 1971 calendar confirmation and 1 October 1971 Mass proper approval are separate acts.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The act summary does not provide the complete proper text, establish dates of house use or prove a whole-missal recension."
+    },
+    {
+      "id": "other-orders:servite1972",
+      "title": "Notitiae 11 (1975), bibliography of the 1972 Servite Proprium Missarum",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-11-%281975%29/Notitiae-103-1975.pdf",
+      "kind": "institutional-catalogue",
+      "inspection": "Official journal bibliography inspected in existing dated inventory: Rome 1972, volume I Antiphonale Sacramentarium and volume II Lectionarium.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Original volumes, full contents and precise relationship between the 1971 decree and printed editions remain uncollated."
+    },
+    {
+      "id": "other-orders:trinitarian1529",
+      "title": "USUARIUM 2548 and ARCA Provins Impr. XVI a 8, Trinitarian missal (1529)",
+      "url": "https://usuarium.elte.hu/book/2548/view",
+      "kind": "institutional-catalogue",
+      "inspection": "The existing dated inventory checked USUARIUM title, 1529 print metadata and contents index through colophon p. 551; ARCA identifies the same Provins copy as 272 folios with 279 digital views.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Both catalogues may depend on one copy. Original title, colophon and Mass text were not available; the catalogue year is not evidence of a reform or reception."
+    },
+    {
+      "id": "other-orders:trinitarian1975",
+      "title": "Sacred Congregation for Divine Worship, Trinitarian proper confirmations, Notitiae 11 (1975)",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-11-%281975%29/Notitiae-111-112-1975.pdf",
+      "kind": "primary-act",
+      "inspection": "Official journal printed p. 343/PDF p. 60 inspected in dated regional permission review: Latin Mass and Hours proper confirmed 18 October 1975, protocol CD 172/75; Vincent Grossi Mass recorded separately 27 October, protocol CD 400/75.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "An approval summary, not the complete proper or a whole Trinitarian missal. Individual-house use and earlier proper comparison remain unestablished."
+    },
+    {
+      "id": "other-orders:hosp1553",
+      "title": "BnF catalogue cb36827961c, Hospitaller missal B-320 (Lyon, 1553)",
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb36827961c",
+      "kind": "institutional-catalogue",
+      "inspection": "Owning BnF catalogue checked in the dated Hospitaller review: title, 1553 Lyon heirs of Jacques Giunta imprint, B-320 item, [22]-CCCLXXIIII leaves and explicit correction of B-320's former 1551 date.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "No original folio inspected. A 1551 edition remains unproved, and other catalogue routes may describe another copy; no revised text or reprint relation is inferred."
+    },
+    {
+      "id": "other-orders:hosp1987",
+      "title": "Sacred Congregation for Divine Worship, Hospitaller proper confirmation, Notitiae 23 (1987)",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-23-%281987%29/Notitiae-255-1987.pdf",
+      "kind": "primary-act",
+      "inspection": "Official journal printed p. 1038/PDF p. 34 inspected in dated Hospitaller review: 4 July 1987 Latin Proprium Missarum confirmation, protocol 839/87. DLI record 19078 separately identifies the 1987 Latin editio typica with lectionary, Rome, 136 pages.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The notice names the Mass proper, not expressly the companion lectionary's approval extent. The original book and complete text are unacquired; scan or modern editorial rights are unresolved."
+    },
+    {
+      "id": "other-orders:ocso1983",
+      "title": "OCSO, Liturgy: Missal and Cistercian proper",
+      "url": "https://www.ocso.org/resources/liturgy/",
+      "kind": "official-retrospective",
+      "inspection": "Order page directly read on 2026-10-20, Missal paragraph: prayers for Mass and Divine Office proper of Cistercian calendar approved for use in 1983, with later saints added. History and Calendar paragraphs distinguish older shared Cistercian liturgy and postconciliar variations.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The page does not identify a dated original decree, first Latin printing, precise text or every subsequent addition. It supplies no complete OCSO missal independent of the Roman base."
+    },
+    {
+      "id": "other-orders:ocso-norms",
+      "title": "OCSO, General Norms for the Liturgy of the Order",
+      "url": "https://ocso.org/download-attachment/24078",
+      "kind": "primary-act",
+      "inspection": "The dated regional-permissions review inspected sections I.B, III.A.1 and III.D, PDF pp. 1–2, 11–12 and 15: the Roman Missal base, four listed Cistercian ceremonial customs, monastery calendar and bounded regional prayer options. It cites the Roman reply of 8 June 1971, protocol 525/70.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The original 1971 Roman reply, exact regional approvals and actual monastery choices have not been inspected. Operative norms are not a separate whole-missal edition."
+    }
+  ],
+  "stages": [
+    {
+      "id": "other-orders:osa-early-print",
+      "tradition_id": "osa-hermits-round2",
+      "label": "OSA observance missal, conflicting 1491/1496 dates",
+      "date_label": "BSB catalogue 1491; printed colophon 1496",
+      "start_year": null,
+      "end_year": null,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Order-labelled Latin whole missal in Roman Curia order; title and colophon evidence only.",
+      "components": [
+        "ordinary",
+        "propers"
+      ],
+      "witness_ids": [
+        "western:additional-orders-osa-1491"
+      ],
+      "witness_label": "BSB 2 Inc.c.a. 2591, Missale Ordinis Fratrum Eremitarum Sancti Augustini de observantia",
+      "summary": "The book is an Augustinian Hermits observance missal; its colophon and library catalogue disagree on publication year.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "other-orders:osa1496",
+          "locus": "BSB IIIF canvas 565 colophon; manifest Date and shelfmark metadata",
+          "claim": "The printed colophon reads 1496 while the catalogue assigns 1491 to the identified copy."
+        }
+      ],
+      "limitations": "No coordinate is supplied until the date conflict is resolved. Title and opening do not establish an independent rite or textual relation to Roman and later OSA books.",
+      "reception": "An intended order-use title, without a named house's adoption record."
+    },
+    {
+      "id": "other-orders:osa-1926-proper",
+      "tradition_id": "osa-hermits-round2",
+      "label": "1926 OSA Mass and Office proper",
+      "date_label": "1926 printing; 5 August concordance certificate",
+      "start_year": 1926,
+      "end_year": 1926,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Order proper for Mass and Office, not a whole missal.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:additional-orders-osa-1926"
+      ],
+      "witness_label": "Proprium missarum et Officiorum Ordinis Eremitarum Sancti Augustini, 1926",
+      "summary": "The printed title names a Prior General's order, and the following leaf certifies agreement with an approved original. Neither leaf dates a new textual revision.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "other-orders:osa1926",
+          "locus": "PDF pp. 1–2, title, 5 August certificate and 9 August imprimatur",
+          "claim": "The 1926 publication is an OSA Mass and Office proper with an edition-concordance certificate."
+        }
+      ],
+      "limitations": "Mass contents and relation to the 1674, 1715, 1965 and 2006 proper leads remain uncollated; no transition is drawn.",
+      "reception": "The order edition formula indicates intended use, not a census of local implementation."
+    },
+    {
+      "id": "other-orders:merced-1560",
+      "tradition_id": "mercedarian-round2",
+      "label": "1560 Mercedarian whole-missal witness",
+      "date_label": "1560 catalogue publication year",
+      "start_year": 1560,
+      "end_year": 1560,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "The surviving ACA Barcelona missal, missing its last folios; the later bound proper is excluded.",
+      "components": [
+        "ordinary",
+        "propers"
+      ],
+      "witness_ids": [
+        "western:additional-orders-merced-1560"
+      ],
+      "witness_label": "Missale secundum consuetudinem Ordinis de Mercede, ACA XXVI.1.1",
+      "summary": "The catalogue identifies a 1560 order-use missal and separately lists a 1641 proper booklet bound with it.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "other-orders:merced1560",
+          "locus": "USUARIUM book 8574 metadata and contents images 579–609",
+          "claim": "The 1560 missal and 1641 bound proper are distinct bibliographic objects."
+        }
+      ],
+      "limitations": "Original leaves and missing extent uninspected; no specific prayer or rubric can be attributed to this printing from the catalogue alone.",
+      "reception": "The title claims order use; no house reception is checked."
+    },
+    {
+      "id": "other-orders:merced-1976-proper",
+      "tradition_id": "mercedarian-round2",
+      "label": "1976 Latin Mercedarian Mass proper",
+      "date_label": "1 July 1976 confirmation; 1976 publication reported",
+      "start_year": 1976,
+      "end_year": 1976,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Latin order Mass proper only.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:additional-orders-merced-1976"
+      ],
+      "witness_label": "Proprium Missarum Ordinis Beatae Mariae Virginis de Mercede",
+      "summary": "The Holy See confirmed the Latin Mass proper under CD 268/76; later vernacular approvals are separate events.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "other-orders:merced1976",
+          "locus": "Notitiae 14 (1978), printed pp. 289–290, CD 268/76",
+          "claim": "The notice names the Latin proper, confirmation date and publication year."
+        }
+      ],
+      "limitations": "The original 1976 volume is not acquired. The approval cannot turn the 1560 whole missal into its direct predecessor.",
+      "reception": "Order-wide confirmation is recorded; use of a particular printing at any house is unverified."
+    },
+    {
+      "id": "other-orders:servite-medieval",
+      "tradition_id": "servite-round2",
+      "label": "Medieval Roman-Curia missal for Servite friars",
+      "date_label": "Second half of the fourteenth century, manuscript catalogue estimate",
+      "start_year": 1350,
+      "end_year": 1400,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Main manuscript ff. 1ra–321rb, excluding later added Mass formularies.",
+      "components": [
+        "ordinary",
+        "propers"
+      ],
+      "witness_ids": [
+        "western:additional-orders-servite-pal505"
+      ],
+      "witness_label": "BAV Pal. lat. 505",
+      "summary": "The holding-library description identifies a Servite-use missal with Roman Curia usage, distinct from its later additions.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "other-orders:servite505",
+          "locus": "Heidelberg codex description, title, date and ff. 1ra–322v contents",
+          "claim": "The main Missal and later Mass additions occupy distinguishable folio ranges."
+        }
+      ],
+      "limitations": "Catalogue-estimated copying bounds, not years of use. The original Mass text is uncollated, and the later additions are not separately dated.",
+      "reception": "A codex described for Servite friars; no general chapter or house adoption is established."
+    },
+    {
+      "id": "other-orders:servite-1972-proper",
+      "tradition_id": "servite-round2",
+      "label": "1972 Servite Mass proper, sacramentary and lectionary",
+      "date_label": "1 October 1971 proper approval; 1972 two-volume publication",
+      "start_year": 1972,
+      "end_year": 1972,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Complementary volumes I Antiphonale Sacramentarium and II Lectionarium, one proper book set rather than two recensions.",
+      "components": [
+        "propers",
+        "lectionary",
+        "chant"
+      ],
+      "witness_ids": [
+        "western:additional-orders-servite-1972-antiphonale",
+        "western:additional-orders-servite-1972-lectionary"
+      ],
+      "witness_label": "Proprium Missarum Ordinis Servorum Mariae, Rome 1972, volumes I–II",
+      "summary": "The 1971 Mass-proper approval and official bibliography establish a 1972 two-volume Servite proper set; the separate calendar confirmation was 6 February 1971.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "other-orders:servite1971",
+          "locus": "Notitiae 9 (1973), printed pp. 284–286",
+          "claim": "The calendar and Mass-proper confirmations have distinct 1971 dates."
+        },
+        {
+          "source_id": "other-orders:servite1972",
+          "locus": "Notitiae 11 (1975), bibliography of 1972 liturgical books",
+          "claim": "The 1972 proper has two named complementary volumes."
+        }
+      ],
+      "limitations": "Original volumes and their complete text are uninspected. The 1998 editio typica altera is bibliographically identified but cannot yet supply a checked substantive transition.",
+      "reception": "The approval names the order proper; actual local use and particular copies are not evidenced."
+    },
+    {
+      "id": "other-orders:trinitarian-1529",
+      "tradition_id": "trinitarian-round2",
+      "label": "1529 printed Trinitarian missal witness",
+      "date_label": "1529 catalogue publication year",
+      "start_year": 1529,
+      "end_year": 1529,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Provins Impr. XVI a 8, a standalone printed order missal identified by catalogues, with original body not inspected.",
+      "components": [
+        "ordinary",
+        "propers"
+      ],
+      "witness_ids": [
+        "western:monastic-usuarium-trinitarian-2548"
+      ],
+      "witness_label": "Missale ad usum fratrum Ordinis Sanctae Trinitatis de Redemptione Captivorum",
+      "summary": "USUARIUM and ARCA identify one 1529 Provins copy; the metadata is a book identity, not a reform date.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "other-orders:trinitarian1529",
+          "locus": "USUARIUM book 2548 title and contents index; ARCA Provins Impr. XVI a 8 object metadata",
+          "claim": "The catalogues identify a 1529 printed Trinitarian missal in the Provins collection."
+        }
+      ],
+      "limitations": "Original leaves and completeness unverified. BnF Latin 1022 is a mixed Office/Mass manuscript with later use layers, not an established ancestor.",
+      "reception": "Printed title states intended order use; actual distribution and celebration remain unverified."
+    },
+    {
+      "id": "other-orders:hosp-1553",
+      "tradition_id": "hospitaller-round2",
+      "label": "1553 Lyon Hospitaller missal witness",
+      "date_label": "1553 corrected BnF catalogue year",
+      "start_year": 1553,
+      "end_year": 1553,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "BnF B-320 copy's printed missal identity, without its uninspected Mass text or an invented 1551 predecessor.",
+      "components": [
+        "ordinary",
+        "propers"
+      ],
+      "witness_ids": [
+        "western:additional-orders-hospitaller-bnf-b320-1553"
+      ],
+      "witness_label": "BnF B-320, Lyon heirs of Jacques Giunta, 1553",
+      "summary": "The owning catalogue identifies the 1553 copy and explicitly corrects B-320's old 1551 misdate.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "other-orders:hosp1553",
+          "locus": "BnF cb36827961c, publication, material description, Note(s) and B-320 item",
+          "claim": "B-320 belongs to the 1553 Lyon printing, not a separately attested 1551 edition."
+        }
+      ],
+      "limitations": "Original leaves, order-specific text and relation to local Hospitaller manuscripts or other Lyon copies remain unexamined.",
+      "reception": "A printed order-use book, without house-level adoption evidence."
+    },
+    {
+      "id": "other-orders:hosp-1987-proper",
+      "tradition_id": "hospitaller-round2",
+      "label": "1987 Hospitaller Latin Mass proper with lectionary",
+      "date_label": "4 July 1987 Mass-proper confirmation; 1987 publication",
+      "start_year": 1987,
+      "end_year": 1987,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Latin Proprium Missarum; its bibliographically joined Lectionarium is a complementary volume section, not a whole missal.",
+      "components": [
+        "propers",
+        "lectionary"
+      ],
+      "witness_ids": [
+        "western:additional-orders-hospitaller-proper-1987"
+      ],
+      "witness_label": "Proprium Missarum una cum Lectionario Ordinis Sancti Ioannis Hierosolymitani, Rome 1987",
+      "summary": "Notitiae records the Latin Mass-proper confirmation; the liturgical institute catalogue identifies the printed 136-page edition with lectionary.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "other-orders:hosp1987",
+          "locus": "Notitiae 23 (1987), printed p. 1038, 839/87; DLI catalogue 19078",
+          "claim": "The approval is for the Latin Mass proper; a 1987 printed edition bears a lectionary in its title."
+        }
+      ],
+      "limitations": "Approval extent for the lectionary is not established by the notice; the complete 1987 book and 2005 second edition are uninspected.",
+      "reception": "Official approval and order bibliography establish intended order use, not a count of houses that used the printing."
+    }
+  ],
+  "transitions": [],
+  "gaps": [
+    {
+      "id": "other-orders:osa-gap",
+      "tradition_id": "osa-hermits-round2",
+      "period": "Fourteenth century–2006",
+      "missing": "Resolve 1491/1496 print identity; inspect Pal. lat. 500 layers, intervening OSA books and proper texts, and original 2006 Latin approval.",
+      "next_source": "BSB printing and colophon records, BAV Pal. lat. 500 folios, 1674/1715/1926/1965 source books and Acta OAR 2007 with the 2006 Latin proper.",
+      "consequence": "No early-to-modern OSA revision, text inheritance or continuous use is asserted."
+    },
+    {
+      "id": "other-orders:merced-gap",
+      "tradition_id": "mercedarian-round2",
+      "period": "1507–1976",
+      "missing": "Original 1507/1560 books, 1617 and 1641 proper booklets, and 1694 printing need separation and text comparison.",
+      "next_source": "ACA XXVI.1.1 original leaves and copy census; Madrid 1617 Royal Press copy; 1976 Latin proper and decree.",
+      "consequence": "The 1976 proper cannot be presented as a whole-missal replacement or descendant of a particular early print."
+    },
+    {
+      "id": "other-orders:servite-gap",
+      "tradition_id": "servite-round2",
+      "period": "Medieval manuscript–1998",
+      "missing": "Pal. lat. 505 Mass and additions, 1745 bound proper and original 1972/1998 volumes remain uncollated.",
+      "next_source": "Inspect BAV Pal. lat. 505 ff. 1ra–322v, OSZK RK 182(3) and official Servite Libri Liturgici OSM 1–2 and 1–2 bis front matter and component texts.",
+      "consequence": "No direct medieval-to-modern descent or 1972-to-1998 substantive revision edge is drawn."
+    },
+    {
+      "id": "other-orders:trinitarian-gap",
+      "tradition_id": "trinitarian-round2",
+      "period": "Thirteenth century–1975",
+      "missing": "BnF Latin 1022 Mass folios and later use layers, original 1529 Provins print, and 1975 approved Latin proper and first edition.",
+      "next_source": "BnF Latin 1022 ff. 233–385, ARCA Provins Impr. XVI a 8 images, CD 172/75 decree and order-issued proper.",
+      "consequence": "Catalogue year and modern approval do not establish a single whole-missal sequence."
+    },
+    {
+      "id": "other-orders:hosp-gap",
+      "tradition_id": "hospitaller-round2",
+      "period": "Medieval local books–2005",
+      "missing": "Original 1553 leaves, relations among local Hospitaller manuscripts and prints, 1987 proper text, 2005 second edition and house use.",
+      "next_source": "Inspect BnF B-320 and other copy shelfmarks, DLI 19078 or order archive 1987 volume, and the 2005 second edition's approval and text.",
+      "consequence": "No 1551 edition, general medieval recension, whole-book revision or 1987-to-2005 text transition is asserted."
+    },
+    {
+      "id": "other-orders:ocso-gap",
+      "tradition_id": "ocso-round2",
+      "period": "1892–present",
+      "missing": "Original 1983 approval, dated Latin proper and lectionary, later additions and concrete OCSO house reception.",
+      "next_source": "Order liturgy archive's missal and lectionary files, original approval and General Chapter norms, with page-collated comparison to the Roman base and shared OCist books.",
+      "consequence": "No separate complete OCSO missal or automatic inheritance from the Cistercian whole-missal line is claimed."
+    }
+  ]
+}

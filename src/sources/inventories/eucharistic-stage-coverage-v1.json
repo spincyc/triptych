@@ -9,12 +9,12 @@
     {
       "id": "eastern",
       "path": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
-      "sha256": "65ef01ca12e0efac1acd0bb4f54d546f5a644422b575f29370e6e822439bcb0d"
+      "sha256": "37ab865ea94afa60b2437c5d3469945829b7c3143d8984242b5769d5644f5786"
     },
     {
       "id": "western",
       "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
-      "sha256": "7c6ea6fe33a9782e6fd3e08ca904e04c615486a91e28198a81984153d8439813"
+      "sha256": "82ff67a6126bc841f472e9704ed74d332ccca3c3ce3914f18b79d24757bf9991"
     },
     {
       "id": "presentation",
@@ -125,13 +125,58 @@
       "id": "dossier:romanian-blaj",
       "path": "src/sources/inventories/eucharistic-stages/romanian-blaj.json",
       "sha256": "f59e5da265728d0dd6c1f1f048c2045d1e9e95ad15b3b2e37e45f88f0356c42b"
+    },
+    {
+      "id": "dossier:central-europe-round3",
+      "path": "src/sources/inventories/eucharistic-stages/central-europe-round3.json",
+      "sha256": "0dd08cd209a64e2f0f9b4eddc6c982b86322d1f7a3e03d097eff0fd09f119746"
+    },
+    {
+      "id": "dossier:early-western-round2",
+      "path": "src/sources/inventories/eucharistic-stages/early-western-round2.json",
+      "sha256": "9e6df55da5942db905df222d9f690e0d0695789df9f6a8df2df8a6dfca86f8e1"
+    },
+    {
+      "id": "dossier:eastern-local-round2",
+      "path": "src/sources/inventories/eucharistic-stages/eastern-local-round2.json",
+      "sha256": "082283e5d11fcbdc26101723f48243fdcc8b1f04803dded23be9c7fd60236eaa"
+    },
+    {
+      "id": "dossier:french-local-round2",
+      "path": "src/sources/inventories/eucharistic-stages/french-local-round2.json",
+      "sha256": "01433657b83458c95d77cb31f2cc08e0c581f46aec2ca948bd253583819ad3a7"
+    },
+    {
+      "id": "dossier:italian-local-round2",
+      "path": "src/sources/inventories/eucharistic-stages/italian-local-round2.json",
+      "sha256": "8912dc0bb34f64e219a05fa21d58eff980180d14a39c05bddd018647ceaa4a9f"
+    },
+    {
+      "id": "dossier:northwest-round2",
+      "path": "src/sources/inventories/eucharistic-stages/northwest-round2.json",
+      "sha256": "5d13abbb9e35948d145852e27a1bfdde219a7ecaf5f202a6d923cca136b565d2"
+    },
+    {
+      "id": "dossier:other-orders",
+      "path": "src/sources/inventories/eucharistic-stages/other-orders-round2.json",
+      "sha256": "1a7ad52eeaa7338fa2e474e37164780c668498b379f35072b204ef98268eb175"
+    },
+    {
+      "id": "dossier:residual-orders-round3",
+      "path": "src/sources/inventories/eucharistic-stages/residual-orders-round3.json",
+      "sha256": "01b6657c5f670a6e7300316e08b30d8f683266def1ca717e0c3c0f70b7b07dea"
+    },
+    {
+      "id": "dossier:residual-western-round3",
+      "path": "src/sources/inventories/eucharistic-stages/residual-western-round3.json",
+      "sha256": "262117f9dade135eb75310b3423344c0bb2a1a9e34a0447094cb2eab13eb6f8f"
     }
   ],
   "count_semantics": {
     "eastern_census_slots": 23,
     "western_coverage_trajectories": 73,
     "eastern_candidates": 440,
-    "western_candidates": 1149,
+    "western_candidates": 1161,
     "presentation_groups": 128,
     "eastern_empty_candidate_slots_at_input": [
       "albanian",
@@ -152,7 +197,11 @@
     "Selected local-use, canonical-order and Slavonic Roman stages now resolve to their own dossiers. Composite discovery rows retain unmapped communities and incomplete periods; no dossier supplies whole-book text completeness.",
     "Complete native constituents count as partial book coverage. Recorded book states, optional rules and complementary volumes do not create a complete missal or authorize text inheritance.",
     "The 2026-10-20 regional dossier adds seven bounded book states (two provisional) and one provisional source-described Polish printing transition; no whole-book text completion or unexamined first-use date follows.",
-    "A second source-bounded review adds Bursfelde, Évora, Nidaros, Turku, Zagreb, Prague, Blaj and German diocesan book states; it adds no unverified revision transition or complete text."
+    "A second source-bounded review adds Bursfelde, Évora, Nidaros, Turku, Zagreb, Prague, Blaj and German diocesan book states; it adds no unverified revision transition or complete text.",
+    "A further bounded review records 83 exact book states across Eastern, early Western, French, Italian, northwest and central European, and order-specific routes. These are witness states, not continuous histories; no new transition or whole-book text completion is inferred.",
+    "The Ukrainian Church’s 2024 promulgated Ukrainian service text is retained as a received operative language candidate; observed first celebration and the complete printed volume remain to be inspected.",
+    "Seven Central European dated stages now point to exact book candidates instead of broad discovery clusters; the Hospitaller 1553 stage points to the identified BnF B-320 copy, leaving other Lyon copies unmerged.",
+    "Residual Western and order review adds only exact source-bounded book states; composite discovery rows and deferred translations remain research gaps, not invented rites or revisions."
   ],
   "sources": [
     {
@@ -3645,6 +3694,416 @@
       "id": "romanian-blaj:historical",
       "label": "Blaj Romanian Greek Catholic book line",
       "dossier_id": "romanian-blaj"
+    },
+    {
+      "id": "aarhus-missal-leaves",
+      "label": "Aarhus Cathedral Mass-book leaves",
+      "dossier_id": "northwest-round2"
+    },
+    {
+      "id": "arbuthnott-local-missal",
+      "label": "Arbuthnott and St Andrews manuscript use",
+      "dossier_id": "northwest-round2"
+    },
+    {
+      "id": "bergen-nordfjord-fragment",
+      "label": "Nordfjord and probable Bergen reception witness",
+      "dossier_id": "northwest-round2"
+    },
+    {
+      "id": "canterbury-augustine-missal",
+      "label": "St Augustine's Abbey Canterbury missal",
+      "dossier_id": "northwest-round2"
+    },
+    {
+      "id": "central-europe-round3:augsburg",
+      "label": "Augsburg diocesan Missal",
+      "dossier_id": "central-europe-round3"
+    },
+    {
+      "id": "central-europe-round3:bamberg",
+      "label": "Bamberg diocesan Missal",
+      "dossier_id": "central-europe-round3"
+    },
+    {
+      "id": "central-europe-round3:bremen",
+      "label": "Bremen diocesan Missal",
+      "dossier_id": "central-europe-round3"
+    },
+    {
+      "id": "central-europe-round3:eger",
+      "label": "Eger-held Mass-book and Eger ordinal",
+      "dossier_id": "central-europe-round3"
+    },
+    {
+      "id": "central-europe-round3:eichstatt",
+      "label": "Eichstätt diocesan Missal",
+      "dossier_id": "central-europe-round3"
+    },
+    {
+      "id": "central-europe-round3:mainz",
+      "label": "Mainz Mass-book witnesses",
+      "dossier_id": "central-europe-round3"
+    },
+    {
+      "id": "central-europe-round3:olomouc",
+      "label": "Olomouc Mass-book witnesses",
+      "dossier_id": "central-europe-round3"
+    },
+    {
+      "id": "central-europe-round3:pecs",
+      "label": "Pécs Mass-book print",
+      "dossier_id": "central-europe-round3"
+    },
+    {
+      "id": "central-europe-round3:riga",
+      "label": "Riga Mass-book manuscript",
+      "dossier_id": "central-europe-round3"
+    },
+    {
+      "id": "central-europe-round3:split",
+      "label": "Split manuscript leads",
+      "dossier_id": "central-europe-round3"
+    },
+    {
+      "id": "central-europe-round3:utrecht",
+      "label": "Utrecht diocesan Missal",
+      "dossier_id": "central-europe-round3"
+    },
+    {
+      "id": "central-europe-round3:zadar-ofm",
+      "label": "Zadar Franciscan gradual-missal",
+      "dossier_id": "central-europe-round3"
+    },
+    {
+      "id": "copenhagen-missal-print",
+      "label": "Copenhagen Missale Hafniense witness",
+      "dossier_id": "northwest-round2"
+    },
+    {
+      "id": "danish-unassigned-notated-fragment",
+      "label": "Unassigned Danish notated missal fragment",
+      "dossier_id": "northwest-round2"
+    },
+    {
+      "id": "dublin-add24198-missal",
+      "label": "Dublin associated Mass manuscript",
+      "dossier_id": "northwest-round2"
+    },
+    {
+      "id": "early-western-bobbio",
+      "label": "Bobbio manuscript sacramentary",
+      "dossier_id": "early-western-round2"
+    },
+    {
+      "id": "early-western-frankish-gelasian",
+      "label": "Frankish Gelasian sacramentary witnesses",
+      "dossier_id": "early-western-round2"
+    },
+    {
+      "id": "early-western-gallicanum",
+      "label": "Gallicanum Vetus sacramentary parts",
+      "dossier_id": "early-western-round2"
+    },
+    {
+      "id": "early-western-gregorian",
+      "label": "Gregorian sacramentary manuscript witnesses",
+      "dossier_id": "early-western-round2"
+    },
+    {
+      "id": "early-western-old-gelasian",
+      "label": "Old Gelasian sacramentary witness",
+      "dossier_id": "early-western-round2"
+    },
+    {
+      "id": "early-western-roman-libelli",
+      "label": "Veronese collection of Roman sacramentary libelli",
+      "dossier_id": "early-western-round2"
+    },
+    {
+      "id": "early-western-stowe",
+      "label": "Stowe manuscript Mass book",
+      "dossier_id": "early-western-round2"
+    },
+    {
+      "id": "eastern-local-round2:bulgarian",
+      "label": "Bulgarian Greek Catholic local book reception",
+      "dossier_id": "eastern-local-round2"
+    },
+    {
+      "id": "eastern-local-round2:grottaferrata",
+      "label": "Italo-Greek Basilian use of Grottaferrata",
+      "dossier_id": "eastern-local-round2"
+    },
+    {
+      "id": "eastern-local-round2:hungarian",
+      "label": "Hungarian Greek Catholic local book reception",
+      "dossier_id": "eastern-local-round2"
+    },
+    {
+      "id": "eastern-local-round2:melkite",
+      "label": "Melkite Greek Catholic liturgy books",
+      "dossier_id": "eastern-local-round2"
+    },
+    {
+      "id": "eastern-local-round2:roman-greek",
+      "label": "Roman Greek celebrant books",
+      "dossier_id": "eastern-local-round2"
+    },
+    {
+      "id": "eastern-local-round2:russian",
+      "label": "Russian Greek Catholic local book reception",
+      "dossier_id": "eastern-local-round2"
+    },
+    {
+      "id": "english-itinerant-mission",
+      "label": "English, Scottish and Irish itinerant mission book",
+      "dossier_id": "northwest-round2"
+    },
+    {
+      "id": "french-local-round2-bourges",
+      "label": "Bourges diocesan missal",
+      "dossier_id": "french-local-round2"
+    },
+    {
+      "id": "french-local-round2-cambrai",
+      "label": "Cambrai diocesan missal",
+      "dossier_id": "french-local-round2"
+    },
+    {
+      "id": "french-local-round2-chartres",
+      "label": "Chartres diocesan missal",
+      "dossier_id": "french-local-round2"
+    },
+    {
+      "id": "french-local-round2-langres",
+      "label": "Langres diocesan missal",
+      "dossier_id": "french-local-round2"
+    },
+    {
+      "id": "french-local-round2-laon",
+      "label": "Laon diocesan missal",
+      "dossier_id": "french-local-round2"
+    },
+    {
+      "id": "french-local-round2-paris",
+      "label": "Paris diocesan missal",
+      "dossier_id": "french-local-round2"
+    },
+    {
+      "id": "french-local-round2-reims",
+      "label": "Reims diocesan missal",
+      "dossier_id": "french-local-round2"
+    },
+    {
+      "id": "french-local-round2-rouen",
+      "label": "Rouen diocesan missal",
+      "dossier_id": "french-local-round2"
+    },
+    {
+      "id": "french-local-round2-sens",
+      "label": "Sens diocesan missal",
+      "dossier_id": "french-local-round2"
+    },
+    {
+      "id": "french-local-round2-uzes",
+      "label": "Uzès diocesan missal",
+      "dossier_id": "french-local-round2"
+    },
+    {
+      "id": "hospitaller-round2",
+      "label": "Hospitaller Order of Saint John of Jerusalem, Rhodes and Malta",
+      "dossier_id": "other-orders"
+    },
+    {
+      "id": "icelandic-gufudal-gradual",
+      "label": "Gufudal Mass gradual manuscript",
+      "dossier_id": "northwest-round2"
+    },
+    {
+      "id": "icelandic-nidaros-fragment",
+      "label": "Icelandic Nidaros-use breviary-missal",
+      "dossier_id": "northwest-round2"
+    },
+    {
+      "id": "icelandic-scardense-missal",
+      "label": "Skarð missal manuscript",
+      "dossier_id": "northwest-round2"
+    },
+    {
+      "id": "irish-carmelite-kilcormac",
+      "label": "Kilcormac Carmelite Mass witness",
+      "dossier_id": "northwest-round2"
+    },
+    {
+      "id": "italian-local-round2:aosta",
+      "label": "Aosta diocesan Mass books",
+      "dossier_id": "italian-local-round2"
+    },
+    {
+      "id": "italian-local-round2:aquileia",
+      "label": "Aquileian local Mass books",
+      "dossier_id": "italian-local-round2"
+    },
+    {
+      "id": "italian-local-round2:benevento",
+      "label": "Benevento missal manuscripts",
+      "dossier_id": "italian-local-round2"
+    },
+    {
+      "id": "italian-local-round2:messina",
+      "label": "Messina local Missal printings",
+      "dossier_id": "italian-local-round2"
+    },
+    {
+      "id": "italian-local-round2:monza",
+      "label": "Monza Mass-book leads",
+      "dossier_id": "italian-local-round2"
+    },
+    {
+      "id": "italian-local-round2:padua",
+      "label": "Padua Mass-book leads",
+      "dossier_id": "italian-local-round2"
+    },
+    {
+      "id": "italian-local-round2:ravenna",
+      "label": "Ravenna Mass-book leads",
+      "dossier_id": "italian-local-round2"
+    },
+    {
+      "id": "linkoping-a97-missal",
+      "label": "Linköping secular missal witness",
+      "dossier_id": "northwest-round2"
+    },
+    {
+      "id": "lund-print",
+      "label": "Lund missal print",
+      "dossier_id": "northwest-round2"
+    },
+    {
+      "id": "mercedarian-round2",
+      "label": "Order of Mercy (Mercedarians)",
+      "dossier_id": "other-orders"
+    },
+    {
+      "id": "ocso-round2",
+      "label": "Cistercians of the Strict Observance (OCSO)",
+      "dossier_id": "other-orders"
+    },
+    {
+      "id": "odense-missal-prints",
+      "label": "Odense missal print witnesses",
+      "dossier_id": "northwest-round2"
+    },
+    {
+      "id": "osa-hermits-round2",
+      "label": "Augustinian Hermits (OSA)",
+      "dossier_id": "other-orders"
+    },
+    {
+      "id": "roskilde-mass-books",
+      "label": "Roskilde Mass-book witnesses",
+      "dossier_id": "northwest-round2"
+    },
+    {
+      "id": "schleswig-missal-print",
+      "label": "Schleswig Missale Slesvicense",
+      "dossier_id": "northwest-round2"
+    },
+    {
+      "id": "servite-round2",
+      "label": "Servite Order",
+      "dossier_id": "other-orders"
+    },
+    {
+      "id": "skara-cathedral-missal",
+      "label": "Skara cathedral missal witness",
+      "dossier_id": "northwest-round2"
+    },
+    {
+      "id": "strangnas-print",
+      "label": "Strängnäs missal print",
+      "dossier_id": "northwest-round2"
+    },
+    {
+      "id": "trinitarian-round2",
+      "label": "Order of the Most Holy Trinity (Trinitarians)",
+      "dossier_id": "other-orders"
+    },
+    {
+      "id": "uppsala-1513-print",
+      "label": "Uppsala missal print",
+      "dossier_id": "northwest-round2"
+    },
+    {
+      "id": "viborg-missal-print",
+      "label": "Viborg missal print",
+      "dossier_id": "northwest-round2"
+    },
+    {
+      "id": "westminster-local-missal",
+      "label": "Westminster Abbey missal",
+      "dossier_id": "northwest-round2"
+    },
+    {
+      "id": "cluniac-round3",
+      "label": "Cluniac use",
+      "dossier_id": "residual-orders-round3"
+    },
+    {
+      "id": "humiliati-round3",
+      "label": "Humiliati use",
+      "dossier_id": "residual-orders-round3"
+    },
+    {
+      "id": "minim-round3",
+      "label": "Order of Minims",
+      "dossier_id": "residual-orders-round3"
+    },
+    {
+      "id": "ocd-round3",
+      "label": "Discalced Carmelites (OCD)",
+      "dossier_id": "residual-orders-round3"
+    },
+    {
+      "id": "santiago-round3",
+      "label": "Military Order of Santiago",
+      "dossier_id": "residual-orders-round3"
+    },
+    {
+      "id": "residual-western-round3:barcelona",
+      "label": "Barcelona local Mass books",
+      "dossier_id": "residual-western-round3"
+    },
+    {
+      "id": "residual-western-round3:salamanca",
+      "label": "Salamanca local Mass books",
+      "dossier_id": "residual-western-round3"
+    },
+    {
+      "id": "residual-western-round3:seville",
+      "label": "Seville local Mass books",
+      "dossier_id": "residual-western-round3"
+    },
+    {
+      "id": "residual-western-round3:toledo-roman",
+      "label": "Toledo Roman-type local Mass books",
+      "dossier_id": "residual-western-round3"
+    },
+    {
+      "id": "residual-western-round3:cosenza",
+      "label": "Cosenza local Mass books",
+      "dossier_id": "residual-western-round3"
+    },
+    {
+      "id": "residual-western-round3:roman-latin-lay",
+      "label": "Roman Latin Ordinary in identified lay books",
+      "dossier_id": "residual-western-round3"
+    },
+    {
+      "id": "residual-western-round3:buzuku-control",
+      "label": "Buzuku Albanian historical witness control",
+      "dossier_id": "residual-western-round3"
     }
   ],
   "dossier_snapshot": [
@@ -4113,6 +4572,434 @@
         "not-transcribed": 2
       },
       "status": "canonical-bounded-dossier-snapshot"
+    },
+    {
+      "dossier_id": "central-europe-round3",
+      "traditions": [
+        {
+          "id": "central-europe-round3:mainz",
+          "label": "Mainz Mass-book witnesses"
+        },
+        {
+          "id": "central-europe-round3:olomouc",
+          "label": "Olomouc Mass-book witnesses"
+        },
+        {
+          "id": "central-europe-round3:augsburg",
+          "label": "Augsburg diocesan Missal"
+        },
+        {
+          "id": "central-europe-round3:bamberg",
+          "label": "Bamberg diocesan Missal"
+        },
+        {
+          "id": "central-europe-round3:bremen",
+          "label": "Bremen diocesan Missal"
+        },
+        {
+          "id": "central-europe-round3:eichstatt",
+          "label": "Eichstätt diocesan Missal"
+        },
+        {
+          "id": "central-europe-round3:pecs",
+          "label": "Pécs Mass-book print"
+        },
+        {
+          "id": "central-europe-round3:eger",
+          "label": "Eger-held Mass-book and Eger ordinal"
+        },
+        {
+          "id": "central-europe-round3:zadar-ofm",
+          "label": "Zadar Franciscan gradual-missal"
+        },
+        {
+          "id": "central-europe-round3:split",
+          "label": "Split manuscript leads"
+        },
+        {
+          "id": "central-europe-round3:utrecht",
+          "label": "Utrecht diocesan Missal"
+        },
+        {
+          "id": "central-europe-round3:riga",
+          "label": "Riga Mass-book manuscript"
+        }
+      ],
+      "documented_stage_count": 12,
+      "provisional_stage_count": 2,
+      "text_coverage_counts": {
+        "not-transcribed": 14
+      },
+      "status": "canonical-bounded-dossier-snapshot"
+    },
+    {
+      "dossier_id": "early-western-round2",
+      "traditions": [
+        {
+          "id": "early-western-roman-libelli",
+          "label": "Veronese collection of Roman sacramentary libelli"
+        },
+        {
+          "id": "early-western-old-gelasian",
+          "label": "Old Gelasian sacramentary witness"
+        },
+        {
+          "id": "early-western-frankish-gelasian",
+          "label": "Frankish Gelasian sacramentary witnesses"
+        },
+        {
+          "id": "early-western-gregorian",
+          "label": "Gregorian sacramentary manuscript witnesses"
+        },
+        {
+          "id": "early-western-gallicanum",
+          "label": "Gallicanum Vetus sacramentary parts"
+        },
+        {
+          "id": "early-western-bobbio",
+          "label": "Bobbio manuscript sacramentary"
+        },
+        {
+          "id": "early-western-stowe",
+          "label": "Stowe manuscript Mass book"
+        }
+      ],
+      "documented_stage_count": 10,
+      "provisional_stage_count": 0,
+      "text_coverage_counts": {
+        "not-transcribed": 10
+      },
+      "status": "canonical-bounded-dossier-snapshot"
+    },
+    {
+      "dossier_id": "eastern-local-round2",
+      "traditions": [
+        {
+          "id": "eastern-local-round2:melkite",
+          "label": "Melkite Greek Catholic liturgy books"
+        },
+        {
+          "id": "eastern-local-round2:roman-greek",
+          "label": "Roman Greek celebrant books"
+        },
+        {
+          "id": "eastern-local-round2:grottaferrata",
+          "label": "Italo-Greek Basilian use of Grottaferrata"
+        },
+        {
+          "id": "eastern-local-round2:hungarian",
+          "label": "Hungarian Greek Catholic local book reception"
+        },
+        {
+          "id": "eastern-local-round2:bulgarian",
+          "label": "Bulgarian Greek Catholic local book reception"
+        },
+        {
+          "id": "eastern-local-round2:russian",
+          "label": "Russian Greek Catholic local book reception"
+        }
+      ],
+      "documented_stage_count": 3,
+      "provisional_stage_count": 0,
+      "text_coverage_counts": {
+        "not-transcribed": 3
+      },
+      "status": "canonical-bounded-dossier-snapshot"
+    },
+    {
+      "dossier_id": "french-local-round2",
+      "traditions": [
+        {
+          "id": "french-local-round2-paris",
+          "label": "Paris diocesan missal"
+        },
+        {
+          "id": "french-local-round2-rouen",
+          "label": "Rouen diocesan missal"
+        },
+        {
+          "id": "french-local-round2-langres",
+          "label": "Langres diocesan missal"
+        },
+        {
+          "id": "french-local-round2-uzes",
+          "label": "Uzès diocesan missal"
+        },
+        {
+          "id": "french-local-round2-bourges",
+          "label": "Bourges diocesan missal"
+        },
+        {
+          "id": "french-local-round2-cambrai",
+          "label": "Cambrai diocesan missal"
+        },
+        {
+          "id": "french-local-round2-chartres",
+          "label": "Chartres diocesan missal"
+        },
+        {
+          "id": "french-local-round2-laon",
+          "label": "Laon diocesan missal"
+        },
+        {
+          "id": "french-local-round2-reims",
+          "label": "Reims diocesan missal"
+        },
+        {
+          "id": "french-local-round2-sens",
+          "label": "Sens diocesan missal"
+        }
+      ],
+      "documented_stage_count": 12,
+      "provisional_stage_count": 0,
+      "text_coverage_counts": {
+        "not-transcribed": 12
+      },
+      "status": "canonical-bounded-dossier-snapshot"
+    },
+    {
+      "dossier_id": "italian-local-round2",
+      "traditions": [
+        {
+          "id": "italian-local-round2:aquileia",
+          "label": "Aquileian local Mass books"
+        },
+        {
+          "id": "italian-local-round2:aosta",
+          "label": "Aosta diocesan Mass books"
+        },
+        {
+          "id": "italian-local-round2:benevento",
+          "label": "Benevento missal manuscripts"
+        },
+        {
+          "id": "italian-local-round2:messina",
+          "label": "Messina local Missal printings"
+        },
+        {
+          "id": "italian-local-round2:padua",
+          "label": "Padua Mass-book leads"
+        },
+        {
+          "id": "italian-local-round2:monza",
+          "label": "Monza Mass-book leads"
+        },
+        {
+          "id": "italian-local-round2:ravenna",
+          "label": "Ravenna Mass-book leads"
+        }
+      ],
+      "documented_stage_count": 11,
+      "provisional_stage_count": 0,
+      "text_coverage_counts": {
+        "not-transcribed": 11
+      },
+      "status": "canonical-bounded-dossier-snapshot"
+    },
+    {
+      "dossier_id": "northwest-round2",
+      "traditions": [
+        {
+          "id": "westminster-local-missal",
+          "label": "Westminster Abbey missal"
+        },
+        {
+          "id": "arbuthnott-local-missal",
+          "label": "Arbuthnott and St Andrews manuscript use"
+        },
+        {
+          "id": "irish-carmelite-kilcormac",
+          "label": "Kilcormac Carmelite Mass witness"
+        },
+        {
+          "id": "english-itinerant-mission",
+          "label": "English, Scottish and Irish itinerant mission book"
+        },
+        {
+          "id": "odense-missal-prints",
+          "label": "Odense missal print witnesses"
+        },
+        {
+          "id": "copenhagen-missal-print",
+          "label": "Copenhagen Missale Hafniense witness"
+        },
+        {
+          "id": "roskilde-mass-books",
+          "label": "Roskilde Mass-book witnesses"
+        },
+        {
+          "id": "viborg-missal-print",
+          "label": "Viborg missal print"
+        },
+        {
+          "id": "schleswig-missal-print",
+          "label": "Schleswig Missale Slesvicense"
+        },
+        {
+          "id": "icelandic-nidaros-fragment",
+          "label": "Icelandic Nidaros-use breviary-missal"
+        },
+        {
+          "id": "icelandic-scardense-missal",
+          "label": "Skarð missal manuscript"
+        },
+        {
+          "id": "icelandic-gufudal-gradual",
+          "label": "Gufudal Mass gradual manuscript"
+        },
+        {
+          "id": "bergen-nordfjord-fragment",
+          "label": "Nordfjord and probable Bergen reception witness"
+        },
+        {
+          "id": "danish-unassigned-notated-fragment",
+          "label": "Unassigned Danish notated missal fragment"
+        },
+        {
+          "id": "skara-cathedral-missal",
+          "label": "Skara cathedral missal witness"
+        },
+        {
+          "id": "linkoping-a97-missal",
+          "label": "Linköping secular missal witness"
+        },
+        {
+          "id": "strangnas-print",
+          "label": "Strängnäs missal print"
+        },
+        {
+          "id": "lund-print",
+          "label": "Lund missal print"
+        },
+        {
+          "id": "uppsala-1513-print",
+          "label": "Uppsala missal print"
+        },
+        {
+          "id": "canterbury-augustine-missal",
+          "label": "St Augustine's Abbey Canterbury missal"
+        },
+        {
+          "id": "dublin-add24198-missal",
+          "label": "Dublin associated Mass manuscript"
+        },
+        {
+          "id": "aarhus-missal-leaves",
+          "label": "Aarhus Cathedral Mass-book leaves"
+        }
+      ],
+      "documented_stage_count": 24,
+      "provisional_stage_count": 0,
+      "text_coverage_counts": {
+        "not-transcribed": 24
+      },
+      "status": "canonical-bounded-dossier-snapshot"
+    },
+    {
+      "dossier_id": "other-orders",
+      "traditions": [
+        {
+          "id": "osa-hermits-round2",
+          "label": "Augustinian Hermits (OSA)"
+        },
+        {
+          "id": "mercedarian-round2",
+          "label": "Order of Mercy (Mercedarians)"
+        },
+        {
+          "id": "servite-round2",
+          "label": "Servite Order"
+        },
+        {
+          "id": "trinitarian-round2",
+          "label": "Order of the Most Holy Trinity (Trinitarians)"
+        },
+        {
+          "id": "hospitaller-round2",
+          "label": "Hospitaller Order of Saint John of Jerusalem, Rhodes and Malta"
+        },
+        {
+          "id": "ocso-round2",
+          "label": "Cistercians of the Strict Observance (OCSO)"
+        }
+      ],
+      "documented_stage_count": 9,
+      "provisional_stage_count": 0,
+      "text_coverage_counts": {
+        "not-transcribed": 9
+      },
+      "status": "canonical-bounded-dossier-snapshot"
+    },
+    {
+      "dossier_id": "residual-orders-round3",
+      "traditions": [
+        {
+          "id": "cluniac-round3",
+          "label": "Cluniac use"
+        },
+        {
+          "id": "humiliati-round3",
+          "label": "Humiliati use"
+        },
+        {
+          "id": "minim-round3",
+          "label": "Order of Minims"
+        },
+        {
+          "id": "ocd-round3",
+          "label": "Discalced Carmelites (OCD)"
+        },
+        {
+          "id": "santiago-round3",
+          "label": "Military Order of Santiago"
+        }
+      ],
+      "documented_stage_count": 13,
+      "provisional_stage_count": 0,
+      "text_coverage_counts": {
+        "not-transcribed": 13
+      },
+      "status": "canonical-bounded-dossier-snapshot"
+    },
+    {
+      "dossier_id": "residual-western-round3",
+      "traditions": [
+        {
+          "id": "residual-western-round3:barcelona",
+          "label": "Barcelona local Mass books"
+        },
+        {
+          "id": "residual-western-round3:salamanca",
+          "label": "Salamanca local Mass books"
+        },
+        {
+          "id": "residual-western-round3:seville",
+          "label": "Seville local Mass books"
+        },
+        {
+          "id": "residual-western-round3:toledo-roman",
+          "label": "Toledo Roman-type local Mass books"
+        },
+        {
+          "id": "residual-western-round3:cosenza",
+          "label": "Cosenza local Mass books"
+        },
+        {
+          "id": "residual-western-round3:roman-latin-lay",
+          "label": "Roman Latin Ordinary in identified lay books"
+        },
+        {
+          "id": "residual-western-round3:buzuku-control",
+          "label": "Buzuku Albanian historical witness control"
+        }
+      ],
+      "documented_stage_count": 6,
+      "provisional_stage_count": 0,
+      "text_coverage_counts": {
+        "not-transcribed": 5,
+        "partial": 1
+      },
+      "status": "canonical-bounded-dossier-snapshot"
     }
   ],
   "eastern_church_coverage": [
@@ -4163,9 +5050,9 @@
       "inventory_status": "historical-or-local-candidate; chronology-incomplete",
       "candidate_ids": [
         "byz-vilnius-suprasl1692-95",
+        "byzantine-slavic-vilnius1617-mamonych",
         "byzantine-slavic-suprasl1727-1732",
-        "byzantine-slavic-suprasl1758",
-        "byzantine-slavic-vilnius1617-mamonych"
+        "byzantine-slavic-suprasl1758"
       ],
       "proposed_tradition_ids": [
         "byzantine-ruthenian"
@@ -4225,8 +5112,8 @@
       "contextual_ancestry_candidates": [
         "byz-barberini336",
         "byz-striatyn1604",
-        "byzantine-slavic-borgia-illyr-13-14",
-        "byzantine-slavic-vat-slav14"
+        "byzantine-slavic-vat-slav14",
+        "byzantine-slavic-borgia-illyr-13-14"
       ],
       "canonical_tradition_ids": [
         "byzantine-ruthenian"
@@ -4246,23 +5133,25 @@
       ],
       "mapping_strength": "research-relevance-only-local-reception-separate",
       "dossier_coverage": {
-        "status": "related-dossier-only-local-reception-unresearched",
+        "status": "selected-stages-available",
         "dossier_ids": [
-          "byzantine-stages"
+          "byzantine-stages",
+          "eastern-local-round2"
         ],
         "stage_ids": [
           "byzantine-stages:vulgata1942"
         ],
         "assigned_family": "Roman Slavonic Vulgata (Russian-use series)",
-        "scope": "selected source-book stages; not all Byzantine Churches",
-        "reception_limit": "Mapped stages concern identified source books or relevant recensions. This crosswalk does not create a local adoption or continuous-use claim.",
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation.",
         "provisional_stage_ids": [],
         "text_coverage_counts": {
           "not-transcribed": 1
         },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": [
-          "byzantine-stages:vulgata-exemplar"
+          "byzantine-stages:vulgata-exemplar",
+          "eastern-local-round2:bulgarian-receipt"
         ]
       },
       "witnesses": [
@@ -4380,23 +5269,23 @@
       "candidate_ids": [
         "byz-greek-1754",
         "byz-greek-1873",
-        "byzantine-greek-rome-anthologion-vol1",
-        "byzantine-greek-rome-anthologion-vol2",
-        "byzantine-greek-rome-anthologion-vol3",
-        "byzantine-greek-rome-anthologion-vol4",
-        "byzantine-greek-rome1738-biblos",
         "byzantine-greek-rome1738-parakletike",
-        "byzantine-greek-rome1738-pentecostarion",
         "byzantine-greek-rome1738-triodion",
+        "byzantine-greek-rome1738-pentecostarion",
+        "byzantine-greek-rome1738-biblos",
         "byzantine-greek-rome1872",
-        "byzantine-greek-rome1873-1902-series-cold",
         "byzantine-greek-rome1876-horologion",
         "byzantine-greek-rome1880-euangelion",
         "byzantine-greek-rome1881-apostolos",
         "byzantine-greek-rome1886-oktoechos",
         "byzantine-greek-rome1925",
         "byzantine-greek-rome1937-horologion",
-        "byzantine-greek-rome1950"
+        "byzantine-greek-rome1950",
+        "byzantine-greek-rome-anthologion-vol1",
+        "byzantine-greek-rome-anthologion-vol2",
+        "byzantine-greek-rome-anthologion-vol3",
+        "byzantine-greek-rome-anthologion-vol4",
+        "byzantine-greek-rome1873-1902-series-cold"
       ],
       "proposed_tradition_ids": [
         "byzantine-roman-greek"
@@ -4405,22 +5294,26 @@
       "dossier_coverage": {
         "status": "related-dossier-only-local-reception-unresearched",
         "dossier_ids": [
-          "byzantine-stages"
+          "byzantine-stages",
+          "eastern-local-round2"
         ],
         "stage_ids": [
           "byzantine-stages:greek1754",
-          "byzantine-stages:greek1873"
+          "byzantine-stages:greek1873",
+          "eastern-local-round2:greek-1950"
         ],
         "assigned_family": "Roman Greek Euchologion",
-        "scope": "selected source-book stages; not all Byzantine Churches",
-        "reception_limit": "Mapped stages concern identified source books or relevant recensions. This crosswalk does not create a local adoption or continuous-use claim.",
+        "scope": "Selected source-book states are documented; named local Church reception remains unverified.",
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation.",
         "provisional_stage_ids": [],
         "text_coverage_counts": {
-          "partial": 2
+          "partial": 2,
+          "not-transcribed": 1
         },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": [
-          "byzantine-stages:greek-original"
+          "byzantine-stages:greek-original",
+          "eastern-local-round2:greek-reception"
         ]
       },
       "witnesses": [
@@ -4461,9 +5354,9 @@
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
         "byz-barberini336",
-        "byzantine-greek-coislin213",
         "byzantine-greek-rome1526",
         "byzantine-greek-venice1602",
+        "byzantine-greek-coislin213",
         "byzantine-greek-venice1663-cold",
         "byzantine-greek-venice1727-cold"
       ],
@@ -4479,63 +5372,71 @@
       "inventory_status": "incomplete",
       "candidate_ids": [
         "byz-melkite-pdf-lead",
-        "byzantine-greek-arabic1968",
-        "byzantine-greek-badaouy1900-pentecostarion",
-        "byzantine-greek-badaouy1903-triodion",
+        "byzantine-greek-snagov1701",
+        "byzantine-greek-project1743",
+        "byzantine-greek-rome1839",
+        "byzantine-greek-rome1839-extract",
+        "byzantine-greek-vienna1862",
+        "byzantine-greek-vienna1862-extract",
+        "byzantine-greek-choueir1880",
         "byzantine-greek-beirut1899",
         "byzantine-greek-beirut1900",
-        "byzantine-greek-choueir1880",
-        "byzantine-greek-decree2011",
+        "byzantine-greek-small1851",
+        "byzantine-greek-great1865",
+        "byzantine-greek-small1887",
         "byzantine-greek-epistles1759",
         "byzantine-greek-epistles1902",
-        "byzantine-greek-epistles1967",
-        "byzantine-greek-experimental1992",
-        "byzantine-greek-gospel1988-cold",
         "byzantine-greek-gospels-choueir",
-        "byzantine-greek-great1865",
-        "byzantine-greek-horologion-choueir",
-        "byzantine-greek-horologion-reprints",
-        "byzantine-greek-horologion1883",
         "byzantine-greek-jerusalem1854-pentecostarion",
         "byzantine-greek-jerusalem1856-triodion",
-        "byzantine-greek-liturgy2006",
-        "byzantine-greek-mallouk1896",
-        "byzantine-greek-menaia-abridged1898",
+        "byzantine-greek-badaouy1900-pentecostarion",
+        "byzantine-greek-badaouy1903-triodion",
         "byzantine-greek-menaia1883",
         "byzantine-greek-menaia1896",
-        "byzantine-greek-octoechos-choueir",
-        "byzantine-greek-octoechos-salvatorian-cold",
-        "byzantine-greek-octoechos-zoulhof",
-        "byzantine-greek-office1997",
-        "byzantine-greek-project1743",
+        "byzantine-greek-menaia-abridged1898",
         "byzantine-greek-prophecies-choueir",
+        "byzantine-greek-horologion-choueir",
+        "byzantine-greek-horologion1883",
+        "byzantine-greek-horologion-reprints",
+        "byzantine-greek-octoechos-choueir",
+        "byzantine-greek-octoechos-zoulhof",
+        "byzantine-greek-mallouk1896",
+        "byzantine-greek-rezk1911",
         "byzantine-greek-reform1956",
         "byzantine-greek-reform1969",
         "byzantine-greek-reform1970",
         "byzantine-greek-reform1972",
-        "byzantine-greek-rezk1911",
-        "byzantine-greek-rome1839",
-        "byzantine-greek-rome1839-extract",
-        "byzantine-greek-small1851",
-        "byzantine-greek-small1887",
-        "byzantine-greek-snagov1701",
-        "byzantine-greek-vienna1862",
-        "byzantine-greek-vienna1862-extract"
+        "byzantine-greek-experimental1992",
+        "byzantine-greek-office1997",
+        "byzantine-greek-liturgy2006",
+        "byzantine-greek-decree2011",
+        "byzantine-greek-epistles1967",
+        "byzantine-greek-arabic1968",
+        "byzantine-greek-gospel1988-cold",
+        "byzantine-greek-octoechos-salvatorian-cold"
       ],
       "proposed_tradition_ids": [
         "byzantine-melkite"
       ],
       "mapping_strength": "research-relevance-only-local-reception-separate",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
-        "reception_limit": "Mapped stages concern identified source books or relevant recensions. This crosswalk does not create a local adoption or continuous-use claim.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "eastern-local-round2"
+        ],
+        "stage_ids": [
+          "eastern-local-round2:melkite-2006-2007"
+        ],
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 1
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "eastern-local-round2:melkite-sequence"
+        ]
       },
       "witnesses": [
         {
@@ -4563,17 +5464,17 @@
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
         "byz-barberini336",
-        "byzantine-greek-fano1514-horologion-cold",
+        "byzantine-greek-karme1612",
+        "byzantine-greek-karme-euchologion",
+        "byzantine-greek-vatopedi1049",
+        "byzantine-greek-melkite1682",
+        "byzantine-greek-iasi1745",
         "byzantine-greek-gospels1706",
         "byzantine-greek-gospels1708",
-        "byzantine-greek-iasi1745",
-        "byzantine-greek-karme-euchologion",
-        "byzantine-greek-karme1612",
-        "byzantine-greek-melkite1682",
-        "byzantine-greek-orthodox-menaia1882",
         "byzantine-greek-prophecies1708",
+        "byzantine-greek-orthodox-menaia1882",
         "byzantine-greek-syriac14497",
-        "byzantine-greek-vatopedi1049"
+        "byzantine-greek-fano1514-horologion-cold"
       ],
       "canonical_tradition_ids": []
     },
@@ -4586,7 +5487,11 @@
       "candidate_ids": [
         "byz-greek-1754",
         "byz-greek-1873",
-        "byzantine-greek-calendar2026",
+        "byzantine-greek-rome1880-euangelion",
+        "byzantine-greek-rome1937-horologion",
+        "byzantine-greek-rome1601",
+        "byzantine-greek-santadriano1667",
+        "byzantine-greek-rome1683",
         "byzantine-greek-crypt1300",
         "byzantine-greek-crypt1579",
         "byzantine-greek-crypt1881",
@@ -4595,11 +5500,7 @@
         "byzantine-greek-italian1940",
         "byzantine-greek-italian2005",
         "byzantine-greek-lungro-james",
-        "byzantine-greek-rome1601",
-        "byzantine-greek-rome1683",
-        "byzantine-greek-rome1880-euangelion",
-        "byzantine-greek-rome1937-horologion",
-        "byzantine-greek-santadriano1667"
+        "byzantine-greek-calendar2026"
       ],
       "proposed_tradition_ids": [
         "byzantine-roman-greek"
@@ -4608,22 +5509,26 @@
       "dossier_coverage": {
         "status": "related-dossier-only-local-reception-unresearched",
         "dossier_ids": [
-          "byzantine-stages"
+          "byzantine-stages",
+          "eastern-local-round2"
         ],
         "stage_ids": [
           "byzantine-stages:greek1754",
-          "byzantine-stages:greek1873"
+          "byzantine-stages:greek1873",
+          "eastern-local-round2:grottaferrata-1601"
         ],
         "assigned_family": "Roman Greek Euchologion",
-        "scope": "selected source-book stages; not all Byzantine Churches",
-        "reception_limit": "Mapped stages concern identified source books or relevant recensions. This crosswalk does not create a local adoption or continuous-use claim.",
+        "scope": "Selected source-book states are documented; named local Church reception remains unverified.",
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation.",
         "provisional_stage_ids": [],
         "text_coverage_counts": {
-          "partial": 2
+          "partial": 2,
+          "not-transcribed": 1
         },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": [
-          "byzantine-stages:greek-original"
+          "byzantine-stages:greek-original",
+          "eastern-local-round2:italo-albanian-eparchies"
         ]
       },
       "witnesses": [
@@ -4664,14 +5569,14 @@
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
         "byz-barberini336",
-        "byzantine-greek-casole-typikon",
-        "byzantine-greek-correction1370-cold",
         "byzantine-greek-crypt20",
-        "byzantine-greek-messina-typikon",
         "byzantine-greek-ott344",
-        "byzantine-greek-rossano-angelo-cold",
         "byzantine-greek-rossano-typikon",
-        "byzantine-greek-stpeter"
+        "byzantine-greek-messina-typikon",
+        "byzantine-greek-casole-typikon",
+        "byzantine-greek-stpeter",
+        "byzantine-greek-rossano-angelo-cold",
+        "byzantine-greek-correction1370-cold"
       ],
       "canonical_tradition_ids": [
         "byzantine-roman-greek"
@@ -4733,9 +5638,9 @@
         "byzantine-regional-blaj1870",
         "byzantine-regional-blaj1905",
         "byzantine-regional-blaj1931",
+        "byzantine-regional-rome1996",
         "byzantine-regional-blaj2014",
-        "byzantine-regional-ro-commemoration2006-cold",
-        "byzantine-regional-rome1996"
+        "byzantine-regional-ro-commemoration2006-cold"
       ],
       "proposed_tradition_ids": [
         "byzantine-romanian-blaj"
@@ -4806,9 +5711,9 @@
       "coverage_unit": "Church-or-tradition-census-slot",
       "inventory_status": "historical-editions-identified; local-receipt-and-chronology-incomplete",
       "candidate_ids": [
+        "byz-vulgata-chrysostom-1940",
         "byz-vulgata-1942",
         "byz-vulgata-1953",
-        "byz-vulgata-chrysostom-1940",
         "byzantine-slavic-vulgata1983"
       ],
       "proposed_tradition_ids": [
@@ -4816,9 +5721,10 @@
       ],
       "mapping_strength": "research-relevance-only-local-reception-separate",
       "dossier_coverage": {
-        "status": "related-dossier-only-local-reception-unresearched",
+        "status": "selected-stages-available",
         "dossier_ids": [
-          "byzantine-stages"
+          "byzantine-stages",
+          "eastern-local-round2"
         ],
         "stage_ids": [
           "byzantine-stages:vulgata1940",
@@ -4826,15 +5732,16 @@
           "byzantine-stages:vulgata1953"
         ],
         "assigned_family": "Roman Slavonic Vulgata (Russian-use series)",
-        "scope": "selected source-book stages; not all Byzantine Churches",
-        "reception_limit": "Mapped stages concern identified source books or relevant recensions. This crosswalk does not create a local adoption or continuous-use claim.",
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation.",
         "provisional_stage_ids": [],
         "text_coverage_counts": {
           "not-transcribed": 3
         },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": [
-          "byzantine-stages:vulgata-exemplar"
+          "byzantine-stages:vulgata-exemplar",
+          "eastern-local-round2:russian-use"
         ]
       },
       "witnesses": [
@@ -5019,8 +5926,8 @@
       "inventory_status": "shared-book-reception-source-described; original-language-chronology-incomplete",
       "candidate_ids": [
         "byz-lviv-1905",
-        "byz-ruthenian-1942",
         "byz-ruthenian-chrysostom-1940",
+        "byz-ruthenian-1942",
         "byzantine-slavic-archieratikon1973"
       ],
       "proposed_tradition_ids": [
@@ -5098,17 +6005,18 @@
       "coverage_unit": "Church-or-tradition-census-slot",
       "inventory_status": "incomplete",
       "candidate_ids": [
+        "byz-ugcc-2024",
         "byz-lviv-1905",
-        "byz-lviv1929",
         "byz-ruthenian-1942",
         "byz-ruthenian-chrysostom-1940",
         "byz-ruthenian-ordo-1944",
-        "byz-ruthenian-ordo-1953",
         "byz-univ1733-read-liturgy",
-        "byzantine-slavic-archieratikon1973",
-        "byzantine-slavic-lviv1930-mikron",
+        "byz-lviv1929",
+        "byz-ruthenian-ordo-1953",
         "byzantine-slavic-pochaiv1788",
-        "byzantine-slavic-zhovkva1927"
+        "byzantine-slavic-zhovkva1927",
+        "byzantine-slavic-lviv1930-mikron",
+        "byzantine-slavic-archieratikon1973"
       ],
       "proposed_tradition_ids": [
         "byzantine-ruthenian"
@@ -5200,11 +6108,19 @@
           "end_year": 1953,
           "date_role": "publication-year-identified-by-later-official-act",
           "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "byz-ugcc-2024",
+          "label": "Служебник; Ukrainian translations of Chrysostom and Basil liturgies",
+          "start_year": 2024,
+          "end_year": 2024,
+          "date_role": "promulgation-and-effective-year",
+          "status": "inventory-witness-candidate-not-a-stage"
         }
       ],
       "component_profile": "byzantine",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Acquire 1940/1941 and 1942 printed witnesses and 1944 Ordo; establish region-specific receipt and supplements. The 1941 act permits exceptions, so publication is not universal replacement.",
+      "missing_stage_chain": "The 2024 operative Ukrainian texts are approved and implementation is described; inspect an issued service volume and dated celebration to establish exact book extent and first observed use. Earlier source books and local reception remain separate.",
       "next_sources": {
         "inventory_source_ids": [
           "mci-liturgikon",
@@ -5231,8 +6147,8 @@
       "contextual_ancestry_candidates": [
         "byz-barberini336",
         "byz-striatyn1604",
-        "byzantine-slavic-borgia-illyr-13-14",
-        "byzantine-slavic-vat-slav14"
+        "byzantine-slavic-vat-slav14",
+        "byzantine-slavic-borgia-illyr-13-14"
       ],
       "deferred_or_origin_review_candidate_ids": [
         "byz-ugcc-2024",
@@ -5270,24 +6186,28 @@
       "inventory_status": "historical-or-local-candidate; chronology-incomplete",
       "candidate_ids": [
         "byz-lviv1646-nyirderzs",
-        "byzantine-regional-hu-ceremonial1955",
         "byzantine-regional-hung1916",
         "byzantine-regional-hung1918",
         "byzantine-regional-hung1919",
-        "byzantine-regional-hung1954"
+        "byzantine-regional-hung1954",
+        "byzantine-regional-hu-ceremonial1955"
       ],
       "proposed_tradition_ids": [],
       "mapping_strength": "exact-historical-copy-context-local-use-dates-unresolved",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
+        "status": "related-dossier-only-local-reception-unresearched",
+        "dossier_ids": [
+          "eastern-local-round2"
+        ],
         "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "scope": "A targeted research gap is recorded; no exact local Mass-book stage has yet been established for this route.",
         "reception_limit": "Mapped stages concern identified source books or relevant recensions. This crosswalk does not create a local adoption or continuous-use claim.",
         "provisional_stage_ids": [],
         "text_coverage_counts": {},
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "eastern-local-round2:hungarian-use"
+        ]
       },
       "witnesses": [
         {
@@ -5329,12 +6249,12 @@
         "alex-coptic-1898",
         "alex-coptic-1934",
         "alex-coptic-1971",
-        "coptic-basil-printings-1987",
         "coptic-basil-revision-1990",
-        "coptic-deacon-1875",
-        "coptic-deacon-1898",
+        "coptic-basil-printings-1987",
+        "coptic-ms-cm-lit265",
         "coptic-ms-bnf-arabe5969",
-        "coptic-ms-cm-lit265"
+        "coptic-deacon-1875",
+        "coptic-deacon-1898"
       ],
       "proposed_tradition_ids": [
         "coptic-catholic"
@@ -5412,13 +6332,13 @@
       },
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
-        "alex-coptic-vat17",
-        "alex-coptic1902-comparison",
-        "alex-mark-bodleian-e11",
-        "alex-mark-bodleian-e5-gen153",
         "alex-sahidic-or6877",
-        "coptic-ms-monb-vd",
+        "alex-coptic1902-comparison",
+        "alex-mark-bodleian-e5-gen153",
+        "alex-mark-bodleian-e11",
+        "alex-coptic-vat17",
         "coptic-ms-monb-ve",
+        "coptic-ms-monb-vd",
         "coptic-ms-monb-vf",
         "coptic-ms-monb-vg"
       ],
@@ -5501,8 +6421,8 @@
       },
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
-        "alex-geez-aksumite-um039",
         "alex-geez-eap385",
+        "alex-geez-aksumite-um039",
         "geez-1548-rome-tasfa-seyon",
         "geez-bl-or545-missal-cold"
       ],
@@ -5518,9 +6438,9 @@
       "coverage_unit": "Church-or-tradition-census-slot",
       "inventory_status": "incomplete",
       "candidate_ids": [
+        "alex-geez-2025",
         "alex-geez-1913",
         "alex-geez-1945",
-        "alex-geez-2025",
         "alex-keren-blin-geez-mass-2008"
       ],
       "proposed_tradition_ids": [
@@ -5577,8 +6497,8 @@
       },
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
-        "alex-geez-aksumite-um039",
         "alex-geez-eap385",
+        "alex-geez-aksumite-um039",
         "geez-1548-rome-tasfa-seyon",
         "geez-bl-or545-missal-cold"
       ],
@@ -5594,27 +6514,27 @@
       "coverage_unit": "Church-or-tradition-census-slot",
       "inventory_status": "incomplete",
       "candidate_ids": [
-        "arm-1642-ordo",
         "arm-1677-liturgia",
         "arm-1677-ministerium",
         "arm-1823",
-        "armenian-catholic-1994",
-        "armenian-lowmass-server-books",
-        "armenian-marshall106",
-        "armenian-rome1777-chashots",
+        "arm-1642-ordo",
+        "armenian-vienna1879",
+        "armenian-vienna1858",
         "armenian-rome1777-khorhrdatetr",
-        "armenian-spasaworutiwn-1783-1803",
+        "armenian-rome1777-chashots",
+        "armenian-venice1741",
         "armenian-trieste1803",
+        "armenian-venice1809",
+        "armenian-venice-rome-exemplar-reprints",
         "armenian-venice-celebrant-clerks",
         "armenian-venice-kargh-dprutean",
-        "armenian-venice-rome-exemplar-reprints",
-        "armenian-venice1741",
-        "armenian-venice1809",
-        "armenian-vienna1858",
+        "armenian-spasaworutiwn-1783-1803",
+        "armenian-lowmass-server-books",
+        "armenian-marshall106",
         "armenian-vienna1877-deacons",
-        "armenian-vienna1879",
         "armenian-vienna1879-deacons",
-        "armenian-vienna1904"
+        "armenian-vienna1904",
+        "armenian-catholic-1994"
       ],
       "proposed_tradition_ids": [
         "armenian-catholic"
@@ -5704,15 +6624,15 @@
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
         "arm-khorhrdatetr1686",
-        "armenian-constantinople1568-cold",
-        "armenian-gatrchean1897",
+        "armenian-xosrov-commentary",
         "armenian-lambronatsi-commentary",
         "armenian-lyon-or15",
-        "armenian-meghapart1513",
         "armenian-munich-arm6",
-        "armenian-newjulfa1641",
         "armenian-sanlazzaro-arm1411",
-        "armenian-xosrov-commentary"
+        "armenian-gatrchean1897",
+        "armenian-meghapart1513",
+        "armenian-newjulfa1641",
+        "armenian-constantinople1568-cold"
       ],
       "canonical_tradition_ids": [
         "armenian-eucharistic-stages:catholic",
@@ -5731,11 +6651,11 @@
         "mar-1763",
         "mar-dibs-1888",
         "mar-dibs-1908",
-        "maronite-liber-ministri-1596",
         "maronite-qozhaya-1816",
         "maronite-qozhaya-1838",
         "maronite-qozhaya-1855",
         "maronite-qozhaya-1872",
+        "maronite-liber-ministri-1596",
         "maronite-rome1608-reissue-cold"
       ],
       "proposed_tradition_ids": [
@@ -5842,15 +6762,15 @@
       },
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
-        "maronite-ms-aleppo619-1490",
-        "maronite-ms-bnf-syr438-1706-cold",
-        "maronite-ms-bnf-syr71-1454",
-        "maronite-ms-bnf-syr73-1509",
-        "maronite-ms-bnf-syr78",
-        "maronite-ms-bnf-syr79",
-        "maronite-ms-vat-sir431",
         "syr-add14523-james",
-        "syr-add14690-anaphoras"
+        "syr-add14690-anaphoras",
+        "maronite-ms-bnf-syr71-1454",
+        "maronite-ms-aleppo619-1490",
+        "maronite-ms-bnf-syr73-1509",
+        "maronite-ms-bnf-syr79",
+        "maronite-ms-bnf-syr78",
+        "maronite-ms-vat-sir431",
+        "maronite-ms-bnf-syr438-1706-cold"
       ],
       "deferred_or_origin_review_candidate_ids": [
         "mar-1959",
@@ -5871,13 +6791,13 @@
       "coverage_unit": "Church-or-tradition-census-slot",
       "inventory_status": "incomplete",
       "candidate_ids": [
-        "syr-1922",
         "syr-mosul-1881",
+        "syr-1922",
         "syr-rome-1843",
-        "syriac-malankara-syr-beirut-1926",
+        "syriac-malankara-syr-sharfeh-1905",
         "syriac-malankara-syr-mosul-1877-calendar",
         "syriac-malankara-syr-sharfeh-1901-pericopes",
-        "syriac-malankara-syr-sharfeh-1905",
+        "syriac-malankara-syr-beirut-1926",
         "syriac-malankara-syr-sharfeh-1912-gospels"
       ],
       "proposed_tradition_ids": [
@@ -5959,9 +6879,9 @@
       "contextual_ancestry_candidates": [
         "syr-add14523-james",
         "syr-add14690-anaphoras",
+        "syriac-malankara-add17128",
         "syriac-malankara-add14493",
-        "syriac-malankara-add14615-lower-cold",
-        "syriac-malankara-add17128"
+        "syriac-malankara-add14615-lower-cold"
       ],
       "canonical_tradition_ids": [
         "syriac-catholic-auxiliary",
@@ -6072,21 +6992,21 @@
       "coverage_unit": "Church-or-tradition-census-slot",
       "inventory_status": "incomplete",
       "candidate_ids": [
-        "chald-1767",
         "chald-1901",
+        "chald-proper-1901",
+        "chald-1767",
         "chald-2014",
         "chald-2020",
         "chald-2025-reprint",
-        "chald-proper-1901",
-        "chaldean-baghdad1971",
+        "chaldean-ms-vat-sir-491",
+        "chaldean-ms-vat-sir-44",
+        "chaldean-ms-vat-sir-43",
         "chaldean-mosul1900-lections",
         "chaldean-mosul1936-reprint",
-        "chaldean-ms-vat-sir-43",
-        "chaldean-ms-vat-sir-44",
-        "chaldean-ms-vat-sir-491",
-        "chaldean-paris1982",
+        "chaldean-baghdad1971",
         "chaldean-reform2006-2007",
-        "chaldean-st-peter-2013"
+        "chaldean-st-peter-2013",
+        "chaldean-paris1982"
       ],
       "proposed_tradition_ids": [
         "chaldean"
@@ -6206,14 +7126,14 @@
       },
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
-        "chaldean-ms-borg-sir-150",
-        "chaldean-ms-diarbekir-hudra",
+        "syr-add14669-fragments",
         "chaldean-ms-mar-eshaya",
+        "chaldean-ms-diarbekir-hudra",
         "chaldean-ms-mardin22",
-        "chaldean-ms-vat-sir-303",
+        "chaldean-ms-borg-sir-150",
         "chaldean-ms-vat-sir-42",
-        "chaldean-urmia1890-liturgy",
-        "syr-add14669-fragments"
+        "chaldean-ms-vat-sir-303",
+        "chaldean-urmia1890-liturgy"
       ],
       "deferred_or_origin_review_candidate_ids": [
         "chald-arabic-by-2022",
@@ -6231,35 +7151,35 @@
       "coverage_unit": "Church-or-tradition-census-slot",
       "inventory_status": "incomplete",
       "candidate_ids": [
+        "malabar-1898",
+        "malabar-1906",
         "malabar-1774",
         "malabar-1775-rituum",
         "malabar-1845-reported-exemplar",
-        "malabar-1898",
-        "malabar-1906",
-        "malabar-1946",
-        "malabar-1955-study",
         "malabar-1959-ordo",
         "malabar-1960-supplementum",
         "malabar-1960-taksa",
+        "malabar-1946",
+        "malabar-1955-study",
+        "malabar-2003",
         "malabar-1962",
         "malabar-1968",
         "malabar-1985-86",
         "malabar-1989",
-        "malabar-2003",
-        "malabar-2021",
-        "malabar-feast-rites-2009",
-        "malabar-feast-rites-2025",
-        "malabar-lectionary-2013",
-        "malabar-mannanam-1928-cold",
-        "malabar-ms-roz-1603-cold",
-        "malabar-nestorius-2018",
         "malabar-propria-2005",
+        "malabar-feast-rites-2009",
+        "malabar-taksa-propria-2011",
+        "malabar-theodore-experimental-2013",
+        "malabar-lectionary-2013",
+        "malabar-nestorius-2018",
+        "malabar-2021",
+        "malabar-feast-rites-2025",
+        "malabar-syriac-typica-2018-lead",
         "malabar-puthempally-1929-cold",
         "malabar-raza-mannanam-1925-cold",
         "malabar-sacrum-apostolorum-1912-cold",
-        "malabar-syriac-typica-2018-lead",
-        "malabar-taksa-propria-2011",
-        "malabar-theodore-experimental-2013"
+        "malabar-mannanam-1928-cold",
+        "malabar-ms-roz-1603-cold"
       ],
       "proposed_tradition_ids": [
         "syro-malabar"
@@ -6427,11 +7347,11 @@
       },
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
+        "syr-add14669-fragments",
         "malabar-gouvea-1606",
-        "malabar-ms-vat-sir-2-3",
-        "malabar-ms-vat-sir-22",
         "malabar-ms-vat-sir-66",
-        "syr-add14669-fragments"
+        "malabar-ms-vat-sir-22",
+        "malabar-ms-vat-sir-2-3"
       ],
       "deferred_or_origin_review_candidate_ids": [
         "malabar-draft-1967-09-14",
@@ -6463,48 +7383,21 @@
       "coverage_unit": "trajectory-or-discovery-bucket",
       "inventory_status": "selected-witnesses-documented",
       "candidate_ids": [
-        "gelasian-rheinau30",
-        "gelasian-stgall348",
-        "gelasian-stgall350",
-        "gelasian-wilson-1894-critical-edition",
+        "veronense-cod85",
+        "old-gelasian-reg-lat-316",
+        "later-gelasian-rheinau-stgall",
         "gellone-bnf12048",
-        "gregorian-chelles-morgan-g57",
         "gregorian-hadrianum-cambrai164",
-        "gregorian-ottob-lat313",
         "gregorian-paduense-d47",
-        "gregorian-reg-lat337",
         "gregorian-tridentinum-1590",
         "gregorian-wilson-1915-critical-edition",
-        "later-gelasian-rheinau-stgall",
-        "latin-early-alcuin-missal-reconstruction",
-        "latin-early-angouleme-bnf816",
-        "latin-early-clm6333-704",
-        "latin-early-clm6333-706",
-        "latin-early-clm6333-707",
-        "latin-early-clm6333-708",
-        "latin-early-drogo-sacramentary",
-        "latin-early-echternach-bnf9433-cold",
-        "latin-early-einsiedeln110-ordines",
-        "latin-early-elmss-1236",
-        "latin-early-elmss-1400",
-        "latin-early-elmss-1462",
-        "latin-early-elmss-1512",
-        "latin-early-elmss-1516",
-        "latin-early-elmss-1547",
-        "latin-early-elmss-1554",
-        "latin-early-elmss-1567",
-        "latin-early-elmss-1639",
-        "latin-early-elmss-1827",
-        "latin-early-elmss-1845",
-        "latin-early-elmss-1862",
-        "latin-early-elmss-1874",
-        "latin-early-elmss-1917",
-        "latin-early-elmss-1956",
-        "latin-early-elmss-2071",
-        "latin-early-elmss-2106",
-        "latin-early-elmss-2134",
-        "latin-early-elmss-2190",
-        "latin-early-elmss-2191",
+        "gelasian-wilson-1894-critical-edition",
+        "gelasian-stgall348",
+        "gelasian-rheinau30",
+        "gelasian-stgall350",
+        "gregorian-reg-lat337",
+        "gregorian-ottob-lat313",
+        "gregorian-chelles-morgan-g57",
         "latin-early-elmss-264",
         "latin-early-elmss-270",
         "latin-early-elmss-273",
@@ -6514,53 +7407,97 @@
         "latin-early-elmss-429",
         "latin-early-elmss-487",
         "latin-early-elmss-558",
-        "latin-early-elmss-58",
-        "latin-early-elmss-715-cold",
-        "latin-early-elmss-760",
-        "latin-early-elmss-888",
         "latin-early-elmss-903",
-        "latin-early-gellone-additions-cold",
-        "latin-early-kromeriz-gregorian",
-        "latin-early-marmoutier-autun19bis",
-        "latin-early-modena-oii7",
+        "latin-early-elmss-1236",
+        "latin-early-elmss-1512",
+        "latin-early-elmss-1516",
+        "latin-early-elmss-1547",
+        "latin-early-elmss-1554",
+        "latin-early-elmss-1567",
+        "latin-early-elmss-1639",
+        "latin-early-elmss-1827",
+        "latin-early-elmss-1874",
+        "latin-early-elmss-1917",
+        "latin-early-elmss-1956",
+        "latin-early-elmss-2071",
+        "latin-early-elmss-2106",
+        "latin-early-elmss-2134",
+        "latin-early-elmss-2190",
+        "latin-early-elmss-2191",
+        "latin-early-elmss-58",
+        "latin-early-elmss-888",
+        "latin-early-elmss-1400",
+        "latin-early-elmss-1462",
+        "latin-early-veronense-addition",
+        "latin-early-clm6333-704",
+        "latin-early-clm6333-706",
+        "latin-early-clm6333-708",
+        "latin-early-clm6333-707",
         "latin-early-ordo-i",
         "latin-early-ordo-ii",
         "latin-early-ordo-iii",
         "latin-early-ordo-iv",
-        "latin-early-ordo-ix",
         "latin-early-ordo-v",
         "latin-early-ordo-vi",
         "latin-early-ordo-vii",
         "latin-early-ordo-viii",
+        "latin-early-ordo-ix",
         "latin-early-ordo-x",
         "latin-early-ordo-xiv",
         "latin-early-ordo-xv",
         "latin-early-ordo-xvi",
-        "latin-early-tours-nal1589-cold",
+        "latin-early-elmss-760",
+        "latin-early-elmss-1845",
+        "latin-early-elmss-1862",
+        "latin-early-einsiedeln110-ordines",
+        "latin-early-angouleme-bnf816",
+        "latin-early-marmoutier-autun19bis",
         "latin-early-tours-sacramentaries",
-        "latin-early-veronense-addition",
-        "old-gelasian-reg-lat-316",
-        "veronense-cod85"
+        "latin-early-alcuin-missal-reconstruction",
+        "latin-early-drogo-sacramentary",
+        "latin-early-kromeriz-gregorian",
+        "latin-early-modena-oii7",
+        "latin-early-elmss-715-cold",
+        "latin-early-gellone-additions-cold",
+        "latin-early-tours-nal1589-cold",
+        "latin-early-echternach-bnf9433-cold"
       ],
       "proposed_tradition_ids": [],
       "mapping_strength": "composite-bucket-split-before-canonical-mapping",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "early-western-round2"
+        ],
+        "stage_ids": [
+          "early-western-round2-veronense",
+          "early-western-round2-old-gelasian",
+          "early-western-round2-gellone",
+          "early-western-round2-cambrai",
+          "early-western-round2-trento",
+          "early-western-round2-padua"
+        ],
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 6
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "early-western-round2-gap-frankish-gelasian",
+          "early-western-round2-gap-gelasian",
+          "early-western-round2-gap-gregorian",
+          "early-western-round2-gap-roman-libelli"
+        ],
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
           "candidate_id": "veronense-cod85",
           "label": "Sacramentarium Veronense, Verona LXXXV(80)",
-          "start_year": null,
-          "end_year": null,
-          "date_role": "unresolved or non-coordinate date; see qualification",
+          "start_year": 551,
+          "end_year": 600,
+          "date_role": "manuscript copying of surviving collection; not composition or public adoption",
           "status": "inventory-witness-candidate-not-a-stage"
         },
         {
@@ -6715,19 +7652,17 @@
       "coverage_unit": "trajectory-or-discovery-bucket",
       "inventory_status": "selected-witnesses-documented",
       "candidate_ids": [
-        "bobbio-bnf13246",
-        "bobbio-lowe-1917-facsimile-vol1",
+        "missale-gothicum-reg317",
+        "missale-francorum-reg257",
         "gallicanum-vetus-pal493",
-        "latin-early-ambrosiana-m12",
-        "latin-early-bangor-antiphonary",
-        "latin-early-basle-a-vii-3-prayers",
-        "latin-early-bobbio-additions",
-        "latin-early-book-of-armagh-extracts",
-        "latin-early-book-of-deer-communion",
-        "latin-early-corpus282",
-        "latin-early-drummond",
-        "latin-early-elmss-104",
-        "latin-early-elmss-105",
+        "bobbio-bnf13246",
+        "stowe-ria-dii3",
+        "stowe-warner-1915-vol2",
+        "bobbio-lowe-1917-facsimile-vol1",
+        "latin-early-elmss-422",
+        "latin-early-elmss-443",
+        "latin-early-elmss-491",
+        "latin-early-elmss-537",
         "latin-early-elmss-1165",
         "latin-early-elmss-1283",
         "latin-early-elmss-1380",
@@ -6736,47 +7671,63 @@
         "latin-early-elmss-1457",
         "latin-early-elmss-1549",
         "latin-early-elmss-1551",
-        "latin-early-elmss-1557",
-        "latin-early-elmss-1558",
-        "latin-early-elmss-1568",
-        "latin-early-elmss-1569",
         "latin-early-elmss-1570",
-        "latin-early-elmss-1583",
-        "latin-early-elmss-177",
         "latin-early-elmss-1794",
-        "latin-early-elmss-1896",
         "latin-early-elmss-1924",
         "latin-early-elmss-2103",
-        "latin-early-elmss-422",
-        "latin-early-elmss-443",
-        "latin-early-elmss-491",
-        "latin-early-elmss-537",
+        "latin-early-elmss-943",
+        "latin-early-elmss-1569",
+        "latin-early-elmss-1568",
+        "latin-early-elmss-177",
         "latin-early-elmss-550",
         "latin-early-elmss-594",
         "latin-early-elmss-595",
         "latin-early-elmss-802",
-        "latin-early-elmss-943",
-        "latin-early-elmss-946",
-        "latin-early-elmss-947",
         "latin-early-elmss-979",
-        "latin-early-rosslyn",
+        "latin-early-elmss-1896",
         "latin-early-stowe-additions",
-        "missale-francorum-reg257",
-        "missale-gothicum-reg317",
-        "stowe-ria-dii3",
-        "stowe-warner-1915-vol2"
+        "latin-early-ambrosiana-m12",
+        "latin-early-drummond",
+        "latin-early-corpus282",
+        "latin-early-rosslyn",
+        "latin-early-elmss-104",
+        "latin-early-elmss-105",
+        "latin-early-bangor-antiphonary",
+        "latin-early-bobbio-additions",
+        "latin-early-book-of-deer-communion",
+        "latin-early-book-of-armagh-extracts",
+        "latin-early-basle-a-vii-3-prayers",
+        "latin-early-elmss-1557",
+        "latin-early-elmss-1558",
+        "latin-early-elmss-1583",
+        "latin-early-elmss-946",
+        "latin-early-elmss-947"
       ],
       "proposed_tradition_ids": [],
       "mapping_strength": "composite-bucket-split-before-canonical-mapping",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "early-western-round2"
+        ],
+        "stage_ids": [
+          "early-western-round2-gallicanum-early",
+          "early-western-round2-gallicanum-later",
+          "early-western-round2-bobbio",
+          "early-western-round2-stowe"
+        ],
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 4
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "early-western-round2-gap-bobbio",
+          "early-western-round2-gap-gallicanum",
+          "early-western-round2-gap-stowe"
+        ],
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
@@ -6872,32 +7823,46 @@
       "coverage_unit": "trajectory-or-discovery-bucket",
       "inventory_status": "selected-witnesses-and-scoped-textual-relationships-documented",
       "candidate_ids": [
-        "burchard-ordo-1496",
-        "burchard-ordo-1502",
-        "ciconiolanus-directorium-1539",
-        "franciscan-1482-1483",
-        "franciscan-curial-bnf8887",
         "haymo-curial-ordinal",
-        "latin-early-aarau1483-additions",
-        "latin-early-aarau1483-main",
-        "latin-early-assisi607",
-        "latin-early-assisi607-additions",
-        "latin-early-assisi607-haymo-corrections",
-        "latin-early-avignon100",
-        "latin-early-burchard1498",
-        "latin-early-burchard1527",
-        "latin-early-casanatense250",
-        "latin-early-corsini376",
-        "latin-early-franciscan-calendar-statutes",
-        "latin-early-fribourg9-additions",
-        "latin-early-fribourg9-main",
+        "franciscan-curial-bnf8887",
+        "franciscan-1482-1483",
+        "roman-1474",
+        "burchard-ordo-1496",
+        "roman-1501-liechtenstein-burchard",
+        "burchard-ordo-1502",
+        "roman-1541-liechtenstein-burchard",
+        "roman-1571-varisco-ritus",
+        "roman-1493-preparatio",
+        "roman-lyon-1507-indutus",
+        "ciconiolanus-directorium-1539",
+        "roman-1563-giunta-opus-aureum",
+        "roman-1570-rome-faletti-varisco",
         "latin-early-haymo-indutus",
-        "latin-early-honorius-prototype",
         "latin-early-innocent-prototype",
-        "latin-early-lateran65",
-        "latin-early-mazarine426",
+        "latin-early-honorius-prototype",
+        "latin-early-regula-prototype",
         "latin-early-napoli-vig38",
         "latin-early-napoli-vig38-additions",
+        "latin-early-corsini376",
+        "latin-early-assisi607",
+        "latin-early-casanatense250",
+        "latin-early-mazarine426",
+        "latin-early-vatican-sp-e9",
+        "latin-early-ross199",
+        "latin-early-avignon100",
+        "latin-early-ottob356",
+        "latin-early-lateran65",
+        "latin-early-solothurn540-main",
+        "latin-early-solothurn540-clare",
+        "latin-early-solothurn540-additions",
+        "latin-early-fribourg9-main",
+        "latin-early-fribourg9-additions",
+        "latin-early-aarau1483-main",
+        "latin-early-aarau1483-additions",
+        "latin-early-scotus1482",
+        "latin-early-burchard1498",
+        "latin-early-burchard1527",
+        "latin-early-franciscan-calendar-statutes",
         "latin-early-nicholasiii",
         "latin-early-ofm-2428",
         "latin-early-ofm-2631",
@@ -6906,22 +7871,8 @@
         "latin-early-ofm-5841",
         "latin-early-ofm-5842",
         "latin-early-ofm-5843",
-        "latin-early-ottob356",
-        "latin-early-regula-prototype",
-        "latin-early-ross199",
-        "latin-early-scotus1482",
-        "latin-early-solothurn540-additions",
-        "latin-early-solothurn540-clare",
-        "latin-early-solothurn540-main",
-        "latin-early-vatican-sp-e9",
-        "roman-1474",
-        "roman-1493-preparatio",
-        "roman-1501-liechtenstein-burchard",
-        "roman-1541-liechtenstein-burchard",
-        "roman-1563-giunta-opus-aureum",
-        "roman-1570-rome-faletti-varisco",
-        "roman-1571-varisco-ritus",
-        "roman-lyon-1507-indutus"
+        "latin-early-assisi607-haymo-corrections",
+        "latin-early-assisi607-additions"
       ],
       "proposed_tradition_ids": [
         "roman-curial"
@@ -10291,21 +11242,23 @@
       "dossier_coverage": {
         "status": "selected-stages-available",
         "dossier_ids": [
-          "northern-central-regional"
+          "northern-central-regional",
+          "northwest-round2"
         ],
         "stage_ids": [
-          "northern-central-regional:nidaros1519"
+          "northern-central-regional:nidaros1519",
+          "northwest-round2:iceland1250"
         ],
-        "scope": "The 1519 provincial book and standardization intent are attested; actual uptake across Norway, Iceland and Faroes is open.",
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
         "text_coverage_counts": {
-          "not-transcribed": 1
+          "not-transcribed": 2
         },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": [
           "northern-central-regional:nidaros-reception"
         ],
-        "reception_limit": "A selected book state or proper records only the authority and use expressly evidenced; it does not prove uniform adoption or continuous descent."
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
@@ -10406,14 +11359,24 @@
       ],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "french-local-round2"
+        ],
+        "stage_ids": [
+          "french-local-round2-paris:book",
+          "french-local-round2:paris1738"
+        ],
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 2
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "french-local-round2-paris:sequence-gap"
+        ],
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
@@ -11048,14 +12011,24 @@
       ],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "french-local-round2"
+        ],
+        "stage_ids": [
+          "french-local-round2-rouen:book",
+          "french-local-round2:rouen1728"
+        ],
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 2
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "french-local-round2-rouen:sequence-gap"
+        ],
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
@@ -11356,21 +12329,32 @@
       "inventory_status": "selected-catalogue-witness-census-documented",
       "candidate_ids": [
         "mainz-medieval",
-        "mainz-printed-series"
+        "mainz-printed-series",
+        "mainz-usuarium-28"
       ],
       "proposed_tradition_ids": [
         "mainz"
       ],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "central-europe-round3"
+        ],
+        "stage_ids": [
+          "central-europe-round3:stage-mainz-ms",
+          "central-europe-round3:stage-mainz-1482"
+        ],
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 2
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "central-europe-round3:gap-mainz-series"
+        ],
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
@@ -11387,6 +12371,14 @@
           "start_year": 1482,
           "end_year": 1742,
           "date_role": "publication-witness-cluster",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mainz-usuarium-28",
+          "label": "Missale Moguntinum (1482), BSB Rar. 0957",
+          "start_year": 1482,
+          "end_year": 1482,
+          "date_role": "printed-witness-publication",
           "status": "inventory-witness-candidate-not-a-stage"
         }
       ],
@@ -12093,7 +13085,7 @@
           "cistercian-1606-1657-1657"
         ],
         "assigned_family": "Cistercian",
-        "scope": "selected Cistercian stages",
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
         "text_coverage_counts": {
           "not-transcribed": 1,
@@ -12102,9 +13094,10 @@
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": [
           "cistercian-1606-1657-pre1606",
-          "cistercian-1606-1657-wide-revision",
-          "cistercian-1606-1657-reception"
-        ]
+          "cistercian-1606-1657-reception",
+          "cistercian-1606-1657-wide-revision"
+        ],
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
@@ -12559,21 +13552,36 @@
       "coverage_unit": "trajectory-or-discovery-bucket",
       "inventory_status": "selected-witness-census-documented",
       "candidate_ids": [
-        "cluniac-printed-series"
+        "cluniac-printed-series",
+        "cluniac-1493-bnf-b308",
+        "cluniac-1510-arsenal-8t2452",
+        "cluniac-1717-bnf-b309",
+        "cluniac-1733-arsenal-folt759"
       ],
       "proposed_tradition_ids": [
         "cluny"
       ],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "residual-orders-round3"
+        ],
+        "stage_ids": [
+          "residual-orders-round3:cluny-1493",
+          "residual-orders-round3:cluny-1510",
+          "residual-orders-round3:cluny-1717",
+          "residual-orders-round3:cluny-1733"
+        ],
+        "scope": "Selected bounded exact book states; no continuous local chronology, textual transition or uniform use is inferred.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 4
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "residual-orders-round3:cluny-gap"
+        ]
       },
       "witnesses": [
         {
@@ -12582,6 +13590,38 @@
           "start_year": 1493,
           "end_year": 1733,
           "date_role": "publication-witness-cluster",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cluniac-1493-bnf-b308",
+          "label": "Missale Ordinis Cluniacensis, BnF B-308",
+          "start_year": 1493,
+          "end_year": 1493,
+          "date_role": "catalogue-reported-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cluniac-1510-arsenal-8t2452",
+          "label": "Missale ordinis Cluniacensis, BnF Arsenal 8-T-2452",
+          "start_year": 1510,
+          "end_year": 1510,
+          "date_role": "publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cluniac-1717-bnf-b309",
+          "label": "Missale monasticum ad usum sacri ordinis Cluniacensis, BnF B-309",
+          "start_year": 1717,
+          "end_year": 1717,
+          "date_role": "publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "cluniac-1733-arsenal-folt759",
+          "label": "Missale monasticum ad usum sacri ordinis Cluniacensis, BnF Arsenal FOL-T-759",
+          "start_year": 1733,
+          "end_year": 1733,
+          "date_role": "publication",
           "status": "inventory-witness-candidate-not-a-stage"
         }
       ],
@@ -12825,14 +13865,24 @@
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "central-europe-round3"
+        ],
+        "stage_ids": [
+          "central-europe-round3:stage-olomouc-1488",
+          "central-europe-round3:stage-olomouc-1499-fragment"
+        ],
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 2
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "central-europe-round3:gap-olomouc-series"
+        ],
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
@@ -12925,19 +13975,38 @@
         "german-swiss-augsburg-witness-cluster",
         "german-swiss-bamberg-witness-cluster",
         "german-swiss-bremen-witness-cluster",
-        "german-swiss-eichstatt-witness-cluster"
+        "german-swiss-eichstatt-witness-cluster",
+        "german-swiss-augsburg-usuarium-19",
+        "german-swiss-bamberg-usuarium-20",
+        "german-swiss-bremen-usuarium-106",
+        "german-swiss-eichstatt-usuarium-22"
       ],
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "central-europe-round3"
+        ],
+        "stage_ids": [
+          "central-europe-round3:stage-augsburg-1510",
+          "central-europe-round3:stage-bamberg-1490",
+          "central-europe-round3:stage-bremen-1511",
+          "central-europe-round3:stage-eichstatt-1486"
+        ],
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 4
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "central-europe-round3:gap-bamberg-prints",
+          "central-europe-round3:gap-bremen-manuscripts",
+          "central-europe-round3:gap-eichstatt-print-series",
+          "central-europe-round3:gap-german-prints"
+        ],
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
@@ -12970,6 +14039,38 @@
           "start_year": null,
           "end_year": null,
           "date_role": "No aggregate use-adoption or substantive-revision date; nested witnesses retain their own dates.",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "german-swiss-augsburg-usuarium-19",
+          "label": "Missale secundum ritum Augustensis ecclesiae (1510), BSB 2 Liturg. 185 a",
+          "start_year": 1510,
+          "end_year": 1510,
+          "date_role": "printed-witness-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "german-swiss-bamberg-usuarium-20",
+          "label": "Liber missalis Bambergensis (1490), BSB 2 Inc.c.a. 2432",
+          "start_year": 1490,
+          "end_year": 1490,
+          "date_role": "printed-witness-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "german-swiss-bremen-usuarium-106",
+          "label": "Ordo missalis Bremensis (1511), BL b.52.h.4",
+          "start_year": 1511,
+          "end_year": 1511,
+          "date_role": "printed-witness-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "german-swiss-eichstatt-usuarium-22",
+          "label": "Missale Eystetense (1486), BSB Rar. 0953",
+          "start_year": 1486,
+          "end_year": 1486,
+          "date_role": "printed-witness-publication",
           "status": "inventory-witness-candidate-not-a-stage"
         }
       ],
@@ -13272,14 +14373,30 @@
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "northwest-round2"
+        ],
+        "stage_ids": [
+          "northwest-round2:odense1483",
+          "northwest-round2:odense1501",
+          "northwest-round2:hafniense1510",
+          "northwest-round2:roskilde1522",
+          "northwest-round2:viborg1500",
+          "northwest-round2:roskilde1484",
+          "northwest-round2:aarhus-leaves"
+        ],
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 7
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "northwest-round2:danish-print-gap",
+          "northwest-round2:roskilde1484-gap"
+        ],
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
@@ -13488,14 +14605,29 @@
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "french-local-round2"
+        ],
+        "stage_ids": [
+          "french-local-round2-bourges:book",
+          "french-local-round2-cambrai:book",
+          "french-local-round2-chartres:book",
+          "french-local-round2-laon:book"
+        ],
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 4
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "french-local-round2-bourges:sequence-gap",
+          "french-local-round2-cambrai:sequence-gap",
+          "french-local-round2-chartres:sequence-gap",
+          "french-local-round2-laon:sequence-gap"
+        ],
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
@@ -14419,14 +15551,25 @@
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "french-local-round2"
+        ],
+        "stage_ids": [
+          "french-local-round2-reims:book",
+          "french-local-round2-sens:book"
+        ],
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 2
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "french-local-round2-reims:sequence-gap",
+          "french-local-round2-sens:sequence-gap"
+        ],
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
@@ -15149,14 +16292,29 @@
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "northwest-round2"
+        ],
+        "stage_ids": [
+          "northwest-round2:westminster1384",
+          "northwest-round2:arbuthnott1491",
+          "northwest-round2:kilcormac-ms82",
+          "northwest-round2:mission1626",
+          "northwest-round2:canterbury1095",
+          "northwest-round2:dublin-add24198"
+        ],
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 6
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "northwest-round2:british-local-gaps",
+          "northwest-round2:irish-layer-gap"
+        ],
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
@@ -15379,14 +16537,27 @@
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
-        "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "central-europe-round3"
+        ],
+        "stage_ids": [
+          "central-europe-round3:stage-pecs-1487",
+          "central-europe-round3:stage-eger-1509"
+        ],
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
+        "provisional_stage_ids": [
+          "central-europe-round3:stage-eger-1394"
+        ],
+        "text_coverage_counts": {
+          "not-transcribed": 3
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "central-europe-round3:gap-eger-context",
+          "central-europe-round3:gap-pecs-series"
+        ],
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
@@ -15519,14 +16690,24 @@
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "central-europe-round3"
+        ],
+        "stage_ids": [
+          "central-europe-round3:stage-zadar-ofm-ms"
+        ],
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 1
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "central-europe-round3:gap-split-layers",
+          "central-europe-round3:gap-zadar-context"
+        ],
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
@@ -15643,14 +16824,20 @@
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
+        "status": "related-dossier-only-local-reception-unresearched",
+        "dossier_ids": [
+          "italian-local-round2"
+        ],
         "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "scope": "Aquileia, Aosta, Benevento and Messina have bounded child-route states; Padua, Monza and Ravenna remain local-book gaps. This composite index is not an independent book sequence.",
         "provisional_stage_ids": [],
         "text_coverage_counts": {},
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "italian-local-round2:padua-local",
+          "italian-local-round2:monza-local",
+          "italian-local-round2:ravenna-local"
+        ]
       },
       "witnesses": [],
       "component_profile": "western",
@@ -15699,14 +16886,27 @@
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "northwest-round2"
+        ],
+        "stage_ids": [
+          "northwest-round2:skara1150",
+          "northwest-round2:linkoping-a97",
+          "northwest-round2:strangnas1487",
+          "northwest-round2:lund1514",
+          "northwest-round2:uppsala1513"
+        ],
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 5
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "northwest-round2:swedish-sequence-gap"
+        ],
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
@@ -16437,19 +17637,33 @@
       "inventory_status": "selected-catalogue-witness-census-documented",
       "candidate_ids": [
         "german-swiss-utrecht-witness-cluster",
-        "german-swiss-riga-witness-cluster"
+        "german-swiss-riga-witness-cluster",
+        "german-swiss-utrecht-usuarium-96",
+        "german-swiss-riga-usuarium-560"
       ],
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
-        "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "central-europe-round3"
+        ],
+        "stage_ids": [
+          "central-europe-round3:stage-utrecht-1495"
+        ],
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
+        "provisional_stage_ids": [
+          "central-europe-round3:stage-riga-ms"
+        ],
+        "text_coverage_counts": {
+          "not-transcribed": 2
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "central-europe-round3:gap-riga-dating",
+          "central-europe-round3:gap-utrecht-series"
+        ],
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
@@ -16466,6 +17680,22 @@
           "start_year": null,
           "end_year": null,
           "date_role": "No aggregate use-adoption or substantive-revision date; nested witnesses retain their own dates.",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "german-swiss-utrecht-usuarium-96",
+          "label": "Missale secundum ordinarium Traiectensem (1495), KB 170 E 11",
+          "start_year": 1495,
+          "end_year": 1495,
+          "date_role": "printed-witness-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "german-swiss-riga-usuarium-560",
+          "label": "Akad. Rīga Ms. 1 (R 2665), Missale Rigense",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copying estimate, disputed; no timeline coordinate",
           "status": "inventory-witness-candidate-not-a-stage"
         }
       ],
@@ -16698,14 +17928,31 @@
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "residual-orders-round3"
+        ],
+        "stage_ids": [
+          "residual-orders-round3:hum-manuscript",
+          "residual-orders-round3:hum-1504",
+          "residual-orders-round3:minim-1756",
+          "residual-orders-round3:minim-1976",
+          "residual-orders-round3:ocd-1925",
+          "residual-orders-round3:ocd-1950",
+          "residual-orders-round3:ocd-1959",
+          "residual-orders-round3:ocd-2025"
+        ],
+        "scope": "Selected bounded exact book states; no continuous local chronology, textual transition or uniform use is inferred.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 8
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "residual-orders-round3:hum-gap",
+          "residual-orders-round3:minim-gap",
+          "residual-orders-round3:ocd-gap"
+        ]
       },
       "witnesses": [
         {
@@ -17029,14 +18276,28 @@
       ],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "residual-western-round3"
+        ],
+        "stage_ids": [
+          "residual-western-round3:barcelona1498",
+          "residual-western-round3:salamanca1533",
+          "residual-western-round3:toledo1551",
+          "residual-western-round3:seville1565"
+        ],
+        "scope": "Selected bounded exact book states; no continuous local chronology, textual transition or uniform use is inferred.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 4
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "residual-western-round3:barcelona-gaps",
+          "residual-western-round3:salamanca-gaps",
+          "residual-western-round3:seville-gaps",
+          "residual-western-round3:toledo-gaps"
+        ]
       },
       "witnesses": [
         {
@@ -17618,14 +18879,23 @@
       ],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "french-local-round2"
+        ],
+        "stage_ids": [
+          "french-local-round2-langres:book"
+        ],
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 1
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "french-local-round2-langres:sequence-gap"
+        ],
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
@@ -17761,14 +19031,23 @@
       ],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "french-local-round2"
+        ],
+        "stage_ids": [
+          "french-local-round2-uzes:book"
+        ],
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 1
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "french-local-round2-uzes:sequence-gap"
+        ],
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
@@ -17827,14 +19106,22 @@
       ],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "residual-western-round3"
+        ],
+        "stage_ids": [
+          "residual-western-round3:cosenza1549"
+        ],
+        "scope": "Selected bounded exact book states; no continuous local chronology, textual transition or uniform use is inferred.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 1
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "residual-western-round3:cosenza-gaps"
+        ]
       },
       "witnesses": [
         {
@@ -17877,14 +19164,22 @@
       ],
       "mapping_strength": "comparison-only-not-a-normative-source-stage",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "residual-western-round3"
+        ],
+        "stage_ids": [
+          "residual-western-round3:cummiskey1861"
+        ],
+        "scope": "Selected bounded exact book states; no continuous local chronology, textual transition or uniform use is inferred.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "partial": 1
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "residual-western-round3:cummiskey-gaps"
+        ]
       },
       "witnesses": [
         {
@@ -17935,14 +19230,24 @@
       "proposed_tradition_ids": [],
       "mapping_strength": "bibliographic-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "The additional-orders receipt identifies witnesses, components, publication and approval roles; no text-collated stage sequence is assigned.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "other-orders"
+        ],
+        "stage_ids": [
+          "other-orders:osa-early-print",
+          "other-orders:osa-1926-proper"
+        ],
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 2
+        },
         "date_limit": "Candidate dates keep their individual copying, approval, attestation or publication roles; they do not imply uninterrupted use, local adoption or reform.",
-        "gap_ids": []
+        "gap_ids": [
+          "other-orders:osa-gap"
+        ],
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
@@ -18095,14 +19400,24 @@
       "proposed_tradition_ids": [],
       "mapping_strength": "bibliographic-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "The additional-orders receipt identifies witnesses, components, publication and approval roles; no text-collated stage sequence is assigned.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "other-orders"
+        ],
+        "stage_ids": [
+          "other-orders:merced-1560",
+          "other-orders:merced-1976-proper"
+        ],
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 2
+        },
         "date_limit": "Candidate dates keep their individual copying, approval, attestation or publication roles; they do not imply uninterrupted use, local adoption or reform.",
-        "gap_ids": []
+        "gap_ids": [
+          "other-orders:merced-gap"
+        ],
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
@@ -18194,14 +19509,22 @@
       "proposed_tradition_ids": [],
       "mapping_strength": "bibliographic-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "The additional-orders receipt identifies witnesses, components, publication and approval roles; no text-collated stage sequence is assigned.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "residual-orders-round3"
+        ],
+        "stage_ids": [
+          "residual-orders-round3:santiago-1560"
+        ],
+        "scope": "Selected bounded exact book states; no continuous local chronology, textual transition or uniform use is inferred.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 1
+        },
         "date_limit": "Candidate dates keep their individual copying, approval, attestation or publication roles; they do not imply uninterrupted use, local adoption or reform.",
-        "gap_ids": []
+        "gap_ids": [
+          "residual-orders-round3:santiago-gap"
+        ]
       },
       "witnesses": [
         {
@@ -18283,14 +19606,24 @@
       "proposed_tradition_ids": [],
       "mapping_strength": "bibliographic-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "The additional-orders receipt identifies witnesses, components, publication and approval roles; no text-collated stage sequence is assigned.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "other-orders"
+        ],
+        "stage_ids": [
+          "other-orders:servite-medieval",
+          "other-orders:servite-1972-proper"
+        ],
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 2
+        },
         "date_limit": "Candidate dates keep their individual copying, approval, attestation or publication roles; they do not imply uninterrupted use, local adoption or reform.",
-        "gap_ids": []
+        "gap_ids": [
+          "other-orders:servite-gap"
+        ],
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
@@ -18395,14 +19728,21 @@
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "northwest-round2"
+        ],
+        "stage_ids": [
+          "northwest-round2:danicum-ra4613"
+        ],
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 1
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [],
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
@@ -18443,6 +19783,7 @@
         "additional-orders-hospitaller-haarlem-1511",
         "additional-orders-hospitaller-sixena-1528",
         "additional-orders-hospitaller-lyon-1553",
+        "additional-orders-hospitaller-bnf-b320-1553",
         "additional-orders-hospitaller-haarlem-gradual-184c7",
         "additional-orders-hospitaller-zittau-gradual-av",
         "additional-orders-hospitaller-turin-gradual-fiii17",
@@ -18453,14 +19794,24 @@
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "other-orders"
+        ],
+        "stage_ids": [
+          "other-orders:hosp-1553",
+          "other-orders:hosp-1987-proper"
+        ],
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 2
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "other-orders:hosp-gap"
+        ],
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
@@ -18566,6 +19917,14 @@
           "end_year": null,
           "date_role": "Order bibliography second-edition year",
           "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-hospitaller-bnf-b320-1553",
+          "label": "1553 Lyon Hospitaller missal, BnF B-320",
+          "start_year": 1553,
+          "end_year": 1553,
+          "date_role": "printed-witness-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
         }
       ],
       "component_profile": "western",
@@ -18644,14 +20003,25 @@
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "northwest-round2"
+        ],
+        "stage_ids": [
+          "northwest-round2:iceland1250",
+          "northwest-round2:scardense",
+          "northwest-round2:gufudal"
+        ],
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 3
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "northwest-round2:iceland-extra-gap"
+        ],
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
@@ -18850,14 +20220,23 @@
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "northwest-round2"
+        ],
+        "stage_ids": [
+          "northwest-round2:nordfjord"
+        ],
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 1
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "northwest-round2:norway-reception-gap"
+        ],
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
@@ -18894,14 +20273,18 @@
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
+        "status": "related-dossier-only-local-reception-unresearched",
+        "dossier_ids": [
+          "other-orders"
+        ],
         "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "scope": "The 1983 Cistercian saints proper approval is bounded in the permission review; an exact OCSO Mass-book candidate and observed local use remain unidentified.",
         "provisional_stage_ids": [],
         "text_coverage_counts": {},
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "other-orders:ocso-gap"
+        ]
       },
       "witnesses": [],
       "component_profile": "western",
@@ -18931,14 +20314,18 @@
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
+        "status": "related-dossier-only-local-reception-unresearched",
+        "dossier_ids": [
+          "residual-western-round3"
+        ],
         "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "scope": "An explicit source/book identity gap remains; no exact stage is inferred from a related edition.",
         "provisional_stage_ids": [],
         "text_coverage_counts": {},
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "residual-western-round3:buzuku-deferred"
+        ]
       },
       "witnesses": [
         {
@@ -18991,14 +20378,21 @@
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "northwest-round2"
+        ],
+        "stage_ids": [
+          "northwest-round2:schleswig1486"
+        ],
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 1
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [],
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
@@ -19044,14 +20438,23 @@
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "other-orders"
+        ],
+        "stage_ids": [
+          "other-orders:trinitarian-1529"
+        ],
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 1
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "other-orders:trinitarian-gap"
+        ],
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
@@ -19275,14 +20678,26 @@
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "italian-local-round2"
+        ],
+        "stage_ids": [
+          "italian-local-round2:italian-aquileia-1494",
+          "italian-local-round2:italian-aquileia-1508",
+          "italian-local-round2:italian-aquileia-1517",
+          "italian-local-round2:italian-aquileia-1519"
+        ],
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 4
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "italian-local-round2:aquileia-collation"
+        ],
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
@@ -19353,14 +20768,24 @@
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "italian-local-round2"
+        ],
+        "stage_ids": [
+          "italian-local-round2:italian-aosta-1617",
+          "italian-local-round2:italian-aosta-1733"
+        ],
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 2
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "italian-local-round2:aosta-authority"
+        ],
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
@@ -19410,14 +20835,24 @@
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "italian-local-round2"
+        ],
+        "stage_ids": [
+          "italian-local-round2:italian-benevento-vi33",
+          "italian-local-round2:italian-benevento-vi29"
+        ],
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 2
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "italian-local-round2:benevento-identity"
+        ],
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
@@ -19468,14 +20903,18 @@
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
+        "status": "related-dossier-only-local-reception-unresearched",
+        "dossier_ids": [
+          "italian-local-round2"
+        ],
         "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "scope": "A targeted research gap is recorded; no exact local Mass-book stage has yet been established for this route.",
         "provisional_stage_ids": [],
         "text_coverage_counts": {},
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "italian-local-round2:padua-local"
+        ]
       },
       "witnesses": [],
       "component_profile": "western",
@@ -19508,14 +20947,18 @@
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
+        "status": "related-dossier-only-local-reception-unresearched",
+        "dossier_ids": [
+          "italian-local-round2"
+        ],
         "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "scope": "A targeted research gap is recorded; no exact local Mass-book stage has yet been established for this route.",
         "provisional_stage_ids": [],
         "text_coverage_counts": {},
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "italian-local-round2:monza-local"
+        ]
       },
       "witnesses": [],
       "component_profile": "western",
@@ -19547,14 +20990,18 @@
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
+        "status": "related-dossier-only-local-reception-unresearched",
+        "dossier_ids": [
+          "italian-local-round2"
+        ],
         "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "scope": "A targeted research gap is recorded; no exact local Mass-book stage has yet been established for this route.",
         "provisional_stage_ids": [],
         "text_coverage_counts": {},
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "italian-local-round2:ravenna-local"
+        ]
       },
       "witnesses": [],
       "component_profile": "western",
@@ -19590,14 +21037,25 @@
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "italian-local-round2"
+        ],
+        "stage_ids": [
+          "italian-local-round2:italian-messina-1480",
+          "italian-local-round2:italian-messina-1499",
+          "italian-local-round2:italian-messina-1538"
+        ],
+        "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 3
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "italian-local-round2:messina-remaining"
+        ],
+        "reception_limit": "Book witness or permission scope is no broader than each cited source. A mapped stage does not establish use in every locality or first implementation."
       },
       "witnesses": [
         {
@@ -19932,7 +21390,7 @@
         "greek",
         "italo-albanian"
       ],
-      "state": "central-book-stage-not-local-sequence",
+      "state": "selected-central-book-stages-not-local-sequences",
       "question": "Establish older local euchologia and 1754/1873 reception independently for Greek communities, Grottaferrata, Lungro and Piana.",
       "next_source_ids": [
         "coverage-greek-1756"
@@ -19950,7 +21408,7 @@
         "melkite",
         "romanian"
       ],
-      "state": "selected-Blaj-print-witnesses-Melkite-unresearched",
+      "state": "selected-melkite-and-Blaj-book-witnesses-no-complete-sequences",
       "question": "Identify exact original Melkite Greek/Arabic books; collate the documented Blaj 1756 and 1775 printings against predecessors and later revisions, distinguishing original local reform from translation.",
       "next_source_urls": [
         "https://bcs.edu/library-liturgikon/",
@@ -20036,7 +21494,7 @@
         "roman-ancient",
         "gallican-insular"
       ],
-      "state": "selected-manuscripts-no-new-comprehensive-stage-sequence",
+      "state": "selected-manuscripts-no-comprehensive-stage-sequence",
       "question": "Split collections and recensions; establish manuscript redaction/supplement layers and uncertain parentage without dating liturgical stages to modern critical editions.",
       "next_source_urls": [
         "https://www.beweb.chiesacattolica.it/books/book/181127999/Sacramentarium%2BVeronense",
@@ -20151,7 +21609,7 @@
     "fresh_external_sources": "Dated 2026-10-20 primary, official and catalogue sources are distinguished in their inventory or dossier records; permission and first-use limits are retained.",
     "new_source_book_acquisitions": 5,
     "new_collated_transitions": 0,
-    "new_stages": 23,
+    "new_stages": 125,
     "new_transitions": 1,
     "negative_search_claim": "No exact Albanian or Macedonian source-language celebrant book is established by the current bounded records. Later Macedonian translation approval evidence does not identify that source book; no absence from history is claimed.",
     "reconciliation_basis": "Candidate membership and bibliographic bounds follow the inventories; canonical tradition, stage status, text coverage and declared gap references follow the pinned dossiers. Church-level mappings retain explicit local-reception limits."
@@ -20234,9 +21692,9 @@
       "no absolute or scratch paths in deliverable"
     ],
     "coverage_status_counts": {
-      "no-new-researched-stage-sequence": 46,
-      "selected-stages-available": 46,
-      "related-dossier-only-local-reception-unresearched": 4
+      "no-new-researched-stage-sequence": 2,
+      "selected-stages-available": 85,
+      "related-dossier-only-local-reception-unresearched": 9
     },
     "limit": "Dossier presence is a canonical file snapshot. Exact tradition and stage references resolve, but no count is a completeness score or proof of local reception."
   }
