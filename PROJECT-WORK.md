@@ -357,6 +357,16 @@ Missal wording is unestablished. Eight other proposed chant joins were held
 back after printed wording checks; Gabriel's printed Luke locator discrepancy
 also remains open. An Adjutorium derivative now divides the printed 1962
 priest/answer dialogue into source-bound ℣/℟ turns without changing its words.
+A print-only pagination rule keeps a short translation credit beside its
+witness account; source-served Day and Propers English Read remain seven pages
+with identical extracted text, and checked Latin layouts are unchanged.
+St Lucy's Communion now has a hash-bound exact 1962 Latin antiphon collated
+with the public-domain 1922 Mame witness; its Psalm citation remains separate.
+Roman 1962 exact-target Latin Proper availability rises to 1,074 of 1,203
+represented composed targets. The CLI now labels Bible reconstructions and
+separately shown Bible text. A generated, form-qualified Propers search index
+and a pure two-side semantic Compare core are checked data foundations; their
+reader controls and independent acceptance remain open.
 
 ## Daily Missal reader recovery and completion plan, 2026-10-19
 

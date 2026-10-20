@@ -115,24 +115,27 @@ EXAMPLES = {
             "tools/mass-propers structure --out build/example-propers",
             (
                 "postconciliar: 619 masses, 3626 citations",
-                "roman-1962: 491 masses, 4355 citations",
-                "roman-pre-1955: 489 masses, 4290 citations",
+                "roman-1962: 491 masses, 4370 citations",
+                "roman-pre-1955: 489 masses, 4305 citations",
                 "  -> build/example-propers/structure/propers/postconciliar.json",
+                "  -> build/example-propers/structure/propers/search/postconciliar.json",
                 "  -> build/example-propers/structure/propers/roman-1962.json",
+                "  -> build/example-propers/structure/propers/search/roman-1962.json",
                 "  -> build/example-propers/structure/propers/roman-pre-1955.json",
+                "  -> build/example-propers/structure/propers/search/roman-pre-1955.json",
                 "  -> build/example-propers/structure/propers/index.json",
-                "  Latin withheld from publication: 1787",
+                "  Latin withheld from publication: 1789",
                 "  refused: 24",
             ),
-            "WRITES one file per missal and the manifest naming them. --out here is untracked; the default writes tracked src/web/data",
+            "WRITES one structure and search file per missal plus the manifest. --out here is untracked; the default writes tracked src/web/data",
         ),
         Example(
             "tools/mass-propers structure --check",
             (
                 "postconciliar: 619 masses, 3626 citations",
-                "roman-1962: 491 masses, 4355 citations",
-                "roman-pre-1955: 489 masses, 4290 citations",
-                "  4 tracked file(s) are current",
+                "roman-1962: 491 masses, 4370 citations",
+                "roman-pre-1955: 489 masses, 4305 citations",
+                "  7 tracked file(s) are current",
             ),
             "writes nothing: exits 1 naming each tracked file the sources no longer produce. The calendar-Mass check target runs this",
         ),
@@ -190,6 +193,7 @@ LANDING_MISSAL = "roman-1962"
 # order below is the declared landing missal first and the rest as the
 # directory yields them, which is stable and states what it is.
 MISSAL_MANIFEST = ("structure", "propers", "index.json")
+SEARCH_SCHEMA = "triptych-propers-search/v1"
 # The key `_calendars._stamp` marks every entry of a recension with. The
 # stamp's shape is that module's to change and this only carries it through.
 RECENSION = _calendars.RECENSION
@@ -3362,6 +3366,86 @@ def _serialise_structure(payload: dict) -> str:
     return "{\n" + ",\n".join(lines) + "\n}\n"
 
 
+def search_structure(structure: dict) -> dict:
+    """Project public, form-qualified discovery facts from the served structure.
+
+    The index carries no Proper body, rights audit, page locus, or inferred
+    civil date.  A cycle citation remains marked as a cycle citation, and a
+    multi-form Mass becomes one row per source-declared form.
+    """
+    rows = []
+    for mass in structure["masses"]:
+        forms = mass.get("forms") or [{
+            "id": "main", "name": None, "propers": mass["propers"]
+        }]
+        for form in forms:
+            propers = form["propers"]
+            summary = _missal_coverage.summarize(
+                _missal_coverage.proper_units({"propers": propers}), "form"
+            )
+            incipits, citations = [], []
+            seen_incipits, seen_citations = set(), set()
+            for proper in propers:
+                owners = [(None, None, proper)] + [
+                    (family, cycle, owner)
+                    for family in CYCLE_KEYS
+                    for cycle, owner in (proper.get(family) or {}).items()
+                ]
+                for family, cycle, owner in owners:
+                    context = {
+                        "slot": proper["name"],
+                        "cycle_family": family, "cycle": cycle,
+                    }
+                    incipit = owner.get("incipit")
+                    if isinstance(incipit, str) and incipit.strip():
+                        item = {**context, "text": incipit.strip()}
+                        key = tuple(item.values())
+                        if key not in seen_incipits:
+                            incipits.append(item)
+                            seen_incipits.add(key)
+                    for citation in owner.get("citations") or []:
+                        reference = citation.get("ref")
+                        if not isinstance(reference, str) or not reference.strip():
+                            continue
+                        item = {**context, "ref": reference.strip()}
+                        key = tuple(item.values())
+                        if key not in seen_citations:
+                            citations.append(item)
+                            seen_citations.add(key)
+            witnesses = []
+            for language in summary["languages"]:
+                witnesses.extend({
+                    "lang": language["lang"], "id": witness["id"],
+                    "label": witness["label"],
+                } for witness in language["witnesses"])
+            rows.append({
+                "key": mass["key"], "name": mass["name"],
+                "kind": mass["kind"], "season": mass.get("season"),
+                "fixed_date": mass.get("date"),
+                "form_id": form["id"], "form_name": form["name"],
+                "incipits": incipits, "citations": citations,
+                "witnesses": witnesses,
+                "coverage": {
+                    "denominator": summary["denominator"],
+                    "languages": [{
+                        "lang": language["lang"],
+                        "available": language["available"],
+                        "occurrences": language["occurrences"],
+                        "exact_target": language["exact_target"],
+                        "scripture_occurrences": language["scripture_occurrences"],
+                        "availability": language["availability"],
+                    } for language in summary["languages"]],
+                },
+            })
+    return {
+        "schema": SEARCH_SCHEMA,
+        "calendar": structure["calendar"],
+        "edition": structure["edition"],
+        "edition_short": structure["edition_short"],
+        "rows": rows,
+    }
+
+
 def refuse_symlink_output(root: Path, target: Path) -> None:
     """Never follow an owned output component outside the requested tree."""
 
@@ -3389,6 +3473,8 @@ def run_structure(arguments: argparse.Namespace) -> dict:
     out = Path(arguments.out)
     propers_dir = out / "structure" / "propers"
     refuse_symlink_output(out, propers_dir)
+    search_dir = propers_dir / "search"
+    refuse_symlink_output(out, search_dir)
     root = Path(arguments.root)
     tokens = book_tokens()
     names = [arguments.calendar] if arguments.calendar else calendars(root)
@@ -3432,6 +3518,10 @@ def run_structure(arguments: argparse.Namespace) -> dict:
         refuse_symlink_output(out, path)
         files[path] = _serialise_structure(built)
         written.append(str(path))
+        search_path = search_dir / f"{name}.json"
+        refuse_symlink_output(out, search_path)
+        files[search_path] = _serialise(search_structure(built))
+        written.append(str(search_path))
         cited = [
             citation
             for mass in built["masses"]
@@ -3496,13 +3586,15 @@ def run_structure(arguments: argparse.Namespace) -> dict:
     # run must not leave an orphan JSON for public-alpha to copy and serve.
     orphaned: list[Path] = []
     if not arguments.calendar:
-        expected = {path for path in files if path.parent == propers_dir}
-        if propers_dir.is_dir():
-            orphaned = sorted(
-                path
-                for path in propers_dir.glob("*.json")
-                if path not in expected
-            )
+        expected = set(files)
+        orphaned = sorted(
+            path
+            for directory in (propers_dir, search_dir)
+            if directory.is_dir()
+            for path in (directory.glob("*.json") if directory == propers_dir
+                         else directory.rglob("*.json"))
+            if path not in expected
+        )
 
     if arguments.check:
         # Named individually, not counted. "3 files have drifted" sends a reader
@@ -4781,6 +4873,8 @@ def render_reading(
             print(f"  (from {taken_from['mass']}"
                   + (f", {taken_from['proper']}" if taken_from.get("proper") else "")
                   + ")")
+        texts = select_texts(proper, lang, witness, availability)
+        bible_claim_printed = False
         for entry in proper.get("verses") or []:
             if isinstance(entry, dict) and entry.get("ref"):
                 # The missal's own citation stands; a conversion is shown beside it.
@@ -4788,6 +4882,14 @@ def render_reading(
                 note = found.get("note")
                 print(f"  {entry['ref']}" + (f"  ({note})" if note else ""))
                 if found.get("text"):
+                    if not bible_claim_printed and proper.get("source") in {"scripture", "mixed"}:
+                        if proper.get("source") == "mixed" and any(body for body, _, _ in texts):
+                            bible_id = str((payload.get("bible") or {}).get("id") or "")
+                            print("  Bible text" + (f" · {bible_id}" if bible_id else "")
+                                  + " · shown separately from the Missal text")
+                        else:
+                            print("  Bible reconstruction · Missal wording not established")
+                        bible_claim_printed = True
                     print("\n".join(wrap(str(found["text"]), "    ")))
         # Both reading courses, each labelled by its own cycle key, so a reader
         # sees `A:`/`B:`/`C:` where the Sunday year decides and `I:`/`II:` where
@@ -4803,9 +4905,7 @@ def render_reading(
             ]
             if refs:
                 print(f"  {cycle}: {', '.join(refs)}")
-        for body, attribution, note in select_texts(
-            proper, lang, witness, availability
-        ):
+        for body, attribution, note in texts:
             if body:
                 print()
                 if attribution:

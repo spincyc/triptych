@@ -463,6 +463,26 @@ published without their `source_refs`. Those name repository records,
 including restricted editions' artifact records, which the tracked inventory
 keeps and public data must not carry as rights context.
 
+### Propers discovery index
+
+`mass-propers structure` also writes
+`structure/propers/search/<calendar>.json`, one small discovery projection per
+edition. It is derived from the same public structure in memory, and
+`structure --check` checks both its bytes and orphan search files. Each row
+keeps the edition-qualified Mass key and one explicit form id; a Mass with
+three source forms has three rows, never an implicit first form. The row carries
+the title, kind, season, source-declared fixed `MM-DD` where present, Proper
+incipits and citations with their slot and cycle identity, public translation
+witness labels, and form-scoped represented-unit coverage. A fixed calendar
+date is not a resolved civil date or an occurrence claim.
+
+The index carries no Proper body, source-side absence note, rights record,
+page locus, or citation conversion. It supplies only search and result-preview
+facts already admitted in the served structure. `public-alpha` enforces its
+exact text-free schema before copying it. Civil-date and saint-identity search
+need separate source-owned joins; names are searchable as titles but do not
+establish a saint identity.
+
 ## The calendar layer
 
 `structure/calendar/<calendar>/<civil-year>.json`, written by `calendar-days

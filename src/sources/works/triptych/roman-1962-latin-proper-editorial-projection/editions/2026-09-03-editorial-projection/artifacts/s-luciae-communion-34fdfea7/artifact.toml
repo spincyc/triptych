@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-luciae-communion-34fdfea7"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych created this bounded transcription and collation record and offers its editorial contributions under CC BY 4.0. The underlying antiphon words stand in the public-domain 1922 Tours Mame printing. The 1962 target contributes no new word, and no page image, layout, rubric or marginal number is reproduced."
+rights_jurisdiction = "United States"
+provenance = "Created by Triptych on 2026-10-20 from the St Lucy Communion on page images of the exact registered 1962 CMAA facsimile, printed p. 440, PDF p. 521, and the registered public-domain 1922 Tours Mame, printed p. 497, PDF p. 611. Both complete antiphons were read visually after the PDF hashes were checked. This is a project editorial projection over those witnesses, not an edition of either Missal."
+retrieved = "2026-10-20"
+sha256 = "34fdfea7d8689465a61b2ac84a5ecbabb8e2665cab9ae93f4f73ca1ee10668d6"
+byte_size = 138
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/s-luciae-communion-34fdfea7/s-luciae-communion-34fdfea7.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Select only the complete St Lucy Communion antiphon, including both Psalm verses; join printed line wraps; remove stress accents; expand the ae ligature; set the controlling 1962 printing's punctuation; omit the heading, citation and marginal number. The 1922 and 1962 page images agree on every spoken word, including quasi. No word is supplied from the Clementine Bible expansion or from a later witness."
+indexable = true
+encoding = "utf-8"
+notes = "The sole physical line reproduces the Roman-1962 calendar body exactly. The two historical passage records remain the earlier and target witnesses; this project artifact owns only its bounded editorial projection."

@@ -1,0 +1,26 @@
+{
+  "schema": "triptych-liturgy-reader-comparison-fixture/v1",
+  "id": "propers-roman-1962-advent-1-orations",
+  "basis": {
+    "kind": "tracked-production-data",
+    "paths": ["src/web/data/structure/propers/roman-1962.json"]
+  },
+  "comparison": {
+    "dimension": "oration-language",
+    "anchor": {"correspondingFormulary": "advent-1"},
+    "sides": [
+      {"id": "la", "edition": {"id": "roman-1962"}, "formulary": {"id": "advent-1"}, "languages": {"orations": "la"}},
+      {"id": "en", "edition": {"id": "roman-1962"}, "formulary": {"id": "advent-1"}, "languages": {"orations": "en"}}
+    ]
+  },
+  "expected": {
+    "calendar": null,
+    "unitCount": 10,
+    "oneSided": {"la": [], "en": []},
+    "textUnavailable": {
+      "la": [],
+      "en": ["collect", "prayer-over-offerings", "prayer-after-communion"]
+    },
+    "unavailableReason": "ledgered-untranslated"
+  }
+}
