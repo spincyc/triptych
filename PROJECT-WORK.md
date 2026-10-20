@@ -30,7 +30,7 @@ adult parish assembly, and the canonical study's web edition. The production
 plan records this exact scope opening. No GPT leaf exists for this identity,
 and this independent Claude production borrows from no other leaf.
 
-**Accepted; fast-forward to `main` and live verification pending.** Run
+**Complete: accepted, pushed to `main` and verified live.** Run
 `7397c12187517ff2` (`proper-study` v12) reached ACCEPTED at its publication
 gates with no escalation: 33 packets, 33 accepted results, four
 interventions. Every agent stage ran as a fresh `claude-opus-5-5[1m]` subagent
@@ -55,8 +55,13 @@ covers every cycle, the 15 standing advisories and 2 accepted findings, and
 what is left for other owners, notably the calendar's inability to say when a
 proper is said:
 [CYCLES.md](workflows/reviews/claude-1962-f01-production-2026-10-19/CYCLES.md).
-Work is committed on `feature/propers/claude` and reaches `main` by
-fast-forward after the local deploy gates pass.
+The three local deploy gates passed, and `c71314375` reached `main` by
+fast-forward. Pages run 39345282406 succeeded. The three PDFs, their catalog
+aliases, the web edition, the Traditional Latin Mass catalog page and the
+browser's corpus and 1962 propers data are each byte-identical live to the
+verified local site, as
+[deployment-evidence.json](workflows/reviews/claude-1962-f01-production-2026-10-19/deployment-evidence.json)
+records.
 
 ## Claude postconciliar Twenty-ninth Sunday revision, 2026-10-16
 

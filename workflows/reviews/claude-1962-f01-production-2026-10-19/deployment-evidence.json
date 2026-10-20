@@ -1,0 +1,98 @@
+{
+ "record_type": "deployment-verification",
+ "verified_on": "2026-10-19",
+ "commit": "c71314375f635ab0a451e1067aaa5e1ce004b0c0",
+ "main_base": "c6da24eda429337fe13d59420a3c489a98a16e66",
+ "integration": "fast-forward; origin/main was an ancestor of the accepted work, no rebase, merge commit or force push",
+ "local_gates": [
+  {
+   "command": "make check-deployment-sources",
+   "exit_code": 0,
+   "log_sha256": "2617d6f007e8c757e1ecb8a576398bf5f4bb48159cbba743c945d5cc8619bc5d"
+  },
+  {
+   "command": "make public-site",
+   "exit_code": 0,
+   "log_sha256": "11f25e2198494dc7a7bcb9a08ca5606b8268f8604135d14775b6b16551e80ae8"
+  },
+  {
+   "command": "tools/tpt public-alpha verify --deployment-target github-pages",
+   "exit_code": 0,
+   "log_sha256": "b8dcb442f8587c1f6a2ca5328918e733ab0cd39794880f3c195805902e79ba14"
+  }
+ ],
+ "local_gate_environment": "Python Markdown 3.10.3 and PyYAML 6.0.3 from requirements-public-alpha.txt and requirements-tools.txt; every pdf/ entry of the live site's SHA256SUMS was already present locally with a matching hash, so nothing was restored",
+ "disclosure": "Outgoing range c6da24eda..c71314375, 4 commits, text only; added lines scanned for machine paths, usernames, hosts, addresses and credentials with no match beyond the liturgical words 'Secret' and 'secretly'.",
+ "workflow_run": "https://github.com/spincyc/triptych/actions/runs/39345282406",
+ "workflow_conclusion": "success",
+ "repository_hygiene_run": "https://github.com/spincyc/triptych/actions/runs/39345282079",
+ "repository_hygiene_conclusion": "success",
+ "publication": "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king",
+ "provider": "claude",
+ "routes": [
+  {
+   "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.pdf",
+   "http_status": 200,
+   "sha256": "444c7e0c622e97a87146cd7553db1fc40f6d416638cc700bc2c75b1879dc17cc",
+   "physical_pages": 33,
+   "compared_with": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.pdf (the installed reviewed PDF) and build/public-alpha/site/pdf/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.pdf",
+   "match": "byte-identical"
+  },
+  {
+   "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-synthesis.pdf",
+   "http_status": 200,
+   "sha256": "b6d09cd2bc470578fbce8f1c2acaa633f837894735b2738cde8c6392525d54b9",
+   "physical_pages": 12,
+   "compared_with": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-synthesis.pdf (the installed reviewed PDF) and build/public-alpha/site/pdf/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-synthesis.pdf",
+   "match": "byte-identical"
+  },
+  {
+   "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-homily.pdf",
+   "http_status": 200,
+   "sha256": "135104188244d48d735be63dbddd3fc4d9bb856bcfc74d47f3c7752f09fd7419",
+   "physical_pages": 4,
+   "compared_with": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-homily.pdf (the installed reviewed PDF) and build/public-alpha/site/pdf/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-homily.pdf",
+   "match": "byte-identical"
+  },
+  {
+   "url": "https://mystago.gy/web/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.html",
+   "http_status": 200,
+   "sha256": "e40701e6311bc20aebe1d109345162cb45fddb8b65e8406a914db9596f452544",
+   "bytes": 143657,
+   "compared_with": "build/public-alpha/site/web/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.html (the locally verified site)",
+   "match": "byte-identical"
+  },
+  {
+   "url": "https://mystago.gy/library/traditional-latin-mass.html",
+   "http_status": 200,
+   "sha256": "a58fd5d4c3b061e036a83e7e4d742c3accae6768932ca664551fc7a6ca34f14f",
+   "bytes": 31958,
+   "compared_with": "build/public-alpha/site/library/traditional-latin-mass.html (the locally verified site)",
+   "match": "byte-identical",
+   "links_found": [
+    "pdf/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-claude-ff04043bf8adf54c.pdf",
+    "pdf/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-synthesis-claude-8dbaea024b8c0067.pdf",
+    "pdf/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-homily-claude-f9bf28788fd1f009.pdf",
+    "web/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.html"
+   ],
+   "link_note": "The F01 row's Claude cell links each PDF through its provider-qualified alias; each alias was fetched live (HTTP 200) and is byte-identical to the canonical route above. The row's ChatGPT cell still reads Planned."
+  },
+  {
+   "url": "https://mystago.gy/browse/structure/documents/corpus.json",
+   "http_status": 200,
+   "sha256": "d7f4d5f658e8a337a832c2f101d8f6c21f4641508cde4fa3d840306196150830",
+   "bytes": 1002990,
+   "compared_with": "build/public-alpha/site/browse/structure/documents/corpus.json (the locally verified site)",
+   "match": "byte-identical"
+  },
+  {
+   "url": "https://mystago.gy/browse/structure/propers/roman-1962.json",
+   "http_status": 200,
+   "sha256": "1c94175bd054569d3164efd24df1ed0638469be70eab4ea3b18f763f88493934",
+   "bytes": 14742186,
+   "compared_with": "build/public-alpha/site/browse/structure/propers/roman-1962.json (the locally verified site)",
+   "match": "byte-identical",
+   "note": "Carries the corrected Christ the King Communion citation, Psalms 28:10-11 (aa94dd3b4)."
+  }
+ ]
+}
