@@ -23,8 +23,9 @@ State: the GPT full-material `proper-study` v13 run `095fe00a9fe8cfee` is
 `ACCEPTED` and archived. The complete Latin and historical English texts,
 expansive study, concise study, homily and canonical web edition are reviewed,
 installed and cataloged with exact artifact bytes. The workspace remains on
-`feature/propers/codex`; main integration and live deployment verification
-are pending.
+`feature/propers/codex`; accepted publication commit `632b2b487` was
+fast-forwarded to `origin/main`. The automatic Pages workflow succeeded and
+all six checked live routes match the verified local site byte for byte.
 
 The original version-12 run `3c11005c63dcd584` passed scope and context but
 terminated BLOCKED after repeated research-response output rejection. Its partial
@@ -93,6 +94,16 @@ accepted hashes; native publication gates passed. Its fifty-stage-result
 archive is at
 `src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/095fe00a9fe8cfee/`.
 The detailed repair and production chronology is in the driver record above.
+Post-archive `make check-deployment-sources` and `make check-sources` passed
+after the owning inventory and migration-ledger refreshes. The local public
+site built and verified for the GitHub Pages target. The outgoing publication
+was committed as `632b2b487` and pushed to `main` without rewriting history.
+The automatic [Pages run](https://github.com/spincyc/triptych/actions/runs/39447388106)
+and repository-hygiene run succeeded for that commit. Live GPT study,
+concise and homily PDFs, the canonical web edition, catalog page and document
+data all returned HTTP 200 and matched the locally verified site bytes. The
+route hashes and comparison evidence are in
+`workflows/reviews/gpt-1962-f01-production-2026-10-19/deployment-evidence.json`.
 
 ## Claude 1962 Christ the King three documents, 2026-10-19
 

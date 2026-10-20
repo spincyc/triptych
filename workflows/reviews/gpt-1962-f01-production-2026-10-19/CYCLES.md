@@ -705,3 +705,21 @@ The GitHub Pages-target public site then built and verified. The outgoing
 catalog and release diff preserves the Claude F01 links; the archived run's
 108 files were screened for credential patterns with no match. Main push and
 live-route checks are still pending.
+
+The accepted publication, archive, catalog, release records and refreshed
+inventories were committed as `632b2b487` and feature-pushed. A fresh fetch
+showed `origin/main` was an ancestor (`0` main-only commits), and the
+maintainer-authorized `git push origin HEAD:main` fast-forwarded it from
+`6dad4a7a3` to `632b2b487` without switching or committing on the workspace
+branch. GitHub repository hygiene passed for that commit; its automatic Pages
+deployment is in progress. Live artifact comparison remains pending.
+
+GitHub Pages run `39447388106` completed successfully for `632b2b487`; the
+repository-hygiene run `39447388716` also passed. On 2026-10-20 at 15:28 UTC,
+the three live GPT PDFs, canonical web HTML, traditional-Latin-Mass catalog
+and document corpus each returned HTTP 200 and matched the locally verified
+Pages artifact byte for byte. The three PDF hashes equal the accepted artifact
+snapshot. Exact URLs, hashes, byte counts, local gate results and workflow
+links are in `deployment-evidence.json`. The promised deliverable is complete;
+the final status and deployment-evidence record follows the publication
+commit as a documentation update.
