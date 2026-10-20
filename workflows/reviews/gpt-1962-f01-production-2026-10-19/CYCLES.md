@@ -495,3 +495,21 @@ then returned `PASS` with `RES-HIS-001` resolved. The engine has entered
 `author-study-0000`; its fresh high-effort author is producing the expansive
 study. The completed research repair was committed and feature-pushed as
 `64270731b`. No study, artifact, web or publication PASS exists yet.
+
+The first expansive author produced a complete-mode 23-page study, with 7,612
+substantive exposition words, the twenty-six Latin/English appointed-text
+blocks, two whole-formulary readings with their own four senses, and the
+reviewed historical appendix. The author proof built at SHA-256
+`42a95d5f8d2a5d682b788a8708da1facdeffeedcf81f86d0173e1f1a8eb8a1d6`;
+component checks, source-block comparisons and the web conversion probe
+passed. The coherent draft was checkpointed as `dc51c67bb`; proof corrections
+and the production review were committed and feature-pushed as `2ac67f925`.
+The native author result and study preflight passed. A fresh xhigh study
+reviewer is now reading the sealed study; no independent study PASS is claimed.
+
+During the author probe, `tools/web-edition` falsely treated the combined PDF
+metadata title as a continuous prose source run across two distinct displayed
+title fields. The driver excluded `\\hypersetup` metadata from that run-only
+audit, preserving the visible title and the ordinary paragraph-loss check.
+All 146 conversion tests and a separate F01 web probe passed; this shared-tool
+repair was committed and feature-pushed as `1dcf44d08`.
