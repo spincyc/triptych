@@ -1013,6 +1013,37 @@ These are source-qualified implementation slices; complete corpus wording,
 source-owned finer bilingual alignment and independent C2–C6 acceptance remain
 open.
 
+The next frozen HTTP/2 lab run measures eligible first Missal transitions at
+1.94 s for Day and 1.92 s for Propers, compared with 9.35 s and 9.29 s before
+exact-Mass reuse. Final transitions transfer no additional Proper body. On the
+same 562.5 ms latency, 1.47456 Mbps down and 4× CPU mobile profile, cold Read LCP
+remains 4.644/4.664 s for Day and 3.916/4.116 s for Propers. The 2.5 s release
+target and field p75 remain open.
+
+A separate two-year early-loading pilot records 3.488–3.532 s Day LCP, with
+1.144–1.176 s gains across four adjacent pairs. All samples fail the unchanged
+3.0 s pilot integration limit. It remains outside the branch; the proposed
+101-year expansion is held. Helper completion near 1.89 s and authenticated
+sidecar admission near 2.77 s identify the remaining network path. Exact Mass
+and chapter hints have one body each, but Bible metadata has two. Text, state,
+semantic events and URL parity pass with clean diagnostics; these findings do
+not turn the failed value test into acceptance.
+
+The following bounded startup candidate loads shared Compare/Study presentation
+APIs through the existing validated-state optional loader. Read and open Mode
+request neither; Compare and Study await only their own modules. Per-resource
+requests, initialization validation, retry and stale-render guards preserve
+the current mode, place and invoking-control focus. The main controllers and
+eager visual oracles stay byte-identical. Ten Node contracts and 23 Chromium
+groups pass on the scratch candidate. Direct script/style gzip6 sums become
+192,881 bytes for Day and 160,850 for Propers, saving 12,079 and 12,098 bytes
+respectively, with 26 initial resources. Integrated preview/integrity checks,
+all seven full browser tests and 205 focused tests pass (one separate browser
+opt-in skipped). After correcting the caller's locked-dependency PATH, the
+full repository check passes 250 example replays with zero divergence or
+tracked writes. Latency remains pending; byte savings alone do not establish
+a performance result.
+
 ### Verification and completion gates
 
 The integrated 2026-10-20 source checkpoint passes 80 focused source tests,

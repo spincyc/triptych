@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-/* Lazy Ordinary code preserves normalized state, eager oracles and render ownership. */
+/* Validated optional presentation preserves current APIs, eager oracles and render ownership. */
 
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
 import { createServer } from 'node:http';
-import { mkdir, mkdtemp, readFile, rm } from 'node:fs/promises';
+import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { extname, resolve, sep } from 'node:path';
 
 const ROOT = resolve(process.env.TRIPTYCH_REVIEW_ROOT || resolve(import.meta.dirname, '../..'));
@@ -13,7 +13,7 @@ const OVERLAY = process.env.TRIPTYCH_OPTIONAL_RUNTIME_MODULE_ROOT;
 const CHROME = process.env.TRIPTYCH_CHROME || '/usr/bin/chromium';
 const SCRATCH = resolve(process.env.TRIPTYCH_BROWSER_SCRATCH ||
   resolve(ROOT, '.scratch/reader-optional-runtime/browser'));
-const policy = { behavior: 'normal', held: false, release: null };
+const policy = { behavior: 'normal', held: false, release: null, target: '/src/web/browser/liturgy/day.js', overlay: true };
 const ordinaryPath = '/src/web/browser/liturgy/day.js';
 const mime = (file) => ({ '.css': 'text/css', '.html': 'text/html',
   '.js': 'text/javascript', '.json': 'application/json' })[extname(file)] || 'application/octet-stream';
@@ -24,11 +24,11 @@ function server() {
       const path = new URL(request.url, 'http://localhost').pathname;
       let relative = decodeURIComponent(path).replace(/^\/+/, '');
       if (relative === 'favicon.ico') { response.writeHead(204); response.end(); return; }
-      if (path === ordinaryPath && policy.behavior === 'block') {
-        response.writeHead(404, { 'x-triptych-test-blocked-ordinary': '1' });
+      if (path === policy.target && policy.behavior === 'block') {
+        response.writeHead(404, { 'x-triptych-test-blocked-runtime': '1' });
         response.end('deliberately unavailable'); return;
       }
-      if (path === ordinaryPath && policy.behavior === 'hold') {
+      if (path === policy.target && policy.behavior === 'hold') {
         policy.held = true;
         await new Promise((done) => { policy.release = done; });
       }
@@ -37,7 +37,7 @@ function server() {
       }
       const file = resolve(ROOT, relative || 'README.md');
       if (!file.startsWith(ROOT + sep)) throw new Error('outside repository');
-      const body = OVERLAY ? await readFile(resolve(OVERLAY, relative)).catch(() => readFile(file))
+      const body = OVERLAY && policy.overlay ? await readFile(resolve(OVERLAY, relative)).catch(() => readFile(file))
         : await readFile(file);
       response.writeHead(200, { 'content-type': mime(file), 'cache-control': 'no-store' });
       response.end(body);
@@ -157,17 +157,18 @@ try {
   });
   cdp.on('Network.responseReceived', ({ requestId, response }) => {
     if (response.status < 400) return;
-    if (response.status === 404 && new URL(response.url).pathname === ordinaryPath &&
-        response.headers['x-triptych-test-blocked-ordinary'] === '1') {
+    if (response.status === 404 &&
+        response.headers['x-triptych-test-blocked-runtime'] === '1') {
       expectedFailures.add(requestId);
-      expectedHttpProblems.push({ status: response.status, path: ordinaryPath });
+      expectedHttpProblems.push({ status: response.status, path: new URL(response.url).pathname });
     } else httpProblems.push({ status: response.status, url: response.url });
   });
   cdp.on('Network.loadingFailed', ({ requestId, canceled, errorText }) => {
     if (!canceled && !expectedFailures.has(requestId)) failedRequests.push(errorText);
   });
   await Promise.all([cdp.send('Page.enable'), cdp.send('Runtime.enable'), cdp.send('Network.enable')]);
-  await cdp.send('Page.addScriptToEvaluateOnNewDocument', { source: 'try { localStorage.clear(); } catch (_) {}' });
+  await cdp.send('Page.addScriptToEvaluateOnNewDocument', { source: `Storage.prototype.getItem = function () { throw new Error('storage unavailable'); }; Storage.prototype.setItem = function () { throw new Error('storage unavailable'); };` });
+  await cdp.send('Emulation.setDeviceMetricsOverride', {width:393,height:852,deviceScaleFactor:1,mobile:false});
   const base = `http://127.0.0.1:${port}`;
   const snapshot = `(() => {
     const debug = window.dayReaderDebug || window.propersReaderDebug;
@@ -273,12 +274,115 @@ try {
     assert.equal(await ordinaryRequests(), 2);
     assertions.push(entrance + ' failed Ordinary refuses Read fallback, allows Read recovery and retries Missal');
   }
-  assert.equal(expectedHttpProblems.length, 2);
+
+  const resourceProof = [];
+  const corePath = '/src/web/browser/liturgy/reader-comparison.js';
+  const studyPath = '/src/web/browser/liturgy/reader-study-view.js';
+  const modeRequests = async () => evaluate(cdp, `performance.getEntriesByType('resource').map(entry=>new URL(entry.name).pathname)
+    .filter(path=>['reader-comparison.js','reader-compare-view.js','reader-study-view.js'].some(file=>path.endsWith('/'+file)))`);
+  const click = async selector => evaluate(cdp, `document.querySelector(${JSON.stringify(selector)}).click()`);
+  const choose = async (selector,value) => evaluate(cdp, `(() => {const node=document.querySelector(${JSON.stringify(selector)});node.value=${JSON.stringify(value)};node.dispatchEvent(new Event('change',{bubbles:true}));})()`);
+  const settle = async () => evaluate(cdp, `(async()=>{let previous=NaN,stable=0;for(let frame=0;frame<240&&stable<8;frame+=1){await new Promise(requestAnimationFrame);stable=Math.abs(scrollY-previous)<0.5?stable+1:0;previous=scrollY;}})()`);
+  for (const entrance of ['day','propers']) {
+    const route=entrance==='day'?'day.html':'index.html';
+    const alias=entrance==='day'?'day-reader.html':'propers-reader.html';
+    const identity=entrance==='day'
+      ? 'date=2026-11-22&missal=roman-1962&bible=douay-rheims&orations=la'
+      : 'missal=roman-1962&type=seasonal&mass=advent-1&bible=douay-rheims&orations=la';
+    const read=identity+'&mode=read';
+    const comparison=identity+(entrance==='day'
+      ? '&mode=compare&compare=recension&peer-missal=postconciliar&territory=universal'
+      : '&mode=compare&compare=oration-language&peer-orations=en');
+    const study=identity+'&mode=study&ordinary=0';
+    const expected={};
+    policy.behavior='normal'; policy.target=corePath;
+    for (const [mode,hash] of [['read',read],['compare',comparison],['study',study]]) {
+      policy.overlay=false; expected[mode]=await visit(route,hash);
+      assert.equal(expected[mode].outcome,'ready',JSON.stringify(await evaluate(cdp, '({debug:window.dayReaderDebug||window.propersReaderDebug,hash:location.hash})')));
+      policy.overlay=true;
+      for(const modern of [route,alias]) {
+        const direct=await visit(modern,hash);
+        assert.deepEqual(direct,expected[mode]);
+        assert.deepEqual((await modeRequests()).map(path=>path.split('/').at(-1)).sort(),
+          mode==='compare'?['reader-compare-view.js','reader-comparison.js']:mode==='study'?['reader-study-view.js']:[]);
+      }
+    }
+    assertions.push(entrance+' direct Read Compare and Study on both modern routes match eager current-state text and semantic APIs exactly');
+
+    const invalidCompare=comparison.replace(entrance==='day'?'peer-missal=postconciliar':'peer-orations=en',
+      entrance==='day'?'peer-missal=unknown':'peer-orations=unknown');
+    for(const hash of [invalidCompare,study.replace('bible=douay-rheims','bible=unknown')]) {
+      const invalid=await visit(route,hash);
+      assert.equal(invalid.outcome,'invalid'); assert.deepEqual(invalid.events,[]);
+      assert.deepEqual(await modeRequests(),[]);
+    }
+    assertions.push(entrance+' invalid explicit Compare or Study selection refuses before shared presentation modules load');
+
+    await visit(route,read);
+    const source=await evaluate(cdp, `([...document.querySelectorAll('[data-semantic-event-id]')].find(node=>node.dataset.semanticEventId.startsWith('proper/')&&/^Gospel/.test(node.querySelector('.proper-name')?.textContent||''))||{}).dataset?.semanticEventId`);
+    assert.ok(source,'held source Gospel');
+    await visit(route,read+'&location='+encodeURIComponent(source)); await settle();
+    assert.deepEqual(await modeRequests(),[]);
+    await click('[data-reader-action="mode"]'); await click('[data-mode="compare"]');
+    if(entrance==='day') {
+      await choose('#reader-compare-peer','postconciliar');
+      await waitFor(cdp, `!document.getElementById('reader-compare-territory').disabled && [...document.getElementById('reader-compare-territory').options].some(node=>node.value==='universal')`, 'held shared territory');
+      await choose('#reader-compare-territory','universal');
+    } else await choose('#reader-compare-orations','en');
+    assert.deepEqual(await modeRequests(),[]);
+    let generation=await evaluate(cdp,'(window.dayReaderDebug||window.propersReaderDebug).renders');
+    await click('#compare-setup .surface-apply'); await ready(generation); await settle();
+    assert.equal(await evaluate(cdp,'document.activeElement.dataset.readerAction'),'mode');
+    assert.equal((await evaluate(cdp,snapshot)).state.semanticLocation.eventId,'compare/proper/gospel');
+    generation=await evaluate(cdp,'(window.dayReaderDebug||window.propersReaderDebug).renders');
+    await click('[data-reader-action="study"]'); await ready(generation); await settle();
+    assert.equal(await evaluate(cdp,'document.activeElement.dataset.readerAction'),'study');
+    assert.equal((await evaluate(cdp,snapshot)).state.semanticLocation.eventId,source);
+    await click('[data-reader-action="mode"]');
+    generation=await evaluate(cdp,'(window.dayReaderDebug||window.propersReaderDebug).renders');
+    await click('[data-mode="read"]'); await ready(generation); await settle();
+    const returned=await evaluate(cdp,snapshot);
+    assert.equal(returned.state.requestedMode,'read'); assert.equal(returned.state.semanticLocation.eventId,source);
+    assert.equal(await evaluate(cdp,'document.activeElement.dataset.readerAction'),'mode');
+    resourceProof.push({entrance,initialReadAndOpenMode:[],afterCompareStudyRead:await modeRequests()});
+    assertions.push(entrance+' Read and Mode setup need no shared mode request; Compare and direct Study retain source Gospel and invoking-control focus');
+
+    await visit(route,read); policy.target=corePath; policy.behavior='hold'; policy.held=false;
+    await evaluate(cdp,`location.hash=${JSON.stringify(comparison)}`);
+    for(let attempt=0;!policy.held&&attempt<120;attempt+=1) await new Promise(done=>setTimeout(done,25));
+    assert.equal(policy.held,true,'Compare core reached controlled response');
+    const newer=await change(read);
+    generation=await evaluate(cdp,'(window.dayReaderDebug||window.propersReaderDebug).renders');
+    policy.release(); policy.release=null; policy.behavior='normal';
+    await waitFor(cdp,'window.LiturgyReaderComparison && window.LiturgyReaderCompareView','released comparison APIs');
+    await evaluate(cdp,'new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done)))');
+    assert.deepEqual(await evaluate(cdp,snapshot),newer);
+    assert.equal(await evaluate(cdp,'(window.dayReaderDebug||window.propersReaderDebug).renders'),generation);
+    assert.deepEqual(await change(comparison),expected.compare);
+    assert.deepEqual((await modeRequests()).map(path=>path.split('/').at(-1)).sort(),['reader-compare-view.js','reader-comparison.js']);
+    assertions.push(entrance+' delayed Compare cannot replace newer Read and later Compare reuses the loaded APIs');
+
+    for(const [mode,hash,path] of [['compare',comparison,corePath],['study',study,studyPath]]) {
+      policy.target=path; policy.behavior='block';
+      const failed=await visit(route,hash);
+      assert.notEqual(failed.outcome,'ready'); assert.deepEqual(failed.events,[]);
+      assert.equal(new URLSearchParams(failed.hash.slice(1)).get('mode'),mode);
+      const recovered=await change(read); assert.equal(recovered.outcome,'ready'); assert.ok(recovered.events.length>0);
+      policy.behavior='normal';
+      assert.deepEqual(await change(hash),expected[mode]);
+      const requests=await modeRequests(); assert.equal(requests.filter(request=>request===path).length,2);
+      assertions.push(entrance+' failed '+mode+' module keeps explicit mode unavailable, permits Read recovery and retries successfully');
+    }
+  }
+  assert.equal(expectedHttpProblems.length, 6);
+
   assert.deepEqual(consoleProblems, []);
   assert.deepEqual(failedRequests, []);
   assert.deepEqual(httpProblems, []);
-  process.stdout.write(JSON.stringify({ status: 'pass', checks: assertions.length, assertions,
-    consoleProblems, failedRequests, httpProblems, expectedHttpProblems }) + '\n');
+  const report = { status: 'pass', checks: assertions.length, assertions,
+    consoleProblems, failedRequests, httpProblems, expectedHttpProblems, resourceProof };
+  await writeFile(resolve(SCRATCH, 'report.json'), JSON.stringify(report, null, 2) + '\n');
+  process.stdout.write(JSON.stringify(report) + '\n');
 } catch (error) {
   process.stderr.write(JSON.stringify({ status: 'fail', error: error.stack, assertions,
     consoleProblems, failedRequests, httpProblems, expectedHttpProblems }) + '\n');

@@ -702,6 +702,40 @@ inputs; it is not a pass of the broader frozen-worktree wrapper. All annual
 descendants are closed. The final full `make check` rerun passes: 259 captured
 examples, 250 replayed, zero divergence and zero tracked writes.
 
+The next frozen HTTP/2 lab comparison measures the first eligible Missal
+transition at 1.94 s for Day and 1.92 s for Propers, down from 9.35 s and
+9.29 s. Each final transition reuses its Proper body; only the Ordinary and
+its presenter are transferred. Cold Read remains above budget: Day LCP is
+4.644/4.664 s and Propers 3.916/4.116 s on the same 562.5 ms latency,
+1.47456 Mbps down, 4× CPU mobile profile. These samples identify an internal
+implementation improvement; field p75 and the 2.5 s release target remain open.
+
+A separate two-year early-loading pilot reduces Day LCP to 3.488–3.532 s,
+gaining 1.144–1.176 s across four adjacent pairs. Every sample nevertheless
+fails its predeclared 3.0 s integration limit, so the pilot remains outside
+the branch and its 101-year expansion is held. Helper completion near
+1.89 s and authenticated sidecar admission near 2.77 s dominate the measured
+path. Exact Mass/chapter hints each have one response body, but Bible metadata
+is transferred twice; complete metadata reuse is not claimed. Source, text,
+state, semantic events and URL parity pass, with no unexpected diagnostics.
+The original negative result and original thresholds remain authoritative.
+
+The following bounded startup change defers the shared Compare and Study
+presentation modules through the existing validated-state optional loader.
+Read and open Mode need none of those modules; explicit Compare/Study await
+their own APIs, preserve semantic location and focus, and retain failure,
+retry, shared requests and stale-render protection. The eager visual oracles
+remain supported. Ten Node contracts and 23 real Chromium groups pass on the
+scratch candidate. Direct script/style gzip6 sums fall from 204,960 to 192,881
+bytes for Day and 172,948 to 160,850 for Propers, with 29 to 26 initial
+resources. Integrated verification passes all seven full browser tests and
+205 focused tests (one separate browser opt-in skipped). Preview build,
+integrity, bindings, registry and promise checks pass. The first broad check
+used system Markdown 3.11.2 instead of locked 3.10.3 and failed that dependency
+guard; the corrected locked-environment run passes all 250 example replays
+with zero divergence or tracked writes. These are byte and correctness
+measurements; new timing remains pending.
+
 A parallel witness audit found no publishable English witness for the 1962
 Pentecost Lesson's printed `discipuli` wording. [Cabrol 1921](https://catalog.hathitrust.org/Record/100567132)
 is an inaccessible page-image lead, not a text source. An

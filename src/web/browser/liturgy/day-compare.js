@@ -2,11 +2,11 @@
 'use strict';
 
 (function (root) {
-  const Comparison = root.LiturgyReaderComparison;
-  const View = root.LiturgyReaderCompareView;
-
   function requireCompare() {
+    const Comparison = root.LiturgyReaderComparison;
+    const View = root.LiturgyReaderCompareView;
     if (!Comparison || !View) throw new Error('Day Compare requires its semantic and view modules');
+    return { Comparison: Comparison, View: View };
   }
 
   function sideRequest(state, descriptor, territory) {
@@ -86,7 +86,7 @@
   }
 
   async function build(input) {
-    requireCompare();
+    const { Comparison, View } = requireCompare();
     const comparison = input.state.comparison;
     if (!comparison || comparison.dimension !== 'recension' ||
         comparison.sides.length !== 2 || comparison.anchor.territorialContext === undefined) {
