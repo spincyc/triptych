@@ -919,6 +919,11 @@ body:has(.reader-instrument) > .site-footer,
 }
 
 @media print {
+  html:has(.reader-instrument),
+  body:has(.reader-instrument),
+  .page-shell:has(.reader-instrument),
+  .day-reader-candidate-frame:has(.reader-instrument),
+  .propers-reader-candidate-frame:has(.reader-instrument) { background: #fff; }
   @page { size: letter; margin: 0.7in 0.72in; }
   .reader-instrument .reader-masthead,
   .reader-instrument .reader-actions,
@@ -927,7 +932,7 @@ body:has(.reader-instrument) > .site-footer,
   .reader-instrument { min-height: 0; padding: 0; background: #fff; }
   .reader-instrument .reader-identity { width: auto; padding: 0 0 0.2in; text-align: left; }
   .reader-instrument .reader-identity .celebration-title { margin: 0; font-size: 22pt; }
-  .reader-instrument .reader-document { width: auto; padding: 0; }
+  .reader-instrument .reader-document { width: auto; padding: 0; background: #fff; }
   .reader-instrument .reader-document .proper { max-width: none; margin: 0 0 0.24in; break-inside: avoid; }
   /* A Sequence paginates by strophe rather than as one unbreakable block. */
   .reader-instrument .reader-document .proper:has(.composed-stanzas) { break-inside: auto; }

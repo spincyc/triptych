@@ -317,8 +317,9 @@ Fresh source-served Chromium runs passed 55 Day and 49 Propers assertion
 groups with no console or request failures. The 1962 exemplar was captured
 at 1440, 393 and 320 CSS pixels without horizontal overflow, and its print
 was inspected. Both English Read prints occupy ten pages; the Latin Day
-Missal print occupies 25. A tinted empty panel remains after the last text
-and long translation notes dominate English print. C4 print work and the full
+Missal print occupies 25. A follow-up print background correction removed the
+final-page tinted frame bleed without changing those page counts. Long
+translation notes still dominate English print. C4 print work and the full
 C2 acceptance matrix remain open.
 
 ## Daily Missal reader recovery and completion plan, 2026-10-19
