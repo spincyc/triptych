@@ -7,6 +7,8 @@
   const Adapters = window.LiturgyReaderStateAdapters;
   const Shell = window.TriptychReaderShell;
   const OrdinaryRenderer = window.TriptychOrdinaryRenderer;
+  const SearchController = window.TriptychProperSearchController;
+  const Compare = window.TriptychPropersCompare;
 
   if (!T || !Contract || !Adapters || !Shell || !OrdinaryRenderer) {
     throw new Error('Propers reader requires production browser, state, adapter, shell, and Ordinary renderer modules');
@@ -55,12 +57,14 @@
   const witnessSelect = document.getElementById('reader-witness');
 
   const cache = new Map();
+  let properSearch = null;
   const runtime = {
     manifests: null,
     missals: [],
     bibles: [],
     structure: null,
     ordinary: null,
+    compareView: null,
     groups: [],
     normalized: null,
     result: null,
@@ -233,7 +237,7 @@
   }
 
   function setModePresentation(mode) {
-    const label = mode === 'missal' ? 'Missal' : 'Read';
+    const label = mode === 'missal' ? 'Missal' : (mode === 'compare' ? 'Compare' : 'Read');
     shellRoot.dataset.readerMode = mode;
     const context = shellRoot.querySelector('.reader-context');
     if (context) context.textContent = 'Propers · ' + label;
@@ -610,6 +614,7 @@
     runtime.mass = null;
     runtime.structure = null;
     runtime.ordinary = null;
+    runtime.compareView = null;
     runtime.groups = [];
     runtime.preferredType = null;
     runtime.draftStructure = null;
@@ -1183,6 +1188,7 @@
   }
 
   async function draftMissal(id) {
+    if (properSearch) properSearch.clear();
     const serial = ++runtime.browseSerial;
     typeSelect.replaceChildren();
     formularySelect.replaceChildren();
@@ -1259,6 +1265,12 @@
 
   function populateDetails() {
     if (runtime.detailsLoaded) return;
+    if (runtime.compareView) {
+      Compare.populateDetails({ body: detailsBody, view: runtime.compareView });
+      runtime.detailsLoaded = true;
+      window.propersReaderDebug.detailsBuilds += 1;
+      return;
+    }
     detailsBody.replaceChildren();
     if (runtime.outcome === 'loading') {
       detailsBody.appendChild(T.el('p', 'surface-note',
@@ -1354,8 +1366,25 @@
         runtime.draftStructure = null;
         runtime.draftGroups = [];
       }
+      if (name === 'mode') {
+        const setup = document.getElementById('compare-setup');
+        const button = document.querySelector('[data-mode="compare"]');
+        if (setup) setup.hidden = true;
+        if (button) button.setAttribute('aria-expanded', 'false');
+      }
     }
   });
+
+  properSearch = SearchController && SearchController.mount({ runtime: runtime, Contract: Contract,
+    legacyKeys: LEGACY_KEYS, missalRow: missalRow, editionName: editionName,
+    load: load, internalHash: internalHash, readerShell: readerShell,
+    navigate: navigate });
+
+  if (Compare) Compare.bindControls({ runtime: runtime, readerShell: readerShell, T: T,
+    navigate: navigate, variantKeys: function () {
+      return ((runtime.manifests && runtime.manifests.ordinaryIndex.calendars) || [])
+        .flatMap(function (row) { return row.variants || []; });
+    } });
 
   async function renderCandidate() {
     const serial = ++runtime.serial;
@@ -1383,6 +1412,7 @@
     coverageNotice.textContent = '';
     coverageNotice.hidden = true;
     resetBrowseSurface();
+    if (properSearch) properSearch.clear();
     detailsBody.replaceChildren(T.el('p', 'surface-note', 'Details load when this surface is opened.'));
 
     try {
@@ -1432,6 +1462,10 @@
         renderFailure(normalized.errors);
         return;
       }
+      if (normalized.state.requestedMode === 'compare' && Compare) {
+        const errors = Compare.preflight(parsed);
+        if (errors.length) { renderFailure(errors); return; }
+      }
       const location = pendingLocationSet ? pendingLocation : (normalized.state.semanticLocation && {
         kind: 'event', id: normalized.state.semanticLocation.eventId
       }) || null;
@@ -1439,7 +1473,8 @@
       setModePresentation(normalized.state.requestedMode);
       window.propersReaderDebug.state = normalized.state;
       window.propersReaderDebug.legacy = normalized.legacy;
-      if (['read', 'missal'].indexOf(normalized.state.requestedMode) < 0) {
+      if ((Compare ? ['read', 'missal', 'compare'] :
+          ['read', 'missal']).indexOf(normalized.state.requestedMode) < 0) {
         if (eventLocation(location)) {
           renderFailure([{
             code: 'invalid-semantic-location', path: 'location',
@@ -1466,6 +1501,41 @@
         // page, so the document stays live and its skip link reachable.
         readerShell.open('browse', shellRoot.querySelector('[data-reader-action="browse"]'),
           { modal: false });
+        return;
+      }
+
+      if (normalized.state.requestedMode === 'compare' && Compare) {
+        let compared;
+        try {
+          compared = await Compare.present({
+            state: normalized.state, structure: prepared.structure, runtime: runtime,
+            isCurrent: function () { return serial === runtime.serial; },
+            location: location, reading: reading, readerShell: readerShell,
+            title: title, typeLine: typeLine, metaLine: metaLine,
+            coverageNotice: coverageNotice
+          });
+        } catch (error) {
+          renderFailure([{ code: 'unsupported-comparison', path: 'compare',
+            message: String(error.message || error) }]);
+          return;
+        }
+        if (!compared || serial !== runtime.serial) return;
+        if (compared.invalidLocation) {
+          renderFailure([{ code: 'invalid-semantic-location', path: 'location',
+            message: 'the explicit Compare location is absent from these paired units' }]);
+          return;
+        }
+        runtime.outcome = 'ready';
+        window.propersReaderDebug.outcome = 'ready';
+        window.propersReaderDebug.semantic = compared.semantic;
+        if (location && !readerShell.restoreSemanticLocation(location)) {
+          renderFailure([{ code: 'semantic-location-render', path: 'location',
+            message: 'the Compare location could not be restored' }]);
+          return;
+        }
+        canonicalize(normalized, location, pendingLocationSet);
+        focusCommittedResult(pendingFocus, location);
+        refreshDetailsAfterOutcome();
         return;
       }
 
@@ -1645,9 +1715,13 @@
       readerShell.close();
       return;
     }
-    const location = nearestProperLocation(readerShell.captureSemanticLocation());
+    const captured = readerShell.captureSemanticLocation();
+    const location = current.requestedMode === 'compare'
+      ? Compare.fromCompareLocation(captured, runtime.result)
+      : nearestProperLocation(captured);
     readerShell.close({ restoreFocus: false });
-    navigate({ mode: 'read' }, [], { location: location, focus: 'mode' });
+    navigate({ mode: 'read' }, ['compare', 'peer-orations'],
+      { location: location, focus: 'mode' });
   });
 
   document.querySelector('[data-mode="missal"]')?.addEventListener('click', function () {
@@ -1656,9 +1730,12 @@
       readerShell.close();
       return;
     }
-    const location = readerShell.captureSemanticLocation();
+    const captured = readerShell.captureSemanticLocation();
+    const location = current.requestedMode === 'compare'
+      ? Compare.fromCompareLocation(captured, runtime.result) : captured;
     readerShell.close({ restoreFocus: false });
-    navigate({ mode: 'missal' }, [], { location: location, focus: 'mode' });
+    navigate({ mode: 'missal' }, ['compare', 'peer-orations'],
+      { location: location, focus: 'mode' });
   });
 
   let historyQueued = false;

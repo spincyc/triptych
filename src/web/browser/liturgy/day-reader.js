@@ -8,6 +8,7 @@
   const Adapters = window.LiturgyReaderStateAdapters;
   const Shell = window.TriptychReaderShell;
   const OrdinaryRenderer = window.TriptychOrdinaryRenderer;
+  const DayCompare = window.TriptychDayCompare;
 
   if (!T || !Model || !Contract || !Adapters || !Shell || !OrdinaryRenderer) {
     throw new Error('Day reader requires production browser, assembly, Ordinary renderer, state, adapter, and shell modules');
@@ -79,7 +80,8 @@
     pendingModeFocus: false,
     pendingFocus: null,
     modeStartedAt: null,
-    pendingPreferences: false
+    pendingPreferences: false,
+    compareView: null
   };
 
   const PREFERENCES_KEY = 'triptych:liturgy:preferences:v1';
@@ -268,6 +270,7 @@
     runtime.derived = null;
     runtime.structure = null;
     runtime.ordinary = null;
+    runtime.compareView = null;
     runtime.branch = null;
     runtime.branches = [];
     runtime.rubrics = null;
@@ -339,7 +342,6 @@
 
   function deferredState(parsed) {
     const mode = requestedModeOf(parsed);
-    // Compare deliberately does not expose a URL.
     return mode === 'study' ? ['mode=' + mode] : [];
   }
 
@@ -476,6 +478,10 @@
         message: 'explicit mode conflicts with the legacy ordinary state'
       });
     }
+    if (requestedModeOf(parsed) === 'compare') errors.push.apply(errors,
+      DayCompare ? DayCompare.preflight(parsed, runtime.missals) : [{
+        code: 'compare-unavailable', path: 'mode', message: 'Compare modules are unavailable'
+      }] );
     return { ok: errors.length === 0, missal: wantedMissal, date: wantedDate, errors: errors };
   }
 
@@ -483,8 +489,7 @@
     const missal = preliminary.missal;
     const year = preliminary.date.slice(0, 4);
     const requestedMode = requestedModeOf(parsed);
-    // Read does not present the Ordinary, but explicit dormant Ordinary state
-    // is still source-validated. Remembered or default state remains cold.
+    // Explicit dormant Ordinary state still gets source validation.
     const explicitOrdinary = parsed.present.indexOf('ordinary-lang') >= 0 ||
       (parsed.variantKeys || []).some(function (key) {
         return parsed.present.indexOf(key) >= 0;
@@ -497,6 +502,8 @@
       'structure/propers/' + missal + '.json'
     ];
     if (needsOrdinary) paths.push('structure/ordinary/' + missal + '.json');
+    const peer = requestedMode === 'compare' ? parsed.recognized['peer-missal'] : null;
+    if (peer) paths.push('structure/propers/' + peer + '.json');
     const rows = await Promise.all(paths.map(load));
     const derivationKey = missal + '/' + preliminary.date;
     let derived = derivations.get(derivationKey);
@@ -507,8 +514,9 @@
     }
     const structures = {};
     structures[missal] = rows[2];
+    if (peer) structures[peer] = rows[needsOrdinary ? 4 : 3];
     const ordinaries = {};
-    if (rows[3]) ordinaries[missal] = rows[3];
+    if (needsOrdinary && rows[3]) ordinaries[missal] = rows[3];
     const context = Adapters.validationContext({
       entrance: 'day',
       bibles: manifests.bibles,
@@ -523,13 +531,13 @@
       derived: derived,
       rubrics: rows[0],
       structure: rows[2],
-      ordinary: rows[3] || null,
+      structures: structures,
+      ordinary: needsOrdinary ? rows[3] : null,
       context: context
     };
   }
 
-  // A failed day clears derived selections, but date, missal, Apply, and Today
-  // remain live so the reader can leave it. Previous/Next require a valid day.
+  // Keep Date, missal, Apply, and Today live after an invalid day.
   function setDateSurfaceEnabled(enabled) {
     [bibleSelect, orationsSelect, formularySelect,
       ordinaryLangSelect, ordinaryOptionSelect].forEach(function (control) {
@@ -550,12 +558,7 @@
       ordinaryLangSelect, ordinaryOptionSelect].forEach(function (select) {
       select.replaceChildren();
     });
-    // The missal list is manifest data, not selection state: it is the same
-    // list whatever day failed. Emptying it left an enabled select with nothing
-    // in it, which is a second dead end wearing the first one's clothes. Nor is
-    // its VALUE cleared now: that left a reader whose selection failed with no
-    // missal named at all. It is read from the hash, so it is the request in
-    // hand and not a prior selection showing through.
+    // Keep manifest choices and the explicit missal visible after failure.
     T.fillSelect(missalSelect, (runtime.missals || []).map(function (row) {
       return { value: row.id, label: row.label, title: row.edition || row.code || row.id };
     }));
@@ -589,10 +592,8 @@
     }));
     orationsSelect.value = state.languages.orations;
     const readable = (runtime.branch && runtime.branch.readable) || [];
-    // The unresolved document is the only selector when the source appoints
-    // coequal formularies.  A native select would visibly preselect its first
-    // option and manufacture the very default the adapter refused to choose.
-    if (readable.length > 1 && runtime.outcome !== 'unresolved') {
+    // Do not let a native select preselect a coequal formulary.
+    if (readable.length > 1 && runtime.outcome !== 'unresolved' && runtime.mode !== 'compare') {
       T.fillSelect(formularySelect, readable.map(function (row) {
         return { value: row.key, label: (row.label || row.key) + ' — ' + row.state };
       }));
@@ -675,6 +676,12 @@
       return;
     }
     const state = runtime.normalized && runtime.normalized.state;
+    if (runtime.compareView) {
+      DayCompare.populateDetails({ body: detailsBody, view: runtime.compareView, T: T });
+      runtime.detailsLoaded = true;
+      window.dayReaderDebug.detailsBuilds += 1;
+      return;
+    }
     if (!state) {
       detailsBody.appendChild(T.el('p', 'surface-note',
         'No validated selection is available for the current ' + runtime.outcome + ' outcome.'));
@@ -1579,8 +1586,7 @@
       });
     }
 
-    // The first Proper supplies focus recovery, but the witness choice governs
-    // the whole Mass and stands beside that Proper rather than inside its text.
+    // Keep the Mass-wide witness choice beside its first Proper.
     for (const choice of documentFragment.querySelectorAll('.translation-witness-choice')) {
       if (choice.closest('.proper-choice')) continue;
       const proper = choice.closest('[data-semantic-event-id]');
@@ -2443,9 +2449,10 @@
         renderFailure(witnessErrors, { mode: requestedMode });
         return;
       }
-      const locationErrors = validateExplicitSemanticLocation(
-        normalized.state, assembled.derived, assembled.structure, assembled.ordinary
-      );
+      const locationErrors = normalized.state.requestedMode === 'compare' ? [] :
+        validateExplicitSemanticLocation(
+          normalized.state, assembled.derived, assembled.structure, assembled.ordinary
+        );
       if (locationErrors.length) {
         renderFailure(locationErrors, { mode: requestedMode });
         return;
@@ -2490,6 +2497,20 @@
         title.textContent = runtime.branch && runtime.branch.winner
           ? runtime.branch.winner.name : 'Deferred Day selection';
         dateLine.textContent = longDate(assembled.derived.date, assembled.derived.weekday);
+        return;
+      }
+
+      if (runtime.mode === 'compare') {
+        await DayCompare.present({ state: normalized.state, assembled: assembled,
+          runtime: runtime, load: load, readerShell: readerShell,
+          isCurrent: function () { return serial === runtime.serial; },
+          pendingNavigation: pendingNavigation, pendingPreferences: pendingPreferences,
+          modeStartedAt: modeStartedAt, longDate: longDate,
+          renderFailure: renderFailure, savePreferences: savePreferences,
+          populateDateSurface: populateDateSurface,
+          restorePendingNavigation: restorePendingNavigation,
+          commitOutcomePresentation: commitOutcomePresentation,
+          refreshDetailsAfterOutcome: refreshDetailsAfterOutcome });
         return;
       }
 
@@ -2644,10 +2665,7 @@
       if (value === null || value === undefined || value === '') params.delete(key);
       else params.set(key, value);
     });
-    // Removals LAST, and they win. Applied first they died the moment an update
-    // named the same key: Apply asks for `mass` to go whenever the day or the
-    // missal changes, then wrote the outgoing missal's own formulary key back
-    // from a select nothing had repopulated — and no missal holds another's.
+    // Removals win over updates so an old formulary cannot survive Apply.
     (removals || []).forEach(function (key) { params.delete(key); });
     const value = params.toString();
     return value ? '#' + value : '';
@@ -2712,6 +2730,9 @@
 
   function captureModeLocation(targetMode) {
     const location = readerShell.captureSemanticLocation();
+    if (runtime.mode === 'compare') {
+      return DayCompare.fromCompareLocation(location, runtime.result);
+    }
     if (runtime.mode === 'missal' && targetMode === 'read') {
       return nearestProperLocation(location, runtime.result && runtime.result.events);
     }
@@ -2783,9 +2804,7 @@
     const removals = changedDay ? ['mass', 'form', 'translation-witness', 'location'] :
       (changedFormulary ? ['form', 'translation-witness', 'location'] :
         (changedOrations ? ['translation-witness'] : []));
-    // The option control and any latent variant hash belong to the outgoing
-    // edition. A missal change must not turn them into an explicit request for
-    // the new edition; date-only changes keep the reader's Ordinary choices.
+    // Discard outgoing edition variants when the missal changes.
     if (changedEdition) removals.push.apply(removals,
       variantKeys(runtime.manifests && runtime.manifests.ordinaryIndex));
     readerShell.close({ restoreFocus: false });
@@ -2821,7 +2840,8 @@
     readerShell.close({ restoreFocus: false, restoreScroll: false });
     window.dayReaderDebug.modeSwitches += 1;
     runtime.modeStartedAt = performance.now();
-    navigate({ mode: 'read' }, ['ordinary'], { location: location, modeFocus: true });
+    navigate({ mode: 'read' }, ['ordinary', 'compare', 'peer-missal', 'territory'],
+      { location: location, modeFocus: true });
   });
   document.querySelector('[data-mode="missal"]').addEventListener('click', function () {
     if (runtime.mode === 'missal') {
@@ -2832,11 +2852,18 @@
     readerShell.close({ restoreFocus: false, restoreScroll: false });
     window.dayReaderDebug.modeSwitches += 1;
     runtime.modeStartedAt = performance.now();
-    navigate({ mode: 'missal' }, ['ordinary'], { location: location, modeFocus: true });
+    navigate({ mode: 'missal' }, ['ordinary', 'compare', 'peer-missal', 'territory'],
+      { location: location, modeFocus: true });
   });
-  /* A Contents jump is a stable semantic location in Read and Missal, written as
-   * Propers writes it: the entry is replaced, nothing re-renders, and a target a
-   * fresh load would refuse clears `location`. */
+  if (DayCompare) DayCompare.bindControls({
+    runtime: runtime, T: T, Model: Model, load: load,
+    readerShell: readerShell, navigate: navigate, variantKeys: variantKeys,
+    onModeSwitch: function () {
+      window.dayReaderDebug.modeSwitches += 1;
+      runtime.modeStartedAt = performance.now();
+    }
+  });
+  /* Contents writes the semantic location without a rerender. */
   function writeContentsLocation(id) {
     const normalized = runtime.normalized;
     if (!normalized || ['ready', 'unresolved'].indexOf(runtime.outcome) < 0) return;
@@ -2844,7 +2871,8 @@
       return row.dataset.semanticLocation === id;
     });
     const event = node && node.dataset.semanticEventId;
-    if (event && (runtime.mode === 'missal' || /^proper(?:-choice)?\//.test(event))) {
+    if (runtime.mode === 'compare' && /^compare\/proper\//.test(id) ||
+        event && (runtime.mode === 'missal' || /^proper(?:-choice)?\//.test(event))) {
       normalized.state.semanticLocation = { eventId: id };
     } else delete normalized.state.semanticLocation;
     history.replaceState(Object.assign({}, history.state, {

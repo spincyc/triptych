@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-michaelis-introit-dfe07c30"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych created this bounded transcription and collation record and offers its editorial contributions under CC BY 4.0. The public-domain 1922 Tours Mame prints every retained word at its May 8 Mass and appoints that Mass for September 29 outside Eastertide. The 1962 target contributes no new word; no page image, layout, heading, citation or marginal number is reproduced."
+rights_jurisdiction = "United States"
+provenance = "Created by Triptych on 2026-10-20 after visually reading the hash-checked registered Mame 1922 PDF at printed pp. 592 and 726 / artifact pp. 706 and 840, and the 1962 CMAA facsimile at printed p. 670 no. 3726 / artifact p. 751."
+retrieved = "2026-10-20"
+sha256 = "dfe07c307ea3c845795f8808ad7178cd221e95e847b0e30fb89d30abd880c070"
+byte_size = 211
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/s-michaelis-introit-dfe07c30/s-michaelis-introit-dfe07c30.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Select the May 8 Introit appointed for September 29 by the Mame referral; omit its two Easter alleluias, join line wraps, remove stress accents, normalize ejus to the 1962 eius, and apply target punctuation. Retain the Psalm verse and Gloria Patri cue. No word is supplied from the Clementine Bible expansion."
+indexable = true
+encoding = "utf-8"
+notes = "The four physical lines reproduce the Roman-1962 calendar body exactly. The antecedent appointment and target remain separate historical passage records."

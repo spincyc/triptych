@@ -381,6 +381,16 @@ whole-family text denominator. The CLI now labels Bible reconstructions and
 separately shown Bible text. A generated, form-qualified Propers search index
 and a pure two-side semantic Compare core are checked data foundations; their
 reader controls and independent acceptance remain open.
+The subsequent source collation recovers those two held chants from exact
+Missal wording: St Anthony's Offertory and St Michael's Introit agree with
+page-checked public-domain Mame passages, including their appointed context.
+Both retain Bible citations as structural references, exact-target Latin
+provenance, and typed English no-exemplar rows. Effective 1962 target states
+are now 4,020 represented, 164 not represented and 3,806 unresolved;
+source-inventoried joined slots are 2,965 represented and 392 not represented.
+The complete-Missal check reports 1,077 exact-target Latin Proper texts out
+of 1,206 represented composed targets.
+This remains bounded source coverage, not whole-book text completion.
 
 The next C5 integration seats Propers Missal over the same source-backed
 Ordinary and Proper events as Day. The 1962 Pentecost fixture yields 179
@@ -395,6 +405,18 @@ and Ordinary choices, and inspected the first page of the 24-page 1962 print.
 The built-preview visual harness passes 28/28, the production Propers browser
 suite passes 56/56, and the private preview verifies. Full C5 acceptance
 remains open.
+The next C5 source run makes the form-qualified Propers index searchable from
+both entrances, loading it on demand and linking to exact edition/form
+results with its coverage boundary visible. Day Compare now resolves each
+edition's calendar outcome independently on a fixed date and territory before
+pairing functional Proper slots. Propers Compare holds one date-independent
+formulary and Bible fixed while adapting two oration languages independently.
+Explicit URL state, Contents location, focus return, absent events and
+unavailable text have source-served browser checks: 10/10 Day Compare and
+63/63 Propers Read/Missal/Search/Compare. The shared view and state contract
+pass focused tests. The private preview verifies and all seven registered
+built-preview browser harnesses pass; the focused source/UI suite passes 230
+tests. Study and independent C5 acceptance remain open.
 
 A source-inventoried bounded form report now keeps its parent form identity and
 counts the 1962 Pentecost Day appointments at 13 expected and 13 represented.
@@ -410,6 +432,11 @@ carries the same typed absence. Both English inventories have zero unaccounted
 Proper slots. The Latin substitution audit exempts only the source-verified
 `gratis` in that Communion, leaving zero page-image candidates; it does not
 substitute the differing Bible expansion for the Missal wording.
+The C4 cue pass enlarges and colors the printed ℣/℟ turns while preserving
+their accessible and copied text, 320-pixel reflow and print. A print rule
+keeps a short Collect translation credit beside its witness note. The
+source-served Day integration harness passed its new glyph case; the built
+preview and independent C4 matrix remain separate checks.
 
 ## Daily Missal reader recovery and completion plan, 2026-10-19
 

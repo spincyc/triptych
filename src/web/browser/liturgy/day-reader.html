@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="reader-shell.css">
 <link rel="stylesheet" href="day-reader.css">
 <link rel="stylesheet" href="reader-instrument.css">
+<link rel="stylesheet" href="reader-compare-view.css">
 </head>
 <body class="day-reader-candidate page-browser">
 <a class="skip-link" href="#reader-document">Skip to the Mass</a>
@@ -147,10 +148,23 @@
       <button type="button" role="radio" aria-checked="false" aria-disabled="true" disabled>
         <strong>Study</strong><span>Expanded notes and apparatus.</span>
       </button>
-      <button type="button" role="radio" aria-checked="false" aria-disabled="true" disabled>
+      <button type="button" role="radio" aria-checked="false" data-mode="compare"
+              aria-controls="compare-setup" aria-expanded="false">
         <strong>Compare</strong><span>Parallel editions and recensions.</span>
       </button>
     </div>
+    <form id="compare-setup" class="surface-body surface-fields" hidden>
+      <div class="surface-field">
+        <label for="reader-compare-peer">Other edition</label>
+        <select id="reader-compare-peer" required><option value="">Choose an edition</option></select>
+      </div>
+      <div class="surface-field">
+        <label for="reader-compare-territory">Territory for both calendars</label>
+        <select id="reader-compare-territory" required disabled><option value="">Choose a territory</option></select>
+      </div>
+      <p id="compare-setup-note" class="surface-note" role="status">Choose both editions and a territory. Each calendar will be resolved independently.</p>
+      <button class="surface-apply" type="submit">Open Compare</button>
+    </form>
   </dialog>
 
   <dialog id="details-surface" class="reader-surface details-surface"
@@ -175,6 +189,9 @@
 <script src="day.js"></script>
 <script src="reader-state.js"></script>
 <script src="reader-state-adapters.js"></script>
+<script src="reader-comparison.js"></script>
+<script src="reader-compare-view.js"></script>
+<script src="day-compare.js"></script>
 <script src="reader-shell.js"></script>
 <script src="day-reader.js"></script>
 </body>

@@ -49,14 +49,15 @@ class PropersReaderIntegrationTests(unittest.TestCase):
             "Continuous reading of the appointed texts.",
             "Continuous Ordinary with appointed propers in place.",
             "Expanded notes and apparatus.",
-            "Parallel editions and recensions.",
+            "Parallel oration languages for one formulary.",
         ):
             self.assertEqual(html.count(description), 1)
         self.assertNotIn("prototypes/reader-shell", html)
         for asset in (
             "reader-shell.js", "reader-shell.css", "reader-state.js",
             "reader-state-adapters.js", "propers-reader.js", "propers-reader.css",
-            "reader-instrument.css",
+            "reader-instrument.css", "reader-comparison.js", "reader-compare-view.js",
+            "reader-compare-view.css", "propers-compare.js", "proper-search-controller.js",
         ):
             self.assertIn(asset, html)
 
@@ -236,7 +237,7 @@ class PropersReaderIntegrationTests(unittest.TestCase):
         self.assertNotIn("sort()[0]", source)
         self.assertNotIn("pop()", source)
 
-    def test_all_four_actions_and_read_only_mode_are_explicit(self) -> None:
+    def test_all_four_actions_and_available_modes_are_explicit(self) -> None:
         source = text(HTML)
         for action, label in (
             ("browse", "Browse"), ("contents", "Contents"),
@@ -245,13 +246,13 @@ class PropersReaderIntegrationTests(unittest.TestCase):
             self.assertIn(f'data-reader-action="{action}"', source)
             self.assertIn(f'class="action-label">{label}</span>', source)
         self.assertIn('data-mode="read"', source)
-        self.assertEqual(source.count('aria-disabled="true"'), 2)
-        self.assertEqual(source.count(' disabled>'), 2)
+        self.assertEqual(source.count('aria-disabled="true"'), 1)
+        self.assertEqual(source.count(' disabled>'), 1)
         for name, description in (
             ("Read", "Continuous reading of the appointed texts."),
             ("Missal", "Continuous Ordinary with appointed propers in place."),
             ("Study", "Expanded notes and apparatus."),
-            ("Compare", "Parallel editions and recensions."),
+            ("Compare", "Parallel oration languages for one formulary."),
         ):
             self.assertIn(f"<strong>{name}</strong><span>{description}</span>", source)
 
