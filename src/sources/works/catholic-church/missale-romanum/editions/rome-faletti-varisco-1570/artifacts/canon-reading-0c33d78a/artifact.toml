@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-reading-0c33d78a"
+edition_id = "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The Rome 1570 printing is public domain in the United States by publication date. The Dominican Digital Library labels its mechanical images public domain; mechanical extraction and faithful bounded reading transcription add no separately claimed expressive rights. Excluded from Triptych CC BY 4.0 grant."
+rights_jurisdiction = "United States"
+source_url = "https://bc.dominikanie.pl/Content/176/download/"
+provenance = "The 16-unit selective reading transcription was independently collated against original source images, review SHA d0ac74ab66f219cdc4e9fb5d163f782fd41f51826df064bb871b61ed58527141. Its 75-line serialization, image package and PDF page order were independently checked under review SHA 060e1b83eb458a5bf26018bc10f0ef9e5044d63fab9b034bf377bea4b11bfda2. The exact line types and red N. positions are preserved in the proposed native extent record."
+retrieved = "2026-10-20"
+sha256 = "0c33d78a64fe8b2cd9a7ab76e0cb5b79384703485567227e7c8cf9102d291ec0"
+byte_size = 6583
+path = "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/artifacts/canon-reading-0c33d78a/canon-reading.txt"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-djvu-four-5d5366c2"
+transformation = "Render the accepted 16-unit JSON reading into sequential UTF-8 LF lines. Printed headings and red rubrics occupy their own lines; other lines are normalized spoken or chanted reading text. Retain 25 printed ✠ signs at source positions, one red N. at each Memento site, and no unprinted Amen. The original print is not glyph-diplomatically encoded; chant pitches are excluded. The native extent support record roman-1570-canon-missae-extent.json durably classifies every physical line as reading, red-heading or red-rubric and marks the two red N. sites without duplicating literal wording."

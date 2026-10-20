@@ -8,9 +8,9 @@
   "identity_claim": "same-prayer-witnesses",
   "inputs": [
     {
-      "byte_size": 88053,
+      "byte_size": 88247,
       "path": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
-      "sha256": "ea84b5e01dd2bdcd3311230483f34657a4869dd025a60e9d714c673ef0305a02"
+      "sha256": "a6113dd126060c08bb641659cf2149d6264e4ab74fa2642c2c401082331dfe88"
     },
     {
       "byte_size": 1311088,
@@ -36,6 +36,11 @@
       "byte_size": 7242,
       "path": "src/sources/inventories/eucharistic-books/mozarabic-1804-benedictio-panis.json",
       "sha256": "ad3d60bd19824466e8b337eb27b0da3a13c15916da82a000992386abde462f59"
+    },
+    {
+      "byte_size": 16331,
+      "path": "src/sources/inventories/eucharistic-books/roman-1570-canon-missae.json",
+      "sha256": "8cbb45f8fee8fad2522e928ac5598bfc184c7117747e3502f653f2cf0c5ba1dd"
     },
     {
       "byte_size": 1579,
@@ -66,6 +71,16 @@
       "byte_size": 2560,
       "path": "src/sources/inventories/eucharistic-books/support/mozarabic-1804-benedictio-panis-review.json",
       "sha256": "8c85bd0a75c7c6ce5111c49467b118c8c853fab6b90a5370383c88c3fed2c1d0"
+    },
+    {
+      "byte_size": 12078,
+      "path": "src/sources/inventories/eucharistic-books/support/roman-1570-canon-missae-extent.json",
+      "sha256": "f1d97c3993c2d3545c6f1ce1f1c226886bcee876da71b633569715218f6303d8"
+    },
+    {
+      "byte_size": 3869,
+      "path": "src/sources/inventories/eucharistic-books/support/roman-1570-canon-missae-review.json",
+      "sha256": "e862a73aee907aa4d9dcf89de254f34682d7b7ff3aaedd11a89e73a5af281316"
     },
     {
       "byte_size": 2472,
@@ -138,9 +153,9 @@
       "sha256": "3aad7b953a82cb8ab736aad88f487554e2aabf7caed6cb7855ab5d767c91eaa8"
     },
     {
-      "byte_size": 106223,
+      "byte_size": 107311,
       "path": "src/sources/inventories/eucharistic-stages/roman.json",
-      "sha256": "264cad2f690faac3e5bed627a1b136dc7fa376ac83a7741f0e2d215e2ee24566"
+      "sha256": "be420b68c502c0d2ee28dfb48de89aff7d81dd1e889cd0a3ebc1bf76e296693f"
     },
     {
       "byte_size": 10800,
@@ -168,9 +183,9 @@
       "sha256": "cfbc951ec40071d5eb78c55d9453811ee194647b57893b7aa3b4768abadea9bb"
     },
     {
-      "byte_size": 1688365,
+      "byte_size": 1689088,
       "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
-      "sha256": "7648e03892b009f5cf6f0c2117ff250c454a41f3b8346ca0376c17848af88f0f"
+      "sha256": "4a88540e45eff0cc029ba6c3920ca6849808d2e3734f62235c9ef097bd137c4a"
     },
     {
       "byte_size": 2595,
@@ -446,6 +461,151 @@
       "byte_size": 1763,
       "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/work.toml",
       "sha256": "d614b8c3ef194d3ad59dae541041c8e31b84327fbf7cd9988cb2beb8d50bad31"
+    },
+    {
+      "byte_size": 1676,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/artifacts/canon-djvu-four-5d5366c2/artifact.toml",
+      "sha256": "98fe1def15b2c6dd2cba8259b5adff1da96bf512961c1a918008eb26f2fae3bd"
+    },
+    {
+      "byte_size": 1662947,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/artifacts/canon-djvu-four-5d5366c2/openings.zip",
+      "sha256": "5d5366c20a6a6271586628f563914d234e7421ca875cc1e2fd47e94b6ad4e364"
+    },
+    {
+      "byte_size": 1779,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/artifacts/canon-facsimile-8755a363/artifact.toml",
+      "sha256": "0c908530b7ebd4db528e657cc12f90eadb12b10694190e39b51440fed3e8bcf8"
+    },
+    {
+      "byte_size": 37486068,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/artifacts/canon-facsimile-8755a363/canon-openings.pdf",
+      "sha256": "8755a3634bc771e327bcbbd2bbb7ef9b94d41e9ac5c4e30ec10a673e113c7ffa"
+    },
+    {
+      "byte_size": 2243,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/artifacts/canon-reading-0c33d78a/artifact.toml",
+      "sha256": "2d1cad17608e67574dbcd95bdcbbdfa70a4cf6d7fe582d74e9777693e2aca3f3"
+    },
+    {
+      "byte_size": 6583,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/artifacts/canon-reading-0c33d78a/canon-reading.txt",
+      "sha256": "0c33d78a64fe8b2cd9a7ab76e0cb5b79384703485567227e7c8cf9102d291ec0"
+    },
+    {
+      "byte_size": 1615,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/artifacts/dlibra-djvu-archive-5c284229/artifact.toml",
+      "sha256": "f7df95678f9cb773a065d97f7c8e56f750e8a82fcd103b2af765eb3147d15705"
+    },
+    {
+      "byte_size": 1810,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/artifacts/scan-332-png-98cf8f3f/artifact.toml",
+      "sha256": "5016b3225e423a27c013e66d3d942654eadb6d13dda625a58077851d28c32332"
+    },
+    {
+      "byte_size": 1357817,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/artifacts/scan-332-png-98cf8f3f/page.png",
+      "sha256": "98cf8f3f3c5feb8ea59f72950c6320c74011166dd22c10e6fd2e06d56935f074"
+    },
+    {
+      "byte_size": 705,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/edition.toml",
+      "sha256": "63f0d3d3070282783a1aa1ca699b5e1f6db9a425012684bb0edbb1ad421e5a77"
+    },
+    {
+      "byte_size": 1225,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-communicantes.toml",
+      "sha256": "fd2d87e321c630222ed3f730d498946f3eb94035538571b9cef43ba3dece98e2"
+    },
+    {
+      "byte_size": 1237,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-concluding-response.toml",
+      "sha256": "ff8cb3744b4ba59e8562cc34d6aa9aa79ba95fea76990d1a375a733af3065fe1"
+    },
+    {
+      "byte_size": 1114,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-facsimile.toml",
+      "sha256": "a33772bc24a3396484519fa7b2d4e5c8fe349a1485e387b4dd905a601eecdfe1"
+    },
+    {
+      "byte_size": 1226,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-hanc-igitur.toml",
+      "sha256": "35dca292ac7c18d354974356a907235a5041f6b228d3c0745536e0750a6993b7"
+    },
+    {
+      "byte_size": 1237,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-memento-defunctorum.toml",
+      "sha256": "3c81f98cbd4a70aa2d2eea0051645bee5f24422c6f258ac7fa2eb59f2174e6b5"
+    },
+    {
+      "byte_size": 1227,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-memento-vivorum.toml",
+      "sha256": "07b0d024fd7e8028bda8cbbf81e1d49ccf4bcab3d7dc04c28a302638fa43c8c8"
+    },
+    {
+      "byte_size": 1223,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-nobis-quoque.toml",
+      "sha256": "fda360d95538d274200962b73c040cb43649e271e3db943b845e6445f78b80b4"
+    },
+    {
+      "byte_size": 1223,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-opening-rubric.toml",
+      "sha256": "6917ca80bf9ccd9ac23418943036be62584dd3a0a723c3fa5978761d1d7ce00f"
+    },
+    {
+      "byte_size": 1217,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-per-ipsum.toml",
+      "sha256": "4ecc1ddf9fa2d87d3e72d481d955e0e209464c988cb8f69252272866c52f62bf"
+    },
+    {
+      "byte_size": 1215,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-per-quem.toml",
+      "sha256": "69aa3b2435b6dcab38d827bcfdc9ff60e07efc1f2f1a25baa013e032c0993a00"
+    },
+    {
+      "byte_size": 1229,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-quam-oblationem.toml",
+      "sha256": "97429ef7a3665e40158e6bbcd19dd95931f5ebdb44c2af21e7c2f7bd0c792b02"
+    },
+    {
+      "byte_size": 1219,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-qui-pridie.toml",
+      "sha256": "7b9c8e3f02858cf9ac6f73b401aa10d53ca802cbecfcd81d2c9affed3d6d7dbb"
+    },
+    {
+      "byte_size": 1234,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-simili-modo.toml",
+      "sha256": "3cc1c7983ec69fc9db21f59f6f4cbfa66b3c90e933b31332e6303b6ab6610e04"
+    },
+    {
+      "byte_size": 1222,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-supplices.toml",
+      "sha256": "94fe83b7711d9c3666595688c88db3d843f11fad2e032c144c3a5757cd03734a"
+    },
+    {
+      "byte_size": 1219,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-supra-quae.toml",
+      "sha256": "646901a1142e6b129bb0995960443f2c98db70342ca5ad5965dc4ebb8926c700"
+    },
+    {
+      "byte_size": 1226,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-te-igitur.toml",
+      "sha256": "b496077eaae600fb9f5f51888f7b04ef04b7d6db3e4cbea97df150af00b94c0e"
+    },
+    {
+      "byte_size": 1229,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/canon-unde-et-memores.toml",
+      "sha256": "250e9da1822aab7183de859c204fd38bc3fe246834432288c698d569718919ab"
+    },
+    {
+      "byte_size": 858,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/passages/colophon-1570.toml",
+      "sha256": "8df1621b6a271c58b95e945ef3fc467f951f43033320fbca990f3c6398f6f245"
+    },
+    {
+      "byte_size": 521,
+      "path": "src/sources/works/catholic-church/missale-romanum/work.toml",
+      "sha256": "ae029277a68493ed903cd608cd7abdb91797aaff614ab5646f7c6a2dbeaa2ffd"
     },
     {
       "byte_size": 3497,

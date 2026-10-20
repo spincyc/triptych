@@ -1,0 +1,515 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-extent",
+  "book_id": "roman-1570-canon-missae",
+  "title": "Rome 1570 strict Canon p.281–286 complete constituent page/unit census",
+  "status": "complete",
+  "unresolved": [],
+  "omitted": [],
+  "expected_unit_ids": [
+    "unit.rome-1570.canon.opening-rubric",
+    "unit.rome-1570.canon.te-igitur",
+    "unit.rome-1570.canon.memento-vivorum",
+    "unit.rome-1570.canon.communicantes",
+    "unit.rome-1570.canon.hanc-igitur",
+    "unit.rome-1570.canon.quam-oblationem",
+    "unit.rome-1570.canon.qui-pridie",
+    "unit.rome-1570.canon.simili-modo",
+    "unit.rome-1570.canon.unde-et-memores",
+    "unit.rome-1570.canon.supra-quae",
+    "unit.rome-1570.canon.supplices",
+    "unit.rome-1570.canon.memento-defunctorum",
+    "unit.rome-1570.canon.nobis-quoque",
+    "unit.rome-1570.canon.per-quem",
+    "unit.rome-1570.canon.per-ipsum",
+    "unit.rome-1570.canon.concluding-response"
+  ],
+  "scope": "Complete strict Eucharistic Canon from opening 169 right printed p.281 red Sacerdos/Te igitur through opening 172 left p.286 Per omnia secula seculorum and R. Amen. Includes source prayer wording, three red headings, action rubrics and 25 printed crosses under declared selective reading normalization. Excludes p.280, p.287, the subsequent Pater and the running-head continuation to p.292; neither whole Missal nor diplomatic glyph/chant-pitch completeness is claimed.",
+  "pages": [
+    {
+      "witness_id": "rome-1570-canon-openings",
+      "ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.rome-1570.canon.opening-rubric",
+        "unit.rome-1570.canon.te-igitur"
+      ],
+      "description": "PDF page 1, original opening 169; only strict Canon content on the photographed opening belongs to this constituent. Other printed material and page furniture are outside it."
+    },
+    {
+      "witness_id": "rome-1570-canon-openings",
+      "ranges": [
+        [
+          2,
+          2
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.rome-1570.canon.te-igitur",
+        "unit.rome-1570.canon.memento-vivorum",
+        "unit.rome-1570.canon.communicantes",
+        "unit.rome-1570.canon.hanc-igitur",
+        "unit.rome-1570.canon.quam-oblationem",
+        "unit.rome-1570.canon.qui-pridie",
+        "unit.rome-1570.canon.simili-modo"
+      ],
+      "description": "PDF page 2, original opening 170; only strict Canon content on the photographed opening belongs to this constituent. Other printed material and page furniture are outside it."
+    },
+    {
+      "witness_id": "rome-1570-canon-openings",
+      "ranges": [
+        [
+          3,
+          3
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.rome-1570.canon.simili-modo",
+        "unit.rome-1570.canon.unde-et-memores",
+        "unit.rome-1570.canon.supra-quae",
+        "unit.rome-1570.canon.supplices",
+        "unit.rome-1570.canon.memento-defunctorum",
+        "unit.rome-1570.canon.nobis-quoque"
+      ],
+      "description": "PDF page 3, original opening 171; only strict Canon content on the photographed opening belongs to this constituent. Other printed material and page furniture are outside it."
+    },
+    {
+      "witness_id": "rome-1570-canon-openings",
+      "ranges": [
+        [
+          4,
+          4
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.rome-1570.canon.per-quem",
+        "unit.rome-1570.canon.per-ipsum",
+        "unit.rome-1570.canon.concluding-response"
+      ],
+      "description": "PDF page 4, original opening 172; only strict Canon content on the photographed opening belongs to this constituent. Other printed material and page furniture are outside it."
+    }
+  ],
+  "source_boundary_audit": {
+    "start": "Opening 169 right p.281 red Sacerdos rubric and Te igitur",
+    "end": "Opening 172 left p.286 notated Per omnia secula seculorum and R. Amen, before Oremus/Pater",
+    "unit_count": 16,
+    "printed_crosses": 25,
+    "source_archive_sha256": "5c28422992fc3796db2741ed133a03876cda0da122b5d75eacd6211e4380243a",
+    "independent_image_review_sha256": "d0ac74ab66f219cdc4e9fb5d163f782fd41f51826df064bb871b61ed58527141",
+    "independent_serialization_review_sha256": "060e1b83eb458a5bf26018bc10f0ef9e5044d63fab9b034bf377bea4b11bfda2"
+  },
+  "serialization_line_classes": [
+    {
+      "unit_id": "unit.rome-1570.canon.opening-rubric",
+      "physical_lines": [
+        {
+          "line": 1,
+          "type": "red-rubric"
+        }
+      ],
+      "red_name_marker": null
+    },
+    {
+      "unit_id": "unit.rome-1570.canon.te-igitur",
+      "physical_lines": [
+        {
+          "line": 2,
+          "type": "reading"
+        },
+        {
+          "line": 3,
+          "type": "red-rubric"
+        },
+        {
+          "line": 4,
+          "type": "reading"
+        },
+        {
+          "line": 5,
+          "type": "red-rubric"
+        },
+        {
+          "line": 6,
+          "type": "reading"
+        },
+        {
+          "line": 7,
+          "type": "red-rubric"
+        },
+        {
+          "line": 8,
+          "type": "reading"
+        }
+      ],
+      "red_name_marker": null
+    },
+    {
+      "unit_id": "unit.rome-1570.canon.memento-vivorum",
+      "physical_lines": [
+        {
+          "line": 9,
+          "type": "red-heading"
+        },
+        {
+          "line": 10,
+          "type": "reading"
+        },
+        {
+          "line": 11,
+          "type": "red-rubric"
+        },
+        {
+          "line": 12,
+          "type": "reading"
+        }
+      ],
+      "red_name_marker": {
+        "printed": "N.",
+        "ink": "red",
+        "count": 1
+      }
+    },
+    {
+      "unit_id": "unit.rome-1570.canon.communicantes",
+      "physical_lines": [
+        {
+          "line": 13,
+          "type": "red-heading"
+        },
+        {
+          "line": 14,
+          "type": "reading"
+        },
+        {
+          "line": 15,
+          "type": "red-rubric"
+        },
+        {
+          "line": 16,
+          "type": "reading"
+        }
+      ],
+      "red_name_marker": null
+    },
+    {
+      "unit_id": "unit.rome-1570.canon.hanc-igitur",
+      "physical_lines": [
+        {
+          "line": 17,
+          "type": "red-rubric"
+        },
+        {
+          "line": 18,
+          "type": "reading"
+        },
+        {
+          "line": 19,
+          "type": "red-rubric"
+        },
+        {
+          "line": 20,
+          "type": "reading"
+        }
+      ],
+      "red_name_marker": null
+    },
+    {
+      "unit_id": "unit.rome-1570.canon.quam-oblationem",
+      "physical_lines": [
+        {
+          "line": 21,
+          "type": "reading"
+        },
+        {
+          "line": 22,
+          "type": "red-rubric"
+        },
+        {
+          "line": 23,
+          "type": "reading"
+        },
+        {
+          "line": 24,
+          "type": "red-rubric"
+        },
+        {
+          "line": 25,
+          "type": "reading"
+        }
+      ],
+      "red_name_marker": null
+    },
+    {
+      "unit_id": "unit.rome-1570.canon.qui-pridie",
+      "physical_lines": [
+        {
+          "line": 26,
+          "type": "reading"
+        },
+        {
+          "line": 27,
+          "type": "red-rubric"
+        },
+        {
+          "line": 28,
+          "type": "reading"
+        },
+        {
+          "line": 29,
+          "type": "red-rubric"
+        },
+        {
+          "line": 30,
+          "type": "reading"
+        },
+        {
+          "line": 31,
+          "type": "red-rubric"
+        },
+        {
+          "line": 32,
+          "type": "reading"
+        },
+        {
+          "line": 33,
+          "type": "red-rubric"
+        },
+        {
+          "line": 34,
+          "type": "reading"
+        },
+        {
+          "line": 35,
+          "type": "red-rubric"
+        }
+      ],
+      "red_name_marker": null
+    },
+    {
+      "unit_id": "unit.rome-1570.canon.simili-modo",
+      "physical_lines": [
+        {
+          "line": 36,
+          "type": "reading"
+        },
+        {
+          "line": 37,
+          "type": "red-rubric"
+        },
+        {
+          "line": 38,
+          "type": "reading"
+        },
+        {
+          "line": 39,
+          "type": "red-rubric"
+        },
+        {
+          "line": 40,
+          "type": "reading"
+        },
+        {
+          "line": 41,
+          "type": "red-rubric"
+        },
+        {
+          "line": 42,
+          "type": "reading"
+        },
+        {
+          "line": 43,
+          "type": "red-rubric"
+        },
+        {
+          "line": 44,
+          "type": "reading"
+        },
+        {
+          "line": 45,
+          "type": "red-rubric"
+        }
+      ],
+      "red_name_marker": null
+    },
+    {
+      "unit_id": "unit.rome-1570.canon.unde-et-memores",
+      "physical_lines": [
+        {
+          "line": 46,
+          "type": "reading"
+        },
+        {
+          "line": 47,
+          "type": "red-rubric"
+        },
+        {
+          "line": 48,
+          "type": "reading"
+        },
+        {
+          "line": 49,
+          "type": "red-rubric"
+        },
+        {
+          "line": 50,
+          "type": "reading"
+        },
+        {
+          "line": 51,
+          "type": "red-rubric"
+        }
+      ],
+      "red_name_marker": null
+    },
+    {
+      "unit_id": "unit.rome-1570.canon.supra-quae",
+      "physical_lines": [
+        {
+          "line": 52,
+          "type": "reading"
+        }
+      ],
+      "red_name_marker": null
+    },
+    {
+      "unit_id": "unit.rome-1570.canon.supplices",
+      "physical_lines": [
+        {
+          "line": 53,
+          "type": "red-rubric"
+        },
+        {
+          "line": 54,
+          "type": "reading"
+        },
+        {
+          "line": 55,
+          "type": "red-rubric"
+        },
+        {
+          "line": 56,
+          "type": "reading"
+        },
+        {
+          "line": 57,
+          "type": "red-rubric"
+        },
+        {
+          "line": 58,
+          "type": "reading"
+        }
+      ],
+      "red_name_marker": null
+    },
+    {
+      "unit_id": "unit.rome-1570.canon.memento-defunctorum",
+      "physical_lines": [
+        {
+          "line": 59,
+          "type": "red-heading"
+        },
+        {
+          "line": 60,
+          "type": "reading"
+        },
+        {
+          "line": 61,
+          "type": "red-rubric"
+        },
+        {
+          "line": 62,
+          "type": "reading"
+        }
+      ],
+      "red_name_marker": {
+        "printed": "N.",
+        "ink": "red",
+        "count": 1
+      }
+    },
+    {
+      "unit_id": "unit.rome-1570.canon.nobis-quoque",
+      "physical_lines": [
+        {
+          "line": 63,
+          "type": "red-rubric"
+        },
+        {
+          "line": 64,
+          "type": "reading"
+        }
+      ],
+      "red_name_marker": null
+    },
+    {
+      "unit_id": "unit.rome-1570.canon.per-quem",
+      "physical_lines": [
+        {
+          "line": 65,
+          "type": "reading"
+        },
+        {
+          "line": 66,
+          "type": "red-rubric"
+        },
+        {
+          "line": 67,
+          "type": "reading"
+        },
+        {
+          "line": 68,
+          "type": "red-rubric"
+        }
+      ],
+      "red_name_marker": null
+    },
+    {
+      "unit_id": "unit.rome-1570.canon.per-ipsum",
+      "physical_lines": [
+        {
+          "line": 69,
+          "type": "reading"
+        },
+        {
+          "line": 70,
+          "type": "red-rubric"
+        },
+        {
+          "line": 71,
+          "type": "reading"
+        },
+        {
+          "line": 72,
+          "type": "red-rubric"
+        },
+        {
+          "line": 73,
+          "type": "reading"
+        },
+        {
+          "line": 74,
+          "type": "red-rubric"
+        }
+      ],
+      "red_name_marker": null
+    },
+    {
+      "unit_id": "unit.rome-1570.canon.concluding-response",
+      "physical_lines": [
+        {
+          "line": 75,
+          "type": "reading"
+        }
+      ],
+      "red_name_marker": null
+    }
+  ]
+}

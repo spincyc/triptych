@@ -1,0 +1,438 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-native-book",
+  "id": "roman-1570-canon-missae",
+  "title": "Rome 1570: complete strict Canon Missae constituent",
+  "scope": "Complete strict Eucharistic Canon from opening 169 right printed p.281 red Sacerdos/Te igitur through opening 172 left p.286 Per omnia secula seculorum and R. Amen. Includes source prayer wording, three red headings, action rubrics and 25 printed crosses under declared selective reading normalization. Excludes p.280, p.287, the subsequent Pater and the running-head continuation to p.292; neither whole Missal nor diplomatic glyph/chant-pitch completeness is claimed.",
+  "transcribed_by": "AI source transcriber (Rome 1570 Canon original-image reading)",
+  "stage_ids": [
+    "roman-stages-1570"
+  ],
+  "catalogue_witness_ids": [
+    "western:roman-1570-rome-faletti-varisco"
+  ],
+  "components": [
+    "anaphoras"
+  ],
+  "languages": [
+    "la"
+  ],
+  "extent_kind": "constituent",
+  "excluded_book_divisions": [
+    "Preface and Sanctus before p.281",
+    "Pater noster, communion, dismissal and other material after p.286, even where Canon Misse running head continues",
+    "All propers, calendar, lectionary, other ordinary, rubrics outside the strict Canon",
+    "Page furniture, manuscript marks, diplomatic Gothic glyph variants and chant-note pitches"
+  ],
+  "date": {
+    "kind": "publication",
+    "label": "1570 Rome publication",
+    "start_year": 1570,
+    "end_year": 1570,
+    "evidence": [
+      {
+        "source_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.colophon-1570",
+        "locus": "Archive opening 332 retained PNG, original MDLXX colophon"
+      }
+    ]
+  },
+  "extent_path": "src/sources/inventories/eucharistic-books/support/roman-1570-canon-missae-extent.json",
+  "collation_path": "src/sources/inventories/eucharistic-books/support/roman-1570-canon-missae-review.json",
+  "witnesses": [
+    {
+      "id": "rome-1570-canon-openings",
+      "edition_id": "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+      "artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-facsimile-8755a363",
+      "scope_pages": [
+        [
+          1,
+          4
+        ]
+      ],
+      "completeness_evidence": [
+        {
+          "source_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-facsimile",
+          "locus": "PDF pp.1–4, strict Canon p.281–286; p.280 and p.287 portions excluded within first/last opening"
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "unit.rome-1570.canon.opening-rubric",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "opening-rubric"
+      ],
+      "source_order": 1,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "rubric",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-opening-rubric",
+      "text_sha256": "b49acc8cbc8684384989c3c955daa0ad0bfc7af5b65ea779f5c14df3d027c5e6",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-facsimile-8755a363",
+      "verified_against_artifact_sha256": "8755a3634bc771e327bcbbd2bbb7ef9b94d41e9ac5c4e30ec10a673e113c7ffa"
+    },
+    {
+      "unit_id": "unit.rome-1570.canon.te-igitur",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "te-igitur"
+      ],
+      "source_order": 2,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-te-igitur",
+      "text_sha256": "fd9f6f281507e12755be9741e005837c571141746bab5d90eaf1b6331fefc869",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-facsimile-8755a363",
+      "verified_against_artifact_sha256": "8755a3634bc771e327bcbbd2bbb7ef9b94d41e9ac5c4e30ec10a673e113c7ffa"
+    },
+    {
+      "unit_id": "unit.rome-1570.canon.memento-vivorum",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "memento-vivorum"
+      ],
+      "source_order": 3,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-memento-vivorum",
+      "text_sha256": "1a7df7d48f281df40740fb4ad8fc134355be9c14910ce7f8dbc7f79092cb48d3",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-facsimile-8755a363",
+      "verified_against_artifact_sha256": "8755a3634bc771e327bcbbd2bbb7ef9b94d41e9ac5c4e30ec10a673e113c7ffa"
+    },
+    {
+      "unit_id": "unit.rome-1570.canon.communicantes",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "communicantes"
+      ],
+      "source_order": 4,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-communicantes",
+      "text_sha256": "52bcafbd2066c13216f32a9579a18df16ba0de29f35a018b1dd0737763ba0f17",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-facsimile-8755a363",
+      "verified_against_artifact_sha256": "8755a3634bc771e327bcbbd2bbb7ef9b94d41e9ac5c4e30ec10a673e113c7ffa"
+    },
+    {
+      "unit_id": "unit.rome-1570.canon.hanc-igitur",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "hanc-igitur"
+      ],
+      "source_order": 5,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-hanc-igitur",
+      "text_sha256": "59cff45b06ac3cdd669ea9ccef61f2433679c049fe5551de991eea9f3d1c2e11",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-facsimile-8755a363",
+      "verified_against_artifact_sha256": "8755a3634bc771e327bcbbd2bbb7ef9b94d41e9ac5c4e30ec10a673e113c7ffa"
+    },
+    {
+      "unit_id": "unit.rome-1570.canon.quam-oblationem",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "quam-oblationem"
+      ],
+      "source_order": 6,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-quam-oblationem",
+      "text_sha256": "2eeb793f19ae982b7f6fa99bc36365e8d0c9ab7d8ec63b50def0022fcff7d16a",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-facsimile-8755a363",
+      "verified_against_artifact_sha256": "8755a3634bc771e327bcbbd2bbb7ef9b94d41e9ac5c4e30ec10a673e113c7ffa"
+    },
+    {
+      "unit_id": "unit.rome-1570.canon.qui-pridie",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "qui-pridie"
+      ],
+      "source_order": 7,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "institution-narrative-with-rubrics",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-qui-pridie",
+      "text_sha256": "371229b25f3061dcf4b7ff581cda2832fd57e2a523457d86b0c13867ef7b7521",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-facsimile-8755a363",
+      "verified_against_artifact_sha256": "8755a3634bc771e327bcbbd2bbb7ef9b94d41e9ac5c4e30ec10a673e113c7ffa"
+    },
+    {
+      "unit_id": "unit.rome-1570.canon.simili-modo",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "simili-modo"
+      ],
+      "source_order": 8,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "institution-narrative-with-rubrics",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-simili-modo",
+      "text_sha256": "29d2ad8984f82e392954ce0cf404e1d02590eb6a02853561ce94c6dbc5ab1590",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-facsimile-8755a363",
+      "verified_against_artifact_sha256": "8755a3634bc771e327bcbbd2bbb7ef9b94d41e9ac5c4e30ec10a673e113c7ffa"
+    },
+    {
+      "unit_id": "unit.rome-1570.canon.unde-et-memores",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "unde-et-memores"
+      ],
+      "source_order": 9,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-unde-et-memores",
+      "text_sha256": "3b49e0c8080521daeec01520d53206dba3206ecf8e215a4b3e4bd8a6ecced3e9",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-facsimile-8755a363",
+      "verified_against_artifact_sha256": "8755a3634bc771e327bcbbd2bbb7ef9b94d41e9ac5c4e30ec10a673e113c7ffa"
+    },
+    {
+      "unit_id": "unit.rome-1570.canon.supra-quae",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supra-quae"
+      ],
+      "source_order": 10,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-supra-quae",
+      "text_sha256": "7c19bf675ea732405654289ef846bee07a0b15da9f79250674b7fd507a894ac9",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-facsimile-8755a363",
+      "verified_against_artifact_sha256": "8755a3634bc771e327bcbbd2bbb7ef9b94d41e9ac5c4e30ec10a673e113c7ffa"
+    },
+    {
+      "unit_id": "unit.rome-1570.canon.supplices",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supplices"
+      ],
+      "source_order": 11,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-supplices",
+      "text_sha256": "83f05156d1c53ed734bbe9047bf9f6efa6fb8eaf7392676b5d7d376776995fda",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-facsimile-8755a363",
+      "verified_against_artifact_sha256": "8755a3634bc771e327bcbbd2bbb7ef9b94d41e9ac5c4e30ec10a673e113c7ffa"
+    },
+    {
+      "unit_id": "unit.rome-1570.canon.memento-defunctorum",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "memento-defunctorum"
+      ],
+      "source_order": 12,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-memento-defunctorum",
+      "text_sha256": "b823655096d1447812acd63e4df915212d9ba0b9d435decc9d8292d9e14c1d67",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-facsimile-8755a363",
+      "verified_against_artifact_sha256": "8755a3634bc771e327bcbbd2bbb7ef9b94d41e9ac5c4e30ec10a673e113c7ffa"
+    },
+    {
+      "unit_id": "unit.rome-1570.canon.nobis-quoque",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "nobis-quoque"
+      ],
+      "source_order": 13,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-nobis-quoque",
+      "text_sha256": "049e60859cedf036d7b12c4603a8831fcb050e14ef9ce5b0c1a6d2f4084fc241",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-facsimile-8755a363",
+      "verified_against_artifact_sha256": "8755a3634bc771e327bcbbd2bbb7ef9b94d41e9ac5c4e30ec10a673e113c7ffa"
+    },
+    {
+      "unit_id": "unit.rome-1570.canon.per-quem",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-quem"
+      ],
+      "source_order": 14,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-per-quem",
+      "text_sha256": "37a0cfb1e0a863c9b2c8ea0fe94486beb9722d6b022548e296d77bc71c4e6d78",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-facsimile-8755a363",
+      "verified_against_artifact_sha256": "8755a3634bc771e327bcbbd2bbb7ef9b94d41e9ac5c4e30ec10a673e113c7ffa"
+    },
+    {
+      "unit_id": "unit.rome-1570.canon.per-ipsum",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-ipsum"
+      ],
+      "source_order": 15,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "doxology-with-rubrics-and-response",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-per-ipsum",
+      "text_sha256": "490892a6be0e91c4d8179fa08a816408102f127ce4836e092748efc68384a241",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-facsimile-8755a363",
+      "verified_against_artifact_sha256": "8755a3634bc771e327bcbbd2bbb7ef9b94d41e9ac5c4e30ec10a673e113c7ffa"
+    },
+    {
+      "unit_id": "unit.rome-1570.canon.concluding-response",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "concluding-response"
+      ],
+      "source_order": 16,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "notated-dialogue",
+      "witness_id": "rome-1570-canon-openings",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-concluding-response",
+      "text_sha256": "4cdb69ebc562bbde63b612a0a791d7766b87e3f6ad8e958e423250f509900982",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-facsimile-8755a363",
+      "verified_against_artifact_sha256": "8755a3634bc771e327bcbbd2bbb7ef9b94d41e9ac5c4e30ec10a673e113c7ffa"
+    }
+  ]
+}
