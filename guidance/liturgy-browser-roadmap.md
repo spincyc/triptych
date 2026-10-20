@@ -142,8 +142,8 @@ immutable acceptance package. Reproduce them for any release review.
 The C-series below refines the existing W1–W9 workstreams. It does not replace
 M1–M6 or broaden any historical acceptance. C1 is **complete** on the feature branch: every
 requirement passes under the maintainer decisions below, and the pre-1955
-recension is enumerated from its accepted witness. C2 and C4 are **in
-progress**; C3, C5 and C6 remain **planned**.
+recension is enumerated from its accepted witness. C2, C3, C4 and C5 are **in
+progress**; C6 remains **planned**.
 
 Maintainer decisions, 2026-10-19:
 
@@ -750,6 +750,26 @@ choices are never remembered. Dedicated source-served Chromium checks passed
 11/11, with the existing Day and Propers suites passing 55/55 and 49/49.
 Propers Missal, Study, Compare, search and independent C5 acceptance remain
 open.
+
+Further feature-branch work on 2026-10-20 adds a source-seated Propers Missal
+view. Its semantic event list combines the selected Proper appointments with
+the selected Ordinary, including source-authored exceptional frames and explicit
+date-unknown applicability. Read and Missal share semantic locations, with
+Ordinary language and option choices carried in the URL. The 1962 Pentecost
+fixture has 179 events, comprising 163 Ordinary events, six divisions and ten
+Propers. A source-served Chromium run passed 56 Propers assertions. Independent
+source-served QA passed nine responsive, keyboard, mode, URL and print checks,
+including a same-document deep-link repair. This is a C5 implementation slice,
+not acceptance of the whole mode set or public release.
+
+The same checkpoint adds a form-qualified, public-safe Proper search index and
+a two-side semantic Compare core. Their browser controls remain open. A bounded
+form-slot report now gives source-inventoried expectations without treating
+them as whole-book totals: the 1962 Pentecost Day slice has 13 expected and 13
+represented appointments, while its whole-form extent and all 39 whole-family
+completeness cells remain unresolved. A source-printed 1962 final `Deo gratias`
+response now has its English and Latin dialogue role. Neither the structural
+slot joins nor Bible reconstructions assert word-exact Missal wording.
 
 ### Verification and completion gates
 

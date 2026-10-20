@@ -3354,12 +3354,14 @@ async function runAssertions(cdp, base) {
         [STATES.romanMissal, 'en', [
           ['praeparatio/confiteor-sacerdotis', [['P', 'Priest', 'P.', 'I confess to Almighty God, &c.']]],
           ['praeparatio/confiteor-ministrorum', [['S', 'Server', 'R.', 'I confess to Almighty God, to blessed Mary']]],
-          ['oblatio/suscipiat-dominus', [['S', 'Server', 'R.', 'May the Lord receive the sacrifice']]]
+          ['oblatio/suscipiat-dominus', [['S', 'Server', 'R.', 'May the Lord receive the sacrifice']]],
+          ['conclusio/deo-gratias', [['℟', 'Response — Server', 'R.', 'Thanks be to God.']]]
         ]],
         [STATES.romanLatinMissal, 'la', [
           ['praeparatio/confiteor-sacerdotis', [['P', 'Priest', 'P.', 'Confiteor Deo omnipotenti, &c.']]],
           ['praeparatio/confiteor-ministrorum', [['S', 'Server', 'R.', 'Confiteor Deo omnipotenti, beatæ Mariæ']]],
-          ['oblatio/suscipiat-dominus', [['S', 'Server', 'R.', 'Suscipiat Dominus sacrificium']]]
+          ['oblatio/suscipiat-dominus', [['S', 'Server', 'R.', 'Suscipiat Dominus sacrificium']]],
+          ['conclusio/deo-gratias', [['℟', 'Response — Server', 'R.', 'Deo gratias.']]]
         ]],
         // Speakers only since 2026-10-19 (C4): the 2002 Ordo n. 29 (artifact
         // p. 310) prints rubrics naming the priest and the people and no

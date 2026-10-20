@@ -70,7 +70,8 @@
   ]);
   const PROPERS_KEYS = Object.freeze([
     'missal', 'type', 'mass', 'bible', 'orations',
-    'form', 'cycle', 'alternative', 'translation-witness', 'mode', 'location'
+    'form', 'cycle', 'alternative', 'translation-witness', 'mode', 'location',
+    'ordinary-lang'
   ]);
   const URL_INVENTORY = Object.freeze({
     day: Object.freeze({
@@ -79,7 +80,10 @@
       query: Object.freeze(['data'])
     }),
     propers: Object.freeze({
-      hash: PROPERS_KEYS,
+      hash: Object.freeze(PROPERS_KEYS.concat([
+        'penitential-act', 'creed', 'eucharistic-prayer'
+      ])),
+      dynamicHash: Object.freeze(['penitential-act', 'creed', 'eucharistic-prayer']),
       query: Object.freeze(['data', 'missals'])
     })
   });
@@ -887,8 +891,8 @@
         'Read mode does not present the Ordinary'
       ));
     }
-    if (value.requestedMode === 'missal' && object(value.options) &&
-        value.options.ordinary !== true) {
+    if (value.requestedMode === 'missal' &&
+        (!object(value.options) || value.options.ordinary !== true)) {
       errors.push(issue(
         'missal-mode-ordinary', 'options.ordinary',
         'Missal mode requires the Ordinary selection'
@@ -901,7 +905,7 @@
     if (ENTRANCES.indexOf(entrance) < 0) throw new Error('entrance must be day or propers');
     const opts = options || {};
     const base = entrance === 'day' ? DAY_KEYS : PROPERS_KEYS;
-    const variants = entrance === 'day' ? (opts.variantKeys || []) : [];
+    const variants = opts.variantKeys || [];
     if (!Array.isArray(variants) || variants.some(function (key) {
       return !nonempty(key) || DAY_KEYS.indexOf(key) >= 0;
     }) || new Set(variants).size !== variants.length) {
@@ -1157,6 +1161,25 @@
         state.languages.translationWitness = translationWitness;
       }
       state.requestedMode = mode === null ? 'read' : mode;
+      state.options = { ordinary: state.requestedMode === 'missal', legitimate: {} };
+      const ordinaryLanguage = validOrDefault('ordinary-lang', function (lang) {
+        return valuesOf(missalContext.ordinaryLanguages).indexOf(lang) >= 0;
+      }, state.options.ordinary);
+      if (ordinaryLanguage !== null) state.languages.ordinary = ordinaryLanguage;
+      const groups = missalContext.variantGroups || {};
+      for (const key of parsed.variantKeys || []) {
+        if (!has(parsed.recognized, key)) continue;
+        const raw = parsed.recognized[key];
+        if (!has(groups, key) || valuesOf(groups[key]).indexOf(raw) < 0) {
+          errors.push(issue(
+            'invalid-explicit-variant', key,
+            'explicit Ordinary option is not held by the selected edition', 'url'
+          ));
+          continue;
+        }
+        state.options.legitimate[key] = raw;
+        legacy.variants[key] = raw;
+      }
     }
 
     const validated = validateReaderState(state);
@@ -1203,6 +1226,7 @@
       pairs.push(['bible', state.bible.id]);
       pairs.push(['orations', state.languages.orations]);
       pairs.push(['mode', state.requestedMode || 'read']);
+      if (state.languages.ordinary) pairs.push(['ordinary-lang', state.languages.ordinary]);
       if (state.semanticLocation) pairs.push(['location', state.semanticLocation.eventId]);
       if (state.form) pairs.push(['form', state.form]);
       if (has(state, 'cycle') && state.cycle !== null) pairs.push(['cycle', state.cycle]);
@@ -1210,6 +1234,9 @@
       if (state.languages.translationWitness) {
         pairs.push(['translation-witness', state.languages.translationWitness]);
       }
+      Object.keys(normalized.legacy.variants || {}).sort().forEach(function (key) {
+        pairs.push([key, normalized.legacy.variants[key]]);
+      });
     }
     for (const row of normalized.legacy.unknown || []) pairs.push([row.key, row.value]);
     return '#' + pairs.filter(function (one) {

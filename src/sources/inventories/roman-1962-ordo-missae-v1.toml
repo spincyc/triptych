@@ -1987,12 +1987,14 @@ basis = "Source row ...ordinarium-conclusio-en seq 11 is the added prayer Et fam
 [[sections.turn_partitions]]
 element = "deo-gratias"
 lang = "en"
-parts = [{ key = "deo-gratias", seq = [23], speaker = "server", printed_marker = "R." }]
+basis = "1962 Ordo Missae n. 1139, printed p. 328, artifact PDF p. 409 of the registered CMAA facsimile, read on the page image on 2026-10-20: the answer after the Last Gospel visibly carries R.; the 1861 witness's R. is retained as its printed marker, while the 1962 response mark establishes this turn's dialogue role."
+parts = [{ key = "deo-gratias", seq = [23], speaker = "server", dialogue_role = "response", printed_marker = "R." }]
 
 [[sections.turn_partitions]]
 element = "deo-gratias"
 lang = "la"
-parts = [{ key = "deo-gratias", seq = [23], speaker = "server", printed_marker = "R." }]
+basis = "1962 Ordo Missae n. 1139, printed p. 328, artifact PDF p. 409 of the registered CMAA facsimile, read on the page image on 2026-10-20: the answer after the Last Gospel visibly carries R.; the 1861 witness's R. is retained as its printed marker, while the 1962 response mark establishes this turn's dialogue role."
+parts = [{ key = "deo-gratias", seq = [23], speaker = "server", dialogue_role = "response", printed_marker = "R." }]
 
 # C4 step 2 (2026-10-19). Each block below is held as child rows, one per
 # printed turn (seq*100+n), in this section's `-turn-divided` artifacts: new

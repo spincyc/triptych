@@ -20,7 +20,10 @@ TOOLS = ROOT / "tools"
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from _tooling import Example, print_json, with_examples  # noqa: E402
-from _missal_coverage import validate_summary  # noqa: E402
+from _missal_coverage import (  # noqa: E402
+    validate_bounded_form_text_slots,
+    validate_summary,
+)
 
 
 FAMILIES = ("roman-pre-1955", "roman-1962", "postconciliar")
@@ -1005,6 +1008,14 @@ def build_report(propers: dict, placement: dict, ordinary: dict) -> dict:
             typed.append({"calendar": calendar, "propers": proper_report,
                           "ordinary": ordinary_report})
 
+    bounded_forms = propers.get("bounded_form_text_slots", [])
+    try:
+        validate_bounded_form_text_slots(bounded_forms)
+    except ValueError as error:
+        raise Refused(f"mass-propers bounded form text slots: {error}") from error
+    if any(row["calendar"] not in FAMILIES for row in bounded_forms):
+        raise Refused("mass-propers bounded form text slots name an unsupported calendar")
+
     reasons: collections.Counter[str] = collections.Counter()
     for family in families:
         for group in GROUPS:
@@ -1021,6 +1032,7 @@ def build_report(propers: dict, placement: dict, ordinary: dict) -> dict:
         },
         "families": families,
         "coverage": typed,
+        "bounded_form_text_slots": bounded_forms,
         "schema": "triptych-complete-missal-completeness/v1",
         "scope": {
             "dimensions": {
@@ -1067,6 +1079,16 @@ def render_text(report: dict) -> None:
             f"({represented['scope']}); at least {modeled} modeled text slots; "
             f"{unresolved_count}/15 dimensions unresolved"
         )
+        forms = [row for row in report.get("bounded_form_text_slots", [])
+                 if row["calendar"] == family["calendar"]]
+        if forms:
+            bounded = sum(row["denominator_state"] == "bounded" for row in forms)
+            observed = sum(row["lower_bound"] for row in forms)
+            print(
+                f"  Bounded form slot evidence: {bounded}/{len(forms)} form counts "
+                f"exact within inventoried source scope; at least {observed} "
+                "source slot targets; whole-form extent unresolved"
+            )
         typed = next((row for row in report.get("coverage", [])
                       if row["calendar"] == family["calendar"]), None)
         if typed:

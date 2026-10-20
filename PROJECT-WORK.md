@@ -368,6 +368,28 @@ separately shown Bible text. A generated, form-qualified Propers search index
 and a pure two-side semantic Compare core are checked data foundations; their
 reader controls and independent acceptance remain open.
 
+The next C5 integration seats Propers Missal over the same source-backed
+Ordinary and Proper events as Day. The 1962 Pentecost fixture yields 179
+ordered events: 163 Ordinary events, six divisions and ten Propers. The view
+retains explicit alternatives and date-unknown applicability, preserves
+ordinary language and option choices through URL and Read/Missal changes, and
+keeps source-authored non-Mass frames explicit. Its source-served Chromium
+suite passes 56/56 assertions, including a same-document Ordinary-location
+navigation regression. Independent source-served Chromium QA passed 9/9
+checks at narrow and 400% reflow widths, exercised postconciliar Day/Vigil
+and Ordinary choices, and inspected the first page of the 24-page 1962 print.
+The built-preview visual harness passes 28/28, the production Propers browser
+suite passes 56/56, and the private preview verifies. Full C5 acceptance
+remains open.
+
+A source-inventoried bounded form report now keeps its parent form identity and
+counts the 1962 Pentecost Day appointments at 13 expected and 13 represented.
+Missing Lesson or changed Preface negative controls fall to 11/13. A partial
+source slice reports only a lower bound. Whole-form extent remains unresolved,
+as do all 39 whole-family completeness cells. The printed 1962 closing
+`Deo gratias` also now carries the English and Latin response role without
+changing the source words.
+
 ## Daily Missal reader recovery and completion plan, 2026-10-19
 
 <!-- promised-deliverable: missal-reader-completion-plan-2026-10-19 -->

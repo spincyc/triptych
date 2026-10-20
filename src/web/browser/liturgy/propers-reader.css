@@ -72,6 +72,59 @@ body.propers-reader-candidate,
 }
 .candidate-entry h2, .candidate-failure h2 { margin: 0 0 0.45rem; color: var(--notice); font: 600 1.25rem/1.3 var(--serif); }
 
+/* A date-independent formulary uses the same production Ordinary renderer as Day. */
+.propers-reader-candidate [data-reader-mode="missal"] .ordinary-frame > .ordinary-element {
+  margin: 0 0 0.9rem;
+}
+.propers-reader-candidate [data-reader-mode="missal"] .ordinary-division {
+  margin: 2.4rem 0 1.1rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--section-pale);
+  color: var(--section-ink);
+  font: 700 0.84rem/1.4 var(--sans);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.propers-reader-candidate [data-reader-mode="missal"] .ordinary-division:first-child { margin-top: 0.5rem; }
+.propers-reader-candidate [data-reader-mode="missal"] .ordinary-element .composed { margin-top: 0.15rem; }
+.propers-reader-candidate [data-reader-mode="missal"] .ordinary-element.is-rubric .composed {
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  font-style: italic;
+  line-height: 1.62;
+}
+.propers-reader-candidate [data-reader-mode="missal"] .ordinary-head {
+  margin: 1.7rem 0 0.5rem;
+  color: var(--section-ink);
+  font: 700 0.76rem/1.4 var(--sans);
+  letter-spacing: 0.12em;
+  text-align: center;
+}
+.propers-reader-candidate [data-reader-mode="missal"] .ordinary-locus {
+  margin-right: 0.55em;
+  color: var(--ink-faint);
+  font: 700 0.68rem/1.3 var(--sans);
+  user-select: none;
+}
+.propers-reader-candidate [data-reader-mode="missal"] .ordinary-element .notice {
+  margin-top: 0.3rem;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.85rem;
+}
+.propers-reader-candidate [data-reader-mode="missal"] .ordinary-frame > .proper,
+.propers-reader-candidate [data-reader-mode="missal"] .ordinary-frame > .proper-choice {
+  margin: 1.5rem 0;
+}
+.propers-reader-candidate [data-reader-mode="missal"] .ordinary-frame > .proper .proper-name {
+  margin-bottom: 0.45rem;
+  border-left: 3px solid var(--section-accent);
+  padding-left: 0.7rem;
+}
+.propers-reader-candidate [data-reader-mode="missal"] .ordinary-preamble { margin-top: 2.5rem; }
+.propers-reader-candidate [data-reader-mode="missal"] .ordinary-preamble .mass-name {
+  font: 600 1rem/1.4 var(--serif);
+}
+
 .cycle-choice { margin-bottom: clamp(2.5rem, 6vw, 4rem); scroll-margin-block: 1rem calc(var(--reader-shell-height) + var(--reader-safe-bottom) + 1rem); }
 .cycle-choice > h2 { margin: 0 0 0.4rem; padding-top: 0.8rem; border-top: 1px solid var(--section-pale); color: var(--section-ink); font: 600 0.9rem/1.45 var(--serif); letter-spacing: 0.09em; }
 .cycle-choice-note { margin: 0 0 0.75rem; color: var(--ink-soft); font: 0.86rem/1.5 var(--sans); }

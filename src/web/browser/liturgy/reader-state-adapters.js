@@ -1920,6 +1920,9 @@
     if (!input.structure || input.structure.calendar !== request.edition.id) {
       throw new Error('Propers structure does not match requested edition');
     }
+    if (input.ordinary && input.ordinary.calendar !== request.edition.id) {
+      throw new Error('Propers Ordinary does not match requested edition');
+    }
     const mass = (input.structure.masses || []).find(function (one) {
       return one.key === request.formulary.id;
     });
@@ -1961,8 +1964,18 @@
     if (hasOwn(request, 'cycle') && request.cycle !== null && !heldCycles.has(request.cycle)) {
       throw new Error('explicit cycle is not held by this Propers formulary');
     }
+    const frame = ordinaryFrame(mass, formSelection.form);
+    const wantsOrdinary = request.options && request.options.ordinary === true;
+    if (wantsOrdinary && frame.applicability === 'full' && !input.ordinary) {
+      throw new Error('the selected edition has no production Ordinary to render');
+    }
+    const ordinary = wantsOrdinary && frame.applicability === 'full'
+      ? input.ordinary : null;
     const seated = seatedEvents(
-      mass, formSelection.rows, request, input.structure, null, 'propers'
+      mass, formSelection.rows, request, input.structure, ordinary, 'propers',
+      Seating.predicateFacts({
+        appointments: formularyAppointments(mass, formSelection.form, null)
+      })
     );
     const events = seated.events;
     assertExplicitWitnesses(events, request, input.structure);
@@ -1978,7 +1991,7 @@
       events: events,
       coverage: coverageFor(
         input.structure, mass, formSelection.rows.map(function (row) { return row.proper; }),
-        request, null, events, seated.ordinaryUnresolved, formSelection.form
+        request, ordinary, events, seated.ordinaryUnresolved, formSelection.form
       ),
       explicitAbsences: [{
         kind: 'explicit-semantic-absence',

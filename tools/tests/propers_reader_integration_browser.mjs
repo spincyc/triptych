@@ -1122,6 +1122,162 @@ async function assertions(cdp, base) {
   });
   if (process.env.TRIPTYCH_P0_ONLY === '1') return;
 
+  await check('C5 1962 Propers Missal seats the production Ordinary with exact event and Contents order', async () => {
+    await candidate(cdp, base, STATES.romanPentecost + '&mode=missal');
+    const value = await evaluate(cdp, `(() => ({
+      outcome: propersReaderDebug.outcome,
+      state: propersReaderDebug.state,
+      events: propersReaderDebug.semantic?.events || [],
+      calendarResult: propersReaderDebug.semantic?.calendarResult,
+      dom: [...document.querySelectorAll('#reader-document [data-semantic-event-id]')]
+        .map(row => row.dataset.semanticEventId),
+      contents: [...document.querySelectorAll('[data-reader-contents] [data-reader-location]')]
+        .map(row => row.dataset.readerLocation),
+      ordinaryCount: document.querySelectorAll('#reader-document .ordinary-element').length,
+      properCount: document.querySelectorAll('#reader-document > .ordinary-frame > .proper:not(.ordinary-element)').length,
+      ordinaryLoads: propersReaderDebug.loads['structure/ordinary/roman-1962.json'] || 0,
+      hash: location.hash
+    }))()`);
+    assert.equal(value.outcome, 'ready');
+    assert.equal(value.state.requestedMode, 'missal');
+    assert.equal(value.state.options.ordinary, true);
+    assert.equal(value.state.languages.ordinary, 'en');
+    assert.equal(value.calendarResult, null);
+    assert.equal(value.events.length, 179);
+    assert.equal(value.ordinaryCount, 163);
+    assert.equal(value.properCount, 10);
+    assert.deepEqual(value.dom, value.events.map(row => row.id));
+    assert.deepEqual(value.contents, value.dom);
+    assert.equal(value.ordinaryLoads, 1);
+    assert.match(value.hash, /mode=missal/);
+    assert.match(value.hash, /ordinary-lang=en/);
+    assert.ok(value.events.every(row => (row.sourceHooks || []).length));
+  });
+
+  await check('C5 Propers mode changes preserve exact identity and latent Ordinary language', async () => {
+    await candidate(cdp, base, STATES.romanPentecost + '&mode=missal&ordinary-lang=la');
+    await click(cdp, '[data-reader-action="mode"]');
+    await click(cdp, '[data-mode="read"]');
+    await waitFor(cdp, `propersReaderDebug.ready && propersReaderDebug.state?.requestedMode === 'read'`, 'Propers Read mode');
+    const read = await evaluate(cdp, `({
+      state: propersReaderDebug.state,
+      ordinaryLoads: propersReaderDebug.loads['structure/ordinary/roman-1962.json'] || 0,
+      ordinaryNodes: document.querySelectorAll('#reader-document .ordinary-element').length,
+      hash: location.hash
+    })`);
+    assert.equal(read.state.formulary.id, 'pentecost');
+    assert.equal(read.state.languages.ordinary, 'la');
+    assert.equal(read.state.options.ordinary, false);
+    assert.equal(read.ordinaryNodes, 0);
+    assert.equal(read.ordinaryLoads, 1);
+    assert.match(read.hash, /ordinary-lang=la/);
+    await click(cdp, '[data-reader-action="mode"]');
+    await click(cdp, '[data-mode="missal"]');
+    await waitFor(cdp, `propersReaderDebug.ready && propersReaderDebug.state?.requestedMode === 'missal'`, 'Propers Missal mode');
+    assert.equal(await evaluate(cdp, `document.querySelectorAll('#reader-document .ordinary-element').length`), 163);
+  });
+
+  await check('C5 Ordinary location maps to the nearest Proper when leaving Missal mode', async () => {
+    await candidate(cdp, base, STATES.romanPentecost + '&mode=missal&ordinary-lang=la');
+    const ordinaryId = await evaluate(cdp,
+      `document.querySelector('#reader-document .ordinary-element')?.dataset.semanticEventId`);
+    assert.match(ordinaryId, /^ordinary-element\//);
+    await candidate(cdp, base, STATES.romanPentecost + '&mode=missal&ordinary-lang=la&location=' +
+      encodeURIComponent(ordinaryId));
+    await click(cdp, '[data-reader-action="mode"]');
+    await click(cdp, '[data-mode="read"]');
+    await waitFor(cdp,
+      `propersReaderDebug.ready && propersReaderDebug.state?.requestedMode === 'read'`,
+      'Read mode from Ordinary location');
+    const value = await evaluate(cdp, `({
+      outcome: propersReaderDebug.outcome,
+      location: propersReaderDebug.state?.semanticLocation?.eventId,
+      hash: location.hash,
+      ordinaryNodes: document.querySelectorAll('#reader-document .ordinary-element').length
+    })`);
+    assert.equal(value.outcome, 'ready');
+    assert.match(value.location, /^(?:proper|proper-choice)\//);
+    assert.ok(value.hash.includes('location=' + encodeURIComponent(value.location)));
+    assert.match(value.hash, /ordinary-lang=la/);
+    assert.equal(value.ordinaryNodes, 0);
+  });
+
+  await check('C5 same-document Ordinary deep link keeps explicit URL location', async () => {
+    await candidate(cdp, base, STATES.romanPentecost + '&mode=missal&ordinary-lang=la');
+    const ordinaryId = await evaluate(cdp,
+      `document.querySelector('#reader-document .ordinary-element')?.dataset.semanticEventId`);
+    assert.match(ordinaryId, /^ordinary-element\//);
+    const target = STATES.romanPentecost + '&mode=missal&ordinary-lang=la&location=' +
+      encodeURIComponent(ordinaryId);
+    const before = await evaluate(cdp, 'propersReaderDebug.renders');
+    await evaluate(cdp, `location.hash = ${JSON.stringify(target)}`);
+    await waitFor(cdp,
+      `propersReaderDebug.ready && propersReaderDebug.renders > ${before} && ` +
+      `propersReaderDebug.state?.semanticLocation?.eventId === ${JSON.stringify(ordinaryId)}`,
+      'same-document Ordinary deep link');
+    assert.equal(await evaluate(cdp,
+      `new URLSearchParams(location.hash.slice(1)).get('location')`), ordinaryId);
+    assert.equal(await evaluate(cdp, 'propersReaderDebug.outcome'), 'ready');
+  });
+
+  await check('C5 postconciliar Propers Missal retains form, source options, and date-unknown applicability', async () => {
+    await candidate(cdp, base, STATES.postPentecostDay + '&mode=missal');
+    const value = await evaluate(cdp, `(() => ({
+      outcome: propersReaderDebug.outcome,
+      form: propersReaderDebug.semantic?.resolved?.form,
+      ordinary: propersReaderDebug.semantic?.events.filter(row => row.kind === 'ordinary-element').length,
+      choices: [...document.querySelectorAll('#reader-document .ordinary-choice')].map(row => row.dataset.optionGroup),
+      unresolved: (propersReaderDebug.semantic?.ordinaryUnresolved || []).map(row => row.element),
+      properChoice: propersReaderDebug.semantic?.events.some(row => row.kind === 'proper-choice'),
+      calendarResult: propersReaderDebug.semantic?.calendarResult
+    }))()`);
+    assert.equal(value.outcome, 'ready');
+    assert.equal(value.form, 'day');
+    assert.ok(value.ordinary > 40);
+    assert.equal(value.properChoice, true);
+    assert.equal(value.calendarResult, null);
+    assert.deepEqual(value.choices.sort(), ['creed', 'eucharistic-prayer', 'penitential-act']);
+    assert.ok(value.unresolved.includes('ritus-initiales/gloria-in-excelsis'));
+    assert.ok(value.unresolved.includes('symbolum/symbolum-nicaenum'));
+  });
+
+  await check('C5 Ordinary variant control commits a URL choice and restores radio focus', async () => {
+    await candidate(cdp, base, STATES.postPentecostDay + '&mode=missal');
+    await click(cdp, '#reader-document [data-option-group="eucharistic-prayer"] input[value="ep-ii"]');
+    await waitFor(cdp,
+      `propersReaderDebug.ready && propersReaderDebug.state?.options?.legitimate?.['eucharistic-prayer'] === 'ep-ii'`,
+      'selected Eucharistic Prayer');
+    const value = await evaluate(cdp, `({
+      outcome: propersReaderDebug.outcome,
+      hash: location.hash,
+      checked: document.querySelector('#reader-document [data-option-group="eucharistic-prayer"] input[value="ep-ii"]')?.checked,
+      focused: document.activeElement?.matches('#reader-document [data-option-group="eucharistic-prayer"] input[value="ep-ii"]'),
+      calendarResult: propersReaderDebug.semantic?.calendarResult
+    })`);
+    assert.equal(value.outcome, 'ready');
+    assert.match(value.hash, /eucharistic-prayer=ep-ii/);
+    assert.equal(value.checked, true);
+    assert.equal(value.focused, true);
+    assert.equal(value.calendarResult, null);
+  });
+
+  await check('C5 invalid explicit Ordinary language and exceptional frame fail or disclose exactly', async () => {
+    await candidate(cdp, base, STATES.roman + '&mode=missal&ordinary-lang=not-held');
+    assert.equal((await snapshot(cdp)).outcome, 'invalid');
+    await candidate(cdp, base, hash({ missal: 'postconciliar', type: 'seasonal',
+      mass: 'good-friday', bible: 'douay-rheims', orations: 'la', mode: 'missal' }));
+    const value = await evaluate(cdp, `({
+      outcome: propersReaderDebug.outcome,
+      text: document.querySelector('#reader-document')?.textContent || '',
+      ordinary: document.querySelectorAll('#reader-document .ordinary-element').length,
+      frame: propersReaderDebug.semantic?.coverage.find(row => row.scope === 'ordinary-frame:postconciliar')
+    })`);
+    assert.equal(value.outcome, 'ready');
+    assert.equal(value.ordinary, 0);
+    assert.match(value.text, /no ordinary Mass frame/i);
+    assert.equal(value.frame.state, 'absent');
+  });
+
   await check('explicit URL outranks remembered preferences', async () => {
     await evaluate(cdp, `localStorage.setItem('triptych:liturgy:propers', JSON.stringify({missal:'postconciliar',bible:'clementine-vulgate',orations:'en'}))`);
     await candidate(cdp, base, STATES.roman);
@@ -1664,7 +1820,7 @@ async function assertions(cdp, base) {
     const modes = await evaluate(cdp, `[...document.querySelectorAll('[data-mode]')].map(row=>({mode:row.dataset.mode,disabled:row.disabled,checked:row.getAttribute('aria-checked')}))`);
     assert.deepEqual(modes, [
       { mode: 'read', disabled: false, checked: 'true' },
-      { mode: 'missal', disabled: true, checked: 'false' },
+      { mode: 'missal', disabled: false, checked: 'false' },
       { mode: 'study', disabled: true, checked: 'false' },
       { mode: 'compare', disabled: true, checked: 'false' }
     ]);

@@ -603,9 +603,17 @@ def expectations(path: Path, calendar: str, masses: list[dict]) -> dict:
                 )
                 if not expected_cycles <= cycles:
                     state = "not-represented"
-        targets.append({"id": key, "slice_id": target["slice_id"],
-                        "kind": target["kind"], "state": state,
-                        "mass": mass["key"] if mass else None})
+        classified = {"id": key, "slice_id": target["slice_id"],
+                      "kind": target["kind"], "state": state,
+                      "mass": mass["key"] if mass else None}
+        # Keep the independently named form even when no held calendar unit
+        # corresponds to this slot. A missing Mass must not erase its target.
+        if target["kind"] == "text-slot" and parent.get("kind") == "form":
+            mass_key = target.get("calendar_mass_key") or parent.get("calendar_mass_key")
+            if mass_key:
+                classified["calendar_mass_key"] = mass_key
+                classified["form_id"] = target.get("form_id") or parent.get("form_id") or "main"
+        targets.append(classified)
     summaries = []
     for slice_row in slices:
         rows = [row for row in targets if row["slice_id"] == slice_row["id"]]
@@ -632,6 +640,90 @@ def expectations(path: Path, calendar: str, masses: list[dict]) -> dict:
 
 
 TARGET_STATES = ("represented", "not-represented", "unresolved")
+BOUNDED_FORM_SLOT_SCOPE = "inventoried-source-text-slots-for-joined-form"
+
+
+def bounded_form_text_slots(report: dict) -> list[dict]:
+    """Summarize independently inventoried slots of each calendar-joined form.
+
+    An exact count is warranted only for the selected source slices marked
+    complete within their stated scope. It counts source slot targets, not all
+    prayers in a rendered Mass, wording availability, or the whole Missal.
+    Unjoined source targets remain visible as unresolved correspondence.
+    """
+    slices = {row["id"]: row for row in report.get("slices") or []}
+    groups: dict[tuple[str, str], list[dict]] = {}
+    for target in report.get("targets") or []:
+        if target["kind"] != "text-slot" or not target.get("calendar_mass_key"):
+            continue
+        key = (target["calendar_mass_key"], target["form_id"])
+        groups.setdefault(key, []).append(target)
+    result = []
+    for (mass_key, form_id), targets in sorted(groups.items()):
+        source_slices = [{"id": slice_id,
+                          "enumeration_state": slices[slice_id]["enumeration_state"]}
+                         for slice_id in sorted({row["slice_id"] for row in targets})]
+        exact = all(row["enumeration_state"] == "complete-within-slice"
+                    for row in source_slices)
+        counts = Counter(row["state"] for row in targets)
+        result.append({
+            "calendar": slices[source_slices[0]["id"]]["calendar"],
+            "mass": mass_key, "form": form_id,
+            "scope": BOUNDED_FORM_SLOT_SCOPE,
+            "denominator_state": "bounded" if exact else "unresolved",
+            "expected": len(targets) if exact else None,
+            "lower_bound": len(targets),
+            "represented": counts["represented"],
+            "not_represented": counts["not-represented"],
+            "unresolved": counts["unresolved"],
+            "source_slices": source_slices,
+            "whole_form_state": "unresolved",
+        })
+    validate_bounded_form_text_slots(result)
+    return result
+
+
+def validate_bounded_form_text_slots(rows: object) -> None:
+    """Validate the narrow per-form evidence passed between report owners."""
+    if not isinstance(rows, list):
+        raise ValueError("bounded form text slots must be an array")
+    previous = None
+    for row in rows:
+        if not isinstance(row, dict):
+            raise ValueError("bounded form text slot row must be an object")
+        key = tuple(row.get(field) for field in ("calendar", "mass", "form"))
+        if any(not isinstance(value, str) or not value for value in key):
+            raise ValueError("bounded form text slot row requires calendar, mass, and form")
+        if previous is not None and key <= previous:
+            raise ValueError("bounded form text slot rows require unique sorted form keys")
+        previous = key
+        if row.get("scope") != BOUNDED_FORM_SLOT_SCOPE or row.get("whole_form_state") != "unresolved":
+            raise ValueError("bounded form text slot scope must retain unresolved whole-form extent")
+        counts = [row.get(field) for field in (
+            "lower_bound", "represented", "not_represented", "unresolved")]
+        if any(type(value) is not int or value < 0 for value in counts):
+            raise ValueError("bounded form text slot counts must be nonnegative integers")
+        if sum(counts[1:]) != counts[0] or counts[0] == 0:
+            raise ValueError("bounded form text slot states must partition observed targets")
+        slices = row.get("source_slices")
+        if not isinstance(slices, list) or not slices:
+            raise ValueError("bounded form text slot row requires source slices")
+        ids = []
+        for source in slices:
+            if not isinstance(source, dict) or not isinstance(source.get("id"), str) or not source["id"]:
+                raise ValueError("bounded form text slot source requires an ID")
+            if source.get("enumeration_state") not in {"complete-within-slice", "partial", "unresolved"}:
+                raise ValueError("bounded form text slot source has unknown enumeration state")
+            ids.append(source["id"])
+        if ids != sorted(set(ids)):
+            raise ValueError("bounded form text slot source IDs must be unique and sorted")
+        exact = all(source["enumeration_state"] == "complete-within-slice" for source in slices)
+        if exact:
+            if (row.get("denominator_state") != "bounded" or
+                    type(row.get("expected")) is not int or row["expected"] != counts[0]):
+                raise ValueError("complete source slices require the bounded observed denominator")
+        elif row.get("denominator_state") != "unresolved" or row.get("expected") is not None:
+            raise ValueError("incomplete source slices cannot claim an exact denominator")
 
 
 def published_expectations(report: dict) -> dict:

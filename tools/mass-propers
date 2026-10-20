@@ -4544,6 +4544,22 @@ def run_census(arguments: argparse.Namespace) -> dict:
     counted = census(Path(arguments.root))
     block = render_census(counted)
     root = Path(arguments.root)
+    tokens = book_tokens()
+    structures = [
+        (name, calendar_structure(root, name, tokens))
+        for name in ordered(calendars(root), CALENDAR_ORDER)
+    ]
+    bounded_forms = [
+        row
+        for name, structure in structures
+        for row in _missal_coverage.bounded_form_text_slots(
+            _missal_coverage.expectations(
+                inventory_root(root) / "missal-expected-targets-v1.toml",
+                name, structure["masses"],
+            )
+        )
+    ]
+    bounded_forms.sort(key=lambda row: (row["calendar"], row["mass"], row["form"]))
     payload: dict[str, object] = {
         "calendars": counted,
         "block": block,
@@ -4554,10 +4570,9 @@ def run_census(arguments: argparse.Namespace) -> dict:
         # and resolution, Latin residence/antecedence, and English coverage.
         "finding_aid_coverage": finding_aid_coverages(root),
         "latin_recension_coverage": postconciliar_latin_coverage(root),
-        "typed_coverage": [
-            {"calendar": name, **calendar_structure(root, name, book_tokens())["coverage"]}
-            for name in ordered(calendars(root), CALENDAR_ORDER)
-        ],
+        "typed_coverage": [{"calendar": name, **structure["coverage"]}
+                           for name, structure in structures],
+        "bounded_form_text_slots": bounded_forms,
         "status": "ok",
     }
     if not (arguments.write or arguments.check):
