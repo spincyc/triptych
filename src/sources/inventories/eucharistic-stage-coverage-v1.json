@@ -9,12 +9,12 @@
     {
       "id": "eastern",
       "path": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
-      "sha256": "368f6f64e83bb702e34ca225d139b33cd76ca5c60a0cccfe53acefdd8c93ac56"
+      "sha256": "65ef01ca12e0efac1acd0bb4f54d546f5a644422b575f29370e6e822439bcb0d"
     },
     {
       "id": "western",
       "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
-      "sha256": "b56b8b5c897b1b403365dc3b268a41ab9acde37612bb89e40e52f012e730ca5e"
+      "sha256": "6576391fe98ca2c13bd68353560f8319ac82da56510b0f954df418e21571bccd"
     },
     {
       "id": "presentation",
@@ -54,7 +54,7 @@
     {
       "id": "dossier:chaldean-east-syriac",
       "path": "src/sources/inventories/eucharistic-stages/chaldean.json",
-      "sha256": "deac3a956ed12f2b6f78d6af4bb9c60bfe8de63f59e2adcc9bba999e937b9bde"
+      "sha256": "c117f0343b5fb8e91ab8dbb070ae907f71318f30b822628a2751400c7926efb0"
     },
     {
       "id": "dossier:cistercian-1606-1657",
@@ -87,6 +87,11 @@
       "sha256": "be420b68c502c0d2ee28dfb48de89aff7d81dd1e889cd0a3ebc1bf76e296693f"
     },
     {
+      "id": "dossier:regional-variants",
+      "path": "src/sources/inventories/eucharistic-stages/regional-variants.json",
+      "sha256": "1b8d0c5b530452d6ad2c107f315f546b1ea38ff10239b27443045f290f25c8ab"
+    },
+    {
       "id": "dossier:slavonic-roman",
       "path": "src/sources/inventories/eucharistic-stages/slavonic-roman.json",
       "sha256": "680df02025d8b9d66165a0c0bd878b5c3a6758e9ac21c203e59d676cbe7563b8"
@@ -100,14 +105,14 @@
   "count_semantics": {
     "eastern_census_slots": 23,
     "western_coverage_trajectories": 73,
-    "eastern_candidates": 439,
-    "western_candidates": 1135,
+    "eastern_candidates": 440,
+    "western_candidates": 1141,
     "presentation_groups": 128,
     "eastern_empty_candidate_slots_at_input": [
       "albanian",
       "macedonian"
     ],
-    "western_empty_candidate_slots_at_input": 5,
+    "western_empty_candidate_slots_at_input": 2,
     "warning": "These count different objects. Western trajectories include composite and overlapping discovery buckets. Presentation groups are display categories. Neither candidate linkage nor a dossier certifies complete coverage."
   },
   "findings": [
@@ -120,7 +125,8 @@
     "A component, complementary volume or appended calendar does not represent an entire successive Eucharistic book.",
     "No assigned new dossier covers the full early sacramentary corpus or all Sarum/York/Hereford/continental diocesan and monastic trajectories.",
     "Selected local-use, canonical-order and Slavonic Roman stages now resolve to their own dossiers. Composite discovery rows retain unmapped communities and incomplete periods; no dossier supplies whole-book text completeness.",
-    "Complete native constituents count as partial book coverage. Recorded book states, optional rules and complementary volumes do not create a complete missal or authorize text inheritance."
+    "Complete native constituents count as partial book coverage. Recorded book states, optional rules and complementary volumes do not create a complete missal or authorize text inheritance.",
+    "The 2026-10-20 regional dossier adds seven bounded book states (two provisional) and one provisional source-described Polish printing transition; no whole-book text completion or unexamined first-use date follows."
   ],
   "sources": [
     {
@@ -3528,6 +3534,31 @@
       "id": "syro-malankara-catholic",
       "label": "Syro-Malankara Catholic",
       "dossier_id": "west-syriac-stages"
+    },
+    {
+      "id": "lyon-romano-lugdunense",
+      "label": "Roman–Lyonese missal",
+      "dossier_id": "regional-variants"
+    },
+    {
+      "id": "polish-diocesan-roman",
+      "label": "Roman Missal for the dioceses of Poland",
+      "dossier_id": "regional-variants"
+    },
+    {
+      "id": "pittsburgh-divine-liturgies",
+      "label": "Pittsburgh Byzantine Catholic Divine Liturgies",
+      "dossier_id": "regional-variants"
+    },
+    {
+      "id": "zaire-roman-adaptation",
+      "label": "Roman Missal for the dioceses of Zaire",
+      "dossier_id": "regional-variants"
+    },
+    {
+      "id": "ordinariate-divine-worship",
+      "label": "Divine Worship: The Missal for the personal ordinariates",
+      "dossier_id": "regional-variants"
     }
   ],
   "dossier_snapshot": [
@@ -3822,6 +3853,37 @@
       "text_coverage_counts": {
         "not-transcribed": 24,
         "partial": 1
+      },
+      "status": "canonical-bounded-dossier-snapshot"
+    },
+    {
+      "dossier_id": "regional-variants",
+      "traditions": [
+        {
+          "id": "lyon-romano-lugdunense",
+          "label": "Roman–Lyonese missal"
+        },
+        {
+          "id": "polish-diocesan-roman",
+          "label": "Roman Missal for the dioceses of Poland"
+        },
+        {
+          "id": "pittsburgh-divine-liturgies",
+          "label": "Pittsburgh Byzantine Catholic Divine Liturgies"
+        },
+        {
+          "id": "zaire-roman-adaptation",
+          "label": "Roman Missal for the dioceses of Zaire"
+        },
+        {
+          "id": "ordinariate-divine-worship",
+          "label": "Divine Worship: The Missal for the personal ordinariates"
+        }
+      ],
+      "documented_stage_count": 5,
+      "provisional_stage_count": 2,
+      "text_coverage_counts": {
+        "not-transcribed": 7
       },
       "status": "canonical-bounded-dossier-snapshot"
     },
@@ -4639,7 +4701,8 @@
         "byz-lviv-1905",
         "byz-ruthenian-1942",
         "byz-ruthenian-chrysostom-1940",
-        "byz-ruthenian-ordo-1944"
+        "byz-ruthenian-ordo-1944",
+        "byz-pittsburgh-2006-07"
       ],
       "proposed_tradition_ids": [
         "byzantine-ruthenian"
@@ -4648,7 +4711,8 @@
       "dossier_coverage": {
         "status": "selected-stages-available",
         "dossier_ids": [
-          "byzantine-stages"
+          "byzantine-stages",
+          "regional-variants"
         ],
         "stage_ids": [
           "byzantine-stages:vilnius1692",
@@ -4657,20 +4721,22 @@
           "byzantine-stages:lviv1899-extract",
           "byzantine-stages:lviv1905",
           "byzantine-stages:ruth1940-41",
-          "byzantine-stages:ruth1942"
+          "byzantine-stages:ruth1942",
+          "regional-variants:pittsburgh2007"
         ],
         "assigned_family": "Ruthenian Slavonic books and Roman revision",
-        "scope": "Selected shared Ruthenian source-book stages, including bounded Lviv extracts; no uniform reception in every jurisdiction or new whole-book state from a booklet is asserted.",
+        "scope": "Includes the approved Pittsburgh English regional books alongside selected Ruthenian source books; source-language parentage and individual parish uptake remain separate.",
         "reception_limit": "Mapped stages concern identified source books or relevant recensions. This crosswalk does not create a local adoption or continuous-use claim.",
         "provisional_stage_ids": [],
         "text_coverage_counts": {
-          "not-transcribed": 7
+          "not-transcribed": 8
         },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": [
           "byzantine-stages:ruth-long-gap",
           "byzantine-stages:ruth-original-acts",
-          "byzantine-stages:reception"
+          "byzantine-stages:reception",
+          "regional-variants:pittsburgh-gap"
         ]
       },
       "witnesses": [
@@ -4709,7 +4775,7 @@
       ],
       "component_profile": "byzantine",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Acquire 1940/1941 and 1942 printed witnesses and 1944 Ordo; establish region-specific receipt and supplements. The 1941 act permits exceptions, so publication is not universal replacement.",
+      "missing_stage_chain": "Acquire 1940/1941 and 1942 printed witnesses and 1944 Ordo; establish region-specific receipt and supplements. The 1941 act permits exceptions, so publication is not universal replacement. Bounded 2026-10-20 stage states are now assigned; see their explicit gaps for the unresolved original leaves and reception evidence.",
       "next_sources": {
         "inventory_source_ids": [
           "mci-liturgikon",
@@ -4736,8 +4802,11 @@
       ],
       "deferred_or_origin_review_candidate_ids": [
         "byz-pittsburgh-1964-65",
-        "byz-pittsburgh-2006-07",
-        "byz-pittsburgh-2010-presanctified"
+        "byz-pittsburgh-2010-presanctified",
+        "byzantine-slavic-lviv1930-mikron",
+        "byzantine-slavic-rome1929-bishops-conference",
+        "byzantine-slavic-archieratikon1973",
+        "byzantine-slavic-buda1835-cold"
       ],
       "canonical_tradition_ids": [
         "byzantine-ruthenian"
@@ -4967,7 +5036,28 @@
         "byzantine-slavic-vat-slav14"
       ],
       "deferred_or_origin_review_candidate_ids": [
-        "byz-ugcc-2024"
+        "byz-ugcc-2024",
+        "byzantine-slavic-vilnius1617-mamonych",
+        "byzantine-slavic-vilnius1691-trinity",
+        "byzantine-slavic-suprasl1716-pontifical",
+        "byzantine-slavic-suprasl1727-1732",
+        "byzantine-slavic-suprasl1758",
+        "byzantine-slavic-suprasl1763",
+        "byzantine-slavic-vilnius1773",
+        "byzantine-slavic-univ1740",
+        "byzantine-slavic-univ1740-pontifical",
+        "byzantine-slavic-univ1747",
+        "byzantine-slavic-univ-feast-supplements",
+        "byzantine-slavic-pochaiv-eucharist-supplements",
+        "byzantine-slavic-pochaiv-printing-series",
+        "byzantine-slavic-lviv1712-stauropegion",
+        "byzantine-slavic-lviv1780",
+        "byzantine-slavic-przemysl1840",
+        "byzantine-slavic-lviv1850",
+        "byzantine-slavic-lviv1866",
+        "byzantine-slavic-fragment-pre1894",
+        "byzantine-slavic-rome1929-bishops-conference",
+        "byzantine-slavic-przemysl-chrysostom-insert-cold"
       ],
       "canonical_tradition_ids": [
         "byzantine-ruthenian"
@@ -5231,7 +5321,8 @@
       "candidate_ids": [
         "alex-geez-1913",
         "alex-geez-1945",
-        "alex-geez-2025"
+        "alex-geez-2025",
+        "alex-keren-blin-geez-mass-2008"
       ],
       "proposed_tradition_ids": [
         "geez-catholic-shared"
@@ -5565,7 +5656,10 @@
       "deferred_or_origin_review_candidate_ids": [
         "mar-1959",
         "mar-1973",
-        "mar-1992"
+        "mar-1992",
+        "maronite-bkerke-2005",
+        "maronite-sharar-2008",
+        "maronite-english-2012"
       ],
       "canonical_tradition_ids": [
         "maronite-antiochene"
@@ -5793,8 +5887,7 @@
         "chaldean-ms-vat-sir-491",
         "chaldean-paris1982",
         "chaldean-reform2006-2007",
-        "chaldean-st-peter-2013",
-        "east-urmia-1876"
+        "chaldean-st-peter-2013"
       ],
       "proposed_tradition_ids": [
         "chaldean"
@@ -5924,7 +6017,9 @@
         "syr-add14669-fragments"
       ],
       "deferred_or_origin_review_candidate_ids": [
-        "chald-arabic-by-2022"
+        "chald-arabic-by-2022",
+        "chaldean-saigh1936",
+        "east-urmia-1876"
       ],
       "canonical_tradition_ids": [
         "chaldean-catholic"
@@ -7969,14 +8064,25 @@
       ],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "regional-variants"
+        ],
+        "stage_ids": [
+          "regional-variants:zaire1988",
+          "regional-variants:divineworship2015"
+        ],
+        "scope": "Selected approved Zaire and personal ordinariate states only; other permissions and component witnesses remain outside a proven stage sequence.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 2
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "regional-variants:zaire-gap",
+          "regional-variants:divineworship-gap"
+        ],
+        "reception_limit": "A selected book stage does not prove first local use, whole-book textual descent, or uniform uptake."
       },
       "witnesses": [
         {
@@ -8222,7 +8328,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Zaire French adaptation established by primary decree and selected rubrics; complete approved exemplar remains missing. Divine Worship substantive adaptation established by official descriptions; original decree, 2003/2015 comparison and dated later sanctoral updates remain open. Survey other authorized original adaptations. The reviewed Roman adaptations receipt adds 26 bounded regional book, component, translation and lead candidates. Compare original books and acts for Zaire, Divine Worship, India, Brazil, Switzerland and other named uses before asserting textual succession or local adoption. The 1991 Brazilian entry is a Portuguese common-formula translation witness, not a dated original-anaphora revision. Four leads in the receipt lack a secure finite chronology coordinate. Harley 5512 remains a cross-lane contact witness without an established Catholic reception and is not routed here.",
+      "missing_stage_chain": "Zaire French adaptation established by primary decree and selected rubrics; complete approved exemplar remains missing. Divine Worship substantive adaptation established by official descriptions; original decree, 2003/2015 comparison and dated later sanctoral updates remain open. Survey other authorized original adaptations. The reviewed Roman adaptations receipt adds 26 bounded regional book, component, translation and lead candidates. Compare original books and acts for Zaire, Divine Worship, India, Brazil, Switzerland and other named uses before asserting textual succession or local adoption. The 1991 Brazilian entry is a Portuguese common-formula translation witness, not a dated original-anaphora revision. Four leads in the receipt lack a secure finite chronology coordinate. Harley 5512 remains a cross-lane contact witness without an established Catholic reception and is not routed here. Bounded 2026-10-20 stage states are now assigned; see their explicit gaps for the unresolved original leaves and reception evidence.",
       "next_sources": {
         "inventory_source_ids": [
           "ordinariate-dwm",
@@ -10507,7 +10613,7 @@
       "id": "lyon",
       "label": "Lyon trajectory",
       "coverage_unit": "trajectory-or-discovery-bucket",
-      "inventory_status": "44-entry diocesan repertoire screened, selected print witnesses located; revision census open",
+      "inventory_status": "44-entry diocesan repertoire screened; 1866 Roman-based Lyon component substitutions identified; wider revision census open",
       "candidate_ids": [
         "lyon-medieval",
         "lyon-later-series",
@@ -10529,14 +10635,23 @@
       ],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "regional-variants"
+        ],
+        "stage_ids": [
+          "regional-variants:lyon1866"
+        ],
+        "scope": "One 1866 Roman-based Lyon state with three title-named substitutions; prior Lyon descent and exact text changes remain open.",
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 1
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "regional-variants:lyon-gap"
+        ],
+        "reception_limit": "A selected book stage does not prove first local use, whole-book textual descent, or uniform uptake."
       },
       "witnesses": [
         {
@@ -10654,7 +10769,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Deduplicate catalogue records, extend witness census, acquire cleared complete witnesses and compare prayers, rubrics, calendar and order before promoting distinct versions. Read Amiet 1979 and Buenner pp.294–296; acquire original 1771/1825/1844/1868/1904/1956 books; compare to 802-page 1866 scan; resolve 1844/1846 alias and Lyon use versus Roman, monastic and printing-place contexts.",
+      "missing_stage_chain": "Deduplicate catalogue records, extend witness census, acquire cleared complete witnesses and compare prayers, rubrics, calendar and order before promoting distinct versions. Read Amiet 1979 and Buenner pp.294–296; acquire original 1771/1825/1844/1868/1904/1956 books; compare to 802-page 1866 scan; resolve 1844/1846 alias and Lyon use versus Roman, monastic and printing-place contexts. Bounded 2026-10-20 stage states are now assigned; see their explicit gaps for the unresolved original leaves and reception evidence.",
       "next_sources": {
         "inventory_source_ids": [
           "lyon-usuarium",
@@ -15551,19 +15666,32 @@
         "ce-wroclaw-wroclaw-1505-krakow-variantsac",
         "ce-wroclaw-wroclaw-1519",
         "ce-wroclaw-wroclaw-ms",
-        "ce-wroclaw-wroclaw1738"
+        "ce-wroclaw-wroclaw1738",
+        "polish-diocesan-missal-1986"
       ],
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
-        "scope": "Prior inventory witnesses or relationships remain usable; no new stage dossier is assigned to this trajectory.",
-        "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "regional-variants"
+        ],
+        "stage_ids": [
+          "regional-variants:poland1986"
+        ],
+        "scope": "The 1986 approved Polish diocesan Roman missal and two provisional later printing states; no textual descent from earlier Polish diocesan uses is claimed.",
+        "provisional_stage_ids": [
+          "regional-variants:poland2009-10",
+          "regional-variants:poland2013"
+        ],
+        "text_coverage_counts": {
+          "not-transcribed": 3
+        },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
-        "gap_ids": []
+        "gap_ids": [
+          "regional-variants:poland-gap"
+        ],
+        "reception_limit": "A selected book stage does not prove first local use, whole-book textual descent, or uniform uptake."
       },
       "witnesses": [
         {
@@ -15865,7 +15993,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. Shared Cracow titles and Gniezno-received copies must not disappear under Cracow-only grouping; full PietrasIII reconciliation outstanding. Full1510/1532/1545 changes not collated; bibliography duplicates/false-date records remain;1556 question cannot be silently omitted. No complete manuscript/modern local-proper census established;1520 known copy incompleteness must be recorded. The 1481 Strasbourg Poznań attribution still needs extant-copy/ISTC reconciliation. The 1491 Strasbourg Missale Posnaniense is bibliographically attested as GW M2463210, but its described BN Warsaw exemplar was destroyed; text, other copies, local reception, and substantive relation to later editions remain unexamined. 1587 relation to Roman missal and actual local changes need contents; breviary and agenda dates cannot become Mass-book editions. False 1483 colophon may conceal a second edition; 1505 A/B/C are not three automatic substantive states. For 1738, collate the original contents and local proper Masses, relation among NIFC/Jeseník/Jelenia Góra/BN copies, and any later propers; the title itself is attested.",
+      "missing_stage_chain": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. Shared Cracow titles and Gniezno-received copies must not disappear under Cracow-only grouping; full PietrasIII reconciliation outstanding. Full1510/1532/1545 changes not collated; bibliography duplicates/false-date records remain;1556 question cannot be silently omitted. No complete manuscript/modern local-proper census established;1520 known copy incompleteness must be recorded. The 1481 Strasbourg Poznań attribution still needs extant-copy/ISTC reconciliation. The 1491 Strasbourg Missale Posnaniense is bibliographically attested as GW M2463210, but its described BN Warsaw exemplar was destroyed; text, other copies, local reception, and substantive relation to later editions remain unexamined. 1587 relation to Roman missal and actual local changes need contents; breviary and agenda dates cannot become Mass-book editions. False 1483 colophon may conceal a second edition; 1505 A/B/C are not three automatic substantive states. For 1738, collate the original contents and local proper Masses, relation among NIFC/Jeseník/Jelenia Góra/BN copies, and any later propers; the title itself is attested. Bounded 2026-10-20 stage states are now assigned; see their explicit gaps for the unresolved original leaves and reception evidence.",
       "next_sources": {
         "inventory_source_ids": [
           "usuarium-origins-700",
@@ -16084,13 +16212,14 @@
       "id": "monastic-other-orders",
       "label": "Benedictine houses, Cassinese and Camaldolese",
       "coverage_unit": "trajectory-or-discovery-bucket",
-      "inventory_status": "index-discovery-only",
+      "inventory_status": "selected-witness-census-documented",
       "candidate_ids": [
         "monastic-cassinese-1580",
         "monastic-montecorona-1896",
         "monastic-benedictine-1937",
         "monastic-benedictine-propers-1923",
-        "monastic-usuarium-benedictine-469"
+        "monastic-usuarium-benedictine-469",
+        "monastic-bursfelde-1498"
       ],
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
@@ -19028,8 +19157,10 @@
       "id": "italian-padua",
       "label": "Padua Eucharistic-book discovery",
       "coverage_unit": "trajectory-or-discovery-bucket",
-      "inventory_status": "index-discovery-only",
-      "candidate_ids": [],
+      "inventory_status": "selected-manuscript-witness-documented",
+      "candidate_ids": [
+        "italian-padua-d30"
+      ],
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
@@ -19065,8 +19196,11 @@
       "id": "italian-monza",
       "label": "Monza Eucharistic-book discovery",
       "coverage_unit": "trajectory-or-discovery-bucket",
-      "inventory_status": "index-discovery-only",
-      "candidate_ids": [],
+      "inventory_status": "selected-manuscript-witnesses-documented",
+      "candidate_ids": [
+        "italian-monza-f05-109",
+        "italian-monza-f12-108"
+      ],
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
@@ -19102,8 +19236,10 @@
       "id": "italian-ravenna",
       "label": "Ravenna Eucharistic-book discovery",
       "coverage_unit": "trajectory-or-discovery-bucket",
-      "inventory_status": "index-discovery-only",
-      "candidate_ids": [],
+      "inventory_status": "selected-archive-holding-witness-only",
+      "candidate_ids": [
+        "italian-ravenna-archive-011"
+      ],
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
@@ -19707,12 +19843,12 @@
     }
   ],
   "inspection_limits": {
-    "inventory_rows": "All 23 Eastern and 54 Western rows and their candidate/source metadata reviewed.",
-    "fresh_external_sources": "The sources array preserves the inspections dated 2026-10-16; the 2026-10-19 reconciliation reads authoritative inventory and dossier records and certifies no additional page-image wording.",
-    "new_source_book_acquisitions": 0,
+    "inventory_rows": "All 23 Eastern and 73 Western route rows reconciled; selected new sources and pages were inspected in the dated 2026-10-20 research review.",
+    "fresh_external_sources": "Dated 2026-10-20 primary, official and catalogue sources are distinguished in their inventory or dossier records; permission and first-use limits are retained.",
+    "new_source_book_acquisitions": 2,
     "new_collated_transitions": 0,
-    "new_stages": 0,
-    "new_transitions": 0,
+    "new_stages": 7,
+    "new_transitions": 1,
     "negative_search_claim": "No exact Albanian or Macedonian source-language celebrant book is established by the current bounded records. Later Macedonian translation approval evidence does not identify that source book; no absence from history is claimed.",
     "reconciliation_basis": "Candidate membership and bibliographic bounds follow the inventories; canonical tradition, stage status, text coverage and declared gap references follow the pinned dossiers. Church-level mappings retain explicit local-reception limits."
   },
@@ -19794,8 +19930,8 @@
       "no absolute or scratch paths in deliverable"
     ],
     "coverage_status_counts": {
-      "no-new-researched-stage-sequence": 60,
-      "selected-stages-available": 32,
+      "no-new-researched-stage-sequence": 57,
+      "selected-stages-available": 35,
       "related-dossier-only-local-reception-unresearched": 4
     },
     "limit": "Dossier presence is a canonical file snapshot. Exact tradition and stage references resolve, but no count is a completeness score or proof of local reception."
