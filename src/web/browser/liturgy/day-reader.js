@@ -7,13 +7,13 @@
   const Contract = window.LiturgyReaderState;
   const Adapters = window.LiturgyReaderStateAdapters;
   const Shell = window.TriptychReaderShell;
-  const OrdinaryRenderer = window.TriptychOrdinaryRenderer;
+  let OrdinaryRenderer = window.TriptychOrdinaryRenderer;
   const DayCompare = window.TriptychDayCompare;
   const DayStudy = window.TriptychDayStudy;
   const DayReadPayload = window.TriptychDayReadPayload;
 
-  if (!T || !Model || !Contract || !Adapters || !Shell || !OrdinaryRenderer) {
-    throw new Error('Day reader requires production browser, assembly, Ordinary renderer, state, adapter, and shell modules');
+  if (!T || !Model || !Contract || !Adapters || !Shell) {
+    throw new Error('Day reader requires production browser, assembly, state, adapter, and shell modules');
   }
 
   const PATHS = Object.freeze({
@@ -2454,6 +2454,9 @@
         renderFailure(locationErrors, { mode: requestedMode });
         return;
       }
+      await window.TriptychReaderOptionalRuntime?.forState(normalized.state);
+      if (serial !== runtime.serial) return;
+      OrdinaryRenderer = window.TriptychOrdinaryRenderer;
       runtime.normalized = normalized;
       runtime.derived = assembled.derived;
       runtime.rubrics = assembled.rubrics;

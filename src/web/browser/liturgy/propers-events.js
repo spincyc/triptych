@@ -3,9 +3,8 @@
 
 (function () {
   const T = window.Triptych;
-  const OrdinaryRenderer = window.TriptychOrdinaryRenderer;
-  if (!T || !OrdinaryRenderer || !window.OrdinarySeating) {
-    throw new Error('Propers events require the production browser and Ordinary renderers');
+  if (!T || !window.OrdinarySeating) {
+    throw new Error('Propers events require the production browser and seating engine');
   }
 
   function create(dependencies) {
@@ -278,6 +277,8 @@
   }
 
   function renderMissalEvents(fragment, contents, result, mass, bible, fragments, state) {
+    const OrdinaryRenderer = window.TriptychOrdinaryRenderer;
+    if (!OrdinaryRenderer) throw new Error('Missal needs its production Ordinary renderer');
     const ordinary = runtime.ordinary;
     if (!ordinary || ordinary.calendar !== state.edition.id) {
       throw new Error('the selected edition has no matching production Ordinary to render');
