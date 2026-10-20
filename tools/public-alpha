@@ -1385,6 +1385,10 @@ def validate_liturgical_public_data(path: Path) -> None:
         payload = json.loads(text)
     except (OSError, UnicodeError, json.JSONDecodeError) as exc:
         raise ReleaseError(f"cannot read liturgical structure {label}: {exc}") from exc
+    if parts[:3] == ("structure", "propers", "search"):
+        if len(parts) != 4:
+            raise ReleaseError(f"{label}: public Proper search must be one calendar file")
+        validate_proper_search_payload(payload, label, path.stem)
     quarantined_text_hashes = postconciliar_quarantined_text_hashes()
 
     def visit_quarantined(value: object, trail: tuple = ()) -> None:
@@ -1659,6 +1663,115 @@ def validate_liturgical_public_data(path: Path) -> None:
             visit(item, f"{location}.{key}")
 
     visit(payload)
+
+
+def validate_proper_search_payload(payload: object, label: str, calendar: str) -> None:
+    """Admit only a text-free, edition-qualified Proper discovery projection."""
+    def fail(location: str, reason: str) -> None:
+        raise ReleaseError(f"{label} {location}: public Proper search {reason}")
+
+    def fields(value: object, expected: set[str], location: str) -> dict:
+        if not isinstance(value, dict) or set(value) != expected:
+            fail(location, f"must contain exactly {', '.join(sorted(expected))}")
+        return value
+
+    def prose(value: object, location: str, limit: int = 500) -> None:
+        if (not isinstance(value, str) or not value.strip() or len(value) > limit
+                or any(ord(char) < 32 for char in value)
+                or "http://" in value.casefold() or "https://" in value.casefold()
+                or RESTRICTED_AUTHORITY_REFERENCE_RE.search(value)):
+            fail(location, "has unsafe public wording")
+
+    def key(value: object, location: str, *, source: bool = False) -> None:
+        pattern = SAFE_ID_RE if source else SAFE_TYPED_KEY_RE
+        if not isinstance(value, str) or len(value) > 200 or not pattern.fullmatch(value):
+            fail(location, "has an unsafe identity")
+
+    def count(value: object, location: str) -> None:
+        if not isinstance(value, int) or isinstance(value, bool) or value < 0:
+            fail(location, "requires a nonnegative count")
+
+    root = fields(payload, {"schema", "calendar", "edition", "edition_short", "rows"}, "$")
+    if root["schema"] != "triptych-propers-search/v1" or root["calendar"] != calendar:
+        fail("$", "schema or calendar does not match its path")
+    key(root["calendar"], "$.calendar")
+    prose(root["edition"], "$.edition", 160)
+    prose(root["edition_short"], "$.edition_short", 160)
+    if not isinstance(root["rows"], list) or len(root["rows"]) > 10000:
+        fail("$.rows", "requires a bounded row list")
+    identities = set()
+    availability_keys = {
+        "available", "not-publishable", "not-sourced", "unresolved",
+        "inapplicable", "absent-in-witness",
+    }
+    for ordinal, candidate in enumerate(root["rows"]):
+        where = f"$.rows[{ordinal}]"
+        row = fields(candidate, {
+            "key", "name", "kind", "season", "fixed_date", "form_id",
+            "form_name", "incipits", "citations", "witnesses", "coverage",
+        }, where)
+        for field in ("key", "kind", "form_id"):
+            key(row[field], f"{where}.{field}")
+        identity = (row["key"], row["form_id"])
+        if identity in identities:
+            fail(where, "duplicates a formulary/form identity")
+        identities.add(identity)
+        prose(row["name"], f"{where}.name", 160)
+        for field in ("season", "form_name"):
+            if row[field] is not None:
+                prose(row[field], f"{where}.{field}", 160)
+        fixed_date = row["fixed_date"]
+        if fixed_date is not None and (
+            not isinstance(fixed_date, str)
+            or not re.fullmatch(r"(?:0[1-9]|1[0-2])-(?:0[1-9]|[12][0-9]|3[01])", fixed_date)
+        ):
+            fail(f"{where}.fixed_date", "must be an explicit MM-DD source date")
+        for field, content in (("incipits", "text"), ("citations", "ref")):
+            entries = row[field]
+            if not isinstance(entries, list) or len(entries) > 500:
+                fail(f"{where}.{field}", "requires a bounded list")
+            for index, item in enumerate(entries):
+                here = f"{where}.{field}[{index}]"
+                item = fields(item, {"slot", "cycle_family", "cycle", content}, here)
+                prose(item["slot"], f"{here}.slot", 100)
+                prose(item[content], f"{here}.{content}", 160)
+                family, cycle = item["cycle_family"], item["cycle"]
+                if (family is None) != (cycle is None) or (
+                    family is not None and (family not in ("cycles", "weekday_cycles")
+                                            or not isinstance(cycle, str)
+                                            or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9-]*", cycle))
+                ):
+                    fail(here, "has an invalid cycle identity")
+        witnesses = row["witnesses"]
+        if not isinstance(witnesses, list) or len(witnesses) > 100:
+            fail(f"{where}.witnesses", "requires a bounded list")
+        for index, item in enumerate(witnesses):
+            here = f"{where}.witnesses[{index}]"
+            item = fields(item, {"lang", "id", "label"}, here)
+            key(item["lang"], f"{here}.lang")
+            key(item["id"], f"{here}.id", source=True)
+            prose(item["label"], f"{here}.label")
+        coverage = fields(row["coverage"], {"denominator", "languages"}, f"{where}.coverage")
+        if coverage["denominator"] != "represented-units":
+            fail(f"{where}.coverage.denominator", "requires the represented-unit basis")
+        languages = coverage["languages"]
+        if not isinstance(languages, list) or [entry.get("lang") for entry in languages if isinstance(entry, dict)] != ["la", "en"] or len(languages) != 2:
+            fail(f"{where}.coverage.languages", "must declare Latin then English")
+        for index, entry in enumerate(languages):
+            here = f"{where}.coverage.languages[{index}]"
+            entry = fields(entry, {
+                "lang", "available", "occurrences", "exact_target",
+                "scripture_occurrences", "availability",
+            }, here)
+            for field in ("available", "occurrences", "exact_target", "scripture_occurrences"):
+                count(entry[field], f"{here}.{field}")
+            partition = fields(entry["availability"], availability_keys, f"{here}.availability")
+            for state, value in partition.items():
+                count(value, f"{here}.availability.{state}")
+            if (sum(partition.values()) != entry["occurrences"]
+                    or entry["available"] != partition["available"]
+                    or entry["exact_target"] > entry["available"]):
+                fail(here, "coverage counts do not reconcile")
 
 
 def is_bound_web_data_source(path: Path) -> bool:

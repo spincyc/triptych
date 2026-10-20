@@ -25844,6 +25844,32 @@ publication_evidence = "The wording is preexisting material of the 1962 typical 
 [[entries]]
 mass = "s-luciae-virginis-martyris"
 form = ""
+proper = "Communion"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "34fdfea7d8689465a61b2ac84a5ecbabb8e2665cab9ae93f4f73ca1ee10668d6"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-luciae-communion"
+source_date = "2026-10-20 project editorial projection; antecedent Mame Tours 1922"
+locator = "editorial-projection artifact physical line 1; antecedent Mame Tours 1922 printed p. 497, artifact PDF p. 611"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.s-luciae-communion"
+verification_locator = "printed p. 440, no. 1898; artifact PDF p. 521"
+transformations = ["join printed line wraps", "remove stress accents", "expand the ae ligature to ae", "apply the target printing's punctuation", "omit the printed heading, citation and marginal number"]
+provenance_evidence = "The project-owned passage reproduces the calendar body's exact hash. Both complete antiphons were read from page images of hash-checked registered PDFs. The 1962 target and public-domain Mame 1922 agree on every spoken word, including quasi; their differences are stress accents, the ae ligature and pointing. The Clementine Bible expansion has sicut and a Sin heading and is not the antiphon. The 1962 page controls the target's wording and punctuation; its scan is not the publication rights basis."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target and Mame 1922 antecedent"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-luciae-communion-34fdfea7", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "Mame Tours 1922 printed p. 497, registered artifact PDF p. 611; its title page at PDF p. 13 prints 1922 and its approval leaf at p. 15 is dated 17 May 1922; artifact rights_status public-domain"
+publication_evidence = "The antiphon wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which grants no exclusive right in material that edition did not contribute. The whole body appears word for word in the separately registered public-domain 1922 Tours Mame page image. The repository-wide position is settled at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml; this row claims no publication right from the 1962 facsimile."
+
+[[entries]]
+mass = "s-luciae-virginis-martyris"
+form = ""
 proper = "Secret"
 course = ""
 cycle = ""

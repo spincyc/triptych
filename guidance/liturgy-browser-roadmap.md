@@ -490,6 +490,21 @@ contradicts its Annunciation body, so its role remains open pending a source
 correction. The 1962 Adjutorium row now has source-bound priest and answer
 turns, restoring its printed ℣/℟ dialogue cue; sixteen other Ordinary
 elements still need glyph review.
+The next print-only C4 pass moves an orphaned Collect translation credit beside
+its witness account in both entrances. Same-source Chromium PDFs retain seven
+English Read pages and identical extracted text; checked Latin layouts also
+retain their page count and text. Longer mode-aware note composition remains
+open.
+St Lucy's Communion is the next bounded C3 word-exact repair: a target passage,
+public-domain 1922 Mame witness and editorial projection now bind the 1962
+Latin antiphon with `quasi`, while Psalm 118:161–162 remains a citation rather
+than a substitute body. This brings Roman 1962 exact-target Latin Proper
+availability to 1,074 of 1,203 represented composed targets. The text CLI now
+labels Bible reconstructions beside citation expansions, and distinguishes
+Bible text shown alongside a held Missal body. A form-qualified, text-free
+Propers search index and a two-side functional-slot Compare core pass focused
+tests; search controls, Compare mode, and independent C5 acceptance remain
+open.
 
 An exemplar passes C2 when:
 

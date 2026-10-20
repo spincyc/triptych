@@ -947,6 +947,8 @@ body:has(.reader-instrument) > .site-footer,
   .reader-instrument .reader-document .passage,
   .reader-instrument .reader-document .composed,
   .reader-instrument .reader-document .composed-note { orphans: 3; widows: 3; }
+  /* Keep a translation credit with the adjacent witness account it names. */
+  .reader-instrument .reader-document .proper > .composed + .composed-note:has(+ .composed-note) { break-after: avoid; }
   /* Give the source account more room than on screen, without overly long lines. */
   .reader-instrument .reader-document .composed-note,
   .reader-instrument .reader-document .element-apparatus { max-width: 90ch; }

@@ -19,6 +19,9 @@ const INTROIT = 'proper/roman-1962/pentecost/001';
 const SEQUENCE = 'proper/roman-1962/pentecost/005';
 const chromeBinary = process.env.TRIPTYCH_CHROME || '/usr/bin/chromium';
 const failures = [];
+const consoleProblems = [];
+const failedRequests = [];
+const httpProblems = [];
 const structure = JSON.parse(await readFile(resolve(ROOT,
   'src/web/data/structure/propers/roman-1962.json')));
 const pentecost = structure.masses.find((mass) => mass.key === MASS);
@@ -78,7 +81,13 @@ async function waitJson(url) {
 }
 
 class CDP {
-  constructor(url) { this.socket = new WebSocket(url); this.next = 0; this.pending = new Map(); }
+  constructor(url) {
+    this.socket = new WebSocket(url); this.next = 0; this.pending = new Map();
+    this.events = new Map();
+  }
+  on(name, handler) {
+    this.events.set(name, [...(this.events.get(name) || []), handler]);
+  }
   async ready() {
     await new Promise((done, reject) => {
       this.socket.addEventListener('open', done, { once: true });
@@ -86,7 +95,10 @@ class CDP {
     });
     this.socket.addEventListener('message', (event) => {
       const message = JSON.parse(event.data);
-      if (!message.id) return;
+      if (!message.id) {
+        for (const handler of this.events.get(message.method) || []) handler(message.params);
+        return;
+      }
       const held = this.pending.get(message.id);
       if (!held) return;
       this.pending.delete(message.id); clearTimeout(held.timer);
@@ -171,7 +183,23 @@ try {
   const pages = await waitJson(`http://127.0.0.1:${debugPort}/json`);
   cdp = new CDP(pages.find((page) => page.type === 'page').webSocketDebuggerUrl);
   await cdp.ready();
-  await Promise.all([cdp.send('Page.enable'), cdp.send('Runtime.enable')]);
+  cdp.on('Runtime.exceptionThrown', ({ exceptionDetails }) => {
+    consoleProblems.push(exceptionDetails?.exception?.description ||
+      exceptionDetails?.text || 'uncaught JavaScript exception');
+  });
+  cdp.on('Runtime.consoleAPICalled', ({ type, args }) => {
+    if (type === 'error') consoleProblems.push(args.map((arg) => arg.value ||
+      arg.description || '').join(' '));
+  });
+  cdp.on('Network.loadingFailed', ({ canceled, errorText }) => {
+    if (!canceled) failedRequests.push(errorText || 'network request failed');
+  });
+  cdp.on('Network.responseReceived', ({ response }) => {
+    if (response?.status >= 400) httpProblems.push(response.status + ' ' + response.url);
+  });
+  await Promise.all([
+    cdp.send('Page.enable'), cdp.send('Runtime.enable'), cdp.send('Network.enable')
+  ]);
   const base = `http://127.0.0.1:${port}`;
   const dayState = {
     date: '2026-05-24', missal: CALENDAR, mass: MASS,
@@ -315,6 +343,11 @@ try {
   await rm(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 });
 }
 
+if (consoleProblems.length || failedRequests.length || httpProblems.length) {
+  failures.push({ name: 'browser-diagnostics', message: JSON.stringify({
+    consoleProblems, failedRequests, httpProblems
+  }) });
+}
 if (failures.length) {
   for (const failure of failures) process.stderr.write(failure.name + ': ' + failure.message + '\n');
   if (failures.some((failure) => failure.name === 'harness')) process.stderr.write(chromeError);
@@ -331,5 +364,5 @@ process.stdout.write(JSON.stringify({
   ].map((name) => ({
     name, status: failures.some((failure) => failure.name === name) ? 'fail' : 'pass'
   })),
-  failures
+  failures, consoleProblems, failedRequests, httpProblems
 }) + '\n');

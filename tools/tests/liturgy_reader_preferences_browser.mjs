@@ -79,6 +79,10 @@ class CDP {
     this.socket = new WebSocket(url);
     this.next = 0;
     this.pending = new Map();
+    this.events = new Map();
+  }
+  on(name, handler) {
+    this.events.set(name, [...(this.events.get(name) || []), handler]);
   }
   async ready() {
     await new Promise((done, reject) => {
@@ -87,7 +91,10 @@ class CDP {
     });
     this.socket.addEventListener('message', (event) => {
       const message = JSON.parse(event.data);
-      if (!message.id) return;
+      if (!message.id) {
+        for (const handler of this.events.get(message.method) || []) handler(message.params);
+        return;
+      }
       const pending = this.pending.get(message.id);
       if (!pending) return;
       this.pending.delete(message.id);
@@ -164,11 +171,30 @@ const chrome = spawn(CHROME, [
 ], { stdio: 'ignore' });
 let cdp;
 let checks = 0;
+const consoleProblems = [];
+const failedRequests = [];
+const httpProblems = [];
 try {
   const pages = await waitJson(`http://127.0.0.1:${debugPort}/json`);
   cdp = new CDP(pages.find((row) => row.type === 'page').webSocketDebuggerUrl);
   await cdp.ready();
-  await Promise.all([cdp.send('Page.enable'), cdp.send('Runtime.enable')]);
+  cdp.on('Runtime.exceptionThrown', ({ exceptionDetails }) => {
+    consoleProblems.push(exceptionDetails?.exception?.description ||
+      exceptionDetails?.text || 'uncaught JavaScript exception');
+  });
+  cdp.on('Runtime.consoleAPICalled', ({ type, args }) => {
+    if (type === 'error') consoleProblems.push(args.map((arg) => arg.value ||
+      arg.description || '').join(' '));
+  });
+  cdp.on('Network.loadingFailed', ({ canceled, errorText }) => {
+    if (!canceled) failedRequests.push(errorText || 'network request failed');
+  });
+  cdp.on('Network.responseReceived', ({ response }) => {
+    if (response?.status >= 400) httpProblems.push(response.status + ' ' + response.url);
+  });
+  await Promise.all([
+    cdp.send('Page.enable'), cdp.send('Runtime.enable'), cdp.send('Network.enable')
+  ]);
   const clock = await cdp.send('Page.addScriptToEvaluateOnNewDocument', { source: `
     (() => {
       const OriginalDate = Date;
@@ -308,7 +334,10 @@ try {
   await cdp.send('Page.removeScriptToEvaluateOnNewDocument', { identifier: clock.identifier });
   checks += 1;
 
-  process.stdout.write(JSON.stringify({ status: 'pass', checks }) + '\n');
+  assert.deepEqual({ consoleProblems, failedRequests, httpProblems },
+    { consoleProblems: [], failedRequests: [], httpProblems: [] });
+  process.stdout.write(JSON.stringify({ status: 'pass', checks,
+    consoleProblems, failedRequests, httpProblems }) + '\n');
 } finally {
   if (cdp) cdp.close();
   chrome.kill('SIGTERM');

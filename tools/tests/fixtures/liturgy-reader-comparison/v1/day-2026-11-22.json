@@ -1,0 +1,38 @@
+{
+  "schema": "triptych-liturgy-reader-comparison-fixture/v1",
+  "id": "day-2026-11-22",
+  "basis": {
+    "kind": "tracked-production-data",
+    "paths": [
+      "src/web/data/structure/calendar/roman-1962/2026.json",
+      "src/web/data/structure/calendar/postconciliar/2026.json",
+      "src/web/data/structure/rubrics/roman-1962.json",
+      "src/web/data/structure/rubrics/postconciliar.json",
+      "src/web/data/structure/propers/roman-1962.json",
+      "src/web/data/structure/propers/postconciliar.json"
+    ]
+  },
+  "comparison": {
+    "dimension": "recension",
+    "anchor": {"civilDate": "2026-11-22", "territorialContext": "universal"},
+    "sides": [
+      {"id": "roman-1962", "edition": {"id": "roman-1962"}, "calendar": {"id": "roman-1962"}},
+      {"id": "postconciliar", "edition": {"id": "postconciliar"}, "calendar": {"id": "postconciliar"}}
+    ]
+  },
+  "expected": {
+    "calendar": [
+      {"id": "roman-1962", "winner": "last-sunday-after-pentecost", "formulary": "last-sunday-after-pentecost"},
+      {"id": "postconciliar", "winner": "christ-the-king", "formulary": "christ-the-king"}
+    ],
+    "unitCount": 12,
+    "oneSided": {
+      "roman-1962": ["responsorial-psalm", "reading-2"],
+      "postconciliar": ["gradual", "offertory-chant"]
+    },
+    "textUnavailable": {
+      "roman-1962": [],
+      "postconciliar": ["collect", "prayer-over-offerings", "prayer-after-communion"]
+    }
+  }
+}

@@ -215,9 +215,9 @@ class ProductionLedgerTests(unittest.TestCase):
             # Agnes secundo Secret, a witness-gap slot with no stub row before.
             # 1114 later that day: St Angela Merici's own Secret and
             # Postcommunion, new slots, each with a new collated row.
-            # 1119 since 2026-10-19 (C3): the Pentecost Introit, Lesson,
-            # Gospel, Offertory and Communion carry the Missal's own Latin.
-            "roman-1962": (1119, 5),
+            # 1120 since 2026-10-20 (C3): St Lucy's Communion carries the
+            # Missal antiphon rather than a Bible reconstruction.
+            "roman-1962": (1120, 5),
             "roman-pre-1955": (0, 0),
         }
         for calendar, (total, repeated) in expected.items():
@@ -237,8 +237,8 @@ class ProductionLedgerTests(unittest.TestCase):
 
     def test_publication_loader_validates_production_source_metadata(self) -> None:
         # 1114 since 2026-10-01: St Angela Merici's Secret and Postcommunion.
-        # 1119 since 2026-10-19 (C3): the five Pentecost Missal chants and readings.
-        expected = {"postconciliar": 329, "roman-1962": 1119, "roman-pre-1955": 1119}
+        # 1120 since 2026-10-20 (C3): St Lucy's Communion has its own body.
+        expected = {"postconciliar": 329, "roman-1962": 1120, "roman-pre-1955": 1120}
         for calendar, count in expected.items():
             records, problems = publication_records(CALENDARS, calendar, INVENTORIES)
             self.assertEqual([], problems)
@@ -278,10 +278,10 @@ class ProductionLedgerTests(unittest.TestCase):
         # page image and on a page image of the 1862 Pustet or the 1922 Mame.
         # 1068 later that day: St Angela Merici's own Secret and Postcommunion,
         # read on the 1962 page image and on the 1862 Pustet's (and the Mame's).
-        # 1073 since 2026-10-19 (C3): the Pentecost Introit, Lesson, Gospel,
-        # Offertory and Communion, each read on the 1962, 1862 and 1922 page images.
-        self.assertEqual(1073, len(permitted))
-        self.assertEqual(1073, len(roman))
+        # 1074 since 2026-10-20 (C3): St Lucy's Communion is independently
+        # collated on the 1962 and public-domain Mame 1922 page images.
+        self.assertEqual(1074, len(permitted))
+        self.assertEqual(1074, len(roman))
         target_artifact = (
             "artifact.catholic-church.missale-romanum."
             "vatican-typica-1962.cmaa-facsimile-pdf"

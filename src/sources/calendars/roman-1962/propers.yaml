@@ -51637,11 +51637,14 @@ sections:
           Sanctorum: quorum se meritis de tribulatione percepisse cognoscit auxilium.
           Per Dominum.
       - name: Communion
-        source: scripture
+        incipit: 'Principes persecuti'
+        source: mixed
         notes: >-
-          Missale Romanum 1962, registered CMAA facsimile, artifact PDF p. 521,
-          printed p. 440, marginal no. 1898. The Ps. 118, 161-162 citation
-          was checked on the page image on 2026-10-20.
+          Printed locus printed p. 440, no. 1898; registered CMAA facsimile PDF
+          p. 521. The whole antiphon and its Ps. 118, 161-162 citation were read
+          on that page image and corroborated word for word in the public-domain
+          Mame Tours 1922, printed p. 497, registered PDF p. 611. The 1962 text
+          says quasi; Bible expansion says sicut and includes the psalm heading Sin.
         verses:
         - book: Psalms
           ranges:
@@ -51651,7 +51654,9 @@ sections:
             end:
               chapter: 118
               verse: 162
-          ref: Psalms 118:161-162
+          ref: 'Psalms 118:161-162'
+        text: |
+          Principes persecuti sunt me gratis, et a verbis tuis formidavit cor meum: laetabor ego super eloquia tua, quasi qui invenit spolia multa.
       - name: Postcommunion
         source: composed
         notes: >-
