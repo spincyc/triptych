@@ -1,0 +1,301 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "HOM-001",
+      "location": "sections/homily/10-homily.tex l.86 ('Christ was born a King, as Chrysostom insists.') and l.93 ('The kingdom is his by birth. As man, he wins the nations')",
+      "problem": "Chrysostom's 'If then He was born a king, all His other attributes are by Generation' (Hom. in Io. 83.4) means the eternal generation. The reviewed study states that Augustine reads 'For this was I born' of the birth from the Virgin and Chrysostom of the eternal generation (sections/30 l.216-218). The speech never says which birth. A parish hearer will naturally take 'born a King' as Bethlehem, which is Augustine's sense, and so hear it credited to Chrysostom. Heard that way, 'his by birth' against 'As man' loses the contrast the paragraph turns on: King by nature, and the dominion won as man by the passion. The intervening 'Why should the eternal Son ask?' helps a careful listener. The doctrine stays true on either hearing, but the speech does not make the claim precise.",
+      "required_result": "Name the birth in the Chrysostom sentence, for example 'born a King from the Father before all ages, as Chrysostom insists'. Make 'The kingdom is his by birth' audibly that birth, for example 'his by his eternal birth', so that 'As man, he wins the nations' is heard as the second title.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-002",
+      "location": "sections/homily/90-note.tex l.48-51 ('The difference that matters to the argument is kept: Chrysostom's King, born a king and receiving nothing in addition, stands beside ...'); research/production-review.md, Derive-homily, 'Bounds kept', first bullet ('the speech says, with Chrysostom, that Christ was born a King and received nothing in addition')",
+      "problem": "The speech says only 'Christ was born a King, as Chrysostom insists. Yet this Mass says that he receives.' It never voices Chrysostom's 'He has nothing which He received in addition'. The production record's statement that the speech says this is untrue of the text. The note's sentence implies the same by saying the difference 'is kept' in those terms. These are records of what the speech contains, and both overstate it.",
+      "required_result": "Make the note and the production record describe what the speech actually says. Either have the speech voice Chrysostom's denial in a clause, which HOM-001's repair could include, or correct the note's sentence and the production-review bullet to say that the speech gives Chrysostom's premise, that Christ was born a King, against the Mass's receiving, and places the receiving in the humanity with Aquinas and Augustine.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-003",
+      "location": "sections/homily/10-homily.tex l.128-130 ('soldiers, a few minutes after a Gospel in which the King says that his servants do not fight for him')",
+      "problem": "Between the Gospel and the Postcommunion stand this 11-12-minute homily, the Credo, the Offertory, the Canon and the Communion. At any form of the 1962 Mass that is well over half an hour, not 'a few minutes'. The point is that the same Mass sets the two texts side by side, and that is true. The measure of time given for it is not, and a hearer sitting through the Mass will notice.",
+      "required_result": "Replace 'a few minutes after a Gospel' with a true expression of the same nearness, for example 'in the same Mass as a Gospel' or 'within the hour of a Gospel'.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-004",
+      "location": "sections/homily/10-homily.tex l.145 ('We shall not see this kingdom complete.')",
+      "problem": "The movement of hope opens with an unqualified negative in the future tense. Taken literally, it denies the faithful the sight of the completed kingdom that the next sentences promise: all give him homage at the judgment, he sits king for ever, and the Postcommunion asks to reign with him. The sense intended is 'not in this life' or 'not yet' (Theodoret's 'some willingly in the present life, but all after the resurrection'). The speech does not say so, and the anagogical claim it makes at this point is imprecise.",
+      "required_result": "Qualify the sentence so that it says 'not yet' or 'not in this life', for example 'We do not yet see this kingdom complete', consistent with the judgment and the eternal reign the paragraph then announces.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-005",
+      "location": "sections/homily/10-homily.tex l.133-134 ('Blessed Ildefonso Schuster, on this prayer, ...') and l.145-152 (the hope paragraph, especially the 47-word sentence 'The Alleluia sang ... but peace in himself.')",
+      "problem": "Schuster is named twice and never identified. An adult parish assembly in 2026 will mostly not know who he is, or why his word on this Mass's prayers carries weight; the other witnesses are household names. His second mention falls in the densest stretch of the speech. Three sentences carry the Alleluia's quotation, the Communion's quotation (with a printed ellipsis the speaker cannot voice), Augustine's gloss on peace and then Schuster's quotation. The longest of them runs to 47 words. At the climax of hope, the listener receives four quotations and two names faster than he can place them.",
+      "required_result": "At Schuster's first mention, identify him in a few words his own book supports, for example 'Blessed Ildefonso Schuster, who wrote a commentary on the Masses of the Missal', or let the attributed sentence stand without the name. Split the 47-word sentence at the Communion so that each quotation is heard as one unit, quoting one half-verse or giving the two halves as separate sentences, with no ellipsis to read aloud.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-homily.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "homily-body"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-note",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-note.tex",
+          "references": [
+            "propers/verified.md",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "preface",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Hilary of Poitiers",
+            "Thomas Aquinas",
+            "Bede",
+            "Augustine of Hippo",
+            "Robert Bellarmine",
+            "Jerome",
+            "John Chrysostom",
+            "Cyril of Alexandria",
+            "Cassiodorus",
+            "Theodoret of Cyrus",
+            "Victorinus of Pettau",
+            "Alfredo Ildefonso Schuster",
+            "Pius XI"
+          ],
+          "carrying_authors": [
+            "Hilary of Poitiers",
+            "Thomas Aquinas",
+            "Bede"
+          ],
+          "component_keys": [
+            "lamb-receives-the-kingdom"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "lamb-receives-the-kingdom",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Robert Bellarmine",
+            "Thomas Aquinas",
+            "Hilary of Poitiers",
+            "Cyril of Alexandria",
+            "Theodoret of Cyrus",
+            "Cassiodorus",
+            "Alfredo Ildefonso Schuster",
+            "Pius XI"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "kingdom-not-from-hence"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "kingdom-not-from-hence",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Hilary of Poitiers",
+            "Basil of Caesarea",
+            "Robert Bellarmine",
+            "Thomas Aquinas",
+            "Jerome",
+            "John Chrysostom",
+            "Cyril of Jerusalem",
+            "Hippolytus",
+            "Cassiodorus",
+            "Theodoret of Cyrus",
+            "Alfredo Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Hilary of Poitiers"
+          ],
+          "component_keys": [
+            "kingdom-handed-over"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "kingdom-handed-over",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/format.tex": "cc33d5765188cce6fa31b8e4dc43155d4532bac6751ac97dfb9b8aaf5ca72e99",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/homily.tex": "a38a37c1a088bcb8274e44cf777d554cca4aed21116bd232ad978c296c8928ef",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/propers/verified.md": "9143952738783440066980eb86f88120339fb9adbf345bec4917acdd15867082",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/interpretations.md": "6240046d9e42933f0635eb030ba6176fc8885d40bff415655658b4e09462034d",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/scope.md": "1d7d17bd9b988011888eb261ea23de73b5812a893e8902de1c34a44bd4a6f405",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/homily/10-homily.tex": "b060471832debec8aca6dd5a0544e9135670337b93aef0a43dbbe3d38a36769e",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/homily/90-note.tex": "503a5fb8bd41ce51a0f3370cbe7f78577ea082822b99777d4d31264a574b4e28",
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "12",
+            "e6d49782e4c62eb282fbb9ce1e18a27f1e74c81170f26533f5efea288ebf4ff5",
+            "7397c12187517ff2",
+            "9b87d598b34870344f3df756982af1ff5990d993",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Cold review of the F01 Christ the King homily: homily.tex, sections/homily/10-homily.tex (the spoken body) and sections/homily/90-note.tex. All seal hashes matched. I read the speech straight through as a listener would hear it, then checked it against the reviewed study (sections/20 and 30) and research/interpretations.md. It makes one clear exegetical claim that rises from the text. 'Not of this world ... not from hence' (Jn 18:36) tells where the kingdom comes from, not where it is (Augustine, Tract. in Io. 115.2). It is therefore everywhere (Aquinas, Super Io. 18 lect. 6). That turn changes the hearer's split between Sunday and Monday, and the speech carries it into concrete fruit: the hearer's own office and the Introit's verse as a prayer for it. It moves on to the altar and to hope, and it ends where it began, in the governor's hall. It passes the text-substitution test. Its question, image and turn depend on this Gospel's de/ex/hinc and its servants who do not strive. They also depend on the Gradual's kings and the psalm's poor, the Offertory's Postula, the Collect's wound, the Secret's gifts of unity and peace and the Postcommunion's standard. Evidence checked at the witnesses, not through the records: every Douay quotation against the tracked Challoner chapters (Jn 18:1, 12, 28, 33-37; Apoc 1:6; 5:12; Ps 2:7-8; 28:10; 71:1-2, 8, 11-12; Col 1:12-13; Dan 7:14); every Lasance phrase against propers/verified.md; Augustine, Tract. 115.2 (tracked NPNF I.7) and En. in Ps. 2.7, 28.11 and 71.13-14 (tracked NPNF I.8), all verbatim, with the of/in and here/from-hence distinctions present in 115.2; Chrysostom, Hom. in Io. 83.4 (New Advent copy, SHA-256 c210c008...cbf3e, matched): 'Here He shows the weakness ...', 'By consenting, and giving Himself up' and 'born a king', verbatim; Aquinas, Super Io. 18 lect. 6 (copy ed660055...5ce3, matched): 'non est hinc ... est tamen hic, quia ubique est'; Super Ps. 2 n. 6 (copy 73a0a0c2..., matched): the asking by prayer and by passion; both paraphrased faithfully; Hilary, Tract. in Ps. 2.42, read on the CSEL 22 p. 70 page image (09c447af..., matched): 'hoc itaque regnum dei est, ubi peccatum uincitur, ubi mors perimitur'; Bellarmine on Ps 71:1 in the tracked O'Sullivan text; Schuster, Sacramentary V p. 204 (OCR 65192aa1...9b11, matched), both quotations verbatim. No attribution is unsupported. No Father is credited with a join he does not make. No anecdote, personal experience, clerical identity or composed prayer appears, and the closing acclamation is exact Douay. The spoken body is about 1,460 words, about 11.2-12.2 minutes at 120-130 words a minute, so the note's 'about 1,470' and '11.3 to 12.2 minutes' are accurate. This is an arithmetic estimate, and no timed delivery is certified. The note's loci and element numbers agree with verified.md and the witnesses. Five advisories: which birth Chrysostom means; the note and audit overstating what the speech says of Chrysostom; 'a few minutes after a Gospel'; 'We shall not see this kingdom complete'; and Schuster unidentified in the densest passage. Limits: I did not build the PDF; I viewed only the author's proof pages 1-2, and visual review is a later stage. Theodoret is used only in the note and was not re-read. Verdict: PASS."
+}

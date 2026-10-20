@@ -1,0 +1,7 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/artifacts.json",
+  "disposition": "PASS",
+  "iteration": 0,
+  "stage": "build-artifacts",
+  "summary": "Built the three F01 artifacts with make doc PROVIDER=claude: expansive study 33 pp (sha256 444c7e0c622e97a87146cd7553db1fc40f6d416638cc700bc2c75b1879dc17cc), concise study 12 pp (b6d09cd2bc470578fbce8f1c2acaa633f837894735b2738cde8c6392525d54b9), homily 4 pp (135104188244d48d735be63dbddd3fc4d9bb856bcfc74d47f3c7752f09fd7419; already current, not rebuilt). Logs clean (no fatal, overfull/underfull, undefined, rerun, font or missing-character warning); all fonts embedded subset Type 1 with ToUnicode; text extracts cleanly; concise aux places inventory+four senses on p1, chronology p2, themes p3-4, commentary start p5. No layout or source edit was made. Recorded the snapshot (research/artifacts.json), generated rasters with tools/tpt pdf-review into build/tpt-runs/7397c12187517ff2/artifacts/build-artifacts-0000/rasters (receipt review-run.json), and appended the build-artifacts entry to research/production-review.md. The artifact-gate command (_proper_study.py check --phase artifacts with all five --require options) and check-proper-components --phase artifacts for all three editions pass. Pages not yet visually reviewed."
+}

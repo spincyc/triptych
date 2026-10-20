@@ -1,0 +1,401 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "accepted_because": "The quotation and its citation (Dan 7:14) follow at once, and the next sentence names 'the words that begin the verse', so no reader mistakes what is sung. A repair would reopen settled page-3 prose for a phrase.",
+      "id": "SYN-006",
+      "location": "sections/concise/04-themes.tex l.55-60 (physical p. 3, paragraph 'The two chants after the Epistle measure that kingdom')",
+      "problem": "'The Alleluia sings the second half of Daniel's vision of one like a son of man' is loose. The vision is Dan 7:13-14, and the Alleluia sings only the last clauses of verse 14. The commentary states it exactly ('the possessing half of Dan 7:14', p. 6).",
+      "required_result": "If the page is touched again, write 'the second half of Dan 7:14, the close of Daniel's vision of one like a son of man'.",
+      "severity": "accepted"
+    },
+    {
+      "id": "SYN-007",
+      "location": "sections/concise/90-apparatus.tex l.94-96 (Lasance entry of the References, rendered p. 12)",
+      "problem": "The concise References give the Lasance New Roman Missal at 'pp. 813-814 (Preface of Jesus Christ, King) and 1257-1260 (Feast of Our Lord Jesus Christ, King)'. The concise uses the Lasance only for the Preface's goods (p. 4, and the scope appendix: 'The English of the Preface's goods is the Lasance'). propers/verified.md places those at printed pp. 813-814. The orations are described from the Latin, not quoted in the Lasance English, so pp. 1257-1260 support nothing in this document. That range is a locus carried over from the expansive entry, and the profile keeps unused material out of References. The v12 references-used check does not reach a page range of this kind.",
+      "required_result": "Drop 'and 1257-1260 (Feast of Our Lord Jesus Christ, King)' from the concise Lasance entry, or cite those pages where the concise relies on them.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 1,
+  "observations": [
+    {
+      "location": "rendered concise study p. 2, row-3bd03395c37c5ada (Tract: Ps 88:27-28,30, historical setting)",
+      "note": "The Tract's row still prints the generated A.M. 3416 / B.C. 586-588 setting under the rubric's label. It lacks the Haydock qualification (Calmet's Babylonian proposal, Worthington's Davidic alternative), which research/scope.md section 8.4 does not record. This is the standing research advisory RES-014 and study advisory STU-007(c), left in this run by the driver's decision."
+    },
+    {
+      "location": "rendered concise study p. 11 (running head)",
+      "note": "Page 11 opens with the last paragraph of the commentary under the head 'Scope and References', the head of the appendix that begins lower on that page. This is the shared first-mark running-head behaviour, and it is left to the visual evaluation."
+    },
+    {
+      "location": "rendered concise study p. 2, Passage cells of row-6c43dd5e0531017f and row-7fbe70097919820b",
+      "note": "The generator writes 'Ps 71:1 (Vulgate numbering ...)' for the Introit but 'Psalms 71:8,11', 'Psalms 2:8' and 'Psalms 28:10-11' for the other elements in the same cell. The Introit's '71:1' is the Missal's count, not the Clementine's, which numbers the title as verse 1 (sections/05-appointed-texts.tex l.62-64). This is a presentation inconsistency in tools/tpt proper-chronology annotations."
+    },
+    {
+      "location": "sections/concise/04-themes.tex l.105-112 (p. 4), carried from sections/10-each-element.tex l.271-280 and sections/00-opening.tex l.48",
+      "note": "Both studies render the Preface's central sentence clause by clause in the editor's own English ('offering himself on the altar of the cross as a spotless and peace-making victim, he might accomplish the mysteries of man's redemption ...'). They quote the Lasance English, which propers/verified.md holds for the whole Preface, only for the goods. The study review accepted this form, and the concise inherits it. No gate tests where description of an oration ends and the guide's own translation begins, and the 1962 profile's English rule ('never composed, translated, adapted, or paraphrased by the guide') reaches that line. That boundary looks like a missing criterion rather than a defect of this leaf."
+    },
+    {
+      "location": "tools/check-content-preflight, references-used check (synthesis edition)",
+      "note": "The v12 check holds Bible-list loci and commentary divisions to citations in the body. It does not test a printed page range on a non-commentary entry (SYN-007's Lasance pp. 1257-1260 passes), and it does not test whether the listed loci exist in the witness's own versification. Locus hygiene for such entries is still left to the reviewer."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-inventory",
+          "kind": "front-matter",
+          "path": "sections/concise/01-inventory.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-inventory"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-overview",
+          "kind": "front-matter",
+          "path": "sections/concise/02-overview.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "concise-date-location",
+          "kind": "front-matter",
+          "path": "sections/concise/03-date-location.tex",
+          "references": [
+            "format.tex",
+            "research/chronology-annotations.tex",
+            "research/chronology.toml"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-overview"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-themes",
+          "kind": "front-matter",
+          "path": "sections/concise/04-themes.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-themes"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-commentary",
+          "kind": "integrated-commentary",
+          "path": "sections/concise/10-commentary.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/concise/90-apparatus.tex",
+          "references": [
+            "propers/verified.md",
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "preface",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Hilary of Poitiers",
+            "Thomas Aquinas",
+            "Bede",
+            "Augustine of Hippo",
+            "Robert Bellarmine",
+            "Jerome",
+            "John Chrysostom",
+            "Cyril of Alexandria",
+            "Cassiodorus",
+            "Theodoret of Cyrus",
+            "Victorinus of Pettau",
+            "Alfredo Ildefonso Schuster",
+            "Pius XI"
+          ],
+          "carrying_authors": [
+            "Hilary of Poitiers",
+            "Thomas Aquinas",
+            "Bede"
+          ],
+          "component_keys": [
+            "lamb-receives-the-kingdom"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "lamb-receives-the-kingdom",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Robert Bellarmine",
+            "Thomas Aquinas",
+            "Hilary of Poitiers",
+            "Cyril of Alexandria",
+            "Theodoret of Cyrus",
+            "Cassiodorus",
+            "Alfredo Ildefonso Schuster",
+            "Pius XI"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "kingdom-not-from-hence"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "kingdom-not-from-hence",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Hilary of Poitiers",
+            "Basil of Caesarea",
+            "Robert Bellarmine",
+            "Thomas Aquinas",
+            "Jerome",
+            "John Chrysostom",
+            "Cyril of Jerusalem",
+            "Hippolytus",
+            "Cassiodorus",
+            "Theodoret of Cyrus",
+            "Alfredo Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Hilary of Poitiers"
+          ],
+          "component_keys": [
+            "kingdom-handed-over"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "kingdom-handed-over",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/format.tex": "cc33d5765188cce6fa31b8e4dc43155d4532bac6751ac97dfb9b8aaf5ca72e99",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/propers/verified.md": "9143952738783440066980eb86f88120339fb9adbf345bec4917acdd15867082",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/chronology-annotations.tex": "af2c35d8036178cb960e10ecd6b0aa4257bda8546627fad01626cde3d19b99ac",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/chronology.toml": "27873806725ed5b4bc8b87f199400f654b42689ec1a4afb95c5e8e94919d50cb",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/interpretations.md": "6240046d9e42933f0635eb030ba6176fc8885d40bff415655658b4e09462034d",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/scope.md": "1d7d17bd9b988011888eb261ea23de73b5812a893e8902de1c34a44bd4a6f405",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/01-inventory.tex": "9c7c72f6d0539b10e46e98053ac901c618e50d100c0340622e382522be4729c7",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/02-overview.tex": "e9c4c92434eaf41d457cdbd992ba9fb0bb275a77b7e0a4d040ae51ba5656059a",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/03-date-location.tex": "c337229a243246e9aa6cd7b570968a1ab41dada032eb9d5df56f28cbea63dc2a",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/04-themes.tex": "9c0e718454a709dd7f24d9e6cba416a2f38e95234e1a635843666dae6eb7758f",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/10-commentary.tex": "85cc8015ad247320dbb5c315292790ac64e66d8255a6b6f71ddca288ed96a376",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/90-apparatus.tex": "752a6eec06a8070bb7afd193fa9e71c866172eee4c19a383df8293ee0a0ce363",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/synthesis.tex": "a9c31163c48452c6741a42c5f4ed2472a5ac77000a59b8dc17724e7277ba2441",
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "12",
+            "e6d49782e4c62eb282fbb9ce1e18a27f1e74c81170f26533f5efea288ebf4ff5",
+            "7397c12187517ff2",
+            "9b87d598b34870344f3df756982af1ff5990d993",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "synthesis",
+    "schema": 1
+  },
+  "stage": "synthesis-review",
+  "summary": "Reviewed the concise study of the Claude 1962 leaf liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king (synthesis.tex and sections/concise/01-90). All 15 sealed REVIEW_INPUTS hashes matched. I rebuilt it in my own scratch area: 12 pages, settled in two passes, SHA-256 6e68e132...dca8, byte-identical to the author proof. The log has no overfull box, underfull box or undefined reference, all fonts are embedded Latin Modern, and the metadata gate passes against the PDF. On my aux, check-proper-components --edition synthesis passes. The settled zref markers put the inventory, the overview and the four sense rows on physical page 1, the chronology on page 2, the themes on pages 3-4 and the commentary start on page 5. I read all 12 rendered pages and diffed the extracted text against the iteration-0 build (e799cfed...2bb5). The changes are confined to the five repairs and the timestamp. SYN-001 is repaired. Page 4 now says that the flood clause comes before the sung half-verses and the strength given to his people between them, which agrees with propers/verified.md section 10 and the tracked Challoner Ps 28:10. The four advisories are cleared. SYN-002: Jerome is credited only with his reading of Dan 7:13-14 by Phil 2:6-8 (research/scope.md section 3.6), the extension to other texts is the commentary's own step, and Hilary 'does not make'. SYN-003: the Douay loci are in the Challoner text's own numbering, each checked against the tracked chapters (Ps 71:1-2, 28:1, 10, 88:1, 39-45, Dan 1:1-6, 7:1, Col 1:2, 4:3, 18, Apoc 1:9). The scope appendix states the numbering difference, Haydock's locus is given, and Ps 71:2 is quoted with the comma. SYN-004: the servants contrast is stated once on page 4 in the terms of Jn 18:36. SYN-005: Augustine's two loci are said to concern two births and not to conflict. Each reading's answer can be recovered from the concise prose alone. First: King by nature, he receives as man, by asking and by the passion, the dominion that was his by inheritance (one dominion by two rights), so the slain Lamb receives in the nature he took the glory he always had. Second: the kingdom takes its origin and means from above, so it is everywhere and in the faithful; kings owe it conversion, service in their office and homage at the judgment, and Christ is no rival of Caesar. Third: the kingdom handed over is the redeemed brought to the vision of God, the handing over is no abdication, and the session begins now and is completed after the judgment. These answers agree with the expansive readings and comparison (sections/20, 30, 40, 50). The commentary sets the witnesses beside one another within each question, and from page 5 it argues well beyond the thematic opening. I spot-checked these quotations against the tracked or research witnesses: Augustine, Tract. in Io. 115.1-4 (NPNF I.7 CCEL text) and En. in Ps. 28.10-11 (NPNF I.8); Chrysostom, Hom. in Io. 83.4 (research copy); and every Douay verse quoted. Page-2 lookup on the rendered table: Epistle Col 1:12-20 gives one composition row, Paul writing in bonds (Col 4:3, 18) to Colossa (1:2), the common view placing him at Rome, Disputed: A.D. 61; A.D. 61-63, with the writer's place and the recipients' kept apart. Communion Ps 28:10-11 pairs with the shared psalm rows: historical setting 'Occasion date unresolved', composition 'Before c. 165 B.C.'. Introit Apoc 1:6, 5:12 gives John writing at Patmos (Apoc 1:9), Disputed: A.D. 81-96; c. A.D. 90-100. Each pairing is found without crossing a paragraph. No blocking defect remains. One accepted finding (a loose 'second half of Daniel's vision' on p. 3) and one advisory (an unused Lasance page range in the concise References) are recorded. The Tract's page-2 row remains the standing research advisory RES-014 / STU-007(c), unchanged by the driver's decision. Limits: page 1 and page 2 are unchanged since iteration 0 and were re-read but not re-derived. Loci the concise copies unchanged from the reviewed study were checked by sampling, not exhaustively."
+}

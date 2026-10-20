@@ -1,0 +1,44 @@
+% Concise study of the feast of Our Lord Jesus Christ the King, derived from
+% the canonical expansive study in this same leaf. The physical page positions
+% of the opening four pages are fixed by
+% guidance/liturgy/propers-three-documents.md and are recorded in the settled
+% auxiliary file by the zref markers each opening component carries. No cover
+% or contents page stands before them. The generated chronology definitions
+% are imported once, by the page-2 component itself.
+\input{common/preamble}
+\input{common/propers-format}
+\input{liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/format}
+
+\hypersetup{
+  pdftitle={Our Lord Jesus Christ the King: A Concise Study of the Proper in the 1962 Roman Missal},
+  pdfsubject={Concise study of the 1962 Missale Romanum proper of the feast of Our Lord Jesus Christ the King, last Sunday of October, as said on 25 October 2026: the appointed elements, four overview senses, the scriptural date and location of each passage, the movement of the formulary, and a commentary comparing three readings of the whole Mass}
+}
+
+\begin{document}
+\propertitle{Our Lord Jesus Christ the King}
+{D. N. Iesu Christi Regis}
+{Missale Romanum 1962 \quad\textperiodcentered\quad Sanctorale, last Sunday of October \quad\textperiodcentered\quad Sunday 25 October 2026}
+{The Lamb, the kingdom not from hence, and the kingdom handed over: three readings compared}
+
+\input{liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/01-inventory}
+\input{liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/02-overview}
+\clearpage
+\input{liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/03-date-location}
+\clearpage
+\input{liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/04-themes}
+\clearpage
+\input{liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/10-commentary}
+\input{liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/90-apparatus}
+% The metadata file prints the revision timestamp once, after the References;
+% the rights colophon follows it on the same final page. \Needspace ends the
+% page ahead of the colophon whenever the block cannot stand where the
+% References end, so the colophon never lands on a page of its own.
+\begingroup
+\hbadness=10000
+\footnotesize
+\setlength{\parindent}{0pt}
+\input{liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/generation-metadata}
+\Needspace{3\baselineskip}
+\TriptychRightsNotice
+\endgroup
+\end{document}

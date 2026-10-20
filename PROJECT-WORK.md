@@ -30,10 +30,33 @@ adult parish assembly, and the canonical study's web edition. The production
 plan records this exact scope opening. No GPT leaf exists for this identity,
 and this independent Claude production borrows from no other leaf.
 
-**In progress.** Authorization and acceptance criteria are recorded; the run
-has not yet been seeded. Work is committed on `feature/propers/claude`, the
-workspace's required branch, and reaches `main` by fast-forward after the
-local deploy gates pass.
+**Accepted; fast-forward to `main` and live verification pending.** Run
+`7397c12187517ff2` (`proper-study` v12) reached ACCEPTED at its publication
+gates with no escalation: 33 packets, 33 accepted results, four
+interventions. Every agent stage ran as a fresh `claude-opus-5-5[1m]` subagent
+at its packet's declared effort, and every review was a fresh worker. Four
+cycles were real defects that cold reviews found and repaired. Two were in
+research: held commentaries not read, Augustine's own Ps 71 reading omitted
+and the not-said Tract's page-2 rows unaccounted for; then Schuster credited
+with links he never makes. One was in the study, where research instructions
+reached reader prose and the comparison misstated the readings. One was in the
+concise study, which misplaced the Communion's unsung flood clause. The Latin
+of this 1925 formulary rests on its first printing in *Acta Apostolicae Sedis*
+17 (1925), collated against the 1962 pages; the orations and Preface take the
+Lasance 1945 English. Before research sealed it, the driver corrected the
+shared calendar's Communion citation to Ps 28:10–11, with the maintainer's
+authorization. The driver's verification of that change missed the four Bible
+indexes and two release bindings it staled. Both were repaired within the
+production. The installed family is a 33-page expansive study, a 12-page
+concise study, a four-page homily (about 1,460 spoken words) and the canonical
+web edition. The run is archived in the leaf under
+`evaluations/proper-study-results/7397c12187517ff2/`. The driver's account
+covers every cycle, the 15 standing advisories and 2 accepted findings, and
+what is left for other owners, notably the calendar's inability to say when a
+proper is said:
+[CYCLES.md](workflows/reviews/claude-1962-f01-production-2026-10-19/CYCLES.md).
+Work is committed on `feature/propers/claude` and reaches `main` by
+fast-forward after the local deploy gates pass.
 
 ## Claude postconciliar Twenty-ninth Sunday revision, 2026-10-16
 

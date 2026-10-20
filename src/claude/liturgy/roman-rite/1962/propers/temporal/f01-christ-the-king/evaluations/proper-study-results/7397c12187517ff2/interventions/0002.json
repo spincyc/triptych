@@ -1,0 +1,6 @@
+{
+  "encoded": false,
+  "stage": "research-preflight",
+  "text": "Driver event after research 0: that stage reported that, after the driver's calendar correction aa94dd3b4 (Communion Psalms 28:10 -> 28:10-11), tools/index-bible check found the douay-rheims index stale and mass-propers show printed no Communion text. The driver confirmed the cause: the Clementine, both Douay-Rheims printings and the Catholic Public Domain Version indexes were current at 9b87d598b and stale after aa94dd3b4, because the indexes are keyed by calendar reference strings and the driver's verification ran check-sources, which does not reach check-bible-indexes. The driver rebuilt those four indexes with index-bible build (commit 0fc5dce93) before research-preflight and research-review, so the research seal is taken over current indexes. The leaf's chronology record stays current. research/scope.md section 10's statement that the index is stale describes the state when research 0 ran, and is no longer true.",
+  "timestamp": "2026-10-19T16:34:42Z"
+}
