@@ -19688,11 +19688,11 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/paragraphs/world-english-bible-catholic/73-apoc/022.json` | `b38cf221de030ad24aba0c1dd88f0823bcb4a721a25bc35fa8f94e1a903b4097` |
 | `src/web/data/structure/propers/index.json` | `ed462d89e5777f12b009cb962ebe1a59d4a2082a552489198f54feb8067c9536` |
 | `src/web/data/structure/propers/postconciliar.json` | `0f19657026001c5cf92de24823d5c76d2123e353e0228cbf4fa39b8eeeeeb981` |
-| `src/web/data/structure/propers/roman-1962.json` | `1193ec3ff550ba740aca1adf739dda332261342470f79bf07f4f5ea51ae8313d` |
-| `src/web/data/structure/propers/roman-pre-1955.json` | `804c019c3b2391799a2154028dc70b1e4c9a229baffb39d73ab3d465b147b6e6` |
+| `src/web/data/structure/propers/roman-1962.json` | `388ed88fe6c1a6d9c49b1e47c0838ed110e3e57e1f7ac7c79b976bd481e6417f` |
+| `src/web/data/structure/propers/roman-pre-1955.json` | `2e83dd27ab256c501362dccaaed28001ec210118aee7fe689b5933373c06649c` |
 | `src/web/data/structure/propers/search/postconciliar.json` | `1cce16203e3fca4690bb952143cded574c3e63596b92a218a656bdd62802add5` |
-| `src/web/data/structure/propers/search/roman-1962.json` | `1c819c2331055fc096d4bb887f829b1b0ff5ce7e9575dc665c772d7de1e8434a` |
-| `src/web/data/structure/propers/search/roman-pre-1955.json` | `9dee9956ff0db1003f8edef2de476527903f235c7282347dab7a51282049af17` |
+| `src/web/data/structure/propers/search/roman-1962.json` | `353bd2c0944998fea076dc5384aab6c0e71de2b87c8605d359c1387eab28c78a` |
+| `src/web/data/structure/propers/search/roman-pre-1955.json` | `25cc66c7c5bbfe283ea8c684ced1601067f00be1382da5824942a5fd07366732` |
 | `src/web/data/structure/readings/narrative-spine.json` | `9be6d97c206bc3544905f354090567f00f0f08a0b879b79f1d61499cc59db452` |
 | `src/web/data/structure/rubrics/index.json` | `61f18bea60e8f821891efc243a86e01bc140b65b40b3c65c8930e430d69058dc` |
 | `src/web/data/structure/rubrics/postconciliar.json` | `fb9dd1594412905efad869b4ea7031b989cdb9bf445283176f5b905a49d14be9` |
@@ -19925,10 +19925,10 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/catholic-church/missale-romanum/1862-pustet-ratisbon-1862.json` | `de8c86e1fb26a3fe9567d0bc68465269e05e37b2091a9cf7900168ac815cfe38` |
 | `src/web/data/structure/sources/editions/catholic-church/missale-romanum/1889-1889-tournai-desclee-leo-xiii-recognitum.json` | `c502cb632cd3824158e4c4b9c3e687987cd7932f5e460abae710beea5e7257e8` |
 | `src/web/data/structure/sources/editions/catholic-church/missale-romanum/1920-vatican-typica-1920.json` | `a7fc47516338793f660690321d2a29737c165d6273c024cf4785591f9fbfbd19` |
-| `src/web/data/structure/sources/editions/catholic-church/missale-romanum/1922-1922-tours-mame-editio-quarta-iuxta-typicam.json` | `c6d297b3cdd1cb31a53394bd3b28fb79895ab507c56e1b5bdfb9f6083a396b2b` |
+| `src/web/data/structure/sources/editions/catholic-church/missale-romanum/1922-1922-tours-mame-editio-quarta-iuxta-typicam.json` | `9ac05b55a3aea36cf55a3358bb6018118eba07188c47db137862ed6462169945` |
 | `src/web/data/structure/sources/editions/catholic-church/missale-romanum/1942-unidentified-pre-1955-witness-ia-1947.json` | `786b2e8e49d706fcf413e75d42d33bc4f446b3fef47c2a09b712e986d2b3be32` |
 | `src/web/data/structure/sources/editions/catholic-church/missale-romanum/1962-benziger-iuxta-typicam-1962.json` | `bbb24b1f1fd9b5ab014d3d990a0dcce789e0cdb3ce2468a6c6137f9a8239b1a7` |
-| `src/web/data/structure/sources/editions/catholic-church/missale-romanum/1962-vatican-typica-1962.json` | `a000b27d4ee4558cdd396cab967acb0aa7aa48f6def939cf54c6667fabaeb79d` |
+| `src/web/data/structure/sources/editions/catholic-church/missale-romanum/1962-vatican-typica-1962.json` | `34f7e1aff03133056ac81893b8ca1203f0d2d9fff5b390ecbca4915d08212239` |
 | `src/web/data/structure/sources/editions/catholic-church/missale-romanum/2002-vatican-typica-tertia-2002.json` | `3dce32192b9bbf0a8426073228be09a78129b02f82baeafd6e93f10af417ba80` |
 | `src/web/data/structure/sources/editions/catholic-church/missale-romanum/2004-2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920.json` | `a28b09b1ad359d05cdcb1f724862c22bd2ecb822013ec9171a90664fb4cecadc` |
 | `src/web/data/structure/sources/editions/catholic-church/missale-romanum/2008-vatican-typica-tertia-reimpressio-emendata-2008.json` | `2113248293f736b443ea5ca39e0568b314dc2b814f87161f5a1adf55aac318a9` |
@@ -20724,7 +20724,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/tranquille-de-saint-remi/veritable-relation-1634/1634-french-1634.json` | `299e94fe0923423f75dec9c25e8474c762cc2f6a0b1c80062bebba86d7ffb4c7` |
 | `src/web/data/structure/sources/editions/triptych/roman-1962-latin-proper-editorial-projection/2026-2026-08-27-editorial-projection.json` | `8e2bece67c1068b83d2c7e04a07a13c8a8c280ace9c3dd0a6569ca1e94760ba8` |
 | `src/web/data/structure/sources/editions/triptych/roman-1962-latin-proper-editorial-projection/2026-2026-08-28-editorial-projection.json` | `0f04b017e09124e49d86a032425a82796b46dcbe0614388f69bd7a53482ef1ed` |
-| `src/web/data/structure/sources/editions/triptych/roman-1962-latin-proper-editorial-projection/2026-2026-09-03-editorial-projection.json` | `9773066bfb6be15fe03d5968f269bcae1cd0fb60ae603a42f7dbbe4a7d99cb42` |
+| `src/web/data/structure/sources/editions/triptych/roman-1962-latin-proper-editorial-projection/2026-2026-09-03-editorial-projection.json` | `061fbc94f2131814bd9ceeea43f0e80b93bd03944d86c71c38aa50604534d92a` |
 | `src/web/data/structure/sources/editions/triptych/roman-1962-ordinary-editorial-projection/2026-2026-10-19-editorial-projection.json` | `0b7928faf817a24a8f5e4ac863bc41bf2d670db25b686aad8ca7cdcc4d32433b` |
 | `src/web/data/structure/sources/editions/truthorfiction/the-meaning-of-the-folded-napkin-in-jesus-tomb/2026-web-2015-03-17-consulted-2026-07-25.json` | `dbebf50c0581fcfdb91b3072ca442aee83bc0dc1cd67a35d015326a00264bdd1` |
 | `src/web/data/structure/sources/editions/u2/40/2026-2026-09-05-official-web.json` | `5fbd205aca0cba4d4ec8e9a6ef3c8178a469fea5c29fb46bf46c365448c89f7f` |
@@ -20793,7 +20793,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/william-williams/guide-me-o-thou-great-jehovah/2026-hymnal-of-praise-1913-hymnary-web-2026-07-29.json` | `0c387edabb7fcde38b30186316a98931754e5184bea07b1c3f437c3192f8e195` |
 | `src/web/data/structure/sources/editions/world-health-organization/icd-11-clinical-descriptions-and-diagnostic-requirements/2024-english-who-2024.json` | `97b5a08dc7e0a83a6c4da5990e21e8fcc2e4356d569903f09b8b97d34f1672aa` |
 | `src/web/data/structure/sources/editions/world-intellectual-property-organization/wipo-lex-berne-contracting-parties/2026-web-2026-08-01.json` | `ffaf08c0f47cd6ab1d4761546a9e290ce69420b185c891d67395fcc17d5d9d5e` |
-| `src/web/data/structure/sources/index.json` | `d7865e0eca958493c01967b584718ccf2cc931f5bb582dfac63415623d851625` |
+| `src/web/data/structure/sources/index.json` | `67e94fd7816420f98b05bbd1130ce0896d62a1033fb9af7be1cb37054def63e3` |
 | `src/web/data/structure/sources/text/passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.1.json` | `bf80df77e273500e8769a0a0613d4bb907a736fafce970a0e62804eda1219c58` |
 | `src/web/data/structure/sources/text/passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.10.json` | `14700390dab93606af7e6e934d457e2ed524f13977f64bb6ede3f04daea4521d` |
 | `src/web/data/structure/sources/text/passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.100.json` | `c9b31161f4c7f56ea4c89bfaa550e47bc6327f5b8db9f685dc5bf2a4d73d1de2` |
@@ -23768,6 +23768,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/text/passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-thomae-aquino-confessoris-ecclesiae-doctoris-collect.json` | `14584b91a068e102b175cc2785a1fda2efee31fd0ec1c6e5efd3ad7d86e0e0ba` |
 | `src/web/data/structure/sources/text/passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-thomae-aquino-confessoris-ecclesiae-doctoris-postcommunion.json` | `67d7706f19cc31d3d0d95e5029f55cac97c8f979166255e01efeb3869602ce7f` |
 | `src/web/data/structure/sources/text/passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-thomae-aquino-confessoris-ecclesiae-doctoris-secret.json` | `62f6ff074c78699d6431b9658f0a0d7a5dd4eb97065c5c23fb263fa82fdb3125` |
+| `src/web/data/structure/sources/text/passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-thomae-introit.json` | `987d197d3e15fa1ffbc6e5ec1866beff91da777420d55bd3e884862640d09422` |
 | `src/web/data/structure/sources/text/passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-thomae-villanova-episcopi-confessoris-collect.json` | `5464e7ac1d6c3f7b4f9171380827225dabd8b08aafbc26cecab4ae5b3646be2f` |
 | `src/web/data/structure/sources/text/passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-timothei-episcopi-martyris-collect.json` | `b9ce40b1b507a1ab4c0a1db9dac5ffe6822f8e7ad2b686992d95b18ea0c2d439` |
 | `src/web/data/structure/sources/text/passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-timothei-episcopi-martyris-postcommunion.json` | `ccdf7129037e470bd2cd513ae6ff638c55b66824d03b297b3bd97fff35f45d13` |

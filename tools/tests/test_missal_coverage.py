@@ -2,10 +2,12 @@
 from __future__ import annotations
 
 import copy
+import hashlib
 import importlib.machinery
 import importlib.util
 import json
 from pathlib import Path
+import re
 import sys
 import tempfile
 import tomllib
@@ -720,7 +722,7 @@ state = "unenumerated"
         current = {row["id"]: row["state"] for row in coverage.expectations(
             path, "roman-1962", masses)["targets"]}
         self.assertEqual(Counter(current[row["id"]] for row in joined),
-                         {"represented": 2962, "not-represented": 395})
+                         {"represented": 2963, "not-represented": 394})
         gap_id = "roman-1962:sanctoral-form:p511-l46:slot:p511-l62:secret"
         self.assertEqual(current[gap_id], "not-represented")
 
@@ -793,7 +795,7 @@ state = "unenumerated"
                     self.assertEqual([row["ref"] for row in held[0]["citations"]], [citation])
         published = document["coverage"]["expected_inventory"]
         self.assertEqual(published["target_states"],
-                         {"represented": 4017, "not-represented": 167, "unresolved": 3806})
+                         {"represented": 4018, "not-represented": 166, "unresolved": 3806})
         self.assertEqual({row["id"] for row in published["not_represented"]} & joins.keys(), set())
         self.assertIn("roman-1962:sanctoral-form:p518-l3:slot:p518-l21:collect",
                       {row["id"] for row in published["not_represented"]})
@@ -834,7 +836,7 @@ state = "unenumerated"
                 self.assertLess(order.index(role), order.index(after))
         published = document["coverage"]["expected_inventory"]
         self.assertEqual(published["target_states"],
-                         {"represented": 4017, "not-represented": 167, "unresolved": 3806})
+                         {"represented": 4018, "not-represented": 166, "unresolved": 3806})
         gaps = {row["id"] for row in published["not_represented"]}
         self.assertTrue(all(f"roman-1962:sanctoral-form:{locus}" not in gaps
                             for locus, *_ in rows))
@@ -854,6 +856,64 @@ state = "unenumerated"
         # The March 24 Gabriel heading says Luc. 2, 26-38 but prints Luke 1's
         # Annunciation; no Bible passage is published under the wrong locator.
         self.assertIn("roman-1962:sanctoral-form:p574-l14:slot:p575-l19:gospel", gaps)
+
+    def test_1962_st_thomas_introit_uses_exact_missal_words(self):
+        propers = tool("mass-propers")
+        root = ROOT / "src/sources/calendars"
+        document = propers.calendar_structure(root, "roman-1962", propers.book_tokens())
+        mass = next(row for row in document["masses"] if row["key"] == "s-thomae-apostoli")
+        introit = mass["propers"][0]
+        self.assertEqual((introit["name"], introit["source"]), ("Introit", "mixed"))
+        self.assertEqual([row["ref"] for row in introit["citations"]],
+                         ["Psalms 138:17", "Psalms 138:1-2"])
+        # Independently collated spoken words of Mame 1922 printed p. 498
+        # and the controlling 1962 edition printed p. 441. Their punctuation
+        # and accents differ, but neither prints the Bible's honorificati.
+        witness_words = ("Mihi autem nimis honorati sunt amici tui Deus nimis "
+                         "confortatus est principatus eorum Domine probasti me "
+                         "et cognovisti me tu cognovisti sessionem meam et "
+                         "resurrectionem meam V Gloria Patri")
+        self.assertEqual(re.findall(r"[A-Za-z]+", introit["text"]),
+                         witness_words.split())
+        self.assertNotIn("honorificati", introit["text"])
+        projection = (ROOT / "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection"
+                      "/editions/2026-09-03-editorial-projection/artifacts"
+                      "/s-thomae-introit-74c5a893/s-thomae-introit-74c5a893.txt")
+        self.assertEqual(projection.read_text(), introit["text"])
+        latin = introit["latin"]
+        self.assertEqual(hashlib.sha256(projection.read_bytes()).hexdigest(),
+                         latin["text_sha256"])
+        self.assertEqual(latin["provenance"]["relationship"],
+                         "editorial-projection-exact-to-target")
+        self.assertEqual(latin["provenance"]["verification_source_id"],
+                         "passage.catholic-church.missale-romanum.vatican-typica-1962.s-thomae-apostoli-introit")
+        self.assertIn("artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+                      latin["publication"]["source_ids"])
+        self.assertFalse(latin["withheld"])
+        states = {row["id"]: row["state"] for row in coverage.expectations(
+            ROOT / "src/sources/inventories/missal-expected-targets-v1.toml",
+            "roman-1962", document["masses"])["targets"]}
+        self.assertEqual(states["roman-1962:sanctoral-form:p522-l16:slot:p522-l19:introit"],
+                         "represented")
+        for held in (
+            "roman-1962:sanctoral-form:p526-l24:slot:p527-l8:offertory-antiphon",
+            "roman-1962:sanctoral-form:p751-l15:slot:p751-l19:introit",
+        ):
+            self.assertEqual(states[held], "not-represented")
+
+    def test_st_thomas_english_body_is_ledgered_for_both_calendars(self):
+        propers = tool("mass-propers")
+        root = ROOT / "src/sources/calendars"
+        for calendar in ("roman-1962", "roman-pre-1955"):
+            with self.subTest(calendar=calendar):
+                result = propers.english_coverage(root, calendar)
+                self.assertEqual(result["unaccounted"], 0)
+                self.assertEqual(result["unmatched_records"], 0)
+                rows = tomllib.loads((ROOT / "src/sources/inventories/roman-1962-proper-translations-v1.toml")
+                                     .read_text())["untranslated"]
+                self.assertEqual(len([row for row in rows
+                                      if row["mass"] == "s-thomae-apostoli"
+                                      and row["proper"] == "Introit"]), 1)
 
     def test_duplicate_held_proper_does_not_resolve_a_single_source_slot(self):
         slot = ('\n[[targets]]\nid="slot"\nslice_id="fixed"\nkind="text-slot"\n'
@@ -883,7 +943,7 @@ state = "unenumerated"
         self.assertEqual([row["id"] for row in missing],
                          ["roman-1962:commemoration:1962-12-25-comm"])
         published = coverage.published_expectations(report)
-        self.assertEqual(len(published["not_represented"]), 396)
+        self.assertEqual(len(published["not_represented"]), 395)
         self.assertEqual([row["id"] for row in published["not_represented"]
                           if row["slice_id"] == "roman-1962-universal-fixed-calendar"],
                          ["roman-1962:commemoration:1962-12-25-comm"])

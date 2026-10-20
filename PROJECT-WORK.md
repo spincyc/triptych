@@ -363,7 +363,14 @@ with identical extracted text, and checked Latin layouts are unchanged.
 St Lucy's Communion now has a hash-bound exact 1962 Latin antiphon collated
 with the public-domain 1922 Mame witness; its Psalm citation remains separate.
 Roman 1962 exact-target Latin Proper availability rises to 1,074 of 1,203
-represented composed targets. The CLI now labels Bible reconstructions and
+represented composed targets. A further page-checked St Thomas Apostle
+Introit uses the complete 1922 Mame antiphon, Psalm verse and Gloria Patri cue,
+collated against the 1962 typica. It raises that bounded count to 1,075 of
+1,204; English remains an explicit no-exemplar gap. The Missal prints
+`honorati` where the Bible verse has `honorificati`, so the Bible body is not
+substituted. Proposed St Anthony Offertory and St Michael Introit Scripture
+joins were held for the same wording reason. Neither result resolves the
+whole-family text denominator. The CLI now labels Bible reconstructions and
 separately shown Bible text. A generated, form-qualified Propers search index
 and a pure two-side semantic Compare core are checked data foundations; their
 reader controls and independent acceptance remain open.

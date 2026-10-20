@@ -51685,11 +51685,44 @@ sections:
         prints for this day, the Collect, the Secret and the Postcommunion, carry published Latin
         bodies collated to the controlling 1962 edition, each on the public-domain witness its row in
         src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml names. Identity, rank and
-        the printed citations were read on 2026-08-01 from the embedded text layer of
+        the previously recorded printed citations were read on 2026-08-01 from the embedded text layer of
         the CMAA facsimile of the controlling edition at printed p. 441 (digital p.
         522), not from the facsimile images, and that reading was not visually
         collated.'
       propers:
+      - name: Introit
+        source: mixed
+        notes: >-
+          The whole Introit, including its Psalm verse and Gloria Patri cue, was
+          read on the page images of the 1962 typical edition (printed p. 441,
+          no. 1903; artifact PDF p. 522) and the public-domain 1922 Tours Mame
+          (printed p. 498; artifact PDF p. 612). The two editions agree on every
+          spoken word; the Clementine Bible's honorificati is not substituted for
+          the Missals' honorati. The Latin body has separate exact-target
+          provenance in roman-1962-proper-latin-provenance-v1.toml.
+        verses:
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 138
+              verse: 17
+            end:
+              chapter: 138
+              verse: 17
+          ref: Psalms 138:17
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 138
+              verse: 1
+            end:
+              chapter: 138
+              verse: 2
+          ref: Psalms 138:1-2
+        text: |
+          Mihi autem nimis honorati sunt amici tui, Deus: nimis confortatus est
+          principatus eorum. Domine, probasti me, et cognovisti me: tu cognovisti
+          sessionem meam et resurrectionem meam. V. Gloria Patri.
       - name: Collect
         source: composed
         notes: >-

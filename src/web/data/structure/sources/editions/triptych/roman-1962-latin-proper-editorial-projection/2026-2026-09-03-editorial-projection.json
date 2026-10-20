@@ -602,6 +602,21 @@
   },
   {
    "artifact_type": "editorial-projection",
+   "byte_size": 198,
+   "edition_owned": true,
+   "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-thomae-introit-74c5a893",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The physical lines reproduce the Roman-1962 calendar body exactly. The two historical passage records remain the antecedent and target witnesses; this project artifact owns only its bounded editorial projection.",
+   "page_count": null,
+   "retrieved": "2026-10-20",
+   "rights": "project-created",
+   "rights_basis": "Triptych created this bounded transcription and collation record and offers its editorial contributions under CC BY 4.0. The whole Introit's spoken words stand in the public-domain 1922 Tours Mame printing. The 1962 target contributes no new word, and no page image, layout, heading, citation or marginal number is reproduced.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "editorial-projection",
    "byte_size": 2649,
    "edition_owned": true,
    "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.sanctoral-w-1-orations-2e477eea",
@@ -25164,6 +25179,32 @@
    "text_path": "structure/sources/text/passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-thomae-apostoli-collect.json",
    "verified_on": "2026-09-03",
    "words": 23
+  },
+  {
+   "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-thomae-introit-74c5a893",
+   "artifact_type": "editorial-projection",
+   "context": "Exact project-created editorial projection of the Roman-1962 St Thomas Apostle Introit.",
+   "id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-thomae-introit",
+   "locus": "s-thomae-apostoli, Introit; editorial-projection artifact physical lines 1-3; antecedent Mame Tours 1922 printed p. 498, artifact PDF p. 612; target printed p. 441, no. 1903, artifact PDF p. 522",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The selected three physical lines, including their final newline, hash as the retained calendar body 74c5a89365b78f178d50a9ae23c42a7936675d22ed686fb979c02db66d340062. The artifact manifest states the bounded transformation and publication basis.",
+   "readable": true,
+   "rights": "project-created",
+   "rights_basis": "Triptych created this bounded transcription and collation record and offers its editorial contributions under CC BY 4.0. The whole Introit's spoken words stand in the public-domain 1922 Tours Mame printing. The 1962 target contributes no new word, and no page image, layout, heading, citation or marginal number is reproduced.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-thomae-introit.json",
+   "verified_on": "2026-10-20",
+   "words": 29
   },
   {
    "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-4-orations-219ac7b1",

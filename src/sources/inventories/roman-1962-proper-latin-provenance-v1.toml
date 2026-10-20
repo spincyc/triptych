@@ -25922,6 +25922,32 @@ publication_evidence = "The wording is preexisting material of the 1962 typical 
 [[entries]]
 mass = "s-thomae-apostoli"
 form = ""
+proper = "Introit"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "74c5a89365b78f178d50a9ae23c42a7936675d22ed686fb979c02db66d340062"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-thomae-introit"
+source_date = "2026-10-20 project editorial projection; antecedent Mame Tours 1922"
+locator = "editorial-projection artifact physical lines 1-3; antecedent Mame Tours 1922 printed p. 498, artifact PDF p. 612"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.s-thomae-apostoli-introit"
+verification_locator = "printed p. 441, no. 1903; artifact PDF p. 522"
+transformations = ["join printed line wraps", "remove stress accents", "apply the target printing's punctuation", "omit the printed heading, citations and marginal number"]
+provenance_evidence = "The project-owned passage reproduces the calendar body's exact hash. Both complete Introit bodies were read from page images of hash-checked registered PDFs. The 1962 target and public-domain Mame 1922 agree on every spoken word of the antiphon, Psalm 138:1-2 verse and Gloria Patri cue, including honorati. Mame has a comma before et resurrectionem where the 1962 has none; stress accents and spacing also differ. The Clementine Bible expansion has honorificati and is not the antiphon. The 1962 page controls the target's wording and punctuation; its scan is not the publication rights basis."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target and Mame 1922 antecedent"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-thomae-introit-74c5a893", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "Mame Tours 1922 printed p. 498, registered artifact PDF p. 612; title page at PDF p. 13 prints 1922 and approval leaf at p. 15 is dated 17 May 1922; artifact rights_status public-domain"
+publication_evidence = "The Introit wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which grants no exclusive right in material that edition did not contribute. The whole body appears word for word in the separately registered public-domain 1922 Tours Mame page image. The repository-wide position is settled at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml; this row claims no publication right from the 1962 facsimile."
+
+[[entries]]
+mass = "s-thomae-apostoli"
+form = ""
 proper = "Collect"
 course = ""
 cycle = ""
